@@ -219,7 +219,7 @@
         "Anterior"
       ],
       "Refer a friend": [
-        "Referir un amigo"
+        "Referir una amistad"
       ],
       "Refresh the page": [
         "Refrescar la página"
@@ -3342,6 +3342,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar y recibir invitaciones"
+      ],
       "Share calendar via link": [
         "Compartir calendarios mediante un enlace"
       ],
@@ -4289,6 +4292,35 @@
         "VPN de gran velocidad en ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Solo inicie sesión en su cuenta de App Store y luego pulse en ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Solo inicie sesión en su cuenta de Play Store y luego pulse en ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestione su suscripción en ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "La suscripción es gestionada por ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "La suscripción del usuario ID-${ userId } fue realizada mediante compra dentro de la app. Para gestionar la suscripción del usuario, navegue a la sección de Suscripción en su cuenta de ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Suscripciones"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Su plan fue comprado usando una app de Android. Para realizar cambios a su plan o actualizar sus datos de pago necesitará ir a Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Su plan fue comprado usando una app de iOS. Para realizar cambios a su plan o actualizar sus datos de pago necesitará ir a la App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Al"
@@ -4591,6 +4623,9 @@
       "Downloads": [
         "Descargas"
       ],
+      "Duration": [
+        "Duración"
+      ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
       ],
@@ -4638,9 +4673,6 @@
       ],
       "Language": [
         "Idioma"
-      ],
-      "Length": [
-        "Duración"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"

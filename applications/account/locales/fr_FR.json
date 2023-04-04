@@ -1300,6 +1300,11 @@
         "Voir tous les détails de l'événement"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Les informations de contact n'ont pas pu être récupérées pour ${ address }."
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Les autorisations ont été modifiées pour ${ email }."
@@ -2818,6 +2823,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } est votre nom d'utilisateur. Pour créer ${ Local }@${ Domain }, rendez-vous dans Paramètres > Accéder aux paramètres > Messages et rédaction > Domaine court (pm.me)."
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -3301,6 +3309,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Le chiffrement n'a pas abouti."
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versions de vCard < 3.0 non prises en charge"
       ]
     },
     "Error importing contacts": {
@@ -4051,6 +4062,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ne prend actuellement pas en charge certains types d'événements, détails et formats."
+      ],
+      "vCard versions < 3.0": [
+        "Versions de vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5145,8 +5159,8 @@
       "it’s imperative": [
         "il est impératif"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "J'utilise ${ MAIL_APP_NAME } et j'ai pensé que ça pourrait te plaire. C'est un service de messagerie électronique sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour profiter gratuitement des fonctionnalités premium pendant un mois : ${ referrerLink }."
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "J'utilise @ProtonMail et je pense que ça pourrait te plaire. C'est un service de messagerie électronique sécurisée qui protège ta vie privée. Tu peux t'inscrire avec mon lien de parrainage pour profiter gratuitement des fonctionnalités premium pendant 1 mois : ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -5507,6 +5521,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
       ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible."
@@ -8165,6 +8182,9 @@
       "Secure Core servers": [
         "Serveurs Secure Core"
       ],
+      "Send & receive invitations": [
+        "Envoyer et recevoir des invitations"
+      ],
       "Share calendar via link": [
         "Partage de calendrier via un lien"
       ],
@@ -8691,6 +8711,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Pour que l'importation fonctionne, sélectionnez tous les éléments demandés comme indiqué dans le GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Agenda."
       ]
     },
     "Onboarding": {
@@ -10540,6 +10565,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "Durée"
+      ],
       "Edit credit/debit card": [
         "Modifier la carte de crédit/débit"
       ],
@@ -10706,9 +10734,6 @@
       ],
       "Layout": [
         "Disposition"
-      ],
-      "Length": [
-        "Durée"
       ],
       "Link confirmation": [
         "Confirmation du lien"

@@ -1300,6 +1300,11 @@
         "Visualizar (ver todos os detalhes do evento)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Falha ao recuperar a informação de contato para ${ address }"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Permissões alteradas para ${ email }"
@@ -2814,10 +2819,13 @@
     },
     "Enabled 2FA": {
       "2FA": [
-        "2FA"
+        "A2F"
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } é o seu nome de usuário. Para criar ${ Local }@${ Domain }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -2900,6 +2908,9 @@
       ],
       "Error in one of the conditions": [
         "Ocorreu um erro em uma das condições"
+      ],
+      "Expired": [
+        "Expirado"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Falha ao obter sessões ativas. Por favor, ${ refresh } ou tente novamente mais tarde."
@@ -3298,6 +3309,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versões vCard <3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -3470,6 +3484,9 @@
       ],
       "sign in": [
         "iniciar sessão"
+      ],
+      "Sign in to verify": [
+        "Iniciar sessão para verificar"
       ],
       "There was a problem removing your email address.": [
         "Ocorreu um problema ao remover seu endereço de e-mail."
@@ -3987,7 +4004,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Experimente o melhor de ${ MAIL_APP_NAME } gratuitamente"
+        "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente"
       ]
     },
     "Hint": {
@@ -4047,6 +4064,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+      ],
+      "vCard versions < 3.0": [
+        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5138,9 +5158,6 @@
       "it’s imperative": [
         "é obrigatório"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Estou usando o ${ MAIL_APP_NAME } e achei que você poderia gostar. É um serviço de e-mail seguro que protege sua privacidade. Inscreva-se com este link para obter 1 mês de recursos premium de graça: ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
       ],
@@ -5412,7 +5429,7 @@
         "A pré-visualização falhou ao carregar"
       ],
       "Preview for this file type is not supported": [
-        "A visualização prévia deste arquivo não é suportada"
+        "A pré-visualização deste arquivo não é suportada"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
@@ -5497,6 +5514,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
@@ -5815,6 +5835,9 @@
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
+      ],
+      "Verification link expired": [
+        "O link de verificação expirou"
       ],
       "Verification may take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -8124,6 +8147,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar e receber convites"
+      ],
       "Share calendar via link": [
         "Compartilhe o calendário por link"
       ],
@@ -8650,6 +8676,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que a importação funcione, você deve selecionar todos os itens solicitados conforme mostrado no GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecione o que ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
       ]
     },
     "Onboarding": {
@@ -9266,6 +9297,9 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Conclua a transição para a privacidade com nossas ferramentas seguras de importação e encaminhamento."
       ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Conclua a transição para a privacidade com nossas ferramentas seguras de importação."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Você pode adicionar múltiplas etiquetas a uma mesma mensagem, mas mensagens geralmente só podem estar em uma única pasta. Arraste e solte para reorganizar a ordem de suas pastas e etiquetas."
       ]
@@ -9349,6 +9383,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Criado por ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Erro na verificação da assinatura"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Você ativou a verificação de endereço para ${ boldSenderEmail }. Não foi possível verificar a autenticidade deste convite de calendário. Isso pode ser devido a alterações nas chaves de criptografia deste contato. Revise as configurações avançadas de PGP ou peça a ${ boldSenderEmail } um novo convite."
       ]
     },
     "Signup label": {
@@ -9754,6 +9796,20 @@
         "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gerencie sua assinatura em ${ subscriptionManager }."
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "A assinatura é gerenciada por ${ subscriptionManager }"
+      ],
+      "Subscriptions": [
+        "Assinaturas"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Por"
@@ -9764,10 +9820,10 @@
         "Você tem certeza?"
       ],
       "Auto-pay is disabled": [
-        "Autopagamento desabilitado"
+        "Autopagamento está desativado"
       ],
       "Auto-pay is enabled": [
-        "Autopagamento está habilitado"
+        "Autopagamento está ativado"
       ],
       "Disable": [
         "Desativar"
@@ -10611,9 +10667,6 @@
       "Layout": [
         "Disposição"
       ],
-      "Length": [
-        "Tamanho"
-      ],
       "Link confirmation": [
         "Confirmar redirecionamento"
       ],
@@ -10814,6 +10867,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sessão com A2F"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -11228,7 +11284,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Atualize para um plano pago ${ MAIL_SHORT_APP_NAME } para compartilhar seu calendário."
+        "Faça upgrade para um plano pago ${ MAIL_SHORT_APP_NAME } para compartilhar seu calendário."
       ]
     },
     "User referee invited via email": {

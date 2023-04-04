@@ -1,9 +1,17 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
-    "language": "be_BE"
+    "language": "be_BY"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Поўны выгляд (бачны ўсе падрабязнасці падзеі)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Абмежаваны прагляд (бачна толькі свабодны/заняты)"
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Неўзабаве пачнецца перасылка. Новыя лісты будуць з'яўляцца ў вашай паштовай скрыні."
@@ -43,6 +51,9 @@
       "Add new group": [
         "Дадаць новую групу"
       ],
+      "Add notification": [
+        "Дадаць апавяшчэнне"
+      ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
@@ -64,29 +75,11 @@
       "Back": [
         "Назад"
       ],
-      "Back to Homepage": [
-        "Вярнуцца на галоўную старонку"
-      ],
       "Beta Access": [
         "Бэта-доступ"
       ],
       "Cancel": [
         "Скасаваць"
-      ],
-      "Cancel all": [
-        "Скасаваць усе"
-      ],
-      "Cancel all downloads": [
-        "Скасаваць усе спампоўванні"
-      ],
-      "Cancel all uploads": [
-        "Скасаваць усе запампоўванні"
-      ],
-      "Cancel download": [
-        "Скасаваць спампоўванне"
-      ],
-      "Cancel upload": [
-        "Скасаваць запампоўванне"
       ],
       "Chat with us": [
         "Чат з намі"
@@ -96,12 +89,6 @@
       ],
       "Choose a file or drag it here": [
         "Выберыце файл або перацягніце яго сюды"
-      ],
-      "Clear": [
-        "Ачысціць"
-      ],
-      "Clear browser data": [
-        "Ачысціць даныя браўзера"
       ],
       "Clear data": [
         "Ачысціць даныя"
@@ -115,20 +102,14 @@
       "Close": [
         "Закрыць"
       ],
+      "Close event popover": [
+        "Закрыць усплывальнае акно падзеі"
+      ],
       "Close navigation": [
         "Закрыць панэль навігацыі"
       ],
       "Close this banner": [
         "Закрыць гэты банер"
-      ],
-      "Close transfers": [
-        "Закрыць перадачы"
-      ],
-      "Collapse": [
-        "Згарнуць"
-      ],
-      "Collapse folder": [
-        "Згарнуць папку"
       ],
       "Compose": [
         "Напісаць"
@@ -148,8 +129,8 @@
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
-      "Continue transfers": [
-        "Працягнуць перадачы"
+      "Continue to ${ calendarAppBareName }": [
+        "Працягнуць у ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Працягнуць з Google"
@@ -166,23 +147,20 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
-      "Create account": [
-        "Стварыць уліковы запіс"
+      "Create calendar": [
+        "Стварыць каляндар"
       ],
-      "Create link": [
-        "Стварыць спасылку"
-      ],
-      "Create new folder": [
-        "Стварыць новую папку"
-      ],
-      "Create new text file": [
-        "Стварыць новы тэкставы файл"
+      "Create event": [
+        "Стварыць падзею"
       ],
       "Customize": [
         "Наладзіць"
       ],
       "Customize import": [
         "Наладзіць імпартаванне"
+      ],
+      "Decline invite": [
+        "Адхіліць запрашэнне"
       ],
       "Delete": [
         "Выдаліць"
@@ -205,14 +183,8 @@
       "Delete contact group": [
         "Выдаліць групу кантактаў"
       ],
-      "Delete permanently": [
-        "Выдаліць незваротна"
-      ],
       "Deselect all": [
         "Зняць выбар з усіх"
-      ],
-      "Details": [
-        "Падрабязнасці"
       ],
       "Discard": [
         "Адхіліць"
@@ -222,21 +194,6 @@
       ],
       "Download": [
         "Спампаваць"
-      ],
-      "Download (${ count })": [
-        "Спампаваць (${ count })"
-      ],
-      "Download all": [
-        "Спампаваць усё"
-      ],
-      "Download anyway": [
-        "Усё роўна спампаваць"
-      ],
-      "Download the Windows application": [
-        "Спампаваць праграму для Windows"
-      ],
-      "Drive Locked": [
-        "Дыск заблакіраваны"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -256,20 +213,8 @@
       "Email settings": [
         "Налады электроннай пошты"
       ],
-      "Empty trash": [
-        "Ачысціць сметніцу"
-      ],
       "enable desktop notifications": [
         "уключыць апавяшчэнні на працоўным стале"
-      ],
-      "Enable drive search": [
-        "Уключыць пошук на дыску"
-      ],
-      "Expand": [
-        "Разгарнуць"
-      ],
-      "Expand folder": [
-        "Разгарнуць папку"
       ],
       "Export": [
         "Экспартаваць"
@@ -280,17 +225,8 @@
       "Export contacts": [
         "Экспартаваць кантакты"
       ],
-      "Fit to window": [
-        "Па памеры акна"
-      ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Атрымаць ${ DRIVE_APP_NAME }"
-      ],
-      "Get link": [
-        "Атрымаць спасылку"
       ],
       "Get started": [
         "Пачаць працу"
@@ -298,17 +234,11 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
-      "Go to Drive": [
-        "Перайсці ў Drive"
-      ],
       "Go to label": [
         "Перайсці да меткі"
       ],
       "Go to panel ${ index }": [
         "Перайсці да панэлі ${ index }"
-      ],
-      "Go to parent": [
-        "Перайсці да бацькоўскай"
       ],
       "Go to settings": [
         "Перайсці ў налады"
@@ -319,11 +249,17 @@
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
       ],
+      "Hide affected calendars": [
+        "Схаваць датычныя календары"
+      ],
       "Hide folders": [
         "Схаваць папкі"
       ],
       "Hide labels": [
         "Схаваць меткі"
+      ],
+      "Hide time zones": [
+        "Схаваць часавыя паясы"
       ],
       "I have a question": [
         "У мяне ёсць пытанне"
@@ -343,14 +279,29 @@
       "Import emails": [
         "Імпартаваць лісты"
       ],
+      "Import events": [
+        "Імпартаваць падзеі"
+      ],
       "Import from .csv or vCard": [
         "Імпартаванне з .csv або vCard"
       ],
-      "Learn more": [
-        "Даведацца больш"
+      "Join calendar": [
+        "Далучыцца да календара"
+      ],
+      "Keep current time zone": [
+        "Пакінуць бягучы часавы пояс"
       ],
       "Load image": [
         "Загрузіць відарыс"
+      ],
+      "Make this participant optional": [
+        "Зрабіць гэтага ўдзельніка неабавязковым"
+      ],
+      "Make this participant required": [
+        "Зрабіць гэтага ўдзельніка абавязковым"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
       ],
       "Manage folders": [
         "Кіраванне папкамі"
@@ -358,14 +309,14 @@
       "Manage labels": [
         "Кіраванне меткамі"
       ],
-      "Manage link": [
-        "Кіраванне спасылкай"
-      ],
       "Mark for deletion": [
         "Пазначыць для выдалення"
       ],
-      "Maximize transfers": [
-        "Разгарнуць перадачы"
+      "Maybe": [
+        "Магчыма"
+      ],
+      "Maybe I'll attend": [
+        "Магчыма, што я далучуся"
       ],
       "Merge": [
         "Аб'яднаць"
@@ -373,35 +324,38 @@
       "Merge contacts": [
         "Аб'яднаць кантакты"
       ],
-      "Minimize transfers": [
-        "Згарнуць перадачы"
-      ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
       ],
       "More options": [
         "Дадатковыя параметры"
       ],
-      "Move": [
-        "Перамясціць"
-      ],
-      "Move to folder": [
-        "Перамясціць у папку"
-      ],
-      "Move to trash": [
-        "Перамясціць у сметніцу"
-      ],
-      "New": [
-        "Новы"
-      ],
-      "New upload": [
-        "Новае запампоўванне"
+      "New event": [
+        "Новая падзея"
       ],
       "Next": [
         "Далей"
       ],
+      "Next day": [
+        "Наступны дзень"
+      ],
       "Next month": [
         "Наступны месяц"
+      ],
+      "Next week": [
+        "Наступны тыдзень"
+      ],
+      "Next year": [
+        "Наступны год"
+      ],
+      "No": [
+        "Не"
+      ],
+      "No, I won't attend": [
+        "Не, я не хачу далучацца"
+      ],
+      "No, thanks": [
+        "Не, дзякуй"
       ],
       "OK": [
         "Добра"
@@ -409,26 +363,23 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
-      "Pause all": [
-        "Прыпыніць усе"
-      ],
-      "Pause download": [
-        "Прыпыніць спампоўванне"
-      ],
-      "Pause upload": [
-        "Прыпыніць запампоўванне"
-      ],
-      "Preview": [
-        "Папярэдні прагляд"
+      "Open settings": [
+        "Адкрыць налады"
       ],
       "Preview contact": [
         "Папярэдні прагляд кантакту"
       ],
-      "Previous": [
-        "Папярэдні"
+      "Previous day": [
+        "Папярэдні дзень"
       ],
       "Previous month": [
         "Папярэдні месяц"
+      ],
+      "Previous week": [
+        "Папярэдні тыдзень"
+      ],
+      "Previous year": [
+        "Папярэдні год"
       ],
       "Quit": [
         "Выйсці"
@@ -445,26 +396,20 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
       ],
-      "Remove device": [
-        "Выдаліць прыладу"
+      "Remove this notification": [
+        "Выдаліць гэта апавяшчэнне"
       ],
-      "Remove from this list": [
-        "Выдаліць з гэтага спіса"
-      ],
-      "Rename": [
-        "Перайменаваць"
-      ],
-      "Replace file": [
-        "Замяніць файл"
+      "Remove this participant": [
+        "Выдаліць гэтага ўдзельніка"
       ],
       "Report a problem": [
         "Паведаміць пра праблему"
@@ -481,41 +426,11 @@
       "Reset to default": [
         "Скінуць да прадвызначаных"
       ],
-      "Restart all": [
-        "Перазапусціць усе"
-      ],
-      "Restart download": [
-        "Перазапусціць спампоўванне"
-      ],
-      "Restart upload": [
-        "Перазапусціць запампоўванне"
-      ],
-      "Restore from trash": [
-        "Аднавіць са сметніцы"
-      ],
-      "Resume all": [
-        "Узнавіць усе"
-      ],
-      "Resume download": [
-        "Узнавіць спампоўванне"
-      ],
-      "Resume upload": [
-        "Узнавіць запампоўванне"
-      ],
-      "Retry": [
-        "Паўтарыць"
-      ],
       "Save": [
         "Захаваць"
       ],
-      "Search": [
-        "Пошук"
-      ],
       "Search countries": [
         "Пошук краін"
-      ],
-      "Search drive": [
-        "Пошук дыска"
       ],
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
@@ -523,26 +438,26 @@
       "Select all": [
         "Выбраць усе"
       ],
+      "Select time zone": [
+        "Выберыце часавы пояс"
+      ],
+      "Send": [
+        "Адправіць"
+      ],
       "Send feedback": [
         "Адправіць водгук"
       ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
       ],
-      "Share file": [
-        "Абагуліць файл"
-      ],
-      "Share item": [
-        "Абагуліць элемент"
-      ],
-      "Share via link": [
-        "Абагуліць праз спасылку"
-      ],
-      "Sharing options": [
-        "Параметры сумеснага доступу"
+      "Share": [
+        "Абагуліць"
       ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
+      ],
+      "Show affected calendars": [
+        "Паказаць датычныя календары"
       ],
       "Show folders": [
         "Паказаць папкі"
@@ -550,11 +465,17 @@
       "Show labels": [
         "Паказаць меткі"
       ],
-      "Show preview": [
-        "Папярэдні прагляд"
+      "Show less": [
+        "Паказаць менш"
+      ],
+      "Show more": [
+        "Паказаць больш"
       ],
       "Show side panel": [
         "Паказаць бакавую панэль"
+      ],
+      "Show time zones": [
+        "Паказаць часавыя паясы"
       ],
       "Sign in": [
         "Увайсці"
@@ -574,32 +495,20 @@
       "Start import": [
         "Пачаць імпартаванне"
       ],
-      "Start recovering": [
-        "Пачаць аднаўленне"
-      ],
       "Start setup": [
         "Пачаць наладжванне"
       ],
       "Stay": [
         "Застацца"
       ],
-      "Stop sharing": [
-        "Спыніць абагуленне"
-      ],
-      "Stop transfers": [
-        "Спыніць перадачы"
-      ],
       "Submit": [
         "Адправіць"
-      ],
-      "Submit report": [
-        "Адправіць скаргу"
       ],
       "Theme": [
         "Тэма"
       ],
-      "Toggle Calendar app": [
-        "Пераключыць на праграму Каляндар"
+      "Today": [
+        "Сёння"
       ],
       "Toggle Contact app": [
         "Пераключыць на праграму Кантакты"
@@ -610,12 +519,6 @@
       "Try another method": [
         "Паспрабуйце іншы метад"
       ],
-      "Try to save again. Saving failed due to: ${ saveError }": [
-        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
-      ],
-      "Undo": [
-        "Адрабіць"
-      ],
       "Unlock data": [
         "Разблакіраваць даныя"
       ],
@@ -624,6 +527,9 @@
       ],
       "Untrust": [
         "Не давяраць"
+      ],
+      "Update": [
+        "Абнавіць"
       ],
       "Update recovery file": [
         "Абнавіць файл аднаўлення"
@@ -636,18 +542,6 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upload anyway": [
-        "Запампаваць усё роўна"
-      ],
-      "Upload file": [
-        "Запампаваць файл"
-      ],
-      "Upload files": [
-        "Запампаваць файлы"
-      ],
-      "Upload folder": [
-        "Запампаваць папку"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -676,14 +570,27 @@
       "View invoice": [
         "Паглядзець рахунак"
       ],
-      "Your 500 MB bonus": [
-        "Ваш бонус у 500 МБ"
+      "Yes": [
+        "Так"
       ],
-      "Zoom in": [
-        "Павялічыць"
+      "Yes, I'll attend": [
+        "Так, я далучуся"
+      ]
+    },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Любы чалавек са спасылкай зможа праглядаць ваш каляндар"
       ],
-      "Zoom out": [
-        "Паменшыць"
+      "They can view or edit your calendar": [
+        "Яны змогуць праглядаць або рэдагаваць ваш каляндар"
+      ]
+    },
+    "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Абагуліць з карыстальнікамі ${ BRAND_NAME }"
+      ],
+      "Share with anyone": [
+        "Абагуліць з усімі"
       ]
     },
     "Actions message": {
@@ -703,12 +610,65 @@
         "У вас няма груп."
       ]
     },
+    "Alarm notification": {
+      "${ title } started at ${ formattedHour }": [
+        "${ title } пачынаецца ў ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } пачалася ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } пачалася ${ formattedDate } у ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } пачалася ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } пачалася ${ formattedDateWithTime }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } пачалася ўчора"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } пачалася ўчора ў ${ formattedHour }"
+      ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title } пачнецца ў ${ formattedHour }"
+      ],
+      "${ title } starts now": [
+        "${ title } пачынаецца зараз"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } пачнецца ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } пачнецца ${ formattedDate } у ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } пачнецца ${ formattedDateWithoutTime }"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title } пачнецца ${ formattedDateWithTime }"
+      ],
+      "${ title } starts today": [
+        "${ title } пачынаецца сёння"
+      ],
+      "${ title } starts tomorrow": [
+        "${ title } пачнецца заўтра"
+      ],
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        "${ title } пачнецца заўтра ў ${ formattedHour }"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Калі выйсці цяпер, некаторыя кантакты не будуць імпартаваны"
       ],
       "By leaving now, some events may not be imported": [
         "Калі выйсці цяпер, некаторыя падзеі не будуць імпартаваны"
+      ],
+      "By leaving now, you will lose your event.": [
+        "Калі вы выйдзеце цяпер, то ваша падзея будзе страчана."
       ]
     },
     "Apps dropdown": {
@@ -734,6 +694,11 @@
       ],
       "Unsupported event": [
         "Падзея не падтрымліваецца"
+      ]
+    },
+    "Attendee role": {
+      "Optional": [
+        "Неабавязкова"
       ]
     },
     "Beta access description": {
@@ -820,12 +785,195 @@
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Дадаць людзей або групы"
+      ]
+    },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        "Пойдзеце?"
+      ]
+    },
+    "Calendar invite info": {
+      "${ name } accepted the invitation": [
+        "${ name } прыняў(-ла) запрашэнне"
+      ],
+      "${ name } declined the invitation": [
+        "${ name } адхіліў(-ла) запрашэнне"
+      ],
+      "${ name } hasn't answered the invitation yet": [
+        "${ name } пакуль не адказаў(-ла) на запрашэнне"
+      ],
+      "${ name } tentatively accepted the invitation": [
+        "${ name } умоўна прыняў(-ла) запрашэнне"
+      ],
+      "This event has been canceled": [
+        "Гэта падзея была скасавана"
+      ],
+      "You accepted the invitation": [
+        "Вы прынялі запрашэнне"
+      ],
+      "You declined the invitation": [
+        "Вы адхілілі запрашэнне"
+      ],
+      "You haven't answered the invitation yet": [
+        "Вы пакуль не адказалі на запрашэнне"
+      ],
+      "You tentatively accepted the invitation": [
+        "Вы ўмоўна прынялі запрашэнне"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Толькі вы будзеце бачыць гэту метку"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Вы можаце змяніць або выдаліць дазволы ў любы момант."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Дазволы"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "У вас ужо ёсць доступ да гэтага календара"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Кіраванне спасылкамі"
+      ],
+      "Manage members": [
+        "Кіраванне ўдзельнікамі"
+      ],
+      "Unable to create more calendar links": [
+        "Немагчыма стварыць больш спасылак календара"
+      ],
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Немагчыма абагуліць гэты каляндар з большай колькасцю карыстальнікаў ${ BRAND_NAME }"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельніка для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў для гэтага календара.\nДля абагулення календара з большай колькасцю ўліковых запісаў ${ BRAND_NAME }, выдаліце некаторых удзельнікаў."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_LINKS_PER_CALENDAR } спасылкі для гэтага календара.\nДля стварэння новай спасылкі да гэтага календара, выдаліце адну з існуючых.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_LINKS_PER_CALENDAR } спасылак для гэтага календара.\nДля стварэння новай спасылкі да гэтага календара, выдаліце адну з існуючых.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_LINKS_PER_CALENDAR } спасылак для гэтага календара.\nДля стварэння новай спасылкі да гэтага календара, выдаліце адну з існуючых.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_LINKS_PER_CALENDAR } спасылак для гэтага календара.\nДля стварэння новай спасылкі да гэтага календара, выдаліце адну з існуючых."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Рэдагаванне (выгляд, стварэнне і рэдагаванне падрабязнасцяў падзеі)"
+      ],
+      "View (see all event details)": [
+        "Прагледзець (усе падрабязнасці падзеі)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Не ўдалося атрымаць кантактную інфармацыю для ${ address }"
+      ]
+    },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Дадаць каляндар з URL-адраса"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Не сінхранізавана"
+      ],
+      "Syncing": [
+        "Сінхранізацыя"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Не атрымалася расшыфраваць каляндар"
+      ],
+      "Calendar is syncing": [
+        "Каляндар сінхранізуецца"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Адбываецца сінхранізацыя календара: для паказу ўсіх падзей можа спатрэбіцца некалькі хвілін."
+      ],
+      "Calendar is too big": [
+        "Занадта вялікі каляндар"
+      ],
+      "Calendar link is not accessible": [
+        "Спасылка на каляндар недаступна"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Спасылка на каляндар часова недаступна"
+      ],
+      "Failed to sync calendar": [
+        "Не ўдалося сінхранізаваць каляндар"
+      ],
+      "More than 12 hours passed since last update": [
+        "Ад моманту апошняга абнаўлення мінула больш за 12 гадзін"
+      ],
+      "Unsupported calendar format": [
+        "Фармат календара не падтрымліваецца"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Спасылка на каляндар недаступна па-за межамі экасістэмы пастаўшчыка паслуг у якой ён быў створаны."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Спасылка на каляндар часова недаступна. Пераканайцеся, што спасылка ад пастаўшчыка паслуг календара ўсё яшчэ дзейнічае."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Ад моманту апошняга абнаўлення мінула больш за 12 гадзін. ${ CALENDAR_APP_NAME } паспрабуе абнавіць каляндар праз некалькі гадзін."
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Дзень"
+      ],
+      "Month": [
+        "Месяц"
+      ],
+      "Week": [
+        "Тыдзень"
+      ]
+    },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Змяніць прамежак часу на"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "яшчэ ${ more }",
+        "яшчэ ${ more }",
+        "яшчэ ${ more }",
+        "яшчэ ${ more }"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Згарнуць"
       ],
       "Expand": [
         "Разгарнуць"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ": "
       ]
     },
     "color": {
@@ -1744,6 +1892,61 @@
         "Аландскія астравы"
       ]
     },
+    "Custom frequency option": {
+      "After repeating…": [
+        "Пасля паўтарэння…"
+      ],
+      "Never": [
+        "Ніколі"
+      ],
+      "On date…": [
+        "На дату…"
+      ],
+      "time": [
+        "раз",
+        "разы",
+        "разоў",
+        "разы"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разы",
+        "${ count } разоў",
+        "${ count } разы"
+      ],
+      "Daily": [
+        "Штодзень"
+      ],
+      "Daily, ${ timesString }": [
+        "Штодзень а ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Штодзень, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Кожны ${ interval } дзень",
+        "Кожныя ${ interval } дні",
+        "Кожных ${ interval } дзён",
+        "Кожныя ${ interval } дні"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Кожны ${ interval } дзень а ${ timesString }",
+        "Кожныя ${ interval } дні а ${ timesString }",
+        "Кожных ${ interval } дзён а ${ timesString }",
+        "Кожныя ${ interval } дні а ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Кожны ${ interval } дзень, ${ untilString }",
+        "Кожныя ${ interval } дні, ${ untilString }",
+        "Кожных ${ interval } дзён, ${ untilString }",
+        "Кожныя ${ interval } дні, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "да ${ dateString }"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Невядома"
@@ -1757,6 +1960,11 @@
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
         "Выкарыстоўваць прадвызначанае глабальнае значэнне (${ globalDefaultText })"
+      ]
+    },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Выдаліць падзею"
       ]
     },
     "Delinquent modal title": {
@@ -1804,6 +2012,50 @@
         "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
+    "Disabled calendar": {
+      "Disabled": [
+        "Адключана"
+      ]
+    },
+    "Disabled calendar name suffix": {
+      "Disabled": [
+        "Адключана"
+      ]
+    },
+    "Disabled calendar tooltip": {
+      "The event belongs to a disabled calendar.": [
+        "Падзея належыць адключанаму календару."
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Больш не пытаць"
+      ]
+    },
+    "Dropdown action icon tooltip": {
+      "Add calendar": [
+        "Дадаць каляндар"
+      ]
+    },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Дубліраваць падзею"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 хвілін"
+      ],
+      "30 minutes": [
+        "30 хвілін"
+      ],
+      "60 minutes": [
+        "60 хвілін"
+      ],
+      "90 minutes": [
+        "90 хвілін"
+      ]
+    },
     "Early Access Disabled": {
       "Off": [
         "Выключана"
@@ -1812,6 +2064,11 @@
     "Early Access Enabled": {
       "On": [
         "Уключана"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Рэдагаваць падзею"
       ]
     },
     "Email body for description (description part)": {
@@ -1878,17 +2135,44 @@
       ]
     },
     "Error": {
-      "\"${ name }\" already exists": [
-        "\"${ name }\" ужо існуе"
+      "${ list } doesn't have a valid email address": [
+        "У ${ list } няма сапраўднага адраса электроннай пошты",
+        "У некаторых кантактаў няма сапраўдных адрасоў электроннай пошты: ${ list }",
+        "У некаторых кантактаў няма сапраўдных адрасоў электроннай пошты: ${ list }",
+        "У некаторых кантактаў няма сапраўдных адрасоў электроннай пошты: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "У ${ list } адсутнічае адрас электроннай пошты",
+        "У некаторых кантактаў адсутнічаюць адрасы электроннай пошты: ${ list }",
+        "У некаторых кантактаў адсутнічаюць адрасы электроннай пошты: ${ list }",
+        "У некаторых кантактаў адсутнічаюць адрасы электроннай пошты: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "У ${ list } ёсць памылковы адрас электроннай пошты",
+        "Некаторыя групы маюць памылковыя адрасы электроннай пошты: ${ list }",
+        "Некаторыя групы маюць памылковыя адрасы электроннай пошты: ${ list }",
+        "Некаторыя групы маюць памылковыя адрасы электроннай пошты: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "У ${ list } адсутнічаюць кантакты",
+        "У некаторых групах адсутнічаюць кантакты: ${ list }",
+        "У некаторых групах адсутнічаюць кантакты: ${ list }",
+        "У некаторых групах адсутнічаюць кантакты: ${ list }"
       ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
-      "A problem occurred, please try again.": [
-        "Узнікла праблема. Паспрабуйце яшчэ раз."
+      "Account does not exist": [
+        "Уліковы запіс не існуе"
       ],
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
+      ],
+      "Already a member of this calendar": [
+        "Ужо з'яўляецца ўдзельнікам гэтага календара"
+      ],
+      "Answer failed to be sent": [
+        "Не ўдалося адправіць адказ"
       ],
       "Authentication canceled.": [
         "Аўтэнтыфікацыя скасавана."
@@ -1899,17 +2183,23 @@
       "Calendar limit reached": [
         "Дасягнута абмежаванне па календары"
       ],
+      "Cancellation failed to be sent": [
+        "Не ўдалося адправіць скасаванне"
+      ],
       "Contact could not be saved": [
         "Не атрымалася захаваць кантакт"
       ],
       "Contact name is too long": [
         "Імя кантакту занадта доўгае"
       ],
+      "Contact signature could not be verified": [
+        "Не атрымалася праверыць подпіс кантакту"
+      ],
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
+      "Decryption error: Decryption of this event's content failed.": [
+        "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -1923,11 +2213,11 @@
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
       ],
-      "Device name does not match": [
-        "Назва прылады не супадае"
-      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
+      ],
+      "Email address disabled": [
+        "Адрас электроннай пошты адключаны"
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -1935,23 +2225,23 @@
       "Email is not valid": [
         "Несапраўдная электронная пошта"
       ],
+      "Ends on date cannot be empty": [
+        "Дата завяршэння не можа быць пустой"
+      ],
+      "Ends on date must be after start time": [
+        "Дата завяршэння павінна быць пазней за час пачатку"
+      ],
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Файл \"${ item.name }\" немагчыма запампаваць па прычыне памылкі \"${ error }\""
+      "Error": [
+        "Памылка"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" ужо спампоўваецца"
+      "Error: ${ errorMessage }": [
+        "Памылка: ${ errorMessage }"
       ],
-      "File cannot be merged with folder": [
-        "Немагчыма аб'яднаць файл з папкай"
-      ],
-      "File selection is already downloading": [
-        "Выбраны файл ужо спампоўваецца"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Папка \"${ name }\" ужо спампоўваецца"
+      "Failed to get original occurrence in series": [
+        "Не ўдалося атрымаць арыгінальнае паўтарэнне ў серыі"
       ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
@@ -1968,11 +2258,14 @@
       "Incorrect mailbox password. Please try again.": [
         "Няправільны пароль паштовай скрыні. Паспрабуйце яшчэ раз."
       ],
-      "Incorrect password. Please try again.": [
-        "Няправільны пароль. Паспрабуйце яшчэ раз."
+      "Interval cannot be empty": [
+        "Інтэрвал не можа быць пустым"
       ],
       "Invalid email address": [
         "Памылковы адрас электроннай пошты"
+      ],
+      "Invalid link to the event": [
+        "Памылковая спасылка на падзею"
       ],
       "Invalid name": [
         "Памылковая назва"
@@ -1982,6 +2275,15 @@
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
+      ],
+      "Invitation failed to be sent": [
+        "Не ўдалося адправіць запрашэнне"
+      ],
+      "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
+        "Ствараць падзеі можна толькі ў інтэрвале паміж ${ minDateString } і ${ maxDateString }"
+      ],
+      "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
+        "Перамяшчаць падзеі можна толькі ў інтэрвале паміж ${ minDateString } і ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
@@ -1998,6 +2300,9 @@
       "Missing signature": [
         "Адсутнічае подпіс"
       ],
+      "Name required": [
+        "Патрабуецца назва"
+      ],
       "No calendars found to import": [
         "Не знойдзены календары для імпартавання"
       ],
@@ -2010,8 +2315,17 @@
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
       ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Ніводны з атрыманых ключоў WKD для карыстальніка несапраўдны для адпраўкі"
+      ],
+      "Not a ${ BRAND_NAME } account": [
+        "Не з'яўляецца ўліковым запісам ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Несапраўдны нумар"
+      ],
+      "Number of occurrences cannot be empty": [
+        "Колькасць паўтарэнняў не можа быць пустой"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "У аднаго з кантактаў няма адраса электроннай пошты: ${ noEmailsContactNamesList }",
@@ -2031,8 +2345,8 @@
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
-      "Please activate your search again": [
-        "Актывуйце пошук яшчэ раз"
+      "Please create an address first.": [
+        "Спачатку стварыце адрас."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Выпраўце вылучаны канфлікт, каб працягнуць.",
@@ -2049,14 +2363,23 @@
       "Primary address key is not decrypted.": [
         "Ключ асноўнага адраса не расшыфраваны."
       ],
-      "Report failed to be sent": [
-        "Не ўдалося адправіць справаздачу"
+      "Primary key is not valid for sending": [
+        "Асноўны ключ несапраўдны для адпраўкі"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Асноўны ключ, атрыманы для карыстальніка ${ BRAND_NAME }, несапраўдны для адпраўкі"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Выдалены дублікат атрымальніка: ${ joinedRecipients }",
+        "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }",
+        "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }",
+        "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
-      "Search failed": [
-        "Не ўдалося знайсці"
+      "Self invitation not allowed": [
+        "Нельга запрасіць самога сябе"
       ],
       "Signature not verified": [
         "Подпіс не правераны"
@@ -2088,6 +2411,12 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ],
+      "Start time must be before end time": [
+        "Час пачатку павінен быць ранейшым за час завяршэння"
+      ],
+      "The address might be misspelled": [
+        "Магчыма, што адрас няправільны"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Памылковая назва папкі. Выберыце іншую назву."
       ],
@@ -2100,26 +2429,8 @@
       "The label name is too long. Please choose a different name.": [
         "Назва меткі занадта доўгая. Выберыце іншую назву."
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Новая рэдакцыя арыгінальнага файла пакуль не запампавана. Паспрабуйце яшчэ раз пазней"
-      ],
-      "The original file has missing active revision": [
-        "У арыгінальным файле адсутнічае актыўная рэдакцыя"
-      ],
-      "The original file has missing hash key": [
-        "У арыгінальным файле адсутнічае хэш-ключ"
-      ],
-      "The original file has missing session key": [
-        "У арыгінальным файле адсутнічае ключ сеансу"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Арыгінальны файл пакуль не запампаваны. Паспрабуйце яшчэ раз пазней"
-      ],
-      "The original folder not found": [
-        "Арыгінальная папка не знойдзена"
-      ],
-      "The original folder or file not found": [
-        "Арыгінальная папка або файл не знойдзены"
+      "The sending key is not valid": [
+        "Несапраўдны ключ адпраўкі"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
@@ -2145,11 +2456,17 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
       ],
+      "Trusted keys are not valid for sending": [
+        "Давераныя ключы несапраўдныя для адпраўкі"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
       "Unknown error": [
         "Невядомая памылка"
+      ],
+      "Validation error": [
+        "Памылка праверкі"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Вы не можаце адправіць ліст больш чым 100 атрымальнікам"
@@ -2163,11 +2480,13 @@
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
-      "Your browser does not support uploading folders": [
-        "Ваш браўзер не падтрымлівае запампоўванне папак"
-      ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Запрошаны адрас не існуе"
       ]
     },
     "Error importing calendar": {
@@ -2208,6 +2527,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -2332,20 +2654,11 @@
       ]
     },
     "Error message": {
-      "Access denied": [
-        "У доступе адмоўлена"
-      ],
-      "Brace yourself till we get the error fixed.": [
-        "Пачакайце, пакуль мы выправім памылку."
-      ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
       ],
-      "Internal server error": [
-        "Унутраная памылка сервера"
-      ],
-      "Not found": [
-        "Не знойдзена"
+      "Invalid URL": [
+        "Памылковы URL-адрас"
       ],
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
@@ -2362,8 +2675,8 @@
       "You may also ${ refresh } or try again later.": [
         "Таксама вы можаце ${ refresh } або паспрабуйце яшчэ раз пазней."
       ],
-      "You may also refresh the page or try again later.": [
-        "Таксама вы можаце абнавіць старонку або паспрабаваць яшчэ раз пазней."
+      "You need an active personal calendar to import events": [
+        "Вам неабходны асабісты актыўны каляндар для імпартавання падзей"
       ]
     },
     "Error notification": {
@@ -2379,6 +2692,24 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Ацэнка з'яўляецца абавязковай"
+      ]
+    },
+    "Event canceled status badge": {
+      "canceled": [
+        "скасавана"
+      ]
+    },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } удзельнік",
+        "${ numberOfAttendees } удзельнікі",
+        "${ numberOfAttendees } удзельнікаў",
+        "${ numberOfAttendees } удзельнікі"
+      ]
+    },
+    "Event info. Organizer name": {
+      "You": [
+        "Вы"
       ]
     },
     "Event invitation error": {
@@ -2423,6 +2754,25 @@
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "Ваш адказ адпраўлены, але падзея ў календары не была абноўлена"
+      ]
+    },
+    "Event popover close button": {
+      "Close popover": [
+        "Закрыць усплывальнае акно"
+      ]
+    },
+    "Event reply": {
+      "maybe": [
+        "магчыма"
+      ],
+      "no": [
+        "не"
+      ],
+      "pending": [
+        "у чаканні"
+      ],
+      "yes": [
+        "так"
       ]
     },
     "Event title": {
@@ -2527,6 +2877,9 @@
       ],
       "Get help": [
         "Атрымаць даведку"
+      ],
+      "Name": [
+        "Назва"
       ]
     },
     "Hint": {
@@ -2589,6 +2942,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "Праграма ${ CALENDAR_APP_NAME } у цяперашні час не падтрымлівае некаторыя тыпы падзей, падрабязнасці і фарматы."
+      ],
+      "vCard versions < 3.0": [
+        "Версіі vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2833,24 +3189,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } спампоўваецца",
-        "${ activeDownloadsCount } спампоўваюцца",
-        "${ activeDownloadsCount } спампоўваюцца",
-        "${ activeDownloadsCount } спампоўваюцца"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } спампоўваецца (${ downloadProgress }%)",
-        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)",
-        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)",
-        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } запампоўваецца (${ uploadProgress }%)",
-        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)",
-        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)",
-        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } адрас электроннай пошты",
         "${ addressCount } адрасы электроннай пошты",
@@ -2871,12 +3209,6 @@
         "${ calendarsToBeMergedCount } аб'яднаныя календары",
         "${ calendarsToBeMergedCount } аб'яднаных календароў",
         "${ calendarsToBeMergedCount } аб'яднаныя календары"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } скасаваны",
-        "${ canceledCount } скасавана",
-        "${ canceledCount } скасавана",
-        "${ canceledCount } скасавана"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } кантакт змяшчае некалькі адрасоў электроннай пошты.",
@@ -2899,39 +3231,6 @@
         "Знойдзена ${ contactsCount } кантактаў",
         "Знойдзена ${ contactsCount } кантакты"
       ],
-      "${ deviceName } (restored)": [
-        "${ deviceName } (адноўлены)"
-      ],
-      "${ doneCount } finished": [
-        "${ doneCount } завершаны",
-        "${ doneCount } завершана",
-        "${ doneCount } завершана",
-        "${ doneCount } завершана"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } спампаваны",
-        "${ doneDownloadsCount } спампавана",
-        "${ doneDownloadsCount } спампавана",
-        "${ doneDownloadsCount } спампавана"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } запампаваны",
-        "${ doneUploadsCount } запампавана",
-        "${ doneUploadsCount } запампавана",
-        "${ doneUploadsCount } запампавана"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } са збоем",
-        "${ errorCount } са збоем",
-        "${ errorCount } са збоем",
-        "${ errorCount } са збоем"
-      ],
-      "${ fileName }: full-size image": [
-        "${ fileName }: відарыс у поўным памеры"
-      ],
-      "${ fileName }: low-resolution preview": [
-        "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
-      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзены ${ groupCounts } групы",
@@ -2950,12 +3249,6 @@
         "${ numGroups } груп кантактаў",
         "${ numGroups } групы кантактаў"
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } прыпынены",
-        "${ pausedCount } прыпынена",
-        "${ pausedCount } прыпынена",
-        "${ pausedCount } прыпынена"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
         "Знойдзены ${ providerFoldersNumLocalized } папкі",
@@ -2973,9 +3266,6 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
-      ],
-      "${ selectedCount } selected": [
-        "Выбрана: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "Выбрана ${ selectedFoldersCount } папка",
@@ -3001,17 +3291,11 @@
         "Выбраны ${ selectedFoldersCountLocalized } метак",
         "Выбраны ${ selectedFoldersCountLocalized } меткі"
       ],
-      "${ speed }/s": [
-        "${ speed }/с"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
         "${ updated } кантактаў паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены."
-      ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } ужо існуе ў гэтым размяшчэнні."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
@@ -3019,17 +3303,26 @@
         "(${ memberCount } удзельнікаў)",
         "(${ memberCount } удзельнікі)"
       ],
-      "A number will be added to the filename": [
-        "Да назвы файла будзе дададзены нумар"
+      "A cancellation email will be sent to removed participants.": [
+        "Ліст пра скасаванне будзе адпраўлены выдаленым удзельнікам."
       ],
-      "A number will be added to the folder name": [
-        "Да назвы папкі будзе дададзены нумар"
+      "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
+        "Ліст пра скасаванне будзе адпраўлены ўдзельнікам падзеі. Ці хочаце вы выдаліць усе падзеі ў гэтай серыі?"
+      ],
+      "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
+        "Ліст пра скасаванне будзе адпраўлены ўдзельнікам падзеі. Ці хочаце вы выдаліць гэту падзею?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
+      ],
+      "Added and removed participants will be notified about all the events in this series.": [
+        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне пра ўсе падзеі ў гэтай серыі."
+      ],
+      "Added and removed participants will be notified.": [
+        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
@@ -3046,62 +3339,32 @@
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
       ],
-      "All your changes will be lost.": [
-        "Усе вашы змены будуць страчаны."
+      "An invitation will be sent to added participants.": [
+        "Дададзеным удзельнікам будзе адпраўлена запрашэнне."
       ],
-      "Also try looking in Trash.": [
-        "Таксама паспрабуйце пашукаць у Сметніцы."
-      ],
-      "An active recovery file": [
-        "Актыўны файл аднаўлення"
+      "An invitation will be sent to the event participants.": [
+        "Удзельнікам падзеі будзе адпраўлена запрашэнне."
       ],
       "and": [
         "і"
       ],
-      "And access it from anywhere": [
-        "І атрымлівайце доступ да яго з любога месца"
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Любы чалавек з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, напрыклад, назву, размяшчэнне або ўдзельнікаў."
       ],
-      "Anyone with this link can access your file.": [
-        "Любы чалавек з гэтай спасылкай зможа атрымаць доступ да вашага файла."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Любы чалавек з гэтай спасылкай зможа атрымаць доступ да вашай папкі."
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце адхіліць змены?"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Вы сапраўды хочаце ачысціць сметніцу і незваротна выдаліць усе элементы?"
-      ],
-      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Вы сапраўды хочаце незваротна выдаліць \"${ itemName }\" са сметніцы?"
-      ],
-      "Are you sure you want to permanently delete selected items from trash?": [
-        "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
-      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
+      ],
       "Calendar side panel": [
         "Бакавая панэль календара"
-      ],
-      "Canceled": [
-        "Скасавана"
-      ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
-      ],
-      "Cannot load links": [
-        "Немагчыма загрузіць спасылкі"
-      ],
-      "Cannot load shared link": [
-        "Немагчыма загрузіць абагуленую спасылку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
@@ -3109,32 +3372,11 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
       ],
-      "Checking signatures": [
-        "Праверка подпісаў"
-      ],
-      "Clear data": [
-        "Ачысціць даныя"
-      ],
-      "Clear encrypted search data": [
-        "Ачысціць пошук зашыфраваных даных"
-      ],
-      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Ачыстка даных браўзера таксама ачысціць індэксаваны пошук на гэтай прыладзе. Неабходна будзе зрабіць паўторную індэксацыю ўсіх файлаў выкарыстоўваючы функцыянальнасць пошуку."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
-      ],
-      "Conflict": [
-        "Канфлікт"
-      ],
-      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Працягнуць выкарыстоўваць ${ DRIVE_APP_NAME } і разблакіраваць дыск пазней"
       ],
       "Country code": [
         "Код краіны"
@@ -3157,65 +3399,29 @@
       "Create in": [
         "Стварыць у"
       ],
-      "Create links and share your files with others.": [
-        "Стварайце спасылкі і абагульвайце свае файлы з іншымі."
-      ],
-      "Create your first folder and start moving your files.": [
-        "Стварыце сваю першую папку і пачніце перамяшчаць туды вашы файлы."
-      ],
-      "Creating": [
-        "Стварэнне"
-      ],
-      "Creating link to file": [
-        "Стварэнне спасылкі на файл"
-      ],
-      "Creating link to folder": [
-        "Стварэнне спасылкі на папку"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
       ],
-      "Decrypting files": [
-        "Расшыфроўка файлаў"
+      "Custom": [
+        "Карыстальніцкі"
       ],
-      "Delete locked drive": [
-        "Выдаліць заблакіраваны дыск",
-        "Выдаліць заблакіраваныя дыскі",
-        "Выдаліць заблакіраваныя дыскі",
-        "Выдаліць заблакіраваныя дыскі"
+      "Custom daily": [
+        "Штодзень (карыстальніцкае)"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
+      "Custom monthly": [
+        "Штомесяц (карыстальніцкае)"
       ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Лічбавы подпіс правераны. Гэта папка бяспечна запампавана ${ emailAddress }."
+      "Custom weekly": [
+        "Штотыдзень (карыстальніцкае)"
       ],
-      "double your storage": [
-        "падвоіць ваша сховішча"
+      "Custom yearly": [
+        "Штогод (карыстальніцкае)"
       ],
-      "Download canceled": [
-        "Спампоўванне скасавана"
+      "Daily": [
+        "Штодзень"
       ],
-      "Download failed": [
-        "Не ўдалося спампаваць"
-      ],
-      "Download failed due to ${ error }": [
-        "Не ўдалося спампаваць па прычыне ${ error }"
-      ],
-      "Download finished": [
-        "Спампоўванне завершана"
-      ],
-      "Download of ${ downloadFileName } will be aborted": [
-        "Спампоўванне файла ${ downloadFileName } было перарвана"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Спампоўванне прыпынена па прычыне праблем са злучэннем; яно будзе ўзноўлена аўтаматычна"
-      ],
-      "Downloaded": [
-        "Спампавана"
-      ],
-      "Downloading": [
-        "Спампоўваецца"
+      "Discard changes?": [
+        "Адхіліць змены?"
       ],
       "Drop the file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -3228,21 +3434,6 @@
       ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
-      ],
-      "Enable drive search": [
-        "Уключыць пошук на дыску"
-      ],
-      "Enabling drive search": [
-        "Уключэнне пошуку на дыску"
-      ],
-      "Encrypted search is here": [
-        "Зашыфраваны пошук тут"
-      ],
-      "End-to-end encrypted": [
-        "Зашыфравана скразным метадам"
-      ],
-      "Enter password": [
-        "Увядзіце пароль"
       ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
@@ -3259,68 +3450,17 @@
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Засталося часу: ${ estimatedMinutes } хвіліна",
-        "Засталося часу: ${ estimatedMinutes } хвіліны",
-        "Засталося часу: ${ estimatedMinutes } хвілін",
-        "Засталося часу: ${ estimatedMinutes } хвіліны"
+      "Existent and added participants will be notified.": [
+        "Існуючыя і дададзеныя ўдзельнікі атрымаюць апавяшчэнні."
       ],
-      "Estimated time remaining: Less than a minute": [
-        "Прыблізна засталося часу: менш за хвіліну"
+      "Existent and removed participants will be notified.": [
+        "Існуючыя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
-      "Estimating time remaining...": [
-        "Прыблізна засталося часу..."
-      ],
-      "Failed": [
-        "Збой"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Не ўдалося згенерыраваць бяспечную спасылку. Паспрабуйце яшчэ раз пазней."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Не ўдалося адкрыць бяспечную спасылку. Прычына: ${ error }"
-      ],
-      "File \"${ name }\" was deleted during download": [
-        "Файл \"${ name }\" быў выдалены падчас спампоўвання"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Мы не можам праверыць хто запампаваў ${ fileName }."
-      ],
-      "File will not be uploaded": [
-        "Файл не будзе запампаваны"
-      ],
-      "Finalizing": [
-        "Завяршэнне"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Папка \"${ link.name }\" была выдалена падчас спампоўвання"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Змесціва папкі будзе аб'яднана ў адну папку"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Мы не можам праверыць хто запампаваў ${ fileName }."
-      ],
-      "Folder will not be uploaded": [
-        "Папка не будзе запампавана"
-      ],
-      "Folders you sync from your computer will appear here.": [
-        "Папкі, якія сінхранізаваныя з камп'ютара, з'явяцца тут."
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Абмяжуйце аперацыі, якія звязаны з праглядам трансляцый і інтэнсіўным спажываннем памяці, або запампоўвайце свае даныя пакетамі меншага аб'ёму."
+      "Existent, added and removed participants will be notified.": [
+        "Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
-      ],
-      "Free forever": [
-        "Бясплатна назаўсёды"
       ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
@@ -3328,23 +3468,14 @@
       "Free up some space or contact your administrator.": [
         "Вызваліце ​​месца або звяжыцеся з вашым адміністратарам."
       ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 500 МБ! Гэта можна зрабіць ужо сёння."
-      ],
-      "Go ahead, upload a file": [
-        "Працягнуць і запампаваць файл"
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Перайдзіце ў раздзел \"Мае файлы\" і спачатку запампуйце якія-небудзь файлы."
+      "Frequency modifications will be lost.": [
+        "Змяненні перыядычнасці будуць страчаны."
       ],
       "Group assignment applied": [
         "Прызначэнне групы ўжыта"
       ],
       "here": [
         "тут"
-      ],
-      "How does encrypted search work?": [
-        "Як працуе зашыфраваны пошук?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -3354,9 +3485,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
-      ],
-      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
@@ -3385,17 +3513,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Індэксаванне элементаў ${ esProgress } з ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Індэксаванне вынікаў пошуку…"
-      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
-      ],
-      "Initializing": [
-        "Ініцыялізацыя"
       ],
       "Internet connection lost": [
         "Злучэнне з інтэрнэтам страчана"
@@ -3405,18 +3524,6 @@
       ],
       "Internet connection restored.": [
         "Злучэнне з інтэрнэтам адноўлена."
-      ],
-      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
-      ],
-      "Items in the trash will stay here until you delete them permanently": [
-        "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Гэта таксама проста, як перацягванне або выбар файлаў"
-      ],
-      "It’s easy and secure": [
-        "Гэта лёгка і бяспечна"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
@@ -3439,8 +3546,8 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
-      "Link owner has the password": [
-        "Пароль ёсць ва ўладальніка спасылкі"
+      "Link created": [
+        "Спасылка створана"
       ],
       "Loading": [
         "Загрузка"
@@ -3448,47 +3555,26 @@
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
       ],
-      "Loading link": [
-        "Загрузка спасылкі"
+      "Loading event": [
+        "Загрузка падзеі"
       ],
-      "Loading links": [
-        "Загрузка спасылак"
+      "Loading events": [
+        "Загрузка падзей"
       ],
-      "Loading preview": [
-        "Загрузка папярэдняга прагляду"
-      ],
-      "Loading...": [
-        "Загрузка..."
-      ],
-      "Makes your account safer": [
-        "Зрабіце свой уліковы запіс больш бяспечным"
+      "Manage your calendars": [
+        "Кіраваць сваімі календарамі"
       ],
       "Merged": [
         "Аб'яднана"
       ],
-      "More": [
-        "Больш"
-      ],
-      "Moving files": [
-        "Перамяшчэнне файлаў"
-      ],
-      "My Links": [
-        "Мае спасылкі"
+      "Monthly ${ onDayString }": [
+        "Штомесяц ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Неабходна абагуліць файл? Тады скарыстайцеся ${ DRIVE_APP_NAME },\nсамым бяспечным спосабам абагулення, захавання і сінхранізацыі вашых файлаў."
-      ],
-      "Network issue": [
-        "Праблема з сеткай"
-      ],
       "New": [
         "Новы"
-      ],
-      "No": [
-        "Не"
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
@@ -3496,20 +3582,14 @@
       "No email address": [
         "Няма адраса электроннай пошты"
       ],
-      "No files or folders in trash": [
-        "У сметніцы няма файлаў або папак"
-      ],
       "No group found": [
         "Група не знойдзена"
       ],
       "No results found": [
         "Нічога не знойдзена"
       ],
-      "No synced computers": [
-        "Няма сінхранізаваных камп'ютараў"
-      ],
-      "No synced folders": [
-        "Няма сінхранізаваных папак"
+      "None of the participants can be notified about your changes:": [
+        "Ніхто з удзельнікаў не можа атрымаць апавяшчэнне аб вашых зменах:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ніводны з запампаваных ключоў несапраўдны для шыфравання. Для адпраўкі паведамленняў на гэты адрас, запампуйце сапраўдны ключ або адключыце функцыю \"Шыфраваць лісты\"."
@@ -3517,41 +3597,14 @@
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Не ўсе файлы былі перададзены. Паспрабуйце спампаваць або запампаваць файлы яшчэ раз."
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "Паўтарэнні, якія былі раней абноўлены арганізатарам будуць захаваны, але некаторыя з вашых адказаў будуць страчаны."
       ],
-      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Нататка: даныя ўсё яшчэ могуць заставацца даступнымі лакальна на прыладзе, дзе ўсталяваны ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Тут пакуль нічога няма"
-      ],
-      "of": [
-        "з"
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна па прычыне таго, што нядаўна было скіданне пароля."
+      "Occurrences previously updated by the organizer will be kept.": [
+        "Паўтарэнні, якія былі раней абноўлены арганізатарам, будуць захаваны."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвал",
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы",
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалаў",
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы"
-      ],
-      "Only the people with the link and the password can access this file.": [
-        "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да файла."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да папкі."
-      ],
-      "Paused": [
-        "Прыпынена"
-      ],
-      "Permanently delete all files in your locked drive": [
-        "Незваротна выдаліць усе файлы на вашым заблакіраваным дыску"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
@@ -3559,14 +3612,14 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME аўтаматычна адпраўляе паведамленні з выкарыстаннем бягучага рэжыму рэдактара."
       ],
-      "Please enter the password to decrypt and view content.": [
-        "Увядзіце пароль для расшыфроўкі і прагляду змесціва."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please remove the duplicates and try again.": [
+        "Выдаліце дублікаты і паспрабуйце яшчэ раз."
       ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
@@ -3580,62 +3633,26 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupName }."
       ],
-      "Please wait till your changes are synced with the server.": [
-        "Пачакайце, пакуль вашы змены сінхранізуюцца з серверам."
-      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія можна паўторна падпісаць пры дапамозе асноўнага ключа шыфравання."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
       ],
-      "Preparing link to file": [
-        "Падрыхтоўка спасылкі на файл"
-      ],
-      "Preparing link to folder": [
-        "Падрыхтоўка спасылкі на папку"
-      ],
-      "Preview failed to be loaded": [
-        "Не ўдалося загрузіць папярэдні прагляд"
-      ],
-      "Preview for this file type is not supported": [
-        "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
+      "Previous modifications on this series will be lost.": [
+        "Папярэднія змяненні ў гэтай серыі будуць страчаны."
       ],
       "Primary": [
         "Асноўны"
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Прыватны пошук уключаны. Зараз вы можаце закрыць гэта акно і шукаць у файлах і папках."
-      ],
-      "Queued": [
-        "У чарзе"
-      ],
-      "recommended browser": [
-        "рэкамендаваны браўзер"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
-      ],
-      "Recovery process might take some time.": [
-        "Працэс аднаўлення зойме некаторы час."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
-      "Report has been sent": [
-        "Скарга была адпраўлена"
-      ],
-      "Restored files ${ formattedDate }": [
-        "Файлы адноўлены ${ formattedDate }"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Немагчыма ўключыць пошук у гэтым браўзеры"
-      ],
-      "Search Enabled": [
-        "Пошук уключаны"
-      ],
-      "Select an uploaded file or folder and create a link to it.": [
-        "Выберыце запампаваны файл або папку і стварыце спасылку на іх."
+      "Removed participants will be notified.": [
+        "Выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
@@ -3655,62 +3672,44 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць зашыфраваныя лісты карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя з PGP сэрвісы."
       ],
-      "Share files with links": [
-        "Абагуліць файлы з дапамогай спасылак"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Агульнадаступная спасылка для ${ boldNameText }"
-      ],
-      "Shared link not found": [
-        "Абагуленая спасылка не знойдзена"
-      ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
-      ],
-      "Signature check will be ignored": [
-        "Праверка подпісу была праігнаравана"
-      ],
-      "Signature issue": [
-        "Праблема з подпісам"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Не ўдалося спампаваць некаторыя файлы. Паспрабуйце спампаваць файлы яшчэ раз."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Не ўдалося запампаваць некаторыя файлы. Паспрабуйце запампаваць файлы яшчэ раз."
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да вашых файлаў. ${ StartRecoveryButton }"
-      ],
-      "Something went wrong, please try again later.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
+      "Some of your answers to occurrences previously updated by the organizer will be lost.": [
+        "Некаторыя вашы адказы на перыядычныя падзеі, якія абноўлены арганізатарам, будуць страчаны."
       ],
       "support team": [
         "каманда падтрымкі"
       ],
-      "Swiss encrypted file storage": [
-        "Швейцарскае зашыфраванае файлавае сховішча"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
-      ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Перад пачаткам экспартавання праграме неабходна выканаць лакальную расшыфроўку вашых кантактаў. Пасля завяршэння працэсу будзе згенерыраваны файл VCF, які вы зможаце спампаваць."
       ],
-      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
+      "The following participants cannot be notified about your changes:": [
+        "Наступныя ўдзельнікі не атрымалі апавяшчэнне аб вашых зменах:"
       ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
+      "The organizer cannot be notified that you decline the invitation:": [
+        "Немагчыма апавясціць арганізатара, што вы адхілілі запрашэнне:"
       ],
-      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        "Яшчэ ёсць файлы, якія неабходна перадаць. Закрыццё менеджара перадачы завершыць усе аперацыі."
+      "The organizer cannot be notified that you want to change your answer:": [
+        "Немагчыма апавясціць арганізатара, што вы хочаце змяніць свой адказ:"
       ],
-      "There are no files yet": [
-        "Пакуль у вас няма файлаў"
+      "The organizer could not be notified that you changed your answer:": [
+        "Немагчыма апавясціць арганізатара, што вы змянілі свой адказ:"
+      ],
+      "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
+        "Арганізатар абнавіў некаторыя падзеі ў гэтай серыі. Змяненне календара пакуль не падтрымліваецца для дадзенага тыпу перыядычных падзей."
+      ],
+      "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Арганізатар гэтай падзеі атрымае апавяшчэнне, што вы адхілілі запрашэнне. Ці хочаце вы выдаліць гэту падзею?"
+      ],
+      "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Арганізатар гэтай падзеі не атрымае апавяшчэнне, што вы адхілілі запрашэнне, паколькі вы не можаце адпраўляць лісты з запрошанага адраса. Ці хочаце вы ўсё роўна выдаліць гэту падзею?"
+      ],
+      "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
+        "Арганізатар гэтай серыі падзей атрымае апавяшчэнне, што вы адхілілі запрашэнне. Ці хочаце вы выдаліць усе падзеі ў гэтай серыі?"
+      ],
+      "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
+        "Арганізатар гэтай серыі падзей не атрымае апавяшчэнне, што вы адхілілі запрашэнне, паколькі вы не можаце адпраўляць лісты з запрошанага адраса. Ці хочаце вы ўсё роўна выдаліць усе падзеі ў гэтай серыі?"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
@@ -3718,11 +3717,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
       ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "Гэта падзея была абноўлена арганізатарам. Ці хочаце вы змяніць свой адказ толькі для гэтага паўтарэння ў гэтай серыі?"
       ],
-      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
-        "Гэты файл мог быць выдалены, перамешчаны або яго зрабілі недаступным. Паспрабуйце звязацца з уладальнікам файла."
+      "This event has been updated by the organizer. Would you like to delete this event?": [
+        "Гэта падзея была абноўлена арганізатарам. Ці хочаце вы выдаліць гэту падзею?"
+      ],
+      "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
+        "Гэта падзея была абноўлена. Арганізатар атрымае апавяшчэнне, што вы адхілілі запрашэнне. Ці хочаце вы выдаліць гэту падзею?"
+      ],
+      "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
+        "Гэта падзея была абноўлена. Арганізатар не атрымае апавяшчэнне, што вы адхілілі запрашэнне, паколькі вы не можаце адпраўляць лісты з запрошанага адраса. Ці хочаце вы ўсё роўна выдаліць гэту падзею?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -3732,36 +3737,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Спасылка створана ў папярэдняй версіі Drive, таму яе немагчыма змяніць. Для змянення налад, выдаліце гэту спасылку і стварыце новую."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Гэта спасылка будзе адключана незваротна. Ніхто не зможа атрымаць доступ да вашага файла па гэтай спасылцы. Каб зноў абагуліць гэты файл, вам спатрэбіцца новая спасылка."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Гэта спасылка будзе адключана незваротна. Ніхто не зможа атрымаць доступ да вашай папкі па гэтай спасылцы. Каб зноў абагуліць гэту папку, вам спатрэбіцца новая спасылка."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Гэта выдаліць спасылку і закрые доступ да вашага файла або папкі для ўсіх у каго яна ёсць.",
-        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
-        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
-        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
-      ],
-      "This will overwrite the existing file": [
-        "Гэта перазапіша існуючы файл"
-      ],
-      "This will overwrite the existing folder": [
-        "Гэта перазапіша існуючую папку"
-      ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
-      ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а мы вас апавясцім, калі індэксацыя будзе завершана."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -3778,65 +3753,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Перадача скасавана для файла \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Перадача скасавана для папкі \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Перадача прапушчана для файла ${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Перадача прапушчана для папкі \"${ folderName }\""
-      ],
-      "Trash": [
-        "Сметніца"
-      ],
-      "Try searching by file name, date, or type.": [
-        "Паспрабуйце пошук па назве файла, даце або тыпу."
-      ],
-      "Unknown error": [
-        "Невядомая памылка"
-      ],
-      "Unlock drive to recover files": [
-        "Разблакіраваць дыск для аднаўлення файлаў"
-      ],
-      "Unsaved changes": [
-        "Незахаваныя змены"
-      ],
-      "Unsupported file": [
-        "Файл не падтрымліваецца"
-      ],
-      "Updating drive search...": [
-        "Абнаўленне пошуку на дыску..."
+      "Update recurring event": [
+        "Абнавіць перыядычную падзею"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
-      ],
-      "Uploaded": [
-        "Запампавана"
-      ],
-      "Uploading": [
-        "Запампоўванне"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Запампоўванне сотняў файлаў адразу можа паўплываць на прадукцыйнасць."
-      ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
-        "Выкарыстоўвайце настольную версію Drive для сінхранізацыі папак на вашым камп'ютары з ${ DRIVE_APP_NAME }. Файлы з'явяцца тут і будуць даступны з любога месца. ${ LearnMore }"
-      ],
-      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
-      ],
-      "Way to go, you’ve just doubled your free storage!": [
-        "Так трымаць! Мы толькі што падвоілі ваша бясплатнае сховішча."
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Мы не можам праверыць хто запампаваў ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Мы апавясцім вас пра завяршэнне імпартавання."
@@ -3847,17 +3768,29 @@
       "Week": [
         "Тыдзень"
       ],
-      "What do you want to do?": [
-        "Што вы хочаце зрабіць?"
-      ],
-      "What would you like to do?": [
-        "Што вы хочаце зрабіць?"
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "З ${ DRIVE_APP_NAME } вашы даныя абаронены з дапамогай скразнога шыфравання. Толькі вы зможаце расшыфраваць іх."
+      "Which event would you like to delete?": [
+        "Якую падзею вы хочаце выдаліць?"
+      ],
+      "Which event would you like to update?": [
+        "Якую падзею вы хочаце абнавіць?"
+      ],
+      "Would you like to change your answer for all the events in this series?": [
+        "Ці хочаце вы змяніць свой адказ для ўсіх падзей у гэтай серыі?"
+      ],
+      "Would you like to continue anyway?": [
+        "Ці хочаце вы ўсё роўна працягнуць?"
+      ],
+      "Would you like to delete all the events in this series?": [
+        "Ці хочаце вы выдаліць усе падзеі ў гэтай серыі?"
+      ],
+      "Would you like to delete the event anyway?": [
+        "Ці хочаце вы ўсё роўна выдаліць гэту падзею?"
+      ],
+      "Would you like to delete this event?": [
+        "Ці хочаце вы выдаліць гэту падзею?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
@@ -3865,11 +3798,17 @@
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
       ],
-      "Would you like to restore your files?": [
-        "Ці хочаце вы аднавіць свае файлы?"
+      "Would you like to update all events in this series?": [
+        "Ці хочаце вы абнавіць усе падзеі ў гэтай серыі?"
       ],
-      "Yes": [
-        "Так"
+      "Would you like to update this event?": [
+        "Ці хочаце вы абнавіць гэту падзею?"
+      ],
+      "Yearly": [
+        "Штогод"
+      ],
+      "You already joined this calendar": [
+        "Вы ўжо далучаны да гэтага календара"
       ],
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
@@ -3889,11 +3828,11 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
-      "You cannot undo this action.": [
-        "Гэта дзеянне немагчыма адрабіць."
+      "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
+        "Вы паўторна актывавалі свае ключы і цяпер можаце расшыфраваць падзеі, якія былі звязаны з наступнымі календарамі."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "У вас яшчэ ёсць час (засталося дзён: ${ expiresInDays }), каб атрымаць прывітальны бонус у 500 МБ і "
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Мінулы раз вы адхілілі запрашэнне. Папрасіце ўладальніка адправіць яго паўторна"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы дасягнулі ${ spaceDisplayed }% ёмістасці сховішча. ${ freeUpMessage } ${ upgradeLink }"
@@ -3903,6 +3842,24 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
+      ],
+      "You will update all the events in this series. Added and removed participants will be notified.": [
+        "Вы абновіце ўсе падзеі ў гэтай серыі. Дадзеныя або выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
+      ],
+      "You will update all the events in this series. An invitation will be sent to the event participants.": [
+        "Вы абновіце ўсе падзеі ў гэтай серыі. Удзельнікам падзеі будзе адпраўлена запрашэнне."
+      ],
+      "You will update all the events in this series. Existent and added participants will be notified.": [
+        "Вы абновіце ўсе падзеі ў гэтай серыі. Існуючыя і дададзеныя ўдзельнікі атрымаюць апавяшчэнне."
+      ],
+      "You will update all the events in this series. Existent and removed participants will be notified.": [
+        "Вы абновіце ўсе падзеі ў гэтай серыі. Існуючыя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
+      ],
+      "You will update all the events in this series. Existent, added and removed participants will be notified.": [
+        "Вы абновіце ўсе падзеі ў гэтай серыі. Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
+      ],
+      "You will update all the events in this series. Removed participants will be notified.": [
+        "Вы абновіце ўсе падзеі ў гэтай серыі. Выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень, лісты больш не будуць трапляць у паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -3919,8 +3876,11 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш бягучы браўзер не падтрымлівае спампоўванне вялікіх файлаў па прычыне недаступнасці службы Service Workers. Гэта можа прывесці да завісання браўзера. Скарыстайцеся апошняй версіяй ${ recommendedBrowser } і паспрабуйце яшчэ раз."
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
+        "Ваш адрас адключаны. Немагчыма адправіць ліст са скасаваннем удзельнікам падзеі. Ці хочаце вы ўсё роўна выдаліць усе падзеі ў гэтай серыі?"
+      ],
+      "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
+        "Ваш адрас адключаны. Немагчыма адправіць ліст са скасаваннем удзельнікам падзеі. Ці хочаце вы ўсё роўна выдаліць гэту падзею?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
@@ -3928,11 +3888,8 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Вашы файлы больш недаступны па прычыне скідання пароля. Для аднаўлення доступу, паўторна запампуйце стары ключ шыфравання. ${ KeyReactivationButton }"
-      ],
-      "Your files will be encrypted and then saved.": [
-        "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны."
+      "Your events will be encrypted and then saved.": [
+        "Вашы падзеі будуць зашыфраваны і захаваны."
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
@@ -3943,11 +3900,8 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
       ],
-      "Your previous password": [
-        "Ваш папярэдні пароль"
-      ],
-      "Your previous recovery phrase": [
-        "Ваша папярэдняя фраза аднаўлення"
+      "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
+        "Падобна, што ваш часавы пояс змяніўся на ${ timezone }. Вы сапраўды хочаце абнавіць налады вашага часавога пояса?"
       ]
     },
     "Info on errors": {
@@ -3955,30 +3909,66 @@
         "Націсніце, каб даведацца падрабязнасці"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "атрыбуты файла"
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Толькі прагляд"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Запрасіце іншых карыстальнікаў з уліковым запісам ${ BRAND_NAME } для прагляду або рэдагавання падзей у вашым календары."
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "У некаторых вашых календарах не будуць паказвацца падрабязнасці пра падзеі, якія створаны раней."
       ],
-      "file data": [
-        "даныя файла"
+      "Your calendars will not show details of previously created events.": [
+        "У вашых календарах не будуць паказвацца падрабязнасці пра падзеі, якія створаны раней."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Гэта звязана з тым, што ваш пароль быў нядаўна скінуты без выкарыстання метаду аднаўлення."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Вы можаце аднавіць вашы зашыфраваныя даныя з дапамогай файла аднаўлення, фразы аднаўлення або вашага старога пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Абагуленне календара было адключана па прычыне нядаўняга скідання вашага пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Вы можаце паўторна абагуліць вашы календары ў наладах."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі",
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікаў",
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі"
       ],
-      "file data key": [
-        "ключ даных файла"
+      "Creating invites in a shared calendar is not allowed": [
+        "Не дазваляецца стварэнне запрашэнняў у абагуленым календары"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Доступ"
       ],
-      "file data order": [
-        "парадак даных файла"
-      ],
-      "hash key": [
-        "хэш-ключ"
-      ],
-      "keys": [
-        "ключы"
-      ],
-      "name": [
-        "назва"
-      ],
-      "thumbnail": [
-        "мініяцюра"
+      "Label (optional)": [
+        "Метка (неабавязкова)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Дадаць метку"
       ]
     },
     "Key badge": {
@@ -4001,15 +3991,14 @@
         "Давераны"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Як гэта зрабіць"
+      ]
+    },
     "Label": {
-      "# of downloads": [
-        "Колькасць спампоўванняў"
-      ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
-      ],
-      "(Expired)": [
-        "(Пратэрмінавана)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паўтарыце спробу пазней.)"
@@ -4023,23 +4012,17 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "All day": [
+        "Увесь дзень"
+      ],
+      "All-day event notifications": [
+        "Апавяшчэнні пра падзеі на ўвесь дзень"
+      ],
       "App password": [
         "Пароль праграмы"
       ],
-      "Apply to all duplicated files": [
-        "Ужыць да ўсіх дублікатаў файлаў"
-      ],
-      "Apply to all duplicated folders": [
-        "Ужыць да ўсіх дублікатаў папак"
-      ],
-      "Apply to all unverified items": [
-        "Ужыць да ўсіх неправераных элементаў"
-      ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
-      ],
-      "Audio file": [
-        "Аўдыяфайл"
       ],
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
@@ -4065,14 +4048,8 @@
       "Calendars": [
         "Календары"
       ],
-      "Cancel download": [
-        "Скасаваць спампоўванне"
-      ],
       "Category": [
         "Катэгорыя"
-      ],
-      "Child sexual abuse material": [
-        "Матэрыялы з дзіцячай парнаграфіяй"
       ],
       "City": [
         "Горад"
@@ -4080,11 +4057,11 @@
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
+      "Color": [
+        "Колер"
+      ],
       "Colors": [
         "Колеры"
-      ],
-      "Comment": [
-        "Каментарый"
       ],
       "Contacts": [
         "Кантакты"
@@ -4092,50 +4069,23 @@
       "Copy": [
         "Капіяваць"
       ],
-      "Copyright infringement": [
-        "Парушэнне аўтарскіх правоў"
-      ],
       "Country": [
         "Краіна"
       ],
-      "Create ${ BRAND_NAME } account": [
-        "Стварыць уліковы запіс ${ BRAND_NAME }"
-      ],
-      "Create a share link": [
-        "Стварыць абагуленую спасылку"
-      ],
-      "Created": [
-        "Створана"
+      "Date and time": [
+        "Дата і час"
       ],
       "Delete": [
         "Выдаліць"
       ],
-      "Delete drive?": [
-        "Выдаліць дыск?",
-        "Выдаліць дыскі?",
-        "Выдаліць дыскі?",
-        "Выдаліць дыскі?"
-      ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
       ],
-      "Deleted": [
-        "Выдалена"
-      ],
-      "Device": [
-        "Прылада"
-      ],
-      "Device name": [
-        "Назва прылады"
+      "Description": [
+        "Апісанне"
       ],
       "Don't ask again": [
         "Больш не пытаць"
-      ],
-      "Download anyway": [
-        "Усё роўна спампаваць"
-      ],
-      "Downloading ${ percentageValue }%": [
-        "Спампавана ${ percentageValue }%"
       ],
       "Email": [
         "Электронная пошта"
@@ -4170,14 +4120,17 @@
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
-      "Enter device name": [
-        "Увядзіце назву прылады"
+      "Ends": [
+        "Завяршаецца"
       ],
-      "Expired": [
-        "Пратэрмінавана"
+      "Event duration": [
+        "Працягласць падзеі"
       ],
-      "Expires": [
-        "Дзейнічае да"
+      "Event notifications": [
+        "Апавяшчэнні пра падзею"
+      ],
+      "Event title": [
+        "Загаловак падзеі"
       ],
       "Export contacts": [
         "Экспартаваць кантакты"
@@ -4185,20 +4138,11 @@
       "Extended address": [
         "Пашыраны адрас"
       ],
-      "File": [
-        "Файл"
-      ],
-      "File name": [
-        "Назва файла"
-      ],
-      "Folder": [
-        "Папка"
-      ],
       "Folder location": [
         "Размяшчэнне папкі"
       ],
-      "Folder name": [
-        "Назва папкі"
+      "Frequency": [
+        "Перыядычнасць"
       ],
       "From: ${ from }": [
         "Ад: ${ from }"
@@ -4217,9 +4161,6 @@
       ],
       "I understand the risk": [
         "Я разумею рызыку"
-      ],
-      "Image": [
-        "Відарыс"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -4260,17 +4201,8 @@
       "Main": [
         "Галоўная"
       ],
-      "Malware": [
-        "Шкодныя праграмы"
-      ],
       "Manage categories": [
         "Кіраванне катэгорыямі"
-      ],
-      "Merge a folder": [
-        "Аб'яднаць папку"
-      ],
-      "Modified": [
-        "Зменена"
       ],
       "Move to Archive": [
         "Перамясціць у Архіў"
@@ -4284,11 +4216,11 @@
       "Navigation": [
         "Навігацыя"
       ],
-      "Never": [
-        "Ніколі"
-      ],
       "Notification": [
         "Апавяшчэнне"
+      ],
+      "Notifications": [
+        "Апавяшчэнні"
       ],
       "OK": [
         "Добра"
@@ -4299,8 +4231,20 @@
       "Operating system version": [
         "Версія аперацыйнай сістэмы"
       ],
-      "Other": [
-        "Іншае"
+      "Optional": [
+        "Неабавязкова"
+      ],
+      "Organizer": [
+        "Арганізатар"
+      ],
+      "participant": [
+        "удзельнік",
+        "удзельнікі",
+        "удзельнікаў",
+        "удзельнікі"
+      ],
+      "Participants": [
+        "Удзельнікі"
       ],
       "Password": [
         "Пароль"
@@ -4311,9 +4255,6 @@
       "Phone number": [
         "Нумар тэлефона"
       ],
-      "Please provide full details to help us take appropriate action": [
-        "Забяспечце нас падрабязнымі звесткамі, каб мы змаглі прыняць адпаведныя меры"
-      ],
       "Port": [
         "Порт"
       ],
@@ -4323,65 +4264,29 @@
       "Postal code": [
         "Паштовы індэкс"
       ],
-      "Protect with password": [
-        "Абараніць паролем"
-      ],
       "Public keys": [
         "Публічныя ключы"
       ],
       "Region": [
         "Вобласць"
       ],
-      "Replace file": [
-        "Замяніць файл"
+      "Repeat every": [
+        "Паўтараць кожны"
       ],
-      "Replace folder": [
-        "Замяніць папку"
-      ],
-      "Report": [
-        "Справаздача"
+      "Repeat on": [
+        "Паўтараць у"
       ],
       "Reveal password": [
         "Паказаць пароль"
       ],
-      "Select type of abuse": [
-        "Выберыце тып парушэння"
-      ],
-      "Set expiration date": [
-        "Задаць тэрмін дзеяння"
-      ],
-      "Set recovery method": [
-        "Задаць метад аднаўлення"
-      ],
       "Sign emails": [
         "Падпісваць лісты"
-      ],
-      "Size": [
-        "Памер"
-      ],
-      "Skip file": [
-        "Прапусціць файл"
-      ],
-      "Skip folder": [
-        "Прапусціць папку"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "Stolen data": [
-        "Скрадзеныя даныя"
       ],
       "Street address": [
         "Вуліца"
       ],
       "System information": [
         "Сістэмная інфармацыя"
-      ],
-      "Text": [
-        "Тэкст"
-      ],
-      "This will permanently delete all files in your locked drive.": [
-        "Гэта незваротна выдаліць усе файлы на вашым заблакіраваным дыску."
       ],
       "To: ${ to }": [
         "Каму: ${ to }"
@@ -4392,35 +4297,14 @@
       "Toolbar": [
         "Панэль інструментаў"
       ],
-      "Type": [
-        "Тып"
-      ],
-      "Unknown file": [
-        "Невядомы файл"
-      ],
-      "Unlock drive": [
-        "Разблакіраваць дыск"
-      ],
-      "Unlock drive (recommended)": [
-        "Разблакіраваць дыск (рэкамендавана)"
-      ],
-      "Unlock later": [
-        "Разблакіраваць пазней"
-      ],
-      "Upload anyway": [
-        "Запампаваць усё роўна"
-      ],
       "Upload picture": [
         "Запампаваць малюнак"
       ],
-      "Upload your first file": [
-        "Запампуйце ваш першы файл"
+      "URL": [
+        "URL-адрас"
       ],
       "Verification code": [
         "Праверачны код"
-      ],
-      "Video file": [
-        "Відэафайл"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -4428,8 +4312,8 @@
       "Wonderful": [
         "Цудоўна"
       ],
-      "Yes, I want to permanently delete\nmy old files": [
-        "Так, я хачу незваротна выдаліць\nмае старыя файлы"
+      "Your calendar URL": [
+        "URL-адрас для вашага календара"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -4481,11 +4365,20 @@
       ]
     },
     "Link": {
+      "Calendars": [
+        "Календары"
+      ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "My calendars": [
+        "Мае календары"
+      ],
+      "Other calendars": [
+        "Іншыя прагляды"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
@@ -4493,17 +4386,21 @@
       "Request an invite": [
         "Запытаць запрашэнне"
       ],
-      "Shared": [
-        "Абагулены"
-      ],
-      "Trash": [
-        "Сметніца"
-      ],
       "Upgrade account": [
         "Палепшыць уліковы запіс"
       ],
       "What’s this?": [
         "Што гэта?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Адкрыць у ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Што ўяўляе сабой метад аднаўлення?"
       ]
     },
     "Loading info": {
@@ -4559,6 +4456,12 @@
       ]
     },
     "Message": {
+      "Fw:": [
+        "Пераслаць:"
+      ],
+      "Re:": [
+        "Адказаць:"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд мінуў. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
       ]
@@ -4576,7 +4479,34 @@
         "Звычайны тэкст"
       ]
     },
+    "Modal action": {
+      "Close": [
+        "Закрыць"
+      ],
+      "Manage calendars": [
+        "Кіраванне календарамі"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } абагуліў свой каляндар ${ boldCalendarName } з вамі."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Далучыцца да календара"
+      ],
+      "Unable to join more calendars": [
+        "Немагчыма далучыць больш календароў"
+      ]
+    },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Немагчыма дадаць больш календароў"
+      ],
       "How to import calendars from another service": [
         "Як імпартаваць календары з іншага сэрвісу"
       ],
@@ -4594,6 +4524,156 @@
       ],
       "How to import emails from Yahoo": [
         "Як імпартаваць лісты з Yahoo"
+      ],
+      "Share calendar": [
+        "Абагулены каляндар"
+      ],
+      "Time zone changed": [
+        "Часавы пояс зменены"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Дадаць каляндар"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Кожны ${ interval } месяц ${ onDayString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }",
+        "Кожных ${ interval } месяцаў ${ onDayString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Кожны ${ interval } месяц ${ onDayString } а ${ timesString }",
+        "Кожныя ${ interval } месяцы ${ onDayString } а ${ timesString }",
+        "Кожных ${ interval } месяцаў ${ onDayString } а ${ timesString }",
+        "Кожныя ${ interval } месяцы ${ onDayString } а ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Кожны ${ interval } месяц ${ onDayString }, ${ untilString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў ${ onDayString }, ${ untilString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Штомесяц ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Штомесяц ${ onDayString } а ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Штомесяц ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "у ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "у першую пятніцу месяца"
+      ],
+      "on the first Monday": [
+        "у першы панядзелак месяца"
+      ],
+      "on the first Saturday": [
+        "у першую суботу месяца"
+      ],
+      "on the first Sunday": [
+        "у першую нядзелю месяца"
+      ],
+      "on the first Thursday": [
+        "у першы чацвер месяца"
+      ],
+      "on the first Tuesday": [
+        "у першы аўторак месяца"
+      ],
+      "on the first Wednesday": [
+        "у першую сераду месяца"
+      ],
+      "on the fourth Friday": [
+        "у чацвёртую пятніцу месяца"
+      ],
+      "on the fourth Monday": [
+        "у чацвёрты панядзелак месяца"
+      ],
+      "on the fourth Saturday": [
+        "у чацвёртую суботу месяца"
+      ],
+      "on the fourth Sunday": [
+        "у чацвёртую нядзелю месяца"
+      ],
+      "on the fourth Thursday": [
+        "у чацвёрты чацвер месяца"
+      ],
+      "on the fourth Tuesday": [
+        "у чацвёрты аўторак месяца"
+      ],
+      "on the fourth Wednesday": [
+        "у чацвёртую сераду месяца"
+      ],
+      "on the last Friday": [
+        "у апошнюю пятніцу месяца"
+      ],
+      "on the last Monday": [
+        "у апошні панядзелак месяца"
+      ],
+      "on the last Saturday": [
+        "у апошнюю суботу месяца"
+      ],
+      "on the last Sunday": [
+        "у апошнюю нядзелю месяца"
+      ],
+      "on the last Thursday": [
+        "у апошні чацвер месяца"
+      ],
+      "on the last Tuesday": [
+        "у апошні аўторак месяца"
+      ],
+      "on the last Wednesday": [
+        "у апошнюю сераду месяца"
+      ],
+      "on the second Friday": [
+        "у другую пятніцу месяца"
+      ],
+      "on the second Monday": [
+        "у другі панядзелак месяца"
+      ],
+      "on the second Saturday": [
+        "у другую суботу месяца"
+      ],
+      "on the second Sunday": [
+        "у другую нядзелю месяца"
+      ],
+      "on the second Thursday": [
+        "у другі чацвер месяца"
+      ],
+      "on the second Tuesday": [
+        "у другі аўторак месяца"
+      ],
+      "on the second Wednesday": [
+        "у другую сераду месяца"
+      ],
+      "on the third Friday": [
+        "у трэцюю пятніцу месяца"
+      ],
+      "on the third Monday": [
+        "у трэці панядзелак месяца"
+      ],
+      "on the third Saturday": [
+        "у трэцюю суботу месяца"
+      ],
+      "on the third Sunday": [
+        "у трэцюю нядзелю месяца"
+      ],
+      "on the third Thursday": [
+        "у трэці чацвер месяца"
+      ],
+      "on the third Tuesday": [
+        "у трэці аўторак месяца"
+      ],
+      "on the third Wednesday": [
+        "у трэцюю сераду месяца"
       ]
     },
     "New Label form": {
@@ -4623,233 +4703,184 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" паспяхова створана"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" незваротна выдалены са сметніцы"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Не ўдалося стварыць \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Не ўдалося незваротна выдаліць са сметніцы \"${ name }\""
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Не ўдалося перамясціць \"${ name }\""
-      ],
-      "\"${ name }\" failed to be moved to trash": [
-        "Не ўдалося перамясціць у сметніцу \"${ name }\""
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Не ўдалося аднавіць са сметніцы \"${ name }\""
-      ],
-      "\"${ name }\" failed to be saved": [
-        "Не ўдалося захаваць\"${ name }\""
-      ],
-      "\"${ name }\" moved to trash": [
-        "\"${ name }\" перамешчаны ў сметніцу"
-      ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" адноўлены са сметніцы"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" паспяхова захавана"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" паспяхова перамешчаны"
-      ],
-      "\"${ newName }\" failed to be renamed": [
-        "Не ўдалося перайменаваць \"${ newName }\""
-      ],
-      "\"${ newName }\" renamed successfully": [
-        "\"${ newName }\" паспяхова перайменаваны"
-      ],
-      "${ count } item failed to be decrypted": [
-        "Не ўдалося расшыфраваць ${ count } элемент",
-        "Не ўдалося расшыфраваць ${ count } элементы",
-        "Не ўдалося расшыфраваць ${ count } элементаў",
-        "Не ўдалося расшыфраваць ${ count } элементы"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } элемент незваротна выдалены са сметніцы",
-        "${ numberOfItems } элементы незваротна выдалены са сметніцы",
-        "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
-        "${ numberOfItems } элементы незваротна выдалены са сметніцы"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементы",
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементаў",
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементы"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Не ўдалося перамясціць ${ numberOfItems } элемент",
-        "Не ўдалося перамясціць ${ numberOfItems } элементы",
-        "Не ўдалося перамясціць ${ numberOfItems } элементаў",
-        "Не ўдалося перамясціць ${ numberOfItems } элементы"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элемент",
-        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементы",
-        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементаў",
-        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементы"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элемент",
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы",
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементаў",
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } элемент перамешчаны ў сметніцу",
-        "${ numberOfItems } элементы перамешчаны ў сметніцу",
-        "${ numberOfItems } элементаў перамешчаны ў сметніцу",
-        "${ numberOfItems } элементы перамешчаны ў сметніцу"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } элемент адноўлены са сметніцы",
-        "${ numberOfItems } элементы адноўлены са сметніцы",
-        "${ numberOfItems } элементаў адноўлены са сметніцы",
-        "${ numberOfItems } элементы адноўлены са сметніцы"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } элемент паспяхова перамешчаны",
-        "${ numberOfItems } элементы паспяхова перамешчаны",
-        "${ numberOfItems } элементаў паспяхова перамешчаны",
-        "${ numberOfItems } элементы паспяхова перамешчана"
-      ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Не ўдалося выдаліць ${ numberOfItems } спасылку на ваш элемент",
-        "Не ўдалося выдаліць ${ numberOfItems } спасылкі на вашы элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } спасылак на вашы элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } спасылкі на вашы элементы"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } спасылка на ваш элемент была выдалена",
-        "${ numberOfItems } спасылкі на ваш элемент былі выдалены",
-        "${ numberOfItems } спасылак на ваш элемент былі выдалены",
-        "${ numberOfItems } спасылкі на ваш элемент былі выдалены"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
-      ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
-      ],
-      "Cannot load next page": [
-        "Немагчыма загрузіць наступную старонку"
-      ],
       "Contact group created": [
         "Група кантактаў створана"
       ],
       "Contact group updated": [
         "Група кантактаў абноўлена"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Удзельнік дададзены",
+        "Удзельнікі дададзены",
+        "Удзельнікі дададзены",
+        "Удзельнікі дададзены"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Запрашэнне календара адхілена"
       ],
-      "Device failed to be removed": [
-        "Не ўдалося выдаліць прыладу"
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Далучаны да ${ calendarName } (${ senderEmail })"
+      ]
+    },
+    "Notification suffix": {
+      "by email": [
+        "па электроннай пошце"
+      ]
+    },
+    "Notification time input": {
+      "at": [
+        "а"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "электронная пошта"
       ],
-      "Device failed to be renamed": [
-        "Не ўдалося перайменаваць прыладу"
+      "notification": [
+        "апавяшчэнне"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "падчас падзеі"
       ],
-      "Device removed": [
-        "Прылада выдалена"
+      "day before": [
+        "днём раней",
+        "днямі раней",
+        "днямі раней",
+        "днямі раней"
       ],
-      "Device renamed": [
-        "Прылада перайменавана"
+      "hour before": [
+        "гадзінай раней",
+        "гадзінамі раней",
+        "гадзінамі раней",
+        "гадзінамі раней"
       ],
-      "Encrypted search activated": [
-        "Актываваны зашыфраваны пошук"
+      "minute before": [
+        "хвілінай раней",
+        "хвілінамі раней",
+        "хвілінамі раней",
+        "хвілінамі раней"
       ],
-      "Failed to download files: ${ err }": [
-        "Не ўдалося спампаваць файлы: ${ err }"
+      "on the same day": [
+        "у той жа дзень"
       ],
-      "Failed to move, please try again": [
-        "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
+      "week before": [
+        "тыднем раней",
+        "тыднямі раней",
+        "тыднямі раней",
+        "тыднямі раней"
+      ]
+    },
+    "Notifications": {
+      "${ value } day after": [
+        "${ value } дзень пасля",
+        "${ value } дні пасля",
+        "${ value } дзён пасля",
+        "${ value } дні пасля"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не ўдалося запампаваць файлы: ${ err }"
+      "${ value } day after at ${ time }": [
+        "${ value } дзень пасля ў ${ time }",
+        "${ value } дні пасля ў ${ time }",
+        "${ value } дзён пасля ў ${ time }",
+        "${ value } дні пасля ў ${ time }"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл або папка \"${ filename }\" і ${ count } іншы ўжо запампаваны",
-        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны",
-        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны",
-        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны"
+      "${ value } day before": [
+        "${ value } дзень да",
+        "${ value } дні да",
+        "${ value } дзён да",
+        "${ value } дні да"
       ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл або папка \"${ filename }\" ужо запампаваны"
+      "${ value } day before at ${ time }": [
+        "${ value } дзень да ў ${ time }",
+        "${ value } дні да ў ${ time }",
+        "${ value } дзён да ў ${ time }",
+        "${ value } дні да ў ${ time }"
       ],
-      "File or folder is missing a name": [
-        "Адсутнічае назва папкі або файла"
+      "${ value } hour after": [
+        "${ value } гадзіна пасля",
+        "${ value } гадзіны пасля",
+        "${ value } гадзін пасля",
+        "${ value } гадзіны пасля"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Перамясціць ${ itemsToMoveCount } файл",
-        "Перамясціць ${ itemsToMoveCount } файлы",
-        "Перамясціць ${ itemsToMoveCount } файлаў",
-        "Перамясціць ${ itemsToMoveCount } файлы"
+      "${ value } hour after at ${ time }": [
+        "${ value } гадзіна пасля ў ${ time }",
+        "${ value } гадзіны пасля ў ${ time }",
+        "${ value } гадзін пасля ў ${ time }",
+        "${ value } гадзіны пасля ў ${ time }"
       ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Перамясціць ${ itemsToMoveCount } папку",
-        "Перамясціць ${ itemsToMoveCount } папкі",
-        "Перамясціць ${ itemsToMoveCount } папак",
-        "Перамясціць ${ itemsToMoveCount } папкі"
+      "${ value } hour before": [
+        "${ value } гадзіна да",
+        "${ value } гадзіны да",
+        "${ value } гадзін да",
+        "${ value } гадзіны да"
       ],
-      "Move ${ itemsToMoveCount } item": [
-        "Перамясціць ${ itemsToMoveCount } элемент",
-        "Перамясціць ${ itemsToMoveCount } элементы",
-        "Перамясціць ${ itemsToMoveCount } элементаў",
-        "Перамясціць ${ itemsToMoveCount } элементы"
+      "${ value } hour before at ${ time }": [
+        "${ value } гадзіна да ў ${ time }",
+        "${ value } гадзіны да ў ${ time }",
+        "${ value } гадзін да ў ${ time }",
+        "${ value } гадзіны да ў ${ time }"
       ],
-      "Move ${ movingCount } file": [
-        "Перамясціць ${ movingCount } файл",
-        "Перамясціць ${ movingCount } файлы",
-        "Перамясціць ${ movingCount } файлаў",
-        "Перамясціць ${ movingCount } файлы"
+      "${ value } minute after": [
+        "${ value } хвіліна пасля",
+        "${ value } хвіліны пасля",
+        "${ value } хвілін пасля",
+        "${ value } хвіліны пасля"
       ],
-      "Move ${ movingCount } folder": [
-        "Перамясціць ${ movingCount } папку",
-        "Перамясціць ${ movingCount } папкі",
-        "Перамясціць ${ movingCount } папак",
-        "Перамясціць ${ movingCount } папкі"
+      "${ value } minute after at ${ time }": [
+        "${ value } хвіліна пасля ў ${ time }",
+        "${ value } хвіліны пасля ў ${ time }",
+        "${ value } хвілін пасля ў ${ time }",
+        "${ value } хвіліны пасля ў ${ time }"
       ],
-      "Move ${ movingCount } item": [
-        "Перамясціць ${ movingCount } элемент",
-        "Перамясціць ${ movingCount } элементы",
-        "Перамясціць ${ movingCount } элементаў",
-        "Перамясціць ${ movingCount } элементы"
+      "${ value } minute before": [
+        "${ value } хвіліна да",
+        "${ value } хвіліны да",
+        "${ value } хвілін да",
+        "${ value } хвіліны да"
       ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недастаткова месца для запампоўвання ${ formattedTotal }"
+      "${ value } minute before at ${ time }": [
+        "${ value } хвіліна да ў ${ time }",
+        "${ value } хвіліны да ў ${ time }",
+        "${ value } хвілін да ў ${ time }",
+        "${ value } хвіліны да ў ${ time }"
       ],
-      "Root folder failed to be loaded": [
-        "Не ўдалося загрузіць каранёвую папку"
+      "${ value } week after": [
+        "${ value } тыдзень пасля",
+        "${ value } тыдні пасля",
+        "${ value } тыдняў пасля",
+        "${ value } тыдні пасля"
       ],
-      "Subfolder failed to be loaded": [
-        "Не ўдалося загрузіць падпапкі"
+      "${ value } week after at ${ time }": [
+        "${ value } тыдзень пасля ў ${ time }",
+        "${ value } тыдні пасля ў ${ time }",
+        "${ value } тыдняў пасля ў ${ time }",
+        "${ value } тыдні пасля ў ${ time }"
       ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Не ўдалося выдаліць спасылку на \"${ name }\""
+      "${ value } week before": [
+        "${ value } тыдзень да",
+        "${ value } тыдні да",
+        "${ value } тыдняў да",
+        "${ value } тыдні да"
       ],
-      "The link to \"${ name }\" was deleted": [
-        "Спасылка на \"${ name }\" была выдалена"
+      "${ value } week before at ${ time }": [
+        "${ value } тыдзень да ў ${ time }",
+        "${ value } тыдні да ў ${ time }",
+        "${ value } тыдняў да ў ${ time }",
+        "${ value } тыдні да ў ${ time }"
       ],
-      "The link to your item failed to be deleted": [
-        "Не ўдалося выдаліць спасылку на ваш элемент"
+      "At time of event": [
+        "Падчас падзеі"
       ],
-      "The link to your item was deleted": [
-        "Спасылка на ваш элемент была выдалена"
+      "On the same day at ${ time }": [
+        "У той жа дзень а ${ time }"
       ],
-      "Trash failed to be emptied": [
-        "Не ўдалося ачысціць сметніцу"
-      ],
-      "Your old files will be deleted in 72 hours": [
-        "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
-      ],
-      "Your settings failed to be saved": [
-        "Не ўдалося захаваць вашы налады"
-      ],
-      "Your settings have been changed successfully": [
-        "Вашы налады былі паспяхова зменены"
+      "Unknown": [
+        "Невядома"
       ]
     },
     "Oauth instructions": {
@@ -4862,35 +4893,25 @@
         "Для імпартавання даных, вы павінны выбраць усе запытаныя элементы, як паказана на відарысе GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд электронных лістоў і наладаў, прагляд і спампоўванне кантактаў, прагляд і спампоўванне ўсіх планаванняў з праграмы Каляндар Google."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Вітаем у ${ appName }"
+      ],
+      "Where you can take control of your time and your data.": [
+        "Тут вы можаце кантраляваць свой час і даныя."
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Далей"
       ],
-      "Start using ${ DRIVE_APP_NAME }": [
-        "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME }"
-      ]
-    },
-    "Onboarding Info": {
-      "Create a share link": [
-        "Стварыць абагуленую спасылку"
-      ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME } і мы падвоім ваша бясплатнае сховішча да 1 ГБ!"
-      ],
-      "Set a recovery method": [
-        "Задаць метад аднаўлення"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Проста завяршыце наступнае на працягу ${ expiresInDays } дня:",
-        "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:",
-        "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:",
-        "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:"
-      ],
-      "Upload a file": [
-        "Запампаваць файл"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        "Ваша надзейнае сховішча ў інтэрнэце для важных дакументаў і бясцэнных успамінаў."
+      "Start using ${ appName }": [
+        "Пачніце выкарыстоўваць ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -4913,26 +4934,69 @@
         "Вы можаце змяніць свой выбар у любы час у наладах."
       ]
     },
-    "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Вітаем у ${ DRIVE_APP_NAME }"
-      ],
-      "Your welcome bonus": [
-        "Ваш прывітальны бонус"
-      ]
-    },
     "Option": {
       "Add to existing group": [
         "Дадаць у існуючую групу"
       ],
+      "All events": [
+        "Усе падзеі"
+      ],
       "Create new group": [
         "Стварыць новую групу"
+      ],
+      "Custom": [
+        "Карыстальніцкі"
+      ],
+      "Day": [
+        "Дзень",
+        "Дні",
+        "Дзён",
+        "Дні"
+      ],
+      "Does not repeat": [
+        "Не паўтараецца"
+      ],
+      "Every day": [
+        "Кожны дзень"
+      ],
+      "Every month": [
+        "Кожны месяц"
+      ],
+      "Every week": [
+        "Кожны тыдзень"
+      ],
+      "Every year": [
+        "Кожны год"
       ],
       "Ignore group": [
         "Ігнараваць групу"
       ],
+      "Month": [
+        "Месяц",
+        "Месяцы",
+        "Месяцаў",
+        "Месяцы"
+      ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
+      ],
+      "This and future events": [
+        "Гэта і будучыя падзеі"
+      ],
+      "This event": [
+        "Гэта падзея"
+      ],
+      "Week": [
+        "Тыдзень",
+        "Тыдні",
+        "Тыдняў",
+        "Тыдні"
+      ],
+      "Year": [
+        "Год",
+        "Гады",
+        "Гадоў",
+        "Гады"
       ]
     },
     "Option group label": {
@@ -4946,6 +5010,16 @@
     "Participant name": {
       "You": [
         "Вы"
+      ]
+    },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Згарнуць спіс удзельнікаў"
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        "Разгарнуць спіс удзельнікаў"
       ]
     },
     "PGP key encryption warning": {
@@ -4973,20 +5047,26 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Add a calendar description": [
+        "Дадаць апісанне календара"
+      ],
+      "Add a calendar name": [
+        "Дадаць назву календара"
+      ],
+      "Add description": [
+        "Дадаць апісанне"
+      ],
+      "Add location": [
+        "Дадаць размяшчэнне"
+      ],
+      "Add participants": [
+        "Дадаць удзельнікаў"
+      ],
+      "Add title": [
+        "Дадаць загаловак"
+      ],
       "E.g., ": [
         "Напрыклад, "
-      ],
-      "Enter a new file name": [
-        "Увядзіце новую назву файла"
-      ],
-      "Enter a new folder name": [
-        "Увядзіце новую назву папкі"
-      ],
-      "Enter device name": [
-        "Увядзіце назву прылады"
-      ],
-      "Enter your email address": [
-        "Увядзіце свой адрас электроннай пошты"
       ],
       "Filter groups": [
         "Фільтр груп"
@@ -5002,9 +5082,6 @@
       ],
       "Name or email address": [
         "Імя або адрас пошты"
-      ],
-      "New name": [
-        "Новая назва"
       ],
       "Password": [
         "Пароль"
@@ -5028,6 +5105,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
+      ]
+    },
+    "Placeholder for contact with no name": {
+      "(No name)": [
+        "(Няма назвы)"
       ]
     },
     "Progress bar description": {
@@ -5096,9 +5178,57 @@
         "Нататка: пасля націску кнопкі “Ужыць” сэрвіс перазагрузіцца."
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Перазагрузіць падзею"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Запампаваць"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Нічога не знойдзена"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Не ўдалося абнавіць налады"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Абагуліце свой каляндар з дапамогай спасылкі для запрашэння карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME }."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельніка на каляндар",
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельнікаў на каляндар",
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельнікаў на каляндар",
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельнікаў на каляндар"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Дадаць уліковыя запісы ${ BRAND_NAME } для ўдзельнікаў, з якімі вы хочаце абагуліць ${ calendarName }. Мы адправім ім запрашэнне."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Увядзіце адрас электроннай пошты або назву групы"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Абагуліць з карыстальнікамі ${ BRAND_NAME }"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Створана ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5107,6 +5237,19 @@
       ],
       "Try the new side panel": [
         "Паспрабуйце новую бакавую панэль"
+      ]
+    },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "Кіраваць календаром"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Памылка праверкі подпісу"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Вы ўключылі праверку адраса для ${ boldSenderEmail }. Мы не можам праверыць сапраўднасць гэтага запрашэння календара. Магчыма, што гэта здарылася па прычыне змянення ключоў шыфравання гэтага кантакту. Праверце яго пашыраныя налады PGP або папрасіце ${ boldSenderEmail } адправіць новае запрашэнне."
       ]
     },
     "Signing preference for emails": {
@@ -5118,17 +5261,11 @@
       ]
     },
     "Spotlight": {
-      "Encrypted search is here": [
-        "Зашыфраваны пошук тут"
-      ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
       ]
     },
     "Storage": {
@@ -5142,6 +5279,37 @@
         "Ваша бягучае сховішча:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL-адрас календара"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Для падпіскі на знешні або публічны каляндар і яго абнаўленні, увядзіце URL-адрас. Версія календара толькі для чытання будзе дабаўлена да вашых падпісак на календары.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Даведайцеся, як атрымаць прыватную спасылку на каляндар."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Гэта спасылка дазволіць Google зрабіць каляндар на які вы падпісваецеся публічным"
+      ],
+      "This link might be wrong": [
+        "Гэта спасылка можа быць няправільнай"
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        "Падпіска на каляндар зараз недаступна"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "Занадта доўгі URL-адрас"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
@@ -5149,14 +5317,56 @@
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна."
       ],
+      "A cancellation email will be sent to removed participants for all the events in this series.": [
+        "Ліст пра скасаванне будзе адпраўлены выдаленым удзельнікам для ўсіх падзей у гэтай серыі."
+      ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
+      ],
+      "All events deleted": [
+        "Усе падзеі выдалены"
+      ],
+      "All events updated": [
+        "Усе падзеі абноўлены"
+      ],
+      "An invitation will be sent to added participants for all the events in this series.": [
+        "Дададзеным удзельнікам будзе адпраўлена запрашэнне на ўсе падзеі ў гэтай серыі."
+      ],
+      "Answer sent and all events deleted": [
+        "Адказ адпраўлены і ўсе падзеі выдалены"
+      ],
+      "Answer sent and event deleted": [
+        "Адказ адпраўлены і падзея выдалена"
       ],
       "Bug reported": [
         "Справаздача пра памылку адпраўлена"
       ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Каляндар дададзены. Сінхранізацыя можа заняць некалькі хвілін."
+      ],
+      "Calendar created": [
+        "Каляндар створаны"
+      ],
+      "Calendar information updated": [
+        "Інфармацыя календара абноўлена"
+      ],
+      "Calendar updated": [
+        "Каляндар абноўлены"
+      ],
       "Canceling import": [
         "Скасаванне імпартавання"
+      ],
+      "Cancellation sent and all events deleted": [
+        "Скасаванне адпраўлена і ўсе падзеі выдалены"
+      ],
+      "Cancellation sent and event deleted": [
+        "Скасаванне адпраўлена і падзея выдалена"
+      ],
+      "Cancellation sent and participants removed": [
+        "Скасаванне адпраўлена і ўдзельнікі выдалены"
+      ],
+      "Cancellation sent and participants removed from all events": [
+        "Скасаванне адпраўлена і ўдзельнікі выдалены з усіх падзей"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -5182,11 +5392,59 @@
       "Email address copied to clipboard": [
         "Адрас электроннай пошты скапіяваны ў буфер абмену"
       ],
+      "Event created": [
+        "Падзея створана"
+      ],
+      "Event deleted": [
+        "Падзея выдалена"
+      ],
+      "Event updated": [
+        "Падзея абноўлена"
+      ],
+      "Events created": [
+        "Падзеі створаны"
+      ],
       "Fingerprint copied to clipboard": [
         "Адбітак скапіяваны ў буфер абмену"
       ],
+      "Future events deleted": [
+        "Будучыя падзеі выдалены"
+      ],
+      "Future events updated": [
+        "Будучыя падзеі абноўлены"
+      ],
       "Import record deleted": [
         "Запіс імпартавання выдалены"
+      ],
+      "Invitation sent and all events updated": [
+        "Запрашэнне адпраўлена і ўсе падзеі абноўлены"
+      ],
+      "Invitation sent and event created": [
+        "Запрашэнне адпраўлена і падзея створана"
+      ],
+      "Invitation sent and events created": [
+        "Запрашэнне адпраўлена і падзея створана"
+      ],
+      "Invitation sent and participants added": [
+        "Запрашэнне адпраўлена і ўдзельнікі дадазены"
+      ],
+      "Invitation sent and participants added to all events": [
+        "Запрашэнне адпраўлена і ўдзельнікі дададзены да ўсіх падзей"
+      ],
+      "Participants notified and all events updated": [
+        "Удзельнікі атрымалі апавяшчэнні і ўсе падзеі абноўлены"
+      ],
+      "Participants notified and changes saved": [
+        "Удзельнікі атрымалі апавяшчэнне і змены захаваны"
+      ],
+      "Participants notified and event updated": [
+        "Удзельнікі атрымалі апавяшчэнне і падзея абноўлена"
+      ],
+      "Participation status updated": [
+        "Статус удзелу абноўлены"
+      ],
+      "Participation status updated for all events": [
+        "Статус удзелу абноўлены для ўсіх падзей"
       ],
       "Phone number copied to clipboard": [
         "Нумар тэлефона скапіяваны ў буфер абмену"
@@ -5196,12 +5454,6 @@
       ],
       "Preferences saved": [
         "Параметры захаваны"
-      ],
-      "Recovery has started": [
-        "Пачалося аднаўленне"
-      ],
-      "The link to your file was successfully copied": [
-        "Спасылка на ваш файл паспяхова скапіявана"
       ],
       "Undo in progress": [
         "Выконваецца адрабленне"
@@ -5312,42 +5564,38 @@
         "${ minutes } хвіліны"
       ]
     },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Пошук часавых паясоў"
+      ]
+    },
     "Title": {
-      "# of downloads": [
-        "Колькасць спампоўванняў"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } удзельнік",
         "${ emailsCount } удзельнікі",
         "${ emailsCount } удзельнікаў",
         "${ emailsCount } удзельнікі"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванне",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванняў",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачу",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачы",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадач",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачы"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванне",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванняў",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні"
-      ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
       ],
-      "Active": [
-        "Актыўна"
+      "Add another notification to remind you of this event": [
+        "Дадаць іншае апавяшчэнне, каб нагадаць вам пра гэту падзею"
       ],
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
+      ],
+      "Add event location": [
+        "Дадаць месца падзеі"
+      ],
+      "Add event title": [
+        "Дадаць загаловак падзеі"
+      ],
+      "Add more information related to this event": [
+        "Дадаць больш інфармацыі, якая звязана з гэтай падзеяй"
+      ],
+      "Add participants": [
+        "Дадаць удзельнікаў"
       ],
       "Add to ${ groupCount } group": [
         "Дадаць у ${ groupCount } групу",
@@ -5361,35 +5609,29 @@
       "Addresses": [
         "Адрасы"
       ],
-      "All": [
-        "Усе"
-      ],
-      "Are you sure you want to close the preview?": [
-        "Вы сапраўды хочаце закрыць папярэдні прагляд?"
-      ],
       "Back": [
         "Назад"
       ],
       "Beta Access": [
         "Бэта-доступ"
       ],
-      "Browser might run out of memory": [
-        "Браўзеру магчыма не хапае памяці"
+      "Calendar": [
+        "Каляндар"
       ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
+      "Calendar alarm": [
+        "Апавяшчэнне календара"
       ],
-      "Change layout": [
-        "Змяніць выгляд"
+      "Change my answer": [
+        "Змяніць мой адказ"
+      ],
+      "Choose how many times this event will repeat": [
+        "Выберыце, колькі разоў гэта падзея будзе паўтарацца"
+      ],
+      "Choose how often this event repeats": [
+        "Выберыце, як часта гэта падзея будзе паўтарацца"
       ],
       "Clearing data": [
         "Ачыстка даных"
-      ],
-      "Completed": [
-        "Завершаныя"
-      ],
-      "Computers": [
-        "Камп'ютары"
       ],
       "Contact details": [
         "Кантактныя звесткі"
@@ -5406,17 +5648,14 @@
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
       ],
-      "Create a new file": [
-        "Стварэнне новага файла"
-      ],
-      "Create a new folder": [
-        "Стварэнне новай папкі"
-      ],
       "Create contact": [
         "Стварэнне кантакту"
       ],
       "Create new group": [
         "Стварыць новую групу"
+      ],
+      "Create public link": [
+        "Стварэнне публічнай спасылкі"
       ],
       "Currency": [
         "Валюта"
@@ -5429,9 +5668,6 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
-      ],
-      "Date": [
-        "Дата"
       ],
       "Delete ${ count } contact": [
         "Выдаліць ${ count } кантакт",
@@ -5448,35 +5684,17 @@
       "Delete ${ Name }": [
         "Выдаліць ${ Name }"
       ],
-      "Delete permanently": [
-        "Выдаліць незваротна"
+      "Delete event": [
+        "Выдаліць падзею"
+      ],
+      "Delete recurring event": [
+        "Выдаліць перыядычную падзею"
       ],
       "Deleting contacts": [
         "Выдаленне кантактаў"
       ],
-      "Discard": [
-        "Адхіліць"
-      ],
-      "Discard changes?": [
-        "Адхіліць змены?"
-      ],
-      "Download unverified file?": [
-        "Спампаваць неправераны файл?"
-      ],
-      "Download unverified folder?": [
-        "Спампаваць неправераную папку?"
-      ],
-      "Drive": [
-        "Дыск"
-      ],
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
-      ],
-      "Duplicate file found": [
-        "Знойдзены дублікат файла"
-      ],
-      "Duplicate folder found": [
-        "Знойдзены дублікат папкі"
       ],
       "Edit contact": [
         "Рэдагаваць кантакт"
@@ -5496,50 +5714,32 @@
       "Email settings": [
         "Налады электроннай пошты"
       ],
-      "Empty trash": [
-        "Ачысціць сметніцу"
-      ],
-      "Enable drive search": [
-        "Уключыць пошук на дыску"
+      "Encrypted event": [
+        "Зашыфраваная падзея"
       ],
       "Enter your password": [
         "Увядзіце пароль"
       ],
+      "Error": [
+        "Памылка"
+      ],
+      "Event is happening all day": [
+        "Падзея працягваецца ўвесь дзень"
+      ],
+      "Event is happening on defined time slot": [
+        "Падзея адбываецца ў вызначаны час"
+      ],
       "Exporting contacts": [
         "Экспартаванне кантактаў"
-      ],
-      "Failed": [
-        "Збой"
       ],
       "Feedback": [
         "Водгук"
       ],
-      "File details": [
-        "Падрабязнасці файла"
-      ],
-      "File recovery process": [
-        "Працэс аднаўлення файлаў"
-      ],
-      "Files details": [
-        "Падрабязнасці файлаў"
-      ],
-      "Folder details": [
-        "Падрабязнасці папкі"
-      ],
-      "Folders details": [
-        "Падрабязнасці папак"
-      ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Знойдзены ${ searchView.numberOfResults } вынік",
-        "Знойдзены ${ searchView.numberOfResults } вынікі",
-        "Знойдзена ${ searchView.numberOfResults } вынікаў",
-        "Знойдзены ${ searchView.numberOfResults } вынікі"
-      ],
       "Groups": [
         "Групы"
       ],
-      "Hm, we couldn't find that one": [
-        "Здаецца, што мы не можам знайсці гэты элемент"
+      "Hide time zones for event start and end times": [
+        "Схаваць часавыя паясы пачатку і завяршэння падзеі"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -5562,17 +5762,8 @@
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
-      "Item details": [
-        "Падрабязнасці элемента"
-      ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
-      ],
-      "Location": [
-        "Размяшчэнне"
-      ],
-      "Manage secure link": [
-        "Кіраванне бяспечнай спасылкай"
       ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
@@ -5580,35 +5771,8 @@
       "Merging contacts": [
         "Аб'яднанне кантактаў"
       ],
-      "MIME type": [
-        "Тып МІМЕ"
-      ],
       "Minicalendar": [
         "Мінікаляндар"
-      ],
-      "Modified": [
-        "Зменена"
-      ],
-      "My files": [
-        "Мае файлы"
-      ],
-      "My files ${ date }.zip": [
-        "Мае файлы ${ date }.zip"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "No results found": [
-        "Нічога не знойдзена"
-      ],
-      "Number of files": [
-        "Колькасць файлаў"
-      ],
-      "Number of folders": [
-        "Колькасць папак"
-      ],
-      "Number of items": [
-        "Колькасць элементаў"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -5619,8 +5783,8 @@
       "Open settings menu": [
         "Адкрыць меню налад"
       ],
-      "Original size": [
-        "Арыгінальны памер"
+      "Organizer cannot be notified": [
+        "Немагчыма апавясціць арганізатара"
       ],
       "Other information": [
         "Іншая інфармацыя"
@@ -5628,14 +5792,11 @@
       "Other names": [
         "Іншыя імёны"
       ],
-      "Performance might be affected": [
-        "Можа паўплываць на прадукцыйнасць"
+      "Participants cannot be notified": [
+        "Немагчыма апавясціць удзельнікаў"
       ],
       "Phone numbers": [
         "Нумары тэлефонаў"
-      ],
-      "Privacy settings": [
-        "Налады прыватнасці"
       ],
       "Re-sign all contacts": [
         "Паўторна падпісаць усе кантакты"
@@ -5643,23 +5804,17 @@
       "Re-signing contacts": [
         "Паўторна падпісаць кантакты"
       ],
+      "Reactivate calendar keys": [
+        "Паўторна актываваць ключы календара"
+      ],
       "Reconnect your account": [
         "Перападлучыць свой уліковы запіс"
       ],
       "Recover data": [
         "Аднаўленне даных"
       ],
-      "Remove device?": [
-        "Выдаліць прыладу?"
-      ],
-      "Rename a file": [
-        "Перайменаваць файл"
-      ],
-      "Rename a folder": [
-        "Перайменаваць папку"
-      ],
-      "Rename device": [
-        "Перайменаваць прыладу"
+      "Remove participants": [
+        "Выдаліць удзельнікаў"
       ],
       "Report a problem": [
         "Паведаміць пра праблему"
@@ -5667,14 +5822,14 @@
       "Request new code": [
         "Запытаць новы код"
       ],
-      "Restore your files": [
-        "Аднавіць вашы файлы"
+      "Reshare your calendars": [
+        "Паўторнае абагуленне календароў"
       ],
-      "Search results": [
-        "Пошук вынікаў"
+      "Save changes": [
+        "Захаваць змены"
       ],
-      "Searching…": [
-        "Пошук…"
+      "Select a day in the month": [
+        "Выберыце дзень месяца"
       ],
       "Select a theme": [
         "Выберыце тэму"
@@ -5685,26 +5840,59 @@
       "Select contact group": [
         "Выбар групы кантактаў"
       ],
-      "Select link expiration date": [
-        "Выберыце дату завяршэння тэрміну дзеяння спасылкі"
+      "Select event end date": [
+        "Выбар даты завяршэння падзеі"
       ],
-      "Select link expiration time": [
-        "Выберыце час завяршэння тэрміну дзеяння спасылкі"
+      "Select event end time": [
+        "Выбар часу завяршэння падзеі"
+      ],
+      "Select event frequency": [
+        "Выбар частаты падзеі"
+      ],
+      "Select event frequency interval": [
+        "Выбар інтэрвалу частаты падзеі"
+      ],
+      "Select event start date": [
+        "Выбар даты пачатку падзеі"
+      ],
+      "Select event start time": [
+        "Выбар часу пачатку падзеі"
+      ],
+      "Select event's last date": [
+        "Выбар апошняй даты падзеі"
+      ],
+      "Select the time to send this notification": [
+        "Выберыце час адпраўкі гэтага апавяшчэння"
+      ],
+      "Select the time zone for the event end time": [
+        "Выберыце часавы пояс для часу завяршэння падзеі"
+      ],
+      "Select the time zone for the event start time": [
+        "Выберыце часавы пояс для часу пачатку падзеі"
+      ],
+      "Select the way to send this notification": [
+        "Выберыце спосаб адпраўкі гэтага апавяшчэння"
+      ],
+      "Select when this event will stop happening": [
+        "Выберыце, калі гэта падзея перастане адбывацца"
+      ],
+      "Select when you want this notification to be sent": [
+        "Выберыце, калі гэта апавяшчэнне павінна быць адпраўлена"
+      ],
+      "Select which calendar to add this event to": [
+        "Выберыце каляндар, у які дадаць гэту падзею"
       ],
       "Send feedback": [
         "Адправіць водгук"
       ],
+      "Send invitation": [
+        "Адправіць запрашэнне"
+      ],
       "Settings": [
         "Налады"
       ],
-      "Share via link": [
-        "Абагуліць праз спасылку"
-      ],
-      "Shared": [
-        "Абагулены"
-      ],
-      "Show actions": [
-        "Паказаць дзеянні"
+      "Show time zones for event start and end times": [
+        "Паказаць часавыя паясы пачатку і завяршэння падзеі"
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"
@@ -5715,62 +5903,20 @@
       "Sign out": [
         "Выйсці"
       ],
-      "Size": [
-        "Памер"
-      ],
-      "Sort files/folders": [
-        "Сартаванне файлаў/папак"
-      ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
-      "Stop sharing": [
-        "Спыніць абагуленне"
+      "Update event": [
+        "Абнавіць падзею"
       ],
-      "Stop sharing with everyone?": [
-        "Спыніць абагуленне з усімі?"
-      ],
-      "Stop transfers?": [
-        "Спыніць перадачы?"
-      ],
-      "The link either does not exist or has expired": [
-        "Спасылка не існуе або пратэрмінавана"
-      ],
-      "The link expired": [
-        "Спасылка пратэрмінавана"
-      ],
-      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Для гэтага файла адсутнічае подпіс або ён з'яўляецца памылковым. Перайдзіце ў Меню (⋮) → Падрабязнасці для атрымання інфармацыі."
-      ],
-      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Для гэтай папкі адсутнічае подпіс або яна памылковая. Перайдзіце ў Меню (⋮) → Падрабязнасці для атрымання інфармацыі."
-      ],
-      "This link is password protected": [
-        "Гэта спасылка абаронена паролем"
-      ],
-      "Total size": [
-        "Агульны памер"
-      ],
-      "Trash": [
-        "Сметніца"
-      ],
-      "Type": [
-        "Тып"
+      "Update recurring event": [
+        "Абнавіць перыядычную падзею"
       ],
       "Upgrade required": [
         "Патрабуецца паляпшэнне"
-      ],
-      "Uploaded": [
-        "Запампавана"
-      ],
-      "Uploaded by": [
-        "Запампавана"
-      ],
-      "Uploading a large file or folder": [
-        "Запампоўванне вялікага файла або папкі"
       ],
       "View contacts": [
         "Прагледзець кантакты"
@@ -5781,35 +5927,46 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We've locked some calendars to protect your data": [
+        "Мы заблакіравалі некаторыя календары, каб абараніць вашы даныя"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Мы заблакіравалі вашы календары, каб абараніць вашы даныя"
+      ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
       ],
       "What's new": [
         "Што новага"
       ],
-      "You have inaccessible files": [
-        "Вы маеце недаступныя файлы"
+      "You have invited participants with equivalent emails": [
+        "Вы запрасілі ўдзельнікаў з эквівалентнай электроннай поштай"
       ],
-      "You have no files to share": [
-        "У вас няма файлаў для абагулення"
-      ],
-      "You have no folders yet": [
-        "У вас пакуль няма папак"
-      ],
-      "Your 500 MB bonus": [
-        "Ваш бонус у 500 МБ"
-      ],
-      "Your changes are not synced yet": [
-        "Пакуль вашы змены не сінхранізаваны"
+      "Your calendar link": [
+        "Ваша спасылка на каляндар"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
-      ],
-      "Your welcome actions": [
-        "Вашы прывітальныя дзеянні"
-      ],
-      "You’ve got 1 GB of storage": [
-        "Вы атрымалі 1 ГБ сховішча"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Выберыце лічбу"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Планаваць стала прасцей!"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Стварэнне календара"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Рэдагаваць каляндар"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5873,6 +6030,14 @@
         "У вас няма кантактаў для экспартавання"
       ]
     },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Абагулена з дапамогай скразнога шыфравання"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Абагулена з дапамогай скразнога шыфравання з правераным кантактам"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Пароль павінен змяшчаць прынамсі ${ length } сімвал",
@@ -5887,35 +6052,17 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
       ]
     },
-    "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "Назва \"${ str }\" з'яўляецца недапушчальнай"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Назва не можа змяшчаць нябачныя сімвалы, / або \\."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвала",
-        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў",
-        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў",
-        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў"
-      ],
-      "Name must not be empty": [
-        "Назва не можа быць пустой"
-      ],
-      "Name must not begin with a space": [
-        "Назва не павінна пачынацца прабелам"
-      ],
-      "Name must not end with a space": [
-        "Назва не павінна заканчвацца прабелам"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Націсніце, каб прайграць відэа яшчэ раз"
       ],
       "Replay video": [
         "Прайграць відэа"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Адкрыць у новай укладцы"
       ]
     },
     "Warning": {
@@ -5996,6 +6143,311 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд міне ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Для доступу да гэтага абагуленага календара, уключыце гэты адрас або папрасіце ${ boldCalendarOwnerEmail } адправіць запрашэнне на актывацыю адраса."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Вы не можаце далучыцца да гэтага календара, таму што запрошаны адрас электроннай пошты (${ boldInvitedAddress }) адключаны."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString } а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString } а ${ timesString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString } а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString } а ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }, ${ untilString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Кожны ${ interval } тыдзень ва ўсе дні",
+        "Кожныя ${ interval } тыдні ва ўсе дні",
+        "Кожных ${ interval } тыдняў ва ўсе дні",
+        "Кожныя ${ interval } тыдні ва ўсе дні"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Кожны ${ interval } тыдзень ва ўсе дні а ${ timesString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні а ${ timesString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні а ${ timesString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні а ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Кожны ${ interval } тыдзень ва ўсе дні, ${ untilString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні, ${ untilString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні, ${ untilString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Кожны ${ interval } тыдзень у пятніцу",
+        "Кожныя ${ interval } тыдні ў пятніцу",
+        "Кожных ${ interval } тыдняў у пятніцу",
+        "Кожныя ${ interval } тыдні ў пятніцу"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у пятніцу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў пятніцу а ${ timesString }",
+        "Кожных ${ interval } тыдняў у пятніцу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў пятніцу а ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у пятніцу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў пятніцу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у пятніцу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў пятніцу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Кожны ${ interval } тыдзень у панядзелак",
+        "Кожныя ${ interval } тыдні ў панядзелак",
+        "Кожных ${ interval } тыдняў у панядзелак",
+        "Кожныя ${ interval } тыдні ў панядзелак"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у панядзелак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у панядзелак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Кожны ${ interval } тыдзень у суботу",
+        "Кожныя ${ interval } тыдні ў суботу",
+        "Кожных ${ interval } тыдняў у суботу",
+        "Кожныя ${ interval } тыдні ў суботу"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у суботу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў суботу а ${ timesString }",
+        "Кожных ${ interval } тыдняў у суботу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў суботу а ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у суботу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў суботу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у суботу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Кожны ${ interval } тыдзень у нядзелю",
+        "Кожныя ${ interval } тыдні ў нядзелю",
+        "Кожных ${ interval } тыдняў у нядзелю",
+        "Кожныя ${ interval } тыдні ў нядзелю"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у нядзелю а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у нядзелю, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ untilString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Кожны ${ interval } тыдзень у чацвер",
+        "Кожныя ${ interval } тыдні ў чацвер",
+        "Кожных ${ interval } тыдняў у чацвер",
+        "Кожныя ${ interval } тыдні ў чацвер"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у чацвер а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў чацвер а ${ timesString }",
+        "Кожных ${ interval } тыдняў у чацвер а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў чацвер а ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у чацвер, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў чацвер, ${ untilString }",
+        "Кожных ${ interval } тыдняў у чацвер, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў чацвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Кожны ${ interval } тыдзень у аўторак",
+        "Кожныя ${ interval } тыдні ў аўторак",
+        "Кожных ${ interval } тыдняў у аўторак",
+        "Кожныя ${ interval } тыдні ў аўторак"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у аўторак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у аўторак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Кожны ${ interval } тыдзень у сераду",
+        "Кожныя ${ interval } тыдні ў сераду",
+        "Кожных ${ interval } тыдняў у сераду",
+        "Кожныя ${ interval } тыдні ў сераду"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у сераду а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў сераду а ${ timesString }",
+        "Кожных ${ interval } тыдняў у сераду а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў сераду а ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у сераду, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў сераду, ${ untilString }",
+        "Кожных ${ interval } тыдняў у сераду, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў сераду, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Штотыдзень у ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Штотыдзень у ${ multipleDaysString } а ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Штотыдзень у ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Штотыдзень ва ўсе дні"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Штотыдзень ва ўсе дні а ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Штотыдзень ва ўсе дні, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Штотыдзень у пятніцу"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Штотыдзень у пятніцу а ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Штотыдзень у пятніцу, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Штотыдзень у панядзелак"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Штотыдзень у панядзелак а ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Штотыдзень у панядзелак, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Штотыдзень у суботу"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Штотыдзень у суботу а ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Штотыдзень у суботу, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Штотыдзень у нядзелю"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Штотыдзень у нядзелю а ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Штотыдзень у нядзелю, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Штотыдзень у чацвер"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Штотыдзень у чацвер а ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Штотыдзень у чацвер, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Штотыдзень у аўторак"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Штотыдзень у аўторак а ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Штотыдзень у аўторак, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Штотыдзень у сераду"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Штотыдзень у сераду а ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Штотыдзень у сераду, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Пятніца"
+      ],
+      "Monday": [
+        "Панядзелак"
+      ],
+      "Saturday": [
+        "Субота"
+      ],
+      "Sunday": [
+        "Нядзеля"
+      ],
+      "Thursday": [
+        "Чацвер"
+      ],
+      "Tuesday": [
+        "Аўторак"
+      ],
+      "Wednesday": [
+        "Серада"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Кожны ${ interval } год",
+        "Кожныя ${ interval } гады",
+        "Кожных ${ interval } гадоў",
+        "Кожныя ${ interval } гады"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Кожны ${ interval } год а ${ timesString }",
+        "Кожныя ${ interval } гады а ${ timesString }",
+        "Кожных ${ interval } гадоў а ${ timesString }",
+        "Кожныя ${ interval } гады а ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожны ${ interval } год, ${ untilString }",
+        "Кожныя ${ interval } гады, ${ untilString }",
+        "Кожных ${ interval } гадоў, ${ untilString }",
+        "Кожныя ${ interval } гады, ${ untilString }"
+      ],
+      "Yearly": [
+        "Штогод"
+      ],
+      "Yearly, ${ timesString }": [
+        "Штогод а ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Штогод, ${ untilString }"
       ]
     }
   }

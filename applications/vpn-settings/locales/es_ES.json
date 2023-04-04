@@ -2212,6 +2212,9 @@
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
+      "Preview for this file type is not supported": [
+        "No se admite la vista previa para este tipo de archivo."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
       ],
@@ -3339,6 +3342,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar y recibir invitaciones"
+      ],
       "Share calendar via link": [
         "Compartir calendario mediante un enlace"
       ],
@@ -4053,6 +4059,35 @@
         "VPN de alta velocidad en ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Sólo inicia sesión en tu cuenta de App Store de Apple y luego pulsa en ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Sólo inicia sesión en su cuenta de Play Store y luego pulsa en ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestiona tu suscripción en ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "${ subscriptionManager } gestiona tu suscripción."
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "La suscripción del usuario ID-${ userId } fue realizada con una compra dentro de la app. Para gestionar la suscripción del usuario, navega a la sección Suscripción en tu cuenta de ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Suscripciónes"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Has comprado tu plan usando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Por"
@@ -4402,9 +4437,6 @@
       ],
       "Language": [
         "Idioma"
-      ],
-      "Length": [
-        "Duración"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"

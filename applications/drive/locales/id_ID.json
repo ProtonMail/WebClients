@@ -547,6 +547,9 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
+      "Show side panel": [
+        "Tampilkan panel samping"
+      ],
       "Sign in": [
         "Masuk"
       ],
@@ -2175,6 +2178,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
@@ -2532,6 +2538,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
+      ],
+      "vCard versions < 3.0": [
+        "vCard versi < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3420,6 +3429,9 @@
       ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
+      ],
+      "Preview for this file type is not supported": [
+        "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
       "Primary": [
         "Utama"
@@ -4605,6 +4617,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
       ]
     },
     "Onboarding Action": {

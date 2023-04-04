@@ -3339,6 +3339,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Send & receive invitations": [
+        "Invia e ricevi inviti"
+      ],
       "Share calendar via link": [
         "Condividi calendario tramite link"
       ],
@@ -4280,6 +4283,17 @@
         "VPN ad alta velocità su ${ maxVpn } dispositivi"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Ho capito"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestisci il tuo abbonamento su ${ subscriptionManager }"
+      ],
+      "Subscriptions": [
+        "Abbonamenti"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Per"
@@ -4629,9 +4643,6 @@
       ],
       "Language": [
         "Lingua"
-      ],
-      "Length": [
-        "Lunghezza"
       ],
       "Login password": [
         "Password di accesso"

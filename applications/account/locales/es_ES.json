@@ -1300,6 +1300,11 @@
         "Ver (todos los detalles del evento)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Error en recuperar la información del contacto para ${ address }"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Permisos cambiados para ${ email }"
@@ -2818,6 +2823,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } es tu nombre de usuario. Para crear ${ Local }@${ Domain }, ve a Ajustes > Mensajes y redacción > Dominio corto (pm.me)."
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -3301,6 +3309,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error con el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no soportadas"
       ]
     },
     "Error importing contacts": {
@@ -4048,6 +4059,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5142,9 +5156,6 @@
       "it’s imperative": [
         "es obligatorio"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "He estado usando ${ MAIL_APP_NAME } y creo que puede gustarte. Es un servicio de correo electrónico seguro que protege tu privacidad. Regístrate a través de este enlace para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
       ],
@@ -5415,6 +5426,9 @@
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
+      "Preview for this file type is not supported": [
+        "No se admite la vista previa para este tipo de archivo."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
       ],
@@ -5498,6 +5512,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que deseas importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con el correo electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "El servidor no está actualmente disponible."
@@ -8153,6 +8170,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar y recibir invitaciones"
+      ],
       "Share calendar via link": [
         "Compartir calendario mediante un enlace"
       ],
@@ -8679,6 +8699,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecciona a lo que ${ BRAND_NAME } puede acceder: ver tus correos y ajustes, ver y descargar tus contactos, ver y descargar todas tus agendas a las que accedes en Google Agenda."
       ]
     },
     "Onboarding": {
@@ -9559,6 +9584,35 @@
         "VPN de alta velocidad en ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Sólo inicia sesión en tu cuenta de App Store de Apple y luego pulsa en ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Sólo inicia sesión en su cuenta de Play Store y luego pulsa en ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestiona tu suscripción en ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "${ subscriptionManager } gestiona tu suscripción."
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "La suscripción del usuario ID-${ userId } fue realizada con una compra dentro de la app. Para gestionar la suscripción del usuario, navega a la sección Suscripción en tu cuenta de ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Suscripciónes"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Has comprado tu plan usando una app de Android. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Por"
@@ -10424,9 +10478,6 @@
       ],
       "Layout": [
         "Diseño"
-      ],
-      "Length": [
-        "Duración"
       ],
       "Link confirmation": [
         "Confirmación de enlace"

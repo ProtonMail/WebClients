@@ -39,10 +39,10 @@
         "Cancelar"
       ],
       "Change mailbox password": [
-        "Alterar a senha da caixa de correio"
+        "Alterar a palavra-passe da caixa de correio"
       ],
       "Change password": [
-        "Alterar senha"
+        "Alterar a palavra-passe"
       ],
       "Chat with us": [
         "Converse connosco"
@@ -359,6 +359,9 @@
       "View plans details": [
         "Ver detalhes do plano"
       ],
+      "What do I get?": [
+        "O que recebo?"
+      ],
       "Zoom in": [
         "Ampliar"
       ],
@@ -488,6 +491,23 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "cenoura"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "sahara": [
+        "saará"
+      ],
+      "strawberry": [
+        "morango"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1314,7 +1334,7 @@
         "Credenciais de início de sessão incorrectas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
+        "Palavra-passe da caixa de correio incorrecta. Tente novamente."
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -1341,7 +1361,7 @@
         "Número inválido"
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As palavras-passe não coincidem."
       ],
       "Payment process consumed": [
         "Processo de pagamento concluído"
@@ -1622,7 +1642,7 @@
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Insira a sua senha (como administrador da organização)."
+        "Insira a sua palavra-passe (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
@@ -1643,7 +1663,7 @@
         "aqui"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
+        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
@@ -1741,6 +1761,9 @@
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
@@ -1787,7 +1810,7 @@
         "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Isto substituirá a sua senha temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
+        "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
@@ -1795,11 +1818,23 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Para se manter actualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
+      "Total email addresses": [
+        "Total de endereços de correio electrónico"
+      ],
       "Total storage": [
         "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Total de conexões VPN"
       ],
       "Two-factor authentication disabled": [
         "Autenticação em dois passos desactivada"
@@ -1808,10 +1843,13 @@
         "Autenticação em dois passos activada"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "O modo de duas senhas usa senhas separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de duas senhas, primeiro insira a senha para o início de sessão e depois para a caixa de correio."
+        "O modo de duas palavras-passe usa palavras-passe separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de palavra-passe única para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, primeiro insira a palavra-passe para o início de sessão e depois para a caixa de correio."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ],
       "Unsaved changes": [
         "Alterações não gravadas"
@@ -1856,7 +1894,7 @@
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da senha. Deseja continuar sem um método de recuperação?"
+        "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
       ],
       "You have no saved payment methods.": [
         "Não tem métodos de pagamento gravados."
@@ -1874,7 +1912,7 @@
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua senha antiga."
+        "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua palavra-passe antiga."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
@@ -2030,13 +2068,13 @@
         "Código"
       ],
       "Confirm login password": [
-        "Confirme a nova senha"
+        "Confirme a nova palavra-passe"
       ],
       "Confirm mailbox password": [
-        "Confirme a senha da caixa de correio"
+        "Confirme a palavra-passe da caixa de correio"
       ],
       "Confirm new password": [
-        "Confirmar a nova senha"
+        "Confirmar a nova palavra-passe"
       ],
       "Copy": [
         "Copiar"
@@ -2084,7 +2122,7 @@
         "Código de oferta"
       ],
       "Hide password": [
-        "Ocultar senha"
+        "Ocultar a palavra-passe"
       ],
       "Interval": [
         "Intervalo"
@@ -2093,7 +2131,7 @@
         "Chave"
       ],
       "Mailbox password": [
-        "Senha da caixa de correio"
+        "Palavra-passe da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -2108,19 +2146,19 @@
         "NAT-PMP (Encaminhamento de porta)"
       ],
       "New login password": [
-        "Nova senha de início"
+        "Nova palavra-passe de início"
       ],
       "New mailbox password": [
-        "Nova senha da caixa de correio"
+        "Nova palavra-passe da caixa de correio"
       ],
       "New password": [
-        "Nova senha"
+        "Nova palavra-passe"
       ],
       "Non-standard ports": [
         "Portas não padrão"
       ],
       "OpenVPN / IKEv2 password": [
-        "Senha OpenVPN/IKEv2"
+        "Palavra-passe OpenVPN/IKEv2"
       ],
       "OpenVPN / IKEv2 username": [
         "Utilizador OpenVPN/IKEv2"
@@ -2138,7 +2176,7 @@
         "Outro valor"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Payer": [
         "Pagante"
@@ -2165,10 +2203,10 @@
         "Frase de recuperação"
       ],
       "Repeat password": [
-        "Repita a senha"
+        "Repita a palavra-passe"
       ],
       "Reveal password": [
-        "Mostrar senha"
+        "Mostrar a palavra-passe"
       ],
       "Security code": [
         "Código de segurança"
@@ -2186,10 +2224,13 @@
         "Informação do sistema"
       ],
       "Two-password mode": [
-        "Modo Senha dupla"
+        "Modo palavra-passe dupla"
+      ],
+      "Use a recovery phone number": [
+        "Utilizar um número de telefone de recuperação"
       ],
       "User's new password": [
-        "Nova senha do utilizador"
+        "Nova palavra-passe do utilizador"
       ],
       "Username": [
         "Nome de utilizador"
@@ -2213,7 +2254,12 @@
         "Sim, quero eliminar permanentemente esta conta e todos os seus dados."
       ],
       "Your password (admin)": [
-        "A sua senha (admin)"
+        "A sua palavra-passe (admin)"
+      ]
+    },
+    "label": {
+      "Recovery phone number": [
+        "Número de telefone de recuperação"
       ]
     },
     "Label on payment method": {
@@ -2259,7 +2305,7 @@
         "Pedir um convite"
       ],
       "Reset password": [
-        "Repor palavra-passe"
+        "Reinicializar a palavra-passe"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -2321,6 +2367,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } custom email domain": [
+        "${ n } domínio de correio electrónico personalizado",
+        "${ n } domínios de correio electrónico personalizados"
+      ],
       "${ n } email address": [
         "${ n } endereço de e-mail",
         "${ n } endereços de e-mail/aliases"
@@ -2345,20 +2395,71 @@
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
+      "${ size } attachment size": [
+        "Anexos de ${ size }"
+      ],
       "Auto-reply": [
         "Resposta automática"
+      ],
+      "Catch-all": [
+        "Catch-all"
       ],
       "Contact groups": [
         "Grupos de contactos"
       ],
+      "Custom email domains": [
+        "Domínios de correio electrónico personalizados"
+      ],
+      "Easy Switch import assistant": [
+        "Assistente de importação Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Suporte a clientes de e-mail (por IMAP/SMTP)"
+      ],
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
+      ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
+      ],
+      "HTML signatures": [
+        "Assinaturas HTML"
+      ],
+      "Limited support": [
+        "Apoio ao cliente limitado"
+      ],
+      "Password-protected Emails": [
+        "Correios electrónicos protegidos por palavra-passe"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar e receber convites"
+      ],
+      "Strict no-logs policy": [
+        "Política estrita sem diários"
+      ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
+      ],
+      "Unlimited filters": [
+        "Filtros ilimitados"
+      ],
+      "Unlimited folders": [
+        "Pastas ilimitadas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Unlimited labels": [
+        "Etiquetas ilimitadas"
+      ],
+      "Unlimited messages per day": [
+        "Mensagens ilimitadas por dia"
       ]
     },
     "new_plans: heading": {
@@ -2381,9 +2482,22 @@
         "Subscrição"
       ]
     },
+    "new_plans: title": {
+      "Review subscription and pay": [
+        "Reveja a subscrição e pague"
+      ]
+    },
     "new_plans: Title": {
       "${ mailPlanName } Trial": [
         "Teste do ${ mailPlanName }"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ]
     },
     "Notification": {
@@ -2450,7 +2564,7 @@
         "Outro"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
@@ -2493,6 +2607,12 @@
     "Recovery Phone": {
       "Cancel": [
         "Cancelar"
+      ],
+      "Phone number has been verified.": [
+        "O número de telefone foi verificado."
+      ],
+      "Phone number not yet verified.": [
+        "O número de telefone ainda não está verificado."
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -2579,6 +2699,11 @@
         "Bloqueador integrado (NetShield)"
       ]
     },
+    "Subscription price": {
+      "For": [
+        "Por"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Gravar"
@@ -2619,7 +2744,7 @@
         "Idioma actualizado"
       ],
       "Password updated": [
-        "Senha actualizada"
+        "Palavra-passe actualizada"
       ],
       "Payment method added": [
         "Método de pagamento adicionado"
@@ -2726,13 +2851,13 @@
         "Verificação do cartão"
       ],
       "Change login password": [
-        "Alterar senha de início de sessão"
+        "Alterar a palavra-passe de início de sessão"
       ],
       "Change mailbox password": [
-        "Alterar senha da caixa de correio"
+        "Alterar a palavra-passe da caixa de correio"
       ],
       "Change password": [
-        "Alterar senha"
+        "Alterar a palavra-passe"
       ],
       "Confirm address": [
         "Confirmar endereço"
@@ -2792,7 +2917,7 @@
         "Data de fim"
       ],
       "Enter your password": [
-        "Insira a sua senha"
+        "Insira a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -2822,7 +2947,7 @@
         "Idioma"
       ],
       "Login password": [
-        "Senha de início de sessão"
+        "Palavra-passe de início de sessão"
       ],
       "Network error": [
         "Erro de rede"
@@ -2849,7 +2974,7 @@
         "Ficheiros de configuração OpenVPN"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Pay invoice": [
         "Pagar factura"
@@ -2894,10 +3019,10 @@
         "Pedir novo código"
       ],
       "Reset password": [
-        "Repor senha"
+        "Reinicializar a palavra-passe"
       ],
       "Reset password?": [
-        "Repor senha?"
+        "Reinicializar a palavra-passe?"
       ],
       "Save contact details": [
         "Guardar detalhes do contacto"
@@ -2906,7 +3031,7 @@
         "Seleccione um plano"
       ],
       "Set new password": [
-        "Definir nova senha"
+        "Definir nova palavra-passe"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticação em dois passos"
@@ -2927,10 +3052,10 @@
         "Estado"
       ],
       "Switch to one-password mode": [
-        "Mudar para modo de senha única"
+        "Mudar para modo de palavra-passe única"
       ],
       "Switch to two-password mode": [
-        "Mudar para modo de senha dupla"
+        "Mudar para modo de palavra-passe dupla"
       ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
@@ -2989,8 +3114,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos ${ length } caracteres"
+        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres."
       ]
     },
     "VPN info": {

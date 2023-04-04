@@ -1304,6 +1304,11 @@
         "Zobrazení (zobrazit všechny podrobnosti o události)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Nepodařilo se načíst kontaktní informace pro ${ address }"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Oprávnění pro ${ email } změněno"
@@ -2836,6 +2841,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } je vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
+      ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
@@ -3331,6 +3339,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Šifrování selhalo"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard verze < 3.0 není podporována"
       ]
     },
     "Error importing contacts": {
@@ -3505,7 +3516,7 @@
         "přihlaste se"
       ],
       "Sign in to verify": [
-        "Pro ověření se přihlašte"
+        "Přihlaste se pro ověření"
       ],
       "There was a problem removing your email address.": [
         "Při odstraňování vaší e-mailové adresy došlo k problému."
@@ -4097,6 +4108,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy, detaily a formáty událostí."
+      ],
+      "vCard versions < 3.0": [
+        "vCard verze < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4745,7 +4759,7 @@
         "Opravdu chcete odstranit tento filtr?"
       ],
       "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Opravdu chcete smazat tuto složku? Budou také odstraněny všechny podsložky."
+        "Opravdu chcete smazat tuto složku? Budou smazány také všechny podsložky."
       ],
       "Are you sure you want to delete this label?": [
         "Jste si jisti, že chcete odstranit tento štítek?"
@@ -5251,8 +5265,8 @@
       "it’s imperative": [
         "je to nezbytně nutné"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Používám ${ MAIL_APP_NAME } a myslím si, že by se Vám mohl líbit. Je to zabezpečená e-mailová služba, která chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte zdarma 1 měsíc prémiových funkcí: ${ referrerLink }"
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Používám @ProtonMail a myslím si, že by se vám mohl líbit. Je to zabezpečená e-mailová služba, která chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte zdarma 1 měsíc prémiových funkcí: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -5617,6 +5631,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
+      ],
       "Server is currently down": [
         "Server je momentálně nefunkční"
       ],
@@ -5705,7 +5722,7 @@
         "E-mailová adresa, kterou umístíte v horní části seznamu, je vaše výchozí e-mailová adresa. Přetažením změňte pořadí Vašich adres."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "Ověřovací odkaz e-mailu vypršel. Prosím přihlašte se znovu pro odeslání ověřovacího odkazu."
+        "Ověřovací odkaz e-mailu vypršel. Prosím přihlaste se znovu pro odeslání ověřovacího odkazu."
       ],
       "The following address is available:": [
         "Následující adresa je dostupná:"
@@ -5789,7 +5806,7 @@
         "Tento token nebude po zavření tohoto okna k dispozici a neměli byste jej s nikým sdílet."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Platnost tohoto odkazu pro odchlášení vypršela. Otevřete prosím novější e-mail z tohoto seznamu."
+        "Platnost tohoto odkazu pro odhlášení vypršela. Otevřete prosím novější e-mail z tohoto e-mailového seznamu."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
@@ -5915,7 +5932,7 @@
         "Neuložené změny"
       ],
       "Unsubscribe link expired": [
-        "Platnost odkazu pro odchlášení vypršela"
+        "Platnost odkazu pro odhlášení vypršela"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -8344,6 +8361,9 @@
       "Secure Core servers": [
         "Servery Secure Core"
       ],
+      "Send & receive invitations": [
+        "Odesílání a přijímání pozvánek"
+      ],
       "Share calendar via link": [
         "Sdílení kalendáře pomocí odkazu"
       ],
@@ -8886,6 +8906,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
       ]
     },
     "Onboarding": {
@@ -9603,6 +9628,9 @@
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Chyba při ověření podpisu"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Povolili jste ověření adresy pro ${ boldSenderEmail }. Pravost této pozvánky do kalendáře se nám nepodařilo ověřit. To může být způsobeno změnami šifrovacích klíčů tohoto kontaktu. Zkontrolujte prosím pokročilé nastavení PGP nebo požádejte ${ boldSenderEmail } o novou pozvánku."
       ]
     },
     "Signup label": {
@@ -9789,6 +9817,35 @@
         "Vysokorychlostní VPN na ${ maxVpn } zařízení",
         "Vysokorychlostní VPN na ${ maxVpn } zařízení",
         "Vysokorychlostní VPN na ${ maxVpn } zařízení"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Rozumím"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Stačí se přihlásit k účtu v Apple App Store a stisknout ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Stačí se přihlásit k účtu v Obchodě Play a stisknout ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Spravujte své předplatné v ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Předplatné je spravováno ve ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Předplatné uživatelského ID-${ userId } bylo provedeno prostřednictvím nákupu v aplikaci. Pro správu předplatného musí uživatel přejít do sekce Předplatné svého účtu ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Předplatné"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Váš tarif byl zakoupen pomocí aplikace pro Android. Chcete-li provést změny tarifu nebo aktualizovat platební údaje, musíte přejít do obchodu Google Play."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Váš tarif byl zakoupen pomocí aplikace pro iOS. Chcete-li provést změny tarifu nebo aktualizovat platební údaje, musíte přejít do Apple App Store."
       ]
     },
     "Subscription price": {
@@ -10507,6 +10564,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "Doba trvání"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -10674,9 +10734,6 @@
       ],
       "Layout": [
         "Rozložení stránky"
-      ],
-      "Length": [
-        "Délka"
       ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
@@ -10880,7 +10937,7 @@
         "Přihlaste se a povolte přístup"
       ],
       "Sign in with 2FA": [
-        "Přihlásit se pomocí dvoufázového ověření"
+        "Přihlásit se pomocí 2FA"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -11262,6 +11319,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatické nastavení podpisu všech odchodzích zpráv tak, že uživatelé mohou ověřit jejich autentičnost. Použití PGP můžete nastavit níže."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Sdíleno koncově šifrované"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Sdíleno koncově šifrované s ověřeným kontaktem"
       ]
     },
     "Tor out of date": {

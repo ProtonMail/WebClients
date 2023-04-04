@@ -181,6 +181,9 @@
       "Close": [
         "Schließen"
       ],
+      "Close & discard": [
+        "Schließen & verwerfen"
+      ],
       "Close composer": [
         "Verfassen-Fenster schließen"
       ],
@@ -496,7 +499,7 @@
         "Aus CSV-Datei oder vCard importieren"
       ],
       "In the morning": [
-        "Am Vormittag"
+        "Morgens"
       ],
       "Inline": [
         "Eingebettet"
@@ -1032,7 +1035,7 @@
         "Tracker-Schutz aktivieren"
       ],
       "Unblock": [
-        "Entblocken"
+        "Als kein Spam markieren"
       ],
       "Underline": [
         "Unterstreichen"
@@ -1257,17 +1260,6 @@
       ],
       "Unsupported event": [
         "Nicht unterstützter Termin"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Alle"
-      ],
-      "With": [
-        "Mit"
-      ],
-      "Without": [
-        "Ohne"
       ]
     },
     "Attachment signature verification": {
@@ -3021,6 +3013,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } für <${ email }>. Du kannst einen anderen Schlüssel hinzufügen oder die Verschlüsselung für diesen Kontakt deaktivieren, um das Problem zu beheben."
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -3470,6 +3465,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-Versionen < 3.0 werden nicht unterstützt"
       ]
     },
     "Error importing contacts": {
@@ -4050,6 +4048,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Termintypen, Details und Formate nicht."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-Versionen < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5014,7 +5015,7 @@
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung gültig. Um Nachrichten an diese Adresse senden zu können, lade bitte einen gültigen Schlüssel hoch oder deaktiviere „E-Mails verschlüsseln“."
       ],
       "Normal": [
-        "Normal"
+        "Standard"
       ],
       "Not a valid URL": [
         "Ungültige URL"
@@ -5169,6 +5170,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }“ gesendet."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -5333,7 +5337,7 @@
         "Diese Nachricht wird in den Ordner „Entwürfe“ verschoben, damit du diese bearbeiten kannst. Du musst den Zeitpunkt zum Versenden der Nachricht neu festlegen."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Diese Nachricht wird am Vormittag um ${ formattedTime } gesendet."
+        "Diese Nachricht wird morgens um ${ formattedTime } gesendet."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Diese Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
@@ -5447,7 +5451,7 @@
         "Führe ein Upgrade durch, um ${ MAIL_APP_NAME } mit Apple Mail, Outlook oder Thunderbird zu nutzen."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Führe ein Upgrade durch, um automatische antworten zu nutzen, wenn du abwesend bist."
+        "Führe ein Upgrade durch, um automatische Antworten zu nutzen, wenn du abwesend bist."
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -5956,9 +5960,6 @@
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
-      ],
-      "Attachments": [
-        "Anhänge"
       ],
       "Authenticator app": [
         "Authenticator App"
@@ -6987,6 +6988,11 @@
         "Damit der Import funktioniert, musst du alle gewünschten Elemente auswählen, wie im GIF gezeigt."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Wähle aus, worauf ${ BRAND_NAME } zugreifen darf: Deine E-Mail-Nachrichten und -Einstellungen anzeigen, deine Kontakte anzeigen und herunterladen, alle Terminkalender, auf die du über Google Agenda zugreifst, anzeigen und herunterladen."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
@@ -7302,6 +7308,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } Tag",
         "${ remainingDays } Tage"
+      ],
+      "<1 d": [
+        "<1 Tag"
       ]
     },
     "Reply to calendar invitation": {

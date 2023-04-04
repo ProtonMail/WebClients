@@ -2188,6 +2188,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Le chiffrement n'a pas abouti."
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versions de vCard < 3.0 non prises en charge"
       ]
     },
     "Error importing contacts": {
@@ -2559,6 +2562,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ne prend actuellement pas en charge certains types d'événements, détails et formats."
+      ],
+      "vCard versions < 3.0": [
+        "Versions de vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4703,6 +4709,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Pour que l'importation fonctionne, sélectionnez tous les éléments demandés comme indiqué dans le GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Agenda."
       ]
     },
     "Onboarding Action": {

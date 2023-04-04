@@ -181,6 +181,9 @@
       "Close": [
         "Закрыть"
       ],
+      "Close & discard": [
+        "Закрыть и сбросить"
+      ],
       "Close composer": [
         "Закрыть редактор писем"
       ],
@@ -1270,17 +1273,6 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Все"
-      ],
-      "With": [
-        "С"
-      ],
-      "Without": [
-        "Без"
       ]
     },
     "Attachment signature verification": {
@@ -3048,6 +3040,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } для ${ email }. Вы можете добавить другой ключ или отключить шифрование для этого контакта, чтобы решить проблему."
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -3079,10 +3074,10 @@
         "Выберите дату в течение ${ EXPIRATION_TIME_MAX_DAYS } дней."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дня.",
-        "Выберите дату в течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
-        "Выберите дату в течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
-        "Выберите дату в течении ${ SCHEDULED_MAX_DATE_DAYS } дней."
+        "Выберите дату в течение ${ SCHEDULED_MAX_DATE_DAYS } дня.",
+        "Выберите дату в течение ${ SCHEDULED_MAX_DATE_DAYS } дней.",
+        "Выберите дату в течение ${ SCHEDULED_MAX_DATE_DAYS } дней.",
+        "Выберите дату в течение ${ SCHEDULED_MAX_DATE_DAYS } дней."
       ],
       "Condition incomplete": [
         "Условие неполное"
@@ -3523,6 +3518,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Версии vCard < 3.0 не поддерживаются"
       ]
     },
     "Error importing contacts": {
@@ -4072,7 +4070,7 @@
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } участник",
-        "${ totalAttendees } участников",
+        "${ totalAttendees } участника",
         "${ totalAttendees } участников",
         "${ totalAttendees } участников"
       ],
@@ -4118,6 +4116,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
+      ],
+      "vCard versions < 3.0": [
+        "Версии vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4386,10 +4387,10 @@
         "${ calendarsToBeCreatedCount } новых календарей"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } объединенный календарь",
-        "${ calendarsToBeMergedCount } объединенных календаря",
-        "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенных календарей"
+        "${ calendarsToBeMergedCount } объединённый календарь",
+        "${ calendarsToBeMergedCount } объединённых календаря",
+        "${ calendarsToBeMergedCount } объединённых календарей",
+        "${ calendarsToBeMergedCount } объединённых календарей"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } контакт содержит несколько адресов электронной почты.",
@@ -4427,8 +4428,8 @@
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } встроенное изображение",
         "${ embeddedAttachmentsCount } встроенных изображения",
-        "${ embeddedAttachmentsCount } встроенных изображения",
-        "${ embeddedAttachmentsCount } встроенных изображения"
+        "${ embeddedAttachmentsCount } встроенных изображений",
+        "${ embeddedAttachmentsCount } встроенных изображений"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: изображение в полном размере"
@@ -4971,7 +4972,7 @@
         "Есть ${ numAttachments } вложение (${ numAttachmentsSize })",
         "Есть ${ numAttachments } вложения (${ numAttachmentsSize })",
         "Есть ${ numAttachments } вложений (${ numAttachmentsSize })",
-        "Есть ${ numAttachments } вложения (${ numAttachmentsSize })"
+        "Есть ${ numAttachments } вложений (${ numAttachmentsSize })"
       ],
       "here": [
         "здесь"
@@ -5347,6 +5348,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Отправка сообщений с @pm.me является платной функцией. Ваше сообщение будет отправлено с вашего обычного адреса ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -6162,9 +6166,6 @@
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
-      ],
-      "Attachments": [
-        "Вложения"
       ],
       "Authenticator app": [
         "Приложение-аутентификатор"
@@ -7209,6 +7210,11 @@
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
@@ -7425,10 +7431,10 @@
         "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалён.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалены."
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",
@@ -7532,6 +7538,9 @@
         "${ remainingDays } дн.",
         "${ remainingDays } дн.",
         "${ remainingDays } дн."
+      ],
+      "<1 d": [
+        "<1 дн."
       ]
     },
     "Reply to calendar invitation": {
@@ -8028,8 +8037,8 @@
       "${ count } conversation deleted": [
         "${ count } цепочка писем удалена",
         "${ count } цепочки писем удалены",
-        "${ count } цепочек писем удалено",
-        "${ count } цепочек писем удалено"
+        "${ count } цепочек писем удалены",
+        "${ count } цепочек писем удалены"
       ],
       "${ count } draft deleted": [
         "${ count } черновик удален",
@@ -8057,9 +8066,9 @@
       ],
       "${ elementsCount } conversation marked as read.": [
         "${ elementsCount } цепочка писем помечена как прочитанная.",
-        "${ elementsCount } цепочки писем помечено как прочитанные.",
-        "${ elementsCount } цепочек писем помечено как прочитанные.",
-        "${ elementsCount } цепочек писем помечено как прочитанные."
+        "${ elementsCount } цепочки писем помечены как прочитанные.",
+        "${ elementsCount } цепочек писем помечены как прочитанные.",
+        "${ elementsCount } цепочек писем помечены как прочитанные."
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } цепочка писем отмечена звёздочкой.",
@@ -8069,9 +8078,9 @@
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } цепочка писем помечена как непрочитанная.",
-        "${ elementsCount } цепочки писем помечено как непрочитанные.",
-        "${ elementsCount } цепочек писем помечено как непрочитанные.",
-        "${ elementsCount } цепочек писем помечено как непрочитанные."
+        "${ elementsCount } цепочки писем помечены как непрочитанные.",
+        "${ elementsCount } цепочек писем помечены как непрочитанные.",
+        "${ elementsCount } цепочек писем помечены как непрочитанные."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } цепочка писем перемещена в ${ folderName }, а отправитель добавлен в ваш список \"не спам\".",
@@ -8082,8 +8091,8 @@
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } цепочка писем перемещена в ${ folderName }.",
         "${ elementsCount } цепочки писем перемещены в ${ folderName }.",
-        "${ elementsCount } цепочек писем перемещено в ${ folderName }.",
-        "${ elementsCount } цепочек писем перемещено в ${ folderName }."
+        "${ elementsCount } цепочек писем перемещены в ${ folderName }.",
+        "${ elementsCount } цепочек писем перемещены в ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } цепочка писем перемещена в спам, а отправитель добавлен в ваш список спама.",
@@ -8117,9 +8126,9 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } сообщение помечено как непрочитанное.",
-        "${ elementsCount } сообщения помечено как непрочитанные.",
-        "${ elementsCount } сообщений помечено как непрочитанные.",
-        "${ elementsCount } сообщений помечено как непрочитанные."
+        "${ elementsCount } сообщения помечены как непрочитанные.",
+        "${ elementsCount } сообщений помечены как непрочитанные.",
+        "${ elementsCount } сообщений помечены как непрочитанные."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } сообщение перемещено в ${ folderName }, а отправитель добавлен в список не спама.",
@@ -8276,7 +8285,7 @@
       ],
       "Move ${ selectionCount } conversation": [
         "Переместить ${ selectionCount } цепочку писем",
-        "Переместить ${ selectionCount } цепочку писем",
+        "Переместить ${ selectionCount } цепочки писем",
         "Переместить ${ selectionCount } цепочек писем",
         "Переместить ${ selectionCount } цепочек писем"
       ],
@@ -9188,7 +9197,7 @@
         "Каждую ${ interval } неделю в ${ multipleDaysString }",
         "Каждые ${ interval } недели в ${ multipleDaysString }",
         "Каждые ${ interval } недель в ${ multipleDaysString }",
-        "Каждые ${ interval } недель по следующим дням: ${ multipleDaysString }"
+        "Каждые ${ interval } недель в ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
@@ -9210,9 +9219,9 @@
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }"
+        "Каждые ${ interval } недели по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Каждую ${ interval } неделю каждый день, ${ untilString }",
@@ -9460,7 +9469,7 @@
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Каждый ${ interval } год, ${ timesString }",
-        "Каждый ${ interval } года, ${ timesString }",
+        "Каждые ${ interval } года, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }"
       ],

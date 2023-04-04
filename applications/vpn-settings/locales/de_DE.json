@@ -3347,6 +3347,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Send & receive invitations": [
+        "Einladungen senden & empfangen"
+      ],
       "Share calendar via link": [
         "Kalender als Link teilen"
       ],
@@ -4291,6 +4294,35 @@
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Geräten"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Verstanden"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Melde dich einfach in deinem Apple App Store Konto an und klicke auf ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "${ subscriptionManager } benutzen, um dein Abonnement zu verwalten"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonnement wird verwaltet von ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Das Abonnement von Benutzer-ID ${ userId } wurde durch einen In-App-Kauf erworben. Um das Abonnement anzupassen, muss der Benutzer zum Abonnementbereich seines ${ subscriptionManager }-Kontos gehen."
+      ],
+      "Subscriptions": [
+        "Abonnements"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Dein Abonnement wurde über eine Android App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Google Play Store gehen."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Für"
@@ -4593,6 +4625,9 @@
       "Downloads": [
         "Downloads"
       ],
+      "Duration": [
+        "Dauer"
+      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -4640,9 +4675,6 @@
       ],
       "Language": [
         "Sprache"
-      ],
-      "Length": [
-        "Länge"
       ],
       "Login password": [
         "Anmeldepasswort"

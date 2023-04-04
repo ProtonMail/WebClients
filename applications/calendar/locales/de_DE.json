@@ -870,6 +870,11 @@
         "Lesezugriff (alle Termindetails anzeigen)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Kontaktinformationen für ${ address } konnten nicht abgerufen werden."
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Kalender von URL hinzufügen"
@@ -2479,6 +2484,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-Versionen < 3.0 werden nicht unterstützt"
       ]
     },
     "Error importing contacts": {
@@ -2876,6 +2884,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Termintypen, Details und Formate nicht."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-Versionen < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3787,6 +3798,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Nur anzeigen"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Lade andere mit einem ${ BRAND_NAME }-Konto ein, Termine in deinem Kalender anzuzeigen oder zu bearbeiten."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4701,6 +4717,11 @@
         "Damit der Import funktioniert, musst du alle gewünschten Elemente auswählen, wie im GIF gezeigt."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Wähle aus, worauf ${ BRAND_NAME } zugreifen darf: Deine E-Mail-Nachrichten und -Einstellungen anzeigen, deine Kontakte anzeigen und herunterladen, alle Terminkalender, auf die du über Google Agenda zugreifst, anzeigen und herunterladen."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
@@ -5283,22 +5304,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Einladungen ganz einfach annehmen"
-      ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Jetzt werden Einladungen in deinem Kalender als ausstehende Termine angezeigt. Öffne einfach einen Termin, um zu antworten. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Zu den Einstellungen"
       ]
     },
     "Storage": {
@@ -5957,6 +5967,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Anzahl auswählen"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Die Terminplanung ist jetzt einfacher!"
       ]
     },
     "Title; create calendar modal": {
