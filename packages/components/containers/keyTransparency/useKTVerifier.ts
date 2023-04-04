@@ -10,6 +10,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 
 import { FeatureCode } from '../../containers/features/FeaturesContext';
+import useConfig from '../../hooks/useConfig';
 import useFeature from '../../hooks/useFeature';
 import { KT_FF, isKTActive } from './ktStatus';
 import { useKeyTransparencyContext } from './useKeyTransparencyContext';
@@ -29,10 +30,11 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
     const { getKTState } = useKeyTransparencyContext();
     const { selfAuditPromise, ktLSAPI } = getKTState().current;
     const ktBlobValues = useRef<KTBlobSelf[]>([]);
+    const { APP_NAME } = useConfig();
 
     const keyTransparencyVerify: KeyTransparencyVerify = async (address, signedKeyList, publicKeys) => {
         const feature = await get().then((result) => result?.Value);
-        if (!(await isKTActive(feature))) {
+        if (!(await isKTActive(APP_NAME, feature))) {
             return;
         }
 
@@ -56,7 +58,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
 
     const keyTransparencyCommit: KeyTransparencyCommit = async (userKeys: DecryptedKey[]) => {
         const feature = await get().then((result) => result?.Value);
-        if (!(await isKTActive(feature))) {
+        if (!(await isKTActive(APP_NAME, feature))) {
             return;
         }
 
