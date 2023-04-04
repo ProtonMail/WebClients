@@ -7,8 +7,8 @@ import { SettingsParagraph } from '@proton/components/containers';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
-import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
+import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -151,6 +151,13 @@ const MyCalendarsSection = ({
 
     const { calendarModal, exportCalendarModal, deleteCalendarModal } = modalsMap;
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: CALENDAR_UPSELL_PATHS.MULTI_CAL,
+        isSettings: true,
+    });
+
     const createCalendarButton = (
         <div className="mb1">
             <PrimaryButton
@@ -168,10 +175,7 @@ const MyCalendarsSection = ({
                 <p className="flex-item-fluid my-0 pr2">{calendarsLimitReachedText}</p>
                 <ButtonLike
                     as={SettingsLink}
-                    path={addUpsellPath(
-                        '/upgrade',
-                        `${APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH}${CALENDAR_UPSELL_PATHS.MULTI_CAL}`
-                    )}
+                    path={addUpsellPath('/upgrade', upsellRef)}
                     color="norm"
                     shape="solid"
                     size="small"

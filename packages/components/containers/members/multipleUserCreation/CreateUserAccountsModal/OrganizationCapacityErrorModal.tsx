@@ -1,17 +1,30 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalProps, Prompt, SettingsLink } from '@proton/components';
+import { ModalProps, Prompt, SettingsLink, useConfig } from '@proton/components';
+import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import { ORGANIZATION_CAPACITY_ERROR_TYPE, OrganizationCapacityError } from './validateOrganizationCapacity';
 
 interface Props extends ModalProps {
     error: OrganizationCapacityError;
     onOk: () => void;
+    app: APP_NAMES;
 }
 
-const OrganizationCapacityErrorModal = ({ error, onOk, ...rest }: Props) => {
-    const upgradeLink = <SettingsLink path="/dashboard">{c('Link').t`Upgrade your plan`}</SettingsLink>;
+const OrganizationCapacityErrorModal = ({ error, onOk, app, ...rest }: Props) => {
+    const { APP_NAME } = useConfig();
+
+    const upsellRef = getUpsellRefFromApp({
+        app: APP_NAME,
+        fromApp: app,
+        feature: SHARED_UPSELL_PATHS.ORGANIZATION_CAPACITY,
+        component: UPSELL_COMPONENT.MODAL,
+    });
+
+    const link = addUpsellPath('/dashboard', upsellRef);
+    const upgradeLink = <SettingsLink path={link}>{c('Link').t`Upgrade your plan`}</SettingsLink>;
     const cta = (() => {
         if (error.type === ORGANIZATION_CAPACITY_ERROR_TYPE.MEMBER) {
             // translator: Full sentence "Upgrade your plan to add more users, or remove some user accounts to free up space."

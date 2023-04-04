@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useConfig } from '@proton/components/hooks';
-import { BRAND_NAME, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellAppRef } from '@proton/shared/lib/helpers/upsell';
+import { BRAND_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import { Alert, ModalProps, ModalTwo, ModalTwoHeader, useSettingsLink } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
@@ -14,7 +14,11 @@ const ContactUpgradeModal = ({ ...rest }: ModalProps) => {
     const { APP_NAME } = useConfig();
 
     const handleConfirm = () => {
-        const upsellAppRef = getUpsellAppRef(APP_NAME, SHARED_UPSELL_PATHS.CONTACT_GROUP);
+        const upsellAppRef = getUpsellRefFromApp({
+            app: APP_NAME,
+            feature: SHARED_UPSELL_PATHS.CONTACT_GROUP,
+            component: UPSELL_COMPONENT.MODAL,
+        });
         const settingsLink = addUpsellPath('/upgrade', upsellAppRef);
         goToSettings(settingsLink);
     };

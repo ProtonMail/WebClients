@@ -5,8 +5,9 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { MailShortcutsModal, PromotionBanner, SettingsLink, useModalState, useTheme } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, UPSELL_COMPONENT, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -15,13 +16,11 @@ import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../constants';
 const { plansSelection, vpn, protonBusiness, drive } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
 enum UPSELL_MAIL_BANNER_LINK_ID {
-    GET_MORE_STORAGE = 1,
     SEND_FROM_PM_ADDRESS = 3,
     GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES = 4,
     AUTO_REPLY = 5,
     THIRD_PARTY_CLIENTS = 7,
     GET_MORE_FEATURES = 9,
-    INCREASE_STORAGE = 11,
     HOST_EMAILS_FROM_YOUR_DOMAINS = 15,
     PROTECT_YOUR_BUSINESS = 16,
     ADD_MORE_ADDRESSES = 17,
@@ -61,10 +60,12 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
     };
 
     const getLink = (url: string, optionID: number) => {
-        const hasParams = url.includes('?');
-        return hasParams
-            ? `${url}&ref=${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${optionID}`
-            : `${url}?ref=${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${optionID}`;
+        const upsellPath = getUpsellRef({
+            app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+            component: UPSELL_COMPONENT.BANNER,
+            feature: optionID.toString(),
+        });
+        return addUpsellPath(url, upsellPath);
     };
 
     const messagesOptions: MessageOption[] = useMemo(

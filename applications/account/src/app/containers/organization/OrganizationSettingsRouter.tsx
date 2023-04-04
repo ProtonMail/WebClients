@@ -76,7 +76,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <PrivateMainSettingsArea config={users}>
                         <UsersAndAddressesSection app={app} />
-                        <MultiUserCreationSection />
+                        <MultiUserCreationSection app={app} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

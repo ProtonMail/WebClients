@@ -31,7 +31,7 @@ import {
 } from '@proton/components';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
-import { DOMAIN_STATE } from '@proton/shared/lib/constants';
+import { APP_NAMES, DOMAIN_STATE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -87,9 +87,10 @@ const filterOptions = (searchValue: string, usersToImport: UserTemplate[]) => {
 
 interface Props extends ModalProps {
     usersToImport: UserTemplate[];
+    app: APP_NAMES;
 }
 
-const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => {
+const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
     const [organization, loadingOrganization] = useOrganization();
@@ -299,6 +300,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             <OrganizationCapacityErrorModal
                 error={organizationCapacityError}
                 onOk={() => setStep(STEPS.SELECT_USERS)}
+                app={app}
                 {...rest}
             />
         );
