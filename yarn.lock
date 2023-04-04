@@ -25885,6 +25885,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-redux: ^8.1.0
     react-router-dom: ^5.3.4
+    tidy-url: ^1.6.14
     ttag: ^1.7.24
     turndown: ^7.1.2
     typescript: ^5.1.3
@@ -30346,6 +30347,13 @@ fsevents@^1.2.7:
   version: 1.1.0
   resolution: "thunky@npm:1.1.0"
   checksum: 993096c472b6b8f30e29dc777a8d17720e4cab448375041f20c0cb802a09a7fb2217f2a3e8cdc11851faa71c957e2db309357367fc9d7af3cb7a4d00f4b66034
+  languageName: node
+  linkType: hard
+
+"tidy-url@npm:^1.6.14":
+  version: 1.6.14
+  resolution: "tidy-url@npm:1.6.14"
+  checksum: b138e2111d6cfd8646850ab11225c630b5ecd487597bdc17c1ee95f7ef39b10cfde4fa8bef3182b1359fd32f31c7e6acc2fcc866644a065b45b31bdd8517a67e
   languageName: node
   linkType: hard
 
