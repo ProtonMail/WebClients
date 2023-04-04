@@ -19,7 +19,7 @@ import { KeyTransparencyState, VerifyOutboundPublicKeys } from '@proton/shared/l
 import { useApi, useFeature, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
 import { FeatureCode } from '../features';
 import { KTContext } from './ktContext';
-import { KT_FF, isKTActive, removeKTBlobs } from './ktStatus';
+import { KT_FF, KtFeatureEnum, isKTActive, removeKTBlobs } from './ktStatus';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 
 /**
@@ -141,7 +141,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
             // createPreAuthKTVerifier helper might have created blobs
             // in local storage. If this is the case and the feature flag
             // turns out to be disabled, we remove them all
-            if (feature === KT_FF.DISABLE) {
+            if (feature === KtFeatureEnum.DISABLE) {
                 const addresses = await addressesPromise;
                 await removeKTBlobs(
                     userID,
@@ -150,7 +150,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
                 );
             }
 
-            if (!(await isKTActive(feature))) {
+            if (!(await isKTActive(APP_NAME, feature))) {
                 return;
             }
 

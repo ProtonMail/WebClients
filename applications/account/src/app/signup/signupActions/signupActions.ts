@@ -165,6 +165,8 @@ export const handleSetupUser = async ({
         subscriptionData,
         persistent,
         clientType,
+        ktFeature,
+        appName,
     } = cache;
 
     const userEmail = (() => {
@@ -215,7 +217,7 @@ export const handleSetupUser = async ({
             // array, and keys won't be setup.
             const addresses = await getAllAddresses(api);
 
-            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(api);
+            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(appName, ktFeature, api);
 
             const keyPassword = addresses.length
                 ? await handleSetupKeys({
