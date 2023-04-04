@@ -96,7 +96,7 @@
         "Cancelar"
       ],
       "Change mailbox password": [
-        "Alterar a senha da caixa de correio"
+        "Alterar a palavra-passe da caixa de correio"
       ],
       "Change organization keys": [
         "Alterar chaves da organização"
@@ -105,7 +105,7 @@
         "Alterar outras subscrições de email"
       ],
       "Change password": [
-        "Alterar senha"
+        "Alterar a palavra-passe"
       ],
       "Chat with us": [
         "Converse connosco"
@@ -513,16 +513,16 @@
         "Repor credenciais"
       ],
       "Reset keys": [
-        "Redefinir chaves"
+        "Reinicializar as chaves"
       ],
       "Reset organization keys": [
-        "Redefinir chaves da organização"
+        "Reinicializar as chaves da organização"
       ],
       "Reset password": [
         "Repor palavra-passe"
       ],
       "Reset to default": [
-        "Repor predefinição"
+        "Reinicialização por defeito"
       ],
       "Restore administrator privileges": [
         "Restaurar privilégios de administrador"
@@ -594,7 +594,7 @@
         "Predefinir"
       ],
       "Set catch-all": [
-        "Definir captura-tudo"
+        "Definir Catch-all"
       ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
@@ -745,6 +745,9 @@
       ],
       "Void": [
         "Anulada"
+      ],
+      "What do I get?": [
+        "O que recebo?"
       ],
       "Wipe": [
         "Apagar"
@@ -1027,6 +1030,23 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "cenoura"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "sahara": [
+        "saará"
+      ],
+      "strawberry": [
+        "morango"
       ]
     },
     "Condition for custom filter": {
@@ -2212,10 +2232,10 @@
         "Credenciais de início de sessão incorrectas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
+        "Palavra-passe da caixa de correio incorrecta. Tente novamente."
       ],
       "Incorrect password": [
-        "Senha incorrecta"
+        "Palavra-passe incorrecta"
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -2272,7 +2292,7 @@
         "A chave da organização não está desencriptada."
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As palavras-passe não coincidem."
       ],
       "Payment process consumed": [
         "Processo de pagamento concluído"
@@ -2336,7 +2356,7 @@
         "O endereço pode estar errado"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+        "O nome da pasta é inválido. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta é inválido. Por favor, escolha um nome diferente."
@@ -2940,16 +2960,16 @@
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
       "Use your app password if:": [
-        "Use a senha da aplicação se:"
+        "Use a palavra-passe da aplicação se:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Use a senha da aplicação em vez da sua senha normal se:"
+        "Use a palavra-passe da aplicação em vez da sua palavra-passe normal se:"
       ],
       "Your email account requires one to export your data.": [
         "A sua conta de e-mail requer uma para exportar os seus dados."
       ],
       "Your password is correct.": [
-        "A sua senha está correta."
+        "A sua palavra-passe está correta."
       ]
     },
     "Import error emphasis": {
@@ -2975,7 +2995,7 @@
     },
     "Import instructions link": {
       "app password": [
-        "senha da aplicação"
+        "palavra-passe da aplicação"
       ],
       "ICS file": [
         "Ficheiro ICS"
@@ -3133,6 +3153,12 @@
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
+      ],
+      "account recovery and data recovery method": [
+        "método de recuperação de conta e dados"
+      ],
+      "account recovery method": [
+        "método de recuperação de conta"
       ],
       "Account successfully updated": [
         "Conta actualizada com sucesso"
@@ -3306,7 +3332,7 @@
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new account and share the email address and password with the user.": [
-        "Crie uma nova conta e compartilhe o endereço de e-mail e a senha com o utilizador."
+        "Crie uma nova conta e compartilhe o endereço de e-mail e a palavra-passe com o utilizador."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crie e gira sub-contas e atribua-lhes endereços de email no seu domínio personalizado."
@@ -3345,7 +3371,7 @@
         "Eliminar ligação?"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
-        "NÃO se esqueça desta senha. Caso se esqueça, não será capaz de gerir a sua organização."
+        "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Não use as credenciais OpenVPN/IKEv2 nas aplicações ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
@@ -3415,7 +3441,7 @@
         "Insira as credenciais da conta de email da qual deseja importar."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
-        "Insira a senha da organização para restaurar privilégios de administrador. ${ learnMore }"
+        "Insira a palavra-passe da organização para restaurar privilégios de administrador. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
@@ -3424,7 +3450,7 @@
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Insira a sua senha (como administrador da organização)."
+        "Insira a sua palavra-passe (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
@@ -3457,7 +3483,7 @@
         "aqui"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
-        "Se outro administrador alterou esta senha, terá de lhe solicitar a nova senha da organização."
+        "Se outro administrador alterou esta palavra-passe, terá de lhe solicitar a nova palavra-passe da organização."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Se o fuso horário do sistema não coincidir com a atual definição de fuso horário, ser-lhe-á pedido que o atualize (no máximo uma vez por dia)."
@@ -3466,7 +3492,7 @@
         "Se este domínio está actualmente a receber emails, seleccione o separador ${ boldAddresses } e adicione todos os endereços de email activos antes de alterar o registo MX para assegurar uma transição suave."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
+        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
@@ -3482,6 +3508,12 @@
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Se tiver definido o SPF e o DKIM, o DMARC permitirá especificar de que forma outros serviços de e-mail devem entregar e-mails para o seu domínio, se as verificações SPF e DKIM falharem. Esta ação pode impedir a usurpação da sua identidade por parte de spammers, mas também pode causar problemas de entrega se não for executada corretamente."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Se você perder sua palavra-passe e precisar reinicializar sua conta, ${ boldImperative } que você tem um ${ boldAccountRecovery } em vigor."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Se você perder sua palavra-passe e precisar reinicializar sua conta, ${ boldImperative } que você tem um ${ boldAccountAndRecovery } em vigor. Caso contrário, você pode não ser capaz de acessar qualquer um dos seus correios eletrónicos, contatos ou arquivos."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Se continuar com a regressão, perderá o acesso às funcionalidades pagas do ${ VPN_APP_NAME }."
@@ -3517,7 +3549,7 @@
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Inherited from parent folder": [
-        "Herança da pasta-mãe"
+        "Herança da pasta principal"
       ],
       "Insert image": [
         "Inserir imagem"
@@ -3545,6 +3577,9 @@
       ],
       "Internet connection restored.": [
         "Ligação à Internet reposta."
+      ],
+      "it’s imperative": [
+        "é obrigatório"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantenha estes registos no seu DNS enquanto utilizar DKIM."
@@ -3613,7 +3648,10 @@
         "Suporte a multi-utilizador não activado."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nomeie a sua nova pasta e seleccione a pasta-mãe onde deseja colocá-la. Se não seleccionar uma pasta-mãe, esta nova pasta será criada como uma pasta de nível superior."
+        "Nomeie a sua nova pasta e seleccione a pasta principalonde deseja colocá-la. Se não seleccionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
+      ],
+      "No account recovery method set; you are at risk of losing access to your account": [
+        "Nenhum método de recuperação de conta definido. Corre o risco de perder o acesso à sua conta."
       ],
       "No action selected": [
         "Nenhuma acção seleccionada"
@@ -3623,6 +3661,9 @@
       ],
       "No contact encryption keys exist": [
         "Não existem chaves de encriptação de contactos"
+      ],
+      "No data recovery method set; you are at risk of losing access to your data": [
+        "Nenhum método de recuperação de dados definido. Corre o risco de perder o acesso aos seus dados."
       ],
       "No folder selected": [
         "Nenhuma pasta seleccionada"
@@ -3658,7 +3699,7 @@
         "Chaves da organização restauradas"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "A sua organização tem mais administradores. Deve comunicar-lhes a nova senha."
+        "A sua organização tem mais administradores. Deve comunicar-lhes a nova palavra-passe."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -3674,6 +3715,9 @@
       ],
       "Please fill out this field.": [
         "Por favor, preencha este campo."
+      ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Mantenha-o seguro. Vai precisar dele para aceder à sua conta e descodificar os seus dados em caso de reinicialização de uma palavra-passe."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Note que se eliminar este endereço, já não será capaz de enviar ou receber correio usando este endereço."
@@ -3705,6 +3749,9 @@
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ],
       "purchase additional storage": [
         "comprar armazenamento adicional"
       ],
@@ -3730,7 +3777,7 @@
         "Da direita para a esquerda"
       ],
       "Save your password somewhere safe.": [
-        "Guarde a senha num lugar seguro."
+        "Guarde a palavra-passe num lugar seguro."
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -3740,6 +3787,9 @@
       ],
       "Select a service provider to start": [
         "Selecione um provedor de serviços para iniciar"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "O servidor está em baixo"
@@ -3832,7 +3882,7 @@
         "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Isto substituirá a sua senha temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
+        "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, por favor, insira o nome do utilizador que deseja eliminar."
@@ -3843,11 +3893,23 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Para se manter actualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
+      "Total email addresses": [
+        "Total de endereços de correio electrónico"
+      ],
       "Total storage": [
         "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Total de conexões VPN"
       ],
       "Two-factor authentication disabled": [
         "Autenticação em dois passos desactivada"
@@ -3856,13 +3918,16 @@
         "Autenticação em dois passos activada"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "O modo de duas senhas usa senhas separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de duas senhas, primeiro insira a senha para o início de sessão e depois para a caixa de correio."
+        "O modo de duas palavras-passe usa palavras-passe separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de palavra-passe única para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, primeiro insira a palavra-passe para o início de sessão e depois para a caixa de correio."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "A não ser que termine a sessão ou altere a senha da conta, a sessão permanecerá activa. As sessões expiram após 60 dias de inactividade."
+        "A não ser que termine a sessão ou altere a palavra-passe da conta, a sessão permanecerá activa. As sessões expiram após 60 dias de inactividade."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ],
       "Unsaved changes": [
         "Alterações não gravadas"
@@ -3943,13 +4008,13 @@
         "Pode activar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da senha. Deseja continuar sem um método de recuperação?"
+        "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
       ],
       "You have no saved payment methods.": [
         "Não tem métodos de pagamento gravados."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Tem de activar a chave privada da sua organização com a senha da segurança da chave da organização disponibilizada pelo administrador da organização."
+        "Tem de activar a chave privada da sua organização com a palavra-passe da segurança da chave da organização disponibilizada pelo administrador da organização."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Tem de ter um cartão de crédito ou conta bancária vinculada à sua conta PayPal para poder adicioná-la como método de pagamento."
@@ -3964,7 +4029,7 @@
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua senha antiga."
+        "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua palavra-passe antiga."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
@@ -3975,8 +4040,14 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
+      "Your account recovery method is set": [
+        "O método de recuperação da sua conta está definido."
+      ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será actualizada assim que o pagamento for aprovado."
+      ],
+      "Your data recovery method is set": [
+        "O método de recuperação de seus dados está definido."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
@@ -3988,7 +4059,7 @@
         "A informação de início de sessão não será gravada após concluir a importação."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "A senha da organização pode ser partilhada com outros utilizadores a quem quer atribuir privilégios de administração. É também um código de recuperação de emergência para obter acesso à sua organização caso perca o acesso à sua conta. Por favor, guarde esta senha num local seguro."
+        "A palavra-passe da organização pode ser partilhada com outros utilizadores a quem quer atribuir privilégios de administração. É também um código de recuperação de emergência para obter acesso à sua organização caso perca o acesso à sua conta. Guarde esta palavra-passe num local seguro."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Os emails da sua organização são protegidos com encriptação ponta-a-ponta usando a chave da organização. Esta impressão digital pode ser utilizada para verificar se todos os administradores na sua conta têm a mesma chave."
@@ -4011,7 +4082,7 @@
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Quando activado, as sub-pastas herdam a cor da pasta-mãe."
+        "Quando activado, as sub-pastas herdam a cor da pasta principal."
       ]
     },
     "Info for cash payment method": {
@@ -4439,7 +4510,7 @@
         "QUALQUER"
       ],
       "App password": [
-        "Senha da aplicação"
+        "Palavra-passe da aplicação"
       ],
       "Attach public key": [
         "Anexar chave pública"
@@ -4523,16 +4594,16 @@
         "Condições"
       ],
       "Confirm login password": [
-        "Confirme a nova senha"
+        "Confirme a nova palavra-passe"
       ],
       "Confirm mailbox password": [
-        "Confirme a senha da caixa de correio"
+        "Confirme a palavra-passe da caixa de correio"
       ],
       "Confirm new password": [
-        "Confirmar a nova senha"
+        "Confirmar a nova palavra-passe"
       ],
       "Confirm organization password": [
-        "Confirmar senha da organização"
+        "Confirmar a palavra-passe da organização"
       ],
       "Contacts": [
         "Contactos"
@@ -4550,7 +4621,7 @@
         "País"
       ],
       "Create password": [
-        "Criar senha"
+        "Criar a palavra-passe"
       ],
       "Credits": [
         "Créditos"
@@ -4628,10 +4699,10 @@
         "Último dia da semana"
       ],
       "Enter password": [
-        "Inserir senha"
+        "Inserir a palavra-passe"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
-        "Insira a senha para a chave com impressão digital: ${ fingerprintCode }"
+        "Insira a palavra-passe para a chave com impressão digital: ${ fingerprintCode }"
       ],
       "Event duration": [
         "Duração do evento"
@@ -4664,7 +4735,7 @@
         "Aqui está um registo DMARC básico que não faz nada a não ser enviar-lhe relatórios."
       ],
       "Hide password": [
-        "Ocultar senha"
+        "Ocultar a palavra-passe"
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
@@ -4688,7 +4759,7 @@
         "Caixa de entrada"
       ],
       "Inherit color from parent folder": [
-        "Herdar cor da pasta-mãe"
+        "Herdar cor da pasta principal"
       ],
       "Interval": [
         "Intervalo"
@@ -4718,7 +4789,7 @@
         "Servidor de email (IMAP)"
       ],
       "Mailbox password": [
-        "Senha da caixa de correio"
+        "Palavra-passe da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -4754,16 +4825,16 @@
         "NAT-PMP (Encaminhamento de porta)"
       ],
       "New login password": [
-        "Nova senha de início"
+        "Nova palavra-passe de início"
       ],
       "New mailbox password": [
-        "Nova senha da caixa de correio"
+        "Nova palavra-passe da caixa de correio"
       ],
       "New organization password": [
-        "Nova senha da organização"
+        "Nova palavra-passe da organização"
       ],
       "New password": [
-        "Nova senha"
+        "Nova palavra-passe"
       ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
@@ -4775,7 +4846,7 @@
         "Notificação"
       ],
       "OpenVPN / IKEv2 password": [
-        "Senha OpenVPN/IKEv2"
+        "Palavra-passe OpenVPN/IKEv2"
       ],
       "OpenVPN / IKEv2 username": [
         "Utilizador OpenVPN/IKEv2"
@@ -4802,13 +4873,13 @@
         "Nome da organização"
       ],
       "Organization password": [
-        "Senha da organização"
+        "Palavra-passe da organização"
       ],
       "Other amount": [
         "Outro valor"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Payer": [
         "Pagante"
@@ -4847,7 +4918,7 @@
         "Código postal"
       ],
       "Previous password": [
-        "Senha anterior"
+        "Palavra-passe anterior"
       ],
       "Prompt to trust keys": [
         "Pedir para confiar em chaves"
@@ -4868,10 +4939,10 @@
         "Frase de recuperação"
       ],
       "Repeat password": [
-        "Repita a senha"
+        "Repita a palavra-passe"
       ],
       "Reveal password": [
-        "Mostrar senha"
+        "Mostrar a palavra-passe"
       ],
       "Security code": [
         "Código de segurança"
@@ -4949,10 +5020,13 @@
         "Para: ${ to }"
       ],
       "Two-password mode": [
-        "Modo Senha dupla"
+        "Modo palavra-passe dupla"
       ],
       "Undo send": [
         "Desfazer Enviar"
+      ],
+      "Use a recovery phone number": [
+        "Utilizar um número de telefone de recuperação"
       ],
       "Use folder colors": [
         "Usar cores da pasta"
@@ -4961,7 +5035,7 @@
         "Utilizador"
       ],
       "User's new password": [
-        "Nova senha do utilizador"
+        "Nova palavra-passe do utilizador"
       ],
       "Username": [
         "Nome de utilizador"
@@ -5006,13 +5080,16 @@
         "URL da sua agenda"
       ],
       "Your password (admin)": [
-        "A sua senha (admin)"
+        "A sua palavra-passe (admin)"
       ],
       "Your referral link": [
         "A sua ligação de referência"
       ]
     },
     "label": {
+      "Recovery phone number": [
+        "Número de telefone de recuperação"
+      ],
       "Recovery phrase": [
         "Frase de recuperação"
       ]
@@ -5155,7 +5232,7 @@
         "Pedir um convite"
       ],
       "Reset password": [
-        "Repor palavra-passe"
+        "Reinicializar a palavra-passe"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -5174,6 +5251,9 @@
       ],
       "What’s this?": [
         "O que é isto?"
+      ],
+      "Why set recovery methods?": [
+        "Por que definir métodos de recuperação?"
       ]
     },
     "Loading info": {
@@ -5433,6 +5513,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } custom email domain": [
+        "${ n } domínio de correio electrónico personalizado",
+        "${ n } domínios de correio electrónico personalizados"
+      ],
       "${ n } email address": [
         "${ n } endereço de e-mail",
         "${ n } endereços de e-mail/aliases"
@@ -5457,20 +5541,71 @@
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
+      "${ size } attachment size": [
+        "Anexos de ${ size }"
+      ],
       "Auto-reply": [
         "Resposta automática"
+      ],
+      "Catch-all": [
+        "Catch-all"
       ],
       "Contact groups": [
         "Grupos de contactos"
       ],
+      "Custom email domains": [
+        "Domínios de correio electrónico personalizados"
+      ],
+      "Easy Switch import assistant": [
+        "Assistente de importação Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Suporte a clientes de e-mail (por IMAP/SMTP)"
+      ],
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
+      ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
+      ],
+      "HTML signatures": [
+        "Assinaturas HTML"
+      ],
+      "Limited support": [
+        "Apoio ao cliente limitado"
+      ],
+      "Password-protected Emails": [
+        "Correios electrónicos protegidos por palavra-passe"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar e receber convites"
+      ],
+      "Strict no-logs policy": [
+        "Política estrita sem diários"
+      ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
+      ],
+      "Unlimited filters": [
+        "Filtros ilimitados"
+      ],
+      "Unlimited folders": [
+        "Pastas ilimitadas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Unlimited labels": [
+        "Etiquetas ilimitadas"
+      ],
+      "Unlimited messages per day": [
+        "Mensagens ilimitadas por dia"
       ]
     },
     "new_plans: heading": {
@@ -5501,6 +5636,19 @@
     "new_plans: Title": {
       "${ mailPlanName } Trial": [
         "Teste do ${ mailPlanName }"
+      ]
+    },
+    "new_plans: title": {
+      "Review subscription and pay": [
+        "Reveja a subscrição e pague"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Priority support": [
+        "Apoio ao cliente prioritário"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
       ]
     },
     "Notification": {
@@ -5696,7 +5844,7 @@
         "O motivo não está na lista"
       ],
       "No parent folder": [
-        "Nenhuma pasta-mãe"
+        "Nenhuma pasta principal"
       ],
       "Permanent": [
         "Permanente"
@@ -5828,7 +5976,7 @@
         "Confirmar"
       ],
       "Confirm password": [
-        "Confirmar senha"
+        "Confirmar a palavra-passe"
       ],
       "domain.com": [
         "domínio.com"
@@ -5855,7 +6003,7 @@
         "Outro"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Phone number": [
         "Número de telefone"
@@ -5958,6 +6106,12 @@
     "Recovery Phone": {
       "Cancel": [
         "Cancelar"
+      ],
+      "Phone number has been verified.": [
+        "O número de telefone foi verificado."
+      ],
+      "Phone number not yet verified.": [
+        "O número de telefone ainda não está verificado."
       ]
     },
     "Remark about a key type option": {
@@ -5981,10 +6135,10 @@
         "Alterar as chaves da organização"
       ],
       "Changing organization password": [
-        "Alterar a senha da organização"
+        "Alterar a palavra-passe da organização"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
-        "Devido a uma alteração de senha, os privilégios de administrador da sua organização foram restringidos. As seguintes acções já não são permitidas:"
+        "Devido a uma alteração de palavra-passe, os privilégios de administrador da sua organização foram restringidos. As seguintes acções já não são permitidas:"
       ]
     },
     "Select files": {
@@ -6163,6 +6317,11 @@
         "Bloqueador integrado (NetShield)"
       ]
     },
+    "Subscription price": {
+      "For": [
+        "Por"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Gravar"
@@ -6197,7 +6356,7 @@
         "Agenda actualizada"
       ],
       "Catch-all address updated": [
-        "Endereço captura-tudo actualizado"
+        "Endereço Catch-all actualizado"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
@@ -6245,7 +6404,7 @@
         "Organização activada"
       ],
       "Password updated": [
-        "Senha actualizada"
+        "Palavra-passe actualizada"
       ],
       "Payment method added": [
         "Método de pagamento adicionado"
@@ -6396,7 +6555,7 @@
         "3. Seleccionar configuração e transferir"
       ],
       "Account and password": [
-        "Conta e senha"
+        "Conta e palavra-passe"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -6498,10 +6657,10 @@
         "Endereço Catch-All"
       ],
       "Change login password": [
-        "Alterar senha de início de sessão"
+        "Alterar a palavra-passe de início de sessão"
       ],
       "Change mailbox password": [
-        "Alterar senha da caixa de correio"
+        "Alterar a palavra-passe da caixa de correio"
       ],
       "Change organization keys": [
         "Alterar as chaves da organização"
@@ -6510,10 +6669,10 @@
         "Alterar nome da organização"
       ],
       "Change organization password": [
-        "Alterar a senha da organização"
+        "Alterar a palavra-passe da organização"
       ],
       "Change password": [
-        "Alterar senha"
+        "Alterar a palavra-passe"
       ],
       "Change role": [
         "Alterar a função"
@@ -6655,7 +6814,7 @@
         "Data de fim"
       ],
       "Enter your password": [
-        "Insira a sua senha"
+        "Insira a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -6709,6 +6868,9 @@
       "Human verification": [
         "Verificação humana"
       ],
+      "Identity and addresses": [
+        "Identidade e endereços"
+      ],
       "Import": [
         "Importar"
       ],
@@ -6756,7 +6918,7 @@
         "Confirmação de hiperligação"
       ],
       "Login password": [
-        "Senha de início de sessão"
+        "Palavra-passe de início de sessão"
       ],
       "Messages": [
         "Mensagens"
@@ -6804,10 +6966,10 @@
         "Organização e chaves"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Password and keys": [
-        "Senha e chaves"
+        "Palavra-passe e chaves"
       ],
       "Pay invoice": [
         "Pagar factura"
@@ -6864,10 +7026,10 @@
         "Pedir novo código"
       ],
       "Reset password": [
-        "Repor senha"
+        "Reinicializar a palavra-passe"
       ],
       "Reset password?": [
-        "Repor senha?"
+        "Reinicializar a palavra-passe?"
       ],
       "Restore administrator privileges": [
         "Restaurar privilégios de administrador"
@@ -6906,7 +7068,7 @@
         "Gestão da sessão"
       ],
       "Set new password": [
-        "Definir nova senha"
+        "Definir nova palavra-passe"
       ],
       "Set organization keys": [
         "Definir chaves da organização"
@@ -6915,7 +7077,7 @@
         "Definir nome da organização"
       ],
       "Set organization password": [
-        "Definir senha da organização"
+        "Definir a palavra-passe da organização"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticação em dois passos"
@@ -6965,10 +7127,13 @@
         "Contas ${ successfullyCreatedUsers.length } criadas"
       ],
       "Switch to one-password mode": [
-        "Mudar para modo de senha única"
+        "Mudar para modo de palavra-passe única"
       ],
       "Switch to two-password mode": [
-        "Mudar para modo de senha dupla"
+        "Mudar para modo de palavra-passe dupla"
+      ],
+      "Take precautions to avoid data loss!": [
+        "Tome precauções para evitar a perda de dados."
       ],
       "Theme": [
         " Tema"
@@ -7023,6 +7188,9 @@
       ],
       "Your plan": [
         "O seu plano"
+      ],
+      "Your recovery status": [
+        "O seu estado de recuperação"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7068,7 +7236,7 @@
         "Endereço"
       ],
       "Catch-All": [
-        "Capturar tudo"
+        "Catch-All"
       ],
       "Status": [
         "Estado"
@@ -7148,6 +7316,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviado ou Rascunhos continuarão a aparecer nessa pasta, mesmo que as mova para outra pasta."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Definia a aparência predefinida da lista de mensagens."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Predefina o tamanho da janela do compositor como pequeno ou médio."
       ],
@@ -7173,7 +7344,7 @@
         "Esta chave não pode ser usada para encriptação"
       ],
       "This key is encrypted with an old password": [
-        "Esta chave está encriptada com uma senha antiga"
+        "Esta chave está encriptada com uma palavra-passe antiga."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectámos um problema com sua configuração DNS. Por favor, certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
@@ -7228,8 +7399,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos ${ length } caracteres"
+        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres."
       ]
     },
     "VPN info": {

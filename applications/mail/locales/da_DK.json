@@ -167,6 +167,9 @@
       "Close": [
         "Luk"
       ],
+      "Close & discard": [
+        "Luk og kassér"
+      ],
       "Close composer": [
         "Luk skrivevinduet"
       ],
@@ -926,6 +929,9 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
+      "Show side panel": [
+        "Vis sidepanel"
+      ],
       "Sign in": [
         "Log ind"
       ],
@@ -1222,17 +1228,6 @@
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Alle"
-      ],
-      "With": [
-        "Med"
-      ],
-      "Without": [
-        "Uden"
       ]
     },
     "Attachment signature verification": {
@@ -4686,6 +4681,14 @@
       "Expires in ${ formattedDate }": [
         "Udløber om ${ formattedDate }"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Udløber om ${ minutesDiff } minut",
+        "Udløber om ${ minutesDiff } minutter"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Udløber om mindre end ${ hoursDiff } time",
+        "Udløber om mindre end ${ hoursDiff } timer"
+      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -5812,9 +5815,6 @@
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
-      ],
-      "Attachments": [
-        "Vedhæftninger"
       ],
       "Authenticator app": [
         "Godkendelsesapp"
@@ -7152,6 +7152,12 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
       ]
     },
     "Reply to calendar invitation": {

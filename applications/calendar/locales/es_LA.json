@@ -390,7 +390,7 @@
         "Recuperar datos"
       ],
       "Refer a friend": [
-        "Referir un amigo"
+        "Referir una amistad"
       ],
       "refresh the page": [
         "refresque la página"
@@ -868,6 +868,11 @@
       ],
       "View (see all event details)": [
         "Ver (todos los detalles del evento)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Error al recuperar la información de contacto para ${ address }"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2476,6 +2481,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falló el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no compatibles"
       ]
     },
     "Error importing contacts": {
@@ -2873,6 +2881,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualmente no admite ciertos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3784,6 +3795,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Solo lectura"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Invite a otros con una cuenta de ${ BRAND_NAME } para ver o editar eventos en su calendario."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4698,6 +4714,11 @@
         "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccione a lo que ${ BRAND_NAME } puede acceder: ver sus correos y ajustes, ver y descargar sus contactos, ver y descargar todas sus agendas a las que usted accede en Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bienvenido/a a ${ appName }"
@@ -5283,22 +5304,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Aceptar invitaciones fácilmente"
-      ],
       "Get up to ${ credits } in credits.": [
         "Obtenga hasta ${ credits } en créditos."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invite amistades a ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Ahora las invitaciones aparecen en su calendario como eventos pendientes. Solo abra un evento para responder. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Ir a los ajustes"
       ]
     },
     "Storage": {
@@ -5957,6 +5967,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Elija un número"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "¡La planificación ahora es más fácil!"
       ]
     },
     "Title; create calendar modal": {

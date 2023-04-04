@@ -467,6 +467,9 @@
       "Show more": [
         "Mostrar més"
       ],
+      "Show side panel": [
+        "Mosta la subfinestra lateral"
+      ],
       "Show time zones": [
         "Mostrar el fus horari"
       ],
@@ -865,6 +868,11 @@
       ],
       "View (see all event details)": [
         "Mostra (veu tots els detalls de l'esdeveniment)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "No s'ha pogut recuperar la informació de contacte per ${ address }."
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2473,6 +2481,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error en el xifratge"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versions de vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
@@ -2867,6 +2878,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
+      "vCard versions < 3.0": [
+        "Versions de vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3778,6 +3792,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Només visualització"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Convideu altres persones que tinguin un compte de ${ BRAND_NAME } a veure o editar esdeveniments al vostre calendari."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4692,9 +4711,14 @@
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Li donem la benvinguda a ${ appName }"
+        "Us donem la benvinguda a ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
         "Preneu el control del vostre temps i les vostres dades."
@@ -4978,6 +5002,11 @@
         "No s'han pogut actualitzar les preferències."
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membre per calendari.",
@@ -5017,6 +5046,14 @@
         "Gestiona el calendari"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Error de verificació de signatura"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Heu activat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Us convidem a comprovar la vostra configuració avançada de PGP o sol·licitar una nova invitació a ${ boldSenderEmail }."
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "No signar"
@@ -5026,22 +5063,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Accepteu invitacions fàcilment"
-      ],
       "Get up to ${ credits } in credits.": [
         "Obtingui fins a ${ credits } en crèdits."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Ara les invitacions apareixen al vostre calendari en forma d'esdeveniments pendents. Simplement, obre un esdeveniment per respondre. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Aneu a les preferències"
       ]
     },
     "Storage": {
@@ -5645,6 +5671,9 @@
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
+      "Sign in with 2FA": [
+        "Inicia la sessió amb dos factors"
+      ],
       "Sign out": [
         "Tanca la sessió"
       ],
@@ -5697,6 +5726,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Tria un número"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Gestionar la vostra agenda mai ha estat tan fàcil!"
       ]
     },
     "Title; create calendar modal": {
@@ -5768,6 +5802,14 @@
       ],
       "You do not have any contacts to export": [
         "No teniu cap contacte per exportar"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Compartit amb xifratge d'extrem a extrem"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Compartit amb xifratge d'extrem a extrem amb contacte verificat"
       ]
     },
     "Validation": {

@@ -467,6 +467,9 @@
       "Show more": [
         "Mostra di più"
       ],
+      "Show side panel": [
+        "Mostra pannello laterale"
+      ],
       "Show time zones": [
         "Mostra fusi orari"
       ],
@@ -2473,6 +2476,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptaggio fallito"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versioni di vCard < 3.0 non supportate"
       ]
     },
     "Error importing contacts": {
@@ -2870,6 +2876,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } attualmente non supporta determinati tipi di eventi, dettagli e formati."
+      ],
+      "vCard versions < 3.0": [
+        "versioni di vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5025,6 +5034,11 @@
         "Gestisci calendario"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Errore nella verifica della firma"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Non firmare"
@@ -5266,22 +5280,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Accetta gli inviti facilmente"
-      ],
       "Get up to ${ credits } in credits.": [
         "Guadagna fino a ${ credits } in crediti."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita gli amici su ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Ora gli inviti appaiono sul tuo calendario come eventi in attesa. Apri un evento per rispondere. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Vai alle impostazioni"
       ]
     },
     "Storage": {
@@ -6011,6 +6014,11 @@
       ],
       "You do not have any contacts to export": [
         "Non hai alcun contatto da esportare"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Condiviso con crittografia end-to-end"
       ]
     },
     "Validation": {

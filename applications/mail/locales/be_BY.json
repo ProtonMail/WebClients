@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
-    "language": "be_BE"
+    "language": "be_BY"
   },
   "contexts": {
     "account": {
@@ -180,6 +180,9 @@
       ],
       "Close": [
         "Закрыць"
+      ],
+      "Close & discard": [
+        "Закрыць і адхіліць"
       ],
       "Close composer": [
         "Закрыць рэдактар"
@@ -1270,17 +1273,6 @@
       ],
       "Unsupported event": [
         "Падзея не падтрымліваецца"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Усе"
-      ],
-      "With": [
-        "З"
-      ],
-      "Without": [
-        "Без"
       ]
     },
     "Attachment signature verification": {
@@ -3045,6 +3037,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } для <${ email }>. Вы можаце дадаць іншы ключ або адключыць шыфраванне для гэтага кантакту, каб вырашыць праблему."
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -3520,6 +3515,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -4112,6 +4110,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "Праграма ${ CALENDAR_APP_NAME } у цяперашні час не падтрымлівае некаторыя тыпы падзей, падрабязнасці і фарматы."
+      ],
+      "vCard versions < 3.0": [
+        "Версіі vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5121,13 +5122,13 @@
         "Паведамленне будзе адпраўлена раніцай у ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Паведамленне будзе адпраўлена ${ dateString } а ${ formattedTime }"
+        "Паведамленне будзе адпраўлена ${ dateString } у ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        "Паведамленне будзе адпраўлена сёння а ${ formattedTime }"
+        "Паведамленне будзе адпраўлена сёння ў ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        "Паведамленне будзе адпраўлена заўтра а ${ formattedTime }"
+        "Паведамленне будзе адпраўлена заўтра ў ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
@@ -5342,6 +5343,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Адпраўка паведамленняў з адраса @pm.me з'яўляецца платнай функцыяй. Ваша паведамленне будзе адпраўлена з вашага прадвызначанага адраса ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -5514,16 +5518,16 @@
         "Гэта паведамленне будзе адпраўлена раніцай у ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Гэта паведамленне будзе адпраўлена ${ dateString } а ${ formattedTime }"
+        "Гэта паведамленне будзе адпраўлена ${ dateString } у ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Гэта паведамленне неўзабаве будзе адпраўлена"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        "Гэта паведамленне будзе адпраўлена сёння а ${ formattedTime }"
+        "Гэта паведамленне будзе адпраўлена сёння ў ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        "Гэта паведамленне будзе адпраўлена заўтра а ${ formattedTime }"
+        "Гэта паведамленне будзе адпраўлена заўтра ў ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Тэрмін дзеяння гэтага паведамлення міне ${ formattedDate }"
@@ -5598,7 +5602,7 @@
         "Палепшыце ўліковы запіс, каб ствараць больш папак, фільтраў і адрасоў."
       ],
       "Upgrade to level up your privacy.": [
-        "Палепшыце свой тарыфны план, каб павысіць свой узровень прыватнасці."
+        "Палепшыце свой тарыфны план для ўдасканалення вашай прыватнасці."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Палепшыце ўліковы запіс, каб мець магчымасць адпраўляць лісты з адраса @pm.me."
@@ -6156,9 +6160,6 @@
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
-      ],
-      "Attachments": [
-        "Далучэнні"
       ],
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
@@ -7203,6 +7204,11 @@
         "Для імпартавання даных, вы павінны выбраць усе запытаныя элементы, як паказана на відарысе GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд электронных лістоў і наладаў, прагляд і спампоўванне кантактаў, прагляд і спампоўванне ўсіх планаванняў з праграмы Каляндар Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаем у ${ appName }"
@@ -7474,7 +7480,7 @@
     },
     "protonbadge": {
       "Official": [
-        "Афіцыйна"
+        "Афіцыйны"
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
@@ -7526,6 +7532,9 @@
         "${ remainingDays } дні",
         "${ remainingDays } дзён",
         "${ remainingDays } дні"
+      ],
+      "<1 d": [
+        "<1 дз"
       ]
     },
     "Reply to calendar invitation": {

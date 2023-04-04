@@ -1812,7 +1812,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Experimente o melhor de ${ MAIL_APP_NAME } gratuitamente"
+        "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente"
       ]
     },
     "Human verification method": {
@@ -2215,7 +2215,7 @@
         "A pré-visualização falhou ao carregar"
       ],
       "Preview for this file type is not supported": [
-        "A visualização prévia deste arquivo não é suportada"
+        "A pré-visualização deste arquivo não é suportada"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
@@ -3328,6 +3328,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar e receber convites"
+      ],
       "Share calendar via link": [
         "Compartilhe o calendário por link"
       ],
@@ -4275,6 +4278,20 @@
         "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gerencie sua assinatura em ${ subscriptionManager }."
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "A assinatura é gerenciada por ${ subscriptionManager }"
+      ],
+      "Subscriptions": [
+        "Assinaturas"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Por"
@@ -4285,10 +4302,10 @@
         "Você tem certeza?"
       ],
       "Auto-pay is disabled": [
-        "Autopagamento desabilitado"
+        "Autopagamento está desativado"
       ],
       "Auto-pay is enabled": [
-        "Autopagamento está habilitado"
+        "Autopagamento está ativado"
       ],
       "Disable": [
         "Desativar"
@@ -4616,9 +4633,6 @@
       "Language": [
         "Idioma"
       ],
-      "Length": [
-        "Tamanho"
-      ],
       "Login password": [
         "Senha de acesso"
       ],
@@ -4726,6 +4740,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sessão com A2F"
       ],
       "Sign out": [
         "Encerrar sessão"

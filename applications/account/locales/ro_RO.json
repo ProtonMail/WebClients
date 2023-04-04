@@ -1302,6 +1302,11 @@
         "Afișare (afișare toate detaliile evenimentului)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Eșuare preluare informații de contact pentru ${ address }."
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Permisiuni modificate pentru ${ email }"
@@ -2827,6 +2832,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Mesaje și compunere > Domeniu scurt (pm.me)."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -3316,6 +3324,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptare eșuată"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiunile vCard < 3.0 nu sunt suportate."
       ]
     },
     "Error importing contacts": {
@@ -4071,6 +4082,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nu acceptă în prezent anumite tipuri de evenimente, detalii și formate."
+      ],
+      "vCard versions < 3.0": [
+        "Versiuni vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5195,8 +5209,8 @@
       "it’s imperative": [
         "este imperativ"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Am folosit ${ MAIL_APP_NAME } și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea cu această legătură oferă o lună gratuită: ${ referrerLink }"
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Am folosit @ProtonMail și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea prin această legătură de recomandare oferă o lună gratuită: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
@@ -5557,6 +5571,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
       ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
@@ -8253,6 +8270,9 @@
       "Secure Core servers": [
         "Servere Secure Core"
       ],
+      "Send & receive invitations": [
+        "Trimiteți și primiți invitații"
+      ],
       "Share calendar via link": [
         "Partajare calendar prin legături"
       ],
@@ -8787,6 +8807,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Pentru ca importarea să funcționeze, trebuie să selectați toate elementele solicitate așa cum e arătat în imagine."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Agenda."
       ]
     },
     "Onboarding": {
@@ -9680,6 +9705,35 @@
         "VPN de mare viteză pe ${ maxVpn } de dispozitive"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Doar conectați-vă în App Store de la Apple și apoi apăsați pe ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Doar conectați-vă în Magazinul Play și apoi apăsați pe ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestionați-vă abonamentul pe ${ subscriptionManager }."
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonamentul este gestionat de ${ subscriptionManager }."
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Abonarea utilizatorului cu ID-ul ${ userId } a fost efectuată prin achiziția din aplicație. Pentru gestionarea abonamentului utilizatorul trebuie să navigheze la secțiunea Abonamente din contul ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Abonamente"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Abonamentul a fost achiziționat din aplicația Android. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din Magazinul Play al lui Google."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Pentru"
@@ -10389,6 +10443,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "Durata"
+      ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"
       ],
@@ -10557,9 +10614,6 @@
       ],
       "Layout": [
         "Aspect"
-      ],
-      "Length": [
-        "Lungime"
       ],
       "Link confirmation": [
         "Legătură de confirmare"
