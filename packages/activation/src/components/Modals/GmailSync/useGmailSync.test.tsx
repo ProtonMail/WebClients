@@ -65,7 +65,22 @@ describe('useGmailSync', () => {
         });
     });
 
-    it('User that have local other than english should not see the animation', () => {
+    it('User that have locale other than english and that have seen onboarding should not see the animation', () => {
+        mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
+        mockUseExperiment.mockReturnValue({ value: 'B', loading: true });
+        mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'fr_CH' }, false]);
+
+        const { result } = easySwitchHookRender(useGmailSync);
+        const { current } = result;
+
+        expect(current.derivedValues).toStrictEqual({
+            displayOnboarding: true,
+            displaySync: false,
+        });
+    });
+
+    it('User that have locale other than english and that have not seen onboarding should see the animation', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: true });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: true }]);
@@ -75,7 +90,7 @@ describe('useGmailSync', () => {
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            displayOnboarding: true,
+            displayOnboarding: false,
             displaySync: false,
         });
     });
