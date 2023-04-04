@@ -7,7 +7,13 @@ const metricsApi = new MetricsApi();
 
 jest.mock('../lib/MetricsRequestService', () => {
     return jest.fn().mockImplementation(() => {
-        return { api: metricsApi, setReportMetrics: jest.fn(), processAllRequests: jest.fn() };
+        return {
+            api: metricsApi,
+            setReportMetrics: jest.fn(),
+            processAllRequests: jest.fn(),
+            stopBatchingProcess: jest.fn(),
+            startBatchingProcess: jest.fn(),
+        };
     });
 });
 
@@ -97,6 +103,26 @@ describe('MetricsBase', () => {
             await metrics.processAllRequests();
 
             expect(metricsRequestService.processAllRequests).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('stopBatchingProcess', () => {
+        it('calls stopBatchingProcess', async () => {
+            const metrics = new MetricsBase(metricsRequestService);
+
+            await metrics.stopBatchingProcess();
+
+            expect(metricsRequestService.stopBatchingProcess).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('startBatchingProcess', () => {
+        it('calls startBatchingProcess', async () => {
+            const metrics = new MetricsBase(metricsRequestService);
+
+            await metrics.startBatchingProcess();
+
+            expect(metricsRequestService.startBatchingProcess).toHaveBeenCalledTimes(1);
         });
     });
 });
