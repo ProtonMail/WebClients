@@ -1,3 +1,4 @@
+import { fromUnixTime, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
@@ -32,6 +33,7 @@ const revisionListFromArray = (
 };
 
 const RevisionList = ({ currentRevision, categorizedRevisions, havePreviewAvailable }: Props) => {
+    const currentRevisionFormat = isToday(fromUnixTime(currentRevision.CreateTime)) ? 'time' : 'date';
     return (
         <ul className="unstyled">
             <li>
@@ -42,7 +44,7 @@ const RevisionList = ({ currentRevision, categorizedRevisions, havePreviewAvaila
                     <RevisionListItem
                         revisionId={currentRevision.ID}
                         havePreviewAvailable={havePreviewAvailable}
-                        formatType="time"
+                        formatType={currentRevisionFormat}
                         createTime={currentRevision.CreateTime}
                         isCurrent
                     />
