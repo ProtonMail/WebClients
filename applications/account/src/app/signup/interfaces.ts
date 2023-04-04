@@ -1,5 +1,6 @@
 import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { Payment } from '@proton/components/containers/payments/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
@@ -141,6 +142,8 @@ export interface SignupCacheResult {
     setupData?: SetupData;
     accountData: AccountData;
     subscriptionData: SubscriptionData;
+    ktFeature: KT_FF;
+    appName: APP_NAMES;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
     addressGeneration?: AddressGeneration;

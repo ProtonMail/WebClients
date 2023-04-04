@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { verifyPoAExistence } from '@proton/key-transparency';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
@@ -437,6 +438,7 @@ export const handleLogin = async ({
     toApp,
     payload,
     setupVPN,
+    ktFeature,
 }: {
     username: string;
     password: string;
@@ -448,6 +450,7 @@ export const handleLogin = async ({
     toApp: APP_NAMES | undefined;
     payload?: ChallengeResult;
     setupVPN: boolean;
+    ktFeature: KT_FF;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
     const { authVersion, result: authResponse } = await loginWithFallback({
@@ -472,7 +475,7 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasTrustedDeviceRecovery,
         setupVPN,
-        preAuthKTVerifier: createPreAuthKTVerifier(api),
+        preAuthKTVerifier: createPreAuthKTVerifier(appName, ktFeature, api),
     };
 
     return next({ cache, from: AuthStep.LOGIN });
