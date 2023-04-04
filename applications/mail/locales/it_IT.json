@@ -175,6 +175,9 @@
       "Close": [
         "Chiudi"
       ],
+      "Close & discard": [
+        "Chiudi ed elimina"
+      ],
       "Close composer": [
         "Chiudi il compositore"
       ],
@@ -949,6 +952,9 @@
       "Show preview": [
         "Mostra anteprima"
       ],
+      "Show side panel": [
+        "Mostra pannello laterale"
+      ],
       "Sign in": [
         "Accedi"
       ],
@@ -1256,17 +1262,6 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Tutti"
-      ],
-      "With": [
-        "Con"
-      ],
-      "Without": [
-        "Senza"
       ]
     },
     "Attachment signature verification": {
@@ -3017,6 +3012,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } per <${ email }>. Puoi aggiungere un'altra chiave o disabilitare la crittografia per questo contatto per risolvere il problema."
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -3463,6 +3461,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptaggio fallito"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versioni di vCard < 3.0 non supportate"
       ]
     },
     "Error importing contacts": {
@@ -4038,6 +4039,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } attualmente non supporta determinati tipi di eventi, dettagli e formati."
+      ],
+      "vCard versions < 3.0": [
+        "versioni di vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4845,6 +4849,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Aumenta lo spazio di archiviazione a partire da ${ planPrice }/mese."
+      ],
       "Indexing paused": [
         "Indicizzazione in pausa"
       ],
@@ -4932,6 +4939,9 @@
       "Message sent.": [
         "Messaggio inviato."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Il messaggio verrà inviato la mattina alle ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Il messaggio verrà inviato il ${ dateString } alle ${ formattedTime }"
       ],
@@ -4994,6 +5004,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nessuna delle chiavi caricate è valida per la crittografia. Per abilitare l'invio di messaggi a questo indirizzo, caricare cortesemente una chiave valida oppure disabilitare \"Email criptate\"."
+      ],
+      "Normal": [
+        "Normale"
       ],
       "Not a valid URL": [
         "URL non valido"
@@ -5243,6 +5256,9 @@
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
       ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Questa azione scaricherà i messaggi più recenti, così che possano essere cercati localmente. Cancellare i dati del browser disabiliterà questa opzione."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
       ],
@@ -5298,6 +5314,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Questo messaggio verrà spostato nelle Bozze in questo modo potrai modificarlo. Sarà necessario pianificare nuovamente il suo invio."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Questo messaggio verrà inviato la mattina alle ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Questo messaggio verrà inviato il ${ dateString } alle ${ formattedTime }"
@@ -5911,9 +5930,6 @@
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
-      ],
-      "Attachments": [
-        "Allegati"
       ],
       "Authenticator app": [
         "App di autenticazione"
@@ -7257,6 +7273,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } g",
         "${ remainingDays } g"
+      ],
+      "<1 d": [
+        "<1 g"
       ]
     },
     "Reply to calendar invitation": {

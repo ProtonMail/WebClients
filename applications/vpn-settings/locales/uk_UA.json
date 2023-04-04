@@ -2240,6 +2240,9 @@
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
+      "Preview for this file type is not supported": [
+        "Перегляд цього типу файлу не підтримується"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
@@ -3103,7 +3106,7 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "Живий чат доступний з ${ planName }"
+        "Спілкування наживо доступне з ${ planName }"
       ],
       "Open support form": [
         "Відкрити форму підтримки"
@@ -3404,6 +3407,9 @@
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
+      ],
+      "Send & receive invitations": [
+        "Надсилайте й отримуйте запрошення"
       ],
       "Share calendar via link": [
         "Діліться календарем за посиланням"
@@ -3894,7 +3900,7 @@
         "Адреса е-пошти"
       ],
       "Feedback": [
-        "Зворотній зв’язок"
+        "Відгук"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -4146,6 +4152,35 @@
         "Високошвидкісна VPN на ${ maxVpn } пристроях",
         "Високошвидкісна VPN на ${ maxVpn } пристроях",
         "Високошвидкісна VPN на ${ maxVpn } пристроях"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Увійдіть до свого облікового запису Apple App Store і натисніть ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Увійдіть до свого облікового запису Google Play і натисніть ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Керуйте своєю передплатою на ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Передплатою керує ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Користувач ID-${ userId } придбав передплату в застосунку. Щоб керувати передплатою, користувач має перейти до розділу передплати облікового запису ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Передплати"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Ви передплатили тарифний план у застосунку Android. Щоб змінити тарифний план чи оновити спосіб оплати, вам потрібно перейти до магазину Google Play."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Ви передплатили тарифний план у застосунку iOS. Щоб змінити тарифний план чи оновити спосіб оплати, вам потрібно перейти до Apple App Store."
       ]
     },
     "Subscription price": {
@@ -4450,6 +4485,9 @@
       "Downloads": [
         "Завантаження"
       ],
+      "Duration": [
+        "Тривалість"
+      ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
       ],
@@ -4497,9 +4535,6 @@
       ],
       "Language": [
         "Мова"
-      ],
-      "Length": [
-        "Тривалість"
       ],
       "Login password": [
         "Пароль входу"

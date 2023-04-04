@@ -3411,6 +3411,9 @@
       "Secure Core servers": [
         "Serwery Secure Core"
       ],
+      "Send & receive invitations": [
+        "Wysyłaj i otrzymuj zaproszenia"
+      ],
       "Share calendar via link": [
         "Udostępnij kalendarz przez link"
       ],
@@ -4404,6 +4407,35 @@
         "Szybki VPN na ${ maxVpn } urządzeń"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Ok"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Zaloguj się do konta App Store, a następnik kliknij ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Zaloguj się do konta Google Play, a następnik kliknij ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Zarządzaj subskrypcją w ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Subskrypcja jest zarządzana przez ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Subskrypcja użytkownika z identyfikatorem ${ userId } została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja w koncie ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Subskrypcje"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Plan został zakupiony przez aplikację na Androida. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu Google Play."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Plan został zakupiony przez aplikację na iOS. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "za"
@@ -4706,6 +4738,9 @@
       "Downloads": [
         "Pliki do pobrania"
       ],
+      "Duration": [
+        "Czas trwania"
+      ],
       "Edit credit/debit card": [
         "Edytuj kartę płatniczą"
       ],
@@ -4753,9 +4788,6 @@
       ],
       "Language": [
         "Język"
-      ],
-      "Length": [
-        "Długość"
       ],
       "Login password": [
         "Hasło logowania"

@@ -2818,6 +2818,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } è il tuo nome utente. Per creare ${ Local }@${ Domain }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -3301,6 +3304,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptaggio fallito"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versioni di vCard < 3.0 non supportate"
       ]
     },
     "Error importing contacts": {
@@ -4048,6 +4054,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } attualmente non supporta determinati tipi di eventi, dettagli e formati."
+      ],
+      "vCard versions < 3.0": [
+        "versioni di vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5141,9 +5150,6 @@
       ],
       "it’s imperative": [
         "è obbligatorio"
-      ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Sto usando ${ MAIL_APP_NAME } e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Iscriviti con questo link per ottenere 1 mese di funzioni premium gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Basta confermare la tua selezione e noi faremo il resto."
@@ -8144,6 +8150,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Send & receive invitations": [
+        "Invia e ricevi inviti"
+      ],
       "Share calendar via link": [
         "Condividi calendario tramite link"
       ],
@@ -9374,6 +9383,11 @@
         "Creato da ${ ownerName }"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Errore nella verifica della firma"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nome visualizzato"
@@ -9769,6 +9783,17 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN ad alta velocità su ${ maxVpn } dispositivo",
         "VPN ad alta velocità su ${ maxVpn } dispositivi"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Ho capito"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestisci il tuo abbonamento su ${ subscriptionManager }"
+      ],
+      "Subscriptions": [
+        "Abbonamenti"
       ]
     },
     "Subscription price": {
@@ -10637,9 +10662,6 @@
       "Layout": [
         "Layout"
       ],
-      "Length": [
-        "Lunghezza"
-      ],
       "Link confirmation": [
         "Conferma link"
       ],
@@ -11220,6 +11242,11 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Firma automaticamente tutti i messaggi in uscita in modo che gli utenti possano verificare l'autenticità dei messaggi. Questo viene fatto in combinazione con le impostazioni PGP predefinite che possono essere configurate qui sotto."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Condiviso con crittografia end-to-end"
       ]
     },
     "Tor out of date": {

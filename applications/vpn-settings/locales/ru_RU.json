@@ -162,7 +162,7 @@
         "Получить ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Получите новый зашифрованный адрес электронной почты"
+        "Получите новый адрес зашифрованной электронной почты"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -404,7 +404,7 @@
         "Нет, спасибо"
       ],
       "Try free for 30 days": [
-        "Испытайте бесплатно в течение 30 дней"
+        "Попробуйте бесплатно в течение 30 дней"
       ]
     },
     "Addon": {
@@ -433,7 +433,7 @@
     },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: почта и календарь с приоритетом конфиденциальности для ваших повседневных коммуникационных потребностей."
+        "${ mailPlus }: почта и календарь с приоритетом конфиденциальности для вашей повседневной коммуникации."
       ]
     },
     "Billing cycle": {
@@ -1520,7 +1520,7 @@
         "Пароли не совпадают"
       ],
       "Payment process canceled": [
-        "Отмена процесса оплаты"
+        "Процесс оплаты отменён"
       ],
       "Payment process consumed": [
         "Процесс оплаты завершен"
@@ -1559,7 +1559,7 @@
         "Вкладка закрыта"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Используемый браузер не позволяет полностью провести платеж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
+        "Используемый браузер не позволяет полностью провести платёж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
@@ -1672,7 +1672,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "2FA через ключ безопасности отключена"
+        "Двухфакторная аутентификация через ключ безопасности отключена"
       ],
       "Add a name to identify your security key with.": [
         "Добавьте имя для идентификации ключа безопасности."
@@ -1827,7 +1827,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Испытайте лучшее из ${ MAIL_APP_NAME } бесплатно"
+        "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ]
     },
     "Human verification method": {
@@ -2101,7 +2101,7 @@
         "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода 2ФА для входа в учётную запись. Каждый код можно использовать только один раз."
+        "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
@@ -2209,7 +2209,7 @@
         "Пожалуйста, подтвердите данные карты во вкладке проверки."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Пожалуйста, подтвердите платеж во вкладке проверки."
+        "Пожалуйста, подтвердите платёж во вкладке проверки."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
@@ -2293,7 +2293,7 @@
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
+        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -2416,7 +2416,7 @@
         "Проверка может занять несколько минут."
       ],
       "Verification may take a few minutes.": [
-        "Проверка может занять пару минут."
+        "Проверка может занять несколько минут."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
@@ -2443,13 +2443,13 @@
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
       ],
       "We couldn’t process your payment.": [
-        "Нам не удалось обработать ваш платеж."
+        "Нам не удалось обработать ваш платёж."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
       "We need to authenticate your payment with your bank.": [
-        "Нам нужно подтвердить ваш платеж в вашем банке."
+        "Нам нужно подтвердить ваш платёж в вашем банке."
       ],
       "We recommend using your recovery phrase instead.": [
         "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
@@ -2530,7 +2530,7 @@
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }.\n${ learnMore }"
+        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
@@ -3009,7 +3009,7 @@
         "Объявления компании ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Рассылки ${ BRAND_NAME } for Business"
+        "Рассылка ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } newsletter": [
         "Рассылка ${ BRAND_NAME }"
@@ -3034,7 +3034,7 @@
     },
     "Label, credit card": {
       "ZIP code": [
-        "Почтовый индекс (для американских карт)"
+        "Индекс"
       ]
     },
     "Link": {
@@ -3405,6 +3405,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "Send & receive invitations": [
+        "Отправляйте и получайте приглашения"
       ],
       "Share calendar via link": [
         "Отправка записей в календаре с помощью ссылки"
@@ -4396,6 +4399,35 @@
         "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Понятно"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Настройте подписку в ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Подпиской управляет ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Подписка пользователя с ID-${ userId } была приобретена в приложении. Чтобы настроить подписку, пользователю нужно войти в раздел Подписки своего аккаунта ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Подписки"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Ваш тариф был приобретён в приложении Android. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Google Play Маркет."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Ваш тариф был приобретён в приложении iOS. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Apple App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "За"
@@ -4418,13 +4450,13 @@
         "Включить поддержку автоматических платежей"
       ],
       "Keep auto-pay": [
-        "Оставить автоплатеж"
+        "Оставить автоплатёж"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Кроме того, если вы забудете произвести платеж вручную, и автоматический платеж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешевую подписку, что приведет к потере многих функций."
+        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Кроме того, если вы забудете произвести платёж вручную, и автоматический платёж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешёвую подписку, что приведёт к потере многих функций."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превысите лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платеж, не забудьте оплатить следующий счет по подписке до даты окончания, чтобы избежать блокировки аккаунта."
+        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
       ]
     },
     "Subscription saving": {
@@ -4746,9 +4778,6 @@
       "Language": [
         "Язык"
       ],
-      "Length": [
-        "Длительность"
-      ],
       "Login password": [
         "Пароль для входа"
       ],
@@ -4909,7 +4938,7 @@
         "Проверяем вашу карту..."
       ],
       "Verifying your payment...": [
-        "Проверяем ваш платеж..."
+        "Проверяем ваш платёж..."
       ],
       "Warning": [
         "Предупреждение"

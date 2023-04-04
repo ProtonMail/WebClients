@@ -2208,6 +2208,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Wersja vCard starsza niż 3.0 nie jest obsługiwana"
       ]
     },
     "Error importing contacts": {
@@ -4857,6 +4860,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby zaimportować dane, zaznacz wszystkie żądane elementy, jak pokazano na grafice GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
       ]
     },
     "Onboarding Action": {

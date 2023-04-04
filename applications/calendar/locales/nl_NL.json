@@ -867,6 +867,11 @@
         "Volledig beeld (bekijk alle afspraakdetails)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Conctactinformatie ophalen mislukt voor ${ address }"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Agenda toevoegen vanaf URL"
@@ -3780,6 +3785,11 @@
         "Alleen bekijken"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Nodig anderen met een ${ BRAND_NAME }-account uit om afspraken in uw agenda te bekijken of te bewerken."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Sommige van uw agenda's tonen geen gegevens van oude afspraken."
@@ -4695,6 +4705,11 @@
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Welkom bij ${ appName }"
@@ -4981,6 +4996,11 @@
         "Instellingen wijzigen mislukt"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Deel uw agenda met een link om niet-${ BRAND_NAME }-gebruikers uit te nodigen."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid per agenda overschreden",
@@ -5252,22 +5272,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Accepteer eenvoudig uitnodigingen"
-      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Ga naar instellingen"
       ]
     },
     "Storage": {
@@ -5925,6 +5934,11 @@
         "Kies een nummer"
       ]
     },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Plannen is zonet eenvoudiger geworden!"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Agenda aanmaken"
@@ -5994,6 +6008,14 @@
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "End-to-end versleuteld gedeeld"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "End-to-end versleuteld gedeeld met geverifieerd contact"
       ]
     },
     "Validation": {

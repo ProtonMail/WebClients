@@ -847,6 +847,9 @@
       "Search message content": [
         "Doorzoek berichtinhoud"
       ],
+      "See business plans": [
+        "Bekijk bedrijfsabonnementen"
+      ],
       "See plan features": [
         "Bekijk de abonnementskenmerken"
       ],
@@ -1239,17 +1242,6 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Alles"
-      ],
-      "With": [
-        "Met"
-      ],
-      "Without": [
-        "Zonder"
       ]
     },
     "Attachment signature verification": {
@@ -4803,6 +4795,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Verhoog de opslagruimte vanaf ${ planPrice } per maand."
+      ],
       "Indexing paused": [
         "Indexeren gepauzeerd"
       ],
@@ -5338,6 +5333,9 @@
       "Upgrade to send email from @pm.me addresses.": [
         "Upgrade om e-mails te versturen van @pm.me adressen."
       ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Upgraden om e-mails te versturen vanaf uw aangepast e-maildomein."
+      ],
       "Upgrade to send emails to contact groups easily.": [
         "Upgrade om gemakkelijk e-mails naar contactgroepen te sturen."
       ],
@@ -5349,6 +5347,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Upgrade om privacy te ondersteunen en meer functies te krijgen."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Upgraden om deze premium functies te ontgrendelen."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Upgrade om ${ MAIL_APP_NAME } te gebruiken met Apple Mail, Outlook of Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Upgraden om automatisch antwoord te gebruiken terwijl u afwezig bent."
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -5854,9 +5861,6 @@
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
-      ],
-      "Attachments": [
-        "Bijlagen"
       ],
       "Authenticator app": [
         "Authenticator-app"
@@ -6883,6 +6887,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
     "Onboarding": {

@@ -878,6 +878,11 @@
         "Просмотр (см. всю информацию о событии)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Не удалось получить контактную информацию для ${ address }"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Добавить календарь из URL"
@@ -931,7 +936,7 @@
         "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "С последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
+        "С момента последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
       ]
     },
     "Calendar view": {
@@ -2140,9 +2145,9 @@
         "У ${ list } нет действительных адресов электронной почты"
       ],
       "${ list } doesn't have an email address": [
-        "${ list } не содержит адреса электронной почты",
-        "${ list } не содержат адреса электронной почты",
-        "${ list } не содержат адреса электронной почты",
+        "${ list } не имеет адреса электронной почты",
+        "${ list } не имеют адресов электронной почты",
+        "${ list } не имеют адресов электронной почты",
         "У некоторых контактов нет адресов электронной почты: ${ list }"
       ],
       "${ list } has invalid emails": [
@@ -2525,6 +2530,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Версии vCard < 3.0 не поддерживаются"
       ]
     },
     "Error importing contacts": {
@@ -2940,6 +2948,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
+      ],
+      "vCard versions < 3.0": [
+        "Версии vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3200,10 +3211,10 @@
         "${ calendarsToBeCreatedCount } новых календарей"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } объединенный календарь",
-        "${ calendarsToBeMergedCount } объединенных календаря",
-        "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенных календарей"
+        "${ calendarsToBeMergedCount } объединённый календарь",
+        "${ calendarsToBeMergedCount } объединённых календаря",
+        "${ calendarsToBeMergedCount } объединённых календарей",
+        "${ calendarsToBeMergedCount } объединённых календарей"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } контакт содержит несколько адресов электронной почты.",
@@ -3909,6 +3920,11 @@
         "Только просмотр"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Пригласите других пользователей с аккаунтом ${ BRAND_NAME } для просмотра или редактирования событий в вашем календаре."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "В некоторых календарях не будет отображаться информация о ранее созданных событиях."
@@ -3934,7 +3950,7 @@
     },
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
-        "Вы можете настроить совместное использования ваших календарей в настройках."
+        "Вы можете предоставить общий доступ к вашим календарям в настройках."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -4883,6 +4899,11 @@
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
@@ -5105,10 +5126,10 @@
         "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалён.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалены."
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",
@@ -5493,22 +5514,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Легко принимайте приглашения"
-      ],
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Пригласите друзей в ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Теперь приглашения появляются в вашем календаре как ожидающие события. Просто откройте событие, чтобы ответить. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Открыть настройки"
       ]
     },
     "Storage": {
@@ -6197,6 +6207,11 @@
         "Выберите количество"
       ]
     },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Планировать стало легче!"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Создать календарь"
@@ -6266,6 +6281,14 @@
       ],
       "You do not have any contacts to export": [
         "У вас нет контактов для экспорта"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Общий доступ со сквозным шифрованием"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Общий доступ со сквозным шифрованием с подтверждённым контактом"
       ]
     },
     "Validation": {
@@ -6380,7 +6403,7 @@
         "Чтобы получить доступ к этому общему календарю, включите этот адрес или попросите ${ boldCalendarOwnerEmail } отправить приглашение на активный адрес."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Вы не можете присоединиться к этому календарю, потому что ваш приглашенный адрес электронной почты (${ boldInvitedAddress }) отключен."
+        "Вы не можете присоединиться к этому календарю, потому что ваш приглашённый адрес электронной почты (${ boldInvitedAddress }) отключён."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -6388,7 +6411,7 @@
         "Каждую ${ interval } неделю в ${ multipleDaysString }",
         "Каждые ${ interval } недели в ${ multipleDaysString }",
         "Каждые ${ interval } недель в ${ multipleDaysString }",
-        "Каждые ${ interval } недель по следующим дням: ${ multipleDaysString }"
+        "Каждые ${ interval } недель в ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
@@ -6410,9 +6433,9 @@
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }"
+        "Каждые ${ interval } недели по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Каждую ${ interval } неделю каждый день, ${ untilString }",
@@ -6660,7 +6683,7 @@
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Каждый ${ interval } год, ${ timesString }",
-        "Каждый ${ interval } года, ${ timesString }",
+        "Каждые ${ interval } года, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }"
       ],

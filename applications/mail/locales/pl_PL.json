@@ -181,6 +181,9 @@
       "Close": [
         "Zamknij"
       ],
+      "Close & discard": [
+        "Zamknij i odrzuć"
+      ],
       "Close composer": [
         "Zamknij edytor"
       ],
@@ -890,7 +893,7 @@
         "Samoniszcząca się wiadomość"
       ],
       "Self-destruct on ...": [
-        "Samozniszczenie na..."
+        "Samozniszczenie ..."
       ],
       "Send": [
         "Wyślij"
@@ -1270,17 +1273,6 @@
       ],
       "Unsupported event": [
         "Wydarzenie jest nieobsługiwane"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Wszystkie"
-      ],
-      "With": [
-        "Tak"
-      ],
-      "Without": [
-        "Nie"
       ]
     },
     "Attachment signature verification": {
@@ -3045,6 +3037,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } dla adresu <${ email }>. Aby rozwiązać problem, możesz dodać inny klucz lub wyłączyć szyfrowanie dla tego kontaktu."
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -3520,6 +3515,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Wersja vCard starsza niż 3.0 nie jest obsługiwana"
       ]
     },
     "Error importing contacts": {
@@ -5347,6 +5345,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Wysyłanie wiadomości z adresu @pm.me jest płatną funkcją. Wiadomości zostaną wysłane z Twojego domyślnego adresu ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -5669,7 +5670,7 @@
         "Tydzień"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "Kiedy chcesz, aby wiadomość została automatycznie usunięta ze skrzynki odbiorczej odbiorcy i swojego folderu Wysłane?"
+        "Kiedy chcesz, aby wiadomość została automatycznie usunięta z folderu Wysłane i skrzynki odbiorczej odbiorcy?"
       ],
       "When do you want your message to be sent?": [
         "Kiedy chcesz wysłać wiadomość?"
@@ -6161,9 +6162,6 @@
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
-      ],
-      "Attachments": [
-        "Zawiera załącznik"
       ],
       "Authenticator app": [
         "Aplikacja uwierzytelniająca"
@@ -7206,6 +7204,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby zaimportować dane, zaznacz wszystkie żądane elementy, jak pokazano na grafice GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
       ]
     },
     "Onboarding": {
