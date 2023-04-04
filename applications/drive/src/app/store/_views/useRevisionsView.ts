@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/components/hooks';
-import { queryFileRevisions } from '@proton/shared/lib/api/drive/files';
+import { queryDeleteFileRevision, queryFileRevisions } from '@proton/shared/lib/api/drive/files';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import {
     DriveFileRevision,
@@ -19,7 +19,7 @@ const filterRevisions = (revisions: DriveFileRevision[]) => {
 };
 
 export default function useRevisionsView(link: DecryptedLink) {
-    const debounceRequest = useDebouncedRequest();
+    const debouncedRequest = useDebouncedRequest();
     const { download } = useDownload();
     const [isLoading, withLoading] = useLoading(true);
     const [revisions, setRevisions] = useState<DriveFileRevision[]>([]);
@@ -28,7 +28,7 @@ export default function useRevisionsView(link: DecryptedLink) {
     useEffect(() => {
         const ac = new AbortController();
         void withLoading(
-            debounceRequest<DriveFileRevisionsResult>(
+            debouncedRequest<DriveFileRevisionsResult>(
                 queryFileRevisions(link.rootShareId, link.linkId),
                 ac.signal
             ).then((result) => {
@@ -44,5 +44,10 @@ export default function useRevisionsView(link: DecryptedLink) {
         void download([{ ...link, shareId: link.rootShareId, revisionId: revision.ID }]);
     };
 
-    return { isLoading, revisions, hasPreviewAvailable, downloadRevision };
+    const deleteRevision = async (abortSignal: AbortSignal, revisionId: string) => {
+        await debouncedRequest(queryDeleteFileRevision(link.rootShareId, link.linkId, revisionId), abortSignal);
+        setRevisions(revisions.filter((revision) => revision.ID !== revisionId));
+    };
+
+    return { isLoading, revisions, hasPreviewAvailable, downloadRevision, deleteRevision };
 }
