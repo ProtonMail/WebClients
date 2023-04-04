@@ -99,7 +99,7 @@ const ItemColumnLayout = ({
             <div className="flex flex-align-items-center flex-nowrap">
                 <div className="flex-item-fluid">
                     <div className="flex flex-align-items-center item-firstline">
-                        <div className="item-senders flex-item-fluid flex flex-nowrap pr1">
+                        <div className="item-senders flex-item-fluid flex flex-align-items-center flex-nowrap pr1">
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
@@ -108,7 +108,7 @@ const ItemColumnLayout = ({
                             />
                             <ItemAction element={element} className="mr0-25 myauto flex-item-noshrink" />
                             <span
-                                className="inline-block max-w100 text-ellipsis"
+                                className="inline-flex max-w100 text-ellipsis"
                                 data-testid="message-column:sender-address"
                             >
                                 {senders}
