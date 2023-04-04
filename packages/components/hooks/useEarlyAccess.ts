@@ -1,7 +1,7 @@
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
-import { Environment } from '@proton/shared/lib/environment/helper';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { Environment } from '@proton/shared/lib/interfaces';
 
 import { Feature, FeatureCode } from '../containers/features';
 import useApi from './useApi';

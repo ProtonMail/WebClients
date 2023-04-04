@@ -8,7 +8,7 @@ import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
  * Calendar config is coupled to CalendarSidebar.
  * Any additional section must also be added to CalendarSidebar.
  */
-export const getCalendarAppRoutes = (showSubscribedCalendars: boolean) => {
+export const getCalendarAppRoutes = () => {
     return <const>{
         header: CALENDAR_APP_NAME,
         routes: {
@@ -47,7 +47,6 @@ export const getCalendarAppRoutes = (showSubscribedCalendars: boolean) => {
                     {
                         text: c('Title').t`Other calendars`,
                         id: CALENDAR_SETTINGS_SECTION_ID.OTHER_CALENDARS,
-                        available: showSubscribedCalendars,
                     },
                 ],
             },

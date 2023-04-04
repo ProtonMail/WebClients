@@ -2,7 +2,7 @@ import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { Environment } from '@proton/shared/lib/environment/helper';
+import { Environment } from '@proton/shared/lib/interfaces';
 import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { encryptFileExtendedAttributes } from '../../_links';
