@@ -1,3 +1,5 @@
+import { FeatureContextValue } from '@proton/components/containers/features/FeaturesContext';
+import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
@@ -42,6 +44,7 @@ export interface ResetCacheResult {
     resetResponse?: ValidateResetTokenResponse;
     mnemonicData?: MnemonicData;
     hasTrustedDeviceRecovery: boolean;
+    ktFeature: FeatureContextValue<KT_FF>;
     setupVPN: boolean;
 }
 
