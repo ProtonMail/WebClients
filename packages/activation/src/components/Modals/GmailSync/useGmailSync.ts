@@ -29,7 +29,9 @@ const useGmailSync = () => {
     useEffect(() => {
         const hasSawWelcome = welcomeFlags.isDone;
 
-        if (experimentCondition && (gmailSyncOnboarding.loading || easySwitch.loading || hasSawWelcome)) {
+        if (hasSawWelcome) {
+            setDerivedValues({ displayOnboarding: false, displaySync: false });
+        } else if (experimentCondition && (gmailSyncOnboarding.loading || easySwitch.loading)) {
             setDerivedValues({
                 displayOnboarding: false,
                 displaySync: false,
