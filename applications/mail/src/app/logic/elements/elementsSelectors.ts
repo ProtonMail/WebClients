@@ -10,7 +10,7 @@ import {
     MAX_ELEMENT_LIST_LOAD_RETRIES,
     PAGE_SIZE,
 } from '../../constants';
-import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
+import { hasAttachments, hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
 import { expectedPageLength } from '../../helpers/paging';
 import { ESBaseMessage, ESMessageContent, NormalizedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
@@ -55,7 +55,11 @@ export const elements = createSelector(
             .filter((element) => hasLabel(element, labelID))
             .filter((element) => {
                 if (!isFilter(filter)) {
+                    console.log('filter is not a filter', filter);
                     return true;
+                }
+                if (filter.Attachments) {
+                    return hasAttachments(element);
                 }
                 if (bypassFilter.includes(element.ID || '')) {
                     return true;
@@ -193,7 +197,7 @@ export const messagesToLoadMoreES = createSelector(
 export const dynamicTotal = createSelector(
     [params, currentCounts, bypassFilter],
     (params, { counts, loading }, bypassFilter) => {
-        if (isSearch(params.search) || loading) {
+        if (isSearch(params.search) || params.filter.Attachments || loading) {
             return undefined;
         }
         return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
