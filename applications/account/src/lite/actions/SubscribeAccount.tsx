@@ -2,18 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription, useSubscriptionModal, useUser } from '@proton/components';
+import { usePlans, useSubscription, useSubscriptionModal, useUser } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
+import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { CURRENCIES } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { getUpgradedPlan } from '@proton/shared/lib/helpers/subscription';
+import { getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
 import broadcast, { MessageType } from '../broadcast';
-import LiteBox from './LiteBox';
-import LiteLoaderPage from './LiteLoaderPage';
-import SubscribeAccountDone from './SubscribeAccountDone';
-import { SubscribeType } from './subscribeInterface';
+import LiteBox from '../components/LiteBox';
+import LiteLoaderPage from '../components/LiteLoaderPage';
+import SubscribeAccountDone from '../components/SubscribeAccountDone';
+import { SubscribeType } from '../types/SubscribeType';
 
 interface Props {
     redirect?: string | undefined;
@@ -27,6 +31,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
     const onceCloseRef = useRef(false);
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
+    const [plans, loadingPlans] = usePlans();
     const [open, loadingSubscriptionModal] = useSubscriptionModal();
     const [type, setType] = useState<SubscribeType | undefined>(undefined);
 
@@ -35,7 +40,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
     const canEdit = canPay(user);
 
     useEffect(() => {
-        if (onceRef.current || loading || !user) {
+        if (onceRef.current || loading || !user || !plans) {
             return;
         }
         // Only certain users can manage subscriptions
@@ -66,8 +71,23 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
 
         const maybeStart = queryParams.get('start');
         const maybeType = queryParams.get('type');
+        const maybeDisableCycleSelector = queryParams.get('disableCycleSelector');
 
-        const plan = maybeType === 'upgrade' ? getUpgradedPlan(subscription, app) : undefined;
+        const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
+        const parsedCycle = cycleParam && getValidCycle(cycleParam);
+        const coupon = queryParams.get('coupon') || undefined;
+
+        const currencyParam = queryParams.get('currency')?.toUpperCase();
+        const parsedCurrency =
+            currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
+
+        const maybePlanName = queryParams.get('plan') || '';
+        const plan =
+            maybeType === 'upgrade'
+                ? getUpgradedPlan(subscription, app)
+                : (plans.find(({ Name, Type }) => Name === maybePlanName && Type === PLAN_TYPES.PLAN)?.Name as
+                      | PLANS
+                      | undefined);
 
         const step = (() => {
             if (maybeStart === 'compare') {
@@ -88,10 +108,14 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             onClose: handleClose,
             onSuccess: handleSuccess,
             plan: plan,
+            coupon,
+            cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
+            currency: parsedCurrency,
             fullscreen,
             disableThanksStep: true,
+            disableCycleSelector: Boolean(maybeDisableCycleSelector),
         });
-    }, [user, loading]);
+    }, [user, loading, loadingPlans]);
 
     if (loading) {
         return <LiteLoaderPage />;

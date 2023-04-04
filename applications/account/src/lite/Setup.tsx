@@ -28,8 +28,8 @@ import { loadModels } from '@proton/shared/lib/models/helper';
 import getRandomString from '@proton/utils/getRandomString';
 
 import broadcast, { MessageType } from './broadcast';
-import LiteLayout from './containers/LiteLayout';
-import LiteLoaderPage from './containers/LiteLoaderPage';
+import LiteLayout from './components/LiteLayout';
+import LiteLoaderPage from './components/LiteLoaderPage';
 
 const checkDomain = (hostname: string, domain: string) => {
     return hostname === domain || hostname.endsWith(`.${domain}`);
