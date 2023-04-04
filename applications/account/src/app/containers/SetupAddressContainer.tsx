@@ -6,17 +6,21 @@ import { c } from 'ttag';
 import {
     AuthenticatedBugModal,
     DropdownMenuButton,
+    FeatureCode,
     Icon,
     LoaderPage,
     StandardLoadErrorPage,
     createPreAuthKTVerifier,
     useApi,
     useAuthentication,
+    useConfig,
     useErrorHandler,
+    useFeature,
     useGetUser,
     useModalState,
     useTheme,
 } from '@proton/components';
+import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -92,6 +96,7 @@ const SetupSupportDropdown = () => {
 };
 
 const SetupAddressContainer = () => {
+    const { APP_NAME } = useConfig();
     const history = useHistory();
     const location = useLocation();
     const [loading, setLoading] = useState(true);
@@ -104,8 +109,7 @@ const SetupAddressContainer = () => {
     const authentication = useAuthentication();
     const getUser = useGetUser();
     const [, setTheme] = useTheme();
-
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(normalApi);
+    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
@@ -216,6 +220,12 @@ const SetupAddressContainer = () => {
                     data={generateAddress}
                     onSubmit={async (payload) => {
                         try {
+                            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(
+                                APP_NAME,
+                                (await ktFeature.get())?.Value,
+                                normalApi
+                            );
+
                             const keyPassword = await handleAddressGeneration({
                                 api: silentApi,
                                 setup: payload.setup,
