@@ -38,12 +38,10 @@ interface Props {
     loadingFeatures: boolean;
     calendarAppRoutes: ReturnType<typeof getCalendarAppRoutes>;
     redirect: ReactNode;
-    calendarSubscribeUnavailable: boolean;
 }
 
 const CalendarSettingsRouter = ({
     user,
-    calendarSubscribeUnavailable,
     loadingFeatures,
     calendarAppRoutes,
     redirect,
@@ -125,7 +123,6 @@ const CalendarSettingsRouter = ({
                     sharedCalendars={sharedCalendars}
                     unknownCalendars={unknownCalendars}
                     defaultCalendar={defaultCalendar}
-                    calendarSubscribeUnavailable={calendarSubscribeUnavailable}
                 />
             </Route>
             <Route path={`${getSectionPath(path, calendarsRoute)}/:calendarId`}>
