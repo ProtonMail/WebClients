@@ -32,10 +32,10 @@
         "Adicionar endereço"
       ],
       "Add Bcc recipients": [
-        "Adicionar destinatários ocultos"
+        "Adicionar destinatários Cco"
       ],
       "Add Cc recipients": [
-        "Adicionar destinatários"
+        "Adicionar Cc"
       ],
       "Add condition": [
         "Adicionar condição"
@@ -180,6 +180,9 @@
       ],
       "Close": [
         "Fechar"
+      ],
+      "Close & discard": [
+        "Fechar e descartar"
       ],
       "Close composer": [
         "Fechar compositor"
@@ -859,6 +862,9 @@
       "Search message content": [
         "Pesquisar conteúdo da mensagem"
       ],
+      "See business plans": [
+        "Veja os planos para empresa"
+      ],
       "See plan features": [
         "Veja recursos do plano"
       ],
@@ -1254,17 +1260,6 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Todos"
-      ],
-      "With": [
-        "Com"
-      ],
-      "Without": [
-        "Sem"
       ]
     },
     "Attachment signature verification": {
@@ -3015,8 +3010,14 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } para <${ email }>. Você pode adicionar outra chave ou desligar a criptografia para este contato para resolver o problema."
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
+      ],
+      "A problem occurred, please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
@@ -3208,6 +3209,9 @@
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
+      "Please activate your search again": [
+        "Ative a pesquisa novamente"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
@@ -3318,6 +3322,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Houve um problema com a pesquisa de conteúdo. Portanto, a pesquisa padrão foi usada."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Ocorreu um problema ao atualizar suas mensagens locais, elas serão baixadas novamente para reativar a pesquisa de conteúdo"
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -3455,6 +3462,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versões vCard <3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -4035,6 +4045,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+      ],
+      "vCard versions < 3.0": [
+        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4642,6 +4655,9 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueça de compartilhar a senha com o destinatário"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Baixando mensagem ${ currentProgress } de ${ totalProgress }"
+      ],
       "Draft": [
         "Rascunho"
       ],
@@ -4839,6 +4855,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Aumente o espaço de armazenamento a partir de ${ planPrice } por mês."
+      ],
       "Indexing paused": [
         "Indexação pausada"
       ],
@@ -4925,6 +4944,9 @@
       ],
       "Message sent.": [
         "Mensagem enviada."
+      ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "A mensagem será enviada amanhã às ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "A mensagem será enviada em ${ dateString } às ${ formattedTime }"
@@ -5057,7 +5079,7 @@
         "A pré-visualização falhou ao carregar"
       ],
       "Preview for this file type is not supported": [
-        "A visualização prévia deste arquivo não é suportada"
+        "A pré-visualização deste arquivo não é suportada"
       ],
       "Primary": [
         "Principal"
@@ -5116,6 +5138,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Proteja seus arquivos com armazenamento em nuvem criptografado gratuitamente, hoje."
+      ],
       "Seems like you are all caught up for now": [
         "Parece que você está a par de tudo agora"
       ],
@@ -5142,6 +5167,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é um recurso pago. A sua mensagem será enviada do seu endereço padrão ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -5203,6 +5231,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Os dados inseridos no rascunho não podem ser salvos se você sair da página."
       ],
+      "The local database is being prepared": [
+        "O banco de dados local está sendo preparado"
+      ],
       "The message has expired": [
         "A mensagem expirou"
       ],
@@ -5236,6 +5267,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta ação baixará as mensagens mais recentes para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5286,12 +5320,21 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Esta mensagem é assinada pela chave anexa, que ainda não é confiável."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Essa mensagem será automaticamente excluída em ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Essa mensagem será automaticamente excluída em ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
         "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Esta mensagem será movida para Rascunhos para que você possa editá-la. Você precisará reagendar quando ela será enviada."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Esta mensagem será enviada pela manhã às ${ formattedTime }."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Esta mensagem será enviada em ${ dateString } às ${ formattedTime }"
@@ -5365,6 +5408,9 @@
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Atualizando suas mensagens locais, o conteúdo da mensagem não será pesquisado durante esta atualização"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
@@ -5374,8 +5420,14 @@
       "Upgrade to create more folders, filters, and addresses.": [
         "Atualize para criar mais pastas, filtros e endereços."
       ],
+      "Upgrade to level up your privacy.": [
+        "Faça upgrade para aumentar o nível de sua privacidade."
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "Atualize para enviar email de endereços @pm.me"
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Faça upgrade para enviar e-mails de seu domínio de e-mail personalizado."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Atualize para enviar e-mails para grupos de contato com facilidade."
@@ -5391,6 +5443,12 @@
       ],
       "Upgrade to unlock premium features.": [
         "Desbloquear funcionalidades premium."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Faça upgrade para usar ${ MAIL_APP_NAME } com Apple Mail, Outlook ou Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Faça upgrade para usar a resposta automática quando estiver ausente."
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -5427,6 +5485,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Quando você deseja que sua mensagem seja excluída automaticamente da caixa de entrada do destinatário e da pasta de envio?"
       ],
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
@@ -5478,6 +5539,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Você pode usar o ${ VPN_APP_NAME } de graça hoje."
       ],
       "You cannot reply from the invited address.": [
         "Você não pode responder a partir do endereço convidado."
@@ -5893,9 +5957,6 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
-      ],
-      "Attachments": [
-        "Anexos"
       ],
       "Authenticator app": [
         "Aplicativo autenticador"
@@ -6924,6 +6985,11 @@
         "Para que a importação funcione, você deve selecionar todos os itens solicitados conforme mostrado no GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecione o que ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bem-vindo ao ${ appName }"
@@ -7239,6 +7305,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } d",
         "${ remainingDays } d"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {
@@ -7883,6 +7952,9 @@
       "Message deleted": [
         "Mensagem excluida"
       ],
+      "Message expiration cancelled": [
+        "Expiração de mensagem cancelada"
+      ],
       "Message marked as legitimate": [
         "Mensagem marcada como legítima"
       ],
@@ -8155,8 +8227,14 @@
       "Create folder": [
         "Criar pasta"
       ],
+      "Create folder \"${ search }\"": [
+        "Criar pasta \"${ search }\""
+      ],
       "Create label": [
         "Criar Marcador"
+      ],
+      "Create label \"${ search }\"": [
+        "Criar marcador \"${ search }\""
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -8508,6 +8586,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sessão com A2F"
       ],
       "Sign out": [
         "Encerrar sessão"

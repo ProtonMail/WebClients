@@ -181,6 +181,9 @@
       "Close": [
         "Tutup"
       ],
+      "Close & discard": [
+        "Tutup & buang"
+      ],
       "Close composer": [
         "Tutup komposer"
       ],
@@ -952,6 +955,9 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
+      "Show side panel": [
+        "Tampilkan panel samping"
+      ],
       "Sign in": [
         "Masuk"
       ],
@@ -1252,17 +1258,6 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Semua"
-      ],
-      "With": [
-        "Dengan"
-      ],
-      "Without": [
-        "Tanpa"
       ]
     },
     "Attachment signature verification": {
@@ -3006,6 +3001,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } untuk <${ email }>. Anda dapat menambahkan kunci baru atau menonaktifkan enkripsi pada kontak yang bersangkutan untuk menyelesaikan masalah ini."
+      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -3442,6 +3440,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
@@ -4009,6 +4010,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
+      ],
+      "vCard versions < 3.0": [
+        "vCard versi < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4918,6 +4922,9 @@
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
       ],
+      "Normal": [
+        "Standar"
+      ],
       "Not a valid URL": [
         "URL tidak valid"
       ],
@@ -4980,6 +4987,9 @@
       ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
+      ],
+      "Preview for this file type is not supported": [
+        "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
       "Primary": [
         "Utama"
@@ -5067,6 +5077,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pengiriman pesan dari alamat @pm.me hanya tersedia bagi pengguna yang menggunakan layanan berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -5186,7 +5199,7 @@
         "Percakapan ini berisi pesan yang tidak dibuang."
       ],
       "This conversation contains trashed messages.": [
-        "Percakapan ini berisi pesan yang dibuang."
+        "Percakapan ini berisi pesan yang telah dibuang."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Email ini tidak memenuhi syarat autentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar."
@@ -5840,9 +5853,6 @@
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
-      ],
-      "Attachments": [
-        "Lampiran"
       ],
       "Authenticator app": [
         "Aplikasi otentikator"
@@ -6863,6 +6873,11 @@
         "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
@@ -7174,6 +7189,9 @@
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } hr"
+      ],
+      "<1 d": [
+        "<1 hr"
       ]
     },
     "Reply to calendar invitation": {

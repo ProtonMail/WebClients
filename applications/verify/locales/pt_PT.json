@@ -855,7 +855,7 @@
         "Número inválido"
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As palavras-passe não coincidem."
       ],
       "This field is required": [
         "Este campo é requerido"
@@ -906,10 +906,10 @@
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Insira a sua senha (como administrador da organização)."
+        "Insira a sua palavra-passe (como administrador da organização)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
+        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
@@ -956,22 +956,22 @@
         "Endereço de email"
       ],
       "Hide password": [
-        "Ocultar senha"
+        "Ocultar a palavra-passe"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Phone number": [
         "Número de telefone"
       ],
       "Reveal password": [
-        "Mostrar senha"
+        "Mostrar a palavra-passe"
       ],
       "Verification code": [
         "Código de verificação"
       ],
       "Your password (admin)": [
-        "A sua senha (admin)"
+        "A sua palavra-passe (admin)"
       ]
     },
     "Link": {
@@ -984,7 +984,7 @@
     },
     "Placeholder": {
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ]
     },
     "Success": {
@@ -997,7 +997,7 @@
     },
     "Title": {
       "Enter your password": [
-        "Insira a sua senha"
+        "Insira a sua palavra-passe"
       ],
       "Human verification": [
         "Verificação humana"
@@ -1011,8 +1011,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos ${ length } caracteres"
+        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres."
       ]
     }
   }

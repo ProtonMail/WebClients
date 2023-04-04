@@ -465,6 +465,9 @@
       "Show more": [
         "顯示更多"
       ],
+      "Show side panel": [
+        "顯示側邊面板"
+      ],
       "Show time zones": [
         "顯示時區"
       ],
@@ -861,6 +864,11 @@
       ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "擷取 ${ address } 的聯絡人資訊失敗"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2453,6 +2461,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "不支援 vCard 版本 < 3.0"
       ]
     },
     "Error importing contacts": {
@@ -2844,6 +2855,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3729,6 +3743,11 @@
         "僅能檢視"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "邀請其他有 ${ BRAND_NAME } 帳號的人檢視或編輯您的行事曆中的事件。"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "您的部份行事曆將不會顯示先前建立事件的詳細資訊。"
@@ -4546,7 +4565,7 @@
         "${ value } 天後"
       ],
       "${ value } days after at ${ time }": [
-        "${ value } 天後，即是 ${ time }"
+        "${ value } 天後，於 ${ time }"
       ],
       "${ value } days before": [
         "${ value } 天前"
@@ -4949,22 +4968,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "簡單地同意邀請"
-      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "前往設定"
       ]
     },
     "Storage": {
@@ -5606,6 +5614,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "規劃再變簡單！"
       ]
     },
     "Title; create calendar modal": {

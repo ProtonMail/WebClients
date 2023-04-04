@@ -405,7 +405,7 @@
         "Получить ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Получите новый зашифрованный адрес электронной почты"
+        "Получите новый адрес зашифрованной электронной почты"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -933,7 +933,7 @@
         "Нет, спасибо"
       ],
       "Try free for 30 days": [
-        "Испытайте бесплатно в течение 30 дней"
+        "Попробуйте бесплатно в течение 30 дней"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1071,7 +1071,7 @@
     },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: почта и календарь с приоритетом конфиденциальности для ваших повседневных коммуникационных потребностей."
+        "${ mailPlus }: почта и календарь с приоритетом конфиденциальности для вашей повседневной коммуникации."
       ]
     },
     "Billing cycle": {
@@ -1304,6 +1304,11 @@
         "Просмотр (см. всю информацию о событии)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Не удалось получить контактную информацию для ${ address }"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Разрешения изменены для ${ email }"
@@ -1363,7 +1368,7 @@
         "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "С последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
+        "С момента последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2839,6 +2844,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } — ваше имя пользователя. Чтобы создать ${ Local }@${ Domain }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -2927,7 +2935,7 @@
         "Ошибка в одном из условий"
       ],
       "Expired": [
-        "Срок действия истек"
+        "Срок действия истёк"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не удалось получить активные сеансы. Пожалуйста, ${ refresh } или повторите попытку позже."
@@ -3050,7 +3058,7 @@
         "Пароли не совпадают"
       ],
       "Payment process canceled": [
-        "Отмена процесса оплаты"
+        "Процесс оплаты отменён"
       ],
       "Payment process consumed": [
         "Процесс оплаты завершен"
@@ -3161,7 +3169,7 @@
         "Возможно, адрес указан неверно"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Используемый браузер не позволяет полностью провести платеж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
+        "Используемый браузер не позволяет полностью провести платёж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
@@ -3334,6 +3342,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Версии vCard < 3.0 не поддерживаются"
       ]
     },
     "Error importing contacts": {
@@ -3698,7 +3709,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "2FA через ключ безопасности отключена"
+        "Двухфакторная аутентификация через ключ безопасности отключена"
       ],
       "Add a name to identify your security key with.": [
         "Добавьте имя для идентификации ключа безопасности."
@@ -4037,7 +4048,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Испытайте лучшее из ${ MAIL_APP_NAME } бесплатно"
+        "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ]
     },
     "Hint": {
@@ -4103,6 +4114,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
+      ],
+      "vCard versions < 3.0": [
+        "Версии vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4436,10 +4450,10 @@
         "${ calendarsToBeCreatedCount } новых календарей"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } объединенный календарь",
-        "${ calendarsToBeMergedCount } объединенных календаря",
-        "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенных календарей"
+        "${ calendarsToBeMergedCount } объединённый календарь",
+        "${ calendarsToBeMergedCount } объединённых календаря",
+        "${ calendarsToBeMergedCount } объединённых календарей",
+        "${ calendarsToBeMergedCount } объединённых календарей"
       ],
       "${ current } of ${ total }": [
         "${ current } из ${ total }"
@@ -5102,7 +5116,7 @@
         "Получить свой адрес ${ BRAND_NAME }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Дайте токену описательное имя, например, название службы, с которой вы планируете его использовать, и выберите один из своих активных пользовательских доменных адресов. Только на этот адрес можно будет отправлять электронные письма с этим токеном."
+        "Дайте токену описательное имя, например, название службы, с которой вы планируете его использовать, и выберите один из своих активных пользовательских доменных адресов. Только этот адрес сможет отправлять электронные письма с этим токеном."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Поделитесь своим публичным ключом с друзьями или опубликуйте его в Интернете, чтобы каждый мог отправлять вам письма со сквозным шифрованием!"
@@ -5153,7 +5167,7 @@
         "В случае утери пароля и необходимости восстановления аккаунта ${ boldImperative }, что у вас есть ${ boldAccountAndRecovery }, иначе вы рискуете потерять доступ к электронной почте, контактам и файлам."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода 2ФА для входа в учётную запись. Каждый код можно использовать только один раз."
+        "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
@@ -5256,9 +5270,6 @@
       ],
       "it’s imperative": [
         "это обязательно"
-      ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я использую ${ MAIL_APP_NAME } и подумал, что он может вам понравиться. Это безопасная служба электронной почты, которая защищает вашу конфиденциальность. Зарегистрируйтесь по этой ссылке и получите 1 месяц платных функций бесплатно: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -5384,7 +5395,7 @@
         "Папка не выбрана"
       ],
       "No imports or forwarding history.": [
-        "Нет импортов или истории пересылок."
+        "Нет истории импорта или пересылки."
       ],
       "No label selected": [
         "Ярлык не выбран"
@@ -5477,7 +5488,7 @@
         "Пожалуйста, подтвердите данные карты во вкладке проверки."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Пожалуйста, подтвердите платеж во вкладке проверки."
+        "Пожалуйста, подтвердите платёж во вкладке проверки."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Пожалуйста, проверьте свой файл на ошибки, или свяжитесь с технической поддержкой, чтобы получить больше информации."
@@ -5623,6 +5634,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Server is currently down": [
         "Сервер сейчас не работает"
       ],
@@ -5675,7 +5689,7 @@
         "Хранилище для пользователей"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
+        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
         "Хранилище, используемое этим пользователем"
@@ -5711,7 +5725,7 @@
         "Адрес электронной почты, который вы разместите в верхней части списка, является адресом электронной почты по умолчанию. Перетаскивайте и отпускайте строки списка, чтобы изменять порядок адресов."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "Истек срок действия ссылки для подтверждения почты. Пожалуйста, войдите еще раз, чтобы отправить ее заново."
+        "Истёк срок действия ссылки для подтверждения почты. Пожалуйста, войдите ещё раз, чтобы отправить её заново."
       ],
       "The following address is available:": [
         "Доступен следующий адрес:"
@@ -5795,7 +5809,7 @@
         "Этот токен не будет доступен после закрытия этого окна, и вы не должны делиться им ни с кем."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Срок действия данной ссылки для отписки истек. Пожалуйста, откройте более свежее письмо из этого списка рассылки."
+        "Срок действия данной ссылки для отписки истёк. Пожалуйста, откройте более свежее письмо из этого списка рассылки."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
@@ -5921,7 +5935,7 @@
         "Несохраненные изменения"
       ],
       "Unsubscribe link expired": [
-        "Срок действия ссылки для отписки истек"
+        "Срок действия ссылки для отписки истёк"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -5957,10 +5971,10 @@
         "Проверка может занять несколько минут."
       ],
       "Verification link expired": [
-        "Срок действия проверочной ссылки истек"
+        "Срок действия проверочной ссылки истёк"
       ],
       "Verification may take a few minutes.": [
-        "Проверка может занять пару минут."
+        "Проверка может занять несколько минут."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
@@ -5987,13 +6001,13 @@
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
       ],
       "We couldn’t process your payment.": [
-        "Нам не удалось обработать ваш платеж."
+        "Нам не удалось обработать ваш платёж."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
       "We need to authenticate your payment with your bank.": [
-        "Нам нужно подтвердить ваш платеж в вашем банке."
+        "Нам нужно подтвердить ваш платёж в вашем банке."
       ],
       "We recommend using your recovery phrase instead.": [
         "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
@@ -6053,7 +6067,7 @@
         "Имея зашифрованный адрес ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Без активации вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к неконфиденциальным учётным записям."
+        "Без активации вы не сможете создавать новых пользователей, добавлять адреса существующим пользователям или получать доступ к неконфиденциальным учётным записям."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -6143,7 +6157,7 @@
         "Вы не можете привлекать пользователей ${ MAIL_APP_NAME }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }.\n${ learnMore }"
+        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
@@ -7563,7 +7577,7 @@
         "Объявления компании ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Рассылки ${ BRAND_NAME } for Business"
+        "Рассылка ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } newsletter": [
         "Рассылка ${ BRAND_NAME }"
@@ -7623,7 +7637,7 @@
     },
     "Label, credit card": {
       "ZIP code": [
-        "Почтовый индекс (для американских карт)"
+        "Индекс"
       ]
     },
     "Label/folder modal": {
@@ -8347,6 +8361,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Send & receive invitations": [
+        "Отправляйте и получайте приглашения"
+      ],
       "Share calendar via link": [
         "Отправка записей в календаре с помощью ссылки"
       ],
@@ -8889,6 +8906,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
     "Onboarding": {
@@ -10052,6 +10074,35 @@
         "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Понятно"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Настройте подписку в ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Подпиской управляет ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Подписка пользователя с ID-${ userId } была приобретена в приложении. Чтобы настроить подписку, пользователю нужно войти в раздел Подписки своего аккаунта ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Подписки"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Ваш тариф был приобретён в приложении Android. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Google Play Маркет."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Ваш тариф был приобретён в приложении iOS. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Apple App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "За"
@@ -10074,13 +10125,13 @@
         "Включить поддержку автоматических платежей"
       ],
       "Keep auto-pay": [
-        "Оставить автоплатеж"
+        "Оставить автоплатёж"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Кроме того, если вы забудете произвести платеж вручную, и автоматический платеж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешевую подписку, что приведет к потере многих функций."
+        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Кроме того, если вы забудете произвести платёж вручную, и автоматический платёж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешёвую подписку, что приведёт к потере многих функций."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превысите лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платеж, не забудьте оплатить следующий счет по подписке до даты окончания, чтобы избежать блокировки аккаунта."
+        "Наша система больше не будет автоматически списывать платежи, используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платёжного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платёжного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превшаете лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платёж, не забудьте оплатить следующий счёт по подписке до даты окончания, чтобы избежать блокировки аккаунта."
       ]
     },
     "Subscription saving": {
@@ -10936,9 +10987,6 @@
       "Layout": [
         "Вид"
       ],
-      "Length": [
-        "Длительность"
-      ],
       "Link confirmation": [
         "Подтверждение ссылки"
       ],
@@ -11246,7 +11294,7 @@
         "Проверяем вашу карту..."
       ],
       "Verifying your payment...": [
-        "Проверяем ваш платеж..."
+        "Проверяем ваш платёж..."
       ],
       "VPN apps": [
         "Приложения VPN"
@@ -11525,6 +11573,14 @@
         "Автоматически подписывать все ваши исходящие сообщения, чтобы получатели могли проверить их подлинность. Это происходит совместно со схемой PGP по умолчанию, которая выбирается ниже."
       ]
     },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Общий доступ со сквозным шифрованием"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Общий доступ со сквозным шифрованием с подтверждённым контактом"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
@@ -11554,7 +11610,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Улучшите тариф до ${ MAIL_SHORT_APP_NAME }, чтобы поделиться вашим календарем."
+        "Улучшите тариф ${ MAIL_SHORT_APP_NAME } до платного, чтобы поделиться вашим календарем."
       ]
     },
     "User referee invited via email": {
@@ -11663,7 +11719,7 @@
         "Если вы отмените этот импорт, вы не сможете его возобновить. ${ BRAND_NAME } сохранил весь прогресс в вашем аккаунте. Все равно отменить?"
       ],
       "Please add at least one recipient.": [
-        "Пожалуйста, укажите хотя бы одного получателя."
+        "Добавьте хотя бы одного получателя."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
@@ -11732,7 +11788,7 @@
         "Каждую ${ interval } неделю в ${ multipleDaysString }",
         "Каждые ${ interval } недели в ${ multipleDaysString }",
         "Каждые ${ interval } недель в ${ multipleDaysString }",
-        "Каждые ${ interval } недель по следующим дням: ${ multipleDaysString }"
+        "Каждые ${ interval } недель в ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
@@ -11754,9 +11810,9 @@
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }"
+        "Каждые ${ interval } недели по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Каждую ${ interval } неделю каждый день, ${ untilString }",
@@ -12004,7 +12060,7 @@
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Каждый ${ interval } год, ${ timesString }",
-        "Каждый ${ interval } года, ${ timesString }",
+        "Каждые ${ interval } года, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }"
       ],

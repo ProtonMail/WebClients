@@ -546,6 +546,9 @@
       "Show preview": [
         "Mostra visualització prèvia"
       ],
+      "Show side panel": [
+        "Mosta la subfinestra lateral"
+      ],
       "Sign in": [
         "Inicia la sessió"
       ],
@@ -1872,6 +1875,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A problem occurred, please try again.": [
+        "S'ha produït un problema. Intenteu-ho de nou."
+      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -2005,6 +2011,9 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
+      ],
+      "Please activate your search again": [
+        "Activeu de nou la vostra cerca."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -2176,6 +2185,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error en el xifratge"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versions de vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
@@ -2541,6 +2553,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
+      "vCard versions < 3.0": [
+        "Versions de vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3197,6 +3212,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
+      "Free forever": [
+        "Gratuït per sempre"
+      ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
       ],
@@ -3466,6 +3484,9 @@
       ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
+      ],
+      "Preview for this file type is not supported": [
+        "La previsualització d'aquest tipus de fitxers no és compatible."
       ],
       "Primary": [
         "Principal"
@@ -4672,6 +4693,11 @@
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Següent"
@@ -5471,6 +5497,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
+      ],
+      "Sign in with 2FA": [
+        "Inicia la sessió amb dos factors"
       ],
       "Sign out": [
         "Tanca la sessió"
