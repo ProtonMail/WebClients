@@ -55,7 +55,6 @@ export const elements = createSelector(
             .filter((element) => hasLabel(element, labelID))
             .filter((element) => {
                 if (!isFilter(filter)) {
-                    console.log('filter is not a filter', filter);
                     return true;
                 }
                 if (filter.Attachments) {
