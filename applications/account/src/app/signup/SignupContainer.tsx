@@ -788,7 +788,19 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
+
+                            /**
+                             * Stop the metrics batching process. This prevents a race condition where
+                             * handleSetupUser sets an auth cookie before the metrics batch request
+                             */
+                            metrics.stopBatchingProcess();
+
                             const signupActionResponse = await handleSetupUser({ cache, api: silentApi });
+
+                            /**
+                             * Batch process can now resume since the auth cookie will have been set
+                             */
+                            metrics.startBatchingProcess();
 
                             await handleResult(signupActionResponse);
 
@@ -800,6 +812,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             handleBack();
                             handleError(error);
 
+                            metrics.startBatchingProcess();
                             metrics.core_signup_loadingStep_accountSetup_total.increment({
                                 status: 'failure',
                                 application: getSignupApplication(APP_NAME),
