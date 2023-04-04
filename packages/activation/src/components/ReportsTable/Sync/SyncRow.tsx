@@ -13,14 +13,13 @@ interface Props {
     syncId: string;
 }
 
-//TODO add date once the backend is ready
 const SyncRow = ({ syncId }: Props) => {
     const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
 
     const { product, account, state, startDate } = syncItem;
 
     return (
-        <TableRow>
+        <TableRow data-testid="reportsTable:syncRow">
             <ReportsTableCell product={product} title={account} isSync />
             <TableCell>
                 <div className="on-mobile-text-center">

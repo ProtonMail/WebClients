@@ -444,41 +444,4 @@ describe('Customize modal tests', () => {
             'Drafts',
         ]);
     });
-
-    it.skip('Should trigger all errors on folders', () => {
-        const providerFolders = [
-            'Scheduled',
-            'Sw97DttW06Y0RDc2lLINk83zd79A11sMWTJFGynA0f90D0T5fSkEwo05aYdU7KOfHa1dUC4xUN1VSNH7h6RjIV68Ryjxn26u6B8s',
-            'same name',
-            'same name',
-        ].map(
-            (source) =>
-                ({
-                    Source: source,
-                    Separator: '/',
-                } as ApiMailImporterFolder)
-        );
-
-        const nestedFields: MailImportFields = {
-            mapping: new MailImportFoldersParser(providerFolders, isLabelMapping).folders,
-            importLabel: { Color: '#fff', Name: 'label', Type: 1 },
-            importPeriod: TIME_PERIOD.LAST_MONTH,
-            importAddress: address,
-            importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
-        };
-
-        const onSubmit = jest.fn();
-
-        easySwitchRender(
-            <CustomizeMailImportModal
-                foldersOpened={true}
-                fields={nestedFields}
-                importedEmail="test@proton.ch"
-                isLabelMapping={false}
-                displayCategories={false}
-                onSubmit={onSubmit}
-                modalProps={getModalProps()}
-            />
-        );
-    });
 });

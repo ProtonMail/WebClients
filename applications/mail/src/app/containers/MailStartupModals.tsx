@@ -49,7 +49,7 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
+    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay, onboardingOpen]);
 
     return (
         <>
