@@ -110,13 +110,13 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     const errorElement = error && typeof error !== 'boolean' && (
         <>
             <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
-            <span data-testid={`error-${dataTestId}`}>{error}</span>
+            <span data-testid={dataTestId ? `error-${dataTestId}` : undefined}>{error}</span>
         </>
     );
     const warningElement = warning && typeof warning !== 'boolean' && (
         <>
             <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
-            <span data-testid={`warning-${dataTestId}`}>{warning}</span>
+            <span data-testid={dataTestId ? `warning-${dataTestId}` : undefined}>{warning}</span>
         </>
     );
 
@@ -188,6 +188,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     disabled={disabled}
                     aria-describedby={assistiveUid}
                     {...rest}
+                    data-testid={dataTestId}
                     suffix={getSuffix()}
                 />
             </div>
