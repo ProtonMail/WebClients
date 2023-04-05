@@ -7,6 +7,7 @@ import { Label, generateUID } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../hooks/useSendInfo';
+import { ComposerID } from '../../logic/composers/composerTypes';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { MessageChange } from './Composer';
 import ComposerExpirationTime from './ComposerExpirationTime';
@@ -14,6 +15,7 @@ import ComposerAddresses from './addresses/Addresses';
 import SelectSender from './addresses/SelectSender';
 
 interface Props {
+    composerID: ComposerID;
     message: MessageState;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
@@ -25,6 +27,7 @@ interface Props {
 }
 
 const ComposerMeta = ({
+    composerID,
     message,
     messageSendInfo,
     disabled,
@@ -51,9 +54,9 @@ const ComposerMeta = ({
                     {c('Info').t`From`}
                 </Label>
                 <SelectSender
+                    composerID={composerID}
                     message={message}
                     disabled={disabled}
-                    onChange={onChange}
                     onChangeContent={onChangeContent}
                     addressesBlurRef={addressesBlurRef}
                 />
@@ -62,9 +65,9 @@ const ComposerMeta = ({
                 message={message}
                 messageSendInfo={messageSendInfo}
                 disabled={disabled}
-                onChange={onChange}
                 addressesBlurRef={addressesBlurRef}
                 addressesFocusRef={addressesFocusRef}
+                composerID={composerID}
             />
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center mt-0 mb-2">
                 <Label

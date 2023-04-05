@@ -120,14 +120,14 @@ export const useInitializeMessage = () => {
             // but we sometimes we receive messages with a NumAttachment = 0 which contains pure attachments,
             // This leads to hide the attachment list, and the user is not able to see the message attachments
             // We are doing an additional verification to update NumAttachments if needed
-            const pureAttachments = getPureAttachments(getData().Attachments, isNumAttachmentsWithoutEmbedded);
+            const pureAttachments = getPureAttachments(getData().Attachments, isNumAttachmentsWithoutEmbedded) || [];
 
             // If we calculate a different NumAttachments than the one received,
             // we need to update the message to display the attachment list
             const numAttachments =
                 pureAttachments.length !== getData().NumAttachments ? pureAttachments.length : getData().NumAttachments;
 
-            const allAttachments = [...getData().Attachments, ...mimeAttachments];
+            const allAttachments = [...(getData().Attachments || []), ...mimeAttachments];
             dataChanges = {
                 ...dataChanges,
                 Attachments: allAttachments,

@@ -7,9 +7,11 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { selectComposer } from '../../../logic/composers/composerSelectors';
+import { composerActions } from '../../../logic/composers/composersSlice';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch, useAppSelector } from '../../../logic/store';
 import { RecipientType } from '../../../models/address';
-import { MessageChange } from '../Composer';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 
@@ -17,15 +19,17 @@ interface Props {
     message: MessageState;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
-    onChange: MessageChange;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
+    composerID: string;
 }
 
-const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
+const Addresses = ({ messageSendInfo, disabled, addressesBlurRef, addressesFocusRef, composerID }: Props) => {
     const toFocusRef = useRef<() => void>(noop);
     const ccFocusRef = useRef<() => void>(noop);
     const bccFocusRef = useRef<() => void>(noop);
+    const composer = useAppSelector((store) => selectComposer(store, composerID));
+    const dispatch = useAppDispatch();
 
     const inputFocusRefs = {
         to: toFocusRef,
@@ -50,16 +54,16 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             setBCCExpanded(false);
         };
         addressesFocusRef.current = () => {
-            if (message.data?.CCList.length) {
+            if (composer.recipients.CCList.length) {
                 setCCExpanded(true);
             }
-            if (message.data?.BCCList.length) {
+            if (composer.recipients.BCCList.length) {
                 setBCCExpanded(true);
             }
             setEditor(true);
             setTimeout(() => inputFocusRefs.to.current(), 100);
         };
-    }, [message.data?.CCList, message.data?.BCCList]);
+    }, [composer.recipients.CCList, composer.recipients.BCCList]);
 
     const handleFocus = () => {
         if (disabled) {
@@ -77,10 +81,10 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             return false;
         }
         setEditor(true);
-        if (type === 'CCList' || message.data?.CCList.length) {
+        if (type === 'CCList' || composer.recipients.CCList.length) {
             setCCExpanded(true);
         }
-        if (type === 'BCCList' || message.data?.BCCList.length) {
+        if (type === 'BCCList' || composer.recipients.BCCList.length) {
             setBCCExpanded(true);
         }
         setTimeout(() => {
@@ -103,16 +107,18 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
 
     const handleContactModal = (type: RecipientType) => async () => {
         const recipients = await showContactSelector({
-            inputValue: message.data?.[type],
+            inputValue: composer.recipients?.[type],
             onGroupDetails,
             onEdit,
         });
 
-        const currentRecipients = message.data && message.data[type] ? message.data[type] : [];
+        const currentRecipients = composer.recipients && composer.recipients[type] ? composer.recipients[type] : [];
         // the contacts being handled in the modal
         const currentNonContacts = currentRecipients.filter((r) => !r.ContactID);
 
-        onChange({ data: { [type]: [...currentNonContacts, ...recipients] } });
+        dispatch(
+            composerActions.setRecipients({ ID: composerID, type, recipients: [...currentNonContacts, ...recipients] })
+        );
         handleDisplayFocusFields(type);
     };
 
@@ -120,9 +126,8 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         <>
             {editor ? (
                 <AddressesEditor
-                    message={message}
+                    composerID={composerID}
                     messageSendInfo={messageSendInfo}
-                    onChange={onChange}
                     inputFocusRefs={inputFocusRefs}
                     handleContactModal={handleContactModal}
                     ccExpanded={ccExpanded}
@@ -131,7 +136,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
                 />
             ) : (
                 <AddressesSummary
-                    message={message.data}
+                    composerID={composerID}
                     disabled={disabled}
                     mapSendInfo={messageSendInfo.mapSendInfo}
                     onFocus={handleFocus}

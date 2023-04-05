@@ -29,7 +29,7 @@ import AddressesRecipientItem from './AddressesRecipientItem';
 
 interface Props {
     id: string;
-    recipients?: Recipient[];
+    recipients: Recipient[];
     messageSendInfo?: MessageSendInfo;
     onChange: (value: Recipient[]) => void;
     inputFocusRef?: MutableRefObject<() => void>;
@@ -45,7 +45,7 @@ interface Props {
 
 const AddressesInput = ({
     id,
-    recipients = [],
+    recipients,
     messageSendInfo,
     onChange,
     inputFocusRef,

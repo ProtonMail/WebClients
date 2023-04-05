@@ -59,7 +59,7 @@ export const transformRemote = (
     onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void
 ) => {
     const showRemoteImages =
-        message.messageImages?.showRemoteImages || hasShowRemote(mailSettings) || !!message.data?.Sender.IsProton;
+        message.messageImages?.showRemoteImages || hasShowRemote(mailSettings) || !!message.data?.Sender?.IsProton;
 
     const draft = isDraft(message.data);
 
@@ -122,7 +122,8 @@ export const transformRemote = (
 
     if (skipProxy) {
         void loadSkipProxyImages(remoteImages, onLoadRemoteImagesDirect);
-    } else if (showRemoteImages) { // Beware because we also pass here when loading images in EO
+    } else if (showRemoteImages) {
+        // Beware because we also pass here when loading images in EO
         // Load images through proxy, by forging the URL and putting it directly into the image src
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesDirect, onLoadRemoteImagesProxy);
         // Make a fake load of images to check if they are trackers

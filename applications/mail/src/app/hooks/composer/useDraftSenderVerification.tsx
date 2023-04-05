@@ -9,15 +9,19 @@ import { Address } from '@proton/shared/lib/interfaces';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
+import { composerActions } from '../../logic/composers/composersSlice';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 
 interface Props {
     onChange: MessageChange;
+    composerID: string;
 }
 
-export const useDraftSenderVerification = ({ onChange }: Props) => {
+export const useDraftSenderVerification = ({ composerID }: Props) => {
     const [addresses] = useAddresses();
     const [defaultEmail, setDefaultEmail] = useState<string>('');
+    const dispatch = useAppDispatch();
 
     const [senderChangedModalProps, setSenderChangedModalOpen, render] = useModalState();
 
@@ -43,12 +47,12 @@ export const useDraftSenderVerification = ({ onChange }: Props) => {
             setDefaultEmail(defaultAddress?.Email);
 
             if (defaultAddress) {
-                onChange({
-                    data: {
-                        Sender: { Name: defaultAddress.DisplayName, Address: defaultAddress.Email },
-                        AddressID: defaultAddress.ID,
-                    },
-                });
+                dispatch(
+                    composerActions.setSender({
+                        ID: composerID,
+                        emailAddress: defaultAddress.Email,
+                    })
+                );
                 setSenderChangedModalOpen(true);
             }
         }

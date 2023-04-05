@@ -9,14 +9,15 @@ import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
+import { selectComposer } from '../../../logic/composers/composerSelectors';
+import { useAppSelector } from '../../../logic/store';
 import { RecipientType, recipientTypes } from '../../../models/address';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import AddressesCCButton from './AddressesCCButton';
 
 interface Props {
-    message?: MessageWithOptionalBody;
+    composerID: string;
     disabled: boolean;
     mapSendInfo?: MapSendInfo;
     onFocus: () => void;
@@ -24,9 +25,18 @@ interface Props {
     handleContactModal: (type: RecipientType) => () => Promise<void>;
 }
 
-const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFocus, handleContactModal }: Props) => {
+const AddressesSummary = ({
+    composerID,
+    disabled,
+    mapSendInfo,
+    toggleExpanded,
+    onFocus,
+    handleContactModal,
+}: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
-    const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
+    const composer = useAppSelector((store) => selectComposer(store, composerID));
+    const recipients = getRecipients(composer.recipients);
+    const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 
     return (
         <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative my-0">
@@ -53,11 +63,11 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                     role="button"
                     tabIndex={0}
                 >
-                    {getRecipients(message).length === 0 ? (
+                    {recipients.length === 0 ? (
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
                     ) : null}
                     {recipientTypes.map((type) => {
-                        const recipients: Recipient[] = message?.[type] || [];
+                        const recipients: Recipient[] = composer.recipients[type] || [];
                         if (recipients.length === 0) {
                             return null;
                         }
