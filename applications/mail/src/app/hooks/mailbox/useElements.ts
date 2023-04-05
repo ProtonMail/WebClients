@@ -123,7 +123,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         if (shouldResetCache) {
             dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
-        if (shouldSendRequest && pendingActions === 0 && !isSearch(search) && !hasAttachmentsFilter(filter)) {
+        if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
             void dispatch(
                 loadAction({ api, call, abortController: abortControllerRef.current, conversationMode, page, params })
             );
