@@ -19,6 +19,7 @@ import { getContent, getContentWithBlockquotes, setContent } from '../../helpers
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { mergeMessages } from '../../helpers/message/messages';
+import { ComposerID } from '../../logic/composers/composerTypes';
 import {
     deleteDraft as deleteDraftAction,
     removeInitialAttachments,
@@ -40,6 +41,7 @@ import { EditorHotkeysHandlers, useComposerHotkeys } from './useComposerHotkeys'
 import { useComposerInnerModals } from './useComposerInnerModals';
 import { useDraftSenderVerification } from './useDraftSenderVerification';
 import { useHandleMessageAlreadySent } from './useHandleMessageAlreadySent';
+import useReduxRefac from './useReduxRefac';
 import { useSendHandler } from './useSendHandler';
 
 export enum EditorTypes {
@@ -53,6 +55,7 @@ export interface EditorComposer {
     addressesFocusRef?: MutableRefObject<() => void>;
     toggleMinimized?: () => void;
     toggleMaximized?: () => void;
+    composerID: string;
 }
 
 export interface EditorQuickReply {
@@ -71,6 +74,7 @@ export type EditorArgs = (EditorComposer | EditorQuickReply) & {
     composerFrameRef: RefObject<HTMLDivElement>;
     isFocused?: boolean;
     editorReady: boolean;
+    composerID?: ComposerID;
 };
 
 export const useComposerContent = (args: EditorArgs) => {
@@ -196,7 +200,6 @@ export const useComposerContent = (args: EditorArgs) => {
         } else {
             // Draft update
             const { changed, Attachments } = updateKeyPackets(modelMessage, syncedMessage);
-
             if (changed) {
                 setModelMessage({
                     ...modelMessage,
@@ -472,6 +475,7 @@ export const useComposerContent = (args: EditorArgs) => {
      */
     const { verifyDraftSender, modal: senderVerificationModal } = useDraftSenderVerification({
         onChange: handleChange,
+        composerID: isQuickReply ? '' : args.composerID,
     });
 
     useEffect(() => {
@@ -650,6 +654,8 @@ export const useComposerContent = (args: EditorArgs) => {
             }
         }
     };
+
+    useReduxRefac({ composerID: args.composerID, handleChange, handleChangeContent, modelMessage });
 
     return {
         modelMessage,

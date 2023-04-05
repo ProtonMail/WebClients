@@ -16,6 +16,7 @@ import {
     minimalCache,
     waitForNotification,
 } from '../../../helpers/test/helper';
+import { store } from '../../../logic/store';
 import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
 
 const orignalGetSelection = global.getSelection;
@@ -57,14 +58,16 @@ describe('Composer hotkeys', () => {
 
         addKeysToAddressKeysCache(AddressID, fromKeys);
 
-        const message = prepareMessage({
+        prepareMessage({
             messageDocument: { document: createDocument('test') },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
 
         addApiKeys(false, toAddress, []);
 
-        const result = await renderComposer(message.localID, false);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const result = await renderComposer(composerID, false);
 
         const iframe = result.container.querySelector('iframe') as HTMLIFrameElement;
 
