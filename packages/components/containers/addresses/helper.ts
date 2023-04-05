@@ -1,4 +1,5 @@
 import {
+    ADDRESS_FLAGS,
     ADDRESS_RECEIVE,
     ADDRESS_SEND,
     ADDRESS_STATUS,
@@ -11,13 +12,15 @@ import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/share
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 
 export const getStatus = (address: Address, i: number) => {
-    const { Type, Status, Receive, DomainID, HasKeys } = address;
+    const { Type, Status, Receive, DomainID, HasKeys, Flags } = address;
 
     const isActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === ADDRESS_RECEIVE.RECEIVE_YES;
     const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
     const isOrphan = DomainID === null && !isExternal;
     const isMissingKeys = !HasKeys;
+    const isNotEncrypted = Flags !== undefined && (Flags & ADDRESS_FLAGS.FLAG_DISABLE_E2EE) !== 0;
+    const isSignatureNotExpected = Flags !== undefined && (Flags & ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED) !== 0;
 
     return {
         isDefault: i === 0,
@@ -26,6 +29,8 @@ export const getStatus = (address: Address, i: number) => {
         isDisabled,
         isOrphan,
         isMissingKeys,
+        isNotEncrypted,
+        isSignatureNotExpected,
     };
 };
 

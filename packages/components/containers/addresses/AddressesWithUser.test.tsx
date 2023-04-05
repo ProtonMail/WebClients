@@ -3,24 +3,48 @@ import { ComponentPropsWithoutRef } from 'react';
 import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 
-import { OrderableTable, useAddresses, useApi, useNotifications } from '@proton/components';
+import {
+    OrderableTable,
+    useAddresses,
+    useAddressesKeys,
+    useApi,
+    useFeature,
+    useKTVerifier,
+    useNotifications,
+    useUser,
+} from '@proton/components';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 
 import AddressesWithUser from './AddressesWithUser';
 
-jest.mock('@proton/components/hooks/useApi');
-jest.mock('@proton/components/hooks/useAddresses');
-jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
+
 jest.mock('@proton/components/components/orderableTable/OrderableTable');
 const ActualOrderableTable = jest.requireActual('@proton/components/components/orderableTable/OrderableTable').default;
-
-const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
-const mockedUseApi = useApi as jest.MockedFunction<typeof useApi>;
-const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
 const mockedOrderableTable = OrderableTable as jest.MockedFunction<typeof OrderableTable>;
+
+jest.mock('@proton/components/hooks/useAddresses');
+const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
+
+jest.mock('@proton/components/hooks/useApi');
+const mockedUseApi = useApi as jest.MockedFunction<typeof useApi>;
+
+jest.mock('@proton/components/hooks/useNotifications');
+const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
+
+jest.mock('@proton/components/hooks/useUser');
+const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
+
+jest.mock('@proton/components/hooks/useAddressesKeys');
+const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof useAddressesKeys>;
+
+jest.mock('@proton/components/containers/keyTransparency/useKTVerifier');
+const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVerifier>;
+
+jest.mock('@proton/components/hooks/useFeature');
+const mockedUseFeature = useFeature as jest.MockedFunction<any>;
 
 describe('addresses with user', () => {
     const user = {
@@ -69,6 +93,10 @@ describe('addresses with user', () => {
     mockedUseAddresses.mockReturnValue([addresses, false, null]);
     mockedOrderableTable.mockImplementation(ActualOrderableTable);
     mockedUseNotifications.mockReturnValue({} as any);
+    mockedUseUser.mockReturnValue([{}] as any);
+    mockedUseAddressesKeys.mockReturnValue([{}] as any);
+    mockedUseKTVerifier.mockReturnValue({} as any);
+    mockedUseFeature.mockReturnValue({ feature: { Value: { MailForwarding: true } }, loading: false });
 
     const getFirstAddress = (container: HTMLElement) => {
         return container.querySelector('[title]');

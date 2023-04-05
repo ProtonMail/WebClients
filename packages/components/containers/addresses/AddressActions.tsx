@@ -6,7 +6,7 @@ import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/inter
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useAddressFlags, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import DeleteAddressModal from './DeleteAddressModal';
 import DisableAddressModal from './DisableAddressModal';
 import { AddressPermissions } from './helper';
@@ -35,6 +35,13 @@ const AddressActions = ({
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const addressFlags = useAddressFlags(address);
+    const { encryptionDisabled, expectSignatureDisabled, handleSetAddressFlags } = { ...addressFlags };
+    const addressFlagsDisabled =
+        addressFlags === null ||
+        handleSetAddressFlags === undefined ||
+        expectSignatureDisabled === undefined ||
+        encryptionDisabled === undefined;
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
@@ -88,6 +95,26 @@ const AddressActions = ({
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
                       } as const),
+                  ...(addressFlagsDisabled
+                      ? []
+                      : [
+                            encryptionDisabled && {
+                                text: c('Address action').t`Enable encryption`,
+                                onClick: () => handleSetAddressFlags(false, expectSignatureDisabled),
+                            },
+                            !encryptionDisabled && {
+                                text: c('Address action').t`Disable encryption`,
+                                onClick: () => handleSetAddressFlags(true, expectSignatureDisabled),
+                            },
+                            expectSignatureDisabled && {
+                                text: c('Address action').t`Enable expect signed`,
+                                onClick: () => handleSetAddressFlags(encryptionDisabled, false),
+                            },
+                            !expectSignatureDisabled && {
+                                text: c('Address action').t`Disable expect signed`,
+                                onClick: () => handleSetAddressFlags(encryptionDisabled, true),
+                            },
+                        ]),
               ].filter(isTruthy);
 
     return (
