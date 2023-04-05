@@ -10,7 +10,15 @@ import {
     MAX_ELEMENT_LIST_LOAD_RETRIES,
     PAGE_SIZE,
 } from '../../constants';
-import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
+import {
+    hasAttachments,
+    hasAttachmentsFilter,
+    hasLabel,
+    isFilter,
+    isSearch,
+    isUnread,
+    sort as sortElements,
+} from '../../helpers/elements';
 import { expectedPageLength } from '../../helpers/paging';
 import { ESBaseMessage, ESMessageContent, NormalizedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
@@ -56,6 +64,9 @@ export const elements = createSelector(
             .filter((element) => {
                 if (!isFilter(filter)) {
                     return true;
+                }
+                if (filter.Attachments) {
+                    return hasAttachments(element);
                 }
                 if (bypassFilter.includes(element.ID || '')) {
                     return true;
@@ -144,7 +155,10 @@ export const shouldSendRequest = createSelector(
     }
 );
 
-export const isLive = createSelector([params, pages], (params, pages) => !isSearch(params.search) && pages.includes(0));
+export const isLive = createSelector(
+    [params, pages],
+    (params, pages) => !isSearch(params.search) && !hasAttachmentsFilter(params.filter) && pages.includes(0)
+);
 
 export const shouldUpdatePage = createSelector(
     [pageChanged, pageCached],
@@ -193,7 +207,7 @@ export const messagesToLoadMoreES = createSelector(
 export const dynamicTotal = createSelector(
     [params, currentCounts, bypassFilter],
     (params, { counts, loading }, bypassFilter) => {
-        if (isSearch(params.search) || loading) {
+        if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
             return undefined;
         }
         return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
