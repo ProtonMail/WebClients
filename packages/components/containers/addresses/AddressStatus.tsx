@@ -5,7 +5,16 @@ import isTruthy from '@proton/utils/isTruthy';
 import { Badge } from '../../components';
 import { AddressStatuses } from './helper';
 
-const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys, isExternal }: AddressStatuses) => {
+const AddressStatus = ({
+    isDefault,
+    isActive,
+    isDisabled,
+    isOrphan,
+    isMissingKeys,
+    isExternal,
+    isNotEncrypted,
+    isSignatureNotExpected,
+}: AddressStatuses) => {
     const list = [
         isDefault &&
             ({
@@ -36,6 +45,16 @@ const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKey
             ({
                 text: c('Address status').t`Missing keys`,
                 type: 'warning',
+            } as const),
+        isNotEncrypted &&
+            ({
+                text: c('Address status').t`No E2EE`,
+                type: 'error',
+            } as const),
+        isSignatureNotExpected &&
+            ({
+                text: c('Address status').t`No signing`,
+                type: 'error',
             } as const),
     ]
         .filter(isTruthy)
