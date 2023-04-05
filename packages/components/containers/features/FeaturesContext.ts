@@ -81,6 +81,7 @@ export enum FeatureCode {
     OfferMailTrial2023 = 'OfferMailTrial2023',
     OfferFamily2023 = 'OfferFamily2023',
     SmtpToken = 'SmtpToken',
+    MailForwarding = 'MailForwarding',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     DriveMyDevices = 'DriveWebMyDevices',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',

@@ -4,14 +4,14 @@ import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit, hasBit, setBit } from '../helpers/bitset';
 
 export const setExternalFlags = (flags: number) => {
-    flags = setBit(flags, KEY_FLAG.NO_EMAIL_ENCRYPT);
-    flags = setBit(flags, KEY_FLAG.NO_EMAIL_SIGN);
+    flags = setBit(flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+    flags = setBit(flags, KEY_FLAG.FLAG_EMAIL_NO_SIGN);
     return flags;
 };
 
 export const clearExternalFlags = (flags: number) => {
-    flags = clearBit(flags, KEY_FLAG.NO_EMAIL_ENCRYPT);
-    flags = clearBit(flags, KEY_FLAG.NO_EMAIL_SIGN);
+    flags = clearBit(flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+    flags = clearBit(flags, KEY_FLAG.FLAG_EMAIL_NO_SIGN);
     return flags;
 };
 
