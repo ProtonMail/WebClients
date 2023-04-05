@@ -1,18 +1,16 @@
 import { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode } from 'react';
 
-import { c } from 'ttag';
-
 import { isDragFile } from '@proton/components/components';
 import { useDragOver } from '@proton/components/hooks';
-import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
-import clsx from '@proton/utils/clsx';
+
+import DropzoneContent from './DropzoneContent';
 
 import './Dropzone.scss';
 
 export type DropzoneSize = 'small' | 'medium' | 'large';
 export type DropzoneShape = 'norm' | 'transparent' | 'flashy' | 'invisible';
 
-interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onDrop'> {
+export interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onDrop'> {
     /**
      * Action to trigger when dropping files on top of the dropzone
      */
@@ -70,11 +68,6 @@ const Dropzone = ({
 
     const [hovering, dragProps] = useDragOver(isDragFile, 'move', { onDrop: handleDrop });
 
-    const isSmallDropView = size === 'small';
-    const isLargeDropView = size === 'large';
-
-    const isTransparentShape = shape === 'transparent';
-    const isFlashyShape = shape === 'flashy';
     const isInvisible = shape === 'invisible';
 
     // We need to display the dropzone content when:
@@ -86,37 +79,14 @@ const Dropzone = ({
     const shouldDisplayDropzoneContent = (hovering || showDragOverState) && !disabled && !isInvisible;
 
     const dropzoneContent = shouldDisplayDropzoneContent && (
-        <div
-            className={clsx(
-                'dropzone-content dropzone-content--hovered h100 w100 absolute-cover flex flex-justify-center flex-align-items-center',
-                rounded && 'rounded-xl',
-                border && 'dropzone--bordered',
-                isTransparentShape && 'dropzone-content--transparent',
-                isFlashyShape && 'dropzone-content--flashy',
-                className
-            )}
-        >
-            {customContent ? (
-                customContent
-            ) : (
-                <div className="text-center">
-                    {!isSmallDropView && <img src={dragAndDrop} alt="" aria-hidden="true" className="mb1" />}
-                    {isLargeDropView ? (
-                        <p className={'mb0 mt1-5"'}>
-                            <span className="text-xl text-bold">{c('Info').t`Drop to import`}</span>
-                            <br />
-                            <span className={clsx(!isFlashyShape && 'color-weak')}>
-                                {c('Info').t`Your files will be encrypted and then saved`}
-                            </span>
-                        </p>
-                    ) : (
-                        <p className={clsx('m0', !isFlashyShape && 'color-weak')}>
-                            {c('Info').t`Drop file here to upload`}
-                        </p>
-                    )}
-                </div>
-            )}
-        </div>
+        <DropzoneContent
+            border={border}
+            className={className}
+            customContent={customContent}
+            rounded={rounded}
+            shape={shape}
+            size={size}
+        />
     );
 
     // If invisible, we always show the children, even on dragOver state
@@ -131,16 +101,8 @@ const Dropzone = ({
     const canShowChildren = !!children || disabled;
 
     return (
-        <div
-            className={clsx('w100 h100 relative', !children && 'absolute-cover')}
-            {...(!disabled ? rest : undefined)}
-            {...dragProps}
-        >
-            {canShowChildren && (
-                <div className={clsx('dropzone-children flex flex-align-items-center flex-justify-center w100 h100')}>
-                    {children}
-                </div>
-            )}
+        <div className="h100 w100 relative" {...(!disabled ? rest : undefined)} {...dragProps}>
+            {canShowChildren && <div className="dropzone-children h100 w100">{children}</div>}
             {dropzoneContent}
         </div>
     );

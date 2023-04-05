@@ -6,11 +6,15 @@
 	}
 
 	&-content {
-		min-block-size: em(100);
 		background-color: var(--background-norm);
 
 		&--hovered {
 			z-index: $layer-dropzone;
+		}
+
+		&--embedded {
+			inset: 1px; // For border width
+			position: fixed;
 		}
 
 		&--transparent {
@@ -45,7 +49,6 @@
 	}
 
 	&-children {
-		min-block-size: em(100);
 		position: relative;
 	}
 }
