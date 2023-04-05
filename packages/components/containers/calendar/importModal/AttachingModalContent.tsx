@@ -56,7 +56,7 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
             <Dropzone onDrop={onDrop} size="small" shape="flashy">
                 <div
                     className={clsx([
-                        'flex w100 h100 flex-align-items-center flex-justify-center border p1',
+                        'flex flex-align-items-center flex-justify-center border p-8 rounded-xl',
                         !!model.failure && 'border-danger',
                     ])}
                 >

@@ -4,13 +4,15 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
-import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID } from '../constants';
+import DropzoneContent, { DropzoneContentProps } from '../../dropzone/DropzoneContent';
+import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, EDITOR_DROPZONE } from '../constants';
 import { ModalLinkProps } from '../hooks/interface';
 import { EditorActions, SetEditorToolbarConfig } from '../interface';
 import BlockquoteToggle from './BlockquoteToggle';
 import useBubbleIframeEvents from './hooks/useBubbleIframeEvents';
+import useComposerDrag from './hooks/useComposerDrag';
 import useInitRooster from './hooks/useInitRooster';
 import useOnEditorChange from './hooks/useOnEditorChange';
 
@@ -29,6 +31,8 @@ interface Props {
     onFocus?: () => void;
     className?: string;
     openEmojiPicker: () => void;
+    dropzone?: DropzoneContentProps;
+    onAddAttachments?: (files: File[]) => void;
 }
 
 const RoosterEditor = ({
@@ -44,6 +48,8 @@ const RoosterEditor = ({
     mailSettings,
     className,
     openEmojiPicker,
+    dropzone,
+    onAddAttachments,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -66,15 +72,18 @@ const RoosterEditor = ({
     });
 
     useBubbleIframeEvents(iframeRef);
+    const isDragging = useComposerDrag(iframeRef, onAddAttachments);
 
     const blockquoteContainer = iframeRef.current?.contentDocument?.getElementById(
         EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID
     );
+    const dropzoneContainer =
+        dropzone && isDragging ? iframeRef.current?.contentDocument?.getElementById(EDITOR_DROPZONE) : undefined;
 
     return (
         <>
             <div
-                className={classnames([
+                className={clsx([
                     'editor-wrapper fill w100 h100 scroll-if-needed flex-item-fluid flex flex-column relative',
                     className,
                 ])}
@@ -93,6 +102,8 @@ const RoosterEditor = ({
                     <BlockquoteToggle show={showBlockquoteToggle} onClick={onBlockquoteToggleClick} />,
                     blockquoteContainer
                 )}
+
+            {dropzoneContainer ? createPortal(<DropzoneContent {...dropzone} embedded />, dropzoneContainer) : null}
         </>
     );
 };

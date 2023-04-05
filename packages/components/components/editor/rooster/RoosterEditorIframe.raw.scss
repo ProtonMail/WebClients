@@ -1,4 +1,78 @@
 @import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/base/custom-properties/init';
+@import '~@proton/styles/scss/base/custom-properties/optionals';
+@import '~@proton/components/components/dropzone/Dropzone';
+
+.proton {
+	&-h100 {
+		block-size: 100%;
+	}
+
+	&-w100 {
+		inline-size: 100%;
+	}
+
+	&-flex {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&-flex-justify-center {
+		justify-content: center;
+	}
+
+	&-flex-align-items-center {
+		align-items: center;
+	}
+
+	&-rounded-xl {
+		border-radius: var(--border-radius-xl);
+	}
+
+	&-text-xl {
+		@include rhythm(18, 'none');
+	}
+
+	&-text-bold {
+		font-weight: var(--font-weight-bold);
+	}
+
+	&-text-center {
+		text-align: center;
+	}
+
+	&-color-weak {
+		color: var(--text-weak);
+	}
+
+	&-m0 {
+		margin: 0;
+	}
+
+	&-mb0 {
+		margin-block-end: 0;
+	}
+
+	&-mt1-5 {
+		margin-block-start: 1.5em;
+	}
+
+	&-hidden {
+		display: none;
+	}
+
+	&-sr-only {
+		border: 0;
+		clip: rect(0 0 0 0);
+		block-size: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		inline-size: 1px;
+		inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
+	}
+}
 
 // custom scroll
 body:not(.isDarkMode) {
@@ -100,22 +174,6 @@ blockquote blockquote blockquote {
 	padding-inline-start: 0;
 	margin-inline-start: 0;
 	border: none;
-}
-
-.proton-hidden {
-	display: none;
-}
-
-.proton-sr-only {
-	border: 0;
-	clip: rect(0 0 0 0);
-	block-size: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	inline-size: 1px;
-	inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
 }
 
 .icon-14p {

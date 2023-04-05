@@ -9,6 +9,7 @@ import { EditorMetadata } from './interface';
 export const ROOSTER_EDITOR_WRAPPER_ID = 'rooster-editor-wrapper';
 export const ROOSTER_EDITOR_ID = 'rooster-editor';
 export const EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID = 'proton-editor-toggle-container';
+export const EDITOR_DROPZONE = 'proton-editor-dropzone';
 
 /**
  * Rooster snapshot max size limit

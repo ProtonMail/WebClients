@@ -2,10 +2,17 @@ import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { IEditor } from 'roosterjs-editor-types';
 
+import { useTheme } from '@proton/components/containers';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
-import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, ROOSTER_EDITOR_ID, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
+import {
+    EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
+    EDITOR_DROPZONE,
+    ROOSTER_EDITOR_ID,
+    ROOSTER_EDITOR_WRAPPER_ID,
+} from '../../constants';
 import { ModalLinkProps } from '../../hooks/interface';
 import { EditorActions, OnEditorEventListened } from '../../interface';
 import { initRoosterEditor } from '../helpers/initRoosterEditor';
@@ -43,6 +50,8 @@ const useInitRooster = ({
 }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
+    const [themeIndex] = useTheme();
+    const themeCSSVariables: string = PROTON_THEMES_MAP[themeIndex].theme;
 
     const initRooster = useCallback(async () => {
         const iframe = iframeRef.current as HTMLIFrameElement;
@@ -53,6 +62,7 @@ const useInitRooster = ({
         <head>
             <style>
                 ${iframeCss}
+                ${themeCSSVariables}
                 .proton-embedded:not([src]){
                     background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
                 }
@@ -79,10 +89,11 @@ const useInitRooster = ({
         </svg>
         <div id="proton-editor-container">
             <div id=${ROOSTER_EDITOR_WRAPPER_ID}>
-                <div id="${ROOSTER_EDITOR_ID}"></div>
-                <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}"></div>
+                <div id="${ROOSTER_EDITOR_ID}" />
+                <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}" />
             </div>
         </div>
+        <div id="${EDITOR_DROPZONE}" />
         </body>
         `);
         iframeDocument.close();
