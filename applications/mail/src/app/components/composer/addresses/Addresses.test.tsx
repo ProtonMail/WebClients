@@ -3,6 +3,7 @@ import { MutableRefObject } from 'react';
 import { fireEvent, getAllByRole, screen } from '@testing-library/react';
 import { act, getByText } from '@testing-library/react';
 
+import { pick } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -10,7 +11,9 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, addToCache, clearAll, minimalCache, render } from '../../../helpers/test/helper';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { composerActions } from '../../../logic/composers/composersSlice';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { store } from '../../../logic/store';
 import Addresses from './Addresses';
 
 const email1 = 'test@test.com';
@@ -68,6 +71,7 @@ const contactEmails: ContactEmail[] = [
 const message: MessageState = {
     localID: 'localId',
     data: {
+        Sender: { Address: 'dude@dude.fr' },
         AddressID: 'AddressID',
         ToList: [recipient1, recipient2],
         CCList: [] as Recipient[],
@@ -90,34 +94,47 @@ const messageSendInfo: MessageSendInfo = {
     setMapSendInfo: () => jest.fn(),
 };
 
-const props = {
+const DEFAULT_PROPS = {
     message,
     messageSendInfo,
     disabled: false,
     onChange: jest.fn(),
     addressesBlurRef: {} as MutableRefObject<() => void>,
     addressesFocusRef: {} as MutableRefObject<() => void>,
-};
+} as const;
 
-const getProps = ({ cc = [], bcc = [] }: Partial<Record<'cc' | 'bcc', Recipient[]>>) => {
-    const messageOverride: MessageState = {
-        ...message,
-        data: {
-            ...message.data,
-            CCList: cc as Recipient[],
-            BCCList: bcc as Recipient[],
-        } as Message,
-    };
-    return {
-        ...props,
-        message: messageOverride,
-    };
+const setup = async ({
+    messageProp,
+    minimalCache = true,
+}: {
+    messageProp?: Partial<MessageState>;
+    minimalCache?: boolean;
+} = {}) => {
+    const nextMessage = mergeMessages(DEFAULT_PROPS.message, messageProp || {});
+    store.dispatch(
+        composerActions.addComposer({
+            messageID: nextMessage.localID || '',
+            // @ts-expect-error
+            recipients: pick(nextMessage?.data, ['ToList', 'CCList', 'BCCList']),
+            // @ts-expect-error
+            senderEmailAddress: nextMessage.data?.Sender.Address,
+        })
+    );
+    const composerID = Object.keys(store.getState().composers.composers)[0];
+
+    const result = await render(
+        <Addresses {...DEFAULT_PROPS} message={nextMessage} composerID={composerID} />,
+        minimalCache
+    );
+
+    return { ...result, composerID };
 };
 
 describe('Addresses', () => {
     const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
     const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
 
+    beforeEach(clearAll);
     // Used to render the Autosizer contact list
     beforeAll(() => {
         Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 50 });
@@ -129,12 +146,11 @@ describe('Addresses', () => {
             Object.defineProperty(HTMLElement.prototype, 'offsetHeight', originalOffsetHeight);
             Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
         }
+        clearAll();
     });
 
-    afterEach(clearAll);
-
     it('should render Addresses', async () => {
-        await render(<Addresses {...props} />);
+        await setup();
 
         screen.getByText(email1Name);
         screen.getByText(email2Name);
@@ -145,7 +161,7 @@ describe('Addresses', () => {
         addToCache('ContactEmails', contactEmails);
         addApiMock('core/v4/keys', () => ({}));
 
-        const { rerender } = await render(<Addresses {...props} />, false);
+        const { rerender, composerID } = await setup({ minimalCache: false });
 
         const toButton = screen.getByTestId('composer:to-button');
 
@@ -185,18 +201,22 @@ describe('Addresses', () => {
 
         // Expect to have all three contacts
         const expectedChange = { data: { ToList: [recipient1, recipient2, recipient3] } };
-        expect(props.onChange).toHaveBeenCalledWith(expectedChange);
+        expect(store.getState().composers.composers[composerID].recipients.ToList).toEqual([
+            recipient1,
+            recipient2,
+            recipient3,
+        ]);
 
         const updatedMessage = mergeMessages(message, expectedChange);
 
-        await rerender(<Addresses {...props} message={updatedMessage} />);
+        await rerender(<Addresses {...DEFAULT_PROPS} message={updatedMessage} composerID={composerID} />);
 
         const updatedAddresses = screen.getAllByTestId('composer-addresses-item');
         expect(updatedAddresses.length).toEqual(3);
     });
 
     it('Should display CC field on click', async () => {
-        await render(<Addresses {...props} />);
+        await setup();
 
         // cc and bcc fields shoud be hidden
         expect(screen.queryByTestId('composer:to-cc')).toBe(null);
@@ -214,7 +234,11 @@ describe('Addresses', () => {
     });
 
     it('Summary has BCC contact so click on CC should displays CC field and BCC field', async () => {
-        await render(<Addresses {...getProps({ bcc: [recipient1] })} />);
+        await setup({
+            messageProp: {
+                data: { BCCList: [recipient1] } as MessageState['data'],
+            },
+        });
 
         // cc and bcc fields shoud be hidden
         expect(screen.queryByTestId('composer:to-cc')).toBe(null);
@@ -230,7 +254,11 @@ describe('Addresses', () => {
     });
 
     it('Summary has CC contact so click on BCC should displays BCC field and CC field', async () => {
-        await render(<Addresses {...getProps({ cc: [recipient1] })} />);
+        await setup({
+            messageProp: {
+                data: { CCList: [recipient1] } as MessageState['data'],
+            },
+        });
 
         // cc and bcc fields shoud be hidden
         expect(screen.queryByTestId('composer:to-cc')).toBe(null);

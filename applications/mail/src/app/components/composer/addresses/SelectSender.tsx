@@ -2,45 +2,37 @@ import { MutableRefObject, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Icon,
-    Option,
-    SelectTwo,
-    SettingsLink,
-    generateUID,
-    useAddresses,
-    useMailSettings,
-    useUser,
-    useUserSettings,
-} from '@proton/components';
-import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { Icon, Option, SelectTwo, SettingsLink, generateUID, useAddresses, useUser } from '@proton/components';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
-import { changeSignature } from '../../../helpers/message/messageSignature';
+import { getFromAddresses } from '../../../helpers/addresses';
+import { selectComposer } from '../../../logic/composers/composerSelectors';
+import { ComposerID } from '../../../logic/composers/composerTypes';
+import { composerActions } from '../../../logic/composers/composersSlice';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { MessageChange } from '../Composer';
+import { useAppDispatch, useAppSelector } from '../../../logic/store';
 
 interface Props {
+    composerID: ComposerID;
     message: MessageState;
     disabled: boolean;
-    onChange: MessageChange;
     onChangeContent: (content: string, refreshContent: boolean) => void;
     addressesBlurRef: MutableRefObject<() => void>;
 }
 
-const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesBlurRef }: Props) => {
-    const [mailSettings] = useMailSettings();
-    const [userSettings] = useUserSettings();
+const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props) => {
     const [addresses = []] = useAddresses();
     const [user] = useUser();
+
+    const dispatch = useAppDispatch();
+    const composer = useAppSelector((state) => selectComposer(state, composerID));
 
     const [uid] = useState(generateUID('select-sender'));
 
     const addressesOptions = getFromAddresses(
         addresses,
-        message.draftFlags?.originalTo || message.draftFlags?.originalFrom || message.data?.Sender.Address
+        message.draftFlags?.originalTo || message.draftFlags?.originalFrom || message.data?.Sender?.Address
     ).map((address) => (
         <Option
             value={address.Email}
@@ -67,25 +59,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     const handleFromChange = (event: SelectChangeEvent<string>) => {
         const email = event.value;
-
-        const currentAddress = getAddressFromEmail(addresses, message.data?.Sender.Address);
-        const newAddress = getAddressFromEmail(addresses, email);
-        const Sender = newAddress ? { Name: newAddress.DisplayName, Address: email } : undefined;
-
-        const fontStyle = defaultFontStyle(mailSettings);
-
-        onChange({ data: { AddressID: newAddress?.ID, Sender } });
-        onChangeContent(
-            changeSignature(
-                message,
-                mailSettings,
-                userSettings,
-                fontStyle,
-                currentAddress?.Signature || '',
-                newAddress?.Signature || ''
-            ),
-            true
-        );
+        dispatch(composerActions.setSender({ ID: composerID, emailAddress: email }));
     };
 
     return (
@@ -94,7 +68,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
                 disabled={disabled}
                 className="composer-light-field select--inline-caret composer-meta-select-sender"
                 id={`sender-${uid}`}
-                value={message.data?.Sender?.Address}
+                value={composer.senderEmailAddress}
                 onChange={handleFromChange}
                 onFocus={addressesBlurRef.current}
                 originalPlacement="bottom-start"
