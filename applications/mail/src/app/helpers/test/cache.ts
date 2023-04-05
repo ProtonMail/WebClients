@@ -28,10 +28,7 @@ export const minimalCache = () => {
     addToCache('Addresses', []);
     // Enable hotkeys to trigger composer save easily
     addToCache('MailSettings', { Shortcuts: 1 });
-
-    //TODO uncomment and delete change once experiment is done
-    // addToCache('UserSettings', { Flags: {} });
-    addToCache('UserSettings', { Flags: {}, Locale: 'fr_CH' });
+    addToCache('UserSettings', { Flags: {} });
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
     addToCache('MessageCounts', []);
