@@ -1,11 +1,11 @@
 import { RefObject, useCallback } from 'react';
 
-import { Dropzone } from '@proton/components/components';
 import { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { classnames } from '../../helpers';
+import { DropzoneContentProps } from '../dropzone/DropzoneContent';
 import { EDITOR_DEFAULT_METADATA } from './constants';
 import { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';
 import DefaultFontModal from './modals/DefaultFontModal';
@@ -46,6 +46,12 @@ interface Props {
     hasDropzone?: boolean;
 }
 
+const DROPZONE_COMPOSER_SETTINGS: DropzoneContentProps = {
+    shape: 'norm',
+    border: true,
+    rounded: true,
+};
+
 const Editor = ({
     className,
     editorClassname,
@@ -69,6 +75,7 @@ const Editor = ({
     modalImage,
     modalDefaultFont,
     hasToolbar = true,
+    hasDropzone = true,
 }: Props) => {
     /**
      * Set to true when editor setContent is called by parent components
@@ -85,43 +92,48 @@ const Editor = ({
         [onAddAttachments, metadata.supportImages]
     );
 
-    const editor = metadata.isPlainText ? (
-        <PlainTextEditor onChange={onChange} placeholder={placeholder} onReady={onReady} onFocus={onFocus} />
-    ) : (
-        <RoosterEditor
-            placeholder={placeholder}
-            onChange={onChange}
-            onReady={onReady}
-            showBlockquoteToggle={showBlockquoteToggle}
-            onBlockquoteToggleClick={onBlockquoteToggleClick}
-            setToolbarConfig={setToolbarConfig}
-            onPasteImage={onPasteImage}
-            showModalLink={modalLink.showCallback}
-            onFocus={onFocus}
-            mailSettings={mailSettings}
-            className={simple ? 'border rounded' : ''}
-            openEmojiPicker={() => openEmojiPickerRef.current?.()}
-        />
-    );
-
     return (
         <>
             <div
-                className={classnames([
+                className={clsx([
                     className,
                     simple && 'simple-editor',
                     'editor w100 h100 rounded flex flex-column-reverse flex-item-fluid',
                 ])}
             >
                 <div
-                    className={classnames([
+                    className={clsx([
                         'h100 flex-item-fluid flex flex-column relative',
                         disabled && 'editor--disabled',
                         isPlainText ? '' : 'composer-content--rich-edition',
                         editorClassname,
                     ])}
                 >
-                    {onAddAttachments ? <Dropzone onDrop={onAddAttachments}>{editor}</Dropzone> : editor}
+                    {metadata.isPlainText ? (
+                        <PlainTextEditor
+                            onChange={onChange}
+                            placeholder={placeholder}
+                            onReady={onReady}
+                            onFocus={onFocus}
+                        />
+                    ) : (
+                        <RoosterEditor
+                            placeholder={placeholder}
+                            onChange={onChange}
+                            onReady={onReady}
+                            showBlockquoteToggle={showBlockquoteToggle}
+                            onBlockquoteToggleClick={onBlockquoteToggleClick}
+                            setToolbarConfig={setToolbarConfig}
+                            onPasteImage={onPasteImage}
+                            showModalLink={modalLink.showCallback}
+                            onFocus={onFocus}
+                            mailSettings={mailSettings}
+                            className={simple ? 'border rounded' : ''}
+                            openEmojiPicker={() => openEmojiPickerRef.current?.()}
+                            dropzone={hasDropzone ? DROPZONE_COMPOSER_SETTINGS : undefined}
+                            onAddAttachments={onAddAttachments}
+                        />
+                    )}
                 </div>
 
                 {hasToolbar && (

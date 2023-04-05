@@ -86,20 +86,23 @@ const ComposerContent = ({
                 />
             </div>
             {showAttachments && (
-                <Dropzone onDrop={onAddAttachments} shape="invisible">
-                    <AttachmentList
-                        attachments={attachments}
-                        pendingUploads={pendingUploads}
-                        message={message as MessageStateWithData}
-                        primaryAction={AttachmentAction.Preview}
-                        secondaryAction={AttachmentAction.Remove}
-                        collapsable
-                        onRemoveAttachment={onRemoveAttachment}
-                        onRemoveUpload={onRemoveUpload}
-                        className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
-                        outsideKey={outsideKey}
-                    />
-                </Dropzone>
+                // Add a wrapping div so that Dropzone does not break the UI
+                <div>
+                    <Dropzone onDrop={onAddAttachments} shape="invisible">
+                        <AttachmentList
+                            attachments={attachments}
+                            pendingUploads={pendingUploads}
+                            message={message as MessageStateWithData}
+                            primaryAction={AttachmentAction.Preview}
+                            secondaryAction={AttachmentAction.Remove}
+                            collapsable
+                            onRemoveAttachment={onRemoveAttachment}
+                            onRemoveUpload={onRemoveUpload}
+                            className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
+                            outsideKey={outsideKey}
+                        />
+                    </Dropzone>
+                </div>
             )}
         </section>
     );

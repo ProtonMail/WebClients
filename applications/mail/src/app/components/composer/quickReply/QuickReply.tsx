@@ -308,6 +308,7 @@ const QuickReply = ({
                             modalDefaultFont={modalDefaultFont}
                             hasToolbar={false}
                             onFocus={handleFocusCallback}
+                            hasDropzone={false}
                         />
                     )}
                 </div>

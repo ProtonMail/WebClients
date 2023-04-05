@@ -166,7 +166,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                 <Dropzone onDrop={onAddFiles} size="small" shape="flashy">
                     <div
                         className={clsx([
-                            'flex w100 h100 flex-align-items-center flex-justify-center border p1',
+                            'flex flex-align-items-center flex-justify-center border p-8 rounded-xl',
                             !!model.failure && 'border-danger',
                         ])}
                     >
