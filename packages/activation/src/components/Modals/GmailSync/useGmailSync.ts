@@ -38,7 +38,8 @@ const useGmailSync = () => {
             });
         } else if (
             (!gmailSyncOnboarding.loading && gmailSyncOnboarding.value === 'A') ||
-            (!experimentCondition && gmailSyncOnboarding.loading && !userSettingsLoading) //We have to display default onboarding to all users that aren't in the experiment
+            (!experimentCondition && gmailSyncOnboarding.loading && !userSettingsLoading) || //We have to display default onboarding to all users that aren't in the experiment
+            (!hasSawWelcome && easySwitch.feature?.Value.GoogleMailSync === false)
         ) {
             setDerivedValues({
                 displayOnboarding: true,
