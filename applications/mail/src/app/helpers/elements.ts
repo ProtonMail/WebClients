@@ -175,6 +175,7 @@ export const isSearch = (searchParams: SearchParameters) =>
     !!searchParams.wildcard;
 
 export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;
+export const hasAttachmentsFilter = (filter: Filter) => filter.Attachments === 1;
 
 /**
  * Get the IDs of the folder where the element is currently located

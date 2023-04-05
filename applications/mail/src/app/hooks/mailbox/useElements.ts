@@ -9,7 +9,7 @@ import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isSearch } from '../../helpers/elements';
+import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import { conversationByID } from '../../logic/conversations/conversationsSelectors';
 import { load as loadAction, removeExpired, reset, updatePage } from '../../logic/elements/elementsActions';
@@ -173,7 +173,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 reset({
                     page,
                     params: { labelID, sort, filter, esEnabled, search, conversationMode },
-                    beforeFirstLoad: !esEnabled && isSearch(search),
+                    beforeFirstLoad: !esEnabled && (isSearch(search) || hasAttachmentsFilter(filter)),
                 })
             );
         }
