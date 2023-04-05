@@ -59,7 +59,7 @@ import VerifyRecoveryEmailContainer from '../public/VerifyRecoveryEmailContainer
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
-import { getProduct, getProductParam } from '../signup/searchParams';
+import { getProductParams } from '../signup/searchParams';
 import AccountPublicApp from './AccountPublicApp';
 
 const getPathFromLocation = (location: H.Location) => {
@@ -68,11 +68,7 @@ const getPathFromLocation = (location: H.Location) => {
 
 export const getSearchParams = (search: string) => {
     const searchParams = new URLSearchParams(search);
-
-    const maybeProductParam = (searchParams.get('service') || searchParams.get('product') || undefined)?.toLowerCase();
-    const product = getProduct(maybeProductParam);
-    const productParam = getProductParam(product, maybeProductParam);
-
+    const { product, productParam } = getProductParams(window.location.pathname, searchParams);
     return { product, productParam };
 };
 
@@ -463,7 +459,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         onAddAccount={handleAddAccount}
                                                     />
                                                 </Route>
-                                                <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER, SSO_PATHS.TRIAL]}>
+                                                <Route
+                                                    path={[
+                                                        SSO_PATHS.SIGNUP,
+                                                        SSO_PATHS.REFER,
+                                                        SSO_PATHS.TRIAL,
+                                                        SSO_PATHS.CALENDAR_SIGNUP,
+                                                        SSO_PATHS.MAIL_SIGNUP,
+                                                        SSO_PATHS.DRIVE_SIGNUP,
+                                                        SSO_PATHS.VPN_SIGNUP,
+                                                    ]}
+                                                >
                                                     <SignupContainer
                                                         productParam={productParam}
                                                         clientType={clientType}
@@ -497,7 +503,16 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 <Route path={SSO_PATHS.FORGOT_USERNAME}>
                                                     <ForgotUsernameContainer />
                                                 </Route>
-                                                <Route path={SSO_PATHS.LOGIN}>
+                                                <Route
+                                                    path={[
+                                                        SSO_PATHS.LOGIN,
+                                                        SSO_PATHS.MAIL_SIGN_IN,
+                                                        SSO_PATHS.CALENDAR_SIGN_IN,
+                                                        SSO_PATHS.DRIVE_SIGN_IN,
+                                                        SSO_PATHS.VPN_SIGN_IN,
+                                                    ]}
+                                                    exact
+                                                >
                                                     <LoginContainer
                                                         toAppName={toAppName}
                                                         toApp={maybePreAppIntent}
