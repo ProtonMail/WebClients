@@ -47,6 +47,7 @@ export interface InputFieldOwnProps {
     rootRef?: Ref<HTMLDivElement>;
     labelContainerClassName?: string;
     assistContainerClassName?: string;
+    'data-testid'?: string;
 }
 
 export type InputFieldProps<E extends ElementType> = PolymorphicPropsWithRef<InputFieldOwnProps, E>;
@@ -71,6 +72,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         warning,
         suffix,
         as,
+        'data-testid': dataTestId,
         ...rest
     }: InputFieldProps<E>,
     ref: ForwardedRef<Element>
@@ -108,13 +110,13 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     const errorElement = error && typeof error !== 'boolean' && (
         <>
             <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
-            <span>{error}</span>
+            <span data-testid={`error-${dataTestId}`}>{error}</span>
         </>
     );
     const warningElement = warning && typeof warning !== 'boolean' && (
         <>
             <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
-            <span>{warning}</span>
+            <span data-testid={`warning-${dataTestId}`}>{warning}</span>
         </>
     );
 
