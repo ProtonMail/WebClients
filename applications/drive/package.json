@@ -28,7 +28,7 @@
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
-        "@types/react": "^17.0.55",
+        "@types/react": "^17.0.56",
         "@types/react-dom": "^17.0.19",
         "client-zip": "2.3.0",
         "cross-env": "^7.0.3",
@@ -40,7 +40,7 @@
         "react-window": "^1.8.8",
         "ttag": "^1.7.24",
         "web-streams-polyfill": "^3.2.1",
-        "webpack": "^5.77.0"
+        "webpack": "^5.78.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
