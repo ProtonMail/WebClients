@@ -124,7 +124,7 @@ describe('useGmailSync', () => {
         });
     });
 
-    it("User didn't saw onboarding, feature disabled", () => {
+    it("User didn't saw onboarding, feature disabled, show default onboarding", () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: false } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
@@ -134,7 +134,7 @@ describe('useGmailSync', () => {
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            displayOnboarding: false,
+            displayOnboarding: true,
             displaySync: false,
         });
     });
