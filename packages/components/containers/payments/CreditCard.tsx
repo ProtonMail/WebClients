@@ -41,6 +41,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 placeholder="Thomas Anderson"
                 error={errors.fullname}
                 disableChange={loading}
+                data-testid="ccname"
             />
             <InputFieldTwo
                 label={c('Label').t`Card number`}
@@ -50,6 +51,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 onChange={(value: string) => onChange('number', value)}
                 error={errors.number}
                 disableChange={loading}
+                data-testid="ccnumber"
             />
             <div className="flex flex-justify-space-between on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mr0-5 on-tiny-mobile-mr0">
@@ -63,6 +65,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         disableChange={loading}
                         hint={patternExpiration}
                         placeholder={patternExpiration}
+                        data-testid="exp"
                         onChange={({ month, year }: { month: string; year: string }) => {
                             onChange('month', month);
                             onChange('year', year);
@@ -88,6 +91,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         placeholder="000"
                         error={errors.cvc}
                         disableChange={loading}
+                        data-testid="cvc"
                     />
                 </div>
             </div>
@@ -112,6 +116,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         options={countries}
                         autoComplete="country"
                         title={c('Label').t`Select your country`}
+                        data-testid="country"
                     />
                 </div>
                 <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
@@ -127,6 +132,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         disableChange={loading}
                         minLength={3}
                         maxLength={9}
+                        data-testid="postalCode"
                     />
                 </div>
             </div>
