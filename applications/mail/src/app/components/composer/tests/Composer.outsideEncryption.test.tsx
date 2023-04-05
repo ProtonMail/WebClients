@@ -17,6 +17,7 @@ import {
     setFeatureFlags,
     tick,
 } from '../../../helpers/test/helper';
+import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
@@ -25,15 +26,16 @@ loudRejection();
 const password = 'password';
 
 describe('Composer outside encryption', () => {
+    beforeEach(() => {
+        clearAll();
+    });
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
     });
-
     afterAll(async () => {
+        clearAll();
         await releaseCryptoProxy();
     });
-
-    afterEach(clearAll);
 
     const setup = async () => {
         setFeatureFlags('EORedesign', true);
@@ -44,7 +46,9 @@ describe('Composer outside encryption', () => {
         addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
 
-        const result = await render(<Composer {...props} messageID={ID} />);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const result = await render(<Composer {...props} composerID={composerID} />);
 
         return result;
     };

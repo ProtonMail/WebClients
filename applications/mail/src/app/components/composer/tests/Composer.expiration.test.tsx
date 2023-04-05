@@ -16,28 +16,35 @@ import {
     getDropdown,
     render,
 } from '../../../helpers/test/helper';
+import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 
 describe('Composer expiration', () => {
+    beforeEach(() => {
+        clearAll();
+    });
+
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
     });
 
     afterAll(async () => {
+        clearAll();
         await releaseCryptoProxy();
     });
 
-    afterEach(clearAll);
-
     const setup = async () => {
+        const state = store.getState();
+        const composerID = Object.keys(state.composers.composers)[0];
+
         const fromKeys = await generateKeys('me', fromAddress);
         addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
 
-        const result = await render(<Composer {...props} messageID={ID} />);
+        const result = await render(<Composer {...props} composerID={composerID} />);
 
         return result;
     };
