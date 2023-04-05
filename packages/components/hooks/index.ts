@@ -2,6 +2,7 @@ export { default as useActiveBreakpoint } from './useActiveBreakpoint';
 export { default as useActiveWindow } from './useActiveWindow';
 export { default as useAddresses, useGetAddresses } from './useAddresses';
 export { useAddressesKeys, useGetAddressesKeys } from './useAddressesKeys';
+export { default as useAddressFlags } from './useAddressFlags';
 export { default as useApi } from './useApi';
 export { default as useApiResult } from './useApiResult';
 export { default as useApiWithoutResult } from './useApiWithoutResult';

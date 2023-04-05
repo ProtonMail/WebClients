@@ -1,4 +1,4 @@
-import { Address, Api, Member } from '../interfaces';
+import { Address, Api, Member, SignedKeyList } from '../interfaces';
 import queryPages from './helpers/queryPages';
 import { PaginationParams } from './interface';
 
@@ -124,5 +124,20 @@ export const editMemberInvitation = (memberID: string, maxSpace: number) => ({
     url: `core/v4/members/invitations/${memberID}`,
     data: {
         MaxSpace: maxSpace,
+    },
+});
+
+export const setAddressFlags = (
+    addressID: string,
+    Encrypt: boolean,
+    Sign: boolean,
+    SignedKeyList: SignedKeyList
+) => ({
+    method: 'put',
+    url: `core/v4/addresses/${addressID}/encryption`,
+    data: {
+        Encrypt: Encrypt ? 1 : 0,
+        Sign: Sign ? 1 : 0,
+        SignedKeyList,
     },
 });
