@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -7,13 +5,10 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader, Tooltip } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useUser } from '@proton/components/hooks';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink, useRevisionsView } from '../../../store';
-import { RevisionsProvider } from '../../../store';
-import RevisionList from '../../revisions/RevisionList';
+import { DecryptedLink } from '../../../store';
+import { RevisionList, RevisionsProvider, useRevisionsProvider } from '../../revisions';
 import RevisionsModalUpgradeBanner from './RevisionsModalUpgradeBanner';
-import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 import './RevisionsModal.scss';
 
@@ -21,14 +16,21 @@ interface Props {
     link: DecryptedLink;
 }
 
-const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
+const RevisionsModalContent = () => {
     const [user] = useUser();
-    const { isLoading, revisions } = useRevisionsView(link.rootShareId, link.linkId);
-    const [currentRevision, ...olderRevisions] = revisions;
-    const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
-    // TODO: Check if different mimeType is available for same revision
-    const havePreviewAvailable = !!link.mimeType && isPreviewAvailable(link.mimeType, link.size);
+    const { isLoading, currentRevision, categorizedRevisions } = useRevisionsProvider();
+    return (
+        <>
+            {!user.hasPaidDrive ? <RevisionsModalUpgradeBanner /> : null}
+            {isLoading && <CircleLoader className="w100 mauto mt-5" size="large" />}
+            {!isLoading && currentRevision ? (
+                <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
+            ) : null}
+        </>
+    );
+};
 
+const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
     return (
         <ModalTwo size="large" {...modalProps}>
             <ModalTwoHeader
@@ -42,13 +44,9 @@ const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
                 ]}
             />
             <ModalTwoContent className="mb-8">
-                {!user.hasPaidDrive ? <RevisionsModalUpgradeBanner /> : null}
-                {isLoading && <CircleLoader className="w100 mauto mt-5" size="large" />}
-                {!isLoading && !!revisions.length ? (
-                    <RevisionsProvider link={link} havePreviewAvailable={havePreviewAvailable}>
-                        <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
-                    </RevisionsProvider>
-                ) : null}
+                <RevisionsProvider link={link}>
+                    <RevisionsModalContent />
+                </RevisionsProvider>
             </ModalTwoContent>
         </ModalTwo>
     );
