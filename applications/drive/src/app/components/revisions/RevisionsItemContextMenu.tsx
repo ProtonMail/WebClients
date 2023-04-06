@@ -1,7 +1,6 @@
 import { ContextSeparator } from '@proton/components/components';
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
-import { useRevisions } from '../../store';
 import { ContextMenuProps } from '../FileBrowser';
 import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
 import {
@@ -12,6 +11,7 @@ import {
     RevisionRestoreButton,
     RevisionSaveAsCopyButton,
 } from './ContextMenuButtons';
+import { useRevisionsProvider } from './RevisionsProvider';
 
 export function RevisionsItemContextMenu({
     anchorRef,
@@ -25,11 +25,11 @@ export function RevisionsItemContextMenu({
     revision: DriveFileRevision;
     isCurrent: boolean;
 }) {
-    const { havePreviewAvailable, openRevisionPreview, downloadRevision } = useRevisions();
+    const { hasPreviewAvailable, openRevisionPreview, downloadRevision } = useRevisionsProvider();
     if (isCurrent) {
         return (
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {havePreviewAvailable ? (
+                {hasPreviewAvailable ? (
                     <RevisionPreviewButton
                         revision={revision}
                         openRevisionPreview={openRevisionPreview}
@@ -43,7 +43,7 @@ export function RevisionsItemContextMenu({
     }
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-            {havePreviewAvailable && (
+            {hasPreviewAvailable && (
                 <>
                     <RevisionPreviewButton
                         revision={revision}

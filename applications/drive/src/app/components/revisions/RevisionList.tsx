@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
-import type { CategorizedRevisions } from '../modals/RevisionsModal/getCategorizedRevisions';
 import RevisionListItem from './RevisionListItem';
+import type { CategorizedRevisions } from './getCategorizedRevisions';
 
 interface Props {
     currentRevision: DriveFileRevision;
