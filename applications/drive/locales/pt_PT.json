@@ -24,7 +24,7 @@
         "Adicionar contacto"
       ],
       "Add email": [
-        "Adicionar e-mail"
+        "Adicionar um correio electrónico"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -194,7 +194,7 @@
         "Editar"
       ],
       "Edit email address": [
-        "Editar o endereço de email"
+        "Editar o endereço de correio electrónico"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -206,7 +206,7 @@
         "Editar detalhes do início de sessão"
       ],
       "Email settings": [
-        "Definições de email"
+        "Definições de correio electrónico"
       ],
       "Empty trash": [
         "Esvaziar lixo"
@@ -266,13 +266,13 @@
         "importar"
       ],
       "Import calendars": [
-        "Importar agendas"
+        "Importar calendários"
       ],
       "Import contacts": [
         "Importar contactos"
       ],
       "Import emails": [
-        "Importar e-mails"
+        "Importar correios electrónicos"
       ],
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
@@ -457,6 +457,9 @@
       "Show preview": [
         "Mostrar pré-visualização"
       ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
+      ],
       "Sign in": [
         "Iniciar sessão"
       ],
@@ -615,7 +618,7 @@
         "Problema na Bridge"
       ],
       "Calendar problem": [
-        "Problema na agenda"
+        "Problema no calendário"
       ],
       "Connection problem": [
         "Problema com a ligação"
@@ -690,14 +693,59 @@
       "carrot": [
         "cenoura"
       ],
+      "cerise": [
+        "cereja"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "samambaia"
+      ],
+      "forest": [
+        "floresta"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "azeitona"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "pepininhos"
+      ],
+      "pine": [
+        "pinho"
+      ],
       "pink": [
         "rosa"
+      ],
+      "plum": [
+        "ameixa"
       ],
       "purple": [
         "roxo"
       ],
+      "reef": [
+        "recife"
+      ],
       "sahara": [
         "saará"
+      ],
+      "slateblue": [
+        "azul ardósia"
+      ],
+      "soil": [
+        "terra"
       ],
       "strawberry": [
         "morango"
@@ -719,7 +767,7 @@
         "Data de nascimento"
       ],
       "Email": [
-        "Email"
+        "Correio electrónico"
       ],
       "Gender": [
         "Sexo"
@@ -754,6 +802,9 @@
       "Role": [
         "Papel"
       ],
+      "Time zone": [
+        "Fuso horário"
+      ],
       "Title": [
         "Título"
       ],
@@ -773,6 +824,9 @@
       ],
       "Other": [
         "Outro"
+      ],
+      "Pager": [
+        "Pager"
       ],
       "Personal": [
         "Pessoal"
@@ -1594,6 +1648,16 @@
         "Encontrámos os seguintes campos no ficheiro CSV que enviou. Por favor, marque aqueles que deseja importar."
       ]
     },
+    "Early Access Disabled": {
+      "Off": [
+        "Desligado"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        "Ligado"
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descrição: ${ eventDescription }"
@@ -1683,7 +1747,7 @@
         "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email is not valid": [
-        "Email inválido"
+        "Correio electrónico no válido"
       ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
@@ -1719,8 +1783,8 @@
         "Número inválido"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Um dos contactos não tem endereço de email: ${ noEmailsContactNamesList }",
-        "Alguns contactos não têm endereço de email: ${ noEmailsContactNamesList } "
+        "Um dos contactos não tem um endereço de correio electrónico: ${ noEmailsContactNamesList }",
+        "Alguns contactos não têm endereços de correio electrónico: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
@@ -1766,7 +1830,7 @@
         "Erro desconhecido"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Não pode enviar um email para mais de 100 destinatários"
+        "Não pode enviar um correio electrónico para mais de 100 destinatários."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -1799,7 +1863,7 @@
         "O ficheiro ${ formattedFilename } está vazio."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "O ficheiro ${ formattedFilename } não é uma agenda."
+        "O ficheiro ${ formattedFilename } não é um calendário."
       ]
     },
     "Error importing contact": {
@@ -1832,7 +1896,7 @@
         "Formato errado. O componente não pode ser lido."
       ],
       "Calendar": [
-        "Agenda"
+        "Calendário"
       ],
       "Component with wrong format": [
         "Componente com formato errado"
@@ -1896,6 +1960,9 @@
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
+      ],
+      "Time zone": [
+        "Fuso horário"
       ],
       "To-do entry": [
         "Entrada de tarefas"
@@ -1966,16 +2033,16 @@
         "Resposta não suportada"
       ],
       "We could not cancel the event in your calendar": [
-        "Impossível cancelar o evento na sua agenda"
+        "Impossível cancelar o evento no seu calendário"
       ],
       "We could not retrieve the event from your calendar": [
-        "Impossível obter o evento da sua agenda"
+        "Impossível obter o evento do seu calendário"
       ],
       "We could not update the event in your calendar": [
-        "Impossível actualizar o evento na sua agenda"
+        "Impossível actualizar o evento no seu calendário"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "A sua resposta foi enviada, mas o evento não pôde ser adicionado à sua agenda"
+        "A sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário."
       ]
     },
     "Event title": {
@@ -2059,14 +2126,20 @@
       ]
     },
     "Human verification method": {
+      "Email": [
+        "Correio electronico"
+      ],
+      "Manual": [
+        "Manual"
+      ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
       ]
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } evento encriptado e adicionado à agenda",
-        "${ totalImported }/${ totalToImport } eventos encriptados e adicionados à agenda"
+        "${ totalImported }/${ totalToImport } evento encriptado e adicionado ao calendário",
+        "${ totalImported }/${ totalToImport } eventos encriptados e adicionados ao calendário"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ocorreu um erro ao encriptar e adicionar o seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
@@ -2076,7 +2149,7 @@
         "A encriptar e adicionar contactos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Encriptar e adicionar eventos à agenda: ${ totalImported }/${ totalToImport }"
+        "Encriptar e adicionar eventos ao calendário: ${ totalImported }/${ totalToImport }"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Por favor, não feche o separador antes de o processo de importação terminar."
@@ -2138,7 +2211,7 @@
         "Use a palavra-passe da aplicação em vez da sua palavra-passe normal se:"
       ],
       "Your email account requires one to export your data.": [
-        "A sua conta de e-mail requer uma para exportar os seus dados."
+        "A sua conta de correio electrónico requer uma para exportar os seus dados."
       ],
       "Your password is correct.": [
         "A sua palavra-passe está correta."
@@ -2188,32 +2261,32 @@
         "Nenhum evento pode ser importado. Expande para detalhes."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "Parte do conteúdo da sua agenda não é suportado e não será importado."
+        "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
     "Info": {
       "${ addressCount } email address": [
-        "${ addressCount } endereço de email",
-        "${ addressCount } endereços de email"
+        "${ addressCount } endereço de correio electrónico",
+        "${ addressCount } endereços de correio electrónico"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nova agenda",
-        "${ calendarsToBeCreatedCount } novas agendas"
+        "${ calendarsToBeCreatedCount } novo calendário",
+        "${ calendarsToBeCreatedCount } novos calendários"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeCreatedCount } agenda unida",
-        "${ calendarsToBeCreatedCount } agendas unidas"
+        "${ calendarsToBeMergedCount } calendário unido",
+        "${ calendarsToBeMergedCount } calendários unidos"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } cancelado",
         "${ canceledCount } cancelados"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contacto contém vários endereços de e-mail.",
-        "${ contactCount } contactos contêm vários endereços de e-mail."
+        "${ contactCount } contacto contém vários endereços de correio electrónico.",
+        "${ contactCount } contactos contêm vários endereços de correio electrónico."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
@@ -2259,8 +2332,8 @@
         "${ providerFoldersNumLocalized } etiquetas encontradas no Gmail"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } agenda",
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } agendas"
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -2357,6 +2430,9 @@
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
+      "Create in": [
+        "Criar em"
+      ],
       "Create links and share your files with others.": [
         "Crie ligações e partilhe ficheiros com outros."
       ],
@@ -2382,7 +2458,7 @@
         "Introduza o código da sua aplicação de autenticação."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Insira as credenciais da conta de email da qual deseja importar."
+        "Insira as credenciais da conta de correio electrónico da qual deseja importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
@@ -2424,6 +2500,9 @@
       "Folders you sync from your computer will appear here.": [
         "As pastas do seu computador que você sincronizar aparecerão aqui."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Encaminhe o correio recebido de outra conta para a sua caixa de entrada segura de ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -2446,7 +2525,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
+        "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Import from": [
         "Importar de"
@@ -2456,6 +2535,9 @@
       ],
       "Import mailbox": [
         "Importar caixa de correio"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importe os seus correios electrónicos, calendários e contactos de outro serviço para ${ BRAND_NAME }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
@@ -2523,6 +2605,9 @@
       "Network issue": [
         "Problema de rede"
       ],
+      "New": [
+        "Novo"
+      ],
       "No": [
         "Não"
       ],
@@ -2530,7 +2615,7 @@
         "Ainda não adicionou contactos"
       ],
       "No email address": [
-        "Sem endereço de email"
+        "Sem endereço de correio electrónico"
       ],
       "No files or folders in trash": [
         "Não há ficheiros/pastas no lixo"
@@ -2594,7 +2679,10 @@
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccione o formato de email predefinido a utilizar para este endereço de email."
+        "Seleccione o formato de correio electrónico predefinido a utilizar para este endereço de correio electrónico."
+      ],
+      "Select what you want to import.": [
+        "Selecione o que deseja importar."
       ],
       "Session timed out": [
         "A sessão expirou."
@@ -2701,6 +2789,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
+      "You can import one data type at a time.": [
+        "Pode importar um tipo de dado por vez."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode activar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
@@ -2711,19 +2802,19 @@
         "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
+        "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos correios electrónicos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Perderá todas as alterações por gravar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu email só será usado para esta verificação única."
+        "O seu correio electrónico só será usado para esta verificação única."
       ],
       "Your files will be encrypted and then saved.": [
         "Os seus ficheiros serão encriptados e gravados."
@@ -2768,7 +2859,7 @@
         "(expirou)"
       ],
       "Add email address": [
-        "Adicionar endereço de email"
+        "Adicionar um endereço de correio electrónico"
       ],
       "Add image URL": [
         "Adicionar URL da imagem"
@@ -2810,7 +2901,10 @@
         "Versão do navegador"
       ],
       "Calendar": [
-        "Agenda"
+        "Calendário"
+      ],
+      "Calendars": [
+        "Calendários"
       ],
       "Cancel download": [
         "Cancelar transferência"
@@ -2847,22 +2941,25 @@
         "Eliminado"
       ],
       "Email": [
-        "Email"
+        "Correio electrónico"
       ],
       "Email address": [
-        "Endereço de email"
+        "Endereço de correio electrónico"
       ],
       "Email format": [
-        "Formato do email"
+        "Formato do correio electrónico"
       ],
       "Email or username": [
         "Email ou utilizador"
+      ],
+      "Emails": [
+        "Correios electronicos"
       ],
       "Enable Beta Access": [
         "Activar acesso Beta"
       ],
       "Encrypt emails": [
-        "Encriptar emails"
+        "Encriptar os correios electrónicos"
       ],
       "Expired": [
         "Expirado"
@@ -2913,7 +3010,7 @@
         "Importar contactos"
       ],
       "Import to email address": [
-        "Importar para endereço de email"
+        "Importar para o endereço de correio electrónico"
       ],
       "Import to:": [
         "Importar para:"
@@ -2925,7 +3022,7 @@
         "Localização"
       ],
       "Mail Server (IMAP)": [
-        "Servidor de email (IMAP)"
+        "Servidor de correio electrónico (IMAP)"
       ],
       "Mailbox password": [
         "Palavra-passe da caixa de correio"
@@ -2951,6 +3048,9 @@
       "Name": [
         "Nome"
       ],
+      "Navigation": [
+        "Navegação"
+      ],
       "Never": [
         "Nunca"
       ],
@@ -2971,6 +3071,9 @@
       ],
       "Password": [
         "Palavra-passe"
+      ],
+      "PGP scheme": [
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número de telefone"
@@ -3006,7 +3109,7 @@
         "Definir data de validade"
       ],
       "Sign emails": [
-        "Assinar emails"
+        "Assinar os correios electrónicos"
       ],
       "Size": [
         "Tamanho"
@@ -3125,7 +3228,7 @@
         "A ligar ao seu fornecedor de correio electrónico"
       ],
       "Creating new calendars": [
-        "A criar as novas agendas"
+        "Criação de calendários"
       ]
     },
     "Message display when a new app version is available": {
@@ -3143,10 +3246,10 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        "Como importar agendas de outro serviço"
+        "Como importar calendários de outro serviço"
       ],
       "How to import calendars from Yahoo": [
-        "Como importar agendas do Yahoo"
+        "Como importar calendários do Yahoo"
       ],
       "How to import contacts from another service": [
         "Como importar contatos de outro serviço"
@@ -3155,10 +3258,10 @@
         "Como importar contatos do Yahoo"
       ],
       "How to import emails from another service": [
-        "Como importar e-mails de outro serviço"
+        "Como importar correios electrónicos de outro serviço"
       ],
       "How to import emails from Yahoo": [
-        "Como importar e-mails do Yahoo"
+        "Como importar correios electrónicos do Yahoo"
       ]
     },
     "New Label form": {
@@ -3175,6 +3278,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "Trocar ou adicionar conta"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Comentários"
       ]
     },
     "Notification": {
@@ -3280,10 +3388,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Criar nova agenda"
+        "Criar um calendários"
       ],
       "Merge with calendar": [
-        "Unir com agenda"
+        "Unir com o calendário"
       ]
     },
     "Participant name": {
@@ -3305,6 +3413,9 @@
       "A way to contact you": [
         "Uma forma de o contactar"
       ],
+      "E.g., ": [
+        "Ex., "
+      ],
       "Enter a new folder name": [
         "Insira um nome para a pasta"
       ],
@@ -3321,7 +3432,7 @@
         "Nome"
       ],
       "Name or email address": [
-        "Nome ou endereço de email"
+        "Nome ou endereço de correio electrónico"
       ],
       "New name": [
         "Novo nome"
@@ -3336,13 +3447,13 @@
         "Procurar grupo pelo nome"
       ],
       "Search for name or email": [
-        "Procurar por nome ou email"
+        "Procurar por nome ou correio electrónico"
       ],
       "Select": [
         "Selecionar"
       ],
       "Start typing an email address": [
-        "Comece a escrever um endereço de email"
+        "Comece a escrever um endereço de correio electrónico"
       ]
     },
     "Placeholder for contact group name": {
@@ -3377,6 +3488,9 @@
       "Address": [
         "Endereço"
       ],
+      "Email": [
+        "Correio electronico"
+      ],
       "Fax": [
         "Fax"
       ],
@@ -3391,6 +3505,9 @@
       ],
       "Other": [
         "Outro"
+      ],
+      "Pager": [
+        "Pager"
       ],
       "Phone": [
         "Telefone"
@@ -3649,10 +3766,10 @@
         "Editar imagem"
       ],
       "Email addresses": [
-        "Endereços de email"
+        "Endereços de correio electrónico"
       ],
       "Email settings": [
-        "Definições de email"
+        "Definições de correio electrónico"
       ],
       "Empty trash": [
         "Esvaziar lixo"
@@ -3859,6 +3976,9 @@
       "Warning: suspected fake website": [
         "Aviso: suspeita de sítio web falso"
       ],
+      "What would you like to import?": [
+        "O que gostaria de importar?"
+      ],
       "What's new": [
         "O que há de novo"
       ],
@@ -3888,7 +4008,7 @@
         "Personalize a importação para reduzir o número de etiquetas"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Assinar digitalmente emails ajuda a confirmar que as mensagens são enviadas por si"
+        "Assinar digitalmente correios electrónicos ajuda a confirmar que as mensagens são enviadas por si"
       ],
       "Edit folder names": [
         "Editar nomes de pastas"
@@ -3897,7 +4017,7 @@
         "Editar nomes de etiqueta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "A encriptação do email força a assinatura para ajudar a autenticar as suas mensagens enviadas"
+        "A encriptação do correio electrónico força a assinatura para ajudar a autenticar as suas mensagens enviadas"
       ],
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
@@ -3915,7 +4035,7 @@
         "A importação começará com as mensagens mais recentes."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Envie uma chave pública para permitir o envio de emails encriptados ponta-a-ponta para este email"
+        "Envie uma chave pública para permitir o envio de correios electrónicos encriptados ponta-a-ponta para este correio electrónico."
       ],
       "You do not have any contacts to export": [
         "Não tem contactos para exportar"

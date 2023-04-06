@@ -27,6 +27,12 @@
       "Delete forward": [
         "Slet videresendelse"
       ],
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Videresendelse vil starte snart. Nye e-mails vil snart vises i din indbakke."
+      ],
+      "Mail forward stopped": [
+        "Videresendelse stoppet"
+      ],
       "Reconnect": [
         "Tilslut igen"
       ]
@@ -760,6 +766,9 @@
       ],
       "Size": [
         "Størrelse"
+      ],
+      "Skip": [
+        "Spring over"
       ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
@@ -8003,6 +8012,26 @@
         "Brugeradministration"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gør privatliv din standard for sikkerhedskopiering, lagring, deling og hentning af filer."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Opgrader til virksomhedspakken med adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -8072,26 +8101,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gør privatliv din standard for sikkerhedskopiering, lagring, deling og hentning af filer."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Opgrader til virksomhedspakken med adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10557,9 +10566,6 @@
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
-      ],
-      "This feature is unavailable for the moment": [
-        "Denne funktion er ikke tilgængelig i øjeblikket"
       ],
       "This key cannot be used for encryption": [
         "Nøglen kanm ikke benyttes til kryptering"
