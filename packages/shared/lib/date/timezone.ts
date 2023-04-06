@@ -153,6 +153,14 @@ type GetTimeZoneOptions = (
     key: string;
 }[];
 
+const getTimeZoneDisplayName = (ianaName: string) => {
+    if (ianaName === 'Europe/Kiev') {
+        // Update Kyiv name before fully transitioning to 2022g
+        return 'Europe/Kyiv';
+    }
+    return ianaName;
+};
+
 /**
  * @return {Array<Object>}      [{ text: 'Africa/Nairobi: UTC +03:00', value: 'Africa/Nairobi'}, ...]
  */
@@ -176,11 +184,13 @@ export const getTimeZoneOptions: GetTimeZoneOptions = (
             }
             return diff;
         })
-        .map(({ name, offset }) => {
+        .map(({ name: ianaName, offset }) => {
+            const name = getTimeZoneDisplayName(ianaName);
+
             return {
                 text: formatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
-                value: name,
-                key: name,
+                value: ianaName,
+                key: ianaName,
             };
         });
 };
