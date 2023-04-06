@@ -4,6 +4,14 @@
     "language": "hu_HU"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Teljes megtekintés (az esemény összes adatának megtekintése)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Korlátozott megtekintés (csak a szabad/elfoglalt állapot)"
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Az átirányítás hamarosan indul. Az új levelek a bejövő üzeneteinél fognak megjelenni."
@@ -121,6 +129,9 @@
       "Continue import": [
         "Importálás folytatása"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Folytatás itt: ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
       ],
@@ -147,6 +158,9 @@
       ],
       "Customize import": [
         "Importálás beállításai"
+      ],
+      "Decline invite": [
+        "Meghívás elutasítása"
       ],
       "Delete": [
         "Törlés"
@@ -231,6 +245,9 @@
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
       ],
+      "Hide affected calendars": [
+        "Az érintett naptárak elrejtése"
+      ],
       "Hide folders": [
         "Mappák elrejtése"
       ],
@@ -264,6 +281,12 @@
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
       ],
+      "Join calendar": [
+        "Csatlakozás a naptárhoz"
+      ],
+      "Keep current time zone": [
+        "Jelenlegi időzóna megtartása"
+      ],
       "Load image": [
         "Kép betöltése"
       ],
@@ -274,7 +297,7 @@
         "Résztvevő megjelölése kötelezőként"
       ],
       "Manage addresses": [
-        "Tagok kezelése"
+        "Címek kezelése"
       ],
       "Manage folders": [
         "Mappák kezelése"
@@ -336,6 +359,9 @@
       "Open navigation": [
         "Navigáció megnyitása"
       ],
+      "Open settings": [
+        "Beállítások megnyitása"
+      ],
       "Preview contact": [
         "Névjegy előnézet"
       ],
@@ -364,7 +390,7 @@
         "Adatok helyreállítása"
       ],
       "Refer a friend": [
-        "Ajánljon egy barátot"
+        "Ajánlja egy barátjának"
       ],
       "refresh the page": [
         "frissítse az oldalt"
@@ -408,6 +434,9 @@
       "Select all": [
         "Összes kijelölése"
       ],
+      "Select time zone": [
+        "Időzóna kiválasztása"
+      ],
       "Send": [
         "Küldés"
       ],
@@ -422,6 +451,9 @@
       ],
       "Show advanced PGP settings": [
         "Haladó PGP beállítások megjelenítése"
+      ],
+      "Show affected calendars": [
+        "Az érintett naptárak megjelenítése"
       ],
       "Show folders": [
         "Mappák megjelenítése"
@@ -539,6 +571,14 @@
       ],
       "Yes, I'll attend": [
         "Igen, ott leszek"
+      ]
+    },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "A hivatkozás birtokában bárki megtekintheti az ön naptárát"
+      ],
+      "They can view or edit your calendar": [
+        "Megtekinthetik vagy szerkeszthetik az ön naptárát"
       ]
     },
     "Action title": {
@@ -780,19 +820,59 @@
         "Feltételesen elfogadta a meghívást"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Csak ön láthatja a címkét"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "A jogosultságokat bármikor megváltoztathatja vagy visszavonhatja."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Engedélyek"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Már rendelkezik hozzáféréssel ehhez a naptárhoz"
+      ]
+    },
     "Calendar share limit modal": {
+      "Manage links": [
+        "Hivatkozások kezelése"
+      ],
       "Manage members": [
         "Tagok kezelése"
+      ],
+      "Unable to create more calendar links": [
+        "Nem hozható létre további naptárhivatkozás"
+      ],
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Ez a naptár nem osztható meg további ${ BRAND_NAME } felhasználókkal"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Elérte a naptárhoz maximálisan hozzáadható ${ MAX_CALENDAR_MEMBERS } tagot.\nAhhoz, hogy további ${ BRAND_NAME } fiókokkal megoszthassa, törölnie kell néhány tagot.",
+        "Elérte a naptárhoz maximálisan hozzáadható ${ MAX_CALENDAR_MEMBERS } tagot.\nAhhoz, hogy további ${ BRAND_NAME } fiókokkal megoszthassa, törölnie kell néhány tagot."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Elérte a naptárhoz maximálisan létrehozható ${ MAX_LINKS_PER_CALENDAR } hivatkozást.\nÚjabb hivatkozás létrehozása előtt, törölnie kell egy meglévőt.",
+        "Elérte a naptárhoz maximálisan létrehozható ${ MAX_LINKS_PER_CALENDAR } hivatkozást.\nÚjabb hivatkozás létrehozása előtt, törölnie kell egy meglévőt."
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Szerkesztés (események megtekintése, létrehozása és szerkesztése)"
+      ],
       "View (see all event details)": [
         "Megtekintés (az összes eseményrészlet megtekintése)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Nem sikerült a partner adatainak betöltése: ${ address }"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -860,6 +940,17 @@
       ],
       "Week": [
         "Hét"
+      ]
+    },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Időintervallum átállítása:"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } további",
+        "${ more } további"
       ]
     },
     "Collapsible tooltip": {
@@ -1914,9 +2005,19 @@
         "Ez az esemény egy kikapcsolt naptárhoz tartozik."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Ne kérdezze újra"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Naptár hozzáadása"
+      ]
+    },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Esemény másolása"
       ]
     },
     "Duration": {
@@ -2036,6 +2137,9 @@
       ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
+      ],
+      "Already a member of this calendar": [
+        "Már tagja ennek a naptárnak"
       ],
       "Answer failed to be sent": [
         "A válasz elküldése nem sikerült"
@@ -2178,6 +2282,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "Nem sikerült a küldéshez érvényes WKD kulcs letöltése"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nem egy ${ BRAND_NAME } fiók"
+      ],
       "Not a valid number": [
         "Érvénytelen szám"
       ],
@@ -2314,6 +2421,9 @@
       "Unknown error": [
         "Ismeretlen hiba"
       ],
+      "Validation error": [
+        "Érvényesítési hiba"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nem küldhet üzenetet több mint 100 címzettnek"
       ],
@@ -2328,6 +2438,11 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "A meghívott cím nem létezik"
       ]
     },
     "Error importing calendar": {
@@ -2535,6 +2650,12 @@
         "törölve"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } résztvevő",
+        "${ numberOfAttendees } résztvevő"
+      ]
+    },
     "Event info. Organizer name": {
       "You": [
         "Ön"
@@ -2595,6 +2716,9 @@
       ],
       "no": [
         "nem"
+      ],
+      "pending": [
+        "várakozik"
       ],
       "yes": [
         "igen"
@@ -3560,6 +3684,9 @@
       "Yearly": [
         "Évente"
       ],
+      "You already joined this calendar": [
+        "Már csatlakozott ehhez a naptárhoz"
+      ],
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
@@ -3580,6 +3707,9 @@
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Újraaktiválta a titkosítási kulcsait, így a következő naptárakban lévő események ismét visszafejthetőek."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Korábban elutasította ezt a meghívást. Kérje meg a szervezőt, hogy hívja meg újra"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
@@ -3656,9 +3786,59 @@
         "Kattintson a részletekért"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Csak megtekintés"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Hívjon meg további ${ BRAND_NAME } felhasználókat a naptárában lévő események megtekintése vagy szerkesztésére."
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Néhány naptára nem fogja megjeleníteni a korábban létrehozott események részleteit."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "A naptárai nem fogják megjeleníteni a korábban létrehozott események részleteit."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Ezt az okozza, hogy a jelszavát a helyreállítási módszerek használata nélkül állította vissza."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "A titkosított adatokat helyreállíthatja a helyreállító fájljával, helyreállító jelmondatával vagy a régi jelszavával."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "A naptárak megosztása kikapcsolásra került, a jelszó visszaállítást követően."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "A beállításoknál ismét megoszthatja a naptárait."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként",
+        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Megosztott naptárakban nem engedélyezett a meghívók létrehozása"
+      ]
+    },
     "Input label": {
       "Access": [
         "Elérés"
+      ],
+      "Label (optional)": [
+        "Címke (opcionális)"
       ]
     },
     "Input placeholder": {
@@ -4091,6 +4271,11 @@
         "${ CALENDAR_APP_NAME } megnyitása"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Mit jelent a helyreállítási módszer?"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Majdnem kész"
@@ -4168,7 +4353,23 @@
         "Csomagváltás"
       ]
     },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } megosztotta a(z) ${ boldCalendarName } naptárát önnel."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Csatlakozás a naptárhoz"
+      ],
+      "Unable to join more calendars": [
+        "Nem lehetséges a további naptárakhoz való csatlakozás"
+      ]
+    },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Nem adhat hozzá több naptárat"
+      ],
       "How to import calendars from another service": [
         "Naptárak importálása más szolgáltatótól"
       ],
@@ -4366,6 +4567,20 @@
         "Névjegy csoport frissítve"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Tag hozzáadva",
+        "Tagok hozzáadva"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Naptár meghívás elutasítva"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Csatlakozott: ${ calendarName } (${ senderEmail })"
+      ]
+    },
     "Notification suffix": {
       "by email": [
         "emailben"
@@ -4381,7 +4596,7 @@
         "e-mail"
       ],
       "notification": [
-        "értesítés"
+        "emlékeztető"
       ]
     },
     "Notification when": {
@@ -4496,6 +4711,9 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Üdvözli a ${ appName }"
+      ],
+      "Where you can take control of your time and your data.": [
+        "Ahol saját kezébe veheti az időbeosztását és az adatait."
       ]
     },
     "Onboarding Action": {
@@ -4756,6 +4974,11 @@
         "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Esemény újratöltése"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Feltöltés"
@@ -4771,6 +4994,22 @@
         "Beállítások frissítése sikertelen"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Nem ${ BRAND_NAME } felhasználók meghívásához, ossza meg a naptárat egy hivatkozáson keresztül."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot",
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Adja meg a ${ BRAND_NAME } fiókokat, amelyekkel meg szeretné osztani a naptárat: ${ calendarName }. Meghívót fognak kapni."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "Írjon be egy e-mail címet vagy egy csoportnevet"
@@ -4779,6 +5018,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Megosztás ${ BRAND_NAME } felhasználókkal"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Létrehozta: ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -4792,6 +5036,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Naptár kezelése"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Bekapcsolta a cím hitelesítést a ${ boldSenderEmail } címhez. Nem sikerült ellenőrizni a meghívó hitelességét. Ez megtörténhet akkor is, ha a feladó megváltoztatta a titkosítási kulcsait. Nézze át a névjegy PGP beállításait, vagy kérjen egy új meghívót (${ boldSenderEmail })."
       ]
     },
     "Signing preference for emails": {
@@ -4842,11 +5094,6 @@
         "Ez a hivatkozás valószínűleg hibás"
       ]
     },
-    "Subscribed calendar feature unavailable error": {
-      "Subscribing to a calendar is unavailable at the moment": [
-        "A naptárra való feliratkozás jelenleg nem érhető el"
-      ]
-    },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
         "Az URL túl hosszú"
@@ -4886,6 +5133,9 @@
       ],
       "Calendar created": [
         "Naptár létrehozva"
+      ],
+      "Calendar information updated": [
+        "Naptáradatok frissítve"
       ],
       "Calendar updated": [
         "Naptár frissítve"
@@ -5085,6 +5335,11 @@
         "${ minutes } perc"
       ]
     },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Időzónák keresése"
+      ]
+    },
     "Title": {
       "${ emailsCount } member": [
         "${ emailsCount } tag",
@@ -5166,6 +5421,9 @@
       "Create new group": [
         "Új csoport létrehozása"
       ],
+      "Create public link": [
+        "Nyilvános hivatkozás létrehozása"
+      ],
       "Currency": [
         "Pénznem"
       ],
@@ -5218,6 +5476,9 @@
       ],
       "Email settings": [
         "E-mail beállítások"
+      ],
+      "Encrypted event": [
+        "Titkosított esemény"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -5322,6 +5583,9 @@
       "Request new code": [
         "Új kód kérése"
       ],
+      "Reshare your calendars": [
+        "Naptárak ismételt megosztása"
+      ],
       "Save changes": [
         "Változtatások mentése"
       ],
@@ -5424,6 +5688,12 @@
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
       ],
+      "We've locked some calendars to protect your data": [
+        "Néhány naptárat - az adatai védelme érdekében - zároltunk"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Naptárait - az adatai védelme érdekében - zároltuk"
+      ],
       "What would you like to import?": [
         "Mit szeretne importálni?"
       ],
@@ -5443,6 +5713,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Válasszon egy számot"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "A tervezés egyszerűbbé vált!"
       ]
     },
     "Title; create calendar modal": {
@@ -5516,6 +5791,14 @@
         "Önnek nincs exportálható névjegye"
       ]
     },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Megosztva végpontok közti titkosítással"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Megosztva végpontok közti titkosítással, ellenőrzött partnerrel"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
@@ -5532,6 +5815,11 @@
       ],
       "Replay video": [
         "Videó újrajátszása"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Megnyitás új lapon"
       ]
     },
     "Warning": {
@@ -5608,6 +5896,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "A naptár eléréshez, engedélyezze ezt az e-mail címét, vagy kérje meg a feladót (${ boldCalendarOwnerEmail }), hogy egy aktív címére küldjön meghívót."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Nem csatlakozhat ehhez a naptárhoz, mert a meghívott címe (${ boldInvitedAddress }) ki van kapcsolva."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -21,7 +21,7 @@
         "Continuar"
       ],
       "Edit email address": [
-        "Editar o endereço de email"
+        "Editar o endereço de correio electrónico"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
@@ -843,7 +843,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "Email inválido"
+        "Correio electrónico no válido"
       ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
@@ -882,6 +882,12 @@
       ]
     },
     "Human verification method": {
+      "Email": [
+        "Correio electronico"
+      ],
+      "Manual": [
+        "Manual"
+      ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
       ]
@@ -912,7 +918,7 @@
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
+        "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Internet connection lost": [
         "Ligação à Internet perdida"
@@ -939,10 +945,10 @@
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu email só será usado para esta verificação única."
+        "O seu correio electrónico só será usado para esta verificação única."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
@@ -953,7 +959,7 @@
         "Aplicação de autenticação"
       ],
       "Email address": [
-        "Endereço de email"
+        "Endereço de correio electrónico"
       ],
       "Hide password": [
         "Ocultar a palavra-passe"

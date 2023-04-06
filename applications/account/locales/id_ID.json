@@ -144,7 +144,7 @@
         "Batal"
       ],
       "Change mailbox password": [
-        "Ganti kata sandi kotak pesan"
+        "Ubah kata sandi kotak surat"
       ],
       "Change organization keys": [
         "Ubah kunci organisasi"
@@ -201,7 +201,7 @@
         "Lanjut ke ${ name }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
-        "Lenjut dengan ${ nameToDisplay } ${ maybeEmailInBrackets }"
+        "Lanjut dengan ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
@@ -775,6 +775,9 @@
       ],
       "Size": [
         "Ukuran"
+      ],
+      "Skip": [
+        "Lewati"
       ],
       "Skip verification": [
         "Lewati verifikasi"
@@ -2917,7 +2920,7 @@
         "Kredensial masuk salah. Silakan coba lagi."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Kata sandi kotak pesan salah. Silakan coba lagi."
+        "Kata sandi kotak surat salah. Silakan coba lagi."
       ],
       "Incorrect password": [
         "Kata sandi salah"
@@ -3679,7 +3682,7 @@
         "Tindakan ini akan menghapus seluruh kunci keamanan yang terhubung dengan akun Anda."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Untuk mengaktifkan 2FA via kunci keamanan, Anda perlu untuk mengaktifkan 2FA via aplikasi otentikator"
+        "Untuk mengaktifkan 2FA via kunci keamanan, Anda perlu untuk mengaktifkan 2FA via aplikasi autentikator"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
@@ -4371,7 +4374,7 @@
         "${ firstRemainingCalendarName } akan diatur sebagai kalendar default."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak pesan Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
+        "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak surat Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, mohon tambahkan data CNAME berikut ke pengaturan DNS Anda pada domain ini. Tindakan ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
@@ -4476,7 +4479,7 @@
         "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Pengguna di sini didefiniskan sebagai akun yang terkait dengan nama pengguna, kotak surat, serta oknum tunggal"
+        "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
@@ -4878,7 +4881,7 @@
         "Masukkan kata sandi baru untuk pengguna ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
+        "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Masukkan kode yang terkirim ke nomor ponsel ${ phone } milik Anda."
@@ -5102,6 +5105,9 @@
       "it’s imperative": [
         "sangat penting"
       ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Saya telah menggunakan @ProtonMail dan saya pikir Anda juga akan menyukainya. Layanan ini merupakan layanan email aman yang melindungi privasi Anda. Daftar sekarang juga melalui tautan saya dan nikmati berbagai fitur premium selama 1 bulan secara gratis: ${ referrerLink }"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
@@ -5307,10 +5313,10 @@
         "Silakan tambahkan kata sandi pengguna pada baris berikut"
       ],
       "Please authenticate your card in the verification tab.": [
-        "Silakan otentikasi kartu Anda pada tab verifikasi."
+        "Silakan autentikasi kartu Anda pada tab verifikasi."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Silakan otentikasi pembayaran Anda pada tab verifikasi."
+        "Silakan autentikasi pembayaran Anda pada tab verifikasi."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Silakan periksa kembali berkas Anda atau hubungi layanan dukungan untuk informasi lebih lanjut."
@@ -5793,7 +5799,7 @@
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi otentikator"
+        "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi autentikator"
       ],
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
@@ -5817,10 +5823,10 @@
         "Kami tidak dapat memproses pembayaran Anda."
       ],
       "We need to authenticate your payment method with your bank.": [
-        "Kami perlu untuk mengotentikasi metode pembayaran Anda dengan bank Anda."
+        "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
       ],
       "We need to authenticate your payment with your bank.": [
-        "Kami perlu untuk mengotentikasi pembayaran Anda dengan bank Anda."
+        "Kami perlu untuk mengautentikasi pembayaran Anda dengan bank Anda."
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
@@ -5868,7 +5874,7 @@
         "Pada saat mereka berlangganan ke salah satu paket, Anda akan memperoleh saldo yang dapat Anda gunakan untuk langganan Anda."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+        "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Pada saat paket langganan Anda diperbarui, kami akan terlebih dahulu menerapkan segala saldo yang tersimpan sebelum kami menagih Anda melalui metode pembayaran di atas."
@@ -6584,7 +6590,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Authenticator app": [
-        "Aplikasi otentikator"
+        "Aplikasi autentikator"
       ],
       "Auto show embedded images": [
         "Tampilkan gambar tersemat secara otomatis"
@@ -6692,7 +6698,7 @@
         "Konfirmasi kata sandi untuk masuk"
       ],
       "Confirm mailbox password": [
-        "Konfirmasi kata sandi kotak pesan"
+        "Konfirmasi kata sandi kotak surat"
       ],
       "Confirm new password": [
         "Konfirmasi kata sandi baru"
@@ -6956,7 +6962,7 @@
         "Server Mail (IMAP)"
       ],
       "Mailbox password": [
-        "Kata sandi kotak pesan"
+        "Kata sandi kotak surat"
       ],
       "Main": [
         "Utama"
@@ -7001,7 +7007,7 @@
         "Kata sandi masuk baru"
       ],
       "New mailbox password": [
-        "Kata sandi kotak pesan baru"
+        "Kata sandi kotak surat baru"
       ],
       "New organization password": [
         "Sandi organisasi baru"
@@ -8144,6 +8150,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8213,26 +8239,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9502,6 +9508,9 @@
       "Auto-pay is enabled": [
         "Autodebet diaktifkan"
       ],
+      "Disable": [
+        "Nonaktifkan"
+      ],
       "Enable auto-pay support": [
         "Aktifkan dukungan autodebet"
       ],
@@ -10012,7 +10021,7 @@
         "Ubah kata sandi masuk"
       ],
       "Change mailbox password": [
-        "Ubah kata sandi kotak pesan"
+        "Ubah kata sandi kotak surat"
       ],
       "Change organization keys": [
         "Ubah kunci organisasi"
@@ -10181,6 +10190,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
+      ],
+      "Duration": [
+        "Durasi"
       ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
@@ -10618,7 +10630,7 @@
         "Tipe"
       ],
       "Unlock your mailbox": [
-        "Buka kunci kotak pesan Anda"
+        "Buka kunci kotak surat Anda"
       ],
       "Unsupported browser": [
         "Browser tidak didukung"
@@ -10863,9 +10875,6 @@
       ],
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"
-      ],
-      "This feature is unavailable for the moment": [
-        "Fitur ini tidak tersedia untuk saat ini"
       ],
       "This key cannot be used for encryption": [
         "Kunci ini tidak dapat dipakai untuk mengenkripsi"
