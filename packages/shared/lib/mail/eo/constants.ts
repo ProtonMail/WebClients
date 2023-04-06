@@ -1,4 +1,4 @@
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '../../constants';
+import { IMAGE_PROXY_FLAGS, MIME_TYPES, SHOW_IMAGES } from '../../constants';
 import { Address, MailSettings, UserSettings } from '../../interfaces';
 
 export const eoDefaultUserSettings = {
@@ -7,7 +7,7 @@ export const eoDefaultUserSettings = {
 
 export const EO_REPLY_NUM_ATTACHMENTS_LIMIT = 10;
 
-export const eoDefaultMailSettings = {
+export const eoDefaultMailSettings: MailSettings = {
     DisplayName: '',
     Signature: '',
     Theme: '',
@@ -46,9 +46,9 @@ export const eoDefaultMailSettings = {
     PromptPin: 0,
     Autocrypt: 0,
     NumMessagePerPage: 50,
-    DraftMIMEType: 'text/html',
-    ReceiveMIMEType: 'text/html',
-    ShowMIMEType: 'text/html',
+    DraftMIMEType: MIME_TYPES.DEFAULT,
+    ReceiveMIMEType: MIME_TYPES.DEFAULT,
+    ShowMIMEType: MIME_TYPES.DEFAULT,
     StickyLabels: 0,
     ConfirmLink: 1,
     DelaySendSeconds: 10,
@@ -60,6 +60,7 @@ export const eoDefaultMailSettings = {
     SpamAction: null,
     BlockSenderConfirmation: null,
     HideSenderImages: 0,
-} as MailSettings;
+    AutoDeleteSpamAndTrashDays: 0,
+};
 
 export const eoDefaultAddress = {} as Address[];

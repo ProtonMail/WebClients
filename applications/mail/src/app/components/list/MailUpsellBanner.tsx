@@ -386,6 +386,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
                 cta={option?.cta}
                 loading={loadingPlans}
                 contentCentered={!columnMode}
+                data-testid="promotion-banner"
             />
             {renderShortcutModal && <MailShortcutsModal {...mailShortcutsProps} />}
             {renderThemesModal && <ThemesModal {...themesModalProps} />}

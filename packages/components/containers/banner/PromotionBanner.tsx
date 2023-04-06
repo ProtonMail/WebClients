@@ -18,6 +18,7 @@ interface Props {
     hasDismissAction?: boolean;
     contentCentered?: boolean;
     onClose?: () => void;
+    ['data-testid']?: string;
 }
 
 const PromotionBanner = ({
@@ -29,6 +30,7 @@ const PromotionBanner = ({
     icon,
     hasDismissAction = false,
     onClose,
+    'data-testid': dataTestId,
 }: Props) => {
     const handleClose = () => {
         onClose?.();
@@ -37,11 +39,11 @@ const PromotionBanner = ({
     return (
         <div
             className={clsx(
-                'flex bg-promotion relative',
+                'flex flex-nowrap bg-promotion relative',
                 contentCentered && 'text-center on-tablet-text-left p-0-5',
                 rounded && 'rounded'
             )}
-            data-testid="promotion-banner"
+            data-testid={dataTestId}
         >
             <div
                 className={clsx(
@@ -64,22 +66,22 @@ const PromotionBanner = ({
                             </div>
                         )}
                         {cta && <div className="flex-item-noshrink ml-2">{cta}</div>}
-                        {hasDismissAction && (
-                            <Button
-                                onClick={handleClose}
-                                icon
-                                size="small"
-                                color="weak"
-                                shape="ghost"
-                                className="ml-2"
-                                title={c('Action').t`Close`}
-                            >
-                                <Icon name="cross-big" alt={c('Action').t`Close`} />
-                            </Button>
-                        )}
                     </>
                 )}
             </div>
+            {hasDismissAction && !loading && (
+                <Button
+                    onClick={handleClose}
+                    icon
+                    size="small"
+                    color="weak"
+                    shape="ghost"
+                    className="ml-2"
+                    title={c('Action').t`Close`}
+                >
+                    <Icon name="cross" alt={c('Action').t`Close`} />
+                </Button>
+            )}
         </div>
     );
 };

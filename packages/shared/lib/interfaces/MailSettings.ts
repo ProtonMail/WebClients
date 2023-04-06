@@ -17,6 +17,18 @@ export enum SpamAction {
     SpamAndUnsub = 1,
 }
 
+/**
+ * ACTIVE: User has 30 days by default. Could be another number.
+ *
+ * DISABLED: user explicitely disabled the feature.
+ *
+ * Can also be null if no preferences are defined yet.
+ */
+export enum AutoDeleteSpamAndTrashDaysSetting {
+    ACTIVE = 30,
+    DISABLED = 0,
+}
+
 export interface MailSettings {
     DisplayName: string;
     Signature: string;
@@ -65,4 +77,5 @@ export interface MailSettings {
     SpamAction: SpamAction | null;
     BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION | null;
     HideSenderImages: number;
+    AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting;
 }
