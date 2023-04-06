@@ -11,7 +11,7 @@ import {
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-interface Props extends Omit<DropdownButtonProps<'button'>, 'title'> {
+interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'> {
     autoClose?: boolean;
     title?: string;
     titleTooltip?: ReactNode;
