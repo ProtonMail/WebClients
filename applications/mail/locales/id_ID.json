@@ -3119,7 +3119,7 @@
         "Kredensial masuk salah. Silakan coba lagi."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Kata sandi kotak pesan salah. Silakan coba lagi."
+        "Kata sandi kotak surat salah. Silakan coba lagi."
       ],
       "Invalid email address": [
         "Alamat email tidak valid"
@@ -3350,7 +3350,7 @@
         "Kesalahan yang tidak diketahui."
       ],
       "Wrong mailbox password": [
-        "Kata sandi kotak pesan salah"
+        "Kata sandi kotak surat salah"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
@@ -4641,7 +4641,7 @@
         "Enkripsi pesan"
       ],
       "Enter the code from your authenticator app": [
-        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
+        "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
@@ -4900,6 +4900,9 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
+      ],
+      "No imports or forwarding history.": [
+        "Tidak ada riwayat impor atau penerusan email yang ditemukan."
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
@@ -5409,7 +5412,7 @@
         "Ketika Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik ditambahkan ke rincian kontak."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+        "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -5855,7 +5858,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Authenticator app": [
-        "Aplikasi otentikator"
+        "Aplikasi autentikator"
       ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
@@ -6056,7 +6059,7 @@
         "Server Mail (IMAP)"
       ],
       "Mailbox password": [
-        "Kata sandi kotak pesan"
+        "Kata sandi kotak surat"
       ],
       "Main": [
         "Utama"
@@ -8262,6 +8265,23 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Date": [
+        "Tanggal"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {
