@@ -776,6 +776,9 @@
       "Size": [
         "大小"
       ],
+      "Skip": [
+        "略過"
+      ],
       "Skip verification": [
         "略過驗證"
       ],
@@ -1063,6 +1066,11 @@
         "目前工作階段"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }：隱私為首的郵件與行事曆解決方案，滿足您日常通訊所需。"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
         "自動續期在${ formattedEndTime }"
@@ -1184,6 +1192,9 @@
       ],
       "Send": [
         "傳送"
+      ],
+      "Tweet": [
+        "推文"
       ]
     },
     "Calendar access select label": {
@@ -2495,6 +2506,9 @@
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
         "看來您的檔案標頭 ${ options.fieldName } 缺失。"
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "匯入時偵測到多行有錯誤，請覆閱您的 CSV 檔案。"
       ]
     },
     "Cycle": {
@@ -2800,7 +2814,15 @@
         "${ allCategoriesExceptTheLastOne } 與 ${ lastCategory }"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "雙重驗證"
+      ]
+    },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } 是您的使用者名稱。如要建立 ${ Local }@${ Domain }，請前往「設定」 > 「郵件與撰寫」 > 「短域名 (pm.me)」"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -2881,6 +2903,9 @@
       ],
       "Error in one of the conditions": [
         "其中一個條件有誤"
+      ],
+      "Expired": [
+        "已過期"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
@@ -3402,11 +3427,17 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "讀取您的檔案「${ formattedFilename }」時發生錯誤。檔案格式不正確。"
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "上載一個載有不多於 ${ MAX_NUMBER_OF_USER_ROWS } 個使用者帳號的 CSV 檔案。"
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "您的檔案 \"${ formattedFilename }\" 是空的。"
@@ -3444,6 +3475,9 @@
       ],
       "sign in": [
         "登入"
+      ],
+      "Sign in to verify": [
+        "登入以驗證"
       ],
       "There was a problem removing your email address.": [
         "移除您的電郵位址發生問題。"
@@ -3944,6 +3978,11 @@
       ],
       "Token name": [
         "權杖名稱"
+      ]
+    },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "免費試用最佳的 ${ MAIL_APP_NAME }"
       ]
     },
     "Hint": {
@@ -4617,6 +4656,9 @@
       "Background color": [
         "背景顏色"
       ],
+      "Balance from your previous subscription": [
+        "您先前訂閱的餘額"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
@@ -4962,6 +5004,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其它電郵服務該如何遞送屬於您的網域的電郵。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
       ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "若您遺失您的密碼並需要重設您的帳號，請${ boldImperative }您備妥${ boldAccountRecovery }。"
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "若您遺失您的密碼並需要重設您的帳號，請${ boldImperative }您同時備妥${ boldAccountAndRecovery }，否則您或會無法存取您的任何電子郵件、聯絡人或檔案。"
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "萬一您的兩步驟驗證裝置遺失，這些代碼可代替 6 位數的兩步驟驗證碼用來登入您的帳號。每個代碼只能使用一次。"
       ],
@@ -5060,6 +5108,9 @@
       ],
       "it’s imperative": [
         "有件至關重要的事"
+      ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "我在用 @ProtonMail，覺得您也會喜歡的。它是一個安全的電子郵件服務，可以保護到您的隱私。用我的推介連結註冊的話，還可以免費獲得 1 個月的尊享功能哦：${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
@@ -5505,14 +5556,17 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "電郵驗證連結已過期。請登入以重新傳送驗證連結。"
+      ],
       "The following address is available:": [
         "以下的電子郵件地址可用："
       ],
       "The following addresses are invalid.": [
-        "以下的電子郵件地址無效."
+        "下列電子郵件地址無效。"
       ],
       "The following addresses are unavailable.": [
-        "以下的電子郵件地址不可用."
+        "下列電子郵件地址不可用。"
       ],
       "The following addresses were not created.": [
         "以下的電子郵件地址還未建立。"
@@ -5576,6 +5630,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "這個權杖在您關閉這個視窗後將無法使用，而且您不該將它分享給任何人。"
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "此取消訂閱連結已過期。請開啟來自此郵寄清單的一封較近期的電子郵件。"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
@@ -5700,6 +5757,9 @@
       "Unsaved changes": [
         "未儲存的變更"
       ],
+      "Unsubscribe link expired": [
+        "取消訂閱連結已過期"
+      ],
       "Unsupported file": [
         "不支援的檔案"
       ],
@@ -5732,6 +5792,9 @@
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
+      ],
+      "Verification link expired": [
+        "驗證連結已過期"
       ],
       "Verification may take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -8031,6 +8094,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "Send & receive invitations": [
+        "傳送並接收邀請"
+      ],
       "Share calendar via link": [
         "透過連結分享行事曆"
       ],
@@ -8092,6 +8158,26 @@
       ],
       "Team management": [
         "團隊管理"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8165,26 +8251,6 @@
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -8215,6 +8281,9 @@
       ],
       "terms and conditions": [
         "條款及細則"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "若要開始使用，請選擇一個顯示名稱。這是您傳送電子郵件、邀請別人參與事件，又或分享檔案時，對方會看見的名字。"
       ],
       "Your ${ planName } subscription is now active.": [
         "您的 ${ planName } 訂購授權現在已啟用。"
@@ -8300,8 +8369,14 @@
       "End-to-end encrypted file storage": [
         "端到端加密檔案儲存"
       ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "確保您接收所有傳送至您的網域的電子郵件，即使電子郵件地址並不存在、不復存在，或是拼寫有誤"
+      ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "當使用者認證相信已遭洩露時，強制登出使用者的工作階段"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "當您意外從我們的 VPN 伺服器斷線時，封鎖所有網路連線以保持安全。"
@@ -8341,6 +8416,9 @@
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "保護所有連接到 WiFi 的裝置，這對那些不能直接設置 VPN 的裝置尤為有效。"
+      ],
+      "Quickly set up out-of-office messages": [
+        "快速設立容後再覆訊息"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "自任何提供者快速轉移您的電子郵件、行事曆或聯絡人"
@@ -8537,6 +8615,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "選取 ${ BRAND_NAME } 可以存取的內容：檢視您的電子郵件與設定、檢視與下載您的聯絡人、檢視與下載來自 Google 日曆您可存取的所有行事曆。"
       ]
     },
     "Onboarding": {
@@ -9152,6 +9235,12 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "以我們安全的匯入與轉寄工具，完成隱私之進化。"
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "以我們安全的匯入工具，完成隱私之進化。"
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "您可以為單一郵件套用多個標籤，但一般而言，郵件只能歸於單一資料夾中。拖放以重新排序您的資料夾和標籤。"
       ]
@@ -9391,6 +9480,35 @@
         "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "明白"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "請登入您的 Apple App Store 帳號，然後按一下「${ subscriptions }」。"
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "請登入您的 Play 商店帳號，然後按一下「${ subscriptions }」。"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "在 ${ subscriptionManager } 中管理您的訂閱"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "訂閱乃由 ${ subscriptionManager } 管理"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "使用者 ID ${ userId } 的訂閱乃應用程式內購買。若要管理，此訂閱的使用者請另行查看其 ${ subscriptionManager } 帳號中的訂閱版面。"
+      ],
+      "Subscriptions": [
+        "訂閱"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "您的方案乃購自 Android 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Google Play 商店。"
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
+      ]
+    },
     "Subscription price": {
       "For": [
         "為"
@@ -9399,6 +9517,27 @@
     "Subscription renewal state": {
       "Are you sure?": [
         "您確定嗎？"
+      ],
+      "Auto-pay is disabled": [
+        "自動付款已停用"
+      ],
+      "Auto-pay is enabled": [
+        "自動付款已啟用"
+      ],
+      "Disable": [
+        "停用"
+      ],
+      "Enable auto-pay support": [
+        "啟用自動付款支援"
+      ],
+      "Keep auto-pay": [
+        "保留自動付款"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "我們的系統將不再以此付款方法自動向您收費，惟您的訂閱仍會在帳單週期屆滿時續期。若您想降級或更改您的訂閱，您仍需於帳單週期完結前自行辦妥。再者，若您忘記手動進行付款，且所有付款方法的自動付款都已停用，我們或會自動降級您的帳號，將導致失去許多功能。"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "我們的系統將不再以此付款方法自動向您收費，惟您的訂閱仍會在帳單週期屆滿時續期。若您想降級或更改您的訂閱，您仍需於帳單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其他付款功能，我們無法為您自動刪除檔案、電子郵件或其他資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂閱帳單，以免帳號被暫停。"
       ]
     },
     "Subscription saving": {
@@ -9949,7 +10088,7 @@
         "無法建立帳號"
       ],
       "Create ${ selectedUserIds.length } users": [
-        "建立 ${ selectedUserIds.length } 使用者"
+        "建立 ${ selectedUserIds.length } 個使用者"
       ],
       "Create multiple user accounts": [
         "新增多個使用者帳號"
@@ -10065,6 +10204,9 @@
       "Download ${ VPN_APP_NAME }": [
         "下載 ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "為期"
+      ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
       ],
@@ -10126,7 +10268,7 @@
         "外部 PGP 設定"
       ],
       "Failed to create ${ failedUsers.length } user accounts.": [
-        "建立 ${ failedUsers.length } 使用者帳號失敗。"
+        "${ failedUsers.length } 個使用者帳號建立失敗。"
       ],
       "Filters": [
         "篩選器"
@@ -10468,7 +10610,7 @@
         "成功"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "成功地建立了 ${ localSuccessfullyCreatedUsers.length } 使用者帳號"
+        "已成功建立 ${ localSuccessfullyCreatedUsers.length } 個使用者帳號"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
@@ -10746,9 +10888,6 @@
       ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
-      ],
-      "This feature is unavailable for the moment": [
-        "此功能目前暫不適用。"
       ],
       "This key cannot be used for encryption": [
         "此金鑰不能用於加密"

@@ -4910,6 +4910,9 @@
       "No group found": [
         "未找到群組"
       ],
+      "No imports or forwarding history.": [
+        "未有匯入或轉寄歷程記錄。"
+      ],
       "No label found": [
         "找不到標籤"
       ],
@@ -6882,6 +6885,11 @@
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "選取 ${ BRAND_NAME } 可以存取的內容：檢視您的電子郵件與設定、檢視與下載您的聯絡人、檢視與下載來自 Google 日曆您可存取的所有行事曆。"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "歡迎來到 ${ appName }"
@@ -8266,6 +8274,23 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "動作"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Import": [
+        "匯入"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
       ]
     },
     "Today icon tooltip in mini calendar": {
