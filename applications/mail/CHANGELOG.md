@@ -1,9 +1,25 @@
+## Release 5.0.21.0 — Apr 26, 2023
+
+### New features
+
+-   If you benefit from a paid plan, you can now enable the automatic deletion of trash and spam messages after 30 days
+-   Select only messages that have attachments with the new has file filter
+-   Improve insert contact modal opened from the email composer
+
+### Improvements
+
+-   Prevent the app from crashing if the side panel apps crash
+
+### Bug fixes
+
+-   Fix unread email counters changing when performing a search
+
 ## Release 5.0.20.0 — April 5, 2023
 
 ### Improvements
 
 -   Add "In the morning" preset option for messages schedules to be sent later
--   Re-open the apps side panel on app refresh if it was previously open 
+-   Re-open the apps side panel on app refresh if it was previously open
 -   Use the search keyword in labels and filters to automatically fill the name in the creation form if there was no result matching
 
 ## Release 5.0.19.0 — March 22, 2023
@@ -12,7 +28,7 @@
 
 -   Extend the time window to schedule messages to be sent up to 3 months
 -   Scroll down automatically when entering many recipients in the email composer
--   Improve insert contact modal opened from the email composer 
+-   Improve insert contact modal opened from the email composer
 
 ## Release 5.0.18.0 — March 8, 2023
 
