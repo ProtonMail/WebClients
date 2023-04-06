@@ -4154,7 +4154,7 @@ __metadata:
     "@protontech/mimemessage": ~v1.1.4
     "@protontech/mutex-browser": ^1.0.5
     "@protontech/sieve.js": ^2.0.6
-    "@protontech/timezone-support": ^1.0.0
+    "@protontech/timezone-support": ^3.0.0
     "@sentry/browser": ^7.47.0
     "@types/dompurify": ^3.0.1
     "@types/jasmine": ^4.3.1
@@ -4302,14 +4302,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/timezone-support@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@protontech/timezone-support@npm:1.0.0"
+"@protontech/timezone-support@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@protontech/timezone-support@npm:3.0.0"
   dependencies:
     commander: 2.20.0
   bin:
     create-timezone-data: bin/create-timezone-data
-  checksum: 8532e83f95e7066ae4b39278462bac3c38aec8bbfaa79ebe65dee02d37f4dbcca97510ffacb6c43ee8d1ad28581d522ef7872f91e1df0efea4834d9149b34be5
+  checksum: 3251871cbb570550ab5b86e0fd6c53aa6ea595176eb0ccd5c8a301da285337d3c2de41cf0bf9ad92b5198d128ef41eb6af6517dc7ce4236f3d230adb13f201c8
   languageName: node
   linkType: hard
 
