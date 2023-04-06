@@ -4,6 +4,14 @@
     "language": "da_DK"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Videresendelse vil starte snart. Nye e-mails vil snart vises i din indbakke."
+      ],
+      "Mail forward stopped": [
+        "Videresendelse stoppet"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
@@ -4932,6 +4940,9 @@
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. For at kunne sende beskeder til denne adresse skal du uploade en gyldig nøgle eller deaktivere \"Krypter e-mails\" for at kunne sende beskeder til denne adresse."
       ],
+      "Normal": [
+        "Normal"
+      ],
       "Not a valid URL": [
         "Ugyldig URL"
       ],
@@ -5139,6 +5150,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data, du har indtastet i kladden, kan ikke gemmes, hvis du forlader siden."
+      ],
+      "The local database is being prepared": [
+        "Den lokale database præpareres"
+      ],
+      "The message has expired": [
+        "Denne besked er udløbet"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
@@ -8265,6 +8282,23 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Import": [
+        "Importér"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {
