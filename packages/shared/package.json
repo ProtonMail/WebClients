@@ -23,8 +23,8 @@
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/sieve.js": "^2.0.6",
         "@protontech/timezone-support": "^1.0.0",
-        "@sentry/browser": "^7.45.0",
-        "@types/dompurify": "^3.0.0",
+        "@sentry/browser": "^7.47.0",
+        "@types/dompurify": "^3.0.1",
         "@types/node": "^18.15.11",
         "@types/papaparse": "^5.3.7",
         "@types/ua-parser-js": "^0.7.36",
@@ -39,11 +39,11 @@
         "lodash": "^4.17.21",
         "papaparse": "^5.4.1",
         "push.js": "^1.0.12",
-        "ua-parser-js": "^1.0.34",
+        "ua-parser-js": "^1.0.35",
         "web-streams-polyfill": "^3.2.1"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.21.0",
+        "@babel/plugin-transform-runtime": "^7.21.4",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@types/jasmine": "^4.3.1",
@@ -55,12 +55,12 @@
         "karma-jasmine": "^5.1.0",
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.0",
-        "playwright": "^1.32.1",
+        "playwright": "^1.32.2",
         "prettier": "^2.8.7",
         "ts-loader": "^9.4.2",
         "ttag": "^1.7.24",
         "typescript": "^5.0.3",
-        "webpack": "^5.77.0"
+        "webpack": "^5.78.0"
     },
     "peerDependencies": {
         "@proton/styles": "*",

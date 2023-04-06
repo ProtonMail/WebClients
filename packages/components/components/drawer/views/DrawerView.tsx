@@ -8,7 +8,7 @@ export interface SelectedDrawerOption {
     value: string;
 }
 
-interface Props extends HTMLAttributes<HTMLElement> {
+interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
     tab: SelectedDrawerOption;
     onSelectDrawerOption?: (option: SelectedDrawerOption) => void;
     options?: SelectedDrawerOption[];

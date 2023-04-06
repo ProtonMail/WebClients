@@ -8,7 +8,7 @@ import { classnames } from '../../helpers';
 
 import './Dropzone.scss';
 
-type Props = (HTMLAttributes<HTMLDivElement> &
+type Props = (Omit<HTMLAttributes<HTMLDivElement>, 'content'> &
     Required<Pick<HTMLAttributes<HTMLDivElement>, 'onDrop' | 'onDragEnter' | 'onDragLeave'>>) & {
     /**
      * When true, reveals the overlay and content
