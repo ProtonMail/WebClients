@@ -4984,6 +4984,9 @@
       "No group found": [
         "Nessun gruppo trovato"
       ],
+      "No imports or forwarding history.": [
+        "Nessuna cronologia di importazione o inoltro."
+      ],
       "No label found": [
         "Nessuna etichetta trovata"
       ],
@@ -6958,6 +6961,11 @@
         "Affinché l'importazione funzioni, devi selezionare tutti gli elementi richiesti come mostrato nella GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selezionare quale ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende con cui fai accesso da Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Benvenuto in ${ appName }"
@@ -8627,6 +8635,23 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importa"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
       ]
     },
     "Today icon tooltip in mini calendar": {

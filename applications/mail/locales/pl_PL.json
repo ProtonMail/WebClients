@@ -5165,6 +5165,9 @@
       "No group found": [
         "Nie znaleziono grupy"
       ],
+      "No imports or forwarding history.": [
+        "Brak importów lub historii przekierowania."
+      ],
       "No label found": [
         "Nie znaleziono etykiety"
       ],
@@ -5532,7 +5535,7 @@
         "Wiadomość zostanie wysłana jutro o godzinie ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
-        "Wiadomość wygaśnie w dniu: ${ formattedDate }"
+        "Wiadomość wygaśnie ${ formattedDate }"
       ],
       "This message will expire on ${ longDateMEssage }": [
         "Wiadomość wygaśnie w dniu: ${ longDateMEssage }"
@@ -7534,6 +7537,9 @@
         "${ remainingDays } dni",
         "${ remainingDays } dni",
         "${ remainingDays } dnia"
+      ],
+      "<1 d": [
+        "za mniej niż dzień"
       ]
     },
     "Reply to calendar invitation": {
@@ -8995,6 +9001,23 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importuj"
+      ],
+      "Size": [
+        "Rozmiar"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

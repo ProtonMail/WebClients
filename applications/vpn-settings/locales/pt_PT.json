@@ -128,8 +128,11 @@
       "Edit billing details": [
         "Editar detalhes da faturação"
       ],
+      "Edit display name": [
+        "Editar o nome a mostrar"
+      ],
       "Edit email address": [
-        "Editar o endereço de email"
+        "Editar o endereço de correio electrónico"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
@@ -412,7 +415,7 @@
         "Problema na Bridge"
       ],
       "Calendar problem": [
-        "Problema na agenda"
+        "Problema no calendário"
       ],
       "Connection problem": [
         "Problema com a ligação"
@@ -497,14 +500,59 @@
       "carrot": [
         "cenoura"
       ],
+      "cerise": [
+        "cereja"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "samambaia"
+      ],
+      "forest": [
+        "floresta"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "azeitona"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "pepininhos"
+      ],
+      "pine": [
+        "pinho"
+      ],
       "pink": [
         "rosa"
+      ],
+      "plum": [
+        "ameixa"
       ],
       "purple": [
         "roxo"
       ],
+      "reef": [
+        "recife"
+      ],
       "sahara": [
         "saará"
+      ],
+      "slateblue": [
+        "azul ardósia"
+      ],
+      "soil": [
+        "terra"
       ],
       "strawberry": [
         "morango"
@@ -1319,7 +1367,7 @@
         "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email is not valid": [
-        "Email inválido"
+        "Correio electrónico no válido"
       ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
@@ -1376,7 +1424,7 @@
         "Os pagamentos não estão actualmente disponíveis, por favor tente mais tarde"
       ],
       "Please set a recovery email first": [
-        "Por favor, defina primeiro um e-mail de recuperação"
+        "Defina primeiro um correio electrónico de recuperação."
       ],
       "Please set a recovery phone number first": [
         "Por favor, defina um número de telefone de recuperação"
@@ -1458,6 +1506,11 @@
         "Suporte a torrents (P2P)"
       ]
     },
+    "fido2: Info": {
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifique a sua identidade com uma chave de segurança física U2F ou FIDO2."
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1493,13 +1546,13 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "(1 email por mês)"
+        "(1 correio electrónico por mês)"
       ],
       "(1 email per quarter)": [
-        "(1 email por trimestre)"
+        "(1 correio electrónico por trimestre)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 emails por mês)"
+        "(1 a 2 correios electrónicos por mês)"
       ]
     },
     "Group": {
@@ -1525,6 +1578,12 @@
       ]
     },
     "Human verification method": {
+      "Email": [
+        "Correio electronico"
+      ],
+      "Manual": [
+        "Manual"
+      ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
       ]
@@ -1562,6 +1621,9 @@
       ],
       "Account successfully updated": [
         "Conta actualizada com sucesso"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Adicione outro nível de segurança à sua conta. Terá de se verificar com uma autenticação A2F cada vez que entrar na sua conta."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Após efectuar o seu pagamento com BitCoin, por favor siga as instruções abaixo para actualizar."
@@ -1621,7 +1683,7 @@
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
       ],
       "Emailing preference saved": [
-        "Preferências do email actualizadas"
+        "Preferências do correio electronico actualizadas"
       ],
       "Enter key manually instead": [
         "Inserir a chave manualmente"
@@ -1633,7 +1695,7 @@
         "Insira o código enviado para o seu número de telefone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Insira o código enviado para ${ email }. Se não encontrar a mensagem na sua caixa de entrada, por favor verifique a pasta de spam."
+        "Insira o código enviado para ${ email }. Se não encontrar a mensagem na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
@@ -1645,10 +1707,10 @@
         "Insira a sua palavra-passe (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
+        "Insira o seu correio electrónico de recuperação e receberá o seu nome de utilizador ou endereço de correio electrónico."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Insira o seu telefone de recuperação e receberá o seu nome de utilizador ou endereço de email."
+        "Insira o seu telefone de recuperação e receberá o seu nome de utilizador ou endereço de correio electrónico."
       ],
       "Expired": [
         "Expirado"
@@ -1669,7 +1731,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
+        "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, insira-o abaixo para aplicar o desconto."
@@ -1750,7 +1812,7 @@
         "Por favor, note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Por favor, forneça um endereço de email, caso necessitemos de o contactar."
+        "Forneça um endereço de correio electrónico, caso necessitemos de o contactar."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Por favor, tente novamente, utilize um método de pagamento diferente, ou contacte o PayPal para assistência."
@@ -1842,6 +1904,9 @@
       "Two-factor authentication enabled": [
         "Autenticação em dois passos activada"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "O modo de senha dupla requer duas senhas: uma para iniciar a sessão e outra para desencriptar a caixa de correio (avançado)."
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "O modo de duas palavras-passe usa palavras-passe separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de palavra-passe única para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, primeiro insira a palavra-passe para o início de sessão e depois para a caixa de correio."
       ],
@@ -1862,6 +1927,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
       ],
       "Version ${ version }": [
         "Versão ${ version }"
@@ -1909,7 +1977,7 @@
         "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
+        "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos correios electrónicos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua palavra-passe antiga."
@@ -1918,7 +1986,7 @@
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -1927,7 +1995,7 @@
         "A conta será actualizada assim que o pagamento for aprovado."
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu email só será usado para esta verificação única."
+        "O seu correio electrónico só será usado para esta verificação única."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
@@ -2007,7 +2075,7 @@
     },
     "Label": {
       "${ BRAND_NAME } email or username": [
-        "E-mail ou nome de usuário do ${ BRAND_NAME }"
+        "Correio electrónico ou nome de usuário do ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -2020,7 +2088,7 @@
         "${ n } meses"
       ],
       "Allow recovery by email": [
-        "Permitir recuperação por email"
+        "Permitir recuperação por correio electrónico"
       ],
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
@@ -2088,6 +2156,9 @@
       "Credits used": [
         "Créditos usados"
       ],
+      "Current display name": [
+        "Nome a mostrar actual"
+      ],
       "Customize invoices": [
         "Personalizar facturas"
       ],
@@ -2104,7 +2175,7 @@
         "Nome a mostrar"
       ],
       "Email address": [
-        "Endereço de email"
+        "Endereço de correio electrónico"
       ],
       "Email or username": [
         "Email ou utilizador"
@@ -2144,6 +2215,12 @@
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Encaminhamento de porta)"
+      ],
+      "Navigation": [
+        "Navegação"
+      ],
+      "New display name": [
+        "Novo nome a mostrar"
       ],
       "New login password": [
         "Nova palavra-passe de início"
@@ -2262,6 +2339,23 @@
         "Número de telefone de recuperação"
       ]
     },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "Comunicados do ${ BRAND_NAME } beta"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletim da ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Boletim da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas e promoções da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Correios electronicos de boas-vindas da ${ BRAND_NAME }"
+      ]
+    },
     "Label on payment method": {
       "Default": [
         "Predefinição"
@@ -2372,8 +2466,8 @@
         "${ n } domínios de correio electrónico personalizados"
       ],
       "${ n } email address": [
-        "${ n } endereço de e-mail",
-        "${ n } endereços de e-mail/aliases"
+        "${ n } endereço de correio electrónico",
+        "${ n } endereços de correio electrónico/aliases"
       ],
       "${ n } filter": [
         "${ n } filtro",
@@ -2414,7 +2508,7 @@
         "Assistente de importação Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Suporte a clientes de e-mail (por IMAP/SMTP)"
+        "Suporte a clientes de correio electrónico (por IMAP/SMTP)"
       ],
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
@@ -2552,7 +2646,7 @@
         "Confirmar"
       ],
       "Email address": [
-        "Endereço de email"
+        "Endereço de correio electrónico"
       ],
       "Feedback": [
         "Comentários"
@@ -2658,8 +2752,8 @@
         "${ maxVpn } ligações VPN de alta velocidade"
       ],
       "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agendas"
+        "${ n } calendário",
+        "${ n } calendários"
       ],
       "${ n } calendar per user": [
         "${ n } calendário por utilizador",
@@ -2690,7 +2784,7 @@
         "${ UsedMembers } de ${ MaxMembers } utilizadores"
       ],
       "1 email address": [
-        "1 endereço de e-mail"
+        "1 endereço de correio electrónico"
       ],
       "1 VPN connection": [
         "1 ligação VPN"
@@ -2723,13 +2817,13 @@
         "Endereço copiado para a área de transferência"
       ],
       "Email updated": [
-        "Email actualizado"
+        "Correio eletrónico actualizado"
       ],
       "Gift code applied": [
         "Código de oferta aplicado"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Se inseriu um email de recuperação válido, enviar-lhe-emos um email com o seu nome de utilizador no próximo minuto."
+        "Se inseriu um email de recuperação válido, enviar-lhe-emos um correio electrónico com o seu nome de utilizador no próximo minuto."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Se inseriu um telefone de recuperação válido, enviar-lhe-emos uma mensagem com o seu nome de utilizador no próximo minuto."
@@ -2909,6 +3003,9 @@
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
+      ],
+      "Edit display name": [
+        "Editar o nome a mostrar"
       ],
       "Email subscriptions": [
         "Subscrições de email"
