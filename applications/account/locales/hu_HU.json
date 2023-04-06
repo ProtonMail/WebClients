@@ -13,8 +13,14 @@
       "Full view": [
         "Teljes megtekintés"
       ],
+      "Full view (see all event details)": [
+        "Teljes megtekintés (az esemény összes adatának megtekintése)"
+      ],
       "Limited view": [
         "Korlátozott megtekintés"
+      ],
+      "Limited view (see only free/busy)": [
+        "Korlátozott megtekintés (csak a szabad/elfoglalt állapot)"
       ]
     },
     "account": {
@@ -540,7 +546,7 @@
         "Adatok helyreállítása"
       ],
       "Refer a friend": [
-        "Ajánljon egy barátot"
+        "Ajánlja egy barátjának"
       ],
       "Refresh status": [
         "Állapot frissítése"
@@ -674,6 +680,9 @@
       "Select language for invitation emails": [
         "A meghívók nyelvének kiválasztása"
       ],
+      "Select time zone": [
+        "Időzóna kiválasztása"
+      ],
       "send auto-reply email": [
         "automatikus válasz küldése"
       ],
@@ -739,6 +748,9 @@
       ],
       "Size": [
         "Méret"
+      ],
+      "Skip": [
+        "Kihagyás"
       ],
       "Skip verification": [
         "Ellenőrzés átugrása"
@@ -1172,9 +1184,24 @@
         "Címke szerkesztve"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Csak ön láthatja a címkét"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "A jogosultságokat bármikor megváltoztathatja vagy visszavonhatja."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Engedélyek"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Már rendelkezik hozzáféréssel ehhez a naptárhoz"
       ]
     },
     "Calendar settings link share description": {
@@ -1212,8 +1239,16 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Szerkesztés (események megtekintése, létrehozása és szerkesztése)"
+      ],
       "View (see all event details)": [
         "Megtekintés (az összes eseményrészlet megtekintése)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Nem sikerült a partner adatainak betöltése: ${ address }"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2735,6 +2770,9 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
       ],
+      "Already a member of this calendar": [
+        "Már tagja ennek a naptárnak"
+      ],
       "Amount above the maximum.": [
         "Túl magas összeg."
       ],
@@ -2899,6 +2937,9 @@
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nem sikerült a küldéshez érvényes WKD kulcs letöltése"
+      ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nem egy ${ BRAND_NAME } fiók"
       ],
       "Not a valid number": [
         "Érvénytelen szám"
@@ -3100,6 +3141,9 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "A feltöltött fájlok nem érvényes titkos kulcsok. Ellenőrizze és próbálja újra."
       ],
+      "Validation error": [
+        "Érvényesítési hiba"
+      ],
       "Verification did not succeed, please try again in an hour.": [
         "Az igazolás sikertelen, kérjük hogy próbálja meg egy óra múlva."
       ],
@@ -3107,7 +3151,7 @@
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módot."
+        "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módszert."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Hibás visszaigazoló kód. Bizonyosodjon meg róla, hogy jól másolta ki a visszaigazoló kódot és próbálja újból. 24 órába is beletelhet, amíg a változások érvénybe lépnek."
@@ -4351,10 +4395,10 @@
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
       "account recovery and data recovery method": [
-        "fiók helyreállítási és adat helyreállítási mód"
+        "fiók helyreállítási és adat helyreállítási módszer"
       ],
       "account recovery method": [
-        "fiók helyreállítási mód"
+        "fiók helyreállítási módszer"
       ],
       "Account size": [
         "Fiók mérete"
@@ -4363,7 +4407,7 @@
         "A fiók sikeresen frissítve"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktiváljon legalább egy helyreállítási módot, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } Fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
+        "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
@@ -4372,7 +4416,7 @@
         "Helyreállító e-mail cím hozzáadása"
       ],
       "add a recovery method": [
-        "adjon hozzá egy helyreállítási módot"
+        "adjon hozzá egy helyreállítási módszert"
       ],
       "Add a recovery phone number": [
         "Helyreállítási telefonszám hozzáadása"
@@ -4835,6 +4879,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Amennyiben az SPF és a DKIM rekordokat már beállította, a DMARC beállítása lehetőséget biztosít annak szabályozására, hogy más e-mail szolgáltatások hogyan fogadhatnak levelet a domain nevével, ha mind az SPF, mind a DKIM ellenőrzések meghiúsultak. Ez megnehezítheti, hogy spammerek levélszemetet küldjenek a domain nevével, de az ön leveleinek továbbításában is fennakadásokat okozhat, ha hibásan van beállítva."
       ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountRecovery } beállítva."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountAndRecovery } beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit vagy fájljait."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } és ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
       ],
@@ -4845,7 +4895,7 @@
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Ha nemrégiben visszaállította a jelszavát, továbbra is hozzáférhet az adataihoz egy adat visszaállítási mód használatával"
+        "Ha nemrégiben visszaállította a jelszavát, továbbra is hozzáférhet az adataihoz, valamelyik helyreállítási módszer használatával"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Amennyiben meg kívánja tartani a jelenlegi SPF rekordot, csak írja hozzá a ${ spf } értéket a ${ spfValue } után. Ne hozzon létre több különálló SPF rekordot."
@@ -5027,7 +5077,7 @@
         "Új"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Nincs megadva fiók helyreállítási mód; megvan a veszélye, hogy elveszti fiókja elérését"
+        "Nincs beállítva fiók helyreállítási módszer; megvan a veszélye, hogy elveszti fiókja elérését"
       ],
       "No action selected": [
         "Nincs kiválasztva művelet"
@@ -5039,7 +5089,7 @@
         "Nincs névjegy titkosító kulcs"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Nincs megadva adat helyreállítási mód; megvan a veszélye, hogy elveszti adatai elérését"
+        "Nincs beállítva adat helyreállítási módszer; megvan a veszélye, hogy elveszti adatai elérését"
       ],
       "No folder selected": [
         "Nincs kiválasztva mappa"
@@ -5093,7 +5143,7 @@
         "Elavult helyreállítási fájl; frissítse, hogy bizonyosan elérhesse adatait"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Elavult helyreállítási módok; frissítse, hogy bizonyosan elérhesse adatait"
+        "Elavult helyreállítási módszerek; frissítse, hogy bizonyosan elérhesse adatait"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "Elavult helyreállítási jelmondat; frissítse, hogy bizonyosan elérhesse adatait"
@@ -5456,7 +5506,7 @@
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "A fiók folyamatos elérhetőségének biztosításához, állítson be valamilyen helyreállítási módot"
+        "A fiók folyamatos elérhetőségének biztosításához, állítson be valamilyen helyreállítási módszert"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -5500,14 +5550,17 @@
       "Two-factor authentication enabled": [
         "Kétlépcsős hitelesítés bekapcsolva"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "A kétjelszavas mód két jelszó megadását kívánja meg: egy jelszó a belépéshez és egy másik a postafiók visszafejtéséhez. (Haladó)"
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "A két jelszavas mód különválasztja a bejelentkezési jelszót és a levelek titkosításához használt jelszót. Ez egy kis biztonsági előnnyel járhat bizonyos esetekben, de általában inkább az egy jelszavas módot javasoljuk a legtöbb felhasználónak. A két jelszavas módra váltáshoz, először adja meg a bejelentkezési jelszót és aztán pedig az e-mail titkosítási jelszót."
+        "A kétjelszavas mód különválasztja a bejelentkezési jelszót és a levelek titkosításához használt jelszót. Ez egy kis biztonsági előnnyel járhat bizonyos esetekben, de általában inkább az egy jelszavas módot javasoljuk a legtöbb felhasználónak. A kétjelszavas módra váltáshoz, először adja meg a bejelentkezési jelszót és aztán pedig az e-mail titkosítási jelszót."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nem sikerült a helyreállítási fájl aláírásának ellenőrzése. Kérjük, lépjen kapcsolatba velünk."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "Sajnos, nincs helyreállítási mód beállítva ehhez a fiókhoz."
+        "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Ha nem lép ki fiókjából vagy nem változtat jelszót, a munkafolyamat aktív marad. A munkafolyamatok 60 nap inaktivitás után járnak le."
@@ -5685,7 +5738,7 @@
         "Nem ajánljhat ${ MAIL_APP_NAME } felhasználókat"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Nem adott meg helyreállítási módszert. Ha elveszíti a jelszavát, így lehetetlen lesz visszaszereznie a fiók elérést. Biztos, hogy folytatja helyreállítási módszer nélkül?"
+        "Nem állított be helyreállítási módszert. Ha elveszíti a jelszavát, így lehetetlen lesz visszaszereznie a fiók elérést. Biztos, hogy folytatja helyreállítási módszer nélkül?"
       ],
       "You have no saved payment methods.": [
         "Nincs elmentve fizetési mód."
@@ -5760,7 +5813,7 @@
         "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
-        "Be van állítva a fiókja helyreállítási módja"
+        "Be van állítva a fiókja helyreállítási módszere"
       ],
       "Your account will be updated once the payment is cleared.": [
         "A fiókját frissítjük, mihelyst megérkezik a befizetés."
@@ -5769,7 +5822,7 @@
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
       "Your data recovery method is set": [
-        "Be van állítva az adatok helyreállítási módja"
+        "Be van állítva az adatok helyreállítási módszere"
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -5781,7 +5834,7 @@
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "A szervezeti jelszó más felhasználókkal való megosztásával, számukra is adminisztrátori jogköröket biztosíthat. Ez egy vészhelyzeti visszaállító kódként is használható, abban az esetben is elérje a szervezetét, ha saját a fiókja elérését elvesztené. Tárolja ezt a jelszót biztonságban."
+        "A szervezeti jelszó más felhasználókkal való megosztásával, számukra is adminisztrátori jogköröket biztosíthat. Ez egy vészhelyzeti helyreállító kódként is használható, abban az esetben is elérje a szervezetét, ha saját a fiókja elérését elvesztené. Tárolja ezt a jelszót biztonságban."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Szervezete e-mailjei végpontok közti titkosítása a szervezeti kulccsal történik. Ezzel az ujjlenyomattal ellenőrizhető, hogy a fiókhoz tartozó összes adminisztrátor birtokolja ugyanazt a kulcsot."
@@ -5856,9 +5909,17 @@
         "A fizetetlen számlák miatti szolgáltatás kimaradások elkerülése érdekében kérjük, hogy mindig legyen elmentve legalább egy valós fizetési mód."
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Csak megtekintés"
+      ]
+    },
     "Input label": {
       "Access": [
         "Elérés"
+      ],
+      "Label (optional)": [
+        "Címke (opcionális)"
       ]
     },
     "Input placeholder": {
@@ -6217,8 +6278,8 @@
         "${ n } hónap"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } az ${ MaxAddresses } e-mail címből",
-        "${ UsedAddresses } a ${ MaxAddresses } e-mail címből"
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
@@ -6929,7 +6990,7 @@
         "Címzett: ${ toEmail }"
       ],
       "Two-password mode": [
-        "Két jelszavas mód"
+        "Kétjelszavas mód"
       ],
       "Undo send": [
         "Küldés visszavonása"
@@ -7826,6 +7887,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7897,26 +7978,6 @@
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } a ${ humanMaxSpace } tárhelyből"
@@ -7950,7 +8011,7 @@
         "felhasználási feltételek"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "A kezdéshez válasszon egy megjelenítendő nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, meghívja egy eseményre vagy megoszt egy fájlt."
+        "A kezdéshez válasszon egy megjelenített nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, meghívja egy eseményre vagy megoszt egy fájlt."
       ],
       "Your ${ planName } subscription is now active.": [
         "A ${ planName } csomagja most már aktív."
@@ -8203,8 +8264,20 @@
       "Invitation revoked": [
         "Meghívó visszavonva"
       ],
+      "Member added": [
+        "Tag hozzáadva",
+        "Tagok hozzáadva"
+      ],
       "Member deleted": [
         "Tag törölve"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Naptár meghívás elutasítva"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Csatlakozott: ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -8222,7 +8295,7 @@
         "e-mail"
       ],
       "notification": [
-        "értesítés"
+        "emlékeztető"
       ]
     },
     "Notification when": {
@@ -8899,6 +8972,22 @@
         "Címkék"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Nem ${ BRAND_NAME } felhasználók meghívásához, ossza meg a naptárat egy hivatkozáson keresztül."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot",
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Adja meg a ${ BRAND_NAME } fiókokat, amelyekkel meg szeretné osztani a naptárat: ${ calendarName }. Meghívót fognak kapni."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "Írjon be egy e-mail címet vagy egy csoportnevet"
@@ -8912,6 +9001,19 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Új címke"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Létrehozta: ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Bekapcsolta a cím hitelesítést a ${ boldSenderEmail } címhez. Nem sikerült ellenőrizni a meghívó hitelességét. Ez megtörténhet akkor is, ha a feladó megváltoztatta a titkosítási kulcsait. Nézze át a névjegy PGP beállításait, vagy kérjen egy új meghívót (${ boldSenderEmail })."
       ]
     },
     "Signup label": {
@@ -9039,16 +9141,16 @@
         "${ UsedAddresses } cím"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } a ${ MaxAddresses } e-mail címből",
-        "${ UsedAddresses } a ${ MaxAddresses } e-mail címből"
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } naptár",
         "${ UsedCalendars } naptár"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } az ${ MaxDomains } saját domain névből",
-        "${ UsedDomains } az ${ MaxDomains } saját domain névből"
+        "${ UsedDomains }, a(z) ${ MaxDomains } saját domain névből",
+        "${ UsedDomains }, a(z) ${ MaxDomains } saját domain névből"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } az ${ MaxMembers } felhasználóból",
@@ -9110,6 +9212,9 @@
       ],
       "Calendar created": [
         "Naptár létrehozva"
+      ],
+      "Calendar information updated": [
+        "Naptáradatok frissítve"
       ],
       "Calendar removed": [
         "Naptár eltávolítva"
@@ -9396,6 +9501,11 @@
         "${ minutes } perc"
       ]
     },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Időzónák keresése"
+      ]
+    },
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } gyorsbillentyűk"
@@ -9602,6 +9712,9 @@
       "Create multiple user accounts": [
         "Több felhasználói fiók létrehozása"
       ],
+      "Create public link": [
+        "Nyilvános hivatkozás létrehozása"
+      ],
       "Create user accounts": [
         "Új felhasználói fiók létrehozása"
       ],
@@ -9706,6 +9819,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
+      ],
+      "Duration": [
+        "Időtartam"
       ],
       "Edit credit/debit card": [
         "Bankkártya szerkesztése"
@@ -9893,7 +10009,7 @@
         "Következő"
       ],
       "No recovery method": [
-        "Nincs helyreállítási mód"
+        "Nincs helyreállítási módszer"
       ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
@@ -10102,7 +10218,7 @@
         "Egyjelszavas módra váltás"
       ],
       "Switch to two-password mode": [
-        "Két jelszavas módra váltás"
+        "Kétjelszavas módra váltás"
       ],
       "Take precautions to avoid data loss!": [
         "Legyen figyelmes az adatvesztés elkerülése érdekében!"
@@ -10112,6 +10228,9 @@
       ],
       "Time zone": [
         "Időzóna"
+      ],
+      "Total paid": [
+        "Kifizetve összesen"
       ],
       "Track your referrals": [
         "Meghívók megtekintése"
@@ -10130,6 +10249,9 @@
       ],
       "Upgrade plan": [
         "Váltás nagyobb csomagra"
+      ],
+      "Users": [
+        "Felhasználók"
       ],
       "Users and addresses": [
         "Felhasználók és címek"
@@ -10178,6 +10300,9 @@
       ],
       "Your recovery status": [
         "A helyreállítási állapota"
+      ],
+      "Your subscriptions": [
+        "Az előfizetései"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Meghívás a ${ MAIL_APP_NAME } alkalmazás kipróbálására"
@@ -10325,7 +10450,7 @@
         "A levelező alapértelmezett elrendezésének beállítása."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Beállítja az alábbi láblécet az elküldött e-mailjeiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását személyre szabhatja a beállítások között."
+        "Beállítja az alábbi láblécet az elküldött üzeneteiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását személyre szabhatja a beállítások között."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"
@@ -10344,9 +10469,6 @@
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
-      ],
-      "This feature is unavailable for the moment": [
-        "Ez a lehetőség jelenleg nem érhető el"
       ],
       "This key cannot be used for encryption": [
         "Ez a kulcs nem használható titkosításhoz"
@@ -10403,6 +10525,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Bekapcsolásakor a kimenő üzenetek automatikusan aláírásra kerülnek, így a címzettek ellenőrizhetik az üzenet hitelességét. Ez együtt működik a lentebb beállított alapértelmezett PGP beállításokkal."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Megosztva végpontok közti titkosítással"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Megosztva végpontok közti titkosítással, ellenőrzött partnerrel"
       ]
     },
     "Tor out of date": {
