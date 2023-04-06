@@ -1,4 +1,4 @@
-import { SpamAction } from '../interfaces';
+import { AutoDeleteSpamAndTrashDaysSetting, SpamAction } from '../interfaces';
 import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
 import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
 
@@ -215,4 +215,10 @@ export const updateHideSenderImages = (HideSenderImages: number) => ({
     url: 'mail/v4/settings/hide-sender-images',
     method: 'put',
     data: { HideSenderImages },
+});
+
+export const updateAutoDelete = (AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting) => ({
+    url: 'mail/v4/settings/auto-delete-spam-and-trash-days',
+    method: 'put',
+    data: { Days: AutoDeleteSpamAndTrashDays },
 });
