@@ -125,15 +125,14 @@ export const getCounterMap = (
     labels: Label[],
     conversationCounters: LabelCount[],
     messageCounters: LabelCount[],
-    mailSettings: MailSettings,
-    location: Location
+    mailSettings: MailSettings
 ) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
     const conversationCountersMap = toMap(conversationCounters, 'LabelID') as { [labelID: string]: LabelCount };
     const messageCountersMap = toMap(messageCounters, 'LabelID') as { [labelID: string]: LabelCount };
 
     return labelIDs.reduce<{ [labelID: string]: LabelCount | undefined }>((acc, labelID) => {
-        const conversationMode = isConversationMode(labelID, mailSettings, location);
+        const conversationMode = isConversationMode(labelID, mailSettings);
         const countersMap = conversationMode ? conversationCountersMap : messageCountersMap;
         acc[labelID] = countersMap[labelID];
         return acc;
@@ -175,7 +174,7 @@ export const isSearch = (searchParams: SearchParameters) =>
     !!searchParams.wildcard;
 
 export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;
-export const hasAttachmentsFilter = (filter: Filter) => filter.Attachments === 1;
+export const hasAttachmentsFilter = (filter?: Filter) => filter?.Attachments === 1;
 
 /**
  * Get the IDs of the folder where the element is currently located
