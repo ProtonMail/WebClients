@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
+import { ErrorBoundary, StandardErrorPage } from '@proton/components/containers';
 import { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { APPS } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -33,22 +34,28 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
                 appInView !== APPS.PROTONCONTACTS && 'drawer-app--hide-on-mobile',
             ])}
         >
-            <div className="drawer-app-inner h100 w100">
-                {Object.entries(iframeSrcMap)
-                    .filter(([, src]) => src)
-                    .map(([app, src]) => (
-                        <iframe
-                            key={app}
-                            id={`drawer-app-iframe-${app}`}
-                            className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
-                            src={src}
-                            title={c('Info').t`Calendar side panel`}
+            <ErrorBoundary component={<StandardErrorPage />}>
+                <div className="drawer-app-inner h100 w100">
+                    {Object.entries(iframeSrcMap)
+                        .filter(([, src]) => src)
+                        .map(([app, src]) => (
+                            <iframe
+                                key={app}
+                                id={`drawer-app-iframe-${app}`}
+                                className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
+                                src={src}
+                                title={c('Info').t`Calendar side panel`}
+                            />
+                        ))}
+                    {appInView === APPS.PROTONCONTACTS && (
+                        <DrawerContactView
+                            onCompose={onCompose}
+                            onMailTo={onMailTo}
+                            customActions={contactCustomActions}
                         />
-                    ))}
-                {appInView === APPS.PROTONCONTACTS && (
-                    <DrawerContactView onCompose={onCompose} onMailTo={onMailTo} customActions={contactCustomActions} />
-                )}
-            </div>
+                    )}
+                </div>
+            </ErrorBoundary>
         </aside>
     );
 };
