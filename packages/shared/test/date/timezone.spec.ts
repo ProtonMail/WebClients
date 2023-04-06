@@ -3,12 +3,10 @@ import { listTimeZones } from '@protontech/timezone-support';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import {
-    ALLOWED_TIMEZONES_LIST,
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     getSupportedTimezone,
     guessTimezone,
-    toAllowedTimeZone,
 } from '../../lib/date/timezone';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
 
@@ -73,34 +71,6 @@ describe('convert utc', () => {
     });
 });
 
-describe('getAllowedTimezone', () => {
-    it('transforms all time zones supported by our library into time zones allowed by the BE', () => {
-        const timeZones = listTimeZones();
-
-        let result = true;
-
-        try {
-            timeZones.forEach((tzid) => toAllowedTimeZone(tzid));
-        } catch {
-            result = false;
-        }
-
-        expect(result).toEqual(true);
-    });
-
-    it('does not transform time zones already allowed', () => {
-        let result = true;
-
-        for (const tzid of ALLOWED_TIMEZONES_LIST) {
-            if (toAllowedTimeZone(tzid) !== tzid) {
-                result = false;
-            }
-        }
-
-        expect(result).toEqual(true);
-    });
-});
-
 describe('getSupportedTimezone', () => {
     it('should remove extra slashes', () => {
         expect(getSupportedTimezone('/Europe/London/')).toEqual('Europe/London');
@@ -154,7 +124,7 @@ describe('getSupportedTimezone', () => {
         const canonical = [
             'Africa/Maputo',
             'Africa/Abidjan',
-            'America/Port_of_Spain',
+            'America/Puerto_Rico',
             'America/New_York',
             'Asia/Macau',
             'Europe/Istanbul',
@@ -176,6 +146,8 @@ describe('getSupportedTimezone', () => {
         const expectedMap: SimpleMap<string> = {
             'Pacific/Kanton': 'Pacific/Fakaofo',
             'Europe/Kyiv': 'Europe/Kiev',
+            'America/Nuuk': 'Atlantic/Stanley',
+            'America/Ciudad_Juarez': 'America/Ojinaga',
         };
 
         Object.keys(expectedMap).forEach((tzid) => {
