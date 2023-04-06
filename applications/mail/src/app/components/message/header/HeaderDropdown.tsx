@@ -23,7 +23,7 @@ export interface DropdownRender {
     render: (props: DropdownRenderProps) => ReactNode;
 }
 
-interface Props extends Omit<DropdownButtonProps<typeof Button>, 'title'> {
+interface Props extends Omit<DropdownButtonProps<typeof Button>, 'title' | 'content'> {
     dropDownClassName?: string;
     content?: ReactNode;
     title?: ReactNode;

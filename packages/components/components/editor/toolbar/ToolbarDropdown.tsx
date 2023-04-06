@@ -7,7 +7,7 @@ import DropdownButton, { DropdownButtonProps } from '../../dropdown/DropdownButt
 import { usePopperAnchor } from '../../popper';
 import Tooltip from '../../tooltip/Tooltip';
 
-interface Props extends Omit<DropdownButtonProps<'button'>, 'title'> {
+interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'> {
     autoClose?: boolean;
     autoCloseOutside?: boolean;
     title?: string;
