@@ -127,7 +127,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         }
 
         const all = [...labels, ...folders];
-        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
+        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings);
         const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
             acc[id] = labelCount?.Unread;
             return acc;
@@ -141,7 +141,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         }
 
         const all = [...labels, ...folders];
-        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
+        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings);
         const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
             acc[id] = labelCount?.Total;
             return acc;
