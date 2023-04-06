@@ -25,7 +25,7 @@
 }
 
 %placeholder-loading {
-	animation: anime-loading-item 0.5s calc(var(--index, 0) * 20ms) easing(ease-out-sine) infinite alternate;
+	animation: anime-loading-item 0.5s calc(var(--index, 0) * 20ms) easing(ease-out-sine) infinite alternate both;
 }
 
 @keyframes anime-item-fade-in {
