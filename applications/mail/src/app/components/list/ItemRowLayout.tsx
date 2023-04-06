@@ -14,12 +14,12 @@ import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemDate from './ItemDate';
-import ItemExpiration from './ItemExpiration';
 import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
+import ItemExpiration from './item-expiration/ItemExpiration';
 
 interface Props {
     isCompactView: boolean;
@@ -138,7 +138,9 @@ const ItemRowLayout = ({
             />
 
             <span className="flex w3e ml0-5 text-center flex-justify-end">
-                {hasExpiration && <ItemExpiration expirationTime={expirationTime} />}
+                {hasExpiration && (
+                    <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
+                )}
                 <ItemAttachmentIcon
                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                     element={element}

@@ -1,10 +1,10 @@
 import { getUnixTime } from 'date-fns';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 
 import { MessageState } from '../logic/messages/messagesTypes';
+import { isAllowedAutoDeleteLabelID } from './autoDelete';
 
 export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, messageState?: MessageState) => {
     const hasFrozenExpiration = isFrozenExpiration(messageState?.data);
@@ -22,7 +22,7 @@ export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, mes
         return false;
     }
 
-    if (!LabelIDs.length || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM) || LabelIDs.includes(MAILBOX_LABEL_IDS.TRASH)) {
+    if (!LabelIDs.length || LabelIDs.some((labelID) => isAllowedAutoDeleteLabelID(labelID))) {
         return false;
     }
 

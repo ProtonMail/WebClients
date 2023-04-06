@@ -46,6 +46,7 @@ import ListSettings from './ListSettings';
 import MailUpsellBanner from './MailUpsellBanner';
 import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
+import AutoDeleteBanner from './auto-delete/AutoDeleteBanner';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
 
@@ -230,6 +231,7 @@ const List = (
                         <MailUpsellBanner needToShowUpsellBanner={needToShowUpsellBanner} columnMode={columnLayout} />
                     )}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
+                    <AutoDeleteBanner labelID={labelID} />
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (

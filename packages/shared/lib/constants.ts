@@ -510,6 +510,7 @@ export enum ORGANIZATION_FLAGS {
 
 export enum APP_UPSELL_REF_PATH {
     MAIL_UPSELL_REF_PATH = 'upsell_mail-banner-',
+    MAIL_UPSELL_MODAL_REF_PATH = 'upsell_mail-modal-',
     CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-banner-',
     DRIVE_UPSELL_REF_PATH = 'upsell_drive-banner-',
     VPN_UPSELL_REF_PATH = 'upsell_vpn-banner-',
@@ -521,6 +522,8 @@ export enum MAIL_UPSELL_PATHS {
     CATCH_ALL = 'catchall',
     BRIDGE = 'bridge',
     PM_ME = 'pm_me',
+    SCHEDULE_SEND = 'schedule_send',
+    AUTO_DELETE = 'auto_delete',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
