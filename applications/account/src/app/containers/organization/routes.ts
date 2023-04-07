@@ -9,9 +9,10 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription: Subscription;
+    isOrgSpamBlockListEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ user, organization, subscription }: Props) => {
+export const getOrganizationAppRoutes = ({ user, organization, subscription, isOrgSpamBlockListEnabled }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser && user.Type !== UserType.EXTERNAL;
     const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -91,6 +92,18 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                     {
                         text: subSectionTitle,
                         id: 'name',
+                    },
+                ],
+            },
+            filter: <SectionConfig>{
+                text: c('Title').t`Organization filters`,
+                to: '/organization-filters',
+                icon: 'filter',
+                available: (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
+                subsections: [
+                    {
+                        text: c('Title').t`Spam and block list`,
+                        id: 'spam',
                     },
                 ],
             },
