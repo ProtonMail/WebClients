@@ -55,6 +55,7 @@ export * from './privacy';
 export * from './recovery';
 export * from './referral';
 export * from './rightToLeft';
+export * from './revisions';
 export * from './search';
 export * from './security';
 export * from './sessions';
