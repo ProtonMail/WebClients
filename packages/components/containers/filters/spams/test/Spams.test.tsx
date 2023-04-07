@@ -13,15 +13,14 @@ describe('Spams - Incoming defaults', () => {
         clearAll();
     });
 
-    // Need to add FF mocks on components Jest side
-    it.skip('Should display an empty list', () => {
+    it('Should display an empty list', () => {
         render(<Spams />);
 
         expect(screen.getByRole('button', { name: 'Add address' })).toBeInTheDocument();
         expect(screen.queryByRole('table')).not.toBeInTheDocument();
     });
 
-    it.skip('Should display blocked email modal', async () => {
+    it('Should display blocked email modal', async () => {
         render(<Spams />);
 
         fireEvent.click(screen.getByRole('button', { name: 'Add address' }));
@@ -29,7 +28,18 @@ describe('Spams - Incoming defaults', () => {
 
         await waitFor(() => screen.getByTestId('spam-modal'));
 
-        expect(screen.getByTestId('spam-modal')).toHaveTextContent('Add to Block List');
+        expect(screen.getByTestId('spam-modal')).toHaveTextContent('Add to your block list');
+    });
+
+    it('Should display blocked email modal with organization', async () => {
+        render(<Spams isOrganization />);
+
+        fireEvent.click(screen.getByRole('button', { name: 'Add address' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Block' }));
+
+        await waitFor(() => screen.getByTestId('spam-modal'));
+
+        expect(screen.getByTestId('spam-modal')).toHaveTextContent('Add to your block list');
     });
 
     it('Modal submission should return correct values', () => {
