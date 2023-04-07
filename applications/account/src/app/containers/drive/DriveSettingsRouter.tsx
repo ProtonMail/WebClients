@@ -1,9 +1,8 @@
 import { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { PrivateMainSettingsArea, ThemesSection } from '@proton/components';
+import { PrivateMainSettingsArea, RetentionDaysSection, ThemesSection } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import RetentionDaysSection from '@proton/components/containers/revisions/RetentionDaysSection';
 
 import { getDriveAppRoutes } from './routes';
 

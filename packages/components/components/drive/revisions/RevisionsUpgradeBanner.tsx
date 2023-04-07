@@ -1,7 +1,7 @@
-import { DRIVE_PRICING_PAGE } from 'proton-drive/src/app/constants/urls';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
+import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 
 const RevisionsUpgradeBanner = () => {
     return (
