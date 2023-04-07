@@ -1,16 +1,20 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader, Tooltip } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useUser } from '@proton/components/hooks';
+import { CircleLoader } from '@proton/atoms';
+import {
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
+    RevisionsUpgradeBanner,
+    useModalTwo,
+    useUser,
+} from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
 import { RevisionList, RevisionsProvider, useRevisionsProvider } from '../../revisions';
 
 import './RevisionsModal.scss';
-import RevisionsUpgradeBanner from "@proton/components/components/drive/RevisionsUpgradeBanner";
 
 interface Props {
     link: DecryptedLink;
@@ -33,16 +37,7 @@ const RevisionsModalContent = () => {
 const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
     return (
         <ModalTwo size="large" {...modalProps}>
-            <ModalTwoHeader
-                title={c('Info').t`Version history: Yearly report`}
-                actions={[
-                    <Tooltip title="Settings">
-                        <Button icon shape="ghost">
-                            <Icon name="cog-wheel" />
-                        </Button>
-                    </Tooltip>,
-                ]}
-            />
+            <ModalTwoHeader title={c('Info').t`Version history: Yearly report`} />
             <ModalTwoContent className="mb-8">
                 <RevisionsProvider link={link}>
                     <RevisionsModalContent />
