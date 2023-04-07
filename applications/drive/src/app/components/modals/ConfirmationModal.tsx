@@ -19,7 +19,7 @@ export interface ConfirmationModalProps {
     message: string;
     canUndo?: boolean;
     onCancel?: () => void;
-    onSubmit?: () => Promise<void>;
+    onSubmit?: () => Promise<void | unknown>;
     title?: string;
     children?: ReactNode;
     cancelText?: ReactNode;
