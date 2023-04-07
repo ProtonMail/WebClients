@@ -15,7 +15,7 @@ import {
     useModalTwo,
 } from '@proton/components';
 
-export interface ConfirmationModalProps {
+export interface ConfirmActionModalProps {
     message: string;
     canUndo?: boolean;
     onCancel?: () => void;
@@ -29,7 +29,7 @@ export interface ConfirmationModalProps {
     size?: ModalSize;
 }
 
-export const ConfirmationModal = ({
+export const ConfirmActionModal = ({
     cancelText = c('Action').t`Cancel`,
     submitText = c('Action').t`Submit`,
     loading,
@@ -41,7 +41,7 @@ export const ConfirmationModal = ({
     message,
     canUndo = false,
     ...modalProps
-}: ConfirmationModalProps & ModalStateProps) => {
+}: ConfirmActionModalProps & ModalStateProps) => {
     const [submitLoading, setSubmitLoading] = useState(false);
 
     const isLoading = loading || submitLoading;
@@ -85,6 +85,6 @@ export const ConfirmationModal = ({
     );
 };
 
-export const useConfirmModal = () => {
-    return useModalTwo<ConfirmationModalProps, void>(ConfirmationModal, false);
+export const useConfirmActionModal = () => {
+    return useModalTwo<ConfirmActionModalProps, void>(ConfirmActionModal, false);
 };
