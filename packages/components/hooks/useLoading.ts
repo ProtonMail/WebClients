@@ -18,6 +18,7 @@ const useLoading = (initialState = false): [boolean, WithLoading] => {
     const counterRef = useRef(0);
 
     useEffect(() => {
+        unmountedRef.current = false;
         return () => {
             unmountedRef.current = true;
         };
