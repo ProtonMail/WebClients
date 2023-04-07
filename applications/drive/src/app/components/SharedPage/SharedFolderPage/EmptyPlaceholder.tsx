@@ -3,9 +3,8 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import { EmptyViewContainer } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { DRIVE_LANDING_PAGE } from '@proton/shared/lib/drive/urls';
 import noContentSvg from '@proton/styles/assets/img/illustrations/shared-page-empty-list.svg';
-
-import { DRIVE_LANDING_PAGE } from '../../../constants/urls';
 
 export const EmptyPlaceholder = () => (
     <div className="flex flex-item-fluid flex-justify-center shared-folder-empty-placeholder-container">

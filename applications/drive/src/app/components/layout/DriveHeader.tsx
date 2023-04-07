@@ -10,13 +10,13 @@ import {
     TopNavbarListItemSettingsDropdown,
     UserDropdown,
     useActiveBreakpoint,
+    useConfirmActionModal,
     useHasRebrandingFeedback,
     useModalState,
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useConfirmModal } from '../modals/ConfirmationModal';
 import DriveOnboardingModal from '../modals/DriveOnboardingModal';
 import ClearSearchDataButton from './search/ClearSearchDataButton';
 import { SearchField } from './search/SearchField';
@@ -38,7 +38,7 @@ export const DriveHeader = ({
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
-    const [confirmModal, showConfirmModal] = useConfirmModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const displayContactsInHeader = useDisplayContactsWidget();
 
     return (
