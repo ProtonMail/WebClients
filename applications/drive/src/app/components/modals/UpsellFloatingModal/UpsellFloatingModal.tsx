@@ -10,10 +10,9 @@ import { useActiveBreakpoint } from '@proton/components/hooks';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 import bigLogoWhite from '@proton/styles/assets/img/drive/big-logo-white.svg';
 import clsx from '@proton/utils/clsx';
-
-import { DRIVE_PRICING_PAGE } from '../../../constants/urls';
 
 import './UpsellFloatingModal.scss';
 
