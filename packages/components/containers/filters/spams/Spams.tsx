@@ -44,13 +44,17 @@ const getActions = (): { type: SpamLocation; getName: () => string }[] => {
 
 const ELEMENTS_PER_PAGE = 10;
 
-const Spams = () => {
+interface Props {
+    isOrganization?: boolean;
+}
+
+const Spams = ({ isOrganization }: Props) => {
     const isMounted = useIsMounted();
     const [modalProps, openModal, renderModal] = useModalState();
 
     const { createNotification } = useNotifications();
 
-    const { fetchSpams, insertSpam, updateSpam, deleteSpam } = useSpamApi();
+    const { fetchSpams, insertSpam, updateSpam, deleteSpam } = useSpamApi(isOrganization);
     const errorHandler = useErrorHandler();
     const abortFetchSpams = useRef(new AbortController());
     const [{ status, list, globalTotal, total, search, display, modal, page }, dispatch] = useSpamState((nextState) => {
