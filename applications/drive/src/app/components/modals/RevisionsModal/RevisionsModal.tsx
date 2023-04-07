@@ -8,9 +8,9 @@ import { useUser } from '@proton/components/hooks';
 
 import { DecryptedLink } from '../../../store';
 import { RevisionList, RevisionsProvider, useRevisionsProvider } from '../../revisions';
-import RevisionsModalUpgradeBanner from './RevisionsModalUpgradeBanner';
 
 import './RevisionsModal.scss';
+import RevisionsUpgradeBanner from "@proton/components/components/drive/RevisionsUpgradeBanner";
 
 interface Props {
     link: DecryptedLink;
@@ -21,7 +21,7 @@ const RevisionsModalContent = () => {
     const { isLoading, currentRevision, categorizedRevisions } = useRevisionsProvider();
     return (
         <>
-            {!user.hasPaidDrive ? <RevisionsModalUpgradeBanner /> : null}
+            {!user.hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
             {isLoading && <CircleLoader className="w100 mauto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
                 <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />

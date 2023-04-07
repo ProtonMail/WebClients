@@ -3,6 +3,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { PrivateMainSettingsArea, ThemesSection } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import RetentionDaysSection from '@proton/components/containers/revisions/RetentionDaysSection';
 
 import { getDriveAppRoutes } from './routes';
 
@@ -16,7 +17,7 @@ const DriveSettingsRouter = ({
     const { path } = useRouteMatch();
 
     const {
-        routes: { general },
+        routes: { general, revisions },
     } = driveAppRoutes;
 
     return (
@@ -24,6 +25,11 @@ const DriveSettingsRouter = ({
             <Route path={getSectionPath(path, general)}>
                 <PrivateMainSettingsArea config={general}>
                     <ThemesSection />
+                </PrivateMainSettingsArea>
+            </Route>
+            <Route path={getSectionPath(path, revisions)}>
+                <PrivateMainSettingsArea config={revisions}>
+                    <RetentionDaysSection />
                 </PrivateMainSettingsArea>
             </Route>
             {redirect}
