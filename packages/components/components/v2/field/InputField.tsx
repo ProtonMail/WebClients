@@ -160,6 +160,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     };
 
     const Element: ElementType = as || defaultElement;
+    // Even if it's undefined we don't want to define the attribute since it will override spreading of rest.
+    const testIdProps = dataTestId
+        ? {
+              'data-testid': dataTestId,
+          }
+        : undefined;
 
     return (
         <div
@@ -188,7 +194,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     disabled={disabled}
                     aria-describedby={assistiveUid}
                     {...rest}
-                    data-testid={dataTestId}
+                    {...testIdProps}
                     suffix={getSuffix()}
                 />
             </div>
