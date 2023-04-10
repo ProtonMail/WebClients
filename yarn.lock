@@ -1886,10 +1886,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:8.37.0":
-  version: 8.37.0
-  resolution: "@eslint/js@npm:8.37.0"
-  checksum: 7a07fb085c94ce1538949012c292fd3a6cd734f149bc03af6157dfbd8a7477678899ef57b4a27e15b36470a997389ad79a0533d5880c71e67720ae1a7de7c62d
+"@eslint/js@npm:8.38.0":
+  version: 8.38.0
+  resolution: "@eslint/js@npm:8.38.0"
+  checksum: 1f28987aa8c9cd93e23384e16c7220863b39b5dc4b66e46d7cdbccce868040f455a98d24cd8b567a884f26545a0555b761f7328d4a00c051e7ef689cbea5fce1
   languageName: node
   linkType: hard
 
@@ -1949,19 +1949,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.2.4":
-  version: 1.2.4
-  resolution: "@floating-ui/core@npm:1.2.4"
-  checksum: 1c163ea1804e2b0a28fda6e32efed0e242d0db8081fd24aab9d1cbb100f94a558709231c483bf74bf09a9204ea6e7845813d43b5322ceb6ee63285308f68f65b
+"@floating-ui/core@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "@floating-ui/core@npm:1.2.6"
+  checksum: e4aa96c435277f1720d4bc939e17a79b1e1eebd589c20b622d3c646a5273590ff889b8c6e126f7be61873cf8c4d7db7d418895986ea19b8b0d0530de32504c3a
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "@floating-ui/dom@npm:1.2.5"
+"@floating-ui/dom@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "@floating-ui/dom@npm:1.2.6"
   dependencies:
-    "@floating-ui/core": ^1.2.4
-  checksum: a21c272a36c7cd7d337eaed82c1f8a81ccc5003d04cefa07591dc7fbb0a24d57a2c097b410593b5416145a68ac10a7a7a745c3cc4f8196268fa002364d28804b
+    "@floating-ui/core": ^1.2.6
+  checksum: 2226c6c244b96ae75ab14cc35bb119c8d7b83a85e2ff04e9d9800cffdb17faf4a7cf82db741dd045242ced56e31c8a08e33c8c512c972309a934d83b1f410441
   languageName: node
   linkType: hard
 
@@ -3724,14 +3724,14 @@ __metadata:
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
     "@types/jest": ^28.1.8
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     babel-jest: ^28.1.3
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
     cross-fetch: ^3.1.5
     date-fns: ^2.29.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
@@ -3769,12 +3769,12 @@ __metadata:
     "@types/jest": ^27.5.2
     "@types/mustache": ^4.2.2
     "@types/node": ^18.15.11
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     babel-loader: ^9.1.2
     chalk: ^4.1.2
     commander: ^10.0.0
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     eslint-plugin-storybook: ^0.6.11
     jest: ^28.1.3
     mustache: ^4.2.0
@@ -3801,7 +3801,7 @@ __metadata:
     "@types/node": ^18.15.11
     "@types/tinycolor2": ^1.4.3
     css-tree: ^2.3.1
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     prettier: ^2.8.7
     tinycolor2: ^1.6.0
@@ -3824,7 +3824,7 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.21.4
     "@emoji-mart/data": ^1.0.3
-    "@floating-ui/dom": ^1.2.5
+    "@floating-ui/dom": ^1.2.6
     "@noble/ed25519": 1.7.3
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
@@ -3840,7 +3840,7 @@ __metadata:
     "@types/jest": ^28.1.8
     "@types/markdown-it": ^12.2.3
     "@types/qrcode.react": ^1.0.2
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     "@types/react-router": ^5.1.20
     "@types/react-router-dom": ^5.3.3
@@ -3854,7 +3854,7 @@ __metadata:
     docx-preview: ^0.1.15
     dompurify: ^3.0.1
     emoji-mart: ^5.1.0
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     intersection-observer: ^0.12.2
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
@@ -3873,7 +3873,7 @@ __metadata:
     react-router: ^5.3.4
     react-router-dom: ^5.3.4
     react-sortable-hoc: ^2.0.0
-    react-virtualized: ^9.22.3
+    react-virtualized: ^9.22.4
     resize-observer: ^1.0.4
     roosterjs: 8.40.2
     tabbable: ^6.1.1
@@ -3903,7 +3903,7 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     typescript: ^5.0.3
   languageName: unknown
   linkType: soft
@@ -3919,7 +3919,7 @@ __metadata:
     chai: ^4.3.7
     chai-as-promised: ^7.1.1
     comlink: ^4.4.1
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     eslint-plugin-chai-friendly: ^0.7.2
     karma: ^6.4.1
     karma-chrome-launcher: ^3.1.1
@@ -3948,7 +3948,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/utils": "workspace:packages/utils"
     "@types/jasmine": ^4.3.1
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     idb: ^7.1.1
     jasmine: ^4.6.0
     jasmine-core: ^4.6.0
@@ -3970,7 +3970,7 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.57.0
     "@typescript-eslint/parser": ^5.57.0
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-prettier: ^8.8.0
@@ -3995,7 +3995,7 @@ __metadata:
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
     "@types/jest": ^27.5.2
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     react: ^17.0.2
     react-test-renderer: ^17.0.2
@@ -4010,10 +4010,10 @@ __metadata:
   dependencies:
     chalk: ^4.1.2
     cross-env: ^7.0.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     execa: ^5.1.1
     gettext-parser: ^6.0.0
-    glob: ^9.3.4
+    glob: ^9.3.5
     prettier: ^2.8.7
     ttag-cli: ^1.10.5
   bin:
@@ -4032,7 +4032,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@types/jasmine": ^4.3.1
     "@types/pkijs": 0.0.14
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jasmine: 4.6.0
     jasmine-core: 4.6.0
     karma: ^6.4.1
@@ -4053,7 +4053,7 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:packages/shared"
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^29.5.0
     jest-fetch-mock: ^3.0.3
     json-schema-to-typescript: ^12.0.0
@@ -4093,10 +4093,10 @@ __metadata:
     css-loader: ^6.7.3
     css-minimizer-webpack-plugin: ^5.0.0
     dedent: ^0.7.0
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     eslint-webpack-plugin: ^3.2.0
     execa: ^5.1.1
-    favicons: ^7.1.1
+    favicons: ^7.1.2
     favicons-webpack-plugin: ^6.0.0
     fork-ts-checker-webpack-plugin: ^7.3.0
     html-webpack-plugin: ^5.5.0
@@ -4110,7 +4110,7 @@ __metadata:
     prettier: ^2.8.7
     react-refresh: ^0.14.0
     resolve-url-loader: ^5.0.0
-    sass: ^1.60.0
+    sass: ^1.61.0
     sass-loader: ^13.2.2
     terser-webpack-plugin: ^5.3.7
     ttag: ^1.7.24
@@ -4132,7 +4132,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     abortcontroller-polyfill: ^1.7.5
     core-js: ^3.30.0
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     regenerator-runtime: ^0.13.11
     resize-observer: ^1.0.4
     yetch: ^1.1.1
@@ -4164,7 +4164,7 @@ __metadata:
     "@types/webpack-env": ^1.18.0
     date-fns: ^2.29.3
     dompurify: ^3.0.1
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     file-saver: ^2.0.5
     hi-base32: ^0.5.1
     ical.js: ^1.5.0
@@ -4205,7 +4205,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     asmcrypto.js: ^2.3.2
     bcryptjs: ^2.4.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     mocha: ^10.2.0
     prettier: ^2.8.7
     typescript: ^5.0.3
@@ -4230,7 +4230,7 @@ __metadata:
     include-media: ^2.0.0
     inter-ui: ^3.19.3
     prettier: ^2.8.7
-    sass: ^1.60.0
+    sass: ^1.61.0
     stylelint: ^14.16.1
     stylelint-config-prettier-scss: ^0.0.1
     stylelint-config-standard-scss: ^5.0.0
@@ -4256,7 +4256,7 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": ^27.5.2
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     lodash: ^4.17.21
     ts-jest: ^28.0.8
@@ -6761,14 +6761,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.56":
-  version: 17.0.56
-  resolution: "@types/react@npm:17.0.56"
+"@types/react@npm:^17.0.57":
+  version: 17.0.57
+  resolution: "@types/react@npm:17.0.57"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: c9e156395c5b97407ae51886659c2ba16a8e62d4fad8ceb29293f76931b58de42a385a179b32da725e72cd04d74c2d60e54cd495c8815b4feee2e4da381b7e52
+  checksum: c6cb8d6d261fbdc2650e00260efaf0c0a241ca72f22a43e96f32f7ab0379e5e1522f4936b6d8f97c0d8793a4fd949a90e863daa2449824f7586903cc4d299d92
   languageName: node
   linkType: hard
 
@@ -14728,14 +14728,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.37.0":
-  version: 8.37.0
-  resolution: "eslint@npm:8.37.0"
+"eslint@npm:^8.38.0":
+  version: 8.38.0
+  resolution: "eslint@npm:8.38.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.4.0
     "@eslint/eslintrc": ^2.0.2
-    "@eslint/js": 8.37.0
+    "@eslint/js": 8.38.0
     "@humanwhocodes/config-array": ^0.11.8
     "@humanwhocodes/module-importer": ^1.0.1
     "@nodelib/fs.walk": ^1.2.8
@@ -14774,7 +14774,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: 80f3d5cdce2d671f4794e392d234a78d039c347673defb0596268bd481e8f30a53d93c01ff4f66a546c87d97ab4122c0e9cafe1371f87cb03cee6b7d5aa97595
+  checksum: 73b6d9b650d0434aa7c07d0a1802f099b086ee70a8d8ba7be730439a26572a5eb71def12125c82942be2ec8ee5be38a6f1b42a13e40d4b67f11a148ec9e263eb
   languageName: node
   linkType: hard
 
@@ -15399,14 +15399,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"favicons@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "favicons@npm:7.1.1"
+"favicons@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "favicons@npm:7.1.2"
   dependencies:
     escape-html: ^1.0.3
-    sharp: ^0.31.1
-    xml2js: ^0.4.23
-  checksum: 8003334e262376f1f7fd9aace34d17b450d2fb86ad2437077f627a5d860a1d6f1f73f7b08b8f10e46c52ca1082bece724d0effaf8881a9dcbb90e9151fbe852e
+    sharp: ^0.32.0
+    xml2js: ^0.5.0
+  checksum: 44eb965f5e8cd30e20654430918895f2448b5679b43458c80591e89214dc87d4b49e11c1a38fbb1ef6ad3623032cc86db0844b91139ba97ac3cee916494ec137
   languageName: node
   linkType: hard
 
@@ -16698,15 +16698,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"glob@npm:^9.2.0, glob@npm:^9.3.4":
-  version: 9.3.4
-  resolution: "glob@npm:9.3.4"
+"glob@npm:^9.2.0, glob@npm:^9.3.5":
+  version: 9.3.5
+  resolution: "glob@npm:9.3.5"
   dependencies:
     fs.realpath: ^1.0.0
     minimatch: ^8.0.2
     minipass: ^4.2.4
     path-scurry: ^1.6.1
-  checksum: bcf49eaf475dc4ce8d4e98f896408a9f6507a2cb7d24a207c012cb318b969e04a02bcde2ff2920eadd5055ccae444a007b769e418147a56268fab2cda8694cde
+  checksum: 94b093adbc591bc36b582f77927d1fb0dbf3ccc231828512b017601408be98d1fe798fc8c0b19c6f2d1a7660339c3502ce698de475e9d938ccbb69b47b647c84
   languageName: node
   linkType: hard
 
@@ -21118,9 +21118,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^13.2.0":
-  version: 13.2.0
-  resolution: "lint-staged@npm:13.2.0"
+"lint-staged@npm:^13.2.1":
+  version: 13.2.1
+  resolution: "lint-staged@npm:13.2.1"
   dependencies:
     chalk: 5.2.0
     cli-truncate: ^3.1.0
@@ -21137,7 +21137,7 @@ fsevents@^1.2.7:
     yaml: ^2.2.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: dcaa8fbbde567eb8ac27230a18b3a22f30c278c524c0e27cf7d4110d662d5d33ed68a585a2e1b05075ef1c262e853f557a5ae046188b723603246d63e6b9f07b
+  checksum: 5788d3fe38e69b7f7b7f700284d4e10738978a0916bc77d3f6253c43a030fc4f01f89c09da349fb658f929f3393d8b1e3eaabaac5b604416ebc33476640b51ce
   languageName: node
   linkType: hard
 
@@ -22082,12 +22082,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"memfs@npm:^3.4.13":
-  version: 3.4.13
-  resolution: "memfs@npm:3.4.13"
+"memfs@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "memfs@npm:3.5.0"
   dependencies:
     fs-monkey: ^1.0.3
-  checksum: 3f9717d6f060919d53f211acb6096a0ea2f566a8cbcc4ef7e1f2561e31e33dc456053fdf951c90a49c8ec55402de7f01b006b81683ab7bd4bdbbd8c9b9cdae5f
+  checksum: 8427db6c3644eeb9119b7a74b232d9a6178d018878acce6f05bd89d95e28b1073c9eeb00127131b0613b07a003e2e7b15b482f9004e548fe06a0aba7aa02515c
   languageName: node
   linkType: hard
 
@@ -23156,12 +23156,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-addon-api@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "node-addon-api@npm:5.0.0"
+"node-addon-api@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "node-addon-api@npm:6.0.0"
   dependencies:
     node-gyp: latest
-  checksum: 7c5e2043ac37f6108784d94ed73a44ae6d3e68eb968de60680922fc6bc3d17fa69448c0feb4e0c9d3f4c74a0324822e566a8340a56916d9d6f23cb3e85620334
+  checksum: a34a901b9f0d6d201a173e12ed378033e4e0f27f77fd27c225dc7e6f96e88a88e94bd78b2b0404fc95deee20a137f1cbfc92738cbfba38862ed9b6c2e61c1ab2
   languageName: node
   linkType: hard
 
@@ -25820,11 +25820,11 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^12.1.5
     "@types/jest": ^28.1.8
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     babel-jest: ^28.1.3
     cross-env: ^7.0.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
@@ -25852,11 +25852,11 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^12.1.5
     "@types/jest": ^28.1.8
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     babel-jest: ^28.1.3
     cross-env: ^7.0.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
@@ -25891,7 +25891,7 @@ fsevents@^1.2.7:
     "@testing-library/react-hooks": ^8.0.1
     "@testing-library/user-event": ^13.5.0
     "@types/jest": ^28.1.8
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     "@types/react-helmet": ^6.1.6
     babel-jest: ^28.1.3
@@ -25899,7 +25899,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     date-fns: ^2.29.3
     dompurify: ^3.0.1
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
@@ -25932,7 +25932,7 @@ fsevents@^1.2.7:
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
     "@types/mime-types": ^2.1.1
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     "@types/react-window": ^1.8.5
     babel-plugin-transform-class-properties: ^6.24.1
@@ -25941,7 +25941,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     cross-var: ^1.1.0
     ejs-webpack-loader: ^2.2.2
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
@@ -25968,7 +25968,7 @@ fsevents@^1.2.7:
     "@types/chance": ^1.1.3
     chance: ^1.1.11
     cross-fetch: ^3.1.5
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     node-fetch: ^3.3.1
     pdf-parse: ^1.1.1
     playwright: ^1.32.2
@@ -26001,7 +26001,7 @@ fsevents@^1.2.7:
     "@types/dompurify": ^3.0.1
     "@types/history": ^4.7.11
     "@types/jest": ^28.1.8
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     "@types/turndown": ^5.0.1
     "@typescript-eslint/eslint-plugin": ^5.57.0
@@ -26012,7 +26012,7 @@ fsevents@^1.2.7:
     date-fns: ^2.29.3
     declassify: ^2.1.0
     dompurify: ^3.0.1
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-prettier: ^8.8.0
     idb: ^7.1.1
@@ -26058,11 +26058,11 @@ fsevents@^1.2.7:
     "@storybook/manager-webpack5": ^6.5.16
     "@storybook/react": ^6.5.16
     "@storybook/source-loader": ^6.5.16
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     babel-loader: ^9.1.2
     cross-env: ^7.0.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     eslint-plugin-storybook: ^0.6.11
     lodash.startcase: ^4.4.0
     netlify-cli: ^13.2.2
@@ -26086,7 +26086,7 @@ fsevents@^1.2.7:
     "@proton/polyfill": "workspace:packages/polyfill"
     babel-jest: ^28.1.3
     cross-env: ^7.0.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
@@ -26109,10 +26109,10 @@ fsevents@^1.2.7:
     "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
-    "@types/react": ^17.0.56
+    "@types/react": ^17.0.57
     "@types/react-dom": ^17.0.19
     cross-env: ^7.0.3
-    eslint: ^8.37.0
+    eslint: ^8.38.0
     prettier: ^2.8.7
     proton-account: "workspace:applications/account"
     react: ^17.0.2
@@ -26863,9 +26863,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-virtualized@npm:^9.22.3":
-  version: 9.22.3
-  resolution: "react-virtualized@npm:9.22.3"
+"react-virtualized@npm:^9.22.4":
+  version: 9.22.4
+  resolution: "react-virtualized@npm:9.22.4"
   dependencies:
     "@babel/runtime": ^7.7.2
     clsx: ^1.0.4
@@ -26874,9 +26874,9 @@ fsevents@^1.2.7:
     prop-types: ^15.7.2
     react-lifecycles-compat: ^3.0.4
   peerDependencies:
-    react: ^15.3.0 || ^16.0.0-alpha
-    react-dom: ^15.3.0 || ^16.0.0-alpha
-  checksum: 5e3b566592293bc0057bc6be4f6ee29c58c8931421d2882a3ef45ca9b24c6f3ea78bbc5a182c2916af6520845e5a90f569b3a63c9b5e89428720913e6d6239cc
+    react: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
+    react-dom: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
+  checksum: 0f3e9d0778c33ccb1a2a45a1697746ef92adc78f2006d7563b20c67a7cc972aa81edb0e7d32ef17a52ae921be4c7649fe5919699bf378f12745b679c15e88146
   languageName: node
   linkType: hard
 
@@ -27976,7 +27976,7 @@ fsevents@^1.2.7:
     eslint-plugin-jsx-a11y: ^6.7.1
     husky: ^8.0.3
     is-ci: ^3.0.1
-    lint-staged: ^13.2.0
+    lint-staged: ^13.2.1
     prettier: ^2.8.7
     sort-package-json: ^2.4.1
     stylelint-use-logical-spec: ^5.0.0
@@ -28142,16 +28142,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.60.0":
-  version: 1.60.0
-  resolution: "sass@npm:1.60.0"
+"sass@npm:^1.61.0":
+  version: 1.61.0
+  resolution: "sass@npm:1.61.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 06e163c37af466ec194cf2ed8dab616372afeb19322d356947d48ea664fc38398ae77c4d91bea9cb0ace954ce289d5518d0f8555ecc49f6bf2539a8ef52fc580
+  checksum: 31bfb3719f1bb1299bec7b8918bcbca77efa7328b8030cc8e665ed55a02bc5498a3e543b4eb0d06d55ceda8b2f5b2b3176f0678854a8277cb19a59addf65533f
   languageName: node
   linkType: hard
 
@@ -28513,20 +28513,20 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.31.1":
-  version: 0.31.2
-  resolution: "sharp@npm:0.31.2"
+"sharp@npm:^0.32.0":
+  version: 0.32.0
+  resolution: "sharp@npm:0.32.0"
   dependencies:
     color: ^4.2.3
     detect-libc: ^2.0.1
-    node-addon-api: ^5.0.0
+    node-addon-api: ^6.0.0
     node-gyp: latest
     prebuild-install: ^7.1.1
     semver: ^7.3.8
     simple-get: ^4.0.1
     tar-fs: ^2.1.1
     tunnel-agent: ^0.6.0
-  checksum: 076717b7a073ea47bb522ff2931b74b6608daeb6f7ae334e4848d47fdf4d23bcb18cd49044fd5fb27ef27a1a4aa87d141894d67d1c4bb15a6e2e63cf4dbe329e
+  checksum: 82c6046038f45f1fdeb732cff8be6a8a3fb5eb25f46f4c3ecb4b71363c2c387b52de8c0c5c4674f2400663e467b8a7b93dbc5d70b3f0e145cb45fc27d39c5709
   languageName: node
   linkType: hard
 
@@ -33051,13 +33051,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.23":
-  version: 0.4.23
-  resolution: "xml2js@npm:0.4.23"
+"xml2js@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "xml2js@npm:0.5.0"
   dependencies:
     sax: ">=0.6.0"
     xmlbuilder: ~11.0.0
-  checksum: ca0cf2dfbf6deeaae878a891c8fbc0db6fd04398087084edf143cdc83d0509ad0fe199b890f62f39c4415cf60268a27a6aed0d343f0658f8779bd7add690fa98
+  checksum: 1aa71d62e5bc2d89138e3929b9ea46459157727759cbc62ef99484b778641c0cd21fb637696c052d901a22f82d092a3e740a16b4ce218e81ac59b933535124ea
   languageName: node
   linkType: hard
 
