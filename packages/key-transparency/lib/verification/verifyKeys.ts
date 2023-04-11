@@ -13,7 +13,7 @@ import { fetchEpoch } from '../helpers/fetchHelpers';
 import { getEmailDomain, isTimestampTooOld, ktSentryReport } from '../helpers/utils';
 import { Epoch, KT_STATUS, KeyWithFlags } from '../interfaces';
 import { verifySKLInsideEpoch } from './verifyEpochs';
-import { verifySKLAbsence } from './verifyProofs';
+import { verifySKLAbsenceOrObsolescence } from './verifyProofs';
 
 /**
  * Check that two SKLs are identical
@@ -131,7 +131,7 @@ export const verifyPublicKeys = async (
     if (!signedKeyList) {
         try {
             if (!NO_KT_DOMAINS.includes(getEmailDomain(email))) {
-                await verifySKLAbsence(api, email);
+                await verifySKLAbsenceOrObsolescence(api, email);
             }
             return KT_STATUS.KT_PASSED;
         } catch (error: any) {
