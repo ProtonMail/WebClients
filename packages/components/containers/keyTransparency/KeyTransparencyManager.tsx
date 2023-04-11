@@ -69,6 +69,11 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
      * Key Transparency, we postpone verification to a later time
      */
     const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (keyList, email, SignedKeyList, IgnoreKT) => {
+        const feature = await get().then((result) => result?.Value);
+        if (feature === KtFeatureEnum.DISABLE) {
+            return;
+        }
+
         const ktStatus = await verifyPublicKeys(keyList, email, SignedKeyList, normalApi, IgnoreKT);
 
         if (SignedKeyList) {
