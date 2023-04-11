@@ -1016,6 +1016,26 @@
         "Tím se odpojí všechny routery a klienti, kteří používají tento certifikát."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Doručená pošta ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 sledovacích prvků odstraněno"
+      ],
+      "Auto forwarded": [
+        "Automaticky přeposláno"
+      ],
+      "Email received": [
+        "E-mail přijat"
+      ],
+      "Encrypted": [
+        "Šifrováno"
+      ],
+      "New email": [
+        "Nový e-mail"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikace ${ BRAND_NAME }"
@@ -2610,6 +2630,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatické vymazání zpráv starších než 30 dní z koše a spamu. Užijte si tyto a další výhody při navýšení tarifu."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
       ],
@@ -2622,6 +2645,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail a znaménko plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
@@ -2630,6 +2656,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Ikona obsahující logo ${ BRAND_NAME } následované znaménkem plus"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
@@ -3916,6 +3945,17 @@
       ],
       "(during your first month)": [
         "(během prvního měsíce)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automaticky přeposlat"
+      ],
+      "Gmail messages to your inbox": [
+        "Zprávy Gmail do složky Doručená pošta"
+      ],
+      "Sign in with Google": [
+        "Přihlásit se pomocí Googlu"
       ]
     },
     "Go to sign in": {
@@ -6803,6 +6843,9 @@
       "Auto show remote images": [
         "Automaticky zobrazovat externí obrázky"
       ],
+      "Auto-delete unwanted messages": [
+        "Automaticky mazat nechtěné zprávy"
+      ],
       "Auto-detect primary time zone": [
         "Automaticky rozpoznat primární časové pásmo"
       ],
@@ -8076,9 +8119,6 @@
       "Calendar": [
         "Kalendář"
       ],
-      "Drive": [
-        "Disk"
-      ],
       "Inbox": [
         "Doručená pošta"
       ],
@@ -8274,6 +8314,9 @@
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Automaticky mazat zprávy ve spamu a koši"
+      ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
@@ -8325,6 +8368,9 @@
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
       ],
+      "Hide My Email aliases": [
+        "Hide My Email aliasy"
+      ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
         "Vysokorychlostní VPN na ${ n } zařízeních",
@@ -8360,6 +8406,12 @@
       ],
       "Router support": [
         "Podpora routeru"
+      ],
+      "Schedule messages at any time": [
+        "Plánování zpráv v libovolném čase"
+      ],
+      "Search message content": [
+        "Hledat v obsahu zpráv"
       ],
       "Secure Core servers": [
         "Servery Secure Core"
@@ -8412,6 +8464,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
       ],
+      "Up to 15 email addresses": [
+        "Až 15 e-mailových adres"
+      ],
+      "Up to 500 GB of storage": [
+        "Až 500 GB úložiště"
+      ],
       "User credential management": [
         "Správa uživatelů"
       ],
@@ -8420,6 +8478,14 @@
       ],
       "Worldwide streaming services": [
         "Celosvětové streamovací služby"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -10417,6 +10483,9 @@
       "Clear": [
         "Vyčistit"
       ],
+      "Clear out the junk": [
+        "Pročištění nevyžádané pošty"
+      ],
       "Composing": [
         "Psaní"
       ],
@@ -11200,6 +11269,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Přizpůsobit import pro snížení počtu štítků"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Smazat zprávy v koši a spamu po 30 dnech. Zapnutím této možnosti odstraníte všechny zprávy, které se aktuálně nacházejí ve složkách koš a spam. Budoucí zprávy ve spamu a koši budou automaticky smazány po 30 dnech."
       ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"

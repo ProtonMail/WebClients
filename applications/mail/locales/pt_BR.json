@@ -1237,6 +1237,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } concluídos"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } caixa de entrada"
+      ],
+      "5 trackers removed": [
+        "5 rastreadores removidos"
+      ],
+      "Auto forwarded": [
+        "Encaminhado automaticamente"
+      ],
+      "Email received": [
+        "E-mail recebido"
+      ],
+      "Encrypted": [
+        "Criptografado"
+      ],
+      "New email": [
+        "Novo E-mail"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicativos do ${ BRAND_NAME }"
@@ -2810,11 +2830,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Logo de ${ MAIL_APP_NAME } e um sinal de mais"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } em configurações."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Limpe automaticamente as mensagens com mais de 30 dias da lixeira e do spam. Aproveite este e outros benefícios ao realizar o upgrade."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descriptografando contatos... Isso pode levar alguns minutos. Quando o processo for concluído, você poderá baixar o arquivo com todos seus contatos exportados."
@@ -2843,6 +2863,9 @@
       ],
       "No labels": [
         "Nenhum marcador"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail e um sinal de mais"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contato. Se o seu arquivo for maior, divida-o em arquivos menores.",
@@ -3832,6 +3855,11 @@
         "Não lida"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Tem o arquivo"
+      ]
+    },
     "Filter preview": {
       "read": [
         "ler"
@@ -3848,11 +3876,6 @@
     "Font Size Default": {
       "Default": [
         "Padrão"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidade por padrão."
       ]
     },
     "forwardmessage": {
@@ -3939,6 +3962,17 @@
         "Começar"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Encaminhar automaticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "Mensagens do Gmail para sua caixa de entrada"
+      ],
+      "Sign in with Google": [
+        "Entre com Google"
+      ]
+    },
     "Group": {
       "Account": [
         "Conta"
@@ -3997,9 +4031,6 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4548,6 +4579,12 @@
       "Attention required": [
         "Atenção necessária"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Exclua automaticamente as mensagens que estão em spam há mais de 30 dias."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Exclua automaticamente as mensagens que estão na lixeira há mais de 30 dias."
+      ],
       "Background color": [
         "Cor de fundo"
       ],
@@ -4956,6 +4993,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "A mensagem será enviada amanhã às ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "As mensagens que estiverem em spam por mais de 30 dias serão excluídas automaticamente."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "As mensagens que estiverem na lixeira por mais de 30 dias serão excluídas automaticamente."
       ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
@@ -5419,6 +5462,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Atualize para excluir automaticamente as mensagens que estão em spam por mais de 30 dias."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Atualize para excluir automaticamente as mensagens que estão na lixeira há mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Atualize para criar mais pastas, filtros e endereços."
@@ -6904,17 +6953,20 @@
         "Nome do marcador"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Mudar ou adicionar conta"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Mudar ou adicionar conta"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Excluir automaticamente spam e mensagens da lixeira"
+      ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
       ],
@@ -8196,6 +8248,9 @@
       ],
       "Change my answer": [
         "Alterar minha resposta"
+      ],
+      "Clear out the junk": [
+        "Limpe o lixo"
       ],
       "Clearing data": [
         "Limpando dados"

@@ -1647,9 +1647,6 @@
       ],
       "Work": [
         "工作"
-      ],
-      "Yomi": [
-        "读音"
       ]
     },
     "Country name": {
@@ -3869,9 +3866,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "验证码"
-      ],
       "Email": [
         "邮件"
       ],
@@ -3880,9 +3874,6 @@
       ],
       "No verification method available": [
         "没有可用的验证方法"
-      ],
-      "SMS": [
-        "短信"
       ]
     },
     "Import calendar": {
@@ -6987,9 +6978,6 @@
       "Verification code": [
         "验证码"
       ],
-      "VPN Accelerator": [
-        "VPN 加速器"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
       ],
@@ -7519,9 +7507,6 @@
       "Calendar": [
         "日历"
       ],
-      "Drive": [
-        "云盘"
-      ],
       "Inbox": [
         "收件箱"
       ],
@@ -7723,6 +7708,9 @@
       "GDPR data processing agreement": [
         "GDPR 数据处理协议"
       ],
+      "Hide My Email aliases": [
+        "Hide My Email 邮箱别名"
+      ],
       "High-speed VPN on ${ n } devices": [
         "${ n } 台设备可同时接入高速 VPN"
       ],
@@ -7755,6 +7743,9 @@
       ],
       "Router support": [
         "支持路由器部署"
+      ],
+      "Search message content": [
+        "搜索邮件全文"
       ],
       "Secure Core servers": [
         "Secure Core 服务器"
@@ -7803,6 +7794,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "升级容量至 ${ totalStorageSize }"
+      ],
+      "Up to 15 email addresses": [
+        "最多 15 个邮箱地址"
+      ],
+      "Up to 500 GB of storage": [
+        "最高 500 GB 存储空间"
       ],
       "User credential management": [
         "用户身份验证管理"
@@ -8528,9 +8525,6 @@
       ".dmg (10.12 or later)": [
         ".dmg（10.12 或更高版本）"
       ],
-      ".exe (64-bit)": [
-        ".exe（64 位）"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm（Fedora/openSUSE）"
       ],
@@ -8544,9 +8538,6 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "比特币"
-      ],
       "Credit/debit card": [
         "信用卡/借记卡"
       ],
@@ -9440,9 +9431,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } 桥接"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } 快捷键"
       ],
@@ -9955,9 +9943,6 @@
       ],
       "Open pagination": [
         "打开分页"
-      ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
         "OpenVPN 配置文件"
