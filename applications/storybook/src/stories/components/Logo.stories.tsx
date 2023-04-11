@@ -6,6 +6,7 @@ import {
     Logo,
     LogoProps,
     MailLogo,
+    PassLogo,
     ProtonLogo,
     RadioGroup,
     VpnLogo,
@@ -37,6 +38,7 @@ const appNames: Required<LogoProps>['appName'][] = [
     APPS.PROTONCALENDAR,
     APPS.PROTONDRIVE,
     APPS.PROTONVPN_SETTINGS,
+    APPS.PROTONPASS,
 ];
 
 const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'glyph-only'];
@@ -91,8 +93,11 @@ export const Individual = () => (
         <div className="mb2">
             <DriveLogo />
         </div>
-        <div>
+        <div className="mb2">
             <VpnLogo />
+        </div>
+        <div>
+            <PassLogo />
         </div>
     </div>
 );
