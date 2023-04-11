@@ -1,7 +1,8 @@
 import { verifyLatestProofOfAbsence } from '@proton/key-transparency/lib';
 
-import { useApi, useConfig } from '../..';
 import { FeatureCode } from '../../containers/features/FeaturesContext';
+import useApi from '../../hooks/useApi';
+import useConfig from '../../hooks/useConfig';
 import useFeature from '../../hooks/useFeature';
 import { KT_FF, isKTActive } from './ktStatus';
 
