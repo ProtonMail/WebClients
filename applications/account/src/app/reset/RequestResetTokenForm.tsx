@@ -1,6 +1,8 @@
 import { ReactNode, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -20,7 +22,7 @@ import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmMod
 const BorderedWarningText = ({ children }: { children: ReactNode }) => {
     return (
         <div className="mb1 p1 border border-weak rounded">
-            <Icon className="color-danger mr0-5 float-left mt0-25" name="exclamation-circle-filled" size={14} />
+            <Icon className="color-danger mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
             {children}
         </div>
     );
@@ -237,7 +239,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                 color="norm"
                 shape="ghost"
                 fullWidth
-                className="mt0-5"
+                className="mt-2"
                 onClick={() => history.push(SSO_PATHS.LOGIN)}
             >{c('Action').t`Return to sign in`}</Button>
         </form>

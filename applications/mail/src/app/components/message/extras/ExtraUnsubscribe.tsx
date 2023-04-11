@@ -109,7 +109,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
                 <br />
                 <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
-                <div className="text-bold rounded border p1 bg-weak text-break mb1 mt1">{c('Info')
+                <div className="text-bold rounded border p1 bg-weak text-break my-4">{c('Info')
                     .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
             </>
         );
@@ -139,9 +139,9 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFrom} with following details as defined by the sender of the newsletter:`}
                 <br />
                 <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
-                <Row className="mt1">
+                <Row className="mt-4">
                     <Label className="cursor-default">
-                        <span className="mr0-5">{c('Info').t`Recipient: `}</span>
+                        <span className="mr-2">{c('Info').t`Recipient: `}</span>
                     </Label>
                     <Field className="border bg-weak">
                         <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={toEmails}>
@@ -151,7 +151,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 </Row>
                 <Row>
                     <Label className="cursor-default">
-                        <span className="mr0-5">{c('Info').t`Subject: `}</span>
+                        <span className="mr-2">{c('Info').t`Subject: `}</span>
                     </Label>
                     <Field className="border bg-weak">
                         <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={Subject}>
@@ -161,7 +161,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 </Row>
                 <Row>
                     <Label className="cursor-default">
-                        <span className="mr0-5">{c('Info').t`Body: `}</span>
+                        <span className="mr-2">{c('Info').t`Body: `}</span>
                     </Label>
                     <Field className="border bg-weak">
                         <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={Body}>
@@ -234,7 +234,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         <ButtonLike
             as="a"
             key="mask-my-email-button"
-            className="ml0-25"
+            className="ml-1"
             color="norm"
             shape="underline"
             onClick={handleSimpleLoginModalOpen}
@@ -250,9 +250,9 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;
 
     return (
-        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
-            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
-                <Icon name="envelope" className="mt0-4 flex-item-noshrink ml0-2" />
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap on-mobile-flex-column">
+            <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
+                <Icon name="envelope" className="mt-1 ml-0.5 flex-item-noshrink" />
                 <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">{c('Status')
                     .t`This message is from a mailing list.`}</span>
             </div>

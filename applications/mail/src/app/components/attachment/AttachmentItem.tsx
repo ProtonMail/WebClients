@@ -126,9 +126,9 @@ const AttachmentItem = ({
                         aria-hidden="true"
                     >
                         {progressionHappening ? (
-                            <CircularProgress progress={value} size={20} className="mr0-5" />
+                            <CircularProgress progress={value} size={20} className="mr-2" />
                         ) : (
-                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} className="mr0-5" />
+                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} className="mr-2" />
                         )}
                     </button>
                     <button
@@ -141,7 +141,7 @@ const AttachmentItem = ({
                         <span className="myauto flex flex-align-items-baseline flex-nowrap pr0-5">
                             <FileNameDisplay text={name} />
                             <span
-                                className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml0-25"
+                                className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml-1"
                                 data-testid="attachment-item:size"
                             >
                                 {humanAttachmentSize}

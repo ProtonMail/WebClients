@@ -72,7 +72,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                     }
                 }}
             >
-                <div className="mr1 mb1 on-mobile-mr0 flex-item-fluid min-w14e" title={email.Value || ''}>
+                <div className="mr-0 mb-4 md:mr-4 flex-item-fluid min-w14e" title={email.Value || ''}>
                     <InputFieldTwo
                         type="email"
                         autoComplete="email"
@@ -86,10 +86,10 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                             (email.Status === SETTINGS_STATUS.UNVERIFIED ? (
                                 <>
                                     <Icon
-                                        className="color-danger flex-item-noshrink aligntop mr0-25"
+                                        className="color-danger flex-item-noshrink aligntop mr-1"
                                         name="exclamation-circle-filled"
                                     />
-                                    <span className="color-norm mr0-5">{c('Recovery Email')
+                                    <span className="color-norm mr-2">{c('Recovery Email')
                                         .t`Email address not yet verified.`}</span>
                                     <button
                                         className="link"
@@ -104,17 +104,17 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                             ) : (
                                 <>
                                     <Icon
-                                        className="color-success flex-item-noshrink aligntop mr0-25"
+                                        className="color-success flex-item-noshrink aligntop mr-1"
                                         name="checkmark-circle-filled"
                                     />
-                                    <span className="mr0-5">{c('Recovery Email')
+                                    <span className="mr-2">{c('Recovery Email')
                                         .t`Email address has been verified.`}</span>
                                 </>
                             ))
                         }
                     />
                 </div>
-                <div className="mb0-5">
+                <div className="mb-2">
                     <Button
                         type="submit"
                         shape="outline"

@@ -51,7 +51,7 @@ const ItemCheckbox = ({
         <label className={classnames(['item-checkbox-label relative', normalClassName])} onClick={handleClick}>
             <input
                 type="checkbox"
-                className="item-checkbox inner-ratio-container cursor-pointer m0"
+                className="item-checkbox inner-ratio-container cursor-pointer m-0"
                 checked={checked}
                 onChange={onChange}
                 data-item-id={ID}

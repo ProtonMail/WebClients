@@ -1,7 +1,11 @@
 import { Dispatch, Fragment, SetStateAction, useEffect, useState } from 'react';
 
+
+
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
+
+
 
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -13,9 +17,12 @@ import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import move from '@proton/utils/move';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+
+
 import { Badge, ContactKeyWarningIcon, DropdownActions, Table, TableBody, TableRow } from '../../../components';
 import { classnames } from '../../../helpers';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+
 
 interface Props {
     model: ContactPublicKeyModel;
@@ -335,7 +342,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         const cells = [
                             <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
                                 <ContactKeyWarningIcon
-                                    className="mr0-5 flex-item-noshrink flex-item-centered-vert"
+                                    className="mr-2 flex-item-noshrink flex-item-centered-vert"
                                     publicKey={publicKey}
                                     emailAddress={model.emailAddress}
                                     isInternal={model.isPGPInternal}

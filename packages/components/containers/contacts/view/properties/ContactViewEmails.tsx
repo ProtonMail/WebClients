@@ -75,7 +75,7 @@ const ContactViewEmails = ({
                     >
                         <span className="w100 flex">
                             <a
-                                className="mr0-5 flex-item-fluid text-ellipsis"
+                                className="mr-2 flex-item-fluid text-ellipsis"
                                 href={`mailto:${email.value}`}
                                 title={email.value}
                             >
@@ -85,7 +85,7 @@ const ContactViewEmails = ({
                                 {!isPreview && (
                                     <>
                                         <Copy
-                                            className="ml0-5"
+                                            className="ml-2"
                                             value={email.value}
                                             onCopy={() => {
                                                 createNotification({
@@ -100,7 +100,7 @@ const ContactViewEmails = ({
                                                     icon
                                                     color="weak"
                                                     shape="outline"
-                                                    className="ml0-5"
+                                                    className="ml-2"
                                                     onClick={handleSettings}
                                                     data-testid={`${email.value}:email-settings`}
                                                 >
@@ -112,7 +112,7 @@ const ContactViewEmails = ({
                                             icon
                                             color="weak"
                                             shape="outline"
-                                            className="ml0-5"
+                                            className="ml-2"
                                             contactEmails={[contactEmail]}
                                             tooltip={c('Title').t`Contact group`}
                                             onGroupEdit={onGroupEdit}

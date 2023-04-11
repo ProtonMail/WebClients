@@ -46,7 +46,7 @@ const DrawerAppHeaderCustomTitle = ({
                 aria-expanded={dropdownExpanded}
             >
                 {dropdownTitle}
-                <Icon name={dropdownExpanded ? 'chevron-up-filled' : 'chevron-down-filled'} className="ml0-25" />
+                <Icon name={dropdownExpanded ? 'chevron-up-filled' : 'chevron-down-filled'} className="ml-1" />
             </Button>
         </div>
     );

@@ -1,5 +1,7 @@
 import { Ref } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { DropdownCaret, Icon } from '@proton/components';
@@ -15,7 +17,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 
 const defaultChildren = (
     <>
-        <Icon name="life-ring" className="flex-item-noshrink mr0-5 flex-item-centered-vert" />
+        <Icon name="life-ring" className="flex-item-noshrink mr-2 flex-item-centered-vert" />
         <span>{c('Action').t`Support`}</span>
     </>
 );
@@ -37,7 +39,7 @@ const SupportDropdownButton = ({
             {...rest}
         >
             {children}
-            {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml0-5 expand-caret myauto" />}
+            {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml-2 expand-caret myauto" />}
         </button>
     );
 };

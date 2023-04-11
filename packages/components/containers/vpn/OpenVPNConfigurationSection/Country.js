@@ -13,8 +13,8 @@ const Country = ({ server: { EntryCountry, ExitCountry } }) => {
 
     return (
         <div className="inline-flex-vcenter">
-            <img width={20} className="mr0-5 border" src={getFlagSvg(correctExitCountry)} alt={exitCountryName} />
-            <p className="mr0-25 ml0-25">{getCountryByAbbr(correctExitCountry)}</p>
+            <img width={20} className="mr-2 border" src={getFlagSvg(correctExitCountry)} alt={exitCountryName} />
+            <p className="mx-1">{getCountryByAbbr(correctExitCountry)}</p>
             {isRouted && <span className="color-weak">{c('CountryInfo').t`(via ${entryCountryName})`}</span>}
         </div>
     );

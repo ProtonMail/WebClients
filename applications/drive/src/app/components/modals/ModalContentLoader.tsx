@@ -8,7 +8,7 @@ const ModalContentLoader: React.FunctionComponent = ({ children }) => {
             <ModalTwoContent className="mt2 mb2">
                 <div className="flex flex-column flex-align-items-center">
                     <Loader size="medium" className="mt1 mb1" />
-                    <TextLoader className="m0">{children}</TextLoader>
+                    <TextLoader className="m-0">{children}</TextLoader>
                 </div>
             </ModalTwoContent>
         </div>

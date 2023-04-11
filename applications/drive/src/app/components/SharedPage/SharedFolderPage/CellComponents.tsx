@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms/Button';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -53,15 +55,15 @@ function NameCell({ item }: { item: PublicLink }) {
     });
 
     return (
-        <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid" data-testid="column-name">
+        <TableCell className="m-0 flex flex-align-items-center flex-nowrap flex-item-fluid" data-testid="column-name">
             {item.cachedThumbnailUrl ? (
                 <img
                     src={item.cachedThumbnailUrl}
                     alt={iconText}
-                    className="file-browser-list-item--thumbnail flex-item-noshrink mr0-5"
+                    className="file-browser-list-item--thumbnail flex-item-noshrink mr-2"
                 />
             ) : (
-                <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr0-5" />
+                <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr-2" />
             )}
             <Cells.NameCell name={item.name} />
         </TableCell>
@@ -73,7 +75,7 @@ function SizeCell({ item }: { item: PublicLink }) {
 
     if (item.progress) {
         return (
-            <TableCell className="m0 w11e flex flex-nowrap flex-justify-end" data-testid="column-size">
+            <TableCell className="m-0 w11e flex flex-nowrap flex-justify-end" data-testid="column-size">
                 {!isNarrow && item.progress.progress > 0 && (
                     <>
                         <Cells.SizeCell size={item.progress.progress} />/
@@ -87,7 +89,7 @@ function SizeCell({ item }: { item: PublicLink }) {
     const className = isNarrow ? 'w6e' : 'w11e';
 
     return (
-        <TableCell className={`m0 flex flex-nowrap flex-justify-end ${className}`} data-testid="column-size">
+        <TableCell className={`m-0 flex flex-nowrap flex-justify-end ${className}`} data-testid="column-size">
             {item.isFile ? <Cells.SizeCell size={item.size} /> : '-'}
         </TableCell>
     );
@@ -115,7 +117,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m0 flex flex-nowrap flex-justify-end file-browser-list--icon-column w11e"
+            className="m-0 flex flex-nowrap flex-justify-end file-browser-list--icon-column w11e"
             data-testid="column-size"
         >
             <Button
@@ -127,7 +129,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
                 disabled={isAnyInProgress && !isCurrentInProgress}
             >
                 <span>{c('Action').t`Download`}</span>
-                {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml0-5" /> : null}
+                {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2" /> : null}
             </Button>
         </TableCell>
     );

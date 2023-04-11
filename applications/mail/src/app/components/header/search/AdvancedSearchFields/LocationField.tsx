@@ -27,8 +27,8 @@ const LocationField = ({ value, onChange }: Props) => {
 
     return (
         <>
-            <span className="block text-semibold mb0-5">{c('Label').t`Search in`}</span>
-            <div className="flex flex-wrap flex-align-items-start mb0-5 flex-gap-0-5">
+            <span className="block text-semibold mb-2">{c('Label').t`Search in`}</span>
+            <div className="flex flex-wrap flex-align-items-start mb-2 flex-gap-0-5">
                 {firstOptions.map((option) => (
                     <Button
                         key={option.value}
@@ -58,7 +58,7 @@ const LocationField = ({ value, onChange }: Props) => {
                         title={c('Action').t`Remove`}
                     >
                         <span className="text-ellipsis">{customValueText}</span>
-                        <Icon name="cross-small" className="ml0-5 flex-item-noshrink" />
+                        <Icon name="cross-small" className="ml-2 flex-item-noshrink" />
                     </Button>
                 ) : null}
             </div>

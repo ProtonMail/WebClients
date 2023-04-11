@@ -14,12 +14,12 @@ interface Props {
 
 const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
     return (
-        <div className="pr2 on-mobile-pr0 mb2">
-            <h2 className="h5 mb0-5">{name}</h2>
+        <div className="mb2">
+            <h2 className="h5 mb-2">{name}</h2>
             {shortcuts.length > 0 && (
                 <ul className="unstyled mt1 on-mobile-pr0 list-2columns-no-break">
                     {shortcuts.map(({ name, keys }) => (
-                        <li key={name} className="flex flex-align-items-center flex-justify-space-between mb0-5">
+                        <li key={name} className="flex flex-align-items-center flex-justify-space-between mb-2">
                             <span>{name}</span>
                             {typeof keys === 'string' ? (
                                 <Kbd shortcut={keys} />
@@ -29,7 +29,7 @@ const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
                                         <Kbd
                                             key={`${name} - ${k}`}
                                             shortcut={k}
-                                            className={classnames([i > 0 && 'ml0-5'])}
+                                            className={classnames([i > 0 && 'ml-2'])}
                                         >
                                             {k}
                                         </Kbd>

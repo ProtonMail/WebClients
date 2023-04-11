@@ -1,5 +1,7 @@
 import { ComponentPropsWithoutRef, ReactElement, ReactNode, useState } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
 import {
@@ -92,7 +94,7 @@ const ButtonNumberInput = ({
             >
                 <Icon name="minus" alt={c('Action').t`Decrease`} className="mauto" />
             </button>
-            <label htmlFor={id} className="mt0-5 flex mb0-5">
+            <label htmlFor={id} className="my-2 flex">
                 <input
                     autoComplete="off"
                     min={min}
@@ -247,7 +249,7 @@ const AdditionalOptionsCustomiser = ({
                 >
                     {c('Info').t`Custom email domains`}
                     <Info
-                        className="ml0-5"
+                        className="ml-2"
                         title={c('Info')
                             .t`Email hosting is only available for domains you already own. Domain registration is not currently available through ${BRAND_NAME}. You can host email for domains registered on any domain registrar.`}
                     />

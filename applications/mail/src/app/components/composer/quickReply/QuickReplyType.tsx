@@ -58,8 +58,8 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                 as="button"
                 type="button"
                 hasCaret
-                className="navigation-link-header-group-control flex mr0-5"
-                content={<Icon className="flex-item-noshrink -mr0-5" name={iconName} />}
+                className="navigation-link-header-group-control flex mr-2"
+                content={<Icon className="flex-item-noshrink -mr-2" name={iconName} />}
                 data-testid="quick-reply-type-dropdown"
             >
                 <DropdownMenu>
@@ -68,7 +68,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                         onClick={() => handleChangeReplyType(REPLY)}
                         data-testid="quick-reply-type-dropdown-reply-button"
                     >
-                        <Icon name="arrow-up-and-left-big" className="mr0-5" />
+                        <Icon name="arrow-up-and-left-big" className="mr-2" />
                         {c('Action').t`Reply`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -76,7 +76,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                         onClick={() => handleChangeReplyType(REPLY_ALL)}
                         data-testid="quick-reply-type-dropdown-reply-all-button"
                     >
-                        <Icon name="arrows-up-and-left-big" className="mr0-5" />
+                        <Icon name="arrows-up-and-left-big" className="mr-2" />
                         {c('Action').t`Reply all`}
                     </DropdownMenuButton>
                 </DropdownMenu>

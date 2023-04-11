@@ -77,7 +77,7 @@ const MessagesSection = () => {
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label htmlFor="remoteToggle" className="text-semibold">
-                            <span className="mr0-5">{c('Label').t`Auto show remote images`}</span>
+                            <span className="mr-2">{c('Label').t`Auto show remote images`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/images-by-default')}
                                 title={c('Info')
@@ -97,7 +97,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="embeddedToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Auto show embedded images`}</span>
+                        <span className="mr-2">{c('Label').t`Auto show embedded images`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/images-by-default')}
                             title={c('Info')
@@ -116,7 +116,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="showMovedToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Keep messages in Sent/Drafts`}</span>
+                        <span className="mr-2">{c('Label').t`Keep messages in Sent/Drafts`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.`}
@@ -130,7 +130,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="requestLinkConfirmationToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Confirm link URLs`}</span>
+                        <span className="mr-2">{c('Label').t`Confirm link URLs`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.`}
@@ -145,7 +145,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="viewMode" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Conversation grouping`}</span>
+                        <span className="mr-2">{c('Label').t`Conversation grouping`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`Group emails in the same conversation together in your Inbox or display them separately.`}
@@ -169,7 +169,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="stickyLabelsToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Sticky labels`}</span>
+                        <span className="mr-2">{c('Label').t`Sticky labels`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.`}
@@ -191,7 +191,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="spamActionLabelSelect" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Auto-unsubscribe`}</span>
+                        <span className="mr-2">{c('Label').t`Auto-unsubscribe`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.`}

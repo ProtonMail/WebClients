@@ -35,7 +35,7 @@ const ReportsTableInfos = () => {
             {importErrors.includes('storageLimit') && (
                 <Alert className="mb1" type="warning">
                     {c('Info').t`${BRAND_NAME} paused an import because your account is running low on space. You can:`}
-                    <ul className="m0">
+                    <ul className="m-0">
                         <li>{c('Info').t`free up space by deleting older messages or other data`}</li>
                         <li>{c('Info').t`purchase additional storage`}</li>
                     </ul>

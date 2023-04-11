@@ -1,8 +1,9 @@
+import clsx from '@proton/utils/clsx';
+
 import SubTitle, { SubTitleProps } from '../../components/title/SubTitle';
-import { classnames } from '../../helpers';
 
 const SettingsSectionTitle = ({ className, ...rest }: SubTitleProps) => (
-    <SubTitle className={classnames([className, 'text-bold mb0-4'])} {...rest} />
+    <SubTitle className={clsx(className, 'text-bold mb-1')} {...rest} />
 );
 
 export default SettingsSectionTitle;

@@ -141,7 +141,7 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
                 </Prompt>
             )}
             <SettingsSection className="container-section-sticky-section">
-                <div className="h2 mb0-25 text-bold">{c('Remove calendar section title').t`Remove calendar`}</div>
+                <div className="h2 mb-1 text-bold">{c('Remove calendar section title').t`Remove calendar`}</div>
                 <SettingsParagraph large>{description}</SettingsParagraph>
                 {deleteDefaultAlertText && <Alert className="mb1">{deleteDefaultAlertText}</Alert>}
                 <ErrorButton onClick={() => setIsDeleteModalOpen(true)}>{deleteText}</ErrorButton>

@@ -28,7 +28,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
         >
             <ModalTwoHeader title={c('Title').t`Send without expiration?`} />
             <ModalTwoContent>
-                <div className="mb0-5">
+                <div className="mb-2">
                     {c('Info')
                         .t`Message expiration works out-of-the-box when sending emails to other ${MAIL_APP_NAME} users. To send expiring emails to non-${BRAND_NAME} users, please cancel and add password protection to your email.`}
                     <br />
@@ -46,7 +46,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
                     {emails.map((email, index) => (
                         <li
                             key={index} // eslint-disable-line react/no-array-index-key
-                            className={clsx([index !== emails.length && 'mb0-5'])}
+                            className={clsx([index !== emails.length && 'mb-2'])}
                         >
                             <span className="block max-w100">{email}</span>
                         </li>

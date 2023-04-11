@@ -36,7 +36,7 @@ const Step = ({
         >
             <span
                 className={clsx(
-                    'mt0-5 text-semibold text-sm text-center text-ellipsis-two-lines',
+                    'mt-2 text-semibold text-sm text-center text-ellipsis-two-lines',
                     !active && 'color-weak'
                 )}
                 title={children}

@@ -58,7 +58,7 @@ const NotificationsInDrawer = ({
                 );
             })}
             {canAdd && (
-                <div className={clsx(['mb0-5', notifications.length === 0 && 'mt0-5'])}>
+                <div className={clsx(['mb-2', notifications.length === 0 && 'mt-2'])}>
                     <Button
                         className="p0"
                         shape={addIcon ? 'ghost' : 'underline'}
@@ -74,7 +74,7 @@ const NotificationsInDrawer = ({
                     >
                         {addIcon ? (
                             <span className="flex flex-nowrap w100 flex-align-items-center">
-                                <Icon name={addIcon} className="mr0-5 flex-item-centered-vert" />
+                                <Icon name={addIcon} className="mr-2 flex-item-centered-vert" />
                                 {addNotificationText}
                             </span>
                         ) : (

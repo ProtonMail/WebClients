@@ -100,7 +100,7 @@ const ExternalPGPSettingsSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="signToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Sign external messages`}</span>
+                        <span className="mr-2">{c('Label').t`Sign external messages`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/what-is-a-digital-signature')}
                             title={c('Tooltip sign external messages')
@@ -122,7 +122,7 @@ const ExternalPGPSettingsSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="attachPublicKeyToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Attach public key`}</span>
+                        <span className="mr-2">{c('Label').t`Attach public key`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/how-to-use-pgp')}
                             title={c('Tooltip automatically attach public key')
@@ -149,7 +149,7 @@ const ExternalPGPSettingsSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="PGPSchemeSelect" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Default PGP scheme`}</span>
+                        <span className="mr-2">{c('Label').t`Default PGP scheme`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/pgp-mime-pgp-inline')}
                             title={c('Tooltip default pgp scheme')

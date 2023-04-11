@@ -142,7 +142,7 @@ const EventForm = ({
     const frequencyRow = (
         <IconRow icon="arrows-rotate" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
             <FrequencyInput
-                className={clsx([isCustomFrequencySet && 'mb0-5', 'w100'])}
+                className={clsx([isCustomFrequencySet && 'mb-2', 'w100'])}
                 id={FREQUENCY_INPUT_ID}
                 data-test-id="event-modal/frequency:select"
                 value={frequencyModel.type}
@@ -286,7 +286,7 @@ const EventForm = ({
             id={NOTIFICATION_INPUT_ID}
             icon="bell"
             title={c('Label').t`Notifications`}
-            labelClassName={isDrawerApp ? '' : 'pb0-5 on-mobile-mt0-5'}
+            labelClassName={isDrawerApp ? '' : 'pb0-5 mt-2 md:mt-0'}
         >
             {isAllDay ? allDayNotificationsRow : partDayNotificationsRow}
         </IconRow>
@@ -326,11 +326,11 @@ const EventForm = ({
 
     const getCalendarIcon = () => {
         if (calendars.length === 1) {
-            return <CalendarSelectIcon className="mt0-25" color={calendars[0].color} />;
+            return <CalendarSelectIcon className="mt-1" color={calendars[0].color} />;
         }
 
         if (!canChangeCalendar) {
-            return <CalendarSelectIcon className="mt0-25" color={model.calendar.color} />;
+            return <CalendarSelectIcon className="mt-1" color={model.calendar.color} />;
         }
 
         return 'calendar-grid';
@@ -357,7 +357,7 @@ const EventForm = ({
     );
 
     return (
-        <div className="mt0-5" {...props}>
+        <div className="mt-2" {...props}>
             {canEditSharedEventData && titleRow}
             {canEditSharedEventData && dateRow}
             {canEditSharedEventData && !isMinimal && frequencyRow}

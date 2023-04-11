@@ -200,7 +200,7 @@ const MemberStorageSelector = ({
                                                 }
                                             >
                                                 <span
-                                                    className="inline-block user-select-none mr0-5 w2e rounded"
+                                                    className="inline-block user-select-none mr-2 w2e rounded"
                                                     style={{ background: `var(${getVariableFromThemeColor(color)})` }}
                                                 >
                                                     &nbsp;
@@ -228,7 +228,7 @@ const MemberStorageSelector = ({
                     )}
                 </div>
             </div>
-            <div className="mt0-5">
+            <div className="mt-2">
                 <Slider
                     marks
                     min={min}

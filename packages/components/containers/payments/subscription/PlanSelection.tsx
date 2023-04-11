@@ -3,19 +3,11 @@ import { c } from 'ttag';
 import { useFeature } from '@proton/components/hooks';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import {
-    Audience,
-    Currency,
-    Cycle,
-    Organization,
-    Plan,
-    PlanIDs,
-    PlansMap,
-    Subscription,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import { Audience, Currency, Cycle, Organization, Plan, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
+
+
 
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
 import { FeatureCode } from '../../features';
@@ -26,7 +18,10 @@ import { getShortPlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
 
+
+
 import './PlanSelection.scss';
+
 
 export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;
@@ -274,11 +269,11 @@ const PlanSelection = ({
     const logosRow = (
         <div className="mt2 mb2 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
             <MailLogo />
-            <Icon name="plus" alt="+" className="mx0-5" />
+            <Icon name="plus" alt="+" className="mx-2" />
             <CalendarLogo />
-            <Icon name="plus" alt="+" className="mx0-5" />
+            <Icon name="plus" alt="+" className="mx-2" />
             <DriveLogo />
-            <Icon name="plus" alt="+" className="mx0-5" />
+            <Icon name="plus" alt="+" className="mx-2" />
             <VpnLogo />
         </div>
     );

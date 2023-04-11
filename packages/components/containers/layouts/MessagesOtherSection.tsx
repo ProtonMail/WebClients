@@ -137,7 +137,7 @@ const MessagesOtherSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="delaySendSecondsSelect" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Undo send`}</span>
+                        <span className="mr-2">{c('Label').t`Undo send`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.`}

@@ -33,17 +33,17 @@ export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFol
                 {c('Title').t`My files`}
             </span>
             {isLoading ? (
-                <Loader className="ml0-5 drive-sidebar--icon inline-flex" />
+                <Loader className="ml-2 drive-sidebar--icon inline-flex" />
             ) : (
                 rootFolder.children.length > 0 && (
                     <ExpandButton
-                        className="ml0-5 flex-item-noshrink"
+                        className="ml-2 flex-item-noshrink"
                         expanded={rootFolder.isExpanded}
                         onClick={() => toggleExpand(rootFolder.link.linkId)}
                     />
                 )
             )}
-            <FileRecoveryIcon className="ml0-5" />
+            <FileRecoveryIcon className="ml-2" />
         </DriveSidebarListItem>
     );
 }

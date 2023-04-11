@@ -272,7 +272,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         showScheduled={showScheduled}
                         onToggleMoreItems={toggleDisplayMoreItems}
                     />
-                    <hr aria-hidden="true" className="my0-25" />
+                    <hr aria-hidden="true" className="my-1" />
                     <SimpleSidebarListItemHeader
                         toggle={displayFolders}
                         onToggle={(display: boolean) => toggleFolders(display)}
@@ -293,7 +293,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                             foldersTreeview={foldersTreeview}
                         />
                     )}
-                    <hr aria-hidden="true" className="my0-25" />
+                    <hr aria-hidden="true" className="my-1" />
                     <SimpleSidebarListItemHeader
                         toggle={displayLabels}
                         onToggle={(display: boolean) => toggleLabels(display)}

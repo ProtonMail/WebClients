@@ -110,21 +110,21 @@ const ContactView = ({
             {!isPreview ? (
                 <div className={classnames(['mt1-5 '])}>
                     {hasEmail ? null : (
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             <Button shape="outline" color="norm" onClick={() => onEdit('email')}>
                                 {c('Action').t`Add email`}
                             </Button>
                         </div>
                     )}
                     {hasTel ? null : (
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             <Button shape="outline" color="norm" onClick={() => onEdit('tel')}>
                                 {c('Action').t`Add phone number`}
                             </Button>
                         </div>
                     )}
                     {hasAdr ? null : (
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             <Button shape="outline" color="norm" onClick={() => onEdit('adr')}>
                                 {c('Action').t`Add address`}
                             </Button>

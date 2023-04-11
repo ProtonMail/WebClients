@@ -48,7 +48,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                     : c('Link').t`Re-enable the address linked to this calendar to update your invitation.`;
             return (
                 <Alert className={alertClassName} type="warning">
-                    <span className="mr0-5">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
+                    <span className="mr-2">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
                     <span>
                         <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                             {text}
@@ -90,7 +90,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         if (!isAddressActive && !isImport) {
             return (
                 <Alert className={alertClassName} type="warning">
-                    <span className="mr0-5">{c('Info').t`You cannot reply from the invited address.`}</span>
+                    <span className="mr-2">{c('Info').t`You cannot reply from the invited address.`}</span>
                     <span>
                         <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                             {c('Link').t`Enable your address to answer this invitation.`}
@@ -108,7 +108,7 @@ const ExtraEventAlert = ({ model }: Props) => {
             if (canCreateCalendar) {
                 return (
                     <Alert className={alertClassName} type="warning">
-                        <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
+                        <span className="mr-2">{c('Info').t`All your calendars are disabled.`}</span>
                         <SettingsLink path={getCalendarsSettingsPath()} app={APPS.PROTONCALENDAR}>
                             {c('Link').t`Create a calendar linked to an active email address.`}
                         </SettingsLink>
@@ -118,8 +118,8 @@ const ExtraEventAlert = ({ model }: Props) => {
             if (maxUserCalendarsDisabled) {
                 return (
                     <Alert className={alertClassName} type="warning">
-                        <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
-                        <span className="mr0-5">
+                        <span className="mr-2">{c('Info').t`All your calendars are disabled.`}</span>
+                        <span className="mr-2">
                             <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                                 {c('Link').t`Enable an email address linked to one of your calendars.`}
                             </SettingsLink>
@@ -153,7 +153,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         }
         return (
             <Alert className={alertClassName} type="warning">
-                <span className="mr0-5">{c('Info').t`You cannot reply from the invited address.`}</span>
+                <span className="mr-2">{c('Info').t`You cannot reply from the invited address.`}</span>
                 <span>
                     <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                         {c('Link').t`Enable your address again to modify your answer.`}
@@ -168,7 +168,7 @@ const ExtraEventAlert = ({ model }: Props) => {
             : c('Link').t`Enable the email address linked to the disabled calendar to modify your answer.`;
         return (
             <Alert className={alertClassName} type="warning">
-                <span className="mr0-5">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
+                <span className="mr-2">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
                 <span>
                     <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                         {text}

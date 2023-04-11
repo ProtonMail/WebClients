@@ -86,7 +86,7 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
                         <span className="color-weak">{c('Update font modal')
                             .t`Your default font will look like following:`}</span>
                         <br />
-                        <span className="mt0" style={{ fontFamily: fontFace, fontSize: `${fontSize}px` }}>{c(
+                        <span className="mt-0" style={{ fontFamily: fontFace, fontSize: `${fontSize}px` }}>{c(
                             'Update font modal'
                         ).t`Today is a good day to write an email`}</span>
                     </p>

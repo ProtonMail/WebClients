@@ -247,7 +247,7 @@ const QuickReply = ({
 
     return (
         <div ref={quickReplyFrameRef}>
-            <div className="flex flex-nowrap flex-align-items-center mx1 mt1 mb0-5">
+            <div className="flex flex-nowrap flex-align-items-center mx1 mt1 mb-2">
                 <QuickReplyType
                     referenceMessage={referenceMessage}
                     modelMessage={modelMessage}
@@ -262,7 +262,7 @@ const QuickReply = ({
                         icon
                         onClick={handleExpandComposer}
                         disabled={isSending}
-                        className="mr0-5 flex-item-noshrink"
+                        className="mr-2 flex-item-noshrink"
                     >
                         <Icon name="arrows-from-center" alt={c('Action').t`Open composer`} />
                     </Button>
@@ -291,7 +291,7 @@ const QuickReply = ({
                 onFocus={handleFocusCallback}
                 data-shortcut-target="quick-reply-container"
             >
-                <div className="composer-body-container quick-reply-composer mb0-5">
+                <div className="composer-body-container quick-reply-composer mb-2">
                     {canRenderEditor && (
                         <Editor
                             onChange={handleChangeContent}
@@ -312,13 +312,13 @@ const QuickReply = ({
                         />
                     )}
                 </div>
-                <div className="quick-reply-buttons absolute bottom right mb0-5 mr0-5 flex">
+                <div className="quick-reply-buttons absolute bottom right mb-2 mr-2 flex">
                     {toolbarConfig && !metadata.isPlainText && (
                         <ErrorBoundary component={() => null}>
                             <Suspense fallback={null}>
                                 <ToolbarEmojiDropdown
                                     className={clsx([
-                                        'button button-for-icon quick-reply-emoji-button ml0-25',
+                                        'button button-for-icon quick-reply-emoji-button ml-1',
                                         needsDarkStyle && 'quick-reply-emoji-button-dark-style',
                                     ])}
                                     onInsert={toolbarConfig.emoji.insert}
@@ -335,7 +335,7 @@ const QuickReply = ({
                             disabled={!replyUpdated}
                             onClick={handleSendQuickReply}
                             loading={isSending}
-                            className="ml0-5"
+                            className="ml-2"
                             data-testid="quick-reply-send-button"
                         >
                             <Icon name="paper-plane" alt={c('loc_nightly_Action').t`Send quick reply`} />

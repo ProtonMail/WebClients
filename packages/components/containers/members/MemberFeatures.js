@@ -10,8 +10,8 @@ const MemberFeatures = ({ member }) => {
 
     return (
         <>
-            <span className="mb0-5 flex flex-nowrap">
-                <span className="flex-item-noshrink flex mt0-1">
+            <span className="mb-2 flex flex-nowrap">
+                <span className="flex-item-noshrink flex mt-0.5">
                     <Icon name="filing-cabinet" />
                 </span>
                 <span className="flex-item-fluid pl0-25" data-testid="users-and-addresses-table:storage">
@@ -19,7 +19,7 @@ const MemberFeatures = ({ member }) => {
                 </span>
             </span>
             <span className="flex flex-nowrap">
-                <span className="flex-item-noshrink flex mt0-1">
+                <span className="flex-item-noshrink flex mt-0.5">
                     <Icon name="brand-proton-vpn" />
                 </span>
                 <span className="flex-item-fluid pl0-25" data-testid="users-and-addresses-table:vpnConnections">

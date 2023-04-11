@@ -88,7 +88,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     fullWidth
                     disabled={loading}
                     onClick={() => setNewCodeModal(true)}
-                    className="mt0-5"
+                    className="mt-2"
                 >{c('Action').t`Didn't receive a code?`}</Button>
             )}
         </form>

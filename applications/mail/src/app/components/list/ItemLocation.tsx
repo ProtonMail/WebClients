@@ -54,7 +54,7 @@ const ItemLocation = ({
             {infos.map((folderInfo) => (
                 <Tooltip title={showTooltip ? folderInfo.name : undefined} key={folderInfo.to}>
                     <span
-                        className={clsx(['flex flex-item-noshrink pt0-125', withDefaultMargin && 'mr0-25'])}
+                        className={clsx(['flex flex-item-noshrink pt0-125', withDefaultMargin && 'mr-1'])}
                         data-testid={`item-location-${folderInfo.name}`}
                     >
                         <ItemIcon folderInfo={folderInfo} />

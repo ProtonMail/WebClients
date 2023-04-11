@@ -54,7 +54,7 @@ const GiftCodeSection = () => {
             >
                 <InputFieldTwo
                     id="gift-code-input"
-                    rootClassName="mr1 on-mobile-mr0 on-mobile-mb0-5"
+                    rootClassName="mr-0 mb-2 md:mr-4 md:mb-0"
                     value={value}
                     error={validator([requiredValidator(value)])}
                     placeholder={c('Placeholder').t`Add gift code`}

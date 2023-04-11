@@ -1,5 +1,7 @@
 import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -133,16 +135,16 @@ const FilterConditionsRow = ({
 
     const renderToken = (token: string, i: number) => (
         <Fragment key={`Condition_${conditionIndex}_Token_${i}`}>
-            {i > 0 && <span className="ml0-5 mr0-5">{c('Label').t`or`}</span>}
+            {i > 0 && <span className="mx-2">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
-                className="inline-flex flex-row flex-align-items-center mb0-5 condition-token"
+                className="inline-flex flex-row flex-align-items-center mb-2 condition-token"
                 role="listitem"
             >
                 <span className="text-ellipsis text-no-decoration" title={token}>
                     {token}
                 </span>
-                <button type="button" className="flex flex-item-noshrink ml0-5" onClick={() => onRemoveToken(i)}>
+                <button type="button" className="flex flex-item-noshrink ml-2" onClick={() => onRemoveToken(i)}>
                     <Icon name="cross" size={11} />
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
@@ -153,7 +155,7 @@ const FilterConditionsRow = ({
     const renderGenericCondition = () => {
         return (
             <div className="mt1 flex-item-fluid">
-                {tokens.length ? <div className="mb0-5">{tokens.map(renderToken)}</div> : null}
+                {tokens.length ? <div className="mb-2">{tokens.map(renderToken)}</div> : null}
                 <div className="flex flex-nowrap">
                     <span className="flex-item-fluid pr1">
                         <Input
@@ -243,7 +245,7 @@ const FilterConditionsRow = ({
                     onClick={toggleSection}
                 >
                     <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                    <span className={classnames(['ml0-5', condition.error && 'color-danger'])}>{label}</span>
+                    <span className={classnames(['ml-2', condition.error && 'color-danger'])}>{label}</span>
                 </button>
                 <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                     {isOpen ? (

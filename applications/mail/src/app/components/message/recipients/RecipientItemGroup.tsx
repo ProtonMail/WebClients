@@ -58,7 +58,7 @@ const RecipientItemGroup = ({
 
     const label = (
         <div className="text-left flex flex-nowrap flex-align-items-center">
-            <Icon name="users" className="mr0-25" />
+            <Icon name="users" className="mr-1" />
             <span>{labelText}</span>
         </div>
     );
@@ -124,13 +124,13 @@ const RecipientItemGroup = ({
                                 />
                             );
                         })}
-                        <hr className="my0-5" />
+                        <hr className="my-2" />
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleCompose}
                             data-testid="recipient:new-message-to-group"
                         >
-                            <Icon name="envelope" className="mr0-5" />
+                            <Icon name="envelope" className="mr-2" />
                             <span className="flex-item-fluid myauto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -138,7 +138,7 @@ const RecipientItemGroup = ({
                             onClick={handleCopy}
                             data-testid="recipient:copy-group-emails"
                         >
-                            <Icon name="squares" className="mr0-5" />
+                            <Icon name="squares" className="mr-2" />
                             <span className="flex-item-fluid myauto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -146,7 +146,7 @@ const RecipientItemGroup = ({
                             onClick={handleRecipients}
                             data-testid="recipient:view-group-recipients"
                         >
-                            <Icon name="user" className="mr0-5" />
+                            <Icon name="user" className="mr-2" />
                             <span className="flex-item-fluid myauto">{c('Action').t`View recipients`}</span>
                         </DropdownMenuButton>
                     </DropdownMenu>

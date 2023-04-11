@@ -35,7 +35,7 @@ export const LocationCell = ({ shareId, parentLinkId, isTrashed }: Props) => {
     return (
         <div key="location" title={location} className="text-ellipsis">
             <span className="text-pre">
-                {isTrashed && <Icon name="trash" className="mr0-25" />}
+                {isTrashed && <Icon name="trash" className="mr-1" />}
                 {location}
             </span>
         </div>

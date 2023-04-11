@@ -17,14 +17,14 @@ const EOReplyHeader = ({ message }: Props) => {
     return (
         <>
             <div className="flex flex-align-items-center px2 py1-5 on-tiny-mobile-pl0 on-tiny-mobile-pr0">
-                <h1 className="eo-layout-title text-ellipsis m0" title={subject}>
+                <h1 className="eo-layout-title text-ellipsis m-0" title={subject}>
                     {subject}
                 </h1>
             </div>
             <div className="message-header eo-message-header message-header-expanded is-outbound border-top border-bottom px2 py1 on-tiny-mobile-pl0 on-tiny-mobile-pr0">
                 <RecipientType
                     label={c('Label').t`From:`}
-                    className={clsx(['flex flex-align-items-start flex-nowrap mb0-85'])}
+                    className={clsx(['flex flex-align-items-start flex-nowrap mb-3'])}
                 >
                     <RecipientItem
                         recipientOrGroup={{ recipient: message.data?.EORecipient }}

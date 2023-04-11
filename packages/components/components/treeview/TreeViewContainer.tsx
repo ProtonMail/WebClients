@@ -7,7 +7,7 @@ export interface Props {
 
 const TreeViewContainer = ({ role = 'tree', children }: Props) => {
     return (
-        <ul role={role} className="treeview-container unstyled mt0 mb0">
+        <ul role={role} className="treeview-container unstyled my-0">
             {children}
         </ul>
     );

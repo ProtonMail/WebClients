@@ -45,9 +45,9 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                 onClose={onClose}
                 onExit={onExit}
             >
-                <p className="mt0">{c('Info')
+                <p className="mt-0">{c('Info')
                     .t`This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.`}</p>
-                <p className="mb0">{c('Info')
+                <p className="mb-0">{c('Info')
                     .t`Enabling recovery by phrase again will generate a new recovery phrase.`}</p>
             </Prompt>
         </>

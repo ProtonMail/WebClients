@@ -1,21 +1,20 @@
 .file-preview {
-	color: var(--file-preview-text-color);
-	background-color: var(--file-preview-background-color, var(--background-norm));
-	@extend .flex-item-fluid-auto;
-	@extend .flex-column;
-
 	position: fixed;
 	inset: 0;
 	z-index: $layer-previewer;
 	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	background-color: var(--file-preview-background-color, var(--background-norm));
+	color: var(--file-preview-text-color);
 
 	&-container {
+		position: relative;
+		display: flex;
 		inline-size: 100%;
-		@extend .relative;
-		@extend .flex-column;
-		@extend .flex-item-fluid-auto;
-		@extend .scroll-if-needed;
-		@extend .flex-no-min-children;
+		overflow: auto;
+		flex-flow: column wrap;
+		flex: 1 1 auto;
 	}
 
 	&-filename {
@@ -23,28 +22,26 @@
 	}
 
 	&-text {
-		background-color: whitesmoke;
-		color: black;
-		@extend .p2;
-		@extend .center;
-		@extend .flex-item-fluid-auto;
-		@extend .mt0-2; // So the highlight in case of textarea is fully visible on the top too.
-		@extend .mb2;
-
-		word-break: break-word;
-		white-space: pre-wrap;
 		inline-size: 100%;
 		max-inline-size: rem(800);
+		padding: 2rem;
+		margin-inline: auto;
+		margin-block-start: var(--space-1); // So the highlight in case of textarea is fully visible on the top too.
+		margin-block-end: var(--space-8);
+		background-color: whitesmoke;
+		color: black;
+		flex: 1 1 auto;
+		word-break: break-word;
+		white-space: pre-wrap;
 	}
 
 	&-image {
-		@extend .mauto;
-
-		object-fit: contain;
-		max-inline-size: none;
 		position: absolute;
 		inset-block-start: 0;
 		inset-inline-start: 0;
+		margin: auto;
+		max-inline-size: none;
+		object-fit: contain;
 		transition: opacity 0.2s ease-in-out;
 	}
 

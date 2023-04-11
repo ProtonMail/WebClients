@@ -116,7 +116,7 @@ const DataRecoverySection = () => {
                     <>
                         {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
                             <p className="color-danger">
-                                <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" size={14} />
+                                <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
                                 {c('Warning')
                                     .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
                             </p>
@@ -124,8 +124,8 @@ const DataRecoverySection = () => {
 
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="mnemonic-phrase-toggle">
-                                    <span className="mr0-5">{c('label').t`Recovery phrase`}</span>
+                                <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonic-phrase-toggle">
+                                    <span className="mr-2">{c('label').t`Recovery phrase`}</span>
                                     <Info
                                         title={c('Info')
                                             .t`A recovery phrase lets you access your account and recover your encrypted messages if you forget your password`}
@@ -141,7 +141,7 @@ const DataRecoverySection = () => {
                                     <>
                                         <div className="flex flex-align-items-center">
                                             <Toggle
-                                                className="mr0-5"
+                                                className="mr-2"
                                                 loading={disableMnemonicModal.open || generateMnemonicModalToggle.open}
                                                 checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
                                                 id="mnemonicToggle"
@@ -165,7 +165,7 @@ const DataRecoverySection = () => {
 
                                         {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
                                             <Button
-                                                className="mt1"
+                                                className="mt-4"
                                                 shape="outline"
                                                 onClick={() => setGenerateMnemonicModalButtonOpen(true)}
                                             >
@@ -179,7 +179,7 @@ const DataRecoverySection = () => {
                     </>
                 )}
 
-                {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="mb2 mt2" />}
+                {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="my-8" />}
 
                 {isRecoveryFileAvailable && (
                     <>
@@ -187,10 +187,10 @@ const DataRecoverySection = () => {
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
                                     <label
-                                        className="pt0 on-mobile-mb0-5 text-semibold"
+                                        className="pt0 mb-2 md:mb-0 text-semibold"
                                         htmlFor="device-recovery-toggle"
                                     >
-                                        <span className="mr0-5">{c('label').t`Trusted device recovery`}</span>
+                                        <span className="mr-2">{c('label').t`Trusted device recovery`}</span>
                                         <Info
                                             title={c('Info')
                                                 .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
@@ -200,7 +200,7 @@ const DataRecoverySection = () => {
                                 <SettingsLayoutRight className="flex-item-fluid pt0-5">
                                     <div className="flex flex-align-items-center">
                                         <Toggle
-                                            className="mr0-5"
+                                            className="mr-2"
                                             loading={loadingDeviceRecovery}
                                             checked={!!userSettings.DeviceRecovery}
                                             id="deviceRecoveryToggle"
@@ -221,8 +221,8 @@ const DataRecoverySection = () => {
                         )}
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
-                                    <span className="mr0-5">{c('Title').t`Recovery file`}</span>
+                                <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="recoveryFile">
+                                    <span className="mr-2">{c('Title').t`Recovery file`}</span>
                                     <Info
                                         title={c('Info')
                                             .t`A recovery file lets you unlock and view your data after an account reset`}
@@ -237,7 +237,7 @@ const DataRecoverySection = () => {
                                 </ExportRecoveryFileButton>
                                 {canRevokeRecoveryFiles && (
                                     <Button
-                                        className="mt1"
+                                        className="mt-4"
                                         color="danger"
                                         shape="underline"
                                         onClick={() => setVoidRecoveryFilesModalOpen(true)}
@@ -249,7 +249,7 @@ const DataRecoverySection = () => {
                         </SettingsLayout>
                         {hasOutdatedRecoveryFile && (
                             <p className="color-danger">
-                                <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" size={14} />
+                                <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
                                 {c('Warning')
                                     .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
                             </p>

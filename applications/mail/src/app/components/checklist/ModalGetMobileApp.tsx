@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
+
+
 import { Href } from '@proton/atoms';
 import { DialogModal, InnerModal, ModalCloseButton, ModalPropsInjection, QRCode } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 
 const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => (
     /* TODO Modal refactor */
@@ -10,7 +13,7 @@ const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
     <DialogModal intermediate onClose={onClose} {...rest}>
         <ModalCloseButton onClose={onClose} />
         <InnerModal className="modal-content pb2 pt2 text-center">
-            <h1 className="mb0-5 text-2xl text-bold">{c('Get started checklist instructions')
+            <h1 className="mb-2 text-2xl text-bold">{c('Get started checklist instructions')
                 .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
             <div className="mb2 ">{c('Get started checklist instructions').t`Available on iOS and Android.`}</div>
             <div className=" mb2">

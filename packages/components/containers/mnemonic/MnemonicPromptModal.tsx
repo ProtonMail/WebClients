@@ -83,8 +83,8 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
                     <div className="pb1 text-center mauto w66 on-mobile-w100">
                         <img src={userPromptSvg} alt="" />
                     </div>
-                    <h1 className="mb0-5 text-2xl text-bold text-center">{c('Info').t`Set a recovery phrase`}</h1>
-                    <p className="mt0 mb0 text-center">
+                    <h1 className="mb-2 text-2xl text-bold text-center">{c('Info').t`Set a recovery phrase`}</h1>
+                    <p className="my-0 text-center">
                         {c('Info')
                             .t`A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}
                         <br />

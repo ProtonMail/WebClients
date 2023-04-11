@@ -26,7 +26,7 @@ export default function SignatureAlert({
     if (loading) {
         return (
             <Alert type="info" className={className}>
-                <TextLoader className="m0">{c('Info').t`Checking signatures`}</TextLoader>
+                <TextLoader className="m-0">{c('Info').t`Checking signatures`}</TextLoader>
             </Alert>
         );
     }

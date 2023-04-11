@@ -49,7 +49,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                         isSignatureVerified={isSignatureVerified}
                     >
                         <span className="w100 flex">
-                            <span className="mr0-5 flex-item-fluid text-ellipsis">
+                            <span className="mr-2 flex-item-fluid text-ellipsis">
                                 {lines.map((line, index) => (
                                     // No better key here and should not change in time anyway
                                     // eslint-disable-next-line react/no-array-index-key
@@ -61,7 +61,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                             </span>
                             <span className="flex-item-noshrink flex py0-25 pr0-25 contact-view-actions">
                                 <Copy
-                                    className="ml0-5 pt0-5 pb0-5 mt0-1"
+                                    className="ml-2 pt0-5 pb0-5 mt-0.5"
                                     value={lines.join(', ')}
                                     onCopy={() => {
                                         createNotification({ text: c('Success').t`Address copied to clipboard` });

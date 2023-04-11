@@ -26,7 +26,7 @@ const DaysOfWeekField = ({ value = [], onChange }: Props) => {
                 <div className="flex flex-column pt0-25">
                     {getFormattedWeekdays('iiii', { locale: dateLocale }).map((text, i) => (
                         <Checkbox
-                            className="mb0-25"
+                            className="mb-1"
                             id={`weekday-${i}`}
                             key={text}
                             checked={value.includes(i)}

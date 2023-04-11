@@ -106,7 +106,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         if (['archive', 'inbox', 'spam', 'trash'].includes(moveTo?.folder)) {
             selectedFolder = (
                 <span className="inline-flex flex-align-items-center mr2">
-                    <Icon name={moveTo.folder as IconName} className="mr0-5" />
+                    <Icon name={moveTo.folder as IconName} className="mr-2" />
                     {options.find((o) => o.value === moveTo?.folder)?.text}
                 </span>
             );
@@ -116,7 +116,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                     {i !== 0 && (
                         <Icon
                             name="chevron-down"
-                            className="ml0-5"
+                            className="ml-2"
                             style={{
                                 transform: 'rotate(-90deg)',
                             }}
@@ -125,10 +125,10 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                     <span
                         className={classnames([
                             'max-w100 flex-nowrap inline-flex flex-align-items-center',
-                            i !== 0 && 'ml0-5',
+                            i !== 0 && 'ml-2',
                         ])}
                     >
-                        <Icon name="folder" className="mr0-5" />
+                        <Icon name="folder" className="mr-2" />
                         <span className="text-ellipsis" title={f}>
                             {f}
                         </span>
@@ -147,7 +147,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         >
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
+                <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
             <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (

@@ -202,18 +202,18 @@ const HeaderExpanded = ({
         >
             <HeaderTopPrivacyIcon message={message} />
             {isNarrow && messageLoaded && (
-                <div className="flex flex-align-items-center flex-justify-space-between my0-5" onClick={handleClick}>
+                <div className="flex flex-align-items-center flex-justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
                         <ItemAttachmentIcon
                             icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                             onClick={handleAttachmentIconClick}
                             element={message.data}
-                            className="mr0-5"
+                            className="mr-2"
                         />
                     </span>
                     <ItemDate element={message.data} labelID={labelID} useTooltip className="color-weak text-sm" />
-                    <span className="message-header-star mr0-5 inline-flex">
+                    <span className="message-header-star mr-2 inline-flex">
                         <ItemStar element={message.data} />
                     </span>
                 </div>
@@ -222,7 +222,7 @@ const HeaderExpanded = ({
                 className="flex flex-nowrap flex-align-items-center message-header-from-container"
                 onClick={handleClick}
             >
-                <span className="flex flex-item-fluid flex-nowrap mr0-5">
+                <span className="flex flex-item-fluid flex-nowrap mr-2">
                     <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                         {isNarrow ? (
                             <span className="message-header-recipient-mobile">{from}</span>
@@ -230,7 +230,7 @@ const HeaderExpanded = ({
                             <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
                         )}
                         {messageLoaded && isSendingMessage && !isScheduledMessage && (
-                            <span className="ml0-5 flex-item-noshrink myauto">
+                            <span className="ml-2 flex-item-noshrink myauto">
                                 <span className="badge-label-primary">{c('Info').t`Sending`}</span>
                             </span>
                         )}
@@ -242,7 +242,7 @@ const HeaderExpanded = ({
                         className="message-header-metas-container flex flex-align-items-center flex-item-noshrink"
                         data-testid="message:message-header-metas"
                     >
-                        <span className="message-header-star mr0-5 inline-flex">
+                        <span className="message-header-star mr-2 inline-flex">
                             <ItemStar element={message.data} />
                         </span>
                         {messageLoaded && (
@@ -253,17 +253,17 @@ const HeaderExpanded = ({
                                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                         onClick={handleAttachmentIconClick}
                                         element={message.data}
-                                        className="mr0-5"
+                                        className="mr-2"
                                     />
                                 </span>
                                 <ItemDate element={message.data} labelID={labelID} useTooltip className="text-sm" />
                             </>
                         )}
-                        {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
+                        {!messageLoaded && <span className="message-header-metas ml-2 inline-flex" />}
                     </div>
                 )}
             </div>
-            <div className="flex flex-nowrap flex-align-items-center mb0-5 on-mobile-flex-wrap message-header-ccbcc-container">
+            <div className="flex flex-nowrap flex-align-items-center mb-2 on-mobile-flex-wrap message-header-ccbcc-container">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -276,8 +276,8 @@ const HeaderExpanded = ({
                 />
             </div>
             {showDetails && (
-                <div className="mb0-5 flex flex-nowrap color-weak">
-                    <span className="flex-align-self-center mr0-5 text-ellipsis">
+                <div className="mb-2 flex flex-nowrap color-weak">
+                    <span className="flex-align-self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
                 </div>
@@ -294,13 +294,13 @@ const HeaderExpanded = ({
 
             {messageLoaded && (
                 <>
-                    <div className="mb0-85 flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
+                    <div className="mb-3 flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
                         <ItemLabels
                             element={message.data}
                             labelID={labelID}
                             labels={labels}
                             isCollapsed={false}
-                            className="on-mobile-pt0-25 ml0-5"
+                            className="on-mobile-pt0-25 ml-2"
                         />
                     </div>
                 </>
@@ -328,7 +328,7 @@ const HeaderExpanded = ({
                     />
                 </div>
                 {!isScheduledMessage && (
-                    <ButtonGroup className="mb0-5">
+                    <ButtonGroup className="mb-2">
                         <Tooltip title={titleReply}>
                             <Button
                                 icon

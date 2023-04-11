@@ -1,5 +1,7 @@
 import { memo } from 'react';
 
+
+
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
@@ -35,7 +37,7 @@ export const CATEGORY = {
 };
 
 const PlusBadge = () => (
-    <span className="ml0-5">
+    <span className="ml-2">
         <Tooltip title="Plus">
             <div className="text-center rounded">P</div>
         </Tooltip>
@@ -43,7 +45,7 @@ const PlusBadge = () => (
 );
 
 const ServerDown = () => (
-    <span className="ml0-5">
+    <span className="ml-2">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex-vcenter">
                 <Icon className="color-danger" size={20} name="exclamation-circle" />
@@ -53,7 +55,7 @@ const ServerDown = () => (
 );
 
 export const P2PIcon = () => (
-    <span className="ml0-5 mr0-5">
+    <span className="mx-2">
         <Tooltip title={c('Info').t`P2P`}>
             <Icon name="arrow-right-arrow-left" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
@@ -61,7 +63,7 @@ export const P2PIcon = () => (
 );
 
 export const TorIcon = () => (
-    <span className="ml0-5 mr0-5">
+    <span className="mx-2">
         <Tooltip title={c('Info').t`Tor`}>
             <Icon name="brand-tor" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
@@ -169,7 +171,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                                         category !== CATEGORY.SECURE_CORE && {
                                             text: (
                                                 <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between">
-                                                    <span className="mr0-5">{server.Domain}</span>
+                                                    <span className="mr-2">{server.Domain}</span>
                                                     <Icon name="squares" title={c('Action').t`Copy`} />
                                                 </div>
                                             ),

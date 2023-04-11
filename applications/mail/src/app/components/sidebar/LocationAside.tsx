@@ -52,7 +52,7 @@ const LocationAside = ({
         <>
             {active && (
                 <ReloadSpinner
-                    className={clsx([unreadCount > 0 ? 'mr0-5' : 'mr0-15'])}
+                    className={clsx([unreadCount > 0 ? 'mr-2' : 'mr-0.5'])}
                     refreshing={refreshing}
                     onRefresh={onRefresh}
                     data-testid="navigation-link:refresh-folder"
