@@ -1,5 +1,3 @@
-import { FormEvent, useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -7,35 +5,19 @@ import {
     Radio,
     RevisionsUpgradeBanner,
     Tooltip,
-    useApi,
     useConfirmActionModal,
-    useLoading,
-    useNotifications,
+    useRevisionRetentionDays,
     useUser,
 } from '@proton/components';
-import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { DEFAULT_PAID_USER_SETTINGS, DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
-import type { RevisionRetentionDaysSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
+import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import clsx from '@proton/utils/clsx';
 
-type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
-
 const RetentionDaysSection = () => {
-    const api = useApi();
-
     const [{ hasPaidDrive }] = useUser();
-    const [isLoading, withLoading] = useLoading();
-    const [isSubmitLoading, withSubmitLoading] = useLoading();
-    const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { createNotification } = useNotifications();
-    const defaultUserRetentionsDays = hasPaidDrive
-        ? DEFAULT_PAID_USER_SETTINGS.RevisionRetentionDays
-        : DEFAULT_USER_SETTINGS.RevisionRetentionDays;
-    const [originalRevisionRetentionDays, setOriginalRevisionRetentionDays] =
-        useState<RevisionRetentionDaysSetting>(defaultUserRetentionsDays);
-    const [revisionRetentionDays, setRevisionRetentionDay] =
-        useState<RevisionRetentionDaysSetting>(defaultUserRetentionsDays);
+    const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
+    const { revisionRetentionDays, hasValueChanged, isLoading, isSubmitLoading, handleSubmit, handleChange } =
+        useRevisionRetentionDays(hasPaidDrive, showConfirmActionModal);
+
     const retentionLabel = (nbDays: RevisionRetentionDaysSetting) => c('Label').t`${nbDays} days`;
 
     const options: {
@@ -54,65 +36,6 @@ const RetentionDaysSection = () => {
         { value: 365, label: retentionLabel(365), disabled: !hasPaidDrive },
         { value: 3650, label: c('Label').t`Indefinitely`, disabled: !hasPaidDrive },
     ];
-
-    useEffect(() => {
-        if (!hasPaidDrive) {
-            return;
-        }
-        void withLoading(
-            api<UserSettingsResponse>(queryUserSettings()).then(({ UserSettings }) => {
-                if (UserSettings.RevisionRetentionDays) {
-                    setOriginalRevisionRetentionDays(UserSettings.RevisionRetentionDays);
-                    setRevisionRetentionDay(UserSettings.RevisionRetentionDays);
-                }
-                return;
-            })
-        );
-    }, [hasPaidDrive]);
-
-    const handleChange = (newRevisionRetentionDay: RevisionRetentionDaysSetting) => {
-        setRevisionRetentionDay(newRevisionRetentionDay);
-    };
-
-    const updateRevisionRetentionDay = () => {
-        return withSubmitLoading(
-            api<UserSettingsResponse>(
-                queryUpdateUserSettings({
-                    RevisionRetentionDays: revisionRetentionDays,
-                })
-            )
-        )
-            .then(() => {
-                createNotification({
-                    text: c('Info').t`Settings updated`,
-                });
-                setOriginalRevisionRetentionDays(revisionRetentionDays);
-            })
-            .catch(() => {
-                createNotification({
-                    type: 'error',
-                    text: c('Info').t`Settings update failed`,
-                });
-                setRevisionRetentionDay(originalRevisionRetentionDays);
-            });
-    };
-
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        if (originalRevisionRetentionDays > revisionRetentionDays) {
-            void showConfirmModal({
-                title: c('Title').t`Delete versioning history?`,
-                onSubmit: updateRevisionRetentionDay,
-                onCancel: () => setRevisionRetentionDay(originalRevisionRetentionDays),
-                size: 'medium',
-                message: c('Info')
-                    .t`This will delete all previous versions of your files. ${DRIVE_APP_NAME} will no longer keep previous versions of your files.`,
-                submitText: c('Action').t`Delete and confirm`,
-            });
-        } else {
-            void updateRevisionRetentionDay();
-        }
-    };
 
     return (
         <div className="w500p">
@@ -153,10 +76,10 @@ const RetentionDaysSection = () => {
                     size="large"
                     color="norm"
                     loading={isSubmitLoading}
-                    disabled={originalRevisionRetentionDays === revisionRetentionDays}
+                    disabled={!hasValueChanged}
                 >{c('Action').t`Save changes`}</Button>
             </form>
-            {confirmModal}
+            {confirmActionModal}
         </div>
     );
 };
