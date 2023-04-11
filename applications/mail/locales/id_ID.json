@@ -472,9 +472,6 @@
       "Hide messages": [
         "Sembunyikan pesan"
       ],
-      "Hide my email": [
-        "Sembunyikan email saya"
-      ],
       "I have a question": [
         "Saya memiliki pertanyaan"
       ],
@@ -1233,6 +1230,26 @@
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } telah dituntaskan"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Kotak masuk ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 pelacak dihapus"
+      ],
+      "Auto forwarded": [
+        "Diteruskan secara otomatis"
+      ],
+      "Email received": [
+        "Email diterima"
+      ],
+      "Encrypted": [
+        "Dienkripsi"
+      ],
+      "New email": [
+        "Email baru"
       ]
     },
     "Apps dropdown": {
@@ -2804,11 +2821,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Logo ${ MAIL_APP_NAME } dan tanda plus"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } di pengaturan."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Hapus pesan yang telah dibuang dan ditandai sebagai spam selama lebih dari 30 hari secara otomatis. Nikmati fitur ini dan berbagai kelebihan lainnya dengan meningkatkan paket langganan Anda."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
@@ -3805,6 +3822,11 @@
         "Belum dibaca"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Memiliki berkas"
+      ]
+    },
     "Filter preview": {
       "read": [
         "dibaca"
@@ -3821,11 +3843,6 @@
     "Font Size Default": {
       "Default": [
         "Bawaan"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
       ]
     },
     "forwardmessage": {
@@ -3909,6 +3926,11 @@
     "Get started checklist title": {
       "Get started": [
         "Mulai"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Masuk dengan Google"
       ]
     },
     "Group": {
@@ -4469,6 +4491,12 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Hapus pesan yang telah ditandai sebagai spam selama lebih dari 30 hari secara otomatis."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Hapus pesan yang telah dibuang ke sampah selama lebih dari 30 hari secara otomatis."
+      ],
       "Background color": [
         "Warna latar belakang"
       ],
@@ -4680,7 +4708,7 @@
         "attachment"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
+        "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi, dan tindakan."
       ],
       "Folder": [
         "Folder"
@@ -4867,6 +4895,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Pesan akan terkirim besok pada pukul ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Pesan yang telah tertanda sebagai spam selama lebih dari 30 hari akan dihapus secara otomatis."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Pesan yang telah terbuang ke sampah selama lebih dari 30 hari akan dihapus secara otomatis."
       ],
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
@@ -5327,6 +5361,12 @@
       "Upgrade to add more addresses to your account.": [
         "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
       ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Tingkatkan jenis akun Anda agar pesan yang telah ditandai sebagai spam selama lebih dari 30 hari dapat terhapus secara otomatis."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Tingkatkan jenis akun Anda agar pesan yang telah dibuang ke sampah selama lebih dari 30 hari dapat terhapus secara otomatis."
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Tingkatkan jenis akun Anda untuk dapat membuat lebih banyak folder, filter, dan alamat."
       ],
@@ -5637,7 +5677,7 @@
         "Teruskan"
       ],
       "Go to All Mail": [
-        "Ke Semua Surat"
+        "Ke Semua surat"
       ],
       "Go to Archive": [
         "Ke Arsip"
@@ -6792,17 +6832,20 @@
         "Nama label"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Pindah atau tambahkan akun"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Tingkatkan sekarang"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Pindah atau tambahkan akun"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Hapus pesan spam dan sampah secara otomatis"
+      ],
       "Custom email domains": [
         "Domain email khusus"
       ],
@@ -7800,6 +7843,9 @@
       ],
       "Change my answer": [
         "Ubah jawaban saya"
+      ],
+      "Clear out the junk": [
+        "Hapus sampah yang ada"
       ],
       "Clearing data": [
         "Membersihkan data"

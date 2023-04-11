@@ -1014,6 +1014,26 @@
         "Aceasta va deconecta toate ruterele și clienții care folosesc acest certificat."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Contul lui ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 urmăritori eliminați"
+      ],
+      "Auto forwarded": [
+        "Redirecționat automat"
+      ],
+      "Email received": [
+        "Mesaj primit"
+      ],
+      "Encrypted": [
+        "Criptat"
+      ],
+      "New email": [
+        "Mesaj nou"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -2602,6 +2622,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Ștergeți automat mesajele mai vechi de 30 de zile din folderul «Gunoi» și «Nedorite». Bucurați-vă de aceste opțiuni și altele dacă vă modernizați contul."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Felicitări! Ați câștigat maximul de ${ rewardsLimit } luni gratuite pentru ${ plusPlanName }."
       ],
@@ -2614,6 +2637,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail și semnul plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -2621,6 +2647,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Pictograma postvânzare care conține logo-ul ${ BRAND_NAME } urmat de semnul plus"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puteți continua să invitați prieteni, dar nu veți putea câștiga mai multe credite."
@@ -3893,6 +3922,17 @@
       ],
       "(during your first month)": [
         "(pe durata primei luni)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Redirecționare automată"
+      ],
+      "Gmail messages to your inbox": [
+        "Mesaje Gmail în mesaje primite"
+      ],
+      "Sign in with Google": [
+        "Conectare cu Google"
       ]
     },
     "Go to sign in": {
@@ -6733,6 +6773,9 @@
       "Auto show remote images": [
         "Afișare automată imagini externe"
       ],
+      "Auto-delete unwanted messages": [
+        "Ștergere automată mesaje nedorite"
+      ],
       "Auto-detect primary time zone": [
         "Detectare automată fus orar primar"
       ],
@@ -7410,9 +7453,6 @@
       ],
       "Verification code": [
         "Cod de verificare"
-      ],
-      "VPN Accelerator": [
-        "Accelerator VPN"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
@@ -8181,6 +8221,9 @@
       "Advanced sharing security": [
         "Securitate avansată partajări"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Ștergere automată mesaje nedorite și din gunoi"
+      ],
       "Auto-reply": [
         "Răspuns automat"
       ],
@@ -8232,6 +8275,9 @@
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
       ],
+      "Hide My Email aliases": [
+        "Ascundere aliasuri e-mail"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN de mare viteză pe un dispozitiv",
         "VPN de mare viteză pe ${ n } dispozitive",
@@ -8252,9 +8298,6 @@
       "NetShield malware and ad-blocker": [
         "Blocare malware și reclame cu NetShield"
       ],
-      "P2P/BitTorrent": [
-        "P2P / BitTorrent"
-      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
@@ -8269,6 +8312,12 @@
       ],
       "Router support": [
         "Suport ruter"
+      ],
+      "Schedule messages at any time": [
+        "Programați mesajele oricând"
+      ],
+      "Search message content": [
+        "Căutare în conținut mesaj"
       ],
       "Secure Core servers": [
         "Servere Secure Core"
@@ -8321,6 +8370,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
+      "Up to 15 email addresses": [
+        "Până la 15 adrese de e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Până la 500 GB spațiu de stocare"
+      ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
       ],
@@ -8329,6 +8384,14 @@
       ],
       "Worldwide streaming services": [
         "Servicii de transmisie în flux globale"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: heading": {
@@ -8415,7 +8478,7 @@
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Setați răspunsuri automate pentru a informa persoanele de contact că nu sunteți la birou sau că nu puteți răspunde."
+        "Setați răspunsuri automate pentru a informa persoanele de contact că nu puteți răspunde."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
@@ -9080,9 +9143,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 sau mai nou)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64-biți)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (pentru Fedora/openSUSE)"
@@ -10297,6 +10357,9 @@
       "Clear": [
         "Golire"
       ],
+      "Clear out the junk": [
+        "Eliberare mesaje din gunoi"
+      ],
       "Composing": [
         "Compunere"
       ],
@@ -10561,9 +10624,6 @@
       ],
       "Identity and addresses": [
         "Identitate și adrese"
-      ],
-      "IMAP/SMTP": [
-        "IMAP / SMTP"
       ],
       "Import": [
         "Importare"
@@ -11078,6 +11138,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Modificare opțiuni de importare pentru a reduce numărul de etichete."
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Ștergere mesaje nedorite și din gunoi după 30 de zile. Activarea acestei opțiuni va șterge toate mesajele aflate acum în folderele «Gunoi» și «Nedorite». Mesajele viitoare nedorite și din gunoi vor fi șterse automat după 30 de zile."
       ],
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."

@@ -4023,9 +4023,6 @@
       ],
       "No verification method available": [
         "No hay ningún método de verificación disponible."
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -8136,6 +8133,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el tratamiento de datos conforme al RGPD"
       ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
         "VPN de alta velocidad en ${ n } dispositivos"
@@ -8169,6 +8169,12 @@
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
+      ],
+      "Schedule messages at any time": [
+        "Programa mensajes en cualquier momento"
+      ],
+      "Search message content": [
+        "Buscar contenido del mensaje"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
@@ -8221,6 +8227,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
+      "Up to 15 email addresses": [
+        "Hasta 15 direcciones de correo electrónico"
+      ],
+      "Up to 500 GB of storage": [
+        "Hasta 500 GB de almacenamiento"
+      ],
       "User credential management": [
         "Administración de credenciales de usuario"
       ],
@@ -8229,6 +8241,14 @@
       ],
       "Worldwide streaming services": [
         "Servicios de streaming en el mundo entero"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: heading": {
@@ -8969,9 +8989,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 o posterior)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64 bits)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"

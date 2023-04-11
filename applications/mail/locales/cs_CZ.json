@@ -478,9 +478,6 @@
       "Hide messages": [
         "Skrýt zprávy"
       ],
-      "Hide my email": [
-        "Skrýt můj e-mail"
-      ],
       "I have a question": [
         "Mám dotaz"
       ],
@@ -1248,6 +1245,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Doručená pošta ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 sledovacích prvků odstraněno"
+      ],
+      "Auto forwarded": [
+        "Automaticky přeposláno"
+      ],
+      "Email received": [
+        "E-mail přijat"
+      ],
+      "Encrypted": [
+        "Šifrováno"
+      ],
+      "New email": [
+        "Nový e-mail"
       ]
     },
     "Apps dropdown": {
@@ -2831,11 +2848,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } logo a znak plus"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } v nastavení."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatické vymazání zpráv starších než 30 dní z koše a spamu. Užijte si tyto a další výhody při navýšení tarifu."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
@@ -2866,6 +2883,9 @@
       ],
       "No labels": [
         "Bez štítků"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail a znaménko plus"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
@@ -3895,6 +3915,11 @@
         "Nepřečteno"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Má soubor"
+      ]
+    },
     "Filter preview": {
       "read": [
         "přečteno"
@@ -3997,6 +4022,17 @@
     "Get started checklist title": {
       "Get started": [
         "Začínáme"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automaticky přeposlat"
+      ],
+      "Gmail messages to your inbox": [
+        "Zprávy Gmail do složky Doručená pošta"
+      ],
+      "Sign in with Google": [
+        "Přihlásit se pomocí Googlu"
       ]
     },
     "Group": {
@@ -4701,6 +4737,12 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Automaticky vymazat zprávy, které jsou ve spamu déle než 30 dní."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Automaticky vymazat zprávy, které jsou v koši déle než 30 dní."
+      ],
       "Background color": [
         "Barva pozadí"
       ],
@@ -5129,6 +5171,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Zpráva bude odeslána zítra v ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Zprávy, které byly ve spamu déle než 30 dní, budou automaticky smazány."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Zprávy, které byly v koši déle než 30 dní, budou automaticky smazány."
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -5600,6 +5648,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Navyšte svůj účet a přidejte více e-mailových adres k vašemu účtu."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Navyšte svůj tarif pro automatické mazání zpráv, které jsou ve spamu déle než 30 dní."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Navyšte svůj tarif pro automatické mazání zpráv, které jsou v koši déle než 30 dní."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Navyšte svůj účet pro vytváření více složek, filtrů a adres."
@@ -7123,17 +7177,20 @@
         "Název štítku"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Přepnout nebo přidat účet"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Navýšit nyní"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automaticky mazat zprávy ve spamu a koši"
+      ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
       ],
@@ -8263,6 +8320,9 @@
       ],
       "Change my answer": [
         "Změnit mou odpověď"
+      ],
+      "Clear out the junk": [
+        "Pročištění nevyžádané pošty"
       ],
       "Clearing data": [
         "Mazání dat"

@@ -478,9 +478,6 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
-      "Hide my email": [
-        "Hide My Email"
-      ],
       "I have a question": [
         "У мене є питання"
       ],
@@ -2831,11 +2828,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Логотип ${ MAIL_APP_NAME } і знак плюс"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у налаштуваннях."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Автоматично очищуйте повідомлення, яким понад 30 днів, зі спаму та смітника. Скористайтеся цими та іншими перевагами після передплати."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
@@ -2866,6 +2863,9 @@
       ],
       "No labels": [
         "Немає міток"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail та знак плюс"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -3913,11 +3913,6 @@
         "Типовий"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Приватність – це стандарт."
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Дата: ${ date }"
@@ -4706,6 +4701,12 @@
       "Attention required": [
         "Потребує уваги"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Автоматично видаляти повідомлення, які позначені спамом понад 30 днів."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Автоматично видаляти повідомлення, які перебувають у смітнику понад 30 днів."
+      ],
       "Background color": [
         "Колір тла"
       ],
@@ -5134,6 +5135,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Повідомлення буде надіслано завтра ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Повідомлення, що позначені спамом понад 30 днів, автоматично видалятимуться."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Повідомлення, що перебувають у смітнику понад 30 днів, автоматично видалятимуться."
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -5605,6 +5612,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Придбайте передплату, щоб повідомлення, які позначені спамом понад 30 днів, видалялися автоматично."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Придбайте передплату, щоб повідомлення, які перебувають у смітнику понад 30 днів, видалялися автоматично."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Передплатіть тарифний план, щоб створити більше тек, фільтрів та адрес."
@@ -7128,17 +7141,20 @@
         "Назва мітки"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Перемкнути або додати обліковий запис"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Покращити"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Перемкнути або додати обліковий запис"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Автоматичне видалення спаму та повідомлень зі смітника"
+      ],
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
@@ -8268,6 +8284,9 @@
       ],
       "Change my answer": [
         "Змінити мою відповідь"
+      ],
+      "Clear out the junk": [
+        "Приберіть усе зайве"
       ],
       "Clearing data": [
         "Стирання даних"

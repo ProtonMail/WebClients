@@ -1759,11 +1759,6 @@
         "Megabytes"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidade por padrão."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail por mês)"
@@ -1824,9 +1819,6 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -1928,6 +1920,9 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Balance from your previous subscription": [
+        "Saldo da sua assinatura anterior"
       ],
       "Basic, Plus or Visionary subscription required": [
         "É necessária a assinatura Basic, Plus ou Visionary"
@@ -2474,6 +2469,22 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Você pode personalizar e baixar suas faturas para fins contábeis."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
@@ -4282,14 +4293,29 @@
       "Got it": [
         "Entendido"
       ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Basta fazer login na sua conta da Apple App Store e pressionar ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Basta fazer login na sua conta da Play Store e pressionar ${ subscriptions }."
+      ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gerencie sua assinatura em ${ subscriptionManager }."
       ],
       "Subscription is managed by ${ subscriptionManager }": [
         "A assinatura é gerenciada por ${ subscriptionManager }"
       ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Assinatura de ID de usuário-${ userId } foi feito via uma compra no aplicativo. Para gerenciar a assinatura, o usuário precisa navegar até a seção Assinatura da sua ${ subscriptionManager } conta."
+      ],
       "Subscriptions": [
         "Assinaturas"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Seu plano foi adquirido usando um aplicativo Android. Portanto, para fazer alterações em seu plano ou atualizar seus dados de pagamento, você precisará acessar a Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Seu plano foi adquirido usando um aplicativo para iOS. Portanto, para fazer alterações em seu plano ou atualizar seus detalhes de pagamento, você precisará acessar a Apple App Store."
       ]
     },
     "Subscription price": {
@@ -4310,8 +4336,17 @@
       "Disable": [
         "Desativar"
       ],
+      "Enable auto-pay support": [
+        "Ativar suporte de pagamento automático"
+      ],
       "Keep auto-pay": [
         "Manter autopagamento"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Além disso, se você esquecer de fazer um pagamento manual e o pagamento automático estiver desabilitado para todos os métodos de pagamento, podemos rebaixar automaticamente sua conta, o que levará à perda de muitos recursos."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Não podemos fazer o downgrade automaticamente porque, se você ultrapassar a cota de armazenamento do plano gratuito ou usar outros recursos pagos, não poderemos excluir automaticamente arquivos, e-mails ou outros dados para você. Se você desabilitar o pagamento automático, lembre-se de pagar sua próxima fatura de assinatura antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
     "Subscription saving": {
@@ -4584,6 +4619,9 @@
       ],
       "Downloads": [
         "Baixar"
+      ],
+      "Duration": [
+        "Duração"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"

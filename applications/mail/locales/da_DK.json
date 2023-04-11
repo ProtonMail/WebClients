@@ -31,6 +31,12 @@
       "Add address": [
         "Tilføj adresse"
       ],
+      "Add Bcc recipients": [
+        "Tilføj BCC-modtagere"
+      ],
+      "Add Cc recipients": [
+        "Tilføj CC-modtagere"
+      ],
       "Add condition": [
         "Tilføj betingelse"
       ],
@@ -468,9 +474,6 @@
       "Hide messages": [
         "Skjul beskeder"
       ],
-      "Hide my email": [
-        "Skjul min e-mail"
-      ],
       "I have a question": [
         "Jeg har et spørgsmål"
       ],
@@ -793,6 +796,9 @@
       "Remove expiration time": [
         "Fjern udløbstid"
       ],
+      "Remove self-destruction": [
+        "Fjern selvdestruering"
+      ],
       "Remove this label": [
         "Fjern denne etiket"
       ],
@@ -867,6 +873,15 @@
       ],
       "Select all messages": [
         "Vælg alle beskeder"
+      ],
+      "Self-destruct in 7 days": [
+        "Selvdestruér om 7 dage"
+      ],
+      "Self-destruct message": [
+        "Selvdestruér besked"
+      ],
+      "Self-destruct on ...": [
+        "Selvdestruér den ..."
       ],
       "Send": [
         "Send"
@@ -984,6 +999,12 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
+      ],
+      "Toggle Calendar app": [
+        "Skift Kalender-app"
+      ],
+      "Toggle Contact app": [
+        "Skift Kontakt-app"
       ],
       "Tomorrow": [
         "I morgen"
@@ -1211,6 +1232,14 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } færdig",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } færdige"
+      ]
+    },
+    "Animation": {
+      "5 trackers removed": [
+        "5 trackere fjernet"
+      ],
+      "Encrypted": [
+        "Krypteret"
       ]
     },
     "Apps dropdown": {
@@ -1593,6 +1622,9 @@
     "Cancel expiration of the message": {
       "Cancel": [
         "Annullér"
+      ],
+      "Cancel expiration": [
+        "Annullér udløb"
       ]
     },
     "Collapsible tooltip": {
@@ -2783,9 +2815,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } logo og et plus-tegn"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i indstillinger."
       ],
@@ -3790,6 +3819,11 @@
         "Ulæst"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Har fil"
+      ]
+    },
     "Filter preview": {
       "read": [
         "læst"
@@ -3890,6 +3924,17 @@
     "Get started checklist title": {
       "Get started": [
         "Kom godt i gang"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Videresend automatisk"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-beskeder til din indbakke"
+      ],
+      "Sign in with Google": [
+        "Log ind med Google"
       ]
     },
     "Group": {
@@ -4450,6 +4495,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Er du sikker på, at du vil slette alle beskeder med denne etikette?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Er du sikker på, at du vil slette denne mappe? Alle underordnede mapper slettes også."
+      ],
       "Are you sure you want to delete this label?": [
         "Er du sikker på du vil slette etiketten?"
       ],
@@ -4877,6 +4925,9 @@
       "Message sent.": [
         "Besked afsendt."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Besked vil blive sendt i morgen kl. ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
       ],
@@ -5091,6 +5142,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -5237,12 +5291,21 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Denne besked er signeret med den vedhæftede nøgle, der endnu ikke er betroet."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Denne besked bliver automatisk slettet ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Denne besked bliver automatisk slettet kl. ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Denne besked vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?",
         "Disse beskeder vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne besked flyttes til Kladder, så du kan redigere den. Du skal igen planlægge, hvornår den skal sendes."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Denne besked vil blive sendt i morgen kl. ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Denne besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
@@ -5258,6 +5321,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Denne besked udløber ${ formattedDate }"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "Denne besked udløber ${ longDateMEssage }"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "Denne besked udløber i dag kl. ${ shortDateMessage }"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Denne besked udløber i morgen kl. ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøgle vil automatisk blive brugt til kryptering af e-mail, der sendes til denne adresse."
@@ -5367,8 +5439,14 @@
       "Week": [
         "Uge"
       ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Hvornår ønsker du, at din besked automatisk skal slettes fra modtagerens indbakke og din sendt-mappe?"
+      ],
       "When do you want your message to be sent?": [
         "Hvornår skal din besked sendes?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Hvornår ønsker du, at din besked skal selvdestruere?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Når du udleverer din e-mail, kan du bruge et unikt Skjul min e-mail-alias i stedet for din rigtige e-mailadresse."
@@ -6776,14 +6854,14 @@
         "Etiketnavn"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Skift eller tilføj konto"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Opgradér nu"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Skift eller tilføj konto"
       ]
     },
     "new_plans: feature": {
@@ -7175,6 +7253,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } d",
         "${ remainingDays } d"
+      ],
+      "<1 d": [
+        "<1 dag"
       ]
     },
     "Reply to calendar invitation": {
