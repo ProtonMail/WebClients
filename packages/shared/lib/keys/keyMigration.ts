@@ -347,7 +347,7 @@ export const migrateUser = async ({
     keyPassword,
     timeout = 120000,
     preAuthKTVerify,
-    verifyPoAExistence,
+    keyTransparencyAbsenceVerifier,
 }: {
     api: Api;
     user: User;
@@ -355,7 +355,7 @@ export const migrateUser = async ({
     keyPassword: string;
     timeout?: number;
     preAuthKTVerify: PreAuthKTVerify;
-    verifyPoAExistence(api: Api, email: string): Promise<void>;
+    keyTransparencyAbsenceVerifier(email: string): Promise<void>;
 }) => {
     if (user.ToMigrate !== 1 || getHasMigratedAddressKeys(addresses)) {
         return false;
@@ -373,7 +373,7 @@ export const migrateUser = async ({
     await Promise.all(
         addresses.map(async ({ Keys, Email }) => {
             if (!Keys.some(getHasMigratedAddressKey)) {
-                return verifyPoAExistence(api, canonicalizeInternalEmail(Email));
+                return keyTransparencyAbsenceVerifier(canonicalizeInternalEmail(Email));
             }
         })
     );
