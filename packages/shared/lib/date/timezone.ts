@@ -1,10 +1,4 @@
-import {
-    findTimeZone,
-    getTimeZoneLinks,
-    getUTCOffset,
-    getZonedTime,
-    listTimeZones,
-} from '@protontech/timezone-support';
+import { findTimeZone, getTimeZoneLinks, getUTCOffset, getZonedTime } from '@protontech/timezone-support';
 
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -85,26 +79,16 @@ export const loadAllowedTimeZones = async (api: Api) => {
     ALLOWED_TIMEZONES_LIST = supportedTimeZones;
 };
 
-/**
- * Transform a time zone supported by our library into one allowed by the BE
- */
-export const toAllowedTimeZone = (tzid: string) => {
-    const allowedTimeZone =
-        unsupportedTimezoneLinks[tzid] || FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST.find((tz) => tz === tzid);
-
-    if (!allowedTimeZone) {
-        // this should never happen (we have a test for it), throwing here for TS safety
-        throw new Error('Unrecognized time zone');
-    }
-
-    return allowedTimeZone;
-};
-
 export const guessTimezone = (timezones: string[]) => {
     try {
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        // Ensure it exists.
-        return manualFindTimeZone(timezone) || findTimeZone(timezone).name;
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        // Ensure it belongs in the list
+        const tzid = manualFindTimeZone(timeZone) || findTimeZone(timeZone).name;
+        const supportedTzid = unsupportedTimezoneLinks[tzid] || tzid;
+        if (!timezones.includes(supportedTzid)) {
+            throw new Error('Time zone not allowed');
+        }
+        return supportedTzid;
     } catch (error: any) {
         const date = new Date();
         const timezoneOffset = date.getTimezoneOffset();
@@ -120,15 +104,13 @@ export const guessTimezone = (timezones: string[]) => {
  * if not available use timezone-support lib and pick the first timezone from the current date timezone offset
  */
 export const getTimezone = () => {
-    const ianaTimezones = listTimeZones();
+    const ianaTimezones = ALLOWED_TIMEZONES_LIST;
     const timezone = guessTimezone(ianaTimezones);
     // If the guessed timezone is undefined, there's not much we can do
     if (!timezone) {
         return ALLOWED_TIMEZONES_LIST[0];
     }
-
-    // The guessed time zone is supported by our library, transform it into one supported by the BE
-    return toAllowedTimeZone(timezone);
+    return timezone;
 };
 
 /**
@@ -171,6 +153,14 @@ type GetTimeZoneOptions = (
     key: string;
 }[];
 
+const getTimeZoneDisplayName = (ianaName: string) => {
+    if (ianaName === 'Europe/Kiev') {
+        // Update Kyiv name before fully transitioning to 2022g
+        return 'Europe/Kyiv';
+    }
+    return ianaName;
+};
+
 /**
  * @return {Array<Object>}      [{ text: 'Africa/Nairobi: UTC +03:00', value: 'Africa/Nairobi'}, ...]
  */
@@ -194,11 +184,13 @@ export const getTimeZoneOptions: GetTimeZoneOptions = (
             }
             return diff;
         })
-        .map(({ name, offset }) => {
+        .map(({ name: ianaName, offset }) => {
+            const name = getTimeZoneDisplayName(ianaName);
+
             return {
                 text: formatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
-                value: name,
-                key: name,
+                value: ianaName,
+                key: ianaName,
             };
         });
 };
