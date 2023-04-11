@@ -403,6 +403,12 @@ export const unsupportedTimezoneLinks: { [key: string]: string } = {
     MST7MDT: 'America/Denver',
     PST8PDT: 'America/Los_Angeles',
     WET: 'Europe/Lisbon',
+    // 2022g update
+    'America/Ciudad_Juarez': 'America/Ojinaga',
+    'America/Nuuk': 'Atlantic/Stanley',
+    'Europe/Kyiv': 'Europe/Kiev',
+    'Australia/Hobart': 'Australia/Currie',
+    'Pacific/Kanton': 'Pacific/Fakaofo',
 };
 
 /**
@@ -779,7 +785,6 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'america eastern': 'America/New_York',
     'america mountain': 'America/Denver',
     'america pacific': 'America/Los_Angeles',
-    'america/nuuk': 'Atlantic/Stanley',
     'amsterdam, berlin, bern, rome, stockholm, vienna': 'Europe/Berlin',
     anadyr: 'Asia/Anadyr',
     apia: 'Pacific/Apia',
@@ -1085,7 +1090,6 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'pacific standard time (mexico)': 'America/Tijuana',
     'pacific time (us & canada)': 'America/Los_Angeles',
     'pacific time (us & canada); tijuana': 'America/Los_Angeles',
-    'pacific/kanton': 'Pacific/Fakaofo',
     pakistan: 'Asia/Karachi',
     'pakistan standard time': 'Asia/Karachi',
     palau: 'Pacific/Palau',
@@ -1305,7 +1309,6 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     "nuku'alofa": 'Pacific/Tongatapu',
     'kiritimati island': 'Pacific/Kiritimati',
     'helsinki, kyiv, riga, sofia, tallinn, vilnius': 'Europe/Helsinki',
-    'europe/kyiv': 'Europe/Kiev',
 };
 
 /**
