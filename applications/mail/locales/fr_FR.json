@@ -474,9 +474,6 @@
       "Hide messages": [
         "Masquer les messages"
       ],
-      "Hide my email": [
-        "Hide My Email"
-      ],
       "I have a question": [
         "J’ai une question"
       ],
@@ -1238,6 +1235,26 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } complété",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } complétés"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Boîte de réception appartenant à ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 traqueurs supprimés"
+      ],
+      "Auto forwarded": [
+        "Transféré automatiquement"
+      ],
+      "Email received": [
+        "Message reçu"
+      ],
+      "Encrypted": [
+        "Chiffré"
+      ],
+      "New email": [
+        "Nouveau message"
       ]
     },
     "Apps dropdown": {
@@ -2813,11 +2830,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Logo ${ MAIL_APP_NAME } et un signe plus"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } dans les paramètres."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Supprimez automatiquement les messages qui sont dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours. Profitez de ces fonctionnalités et de bien d'autres en passant à l'abonnement supérieur."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
@@ -2846,6 +2863,9 @@
       ],
       "No labels": [
         "Aucun label"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail et un signe plus"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
@@ -3032,7 +3052,7 @@
         "L'authentification a été annulée."
       ],
       "Authentication error.": [
-        "Erreur d'authentification."
+        "Erreur d'authentification"
       ],
       "Calendar limit reached": [
         "La limite du nombre de calendriers est atteinte."
@@ -3166,7 +3186,7 @@
         "Le message doit d'abord être envoyé."
       ],
       "Message processing error.": [
-        "Erreur de traitement du message."
+        "Erreur de traitement du message"
       ],
       "Missing key packet": [
         "Il manque le paquet de clés."
@@ -3263,7 +3283,7 @@
         "La signature n'est pas vérifiée."
       ],
       "Signature verification error.": [
-        "Erreur de vérification de la signature."
+        "Erreur de vérification de la signature"
       ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
@@ -3369,7 +3389,7 @@
         "Erreur inconnue"
       ],
       "Unknown error.": [
-        "Erreur inconnue."
+        "Erreur inconnue"
       ],
       "Wrong mailbox password": [
         "Le mot de passe de la messagerie n'est pas correct."
@@ -3835,6 +3855,11 @@
         "Non lus"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Avec pièce jointe"
+      ]
+    },
     "Filter preview": {
       "read": [
         "lu"
@@ -3937,6 +3962,17 @@
         "Commencer"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Transférez automatiquement"
+      ],
+      "Gmail messages to your inbox": [
+        "les messages Gmail vers votre boîte de réception"
+      ],
+      "Sign in with Google": [
+        "Se connecter avec Google"
+      ]
+    },
     "Group": {
       "Account": [
         "Compte"
@@ -3987,9 +4023,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -3998,9 +4031,6 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification n'est disponible."
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4549,6 +4579,12 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Supprimez automatiquement les messages qui sont dans le dossier Indésirables/spam depuis plus de 30 jours."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Supprimez automatiquement les messages qui sont dans le dossier Corbeille depuis plus de 30 jours."
+      ],
       "Background color": [
         "Couleur d'arrière-plan"
       ],
@@ -4696,7 +4732,7 @@
         "Le message est transféré dans votre boîte aux lettres et votre adresse e-mail reste cachée."
       ],
       "Email tracker protection is disabled": [
-        "La protection contre les traqueurs dans les e-mails est désactivée."
+        "La protection contre les traqueurs dans les messages est désactivée."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
         "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. ${ BRAND_NAME } n'en a pas trouvé dans ce message."
@@ -4706,7 +4742,7 @@
         "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. ${ BRAND_NAME } a trouvé et bloqué ${ numberOfTrackers } traqueurs."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
+        "Les traqueurs dans les messages peuvent porter atteinte à votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
       ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
@@ -4848,7 +4884,7 @@
         "Importer une messagerie"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos e-mails, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
+        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
@@ -4957,6 +4993,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Le message sera envoyé demain à ${ formattedTime }."
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Les messages dans le dossier Indésirables/spam depuis plus de 30 jours seront automatiquement supprimés."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Les messages dans le dossier Corbeille depuis plus de 30 jours seront automatiquement supprimés."
       ],
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
@@ -5276,7 +5318,7 @@
         "Cette action permet de télécharger les messages les plus récents pour pouvoir les consulter localement. L'effacement des données de votre navigateur désactivera cette option."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Cette adresse est désactivée. Pour pouvoir envoyer des e-mails à cette adresse, son propriétaire doit d’abord l’activer."
+        "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
@@ -5420,6 +5462,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Passez à la version supérieure pour supprimer automatiquement les messages qui sont dans le dossier Indésirables/spam depuis plus de 30 jours."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Passez à la version supérieure pour supprimer automatiquement les messages qui sont dans le dossier Corbeille depuis plus de 30 jours."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Passez à l’offre supérieure pour créer plus de dossiers, de filtres et d’adresses."
@@ -5687,9 +5735,6 @@
       ],
       "Trusted": [
         "Approuvée"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6908,17 +6953,20 @@
         "Nom du label"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Basculez vers ou ajoutez un compte"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Changer d'abonnement"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Basculez vers ou ajoutez un compte"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
@@ -8197,6 +8245,9 @@
       ],
       "Change my answer": [
         "Changer ma réponse"
+      ],
+      "Clear out the junk": [
+        "Débarrassez-vous des messages inutiles"
       ],
       "Clearing data": [
         "Effacement des données"

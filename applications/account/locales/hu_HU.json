@@ -3226,6 +3226,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "A 3.0-nál régebbi vCard verziók nem támogatottak"
       ]
     },
     "Error importing contacts": {
@@ -7787,6 +7790,9 @@
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
       ],
+      "Hide My Email aliases": [
+        "Az e-mail álnevek elrejtése"
+      ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
         "Nagysebességű VPN ${ n } eszközön"
@@ -7820,6 +7826,12 @@
       ],
       "Router support": [
         "Router támogatás"
+      ],
+      "Schedule messages at any time": [
+        "Üzenetek ütemezése bármikor"
+      ],
+      "Search message content": [
+        "Keresés az üzenetek tartalmában"
       ],
       "Secure Core servers": [
         "Secure Core szerverek"
@@ -7869,6 +7881,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
       ],
+      "Up to 15 email addresses": [
+        "Akár 15 e-mail cím"
+      ],
+      "Up to 500 GB of storage": [
+        "500 GB tárhely"
+      ],
       "User credential management": [
         "Felhasználói adatok kezelése"
       ],
@@ -7877,6 +7895,14 @@
       ],
       "Worldwide streaming services": [
         "Videós szolgáltatások világszerte"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Korlátlan számú e-mail álnév, a ${ BRAND_NAME } SimpleLogin segítségével"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
       ]
     },
     "new_plans: heading": {
@@ -8332,6 +8358,11 @@
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
         "Üdvözli a ${ VPN_APP_NAME }"
@@ -8581,9 +8612,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 vagy újabb)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64 bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (Fedora/openSUSE)"

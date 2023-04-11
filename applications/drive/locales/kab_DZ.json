@@ -1727,6 +1727,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" yella yakan"
+      ],
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agi"
       ],
@@ -1899,6 +1902,9 @@
       ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
+      ],
+      "Your browser does not support uploading folders": [
+        "Iminig-ik ur issefrak ara ikaramen yettwaleqqmen"
       ],
       "Your import will not be processed.": [
         "Taktert-inek•inem ur tettwasekkar ara."
@@ -2592,6 +2598,15 @@
       "Canceled": [
         "Yettwasefsex"
       ],
+      "Cannot load link": [
+        "Aferdis yegguma ad d-yali"
+      ],
+      "Cannot load links": [
+        "Gguman ad d-alin iseɣwan"
+      ],
+      "Cannot load shared link": [
+        "Ur izmir ara ad d-isali aseɣwen yettwabḍan"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
       ],
@@ -2647,6 +2662,18 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Ifuyla CSV seg Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yinasen-nniḍen akked yimasalen vCard 3.1 akked 4.0 (UTF-8 encoding) ttwadehlen."
       ],
+      "Decrypting files": [
+        "Kkes awgelhen i yifuyla"
+      ],
+      "Download canceled": [
+        "Asader yefsex"
+      ],
+      "Download failed": [
+        "Asader yecceḍ"
+      ],
+      "Download finished": [
+        "Asader yeḥbes"
+      ],
       "Downloaded": [
         "Yettusader"
       ],
@@ -2661,6 +2688,12 @@
       ],
       "Encrypted search is here": [
         "Anadi awgelhan ha-t-a da"
+      ],
+      "End-to-end encrypted": [
+        "Awgelhen si tazwara ar tagara"
+      ],
+      "Enter password": [
+        "Sekcem Awal Uffir"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Sekcem inekcam n umiḍan n yimayl iseg tebɣiḍ ad d-tketreḍ."
@@ -2757,6 +2790,9 @@
       "Internet connection restored.": [
         "Tuqqna internet tuɣal-d."
       ],
+      "It’s easy and secure": [
+        "D afessas, d aɣellsan"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
       ],
@@ -2765,6 +2801,9 @@
       ],
       "Label all imported messages as": [
         "Creḍ ɣef meṛṛa iznan yettwaketren d"
+      ],
+      "Labels:": [
+        "Tibzimin:"
       ],
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
@@ -2780,6 +2819,9 @@
       ],
       "Loading ${ appName }": [
         "Asali ${ appName }"
+      ],
+      "Loading links": [
+        "Asali n useɣwen"
       ],
       "Loading preview": [
         "Asali n teskant"
@@ -2822,6 +2864,9 @@
       ],
       "No results found": [
         "Ulac igmaḍ"
+      ],
+      "No synced folders": [
+        "Ulac ikaramen yemtawan"
       ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
@@ -2873,6 +2918,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
+      ],
+      "Search Enabled": [
+        "Anadi yettwarmed"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Fren afaylu neɣ akaram yulin syen snulfu-d aseɣwen ɣur-s."
@@ -2952,6 +3000,9 @@
       ],
       "Trash": [
         "Taqecwalt"
+      ],
+      "Unknown error": [
+        "Tuccḍa tarussint"
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -3168,6 +3219,9 @@
       "Country": [
         "Tamurt"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Rnu amiḍan ${ BRAND_NAME }"
+      ],
       "Created": [
         "Yettwarna"
       ],
@@ -3369,6 +3423,9 @@
       ],
       "Set expiration date": [
         "Sbadu azemz n taggara"
+      ],
+      "Set recovery method": [
+        "Sbadu tarrayt n tririt"
       ],
       "Sign emails": [
         "Eg azmul i yimaylen"
@@ -3637,11 +3694,20 @@
       "All items will soon be permanently deleted from trash": [
         "Akk iferdisen ad ttwakksen seg tqecwalt i lebda"
       ],
+      "Cannot load link": [
+        "Aferdis yegguma ad d-yali"
+      ],
+      "Cannot load next page": [
+        "Asebter uḍfir yegguma ad d-yali"
+      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
+      ],
+      "Device removed": [
+        "Yettwakkes yibenk"
       ],
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
@@ -3692,6 +3758,17 @@
     "Onboarding Action": {
       "Next": [
         "Ɣer sdat"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Bdu aseqdec n ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "Onboarding Info": {
+      "Set a recovery method": [
+        "Sbadu tarrayt n tririt"
+      ],
+      "Upload a file": [
+        "Sali afaylu"
       ]
     },
     "Onboarding Proton": {
@@ -3706,6 +3783,11 @@
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
+      ]
+    },
+    "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Ansuf ɣer ${ DRIVE_APP_NAME }"
       ]
     },
     "Option": {
@@ -3751,6 +3833,9 @@
       ],
       "E.g., ": [
         "D am., "
+      ],
+      "Enter a new file name": [
+        "Sekcem isem n ufaylu amaynut"
       ],
       "Enter a new folder name": [
         "Sekcem isem n ukaram amaynut"
@@ -4128,9 +4213,6 @@
       ],
       "Discard changes?": [
         "Sefsex ibeddilen?"
-      ],
-      "Drive": [
-        "Nehheṛ"
       ],
       "Duplicate file found": [
         "Afaylu uslig yettwaf"

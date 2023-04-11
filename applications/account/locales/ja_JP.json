@@ -1641,9 +1641,6 @@
       ],
       "Work": [
         "勤務先"
-      ],
-      "Yomi": [
-        "ふりがな"
       ]
     },
     "Country name": {
@@ -7413,9 +7410,6 @@
       "Calendar": [
         "カレンダー"
       ],
-      "Drive": [
-        "ドライブ"
-      ],
       "Inbox": [
         "受信トレイ"
       ],
@@ -7614,6 +7608,9 @@
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
       ],
+      "Hide My Email aliases": [
+        "Hide My Email エイリアス"
+      ],
       "High-speed VPN on ${ n } devices": [
         "${ n } 台のデバイスで高速 VPN"
       ],
@@ -7643,6 +7640,12 @@
       ],
       "Router support": [
         "ルーター対応"
+      ],
+      "Schedule messages at any time": [
+        "いつでもメッセージを送信予約できます"
+      ],
+      "Search message content": [
+        "メッセージ内容の検索"
       ],
       "Secure Core servers": [
         "Secure Core サーバー"
@@ -7692,6 +7695,12 @@
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
       ],
+      "Up to 15 email addresses": [
+        "15 件のメールアドレス"
+      ],
+      "Up to 500 GB of storage": [
+        "500 GB のストレージ"
+      ],
       "User credential management": [
         "ユーザー資格管理"
       ],
@@ -7700,6 +7709,11 @@
       ],
       "Worldwide streaming services": [
         "世界的なストリーミングサービス"
+      ]
+    },
+    "new_plans: feature info": {
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "new_plans: heading": {
@@ -8314,9 +8328,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 以降)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64 ビット)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (Fedora/openSUSE 用)"
       ],
@@ -8330,9 +8341,6 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "ビットコイン"
-      ],
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],

@@ -1012,6 +1012,26 @@
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }'s Posteingang"
+      ],
+      "5 trackers removed": [
+        "5 Tracker entfernt"
+      ],
+      "Auto forwarded": [
+        "Automatisch weitergeleitet"
+      ],
+      "Email received": [
+        "E-Mail erhalten"
+      ],
+      "Encrypted": [
+        "Verschlüsselt"
+      ],
+      "New email": [
+        "Neue E-Mail"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
@@ -1627,7 +1647,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Möchten Sie diese Zahlungsmethode wirklich entfernen?"
+        "Möchtest du diese Zahlungsmethode wirklich entfernen?"
       ]
     },
     "Confirmation title": {
@@ -1712,9 +1732,6 @@
       ],
       "Work": [
         "Arbeit"
-      ],
-      "Yomi": [
-        "Lesung (Yomi)"
       ]
     },
     "Country name": {
@@ -2597,6 +2614,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Nachrichten, die länger als 30 Tage im Papierkorb oder Spam-Ordner liegen, automatisch löschen. Genieße diesen und weitere Vorteile, die du durch ein Upgrade erhältst."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
       ],
@@ -2608,6 +2628,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-Logo und ein Pluszeichen"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
@@ -3861,11 +3884,6 @@
         "Standard"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privatsphäre als Standard."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(Eine E-Mail pro Monat)"
@@ -3878,6 +3896,14 @@
       ],
       "(during your first month)": [
         "(während des ersten Monats)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatisch weiterleiten"
+      ],
+      "Sign in with Google": [
+        "Mit Google anmelden"
       ]
     },
     "Go to sign in": {
@@ -4031,9 +4057,6 @@
       ],
       "No verification method available": [
         "Keine Verifizierungsmethode verfügbar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4612,7 +4635,7 @@
         "Alle Schlüssel wurden erfolgreich wiederhergestellt"
       ],
       "All your changes will be lost.": [
-        "Alle Ihre Änderungen gehen dabei verloren."
+        "Alle deine Änderungen gehen dabei verloren."
       ],
       "Allocated": [
         "Zugewiesen"
@@ -4651,7 +4674,7 @@
         "Jeder, der über diesen Link verfügt, kann deinen Kalender nicht mehr synchronisieren und erhält keine zukünftigen Aktualisierungen mehr. Wenn du ihnen erneut Zugriff gewähren möchtest, musst du einen neuen Link erstellen."
       ],
       "Are you sure you want to delete this address?": [
-        "Möchten Sie diese Adresse wirklich löschen?"
+        "Möchtest du diese Adresse wirklich löschen?"
       ],
       "Are you sure you want to delete this calendar?": [
         "Bist du dir sicher, dass du diesen Kalender löschen möchtest?"
@@ -4678,13 +4701,13 @@
         "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Möchten Sie Ihre Änderungen wirklich verwerfen?"
+        "Möchtest du deine Änderungen wirklich verwerfen?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
-        "Möchten Sie alle Ihre Protokolle wirklich dauerhaft löschen?"
+        "Möchtest du alle deine Protokolle wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Möchten Sie diesem Benutzer wirklich die Administratorrechte entziehen?"
+        "Möchtest du diesem Benutzer wirklich die Administratorrechte entziehen?"
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
@@ -6674,6 +6697,9 @@
       "Auto show remote images": [
         "Bilder aus externen Quellen automatisch anzeigen"
       ],
+      "Auto-delete unwanted messages": [
+        "Unerwünschte Nachrichten automatisch löschen"
+      ],
       "Auto-detect primary time zone": [
         "Primäre Zeitzone automatisch erkennen"
       ],
@@ -8147,6 +8173,9 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
+      "Hide My Email aliases": [
+        "Hide My Email-Aliasse"
+      ],
       "High-speed VPN on ${ n } device": [
         "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
         "Hochgeschwindigkeits-VPN auf ${ n } Geräten"
@@ -8180,6 +8209,12 @@
       ],
       "Router support": [
         "Router-Unterstützung"
+      ],
+      "Schedule messages at any time": [
+        "Nachrichten zu jeder Zeit planen"
+      ],
+      "Search message content": [
+        "Nachrichteninhalt durchsuchen"
       ],
       "Secure Core servers": [
         "Secure Core-Server"
@@ -8232,6 +8267,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
+      "Up to 15 email addresses": [
+        "Bis zu 15 E-Mail-Adressen"
+      ],
+      "Up to 500 GB of storage": [
+        "Bis zu 500 GB Speicherplatz"
+      ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
       ],
@@ -8240,6 +8281,14 @@
       ],
       "Worldwide streaming services": [
         "Weltweite Streaming-Dienste"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ]
     },
     "new_plans: heading": {
@@ -10769,9 +10818,6 @@
       ],
       "Open pagination": [
         "Seitennummerierung öffnen"
-      ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
         "OpenVPN Konfigurationsdateien"

@@ -1012,6 +1012,26 @@
         "Isso irá desconectar todos os roteadores e clientes usando esse certificado."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } caixa de entrada"
+      ],
+      "5 trackers removed": [
+        "5 rastreadores removidos"
+      ],
+      "Auto forwarded": [
+        "Encaminhado automaticamente"
+      ],
+      "Email received": [
+        "E-mail recebido"
+      ],
+      "Encrypted": [
+        "Criptografado"
+      ],
+      "New email": [
+        "Novo E-mail"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicativos do ${ BRAND_NAME }"
@@ -2594,6 +2614,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Limpe automaticamente as mensagens com mais de 30 dias da lixeira e do spam. Aproveite este e outros benefícios ao realizar o upgrade."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
@@ -2606,12 +2629,18 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail e um sinal de mais"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contato. Se o seu arquivo for maior, divida-o em arquivos menores.",
         "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
       "Track the status and activity of your referrals.": [
         "Acompanhe o status e a atividade de suas referências."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Ícone de venda complementar contendo ${ BRAND_NAME } logotipo seguido por um sinal de mais"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Você pode continuar a convidar amigos, mas não poderá ganhar mais créditos"
@@ -3858,11 +3887,6 @@
         "Padrão"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidade por padrão."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail por mês)"
@@ -3875,6 +3899,17 @@
       ],
       "(during your first month)": [
         "(durante o primeiro mês)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Encaminhar automaticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "Mensagens do Gmail para sua caixa de entrada"
+      ],
+      "Sign in with Google": [
+        "Entre com Google"
       ]
     },
     "Go to sign in": {
@@ -4028,9 +4063,6 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4707,6 +4739,9 @@
       "Background color": [
         "Cor de fundo"
       ],
+      "Balance from your previous subscription": [
+        "Saldo da sua assinatura anterior"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navegação básica e ações permanecem disponíveis, independentemente dos atalhos de teclado estarem ativos ou não nas configurações."
       ],
@@ -5161,6 +5196,9 @@
       "it’s imperative": [
         "é obrigatório"
       ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Estou usando o @ProtonMail e pensei que você poderia gostar. É um serviço de e-mail seguro que protege sua privacidade. Inscreva-se com meu link de referência para obter 1 mês de recursos premium gratuitamente: ${ referrerLink }"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
       ],
@@ -5608,6 +5646,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "O endereço de e-mail que você colocou no topo da lista é o seu endereço de e-mail padrão. Arraste e solte para reordenar seus endereços."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "O link de verificação de e-mail expirou. Faça login para reenviar um link de verificação."
+      ],
       "The following address is available:": [
         "O seguinte endereço está disponível:"
       ],
@@ -5682,6 +5723,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Este token não estará disponível após você fechar esta janela e você não deve compartilhá-lo com ninguém."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Este link de cancelamento de inscrição expirou. Por favor, abra um e-mail mais recente desta lista de discussão."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
@@ -5805,6 +5849,9 @@
       ],
       "Unsaved changes": [
         "Alterações não salvas"
+      ],
+      "Unsubscribe link expired": [
+        "O link de cancelamento de inscrição expirou"
       ],
       "Unsupported file": [
         "Arquivo não suportado"
@@ -5973,6 +6020,22 @@
       ],
       "You can import one data type at a time.": [
         "Você pode importar um tipo de dado por vez."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura."
       ],
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
@@ -6639,6 +6702,9 @@
       ],
       "Auto show remote images": [
         "Mostrar imagens remotas automaticamente"
+      ],
+      "Auto-delete unwanted messages": [
+        "Excluir mensagens indesejadas automaticamente"
       ],
       "Auto-detect primary time zone": [
         "Detecção automática do fuso horário primário"
@@ -8062,6 +8128,9 @@
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Excluir automaticamente spam e mensagens da lixeira"
+      ],
       "Auto-reply": [
         "Resposta automática"
       ],
@@ -8113,6 +8182,9 @@
       "GDPR data processing agreement": [
         "Contrato de processamento de dados do GDPR"
       ],
+      "Hide My Email aliases": [
+        "Alias de Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
         "VPN de alta velocidade em ${ n } dispositivos"
@@ -8146,6 +8218,12 @@
       ],
       "Router support": [
         "Suporte a roteador"
+      ],
+      "Schedule messages at any time": [
+        "Agende mensagens a qualquer momento"
+      ],
+      "Search message content": [
+        "Pesquisar conteúdo da mensagem"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
@@ -8198,6 +8276,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
+      "Up to 15 email addresses": [
+        "Até 15 endereços de e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Até 500 GB de armazenamento"
+      ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"
       ],
@@ -8206,6 +8290,14 @@
       ],
       "Worldwide streaming services": [
         "Serviços de streaming internacionais"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obtenha aliases ilimitados com SimpleLogin do ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: heading": {
@@ -9803,14 +9895,29 @@
       "Got it": [
         "Entendido"
       ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Basta fazer login na sua conta da Apple App Store e pressionar ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Basta fazer login na sua conta da Play Store e pressionar ${ subscriptions }."
+      ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gerencie sua assinatura em ${ subscriptionManager }."
       ],
       "Subscription is managed by ${ subscriptionManager }": [
         "A assinatura é gerenciada por ${ subscriptionManager }"
       ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Assinatura de ID de usuário-${ userId } foi feito via uma compra no aplicativo. Para gerenciar a assinatura, o usuário precisa navegar até a seção Assinatura da sua ${ subscriptionManager } conta."
+      ],
       "Subscriptions": [
         "Assinaturas"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Seu plano foi adquirido usando um aplicativo Android. Portanto, para fazer alterações em seu plano ou atualizar seus dados de pagamento, você precisará acessar a Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Seu plano foi adquirido usando um aplicativo para iOS. Portanto, para fazer alterações em seu plano ou atualizar seus detalhes de pagamento, você precisará acessar a Apple App Store."
       ]
     },
     "Subscription price": {
@@ -9831,8 +9938,17 @@
       "Disable": [
         "Desativar"
       ],
+      "Enable auto-pay support": [
+        "Ativar suporte de pagamento automático"
+      ],
       "Keep auto-pay": [
         "Manter autopagamento"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Além disso, se você esquecer de fazer um pagamento manual e o pagamento automático estiver desabilitado para todos os métodos de pagamento, podemos rebaixar automaticamente sua conta, o que levará à perda de muitos recursos."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Nosso sistema não efetuará mais a cobrança automática usando esse método de pagamento, mas sua assinatura ainda será renovada no final do ciclo de cobrança. Se você quiser fazer downgrade ou alterar sua assinatura, ainda precisará fazer isso antes do final do período de cobrança. Não podemos fazer o downgrade automaticamente porque, se você ultrapassar a cota de armazenamento do plano gratuito ou usar outros recursos pagos, não poderemos excluir automaticamente arquivos, e-mails ou outros dados para você. Se você desabilitar o pagamento automático, lembre-se de pagar sua próxima fatura de assinatura antes da data de vencimento para evitar a suspensão da conta."
       ]
     },
     "Subscription saving": {
@@ -10358,6 +10474,9 @@
       "Clear": [
         "Limpar"
       ],
+      "Clear out the junk": [
+        "Limpe o lixo"
+      ],
       "Composing": [
         "Composição"
       ],
@@ -10505,6 +10624,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixar ${ VPN_APP_NAME }"
+      ],
+      "Duration": [
+        "Duração"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -11128,6 +11250,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personalize a importação para reduzir a quantidade de marcadores"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Exclua as mensagens de lixo e spam após 30 dias. Ativar esta opção excluirá todas as mensagens atualmente em suas pastas de lixo e spam. Mensagens futuras de spam e lixeira serão excluídas automaticamente após 30 dias."
       ],
       "Each imported email will have this label": [
         "Cada e-mail importado terá este marcador"
