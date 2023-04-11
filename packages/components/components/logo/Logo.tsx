@@ -6,11 +6,12 @@ import { IconSize } from '../icon';
 import CalendarLogo from './CalendarLogo';
 import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';
+import PassLogo from './PassLogo';
 import VpnLogo from './VpnLogo';
 
 export type LogoVariant = 'with-wordmark' | 'glyph-only';
 
-const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
+const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS, PROTONPASS } = APPS;
 
 export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'> {
     appName: APP_NAMES;
@@ -34,6 +35,10 @@ const Logo = ({ appName, variant, ...rest }: LogoProps) => {
 
     if (appName === PROTONDRIVE) {
         return <DriveLogo variant={variant} {...rest} />;
+    }
+
+    if (appName === PROTONPASS) {
+        return <PassLogo variant={variant} {...rest} />;
     }
 
     return null;
