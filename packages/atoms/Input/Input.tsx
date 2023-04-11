@@ -33,28 +33,6 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
         ...rest
     } = props;
 
-    const inputElement = (
-        <input
-            autoComplete="off"
-            autoCapitalize="off"
-            autoCorrect="off"
-            spellCheck="false"
-            aria-invalid={!!error}
-            disabled={disabled}
-            data-testid="input-input-element"
-            {...rest}
-            ref={ref}
-            onChange={(e) => {
-                if (disableChange) {
-                    return;
-                }
-                onValue?.(e.target.value);
-                rest.onChange?.(e);
-            }}
-            className={clsx('input-element w100', inputClassName)}
-        />
-    );
-
     return (
         <div
             className={clsx(
@@ -77,7 +55,27 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
                 </div>
             )}
 
-            <div className="flex flex-item-fluid">{inputElement}</div>
+            <div className="flex flex-item-fluid">
+                <input
+                    autoComplete="off"
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    spellCheck="false"
+                    aria-invalid={!!error}
+                    disabled={disabled}
+                    data-testid="input-input-element"
+                    {...rest}
+                    ref={ref}
+                    onChange={(e) => {
+                        if (disableChange) {
+                            return;
+                        }
+                        onValue?.(e.target.value);
+                        rest.onChange?.(e);
+                    }}
+                    className={clsx('input-element w100', inputClassName)}
+                />
+            </div>
 
             {suffix && (
                 <div className="input-adornment mr0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
