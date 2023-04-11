@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,11 +14,16 @@ import {
     ModalTwoHeader,
     Row,
     Tooltip,
+    useLoading,
     useModalTwo,
 } from '@proton/components';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
+import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
-import { useLinkDetailsView } from '../../store';
+import { SignatureIssues, useLinkDetailsView } from '../../store';
+import { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
+import useRevisions from '../../store/_revisions/useRevisions';
 import { formatAccessCount } from '../../utils/formatters';
 import { Cells } from '../FileBrowser';
 import SignatureAlert from '../SignatureAlert';
@@ -36,6 +41,134 @@ interface RowProps {
     title?: string;
     children: ReactNode;
     dataTestId?: string;
+}
+
+interface RevisionDetailsModalProps {
+    shareId: string;
+    linkId: string;
+    revision: DriveFileRevision;
+    name: string;
+}
+
+const sizeTooltipMessage = c('Info')
+    .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`;
+
+export function RevisionDetailsModal({
+    shareId,
+    linkId,
+    revision,
+    name,
+    onClose,
+    ...modalProps
+}: RevisionDetailsModalProps & ModalStateProps) {
+    const { getRevisionDecryptedXattrs, checkRevisionSignature } = useRevisions(shareId, linkId);
+    const [xattrs, setXattrs] = useState<ParsedExtendedAttributes>();
+    const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
+    const [signatureNetworkError, setSignatureNetworkError] = useState<boolean>(false);
+    const [isSignatureLoading, withSignatureLoading] = useLoading();
+    useEffect(() => {
+        const ac = new AbortController();
+        void getRevisionDecryptedXattrs(ac.signal, revision.XAttr, revision.SignatureAddress).then(
+            (decryptedXattrs) => {
+                if (!decryptedXattrs) {
+                    return;
+                }
+                setXattrs(decryptedXattrs.xattrs);
+                if (signatureIssues) {
+                    setSignatureIssues({ ...signatureIssues, ...decryptedXattrs.signatureIssues });
+                } else {
+                    setSignatureIssues(decryptedXattrs.signatureIssues);
+                }
+            }
+        );
+        return () => {
+            ac.abort();
+        };
+    }, [revision.XAttr, revision.SignatureAddress]);
+
+    useEffect(() => {
+        const ac = new AbortController();
+        void withSignatureLoading(
+            checkRevisionSignature(ac.signal, revision.ID).then((blocksSignatureIssues) => {
+                if (signatureIssues) {
+                    setSignatureIssues({ ...signatureIssues, ...blocksSignatureIssues });
+                } else {
+                    setSignatureIssues(blocksSignatureIssues);
+                }
+            })
+        ).catch(() => {
+            setSignatureNetworkError(true);
+        });
+        return () => {
+            ac.abort();
+        };
+    }, [revision.ID]);
+    const renderModalState = () => {
+        return (
+            <ModalTwoContent>
+                <SignatureAlert
+                    loading={isSignatureLoading}
+                    signatureIssues={signatureIssues}
+                    signatureNetworkError={signatureNetworkError}
+                    signatureAddress={revision.SignatureAddress}
+                    isFile
+                    name={name}
+                    className="mb1"
+                />
+                <DetailsRow label={c('Title').t`Name`}>
+                    <FileNameDisplay text={name} />
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Uploaded by`}>
+                    <span className="text-pre">{revision.SignatureEmail}</span>
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Uploaded`}>
+                    <TimeCell time={revision.CreateTime} />
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Modified`}>
+                    {xattrs?.Common.ModificationTime ? (
+                        <TimeCell time={xattrs.Common.ModificationTime} />
+                    ) : (
+                        <EllipsisLoader />
+                    )}
+                </DetailsRow>
+                <DetailsRow
+                    label={
+                        <>
+                            {c('Title').t`Size`}
+                            <Tooltip title={sizeTooltipMessage} className="ml0-25 mb0-25">
+                                <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
+                            </Tooltip>
+                        </>
+                    }
+                >
+                    <span title={bytesSize(revision.Size)}>{humanSize(revision.Size)}</span>
+                </DetailsRow>
+                {xattrs?.Common.Size ? (
+                    <DetailsRow label={c('Title').t`Original size`}>
+                        <span title={bytesSize(xattrs?.Common.Size)}>{humanSize(xattrs?.Common.Size)}</span>
+                    </DetailsRow>
+                ) : (
+                    <EllipsisLoader />
+                )}
+                {xattrs?.Common.Digests && (
+                    // This should not be visible in the UI, but needed for e2e
+                    <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
+                        {xattrs.Common.Digests.SHA1}
+                    </span>
+                )}
+            </ModalTwoContent>
+        );
+    };
+
+    return (
+        <ModalTwo onClose={onClose} size="large" {...modalProps}>
+            <ModalTwoHeader title={c('Title').t`Revision details`} />
+            {renderModalState()}
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
+    );
 }
 
 export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
@@ -62,9 +195,6 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                 </ModalTwoContent>
             );
         }
-
-        const sizeTooltipMessage = c('Info')
-            .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`;
 
         const isShared = link.shareUrl && !link.shareUrl.isExpired ? c('Info').t`Yes` : c('Info').t`No`;
         return (
@@ -168,5 +298,8 @@ function getTitle(isFile?: boolean) {
 }
 
 export const useDetailsModal = () => {
-    return useModalTwo<{ shareId: string; linkId: string }, unknown>(DetailsModal, false);
+    return useModalTwo<Props, unknown>(DetailsModal, false);
+};
+export const useRevisionDetailsModal = () => {
+    return useModalTwo<RevisionDetailsModalProps, unknown>(RevisionDetailsModal, false);
 };
