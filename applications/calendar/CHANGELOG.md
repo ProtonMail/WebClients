@@ -6,6 +6,8 @@
 
 ### Improvements
 
+-   Update time zone offsets to the IANA time zone database 2022g
+-   Update spelling of Europe/Kiev time zone to Europe/Kyiv
 -   Enable the possibility to interact with the contacts in the side panel while creating an event in your calendar
 
 ## Release: 5.0.9 — March 8, 2023
