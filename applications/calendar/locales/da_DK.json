@@ -506,6 +506,9 @@
       "Today": [
         "I dag"
       ],
+      "Toggle Contact app": [
+        "Skift Kontakt-app"
+      ],
       "Trust": [
         "Hav tillid til"
       ],
@@ -865,6 +868,11 @@
       ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Kunne ikke hente kalenderinformation for ${ address }"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3774,6 +3782,11 @@
         "Kun visning"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Inviter andre med en ${ BRAND_NAME }-konto til at se og ændre begivenheder i din kalender."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Nogle af dine kalendere vil ikke vise detaljer om tidligere oprettede begivenheder."
@@ -4972,6 +4985,11 @@
         "Kunne ikke opdatere indstillinger"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Hvis du vil invitere brugere, som ikke benytter ${ BRAND_NAME }, skal du dele din kalender med et link."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem pr. kalender",
@@ -5009,6 +5027,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Administrer kalender"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Signaturbekræftelse mislykkedes"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Du har aktiveret adressebekræftelse for ${ boldSenderEmail }. Vi kunne ikke bekræfte ægtheden af denne kalenderinvitation. Dette kan skyldes ændringer i denne kontakts krypteringsnøgler. Gennemgå venligst dens avancerede PGP-indstillinger, eller du kan bede ${ boldSenderEmail } om en ny invitation."
       ]
     },
     "Signing preference for emails": {
@@ -5678,6 +5704,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vælg et nummer"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Planlægning er lige blevet nemmere!"
       ]
     },
     "Title; create calendar modal": {

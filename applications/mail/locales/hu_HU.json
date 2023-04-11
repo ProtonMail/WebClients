@@ -474,9 +474,6 @@
       "Hide messages": [
         "Üzenetek elrejtése"
       ],
-      "Hide my email": [
-        "E-mail cím elrejtése"
-      ],
       "I have a question": [
         "Kérdésem van"
       ],
@@ -2813,9 +2810,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } logo és egy plusz jel"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } a beállításoknál."
       ],
@@ -3465,6 +3459,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "A 3.0-nál régebbi vCard verziók nem támogatottak"
       ]
     },
     "Error importing contacts": {
@@ -5130,6 +5127,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Túl sokáig tart a keresés? ${ dropdownButton } vagy ${ toggleOffButton } ebből a keresési munkafolyamatból."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Helyezze biztonságba fájljait titkosított felhőtárhellyel ingyen, már ma."
+      ],
       "Seems like you are all caught up for now": [
         "Úgy tűnik minden el van intézve"
       ],
@@ -5528,6 +5528,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Használhatja a ${ VPN_APP_NAME }-t ingyen, már ma."
       ],
       "You cannot reply from the invited address.": [
         "Nem válaszolhat a meghívott címről."
@@ -6512,6 +6515,9 @@
       "More about recovery": [
         "Több információ a helyreállításról"
       ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Megnyitás ebben: ${ CALENDAR_APP_NAME }"
+      ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
         "A frissített esemény megnyitása ${ CALENDAR_APP_NAME } használatával"
       ],
@@ -6884,14 +6890,14 @@
         "Cimke neve"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Váltás vagy fiók hozzáadása"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Váltás nagyobb csomagra"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Váltás vagy fiók hozzáadása"
       ]
     },
     "new_plans: feature": {
@@ -6966,6 +6972,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
       ]
     },
     "Onboarding": {
@@ -7283,6 +7294,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } n",
         "${ remainingDays } n"
+      ],
+      "<1 d": [
+        "<1 nap"
       ]
     },
     "Reply to calendar invitation": {

@@ -474,12 +474,6 @@
       "Hide messages": [
         "İletileri gizle"
       ],
-      "Hide My Email": [
-        "E-postamı gizle"
-      ],
-      "Hide my email": [
-        "E-posta adresimi gizle"
-      ],
       "I have a question": [
         "Bir sorum var"
       ],
@@ -1241,6 +1235,26 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } tamamlandı",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } tamamlandı"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } kullanıcısının gelen kutusu"
+      ],
+      "5 trackers removed": [
+        "5 izleyici kaldırıldı"
+      ],
+      "Auto forwarded": [
+        "Otomatik olarak iletildi"
+      ],
+      "Email received": [
+        "E-posta alındı"
+      ],
+      "Encrypted": [
+        "Şifrelenmiş"
+      ],
+      "New email": [
+        "Yeni e-posta"
       ]
     },
     "Apps dropdown": {
@@ -2816,11 +2830,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } logosu ve artı simgesi"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "Ayarlar bölümünden ${ manageBlockedAddressesSettingsLink }."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin. Tarifenizi yükselterek bunun gibi başka özelliklerden yararlanın."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
@@ -2849,6 +2863,9 @@
       ],
       "No labels": [
         "Henüz bir etiket yok"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logosu ve bir artı işareti"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
@@ -3838,6 +3855,11 @@
         "Okunmamış"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Ek dosyası olan"
+      ]
+    },
     "Filter preview": {
       "read": [
         "okunmuş"
@@ -3938,6 +3960,17 @@
     "Get started checklist title": {
       "Get started": [
         "Başlayalım"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Otomatik olarak ilet"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail iletilerini gelen kutunuzda görün"
+      ],
+      "Sign in with Google": [
+        "Google ile oturum aç"
       ]
     },
     "Group": {
@@ -4546,6 +4579,12 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "İstenmeyen kutusunda 30 günden uzun süre kalan iletileri otomatik olarak silin."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Çöp kutusunda 30 günden uzun süre kalan iletileri otomatik olarak silin."
+      ],
       "Background color": [
         "Arka plan rengi"
       ],
@@ -4954,6 +4993,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "30 günden uzun süre istenmeyen kutusunda kalan iletiler otomatik olarak silinecektir."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "30 günden uzun süre çöp kutusunda duran iletiler otomatik olarak silinecektir."
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
@@ -5417,6 +5462,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "İstenmeyen kutusunda 30 günden uzun süre kalan iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Çöp kutusunda 30 günden uzun süre kalan iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Daha fazla klasör, süzgeç ve adres oluşturmak için yükseltin."
@@ -6902,17 +6953,20 @@
         "Etiket adı"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Hesap değiştirin ya da ekleyin"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Şimdi yükselt"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
+      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
@@ -7956,6 +8010,9 @@
       ],
       "Change my answer": [
         "Yanıtımı değiştir"
+      ],
+      "Clear out the junk": [
+        "Çöpleri temizleyin"
       ],
       "Clearing data": [
         "Veriler temizleniyor"
