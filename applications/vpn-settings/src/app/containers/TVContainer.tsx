@@ -53,9 +53,9 @@ const TVContainer = () => {
                     <TVCodeInputs value={code} setValue={setCode} />
                     {error ? (
                         <>
-                            <p className="mt2 mb0 pl1 text-center color-danger">{c('Error')
+                            <p className="mt2 mb-0 pl1 text-center color-danger">{c('Error')
                                 .t`Code wrong or not valid anymore`}</p>
-                            <p className="m0 text-center border-none">{c('Error')
+                            <p className="m-0 text-center border-none">{c('Error')
                                 .t`If the time on your TV has expired, click on Refresh on your TV and enter your code again.`}</p>
                         </>
                     ) : null}
@@ -99,7 +99,7 @@ const TVContainer = () => {
                         <VpnLogo />
                     </Href>
                 </div>
-                <h3 className="mb0 pl0-25 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
+                <h3 className="mb-0 pl0-25 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
             </div>
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
                 <div className="mauto p2 flex-item-noshrink max-w30e">{render()}</div>

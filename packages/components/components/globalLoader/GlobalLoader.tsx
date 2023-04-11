@@ -18,7 +18,7 @@ const GlobalLoader = () => {
             style={{ '--top-custom': '1.5em' }}
         >
             <Loader size="small" className="flex" />
-            {text && <span className="ml0-5">{text}</span>}
+            {text && <span className="ml-2">{text}</span>}
         </div>
     );
 };

@@ -168,16 +168,16 @@ const PaymentStep = ({
                         onChangePlanIDs={onChangePlanIDs}
                     />
                     <div className="text-sm">
-                        <div className="flex flex-nowrap color-weak mb0-5">
-                            <span className="flex-item-noshrink mr0-5">
+                        <div className="flex flex-nowrap color-weak mb-2">
+                            <span className="flex-item-noshrink mr-2">
                                 <Icon name="shield" />
                             </span>
                             <span className="flex-item-fluid pt0-1">{c('Info')
                                 .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                         </div>
                         {hasGuarantee && (
-                            <div className="flex flex-nowrap color-weak mb0-5">
-                                <span className="flex-item-noshrink mr0-5">
+                            <div className="flex flex-nowrap color-weak mb-2">
+                                <span className="flex-item-noshrink mr-2">
                                     <Icon name="clock" className="align-top" />
                                 </span>
                                 <span className="flex-item-fluid">{c('Info').t`30-day money-back guarantee.`}</span>

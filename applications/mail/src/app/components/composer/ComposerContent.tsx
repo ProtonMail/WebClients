@@ -62,7 +62,7 @@ const ComposerContent = ({
     return (
         <section
             className={clsx([
-                'flex-item-fluid-auto mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
+                'flex-item-fluid-auto mb-2 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
         >
@@ -78,8 +78,8 @@ const ComposerContent = ({
             <div
                 className={clsx([
                     'flex-item-fluid flex flex-column flex-nowrap relative',
-                    isOutside && 'mx0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0',
-                    !isOutside && 'w100 mb0-5',
+                    isOutside && 'mx-0 sm:mx-2',
+                    !isOutside && 'w100 mb-2',
                 ])}
                 data-testid="composer-content"
             >

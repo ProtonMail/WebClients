@@ -14,7 +14,7 @@ const CustomizeCalendarImportModalLimitReached = ({ canMerge, calendarsToFixCoun
             data-testid="CustomizeCalendarImportModalLimitReached:container"
         >
             {c('Error').t`You have reached the maximum number of calendars. Some calendars couldn't be imported.`}
-            <ul className="m0">
+            <ul className="m-0">
                 <li>
                     {canMerge
                         ? c('Error').ngettext(

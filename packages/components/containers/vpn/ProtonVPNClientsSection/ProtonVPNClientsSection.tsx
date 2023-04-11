@@ -1,16 +1,23 @@
 import { useHistory, useLocation } from 'react-router-dom';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
+
+
 
 import { Copy, DropdownMenuLink, ModalProps, ModalTwo, ModalTwoContent } from '../../../components';
 import { useWelcomeFlags } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';
 import VPNClientCard from './VPNClientCard';
+
 
 interface DownloadModalProps extends ModalProps {
     downloadUrl: string;
@@ -35,7 +42,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
                     onClick={() => {
                         rest.onClose?.();
                     }}
-                    className="mb0-5"
+                    className="mb-2"
                 >{c('Action').t`Download`}</ButtonLike>
                 <Button color="norm" size="large" fullWidth shape="ghost" onClick={rest.onClose}>
                     {c('Action').t`Close`}
@@ -69,7 +76,7 @@ const ProtonVPNClientsSection = () => {
                 <DropdownMenuLink className="flex-item-fluid" href={href}>
                     {children}
                 </DropdownMenuLink>
-                <Copy shape="ghost" value={href} className="flex-item-noshrink mr0-5" />
+                <Copy shape="ghost" value={href} className="flex-item-noshrink mr-2" />
             </div>
         );
     });

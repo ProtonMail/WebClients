@@ -1,7 +1,11 @@
 import { CSSProperties, Ref, useMemo } from 'react';
 
+
+
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+
+
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
@@ -9,6 +13,7 @@ import { getEventStatusTraits } from '../../helpers/event';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import getEventInformation from './getEventInformation';
 import useReadEvent from './useReadEvent';
+
 
 interface Props {
     style: CSSProperties;
@@ -76,11 +81,7 @@ const FullDayEvent = ({
     const content = (
         <div className="flex flex-nowrap flex-item-fluid flex-align-items-center">
             {!isAllDay ? (
-                <Icon
-                    className="mr0-5 flex-item-noshrink calendar-dayeventcell-circle"
-                    size={16}
-                    name="circle-filled"
-                />
+                <Icon className="mr-2 flex-item-noshrink calendar-dayeventcell-circle" size={16} name="circle-filled" />
             ) : null}
 
             {isOutsideStart ? <Icon name="chevron-left" size={12} className="flex-item-noshrink" /> : null}

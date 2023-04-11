@@ -62,14 +62,14 @@ const ExtraExpirationTime = ({ message }: Props) => {
     return (
         <div
             className={clsx(
-                'bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column',
+                'bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap on-mobile-flex-column',
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
         >
-            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5" data-testid="expiration-banner">
-                <Icon name="hourglass" className="mt0-4 flex-item-noshrink ml0-2" />
+            <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0" data-testid="expiration-banner">
+                <Icon name="hourglass" className="mt-1 ml-0.5 flex-item-noshrink" />
                 <span
-                    className={clsx(!canExpire && 'mt0-25', 'pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center')}
+                    className={clsx(!canExpire && 'mt-1', 'pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center')}
                 >
                     {expirationMessage}
                 </span>

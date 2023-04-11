@@ -1,14 +1,19 @@
 import { c } from 'ttag';
 
+
+
 import { EmptyViewContainer } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-devices.svg';
 
+
+
 import './EmptyDevices.scss';
+
 
 const EmptyDevices = () => {
     const LearnMore = (
-        <p className="p0 m0">
+        <p className="p0 m-0">
             <a href={'https://drive.proton.me/urls/3SF8FZV8B0#grWxkmu9q4NP'} target="_blank" key="learn-more-link">
                 {c('Action').t`Download the Windows application`}
             </a>

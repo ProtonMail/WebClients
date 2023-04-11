@@ -36,11 +36,11 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }: Props) =
         <>
             <Field className="pt0-5">
                 <div className="mb1">
-                    <span className="mr0-5">{c('Info').t`Desktop notifications are currently`}</span>
+                    <span className="mr-2">{c('Info').t`Desktop notifications are currently`}</span>
                     {status === Status.GRANTED ? (
-                        <Badge type="success" className="m0">{c('Desktop notification status').t`Enabled`}</Badge>
+                        <Badge type="success" className="m-0">{c('Desktop notification status').t`Enabled`}</Badge>
                     ) : (
-                        <Badge type="error" className="m0">{c('Desktop notification status').t`Disabled`}</Badge>
+                        <Badge type="error" className="m-0">{c('Desktop notification status').t`Disabled`}</Badge>
                     )}
                 </div>
                 <div>

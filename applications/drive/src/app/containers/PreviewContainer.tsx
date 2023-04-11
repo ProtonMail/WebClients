@@ -112,7 +112,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         }
 
         return (
-            <SignatureIcon isFile={link.isFile} signatureIssues={link.signatureIssues} className="ml0-5 color-danger" />
+            <SignatureIcon isFile={link.isFile} signatureIssues={link.signatureIssues} className="ml-2 color-danger" />
         );
     }, [link]);
 

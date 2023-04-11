@@ -31,7 +31,7 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
 
-    const protonLogo = <ProtonLogo variant="full" className={clsx(onBack && 'on-mobile-ml1')} />;
+    const protonLogo = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />;
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
@@ -57,7 +57,7 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
                         <div className="flex-item-noshrink">{protonLogo}</div>
                     )}
                 </div>
-                {hasDecoration && <LanguageSelect className="max-w100 ml1" outlined globe locales={locales} />}
+                {hasDecoration && <LanguageSelect className="max-w100 ml-4" outlined globe locales={locales} />}
             </header>
             <div className="sign-layout-container flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between">
                 <div>
@@ -76,12 +76,12 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
                         className="flex-item-noshrink text-center p1 on-mobile-pt0 on-mobile-pb0"
                         version={appVersion}
                     />
-                    <div className="fixed m2 mb1-5 bottom right on-tablet-m0 on-tablet-mb1 on-tablet-text-center on-tablet-static on-tiny-mobile-text-sm">
+                    <div className="fixed m-0 lg:m-8 mb-4 lg:mb-5 bottom right on-tablet-text-center on-tablet-static on-tiny-mobile-text-sm">
                         {bottomRight}
                     </div>
                     <p
                         data-testid="layout-footer:version-text"
-                        className="hidden auto-tiny-mobile text-center text-sm m0-5 mb1"
+                        className="hidden auto-tiny-mobile text-center text-sm m-2 mb-4"
                     >{c('Info').jt`Version ${version}`}</p>
                 </>
             ) : (

@@ -49,7 +49,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                                 {isESActive ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
                             </span>
                         </div>
-                        <p className="mb0">
+                        <p className="mb-0">
                             {isESActive
                                 ? c('Info')
                                       .t`Private search enabled. You may now close this dialogue and search for files and folders.`

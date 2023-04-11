@@ -1,20 +1,17 @@
 import { useEffect, useState } from 'react';
 
+
+
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import {
-    ContactKeyWarningIcon,
-    Loader,
-    Table,
-    TableBody,
-    TableRow,
-    useActiveBreakpoint,
-    useLoading,
-} from '@proton/components';
+
+
+import { ContactKeyWarningIcon, Loader, Table, TableBody, TableRow, useActiveBreakpoint, useLoading } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
+
 
 interface Props {
     contact: ContactWithBePinnedPublicKey;
@@ -41,7 +38,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     const fingerprintCell = (
         <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
             <ContactKeyWarningIcon
-                className="mr0-5 flex-item-noshrink"
+                className="mr-2 flex-item-noshrink"
                 publicKey={publicKey}
                 emailAddress={contact.emailAddress}
                 isInternal={contact.isInternal}

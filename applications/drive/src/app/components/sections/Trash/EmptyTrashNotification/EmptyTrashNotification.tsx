@@ -26,7 +26,7 @@ const EmptyTrashNotification = ({ disabled, className }: Props) => {
                     'empty-trash-notification section--header flex flex-align-items-center on-mobile-flex-column p1 pt0-5 pb0-5 on-mobile-pb0-5'
                 )}
             >
-                <p className="m0 flex-item-fluid text-sm pt0-5 pb0-5">
+                <p className="m-0 flex-item-fluid text-sm pt0-5 pb0-5">
                     {c('Info').t`Items in the trash will stay here until you delete them permanently`}
                 </p>
                 <Button

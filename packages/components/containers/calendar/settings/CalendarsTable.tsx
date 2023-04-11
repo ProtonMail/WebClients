@@ -47,7 +47,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDe
     const nameHeader = c('Header').t`Name`;
     const statusHeader = (
         <div className="flex flex-align-items-center">
-            <span className="mr0-5">{c('Header').t`Status`}</span>
+            <span className="mr-2">{c('Header').t`Status`}</span>
             <Info url={getKnowledgeBaseUrl('/calendar-status')} />
         </div>
     );
@@ -77,14 +77,14 @@ const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDe
                                     <div className="grid-align-icon-center">
                                         <CalendarSelectIcon
                                             color={Color}
-                                            className="mr0-75 flex-item-noshrink keep-left"
+                                            className="mr-3 flex-item-noshrink keep-left"
                                         />
                                         <div className="text-ellipsis" title={Name}>
                                             {Name}
                                         </div>
                                         {!hasSingleAddress && (
                                             <div
-                                                className={clsx(['text-ellipsis text-sm m0 color-weak'])}
+                                                className={clsx(['text-ellipsis text-sm m-0 color-weak'])}
                                                 style={{ '--index': index }}
                                                 title={Email}
                                             >
@@ -123,7 +123,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDe
                                                 }}
                                                 size="small"
                                                 shape="outline"
-                                                className="mr0-5"
+                                                className="mr-2"
                                             >{c('Action').t`Set as default`}</Button>
                                         )}
                                     <Tooltip title={c('Calendar table settings button tooltip').t`Open settings`}>

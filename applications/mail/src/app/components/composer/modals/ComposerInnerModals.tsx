@@ -85,7 +85,7 @@ const ComposerInnerModals = ({
                     submit={c('Action').t`Got it`}
                     data-testid={'composer:modal:norecipients'}
                 >
-                    <p className="text-left m0">{c('Info').t`Please add at least one recipient.`}</p>
+                    <p className="text-left m-0">{c('Info').t`Please add at least one recipient.`}</p>
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.NoSubjects && (
@@ -96,7 +96,7 @@ const ComposerInnerModals = ({
                     submit={c('Action').t`Send anyway`}
                     data-testid={'composer:modal:nosubject'}
                 >
-                    <p className="text-left m0">{c('Info')
+                    <p className="text-left m-0">{c('Info')
                         .t`You have not given your email any subject. Do you want to send the message anyway?`}</p>
                 </ComposerInnerModal>
             )}

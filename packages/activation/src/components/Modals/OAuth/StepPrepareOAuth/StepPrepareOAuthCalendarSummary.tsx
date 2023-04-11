@@ -66,7 +66,7 @@ const StepPrepareCalendarSummary = ({ isSelected }: Props) => {
         <>
             {derivedValues.calendarLimitReached ? (
                 <div className="flex color-danger">
-                    <Icon name="exclamation-circle-filled" className="flex-align-self-center mr0-5" />
+                    <Icon name="exclamation-circle-filled" className="flex-align-self-center mr-2" />
                     {c('Error').t`Calendar limit reached`}
                 </div>
             ) : (

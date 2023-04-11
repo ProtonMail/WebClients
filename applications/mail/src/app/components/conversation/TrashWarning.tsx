@@ -37,11 +37,11 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
         <div
             ref={ref}
             tabIndex={0}
-            className="border rounded m0-5 mb1 p1 flex flex-nowrap flex-align-items-center flex-justify-space-between trashed-messages outline-none"
+            className="border rounded m-2 mb-4 p1 flex flex-nowrap flex-align-items-center flex-justify-space-between trashed-messages outline-none"
             data-shortcut-target="trash-warning"
         >
             <div className="flex flex-nowrap flex-align-items-center">
-                <Icon name="trash" className="mr1 flex-item-noshrink" />
+                <Icon name="trash" className="mr-4 flex-item-noshrink" />
                 <span>
                     {inTrash
                         ? c('Info').t`This conversation contains non-trashed messages.`
@@ -50,7 +50,7 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
             </div>
             <InlineLinkButton
                 onClick={onToggle}
-                className="ml0-5 text-underline"
+                className="ml-2 text-underline"
                 data-testid="conversation-view:toggle-trash-messages-button"
             >
                 {inTrash

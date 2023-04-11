@@ -8,7 +8,7 @@ interface Props extends Omit<InputButtonProps, 'title'> {
 
 const DayCheckbox = ({ id, dayAbbreviation, dayLong, ...rest }: Props) => {
     return (
-        <InputButton title={dayLong} labelProps={{ className: 'mt0-5' }} {...rest}>
+        <InputButton title={dayLong} labelProps={{ className: 'mt-2' }} {...rest}>
             <span aria-hidden="true">{dayAbbreviation}</span>
             <span className="sr-only">{dayLong}</span>
         </InputButton>

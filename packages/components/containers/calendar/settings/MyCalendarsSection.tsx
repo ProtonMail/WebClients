@@ -1,6 +1,10 @@
 import { ReactNode } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
@@ -14,12 +18,15 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+
+
 import { Alert, PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import { ExportModal } from '../exportModal/ExportModal';
 import CalendarsSection from './CalendarsSection';
+
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{
@@ -165,7 +172,7 @@ const MyCalendarsSection = ({
     const isCalendarsLimitReachedNode = isFreeUser ? (
         <Card rounded className="mb1">
             <div className="flex flex-nowrap flex-align-items-center">
-                <p className="flex-item-fluid mt0 mb0 pr2">{calendarsLimitReachedText}</p>
+                <p className="flex-item-fluid my-0 pr2">{calendarsLimitReachedText}</p>
                 <ButtonLike
                     as={SettingsLink}
                     path={addUpsellPath(

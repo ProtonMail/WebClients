@@ -1,14 +1,19 @@
 import { c } from 'ttag';
 
+
+
 import { getColorName } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
+
+
 import { ColorPicker, Info, InputFieldTwo, Label, Toggle } from '../../components';
 import { useMailSettings } from '../../hooks';
 import ParentFolderSelector from './ParentFolderSelector';
+
 
 interface Props {
     label: Partial<tsLabel | Folder>;
@@ -35,7 +40,7 @@ function NewLabelForm({
         return (
             <>
                 <span>{c('New Label form').t`Color`}:</span>
-                {colorName && <span className="color-weak text-capitalize text-no-bold ml0-5">{colorName}</span>}
+                {colorName && <span className="color-weak text-capitalize text-no-bold ml-2">{colorName}</span>}
             </>
         );
     };
@@ -77,7 +82,7 @@ function NewLabelForm({
                         {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
                             <div className="mb1">
                                 <strong className="text-semibold">{c('New Label form').t`Color`} </strong>
-                                <div className="mt0-5">{c('Info').t`Inherited from parent folder`}</div>
+                                <div className="mt-2">{c('Info').t`Inherited from parent folder`}</div>
                             </div>
                         ) : (
                             <InputFieldTwo
@@ -95,7 +100,7 @@ function NewLabelForm({
                 <div className="flex flex-justify-start flex-align-items-center">
                     <Label htmlFor="notification" className="wauto">
                         <span className="inline-flex flex-align-items-center">
-                            <span className="mr0-5 text-semibold">{c('Label').t`Notification`}</span>
+                            <span className="mr-2 text-semibold">{c('Label').t`Notification`}</span>
                             <Info
                                 title={c('Info')
                                     .t`You can turn on notifications to get alerts when new email messages arrive in this folder.`}

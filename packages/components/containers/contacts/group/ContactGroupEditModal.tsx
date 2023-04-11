@@ -176,7 +176,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                             />
                         </Field>
                         <Button
-                            className="ml1 on-mobile-ml0 on-mobile-mt0-5"
+                            className="ml-0 md:ml-4 mt-2 md:mt-0"
                             onClick={handleAdd}
                             disabled={!isValidEmail}
                             data-testid="create-group:add-email"

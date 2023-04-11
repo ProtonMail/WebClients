@@ -5,7 +5,7 @@ export interface Props {
 }
 
 const ContextSeparator = ({ className = '', ...rest }: Props) => {
-    return <hr className={classnames(['m0', className])} {...rest} />;
+    return <hr className={classnames(['m-0', className])} {...rest} />;
 };
 
 export default ContextSeparator;

@@ -163,8 +163,8 @@ function GeneratedLinkState({
             <ModalTwoContent>
                 <div ref={contentRef}>
                     <p>{c('Info').jt`Shareable link for ${boldNameText}`}</p>
-                    <Row className="on-mobile-mb0-5">
-                        <div className="flex flex-item-fluid on-mobile-mb0-5">
+                    <Row className="mb-2 md:mb-0">
+                        <div className="flex flex-item-fluid mb-2 md:mb-0">
                             <Input
                                 readOnly
                                 value={url}
@@ -172,7 +172,7 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-url"
                             />
                         </div>
-                        <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
+                        <div className="flex-no-min-children flex-justify-end ml-0 md:ml-2">
                             <PrimaryButton id="copy-url-button" onClick={handleCopyURLClick} className="min-w7e">{c(
                                 'Action'
                             ).t`Copy link`}</PrimaryButton>
@@ -203,14 +203,14 @@ function GeneratedLinkState({
                             </Alert>
                         ) : (
                             <>
-                                <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
+                                <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column mb-2 md:mb-0">
                                     <Label htmlFor="passwordModeToggle">
-                                        <span className="mr0-5">{c('Label').t`Protect with password`}</span>
+                                        <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                    <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
                                         <Toggle
                                             id="passwordModeToggle"
-                                            className="on-mobile-mb0-5"
+                                            className="mb-2 md:mb-0"
                                             disabled={saving}
                                             checked={passwordToggledOn}
                                             onChange={() => {
@@ -222,7 +222,7 @@ function GeneratedLinkState({
                                             data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 field-two-icon-container-empty on-mobile-min-h0">
+                                    <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
                                         {passwordToggledOn && (
                                             <>
                                                 <InputFieldTwo
@@ -248,21 +248,21 @@ function GeneratedLinkState({
                                         )}
                                     </div>
                                 </div>
-                                <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
+                                <div className="flex-no-min-children flex-nowrap on-mobile-flex-column mb-2 md:mb-4">
                                     <Label htmlFor="expirationTimeModeToggle">
-                                        <span className="mr0-5">{c('Label').t`Set expiration date`}</span>
+                                        <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                    <div className="flex flex-justify-start pt0-5 mr-0 md:mr-2">
                                         <Toggle
                                             id="expirationTimeModeToggle"
-                                            className="on-mobile-mb0-5"
+                                            className="mb-2 md:mb-0"
                                             disabled={saving}
                                             checked={expirationToggledOn}
                                             onChange={onIncludeExpirationTimeToogle}
                                             data-testid="sharing-modal-expirationTimeModeToggle"
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-two-icon-container-empty on-mobile-min-h0">
+                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
                                         {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}
@@ -284,16 +284,16 @@ function GeneratedLinkState({
                         loading={deleting}
                         disabled={saving}
                         onClick={onDeleteLinkClick}
-                        className="on-mobile-mb0-5 inline-flex flex-align-items-center"
+                        className="mb-2 md:mb-0 inline-flex flex-align-items-center"
                     >
-                        <Icon name="link-slash" className="mr0-5" />
+                        <Icon name="link-slash" className="mr-2" />
                         {c('Action').t`Stop sharing`}
                     </Button>
                     <div className="mlauto">
                         <PrimaryButton
                             loading={saving}
                             disabled={isSaveDisabled}
-                            className="ml1"
+                            className="ml-4"
                             type="submit"
                             onClick={(e) => {
                                 e.preventDefault();

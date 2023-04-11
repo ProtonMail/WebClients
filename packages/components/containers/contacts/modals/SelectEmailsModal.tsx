@@ -149,7 +149,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, on
                                                 <Checkbox
                                                     id={contactEmailID}
                                                     checked={isChecked}
-                                                    className="mr0-5"
+                                                    className="mr-2"
                                                     onChange={handleCheck(contactID, contactEmailID)}
                                                 />
                                                 <span>{Email}</span>

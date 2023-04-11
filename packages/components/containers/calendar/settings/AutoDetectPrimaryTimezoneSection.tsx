@@ -34,7 +34,7 @@ const AutoDetectPrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
                     htmlFor="autodetect-primary-timezone"
                     id="label-autodetect-primary-timezone"
                 >
-                    <span className="mr0-5">{c('Label').t`Auto-detect primary time zone`}</span>
+                    <span className="mr-2">{c('Label').t`Auto-detect primary time zone`}</span>
                     <Info
                         title={c('Info')
                             .t`If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).`}

@@ -52,7 +52,7 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
 
     return (
         <>
-            <div className="flex flex-nowrap mb0 on-mobile-flex-column border-bottom">
+            <div className="flex flex-nowrap mb-0 on-mobile-flex-column border-bottom">
                 <div className={classnames(['w20', isNarrow && 'mb1'])}>{c('Label').t`Statement`}</div>
                 <div className={classnames([!isNarrow && 'ml1'])}>
                     <Radio
@@ -68,7 +68,7 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
                         }
                     >
                         {c('Label').t`ALL`}
-                        <em className="ml0-5">{c('Info').t`(Filter if ALL of the following conditions are met)`}</em>
+                        <em className="ml-2">{c('Info').t`(Filter if ALL of the following conditions are met)`}</em>
                     </Radio>
                     <Radio
                         id="statement-any"
@@ -83,11 +83,11 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
                         }
                     >
                         {c('Label').t`ANY`}
-                        <em className="ml0-5">{c('Info').t`(Filter if ANY of the following conditions are met)`}</em>
+                        <em className="ml-2">{c('Info').t`(Filter if ANY of the following conditions are met)`}</em>
                     </Radio>
                 </div>
             </div>
-            <div className="mb0-5">
+            <div className="mb-2">
                 {conditions.map((condition, i) => (
                     <FilterConditionsFormRow
                         isEdit={isEdit}
@@ -103,7 +103,7 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
                 ))}
             </div>
             {conditions.every((c) => !c.error) && (
-                <UnderlineButton onClick={onAddCondition} className="mt0-5 mb0-5">
+                <UnderlineButton onClick={onAddCondition} className="my-2">
                     <strong>{c('Action').t`Add condition`}</strong>
                 </UnderlineButton>
             )}

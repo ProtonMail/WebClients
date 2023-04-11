@@ -73,9 +73,9 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
                                             isCurrentStep && 'color-primary'
                                         )}
                                     >
-                                        <div className="mr0-5 min-w2e flex flex-item-noshrink">
+                                        <div className="mr-2 min-w2e flex flex-item-noshrink">
                                             {isCurrentStep ? (
-                                                <CircleLoader size="small" className="ml0-25" />
+                                                <CircleLoader size="small" className="ml-1" />
                                             ) : (
                                                 <Icon size={24} className="color-success" name="checkmark" />
                                             )}

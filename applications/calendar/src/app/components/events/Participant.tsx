@@ -26,7 +26,7 @@ const Participant = ({ icon, text, title, tooltip, initials, extraText, classNam
                 <div className="ml1">
                     <div className="max-w100 text-ellipsis participant-text text-ellipsis">{text}</div>
                     {!!extraText && (
-                        <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m0">
+                        <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m-0">
                             {extraText}
                         </div>
                     )}

@@ -40,9 +40,9 @@ const YahooCalendarInstructions = () => {
             </div>
 
             <ol className="pl1 ml2 mr2">
-                <li className="mb0-5">{step1}</li>
-                <li className="mb0-5">{step2}</li>
-                <li className="mb0-5">{step3}</li>
+                <li className="mb-2">{step1}</li>
+                <li className="mb-2">{step2}</li>
+                <li className="mb-2">{step3}</li>
             </ol>
         </>
     );

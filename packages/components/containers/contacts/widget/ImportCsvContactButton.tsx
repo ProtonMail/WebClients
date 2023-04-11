@@ -30,13 +30,13 @@ const ImportCsvContactButton = ({
     return (
         <>
             <EasySwitchOauthImportButton
-                className="mr1 mb0-5"
+                className="mr1 mb-2"
                 defaultCheckedTypes={[ImportType.CONTACTS]}
                 displayOn="GoogleContacts"
                 source={easySwitchSource}
                 onClick={onClose}
             />
-            <PrimaryButton className="mb0-5" id="import-contacts-button" disabled={disabled} onClick={onImport}>
+            <PrimaryButton className="mb-2" id="import-contacts-button" disabled={disabled} onClick={onImport}>
                 {c('Action').t`Import from .csv or vCard`}
             </PrimaryButton>
         </>

@@ -28,7 +28,7 @@ const SpyTrackerIcon = ({
         <div
             className={clsx([
                 'relative inline-flex item-spy-tracker-link flex-align-items-center',
-                isStandaloneIcon && 'mr0-1',
+                isStandaloneIcon && 'mr-0.5',
                 className,
             ])}
         >
@@ -41,7 +41,7 @@ const SpyTrackerIcon = ({
                     needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary',
                     'relative inline-flex item-spy-tracker-link flex-align-items-center',
                     !isStandaloneIcon && 'cursor-pointer',
-                    isStandaloneIcon && 'mr0-1',
+                    isStandaloneIcon && 'mr-0.5',
                     className,
                 ])}
                 onClick={openSpyTrackerModal}

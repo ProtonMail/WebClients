@@ -73,7 +73,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
                             onDisplayed={onDisplayed}
                             originalPlacement="top"
                         >
-                            <button type="button" className="ml0-5" onClick={handleGiftClick}>
+                            <button type="button" className="ml-2" onClick={handleGiftClick}>
                                 <Tooltip title={c('Storage').t`Get extra storage for free`}>
                                     <img
                                         width={16}

@@ -53,7 +53,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     <Logo appName={toApp} />
                 </AppLink>
                 <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-column">
-                    <div className="ml1 on-mobile-ml0">
+                    <div className="ml-0 md:ml-4">
                         <Href href="/signup" target="_self">
                             <ButtonLike className="text-semibold" shape="outline" color="norm" pill>{c('Link')
                                 .t`Sign up for free`}</ButtonLike>
@@ -66,28 +66,28 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 <div className="mxauto mt2">
                     <Href
                         href={getStaticURL('/mail')}
-                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
                         title={MAIL_APP_NAME}
                     >
                         <MailLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href={getStaticURL('/calendar')}
-                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
                         title={CALENDAR_APP_NAME}
                     >
                         <CalendarLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href={getStaticURL('/drive')}
-                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
                         title={DRIVE_APP_NAME}
                     >
                         <DriveLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href="https://protonvpn.com"
-                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
                         title={VPN_APP_NAME}
                     >
                         <VpnLogo variant="glyph-only" size={size} />
@@ -101,7 +101,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                         c('Footer').t`${BRAND_NAME}. Privacy by default.`
                     }
                 </div>
-                <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
+                <div className="text-center text-sm m-0 pt1 pb0-5 flex-item-noshrink">
                     <span className="auto-mobile">{termsLink}</span>
                     <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
                         |

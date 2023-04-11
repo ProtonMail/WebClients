@@ -14,7 +14,7 @@ const ProtonBadge = ({ text, tooltipText, selected = false }: Props) => {
         <Tooltip title={tooltipText}>
             <span
                 className={clsx(
-                    'label-proton-badge inline-flex rounded bg-weak flex-item-noshrink text-ellipsis text-semibold ml0-5 text-sm mr0-25',
+                    'label-proton-badge inline-flex rounded bg-weak flex-item-noshrink text-ellipsis text-semibold ml-2 text-sm mr-1',
                     selected && 'label-proton-badge--selected'
                 )}
                 data-testid="proton-badge"

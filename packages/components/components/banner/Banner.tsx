@@ -32,7 +32,7 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
             return null;
         }
 
-        return <Icon name={icon} className={classnames(['mr0-75 ml0-2 flex-item-noshrink', `color-${iconColor}`])} />;
+        return <Icon name={icon} className={classnames(['mr-3 ml-0.5 flex-item-noshrink', `color-${iconColor}`])} />;
     };
 
     const borderColor =
@@ -45,7 +45,7 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
 
     return (
         <div
-            className={`bg-${backgroundColor} border ${borderColor} rounded px0-5 py0-25 mb0-75 flex flex-align-items-center flex-nowrap`}
+            className={`bg-${backgroundColor} border ${borderColor} rounded px0-5 py0-25 mb-3 flex flex-align-items-center flex-nowrap`}
         >
             {getIcon()}
             <span className={classnames([!!action && 'mr1'])}>{children}</span>

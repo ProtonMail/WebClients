@@ -21,7 +21,7 @@ const ClaimInternalAddressForm = ({ username = '', domain, onSubmit, onEdit }: P
             <span className="text-semibold">{c('Info').t`The following address is available:`}</span>
             <Card
                 data-testid="card:internal-address"
-                className="mt0-5 mb1 text-center"
+                className="mt-2 mb1 text-center"
                 bordered={false}
                 rounded
             >{`${username}@${domain}`}</Card>
@@ -47,7 +47,7 @@ const ClaimInternalAddressForm = ({ username = '', domain, onSubmit, onEdit }: P
                     shape="outline"
                     fullWidth
                     onClick={loading ? undefined : onEdit}
-                    className="mt0-5"
+                    className="mt-2"
                 >
                     {createYourOwn}
                 </Button>

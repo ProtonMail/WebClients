@@ -112,7 +112,7 @@ const UpsellStep = ({
                 <Main center={false} className="on-tablet-mb2 sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
                     <Content>
-                        <Text className="on-mobile-mb0-5">{shortFreePlan.description}</Text>
+                        <Text className="mb-2 md:mb-0">{shortFreePlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={shortFreePlan}
@@ -149,13 +149,13 @@ const UpsellStep = ({
                     <Header
                         title={upsellShortPlan.title}
                         right={
-                            <div className="inline-block mt2 on-mobile-mt1 on-tiny-mobile-mt0">
+                            <div className="inline-block mt-0 sm:mt-4 md:mt-8">
                                 <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} />
                             </div>
                         }
                     />
                     <Content>
-                        <Text className="on-mobile-mb0-5">{upsellShortPlan.description}</Text>
+                        <Text className="mb-2 md:mb-0">{upsellShortPlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={upsellShortPlan}

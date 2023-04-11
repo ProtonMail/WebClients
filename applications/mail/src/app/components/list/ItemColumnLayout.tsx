@@ -103,10 +103,10 @@ const ItemColumnLayout = ({
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
-                                className={clsx('item-unread-dot flex-item-noshrink', isCompactView && 'mr0-25')}
+                                className={clsx('item-unread-dot flex-item-noshrink', isCompactView && 'mr-1')}
                                 isSelected={isSelected}
                             />
-                            <ItemAction element={element} className="mr0-25 myauto flex-item-noshrink" />
+                            <ItemAction element={element} className="mr-1 myauto flex-item-noshrink" />
                             <span
                                 className="inline-flex max-w100 text-ellipsis"
                                 data-testid="message-column:sender-address"
@@ -133,12 +133,12 @@ const ItemColumnLayout = ({
                                 </span>
                             )}
                             {conversationMode && (
-                                <NumMessages className="mr0-25 flex-item-noshrink" conversation={element} />
+                                <NumMessages className="mr-1 flex-item-noshrink" conversation={element} />
                             )}
                             <span
                                 role="heading"
                                 aria-level={2}
-                                className="inline-block max-w100 mr0-25 text-ellipsis"
+                                className="inline-block max-w100 mr-1 text-ellipsis"
                                 title={Subject}
                                 data-testid="message-column:subject"
                             >
@@ -150,7 +150,7 @@ const ItemColumnLayout = ({
                             <span className="flex item-meta-infos">
                                 {hasLabels && isCompactView && (
                                     <ItemLabels
-                                        className="ml0-5"
+                                        className="ml-2"
                                         labels={labels}
                                         element={element}
                                         labelID={labelID}
@@ -160,7 +160,7 @@ const ItemColumnLayout = ({
                                 {hasExpiration && (
                                     <ItemExpiration
                                         expirationTime={expirationTime}
-                                        className="ml0-25 flex-align-self-center"
+                                        className="ml-1 flex-align-self-center"
                                         element={element}
                                         labelID={labelID}
                                     />
@@ -168,9 +168,9 @@ const ItemColumnLayout = ({
                                 <ItemAttachmentIcon
                                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                     element={element}
-                                    className="ml0-25 flex-align-self-center"
+                                    className="ml-1 flex-align-self-center"
                                 />
-                                <span className="ml0-25 flex-flex-children flex-item-centered-vert hidden-empty">
+                                <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
                                     {isStarred && <ItemStar element={element} />}
                                 </span>
                             </span>
@@ -180,16 +180,16 @@ const ItemColumnLayout = ({
                                 <ItemExpiration
                                     element={element}
                                     expirationTime={expirationTime}
-                                    className="ml0-25 flex-align-self-center"
+                                    className="ml-1 flex-align-self-center"
                                     labelID={labelID}
                                 />
                             )}
                             <ItemAttachmentIcon
                                 icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                 element={element}
-                                className="ml0-25 flex-align-self-center"
+                                className="ml-1 flex-align-self-center"
                             />
-                            <span className="ml0-25 flex-flex-children flex-item-centered-vert hidden-empty">
+                            <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
                                 <ItemStar element={element} />
                             </span>
                         </div>
@@ -200,9 +200,9 @@ const ItemColumnLayout = ({
 
             {hasLabels && !isCompactView && (
                 <div className="flex flex-nowrap flex-align-items-center max-w100 no-scroll">
-                    <div className="item-icons flex flex-item-noshrink flex-nowrap mt0-25">
+                    <div className="item-icons flex flex-item-noshrink flex-nowrap mt-1">
                         <ItemLabels
-                            className="ml0-5"
+                            className="ml-2"
                             labels={labels}
                             element={element}
                             labelID={labelID}
@@ -218,7 +218,7 @@ const ItemColumnLayout = ({
                     <div
                         className={clsx([
                             'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w80 no-scroll',
-                            isCompactView && 'mb0-75',
+                            isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"
                     >

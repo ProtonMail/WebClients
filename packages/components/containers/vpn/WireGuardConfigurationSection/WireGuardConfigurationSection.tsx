@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+
+
 import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
 
@@ -186,7 +188,7 @@ const formatServerName = (bestServerName: string) => {
 
     return (
         <>
-            {flag && <img width={20} className="mx0-5 border" src={flag} alt={getCountryByAbbr(countryCode)} />}
+            {flag && <img width={20} className="mx-2 border" src={flag} alt={getCountryByAbbr(countryCode)} />}
             <strong className="align-middle">{bestServerName}</strong>
         </>
     );
@@ -718,10 +720,10 @@ const WireGuardConfigurationSection = () => {
                                             onClick={getDownloadCallback(certificate)}
                                         >{c('Action').t`Download`}</Button>
                                     )}
-                                    <label className="block my0-5">
+                                    <label className="block my-2">
                                         {c('Label').t`Config to connect to ${serverName}`}
                                         <TextArea
-                                            className="block mt0-5"
+                                            className="block mt-2"
                                             value={certificate?.config}
                                             readOnly
                                             rows={14}
@@ -741,7 +743,7 @@ const WireGuardConfigurationSection = () => {
                         </div>
                     )}
                     <form onSubmit={handleFormSubmit} className="mt2">
-                        <h3 className="mt2 mb0-5">{c('Title').t`1. Give a name to the config to be generated`}</h3>
+                        <h3 className="mt2 mb-2">{c('Title').t`1. Give a name to the config to be generated`}</h3>
                         <InputFieldTwo
                             id="certificate-device-name"
                             ref={nameInputRef}
@@ -749,7 +751,7 @@ const WireGuardConfigurationSection = () => {
                                 <>
                                     {c('Label').t`Device/certificate name`}
                                     <Info
-                                        className="ml0-25"
+                                        className="ml-1"
                                         title={c('Info')
                                             .t`A name to help you identify where you use it so you can easily revoke it or extend it later.`}
                                     />
@@ -758,7 +760,7 @@ const WireGuardConfigurationSection = () => {
                             placeholder={c('Label').t`Choose a name for the generated certificate file`}
                             maxLength={100}
                         />
-                        <h3 className="mt2 mb0-5">{c('Title').t`2. Select platform`}</h3>
+                        <h3 className="mt2 mb-2">{c('Title').t`2. Select platform`}</h3>
                         <div className="flex on-mobile-flex-column">
                             {[
                                 {
@@ -793,7 +795,7 @@ const WireGuardConfigurationSection = () => {
                                             onChange={() => setPlatform(value)}
                                             checked={platform === value}
                                             name="platform"
-                                            className="flex inline-flex-vcenter mb0-5"
+                                            className="flex inline-flex-vcenter mb-2"
                                         >
                                             {label}
                                         </Radio>
@@ -801,7 +803,7 @@ const WireGuardConfigurationSection = () => {
                                 );
                             })}
                         </div>
-                        <h3 className="mt2 mb0-5">{c('Title').t`3. Select VPN options`}</h3>
+                        <h3 className="mt2 mb-2">{c('Title').t`3. Select VPN options`}</h3>
                         {getFeatureKeys().map((key) => (
                             <div className="mb1" key={'feature-' + key}>
                                 <label className="field-two-container w100" htmlFor={'feature-' + key}>
@@ -846,12 +848,12 @@ const WireGuardConfigurationSection = () => {
                         ))}
                         {logical && (
                             <>
-                                <h3 className="mt2 mb0-5">{c('Title').t`4. Select a server to connect to`}</h3>
+                                <h3 className="mt2 mb-2">{c('Title').t`4. Select a server to connect to`}</h3>
 
                                 <div className="mb2">
                                     {bestServerName && (
                                         <>
-                                            <p className="mt0">
+                                            <p className="mt-0">
                                                 {c('Info')
                                                     .jt`Use the best server according to current load and position: ${formattedBestServerName}`}
                                             </p>

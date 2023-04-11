@@ -53,7 +53,7 @@ const STANDARD_FOLDERS = getStandardFolders();
 const getMarginByFolderLvl = (lvl: number) => {
     switch (lvl) {
         case 1:
-            return 'ml0-5';
+            return 'ml-2';
         case 2:
         case 3:
         case 4:

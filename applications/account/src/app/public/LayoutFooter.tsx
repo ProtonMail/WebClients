@@ -19,7 +19,7 @@ const LayoutFooter = ({ className, app, version }: FooterProps) => {
                     c('Footer').t`${BRAND_NAME}. Privacy by default.`
                 }
             </div>
-            <div className="text-center text-sm m0 pt1 pb0-5 on-tiny-mobile-pb0 flex-item-noshrink">
+            <div className="text-center text-sm m-0 pt1 pb0-5 on-tiny-mobile-pb0 flex-item-noshrink">
                 <span className="auto-tiny-mobile">
                     <Href key="terms" className="signup-footer-link" href={getTermsURL(app)}>{c('Link').t`Terms`}</Href>
                 </span>

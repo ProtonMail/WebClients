@@ -80,7 +80,7 @@ const PaidUserGetStartedChecklist = ({ onDismiss, onItemSelection }: Props) => {
                 onDismiss={onDismiss}
             />
 
-            <ul className="unstyled ml0-5">
+            <ul className="unstyled ml-2">
                 {checklistItems
                     .sort(({ complete: completeA }, { complete: completeB }) => Number(completeA) - Number(completeB))
                     .map(({ key, text, icon, onClick }) => (
