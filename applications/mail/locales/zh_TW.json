@@ -472,9 +472,6 @@
       "Hide messages": [
         "隱藏郵件"
       ],
-      "Hide my email": [
-        "隱藏我的電郵"
-      ],
       "I have a question": [
         "我要發問"
       ],
@@ -1225,11 +1222,6 @@
         "交談"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "簡易登入"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "歡迎"
@@ -1238,6 +1230,26 @@
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ totalNumberOfItems } 中的 ${ numberOfCompletedItems } 已完成"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件匣"
+      ],
+      "5 trackers removed": [
+        "已移除 5 個追蹤程式"
+      ],
+      "Auto forwarded": [
+        "自動轉寄"
+      ],
+      "Email received": [
+        "收到的電子郵件"
+      ],
+      "Encrypted": [
+        "已加密"
+      ],
+      "New email": [
+        "新電子郵件"
       ]
     },
     "Apps dropdown": {
@@ -1957,9 +1969,6 @@
       ],
       "Work": [
         "工作"
-      ],
-      "Yomi": [
-        "漢字讀音"
       ]
     },
     "Country name": {
@@ -2812,11 +2821,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } 標誌與加號"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } 設定。"
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "自動清除垃圾桶與垃圾郵件中超過30天的訊息。您升級後便可享受這個與其他好處。"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "解密聯絡人資料中… 此步驟將耗時數分鐘。當作業完成時，您就可以下載所有已匯出的聯絡人檔案。"
@@ -2844,6 +2853,9 @@
       ],
       "No labels": [
         "沒有標籤"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail 標誌與加號"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3813,6 +3825,11 @@
         "未讀"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "有檔案"
+      ]
+    },
     "Filter preview": {
       "read": [
         "已讀"
@@ -3914,6 +3931,17 @@
         "入門指南"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自動轉寄"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 訊息至您的收件匣"
+      ],
+      "Sign in with Google": [
+        "使用 Google 帳號登入"
+      ]
+    },
     "Group": {
       "Account": [
         "帳號"
@@ -3963,9 +3991,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "驗證碼"
-      ],
       "Email": [
         "電郵"
       ],
@@ -3974,9 +3999,6 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
-      ],
-      "SMS": [
-        "短訊"
       ]
     },
     "ICS widget label for event details": {
@@ -4478,6 +4500,12 @@
       "Attention required": [
         "需要您的處理"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "自動刪除在垃圾郵件中超過30天的訊息。"
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "自動刪除在垃圾桶中超過30天的訊息。"
+      ],
       "Background color": [
         "背景顏色"
       ],
@@ -4876,6 +4904,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "郵件將在名天 ${ formattedTime } 寄出"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "垃圾郵件中超過30天的訊息將會被自動刪除。"
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "垃圾桶中超過30天的訊息將會被自動刪除。"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
@@ -5335,6 +5369,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "升級以自動刪除在垃圾郵件中超過30天的訊息。"
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "升級以自動刪除在垃圾桶中超過30天的訊息。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升級以建立更多資料夾、過濾條件與位址。"
@@ -6801,17 +6841,20 @@
         "標籤名稱"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切換或是加入帳號"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "立即升級"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "切換或是加入帳號"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "自動刪除垃圾郵件與垃圾桶中的訊息"
+      ],
       "Custom email domains": [
         "自訂電郵網域"
       ],
@@ -7809,6 +7852,9 @@
       ],
       "Change my answer": [
         "更改我的回答"
+      ],
+      "Clear out the junk": [
+        "清除垃圾"
       ],
       "Clearing data": [
         "清除資料中"

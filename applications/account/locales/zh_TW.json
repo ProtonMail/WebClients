@@ -1010,6 +1010,26 @@
         "這將會把使用此憑證的所有路由器和客戶端都中斷連線。"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件匣"
+      ],
+      "5 trackers removed": [
+        "已移除 5 個追蹤程式"
+      ],
+      "Auto forwarded": [
+        "自動轉寄"
+      ],
+      "Email received": [
+        "收到的電子郵件"
+      ],
+      "Encrypted": [
+        "已加密"
+      ],
+      "New email": [
+        "新電子郵件"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 應用程式"
@@ -1708,9 +1728,6 @@
       ],
       "Work": [
         "工作"
-      ],
-      "Yomi": [
-        "漢字讀音"
       ]
     },
     "Country name": {
@@ -2589,6 +2606,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "自動清除垃圾桶與垃圾郵件中超過30天的訊息。您升級後便可享受這個與其他好處。"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
       ],
@@ -2601,11 +2621,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail 標誌與加號"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
       "Track the status and activity of your referrals.": [
         "追蹤您推介的狀態和活動。"
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "包含 ${ BRAND_NAME } 標誌後跟加號的追加銷售圖示"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "您可繼續邀請好友，惟不會賺取更多儲值"
@@ -3852,6 +3878,17 @@
         "（在您的第一個月）"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自動轉寄"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 訊息至您的收件匣"
+      ],
+      "Sign in with Google": [
+        "使用 Google 帳號登入"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "已有一個帳號？${ signIn }"
@@ -3994,9 +4031,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "驗證碼"
-      ],
       "Email": [
         "電郵"
       ],
@@ -4005,9 +4039,6 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
-      ],
-      "SMS": [
-        "短訊"
       ]
     },
     "Import calendar": {
@@ -6602,6 +6633,9 @@
       "Auto show remote images": [
         "自動顯示遠端圖像"
       ],
+      "Auto-delete unwanted messages": [
+        "自動刪除不想要的訊息"
+      ],
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
       ],
@@ -7280,9 +7314,6 @@
       "Verification code": [
         "驗證碼"
       ],
-      "VPN Accelerator": [
-        "VPN 加速器"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "很抱歉您想離開。請告訴我們原因以讓我們改進。"
       ],
@@ -7848,9 +7879,6 @@
       "Calendar": [
         "行事曆"
       ],
-      "Drive": [
-        "雲端硬碟"
-      ],
       "Inbox": [
         "收件匣"
       ],
@@ -8007,6 +8035,9 @@
       "Advanced sharing security": [
         "進階的共享安全性"
       ],
+      "Auto-delete spam and trashed messages": [
+        "自動刪除垃圾郵件與垃圾桶中的訊息"
+      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -8058,6 +8089,9 @@
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
       ],
+      "Hide My Email aliases": [
+        "Hide My Email 別名"
+      ],
       "High-speed VPN on ${ n } devices": [
         "極速 VPN 裝載多達 ${ n } 臺裝置"
       ],
@@ -8090,6 +8124,12 @@
       ],
       "Router support": [
         "路由器支援"
+      ],
+      "Schedule messages at any time": [
+        "在任意時間排程訊息"
+      ],
+      "Search message content": [
+        "搜尋郵件內容"
       ],
       "Secure Core servers": [
         "Secure Core 伺服器"
@@ -8142,6 +8182,12 @@
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
+      "Up to 15 email addresses": [
+        "多達 15 個電子郵件地址"
+      ],
+      "Up to 500 GB of storage": [
+        "多達 500 GB 的儲存空間"
+      ],
       "User credential management": [
         "使用者憑證管理"
       ],
@@ -8150,6 +8196,14 @@
       ],
       "Worldwide streaming services": [
         "全球的串流服務"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8880,9 +8934,6 @@
       ".dmg (10.12 or later)": [
         ".dmg（10.12 或更新）"
       ],
-      ".exe (64-bit)": [
-        ".exe（64 位元）"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm（適用於 Fedora/openSUSE）"
       ],
@@ -8896,9 +8947,6 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "比特幣"
-      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
@@ -10057,6 +10105,9 @@
       "Clear": [
         "清除"
       ],
+      "Clear out the junk": [
+        "清除垃圾"
+      ],
       "Composing": [
         "撰寫郵件"
       ],
@@ -10825,6 +10876,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "自訂匯入以減少標籤數目"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "30天後清除垃圾桶與垃圾郵件。啟用此選項將刪除目前在垃圾桶與垃圾郵件資料夾中的所有郵件。未來的垃圾桶與垃圾郵件將在30天後自動清除。"
       ],
       "Each imported email will have this label": [
         "每一封匯入的電郵將加上此標籤"

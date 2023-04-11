@@ -1237,6 +1237,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } abgeschlossen"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }'s Posteingang"
+      ],
+      "5 trackers removed": [
+        "5 Tracker entfernt"
+      ],
+      "Auto forwarded": [
+        "Automatisch weitergeleitet"
+      ],
+      "Email received": [
+        "E-Mail erhalten"
+      ],
+      "Encrypted": [
+        "Verschlüsselt"
+      ],
+      "New email": [
+        "Neue E-Mail"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
@@ -1954,9 +1974,6 @@
       ],
       "Work": [
         "Arbeit"
-      ],
-      "Yomi": [
-        "Lesung (Yomi)"
       ]
     },
     "Country name": {
@@ -2813,11 +2830,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } Logo und ein Pluszeichen"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } in den Einstellungen."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Nachrichten, die länger als 30 Tage im Papierkorb oder Spam-Ordner liegen, automatisch löschen. Genieße diesen und weitere Vorteile, die du durch ein Upgrade erhältst."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du die Datei mit allen deinen exportierten Kontakten herunterladen."
@@ -2846,6 +2863,9 @@
       ],
       "No labels": [
         "Keine Kategorie"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-Logo und ein Pluszeichen"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
@@ -3853,11 +3873,6 @@
         "Standard"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privatsphäre als Standard."
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Datum: Am ${ date }"
@@ -3942,6 +3957,14 @@
         "Los geht's"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatisch weiterleiten"
+      ],
+      "Sign in with Google": [
+        "Mit Google anmelden"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -4000,9 +4023,6 @@
       ],
       "No verification method available": [
         "Keine Verifizierungsmethode verfügbar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4498,7 +4518,7 @@
         "Alle deine Kalender sind deaktiviert."
       ],
       "All your changes will be lost.": [
-        "Alle Ihre Änderungen gehen dabei verloren."
+        "Alle deine Änderungen gehen dabei verloren."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Für diesen Empfänger wurde ein unbekannter öffentlicher Schlüssel erkannt."
@@ -4519,7 +4539,7 @@
         "Möchtest du diese Kategorie wirklich löschen?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Möchten Sie Ihre Änderungen wirklich verwerfen?"
+        "Möchtest du deine Änderungen wirklich verwerfen?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Möchtest du wirklich alle hier vorliegenden Nachrichten in den Papierkorb verschieben?"
@@ -4550,6 +4570,12 @@
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
+      ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Nachrichten, die länger als 30 Tage im Spam-Ordner liegen, automatisch löschen."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Nachrichten, die länger als 30 Tage im Papierkorb liegen, automatisch löschen."
       ],
       "Background color": [
         "Hintergrundfarbe"
@@ -4959,6 +4985,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Die Nachricht wird morgen um ${ formattedTime } gesendet"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Nachrichten, die länger als 30 Tage im Spam-Ordner liegen, werden automatisch gelöscht."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Nachrichten, die länger als 30 Tage im Papierkorb liegen, werden automatisch gelöscht."
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
@@ -5422,6 +5454,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade, um deinem Konto weitere E-Mail-Adressen hinzuzufügen."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Führe ein Upgrade durch, um Nachrichten, die sich seit mehr als 30 Tagen im Spam-Ordner befinden automatisch zu löschen."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Führe ein Upgrade durch, um Nachrichten, die sich seit mehr als 30 Tagen im Papierkorb befinden automatisch zu löschen."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgrade, um mehr Ordner, Filter und E-Mail-Adressen erstellen zu können."
@@ -6907,14 +6945,14 @@
         "Name der Kategorie"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Konto wechseln oder hinzufügen"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Jetzt upgraden"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Konto wechseln oder hinzufügen"
       ]
     },
     "new_plans: feature": {

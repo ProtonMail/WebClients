@@ -998,6 +998,14 @@
         "Dette vil afbryde forbindelsen til alle routere og klienter, der bruger dette certifikat."
       ]
     },
+    "Animation": {
+      "5 trackers removed": [
+        "5 trackere fjernet"
+      ],
+      "Encrypted": [
+        "Krypteret"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } applikationer"
@@ -1284,6 +1292,11 @@
       ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Kunne ikke hente kalenderinformation for ${ address }"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3806,6 +3819,17 @@
         "(i løbet af din første måned)"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Videresend automatisk"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail-beskeder til din indbakke"
+      ],
+      "Sign in with Google": [
+        "Log ind med Google"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Har du allerede en konto? ${ signIn }"
@@ -4571,6 +4595,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "Sikker på, at du vil slette dette filter?"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Er du sikker på, at du vil slette denne mappe? Alle underordnede mapper slettes også."
       ],
       "Are you sure you want to delete this label?": [
         "Er du sikker på du vil slette etiketten?"
@@ -5385,6 +5412,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
       ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
@@ -7713,9 +7743,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Drive": [
-        "Drev"
-      ],
       "Inbox": [
         "Indbakke"
       ],
@@ -7924,6 +7951,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Hide My Email aliases": [
+        "Skjul mine e-mail-aliasser"
+      ],
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
         "Højhastigheds VPN på ${ n } enheder"
@@ -7948,6 +7978,12 @@
       ],
       "Priority support": [
         "Prioriteret support"
+      ],
+      "Schedule messages at any time": [
+        "Planlæg beskeder til ethvert tidspunkt"
+      ],
+      "Search message content": [
+        "Søg i beskedindhold"
       ],
       "Secure Core servers": [
         "Secure Core servere"
@@ -7997,6 +8033,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
+      "Up to 15 email addresses": [
+        "Op til 15 e-mailadresser"
+      ],
+      "Up to 500 GB of storage": [
+        "Op til 500 GB lagerplads"
+      ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
       ],
@@ -8005,6 +8047,14 @@
       ],
       "Worldwide streaming services": [
         "Verdensomspændende streamingtjenester"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8665,9 +8715,6 @@
       ],
       "New credit/debit card": [
         "Nyt kredit / betalingskort"
-      ],
-      "PayPal": [
-        "Paypal"
       ]
     },
     "Personal calendar section description": {
@@ -9043,6 +9090,11 @@
         "Etiketter"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Hvis du vil invitere brugere, som ikke benytter ${ BRAND_NAME }, skal du dele din kalender med et link."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem pr. kalender",
@@ -9072,6 +9124,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Oprettet af ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Signaturbekræftelse mislykkedes"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Du har aktiveret adressebekræftelse for ${ boldSenderEmail }. Vi kunne ikke bekræfte ægtheden af denne kalenderinvitation. Dette kan skyldes ændringer i denne kontakts krypteringsnøgler. Gennemgå venligst dens avancerede PGP-indstillinger, eller du kan bede ${ boldSenderEmail } om en ny invitation."
       ]
     },
     "Signup label": {
