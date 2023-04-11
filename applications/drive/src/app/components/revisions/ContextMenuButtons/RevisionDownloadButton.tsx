@@ -17,7 +17,7 @@ const RevisionDownloadButton = ({ revision, downloadRevision, close }: Props) =>
             name={c('Action').t`Download`}
             icon="arrow-down-line"
             testId="context-menu-download"
-            action={() => downloadRevision(revision)}
+            action={() => downloadRevision(revision.ID)}
             close={close}
         />
     );
