@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
-import { verifyPoAExistence } from '@proton/key-transparency';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -214,7 +213,7 @@ const handleKeyUpgrade = async ({
         cache.data.addresses || syncAddresses(cache),
     ]);
 
-    const { preAuthKTVerify } = preAuthKTVerifier;
+    const { preAuthKTVerify, preAuthKTAbsenceVerify } = preAuthKTVerifier;
 
     if (getHasV2KeysToUpgrade(user, addresses)) {
         // Key uprade can be triggered by the server. Since the only legitimate
@@ -225,7 +224,7 @@ const handleKeyUpgrade = async ({
         await Promise.all(
             addresses.map(async ({ Keys, Email }) => {
                 if (getV2KeysToUpgrade(Keys).length > 0) {
-                    await verifyPoAExistence(api, canonicalizeInternalEmail(Email));
+                    await preAuthKTAbsenceVerify(canonicalizeInternalEmail(Email));
                 }
             })
         );
@@ -254,13 +253,17 @@ const handleKeyUpgrade = async ({
         }
     }
 
+    const keyTransparencyAbsenceVerifier = async (email: string) => {
+        return preAuthKTAbsenceVerify(email);
+    };
+
     const hasDoneMigration = await migrateUser({
         api,
         keyPassword,
         user,
         addresses,
         preAuthKTVerify,
-        verifyPoAExistence,
+        keyTransparencyAbsenceVerifier,
     }).catch((e) => {
         const error = getSentryError(e);
         if (error) {
