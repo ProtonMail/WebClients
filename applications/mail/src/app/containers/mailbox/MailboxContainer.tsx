@@ -1,7 +1,11 @@
 import { RefObject, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import {
+    Commander,
+    CommanderItemInterface,
     ErrorBoundary,
     PrivateMainArea,
     useCalendarUserSettings,
@@ -9,9 +13,11 @@ import {
     useFolders,
     useItemsSelection,
     useLabels,
+    useModalState,
 } from '@proton/components';
 import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
-import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -22,9 +28,10 @@ import ConversationView from '../../components/conversation/ConversationView';
 import List from '../../components/list/List';
 import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
+import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import Toolbar from '../../components/toolbar/Toolbar';
 import PlaceholderView from '../../components/view/PlaceholderView';
-import { MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM } from '../../constants';
+import { LABEL_IDS_TO_HUMAN, MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM, MESSAGE_ACTIONS } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
@@ -81,6 +88,7 @@ const MailboxContainer = ({
     const history = useHistory();
     const [labels] = useLabels();
     const [folders] = useFolders();
+    const { createLabel } = useLabelActionsContext();
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
     const listRef = useRef<HTMLDivElement>(null);
@@ -110,6 +118,10 @@ const MailboxContainer = ({
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location, inputLabelID), [searchParams.sort, inputLabelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
+
+    const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
+        history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
+    };
 
     // Open a composer when the url contains a mailto query
     useEffect(() => {
@@ -185,7 +197,7 @@ const MailboxContainer = ({
     const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
     const showContentView = showContentPanel && !!elementID;
     const elementIDForList = checkedIDs.length ? undefined : elementID;
-
+    const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
         elementIDs,
         page,
@@ -280,6 +292,7 @@ const MailboxContainer = ({
             handleFilter,
             handleCheckAll,
             setFocusIndex,
+            showCommander,
         }
     );
 
@@ -293,6 +306,106 @@ const MailboxContainer = ({
             }
         },
         [selectedIDs, elementID, labelID, labelIDs, folders, handleBack]
+    );
+
+    const commanderList = useMemo<CommanderItemInterface[]>(
+        () => [
+            {
+                icon: 'envelope',
+                label: c('Commander action').t`New message`,
+                value: 'compose',
+                action: () => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW }),
+                shortcuts: ['N'],
+            },
+            {
+                icon: 'tag',
+                label: c('Commander action').t`Create a new label`,
+                value: 'create-label',
+                action: () => createLabel('label'),
+            },
+            {
+                icon: 'folder',
+                label: c('Commander action').t`Create a new folder`,
+                value: 'create-folder',
+                action: () => createLabel('folder'),
+            },
+            {
+                icon: 'envelope-magnifying-glass',
+                label: c('Commander action').t`Search`,
+                value: 'search',
+                action: () => {
+                    const button = document.querySelector('[data-shorcut-target="searchbox-button"]') as HTMLElement;
+                    button?.dispatchEvent(
+                        new MouseEvent('click', {
+                            view: window,
+                            bubbles: true,
+                            cancelable: false,
+                        })
+                    );
+                },
+                shortcuts: ['/'],
+            },
+            {
+                icon: 'inbox',
+                label: c('Commander action').t`Go to Inbox`,
+                value: 'inbox',
+                action: () => navigateTo(MAILBOX_LABEL_IDS.INBOX),
+                shortcuts: ['G', 'I'],
+            },
+            {
+                icon: 'file-lines',
+                label: c('Commander action').t`Go to Drafts`,
+                value: 'drafts',
+                action: () =>
+                    navigateTo(
+                        hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)
+                            ? MAILBOX_LABEL_IDS.ALL_DRAFTS
+                            : MAILBOX_LABEL_IDS.DRAFTS
+                    ),
+                shortcuts: ['G', 'D'],
+            },
+            {
+                icon: 'paper-plane',
+                label: c('Commander action').t`Go to Sent`,
+                value: 'sent',
+                action: () =>
+                    navigateTo(
+                        hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT)
+                            ? MAILBOX_LABEL_IDS.ALL_SENT
+                            : MAILBOX_LABEL_IDS.SENT
+                    ),
+                shortcuts: ['G', 'E'],
+            },
+            {
+                icon: 'archive-box',
+                label: c('Commander action').t`Go to Archive`,
+                value: 'archive',
+                action: () => navigateTo(MAILBOX_LABEL_IDS.ARCHIVE),
+                shortcuts: ['G', 'A'],
+            },
+            {
+                icon: 'star',
+                label: c('Commander action').t`Go to Starred`,
+                value: 'starred',
+                action: () => navigateTo(MAILBOX_LABEL_IDS.STARRED),
+                shortcuts: ['G', '*'],
+            },
+            {
+                icon: 'fire',
+                label: c('Commander action').t`Go to Spam`,
+                value: 'spam',
+                action: () => navigateTo(MAILBOX_LABEL_IDS.SPAM),
+                shortcuts: ['G', 'S'],
+            },
+            {
+                icon: 'trash',
+                label: c('Commander action').t`Go to Trash`,
+                value: 'trash',
+                action: () => navigateTo(MAILBOX_LABEL_IDS.TRASH),
+                shortcuts: ['G', 'T'],
+            },
+        ],
+        []
     );
 
     return (
@@ -428,6 +541,7 @@ const MailboxContainer = ({
                     </ErrorBoundary>
                 </PrivateMainArea>
             </div>
+            {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {permanentDeleteModal}
             {moveScheduledModal}
             {moveAllModal}

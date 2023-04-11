@@ -14,6 +14,7 @@ export * from './collapsible';
 export * from './collapsingBreadcrumbs';
 export * from './color';
 export * from './confirmActionModal';
+export * from './commander';
 export * from './confirmSignOutModal';
 export * from './container';
 export * from './contextMenu';

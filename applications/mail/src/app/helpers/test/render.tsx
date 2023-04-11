@@ -27,6 +27,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 
+import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';
 import { ComposeProvider } from '../../containers/ComposeProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
@@ -103,7 +104,9 @@ const TestProvider = ({ children }: Props) => {
                                                                     <Router history={history}>
                                                                         <Route path={MAIN_ROUTE_PATH}>
                                                                             <EncryptedSearchProvider>
-                                                                                {children}
+                                                                                <LabelActionsContextProvider>
+                                                                                    {children}
+                                                                                </LabelActionsContextProvider>
                                                                             </EncryptedSearchProvider>
                                                                         </Route>
                                                                     </Router>
