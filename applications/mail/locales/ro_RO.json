@@ -476,9 +476,6 @@
       "Hide messages": [
         "Ascundere mesaje"
       ],
-      "Hide my email": [
-        "Ascundere e-mail"
-      ],
       "I have a question": [
         "Am o întrebare"
       ],
@@ -1243,6 +1240,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizată",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Contul lui ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 urmăritori eliminați"
+      ],
+      "Auto forwarded": [
+        "Redirecționat automat"
+      ],
+      "Email received": [
+        "Mesaj primit"
+      ],
+      "Encrypted": [
+        "Criptat"
+      ],
+      "New email": [
+        "Mesaj nou"
       ]
     },
     "Apps dropdown": {
@@ -2822,11 +2839,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Logo ${ MAIL_APP_NAME } și semnul plus"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } în setări."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Ștergeți automat mesajele mai vechi de 30 de zile din folderul «Gunoi» și «Nedorite». Bucurați-vă de aceste opțiuni și altele dacă vă modernizați contul."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
@@ -2856,6 +2873,9 @@
       ],
       "No labels": [
         "Nu sunt etichete."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail și semnul plus"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -3865,6 +3885,11 @@
         "Necitite"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Are fișier"
+      ]
+    },
     "Filter preview": {
       "read": [
         "citit"
@@ -3966,6 +3991,17 @@
     "Get started checklist title": {
       "Get started": [
         "Să începem"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Redirecționare automată"
+      ],
+      "Gmail messages to your inbox": [
+        "Mesaje Gmail în mesaje primite"
+      ],
+      "Sign in with Google": [
+        "Conectare cu Google"
       ]
     },
     "Group": {
@@ -4622,6 +4658,12 @@
       "Attention required": [
         "Necesită atenție"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Ștergere automată mesaje nedorite mai vechi de 30 de zile."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Ștergere automată mesaje din gunoi mai vechi de 30 de zile."
+      ],
       "Background color": [
         "Culoare fundal"
       ],
@@ -5040,6 +5082,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Mesajul va fi trimis mâine la ora ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Mesajele din folderul «Nedorite» mai vechi de 30 de zile vor fi șterse automat."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Mesajele care au stat în coșul de gunoi mai mult de 30 de zile vor fi șterse automat."
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
@@ -5507,6 +5555,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Modernizați-vă planul pentru a putea șterge automat mesajele din folderul «Nedorite» mai vechi de 30 de zile."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Modernizați-vă planul pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» mai mult de 30 de zile."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
@@ -7011,17 +7065,20 @@
         "Nume etichetă"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Schimbare sau adăugare cont"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Modernizare"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Ștergere automată mesaje nedorite și din gunoi"
+      ],
       "Custom email domains": [
         "Domenii personale de e-mail"
       ],
@@ -8108,6 +8165,9 @@
       ],
       "Change my answer": [
         "Schimbare răspuns"
+      ],
+      "Clear out the junk": [
+        "Eliberare mesaje din gunoi"
       ],
       "Clearing data": [
         "Ştergere date"

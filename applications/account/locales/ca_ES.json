@@ -981,6 +981,26 @@
         "Si surts ara alguns esdeveniments no podràn ser importats"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Bustia d'entrada ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "S'han eliminat 5 rastrejadors"
+      ],
+      "Auto forwarded": [
+        "Reenviament automàtic"
+      ],
+      "Email received": [
+        "Correu rebut"
+      ],
+      "Encrypted": [
+        "Xifrat"
+      ],
+      "New email": [
+        "Correu nou"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicacions ${ BRAND_NAME }"
@@ -2529,6 +2549,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Esborra automàticament els missatges de més de 30 dies de la paperera i el correu brossa. Gaudeix d'aquest i d'altres avantatges quan actualitzis."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
@@ -2537,6 +2560,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail i un signe de més"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
@@ -3670,6 +3696,17 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correus electrònics al mes)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenviament automàtic"
+      ],
+      "Gmail messages to your inbox": [
+        "Missatges de Gmail a la seva bustia d'entrada"
+      ],
+      "Sign in with Google": [
+        "Inicia la sessió amb Google"
       ]
     },
     "Go to sign in": {
@@ -5477,6 +5514,14 @@
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Pots mantenir un calendari de fins a ${ MAX_CALENDARS_FREE }. Elimina els enllaços de calendari compartit i qualsevol usuari de ${ BRAND_NAME } amb qui hagis compartit els teus calendaris abans de cancel·lar la teva subscripció.",
+        "Pots mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Elimina els enllaços de calendari compartit i qualsevol usuari de ${ BRAND_NAME } amb qui hagis compartit els teus calendaris abans de cancel·lar la teva subscripció."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Pots mantenir un calendari de fins a ${ MAX_CALENDARS_FREE }. Si us plau, elimineu els enllaços del calendari compartit abans de cancel·lar la vostra subscripció.",
+        "Pots mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Si us plau, elimineu els enllaços del calendari compartit abans de cancel·lar la vostra subscripció."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
       ],
@@ -5488,6 +5533,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers com ara Tunnelblick per macOS o OpenVPN per GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "No podeu enviar més de ${ emailSendLimitNumber } invitacio per correu electrònic durant les properes 24 hores",
+        "No podeu enviar més de ${ emailSendLimitNumber } invitacions per correu electrònic durant les properes 24 hores"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
@@ -5554,6 +5603,10 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "La seva importació des de ${ accounts } està temporalment retrasat.",
+        "La seva importació des de ${ accounts } estàn temporalment retrasats."
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
@@ -7455,6 +7508,9 @@
       "Admin console": [
         "Consola d'administració"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
+      ],
       "Auto-reply": [
         "Resposta automàtica"
       ],
@@ -7491,6 +7547,9 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
+      "Hide My Email aliases": [
+        "Àlies Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN d'alta velocitat a ${ n } dispositiu",
         "VPN d'alta velocitat a ${ n } dispositius"
@@ -7515,6 +7574,12 @@
       ],
       "Router support": [
         "Suport per a router"
+      ],
+      "Schedule messages at any time": [
+        "Programeu missatges en qualsevol moment."
+      ],
+      "Search message content": [
+        "Cerca al contingut del missatge"
       ],
       "Secure Core servers": [
         "Servidors Secure Core"
@@ -7557,6 +7622,20 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
+      ],
+      "Up to 15 email addresses": [
+        "Fins a 15 adreces de correu electrònic"
+      ],
+      "Up to 500 GB of storage": [
+        "Fins a 500 GB d'emmagatzematge"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Gaudiu d'àlies il·limitats amb SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: heading": {
@@ -7996,6 +8075,20 @@
         "Combinar amb el calendari"
       ]
     },
+    "Organization capacity error": {
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "El vostre pla inclou un màxim de ${ availableAddresses } adreça més.",
+        "El vostre pla inclou un màxim de ${ availableAddresses } adreces més."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "El vostre pla inclou un màxim de ${ availableNumberOfMembers } usuari organitzatiu més.",
+        "El vostre pla inclou un màxim de ${ availableNumberOfMembers } usuaris organitzatius més."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "El vostre pla inclou un màxim de ${ availableVPNAccess } adreça més.",
+        "El vostre pla inclou un màxim de ${ availableVPNAccess } adreces més."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (per a Debian/Ubuntu)"
@@ -8131,6 +8224,10 @@
     "plan customizer, users": {
       "contact": [
         "contacte"
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Si necessiteu més de ${ maxUsers } compte d'usuari, si us plau, ${ contact } amb el nostre equip de vendes.",
+        "Si necessiteu més de ${ maxUsers } comptes d'usuari, si us plau, ${ contact } amb el nostre equip de vendes."
       ]
     },
     "Price": {
@@ -9055,6 +9152,9 @@
       ],
       "Clear": [
         "Neteja"
+      ],
+      "Clear out the junk": [
+        "Netegeu les escombraries"
       ],
       "Composing": [
         "Redacció"

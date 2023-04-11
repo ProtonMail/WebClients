@@ -1012,6 +1012,26 @@
         "Bu işlem bu sertifikayı kullanan tüm yöneltici ve istemcilerin bağlantısını kesecek."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } kullanıcısının gelen kutusu"
+      ],
+      "5 trackers removed": [
+        "5 izleyici kaldırıldı"
+      ],
+      "Auto forwarded": [
+        "Otomatik olarak iletildi"
+      ],
+      "Email received": [
+        "E-posta alındı"
+      ],
+      "Encrypted": [
+        "Şifrelenmiş"
+      ],
+      "New email": [
+        "Yeni e-posta"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } uygulamaları"
@@ -2594,6 +2614,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin. Tarifenizi yükselterek bunun gibi başka özelliklerden yararlanın."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
@@ -2606,12 +2629,18 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logosu ve bir artı işareti"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
       "Track the status and activity of your referrals.": [
         "Önerileri işlemlerinizi ve durumunu izleyin."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "${ BRAND_NAME } logosu ardından bir artı işareti bulunan ek satış simgesi"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Arkadaşlarınızı çağırmayı sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
@@ -3870,6 +3899,17 @@
       ],
       "(during your first month)": [
         "(ilk ayınız boyunca)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Otomatik olarak ilet"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail iletilerini gelen kutunuzda görün"
+      ],
+      "Sign in with Google": [
+        "Google ile oturum aç"
       ]
     },
     "Go to sign in": {
@@ -6663,6 +6703,9 @@
       "Auto show remote images": [
         "Uzak görseller otomatik olarak görüntülensin"
       ],
+      "Auto-delete unwanted messages": [
+        "İstenmeyen iletiler otomatik olarak silinsin"
+      ],
       "Auto-detect primary time zone": [
         "Birincil saat dilimi otomatik algılansın"
       ],
@@ -8085,6 +8128,9 @@
       "Advanced sharing security": [
         "Gelişmiş paylaşım güvenliği"
       ],
+      "Auto-delete spam and trashed messages": [
+        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
+      ],
       "Auto-reply": [
         "Otomatik yanıt"
       ],
@@ -8136,6 +8182,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Hide My Email aliases": [
+        "E-posta takma adlarım gizlensin"
+      ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
         "${ n } aygıt için yüksek hızlı VPN"
@@ -8169,6 +8218,12 @@
       ],
       "Router support": [
         "Yöneltici desteği"
+      ],
+      "Schedule messages at any time": [
+        "İletileri istediğiniz zamanda gönderin"
+      ],
+      "Search message content": [
+        "İleti içeriğinde arama"
       ],
       "Secure Core servers": [
         "Secure Core sunucuları"
@@ -8221,6 +8276,12 @@
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
+      "Up to 15 email addresses": [
+        "15 e-posta adresine kadar"
+      ],
+      "Up to 500 GB of storage": [
+        "500 GB depolama alanına kadar"
+      ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
       ],
@@ -8229,6 +8290,14 @@
       ],
       "Worldwide streaming services": [
         "Tüm dünyadaki yayın akışı hizmetleri"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
       ]
     },
     "new_plans: heading": {
@@ -10162,6 +10231,9 @@
       "Clear": [
         "Temizle"
       ],
+      "Clear out the junk": [
+        "Çöpleri temizleyin"
+      ],
       "Composing": [
         "İleti oluşturma"
       ],
@@ -10935,6 +11007,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Çöp ve istenmeyen kutularındaki iletiler 30 gün sonra silinsin. Bu seçenek etkinleştirildiğinde çöp ve istenmeyen kutularında bulunan tüm iletiler silinir ve gelecekte çöp ve istenmeyen kutularında 30 günden eski iletiler otomatik olarak silinir."
       ],
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"

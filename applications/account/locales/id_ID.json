@@ -1010,6 +1010,26 @@
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Kotak masuk ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 pelacak dihapus"
+      ],
+      "Auto forwarded": [
+        "Diteruskan secara otomatis"
+      ],
+      "Email received": [
+        "Email diterima"
+      ],
+      "Encrypted": [
+        "Dienkripsi"
+      ],
+      "New email": [
+        "Email baru"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikasi ${ BRAND_NAME }"
@@ -2586,6 +2606,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Hapus pesan yang telah dibuang dan ditandai sebagai spam selama lebih dari 30 hari secara otomatis. Nikmati fitur ini dan berbagai kelebihan lainnya dengan meningkatkan paket langganan Anda."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Selamat! Anda telah memperoleh langganan ${ plusPlanName } gratis selama ${ rewardsLimit } bulan."
       ],
@@ -2603,6 +2626,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Lacak status dan aktivitas rujukan Anda."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Ikon upsell dengan gambar logo ${ BRAND_NAME } yang disertai dengan tanda plus"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh saldo tambahan"
@@ -3835,11 +3861,6 @@
         "Bawaan"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email per bulan)"
@@ -3852,6 +3873,11 @@
       ],
       "(during your first month)": [
         "(pada bulan pertama Anda)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Masuk dengan Google"
       ]
     },
     "Go to sign in": {
@@ -4527,7 +4553,7 @@
         "Pengaturan tambahan"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Verifikasi alamat merupakan fitur keamanan tingkat lanjut. Kami menyarankan Anda untuk mengaktifkan fitur ini hanya apabila Anda benar-benar tahu fungsinya."
+        "Verifikasi alamat merupakan fitur keamanan tingkat lanjut. Kami menyarankan Anda untuk mengaktifkan fitur ini hanya apabila Anda benar-benar paham akan kegunaannya."
       ],
       "addresses": [
         "alamat"
@@ -4929,7 +4955,7 @@
         "Gagal mengambil log."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
+        "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi, dan tindakan."
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa, MasterCard, dan Discover, 3 digit yang terdapat pada sisi belakang kartu. Untuk American Express, 4 digit yang terdapat pada sisi depan kartu."
@@ -6297,7 +6323,7 @@
         "Teruskan"
       ],
       "Go to All Mail": [
-        "Ke Semua Surat"
+        "Ke Semua surat"
       ],
       "Go to Archive": [
         "Ke Arsip"
@@ -6597,6 +6623,9 @@
       ],
       "Auto show remote images": [
         "Tampilkan gambar jarak jauh secara otomatis"
+      ],
+      "Auto-delete unwanted messages": [
+        "Hapus pesan yang tidak diinginkan secara otomatis"
       ],
       "Auto-detect primary time zone": [
         "Deteksi zona waktu utama secara otomatis"
@@ -7997,6 +8026,9 @@
       "Advanced sharing security": [
         "Keamanan berbagi berkas tingkat lanjut"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Hapus pesan spam dan sampah secara otomatis"
+      ],
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
@@ -8048,6 +8080,9 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
       "High-speed VPN on ${ n } devices": [
         "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
@@ -8080,6 +8115,12 @@
       ],
       "Router support": [
         "Dukungan router"
+      ],
+      "Schedule messages at any time": [
+        "Jadwalkan pesan sesuai keinginan Anda"
+      ],
+      "Search message content": [
+        "Cari konten pesan"
       ],
       "Secure Core servers": [
         "Server Secure Core"
@@ -8132,6 +8173,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Kuota penyimpanan hingga ${ totalStorageSize }"
       ],
+      "Up to 15 email addresses": [
+        "Hingga 15 alamat email"
+      ],
+      "Up to 500 GB of storage": [
+        "Kuota penyimpanan hingga 500 GB"
+      ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
       ],
@@ -8140,6 +8187,14 @@
       ],
       "Worldwide streaming services": [
         "Akses ke berbagai layanan streaming di seluruh dunia"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
       ]
     },
     "new_plans: heading": {
@@ -9870,9 +9925,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "Bridge ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Pintasan Keyboard ${ MAIL_APP_NAME }"
       ],
@@ -10044,6 +10096,9 @@
       "Clear": [
         "Bersihkan"
       ],
+      "Clear out the junk": [
+        "Hapus sampah yang ada"
+      ],
       "Composing": [
         "Penulisan"
       ],
@@ -10213,7 +10268,7 @@
         "Ubah pengguna"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Email composer": [
         "Komposer email"
@@ -10813,6 +10868,9 @@
       "Customize import to reduce the number of labels": [
         "Sesuaikan impor untuk mengurangi jumlah label"
       ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Menghapus pesan yang telah berada di sampah dan spam selama lebih 30 hari. Mengaktifkan pilihan ini akan menghapus seluruh isi folder sampah dan spam Anda saat ini. Ke depannya, pesan sampah dan spam baru akan dihapus secara otomatis setelah 30 hari."
+      ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"
       ],
@@ -10832,7 +10890,7 @@
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Tentukan apakah email-email yang terhubung pada suatu rantai percakapan akan dikelompokkan sebagai satu atau ditampilkan secara terpisah pada Kotak Masuk Anda."
+        "Tentukan apakah email yang terhubung dalam suatu rantai percakapan akan saling dikelompokkan atau ditampilkan secara terpisah."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
