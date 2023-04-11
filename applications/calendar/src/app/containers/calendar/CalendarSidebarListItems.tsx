@@ -153,7 +153,7 @@ const CalendarSidebarListItems = ({
 
         const left = (
             <Checkbox
-                className="mr0-75 flex-item-noshrink"
+                className="mr-3 flex-item-noshrink"
                 color={COLORS.WHITE}
                 backgroundColor={Display ? Color : 'transparent'}
                 borderColor={Color}
@@ -181,7 +181,7 @@ const CalendarSidebarListItems = ({
                         className={clsx(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                     >
                         <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100">
-                            <div className="flex flex-nowrap mr0-5">
+                            <div className="flex flex-nowrap mr-2">
                                 <div className="text-ellipsis" title={Name}>
                                     {Name}
                                 </div>
@@ -262,7 +262,7 @@ const CalendarSidebarListItems = ({
                                                 {c('Action').t`Import events`}
                                             </DropdownMenuButton>
                                         )}
-                                        <hr className="mt0-5 mb0-5" />
+                                        <hr className="my-2" />
                                         <DropdownMenuLink
                                             as={SettingsLink}
                                             app={APPS.PROTONCALENDAR}

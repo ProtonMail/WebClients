@@ -29,7 +29,7 @@ const GenericError = ({ children, className, small = false }: Props) => {
         <div className={clsx('mauto', className)}>
             {small ? (
                 <>
-                    <h1 className="text-bold h2 mb0-25">{title}</h1>
+                    <h1 className="text-bold h2 mb-1">{title}</h1>
                     <div className="text-center">{line1}</div>
                 </>
             ) : (

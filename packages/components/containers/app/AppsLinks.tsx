@@ -2,8 +2,11 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
+
+
 import { AppLink, Logo, SettingsLink } from '../../components';
 import { useConfig, useUser } from '../../hooks';
+
 
 interface AppsProps {
     app: APP_NAMES;
@@ -20,7 +23,7 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
         const appName = getAppName(app);
         const inner = (
             <>
-                <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr0-5" />
+                <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr-2" />
                 {name && appName}
             </>
         );

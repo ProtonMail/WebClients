@@ -54,7 +54,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             {...rest}
         >
             {cloneElement(icon, {
-                className: classnames([icon.props.className, 'topnav-icon mr0-5']),
+                className: classnames([icon.props.className, 'topnav-icon mr-2']),
             })}
             <span className="navigation-title">{text}</span>
             {children}

@@ -106,7 +106,7 @@ const CodeMethod = ({
                 </Button>
                 <Button
                     fullWidth
-                    className="mt0-5"
+                    className="mt-2"
                     size="large"
                     color="weak"
                     type="button"

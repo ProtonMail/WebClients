@@ -11,7 +11,7 @@ const ReferralFeaturesList = () => {
             <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
                 {c('Info').t`${storageSize} storage`}
                 <Info
-                    className="ml0-5"
+                    className="ml-2"
                     title={c('Info')
                         .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`}
                 />

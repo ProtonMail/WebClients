@@ -36,7 +36,7 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
         <SettingsLayout>
             <SettingsLayoutLeft>
                 <label className="text-semibold" htmlFor={timeZoneSelectorId} id="label-secondary-timezone">
-                    <span className="mr0-5">{c('Primary timezone').t`Secondary time zone`}</span>
+                    <span className="mr-2">{c('Primary timezone').t`Secondary time zone`}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>

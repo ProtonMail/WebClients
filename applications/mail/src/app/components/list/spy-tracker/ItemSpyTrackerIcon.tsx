@@ -73,7 +73,7 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
         >
             {isSimpleLoginIntegration ? (
                 <div className="flex flex-nowrap flex-align-items-center">
-                    <span className="mr0-5 relative inline-flex item-spy-tracker-link flex-align-items-center">
+                    <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
                         {spyTrackerIcon}
                     </span>
                     <span className="pl0-25 flex-item-fluid" title={title}>

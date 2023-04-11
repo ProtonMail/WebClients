@@ -127,7 +127,7 @@ const ContactViewErrors = ({
         <div className={classnames([bgColor, 'rounded p0-5 mt1 flex flex-nowrap flex-align-items-center'])}>
             <Icon name="exclamation-circle" className="flex-item-noshrink myauto" />
             <span className="flex-item-fluid pl0-5 pr0-5">
-                <span className="mr0-5">{text}</span>
+                <span className="mr-2">{text}</span>
                 <Href
                     className="underline inline-block color-inherit"
                     href={getKnowledgeBaseUrl('/proton-contacts')}

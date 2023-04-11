@@ -82,7 +82,7 @@ const SelectOptions = <V,>({
     });
 
     return (
-        <ul className="unstyled m0 p0" onKeyDown={handleMenuKeydown} data-testid="select-list" {...rest}>
+        <ul className="unstyled m-0 p0" onKeyDown={handleMenuKeydown} data-testid="select-list" {...rest}>
             {items}
         </ul>
     );

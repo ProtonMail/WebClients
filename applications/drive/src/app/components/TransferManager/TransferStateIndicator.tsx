@@ -109,7 +109,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             <span className="no-mobile text-ellipsis">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
-                        <span className="mr0-5">
+                        <span className="mr-2">
                             <Icon name="info-circle" />
                         </span>
                     </Tooltip>
@@ -120,7 +120,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             {shouldShowDirection && (
                 <Icon
                     name={type === TransferType.Download ? 'arrow-down-line' : 'arrow-up-line'}
-                    className={clsx(['flex-item-noshrink ml0-5', isTransferDone(transfer) && 'no-tablet no-desktop'])}
+                    className={clsx(['flex-item-noshrink ml-2', isTransferDone(transfer) && 'no-tablet no-desktop'])}
                     alt={progressTitle}
                 />
             )}

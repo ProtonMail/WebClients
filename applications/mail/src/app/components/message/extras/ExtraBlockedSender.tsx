@@ -45,9 +45,9 @@ const ExtraBlockedSender = ({ message }: Props) => {
     };
 
     return incomingDefaultsStatus === 'loaded' && blockedIncomingDefault ? (
-        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
-            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
-                <Icon name="exclamation-circle-filled" className="mt0-4 flex-item-noshrink ml0-2" />
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap on-mobile-flex-column">
+            <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
+                <Icon name="exclamation-circle-filled" className="mt-1 ml-0.5 flex-item-noshrink" />
                 <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">
                     {c('Info').t`Sender has been blocked.`}
                 </span>

@@ -1,20 +1,19 @@
 import React from 'react';
 
+
+
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms/Button';
-import {
-    Icon,
-    Info,
-    ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useSettingsLink,
-} from '@proton/components/components';
+import { Icon, Info, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useSettingsLink } from '@proton/components/components';
 import headerImage from '@proton/styles/assets/img/illustrations/upsell-header.svg';
 
+
+
 import { UpsellFeatureName, upsellFeatures } from './constants';
+
 
 type UpsellBoxProps = Required<
     Pick<UpsellModalProps, 'description' | 'title' | 'features'> & { handleUpgrade: () => void }
@@ -35,13 +34,13 @@ const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxPro
         </div>
 
         <div className="border border-primary rounded p1-5 pt1">
-            <ul className="m0 unstyled mb1">
+            <ul className="m-0 unstyled mb1">
                 {features.map((featureName) => {
                     const feature = upsellFeatures[featureName];
                     return (
                         <li className="py0-5 rounded" key={feature.getText()}>
                             <div className="flex flex-nowrap flex-align-items-center">
-                                <div className="mr0-75 flex-item-noshrink flex">
+                                <div className="mr-3 flex-item-noshrink flex">
                                     <Icon className="color-primary mauto" size={20} name={feature.icon} />
                                 </div>
                                 <div className="flex-item-fluid">

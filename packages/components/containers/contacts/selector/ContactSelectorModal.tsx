@@ -212,7 +212,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                     <ContactSelectorEmptyContacts onClose={rest.onClose} onEdit={onEdit} />
                 ) : (
                     <>
-                        <div className={clsx(['mb0-5 flex flex-nowrap flex-gap-1', isNarrow && 'flex-column'])}>
+                        <div className={clsx(['mb-2 flex flex-nowrap flex-gap-1', isNarrow && 'flex-column'])}>
                             <div className="flex-item-grow-2">
                                 <SearchInput
                                     ref={searchInputRef}

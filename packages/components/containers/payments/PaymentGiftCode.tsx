@@ -39,13 +39,13 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
         return (
             <div className="flex flex-align-items-center">
                 <span className="flex-item-fluid flex-nowrap flex-align-items-center">
-                    <Icon name="gift" className="mr0-5 mb0-25 flex-item-noshrink" />
+                    <Icon name="gift" className="mr-2 mb-1 flex-item-noshrink" />
                     <code>{getFormattedGiftCode(giftCode)}</code>
                 </span>
                 <Button
                     icon
                     shape="ghost"
-                    className="flex flex-align-items-center ml0-25"
+                    className="flex flex-align-items-center ml-1"
                     onClick={() => onApply('')}
                     title={c('Action').t`Remove gift code`}
                 >
@@ -93,7 +93,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
 
     return (
         <>
-            <UnderlineButton className="mr0-5" onClick={toggle}>{c('Link').t`Add a gift code`}</UnderlineButton>
+            <UnderlineButton className="mr-2" onClick={toggle}>{c('Link').t`Add a gift code`}</UnderlineButton>
             <Info
                 title={c('Tooltip')
                     .t`If you purchased a gift code or received one from our support team, you can enter it here.`}

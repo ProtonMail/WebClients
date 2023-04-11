@@ -21,11 +21,11 @@ const StandardSupportDropdown = () => {
                     href={getStaticURL('/support')}
                     target="_blank"
                 >
-                    <Icon className="mt0-25 mr0-5" name="question-circle" />
+                    <Icon className="mt-1 mr-2" name="question-circle" />
                     {c('Action').t`I have a question`}
                 </DropdownMenuLink>
                 <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
-                    <Icon className="mt0-25 mr0-5" name="bug" />
+                    <Icon className="mt-1 mr-2" name="bug" />
                     {c('Action').t`Report a problem`}
                 </DropdownMenuButton>
             </SupportDropdown>

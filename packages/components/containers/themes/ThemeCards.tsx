@@ -21,7 +21,7 @@ interface Props {
 
 const ThemeCards = ({ themeIdentifier, onChange, disabled, className, liClassName, list, size = 'medium' }: Props) => {
     return (
-        <ul className={classnames(['unstyled m0', className])}>
+        <ul className={classnames(['unstyled m-0', className])}>
             {list.map(({ identifier, label, src }) => {
                 const id = `id_${identifier}`;
                 return (

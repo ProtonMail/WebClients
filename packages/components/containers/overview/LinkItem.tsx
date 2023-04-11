@@ -12,7 +12,7 @@ interface Props {
 const LinkItem = ({ to, text, available }: Props) => {
     return (
         <Link to={to}>
-            <span className="mr0-5">{text}</span>
+            <span className="mr-2">{text}</span>
             {available ? null : (
                 <Tooltip title={c('Tag').t`Premium feature`}>
                     <Icon name="star-filled" className="color-warning" />

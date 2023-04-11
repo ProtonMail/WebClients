@@ -79,10 +79,10 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
                 <div>{c('Info')
                     .t`SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.`}</div>
                 <br />
-                <div className="mb0-5">
+                <div className="mb-2">
                     <strong>{c('Info').t`How Hide My Email works`}</strong>
                 </div>
-                <ul className="mt0 mb0">
+                <ul className="my-0">
                     <li className="mb1">{c('Info')
                         .t`When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.`}</li>
                     <li className="mb1">{c('Info')
@@ -91,7 +91,7 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
                         .t`If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.`}</li>
                 </ul>
                 <br />
-                <div className="mb0-5">
+                <div className="mb-2">
                     <strong>{c('Info').t`Using SimpleLogin is easy`}</strong>
                 </div>
                 <div>{installAndGoText}</div>

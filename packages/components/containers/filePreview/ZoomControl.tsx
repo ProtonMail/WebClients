@@ -31,7 +31,7 @@ const ZoomControl = ({ className, scale, onZoomIn, onZoomOut, onReset }: Props) 
                 >
                     <Icon name="minus" size={12} alt={c('Action').t`Zoom out`} />
                 </Button>
-                <Button shape="ghost" title={c('Action').t`Fit to window`} className="ml0-5 mr0-5" onClick={onReset}>
+                <Button shape="ghost" title={c('Action').t`Fit to window`} className="mx-2" onClick={onReset}>
                     <span>{displayedZoomValueInPercent}</span>
                 </Button>
                 <Button

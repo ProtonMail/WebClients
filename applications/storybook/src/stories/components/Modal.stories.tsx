@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 import { Button } from '@proton/atoms';
 import {
     BasicModal,
@@ -39,7 +41,7 @@ export const Example = () => {
     return (
         <div className="text-center">
             <Button
-                className="mr0-5"
+                className="mr-2"
                 onClick={() => {
                     setOpen(true);
                 }}
@@ -71,7 +73,7 @@ export const Primary = () => {
     return (
         <div className="text-center">
             <Button
-                className="mr0-5"
+                className="mr-2"
                 onClick={() => {
                     setOpen(true);
                 }}
@@ -158,7 +160,7 @@ export const Header = () => {
             <ModalTwo open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader title="Title in ModalHeader" subline="Subline in ModalHeader" />
                 <ModalTwoContent>
-                    <p className="m0">
+                    <p className="m-0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
                         qui vero, blanditiis quos?
@@ -201,7 +203,7 @@ export const HeaderActions = () => {
                     ]}
                 />
                 <ModalTwoContent>
-                    <p className="m0">
+                    <p className="m-0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
                         qui vero, blanditiis quos?
@@ -303,7 +305,7 @@ export const WithFormRoot = () => {
     return (
         <div className="text-center">
             <Button
-                className="mr0-5"
+                className="mr-2"
                 onClick={() => {
                     setOpen(true);
                 }}
@@ -380,7 +382,7 @@ export const FullscreenOnMobile = () => {
     return (
         <div className="text-center">
             <Button
-                className="mr0-5"
+                className="mr-2"
                 onClick={() => {
                     setOpen(true);
                 }}

@@ -28,7 +28,7 @@ const MailDefaultHandlerModal = (props: ModalProps) => {
             <span>{c('Info')
                 .t`Set ${MAIL_APP_NAME} as your default email application for this browser. ${MAIL_APP_NAME} will open automatically when you click an email link.`}</span>
             <Href
-                className="ml0-5"
+                className="ml-2"
                 href={getKnowledgeBaseUrl('/set-default-email-handler')}
                 title="Default mail handler"
             >

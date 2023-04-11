@@ -39,7 +39,7 @@ const Notifications = ({
 }: Props) => {
     const { addNotificationText, addNotificationTitle, removeNotificationText } = getNotificationsTexts();
 
-    const noNotificationsButtonClassName = fullWidth ? 'mt0-5 on-mobile-mt1' : 'on-tablet-mt1';
+    const noNotificationsButtonClassName = fullWidth ? 'mt-4 md:mt-2' : 'mt-4 lg:mt-0';
 
     return (
         <>
@@ -47,7 +47,7 @@ const Notifications = ({
                 const uniqueId = index === 0 ? id : `${id}-${index}`;
 
                 return (
-                    <div className="mb0-5 flex flex-nowrap flex-align-items-center" key={notification.id}>
+                    <div className="mb-2 flex flex-nowrap flex-align-items-center" key={notification.id}>
                         <NotificationInput
                             id={uniqueId}
                             hasWhen={hasWhen}
@@ -60,7 +60,7 @@ const Notifications = ({
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
                                 data-test-id="delete-notification"
-                                className="flex flex-item-noshrink ml0-5"
+                                className="flex flex-item-noshrink ml-2"
                                 disabled={disabled}
                                 onClick={() => onChange(removeItem(notifications, index))}
                                 icon
@@ -92,7 +92,7 @@ const Notifications = ({
                 >
                     {addIcon ? (
                         <span className="flex flex-nowrap w100 flex-align-items-center">
-                            <Icon name={addIcon} className="mr0-5 flex-item-centered-vert" />
+                            <Icon name={addIcon} className="mr-2 flex-item-centered-vert" />
                             {addNotificationText}
                         </span>
                     ) : (

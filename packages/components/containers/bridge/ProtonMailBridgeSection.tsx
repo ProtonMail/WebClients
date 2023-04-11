@@ -125,7 +125,7 @@ const ProtonMailBridgeSection = () => {
                 <div className="border p2 flex-item-fluid rounded flex flex-column flex-align-items-center">
                     <Icon size={48} name={icon} className="mb1" />
 
-                    <h3 className="text-bold text-xl m0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>
+                    <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>
 
                     <span className="bridge-client-version mb1 text-center">{version}</span>
 
@@ -155,7 +155,7 @@ const ProtonMailBridgeSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph className="mt0 mb1" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
+            <SettingsParagraph className="mt-0 mb1" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
                 {c('Info')
                     .t`You can use ${MAIL_APP_NAME} with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
             </SettingsParagraph>

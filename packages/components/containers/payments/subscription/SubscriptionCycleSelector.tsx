@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+
+
 import { CYCLE, DEFAULT_CURRENCY, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
@@ -37,7 +39,7 @@ const getDiscountPrice = (discount: number, currency: Currency) => {
     return discount ? (
         <>
             {c('Subscription saving').t`Save`}
-            <Price className="ml0-25" currency={currency}>
+            <Price className="ml-1" currency={currency}>
                 {discount}
             </Price>
         </>
@@ -76,7 +78,7 @@ const CycleItemView = ({
                     </div>
                     <strong className="text-lg flex-item-noshrink color-primary">
                         {c('Subscription price').t`For`}
-                        <Price className="ml0-25" currency={currency}>
+                        <Price className="ml-1" currency={currency}>
                             {total}
                         </Price>
                     </strong>
@@ -284,7 +286,7 @@ const SubscriptionCycleSelector = ({
     }
 
     return (
-        <ul className="unstyled m0 plan-cycle-selector">
+        <ul className="unstyled m-0 plan-cycle-selector">
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
                 return (

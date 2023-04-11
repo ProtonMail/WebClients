@@ -59,7 +59,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
             <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
 
             <div className="flex flex-nowrap flex-item-fluid on-tiny-mobile-flex-column">
-                <div className="flex-item-fluid mt0-5">
+                <div className="flex-item-fluid mt-2">
                     <SelectTwo
                         value={frequencyModel.ends.type}
                         onChange={({ value }) => {
@@ -75,7 +75,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                 </div>
 
                 {frequencyModel.ends.type === UNTIL && (
-                    <div className="flex-item-fluid mt0-5 ml0-5 on-tiny-mobile-ml0">
+                    <div className="flex-item-fluid mt-2 ml-0 sm:ml-2">
                         <DateInput
                             id={UNTIL_ID}
                             value={frequencyModel.ends.until}
@@ -94,7 +94,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                 )}
 
                 {frequencyModel.ends.type === AFTER_N_TIMES && (
-                    <div className="flex flex-nowrap flex-align-items-center flex-item-fluid mt0-5 ml0-5 on-tiny-mobile-ml0">
+                    <div className="flex flex-nowrap flex-align-items-center flex-item-fluid mt-2 ml-0 sm:ml-2">
                         <div className="max-w6e">
                             <IntegerInput
                                 id={COUNT_ID}
@@ -112,7 +112,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                                 title={c('Title').t`Choose how many times this event will repeat`}
                             />
                         </div>
-                        <div className="flex-item-flex-item-noshrink ml0-5">
+                        <div className="flex-item-flex-item-noshrink ml-2">
                             {c('Custom frequency option').ngettext(msgid`time`, `times`, safeCountPlural)}
                         </div>
                     </div>

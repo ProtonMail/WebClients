@@ -65,13 +65,13 @@ const PlanCard = ({
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
                         <div className="plan-selection-plan-recommended-pill inline-flex mlauto mrauto flex-items-align-center bg-primary p0-25 pl0-75 pr0-75">
                             <Icon name="star-filled" className="myauto" />
-                            <span className="ml0-25">{c('Title').t`Recommended`}</span>
+                            <span className="ml-1">{c('Title').t`Recommended`}</span>
                         </div>
                     </div>
                 ) : null}
                 <div className="flex flex-row flex-align-items-center">
                     <h2
-                        className="h3 plan-selection-title flex text-bold text-capitalize mb0-5"
+                        className="h3 plan-selection-title flex text-bold text-capitalize mb-2"
                         id={`desc_${planName}`}
                     >
                         {planTitle}
@@ -79,7 +79,7 @@ const PlanCard = ({
                 </div>
                 <p className="text-lg plan-selection-info text-left color-weak mb1">{info}</p>
                 <div className="mb1 flex flex-wrap flex-align-items-baseline plan-selection-price">
-                    <span className="mr0-5">
+                    <span className="mr-2">
                         <Price large currency={currency}>
                             {price / cycle}
                         </Price>
@@ -95,7 +95,7 @@ const PlanCard = ({
                 >
                     {action}
                 </PrimaryButton>
-                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt0-5">{features}</div>
+                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt-2">{features}</div>
             </div>
         </>
     );

@@ -5,9 +5,9 @@ import {
     NOTIFICATION_UNITS_MAX,
 } from '@proton/shared/lib/calendar/constants';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import clsx from '@proton/utils/clsx';
 
 import { IntegerInput, Option, SelectTwo, TimeInput } from '../../../../components';
-import { classnames } from '../../../../helpers';
 import {
     getDaysBefore,
     getHoursBefore,
@@ -75,21 +75,19 @@ const NotificationInput = ({
 
     return (
         <div
-            className={classnames([
+            className={clsx(
                 'flex flex-nowrap flex-item-fluid',
                 className,
-                fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column',
-            ])}
+                fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column'
+            )}
         >
             {hasType && (
                 <span
-                    className={classnames([
-                        'flex flex-nowrap mr0-5',
-                        fullWidth ? 'on-mobile-mt0-5 on-mobile-mb0-5' : 'on-tablet-mt0-5 on-tablet-mb0-5',
-                        isAllDay && at
-                            ? 'on-tiny-mobile-ml0'
-                            : classnames(['w10e', fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0']),
-                    ])}
+                    className={clsx(
+                        'flex flex-nowrap mr-2 my-2',
+                        fullWidth ? 'md:my-0' : 'lg:my-0',
+                        !(isAllDay && at) && 'w10e'
+                    )}
                 >
                     <SelectTwo
                         id={id}
@@ -111,7 +109,7 @@ const NotificationInput = ({
             )}
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
-                    <span className="flex-item-noshrink mr0-5 w5e">
+                    <span className="flex-item-noshrink mr-2 w5e">
                         <IntegerInput
                             id={NOTIFICATION_INPUT_ID}
                             data-test-id="notification-time-input"
@@ -164,17 +162,12 @@ const NotificationInput = ({
                 <span className="flex on-tiny-mobile-flex-column flex-nowrap">
                     {isAllDay && at && (
                         <span
-                            className={classnames([
-                                'flex flex-nowrap flex-item-fluid flex-align-items-center',
-                                fullWidth ? 'on-mobile-mt0-5' : 'on-tablet-mt0-5',
-                            ])}
+                            className={clsx(
+                                'flex flex-nowrap flex-item-fluid flex-align-items-center mt-2',
+                                fullWidth ? 'md:mt-0' : 'lg:mt-0'
+                            )}
                         >
-                            <span
-                                className={classnames([
-                                    'flex-item-noshrink ml0-5 mr0-5',
-                                    fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0',
-                                ])}
-                            >
+                            <span className={clsx('flex-item-noshrink ml-0 mr-2', fullWidth ? 'md:ml-2' : 'lg:ml-2')}>
                                 {atText}
                             </span>
                             <span className="w8e">

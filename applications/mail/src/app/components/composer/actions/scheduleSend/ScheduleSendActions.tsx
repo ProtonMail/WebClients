@@ -113,10 +113,10 @@ const ScheduleSendActions = ({
 
     return (
         <>
-            <div className="p1 pt0-75 mb0-5 border-bottom">
+            <div className="p1 pt0-75 mb-2 border-bottom">
                 <h6 data-testid="composer:schedule-send:dropdown-title" className="text-bold">{c('Title')
                     .t`Schedule send`}</h6>
-                <p className={clsx('m0', 'color-weak')}>{c('Description')
+                <p className={clsx('m-0', 'color-weak')}>{c('Description')
                     .t`When do you want your message to be sent?`}</p>
             </div>
             <DropdownMenu>

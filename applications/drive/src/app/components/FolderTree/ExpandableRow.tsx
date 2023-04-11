@@ -46,7 +46,7 @@ const ExpandableRow = ({
                 className={clsx(['folder-tree-list-item', !isDisabled && 'cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect}
             >
-                <td style={paddingElement} className="flex flex-align-items-center flex-nowrap m0 pl-custom">
+                <td style={paddingElement} className="flex flex-align-items-center flex-nowrap m-0 pl-custom">
                     <div className="folder-tree-list-item-expand flex-item-noshrink relative">
                         <Button
                             disabled={isDisabled}
@@ -70,7 +70,7 @@ const ExpandableRow = ({
                         key="Name"
                         className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
                     >
-                        <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr0-5" />
+                        <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
                         <FileNameDisplay text={link.name} />
                     </div>
                     {isSelected && (

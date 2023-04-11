@@ -33,7 +33,7 @@ const ExploreStep = ({ onExplore }: Props) => {
         <Main>
             <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
             <Content>
-                <ul className="unstyled m0 divide-y">
+                <ul className="unstyled m-0 divide-y">
                     {[APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].map((app) => {
                         const name = getAppName(app);
                         const showLoader = type === app && loading;
@@ -44,7 +44,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                     data-testid={app.replace('proton-', 'explore-')}
                                     size="large"
                                     shape="ghost"
-                                    className="flex flex-align-items-center text-left my0-5"
+                                    className="flex flex-align-items-center text-left my-2"
                                     fullWidth
                                     onClick={() => {
                                         if (loading) {
@@ -58,7 +58,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                         appName={app}
                                         size={60}
                                         variant="glyph-only"
-                                        className="flex-item-noshrink mr0-5"
+                                        className="flex-item-noshrink mr-2"
                                         aria-hidden="true"
                                     />{' '}
                                     <span className="flex-item-fluid">{name}</span>

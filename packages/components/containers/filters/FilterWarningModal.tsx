@@ -1,9 +1,14 @@
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+
+
 import { Prompt } from '../../components/prompt';
+
 
 interface Props {
     open: boolean;
@@ -26,7 +31,7 @@ const FilterWarningModal = ({ open, onClose, onConfirm }: Props) => (
             <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
         ]}
     >
-        <p className="mt0">
+        <p className="mt-0">
             {c('Message')
                 .t`All filter actions will be applied to all messages in your ${MAIL_APP_NAME} account. No auto-reply emails will be sent.`}
         </p>

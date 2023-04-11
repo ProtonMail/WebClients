@@ -129,7 +129,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     autoComplete="off"
                     noValidate
                 >
-                    <div className="flex mb0-5">
+                    <div className="flex mb-2">
                         <div className="flex-item-noshrink">
                             <Checkbox
                                 id="save-phone"
@@ -139,7 +139,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 <span className="sr-only">{c('Label').t`Use a recovery phone number`}</span>
                             </Checkbox>
                         </div>
-                        <div className="flex-item-fluid pl0-5 mt0-1">
+                        <div className="flex-item-fluid pl0-5 mt-0.5">
                             <InputFieldTwo
                                 as={PhoneInput}
                                 id="recovery-phone"
@@ -168,7 +168,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 <span className="sr-only">{c('Label').t`Use a recovery email address`}</span>
                             </Checkbox>
                         </div>
-                        <div className="flex-item-fluid pl0-5 mt0-1">
+                        <div className="flex-item-fluid pl0-5 mt-0.5">
                             <InputFieldTwo
                                 id="recovery-email"
                                 bigger
@@ -207,7 +207,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                         fullWidth
                         disabled={loading}
                         onClick={() => setConfirmModal(true)}
-                        className="mt0-5"
+                        className="mt-2"
                     >
                         {c('Action').t`Maybe later`}
                     </Button>

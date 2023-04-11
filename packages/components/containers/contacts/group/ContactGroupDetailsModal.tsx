@@ -61,7 +61,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                 title={
                     <div className="flex flex-nowrap flex-align-items-center">
                         <div
-                            className="contact-group-details-chip rounded-50 mr0-5 flex-item-noshrink"
+                            className="contact-group-details-chip rounded-50 mr-2 flex-item-noshrink"
                             style={{ backgroundColor: group?.Color }}
                         />
                         <span className="text-ellipsis" title={group?.Name}>
@@ -73,7 +73,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
             <ModalContent>
                 <div className="flex flex-no-min-children flex-item-fluid">
                     <h4 className="mb1 flex flex-align-items-center flex-item-fluid">
-                        <Icon className="mr0-5" name="users" />
+                        <Icon className="mr-2" name="users" />
                         <span>
                             {c('Title').ngettext(msgid`${emailsCount} member`, `${emailsCount} members`, emailsCount)}
                         </span>
@@ -86,7 +86,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                                 icon
                                 onClick={handleExportContactGroup}
                                 disabled={loading}
-                                className="inline-flex ml0-5"
+                                className="inline-flex ml-2"
                                 data-testid="group-summary:export"
                             >
                                 <Icon name="arrow-up-from-square" alt={c('Action').t`Export contact group`} />
@@ -99,7 +99,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                                 icon
                                 onClick={handleDelete}
                                 disabled={loading}
-                                className="inline-flex ml0-5"
+                                className="inline-flex ml-2"
                                 data-testid="group-summary:delete"
                             >
                                 <Icon name="trash" alt={c('Action').t`Delete`} />
@@ -112,7 +112,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                                 color="norm"
                                 onClick={handleEdit}
                                 disabled={loading}
-                                className="inline-flex ml0-5"
+                                className="inline-flex ml-2"
                                 data-testid="group-summary:edit"
                             >
                                 <Icon name="pen" alt={c('Action').t`Edit`} />

@@ -94,7 +94,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={clsx([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
+                    'composer-addresses-item my-4 mr-2 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable
@@ -104,7 +104,7 @@ const AddressesGroupItem = ({
                 {...dragHandlers}
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
-                    <span className="inline-flex composer-addresses-item-icon pl0-5 ml0-1 pr0-25 no-pointer-events-children h100">
+                    <span className="inline-flex composer-addresses-item-icon pl0-5 ml-0.5 pr0-25 no-pointer-events-children h100">
                         <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
@@ -149,14 +149,14 @@ const AddressesGroupItem = ({
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleCopy}
                     >
-                        <Icon name="squares" className="mr0-5" />
+                        <Icon name="squares" className="mr-2" />
                         <span className="flex-item-fluid myauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={() => showModalCallback(true)}
                     >
-                        <Icon name="user" className="mr0-5" />
+                        <Icon name="user" className="mr-2" />
                         <span className="flex-item-fluid myauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -164,7 +164,7 @@ const AddressesGroupItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross-circle" className="mr0-5" />
+                        <Icon name="cross-circle" className="mr-2" />
                         <span className="flex-item-fluid myauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

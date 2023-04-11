@@ -12,7 +12,7 @@ const CreateNewFolderButton = ({ onClick }: Props) => {
             onClick={onClick}
             data-testid="dropdown-new-folder"
         >
-            <Icon className="mr0-5" name="folder-plus" />
+            <Icon className="mr-2" name="folder-plus" />
             {c('Action').t`Create new folder`}
         </DropdownMenuButton>
     );

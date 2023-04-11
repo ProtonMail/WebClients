@@ -92,9 +92,9 @@ const ContactRow = ({
             data-shortcut-target="contact-container"
             data-testid={`contact-item:${Name}`}
         >
-            <div className="flex flex-nowrap w100 h100 myauto flex-align-items-start">
+            <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-start">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
-                <div className="flex-item-fluid ml0-6 conversation-titlesender">
+                <div className="flex-item-fluid ml-2 conversation-titlesender">
                     <div className="flex flex-nowrap flex-align-items-center item-firstline max-w100">
                         <div className={classnames(['flex flex-item-fluid w0', !!LabelIDs.length && 'pr1'])}>
                             <span
@@ -117,7 +117,7 @@ const ContactRow = ({
                     {hasPaidMail && contactGroups && (
                         <ContactGroupLabels
                             contactGroups={contactGroups}
-                            className="mt0-2"
+                            className="mt-0.5"
                             onDetails={onGroupDetails}
                             leftToRight
                             maxNumber={4}
@@ -128,7 +128,7 @@ const ContactRow = ({
                     <div className="item-hover-action-buttons">
                         <Copy
                             value={emails[0]}
-                            className={classnames([isDrawer && 'mr0-25'])}
+                            className={classnames([isDrawer && 'mr-1'])}
                             onCopy={handleCopyEmail}
                             tooltipText={c('Action').t`Copy email to clipboard`}
                             size="small"

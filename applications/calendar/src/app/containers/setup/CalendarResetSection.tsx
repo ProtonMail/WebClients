@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
@@ -37,9 +39,9 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
     const calendarsList = (
         <div>
             {calendarsToReset.map(({ ID, Name, Color }) => (
-                <div key={ID} className="flex flex-nowrap w100 flex-align-items-center mb0-5">
+                <div key={ID} className="flex flex-nowrap w100 flex-align-items-center mb-2">
                     <span className="flex flex-item-noshrink">
-                        <CalendarSelectIcon color={Color} className="mr0-5" />
+                        <CalendarSelectIcon color={Color} className="mr-2" />
                     </span>
                     <span className="text-ellipsis" title={Name}>
                         {Name}
@@ -81,7 +83,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
                 {c('Info; reset calendar keys modal; part 3')
                     .t`You can recover your encrypted data with a recovery file, recovery phrase, or your old password.`}
             </p>
-            <p className="mb0-5">
+            <p className="mb-2">
                 <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link; reset calendar keys modal').t`What's a recovery method?`}
                 </Href>

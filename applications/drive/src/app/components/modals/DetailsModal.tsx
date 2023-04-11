@@ -107,7 +107,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                             label={
                                 <>
                                     {c('Title').t`Size`}
-                                    <Tooltip title={sizeTooltipMessage} className="ml0-25 mb0-25">
+                                    <Tooltip title={sizeTooltipMessage} className="ml-1 mb-1">
                                         <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
                                     </Tooltip>
                                 </>

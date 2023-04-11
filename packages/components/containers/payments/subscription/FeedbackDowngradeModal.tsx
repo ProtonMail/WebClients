@@ -225,7 +225,7 @@ const FeedbackDowngradeModal = ({ onSubmit, onClose, user, ...rest }: Props) => 
                 <InputFieldTwo
                     id="feedback"
                     as={TextAreaTwo}
-                    rootClassName="mt0-5"
+                    rootClassName="mt-2"
                     rows={5}
                     label={c('Label').t`Do you have any suggestions for our team?`}
                     hint={c('Label').t`Optional`}

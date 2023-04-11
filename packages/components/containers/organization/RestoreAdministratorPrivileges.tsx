@@ -26,7 +26,7 @@ const RestoreAdministratorPrivileges = () => {
                         {c('Restore administrator panel')
                             .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
                     </div>
-                    <ul className="mb0">
+                    <ul className="mb-0">
                         <li>{c('Restore administrator panel').t`Creating new users`}</li>
                         <li>{c('Restore administrator panel').t`Reading emails of non-private users`}</li>
                         <li>{c('Restore administrator panel').t`Changing organization password`}</li>

@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
@@ -32,8 +34,8 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
     return (
         <div className="p1 text-center">
             <img className="mb1-5 mt1-5" src={gift} width={48} alt="" />
-            <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
-            <p className="color-weak mt0-5 mb1-5">
+            <p className="h3 mb-0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
+            <p className="color-weak mt-2 mb1-5">
                 <span className="get-started_completion-text inline-block">
                     {c('Get started checklist completion')
                         .t`We've increased the total storage of your account to ${rewardInGb} GB. Get additional storage and unlock premium features today.`}
@@ -117,7 +119,7 @@ const GetStartedChecklist = ({ onDismiss, onItemSelection }: GetStartedChecklist
                 onDismiss={onDismiss}
             />
 
-            <ul className="unstyled ml0-5">
+            <ul className="unstyled ml-2">
                 {checklistItems
                     .sort(({ complete: completeA }, { complete: completeB }) => Number(completeA) - Number(completeB))
                     .map(({ key, text, icon, onClick }) => (

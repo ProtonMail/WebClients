@@ -42,8 +42,8 @@ const ExtraEventHeader = ({ model }: Props) => {
             : null;
 
     return (
-        <div className="mb0-75">
-            <div className="h3 mb0-25 text-bold">{title}</div>
+        <div className="mb-3">
+            <div className="h3 mb-1 text-bold">{title}</div>
             {!hasMultipleVevents && (
                 <>
                     <CalendarEventDateHeader

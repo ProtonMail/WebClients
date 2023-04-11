@@ -144,7 +144,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                     ]}
                     onExit={onExit}
                 >
-                    <p className="m0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
+                    <p className="m-0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
                 </Prompt>
             )}
             {(step === STEPS.MNEMONIC_PHRASE || authenticating) && (

@@ -180,7 +180,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                             size="large"
                             color="norm"
                             shape="ghost"
-                            className="mt0-5"
+                            className="mt-2"
                             fullWidth
                         >{c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`}</Button>
                     </>

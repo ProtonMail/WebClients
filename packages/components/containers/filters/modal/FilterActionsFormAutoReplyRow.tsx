@@ -63,7 +63,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                 ) : (
                     <>
                         <div className={classnames(['w20 mr1 pt0-5', isNarrow && 'mb1'])}>
-                            <span className="ml0-5 mr0-5">{c('Label').t`Send auto-reply`}</span>
+                            <span className="mx-2">{c('Label').t`Send auto-reply`}</span>
                         </div>
                         <Tooltip title={c('Tooltip').t`This feature is only available for paid users`}>
                             <span>

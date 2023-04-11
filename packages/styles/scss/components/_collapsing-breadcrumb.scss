@@ -1,20 +1,17 @@
 .collapsing-breadcrumbs {
-	@extend .flex-nowrap;
-	@extend .flex-align-items-center;
-	@extend .pt0-25;
-	@extend .pb0-25;
-	@extend .pl0;
-	@extend .m0;
-
-	min-block-size: 2.5em;
 	display: flex;
+	min-block-size: 2.5em;
+	padding-block: var(--space-1);
+	padding-inline-start: var(--space-0);
+	margin: var(--space-0);
+	flex-wrap: nowrap;
+	align-items: center;
 }
 
 .collapsing-breadcrumb {
-	@extend .flex-nowrap;
-
 	display: flex;
 	flex: 0 1 auto;
+	flex-wrap: nowrap;
 
 	&:not(#{&}--no-shrink) {
 		min-inline-size: 1.5em;

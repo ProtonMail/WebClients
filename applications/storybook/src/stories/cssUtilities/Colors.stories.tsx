@@ -1,7 +1,10 @@
 import clsx from '@proton/utils/clsx';
 
+
+
 import { getTitle } from '../../helpers/title';
 import mdx from './Colors.mdx';
+
 
 export default {
     title: getTitle(__filename, false),
@@ -46,9 +49,9 @@ const TextItem = ({ className }: ColorItemProps) => (
 
 const ColorPalette = ({ children }: ColorPaletteProps) => (
     <>
-        <strong className="block mb0-5">on UI Standard</strong>
+        <strong className="block mb-2">on UI Standard</strong>
         <div className={clsx('ui-standard border rounded-lg p1 mb2 flex flex-wrap flex-gap-1')}>{children}</div>
-        <strong className="block mb0-5">on UI prominent</strong>
+        <strong className="block mb-2">on UI prominent</strong>
         <div className={clsx('ui-prominent border rounded-lg p1 mb2 flex flex-wrap flex-gap-1')}>{children}</div>
     </>
 );

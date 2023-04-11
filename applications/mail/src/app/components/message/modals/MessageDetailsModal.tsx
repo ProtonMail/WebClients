@@ -112,8 +112,8 @@ const MessageDetailsModal = ({
                     data-testid="message:message-expanded-header-extra"
                 >
                     {icon && (
-                        <div className="mb0-5 flex flex-nowrap flex-align-items-center">
-                            <span className="mr0-5 flex">
+                        <div className="mb-2 flex flex-nowrap flex-align-items-center">
+                            <span className="mr-2 flex">
                                 <EncryptionStatusIcon useTooltip={false} isDetailsModal {...icon} />
                             </span>
                             <span className="pl0-25 flex-item-fluid text-ellipsis" title={icon.text}>
@@ -122,8 +122,8 @@ const MessageDetailsModal = ({
                         </div>
                     )}
                     {displayTrackerIcon && (
-                        <div className="mb0-5 flex flex-nowrap flex-align-items-center">
-                            <span className="mr0-5 relative inline-flex item-spy-tracker-link flex-align-items-center">
+                        <div className="mb-2 flex flex-nowrap flex-align-items-center">
+                            <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
                                 <SpyTrackerIcon
                                     numberOfTrackers={numberOfTrackers}
                                     needsMoreProtection={needsMoreProtection}
@@ -137,16 +137,16 @@ const MessageDetailsModal = ({
                             </span>
                         </div>
                     )}
-                    <div className="mb0-5 flex flex-nowrap" data-testid="message-details:date">
-                        <span className="mr0-5 flex">
+                    <div className="mb-2 flex flex-nowrap" data-testid="message-details:date">
+                        <span className="mr-2 flex">
                             <Icon name="calendar-grid" className="mauto" alt={c('Label').t`Date:`} />
                         </span>
                         <span className="pl0-25 flex-item-fluid text-ellipsis">
                             <ItemDate element={message.data} labelID={labelID} mode="full" />
                         </span>
                     </div>
-                    <div className="mb0-5 flex flex-nowrap">
-                        <span className="mr0-5 flex">
+                    <div className="mb-2 flex flex-nowrap">
+                        <span className="mr-2 flex">
                             <span className="mauto flex">
                                 <ItemLocation
                                     element={message.data}
@@ -162,8 +162,8 @@ const MessageDetailsModal = ({
                             {locationText}
                         </span>
                     </div>
-                    <div className="mb0-5 flex flex-nowrap" data-testid="message-details:size">
-                        <span className="mr0-5 flex">
+                    <div className="mb-2 flex flex-nowrap" data-testid="message-details:size">
+                        <span className="mr-2 flex">
                             <Icon name="filing-cabinet" className="mauto" alt={c('Label').t`Size:`} />
                         </span>
                         <span className="pl0-25 flex-item-fluid text-ellipsis" title={sizeText}>
@@ -171,8 +171,8 @@ const MessageDetailsModal = ({
                         </span>
                     </div>
                     {showAttachmentsDetails && (
-                        <div className="mb0-5 flex flex-nowrap">
-                            <span className="mr0-5 flex">
+                        <div className="mb-2 flex flex-nowrap">
+                            <span className="mr-2 flex">
                                 <span className="mauto flex">
                                     <ItemAttachmentIcon element={message.data} />
                                 </span>
@@ -185,7 +185,7 @@ const MessageDetailsModal = ({
                 </div>
                 {sender && (
                     <div className="mb1">
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             <strong>{c('Title').t`Sender`}</strong>
                         </div>
                         <RecipientItem

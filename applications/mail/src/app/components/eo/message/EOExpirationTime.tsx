@@ -68,11 +68,11 @@ const EOExpirationTime = ({ message }: Props) => {
                     as="span"
                     color={expiresInLessThan24Hours ? 'danger' : undefined}
                     data-testid="expiration-banner"
-                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mb0-85 px0-5"
+                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mb-3 px-2"
                     onClick={() => setExpirationModalOpen(true)}
                 >
-                    <Icon name="hourglass" className="flex-item-noshrink ml0-2" />
-                    <span className="ml0-5">{buttonMessage}</span>
+                    <Icon name="hourglass" className="flex-item-noshrink ml-1" />
+                    <span className="ml-2">{buttonMessage}</span>
                 </ButtonLike>
             </Tooltip>
             <Prompt
@@ -80,7 +80,7 @@ const EOExpirationTime = ({ message }: Props) => {
                 buttons={[<Button autoFocus type="submit" onClick={onClose}>{c('Action').t`Got it`}</Button>]}
                 {...expirationModalProps}
             >
-                <div className="mr0-5">{expirationMessage}</div>
+                <div className="mr-2">{expirationMessage}</div>
                 <Href href={getKnowledgeBaseUrl('/expiration')}>{c('Link').t`Learn more`}</Href>
             </Prompt>
         </>

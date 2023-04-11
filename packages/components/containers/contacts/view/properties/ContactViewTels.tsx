@@ -34,12 +34,12 @@ const ContactViewTels = ({ vCardContact, isSignatureVerified = false }: Props) =
                     isSignatureVerified={isSignatureVerified}
                 >
                     <span className="w100 flex">
-                        <a className="mr0-5 flex-item-fluid text-ellipsis" href={`tel:${tel.value}`}>
+                        <a className="mr-2 flex-item-fluid text-ellipsis" href={`tel:${tel.value}`}>
                             {tel.value}
                         </a>
                         <span className=" flex-item-noshrink flex py0-25 pr0-25 contact-view-actions">
                             <Copy
-                                className="ml0-5 pt0-5 pb0-5 mt0-1"
+                                className="ml-2 pt0-5 pb0-5 mt-0.5"
                                 value={tel.value}
                                 onCopy={() => {
                                     createNotification({ text: c('Success').t`Phone number copied to clipboard` });

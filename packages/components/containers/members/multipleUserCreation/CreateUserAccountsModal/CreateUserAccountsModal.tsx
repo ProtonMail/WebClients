@@ -367,7 +367,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                             </Checkbox>
                                         </TableCell>
                                         <TableCell key="emailAddresses" className="align-top">
-                                            <ul className="unstyled m0">
+                                            <ul className="unstyled m-0">
                                                 {emailAddresses.map(({ chunks, text }) => (
                                                     <li key={text} className="text-ellipsis" title={text}>
                                                         <Marks chunks={chunks}>{text}</Marks>
@@ -424,10 +424,10 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 content: (
                     <>
                         <Progress className="progress-bar--norm" value={currentProgress} max={numberOfUsersToImport} />
-                        <span className="mt0-5">
+                        <span className="mt-2">
                             {currentProgress} / {numberOfUsersToImport}
                         </span>
-                        <p className="mt1 color-weak mb0">
+                        <p className="mt1 color-weak mb-0">
                             {c('Info')
                                 .t`This could take up to 15 minutes. Please do not close this page or disconnect from the internet.`}
                         </p>
@@ -452,7 +452,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                     <ul className="unstyled">
                         {addresses.map((address) => {
                             return (
-                                <li key={address} className="mb0 text-ellipsis" title={address}>
+                                <li key={address} className="mb-0 text-ellipsis" title={address}>
                                     {address}
                                 </li>
                             );
@@ -466,7 +466,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 content: (
                     <>
                         {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length ? (
-                            <p className={clsx('mt0', !orphanedAddresses.length && 'mb0')}>
+                            <p className={clsx('mt-0', !orphanedAddresses.length && 'mb-0')}>
                                 {c('Title').ngettext(
                                     msgid`Failed to create ${failedUsers.length} user
                                 account.`,
@@ -480,7 +480,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
 
                         {invalidAddresses.length ? (
                             <>
-                                <p className="mt0">
+                                <p className="mt-0">
                                     {c('Info').ngettext(
                                         msgid`The following address is invalid.`,
                                         `The following addresses are invalid.`,
@@ -493,7 +493,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
 
                         {unavailableAddresses.length ? (
                             <>
-                                <p className="mt0">
+                                <p className="mt-0">
                                     {c('Info').ngettext(
                                         msgid`The following address is unavailable.`,
                                         `The following addresses are unavailable.`,
@@ -506,7 +506,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
 
                         {orphanedAddresses.length ? (
                             <>
-                                <p className="mt0">
+                                <p className="mt-0">
                                     {c('Info').ngettext(
                                         msgid`The following address was not created.`,
                                         `The following addresses were not created.`,

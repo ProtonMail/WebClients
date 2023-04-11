@@ -165,7 +165,7 @@ const RecipientItemLayout = ({
                         {showAddress && (
                             <span
                                 className={clsx([
-                                    'message-recipient-item-address ml0-25',
+                                    'message-recipient-item-address ml-1',
                                     isLoading && 'inline-block',
                                     isRecipient ? 'color-weak' : 'color-primary',
                                 ])}

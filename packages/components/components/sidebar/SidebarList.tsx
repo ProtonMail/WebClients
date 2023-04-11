@@ -1,6 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+
+
+import clsx from '@proton/utils/clsx';
 
 interface Props extends HTMLAttributes<HTMLUListElement> {
     listClassName?: string;
@@ -10,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLUListElement> {
 
 const SidebarList = ({ className, listClassName = 'navigation-list', children, ...rest }: Props) => {
     return (
-        <ul className={classnames(['unstyled my0', listClassName, className])} {...rest}>
+        <ul className={clsx('unstyled my-0', listClassName, className)} {...rest}>
             {children}
         </ul>
     );

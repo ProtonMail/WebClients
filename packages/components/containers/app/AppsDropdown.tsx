@@ -31,7 +31,7 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
             ref={ref}
             as="button"
         >
-            <ul className="unstyled mt0 mb0">
+            <ul className="unstyled my-0">
                 {Children.toArray(<AppsLinks app={app} itemClassName={itemClassName} name />)
                     .filter(isValidElement)
                     .map((child, i, array) => {

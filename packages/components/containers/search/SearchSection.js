@@ -15,7 +15,7 @@ const SearchSection = () => {
         <>
             <Row>
                 <Label htmlFor="exactMatchToggle">
-                    <span className="mr0-5">{c('Label').t`Require exact match`}</span>
+                    <span className="mr-2">{c('Label').t`Require exact match`}</span>
                     <Info url={getKnowledgeBaseUrl('/search')} />
                 </Label>
                 <Field className="pt0-5">

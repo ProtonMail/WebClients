@@ -106,7 +106,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                     </div>
                     <div
                         data-testid="CustomizeModal:FolderRow:providerName"
-                        className="ml0-5 flex-item-fluid-auto text-ellipsis"
+                        className="ml-2 flex-item-fluid-auto text-ellipsis"
                         title={folderProviderName}
                     >
                         {folderProviderName}
@@ -122,7 +122,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                             <Icon
                                 name={folderItem.systemFolder ? FOLDER_ICONS[folderItem.systemFolder] : 'folder'}
                                 className={clsx([
-                                    'flex-item-noshrink mr0-5',
+                                    'flex-item-noshrink mr-2',
                                     hasError && 'color-danger',
                                     folderItem.errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
                                 ])}
@@ -203,7 +203,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                     {((editMode && !folderItem.disabled) || hasError) && (
                         <InlineLinkButton
                             onClick={handleSave}
-                            className={clsx(['ml0-5 p0-5', hasError && DIMMED_OPACITY_CLASSNAMES])}
+                            className={clsx(['ml-2 p0-5', hasError && DIMMED_OPACITY_CLASSNAMES])}
                             aria-disabled={hasError}
                             disabled={hasError || !folderItem.checked}
                             data-testid="CustomizeModal:rowSave"

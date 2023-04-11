@@ -25,7 +25,7 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                     ])}
                 >
                     <div className="flex flex-item-noshrink flex-item-fluid flex-align-items-center max-w100">
-                        <div role="heading" aria-level={3} className="mr0-5">
+                        <div role="heading" aria-level={3} className="mr-2">
                             <ContactLabelProperty field={field} type={type} />
                         </div>
                         {field && ['email', 'fn'].includes(field) ? null : (
@@ -35,7 +35,7 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                 </div>
                 <span
                     className={classnames([
-                        'contact-view-row-content mr0-5 flex-item-fluid pl2 pt0-5 on-mobile-pl0',
+                        'contact-view-row-content mr-2 flex-item-fluid pl2 pt0-5 on-mobile-pl0',
                         !['note'].includes(field) && 'text-ellipsis',
                         ['note'].includes(field) && 'text-pre',
                     ])}

@@ -1,8 +1,13 @@
 import { InputHTMLAttributes } from 'react';
 
+
+
 import clsx from '@proton/utils/clsx';
 
+
+
 import { classnames } from '../../helpers';
+
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     id: string;
@@ -21,7 +26,7 @@ const Radio = ({ id, children, className = 'inline-flex', name, disabled = false
         ])}
     >
         <input id={id} type="radio" className="radio" name={name} disabled={disabled} {...rest} />
-        <span className={clsx('radio-fakeradio flex-item-noshrink', children ? 'mr0-5' : '')} />
+        <span className={clsx('radio-fakeradio flex-item-noshrink', children ? 'mr-2' : '')} />
         {children}
     </label>
 );

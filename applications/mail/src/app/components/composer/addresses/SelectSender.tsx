@@ -1,26 +1,23 @@
 import { MutableRefObject, useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
-import {
-    Icon,
-    Option,
-    SelectTwo,
-    SettingsLink,
-    generateUID,
-    useAddresses,
-    useMailSettings,
-    useUser,
-    useUserSettings,
-} from '@proton/components';
+
+
+import { Icon, Option, SelectTwo, SettingsLink, generateUID, useAddresses, useMailSettings, useUser, useUserSettings } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
+
+
 
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { changeSignature } from '../../../helpers/message/messageSignature';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MessageChange } from '../Composer';
+
 
 interface Props {
     message: MessageState;
@@ -50,7 +47,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
         >
             <span className="inline-flex flex-nowrap flex-row flex-align-items-center max-w100">
                 <span className="text-ellipsis">{address.Email}</span>
-                <Icon name="chevron-down" className="select--inline-caret-option flex-item-noshrink ml0-5" />
+                <Icon name="chevron-down" className="select--inline-caret-option flex-item-noshrink ml-2" />
             </span>
         </Option>
     ));

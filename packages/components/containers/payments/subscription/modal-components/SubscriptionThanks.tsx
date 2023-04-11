@@ -28,7 +28,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                 </div>
             )}
             <div className={loading ? 'visibility-hidden' : undefined}>
-                <h1 className="text-center mb0">
+                <h1 className="text-center mb-0">
                     <img src={isVPN ? vpnThanksSvg : mailThanksSvg} alt="Thanks" />
                 </h1>
                 {method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any) ? (

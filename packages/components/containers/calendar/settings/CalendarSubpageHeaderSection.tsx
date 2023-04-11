@@ -53,13 +53,13 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
             )}
             <div className="mt1-5 mb1-5 flex flex-justify-space-between flex-nowrap">
                 <div className="grid-align-icon">
-                    <CalendarSelectIcon large color={Color} className="mr0-75 mt1 flex-item-noshrink keep-left" />
-                    <h1 className="h1 mb0-25 text-bold text-break" title={Name}>
+                    <CalendarSelectIcon large color={Color} className="mr-3 mt1 flex-item-noshrink keep-left" />
+                    <h1 className="h1 mb-1 text-bold text-break" title={Name}>
                         {Name}
                     </h1>
-                    {Description && <div className="mb0-25 text-break">{Description}</div>}
+                    {Description && <div className="mb-1 text-break">{Description}</div>}
                     {createdByText && (
-                        <div className="text-break mb0-25" title={createdByText}>
+                        <div className="text-break mb-1" title={createdByText}>
                             {createdByText}
                         </div>
                     )}
@@ -68,13 +68,13 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                     </div>
                     {isSubscribed && (
                         <div
-                            className={classnames(['text-break text-sm mt0-25 color-weak', !url && 'calendar-email'])}
+                            className={classnames(['text-break text-sm mt-1 color-weak', !url && 'calendar-email'])}
                             title={url || ''}
                         >
                             {url}
                         </div>
                     )}
-                    <div className="mt0-25">
+                    <div className="mt-1">
                         {badges
                             .filter(({ statusType }) => statusType !== CALENDAR_STATUS_TYPE.ACTIVE)
                             .map(({ statusType, badgeType, text, tooltipText }) => (

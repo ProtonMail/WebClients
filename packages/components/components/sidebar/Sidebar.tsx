@@ -116,13 +116,13 @@ const Sidebar = ({
                                 <Tooltip title={c('Storage').t`Upgrade storage`}>
                                     <SettingsLink
                                         path={addUpsellPath('/upgrade', upsellRef)}
-                                        className="app-infos-storage text-no-decoration text-xs m0"
+                                        className="app-infos-storage text-no-decoration text-xs m-0"
                                     >
                                         {storageText}
                                     </SettingsLink>
                                 </Tooltip>
                             ) : (
-                                <span className="app-infos-storage text-xs m0">{storageText}</span>
+                                <span className="app-infos-storage text-xs m-0">{storageText}</span>
                             )}
                             {storageGift}
                         </span>

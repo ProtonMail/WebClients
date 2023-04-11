@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import {
@@ -20,13 +24,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
-import {
-    handleNewPassword,
-    handleNewPasswordMnemonic,
-    handleRequestRecoveryMethods,
-    handleRequestToken,
-    handleValidateResetToken,
-} from '@proton/components/containers/resetPassword/resetActions';
+import { handleNewPassword, handleNewPasswordMnemonic, handleRequestRecoveryMethods, handleRequestToken, handleValidateResetToken } from '@proton/components/containers/resetPassword/resetActions';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -46,6 +44,7 @@ import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
+
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -337,7 +336,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 href={getStaticURL('/support')}
                                 target="_self"
                                 fullWidth
-                                className="mt0-5"
+                                className="mt-2"
                             >{c('Action').t`Contact support`}</ButtonLike>
                         </form>
                     </Content>
@@ -485,7 +484,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                             href={getStaticURL('/support')}
                             target="_self"
                             fullWidth
-                            className="mt0-5"
+                            className="mt-2"
                         >{c('Action').t`Contact support`}</ButtonLike>
                     </Content>
                 </>

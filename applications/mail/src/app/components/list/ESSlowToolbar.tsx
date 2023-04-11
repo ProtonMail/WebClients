@@ -35,7 +35,7 @@ const ESSlowToolbar = () => {
     return (
         <div className="bg-weak rounded m1 px1 py0-5 flex flex-nowrap">
             <div className="flex-item-noshrink">
-                <Icon name="magnifier" className="mr0-5" />
+                <Icon name="magnifier" className="mr-2" />
             </div>
             <div className="flex-item-fluid pl0-25">
                 {
