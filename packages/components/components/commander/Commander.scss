@@ -1,0 +1,21 @@
+@import '~@proton/styles/scss/lib';
+
+.commander {
+	// cleanup a bit modal
+	&-modal {
+		--size: 30rem;
+
+		margin-block-start: 2em;
+
+		.modal-two-content {
+			padding-inline: 0;
+
+			--margin: 0;
+		}
+	}
+
+	&-search-wrapper,
+	&-results-wrapper {
+		padding-inline: var(--space-1);
+	}
+}
