@@ -16,6 +16,10 @@
 
 ## Release 5.0.20.0 — April 5, 2023
 
+### New features
+
+-   Mark your event to self-destruct on a chosen day if you benefit from a paid plan
+
 ### Improvements
 
 -   Add "In the morning" preset option for messages schedules to be sent later
