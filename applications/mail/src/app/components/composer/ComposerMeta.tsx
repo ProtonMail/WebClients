@@ -42,7 +42,7 @@ const ComposerMeta = ({
     };
 
     return (
-        <div className="composer-meta flex-item-noshrink ml0-5 mr1-5 pl1-25 pr0-25">
+        <div className="composer-meta flex-item-noshrink ml-2 mr-5 pl1-25 pr0-25">
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w100">
                 <Label
                     htmlFor={`from-${uid}`}
@@ -66,7 +66,7 @@ const ComposerMeta = ({
                 addressesBlurRef={addressesBlurRef}
                 addressesFocusRef={addressesFocusRef}
             />
-            <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center mt0 mb0-5">
+            <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center mt-0 mb-2">
                 <Label
                     htmlFor={`subject-${uid}`}
                     className={clsx(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}

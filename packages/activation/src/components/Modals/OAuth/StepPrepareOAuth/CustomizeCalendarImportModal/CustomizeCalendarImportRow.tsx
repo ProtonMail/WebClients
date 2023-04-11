@@ -29,7 +29,7 @@ const CustomizeCalendarImportRow = ({
                     id={calendar.id}
                     checked={checked}
                     onChange={() => toggleChecked(calendar)}
-                    className="mr0-5"
+                    className="mr-2"
                     data-testid="CustomizeCalendarImportRow:checkbox"
                 />
                 <div className="flex-item-fluid text-ellipsis" title={source}>

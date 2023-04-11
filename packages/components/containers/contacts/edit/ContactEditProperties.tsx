@@ -139,10 +139,10 @@ const ContactEditProperties = (
     }
 
     return (
-        <div className="border-bottom mb1" data-testid={title}>
-            <h3 className="mb1 flex flex-nowrap flex-align-items-center flex-item-noshrink">
-                <Icon className="mr0-25 flex-item-noshrink" name={iconName} />
-                <span className="ml0-1 mr0-5">{title}</span>
+        <div className="border-bottom mb-4" data-testid={title}>
+            <h3 className="mb-4 flex flex-nowrap flex-align-items-center flex-item-noshrink">
+                <Icon className="mr-1 flex-item-noshrink" name={iconName} />
+                <span className="ml-0.5 mr-2">{title}</span>
                 {((field && !['fn', 'email'].includes(field)) || field === undefined) && (
                     <EncryptedIcon
                         className="flex flex-item-centered-vert flex-item-noshrink"
@@ -151,11 +151,11 @@ const ContactEditProperties = (
                 )}
             </h3>
             {field && ['email'].includes(field) && (
-                <span className="text-semibold ml1-5 pl0-25 mb0-5">{c('Info').t`Primary`}</span>
+                <span className="text-semibold ml-5 pl0-25 mb-2">{c('Info').t`Primary`}</span>
             )}
             {sortable ? (
                 <OrderableContainer helperClass="row--orderable" onSortEnd={handleSortEnd} useDragHandle>
-                    <div className="mt0-5">
+                    <div className="mt-2">
                         {rows.map((row, index) => (
                             <OrderableElement key={row.key || `row${index}`} index={index}>
                                 {row}
@@ -168,14 +168,14 @@ const ContactEditProperties = (
             )}
             {canAdd && (
                 <div className="flex flex-nowrap flex-item-noshrink">
-                    <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
+                    <div className="mr-2 flex flex-align-items-center flex-item-noshrink">
                         <Icon name="text-align-justify" className="visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w95">
                         <Button
                             color="norm"
                             shape="outline"
-                            className="mb1"
+                            className="mb-4"
                             onClick={onAdd}
                             data-testid={field ? `add-${field}` : 'add-other'}
                         >

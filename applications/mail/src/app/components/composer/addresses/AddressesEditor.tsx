@@ -51,7 +51,7 @@ const AddressesEditor = ({
     };
 
     return (
-        <div className="flex flex-column flex-nowrap flex-align-items-start mt0">
+        <div className="flex flex-column flex-nowrap flex-align-items-start mt-0">
             <div className="flex flex-row w100 relative on-mobile-flex-column">
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
                     {c('Title').t`To`}
@@ -112,7 +112,7 @@ const AddressesEditor = ({
             {expanded && (
                 <>
                     {ccExpanded && (
-                        <div className="flex flex-row on-mobile-flex-column w100 mb0" ref={ccListAnchorRef}>
+                        <div className="flex flex-row on-mobile-flex-column w100 mb-0" ref={ccListAnchorRef}>
                             <Label
                                 htmlFor={`cc-${uid}`}
                                 className="composer-meta-label text-semibold"

@@ -125,15 +125,15 @@ const MessageBody = ({
             ])}
             data-testid="message-content:body"
         >
-            {encryptedMode && <pre className="m0 p1">{message.data?.Body}</pre>}
-            {sourceMode && <pre className="m0 p1">{message.decryption?.decryptedBody}</pre>}
+            {encryptedMode && <pre className="m-0 p1">{message.data?.Body}</pre>}
+            {sourceMode && <pre className="m-0 p1">{message.decryption?.decryptedBody}</pre>}
             {placeholderMode && !encryptedMode && (
                 <div className="bg-norm color-norm p1">
-                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w8e" />
-                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w50e" />
-                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w40e" />
-                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w50e" />
-                    <div className="message-content-loading-placeholder mx1-25 mb0-25 max-w15e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb-1 max-w8e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb-1 max-w50e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb-1 max-w40e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb-1 max-w50e" />
+                    <div className="message-content-loading-placeholder mx1-25 mb-1 max-w15e" />
                     <div className="message-content-loading-placeholder mx1-25 mb1 max-w8e" />
                 </div>
             )}

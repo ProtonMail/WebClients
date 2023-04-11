@@ -1,6 +1,7 @@
 import { getTitle } from '../../helpers/title';
 import mdx from './Scroll.mdx';
 
+
 export default {
     title: getTitle(__filename, false),
     parameters: {
@@ -13,7 +14,7 @@ export default {
 export const Overflow = () => {
     return (
         <div className="scroll-if-needed bg-weak p2" style={{ height: '100px' }}>
-            <p className="m0" style={{ 'min-width': '130%' }}>
+            <p className="m-0" style={{ 'min-width': '130%' }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -36,7 +37,7 @@ export const Overflow = () => {
 export const OverflowHorizontal = () => {
     return (
         <div className="scroll-horizontal-if-needed bg-weak p2" style={{ height: '100px' }}>
-            <p className="m0">
+            <p className="m-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -59,7 +60,7 @@ export const OverflowHorizontal = () => {
 export const OverflowHidden = () => {
     return (
         <div className="no-scroll bg-weak p2" style={{ height: '100px' }}>
-            <p className="m0">
+            <p className="m-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu

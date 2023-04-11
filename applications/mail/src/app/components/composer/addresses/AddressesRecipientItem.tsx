@@ -172,7 +172,7 @@ const AddressesRecipientItem = ({
         <>
             <div
                 className={clsx([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation rounded',
+                    'composer-addresses-item my-1 mr-2 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation rounded',
                     !valid && 'invalid',
                     cannotSend && 'color-danger invalid',
                     dragged && 'composer-addresses-item-dragged',
@@ -232,14 +232,14 @@ const AddressesRecipientItem = ({
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleCopy}
                     >
-                        <Icon name="squares" className="mr0-5" />
+                        <Icon name="squares" className="mr-2" />
                         <span className="flex-item-fluid myauto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleDoubleClick}
                     >
-                        <Icon name="pen" className="mr0-5" />
+                        <Icon name="pen" className="mr-2" />
                         <span className="flex-item-fluid myauto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>
                     {ContactID ? (
@@ -247,7 +247,7 @@ const AddressesRecipientItem = ({
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleClickContact}
                         >
-                            <Icon name="user" className="mr0-5" />
+                            <Icon name="user" className="mr-2" />
                             <span className="flex-item-fluid myauto">{c('Action').t`View contact details`}</span>
                         </DropdownMenuButton>
                     ) : (
@@ -255,7 +255,7 @@ const AddressesRecipientItem = ({
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleClickContact}
                         >
-                            <Icon name="user-plus" className="mr0-5" />
+                            <Icon name="user-plus" className="mr-2" />
                             <span className="flex-item-fluid myauto">{c('Action').t`Create new contact`}</span>
                         </DropdownMenuButton>
                     )}
@@ -264,7 +264,7 @@ const AddressesRecipientItem = ({
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross-circle" className="mr0-5" />
+                        <Icon name="cross-circle" className="mr-2" />
                         <span className="flex-item-fluid myauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

@@ -23,7 +23,7 @@ const DomainName = ({ domain }: Props) => {
     return (
         <span className="flex flex-nowrap flex-align-items-center">
             {ICONS[domain.State as DOMAIN_STATE]}
-            <span className="text-ellipsis ml0-5" title={domain.DomainName}>
+            <span className="text-ellipsis ml-2" title={domain.DomainName}>
                 {domain.DomainName}
             </span>
         </span>

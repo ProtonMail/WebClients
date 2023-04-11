@@ -98,16 +98,16 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                     <Icon
                                                         name="circle-filled"
                                                         color={item.color}
-                                                        className="flex-item-noshrink mr0-5"
+                                                        className="flex-item-noshrink mr-2"
                                                     />
                                                 )}
                                                 {isDefaultFolder(item) && (
-                                                    <Icon name={item.icon} className="flex-item-noshrink mr0-5" />
+                                                    <Icon name={item.icon} className="flex-item-noshrink mr-2" />
                                                 )}
                                                 {isCustomFolder(item) && (
                                                     <FolderIcon
                                                         folder={item.folderEntity}
-                                                        className="flex-item-noshrink mr0-5"
+                                                        className="flex-item-noshrink mr-2"
                                                     />
                                                 )}
                                                 <span className="text-ellipsis">

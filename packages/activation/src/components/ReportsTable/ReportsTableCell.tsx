@@ -1,7 +1,10 @@
 import { ImportType } from '@proton/activation/src/interface';
 import { Icon, TableCell } from '@proton/components/components';
 
+
+
 import { getImportIconNameByProduct, getImportProductName } from './ReportsTableCell.helpers';
+
 
 interface Props {
     product: ImportType;
@@ -12,7 +15,7 @@ interface Props {
 const ReportsTableCell = ({ product: app, title, isSync }: Props) => (
     <TableCell>
         <div className="flex">
-            <div className="flex-item-noshrink mr0-5 no-mobile">
+            <div className="flex-item-noshrink mr-2 no-mobile">
                 <Icon name={getImportIconNameByProduct(app, isSync)} className="color-weak" />
             </div>
             <div className="flex-item-fluid">

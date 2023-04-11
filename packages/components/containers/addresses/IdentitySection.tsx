@@ -75,7 +75,7 @@ const IdentitySection = () => {
                                 className="text-semibold"
                                 data-testid="settings:identity-section:signature-toggle-label"
                             >
-                                <span className="mr0-5">{c('Label').t`${MAIL_APP_NAME} footer`}</span>
+                                <span className="mr-2">{c('Label').t`${MAIL_APP_NAME} footer`}</span>
                                 <Info title={c('Info').t`Let your contacts know you care about their privacy.`} />
                             </label>
                         </SettingsLayoutLeft>

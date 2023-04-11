@@ -192,7 +192,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         title={c('Tooltip')
                             .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`}
                     >
-                        <RoundedIcon className="mr0-5" key="dkim-icon" type="error" name="cross" />
+                        <RoundedIcon className="mr-2" key="dkim-icon" type="error" name="cross" />
                     </Tooltip>
                 );
             }
@@ -200,7 +200,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             case DKIM_STATE_GOOD: {
                 return (
                     <Tooltip title={c('Tooltip').t`Your DKIM signing is working.`}>
-                        <RoundedIcon className="mr0-5" key="dkim-icon" type="success" name="checkmark" />
+                        <RoundedIcon className="mr-2" key="dkim-icon" type="success" name="checkmark" />
                     </Tooltip>
                 );
             }
@@ -211,7 +211,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         title={c('Tooltip')
                             .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
                     >
-                        <Icon size={24} className="mr0-5" name="exclamation-circle-filled" />
+                        <Icon size={24} className="mr-2" name="exclamation-circle-filled" />
                     </Tooltip>
                 );
             }
@@ -235,7 +235,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const breadcrumbIcons = [
         !domainModel.State || domainModel.State === DOMAIN_STATE.DOMAIN_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
+                className="mr-1 md:mr-2 p-1 md:p-0"
                 key="domain-icon"
                 type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
                 name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'checkmark' : 'cross'}
@@ -243,7 +243,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
         ),
         !domainModel.VerifyState || domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
+                className="mr-1 md:mr-2 p-1 md:p-0"
                 key="verify-icon"
                 type={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
@@ -251,7 +251,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
         ),
         !domainModel.MxState || domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
+                className="mr-1 md:mr-2 p-1 md:p-0"
                 key="mx-icon"
                 type={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'checkmark' : 'cross'}
@@ -259,7 +259,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
         ),
         !domainModel.SpfState || domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
+                className="mr-1 md:mr-2 p-1 md:p-0"
                 key="spf-icon"
                 type={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'checkmark' : 'cross'}
@@ -272,19 +272,14 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             : null,
         !domainModel.DmarcState || domainModel.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
+                className="mr-1 md:mr-2 p-1 md:p-0"
                 key="dmarc-icon"
                 type={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
         domainAddresses.length ? (
-            <RoundedIcon
-                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
-                key="addresses-icon"
-                type="success"
-                name="checkmark"
-            />
+            <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="addresses-icon" type="success" name="checkmark" />
         ) : null,
     ];
 

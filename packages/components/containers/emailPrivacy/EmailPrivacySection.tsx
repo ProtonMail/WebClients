@@ -42,7 +42,7 @@ const EmailPrivacySection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="remoteToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Auto show remote images`}</span>
+                        <span className="mr-2">{c('Label').t`Auto show remote images`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/images-by-default')}
                             title={c('Info')
@@ -64,7 +64,7 @@ const EmailPrivacySection = () => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label htmlFor="preventTrackingToggle" className="text-semibold">
-                                <span className="mr0-5">{c('Label').t`Block email tracking`}</span>
+                                <span className="mr-2">{c('Label').t`Block email tracking`}</span>
                                 <Info
                                     url={getKnowledgeBaseUrl('/email-tracker-protection')}
                                     title={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
@@ -83,7 +83,7 @@ const EmailPrivacySection = () => {
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label htmlFor="protectiontModeToggle" className="text-semibold">
-                                    <span className="mr0-5">{c('Label').t`Protection mode`}</span>
+                                    <span className="mr-2">{c('Label').t`Protection mode`}</span>
                                     <Info
                                         url={getKnowledgeBaseUrl('/email-tracker-protection')}
                                         title={c('Info')

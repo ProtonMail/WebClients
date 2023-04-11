@@ -51,7 +51,7 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
                     return createModal(
                         <CsvFormatErrorModal>
                             {requiredEmailErrors.length > 0 ? (
-                                <p className={clsx('mt0', !requiredPasswordErrors.length && 'mb0')}>
+                                <p className={clsx('mt-0', !requiredPasswordErrors.length && 'mb-0')}>
                                     {c('Info').ngettext(
                                         msgid`Please add an email address for the user on row`,
                                         `Please add email addresses for the users on rows`,
@@ -61,7 +61,7 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
                                 </p>
                             ) : null}
                             {requiredPasswordErrors.length > 0 ? (
-                                <p className="mt0 mb0">
+                                <p className="my-0">
                                     {c('Info').ngettext(
                                         msgid`Please add a password for the user on row`,
                                         `Please add passwords for the users on rows`,
@@ -80,8 +80,8 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
                 if (invalidTypeErrors.length) {
                     return createModal(
                         <CsvFormatErrorModal>
-                            <p className="mt0">{c('Info').t`The format of your CSV file is incorrect.`}</p>
-                            <p className="mb0">{pleaseCheckYourFileText}</p>
+                            <p className="mt-0">{c('Info').t`The format of your CSV file is incorrect.`}</p>
+                            <p className="mb-0">{pleaseCheckYourFileText}</p>
                         </CsvFormatErrorModal>
                     );
                 }
@@ -96,7 +96,7 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
             if (error instanceof TooManyUsersError) {
                 createModal(
                     <CsvFormatErrorModal>
-                        <p className="m0">{error.message}</p>
+                        <p className="m-0">{error.message}</p>
                     </CsvFormatErrorModal>
                 );
                 return;
@@ -105,8 +105,8 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
             if (error instanceof CsvConversionError || error instanceof CsvFormatError) {
                 createModal(
                     <CsvFormatErrorModal>
-                        <p className="mt0">{error.message}</p>
-                        <p className="mb0">{pleaseCheckYourFileText}</p>
+                        <p className="mt-0">{error.message}</p>
+                        <p className="mb-0">{pleaseCheckYourFileText}</p>
                     </CsvFormatErrorModal>
                 );
                 return;

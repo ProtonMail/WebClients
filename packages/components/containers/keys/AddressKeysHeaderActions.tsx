@@ -34,7 +34,7 @@ const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportK
     return (
         <div className="mb1 flex flex-align-items-start">
             {addresses.length > 1 && (
-                <div className="mr1 mb0-5">
+                <div className="mr1 mb-2">
                     <Select
                         value={addressIndex}
                         options={addresses.map(({ Email }, i) => ({ text: Email, value: i }))}
@@ -43,7 +43,7 @@ const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportK
                 </div>
             )}
             {createActions.length ? (
-                <span className="inline-flex mr1 mb0-5">
+                <span className="inline-flex mr1 mb-2">
                     <DropdownActions list={createActions} />
                 </span>
             ) : null}

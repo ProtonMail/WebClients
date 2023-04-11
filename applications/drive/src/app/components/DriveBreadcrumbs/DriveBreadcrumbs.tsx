@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
+
+
 
 import { DriveFolder } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
@@ -14,6 +20,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import SignatureIcon from '../SignatureIcon';
 import { useDetailsModal } from '../modals/DetailsModal';
 import { getDevicesSectionName } from '../sections/Devices/constants';
+
 
 interface Props {
     activeFolder: DriveFolder;
@@ -58,7 +65,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                                 <SignatureIcon
                                     isFile={link.isFile}
                                     signatureIssues={link.signatureIssues}
-                                    className="mr0-25"
+                                    className="mr-1"
                                 />
                                 <span className="text-pre text-ellipsis">{name}</span>
                             </span>

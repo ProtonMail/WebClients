@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
+
+
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+
+
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons } from '../../../models/crypto';
@@ -8,6 +12,7 @@ import EORecipientsList from '../../eo/message/recipients/EORecipientsList';
 import MailRecipientList from './MailRecipientList';
 import RecipientItem from './RecipientItem';
 import RecipientType from './RecipientType';
+
 
 interface Props {
     message: MessageState;
@@ -118,32 +123,32 @@ const RecipientsDetails = ({
                 <>
                     {ToList.length > 0 && (
                         <div className="mb1 max-w100" data-testid="recipients:to-list">
-                            <div className="mb0-5">
-                                <strong className="mb0-5">{c('Title').t`Recipients`}</strong>
+                            <div className="mb-2">
+                                <strong className="mb-2">{c('Title').t`Recipients`}</strong>
                             </div>
                             {toRecipientsList}
                         </div>
                     )}
                     {CCList.length > 0 && (
                         <div className="mb1 max-w100" data-testid="recipients:cc-list">
-                            <div className="mb0-5">
-                                <strong className="mb0-5">{c('Title').t`CC`}</strong>
+                            <div className="mb-2">
+                                <strong className="mb-2">{c('Title').t`CC`}</strong>
                             </div>
                             {ccRecipientsList}
                         </div>
                     )}
                     {BCCList.length > 0 && (
                         <div className="mb1 max-w100" data-testid="recipients:bcc-list">
-                            <div className="mb0-5">
-                                <strong className="mb0-5">{c('Title').t`BCC`}</strong>
+                            <div className="mb-2">
+                                <strong className="mb-2">{c('Title').t`BCC`}</strong>
                             </div>
                             {bccRecipientsList}
                         </div>
                     )}
                     {undisclosedRecipients && (
                         <div className="mb1">
-                            <div className="mb0-5">
-                                <strong className="mb0-5">{c('Title').t`BCC`}</strong>
+                            <div className="mb-2">
+                                <strong className="mb-2">{c('Title').t`BCC`}</strong>
                             </div>
                             {undisclosedRecipientsItem}
                         </div>

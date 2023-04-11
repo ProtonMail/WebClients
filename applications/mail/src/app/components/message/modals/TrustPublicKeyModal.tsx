@@ -147,12 +147,12 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
             <ModalTwoContent>
                 <div className="mb1">
                     {alertMessage}
-                    <Href href={getKnowledgeBaseUrl('/address-verification')} className="ml0-5">{c('Link')
+                    <Href href={getKnowledgeBaseUrl('/address-verification')} className="ml-2">{c('Link')
                         .t`Learn more`}</Href>
                 </div>
                 <div className="mb1">
                     {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
-                    <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')} className="ml0-5">{c('Link')
+                    <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')} className="ml-2">{c('Link')
                         .t`Learn more`}</Href>
                 </div>
                 <div>

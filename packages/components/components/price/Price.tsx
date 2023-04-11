@@ -1,6 +1,8 @@
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
 import { Currency } from '@proton/shared/lib/interfaces';
 
+
+
 import { classnames } from '../../helpers';
 
 import './Price.scss';
@@ -44,10 +46,10 @@ const Price = ({
         </span>
     );
     const s = suffix ? (
-        <span className={classnames(['suffix', !isDisplayedInSentence && 'ml0-25'])}>{suffix}</span>
+        <span className={classnames(['suffix', !isDisplayedInSentence && 'ml-1'])}>{suffix}</span>
     ) : null;
     const pr = prefix ? (
-        <span className={classnames(['prefix', isDisplayedInSentence && 'mr0-25'])}>{prefix}</span>
+        <span className={classnames(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span>
     ) : null;
 
     if (currency === 'CHF') {

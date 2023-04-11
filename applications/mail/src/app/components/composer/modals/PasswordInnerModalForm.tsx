@@ -52,8 +52,8 @@ const PasswordInnerModalForm = ({
 
     const passwordLabel = (
         <div>
-            <span className="mr0-25">{c('Label').t`Password`}</span>
-            <Info className="mb0-25" title={c('Info').t`Don't forget to share the password with the recipient`} />
+            <span className="mr-1">{c('Label').t`Password`}</span>
+            <Info className="mb-1" title={c('Info').t`Don't forget to share the password with the recipient`} />
         </div>
     );
 
@@ -73,7 +73,7 @@ const PasswordInnerModalForm = ({
     return (
         <>
             <div className="flex flex-nowrap">
-                <span className="mr0-5 w100">{passwordInput}</span>
+                <span className="mr-2 w100">{passwordInput}</span>
                 <span className="flex-item-noshrink password-inner-modal-copy-container">
                     <Copy
                         value={password}

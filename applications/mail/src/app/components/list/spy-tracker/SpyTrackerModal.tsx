@@ -72,7 +72,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                         preventTracking={mailSettings?.ImageProxy || 0}
                         data-testid="privacy:prevent-tracking-toggle"
                     />
-                    <span className="ml0-5">{c('Action').t`Turn on tracker protection`}</span>
+                    <span className="ml-2">{c('Action').t`Turn on tracker protection`}</span>
                 </div>
             </>
         );
@@ -117,7 +117,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                             <CollapsibleContent>
                                 {tracker.urls.map((url, index) => (
                                     <p
-                                        className="color-weak text-break mb0-5 mt0-5"
+                                        className="color-weak text-break my-2"
                                         key={`${tracker.name}-${index}-tracker`} // eslint-disable-line react/no-array-index-key
                                     >
                                         {url}

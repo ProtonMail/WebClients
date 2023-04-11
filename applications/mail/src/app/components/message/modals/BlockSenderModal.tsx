@@ -84,7 +84,7 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
                 <div>
                     <p className="text-break">
                         <span>{blockSendersText}</span>
-                        <span className="ml0-25">{manageInSettingsText}</span>
+                        <span className="ml-1">{manageInSettingsText}</span>
                     </p>
                     <Label htmlFor="block-sender-confirmation" className="flex text-center">
                         <Checkbox
@@ -94,7 +94,7 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
                                 setBlockSenderConfirmation(!blockSenderConfirmation);
                             }}
                             data-testid="block-sender-modal-dont-show:checkbox"
-                            className="mr0-25"
+                            className="mr-1"
                         />
                         {c('Label').t`Don't show this again`}
                     </Label>

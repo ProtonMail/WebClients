@@ -191,12 +191,12 @@ const AttachmentList = ({
                     onClick={handleToggleExpand}
                 >
                     {size !== 0 && (
-                        <strong className="mr0-5" data-testid="attachment-list:size">
+                        <strong className="mr-2" data-testid="attachment-list:size">
                             {sizeLabel}
                         </strong>
                     )}
                     {pureAttachmentsCount > 0 && (
-                        <span className="mr0-5 color-weak">
+                        <span className="mr-2 color-weak">
                             <span data-testid="attachment-list:pure-attachment-number">{pureAttachmentsCount}</span>
                             &nbsp;
                             <span>
@@ -206,7 +206,7 @@ const AttachmentList = ({
                         </span>
                     )}
                     {embeddedAttachmentsCount > 0 && (
-                        <span className="mr0-5 color-weak">
+                        <span className="mr-2 color-weak">
                             <span data-testid="attachment-list:embedded-number">{embeddedAttachmentsCount}</span>&nbsp;
                             <span>
                                 {c('Info').ngettext(msgid`embedded image`, `embedded images`, embeddedAttachmentsCount)}
@@ -214,7 +214,7 @@ const AttachmentList = ({
                         </span>
                     )}
                     {showCollapseButton && (
-                        <span className="link align-baseline text-left mr0-5" data-testid="attachment-list:toggle">
+                        <span className="link align-baseline text-left mr-2" data-testid="attachment-list:toggle">
                             {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
                         </span>
                     )}
@@ -228,7 +228,7 @@ const AttachmentList = ({
                                 shape="ghost"
                                 onClick={handleDownloadAll}
                                 disabled={!message.messageDocument?.initialized}
-                                className="ml0-5"
+                                className="ml-2"
                                 loading={showLoader}
                                 data-testid="attachment-list:download-all"
                             >

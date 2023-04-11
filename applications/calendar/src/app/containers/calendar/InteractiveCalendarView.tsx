@@ -1515,8 +1515,8 @@ const InteractiveCalendarView = ({
             content={
                 <section className="main-dropzone p4 text-center">
                     <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />
-                    <h2 className="main-dropzone-heading h3 text-bold m0">{c('Title').t`Drop to upload`}</h2>
-                    <p className="m0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
+                    <h2 className="main-dropzone-heading h3 text-bold m-0">{c('Title').t`Drop to upload`}</h2>
+                    <p className="m-0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
                 </section>
             }
         >

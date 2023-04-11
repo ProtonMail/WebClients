@@ -255,7 +255,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
                     {insideDropdownRecoveryNotification && (
                         <>
-                            <hr className="mt0-5 mb0-5" />
+                            <hr className="my-2" />
                             <DropdownMenuLink
                                 as={SettingsLink}
                                 className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
@@ -272,7 +272,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         </>
                     )}
 
-                    <hr className="mt0-5 mb0-5" />
+                    <hr className="my-2" />
 
                     {onOpenIntroduction && (
                         <DropdownMenuButton
@@ -372,7 +372,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         <Icon className="ml1 on-rtl-mirror" name="arrow-out-square" />
                     </DropdownMenuLink>
 
-                    <hr className="my0-5" />
+                    <hr className="my-2" />
 
                     {isSSOMode ? (
                         <div className="px1 pt0-5 pb0-75">

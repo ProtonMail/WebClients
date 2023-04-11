@@ -1,6 +1,9 @@
 import { LiHTMLAttributes } from 'react';
 
+
+
 import { classnames } from '../../helpers';
+
 
 interface Props extends LiHTMLAttributes<HTMLLIElement> {
     itemClassName?: string;
@@ -8,7 +11,7 @@ interface Props extends LiHTMLAttributes<HTMLLIElement> {
 
 const SidebarListItem = ({
     className = '',
-    itemClassName = 'navigation-item px0-5 mb0-15',
+    itemClassName = 'navigation-item px0-5 mb-0.5',
     children,
     ...rest
 }: Props) => {

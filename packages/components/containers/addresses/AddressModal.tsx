@@ -204,7 +204,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
             <ModalHeader title={c('Title').t`Add address`} />
             <ModalContent>
                 <div className="mb1-5">
-                    <div className="text-semibold mb0-25" id="label-user-select">{c('Label').t`User`}</div>
+                    <div className="text-semibold mb-1" id="label-user-select">{c('Label').t`User`}</div>
                     {member || members?.length === 1 ? (
                         <div className="text-ellipsis">{member?.Name || members?.[0].Name}</div>
                     ) : (
@@ -304,7 +304,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                 )}
                 {shouldGenerateKeys && (
                     <div className="mb1-5">
-                        <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
+                        <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </div>
                 )}

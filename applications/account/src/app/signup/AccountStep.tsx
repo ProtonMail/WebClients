@@ -364,7 +364,7 @@ const AccountStep = ({
                             </InlineLinkButton>
                             <Info
                                 buttonTabIndex={-1}
-                                className="ml0-5"
+                                className="ml-2"
                                 title={
                                     signupType === SignupType.Email
                                         ? c('Info')
@@ -387,7 +387,7 @@ const AccountStep = ({
                         autoComplete="new-password"
                         value={password}
                         onValue={setPassword}
-                        rootClassName="mt0-5"
+                        rootClassName="mt-2"
                         onFocus={() => setPasswordInputFocused(true)}
                         onBlur={() => setPasswordInputFocused(false)}
                     />
@@ -406,7 +406,7 @@ const AccountStep = ({
                         autoComplete="new-password"
                         value={confirmPassword}
                         onValue={setConfirmPassword}
-                        rootClassName="mt0-5"
+                        rootClassName="mt-2"
                     />
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                         {c('Action').t`Create account`}

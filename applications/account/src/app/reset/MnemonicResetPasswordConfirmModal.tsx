@@ -28,7 +28,7 @@ const MnemonicResetPasswordConfirmModal = ({ onClose, onConfirm, open }: Props) 
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
-            <p className="m0">
+            <p className="m-0">
                 {c('Info').t`This will sign you out of any active sessions and disable 2-factor authentication.`}
             </p>
         </Prompt>

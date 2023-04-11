@@ -35,22 +35,22 @@ const StepPrepareContent = ({
     return (
         <>
             <div className="mb1 flex flex-align-items-center">
-                <Icon className="mr0-5" name="inbox" />
+                <Icon className="mr-2" name="inbox" />
                 {c('Info').t`Import mailbox`}
             </div>
 
             <div className="mb1 ml1 flex flex-align-items-center">
-                <Icon className="mr0-5" name="clock" />
+                <Icon className="mr-2" name="clock" />
                 {c('Label').t`Import interval`}
                 {`: `}
-                <strong className="ml0-5">{timeUnitLabels[selectedPeriod]}</strong>
+                <strong className="ml-2">{timeUnitLabels[selectedPeriod]}</strong>
             </div>
 
             <div className="mb1 ml1 flex flex-align-items-center flex-nowrap">
-                <Icon className="flex-item-noshrink mr0-5" name="tag" />
+                <Icon className="flex-item-noshrink mr-2" name="tag" />
                 <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
                 {importLabel && (
-                    <span className="ml0-5">
+                    <span className="ml-2">
                         <LabelStack
                             labels={[
                                 {
@@ -66,12 +66,12 @@ const StepPrepareContent = ({
             </div>
 
             <div className="mb1 ml1 flex flex-align-items-center">
-                <Icon className="mr0-5" name={isLabelMapping ? 'tags' : 'folders'} />
+                <Icon className="mr-2" name={isLabelMapping ? 'tags' : 'folders'} />
                 {trans.foundCount(providerFoldersNumLocalized, providerFoldersNum)}
 
                 {showMaxFoldersError && (
                     <Tooltip title={trans.errorMaxItems()} originalPlacement="right">
-                        <Icon className="ml0-5 color-danger" name="exclamation-circle-filled" size={18} />
+                        <Icon className="ml-2 color-danger" name="exclamation-circle-filled" size={18} />
                     </Tooltip>
                 )}
             </div>
@@ -79,7 +79,7 @@ const StepPrepareContent = ({
             {selectedFoldersCount !== providerFoldersNum && (
                 <div className="mb1 ml2 flex flex-align-items-center">
                     <strong>
-                        <Icon className="mr0-5" name={isLabelMapping ? 'tags' : 'folders'} />
+                        <Icon className="mr-2" name={isLabelMapping ? 'tags' : 'folders'} />
                         {trans.selectedCount(selectedFoldersCountLocalized, selectedFoldersCount)}
                     </strong>
                 </div>

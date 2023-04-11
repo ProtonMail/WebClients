@@ -200,12 +200,12 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
         return (
             <div
                 key={name}
-                className="flex flex-nowrap flex-item-fluid flex-align-items-center on-tiny-mobile-flex-column mb1"
+                className="flex flex-nowrap flex-item-fluid flex-align-items-center on-tiny-mobile-flex-column mb-4"
             >
-                <div className="flex-item-fluid text-ellipsis mr1" title={categoryString}>
+                <div className="flex-item-fluid text-ellipsis mr-4" title={categoryString}>
                     {categoryString}
                 </div>
-                <div className="flex-item-fluid mr1 on-mobile-mr0">
+                <div className="flex-item-fluid mr-0 md:mr-1">
                     <SelectGroupAction
                         action={action}
                         index={index}
@@ -234,7 +234,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
         <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Warning`} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Description')
                         .t`It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.`}
                 </Alert>

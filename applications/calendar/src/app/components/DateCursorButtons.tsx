@@ -35,7 +35,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 onClick={onToday}
                 icon={<TodayIcon todayDate={now.getDate()} />}
             >
-                <span className="ml0-5 myauto no-mobile">{c('Action').t`Today`}</span>
+                <span className="ml-2 myauto no-mobile">{c('Action').t`Today`}</span>
             </ToolbarButton>
             <Vr />
             <ToolbarButton

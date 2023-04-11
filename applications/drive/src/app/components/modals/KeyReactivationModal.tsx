@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -26,9 +28,9 @@ interface Props {
 
 const OptionLabel = ({ title, info }: { title: string; info: string }) => {
     return (
-        <div className="ml0-5">
+        <div className="ml-2">
             <span className="text-bold">{title}</span>
-            <p className="m0 color-weak">{info}</p>
+            <p className="m-0 color-weak">{info}</p>
         </div>
     );
 };
@@ -100,8 +102,8 @@ const KeyReactivationModal = ({
         >
             <ModalTwoHeader title={c('Action').t`Drive Locked`} />
             <ModalTwoContent onReset={noop} onSubmit={() => onSubmit(radioGroupValue)}>
-                <p className="mt0 mb0-5">{infoText}</p>
-                <p className="mt0-5">{questionText}</p>
+                <p className="mt-0 mb-2">{infoText}</p>
+                <p className="mt-2">{questionText}</p>
                 <RadioGroup
                     options={radioOptions}
                     value={radioGroupValue}

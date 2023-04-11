@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+
+
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { getAppVersion } from '../../helpers';
@@ -27,11 +29,11 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
 
     const appName = maybeAppName || APPS_CONFIGURATION[APP_NAME]?.name;
     const appVersion = getAppVersion(maybeAppVersion || APP_VERSION);
-    const className = 'app-infos-version text-xs m0';
+    const className = 'app-infos-version text-xs m-0';
     const title = DATE_VERSION;
     const children = (
         <>
-            <span className="app-infos-name mr0-25">{appName}</span>
+            <span className="app-infos-name mr-1">{appName}</span>
             <span className="app-infos-number" data-testid="app-infos:release-notes">
                 {appVersion}
                 {currentEnvironment && envMap[currentEnvironment] && ` ${envMap[currentEnvironment]}`}

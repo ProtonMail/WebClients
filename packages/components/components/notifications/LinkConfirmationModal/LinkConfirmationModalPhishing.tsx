@@ -1,9 +1,14 @@
 import React from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Checkbox } from '../../input';
 import { Label } from '../../label';
+
 
 interface Props {
     link: string;
@@ -19,7 +24,7 @@ const LinkConfirmationModalPhishing = ({ link, onToggle, value }: Props) => (
         <span className="text-bold text-break">{link}</span>
 
         <Label className="flex">
-            <Checkbox className="mr0-5" checked={value} onChange={onToggle} />
+            <Checkbox className="mr-2" checked={value} onChange={onToggle} />
             {c('Label').t`I understand the risk`}
         </Label>
     </>

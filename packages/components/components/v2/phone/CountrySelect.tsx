@@ -59,7 +59,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     pickRef.current = false;
                     setIsOpen(!isOpen);
                 }}
-                className="unstyled flex-align-self-stretch my0-25 pr0-5 border-right"
+                className="unstyled flex-align-self-stretch my-1 pr0-5 border-right"
                 ref={anchorRef}
                 caretClassName="myauto"
                 aria-live="assertive"
@@ -67,7 +67,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                 aria-label={value?.countryName}
                 aria-describedby={uid}
             >
-                <span className="flex mr0-5">
+                <span className="flex mr-2">
                     {!value ? (
                         <Icon name="globe" className="align-middle inline-flex" />
                     ) : (
@@ -151,7 +151,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                                     height={height}
                                     width={width}
                                     rowHeight={cache.rowHeight}
-                                    className="unstyled m0 p0 scroll-if-needed"
+                                    className="unstyled m-0 p0 scroll-if-needed"
                                     scrollToIndex={selectedIndex < 0 ? 0 : selectedIndex}
                                     rowCount={filteredOptions.length}
                                     rowRenderer={({ index, key, parent, style }) => {

@@ -30,7 +30,7 @@ export default function ReportAbuseButton({ linkInfo, className }: Props) {
                 onClick={() => showReportAbuseModal({ linkInfo, onSubmit: submitAbuseReport })}
             >
                 <span className="color-weak">
-                    <Icon size={16} name="exclamation-circle-filled" className="mr0-5" />
+                    <Icon size={16} name="exclamation-circle-filled" className="mr-2" />
                     <span>{c('Label').t`Report`}</span>
                 </span>
             </Button>

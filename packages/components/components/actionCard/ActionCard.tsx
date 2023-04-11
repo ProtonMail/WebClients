@@ -23,8 +23,8 @@ const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: A
                 <Icon name={iconName} />
             </div>
             <div className="mrauto flex-item-fluid">
-                <div className="h6 lh100 m0 text-bold">{title}</div>
-                {subtitle && <p className="color-weak m0">{subtitle}</p>}
+                <div className="h6 lh100 m-0 text-bold">{title}</div>
+                {subtitle && <p className="color-weak m-0">{subtitle}</p>}
             </div>
             {loading ? <Loader className="inline flex-item-noshrink" /> : <Icon name="arrow-right" />}
         </button>

@@ -27,7 +27,7 @@ export default function ClearSearchDataButton({ showConfirmModal }: Props) {
 
     return (
         <>
-            <hr className="mt0-5 mb0-5" />
+            <hr className="my-2" />
             <Tooltip title={c('Info').t`Clears browser data related to the encrypted search.`}>
                 <DropdownMenuButton onClick={handleDeleteESIndex} className="flex flex-nowrap flex-justify-center">
                     <span className="color-weak">{c('Action').t`Clear browser data`}</span>

@@ -97,7 +97,7 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
             loading={isDownloading}
         >
             {isDownloading ? inProgressText : idleText}
-            {!isDownloading ? <Icon name="arrow-down-line" className="ml0-5" /> : null}
+            {!isDownloading ? <Icon name="arrow-down-line" className="ml-2" /> : null}
         </Button>
     );
 }

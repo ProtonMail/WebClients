@@ -29,11 +29,11 @@ export function SidebarDevicesRoot({
                 {sectionTitle}
             </span>
             {isLoading ? (
-                <Loader className="ml0-5 drive-sidebar--icon inline-flex flex-item-noshrink" />
+                <Loader className="ml-2 drive-sidebar--icon inline-flex flex-item-noshrink" />
             ) : (
                 cachedDevices.length > 0 && (
                     <ExpandButton
-                        className="ml0-5 flex-item-noshrink"
+                        className="ml-2 flex-item-noshrink"
                         expanded={isExpanded}
                         onClick={() => toggleExpand()}
                     />

@@ -64,12 +64,12 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                 </div>
                 <div className="flex flex-nowrap max-w100">
                     <div className="flex-item-fluid">
-                        <span className="block mb0-5 opacity-40">{c('Label').t`Card holder`}</span>
-                        <span className="text-xl mt0 mb0 inline-block text-ellipsis max-w100">{Name}</span>
+                        <span className="block mb-2 opacity-40">{c('Label').t`Card holder`}</span>
+                        <span className="text-xl my-0 inline-block text-ellipsis max-w100">{Name}</span>
                     </div>
                     <div className="text-right flex-item-noshrink pl1">
-                        <span className="block mb0-5 opacity-40">{c('Label').t`Expires`}</span>
-                        <span className="text-xl mt0 mb0">
+                        <span className="block mb-2 opacity-40">{c('Label').t`Expires`}</span>
+                        <span className="text-xl my-0">
                             {ExpMonth}/{ExpYear}
                         </span>
                     </div>
@@ -87,7 +87,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                 </div>
                 <div className="flex flex-wrap flex-align-items-center">
                     <label className="flex-item-noshrink mr1" htmlFor="paypal-payer">{c('Label').t`Payer`}</label>
-                    <code id="paypal-payer" className="block text-xl mb0 mb1 text-ellipsis" title={Payer}>
+                    <code id="paypal-payer" className="block text-xl mb-0 mb1 text-ellipsis" title={Payer}>
                         {Payer}
                     </code>
                 </div>

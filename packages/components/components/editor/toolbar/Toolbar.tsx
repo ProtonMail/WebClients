@@ -47,7 +47,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
     }
 
     return (
-        <ButtonGroup className={classnames(['editor-toolbar overflow-hidden mb0-5', className])}>
+        <ButtonGroup className={classnames(['editor-toolbar overflow-hidden mb-2', className])}>
             <ToolbarFontFaceDropdown
                 value={config.fontFace.value}
                 setValue={config.fontFace.setValue}

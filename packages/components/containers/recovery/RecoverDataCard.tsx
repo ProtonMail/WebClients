@@ -18,7 +18,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
         <Card rounded background={false} className={classnames(['max-w46e p2', className])}>
             <SettingsSectionTitle className="h3 flex flex-align-items-center flex-nowrap">
                 <Icon className="flex-item-noshrink color-danger" name="exclamation-circle-filled" size={18} />
-                <span className="ml0-5">{c('Title').t`Data locked`}</span>
+                <span className="ml-2">{c('Title').t`Data locked`}</span>
             </SettingsSectionTitle>
             <p>{c('Info').t`It appears some of your data is encrypted and locked.`}</p>
             <ul>
@@ -31,7 +31,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
                 </li>
             </ul>
 
-            <p className="mb0-5">
+            <p className="mb-2">
                 <Href href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
                     {c('Link').t`How to unlock data`}
                 </Href>

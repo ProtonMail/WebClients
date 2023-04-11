@@ -30,16 +30,16 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             title={`${nameToDisplay} <${Email}>`}
         >
             {nameToDisplay ? (
-                <span className="text-right flex-item-fluid mr0-75 lh130 user-dropdown-text">
+                <span className="text-right flex-item-fluid mr-3 lh130 user-dropdown-text">
                     <span className="block text-ellipsis user-dropdown-displayName">{nameToDisplay}</span>
                     {Email ? (
-                        <span className="block text-ellipsis color-weak text-xs m0 lh-rg user-dropdown-email">
+                        <span className="block text-ellipsis color-weak text-xs m-0 lh-rg user-dropdown-email">
                             {Email}
                         </span>
                     ) : null}
                 </span>
             ) : (
-                <span className="text-right mr0-75 lh130 user-dropdown-text">
+                <span className="text-right mr-3 lh130 user-dropdown-text">
                     <span className="block text-ellipsis user-dropdown-displayName">{Email}</span>
                 </span>
             )}

@@ -21,7 +21,7 @@ const ContextMenuButton = ({ name, icon, testId, action, close }: Props) => {
             }}
             data-testid={testId}
         >
-            <Icon className="mr0-5" name={icon} />
+            <Icon className="mr-2" name={icon} />
             {name}
         </DropdownMenuButton>
     );
