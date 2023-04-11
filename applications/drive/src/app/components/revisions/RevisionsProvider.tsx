@@ -1,28 +1,27 @@
-import { PropsWithChildren, createContext, useContext, useMemo, useState } from 'react';
+import { PropsWithChildren, createContext, useContext, useMemo } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import { Portal } from '@proton/components/components/portal';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
-import { DecryptedLink, useRevisionsView } from '../../store';
-import RevisionPreview from './RevisionPreview';
+import { DecryptedLink, useDownload, useRevisionsView } from '../../store';
+import { useRevisionDetailsModal } from '../modals/DetailsModal';
+import { useRevisionPreview } from './RevisionPreview';
 import { CategorizedRevisions, getCategorizedRevisions } from './getCategorizedRevisions';
 
 export interface RevisionsProviderState {
+    hasPreviewAvailable: boolean;
+    isLoading: boolean;
     currentRevision: DriveFileRevision;
     categorizedRevisions: CategorizedRevisions;
     openRevisionPreview: (revision: DriveFileRevision) => void;
-    closeRevisionPreview: () => void;
+    openRevisionDetails: (revision: DriveFileRevision) => void;
     deleteRevision: (abortSignal: AbortSignal, revision: DriveFileRevision) => void;
-
-    // Utils from useRevisionsView
-    isLoading: boolean;
-    hasPreviewAvailable: boolean;
-    downloadRevision: (revision: DriveFileRevision) => void;
+    downloadRevision: (revisionId: string) => void;
 }
 
 const RevisionsContext = createContext<RevisionsProviderState | null>(null);
@@ -36,21 +35,35 @@ export const RevisionsProvider = ({
     const { createNotification } = useNotifications();
 
     const {
+        isLoading,
         revisions: [currentRevision, ...olderRevisions],
         deleteRevision,
-        ...revisionsViewUtils
-    } = useRevisionsView(link);
-    const [selectedRevision, setSelectedRevision] = useState<DriveFileRevision>();
-    const [previewOpen, setPreviewOpen] = useState(false);
+    } = useRevisionsView(link.rootShareId, link.linkId);
+    const [revisionPreview, showRevisionPreview] = useRevisionPreview();
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const [revisionDetailsModal, showRevisionDetailsModal] = useRevisionDetailsModal();
+    const hasPreviewAvailable = !!link.mimeType && isPreviewAvailable(link.mimeType, link.size);
+    const { download } = useDownload();
 
-    const openRevisionPreview = (revision: DriveFileRevision) => {
-        setPreviewOpen(true);
-        setSelectedRevision(revision);
+    const downloadRevision = (revisionId: string) => {
+        void download([{ ...link, shareId: link.rootShareId, revisionId: revisionId }]);
     };
-    const closeRevisionPreview = () => {
-        setPreviewOpen(false);
+
+    const openRevisionDetails = (revision: DriveFileRevision) => {
+        void showRevisionDetailsModal({
+            revision,
+            shareId: link.rootShareId,
+            linkId: link.linkId,
+            name: link.name,
+        });
+    };
+    const openRevisionPreview = (revision: DriveFileRevision) => {
+        void showRevisionPreview({
+            revision,
+            shareId: link.rootShareId,
+            linkId: link.linkId,
+        });
     };
 
     const handleRevisionDelete = (abortSignal: AbortSignal, revision: DriveFileRevision) => {
@@ -94,28 +107,23 @@ export const RevisionsProvider = ({
                     }),
         });
     };
+
     return (
         <RevisionsContext.Provider
             value={{
-                ...revisionsViewUtils,
+                hasPreviewAvailable,
+                isLoading,
                 deleteRevision: handleRevisionDelete,
                 currentRevision,
                 categorizedRevisions,
                 openRevisionPreview,
-                closeRevisionPreview,
+                openRevisionDetails,
+                downloadRevision,
             }}
         >
             {children}
-            {selectedRevision && previewOpen ? (
-                <Portal>
-                    <RevisionPreview
-                        shareId={link.rootShareId}
-                        linkId={link.linkId}
-                        revision={selectedRevision}
-                        onClose={closeRevisionPreview}
-                    />
-                </Portal>
-            ) : null}
+            {revisionPreview}
+            {revisionDetailsModal}
             {confirmModal}
         </RevisionsContext.Provider>
     );
