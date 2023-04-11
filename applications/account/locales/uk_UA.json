@@ -2610,6 +2610,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Автоматично очищуйте повідомлення, яким понад 30 днів, зі спаму та смітника. Скористайтеся цими та іншими перевагами після передплати."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Вітаємо! Ви зібрали максимум з ${ rewardsLimit } безплатних місяців користування ${ plusPlanName }."
       ],
@@ -2622,6 +2625,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail та знак плюс"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -2630,6 +2636,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Відстежуйте стан і активність ваших запрошень."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Піктограма Upsell, що містить логотип $${ BRAND_NAME } та знак плюс"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Ви можете й надалі запрошувати друзів, але ви більше не отримуватимете за це кредити"
@@ -3902,11 +3911,6 @@
     "Font Size Default": {
       "Default": [
         "Типовий"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Приватність – це стандарт."
       ]
     },
     "Frequency of news": {
@@ -6808,6 +6812,9 @@
       "Auto show remote images": [
         "Автоматичний показ зовнішніх зображень"
       ],
+      "Auto-delete unwanted messages": [
+        "Автовидалення непотрібних повідомлень"
+      ],
       "Auto-detect primary time zone": [
         "Автовизначення основного часового поясу"
       ],
@@ -8081,9 +8088,6 @@
       "Calendar": [
         "Календар"
       ],
-      "Drive": [
-        "Диск"
-      ],
       "Inbox": [
         "Вхідні"
       ],
@@ -8279,6 +8283,9 @@
       "Advanced sharing security": [
         "Розширені можливості спільного доступу"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Автоматичне видалення спаму та повідомлень зі смітника"
+      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -8330,6 +8337,9 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
+      "Hide My Email aliases": [
+        "Псевдоніми Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "Високошвидкісна VPN на ${ n } пристрої",
         "Високошвидкісна VPN на ${ n } пристроях",
@@ -8365,6 +8375,12 @@
       ],
       "Router support": [
         "Підтримка маршрутизатора"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйте надсилання повідомлень в будь-який час"
+      ],
+      "Search message content": [
+        "Пошук вмісту повідомлень"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -8417,6 +8433,12 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
+      "Up to 15 email addresses": [
+        "До 15 адрес електронної пошти"
+      ],
+      "Up to 500 GB of storage": [
+        "До 500 ГБ сховища"
+      ],
       "User credential management": [
         "Керування обліковими даними користувача"
       ],
@@ -8425,6 +8447,14 @@
       ],
       "Worldwide streaming services": [
         "Світові служби трансляції"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -9187,9 +9217,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 або новіше)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64-розрядна версія)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (для Fedora/openSUSE)"
@@ -10425,6 +10452,9 @@
       "Clear": [
         "Очистити"
       ],
+      "Clear out the junk": [
+        "Приберіть усе зайве"
+      ],
       "Composing": [
         "Написання"
       ],
@@ -11208,6 +11238,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Налаштуйте імпорт щоб зменшити кількість міток"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Видаляти повідомлення зі смітника та спаму через 30 днів. Увімкнувши цю опцію, ви видалите всі повідомлення, що перебувають у теках Смітник і Спам. Майбутні повідомлення зі спаму та смітника будуть автоматично видалятися через 30 днів."
       ],
       "Each imported email will have this label": [
         "Кожен імпортований лист матиме цю мітку"

@@ -1012,6 +1012,26 @@
         "Esto desconectará todos los routers y clientes que usen este certificado."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Buzón de ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 rastreadores eliminados"
+      ],
+      "Auto forwarded": [
+        "Reenvío automático"
+      ],
+      "Email received": [
+        "Correo recibido"
+      ],
+      "Encrypted": [
+        "Cifrado"
+      ],
+      "New email": [
+        "Correo nuevo"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicaciones de ${ BRAND_NAME }"
@@ -2594,6 +2614,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Elimine automáticamente los mensajes de más de 30 días de la papelera y spam. Disfrute de este y otros beneficios al actualizar su plan."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicitaciones! Ha ganado el máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
@@ -2606,12 +2629,18 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail y un signo más"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Track the status and activity of your referrals.": [
         "Rastree el estado y actividad de sus referencias."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Ícono de venta adicional que contiene el logotipo de ${ BRAND_NAME } seguido de un signo más"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puede seguir invitando amigos, pero no podrá ganar más créditos"
@@ -3872,6 +3901,17 @@
         "(durante su primer mes)"
       ]
     },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenvíe automáticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "mensajes de Gmail a su buzón"
+      ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "¿Ya tiene una cuenta? ${ signIn }"
@@ -4023,9 +4063,6 @@
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -6666,6 +6703,9 @@
       "Auto show remote images": [
         "Mostrar imágenes remotas automáticamente"
       ],
+      "Auto-delete unwanted messages": [
+        "Auto eliminar mensajes no deseados"
+      ],
       "Auto-detect primary time zone": [
         "Autodetectar zona horaria principal"
       ],
@@ -8088,6 +8128,9 @@
       "Advanced sharing security": [
         "Seguridad avanzada al compartir archivos"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Auto eliminar spam y mensajes de la papelera"
+      ],
       "Auto-reply": [
         "Respuesta automática"
       ],
@@ -8139,6 +8182,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
+      "Hide My Email aliases": [
+        "Alias de Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
         "VPN de alta velocidad en ${ n } dispositivos"
@@ -8172,6 +8218,12 @@
       ],
       "Router support": [
         "Soporte para enrutadores"
+      ],
+      "Schedule messages at any time": [
+        "Programar mensajes a cualquier hora"
+      ],
+      "Search message content": [
+        "Buscar contenido del mensaje"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
@@ -8224,6 +8276,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
+      "Up to 15 email addresses": [
+        "Hasta 15 direcciones de correo"
+      ],
+      "Up to 500 GB of storage": [
+        "Hasta 500 GB de almacenamiento"
+      ],
       "User credential management": [
         "Gestión de credenciales de usuario"
       ],
@@ -8232,6 +8290,14 @@
       ],
       "Worldwide streaming services": [
         "Servicios de streaming a nivel mundial"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obtenga aliases ilimitados con SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8972,9 +9038,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 o superior)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64 bits)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
@@ -10411,6 +10474,9 @@
       "Clear": [
         "Borrar"
       ],
+      "Clear out the junk": [
+        "Eliminar la basura"
+      ],
       "Composing": [
         "Redactar"
       ],
@@ -11184,6 +11250,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personalice la importación para reducir el número de etiquetas"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Elimina los mensajes de la papelera y spam después de 30 días. Habilitar esta opción eliminará todos los mensajes que se encuentren actualmente en sus carpetas de spam y papelera. Los futuros mensajes de spam y papelera se eliminarán automáticamente después de 30 días."
       ],
       "Each imported email will have this label": [
         "Cada correo importado tendrá esta etiqueta"

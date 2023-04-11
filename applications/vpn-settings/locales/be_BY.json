@@ -423,7 +423,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "Гэта адлучыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
+        "Гэта адключыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
       ]
     },
     "Badge": {
@@ -1475,7 +1475,7 @@
         "Увядзіце 6 лічбаў"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Памылка падлучэння да Bitcoin API."
+        "Памылка злучэння з Bitcoin API."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
@@ -1612,7 +1612,7 @@
         "Нешта пайшло не так. Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Узнікла праблема з падлучэннем да ${ BRAND_NAME }."
+        "Узнікла праблема з падключэннем да ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Таксама вы можаце ${ refresh } або паспрабуйце яшчэ раз пазней."
@@ -1633,10 +1633,10 @@
         "Доступ да ўсіх краін"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Падлучайце да ${ plusVpnConnections } прылады",
-        "Падлучайце да ${ plusVpnConnections } прылад",
-        "Падлучайце да ${ plusVpnConnections } прылад",
-        "Падлучайце да ${ plusVpnConnections } прылад"
+        "Падключайце да ${ plusVpnConnections } прылады",
+        "Падключайце да ${ plusVpnConnections } прылад",
+        "Падключайце да ${ plusVpnConnections } прылад",
+        "Падключайце да ${ plusVpnConnections } прылад"
       ],
       "Fastest VPN servers": [
         "Найхутчэйшыя серверы VPN"
@@ -1888,10 +1888,10 @@
         "+${ bonusSpace } бонуснага сховішча"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } злучэнне з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнняў з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)"
+        "+${ organization.BonusVPN } злучэнне з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
+        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
+        "+${ organization.BonusVPN } злучэнняў з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
+        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)"
       ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
@@ -1906,7 +1906,7 @@
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй або асобай"
+        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -2005,7 +2005,7 @@
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Паніжэнне тарыфнага плана спыніць усе бягучыя падлучэнні да платных сервераў ${ VPN_APP_NAME }."
+        "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу ўлюблёную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
@@ -2116,22 +2116,22 @@
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Усталюйце файл канфігурацыі краіны для падлучэння да выпадковага сервера ў краіне, якую вы выбралі."
+        "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Усталюйце файл канфігурацыі бясплатнага сервера для падлучэння да азначанага сервера ў адной з трох бясплатных краін."
+        "Усталюйце файл канфігурацыі бясплатнага сервера для падключэння да пазначанага сервера ў адной з трох бясплатных краін."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Усталюйце файл канфігурацыі Secure Core, каб атрымаць дадатковую абарону ад кампраметацыі канчатковага пункта VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Усталюйце файл канфігурацыі сервера для падлучэння да азначанага сервера ў краіне, якую вы выбралі."
+        "Усталюйце файл канфігурацыі сервера для падключэння да пазначанага сервера ў краіне, якую вы выбралі."
       ],
       "Internet connection lost": [
         "Злучэнне з інтэрнэтам страчана"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Злучэнне з інтэрнэтам страчана. Праверце, ці падлучана ваша прылада."
+        "Злучэнне з інтэрнэтам страчана. Праверце падключэнне вашай прылады."
       ],
       "Internet connection restored.": [
         "Злучэнне з інтэрнэтам адноўлена."
@@ -2305,7 +2305,7 @@
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падлучэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні злучэння VPN на маршрутызатары."
+        "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падключэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні злучэння з VPN на маршрутызатары."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Гэтыя канфігурацыі разлічаны на маршрутызатары, якія працуюць з WireGuard і афіцыйнымі кліентамі."
@@ -2353,7 +2353,7 @@
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Для абароны вашага злучэння з інтэрнэтам, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падлучыцца да сервера."
+        "Для абароны вашага злучэння з інтэрнэтам, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "для выкарыстання ${ toAppName } і ўсіх сэрвісаў ${ BRAND_NAME }"
@@ -2407,7 +2407,7 @@
         "Выкарыстоўвайце лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Выкарыстоўвайце наступныя ўліковыя даныя, калі падлучаецеся да сервераў ${ VPN_APP_NAME } праз праграмы VPN ад іншых распрацоўшчыкаў. Напрыклад, Tunnelblick на MacOS або OpenVPN на GNU/Linux."
+        "Выкарыстоўвайце наступныя ўліковыя даныя, калі падключаецеся да сервераў ${ VPN_APP_NAME } праз праграмы VPN ад іншых распрацоўшчыкаў. Напрыклад, Tunnelblick на MacOS або OpenVPN на GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -2434,7 +2434,7 @@
         "Папярэджанне:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падлучаных службаў і выдаліць усе вашы кантакты."
+        "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падключаных сэрвісаў і выдаліць усе вашы кантакты."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
@@ -2524,7 +2524,7 @@
         "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падлучэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
+        "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падключэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Вы не можаце выкарыстоўваць уліковыя даныя OpenVPN / IKEv2 для ўваходу ў праграмы ${ VPN_APP_NAME } або на панэлі кіравання ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2753,7 +2753,7 @@
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
       "Config to connect to ${ serverName }": [
-        "Канфігурацыя для падлучэння да ${ serverName }"
+        "Канфігурацыя для падключэння да ${ serverName }"
       ],
       "Confirm login password": [
         "Пацвердзіць пароль уваходу"
@@ -3685,7 +3685,7 @@
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Абараняе вас, блакіруючы ўсе злучэнні з сеткай пры нечаканым адлучэнні ад нашага сервера VPN."
+        "Абараняе вас, блакіруючы ўсе злучэнні з сеткай пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
@@ -3697,7 +3697,7 @@
         "У працоўныя дні каманда падтрымкі кліентаў ${ BRAND_NAME } дапаможа вам на працягу 24 гадзін пасля атрымання запыту"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Адно злучэнне з VPN дазваляе адной прыладзе ў любы час падлучацца да ${ BRAND_NAME } VPN. Напрыклад, каб падлучыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два злучэнні з VPN."
+        "Адно злучэнне з VPN дазваляе адной прыладзе падключыцца да ${ BRAND_NAME } VPN у любы час. Напрыклад, каб падключыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два злучэнні з VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
@@ -3721,7 +3721,7 @@
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Абараніце кожную прыладу, якая падлучана да сеткі Wi-Fi. Гэта таксама можа быць карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падлучэнне да VPN."
+        "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Quickly set up out-of-office messages": [
         "Хутка наладжвайце паведамленні пры адсутнасці ў офісе"
@@ -3775,7 +3775,7 @@
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Пры падлучэнні да нашай сеткі VPN вашы запыты DNS праходзяць праз зашыфраваны тунэль VPN, што дазваляе падвысіць узровень прыватнасці і бяспекі ў інтэрнэце"
+        "Пры падключэнні да нашай сеткі VPN вашы запыты DNS праходзяць праз зашыфраваны тунэль VPN, што дазваляе павысіць узровень прыватнасці і бяспекі ў інтэрнэце"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Пры адпраўцы паведамленняў іншым карыстальнікам ${ MAIL_APP_NAME } шыфраванне адбываецца аўтаматычна. Адпраўка лістоў па-за межы сэрвісу ${ MAIL_APP_NAME } патрабуе прызначэння пароля."
@@ -4172,10 +4172,10 @@
         "Падпіскі"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Ваш тарыфны план куплены з дапамогай праграмы для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
+        "Ваш тарыфны план куплены праз праграму для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+        "Ваш тарыфны план куплены праз праграму для iOS. Такім чынам, каб унесці ў яго змены або абнавіць рэквізіты плацяжу, вам трэба зайсці ў Apple App Store."
       ]
     },
     "Subscription price": {
@@ -4367,7 +4367,7 @@
         "3. Выберыце параметры VPN"
       ],
       "4. Select a server to connect to": [
-        "4. Выберыце сервер для падлучэння да"
+        "4. Выберыце сервер для падключэння"
       ],
       "Account": [
         "Уліковы запіс"
@@ -4466,7 +4466,7 @@
         "Выдаліць арганізацыю?"
       ],
       "Device connected!": [
-        "Прылада падлучана!"
+        "Прылада падключана!"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"

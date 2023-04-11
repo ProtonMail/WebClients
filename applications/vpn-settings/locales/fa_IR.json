@@ -1699,9 +1699,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "کپچا"
-      ],
       "Email": [
         "رایانامه"
       ],
@@ -1710,9 +1707,6 @@
       ],
       "No verification method available": [
         "هیچ شیوه تاییدی در دسترس نیست"
-      ],
-      "SMS": [
-        "پیامک"
       ]
     },
     "Info": {
@@ -2105,9 +2099,6 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب خود را با اعتباراتی که می‌توانید جهت اشتراک در یک طرح جدید یا تمدید طرح کنونی خود استفاده کنید، پر نمایید. شما به ازای هر ${ i18nCurrency } هزینه شده یک اعتبار می‌گیرید."
-      ],
-      "Tor": [
-        "شبکه تور"
       ],
       "Total email addresses": [
         "مجموع آدرس های ایمیل"
@@ -2621,9 +2612,6 @@
       ],
       "Verification code": [
         "کد تایید"
-      ],
-      "VPN Accelerator": [
-        "شتاب دهنده VPN"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ما متاسفیم که میبینیم شما میروید. لطفاً شرح دهید که چرا ترک میکنید تا به ما در بهتر کردن کمک کنید."
@@ -3406,32 +3394,20 @@
       ]
     },
     "Option": {
-      "Android": [
-        "اندروید"
-      ],
       "Country configs": [
         "پیکربندی کشور"
       ],
       "Free server configs": [
         "پیکربندی‌های سرور رایگان"
       ],
-      "GNU/Linux": [
-        "گنو/لینوکس"
-      ],
       "I found another service that I like better": [
         "سرویس دیگری پیدا کردم که بهتر می پسندم"
-      ],
-      "iOS": [
-        "آی‌اواس"
       ],
       "It's missing a key feature that I need": [
         "عدم وجود یک ویژگی کلیدی که نیاز دارم"
       ],
       "It's too expensive": [
         "خیلی گران است"
-      ],
-      "macOS": [
-        "سیستم عامل مک"
       ],
       "My reason isn't listed": [
         "دلیل من فهرست نشده است"
@@ -3444,23 +3420,14 @@
       ],
       "Standard server configs": [
         "پیکربندی‌های سرور استاندارد"
-      ],
-      "Windows": [
-        "ویندوز"
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "بیت‌کوین"
-      ],
       "Credit/debit card": [
         "کارت اعتباری/دبیت"
       ],
       "New credit/debit card": [
         "کارت اعتباری/نقدی جدید"
-      ],
-      "PayPal": [
-        "پی‌پال"
       ]
     },
     "Placeholder": {
@@ -4199,29 +4166,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } در ${ numberOfCountries } کشور",
         "${ numberOfServers } در ${ numberOfCountries } کشور"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "اندروید"
-      ],
-      "Android TV": [
-        "اندروید تی وی"
-      ],
-      "Chromebook": [
-        "کروم بوک"
-      ],
-      "GNU/Linux": [
-        "گنو/لینوکس"
-      ],
-      "iOS": [
-        "آی‌اواس"
-      ],
-      "macOS": [
-        "سیستم عامل مک"
-      ],
-      "Windows": [
-        "ویندوز"
       ]
     },
     "Warning": {

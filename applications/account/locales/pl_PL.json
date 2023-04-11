@@ -1016,6 +1016,17 @@
         "Spowoduje to rozłączenie wszystkich routerów i klientów używających tego certyfikatu."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Skrzynka odbiorcza ${ nameToDisplay }"
+      ],
+      "Auto forwarded": [
+        "Automatycznie przekierowane"
+      ],
+      "New email": [
+        "Nowa wiadomość"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikacje ${ BRAND_NAME }"
@@ -2610,6 +2621,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym i innymi bonusami."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulacje! Przyznano maksymalną liczbę ${ rewardsLimit } darmowych miesięcy planu ${ plusPlanName }."
       ],
@@ -2621,6 +2635,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail i znak plusa"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
@@ -3904,11 +3921,6 @@
         "Domyślny"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Prywatność to nasz standard."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 wiadomość miesięcznie)"
@@ -3921,6 +3933,11 @@
       ],
       "(during your first month)": [
         "(w pierwszym miesiącu)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatycznie przekieruj"
       ]
     },
     "Go to sign in": {
@@ -6805,6 +6822,9 @@
       "Auto show remote images": [
         "Automatycznie pokazuj zdalne obrazy"
       ],
+      "Auto-delete unwanted messages": [
+        "Automatycznie usuwaj niechciane wiadomości"
+      ],
       "Auto-detect primary time zone": [
         "Automatyczne wykrywanie głównej strefy czasowej"
       ],
@@ -8078,9 +8098,6 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Drive": [
-        "Dysk"
-      ],
       "Inbox": [
         "Poczta"
       ],
@@ -8276,6 +8293,9 @@
       "Advanced sharing security": [
         "Zaawansowane bezpieczeństwo udostępniania"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Automatyczne usuwanie spamu i kosza"
+      ],
       "Auto-reply": [
         "Autoresponder"
       ],
@@ -8327,6 +8347,9 @@
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
+      "Hide My Email aliases": [
+        "Aliasy Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -8348,9 +8371,6 @@
       "NetShield malware and ad-blocker": [
         "Blokada złośliwego oprogramowania i reklam NetShield"
       ],
-      "P2P/BitTorrent": [
-        "P2P / BitTorrent"
-      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
@@ -8365,6 +8385,12 @@
       ],
       "Router support": [
         "Wsparcie routerów"
+      ],
+      "Schedule messages at any time": [
+        "Zaplanuj wiadomości w dowolnym momencie"
+      ],
+      "Search message content": [
+        "Wyszukiwanie zawartości wiadomości"
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
@@ -8417,6 +8443,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
+      "Up to 15 email addresses": [
+        "Do 15 adresów e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Do 500 GB przestrzeni dyskowej"
+      ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
       ],
@@ -8425,6 +8457,14 @@
       ],
       "Worldwide streaming services": [
         "Globalne usługi streamingu"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Uzyskaj nieograniczoną liczby aliasów SimpleLogin przez ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -10676,6 +10716,9 @@
       ],
       "Clear": [
         "Wyczyść"
+      ],
+      "Clear out the junk": [
+        "Opróżnij Kosz"
       ],
       "Composing": [
         "Edytor"

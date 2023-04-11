@@ -474,9 +474,6 @@
       "Hide messages": [
         "Amagar missatges"
       ],
-      "Hide my email": [
-        "Amaga el meu correu"
-      ],
       "I have a question": [
         "Tinc una pregunta"
       ],
@@ -1238,6 +1235,26 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } completat",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } completats"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Bustia d'entrada ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "S'han eliminat 5 rastrejadors"
+      ],
+      "Auto forwarded": [
+        "Reenviament automàtic"
+      ],
+      "Email received": [
+        "Correu rebut"
+      ],
+      "Encrypted": [
+        "Xifrat"
+      ],
+      "New email": [
+        "Correu nou"
       ]
     },
     "Apps dropdown": {
@@ -2813,11 +2830,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Logotip ${ MAIL_APP_NAME } i un signe més"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } a la configuració"
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Esborra automàticament els missatges de més de 30 dies de la paperera i el correu brossa. Gaudeix d'aquest i d'altres avantatges quan actualitzis."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Desxifrant contactes… Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
@@ -2846,6 +2863,9 @@
       ],
       "No labels": [
         "Cap etiqueta"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail i un signe de més"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
@@ -3835,6 +3855,11 @@
         "No llegit"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Té un fitxer"
+      ]
+    },
     "Filter preview": {
       "read": [
         "llegit"
@@ -3935,6 +3960,17 @@
     "Get started checklist title": {
       "Get started": [
         "Començar"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenviament automàtic"
+      ],
+      "Gmail messages to your inbox": [
+        "Missatges de Gmail a la seva bustia d'entrada"
+      ],
+      "Sign in with Google": [
+        "Inicia la sessió amb Google"
       ]
     },
     "Group": {
@@ -4543,6 +4579,12 @@
       "Attention required": [
         "Requereix atenció"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Suprimeix automàticament els missatges que han estat al correu brossa durant més de 30 dies."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Suprimeix automàticament els missatges que han estat a la paperera durant més de 30 dies."
+      ],
       "Background color": [
         "Color de fons"
       ],
@@ -4951,6 +4993,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "El missatge s'enviarà demà a les ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Els missatges que hagin estat a la bustia de correu brossa més de 30 dies es suprimiran automàticament."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Els missatges que hagin estat a la paperera més de 30 dies es suprimiran automàticament."
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -5411,6 +5459,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Actualitzeu per afegir més adreces al vostre compte."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Actualitza per eliminar automàticament els missatges que han estat al correu brossa durant més de 30 dies."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Actualitza per eliminar automàticament els missatges que han estat a la paperera durant més de 30 dies."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
@@ -6896,17 +6950,20 @@
         "Nom de etiqueta"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Canvia o afegeix un compte"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Millora ara"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
+      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
@@ -7950,6 +8007,9 @@
       ],
       "Change my answer": [
         "Canviar la meva resposta"
+      ],
+      "Clear out the junk": [
+        "Netegeu les escombraries"
       ],
       "Clearing data": [
         "Netejant dades"

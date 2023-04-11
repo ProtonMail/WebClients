@@ -34,7 +34,7 @@
         "Перасылка пошты спынена"
       ],
       "Reconnect": [
-        "Перападлучыцца"
+        "Перападключыцца"
       ],
       "Remove forward": [
         "Выдаліць перасылку"
@@ -567,7 +567,7 @@
         "Паўторная актывацыя ключоў"
       ],
       "Reconnect": [
-        "Перападлучыцца"
+        "Перападключыцца"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -1013,7 +1013,27 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "Гэта адлучыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
+        "Гэта адключыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Паштовая скрыня ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Выдалены 5 праграм сачэння"
+      ],
+      "Auto forwarded": [
+        "Аўтаматычна пераслана"
+      ],
+      "Email received": [
+        "Атрыманы ліст"
+      ],
+      "Encrypted": [
+        "Зашыфравана"
+      ],
+      "New email": [
+        "Новы ліст"
       ]
     },
     "Apps dropdown": {
@@ -2610,6 +2630,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Аўтаматычна ачышчае сам спама і сметніцы паведамленні, якім больш за 30 дзён. Атрымлівайце асалоду ад гэтай і іншых пераваг пасля паляпшэння."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
       ],
@@ -2622,6 +2645,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Лагатып Proton Mail і знак плюс"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
@@ -2630,6 +2656,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Значок Upsell змяшчае лагатып ${ BRAND_NAME }, які стаіць пасля знака плюс"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можаце далей запрашаць сяброў, але вы не будзеце больш атрымліваць за гэта крэдыты"
@@ -2929,7 +2958,7 @@
         "Памылка"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Памылка падлучэння да Bitcoin API."
+        "Памылка злучэння з Bitcoin API."
       ],
       "Error in one of the conditions": [
         "Памылка ў адной з умоў"
@@ -3502,7 +3531,7 @@
         "Нешта пайшло не так. Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Узнікла праблема з падлучэннем да ${ BRAND_NAME }."
+        "Узнікла праблема з падключэннем да ${ BRAND_NAME }."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Занадта шмат даччыных сеансаў. Ачысціце вашы файлы cookie і ўвайдзіце яшчэ раз."
@@ -3670,10 +3699,10 @@
         "Доступ да ўсіх краін"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Падлучайце да ${ plusVpnConnections } прылады",
-        "Падлучайце да ${ plusVpnConnections } прылад",
-        "Падлучайце да ${ plusVpnConnections } прылад",
-        "Падлучайце да ${ plusVpnConnections } прылад"
+        "Падключайце да ${ plusVpnConnections } прылады",
+        "Падключайце да ${ plusVpnConnections } прылад",
+        "Падключайце да ${ plusVpnConnections } прылад",
+        "Падключайце да ${ plusVpnConnections } прылад"
       ],
       "Fastest VPN servers": [
         "Найхутчэйшыя серверы VPN"
@@ -3916,6 +3945,17 @@
       ],
       "(during your first month)": [
         "(на працягу першага месяца)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Аўтаматычна перасылаць"
+      ],
+      "Gmail messages to your inbox": [
+        "паведамленні Gmail у вашу паштовую скрыню"
+      ],
+      "Sign in with Google": [
+        "Увайсці праз Google"
       ]
     },
     "Go to sign in": {
@@ -4588,10 +4628,10 @@
         "+${ bonusSpace } бонуснага сховішча"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } злучэнне з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнняў з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)"
+        "+${ organization.BonusVPN } злучэнне з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
+        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
+        "+${ organization.BonusVPN } злучэнняў з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
+        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Запрасіць сяброў у ${ BRAND_NAME }"
@@ -4621,7 +4661,7 @@
         "Фраза аднаўлення дазваляе вам атрымаць доступ да ўліковага запісу і аднавіць зашыфраваныя паведамленні, калі вы забылі пароль"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй або асобай"
+        "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -4867,7 +4907,7 @@
         "Усё роўна працягнуць?"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
-        "Працягнуўшы, вы падлучыце ўліковы запіс ${ BRAND_NAME } да ${ name }."
+        "Працягнуўшы, вы падключыце ўліковы запіс ${ BRAND_NAME } да ${ name }."
       ],
       "Copy your referral link": [
         "Капіяваць сваю рэферальную спасылку"
@@ -4972,7 +5012,7 @@
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Паніжэнне тарыфнага плана спыніць усе бягучыя падлучэнні да платных сервераў ${ VPN_APP_NAME }."
+        "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Спампуйце наш шаблон CSV, запоўніце падрабязнасці пра карыстальніка і запампуйце ваш запоўнены файл CSV для стварэння ўліковага запісу для гэтых карыстальнікаў."
@@ -5236,22 +5276,22 @@
         "Уставіць спасылку"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Усталюйце файл канфігурацыі краіны для падлучэння да выпадковага сервера ў краіне, якую вы выбралі."
+        "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Усталюйце файл канфігурацыі бясплатнага сервера для падлучэння да азначанага сервера ў адной з трох бясплатных краін."
+        "Усталюйце файл канфігурацыі бясплатнага сервера для падключэння да пазначанага сервера ў адной з трох бясплатных краін."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Усталюйце файл канфігурацыі Secure Core, каб атрымаць дадатковую абарону ад кампраметацыі канчатковага пункта VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Усталюйце файл канфігурацыі сервера для падлучэння да азначанага сервера ў краіне, якую вы выбралі."
+        "Усталюйце файл канфігурацыі сервера для падключэння да пазначанага сервера ў краіне, якую вы выбралі."
       ],
       "Internet connection lost": [
         "Злучэнне з інтэрнэтам страчана"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Злучэнне з інтэрнэтам страчана. Праверце, ці падлучана ваша прылада."
+        "Злучэнне з інтэрнэтам страчана. Праверце падключэнне вашай прылады."
       ],
       "Internet connection restored.": [
         "Злучэнне з інтэрнэтам адноўлена."
@@ -5335,7 +5375,7 @@
         "Загрузка..."
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "У журнале пералічаныя спробы аўтарызацыі ва ўсіх службах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME }."
+        "У журнале пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME }."
       ],
       "lose access to all current encrypted data": [
         "страціце доступ да ўсіх бягучых зашыфраваных даных"
@@ -5764,7 +5804,7 @@
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падлучэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні злучэння VPN на маршрутызатары."
+        "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падключэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні злучэння з VPN на маршрутызатары."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Гэтыя канфігурацыі разлічаны на маршрутызатары, якія працуюць з WireGuard і афіцыйнымі кліентамі."
@@ -5782,7 +5822,7 @@
         "Гэта можа заняць ад некалькіх секунд да некалькіх хвілін у залежнасці ад вашай прылады"
       ],
       "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Гэта зойме не больш за 15 хвілін. Не закрывайце гэту старонку і не адлучайцеся ад інтэрнэту."
+        "Гэта зойме не больш за 15 хвілін. Не закрывайце гэту старонку і не адключайцеся ад інтэрнэту."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Гэта фраза з 12 слоў, якую вам прапанавалі задаць."
@@ -5878,7 +5918,7 @@
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Для абароны вашага злучэння з інтэрнэтам, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падлучыцца да сервера."
+        "Для абароны вашага злучэння з інтэрнэтам, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "для выкарыстання ${ toAppName } і ўсіх сэрвісаў ${ BRAND_NAME }"
@@ -5962,7 +6002,7 @@
         "Выкарыстоўвайце лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Выкарыстоўвайце наступныя ўліковыя даныя, калі падлучаецеся да сервераў ${ VPN_APP_NAME } праз праграмы VPN ад іншых распрацоўшчыкаў. Напрыклад, Tunnelblick на MacOS або OpenVPN на GNU/Linux."
+        "Выкарыстоўвайце наступныя ўліковыя даныя, калі падключаецеся да сервераў ${ VPN_APP_NAME } праз праграмы VPN ад іншых распрацоўшчыкаў. Напрыклад, Tunnelblick на MacOS або OpenVPN на GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Выкарыстоўвайце выбраны адрас электроннай пошты ў якасці імя карыстальніка SMTP у знешнім сэрвісе і згенерыраваны токен у якасці пароля SMTP."
@@ -5995,7 +6035,7 @@
         "Папярэджанне:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падлучаных службаў і выдаліць усе вашы кантакты."
+        "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падключаных сэрвісаў і выдаліць усе вашы кантакты."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
@@ -6145,7 +6185,7 @@
         "Вы можаце выкарыстоўваць ${ MAIL_APP_NAME } з любым паштовым кліентам, які падтрымлівае пратаколы IMAP/SMTP, уключаючы Outlook, Apple Mail і Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падлучэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
+        "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падключэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальны ліст на працягу наступных 24 гадзін",
@@ -6803,6 +6843,9 @@
       "Auto show remote images": [
         "Аўтаматычна паказваць аддаленыя відарысы"
       ],
+      "Auto-delete unwanted messages": [
+        "Аўтаматычна выдаляць непажаданыя паведамленні"
+      ],
       "Auto-detect primary time zone": [
         "Аўтаматычнае вызначэнне асноўнага часавога пояса"
       ],
@@ -6894,7 +6937,7 @@
         "Умовы"
       ],
       "Config to connect to ${ serverName }": [
-        "Канфігурацыя для падлучэння да ${ serverName }"
+        "Канфігурацыя для падключэння да ${ serverName }"
       ],
       "Confirm link URLs": [
         "Пацвердзіць спасылку URL-адраса"
@@ -7868,7 +7911,7 @@
         "Усе дзеянні фільтра будуць ужыты да ўсіх паведамленняў у вашым уліковым запісе ${ MAIL_APP_NAME }. Лісты з аўтаматычным адказам не будуць адпраўляцца."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Падлучыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, you@yourcompany.com). Наш майстар дапаможа вам з працэсам наладжвання."
+        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд мінуў. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -8076,9 +8119,6 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Drive": [
-        "Дыск"
-      ],
       "Inbox": [
         "Уваходныя"
       ],
@@ -8274,6 +8314,9 @@
       "Advanced sharing security": [
         "Дадатковая бяспека пры абагульванні"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Аўтаматычна выдаляць лісты ў спаме і сметніцы"
+      ],
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
@@ -8325,6 +8368,9 @@
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
+      "Hide My Email aliases": [
+        "Псеўданімы Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
         "Высакахуткасны VPN на ${ n } прыладах",
@@ -8360,6 +8406,12 @@
       ],
       "Router support": [
         "Падтрымка маршрутызатараў"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйце адпраўку паведамленняў у любы час"
+      ],
+      "Search message content": [
+        "Пошук змесціва паведамлення"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -8412,6 +8464,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
       ],
+      "Up to 15 email addresses": [
+        "Да 15 адрасоў электроннай пошты"
+      ],
+      "Up to 500 GB of storage": [
+        "Да 500 ГБ сховішча"
+      ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
       ],
@@ -8420,6 +8478,14 @@
       ],
       "Worldwide streaming services": [
         "Сэрвісы з трансляцыямі з усяго свету"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -8655,7 +8721,7 @@
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Абараняе вас, блакіруючы ўсе злучэнні з сеткай пры нечаканым адлучэнні ад нашага сервера VPN."
+        "Абараняе вас, блакіруючы ўсе злучэнні з сеткай пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
@@ -8667,7 +8733,7 @@
         "У працоўныя дні каманда падтрымкі кліентаў ${ BRAND_NAME } дапаможа вам на працягу 24 гадзін пасля атрымання запыту"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Адно злучэнне з VPN дазваляе адной прыладзе ў любы час падлучацца да ${ BRAND_NAME } VPN. Напрыклад, каб падлучыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два злучэнні з VPN."
+        "Адно злучэнне з VPN дазваляе адной прыладзе падключыцца да ${ BRAND_NAME } VPN у любы час. Напрыклад, каб падключыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два злучэнні з VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
@@ -8691,7 +8757,7 @@
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Абараніце кожную прыладу, якая падлучана да сеткі Wi-Fi. Гэта таксама можа быць карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падлучэнне да VPN."
+        "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Quickly set up out-of-office messages": [
         "Хутка наладжвайце паведамленні пры адсутнасці ў офісе"
@@ -8745,7 +8811,7 @@
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Пры падлучэнні да нашай сеткі VPN вашы запыты DNS праходзяць праз зашыфраваны тунэль VPN, што дазваляе падвысіць узровень прыватнасці і бяспекі ў інтэрнэце"
+        "Пры падключэнні да нашай сеткі VPN вашы запыты DNS праходзяць праз зашыфраваны тунэль VPN, што дазваляе павысіць узровень прыватнасці і бяспекі ў інтэрнэце"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Пры адпраўцы паведамленняў іншым карыстальнікам ${ MAIL_APP_NAME } шыфраванне адбываецца аўтаматычна. Адпраўка лістоў па-за межы сэрвісу ${ MAIL_APP_NAME } патрабуе прызначэння пароля."
@@ -8913,7 +8979,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд электронных лістоў і наладаў, прагляд і спампоўванне кантактаў, прагляд і спампоўванне ўсіх планаванняў з праграмы Каляндар Google."
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
       ]
     },
     "Onboarding": {
@@ -9182,9 +9248,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 або больш новы)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64-бітны)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (для Fedora/openSUSE)"
@@ -9848,10 +9911,10 @@
         "Падпіскі"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Ваш тарыфны план куплены з дапамогай праграмы для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
+        "Ваш тарыфны план куплены праз праграму для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+        "Ваш тарыфны план куплены праз праграму для iOS. Такім чынам, каб унесці ў яго змены або абнавіць рэквізіты плацяжу, вам трэба зайсці ў Apple App Store."
       ]
     },
     "Subscription price": {
@@ -10271,7 +10334,7 @@
         "3. Выберыце параметры VPN"
       ],
       "4. Select a server to connect to": [
-        "4. Выберыце сервер для падлучэння да"
+        "4. Выберыце сервер для падключэння"
       ],
       "Account and password": [
         "Уліковы запіс і пароль"
@@ -10420,6 +10483,9 @@
       "Clear": [
         "Ачысціць"
       ],
+      "Clear out the junk": [
+        "Ачысціць непажаданую пошту"
+      ],
       "Composing": [
         "Напісанне"
       ],
@@ -10439,7 +10505,7 @@
         "Віншуем з выбарам прыватнасці!"
       ],
       "Connect ${ name }": [
-        "Падлучыць ${ name }"
+        "Падключыць ${ name }"
       ],
       "Contact encryption keys": [
         "Ключы шыфравання кантактаў"
@@ -10838,7 +10904,7 @@
         "Рэкамендавана"
       ],
       "Reconnect your account": [
-        "Перападлучыць свой уліковы запіс"
+        "Перападключыць свой уліковы запіс"
       ],
       "Recover data": [
         "Аднаўленне даных"
@@ -11196,13 +11262,16 @@
         "Карыстальнікі ${ MAIL_APP_NAME } будуць выкарыстоўваць дадзены ключ для адпраўкі ў якасці прадвызначанага"
       ],
       "Account is disconnected": [
-        "Уліковы запіс адлучаны"
+        "Уліковы запіс адключаны"
       ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"
       ],
       "Customize import to reduce the number of labels": [
         "Наладзьце імпартаванне, каб паменшыць колькасць метак"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Выдаляйце паведамленні са сметніцы і спама пасля 30 дзён. Уключэнне гэтага параметра прывядзе да выдалення ўсіх бягучых паведамленняў у вашых папках сметніца і спам. Новыя паведамленні, якія будуць трапляць у гэтыя папкі пасля 30 дзён будуць выдаляцца аўтаматычна."
       ],
       "Each imported email will have this label": [
         "Кожны імпартаваны ліст будзе мець гэту метку"
@@ -11326,10 +11395,10 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "Абагулена з дапамогай скразнога шыфравання"
+        "Абагулена са скразным шыфраваннем"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Абагулена з дапамогай скразнога шыфравання з правераным кантактам"
+        "Абагулена са скразным шыфраваннем з правераным кантактам"
       ]
     },
     "Tor out of date": {
@@ -11353,10 +11422,10 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Палепшыце да ${ planName } для адначасовага падлучэння да VPN да ${ n } прылады",
-        "Палепшыце да ${ planName } для адначасовага падлучэння да VPN да ${ n } прылад",
-        "Палепшыце да ${ planName } для адначасовага падлучэння да VPN да ${ n } прылад",
-        "Палепшыце да ${ planName } для адначасовага падлучэння да VPN да ${ n } прылад"
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылады да VPN",
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN",
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN",
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN"
       ]
     },
     "Upgrade notice": {
