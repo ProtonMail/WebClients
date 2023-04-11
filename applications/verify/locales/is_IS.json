@@ -915,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA-mennskupróf"
-      ],
       "Email": [
         "Tölvupóstur"
       ],
@@ -929,6 +926,9 @@
       ]
     },
     "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Aðeins er hægt að nota símanúmer til að staðfesta einn ${ BRAND_NAME } reikning"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Áður en þú biður um nýjan staðfestingarkóða skaltu athuga ruslmöppuna þína og athuga hvort ${ strong } sé rétt heimilisfang."
       ],
@@ -1067,6 +1067,9 @@
       ],
       "Request new code": [
         "Óska eftir nýjum kóða"
+      ],
+      "Sign in with 2FA": [
+        "Skráðu þig inn með 2FA"
       ]
     },
     "Validation": {

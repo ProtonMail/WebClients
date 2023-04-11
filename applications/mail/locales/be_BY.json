@@ -478,9 +478,6 @@
       "Hide messages": [
         "Схаваць паведамленні"
       ],
-      "Hide my email": [
-        "Схаваць маю электронную пошту"
-      ],
       "I have a question": [
         "У мяне ёсць пытанне"
       ],
@@ -776,7 +773,7 @@
         "Апавяшчэнне пра прачытанне адпраўлена"
       ],
       "Reconnect": [
-        "Перападлучыцца"
+        "Перападключыцца"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -1248,6 +1245,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Паштовая скрыня ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Выдалены 5 праграм сачэння"
+      ],
+      "Auto forwarded": [
+        "Аўтаматычна пераслана"
+      ],
+      "Email received": [
+        "Атрыманы ліст"
+      ],
+      "Encrypted": [
+        "Зашыфравана"
+      ],
+      "New email": [
+        "Новы ліст"
       ]
     },
     "Apps dropdown": {
@@ -2831,11 +2848,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Лагатып ${ MAIL_APP_NAME } і знак плюс"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у наладах."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Аўтаматычна ачышчае сам спама і сметніцы паведамленні, якім больш за 30 дзён. Атрымлівайце асалоду ад гэтай і іншых пераваг пасля паляпшэння."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
@@ -2867,6 +2884,9 @@
       "No labels": [
         "Няма метак"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Лагатып Proton Mail і знак плюс"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
@@ -2874,7 +2894,7 @@
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Разблакіруйце расклад для карыстальніка і іншыя перавагі пасля паляпшэння свайго тарыфнага плана."
+        "Разблакіруйце магчымасць ствараць уласны расклад адпраўкі паведамленняў і іншыя перавагі пасля паляпшэння свайго тарыфнага плана."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
@@ -3661,7 +3681,7 @@
         "Нешта пайшло не так. Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Узнікла праблема з падлучэннем да ${ BRAND_NAME }."
+        "Узнікла праблема з падключэннем да ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пакуль няма кантактаў. Пачніце са стварэння новага"
@@ -3895,6 +3915,11 @@
         "Непрачытаныя"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "З файлам"
+      ]
+    },
     "Filter preview": {
       "read": [
         "прачытана"
@@ -3997,6 +4022,17 @@
     "Get started checklist title": {
       "Get started": [
         "Пачаць працу"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Аўтаматычна перасылаць"
+      ],
+      "Gmail messages to your inbox": [
+        "паведамленні Gmail у вашу паштовую скрыню"
+      ],
+      "Sign in with Google": [
+        "Увайсці праз Google"
       ]
     },
     "Group": {
@@ -4600,7 +4636,7 @@
         "Фраза аднаўлення - гэта адзін з самых бяспечных спосабаў абараніць доступ да вашага ўліковага запісу. Вы можаце выкарыстоўваць яе для атрымання доступу да вашага ўліковага запісу і аднавіць вашы зашыфраваныя даныя ў выпадку страты пароля."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Запыт на адмову ад падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку і апрацаваны аўтаматычна."
+        "Запыт на адмову ад падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку бюлетэня і апрацаваны аўтаматычна."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -4700,6 +4736,12 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Аўтаматычна выдаляць лісты, якія знаходзяцца ў спаме больш за 30 дзён."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Аўтаматычна выдаляць лісты, якія знаходзяцца ў сметніцы больш за 30 дзён."
       ],
       "Background color": [
         "Колер фону"
@@ -5047,7 +5089,7 @@
         "Злучэнне з інтэрнэтам страчана"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Злучэнне з інтэрнэтам страчана. Праверце, ці падлучана ваша прылада."
+        "Злучэнне з інтэрнэтам страчана. Праверце падключэнне вашай прылады."
       ],
       "Internet connection restored.": [
         "Злучэнне з інтэрнэтам адноўлена."
@@ -5129,6 +5171,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Паведамленне будзе адпраўлена заўтра ў ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Паведамленні, якія знаходзяцца ў спаме больш за 30 дзён будуць выдаляцца аўтаматычна."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Паведамленні, якія знаходзяцца ў сметніцы больш за 30 дзён будуць выдаляцца аўтаматычна."
       ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
@@ -5601,6 +5649,12 @@
       "Upgrade to add more addresses to your account.": [
         "Палепшыце ўліковы запіс, каб дадаць больш адрасоў."
       ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Палепшыце свой тарыфны план для аўтаматычнага выдалення паведамленняў, якія знаходзяцца ў спаме больш за 30 дзён."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Палепшыце свой тарыфны план для аўтаматычнага выдалення паведамленняў, якія знаходзяцца ў сметніцы больш за 30 дзён."
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Палепшыце ўліковы запіс, каб ствараць больш папак, фільтраў і адрасоў."
       ],
@@ -5725,7 +5779,7 @@
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "Вы можаце выкарыстоўваць ${ VPN_APP_NAME } бясплатна ўжо сёння."
+        "Вы можаце бясплатна выкарыстоўваць ${ VPN_APP_NAME }."
       ],
       "You cannot reply from the invited address.": [
         "Вы не можаце адказаць з запрошанага адраса."
@@ -7123,17 +7177,20 @@
         "Назва меткі"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Змяніць або дадаць уліковы запіс"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Палепшыць зараз"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Змяніць або дадаць уліковы запіс"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Аўтаматычна выдаляць лісты ў спаме і сметніцы"
+      ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
@@ -7209,7 +7266,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд электронных лістоў і наладаў, прагляд і спампоўванне кантактаў, прагляд і спампоўванне ўсіх планаванняў з праграмы Каляндар Google."
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
       ]
     },
     "Onboarding": {
@@ -8264,6 +8321,9 @@
       "Change my answer": [
         "Змяніць мой адказ"
       ],
+      "Clear out the junk": [
+        "Ачысціць непажаданую пошту"
+      ],
       "Clearing data": [
         "Ачыстка даных"
       ],
@@ -8601,7 +8661,7 @@
         "Атрымальнікі"
       ],
       "Reconnect your account": [
-        "Перападлучыць свой уліковы запіс"
+        "Перападключыць свой уліковы запіс"
       ],
       "Recover data": [
         "Аднаўленне даных"

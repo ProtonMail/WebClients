@@ -1720,9 +1720,6 @@
       ],
       "Work": [
         "Рабочий"
-      ],
-      "Yomi": [
-        "Ёми"
       ]
     },
     "Country name": {
@@ -4074,9 +4071,6 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
-      ],
-      "SMS": [
-        "СМС"
       ]
     },
     "Import calendar": {
@@ -8325,6 +8319,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Hide My Email aliases": [
+        "Псевдонимы Hide My Email"
+      ],
       "High-speed VPN on ${ n } device": [
         "Высокоскоростная VPN на ${ n } устройстве",
         "Высокоскоростная VPN на ${ n } устройствах",
@@ -8360,6 +8357,12 @@
       ],
       "Router support": [
         "Поддержка маршрутизаторов"
+      ],
+      "Schedule messages at any time": [
+        "Планируйте сообщения в любое время"
+      ],
+      "Search message content": [
+        "Поиск содержимого сообщения"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -8412,6 +8415,12 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
+      "Up to 15 email addresses": [
+        "До 15 адресов электронной почты"
+      ],
+      "Up to 500 GB of storage": [
+        "До 500 ГБ хранилища"
+      ],
       "User credential management": [
         "Управление учетными данными пользователя"
       ],
@@ -8420,6 +8429,14 @@
       ],
       "Worldwide streaming services": [
         "Стриминговые сервисы со всего мира"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Получите неограниченное количество алиасов с SimpleLogin от ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -9182,9 +9199,6 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 или выше)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64-битное)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (для Fedora/openSUSE)"

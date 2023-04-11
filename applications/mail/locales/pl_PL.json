@@ -478,9 +478,6 @@
       "Hide messages": [
         "Ukryj wiadomości"
       ],
-      "Hide my email": [
-        "Ukryj mój adres e-mail"
-      ],
       "I have a question": [
         "Mam pytanie"
       ],
@@ -1248,6 +1245,17 @@
         "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfItems } kroków",
         "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfItems } kroków",
         "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfItems } kroków"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Skrzynka odbiorcza ${ nameToDisplay }"
+      ],
+      "Auto forwarded": [
+        "Automatycznie przekierowane"
+      ],
+      "New email": [
+        "Nowa wiadomość"
       ]
     },
     "Apps dropdown": {
@@ -2831,11 +2839,11 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } logo and a plus sign": [
-        "Logo ${ MAIL_APP_NAME } i znak plusa"
-      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } w ustawieniach."
+      ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym i innymi bonusami."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
@@ -2866,6 +2874,9 @@
       ],
       "No labels": [
         "Brak etykiet"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail i znak plusa"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
@@ -3913,11 +3924,6 @@
         "Domyślny"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Prywatność to nasz standard."
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Data: ${ date }"
@@ -4002,6 +4008,11 @@
     "Get started checklist title": {
       "Get started": [
         "Rozpocznij"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Automatycznie przekieruj"
       ]
     },
     "Group": {
@@ -4449,7 +4460,7 @@
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych."
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "Zablokowano element śledzący",
+        "Zablokowano ${ numberOfTrackers } element śledzący",
         "Zablokowano ${ numberOfTrackers } elementy śledzące",
         "Zablokowano ${ numberOfTrackers } elementów śledzących",
         "Zablokowano ${ numberOfTrackers } elementów śledzących"
@@ -4703,6 +4714,12 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Automatycznie usuwaj wiadomości, które znajdują się w Spamie dłużej niż 30 dni."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu dłużej niż 30 dni."
+      ],
       "Background color": [
         "Kolor tła"
       ],
@@ -4860,7 +4877,7 @@
         "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } nie znalazł żadnych takich elementów."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował element śledzący w wiadomości.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } element śledzący w wiadomości.",
         "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementy śledzące w wiadomości.",
         "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementów śledzących w wiadomości.",
         "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementów śledzących w wiadomości."
@@ -5131,6 +5148,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Wiadomość zostanie wysłana jutro o godzinie ${ formattedTime }"
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Wiadomości, które znajdują się w Spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Wiadomości, które znajdują się w Koszu dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
       "Monthly ${ onDayString }": [
         "Co miesiąc ${ onDayString }"
@@ -5602,6 +5625,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Ulepsz konto, aby dodać więcej adresów."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Ulepsz konto, aby automatycznie usuwać wiadomości, które znajdują się w Spamie dłużej niż 30 dni."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Ulepsz konto, aby automatycznie usuwać wiadomości, które znajdują się w Koszu dłużej niż 30 dni."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Ulepsz konto, aby utworzyć więcej folderów, filtrów i adresów."
@@ -7125,17 +7154,20 @@
         "Nazwa etykiety"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Przełącz lub dodaj konto"
-      ]
-    },
     "new_plans: Action": {
       "Upgrade now": [
         "Ulepsz teraz"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Przełącz lub dodaj konto"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automatyczne usuwanie spamu i kosza"
+      ],
       "Custom email domains": [
         "Niestandardowe domeny"
       ],
@@ -8515,6 +8547,9 @@
       ],
       "Change my answer": [
         "Zmień odpowiedź"
+      ],
+      "Clear out the junk": [
+        "Opróżnij Kosz"
       ],
       "Clearing data": [
         "Usuwanie danych"
