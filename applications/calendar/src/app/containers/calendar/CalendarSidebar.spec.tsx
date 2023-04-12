@@ -15,6 +15,7 @@ import {
 import createCache from '@proton/shared/lib/helpers/cache';
 import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/testing/lib/builders';
+import noop from '@proton/utils/noop';
 
 import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
 
@@ -168,6 +169,7 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         addresses: [],
         calendars: [mockCalendar],
         miniCalendar: <span>mockedMiniCalendar</span>,
+        isSearchView: false,
         calendarUserSettings: {
             WeekLength: 7,
             DisplayWeekNumber: 1,
@@ -180,6 +182,8 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
             InviteLocale: null,
             AutoImportInvite: 0,
         },
+        onCreateCalendar: noop,
+        onBackFromSearch: noop,
     };
 
     return (

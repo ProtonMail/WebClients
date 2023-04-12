@@ -1,4 +1,14 @@
-import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import {
+    Dispatch,
+    MutableRefObject,
+    SetStateAction,
+    useCallback,
+    useEffect,
+    useMemo,
+    useReducer,
+    useRef,
+    useState
+} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -65,7 +75,7 @@ import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
 
-const { DAY, WEEK, MONTH } = VIEWS;
+const { DAY, WEEK, MONTH, SEARCH } = VIEWS;
 
 const getRange = (view: VIEWS, range: number) => {
     if (!range) {
@@ -78,6 +88,7 @@ const getRange = (view: VIEWS, range: number) => {
     return Math.min(max, 5);
 };
 
+// Non-standard reducer, where we don't pass an action, but rather directly the new state
 const customReducer = (oldState: { [key: string]: any }, newState: { [key: string]: any }) => {
     const keys = Object.keys(newState);
     for (const key of keys) {
@@ -108,7 +119,8 @@ interface Props {
     userSettings: UserSettings;
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
-    eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
+    eventTargetAction: EventTargetAction | undefined;
+    setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
     shareCalendarInvitationRef: MutableRefObject<{ calendarID: string; invitationID: string } | undefined>;
     startupModalState: { hasModal?: boolean; isOpen: boolean };
     getOpenedMailEvents: () => OpenedMailEvent[];
@@ -129,7 +141,8 @@ const CalendarContainer = ({
     userSettings,
     calendarUserSettings,
     calendarsEventsCacheRef,
-    eventTargetActionRef,
+    eventTargetAction,
+    setEventTargetAction,
     shareCalendarInvitationRef,
     startupModalState,
     getOpenedMailEvents,
@@ -147,6 +160,7 @@ const CalendarContainer = ({
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
+    const lastNonSearchViewRef = useRef<VIEWS | undefined>();
 
     const [nowDate, setNowDate] = useState(() => new Date());
     const [localTimezoneId, setLocalTimezoneId] = useState<string>();
@@ -170,7 +184,7 @@ const CalendarContainer = ({
         date: urlDate,
     } = useMemo(() => fromUrlParams(location.pathname), [location.pathname]);
 
-    // In the same to get around setStates not being batched in the range selector callback.
+    // In the same state object to get around setStates not being batched in the range selector callback.
     const [{ view: customView, range: customRange, date: customUtcDate }, setCustom] = useReducer(
         customReducer,
         undefined,
@@ -183,6 +197,9 @@ const CalendarContainer = ({
         // We only care about new dates in the URL when the browser moves back or forward, not from push states coming from the app.
         if (history.action === 'POP') {
             setCustom({ view: urlView, range: urlRange, date: urlDate });
+            if (urlView !== SEARCH) {
+                lastNonSearchViewRef.current = urlView;
+            }
         }
     }, [urlDate, urlView, urlRange]);
 
@@ -269,7 +286,7 @@ const CalendarContainer = ({
             return requestedView;
         }
         if (isNarrow) {
-            return WEEK;
+            return requestedView === SEARCH ? SEARCH : WEEK;
         }
 
         if (SUPPORTED_VIEWS_IN_APP.includes(requestedView)) {
@@ -366,6 +383,7 @@ const CalendarContainer = ({
 
     const handleChangeView = useCallback((newView: VIEWS) => {
         setCustom({ view: newView, range: undefined });
+        lastNonSearchViewRef.current = newView;
         scrollToNow();
     }, []);
 
@@ -382,6 +400,13 @@ const CalendarContainer = ({
         setCustom({ date: newDate });
     }, []);
 
+    const handleChangeDateAndRevertView = useCallback((newDate: Date) => {
+        if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
+            return;
+        }
+        setCustom({ date: newDate, view: lastNonSearchViewRef.current || defaultView });
+    }, []);
+
     const handleChangeDateRange = useCallback((newDate: Date, numberOfDays: number, resetRange?: boolean) => {
         if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
             return;
@@ -392,6 +417,7 @@ const CalendarContainer = ({
                 range: Math.floor(numberOfDays / 7),
                 date: newDate,
             });
+            lastNonSearchViewRef.current = MONTH;
             return;
         }
         setCustom({
@@ -399,6 +425,7 @@ const CalendarContainer = ({
             range: resetRange ? undefined : numberOfDays,
             date: newDate,
         });
+        lastNonSearchViewRef.current = WEEK;
     }, []);
 
     const handleClickDateWeekView = useCallback((newDate: Date) => {
@@ -406,6 +433,15 @@ const CalendarContainer = ({
             return;
         }
         setCustom({ view: DAY, range: undefined, date: newDate });
+        lastNonSearchViewRef.current = DAY;
+    }, []);
+
+    const handleSearch = useCallback(() => {
+        setCustom({ view: SEARCH, range: undefined });
+    }, []);
+
+    const handleGoBackFromSearch = useCallback(() => {
+        setCustom({ view: lastNonSearchViewRef.current || defaultView });
     }, []);
 
     const [createEventCalendarBootstrap, loadingCreateEventCalendarBootstrap] = useCalendarBootstrap(
@@ -440,11 +476,14 @@ const CalendarContainer = ({
                     ? undefined
                     : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
             }
+            onBackFromSearch={handleGoBackFromSearch}
             onClickToday={handleClickToday}
             onChangeDate={handleChangeDate}
             onChangeDateRange={handleChangeDateRange}
             onChangeView={handleChangeView}
-            containerRef={setContainerRef}
+            containerRef={containerRef}
+            setcontainerRef={setContainerRef}
+            onSearch={handleSearch}
             addresses={addresses}
             user={user}
         >
@@ -481,6 +520,7 @@ const CalendarContainer = ({
                 events={calendarsEvents}
                 onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
+                onChangeDateAndRevertView={handleChangeDateAndRevertView}
                 onClickToday={handleClickToday}
                 isEventCreationDisabled={isEventCreationDisabled}
                 onInteraction={(active: boolean) => setDisableCreate(active)}
@@ -494,7 +534,8 @@ const CalendarContainer = ({
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
                 calendarsEventsCacheRef={calendarsEventsCacheRef}
-                eventTargetActionRef={eventTargetActionRef}
+                eventTargetAction={eventTargetAction}
+                setEventTargetAction={setEventTargetAction}
                 getOpenedMailEvents={getOpenedMailEvents}
             />
         </CalendarContainerView>

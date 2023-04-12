@@ -14,14 +14,15 @@ import {
 import { getEvent, queryEventsIDs, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { getSearchParams as getSearchParamsFromURL } from '@proton/shared/lib/helpers/url';
+import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { Api } from '@proton/shared/lib/interfaces';
+import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarEventsIDsQuery, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { propertiesToAttendeeModel } from '../../components/eventModal/eventForm/propertiesToAttendeeModel';
+import { CalendarSearchQuery } from '../../containers/calendar/interface';
 import { ESAttendeeModel, ESCalendarMetadata, ESCalendarSearchParams } from '../../interfaces/encryptedSearch';
 import { CALENDAR_CORE_LOOP } from './constants';
 
@@ -30,7 +31,7 @@ export const getCalendarIDFromItemID = (itemID: string) => itemID.split('.')[0];
 export const getEventIDFromItemID = (itemID: string) => itemID.split('.')[1];
 
 const parseHashParams = (urlHash: string) => {
-    const result: Record<string, string> = {};
+    const result: SimpleMap<string> = {};
 
     return urlHash
         .slice(1)
@@ -43,9 +44,13 @@ const parseHashParams = (urlHash: string) => {
 };
 
 export const extractSearchParametersFromURL = (location: Location) => {
-    const hashParams = parseHashParams(location.hash);
-    const { q } = hashParams;
-    return q ? decodeURIComponent(q) : '';
+    const { keyword, begin, end } = parseHashParams(location.hash);
+
+    return {
+        keyword: keyword ? decodeURIComponent(keyword) : undefined,
+        begin,
+        end,
+    };
 };
 
 export const generateOrder = async (ID: string) => {
@@ -64,6 +69,16 @@ const stringToInt = (string: string | undefined): number | undefined => {
         return undefined;
     }
     return isNumber(string) ? parseInt(string, 10) : undefined;
+};
+
+export const generatePathnameWithSearchParams = (location: Location, searchQuery: CalendarSearchQuery) => {
+    const parts = location.pathname.split('/');
+    parts[1] = 'search';
+
+    const pathname = parts.join('/');
+    const hash = stringifySearchParams(searchQuery as { [key: string]: string }, '#');
+
+    return pathname + hash;
 };
 
 const extractSearchParameters = (location: Location): ESCalendarSearchParams => {
@@ -140,7 +155,6 @@ export const getESEvent = async (
         Permissions: Event.Permissions,
         IsOrganizer: Event.IsOrganizer,
         IsProtonProtonInvite: Event.IsProtonProtonInvite,
-        IsPersonalMigrated: Event.IsPersonalMigrated,
         Author: Event.Author,
         StartTime: Event.StartTime,
         StartTimezone: Event.StartTimezone,

@@ -1,6 +1,8 @@
+import {getDtendProperty, propertyToUTCDate} from '@proton/shared/lib/calendar/vcalConverter';
+import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { differenceInHours } from 'date-fns';
 
-import { max } from '@proton/shared/lib/date-fns-utc';
+import { addDays, max } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -8,11 +10,33 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { EventModel, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import {EventModel, VcalVeventComponent, VisualCalendar} from '@proton/shared/lib/interfaces/calendar';
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
+
+export const getViewEventDateProperties = (eventComponent: VcalVeventComponent) => {
+    const utcStart = propertyToUTCDate(eventComponent.dtstart);
+    const unsafeEnd = propertyToUTCDate(getDtendProperty(eventComponent));
+
+    const isAllDay = getIsAllDay(eventComponent);
+
+    const modifiedEnd = isAllDay
+        ? addDays(unsafeEnd, -1) // All day event range is non-inclusive
+        : unsafeEnd;
+    const utcEnd = max(utcStart, modifiedEnd);
+
+    const isAllPartDay = !isAllDay && differenceInHours(utcEnd, utcStart) >= 24;
+
+    return {
+        utcStart,
+        utcEnd,
+
+        isAllDay,
+        isAllPartDay,
+    };
+};
 
 export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {
     const utcStart = getTimeInUtc(start, isAllDay);
