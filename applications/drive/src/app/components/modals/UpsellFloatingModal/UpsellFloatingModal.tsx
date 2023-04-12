@@ -3,7 +3,7 @@ import { MouseEvent as ReactMouseEvent, useLayoutEffect, useRef, useState } from
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Icon, ModalTwo, ModalTwoFooter, Tooltip } from '@proton/components/components';
+import { Icon, ModalStateProps, ModalTwo, ModalTwoFooter, Tooltip } from '@proton/components/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
 import { useActiveBreakpoint } from '@proton/components/hooks';
@@ -126,10 +126,9 @@ const MobileUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildPr
 
 interface Props {
     onResolve: () => void;
-    open: boolean;
     onlyOnce: boolean;
 }
-const UpsellFloatingModal = ({ onResolve, open, onlyOnce = false }: Props) => {
+const UpsellFloatingModal = ({ onlyOnce = false, ...modalProps }: Props & ModalStateProps) => {
     const { isNarrow } = useActiveBreakpoint();
     const [wasOpened, setWasOpened] = useState(false);
 
@@ -140,8 +139,7 @@ const UpsellFloatingModal = ({ onResolve, open, onlyOnce = false }: Props) => {
     };
 
     const props = {
-        open,
-        onClose: onResolve,
+        ...modalProps,
         onBlockNewOpening: handleBlockNewOpening,
     };
 
