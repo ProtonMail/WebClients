@@ -11,6 +11,7 @@ import {
     useApi,
     useAuthentication,
     useEventManager,
+    useGetAddresses,
     useIsDeviceRecoveryAvailable,
     useIsDeviceRecoveryEnabled,
     useModals,
@@ -35,6 +36,7 @@ const UserKeysSections = () => {
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
     const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
+    const getAddresses = useGetAddresses();
 
     const existingAlgorithms = userKeysDisplay.reduce<AlgorithmInfo[]>(
         (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
@@ -72,9 +74,13 @@ const UserKeysSections = () => {
     };
 
     const onAdd = async (encryptionConfig: EncryptionConfig) => {
+        const addresses = await getAddresses();
+
         const newKey = await addUserKeysProcess({
             api,
             encryptionConfig,
+            userKeys,
+            addresses,
             passphrase: authentication.getPassword(),
         });
 
