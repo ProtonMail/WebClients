@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import {
@@ -18,7 +18,9 @@ const RetentionDaysSection = () => {
     const { revisionRetentionDays, hasValueChanged, isLoading, isSubmitLoading, handleSubmit, handleChange } =
         useRevisionRetentionDays(hasPaidDrive, showConfirmActionModal);
 
-    const retentionLabel = (nbDays: RevisionRetentionDaysSetting) => c('Label').t`${nbDays} days`;
+    const retentionLabelForDays = (nbDay: number) => c('Label').ngettext(msgid`${nbDay} day`, `${nbDay} days`, nbDay);
+    const retentionLabelForYears = (nbYear: number) =>
+        c('Label').ngettext(msgid`${nbYear} year`, `${nbYear} years`, nbYear);
 
     const options: {
         value: RevisionRetentionDaysSetting;
@@ -30,11 +32,11 @@ const RetentionDaysSection = () => {
             label: c('Label').t`Don't keep versions`,
             disabled: !hasPaidDrive,
         },
-        { value: 7, label: retentionLabel(7) },
-        { value: 30, label: retentionLabel(30), disabled: !hasPaidDrive },
-        { value: 180, label: retentionLabel(180), disabled: !hasPaidDrive },
-        { value: 365, label: retentionLabel(365), disabled: !hasPaidDrive },
-        { value: 3650, label: c('Label').t`10 years`, disabled: !hasPaidDrive },
+        { value: 7, label: retentionLabelForDays(7) },
+        { value: 30, label: retentionLabelForDays(30), disabled: !hasPaidDrive },
+        { value: 180, label: retentionLabelForDays(180), disabled: !hasPaidDrive },
+        { value: 365, label: retentionLabelForDays(365), disabled: !hasPaidDrive },
+        { value: 3650, label: retentionLabelForYears(10), disabled: !hasPaidDrive },
     ];
 
     return (
