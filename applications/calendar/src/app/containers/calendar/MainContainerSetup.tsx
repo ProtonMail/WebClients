@@ -17,7 +17,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
-import EncryptedSearchProvider from '../EncryptedSearchProvider';
+import EncryptedSearchLibraryProvider from '../EncryptedSearchLibraryProvider';
 import AlarmContainer from '../alarms/AlarmContainer';
 import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
@@ -30,6 +30,7 @@ import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
 import { EventTargetAction } from './interface';
+import CalendarSearchProvider from './search/CalendarSearchProvider';
 
 interface Props {
     calendars: VisualCalendar[];
@@ -61,7 +62,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
     const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);
 
-    const eventTargetActionRef = useRef<EventTargetAction>();
+    const [eventTargetAction, setEventTargetAction] = useState<EventTargetAction>();
     const shareCalendarInvitationRef = useRef<{ calendarID: string; invitationID: string }>();
 
     const activeAddresses = useMemo(() => {
@@ -86,7 +87,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
     });
 
     return (
-        <EncryptedSearchProvider calendarIDs={allCalendarIDs}>
+        <EncryptedSearchLibraryProvider calendarIDs={allCalendarIDs}>
             <ContactEmailsProvider>
                 <CalendarStartupModals setStartupModalState={setStartupModalState} />
                 <Switch>
@@ -96,33 +97,36 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
                             tzid={tzid}
                             addresses={addresses}
                             calendars={calendars}
-                            eventTargetActionRef={eventTargetActionRef}
+                            setEventTargetAction={setEventTargetAction}
                         />
                     </Route>
                     <Route path={'/share'}>
                         <ShareInvitationContainer shareCalendarInvitationRef={shareCalendarInvitationRef} />
                     </Route>
                     <Route path="/">
-                        <CalendarContainer
-                            tzid={tzid}
-                            setCustomTzid={setCustomTzid}
-                            isNarrow={isNarrow}
-                            drawerView={drawerView}
-                            user={user}
-                            addresses={addresses}
-                            activeAddresses={activeAddresses}
-                            visibleCalendars={visibleCalendars}
-                            activeCalendars={activeCalendars}
-                            calendars={calendars}
-                            createEventCalendar={preferredPersonalActiveCalendar}
-                            calendarsEventsCacheRef={calendarsEventsCacheRef}
-                            calendarUserSettings={calendarUserSettings}
-                            userSettings={userSettings}
-                            eventTargetActionRef={eventTargetActionRef}
-                            shareCalendarInvitationRef={shareCalendarInvitationRef}
-                            startupModalState={startupModalState}
-                            getOpenedMailEvents={getOpenedMailEvents}
-                        />
+                        <CalendarSearchProvider>
+                            <CalendarContainer
+                                tzid={tzid}
+                                setCustomTzid={setCustomTzid}
+                                isNarrow={isNarrow}
+                                drawerView={drawerView}
+                                user={user}
+                                addresses={addresses}
+                                activeAddresses={activeAddresses}
+                                visibleCalendars={visibleCalendars}
+                                activeCalendars={activeCalendars}
+                                calendars={calendars}
+                                createEventCalendar={preferredPersonalActiveCalendar}
+                                calendarsEventsCacheRef={calendarsEventsCacheRef}
+                                calendarUserSettings={calendarUserSettings}
+                                userSettings={userSettings}
+                                eventTargetAction={eventTargetAction}
+                                setEventTargetAction={setEventTargetAction}
+                                shareCalendarInvitationRef={shareCalendarInvitationRef}
+                                startupModalState={startupModalState}
+                                getOpenedMailEvents={getOpenedMailEvents}
+                            />
+                        </CalendarSearchProvider>
                     </Route>
                     <Redirect to="/" />
                 </Switch>
@@ -133,7 +137,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
                     calendarsAlarmsCacheRef={calendarAlarmsCacheRef}
                 />
             </ContactEmailsProvider>
-        </EncryptedSearchProvider>
+        </EncryptedSearchLibraryProvider>
     );
 };
 

@@ -1,22 +1,26 @@
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
+const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE, SEARCH } = VIEWS;
+
 const URL_PARAMS_VIEWS_CONVERSION: { [key: string]: VIEWS } = {
-    month: VIEWS.MONTH,
-    week: VIEWS.WEEK,
-    day: VIEWS.DAY,
-    mail: VIEWS.MAIL,
-    drive: VIEWS.DRIVE,
+    month: MONTH,
+    week: WEEK,
+    day: DAY,
+    mail: MAIL,
+    drive: DRIVE,
+    search: SEARCH,
 };
 export const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
-    [VIEWS.YEAR]: 'year',
-    [VIEWS.AGENDA]: 'agenda',
-    [VIEWS.CUSTOM]: 'custom',
-    [VIEWS.MONTH]: 'month',
-    [VIEWS.WEEK]: 'week',
-    [VIEWS.DAY]: 'day',
-    [VIEWS.MAIL]: 'mail',
-    [VIEWS.DRIVE]: 'drive',
+    [YEAR]: 'year',
+    [AGENDA]: 'agenda',
+    [CUSTOM]: 'custom',
+    [MONTH]: 'month',
+    [WEEK]: 'week',
+    [DAY]: 'day',
+    [MAIL]: 'mail',
+    [DRIVE]: 'drive',
+    [SEARCH]: 'search',
 };
 
 export const getUrlView = (urlView: string) => {

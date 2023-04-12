@@ -1,9 +1,6 @@
-import { differenceInHours } from 'date-fns';
-
-import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { getIsAllDay, getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
-import { addDays, max } from '@proton/shared/lib/date-fns-utc';
+import { getIsRecurring, getRecurrenceIdDate, getUidValue} from '@proton/shared/lib/calendar/veventHelper';
 import { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+import {getViewEventDateProperties} from '../../eventHelper';
 
 import { CalendarEventStoreRecord, CalendarEventsCache, SharedVcalVeventComponent } from '../interface';
 import { getIsCalendarEvent } from './helper';
@@ -14,17 +11,7 @@ export const getCalendarEventStoreRecord = (
     eventComponent: SharedVcalVeventComponent,
     eventData: CalendarEvent | CalendarEventSharedData
 ): CalendarEventStoreRecord => {
-    const utcStart = propertyToUTCDate(eventComponent.dtstart);
-    const unsafeEnd = propertyToUTCDate(getDtendProperty(eventComponent));
-
-    const isAllDay = getIsAllDay(eventComponent);
-
-    const modifiedEnd = isAllDay
-        ? addDays(unsafeEnd, -1) // All day event range is non-inclusive
-        : unsafeEnd;
-    const utcEnd = max(utcStart, modifiedEnd);
-
-    const isAllPartDay = !isAllDay && differenceInHours(utcEnd, utcStart) >= 24;
+    const { utcStart, utcEnd, isAllDay, isAllPartDay} = getViewEventDateProperties(eventComponent)
 
     return {
         utcStart,

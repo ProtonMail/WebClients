@@ -10,7 +10,8 @@ import {
 import { createExdateMap } from '../exdate';
 import { getInternalDateTimeValue, internalValueToIcalValue } from '../vcal';
 import { getDtendProperty, propertyToUTCDate } from '../vcalConverter';
-import { getIsAllDay, getPropertyTzid } from '../vcalHelper';
+import { getPropertyTzid } from '../vcalHelper';
+import {getIsAllDay} from '../veventHelper';
 
 interface CacheInner {
     dtstart: VcalDateOrDateTimeValue;

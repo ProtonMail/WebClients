@@ -1,0 +1,81 @@
+import { Ref, forwardRef, useRef } from 'react';
+
+import { c } from 'ttag';
+
+import { Button, Input } from '@proton/atoms';
+import { Icon } from '@proton/components';
+
+interface Props {
+    onOpen: () => void;
+    value: string;
+    loading: boolean;
+    onChange: (newValue: string) => void;
+}
+
+const CalendarSearchInput = ({ value, loading, onOpen, onChange }: Props, ref: Ref<HTMLInputElement>) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const handleClear = () => {
+        onChange('');
+        onOpen();
+    };
+
+    const handleFocus = () => {
+        // Blur the input to avoid the focus to be triggered after search submission
+        inputRef.current?.blur();
+        onOpen();
+    };
+
+    return (
+        <div className="searchbox flex" role="search">
+            <div ref={ref} className="w100 m-auto">
+                <Input
+                    ref={inputRef}
+                    inputClassName="cursor-text"
+                    value={value}
+                    placeholder={c('Placeholder').t`Search events`}
+                    onFocus={handleFocus}
+                    data-testid="search-keyword"
+                    readOnly
+                    prefix={
+                        loading ? (
+                            <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
+                        ) : (
+                            <Button
+                                type="submit"
+                                icon
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                className="rounded-sm no-pointer-events"
+                                title={c('Action').t`Search`}
+                                onClick={onOpen}
+                                data-shorcut-target="searchbox-button"
+                            >
+                                <Icon name="magnifier" alt={c('Action').t`Search`} />
+                            </Button>
+                        )
+                    }
+                    suffix={
+                        value.length ? (
+                            <Button
+                                type="button"
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                className="rounded-sm"
+                                title={c('Action').t`Clear search`}
+                                onClick={handleClear}
+                                data-testid="clear-button"
+                            >
+                                {c('Action').t`Clear`}
+                            </Button>
+                        ) : null
+                    }
+                />
+            </div>
+        </div>
+    );
+};
+
+export default forwardRef(CalendarSearchInput);

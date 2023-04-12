@@ -144,13 +144,16 @@ export interface EncryptedSearchDB extends DBSchema {
  * Collection of fields to determine UI elements during indexing (e.g. progress bar, ...)
  */
 export interface ESIndexingState {
+    // number of items indexed so far
     esProgress: number;
+    // estimated time (in minutes) expected for indexing to finish
     estimatedMinutes: number;
     startTime: number;
     endTime: number;
     oldestTime: number;
     esPrevProgress: number;
     totalIndexingItems: number;
+    // progress value in percentage, i.e. number from 0 to 100
     currentProgressValue: number;
 }
 
