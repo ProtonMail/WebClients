@@ -4,7 +4,10 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 
-import { Block, Bordered, ButtonGroup, DropdownMenu, Icon, IconName, SimpleDropdown } from '../../../components';
+import { ButtonGroup } from '../button';
+import { Block, Bordered } from '../container';
+import { DropdownMenu, SimpleDropdown } from '../dropdown';
+import { Icon, IconName } from '../icon';
 
 interface Props {
     title: string;
@@ -13,7 +16,7 @@ interface Props {
     items?: ReactNode[];
 }
 
-const VPNClientCard = ({ title, link, items, icon }: Props) => {
+const DownloadClientCard = ({ title, link, items, icon }: Props) => {
     return (
         <Bordered className="rounded-lg flex flex-column flex-align-items-center pt2 pb2 pl3 pr3 mt1 mr1">
             <div>
@@ -46,4 +49,4 @@ const VPNClientCard = ({ title, link, items, icon }: Props) => {
         </Bordered>
     );
 };
-export default VPNClientCard;
+export default DownloadClientCard;
