@@ -45,6 +45,7 @@ const DummyCalendarContainerView = () => {
             containerRef={containerRef}
             addresses={[]}
             calendars={[]}
+            user={{} as any}
             calendarUserSettings={calendarUserSettings}
         >
             <TimeGrid
