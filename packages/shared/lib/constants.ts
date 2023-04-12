@@ -39,12 +39,12 @@ export const CALENDAR_SHORT_APP_NAME = 'Calendar';
 export const CALENDAR_APP_NAME = `${BRAND_NAME} ${CALENDAR_SHORT_APP_NAME}`;
 export const DRIVE_SHORT_APP_NAME = 'Drive';
 export const DRIVE_APP_NAME = `${BRAND_NAME} ${DRIVE_SHORT_APP_NAME}`;
+export const PASS_SHORT_APP_NAME = 'Pass';
+export const PASS_APP_NAME = `${BRAND_NAME} ${PASS_SHORT_APP_NAME}`;
 export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
-export const PASS_APP_NAME = 'Proton Pass';
-export const PASS_SHORT_APP_NAME = 'Pass';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -54,6 +54,7 @@ export const APPS = {
     PROTONCONTACTS: 'proton-contacts',
     PROTONDRIVE: 'proton-drive',
     PROTONCALENDAR: 'proton-calendar',
+    PROTONPASS: 'proton-pass',
     PROTONVPN_SETTINGS: 'proton-vpn-settings',
     PROTONADMIN: 'proton-admin',
     PROTONVERIFICATION: 'proton-verify',
@@ -134,6 +135,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
     },
+    [APPS.PROTONPASS]: {
+        publicPath: '/pass',
+        subdomain: '',
+        name: PASS_APP_NAME,
+        bareName: PASS_SHORT_APP_NAME,
+        clientID: 'web-pass',
+        icon: 'brand-proton-pass',
+        settingsSlug: 'pass',
+    },
     [APPS.PROTONPASSBROWSEREXTENSION]: {
         publicPath: '',
         subdomain: '',
@@ -200,6 +210,8 @@ export const SSO_PATHS = {
     DRIVE_SIGN_IN: '/drive',
     VPN_SIGNUP: '/vpn/signup',
     VPN_SIGN_IN: '/vpn',
+    PASS_SIGNUP: '/pass/signup',
+    PASS_SIGN_IN: '/pass',
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
