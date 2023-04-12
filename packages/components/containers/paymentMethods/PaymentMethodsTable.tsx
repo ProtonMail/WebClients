@@ -37,7 +37,7 @@ const MethodCell = ({ method }: { method: PaymentMethod }) => {
 
 const PaymentMethodsTable = ({ methods, loading }: Props) => {
     if (!loading && !methods.length) {
-        return <p>{c('Info').t`You have no saved payment methods.`}</p>;
+        return <p data-testid="no-payments">{c('Info').t`You have no saved payment methods.`}</p>;
     }
 
     const orderedMethods = orderBy(methods, 'Order');
