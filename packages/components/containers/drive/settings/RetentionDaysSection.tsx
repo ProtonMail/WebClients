@@ -34,7 +34,7 @@ const RetentionDaysSection = () => {
         { value: 30, label: retentionLabel(30), disabled: !hasPaidDrive },
         { value: 180, label: retentionLabel(180), disabled: !hasPaidDrive },
         { value: 365, label: retentionLabel(365), disabled: !hasPaidDrive },
-        { value: 3650, label: c('Label').t`Indefinitely`, disabled: !hasPaidDrive },
+        { value: 3650, label: c('Label').t`10 years`, disabled: !hasPaidDrive },
     ];
 
     return (
