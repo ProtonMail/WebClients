@@ -39,7 +39,7 @@ const RetentionDaysSection = () => {
 
     return (
         <div className="w500p">
-            <RevisionsUpgradeBanner />
+            {!hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
             <form className="flex flex-column flex-align-items-start flex-gap-0-5 mt-6" onSubmit={handleSubmit}>
                 {options.map((option) => {
                     const id = option.value.toString();
