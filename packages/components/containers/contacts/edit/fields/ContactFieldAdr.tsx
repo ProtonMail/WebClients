@@ -2,9 +2,9 @@ import { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Input } from '@proton/atoms';
 import { VCardAddress, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { InputTwo } from '../../../../components';
 import { generateUID } from '../../../../helpers';
 
 interface Props {
@@ -25,7 +25,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
     return (
         <>
             <div className="mb1">
-                <InputTwo
+                <Input
                     id={`${uid}-street`}
                     value={address.streetAddress || ''}
                     placeholder={c('Label').t`Street address`}
@@ -35,7 +35,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
             </div>
             {address.extendedAddress ? (
                 <div className="mb1">
-                    <InputTwo
+                    <Input
                         id={`${uid}-extended`}
                         value={address.extendedAddress || ''}
                         placeholder={c('Label').t`Extended address`}
@@ -45,7 +45,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 </div>
             ) : null}
             <div className="mb1">
-                <InputTwo
+                <Input
                     id={`${uid}-postalCode`}
                     value={address.postalCode || ''}
                     placeholder={c('Label').t`Postal code`}
@@ -54,7 +54,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 />
             </div>
             <div className="mb1">
-                <InputTwo
+                <Input
                     id={`${uid}-locality`}
                     value={address.locality || ''}
                     placeholder={c('Label').t`City`}
@@ -64,7 +64,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
             </div>
             {address.postOfficeBox ? (
                 <div className="mb1">
-                    <InputTwo
+                    <Input
                         id={`${uid}-postBox`}
                         value={address.postOfficeBox || ''}
                         placeholder={c('Label').t`Post office box`}
@@ -75,7 +75,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
             ) : null}
             <div className="mb1">
                 <label className="text-sm color-weak" htmlFor={`${uid}-region`} />
-                <InputTwo
+                <Input
                     id={`${uid}-region`}
                     value={address.region || ''}
                     placeholder={c('Label').t`Region`}
@@ -84,7 +84,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 />
             </div>
             <div>
-                <InputTwo
+                <Input
                     id={`${uid}-country`}
                     value={address.country || ''}
                     placeholder={c('Label').t`Country`}

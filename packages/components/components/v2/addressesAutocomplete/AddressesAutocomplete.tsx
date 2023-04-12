@@ -1,5 +1,6 @@
 import { KeyboardEvent, RefObject, forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
+import { Input } from '@proton/atoms';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -22,7 +23,6 @@ import Icon from '../../icon/Icon';
 import { Option } from '../../option';
 import { Marks } from '../../text';
 import InputField, { InputFieldProps } from '../field/InputField';
-import Input from '../input/Input';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'> {
     id: string;
