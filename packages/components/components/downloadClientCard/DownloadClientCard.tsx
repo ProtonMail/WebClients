@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 
 import { ButtonGroup } from '../button';
-import { Block, Bordered } from '../container';
 import { DropdownMenu, SimpleDropdown } from '../dropdown';
 import { Icon, IconName } from '../icon';
 
@@ -17,25 +16,25 @@ interface Props {
 }
 
 const DownloadClientCard = ({ title, link, items, icon }: Props) => {
+    const downloadButton = (
+        <ButtonLike as={Href} href={link}>
+            {c('Action').t`Download`}
+            <span className="sr-only">{title}</span>
+        </ButtonLike>
+    );
     return (
-        <Bordered className="rounded-lg flex flex-column flex-align-items-center pt2 pb2 pl3 pr3 mt1 mr1">
-            <div>
-                <Icon size={60} name={icon} />
-            </div>
-            <Block>{title}</Block>
+        <div
+            className="border rounded-lg flex flex-column flex-align-items-center flex-justify-center min-w-custom p-8"
+            style={{ '--min-width-custom': '216px' }}
+        >
+            <Icon className="mb-2" size={60} name={icon} />
+            <div className="mb-6">{title}</div>
+
             {!items ? (
-                <div className="pl1 pr1 flex mt1 flex-justify-center">
-                    <ButtonLike as={Href} href={link}>
-                        {c('Action').t`Download`}
-                        <span className="sr-only">{title}</span>
-                    </ButtonLike>
-                </div>
+                downloadButton
             ) : (
-                <ButtonGroup className="flex pl0-25 pr0-25 mt1 flex-justify-center">
-                    <ButtonLike as={Href} href={link}>
-                        {c('Action').t`Download`}
-                        <span className="sr-only">{title}</span>
-                    </ButtonLike>
+                <ButtonGroup>
+                    {downloadButton}
                     <SimpleDropdown
                         icon
                         as={Button}
@@ -46,7 +45,8 @@ const DownloadClientCard = ({ title, link, items, icon }: Props) => {
                     </SimpleDropdown>
                 </ButtonGroup>
             )}
-        </Bordered>
+        </div>
     );
 };
+
 export default DownloadClientCard;
