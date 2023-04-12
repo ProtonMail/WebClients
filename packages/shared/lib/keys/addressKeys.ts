@@ -2,9 +2,12 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
-import { EncryptionConfig, KeyPair } from '../interfaces';
+import { Address, AddressKey, DecryptedKey, EncryptionConfig, KeyPair } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 
 interface EncryptAddressKeyTokenArguments {
@@ -186,4 +189,87 @@ export const generateAddressKey = async ({
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
 
     return { privateKey, privateKeyArmored };
+};
+
+interface ReplaceAddressTokens {
+    privateKey: PrivateKeyReference;
+    userKeys: DecryptedKey[];
+    addresses: Address[];
+}
+
+const replaceAddressKeyToken = async ({
+    addressKey,
+    decryptionKeys,
+    encryptionKey,
+}: {
+    addressKey: AddressKey;
+    decryptionKeys: PrivateKeyReference[];
+    encryptionKey: PrivateKeyReference;
+}) => {
+    const sessionKey = await CryptoProxy.decryptSessionKey({
+        armoredMessage: addressKey.Token,
+        decryptionKeys,
+    });
+
+    if (!sessionKey) {
+        return undefined;
+    }
+
+    const message = await CryptoProxy.decryptMessage({
+        armoredMessage: addressKey.Token,
+        sessionKeys: sessionKey,
+        format: 'binary',
+    });
+
+    const result = await CryptoProxy.encryptSessionKey({
+        ...sessionKey,
+        encryptionKeys: [encryptionKey],
+        format: 'binary',
+    });
+
+    const signature = await CryptoProxy.signMessage({
+        binaryData: message.data,
+        signingKeys: [encryptionKey],
+        detached: true,
+    });
+
+    return {
+        id: addressKey.ID,
+        keyPacket: uint8ArrayToBase64String(result),
+        signature,
+    };
+};
+
+export const getReplacedAddressKeyTokens = async ({ addresses, userKeys, privateKey }: ReplaceAddressTokens) => {
+    const { privateKeys } = splitKeys(userKeys);
+    const reEncryptedTokens = await Promise.all(
+        addresses.map(async (address) => {
+            const result = await Promise.all(
+                address.Keys.map(async (addressKey) => {
+                    try {
+                        const result = await replaceAddressKeyToken({
+                            addressKey,
+                            encryptionKey: privateKey,
+                            decryptionKeys: privateKeys,
+                        });
+                        if (!result) {
+                            return undefined;
+                        }
+                        return {
+                            AddressKeyID: result.id,
+                            KeyPacket: result.keyPacket,
+                            Signature: result.signature,
+                        };
+                    } catch (e) {
+                        return undefined;
+                    }
+                })
+            );
+            return result.filter(isTruthy);
+        })
+    );
+
+    return {
+        AddressKeyTokens: reEncryptedTokens.flat(),
+    };
 };
