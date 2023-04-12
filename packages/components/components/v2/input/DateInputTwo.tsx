@@ -3,6 +3,7 @@ import { ChangeEvent, FocusEvent, useEffect, useMemo, useState } from 'react';
 import { Locale, addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
+import { Input, InputProps } from '@proton/atoms';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { generateUID } from '../../../helpers';
@@ -10,7 +11,6 @@ import { useHotkeys } from '../../../hooks';
 import Dropdown from '../../dropdown/Dropdown';
 import LocalizedMiniCalendar from '../../miniCalendar/LocalizedMiniCalendar';
 import { usePopperAnchor } from '../../popper';
-import InputTwo, { InputTwoProps } from '../input/Input';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'PP', { locale });
@@ -27,7 +27,7 @@ const getTemporaryInputFromValue = (value: Date | undefined) => {
 const DEFAULT_MIN = new Date(1900, 0, 1);
 const DEFAULT_MAX = new Date(2200, 0, 1);
 
-interface Props extends Omit<InputTwoProps, 'min' | 'max' | 'value' | 'onChange'> {
+interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     displayWeekNumbers?: boolean;
     weekStartsOn?: 0 | 2 | 1 | 6 | 5 | 4 | 3;
     value?: Date;
@@ -192,7 +192,7 @@ const DateInputTwo = ({
 
     return (
         <>
-            <InputTwo
+            <Input
                 type="text"
                 ref={anchorRef}
                 onFocus={handleFocusInput}

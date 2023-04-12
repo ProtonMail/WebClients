@@ -1,12 +1,10 @@
 import { ChangeEvent } from 'react';
 
+import { Input, InputProps } from '@proton/atoms';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { InputTwo } from '../../../../components';
-import { InputTwoProps } from '../../../../components/v2/input/Input';
-
-interface Props extends Omit<InputTwoProps, 'onChange'> {
+interface Props extends Omit<InputProps, 'onChange'> {
     vCardProperty: VCardProperty<string>;
     onChange: (vCardProperty: VCardProperty) => void;
 }
@@ -20,13 +18,7 @@ const ContactFieldString = ({ vCardProperty, onChange, ...rest }: Props) => {
     };
 
     return (
-        <InputTwo
-            value={vCardProperty.value}
-            placeholder={label}
-            onChange={handleChange}
-            data-testid={label}
-            {...rest}
-        />
+        <Input value={vCardProperty.value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />
     );
 };
 

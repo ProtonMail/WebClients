@@ -2,7 +2,9 @@ import { KeyboardEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Field, InputTwo } from '../../../components';
+import { Input } from '@proton/atoms';
+
+import { Field } from '../../../components';
 import { classnames } from '../../../helpers';
 import { AdvancedSimpleFilterModalModel, SimpleFilterModalModel, Step } from '../interfaces';
 
@@ -52,7 +54,7 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
                     {c('Label').t`Filter Name`}
                 </label>
                 <Field className={classnames([!isNarrow && 'ml1'])}>
-                    <InputTwo
+                    <Input
                         id="name"
                         placeholder={c('Placeholder').t`Name`}
                         value={model.name}

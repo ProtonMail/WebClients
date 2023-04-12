@@ -2,8 +2,8 @@ import { Ref, forwardRef, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, InputTwo } from '@proton/components';
+import { Button, Input } from '@proton/atoms';
+import { Icon } from '@proton/components';
 
 interface Props {
     onOpen: () => void;
@@ -29,7 +29,7 @@ const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<H
     return (
         <div className="searchbox flex" role="search">
             <div ref={ref} className="w100 mauto">
-                <InputTwo
+                <Input
                     ref={inputRef}
                     inputClassName="cursor-text"
                     disabled={loading}
