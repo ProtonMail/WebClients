@@ -13,13 +13,13 @@ import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { isFocusable } from 'tabbable';
 
+import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
 
 import { FormContext } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
-import Input from '../input/Input';
 
 export type NodeOrBoolean = ReactNode | boolean;
 

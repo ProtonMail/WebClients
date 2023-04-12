@@ -3,11 +3,11 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Input } from '@proton/atoms';
 import {
     AutocompleteList,
     Icon,
     IconName,
-    InputTwo,
     Marks,
     Option,
     useAutocomplete,
@@ -124,7 +124,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
     return (
         <>
             <div className="searchbox flex-item-centered-vert">
-                <InputTwo
+                <Input
                     {...inputProps}
                     placeholder={c('Placeholder').t`Search settings`}
                     prefix={<Icon name="magnifier" alt={c('Action').t`Search settings`} />}

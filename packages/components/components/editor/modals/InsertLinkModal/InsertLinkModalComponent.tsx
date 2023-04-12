@@ -2,7 +2,7 @@ import { ChangeEvent, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button, Href, Input } from '@proton/atoms';
 import { useMailSettings } from '@proton/components/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
@@ -16,7 +16,6 @@ import Label from '../../../label/Label';
 import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
 import { Option } from '../../../option';
 import { SelectTwo } from '../../../selectTwo';
-import { InputTwo } from '../../../v2';
 import { InsertLinkSelectionType } from './InsertLinkModal';
 
 export interface InsertLinkModalProps {
@@ -112,7 +111,7 @@ const InsertLinkModalComponent = ({
                                 {i18n[type].label}
                             </Label>
                             <Field>
-                                <InputTwo
+                                <Input
                                     id="link-modal-url"
                                     value={url}
                                     onChange={handleUrlChange}
@@ -131,7 +130,7 @@ const InsertLinkModalComponent = ({
                                         : c('Info').t`Text to display`}
                                 </Label>
                                 <Field>
-                                    <InputTwo
+                                    <Input
                                         id="link-modal-label"
                                         value={label}
                                         onChange={(event: ChangeEvent<HTMLInputElement>) =>
