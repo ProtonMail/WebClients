@@ -60,7 +60,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const { createNotification } = useNotifications();
 
     const [addresses] = useAddresses();
-    const [members = []] = useMembers();
+    const [members = [], loadingMembers] = useMembers();
     const [loading, withLoading] = useLoading();
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
     const [organization] = useOrganization();
@@ -273,7 +273,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                         {c('Action').t`Close`}
                     </Button>
                 )}
-                <Button loading={loading} type="submit" color="norm">
+                <Button disabled={loadingMembers} loading={loading} type="submit" color="norm">
                     {c('Action').t`Submit`}
                 </Button>
             </ModalFooter>
