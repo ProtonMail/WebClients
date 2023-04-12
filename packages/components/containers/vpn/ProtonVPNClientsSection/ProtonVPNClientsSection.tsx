@@ -106,7 +106,7 @@ const ProtonVPNClientsSection = () => {
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`macOS`}
-                    icon="brand-apple"
+                    icon="brand-mac"
                     link="https://protonvpn.com/download-macos/"
                 />
                 <DownloadClientCard
