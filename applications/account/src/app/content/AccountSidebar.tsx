@@ -65,6 +65,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                     {app === APPS.PROTONCALENDAR && <CalendarSettingsSidebar prefix={prefix} {...routes.calendar} />}
                     {app === APPS.PROTONDRIVE && <SidebarListWrapper prefix={prefix} {...routes.drive} />}
                     {app === APPS.PROTONVPN_SETTINGS && <SidebarListWrapper prefix={prefix} {...routes.vpn} />}
+                    {app === APPS.PROTONPASS && <SidebarListWrapper prefix={prefix} {...routes.pass} />}
                     {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}
                 </SidebarList>
             </SidebarNav>
