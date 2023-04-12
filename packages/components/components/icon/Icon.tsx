@@ -71,6 +71,7 @@ export type IconName =
     | 'brand-android'
     | 'brand-apple'
     | 'brand-bitcoin'
+    | 'brand-brave'
     | 'brand-chrome'
     | 'brand-discover'
     | 'brand-firefox'
