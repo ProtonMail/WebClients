@@ -446,6 +446,7 @@ const CalendarContainer = ({
             onChangeView={handleChangeView}
             containerRef={setContainerRef}
             addresses={addresses}
+            user={user}
         >
             {!!localTimezoneId && (
                 <AskUpdateTimezoneModal
