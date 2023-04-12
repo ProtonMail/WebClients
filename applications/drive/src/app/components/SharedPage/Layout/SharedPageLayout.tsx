@@ -48,7 +48,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                             </ButtonLike>
                         ) : (
                             <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_PRICING_PAGE} target="_blank">
-                                {c('Action').t`Create account`}
+                                {c('Action').t`Try for free`}
                             </ButtonLike>
                         )}
                     </div>
