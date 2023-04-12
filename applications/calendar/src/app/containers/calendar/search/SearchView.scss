@@ -1,0 +1,60 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.search {
+	&-result-line {
+		border-block-end: 1px solid var(--border-weak);
+
+		// @include media('<=medium') { // TO CHECK
+		@include media('<=#{em(1000, 16)}') {
+			border: 0;
+		}
+	}
+
+	&-day-number {
+		font-variant-numeric: tabular-nums;
+		border: 1px solid transparent;
+
+		[aria-current='date'] & {
+			border-color: var(--primary);
+			color: var(--primary);
+			background-color: var(--interaction-default);
+		}
+	}
+
+	&-calendar-border {
+		inline-size: rem(64);
+		border-radius: rem(4);
+		background-color: var(--calendar-color, transparent);
+		margin-inline-end: rem(8);
+		min-block-size: rem(28);
+
+		// @include media('<=#{em(1000, 16)}') {
+		@include media('<=medium') {
+			min-block-size: rem(84);
+		}
+
+		// @include media('<=#{em(870, 16)}') {
+		@include media('<=small') {
+			min-block-size: rem(34);
+		}
+
+		&::before {
+			content: '#{map.get($breakpoints, "medium")}';
+		}
+	}
+
+	&-event-time-details {
+		// @include media('<=#{em(870, 16)}') {
+		@include media('<=small') {
+			line-height: 1.3;
+		}
+	}
+
+	&-event-time,
+	&-event-summary {
+		@include media('<=small') {
+			font-size: rem(13);
+		}
+	}
+}

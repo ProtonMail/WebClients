@@ -23,7 +23,8 @@ import {
     YEARLY_TYPE,
 } from '@proton/shared/lib/calendar/constants';
 import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
-import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
+
+import {getIsAllDay, getRecurrenceId} from '@proton/shared/lib/calendar/veventHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address, RequireOnly, Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {

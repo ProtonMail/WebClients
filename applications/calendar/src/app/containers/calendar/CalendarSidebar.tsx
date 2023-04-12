@@ -53,6 +53,7 @@ export interface CalendarSidebarProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
+    isSearchView: boolean;
     expanded?: boolean;
     isNarrow: boolean;
     logo?: ReactNode;
@@ -60,12 +61,14 @@ export interface CalendarSidebarProps {
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
+    onBackFromSearch: () => void;
 }
 
 const CalendarSidebar = ({
     addresses,
     calendars,
     calendarUserSettings,
+    isSearchView,
     logo,
     expanded = false,
     isNarrow,
@@ -73,6 +76,7 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
+    onBackFromSearch,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
     const api = useApi();
@@ -166,10 +170,13 @@ const CalendarSidebar = ({
     const primaryAction = (
         <SidebarPrimaryButton
             data-testid="calendar-view:new-event-button"
-            disabled={!onCreateEvent}
-            onClick={onCreateEvent}
-            className="no-mobile"
-        >{c('Action').t`New event`}</SidebarPrimaryButton>
+            disabled={isSearchView ? false : !onCreateEvent}
+            onClick={isSearchView ? onBackFromSearch : onCreateEvent}
+            className="flex flex-align-items-center flex-justify-center flex-nowrap flex-gap-0-5 no-mobile"
+        >
+            {isSearchView && <Icon name="arrow-left" className="on-rtl-mirror flex-item-noshrink mr-1" />}
+            <span className="text-ellipsis">{isSearchView ? c('Action').t`Calendar` : c('Action').t`New event`}</span>
+        </SidebarPrimaryButton>
     );
 
     const [displayMyCalendars, setDisplayMyCalendars] = useState(true);

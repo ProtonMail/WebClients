@@ -1,8 +1,8 @@
+import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { useMemo } from 'react';
 
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
-import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 

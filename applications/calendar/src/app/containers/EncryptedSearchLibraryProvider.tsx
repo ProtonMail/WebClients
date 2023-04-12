@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -11,20 +11,28 @@ import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared
 import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchCalendarHelpers';
 import { processCalendarEvents, processCoreEvents } from '../helpers/encryptedSearch/esUtils';
 import {
+    ESCalendarContent,
     ESCalendarMetadata,
     ESCalendarSearchParams,
     EncryptedSearchFunctionsCalendar,
 } from '../interfaces/encryptedSearch';
 
-const EncryptedSearchContext = createContext<EncryptedSearchFunctionsCalendar>(defaultESContext);
-export const useEncryptedSearchContext = () => useContext(EncryptedSearchContext);
+interface EncryptedSearchLibrary extends EncryptedSearchFunctionsCalendar {
+    isLibraryInitialized: boolean;
+}
+
+const EncryptedSearchLibraryContext = createContext<EncryptedSearchLibrary>({
+    ...defaultESContext,
+    isLibraryInitialized: false,
+});
+export const useEncryptedSearchLibrary = () => useContext(EncryptedSearchLibraryContext);
 
 interface Props {
     children?: ReactNode;
     calendarIDs: string[];
 }
 
-const EncryptedSearchProvider = ({ calendarIDs, children }: Props) => {
+const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
     const api = useApi();
     const history = useHistory();
     const [{ ID: userID }] = useUser();
@@ -32,11 +40,13 @@ const EncryptedSearchProvider = ({ calendarIDs, children }: Props) => {
     const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
+    const [isLibraryInitialized, setIsLibraryInitialized] = useState(false);
+
     const esHelpers = getESHelpers({ api, calendarIDs, history, userID, getCalendarEventRaw });
 
     const successMessage = c('Success').t`Calendar search activated`;
 
-    const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams>({
+    const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent>({
         refreshMask: 1,
         esHelpers,
         successMessage,
@@ -89,10 +99,17 @@ const EncryptedSearchProvider = ({ calendarIDs, children }: Props) => {
     }, [calendarIDs]);
 
     useEffect(() => {
-        void esLibraryFunctions.initializeES();
+        const initializeLibrary = async () => {
+            // TODO: error handling
+            await esLibraryFunctions.initializeES();
+            setIsLibraryInitialized(true);
+        };
+        initializeLibrary();
     }, []);
 
-    return <EncryptedSearchContext.Provider value={esLibraryFunctions}>{children}</EncryptedSearchContext.Provider>;
+    const value = { ...esLibraryFunctions, isLibraryInitialized };
+
+    return <EncryptedSearchLibraryContext.Provider value={value}>{children}</EncryptedSearchLibraryContext.Provider>;
 };
 
-export default EncryptedSearchProvider;
+export default EncryptedSearchLibraryProvider;

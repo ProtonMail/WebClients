@@ -1,9 +1,10 @@
+import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import {
     Attendee,

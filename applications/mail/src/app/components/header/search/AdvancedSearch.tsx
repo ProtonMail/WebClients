@@ -210,7 +210,7 @@ const AdvancedSearch = ({
                     esEnabled={esEnabled}
                 />
             </div>
-            <div className={clsx(['pt-4 px-5 pb-0'])}>
+            <div className="pt-4 px-5 pb-0">
                 {showEncryptedSearch && <EncryptedSearchField esState={esState} />}
                 <div>
                     <LocationField
