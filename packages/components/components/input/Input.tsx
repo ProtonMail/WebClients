@@ -32,7 +32,7 @@ export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputEl
 }
 
 /**
- * @deprecated please use InputTwo or InputFieldTwo instead
+ * @deprecated please use Input from @proton/atoms or InputFieldTwo instead
  */
 const Input = forwardRef<HTMLInputElement, Props>(
     (

@@ -3,14 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import {
     Alert,
     Details,
     FileNameDisplay,
     Icon,
     InputFieldTwo,
-    InputTwo,
     Label,
     ModalTwoContent,
     ModalTwoFooter,
@@ -166,7 +165,7 @@ function GeneratedLinkState({
                     <p>{c('Info').jt`Shareable link for ${boldNameText}`}</p>
                     <Row className="on-mobile-mb0-5">
                         <div className="flex flex-item-fluid on-mobile-mb0-5">
-                            <InputTwo
+                            <Input
                                 readOnly
                                 value={url}
                                 className="no-scroll text-ellipsis"

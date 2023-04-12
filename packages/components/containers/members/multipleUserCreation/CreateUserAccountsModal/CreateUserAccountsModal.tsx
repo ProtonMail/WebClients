@@ -2,11 +2,10 @@ import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import {
     Checkbox,
     Icon,
-    InputTwo,
     Marks,
     ModalProps,
     ModalTwo,
@@ -334,7 +333,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                         >
                             {c('Checkbox label').t`All`}
                         </Checkbox>
-                        <InputTwo
+                        <Input
                             className="max-w270p"
                             placeholder={c('Placeholder').t`Search`}
                             prefix={<Icon name="magnifier" alt={c('Action').t`Search`} />}

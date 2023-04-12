@@ -1,8 +1,9 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
+import { Input, InputProps } from '@proton/atoms';
+
 import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
 import { classnames } from '../../../helpers';
-import InputTwo, { InputTwoProps } from '../input/Input';
 import CountrySelect from './CountrySelect';
 import {
     getCountries,
@@ -26,7 +27,7 @@ const usePreviousValue = <T,>(value: T) => {
     return ref.current;
 };
 
-export interface Props extends Omit<InputTwoProps, 'type' | 'value' | 'onChange'> {
+export interface Props extends Omit<InputProps, 'type' | 'value' | 'onChange'> {
     value: string;
     defaultCountry?: string;
     embedded?: boolean;
@@ -124,7 +125,7 @@ const PhoneInput = ({
     // we force dir="ltr" in all cases, because otherwise phone number will be displayed
     // in reverse in RTL languages, which is not recommended
     return (
-        <InputTwo
+        <Input
             {...rest}
             type="tel"
             value={formattedValueInMode}

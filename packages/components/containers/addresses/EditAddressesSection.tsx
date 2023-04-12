@@ -2,12 +2,12 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Editor, EditorActions, InputTwo } from '../../components';
+import { Editor, EditorActions } from '../../components';
 import { useApi, useEventManager, useHotkeys, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -97,7 +97,7 @@ const EditAddressesSection = ({ address }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <InputTwo
+                    <Input
                         id="displayName"
                         value={displayName}
                         placeholder={c('Placeholder').t`Choose display name`}

@@ -1,9 +1,9 @@
 import creditCardType from 'credit-card-type';
 
+import { Input, InputProps } from '@proton/atoms';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 import { Icon } from '../../components';
-import Input, { InputTwoProps } from '../../components/v2/input/Input';
 
 const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
@@ -33,7 +33,7 @@ const withGaps = (value = '', gaps: number[] = []) => {
     }, '');
 };
 
-interface Props extends Omit<InputTwoProps, 'value' | 'onChange' | 'onValue'> {
+interface Props extends Omit<InputProps, 'value' | 'onChange' | 'onValue'> {
     value: string;
     onChange: (value: string) => void;
 }
