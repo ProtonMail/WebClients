@@ -52,11 +52,15 @@ const VpnSettingsRouter = lazy(
 const DriveSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/DriveSettingsRouter" */ '../containers/drive/DriveSettingsRouter')
 );
+const PassSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/PassSettingsRouter" */ '../containers/pass/PassSettingsRouter')
+);
 
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
+const passSlug = getSlugFromApp(APPS.PROTONPASS);
 
 const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
     return sectionConfigs.map((section) => getSectionPath(prefix, section));
@@ -237,6 +241,11 @@ const MainContainer = () => {
                 <Route path={`/${driveSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
                         <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
+                    </Suspense>
+                </Route>
+                <Route path={`/${passSlug}`}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
+                        <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
                     </Suspense>
                 </Route>
                 {redirect}

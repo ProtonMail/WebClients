@@ -6,6 +6,7 @@ import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
 import { getMailAppRoutes } from '../containers/mail/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
+import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
 
 interface Arguments {
@@ -48,6 +49,7 @@ export const getRoutes = ({
         }),
         calendar: getCalendarAppRoutes(),
         drive: getDriveAppRoutes(),
+        pass: getPassAppRoutes(),
         organization: getOrganizationAppRoutes({ user, organization }),
         vpn: getVpnAppRoutes(),
     };
