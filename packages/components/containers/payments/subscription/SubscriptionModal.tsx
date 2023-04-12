@@ -26,6 +26,7 @@ import {
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -37,7 +38,6 @@ import {
     ModalTwoHeader,
     Tooltip,
 } from '../../../components';
-import { classnames } from '../../../helpers';
 import {
     useApi,
     useEventManager,
@@ -196,6 +196,8 @@ const SubscriptionModal = ({
     const subscriptionCouponCode = subscription?.CouponCode;
     const latestValidCouponCodeRef = useRef('');
 
+    const giftCodeRef = useRef<HTMLInputElement>(null);
+
     const handleUnsubscribe = async () => {
         // Start promise early
         const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
@@ -353,6 +355,7 @@ const SubscriptionModal = ({
 
             if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                 createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
+                giftCodeRef.current?.focus();
             }
 
             if (Code) {
@@ -460,7 +463,7 @@ const SubscriptionModal = ({
 
     return (
         <ModalTwo
-            className={classnames([
+            className={clsx([
                 subscriptionModalClassName,
                 [
                     SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -649,6 +652,7 @@ const SubscriptionModal = ({
                                                 </div>
                                             )}
                                             <PaymentGiftCode
+                                                giftCodeRef={giftCodeRef}
                                                 key={
                                                     /* Reset the toggle state when a coupon code gets applied */
                                                     couponCode

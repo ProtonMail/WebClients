@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,6 +11,7 @@ interface Props {
     loading?: boolean;
     giftCode?: string;
     onApply: (value: string) => void;
+    giftCodeRef: RefObject<HTMLInputElement>;
 }
 
 const getFormattedGiftCode = (giftCode: string) => {
@@ -18,7 +19,7 @@ const getFormattedGiftCode = (giftCode: string) => {
     return splittedGiftCode.join('-').toUpperCase();
 };
 
-const PaymentGiftCode = ({ giftCode = '', onApply, loading }: Props) => {
+const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props) => {
     const { state, toggle, set } = useToggle();
     const [code, setCode] = useState('');
 
@@ -67,7 +68,9 @@ const PaymentGiftCode = ({ giftCode = '', onApply, loading }: Props) => {
                 <div className="pr0-5 flex-item-fluid">
                     <InputTwo
                         value={code}
+                        ref={giftCodeRef}
                         placeholder={c('Placeholder').t`Gift code`}
+                        autoFocus
                         onValue={setCode}
                         onKeyDown={(event) => {
                             if (event.key === 'Enter') {
