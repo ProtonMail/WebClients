@@ -15,6 +15,7 @@ interface Props {
 }
 
 const GenericError = ({ children, className, small = false }: Props) => {
+    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
     const refresh = (
         <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
             .t`refresh the page`}</InlineLinkButton>
