@@ -87,7 +87,7 @@ const ProtonVPNClientsSection = () => {
                 {c('Info')
                     .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a server.`}
             </SettingsParagraph>
-            <div className="flex on-mobile-flex-column">
+            <div className="flex gap-4 on-mobile-flex-column">
                 <DownloadClientCard
                     title={c('VPNClient').t`Android`}
                     icon="brand-android"
