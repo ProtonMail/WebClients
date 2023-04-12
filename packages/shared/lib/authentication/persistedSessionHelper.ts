@@ -1,6 +1,9 @@
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { getLocalKey, getLocalSessions, setLocalKey } from '../api/auth';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
@@ -224,25 +227,85 @@ export interface LocalSessionPersisted {
     persisted: PersistedSessionWithLocalID;
 }
 
+const getNonExistingSessions = async (
+    api: Api,
+    persistedSessions: PersistedSessionWithLocalID[],
+    localSessions: LocalSessionPersisted[]
+): Promise<LocalSessionPersisted[]> => {
+    const localSessionsSet = new Set(
+        localSessions.map((localSessionPersisted) => localSessionPersisted.persisted.localID)
+    );
+
+    const nonExistingSessions = persistedSessions.filter((persistedSession) => {
+        return !localSessionsSet.has(persistedSession.localID);
+    }, []);
+
+    if (!nonExistingSessions.length) {
+        return [];
+    }
+
+    const result = await Promise.all(
+        nonExistingSessions.map(async (persistedSession) => {
+            const result = await api<{ User: tsUser }>(withUIDHeaders(persistedSession.UID, getUser())).catch(noop);
+            if (!result?.User) {
+                return undefined;
+            }
+            const User = result.User;
+            const remoteSession: LocalSessionResponse = {
+                Username: User.Name,
+                DisplayName: User.DisplayName,
+                PrimaryEmail: User.Email,
+                UserID: User.ID,
+                LocalID: persistedSession.localID,
+            };
+            return {
+                remote: remoteSession,
+                persisted: persistedSession,
+            };
+        })
+    );
+
+    return result.filter(isTruthy);
+};
+
 export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionPersisted[] };
 export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResult> => {
     const persistedSessions = getPersistedSessions();
+    const persistedSessionsMap = Object.fromEntries(
+        persistedSessions.map((persistedSession) => [persistedSession.localID, persistedSession])
+    );
+
     for (const persistedSession of persistedSessions) {
         try {
             const validatedSession = await resumeSession(api, persistedSession.localID);
-            const { Sessions = [] } = await api<{ Sessions: LocalSessionResponse[] }>(
-                withUIDHeaders(validatedSession.UID, getLocalSessions())
-            );
+            const { Sessions = [] } = await api<{
+                Sessions: LocalSessionResponse[];
+            }>(withUIDHeaders(validatedSession.UID, getLocalSessions()));
+
             // The returned sessions have to exist in localstorage to be able to activate
             const maybeActiveSessions = Sessions.map((remoteSession) => {
                 return {
-                    persisted: persistedSessions.find(({ localID }) => localID === remoteSession.LocalID),
+                    persisted: persistedSessionsMap[remoteSession.LocalID],
                     remote: remoteSession,
                 };
             }).filter((value): value is LocalSessionPersisted => !!value.persisted);
+
+            const nonExistingSessions = await getNonExistingSessions(api, persistedSessions, maybeActiveSessions);
+            if (nonExistingSessions.length) {
+                captureMessage('Unexpected non-existing sessions', {
+                    extra: {
+                        length: nonExistingSessions.length,
+                        ids: nonExistingSessions.map((session) => ({
+                            id: `${session.remote.Username || session.remote.PrimaryEmail || session.remote.UserID}`,
+                            lid: session.remote.LocalID,
+                        })),
+                    },
+                });
+            }
+
             return {
                 session: validatedSession,
-                sessions: maybeActiveSessions,
+                sessions: [...maybeActiveSessions, ...nonExistingSessions],
             };
         } catch (e: any) {
             if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
