@@ -209,6 +209,8 @@ export enum VIEWS {
     CUSTOM,
     MAIL,
     DRIVE,
+
+    SEARCH,
 }
 
 export enum ACTION_VIEWS {

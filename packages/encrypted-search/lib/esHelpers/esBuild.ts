@@ -503,12 +503,12 @@ export const estimateIndexingDuration = (
 /**
  * Compute the estimated time remaining of indexing
  * @param userID the user ID
- * @param esProgress the number of items processes so far
+ * @param esProgress the number of items indexed so far
  * @param esTotal the total number of items to be indexed
  * @param endTime the time when this helper is called
  * @param esState the indexing state, which is a data structure to keep track of
  * indexing progress
- * @returns the number of estimated time to completion and the current progress
+ * @returns the estimated time to completion (in minutes) and the current progress
  * expressed as a number between 0 and 100
  */
 export const estimateIndexingProgress = async (

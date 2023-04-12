@@ -6,8 +6,7 @@ import {
     ESItemInfo,
     EventsObject,
     checkVersionedESDB,
-    readMetadataRecoveryPoint,
-    setMetadataRecoveryPoint,
+    metadataIndexingProgress,
     testKeywords,
 } from '@proton/encrypted-search';
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
@@ -15,7 +14,12 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { Api } from '@proton/shared/lib/interfaces';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
-import { ESCalendarMetadata, ESCalendarSearchParams, MetadataRecoveryPoint } from '../../interfaces/encryptedSearch';
+import {
+    ESCalendarContent,
+    ESCalendarMetadata,
+    ESCalendarSearchParams,
+    MetadataRecoveryPoint,
+} from '../../interfaces/encryptedSearch';
 import { CALENDAR_CORE_LOOP } from './constants';
 import { generateID, getAllESEventsFromCalendar, parseSearchParams, transformAttendees } from './esUtils';
 
@@ -33,7 +37,7 @@ export const getESHelpers = ({
     history,
     userID,
     getCalendarEventRaw,
-}: Props): ESHelpers<ESCalendarMetadata, ESCalendarSearchParams> => {
+}: Props): ESHelpers<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent> => {
     // We need to keep the recovery point for metadata indexing in memory
     // for cases where IDB couldn't be instantiated but we still want to
     // index content
@@ -48,7 +52,8 @@ export const getESHelpers = ({
         // Therefore, we have to check if an IDB exists before querying it
         const esdbExists = await checkVersionedESDB(userID);
         if (esdbExists) {
-            const localRecoveryPoint: MetadataRecoveryPoint = (await readMetadataRecoveryPoint(userID)) || [];
+            const localRecoveryPoint: MetadataRecoveryPoint =
+                (await metadataIndexingProgress.readRecoveryPoint(userID)) || [];
             recoveryPoint.push(...localRecoveryPoint);
         }
 
@@ -71,7 +76,7 @@ export const getESHelpers = ({
                 ? async (setIDB: boolean = true) => {
                       metadataRecoveryPoint = newRecoveryPoint;
                       if (setIDB) {
-                          await setMetadataRecoveryPoint(userID, newRecoveryPoint);
+                          await metadataIndexingProgress.setRecoveryPoint(userID, newRecoveryPoint);
                       }
                   }
                 : undefined,
@@ -115,7 +120,7 @@ export const getESHelpers = ({
 
     const searchKeywords = (
         keywords: string[],
-        itemToSearch: CachedItem<ESCalendarMetadata, void>,
+        itemToSearch: CachedItem<ESCalendarMetadata, ESCalendarContent>,
         hasApostrophe: boolean
     ) => {
         const stringsToSearch: string[] = [

@@ -1,6 +1,8 @@
 import {
+    Dispatch,
     MutableRefObject,
     RefObject,
+    SetStateAction,
     useCallback,
     useEffect,
     useImperativeHandle,
@@ -52,6 +54,7 @@ import {
     MINIMUM_DATE_UTC,
     RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
+    VIEWS,
 } from '@proton/shared/lib/calendar/constants';
 import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/mailIntegration/invite';
@@ -75,6 +78,7 @@ import {
     AttendeeModel,
     CalendarBootstrap,
     CalendarEvent,
+    CalendarEventSharedData,
     DateTimeModel,
     EventModel,
     SyncMultipleApiResponse,
@@ -118,6 +122,7 @@ import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
     CleanSendIcsActionData,
@@ -226,6 +231,7 @@ interface Props extends SharedViewProps {
     weekStartsOn: WeekStartsOn;
     inviteLocale?: string;
     onChangeDate: (date: Date) => void;
+    onChangeDateAndRevertView: (date: Date) => void;
     onInteraction: (active: boolean) => void;
     activeCalendars: VisualCalendar[];
     calendars: VisualCalendar[];
@@ -237,7 +243,8 @@ interface Props extends SharedViewProps {
     timeGridViewRef: RefObject<TimeGridRef>;
     interactiveRef: RefObject<InteractiveRef>;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
-    eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
+    eventTargetAction: EventTargetAction | undefined;
+    setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
     getOpenedMailEvents: () => OpenedMailEvent[];
 }
 const InteractiveCalendarView = ({
@@ -263,6 +270,7 @@ const InteractiveCalendarView = ({
 
     onClickDate,
     onChangeDate,
+    onChangeDateAndRevertView,
     onClickToday,
     onInteraction,
 
@@ -278,7 +286,8 @@ const InteractiveCalendarView = ({
     containerRef,
     timeGridViewRef,
     calendarsEventsCacheRef,
-    eventTargetActionRef,
+    eventTargetAction,
+    setEventTargetAction,
     getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
@@ -294,6 +303,7 @@ const InteractiveCalendarView = ({
     const isSavingEvent = useRef(false);
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
+    const isSearchView = view === VIEWS.SEARCH;
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -351,33 +361,40 @@ const InteractiveCalendarView = ({
     };
 
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
-        getInitialTargetEventData(eventTargetActionRef, dateRange)
+        getInitialTargetEventData(eventTargetAction, dateRange)
     );
 
+    // Open event handlers for opening events from search view
+    const { goToEvent, goToOccurrence } = useOpenCalendarEvents({
+        onChangeDate: onChangeDateAndRevertView,
+        tzid,
+        setEventTargetAction,
+    });
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
         calendars,
         addresses,
         onChangeDate,
         tzid,
-        timeGridViewRef,
-        interactiveData,
-        setInteractiveData,
+        setEventTargetAction,
     });
 
-    useEffect(() => {
-        const eventTargetAction = eventTargetActionRef.current;
-        if (!eventTargetAction) {
-            return;
-        }
-        eventTargetActionRef.current = undefined;
-        if (eventTargetAction.isAllDay || eventTargetAction.isAllPartDay) {
-            return;
-        }
-        timeGridViewRef.current?.scrollToTime(eventTargetAction.startInTzid);
-    }, []);
+    useEffect(
+        () => {
+            if (!eventTargetAction) {
+                return;
+            }
+            setInteractiveData(getInitialTargetEventData(eventTargetAction, dateRange));
+            if (eventTargetAction.isAllDay || eventTargetAction.isAllPartDay) {
+                return;
+            }
+            timeGridViewRef.current?.scrollToTime(eventTargetAction.startInTzid);
+        },
+        // omitting dateRange on purpose as we only want a re-render on eventTargetAction changes
+        [eventTargetAction]
+    );
 
-    const { temporaryEvent, targetEventData, targetMoreData } = interactiveData || {};
+    const { temporaryEvent, targetEventData, targetMoreData, searchData } = interactiveData || {};
 
     const { tmpData, tmpDataOriginal, data } = temporaryEvent || {};
     const tmpEvent = data?.eventData;
@@ -827,6 +844,10 @@ const InteractiveCalendarView = ({
         });
     };
 
+    // const handleNavigateToEventFromSearchView = () => {
+    //
+    // }
+
     const handleSendPrefsErrors = async ({
         inviteActions,
         vevent,
@@ -998,6 +1019,12 @@ const InteractiveCalendarView = ({
     const closeAllPopovers = () => {
         setInteractiveData(undefined);
     };
+
+    useEffect(() => {
+        if (isSearchView) {
+            closeAllPopovers();
+        }
+    }, [isSearchView]);
 
     const handleCloseMorePopover = closeAllPopovers;
 
@@ -1360,15 +1387,18 @@ const InteractiveCalendarView = ({
         },
     }));
 
-    const [targetEventRef, setTargetEventRef] = useState<HTMLDivElement | null>(null);
+    const [targetEventRef, setTargetEventRef] = useState<HTMLElement | null>(null);
     const [targetMoreRef, setTargetMoreRef] = useState<HTMLDivElement | null>(null);
 
     const targetEvent = useMemo(() => {
+        if (searchData) {
+            return searchData;
+        }
         if (!targetEventData) {
             return;
         }
         return sortedEventsWithTemporary.find(({ id }) => id === targetEventData.id);
-    }, [targetEventData, sortedEventsWithTemporary]);
+    }, [targetEventData, sortedEventsWithTemporary, searchData]);
 
     const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>();
     autoCloseRef.current = ({ ask }) => {
@@ -1588,7 +1618,7 @@ const InteractiveCalendarView = ({
             )}
             <Dropzone
                 onDrop={onAddFiles}
-                disabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent}
+                disabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent || isSearchView}
                 shape="transparent"
                 customContent={
                     <section className="main-dropzone p-14 text-center">
@@ -1600,6 +1630,8 @@ const InteractiveCalendarView = ({
                 isStatic={true}
             >
                 <CalendarView
+                    calendars={calendars}
+                    calendarsEventsCacheRef={calendarsEventsCacheRef}
                     view={view}
                     isNarrow={isNarrow}
                     isInteractionEnabled={!isLoading}
@@ -1609,7 +1641,9 @@ const InteractiveCalendarView = ({
                     secondaryTimezone={secondaryTimezone}
                     secondaryTimezoneOffset={secondaryTimezoneOffset}
                     targetEventData={targetEventData}
-                    targetEventRef={setTargetEventRef}
+                    setTargetEventRef={setTargetEventRef}
+                    setInteractiveData={setInteractiveData}
+                    getOpenedMailEvents={getOpenedMailEvents}
                     targetMoreRef={setTargetMoreRef}
                     targetMoreData={targetMoreData}
                     displayWeekNumbers={displayWeekNumbers}
@@ -1786,6 +1820,16 @@ const InteractiveCalendarView = ({
                                 return handleSaveEvent(newTemporaryEvent, inviteActions);
                             }}
                             onClose={handleCloseEventPopover}
+                            onNavigateToEventFromSearch={(
+                                eventData: CalendarEventSharedData,
+                                eventComponent: VcalVeventComponent,
+                                occurrence?: { localStart: Date; occurrenceNumber: number }
+                            ) => {
+                                if (!occurrence) {
+                                    return goToEvent(eventData, eventComponent);
+                                }
+                                return goToOccurrence(eventData, eventComponent, occurrence);
+                            }}
                         />
                     );
                 }}

@@ -1,4 +1,4 @@
-import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
+import {getRecurrenceIdDate} from '@proton/shared/lib/calendar/veventHelper';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarMember } from '@proton/shared/lib/interfaces/calendar';
 

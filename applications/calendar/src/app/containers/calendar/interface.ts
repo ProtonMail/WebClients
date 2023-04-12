@@ -62,8 +62,6 @@ export interface TimeGridRef {
     scrollToTime: (date: Date) => void;
 }
 
-export type OnCreateEventProps = { attendees?: AttendeeModel[]; startModel?: EventModel };
-
 export interface InteractiveRef {
     createEvent: (attendees: AttendeeModel[]) => void;
 }
@@ -94,11 +92,18 @@ export interface InteractiveState {
     temporaryEvent?: CalendarViewEventTemporaryEvent;
     targetEventData?: TargetEventData;
     targetMoreData?: TargetMoreData;
+    searchData?: CalendarViewEvent;
 }
 
 export interface DisplayNameEmail {
     displayName: string;
     displayEmail: string;
+}
+
+export interface CalendarSearchQuery {
+    keyword?: string;
+    begin?: string;
+    end?: string;
 }
 
 export interface OnSaveConfirmationArgs {

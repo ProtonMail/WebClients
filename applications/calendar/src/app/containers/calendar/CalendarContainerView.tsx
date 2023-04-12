@@ -73,6 +73,7 @@ import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import getDateDiff from './getDateDiff';
 import { toUrlParams } from './getUrlHelper';
+import CalendarSearch from './search/CalendarSearch';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -81,7 +82,6 @@ const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), dat
 
 interface Props {
     calendars: VisualCalendar[];
-    onCreateCalendarFromSidebar?: (id: string) => void;
     isLoading?: boolean;
     isNarrow?: boolean;
     displayWeekNumbers?: boolean;
@@ -95,12 +95,16 @@ interface Props {
     utcDate: Date;
     utcDateRange: Date[];
     utcDateRangeInTimezone?: Date[];
+    onCreateCalendarFromSidebar: (id: string) => void;
     onCreateEvent?: (attendees?: AttendeeModel[]) => void;
+    onBackFromSearch: () => void;
     onClickToday: () => void;
     onChangeView: (view: VIEWS) => void;
     onChangeDate: (date: Date) => void;
     onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
-    containerRef: Ref<HTMLDivElement>;
+    containerRef: HTMLDivElement | null;
+    setcontainerRef: Ref<HTMLDivElement>;
+    onSearch: () => void;
     addresses: Address[];
     user: UserModel;
     calendarUserSettings: CalendarUserSettings;
@@ -108,7 +112,6 @@ interface Props {
 
 const CalendarContainerView = ({
     calendars,
-    onCreateCalendarFromSidebar,
     isLoading = false,
     isNarrow = false,
     displayWeekNumbers = false,
@@ -124,7 +127,9 @@ const CalendarContainerView = ({
     utcDateRange,
     utcDateRangeInTimezone,
 
+    onCreateCalendarFromSidebar,
     onCreateEvent,
+    onBackFromSearch,
     onClickToday,
     onChangeView,
     onChangeDate,
@@ -132,6 +137,8 @@ const CalendarContainerView = ({
 
     children,
     containerRef,
+    setcontainerRef,
+    onSearch,
 
     addresses,
     user,
@@ -152,6 +159,7 @@ const CalendarContainerView = ({
     const { appInView, showDrawerSidebar } = useDrawer();
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
+    const isSearchView = view === VIEWS.SEARCH;
     const defaultView = getDefaultView(calendarUserSettings);
 
     const toLink = toUrlParams({
@@ -508,6 +516,10 @@ const CalendarContainerView = ({
                         <Icon size={24} name="plus" className="m-auto" />
                     </FloatingButton>
                 }
+                searchBox={
+                    <CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} />
+                }
+                searchDropdown={<CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} />}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
@@ -517,7 +529,6 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
-                searchBox={<CalendarSearch />}
                 actionArea={toolbar(isDrawerApp)}
                 hideUpsellButton={isNarrow}
                 settingsButton={drawerSettingsButton}
@@ -542,13 +553,15 @@ const CalendarContainerView = ({
         <CalendarSidebar
             calendars={calendars}
             addresses={addresses}
+            calendarUserSettings={calendarUserSettings}
+            isSearchView={isSearchView}
             logo={logo}
             expanded={expanded}
             isNarrow={isNarrow}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
             onCreateCalendar={onCreateCalendarFromSidebar}
-            calendarUserSettings={calendarUserSettings}
+            onBackFromSearch={onBackFromSearch}
             miniCalendar={
                 <LocalizedMiniCalendar
                     min={MINIMUM_DATE}
@@ -565,16 +578,17 @@ const CalendarContainerView = ({
         />
     );
 
-    const loader = isLoading ? (
-        <div className="calendar-loader-container">
-            <div className="notification" role="alert">
-                <span className="notification__content">
-                    <span>{c('Info').t`Loading events`}</span>
-                    <CircleLoader srLabelHidden={true} />
-                </span>
+    const loader =
+        isLoading && !isSearchView ? (
+            <div className="calendar-loader-container">
+                <div className="notification" role="alert">
+                    <span className="notification__content">
+                        <span>{c('Info').t`Loading events`}</span>
+                        <CircleLoader srLabelHidden={true} />
+                    </span>
+                </div>
             </div>
-        </div>
-    ) : null;
+        ) : null;
 
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
@@ -588,7 +602,8 @@ const CalendarContainerView = ({
             bottom={bottom}
             sidebar={sidebar}
             header={header}
-            containerRef={containerRef}
+            containerRef={setcontainerRef}
+            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
             drawerApp={
                 isDrawerApp ? null : (
                     <DrawerApp

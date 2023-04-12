@@ -1,4 +1,4 @@
-import { getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
+import {getIsRecurring, getRecurrenceIdDate, getUidValue} from '@proton/shared/lib/calendar/veventHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';

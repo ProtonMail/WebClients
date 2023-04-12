@@ -10,6 +10,8 @@ export interface ESCalendarMetadata extends CalendarEventSharedData, CalendarEve
     Description: string;
     Attendees: ESAttendeeModel[];
 }
+
+export interface ESCalendarContent {}
 export interface ESCalendarSearchParams {
     normalizedKeywords?: string[];
     calendarID?: string;
@@ -19,4 +21,8 @@ export interface ESCalendarSearchParams {
 
 export type MetadataRecoveryPoint = string[];
 
-export type EncryptedSearchFunctionsCalendar = EncryptedSearchFunctions<ESCalendarMetadata, ESCalendarSearchParams>;
+export type EncryptedSearchFunctionsCalendar = EncryptedSearchFunctions<
+    ESCalendarMetadata,
+    ESCalendarSearchParams,
+    ESCalendarContent
+>;
