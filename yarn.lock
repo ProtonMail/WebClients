@@ -3708,6 +3708,9 @@ __metadata:
     react-redux: ^8.0.5
     ttag: ^1.7.24
     typescript: ^5.0.4
+  peerDependencies:
+    "@types/react-router-dom": ^5.3.3
+    react-router-dom: ^5.3.4
   languageName: unknown
   linkType: soft
 
@@ -25257,6 +25260,7 @@ fsevents@^1.2.7:
     "@types/jest": ^29.5.1
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
+    "@types/react-router-dom": ^5.3.3
     babel-jest: ^29.5.0
     cross-env: ^7.0.3
     eslint: ^8.39.0
@@ -25266,6 +25270,7 @@ fsevents@^1.2.7:
     prettier: ^2.8.8
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router-dom: ^5.3.4
     ttag: ^1.7.24
     typescript: ^5.0.4
   languageName: unknown
@@ -25289,6 +25294,7 @@ fsevents@^1.2.7:
     "@types/jest": ^29.5.1
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
+    "@types/react-router-dom": ^5.3.3
     babel-jest: ^29.5.0
     cross-env: ^7.0.3
     eslint: ^8.39.0
@@ -25301,6 +25307,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-hooks-testing-library: ^0.6.0
     react-json-view: ^1.21.3
+    react-router-dom: ^5.3.4
     ttag: ^1.7.24
     typescript: ^5.0.4
   languageName: unknown
@@ -25329,6 +25336,7 @@ fsevents@^1.2.7:
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
     "@types/react-helmet": ^6.1.6
+    "@types/react-router-dom": ^5.3.3
     babel-jest: ^29.5.0
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
@@ -25342,6 +25350,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-helmet: ^6.1.0
+    react-router-dom: ^5.3.4
     tinycolor2: ^1.6.0
     ttag: ^1.7.24
     typescript: ^5.0.4
@@ -25369,6 +25378,7 @@ fsevents@^1.2.7:
     "@types/mime-types": ^2.1.1
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
+    "@types/react-router-dom": ^5.3.3
     "@types/react-window": ^1.8.5
     babel-plugin-transform-class-properties: ^6.24.1
     babel-plugin-transform-require-context: ^0.1.1
@@ -25386,6 +25396,7 @@ fsevents@^1.2.7:
     pretty-format: ^29.5.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router-dom: ^5.3.4
     react-window: ^1.8.9
     ttag: ^1.7.24
     typescript: ^5.0.4
@@ -25440,6 +25451,7 @@ fsevents@^1.2.7:
     "@types/jest": ^29.5.1
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
+    "@types/react-router-dom": ^5.3.3
     "@types/turndown": ^5.0.1
     "@typescript-eslint/eslint-plugin": ^5.57.1
     "@typescript-eslint/parser": ^5.57.1
@@ -25464,6 +25476,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-redux: ^8.0.5
+    react-router-dom: ^5.3.4
     redux-logger: ^3.0.6
     ttag: ^1.7.24
     turndown: ^7.1.2
@@ -25512,6 +25525,7 @@ fsevents@^1.2.7:
     "@storybook/source-loader": ^6.5.16
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
+    "@types/react-router-dom": ^5.3.3
     babel-loader: ^9.1.2
     cross-env: ^7.0.3
     eslint: ^8.39.0
@@ -25522,6 +25536,7 @@ fsevents@^1.2.7:
     prop-types: 15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router-dom: ^5.3.4
     ts-loader: ^9.4.2
     typescript: ^5.0.4
     webpack: ^5.81.0
@@ -25536,6 +25551,9 @@ fsevents@^1.2.7:
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
     "@proton/polyfill": "workspace:packages/polyfill"
+    "@types/react": ^17.0.57
+    "@types/react-dom": ^17.0.19
+    "@types/react-router-dom": ^5.3.3
     babel-jest: ^29.5.0
     cross-env: ^7.0.3
     eslint: ^8.39.0
@@ -25544,6 +25562,7 @@ fsevents@^1.2.7:
     jest-junit: ^14.0.1
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router-dom: ^5.3.4
     resize-observer: ^1.0.4
     typescript: ^5.0.4
   languageName: unknown
@@ -25563,12 +25582,14 @@ fsevents@^1.2.7:
     "@proton/styles": "workspace:packages/styles"
     "@types/react": ^17.0.58
     "@types/react-dom": ^17.0.20
+    "@types/react-router-dom": ^5.3.3
     cross-env: ^7.0.3
     eslint: ^8.39.0
     prettier: ^2.8.8
     proton-account: "workspace:applications/account"
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router-dom: ^5.3.4
     ttag: ^1.7.24
     typescript: ^5.0.4
   languageName: unknown
