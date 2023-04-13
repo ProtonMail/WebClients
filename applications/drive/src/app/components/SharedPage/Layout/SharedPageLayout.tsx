@@ -43,11 +43,11 @@ export default function SharedPageLayout({ FooterComponent, children, className 
 
                     <div className="flex flex-justify-end flex-item-fluid flex-item-centered-vert">
                         {isProtonUser ? (
-                            <ButtonLike color="norm" shape="outline" as="a" href={APPS.PROTONDRIVE} target="_blank">
+                            <ButtonLike color="norm" as="a" href={APPS.PROTONDRIVE} target="_blank">
                                 {c('Action').t`Go to Drive`}
                             </ButtonLike>
                         ) : (
-                            <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_PRICING_PAGE} target="_blank">
+                            <ButtonLike color="norm" as="a" href={DRIVE_PRICING_PAGE} target="_blank">
                                 {c('Action').t`Try for free`}
                             </ButtonLike>
                         )}
