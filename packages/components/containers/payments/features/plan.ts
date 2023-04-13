@@ -18,6 +18,15 @@ import {
     getNMessagesFeature,
 } from './mail';
 import {
+    get2FAAuthenticator,
+    getCustomDomainForEmailAliases,
+    getDataBreachMonitoring,
+    getForwardingMailboxes,
+    getHideMyEmailAliases,
+    getSharing,
+    getVaults,
+} from './pass';
+import {
     getB2BHighSpeedVPNConnections,
     getCountries,
     getNetShield,
@@ -87,6 +96,26 @@ export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan =
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
             getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
             getVPNConnections(1),
+            getSupport('priority'),
+        ],
+    };
+};
+
+export const getPassPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.PASS_PLUS,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`For next-level password management and identity protection.`,
+        cta: getCTA(plan.Title),
+        features: [
+            get2FAAuthenticator(true),
+            getVaults('unlimited'),
+            getHideMyEmailAliases('unlimited'),
+            getCustomDomainForEmailAliases(true),
+            getForwardingMailboxes('multiple'),
+            getSharing(true),
+            getDataBreachMonitoring(true),
             getSupport('priority'),
         ],
     };
@@ -265,6 +294,8 @@ export const getShortPlan = (
             return getVPNPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
+        case PLANS.PASS_PLUS:
+            return getPassPlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:
