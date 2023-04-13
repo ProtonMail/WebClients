@@ -1,4 +1,4 @@
-import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIsOfflineError, getIsTimeoutError, isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
 import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -70,7 +70,7 @@ export const apiHelper = async <T>(
             esSentryReport(`apiHelper: ${callingContext}`, { error });
         }
 
-        if (retries >= ES_MAX_RETRIES) {
+        if (retries >= ES_MAX_RETRIES || isNotExistError(error)) {
             return;
         }
 
