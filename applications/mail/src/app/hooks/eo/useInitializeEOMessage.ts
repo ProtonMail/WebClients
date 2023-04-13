@@ -97,7 +97,6 @@ export const useInitializeEOMessage = () => {
                 const dispatchResult = dispatch(
                     EOLoadRemote({
                         imagesToLoad,
-                        api,
                     })
                 );
                 return dispatchResult as any as Promise<EOLoadRemoteResults[]>;
