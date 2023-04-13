@@ -30,7 +30,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { Icon, Price, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
-import { getDrivePlan } from '../features/plan';
+import { getDrivePlan, getPassPlan } from '../features/plan';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -226,6 +226,39 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 description={c('new_plans: Info')
                     .t`Make privacy your default for file backup, storage, sharing, and retrieval.`}
                 items={items.filter(isTruthy)}
+                actions={
+                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                        {c('new_plans: Action').jt`From ${price}`}
+                    </Button>
+                }
+            />
+        );
+    }
+
+    const passPlan = plans.find(({ Name }) => Name === PLANS.PASS_PLUS);
+    // Pass upsell
+    if (user.isFree && app === APPS.PROTONPASS && passPlan) {
+        const plan = passPlan;
+        const { features, description } = getPassPlan(plan);
+
+        const price = (
+            <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
+                {(plan.Pricing[cycle] || 0) / cycle}
+            </Price>
+        );
+        const handleUpgrade = () =>
+            openSubscriptionModal({
+                cycle,
+                plan: PLANS.PASS_PLUS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+            });
+
+        return (
+            <UpsellBox
+                title={getUpgradeText(plan.Title)}
+                description={description}
+                items={features}
                 actions={
                     <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
                         {c('new_plans: Action').jt`From ${price}`}
