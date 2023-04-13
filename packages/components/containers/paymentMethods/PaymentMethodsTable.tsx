@@ -16,8 +16,10 @@ const MethodCell = ({ method }: { method: PaymentMethod }) => {
     if (isPaypalDetails(method.Details)) {
         return (
             <>
-                <span className="mr0-5">PayPal</span>
-                <span className="auto-tablet text-ellipsis max-w100" title={method.Details.Payer}>
+                <span className="mr0-5" data-testid="payment-method">
+                    PayPal
+                </span>
+                <span className="auto-tablet text-ellipsis max-w100" data-testid="payer" title={method.Details.Payer}>
                     {method.Details.Payer}
                 </span>
             </>
@@ -26,7 +28,7 @@ const MethodCell = ({ method }: { method: PaymentMethod }) => {
 
     if (isCardDetails(method.Details)) {
         return (
-            <span>
+            <span data-testid="card-details">
                 {method.Details.Brand} (•••• {method.Details.Last4})
             </span>
         );
