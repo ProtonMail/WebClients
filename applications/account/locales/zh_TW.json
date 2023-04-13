@@ -7911,6 +7911,26 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price } 起"
+      ],
+      "From ${ price } per user": [
+        "每一位使用者 ${ price } 起"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "保留我的 ${ currentPlanName } $ 帳號"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -7950,26 +7970,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price } 起"
-      ],
-      "From ${ price } per user": [
-        "每一位使用者 ${ price } 起"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "保留我的 ${ currentPlanName } $ 帳號"
-      ],
-      "Upgrade now": [
-        "立即升級"
       ]
     },
     "new_plans: attribute": {

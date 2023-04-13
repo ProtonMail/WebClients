@@ -429,6 +429,9 @@
       "Select all": [
         "すべて選択"
       ],
+      "Select time zone": [
+        "タイムゾーンを選択"
+      ],
       "Send": [
         "送信"
       ],
@@ -2535,6 +2538,9 @@
       ],
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
+      ],
+      "Time zone": [
+        "タイムゾーン"
       ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
@@ -5059,6 +5065,11 @@
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "タイムゾーンを検索"
       ]
     },
     "Title": {

@@ -8105,6 +8105,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "From ${ price } per user": [
+        "От ${ price } за пользователя"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Сохранить мой аккаунт ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Перейти к обзору"
@@ -8144,26 +8164,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "From ${ price } per user": [
-        "От ${ price } за пользователя"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: attribute": {

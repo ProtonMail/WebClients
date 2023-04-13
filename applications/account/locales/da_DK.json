@@ -2892,6 +2892,9 @@
       "Error in one of the conditions": [
         "Fejl i en af betingelserne"
       ],
+      "Expired": [
+        "Udløbet"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke hente aktive sessioner. ${ refresh } eller prøv igen senere."
       ],
@@ -7775,6 +7778,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Fra ${ price } per bruger"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsæt for at gennemgå"
@@ -7814,26 +7837,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Fra ${ price } per bruger"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
       ]
     },
     "new_plans: attribute": {
@@ -9955,6 +9958,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
+      ],
+      "Duration": [
+        "Varighed"
       ],
       "Edit credit/debit card": [
         "Redigér kredit / betalingskort"
