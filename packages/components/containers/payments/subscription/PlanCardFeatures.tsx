@@ -6,7 +6,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, VpnLogo } from '../../../components';
+import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, PassLogo, VpnLogo } from '../../../components';
 import { AllFeatures, getFeatureDefinitions } from '../features';
 import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
@@ -108,6 +108,14 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.drive, audience)} />
         </div>
     );
+    const passFeatures = (
+        <div>
+            <h3>
+                <PassLogo />
+            </h3>
+            <PlanCardFeatureList features={getFeatureDefinitions(planName, features.pass, audience)} />
+        </div>
+    );
     const vpnFeatures = (
         <div>
             <h3>
@@ -135,6 +143,7 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
             {calendarFeatures}
             {driveFeatures}
             {vpnFeatures}
+            {passFeatures}
             {teamFeatures}
             {supportFeatures}
         </>
