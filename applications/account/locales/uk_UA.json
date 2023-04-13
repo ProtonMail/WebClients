@@ -1016,6 +1016,26 @@
         "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Вхідні ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Вилучено 5 елементів стеження"
+      ],
+      "Auto forwarded": [
+        "Автоматично переслано"
+      ],
+      "Email received": [
+        "Лист отримано"
+      ],
+      "Encrypted": [
+        "Зашифровано"
+      ],
+      "New email": [
+        "Новий лист"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Застосунки ${ BRAND_NAME }"
@@ -3925,6 +3945,17 @@
       ],
       "(during your first month)": [
         "(упродовж першого місяця)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Автоматично переслати"
+      ],
+      "Gmail messages to your inbox": [
+        "Повідомлення Gmail до вашої вхідної скриньки"
+      ],
+      "Sign in with Google": [
+        "Увійти за допомогою Google"
       ]
     },
     "Go to sign in": {
@@ -8120,6 +8151,26 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Від ${ price } за користувача"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Залишити мою передплату ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Переглядати далі"
@@ -8159,26 +8210,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Від ${ price } за користувача"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Залишити мою передплату ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: attribute": {

@@ -12,10 +12,10 @@
         "Loja ${ BRAND_NAME }"
       ],
       "activate": [
-        "activar"
+        "ativar"
       ],
       "Activate organization key": [
-        "Activar chave de organização"
+        "Ativar a chave de organização"
       ],
       "Activate recovery": [
         "Ativar recuperação"
@@ -180,7 +180,7 @@
         "Criar utilizadores"
       ],
       "Current plan": [
-        "Plano actual"
+        "Plano atual"
       ],
       "Customize": [
         "Personalizar"
@@ -219,13 +219,13 @@
         "Não recebeu o código?"
       ],
       "Disable": [
-        "Desactivar"
+        "Desativar"
       ],
       "Disable recovery phrase": [
-        "Desactivar a frase de recuperação"
+        "Desativar a frase de recuperação"
       ],
       "Disable recovery phrase?": [
-        "Desactivar a frase de recuperação?"
+        "Desativar a frase de recuperação?"
       ],
       "Discard": [
         "Descartar"
@@ -288,10 +288,10 @@
         "Emoji"
       ],
       "enable desktop notifications": [
-        "activar as notificações"
+        "ativar as notificações"
       ],
       "Enable multi-user support": [
-        "Activar o suporte a múltiplos utilizadores"
+        "Ativar o suporte a múltiplos utilizadores"
       ],
       "Encrypt and export": [
         "Encriptar e exportar"
@@ -330,7 +330,7 @@
         "Ir para a etiqueta"
       ],
       "Got it": [
-        "Percebi"
+        "Entendido"
       ],
       "Hide": [
         "Ocultar"
@@ -456,7 +456,7 @@
         "Citação"
       ],
       "Reactivate keys": [
-        "Reactivar chaves"
+        "Reativar as chaves"
       ],
       "Reconnect": [
         "Religar"
@@ -468,13 +468,13 @@
         "Referencie um amigo"
       ],
       "Refresh status": [
-        "Actualizar estado"
+        "Atualizar estado"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Atualizar a página"
       ],
       "refresh the page": [
-        "actualizar a página"
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -699,7 +699,7 @@
         "Cancelar subscrição"
       ],
       "Update": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Update recovery file": [
         "Atualizar ficheiro de recuperação"
@@ -708,7 +708,7 @@
         "Atualizar frase de recuperação"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -776,6 +776,11 @@
         "Revogar"
       ]
     },
+    "Action in trial plan": {
+      "No, thanks": [
+        "Não, obrigado"
+      ]
+    },
     "Addon": {
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
@@ -791,10 +796,10 @@
         "Eliminar"
       ],
       "Disable": [
-        "Desactivar"
+        "Desativar"
       ],
       "Enable": [
-        "Activar"
+        "Ativar"
       ],
       "Generate missing keys": [
         "Gerar chaves em falta"
@@ -802,13 +807,13 @@
     },
     "Address status": {
       "Active": [
-        "Activo"
+        "Ativo"
       ],
       "Default": [
         "Predefinição"
       ],
       "Disabled": [
-        "Desactivado"
+        "Desativado"
       ],
       "Missing keys": [
         "Chaves em falta"
@@ -827,13 +832,13 @@
     },
     "Attached ics file error": {
       "Invalid event": [
-        "Evento inválido"
+        "Evento não válido"
       ],
       "Invalid ICS file": [
-        "Ficheiro ICS inválido"
+        "Ficheiro ICS não válido"
       ],
       "Invalid method": [
-        "Método inválido"
+        "Método não válido"
       ],
       "Unsupported event": [
         "Evento não suportado"
@@ -851,10 +856,10 @@
     },
     "Badge for domain": {
       "Disabled": [
-        "Desactivado"
+        "Desativado"
       ],
       "Enabled": [
-        "Activado"
+        "Ativado"
       ],
       "Missing keys": [
         "Chaves em falta"
@@ -862,7 +867,7 @@
     },
     "Badge for user sessions table": {
       "Current session": [
-        "Sessão actual"
+        "Sessão atual"
       ]
     },
     "Billing cycle option": {
@@ -952,7 +957,7 @@
         "Problema de transmissão"
       ],
       "Update problem": [
-        "Problema de actualização"
+        "Problema de atualização"
       ],
       "VPN problem": [
         "Problema de VPN"
@@ -2136,10 +2141,10 @@
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Parece que a lista de contactos que está a importar já contém grupos. Por favor, reveja como esses grupos devem ser importados."
+        "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, por favor divida-o."
+        "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, divida-o."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2147,7 +2152,7 @@
         "Também fizemos corresponder campos CSV com campos vCard. Pode rever e alterar as correspondências manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Encontrámos os seguintes campos no ficheiro CSV que enviou. Por favor, marque aqueles que deseja importar."
+        "Encontrámos os seguintes campos no ficheiro CSV que enviou. Marque aqueles que deseja importar."
       ]
     },
     "Domain label": {
@@ -2192,7 +2197,7 @@
         "${ eventTitle } foi cancelado."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } foi actualizado.\n${ eventDetailsText }"
+        "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Tem um convite para ${ eventTitle }\n${ eventDetailsText }"
@@ -2247,10 +2252,10 @@
         "Convite para um evento começando em ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Actualização para um evento em ${ formattedStart }"
+        "Atualização para um evento em ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Actualização para um evento começando em ${ formattedStart }"
+        "Atualização para um evento começando em ${ formattedStart }"
       ]
     },
     "Email Unsubscribe": {
@@ -2277,7 +2282,7 @@
         "Chave privada primária do endereço não encontrada"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Foi alocado todo o espaço de armazenamento. Por favor, reduza o armazenamento alocado a outros membros."
+        "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
       ],
       "Already a member of this calendar": [
         "Já é membro deste calendário."
@@ -2295,7 +2300,7 @@
         "Erro de autenticação."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "A resposta automática é uma funcionalidade paga. Por favor, actualize para uma conta paga para a utilizar."
+        "A resposta automática é uma funcionalidade paga. Atualize para uma conta paga para utilizar esta funcionalidade."
       ],
       "Condition incomplete": [
         "Condição incompleta"
@@ -2310,10 +2315,10 @@
         "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email address disabled": [
-        "Endereço de correio electrónico desactivado"
+        "Endereço de correio electrónico desativado"
       ],
       "Email is not valid": [
-        "Correio electrónico no válido"
+        "O correio electrónico não é válido."
       ],
       "Empty condition": [
         "Condição vazia"
@@ -2343,37 +2348,37 @@
         "Palavra-passe incorrecta"
       ],
       "Invalid ${ name } code": [
-        "Código ${ name } inválido"
+        "Código ${ name } não válido"
       ],
       "Invalid card number": [
-        "Número de cartão inválido"
+        "Número de cartão não válido"
       ],
       "Invalid code": [
-        "Código inválido"
+        "Código não válido"
       ],
       "Invalid domain": [
-        "Domínio inválido"
+        "Domínio não válido"
       ],
       "Invalid email address": [
-        "Endereço electrónico inválido"
+        "Endereço electrónico não válido"
       ],
       "Invalid expiration date": [
-        "Data de validade inválida"
+        "Data de validade não válida"
       ],
       "Invalid name": [
-        "Nome inválido"
+        "Nome não válido"
       ],
       "Invalid postal code": [
-        "Código postal inválido"
+        "Código postal não válido"
       ],
       "Invalid private key file": [
-        "Ficheiro de chave privada inválido"
+        "Ficheiro de chave privada não válido"
       ],
       "Invalid Sieve code": [
-        "Código Sieve inválido"
+        "Código Sieve não válido"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "Código de verificação não válido"
       ],
       "Missing signature": [
         "Assinatura em falta"
@@ -2385,13 +2390,13 @@
         "Nome requerido"
       ],
       "No active sessions": [
-        "Sem sessões activas"
+        "Sem sessões ativas"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
       ],
       "Not a valid number": [
-        "Número inválido"
+        "Número não válido"
       ],
       "Organization key is not decrypted.": [
         "A chave da organização não está desencriptada."
@@ -2409,22 +2414,22 @@
         "Processo de pagamento não suportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão actualmente disponíveis, por favor tente mais tarde"
+        "Os pagamentos não estão atualmente disponíveis. Tente novamente mais tarde."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Por favor configure um domínio personalizado antes de adicionar utilizadores à sua organização."
+        "Configure um domínio personalizado antes de adicionar utilizadores à sua organização."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Por favor, active o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
+        "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
       "Please set a recovery email first": [
         "Defina primeiro um correio electrónico de recuperação."
       ],
       "Please set a recovery phone number first": [
-        "Por favor, defina um número de telefone de recuperação"
+        "Defina um número de telefone de recuperação."
       ],
       "Please set a recovery/notification email first": [
         "Defina um correio electrónico de recuperação/notificação"
@@ -2449,10 +2454,10 @@
         "Falha ao verificar a assinatura"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Alguns dos seus nomes de pasta estão indisponíveis. Por favor, personalize esses nomes antes de importar."
+        "Alguns dos seus nomes de pasta estão indisponíveis. Personalize esses nomes antes de importar."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
+        "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
       ],
       "Tab closed": [
         "Separador fechado"
@@ -2461,10 +2466,10 @@
         "O endereço pode estar errado"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Escolha um nome diferente."
+        "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome da etiqueta é inválido. Por favor, escolha um nome diferente."
+        "O nome da etiqueta não é válido. Escolha um nome diferente."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O montante mínimo de crédito que pode ser adicionado é ${ price }"
@@ -2476,13 +2481,13 @@
         "O pagamento mínimo que aceitamos é ${ price }"
       ],
       "The organization key must be activated first.": [
-        "Tem de activar a chave da organização primeiro."
+        "Tem de ativar a chave da organização primeiro."
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
       ],
       "The session has expired. Please sign in again.": [
-        "A sessão expirou. Por favor, inicie sessão novamente."
+        "A sessão expirou. Inicie sessão novamente."
       ],
       "This field is required": [
         "Este campo é requerido"
@@ -2503,13 +2508,13 @@
         "Erro de validação"
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "Verificação sem sucesso, por favor tente novamente dentro de uma hora."
+        "A verificação não funcionou. Tente novamente dentro de uma hora."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Por favor, siga as instruções abaixo para retomar a assinatura."
+        "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Código de verificação errado. Por favor, verifique se copiou o código de verificação correctamente e tente de novo. Pode levar até 24 horas para que as alterações surtam efeito."
+        "Código de verificação errado. Verifique se copiou o código de verificação correctamente e tente de novo. Pode levar até 24 horas para que as alterações surtam efeito."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Perdeu o acesso às chaves da sua organização. Sem restauro, não poderá criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
@@ -2518,13 +2523,13 @@
         "Não tem facturas."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Usou todos os endereços do seu plano. Actualize para um plano superior para adicionar um novo endereço."
+        "Usou todos os endereços do seu plano. Atualize para um plano superior para adicionar um endereço."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Usou todos os utilizadores do seu plano. Actualize para um plano superior para adicionar um novo utilizador."
+        "Usou todos os utilizadores do seu plano. Atualize para um plano superior para adicionar um utilizador."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Tem de activar as chaves de organização. Sem activação, não será possível criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
+        "Tem de ativar as chaves de organização. Sem ativação, não será possível criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -2620,7 +2625,7 @@
         "Informação de tempo livre/ocupado"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "Evento não válido"
       ],
       "Journal entry": [
         "Entrada de diário"
@@ -2678,16 +2683,16 @@
         "Erro: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL inválido"
+        "URL não válido"
       ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Por favor ${ refresh } ou verifique a sua ligação."
+        "${ refresh } ou verifique a sua ligação."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Demasiadas sessões abertas, por favor termine, limpe os cookies e reinicie sessão."
+        "Demasiadas sessões abertas. Termine, limpe os cookies e reinicie sessão."
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
@@ -2695,7 +2700,7 @@
     },
     "Error message, recovery": {
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "Por favor ${ signIn } para reenviar um pedido de verificação de email de recuperação."
+        "${ signIn } para reenviar um pedido de verificação de email de recuperação."
       ]
     },
     "Error notification": {
@@ -2713,10 +2718,10 @@
         "O ficheiro ICS anexado não pôde ser desencriptado"
       ],
       "Invalid invitation": [
-        "Convite inválido"
+        "Convite não válido"
       ],
       "Invalid response": [
-        "Resposta inválida"
+        "Resposta não válida"
       ],
       "Unexpected error": [
         "Erro inesperado"
@@ -2734,7 +2739,7 @@
         "Impossível obter o evento do seu calendário"
       ],
       "We could not update the event in your calendar": [
-        "Impossível actualizar o evento no seu calendário"
+        "Impossível atualizar o evento no seu calendário"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "A sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário."
@@ -2861,10 +2866,10 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } actualizada"
+        "${ Label.Name } atualizada"
       ],
       "Filter ${ Filter.Name } updated": [
-        "Filtro ${ Filter.Name } actualizado"
+        "Filtro ${ Filter.Name } atualizado"
       ]
     },
     "Filter preview": {
@@ -3017,7 +3022,7 @@
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ocorreu um erro ao encriptar e adicionar o seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
-        "Ocorreu um erro ao encriptar e adicionar os seus eventos. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
+        "Ocorreu um erro ao encriptar e adicionar os seus eventos. ${ totalImported } de ${ totalToImport } eventos importados."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "A encriptar e adicionar contactos: ${ totalImported }/${ totalToImport }"
@@ -3026,7 +3031,7 @@
         "Encriptar e adicionar eventos ao calendário: ${ totalImported }/${ totalToImport }"
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Por favor, não feche o separador antes de o processo de importação terminar."
+        "Não feche o separador antes de o processo de importação terminar."
       ]
     },
     "Import calendar warning": {
@@ -3076,7 +3081,7 @@
         "A verificação em 2 passos está ativada na sua conta externa."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Demasiados pedidos recentes. Por favor, tente mais tarde."
+        "Demasiados pedidos recentes. Tente novamente mais tarde."
       ],
       "Use your app password if:": [
         "Use a palavra-passe da aplicação se:"
@@ -3193,7 +3198,7 @@
         "${ calendarsToBeMergedCount } calendários unidos"
       ],
       "${ emailAddress } is invalid": [
-        "${ emailAddress } é inválido."
+        "${ emailAddress } não é válido."
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } passará a ser o calendário predefinido."
@@ -3202,7 +3207,7 @@
         "${ MAIL_APP_NAME } pode também ser usado com uma única palavra-passe que substitui ambas as palavras-passe de início de sessão e caixa de correio. Para mudar para o modo de uma única palavra-passe, digite a palavra-passe única que gostaria de usar e clique em salvar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } suporta assinaturas DKIM em domínios personalizados. Para utilizar a autenticação DKIM, por favor adicione o seguinte registo CNAME às suas definições DNS para este domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
+        "${ MAIL_APP_NAME } suporta assinaturas DKIM em domínios personalizados. Para utilizar a autenticação DKIM, adicione o seguinte registo CNAME às suas definições DNS para este domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
       ],
       "${ n } address": [
         "${ n } endereço",
@@ -3218,6 +3223,14 @@
       "${ number } server": [
         "${ number } servidor",
         "${ number } servidores"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } contacto",
+        "${ numContact } contactos"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } grupo de contatos",
+        "${ numGroups } grupos de contatos"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
@@ -3277,7 +3290,7 @@
         "Uma frase de recuperação permite aceder à sua conta e recuperar as suas mensagens encriptadas se se esquecer da sua palavra-passe."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
+        "O acesso à conta restringido devido a facturas por pagar. Contacte o administrador."
       ],
       "account recovery and data recovery method": [
         "método de recuperação de conta e dados"
@@ -3286,10 +3299,10 @@
         "método de recuperação de conta"
       ],
       "Account successfully updated": [
-        "Conta actualizada com sucesso"
+        "Conta atualizada"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Activar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
+        "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
       "Add a recovery email address": [
         "Adicionar um correio electrónico de recuperação"
@@ -3311,13 +3324,13 @@
         "endereços"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "A verificação de endereço é uma funcionalidade de segurança avançada. Active só se souber o que está a fazer."
+        "A verificação de endereço é uma funcionalidade de segurança avançada. Ative só se souber o que está a fazer."
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Após efectuar o seu pagamento com BitCoin, por favor siga as instruções abaixo para actualizar."
+        "Após efectuar o seu pagamento com BitCoin, siga as instruções abaixo para atualizar."
       ],
       "Align left": [
         "Alinhar à esquerda"
@@ -3385,7 +3398,7 @@
         "Tem a certeza de que deseja eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Tem certeza de que deseja desactivar a autenticação em dois passos?"
+        "Tem certeza de que deseja desativar a autenticação em dois passos?"
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
@@ -3397,19 +3410,19 @@
         "Tem a certeza de que deseja remover os privilégios administrativos deste utilizador?"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "A resposta automática está activa em cada mês entre a hora de início e fim seleccionadas."
+        "A resposta automática está ativa em cada mês entre a hora de início e fim seleccionadas."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "A resposta automática está activa todas as semanas, entre as horas de início e de fim seleccionadas."
+        "A resposta automática está ativa todas as semanas, entre as horas de início e de fim seleccionadas."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "A resposta automática está activa desde a hora de início até à hora de fim."
+        "A resposta automática está ativa desde a hora de início até à hora de fim."
       ],
       "Auto-reply is active until you turn it off.": [
-        "A resposta automática está activa até que a desactive."
+        "A resposta automática está ativa até que a desative."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "A resposta automática está sempre activa nos dias da semana que seleccionar, entre as horas seleccionadas."
+        "A resposta automática está sempre ativa nos dias da semana que seleccionar, entre as horas seleccionadas."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponível em macOS, Windows e Linux."
@@ -3418,7 +3431,7 @@
         "Cor de fundo"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não activos nas definições."
+        "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não ativos nas definições."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
@@ -3433,7 +3446,7 @@
         "As transacções em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transacção, pode pagar a sua factura com os créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
+        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
@@ -3455,6 +3468,10 @@
       ],
       "Country code": [
         "Código de país"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Criar ${ calendarsToBeCreatedCount } calendário",
+        "Criar ${ calendarsToBeCreatedCount } calendários"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -3478,7 +3495,7 @@
         "Crédito pela parte não utilizada no plano anterior da sua assinatura"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Actualmente, todo o armazenamento disponível está alocado à conta do administrador. Por favor, reduza a alocação do administrador para libertar espaço para utilizadores adicionais. Pode aumentar o armazenamento total a qualquer momento actualizando para um plano superior."
+        "Atualmente, todo o armazenamento disponível está alocado à conta do administrador. Reduza a alocação do administrador para libertar espaço para utilizadores adicionais. Pode aumentar o armazenamento total a qualquer momento atualizando para um plano superior."
       ],
       "Custom": [
         "Personalizado"
@@ -3511,7 +3528,7 @@
         "Não use as credenciais OpenVPN/IKEv2 nas aplicações ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "Quer revogar todas as outras sessões que não a actual?"
+        "Quer revogar todas as outras sessões que não a atual?"
       ],
       "domain used": [
         "domínio utilizado",
@@ -3548,7 +3565,7 @@
         "Endereço de correio electrónico"
       ],
       "Emailing preference saved": [
-        "Preferências do correio electronico actualizadas"
+        "Preferências do correio electronico atualizadas"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Mensagens armazenadas nesta pasta não serão eliminadas e continuam na pasta Todo o correio."
@@ -3557,7 +3574,7 @@
         "Mensagens com esta etiqueta não serão eliminadas e continuam na sua pasta respectiva."
       ],
       "Encryption setting updated": [
-        "Definição de encriptação actualizada"
+        "Definição de encriptação atualizada"
       ],
       "Enter key manually instead": [
         "Inserir a chave manualmente"
@@ -3626,13 +3643,13 @@
         "Se o fuso horário do sistema não coincidir com a atual definição de fuso horário, ser-lhe-á pedido que o atualize (no máximo uma vez por dia)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Se este domínio está actualmente a receber correios electronicos, seleccione o separador ${ boldAddresses } e adicione todos os endereços de correio electronico activos antes de alterar o registo MX para assegurar uma transição fluida."
+        "Se este domínio está atualmente a receber correios electronicos, seleccione o separador ${ boldAddresses } e adicione todos os endereços de correio electronico ativos antes de alterar o registo MX para assegurar uma transição fluida."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
+        "Se acredita que houve um erro, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
@@ -3667,6 +3684,10 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
+      ],
       "Import from": [
         "Importar de"
       ],
@@ -3683,7 +3704,7 @@
         "Importante: certifique-se de que dispõe dos códigos de recuperação. Senão, se perder o seu dispositivo 2FA, pode perder permanentemente o acesso à sua conta."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANTE: alguns registadores não aceitam valores CNAME com um ponto no final (enquanto outros o obrigam). Se o seu registador não aceita registos CNAME, por favor elimine o ponto no final de cada valor CNAME e tente novamente."
+        "IMPORTANTE: alguns registadores não aceitam valores CNAME com um ponto no final (enquanto outros o obrigam). Se o seu registador não aceita registos CNAME, elimine o ponto no final de cada valor CNAME e tente novamente."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
@@ -3720,6 +3741,9 @@
       ],
       "it’s imperative": [
         "é obrigatório"
+      ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Tenho usado o @ProtonMail e pensei que poderia gostar dele. É um serviço de correio electrónico seguro que protege a sua privacidade. Inscreva-se com a minha ligação de referência para obter 1 mês de funcionalidades premium gratuitamente: ${ referrerLink }"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantenha estes registos no seu DNS enquanto utilizar DKIM."
@@ -3788,7 +3812,7 @@
         "mais"
       ],
       "Multi-user support not enabled.": [
-        "Suporte a multi-utilizador não activado."
+        "Suporte a multi-utilizador não ativado."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e seleccione a pasta principalonde deseja colocá-la. Se não seleccionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
@@ -3842,7 +3866,7 @@
         "As etiquetas só estão visíveis para si."
       ],
       "Organization keys activated": [
-        "Chaves da organização activadas"
+        "Chaves da organização ativadas"
       ],
       "Organization keys restored": [
         "Chaves da organização restauradas"
@@ -3860,10 +3884,10 @@
         "Número de telefone"
       ],
       "Plan upgrade required": [
-        "Requerida actualização do plano"
+        "Atualização do plano requerida"
       ],
       "Please fill out this field.": [
-        "Por favor, preencha este campo."
+        "Preencha este campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Mantenha-o seguro. Vai precisar dele para aceder à sua conta e descodificar os seus dados em caso de reinicialização de uma palavra-passe."
@@ -3872,28 +3896,28 @@
         "Note que se eliminar este endereço, já não será capaz de enviar ou receber correio usando este endereço."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Note que se eliminar este domínio, todos os endereços a ele associados serão desactivados."
+        "Note que se eliminar este domínio. Todos os endereços a ele associados serão desativados."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Por favor, note que se eliminar este filtro, deixaremos de processar todas as acções automáticas que ele provoca."
+        "Note que se eliminar este filtro, deixaremos de processar todas as acções automáticas que ele provoca."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Por favor, note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Forneça um endereço de correio electrónico, caso necessitemos de o contactar."
       ],
       "Please select the folders you would like to import:": [
-        "Por favor, selecione as pastas que deseja importar:"
+        "Selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Por favor, seleccione o tipo de ligação que deseja inserir e preencha todos os campos."
+        "Seleccione o tipo de ligação que deseja inserir e preencha todos os campos."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Por favor, tente novamente, utilize um método de pagamento diferente, ou contacte o PayPal para assistência."
+        "Tente novamente com um método de pagamento diferente, ou contacte o PayPal para assistência."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Por favor, verifique o pagamento no separador que abriu."
+        "Verifique o pagamento no separador que abriu."
       ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
@@ -3914,13 +3938,13 @@
         "Frase de recuperação descarregada"
       ],
       "Recovery phrase has been disabled": [
-        "Frase de recuperação desactivada"
+        "Frase de recuperação desativada"
       ],
       "Referral link copied to your clipboard": [
         "Ligação de referência copiada para a área de transferência"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
+        "Atualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Right to Left": [
         "Da direita para a esquerda"
@@ -3989,8 +4013,8 @@
         "O endereço que pôs no topo da lista é o seu correio electrónico predefinido. Arraste e largue para reordenar os endereços."
       ],
       "The following address is invalid.": [
-        "O seguinte endereço é inválido.",
-        "Os seguintes endereços são inválidos."
+        "O seguinte endereço não é válido.",
+        "Os seguintes endereços não são válidos."
       ],
       "The following address is unavailable.": [
         "O seguinte endereço é indisponível.",
@@ -4007,22 +4031,22 @@
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Este navegador não suporta a antevisão de documentos PDF. Por favor, transfira o ficheiro."
+        "Este navegador não suporta a antevisão de documentos PDF. Transfira o ficheiro."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Esta ligação pode ser um ataque homográfico. Por favor, verifique se esta é a ligação que deseja visitar, ou não a abra."
+        "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Isto também desactivará qualquer método de autenticação em dois passos associado a esta conta."
+        "Isto também desativará qualquer método de autenticação em dois passos associado a esta conta."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Isto cancelará a sua assinatura paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
+        "Isto cancelará a sua assinatura paga atual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Isto criará uma chave de encriptação para a sua organização. Chaves de 4096-bit só funcionam em computadores de alto desempenho, para a maioria do utilizadores recomendamos chaves de 2048-bit."
@@ -4031,13 +4055,13 @@
         "Isto eliminará permanentemente os dados e todos os endereços de correio electrónico associados a este utilizador."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
+        "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reativar esta conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "Para confirmar, por favor, insira o nome do utilizador que deseja eliminar."
+        "Para confirmar, insira o nome do utilizador que deseja eliminar."
       ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
@@ -4049,10 +4073,10 @@
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para se manter actualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
+        "Para se manter atualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
+        "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
       "Total email addresses": [
         "Total de endereços de correio electrónico"
@@ -4067,10 +4091,10 @@
         "Total de conexões VPN"
       ],
       "Two-factor authentication disabled": [
-        "Autenticação em dois passos desactivada"
+        "Autenticação em dois passos desativada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticação em dois passos activada"
+        "Autenticação em dois passos ativada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "O modo de senha dupla requer duas senhas: uma para iniciar a sessão e outra para desencriptar a caixa de correio (avançado)."
@@ -4082,7 +4106,7 @@
         "Infelizmente não há método de recuperação definido para esta conta."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "A não ser que termine a sessão ou altere a palavra-passe da conta, a sessão permanecerá activa. As sessões expiram após 60 dias de inactividade."
+        "A não ser que termine a sessão ou altere a palavra-passe da conta, a sessão permanecerá ativa. As sessões expiram após 60 dias de inatividade."
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas, etiquetas e filtros ilimitados"
@@ -4109,7 +4133,7 @@
         "A verificação pode levar alguns minutos."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
+        "A verificação abrirá um novo separador, desative os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
@@ -4124,7 +4148,7 @@
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, por favor desactive-os."
+        "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, desative-os."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
@@ -4139,13 +4163,13 @@
         "As vistas semanal e mensal só se aplicam à área de trabalho."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Quando desactivado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
+        "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Sem a activação, não poderá criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
+        "Sem a ativação, não poderá criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
@@ -4169,7 +4193,7 @@
         "Pode importar um tipo de dado por vez."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Pode activar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
+        "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
@@ -4178,7 +4202,7 @@
         "Não tem métodos de pagamento gravados."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Tem de activar a chave privada da sua organização com a palavra-passe da segurança da chave da organização disponibilizada pelo administrador da organização."
+        "Tem de ativar a chave privada da sua organização com a palavra-passe da segurança da chave da organização disponibilizada pelo administrador da organização."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Tem de ter um cartão de crédito ou conta bancária vinculada à sua conta PayPal para poder adicioná-la como método de pagamento."
@@ -4208,7 +4232,7 @@
         "O método de recuperação da sua conta está definido."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "A conta será actualizada assim que o pagamento for aprovado."
+        "A conta será atualizada assim que o pagamento for aprovado."
       ],
       "Your data recovery method is set": [
         "O método de recuperação de seus dados está definido."
@@ -4241,17 +4265,17 @@
         "A sua frase de recuperação é uma série de 12 palavras numa ordem específica."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "A sua subscrição é gerida pela Mozilla. Por favor contacte o suporte da Mozilla."
+        "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
       ]
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Quando activado, as sub-pastas herdam a cor da pasta principal."
+        "Quando ativado, as sub-pastas herdam a cor da pasta principal."
       ]
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Por favor, contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
+        "Contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
       ]
     },
     "Info for domain modal": {
@@ -4262,7 +4286,7 @@
         "Adicionar um novo utilizador à sua organização e criar um endereço para ele."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Por motivos de segurança, temos de verificar se detém ${ domainName }. Por favor, adicione o seguinte registo DNS TXT ao seu domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
+        "Por motivos de segurança, temos de verificar se detém ${ domainName }. Adicione o seguinte registo DNS TXT ao seu domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
       ]
     },
     "Info for members section": {
@@ -4287,7 +4311,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Para evitar qualquer interrupção do serviço devido a facturas por pagar, por favor certifique-se de que tem pelo menos 1 método de pagamento válido gravado em qualquer altura no passado."
+        "Para evitar qualquer interrupção do serviço devido a facturas por pagar. Certifique-se de que tem pelo menos 1 método de pagamento válido gravado em qualquer altura no passado."
       ]
     },
     "Input label": {
@@ -4351,16 +4375,16 @@
     },
     "Key state badge": {
       "Active": [
-        "Activa"
+        "Ativa"
       ],
       "Compromised": [
         "Comprometida"
       ],
       "Disabled": [
-        "Desactivada"
+        "Desativada"
       ],
       "Inactive": [
-        "Inactiva"
+        "Inativa"
       ],
       "Obsolete": [
         "Obsoleta"
@@ -4557,16 +4581,16 @@
         "Eliminar"
       ],
       "Disables encryption with this key": [
-        "Desactiva a encriptação com esta chave"
+        "Desativa a encriptação com esta chave"
       ],
       "Disables signature verification and encryption with this key": [
-        "Desactiva a verificação de assinatura e encriptação com esta chave"
+        "Desativa a verificação de assinatura e encriptação com esta chave"
       ],
       "Enable encryption with this key": [
-        "Activar encriptação com esta chave"
+        "Ativar encriptação com esta chave"
       ],
       "Enable signature verification and encryption with this key": [
-        "Activar verificação de assinatura e encriptação com esta chave"
+        "Ativar verificação de assinatura e encriptação com esta chave"
       ],
       "Export": [
         "Exportar"
@@ -4797,7 +4821,7 @@
         "Créditos usados"
       ],
       "Current display name": [
-        "Nome a mostrar actual"
+        "Nome a mostrar atual"
       ],
       "Customize invoices": [
         "Personalizar facturas"
@@ -5079,16 +5103,16 @@
         "Frase"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Por favor adicione os 3 seguintes registos CNAME. Note que os registos DNS podem levar várias horas a actualizar."
+        "Adicione os 3 seguintes registos CNAME. Note que os registos DNS podem levar várias horas a atualizar."
       ],
       "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Por favor, adicione o seguinte registo MX. Note que os registos DNS podem levar várias horas a actualizar."
+        "Adicione o seguinte registo MX. Note que os registos DNS podem levar várias horas a atualizar."
       ],
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Por favor adicione o seguinte registo TXT. Note que os registos DNS podem levar várias horas a actualizar."
+        "Adicione o seguinte registo TXT. Note que os registos DNS podem levar várias horas a atualizar."
       ],
       "Please select files to upload": [
-        "Por favor, seleccione os ficheiros a enviar"
+        "Seleccione os ficheiros a enviar."
       ],
       "Port": [
         "Porta"
@@ -5226,7 +5250,7 @@
         "Código de verificação"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Lamentamos a sua partida. Por favor, diga-nos porquê, para podermos melhorar o serviço."
+        "Lamentamos a sua partida. Diga-nos porquê, para podermos melhorar o serviço."
       ],
       "Week start": [
         "Início da semana"
@@ -5291,7 +5315,7 @@
     },
     "Label for domain modal": {
       "Please add the following TXT record:": [
-        "Por favor adicione o seguinte registo TXT:"
+        "Adicione o seguinte registo TXT:"
       ]
     },
     "Label for new member": {
@@ -5306,6 +5330,9 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicados do ${ BRAND_NAME } beta"
       ],
+      "${ BRAND_NAME } company announcements": [
+        "Anúncios da empresa ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim da ${ BRAND_NAME } for Business"
       ],
@@ -5314,6 +5341,9 @@
       ],
       "${ BRAND_NAME } offers and promotions": [
         "Ofertas e promoções da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Anúncios de produtos da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correios electronicos de boas-vindas da ${ BRAND_NAME }"
@@ -5381,7 +5411,7 @@
         "${ Label.Name } criada"
       ],
       "${ label.Name } updated": [
-        "${ label.Name } actualizada"
+        "${ label.Name } atualizada"
       ],
       "Preference saved": [
         "Preferência gravada"
@@ -5440,7 +5470,7 @@
         "Termos"
       ],
       "Upgrade account": [
-        "Actualizar conta"
+        "Atualizar conta"
       ],
       "View guide": [
         "Ver guia"
@@ -5465,10 +5495,10 @@
     },
     "Log preference": {
       "Enable advanced logs": [
-        "Activar diários avançados"
+        "Ativar os diários avançados"
       ],
       "Enable authentication logs": [
-        "Activar diários de autenticação"
+        "Ativar os diários de autenticação"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -5692,23 +5722,23 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Eliminar conta"
-      ],
-      "Got it": [
-        "Percebi"
-      ],
-      "Switch or add account": [
-        "Trocar ou adicionar conta"
-      ]
-    },
     "new_plans: Action": {
       "From ${ price } per user": [
         "A partir de ${ price } por utilizador"
       ],
       "Upgrade now": [
         "Atualizar agora"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Eliminar conta"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Switch or add account": [
+        "Trocar ou adicionar conta"
       ]
     },
     "new_plans: feature": {
@@ -5813,6 +5843,9 @@
       ]
     },
     "new_plans: info": {
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } permite-lhe criar endereços de correio electrónico e gerir contas para subutilizadores. Ideal para famílias e organizações."
+      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Define respostas automáticas para informar os contactos que está fora do escritório ou que não pode responder."
       ]
@@ -5840,6 +5873,11 @@
     "new_plans: title": {
       "Review subscription and pay": [
         "Reveja a subscrição e pague"
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Incluído com todos os planos ${ BRAND_NAME } for Business"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6146,7 +6184,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Endereço de email não encontrado entre as IDs de utilizador definidas na chave de envio (${ keyUserIds })"
+        "Endereço de correio electrónico não encontrado entre as ID de utilizador definidas na chave de envio (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6211,7 +6249,7 @@
         "Número de telefone"
       ],
       "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+        "Descreva o problema e inclua quaisquer mensagens de erro."
       ],
       "Search": [
         "Procurar"
@@ -6438,7 +6476,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "A regredir a conta, por favor aguarde"
+        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Step in filter modal": {
@@ -6460,10 +6498,10 @@
         "Notas de lançamento"
       ],
       "Upgrade storage": [
-        "Actualizar armazenamento"
+        "Atualizar armazenamento"
       ],
       "Your current storage:": [
-        "O seu armazenamento actual:"
+        "O seu armazenamento atual:"
       ]
     },
     "Subscribe to calendar modal": {
@@ -6543,13 +6581,13 @@
         "Endereço adicionado"
       ],
       "Address updated": [
-        "Endereço actualizado"
+        "Endereço atualizado"
       ],
       "Auto-reply disabled": [
-        "Resposta automática desactivada"
+        "Resposta automática desativada"
       ],
       "Auto-reply updated": [
-        "Resposta automática actualizada"
+        "Resposta automática atualizada"
       ],
       "Bug reported": [
         "Erro reportado"
@@ -6564,10 +6602,10 @@
         "Calendário removido"
       ],
       "Calendar updated": [
-        "Calendário actualizado"
+        "Calendário atualizado"
       ],
       "Catch-all address updated": [
-        "Endereço Catch-all actualizado"
+        "Endereço Catch-all atualizado"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
@@ -6582,7 +6620,7 @@
         "Endereço copiado para a área de transferência"
       ],
       "Email updated": [
-        "Correio eletrónico actualizado"
+        "Correio eletrónico atualizado"
       ],
       "Gift code applied": [
         "Código de oferta aplicado"
@@ -6603,19 +6641,19 @@
         "Factura paga"
       ],
       "Keyboard shortcuts preferences updated": [
-        "Preferências de atalhos de teclado actualizadas"
+        "Preferências de atalhos de teclado atualizadas"
       ],
       "Keys updated": [
-        "Chaves actualizadas"
+        "Chaves atualizadas"
       ],
       "Locale updated": [
-        "Idioma actualizado"
+        "Idioma atualizado"
       ],
       "Organization activated": [
-        "Organização activada"
+        "Organização ativada"
       ],
       "Password updated": [
-        "Palavra-passe actualizada"
+        "Palavra-passe atualizada"
       ],
       "Payment method added": [
         "Método de pagamento adicionado"
@@ -6624,10 +6662,10 @@
         "Método de pagamento eliminado"
       ],
       "Payment method updated": [
-        "Método de pagamento actualizado"
+        "Método de pagamento atualizado"
       ],
       "Phone number updated": [
-        "Número de telefone actualizado"
+        "Número de telefone atualizado"
       ],
       "Preference saved": [
         "Preferência gravada"
@@ -6645,13 +6683,13 @@
         "Utilizador criado"
       ],
       "User updated": [
-        "Utilizador actualizado"
+        "Utilizador atualizado"
       ],
       "Verification successful": [
-        "Verificação com sucesso"
+        "A verificação é terminada."
       ],
       "You have successfully unsubscribed": [
-        "A sua subscrição foi cancelada com sucesso"
+        "A sua subscrição foi cancelada."
       ]
     },
     "Success message": {
@@ -6683,16 +6721,16 @@
         "Endereço eliminado"
       ],
       "Address disabled": [
-        "Endereço desactivado"
+        "Endereço desativado"
       ],
       "Address enabled": [
-        "Endereço activado"
+        "Endereço ativado"
       ],
       "Filter removed": [
         "Filtro removido"
       ],
       "Status updated": [
-        "Estado actualizado"
+        "Estado atualizado"
       ]
     },
     "Suffix": {
@@ -6781,7 +6819,7 @@
         "Ativar conta e gerar chaves"
       ],
       "Activate organization key": [
-        "Activar chave de organização"
+        "Ativar a chave de organização"
       ],
       "Add address": [
         "Adicionar endereço"
@@ -6983,7 +7021,7 @@
         "Desativar ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Desactivar autenticação em dois passos"
+        "Desativar autenticação em dois passos"
       ],
       "Display name and signature": [
         "Nome a mostrar e assinatura"
@@ -7019,7 +7057,7 @@
         "Privacidade dos correios electrónicos"
       ],
       "Email subscriptions": [
-        "Subscrições de email"
+        "Boletins informativos"
       ],
       "Encryption and keys": [
         "Encriptação e chaves"
@@ -7056,7 +7094,7 @@
         "Filtros"
       ],
       "Find email or username": [
-        "Encontrar email ou utilizador"
+        "Encontrar correio electrónico ou utilizador"
       ],
       "Folders": [
         "Pastas"
@@ -7117,7 +7155,7 @@
         "Aplicação Import-Export"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "Código de verificação não válido"
       ],
       "Invoices": [
         "Facturas"
@@ -7407,13 +7445,16 @@
         "A sua ligação ao calendário"
       ],
       "Your current plan": [
-        "O seu plano actual"
+        "O seu plano atual"
       ],
       "Your plan": [
         "O seu plano"
       ],
       "Your recovery status": [
         "O seu estado de recuperação"
+      ],
+      "Your subscriptions": [
+        "As suas assinaturas"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7525,10 +7566,10 @@
         "Editar nomes de etiqueta"
       ],
       "Enable/disable desktop and mobile notifications": [
-        "Activar/Desactivar notificações no computador e telemóvel"
+        "Ativar/Desativar notificações no computador e telemóvel"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Activar diários avançados força o registo de endereços IP para cada evento no diário."
+        "Ativar diários avançados força o registo de endereços IP para cada evento no diário."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe correios electrónicos na mesma conversa na sua caixa de entrada ou veja-os separadamente."
@@ -7549,13 +7590,13 @@
         "Predefina a disposição da sua caixa de entrada."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "As assinaturas produzidas por esta chave são tratadas como inválidas e a chave não pode ser usada para encriptação"
+        "As assinaturas produzidas por esta chave são tratadas como não válidas e a chave não pode ser usada para encriptação."
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
       ],
       "This address has been disabled": [
-        "Este endereço foi desactivado"
+        "Este endereço foi desativado."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Esta funcionalidade atrasa o envio do correio, dando-lhe a oportunidade de cancelar o envio durante o período de tempo seleccionado."
@@ -7570,10 +7611,10 @@
         "Esta chave está encriptada com uma palavra-passe antiga."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Detectámos um problema com sua configuração DNS. Por favor, certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Por favor, siga as instruções abaixo para retomar a assinatura."
+        "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Quando etiqueta uma mensagem, a etiqueta é automaticamente aplicada a todas as futuras mensagens enviadas ou recebidas nessa conversa."
@@ -7605,8 +7646,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Atualize para ${ planName } para puder ligar até ${ n } dispositivo à VPN ao mesmo tempo",
-        "Atualize para ${ planName } para puder ligar até ${ n } dispositivos à VPN ao mesmo tempo"
+        "Atualize para ${ planName } para puder ligar até ${ n } dispositivo à VPN ao mesmo tempo.",
+        "Atualize para ${ planName } para puder ligar até ${ n } dispositivos à VPN ao mesmo tempo."
       ]
     },
     "User role": {
@@ -7661,19 +7702,19 @@
         "Ao eliminar este número de telefone, já não poderá recuperar a sua conta."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Ao desactivar os diários limpa também todo o seu histórico. Tem a certeza de que deseja desactivar os diários?"
+        "Ao desativar os diários limpa também todo o seu histórico. Tem a certeza de que deseja desativar os diários?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Por favor, note que ao escolher este método de pagamento, a sua conta não poderá ser actualizada imediatamente. Faremos a actualização assim que o pagamento for aprovado."
+        "Note que ao escolher este método de pagamento, a sua conta não poderá ser atualizada imediatamente. Faremos a atualização assim que o pagamento for aprovado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
+        "Os relatórios não são encriptados de ponta-a-ponta. Não envie nenhuma informação sensível."
       ],
       "Skip verification?": [
         "Saltar verificação?"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Detectámos um problema com sua configuração DNS. Por favor, certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Tem de ${ activateLink } chaves da organização antes de adicionar um endereço de correio electrónico a um membro não-privado."
@@ -7684,7 +7725,7 @@
         "Após uma verificação bem sucedida, não remova o registo TXT, uma vez que ele é necessário para confirmar que continua a deter o domínio."
       ],
       "It can take up to a day for DNS changes to update.": [
-        "Pode demorar até um dia para as alterações de DNS actualizarem."
+        "Pode demorar até um dia para as alterações de DNS atualizarem."
       ]
     },
     "Weekly recurring event, frequency": {

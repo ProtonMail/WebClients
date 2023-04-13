@@ -7925,6 +7925,26 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Da ${ price } per utente"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mantieni il mio account ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continua per controllare"
@@ -7964,26 +7984,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Da ${ price } per utente"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mantieni il mio account ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: attribute": {
