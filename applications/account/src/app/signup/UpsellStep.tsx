@@ -7,6 +7,7 @@ import { CurrencySelector, Price, useConfig, useLoading } from '@proton/componen
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getFreeDrivePlan,
+    getFreePassPlan,
     getFreePlan,
     getFreeVPNPlan,
     getShortPlan,
@@ -81,6 +82,10 @@ const UpsellStep = ({
 
         if (upsellPlanName === PLANS.DRIVE) {
             return getFreeDrivePlan();
+        }
+
+        if (upsellPlanName === PLANS.PASS_PLUS) {
+            return getFreePassPlan();
         }
 
         return getFreePlan();

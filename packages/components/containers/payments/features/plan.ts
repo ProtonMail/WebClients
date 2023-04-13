@@ -18,11 +18,15 @@ import {
     getNMessagesFeature,
 } from './mail';
 import {
+    FREE_PASS_ALIASES,
     get2FAAuthenticator,
     getCustomDomainForEmailAliases,
     getDataBreachMonitoring,
+    getDevices,
+    getE2Encryption,
     getForwardingMailboxes,
     getHideMyEmailAliases,
+    getPasswordsAndNotes,
     getSharing,
     getVaults,
 } from './pass';
@@ -118,6 +122,18 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getDataBreachMonitoring(true),
             getSupport('priority'),
         ],
+    };
+};
+
+export const getFreePassPlan = (): ShortPlan => {
+    return {
+        plan: PLANS.FREE,
+        title: PLAN_NAMES[PLANS.FREE],
+        label: '',
+        description: c('new_plans: info')
+            .t`The no-cost starter account designed to empower everyone with privacy by default.`,
+        cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
+        features: [getPasswordsAndNotes(), getDevices(), getHideMyEmailAliases(FREE_PASS_ALIASES), getE2Encryption()],
     };
 };
 
