@@ -15,14 +15,15 @@ interface Props {
 }
 
 const GenericError = ({ children, className, small = false }: Props) => {
+    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
     const refresh = (
         <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
             .t`refresh the page`}</InlineLinkButton>
     );
 
-    const title = c('Error message').t`Oops, something went wrong`;
-    const line1 = c('Error message').t`Something went wrong. Please refresh the page or try again later.`;
-    const line2 = c('Error message').jt`You may also ${refresh} or try again later.`;
+    const title = c('Error message').t`Something went wrong`;
+    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
+    const line1 = c('Error message').jt`Please ${refresh} or try again later.`;
 
     return (
         <div className={clsx('mauto', className)}>
@@ -30,14 +31,12 @@ const GenericError = ({ children, className, small = false }: Props) => {
                 <>
                     <h1 className="text-bold h2 mb0-25">{title}</h1>
                     <div className="text-center">{line1}</div>
-                    <div className="text-center">{line2}</div>
                 </>
             ) : (
                 <IllustrationPlaceholder title={title} url={errorImg}>
                     {children || (
                         <>
                             <span>{line1}</span>
-                            <span>{line2}</span>
                         </>
                     )}
                 </IllustrationPlaceholder>
