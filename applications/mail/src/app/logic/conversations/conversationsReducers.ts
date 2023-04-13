@@ -1,12 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
+import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { isConversation, parseLabelIDsInEvent } from '../../helpers/elements';
-import { isNetworkError, isNotExistError } from '../../helpers/errors';
+import { isNetworkError } from '../../helpers/errors';
 import {
     LabelChanges,
     UnreadStatus,

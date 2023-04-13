@@ -2,6 +2,12 @@ import { c } from 'ttag';
 
 import { HTTP_ERROR_CODES } from '../../errors';
 
+export const isNotExistError = (error: any) =>
+    error?.data &&
+    (error.data.Code === 2061 || // invalid id
+        error.data.Code === 2501 || // message does not exist
+        error.data.Code === 20052); // conversation does not exist
+
 export const getApiError = (e?: any) => {
     if (!e) {
         return {};
