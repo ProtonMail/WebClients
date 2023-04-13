@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getPrimaryPlan, hasPassPlus, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Address,
     Currency,
@@ -20,6 +20,14 @@ import percentage from '@proton/utils/percentage';
 
 import { Icon, Meter, Price, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
+import {
+    getCustomDomainForEmailAliases,
+    getDevices,
+    getForwardingMailboxes,
+    getHideMyEmailAliases,
+    getPasswordsAndNotes,
+    getVaults,
+} from '../features/pass';
 import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,
@@ -188,6 +196,63 @@ const SubscriptionPanel = ({
         );
     };
 
+    const getPassAppFree = () => {
+        /**
+         * To be added when pass endpoint is ready
+         */
+        // const getNumberOfEmailAliases = (usedAliases: number, totalAliases: number) => {
+        //     return c('new_plans: feature').ngettext(
+        //         msgid`${usedAliases} of ${totalAliases} Hide My Email alias`,
+        //         `${usedAliases} of ${totalAliases} Hide My Email aliases`,
+        //         totalAliases
+        //     );
+        // };
+
+        const items: Item[] = [
+            /**
+             * To be added when pass endpoint is ready
+             */
+            // {
+            //     icon: 'eye-slash',
+            //     text: getNumberOfEmailAliases(usedAliases, maxAliases),
+            // },
+            getPasswordsAndNotes(),
+            getDevices(),
+        ];
+
+        return (
+            <StripedList>
+                {storageItem}
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
+    const getPassAppPassPlus = () => {
+        const items: Item[] = [
+            getHideMyEmailAliases('unlimited'),
+            {
+                ...getVaults('unlimited'),
+                text: c('new_plans: feature').t`Unlimited vaults`,
+            },
+            {
+                ...getCustomDomainForEmailAliases(true),
+                text: c('new_plans: feature').t`Custom domains for email aliases`,
+            },
+
+            getForwardingMailboxes('multiple'),
+            getPasswordsAndNotes(),
+            getDevices(),
+        ];
+
+        return (
+            <StripedList>
+                {storageItem}
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
     const getDefault = () => {
         const items: Item[] = [
             ...(() => {
@@ -291,6 +356,12 @@ const SubscriptionPanel = ({
                 }
                 if (hasVPN(subscription)) {
                     return getVpnPlus();
+                }
+                if (user.isFree && app === APPS.PROTONPASS) {
+                    return getPassAppFree();
+                }
+                if (hasPassPlus(subscription)) {
+                    return getPassAppPassPlus();
                 }
                 return getDefault();
             })()}
