@@ -33,6 +33,13 @@ export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureD
     };
 };
 
+export const getE2Encryption = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Strong E2E encryption`,
+        included: true,
+    };
+};
+
 export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Integrated 2FA authenticator`,
