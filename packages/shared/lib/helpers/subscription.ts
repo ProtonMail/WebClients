@@ -16,6 +16,7 @@ const {
     MAIL_PRO,
     DRIVE,
     DRIVE_PRO,
+    PASS_PLUS,
     VPN,
     ENTERPRISE,
     BUNDLE,
@@ -69,6 +70,7 @@ export const hasMail = (subscription: Subscription | undefined) => hasSomePlan(s
 export const hasMailPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL_PRO);
 export const hasDrive = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE);
 export const hasDrivePro = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE_PRO);
+export const hasPassPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, PASS_PLUS);
 export const hasEnterprise = (subscription: Subscription | undefined) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: Subscription | undefined) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: Subscription | undefined) => hasSomePlan(subscription, BUNDLE_PRO);
