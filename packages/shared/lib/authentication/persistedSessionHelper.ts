@@ -37,6 +37,9 @@ export type ResumedSessionResult = {
 };
 
 export const logRemoval = (e: any = {}, UID: string, context: string) => {
+    if (e.status === 401) {
+        return;
+    }
     captureMessage(`Removing session due to `, {
         extra: {
             reason: `${e.name} - ${e.message} - ${e.status || 0}`,
