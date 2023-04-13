@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
 import { useActiveBreakpoint } from '@proton/components';
@@ -23,6 +23,8 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
     const breakpoints = useActiveBreakpoint();
     const elementRef = useRef<HTMLDivElement>(null);
 
+    const [originalMessageMode, setOriginalMessageMode] = useState(false);
+
     const match = useRouteMatch<EOUrlParams>();
     const { id } = match.params;
 
@@ -33,6 +35,8 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
 
     const messageLoaded = !!messageState;
     const bodyLoaded = !!messageState?.messageDocument?.initialized;
+
+    const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
 
     return (
         <EORedirect
@@ -64,6 +68,8 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
                             messageLoaded={messageLoaded}
                             bodyLoaded={bodyLoaded}
                             sourceMode={false}
+                            onBlockquoteToggle={toggleOriginalMessage}
+                            originalMessageMode={originalMessageMode}
                         />
                         <MessageFooter message={messageState} outsideKey={outsideKey} />
                     </div>
