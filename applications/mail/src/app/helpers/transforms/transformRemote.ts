@@ -122,11 +122,12 @@ export const transformRemote = (
 
     if (skipProxy) {
         void loadSkipProxyImages(remoteImages, onLoadRemoteImagesDirect);
-    } else if (showRemoteImages && onLoadFakeImagesProxy) {
+    } else if (showRemoteImages) {
         // Load images through proxy, by forging the URL and putting it directly into the image src
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesDirect, onLoadRemoteImagesProxy);
         // Make a fake load of images to check if they are trackers
-        if (useProxy) {
+        if (useProxy && onLoadFakeImagesProxy) {
+            // Beware because we also pass here when loading images in EO
             void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
         }
     } else if (useProxy && onLoadFakeImagesProxy) {
