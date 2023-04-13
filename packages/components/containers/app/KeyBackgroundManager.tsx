@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 
-import { verifyPoAExistence } from '@proton/key-transparency';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
 import {
@@ -27,7 +26,7 @@ import {
     useGetUserKeys,
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
-import { useKTVerifier } from '../keyTransparency';
+import { useKTAbsenceVerifier, useKTVerifier } from '../keyTransparency';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
@@ -50,6 +49,7 @@ const KeyBackgroundManager = ({
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
+    const { keyTransparencyAbsenceVerifier } = useKTAbsenceVerifier();
 
     useEffect(() => {
         const run = async () => {
@@ -123,7 +123,7 @@ const KeyBackgroundManager = ({
                 keyPassword,
                 addresses,
                 preAuthKTVerify: () => keyTransparencyVerify,
-                verifyPoAExistence,
+                keyTransparencyAbsenceVerifier,
             });
 
             if (hasDoneMigration) {
