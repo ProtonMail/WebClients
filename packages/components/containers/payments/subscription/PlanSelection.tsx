@@ -101,7 +101,7 @@ const PlanSelection = ({
 
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
-    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
+    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS];
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const B2CPlans = [

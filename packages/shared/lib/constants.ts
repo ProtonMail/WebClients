@@ -668,6 +668,7 @@ export enum PLANS {
     // New plans
     DRIVE = 'drive2022',
     DRIVE_PRO = 'drivepro2022',
+    PASS_PLUS = 'pass2023',
     MAIL = 'mail2022',
     MAIL_PRO = 'mailpro2022',
     VPN = 'vpn2022',
@@ -687,6 +688,7 @@ export const PLAN_NAMES = {
     [PLANS.VPNPLUS]: 'Plus',
     [PLANS.DRIVE]: 'Drive Plus',
     [PLANS.DRIVE_PRO]: 'Drive Essentials',
+    [PLANS.PASS_PLUS]: 'Pass Plus',
     [PLANS.MAIL]: 'Mail Plus',
     [PLANS.MAIL_PRO]: 'Mail Essentials',
     [PLANS.VPN]: 'VPN Plus',
