@@ -40,6 +40,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
     calendar: APPS.PROTONCALENDAR,
     drive: APPS.PROTONDRIVE,
     vpn: APPS.PROTONVPN_SETTINGS,
+    pass: APPS.PROTONPASS,
 };
 
 export interface PlanIDs {
