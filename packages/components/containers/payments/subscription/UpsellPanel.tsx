@@ -21,6 +21,7 @@ import {
     hasDrive,
     hasMail,
     hasMailPro,
+    hasPassPlus,
     hasVPN,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
@@ -271,7 +272,14 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Bundle upsell
-    if ((user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) && bundlePlan) {
+    if (
+        (user.isFree ||
+            hasMail(subscription) ||
+            hasDrive(subscription) ||
+            hasPassPlus(subscription) ||
+            hasVPN(subscription)) &&
+        bundlePlan
+    ) {
         const vpnPlan = plans.find(({ Name }) => Name === PLANS.VPN);
         const vpnPlanName = vpnPlan?.Title || '';
         const plan = bundlePlan;
