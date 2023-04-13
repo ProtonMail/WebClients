@@ -5124,6 +5124,12 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Сообщение будет отправлено завтра в ${ formattedTime }"
       ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Сообщения, которые находились в папке Спам более 30 дней, будут удалены автоматически."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Сообщения, которые находились в корзине более 30 дней, будут удалены автоматически."
+      ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
       ],
