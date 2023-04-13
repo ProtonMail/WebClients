@@ -18,6 +18,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.BUNDLE]: null,
             [PLANS.MAIL]: null,
             [PLANS.VPN]: null,
+            [PLANS.PASS_PLUS]: null,
             [PLANS.DRIVE]: null,
             [PLANS.FAMILY]: {
                 text: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
@@ -69,6 +70,7 @@ export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getSupport('priority'),
                 [PLANS.VPN]: getSupport('priority'),
                 [PLANS.DRIVE]: getSupport('priority'),
+                [PLANS.PASS_PLUS]: getSupport('priority'),
                 [PLANS.FAMILY]: getSupport('priority'),
                 [PLANS.MAIL_PRO]: getSupport('priority'),
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
@@ -82,6 +84,7 @@ export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getEasySwitch(),
                 [PLANS.VPN]: getEasySwitch(),
                 [PLANS.DRIVE]: getEasySwitch(),
+                [PLANS.PASS_PLUS]: getEasySwitch(),
                 [PLANS.FAMILY]: getEasySwitch(),
                 [PLANS.MAIL_PRO]: getEasySwitch(),
                 [PLANS.BUNDLE_PRO]: getEasySwitch(),
