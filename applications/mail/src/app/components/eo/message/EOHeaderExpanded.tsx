@@ -136,7 +136,7 @@ const EOHeaderExpanded = ({
             )}
 
             <section className="message-header-extra border-top pt0-5 mx2 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
-                <div className="mt0-5 flex flex-row">
+                <div className="mt0-5 flex flex-row message-banners-container">
                     {messageLoaded && <EOExpirationTime message={message} />}
                     <ExtraImages
                         messageImages={message.messageImages}
