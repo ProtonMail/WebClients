@@ -97,6 +97,8 @@ describe('Message attachments', () => {
     });
 
     it('should open preview when clicking', async () => {
+        window.URL.createObjectURL = jest.fn();
+
         initMessage({ data: { NumAttachments, Attachments } });
 
         const { getAllByTestId } = await setup();
