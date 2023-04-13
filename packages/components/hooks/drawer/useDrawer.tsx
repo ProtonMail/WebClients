@@ -283,8 +283,10 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
 
                     break;
                 case DRAWER_EVENTS.CHILD_URL_UPDATE:
+                    const user = await getUser();
+
                     const { url, app } = event.data.payload;
-                    setDrawerLocalStorageKey({ app, url });
+                    setDrawerLocalStorageKey({ app, url, userID: user.ID });
                     setIframeURLMap((iframeURLMap) => ({
                         ...iframeURLMap,
                         [app]: url,
