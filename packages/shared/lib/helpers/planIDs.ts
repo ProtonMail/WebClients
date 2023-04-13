@@ -1,8 +1,21 @@
 import { ADDON_NAMES, PLANS } from '../constants';
 import { Organization, Plan, PlanIDs } from '../interfaces';
 
-const { MAIL, DRIVE, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO } = PLANS;
-const NEW_PLANS = [MAIL, DRIVE, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO];
+const { MAIL, DRIVE, PASS_PLUS, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO } =
+    PLANS;
+const NEW_PLANS = [
+    MAIL,
+    DRIVE,
+    PASS_PLUS,
+    VPN,
+    FAMILY,
+    NEW_VISIONARY,
+    ENTERPRISE,
+    BUNDLE,
+    BUNDLE_PRO,
+    MAIL_PRO,
+    DRIVE_PRO,
+];
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
