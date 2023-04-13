@@ -36,7 +36,7 @@
         "Mais informações: ${ safeTitle }"
       ],
       "refresh the page": [
-        "actualizar a página"
+        "atualizar a página"
       ],
       "Request new code": [
         "Pedir novo código"
@@ -843,16 +843,16 @@
     },
     "Error": {
       "Email is not valid": [
-        "Correio electrónico no válido"
+        "O correio electrónico não é válido."
       ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "Código de verificação não válido"
       ],
       "Not a valid number": [
-        "Número inválido"
+        "Número não válido"
       ],
       "Passwords do not match": [
         "As palavras-passe não coincidem."
@@ -875,7 +875,7 @@
         "Ups. Algo correu mal"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Por favor ${ refresh } ou verifique a sua ligação."
+        "${ refresh } ou verifique a sua ligação."
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
@@ -998,7 +998,7 @@
         "Código enviado para ${ methodTo }"
       ],
       "Verification successful": [
-        "Verificação com sucesso"
+        "A verificação é terminada."
       ]
     },
     "Title": {
@@ -1009,7 +1009,7 @@
         "Verificação humana"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "Código de verificação não válido"
       ],
       "Request new code": [
         "Pedir novo código"

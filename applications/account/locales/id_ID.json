@@ -7902,6 +7902,26 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Dari ${ price } per pengguna"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -7941,26 +7961,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Dari ${ price } per pengguna"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ]
     },
     "new_plans: attribute": {

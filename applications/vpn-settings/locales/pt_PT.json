@@ -78,7 +78,7 @@
         "Criar conta"
       ],
       "Current plan": [
-        "Plano actual"
+        "Plano atual"
       ],
       "Customize": [
         "Personalizar"
@@ -102,7 +102,7 @@
         "Não recebeu o código?"
       ],
       "Disable": [
-        "Desactivar"
+        "Desativar"
       ],
       "Discard": [
         "Descartar"
@@ -144,7 +144,7 @@
         "Editar subscrição"
       ],
       "enable desktop notifications": [
-        "activar as notificações"
+        "ativar as notificações"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar outros planos ${ BRAND_NAME }"
@@ -210,10 +210,10 @@
         "Referencie um amigo"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Atualizar a página"
       ],
       "refresh the page": [
-        "actualizar a página"
+        "atualizar a página"
       ],
       "Remove bonuses": [
         "Remover bónus"
@@ -318,7 +318,7 @@
         "Atualizar frase de recuperação"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -370,6 +370,11 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        "Não, obrigado"
       ]
     },
     "Addon": {
@@ -469,7 +474,7 @@
         "Problema de transmissão"
       ],
       "Update problem": [
-        "Problema de actualização"
+        "Problema de atualização"
       ],
       "VPN problem": [
         "Problema de VPN"
@@ -1361,13 +1366,13 @@
         "Quantia abaixo do mínimo."
       ],
       "Code wrong or not valid anymore": [
-        "Código errado ou inválido"
+        "Código errado ou não válido"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email is not valid": [
-        "Correio electrónico no válido"
+        "O correio electrónico não é válido."
       ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
@@ -1376,7 +1381,7 @@
         "Erro ao ligar à API do Bitcoin."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e insira o seu código novamente."
+        "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e insira o seu código novamente."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenciais de início de sessão incorrectas. Tente novamente."
@@ -1385,28 +1390,28 @@
         "Palavra-passe da caixa de correio incorrecta. Tente novamente."
       ],
       "Invalid ${ name } code": [
-        "Código ${ name } inválido"
+        "Código ${ name } não válido"
       ],
       "Invalid card number": [
-        "Número de cartão inválido"
+        "Número de cartão não válido"
       ],
       "Invalid code": [
-        "Código inválido"
+        "Código não válido"
       ],
       "Invalid expiration date": [
-        "Data de validade inválida"
+        "Data de validade não válida"
       ],
       "Invalid postal code": [
-        "Código postal inválido"
+        "Código postal não válido"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "Código de verificação não válido"
       ],
       "Name on card required": [
         "É necessário o nome no cartão"
       ],
       "Not a valid number": [
-        "Número inválido"
+        "Número não válido"
       ],
       "Passwords do not match": [
         "As palavras-passe não coincidem."
@@ -1421,13 +1426,13 @@
         "Processo de pagamento não suportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão actualmente disponíveis, por favor tente mais tarde"
+        "Os pagamentos não estão atualmente disponíveis. Tente novamente mais tarde."
       ],
       "Please set a recovery email first": [
         "Defina primeiro um correio electrónico de recuperação."
       ],
       "Please set a recovery phone number first": [
-        "Por favor, defina um número de telefone de recuperação"
+        "Defina um número de telefone de recuperação."
       ],
       "Process aborted": [
         "Processo abortado"
@@ -1436,7 +1441,7 @@
         "Falha ao verificar a assinatura"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
+        "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
       ],
       "Tab closed": [
         "Separador fechado"
@@ -1474,7 +1479,7 @@
         "Ups. Algo correu mal"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Por favor ${ refresh } ou verifique a sua ligação."
+        "${ refresh } ou verifique a sua ligação."
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
@@ -1617,16 +1622,16 @@
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
+        "O acesso à conta restringido devido a facturas por pagar. Contacte o administrador."
       ],
       "Account successfully updated": [
-        "Conta actualizada com sucesso"
+        "Conta atualizada"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Adicione outro nível de segurança à sua conta. Terá de se verificar com uma autenticação A2F cada vez que entrar na sua conta."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Após efectuar o seu pagamento com BitCoin, por favor siga as instruções abaixo para actualizar."
+        "Após efectuar o seu pagamento com BitCoin, siga as instruções abaixo para atualizar."
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -1635,7 +1640,7 @@
         "Quantia abaixo do mínimo (${ amount })."
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Tem certeza de que deseja desactivar a autenticação em dois passos?"
+        "Tem certeza de que deseja desativar a autenticação em dois passos?"
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
@@ -1650,7 +1655,7 @@
         "As transacções em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transacção, pode pagar a sua factura com os créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
+        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
@@ -1683,7 +1688,7 @@
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
       ],
       "Emailing preference saved": [
-        "Preferências do correio electronico actualizadas"
+        "Preferências do correio electronico atualizadas"
       ],
       "Enter key manually instead": [
         "Inserir a chave manualmente"
@@ -1728,7 +1733,7 @@
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
+        "Se acredita que houve um erro, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
@@ -1806,19 +1811,19 @@
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
       "Plan upgrade required": [
-        "Requerida actualização do plano"
+        "Atualização do plano requerida"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Por favor, note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Forneça um endereço de correio electrónico, caso necessitemos de o contactar."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Por favor, tente novamente, utilize um método de pagamento diferente, ou contacte o PayPal para assistência."
+        "Tente novamente com um método de pagamento diferente, ou contacte o PayPal para assistência."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Por favor, verifique o pagamento no separador que abriu."
+        "Verifique o pagamento no separador que abriu."
       ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
@@ -1827,7 +1832,7 @@
         "Apoio ao cliente prioritário"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
+        "Atualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -1857,19 +1862,19 @@
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Este navegador não suporta a antevisão de documentos PDF. Por favor, transfira o ficheiro."
+        "Este navegador não suporta a antevisão de documentos PDF. Transfira o ficheiro."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Isto também desactivará qualquer método de autenticação em dois passos associado a esta conta."
+        "Isto também desativará qualquer método de autenticação em dois passos associado a esta conta."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Isto cancelará a sua assinatura paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
+        "Isto cancelará a sua assinatura paga atual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
+        "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reativar esta conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
@@ -1881,10 +1886,10 @@
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para se manter actualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
+        "Para se manter atualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
+        "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
       "Total email addresses": [
         "Total de endereços de correio electrónico"
@@ -1899,10 +1904,10 @@
         "Total de conexões VPN"
       ],
       "Two-factor authentication disabled": [
-        "Autenticação em dois passos desactivada"
+        "Autenticação em dois passos desativada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticação em dois passos activada"
+        "Autenticação em dois passos ativada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "O modo de senha dupla requer duas senhas: uma para iniciar a sessão e outra para desencriptar a caixa de correio (avançado)."
@@ -1926,7 +1931,7 @@
         "A verificação pode levar alguns minutos."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
+        "A verificação abrirá um novo separador, desative os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
@@ -1941,7 +1946,7 @@
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, por favor desactive-os."
+        "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, desative-os."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
@@ -1992,7 +1997,7 @@
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "A conta será actualizada assim que o pagamento for aprovado."
+        "A conta será atualizada assim que o pagamento for aprovado."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu correio electrónico só será usado para esta verificação única."
@@ -2004,12 +2009,12 @@
         "O seu telefone só será usado para esta verificação única."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "A sua subscrição é gerida pela Mozilla. Por favor contacte o suporte da Mozilla."
+        "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
       ]
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Por favor, contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
+        "Contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
       ]
     },
     "Info for payment methods": {
@@ -2024,7 +2029,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Para evitar qualquer interrupção do serviço devido a facturas por pagar, por favor certifique-se de que tem pelo menos 1 método de pagamento válido gravado em qualquer altura no passado."
+        "Para evitar qualquer interrupção do serviço devido a facturas por pagar. Certifique-se de que tem pelo menos 1 método de pagamento válido gravado em qualquer altura no passado."
       ]
     },
     "Invoice state display as badge": {
@@ -2157,7 +2162,7 @@
         "Créditos usados"
       ],
       "Current display name": [
-        "Nome a mostrar actual"
+        "Nome a mostrar atual"
       ],
       "Customize invoices": [
         "Personalizar facturas"
@@ -2316,7 +2321,7 @@
         "Código de verificação"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Lamentamos a sua partida. Por favor, diga-nos porquê, para podermos melhorar o serviço."
+        "Lamentamos a sua partida. Diga-nos porquê, para podermos melhorar o serviço."
       ],
       "What happened?": [
         "O que é que aconteceu?"
@@ -2343,6 +2348,9 @@
       "${ BRAND_NAME } beta announcements": [
         "Comunicados do ${ BRAND_NAME } beta"
       ],
+      "${ BRAND_NAME } company announcements": [
+        "Anúncios da empresa ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Boletim da ${ BRAND_NAME } for Business"
       ],
@@ -2351,6 +2359,9 @@
       ],
       "${ BRAND_NAME } offers and promotions": [
         "Ofertas e promoções da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Anúncios de produtos da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correios electronicos de boas-vindas da ${ BRAND_NAME }"
@@ -2408,7 +2419,7 @@
         "Termos"
       ],
       "Upgrade account": [
-        "Actualizar conta"
+        "Atualizar conta"
       ],
       "View guide": [
         "Ver guia"
@@ -2446,7 +2457,7 @@
         "Eliminar conta"
       ],
       "Got it": [
-        "Percebi"
+        "Entendido"
       ],
       "Switch or add account": [
         "Trocar ou adicionar conta"
@@ -2661,7 +2672,7 @@
         "Palavra-passe"
       ],
       "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+        "Descreva o problema e inclua quaisquer mensagens de erro."
       ],
       "Select": [
         "Selecionar"
@@ -2732,7 +2743,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "A regredir a conta, por favor aguarde"
+        "Aguarde. Estamos a modificar a sua conta."
       ]
     },
     "Storage": {
@@ -2740,10 +2751,10 @@
         "Notas de lançamento"
       ],
       "Upgrade storage": [
-        "Actualizar armazenamento"
+        "Atualizar armazenamento"
       ],
       "Your current storage:": [
-        "O seu armazenamento actual:"
+        "O seu armazenamento atual:"
       ]
     },
     "Subscription attribute": {
@@ -2817,7 +2828,7 @@
         "Endereço copiado para a área de transferência"
       ],
       "Email updated": [
-        "Correio eletrónico actualizado"
+        "Correio eletrónico atualizado"
       ],
       "Gift code applied": [
         "Código de oferta aplicado"
@@ -2835,10 +2846,10 @@
         "Factura paga"
       ],
       "Locale updated": [
-        "Idioma actualizado"
+        "Idioma atualizado"
       ],
       "Password updated": [
-        "Palavra-passe actualizada"
+        "Palavra-passe atualizada"
       ],
       "Payment method added": [
         "Método de pagamento adicionado"
@@ -2847,16 +2858,16 @@
         "Método de pagamento eliminado"
       ],
       "Payment method updated": [
-        "Método de pagamento actualizado"
+        "Método de pagamento atualizado"
       ],
       "Phone number updated": [
-        "Número de telefone actualizado"
+        "Número de telefone atualizado"
       ],
       "Verification successful": [
-        "Verificação com sucesso"
+        "A verificação é terminada."
       ],
       "You have successfully unsubscribed": [
-        "A sua subscrição foi cancelada com sucesso"
+        "A sua subscrição foi cancelada."
       ]
     },
     "Suffix": {
@@ -2993,7 +3004,7 @@
         "Dispositivo ligado!"
       ],
       "Disable two-factor authentication": [
-        "Desactivar autenticação em dois passos"
+        "Desativar autenticação em dois passos"
       ],
       "Downgrade account": [
         "Regredir conta"
@@ -3008,7 +3019,7 @@
         "Editar o nome a mostrar"
       ],
       "Email subscriptions": [
-        "Subscrições de email"
+        "Boletins informativos"
       ],
       "End date": [
         "Data de fim"
@@ -3020,7 +3031,7 @@
         "Erro"
       ],
       "Find email or username": [
-        "Encontrar email ou utilizador"
+        "Encontrar correio electrónico ou utilizador"
       ],
       "General": [
         "Geral"
@@ -3035,7 +3046,7 @@
         "Verificação humana"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "Código de verificação não válido"
       ],
       "Invoices": [
         "Facturas"
@@ -3182,10 +3193,13 @@
         "O que há de novo"
       ],
       "Your current plan": [
-        "O seu plano actual"
+        "O seu plano atual"
       ],
       "Your plan": [
         "O seu plano"
+      ],
+      "Your subscriptions": [
+        "As suas assinaturas"
       ]
     },
     "Title for payment methods table": {
@@ -3247,10 +3261,10 @@
         "Ao eliminar este número de telefone, já não poderá recuperar a sua conta."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Por favor, note que ao escolher este método de pagamento, a sua conta não poderá ser actualizada imediatamente. Faremos a actualização assim que o pagamento for aprovado."
+        "Note que ao escolher este método de pagamento, a sua conta não poderá ser atualizada imediatamente. Faremos a atualização assim que o pagamento for aprovado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
+        "Os relatórios não são encriptados de ponta-a-ponta. Não envie nenhuma informação sensível."
       ]
     }
   }
