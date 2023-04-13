@@ -470,6 +470,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             return PLANS.DRIVE;
         }
 
+        if (toApp === APPS.PROTONPASS) {
+            return PLANS.PASS_PLUS;
+        }
+
         return PLANS.MAIL;
     })();
 
