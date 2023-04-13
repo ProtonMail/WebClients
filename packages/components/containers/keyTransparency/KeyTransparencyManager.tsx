@@ -70,7 +70,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
      */
     const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (keyList, email, SignedKeyList, IgnoreKT) => {
         const feature = await get().then((result) => result?.Value);
-        if (feature === KtFeatureEnum.DISABLE) {
+        if (!(await isKTActive(APP_NAME, feature))) {
             return;
         }
 

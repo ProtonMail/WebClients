@@ -42,7 +42,7 @@ import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
-import { createPreAuthKTVerifier } from '../keyTransparency';
+import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '../keyTransparency';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
@@ -201,7 +201,7 @@ const handleKeyUpgrade = async ({
     keyPassword: string;
     isOnePasswordMode?: boolean;
 }) => {
-    const { appName, api, preAuthKTVerifier } = cache;
+    const { appName, api, preAuthKTVerifier, keyMigrationKTVerifier } = cache;
     let keyPassword = maybeKeyPassword;
 
     if (appName !== APPS.PROTONACCOUNT) {
@@ -213,18 +213,16 @@ const handleKeyUpgrade = async ({
         cache.data.addresses || syncAddresses(cache),
     ]);
 
-    const { preAuthKTVerify, preAuthKTAbsenceVerify } = preAuthKTVerifier;
+    const { preAuthKTVerify } = preAuthKTVerifier;
 
     if (getHasV2KeysToUpgrade(user, addresses)) {
-        // Key uprade can be triggered by the server. Since the only legitimate
-        // case in which this can happen is when an address is not in KT (otherwise
-        // its keys must have been already upgraded and migrated), we check whether
-        // this is the case by verifying that an absence proof exists and verifies.
-        // If either is not satisfied, key upgrade is considered to be malicious
+        // Key upgrade can be triggered by the server.
+        // Since the server could use that logic to regenerate
+        // new SKLs on demand, we need to check the KT state.
         await Promise.all(
-            addresses.map(async ({ Keys, Email }) => {
+            addresses.map(async ({ Keys, Email, SignedKeyList }) => {
                 if (getV2KeysToUpgrade(Keys).length > 0) {
-                    await preAuthKTAbsenceVerify(canonicalizeInternalEmail(Email));
+                    await keyMigrationKTVerifier(canonicalizeInternalEmail(Email), Keys, SignedKeyList);
                 }
             })
         );
@@ -253,17 +251,13 @@ const handleKeyUpgrade = async ({
         }
     }
 
-    const keyTransparencyAbsenceVerifier = async (email: string) => {
-        return preAuthKTAbsenceVerify(email);
-    };
-
     const hasDoneMigration = await migrateUser({
         api,
         keyPassword,
         user,
         addresses,
         preAuthKTVerify,
-        keyTransparencyAbsenceVerifier,
+        keyMigrationKTVerifier,
     }).catch((e) => {
         const error = getSentryError(e);
         if (error) {
@@ -479,6 +473,13 @@ export const handleLogin = async ({
         hasTrustedDeviceRecovery,
         setupVPN,
         preAuthKTVerifier: createPreAuthKTVerifier(appName, ktFeature, api),
+        keyMigrationKTVerifier: createKeyMigrationKTVerifier(
+            async () => {
+                return ktFeature;
+            },
+            api,
+            appName
+        ),
     };
 
     return next({ cache, from: AuthStep.LOGIN });
