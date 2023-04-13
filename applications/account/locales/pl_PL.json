@@ -1020,8 +1020,17 @@
       "${ nameToDisplay }'s inbox": [
         "Skrzynka odbiorcza ${ nameToDisplay }"
       ],
+      "5 trackers removed": [
+        "Usunięto 5 skryptów śledzących"
+      ],
       "Auto forwarded": [
         "Automatycznie przekierowane"
+      ],
+      "Email received": [
+        "Otrzymano wiadomość"
+      ],
+      "Encrypted": [
+        "Zaszyfrowana"
       ],
       "New email": [
         "Nowa wiadomość"
@@ -8130,6 +8139,26 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Od ${ price } za użytkownika"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Zachowaj moje konto ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -8169,26 +8198,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Od ${ price } za użytkownika"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Zachowaj moje konto ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
       ]
     },
     "new_plans: attribute": {

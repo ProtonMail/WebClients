@@ -1012,6 +1012,26 @@
         "Esto desconectará todos los routers y clientes que utilicen este certificado."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Bandeja de entrada de ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 rastreadores eliminados"
+      ],
+      "Auto forwarded": [
+        "Reenvío automático"
+      ],
+      "Email received": [
+        "Correo electrónico recibido"
+      ],
+      "Encrypted": [
+        "Cifrado"
+      ],
+      "New email": [
+        "Nuevo correu electronico"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicaciones de ${ BRAND_NAME }"
@@ -2594,6 +2614,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Elimina automáticamente los mensajes de más de 30 días de las carpetas Papelera y Spam. Disfruta de este y otros beneficios al actualizar tu plan."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicidades! Has ganado el máximo de meses gratis de ${ rewardsLimit } de ${ plusPlanName }."
       ],
@@ -2606,12 +2629,18 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail y un signo más"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
       "Track the status and activity of your referrals.": [
         "Sigue el estado y actividad de tus referencias."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Ícono de venta adicional que contiene el logotipo de ${ BRAND_NAME } seguido de un signo más"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puedes seguir invitando amigos, pero no podrás ganar más créditos."
@@ -3870,6 +3899,17 @@
       ],
       "(during your first month)": [
         "(durante tu primer mes)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenvía automáticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "mensajes de Gmail a tu bandeja de entrada"
+      ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
       ]
     },
     "Go to sign in": {
@@ -5155,6 +5195,9 @@
       ],
       "it’s imperative": [
         "es obligatorio"
+      ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "He estado usando @ProtonMail y creo que puede gustarte. Es un servicio de correo electrónico seguro que protege tu privacidad. Regístrate con mi enlace de referencia para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -6660,6 +6703,9 @@
       "Auto show remote images": [
         "Mostrar automáticamente las imágenes remotas"
       ],
+      "Auto-delete unwanted messages": [
+        "Eliminar automáticamente mensajes no deseados"
+      ],
       "Auto-detect primary time zone": [
         "Detectar automáticamente la zona horaria principal"
       ],
@@ -7945,6 +7991,26 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Desde ${ price } por usuario"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Continuar con mi cuneta ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Actualizar"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pasar a la revisión"
@@ -7984,26 +8050,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Pasar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Desde ${ price } por usuario"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Continuar con mi cuneta ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Actualizar"
       ]
     },
     "new_plans: attribute": {
@@ -8081,6 +8127,9 @@
       ],
       "Advanced sharing security": [
         "Seguridad avanzada al compartir archivos"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Eliminar automáticamente spam y mensajes de la papelera"
       ],
       "Auto-reply": [
         "Respuesta automática"
@@ -10422,6 +10471,9 @@
       "Clear": [
         "Borrar"
       ],
+      "Clear out the junk": [
+        "¡Deshazte de los mensajes innecesarios!"
+      ],
       "Composing": [
         "Redacción"
       ],
@@ -10569,6 +10621,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
+      ],
+      "Duration": [
+        "Duración"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
@@ -11192,6 +11247,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personaliza la importación para reducir el número de etiquetas."
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Elimina los mensajes de las carpetas Papelera y Spam después de 30 días. Habilitar esta opción eliminará todos los mensajes que se encuentren actualmente en tus carpetas Spam y Papelera. Los futuros mensajes en las carpetas Papelera y Spam se eliminarán automáticamente después de 30 días."
       ],
       "Each imported email will have this label": [
         "Cada correo electrónico importado tendrá esta etiqueta."

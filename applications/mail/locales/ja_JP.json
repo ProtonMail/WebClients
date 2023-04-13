@@ -772,6 +772,9 @@
       "Remove expiration time": [
         "有効期限を削除"
       ],
+      "Remove self-destruction": [
+        "有効期限を削除"
+      ],
       "Remove this label": [
         "このラベルを削除"
       ],
@@ -846,6 +849,15 @@
       ],
       "Select all messages": [
         "すべてのメッセージを選択"
+      ],
+      "Self-destruct in 7 days": [
+        "有効期限を 7 日後に設定"
+      ],
+      "Self-destruct message": [
+        "有効期限付きメッセージ"
+      ],
+      "Self-destruct on ...": [
+        "有効期限を設定..."
       ],
       "Send": [
         "送信"
@@ -3454,6 +3466,9 @@
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
       ],
+      "Time zone": [
+        "タイムゾーン"
+      ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
       ],
@@ -3805,6 +3820,11 @@
     "Get started checklist title": {
       "Get started": [
         "利用開始"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Google でサインイン"
       ]
     },
     "Group": {
@@ -4169,6 +4189,12 @@
       ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 枚の埋め込み画像"
+      ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: 元サイズの画像"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: 低画質のプレビュー"
       ],
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
@@ -5178,6 +5204,9 @@
       "When do you want your message to be sent?": [
         "いつメッセージを送信しますか？"
       ],
+      "When do you want your message to self-destruct?": [
+        "メッセージの有効期限をいつに設定しますか？"
+      ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "メールアドレスを伝える際に、本来のメールアドレスではなく専用の使い捨て Hide My Email エイリアスを使用します。"
       ],
@@ -6038,6 +6067,11 @@
         "日付"
       ]
     },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "時刻"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "色"
@@ -6884,6 +6918,9 @@
     "protonbadge": {
       "Official": [
         "公式"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "${ BRAND_NAME } からの公式メール"
       ]
     },
     "Received email icon": {
@@ -7352,6 +7389,12 @@
       ],
       "Read receipt sent": [
         "開封確認が送信されました"
+      ],
+      "Self-destruction removed": [
+        "有効期限が削除されました"
+      ],
+      "Self-destruction set": [
+        "有効期限が設定されました"
       ],
       "Undo in progress": [
         "取り消し中"
@@ -7859,6 +7902,9 @@
       ],
       "Select contact group": [
         "連絡先グループの選択"
+      ],
+      "Self-destruct message": [
+        "有効期限付きメッセージ"
       ],
       "Send email": [
         "メールの送信"
