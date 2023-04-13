@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useConfig, useDrawer, useOnline } from '@proton/components/hooks';
+import { useConfig, useDrawer, useOnline, useUser } from '@proton/components/hooks';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -15,6 +15,7 @@ import { DrawerLocalStorageValue } from '@proton/shared/lib/drawer/interfaces';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 const useOpenDrawerOnLoad = () => {
+    const [user] = useUser();
     const { APP_NAME } = useConfig();
     const { offline } = useApiStatus();
     const onlineStatus = useOnline();
@@ -27,13 +28,14 @@ const useOpenDrawerOnLoad = () => {
         if (itemFromStorage) {
             // Surround JSON.parse by try/catch in case the value cannot be parsed
             try {
-                const { app, url } = JSON.parse(itemFromStorage) as DrawerLocalStorageValue;
+                const { app, url, userID } = JSON.parse(itemFromStorage) as DrawerLocalStorageValue;
 
                 if (app && isAppReachable) {
                     const isValidApp = getIsDrawerApp(app);
                     const canDisplayDrawerApp = getDisplayDrawerApp(APP_NAME, app);
+                    const isUser = userID === user.ID;
 
-                    if (!isValidApp || !canDisplayDrawerApp) {
+                    if (!isValidApp || !canDisplayDrawerApp || !isUser) {
                         return;
                     }
 
