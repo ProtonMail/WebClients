@@ -4,7 +4,7 @@ import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-const getPasswordsAndNotes = (): PlanCardFeatureDefinition => {
+export const getPasswordsAndNotes = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Unlimited passwords and notes`,
         included: true,
@@ -12,7 +12,7 @@ const getPasswordsAndNotes = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getDevices = (): PlanCardFeatureDefinition => {
+export const getDevices = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Unlimited devices`,
         included: true,
