@@ -482,6 +482,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,
                                                         SSO_PATHS.VPN_SIGNUP,
+                                                        SSO_PATHS.PASS_SIGNUP,
                                                     ]}
                                                 >
                                                     <SignupContainer
@@ -525,6 +526,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.CALENDAR_SIGN_IN,
                                                         SSO_PATHS.DRIVE_SIGN_IN,
                                                         SSO_PATHS.VPN_SIGN_IN,
+                                                        SSO_PATHS.PASS_SIGN_IN,
                                                     ]}
                                                     exact
                                                 >
