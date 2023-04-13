@@ -169,7 +169,7 @@ const verifyProofOfExistence = async (proof: Proof, email: string, TreeHash: str
  * and key migration. If such actions, which can be triggered by the server,
  * are performed over addresses already in KT, they are considered to be malicious
  */
-export const verifyPoAExistence = async (api: Api, email: string) => {
+export const verifyLatestProofOfAbsence = async (api: Api, email: string) => {
     const epoch = await fetchRecentEpoch(api);
     if (!epoch) {
         return;

@@ -37,6 +37,7 @@ export type KeyTransparencyCommit = (userKeys: DecryptedKey[]) => Promise<void>;
 
 export interface PreAuthKTVerifier {
     preAuthKTVerify: PreAuthKTVerify;
+    preAuthKTAbsenceVerify: (email: string) => Promise<void>;
     preAuthKTCommit: (userID: string) => Promise<void>;
 }
 
