@@ -2252,6 +2252,9 @@
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
       ],
+      "Time zone": [
+        "タイムゾーン"
+      ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
       ],
@@ -2769,6 +2772,12 @@
       ],
       "${ errorCount } failed": [
         "失敗 ${ errorCount } 件"
+      ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: 元サイズの画像"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: 低画質のプレビュー"
       ],
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"

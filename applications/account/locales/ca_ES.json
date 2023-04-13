@@ -2597,6 +2597,9 @@
       "${ name } added": [
         "${ name } afegit"
       ],
+      "${ name } deletion failed": [
+        "No s'ha pogut eliminar ${ name }."
+      ],
       "${ name } successfully deleted": [
         "${ name }\" eliminat"
       ]
@@ -2821,6 +2824,9 @@
       ],
       "Error in one of the conditions": [
         "Errada en una de les condicions"
+      ],
+      "Expired": [
+        "Caducat"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "No s'han pogut obtenir sessions actives. ${ refresh } o torneu-ho a provar més tard."
@@ -5514,9 +5520,17 @@
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari . Elimineu els enllaços de calendari compartit i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la vostra subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Elimineu els enllaços de calendari compartit i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la vostra subscripció de ${ MAIL_SHORT_APP_NAME }."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Pots mantenir un calendari de fins a ${ MAX_CALENDARS_FREE }. Elimina els enllaços de calendari compartit i qualsevol usuari de ${ BRAND_NAME } amb qui hagis compartit els teus calendaris abans de cancel·lar la teva subscripció.",
         "Pots mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Elimina els enllaços de calendari compartit i qualsevol usuari de ${ BRAND_NAME } amb qui hagis compartit els teus calendaris abans de cancel·lar la teva subscripció."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Pots mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Elimineu els enllaços del calendari compartit abans de cancel·lar la vostra subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Pots mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Elimineu els enllaços del calendari compartit abans de cancel·lar la vostra subscripció de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
         "Pots mantenir un calendari de fins a ${ MAX_CALENDARS_FREE }. Si us plau, elimineu els enllaços del calendari compartit abans de cancel·lar la vostra subscripció.",
@@ -7386,6 +7400,26 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora altres plans ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Des de ${ price } per usuari"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Conservar el meu compte ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar amb el gratuït"
@@ -7422,26 +7456,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora altres plans ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Des de ${ price } per usuari"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Conservar el meu compte ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: attribute": {
@@ -9300,6 +9314,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
+      ],
+      "Duration": [
+        "Durada"
       ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
