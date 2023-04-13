@@ -5,7 +5,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { getLocalKey, getLocalSessions, setLocalKey } from '../api/auth';
+import { getLocalKey, getLocalSessions, revoke, setLocalKey } from '../api/auth';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
 import { InactiveSessionError } from '../api/helpers/withApiHandlers';
 import { getUser } from '../api/user';
@@ -34,6 +34,16 @@ export type ResumedSessionResult = {
     User: tsUser;
     persistent: boolean;
     trusted: boolean;
+};
+
+export const logRemoval = (e: any = {}, UID: string, context: string) => {
+    captureMessage(`Removing session due to `, {
+        extra: {
+            reason: `${e.name} - ${e.message} - ${e.status || 0}`,
+            UID,
+            context,
+        },
+    });
 };
 
 const handleDrawerApp = (localID: number) => {
@@ -85,7 +95,7 @@ const handleDrawerApp = (localID: number) => {
     return promise;
 };
 
-export const resumeSession = async (api: Api, localID: number, User?: tsUser): Promise<ResumedSessionResult> => {
+export const resumeSession = async (api: Api, localID: number): Promise<ResumedSessionResult> => {
     const res = await handleDrawerApp(localID);
 
     // If we got a res, it means that we are in a drawer app. We don't need to make the whole resumeSession part
@@ -109,7 +119,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
         try {
             const [ClientKey, persistedUser] = await Promise.all([
                 api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
-                User || api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
+                api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
             ]);
             const rawKey = base64StringToUint8Array(ClientKey);
             const key = await getKey(rawKey);
@@ -120,10 +130,14 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
             return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser, persistent, trusted };
         } catch (e: any) {
             if (getIs401Error(e)) {
+                logRemoval(e, persistedUID, 'resume 401');
+                await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
                 removePersistedSession(localID, persistedUID);
                 throw new InvalidPersistentSessionError('Session invalid');
             }
             if (e instanceof InvalidPersistentSessionError) {
+                logRemoval(e, persistedUID, 'invalid blob');
+                await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
                 removePersistedSession(localID, persistedUID);
                 throw e;
             }
@@ -140,6 +154,8 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
         return { UID: persistedUID, LocalID: localID, User, persistent, trusted };
     } catch (e: any) {
         if (getIs401Error(e)) {
+            logRemoval(e, persistedUID, 'resume 401 - 2');
+            await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
             removePersistedSession(localID, persistedUID);
             throw new InvalidPersistentSessionError('Session invalid');
         }
@@ -246,7 +262,12 @@ const getNonExistingSessions = async (
 
     const result = await Promise.all(
         nonExistingSessions.map(async (persistedSession) => {
-            const result = await api<{ User: tsUser }>(withUIDHeaders(persistedSession.UID, getUser())).catch(noop);
+            const result = await api<{ User: tsUser }>(withUIDHeaders(persistedSession.UID, getUser())).catch((e) => {
+                if (getIs401Error(e)) {
+                    logRemoval(e, persistedSession.UID, 'non-existing-sessions');
+                    removePersistedSession(persistedSession.localID, persistedSession.UID);
+                }
+            });
             if (!result?.User) {
                 return undefined;
             }
@@ -332,7 +353,7 @@ export const maybeResumeSessionByUser = async (
         return;
     }
     try {
-        return await resumeSession(api, maybePersistedSession.localID, User);
+        return await resumeSession(api, maybePersistedSession.localID);
     } catch (e: any) {
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;
