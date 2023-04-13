@@ -87,6 +87,8 @@ describe('Encrypted Outside message attachments', () => {
     });
 
     it('should open preview when clicking', async () => {
+        window.URL.createObjectURL = jest.fn();
+
         const { getAllByTestId } = await setup({ attachments: Attachments, numAttachments: NumAttachments });
 
         const items = await waitFor(() => getAllByTestId('attachment-item'));

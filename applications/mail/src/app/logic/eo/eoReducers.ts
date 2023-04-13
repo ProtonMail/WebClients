@@ -3,7 +3,7 @@ import { Draft } from 'immer';
 
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
-import { loadBackgroundImages, loadImages, removeProtonPrefix } from '../../helpers/message/messageRemotes';
+import { loadBackgroundImages, loadImages } from '../../helpers/message/messageRemotes';
 import { MessageRemoteImage, MessageState } from '../messages/messagesTypes';
 import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
 import { initialState } from './eoSlice';
@@ -15,7 +15,6 @@ import {
     EOLoadEmbeddedParams,
     EOLoadEmbeddedResults,
     EOLoadRemoteParams,
-    EOLoadRemoteResults,
     EOMessage,
     EOMessageParams,
     EOMessageReply,
@@ -27,14 +26,13 @@ export const getMessageState = (state: Draft<EOState>) => eoMessageStateSelector
 
 export const getEOMessage = (state: Draft<EOState>) => eoMessageSelector({ eo: state } as RootState);
 
-// Get image refs in the state for those in data
-const getStateImages = <T extends { image: MessageRemoteImage }>(data: T[], messageState: MessageState) => {
+const getStateImage = <T extends { image: MessageRemoteImage }>(data: T, messageState: MessageState) => {
     const remoteImages = getRemoteImages(messageState);
 
-    return data.map(({ image: inputImage, ...rest }) => {
-        const image = remoteImages.find((image) => image.id === inputImage.id) as MessageRemoteImage;
-        return { image, ...rest };
-    });
+    const { image: inputImage, ...rest } = data;
+
+    const image = remoteImages.find((image) => image.id === inputImage.id) as MessageRemoteImage;
+    return { image, inputImage, ...rest };
 };
 
 export const reset = (state: Draft<EOState>) => {
@@ -121,51 +119,65 @@ export const EOLoadEmbeddedFulfilled = (
     }
 };
 
-export const EOLoadRemotePending = (
+export const EOLoadRemote = (
     state: Draft<EOState>,
-    {
-        meta: {
-            arg: { imagesToLoad },
-        },
-    }: PayloadAction<undefined, string, { arg: EOLoadRemoteParams }>
+    // action: PayloadAction<LoadRemoteFromURLParams>
+    action: PayloadAction<EOLoadRemoteParams>
 ) => {
-    const messageState = getMessageState(state);
-
-    if (messageState) {
-        const imagesToLoadIDs = imagesToLoad.map((image) => image.id);
-        getRemoteImages(messageState).forEach((image) => {
-            if (imagesToLoadIDs.includes(image.id)) {
-                image.status = 'loading';
-                image.originalURL = image.url;
-            }
-        });
-    }
-};
-
-export const EOLoadRemoteFulfilled = (
-    state: Draft<EOState>,
-    { payload }: PayloadAction<EOLoadRemoteResults[], string, { arg: EOLoadRemoteParams }>
-) => {
+    const { imagesToLoad } = action.payload;
     const messageState = getMessageState(state);
 
     if (messageState && messageState.messageImages) {
-        const imagesLoaded = getStateImages(payload, messageState);
+        imagesToLoad.forEach((imageToLoad) => {
+            if (messageState.messageImages) {
+                const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
+                const { image, inputImage } = imageToLoadState;
+                let newImage: MessageRemoteImage = { ...inputImage };
 
-        imagesLoaded.forEach(({ image, error }) => {
-            if (image) {
-                removeProtonPrefix(image.original as HTMLElement);
-                image.error = error;
-                image.status = 'loaded';
+                if (imageToLoad.url || imageToLoad.originalURL) {
+                    // Image is already in state, we only need to put it as loaded
+                    if (image) {
+                        image.status = 'loaded';
+                        image.error = undefined;
+                        if (image.url) {
+                            image.originalURL = image.url;
+                        } else {
+                            // When using load direct, imageToLoad.url might have been removed
+                            image.url = imageToLoad.originalURL;
+                            image.originalURL = imageToLoad.url;
+                        }
+                    } else if (Array.isArray(messageState.messageImages.images)) {
+                        // Image not found in the state, we need to add it
+                        newImage = {
+                            ...newImage,
+                            status: 'loaded',
+                            originalURL: inputImage.url,
+                            url: inputImage.url,
+                        };
+                        messageState.messageImages.images.push(newImage);
+                    }
+
+                    messageState.messageImages.showRemoteImages = true;
+
+                    loadImages([image ? image : newImage], messageState.messageDocument?.document);
+
+                    loadBackgroundImages({
+                        document: messageState.messageDocument?.document,
+                        images: [image ? image : newImage],
+                    });
+                } else {
+                    if (image) {
+                        image.error = 'No URL';
+                    } else if (Array.isArray(messageState.messageImages.images)) {
+                        messageState.messageImages.images.push({
+                            ...inputImage,
+                            error: 'No URL',
+                            status: 'loaded',
+                        });
+                    }
+                }
             }
         });
-
-        messageState.messageImages.showRemoteImages = true;
-
-        const images = payload.map(({ image }) => image);
-
-        loadImages(images, messageState.messageDocument?.document);
-
-        loadBackgroundImages({ document: messageState.messageDocument?.document, images });
     }
 };
 

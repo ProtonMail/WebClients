@@ -6,7 +6,6 @@ import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
 
 import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
-import { preloadImage } from '../../helpers/dom';
 import { convertEOtoMessageState, eoDecrypt } from '../../helpers/eo/message';
 import { createBlob } from '../../helpers/message/messageEmbeddeds';
 import { MessageState, OutsideKey } from '../messages/messagesTypes';
@@ -17,7 +16,6 @@ import {
     EOLoadEmbeddedParams,
     EOLoadEmbeddedResults,
     EOLoadRemoteParams,
-    EOLoadRemoteResults,
     EOMessage,
     EOMessageParams,
     EOMessageReply,
@@ -111,20 +109,6 @@ export const EOLoadEmbedded = createAsyncThunk<EOLoadEmbeddedResults, EOLoadEmbe
     }
 );
 
-export const EOLoadRemote = createAsyncThunk<EOLoadRemoteResults[], EOLoadRemoteParams>(
-    'eo/message/remote/load',
-    async ({ imagesToLoad }) => {
-        return Promise.all(
-            imagesToLoad.map(async (image): Promise<EOLoadRemoteResults> => {
-                try {
-                    await preloadImage(image.url as string);
-                    return { image };
-                } catch (error: any) {
-                    return { image, error };
-                }
-            })
-        );
-    }
-);
+export const EOLoadRemote = createAction<EOLoadRemoteParams>('eo/message/remote/load/url');
 
 export const EOAddReply = createAction<EOMessageReply>('eo/message/reply');
