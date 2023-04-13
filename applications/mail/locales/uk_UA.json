@@ -1247,6 +1247,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Вхідні ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Вилучено 5 елементів стеження"
+      ],
+      "Auto forwarded": [
+        "Автоматично переслано"
+      ],
+      "Email received": [
+        "Лист отримано"
+      ],
+      "Encrypted": [
+        "Зашифровано"
+      ],
+      "New email": [
+        "Новий лист"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Застосунки ${ BRAND_NAME }"
@@ -3895,6 +3915,11 @@
         "Непрочитані"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "З файлом"
+      ]
+    },
     "Filter preview": {
       "read": [
         "прочитані"
@@ -3997,6 +4022,17 @@
     "Get started checklist title": {
       "Get started": [
         "Розпочнімо"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Автоматично переслати"
+      ],
+      "Gmail messages to your inbox": [
+        "Повідомлення Gmail до вашої вхідної скриньки"
+      ],
+      "Sign in with Google": [
+        "Увійти за допомогою Google"
       ]
     },
     "Group": {

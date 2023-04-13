@@ -2639,6 +2639,9 @@
       "Track the status and activity of your referrals.": [
         "Verfolge den Status und die Aktivität deiner Empfehlungen."
       ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Upsell-Symbol mit ${ BRAND_NAME }-Logo, gefolgt von einem Pluszeichen"
+      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kannst weiterhin Freunde einladen, aber dadurch kannst du kein weiteres Guthaben verdienen."
       ],
@@ -7985,6 +7988,26 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Ab ${ price } pro Nutzer"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mein ${ currentPlanName }-Konto behalten"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Weiter zur Prüfung"
@@ -8024,26 +8047,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Ab ${ price } pro Nutzer"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mein ${ currentPlanName }-Konto behalten"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
       ]
     },
     "new_plans: attribute": {
@@ -8121,6 +8124,9 @@
       ],
       "Advanced sharing security": [
         "Erweiterte Sicherheit beim Teilen"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
       ],
       "Auto-reply": [
         "Automatische Antworten"
@@ -10462,6 +10468,9 @@
       "Clear": [
         "Leeren"
       ],
+      "Clear out the junk": [
+        "Unnötige Nachrichten bereinigen"
+      ],
       "Composing": [
         "Verfassen"
       ],
@@ -11235,6 +11244,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Import anpassen, um die Anzahl der Kategorien zu reduzieren"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Bereinige Papierkorb und Spam-Nachrichten nach 30 Tagen. Wenn du diese Option aktivierst, werden alle Nachrichten, die sich derzeit in deinem Papierkorb und Spam-Ordner befinden, gelöscht. Künftige Spam- und Papierkorbnachrichten werden nach 30 Tagen automatisch gelöscht."
       ],
       "Each imported email will have this label": [
         "Alle importierten Nachrichten werden dieser Kategorie zugeordnet"

@@ -7991,6 +7991,26 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Desde ${ price } por usuario"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Seguir en ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continuar a la revisión"
@@ -8030,26 +8050,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Desde ${ price } por usuario"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Seguir en ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Actualizar ahora"
       ]
     },
     "new_plans: attribute": {
@@ -10659,7 +10659,7 @@
         "Privacidad del correo"
       ],
       "Email subscriptions": [
-        "Suscripciones de correo"
+        "Boletines electrónicos"
       ],
       "Encryption and keys": [
         "Cifrado y claves"

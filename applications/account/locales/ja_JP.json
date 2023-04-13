@@ -690,6 +690,9 @@
       "Select language for invitation emails": [
         "招待メールの言語を選択"
       ],
+      "Select time zone": [
+        "タイムゾーンを選択"
+      ],
       "send auto-reply email": [
         "自動返信メールを送信"
       ],
@@ -3285,6 +3288,9 @@
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
       ],
+      "Time zone": [
+        "タイムゾーン"
+      ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
       ],
@@ -3698,6 +3704,11 @@
       ],
       "(1-2 emails per month)": [
         "(毎月 1 〜 2 通のメール)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Google でサインイン"
       ]
     },
     "Go to sign in": {
@@ -4189,6 +4200,12 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
+      ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: 元サイズの画像"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: 低画質のプレビュー"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } は既定のカレンダーとして設定されます。"
@@ -5095,6 +5112,9 @@
       ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
+      ],
+      "Priority support": [
+        "優先的なサポート"
       ],
       "Public link invite": [
         "公開リンク招待"
@@ -6831,6 +6851,9 @@
       "Time format": [
         "時刻の表示形式"
       ],
+      "Time zone": [
+        "タイムゾーン"
+      ],
       "To: ${ to }": [
         "宛先: ${ to }"
       ],
@@ -7442,6 +7465,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "From ${ price } per user": [
+        "1 ユーザーあたり ${ price } から"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } アカウントを継続"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -7481,26 +7524,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "From ${ price } per user": [
-        "1 ユーザーあたり ${ price } から"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } アカウントを継続"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: attribute": {
@@ -9217,6 +9240,11 @@
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "タイムゾーンを検索"
       ]
     },
     "Title": {

@@ -1024,7 +1024,7 @@
         "Выдалены 5 праграм сачэння"
       ],
       "Auto forwarded": [
-        "Аўтаматычна пераслана"
+        "Пераслана аўтаматычна"
       ],
       "Email received": [
         "Атрыманы ліст"
@@ -3949,7 +3949,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Аўтаматычна перасылаць"
+        "Перасылаць аўтаматычна"
       ],
       "Gmail messages to your inbox": [
         "паведамленні Gmail у вашу паштовую скрыню"
@@ -8151,6 +8151,26 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Ад ${ price } за карыстальніка"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -8190,26 +8210,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Ад ${ price } за карыстальніка"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: attribute": {
@@ -8315,7 +8315,7 @@
         "Дадатковая бяспека пры абагульванні"
       ],
       "Auto-delete spam and trashed messages": [
-        "Аўтаматычна выдаляць лісты ў спаме і сметніцы"
+        "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
       ],
       "Auto-reply": [
         "Аўтаматычны адказ"
@@ -8721,7 +8721,7 @@
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Абараняе вас, блакіруючы ўсе злучэнні з сеткай пры нечаканым адключэнні ад нашага сервера VPN."
+        "Абараняе вас, блакіруючы ўсе падключэнні да сеткі пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
@@ -9911,10 +9911,10 @@
         "Падпіскі"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Ваш тарыфны план куплены праз праграму для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
+        "Ваш тарыфны план куплены з дапамогай праграмы для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Ваш тарыфны план куплены праз праграму для iOS. Такім чынам, каб унесці ў яго змены або абнавіць рэквізіты плацяжу, вам трэба зайсці ў Apple App Store."
+        "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
       ]
     },
     "Subscription price": {

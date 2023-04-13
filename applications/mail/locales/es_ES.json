@@ -1237,6 +1237,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } completos"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Bandeja de entrada de ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "5 rastreadores eliminados"
+      ],
+      "Auto forwarded": [
+        "Reenvío automático"
+      ],
+      "Email received": [
+        "Correo electrónico recibido"
+      ],
+      "Encrypted": [
+        "Cifrado"
+      ],
+      "New email": [
+        "Nuevo correu electronico"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicaciones de ${ BRAND_NAME }"
@@ -2813,6 +2833,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } en la configuración."
       ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Elimina automáticamente los mensajes de más de 30 días de las carpetas Papelera y Spam. Disfruta de este y otros beneficios al actualizar tu plan."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, podrás descargar el archivo con todos tus contactos exportados."
       ],
@@ -2840,6 +2863,9 @@
       ],
       "No labels": [
         "Sin etiquetas"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail y un signo más"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
@@ -3829,6 +3855,11 @@
         "No leído"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Tiene archivos"
+      ]
+    },
     "Filter preview": {
       "read": [
         "leído"
@@ -3929,6 +3960,17 @@
     "Get started checklist title": {
       "Get started": [
         "Comenzar"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenvía automáticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "mensajes de Gmail a tu bandeja de entrada"
+      ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
       ]
     },
     "Group": {
@@ -4537,6 +4579,12 @@
       "Attention required": [
         "Atención requerida"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Elimina mensajes automáticamente que han estado en la carpeta Spam por más de 30 días."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Elimina mensajes automáticamente que han estado en la carpeta Papelera por más de 30 días."
+      ],
       "Background color": [
         "Color de fondo"
       ],
@@ -4945,6 +4993,12 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Este mensaje se enviará mañana a las ${ formattedTime }."
+      ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Los mensajes que han estado en la carpeta Spam por más de 30 días serán eliminados automáticamente."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Los mensajes que han estado en la carpeta Papelera por más de 30 días serán eliminados automáticamente."
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -5408,6 +5462,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Pasa a un plan superior para añadir más direcciones a tu cuenta."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Actualiza para eliminar mensajes automáticamente que han estado en la carpeta Spam por más de 30 días."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Actualiza para eliminar mensajes automáticamente que han estado en la carpeta Papelera por más de 30 días."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Pasa a un plan superior para crear más carpetas, filtros y direcciones."
@@ -6904,6 +6964,9 @@
       ]
     },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
       ],
@@ -8182,6 +8245,9 @@
       ],
       "Change my answer": [
         "Cambiar mi respuesta"
+      ],
+      "Clear out the junk": [
+        "¡Deshazte de los mensajes innecesarios!"
       ],
       "Clearing data": [
         "Limpiando datos"
