@@ -24,10 +24,15 @@ export interface Props {
     tooltip?: string;
     url?: string;
     type?: BadgeType;
+    'data-testid'?: string;
 }
 
-const Badge = ({ children, type = 'default', url, tooltip, className = 'mr1' }: Props) => {
-    const badge = <span className={classnames([CLASSNAMES[type], className])}>{children}</span>;
+const Badge = ({ children, type = 'default', url, tooltip, className = 'mr1', 'data-testid': dataTestId }: Props) => {
+    const badge = (
+        <span className={classnames([CLASSNAMES[type], className])} data-testid={dataTestId}>
+            {children}
+        </span>
+    );
     const wrappedBadge = url ? (
         <Href href={url} className="text-no-decoration">
             {badge}
