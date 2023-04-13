@@ -13,7 +13,7 @@ interface ModalProps {
     onlyOnce?: true;
 }
 const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unknown>> => {
-    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps, unknown>(
+    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps | void, unknown>(
         UpsellFloatingModal,
         false
     );
@@ -36,7 +36,7 @@ const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unk
             return;
         }
         const timeout = setTimeout(() => {
-            void showUpsellFloatingModal({});
+            void showUpsellFloatingModal();
         }, UPSELL_MODAL_TIMEOUT);
 
         return () => {
