@@ -1,5 +1,4 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
-import { Environment } from '@proton/shared/lib/interfaces';
 
 import {
     BlockToken,
@@ -28,7 +27,6 @@ type StartMessage = {
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
-    environment: Environment | undefined;
 };
 
 type CreatedBlocksMessage = {
@@ -69,8 +67,7 @@ interface WorkerHandlers {
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
-        sessionKey: SessionKey,
-        currentEnvironment: Environment | undefined
+        sessionKey: SessionKey
     ) => void;
     createdBlocks: (fileLinks: Link[], thumbnailLink?: Link) => void;
     pause: () => void;
@@ -211,8 +208,7 @@ export class UploadWorker {
                             addressPrivateKey,
                             data.addressEmail,
                             privateKey,
-                            data.sessionKey,
-                            data.environment
+                            data.sessionKey
                         );
                     })(data).catch((err) => {
                         this.postError(err);
@@ -426,13 +422,11 @@ export class UploadWorkerController {
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
-        sessionKey: SessionKey,
-        environment: Environment | undefined
+        sessionKey: SessionKey
     ) {
         this.worker.postMessage({
             command: 'start',
             file,
-            environment,
             thumbnailData,
             addressPrivateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: addressPrivateKey,
