@@ -41,8 +41,8 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                 })();
 
                 const key =
-                    typeof feature.featureName === 'string'
-                        ? feature.featureName
+                    typeof feature.text === 'string'
+                        ? feature.text
                         : `${feature.tooltip}-${feature.fire}-${feature.icon}`;
                 return (
                     <li key={key} className="px0-75 py0-5 flex rounded">
@@ -54,7 +54,7 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                         >
                             <span className="flex flex-item-noshrink mr0-75">{iconToDisplay}</span>
                             <span className="flex-item-fluid text-left">
-                                <span className="mr0-5 align-middle">{feature.featureName}</span>
+                                <span className="mr0-5 align-middle">{feature.text}</span>
                                 {feature.tooltip ? (
                                     <Info
                                         className="align-middle"

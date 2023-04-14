@@ -15,7 +15,7 @@ export const getStorageFeature = (
         const freeStorageSize = humanSize(500 * 1024 ** 2, undefined, undefined, 0);
         const totalStorageSize = humanSize(1 * 1024 ** 3, undefined, undefined, 0);
         return {
-            featureName: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
+            text: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
             tooltip: c('new_plans: tooltip')
                 .t`Start with ${freeStorageSize} and unlock more storage along the way. Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
             included: true,
@@ -35,7 +35,7 @@ export const getStorageFeature = (
               .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}`;
 
     return {
-        featureName: c('new_plans: feature').jt`${size} storage`,
+        text: c('new_plans: feature').jt`${size} storage`,
         tooltip,
         included: true,
         fire,
@@ -46,7 +46,7 @@ export const getStorageFeature = (
 export const getStorageFeatureB2B = (bytes: number, fire?: boolean): PlanCardFeatureDefinition => {
     const size = humanSize(bytes, undefined, undefined, 0);
     return {
-        featureName: c('new_plans: feature').t`${size} storage per user`,
+        text: c('new_plans: feature').t`${size} storage per user`,
         tooltip: c('new_plans: tooltip')
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}. Administrators can allocate different storage amounts to users in their organization`,
         included: true,
@@ -57,7 +57,7 @@ export const getStorageFeatureB2B = (bytes: number, fire?: boolean): PlanCardFea
 
 const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`End-to-end encryption`,
+        text: c('new_plans: feature').t`End-to-end encryption`,
         tooltip: '',
         included: true,
     };
@@ -65,7 +65,7 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
 
 export const getDriveAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
     return {
-        featureName: DRIVE_APP_NAME,
+        text: DRIVE_APP_NAME,
         tooltip: options?.family
             ? c('new_plans: tooltip')
                   .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`
@@ -77,7 +77,7 @@ export const getDriveAppFeature = (options?: { family?: boolean }): PlanCardFeat
 
 const getShareFeature = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Share files and folders via link`,
+        text: c('new_plans: feature').t`Share files and folders via link`,
         tooltip: c('new_plans: tooltip').t`Share your files or folders with anyone by using secure, shareable links`,
         included: true,
     };
@@ -85,7 +85,7 @@ const getShareFeature = (): PlanCardFeatureDefinition => {
 
 const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Advanced sharing security`,
+        text: c('new_plans: feature').t`Advanced sharing security`,
         tooltip: c('new_plans: tooltip')
             .t`Control access to your shared files by adding password protection and link expiration dates`,
         included: true,
@@ -94,7 +94,7 @@ const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
 
 const getTeamManagement = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Team management`,
+        text: c('new_plans: feature').t`Team management`,
         tooltip: '',
         included: false,
     };
@@ -102,7 +102,7 @@ const getTeamManagement = (): PlanCardFeatureDefinition => {
 
 const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
+        text: c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
         tooltip: '',
         included: false,
     };
