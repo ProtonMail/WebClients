@@ -7,9 +7,17 @@ import { Audience, Currency, Cycle, Organization, Plan, PlanIDs, PlansMap, Subsc
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
-
-
-import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
+import {
+    CalendarLogo,
+    DriveLogo,
+    Icon,
+    MailLogo,
+    Option,
+    PassLogo,
+    SelectTwo,
+    Tabs,
+    VpnLogo,
+} from '../../../components';
 import { FeatureCode } from '../../features';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
@@ -268,13 +276,15 @@ const PlanSelection = ({
 
     const logosRow = (
         <div className="mt2 mb2 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
-            <MailLogo />
+            <MailLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
-            <CalendarLogo />
+            <CalendarLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
-            <DriveLogo />
+            <DriveLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
-            <VpnLogo />
+            <VpnLogo variant="glyph-only" />
+            <Icon name="plus" alt="+" className="mx-2" />
+            <PassLogo variant="glyph-only" />
         </div>
     );
 
