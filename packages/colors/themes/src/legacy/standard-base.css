@@ -65,4 +65,10 @@
     --optional-mini-calendar-today-color: initial;
     --optional-logo-text-proton-color: initial;
     --optional-logo-text-product-color: initial;
+
+    --optional-promotion-text-color: #15006F;
+	--optional-promotion-text-weak: #50409b;
+	--optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
+    --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+    --optional-promotion-background-end: rgb(70 26 255 / 0.04);
 }

@@ -76,4 +76,9 @@
   --optional-email-item-read-background-color: #f8f8f6;
   --optional-email-item-read-text-color: #474544;
   --optional-logo-text-proton-color: #1b1340;
+  --optional-promotion-text-color: #15006F;
+	--optional-promotion-text-weak: #50409b;
+	--optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
+  --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+  --optional-promotion-background-end: rgb(70 26 255 / 0.04);
 }
