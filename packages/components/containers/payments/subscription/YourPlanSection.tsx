@@ -50,7 +50,7 @@ const YourPlanSection = ({ app }: Props) => {
 
     return (
         <SettingsSectionWide>
-            <div className="your-plan-section-container flex-gap-2">
+            <div className="your-plan-section-container gap-8">
                 <SubscriptionPanel
                     app={app}
                     currency={currency}
