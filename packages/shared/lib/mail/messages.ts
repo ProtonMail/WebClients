@@ -1,9 +1,10 @@
+import JSBI from 'jsbi';
 import { c } from 'ttag';
 
 import identity from '@proton/utils/identity';
 
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '../constants';
-import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
+import { clearBit, hasBit, hasBitBigInt, setBit, toggleBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail, getEmailParts } from '../helpers/email';
 import { isICS } from '../helpers/mimetype';
 import { AttachmentInfo, Message } from '../interfaces/mail/Message';
@@ -55,6 +56,8 @@ export const isHTML = hasMimeType(MIME_TYPES.DEFAULT);
  * Check if a message has a flag in the flags bitmap
  */
 export const hasFlag = (flag: number) => (message?: Partial<Message>) => hasBit(message?.Flags, flag);
+export const hasBigFlag = (flag: JSBI) => (message?: Partial<Message>) =>
+    hasBitBigInt(JSBI.BigInt(message?.Flags || 0), flag);
 export const setFlag = (flag: number) => (message?: Partial<Message>) => setBit(message?.Flags, flag);
 export const clearFlag = (flag: number) => (message?: Partial<Message>) => clearBit(message?.Flags, flag);
 export const toggleFlag = (flag: number) => (message?: Partial<Message>) => toggleBit(message?.Flags, flag);
@@ -81,7 +84,7 @@ export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
-export const isFrozenExpiration = hasFlag(FLAG_FROZEN_EXPIRATION);
+export const isFrozenExpiration = hasBigFlag(FLAG_FROZEN_EXPIRATION);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isUnsubscribed = hasFlag(FLAG_UNSUBSCRIBED);
 export const isUnsubscribable = (message?: Partial<Message>) => {
