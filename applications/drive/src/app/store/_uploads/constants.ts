@@ -70,3 +70,13 @@ export const TOKEN_EXPIRATION_TIME = 3 * 60 * 60 * 1000; // Milliseconds.
  * wait and fail right away instead.
  */
 export const MAX_TOO_MANY_REQUESTS_WAIT = 60 * 60; // Seconds.
+
+/**
+ * MAX_BLOCK_VERIFICATION_RETRIES defines how many times we will retry
+ * encrypting a block if it fails verification.
+ *
+ * For context, blocks are verified after encryption to check for
+ * corrupted encrypted data. If this fails, we retry creating the block
+ * entirely. The main utility is to mitigate bitflip issues.
+ */
+export const MAX_BLOCK_VERIFICATION_RETRIES = 1;

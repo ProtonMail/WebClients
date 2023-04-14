@@ -2,7 +2,6 @@ import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { Environment } from '@proton/shared/lib/interfaces';
 import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { encryptFileExtendedAttributes } from '../../_links';
@@ -70,8 +69,7 @@ async function start(
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
-    sessionKey: SessionKey,
-    environment: Environment | undefined
+    sessionKey: SessionKey
 ) {
     const hashInstance = new Sha1();
 
@@ -83,7 +81,6 @@ async function start(
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
-                environment,
                 (e) => uploadWorker.postNotifySentry(e),
                 hashInstance
             )
