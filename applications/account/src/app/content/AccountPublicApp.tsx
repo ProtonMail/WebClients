@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import * as React from 'react';
 
 import * as H from 'history';
 import { c } from 'ttag';
 
-import { LoaderPage, ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
+import { ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -28,9 +28,10 @@ interface Props {
     children: React.ReactNode;
     onActiveSessions: (data: GetActiveSessionsResult) => boolean;
     onLogin: ProtonLoginCallback;
+    loader: ReactNode;
 }
 
-const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, onLogin }: Props) => {
+const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSessions, onLogin }: Props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
@@ -88,7 +89,7 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
     }
 
     if (loading) {
-        return <LoaderPage />;
+        return <>{loader}</>;
     }
 
     return <>{children}</>;
