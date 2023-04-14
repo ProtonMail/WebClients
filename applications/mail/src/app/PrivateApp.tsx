@@ -1,4 +1,4 @@
-import { StandardPrivateApp, useApi, useDrawer } from '@proton/components';
+import { LoaderPage, StandardPrivateApp, useApi, useDrawer } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
@@ -40,7 +40,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
             noModals
-            fallback={false}
+            loader={<LoaderPage />}
             onLogout={onLogout}
             onInit={() => {
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
