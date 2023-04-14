@@ -12,6 +12,7 @@ RewriteRule ^$ /index.html [NC,L]
 
 # Redirect these routes to html files for SEO purposes
 RewriteRule ^login$ /login.html [NC,L]
+RewriteRule ^switch$ /switch.html [NC,L]
 RewriteRule ^reset-password$ /reset-password.html [NC,L]
 RewriteRule ^forgot-username$ /forgot-username.html [NC,L]
 RewriteRule ^signup$ /signup.html [NC,L]

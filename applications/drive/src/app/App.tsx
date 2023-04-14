@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { ProtonApp, StandardPublicApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
+import { LoaderPage, ProtonApp, StandardPublicApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
@@ -29,7 +29,7 @@ const App = () => {
         <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
             <Switch>
                 <Route path="/urls">
-                    <StandardPublicApp locales={locales}>
+                    <StandardPublicApp loader={<LoaderPage />} locales={locales}>
                         <div className="h100">
                             <PublicSharedLinkContainer />
                         </div>

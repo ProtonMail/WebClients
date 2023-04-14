@@ -20,7 +20,9 @@ import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+import forgotUsernamePage from '../../pages/forgot-username.json';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
+import { useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -130,6 +132,7 @@ interface Props {
 }
 
 const ForgotUsernameContainer = ({ onBack }: Props) => {
+    useMetaTags({ title: forgotUsernamePage.appTitle, description: forgotUsernamePage.appDescription });
     const history = useHistory();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });

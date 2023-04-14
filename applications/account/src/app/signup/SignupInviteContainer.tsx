@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { LoaderPage, StandardLoadErrorPage, useApi, useErrorHandler, useNotifications } from '@proton/components';
+import { StandardLoadErrorPage, useApi, useErrorHandler, useNotifications } from '@proton/components';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { checkInvitation } from '@proton/shared/lib/api/invites';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -14,9 +14,10 @@ interface Props {
     onInvalid: () => void;
     onValid: ({ selector, token }: InviteData) => void;
     clientType: CLIENT_TYPES;
+    loader: ReactNode;
 }
 
-const SignupInviteContainer = ({ onInvalid, onValid, clientType }: Props) => {
+const SignupInviteContainer = ({ loader, onInvalid, onValid, clientType }: Props) => {
     const { createNotification } = useNotifications();
     const { token, selector } = useParams<{ token: string; selector: string }>();
     const [error, setError] = useState<{ message?: string } | null>(null);
@@ -61,7 +62,7 @@ const SignupInviteContainer = ({ onInvalid, onValid, clientType }: Props) => {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    return <LoaderPage />;
+    return <>{loader}</>;
 };
 
 export default SignupInviteContainer;

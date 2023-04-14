@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,7 +20,6 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useApi, useErrorHandler } from '../../hooks';
-import LoaderPage from './LoaderPage';
 import StandardErrorPage from './StandardErrorPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 
@@ -74,9 +73,10 @@ interface Props {
     onActiveSessions: (data: ActiveSessionData, activeSessions: GetActiveSessionsResult) => void;
     onInvalidFork: () => void;
     onProduceFork: (data: ProduceForkData) => Promise<void>;
+    loader: ReactNode;
 }
 
-const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork }: Props) => {
+const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProduceFork }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
     const [tooManyChildSessionsError, setTooManyChildSessionsError] = useState<boolean>(false);
     const normalApi = useApi();
@@ -219,7 +219,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    return <LoaderPage />;
+    return <>{loader}</>;
 };
 
 export default SSOForkProducer;

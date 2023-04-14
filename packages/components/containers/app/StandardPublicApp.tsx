@@ -13,16 +13,16 @@ import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import { useConfig } from '../../hooks';
 import ModalsChildren from '../modals/Children';
-import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 import { wrapUnloadError } from './errorRefresh';
 
 interface Props {
     locales?: TtagLocaleMap;
     children: ReactNode;
+    loader: ReactNode;
 }
 
-const StandardPublicApp = ({ locales = {}, children }: Props) => {
+const StandardPublicApp = ({ loader, locales = {}, children }: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
@@ -57,7 +57,7 @@ const StandardPublicApp = ({ locales = {}, children }: Props) => {
     }
 
     if (loading) {
-        return <LoaderPage />;
+        return <>{loader}</>;
     }
 
     return (

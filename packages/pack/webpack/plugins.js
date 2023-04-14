@@ -109,6 +109,7 @@ module.exports = ({
                 appDescription: faviconConfig.favicons.appDescription,
                 url: faviconConfig.url,
                 locales: faviconConfig.locales,
+                ogImage: faviconConfig.ogImage,
             },
             inject: 'body',
             scriptLoading: 'defer',

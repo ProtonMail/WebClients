@@ -60,6 +60,7 @@ import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getProductParams } from '../signup/searchParams';
+import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 
 const getPathFromLocation = (location: H.Location) => {
@@ -376,6 +377,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const clientType = getIsVPNApp(maybePreAppIntent) ? CLIENT_TYPES.VPN : CLIENT_TYPES.MAIL;
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
+    const loader = <AccountLoaderPage />;
+
     return (
         <>
             <HandleLogout />
@@ -406,6 +409,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         onProduceFork={handleProduceFork}
                         onInvalidFork={handleInvalidFork}
                         onActiveSessions={handleActiveSessionsFork}
+                        loader={loader}
                     />
                 </Route>
                 <Route path={SSO_PATHS.AUTHORIZE}>
@@ -414,6 +418,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         onProduceFork={handleProduceFork}
                         onInvalidFork={handleInvalidFork}
                         onActiveSessions={handleActiveSessionsFork}
+                        loader={loader}
                     />
                 </Route>
                 <Route path="/auth-ext">
@@ -425,8 +430,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         locales={locales}
                         onLogin={handleLogin}
                         onActiveSessions={handleActiveSessions}
+                        loader={loader}
                     >
-                        <UnAuthenticatedApiProvider>
+                        <UnAuthenticatedApiProvider loader={loader}>
                             <FeaturesProvider>
                                 <ExperimentsProvider>
                                     <UnAuthenticated>
@@ -453,6 +459,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 <Route path={SSO_PATHS.SWITCH}>
                                                     <SwitchAccountContainer
                                                         activeSessions={activeSessions}
+                                                        toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
                                                         onLogin={handleLogin}
                                                         onSignOut={handleSignOut}
@@ -483,6 +490,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 </Route>
                                                 <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
                                                     <SignupInviteContainer
+                                                        loader={loader}
                                                         clientType={clientType}
                                                         onValid={(inviteData) =>
                                                             history.replace({
