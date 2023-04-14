@@ -57,9 +57,6 @@
     --optional-email-item-selected-background-color: var(--interaction-norm-major-1);
     --optional-email-item-selected-icon-background-color: var(--interaction-norm-major-3);
 
-    --optional-promotion-background-start: rgb(138 110 255 / 0.3);
-    --optional-promotion-background-end: rgb(138 110 255 / 0.1);
-
     /* Reset because prominent part overrides those colors */
     --optional-link-norm: initial;
     --optional-link-hover: initial;
@@ -67,4 +64,10 @@
     --optional-mini-calendar-today-color: initial;
     --optional-logo-text-proton-color: initial;
     --optional-logo-text-product-color: initial;
+
+    --optional-promotion-text-color: #15006F;
+	--optional-promotion-text-weak: #50409b;
+	--optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
+    --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+    --optional-promotion-background-end: rgb(70 26 255 / 0.04);
 }
