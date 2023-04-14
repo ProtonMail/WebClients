@@ -25,8 +25,8 @@ const getAssetsForExtension = (appName: APP_NAMES): { [key in AuthExtensionState
 
 const getExtensionAssets = (extension?: Extension): { [key in AuthExtensionState['type']]: string } => {
     switch (extension) {
-        case getExtension(APPS.PROTONEXTENSION):
-            return getAssetsForExtension(APPS.PROTONEXTENSION);
+        case getExtension(APPS.PROTONPASSBROWSEREXTENSION):
+            return getAssetsForExtension(APPS.PROTONPASSBROWSEREXTENSION);
         case getExtension(APPS.PROTONVPNBROWSEREXTENSION):
             return getAssetsForExtension(APPS.PROTONVPNBROWSEREXTENSION);
         default:
