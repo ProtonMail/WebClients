@@ -39,7 +39,6 @@ export const getVPNConnectionsText = (n: number) => {
 export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
     return {
         text: getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
-        tooltip: '',
         included: true,
         icon: 'brand-proton-vpn',
     };
@@ -60,7 +59,6 @@ export const getVPNAppFeature = (options?: { family?: boolean }): PlanCardFeatur
 export const getCountries = (text: string, fire?: boolean): PlanCardFeatureDefinition => {
     return {
         text,
-        tooltip: '',
         included: true,
         fire,
         icon: 'earth',
@@ -70,7 +68,6 @@ export const getCountries = (text: string, fire?: boolean): PlanCardFeatureDefin
 export const getVPNSpeed = (type: 'medium' | 'highest', fire?: boolean): PlanCardFeatureDefinition => {
     return {
         text: type === 'medium' ? c('new_plans').t`Medium VPN speed` : c('new_plans').t`Highest VPN speed`,
-        tooltip: '',
         included: true,
         fire,
         icon: 'chevrons-right',
@@ -149,7 +146,6 @@ const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition 
 export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n),
-        tooltip: '',
         included: true,
         fire,
         icon: 'brand-proton-vpn',
@@ -168,7 +164,6 @@ export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
 const getBandwidth = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Unlimited volume/bandwidth`,
-        tooltip: '',
         included: true,
     };
 };
@@ -227,7 +222,6 @@ export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
             `High-speed VPN on ${n} devices`,
             n
         ),
-        tooltip: '',
         included: true,
     };
 };
