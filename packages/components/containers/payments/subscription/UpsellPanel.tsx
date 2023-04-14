@@ -209,9 +209,9 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 disablePlanSelection: true,
             });
 
-        const items: Item[] = features.map(({ icon = 'checkmark', featureName }) => ({
+        const items: Item[] = features.map(({ icon = 'checkmark', text }) => ({
             icon,
-            text: featureName,
+            text,
         }));
 
         return (
