@@ -48,7 +48,7 @@ const PromotionBanner = ({
             <div
                 className={clsx(
                     'inline-flex mx-auto flex-nowrap flex-align-items-center ',
-                    contentCentered ? 'm-0.5 px-2' : 'm-2 px-4 w100',
+                    contentCentered ? 'm-0.5 px-2' : 'm-2 pl-4 w100',
                     loading && 'w33'
                 )}
             >
@@ -76,7 +76,7 @@ const PromotionBanner = ({
                     size="small"
                     color="weak"
                     shape="ghost"
-                    className="ml-2 myauto"
+                    className="ml-2 mr-1 myauto"
                     title={c('Action').t`Close`}
                 >
                     <Icon name="cross" alt={c('Action').t`Close`} />
