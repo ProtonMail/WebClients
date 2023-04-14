@@ -75,7 +75,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.SEND_FROM_PM_ADDRESS)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -90,7 +91,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                             plansSelection,
                             UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES
                         )}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -102,7 +103,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.AUTO_REPLY)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -114,7 +116,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.THIRD_PARTY_CLIENTS)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -126,7 +129,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_FEATURES)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -138,7 +142,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <span
                         onClick={() => setMailShortcutsModalOpen(true)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.learnMore}
                     </span>
@@ -150,7 +155,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <span
                         onClick={() => setThemesModalOpen(true)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.learnMore}
                     </span>
@@ -162,7 +168,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.HOST_EMAILS_FROM_YOUR_DOMAINS)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -174,7 +181,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(protonBusiness, UPSELL_MAIL_BANNER_LINK_ID.PROTECT_YOUR_BUSINESS)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.business}
                     </SettingsLink>
@@ -186,7 +194,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.ADD_MORE_ADDRESSES)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -198,7 +207,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.CONTACT_GROUPS)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -210,7 +220,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.PRIVACY_FIRST_INTERNET)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -222,7 +233,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.PRIVACY_FOR_ALL)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -232,7 +244,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 id: 19,
                 text: c('Info').t`Secure your files with encrypted cloud storage for free, today.`,
                 cta: (
-                    <Href href={drive} className="text-bold link align-baseline color-inherit">
+                    <Href href={drive} className="text-bold link align-baseline" tabIndex={0}>
                         {callToActionTexts.learnMore}
                     </Href>
                 ),
@@ -241,7 +253,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 id: 20,
                 text: c('Info').t`You can use ${VPN_APP_NAME} for free, today.`,
                 cta: (
-                    <Href href={vpn} className="text-bold link align-baseline color-inherit">
+                    <Href href={vpn} className="text-bold link align-baseline" tabIndex={0}>
                         {callToActionTexts.learnMore}
                     </Href>
                 ),
@@ -252,7 +264,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.PREMIUM_FEATURES)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
@@ -264,7 +277,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.LVL_UP_PRIVACY)}
-                        className="text-bold link align-baseline color-inherit"
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
                     </SettingsLink>
