@@ -80,7 +80,7 @@ const UpsellModal = ({
 }: UpsellModalProps) => {
     const goToSettings = useSettingsLink();
     const handleUpgrade = () => {
-        goToSettings(`/upgrade?ref=${upsellRef}`, undefined, true);
+        goToSettings(`/upgrade?ref=${upsellRef}`, undefined, false);
         modalProps.onClose();
     };
 
