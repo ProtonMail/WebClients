@@ -169,10 +169,16 @@ export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
 };
 
 export const getEncryptionOutside = (): PlanCardFeatureDefinition => {
+    /**
+     * Workaround for bug where ttag cannot handle strings where the same variable appears twice
+     * https://confluence.protontech.ch/pages/viewpage.action?pageId=64690626#LocalisationonFrontendrulesandbestpractices-Twicesamevariables
+     */
+    const MAIL_APP_NAME_TWO = MAIL_APP_NAME;
+
     return {
         featureName: c('new_plans: feature').t`Password-protected Emails`,
         tooltip: c('new_plans: tooltip')
-            .t`When sending to other ${MAIL_APP_NAME} users, encryption is automatic. Sending to non-${MAIL_APP_NAME} users requires setting a password prior to sending.`,
+            .t`When sending to other ${MAIL_APP_NAME} users, encryption is automatic. Sending to non-${MAIL_APP_NAME_TWO} users requires setting a password prior to sending.`,
         included: true,
     };
 };
