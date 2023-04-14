@@ -117,7 +117,7 @@ const UpsellStep = ({
                 <Main center={false} className="on-tablet-mb2 sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
                     <Content>
-                        <Text className="mb-2 md:mb-0">{shortFreePlan.description}</Text>
+                        <Text className="mb-2 md:mb-0 text-lg">{shortFreePlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={shortFreePlan}
@@ -160,7 +160,7 @@ const UpsellStep = ({
                         }
                     />
                     <Content>
-                        <Text className="mb-2 md:mb-0">{upsellShortPlan.description}</Text>
+                        <Text className="mb-2 md:mb-0 text-lg">{upsellShortPlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={upsellShortPlan}
