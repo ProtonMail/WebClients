@@ -21,6 +21,8 @@ import {
 } from '@proton/shared/lib/models';
 import noop from '@proton/utils/noop';
 
+import AccountLoaderPage from './AccountLoaderPage';
+
 const EVENT_MODELS = [
     UserModel,
     MailSettingsModel,
@@ -53,6 +55,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
 
     return (
         <StandardPrivateApp
+            loader={<AccountLoaderPage />}
             onLogout={onLogout}
             onInit={() => {
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start

@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { HTMLProps, ReactNode } from 'react';
 
 import BackButton from './BackButton';
 
-interface Props extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
-    right?: React.ReactNode;
-    title?: React.ReactNode;
-    subTitle?: React.ReactNode;
+interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
+    right?: ReactNode;
+    title?: ReactNode;
+    subTitle?: ReactNode;
     onBack?: () => void;
     headingLevel?: number;
 }

@@ -32,11 +32,13 @@ import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import { useMetaTags } from '../useMetaTags';
 import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
+import { getLoginMeta } from './loginPagesJson';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -60,6 +62,9 @@ const LoginContainer = ({
     signupOptions = {},
 }: Props) => {
     const { APP_NAME } = useConfig();
+
+    useMetaTags(getLoginMeta(toApp, APP_NAME));
+
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
     const originalTrustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);

@@ -11,6 +11,7 @@ import {
     Loader,
     OnLoginCallbackArguments,
     useApi,
+    useConfig,
     useErrorHandler,
     useLoading,
     useModals,
@@ -25,7 +26,7 @@ import {
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -33,6 +34,8 @@ import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { getLoginMeta } from '../login/loginPagesJson';
+import { useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -42,6 +45,7 @@ import './SwitchAccountContainer.scss';
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
+    toApp?: APP_NAMES;
     toAppName?: string;
     activeSessions?: LocalSessionPersisted[];
     onSignOut: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
@@ -61,10 +65,13 @@ const compareSessions = (a: LocalSessionPersisted, b: LocalSessionPersisted) => 
     return 0;
 };
 
-const SwitchAccountContainer = ({ toAppName, onLogin, activeSessions, onAddAccount, onSignOut }: Props) => {
+const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onAddAccount, onSignOut }: Props) => {
+    const { APP_NAME } = useConfig();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
+
+    useMetaTags(getLoginMeta(toApp, APP_NAME));
 
     const [localActiveSessions, setLocalActiveSessions] = useState(activeSessions);
     const [loading, withLoading] = useLoading(!localActiveSessions);
