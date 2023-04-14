@@ -61,7 +61,6 @@ export const getNMessagesFeature = (n: number): PlanCardFeatureDefinition => {
     }
     return {
         text: c('new_plans: feature').ngettext(msgid`${n} message per day`, `${n} messages per day`, n),
-        tooltip: '',
         included: true,
         icon: 'speech-bubble',
     };
@@ -71,7 +70,6 @@ export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): 
     if (n === 0) {
         return {
             text: c('new_plans: feature').t`Custom email domains`,
-            tooltip: '',
             included: false,
             fire,
             icon: 'globe',
@@ -90,14 +88,12 @@ export const getFoldersAndLabelsFeature = (n: number): PlanCardFeatureDefinition
     if (n === Number.POSITIVE_INFINITY) {
         return {
             text: c('new_plans: feature').t`Unlimited folders, labels, and filters`,
-            tooltip: '',
             included: true,
             icon: 'tag',
         };
     }
     return {
         text: c('new_plans: feature').ngettext(msgid`${n} folder and label`, `${n} folders and labels`, n),
-        tooltip: '',
         included: true,
         icon: 'tag',
     };
@@ -156,7 +152,6 @@ const getAttachments = (): PlanCardFeatureDefinition => {
     const size = humanSize(26214400, undefined, undefined, 0);
     return {
         text: c('new_plans: feature').t`${size} attachment size`,
-        tooltip: '',
         included: true,
     };
 };
@@ -215,7 +210,6 @@ const getContactGroups = (included: boolean): PlanCardFeatureDefinition => {
 export const getContactGroupsManagement = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Contact groups management`,
-        tooltip: '',
         included: true,
         icon: 'users',
     };

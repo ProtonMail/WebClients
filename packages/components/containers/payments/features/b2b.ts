@@ -166,7 +166,6 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
 export const getGDPR = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`GDPR data processing agreement`,
-        tooltip: '',
         included: true,
     };
 };

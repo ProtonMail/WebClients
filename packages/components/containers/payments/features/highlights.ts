@@ -13,7 +13,6 @@ const getUsers = (): PlanCardFeature => {
         plans: {
             [PLANS.FREE]: {
                 text: c('new_plans: feature').t`1 user`,
-                tooltip: '',
                 included: true,
             },
             [PLANS.BUNDLE]: null,
@@ -22,7 +21,6 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.DRIVE]: null,
             [PLANS.FAMILY]: {
                 text: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
-                tooltip: '',
                 included: true,
                 fire: true,
             },
@@ -35,7 +33,6 @@ const getUsers = (): PlanCardFeature => {
 export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Up to ${n} users`,
-        tooltip: '',
         icon: 'users',
         included: true,
     };
@@ -47,7 +44,6 @@ export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinit
             type === 'limited'
                 ? c('new_plans: feature').t`Limited support`
                 : c('new_plans: feature').t`Priority support`,
-        tooltip: '',
         included: true,
         icon: 'life-ring',
     };

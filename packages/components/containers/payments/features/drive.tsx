@@ -58,7 +58,6 @@ export const getStorageFeatureB2B = (bytes: number, fire?: boolean): PlanCardFea
 const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`End-to-end encryption`,
-        tooltip: '',
         included: true,
     };
 };
@@ -95,7 +94,6 @@ const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
 const getTeamManagement = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Team management`,
-        tooltip: '',
         included: false,
     };
 };
@@ -103,7 +101,6 @@ const getTeamManagement = (): PlanCardFeatureDefinition => {
 const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
-        tooltip: '',
         included: false,
     };
 };
