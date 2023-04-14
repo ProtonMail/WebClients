@@ -49,8 +49,8 @@ export const getNAddressesFeatureB2B = ({ n, fire }: { n: number; fire?: boolean
     };
 };
 
-export const getNMessagesFeature = (n: number): PlanCardFeatureDefinition => {
-    if (n === Number.POSITIVE_INFINITY) {
+export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
+    if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
             text: c('new_plans: feature').t`Unlimited messages per day`,
             tooltip: c('new_plans: tooltip')
@@ -84,8 +84,8 @@ export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): 
     };
 };
 
-export const getFoldersAndLabelsFeature = (n: number): PlanCardFeatureDefinition => {
-    if (n === Number.POSITIVE_INFINITY) {
+export const getFoldersAndLabelsFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
+    if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
             text: c('new_plans: feature').t`Unlimited folders, labels, and filters`,
             included: true,
@@ -99,9 +99,9 @@ export const getFoldersAndLabelsFeature = (n: number): PlanCardFeatureDefinition
     };
 };
 
-const getFolders = (n: number): PlanCardFeatureDefinition => {
+const getFolders = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     const tooltip = c('new_plans').t`Keep your inbox organized with folders`;
-    if (n === Number.POSITIVE_INFINITY) {
+    if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
             text: c('new_plans: feature').t`Unlimited folders`,
             tooltip,
@@ -115,10 +115,10 @@ const getFolders = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-const getLabels = (n: number): PlanCardFeatureDefinition => {
+const getLabels = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     const tooltip = c('new_plans: tooltip')
         .t`Labels are simple tags you can add to messages to make them easier to find or to apply filters to`;
-    if (n === Number.POSITIVE_INFINITY) {
+    if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
             text: c('new_plans: feature').t`Unlimited labels`,
             tooltip,
@@ -132,9 +132,9 @@ const getLabels = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-const getFilters = (n: number): PlanCardFeatureDefinition => {
+const getFilters = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     const tooltip = c('new_plans: tooltip').t`Set up filters to automatically reply to, sort, and/or label your emails`;
-    if (n === Number.POSITIVE_INFINITY) {
+    if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
             text: c('new_plans: feature').t`Unlimited filters`,
             tooltip,
@@ -284,52 +284,52 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
             name: 'messages',
             plans: {
                 [PLANS.FREE]: getNMessagesFeature(150),
-                [PLANS.BUNDLE]: getNMessagesFeature(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL]: getNMessagesFeature(Number.POSITIVE_INFINITY),
-                [PLANS.VPN]: getNMessagesFeature(Number.POSITIVE_INFINITY),
+                [PLANS.BUNDLE]: getNMessagesFeature('unlimited'),
+                [PLANS.MAIL]: getNMessagesFeature('unlimited'),
+                [PLANS.VPN]: getNMessagesFeature('unlimited'),
                 [PLANS.DRIVE]: getNMessagesFeature(150),
-                [PLANS.FAMILY]: getNMessagesFeature(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL_PRO]: getNMessagesFeature(Number.POSITIVE_INFINITY),
-                [PLANS.BUNDLE_PRO]: getNMessagesFeature(Number.POSITIVE_INFINITY),
+                [PLANS.FAMILY]: getNMessagesFeature('unlimited'),
+                [PLANS.MAIL_PRO]: getNMessagesFeature('unlimited'),
+                [PLANS.BUNDLE_PRO]: getNMessagesFeature('unlimited'),
             },
         },
         {
             name: 'folders',
             plans: {
                 [PLANS.FREE]: getFolders(3),
-                [PLANS.BUNDLE]: getFolders(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL]: getFolders(Number.POSITIVE_INFINITY),
+                [PLANS.BUNDLE]: getFolders('unlimited'),
+                [PLANS.MAIL]: getFolders('unlimited'),
                 [PLANS.VPN]: getFolders(3),
                 [PLANS.DRIVE]: getFolders(3),
-                [PLANS.FAMILY]: getFolders(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL_PRO]: getFolders(Number.POSITIVE_INFINITY),
-                [PLANS.BUNDLE_PRO]: getFolders(Number.POSITIVE_INFINITY),
+                [PLANS.FAMILY]: getFolders('unlimited'),
+                [PLANS.MAIL_PRO]: getFolders('unlimited'),
+                [PLANS.BUNDLE_PRO]: getFolders('unlimited'),
             },
         },
         {
             name: 'labels',
             plans: {
                 [PLANS.FREE]: getLabels(3),
-                [PLANS.BUNDLE]: getLabels(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL]: getLabels(Number.POSITIVE_INFINITY),
+                [PLANS.BUNDLE]: getLabels('unlimited'),
+                [PLANS.MAIL]: getLabels('unlimited'),
                 [PLANS.VPN]: getLabels(3),
                 [PLANS.DRIVE]: getLabels(3),
-                [PLANS.FAMILY]: getLabels(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL_PRO]: getLabels(Number.POSITIVE_INFINITY),
-                [PLANS.BUNDLE_PRO]: getLabels(Number.POSITIVE_INFINITY),
+                [PLANS.FAMILY]: getLabels('unlimited'),
+                [PLANS.MAIL_PRO]: getLabels('unlimited'),
+                [PLANS.BUNDLE_PRO]: getLabels('unlimited'),
             },
         },
         {
             name: 'filters',
             plans: {
                 [PLANS.FREE]: getFilters(1),
-                [PLANS.BUNDLE]: getFilters(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL]: getFilters(Number.POSITIVE_INFINITY),
+                [PLANS.BUNDLE]: getFilters('unlimited'),
+                [PLANS.MAIL]: getFilters('unlimited'),
                 [PLANS.VPN]: getFilters(1),
                 [PLANS.DRIVE]: getFilters(1),
-                [PLANS.FAMILY]: getFilters(Number.POSITIVE_INFINITY),
-                [PLANS.MAIL_PRO]: getFilters(Number.POSITIVE_INFINITY),
-                [PLANS.BUNDLE_PRO]: getFilters(Number.POSITIVE_INFINITY),
+                [PLANS.FAMILY]: getFilters('unlimited'),
+                [PLANS.MAIL_PRO]: getFilters('unlimited'),
+                [PLANS.BUNDLE_PRO]: getFilters('unlimited'),
             },
         },
         {
