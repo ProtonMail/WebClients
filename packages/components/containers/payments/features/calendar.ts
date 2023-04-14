@@ -36,7 +36,6 @@ export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinitio
 const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`End-to-end encryption`,
-        tooltip: '',
         included: true,
     };
 };
@@ -65,7 +64,6 @@ const getShareFeature = (
 const getInvitation = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Send & receive invitations`,
-        tooltip: '',
         included: true,
     };
 };

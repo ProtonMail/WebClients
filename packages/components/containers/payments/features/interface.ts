@@ -5,7 +5,7 @@ import { IconName } from '../../../components';
 
 export interface PlanCardFeatureDefinition {
     text: string | string[];
-    tooltip: string;
+    tooltip?: string;
     included: boolean;
     fire?: boolean;
     icon?: IconName;
