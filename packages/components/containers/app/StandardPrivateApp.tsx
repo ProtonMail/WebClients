@@ -44,7 +44,6 @@ import { ModalsChildren } from '../modals';
 import { ThemeInjector } from '../themes';
 import DelinquentContainer from './DelinquentContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
-import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 import StorageListener from './StorageListener';
 import { wrapUnloadError } from './errorRefresh';
@@ -55,7 +54,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     onInit?: () => void;
     onUserSettings?: (userSettings: UserSettings) => void;
     onLogout: () => void;
-    fallback?: ReactNode;
+    loader: ReactNode;
     preloadModels?: M[];
     preloadFeatures?: FeatureCode[];
     eventModels?: EvtM[];
@@ -72,7 +71,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     onLogout,
     onInit,
     onUserSettings,
-    fallback,
+    loader,
     preloadModels = [],
     preloadFeatures = [],
     eventModels = [],
@@ -206,7 +205,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         return (
             <>
                 <ModalsChildren />
-                {fallback || <LoaderPage />}
+                {loader}
             </>
         );
     }

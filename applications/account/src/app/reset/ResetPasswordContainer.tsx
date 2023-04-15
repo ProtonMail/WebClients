@@ -30,6 +30,7 @@ import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
+import resetPasswordPage from '../../pages/reset-password.json';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import SetPasswordForm from '../login/SetPasswordForm';
 import Content from '../public/Content';
@@ -38,6 +39,7 @@ import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
+import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
@@ -50,6 +52,9 @@ interface Props {
 
 const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
     const { APP_NAME } = useConfig();
+
+    useMetaTags({ title: resetPasswordPage.appTitle, description: resetPasswordPage.appDescription });
+
     const history = useHistory();
     const location = useLocation();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);

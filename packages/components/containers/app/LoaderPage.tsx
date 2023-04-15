@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { closeDrawerFromChildApp, getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
@@ -15,21 +15,22 @@ import { classnames } from '../../helpers';
 import { useConfig, useDocumentTitle } from '../../hooks';
 
 interface Props {
+    documentTitle?: string;
     text?: string;
     loaderClassName?: string;
 }
 
-const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
+const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) => {
     const { APP_NAME } = useConfig();
 
     const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const isDrawerApp = isIframe && !!parentApp && getIsAuthorizedApp(parentApp);
 
-    const appName = APPS_CONFIGURATION[APP_NAME].name;
+    const appName = getAppName(APP_NAME);
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
 
-    useDocumentTitle(appName);
+    useDocumentTitle(documentTitle || appName);
 
     const handleCloseIFrame = () => {
         if (!parentApp) {

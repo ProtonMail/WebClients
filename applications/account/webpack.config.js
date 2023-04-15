@@ -45,13 +45,31 @@ module.exports = (...env) => {
     pages.forEach((file) => {
         const parameters = require(`./src/pages/${file}`);
 
-        // We replace . with / to pretend mail.signup -> /mail/signup
-        const replacePathname = file.replace('.json', '').replace('.', '\\/');
-        const filename = file.replace('.json', '.html');
+        const extRegex = /\.js(on)?/;
+
+        const replacePathname = file
+            // Special case, drop .login from the filename
+            .replace('.login', '')
+            // Drop json from the path
+            .replace(extRegex, '')
+            // We replace . with / to pretend mail.signup -> /mail/signup
+            .replace('.', '\\/');
+
+        const filename = file
+            // Special case, drop .login from the filename
+            .replace('.login', '')
+            // Output should be an .html file
+            .replace(extRegex, '.html');
 
         rewrites.push({ from: new RegExp(`^\/${replacePathname}$`), to: `/${filename}` });
+        const originalTemplateParameters = htmlPlugin.userOptions.templateParameters;
 
-        const templateParameters = { ...htmlPlugin.userOptions.templateParameters, ...parameters };
+        let url = originalTemplateParameters.url;
+        if (parameters.pathname) {
+            url = `${url.replace(/\/$/, '')}${parameters.pathname}`;
+        }
+
+        const templateParameters = { ...originalTemplateParameters, ...parameters, url };
 
         config.plugins.splice(
             htmlIndex,

@@ -8,7 +8,6 @@ import {
     DropdownMenuButton,
     FeatureCode,
     Icon,
-    LoaderPage,
     StandardLoadErrorPage,
     createPreAuthKTVerifier,
     useApi,
@@ -40,6 +39,7 @@ import {
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
+import AccountLoaderPage from '../content/AccountLoaderPage';
 import GenerateAddressStep from '../login/GenerateAddressStep';
 import Footer from '../public/Footer';
 import Layout from '../public/Layout';
@@ -198,7 +198,7 @@ const SetupAddressContainer = () => {
     }
 
     if (loading) {
-        return <LoaderPage />;
+        return <AccountLoaderPage />;
     }
 
     const toApp = toAppRef.current!;
