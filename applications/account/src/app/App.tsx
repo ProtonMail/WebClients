@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { G_OAUTH_REDIRECT_PATH } from '@proton/activation/src/constants';
-import { ErrorBoundary, LoaderPage, ProtonApp, StandardErrorPage, getSessionTrackingEnabled } from '@proton/components';
+import { ErrorBoundary, ProtonApp, StandardErrorPage, getSessionTrackingEnabled } from '@proton/components';
 import { initMainHost } from '@proton/cross-storage';
 import metrics from '@proton/metrics';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -14,6 +14,7 @@ import { setLocales } from '@proton/shared/lib/i18n/locales';
 
 import Setup from './Setup';
 import * as config from './config';
+import AccountLoaderPage from './content/AccountLoaderPage';
 import locales from './locales';
 
 import './app.scss';
@@ -36,7 +37,7 @@ const App = () => {
             <ErrorBoundary component={<StandardErrorPage />}>
                 <Switch>
                     <Route path={G_OAUTH_REDIRECT_PATH}>
-                        <LoaderPage />
+                        <AccountLoaderPage />
                     </Route>
                     <Route path="*">
                         <Setup />

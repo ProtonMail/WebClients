@@ -50,7 +50,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
-            fallback={<LoaderPage />}
+            loader={<LoaderPage />}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
             hasMemberKeyMigration

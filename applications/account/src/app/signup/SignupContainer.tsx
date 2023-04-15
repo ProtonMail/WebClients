@@ -53,6 +53,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import Layout from '../public/Layout';
 import { defaultPersistentKey } from '../public/helper';
+import { useMetaTags } from '../useMetaTags';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
@@ -93,6 +94,7 @@ import {
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
+import { getSignupMeta } from './signupPagesJson';
 
 const {
     AccountCreationUsername,
@@ -118,12 +120,16 @@ interface Props {
 
 const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam }: Props) => {
     const { APP_NAME } = useConfig();
-    const normalApi = useApi();
-    const history = useHistory();
+
     const location = useLocation<{ invite?: InviteData }>();
-    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
+
+    useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial, isMailRefer }));
+
+    const normalApi = useApi();
+    const history = useHistory();
+    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
         toApp = APPS.PROTONMAIL;

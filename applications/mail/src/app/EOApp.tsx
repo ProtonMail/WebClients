@@ -9,6 +9,7 @@ import {
     ExperimentsProvider,
     FeaturesProvider,
     Icons,
+    LoaderPage,
     ModalsProvider,
     NotificationsChildren,
     NotificationsProvider,
@@ -63,7 +64,7 @@ const App = () => {
                                                 <FeaturesProvider>
                                                     <ExperimentsProvider>
                                                         <NotificationsChildren />
-                                                        <StandardPublicApp locales={locales}>
+                                                        <StandardPublicApp loader={<LoaderPage />} locales={locales}>
                                                             <EOContainer />
                                                         </StandardPublicApp>
                                                     </ExperimentsProvider>
