@@ -40,7 +40,7 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
                 LabelsModel,
                 MailSettingsModel,
             ]}
-            fallback={<LoaderPage />}
+            loader={<LoaderPage />}
             onInit={loadUserSettings}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             noModals

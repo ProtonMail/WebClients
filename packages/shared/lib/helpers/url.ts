@@ -60,7 +60,7 @@ export const stringifySearchParams = (
     const urlSearchParams = new URLSearchParams();
 
     Object.entries(params)
-        .filter(([, value]) => value !== undefined)
+        .filter(([, value]) => value !== undefined && value !== '')
         .forEach(([key, value]) => {
             /*
              * typescript is not able to determine that stringifiedValue

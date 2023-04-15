@@ -1,4 +1,4 @@
-import { StandardPrivateApp } from '@proton/components';
+import { LoaderPage, StandardPrivateApp } from '@proton/components';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -20,6 +20,7 @@ interface Props {
 const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
+            loader={<LoaderPage />}
             onLogout={onLogout}
             locales={locales}
             preloadModels={[UserModel, UserSettingsModel]}
