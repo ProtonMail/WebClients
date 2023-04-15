@@ -9,6 +9,7 @@ import SignupInviteContainer from 'proton-account/src/app/signup/SignupInviteCon
 import {
     ExperimentsProvider,
     FeaturesProvider,
+    LoaderPage,
     ProtonLoginCallback,
     StandardPublicApp,
     UnAuthenticated,
@@ -31,9 +32,11 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
 
+    const loader = <LoaderPage />;
+
     return (
-        <StandardPublicApp locales={locales}>
-            <UnAuthenticatedApiProvider>
+        <StandardPublicApp loader={loader} locales={locales}>
+            <UnAuthenticatedApiProvider loader={loader}>
                 <FeaturesProvider>
                     <ExperimentsProvider>
                         <ForceRefreshContext.Provider value={refresh}>
@@ -51,6 +54,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     </Route>
                                     <Route path="/pre-invite/:selector/:token">
                                         <SignupInviteContainer
+                                            loader={loader}
                                             clientType={CLIENT_TYPES.VPN}
                                             onValid={(inviteData) =>
                                                 history.replace({

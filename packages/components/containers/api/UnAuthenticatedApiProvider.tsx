@@ -1,6 +1,6 @@
 import { ReactNode, useContext, useEffect, useRef, useState } from 'react';
 
-import { Challenge, ChallengeRef, LoaderPage } from '@proton/components/containers';
+import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -10,9 +10,10 @@ import { apiCallback, context, setChallenge, setup } from './unAuthenticatedApi'
 
 interface Props {
     children: ReactNode;
+    loader: ReactNode;
 }
 
-const UnAuthenticatedApiProvider = ({ children }: Props) => {
+const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
     const api: Api = useContext(ApiContext);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
@@ -37,7 +38,7 @@ const UnAuthenticatedApiProvider = ({ children }: Props) => {
     }
 
     if (loading) {
-        return <LoaderPage />;
+        return <>{loader}</>;
     }
 
     return (
