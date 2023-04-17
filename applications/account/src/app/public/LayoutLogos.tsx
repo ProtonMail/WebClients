@@ -1,5 +1,11 @@
-import { CalendarLogo, DriveLogo, IconSize, MailLogo, VpnLogo } from '@proton/components/components';
-import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { CalendarLogo, DriveLogo, IconSize, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import {
+    CALENDAR_APP_NAME,
+    DRIVE_APP_NAME,
+    MAIL_APP_NAME,
+    PASS_APP_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 interface AppLogosProps {
@@ -26,6 +32,10 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 {
                     title: VPN_APP_NAME,
                     logo: <VpnLogo variant="glyph-only" size={size} />,
+                },
+                {
+                    title: PASS_APP_NAME,
+                    logo: <PassLogo variant="glyph-only" size={size} />,
                 },
             ].map(({ title, logo }) => {
                 return (
