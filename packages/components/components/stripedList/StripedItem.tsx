@@ -11,11 +11,11 @@ interface StripedItemProps {
 const StripedItem = ({ left, children, tooltip }: StripedItemProps) => {
     return (
         <li className="px1 py0-5 rounded">
-            <div className="flex">
-                <div className="mr0-75">{left}</div>
+            <div className="flex flex-nowrap">
+                <div className="flex-item-noshrink mr0-75">{left}</div>
                 <div className="flex-item-fluid">
-                    {children}
-                    {tooltip ? <Info buttonClass="ml-2" title={tooltip} /> : null}
+                    <span className="align-middle">{children}</span>
+                    {tooltip ? <Info buttonClass="ml-2 align-middle" title={tooltip} /> : null}
                 </div>
             </div>
         </li>
