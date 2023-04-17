@@ -34,7 +34,13 @@ const ExploreStep = ({ onExplore }: Props) => {
             <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
             <Content>
                 <ul className="unstyled m-0 divide-y">
-                    {[APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].map((app) => {
+                    {[
+                        APPS.PROTONMAIL,
+                        APPS.PROTONCALENDAR,
+                        APPS.PROTONDRIVE,
+                        APPS.PROTONVPN_SETTINGS,
+                        APPS.PROTONPASS,
+                    ].map((app) => {
                         const name = getAppName(app);
                         const showLoader = type === app && loading;
                         return (
