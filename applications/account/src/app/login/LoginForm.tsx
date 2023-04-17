@@ -43,6 +43,7 @@ interface Props {
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
     signupOptions?: Record<string, string | undefined>;
+    loading: boolean;
 }
 
 const LoginForm = ({
@@ -52,6 +53,7 @@ const LoginForm = ({
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
+    loading: outsideLoading,
     signupOptions,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -67,7 +69,7 @@ const LoginForm = ({
 
     const isVPN = getIsVPNApp(APP_NAME) || getIsVPNApp(toApp);
 
-    const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
+    const loading = Boolean(outsideLoading || challengeLoading || trustedDeviceRecoveryFeature?.loading);
 
     useEffect(() => {
         if (loading) {
