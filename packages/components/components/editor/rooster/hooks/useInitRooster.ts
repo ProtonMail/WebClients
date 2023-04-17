@@ -89,8 +89,8 @@ const useInitRooster = ({
         </svg>
         <div id="proton-editor-container">
             <div id=${ROOSTER_EDITOR_WRAPPER_ID}>
-                <div id="${ROOSTER_EDITOR_ID}" />
-                <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}" />
+                <div id="${ROOSTER_EDITOR_ID}" ></div>
+                <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}" ></div>
             </div>
         </div>
         <div id="${EDITOR_DROPZONE}" />

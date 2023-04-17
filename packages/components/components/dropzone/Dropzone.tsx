@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode, cloneElement } from 'react';
 
 import { isDragFile } from '@proton/components/components';
 import { useDragOver } from '@proton/components/hooks';
@@ -44,9 +44,13 @@ export interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'on
      */
     showDragOverState?: boolean;
     /**
-     * Dropzone has no dragOver state, children is always displayed
+     * Dropzone has no dragOver state, and onDrop cannot be triggered
      */
     disabled?: boolean;
+    /**
+     * Prevents setting the Dropzone's children div to position "relative"
+     */
+    isStatic?: boolean;
 }
 
 const Dropzone = ({
@@ -60,10 +64,13 @@ const Dropzone = ({
     rounded = true,
     border = true,
     shape = 'norm',
+    isStatic = false,
     ...rest
 }: DropzoneProps) => {
     const handleDrop = (event: ReactDragEvent) => {
-        onDrop([...event.dataTransfer.files]);
+        if (!disabled) {
+            onDrop([...event.dataTransfer.files]);
+        }
     };
 
     const [hovering, dragProps] = useDragOver(isDragFile, 'move', { onDrop: handleDrop });
@@ -78,7 +85,7 @@ const Dropzone = ({
     // - The dropzone is invisible (we always show the children)
     const shouldDisplayDropzoneContent = (hovering || showDragOverState) && !disabled && !isInvisible;
 
-    const dropzoneContent = shouldDisplayDropzoneContent && (
+    const dropzoneContent = shouldDisplayDropzoneContent ? (
         <DropzoneContent
             border={border}
             className={className}
@@ -87,25 +94,29 @@ const Dropzone = ({
             shape={shape}
             size={size}
         />
-    );
+    ) : null;
 
-    // If invisible, we always show the children, even on dragOver state
-    if (isInvisible) {
-        return (
-            <div className="w100 h100" {...(!disabled ? rest : undefined)} {...dragProps}>
-                {children}
-            </div>
-        );
-    }
-
-    const canShowChildren = !!children || disabled;
-
-    return (
-        <div className="h100 w100 relative" {...(!disabled ? rest : undefined)} {...dragProps}>
-            {canShowChildren && <div className="dropzone-children h100 w100">{children}</div>}
-            {dropzoneContent}
-        </div>
-    );
+    /**
+     * Warning: To avoid having a container div which would contain the children and the content, we clone the children element.
+     * However, the Dropzone children might need some configuration to work properly:
+     * Because we're adding the dropzone content as a new children, and we're adding some props to the children element,
+     * you'll need to spread the rest operator in the wrapping div AND render the children.
+     */
+    return cloneElement(children, {
+        ...children.props,
+        ...dragProps,
+        ...rest,
+        style:
+            shouldDisplayDropzoneContent && !isStatic
+                ? { position: 'relative', ...children.props.style }
+                : { ...children.props.style },
+        children: (
+            <>
+                {children.props.children}
+                {dropzoneContent}
+            </>
+        ),
+    });
 };
 
 export default Dropzone;

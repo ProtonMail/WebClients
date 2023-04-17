@@ -61,6 +61,7 @@ const CalendarView = ({
     formatDate,
 
     isDrawerApp,
+    ...rest
 }: Props) => {
     if ([DAY, WEEK, MAIL, DRIVE].includes(view)) {
         return (
@@ -90,6 +91,7 @@ const CalendarView = ({
                 weekdays={weekdays}
                 weekdaysSingle={weekdaysSingle}
                 isDrawerApp={isDrawerApp}
+                {...rest}
             />
         );
     }
@@ -112,6 +114,7 @@ const CalendarView = ({
                 formatDate={formatDate}
                 onClickDate={onClickDate}
                 weekdaysLong={weekdays}
+                {...rest}
             />
         );
     }
