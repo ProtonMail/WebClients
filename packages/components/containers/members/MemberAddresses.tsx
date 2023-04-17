@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -97,7 +95,11 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
         return initiallyDisplayedAddresses;
     };
 
-    return <ul className="unstyled -mt-2 -mb-2">{getAddressesListItems()}</ul>;
+    return (
+        <ul className="unstyled my-custom" style={{ '--my-custom': 'calc(var(--space-2) * -1)' }}>
+            {getAddressesListItems()}
+        </ul>
+    );
 };
 
 export default MemberAddresses;
