@@ -41,6 +41,8 @@ $placements: (
 	@include media($query) {
 		@each $propertyname, $property in $properties {
 			@each $placementname, $placement in $placements {
+				$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
+
 				@each $spacingname, $size in $spacings {
 					@if not($property == 'padding' and $spacingname == 'auto') {
 						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
@@ -48,12 +50,26 @@ $placements: (
 								'',
 								$placementname
 							)}-#{$spacingname};
-						$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
 
 						.#{$classname} {
 							#{$cssproperty}: #{pixel-to-rem($size)};
 						}
 					}
+				}
+
+				$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
+						$placementname == 'default',
+						'',
+						$placementname
+					)}-custom;
+				$value: #{if($breakpointname == 'default', '', $breakpointname + '-')}#{$propertyname}#{if(
+						$placementname == 'default',
+						'',
+						$placementname
+					)}-custom;
+
+				.#{$classname} {
+					#{$cssproperty}: var(--#{$value});
 				}
 			}
 		}
