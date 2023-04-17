@@ -1,28 +1,3 @@
-.-mr2 {
-	// renamed from `mr-2`
-	margin-inline-end: -2em;
-}
-
-.-mr6p {
-	// renamed from `mr-6p`
-	margin-inline-end: em(-6);
-}
-
-.-mr-2 {
-	// renamed from `mr-0-5`
-	margin-inline-end: -0.5em;
-}
-
-.-mt-2 {
-	// renamed from `mt-0-5`
-	margin-block-start: -0.5em;
-}
-
-.-mb-2 {
-	// renamed from `mb-0-5`
-	margin-block-end: -0.5em;
-}
-
 // when updating margin sizes, please update them in Storybook accordingly
 // applications/storybook/src/stories/cssUtilities/Margin.stories.tsx
 @include spacing-generator(
