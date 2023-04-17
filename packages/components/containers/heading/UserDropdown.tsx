@@ -234,7 +234,8 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                 </span>
                                 <Copy
                                     value={Email}
-                                    className="-mr6p opacity-on-hover"
+                                    className="mr-custom opacity-on-hover"
+                                    style={{ '--mr-custom': '-0.375rem' }}
                                     onCopy={handleCopyEmail}
                                     tooltipText={c('Action').t`Copy email to clipboard`}
                                     size="small"
