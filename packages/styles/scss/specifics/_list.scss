@@ -276,6 +276,12 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 /* Comfortable view */
 
 .is-comfortable {
+	.auto-delete-banner-enabled.auto-delete-banner-enabled--column:not(.auto-delete-banner-enabled--compact) {
+		@include media('>small') {
+			margin-block-end: em(-12);
+		}
+	}
+
 	.item-container {
 		&:not(.item-container-row) {
 			margin-block-end: em(4);
