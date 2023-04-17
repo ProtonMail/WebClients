@@ -14,6 +14,7 @@ import { transformEmbedded } from './transformEmbedded';
 import { attachBase64, transformEscape } from './transformEscape';
 import { transformLinks } from './transformLinks';
 import { transformRemote } from './transformRemote';
+import { transformStyleAttributes } from './transformStyleAttributes';
 import { transformStylesheet } from './transformStylesheet';
 import { transformWelcome } from './transformWelcome';
 
@@ -52,6 +53,8 @@ export const prepareHtml = async (
     transformWelcome(document);
 
     transformStylesheet(document);
+
+    transformStyleAttributes(document);
 
     const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote(
         { ...message, messageDocument: { document } },
