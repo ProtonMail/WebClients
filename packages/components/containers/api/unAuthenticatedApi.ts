@@ -100,6 +100,12 @@ export const apiCallback: Api = (config: any) => {
     if (requestUID !== UID) {
         return context.api(config);
     }
+    // If an unauthenticated session attempts to signs in, the unauthenticated session has to be discarded so it's not
+    // accidentally re-used for another session. We do this before the response has returned to avoid race conditions,
+    // e.g. a user refreshing the page before the response has come back.
+    if (authConfig.url === config.url || mnemonicAuthConfig.url === config.url) {
+        clearTabPersistedUID();
+    }
     return context
         .api(
             withUIDHeaders(UID, {
@@ -114,14 +120,6 @@ export const apiCallback: Api = (config: any) => {
                         : [HTTP_ERROR_CODES.UNAUTHORIZED, ...(Array.isArray(config.silence) ? config.silence : [])],
             })
         )
-        .then((result) => {
-            // If an unauthenticated session signs in, the unauthenticated session has to be discarded so it's not accidentally re-used
-            // for another session
-            if (authConfig.url === config.url || mnemonicAuthConfig.url === config.url) {
-                clearTabPersistedUID();
-            }
-            return result;
-        })
         .catch((e) => {
             if (getIs401Error(e)) {
                 // Don't attempt to refresh on 2fa failures since the session has become invalidated
