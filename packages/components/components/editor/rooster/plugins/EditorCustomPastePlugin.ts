@@ -1,6 +1,13 @@
 /* eslint-disable class-methods-use-this */
 import { wrap } from 'roosterjs-editor-dom';
-import { BeforePasteEvent, EditorPlugin, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+import {
+    AttributeCallbackMap,
+    BeforePasteEvent,
+    EditorPlugin,
+    IEditor,
+    PluginEvent,
+    PluginEventType,
+} from 'roosterjs-editor-types';
 
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 
@@ -39,7 +46,27 @@ class EditorCustomPastePlugin implements EditorPlugin {
         this.handlePasteImage(event);
     }
 
+    private validateLink(link: string, htmlElement: HTMLElement) {
+        const PROTOCOLS = ['http:', 'https:', 'mailto:'];
+        let url;
+        try {
+            url = new URL(link);
+        } catch {
+            url = undefined;
+        }
+
+        if (url && PROTOCOLS.includes(url.protocol)) {
+            return link;
+        }
+        htmlElement.removeAttribute('href');
+        return '';
+    }
+
     private updateSanitizingOptions(event: BeforePasteEvent) {
+        const callbackMap: AttributeCallbackMap = {
+            href: (link: string, element: HTMLElement) => this.validateLink(link, element),
+        };
+        event.sanitizingOption.attributeCallbacks = callbackMap;
         event.sanitizingOption.additionalAllowedAttributes = ['bgcolor'];
         event.sanitizingOption.additionalTagReplacements = {
             // @ts-expect-error
@@ -89,7 +116,7 @@ class EditorCustomPastePlugin implements EditorPlugin {
 
         const text = event.clipboardData.text;
 
-        // Clear textContent
+        // Clear textContent in order to force rooster paste fragment
         event.fragment.textContent = '';
 
         const NBSP_HTML = '\u00A0';
@@ -104,10 +131,14 @@ class EditorCustomPastePlugin implements EditorPlugin {
             const span = document.createElement('span');
             span.innerHTML = transformLinkify(line);
 
-            // There are 3 scenarios:
-            // 1. Single line: Paste as it is
-            // 2. Two lines: Add <br> between the lines
-            // 3. 3 or More lines, For first and last line, paste as it is. For middle lines, wrap with DIV, and add BR if it is empty line
+            /**
+             * There are three possible scenarios:
+             * 1. Single line: Paste as is
+             * 2. Two lines: Add <br> between the lines
+             * 3. Three or more lines:
+             *   - For first and last line, paste as is.
+             *   - For middle lines, wrap with DIV, and add <br> if it's an empty line.
+             */
             if (lines.length == 2 && index == 0) {
                 // 1 of 2 lines scenario, add BR
                 fragment.appendChild(span);
