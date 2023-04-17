@@ -8,9 +8,11 @@ import AutoDeletePaidBanner from './variations/AutoDeletePaidBanner';
 
 interface Props {
     labelID: string;
+    columnLayout?: boolean;
+    isCompactView?: boolean;
 }
 
-const AutoDeleteBanner = ({ labelID }: Props) => {
+const AutoDeleteBanner = ({ labelID, columnLayout = false, isCompactView = false }: Props) => {
     const bannerType = useAutoDeleteBanner(labelID);
     const avoidBannersUIStacking = useAppSelector(showLabelTaskRunningBanner);
 
@@ -22,7 +24,9 @@ const AutoDeleteBanner = ({ labelID }: Props) => {
         <div data-testid="auto-delete:banner">
             {bannerType === 'free-banner' && <AutoDeleteFreeBanner labelID={labelID} />}
             {bannerType === 'paid-banner' && <AutoDeletePaidBanner labelID={labelID} />}
-            {bannerType === 'enabled' && <AutoDeleteEnabledBanner labelID={labelID} />}
+            {bannerType === 'enabled' && (
+                <AutoDeleteEnabledBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
+            )}
         </div>
     );
 };
