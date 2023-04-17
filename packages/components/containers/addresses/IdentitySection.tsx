@@ -2,12 +2,13 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { Info, Loader, Option, SelectTwo } from '../../components';
-import { useAddresses, useMailSettings, useUserSettings } from '../../hooks';
+import { useAddresses, useMailSettings, useUser, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -19,6 +20,7 @@ const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
+    const [user] = useUser();
 
     const [addressID, setAddressID] = useState<string>();
 
@@ -27,6 +29,8 @@ const IdentitySection = () => {
     }, [addresses]);
 
     const selectedAddress = filteredAddresses.find((address) => address.ID === addressID) || filteredAddresses[0];
+
+    const hasPaidMail = user.hasPaidMail;
 
     useEffect(() => {
         if (!addressID && filteredAddresses.length) {
@@ -77,6 +81,7 @@ const IdentitySection = () => {
                             >
                                 <span className="mr-2">{c('Label').t`${MAIL_APP_NAME} footer`}</span>
                                 <Info title={c('Info').t`Let your contacts know you care about their privacy.`} />
+                                {!hasPaidMail && <UpsellIcon className="ml-1" />}
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight>

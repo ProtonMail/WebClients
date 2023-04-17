@@ -551,6 +551,7 @@ export enum MAIL_UPSELL_PATHS {
     SCHEDULE_SEND = 'schedule-send',
     STORAGE_FULL = 'storage-full',
     GET_STARTED_CHECKLIST = 'get-started-checklist',
+    MAIL_FOOTER = 'mail-footer',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
