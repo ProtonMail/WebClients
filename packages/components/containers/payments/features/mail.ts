@@ -6,13 +6,28 @@ import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-export const getNAddressesFeature = ({ n, fire }: { n: number; fire?: boolean }): PlanCardFeatureDefinition => {
+export const getNAddressesFeature = ({
+    n,
+    fire,
+    family,
+}: {
+    n: number;
+    fire?: boolean;
+    family?: boolean;
+}): PlanCardFeatureDefinition => {
+    const domain = 'proton.me';
+
     let tooltip = '';
     if (n > 1) {
-        const domain = 'proton.me';
         tooltip = c('new_plans: tooltip')
             .t`Create multiple email addresses for your online identities, e.g., JohnShopper@${domain} for shopping accounts, JohnNews@${domain} for news subscription`;
     }
+
+    if (family) {
+        tooltip = c('new_plans: tooltip')
+            .t`Create up to ${n} email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${domain} for online subscriptions.`;
+    }
+
     return {
         featureName: c('new_plans: feature').ngettext(msgid`${n} email address`, `${n} email addresses/aliases`, n),
         tooltip,
@@ -250,7 +265,11 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getNAddressesFeature({ n: plansMap[PLANS.MAIL]?.MaxAddresses || 10 }),
                 [PLANS.VPN]: getNAddressesFeature({ n: plansMap[PLANS.VPN]?.MaxAddresses || 1 }),
                 [PLANS.DRIVE]: getNAddressesFeature({ n: plansMap[PLANS.DRIVE]?.MaxAddresses || 1 }),
-                [PLANS.FAMILY]: getNAddressesFeature({ n: plansMap[PLANS.FAMILY]?.MaxAddresses || 75 }),
+                [PLANS.FAMILY]: getNAddressesFeature({
+                    n: plansMap[PLANS.FAMILY]?.MaxAddresses || 75,
+                    family: true,
+                    fire: true,
+                }),
                 [PLANS.MAIL_PRO]: getNAddressesFeatureB2B({ n: plansMap[PLANS.MAIL_PRO]?.MaxAddresses || 10 }),
                 [PLANS.BUNDLE_PRO]: getNAddressesFeatureB2B({
                     n: plansMap[PLANS.BUNDLE_PRO]?.MaxAddresses || 15,
@@ -266,7 +285,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getNDomainsFeature({ n: plansMap[PLANS.MAIL]?.MaxDomains ?? 1 }),
                 [PLANS.VPN]: getNDomainsFeature({ n: plansMap[PLANS.VPN]?.MaxDomains ?? 0 }),
                 [PLANS.DRIVE]: getNDomainsFeature({ n: plansMap[PLANS.DRIVE]?.MaxDomains ?? 0 }),
-                [PLANS.FAMILY]: getNDomainsFeature({ n: plansMap[PLANS.FAMILY]?.MaxDomains ?? 5 }),
+                [PLANS.FAMILY]: getNDomainsFeature({ n: plansMap[PLANS.FAMILY]?.MaxDomains ?? 5, fire: true }),
                 [PLANS.MAIL_PRO]: getNDomainsFeature({ n: plansMap[PLANS.MAIL_PRO]?.MaxDomains ?? 3 }),
                 [PLANS.BUNDLE_PRO]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxDomains ?? 10, fire: true }),
             },

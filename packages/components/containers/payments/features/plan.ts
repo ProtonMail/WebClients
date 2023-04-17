@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import { BRAND_NAME, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
-import { getSupport } from './highlights';
+import { getSupport, getUsersFeature } from './highlights';
 import { ShortPlan } from './interface';
 import {
     getContactGroupsManagement,
@@ -222,6 +222,28 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getFamilyPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.FAMILY,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`Protect your family’s privacy with all ${BRAND_NAME} services combined.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getUsersFeature(FAMILY_MAX_USERS),
+            getStorageFeature(plan.MaxSpace, { family: true }),
+            getNAddressesFeature({ n: plan.MaxAddresses, family: true }),
+            getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
+            getNMessagesFeature(Number.POSITIVE_INFINITY),
+            getNDomainsFeature({ n: plan.MaxDomains }),
+            getCalendarAppFeature({ family: true }),
+            getDriveAppFeature({ family: true }),
+            getVPNAppFeature({ family: true }),
+            getSupport('priority'),
+        ],
+    };
+};
+
 export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
@@ -251,6 +273,8 @@ export const getShortPlan = (
             return getBundleProPlan(planData);
         case PLANS.NEW_VISIONARY:
             return getNewVisionaryPlan(planData);
+        case PLANS.FAMILY:
+            return getFamilyPlan(planData);
         default:
             return null;
     }
