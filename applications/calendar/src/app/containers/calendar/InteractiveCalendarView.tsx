@@ -1488,125 +1488,126 @@ const InteractiveCalendarView = ({
     };
 
     return (
-        <Dropzone
-            onDrop={onAddFiles}
-            disabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent}
-            shape="transparent"
-            customContent={
-                <section className="main-dropzone p4 text-center">
-                    <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />
-                    <h2 className="main-dropzone-heading h3 text-bold m-0">{c('Title').t`Drop to upload`}</h2>
-                    <p className="m-0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
-                </section>
-            }
-        >
-            <>
-                {!!importModal.props && (
-                    <ImportModal
-                        {...importModal.props}
-                        isOpen={importModal.isOpen}
-                        onClose={() => {
-                            closeModal('importModal');
-                        }}
-                        calendars={calendars}
-                    />
-                )}
-                {!!sendWithErrorsConfirmationModal.props && (
-                    <SendWithErrorsConfirmationModal
-                        isOpen={sendWithErrorsConfirmationModal.isOpen}
-                        {...sendWithErrorsConfirmationModal.props}
-                        onClose={() => {
-                            closeModal('sendWithErrorsConfirmationModal');
-                            confirm.current?.reject();
-                        }}
-                        onConfirm={(props) => {
-                            closeModal('sendWithErrorsConfirmationModal');
-                            confirm.current?.resolve(props);
-                        }}
-                    />
-                )}
-                {!!deleteConfirmModal.props && (
-                    <DeleteConfirmModal
-                        isOpen={deleteConfirmModal.isOpen}
-                        onClose={() => {
-                            confirm.current?.reject();
-                            closeModal('deleteConfirmModal');
-                        }}
-                        onConfirm={(data) => {
-                            closeModal('deleteConfirmModal');
-                            confirm.current?.resolve(data);
-                        }}
-                        {...deleteConfirmModal.props}
-                    />
-                )}
-                {!!deleteRecurringConfirmModal.props && (
-                    <DeleteRecurringConfirmModal
-                        isOpen={deleteRecurringConfirmModal.isOpen}
-                        {...deleteRecurringConfirmModal.props}
-                        onClose={() => {
-                            confirm.current?.reject();
-                            closeModal('deleteRecurringConfirmModal');
-                        }}
-                        onConfirm={(data) => {
-                            closeModal('deleteRecurringConfirmModal');
-                            confirm.current?.resolve(data);
-                        }}
-                    />
-                )}
-                {!!equivalentAttendeesModal.props && (
-                    <EquivalentAttendeesModal
-                        isOpen={equivalentAttendeesModal.isOpen}
-                        {...equivalentAttendeesModal.props}
-                        onClose={() => {
-                            confirm.current?.reject();
-                            closeModal('equivalentAttendeesModal');
-                        }}
-                    />
-                )}
-
-                <CloseConfirmationModal
-                    isOpen={confirmModal.isOpen}
+        <>
+            {!!importModal.props && (
+                <ImportModal
+                    {...importModal.props}
+                    isOpen={importModal.isOpen}
                     onClose={() => {
-                        closeModal('confirmModal');
+                        closeModal('importModal');
+                    }}
+                    calendars={calendars}
+                />
+            )}
+            {!!sendWithErrorsConfirmationModal.props && (
+                <SendWithErrorsConfirmationModal
+                    isOpen={sendWithErrorsConfirmationModal.isOpen}
+                    {...sendWithErrorsConfirmationModal.props}
+                    onClose={() => {
+                        closeModal('sendWithErrorsConfirmationModal');
                         confirm.current?.reject();
                     }}
-                    onSubmit={() => {
-                        closeModal('confirmModal');
-                        confirm.current?.resolve();
+                    onConfirm={(props) => {
+                        closeModal('sendWithErrorsConfirmationModal');
+                        confirm.current?.resolve(props);
                     }}
                 />
+            )}
+            {!!deleteConfirmModal.props && (
+                <DeleteConfirmModal
+                    isOpen={deleteConfirmModal.isOpen}
+                    onClose={() => {
+                        confirm.current?.reject();
+                        closeModal('deleteConfirmModal');
+                    }}
+                    onConfirm={(data) => {
+                        closeModal('deleteConfirmModal');
+                        confirm.current?.resolve(data);
+                    }}
+                    {...deleteConfirmModal.props}
+                />
+            )}
+            {!!deleteRecurringConfirmModal.props && (
+                <DeleteRecurringConfirmModal
+                    isOpen={deleteRecurringConfirmModal.isOpen}
+                    {...deleteRecurringConfirmModal.props}
+                    onClose={() => {
+                        confirm.current?.reject();
+                        closeModal('deleteRecurringConfirmModal');
+                    }}
+                    onConfirm={(data) => {
+                        closeModal('deleteRecurringConfirmModal');
+                        confirm.current?.resolve(data);
+                    }}
+                />
+            )}
+            {!!equivalentAttendeesModal.props && (
+                <EquivalentAttendeesModal
+                    isOpen={equivalentAttendeesModal.isOpen}
+                    {...equivalentAttendeesModal.props}
+                    onClose={() => {
+                        confirm.current?.reject();
+                        closeModal('equivalentAttendeesModal');
+                    }}
+                />
+            )}
 
-                {!!editRecurringConfirmModal.props && (
-                    <EditRecurringConfirmModal
-                        isOpen={editRecurringConfirmModal.isOpen}
-                        {...editRecurringConfirmModal.props.data}
-                        isAttendee={editRecurringConfirmModal.props.isAttendee}
-                        canEditOnlyNotifications={editRecurringConfirmModal.props.canEditOnlyNotifications}
-                        inviteActions={editRecurringConfirmModal.props.inviteActions}
-                        onClose={() => {
-                            closeModal('editRecurringConfirmModal');
-                            confirm.current?.reject();
-                        }}
-                        onConfirm={(data) => {
-                            closeModal('editRecurringConfirmModal');
-                            confirm.current?.resolve(data);
-                        }}
-                    />
-                )}
-                {!!editSingleConfirmModal.props && (
-                    <EditSingleConfirmModal
-                        isOpen={editSingleConfirmModal.isOpen}
-                        {...editSingleConfirmModal.props}
-                        onClose={() => {
-                            closeModal('editSingleConfirmModal');
-                            confirm.current?.reject();
-                        }}
-                        onConfirm={(data) => {
-                            closeModal('editSingleConfirmModal');
-                            confirm.current?.resolve(data);
-                        }}
-                    />
-                )}
+            <CloseConfirmationModal
+                isOpen={confirmModal.isOpen}
+                onClose={() => {
+                    closeModal('confirmModal');
+                    confirm.current?.reject();
+                }}
+                onSubmit={() => {
+                    closeModal('confirmModal');
+                    confirm.current?.resolve();
+                }}
+            />
+
+            {!!editRecurringConfirmModal.props && (
+                <EditRecurringConfirmModal
+                    isOpen={editRecurringConfirmModal.isOpen}
+                    {...editRecurringConfirmModal.props.data}
+                    isAttendee={editRecurringConfirmModal.props.isAttendee}
+                    canEditOnlyNotifications={editRecurringConfirmModal.props.canEditOnlyNotifications}
+                    inviteActions={editRecurringConfirmModal.props.inviteActions}
+                    onClose={() => {
+                        closeModal('editRecurringConfirmModal');
+                        confirm.current?.reject();
+                    }}
+                    onConfirm={(data) => {
+                        closeModal('editRecurringConfirmModal');
+                        confirm.current?.resolve(data);
+                    }}
+                />
+            )}
+            {!!editSingleConfirmModal.props && (
+                <EditSingleConfirmModal
+                    isOpen={editSingleConfirmModal.isOpen}
+                    {...editSingleConfirmModal.props}
+                    onClose={() => {
+                        closeModal('editSingleConfirmModal');
+                        confirm.current?.reject();
+                    }}
+                    onConfirm={(data) => {
+                        closeModal('editSingleConfirmModal');
+                        confirm.current?.resolve(data);
+                    }}
+                />
+            )}
+            <Dropzone
+                onDrop={onAddFiles}
+                disabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent}
+                shape="transparent"
+                customContent={
+                    <section className="main-dropzone p4 text-center">
+                        <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />
+                        <h2 className="main-dropzone-heading h3 text-bold m-0">{c('Title').t`Drop to upload`}</h2>
+                        <p className="m-0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
+                    </section>
+                }
+                isStatic={true}
+            >
                 <CalendarView
                     view={view}
                     isNarrow={isNarrow}
@@ -1637,256 +1638,256 @@ const InteractiveCalendarView = ({
                     isScrollDisabled={isScrollDisabled}
                     isDrawerApp={isDrawerApp}
                 />
-                <Popover
-                    containerEl={document.body}
-                    targetEl={targetEventRef}
-                    isOpen={!!targetEvent}
-                    once
-                    when={targetEvent ? targetEvent.start : undefined}
-                >
-                    {({ style, ref }: PopoverRenderData) => {
-                        if (!targetEvent || targetEventData?.preventPopover) {
-                            return null;
-                        }
-                        if (targetEvent.id === 'tmp' && tmpData) {
-                            return (
-                                <CreateEventPopover
-                                    isDraggingDisabled={isNarrow || isDrawerApp}
-                                    isNarrow={isNarrow}
-                                    isCreateEvent={isCreatingEvent}
-                                    isInvitation={isInvitation}
-                                    style={style}
-                                    popoverRef={ref}
-                                    model={tmpData}
-                                    addresses={addresses}
-                                    displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
-                                    weekStartsOn={weekStartsOn}
-                                    setModel={handleSetTemporaryEventModel}
-                                    onSave={async (inviteActions: InviteActions) => {
-                                        if (!temporaryEvent) {
-                                            return Promise.reject(new Error('Undefined behavior'));
-                                        }
-                                        try {
-                                            await handleSaveEvent(temporaryEvent, inviteActions);
-
-                                            return closeAllPopovers();
-                                        } catch (error) {
-                                            return noop();
-                                        }
-                                    }}
-                                    onEdit={() => {
-                                        if (!temporaryEvent) {
-                                            return;
-                                        }
-                                        handleEditEvent(temporaryEvent);
-                                    }}
-                                    onClose={async () => {
-                                        try {
-                                            await handleConfirmDeleteTemporary({ ask: true });
-
-                                            return closeAllPopovers();
-                                        } catch (error) {
-                                            return noop();
-                                        }
-                                    }}
-                                    isDrawerApp={isDrawerApp}
-                                />
-                            );
-                        }
+            </Dropzone>
+            <Popover
+                containerEl={document.body}
+                targetEl={targetEventRef}
+                isOpen={!!targetEvent}
+                once
+                when={targetEvent ? targetEvent.start : undefined}
+            >
+                {({ style, ref }: PopoverRenderData) => {
+                    if (!targetEvent || targetEventData?.preventPopover) {
+                        return null;
+                    }
+                    if (targetEvent.id === 'tmp' && tmpData) {
                         return (
-                            <EventPopover
+                            <CreateEventPopover
+                                isDraggingDisabled={isNarrow || isDrawerApp}
                                 isNarrow={isNarrow}
+                                isCreateEvent={isCreatingEvent}
+                                isInvitation={isInvitation}
                                 style={style}
                                 popoverRef={ref}
-                                event={targetEvent}
-                                view={view}
-                                tzid={tzid}
+                                model={tmpData}
+                                addresses={addresses}
+                                displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
-                                displayNameEmailMap={displayNameEmailMap}
-                                formatTime={formatTime}
-                                onDelete={(inviteActions) => {
-                                    return (
-                                        handleDeleteEvent(targetEvent, inviteActions)
-                                            // Also close the more popover to avoid this event showing there
-                                            .then(closeAllPopovers)
-                                            .catch(noop)
-                                    );
+                                setModel={handleSetTemporaryEventModel}
+                                onSave={async (inviteActions: InviteActions) => {
+                                    if (!temporaryEvent) {
+                                        return Promise.reject(new Error('Undefined behavior'));
+                                    }
+                                    try {
+                                        await handleSaveEvent(temporaryEvent, inviteActions);
+
+                                        return closeAllPopovers();
+                                    } catch (error) {
+                                        return noop();
+                                    }
                                 }}
                                 onEdit={() => {
-                                    const newTemporaryEvent = getEditedTemporaryEvent();
-
-                                    if (!newTemporaryEvent) {
+                                    if (!temporaryEvent) {
                                         return;
                                     }
-
-                                    return handleEditEvent(newTemporaryEvent);
+                                    handleEditEvent(temporaryEvent);
                                 }}
-                                onRefresh={async () => {
-                                    // make the loader always spin for one second (same as Mail "update message in folder")
-                                    const dummySpin = () => wait(SECOND);
-                                    const { eventData } = targetEvent.data;
-                                    if (!eventData) {
-                                        return dummySpin();
+                                onClose={async () => {
+                                    try {
+                                        await handleConfirmDeleteTemporary({ ask: true });
+
+                                        return closeAllPopovers();
+                                    } catch (error) {
+                                        return noop();
                                     }
-                                    const { CalendarID, ID } = eventData;
-
-                                    await Promise.all([
-                                        calendarsEventsCacheRef.current.retryReadEvent(CalendarID, ID),
-                                        dummySpin(),
-                                    ]);
                                 }}
-                                onDuplicate={
-                                    isEventCreationDisabled
-                                        ? undefined
-                                        : () => {
-                                              const newTemporaryEvent = getEditedTemporaryEvent(true);
+                                isDrawerApp={isDrawerApp}
+                            />
+                        );
+                    }
+                    return (
+                        <EventPopover
+                            isNarrow={isNarrow}
+                            style={style}
+                            popoverRef={ref}
+                            event={targetEvent}
+                            view={view}
+                            tzid={tzid}
+                            weekStartsOn={weekStartsOn}
+                            displayNameEmailMap={displayNameEmailMap}
+                            formatTime={formatTime}
+                            onDelete={(inviteActions) => {
+                                return (
+                                    handleDeleteEvent(targetEvent, inviteActions)
+                                        // Also close the more popover to avoid this event showing there
+                                        .then(closeAllPopovers)
+                                        .catch(noop)
+                                );
+                            }}
+                            onEdit={() => {
+                                const newTemporaryEvent = getEditedTemporaryEvent();
 
-                                              if (!newTemporaryEvent) {
-                                                  return;
-                                              }
-
-                                              const { tmpData } = newTemporaryEvent;
-
-                                              if (tmpData.rest['recurrence-id']) {
-                                                  // when duplicating a single edit, we want to forget the previous recurrence
-                                                  tmpData.frequencyModel = getInitialFrequencyModel(tmpData.start.date);
-                                                  delete tmpData.rest['recurrence-id'];
-                                              }
-
-                                              delete tmpData.uid;
-                                              tmpData.attendees.forEach((attendee) => {
-                                                  attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
-                                                  // attendee tokens should not be duplicated as the UID has changed
-                                                  delete attendee.token;
-                                              });
-
-                                              handleCreateEvent({
-                                                  startModel: {
-                                                      ...tmpData,
-                                                      // This is used to keep track of the original event start
-                                                      initialDate: propertyToUTCDate(
-                                                          modelToDateProperty(tmpData.start, tmpData.isAllDay)
-                                                      ),
-                                                  },
-                                                  isDuplicating: true,
-                                              });
-                                          }
+                                if (!newTemporaryEvent) {
+                                    return;
                                 }
-                                onChangePartstat={async (inviteActions: InviteActions) => {
-                                    const { partstat } = inviteActions;
-                                    if (!targetEvent || !partstat) {
-                                        return;
-                                    }
-                                    const newTemporaryModel = getUpdateModel({
-                                        viewEventData: targetEvent.data,
-                                        partstat,
-                                    });
-                                    if (!newTemporaryModel) {
-                                        return;
-                                    }
 
-                                    const newTemporaryEvent = getTemporaryEvent(
-                                        getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
-                                        newTemporaryModel,
-                                        tzid
-                                    );
-                                    return handleSaveEvent(newTemporaryEvent, inviteActions);
-                                }}
-                                onClose={handleCloseEventPopover}
-                            />
-                        );
-                    }}
-                </Popover>
-                <Popover containerEl={document.body} targetEl={targetMoreRef} isOpen={!!targetMoreData} once>
-                    {({ style, ref }: PopoverRenderData) => {
-                        if (!targetMoreData) {
-                            return null;
-                        }
-                        return (
-                            <MorePopoverEvent
-                                tzid={tzid}
-                                isNarrow={isNarrow}
-                                style={style}
-                                popoverRef={ref}
-                                now={now}
-                                date={targetMoreData.date}
-                                events={targetMoreEvents}
-                                targetEventRef={setTargetEventRef}
-                                targetEventData={targetEventData}
-                                formatTime={formatTime}
-                                onClickEvent={handleClickEvent}
-                                onClose={handleCloseMorePopover}
-                            />
-                        );
-                    }}
-                </Popover>
-                <Prompt
-                    message={(location) => {
-                        if (isInTemporaryBlocking && location.pathname.includes('settings')) {
-                            handleConfirmDeleteTemporary({ ask: true }).then(closeAllPopovers).catch(noop);
-                            return false;
-                        }
-                        return true;
-                    }}
-                />
-                {!!tmpData && (
-                    <CreateEventModal
-                        isNarrow={isNarrow}
-                        displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
-                        weekStartsOn={weekStartsOn}
-                        tzid={tzid}
-                        model={tmpData}
-                        setModel={handleSetTemporaryEventModel}
-                        isInvitation={isInvitation}
-                        isDuplicating={isDuplicatingEvent}
-                        isOpen={createEventModal.isOpen}
-                        onSave={async (inviteActions: InviteActions) => {
-                            if (!temporaryEvent) {
-                                return Promise.reject(new Error('Undefined behavior'));
+                                return handleEditEvent(newTemporaryEvent);
+                            }}
+                            onRefresh={async () => {
+                                // make the loader always spin for one second (same as Mail "update message in folder")
+                                const dummySpin = () => wait(SECOND);
+                                const { eventData } = targetEvent.data;
+                                if (!eventData) {
+                                    return dummySpin();
+                                }
+                                const { CalendarID, ID } = eventData;
+
+                                await Promise.all([
+                                    calendarsEventsCacheRef.current.retryReadEvent(CalendarID, ID),
+                                    dummySpin(),
+                                ]);
+                            }}
+                            onDuplicate={
+                                isEventCreationDisabled
+                                    ? undefined
+                                    : () => {
+                                          const newTemporaryEvent = getEditedTemporaryEvent(true);
+
+                                          if (!newTemporaryEvent) {
+                                              return;
+                                          }
+
+                                          const { tmpData } = newTemporaryEvent;
+
+                                          if (tmpData.rest['recurrence-id']) {
+                                              // when duplicating a single edit, we want to forget the previous recurrence
+                                              tmpData.frequencyModel = getInitialFrequencyModel(tmpData.start.date);
+                                              delete tmpData.rest['recurrence-id'];
+                                          }
+
+                                          delete tmpData.uid;
+                                          tmpData.attendees.forEach((attendee) => {
+                                              attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+                                              // attendee tokens should not be duplicated as the UID has changed
+                                              delete attendee.token;
+                                          });
+
+                                          handleCreateEvent({
+                                              startModel: {
+                                                  ...tmpData,
+                                                  // This is used to keep track of the original event start
+                                                  initialDate: propertyToUTCDate(
+                                                      modelToDateProperty(tmpData.start, tmpData.isAllDay)
+                                                  ),
+                                              },
+                                              isDuplicating: true,
+                                          });
+                                      }
                             }
-
-                            try {
-                                await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent);
-
-                                // close modal clearing props
-                                updateModal('createEventModal', {
-                                    isOpen: false,
+                            onChangePartstat={async (inviteActions: InviteActions) => {
+                                const { partstat } = inviteActions;
+                                if (!targetEvent || !partstat) {
+                                    return;
+                                }
+                                const newTemporaryModel = getUpdateModel({
+                                    viewEventData: targetEvent.data,
+                                    partstat,
                                 });
-                            } catch (error) {
-                                return noop();
-                            }
-                        }}
-                        onDelete={async (inviteActions) => {
-                            if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
-                                return Promise.reject(new Error('Undefined behavior'));
-                            }
+                                if (!newTemporaryModel) {
+                                    return;
+                                }
 
-                            try {
-                                await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions);
+                                const newTemporaryEvent = getTemporaryEvent(
+                                    getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
+                                    newTemporaryModel,
+                                    tzid
+                                );
+                                return handleSaveEvent(newTemporaryEvent, inviteActions);
+                            }}
+                            onClose={handleCloseEventPopover}
+                        />
+                    );
+                }}
+            </Popover>
+            <Popover containerEl={document.body} targetEl={targetMoreRef} isOpen={!!targetMoreData} once>
+                {({ style, ref }: PopoverRenderData) => {
+                    if (!targetMoreData) {
+                        return null;
+                    }
+                    return (
+                        <MorePopoverEvent
+                            tzid={tzid}
+                            isNarrow={isNarrow}
+                            style={style}
+                            popoverRef={ref}
+                            now={now}
+                            date={targetMoreData.date}
+                            events={targetMoreEvents}
+                            targetEventRef={setTargetEventRef}
+                            targetEventData={targetEventData}
+                            formatTime={formatTime}
+                            onClickEvent={handleClickEvent}
+                            onClose={handleCloseMorePopover}
+                        />
+                    );
+                }}
+            </Popover>
+            <Prompt
+                message={(location) => {
+                    if (isInTemporaryBlocking && location.pathname.includes('settings')) {
+                        handleConfirmDeleteTemporary({ ask: true }).then(closeAllPopovers).catch(noop);
+                        return false;
+                    }
+                    return true;
+                }}
+            />
+            {!!tmpData && (
+                <CreateEventModal
+                    isNarrow={isNarrow}
+                    displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                    tzid={tzid}
+                    model={tmpData}
+                    setModel={handleSetTemporaryEventModel}
+                    isInvitation={isInvitation}
+                    isDuplicating={isDuplicatingEvent}
+                    isOpen={createEventModal.isOpen}
+                    onSave={async (inviteActions: InviteActions) => {
+                        if (!temporaryEvent) {
+                            return Promise.reject(new Error('Undefined behavior'));
+                        }
 
-                                closeModal('createEventModal');
-                            } catch (error) {
-                                return noop();
-                            }
-                        }}
-                        onClose={async () => {
-                            try {
-                                await handleConfirmDeleteTemporary({ ask: true });
-                                closeModal('createEventModal');
-                            } catch (error) {
-                                return noop();
-                            }
-                        }}
-                        onExit={() => {
-                            closeAllPopovers();
-                        }}
-                        isCreateEvent={isCreatingEvent}
-                        addresses={addresses}
-                        isDrawerApp={isDrawerApp}
-                    />
-                )}
-            </>
-        </Dropzone>
+                        try {
+                            await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent);
+
+                            // close modal clearing props
+                            updateModal('createEventModal', {
+                                isOpen: false,
+                            });
+                        } catch (error) {
+                            return noop();
+                        }
+                    }}
+                    onDelete={async (inviteActions) => {
+                        if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
+                            return Promise.reject(new Error('Undefined behavior'));
+                        }
+
+                        try {
+                            await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions);
+
+                            closeModal('createEventModal');
+                        } catch (error) {
+                            return noop();
+                        }
+                    }}
+                    onClose={async () => {
+                        try {
+                            await handleConfirmDeleteTemporary({ ask: true });
+                            closeModal('createEventModal');
+                        } catch (error) {
+                            return noop();
+                        }
+                    }}
+                    onExit={() => {
+                        closeAllPopovers();
+                    }}
+                    isCreateEvent={isCreatingEvent}
+                    addresses={addresses}
+                    isDrawerApp={isDrawerApp}
+                />
+            )}
+        </>
     );
 };
 
