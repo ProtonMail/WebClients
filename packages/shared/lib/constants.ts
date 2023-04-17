@@ -1002,3 +1002,5 @@ export enum SIMPLE_LOGIN_EXTENSION_LINKS {
 }
 
 export const OPEN_OFFER_MODAL_EVENT = 'openoffermodal';
+
+export const FAMILY_MAX_USERS = 6;

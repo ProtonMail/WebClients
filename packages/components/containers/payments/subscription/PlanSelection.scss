@@ -113,6 +113,18 @@
 			min-inline-size: 100%;
 		}
 	}
+
+	&--family {
+		// centering the 2 plans (free + family) on the large screens. Apply the usual rules on smaller screens.
+		@include media('>=large') {
+			// The variable here for the case if the free plan isn't displayed. In this case the only Family plan will be simply centered
+			grid-template-columns: 0.5fr repeat(var(--plan-selection-number), 1fr) 0.5fr;
+
+			.plan-selection-plan:first-child {
+				grid-column-start: 2;
+			}
+		}
+	}
 }
 
 .subscriptionCheckout {
