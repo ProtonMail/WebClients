@@ -386,20 +386,6 @@ export default function useUploadFile() {
 
                     createdFileRevision.uploadFinished();
 
-                    // Replacing file should keep only one revision because we
-                    // don't use revisions now at all (UI is not ready to handle
-                    // situation that size of the file is sum of all revisions,
-                    // there is no option to list them or delete them and so on).
-                    if (createdFileRevision.previousRevisionID) {
-                        await debouncedRequest(
-                            queryDeleteFileRevision(
-                                shareId,
-                                createdFileRevision.fileID,
-                                createdFileRevision.previousRevisionID
-                            )
-                        );
-                    }
-
                     const volumeId = volumeState.findVolumeId(shareId);
                     if (volumeId) {
                         await driveEventManager.pollEvents.volumes(volumeId, {
