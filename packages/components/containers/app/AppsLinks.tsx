@@ -19,7 +19,9 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
     const [user] = useUser();
     const { APP_NAME } = useConfig();
 
-    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].map((app) => {
+    const apps = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS];
+
+    return apps.map((app) => {
         const appName = getAppName(app);
         const inner = (
             <>
@@ -49,6 +51,20 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
             );
         }
         if (app === APPS.PROTONVPN_SETTINGS) {
+            return (
+                <SettingsLink
+                    path="/"
+                    app={app}
+                    key={app}
+                    title={appName}
+                    className={itemClassName}
+                    aria-current={current}
+                >
+                    {inner}
+                </SettingsLink>
+            );
+        }
+        if (app === APPS.PROTONPASS) {
             return (
                 <SettingsLink
                     path="/"
