@@ -10,6 +10,7 @@ import {
     useConfig,
     useErrorHandler,
     useFeature,
+    useLoading,
 } from '@proton/components';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
@@ -77,6 +78,7 @@ const LoginContainer = ({
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const [loadingReset, withLoadingReset] = useLoading(false);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -97,6 +99,7 @@ const LoginContainer = ({
         previousUsernameRef.current = cacheRef.current?.username ?? '';
         cacheRef.current = undefined;
         setStep(AuthStep.LOGIN);
+        withLoadingReset(silentApi(revoke()).catch(noop));
     };
 
     const handleResult = (result: AuthActionResponse) => {
@@ -121,8 +124,7 @@ const LoginContainer = ({
         if (step === AuthStep.LOGIN) {
             return onBack;
         }
-        return async () => {
-            await silentApi(revoke()).catch(noop);
+        return () => {
             handleCancel();
         };
     })();
@@ -147,6 +149,7 @@ const LoginContainer = ({
                     />
                     <Content>
                         <LoginForm
+                            loading={loadingReset}
                             toApp={toApp}
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             signupOptions={signupOptions}
