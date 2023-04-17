@@ -231,7 +231,7 @@ const List = (
                         <MailUpsellBanner needToShowUpsellBanner={needToShowUpsellBanner} columnMode={columnLayout} />
                     )}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
-                    <AutoDeleteBanner labelID={labelID} />
+                    <AutoDeleteBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (
