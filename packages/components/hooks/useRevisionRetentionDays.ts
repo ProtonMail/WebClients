@@ -16,7 +16,7 @@ const useRevisionRetentionDays = (
     showConfirmActionModal: ReturnType<typeof useConfirmActionModal>['1']
 ) => {
     const api = useApi();
-    const [isLoading, withLoading] = useLoading(true);
+    const [isLoading, withLoading] = useLoading(hasPaidDrive);
     const [isSubmitLoading, withSubmitLoading] = useLoading();
     const { createNotification } = useNotifications();
     const defaultUserRetentionsDays = hasPaidDrive
