@@ -19,7 +19,7 @@ const sizes = [
         px: '0',
     },
     {
-        class: '0-5',
+        class: '0.5',
         rem: '0.125rem',
         px: '2px',
     },
