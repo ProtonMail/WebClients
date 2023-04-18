@@ -4,27 +4,39 @@ import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
+export const getPasswordsAndNotesText = () => {
+    return c('new_plans: feature').t`Unlimited passwords and notes`;
+};
+
 export const getPasswordsAndNotes = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Unlimited passwords and notes`,
+        text: getPasswordsAndNotesText(),
         included: true,
         icon: 'note',
     };
 };
 
+export const getDevicesText = () => {
+    return c('new_plans: feature').t`Unlimited devices`;
+};
+
 export const getDevices = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Unlimited devices`,
+        text: getDevicesText(),
         included: true,
         icon: 'mobile',
     };
+};
+
+export const getUnlimitedHideMyEmailAliasesText = () => {
+    return c('new_plans: feature').t`Unlimited Hide My Email aliases`;
 };
 
 export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text:
             n === 'unlimited'
-                ? c('new_plans: feature').t`Unlimited Hide My Email aliases`
+                ? getUnlimitedHideMyEmailAliasesText()
                 : c('new_plans: feature').ngettext(msgid`${n} Hide My Email alias`, `${n} Hide My Email aliases`, n),
         tooltip: c('new_plans: tooltip')
             .t`Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${BRAND_NAME}.`,
@@ -40,9 +52,13 @@ export const getE2Encryption = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const get2FAAuthenticatorText = () => {
+    return c('new_plans: feature').t`Integrated 2FA authenticator`;
+};
+
 export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Integrated 2FA authenticator`,
+        text: get2FAAuthenticatorText(),
         included,
         icon: 'key',
     };
