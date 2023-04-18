@@ -121,7 +121,7 @@ const AccountStep = ({
     const domain = maybeDomain || domains?.[0];
 
     const run = async () => {
-        const payload = await challengeRefLogin.current?.getChallenge();
+        const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
         return onSubmit({
             username: trimmedUsername,
             password,
