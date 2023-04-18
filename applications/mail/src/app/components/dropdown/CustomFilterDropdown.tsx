@@ -7,17 +7,16 @@ import {
     Checkbox,
     FilterConstants,
     FilterUtils,
+    FiltersUpsellModal,
     PrimaryButton,
     useFilters,
     useModalState,
-    useNotifications,
     useUser,
 } from '@proton/components';
 import { ConditionComparator, ConditionType, Filter } from '@proton/components/containers/filters/interfaces';
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
-import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import { hasReachedFiltersLimit } from '@proton/shared/lib/filters/helpers';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPaid } from '@proton/shared/lib/user/helpers';
 import identity from '@proton/utils/identity';
 
 const { computeTree, newFilter } = FilterUtils;
@@ -43,6 +42,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
     const [containFocus, setContainFocus] = useState(true);
 
     const [filterModalProps, setFilterModalOpen, renderFilterModal] = useModalState();
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -53,7 +53,6 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
         [ConditionType.RECIPIENT]: false,
         [ConditionType.ATTACHMENTS]: false,
     });
-    const { createNotification } = useNotifications();
     const [user] = useUser();
     const [filters = []] = useFilters() as [Filter[], boolean, Error];
 
@@ -148,16 +147,15 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
     }, [filtersState]);
 
     const handleNext = () => {
-        if (!isPaid(user) && filters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length > 0) {
-            createNotification({
-                text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters.`,
-                type: 'error',
-            });
-            onClose();
-            return;
-        }
+        // Set focus state to lock the dropdown
+        // We need this otherwise modal that is rendered in the dropdown will be closed if dropdown disappear from the DOM
         setContainFocus(false);
-        setFilterModalOpen(true);
+
+        if (hasReachedFiltersLimit(user, filters)) {
+            handleUpsellModalDisplay(true);
+        } else {
+            setFilterModalOpen(true);
+        }
     };
 
     const buttonDisabled = !Object.values(filtersState).some(identity);
@@ -218,6 +216,15 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                     }}
                     onCloseCustomAction={() => setContainFocus(true)}
                     {...filterModalProps}
+                />
+            )}
+            {renderUpsellModal && (
+                <FiltersUpsellModal
+                    modalProps={upsellModalProps}
+                    onCloseCustomAction={() => {
+                        setContainFocus(true);
+                        onClose();
+                    }}
                 />
             )}
         </>
