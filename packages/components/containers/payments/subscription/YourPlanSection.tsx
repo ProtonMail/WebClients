@@ -15,6 +15,7 @@ import {
 import { SettingsSectionWide } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import { FeatureCode } from '../../features';
+import PendingInvitationPanel from './PendingInvitationsPanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import SubscriptionPanel from './SubscriptionPanel';
 import UpsellPanel from './UpsellPanel';
@@ -70,6 +71,7 @@ const YourPlanSection = ({ app }: Props) => {
                     vpnServers={vpnServers}
                     openSubscriptionModal={openSubscriptionModal}
                 />
+                <PendingInvitationPanel />
                 <UpsellPanel
                     isPassPlusEnabled={isPassPlusEnabled}
                     app={app}

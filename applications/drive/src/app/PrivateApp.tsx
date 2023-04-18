@@ -7,6 +7,7 @@ import {
     ContactsModel,
     LabelsModel,
     MailSettingsModel,
+    UserInvitationModel,
     UserModel,
     UserSettingsModel,
 } from '@proton/shared/lib/models';
@@ -20,6 +21,19 @@ interface Props {
     locales: TtagLocaleMap;
 }
 
+const EVENT_MODELS = [
+    UserModel,
+    UserSettingsModel,
+    AddressesModel,
+    ContactsModel,
+    ContactEmailsModel,
+    LabelsModel,
+    MailSettingsModel,
+    UserInvitationModel,
+];
+
+const PRELOAD_MODELS = [UserModel, AddressesModel];
+
 const PrivateAppInner = ({ onLogout, locales }: Props) => {
     const { loadUserSettings } = useUserSettings();
 
@@ -29,16 +43,8 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
         <StandardPrivateApp
             locales={locales}
             onLogout={onLogout}
-            preloadModels={[UserModel, AddressesModel]}
-            eventModels={[
-                UserModel,
-                UserSettingsModel,
-                AddressesModel,
-                ContactsModel,
-                ContactEmailsModel,
-                LabelsModel,
-                MailSettingsModel,
-            ]}
+            preloadModels={PRELOAD_MODELS}
+            eventModels={EVENT_MODELS}
             loader={<LoaderPage />}
             onInit={loadUserSettings}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}

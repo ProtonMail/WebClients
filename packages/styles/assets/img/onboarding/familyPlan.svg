@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="156" fill="none">
+    <path
+        fill="url(#a)"
+        d="M164.999 67.44c10.558 0 19.117-8.56 19.117-19.118 0-10.558-8.559-19.117-19.117-19.117-10.558 0-19.117 8.56-19.117 19.117 0 10.558 8.559 19.118 19.117 19.118Z"
+    />
+    <path
+        fill="url(#b)"
+        d="M138.502 121.435c-11.403 0-19.117-12.409-13.415-22.136 7.714-14.086 22.806-23.812 40.246-23.812 17.441 0 32.198 9.39 40.247 23.812 5.702 10.062-2.012 22.136-13.415 22.136h-53.663Z"
+    />
+    <path
+        fill="url(#c)"
+        d="M53.998 67.44c10.558 0 19.117-8.56 19.117-19.118 0-10.558-8.559-19.117-19.117-19.117-10.558 0-19.117 8.56-19.117 19.117 0 10.558 8.559 19.118 19.117 19.118Z"
+    />
+    <path
+        fill="url(#d)"
+        d="M27.501 121.435c-11.403 0-19.117-12.409-13.415-22.136C21.8 85.213 36.892 75.487 54.332 75.487s32.198 9.39 40.247 23.812c5.702 10.062-2.012 22.136-13.415 22.136H27.5Z"
+    />
+    <g filter="url(#e)">
+        <path
+            fill="url(#f)"
+            d="M110.129 67.772c12.268 0 22.213-10.023 22.213-22.386 0-12.364-9.945-22.386-22.213-22.386S87.916 33.023 87.916 45.386s9.945 22.386 22.213 22.386Z"
+        />
+        <path
+            fill="url(#g)"
+            d="M79.341 131c-13.25 0-22.213-14.531-15.588-25.921 8.963-16.495 26.5-27.884 46.765-27.884 20.264 0 37.412 10.997 46.765 27.884 6.625 11.782-2.339 25.921-15.589 25.921H79.341Z"
+        />
+    </g>
+    <path
+        fill="url(#h)"
+        fill-opacity=".5"
+        d="m30 27-6-2.216-2.761-1.023L20.216 21 18 15l-2.216 6-1.023 2.761L12 24.784 6 27l6 2.216 2.761 1.023L15.784 33 18 39l2.216-6 1.023-2.761L24 29.216 30 27Z"
+    />
+    <path
+        fill="url(#i)"
+        fill-opacity=".5"
+        d="m206 65-3-1.108-1.381-.511-.511-1.381L200 59l-1.108 3-.511 1.38-1.381.512L194 65l3 1.108 1.381.511.511 1.381L200 71l1.108-3 .511-1.38 1.381-.512L206 65Z"
+    />
+    <defs>
+        <linearGradient id="a" x1="165.571" x2="165.571" y1="29.205" y2="121.176" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F9E6FF" />
+            <stop offset="1" stop-color="#CEC5F6" />
+        </linearGradient>
+        <linearGradient id="b" x1="165.571" x2="165.571" y1="29.205" y2="121.176" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F9E6FF" />
+            <stop offset="1" stop-color="#CEC5F6" />
+        </linearGradient>
+        <linearGradient id="c" x1="54.57" x2="54.57" y1="29.205" y2="121.176" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F9E6FF" />
+            <stop offset="1" stop-color="#CEC5F6" />
+        </linearGradient>
+        <linearGradient id="d" x1="54.57" x2="54.57" y1="29.205" y2="121.176" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F9E6FF" />
+            <stop offset="1" stop-color="#CEC5F6" />
+        </linearGradient>
+        <linearGradient id="f" x1="110.794" x2="110.794" y1="23" y2="130.697" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ECAAFF" />
+            <stop offset="1" stop-color="#6A48F6" />
+        </linearGradient>
+        <linearGradient id="g" x1="110.794" x2="110.794" y1="23" y2="130.697" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ECAAFF" />
+            <stop offset="1" stop-color="#6A48F6" />
+        </linearGradient>
+        <linearGradient id="h" x1="18.068" x2="18.068" y1="15" y2="38.933" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F9E6FF" />
+            <stop offset="1" stop-color="#CEC5F6" />
+        </linearGradient>
+        <linearGradient id="i" x1="200.034" x2="200.034" y1="59" y2="70.966" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F9E6FF" />
+            <stop offset="1" stop-color="#CEC5F6" />
+        </linearGradient>
+        <filter
+            id="e"
+            width="130"
+            height="140"
+            x="45.518"
+            y="11"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="8" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.32317 0 0 0 0 0.155642 0 0 0 0 0.679167 0 0 0 0.3 0" />
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_816_34231" />
+            <feBlend in="SourceGraphic" in2="effect1_dropShadow_816_34231" result="shape" />
+        </filter>
+    </defs>
+</svg>

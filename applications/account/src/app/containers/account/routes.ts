@@ -4,7 +4,8 @@ import { ThemeColor } from '@proton/colors';
 import { SectionConfig } from '@proton/components';
 import { BRAND_NAME, DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
 import { recoveryIds } from './recoveryIds';
 
@@ -14,16 +15,21 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled,
     recoveryNotification,
     isGmailSyncEnabled,
+    organization,
 }: {
     user: UserModel;
     isDataRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
     isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
+    organization?: Organization;
 }) => {
-    const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type } = user;
+    const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type, isAdmin } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     const isExternal = Type === UserType.EXTERNAL;
+
+    const isFamilyPlan = !!organization && isOrganizationFamily(organization);
+    const isFamilyPlanMember = isFamilyPlan && isMember && isPaid;
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -35,7 +41,6 @@ export const getAccountAppRoutes = ({
                 available: isFree || canPay || !isMember || (isPaid && canPay),
                 subsections: [
                     {
-                        text: isFree ? c('Title').t`Your current plan` : c('Title').t`Your plan`,
                         id: 'your-plan',
                         available: canPay,
                     },
@@ -124,9 +129,32 @@ export const getAccountAppRoutes = ({
                         id: 'two-fa',
                     },
                     {
+                        text: c('familyOffer_2023:Title').t`Family plan`,
+                        id: 'family-plan',
+                        available: isFamilyPlan && !isAdmin,
+                    },
+                    //Family members don't have access to the dashboard, display the payment methods for them here
+                    {
+                        text: c('Title').t`Payment methods`,
+                        id: 'payment-methods',
+                        available: isFamilyPlanMember,
+                    },
+                    //Family members don't have access to the dashboard, display the credits for them here
+                    {
+                        text: c('Title').t`Credits`,
+                        id: 'credits',
+                        available: isFamilyPlanMember,
+                    },
+                    //Family members don't have access to the dashboard, display the invoices for them here
+                    {
+                        text: c('Title').t`Invoices`,
+                        id: 'invoices',
+                        available: isFamilyPlanMember,
+                    },
+                    {
                         text: c('Title').t`Delete account`,
                         id: 'delete',
-                        available: canPay && !isMember,
+                        available: user.Type === UserType.PROTON,
                     },
                 ],
             },

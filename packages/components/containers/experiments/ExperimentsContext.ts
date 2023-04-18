@@ -6,6 +6,7 @@ export interface Experiment {
 }
 
 export enum ExperimentCode {
+    Family2023 = 'Family2023',
     ReferralProgramSignup = 'ReferralProgramSignup',
     GmailSyncOnboarding = 'GmailSyncOnboarding',
 }
