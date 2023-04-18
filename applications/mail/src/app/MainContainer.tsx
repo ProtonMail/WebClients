@@ -74,23 +74,13 @@ const MainContainer = () => {
                     <MailContentRefProvider mailContentRef={mailContentRef}>
                         <ChecklistsProvider>
                             <ComposerContainer breakpoints={breakpoints}>
-                                {({ isComposerOpened }) => (
-                                    <>
-                                        <ModalsChildren />
-                                        <Switch>
-                                            <Route
-                                                path={MAIN_ROUTE_PATH}
-                                                render={() => (
-                                                    <PageContainer
-                                                        ref={mailContentRef}
-                                                        breakpoints={breakpoints}
-                                                        isComposerOpened={isComposerOpened}
-                                                    />
-                                                )}
-                                            />
-                                        </Switch>
-                                    </>
-                                )}
+                                <ModalsChildren />
+                                <Switch>
+                                    <Route
+                                        path={MAIN_ROUTE_PATH}
+                                        render={() => <PageContainer ref={mailContentRef} breakpoints={breakpoints} />}
+                                    />
+                                </Switch>
                             </ComposerContainer>
                         </ChecklistsProvider>
                     </MailContentRefProvider>
