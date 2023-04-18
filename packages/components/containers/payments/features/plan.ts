@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
@@ -84,7 +85,7 @@ export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan =
         features: [
             getStorageFeature(plan.MaxSpace, { boldStorageSize }),
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-            getNCalendarsFeature(1),
+            getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
             getVPNConnections(1),
             getSupport('priority'),
         ],

@@ -76,7 +76,7 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
             name: 'calendars',
             plans: {
                 [PLANS.FREE]: getNCalendarsFeature(MAX_CALENDARS_FREE),
-                // TODO: Order should be inverted in ORs of the inputs of getNCalendarsFeature below (B || A instead of A || B). The limits need to be changed API-side for that though, and a FU is needed. Only after that this TODO can be tackled
+                // TODO: Order should be inverted in ORs of the inputs of getNCalendarsFeature below (B || A instead of A || B). The limits need to be changed API-side for that though. Only after that this TODO can be tackled
                 [PLANS.BUNDLE]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE]?.MaxCalendars),
                 [PLANS.MAIL]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL]?.MaxCalendars),
                 [PLANS.VPN]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.VPN]?.MaxCalendars),
