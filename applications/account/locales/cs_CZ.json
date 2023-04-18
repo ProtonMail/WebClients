@@ -3524,20 +3524,20 @@
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Prosím ${ refresh } nebo zkontrolujte své připojení."
+      "Please ${ refresh } or check your internet connection.": [
+        "Prosím ${ refresh } nebo zkontrolujte své internetové připojení."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
+      "Please ${ refresh } or try again later.": [
+        "Prosím ${ refresh } nebo to zkuste později."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Při připojování ke službě ${ BRAND_NAME } došlo k chybě."
+      "Something went wrong": [
+        "Něco se pokazilo"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Příliš mnoho přidružených relací, prosím vymažte soubory cookie a znovu se přihlaste."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Můžete taky stránku ${ refresh } nebo to zkusit později."
+      "We couldn't load this page. ": [
+        "Stránku se nepodařilo načíst. "
       ]
     },
     "Error message, recovery": {
@@ -8813,8 +8813,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Při připojení přes naše VPN, vaše DNS požadavky prochází přes šifrovaný VPN tunel, což je výhoda z hlediska soukromí a bezpečnosti"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Zprávy ${ MAIL_APP_NAME } uživatelům jsou automaticky zašifrovány. Odeslání mimo ${ MAIL_APP_NAME } vyžaduje nejprve nastavení hesla."
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Zprávy odeslané ${ MAIL_APP_NAME } uživatelům jsou automaticky zašifrovány. Odeslání mimo ${ MAIL_APP_NAME_TWO } uživatele nejprve vyžaduje nastavení hesla."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Můžete mít více než jednoho správce. Všichni správci mohou přidávat a spravovat uživatele ale jen hlavní správce může spravovat platby."

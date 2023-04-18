@@ -3494,20 +3494,20 @@
       "Oops, something went wrong": [
         "¡Ahh! Algo salió mal"
       ],
-      "Please ${ refresh } or check your connection.": [
+      "Please ${ refresh } or check your internet connection.": [
         "Por favor ${ refresh } o compruebe su conexión."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Algo salió mal. Refresque la página o intente más tarde."
+      "Please ${ refresh } or try again later.": [
+        "Por favor ${ refresh } o intente más tarde."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Hubo un problema al conectarse a ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Algo salió mal"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Demasiadas sesiones activas, borre las cookies e inicie sesión otra vez."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "También puede ${ refresh } o intentarlo más tarde."
+      "We couldn't load this page. ": [
+        "No pudimos cargar esta página. "
       ]
     },
     "Error message, recovery": {
@@ -8621,8 +8621,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Mientras está conectado a nuestra VPN, las consultas de DNS pasan por nuestro túnel VPN cifrado, por lo que tendrá todavía más privacidad y seguridad en Internet"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Los correos que envía a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME }, tendrá que establecer una contraseña antes de enviar el mensaje."
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Los correos que envía a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME_TWO }, tendrá que establecer una contraseña antes de enviar el mensaje."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puede tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
@@ -10659,7 +10659,7 @@
         "Privacidad del correo"
       ],
       "Email subscriptions": [
-        "Boletines electrónicos"
+        "Suscripciones de correo"
       ],
       "Encryption and keys": [
         "Cifrado y claves"

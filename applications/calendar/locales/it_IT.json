@@ -870,6 +870,11 @@
         "Visualizza (mostra i dettagli dell'evento)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Impossibile trovare le informazioni di contatto per ${ address }"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Aggiungi calendario dall'URL"
@@ -2612,17 +2617,8 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Qualcosa è andato storto. Aggiorna la pagina o riprova più tardi."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Si è verificato un problema di connessione a ${ BRAND_NAME }."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Puoi anche ${ refresh } o riprovare più tardi."
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ],
       "You need an active personal calendar to import events": [
         "Hai bisogno di un calendario personale attivo per importare eventi"
@@ -3787,6 +3783,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Visualizza soltanto"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Invita altri con un account ${ BRAND_NAME } per consultare o modificare gli eventi nel tuo calendario."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -5039,6 +5040,9 @@
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Errore nella verifica della firma"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Hai abilitato la verifica dell'indirizzo per ${ boldSenderEmail }. Non possiamo verificare l'autenticità dell'invito di questo calendario. Questo può succedere quando le chiavi crittografiche del contatto cambiano. Per piacere rivedi le impostazioni avanzate PGP, oppure chiedi a ${ boldSenderEmail } un nuovo invito."
       ]
     },
     "Signing preference for emails": {
@@ -5942,6 +5946,11 @@
         "Scegli un numero"
       ]
     },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "La pianificazione diventerà più facile!"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Crea calendario"
@@ -6016,6 +6025,9 @@
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Condiviso con crittografia end-to-end"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Condividi crittografato end-to-end con i contatti verificati"
       ]
     },
     "Validation": {

@@ -880,20 +880,17 @@
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
       ],
-      "Oops, something went wrong": [
-        "Хм. Что-то пошло не так"
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } или проверьте подключение к Интернету."
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Пожалуйста, ${ refresh } или проверьте подключение."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } или попробуйте позже."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
+      "Something went wrong": [
+        "Что-то пошло не так"
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Возникла проблема при подключении к ${ BRAND_NAME }."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Вы также можете ${ refresh } или повторить попытку позже."
+      "We couldn't load this page. ": [
+        "Не удалось загрузить эту страницу. "
       ]
     },
     "fido2: Error": {

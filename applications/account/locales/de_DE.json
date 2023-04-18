@@ -3494,20 +3494,14 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Bitte ${ refresh } oder überprüfe deine Verbindung."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Es gab ein Problem bei der Verbindung mit ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Etwas ist schief gelaufen"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Zu viele aktive Sitzungen, bitte löschen Sie Ihre Cookies und melden Sie sich erneut an."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Du kannst auch die ${ refresh } oder es später noch einmal versuchen."
+      "We couldn't load this page. ": [
+        "Diese Seite konnte nicht geladen werden. "
       ]
     },
     "Error message, recovery": {
@@ -8618,8 +8612,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Wenn du mit unserem VPN verbunden bist, werden deine DNS Anfragen durch unseren verschlüsselten VPN-Tunnel geleitet, was deine Privatsphäre zusätzlich schützt."
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Beim Versand an andere ${ MAIL_APP_NAME }-Benutzer erfolgt eine automatische Verschlüsselung. Beim Versand an Personen, die ${ MAIL_APP_NAME } nicht verwenden, muss zunächst ein Passwort festgelegt werden."
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Beim Versand an andere ${ MAIL_APP_NAME }-Benutzer erfolgt eine automatische Verschlüsselung. Beim Versand an Personen, die ${ MAIL_APP_NAME_TWO } nicht verwenden, muss zunächst ein Passwort festgelegt werden."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
