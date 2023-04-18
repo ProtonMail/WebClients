@@ -1,17 +1,21 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { ButtonLike, CircleLoader } from '@proton/atoms';
 import {
+    AppLink,
     ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoHeader,
     RevisionsUpgradeBanner,
+    getRetentionLabel,
     useModalTwo,
     useUser,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
+import { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { DecryptedLink } from '../../../store';
+import { DecryptedLink, useUserSettings } from '../../../store';
 import { RevisionList, RevisionsProvider, useRevisionsProvider } from '../../revisions';
 
 import './RevisionsModal.scss';
@@ -20,12 +24,38 @@ interface Props {
     link: DecryptedLink;
 }
 
+const RevisionsSettingsBanner = ({
+    revisionRetentionDays,
+}: {
+    revisionRetentionDays: RevisionRetentionDaysSetting;
+}) => {
+    const retentionLabel = getRetentionLabel(revisionRetentionDays);
+    return (
+        <div className="flex flex-align-items-center flex-justify-space-between">
+            <p className="m0 color-weak">{c('Info').t`Version history is set to: ${retentionLabel}`}</p>
+            <ButtonLike
+                as={AppLink}
+                to="/drive/version-history"
+                toApp={APPS.PROTONACCOUNT}
+                shape="solid"
+                size="small"
+                href=""
+            >{c('Action').t`Change`}</ButtonLike>
+        </div>
+    );
+};
+
 const RevisionsModalContent = () => {
-    const [user] = useUser();
+    const [{ hasPaidDrive }] = useUser();
+    const { revisionRetentionDays } = useUserSettings();
     const { isLoading, currentRevision, categorizedRevisions } = useRevisionsProvider();
     return (
         <>
-            {!user.hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
+            {hasPaidDrive ? (
+                <RevisionsSettingsBanner revisionRetentionDays={revisionRetentionDays} />
+            ) : (
+                <RevisionsUpgradeBanner />
+            )}
             {isLoading && <CircleLoader className="w100 mauto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
                 <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
