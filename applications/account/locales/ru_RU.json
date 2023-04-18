@@ -1016,6 +1016,26 @@
         "Это приведет к отключению всех маршрутизаторов и клиентов, использующих данный сертификат."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Почтовый ящик ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Удалено 5 трекеров"
+      ],
+      "Auto forwarded": [
+        "Автоматически переслано"
+      ],
+      "Email received": [
+        "Получено письмо"
+      ],
+      "Encrypted": [
+        "Зашифровано"
+      ],
+      "New email": [
+        "Новое письмо"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
@@ -2610,6 +2630,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Автоматически очищать сообщения старше 30 дней из корзины и спама. Воспользуйтесь этими и другими преимуществами после улучшения."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
@@ -2621,6 +2644,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail и знак \"плюс\""
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -3495,20 +3521,20 @@
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Пожалуйста, ${ refresh } или проверьте подключение."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } или проверьте подключение к Интернету."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } или попробуйте позже."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Возникла проблема при подключении к ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Что-то пошло не так"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Слишком много дочерних сессий, пожалуйста, очистите файлы cookie и войдите снова."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Вы также можете ${ refresh } или повторить попытку позже."
+      "We couldn't load this page. ": [
+        "Не удалось загрузить эту страницу. "
       ]
     },
     "Error message, recovery": {
@@ -3916,6 +3942,17 @@
       ],
       "(during your first month)": [
         "(в течение первого месяца)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Автоматически пересылать"
+      ],
+      "Gmail messages to your inbox": [
+        "Сообщения Gmail в вашем почтовом ящике"
+      ],
+      "Sign in with Google": [
+        "Войти с Google"
       ]
     },
     "Go to sign in": {
@@ -6800,6 +6837,9 @@
       "Auto show remote images": [
         "Авто-показ внешних изображений"
       ],
+      "Auto-delete unwanted messages": [
+        "Автоматическое удаление нежелательных сообщений"
+      ],
       "Auto-detect primary time zone": [
         "Автоопределение основного часового пояса"
       ],
@@ -8268,6 +8308,9 @@
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Автоудаление спама и удаленных сообщений"
+      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -8763,9 +8806,6 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "При подключении к нашей сети VPN ваши запросы DNS проходят через зашифрованный туннель VPN, что повышает уровень конфиденциальности и безопасности в Интернете"
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование выполняется автоматически. Отправка письма пользователю вне ${ MAIL_APP_NAME } предполагает предварительную установку пароля."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
@@ -10686,6 +10726,9 @@
       "Clear": [
         "Очистить"
       ],
+      "Clear out the junk": [
+        "Очистка от мусора"
+      ],
       "Composing": [
         "Написание"
       ],
@@ -10835,6 +10878,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
+      ],
+      "Duration": [
+        "Длительность"
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
@@ -11466,6 +11512,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Настройте импорт, чтобы уменьшить количество ярлыков"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Удаление сообщений из корзины и спама через 30 дней. Включение этой опции удалит все сообщения, находящиеся сейчас в корзине и папке спама. В будущем, спам и удалённые в козину сообщения будут автоматически удаляться через 30 дней."
       ],
       "Each imported email will have this label": [
         "У каждого импортированного письма будет этот ярлык"

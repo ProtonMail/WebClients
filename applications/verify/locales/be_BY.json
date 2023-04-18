@@ -880,20 +880,17 @@
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
       ],
-      "Oops, something went wrong": [
-        "Вой, нешта пайшло не так"
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } або праверце ваша падключэнне да інтэрнэту."
       ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } або праверце ваша злучэнне."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } або паспрабуйце яшчэ раз пазней."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Нешта пайшло не так. Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Узнікла праблема з падключэннем да ${ BRAND_NAME }."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Таксама вы можаце ${ refresh } або паспрабуйце яшчэ раз пазней."
+      "We couldn't load this page. ": [
+        "Не ўдалося загрузіць гэту старонку. "
       ]
     },
     "fido2: Error": {
@@ -960,7 +957,7 @@
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
       "Internet connection lost": [
-        "Злучэнне з інтэрнэтам страчана"
+        "Падключэнне да інтэрнэту страчана"
       ],
       "Learn more": [
         "Даведацца больш"

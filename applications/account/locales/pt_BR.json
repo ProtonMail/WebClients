@@ -28,7 +28,7 @@
         "Excluir encaminhamento"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "O encaminhamento começará em breve. Novos emails aparecerão na sua caixa de entrada."
+        "O encaminhamento começará em breve. Novos e-mails aparecerão na sua caixa de entrada."
       ],
       "Mail forward stopped": [
         "Encaminhamento de correio parou"
@@ -3494,20 +3494,8 @@
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Por favor, ${ refresh } ou verifique sua conexão."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Algo deu errado. Por favor, atualize a página ou tente novamente mais tarde."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Houve um problema de conexão com a ${ BRAND_NAME }."
-      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Muitas sessões infantis, limpe seus cookies e faça login novamente."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Você também pode ${ refresh } ou tentar novamente mais tarde."
       ]
     },
     "Error message, recovery": {
@@ -8620,9 +8608,6 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Quando você se conecta à nossa VPN, seu DNS faz consultas por meio do nosso túnel VPN criptografado, aumentando sua privacidade e segurança on-line"
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Ao enviar mensagens para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. Para enviar mensagens a usuários que não são do ${ MAIL_APP_NAME }, antes é necessário definir uma senha."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador primário tem controle sobre o faturamento."

@@ -1605,17 +1605,17 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
-      "Please ${ refresh } or check your connection.": [
+      "Please ${ refresh } or check your internet connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Wystąpił problem z połączeniem z usługą ${ BRAND_NAME }."
-      ],
-      "You may also ${ refresh } or try again later.": [
+      "Please ${ refresh } or try again later.": [
         "${ refresh } lub spróbuj ponownie później."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ],
+      "We couldn't load this page. ": [
+        "Nie możemy załadować strony. "
       ]
     },
     "Error notification": {
@@ -3777,8 +3777,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Po połączeniu z usługą VPN, zapytania DNS są przesyłane przez szyfrowany tunel VPN, co zwiększa Twoją prywatność i bezpieczeństwo online"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Podczas wysyłania wiadomości do użytkowników ${ MAIL_APP_NAME } szyfrowanie jest automatyczne. Wysyłanie do użytkowników spoza ${ MAIL_APP_NAME } wymaga ustawienia hasła wiadomości."
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Podczas wysyłania wiadomości do użytkowników ${ MAIL_APP_NAME } szyfrowanie jest automatyczne. Wysyłanie do użytkowników spoza ${ MAIL_APP_NAME_TWO } wymaga ustawienia hasła wiadomości."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Możesz mieć więcej niż jednego administratora. Wszyscy administratorzy mogą dodawać i zarządzać użytkownikami, ale tylko główny administrator ma kontrolę nad płatnościami."
