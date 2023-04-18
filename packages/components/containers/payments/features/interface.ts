@@ -5,8 +5,9 @@ import { IconName } from '../../../components';
 
 export interface PlanCardFeatureDefinition {
     text: string | string[];
-    tooltip?: string;
     included: boolean;
+    status?: 'available' | 'coming-soon';
+    tooltip?: string;
     fire?: boolean;
     icon?: IconName;
 }
