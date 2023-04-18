@@ -163,9 +163,6 @@
       "Create a new contact group": [
         "Új névjegy csoport létrehozása"
       ],
-      "Create account": [
-        "Fiók létrehozása"
-      ],
       "Create link": [
         "Hivatkozás létrehozása"
       ],
@@ -2312,17 +2309,11 @@
       "Oops, something went wrong": [
         "Hoppá, valami hiba történt"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
+      "Something went wrong": [
+        "Hiba történt"
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Hiba lépett fel a ${ BRAND_NAME }hoz történő csatlakozás során."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
+      "We couldn't load this page. ": [
+        "Az oldal nem található. "
       ],
       "You may also refresh the page or try again later.": [
         "Megpróbálhatja frissíteni az oldalt vagy később újra próbálni."
@@ -3035,6 +3026,10 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
+      ],
+      "Delete locked drive": [
+        "Zárolt tárhely törlése",
+        "Zárolt tárhelyek törlése"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitális aláírás lellenőrizve. Ezt a fájlt biztonságosan feltöltötte ${ emailAddress }."
@@ -4963,9 +4958,24 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "Letöltések száma"
+      ],
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } meghiúsult letöltés",
+        "${ numberOfFailedTransfer.total } meghiúsult letöltés"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } meghiúsult átvitel",
+        "${ numberOfFailedTransfer.total } meghiúsult átvitel"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
+        "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
       ],
       "Account suspended": [
         "Fiók felfüggesztve"
@@ -5009,6 +5019,9 @@
       ],
       "Completed": [
         "Kész"
+      ],
+      "Computers": [
+        "Számítógépek"
       ],
       "Contact details": [
         "Névjegy részletei"
@@ -5218,6 +5231,9 @@
       "Open settings menu": [
         "Beállítások menü megnyitása"
       ],
+      "Original size": [
+        "Eredeti méret"
+      ],
       "Other information": [
         "Egyéb adatok"
       ],
@@ -5362,6 +5378,9 @@
       "Uploaded by": [
         "Feltöltötte"
       ],
+      "Uploading a large file or folder": [
+        "Nagy fájl vagy mappa feltöltése"
+      ],
       "View contacts": [
         "Névjegyek megtekintése"
       ],
@@ -5394,6 +5413,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Kapott 1 GB tárhelyet"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5473,6 +5495,10 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "A név nem tartalmazhat láthatatlan karaktereket, / vagy \\ karaktert."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet",
+        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet"
       ],
       "Name must not be empty": [
         "A név nem lehet üres"

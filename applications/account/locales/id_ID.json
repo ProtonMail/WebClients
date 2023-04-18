@@ -3476,20 +3476,20 @@
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Mohon ${ refresh } atau cek koneksi Anda."
+      "Please ${ refresh } or check your internet connection.": [
+        "Silakan ${ refresh } atau periksa koneksi internet Anda."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
+      "Please ${ refresh } or try again later.": [
+        "Silakan ${ refresh } atau coba lagi nanti."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Terdapat masalah dalam menghubungkan ke ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Terdapat suatu kesalahan"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Sesi turunan terlalu banyak. Bersihkan riwayat cookie Anda dan masuk lagi."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      "We couldn't load this page. ": [
+        "Kami tidak dapat memuat halaman ini. "
       ]
     },
     "Error message, recovery": {
@@ -8516,9 +8516,6 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Pada saat Anda terhubung ke VPN kami, kueri DNS Anda akan terkirim melalui terowongan VPN terenkripsi kami yang akan meningkatkan privasi dan keamanan Anda"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Ketika Anda mengirimkan sesuatu kepada pengguna ${ MAIL_APP_NAME } lainnya, enkripsi akan diterapkan secara otomatis. Pengiriman ke pengguna non-${ MAIL_APP_NAME } akan memerlukan Anda untuk menentukan kata sandi terlebih dahulu."
-      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Anda dapat menetapkan lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun segala hal terkait pembayaran hanya akan dapat diatur oleh admin utama."
       ]
@@ -8611,7 +8608,7 @@
         "Undangan kalender ditolak"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Bergabung ke ${ calendarName } (${ senderEmail })"
+        "Anda telah bergabung dengan ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
