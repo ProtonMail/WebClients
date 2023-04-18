@@ -472,7 +472,7 @@
         "Праблема з календаром"
       ],
       "Connection problem": [
-        "Праблема са злучэннем"
+        "Праблема з падключэннем"
       ],
       "Contacts problem": [
         "Праблема з кантактамі"
@@ -1475,7 +1475,7 @@
         "Увядзіце 6 лічбаў"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Памылка злучэння з Bitcoin API."
+        "Памылка падключэння да Bitcoin API."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
@@ -1605,17 +1605,17 @@
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } або праверце ваша злучэнне."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } або праверце ваша падключэнне да інтэрнэту."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Нешта пайшло не так. Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } або паспрабуйце яшчэ раз пазней."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Узнікла праблема з падключэннем да ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Таксама вы можаце ${ refresh } або паспрабуйце яшчэ раз пазней."
+      "We couldn't load this page. ": [
+        "Не ўдалося загрузіць гэту старонку. "
       ]
     },
     "Error notification": {
@@ -1876,7 +1876,7 @@
         "${ storageSize } сховішча"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "Для выбару злучэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
+        "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функцыі Secure Core патрабуецца тарыфны план ${ vpnPlus }."
@@ -1888,10 +1888,10 @@
         "+${ bonusSpace } бонуснага сховішча"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } злучэнне з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнняў з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)",
-        "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад да VPN)"
+        "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
@@ -2128,13 +2128,13 @@
         "Усталюйце файл канфігурацыі сервера для падключэння да пазначанага сервера ў краіне, якую вы выбралі."
       ],
       "Internet connection lost": [
-        "Злучэнне з інтэрнэтам страчана"
+        "Падключэнне да інтэрнэту страчана"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Злучэнне з інтэрнэтам страчана. Праверце падключэнне вашай прылады."
+        "Падключэнне да інтэрнэту страчана. Праверце падключэнне вашай прылады."
       ],
       "Internet connection restored.": [
-        "Злучэнне з інтэрнэтам адноўлена."
+        "Падключэнне да інтэрнэту адноўлена."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
@@ -2305,7 +2305,7 @@
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падключэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні злучэння з VPN на маршрутызатары."
+        "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падключэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні падключэння па VPN на маршрутызатары."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Гэтыя канфігурацыі разлічаны на маршрутызатары, якія працуюць з WireGuard і афіцыйнымі кліентамі."
@@ -2353,7 +2353,7 @@
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Для абароны вашага злучэння з інтэрнэтам, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
+        "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "для выкарыстання ${ toAppName } і ўсіх сэрвісаў ${ BRAND_NAME }"
@@ -2371,7 +2371,7 @@
         "Усяго падтрымліваецца даменаў"
       ],
       "Total VPN connections": [
-        "Усяго злучэнняў з VPN"
+        "Усяго падключэнняў па VPN"
       ],
       "Two-factor authentication disabled": [
         "Двухфактарная аўтэнтыфікацыя адключана"
@@ -3213,16 +3213,16 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Атрымаць ${ connections } высакахуткаснае злучэнне з VPN",
-        "Атрымаць ${ connections } высакахуткасныя злучэнні з VPN",
-        "Атрымаць ${ connections } высакахуткасных злучэнняў з VPN",
-        "Атрымаць ${ connections } высакахуткасныя злучэнні з VPN"
+        "Атрымаць ${ connections } высакахуткаснае падключэнне па VPN",
+        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN",
+        "Атрымаць ${ connections } высакахуткасных падключэнняў па VPN",
+        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Атрымаць ${ connections } высакахуткаснае злучэнне з VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасныя злучэнні з VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасных злучэнняў з VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасныя злучэнні з VPN на карыстальніка"
+        "Атрымаць ${ connections } высакахуткаснае падключэнне па VPN на карыстальніка",
+        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN на карыстальніка",
+        "Атрымаць ${ connections } высакахуткасных падключэнняў па VPN на карыстальніка",
+        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN на карыстальніка"
       ]
     },
     "new_plans: feature": {
@@ -3281,16 +3281,16 @@
         "${ n } паведамленні ў дзень"
       ],
       "${ n } VPN connection": [
-        "${ n } злучэнне з VPN",
-        "${ n } злучэнні з VPN",
-        "${ n } злучэнняў з VPN",
-        "${ n } злучэнні з VPN"
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнні па VPN"
       ],
       "${ n } VPN connection per user": [
-        "${ n } злучэнне з VPN на карыстальніка",
-        "${ n } злучэнні з VPN на карыстальніка",
-        "${ n } злучэнняў з VPN на карыстальніка",
-        "${ n } злучэнні з VPN на карыстальніка"
+        "${ n } падключэнне па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка",
+        "${ n } падключэнняў па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка"
       ],
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
@@ -3302,7 +3302,7 @@
         "Аб'ём сховішча на карыстальніка: ${ size }"
       ],
       "1 free VPN connection in total": [
-        "Агулам 1 бясплатнае злучэнне з VPN"
+        "Агулам 1 бясплатнае падключэнне па VPN"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -3697,7 +3697,7 @@
         "У працоўныя дні каманда падтрымкі кліентаў ${ BRAND_NAME } дапаможа вам на працягу 24 гадзін пасля атрымання запыту"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Адно злучэнне з VPN дазваляе адной прыладзе падключыцца да ${ BRAND_NAME } VPN у любы час. Напрыклад, каб падключыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два злучэнні з VPN."
+        "Адно падключэнне па VPN дазваляе адной прыладзе падключыцца да ${ BRAND_NAME } VPN у любы час. Напрыклад, каб падключыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два падключэнні па VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
@@ -3777,8 +3777,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Пры падключэнні да нашай сеткі VPN вашы запыты DNS праходзяць праз зашыфраваны тунэль VPN, што дазваляе павысіць узровень прыватнасці і бяспекі ў інтэрнэце"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Пры адпраўцы паведамленняў іншым карыстальнікам ${ MAIL_APP_NAME } шыфраванне адбываецца аўтаматычна. Адпраўка лістоў па-за межы сэрвісу ${ MAIL_APP_NAME } патрабуе прызначэння пароля."
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Пры адпраўцы паведамленняў іншым карыстальнікам ${ MAIL_APP_NAME } шыфраванне адбываецца аўтаматычна. Адпраўка лістоў па-за межы сэрвісу ${ MAIL_APP_NAME_TWO } патрабуе прызначэння пароля."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас можа быць некалькі адміністратараў. Усе адміністратары могуць дадаваць і кіраваць карыстальнікамі, але толькі асноўны адміністратар кантралюе аплату."
@@ -4059,10 +4059,10 @@
     },
     "Subscription attribute": {
       "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } высакахуткаснае злучэнне з VPN",
-        "${ maxVpn } высакахуткасныя злучэнні з VPN",
-        "${ maxVpn } высакахуткасных злучэнняў з VPN",
-        "${ maxVpn } высакахуткасныя злучэнні з VPN"
+        "${ maxVpn } высакахуткаснае падключэнне па VPN",
+        "${ maxVpn } высакахуткасныя падключэнні па VPN",
+        "${ maxVpn } высакахуткасных падключэнняў па VPN",
+        "${ maxVpn } высакахуткасныя падключэнні па VPN"
       ],
       "${ n } calendar": [
         "${ n } каляндар",
@@ -4077,28 +4077,28 @@
         "${ n } календары на карыстальніка"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } высакахуткаснае злучэнне з VPN",
-        "${ n } высакахуткасныя злучэнні з VPN",
-        "${ n } высакахуткасных злучэнняў з VPN",
-        "${ n } высакахуткасныя злучэнні з VPN"
+        "${ n } высакахуткаснае падключэнне па VPN",
+        "${ n } высакахуткасныя падключэнні па VPN",
+        "${ n } высакахуткасных падключэнняў па VPN",
+        "${ n } высакахуткасныя падключэнні па VPN"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } высакахуткаснае злучэнне з VPN на карыстальніка",
-        "${ n } высакахуткасныя злучэнні з VPN на карыстальніка",
-        "${ n } высакахуткасных злучэнняў з VPN на карыстальніка",
-        "${ n } высакахуткасныя злучэнні з VPN на карыстальніка"
+        "${ n } высакахуткаснае падключэнне па VPN на карыстальніка",
+        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка",
+        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка",
+        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка"
       ],
       "${ n } VPN connection": [
-        "${ n } злучэнне з VPN",
-        "${ n } злучэнні з VPN",
-        "${ n } злучэнняў з VPN",
-        "${ n } злучэнні з VPN"
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнні па VPN"
       ],
       "${ n } VPN connection per user": [
-        "${ n } злучэнне з VPN на карыстальніка",
-        "${ n } злучэнні з VPN на карыстальніка",
-        "${ n } злучэнняў з VPN на карыстальніка",
-        "${ n } злучэнні з VPN на карыстальніка"
+        "${ n } падключэнне па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка",
+        "${ n } падключэнняў па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } адрас",
@@ -4134,7 +4134,7 @@
         "1 адрас электроннай пошты"
       ],
       "1 VPN connection": [
-        "1 злучэнне з VPN"
+        "1 падключэнне па VPN"
       ],
       "Access to streaming services globally": [
         "Доступ да сэрвісаў з трансляцыямі па ўсім свеце"
@@ -4783,10 +4783,10 @@
         "${ n } серверы"
       ],
       "${ n } VPN connection": [
-        "${ n } злучэнне з VPN",
-        "${ n } злучэнні з VPN",
-        "${ n } злучэнняў з VPN",
-        "${ n } злучэнні з VPN"
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнні па VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } у ${ numberOfCountries } краіне",

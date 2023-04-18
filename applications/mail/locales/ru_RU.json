@@ -1247,6 +1247,26 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } завершены"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Почтовый ящик ${ nameToDisplay }"
+      ],
+      "5 trackers removed": [
+        "Удалено 5 трекеров"
+      ],
+      "Auto forwarded": [
+        "Автоматически переслано"
+      ],
+      "Email received": [
+        "Получено письмо"
+      ],
+      "Encrypted": [
+        "Зашифровано"
+      ],
+      "New email": [
+        "Новое письмо"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Приложения ${ BRAND_NAME }"
@@ -2831,6 +2851,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } в настройках."
       ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Автоматически очищать сообщения старше 30 дней из корзины и спама. Воспользуйтесь этими и другими преимуществами после улучшения."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
@@ -2860,6 +2883,9 @@
       ],
       "No labels": [
         "Нет ярлыков"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail и знак \"плюс\""
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -3648,20 +3674,20 @@
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Пожалуйста, ${ refresh } или проверьте подключение."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } или проверьте подключение к Интернету."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } или попробуйте позже."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Возникла проблема при подключении к ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ],
+      "We couldn't load this page. ": [
+        "Не удалось загрузить эту страницу. "
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пока нет контактов. Начните с создания нового контакта"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Вы также можете ${ refresh } или повторить попытку позже."
       ]
     },
     "Error notification": {
@@ -3889,6 +3915,11 @@
         "Непрочитанные"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Есть файл"
+      ]
+    },
     "Filter preview": {
       "read": [
         "прочитано"
@@ -3991,6 +4022,17 @@
     "Get started checklist title": {
       "Get started": [
         "Начать"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "Автоматически пересылать"
+      ],
+      "Gmail messages to your inbox": [
+        "Сообщения Gmail в вашем почтовом ящике"
+      ],
+      "Sign in with Google": [
+        "Войти с Google"
       ]
     },
     "Group": {
@@ -4694,6 +4736,12 @@
       ],
       "Attention required": [
         "Требуется внимание"
+      ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Автоматическое удаление сообщений, находящихся в спаме более 30 дней."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Автоматическое удаление сообщений, находящихся в корзине более 30 дней."
       ],
       "Background color": [
         "Цвет фона"
@@ -5600,6 +5648,12 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Улучшите аккаунт, чтобы добавить больше адресов."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Улучшить для автоматического удаления сообщений, находящихся в спаме более 30 дней."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Улучшить для автоматического удаления сообщений, находящихся в корзине более 30 дней."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Улучшите аккаунт, чтобы создавать больше папок, фильтров и адресов."
@@ -7134,6 +7188,9 @@
       ]
     },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Автоудаление спама и удаленных сообщений"
+      ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
@@ -8510,6 +8567,9 @@
       ],
       "Change my answer": [
         "Изменить мой ответ"
+      ],
+      "Clear out the junk": [
+        "Очистка от мусора"
       ],
       "Clearing data": [
         "Очистка данных"

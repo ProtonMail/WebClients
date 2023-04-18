@@ -1238,8 +1238,14 @@
       "5 trackers removed": [
         "5 trackere fjernet"
       ],
+      "Email received": [
+        "E-mail modtaget"
+      ],
       "Encrypted": [
         "Krypteret"
+      ],
+      "New email": [
+        "Ny e-mail"
       ]
     },
     "Apps dropdown": {
@@ -3588,20 +3594,20 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Du bedes venligst ${ refresh } eller tjekke din forbindelse."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } eller tjek din internetforbindelse."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Noget gik galt. Genopfrisk siden eller prøv igen senere."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } eller prøv igen senere."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Der opstod et problem med at oprette forbindelse til ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Noget gik galt"
+      ],
+      "We couldn't load this page. ": [
+        "Siden kunne ikke indlæses. "
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ikke nogen kontakt endnu. Start med at oprette en ny kontakt"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Du kan også ${ refresh }, eller forsøge igen senere."
       ]
     },
     "Error notification": {
@@ -5387,6 +5393,9 @@
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Opgrader for at oprette flere foldere, filtre og adresser."
+      ],
+      "Upgrade to level up your privacy.": [
+        "Opgradér for at styrke beskyttelsen af dit privatliv."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Opgrader for at sende e-mail fra @pm.me-adresser."
