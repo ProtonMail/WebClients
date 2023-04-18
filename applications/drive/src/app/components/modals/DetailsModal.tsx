@@ -162,7 +162,7 @@ export function RevisionDetailsModal({
 
     return (
         <ModalTwo onClose={onClose} size="large" {...modalProps}>
-            <ModalTwoHeader title={c('Title').t`Revision details`} />
+            <ModalTwoHeader title={c('Title').t`Version details`} />
             {renderModalState()}
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>

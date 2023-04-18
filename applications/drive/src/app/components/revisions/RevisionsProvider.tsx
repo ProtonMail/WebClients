@@ -96,13 +96,13 @@ export const RevisionsProvider = ({
                 deleteRevision(abortSignal, revision.ID)
                     .then(() => {
                         createNotification({
-                            text: c('Info').t`Revision is deleted`,
+                            text: c('Info').t`Version is deleted`,
                         });
                     })
                     .catch(() => {
                         createNotification({
                             type: 'error',
-                            text: c('Notification').t`Revision failed to be deleted`,
+                            text: c('Notification').t`Version failed to be deleted`,
                         });
                     }),
         });
