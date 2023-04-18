@@ -10,7 +10,6 @@ import {
     useConfig,
     useErrorHandler,
     useFeature,
-    useLoading,
 } from '@proton/components';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
@@ -21,12 +20,10 @@ import {
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
-import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -78,7 +75,6 @@ const LoginContainer = ({
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
-    const [loadingReset, withLoadingReset] = useLoading(false);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -99,7 +95,6 @@ const LoginContainer = ({
         previousUsernameRef.current = cacheRef.current?.username ?? '';
         cacheRef.current = undefined;
         setStep(AuthStep.LOGIN);
-        withLoadingReset(silentApi(revoke()).catch(noop));
     };
 
     const handleResult = (result: AuthActionResponse) => {
@@ -149,7 +144,6 @@ const LoginContainer = ({
                     />
                     <Content>
                         <LoginForm
-                            loading={loadingReset}
                             toApp={toApp}
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             signupOptions={signupOptions}
