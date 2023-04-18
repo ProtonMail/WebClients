@@ -52,6 +52,7 @@ const useUserSettingsProvider = () => {
     return {
         sort,
         layout: userSettings.Layout,
+        revisionRetentionDays: userSettings.RevisionRetentionDays,
         loadUserSettings,
         changeSort,
         changeLayout,
