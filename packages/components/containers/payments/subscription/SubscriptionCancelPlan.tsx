@@ -30,7 +30,13 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
                                 <span className="flex-item-fluid">
-                                    <span className={clsx('align-middle', downgrade && 'text-strike color-weak')}>
+                                    <span
+                                        className={clsx(
+                                            'align-middle',
+                                            downgrade && 'text-strike color-weak',
+                                            !downgrade && feature.status === 'coming-soon' && 'color-weak'
+                                        )}
+                                    >
                                         {feature.text}
                                     </span>
                                     {feature.tooltip ? <Info buttonClass="align-middle ml-2" title={feature.tooltip} /> : null}
