@@ -9,7 +9,6 @@ import {
     RevisionDownloadButton,
     RevisionPreviewButton,
     RevisionRestoreButton,
-    RevisionSaveAsCopyButton,
 } from './ContextMenuButtons';
 import { useRevisionsProvider } from './RevisionsProvider';
 
@@ -25,7 +24,8 @@ export function RevisionsItemContextMenu({
     revision: DriveFileRevision;
     isCurrent: boolean;
 }) {
-    const { hasPreviewAvailable, openRevisionPreview, downloadRevision, openRevisionDetails, deleteRevision } = useRevisionsProvider();
+    const { hasPreviewAvailable, openRevisionPreview, downloadRevision, openRevisionDetails, deleteRevision } =
+        useRevisionsProvider();
     if (isCurrent) {
         return (
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -54,7 +54,6 @@ export function RevisionsItemContextMenu({
                 </>
             )}
             <RevisionRestoreButton close={close} />
-            <RevisionSaveAsCopyButton close={close} />
             <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
             <ContextSeparator />
             <RevisionDetailsButton revision={revision} openRevisionDetails={openRevisionDetails} close={close} />
