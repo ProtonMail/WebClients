@@ -65,8 +65,8 @@ const mockSelectorImporterData = selectOauthImportStateImporterData as any as je
 describe('StepPrepare test the product display, only selected products should be displayed', () => {
     const defaultStepPrepare = {
         products: [ImportType.CALENDAR, ImportType.CONTACTS, ImportType.MAIL],
-        mailChecked: true,
-        setMailChecked: () => {},
+        emailChecked: true,
+        setEmailChecked: () => {},
         contactChecked: true,
         setContactChecked: () => {},
         calendarChecked: true,
@@ -136,8 +136,8 @@ describe('StepPrepare test the product display, only selected products should be
 describe('Render errors on products', () => {
     const defaultStepPrepare = {
         products: [ImportType.CALENDAR, ImportType.CONTACTS, ImportType.MAIL],
-        mailChecked: true,
-        setMailChecked: () => {},
+        emailChecked: true,
+        setEmailChecked: () => {},
         contactChecked: true,
         setContactChecked: () => {},
         calendarChecked: true,
@@ -169,7 +169,7 @@ describe('Render errors on products', () => {
     it('should disable the submit button if all checkboxes are unchecked', () => {
         const noCheckboxSelected = {
             ...defaultStepPrepare,
-            mailChecked: false,
+            emailChecked: false,
             contactChecked: false,
             calendarChecked: false,
             allCheckboxUnselected: true,
