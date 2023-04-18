@@ -351,7 +351,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
 };
 
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
-    const { appName, authTypes, ignoreUnlock, authResponse, loginPassword } = cache;
+    const { authTypes, ignoreUnlock, authResponse, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN) {
         if (authTypes.fido2 || authTypes.totp) {
@@ -370,7 +370,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
     const [user] = await Promise.all([cache.data.user || syncUser(cache), cache.data.salts || syncSalts(cache)]);
 
     if (user.Keys.length === 0) {
-        if (appName === APPS.PROTONACCOUNT && authResponse.TemporaryPassword) {
+        if (authResponse.TemporaryPassword) {
             return { cache, to: AuthStep.NEW_PASSWORD };
         }
         if (getRequiresPasswordSetup(user, cache.setupVPN)) {
