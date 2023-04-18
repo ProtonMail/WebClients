@@ -98,7 +98,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
                     type="button"
                     color="norm"
                     shape={offerConfig.shapeButton || 'solid'}
-                    icon={<Icon name="bag-percent" />}
+                    icon={<Icon name={offerConfig.icon || 'bag-percent'} />}
                     text={offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special offer`}
                     onClick={() => {
                         setOfferModalOpen(true);

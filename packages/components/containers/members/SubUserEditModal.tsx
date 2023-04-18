@@ -28,7 +28,7 @@ interface Props extends ModalProps<'form'> {
     member: Member;
 }
 
-const EditMemberModal = ({ member, ...rest }: Props) => {
+const SubUserEditModal = ({ member, ...rest }: Props) => {
     const [organization] = useOrganization();
     const storageSizeUnit = GIGA;
     const { call } = useEventManager();
@@ -141,20 +141,17 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
                     placeholder="Thomas A. Anderson"
                 />
 
-                <div className="mb1-5">
-                    <div className="text-semibold mb-2">{c('Label').t`Account storage`}</div>
-                    <MemberStorageSelector
-                        className="mb1"
-                        value={model.storage}
-                        sizeUnit={storageSizeUnit}
-                        totalStorage={getTotalStorage(member, organization)}
-                        range={getStorageRange(member, organization)}
-                        onChange={(storage) => updatePartialModel({ storage })}
-                    />
-                </div>
+                <MemberStorageSelector
+                    className="mb-5"
+                    value={model.storage}
+                    sizeUnit={storageSizeUnit}
+                    totalStorage={getTotalStorage(member, organization)}
+                    range={getStorageRange(member, organization)}
+                    onChange={(storage) => updatePartialModel({ storage })}
+                />
 
                 {hasVPN ? (
-                    <div className="flex flex-align-center mb1-5">
+                    <div className="flex flex-align-center mb-5">
                         <label className="text-semibold mr1" htmlFor="vpn-toggle">
                             {c('Label for new member').t`VPN connections`}
                         </label>
@@ -209,4 +206,4 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
     );
 };
 
-export default EditMemberModal;
+export default SubUserEditModal;

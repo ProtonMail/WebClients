@@ -114,6 +114,9 @@ const MailSettingsRouter = ({
                     <SMTPSubmissionSection />
                 </PrivateMainSettingsArea>
             </Route>
+            <Route path={`${path}/invitation/view`}>
+                <Redirect to={`${path}/dashboard`} />
+            </Route>
             <Route path={`${path}/import-export`}>
                 <Redirect to={`${path}/easy-switch`} />
             </Route>

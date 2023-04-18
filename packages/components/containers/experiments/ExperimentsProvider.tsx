@@ -97,11 +97,12 @@ const ExperimentsProvider = ({ children }: Props) => {
 
         setLoading(true);
 
-        const promise = silentApi<{ Experiments: Experiment[] }>(getExperiments())
+        const promise = silentApi<{ Experiments: Experiment[] | undefined }>(getExperiments())
             .then((results) => {
+                const experiments: Experiment[] = results.Experiments || [];
                 setExperiments((cookieExperiments) => ({
-                    ...purgeExperiments(cookieExperiments, results.Experiments), // filter existing experiments stored in the cookie
-                    ...addExperiments(results.Experiments), // add experiments based on ExperimentCode
+                    ...purgeExperiments(cookieExperiments, experiments), // filter existing experiments stored in the cookie
+                    ...addExperiments(experiments), // add experiments based on ExperimentCode
                 }));
             })
             .then(() => {

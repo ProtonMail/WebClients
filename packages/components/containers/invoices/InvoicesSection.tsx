@@ -18,9 +18,10 @@ import {
     TableHeader,
     TableRow,
     Time,
+    useModalState,
     usePaginationAsync,
 } from '../../components';
-import { useApi, useApiResult, useModals, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
+import { useApi, useApiResult, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import InvoiceActions from './InvoiceActions';
@@ -35,10 +36,12 @@ const InvoicesSection = () => {
     const previewRef = useRef<InvoicesPreviewControls | undefined>();
     const api = useApi();
     const [user] = useUser();
+
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
     const [{ isManagedByMozilla } = { isManagedByMozilla: false }] = useSubscription();
-    const { createModal } = useModals();
+
+    const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
 
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
 
@@ -77,10 +80,6 @@ const InvoicesSection = () => {
         return <MozillaInfoPanel />;
     }
 
-    const handleOpenModal = () => {
-        createModal(<InvoiceTextModal />);
-    };
-
     const getFilename = (invoice: Invoice) =>
         `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
 
@@ -118,7 +117,9 @@ const InvoicesSection = () => {
                                 </Button>
                             </ButtonGroup>
                         ) : null}
-                        <Button onClick={handleOpenModal}>{c('Action').t`Customize`}</Button>
+                        {invoices.length > 0 && (
+                            <Button onClick={() => setInvoiceModalOpen(true)}>{c('Action').t`Customize`}</Button>
+                        )}
                     </div>
                     <Pagination
                         page={page}
@@ -186,6 +187,7 @@ const InvoicesSection = () => {
                 onDownload={handleDownload}
                 getFilename={getFilename}
             />
+            {renderInvoiceModal && <InvoiceTextModal {...invoiceModalProps} />}
         </>
     );
 };

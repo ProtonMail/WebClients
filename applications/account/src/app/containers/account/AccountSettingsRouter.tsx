@@ -12,6 +12,7 @@ import {
     DataRecoverySection,
     DeleteSection,
     EmailSubscriptionSection,
+    FamilyPlanSection,
     GiftCodeSection,
     InvoicesSection,
     LanguageAndTimeSection,
@@ -108,6 +109,11 @@ const AccountSettingsRouter = ({
                         <PasswordsSection />
                     </>
                     <TwoFactorSection />
+                    <FamilyPlanSection />
+                    {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
+                    <PaymentMethodsSection />
+                    <CreditsSection />
+                    <InvoicesSection />
                     <DeleteSection />
                 </PrivateMainSettingsArea>
             </Route>

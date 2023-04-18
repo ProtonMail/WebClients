@@ -16,6 +16,7 @@ import {
     OrganizationModel,
     PaymentMethodsModel,
     SubscriptionModel,
+    UserInvitationModel,
     UserModel,
     UserSettingsModel,
 } from '@proton/shared/lib/models';
@@ -39,6 +40,7 @@ const EVENT_MODELS = [
     ImportersModel,
     ContactsModel,
     ContactEmailsModel,
+    UserInvitationModel,
 ];
 
 const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];
