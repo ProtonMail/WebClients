@@ -16,6 +16,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -31,6 +32,7 @@ import {
     ModalProps,
     PasswordInputTwo,
     useFormErrors,
+    useSettingsLink,
 } from '../../components';
 import {
     useAddresses,
@@ -58,6 +60,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const authentication = useAuthentication();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const goToSettings = useSettingsLink();
 
     const [addresses] = useAddresses();
     const [members = [], loadingMembers] = useMembers();
@@ -82,17 +85,26 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const selfMemberID = selfMember?.ID;
+    const minStorage = organization.RequiresKey ? 5 : 500;
     // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
-    const storageValue = model.storage === -1 ? clamp(5 * GIGA, storageRange.min, storageRange.max) : model.storage;
+    const storageValue =
+        model.storage === -1 ? clamp(minStorage * GIGA, storageRange.min, storageRange.max) : model.storage;
 
     const { title, onSubmit, section } = (() => {
         if (step === STEPS.NAME) {
+            const title = organization.RequiresKey
+                ? c('Title').t`Set organization name`
+                : c('familyOffer_2023:Title').t`Set family name`;
+            const label = organization.RequiresKey
+                ? c('Label').t`Organization name`
+                : c('familyOffer_2023:Label').t`Family name`;
+
             return {
-                title: c('Title').t`Set organization name`,
+                title,
                 section: (
                     <InputFieldTwo
                         id="organization-name"
-                        label={c('Label').t`Organization name`}
+                        label={label}
                         placeholder={c('Placeholder').t`Choose a name`}
                         error={validator([requiredValidator(model.name)])}
                         autoFocus
@@ -109,7 +121,12 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     // So that other users can get connections allocated.
                     await (hasPaidVpn && api(updateVPN(selfMemberID, VPN_CONNECTIONS)));
                     await Promise.all([api(updateOrganizationName(model.name))]);
-                    setStep(STEPS.KEYS);
+
+                    if (organization.RequiresKey) {
+                        setStep(STEPS.KEYS);
+                    } else {
+                        setStep(STEPS.STORAGE);
+                    }
                 },
             };
         }
@@ -211,22 +228,22 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         }
 
         if (step === STEPS.STORAGE) {
+            const formattedStorage = humanSize(storageValue);
             return {
                 title: c('Title').t`Allocate storage`,
                 section: (
                     <>
-                        <div className="mb1">
-                            {c('Info')
-                                .t`Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.`}
+                        <div className="mb-7">
+                            {c('familyOffer_2023:Info')
+                                .t`By default we assign ${formattedStorage} of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.`}
                         </div>
                         <MemberStorageSelector
-                            className="mb1"
+                            orgInitialization
                             value={storageValue}
                             sizeUnit={storageSizeUnit}
                             totalStorage={getTotalStorage(selfMember, organization)}
                             range={storageRange}
                             onChange={handleChange('storage')}
-                            mode="init"
                         />
                     </>
                 ),
@@ -239,6 +256,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     await call();
                     createNotification({ text: c('Success').t`Organization activated` });
                     onClose?.();
+                    goToSettings('/users-addresses');
                 },
             };
         }
@@ -247,6 +265,21 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     })();
 
     const handleClose = loading ? noop : onClose;
+
+    const handleBack = () => {
+        if (organization.RequiresKey && step) {
+            setStep(step - 1);
+            return;
+        }
+
+        // Going back when the organization don't requires a key should take user back to the name step
+        if (!organization.RequiresKey && step === STEPS.STORAGE) {
+            setStep(STEPS.NAME);
+            return;
+        }
+
+        setStep(step - 1);
+    };
 
     return (
         <Modal
@@ -258,14 +291,14 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 void withLoading(onSubmit()).then(reset);
             }}
             onClose={handleClose}
-            size="large"
+            size="medium"
             {...rest}
         >
             <ModalHeader title={title} />
             <ModalContent>{section}</ModalContent>
             <ModalFooter>
                 {step ? (
-                    <Button onClick={() => setStep(step - 1)} disabled={loading}>
+                    <Button onClick={handleBack} disabled={loading}>
                         {c('Action').t`Back`}
                     </Button>
                 ) : (

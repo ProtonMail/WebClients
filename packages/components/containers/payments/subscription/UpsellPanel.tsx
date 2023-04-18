@@ -52,7 +52,7 @@ interface UpsellBoxProps {
 
 const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxProps) => {
     return (
-        <div className="border border-primary rounded p-6 pt-10 upsell-box flex-align-self-start">
+        <div className="border border-primary rounded px-6 py-5 upsell-box flex-align-self-start on-tablet-order-1 on-mobile-order-1">
             <h3 className="mb-2">
                 <strong>{title}</strong>
             </h3>

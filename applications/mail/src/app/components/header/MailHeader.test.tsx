@@ -2,6 +2,7 @@ import { fireEvent, getByText } from '@testing-library/dom';
 import { screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import useExperiment from '@proton/components/hooks/useExperiment';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import {
@@ -40,6 +41,9 @@ const user = {
     MaxSpace: 100,
 };
 
+jest.mock('@proton/components/hooks/useExperiment');
+const mockUsedExperiments = useExperiment as jest.MockedFunction<typeof useExperiment>;
+
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;
 
@@ -49,6 +53,7 @@ describe('MailHeader', () => {
         addApiMock('payments/plans', () => ({}));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
         addApiMock('payments/subscription/latest', () => ({}));
+        addApiMock('core/v4/experiments', () => ({}));
 
         props = getProps();
 
@@ -77,6 +82,10 @@ describe('MailHeader', () => {
     afterEach(clearAll);
 
     describe('Core features', () => {
+        beforeEach(() => {
+            mockUsedExperiments.mockReturnValue({ value: 'A', loading: false });
+        });
+
         it('should open settings', async () => {
             const { getByText: getByTextHeader } = await setup();
 
@@ -114,6 +123,10 @@ describe('MailHeader', () => {
     });
 
     describe('Search features', () => {
+        beforeEach(() => {
+            mockUsedExperiments.mockReturnValue({ value: 'A', loading: false });
+        });
+
         it('should search with keyword', async () => {
             const searchTerm = 'test';
 

@@ -14,6 +14,18 @@ import AccountLoaderPage from './AccountLoaderPage';
 
 const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './MainContainer');
 
+const EVENT_MODELS = [
+    UserModel,
+    AddressesModel,
+    MailSettingsModel,
+    UserSettingsModel,
+    SubscriptionModel,
+    PaymentMethodsModel,
+    OrganizationModel,
+];
+
+const PRELOAD_MODELS = [UserModel, UserSettingsModel];
+
 interface Props {
     onLogout: () => void;
     locales: TtagLocaleMap;
@@ -25,16 +37,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             loader={<AccountLoaderPage />}
             onLogout={onLogout}
             locales={locales}
-            preloadModels={[UserModel, UserSettingsModel]}
-            eventModels={[
-                UserModel,
-                AddressesModel,
-                MailSettingsModel,
-                UserSettingsModel,
-                SubscriptionModel,
-                PaymentMethodsModel,
-                OrganizationModel,
-            ]}
+            preloadModels={PRELOAD_MODELS}
+            eventModels={EVENT_MODELS}
             app={getAppContainer}
         />
     );
