@@ -9,6 +9,8 @@ import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 import { useContextMenuControls } from '../FileBrowser';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
 
+import './RevisionListItem.scss';
+
 const RevisionListItem = ({
     revision,
     formatType = 'date',
@@ -41,11 +43,13 @@ const RevisionListItem = ({
                 revision={revision}
                 isCurrent={isCurrent}
             />
-            <li className="flex flex-justify-space-between flex-align-items-center mb-4">
+            <li className="revision-list-item mb-4">
                 <TimeIntl className="flex-item-fluid" options={options}>
                     {revision.CreateTime}
                 </TimeIntl>
+                <p className="m0">{revision.SignatureEmail}</p>
                 <Button
+                    className="ml-auto"
                     ref={ref}
                     shape="ghost"
                     size="small"
