@@ -2594,17 +2594,17 @@
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Mohon ${ refresh } atau cek koneksi Anda."
+      "Please ${ refresh } or check your internet connection.": [
+        "Silakan ${ refresh } atau periksa koneksi internet Anda."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
+      "Please ${ refresh } or try again later.": [
+        "Silakan ${ refresh } atau coba lagi nanti."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Terdapat masalah dalam menghubungkan ke ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Terdapat suatu kesalahan"
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      "We couldn't load this page. ": [
+        "Kami tidak dapat memuat halaman ini. "
       ],
       "You need an active personal calendar to import events": [
         "Anda harus memiliki kalender pribadi yang aktif untuk dapat mengimpor acara"
@@ -3772,7 +3772,7 @@
         "Hanya ${ MAX_ATTENDEES } peserta yang dapat diundang per undangan"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "Tidak diperbolehkan membuat undangan di kalender yang dibagikan"
+        "Pembuatan alamat pada kalender bersama tidak diperkenankan"
       ]
     },
     "Input label": {
@@ -4510,7 +4510,7 @@
         "Undangan kalender ditolak"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Bergabung ke ${ calendarName } (${ senderEmail })"
+        "Anda telah bergabung dengan ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -5788,7 +5788,7 @@
     },
     "Warning in modal to accept calendar invitation; Description": {
       "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
-        "Untuk dapat mengakses kalender ini, aktifkan kembali alamat ini atau minta ${ boldCalendarOwnerEmail } untuk mengirimkan undangan baru ke alamat email yang aktif."
+        "Untuk mengakses kalender bersama ini, aktifkan alamat ini atau minta ${ boldCalendarOwnerEmail } untuk mengirimkan undangan baru ke alamat email yang aktif."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
         "Anda tidak dapat bergabung ke kalender ini karena alamat email milik Anda yang diundang (${ boldInvitedAddress }) telah dinonaktifkan."

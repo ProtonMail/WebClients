@@ -2631,7 +2631,7 @@
     },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym i innymi bonusami."
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym oraz innymi bonusami."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulacje! Przyznano maksymalną liczbę ${ rewardsLimit } darmowych miesięcy planu ${ plusPlanName }."
@@ -2656,6 +2656,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Sprawdź status i aktywność linku polecającego."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Ikona zawierająca logo ${ BRAND_NAME } i znak plusa"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Możesz nadal zapraszać znajomych, ale nie będziesz mógł zdobyć więcej środków"
@@ -3521,20 +3524,20 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
-      "Please ${ refresh } or check your connection.": [
+      "Please ${ refresh } or check your internet connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } lub spróbuj ponownie później."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Wystąpił problem z połączeniem z usługą ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Zbyt wiele sesji podrzędnych. Wyczyść pliki cookies i zaloguj się ponownie."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } lub spróbuj ponownie później."
+      "We couldn't load this page. ": [
+        "Nie możemy załadować strony. "
       ]
     },
     "Error message, recovery": {
@@ -3947,6 +3950,12 @@
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatycznie przekieruj"
+      ],
+      "Gmail messages to your inbox": [
+        "wiadomości Google do skrzynki odbiorczej"
+      ],
+      "Sign in with Google": [
+        "Zaloguj się przez Google"
       ]
     },
     "Go to sign in": {
@@ -8801,8 +8810,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Po połączeniu z usługą VPN, zapytania DNS są przesyłane przez szyfrowany tunel VPN, co zwiększa Twoją prywatność i bezpieczeństwo online"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Podczas wysyłania wiadomości do użytkowników ${ MAIL_APP_NAME } szyfrowanie jest automatyczne. Wysyłanie do użytkowników spoza ${ MAIL_APP_NAME } wymaga ustawienia hasła wiadomości."
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Podczas wysyłania wiadomości do użytkowników ${ MAIL_APP_NAME } szyfrowanie jest automatyczne. Wysyłanie do użytkowników spoza ${ MAIL_APP_NAME_TWO } wymaga ustawienia hasła wiadomości."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Możesz mieć więcej niż jednego administratora. Wszyscy administratorzy mogą dodawać i zarządzać użytkownikami, ale tylko główny administrator ma kontrolę nad płatnościami."
@@ -11512,6 +11521,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Dostosuj proces importowania, aby zmniejszyć liczbę etykiet"
+      ],
+      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
+        "Usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Włączenie tej opcji spowoduje usunięcie wszystkich obecnych wiadomości z Kosza i Spamu. Przyszłe wiadomości, które znajdują się w tych folderach dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
       "Each imported email will have this label": [
         "Każda zaimportowana wiadomość będzie posiadała tę etykietę"

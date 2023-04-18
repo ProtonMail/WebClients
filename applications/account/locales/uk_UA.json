@@ -3524,20 +3524,8 @@
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } або перевірте своє з'єднання."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Щось пішло не так. Оновіть сторінку і спробуйте знову пізніше."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Виникла проблема під час з'єднання з ${ BRAND_NAME }."
-      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Занадто багато дочірніх сеансів. Будь ласка, очистьте куки й увійдіть знову."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Ви можете також ${ refresh }, або спробувати знову пізніше."
       ]
     },
     "Error message, recovery": {
@@ -8812,9 +8800,6 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Коли ви під'єднані до нашої мережі VPN, усі DNS-запити проходять через зашифрований VPN-тунель, вдосконалюючи вашу приватність і безпеку онлайн"
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Під час надсилання іншим користувачам ${ MAIL_APP_NAME }, шифрування відбувається автоматично. Щоб надіслати зашифровано користувачам не-${ MAIL_APP_NAME }, необхідно встановити пароль заздалегідь."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак лише основний адміністратор може контролювати платежі."

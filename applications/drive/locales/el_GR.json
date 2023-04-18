@@ -155,9 +155,6 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
-      "Create account": [
-        "Δημιουργία λογαριασμού"
-      ],
       "Create link": [
         "Δημιουργία συνδέσμου"
       ],
@@ -2235,18 +2232,6 @@
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Κάτι πήγε στραβά. Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο ${ BRAND_NAME }."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
-      ],
       "You may also refresh the page or try again later.": [
         "Μπορείτε επίσης να ανανεώσετε την σελίδα ή να προσπαθήσετε αργότερα."
       ]
@@ -2870,8 +2855,8 @@
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
       "Delete locked drive": [
-        "Διαγραφή κλειδωμένης μονάδας δίσκου",
-        "Διαγραφή κλειδωμένων μονάδων δίσκου"
+        "Διαγραφή κλειδωμένης αρχειοθήκης",
+        "Διαγραφή κλειδωμένων αρχειοθηκών"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο ανέβηκε διασφαλισμένα από ${ emailAddress }."
@@ -4333,7 +4318,7 @@
       ],
       "Move ${ itemsToMoveCount } file": [
         "Μετακίνηση ${ itemsToMoveCount } αρχείου",
-        "Μετακίνηση ${ itemsToMoveCount} αρχείων"
+        "Μετακίνηση ${ itemsToMoveCount } αρχείων"
       ],
       "Move ${ itemsToMoveCount } folder": [
         "Μετακίνηση ${ itemsToMoveCount } φακέλου",
@@ -4348,8 +4333,8 @@
         "Μετακίνηση ${ movingCount } αρχείων"
       ],
       "Move ${ movingCount } folder": [
-        "Μετακίνηση ${ movingCount } φάκελου",
-        "Μετακίνηση ${ movingCount } φάκελων"
+        "Μετακίνηση ${ movingCount } φακέλου",
+        "Μετακίνηση ${ movingCount } φακέλων"
       ],
       "Move ${ movingCount } item": [
         "Μετακίνηση ${ movingCount } στοιχείου",
@@ -4796,10 +4781,6 @@
       "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορά",
         "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορές"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφόρτωση",
-        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορτώσεις"
       ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"

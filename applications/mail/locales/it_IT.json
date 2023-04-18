@@ -1231,6 +1231,17 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } completi"
       ]
     },
+    "Animation": {
+      "Email received": [
+        "Email ricevuta"
+      ],
+      "Encrypted": [
+        "Criptato"
+      ],
+      "New email": [
+        "Nuova email"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } applicazioni"
@@ -3589,20 +3600,11 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Qualcosa è andato storto. Aggiorna la pagina o riprova più tardi."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Si è verificato un problema di connessione a ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Non hai ancora alcun contatto. Inizia creandone uno nuovo"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Puoi anche ${ refresh } o riprovare più tardi."
       ]
     },
     "Error notification": {
@@ -3820,6 +3822,11 @@
         "Da leggere"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Contiene file"
+      ]
+    },
     "Filter preview": {
       "read": [
         "leggi"
@@ -3920,6 +3927,11 @@
     "Get started checklist title": {
       "Get started": [
         "Per iniziare"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Accedi con Google"
       ]
     },
     "Group": {

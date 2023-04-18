@@ -582,7 +582,7 @@
         "Împrospătare pagină"
       ],
       "refresh the page": [
-        "împrospătați pagina"
+        "Împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -3509,20 +3509,20 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Verificați conexiunea sau ${ refresh }."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } sau verificați conexiunea."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } sau încercați mai târziu."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "A apărut o problemă la conectarea la ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Prea multe sesiuni secundare, ștergeți fişierele cookie și reconectați-vă."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Puteți să ${ refresh } sau reîncerca mai târziu."
+      "We couldn't load this page. ": [
+        "Nu s-a putut încărca această pagină."
       ]
     },
     "Error message, recovery": {
@@ -8716,9 +8716,6 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Când conexiunea trece prin VPN-ul nostru, DNS face interogări prin tunelul VPN criptat, adăugând asta la confidențialitatea și securitatea online."
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Când trimiteți altor utilizatori ${ MAIL_APP_NAME }, criptarea este automată. Trimiterea către utilizatori fără cont de ${ MAIL_APP_NAME } necesită setarea unei parole înainte de trimitere."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
