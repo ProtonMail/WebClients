@@ -63,6 +63,12 @@ export const getVerificationHeaders = (
     };
 };
 
+export const getDeviceVerificationHeaders = (challengeB64: string) => {
+    return {
+        'X-PM-DV': challengeB64,
+    };
+};
+
 export const withVerificationHeaders = (
     token: string | undefined,
     tokenType: HumanVerificationMethodType | undefined,
