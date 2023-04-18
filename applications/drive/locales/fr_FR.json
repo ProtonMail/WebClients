@@ -166,9 +166,6 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create account": [
-        "Créer un compte"
-      ],
       "Create link": [
         "Créer un lien"
       ],
@@ -605,6 +602,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Try for free": [
+        "Faites un essai gratuit"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
@@ -2333,17 +2333,17 @@
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion."
+      "Please ${ refresh } or check your internet connection.": [
+        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion internet."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
+      "Please ${ refresh } or try again later.": [
+        "Veuillez ${ refresh } ou réessayer plus tard."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Il y a eu un problème lors de la connexion à ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Vous pouvez aussi ${ refresh } ou réessayer plus tard."
+      "We couldn't load this page. ": [
+        "Cette page n'a pu être chargée. "
       ],
       "You may also refresh the page or try again later.": [
         "Vous pouvez aussi rafraîchir la page ou réessayer plus tard."
