@@ -462,6 +462,9 @@
       "Show more": [
         "さらに表示"
       ],
+      "Show side panel": [
+        "サイドパネルを表示"
+      ],
       "Show time zones": [
         "タイムゾーンを表示"
       ],
@@ -2565,18 +2568,6 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } または接続を確認してください。"
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "問題が発生しました。ページを更新するか後ほど再度お試しください。"
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } への接続中に問題が発生しました。"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } するか再度お試しください。"
-      ],
       "You need an active personal calendar to import events": [
         "予定をインポートするためにはアクティブな個人カレンダーが必要です"
       ]
@@ -3236,6 +3227,9 @@
       "Existent, added and removed participants will be notified.": [
         "既存の参加者、追加や削除を行った参加者にはメールが送られます。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
+      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -3271,6 +3265,9 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"

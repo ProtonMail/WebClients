@@ -880,20 +880,17 @@
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
-      "Oops, something went wrong": [
-        "Jejda, něco se pokazilo"
+      "Please ${ refresh } or check your internet connection.": [
+        "Prosím ${ refresh } nebo zkontrolujte své internetové připojení."
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Prosím ${ refresh } nebo zkontrolujte své připojení."
+      "Please ${ refresh } or try again later.": [
+        "Prosím ${ refresh } nebo to zkuste později."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
+      "Something went wrong": [
+        "Něco se pokazilo"
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Při připojování ke službě ${ BRAND_NAME } došlo k chybě."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Můžete taky stránku ${ refresh } nebo to zkusit později."
+      "We couldn't load this page. ": [
+        "Stránku se nepodařilo načíst. "
       ]
     },
     "fido2: Error": {

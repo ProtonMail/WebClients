@@ -31,6 +31,12 @@
       "Add address": [
         "住所を追加"
       ],
+      "Add Bcc recipients": [
+        "Bcc に宛先を追加"
+      ],
+      "Add Cc recipients": [
+        "Cc に宛先を追加"
+      ],
       "Add condition": [
         "条件を追加"
       ],
@@ -109,6 +115,9 @@
       "Beta Access": [
         "ベータ版アクセス"
       ],
+      "Blind Carbon Copy": [
+        "ブラインドカーボンコピー (Blind Carbon Copy)"
+      ],
       "Block": [
         "ブロック"
       ],
@@ -126,6 +135,9 @@
       ],
       "Cancel": [
         "キャンセル"
+      ],
+      "Carbon Copy": [
+        "カーボンコピー (Carbon Copy)"
       ],
       "Change page": [
         "ページの変更"
@@ -927,6 +939,9 @@
       ],
       "Show preview": [
         "プレビューを表示"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "Sign in": [
         "サインイン"
@@ -3495,20 +3510,8 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } または接続を確認してください。"
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "問題が発生しました。ページを更新するか後ほど再度お試しください。"
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } への接続中に問題が発生しました。"
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } するか再度お試しください。"
       ]
     },
     "Error notification": {
@@ -4574,6 +4577,9 @@
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 以降のメッセージ"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
+      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -4636,6 +4642,9 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -6961,6 +6970,11 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "注意: 「適用」をクリックするとサービスが再読み込みされます。"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } 日"
       ]
     },
     "Reply to calendar invitation": {

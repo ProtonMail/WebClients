@@ -1012,6 +1012,17 @@
         "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
       ]
     },
+    "Animation": {
+      "Email received": [
+        "Email ricevuta"
+      ],
+      "Encrypted": [
+        "Criptato"
+      ],
+      "New email": [
+        "Nuova email"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } applicazioni"
@@ -1301,6 +1312,11 @@
       ],
       "View (see all event details)": [
         "Visualizza (mostra i dettagli dell'evento)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Impossibile trovare le informazioni di contatto per ${ address }"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3460,20 +3476,11 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Qualcosa è andato storto. Aggiorna la pagina o riprova più tardi."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Si è verificato un problema di connessione a ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Troppe sessioni per bambini, sei pregato di cancellare i tuoi cookie e accedere nuovamente."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "Puoi anche ${ refresh } o riprovare più tardi."
       ]
     },
     "Error message, recovery": {
@@ -3865,6 +3872,11 @@
       ],
       "(during your first month)": [
         "(durante il tuo primo mese)"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Accedi con Google"
       ]
     },
     "Go to sign in": {
@@ -8552,9 +8564,6 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti non-${ MAIL_APP_NAME } richiede l'impostazione di una password prima dell'invio."
-      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
       ]
@@ -9414,6 +9423,9 @@
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Errore nella verifica della firma"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Hai abilitato la verifica dell'indirizzo per ${ boldSenderEmail }. Non possiamo verificare l'autenticità dell'invito di questo calendario. Questo può succedere quando le chiavi crittografiche del contatto cambiano. Per piacere rivedi le impostazioni avanzate PGP, oppure chiedi a ${ boldSenderEmail } un nuovo invito."
       ]
     },
     "Signup label": {
@@ -11275,6 +11287,9 @@
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Condiviso con crittografia end-to-end"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Condividi crittografato end-to-end con i contatti verificati"
       ]
     },
     "Tor out of date": {

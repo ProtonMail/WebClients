@@ -3479,20 +3479,20 @@
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "請${ refresh }或檢查您的連線。"
+      "Please ${ refresh } or check your internet connection.": [
+        "請${ refresh }或檢查您的網路連線。"
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "出了一點問題。請重新整理頁面或稍後再試。"
+      "Please ${ refresh } or try again later.": [
+        "請${ refresh }或稍後再試。"
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "連線至 ${ BRAND_NAME } 時發生問題。"
+      "Something went wrong": [
+        "發生錯誤"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "太多子系作業階段，請清除您的 cookies 然後重新登入。"
       ],
-      "You may also ${ refresh } or try again later.": [
-        "您亦可${ refresh } 或稍後再試一次。"
+      "We couldn't load this page. ": [
+        "無法載入頁面"
       ]
     },
     "Error message, recovery": {
@@ -5903,7 +5903,7 @@
         "功能停用時，即可防止在您不知情的狀況下，圖像檔案意外載入至您的裝置。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳號中有新訊息，我們將向您的復原/通知電郵位址傳送提示。"
+        "當您啟用通知功能後，接著您的 ${ MAIL_APP_NAME } 帳號中收到新郵件訊息時，我們會傳送提醒函至您設定的復原電郵位址。"
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "當他們訂購了一個方案。您會得到點數可使用在您的訂購授權上。"
@@ -8525,8 +8525,8 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "當您連線到我們的 VPN，您的 DNS 查詢將經由我們的加密通道處理，增強您的線上隱私與安全性。"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "傳送至其他 ${ MAIL_APP_NAME } 使用者時，將自動加密。傳送至非 ${ MAIL_APP_NAME } 使用者則需要於傳送前先設定一個密碼。"
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "傳送至其他 ${ MAIL_APP_NAME } 使用者時，將自動加密。傳送至非 ${ MAIL_APP_NAME_TWO } 使用者則需要於傳送前先設定一組密碼。"
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "您可有多於一位管理員。所有管理員可新增並管理使用者，惟僅限主要管理員可控制帳單管理。"

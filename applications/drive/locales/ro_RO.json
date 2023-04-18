@@ -166,9 +166,6 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create account": [
-        "Creare cont"
-      ],
       "Create link": [
         "Creare legătură"
       ],
@@ -447,7 +444,7 @@
         "Împrospătare pagină"
       ],
       "refresh the page": [
-        "împrospătați pagina"
+        "Împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -607,6 +604,9 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Try for free": [
+        "Încercați gratis"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
@@ -2343,17 +2343,17 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Verificați conexiunea sau ${ refresh }."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } sau verificați conexiunea."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } sau încercați mai târziu."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "A apărut o problemă la conectarea la ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Puteți să ${ refresh } sau reîncerca mai târziu."
+      "We couldn't load this page. ": [
+        "Nu s-a putut încărca această pagină."
       ],
       "You may also refresh the page or try again later.": [
         "Puteți împrospăta pagina sau încercați mai târziu."

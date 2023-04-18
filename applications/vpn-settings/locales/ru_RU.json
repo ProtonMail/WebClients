@@ -1605,17 +1605,17 @@
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Пожалуйста, ${ refresh } или проверьте подключение."
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } или проверьте подключение к Интернету."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } или попробуйте позже."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Возникла проблема при подключении к ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Что-то пошло не так"
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Вы также можете ${ refresh } или повторить попытку позже."
+      "We couldn't load this page. ": [
+        "Не удалось загрузить эту страницу. "
       ]
     },
     "Error notification": {
@@ -3777,9 +3777,6 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "При подключении к нашей сети VPN ваши запросы DNS проходят через зашифрованный туннель VPN, что повышает уровень конфиденциальности и безопасности в Интернете"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование выполняется автоматически. Отправка письма пользователю вне ${ MAIL_APP_NAME } предполагает предварительную установку пароля."
-      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
       ]
@@ -4726,6 +4723,9 @@
       ],
       "Downloads": [
         "Загрузки"
+      ],
+      "Duration": [
+        "Длительность"
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
