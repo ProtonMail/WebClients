@@ -31,7 +31,7 @@ const paddingSizes = [
         px: '0',
     },
     {
-        class: '0-5',
+        class: '0.5',
         rem: '0.125rem',
         px: '2px',
     },
@@ -121,7 +121,7 @@ const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-pri
 
 export const Padding = () => {
     return (
-        <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between">
+        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`p-${size.class}`} style={{ backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -137,7 +137,7 @@ export const Padding = () => {
 
 export const PaddingTop = () => {
     return (
-        <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs">
+        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`pt-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -153,7 +153,7 @@ export const PaddingTop = () => {
 
 export const PaddingBottom = () => {
     return (
-        <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs">
+        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`pb-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -169,7 +169,7 @@ export const PaddingBottom = () => {
 
 export const PaddingY = () => {
     return (
-        <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
+        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`py-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -185,7 +185,7 @@ export const PaddingY = () => {
 
 export const PaddingLeft = () => {
     return (
-        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-start flex-gap-0-5 text-2xs">
+        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                     <div className={`pl-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -201,7 +201,7 @@ export const PaddingLeft = () => {
 
 export const PaddingRight = () => {
     return (
-        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-end flex-gap-0-5 text-2xs">
+        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                     <div className={`pr-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -217,7 +217,7 @@ export const PaddingRight = () => {
 
 export const PaddingX = () => {
     return (
-        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-center flex-gap-0-5 text-2xs">
+        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
             {paddingSizes.map((size) => (
                 <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                     <div className={`px-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
