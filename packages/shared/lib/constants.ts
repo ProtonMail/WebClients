@@ -555,6 +555,7 @@ export enum MAIL_UPSELL_PATHS {
     UNLIMITED_FOLDERS = 'unlimited-folders',
     UNLIMITED_LABELS = 'unlimited-labels',
     UNLIMITED_FILTERS = 'unlimited-filters',
+    UNLIMITED_ADDRESSES = 'unlimited-addresses',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
