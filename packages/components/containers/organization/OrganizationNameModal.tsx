@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { Organization } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import {
@@ -20,14 +21,14 @@ import {
 import { useApi, useEventManager, useLoading } from '../../hooks';
 
 interface Props extends ModalProps {
-    organizationName: string;
+    organization: Organization;
 }
-const OrganizationNameModal = ({ onClose, organizationName, ...rest }: Props) => {
+const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-    const [name, setName] = useState(organizationName);
+    const [name, setName] = useState(organization.Name);
 
     const handleSubmit = async () => {
         await api(updateOrganizationName(name));
@@ -36,6 +37,13 @@ const OrganizationNameModal = ({ onClose, organizationName, ...rest }: Props) =>
     };
 
     const handleClose = loading ? noop : onClose;
+
+    const header = organization.RequiresKey
+        ? c('Title').t`Change organization name`
+        : c('familyOffer_2023:Title').t`Change family name`;
+    const label = organization.RequiresKey
+        ? c('Title').t`Organization name`
+        : c('familyOffer_2023:Title').t`Family name`;
 
     return (
         <Modal
@@ -49,11 +57,11 @@ const OrganizationNameModal = ({ onClose, organizationName, ...rest }: Props) =>
             onClose={handleClose}
             {...rest}
         >
-            <ModalHeader title={c('Title').t`Change organization name`} />
+            <ModalHeader title={header} />
             <ModalContent>
                 <InputFieldTwo
                     id="organization-name"
-                    label={c('Label').t`Organization name`}
+                    label={label}
                     placeholder={c('Placeholder').t`Choose a name`}
                     error={validator([requiredValidator(name)])}
                     autoFocus

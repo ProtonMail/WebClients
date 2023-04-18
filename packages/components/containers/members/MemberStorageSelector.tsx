@@ -42,7 +42,8 @@ interface Props {
     sizeUnit: number;
     onChange: (value: number) => void;
     className?: string;
-    mode?: 'init' | 'members';
+    disabled?: boolean;
+    orgInitialization?: boolean;
 }
 
 const getNumberWithPrecision = (value: number, precision: number) => {
@@ -53,8 +54,6 @@ const getNumberWithPrecision = (value: number, precision: number) => {
 const getDisplayedValue = (value: number, precision: number) => {
     return `${getNumberWithPrecision(value, precision).toFixed(precision)}`;
 };
-
-const stepInBytes = 0.1 * GIGA;
 
 const getGraphValue = (value: number, total: number) => {
     // Round to a nice number to avoid float issues
@@ -120,11 +119,16 @@ const MemberStorageSelector = ({
     sizeUnit,
     totalStorage,
     className,
-    mode = 'members',
+    disabled,
+    orgInitialization = false,
 }: Props) => {
     const actualValue = getValueInUnit(value, sizeUnit);
     const precision = 1;
     const [tmpValue, setTmpValue] = useState(getDisplayedValue(actualValue, precision));
+
+    //We change the step depending on the remaining space
+    const remainingSpace = totalStorage.organizationMaxSpace - totalStorage.organizationUsedSpace;
+    const stepInBytes = remainingSpace > GIGA ? 0.5 * GIGA : 0.1 * GIGA;
 
     const min = getNumberWithPrecision(getValueInUnit(range.min, sizeUnit), precision);
     const max = getNumberWithPrecision(getValueInUnit(range.max, sizeUnit), precision);
@@ -168,6 +172,8 @@ const MemberStorageSelector = ({
             <div className="flex on-tiny-mobile-flex-column">
                 <div className="w30">
                     <InputField
+                        label={c('Label').t`Account storage`}
+                        disableChange={disabled}
                         value={tmpValue}
                         aria-label={c('Label').t`Account storage`}
                         aria-describedby={uid}
@@ -180,8 +186,18 @@ const MemberStorageSelector = ({
                         suffix={sizeLabelSuffix}
                     />
                 </div>
-                <div className="flex flex-item-fluid flex-justify-end">
-                    {mode === 'members' ? (
+                <div className="flex flex-item-fluid flex-justify-end flex-align-self-start">
+                    {orgInitialization ? (
+                        <>
+                            <div>
+                                <b>{c('Info').t`Admin account allocation`}</b>: {humanSize(parsedValueInBytes, unit)}
+                            </div>
+                            <div>
+                                <b>{c('Info').t`Storage for users`}</b>:{' '}
+                                {humanSize(range.max - parsedValueInBytes, unit)}
+                            </div>
+                        </>
+                    ) : (
                         <>
                             <div className="w-custom" style={{ '--width-custom': `${(rect?.height || 0) / ratio}px` }}>
                                 <Donut segments={segments.map(({ value }) => value)} />
@@ -215,22 +231,13 @@ const MemberStorageSelector = ({
                                 </div>
                             </div>
                         </>
-                    ) : (
-                        <>
-                            <div>
-                                <b>{c('Info').t`Admin account allocation`}</b>: {humanSize(parsedValueInBytes, unit)}
-                            </div>
-                            <div>
-                                <b>{c('Info').t`Storage for users`}</b>:{' '}
-                                {humanSize(range.max - parsedValueInBytes, unit)}
-                            </div>
-                        </>
                     )}
                 </div>
             </div>
             <div className="mt-2">
                 <Slider
                     marks
+                    disabled={disabled}
                     min={min}
                     max={max}
                     step={step}

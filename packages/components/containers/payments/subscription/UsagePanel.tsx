@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -20,7 +22,7 @@ interface Props {
     calendars?: Calendar[];
 }
 
-const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
+const UsagePanel = ({ addresses, calendars, organization, user, children }: PropsWithChildren<Props>) => {
     const { UsedMembers = 0 } = organization || {};
 
     if (UsedMembers <= 1) {
@@ -88,6 +90,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
                     );
                 })}
             </StripedList>
+            {children}
         </div>
     );
 };

@@ -74,6 +74,12 @@ $amount-size: 36;
 				margin-inline: 0;
 			}
 		}
+
+		@include media('>small') {
+			.offer-close-button--dark {
+				color: white; // always above a banner, so hardcoded to white
+			}
+		}
 	}
 
 	// side banner offer
