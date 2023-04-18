@@ -67,7 +67,7 @@ const RevisionsModalContent = () => {
 const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
     return (
         <ModalTwo size="large" {...modalProps}>
-            <ModalTwoHeader title={c('Info').t`Version history: Yearly report`} />
+            <ModalTwoHeader title={c('Title').t`Version history`} />
             <ModalTwoContent className="mb-8">
                 <RevisionsProvider link={link}>
                     <RevisionsModalContent />
