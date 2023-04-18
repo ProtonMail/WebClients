@@ -11,9 +11,9 @@ interface StripedItemProps extends ComponentPropsWithoutRef<'li'> {
 
 const StripedItem = ({ left, tooltip, children, className, ...rest }: StripedItemProps) => {
     return (
-        <li className={clsx('px1 py0-5 rounded', className)} {...rest}>
+        <li className={clsx('px-3 py-2 rounded', className)} {...rest}>
             <div className="flex flex-nowrap">
-                <div className="flex-item-noshrink mr0-75">{left}</div>
+                <div className="flex-item-noshrink mr-2">{left}</div>
                 <div className="flex-item-fluid">
                     <span className="align-middle">{children}</span>
                     {tooltip ? <Info buttonClass="ml-2 align-middle" title={tooltip} /> : null}
