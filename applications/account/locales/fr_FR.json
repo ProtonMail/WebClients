@@ -3494,20 +3494,20 @@
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion."
+      "Please ${ refresh } or check your internet connection.": [
+        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion internet."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
+      "Please ${ refresh } or try again later.": [
+        "Veuillez ${ refresh } ou réessayer plus tard."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Il y a eu un problème lors de la connexion à ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Il y a trop de sessions enfant, nous vous invitons à effacer vos cookies et à vous authentifier de nouveau."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Vous pouvez aussi ${ refresh } ou réessayer plus tard."
+      "We couldn't load this page. ": [
+        "Cette page n'a pu être chargée. "
       ]
     },
     "Error message, recovery": {
@@ -8620,9 +8620,6 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Lorsque vous êtes connecté à notre VPN, vos requêtes DNS passent par notre tunnel VPN chiffré, ce qui contribue à protéger votre vie privée et à renforcer votre sécurité en ligne."
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "Pour l'envoi à des personnes qui utilisent ${ MAIL_APP_NAME }, le chiffrement est automatique. L'envoi à des personnes qui n'utilisent pas ${ MAIL_APP_NAME } nécessite la création d'un mot de passe avant l'envoi."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."

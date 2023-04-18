@@ -887,10 +887,10 @@
         "Samozniszczenie za 7 dni"
       ],
       "Self-destruct message": [
-        "Samoniszcząca się wiadomość"
+        "Ustaw samozniszczenie"
       ],
       "Self-destruct on ...": [
-        "Samozniszczenie ..."
+        "Samozniszczenie za ..."
       ],
       "Send": [
         "Wyślij"
@@ -1386,7 +1386,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        "Posiada wydarzenie"
+        "Zawiera wydarzenie"
       ]
     },
     "Calendar invite buttons label": {
@@ -2852,7 +2852,7 @@
         "${ manageBlockedAddressesSettingsLink } w ustawieniach."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym i innymi bonusami."
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym oraz innymi bonusami."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
@@ -3674,20 +3674,20 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
-      "Please ${ refresh } or check your connection.": [
+      "Please ${ refresh } or check your internet connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
       ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } lub spróbuj ponownie później."
       ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Wystąpił problem z połączeniem z usługą ${ BRAND_NAME }."
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ],
+      "We couldn't load this page. ": [
+        "Nie możemy załadować strony. "
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nie masz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } lub spróbuj ponownie później."
       ]
     },
     "Error notification": {
@@ -3915,6 +3915,11 @@
         "Nieprzeczytane"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Zawiera załącznik"
+      ]
+    },
     "Filter preview": {
       "read": [
         "przeczytane"
@@ -4022,6 +4027,12 @@
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatycznie przekieruj"
+      ],
+      "Gmail messages to your inbox": [
+        "wiadomości Google do skrzynki odbiorczej"
+      ],
+      "Sign in with Google": [
+        "Zaloguj się przez Google"
       ]
     },
     "Group": {
@@ -8363,7 +8374,7 @@
         "Samozniszczenie zostało usunięte"
       ],
       "Self-destruction set": [
-        "Ustaw samozniszczenie"
+        "Samozniszczenie zostało ustawione"
       ],
       "Undo in progress": [
         "Cofnięcie jest w toku"

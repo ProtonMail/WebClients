@@ -3324,18 +3324,6 @@
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
-      ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } または接続を確認してください。"
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "問題が発生しました。ページを更新するか後ほど再度お試しください。"
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } への接続中に問題が発生しました。"
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "${ refresh } するか再度お試しください。"
       ]
     },
     "Error message, recovery": {
@@ -4717,6 +4705,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、MasterCard、Discover の場合カードの裏に3桁の数字があります。American Express の場合はカードの表に4桁の数字があります。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
+      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -4777,6 +4768,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "SPF と DKIM の両方を設定した場合、SPF と DKIM の両方のチェックに失敗した場合に他のメールサービスがあなたのドメインのメールを配信する方法を DMARC で指定できます。これにより、あなたになりすますスパマーに対処できますが、適切に設定しないと配信に問題を引き起こす可能性があります。"
       ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "パスワードを失いアカウントをリセットする場合、${ boldAccountRecovery }の両方を用意することが${ boldImperative }。"
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "パスワードを失いアカウントをリセットする場合、${ boldAccountAndRecovery }の両方を用意することが${ boldImperative }。そうしないと、メール、連絡先、ファイルにアクセスできなくなる可能性があります。"
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
@@ -4818,6 +4815,9 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
@@ -7002,6 +7002,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } プロダクトのお知らせ"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } ウェルカムメール"
       ]
     },
     "Label in domain modal": {
@@ -7968,9 +7971,6 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "VPN に接続すると DNS クエリは暗号化された VPN トンネルを経由します。これにより、追加のプライバシーとセキュリティを確保できます。"
       ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "ほかの ${ MAIL_APP_NAME } ユーザーにメールを送信した場合は自動的に暗号化が行われます。非 ${ MAIL_APP_NAME } ユーザーに送信するには送信前にパスワードを設定する必要があります。"
-      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "複数の管理者を置くことができます。すべての管理者はユーザーの追加と管理を行うことができますが、課金に関するコントロールは主管理者のみが行うことができます。"
       ]
@@ -8906,9 +8906,25 @@
         "${ maxVpn } 台のデバイスでの高速 VPN"
       ]
     },
+    "Subscription change warning": {
+      "Subscriptions": [
+        "サブスクリプション"
+      ]
+    },
     "Subscription price": {
       "For": [
         "価格:"
+      ]
+    },
+    "Subscription renewal state": {
+      "Auto-pay is disabled": [
+        "自動支払いが無効です"
+      ],
+      "Auto-pay is enabled": [
+        "自動支払いが有効です"
+      ],
+      "Enable auto-pay support": [
+        "自動支払い対応を有効にする"
       ]
     },
     "Subscription saving": {

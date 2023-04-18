@@ -880,20 +880,17 @@
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
-      "Oops, something went wrong": [
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } o verifica tu conexión internet."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } o intentalo de nuevo más tarde."
+      ],
+      "Something went wrong": [
         "Se ha producido un error."
       ],
-      "Please ${ refresh } or check your connection.": [
-        "${ refresh } o verifica tu conexión."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
-      ],
-      "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Se ha producido un problema al conectarte a ${ BRAND_NAME }."
-      ],
-      "You may also ${ refresh } or try again later.": [
-        "También puedes ${ refresh } o intentarlo de nuevo más tarde."
+      "We couldn't load this page. ": [
+        "No pudimos encontrar esta página."
       ]
     },
     "fido2: Error": {
