@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ContainerGetter, SortEndHandler, arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../components';
 import { useApi, useApiWithoutResult, useEventManager, useFilters, useNotifications } from '../../hooks';
@@ -70,8 +72,12 @@ function FiltersSection() {
     return (
         <SettingsSection>
             <SettingsParagraph>
-                {c('FilterSettings')
-                    .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.`}
+                <span>
+                    {c('FilterSettings')
+                        .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages.`}
+                </span>
+                <br />
+                <Href href={getKnowledgeBaseUrl('/email-inbox-filters')}>{c('Link').t`Learn more`}</Href>
             </SettingsParagraph>
 
             <ActionsFilterToolbar />
