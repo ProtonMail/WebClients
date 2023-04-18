@@ -95,6 +95,10 @@
 			}
 		}
 
+		&-flex-shrink {
+			flex-shrink: 1;
+		}
+
 		&-flex-justify-start {
 			justify-content: start;
 		}
