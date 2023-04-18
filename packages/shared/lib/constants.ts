@@ -552,6 +552,7 @@ export enum MAIL_UPSELL_PATHS {
     STORAGE_FULL = 'storage-full',
     GET_STARTED_CHECKLIST = 'get-started-checklist',
     MAIL_FOOTER = 'mail-footer',
+    UNLIMITED_FILTERS = 'unlimited-filters',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
@@ -801,6 +802,8 @@ export enum FILTER_STATUS {
     ENABLED = 1,
     DISABLED = 0,
 }
+
+export const FREE_USER_ACTIVE_FILTERS_LIMIT = 1;
 
 export const VCARD_VERSION = '4.0';
 
