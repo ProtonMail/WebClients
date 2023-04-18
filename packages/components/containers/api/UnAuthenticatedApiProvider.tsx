@@ -51,7 +51,7 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
                 name="unauth"
                 type={0}
                 onSuccess={async () => {
-                    const challenge = await challengeRefLogin.current?.getChallenge();
+                    const challenge = await challengeRefLogin.current?.getChallenge().catch(noop);
                     if (!challenge) {
                         return;
                     }

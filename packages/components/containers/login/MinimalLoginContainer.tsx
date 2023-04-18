@@ -196,7 +196,7 @@ const LoginForm = ({
                         return;
                     }
                     const run = async () => {
-                        const payload = await challengeRefLogin.current?.getChallenge();
+                        const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
                         return onSubmit(username, password, payload);
                     };
                     withLoading(run()).catch(noop);
