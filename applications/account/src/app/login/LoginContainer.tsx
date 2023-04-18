@@ -10,7 +10,6 @@ import {
     useConfig,
     useErrorHandler,
     useFeature,
-    useLoading,
 } from '@proton/components';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
@@ -21,12 +20,10 @@ import {
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
-import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -78,7 +75,7 @@ const LoginContainer = ({
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
-    const [loadingReset, withLoadingReset] = useLoading(false);
+    const flow = useRef({});
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -99,7 +96,14 @@ const LoginContainer = ({
         previousUsernameRef.current = cacheRef.current?.username ?? '';
         cacheRef.current = undefined;
         setStep(AuthStep.LOGIN);
-        withLoadingReset(silentApi(revoke()).catch(noop));
+        flow.current = {};
+    };
+
+    const startFlow = () => {
+        const start = (flow.current = {});
+        return () => {
+            return start === flow.current;
+        };
     };
 
     const handleResult = (result: AuthActionResponse) => {
@@ -108,6 +112,7 @@ const LoginContainer = ({
         }
         cacheRef.current = result.cache;
         setStep(result.to);
+        flow.current = {};
     };
 
     const handleError = (e: any) => {
@@ -149,7 +154,6 @@ const LoginContainer = ({
                     />
                     <Content>
                         <LoginForm
-                            loading={loadingReset}
                             toApp={toApp}
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             signupOptions={signupOptions}
@@ -157,6 +161,7 @@ const LoginContainer = ({
                             hasRemember={hasRemember}
                             trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
                             onSubmit={async ({ username, password, payload, persistent }) => {
+                                const validateFlow = startFlow();
                                 return handleLogin({
                                     username,
                                     password,
@@ -170,7 +175,11 @@ const LoginContainer = ({
                                     setupVPN,
                                     ktFeature: (await ktFeature.get())?.Value,
                                 })
-                                    .then(handleResult)
+                                    .then((result) => {
+                                        if (validateFlow()) {
+                                            return handleResult(result);
+                                        }
+                                    })
                                     .catch((e) => {
                                         handleError(e);
                                         handleCancel();
@@ -188,12 +197,17 @@ const LoginContainer = ({
                             fido2={cache.authResponse?.['2FA']?.FIDO2}
                             authTypes={cache.authTypes}
                             onSubmit={(data) => {
+                                const validateFlow = startFlow();
                                 if (data.type === 'code') {
                                     return handleTotp({
                                         cache,
                                         totp: data.payload,
                                     })
-                                        .then(handleResult)
+                                        .then((result) => {
+                                            if (validateFlow()) {
+                                                return handleResult(result);
+                                            }
+                                        })
                                         .catch((e) => {
                                             handleError(e);
                                             // Cancel on any error except totp retry
@@ -204,7 +218,11 @@ const LoginContainer = ({
                                 }
                                 if (data.type === 'fido2') {
                                     return handleFido2({ cache, payload: data.payload })
-                                        .then(handleResult)
+                                        .then((result) => {
+                                            if (validateFlow()) {
+                                                return handleResult(result);
+                                            }
+                                        })
                                         .catch((e) => {
                                             handleError(e);
                                             handleCancel();
@@ -222,12 +240,17 @@ const LoginContainer = ({
                     <Content>
                         <UnlockForm
                             onSubmit={(clearKeyPassword) => {
+                                const validateFlow = startFlow();
                                 return handleUnlock({
                                     cache,
                                     clearKeyPassword,
                                     isOnePasswordMode: false,
                                 })
-                                    .then(handleResult)
+                                    .then((result) => {
+                                        if (validateFlow()) {
+                                            return handleResult(result);
+                                        }
+                                    })
                                     .catch((e) => {
                                         handleError(e);
                                         // Cancel on any error except retry
@@ -250,11 +273,16 @@ const LoginContainer = ({
                         </Text>
                         <SetPasswordForm
                             onSubmit={(newPassword) => {
+                                const validateFlow = startFlow();
                                 return handleSetupPassword({
                                     cache,
                                     newPassword,
                                 })
-                                    .then(handleResult)
+                                    .then((result) => {
+                                        if (validateFlow()) {
+                                            return handleResult(result);
+                                        }
+                                    })
                                     .catch((e) => {
                                         handleError(e);
                                         handleCancel();

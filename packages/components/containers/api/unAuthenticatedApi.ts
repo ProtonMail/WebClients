@@ -4,7 +4,10 @@ import {
     auth2FA,
     authMnemonic,
     createSession,
+    getInfo,
+    getMnemonicAuthInfo,
     payload,
+    revoke,
     setCookies,
     setRefreshCookies,
 } from '@proton/shared/lib/api/auth';
@@ -21,10 +24,17 @@ import getRandomString from '@proton/utils/getRandomString';
 
 const unAuthStorageKey = 'ua_uid';
 
-export const context: { UID: string | undefined; api: Api; refresh: () => void; challenge: ChallengePayload } = {
+export const context: {
+    UID: string | undefined;
+    auth: boolean;
+    api: Api;
+    refresh: () => void;
+    challenge: ChallengePayload;
+} = {
     UID: undefined,
     api: undefined,
     challenge: undefined,
+    auth: false,
     refresh: () => {},
 } as any;
 
@@ -35,6 +45,7 @@ export const updateUID = (UID: string) => {
     metrics.setAuthHeaders(UID);
 
     context.UID = UID;
+    context.auth = false;
 };
 
 export const init = async () => {
@@ -87,10 +98,12 @@ export const clearTabPersistedUID = () => {
 };
 
 const authConfig = auth({} as any, true);
+const infoConfig = getInfo('');
+const mnemonicInfo = getMnemonicAuthInfo('');
 const mnemonicAuthConfig = authMnemonic('', true);
 const auth2FAConfig = auth2FA({ TwoFactorCode: '' });
 
-export const apiCallback: Api = (config: any) => {
+export const apiCallback: Api = async (config: any) => {
     const UID = context.UID;
     if (!UID) {
         return context.api(config);
@@ -103,11 +116,19 @@ export const apiCallback: Api = (config: any) => {
     // If an unauthenticated session attempts to signs in, the unauthenticated session has to be discarded so it's not
     // accidentally re-used for another session. We do this before the response has returned to avoid race conditions,
     // e.g. a user refreshing the page before the response has come back.
-    if (authConfig.url === config.url || mnemonicAuthConfig.url === config.url) {
+    const isAuthUrl = [authConfig.url, mnemonicAuthConfig.url].includes(config.url);
+    if (isAuthUrl) {
         clearTabPersistedUID();
     }
-    return context
-        .api(
+    // If the session has become authenticated, and the user is trying to re-auth, discard the session
+    if (context.auth && [infoConfig.url, mnemonicInfo.url].includes(config.url)) {
+        try {
+            await context.api(withUIDHeaders(UID, { ...revoke(), silence: true }));
+            context.auth = false;
+        } catch (e) {}
+    }
+    try {
+        const result = await context.api(
             withUIDHeaders(UID, {
                 ...config,
                 ignoreHandler: [
@@ -119,19 +140,23 @@ export const apiCallback: Api = (config: any) => {
                         ? true
                         : [HTTP_ERROR_CODES.UNAUTHORIZED, ...(Array.isArray(config.silence) ? config.silence : [])],
             })
-        )
-        .catch((e) => {
-            if (getIs401Error(e)) {
-                // Don't attempt to refresh on 2fa failures since the session has become invalidated
-                if (config.url === auth2FAConfig.url) {
-                    throw e;
-                }
-                return refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
-                    return apiCallback(config);
-                });
+        );
+        if (isAuthUrl) {
+            context.auth = true;
+        }
+        return result;
+    } catch (e: any) {
+        if (getIs401Error(e)) {
+            // Don't attempt to refresh on 2fa failures since the session has become invalidated
+            if (config.url === auth2FAConfig.url) {
+                throw e;
             }
-            throw e;
-        });
+            return refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
+                return apiCallback(config);
+            });
+        }
+        throw e;
+    }
 };
 
 export const setChallenge = async (data: ChallengePayload) => {
