@@ -1,13 +1,14 @@
-import { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import { hasReachedFiltersLimit } from '@proton/shared/lib/filters/helpers';
 
-import { DropdownActions, OrderableTableRow, Toggle, useModalState } from '../../components';
+import { DropdownActions, FiltersUpsellModal, OrderableTableRow, Toggle, useModalState } from '../../components';
 import { DropdownActionProps } from '../../components/dropdown/DropdownActions';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useLoading, useNotifications, useUser } from '../../hooks';
 import FilterWarningModal from './FilterWarningModal';
 import { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';
@@ -17,12 +18,14 @@ import { isSieve } from './utils';
 
 interface Props {
     filter: Filter;
+    filters: Filter[];
     index: number;
     onApplyFilter: (filterID: string) => void;
 }
 
-function FilterItemRow({ filter, index, onApplyFilter, ...rest }: Props) {
+function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props) {
     const api = useApi();
+    const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -33,6 +36,8 @@ function FilterItemRow({ filter, index, onApplyFilter, ...rest }: Props) {
     const [deleteFilterModalProps, setDeleteFilterModalOpen, renderDeleteFilterModal] = useModalState();
 
     const { ID, Name, Status } = filter;
+
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const handleChangeStatus = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(toggleEnable(ID, target.checked));
@@ -79,6 +84,14 @@ function FilterItemRow({ filter, index, onApplyFilter, ...rest }: Props) {
         ? [editSieveAction, applyFilterAction, deleteFilterAction]
         : [editAction, applyFilterAction, editSieveAction, deleteFilterAction];
 
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (Status === FILTER_STATUS.DISABLED && hasReachedFiltersLimit(user, filters)) {
+            handleUpsellModalDisplay(true);
+        } else {
+            withLoading(handleChangeStatus(e));
+        }
+    };
+
     return (
         <>
             <OrderableTableRow
@@ -92,7 +105,7 @@ function FilterItemRow({ filter, index, onApplyFilter, ...rest }: Props) {
                             id={`item-${ID}`}
                             loading={loading}
                             checked={Status === FILTER_STATUS.ENABLED}
-                            onChange={(e) => withLoading(handleChangeStatus(e))}
+                            onChange={handleChange}
                         />
                     </div>,
                     <DropdownActions key="dropdown" size="small" list={list} />,
@@ -115,6 +128,7 @@ function FilterItemRow({ filter, index, onApplyFilter, ...rest }: Props) {
                     onApplyFilter(filter.ID);
                 }}
             />
+            {renderUpsellModal && <FiltersUpsellModal modalProps={upsellModalProps} isSettings />}
         </>
     );
 }
