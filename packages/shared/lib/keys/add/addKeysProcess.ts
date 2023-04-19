@@ -1,4 +1,7 @@
-import { createUserKeyRoute } from '../../api/keys';
+import { getReplacedAddressKeyTokens } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
+
+import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeys } from '../getActiveKeys';
@@ -60,12 +63,16 @@ export const addAddressKeysProcess = async ({
 interface CreateAddressKeyLegacyArguments {
     api: Api;
     encryptionConfig?: EncryptionConfig;
+    userKeys: DecryptedKey[];
+    addresses: Address[];
     passphrase: string;
 }
 
 export const addUserKeysProcess = async ({
     api,
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    userKeys,
+    addresses,
     passphrase,
 }: CreateAddressKeyLegacyArguments) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({
@@ -79,6 +86,13 @@ export const addUserKeysProcess = async ({
             PrivateKey: privateKeyArmored,
         })
     );
+
+    if (getHasMigratedAddressKeys(addresses)) {
+        const replacedResult = await getReplacedAddressKeyTokens({ userKeys, addresses, privateKey });
+        if (replacedResult.AddressKeyTokens.length) {
+            await api(replaceAddressTokens(replacedResult)).catch(/*ignore failures */ noop);
+        }
+    }
 
     return privateKey;
 };
