@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { FeatureCode, TotpInputs } from '@proton/components/containers';
+import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -326,21 +327,25 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                     footer={footer}
                     hasChallenge={hasChallenge}
                     onSubmit={async (username, password, payload) => {
-                        return handleLogin({
-                            appName: APP_NAME,
-                            toApp: APP_NAME,
-                            username,
-                            password,
-                            payload,
-                            api: silentApi,
-                            ignoreUnlock,
-                            hasTrustedDeviceRecovery: false,
-                            persistent: false,
-                            setupVPN: false,
-                            ktFeature: (await ktFeature.get())?.Value,
-                        })
-                            .then(handleResult)
-                            .catch(handleError);
+                        try {
+                            await startUnAuthFlow();
+                            const result = await handleLogin({
+                                appName: APP_NAME,
+                                toApp: APP_NAME,
+                                username,
+                                password,
+                                payload,
+                                api: silentApi,
+                                ignoreUnlock,
+                                hasTrustedDeviceRecovery: false,
+                                persistent: false,
+                                setupVPN: false,
+                                ktFeature: (await ktFeature.get())?.Value,
+                            });
+                            return await handleResult(result);
+                        } catch (e) {
+                            handleError(e);
+                        }
                     }}
                 />
             )}
