@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
 import { FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import {
     useApi,
@@ -50,9 +51,11 @@ import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import Layout from '../public/Layout';
 import { defaultPersistentKey } from '../public/helper';
+import { useFlowRef } from '../useFlowRef';
 import { useMetaTags } from '../useMetaTags';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
@@ -164,6 +167,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
     const [model, setModel] = useState<SignupModel>(DEFAULT_SIGNUP_MODEL);
 
+    const createFlow = useFlowRef();
+
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
@@ -189,6 +194,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         method: 'auto',
         type: defaultSignupType,
     });
+
+    useEffect(() => {
+        startUnAuthFlow().catch(noop);
+    }, []);
 
     useEffect(() => {
         if (signupType.method === 'auto' && signupType.type !== defaultSignupType) {
@@ -301,6 +310,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         if (!previousSteps.length) {
             return;
         }
+        createFlow.reset();
         const newSteps = [...previousSteps];
         const newStep = newSteps.pop()!;
         setStep([newSteps, newStep]);
@@ -311,6 +321,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     };
 
     const handleResult = (result: SignupActionResponse) => {
+        createFlow.reset();
         if (result.to === SignupSteps.Done) {
             return onLogin(result.session);
         }
@@ -387,9 +398,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             subscriptionData,
         });
 
+        const validateFlow = createFlow();
         const signupActionResponse = await handleSelectPlan({ cache, api: ignoreHumanApi, subscriptionData });
 
-        await handleResult(signupActionResponse);
+        if (validateFlow()) {
+            await handleResult(signupActionResponse);
+        }
     };
 
     const plan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs);
@@ -607,12 +621,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         const accountType = signupType === SignupType.Email ? 'external_account' : 'proton_account';
 
                         try {
+                            const validateFlow = createFlow();
+                            await startUnAuthFlow();
                             const signupActionResponse = await handleCreateAccount({
                                 cache,
                                 api: ignoreHumanApi,
                             });
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
 
                             metrics.core_signup_accountStep_accountCreation_total.increment({
                                 account_type: accountType,
@@ -668,6 +686,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
+
+                            const validateFlow = createFlow();
                             const signupActionResponse = await handleHumanVerification({
                                 api: ignoreHumanApi,
                                 verificationModel,
@@ -676,7 +696,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                                 tokenType,
                             });
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
                         } catch (error) {
                             handleError(error);
                             // Important this is thrown so that the human verification form can handle it
@@ -720,6 +742,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     vpnServers={vpnServers}
                     onPlan={async (planIDs) => {
                         try {
+                            const validateFlow = createFlow();
                             const checkResult = await getSubscriptionPrices(
                                 silentApi,
                                 planIDs,
@@ -731,7 +754,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                                 return;
                             }
 
-                            await handlePlanSelectionCallback({ checkResult, planIDs });
+                            if (validateFlow()) {
+                                await handlePlanSelectionCallback({ checkResult, planIDs });
+                            }
                             metrics.core_signup_upsellStep_planSelection_total.increment({
                                 status: 'success',
                                 application: getSignupApplication(APP_NAME),
@@ -767,13 +792,17 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                                 ...model.subscriptionData,
                                 payment,
                             };
+
+                            const validateFlow = createFlow();
                             const signupActionResponse = await handlePayment({
                                 api: silentApi,
                                 cache,
                                 subscriptionData,
                             });
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
                             metrics.core_signup_paymentStep_payment_total.increment({
                                 status: 'success',
                                 application: getSignupApplication(APP_NAME),
@@ -806,6 +835,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                              */
                             metrics.stopBatchingProcess();
 
+                            const validateFlow = createFlow();
                             const signupActionResponse = await handleSetupUser({ cache, api: silentApi });
 
                             /**
@@ -813,7 +843,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                              */
                             metrics.startBatchingProcess();
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
 
                             metrics.core_signup_loadingStep_accountSetup_total.increment({
                                 status: 'success',
@@ -845,12 +877,15 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
+                            const validateFlow = createFlow();
                             const signupActionResponse = await handleDisplayName({
                                 displayName,
                                 cache,
                             });
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
 
                             metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
                                 status: 'success',
@@ -881,13 +916,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
+                            const validateFlow = createFlow();
                             const signupActionResponse = await handleSaveRecovery({
                                 cache,
                                 recoveryEmail,
                                 recoveryPhone,
                             });
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
 
                             if (!!recoveryEmail || !!recoveryPhone) {
                                 metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
@@ -917,12 +955,15 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
+                            const validateFlow = createFlow();
                             const signupActionResponse = handleDone({
                                 cache,
                                 appIntent: { app, ref: 'product-switch' },
                             });
 
-                            await handleResult(signupActionResponse);
+                            if (validateFlow()) {
+                                await handleResult(signupActionResponse);
+                            }
                             metrics.core_signup_exploreStep_login_total.increment({
                                 status: 'success',
                                 application: getSignupApplication(APP_NAME),

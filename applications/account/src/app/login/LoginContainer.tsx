@@ -11,6 +11,7 @@ import {
     useErrorHandler,
     useFeature,
 } from '@proton/components';
+import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
@@ -20,7 +21,6 @@ import {
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
-import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -32,6 +32,7 @@ import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import { useFlowRef } from '../useFlowRef';
 import { useMetaTags } from '../useMetaTags';
 import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
@@ -77,7 +78,6 @@ const LoginContainer = ({
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
-    const flow = useRef({});
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -85,6 +85,19 @@ const LoginContainer = ({
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
     const previousUsernameRef = useRef('');
     const [step, setStep] = useState(AuthStep.LOGIN);
+
+    const createFlow = useFlowRef();
+
+    useEffect(() => {
+        if (step === AuthStep.LOGIN) {
+            // This handles the case for:
+            // 1) Being on the unlock/2fa screen and hitting the back button
+            // 2) Being on the unlock/2fa screen and hitting the browser back button e.g. ending up on signup and then
+            // going back here
+            // And preemptively starting it before user interaction
+            startUnAuthFlow().catch(noop);
+        }
+    }, [step]);
 
     useEffect(() => {
         // Preparing login improvements
@@ -95,26 +108,19 @@ const LoginContainer = ({
     }, []);
 
     const handleCancel = () => {
+        createFlow.reset();
         previousUsernameRef.current = cacheRef.current?.username ?? '';
         cacheRef.current = undefined;
         setStep(AuthStep.LOGIN);
-        flow.current = {};
-    };
-
-    const startFlow = () => {
-        const start = (flow.current = {});
-        return () => {
-            return start === flow.current;
-        };
     };
 
     const handleResult = (result: AuthActionResponse) => {
+        createFlow.reset();
         if (result.to === AuthStep.DONE) {
             return onLogin(result.session);
         }
         cacheRef.current = result.cache;
         setStep(result.to);
-        flow.current = {};
     };
 
     const handleError = (e: any) => {
@@ -131,8 +137,7 @@ const LoginContainer = ({
         if (step === AuthStep.LOGIN) {
             return onBack;
         }
-        return async () => {
-            await silentApi(revoke()).catch(noop);
+        return () => {
             handleCancel();
         };
     })();
@@ -164,29 +169,29 @@ const LoginContainer = ({
                             hasRemember={hasRemember}
                             trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
                             onSubmit={async ({ username, password, payload, persistent }) => {
-                                const validateFlow = startFlow();
-                                return handleLogin({
-                                    username,
-                                    password,
-                                    persistent,
-                                    api: silentApi,
-                                    hasTrustedDeviceRecovery,
-                                    appName: APP_NAME,
-                                    toApp,
-                                    ignoreUnlock: false,
-                                    payload,
-                                    setupVPN,
-                                    ktFeature: (await ktFeature.get())?.Value,
-                                })
-                                    .then((result) => {
-                                        if (validateFlow()) {
-                                            return handleResult(result);
-                                        }
-                                    })
-                                    .catch((e) => {
-                                        handleError(e);
-                                        handleCancel();
+                                try {
+                                    const validateFlow = createFlow();
+                                    await startUnAuthFlow();
+                                    const result = await handleLogin({
+                                        username,
+                                        password,
+                                        persistent,
+                                        api: silentApi,
+                                        hasTrustedDeviceRecovery,
+                                        appName: APP_NAME,
+                                        toApp,
+                                        ignoreUnlock: false,
+                                        payload,
+                                        setupVPN,
+                                        ktFeature: (await ktFeature.get())?.Value,
                                     });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e) {
+                                    handleError(e);
+                                    handleCancel();
+                                }
                             }}
                         />
                     </Content>
@@ -199,38 +204,39 @@ const LoginContainer = ({
                         <TwoFactorStep
                             fido2={cache.authResponse?.['2FA']?.FIDO2}
                             authTypes={cache.authTypes}
-                            onSubmit={(data) => {
-                                const validateFlow = startFlow();
+                            onSubmit={async (data) => {
                                 if (data.type === 'code') {
-                                    return handleTotp({
-                                        cache,
-                                        totp: data.payload,
-                                    })
-                                        .then((result) => {
-                                            if (validateFlow()) {
-                                                return handleResult(result);
-                                            }
-                                        })
-                                        .catch((e) => {
-                                            handleError(e);
-                                            // Cancel on any error except totp retry
-                                            if (e.name !== 'TOTPError') {
-                                                handleCancel();
-                                            }
+                                    try {
+                                        const validateFlow = createFlow();
+                                        const result = await handleTotp({
+                                            cache,
+                                            totp: data.payload,
                                         });
-                                }
-                                if (data.type === 'fido2') {
-                                    return handleFido2({ cache, payload: data.payload })
-                                        .then((result) => {
-                                            if (validateFlow()) {
-                                                return handleResult(result);
-                                            }
-                                        })
-                                        .catch((e) => {
-                                            handleError(e);
+                                        if (validateFlow()) {
+                                            return await handleResult(result);
+                                        }
+                                    } catch (e: any) {
+                                        handleError(e);
+                                        // Cancel on any error except totp retry
+                                        if (e.name !== 'TOTPError') {
                                             handleCancel();
-                                        });
+                                        }
+                                    }
                                 }
+
+                                if (data.type === 'fido2') {
+                                    try {
+                                        const validateFlow = createFlow();
+                                        const result = await handleFido2({ cache, payload: data.payload });
+                                        if (validateFlow()) {
+                                            return await handleResult(result);
+                                        }
+                                    } catch (e: any) {
+                                        handleError(e);
+                                        handleCancel();
+                                    }
+                                }
+
                                 throw new Error('Unknown type');
                             }}
                         />
@@ -242,25 +248,24 @@ const LoginContainer = ({
                     <Header title={c('Title').t`Unlock your mailbox`} onBack={handleBackStep} />
                     <Content>
                         <UnlockForm
-                            onSubmit={(clearKeyPassword) => {
-                                const validateFlow = startFlow();
-                                return handleUnlock({
-                                    cache,
-                                    clearKeyPassword,
-                                    isOnePasswordMode: false,
-                                })
-                                    .then((result) => {
-                                        if (validateFlow()) {
-                                            return handleResult(result);
-                                        }
-                                    })
-                                    .catch((e) => {
-                                        handleError(e);
-                                        // Cancel on any error except retry
-                                        if (e.name !== 'PasswordError') {
-                                            handleCancel();
-                                        }
+                            onSubmit={async (clearKeyPassword) => {
+                                try {
+                                    const validateFlow = createFlow();
+                                    const result = await handleUnlock({
+                                        cache,
+                                        clearKeyPassword,
+                                        isOnePasswordMode: false,
                                     });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e: any) {
+                                    handleError(e);
+                                    // Cancel on any error except retry
+                                    if (e.name !== 'PasswordError') {
+                                        handleCancel();
+                                    }
+                                }
                             }}
                         />
                     </Content>
@@ -275,21 +280,20 @@ const LoginContainer = ({
                                 .t`This will replace your temporary password. You will use it to access your ${BRAND_NAME} Account in the future.`}
                         </Text>
                         <SetPasswordForm
-                            onSubmit={(newPassword) => {
-                                const validateFlow = startFlow();
-                                return handleSetupPassword({
-                                    cache,
-                                    newPassword,
-                                })
-                                    .then((result) => {
-                                        if (validateFlow()) {
-                                            return handleResult(result);
-                                        }
-                                    })
-                                    .catch((e) => {
-                                        handleError(e);
-                                        handleCancel();
+                            onSubmit={async (newPassword) => {
+                                try {
+                                    const validateFlow = createFlow();
+                                    const result = await handleSetupPassword({
+                                        cache,
+                                        newPassword,
                                     });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e: any) {
+                                    handleError(e);
+                                    handleCancel();
+                                }
                             }}
                         />
                     </Content>
