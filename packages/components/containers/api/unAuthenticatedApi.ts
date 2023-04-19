@@ -1,5 +1,6 @@
 import metrics from '@proton/metrics';
 import {
+    PASSWORD_WRONG_ERROR,
     auth,
     auth2FA,
     authMnemonic,
@@ -9,7 +10,7 @@ import {
     setCookies,
     setRefreshCookies,
 } from '@proton/shared/lib/api/auth';
-import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '@proton/shared/lib/api/helpers/refreshHandlers';
 import { createOnceHandler } from '@proton/shared/lib/apiHandlers';
 import { ChallengePayload } from '@proton/shared/lib/authentication/interface';
@@ -157,8 +158,10 @@ export const apiCallback: Api = async (config: any) => {
         return result;
     } catch (e: any) {
         if (getIs401Error(e)) {
-            // Don't attempt to refresh on 2fa failures since the session has become invalidated
-            if (config.url === auth2FAConfig.url) {
+            const { code } = getApiError(e);
+            // Don't attempt to refresh on 2fa 401 failures since the session has become invalidated.
+            // NOTE: Only one the PASSWORD_WRONG_ERROR code, since 401 is also triggered on session expiration.
+            if (config.url === auth2FAConfig.url && code === PASSWORD_WRONG_ERROR) {
                 throw e;
             }
             return await refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
