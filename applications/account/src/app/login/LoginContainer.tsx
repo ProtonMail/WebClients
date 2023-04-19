@@ -20,10 +20,12 @@ import {
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
+import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -129,7 +131,8 @@ const LoginContainer = ({
         if (step === AuthStep.LOGIN) {
             return onBack;
         }
-        return () => {
+        return async () => {
+            await silentApi(revoke()).catch(noop);
             handleCancel();
         };
     })();
