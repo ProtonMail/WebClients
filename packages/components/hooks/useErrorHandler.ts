@@ -7,7 +7,7 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import useNotifications from './useNotifications';
 
-const ignoreErrors = ['InactiveSession', 'AppVersionBadError', 'OfflineError'];
+const ignoreErrors = ['InactiveSession', 'AppVersionBadError', 'OfflineError', 'AbortError'];
 
 const useErrorHandler = () => {
     const { createNotification } = useNotifications();
