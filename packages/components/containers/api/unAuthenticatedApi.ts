@@ -129,11 +129,10 @@ export const apiCallback: Api = async (config: any) => {
     }
 
     const abortController = context.abortController;
-    if (config.signal) {
-        config.signal.addEventListener('abort', () => {
-            abortController.abort();
-        });
-    }
+    const otherAbortCb = () => {
+        abortController.abort();
+    };
+    config.signal?.addEventListener('abort', otherAbortCb);
 
     try {
         const result = await context.api(
@@ -162,11 +161,13 @@ export const apiCallback: Api = async (config: any) => {
             if (config.url === auth2FAConfig.url) {
                 throw e;
             }
-            return refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
+            return await refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
                 return apiCallback(config);
             });
         }
         throw e;
+    } finally {
+        config.signal?.removeEventListener('abort', otherAbortCb);
     }
 };
 
