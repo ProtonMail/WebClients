@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import StandardLoadErrorPage from '../app/StandardLoadErrorPage';
 import ApiContext from './apiContext';
-import { apiCallback, context, setChallenge, setup } from './unAuthenticatedApi';
+import { apiCallback, setApi, setChallenge, setup } from './unAuthenticatedApi';
 
 interface Props {
     children: ReactNode;
@@ -20,7 +20,7 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
     const challengeRefLogin = useRef<ChallengeRef>();
 
     useEffect(() => {
-        context.api = api;
+        setApi(api);
     });
 
     useEffect(() => {
