@@ -43,6 +43,8 @@ export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
+export const PASS_APP_NAME = 'Proton Pass';
+export const PASS_SHORT_APP_NAME = 'Pass';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -55,7 +57,7 @@ export const APPS = {
     PROTONVPN_SETTINGS: 'proton-vpn-settings',
     PROTONADMIN: 'proton-admin',
     PROTONVERIFICATION: 'proton-verify',
-    PROTONEXTENSION: 'proton-extension',
+    PROTONPASSBROWSEREXTENSION: 'proton-extension',
 } as const;
 
 interface AppConfiguration {
@@ -132,11 +134,11 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
     },
-    [APPS.PROTONEXTENSION]: {
+    [APPS.PROTONPASSBROWSEREXTENSION]: {
         publicPath: '',
         subdomain: '',
-        name: 'Proton Extension',
-        bareName: 'Extension',
+        name: PASS_APP_NAME,
+        bareName: PASS_SHORT_APP_NAME,
         clientID: 'browser-pass',
         icon: '',
         settingsSlug: '',
@@ -958,13 +960,13 @@ export const FORKABLE_APPS = new Set(
         APPS.PROTONCONTACTS,
         APPS.PROTONDRIVE,
         APPS.PROTONCALENDAR,
-        APPS.PROTONEXTENSION,
+        APPS.PROTONPASSBROWSEREXTENSION,
         APPS.PROTONVPNBROWSEREXTENSION,
     ].filter(Boolean)
 );
 
 export const EXTENSIONS = {
-    [APPS.PROTONEXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
+    [APPS.PROTONPASSBROWSEREXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
     [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'jplgfhpmjnbigmhklmmbgecoobifkmpa' },
 } as const;
 
