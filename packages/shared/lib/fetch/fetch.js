@@ -21,12 +21,12 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
         abortController.abort();
     }, timeout);
 
-    if (signal) {
-        signal.addEventListener('abort', () => {
-            abortController.abort();
-            clearTimeout(timeoutHandle);
-        });
-    }
+    const otherAbortCallback = () => {
+        abortController.abort();
+        clearTimeout(timeoutHandle);
+    };
+
+    signal?.addEventListener('abort', otherAbortCallback);
 
     return fetch(url, config)
         .catch((e) => {
@@ -44,6 +44,9 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
         .then((response) => {
             clearTimeout(timeoutHandle);
             return checkStatus(response, config);
+        })
+        .finally(() => {
+            signal?.removeEventListener('abort', otherAbortCallback);
         });
 };
 

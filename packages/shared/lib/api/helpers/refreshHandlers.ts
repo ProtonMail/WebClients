@@ -12,7 +12,7 @@ import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response>) => {
-    const refreshHandlers: { [key: string]: ReturnType<typeof createOnceHandler<Date | undefined>> } = {};
+    const refreshHandlers: { [key: string]: (date: Date | undefined) => Promise<void> } = {};
 
     const refreshHandler = (UID: string, responseDate: Date | undefined) => {
         if (!refreshHandlers[UID]) {
