@@ -27,6 +27,20 @@ export const createUserKeyRoute = (data: CreateUserKeyPayload) => ({
     data,
 });
 
+interface AddressKeyToken {
+    AddressKeyID: string;
+    KeyPacket: string;
+    Signature: string;
+}
+interface AddressTokensPayload {
+    AddressKeyTokens: AddressKeyToken[];
+}
+export const replaceAddressTokens = (data: AddressTokensPayload) => ({
+    url: 'core/v4/keys/tokens',
+    method: 'put',
+    data,
+});
+
 interface CreateAddressKeyPayload {
     AddressID: string;
     Primary: number;
