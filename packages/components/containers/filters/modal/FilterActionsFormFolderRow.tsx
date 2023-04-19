@@ -3,7 +3,8 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
+import { useUser } from '@proton/components/hooks';
+import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { Icon, IconName, InputFieldTwo, Option, SelectTwo, useModalState } from '../../../components';
@@ -49,7 +50,10 @@ const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level =
 };
 
 const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateActions }: Props) => {
+    const [user] = useUser();
     const treeview = buildTreeview(folders);
+
+    const canCreateLabel = !hasReachedFolderLimit(user, folders);
 
     const reducedFolders = treeview.reduce<SelectOption[]>((acc, folder) => {
         return reducer(acc, folder, 0);
@@ -160,9 +164,11 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                         >
                             {folderOptions}
                         </InputFieldTwo>
-                        <Button shape="outline" className="mt1" onClick={() => setEditLabelModalOpen(true)}>
-                            {c('Action').t`Create folder`}
-                        </Button>
+                        {canCreateLabel && (
+                            <Button shape="outline" className="mt1" onClick={() => setEditLabelModalOpen(true)}>
+                                {c('Action').t`Create folder`}
+                            </Button>
+                        )}
                         <EditLabelModal {...editLabelProps} onAdd={handleCreateFolder} type="folder" />
                     </div>
                 ) : (

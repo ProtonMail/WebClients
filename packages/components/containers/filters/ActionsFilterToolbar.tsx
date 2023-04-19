@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Filter } from '@proton/components/containers/filters/interfaces';
 import { useFilters } from '@proton/components/hooks';
-import { hasReachedFiltersLimit } from '@proton/shared/lib/filters/helpers';
+import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
 import { FiltersUpsellModal, useModalState } from '../../components';
 import useUser from '../../hooks/useUser';

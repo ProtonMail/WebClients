@@ -5,11 +5,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { orderLabels } from '@proton/shared/lib/api/labels';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { Loader, useDebounceInput, useModalState } from '../../components';
-import { useApi, useEventManager, useLabels, useLoading, useNotifications } from '../../hooks';
+import { LabelsUpsellModal, Loader, useDebounceInput, useModalState } from '../../components';
+import { useApi, useEventManager, useLabels, useLoading, useNotifications, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import LabelSortableList from './LabelSortableList';
 import EditLabelModal from './modals/EditLabelModal';
@@ -19,6 +21,7 @@ const DEBOUNCE_VALUE = 1600;
 const toLabelIDs = (labels: Label[]) => labels.map(({ ID }) => ID).join(',');
 
 function LabelsSection() {
+    const [user] = useUser();
     const [labels = [], loadingLabels] = useLabels();
     const { call } = useEventManager();
     const api = useApi();
@@ -31,7 +34,10 @@ function LabelsSection() {
     const labelsOrder = toLabelIDs(labels);
     const debouncedLabelOrder = toLabelIDs(debouncedLabels);
 
+    const canCreateLabel = !hasReachedLabelLimit(user, labels);
+
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     /**
      * Refresh the list + update API and call event, it can be slow.
@@ -77,9 +83,19 @@ function LabelsSection() {
             ) : (
                 <>
                     <div className="mb2">
-                        <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
-                            {c('Action').t`Add label`}
-                        </Button>
+                        {canCreateLabel ? (
+                            <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
+                                {c('Action').t`Add label`}
+                            </Button>
+                        ) : (
+                            <Button
+                                shape="outline"
+                                onClick={() => handleUpsellModalDisplay(true)}
+                                className="on-mobile-mb0-5"
+                            >
+                                {c('Action').t`Get more labels`}
+                            </Button>
+                        )}
                         {localLabels.length ? (
                             <Button
                                 shape="outline"
@@ -95,6 +111,10 @@ function LabelsSection() {
                     {localLabels.length ? <LabelSortableList items={localLabels} onSortEnd={onSortEnd} /> : null}
 
                     <EditLabelModal {...editLabelProps} type="label" />
+
+                    {renderUpsellModal && (
+                        <LabelsUpsellModal modalProps={upsellModalProps} feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS} />
+                    )}
                 </>
             )}
         </SettingsSection>
