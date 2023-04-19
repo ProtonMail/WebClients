@@ -17,6 +17,7 @@ import {
     useNotifications,
     useSearchParamsEffect,
 } from '@proton/components';
+import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
 import {
@@ -29,6 +30,7 @@ import {
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import noop from '@proton/utils/noop';
 
 import resetPasswordPage from '../../pages/reset-password.json';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
@@ -39,6 +41,7 @@ import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
+import { useFlowRef } from '../useFlowRef';
 import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
@@ -78,6 +81,8 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
+    const createFlow = useFlowRef();
+
     const handleBack = () => {
         history.push('/login');
     };
@@ -85,6 +90,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
     const [step, setStep] = useState(STEPS.REQUEST_RECOVERY_METHODS);
 
     const handleCancel = () => {
+        createFlow.reset();
         const { username, persistent } = cacheRef.current || {};
         cacheRef.current = undefined;
         cacheRef.current = {
@@ -100,6 +106,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
     };
 
     const handleResult = (result: ResetActionResponse) => {
+        createFlow.reset();
         if (result.to === STEPS.DONE) {
             return onLogin(result.session);
         }
@@ -132,6 +139,10 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
         });
     };
 
+    useEffect(() => {
+        startUnAuthFlow().catch(noop);
+    }, []);
+
     /**
      * Recovery phrase automatic password reset
      */
@@ -158,27 +169,38 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             return;
         }
 
-        setStep(STEPS.LOADING);
+        const run = async () => {
+            try {
+                setStep(STEPS.LOADING);
 
-        cacheRef.current = {
-            setupVPN,
-            appName: APP_NAME,
-            persistent: persistent ?? true,
-            username: username ?? '',
-            Methods: [],
-            hasTrustedDeviceRecovery,
-            ktFeature,
+                cacheRef.current = {
+                    setupVPN,
+                    appName: APP_NAME,
+                    persistent: persistent ?? true,
+                    username: username ?? '',
+                    Methods: [],
+                    hasTrustedDeviceRecovery,
+                    ktFeature,
+                };
+
+                const validateFlow = createFlow();
+                await startUnAuthFlow();
+                const result = await handleRequestToken({
+                    cache: cacheRef.current,
+                    value,
+                    method: 'mnemonic',
+                    username,
+                    api: silentApi,
+                });
+                if (validateFlow()) {
+                    await handleResult(result);
+                }
+            } catch (e) {
+                handleError(e);
+            }
         };
 
-        handleRequestToken({
-            cache: cacheRef.current,
-            value,
-            method: 'mnemonic',
-            username,
-            api: silentApi,
-        })
-            .then(handleResult)
-            .catch(handleError);
+        run();
     }, []);
 
     useSearchParamsEffect(
@@ -194,26 +216,35 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
              * Automatic token validation reset
              */
             if (username && token) {
-                setAutomaticVerification({ username, loading: true });
+                const run = async () => {
+                    try {
+                        setAutomaticVerification({ username, loading: true });
 
-                handleValidateResetToken({
-                    cache: {
-                        setupVPN,
-                        appName: APP_NAME,
-                        username,
-                        Methods: [],
-                        persistent,
-                        hasTrustedDeviceRecovery,
-                        ktFeature,
-                    },
-                    api: silentApi,
-                    token,
-                })
-                    .then(handleResult)
-                    .catch(handleError)
-                    .finally(() => {
+                        const validateFlow = createFlow();
+                        await startUnAuthFlow();
+                        const result = await handleValidateResetToken({
+                            cache: {
+                                setupVPN,
+                                appName: APP_NAME,
+                                username,
+                                Methods: [],
+                                persistent,
+                                hasTrustedDeviceRecovery,
+                                ktFeature,
+                            },
+                            api: silentApi,
+                            token,
+                        });
+                        if (validateFlow()) {
+                            await handleResult(result);
+                        }
+                    } catch (e) {
+                        handleError(e);
+                    } finally {
                         setAutomaticVerification({ username, loading: false });
-                    });
+                    }
+                };
+                run();
 
                 return new URLSearchParams();
             }
@@ -266,18 +297,25 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                             key={automaticVerification.username}
                             loading={automaticVerification.loading}
                             defaultUsername={cache?.username || automaticVerification.username}
-                            onSubmit={(username) => {
-                                return handleRequestRecoveryMethods({
-                                    setupVPN,
-                                    appName: APP_NAME,
-                                    hasTrustedDeviceRecovery,
-                                    ktFeature,
-                                    username,
-                                    persistent,
-                                    api: silentApi,
-                                })
-                                    .then(handleResult)
-                                    .catch(handleError);
+                            onSubmit={async (username) => {
+                                try {
+                                    const validateFlow = createFlow();
+                                    await startUnAuthFlow();
+                                    const result = await handleRequestRecoveryMethods({
+                                        setupVPN,
+                                        appName: APP_NAME,
+                                        hasTrustedDeviceRecovery,
+                                        ktFeature,
+                                        username,
+                                        persistent,
+                                        api: silentApi,
+                                    });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e) {
+                                    handleError(e);
+                                }
                             }}
                         />
                     </Content>
@@ -314,19 +352,25 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                             defaultMethod={cache.method}
                             defaultValue={cache.value}
                             methods={cache.Methods}
-                            onSubmit={({ value, method }) => {
+                            onSubmit={async ({ value, method }) => {
                                 if (!cache) {
                                     throw new Error('Missing cache');
                                 }
-                                return handleRequestToken({
-                                    cache,
-                                    value,
-                                    method,
-                                    username: cache.username,
-                                    api: silentApi,
-                                })
-                                    .then(handleResult)
-                                    .catch(handleError);
+                                try {
+                                    const validateFlow = createFlow();
+                                    const result = await handleRequestToken({
+                                        cache,
+                                        value,
+                                        method,
+                                        username: cache.username,
+                                        api: silentApi,
+                                    });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e) {
+                                    handleError(e);
+                                }
                             }}
                         />
                     </Content>
@@ -339,10 +383,16 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                         <ValidateResetTokenForm
                             method={cache.method}
                             value={cache.value}
-                            onSubmit={(token) => {
-                                return handleValidateResetToken({ api: silentApi, cache, token })
-                                    .then(handleResult)
-                                    .catch(handleError);
+                            onSubmit={async (token) => {
+                                try {
+                                    const validateFlow = createFlow();
+                                    const result = await handleValidateResetToken({ api: silentApi, cache, token });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e) {
+                                    handleError(e);
+                                }
                             }}
                             onBack={() => {
                                 setStep(
@@ -351,19 +401,25 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                         : STEPS.REQUEST_RESET_TOKEN
                                 );
                             }}
-                            onRequest={() => {
+                            onRequest={async () => {
                                 if (!cache || !cache.method || !cache.value) {
                                     throw new Error('Missing dep');
                                 }
-                                return handleRequestToken({
-                                    cache,
-                                    method: cache.method,
-                                    value: cache.value,
-                                    username: cache.username,
-                                    api: silentApi,
-                                })
-                                    .then(handleResult)
-                                    .catch(handleError);
+                                try {
+                                    const validateFlow = createFlow();
+                                    const result = await handleRequestToken({
+                                        cache,
+                                        method: cache.method,
+                                        value: cache.value,
+                                        username: cache.username,
+                                        api: silentApi,
+                                    });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e) {
+                                    handleError(e);
+                                }
                             }}
                         />
                     </Content>
@@ -382,21 +438,33 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 });
 
                                 if (cache?.method === 'mnemonic') {
-                                    return handleNewPasswordMnemonic({
-                                        password: newPassword,
-                                        cache,
-                                    })
-                                        .then(handleResult)
-                                        .catch(handleError);
+                                    try {
+                                        const validateFlow = createFlow();
+                                        const result = await handleNewPasswordMnemonic({
+                                            password: newPassword,
+                                            cache,
+                                        });
+                                        if (validateFlow()) {
+                                            return await handleResult(result);
+                                        }
+                                    } catch (e) {
+                                        handleError(e);
+                                    }
                                 }
 
-                                return handleNewPassword({
-                                    password: newPassword,
-                                    api: silentApi,
-                                    cache,
-                                })
-                                    .then(handleResult)
-                                    .catch(handleError);
+                                try {
+                                    const validateFlow = createFlow();
+                                    const result = await handleNewPassword({
+                                        password: newPassword,
+                                        api: silentApi,
+                                        cache,
+                                    });
+                                    if (validateFlow()) {
+                                        return await handleResult(result);
+                                    }
+                                } catch (e) {
+                                    handleError(e);
+                                }
                             }}
                         />
                     </Content>

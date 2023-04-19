@@ -15,6 +15,7 @@ import {
     useMyLocation,
     useNotifications,
 } from '@proton/components';
+import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -22,6 +23,7 @@ import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username.json';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
+import { useFlowRef } from '../useFlowRef';
 import { useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
@@ -142,6 +144,8 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
+    const createFlow = useFlowRef();
+
     const handleBackStep = (() => {
         return (
             onBack ||
@@ -159,21 +163,25 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
                     method={method}
                     onChangeMethod={setMethod}
                     defaultCountry={defaultCountry}
-                    onSubmit={(data) => {
-                        const handleSubmit = async () => {
+                    onSubmit={async (data) => {
+                        try {
+                            const validateFlow = createFlow();
+                            await startUnAuthFlow();
                             const config = data.method === 'email' ? { Email: data.email } : { Phone: data.phone };
                             await silentApi(requestUsername(config));
-                            const text =
-                                data.method === 'email'
-                                    ? c('Success')
-                                          .t`If you entered a valid recovery email we will send you an email with your usernames in the next minute.`
-                                    : c('Success')
-                                          .t`If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.`;
-                            createNotification({ text });
-                            history.push('/login');
-                        };
-
-                        return handleSubmit().catch(errorHandler);
+                            if (validateFlow()) {
+                                const text =
+                                    data.method === 'email'
+                                        ? c('Success')
+                                              .t`If you entered a valid recovery email we will send you an email with your usernames in the next minute.`
+                                        : c('Success')
+                                              .t`If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.`;
+                                createNotification({ text });
+                                history.push('/login');
+                            }
+                        } catch (e: any) {
+                            errorHandler(e);
+                        }
                     }}
                 />
             </Content>
