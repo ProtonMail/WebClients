@@ -92,23 +92,34 @@ export const getExternalID = ({ ParsedHeaders }: Message) => {
     }
 };
 
+const EXTERNAL_ID_QUERY_CACHE = new Map<string, Promise<{ Total: number } | undefined>>();
+const getExternalIdQueryKey = (ExternalID: string, ConversationID: string) => `${ExternalID}-${ConversationID}`;
+
 /**
  * Check whether the given ExternalID exists in the given conversation
  */
 export const externalIDExists = async (ExternalID: string, ConversationID: string, api: Api) => {
-    const response = await apiHelper<{ Total: number }>(
-        api,
-        undefined,
-        {
-            method: 'get',
-            url: 'mail/v4/messages',
-            params: {
-                ExternalID,
-                ConversationID,
+    const cacheKey = getExternalIdQueryKey(ExternalID, ConversationID);
+    let promise = EXTERNAL_ID_QUERY_CACHE.get(cacheKey);
+
+    if (!promise) {
+        promise = apiHelper<{ Total: number }>(
+            api,
+            undefined,
+            {
+                method: 'get',
+                url: 'mail/v4/messages',
+                params: {
+                    ExternalID,
+                    ConversationID,
+                },
             },
-        },
-        'externalIDExists'
-    );
+            'externalIDExists'
+        );
+        EXTERNAL_ID_QUERY_CACHE.set(cacheKey, promise);
+    }
+
+    const response = await promise;
 
     return !!response && response.Total > 0;
 };
