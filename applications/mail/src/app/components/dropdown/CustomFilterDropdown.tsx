@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { ConditionComparator, ConditionType, Filter } from '@proton/components/containers/filters/interfaces';
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
-import { hasReachedFiltersLimit } from '@proton/shared/lib/filters/helpers';
+import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import identity from '@proton/utils/identity';
 

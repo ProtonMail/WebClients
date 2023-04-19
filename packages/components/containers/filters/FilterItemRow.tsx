@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
-import { hasReachedFiltersLimit } from '@proton/shared/lib/filters/helpers';
+import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
 import { DropdownActions, FiltersUpsellModal, OrderableTableRow, Toggle, useModalState } from '../../components';
 import { DropdownActionProps } from '../../components/dropdown/DropdownActions';

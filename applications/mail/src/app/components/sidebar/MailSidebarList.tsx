@@ -280,7 +280,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         title={c('Link').t`Folders`}
                         id="toggle-folders"
                         onFocus={setFocusedItem}
-                        right={<MailSidebarListActions type="folder" />}
+                        right={<MailSidebarListActions type="folder" items={folders || []} />}
                     />
                     {displayFolders && (
                         <SidebarFolders
@@ -301,7 +301,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         title={c('Link').t`Labels`}
                         id="toggle-labels"
                         onFocus={setFocusedItem}
-                        right={<MailSidebarListActions type="label" />}
+                        right={<MailSidebarListActions type="label" items={labels || []} />}
                     />
                     {displayLabels && (
                         <SidebarLabels
