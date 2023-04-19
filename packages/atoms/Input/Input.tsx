@@ -2,8 +2,6 @@ import { ComponentPropsWithRef, ReactNode, Ref, forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import './Input.scss';
-
 export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix'> {
     onValue?: (value: string) => void;
     disableChange?: boolean;
