@@ -17,6 +17,7 @@ import {
     useModals,
     useNotifications,
 } from '@proton/components';
+import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -79,6 +80,10 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+
+    useEffect(() => {
+        startUnAuthFlow().catch(noop);
+    }, []);
 
     useEffect(() => {
         if (!activeSessions) {
