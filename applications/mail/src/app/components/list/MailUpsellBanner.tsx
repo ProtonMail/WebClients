@@ -20,14 +20,13 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../constants';
 
-const { plansSelection, vpn, protonBusiness } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
+const { plansSelection, vpn, protonBusiness, drive } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
 enum UPSELL_MAIL_BANNER_LINK_ID {
     GET_MORE_STORAGE = 1,
     SEND_FROM_PM_ADDRESS = 3,
     GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES = 4,
     AUTO_REPLY = 5,
-    USE_PROTON_VPN = 6,
     THIRD_PARTY_CLIENTS = 7,
     GET_MORE_FEATURES = 9,
     INCREASE_STORAGE = 11,
@@ -37,7 +36,6 @@ enum UPSELL_MAIL_BANNER_LINK_ID {
     CONTACT_GROUPS = 18,
     PRIVACY_FIRST_INTERNET = 19,
     PRIVACY_FOR_ALL = 20,
-    STORE_AND_SHARE_FILES = 21,
     PREMIUM_FEATURES = 23,
     LVL_UP_PRIVACY = 24,
 }
@@ -288,22 +286,16 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
                 id: 19,
                 text: c('Info').t`Secure your files with encrypted cloud storage for free, today.`,
                 cta: (
-                    <SettingsLink
-                        path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.STORE_AND_SHARE_FILES)}
-                        className="text-bold link align-baseline color-inherit"
-                    >
-                        {callToActionTexts.upgrade}
-                    </SettingsLink>
+                    <Href href={drive} className="text-bold link align-baseline color-inherit">
+                        {callToActionTexts.learnMore}
+                    </Href>
                 ),
             },
             {
                 id: 20,
                 text: c('Info').t`You can use ${VPN_APP_NAME} for free, today.`,
                 cta: (
-                    <Href
-                        href={getLink(vpn, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_VPN)}
-                        className="text-bold link align-baseline color-inherit"
-                    >
+                    <Href href={vpn} className="text-bold link align-baseline color-inherit">
                         {callToActionTexts.learnMore}
                     </Href>
                 ),

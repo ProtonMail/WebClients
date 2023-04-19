@@ -155,6 +155,7 @@ export const MAIL_UPSELL_BANNERS_OPTIONS_URLS = {
     plansSelection: '/upgrade',
     protonBusiness: '/upgrade?business',
     vpn: getAppHref('/vpn/vpn-apps', APPS.PROTONACCOUNT),
+    drive: getAppHref('/', APPS.PROTONDRIVE),
 };
 
 export const restoringEncryptedMessagesURL = getKnowledgeBaseUrl('/recover-encrypted-messages-files');
