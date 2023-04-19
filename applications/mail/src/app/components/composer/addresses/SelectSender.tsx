@@ -37,7 +37,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     const addressesOptions = getFromAddresses(
         addresses,
-        message.draftFlags?.originalTo || message.draftFlags?.originalFrom
+        message.draftFlags?.originalTo || message.draftFlags?.originalFrom || message.data?.Sender.Address
     ).map((address) => (
         <Option
             value={address.Email}
