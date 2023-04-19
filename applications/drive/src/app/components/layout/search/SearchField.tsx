@@ -38,10 +38,6 @@ export const SearchField = () => {
     }, []);
 
     const handleFieldFocus = () => {
-        return prepareSearchData().catch(sendErrorReport);
-    };
-
-    const handleInputClick = () => {
         if (dbExists && !isEnablingEncryptedSearch) {
             return;
         }
@@ -53,8 +49,7 @@ export const SearchField = () => {
             return;
         }
         indexingDropdownControl.open();
-
-        return handleFieldFocus();
+        return prepareSearchData().catch(sendErrorReport);
     };
 
     const handleClosedDropdown = (e?: Event) => {
@@ -72,6 +67,17 @@ export const SearchField = () => {
 
     return (
         <div ref={indexingDropdownAnchorRef} className="searchfield-container">
+            {
+                // On Firefox, no event is fired when the input field is disabled.
+                // This is a small "hack" to open the spotlight when the user clicks on the disabled input.
+            }
+            {isEnablingEncryptedSearch ? (
+                <button
+                    className="searchfield-disabled-input-button"
+                    aria-label={c('Label').t`Show indexing progress of Encrypted Search`}
+                    onClick={() => indexingDropdownControl.open()}
+                />
+            ) : null}
             <Spotlight
                 className="search-spotlight"
                 originalPlacement="bottom-start"
@@ -94,62 +100,56 @@ export const SearchField = () => {
                 }
             >
                 <>
-                    <div onClick={handleInputClick} role="search">
-                        <Input
-                            value={searchParams}
-                            placeholder={placeholderText}
-                            // this handler has to be passed with `onFocus` prop, as before it used to trigger
-                            // caching twice in certain cases (the focus stayed on the searchbar after
-                            // indexing, the prepareSearchData is not called until the user hits enter
-                            // to do the search.)
-                            onFocus={handleFieldFocus}
-                            onChange={(e) => setSearchParams(e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter') {
+                    <Input
+                        value={searchParams}
+                        placeholder={placeholderText}
+                        onFocus={handleFieldFocus}
+                        onChange={(e) => setSearchParams(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                handleSearch(searchParams);
+                            }
+                            if (e.key === 'Escape') {
+                                setSearchParams('');
+                                e.currentTarget.blur();
+                            }
+                        }}
+                        disabled={isDisabled}
+                        prefix={
+                            <Button
+                                icon
+                                disabled={!searchParams || isDisabled}
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                className="rounded-sm"
+                                title={c('Action').t`Search`}
+                                onClick={() => {
                                     handleSearch(searchParams);
-                                }
-                                if (e.key === 'Escape') {
-                                    setSearchParams('');
-                                    e.currentTarget.blur();
-                                }
-                            }}
-                            disabled={isDisabled}
-                            prefix={
+                                }}
+                            >
+                                <Icon name="magnifier" alt={c('Action').t`Search`} />
+                            </Button>
+                        }
+                        suffix={
+                            searchParams ? (
                                 <Button
-                                    icon
-                                    disabled={!searchParams || isDisabled}
+                                    type="button"
                                     shape="ghost"
                                     color="weak"
                                     size="small"
                                     className="rounded-sm"
-                                    title={c('Action').t`Search`}
+                                    title={c('Action').t`Clear`}
                                     onClick={() => {
-                                        handleSearch(searchParams);
+                                        setSearchParams('');
+                                        handleSearch('');
                                     }}
                                 >
-                                    <Icon name="magnifier" alt={c('Action').t`Search`} />
+                                    {c('Action').t`Clear`}
                                 </Button>
-                            }
-                            suffix={
-                                searchParams ? (
-                                    <Button
-                                        type="button"
-                                        shape="ghost"
-                                        color="weak"
-                                        size="small"
-                                        className="rounded-sm"
-                                        title={c('Action').t`Clear`}
-                                        onClick={() => {
-                                            setSearchParams('');
-                                            handleSearch('');
-                                        }}
-                                    >
-                                        {c('Action').t`Clear`}
-                                    </Button>
-                                ) : null
-                            }
-                        />
-                    </div>
+                            ) : null
+                        }
+                    />
                     <SearchDropdown
                         isOpen={indexingDropdownControl.isOpen}
                         anchorRef={indexingDropdownAnchorRef}
