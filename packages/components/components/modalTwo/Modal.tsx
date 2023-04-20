@@ -1,11 +1,12 @@
-import { ElementType, createContext, useLayoutEffect, useRef, useState } from 'react';
-import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
+import { type ElementType, createContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { type PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
+import clsx from '@proton/utils/clsx';
 
-import { classnames, generateUID } from '../../helpers';
+import { generateUID } from '../../helpers';
 import { useHotkeys } from '../../hooks';
 import Dialog from '../dialog/Dialog';
 import { useFocusTrap } from '../focus';
@@ -48,15 +49,27 @@ export interface ModalOwnProps {
      */
     id?: string;
     /**
+     * Allow an additional classname on the root element
+     */
+    rootClassName?: string;
+    /**
      * Fires when the user clicks on the close button or when he
      * presses the escape key, unless 'disableCloseOnEscape' is
      * set to true.
      */
     onClose?: () => void;
     /**
+     * Fires when the Modal has finished its enter animation.
+     */
+    onEnter?: () => void;
+    /**
      * Fires when the Modal has finished its exit animation.
      */
     onExit?: () => void;
+    /**
+     * Fires when the user clicks on the backdrop outside of the Dialog
+     */
+    onBackdropClick?: () => void;
 }
 
 enum ExitState {
@@ -75,15 +88,20 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     fullscreenOnMobile,
     fullscreen,
     onClose,
+    onEnter,
     onExit,
+    onBackdropClick,
+    onAnimationEnd,
     disableCloseOnEscape,
     className,
+    rootClassName,
     behind,
     as,
     ...rest
 }: PolymorphicPropsWithoutRef<ModalOwnProps, E>) => {
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const id = useInstance(() => generateUID('modal'));
+    const backdropRef = useRef<HTMLDivElement>(null);
     const dialogRef = useRef(null);
 
     const active = exit !== ExitState.exited;
@@ -129,6 +147,33 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         { dependencies: [active, disableCloseOnEscape] }
     );
 
+    /* Relying on a `click` event listener is unsufficient :
+     * - user might hold his mouse down and try to cancel the
+     * backdrop click by moving away from the backdrop for the
+     * mouse up.
+     * - `mousedown` will trigger before the `click` event and we
+     * may lose focus on any child field currently focused */
+    useEffect(() => {
+        if (!active) {
+            return;
+        }
+        const handleBackdropMouseDown = (mouseDownEvt: MouseEvent) => {
+            /* prevents focus loss when mouse down on backdrop */
+            if (mouseDownEvt.target === backdropRef.current) {
+                mouseDownEvt.preventDefault();
+                backdropRef.current?.addEventListener(
+                    'mouseup',
+                    (mouseUpEvt) => mouseUpEvt.target === backdropRef.current && onBackdropClick?.(),
+                    { once: true }
+                );
+            }
+        };
+
+        backdropRef.current?.addEventListener('mousedown', handleBackdropMouseDown);
+
+        return () => backdropRef.current?.removeEventListener('mousedown', handleBackdropMouseDown);
+    }, [onBackdropClick, active]);
+
     if (!active) {
         return null;
     }
@@ -139,14 +184,19 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     return (
         <Portal>
             <div
-                className={classnames([
+                ref={backdropRef}
+                className={clsx([
                     modalTwoRootClassName,
+                    rootClassName,
                     exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
                     (!last || behind) && 'modal-two--is-behind-backdrop',
                 ])}
                 onAnimationEnd={({ animationName }) => {
+                    if (animationName === 'anime-modal-two-in') {
+                        onEnter?.();
+                    }
                     if (exiting && animationName === 'anime-modal-two-out') {
                         setExit(ExitState.exited);
                         onExit?.();
@@ -158,7 +208,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     aria-labelledby={id}
                     aria-describedby={`${id}-description`}
                     {...focusTrapProps}
-                    className={classnames([
+                    className={clsx([
                         'modal-two-dialog outline-none',
                         className,
                         size === 'small' && 'modal-two-dialog--small',

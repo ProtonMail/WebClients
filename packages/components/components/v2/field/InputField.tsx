@@ -47,6 +47,7 @@ export interface InputFieldOwnProps {
     rootRef?: Ref<HTMLDivElement>;
     labelContainerClassName?: string;
     assistContainerClassName?: string;
+    inputContainerClassName?: string;
     'data-testid'?: string;
 }
 
@@ -69,6 +70,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         rootClassName,
         labelContainerClassName,
         assistContainerClassName,
+        inputContainerClassName,
         warning,
         suffix,
         as,
@@ -97,7 +99,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             'field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end gap-2',
             labelContainerClassName,
         ]),
-        inputContainer: 'field-two-input-container relative',
+        inputContainer: classnames(['field-two-input-container relative', inputContainerClassName]),
         assistContainer: classnames([
             'field-two-assist flex flex-nowrap flex-align-items-start',
             isDense && 'sr-only',

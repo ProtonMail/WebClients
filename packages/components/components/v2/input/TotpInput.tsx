@@ -20,6 +20,7 @@ interface TotpInputProps {
     error?: ReactNode | boolean;
     onValue: (value: string) => void;
     type?: 'number' | 'alphabet';
+    inputType?: string;
     disableChange?: boolean;
     autoFocus?: boolean;
     autoComplete?: 'one-time-code';
@@ -50,6 +51,7 @@ const TotpInput = ({
     onValue,
     id,
     type = 'number',
+    inputType,
     disableChange,
     autoFocus,
     autoComplete,
@@ -150,7 +152,7 @@ const TotpInput = ({
                                         : undefined),
                                 },
                             }}
-                            type={type === 'number' ? 'tel' : 'text'}
+                            type={inputType ?? (type === 'number' ? 'tel' : 'text')}
                             inputMode={type === 'number' ? 'numeric' : undefined}
                             inputClassName="text-center p-0 flex-item-noshrink"
                             maxLength={1}
