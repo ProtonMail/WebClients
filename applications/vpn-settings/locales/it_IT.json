@@ -1597,6 +1597,12 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Per favore ${ refresh } o controlla la tua connessione internet."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Si prega di ${ refresh } o riprovare più tardi."
+      ],
       "Something went wrong": [
         "Qualcosa è andato storto"
       ]
@@ -2199,6 +2205,9 @@
       ],
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
+      ],
+      "Preview for this file type is not supported": [
+        "L'anteprima per questo tipo di file non è supportata"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
@@ -3697,6 +3706,9 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
       ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti non-${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
+      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
       ]
@@ -3753,7 +3765,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        "Benvenuto in ${ VPN_APP_NAME }"
+        "Ti diamo il benvenuto in ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
