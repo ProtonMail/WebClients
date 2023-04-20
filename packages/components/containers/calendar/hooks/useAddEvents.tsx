@@ -3,13 +3,11 @@ import { useCallback } from 'react';
 import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
-import { FeatureCode } from '../..';
-import { useApi, useFeature, useGetCalendarInfo } from '../../../hooks';
+import { useApi, useGetCalendarInfo } from '../../../hooks';
 
 const useAddEvents = () => {
     const api = useApi();
     const getCalendarInfo = useGetCalendarInfo();
-    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
 
     return useCallback(
         async ({
@@ -27,7 +25,6 @@ const useAddEvents = () => {
                 addressKeys,
                 calendarID,
                 calendarKeys,
-                personalEventsDeprecated,
             });
         },
         []
