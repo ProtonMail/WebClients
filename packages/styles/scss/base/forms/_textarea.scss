@@ -56,4 +56,14 @@
 		// fixes some Firefox issues with HTML5 validation
 		box-shadow: none;
 	}
+
+	&.unstyled {
+		&#{&} {
+			border-color: transparent;
+			border-radius: 0;
+			box-shadow: none;
+			background-color: transparent;
+			transition: none;
+		}
+	}
 }

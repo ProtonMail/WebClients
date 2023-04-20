@@ -4,7 +4,7 @@
     "scripts": {
         "build": "webpack-cli",
         "check-types": "tsc",
-        "generate": "ts-node --skipProject gen-themes",
+        "generate": "ts-node --skipProject gen-themes-cli",
         "lint": "eslint . --ext ts --quiet --cache",
         "test": "jest --coverage --runInBand --ci",
         "test:dev": "jest --watch"
