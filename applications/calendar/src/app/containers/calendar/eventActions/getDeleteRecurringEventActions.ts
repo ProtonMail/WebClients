@@ -32,7 +32,6 @@ interface DeleteRecurringArguments {
     recurrences: CalendarEvent[];
     originalEditEventData: EventOldData;
     oldEditEventData: EventOldData;
-    personalEventsDeprecated: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
@@ -53,7 +52,6 @@ export const getDeleteRecurringEventActions = async ({
         memberID: originalMemberID,
     },
     oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
-    personalEventsDeprecated,
     isAttendee,
     inviteActions,
     selfAttendeeToken,
@@ -90,7 +88,6 @@ export const getDeleteRecurringEventActions = async ({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
-            personalEventsDeprecated,
             isAttendee,
         });
 
@@ -129,7 +126,6 @@ export const getDeleteRecurringEventActions = async ({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
-            personalEventsDeprecated,
             isAttendee,
         });
 
