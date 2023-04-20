@@ -50,12 +50,13 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
         /* here we don't use tiny.mostReadable to prioritize white against black color. */
         const buttonContrast = tiny(tiny.isReadable(base, 'white', { level: 'AA', size: 'large' }) ? 'white' : 'black');
 
+        // use original input when color contains alpha channel (opacity, eg. rgba)
         const declarations = [...buttonShades, buttonContrast].map((color, i) =>
             list.createItem({
                 type: 'Declaration',
                 important: false,
                 property: '--' + baseName + buttonShadeNames[i],
-                value: { type: 'Raw', value: color.toHexString() },
+                value: { type: 'Raw', value: color.getAlpha() == 1 ? color.toHexString() : color.toString() },
             })
         );
 

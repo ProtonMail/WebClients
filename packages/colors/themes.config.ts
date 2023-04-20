@@ -86,6 +86,31 @@ const config: ThemeConfig[] = [
             },
         ],
     },
+    {
+        output: './themes/dist/pass.theme.css',
+        files: [
+            {
+                path: './themes/src/pass/standard-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/pass/login-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/pass/alias-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/pass/note-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/pass/password-base.css',
+                type: 'dark',
+            },
+        ],
+    },
 ];
 
 export default config;
