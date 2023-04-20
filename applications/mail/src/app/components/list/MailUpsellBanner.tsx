@@ -3,17 +3,9 @@ import { MutableRefObject, ReactNode, useEffect, useMemo, useState } from 'react
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import {
-    MailShortcutsModal,
-    Price,
-    PromotionBanner,
-    SettingsLink,
-    useModalState,
-    usePlans,
-    useTheme,
-} from '@proton/components';
+import { MailShortcutsModal, PromotionBanner, SettingsLink, useModalState, useTheme } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
@@ -52,30 +44,12 @@ interface Props {
     columnMode: boolean;
 }
 const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
-    const [plans = [], loadingPlans] = usePlans();
     const [theme] = useTheme();
 
     const [option, setOption] = useState<MessageOption>();
 
     const [mailShortcutsProps, setMailShortcutsModalOpen, renderShortcutModal] = useModalState();
     const [themesModalProps, setThemesModalOpen, renderThemesModal] = useModalState();
-
-    const getPrice = () => {
-        const [{ Currency } = { Currency: undefined }] = plans;
-
-        const plusPlan = plans.find((plan) => plan.Name === PLANS.MAIL);
-        const price = plusPlan ? plusPlan.Pricing['12'] / 12 : 0;
-
-        return (
-            <Price key="plan-price" currency={Currency}>
-                {price}
-            </Price>
-        );
-    };
-
-    const planPrice = useMemo(() => {
-        return getPrice();
-    }, [loadingPlans]);
 
     const encounteredMessagesIDs = getItem('WelcomePaneEncounteredMessages');
 
@@ -94,18 +68,6 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
 
     const messagesOptions: MessageOption[] = useMemo(
         () => [
-            {
-                id: 0,
-                text: c('Info').t`Get more storage and premium features.`,
-                cta: (
-                    <SettingsLink
-                        path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_STORAGE)}
-                        className="text-bold link align-baseline color-inherit"
-                    >
-                        {callToActionTexts.upgrade}
-                    </SettingsLink>
-                ),
-            },
             {
                 id: 2,
                 text: c('Info').t`Upgrade to send email from @pm.me addresses.`,
@@ -163,23 +125,6 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
                 cta: (
                     <SettingsLink
                         path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_FEATURES)}
-                        className="text-bold link align-baseline color-inherit"
-                    >
-                        {callToActionTexts.upgrade}
-                    </SettingsLink>
-                ),
-            },
-            {
-                id: 9,
-                /*
-                 * translator: Upsell message containing the price of the Plus plan
-                 * ${planPrice}: Price of the plus plan in the user currency
-                 * Full sentence for reference: "Increase storage space starting at CHF 3.99 per month"
-                 */
-                text: c('Info').jt`Increase storage space starting at ${planPrice} per month.`,
-                cta: (
-                    <SettingsLink
-                        path={getLink(plansSelection, UPSELL_MAIL_BANNER_LINK_ID.INCREASE_STORAGE)}
                         className="text-bold link align-baseline color-inherit"
                     >
                         {callToActionTexts.upgrade}
@@ -325,7 +270,7 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
                 ),
             },
         ],
-        [loadingPlans]
+        []
     ).filter(isTruthy);
 
     const getRandomOption = (): MessageOption => {
@@ -356,13 +301,11 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
 
     useEffect(() => {
         try {
-            if (!loadingPlans) {
-                setOption(getRandomOption());
-            }
+            setOption(getRandomOption());
         } catch (e: any) {
             console.error(e);
         }
-    }, [loadingPlans]);
+    }, []);
 
     useEffect(() => {
         // On banner unmount, set the ref to false so that we don't show the banner anymore
@@ -376,7 +319,6 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
             <PromotionBanner
                 description={option?.text}
                 cta={option?.cta}
-                loading={loadingPlans}
                 contentCentered={!columnMode}
                 data-testid="promotion-banner"
             />
