@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import {
-    FeatureCode,
     useAddresses,
     useApi,
     useContactEmails,
     useEventManager,
-    useFeature,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
@@ -77,7 +75,6 @@ const ExtraEvents = ({ message }: Props) => {
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
-    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
 
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [loadedWidget, setLoadedWidget] = useState('');
@@ -278,7 +275,6 @@ const ExtraEvents = ({ message }: Props) => {
                         getCalendarInfo={getCalendarInfo}
                         getCalendarEventRaw={getCalendarEventRaw}
                         getCanonicalEmailsMap={getCanonicalEmailsMap}
-                        personalEventsDeprecated={personalEventsDeprecated}
                     />
                 );
             })}

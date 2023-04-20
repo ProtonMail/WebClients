@@ -88,7 +88,6 @@ const MainContainer = () => {
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.EasySwitch,
-        FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);

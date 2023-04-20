@@ -114,7 +114,6 @@ interface Arguments {
     getCalendarKeys: GetCalendarKeys;
     getEventDecrypted: GetDecryptedEventCb;
     inviteActions: InviteActions;
-    personalEventsDeprecated: boolean;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
@@ -132,7 +131,6 @@ const getDeleteEventActions = async ({
     getAddressKeys,
     getCalendarKeys,
     inviteActions,
-    personalEventsDeprecated,
     sendIcs,
 }: Arguments): Promise<{
     syncActions: SyncEventActionOperations[];
@@ -247,7 +245,6 @@ const getDeleteEventActions = async ({
         recurrences,
         originalEditEventData,
         oldEditEventData,
-        personalEventsDeprecated,
         isAttendee,
         inviteActions: updatedInviteActions,
         selfAttendeeToken,

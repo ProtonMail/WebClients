@@ -54,7 +54,6 @@ interface SaveRecurringArguments {
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
     canEditOnlyNotifications: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
@@ -91,7 +90,6 @@ const getSaveRecurringEventActions = async ({
     getCalendarKeys,
     inviteActions,
     hasDefaultNotifications,
-    personalEventsDeprecated,
     canEditOnlyNotifications,
     isAttendee,
     sendIcs,
@@ -128,7 +126,6 @@ const getSaveRecurringEventActions = async ({
                       veventComponent: originalVeventWithSequence,
                       calendarEvent: originalEvent,
                       hasDefaultNotifications,
-                      personalEventsDeprecated,
                       isAttendee,
                   }),
               ]
@@ -185,7 +182,6 @@ const getSaveRecurringEventActions = async ({
                 veventComponent: newVeventWithSequence,
                 calendarEvent: oldEvent,
                 hasDefaultNotifications,
-                personalEventsDeprecated,
                 isAttendee,
             });
 
@@ -213,7 +209,6 @@ const getSaveRecurringEventActions = async ({
         const createOperation = getCreateSyncOperation({
             veventComponent: withUpdatedDtstampAndSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent),
             hasDefaultNotifications,
-            personalEventsDeprecated,
         });
 
         return {
@@ -260,13 +255,11 @@ const getSaveRecurringEventActions = async ({
             ),
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
-            personalEventsDeprecated,
             isAttendee,
         });
         const createOperation = getCreateSyncOperation({
             veventComponent: createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence),
             hasDefaultNotifications,
-            personalEventsDeprecated,
         });
 
         const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
@@ -410,7 +403,6 @@ const getSaveRecurringEventActions = async ({
             veventComponent: updatedVeventComponent,
             calendarEvent: originalEvent,
             hasDefaultNotifications,
-            personalEventsDeprecated,
             isAttendee,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,

@@ -36,7 +36,6 @@ export interface CreateEventActionOperation {
     data: {
         veventComponent: VcalVeventComponent;
         hasDefaultNotifications: boolean;
-        personalEventsDeprecated: boolean;
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
     };
 }
@@ -46,7 +45,6 @@ export interface UpdateEventActionOperation {
         calendarEvent: CalendarEvent;
         veventComponent: VcalVeventComponent;
         hasDefaultNotifications: boolean;
-        personalEventsDeprecated: boolean;
         isAttendee: boolean;
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
@@ -84,7 +82,6 @@ export const getIsCreateSyncOperation = (
 export const getCreateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): CreateEventActionOperation => ({
     type: SyncOperationTypes.CREATE,
@@ -94,7 +91,6 @@ export const getUpdateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
     calendarEvent: CalendarEvent;
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
     isAttendee: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
@@ -177,15 +173,13 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             };
 
             if (getIsCreateSyncOperation(operation)) {
-                const { hasDefaultNotifications, personalEventsDeprecated, addedAttendeesPublicKeysMap } =
-                    operation.data;
+                const { hasDefaultNotifications, addedAttendeesPublicKeysMap } = operation.data;
 
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
                     isCreateEvent: true,
                     isSwitchCalendar: false,
                     hasDefaultNotifications,
-                    personalEventsDeprecated,
                     addedAttendeesPublicKeysMap,
                     ...(await getCreationKeys({ newAddressKeys, newCalendarKeys })),
                 });
@@ -209,7 +203,6 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 const {
                     calendarEvent,
                     hasDefaultNotifications,
-                    personalEventsDeprecated,
                     isAttendee,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
@@ -232,7 +225,6 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     isCreateEvent: false,
                     isSwitchCalendar,
                     hasDefaultNotifications,
-                    personalEventsDeprecated,
                     isAttendee,
                     ...(await getCreationKeys({
                         calendarEvent,
