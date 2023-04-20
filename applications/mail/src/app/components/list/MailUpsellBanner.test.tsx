@@ -9,6 +9,7 @@ import MailUpsellBanner from './MailUpsellBanner';
 const props = {
     columnMode: true,
     needToShowUpsellBanner: { current: true },
+    onClose: jest.fn(),
 };
 
 describe('Mail upsell banner', () => {
