@@ -1,0 +1,16 @@
+.pass-searchbar {
+	--field-background-color: var(--background-strong);
+	--field-hover-background-color: var(--field-background-color);
+	--field-focus-background-color: var(--search-field-focus-background);
+	--field-norm: var(--border-norm);
+	--field-hover: var(--border-norm);
+	--field-focus: var(--focus-outline);
+
+	input {
+		padding-block: 0.375rem;
+	}
+
+	.field-two-input-adornment {
+		color: var(--text-norm);
+	}
+}

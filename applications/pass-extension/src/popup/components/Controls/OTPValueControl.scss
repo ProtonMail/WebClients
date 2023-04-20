@@ -1,0 +1,38 @@
+@import '~@proton/styles/scss/lib';
+
+// FIXME: this is hacking around the
+// donut component to achieve our OTP
+// countdown effect
+.pass-otp--donut {
+	display: block;
+	inline-size: rem(36);
+	block-size: rem(36);
+	position: relative;
+
+	&::before {
+		content: var(--countdown-value);
+		inset-block: 0;
+		margin: auto;
+		inline-size: 100%;
+		block-size: rem(12);
+		line-height: rem(12);
+		font-size: rem(12);
+		position: absolute;
+		text-align: center;
+		color: var(--text-weak);
+	}
+
+	svg {
+		transform: scaleX(-1);
+
+		mask {
+			rect:last-of-type {
+				fill: transparent;
+			}
+		}
+
+		circle {
+			stroke-width: rem(15);
+		}
+	}
+}
