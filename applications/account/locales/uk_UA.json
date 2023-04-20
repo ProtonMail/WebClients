@@ -2631,7 +2631,7 @@
     },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Автоматично очищуйте повідомлення, яким понад 30 днів, зі спаму та смітника. Скористайтеся цими та іншими перевагами після передплати."
+        "Автоматично очищуйте повідомлення зі спаму та смітника через 30 днів. Скористайтеся цими та іншими перевагами після передплати."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Вітаємо! Ви зібрали максимум з ${ rewardsLimit } безплатних місяців користування ${ plusPlanName }."
@@ -3524,8 +3524,20 @@
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } або перевірте своє інтернет-з'єднання."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh }, або спробуйте знову пізніше."
+      ],
+      "Something went wrong": [
+        "Виникла проблема"
+      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Занадто багато дочірніх сеансів. Будь ласка, очистьте куки й увійдіть знову."
+      ],
+      "We couldn't load this page. ": [
+        "Не вдається завантажити цю сторінку. "
       ]
     },
     "Error message, recovery": {
@@ -3940,7 +3952,7 @@
         "Автоматично переслати"
       ],
       "Gmail messages to your inbox": [
-        "Повідомлення Gmail до вашої вхідної скриньки"
+        "Повідомлення Gmail до вашої поштової скриньки"
       ],
       "Sign in with Google": [
         "Увійти за допомогою Google"
@@ -8800,6 +8812,9 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Коли ви під'єднані до нашої мережі VPN, усі DNS-запити проходять через зашифрований VPN-тунель, вдосконалюючи вашу приватність і безпеку онлайн"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Під час надсилання іншим користувачам ${ MAIL_APP_NAME }, шифрування відбувається автоматично. Щоб надіслати користувачам поза ${ MAIL_APP_NAME_TWO }, необхідно налаштувати пароль заздалегідь."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак лише основний адміністратор може контролювати платежі."

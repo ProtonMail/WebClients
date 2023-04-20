@@ -392,6 +392,11 @@
         "5 utilizadores"
       ]
     },
+    "Billing cycle": {
+      "Renews automatically on ${ formattedEndTime }": [
+        "Renova automaticamente em ${ formattedEndTime }"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 mês"
@@ -1506,8 +1511,16 @@
       ]
     },
     "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com uma chave de segurança física U2F ou FIDO2."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
       ]
     },
     "file size format": {
@@ -1886,7 +1899,7 @@
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
       "Total email addresses": [
-        "Total de endereços de correio electrónico"
+        "Total de endereços electrónicos"
       ],
       "Total storage": [
         "Total de armazenamento"
@@ -2272,6 +2285,9 @@
       "Proration": [
         "Repartição"
       ],
+      "Recovery email address": [
+        "Correio electrónico de recuperação"
+      ],
       "Recovery phone number": [
         "Número de telefone de recuperação"
       ],
@@ -2466,6 +2482,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendários"
+      ],
       "${ n } custom email domain": [
         "${ n } domínio de correio electrónico personalizado",
         "${ n } domínios de correio electrónico personalizados"
@@ -2497,8 +2517,14 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "Advanced sharing security": [
+        "Segurança avançada de partilha"
+      ],
       "Auto-reply": [
         "Resposta automática"
+      ],
+      "Calendar sharing": [
+        "Partilha de calendário"
       ],
       "Catch-all": [
         "Catch-all"
@@ -2509,6 +2535,9 @@
       "Custom email domains": [
         "Domínios de correio electrónico personalizados"
       ],
+      "DNS leak prevention": [
+        "Proteção contra vazamento de DNS"
+      ],
       "Easy Switch import assistant": [
         "Assistente de importação Easy Switch"
       ],
@@ -2518,14 +2547,23 @@
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
       ],
+      "Encrypted VPN servers": [
+        "Servidores VPN criptografados"
+      ],
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
       "HTML signatures": [
         "Assinaturas HTML"
       ],
+      "Kill switch/always-on VPN": [
+        "Kill switch/VPN sempre ligada"
+      ],
       "Limited support": [
         "Apoio ao cliente limitado"
+      ],
+      "NetShield malware and ad-blocker": [
+        "Bloqueador de anúncios e de malware NetShield"
       ],
       "Password-protected Emails": [
         "Correios electrónicos protegidos por palavra-passe"
@@ -2533,14 +2571,26 @@
       "Priority support": [
         "Apoio ao cliente prioritário"
       ],
+      "Router support": [
+        "Suporte para router"
+      ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
+      "Share files and folders via link": [
+        "Compartilhe arquivos e pastas com uma ligação"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Tunelamento dividido (Android e Windows)"
+      ],
       "Strict no-logs policy": [
         "Política estrita sem diários"
+      ],
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
@@ -2559,11 +2609,28 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Largura de banda e volume ilimitados"
+      ],
+      "Worldwide streaming services": [
+        "Serviços de streaming internacionais"
       ]
     },
     "new_plans: heading": {
       "Support": [
         "Apoio ao cliente"
+      ]
+    },
+    "new_plans: info": {
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Correio electrónico seguro com características avançadas para as suas comunicações diárias."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "A conta inicial gratuita criada para oferecer privacidade a todos por defeito."
       ]
     },
     "new_plans: Label": {
@@ -2693,6 +2760,9 @@
     "Recovery Email": {
       "Cancel": [
         "Cancelar"
+      ],
+      "Email address has been verified.": [
+        "O endereço de correio electrónico foi verificado."
       ]
     },
     "Recovery method": {
@@ -2805,7 +2875,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Gravar"
+        "Poupe"
       ]
     },
     "Success": {
@@ -2870,6 +2940,14 @@
       ],
       "/user per month": [
         "/utilizador por mês"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "Para empresas"
+      ],
+      "For individuals": [
+        "Para indivíduos"
       ]
     },
     "TableHeader": {
@@ -3005,6 +3083,9 @@
       ],
       "Downloads": [
         "Transferências"
+      ],
+      "Duration": [
+        "Duração"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -3159,6 +3240,9 @@
       "Switch to two-password mode": [
         "Mudar para modo de palavra-passe dupla"
       ],
+      "Total paid": [
+        "Total pago"
+      ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
       ],
@@ -3236,6 +3320,10 @@
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } em ${ numberOfCountries } país",
+        "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
     "Warning": {

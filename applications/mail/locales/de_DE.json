@@ -3624,8 +3624,14 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Bitte ${ refresh } oder überprüfe deine Internetverbindung."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Bitte ${ refresh } oder versuche es später erneut."
+      ],
       "Something went wrong": [
-        "Etwas ist schief gelaufen"
+        "Etwas ist schief gelaufen."
       ],
       "We couldn't load this page. ": [
         "Diese Seite konnte nicht geladen werden. "
@@ -3959,6 +3965,9 @@
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatisch weiterleiten"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail Nachrichten in deinen Posteingang"
       ],
       "Sign in with Google": [
         "Mit Google anmelden"
