@@ -31,6 +31,12 @@
       "Add address": [
         "Adres toevoegen"
       ],
+      "Add Bcc recipients": [
+        "Voeg BCC-ontvangers toe"
+      ],
+      "Add Cc recipients": [
+        "Voeg CC-ontvangers toe"
+      ],
       "Add condition": [
         "Voorwaarde toevoegen"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Bèta toegang"
       ],
+      "Blind Carbon Copy": [
+        "Blind Carbon Copy"
+      ],
       "Block": [
         "Blokkeer"
       ],
@@ -129,6 +138,9 @@
       ],
       "Cancel": [
         "Annuleren"
+      ],
+      "Carbon Copy": [
+        "Carbon Copy"
       ],
       "Change page": [
         "Pagina veranderen"
@@ -168,6 +180,9 @@
       ],
       "Close": [
         "Sluiten"
+      ],
+      "Close & discard": [
+        "Sluit & verwijder"
       ],
       "Close composer": [
         "Opstelvenster sluiten"
@@ -936,6 +951,9 @@
       ],
       "Show preview": [
         "Voorbeeld tonen"
+      ],
+      "Show side panel": [
+        "Toon zijpaneel"
       ],
       "Sign in": [
         "Inloggen"
@@ -2784,6 +2802,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } via instellingen."
       ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Verwijder automatisch berichten van de prullenbak of spam die ouder zijn dan 30 dagen. Geniet hiervan en van andere voordelen wanneer u upgrade."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -2811,6 +2832,9 @@
       ],
       "No labels": [
         "Geen labels"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail logo en een plus teken"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -2978,6 +3002,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } voor <${ email }>. U kunt een andere sleutel toevoegen of de versleuteling voor dit contact uitschakelen om het probleem op te lossen."
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -4271,6 +4298,12 @@
         "${ embeddedAttachmentsCount } ingesloten afbeelding",
         "${ embeddedAttachmentsCount } ingesloten afbeeldingen"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: afbeelding op volledige grootte"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: voorbeeld in lage resolutie"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
@@ -4481,6 +4514,12 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Automatisch berichten verwijderen die al 30 of meer dagen in de spam zitten."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Automatisch berichten verwijderen die al 30 of meer dagen in de prullenbak zitten."
+      ],
       "Background color": [
         "Achtergrondkleur"
       ],
@@ -4684,6 +4723,17 @@
       "Expiration time": [
         "Vervaltijd"
       ],
+      "Expires in ${ formattedDate }": [
+        "Verloopt over ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Verloopt over ${ minutesDiff } minuut",
+        "Verloopt over ${ minutesDiff } minuten"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Verloopt over minder dan ${ hoursDiff } uur",
+        "Verloopt over minder dan ${ hoursDiff } uur"
+      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4879,6 +4929,12 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Bericht zal morgen worden verzonden om ${ formattedTime }"
       ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Berichten die meer dan 30 dagen in de spam zitten worden automatisch verwijderd."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Berichten die meer dan 30 dagen in de prullenbak zitten worden automatisch verwijderd."
+      ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ],
@@ -4935,6 +4991,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
+      ],
+      "Normal": [
+        "Normaal"
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -5000,6 +5059,9 @@
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
+      "Preview for this file type is not supported": [
+        "Voorbeeld wordt niet ondersteund voor dit bestandstype"
+      ],
       "Primary": [
         "Primair"
       ],
@@ -5057,6 +5119,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Duurt de zoekopdracht te lang? ${ dropdownButton } of ${ toggleOffButton } van deze zoeksessie."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Beveilig vandaag nog gratis uw bestanden met versleutelde cloudopslag."
+      ],
       "Seems like you are all caught up for now": [
         "Het lijkt erop dat u helemaal bij bent voor nu"
       ],
@@ -5083,6 +5148,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -5146,6 +5214,9 @@
       ],
       "The local database is being prepared": [
         "De lokale database wordt voorbereid"
+      ],
+      "The message has expired": [
+        "Het bericht is verlopen"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
@@ -5230,6 +5301,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Dit bericht is ondertekend door de bijgevoegde sleutel, die nog niet als vertrouwd is aangemerkt."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Dit bericht wordt automatisch verwijderd op ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Dit bericht wordt automatisch verwijderd op ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Dit bericht wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
         "Deze berichten worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
@@ -5254,6 +5331,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Dit bericht verloopt op ${ formattedDate }"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "Dit bericht verloopt over ${ longDateMEssage }"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "Dit bericht verloopt vandaag om ${ shortDateMessage }"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Dit bericht verloopt morgen om ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
@@ -5312,8 +5398,17 @@
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
       ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Upgrade om automatisch berichten te verwijderen die al 30 of meer dagen in de spam zitten."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Upgrade om automatisch berichten te verwijderen die al 30 of meer dagen in de prullenbak zitten."
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgrade om meer mappen, filters en adressen te maken."
+      ],
+      "Upgrade to level up your privacy.": [
+        "Upgrade om up privacy naar een hoger niveau te tillen."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Upgrade om e-mails te versturen van @pm.me adressen."
@@ -5377,6 +5472,9 @@
       ],
       "Week": [
         "Week"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Wanneer wilt u dat uw bericht automatische wordt verwijderd van de ontvangers inbox en uw Verzonden map?"
       ],
       "When do you want your message to be sent?": [
         "Wanneer wilt u dat uw bericht wordt verzonden?"
@@ -6798,6 +6896,9 @@
       ]
     },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automatisch spam en verwijderde berichten verwijderen"
+      ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
@@ -7185,6 +7286,12 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
       ]
     },
     "Reply to calendar invitation": {
@@ -8052,6 +8159,9 @@
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"
+      ],
+      "Clear out the junk": [
+        "Spam opruimen"
       ],
       "Clearing data": [
         "Data aan het wissen"

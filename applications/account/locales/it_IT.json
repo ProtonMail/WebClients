@@ -1013,6 +1013,12 @@
       ]
     },
     "Animation": {
+      "5 trackers removed": [
+        "5 tracciatori rimossi"
+      ],
+      "Auto forwarded": [
+        "Inoltro automatico"
+      ],
       "Email received": [
         "Email ricevuta"
       ],
@@ -2617,6 +2623,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail e un segno più"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
@@ -3475,6 +3484,12 @@
       ],
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Per favore ${ refresh } o controlla la tua connessione internet."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Si prega di ${ refresh } o riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -5433,6 +5448,9 @@
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
       ],
+      "Preview for this file type is not supported": [
+        "L'anteprima per questo tipo di file non è supportata"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
       ],
@@ -5516,6 +5534,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Inviato con l'email sicura <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Il server è attualmente offline"
@@ -8564,6 +8585,9 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
       ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti non-${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
+      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
       ]
@@ -8720,7 +8744,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        "Benvenuto in ${ VPN_APP_NAME }"
+        "Ti diamo il benvenuto in ${ VPN_APP_NAME }"
       ]
     },
     "Option": {

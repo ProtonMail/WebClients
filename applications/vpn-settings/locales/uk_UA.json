@@ -1604,6 +1604,18 @@
       ],
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } або перевірте своє інтернет-з'єднання."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh }, або спробуйте знову пізніше."
+      ],
+      "Something went wrong": [
+        "Виникла проблема"
+      ],
+      "We couldn't load this page. ": [
+        "Не вдається завантажити цю сторінку. "
       ]
     },
     "Error notification": {
@@ -3764,6 +3776,9 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Коли ви під'єднані до нашої мережі VPN, усі DNS-запити проходять через зашифрований VPN-тунель, вдосконалюючи вашу приватність і безпеку онлайн"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Під час надсилання іншим користувачам ${ MAIL_APP_NAME }, шифрування відбувається автоматично. Щоб надіслати користувачам поза ${ MAIL_APP_NAME_TWO }, необхідно налаштувати пароль заздалегідь."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак лише основний адміністратор може контролювати платежі."

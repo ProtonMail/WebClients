@@ -3494,8 +3494,14 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Bitte ${ refresh } oder überprüfe deine Internetverbindung."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Bitte ${ refresh } oder versuche es später erneut."
+      ],
       "Something went wrong": [
-        "Etwas ist schief gelaufen"
+        "Etwas ist schief gelaufen."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Zu viele aktive Sitzungen, bitte löschen Sie Ihre Cookies und melden Sie sich erneut an."
@@ -3898,6 +3904,9 @@
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatisch weiterleiten"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail Nachrichten in deinen Posteingang"
       ],
       "Sign in with Google": [
         "Mit Google anmelden"
