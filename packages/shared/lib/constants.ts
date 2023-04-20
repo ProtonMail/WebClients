@@ -59,7 +59,8 @@ export const APPS = {
     PROTONVPN_SETTINGS: 'proton-vpn-settings',
     PROTONADMIN: 'proton-admin',
     PROTONVERIFICATION: 'proton-verify',
-    PROTONPASSBROWSEREXTENSION: 'proton-extension',
+    PROTONEXTENSION: 'proton-extension',
+    PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
 } as const;
 
 interface AppConfiguration {
@@ -144,6 +145,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-pass',
         icon: 'brand-proton-pass',
         settingsSlug: 'pass',
+    },
+    [APPS.PROTONEXTENSION]: {
+        publicPath: '',
+        subdomain: '',
+        name: PASS_APP_NAME,
+        bareName: PASS_SHORT_APP_NAME,
+        clientID: 'browser-pass',
+        icon: '',
+        settingsSlug: '',
     },
     [APPS.PROTONPASSBROWSEREXTENSION]: {
         publicPath: '',
@@ -988,12 +998,14 @@ export const FORKABLE_APPS = new Set(
         APPS.PROTONCONTACTS,
         APPS.PROTONDRIVE,
         APPS.PROTONCALENDAR,
+        APPS.PROTONEXTENSION,
         APPS.PROTONPASSBROWSEREXTENSION,
         APPS.PROTONVPNBROWSEREXTENSION,
     ].filter(Boolean)
 );
 
 export const EXTENSIONS = {
+    [APPS.PROTONEXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
     [APPS.PROTONPASSBROWSEREXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
     [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'jplgfhpmjnbigmhklmmbgecoobifkmpa' },
 } as const;

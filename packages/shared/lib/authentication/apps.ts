@@ -16,6 +16,7 @@ export const requiresProtonAddress: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONC
 export const requiresAddress: APP_NAMES[] = [
     ...requiresProtonAddress,
     APPS.PROTONDRIVE,
+    APPS.PROTONEXTENSION,
     APPS.PROTONPASSBROWSEREXTENSION,
     APPS.PROTONPASS,
 ];
@@ -29,7 +30,13 @@ export const requiresNonDelinquent: APP_NAMES[] = [
 
 export const vpnApps = [APPS.PROTONVPN_SETTINGS, APPS.PROTONVPNBROWSEREXTENSION];
 
-export const externalApps = [...vpnApps, APPS.PROTONDRIVE, APPS.PROTONPASSBROWSEREXTENSION, APPS.PROTONPASS];
+export const externalApps = [
+    ...vpnApps,
+    APPS.PROTONDRIVE,
+    APPS.PROTONEXTENSION,
+    APPS.PROTONPASSBROWSEREXTENSION,
+    APPS.PROTONPASS,
+];
 
 export const getHasAppExternalSignup = (toApp?: APP_NAMES) => {
     return externalApps.includes(toApp as any);
