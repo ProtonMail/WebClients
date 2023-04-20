@@ -5,4 +5,5 @@ export type ChromeItem = {
     url: Maybe<string>;
     username: Maybe<string>;
     password: Maybe<string>;
+    note: Maybe<string>;
 };
