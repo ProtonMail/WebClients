@@ -25,6 +25,7 @@ const addGlobalOptions = (program) => {
         .option('--appMode <appMode>', '')
         .option('--featureFlags <featureFlags>', '')
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
+        .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
         .option('--logical', '', false)
         .option(
@@ -43,6 +44,7 @@ const addGlobalOptions = (program) => {
 const getWebpackArgs = (options, env, { appData, buildData }) => {
     const envArgs = {
         api: appData.api === '/api' ? undefined : appData.api,
+        sso: appData.sso,
         appMode: options.appMode,
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
