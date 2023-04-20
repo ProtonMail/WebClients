@@ -543,6 +543,9 @@
       "Show preview": [
         "Voorbeeld tonen"
       ],
+      "Show side panel": [
+        "Toon zijpaneel"
+      ],
       "Sign in": [
         "Inloggen"
       ],
@@ -2831,6 +2834,12 @@
         "${ errorCount } mislukt",
         "${ errorCount } mislukt"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: afbeelding op volledige grootte"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: voorbeeld in lage resolutie"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
@@ -3445,6 +3454,9 @@
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
+      ],
+      "Preview for this file type is not supported": [
+        "Voorbeeld wordt niet ondersteund voor dit bestandstype"
       ],
       "Primary": [
         "Primair"

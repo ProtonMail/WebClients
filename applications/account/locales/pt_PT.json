@@ -77,6 +77,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Apply to existing messages": [
+        "Aplicar às mensagens existentes"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
@@ -803,6 +806,9 @@
       ],
       "Generate missing keys": [
         "Gerar chaves em falta"
+      ],
+      "Set as default": [
+        "Predefinir"
       ]
     },
     "Address status": {
@@ -870,6 +876,11 @@
         "Sessão atual"
       ]
     },
+    "Billing cycle": {
+      "Renews automatically on ${ formattedEndTime }": [
+        "Renova automaticamente em ${ formattedEndTime }"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 mês"
@@ -888,6 +899,11 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "breadcrumb": {
+      "Calendars": [
+        "Calendários"
       ]
     },
     "Bridge version load failed": {
@@ -2779,8 +2795,16 @@
       ]
     },
     "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com uma chave de segurança física U2F ou FIDO2."
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
       ]
     },
     "file size format": {
@@ -2875,6 +2899,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "Adicione um filtro personalizado para executar automaticamente determinadas acções, como etiquetagem ou arquivamento de mensagens. Os filtros podem ser editados e criados directamente através da linguagem de programação Sieve."
+      ],
       "Search list": [
         "Procurar lista"
       ]
@@ -3648,6 +3675,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o correio electrónico na sua caixa de entrada, verifique a pasta de spam."
       ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Se tiver um domínio personalizado com o ${ MAIL_APP_NAME }, pode definir um endereço de correio electrónico catch-all para receber mensagens enviadas para o seu domínio, mas para um endereço de correio electrónico inválido (por exemplo, por causa de erros de digitação)."
+      ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, insira-o abaixo para aplicar o desconto."
       ],
@@ -3772,6 +3802,9 @@
       "Link type": [
         "Tipo de ligação"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "O conteúdo carregado está protegido pelo nosso proxy quando a protecção do rastreador é activada."
+      ],
       "Loading": [
         "A carregar"
       ],
@@ -3785,7 +3818,7 @@
         "A carregar..."
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Os diários incluem tentativas de autenticação a todos os serviços ${ BRAND_NAME } que utilizem as suas credenciais ${ BRAND_NAME }."
+        "Os diários incluem tentativas de autenticação a todos os serviços do ${ BRAND_NAME } que utilizem as suas credenciais do ${ BRAND_NAME }."
       ],
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados encriptados actuais"
@@ -4018,6 +4051,9 @@
         "O endereço seguinte não foi criado.",
         "Os endereços seguintes não foram criados."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "O aplicativo Import-Export permite exportar mensagens para cópias de segurança locais e restaurar cópias de segurança anteriores à sua conta."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes ficheiros de configuração permitem escolher o servidor ${ VPN_APP_NAME } a que ligar ao usar uma aplicação de VPN de terceiros ou ao configurar uma ligação VPN num router."
       ],
@@ -4073,7 +4109,7 @@
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
       "Total email addresses": [
-        "Total de endereços de correio electrónico"
+        "Total de endereços electrónicos"
       ],
       "Total storage": [
         "Total de armazenamento"
@@ -4188,6 +4224,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
+      ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Pode usar o ${ MAIL_APP_NAME } com qualquer cliente de email que suporte IMAP/SMTP, incluindo o Outlook, o Apple Mail e o Thunderbird."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
@@ -4703,6 +4742,12 @@
       "Authenticator app": [
         "Aplicação de autenticação"
       ],
+      "Auto show embedded images": [
+        "Mostrar imagens incorporadas automaticamente"
+      ],
+      "Auto show remote images": [
+        "Mostrar imagens remotas automaticamente"
+      ],
       "Auto-detect primary time zone": [
         "Auto-detectar fuso horário primário"
       ],
@@ -4767,7 +4812,7 @@
         "Compositor"
       ],
       "Composer default font/size": [
-        "Predefinição deFfonte/tamanho do compositor"
+        "Predefinição de fonte/tamanho do compositor"
       ],
       "Composer mode": [
         "Modo de composição"
@@ -4777,6 +4822,9 @@
       ],
       "Conditions": [
         "Condições"
+      ],
+      "Confirm link URLs": [
+        "Confirmar as URLs da ligação"
       ],
       "Confirm login password": [
         "Confirme a nova palavra-passe"
@@ -5126,6 +5174,9 @@
       "Read": [
         "Lido"
       ],
+      "Recovery email address": [
+        "Correio electrónico de recuperação"
+      ],
       "Recovery file": [
         "Ficheiro de recuperação"
       ],
@@ -5442,6 +5493,9 @@
       "Learn more": [
         "Saiba mais"
       ],
+      "Learn more about data recovery": [
+        "Saiba mais sobre a recuperação dos dados"
+      ],
       "Need help?": [
         "Precisa de ajuda?"
       ],
@@ -5456,6 +5510,9 @@
       ],
       "Reset password": [
         "Reinicializar a palavra-passe"
+      ],
+      "Set email address": [
+        "Definir o endereço de correio electrónico"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -5513,6 +5570,11 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ]
+    },
+    "Message": {
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Conecte o seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de correio electrónico personalizados (por exemplo, você@asua-empresa.com). O nosso assistente irá guiá-lo ao longo do processo."
       ]
     },
     "Message display when a new app version is available": {
@@ -5695,6 +5757,9 @@
       ],
       "Blocked": [
         "Bloqueado"
+      ],
+      "Calendar": [
+        "Calendário"
       ]
     },
     "New Label form": {
@@ -5736,6 +5801,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendários"
+      ],
       "${ n } custom email domain": [
         "${ n } domínio de correio electrónico personalizado",
         "${ n } domínios de correio electrónico personalizados"
@@ -5767,8 +5836,14 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "Advanced sharing security": [
+        "Segurança avançada de partilha"
+      ],
       "Auto-reply": [
         "Resposta automática"
+      ],
+      "Calendar sharing": [
+        "Partilha de calendário"
       ],
       "Catch-all": [
         "Catch-all"
@@ -5779,6 +5854,9 @@
       "Custom email domains": [
         "Domínios de correio electrónico personalizados"
       ],
+      "DNS leak prevention": [
+        "Proteção contra vazamento de DNS"
+      ],
       "Easy Switch import assistant": [
         "Assistente de importação Easy Switch"
       ],
@@ -5788,14 +5866,23 @@
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
       ],
+      "Encrypted VPN servers": [
+        "Servidores VPN criptografados"
+      ],
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
       "HTML signatures": [
         "Assinaturas HTML"
       ],
+      "Kill switch/always-on VPN": [
+        "Kill switch/VPN sempre ligada"
+      ],
       "Limited support": [
         "Apoio ao cliente limitado"
+      ],
+      "NetShield malware and ad-blocker": [
+        "Bloqueador de anúncios e de malware NetShield"
       ],
       "Password-protected Emails": [
         "Correios electrónicos protegidos por palavra-passe"
@@ -5803,14 +5890,26 @@
       "Priority support": [
         "Apoio ao cliente prioritário"
       ],
+      "Router support": [
+        "Suporte para router"
+      ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
+      "Share files and folders via link": [
+        "Compartilhe arquivos e pastas com uma ligação"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Tunelamento dividido (Android e Windows)"
+      ],
       "Strict no-logs policy": [
         "Política estrita sem diários"
+      ],
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
@@ -5829,6 +5928,12 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Largura de banda e volume ilimitados"
+      ],
+      "Worldwide streaming services": [
+        "Serviços de streaming internacionais"
       ]
     },
     "new_plans: heading": {
@@ -5840,8 +5945,17 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } permite-lhe criar endereços de correio electrónico e gerir contas para subutilizadores. Ideal para famílias e organizações."
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Correio electrónico seguro com características avançadas para as suas comunicações diárias."
+      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Define respostas automáticas para informar os contactos que está fora do escritório ou que não pode responder."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "A conta inicial gratuita criada para oferecer privacidade a todos por defeito."
       ]
     },
     "new_plans: Label": {
@@ -6333,6 +6447,9 @@
     "Recovery Email": {
       "Cancel": [
         "Cancelar"
+      ],
+      "Email address has been verified.": [
+        "O endereço de correio electrónico foi verificado."
       ]
     },
     "Recovery method": {
@@ -6567,7 +6684,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Gravar"
+        "Poupe"
       ]
     },
     "Success": {
@@ -6738,6 +6855,14 @@
     "Tab in domain modal": {
       "Addresses": [
         "Endereços"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "Para empresas"
+      ],
+      "For individuals": [
+        "Para indivíduos"
       ]
     },
     "TableHeader": {
@@ -7025,6 +7150,9 @@
       ],
       "Downgrade account": [
         "Regredir conta"
+      ],
+      "Duration": [
+        "Duração"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -7393,6 +7521,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Total paid": [
+        "Total pago"
+      ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
       ],
@@ -7560,7 +7691,7 @@
         "Editar nomes de etiqueta"
       ],
       "Enable/disable desktop and mobile notifications": [
-        "Ativar/Desativar notificações no computador e telemóvel"
+        "Ativar/desativar notificações no computador e dispositivo móvel"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Ativar diários avançados força o registo de endereços IP para cada evento no diário."
@@ -7582,6 +7713,9 @@
       ],
       "Set the default layout for your Inbox.": [
         "Predefina a disposição da sua caixa de entrada."
+      ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma fotografia não estiver disponível."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "As assinaturas produzidas por esta chave são tratadas como não válidas e a chave não pode ser usada para encriptação."
@@ -7616,6 +7750,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Quando clica numa ligação, a funcionalidade anti-phishing pede-lhe a confirmação do URL da página web."
       ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Ao mover um correio electrónico para a pasta Spam, será automaticamente cancelada a sua inscrição nas listas de correio do remetente."
+      ],
       "You have locally decrypted this key": [
         "Desencriptou esta chave localmente"
       ],
@@ -7631,6 +7768,11 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
         "Selecione as predefinições PGP para assinar ou encriptar mensagens para utilizadores não-${ BRAND_NAME } PGP. Note que PGP incorporado implica mensagens em texto simples. Saiba mais"
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Ao receber email de utilizadores do ${ MAIL_APP_NAME } sem chaves confiadas em seus contactos, terá de confirmar que pretende activar as chaves confiadas."
       ]
     },
     "Tooltip sign external messages": {
@@ -7674,6 +7816,10 @@
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } em ${ numberOfCountries } país",
+        "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
     "Warning": {
