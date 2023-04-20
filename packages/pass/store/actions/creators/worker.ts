@@ -28,6 +28,7 @@ export const stateSync = createAction('state sync', (state: any, options?: WithR
 );
 
 export const stateLock = createAction('state lock', () => withCacheBlock({ payload: {} }));
+export const stateDestroy = createAction('state destroy', () => withCacheBlock({ payload: {} }));
 
 export const wakeup = createAction(
     'wakeup',
