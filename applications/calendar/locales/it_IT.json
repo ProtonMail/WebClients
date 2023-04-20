@@ -2617,6 +2617,12 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Per favore ${ refresh } o controlla la tua connessione internet."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Si prega di ${ refresh } o riprovare più tardi."
+      ],
       "Something went wrong": [
         "Qualcosa è andato storto"
       ],
@@ -4709,7 +4715,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Benvenuto in ${ appName }"
+        "Ti diamo il benvenuto in ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
         "Dove puoi prendere il controllo del tuo tempo e dei tuoi dati."

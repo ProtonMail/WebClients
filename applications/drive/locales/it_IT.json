@@ -600,6 +600,9 @@
       "Try another method": [
         "Prova un altro metodo"
       ],
+      "Try for free": [
+        "Prova gratis"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
@@ -2327,6 +2330,12 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Per favore ${ refresh } o controlla la tua connessione internet."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Si prega di ${ refresh } o riprovare più tardi."
+      ],
       "Something went wrong": [
         "Qualcosa è andato storto"
       ],
@@ -3472,6 +3481,9 @@
       ],
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
+      ],
+      "Preview for this file type is not supported": [
+        "L'anteprima per questo tipo di file non è supportata"
       ],
       "Primary": [
         "Principale"
@@ -4740,7 +4752,7 @@
     },
     "Onboarding Title": {
       "Welcome to ${ DRIVE_APP_NAME }": [
-        "Benvenuto in ${ DRIVE_APP_NAME }"
+        "Ti diamo il benvenuto in ${ DRIVE_APP_NAME }"
       ],
       "Your welcome bonus": [
         "Il tuo regalo di benvenuto"

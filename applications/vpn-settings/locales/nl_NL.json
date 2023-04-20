@@ -427,6 +427,11 @@
         "5 gebruikers"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: de e-mail- en agenda oplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
         "Vernieuwd automatisch op ${ formattedEndTime }"
@@ -1809,6 +1814,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: afbeelding op volledige grootte"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: voorbeeld in lage resolutie"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
       ],
@@ -2180,6 +2191,9 @@
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
+      ],
+      "Preview for this file type is not supported": [
+        "Voorbeeld wordt niet ondersteund voor dit bestandstype"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
