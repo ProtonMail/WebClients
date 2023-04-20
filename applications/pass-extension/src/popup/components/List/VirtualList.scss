@@ -1,0 +1,5 @@
+.ReactVirtualized__List {
+	&:focus-visible {
+		outline: 1px solid var(--focus-outline);
+	}
+}

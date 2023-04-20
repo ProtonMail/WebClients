@@ -1,0 +1,25 @@
+.button.pass-item-list--item {
+	border-radius: 0;
+	padding: 0;
+
+	&:focus-visible {
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	mark.is-light {
+		color: var(--interaction-norm);
+		font-weight: var(--font-weight-normal);
+	}
+
+	.pass-item-list--subtitle {
+		mark.is-light {
+			color: var(--interaction-weak-contrast);
+			font-weight: var(--font-weight-normal);
+		}
+	}
+}
+
+.button.is-active.pass-item-list--item {
+	background-color: var(--interaction-norm-minor-1);
+}

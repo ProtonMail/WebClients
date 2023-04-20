@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package proton_pass_vault_v1;
+
+enum VaultIcon {
+	ICON_UNSPECIFIED = 0;
+	ICON_CUSTOM = 1;
+	ICON1 = 2;
+	ICON2 = 3;
+	ICON3 = 4;
+	ICON4 = 5;
+	ICON5 = 6;
+	ICON6 = 7;
+	ICON7 = 8;
+	ICON8 = 9;
+	ICON9 = 10;
+	ICON10 = 11;
+	ICON11 = 12;
+	ICON12 = 13;
+	ICON13 = 14;
+	ICON14 = 15;
+	ICON15 = 16;
+	ICON16 = 17;
+	ICON17 = 18;
+	ICON18 = 19;
+	ICON19 = 20;
+	ICON20 = 21;
+	ICON21 = 22;
+	ICON22 = 23;
+	ICON23 = 24;
+	ICON24 = 25;
+	ICON25 = 26;
+	ICON26 = 27;
+	ICON27 = 28;
+	ICON28 = 29;
+	ICON29 = 30;
+	ICON30 = 31;
+};
+
+enum VaultColor {
+	COLOR_UNSPECIFIED = 0;
+	COLOR_CUSTOM = 1;
+	COLOR1 = 2;
+	COLOR2 = 3;
+	COLOR3 = 4;
+	COLOR4 = 5;
+	COLOR5 = 6;
+	COLOR6 = 7;
+	COLOR7 = 8;
+	COLOR8 = 9;
+	COLOR9 = 10;
+	COLOR10 = 11;
+};
+
+message VaultDisplayPreferences {
+	VaultIcon icon = 1;
+	VaultColor color = 2;
+};
+
+message Vault {
+	string name = 1;
+	string description = 2;
+	VaultDisplayPreferences display = 3;
+}

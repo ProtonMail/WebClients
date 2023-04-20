@@ -1,0 +1,16 @@
+@import '~@proton/styles/scss/lib/easing';
+
+.anime-fade-in,
+.anime-fade-in > * {
+	animation: anime-fade-in var(--anime-duration, 0.25s) easing(ease-out-sine) var(--anime-delay, 0.1s) both;
+}
+
+@keyframes anime-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
