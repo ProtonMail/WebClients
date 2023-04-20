@@ -1068,6 +1068,11 @@
         "Huidige sessie"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: de e-mail- en agenda oplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
         "Vernieuwd automatisch op ${ formattedEndTime }"
@@ -2589,6 +2594,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Verwijder automatisch berichten van de prullenbak of spam die ouder zijn dan 30 dagen. Geniet hiervan en van andere voordelen wanneer u upgrade."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
       ],
@@ -2600,6 +2608,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail logo en een plus teken"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -4361,6 +4372,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } is ongeldig"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: afbeelding op volledige grootte"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: voorbeeld in lage resolutie"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } zal worden ingesteld als standaardagenda."
       ],
@@ -5389,6 +5406,9 @@
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
+      "Preview for this file type is not supported": [
+        "Voorbeeld wordt niet ondersteund voor dit bestandstype"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
@@ -5472,6 +5492,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
       "Server is currently down": [
         "Server is momenteel offline"
@@ -8039,6 +8062,9 @@
       "Advanced sharing security": [
         "Geavanceerde beveiliging voor delen"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Automatisch spam en verwijderde berichten verwijderen"
+      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -10323,6 +10349,9 @@
       ],
       "Clear": [
         "Wissen"
+      ],
+      "Clear out the junk": [
+        "Spam opruimen"
       ],
       "Composing": [
         "Opstellen"
