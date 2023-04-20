@@ -25,11 +25,11 @@ describe('Mail upsell banner', () => {
     it('should display the expected banner', async () => {
         // Fake localStorage so that we can predict which banner will be displayed
         // Added more ids in the array (1 to 100) in case we add more banners in the future
-        // Here we expect to see the banner with the id "0"
-        setItem('WelcomePaneEncounteredMessages', JSON.stringify(range(1, 100)));
+        // Here we expect to see the banner with the id "2"
+        setItem('WelcomePaneEncounteredMessages', JSON.stringify([0, 1, ...range(3, 100)]));
 
         await render(<MailUpsellBanner {...props} />);
 
-        screen.getByText('Get more storage and premium features.');
+        screen.getByText('Upgrade to send email from @pm.me addresses.');
     });
 });
