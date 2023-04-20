@@ -1,7 +1,6 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { generateUID } from '@proton/components/helpers';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -42,12 +41,13 @@ interface SubscriptionListProps {
 const SubscriptionItems = ({ items }: SubscriptionListProps) => {
     return (
         <>
-            {items.map(({ icon = 'checkmark', text, included = true, status = 'available' }) => {
+            {items.map(({ icon = 'checkmark', text, included = true, status = 'available', tooltip }) => {
                 if (!included) {
                     return null;
                 }
 
-                const key = typeof text === 'string' ? text : generateUID('itemText');
+                const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
+
                 return (
                     <StripedItem
                         key={key}
