@@ -10,7 +10,7 @@ import {
     resumeSession,
 } from '@proton/pass/auth';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
-import { notification, sessionLockSync, stateLock } from '@proton/pass/store';
+import { notification, sessionLockSync, stateDestroy, stateLock } from '@proton/pass/store';
 import type { Api, MaybeNull, WorkerForkMessage, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
@@ -38,7 +38,7 @@ export interface AuthService {
     resumeSession: () => Promise<boolean>;
     consumeFork: (data: WorkerForkMessage['payload']) => Promise<WorkerMessageResponse<WorkerMessageType.FORK>>;
     login: (options: LoginOptions) => Promise<boolean>;
-    logout: () => boolean;
+    logout: () => Promise<boolean>;
     init: () => Promise<boolean>;
     lock: () => void;
     unlock: () => void;
@@ -112,13 +112,11 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
 
             return result;
         },
-        /**
-         * Consumes a session fork request and sends response.
+        /* Consumes a session fork request and sends response.
          * Reset api in case it was in an invalid session state.
-         * to see full data flow : `applications/account/src/app/content/PublicApp.tsx`
-         */
+         * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
         consumeFork: withContext(async (ctx, data) => {
-            api.configure();
+            await authService.logout();
 
             try {
                 ctx.setStatus(WorkerStatus.AUTHORIZING);
@@ -167,7 +165,7 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
                     },
                 };
             } catch (error: any) {
-                authService.logout();
+                void authService.logout();
                 const additionalMessage = error.message ?? '';
 
                 store.dispatch(
@@ -215,7 +213,7 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
                 /* if there is an API error on `checkSessionLock` we want to logout
                  * the user only if it is due to a 401 or 403 status response */
                 if (error.name === 'InactiveSession' || getApiError(error).status === 403) {
-                    authService.logout();
+                    void authService.logout();
                     return false;
                 }
             }
@@ -263,8 +261,10 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
             return true;
         }),
 
-        logout: withContext((ctx) => {
-            void browserSessionStorage.clear();
+        logout: withContext(async (ctx) => {
+            store.dispatch(stateDestroy());
+
+            void browserSessionStorage.removeItems(['AccessToken', 'RefreshToken', 'UID', 'keyPassword']);
             void browserLocalStorage.clear();
 
             authCtx.lockStatus = null;

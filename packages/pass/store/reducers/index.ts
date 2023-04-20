@@ -4,7 +4,7 @@ import type { Maybe } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 
-import { signout, stateLock, stateSync } from '../actions';
+import { signout, stateDestroy, stateLock, stateSync } from '../actions';
 import type { State } from '../types';
 import alias from './alias';
 import items from './items';
@@ -28,7 +28,7 @@ const wrappedRootReducer: Reducer<State> = (previousState, action) => {
      * - on `stateSync` : merge the incoming state */
     return rootReducer(
         ((): Maybe<State> => {
-            if (or(signout.match, stateLock.match)(action)) {
+            if (or(stateDestroy.match, stateLock.match, signout.match)(action)) {
                 return undefined;
             }
 

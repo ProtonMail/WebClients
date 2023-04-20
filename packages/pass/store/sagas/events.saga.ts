@@ -7,7 +7,16 @@ import { api } from '@proton/pass/api';
 import { or } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 
-import { boot, bootSuccess, signoutSuccess, stateLock, syncFailure, syncIntent, syncSuccess } from '../actions';
+import {
+    boot,
+    bootSuccess,
+    signoutSuccess,
+    stateDestroy,
+    stateLock,
+    syncFailure,
+    syncIntent,
+    syncSuccess,
+} from '../actions';
 import type { WorkerRootSagaOptions } from '../types';
 import { shareChannels } from './events/channel.share';
 import { sharesChannel } from './events/channel.shares';
@@ -18,7 +27,13 @@ function* eventsWorker(options: WorkerRootSagaOptions): Generator {
 }
 
 const startPollingActions = or(bootSuccess.match, syncSuccess.match, syncFailure.match);
-const cancelPollingActions = or(boot.match, signoutSuccess.match, stateLock.match, syncIntent.match);
+const cancelPollingActions = or(
+    boot.match,
+    signoutSuccess.match,
+    stateLock.match,
+    syncIntent.match,
+    stateDestroy.match
+);
 
 export default function* watcher(options: WorkerRootSagaOptions): Generator {
     while (yield take(startPollingActions)) {
