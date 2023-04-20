@@ -2,7 +2,6 @@ import { authentication } from '@proton/pass/auth/authentication';
 import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-const KEY_LENGTH = 16;
 const KEY_ALGORITHM = { name: 'AES-GCM', length: 256 };
 export const CACHE_SALT_LENGTH = 32;
 
@@ -30,7 +29,7 @@ export const getCacheEncryptionKey = async (salt: Uint8Array, sessionLockToken?:
     // Since the password is already salted using bcrypt, we consider it entropic enough for HKDF: see
     // discussion on key-stretching step in https://eprint.iacr.org/2010/264.pdf (Section 9).
     const saltedUserPassword = `${authentication.getPassword()}${sessionLockToken ?? ''}`;
-    const passwordBytes = stringToUint8Array(saltedUserPassword).slice(0, KEY_LENGTH);
+    const passwordBytes = stringToUint8Array(saltedUserPassword);
     const keyToSalt = await crypto.subtle.importKey('raw', passwordBytes.buffer, HKDF_PARAMS.name, false, [
         'deriveKey',
     ]);
