@@ -7,6 +7,10 @@
 	z-index: 1;
 }
 
+.static {
+	position: static;
+}
+
 .absolute-center {
 	position: absolute;
 	inset-block-start: 50%;

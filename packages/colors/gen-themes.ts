@@ -4,7 +4,7 @@ import prettier from 'prettier';
 import tiny from 'tinycolor2';
 
 import genButtonShades from './gen-button-shades';
-import config, { ThemeConfig, ThemeFileType } from './themes.config';
+import { ThemeConfig, ThemeFileType } from './themes.config';
 
 function generateTheme({ source, type }: { source: string; type: ThemeFileType }) {
     const buttonBases = [
@@ -77,7 +77,7 @@ function generateTheme({ source, type }: { source: string; type: ThemeFileType }
     return cssTree.generate(ast);
 }
 
-function main({ output, files }: ThemeConfig) {
+export function main({ output, files }: ThemeConfig) {
     const sources = files.map(({ path, type }) => ({
         source: fs.readFileSync(path, { encoding: 'utf-8' }),
         type,
@@ -98,7 +98,5 @@ function main({ output, files }: ThemeConfig) {
 
     fs.writeFileSync(output, prettierCssFile);
 
-    console.log('created', output);
+    return output;
 }
-
-config.forEach(main);
