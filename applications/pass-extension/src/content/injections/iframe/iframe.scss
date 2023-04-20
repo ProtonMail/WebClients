@@ -1,0 +1,46 @@
+iframe.protonpass-iframe {
+	position: absolute;
+	inline-size: var(--protonpass-iframe-width) !important;
+	block-size: var(--protonpass-iframe-height) !important;
+	inset-block-start: var(--protonpass-iframe-top) !important;
+	inset-inline-start: var(--protonpass-iframe-left) !important;
+	inset-inline-end: var(--protonpass-iframe-right) !important;
+	z-index: var(--protonpass-iframe-zindex) !important;
+	background: #191927 !important; // FIXME: support themes
+	box-shadow: var(--shadow-lifted) !important;
+	border-radius: 5px !important;
+	border: none !important;
+	display: none;
+
+	&.protonpass-iframe-visible {
+		display: block;
+		animation: var(--protonpass-iframe-animation) 0.2s ease-in-out both;
+	}
+
+	&.protonpass-iframe-fixed {
+		position: fixed !important;
+		z-index: 9999 !important;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+		max-block-size: 0;
+	}
+
+	to {
+		opacity: 1;
+		max-block-size: 180px;
+	}
+}
+
+@keyframes slidein {
+	from {
+		transform: translateX(380px);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}

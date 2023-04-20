@@ -1,0 +1,154 @@
+@use 'sass:meta';
+
+@import '@proton/styles/scss/lib';
+@import '@proton/styles/scss/utilities/shadow';
+@import '@proton/styles/scss/base/custom-properties/';
+
+@mixin reset {
+	margin-inline-start: unset;
+	padding: 0 !important;
+	outline: none !important;
+	outline-color: none !important;
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	min-inline-size: unset !important;
+	min-block-size: unset !important;
+}
+
+.protonpass-input {
+	&--wrapper {
+		pointer-events: none;
+		position: relative;
+		display: block;
+		margin: 0 !important;
+		inline-size: 100%;
+		block-size: 0;
+		flex: 0 0 0;
+		opacity: 1;
+		@include reset;
+
+		> input {
+			pointer-events: all;
+		}
+	}
+
+	&--icon {
+		cursor: pointer !important;
+		position: absolute !important;
+		pointer-events: all;
+		inset-block-start: 0;
+		margin: auto;
+		inset-inline-end: em(5);
+		background-size: cover;
+		opacity: 0.9;
+		animation: icon-fade-in 0.25s;
+		transition: opacity 0.2s ease-in-out;
+		margin-block-start: 0 !important;
+		@include reset;
+
+		&:hover,
+		&:focus,
+		&:active {
+			@include reset;
+		}
+
+		&::before {
+			@include reset;
+
+			content: none !important;
+		}
+
+		&::after {
+			@include reset;
+
+			content: var(--protonpass-items-count) !important;
+			position: absolute !important;
+			inset: 0 !important;
+			margin: auto !important;
+			inline-size: 80% !important;
+			transform: translateX(-10%);
+			color: white !important;
+			text-align: center !important;
+			font-family: system-ui, sans-serif !important;
+			line-height: var(--protonpass-icon-lineheight) !important;
+			font-size: var(--protonpass-icon-fontsize) !important;
+			display: block !important;
+		}
+
+		&--disabled {
+			filter: grayscale(1);
+			opacity: 0.92 !important;
+
+			&::after {
+				content: none !important;
+			}
+
+			&:hover {
+				filter: none !important;
+				opacity: 1 !important;
+			}
+		}
+
+		&--loading {
+			cursor: progress !important;
+			opacity: 0.92;
+			transition: opacity 0.25s ease-in-out;
+
+			&::after {
+				content: none !important;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&--svg {
+		position: absolute;
+		inset: 0;
+		filter: drop-shadow(1px 2px 4px black);
+
+		svg {
+			position: absolute;
+			inset: 0;
+			block-size: 50%;
+			inline-size: 50%;
+			stroke-width: 2px;
+			fill: white;
+			color: white;
+			margin: auto;
+			transform: translateX(-20%);
+			opacity: 0.89;
+		}
+	}
+
+	&--loader {
+		@include meta.load-css('@proton/atoms/CircleLoader/CircleLoader');
+
+		animation: loader-fade-in 0.25s;
+	}
+
+	@keyframes icon-fade-in {
+		from {
+			opacity: 0;
+			max-inline-size: 0;
+		}
+
+		to {
+			opacity: 0.9;
+			max-inline-size: em(35);
+		}
+	}
+
+	@keyframes loader-fade-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 0.9;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib/config';
+@import '~@proton/styles/scss/lib/easing';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+.pass {
+	&-skeleton {
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+
+		&--select {
+			&::before {
+				inline-size: 80%;
+			}
+		}
+
+		&--alias-preview {
+			&::before {
+				inline-size: 80%;
+			}
+		}
+	}
+}
