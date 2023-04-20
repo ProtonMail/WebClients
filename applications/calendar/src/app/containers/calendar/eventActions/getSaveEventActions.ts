@@ -57,7 +57,6 @@ const getSaveSingleEventActionsHelper = async ({
     onSendPrefsErrors,
     inviteActions,
     hasDefaultNotifications,
-    personalEventsDeprecated,
     canEditOnlyNotifications,
     isAttendee,
     onEquivalentAttendees,
@@ -82,7 +81,6 @@ const getSaveSingleEventActionsHelper = async ({
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     inviteActions: InviteActions;
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
     canEditOnlyNotifications: boolean;
     isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
@@ -122,7 +120,6 @@ const getSaveSingleEventActionsHelper = async ({
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
-        personalEventsDeprecated,
         canEditOnlyNotifications,
         isAttendee,
         sendIcs,
@@ -150,7 +147,6 @@ interface Arguments {
     addresses: Address[];
     inviteActions: InviteActions;
     isDuplicatingEvent: boolean;
-    personalEventsDeprecated: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
     onEquivalentAttendees: (attendees: string[][]) => Promise<void>;
     api: Api;
@@ -179,7 +175,6 @@ const getSaveEventActions = async ({
     addresses,
     inviteActions,
     isDuplicatingEvent,
-    personalEventsDeprecated,
     onSaveConfirmation,
     onEquivalentAttendees,
     api,
@@ -279,7 +274,6 @@ const getSaveEventActions = async ({
                 veventComponent: newVeventWithSequence,
             },
             hasDefaultNotifications,
-            personalEventsDeprecated,
             canEditOnlyNotifications,
             isAttendee,
             selfAddress,
@@ -330,7 +324,6 @@ const getSaveEventActions = async ({
             oldEditEventData,
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
-            personalEventsDeprecated,
             canEditOnlyNotifications,
             isAttendee,
             getAddressKeys,
@@ -354,7 +347,6 @@ const getSaveEventActions = async ({
             oldEditEventData,
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
-            personalEventsDeprecated,
             canEditOnlyNotifications,
             isAttendee,
             getAddressKeys,
@@ -446,7 +438,6 @@ const getSaveEventActions = async ({
         getCalendarKeys,
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
-        personalEventsDeprecated,
         canEditOnlyNotifications,
         isAttendee,
         sendIcs,

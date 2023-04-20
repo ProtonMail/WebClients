@@ -30,7 +30,6 @@ const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
                 Attendees,
                 PersonalEvents,
                 Notifications,
-                IsPersonalMigrated,
                 FullDay,
             } = Event;
             const encryptingAddressID = getIsAutoAddedInvite(Event) ? Event.AddressID : undefined;
@@ -53,7 +52,6 @@ const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
                     Attendees,
                     PersonalEvents,
                     Notifications,
-                    IsPersonalMigrated,
                     FullDay,
                 },
                 publicKeysMap,
