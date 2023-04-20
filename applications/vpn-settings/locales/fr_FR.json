@@ -3709,6 +3709,9 @@
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Lorsque vous êtes connecté à notre VPN, vos requêtes DNS passent par notre tunnel VPN chiffré, ce qui contribue à protéger votre vie privée et à renforcer votre sécurité en ligne."
       ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Quand vous envoyez un message à une personne qui utilise ${ MAIL_APP_NAME }, le chiffrement est automatique. Pour envoyer un message chiffré à une personne qui n'utilise pas ${ MAIL_APP_NAME_TWO }, il faut définir un mot de passe avant l'envoi."
+      ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
       ]
