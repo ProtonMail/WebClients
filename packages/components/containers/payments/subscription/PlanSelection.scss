@@ -167,3 +167,9 @@
 		}
 	}
 }
+
+.lg-text-nowrap {
+	@include media('>=small') {
+		white-space: nowrap;
+	}
+}

@@ -299,8 +299,9 @@ const PlanSelection = ({
                     value={audienceToTabNumber(audience)}
                     onChange={(tabNumber) => onChangeAudience(tabNumberToAudience(tabNumber))}
                     tabs={tabs}
+                    fullWidth={true}
                     containerClassName="inline-block"
-                    navContainerClassName="text-center"
+                    navContainerClassName="text-center lg-text-nowrap"
                     gap={
                         mode === 'settings' ? (
                             <>
