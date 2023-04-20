@@ -31,6 +31,9 @@
       "Add address": [
         "Aggiungi indirizzo"
       ],
+      "Add Cc recipients": [
+        "Aggiungi destinatario in Cc"
+      ],
       "Add condition": [
         "Aggiungi condizione"
       ],
@@ -1222,7 +1225,7 @@
     },
     "Alternative text for welcome image": {
       "Welcome": [
-        "Benvenuto"
+        "Ti diamo il benvenuto"
       ]
     },
     "Amount of completed get started checklist items": {
@@ -1232,6 +1235,12 @@
       ]
     },
     "Animation": {
+      "5 trackers removed": [
+        "5 tracciatori rimossi"
+      ],
+      "Auto forwarded": [
+        "Inoltro automatico"
+      ],
       "Email received": [
         "Email ricevuta"
       ],
@@ -2846,6 +2855,9 @@
       "No labels": [
         "Nessuna etichetta"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail e un segno più"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
@@ -3599,6 +3611,12 @@
       ],
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "Per favore ${ refresh } o controlla la tua connessione internet."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "Si prega di ${ refresh } o riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -4949,6 +4967,12 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Il messaggio verrà inviato domani alle ${ formattedTime }"
       ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Gli elementi nella cartella spam verranno automaticamente eliminati dopo 30 giorni."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Gli elementi nel cestino saranno eliminati automaticamente dopo 30 giorni."
+      ],
       "Monthly ${ onDayString }": [
         "Mensile ${ onDayString }"
       ],
@@ -5073,6 +5097,9 @@
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
       ],
+      "Preview for this file type is not supported": [
+        "L'anteprima per questo tipo di file non è supportata"
+      ],
       "Primary": [
         "Principale"
       ],
@@ -5159,6 +5186,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'invio dei messaggi dall'indirizzo @pm.me è una funzionalità a pagamento. Il tuo messaggio sarà inviato dal tuo indirizzo predefinito ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Inviato con l'email sicura <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -5309,6 +5339,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Questo messaggio è firmato dalla chiave allegata, che non è ancora considerata attendibile."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Questo messaggio sarà automaticamente eliminato il ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Questo messaggio sarà automaticamente eliminato alle ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Questo messaggio verrà segnalato come spam. Vorresti anche terminare la sottoscrizione a future email?",
         "Questi messaggi verranno segnalati come spam. Vorresti anche terminare la sottoscrizione a future email?"
@@ -5397,6 +5433,12 @@
       "Upgrade to add more addresses to your account.": [
         "Aggiorna per aggiungere altri indirizzi al tuo profilo."
       ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nella cartella spam dopo 30 giorni."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nel cestino dopo 30 giorni."
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Aggiorna per creare altre cartelle, filtri e indirizzi."
       ],
@@ -5423,6 +5465,9 @@
       ],
       "Upgrade to unlock premium features.": [
         "Esegui l'upgrade per sbloccare funzionalità premium."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Aggiorna il piano per usare ${ MAIL_APP_NAME } con Apple Mail, Outlook o Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
         "Effettua l'Upgrade per usare la risposta automatica quando non ci sei."
@@ -5462,6 +5507,9 @@
       ],
       "Week": [
         "Settimana"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Quando vorresti che il messaggio venga automaticamente eliminato dalla cartella posta in arrivo del destinatario e dalla tua cartella inviati?"
       ],
       "When do you want your message to be sent?": [
         "Quando vuoi che il tuo messaggio sia inviato?"
@@ -6966,7 +7014,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Benvenuto in ${ appName }"
+        "Ti diamo il benvenuto in ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
         "Dove privacy e sicurezza incontrano produttività e facilità d'uso."
@@ -8617,10 +8665,10 @@
         "Attenzione: sospetto sito web falso"
       ],
       "Welcome": [
-        "Benvenuto/a"
+        "Ti diamo il benvenuto"
       ],
       "Welcome ${ userName }": [
-        "Benvenuto/a ${ userName }"
+        "Ti diamo il benvenuto ${ userName }"
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"

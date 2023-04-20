@@ -6,7 +6,7 @@
   "contexts": {
     "Access level": {
       "Full view (see all event details)": [
-        "Pełny odczyt (zobacz wszystkie szczegóły wydarzeń)"
+        "Pełny odczyt (widzi szczegóły wydarzeń)"
       ],
       "Limited view (see only free/busy)": [
         "Ograniczony odczyt (informacja o stanie wolny/zajęty)"
@@ -872,10 +872,10 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Edycja (tworzenie i edytowanie szczegółów wydarzeń)"
+        "Edycja (może edytować wydarzenia)"
       ],
       "View (see all event details)": [
-        "Odczyt (zobacz wszystkie szczegóły wydarzeń)"
+        "Odczyt (widzi szczegóły wydarzeń)"
       ]
     },
     "Calendar sharing error": {
@@ -2472,7 +2472,7 @@
         "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
       ],
       "You can't send vCard files of more than 10 contacts": [
-        "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
+        "W pliku vCard możesz wysłać maksymalnie 10 kontaktów"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
