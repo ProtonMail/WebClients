@@ -4,7 +4,6 @@ import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { generateUID } from '@proton/components/helpers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
@@ -64,7 +63,8 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
                         return null;
                     }
 
-                    const key = typeof text === 'string' ? text : generateUID('itemText');
+                    const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
+
                     return (
                         <StripedItem
                             key={key}
