@@ -56,7 +56,7 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
                                     className="flex-item-noshrink"
                                     onClick={passwordGenerator.regeneratePassword}
                                 >
-                                    <Icon name="arrow-rotate-right" alt={c('Action').t`Regenerate`} />
+                                    <Icon name="arrows-rotate" alt={c('Action').t`Regenerate`} />
                                 </Button>
                             </div>,
                         ]}
