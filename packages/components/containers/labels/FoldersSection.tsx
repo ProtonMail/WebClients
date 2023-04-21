@@ -56,10 +56,12 @@ function LabelsSection() {
                     {mailSettings?.EnableFolderColor ? (
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label htmlFor="parent-folder-color" className="text-semibold">
+                                <label
+                                    htmlFor="parent-folder-color"
+                                    className="text-semibold flex flex-align-items-center gap-2"
+                                >
                                     <span>{c('Label').t`Inherit color from parent folder`}</span>
                                     <Info
-                                        buttonClass="ml0-5 inline-flex"
                                         title={c('Info - folder colouring feature')
                                             .t`When enabled, sub-folders inherit the color of the parent folder.`}
                                     />

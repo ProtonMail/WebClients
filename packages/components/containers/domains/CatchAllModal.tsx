@@ -19,7 +19,7 @@ const CatchAllModal = ({ domain, domainAddresses, ...rest }: Props) => {
                 title={
                     <span className="inline-flex flex-align-items-center">
                         {c('Title').t`Catch-All address`}
-                        <Info className="ml0-5" url={getKnowledgeBaseUrl('/catch-all')} />
+                        <Info buttonClass="ml-2" url={getKnowledgeBaseUrl('/catch-all')} />
                     </span>
                 }
             />

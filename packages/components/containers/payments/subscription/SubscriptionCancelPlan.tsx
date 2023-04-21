@@ -1,5 +1,7 @@
+import clsx from '@proton/utils/clsx';
+
 import { Icon, Info } from '../../../components';
-import { classnames, generateUID } from '../../../helpers';
+import { generateUID } from '../../../helpers';
 import { PlanCardFeatureDefinition } from '../features/interface';
 
 import './SubscriptionCancelPlan.scss';
@@ -25,14 +27,14 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
                             typeof feature.featureName === 'string' ? feature.featureName : generateUID('featureName');
                         return (
                             <li key={key} className="flex flex-nowrap mb0-5">
-                                <span className={classnames(['flex-item-noshrink mr1', downgrade && 'color-weak'])}>
+                                <span className={clsx(['flex-item-noshrink mr1', downgrade && 'color-weak'])}>
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
-                                <span className={classnames(['mr0-25', downgrade && 'text-strike color-weak'])}>
+                                <span className={clsx(['mr0-25', downgrade && 'text-strike color-weak'])}>
                                     {feature.featureName}
                                 </span>
                                 <span>
-                                    {feature.tooltip ? <Info className="ml0-5" title={feature.tooltip} /> : null}
+                                    {feature.tooltip ? <Info buttonClass="ml-2" title={feature.tooltip} /> : null}
                                 </span>
                             </li>
                         );
