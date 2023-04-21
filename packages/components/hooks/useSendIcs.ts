@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 
-import { concatArrays } from '@proton/crypto/lib/utils';
 import { sendMessageDirect } from '@proton/shared/lib/api/messages';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -17,6 +16,7 @@ import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import generatePackages from '@proton/shared/lib/mail/send/generatePackages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import isTruthy from '@proton/utils/isTruthy';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useGetMailSettings } from './index';
 
@@ -68,7 +68,9 @@ const useSendIcs = () => {
                 type: `text/calendar; method=${method}`,
             });
             const packets = await encryptAttachment(ics, inviteAttachment, false, publicKeys, privateKeys);
-            const concatenatedPackets = concatArrays([packets.data, packets.keys, packets.signature].filter(isTruthy));
+            const concatenatedPackets = mergeUint8Arrays(
+                [packets.data, packets.keys, packets.signature].filter(isTruthy)
+            );
             const emails = to.map(({ Address }) => Address);
             const attachment = {
                 Filename: packets.Filename,

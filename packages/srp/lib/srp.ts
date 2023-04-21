@@ -1,12 +1,7 @@
 import { BigNumber, Modulus } from 'asmcrypto.js/dist_es8/bignum/bignum';
 
-import {
-    arrayToBinaryString,
-    binaryStringToArray,
-    concatArrays,
-    decodeBase64,
-    encodeBase64,
-} from '@proton/crypto/lib/utils';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AUTH_VERSION, MAX_VALUE_ITERATIONS, SRP_LEN } from './constants';
 import { AuthCredentials, AuthInfo } from './interface';
@@ -57,7 +52,7 @@ const generateParameters = async ({ len, generator, modulus, serverEphemeralArra
     const clientEphemeral = modulus.power(generator, clientSecret);
     const clientEphemeralArray = fromBN(len, clientEphemeral);
 
-    const clientServerHash = await srpHasher(concatArrays([clientEphemeralArray, serverEphemeralArray]));
+    const clientServerHash = await srpHasher(mergeUint8Arrays([clientEphemeralArray, serverEphemeralArray]));
     const scramblingParam = toBN(clientServerHash);
 
     return {
@@ -112,7 +107,7 @@ export const generateProofs = async ({
 
     const generator = TWO_BN;
 
-    const hashedArray = await srpHasher(concatArrays([fromBN(len, generator), modulusArray]));
+    const hashedArray = await srpHasher(mergeUint8Arrays([fromBN(len, generator), modulusArray]));
 
     const multiplierBn = toBN(hashedArray);
     const serverEphemeral = toBN(serverEphemeralArray);
@@ -156,8 +151,12 @@ export const generateProofs = async ({
     const clientEphemeralArray = fromBN(len, clientEphemeral);
     const sharedSessionArray = fromBN(len, sharedSession);
 
-    const clientProof = await srpHasher(concatArrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray]));
-    const expectedServerProof = await srpHasher(concatArrays([clientEphemeralArray, clientProof, sharedSessionArray]));
+    const clientProof = await srpHasher(
+        mergeUint8Arrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray])
+    );
+    const expectedServerProof = await srpHasher(
+        mergeUint8Arrays([clientEphemeralArray, clientProof, sharedSessionArray])
+    );
 
     return {
         clientEphemeral: clientEphemeralArray,
