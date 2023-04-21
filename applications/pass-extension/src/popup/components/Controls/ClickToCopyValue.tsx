@@ -18,7 +18,7 @@ export const ClickToCopyValue: FC<Props> = ({ children, value, ...props }) => {
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(value);
-            createNotification({ type: 'success', text: c('Info').t`Copied to clipboard` });
+            createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
             props.onCopySuccess?.();
         } catch (err) {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
