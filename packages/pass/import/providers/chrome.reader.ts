@@ -29,7 +29,7 @@ export const readChromeData = async (data: string): Promise<ImportPayload> => {
                         type: 'login',
                         metadata: {
                             name: item.name || item.username || 'Unnamed Chrome item',
-                            note: '',
+                            note: item.note ?? '',
                             itemUuid: uniqid(),
                         },
                         content: {
