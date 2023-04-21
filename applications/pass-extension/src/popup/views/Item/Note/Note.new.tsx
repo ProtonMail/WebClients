@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import type { VFC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -6,12 +6,13 @@ import uniqid from 'uniqid';
 
 import { getEpoch } from '@proton/pass/utils/time';
 
-import { ItemNewProps } from '../../../../shared/items';
+import type { ItemNewProps } from '../../../../shared/items';
 import { Field } from '../../../components/Fields/Field';
 import { NoteTextAreaField, NoteTitleField } from '../../../components/Fields/Note/index';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
-import { NoteFormValues, validateNoteForm } from './Note.validation';
+import type { NoteFormValues } from './Note.validation';
+import { MAX_NOTE_CONTENT_LENGTH, MAX_NOTE_TITLE_LENGTH, validateNoteForm } from './Note.validation';
 
 const FORM_ID = 'new-note';
 
@@ -29,11 +30,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                 optimisticId,
                 shareId: shareId,
                 createTime: getEpoch(),
-                metadata: {
-                    name,
-                    note,
-                    itemUuid: optimisticId,
-                },
+                metadata: { name, note, itemUuid: optimisticId },
                 content: {},
                 extraFields: [],
             });
@@ -61,12 +58,14 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             placeholder={c('Placeholder').t`Untitled`}
                             autoFocus={canFocus}
                             key={`note-name-${canFocus}`}
+                            maxLength={MAX_NOTE_TITLE_LENGTH}
                         />
                         <Field
                             component={NoteTextAreaField}
                             label={c('Label').t`Note`}
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
+                            maxLength={MAX_NOTE_CONTENT_LENGTH}
                         />
                     </Form>
                 </FormikProvider>
