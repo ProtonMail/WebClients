@@ -50,6 +50,17 @@
 	@extend a;
 }
 
+.link-focus {
+	outline: 1px solid transparent;
+	outline-offset: em(1);
+	border-radius: var(--border-radius-sm);
+	transition: outline 0.15s easing(ease-out-quad);
+
+	&:focus-visible {
+		outline-color: var(--focus-outline);
+	}
+}
+
 /* remove hyphenation if needed */
 .text-no-cut {
 	word-wrap: normal;

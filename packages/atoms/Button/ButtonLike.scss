@@ -17,7 +17,7 @@
 	cursor: pointer; // In case of a tag different from a or button
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
 
-	@supports selector(:focus-visible) {
+	@supports selector(:focus-visible:has(a, b)) {
 		// had to do this because of Safari
 		outline: unset;
 	}
@@ -101,7 +101,7 @@
 	text-decoration: underline;
 	transition: 0.15s easing(ease-out-quint);
 
-	@supports selector(:focus-visible) {
+	@supports selector(:focus-visible:has(a, b)) {
 		// had to do this because of Safari
 		outline: unset;
 	}
@@ -190,6 +190,10 @@
 		--button-default-text-color: #{$solid-text-color};
 		--button-hover-text-color: #{$solid-text-color};
 		--button-active-text-color: #{$solid-text-color};
+
+		@if $color == 'norm' {
+			--focus-outline: var(--interaction-norm-major-2);
+		}
 	}
 
 	// Outline shape
