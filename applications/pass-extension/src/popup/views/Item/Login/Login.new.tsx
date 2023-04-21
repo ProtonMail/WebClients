@@ -26,6 +26,7 @@ import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import {
     type LoginItemFormValues,
     type NewLoginItemFormValues,
@@ -148,6 +149,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={TitleField}
                                     autoFocus={canFocus}
                                     key={`login-name-${canFocus}`}
+                                    maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
                             </FieldsetCluster>
 
@@ -244,6 +246,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={TextAreaField}
                                     icon="note"
                                     minRows={1}
+                                    maxLength={MAX_ITEM_NOTE_LENGTH}
                                 />
                             </FieldsetCluster>
                         </Form>

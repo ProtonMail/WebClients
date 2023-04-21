@@ -11,6 +11,7 @@ import { isEmptyString } from '@proton/pass/utils/string';
 
 import { type UrlGroupValues, validateUrl, validateUrls } from '../../../components/Fields/UrlGroupFieldCluster';
 import { type AliasFormValues, validateAliasForm } from '../Alias/Alias.validation';
+import { validateItemErrors } from '../Item/Item.validation';
 
 export type LoginItemFormValues = {
     name: string;
@@ -37,11 +38,7 @@ const validateTotpUri = (values: LoginItemFormValues) => {
 };
 
 const validateLoginFormBase = (values: LoginItemFormValues): FormikErrors<LoginItemFormValues> => {
-    const errors: FormikErrors<LoginItemFormValues> = {};
-
-    if (isEmptyString(values.name)) {
-        errors.name = c('Warning').t`Title is required`;
-    }
+    const errors: FormikErrors<LoginItemFormValues> = validateItemErrors(values);
 
     const urlError = validateUrl(values);
     const urlsErrors = validateUrls(values);
