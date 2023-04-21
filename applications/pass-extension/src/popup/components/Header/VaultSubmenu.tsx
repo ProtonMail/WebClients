@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -57,7 +57,9 @@ const handleClickEvent = (handler: () => void) => (evt: React.MouseEvent) => {
 };
 
 export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, onSelect, onDelete, onEdit }) => {
-    const withActions = !!(onDelete || onEdit);
+    const canEdit = Boolean(onEdit);
+    const canDelete = Boolean(!share?.primary && onDelete);
+    const withActions = canEdit || canDelete;
 
     return (
         <DropdownMenuButton
@@ -70,13 +72,15 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
                             onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
+                            disabled={!canEdit}
                         >
                             <Icon name="pen" className="mr-3 color-weak" />
                             {c('Action').t`Edit vault`}
                         </DropdownMenuButton>
+
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
-                            disabled={!onDelete}
+                            disabled={!canDelete}
                             onClick={onDelete ? handleClickEvent(onDelete) : undefined}
                         >
                             <Icon name="trash" className="mr-3 color-weak" />
@@ -137,28 +141,34 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
 
 export const VaultSubmenu: VFC<{
     selectedShareId: MaybeNull<string>;
+    inTrash: boolean;
     handleVaultSelectClick: (shareId: MaybeNull<string>) => void;
     handleVaultDeleteClick: (vault: VaultShare) => void;
     handleVaultEditClick: (vault: VaultShare) => void;
     handleVaultCreateClick: () => void;
-    inTrash: boolean;
     handleRestoreTrash: () => void;
     handleEmptyTrash: () => void;
 }> = ({
     selectedShareId,
+    inTrash,
     handleVaultSelectClick,
     handleVaultDeleteClick,
     handleVaultEditClick,
     handleVaultCreateClick,
-    inTrash,
     handleRestoreTrash,
     handleEmptyTrash,
 }) => {
     const history = useHistory();
     const vaults = useSelector(selectAllVaultWithItemsCount);
-    const totalCount = vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
-    const canDelete = vaults.length > 1;
+
+    const { totalCount, allowDelete } = useMemo(
+        () => ({
+            totalCount: vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0),
+            allowDelete: vaults.length > 1,
+        }),
+        [vaults]
+    );
 
     const handleSelect = (vault: VaultOption) => {
         const { id, path } = getVaultOptionInfo(vault);
@@ -206,7 +216,7 @@ export const VaultSubmenu: VFC<{
                         label={vault.content.name}
                         selected={!inTrash && selectedShareId === vault.shareId}
                         onSelect={() => handleSelect(vault)}
-                        onDelete={canDelete ? () => handleVaultDeleteClick(vault) : undefined}
+                        onDelete={allowDelete ? () => handleVaultDeleteClick(vault) : undefined}
                         onEdit={() => handleVaultEditClick(vault)}
                     />
                 ))}
