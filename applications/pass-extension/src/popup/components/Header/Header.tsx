@@ -63,7 +63,7 @@ export const Header: VFC<{}> = () => {
             className: 'ui-password',
             onSubmit: (password) => {
                 textToClipboard(password, e.currentTarget);
-                createNotification({ type: 'success', text: c('Info').t`Copied to clipboard` });
+                createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
             },
         });
     };
