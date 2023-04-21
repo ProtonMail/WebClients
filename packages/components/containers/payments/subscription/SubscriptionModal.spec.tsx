@@ -242,6 +242,7 @@ describe('SubscriptionModal', () => {
             defaultSelectedProductPlans: {
                 [Audience.B2C]: PLANS.MAIL,
                 [Audience.B2B]: PLANS.MAIL_PRO,
+                [Audience.FAMILY]: PLANS.FAMILY,
             },
             open: true,
             onClose: jest.fn(),

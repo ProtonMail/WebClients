@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useFeature } from '@proton/components/hooks';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -17,6 +18,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
+import { FeatureCode } from '../../features';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -29,6 +31,7 @@ import './PlanSelection.scss';
 export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;
     [Audience.B2B]: PLANS;
+    [Audience.FAMILY]: PLANS;
 }
 
 const getPlansList = (enabledProductPlans: PLANS[], plansMap: PlansMap) => {
@@ -95,6 +98,12 @@ const PlanSelection = ({
     onChangeSelectedProductPlans,
     calendarSharingEnabled,
 }: Props) => {
+    const featureContext = useFeature(FeatureCode.FamilyPlan);
+    if (featureContext.loading) {
+        return null;
+    }
+    const familyPlanAvailable = featureContext.feature?.Value;
+
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
@@ -106,6 +115,8 @@ const PlanSelection = ({
         plansMap[PLANS.BUNDLE],
     ].filter(isTruthy);
 
+    const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]].filter(isTruthy);
+
     const B2BPlans = [
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) || plansMap[PLANS.MAIL_PRO],
@@ -116,7 +127,7 @@ const PlanSelection = ({
     const features = getAllFeatures(plansMap, vpnServers, calendarSharingEnabled);
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
-    const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO];
+    const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.FAMILY];
 
     const renderPlanCard = (plan: Plan, audience: Audience) => {
         const isFree = plan.ID === PLANS.FREE;
@@ -207,7 +218,22 @@ const PlanSelection = ({
                     {B2CPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
                 </div>
             ),
+            audience: Audience.B2C,
         },
+        familyPlanAvailable
+            ? {
+                  title: c('Tab subscription modal').t`For families`,
+                  content: (
+                      <div
+                          className="plan-selection plan-selection--family mt1"
+                          style={{ '--plan-selection-number': FamilyPlans.length }}
+                      >
+                          {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}
+                      </div>
+                  ),
+                  audience: Audience.FAMILY,
+              }
+            : null,
         {
             title: c('Tab subscription modal').t`For businesses`,
             content: (
@@ -218,8 +244,9 @@ const PlanSelection = ({
                     {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))}
                 </div>
             ),
+            audience: Audience.B2B,
         },
-    ];
+    ].filter(isTruthy);
 
     const currencyItem = (
         <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
@@ -256,17 +283,25 @@ const PlanSelection = ({
         </div>
     );
 
+    const tabNumberToAudience = (tabNumber: number): Audience => {
+        return tabs[tabNumber].audience ?? Audience.B2C;
+    };
+
+    const audienceToTabNumber = (audience: Audience): number => {
+        const tabIndex = tabs.findIndex((tab) => tab.audience === audience);
+        return tabIndex !== -1 ? tabIndex : 0;
+    };
+
     return (
         <>
             <div className="mb2">
                 <Tabs
-                    value={audience === Audience.B2C ? 0 : 1}
-                    onChange={(newValue) => {
-                        onChangeAudience(newValue === 0 ? Audience.B2C : Audience.B2B);
-                    }}
+                    value={audienceToTabNumber(audience)}
+                    onChange={(tabNumber) => onChangeAudience(tabNumberToAudience(tabNumber))}
                     tabs={tabs}
+                    fullWidth={true}
                     containerClassName="inline-block"
-                    navContainerClassName="text-center"
+                    navContainerClassName="text-center lg-text-nowrap"
                     gap={
                         mode === 'settings' ? (
                             <>

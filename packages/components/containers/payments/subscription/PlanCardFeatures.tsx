@@ -53,7 +53,7 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                             ])}
                         >
                             <span className="flex flex-item-noshrink mr0-75">{iconToDisplay}</span>
-                            <span className="flex-item-fluid">
+                            <span className="flex-item-fluid text-left">
                                 <span className="mr0-5 align-middle">{feature.featureName}</span>
                                 {feature.tooltip ? (
                                     <Info

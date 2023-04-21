@@ -94,6 +94,7 @@ export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: Plan
     return {
         [Audience.B2C]: matchingB2CPlan || defaultB2CPlan,
         [Audience.B2B]: matchingB2BPlan || defaultB2BPlan,
+        [Audience.FAMILY]: PLANS.FAMILY,
     };
 };
 export type SelectedProductPlans = ReturnType<typeof getDefaultSelectedProductPlans>;
