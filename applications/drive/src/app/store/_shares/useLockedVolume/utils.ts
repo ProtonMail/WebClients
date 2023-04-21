@@ -8,11 +8,11 @@ import {
     VERIFICATION_STATUS,
     getMatchingSigningKey,
 } from '@proton/crypto';
-import { concatArrays } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import isTruthy from '@proton/utils/isTruthy';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { LockedDeviceForRestore, LockedShareForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
 
@@ -50,7 +50,7 @@ export async function decryptLockedSharePassphrase(
         return;
     }
 
-    const keyPacketsAsUnit8Array = concatArrays(
+    const keyPacketsAsUnit8Array = mergeUint8Arrays(
         lockedShare.possibleKeyPackets.map((keyPacket) => base64StringToUint8Array(keyPacket))
     );
     const shareSessionKey = await getDecryptedSessionKey({

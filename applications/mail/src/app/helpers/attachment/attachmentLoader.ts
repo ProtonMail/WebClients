@@ -5,12 +5,13 @@ import {
     VERIFICATION_STATUS,
     WorkerDecryptionResult,
 } from '@proton/crypto';
-import { binaryStringToArray, concatArrays, decodeBase64 } from '@proton/crypto/lib/utils';
+import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
@@ -73,7 +74,7 @@ export const getDecryptedAttachment = async (
             sessionKeys: [sessionKey],
         });
     } catch (error: any) {
-        const blob = concatArrays([
+        const blob = mergeUint8Arrays([
             binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
             new Uint8Array(encryptedBinary),
         ]);
