@@ -22,6 +22,7 @@
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-airbnb-typescript": "^17.0.0",
         "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-custom-rules": "workspace:packages/eslint-plugin-custom-rules",
         "eslint-plugin-deprecation": "^1.4.1",
         "eslint-plugin-es": "^4.1.0",
         "eslint-plugin-import": "^2.27.5",
