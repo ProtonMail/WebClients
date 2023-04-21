@@ -46,7 +46,7 @@ export const ItemsListPlaceholder: VFC = () => {
             },
             {
                 type: 'import',
-                icon: 'arrow-down',
+                icon: 'arrow-up-line',
                 label: c('Label').t`Import passwords`,
                 onClick: () => openSettings('import'),
             },
