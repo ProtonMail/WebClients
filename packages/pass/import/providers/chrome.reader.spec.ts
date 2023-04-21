@@ -78,7 +78,7 @@ describe('Import Chrome CSV', () => {
         const loginItem2 = items[1] as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('missing url');
-        expect(loginItem2.metadata.note).toEqual('');
+        expect(loginItem2.metadata.note).toEqual('somenote');
         expect(loginItem2.content.username).toEqual('missingurl@proton.me');
         expect(loginItem2.content.password).toEqual('proton123');
         expect(loginItem2.content.urls).toStrictEqual([]);
