@@ -117,7 +117,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                             <Field
                                 name="note"
                                 label={c('Label').t`Note`}
-                                placeholder={c('Placeholder').t`Enter a note ...`}
+                                placeholder={c('Placeholder').t`Enter a note...`}
                                 component={TextAreaField}
                                 icon="note"
                                 minRows={1}
