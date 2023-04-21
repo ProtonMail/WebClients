@@ -49,7 +49,8 @@ export interface ShortPlan {
         | PLANS.BUNDLE_PRO
         | PLANS.MAIL_PRO
         | PLANS.VPN
-        | PLANS.NEW_VISIONARY;
+        | PLANS.NEW_VISIONARY
+        | PLANS.FAMILY;
     cta: string;
     features: PlanCardFeatureDefinition[];
 }

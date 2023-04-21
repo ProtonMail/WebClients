@@ -84,6 +84,7 @@ export enum FeatureCode {
     ScheduledSendFreemium = 'ScheduledSendFreemium',
     KeyTransparencyWEB = 'KeyTransparencyWEB',
     AutoDelete = 'AutoDelete',
+    FamilyPlan = 'FamilyPlan',
 }
 
 export interface FeaturesContextValue {

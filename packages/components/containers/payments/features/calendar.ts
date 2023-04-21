@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_APP_NAME, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { MAX_CALENDARS_FAMILY, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_APP_NAME, FAMILY_MAX_USERS, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
@@ -18,6 +18,15 @@ const getNCalendarsTooltipText = (n: number) => {
 export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n),
+        tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
+        included: true,
+        icon: 'calendar-checkmark',
+    };
+};
+
+export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinition => {
+    return {
+        featureName: c('new_plans: feature').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
         icon: 'calendar-checkmark',
@@ -61,10 +70,12 @@ const getInvitation = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCalendarAppFeature = (): PlanCardFeatureDefinition => {
+export const getCalendarAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
     return {
         featureName: CALENDAR_APP_NAME,
-        tooltip: c('new_plans: tooltip').t`End-to-end encrypted calendar`,
+        tooltip: options?.family
+            ? c('new_plans: tooltip').t`Keep your plans private to you and your family with an encrypted calendar`
+            : c('new_plans: tooltip').t`End-to-end encrypted calendar`,
         included: true,
         icon: 'brand-proton-calendar',
     };
@@ -81,7 +92,9 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.MAIL]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL]?.MaxCalendars),
                 [PLANS.VPN]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.VPN]?.MaxCalendars),
                 [PLANS.DRIVE]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.DRIVE]?.MaxCalendars),
-                [PLANS.FAMILY]: getNCalendarsFeature(plansMap[PLANS.FAMILY]?.MaxCalendars || 100),
+                [PLANS.FAMILY]: getNCalendarsPerUserFeature(
+                    Math.floor((MAX_CALENDARS_FAMILY ?? plansMap[PLANS.FAMILY]?.MaxCalendars) / FAMILY_MAX_USERS)
+                ),
                 [PLANS.BUNDLE_PRO]: getNCalendarsFeature(
                     MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars
                 ),

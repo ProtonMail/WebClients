@@ -144,16 +144,24 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                               })
                             : maybePlanIDs || subscriptionPlanIDs;
 
+                        let audience: Audience;
+                        if (
+                            defaultAudience === Audience.B2B ||
+                            (plan && getIsB2BPlan(plan)) ||
+                            getHasB2BPlan(subscription)
+                        ) {
+                            audience = Audience.B2B;
+                        } else {
+                            audience = defaultAudience ?? Audience.B2C;
+                        }
+
                         subscriptionProps.current = {
                             planIDs,
                             step,
                             currency: currency || getCurrency(user, subscription, plans),
                             cycle: cycle || subscriptionCycle,
                             coupon: coupon || subscription.CouponCode || undefined,
-                            defaultAudience:
-                                defaultAudience || (plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)
-                                    ? Audience.B2B
-                                    : Audience.B2C,
+                            defaultAudience: audience,
                             defaultSelectedProductPlans:
                                 defaultSelectedProductPlans || getDefaultSelectedProductPlans(app, planIDs),
                             disablePlanSelection,
