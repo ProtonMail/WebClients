@@ -1,7 +1,8 @@
 import { CURVE, Point } from '@noble/ed25519';
 
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString, concatArrays } from '@proton/crypto/lib/utils';
+import { arrayToHexString } from '@proton/crypto/lib/utils';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { CO_FACTOR, N, ptLen } from '../constants/constants';
 
@@ -48,7 +49,7 @@ const hashToCurveTAI = async (alpha: Uint8Array, Y: Uint8Array) => {
     for (let ctr = 0x00; ctr <= 0xff; ctr++) {
         const hash = await CryptoProxy.computeHash({
             algorithm: 'SHA512',
-            data: concatArrays([new Uint8Array([0x03, 0x01]), Y, alpha, new Uint8Array([ctr, 0x00])]),
+            data: mergeUint8Arrays([new Uint8Array([0x03, 0x01]), Y, alpha, new Uint8Array([ctr, 0x00])]),
         });
 
         let H: Point;
@@ -73,7 +74,7 @@ const hashToCurveTAI = async (alpha: Uint8Array, Y: Uint8Array) => {
 const hashPoints = async (...points: Point[]) => {
     const digest = await CryptoProxy.computeHash({
         algorithm: 'SHA512',
-        data: concatArrays([
+        data: mergeUint8Arrays([
             new Uint8Array([0x03, 0x02]),
             ...points.map((p) => p.toRawBytes()),
             new Uint8Array([0x00]),
@@ -89,7 +90,7 @@ const hashPoints = async (...points: Point[]) => {
 const proofToHash = async (Gamma: Point) =>
     CryptoProxy.computeHash({
         algorithm: 'SHA512',
-        data: concatArrays([
+        data: mergeUint8Arrays([
             new Uint8Array([0x03, 0x03]),
             Gamma.multiply(CO_FACTOR).toRawBytes(),
             new Uint8Array([0x00]),
