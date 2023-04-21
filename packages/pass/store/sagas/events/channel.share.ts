@@ -66,6 +66,7 @@ export function* onShareEvent(
                     targetId: share.targetId,
                     targetType: share.targetType,
                     content: decodeVaultContent(share.content),
+                    primary: Boolean(UpdatedShare.Primary),
                     eventId: LatestEventID,
                 },
             })
