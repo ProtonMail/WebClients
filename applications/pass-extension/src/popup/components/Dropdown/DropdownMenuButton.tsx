@@ -30,7 +30,7 @@ const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
                 shape="ghost"
                 title={c('Action').t`More options`}
             >
-                <Icon color="color-weak" name="three-dots-vertical" alt={c('Action').t`More options`} />
+                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} color="var(--text-weak)" />
             </Button>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
