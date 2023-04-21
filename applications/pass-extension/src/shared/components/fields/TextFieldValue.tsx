@@ -19,7 +19,13 @@ const TextFieldValue: FC<{ children: string; fallback?: string }> = ({ children,
                 <Copy
                     className="mlauto flex-item-noshrink"
                     value={children}
-                    onCopy={() => createNotification({ type: 'success', text: c('Info').t`Copied to clipboard` })}
+                    onCopy={() =>
+                        createNotification({
+                            type: 'success',
+                            text: c('Info').t`Copied to clipboard`,
+                            showCloseButton: false,
+                        })
+                    }
                 />
             )}
         </div>
