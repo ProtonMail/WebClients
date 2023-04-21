@@ -18,6 +18,7 @@ import { TitleField } from '../../../components/Fields/TitleField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePopupContext } from '../../../hooks/usePopupContext';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { AliasForm } from './Alias.form';
 import { type NewAliasFormValues, validateNewAliasForm } from './Alias.validation';
 
@@ -116,6 +117,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 component={TitleField}
                                 autoFocus={canFocus}
                                 key={`alias-name-${canFocus}`}
+                                maxLength={MAX_ITEM_NAME_LENGTH}
                             />
                         </FieldsetCluster>
 
@@ -143,6 +145,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 component={TextAreaField}
                                 icon="note"
                                 minRows={1}
+                                maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>
                     </Form>
