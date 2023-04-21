@@ -69,6 +69,13 @@
 	border-color: var(--border-weak);
 }
 
+.field-two-container:has(input:placeholder-shown, textarea:placeholder-shown) {
+	label,
+	label > span {
+		color: var(--text-norm);
+	}
+}
+
 // _checkbox.scss override
 .checkbox-fakecheck,
 .radio-fakeradio {
