@@ -3,6 +3,7 @@ import { type VFC, useState } from 'react';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components';
 import type { ItemRevisionWithOptimistic } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
 
 import { presentItemIcon } from '../../../shared/items';
 import { ImageStatus, ProxiedDomainImage } from './ProxiedDomainImage';
@@ -16,6 +17,8 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
 }) => {
     const { data, optimistic, failed } = item;
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
+    const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
+    const imageSize = Math.round(size * 0.6);
 
     const renderIcon = () => {
         if (failed) {
@@ -33,12 +36,11 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
             return <CircleLoader size="small" className="upper-layer color-primary absolute-center opacity-60" />;
         }
 
-        const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
-
         if (domainURL && imageStatus !== ImageStatus.ERROR) {
             return (
                 <ProxiedDomainImage
                     className="w-custom h-custom absolute-center"
+                    style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
                     onStatusChange={setImageStatus}
                     status={imageStatus}
                     url={domainURL}
@@ -53,7 +55,11 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
 
     return (
         <div
-            className={`pass-item-icon w-custom h-custom rounded-xl overflow-hidden relative ${className}`}
+            className={clsx(
+                'pass-item-icon w-custom h-custom rounded-xl overflow-hidden relative',
+                className,
+                domainURL && imageStatus !== ImageStatus.ERROR && 'pass-item-icon--has-image'
+            )}
             style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
         >
             <span className="sr-only">{data.type}</span>
