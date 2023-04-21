@@ -15,7 +15,7 @@ const StripedItem = ({ left, children, tooltip }: StripedItemProps) => {
                 <div className="mr0-75">{left}</div>
                 <div className="flex-item-fluid">
                     {children}
-                    {tooltip ? <Info className="ml0-5" title={tooltip} /> : null}
+                    {tooltip ? <Info buttonClass="ml-2" title={tooltip} /> : null}
                 </div>
             </div>
         </li>

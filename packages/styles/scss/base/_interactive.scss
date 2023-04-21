@@ -1,8 +1,13 @@
 %interactive {
 	outline: none; // be careful of a11y
-	@supports selector(:focus-visible) {
+	@supports selector(:focus-visible:has(a, b)) {
 		// had to do this because of Safari
 		outline: unset;
+	}
+
+	&.link-focus.link-focus:focus,
+	&.link-focus.link-focus:focus-visible {
+		outline: none;
 	}
 
 	background-color: var(--interaction-default);
@@ -127,5 +132,31 @@
 
 	&::after {
 		inset: $focus-ring-size;
+	}
+}
+
+.interactive-pseudo-protrude {
+	@extend %interactive;
+	@extend .interactive-pseudo;
+
+	&::after {
+		inset: -$focus-ring-size;
+	}
+}
+
+.interactive--no-background {
+	&:hover,
+	&:focus,
+	&:focus-visible,
+	&:focus-within,
+	&:active,
+	&.is-active,
+	&.active,
+	&[aria-expanded='true'] {
+		background-color: inherit;
+
+		&:hover::after {
+			background-color: inherit;
+		}
 	}
 }
