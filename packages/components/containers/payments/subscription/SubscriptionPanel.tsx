@@ -255,15 +255,16 @@ const SubscriptionPanel = ({
     };
 
     return (
-        <div className="border rounded px2 py1-5 subscription-panel-container">
+        <div className="border rounded px2 py1-5 subscription-panel-container" data-testid="current-plan">
             <div className="flex flex-wrap flex-align-items-center flex-justify-space-between pt0-5">
-                <h3 className="m0">
+                <h3 className="m0" data-testid="plan-name">
                     <strong>{planTitle}</strong>
                 </h3>
                 <Price
                     className="h3 m0 color-weak"
                     currency={currency}
                     suffix={subscription && amount ? c('Suffix').t`/month` : ''}
+                    dataTestId="plan-price"
                 >
                     {amount}
                 </Price>
@@ -280,9 +281,14 @@ const SubscriptionPanel = ({
             {
                 // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
                 user.isPaid && user.canPay ? (
-                    <Button onClick={handleEditPayment} className="mb0-5" size="large" color="weak" fullWidth>{c(
-                        'Action'
-                    ).t`Edit billing details`}</Button>
+                    <Button
+                        onClick={handleEditPayment}
+                        className="mb0-5"
+                        size="large"
+                        color="weak"
+                        fullWidth
+                        data-testid="edit-billing-details"
+                    >{c('Action').t`Edit billing details`}</Button>
                 ) : null
             }
             {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
@@ -292,12 +298,19 @@ const SubscriptionPanel = ({
                     size="large"
                     color="weak"
                     shape="outline"
+                    data-testid="customize-plan"
                     fullWidth
                 >{c('Action').t`Customize plan`}</Button>
             ) : null}
             {user.canPay ? (
-                <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c('Action')
-                    .t`Explore other ${BRAND_NAME} plans`}</Button>
+                <Button
+                    onClick={handleExplorePlans}
+                    size="large"
+                    color="norm"
+                    shape="ghost"
+                    fullWidth
+                    data-testid="explore-other-plan"
+                >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>
             ) : null}
         </div>
     );
