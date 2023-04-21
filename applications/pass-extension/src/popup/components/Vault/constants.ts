@@ -8,6 +8,8 @@ const numericEntries = <T extends Record<number, any>>(
     Object.keys(obj).map((key) => [Number(key), obj[Number(key)]]);
 
 export const VAULT_COLOR_MAP: Record<number, ColorRGB> = {
+    [VaultColor.COLOR_UNSPECIFIED]: '167 121 255',
+    [VaultColor.COLOR_CUSTOM]: '167 121 255',
     [VaultColor.COLOR1]: '167 121 255',
     [VaultColor.COLOR2]: '242 146 146',
     [VaultColor.COLOR3]: '247 215 117',
@@ -23,6 +25,8 @@ export const VAULT_COLOR_MAP: Record<number, ColorRGB> = {
 export const VAULT_COLORS = numericEntries(VAULT_COLOR_MAP);
 
 export const VAULT_ICON_MAP: Record<number, IconName> = {
+    [VaultIcon.ICON_UNSPECIFIED]: 'pass-home',
+    [VaultIcon.ICON_CUSTOM]: 'pass-home',
     [VaultIcon.ICON1]: 'pass-home',
     [VaultIcon.ICON2]: 'pass-work',
     [VaultIcon.ICON3]: 'pass-gift',

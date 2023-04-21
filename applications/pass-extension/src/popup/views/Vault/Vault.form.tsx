@@ -45,13 +45,13 @@ export const VaultForm: VFC<Props> = ({ formId, form }) => {
                 component={RadioButtonGroupField}
                 className="flex-justify-space-between gap-x-6 gap-y-4"
             >
-                {VAULT_COLORS.map(([vaultColor, rgb]) => (
+                {VAULT_COLORS.slice(2).map(([vaultColor, rgb]) => (
                     <RadioButton<VaultColorEnum> key={`vault-color-${vaultColor}`} value={vaultColor} color={rgb} />
                 ))}
             </Field>
 
             <Field name="icon" component={RadioButtonGroupField} className="flex-justify-space-between gap-x-6 gap-y-4">
-                {VAULT_ICONS.map(([vaultIcon, icon]) => (
+                {VAULT_ICONS.slice(2).map(([vaultIcon, icon]) => (
                     <RadioButton<VaultIconEnum> key={`vault-icon-${vaultIcon}`} value={vaultIcon} icon={icon} />
                 ))}
             </Field>
