@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
+import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { DecryptedLink } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
@@ -18,8 +19,9 @@ interface Props {
 }
 
 export default function SharedFilePage({ token, link }: Props) {
-    const { isLinkLoading, isContentLoading, error, contents } = usePublicFileView(token, link.linkId);
+    const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
+    const { isNarrow } = useActiveBreakpoint();
 
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
@@ -40,6 +42,7 @@ export default function SharedFilePage({ token, link }: Props) {
                 <FilePreviewContent
                     isMetaLoading={isLinkLoading}
                     isLoading={isContentLoading}
+                    onDownload={!isNarrow ? downloadFile : undefined}
                     error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
                     contents={contents}
                     fileName={link?.name}
