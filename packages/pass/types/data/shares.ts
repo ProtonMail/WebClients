@@ -28,6 +28,7 @@ export type ShareBase<T extends ShareType = ShareType> = {
     targetId: string;
     targetType: number;
     content: ShareContent<T>;
+    primary: boolean;
 };
 
 export type WithEventId<T> = T & { eventId: string };

@@ -77,6 +77,7 @@ export const withOptimisticShares = withOptimistic<SharesState>(
                     targetId: id,
                     content: content,
                     targetType: ShareType.Vault,
+                    primary: false,
                     eventId: '',
                 },
             });
