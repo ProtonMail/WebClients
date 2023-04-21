@@ -11,8 +11,9 @@ import { Field } from '../../../components/Fields/Field';
 import { NoteTextAreaField, NoteTitleField } from '../../../components/Fields/Note/index';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import type { NoteFormValues } from './Note.validation';
-import { MAX_NOTE_CONTENT_LENGTH, MAX_NOTE_TITLE_LENGTH, validateNoteForm } from './Note.validation';
+import { validateNoteForm } from './Note.validation';
 
 const FORM_ID = 'new-note';
 
@@ -58,14 +59,14 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             placeholder={c('Placeholder').t`Untitled`}
                             autoFocus={canFocus}
                             key={`note-name-${canFocus}`}
-                            maxLength={MAX_NOTE_TITLE_LENGTH}
+                            maxLength={MAX_ITEM_NAME_LENGTH}
                         />
                         <Field
                             component={NoteTextAreaField}
                             label={c('Label').t`Note`}
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
-                            maxLength={MAX_NOTE_CONTENT_LENGTH}
+                            maxLength={MAX_ITEM_NOTE_LENGTH}
                         />
                     </Form>
                 </FormikProvider>

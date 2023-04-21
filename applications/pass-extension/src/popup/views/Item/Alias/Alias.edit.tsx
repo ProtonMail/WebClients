@@ -17,6 +17,7 @@ import { SelectField } from '../../../components/Fields/SelectField';
 import { TextAreaField } from '../../../components/Fields/TextareaField';
 import { TitleField } from '../../../components/Fields/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditAliasFormValues, validateEditAliasForm } from './Alias.validation';
 
 const FORM_ID = 'edit-alias';
@@ -85,6 +86,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 label={c('Label').t`Title`}
                                 placeholder={c('Label').t`Untitled`}
                                 component={TitleField}
+                                maxLength={MAX_ITEM_NAME_LENGTH}
                             />
                         </FieldsetCluster>
 
@@ -121,6 +123,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 component={TextAreaField}
                                 icon="note"
                                 minRows={1}
+                                maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>
                     </Form>
