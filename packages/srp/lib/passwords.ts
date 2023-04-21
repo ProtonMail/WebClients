@@ -5,10 +5,10 @@ import {
     arrayToBinaryString,
     arrayToHexString,
     binaryStringToArray,
-    concatArrays,
     encodeBase64,
     encodeUtf8,
 } from '@proton/crypto/lib/utils';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { BCRYPT_PREFIX } from './constants';
 import { cleanUsername } from './utils/username';
@@ -18,12 +18,12 @@ import { cleanUsername } from './utils/username';
  */
 export const expandHash = async (input: Uint8Array) => {
     const promises = [];
-    const arr = concatArrays([input, new Uint8Array([0])]);
+    const arr = mergeUint8Arrays([input, new Uint8Array([0])]);
     for (let i = 1; i <= 4; i++) {
         promises.push(CryptoProxy.computeHash({ algorithm: 'SHA512', data: arr }));
         arr[arr.length - 1] = i;
     }
-    return concatArrays(await Promise.all(promises));
+    return mergeUint8Arrays(await Promise.all(promises));
 };
 
 /**
@@ -31,7 +31,7 @@ export const expandHash = async (input: Uint8Array) => {
  */
 const formatHash = async (password: string, salt: string, modulus: Uint8Array) => {
     const unexpandedHash = await bcrypt.hash(password, BCRYPT_PREFIX + salt);
-    return expandHash(concatArrays([binaryStringToArray(unexpandedHash), modulus]));
+    return expandHash(mergeUint8Arrays([binaryStringToArray(unexpandedHash), modulus]));
 };
 
 /**
