@@ -32,8 +32,9 @@ const loadVaultShareById = async (shareId: string): Promise<Share<ShareType.Vaul
         targetId: share.targetId,
         targetType: share.targetType,
         vaultId: share.vaultId,
-        content,
         eventId,
+        content,
+        primary: Boolean(shareInfo.Share?.Primary),
     };
 };
 

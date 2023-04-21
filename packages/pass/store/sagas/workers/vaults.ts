@@ -42,6 +42,7 @@ export async function createVault(vault: ShareContent<ShareType.Vault>): Promise
         targetType: share.targetType,
         vaultId: share.vaultId,
         content,
+        primary: Boolean(encryptedShare.Primary),
         eventId,
     };
 }
@@ -76,6 +77,7 @@ export async function editVault(
         targetType: share.targetType,
         vaultId: share.vaultId,
         content: decodeVaultContent(share.content),
+        primary: Boolean(encryptedShare.Primary),
         eventId,
     };
 }
