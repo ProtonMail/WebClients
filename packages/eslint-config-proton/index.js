@@ -21,6 +21,7 @@ module.exports = {
         'deprecation',
         'no-only-tests',
         'jsx-a11y',
+        'custom-rules',
     ],
     rules: {
         '@typescript-eslint/array-type': [
@@ -186,6 +187,7 @@ module.exports = {
         'jsx-a11y/label-has-for': 'off',
         'jsx-a11y/no-autofocus': 'off',
         'jsx-a11y/no-onchange': 'off',
+        'custom-rules/deprecate-spacing-utility-classes': 'off',
     },
     settings: {
         'import/resolver': {
