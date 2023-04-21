@@ -1,4 +1,4 @@
-import { type VFC, useMemo } from 'react';
+import { type CSSProperties, type VFC, useMemo } from 'react';
 
 import { API_URL } from '../../../app/config';
 
@@ -13,6 +13,7 @@ interface Props {
     onStatusChange: (status: ImageStatus) => void;
     status: ImageStatus;
     url: string;
+    style?: CSSProperties;
 }
 
 const getImageURL = (domain?: string) => {
@@ -22,7 +23,7 @@ const getImageURL = (domain?: string) => {
     }
 };
 
-export const ProxiedDomainImage: VFC<Props> = ({ className, onStatusChange, status, url }) => {
+export const ProxiedDomainImage: VFC<Props> = ({ className, onStatusChange, status, url, style = {} }) => {
     const domain = useMemo(() => {
         try {
             onStatusChange(ImageStatus.LOADING);
@@ -32,7 +33,7 @@ export const ProxiedDomainImage: VFC<Props> = ({ className, onStatusChange, stat
         }
     }, [url]);
 
-    const style = { opacity: status === ImageStatus.READY ? 1 : 0 };
+    const styles = { opacity: status === ImageStatus.READY ? 1 : 0, ...style };
 
     return (
         <img
@@ -41,7 +42,7 @@ export const ProxiedDomainImage: VFC<Props> = ({ className, onStatusChange, stat
             onError={() => onStatusChange(ImageStatus.ERROR)}
             onLoad={() => onStatusChange(ImageStatus.READY)}
             src={getImageURL(domain)}
-            style={style}
+            style={styles}
         />
     );
 };
