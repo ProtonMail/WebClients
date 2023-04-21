@@ -4,7 +4,6 @@ import userEvent from '@testing-library/user-event';
 
 import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
-import { concatArrays } from '@proton/crypto/lib/utils';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
@@ -30,6 +29,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import isTruthy from '@proton/utils/isTruthy';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import * as inviteApi from '../../../helpers/calendar/inviteApi';
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
@@ -167,7 +167,7 @@ const getSetup = async ({
             const inviteAttachment = new File([new Blob([ics])], filename, { type: mimeType });
 
             const attachmentPackets = await encryptAttachment(ics, inviteAttachment, false, addressKey.publicKeys, []);
-            const concatenatedPackets = concatArrays(
+            const concatenatedPackets = mergeUint8Arrays(
                 [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
             );
             // Mock API calls to get attachment

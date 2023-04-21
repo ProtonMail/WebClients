@@ -1,7 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { concatArrays } from '@proton/crypto/lib/utils';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { APPS, APP_NAMES, KEY_FILE_EXTENSION } from '../constants';
 import downloadFile from '../helpers/downloadFile';
@@ -80,7 +80,7 @@ export const generateRecoveryFileMessage = async ({
     );
 
     const { message } = await CryptoProxy.encryptMessage({
-        binaryData: concatArrays(userKeysArray),
+        binaryData: mergeUint8Arrays(userKeysArray),
         passwords: [recoverySecret],
     });
 

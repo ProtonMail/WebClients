@@ -2,8 +2,8 @@
  * Currently this is basically a copy of sendEncrypt from the mail repo. TO BE IMPROVED
  */
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { concatArrays } from '@proton/crypto/lib/utils';
 import isTruthy from '@proton/utils/isTruthy';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AES256, MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 import { hasBit } from '../../helpers/bitset';
@@ -136,8 +136,8 @@ const encryptDraftBodyPackage = async ({
     );
 
     // combine message
-    const value = concatArrays([...encryptedSessionKeys.slice(0, publicKeys.length), encryptedData]);
-    // _.flowRight(concatArrays, _.flatten, _.values)(packets);
+    const value = mergeUint8Arrays([...encryptedSessionKeys.slice(0, publicKeys.length), encryptedData]);
+    // _.flowRight(mergeUint8Arrays, _.flatten, _.values)(packets);
 
     const armoredBody = await CryptoProxy.getArmoredMessage({ binaryMessage: value });
 
