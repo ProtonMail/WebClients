@@ -1,12 +1,13 @@
-import { type VFC } from 'react';
+import type { VFC } from 'react';
 
 import { Field, Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { ItemEditProps } from '../../../../shared/items';
+import type { ItemEditProps } from '../../../../shared/items';
 import { NoteTextAreaField, NoteTitleField } from '../../../components/Fields/Note/index';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { NoteFormValues, validateNoteForm } from './Note.validation';
+import type { NoteFormValues } from './Note.validation';
+import { MAX_NOTE_CONTENT_LENGTH, MAX_NOTE_TITLE_LENGTH, validateNoteForm } from './Note.validation';
 
 const FORM_ID = 'edit-note';
 
@@ -48,12 +49,14 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
                             label={c('Label').t`Name`}
                             name="name"
                             placeholder={c('Placeholder').t`Untitled`}
+                            maxLength={MAX_NOTE_TITLE_LENGTH}
                         />
                         <Field
                             component={NoteTextAreaField}
                             label={c('Label').t`Note`}
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
+                            maxLength={MAX_NOTE_CONTENT_LENGTH}
                         />
                     </Form>
                 </FormikProvider>
