@@ -26,7 +26,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             aria-expanded={isOpen}
             ref={ref}
             {...rest}
-            className="max-w100 flex flex-align-items-center flex-nowrap user-dropdown-button relative"
+            className="max-w100 flex flex-align-items-center flex-nowrap user-dropdown-button relative interactive-pseudo-protrude interactive--no-background"
             title={`${nameToDisplay} <${Email}>`}
         >
             {nameToDisplay ? (
