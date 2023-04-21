@@ -1,7 +1,8 @@
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString, binaryStringToArray, concatArrays, hexStringToArray } from '@proton/crypto/lib/utils';
+import { arrayToHexString, binaryStringToArray, hexStringToArray } from '@proton/crypto/lib/utils';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { KT_DOMAINS, KT_LEN, LEFT_N, vrfHexKeyDev, vrfHexKeyProd } from '../constants/constants';
 import { fetchProof, fetchRecentEpoch } from '../helpers/fetchHelpers';
@@ -71,7 +72,8 @@ const verifyNeighbors = async (
             neighbor = hexStringToArray(neighborToCheck);
         }
 
-        const toHash = bit === LEFT_N ? concatArrays([neighbor, leafValue]) : concatArrays([leafValue, neighbor]);
+        const toHash =
+            bit === LEFT_N ? mergeUint8Arrays([neighbor, leafValue]) : mergeUint8Arrays([leafValue, neighbor]);
         leafValue = await CryptoProxy.computeHash({
             algorithm: 'SHA256',
             data: toHash,
@@ -107,7 +109,7 @@ const verifyProofOfAbscence = async (proof: Proof, email: string, TreeHash: stri
 const computeLeafValue = async (content: Uint8Array, Revision: number) =>
     CryptoProxy.computeHash({
         algorithm: 'SHA256',
-        data: concatArrays([
+        data: mergeUint8Arrays([
             await CryptoProxy.computeHash({
                 algorithm: 'SHA256',
                 data: content,
