@@ -8,7 +8,7 @@ import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getStorageFeature = (
     bytes: number,
-    options: { fire?: boolean; boldStorageSize?: boolean } = {}
+    options: { fire?: boolean; boldStorageSize?: boolean; family?: boolean } = {}
 ): PlanCardFeatureDefinition => {
     const { fire = false, boldStorageSize = false } = options;
     if (bytes === -1) {
@@ -23,12 +23,20 @@ export const getStorageFeature = (
         };
     }
 
-    const humanReadableSize = humanSize(bytes, undefined, undefined, 0);
+    const humanReadableSize = options.family
+        ? c('specialoffer: Deal details').t`3 TB` // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
+        : humanSize(bytes, undefined, undefined, 0);
+
     const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
+    const tooltip = options.family
+        ? c('new_plans: tooltip')
+              .t`Storage space is shared between users across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}`
+        : c('new_plans: tooltip')
+              .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}`;
+
     return {
-        featureName: c('new_plans: feature').jt`${size} storage` as string,
-        tooltip: c('new_plans: tooltip')
-            .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}`,
+        featureName: c('new_plans: feature').jt`${size} storage`,
+        tooltip,
         included: true,
         fire,
         icon: 'storage',
@@ -55,10 +63,13 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getDriveAppFeature = (): PlanCardFeatureDefinition => {
+export const getDriveAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
     return {
         featureName: DRIVE_APP_NAME,
-        tooltip: c('new_plans: tooltip').t`End-to-end encrypted file storage`,
+        tooltip: options?.family
+            ? c('new_plans: tooltip')
+                  .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`
+            : c('new_plans: tooltip').t`End-to-end encrypted file storage`,
         included: true,
         icon: 'brand-proton-drive',
     };
@@ -106,7 +117,10 @@ export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
             [PLANS.MAIL]: getStorageFeature(plansMap[PLANS.MAIL]?.MaxSpace ?? 16106127360),
             [PLANS.VPN]: getStorageFeature(-1),
             [PLANS.DRIVE]: getStorageFeature(plansMap[PLANS.DRIVE]?.MaxSpace ?? 214748364800),
-            [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440),
+            [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, {
+                family: true,
+                fire: true,
+            }),
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360),
             [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000, true),
         },

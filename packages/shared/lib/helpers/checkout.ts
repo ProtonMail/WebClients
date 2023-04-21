@@ -2,7 +2,17 @@ import { c, msgid } from 'ttag';
 
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
-import { ADDON_NAMES, COUPON_CODES, CYCLE, DEFAULT_CYCLE, MEMBER_PLAN_MAPPING, PLANS, PLAN_TYPES } from '../constants';
+import {
+    ADDON_NAMES,
+    BRAND_NAME,
+    COUPON_CODES,
+    CYCLE,
+    DEFAULT_CYCLE,
+    FAMILY_MAX_USERS,
+    MEMBER_PLAN_MAPPING,
+    PLANS,
+    PLAN_TYPES,
+} from '../constants';
 import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse, VPNServersCountData } from '../interfaces';
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
@@ -179,6 +189,7 @@ export const getWhatsIncluded = ({
             },
         ];
     }
+
     const summary = Object.entries(planIDs).reduce(
         (acc, [planNameValue, quantity]) => {
             const planName = planNameValue as keyof PlansMap;
@@ -194,6 +205,27 @@ export const getWhatsIncluded = ({
         },
         { space: 0, addresses: 0, domains: 0, vpn: 0 }
     );
+
+    const family = planIDs[PLANS.FAMILY];
+    if (family !== undefined && family > 0) {
+        const storage = humanSize(summary.space || FREE_PLAN.MaxSpace, undefined, undefined, 0);
+
+        return [
+            {
+                type: 'text',
+                text: c('Info').t`Up to ${FAMILY_MAX_USERS} users`,
+            },
+            {
+                type: 'text',
+                text: c('Info').t`${storage} storage`,
+            },
+            {
+                type: 'text',
+                text: c('Info').t`All ${BRAND_NAME} apps and their premium features`,
+            },
+        ];
+    }
+
     return [
         {
             type: 'value',

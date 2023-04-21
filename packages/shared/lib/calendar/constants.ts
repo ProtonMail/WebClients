@@ -3,6 +3,7 @@ import { BASE_SIZE } from '../constants';
 
 export const MAX_CALENDARS_FREE = 3;
 export const MAX_CALENDARS_PAID = 25; // Only paid mail
+export const MAX_CALENDARS_FAMILY = 150;
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
 export const MAX_NOTIFICATIONS = 10;
