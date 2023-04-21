@@ -21,6 +21,13 @@
 			}
 		}
 
+		&:has(input:placeholder-shown, textarea:placeholder-shown) {
+			label,
+			label > span {
+				color: var(--text-norm);
+			}
+		}
+
 		&:has(button[aria-expanded]) {
 			&::before {
 				border-radius: var(--border-radius-xl);
