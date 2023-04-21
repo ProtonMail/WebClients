@@ -2,8 +2,9 @@ import { type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { AliasMailbox } from '@proton/pass/types/data/alias';
-import { isEmptyString } from '@proton/pass/utils/string';
 import { validateLocalPart } from '@proton/shared/lib/helpers/email';
+
+import { validateItemErrors } from '../Item/Item.validation';
 
 export type AliasFormValues = {
     aliasPrefix: string;
@@ -45,12 +46,8 @@ export const validateAliasForm = ({
 };
 
 export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<NewAliasFormValues> => {
-    const errors: FormikErrors<NewAliasFormValues> = validateAliasForm(values);
+    const errors: FormikErrors<NewAliasFormValues> = { ...validateItemErrors(values), ...validateAliasForm(values) };
     const { aliasPrefix, aliasSuffix, mailboxes } = values;
-
-    if (isEmptyString(values.name)) {
-        errors.name = c('Warning').t`Title is required`;
-    }
 
     if (aliasPrefix === undefined || aliasPrefix.trim() === '') {
         errors.aliasPrefix = c('Warning').t`Missing alias prefix`;
@@ -79,14 +76,10 @@ export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<N
     return errors;
 };
 
-export const validateEditAliasForm = ({ name, mailboxes }: EditAliasFormValues): FormikErrors<EditAliasFormValues> => {
-    const errors: FormikErrors<EditAliasFormValues> = {};
+export const validateEditAliasForm = (values: EditAliasFormValues): FormikErrors<EditAliasFormValues> => {
+    const errors: FormikErrors<EditAliasFormValues> = validateItemErrors(values);
 
-    if (isEmptyString(name)) {
-        errors.name = c('Warning').t`Title is required`;
-    }
-
-    if (mailboxes.length === 0) {
+    if (values.mailboxes.length === 0) {
         errors.mailboxes = c('Warning').t`You must select at least one mailbox`;
     }
 
