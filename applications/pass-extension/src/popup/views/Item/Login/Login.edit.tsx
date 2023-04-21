@@ -227,7 +227,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                 <Field
                                     name="note"
                                     label={c('Label').t`Note`}
-                                    placeholder={c('Placeholder').t`Enter a note ...`}
+                                    placeholder={c('Placeholder').t`Enter a note...`}
                                     component={TextAreaField}
                                     icon="note"
                                     minRows={1}
