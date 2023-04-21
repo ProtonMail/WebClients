@@ -35,9 +35,10 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                     <p className="text-center mb1">{c('Info')
                         .t`Your account will be updated once the payment is cleared.`}</p>
                 ) : (
-                    <p className="text-center mb1 text-bold text-xl">{c('Info').t`Account successfully updated`}</p>
+                    <p className="text-center mb1 text-bold text-xl" data-testid="successfull-update">{c('Info')
+                        .t`Account successfully updated`}</p>
                 )}
-                <p className="text-center mb2">{c('Info')
+                <p className="text-center mb2" data-testid="more-info">{c('Info')
                     .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
                 <div className="mt1 mb2 text-center">
                     <Href
