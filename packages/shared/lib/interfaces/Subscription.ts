@@ -108,4 +108,5 @@ export interface SubscriptionCheckResponse {
 export enum Audience {
     B2C = 0,
     B2B = 1,
+    FAMILY = 2,
 }

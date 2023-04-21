@@ -1,10 +1,45 @@
 import { c } from 'ttag';
 
-import { PLANS } from '@proton/shared/lib/constants';
-import { PlansMap } from '@proton/shared/lib/interfaces';
+import { FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
+import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+
+const getUsers = (): PlanCardFeature => {
+    return {
+        name: 'user-number',
+        target: Audience.FAMILY,
+        plans: {
+            [PLANS.FREE]: {
+                featureName: c('new_plans: feature').t`1 user`,
+                tooltip: '',
+                included: true,
+            },
+            [PLANS.BUNDLE]: null,
+            [PLANS.MAIL]: null,
+            [PLANS.VPN]: null,
+            [PLANS.DRIVE]: null,
+            [PLANS.FAMILY]: {
+                featureName: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
+                tooltip: '',
+                included: true,
+                fire: true,
+            },
+            [PLANS.MAIL_PRO]: null,
+            [PLANS.BUNDLE_PRO]: null,
+        },
+    };
+};
+
+export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
+    return {
+        featureName: c('new_plans: feature').t`Up to ${n} users`,
+        tooltip: '',
+        icon: 'users',
+        included: true,
+    };
+};
 
 export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinition => {
     return {
@@ -28,6 +63,7 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
 
 export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
     return [
+        getUsers(),
         getStorage(plansMap),
         {
             name: 'support',

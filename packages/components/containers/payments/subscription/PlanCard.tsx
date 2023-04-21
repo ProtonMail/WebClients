@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 
-import { Badge, Icon, Price, PrimaryButton } from '../../../components';
+import { Icon, Price, PrimaryButton } from '../../../components';
 import { classnames } from '../../../helpers';
 
 interface Props {
@@ -52,8 +52,6 @@ const PlanCard = ({
     isCurrentPlan,
     recommended,
 }: Props) => {
-    const badgeMultiUser = planName === PLANS.FAMILY ? <Badge type="success">{c('Badge').t`5 users`}</Badge> : null;
-
     return (
         <>
             <div
@@ -78,7 +76,6 @@ const PlanCard = ({
                     >
                         {planTitle}
                     </h2>
-                    <span className="ml0-5 mb0-5">{badgeMultiUser}</span>
                 </div>
                 <p className="text-lg plan-selection-info text-left color-weak mb1">{info}</p>
                 <div className="mb1 flex flex-wrap flex-align-items-baseline plan-selection-price">
