@@ -32,16 +32,16 @@ describe('Import bitwarden json', () => {
         const { items } = vaultData;
 
         /* Login */
-        const loginItem = items[0] as ItemImportIntent<'login'>;
-        const allowedApp = loginItem.platformSpecific?.android?.allowedApps[0];
-        expect(loginItem.type).toBe('login');
-        expect(loginItem.metadata.name).toBe('LoginItemMultipleWebsites');
-        expect(loginItem.metadata.note).toBe('login note');
-        expect(loginItem.content.username).toBe('username');
-        expect(loginItem.content.password).toBe('password');
-        expect(loginItem.content.urls[0]).toBe('https://test.url1/');
-        expect(loginItem.content.urls[1]).toBe('https://test.url2/');
-        expect(loginItem.content.totpUri).toBe(
+        const loginItem1 = items[0] as ItemImportIntent<'login'>;
+        const allowedApp = loginItem1.platformSpecific?.android?.allowedApps[0];
+        expect(loginItem1.type).toBe('login');
+        expect(loginItem1.metadata.name).toBe('LoginItemMultipleWebsites');
+        expect(loginItem1.metadata.note).toBe('login note');
+        expect(loginItem1.content.username).toBe('username');
+        expect(loginItem1.content.password).toBe('password');
+        expect(loginItem1.content.urls[0]).toBe('https://test.url1');
+        expect(loginItem1.content.urls[1]).toBe('https://test.url2');
+        expect(loginItem1.content.totpUri).toBe(
             'otpauth://totp/proton:test?issuer=proton&secret=PROTON33&algorithm=SHA1&digits=6&period=30'
         );
         expect(allowedApp?.packageName).toEqual('ch.protonmail.android');
@@ -53,5 +53,25 @@ describe('Import bitwarden json', () => {
         expect(noteItem.metadata.name).toBe('NoteItem');
         expect(noteItem.metadata.note).toBe('note content');
         expect(noteItem.content).toStrictEqual({});
+
+        /* Login empty */
+        const loginItem2 = items[2] as ItemImportIntent<'login'>;
+        expect(loginItem2.type).toBe('login');
+        expect(loginItem2.metadata.name).toBe('LoginItemEmptyFields');
+        expect(loginItem2.metadata.note).toBe('login note');
+        expect(loginItem2.content.username).toStrictEqual('');
+        expect(loginItem2.content.password).toStrictEqual('');
+        expect(loginItem2.content.urls).toStrictEqual([]);
+        expect(loginItem2.content.totpUri).toStrictEqual('');
+
+        /* Login broken url */
+        const loginItem3 = items[3] as ItemImportIntent<'login'>;
+        expect(loginItem3.type).toBe('login');
+        expect(loginItem3.metadata.name).toBe('LoginItemBrokenUrl');
+        expect(loginItem3.metadata.note).toBe('');
+        expect(loginItem3.content.username).toStrictEqual('');
+        expect(loginItem3.content.password).toStrictEqual('');
+        expect(loginItem3.content.urls).toStrictEqual([]);
+        expect(loginItem3.content.totpUri).toStrictEqual('');
     });
 });

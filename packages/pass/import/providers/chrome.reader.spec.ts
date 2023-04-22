@@ -53,6 +53,15 @@ describe('Import Chrome CSV', () => {
         expect(loginItem3.content.username).toEqual('missingpw@proton.me');
         expect(loginItem3.content.password).toEqual('');
         expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me');
+
+        /* Login broken url */
+        const loginItem4 = items[3] as ItemImportIntent<'login'>;
+        expect(loginItem4.type).toEqual('login');
+        expect(loginItem4.metadata.name).toEqual('broken url');
+        expect(loginItem4.metadata.note).toEqual('');
+        expect(loginItem4.content.username).toEqual('brokenurl@proton.me');
+        expect(loginItem4.content.password).toEqual('');
+        expect(loginItem4.content.urls).toEqual([]);
     });
 
     it('transforms chrome csv (windows) into ImportPayload', async () => {
