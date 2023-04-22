@@ -1,4 +1,4 @@
-import type { MouseEvent, VFC } from 'react';
+import type { VFC } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -10,15 +10,14 @@ import {
     DropdownMenuButton,
     Header as HeaderComponent,
     Icon,
-    useNotifications,
     usePopperAnchor,
 } from '@proton/components';
 import type { ItemType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { itemTypeToIconName } from '../../../shared/items';
 import { itemTypeToItemClassName } from '../../../shared/items/className';
+import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { OnboardingPanel } from '../Onboarding/OnboardingPanel';
@@ -45,10 +44,10 @@ export const Header: VFC<{}> = () => {
     const history = useHistory();
     const { ready } = usePopupContext();
     const { search, setSearch } = useItemsFilteringContext();
-    const { createNotification } = useNotifications();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { generatePassword } = usePasswordGeneratorContext();
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
+    const copyToClipboard = useCopyToClipboard();
 
     const handleNewItemClick = (type: ItemType) => {
         // Trick to be able to return to the initial route using history.goBack() if user switches
@@ -57,14 +56,11 @@ export const Header: VFC<{}> = () => {
         history[shouldReplace ? 'replace' : 'push'](`/item/new/${type}`);
     };
 
-    const handleNewPasswordClick = (e: MouseEvent<HTMLElement>) => {
+    const handleNewPasswordClick = () => {
         void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
             className: 'ui-password',
-            onSubmit: (password) => {
-                textToClipboard(password, e.currentTarget);
-                createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
-            },
+            onSubmit: (password) => copyToClipboard(password),
         });
     };
 

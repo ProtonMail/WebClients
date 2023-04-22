@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -19,6 +19,7 @@ type Props = {
     type: ItemType;
     name: string;
     vault: VaultShare;
+    actions?: ReactElement[];
 } & Omit<ItemTypeViewProps, 'revision' | 'vault'>;
 
 export const ItemViewPanel: FC<Props> = ({
@@ -28,6 +29,7 @@ export const ItemViewPanel: FC<Props> = ({
     optimistic,
     failed,
     trashed,
+    actions = [],
 
     handleEditClick,
     handleRetryClick,
@@ -106,6 +108,9 @@ export const ItemViewPanel: FC<Props> = ({
                                 <Icon name="pencil" className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
                             </Button>,
+
+                            ...actions,
+
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
                                 color="weak"
@@ -137,7 +142,7 @@ export const ItemViewPanel: FC<Props> = ({
                               subtitle: vault.content.name,
                               subtitleIcon: vault.content.display.icon
                                   ? VAULT_ICON_MAP[vault.content.display.icon]
-                                  : 'pass-vault',
+                                  : 'pass-all-vaults',
                           }
                         : {})}
                 />
