@@ -16,6 +16,7 @@ import type {
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors';
 import { logger } from '@proton/pass/utils/logger';
+import { UNIX_HOUR, getEpoch } from '@proton/pass/utils/time';
 import { parseUrl } from '@proton/pass/utils/url';
 import { workerCanBoot } from '@proton/pass/utils/worker';
 
@@ -24,7 +25,12 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
+type ActivationServiceState = { updateAvailable: boolean; checkedUpdateAt: number };
+const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
+
 export const createActivationService = () => {
+    const state: ActivationServiceState = { updateAvailable: false, checkedUpdateAt: 0 };
+
     if (ENV === 'development') {
         createDevReloader(() => {
             WorkerMessageBroker.ports.broadcast(
@@ -36,10 +42,8 @@ export const createActivationService = () => {
         }, 'reloading chrome runtime');
     }
 
-    /**
-     * Safety-net around worker boot-sequence :
-     * Ensures no on-going booting sequence.
-     */
+    /* Safety-net around worker boot-sequence :
+     * Ensures no on-going booting sequence */
     const handleBoot = withContext((ctx) => {
         if (workerCanBoot(ctx.status)) {
             ctx.setStatus(WorkerStatus.BOOTING);
@@ -47,12 +51,33 @@ export const createActivationService = () => {
             store.dispatch(boot({}));
         }
     });
-    /**
-     * Try recovering the session when browser starts up
+
+    const checkAvailableUpdate = async (): Promise<boolean> => {
+        logger.info('[Worker::Activation] checking for update..');
+        const now = getEpoch();
+
+        try {
+            if (now - state.checkedUpdateAt > UNIX_HOUR) {
+                const [updateStatus] = await browser.runtime.requestUpdateCheck();
+
+                if (updateStatus === 'update_available') {
+                    logger.info('[Worker::Activation] update detected');
+                    return true;
+                }
+            }
+
+            return false;
+        } catch (_) {
+            return false;
+        } finally {
+            state.checkedUpdateAt = now;
+        }
+    };
+
+    /* Try recovering the session when browser starts up
      * if any session was locally persisted
      * if not in production - use sync.html session to workaround the
-     * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED)
-     */
+     * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
     const handleStartup = withContext(async (ctx) => {
         const { loggedIn } = (await ctx.init({ force: true })).getState();
 
@@ -64,11 +89,9 @@ export const createActivationService = () => {
         }
     });
 
-    /**
-     * On extension update :
+    /* On extension update :
      * - Re-init so as to resume session as soon as possible
-     * - Re-inject content-scripts to avoid stale extension contexts
-     */
+     * - Re-inject content-scripts to avoid stale extension contexts */
     const handleInstall = withContext(async (ctx, details: Runtime.OnInstalledDetailsType) => {
         if (details.reason === 'update') {
             if (ENV === 'production') {
@@ -117,7 +140,7 @@ export const createActivationService = () => {
                 const url = browser.runtime.getURL('/onboarding.html#/success');
                 await browser.tabs.create({ url });
             } catch (error: any) {
-                logger.warn(`[ActivationService::onInstall] requesting fork failed: ${getErrorMessage(error)}`);
+                logger.warn(`[Worker::Activation] requesting fork failed: ${getErrorMessage(error)}`);
             }
 
             void ctx.service.settings.onInstall();
@@ -125,12 +148,35 @@ export const createActivationService = () => {
         }
     });
 
-    /**
-     * When waking up from the pop-up (or page) we need to trigger the background wakeup
+    const handleOnUpdateAvailable = (details: Runtime.OnUpdateAvailableDetailsType) => {
+        if (details.version) {
+            logger.info(`[Worker::Activation] update available ${details.version}`);
+            state.updateAvailable = true;
+
+            const popupPorts = WorkerMessageBroker.ports.query((name) => name.startsWith('popup'));
+
+            /* on available update : only reload the runtime to force the
+             * the extension update if the popup is not opened to avoid
+             * discarding any ongoing user operations*/
+            if (popupPorts.length === 0) return browser.runtime.reload();
+
+            /* if we have ports opened to a popup : notify them in order
+             * to manually prompt the user for a runtime reload */
+            logger.info(`[Worker::Activation] update deferred because popup is active`);
+            popupPorts.forEach((port) =>
+                port.postMessage(
+                    backgroundMessage({
+                        type: WorkerMessageType.UPDATE_AVAILABLE,
+                    })
+                )
+            );
+        }
+    };
+
+    /* When waking up from the pop-up (or page) we need to trigger the background wakeup
      * saga while immediately resolving the worker state so the UI can respond to state
      * changes as soon as possible. Regarding the content-script, we simply wait for a
-     * ready state as its less "critical".
-     */
+     * ready state as its less "critical" */
     const handleWakeup = withContext(async (ctx, message: WorkerMessageWithSender<WorkerWakeUpMessage>) => {
         const { status } = await ctx.init({});
 
@@ -156,8 +202,8 @@ export const createActivationService = () => {
                 case 'popup':
                 case 'page': {
                     /* dispatch a wakeup action for this specific receiver.
-                    tracking the wakeup's request metadata can be consumed
-                    in the UI to infer wakeup result - see `wakeup.saga.ts` */
+                     * tracking the wakeup's request metadata can be consumed
+                     * in the UI to infer wakeup result - see `wakeup.saga.ts` */
                     store.dispatch(wakeup({ status }, endpoint, tabId));
 
                     resolve({
@@ -168,7 +214,7 @@ export const createActivationService = () => {
                 }
                 case 'content-script': {
                     /* no need for any redux operations on content-script
-                    wakeup as it doesn't hold any store. */
+                     * wakeup as it doesn't hold any store. */
                     return resolve({
                         ...(await ctx.ensureReady()).getState(),
                         settings: await ctx.service.settings.resolve(),
@@ -182,14 +228,32 @@ export const createActivationService = () => {
         (await ctx.init({ sync: message.payload.sync })).getState()
     );
 
+    /* throttle update checks for updates every hour */
+    browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
+    browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
+
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
+
+    if (ENV === 'development') {
+        /* there is no way to test the update sequence locally without
+         * creating a custom `update_url` server. In dev mode, trigger
+         * the `handleOnUpdateAvailable` callback from the settings */
+        WorkerMessageBroker.registerMessage(WorkerMessageType.UPDATE_AVAILABLE, () => {
+            handleOnUpdateAvailable({ version: browser.runtime.getManifest().version });
+            return true;
+        });
+    }
+
+    void checkAvailableUpdate();
 
     return {
         boot: handleBoot,
         onInstall: handleInstall,
         onStartup: handleStartup,
+        onUpdateAvailable: handleOnUpdateAvailable,
+        shouldUpdate: () => state.updateAvailable,
     };
 };
 
