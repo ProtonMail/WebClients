@@ -45,7 +45,7 @@ const extractURLs = (item: OnePassItem): string[] => [
         [item.overview.url, ...(item.overview.urls ?? []).map(({ url }) => url)]
             .map((uri) => {
                 const { valid, url } = isValidURL(uri);
-                return valid ? url : null;
+                return valid ? new URL(url).origin : undefined;
             })
             .filter(Boolean) as string[]
     ),
