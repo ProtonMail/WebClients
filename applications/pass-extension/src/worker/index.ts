@@ -47,6 +47,7 @@ browser.runtime.onMessageExternal.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onMessage.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onStartup.addListener(context.service.activation.onStartup);
 browser.runtime.onInstalled.addListener(context.service.activation.onInstall);
+browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
 
 if (BUILD_TARGET === 'firefox' && ENV === 'production') {
     /* Block direct access to certain `web_accessible_resources`

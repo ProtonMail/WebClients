@@ -37,6 +37,7 @@ export enum WorkerMessageType {
     WORKER_WAKEUP = 'WORKER_WAKEUP',
     WORKER_INIT = 'WORKER_INIT',
     WORKER_STATUS = 'WORKER_STATUS',
+    UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     RESOLVE_TAB = 'RESOLVE_TAB',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
@@ -69,6 +70,7 @@ export type WorkerForkMessage = WithPayload<WorkerMessageType.FORK, ForkPayload>
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { sync: boolean }>;
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
+export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_ACTION, { action: AnyAction }>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
@@ -103,6 +105,7 @@ export type WorkerMessage =
     | WorkerWakeUpMessage
     | WorkerInitMessage
     | WorkerStatusMessage
+    | UpdateAvailableMessage
     | UnloadContentScriptMessage
     | ResumeSessionSuccessMessage
     | AutofillQueryMessage
