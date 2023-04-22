@@ -10,11 +10,11 @@ import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload } from '../types';
 import type { ChromeItem } from './chrome.types';
 
-const CHROME_HEADERS: (keyof ChromeItem)[] = ['name', 'url', 'username', 'password', 'note'];
+const CHROME_EXPECTED_HEADERS: (keyof ChromeItem)[] = ['name', 'url', 'username', 'password'];
 
 export const readChromeData = async (data: string): Promise<ImportPayload> => {
     try {
-        const items = await readCSV<ChromeItem>(data, CHROME_HEADERS);
+        const items = await readCSV<ChromeItem>(data, CHROME_EXPECTED_HEADERS);
 
         return [
             {
