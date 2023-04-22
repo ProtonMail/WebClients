@@ -19,7 +19,7 @@ interface Props {
 const getImageURL = (domain?: string) => {
     if (domain) {
         const basePath = BUILD_TARGET === 'firefox' ? API_URL : 'api-proxy';
-        return `${basePath}/core/v4/images/logo?Domain=${domain}&Size=64&Mode=light`;
+        return `${basePath}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
     }
 };
 
