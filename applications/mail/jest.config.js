@@ -24,6 +24,7 @@ module.exports = {
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
         '@protontech/sieve.js': '@proton/components/__mocks__/sieve.js',
+        'proton-mail/(.*)$': '<rootDir>/src/app/$1',
     },
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     coverageReporters: ['text', 'lcov', 'cobertura'],
