@@ -13,11 +13,10 @@ import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload } from '../types';
 import type { LastPassItem } from './lastpass.types';
 
-const LASTPASS_HEADERS: (keyof LastPassItem)[] = [
+const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
     'url',
     'username',
     'password',
-    'totp',
     'extra',
     'name',
     'grouping',
@@ -61,7 +60,7 @@ const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
 
 export const readLastPassData = async (data: string): Promise<ImportPayload> => {
     try {
-        const lastPassItems = await readCSV<LastPassItem>(data, LASTPASS_HEADERS);
+        const lastPassItems = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS);
 
         const groupedByVault = groupWith<LastPassItem>(
             (a, b) => a.grouping === b.grouping,
