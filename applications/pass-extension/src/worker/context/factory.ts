@@ -79,13 +79,8 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
             context.status = status;
 
-            if (workerLoggedOut(status)) {
-                setPopupIcon({ loggedIn: false }).catch(noop);
-            }
-
-            if (workerReady(status)) {
-                setPopupIcon({ loggedIn: true }).catch(noop);
-            }
+            if (workerLoggedOut(status)) void setPopupIcon({ loggedIn: false });
+            if (workerReady(status)) void setPopupIcon({ loggedIn: true });
 
             WorkerMessageBroker.ports.broadcast(
                 backgroundMessage({
@@ -99,9 +94,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             const shouldInit = Boolean((sync ?? !workerReady(context.status)) || force);
             const shouldBoot = shouldInit && (await auth.init());
 
-            if (shouldBoot) {
-                context.service.activation.boot();
-            }
+            if (shouldBoot) context.service.activation.boot();
 
             return context;
         },
