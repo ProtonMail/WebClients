@@ -55,7 +55,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
             <div className="flex-nowrap flex w100 px-3 py-2 flex-align-items-center">
                 <ItemIcon
                     item={item}
-                    size={40}
+                    size={36}
                     className={clsx('mr-3  flex-item-noshrink', itemTypeToItemClassName[data.type])}
                 />
                 <div className="text-left">
