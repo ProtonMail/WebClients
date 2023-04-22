@@ -24,8 +24,8 @@ const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
 ];
 
 const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> => {
-    const validUrl = item.url ? isValidURL(item.url)?.valid : false;
-    const url = validUrl ? new URL(item.url!) : null;
+    const urlResult = isValidURL(item.url ?? '');
+    const url = urlResult.valid ? new URL(urlResult.url) : undefined;
     const name = item.name || url?.hostname || 'Unnamed LastPass item';
 
     return {
