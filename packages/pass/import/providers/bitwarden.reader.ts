@@ -33,7 +33,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                         }
 
                                         const { valid, url } = isValidURL(uri);
-                                        if (valid) acc.web.push(url);
+                                        if (valid) acc.web.push(new URL(url).origin);
 
                                         return acc;
                                     },

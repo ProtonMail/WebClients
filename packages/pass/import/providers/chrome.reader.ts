@@ -22,20 +22,21 @@ export const readChromeData = async (data: string): Promise<ImportPayload> => {
                 vaultName: c('Title').t`Chrome import`,
                 id: uniqid(),
                 items: items.map((item): ItemImportIntent<'login'> => {
-                    const validUrl = item.url ? isValidURL(item.url)?.valid : false;
-                    const urls = validUrl ? [new URL(item.url!).origin] : [];
+                    const urlResult = isValidURL(item.url ?? '');
+                    const url = urlResult.valid ? new URL(urlResult.url) : undefined;
+                    const name = item.name || url?.hostname || 'Unnamed LastPass item';
 
                     return {
                         type: 'login',
                         metadata: {
-                            name: item.name || item.username || 'Unnamed Chrome item',
+                            name,
                             note: item.note ?? '',
                             itemUuid: uniqid(),
                         },
                         content: {
                             username: item.username || '',
                             password: item.password || '',
-                            urls,
+                            urls: [url?.origin].filter(Boolean) as string[],
                             totpUri: '',
                         },
                         extraFields: [],

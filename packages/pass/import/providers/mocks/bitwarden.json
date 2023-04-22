@@ -112,6 +112,28 @@
                 "totp": null
             },
             "collectionIds": null
+        },
+        {
+            "id": "aa6874e0-c259-41fa-8a18-afa200cf3f3b",
+            "organizationId": null,
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "LoginItemBrokenUrl",
+            "notes": "",
+            "favorite": false,
+            "login": {
+                "uris": [
+                    {
+                        "match": null,
+                        "uri": "htt:/test.url1/"
+                    }
+                ],
+                "username": null,
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": null
         }
     ]
 }

@@ -73,5 +73,14 @@ describe('Import LastPass csv', () => {
         expect(loginItem4.content.totpUri).toEqual(
             'otpauth://totp/fb.com?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
         );
+
+        /* Login broken url */
+        const loginItem5 = vault2.items[3] as ItemImportIntent<'login'>;
+        expect(loginItem5.type).toEqual('login');
+        expect(loginItem5.metadata.name).toEqual('Unnamed LastPass item');
+        expect(loginItem5.metadata.note).toEqual('');
+        expect(loginItem5.content.username).toEqual('');
+        expect(loginItem5.content.password).toEqual('');
+        expect(loginItem5.content.urls).toEqual([]);
     });
 });
