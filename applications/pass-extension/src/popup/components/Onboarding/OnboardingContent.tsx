@@ -1,10 +1,8 @@
-import { type MouseEvent, type VFC } from 'react';
+import { type MouseEvent, type ReactNode, type VFC, useMemo } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
-
-import { OnboardingShieldIcon } from './OnboardingIcon';
 
 import './OnboardingContent.scss';
 
@@ -12,12 +10,30 @@ export type OnboardingMessageDefinition = {
     className: string;
     title: string;
     message: string;
-    action?: { label: string; onClick: (e: MouseEvent<HTMLElement>) => void };
+    action?: { label: string; onClick: (e: MouseEvent<HTMLElement>) => void; type: 'link' | 'button' };
+    icon?: ReactNode;
 };
 
 type Props = OnboardingMessageDefinition & { onClose: () => void };
 
-export const OnboardingContent: VFC<Props> = ({ title, message, className, action, onClose }) => {
+export const OnboardingContent: VFC<Props> = ({ title, message, className, icon, action, onClose }) => {
+    const actionNode = useMemo(() => {
+        switch (action?.type) {
+            case 'link':
+                return (
+                    <button onClick={action.onClick} className="unstyled text-sm color-invert">
+                        <Icon name="arrow-out-square" /> <span className="text-underline">{action.label}</span>
+                    </button>
+                );
+            case 'button':
+                return (
+                    <Button pill shape="solid" color="weak" size="small" onClick={action.onClick}>
+                        {action.label}
+                    </Button>
+                );
+        }
+    }, [action]);
+
     return (
         <div
             className={clsx(
@@ -29,18 +45,14 @@ export const OnboardingContent: VFC<Props> = ({ title, message, className, actio
                 <Icon name="cross" color="var(--interaction-norm-contrast)" />
             </Button>
 
-            <OnboardingShieldIcon />
+            {icon}
 
             <div className="flex-item-fluid">
                 <strong className="block color-invert text-md">{title}</strong>
                 <span className="block color-invert text-sm">{message}</span>
             </div>
 
-            {action && (
-                <button onClick={action.onClick} className="unstyled text-sm color-invert mr-6">
-                    <Icon name="arrow-out-square" /> <span className="text-underline">{action.label}</span>
-                </button>
-            )}
+            <div className="mr-4">{actionNode}</div>
         </div>
     );
 };
