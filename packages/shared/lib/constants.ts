@@ -510,6 +510,12 @@ export enum ORGANIZATION_FLAGS {
     PROTON = 128,
 }
 
+export enum ORGANIZATION_TWOFA_SETTING {
+    NOT_REQUIRED = 0,
+    REQUIRED_ADMIN_ONLY = 1,
+    REQUIRED_ALL = 2,
+}
+
 export enum APP_UPSELL_REF_PATH {
     MAIL_UPSELL_REF_PATH = 'upsell_mail-banner-',
     MAIL_UPSELL_MODAL_REF_PATH = 'upsell_mail-modal-',
