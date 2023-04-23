@@ -80,7 +80,7 @@ export const ApplicationLogs: VFC = () => {
                     onClick={() => setShowLogs(true)}
                 >
                     <Icon name="window-terminal" className="mr-2" />
-                    <span className="flex flex-align-items-center flex-item-fluid">{c('Label').t`View logs`}</span>
+                    <span className="flex-item-fluid">{c('Label').t`View logs`}</span>
                     <Icon name="chevron-down" />
                 </Button>
             )}
@@ -89,7 +89,7 @@ export const ApplicationLogs: VFC = () => {
 
             <Button icon shape="ghost" onClick={downloadLogs} className="w100 flex flex-align-items-center">
                 <Icon name="arrow-down-to-square" className="mr-2" />
-                <span className="flex flex-align-items-center flex-item-fluid">{c('Label').t`Download logs`}</span>
+                <span className="flex-item-fluid">{c('Label').t`Download logs`}</span>
             </Button>
         </Card>
     );
