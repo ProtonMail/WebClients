@@ -4,7 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MessageWithSenderFactory, sendMessage } from '@proton/pass/extension/message';
 import { selectWorkerAlive } from '@proton/pass/store';
 import { sessionLockImmediate, signout, syncIntent } from '@proton/pass/store/actions';
-import type { ExtensionEndpoint, PopupState, TabId, WorkerMessageWithSender, WorkerState } from '@proton/pass/types';
+import type {
+    ExtensionEndpoint,
+    MaybeNull,
+    PopupState,
+    TabId,
+    WorkerMessageWithSender,
+    WorkerState,
+} from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -17,11 +24,12 @@ import noop from '@proton/utils/noop';
 import * as config from '../../../app/config';
 import locales from '../../../app/locales';
 import { INITIAL_WORKER_STATE } from '../../constants';
-import { ExtensionContext } from '../../extension';
+import { ExtensionContext, type ExtensionContextType } from '../../extension';
 
 export type ExtensionContextState = WorkerState & { popup?: PopupState };
 
 export interface ExtensionAppContextValue {
+    context: MaybeNull<ExtensionContextType>;
     state: ExtensionContextState;
     ready: boolean;
     logout: (options: { soft: boolean }) => void;
@@ -30,6 +38,7 @@ export interface ExtensionAppContextValue {
 }
 
 export const ExtensionAppContext = createContext<ExtensionAppContextValue>({
+    context: null,
     state: INITIAL_WORKER_STATE,
     ready: false,
     logout: noop,
@@ -136,12 +145,13 @@ export const ExtensionContextProvider: FC<{
                 }));
             });
 
-        return () => {
-            ExtensionContext.get().port.onMessage.removeListener(onMessage);
-        };
+        return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
     }, []);
 
-    const context = useMemo<ExtensionAppContextValue>(() => ({ state, ready, logout, lock, sync }), [state, ready]);
+    const context = useMemo<ExtensionAppContextValue>(
+        () => ({ context: ExtensionContext.get(), state, ready, logout, lock, sync }),
+        [state, ready]
+    );
 
     return <ExtensionAppContext.Provider value={context}>{children}</ExtensionAppContext.Provider>;
 };
