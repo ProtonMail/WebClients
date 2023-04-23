@@ -29,7 +29,7 @@ import { ExtensionContext } from '../../../shared/extension';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 
-export interface PopupContextValue extends ExtensionAppContextValue {
+export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
     state: RequiredProps<ExtensionContextState, 'popup'>;
     realm: Maybe<Realm>;
     subdomain: Maybe<string>;
