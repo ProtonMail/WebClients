@@ -19,6 +19,7 @@ import { SessionLockConfirmContextProvider } from '../../shared/components/sessi
 import { ExtensionContext } from '../../shared/extension';
 import { useExtensionContext } from '../../shared/hooks';
 import createClientStore from '../../shared/store/client-store';
+import { Developer } from './views/Developer';
 import { Export } from './views/Export';
 import { General } from './views/General';
 import { Import } from './views/Import';
@@ -50,6 +51,14 @@ const SETTINGS_TABS: (Tab & { pathname: string })[] = [
         content: <Export />,
     },
 ];
+
+if (ENV === 'development') {
+    SETTINGS_TABS.push({
+        pathname: '/dev',
+        title: 'Developer',
+        content: <Developer />,
+    });
+}
 
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionContext();
