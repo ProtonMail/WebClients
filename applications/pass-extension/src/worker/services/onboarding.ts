@@ -28,6 +28,7 @@ const createOnboardingRule = (message: OnboardingMessage, when?: OnboardingRule[
  * - define an optional predicate for when to show the message
  * - order is important: we will apply the first matched rule */
 const ONBOARDING_RULES: OnboardingRule[] = [
+    createOnboardingRule(OnboardingMessage.UPDATE_AVAILABLE, (ctx) => ctx.service.activation.shouldUpdate()),
     createOnboardingRule(OnboardingMessage.WELCOME, () => false),
     createOnboardingRule(OnboardingMessage.SECURE_EXTENSION, (_ctx, { installedOn, acknowledged }) => {
         const now = getEpoch();
