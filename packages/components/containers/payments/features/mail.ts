@@ -8,11 +8,11 @@ import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getNAddressesFeature = ({
     n,
-    fire,
+    highlight,
     family,
 }: {
     n: number;
-    fire?: boolean;
+    highlight?: boolean;
     family?: boolean;
 }): PlanCardFeatureDefinition => {
     const domain = 'proton.me';
@@ -32,19 +32,25 @@ export const getNAddressesFeature = ({
         text: c('new_plans: feature').ngettext(msgid`${n} email address`, `${n} email addresses/aliases`, n),
         tooltip,
         included: true,
-        fire,
+        highlight,
         icon: 'envelope',
     };
 };
 
-export const getNAddressesFeatureB2B = ({ n, fire }: { n: number; fire?: boolean }): PlanCardFeatureDefinition => {
+export const getNAddressesFeatureB2B = ({
+    n,
+    highlight,
+}: {
+    n: number;
+    highlight?: boolean;
+}): PlanCardFeatureDefinition => {
     const tooltip = c('new_plans: tooltip')
         .t`Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.`;
     return {
         text: c('new_plans: feature').ngettext(msgid`${n} email address per user`, `${n} email addresses per user`, n),
         tooltip,
         included: true,
-        fire,
+        highlight,
         icon: 'envelope',
     };
 };
@@ -66,12 +72,12 @@ export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDef
     };
 };
 
-export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): PlanCardFeatureDefinition => {
+export const getNDomainsFeature = ({ n, highlight }: { n: number; highlight?: boolean }): PlanCardFeatureDefinition => {
     if (n === 0) {
         return {
             text: c('new_plans: feature').t`Custom email domains`,
             included: false,
-            fire,
+            highlight,
             icon: 'globe',
         };
     }
@@ -79,7 +85,7 @@ export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): 
         text: c('new_plans: feature').ngettext(msgid`${n} custom email domain`, `${n} custom email domains`, n),
         tooltip: c('new_plans: tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
         included: true,
-        fire,
+        highlight,
         icon: 'globe',
     };
 };
@@ -251,7 +257,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
             name: 'addresses',
             plans: {
                 [PLANS.FREE]: getNAddressesFeature({ n: 1 }),
-                [PLANS.BUNDLE]: getNAddressesFeature({ n: plansMap[PLANS.BUNDLE]?.MaxAddresses || 15, fire: true }),
+                [PLANS.BUNDLE]: getNAddressesFeature({ n: plansMap[PLANS.BUNDLE]?.MaxAddresses || 15 }),
                 [PLANS.MAIL]: getNAddressesFeature({ n: plansMap[PLANS.MAIL]?.MaxAddresses || 10 }),
                 [PLANS.VPN]: getNAddressesFeature({ n: plansMap[PLANS.VPN]?.MaxAddresses || 1 }),
                 [PLANS.DRIVE]: getNAddressesFeature({ n: plansMap[PLANS.DRIVE]?.MaxAddresses || 1 }),
@@ -259,12 +265,10 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getNAddressesFeature({
                     n: plansMap[PLANS.FAMILY]?.MaxAddresses || 75,
                     family: true,
-                    fire: true,
                 }),
                 [PLANS.MAIL_PRO]: getNAddressesFeatureB2B({ n: plansMap[PLANS.MAIL_PRO]?.MaxAddresses || 10 }),
                 [PLANS.BUNDLE_PRO]: getNAddressesFeatureB2B({
                     n: plansMap[PLANS.BUNDLE_PRO]?.MaxAddresses || 15,
-                    fire: true,
                 }),
             },
         },
@@ -272,14 +276,14 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
             name: 'domains',
             plans: {
                 [PLANS.FREE]: getNDomainsFeature({ n: 0 }),
-                [PLANS.BUNDLE]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE]?.MaxDomains ?? 3, fire: true }),
+                [PLANS.BUNDLE]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE]?.MaxDomains ?? 3 }),
                 [PLANS.MAIL]: getNDomainsFeature({ n: plansMap[PLANS.MAIL]?.MaxDomains ?? 1 }),
                 [PLANS.VPN]: getNDomainsFeature({ n: plansMap[PLANS.VPN]?.MaxDomains ?? 0 }),
                 [PLANS.DRIVE]: getNDomainsFeature({ n: plansMap[PLANS.DRIVE]?.MaxDomains ?? 0 }),
                 [PLANS.PASS_PLUS]: getNDomainsFeature({ n: plansMap[PLANS.PASS_PLUS]?.MaxDomains ?? 0 }),
-                [PLANS.FAMILY]: getNDomainsFeature({ n: plansMap[PLANS.FAMILY]?.MaxDomains ?? 5, fire: true }),
+                [PLANS.FAMILY]: getNDomainsFeature({ n: plansMap[PLANS.FAMILY]?.MaxDomains ?? 5 }),
                 [PLANS.MAIL_PRO]: getNDomainsFeature({ n: plansMap[PLANS.MAIL_PRO]?.MaxDomains ?? 3 }),
-                [PLANS.BUNDLE_PRO]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxDomains ?? 10, fire: true }),
+                [PLANS.BUNDLE_PRO]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxDomains ?? 10 }),
             },
         },
         {
