@@ -244,7 +244,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 {c('Info').ngettext(msgid`${userFound} user found`, `${userFound} users found`, userFound)}
             </span>
 
-            <Table hasActions responsive="cards">
+            <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -272,16 +272,26 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                     >
                                         <Avatar className="mr1 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
                                         <div>
-                                            <span className="block text-ellipsis flex-item-fluid">{member.Name}</span>
-                                            {Boolean(member.Private) && (
-                                                <Badge type="light">{c('Private Member').t`private`}</Badge>
-                                            )}
+                                            <span
+                                                className="block text-ellipsis flex-item-fluid"
+                                                data-testid="users-and-addresses-table:memberName"
+                                            >
+                                                {member.Name}
+                                            </span>
+                                            <span data-testid="users-and-addresses-table:memberIsPrivate">
+                                                {Boolean(member.Private) && (
+                                                    <Badge type="light">{c('Private Member').t`private`}</Badge>
+                                                )}
+                                            </span>
                                             {member['2faStatus'] > 0 && (
                                                 <Badge type="light">{c('Enabled 2FA').t`2FA`}</Badge>
                                             )}
                                         </div>
                                     </div>,
-                                    <div className="pr1 text-cut max-w100">
+                                    <div
+                                        className="pr1 text-cut max-w100"
+                                        data-testid="users-and-addresses-table:memberRole"
+                                    >
                                         <MemberRole member={member} />
                                     </div>,
                                     <MemberAddresses addresses={memberAddresses} />,
