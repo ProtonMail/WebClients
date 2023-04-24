@@ -2,11 +2,20 @@
 	// we remove outline for all cases, and add it back for focus-visible cases
 
 	&,
-	&:focus {
-		outline: 0;
+	&--at-all {
+		&,
+		&:focus {
+			outline: 0;
+		}
 	}
 
 	&:focus-visible:not([tabindex='-1']) {
 		outline: 2px auto;
+	}
+
+	&--at-all {
+		&:focus-visible {
+			outline: 0;
+		}
 	}
 }
