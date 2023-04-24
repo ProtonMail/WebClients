@@ -3,7 +3,7 @@ import uniqid from 'uniqid';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { parseOTPValue } from '@proton/pass/utils/otp';
+import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isValidURL } from '@proton/pass/utils/url';
 import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
