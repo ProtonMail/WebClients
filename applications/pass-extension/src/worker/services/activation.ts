@@ -185,17 +185,22 @@ export const createActivationService = () => {
             const { tabId } = payload;
 
             const popup = await (async (): Promise<Maybe<PopupState>> => {
-                if (message.sender === 'popup') {
-                    const tab = await browser.tabs.get(tabId);
-                    const { domain } = parseUrl(tab.url ?? '');
-                    const items = ctx.service.autofill.getAutofillCandidates({ realm: domain ?? '', subdomain: null });
-                    const hasAutofillCandidates = items.length > 0;
+                try {
+                    if (message.sender === 'popup') {
+                        const tab = await browser.tabs.get(tabId);
+                        const { domain } = parseUrl(tab.url ?? '');
+                        const items = ctx.service.autofill.getAutofillCandidates({
+                            realm: domain ?? '',
+                            subdomain: null,
+                        });
+                        const hasAutofillCandidates = items.length > 0;
 
-                    return {
-                        hasAutofillCandidates,
-                        initialSearch: hasAutofillCandidates && domain ? domain : '',
-                    };
-                }
+                        return {
+                            hasAutofillCandidates,
+                            initialSearch: hasAutofillCandidates && domain ? domain : '',
+                        };
+                    }
+                } catch (_) {}
             })();
 
             switch (message.sender) {
