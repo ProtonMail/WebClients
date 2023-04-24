@@ -33,7 +33,7 @@ export const ProxiedDomainImage: VFC<Props> = ({ className, onStatusChange, stat
         }
     }, [url]);
 
-    const styles = { opacity: status === ImageStatus.READY ? 1 : 0, ...style };
+    const styles = { visibility: status === ImageStatus.READY ? 'visible' : 'hidden', ...style };
 
     return (
         <img
