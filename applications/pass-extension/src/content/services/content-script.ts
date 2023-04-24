@@ -62,11 +62,8 @@ export const createContentScriptService = (id: string) => {
         context.active = false;
 
         /* may fail if context already invalidated */
-        safeCall(ExtensionContext.get().port.disconnect);
-
-        if (options.dom) {
-            DOMCleanUp();
-        }
+        safeCall(() => ExtensionContext.get().port.disconnect)();
+        if (options.dom) DOMCleanUp();
     };
 
     const onWorkerStateChange = (workerState: WorkerState) => {
@@ -181,13 +178,12 @@ export const createContentScriptService = (id: string) => {
             }
         } catch (e) {
             logger.warn(`[ContentScript::${id}] invalidation error`, e);
-            /**
-             * Reaching this catch block will likely happen
+
+            /* Reaching this catch block will likely happen
              * when the setup function fails due to an extension
              * update. At this point we should remove any listeners
              * in this now-stale content-script and delete any
-             * allocated resources
-             */
+             * allocated resources*/
             context.active = false;
             destroy({ dom: true, reason: 'context invalidated' });
         }
