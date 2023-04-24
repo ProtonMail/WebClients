@@ -27,7 +27,7 @@ export const OnboardingContent: VFC<Props> = ({ title, message, className, icon,
                 );
             case 'button':
                 return (
-                    <Button pill shape="solid" color="weak" size="small" onClick={action.onClick}>
+                    <Button pill shape="solid" color="weak" size="small" className="text-sm" onClick={action.onClick}>
                         {action.label}
                     </Button>
                 );
