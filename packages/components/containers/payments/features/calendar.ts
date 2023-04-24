@@ -17,7 +17,7 @@ const getNCalendarsTooltipText = (n: number) => {
 
 export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n),
+        text: c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
         icon: 'calendar-checkmark',
@@ -26,7 +26,7 @@ export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
 
 export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
+        text: c('new_plans: feature').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
         icon: 'calendar-checkmark',
@@ -35,8 +35,7 @@ export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinitio
 
 const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`End-to-end encryption`,
-        tooltip: '',
+        text: c('new_plans: feature').t`End-to-end encryption`,
         included: true,
     };
 };
@@ -54,7 +53,7 @@ const getShareFeature = (
         : c('new_plans: tooltip').t`Easily share your calendars with your colleagues, family, and friends via a link`;
 
     return {
-        featureName: calendarSharingEnabled
+        text: calendarSharingEnabled
             ? c('new_plans: feature').t`Calendar sharing`
             : c('new_plans: feature').t`Share calendar via link`,
         tooltip: audience === Audience.B2B ? tooltipText : tooltipText,
@@ -64,15 +63,14 @@ const getShareFeature = (
 
 const getInvitation = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Send & receive invitations`,
-        tooltip: '',
+        text: c('new_plans: feature').t`Send & receive invitations`,
         included: true,
     };
 };
 
 export const getCalendarAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
     return {
-        featureName: CALENDAR_APP_NAME,
+        text: CALENDAR_APP_NAME,
         tooltip: options?.family
             ? c('new_plans: tooltip').t`Keep your plans private to you and your family with an encrypted calendar`
             : c('new_plans: tooltip').t`End-to-end encrypted calendar`,

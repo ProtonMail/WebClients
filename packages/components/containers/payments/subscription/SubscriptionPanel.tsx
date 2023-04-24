@@ -15,10 +15,11 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
-import isTruthy from '@proton/utils/isTruthy';
+import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../components';
+import { Icon, Meter, Price, StripedItem, StripedList } from '../../../components';
+import { PlanCardFeatureDefinition } from '../features/interface';
 import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,
@@ -28,10 +29,38 @@ import {
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
-interface Item {
-    icon: IconName;
-    text: string;
+interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'fire' | 'included'> {
+    status?: PlanCardFeatureDefinition['status'];
+    included?: PlanCardFeatureDefinition['included'];
 }
+
+interface SubscriptionListProps {
+    items: Item[];
+}
+
+const SubscriptionItems = ({ items }: SubscriptionListProps) => {
+    return (
+        <>
+            {items.map(({ icon = 'checkmark', text, included = true, status = 'available', tooltip }) => {
+                if (!included) {
+                    return null;
+                }
+
+                const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
+
+                return (
+                    <StripedItem
+                        key={key}
+                        className={clsx(status === 'coming-soon' && 'color-weak')}
+                        left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
+                    >
+                        {text}
+                    </StripedItem>
+                );
+            })}
+        </>
+    );
+};
 
 interface Props {
     app: APP_NAMES;
@@ -110,29 +139,20 @@ const SubscriptionPanel = ({
     );
 
     const getVpnAppFree = () => {
+        const items: Item[] = [
+            {
+                icon: 'brand-proton-vpn',
+                text: getVPNConnectionsText(1),
+            },
+            {
+                icon: 'earth',
+                text: getFreeServers(vpnServers.free.servers, vpnServers.free.countries),
+            },
+        ];
+
         return (
             <StripedList alternate="odd">
-                {(
-                    [
-                        {
-                            icon: 'brand-proton-vpn',
-                            text: getVPNConnectionsText(1),
-                        } as const,
-                        {
-                            icon: 'earth',
-                            text: getFreeServers(vpnServers.free.servers, vpnServers.free.countries),
-                        } as const,
-                    ] as Item[]
-                ).map((item) => {
-                    return (
-                        <StripedItem
-                            key={item.icon}
-                            left={<Icon className="color-success" name={item.icon} size={20} />}
-                        >
-                            {item.text}
-                        </StripedItem>
-                    );
-                })}
+                <SubscriptionItems items={items} />
             </StripedList>
         );
     };
@@ -163,30 +183,28 @@ const SubscriptionPanel = ({
         ];
         return (
             <StripedList alternate="odd">
-                {items.map((item) => {
-                    return (
-                        <StripedItem
-                            key={item.icon}
-                            left={<Icon className="color-success" name={item.icon} size={20} />}
-                        >
-                            {item.text}
-                        </StripedItem>
-                    );
-                })}
+                <SubscriptionItems items={items} />
             </StripedList>
         );
     };
 
     const getDefault = () => {
-        const items: (Item | false)[] = [
-            (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
-                icon: 'users',
-                text: c('Subscription attribute').ngettext(
-                    msgid`${UsedMembers} of ${MaxMembers} user`,
-                    `${UsedMembers} of ${MaxMembers} users`,
-                    MaxMembers
-                ),
-            },
+        const items: Item[] = [
+            ...(() => {
+                if (MaxMembers > 1 || getHasB2BPlan(subscription)) {
+                    return [
+                        {
+                            icon: 'users',
+                            text: c('Subscription attribute').ngettext(
+                                msgid`${UsedMembers} of ${MaxMembers} user`,
+                                `${UsedMembers} of ${MaxMembers} users`,
+                                MaxMembers
+                            ),
+                        } as const,
+                    ];
+                }
+                return [];
+            })(),
             {
                 icon: 'envelope',
                 text:
@@ -198,14 +216,21 @@ const SubscriptionPanel = ({
                               MaxAddresses
                           ),
             },
-            !!MaxDomains && {
-                icon: 'globe',
-                text: c('Subscription attribute').ngettext(
-                    msgid`${UsedDomains} of ${MaxDomains} custom domain`,
-                    `${UsedDomains} of ${MaxDomains} custom domains`,
-                    MaxDomains
-                ),
-            },
+            ...(() => {
+                if (!!MaxDomains) {
+                    return [
+                        {
+                            icon: 'globe',
+                            text: c('Subscription attribute').ngettext(
+                                msgid`${UsedDomains} of ${MaxDomains} custom domain`,
+                                `${UsedDomains} of ${MaxDomains} custom domains`,
+                                MaxDomains
+                            ),
+                        } as const,
+                    ];
+                }
+                return [];
+            })(),
             {
                 icon: 'calendar-checkmark',
                 text: (() => {
@@ -240,16 +265,7 @@ const SubscriptionPanel = ({
         return (
             <StripedList>
                 {storageItem}
-                {items.filter(isTruthy).map((item) => {
-                    return (
-                        <StripedItem
-                            key={item.icon}
-                            left={<Icon className="color-success" name={item.icon} size={20} />}
-                        >
-                            {item.text}
-                        </StripedItem>
-                    );
-                })}
+                <SubscriptionItems items={items} />
             </StripedList>
         );
     };

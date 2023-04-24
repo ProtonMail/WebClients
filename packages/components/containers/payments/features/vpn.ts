@@ -38,8 +38,7 @@ export const getVPNConnectionsText = (n: number) => {
 
 export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
     return {
-        featureName: getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
-        tooltip: '',
+        text: getB2BHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
         included: true,
         icon: 'brand-proton-vpn',
     };
@@ -47,7 +46,7 @@ export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
 
 export const getVPNAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
     return {
-        featureName: VPN_APP_NAME,
+        text: VPN_APP_NAME,
         tooltip: options?.family
             ? c('new_plans: tooltip')
                   .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`
@@ -57,10 +56,9 @@ export const getVPNAppFeature = (options?: { family?: boolean }): PlanCardFeatur
     };
 };
 
-export const getCountries = (featureName: string, fire?: boolean): PlanCardFeatureDefinition => {
+export const getCountries = (text: string, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName,
-        tooltip: '',
+        text,
         included: true,
         fire,
         icon: 'earth',
@@ -69,8 +67,7 @@ export const getCountries = (featureName: string, fire?: boolean): PlanCardFeatu
 
 export const getVPNSpeed = (type: 'medium' | 'highest', fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: type === 'medium' ? c('new_plans').t`Medium VPN speed` : c('new_plans').t`Highest VPN speed`,
-        tooltip: '',
+        text: type === 'medium' ? c('new_plans').t`Medium VPN speed` : c('new_plans').t`Highest VPN speed`,
         included: true,
         fire,
         icon: 'chevrons-right',
@@ -79,7 +76,7 @@ export const getVPNSpeed = (type: 'medium' | 'highest', fire?: boolean): PlanCar
 
 export const getStreaming = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Worldwide streaming services`,
+        text: c('new_plans: feature').t`Worldwide streaming services`,
         tooltip: c('new_plans: tooltip')
             .t`Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere`,
         included,
@@ -90,7 +87,7 @@ export const getStreaming = (included: boolean, fire?: boolean): PlanCardFeature
 
 export const getP2P = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`P2P/BitTorrent`,
+        text: c('new_plans: feature').t`P2P/BitTorrent`,
         tooltip: c('new_plans: tooltip').t`Support for file-sharing protocols like BitTorrent`,
         included,
         fire,
@@ -100,7 +97,7 @@ export const getP2P = (included: boolean, fire?: boolean): PlanCardFeatureDefini
 
 export const getNetShield = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`NetShield malware and ad-blocker`,
+        text: c('new_plans: feature').t`NetShield malware and ad-blocker`,
         tooltip: c('new_plans: tooltip')
             .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware`,
         included,
@@ -110,7 +107,7 @@ export const getNetShield = (included: boolean, fire?: boolean): PlanCardFeature
 };
 export const getSecureCore = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Secure Core servers`,
+        text: c('new_plans: feature').t`Secure Core servers`,
         tooltip: c('new_plans: tooltip')
             .t`Defends against the threat to VPN privacy by passing your internet traffic through multiple servers`,
         included,
@@ -120,7 +117,7 @@ export const getSecureCore = (included: boolean, fire?: boolean): PlanCardFeatur
 };
 export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Tor over VPN`,
+        text: c('new_plans: feature').t`Tor over VPN`,
         tooltip: c('new_plans: tooltip').t`Route your internet traffic through the Tor network with a single click`,
         included,
         fire,
@@ -130,7 +127,7 @@ export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefini
 
 const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName:
+        text:
             n === 1
                 ? getFreeVPNConnectionTotal()
                 : c('new_plans: feature').ngettext(
@@ -148,8 +145,7 @@ const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition 
 
 export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n),
-        tooltip: '',
+        text: c('new_plans: feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n),
         included: true,
         fire,
         icon: 'brand-proton-vpn',
@@ -157,7 +153,7 @@ export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinit
 };
 export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Strict no-logs policy`,
+        text: c('new_plans: feature').t`Strict no-logs policy`,
         tooltip: c('new_plans: tooltip')
             .t`We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy`,
         included: true,
@@ -167,14 +163,13 @@ export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
 };
 const getBandwidth = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Unlimited volume/bandwidth`,
-        tooltip: '',
+        text: c('new_plans: feature').t`Unlimited volume/bandwidth`,
         included: true,
     };
 };
 const getDNSLeak = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`DNS leak prevention`,
+        text: c('new_plans: feature').t`DNS leak prevention`,
         tooltip: c('new_plans: tooltip')
             .t`When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security`,
         included: true,
@@ -182,7 +177,7 @@ const getDNSLeak = (): PlanCardFeatureDefinition => {
 };
 const getKillSwitch = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Kill switch/always-on VPN`,
+        text: c('new_plans: feature').t`Kill switch/always-on VPN`,
         tooltip: c('new_plans: tooltip')
             .t`Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.`,
         included: true,
@@ -190,7 +185,7 @@ const getKillSwitch = (): PlanCardFeatureDefinition => {
 };
 const getEncryption = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Encrypted VPN servers`,
+        text: c('new_plans: feature').t`Encrypted VPN servers`,
         tooltip: c('new_plans: tooltip')
             .t`Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised`,
         included: true,
@@ -198,7 +193,7 @@ const getEncryption = (): PlanCardFeatureDefinition => {
 };
 const getRouterSupport = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Router support`,
+        text: c('new_plans: feature').t`Router support`,
         tooltip: c('new_plans: tooltip')
             .t`Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.`,
         included: true,
@@ -206,7 +201,7 @@ const getRouterSupport = (): PlanCardFeatureDefinition => {
 };
 const getSplitTunnel = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Split tunneling (Android and Windows)`,
+        text: c('new_plans: feature').t`Split tunneling (Android and Windows)`,
         tooltip: c('new_plans: tooltip')
             .t`Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results`,
         included: true,
@@ -215,19 +210,18 @@ const getSplitTunnel = (): PlanCardFeatureDefinition => {
 export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
     if (n === 1) {
         return {
-            featureName: c('new_plans: feature').t`Free VPN on a single device`,
+            text: c('new_plans: feature').t`Free VPN on a single device`,
             tooltip: c('new_plans: tooltip')
                 .t`Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results`,
             included: true,
         };
     }
     return {
-        featureName: c('new_plans: feature').ngettext(
+        text: c('new_plans: feature').ngettext(
             msgid`High-speed VPN on ${n} device`,
             `High-speed VPN on ${n} devices`,
             n
         ),
-        tooltip: '',
         included: true,
     };
 };

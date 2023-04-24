@@ -12,8 +12,7 @@ const getUsers = (): PlanCardFeature => {
         target: Audience.FAMILY,
         plans: {
             [PLANS.FREE]: {
-                featureName: c('new_plans: feature').t`1 user`,
-                tooltip: '',
+                text: c('new_plans: feature').t`1 user`,
                 included: true,
             },
             [PLANS.BUNDLE]: null,
@@ -21,8 +20,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.VPN]: null,
             [PLANS.DRIVE]: null,
             [PLANS.FAMILY]: {
-                featureName: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
-                tooltip: '',
+                text: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
                 included: true,
                 fire: true,
             },
@@ -34,8 +32,7 @@ const getUsers = (): PlanCardFeature => {
 
 export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Up to ${n} users`,
-        tooltip: '',
+        text: c('new_plans: feature').t`Up to ${n} users`,
         icon: 'users',
         included: true,
     };
@@ -43,11 +40,10 @@ export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
 
 export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinition => {
     return {
-        featureName:
+        text:
             type === 'limited'
                 ? c('new_plans: feature').t`Limited support`
                 : c('new_plans: feature').t`Priority support`,
-        tooltip: '',
         included: true,
         icon: 'life-ring',
     };
@@ -55,7 +51,7 @@ export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinit
 
 const getEasySwitch = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`Easy Switch import assistant`,
+        text: c('new_plans: feature').t`Easy Switch import assistant`,
         tooltip: c('new_plans: tooltip').t`Quickly transfer your emails, calendars or contacts from any provider`,
         included: true,
     };
