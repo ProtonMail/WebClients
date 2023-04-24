@@ -121,6 +121,7 @@ export const OnboardingPanel: VFC = () => {
                     className={currentMessage.className}
                     title={currentMessage.title}
                     message={currentMessage.message}
+                    icon={currentMessage.icon}
                     onClose={withAcknowledge(message!)}
                     action={
                         currentMessage.action
