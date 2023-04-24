@@ -1,12 +1,10 @@
 import { forwardRef } from 'react';
 
-import { ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike, Href, HrefProps } from '@proton/atoms';
 
 import './TwitterButton.scss';
 
-interface Props {
-    url?: string;
-    target?: string;
+interface Props extends Pick<HrefProps, 'href' | 'target'> {
     children: React.ReactNode;
 }
 
