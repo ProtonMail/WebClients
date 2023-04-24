@@ -4,6 +4,26 @@ const path = require('path');
 
 const getConfig = require('@proton/pack/webpack.config');
 
+const getRewrite = (file) => {
+    const extRegex = /\.js(on)?/;
+
+    const replacePathname = file
+        // Special case, drop .login from the filename
+        .replace('.login', '')
+        // Drop json from the path
+        .replace(extRegex, '')
+        // We replace . with / to pretend mail.signup -> /mail/signup
+        .replace('.', '\\/');
+
+    const filename = file
+        // Special case, drop .login from the filename
+        .replace('.login', '')
+        // Output should be an .html file
+        .replace(extRegex, '.html');
+
+    return { filename, rewrite: { from: new RegExp(`^\/${replacePathname}$`), to: `/${filename}` } };
+};
+
 module.exports = (...env) => {
     const config = getConfig(...env);
     const htmlIndex = config.plugins.findIndex((plugin) => {
@@ -16,8 +36,10 @@ module.exports = (...env) => {
         storage: path.resolve('./src/app/storage.ts'),
     });
 
-    const rewrites = [{ from: /^\/lite/, to: '/lite.html' }];
+    const rewrites = [];
     config.devServer.historyApiFallback.rewrites = rewrites;
+
+    const originalTemplateParameters = htmlPlugin.userOptions.templateParameters;
 
     // We keep the order because the other plugins have an impact
     // Replace the old html webpackplugin with this
@@ -28,8 +50,8 @@ module.exports = (...env) => {
             filename: 'index.html',
             template: path.resolve('./src/app.ejs'),
             templateParameters: {
-                ...htmlPlugin.userOptions.templateParameters,
-                appTitle: htmlPlugin.userOptions.templateParameters.appName,
+                ...originalTemplateParameters,
+                appTitle: originalTemplateParameters.appName,
             },
             scriptLoading: 'defer',
             excludeChunks: ['storage', 'lite'],
@@ -42,42 +64,27 @@ module.exports = (...env) => {
     // Reverse the pages so that /mail/signup is before /mail
     pages.reverse();
 
-    pages.forEach((file) => {
-        const parameters = require(`./src/pages/${file}`);
-
-        const extRegex = /\.js(on)?/;
-
-        const replacePathname = file
-            // Special case, drop .login from the filename
-            .replace('.login', '')
-            // Drop json from the path
-            .replace(extRegex, '')
-            // We replace . with / to pretend mail.signup -> /mail/signup
-            .replace('.', '\\/');
-
-        const filename = file
-            // Special case, drop .login from the filename
-            .replace('.login', '')
-            // Output should be an .html file
-            .replace(extRegex, '.html');
-
-        rewrites.push({ from: new RegExp(`^\/${replacePathname}$`), to: `/${filename}` });
-        const originalTemplateParameters = htmlPlugin.userOptions.templateParameters;
-
+    const getTemplateParameters = (parameters) => {
         let url = originalTemplateParameters.url;
         if (parameters.pathname) {
             url = `${url.replace(/\/$/, '')}${parameters.pathname}`;
         }
+        return { ...originalTemplateParameters, ...parameters, url };
+    };
 
-        const templateParameters = { ...originalTemplateParameters, ...parameters, url };
+    pages.forEach((file) => {
+        const parameters = require(`./src/pages/${file}`);
+
+        const { filename, rewrite } = getRewrite(file);
+        rewrites.push(rewrite);
 
         config.plugins.splice(
             htmlIndex,
             0,
             new HtmlWebpackPlugin({
                 filename,
-                template: path.resolve(`./src/app.ejs`),
-                templateParameters,
+                template: path.resolve('./src/app.ejs'),
+                templateParameters: getTemplateParameters(parameters),
                 scriptLoading: 'defer',
                 excludeChunks: ['storage', 'lite'],
                 inject: 'body',
@@ -85,27 +92,27 @@ module.exports = (...env) => {
         );
     });
 
-    // Add another webpack plugin on top
     config.plugins.splice(
         htmlIndex,
         0,
         new HtmlWebpackPlugin({
             filename: 'storage.html',
             template: path.resolve('./src/storage.ejs'),
-            templateParameters: htmlPlugin.userOptions.templateParameters,
+            templateParameters: originalTemplateParameters,
             scriptLoading: 'defer',
             chunks: ['storage'],
             inject: 'body',
         })
     );
-    // Add another webpack plugin on top
+
+    rewrites.push({ from: /^\/lite/, to: '/lite.html' });
     config.plugins.splice(
         htmlIndex,
         0,
         new HtmlWebpackPlugin({
             filename: 'lite.html',
             template: path.resolve('./src/lite.ejs'),
-            templateParameters: htmlPlugin.userOptions.templateParameters,
+            templateParameters: originalTemplateParameters,
             scriptLoading: 'defer',
             chunks: ['pre', 'lite', 'unsupported'],
             inject: 'body',
