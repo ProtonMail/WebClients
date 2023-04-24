@@ -74,13 +74,18 @@ const useRevisionRetentionDays = (
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (originalRevisionRetentionDays > revisionRetentionDays) {
+            const message =
+                revisionRetentionDays === 0
+                    ? c('Info')
+                          .t`This will delete all previous versions of your files. ${DRIVE_APP_NAME} will no longer keep previous versions of your files.`
+                    : c('Info')
+                          .t`This will delete all previous versions of your files older than ${revisionRetentionDays}. You cannot undo this action. Are you sure you want to proceed?`;
             void showConfirmActionModal({
-                title: c('Title').t`Delete versioning history?`,
+                title: c('Title').t`Delete version history?`,
                 onSubmit: updateRevisionRetentionDay,
                 onCancel: () => setRevisionRetentionDay(originalRevisionRetentionDays),
                 size: 'medium',
-                message: c('Info')
-                    .t`This will delete all previous versions of your files. ${DRIVE_APP_NAME} will no longer keep previous versions of your files.`,
+                message,
                 submitText: c('Action').t`Delete and confirm`,
             });
         } else {
