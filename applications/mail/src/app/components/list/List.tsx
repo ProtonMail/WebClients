@@ -159,7 +159,10 @@ const List = (
     const [messageCounts] = useMessageCounts();
     const [conversationCounts] = useConversationCounts();
 
-    const { canDisplayUpsellBanner, needToShowUpsellBanner } = useShowUpsellBanner(labelID, showTaskRunningBanner);
+    const { canDisplayUpsellBanner, needToShowUpsellBanner, handleDismissBanner } = useShowUpsellBanner(
+        labelID,
+        showTaskRunningBanner
+    );
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
@@ -228,7 +231,11 @@ const List = (
                     />
                     {showESSlowToolbar && <ESSlowToolbar />}
                     {canDisplayUpsellBanner && (
-                        <MailUpsellBanner needToShowUpsellBanner={needToShowUpsellBanner} columnMode={columnLayout} />
+                        <MailUpsellBanner
+                            needToShowUpsellBanner={needToShowUpsellBanner}
+                            columnMode={columnLayout}
+                            onClose={handleDismissBanner}
+                        />
                     )}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     <AutoDeleteBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
