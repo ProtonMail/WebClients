@@ -54,7 +54,6 @@ export const createActivationService = () => {
     });
 
     const checkAvailableUpdate = async (): Promise<boolean> => {
-        logger.info('[Worker::Activation] checking for update..');
         const now = getEpoch();
 
         try {
