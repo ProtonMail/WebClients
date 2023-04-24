@@ -12,6 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import {
     AddressesAutocompleteItem,
+    Alert,
     Autocomplete,
     ColorPicker,
     Field,
@@ -38,6 +39,7 @@ type Props = ContactGroupEditProps & ModalProps;
 
 const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onDelayedSave, ...rest }: Props) => {
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
     const [contactGroups = []] = useContactGroups();
     const [contactEmails] = useContactEmails();
     const [value, setValue] = useState('');
@@ -78,6 +80,11 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
     };
 
     const handleSelect = (newContactEmail: AddressesAutocompleteItem | string) => {
+        if (!canAddMoreContacts) {
+            setError(true);
+            return;
+        }
+
         if (typeof newContactEmail === 'string' || newContactEmail.type === 'major') {
             handleAdd();
         } else {
@@ -90,6 +97,17 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
             }
             setValue('');
         }
+        setError(false);
+    };
+
+    const handleAddContact = () => {
+        if (!canAddMoreContacts) {
+            setError(true);
+            return;
+        }
+
+        handleAdd();
+        setError(false);
     };
 
     const handleDeleteEmail = (contactEmail: string) => {
@@ -157,31 +175,40 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                         <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
                     </Field>
                 </Row>
-                {contactsAutocompleteItems.length && canAddMoreContacts ? (
+                {contactsAutocompleteItems.length ? (
                     <div className="flex flex-nowrap mb-4 on-mobile-flex-column">
                         <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
-                        <Field className="flex-item-fluid">
-                            <Autocomplete
-                                id="contactGroupEmail"
-                                options={contactsAutocompleteItems}
-                                limit={6}
-                                value={value}
-                                onChange={setValue}
-                                getData={(value) => value.label}
-                                type="search"
-                                placeholder={c('Placeholder').t`Start typing an email address`}
-                                onSelect={handleSelect}
-                                autoComplete="off"
-                            />
-                        </Field>
-                        <Button
-                            className="ml-0 md:ml-4 mt-2 md:mt-0"
-                            onClick={handleAdd}
-                            disabled={!isValidEmail}
-                            data-testid="create-group:add-email"
-                        >
-                            {c('Action').t`Add`}
-                        </Button>
+                        <div>
+                            <div className="flex on-mobile-flex-column">
+                                <Field className="flex-item-fluid">
+                                    <Autocomplete
+                                        id="contactGroupEmail"
+                                        options={contactsAutocompleteItems}
+                                        limit={6}
+                                        value={value}
+                                        onChange={setValue}
+                                        getData={(value) => value.label}
+                                        type="search"
+                                        placeholder={c('Placeholder').t`Start typing an email address`}
+                                        onSelect={handleSelect}
+                                        autoComplete="off"
+                                    />
+                                </Field>
+                                <Button
+                                    className="ml-0 md:ml-4 mt-2 md:mt-0"
+                                    onClick={handleAddContact}
+                                    disabled={!isValidEmail}
+                                    data-testid="create-group:add-email"
+                                >
+                                    {c('Action').t`Add`}
+                                </Button>
+                            </div>
+                            {!canAddMoreContacts && error && (
+                                <Alert className="mb-4 mt-2" type="error">
+                                    {c('Action').t`At most 100 contacts are allowed per contact group`}
+                                </Alert>
+                            )}
+                        </div>
                     </div>
                 ) : null}
 

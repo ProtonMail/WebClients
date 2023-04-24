@@ -21,13 +21,12 @@ const ContactGroupLimitReachedModal = ({ groupIDs, ...rest }: Props) => {
 
     const text =
         groupIDs && groupIDs?.length > 0
-            ? c('Info')
-                  .t`Contact groups can contain 100 contacts maximum. Contacts could not be added to the following groups:`
-            : c('Info').t`Cannot add more than 100 contacts to a contact group.`;
+            ? c('Info').t`You've reached the maximum number of addresses in the contact group(s):`
+            : c('Info').t`You've reached the maximum number of addresses in the contact group.`;
 
     return (
         <Prompt
-            title={c('Title').t`Contacts limit reached`}
+            title={c('Title').t`Cannot add more addresses`}
             onClose={onClose}
             buttons={<Button onClick={onClose}>{c('Action').t`Close`}</Button>}
             {...rest}
@@ -36,7 +35,7 @@ const ContactGroupLimitReachedModal = ({ groupIDs, ...rest }: Props) => {
             {groupIDs && groupIDs?.length > 0 && (
                 <ul>
                     {getContactGroupsNames(groupIDs, groups).map((group) => (
-                        <li>{group.Name}</li>
+                        <li key={group.ID}>{group.Name}</li>
                     ))}
                 </ul>
             )}
