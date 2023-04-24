@@ -20,7 +20,7 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
     const imageSize = Math.round(size * 0.6);
 
-    const renderIcon = () => {
+    const renderIndicators = () => {
         if (failed) {
             return (
                 <Icon
@@ -35,11 +35,17 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
         if (optimistic) {
             return <CircleLoader size="small" className="upper-layer color-primary absolute-center opacity-60" />;
         }
+    };
 
+    const renderIcon = () => {
         if (domainURL && imageStatus !== ImageStatus.ERROR) {
             return (
                 <ProxiedDomainImage
-                    className="w-custom h-custom absolute-center"
+                    className={clsx(
+                        'w-custom h-custom absolute-center',
+                        optimistic && 'opacity-30',
+                        failed && 'hidden'
+                    )}
                     style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
                     onStatusChange={setImageStatus}
                     status={imageStatus}
@@ -49,7 +55,12 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
         }
 
         return (
-            <Icon className="absolute-center" color="var(--interaction-norm)" name={presentItemIcon(data)} size={20} />
+            <Icon
+                className={clsx('absolute-center', optimistic && 'opacity-30', failed && 'hidden')}
+                color="var(--interaction-norm)"
+                name={presentItemIcon(data)}
+                size={20}
+            />
         );
     };
 
@@ -64,6 +75,7 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
         >
             <span className="sr-only">{data.type}</span>
             {renderIcon()}
+            {renderIndicators()}
         </div>
     );
 };
