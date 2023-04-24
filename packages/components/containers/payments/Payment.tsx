@@ -80,6 +80,7 @@ const Payment = ({
                 {MIN_DONATION_AMOUNT}
             </Price>
         );
+
         return (
             <Alert className="mb1" type="error">{c('Error')
                 .jt`The minimum amount that can be donated is ${price}`}</Alert>

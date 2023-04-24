@@ -29,8 +29,8 @@ import AmountRow from './AmountRow';
 import Payment from './Payment';
 import PaymentInfo from './PaymentInfo';
 import StyledPayPalButton from './StyledPayPalButton';
-import { PaymentParameters } from './interface';
-import { handlePaymentToken } from './paymentTokenHelper';
+import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from './interface';
+import { createPaymentToken } from './paymentTokenHelper';
 import usePayment from './usePayment';
 
 const getCurrenciesI18N = () => ({
@@ -52,13 +52,17 @@ const CreditsModal = (props: ModalProps) => {
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
 
-    const handleSubmit = async (params: PaymentParameters) => {
-        const requestBody = await handlePaymentToken({
-            params: { ...params, Amount: debouncedAmount, Currency: currency },
-            api,
-            createModal,
-        });
-        await api(buyCredit(requestBody));
+    const handleSubmit = async (params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment) => {
+        const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
+        const tokenPaymentMethod = await createPaymentToken(
+            {
+                params,
+                api,
+                createModal,
+            },
+            amountAndCurrency
+        );
+        await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
         await call();
         props.onClose?.();
         createNotification({ text: c('Success').t`Credits added` });
@@ -68,7 +72,7 @@ const CreditsModal = (props: ModalProps) => {
         usePayment({
             amount: debouncedAmount,
             currency,
-            onPay: handleSubmit,
+            onPaypalPay: handleSubmit,
         });
 
     const submit =
@@ -87,9 +91,10 @@ const CreditsModal = (props: ModalProps) => {
             size="large"
             as={Form}
             onSubmit={() => {
-                if (!handleCardSubmit()) {
+                if (!handleCardSubmit() || !parameters) {
                     return;
                 }
+
                 withLoading(handleSubmit(parameters));
             }}
             {...props}
