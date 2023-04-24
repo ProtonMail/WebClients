@@ -400,6 +400,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             onClick={() => withImporting(importUsers())}
                             loading={importing}
                             disabled={isCreateUsersButtonDisabled}
+                            data-testid="multiUserUpload:createAccounts"
                         >
                             {selectedUserIds.length
                                 ? c('Title').ngettext(
