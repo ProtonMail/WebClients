@@ -42,6 +42,7 @@ export * from './logo';
 export * from './miniCalendar';
 export * from './modal';
 export * from './modalTwo';
+export * from './newFeatureTag';
 export * from './option';
 export * from './orderable';
 export * from './orderableTable';
