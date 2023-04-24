@@ -36,9 +36,17 @@ const useStepPrepare = () => {
     const [calendars = []] = useCalendars();
     const visualCalendars = getVisualCalendars(calendars);
 
-    const [mailChecked, setMailChecked] = useState(products.includes(ImportType.MAIL));
-    const [contactChecked, setContactChecked] = useState(products.includes(ImportType.CONTACTS));
-    const [calendarChecked, setCalendarChecked] = useState(products.includes(ImportType.CALENDAR));
+    const emailSelected = products.includes(ImportType.MAIL);
+    const contactSelected = products.includes(ImportType.CONTACTS);
+    const calendarSelected = products.includes(ImportType.CALENDAR);
+
+    const emailsHasError = !!importerData.emails?.error;
+    const contactsHasError = !!importerData.contacts?.error;
+    const calendarsHasError = !!importerData.calendars?.error;
+
+    const [emailChecked, setEmailChecked] = useState(emailSelected && !emailsHasError);
+    const [contactChecked, setContactChecked] = useState(contactSelected && !contactsHasError);
+    const [calendarChecked, setCalendarChecked] = useState(calendarSelected && !calendarsHasError);
 
     const isLabelMapping = provider === ImportProvider.GOOGLE;
 
@@ -49,7 +57,7 @@ const useStepPrepare = () => {
         labels,
         folders,
         visualCalendars,
-        mailChecked,
+        emailChecked,
         calendarChecked,
         isLabelMapping,
         !user.hasPaidMail
@@ -60,7 +68,7 @@ const useStepPrepare = () => {
 
     const handleSubmit = () => {
         const products = [
-            mailChecked && ImportType.MAIL,
+            emailChecked && ImportType.MAIL,
             contactChecked && ImportType.CONTACTS,
             calendarChecked && ImportType.CALENDAR,
         ].filter(isTruthy);
@@ -75,8 +83,8 @@ const useStepPrepare = () => {
 
     return {
         products,
-        mailChecked,
-        setMailChecked,
+        emailChecked,
+        setEmailChecked,
         contactChecked,
         setContactChecked,
         calendarChecked,
@@ -87,7 +95,7 @@ const useStepPrepare = () => {
         emailTitle,
         hasErrors,
         enabledFeatures: getEnabledFeature(provider, featureMap),
-        allCheckboxUnselected: !mailChecked && !contactChecked && !calendarChecked,
+        allCheckboxUnselected: !emailChecked && !contactChecked && !calendarChecked,
     };
 };
 
