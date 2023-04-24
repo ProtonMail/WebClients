@@ -42,8 +42,9 @@ interface MessageOption {
 interface Props {
     needToShowUpsellBanner: MutableRefObject<boolean>;
     columnMode: boolean;
+    onClose: () => void;
 }
-const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
+const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props) => {
     const [theme] = useTheme();
 
     const [option, setOption] = useState<MessageOption>();
@@ -321,6 +322,8 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode }: Props) => {
                 cta={option?.cta}
                 contentCentered={!columnMode}
                 data-testid="promotion-banner"
+                hasDismissAction
+                onClose={onClose}
             />
             {renderShortcutModal && <MailShortcutsModal {...mailShortcutsProps} />}
             {renderThemesModal && <ThemesModal {...themesModalProps} />}
