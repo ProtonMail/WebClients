@@ -66,8 +66,7 @@ const ContactEditModal = ({
     const [modelContactEmails, setModelContactEmails] = useState<SimpleMap<ContactEmailModel>>({});
 
     const saveVCardContact = useSaveVCardContact();
-    const applyGroups = useApplyGroups();
-
+    const { applyGroups, contactGroupLimitReachedModal } = useApplyGroups();
     const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
 
     const nameProperty = getSortedProperties(vCardContact, 'fn')[0] as VCardProperty<string>;
@@ -243,112 +242,115 @@ const ContactEditModal = ({
     }, []);
 
     return (
-        <ModalTwo size="large" className="contacts-modal" {...rest}>
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                <div className="mb-4">
-                    <ContactEditProperty
-                        ref={nameFieldRef}
-                        isSubmitted={isSubmitted}
-                        onRemove={handleRemove}
-                        actionRow={false}
-                        mainItem
-                        vCardProperty={nameProperty}
-                        onChangeVCard={handleChangeVCard}
-                        onUpgrade={onUpgrade}
-                        onSelectImage={onSelectImage}
-                        onGroupEdit={onGroupEdit}
-                    />
+        <>
+            <ModalTwo size="large" className="contacts-modal" {...rest}>
+                <ModalTwoHeader title={title} />
+                <ModalTwoContent>
+                    <div className="mb-4">
+                        <ContactEditProperty
+                            ref={nameFieldRef}
+                            isSubmitted={isSubmitted}
+                            onRemove={handleRemove}
+                            actionRow={false}
+                            mainItem
+                            vCardProperty={nameProperty}
+                            onChangeVCard={handleChangeVCard}
+                            onUpgrade={onUpgrade}
+                            onSelectImage={onSelectImage}
+                            onGroupEdit={onGroupEdit}
+                        />
 
-                    <ContactEditProperty
+                        <ContactEditProperty
+                            isSubmitted={isSubmitted}
+                            onRemove={handleRemove}
+                            actionRow
+                            fixedType
+                            mainItem
+                            vCardProperty={photoProperty}
+                            onChangeVCard={handleChangeVCard}
+                            onUpgrade={onUpgrade}
+                            onSelectImage={onSelectImage}
+                            onGroupEdit={onGroupEdit}
+                        />
+                    </div>
+                    <ContactEditProperties
+                        field="fn"
+                        isSignatureVerified
                         isSubmitted={isSubmitted}
                         onRemove={handleRemove}
-                        actionRow
-                        fixedType
-                        mainItem
-                        vCardProperty={photoProperty}
+                        vCardContact={vCardContact}
                         onChangeVCard={handleChangeVCard}
                         onUpgrade={onUpgrade}
                         onSelectImage={onSelectImage}
                         onGroupEdit={onGroupEdit}
                     />
-                </div>
-                <ContactEditProperties
-                    field="fn"
-                    isSignatureVerified
-                    isSubmitted={isSubmitted}
-                    onRemove={handleRemove}
-                    vCardContact={vCardContact}
-                    onChangeVCard={handleChangeVCard}
-                    onUpgrade={onUpgrade}
-                    onSelectImage={onSelectImage}
-                    onGroupEdit={onGroupEdit}
-                />
-                <ContactEditProperties
-                    field="email"
-                    isSignatureVerified
-                    isSubmitted={isSubmitted}
-                    onRemove={handleRemove}
-                    sortable
-                    onAdd={handleAdd('email')}
-                    contactEmails={modelContactEmails}
-                    onContactEmailChange={handleContactEmailChange}
-                    vCardContact={vCardContact}
-                    onChangeVCard={handleChangeVCard}
-                    onUpgrade={onUpgrade}
-                    onSelectImage={onSelectImage}
-                    onGroupEdit={onGroupEdit}
-                />
-                <ContactEditProperties
-                    field="tel"
-                    isSignatureVerified
-                    isSubmitted={isSubmitted}
-                    onRemove={handleRemove}
-                    sortable
-                    onAdd={handleAdd('tel')}
-                    vCardContact={vCardContact}
-                    onChangeVCard={handleChangeVCard}
-                    onUpgrade={onUpgrade}
-                    onSelectImage={onSelectImage}
-                    onGroupEdit={onGroupEdit}
-                />
-                <ContactEditProperties
-                    field="adr"
-                    isSignatureVerified
-                    isSubmitted={isSubmitted}
-                    onRemove={handleRemove}
-                    sortable
-                    onAdd={handleAdd('adr')}
-                    vCardContact={vCardContact}
-                    onChangeVCard={handleChangeVCard}
-                    onUpgrade={onUpgrade}
-                    onSelectImage={onSelectImage}
-                    onGroupEdit={onGroupEdit}
-                />
-                <ContactEditProperties
-                    isSubmitted={isSubmitted}
-                    isSignatureVerified
-                    onRemove={handleRemove}
-                    onAdd={handleAdd()}
-                    vCardContact={vCardContact}
-                    onChangeVCard={handleChangeVCard}
-                    onUpgrade={onUpgrade}
-                    onSelectImage={onSelectImage}
-                    onGroupEdit={onGroupEdit}
-                />
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button
-                    color="norm"
-                    loading={loading}
-                    data-testid="create-contact:save"
-                    onClick={() => withLoading(handleSubmit())}
-                >
-                    {c('Action').t`Save`}
-                </Button>
-            </ModalTwoFooter>
-        </ModalTwo>
+                    <ContactEditProperties
+                        field="email"
+                        isSignatureVerified
+                        isSubmitted={isSubmitted}
+                        onRemove={handleRemove}
+                        sortable
+                        onAdd={handleAdd('email')}
+                        contactEmails={modelContactEmails}
+                        onContactEmailChange={handleContactEmailChange}
+                        vCardContact={vCardContact}
+                        onChangeVCard={handleChangeVCard}
+                        onUpgrade={onUpgrade}
+                        onSelectImage={onSelectImage}
+                        onGroupEdit={onGroupEdit}
+                    />
+                    <ContactEditProperties
+                        field="tel"
+                        isSignatureVerified
+                        isSubmitted={isSubmitted}
+                        onRemove={handleRemove}
+                        sortable
+                        onAdd={handleAdd('tel')}
+                        vCardContact={vCardContact}
+                        onChangeVCard={handleChangeVCard}
+                        onUpgrade={onUpgrade}
+                        onSelectImage={onSelectImage}
+                        onGroupEdit={onGroupEdit}
+                    />
+                    <ContactEditProperties
+                        field="adr"
+                        isSignatureVerified
+                        isSubmitted={isSubmitted}
+                        onRemove={handleRemove}
+                        sortable
+                        onAdd={handleAdd('adr')}
+                        vCardContact={vCardContact}
+                        onChangeVCard={handleChangeVCard}
+                        onUpgrade={onUpgrade}
+                        onSelectImage={onSelectImage}
+                        onGroupEdit={onGroupEdit}
+                    />
+                    <ContactEditProperties
+                        isSubmitted={isSubmitted}
+                        isSignatureVerified
+                        onRemove={handleRemove}
+                        onAdd={handleAdd()}
+                        vCardContact={vCardContact}
+                        onChangeVCard={handleChangeVCard}
+                        onUpgrade={onUpgrade}
+                        onSelectImage={onSelectImage}
+                        onGroupEdit={onGroupEdit}
+                    />
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                    <Button
+                        color="norm"
+                        loading={loading}
+                        data-testid="create-contact:save"
+                        onClick={() => withLoading(handleSubmit())}
+                    >
+                        {c('Action').t`Save`}
+                    </Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+            {contactGroupLimitReachedModal}
+        </>
     );
 };
 

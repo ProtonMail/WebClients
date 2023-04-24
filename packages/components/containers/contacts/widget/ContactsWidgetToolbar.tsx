@@ -10,6 +10,7 @@ import { ButtonGroup, Checkbox, Icon, Tooltip } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useContactList from '../hooks/useContactList';
+import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 import { CustomAction } from './types';
 
@@ -28,6 +29,7 @@ interface Props {
     customActions: CustomAction[];
     contactList: ReturnType<typeof useContactList>;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onLimitReached: (props: ContactGroupLimitReachedProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
     isDrawer?: boolean;
@@ -48,6 +50,7 @@ const ContactsWidgetToolbar = ({
     customActions,
     contactList,
     onGroupEdit,
+    onLimitReached,
     onUpgrade,
     onSelectEmails,
     isDrawer = false,
@@ -135,6 +138,7 @@ const ContactsWidgetToolbar = ({
                     onLock={onLock}
                     onSuccess={() => onCheckAll(false)}
                     onGroupEdit={onGroupEdit}
+                    onLimitReached={onLimitReached}
                     onUpgrade={onUpgrade}
                     onSelectEmails={onSelectEmails}
                 >
