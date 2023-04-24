@@ -23,7 +23,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.FAMILY]: {
                 text: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
                 included: true,
-                fire: true,
+                highlight: true,
             },
             [PLANS.MAIL_PRO]: null,
             [PLANS.BUNDLE_PRO]: null,
