@@ -66,7 +66,7 @@ export const usePeriodicOtpCode = ({ shareId, itemId, totpUri }: Props): [MaybeN
         () => () => {
             cancelAnimationFrame(requestAnimationRef.current);
             setOtp(null);
-            setPercentage(0);
+            setPercentage(-1);
         },
         [itemId, shareId, totpUri]
     );
