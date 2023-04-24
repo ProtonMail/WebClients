@@ -66,7 +66,7 @@ const Header = ({
                 className="file-preview-filename flex flex-align-items-center flex-nowrap"
                 data-testid="preview:file-name"
             >
-                {mimeType && <FileIcon mimeType={mimeType} className="mr0-5" />}
+                {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
                 <FileNameDisplay text={name} data-testid="file-preview:file-name" />
                 {signatureStatus}
             </div>
@@ -78,7 +78,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Download`}
                         onClick={onDownload}
-                        className="ml0-5"
+                        className="ml-2"
                         data-testid="file-preview:actions:download"
                     >
                         <Icon name="arrow-down-line" size={20} alt={c('Action').t`Download`} />
@@ -94,7 +94,7 @@ const Header = ({
                                 : c('Action').t`Save`
                         }
                         onClick={handleSave}
-                        className="ml0-5"
+                        className="ml-2"
                         data-testid="file-preview:actions:save"
                         loading={isSaving}
                         disabled={!isDirty}
@@ -112,7 +112,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Details`}
                         onClick={onDetail}
-                        className="ml0-5 no-mobile"
+                        className="ml-2 no-mobile"
                         data-testid="file-preview:actions:details"
                     >
                         <Icon name="info-circle" size={20} alt={c('Action').t`Details`} />
@@ -124,7 +124,7 @@ const Header = ({
                         shape="ghost"
                         title={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                         onClick={onShare}
-                        className="ml0-5 no-mobile"
+                        className="ml-2 no-mobile"
                         data-testid="file-preview:actions:share"
                     >
                         <Icon
@@ -141,7 +141,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Close`}
                         onClick={onClose}
-                        className="ml0-5"
+                        className="ml-2"
                         data-testid="preview:button:close"
                     >
                         <Icon name="cross" size={20} alt={c('Action').t`Close`} />

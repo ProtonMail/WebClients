@@ -63,7 +63,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                 return (
                     <Details key={server.Country || 'XX'} open={server.open}>
                         <Summary>
-                            <div className="ml0-5 flex flex-nowrap flex-align-items-center">
+                            <div className="ml-2 flex flex-nowrap flex-align-items-center">
                                 <div className={classnames([category === CATEGORY.SERVER ? 'w33' : ''])}>
                                     <Country server={server} />
                                 </div>

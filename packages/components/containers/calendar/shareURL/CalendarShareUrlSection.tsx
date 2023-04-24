@@ -256,7 +256,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                     content
                 ) : (
                     <>
-                        <h3 className="text-bold mb0-5" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
+                        <h3 className="text-bold mb-2" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
                             {c('Calendar settings section title').t`Share with anyone`}
                         </h3>
                         {content}
@@ -264,7 +264,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 )}
             </div>
             {maxLinksReached && (
-                <Alert className="mb0-75" type="info">
+                <Alert className="mb-3" type="info">
                     {c('Maximum calendar links reached warning').ngettext(
                         msgid`You can create up to ${MAX_LINKS_PER_CALENDAR} link per calendar. To create a new link to this calendar, delete one from the list below.`,
                         `You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`,

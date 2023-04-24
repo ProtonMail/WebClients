@@ -114,7 +114,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
     return (
         <ul
             className={classnames([
-                'minicalendar-weeknumbers unstyled m0 text-center',
+                'minicalendar-weeknumbers unstyled m-0 text-center',
                 !onSelectWeekRange && 'no-pointer-events-children',
             ])}
             style={style}

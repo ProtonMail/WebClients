@@ -18,7 +18,7 @@ interface FeatureListProps {
 
 export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureListProps) => {
     return (
-        <ul className="bg-weak-odd unstyled mt1 mb2 on-mobile-mb0">
+        <ul className="bg-weak-odd unstyled mt-4 mb-0 md:mb-8">
             {features.map((feature) => {
                 const iconToDisplay = (() => {
                     if (feature.fire && fire) {
@@ -37,7 +37,7 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                         );
                     }
 
-                    return <Icon size={20} name="cross" className="mt0-1" />;
+                    return <Icon size={20} name="cross" className="mt-0.5" />;
                 })();
 
                 const key =
@@ -53,9 +53,9 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                                 feature.included && feature.status === 'coming-soon' && 'color-weak'
                             )}
                         >
-                            <span className="flex flex-item-noshrink mr0-75">{iconToDisplay}</span>
+                            <span className="flex flex-item-noshrink mr-3">{iconToDisplay}</span>
                             <span className="flex-item-fluid text-left">
-                                <span className="mr0-5 align-middle">{feature.text}</span>
+                                <span className="mr-2 align-middle">{feature.text}</span>
                                 {feature.tooltip ? (
                                     <Info
                                         className="align-middle"

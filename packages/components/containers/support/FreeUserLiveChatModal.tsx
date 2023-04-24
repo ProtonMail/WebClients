@@ -44,7 +44,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
                     <div className="flex flex-row flex-justify-center flex-align-items-center p1 rounded-full bg-weak">
                         <Icon name="speech-bubble" size={20} className="color-primary" />
                     </div>
-                    <h3 className="text-3xl color-primary text-center mt1 mb0-4">
+                    <h3 className="text-3xl color-primary text-center mt-4 mb-1">
                         {c('Live Chat Modal').t`Live chat is available with ${planName}`}
                     </h3>
                     <p className="text-center text-lg color-weak">

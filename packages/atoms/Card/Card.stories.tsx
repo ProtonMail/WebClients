@@ -1,10 +1,15 @@
 import { useState } from 'react';
 
+
+
 import { Button } from '@proton/atoms';
 import { Checkbox } from '@proton/components';
 
+
+
 import Card from './Card';
 import mdx from './Card.mdx';
+
 
 export default {
     component: Card,
@@ -22,7 +27,7 @@ export const Basic = () => (
 
 export const WithActionHorizontal = () => (
     <Card className="flex flex-align-items-center">
-        <p className="m0 mr2 flex-item-fluid">
+        <p className="m-0 mr2 flex-item-fluid">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ipsa dolores delectus fugit consequuntur
             impedit velit officia tenetur, magni placeat, voluptatum porro unde repudiandae cum explicabo assumenda
             distinctio, mollitia voluptate.
@@ -56,7 +61,7 @@ export const Sandbox = () => {
                 <strong className="block mt1">Options</strong>
                 {toggles.map((prop, i) => {
                     return (
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             <Checkbox
                                 checked={selectedToggles[i]}
                                 onChange={({ target: { checked } }) => {

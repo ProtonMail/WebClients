@@ -124,7 +124,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                                             className={clsx(['flex flex-row'])}
                                         >
                                             <span className="text-left flex-item-fluid">{pageNumber}</span>
-                                            {active ? <Icon name="checkmark" className="mt0-2" /> : null}
+                                            {active ? <Icon name="checkmark" className="mt-0.5" /> : null}
                                         </DropdownMenuButton>
                                     );
                                 })}

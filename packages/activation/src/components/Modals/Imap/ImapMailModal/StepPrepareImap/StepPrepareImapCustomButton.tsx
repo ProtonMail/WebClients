@@ -16,13 +16,13 @@ interface Props {
 
 const StepPrepareCustomButton = ({ isLabelMapping, handleClickCustomize, handleReset, hasError, isCustom }: Props) => {
     return (
-        <div className="mt0-5 flex flex-align-items-center">
+        <div className="mt-2 flex flex-align-items-center">
             <Button shape="outline" onClick={handleClickCustomize} data-testid="StepPrepare:customizeButton">
                 {c('Action').t`Customize import`}
             </Button>
             {hasError && (
                 <Tooltip title={EasyTrans.get(isLabelMapping).editName()} originalPlacement="right">
-                    <Icon name="exclamation-circle-filled" size={20} className="ml0-5 color-danger" />
+                    <Icon name="exclamation-circle-filled" size={20} className="ml-2 color-danger" />
                 </Tooltip>
             )}
             {isCustom && (

@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button } from '@proton/atoms';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
@@ -10,34 +14,19 @@ import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
-    Currency,
-    PlanIDs,
-    PlansMap,
-    Subscription,
-    SubscriptionCheckResponse,
-} from '@proton/shared/lib/interfaces';
+import { Audience, Currency, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+
+
 
 import { Icon, Loader } from '../../components';
-import {
-    useApi,
-    useConfig,
-    useFeature,
-    useLoad,
-    useLoading,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '../../hooks';
+import { useApi, useConfig, useFeature, useLoad, useLoading, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { FeatureCode } from '../index';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import { getCurrency, getDefaultSelectedProductPlans } from './subscription/helpers';
+
 
 const FREE_SUBSCRIPTION = {} as Subscription;
 
@@ -162,7 +151,7 @@ const PlansSection = () => {
                 }}
             >
                 {c('Action').t`View plans details`}
-                <Icon name="arrow-right" className="ml0-5 on-rtl-mirror" />
+                <Icon name="arrow-right" className="ml-2 on-rtl-mirror" />
             </Button>
         </>
     );

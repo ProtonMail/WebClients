@@ -33,13 +33,13 @@ const ShareLinkSuccessModal = ({ link, onSubmit, onClose, accessLevel, isOpen }:
             <div className="color-weak">
                 {accessLevel === ACCESS_LEVEL.FULL ? (
                     <>
-                        <p className="mt0">{c('Info')
+                        <p className="mt-0">{c('Info')
                             .t`By sharing the full event details of this calendar, you accept to grant ${BRAND_NAME} access to this calendar's encrypted information.`}</p>
                         <p>{c('Info')
                             .t`Anyone with this link can see all the event details of this calendar such as title, location or participants.`}</p>
                     </>
                 ) : (
-                    <p className="mt0">
+                    <p className="mt-0">
                         {c('Info')
                             .t`Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.`}
                     </p>

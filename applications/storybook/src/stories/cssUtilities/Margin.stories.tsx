@@ -33,7 +33,7 @@ const marginSizes = [
         px: '0',
     },
     {
-        class: '0-5',
+        class: '0.5',
         rem: '0.125rem',
         px: '2px',
     },
@@ -213,7 +213,7 @@ export const MarginY = () => {
 
 export const MarginLeft = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-start flex-gap-0-5 text-2xs">
+        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
             {marginSizes.map((size) => (
                 <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} ml-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -227,7 +227,7 @@ export const MarginLeft = () => {
 
 export const MarginRight = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-end flex-gap-0-5 text-2xs">
+        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
             {marginSizes.map((size) => (
                 <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mr-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -241,7 +241,7 @@ export const MarginRight = () => {
 
 export const MarginX = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-center flex-gap-0-5 text-2xs">
+        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
             {marginSizes.map((size) => (
                 <div
                     key={size.class}

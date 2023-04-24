@@ -78,7 +78,7 @@ const Checkbox = (
                 {...rest}
             />
             <span
-                className={clsx('checkbox-fakecheck', children ? 'mr0-5' : '')}
+                className={clsx('checkbox-fakecheck', children ? 'mr-2' : '')}
                 style={{ borderColor, background: backgroundColor, color }}
             >
                 {indeterminate === false ? (

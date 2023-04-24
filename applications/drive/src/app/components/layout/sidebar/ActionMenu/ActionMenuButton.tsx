@@ -50,7 +50,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                 className={clsx(className, 'flex flex-justify-center flex-align-items-center')}
                 onClick={toggle}
             >
-                <Icon className="mr0-5" name="plus" />
+                <Icon className="mr-2" name="plus" />
                 {
                     // translator: this string is used on Proton Drive to open a drop-down with 3 actions: Upload file, folder and new folder
                     c('Action').t`New`
@@ -65,10 +65,10 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                 anchorRef={anchorRef}
                 onClose={close}
             >
-                <DropdownMenu className="mt0-25 mb0-25">
+                <DropdownMenu className="my-1">
                     <UploadFileButton onClick={fileClick} />
                     {isDesktop && <UploadFolderButton onClick={folderClick} />}
-                    <hr className="mt0-5 mb0-5" />
+                    <hr className="my-2" />
                     <CreateNewFolderButton onClick={showCreateFolderModal} />
                 </DropdownMenu>
             </Dropdown>

@@ -63,7 +63,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                 color="norm"
                 shape="ghost"
                 fullWidth
-                className="mt0-5"
+                className="mt-2"
                 onClick={() => {
                     if (loading) {
                         return;

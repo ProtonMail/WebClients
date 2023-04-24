@@ -71,7 +71,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div className={clsx([isAllDay && 'w50 on-mobile-w100'])}>
-                <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
+                <div className="flex flex-nowrap on-mobile-flex-column mb-2">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
                         <div
                             className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
@@ -92,7 +92,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </div>
 
                         {!isAllDay && (
-                            <div className="ml0-5 flex-item-fluid">
+                            <div className="ml-2 flex-item-fluid">
                                 <TimeInput
                                     id="event-startTime"
                                     value={start.time}
@@ -105,7 +105,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimeZoneSelector
-                            className="field ml0-5 on-mobile-ml0 on-mobile-mt0-5 on-mobile-mb0-5 flex-item-fluid"
+                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 flex-item-fluid"
                             id="event-start-timezone-select"
                             data-test-id="create-event-modal/start:time-zone-dropdown"
                             timezone={start.tzid}
@@ -116,7 +116,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     )}
                 </div>
 
-                <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
+                <div className="flex flex-nowrap on-mobile-flex-column mb-2">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
                         <div
                             className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
@@ -138,7 +138,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </div>
 
                         {!isAllDay && (
-                            <div className="ml0-5 flex-item-fluid">
+                            <div className="ml-2 flex-item-fluid">
                                 <TimeInput
                                     id="event-endTime"
                                     value={end.time}
@@ -154,7 +154,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimeZoneSelector
-                            className="field ml0-5 on-mobile-ml0 on-mobile-mt0-5 on-mobile-mb0-5 flex-item-fluid"
+                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 flex-item-fluid"
                             id="event-end-timezone-select"
                             data-test-id="create-event-modal/end:time-zone-dropdown"
                             timezone={end.tzid}

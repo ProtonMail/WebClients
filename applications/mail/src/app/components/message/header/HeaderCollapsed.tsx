@@ -75,7 +75,7 @@ const HeaderCollapsed = ({
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
         >
-            <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr0-5">
+            <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr-2">
                 <RecipientItem
                     message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
@@ -87,14 +87,14 @@ const HeaderCollapsed = ({
                 />
 
                 {messageLoaded && isDraftMessage && (
-                    <span className="badge-label-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
+                    <span className="badge-label-success ml-2 flex-item-noshrink">{c('Info').t`Draft`}</span>
                 )}
                 {messageLoaded && isOutboxMessage && !isScheduledMessage && (
-                    <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    <span className="badge-label-primary ml-2 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
                 {messageLoaded && isExpiringMessage && (
                     <ItemExpiration
-                        className="badge-label-weak ml0-5 py-0-5 flex-item-no-shrink"
+                        className="badge-label-weak ml-2 py-0-5 flex-item-no-shrink"
                         expirationTime={message.data?.ExpirationTime}
                         element={message.data as Message}
                         labelID={labelID}
@@ -102,7 +102,7 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && (
-                    <div className="ml0-5 flex-item-fluid flex flex-nowrap">
+                    <div className="ml-2 flex-item-fluid flex flex-nowrap">
                         <ItemLabels
                             className="no-mobile"
                             element={message.data}
@@ -118,7 +118,7 @@ const HeaderCollapsed = ({
             <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">
                 {messageLoaded ? (
                     <>
-                        <span className="message-header-star mr0-5 flex">
+                        <span className="message-header-star mr-2 flex">
                             <ItemStar element={message.data} />
                         </span>
 
@@ -127,7 +127,7 @@ const HeaderCollapsed = ({
                         </span>
 
                         {!!hasAttachments(message.data) && (
-                            <span className="mr0-5 flex">
+                            <span className="mr-2 flex">
                                 <ItemAttachmentIcon
                                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                     element={message.data}
@@ -140,10 +140,10 @@ const HeaderCollapsed = ({
                             <ItemDate element={message.data} labelID={labelID} useTooltip />
                         </span>
 
-                        {isUnreadMessage && <ItemUnread element={message.data} labelID={labelID} className="ml0-5" />}
+                        {isUnreadMessage && <ItemUnread element={message.data} labelID={labelID} className="ml-2" />}
                     </>
                 ) : (
-                    <span className="message-header-metas ml0-5 flex" />
+                    <span className="message-header-metas ml-2 flex" />
                 )}
             </div>
         </div>

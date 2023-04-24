@@ -131,7 +131,7 @@ const CreateEventModal = ({
             onClick={loadingAction ? noop : handleDeleteWithNotice}
             loading={loadingAction && lastAction === ACTION.DELETE}
             disabled={loadingAction}
-            className="mr0-5 on-tiny-mobile-mr0 on-tiny-mobile-mb0-5"
+            className="mr-0 mb-2 sm:mr-2 sm:mb-0"
         >{c('Action').t`Delete`}</Button>
     );
 

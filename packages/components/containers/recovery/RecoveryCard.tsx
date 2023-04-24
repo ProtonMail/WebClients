@@ -198,13 +198,13 @@ const RecoveryCard = ({ ids }: Props) => {
 
             <h3 className="text-bold text-rg mb1">{c('Title').t`Your recovery status`}</h3>
 
-            <ul className="unstyled m0">
+            <ul className="unstyled m-0">
                 <li>
                     <RecoveryCardStatus {...accountStatusProps} />
                 </li>
 
                 {dataStatusProps && (
-                    <li className="mt0-5">
+                    <li className="mt-2">
                         <RecoveryCardStatus {...dataStatusProps} />
                     </li>
                 )}

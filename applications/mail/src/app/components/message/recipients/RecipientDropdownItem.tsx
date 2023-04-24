@@ -48,7 +48,7 @@ const RecipientDropdownItem = ({
 
     return (
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5" onClick={handleClick}>
-            <span className="item-icon flex flex-item-noshrink rounded mx0-5" aria-hidden="true">
+            <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
                 <span className="mauto">
                     {isOutside ? (
                         <>{getInitials(label)}</>
@@ -72,7 +72,7 @@ const RecipientDropdownItem = ({
             </div>
             <Copy
                 value={recipient.Address}
-                className="opacity-on-hover mr0-5 flex-item-noshrink"
+                className="opacity-on-hover mr-2 flex-item-noshrink"
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
                 size="small"

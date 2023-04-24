@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router';
 
+
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -39,7 +41,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
             disabled={!canReply}
             data-testid="eoreply:button"
         >
-            <Icon name="arrow-up-and-left-big" className="on-rtl-mirror mr0-5" alt={c('Title').t`Reply`} />
+            <Icon name="arrow-up-and-left-big" className="on-rtl-mirror mr-2" alt={c('Title').t`Reply`} />
             <span>{c('Action').t`Reply securely`}</span>
         </Button>
     );
@@ -51,7 +53,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
                 !canReply && 'flex-justify-space-between',
             ])}
         >
-            <h1 className="text-ellipsis m0 eo-layout-title" title={subject} data-testid="eo:subject">
+            <h1 className="text-ellipsis m-0 eo-layout-title" title={subject} data-testid="eo:subject">
                 {subject}
             </h1>
             {canReply ? (

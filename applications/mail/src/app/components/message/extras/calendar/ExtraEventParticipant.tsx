@@ -14,8 +14,8 @@ const ExtraEventParticipant = ({ participant, isOrganizer = false }: Props) => {
     const displayText = displayName !== displayEmail ? `${displayName} <${displayEmail}>` : displayEmail;
 
     return (
-        <div className={clsx(['text-ellipsis', isOrganizer && 'mb0-25'])}>
-            {isOrganizer && <span className="mr0-25">{c('ICS widget label for event details').t`Organizer:`}</span>}
+        <div className={clsx(['text-ellipsis', isOrganizer && 'mb-1'])}>
+            {isOrganizer && <span className="mr-1">{c('ICS widget label for event details').t`Organizer:`}</span>}
             <a href={buildMailTo(displayEmail)} title={displayText}>
                 {displayText}
             </a>

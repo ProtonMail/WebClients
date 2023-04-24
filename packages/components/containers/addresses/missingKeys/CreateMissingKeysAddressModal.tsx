@@ -257,7 +257,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
                         />
                     </>
                 )}
-                <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
+                <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
                 <SelectEncryption
                     encryptionType={encryptionType}
                     setEncryptionType={step === STEPS.INIT ? setEncryptionType : noop}

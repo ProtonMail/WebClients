@@ -132,7 +132,7 @@ const ExtraEventAddParticipantButton = ({ model, setModel }: Props) => {
 
     return (
         <Button
-            className="mb0-5"
+            className="mb-2"
             color="weak"
             onClick={() => withLoading(handleAdd())}
             loading={loading}

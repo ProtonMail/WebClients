@@ -32,7 +32,7 @@ const ExtraEventButtons = ({ model, setModel, message, reloadWidget }: Props) =>
 
     return (
         <>
-            {link && <div className="mb0-5">{link}</div>}
+            {link && <div className="mb-2">{link}</div>}
             <ExtraEventAlert model={model} />
             {displayButtons}
         </>

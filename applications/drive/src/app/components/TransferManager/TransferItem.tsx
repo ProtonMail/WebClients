@@ -54,7 +54,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
             {...rest}
         >
             <div className="transfers-manager-list-item-name flex flex-nowrap flex-align-items-center text-ellipsis">
-                <span className="transfers-manager-list-item-icon flex flex-item-noshrink mr0-5">
+                <span className="transfers-manager-list-item-icon flex flex-item-noshrink mr-2">
                     {isInitializing ? <Loader size="small" /> : <FileIcon mimeType={transfer.meta.mimeType} />}
                 </span>
                 <span className={clsx(['flex', isNameUnresolved && 'color-weak'])}>

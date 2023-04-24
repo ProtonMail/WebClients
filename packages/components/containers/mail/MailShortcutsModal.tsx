@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
+import clsx from '@proton/utils/clsx';
 
 import {
     Alert,
@@ -16,7 +19,6 @@ import {
     Row,
     ShortcutsSectionView,
 } from '../../components';
-import { classnames } from '../../helpers';
 import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
@@ -35,29 +37,24 @@ const MailShortCutsModal = (props: ModalProps) => {
         <ModalTwo className="shortcut-modal" {...props}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Info')
                         .t`Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.`}
                 </Alert>
-                <div className="list-2columns on-mobile-list-1column -mr2 on-mobile-mr0">
+                <div className="list-2columns on-mobile-list-1column">
                     {alwaysOnSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}
                 </div>
 
-                <hr className="mt2 mb2 border-bottom" />
-                <Row className="mb2">
-                    <Label htmlFor="toggle-shortcuts" className="mr1">{c('Label').t`Keyboard shortcuts`}</Label>
+                <hr className="my-8 border-bottom" />
+                <Row className="mb-8">
+                    <Label htmlFor="toggle-shortcuts" className="mr-4">{c('Label').t`Keyboard shortcuts`}</Label>
                     <Field className="pt0-5">
                         <ShortcutsToggle id="toggle-shortcuts" />
                     </Field>
                 </Row>
-                <div
-                    className={classnames([
-                        'list-2columns on-mobile-list-1column -mr2 on-mobile-mr0',
-                        !Shortcuts && 'opacity-50',
-                    ])}
-                >
+                <div className={clsx('list-2columns on-mobile-list-1column', !Shortcuts && 'opacity-50')}>
                     {shortcutEnabledSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}

@@ -1,6 +1,8 @@
 import { MouseEvent, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
+
+
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
@@ -163,13 +165,13 @@ const MailRecipientItemSingle = ({
 
     const customDropdownActions = (
         <>
-            <hr className="my0-5" />
+            <hr className="my-2" />
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={handleCompose}
                 data-testid="recipient:new-message"
             >
-                <Icon name="envelope" className="mr0-5" />
+                <Icon name="envelope" className="mr-2" />
                 <span className="flex-item-fluid myauto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             {ContactID ? (
@@ -178,7 +180,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickContact}
                     data-testid="recipient:view-contact-details"
                 >
-                    <Icon name="user" className="mr0-5" />
+                    <Icon name="user" className="mr-2" />
                     <span className="flex-item-fluid myauto">{c('Action').t`View contact details`}</span>
                 </DropdownMenuButton>
             ) : (
@@ -187,7 +189,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickContact}
                     data-testid="recipient:create-new-contact"
                 >
-                    <Icon name="user-plus" className="mr0-5" />
+                    <Icon name="user-plus" className="mr-2" />
                     <span className="flex-item-fluid myauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
@@ -196,7 +198,7 @@ const MailRecipientItemSingle = ({
                 onClick={handleClickSearch}
                 data-testid="recipient:search-messages"
             >
-                <Icon name="envelope-magnifying-glass" className="mr0-5" />
+                <Icon name="envelope-magnifying-glass" className="mr-2" />
                 <span className="flex-item-fluid myauto">
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
@@ -207,7 +209,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickBlockSender}
                     data-testid="block-sender:button"
                 >
-                    <Icon name="circle-slash" className="mr0-5" />
+                    <Icon name="circle-slash" className="mr-2" />
                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                         .t`Block messages from this sender`}</span>
                 </DropdownMenuButton>
@@ -218,7 +220,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickTrust}
                     data-testid="recipient:show-trust-public-key"
                 >
-                    <Icon name="user" className="mr0-5" />
+                    <Icon name="user" className="mr-2" />
                     <span className="flex-item-fluid myauto">{c('Action').t`Trust public key`}</span>
                 </DropdownMenuButton>
             )}

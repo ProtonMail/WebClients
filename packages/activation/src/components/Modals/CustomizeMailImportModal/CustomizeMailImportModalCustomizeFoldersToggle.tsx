@@ -26,7 +26,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
             <Row>
                 <Label>{t.manage()}</Label>
                 <div className="flex flex-align-items-center">
-                    <Icon name={isLabelMapping ? 'tags' : 'folders'} className="mr0-5" />
+                    <Icon name={isLabelMapping ? 'tags' : 'folders'} className="mr-2" />
                     {selectedFoldersCount === totalFoldersCount ? (
                         <span>{t.totalCount(totalFoldersCount)}</span>
                     ) : (

@@ -16,7 +16,7 @@ const MethodCell = ({ method }: { method: PaymentMethod }) => {
     if (isPaypalDetails(method.Details)) {
         return (
             <>
-                <span className="mr0-5" data-testid="payment-method">
+                <span className="mr-2" data-testid="payment-method">
                     PayPal
                 </span>
                 <span className="auto-tablet text-ellipsis max-w100" data-testid="payer" title={method.Details.Payer}>

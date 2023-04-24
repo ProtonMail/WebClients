@@ -44,7 +44,7 @@ const CalendarSidebarShareCalendarModal = ({
                 subtitle={c('Action subline').t`They can view or edit your calendar`}
                 loading={loadingFetchMembersAndInvitations}
             />
-            <hr className="my0-5" />
+            <hr className="my-2" />
             <ActionCard
                 onClick={onSharePublicly}
                 iconName="link"

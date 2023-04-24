@@ -8,5 +8,5 @@ interface Props {
 }
 
 export const ContactViewProperties = ({ className, children }: Props) => {
-    return <div className={classnames(['border-bottom mb0-5 pb0-25', className])}>{children}</div>;
+    return <div className={classnames(['border-bottom mb-2 pb0-25', className])}>{children}</div>;
 };

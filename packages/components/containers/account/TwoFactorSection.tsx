@@ -91,7 +91,7 @@ const TwoFactorSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="twoFactorToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Authenticator app`}</span>
+                        <span className="mr-2">{c('Label').t`Authenticator app`}</span>
                         <Info
                             url={twoFactorAuthLink}
                             title={c('Info')
@@ -131,7 +131,7 @@ const TwoFactorSection = () => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label htmlFor="twoFactorKeyToggle" className="text-semibold">
-                                <span className={classnames(['mr0-5', !canEnableFido2 && 'color-weak'])}>
+                                <span className={classnames(['mr-2', !canEnableFido2 && 'color-weak'])}>
                                     {c('fido2: Info').t`Security key`}
                                 </span>
                                 <Info
@@ -171,7 +171,7 @@ const TwoFactorSection = () => {
                                     }}
                                     className="flex flex-nowrap flex-align-items-center"
                                 >
-                                    <Icon name="plus" className="mr0-5" />
+                                    <Icon name="plus" className="mr-2" />
                                     {c('fido2: Action').t`Add security key`}
                                 </Button>
                             </div>
@@ -183,7 +183,7 @@ const TwoFactorSection = () => {
                                     const id = getId(registeredKey);
                                     return (
                                         <div key={id} className="flex flex-align-items-center py0-5 border-bottom">
-                                            <div className="flex-item-fluid text-break mr0-5">{registeredKey.Name}</div>
+                                            <div className="flex-item-fluid text-break mr-2">{registeredKey.Name}</div>
                                             <ButtonGroup size="small">
                                                 <Button
                                                     icon

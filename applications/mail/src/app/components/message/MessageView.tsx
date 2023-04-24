@@ -371,7 +371,7 @@ const MessageView = (
         <article
             ref={elementRef}
             className={clsx([
-                'message-container mx0-5 my1 relative',
+                'message-container mx-2 my1 relative',
                 expanded && 'is-opened',
                 showFooter && 'has-attachments',
                 unread && 'is-unread',

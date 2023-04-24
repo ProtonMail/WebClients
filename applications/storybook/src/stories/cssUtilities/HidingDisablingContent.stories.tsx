@@ -1,8 +1,11 @@
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
+
+
 import { getTitle } from '../../helpers/title';
 import mdx from './HidingDisablingContent.mdx';
+
 
 export default {
     title: getTitle(__filename, false),
@@ -24,8 +27,8 @@ export const Hidden = () => (
 export const HiddenEmpty = () => (
     <div className="p2 bg-weak">
         Here are two elements, one empty, one not empty:
-        <p className="hidden-empty m0">I'm not empty</p>
-        <p className="hidden-empty m0">{/* I'm empty */}</p>
+        <p className="hidden-empty m-0">I'm not empty</p>
+        <p className="hidden-empty m-0">{/* I'm empty */}</p>
     </div>
 );
 

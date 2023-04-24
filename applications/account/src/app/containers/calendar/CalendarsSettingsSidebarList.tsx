@@ -36,7 +36,7 @@ const CalendarSettingsSidebarListItem = ({ sectionPath, calendar }: CalendarSett
     return (
         <SidebarListItem>
             <SidebarListItemLink to={`${sectionPath}/${ID}`} className="navigation-link-child">
-                <SidebarListItemContent left={<CalendarSelectIcon color={Color} className="mr0-5" />}>
+                <SidebarListItemContent left={<CalendarSelectIcon color={Color} className="mr-2" />}>
                     <span title={Name} className="text-ellipsis">
                         {Name}
                     </span>

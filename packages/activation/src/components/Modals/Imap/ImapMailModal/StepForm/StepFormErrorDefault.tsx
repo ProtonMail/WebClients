@@ -30,12 +30,12 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
                     <div className="mb1">
                         {c('Import error').t`${BRAND_NAME} can't connect to your account. Please make sure that:`}
                     </div>
-                    <ul className="m0 pb1">
+                    <ul className="m-0 pb1">
                         <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your password is correct.`}</li>
                     </ul>
                     <div className="mb1">{c('Import error').t`Use your app password if:`}</div>
-                    <ul className="m0 pb1">
+                    <ul className="m-0 pb1">
                         <li>{c('Import error').t`2-step verification is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your email account requires one to export your data.`}</li>
                     </ul>
@@ -51,14 +51,14 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
                         {c('Import error')
                             .t`${BRAND_NAME} can't connect to your external account. Please make sure that:`}
                     </div>
-                    <ul className="m0 pb1">
+                    <ul className="m-0 pb1">
                         <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your email address and password are correct.`}</li>
                     </ul>
                     <div className="mb1">
                         {c('Import error').t`Use your app password instead of your regular password if:`}
                     </div>
-                    <ul className="m0 pb1">
+                    <ul className="m-0 pb1">
                         <li>{c('Import error').t`2-step verification is enabled in your external email account.`}</li>
                         <li>{c('Import error').t`Your email account requires an app password to export your data.`}</li>
                     </ul>

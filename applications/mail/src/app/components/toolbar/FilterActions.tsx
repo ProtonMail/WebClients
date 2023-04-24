@@ -86,8 +86,8 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                 hasCaret={false}
                 content={
                     <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
-                        <Icon className="toolbar-icon mr0-5" name="filter" />
-                        <span className="text-sm m0">{text}</span>
+                        <Icon className="toolbar-icon mr-2" name="filter" />
+                        <span className="text-sm m-0">{text}</span>
                     </span>
                 }
             >
@@ -121,7 +121,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                         size="small"
                         shape="ghost"
                         aria-pressed={isActive}
-                        className={clsx(['text-sm my0 mx0-25', isActive && 'no-pointer-events bg-strong'])}
+                        className={clsx(['text-sm my-0 mx-1', isActive && 'no-pointer-events bg-strong'])}
                         onClick={onClick}
                     >
                         {text}

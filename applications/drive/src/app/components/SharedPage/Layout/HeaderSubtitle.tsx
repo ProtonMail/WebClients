@@ -15,12 +15,12 @@ export const HeaderSubtitle = ({ size }: Props) => {
     return (
         <div className="flex flex-row flex-align-items-center">
             <div className="color-success flex flex-row flex-align-center">
-                <Icon name="lock-open-check-filled" className="mr0-5" />
+                <Icon name="lock-open-check-filled" className="mr-2" />
                 <span className="encryption-block-text">{c('Info').t`End-to-end encrypted`}</span>
             </div>
             {size ? (
                 <>
-                    <span className="shared-folder-header-separator ml0-5 mr0-5">•</span>
+                    <span className="shared-folder-header-separator mx-2">•</span>
                     <span className="shared-folder-header-share-size text-pre">{readableSize}</span>
                 </>
             ) : null}

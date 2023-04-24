@@ -660,8 +660,8 @@ const SubscriptionModal = ({
                                     gift={
                                         <>
                                             {couponCode && (
-                                                <div className="flex flex-align-items-center mb0-25">
-                                                    <Icon name="gift" className="mr0-5 mb0-25" />
+                                                <div className="flex flex-align-items-center mb-1">
+                                                    <Icon name="gift" className="mr-2 mb-1" />
                                                     <Tooltip title={couponDescription}>
                                                         <code>{couponCode.toUpperCase()}</code>
                                                     </Tooltip>

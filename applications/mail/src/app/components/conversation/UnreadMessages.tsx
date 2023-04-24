@@ -61,7 +61,7 @@ const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
                 onClick={handleClick}
                 data-testid="conversation-view:view-new-unread-message"
             >
-                <span>{text}</span> <Icon name="arrow-down" className="ml0-5" />
+                <span>{text}</span> <Icon name="arrow-down" className="ml-2" />
             </Button>
         </span>
     );

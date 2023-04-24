@@ -14,7 +14,7 @@ const UploadFileButton = ({ onClick }: Props) => {
                 onClick={onClick}
                 data-testid="dropdown-upload-file"
             >
-                <Icon className="mr0-5" name="file-arrow-in-up" />
+                <Icon className="mr-2" name="file-arrow-in-up" />
                 {c('Action').t`Upload file`}
             </DropdownMenuButton>
         </>

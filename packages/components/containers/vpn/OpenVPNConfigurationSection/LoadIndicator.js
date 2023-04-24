@@ -18,7 +18,7 @@ const LoadIndicator = ({ server: { Load = 0 } }) => {
                             <rect x="17" y="11" width="1.55" height="1.53" className="circle-chart-percent" />
                         </g>
                     </CircularProgress>
-                    <div className="ml0-5">{Load}%</div>
+                    <div className="ml-2">{Load}%</div>
                 </div>
             </Tooltip>
         </span>

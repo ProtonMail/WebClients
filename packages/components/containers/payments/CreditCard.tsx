@@ -54,7 +54,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 data-testid="ccnumber"
             />
             <div className="flex flex-justify-space-between on-tiny-mobile-flex-column">
-                <div className="flex-item-fluid mr0-5 on-tiny-mobile-mr0">
+                <div className="flex-item-fluid mr-0 sm:mr-2">
                     <InputFieldTwo
                         label={c('Label').t`Expiration date`}
                         id="exp"
@@ -72,11 +72,11 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         }}
                     />
                 </div>
-                <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
+                <div className="flex-item-fluid ml-0 sm:ml-2">
                     <InputFieldTwo
                         label={
                             <>
-                                <span className="mr0-25">{c('Label').t`Security code`}</span>
+                                <span className="mr-1">{c('Label').t`Security code`}</span>
                                 <Info
                                     title={c('Info')
                                         .t`For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
@@ -96,7 +96,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 </div>
             </div>
             <div className="flex flex-justify-space-between mb1 on-tiny-mobile-flex-column">
-                <div className="flex-item-fluid mr0-5 on-tiny-mobile-mr0">
+                <div className="flex-item-fluid mr-2 mr-0 sm:mr-2">
                     <InputFieldTwo
                         label={c('Label').t`Country`}
                         as={Select}
@@ -119,7 +119,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         data-testid="country"
                     />
                 </div>
-                <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
+                <div className="flex-item-fluid ml-0 sm:ml-2">
                     <InputFieldTwo
                         label={title}
                         id="postalcode"

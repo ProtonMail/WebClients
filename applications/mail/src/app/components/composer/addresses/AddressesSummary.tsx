@@ -29,7 +29,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
 
     return (
-        <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative mt0 mb0">
+        <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative my-0">
             <Label
                 className={clsx([
                     'composer-meta-label composer-meta-label-to pr0-5 text-semibold',
@@ -65,13 +65,13 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                         return (
                             <Fragment key={type}>
                                 {type === 'CCList' && (
-                                    <span className="mr0-5 color-primary" title={c('Title').t`Carbon Copy`}>
+                                    <span className="mr-2 color-primary" title={c('Title').t`Carbon Copy`}>
                                         {c('Title').t`CC`}:
                                     </span>
                                 )}
                                 {type === 'BCCList' && (
                                     <span
-                                        className="mr0-5 inline-flex color-primary"
+                                        className="mr-2 inline-flex color-primary"
                                         title={c('Title').t`Blind Carbon Copy`}
                                     >
                                         {c('Title').t`BCC`}:
@@ -86,10 +86,10 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                                     return (
                                         <span
                                             key={i} // eslint-disable-line react/no-array-index-key
-                                            className={clsx(['mr0-5 align-top', cannotSend && 'color-danger'])}
+                                            className={clsx(['mr-2 align-top', cannotSend && 'color-danger'])}
                                         >
                                             <span>
-                                                <span className="composer-addresses-addressIcon relative mr0-25">
+                                                <span className="composer-addresses-addressIcon relative mr-1">
                                                     {icon && <EncryptionStatusIcon {...icon} disabled={disabled} />}
                                                 </span>
                                                 <span className="max-w100 text-ellipsis">

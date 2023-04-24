@@ -25,15 +25,15 @@ const ScheduleSendSpotlight = ({ children, showSpotlight, onDisplayed, anchorRef
             anchorRef={anchorRef}
             size="large"
             content={
-                <div className="flex flex-nowrap mt0-5 mb0-5">
+                <div className="flex flex-nowrap my-2">
                     <div className="flex-item-noshrink mr1">
                         <img src={scheduledImg} className="w4e" alt="" />
                     </div>
                     <div>
-                        <p className="mt0 mb0-5 text-bold" data-testid="composer:schedule-send:spotlight-title">{c(
+                        <p className="mt-0 mb-2 text-bold" data-testid="composer:schedule-send:spotlight-title">{c(
                             'Spotlight'
                         ).t`Schedule send`}</p>
-                        <p className="m0">{c('Spotlight').t`You can now schedule your messages to be sent later`}</p>
+                        <p className="m-0">{c('Spotlight').t`You can now schedule your messages to be sent later`}</p>
                         <Href href={getKnowledgeBaseUrl('/schedule-email-send')} title="Scheduled send">
                             {c('Info').t`Learn more`}
                         </Href>

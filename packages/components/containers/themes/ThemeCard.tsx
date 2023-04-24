@@ -34,7 +34,7 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
             title={c('Action').t`Use ${label} theme`}
         >
             <span className="flex flex-nowrap flex-column flex-align-items-center">
-                <img alt="" src={src} className="mb0-5 theme-card-image rounded-sm on-rtl-mirror" />
+                <img alt="" src={src} className="mb-2 theme-card-image rounded-sm on-rtl-mirror" />
                 <div className="py0-25">{label}</div>
             </span>
         </Button>

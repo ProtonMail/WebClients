@@ -83,7 +83,7 @@ const MessagesGeneralSection = () => {
                     <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
                         {!userLoading && showRecoveryEmailInput && (
                             <RecoveryEmail
-                                className="mb0 on-mobile-mb1"
+                                className="mb-4 md:mb-0"
                                 email={userSettings.Email}
                                 hasReset={!!userSettings.Email.Reset}
                                 hasNotify={!!userSettings.Email.Notify}
@@ -92,7 +92,7 @@ const MessagesGeneralSection = () => {
                         <div className="flex flex-align-items-center">
                             <DailyEmailNotificationToggle
                                 id="dailyNotificationsToggle"
-                                className="mr0-5"
+                                className="mr-2"
                                 isEnabled={isDailyEmailEnabled}
                                 canEnable={canEnableDailyEmail}
                             />

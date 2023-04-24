@@ -38,7 +38,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
         const displayAsFade = !expanded && isLastDisplayedAddress && amountOfAddresses > amountOfDisplayedAddresses;
 
-        const listItemClassName = classnames([displayAsFade && 'color-weak', 'mt0-5 mb0-5']);
+        const listItemClassName = classnames([displayAsFade && 'color-weak', 'my-2']);
 
         return (
             <li key={ID} className={listItemClassName}>
@@ -73,7 +73,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
         if (remainingAddresses.length > 0) {
             const expandButton = (
-                <li key="expand" className="mb0-5">
+                <li key="expand" className="mb-2">
                     <Button
                         onClick={handleExpandClick}
                         color="norm"
@@ -84,7 +84,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
                         {remainingAddresses.length} {c('Info').t`more`}
                         {' '}
                         <span className="no-mobile">{addressesPluralized}</span>
-                        <Icon size={12} className="ml0-25" name="chevron-down" />
+                        <Icon size={12} className="ml-1" name="chevron-down" />
                     </Button>
                 </li>
             );
@@ -95,7 +95,11 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
         return initiallyDisplayedAddresses;
     };
 
-    return <ul className="unstyled -mt0-5 -mb0-5">{getAddressesListItems()}</ul>;
+    return (
+        <ul className="unstyled my-custom" style={{ '--my-custom': 'calc(var(--space-2) * -1)' }}>
+            {getAddressesListItems()}
+        </ul>
+    );
 };
 
 export default MemberAddresses;
