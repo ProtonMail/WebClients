@@ -1,7 +1,6 @@
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info } from '../../../components';
-import { generateUID } from '../../../helpers';
 import { PlanCardFeatureDefinition } from '../features/interface';
 
 import './SubscriptionCancelPlan.scss';
@@ -24,17 +23,27 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
                 <ul className="unstyled mt1">
                     {features.map((feature) => {
                         const key =
-                            typeof feature.featureName === 'string' ? feature.featureName : generateUID('featureName');
+                            typeof feature.text === 'string'
+                                ? feature.text
+                                : `${feature.tooltip}-${feature.icon}-${feature.included}-${feature.status}`;
                         return (
                             <li key={key} className="flex flex-nowrap mb0-5">
-                                <span className={clsx(['flex-item-noshrink mr1', downgrade && 'color-weak'])}>
+                                <span className={clsx('flex-item-noshrink mr1', downgrade && 'color-weak')}>
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
-                                <span className={clsx(['mr0-25', downgrade && 'text-strike color-weak'])}>
-                                    {feature.featureName}
-                                </span>
-                                <span>
-                                    {feature.tooltip ? <Info buttonClass="ml-2" title={feature.tooltip} /> : null}
+                                <span className="flex-item-fluid">
+                                    <span
+                                        className={clsx(
+                                            'align-middle',
+                                            downgrade && 'text-strike color-weak',
+                                            !downgrade && feature.status === 'coming-soon' && 'color-weak'
+                                        )}
+                                    >
+                                        {feature.text}
+                                    </span>
+                                    {feature.tooltip ? (
+                                        <Info buttonClass="align-middle ml-2" title={feature.tooltip} />
+                                    ) : null}
                                 </span>
                             </li>
                         );

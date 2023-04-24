@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, VpnLogo } from '../../../components';
-import { classnames } from '../../../helpers';
 import { AllFeatures, getFeatureDefinitions } from '../features';
 import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
@@ -41,20 +41,21 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                 })();
 
                 const key =
-                    typeof feature.featureName === 'string'
-                        ? feature.featureName
+                    typeof feature.text === 'string'
+                        ? feature.text
                         : `${feature.tooltip}-${feature.fire}-${feature.icon}`;
                 return (
                     <li key={key} className="px0-75 py0-5 flex rounded">
                         <div
-                            className={classnames([
+                            className={clsx(
                                 'flex-no-min-children flex-nowrap',
                                 !feature.included && 'color-hint',
-                            ])}
+                                feature.included && feature.status === 'coming-soon' && 'color-weak'
+                            )}
                         >
                             <span className="flex flex-item-noshrink mr0-75">{iconToDisplay}</span>
                             <span className="flex-item-fluid text-left">
-                                <span className="mr0-5 align-middle">{feature.featureName}</span>
+                                <span className="mr0-5 align-middle">{feature.text}</span>
                                 {feature.tooltip ? (
                                     <Info
                                         className="align-middle"

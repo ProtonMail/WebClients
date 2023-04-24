@@ -4,7 +4,6 @@ import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { generateUID } from '@proton/components/helpers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
@@ -26,14 +25,21 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
+import { Icon, Price, StripedItem, StripedList } from '../../../components';
+import { PlanCardFeatureDefinition } from '../features/interface';
 import { getDrivePlan } from '../features/plan';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 import './UpsellPanel.scss';
+
+interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'fire' | 'included'> {
+    status?: PlanCardFeatureDefinition['status'];
+    included?: PlanCardFeatureDefinition['included'];
+}
 
 interface UpsellBoxProps {
     title: string;
@@ -52,10 +58,20 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
             {children}
             {description && <div className="color-weak text-lg">{description}</div>}
             <StripedList alternate="odd">
-                {items.map(({ icon = 'checkmark', text }) => {
-                    const key = typeof text === 'string' ? text : generateUID('itemText');
+                {items.map(({ icon = 'checkmark', text, tooltip, included = true, status = 'available' }) => {
+                    if (!included) {
+                        return null;
+                    }
+
+                    const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
+
                     return (
-                        <StripedItem key={key} left={<Icon className="color-success" size={20} name={icon} />}>
+                        <StripedItem
+                            key={key}
+                            className={clsx(status === 'coming-soon' && 'color-weak')}
+                            left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
+                            tooltip={tooltip}
+                        >
                             {text}
                         </StripedItem>
                     );
@@ -65,11 +81,6 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
         </div>
     );
 };
-
-interface Item {
-    icon?: IconName;
-    text: string | string[];
-}
 
 interface Props {
     app: APP_NAMES;
@@ -194,7 +205,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
     // Drive upsell
     if (user.isFree && app === APPS.PROTONDRIVE && drivePlan) {
         const plan = drivePlan;
-        const features = getDrivePlan(plan).features;
+        const items = getDrivePlan(plan).features;
 
         const price = (
             <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
@@ -208,11 +219,6 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             });
-
-        const items: Item[] = features.map(({ icon = 'checkmark', featureName }) => ({
-            icon,
-            text: featureName,
-        }));
 
         return (
             <UpsellBox
