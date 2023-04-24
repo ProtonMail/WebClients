@@ -83,7 +83,7 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
                 <Alert className="mb1" type="info">
                     {c('Info')
                         .t`Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.`}
-                    <UnderlineButton className="ml0-5" onClick={handleClear} disabled={!errorKey}>
+                    <UnderlineButton className="ml-2" onClick={handleClear} disabled={!errorKey}>
                         {c('Action').t`Click here.`}
                     </UnderlineButton>
                 </Alert>

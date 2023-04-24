@@ -31,7 +31,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div>
-                <div className="flex flex-nowrap mb0-5">
+                <div className="flex flex-nowrap mb-2">
                     <div
                         className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-custom"
                         style={{ '--grow-custom': '1.25' }}
@@ -52,14 +52,14 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                     {!model.isAllDay && (
                         <TimeInput
                             id="event-startTime"
-                            className="ml0-5 flex-item-fluid"
+                            className="ml-2 flex-item-fluid"
                             value={model.start.time}
                             onChange={handleChangeStartTime}
                             title={c('Title').t`Select event start time`}
                         />
                     )}
                 </div>
-                <div className="flex flex-nowrap mb0-25">
+                <div className="flex flex-nowrap mb-1">
                     <div
                         className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-custom"
                         style={{ '--grow-custom': '1.25' }}
@@ -81,7 +81,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                     {!model.isAllDay && (
                         <TimeInput
                             id="event-endTime"
-                            className="ml0-5 flex-item-fluid"
+                            className="ml-2 flex-item-fluid"
                             value={model.end.time}
                             onChange={handleChangeEndTime}
                             aria-invalid={Boolean(endError)}

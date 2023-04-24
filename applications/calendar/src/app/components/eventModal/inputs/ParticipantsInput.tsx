@@ -162,13 +162,13 @@ const ParticipantsInput = ({
                 }}
             />
             {error && (
-                <Alert className="mb1 mt0-5" type="error">
+                <Alert className="mb1 mt-2" type="error">
                     {error}
                 </Alert>
             )}
             {numberOfAttendees > 0 &&
                 (collapsible ? (
-                    <Details className="border-none mt0-25" open>
+                    <Details className="border-none mt-1" open>
                         <Summary>
                             {c('Event form').ngettext(
                                 msgid`${numberOfAttendees} participant`,

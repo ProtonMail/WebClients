@@ -346,7 +346,7 @@ const ExtraEvent = ({
     }
 
     return (
-        <div className="calendar-widget mb0-75">
+        <div className="calendar-widget mb-3">
             <ExtraEventTimeStatus model={model} />
             <div className="rounded border bg-norm scroll-if-needed">
                 <div className="p1-5">
@@ -360,7 +360,7 @@ const ExtraEvent = ({
                         reloadWidget={handleReloadWidget}
                     />
                 </div>
-                <hr className="m0" />
+                <hr className="m-0" />
                 <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
             </div>
         </div>

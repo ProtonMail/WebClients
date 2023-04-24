@@ -33,11 +33,11 @@ const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open }: ModalProps
             ]}
         >
             <div>
-                <p className="mt0">{c('Info')
+                <p className="mt-0">{c('Info')
                     .jt`You will ${loseAllData} in your ${BRAND_NAME} Account. To restore it, you will need to enter your old password.`}</p>
-                <p className="mt0">{c('Info')
+                <p className="mt-0">{c('Info')
                     .t`This will also disable any two-factor authentication method associated with this account.`}</p>
-                <p className="mt0 mb0">{c('Info').t`Continue anyway?`}</p>
+                <p className="my-0">{c('Info').t`Continue anyway?`}</p>
             </div>
         </Prompt>
     );

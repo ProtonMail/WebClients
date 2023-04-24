@@ -62,7 +62,7 @@ const SimpleSidebarListItemHeader = ({
                 <h3 className="sr-only">{text}</h3>
                 <button
                     ref={buttonRef}
-                    className="text-uppercase flex flex-align-items-center flex-item-fluid flex-nowrap text-left ml0 navigation-link-header-group-link"
+                    className="text-uppercase flex flex-align-items-center flex-item-fluid flex-nowrap text-left ml-0 navigation-link-header-group-link"
                     type="button"
                     onClick={() => onToggle(!toggle)}
                     title={title}
@@ -79,7 +79,7 @@ const SimpleSidebarListItemHeader = ({
                             />
                         </span>
                     )}
-                    <span className="ml0-5 mt0-2 text-sm text-ellipsis">{text}</span>
+                    <span className="ml-2 mt-0.5 text-sm text-ellipsis">{text}</span>
                 </button>
                 {right}
             </div>

@@ -124,7 +124,7 @@ const CalendarShareSection = ({
                             <div className="mb3 mt1-5">
                                 <div className="mb1-75">
                                     <h3
-                                        className="text-bold mb0-5"
+                                        className="text-bold mb-2"
                                         id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}
                                     >{c('Calendar settings section title').t`Share with ${BRAND_NAME} users`}</h3>
                                     <SettingsParagraph
@@ -166,7 +166,7 @@ const CalendarShareSection = ({
                 ) : (
                     <Card rounded className="mt1" data-test-id="card:upgrade">
                         <div className="flex flex-nowrap flex-align-items-center">
-                            <p className="flex-item-fluid mt0 mb0 pr2">
+                            <p className="flex-item-fluid my-0 pr2">
                                 {c('Upgrade notice')
                                     .t`Upgrade to a ${MAIL_SHORT_APP_NAME} paid plan to share your calendar.`}
                             </p>

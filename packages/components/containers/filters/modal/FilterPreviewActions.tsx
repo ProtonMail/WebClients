@@ -42,7 +42,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 <Fragment key={l}>
                     {i > 0 && c('Label').t` and `}
                     {isOpen ? (
-                        <span className="mb0-5">
+                        <span className="mb-2">
                             <LabelStack
                                 labels={[
                                     {
@@ -79,7 +79,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 : folders.find((f) => f.Path === actions.moveTo.folder)?.Name;
 
             const folderElement = isOpen ? (
-                <span className="inline-flex flex-row flex-align-items-center condition-token mb0-5" role="listitem">
+                <span className="inline-flex flex-row flex-align-items-center condition-token mb-2" role="listitem">
                     <span className="text-ellipsis text-no-decoration" title={selectedFolder}>
                         {selectedFolder}
                     </span>
@@ -102,14 +102,14 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
         if (actions.markAs.read || actions.markAs.starred) {
             const readElement = isOpen ? (
-                <span className="inline-flex flex-row flex-align-items-center condition-token mb0-5" role="listitem">
+                <span className="inline-flex flex-row flex-align-items-center condition-token mb-2" role="listitem">
                     <span className="text-ellipsis text-no-decoration">{c('Filter preview').t`read`}</span>
                 </span>
             ) : (
                 <strong>{c('Filter preview').t`read`}</strong>
             );
             const starredElement = isOpen ? (
-                <span className="inline-flex flex-row flex-align-items-center condition-token mb0-5" role="listitem">
+                <span className="inline-flex flex-row flex-align-items-center condition-token mb-2" role="listitem">
                     <span className="text-ellipsis text-no-decoration">{c('Filter preview').t`starred`}</span>
                 </span>
             ) : (
@@ -142,7 +142,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
         if (actions.autoReply) {
             const label = isOpen ? (
-                <span className="inline-flex flex-row flex-align-items-center condition-token mb0-5" role="listitem">
+                <span className="inline-flex flex-row flex-align-items-center condition-token mb-2" role="listitem">
                     <span className="text-no-decoration max-w-custom" style={{ '--max-width-custom': 'inherit' }}>
                         {LABELS_ACTION.autoReply}
                     </span>
@@ -190,7 +190,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
             <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
                 <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleOpen}>
                     <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                    <span className="ml0-5">{c('Label').t`Actions`}</span>
+                    <span className="ml-2">{c('Label').t`Actions`}</span>
                 </button>
                 <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                     {actionsRenderer}

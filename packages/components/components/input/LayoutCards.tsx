@@ -10,7 +10,7 @@ interface Props {
 
 const LayoutCards = ({ list = [], className, liClassName, describedByID }: Props) => {
     return (
-        <ul className={classnames(['unstyled m0 flex', className])}>
+        <ul className={classnames(['unstyled m-0 flex', className])}>
             {list.map(({ selected, label, src, onChange, disabled }, index) => {
                 return (
                     <li className={liClassName} key={label}>

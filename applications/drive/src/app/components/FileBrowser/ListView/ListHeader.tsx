@@ -49,7 +49,7 @@ const HeaderCell = <T,>({
                 <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                     <Checkbox
                         indeterminate={selection.selectionState === SelectionState.SOME}
-                        className="increase-click-surface mr0-25"
+                        className="increase-click-surface mr-1"
                         disabled={!itemCount}
                         checked={selection?.selectionState !== SelectionState.NONE}
                         onChange={

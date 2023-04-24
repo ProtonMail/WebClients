@@ -70,7 +70,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
 
     if (!photo) {
         return (
-            <div className="border bg-norm rounded ratio-container-square mb0">
+            <div className="border bg-norm rounded ratio-container-square mb-0">
                 <span className="inner-ratio-container flex">
                     <span className="mauto color-weak h1">{getInitials(name)}</span>
                 </span>
@@ -110,7 +110,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         // For a small image, we have to create a smaller rounded container inside the bigger standard one,
         // and fit the image as background inside it. As container width we must pick the smallest dimension
         return (
-            <div className="ratio-container-square mb0">
+            <div className="ratio-container-square mb-0">
                 <span className="inner-ratio-container flex rounded border overflow-hidden">
                     <div
                         className="mauto flex w-custom"
@@ -126,11 +126,11 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     }
 
     return (
-        <button type="button" className="border rounded bg-norm ratio-container-square mb0" onClick={handleClick}>
+        <button type="button" className="border rounded bg-norm ratio-container-square mb-0" onClick={handleClick}>
             <span className="inner-ratio-container flex">
                 <span className="mauto lh-rg flex flex-column flex-align-items-center">
                     <Icon name="file-shapes" />
-                    <div className="m0-5 color-primary">{c('Action').t`Load image`}</div>
+                    <div className="m-2 color-primary">{c('Action').t`Load image`}</div>
                 </span>
             </span>
         </button>

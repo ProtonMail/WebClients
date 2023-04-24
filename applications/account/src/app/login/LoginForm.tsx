@@ -171,14 +171,14 @@ const LoginForm = ({
                     autoComplete="current-password"
                     value={password}
                     onValue={setPassword}
-                    rootClassName="mt0-5"
+                    rootClassName="mt-2"
                 />
 
                 {hasRemember && (
                     <div className="flex flex-row flex-align-items-start">
                         <Checkbox
                             id="staySignedIn"
-                            className="mt0-5 mr0-5"
+                            className="mt-2 mr-2"
                             checked={persistent}
                             onChange={submitting ? noop : () => setPersistent(!persistent)}
                         />
@@ -233,14 +233,14 @@ const LoginForm = ({
                             to={SSO_PATHS.RESET_PASSWORD}
                             className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
                         >
-                            <Icon name="user-circle" className="mr0-5" />
+                            <Icon name="user-circle" className="mr-2" />
                             {c('Link').t`Reset password`}
                         </Link>
                         <Link
                             to={SSO_PATHS.FORGOT_USERNAME}
                             className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
                         >
-                            <Icon name="key" className="mr0-5" />
+                            <Icon name="key" className="mr-2" />
                             {c('Link').t`Forgot username?`}
                         </Link>
                     </SupportDropdown>

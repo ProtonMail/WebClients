@@ -142,7 +142,7 @@ function GridView<T extends FileBrowserBaseItem, T1>({
             role="presentation"
         >
             <div>
-                <Table caption={caption} className="file-browser-table m0">
+                <Table caption={caption} className="file-browser-table m-0">
                     <GridHeaderComponent scrollAreaRef={scrollAreaRef} />
                 </Table>
             </div>

@@ -16,7 +16,7 @@ const IndexSection = ({ pages, limit = 4 }: { pages: SectionConfig[]; limit?: nu
                         ])}
                     >
                         <h2 className="h6 mb1 flex flex-align-items-center flex-nowrap">
-                            <Icon name={icon} className="mr0-5 flex-item-noshrink" />
+                            <Icon name={icon} className="mr-2 flex-item-noshrink" />
                             <strong className="text-ellipsis" title={text}>
                                 {text}
                             </strong>

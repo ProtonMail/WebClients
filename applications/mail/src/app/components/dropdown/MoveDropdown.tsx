@@ -175,7 +175,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
             className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb0">
+            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>
@@ -201,7 +201,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     />
                 )}
             </div>
-            <div className="flex-item-noshrink m1 mb0">
+            <div className="flex-item-noshrink m1 mb-0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -212,8 +212,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div className="move-dropdown-list overflow-auto mt1 flex-item-fluid-auto" data-testid="move-dropdown-list">
-                <ul className="unstyled mt0 mb0">
+            <div className="move-dropdown-list overflow-auto mt-4 flex-item-fluid-auto" data-testid="move-dropdown-list">
+                <ul className="unstyled my-0">
                     {list.map((folder: FolderItem) => {
                         return (
                             <li
@@ -221,7 +221,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                                 className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
                             >
                                 <Radio
-                                    className="flex-item-noshrink mr0-5"
+                                    className="flex-item-noshrink mr-2"
                                     id={folderButtonID(folder.ID)}
                                     name={uid}
                                     checked={selectedFolder?.ID === folder.ID}
@@ -238,7 +238,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                                     <FolderIcon
                                         folder={folder}
                                         name={folder.icon}
-                                        className="flex-item-noshrink mr0-5"
+                                        className="flex-item-noshrink mr-2"
                                     />
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
@@ -267,8 +267,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     )}
                 </ul>
             </div>
-            <hr className="m0 flex-item-noshrink" />
-            <div className={clsx(['mx1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <hr className="m-0 flex-item-noshrink" />
+            <div className={clsx(['mx-4 mt-4 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}

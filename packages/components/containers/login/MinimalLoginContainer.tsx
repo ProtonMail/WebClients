@@ -1,6 +1,10 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { FeatureCode, TotpInputs } from '@proton/components/containers';
@@ -11,6 +15,8 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+
+
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useApi, useConfig, useErrorHandler, useFeature, useLoading, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app/interface';
@@ -18,6 +24,7 @@ import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../cha
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
+
 
 const UnlockForm = ({
     onSubmit,
@@ -130,7 +137,7 @@ const TOTPForm = ({
                     shape="ghost"
                     size="large"
                     fullWidth
-                    className="mt0-5"
+                    className="mt-2"
                     onClick={() => {
                         if (loading) {
                             return;
@@ -239,7 +246,7 @@ const LoginForm = ({
                     autoComplete="current-password"
                     value={password}
                     onValue={setPassword}
-                    rootClassName="mt0-5"
+                    rootClassName="mt-2"
                 />
                 <div className="flex flex-justify-space-between mt1">
                     {needHelp}
@@ -307,7 +314,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     };
 
     const cancelButton = (
-        <Button size="large" shape="ghost" type="button" fullWidth onClick={handleCancel} className="mt0-5">
+        <Button size="large" shape="ghost" type="button" fullWidth onClick={handleCancel} className="mt-2">
             {c('Action').t`Cancel`}
         </Button>
     );

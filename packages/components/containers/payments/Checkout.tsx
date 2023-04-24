@@ -29,7 +29,7 @@ const Checkout = ({
     return (
         <div className="p2">
             <div className="flex flex-nowrap flex row mb1">
-                <h2 className="h4 text-bold mt0-25 mb0 text-cut flex-item-fluid">{c('Title').t`Plan summary`}</h2>
+                <h2 className="h4 text-bold mt-1 mb-0 text-cut flex-item-fluid">{c('Title').t`Plan summary`}</h2>
                 <span className="flex-item-noshrink" data-testid="checkoutCurrencyDropdown">
                     <CurrencySelector
                         currency={currency}
@@ -44,22 +44,22 @@ const Checkout = ({
             <div className={loading ? 'opacity-50 no-pointer-events-children' : ''}>{children}</div>
             <div className="text-sm lh-standard">
                 {hasPayments ? (
-                    <div className="flex flex-nowrap color-weak mb0-5 mt0-5">
-                        <span className="flex-item-noshrink mr0-5">
+                    <div className="flex flex-nowrap color-weak my-2">
+                        <span className="flex-item-noshrink mr-2">
                             <Icon name="shield" />
                         </span>
                         <span className="flex-item-fluid">{c('Info')
                             .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                     </div>
                 ) : (
-                    <div className="flex flex-nowrap mb0-5">
+                    <div className="flex flex-nowrap mb-2">
                         <b className="flex-item-fluid">{c('new_plans: info')
                             .t`Applicable credits, proration, and coupons are applied in the next step`}</b>
                     </div>
                 )}
                 {hasGuarantee && (
                     <div className="flex flex-nowrap color-weak">
-                        <span className="flex-item-noshrink mr0-5">
+                        <span className="flex-item-noshrink mr-2">
                             <Icon name="clock" />
                         </span>
                         <span className="flex-item-fluid">{c('Info').t`30-day money-back guarantee.`}</span>

@@ -1,22 +1,20 @@
 import { useRef } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
-import {
-    Table,
-    TableBody,
-    TableCellBusy,
-    useActiveBreakpoint,
-    useElementRect,
-    useRightToLeft,
-} from '@proton/components';
+
+
+import { Table, TableBody, TableCellBusy, useActiveBreakpoint, useElementRect, useRightToLeft } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
+
+
 
 import { FileBrowserProps } from '../FileBrowser';
 import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
 import ItemRow from './ItemRow';
 import ListHeader from './ListHeader';
+
 
 interface ListItemData<T extends FileBrowserBaseItem> {
     items: T[];
@@ -58,7 +56,7 @@ const ListItemRow = <T extends FileBrowserBaseItem>({ index, style, data }: List
     if (loading && index === itemCount - 1) {
         return (
             <tr style={style}>
-                <TableCellBusy className="flex text-lg flex-justify-center m0" />
+                <TableCellBusy className="flex text-lg flex-justify-center m-0" />
             </tr>
         );
     }
@@ -163,7 +161,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
             ref={containerRef}
             role="presentation"
         >
-            <Table caption={caption} className="file-browser-table m0">
+            <Table caption={caption} className="file-browser-table m-0">
                 <ListHeader
                     scrollAreaRef={scrollAreaRef}
                     items={headerItems}

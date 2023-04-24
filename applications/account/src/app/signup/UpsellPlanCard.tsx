@@ -19,13 +19,13 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const footerWrapper = footer ? (
-        <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">{footer}</p>
+        <p className="text-sm mt-0 plan-selection-additionnal-mentions color-weak">{footer}</p>
     ) : null;
 
     return (
         <>
-            <div className="mb1 on-mobile-mb0-5">{price}</div>
-            <div className="mb2 on-mobile-mb0">{button}</div>
+            <div className="mb-2 md:mb-4">{price}</div>
+            <div className="mb-0 md:mb-8">{button}</div>
 
             {!isNarrow ? (
                 <>
@@ -43,10 +43,10 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
                         </>
                     ) : (
                         <>
-                            <div className="pt1 mtauto pb1">{footerWrapper}</div>
-                            <InlineLinkButton className="mxauto" onClick={() => setIsExpanded(true)}>
+                            <div className="pt1 mt-auto pb1">{footerWrapper}</div>
+                            <InlineLinkButton className="mx-auto" onClick={() => setIsExpanded(true)}>
                                 <span>{c('Action').t`See plan features`}</span>
-                                <Icon name="chevron-down" className="ml0-5" />
+                                <Icon name="chevron-down" className="ml-2" />
                             </InlineLinkButton>
                         </>
                     )}

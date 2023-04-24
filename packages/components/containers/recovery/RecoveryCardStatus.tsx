@@ -28,7 +28,7 @@ const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: Rec
                     {items.map(({ text, path }) => {
                         return (
                             <li key={text} className="flex flex-align-items-center flex-nowrap">
-                                <span className="mr0-5">{text}</span>
+                                <span className="mr-2">{text}</span>
                                 <ButtonLike
                                     as={SettingsLink}
                                     icon

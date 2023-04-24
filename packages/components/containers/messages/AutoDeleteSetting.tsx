@@ -40,15 +40,15 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="autoDelete" className="text-semibold flex flex-nowrap flex-align-items-start">
-                        <span className="mr0-5 flex-item-fluid">
-                            <span className="mr0-5">{c('Label').t`Auto-delete unwanted messages`}</span>
+                        <span className="mr-2 flex-item-fluid">
+                            <span className="mr-2">{c('Label').t`Auto-delete unwanted messages`}</span>
                             <Info
                                 className="flex-item-noshrink"
                                 title={c('Tooltip')
                                     .t`Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.`}
                             />
                         </span>
-                        {isFree && <UpsellIcon className="mt0-25" />}
+                        {isFree && <UpsellIcon className="mt-1" />}
                     </label>
                 </SettingsLayoutLeft>
 

@@ -48,7 +48,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
         <div className="flex on-mobile-flex-column">
             <div className="flex-item-fluid">
                 <label htmlFor="event-custom-frequency-number">{c('Label').t`Repeat every`}</label>
-                <div className="flex on-mobile-flex-column mt0-5 mb0-5">
+                <div className="flex on-mobile-flex-column my-2">
                     <div className="flex flex-nowrap flex-item-fluid">
                         <span className="w6e">
                             <IntegerInput
@@ -67,7 +67,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                                 title={c('Title').t`Choose how often this event repeats`}
                             />
                         </span>
-                        <span className="flex-item-fluid ml0-5">
+                        <span className="flex-item-fluid ml-2">
                             <SelectTwo
                                 id="event-custom-frequency-select"
                                 data-test-id="event-modal/custom-frequency/interval:frequency"
@@ -82,7 +82,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                         </span>
                     </div>
                     {isMonthly && (
-                        <div className="flex-item-fluid ml0-5 on-mobile-ml0 on-mobile-mt0-5">
+                        <div className="flex-item-fluid ml-0 mt-2 md:ml-2 md:mt-0">
                             <SelectMonthlyType
                                 id="event-custom-monthly-select"
                                 value={frequencyModel.monthly.type}

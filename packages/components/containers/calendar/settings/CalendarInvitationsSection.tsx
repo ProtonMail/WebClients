@@ -44,7 +44,7 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
                             c('Label').t`Send in`
                         }{' '}
                         <Info
-                            buttonClass="ml0-5 inline-flex"
+                            buttonClass="ml-2 inline-flex"
                             title={c('Info').t`Event invitations and RSVPs will be sent in this language.`}
                         />
                     </label>
@@ -64,7 +64,7 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
                     <label className="text-semibold inline-block" htmlFor="auto-import-invitations">
                         <span>{c('Auto import invitations setting').jt`Add to calendar and mark as pending`}</span>
                         <Info
-                            buttonClass="ml0-5 inline-flex"
+                            buttonClass="ml-2 inline-flex"
                             title={c('Info')
                                 .t`You still need to reply to invitations for the host to see your response.`}
                         />

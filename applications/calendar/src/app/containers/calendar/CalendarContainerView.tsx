@@ -419,7 +419,7 @@ const CalendarContainerView = ({
                     <Tooltip key="createEvent" title={createEventText}>
                         <Button
                             icon
-                            className="mr0-5 inline-flex pt0-5 pb0-5"
+                            className="mr-2 inline-flex pt0-5 pb0-5"
                             onClick={onClick}
                             disabled={noSelection || !onCreateEvent}
                             title={createEventText}
@@ -574,7 +574,7 @@ const CalendarContainerView = ({
                     .filter((calendar) => calendar.Display)
                     .map(({ Color, Name, ID }) => (
                         <span className="flex flex-align-items-center" key={ID}>
-                            <CalendarSelectIcon color={Color} className="keep-color mr0-75" /> {Name}
+                            <CalendarSelectIcon color={Color} className="keep-color mr-3" /> {Name}
                         </span>
                     ))}
                 <br />

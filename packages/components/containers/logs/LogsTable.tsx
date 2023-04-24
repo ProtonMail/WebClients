@@ -63,7 +63,7 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                         <TableRow key={key}>
                             <TableCell label={c('Header').t`Event`}>
                                 <div className="inline-flex">
-                                    <span className="flex-item-noshrink mr0-5">{getIcon(Event)}</span>
+                                    <span className="flex-item-noshrink mr-2">{getIcon(Event)}</span>
                                     <span className="flex-item-fluid">{Description}</span>
                                 </div>
                             </TableCell>

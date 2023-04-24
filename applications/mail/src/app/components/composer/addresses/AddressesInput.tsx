@@ -1,5 +1,7 @@
 import { Fragment, MouseEvent, MutableRefObject, RefObject, useEffect, useRef, useState } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -180,7 +182,7 @@ const AddressesInput = ({
 
     const dragPlaceholder = (
         <div
-            className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 max-w100 no-pointer-events h-custom w-custom"
+            className="composer-addresses-item-drag-placeholder my-1 mr-2 max-w100 no-pointer-events h-custom w-custom"
             style={{
                 '--width-custom': `${placeholderSize?.width}px`,
                 '--height-custom': `${placeholderSize?.height}px`,

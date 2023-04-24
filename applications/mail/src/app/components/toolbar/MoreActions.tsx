@@ -1,16 +1,23 @@
 import { useRef } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature } from '@proton/components/hooks';
 import noop from '@proton/utils/noop';
 
+
+
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
 import { Element } from '../../models/element';
 import ToolbarDropdown from './ToolbarDropdown';
+
 
 interface Props {
     selectedIDs: string[];
@@ -37,7 +44,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
             data-testid="toolbar:block-sender"
             disabled={!canShowBlockSender}
         >
-            <Icon name="circle-slash" className="mr0-5" />
+            <Icon name="circle-slash" className="mr-2" />
             {c('Action').t`Block senders`}
         </DropdownMenuButton>
     );

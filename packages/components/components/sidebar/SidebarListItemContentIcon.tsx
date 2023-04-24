@@ -4,7 +4,7 @@ import Icon, { IconProps } from '../icon/Icon';
 const SidebarListItemContentIcon = ({ className, ...rest }: IconProps) => {
     return (
         <Icon
-            className={classnames(['navigation-icon flex-item-noshrink mr0-5 flex-item-centered-vert', className])}
+            className={classnames(['navigation-icon flex-item-noshrink mr-2 flex-item-centered-vert', className])}
             {...rest}
         />
     );

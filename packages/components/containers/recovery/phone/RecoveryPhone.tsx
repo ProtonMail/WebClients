@@ -68,7 +68,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     }
                 }}
             >
-                <div className="mr1 mb1 on-mobile-mr0 flex-item-fluid min-w14e">
+                <div className="mr-0 mb-4 md:mr-4 flex-item-fluid min-w14e">
                     <InputFieldTwo
                         as={PhoneInput}
                         id="phoneInput"
@@ -82,10 +82,10 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                             (phone.Status === SETTINGS_STATUS.UNVERIFIED ? (
                                 <>
                                     <Icon
-                                        className="color-danger flex-item-noshrink aligntop mr0-25"
+                                        className="color-danger flex-item-noshrink aligntop mr-1"
                                         name="exclamation-circle-filled"
                                     />
-                                    <span className="color-norm mr0-5">{c('Recovery Phone')
+                                    <span className="color-norm mr-2">{c('Recovery Phone')
                                         .t`Phone number not yet verified.`}</span>
                                     <button
                                         className="link"
@@ -100,17 +100,17 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                             ) : (
                                 <>
                                     <Icon
-                                        className="color-success flex-item-noshrink aligntop mr0-25"
+                                        className="color-success flex-item-noshrink aligntop mr-1"
                                         name="checkmark-circle-filled"
                                     />
-                                    <span className="mr0-5">{c('Recovery Phone')
+                                    <span className="mr-2">{c('Recovery Phone')
                                         .t`Phone number has been verified.`}</span>
                                 </>
                             ))
                         }
                     />
                 </div>
-                <div className="mb0-5">
+                <div className="mb-2">
                     <Button
                         shape="outline"
                         type="submit"

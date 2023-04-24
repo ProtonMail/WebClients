@@ -31,8 +31,8 @@ export default function PasswordPage({ submitPassword }: Props) {
                             <Icon name="key-skeleton" className="color-primary" size={28} />
                         </span>
                     </div>
-                    <h3 className="text-center text-bold mb0-5">{c('Title').t`This link is password protected`}</h3>
-                    <p className="text-center mt0">{c('Info')
+                    <h3 className="text-center text-bold mb-2">{c('Title').t`This link is password protected`}</h3>
+                    <p className="text-center mt-0">{c('Info')
                         .t`Please enter the password to decrypt and view content.`}</p>
                     <form className="w100 mt2" autoComplete="off" onSubmit={handlePasswordSubmit}>
                         <div className="mt1 mb2">

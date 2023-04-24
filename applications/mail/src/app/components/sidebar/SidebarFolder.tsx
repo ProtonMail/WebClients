@@ -72,7 +72,7 @@ const SidebarFolder = ({
                     {folder.subfolders?.length ? (
                         <button
                             type="button"
-                            className="mr0-5 flex-item-noshrink navigation-link--expand"
+                            className="mr-2 flex-item-noshrink navigation-link--expand"
                             aria-expanded={!!folder.Expanded}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -92,7 +92,7 @@ const SidebarFolder = ({
                         noChevron
                     )}
                     <FolderIcon
-                        className="mr0-5 navigation-icon flex-item-noshrink"
+                        className="mr-2 navigation-icon flex-item-noshrink"
                         alt={c('Info').t`Folder`}
                         folder={folder}
                     />

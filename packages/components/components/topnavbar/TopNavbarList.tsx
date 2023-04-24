@@ -10,7 +10,7 @@ const TopNavbarList = ({ children }: Props) => {
     return (
         <ul
             className={classnames([
-                'topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap flex-align-items-center',
+                'topnav-list unstyled my-0 ml1 flex flex-nowrap flex-align-items-center',
                 navIconsLength >= 4 && 'topnav-list--four-elements',
             ])}
         >

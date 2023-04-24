@@ -51,12 +51,12 @@ const EncryptedSearchField = ({ esState }: Props) => {
     const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Header
-    const esTitle = <span className="mr0-5">{c('Action').t`Search message content`}</span>;
+    const esTitle = <span className="mr-2">{c('Action').t`Search message content`}</span>;
     // Remove one day from limit because the last day in IndexedDB might not be complete
     const oldestDate = formatSimpleDate(add(new Date(oldestTime), { days: 1 }));
     const subTitleSection = (
         // translator: the variable is a date, which is already localised
-        <span className="color-weak mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
+        <span className="color-weak mr-2">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
     let esToggleTooltip = c('Info').t`Activation in progress`;
     if (contentIndexingDone && !isEnablingContentSearch) {
@@ -194,7 +194,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
             </div>
             {showSubTitleSection && <div className="mb1">{subTitleSection}</div>}
             {showProgress && (
-                <div className="mt0-5 mb1 flex flex-column">
+                <div className="mt-2 mb1 flex flex-column">
                     <span
                         className="color-weak relative advanced-search-progress-status"
                         aria-live="polite"

@@ -1,21 +1,17 @@
 import { c, msgid } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
-import {
-    Icon,
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    OnboardingContent,
-    OnboardingModal,
-    OnboardingStep,
-    OnboardingStepRenderCallback,
-} from '@proton/components';
+import { Icon, Loader, ModalTwo, ModalTwoContent, OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
+
+
 import useChecklist from '../onboarding/useChecklist';
+
 
 interface Props {
     showGenericSteps?: boolean;
@@ -74,13 +70,13 @@ const DriveOnboardingModal = (props: Props) => {
                         expiresInDays
                     )}
                     <ul className="unstyled mt1">
-                        <li className="my0-5">
+                        <li className="my-2">
                             <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Upload a file`}
                         </li>
-                        <li className="my0-5">
+                        <li className="my-2">
                             <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Create a share link`}
                         </li>
-                        <li className="my0-5">
+                        <li className="my-2">
                             <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Set a recovery method`}
                         </li>
                     </ul>

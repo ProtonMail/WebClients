@@ -50,7 +50,7 @@ const LayoutsSection = () => {
                 <>
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
                         <span className="mb1 text-semibold">
-                            <span className="mr0-5" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
+                            <span className="mr-2" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/change-inbox-layout')}
                                 title={c('Tooltip').t`Set the default layout for your Inbox.`}
@@ -66,7 +66,7 @@ const LayoutsSection = () => {
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
                         <span className="mb1 text-semibold">
-                            <span className="mr0-5" id="composerMode_desc">{c('Label').t`Composer`}</span>
+                            <span className="mr-2" id="composerMode_desc">{c('Label').t`Composer`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/composer')}
                                 title={c('Tooltip').t`Set the default Composer popup size as small or full screen.`}
@@ -83,7 +83,7 @@ const LayoutsSection = () => {
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
                         <span className="mb1 text-semibold">
-                            <span className="mr0-5" id="densityMode_desc">{c('Label').t`Density`}</span>
+                            <span className="mr-2" id="densityMode_desc">{c('Label').t`Density`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/change-inbox-layout')}
                                 title={c('Tooltip').t`Set how your list of messages looks like by default.`}

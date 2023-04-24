@@ -75,7 +75,7 @@ const PasswordsSection = () => {
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label htmlFor="passwordModeToggle" className="text-semibold">
-                                    <span className="mr0-5">{c('Label').t`Two-password mode`}</span>
+                                    <span className="mr-2">{c('Label').t`Two-password mode`}</span>
                                     <Info
                                         url={getKnowledgeBaseUrl('/single-password')}
                                         title={c('Info')
@@ -100,7 +100,7 @@ const PasswordsSection = () => {
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
                                     <label htmlFor="passwordModeToggle" className="text-semibold">
-                                        <span className="mr0-5">{c('Label').t`Mailbox password`}</span>
+                                        <span className="mr-2">{c('Label').t`Mailbox password`}</span>
                                         <Info url={getKnowledgeBaseUrl('/single-password')} />
                                     </label>
                                 </SettingsLayoutLeft>

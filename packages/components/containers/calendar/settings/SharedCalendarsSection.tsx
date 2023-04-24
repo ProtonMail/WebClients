@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
@@ -64,7 +66,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
 
     const statusHeader = (
         <div className="flex flex-align-items-center">
-            <span className="mr0-5">{c('Header').t`Status`}</span>
+            <span className="mr-2">{c('Header').t`Status`}</span>
             <Info url={getKnowledgeBaseUrl('/calendar-status')} />
         </div>
     );
@@ -73,13 +75,13 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
         <TableRow>
             <TableCell label={c('Header').t`Name`}>
                 <div className="grid-align-icon-center">
-                    <CalendarSelectIcon color={Color} className="mr0-75 flex-item-noshrink keep-left" />
+                    <CalendarSelectIcon color={Color} className="mr-3 flex-item-noshrink keep-left" />
                     <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
                         <div className="text-ellipsis" title={calendarNameWithOwner}>
                             {calendarNameWithOwner}
                         </div>
                     </div>
-                    {subline && <div className="text-ellipsis text-sm m0 color-weak">{subline}</div>}
+                    {subline && <div className="text-ellipsis text-sm m-0 color-weak">{subline}</div>}
                 </div>
             </TableCell>
             <TableCell label={filteredBadges.length > 0 && statusHeader}>
@@ -145,13 +147,13 @@ const InvitationRow = ({
         <TableRow>
             <TableCell>
                 <div className="grid-align-icon-center">
-                    <CalendarSelectIcon border color={Calendar.Color} className="mr0-75 flex-item-noshrink keep-left" />
+                    <CalendarSelectIcon border color={Calendar.Color} className="mr-3 flex-item-noshrink keep-left" />
                     <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
                         <div className="text-ellipsis" title={calendarNameWithOwner}>
                             {calendarNameWithOwner}
                         </div>
                     </div>
-                    {subline && <div className="text-ellipsis text-sm m0 color-weak">{subline}</div>}
+                    {subline && <div className="text-ellipsis text-sm m-0 color-weak">{subline}</div>}
                 </div>
             </TableCell>
             <TableCell>
@@ -260,7 +262,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
                 />
             )}
             <SettingsSectionWide>
-                <h4 className="no-desktop text-bold text-rg mb0-5">{sharedWithMeTitle}</h4>
+                <h4 className="no-desktop text-bold text-rg mb-2">{sharedWithMeTitle}</h4>
                 <Table hasActions responsive="cards">
                     <TableHeader>
                         <TableRow>

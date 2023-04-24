@@ -1,8 +1,13 @@
 import { LiHTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
 
+
+
 import { Button } from '@proton/atoms/';
 
+
+
 import { classnames } from '../../helpers';
+
 
 interface Props extends Omit<LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     title?: string;
@@ -17,7 +22,7 @@ const Breadcrumb = (
     ref: Ref<HTMLLIElement>
 ) => {
     const textClass = classnames([
-        'text-pre p0-25 m0 text-ellipsis no-pointer-events-children',
+        'text-pre p0-25 m-0 text-ellipsis no-pointer-events-children',
         active ? 'text-strong' : 'color-weak',
     ]);
     return (

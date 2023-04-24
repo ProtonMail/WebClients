@@ -18,7 +18,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                 <Label className="flex flex-align-items-center">
                     {c('Label').t`Label messages as`}
                     <Tooltip title={c('Tooltip').t`Each imported email will have this label`}>
-                        <Icon name="info-circle" className="ml0-5" />
+                        <Icon name="info-circle" className="ml-2" />
                     </Tooltip>
                 </Label>
                 <Field className="wauto flex flex-align-items-center flex-nowrap">

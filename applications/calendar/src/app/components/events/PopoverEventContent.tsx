@@ -1,5 +1,7 @@
 import { RefObject, useMemo } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
 import {
@@ -81,7 +83,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
 
             return (
                 <>
-                    <span className="text-break flex-item-fluid-auto flex-item-nogrow mr0-5">{calendarName}</span>
+                    <span className="text-break flex-item-fluid-auto flex-item-nogrow mr-2">{calendarName}</span>
                     <span className="text-no-wrap flex-item-noshrink">
                         {disabledText} <Info title={tooltipText} />
                     </span>
@@ -227,7 +229,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                                 <div className="attendee-count">
                                     {numberOfParticipants}{' '}
                                     {c('Label').ngettext(msgid`participant`, `participants`, numberOfParticipants)}
-                                    <div className="color-weak text-sm m0">
+                                    <div className="color-weak text-sm m-0">
                                         {Object.entries(groupedReplies)
                                             .filter(([, { count }]) => count)
                                             .map(([, { text, count }]) => `${count} ${text}`)
@@ -272,10 +274,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
             ) : null}
             {htmlString ? (
                 <IconRow labelClassName={labelClassName} title={c('Label').t`Description`} icon="text-align-left">
-                    <div
-                        className="text-break mt0 mb0 text-pre-wrap"
-                        dangerouslySetInnerHTML={{ __html: htmlString }}
-                    />
+                    <div className="text-break my-0 text-pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </IconRow>
             ) : null}
             {linkModal}

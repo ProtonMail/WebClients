@@ -59,8 +59,8 @@ const EOHeaderExpanded = ({
             ])}
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
-            <div className="flex flex-nowrap flex-align-items-center mx2 mb0-85 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
-                <span className="flex flex-item-fluid flex-nowrap mr0-5">
+            <div className="flex flex-nowrap flex-align-items-center mx-0 mb-3 sm:mx-8">
+                <span className="flex flex-item-fluid flex-nowrap mr-2">
                     <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                         <RecipientType
                             label={c('Label Recipient').t`From`}
@@ -89,18 +89,18 @@ const EOHeaderExpanded = ({
                                 <ItemAttachmentIcon
                                     onClick={handleAttachmentIconClick}
                                     element={message.data}
-                                    className="ml0-5"
+                                    className="ml-2"
                                 />
                             </span>
                             {!isNarrow && (
-                                <ItemDate className="ml0-5" element={message.data} labelID={labelID} useTooltip />
+                                <ItemDate className="ml-2" element={message.data} labelID={labelID} useTooltip />
                             )}
                         </>
                     )}
-                    {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
+                    {!messageLoaded && <span className="message-header-metas ml-2 inline-flex" />}
                 </div>
             </div>
-            <div className="flex flex-nowrap flex-align-items-center mx2 mt0 mb1 on-mobile-flex-wrap on-tiny-mobile-ml0 on-tiny-mobile-mr0">
+            <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-wrap  mx-0 sm:mx-8 mt-0 mb-4">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -113,19 +113,19 @@ const EOHeaderExpanded = ({
                 />
             </div>
             {showDetails && (
-                <div className="m0-5 mx2 flex flex-nowrap color-weak">
-                    <span className="flex-align-self-center mr0-5 text-ellipsis">
+                <div className="my-2 mx-8 flex flex-nowrap color-weak">
+                    <span className="flex-align-self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
                 </div>
             )}
 
             {!showDetails && isNarrow && (
-                <div className="flex flex-justify-space-between flex-align-items-center mx2 border-top pt0-5 mb0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
+                <div className="flex flex-justify-space-between flex-align-items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
                     {messageLoaded ? (
                         <>
                             <div className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="calendar-grid" className="ml0-5 mr0-5" />
+                                <Icon name="calendar-grid" className="mx-2" />
                                 <ItemDate element={message.data} labelID={labelID} useTooltip />
                             </div>
                         </>
@@ -135,8 +135,8 @@ const EOHeaderExpanded = ({
                 </div>
             )}
 
-            <section className="message-header-extra border-top pt0-5 mx2 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
-                <div className="mt0-5 flex flex-row message-banners-container">
+            <section className="message-header-extra border-top mx-0 sm:mx-8 pt-2">
+                <div className="mt-2 flex flex-row message-banners-container">
                     {messageLoaded && <EOExpirationTime message={message} />}
                     <ExtraImages
                         messageImages={message.messageImages}

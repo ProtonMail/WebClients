@@ -42,13 +42,13 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
             <div className="pt0-5">
                 {markAs?.read && (
                     <span className="inline-flex flex-align-items-center mr2">
-                        <Icon name="eye" className="mr0-5" />
+                        <Icon name="eye" className="mr-2" />
                         {c('Label').t`Read`}
                     </span>
                 )}
                 {markAs?.starred && (
                     <span className="inline-flex flex-align-items-center">
-                        <Icon name="star" className="mr0-5" />
+                        <Icon name="star" className="mr-2" />
                         {c('Label').t`Starred`}
                     </span>
                 )}
@@ -63,7 +63,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
         >
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
+                <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
             </button>
             <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (
@@ -75,7 +75,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
                             }}
                             labelOnClick={(e) => e.stopPropagation()}
                         >
-                            <span className="ml0-5">{c('Label').t`Read`}</span>
+                            <span className="ml-2">{c('Label').t`Read`}</span>
                         </Checkbox>
                         <Checkbox
                             className="ml2"
@@ -85,7 +85,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
                             }}
                             labelOnClick={(e) => e.stopPropagation()}
                         >
-                            <span className="ml0-5">{c('Label').t`Starred`}</span>
+                            <span className="ml-2">{c('Label').t`Starred`}</span>
                         </Checkbox>
                     </div>
                 ) : (

@@ -28,8 +28,8 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
 
     return (
         <>
-            <div className="flex flex-gap-1 flex-justify-space-between mb1 on-mobile-flex-column">
-                <div className="flex-item-fluid on-mobile-mb0-5">
+            <div className="flex flex-gap-1 flex-justify-space-between mb-4 on-mobile-flex-column">
+                <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
                         className="w100"
@@ -38,7 +38,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         amount={amount}
                     />
                 </div>
-                <div className="flex-item-fluid on-mobile-mb0-5">
+                <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
                         className="w100"
@@ -47,7 +47,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         amount={amount}
                     />
                 </div>
-                <div className="flex-item-fluid on-mobile-mb0-5">
+                <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
                         className="w100"
@@ -56,7 +56,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         amount={amount}
                     />
                 </div>
-                <div className="flex-item-fluid on-mobile-mb0-5">
+                <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
                         className="w100"
@@ -67,7 +67,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 </div>
             </div>
             <div className="flex flex-gap-1 flex-justify-space-between on-mobile-flex-column">
-                <div className="flex-item-fluid on-mobile-mb0-5">
+                <div className="flex-item-fluid mb-2 md:mb-0">
                     <Label htmlFor="otherAmount" className="sr-only">{c('Label').t`Other amount`}</Label>
                     <Input
                         className="w100"
@@ -99,7 +99,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         aria-describedby="id_desc_amount id_desc_currency"
                     />
                 </div>
-                <div className="flex-item-fluid on-mobile-mb0-5">
+                <div className="flex-item-fluid mb-2 md:mb-0">
                     <CurrencySelector
                         className="w100"
                         id="id_desc_currency"

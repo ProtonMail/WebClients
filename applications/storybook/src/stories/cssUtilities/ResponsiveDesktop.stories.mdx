@@ -12,10 +12,10 @@ Values are given in “pixels” (in standard cases: with base font size to <cod
 
 The current active breakpoint value is available in <code>body::before content</code> value (for major breakpoints), if you need to know (from JavaScript pov) which major breakpoint is active, use the <code>useActiveBreakpoint.ts</code> helper in <code>@proton/components</code>.
 
-<div class="flex flex-justify-space-between mb2 on-tablet-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-tablet-flex-column">
     <div class="w49">
         <h3>Major breakpoints</h3>
-        <ul class="mb0 on-tablet-mb1">
+        <ul class="mb-4 lg:mb-0">
             <li>
                 <code>$breakpoint-medium</code>: set up to <code>910px</code> by default
             </li>
@@ -29,7 +29,7 @@ The current active breakpoint value is available in <code>body::before content</
     </div>
     <div class="w49">
         <h3>Minor breakpoints</h3>
-        <ul class="mb0">
+        <ul class="mb-0">
             <li>
                 <code>$breakpoint-large</code>: set up to <code>1500px</code> by default
             </li>
@@ -46,7 +46,7 @@ They can be overidden depending of the needs of the project. Be careful while up
 
 ### Hiding something between deskop and tablet
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Applies <code>display: none</code> to the element for desktop breakpoint. <br />
         On tablet breakpoint, will be “reseted” by <code>display: block</code>.

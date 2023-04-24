@@ -61,7 +61,7 @@ const ReferralSignatureToggle = () => {
             />
 
             <label htmlFor="toggleSharedFooterLink" className="pl1">
-                <span className="mr0-5">{c('Button').t`Add link to your email footer`}</span>
+                <span className="mr-2">{c('Button').t`Add link to your email footer`}</span>
             </label>
 
             <Info

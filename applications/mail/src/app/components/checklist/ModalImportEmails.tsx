@@ -18,7 +18,7 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                         alt={c('Get started checklist instructions').t`Import your contacts or messages`}
                     />
                 </div>
-                <h1 className="mb0-5 text-2xl text-bold">
+                <h1 className="mb-2 text-2xl text-bold">
                     {c('Get started checklist instructions').t`Import your contacts or messages`}
                 </h1>
                 <p className="mb2">

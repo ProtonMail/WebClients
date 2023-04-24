@@ -107,7 +107,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
                     data-testid="cta:special-offer"
                 >
                     {loadingOffer && !offer && (
-                        <span className="ml0-5">
+                        <span className="ml-2">
                             <CircleLoader />
                         </span>
                     )}

@@ -69,7 +69,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
     return (
         <>
             <label className="text-semibold block" htmlFor={id}>
-                <span className="mr0-5 align-middle">{c('Label').t`Attach screenshot(s)`}</span>
+                <span className="mr-2 align-middle">{c('Label').t`Attach screenshot(s)`}</span>
                 <Info url={getKnowledgeBaseUrl('/screenshot-reporting-bugs')} />
             </label>
             <div>

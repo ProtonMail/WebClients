@@ -20,7 +20,7 @@ const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     }
     return (
         <>
-            <span className="mr0-5">{text}</span>
+            <span className="mr-2">{text}</span>
             <Info title={tooltip} />
         </>
     );

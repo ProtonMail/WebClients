@@ -36,13 +36,13 @@ const LoadContentSpotlight = ({ children, anchorRef, show, onDisplayed }: Props)
             style={{ maxWidth: '25rem' }}
             content={
                 <>
-                    <div className="flex flex-nowrap mt0-5 mb0-5">
+                    <div className="flex flex-nowrap my-2">
                         <div className="flex-item-noshrink mr1">
                             <img src={loadContentImg} className="w4e" alt="" />
                         </div>
                         <div>
-                            <p className="mt0 mb0-5 text-bold">{c('Spotlight').t`Email tracking protection`}</p>
-                            <p className="m0">{text}</p>
+                            <p className="mt-0 mb-2 text-bold">{c('Spotlight').t`Email tracking protection`}</p>
+                            <p className="m-0">{text}</p>
                         </div>
                     </div>
                 </>

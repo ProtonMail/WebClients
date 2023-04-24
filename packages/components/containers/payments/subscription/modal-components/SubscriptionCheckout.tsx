@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { APPS, PLANS } from '@proton/shared/lib/constants';
@@ -48,7 +50,7 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                     {list.map((item) => {
                         if (item.type === 'value') {
                             return (
-                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb0-5">
+                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
                                     <div className="flex-item-fluid-auto text-ellipsis mr1">{item.text}</div>
                                     <div className="flex-item-fluid-auto flex-item-noshrink text-right">
                                         {item.value}
@@ -58,7 +60,7 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                         }
                         if (item.type === 'text') {
                             return (
-                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb0-5">
+                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
                                     <div className="flex-item-fluid-auto text-ellipsis">{item.text}</div>
                                 </div>
                             );
@@ -144,7 +146,7 @@ const SubscriptionCheckout = ({
                     <>
                         {usersTitle}
                         {discountPercent > 0 && (
-                            <Badge type="success" tooltip={getDiscountText()} className="ml0-5 text-semibold">
+                            <Badge type="success" tooltip={getDiscountText()} className="ml-2 text-semibold">
                                 -{discountPercent}%
                             </Badge>
                         )}
@@ -168,7 +170,7 @@ const SubscriptionCheckout = ({
                     </div>
                     <CheckoutRow
                         className="text-semibold"
-                        title={<span className="mr0-5">{getTotalBillingText(cycle)}</span>}
+                        title={<span className="mr-2">{getTotalBillingText(cycle)}</span>}
                         amount={withDiscountPerCycle}
                         currency={currency}
                     />
@@ -178,7 +180,7 @@ const SubscriptionCheckout = ({
                 <CheckoutRow
                     title={
                         <span className="inline-flex flex-align-items-center">
-                            <span className="mr0-5">{c('Label').t`Proration`}</span>
+                            <span className="mr-2">{c('Label').t`Proration`}</span>
                             <Info
                                 title={
                                     proration < 0
@@ -211,7 +213,7 @@ const SubscriptionCheckout = ({
                         title={c('Title').t`Amount due`}
                         amount={amountDue}
                         currency={currency}
-                        className="text-bold m0 text-2xl"
+                        className="text-bold m-0 text-2xl"
                     />
                 </>
             )}

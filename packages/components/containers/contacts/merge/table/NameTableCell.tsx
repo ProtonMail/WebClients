@@ -19,7 +19,7 @@ const NameTableCell = ({ name, contactID, highlightedID, checked, deleted, greye
             <Checkbox
                 checked={checked}
                 onChange={handleToggle}
-                className={`flex flex-align-items-center flex-item-noshrink mr0-5 ${
+                className={`flex flex-align-items-center flex-item-noshrink mr-2 ${
                     deleted ? 'visibility-hidden' : ''
                 }`}
                 data-testid="merge-model:name-checkbox"
