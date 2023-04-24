@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { selectAliasByAliasEmail } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
-import { parseOTPValue } from '@proton/pass/utils/otp';
+import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 import { type UrlGroupValues, validateUrl, validateUrls } from '../../../components/Fields/UrlGroupFieldCluster';

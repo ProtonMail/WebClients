@@ -4,7 +4,7 @@ import { selectItemByShareIdAndId } from '@proton/pass/store';
 import { type OtpCode, type SelectedItem, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
-import { parseOTPValue } from '@proton/pass/utils/otp';
+import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import WorkerMessageBroker from '../channel';
