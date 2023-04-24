@@ -116,7 +116,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                 <Field className="pt0-5">
                     <div className="text-bold text-ellipsis">{organizationName}</div>
                 </Field>
-                <div className="ml1 on-mobile-ml0">
+                <div className="ml-0 md:ml-4">
                     <Button
                         id="organization-name-edit-button"
                         color="norm"

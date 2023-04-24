@@ -46,8 +46,8 @@ const OrganizationCapacityErrorModal = ({ error, onOk, ...rest }: Props) => {
             buttons={[<Button onClick={onOk}>{c('Action').t`Got it`}</Button>]}
             {...rest}
         >
-            <p className="mt0">{error.message}</p>
-            <p className="mb0">{cta}</p>
+            <p className="mt-0">{error.message}</p>
+            <p className="mb-0">{cta}</p>
         </Prompt>
     );
 };

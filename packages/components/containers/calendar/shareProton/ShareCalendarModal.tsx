@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
@@ -180,7 +182,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     if (error) {
         return {
             icon: (
-                <div className="flex flex-align-items-center flex-item-noshrink ml0-5">
+                <div className="flex flex-align-items-center flex-item-noshrink ml-2">
                     <Icon name="exclamation-circle" />
                 </div>
             ),
@@ -311,7 +313,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                         setRecipientsMap,
                         getEncryptionPreferences,
                         contactEmailsMap,
-                        onError
+                        onError,
                     });
                     acc.newRecipients.push(recipientWithAddedTime);
                     acc.addedCanonicalizedAddresses.push(canonicalizedAddress);
@@ -492,11 +494,11 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         <Modal size="large" {...rest} data-test-id="share-calendar-privately">
             <ModalHeader title={c('Share calendar modal title').t`Share with ${BRAND_NAME} users`} />
             <ModalContent>
-                <div className="mb1">
+                <div className="mb-4">
                     {c('Share calendar modal description')
                         .jt`Add the ${BRAND_NAME} accounts with whom you want to share ${calendarName}. We’ll send them an invite.`}
                 </div>
-                <div className="mb1">
+                <div className="mb-4">
                     <InputField
                         as={AddressesInput}
                         ref={addressesAutocompleteRef}
@@ -521,7 +523,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 onAddRecipients={handleAddRecipients}
                                 className="min-w5e unstyled"
                                 inputClassName={clsx([
-                                    !totalRecipients && 'my0-15',
+                                    !totalRecipients && 'my-0.5',
                                     !!totalRecipients && 'p0 rounded-none',
                                 ])}
                                 title={addressesInputText}

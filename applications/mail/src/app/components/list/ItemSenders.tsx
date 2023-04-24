@@ -75,7 +75,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
                     <span key={`${recipientLabel}-${index}`}>
                         {highlightData ? highlightMetadata(recipientLabel, unread, true).resultJSX : recipientLabel}
                         {sender.recipient && <ProtonBadgeType recipient={sender.recipient} selected={isSelected} />}
-                        {!isLastItem && <span className="mr0-25">,</span>}
+                        {!isLastItem && <span className="mr-1">,</span>}
                     </span>
                 );
             })}

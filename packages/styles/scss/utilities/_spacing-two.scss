@@ -5,7 +5,7 @@
 	@return if($value == 0 or $value == 'auto', $value, rem($value));
 }
 
-$spacings: '0' 0, '0-5' 2, '1' 4, '2' 8, '3' 12, '4' 16, '5' 20, '6' 24, '7' 28, '8' 32, '10' 40, '11' 44, '12' 48,
+$spacings: '0' 0, '0\\\.5' 2, '1' 4, '2' 8, '3' 12, '4' 16, '5' 20, '6' 24, '7' 28, '8' 32, '10' 40, '11' 44, '12' 48,
 	'14' 56, 'auto' 'auto';
 $queries: (
 	default: 'all',
@@ -29,18 +29,20 @@ $properties: (
 );
 $placements: (
 	default: '',
+	y: 'block',
 	t: 'block-start',
 	b: 'block-end',
+	x: 'inline',
 	l: 'inline-start',
 	r: 'inline-end',
-	x: 'inline',
-	y: 'block',
 );
 
 @each $breakpointname, $query in $queries {
 	@include media($query) {
 		@each $propertyname, $property in $properties {
 			@each $placementname, $placement in $placements {
+				$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
+
 				@each $spacingname, $size in $spacings {
 					@if not($property == 'padding' and $spacingname == 'auto') {
 						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
@@ -48,12 +50,26 @@ $placements: (
 								'',
 								$placementname
 							)}-#{$spacingname};
-						$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
 
 						.#{$classname} {
 							#{$cssproperty}: #{pixel-to-rem($size)};
 						}
 					}
+				}
+
+				$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
+						$placementname == 'default',
+						'',
+						$placementname
+					)}-custom;
+				$value: #{if($breakpointname == 'default', '', $breakpointname + '-')}#{$propertyname}#{if(
+						$placementname == 'default',
+						'',
+						$placementname
+					)}-custom;
+
+				.#{$classname} {
+					#{$cssproperty}: var(--#{$value});
 				}
 			}
 		}

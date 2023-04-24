@@ -29,12 +29,12 @@ export const MnemonicPhraseStepContent = ({
                 children
             ) : (
                 <>
-                    <p className="mt0">
+                    <p className="mt-0">
                         {c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}
                     </p>
 
                     <p className="color-warning">
-                        <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" />
+                        <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" />
 
                         {c('Info')
                             .t`Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.`}
@@ -48,11 +48,11 @@ export const MnemonicPhraseStepContent = ({
                 <>
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
                     <Card
-                        className="mt0-5 flex flex-justify-space-between flex-align-items-center flex-nowrap"
+                        className="mt-2 flex flex-justify-space-between flex-align-items-center flex-nowrap"
                         bordered={false}
                         rounded
                     >
-                        <span className="mr0-5" data-testid="account:recovery:generatedRecoveryPhrase">
+                        <span className="mr-2" data-testid="account:recovery:generatedRecoveryPhrase">
                             {mnemonic}
                         </span>
                         <Copy className="bg-norm flex-item-noshrink" value={mnemonic} onCopy={onCopy} />

@@ -79,7 +79,7 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                                 <div className="flex flex-nowrap flex-align-items-center">
                                     <Icon
                                         name="brand-simple-login"
-                                        className="mr0-5 relative inline-flex flex-align-items-center"
+                                        className="mr-2 relative inline-flex flex-align-items-center"
                                         color="#D42C83"
                                         alt={c('Alternative text for simple login image').t`Simple Login`}
                                     />

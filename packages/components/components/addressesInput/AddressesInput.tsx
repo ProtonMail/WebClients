@@ -42,7 +42,7 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
         <>
             <div
                 className={clsx([
-                    'pill my0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
+                    'pill my-1 mr-2 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
                     className,
                 ])}
                 ref={ref}

@@ -112,7 +112,7 @@ const CalendarMemberRow = ({
                             {name}
                         </div>
                         {email !== name && (
-                            <div className="text-ellipsis text-sm m0 color-weak" title={email}>
+                            <div className="text-ellipsis text-sm m-0 color-weak" title={email}>
                                 {email}
                             </div>
                         )}

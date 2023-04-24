@@ -1,11 +1,16 @@
 import { useState } from 'react';
 
+
+
 import { RadioGroup } from '@proton/components/components';
+
+
 
 import { Button } from '../Button';
 import Step from './Step';
 import Stepper, { StepperProps } from './Stepper';
 import mdx from './Stepper.mdx';
+
 
 export default {
     component: Stepper,
@@ -29,7 +34,7 @@ export const Basic = () => {
 
             <div className="mt3 flex flex-justify-end">
                 <Button
-                    className="mr0-5"
+                    className="mr-2"
                     color="norm"
                     disabled={activeStep === 0}
                     onClick={() => setActiveStep((step) => step - 1)}
@@ -76,7 +81,7 @@ export const Centered = () => {
 
             <div className="mt3 flex flex-justify-end">
                 <Button
-                    className="mr0-5"
+                    className="mr-2"
                     color="norm"
                     disabled={activeStep === 0}
                     onClick={() => setActiveStep((step) => step - 1)}

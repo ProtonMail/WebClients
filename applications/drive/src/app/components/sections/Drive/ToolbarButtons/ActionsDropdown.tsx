@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import {
@@ -114,7 +116,7 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
                 }}
                 data-testid={item.testId}
             >
-                <Icon className="mt0-25 mr0-5" name={item.icon} />
+                <Icon className="mt-1 mr-2" name={item.icon} />
                 {item.name}
             </DropdownMenuButton>
         ));

@@ -172,19 +172,19 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                 .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
                         </div>
                         <div>
-                            <div className="flex flex-justify-space-between mb0-5">
+                            <div className="flex flex-justify-space-between mb-2">
                                 <div className="w20">{c('Label').t`Key`}</div>
                                 <div className="w80 flex-align-self-center text-bold">
                                     <code data-testid="totp:secret-key">{sharedSecret}</code>
                                 </div>
                             </div>
-                            <div className="flex flex-justify-space-between mb0-5">
+                            <div className="flex flex-justify-space-between mb-2">
                                 <div className="w20">{c('Label').t`Interval`}</div>
                                 <div className="w80 flex-align-self-center text-bold">
                                     <code>{period}</code>
                                 </div>
                             </div>
-                            <div className="flex flex-justify-space-between mb0-5">
+                            <div className="flex flex-justify-space-between mb-2">
                                 <div className="w20">{c('Label').t`Digits`}</div>
                                 <div className="w80 flex-align-self-center text-bold">
                                     <code>{digits}</code>

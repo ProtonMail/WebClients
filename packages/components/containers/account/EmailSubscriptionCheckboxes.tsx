@@ -93,7 +93,7 @@ const EmailSubscriptionCheckboxes = ({ disabled, News, onChange }: EmailSubscrip
                             onChange={handleChange(flag)}
                         />
                         <label htmlFor={id} className="flex on-mobile-flex-column">
-                            <span className="mr0-25">{getTitle(flag)}</span>
+                            <span className="mr-1">{getTitle(flag)}</span>
                             {frequency}
                         </label>
                     </li>

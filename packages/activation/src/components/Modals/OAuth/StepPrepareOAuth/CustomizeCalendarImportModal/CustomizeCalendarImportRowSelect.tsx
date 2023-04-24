@@ -71,7 +71,7 @@ const CustomizeCalendarImportRowSelect = ({
                                     truncate
                                 />,
 
-                                <hr key="separator" className="mt0-5 mb0-5" />,
+                                <hr key="separator" className="my-2" />,
 
                                 <li className="dropdown-item" key="label-merge">
                                     <span

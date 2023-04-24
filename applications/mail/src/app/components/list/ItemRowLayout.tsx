@@ -79,8 +79,8 @@ const ItemRowLayout = ({
                 <ItemStar element={element} />
             </div>
             <div className={clsx(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
-                <ItemUnread element={element} labelID={labelID} className="mr0-2 item-unread-dot" />
-                <ItemAction element={element} className="mr0-5 flex-item-noshrink myauto" />
+                <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
+                <ItemAction element={element} className="mr-2 flex-item-noshrink myauto" />
                 <span
                     className="max-w100 text-ellipsis flex flex-align-items-center"
                     data-testid="message-row:sender-address"
@@ -99,13 +99,13 @@ const ItemRowLayout = ({
                         data-testid="message-row:subject"
                     >
                         {showIcon && (
-                            <span className="mr0-25 inline-flex flex-item-noshrink align-bottom">
+                            <span className="mr-1 inline-flex flex-item-noshrink align-bottom">
                                 <ItemLocation element={element} labelID={labelID} />
                             </span>
                         )}
                         {conversationMode && (
                             <NumMessages
-                                className={clsx(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
+                                className={clsx(['mr-1 flex-item-noshrink', unread && 'text-bold'])}
                                 conversation={element}
                             />
                         )}
@@ -137,7 +137,7 @@ const ItemRowLayout = ({
                 isCollapsed={false}
             />
 
-            <span className="flex w3e ml0-5 text-center flex-justify-end">
+            <span className="flex w3e ml-2 text-center flex-justify-end">
                 {hasExpiration && (
                     <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
                 )}
@@ -157,7 +157,7 @@ const ItemRowLayout = ({
                     hasStar={false}
                     size={isCompactView ? 'small' : 'medium'}
                 />
-                <span className="item-senddate-row ml0-5 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center">
+                <span className="item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center">
                     <ItemDate
                         element={element}
                         labelID={labelID}

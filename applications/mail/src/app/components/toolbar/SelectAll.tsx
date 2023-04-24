@@ -74,7 +74,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleAll(true)}
                                 data-testid="toolbar:select-all"
                             >
-                                <Icon name="checkmark-triple" className="mr0-5" />
+                                <Icon name="checkmark-triple" className="mr-2" />
                                 {c('Action').t`Select All`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -82,7 +82,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleRead(true)}
                                 data-testid="toolbar:all-read"
                             >
-                                <Icon name="envelope-open" className="mr0-5" />
+                                <Icon name="envelope-open" className="mr-2" />
                                 {c('Action').t`All Read`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -90,7 +90,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleRead(false)}
                                 data-testid="toolbar:all-unread"
                             >
-                                <Icon name="envelope-dot" className="mr0-5" />
+                                <Icon name="envelope-dot" className="mr-2" />
                                 {c('Action').t`All Unread`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -98,7 +98,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleStarred(true)}
                                 data-testid="toolbar:all-starred"
                             >
-                                <Icon name="star-filled" className="mr0-5" />
+                                <Icon name="star-filled" className="mr-2" />
                                 {c('Action').t`All Starred`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
@@ -106,7 +106,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 onClick={handleStarred(false)}
                                 data-testid="toolbar:all-unstarred"
                             >
-                                <Icon name="star" className="mr0-5" />
+                                <Icon name="star" className="mr-2" />
                                 {c('Action').t`All Unstarred`}
                             </DropdownMenuButton>
                         </DropdownMenu>

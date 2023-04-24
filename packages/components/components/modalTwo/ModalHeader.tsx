@@ -69,7 +69,7 @@ const ModalHeader = ({
                 {...rest}
             >
                 {title && (
-                    <div className="modal-two-header-title mt0-25">
+                    <div className="modal-two-header-title mt-1">
                         <h1
                             id={id}
                             className={classnames([
@@ -89,7 +89,7 @@ const ModalHeader = ({
                         <>
                             {firstAction}
                             {secondAction}
-                            <Vr className="my0-25" />
+                            <Vr className="my-1" />
                         </>
                     )}
 

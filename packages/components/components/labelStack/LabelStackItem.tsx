@@ -109,7 +109,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                         >
                             {c('Action').t`Go to label`}
                         </DropdownMenuButton>
-                        {label.onDelete && <hr className="my0-25" aria-hidden="true" />}
+                        {label.onDelete && <hr className="my-1" aria-hidden="true" />}
                         {label.onDelete && (
                             <DropdownMenuButton
                                 className="text-left"

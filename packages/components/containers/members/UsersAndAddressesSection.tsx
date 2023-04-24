@@ -147,7 +147,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         {
             node: (
                 <>
-                    <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
+                    <span className="mr-2">{c('Title header for members table').t`Role`}</span>
                     <span className="no-mobile">
                         <Info url={getKnowledgeBaseUrl('/user-roles')} />
                     </span>
@@ -216,21 +216,21 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     color="norm"
                     disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
                     onClick={handleAddUser}
-                    className="on-mobile-mb0-5 mr1"
+                    className="mb-2 md:mb-0 mr-4"
                 >
                     {c('Action').t`Add user`}
                 </Button>
-                <div className="mb1 mr1">
+                <div className="mb-4 mr-4">
                     <Button
                         shape="outline"
                         disabled={loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers}
                         onClick={handleAddAddress}
-                        className="on-mobile-mb0-5"
+                        className="mb-2 md:mb-0"
                     >
                         {c('Action').t`Add address`}
                     </Button>
                 </div>
-                <div className="mlauto on-tablet-ml0 on-tablet-w100">
+                <div className="ml-0 lg:ml-auto on-tablet-w100">
                     <SearchInput
                         onChange={handleSearch}
                         placeholder={c('Placeholder').t`Search users`}
@@ -258,7 +258,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 labels={[
                                     '',
                                     <>
-                                        <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
+                                        <span className="mr-2">{c('Title header for members table').t`Role`}</span>
                                         <Info url={getKnowledgeBaseUrl('/user-roles')} />
                                     </>,
                                     c('Title header for members table').t`Addresses`,
@@ -270,7 +270,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         className="on-desktop-py1 flex flex-nowrap flex-align-items-center"
                                         title={member.Name}
                                     >
-                                        <Avatar className="mr1 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
+                                        <Avatar className="mr-4 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
                                         <div>
                                             <span
                                                 className="block text-ellipsis flex-item-fluid"

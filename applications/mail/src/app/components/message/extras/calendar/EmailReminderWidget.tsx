@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+
+
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
@@ -262,7 +264,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                                         className="flex-item-noshrink"
                                     >
                                         <div className="flex flex-align-items-center">
-                                            <span className="mr0-75">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
+                                            <span className="mr-3">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
                                             <Icon name="arrow-out-square" />
                                         </div>
                                     </ButtonLike>
@@ -366,7 +368,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const labelClassName = 'inline-flex pt0-25';
 
     return (
-        <div className="calendar-widget mb0-75" ref={eventReminderRef}>
+        <div className="calendar-widget mb-3" ref={eventReminderRef}>
             <EventReminderBanner
                 startDate={startDate}
                 endDate={endDate}
@@ -377,9 +379,9 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
             {!isOutdated && (
                 <div className="rounded border bg-norm scroll-if-needed">
                     <div className="p1-5">
-                        <h2 className="h3 mb0-25 text-bold">{getDisplayTitle(summary?.value)}</h2>
+                        <h2 className="h3 mb-1 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader
-                            className="text-lg mt0 mb0-75"
+                            className="text-lg mt-0 mb-3"
                             startDate={startDate}
                             endDate={endDate}
                             isAllDay={!!FullDay}
@@ -391,7 +393,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             recurrenceID={parseInt(occurrenceHeader, 10)}
                         />
                     </div>
-                    <hr className="m0" />
+                    <hr className="m-0" />
                     <div className="p1-5">
                         <IconRow
                             title={c('Label').t`Calendar`}

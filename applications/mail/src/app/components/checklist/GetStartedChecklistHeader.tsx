@@ -50,7 +50,7 @@ const GetStartedChecklistHeader = ({
                 )}
             </div>
 
-            <div className={clsx(['ml0-5', !onDismiss ? 'w100' : 'w80'])}>
+            <div className={clsx(['ml-2', !onDismiss ? 'w100' : 'w80'])}>
                 <Progress className="progress-bar--success" value={numberOfCompletedItems} max={totalNumberOfItems} />
             </div>
         </div>

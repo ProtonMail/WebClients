@@ -8,7 +8,7 @@ import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-
 const Alert3ds = () => {
     return (
         <div className="mt1-5 mb1-5 color-weak text-center">
-            <div className="mb0-5">{c('Info').t`We use 3-D Secure to protect your payments.`}</div>
+            <div className="mb-2">{c('Info').t`We use 3-D Secure to protect your payments.`}</div>
             <div className="flex flex-nowrap flex-align-items-center flex-justify-center">
                 <img
                     alt={c('Info').t`Visa Secure logo`}

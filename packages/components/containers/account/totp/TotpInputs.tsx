@@ -36,7 +36,7 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
                     <div className="mb1-75 flex flex-align-items-center">
                         {c('Info').t`Each code can only be used once`}{' '}
                         <Info
-                            className="ml0-5"
+                            className="ml-2"
                             title={c('Info')
                                 .t`When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.`}
                         />

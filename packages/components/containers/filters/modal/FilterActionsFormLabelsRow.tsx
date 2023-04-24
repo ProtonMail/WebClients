@@ -70,7 +70,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
 
                     return label ? (
                         <Fragment key={labelName}>
-                            <span className="ml0-5 mr0-5 mb0-5">
+                            <span className="mx-2 mb-2">
                                 <LabelStack
                                     labels={[
                                         {
@@ -95,7 +95,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
         >
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
+                <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
             </button>
             <div className={classnames(['flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (
@@ -103,7 +103,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                         <div className="w100">
                             {labels.length ? (
                                 labels.map((label) => (
-                                    <div className="mb0-5 inline-block text-ellipsis" key={label.Path}>
+                                    <div className="mb-2 inline-block text-ellipsis" key={label.Path}>
                                         <Checkbox
                                             title={label.Name}
                                             className="mr1 flex-nowrap"
@@ -128,13 +128,13 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                 <div className="pt0-5 mb1">{c('Label').t`No label found`}</div>
                             )}
                         </div>
-                        <Button shape="outline" className="mt0" onClick={() => setEditLabelModalOpen(true)}>
+                        <Button shape="outline" className="mt-0" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Create label`}
                         </Button>
                         <EditLabelModal {...editLabelProps} onAdd={handleCreateLabel} type="label" />
                     </>
                 ) : (
-                    <div className="mt0-5">{renderClosed()}</div>
+                    <div className="mt-2">{renderClosed()}</div>
                 )}
             </div>
         </div>

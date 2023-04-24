@@ -201,7 +201,7 @@ const AdvancedSearch = ({
                     <>
                         <div className="mt1">
                             <Button
-                                className="mb0-5 on-mobile-w100"
+                                className="mb-2 on-mobile-w100"
                                 onClick={toggleShowMore}
                                 data-testid="advanced-search:show-less"
                                 title={c('Action').t`Show fewer search options`}
@@ -209,7 +209,7 @@ const AdvancedSearch = ({
                                 {c('Action').t`Fewer search options`}
                             </Button>
                         </div>
-                        <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
+                        <div className="mb-2 flex flex-justify-space-between on-mobile-flex-column">
                             <div className={clsx(['flex-item-fluid', isNarrow ? 'on-mobile-pr0' : 'pr1'])}>
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
@@ -250,7 +250,7 @@ const AdvancedSearch = ({
                                 />
                             </div>
                         </div>
-                        <div className="mb0-5" ref={senderListAnchorRef}>
+                        <div className="mb-2" ref={senderListAnchorRef}>
                             <Label
                                 title={c('Label').t`Sender`}
                                 className="advanced-search-label text-semibold"
@@ -265,7 +265,7 @@ const AdvancedSearch = ({
                                 anchorRef={senderListAnchorRef}
                             />
                         </div>
-                        <div className="mb0-5" ref={toListAnchorRef}>
+                        <div className="mb-2" ref={toListAnchorRef}>
                             <Label
                                 title={c('Label').t`Recipient`}
                                 className="advanced-search-label text-semibold"
@@ -280,7 +280,7 @@ const AdvancedSearch = ({
                                 anchorRef={toListAnchorRef}
                             />
                         </div>
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             <Label
                                 title={c('Label').t`Address`}
                                 className="advanced-search-label text-semibold"
@@ -306,7 +306,7 @@ const AdvancedSearch = ({
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"
-                        className="mb0-5 on-mobile-w100"
+                        className="mb-2 on-mobile-w100"
                         onClick={toggleShowMore}
                         title={c('Action').t`Show more search options`}
                     >
@@ -317,7 +317,7 @@ const AdvancedSearch = ({
                     {canReset ? (
                         <Button
                             data-testid="advanced-search:reset"
-                            className="mb0-5 on-mobile-w100 mr1"
+                            className="mb-2 on-mobile-w100 mr1"
                             type="reset"
                             title={c('Action').t`Reset search form`}
                         >{c('Action').t`Reset`}</Button>
@@ -325,7 +325,7 @@ const AdvancedSearch = ({
                     <PrimaryButton
                         data-testid="advanced-search:submit"
                         type="submit"
-                        className="mb0-5 on-mobile-w100"
+                        className="mb-2 on-mobile-w100"
                     >{c('Action').t`Search`}</PrimaryButton>
                 </div>
             </div>

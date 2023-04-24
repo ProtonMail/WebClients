@@ -31,7 +31,7 @@ const CheckboxCellBase = ({
     onCheckboxWrapperClick,
 }: Props) => {
     return (
-        <TableCell className="m0 flex file-browser-list-checkbox-cell" data-testid="column-checkbox">
+        <TableCell className="m-0 flex file-browser-list-checkbox-cell" data-testid="column-checkbox">
             <div
                 role="presentation"
                 className={clsx(['flex flex-align-items-center', className])}

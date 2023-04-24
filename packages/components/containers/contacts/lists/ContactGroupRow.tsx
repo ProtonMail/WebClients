@@ -81,7 +81,7 @@ const ContactGroupRow = ({
                             {Name}
                         </span>
                     </span>
-                    <span className="pl1 mt0-15 flex-item-noshrink text-sm">
+                    <span className="pl1 mt-0.5 flex-item-noshrink text-sm">
                         {addressCount === 0
                             ? c('Info').t`No email address`
                             : c('Info').ngettext(

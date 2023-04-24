@@ -1,5 +1,7 @@
 import { addDays } from 'date-fns';
 
+
+
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -7,6 +9,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+
 
 interface Props {
     className?: string;
@@ -37,7 +40,7 @@ const LanguageSelect = ({ className, locales = {} }: Props) => {
 
     const selectedLanguage = (
         <>
-            <span className="ml0-5">{LOCALES[localeCode]}</span>
+            <span className="ml-2">{LOCALES[localeCode]}</span>
         </>
     );
 

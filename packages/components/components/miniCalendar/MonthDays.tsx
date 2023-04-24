@@ -107,7 +107,7 @@ const MonthDays = ({
 
     return (
         <ul
-            className="minicalendar-monthdays unstyled m0 text-center"
+            className="minicalendar-monthdays unstyled m-0 text-center"
             style={style}
             onClick={handleClick}
             onMouseDown={handleMouseDown}

@@ -34,7 +34,7 @@ const LayoutCard = ({ label, src, selected, onChange, disabled, describedByID }:
             data-testid={`layout:${label}`}
         >
             <span className="flex flex-nowrap flex-column">
-                <img alt="" src={src} className="mb0-5 layout-card-image on-rtl-mirror" width={122} height={78} />
+                <img alt="" src={src} className="mb-2 layout-card-image on-rtl-mirror" width={122} height={78} />
                 <span>{label}</span>
             </span>
         </Button>

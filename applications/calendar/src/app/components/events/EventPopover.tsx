@@ -168,7 +168,7 @@ const EventPopover = ({
                 formatTime={formatTime}
                 hasFakeUtcDates
                 hasModifiedAllDayEndDate
-                className="text-lg m0"
+                className="text-lg m-0"
             />
         ),
         [start, end, isAllDay, isAllPartDay, formatTime]
@@ -247,7 +247,7 @@ const EventPopover = ({
             <AppLink
                 to={linkTo || '/'}
                 selfOpening
-                className="mr0-5 button button-small button-ghost-weak button-for-icon"
+                className="mr-2 button button-small button-ghost-weak button-for-icon"
             >
                 <Icon name="arrow-out-square" size={14} />
             </AppLink>
@@ -302,7 +302,7 @@ const EventPopover = ({
                 <PopoverHeader {...commonHeaderProps} actions={actions}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {getEventErrorMessage(eventReadError)}
                 </Alert>
             </PopoverContainer>
@@ -338,20 +338,20 @@ const EventPopover = ({
                     <Badge
                         type="light"
                         tooltip={c('Calendar invite info').t`This event has been canceled`}
-                        className="mb0-4"
+                        className="mb-1"
                     >
                         <span className="text-uppercase">{c('Event canceled status badge').t`canceled`}</span>
                     </Badge>
                 )}
-                <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>
+                <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb-1" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
-                <div className="mb1">
+                <div className="mb-4">
                     {dateHeader}
                     {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
                 </div>
             </PopoverHeader>
-            <div className="scroll-if-needed mb1" ref={popoverEventContentRef}>
+            <div className="scroll-if-needed mb-4" ref={popoverEventContentRef}>
                 <PopoverEventContent
                     key={targetEvent.id}
                     calendar={calendarData}

@@ -26,7 +26,7 @@ const CustomizeMailImportModalGmailCategories = ({ hasCategories, selectedCatego
                                 title={c('Tooltip')
                                     .t`Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.`}
                             >
-                                <Icon name="info-circle" className="ml0-5" />
+                                <Icon name="info-circle" className="ml-2" />
                             </Tooltip>
                         </Label>
                         <Field>

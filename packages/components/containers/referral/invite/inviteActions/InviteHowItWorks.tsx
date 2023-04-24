@@ -27,22 +27,22 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
 
             <ol className="flex flex-nowrap flex-gap-1 unstyled on-tablet-flex-column mb2">
                 <li className="flex-item-fluid">
-                    <h3 className="mb0-5 text-bold">{c('Info').t`1. Invite friends to ${BRAND_NAME}`}</h3>
+                    <h3 className="mb-2 text-bold">{c('Info').t`1. Invite friends to ${BRAND_NAME}`}</h3>
                     {c('Info').t`Just send them your personal referral link.`}
                 </li>
                 <li className="flex-item-fluid">
-                    <h3 className="mb0-5 text-bold">{
+                    <h3 className="mb-2 text-bold">{
                         // translator: full sentense would be "They try Mail Plus"
                         c('Info').t`2. They try ${planName}`
                     }</h3>
                     {c('Info').t`They'll receive a free month of ${planName}.`}
                 </li>
                 <li className="flex-item-fluid">
-                    <h3 className="mb0-5 text-bold">{c('Info').t`3. You earn credits`}</h3>
+                    <h3 className="mb-2 text-bold">{c('Info').t`3. You earn credits`}</h3>
                     {c('Info').t`When they subscribe to a plan, you'll get credits to use on your subscription.`}
                 </li>
             </ol>
-            <p className="text-sm mb0">
+            <p className="text-sm mb-0">
                 <Href href={getKnowledgeBaseUrl('/referral-program')}>{c('Link').t`Learn more`}</Href>
             </p>
         </div>

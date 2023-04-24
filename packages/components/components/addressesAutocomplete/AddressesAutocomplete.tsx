@@ -183,9 +183,9 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                             name="circle-filled"
                                             color={option.value.Color}
                                             size={12}
-                                            className="mr0-5 flex-item-noshrink flex-item-centered-vert"
+                                            className="mr-2 flex-item-noshrink flex-item-centered-vert"
                                         />
-                                        <span className="mr0-5 text-ellipsis">
+                                        <span className="mr-2 text-ellipsis">
                                             <Marks chunks={chunks}>{text}</Marks>
                                         </span>
                                         {getNumberOfMembersText(option.value.ID, groupsWithContactsMap)}

@@ -64,7 +64,7 @@ const SortDropdown = ({
             className={className}
             content={
                 <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:sort-dropdown">
-                    <span className="text-sm m0 mr0-5">{getTextContent()}</span>
+                    <span className="text-sm m-0 mr-2">{getTextContent()}</span>
                     <Icon className="toolbar-icon" name="arrow-down-arrow-up" />
                 </span>
             }

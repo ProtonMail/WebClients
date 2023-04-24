@@ -40,13 +40,13 @@ const ContactSummary = ({
     return (
         <div
             className={classnames([
-                'contactsummary-container mt1 mb1',
+                'contactsummary-container my-4',
                 !isNarrow && 'flex flex-nowrap flex-align-items-center',
             ])}
         >
             <div
                 className={classnames([
-                    'text-center contactsummary-photo-container pt0-5 on-mobile-mb0-5 on-mobile-center',
+                    'text-center contactsummary-photo-container pt0-5 mb-2 md:mb-0 on-mobile-center',
                     leftBlockWidth,
                 ])}
             >
@@ -55,7 +55,7 @@ const ContactSummary = ({
             <div className="contactsummary-contact-name-container pl2 on-mobile-pl0 flex-no-min-children flex-item-fluid">
                 <h2
                     className={classnames([
-                        'contactsummary-contact-name on-mobile-text-center mb0 flex-item-fluid on-mobile-mb1 text-bold text-ellipsis-two-lines',
+                        'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines',
                         // Several email addresses are a single word but too long, for this case, we break at any char
                         nameIsEmail && 'text-break',
                     ])}
@@ -72,7 +72,7 @@ const ContactSummary = ({
                                     shape="outline"
                                     icon
                                     onClick={onExport}
-                                    className="inline-flex ml0-5"
+                                    className="inline-flex ml-2"
                                     data-testid="contact-summary:export"
                                 >
                                     <Icon name="arrow-up-from-square" alt={c('Action').t`Export`} />
@@ -86,7 +86,7 @@ const ContactSummary = ({
                                 shape="outline"
                                 icon
                                 onClick={onDelete}
-                                className="inline-flex ml0-5"
+                                className="inline-flex ml-2"
                                 data-testid="contact-summary:delete"
                             >
                                 <Icon name="trash" alt={c('Action').t`Delete`} />

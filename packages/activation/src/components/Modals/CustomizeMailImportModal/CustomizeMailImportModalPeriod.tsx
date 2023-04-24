@@ -19,7 +19,7 @@ const CustomizeMailImportModalPeriod = ({ selectedPeriod, onChange }: Props) => 
                 <Label className="flex flex-align-items-center">
                     {c('Label').t`Import interval`}
                     <Tooltip title={c('Tooltip').t`The import will start with the most recent messages.`}>
-                        <Icon name="info-circle" className="ml0-5" />
+                        <Icon name="info-circle" className="ml-2" />
                     </Tooltip>
                 </Label>
                 <Field>

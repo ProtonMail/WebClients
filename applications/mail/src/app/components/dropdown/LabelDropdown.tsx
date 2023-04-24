@@ -275,7 +275,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb0">
+            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
                 </span>
@@ -301,7 +301,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     />
                 )}
             </div>
-            <div className="flex-item-noshrink m1 mb0">
+            <div className="flex-item-noshrink m1 mb-0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -317,7 +317,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 className="label-dropdown-list overflow-auto mt1 flex-item-fluid-auto"
                 data-testid="label-dropdown-list"
             >
-                <ul className="unstyled mt0 mb0">
+                <ul className="unstyled my-0">
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
@@ -342,7 +342,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                     name="circle-filled"
                                     size={16}
                                     color={Color}
-                                    className="flex-item-noshrink relative ml0-5 mr0-5"
+                                    className="flex-item-noshrink relative mx-2"
                                 />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
@@ -370,7 +370,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
-            <hr className="m0 flex-item-noshrink" />
+            <hr className="m-0 flex-item-noshrink" />
             <div className={clsx(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}

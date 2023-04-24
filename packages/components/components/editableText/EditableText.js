@@ -40,12 +40,12 @@ const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, read
                     <div className="flex">
                         <Input autoFocus value={inputValue} onChange={handleChangeInputValue} {...rest} />
                     </div>
-                    <Button icon type="submit" className="ml0-5" title={c('Action').t`Confirm`}>
+                    <Button icon type="submit" className="ml-2" title={c('Action').t`Confirm`}>
                         <Icon name="checkmark" alt={c('Action').t`Confirm`} />
                     </Button>
                 </>
             )}
-            <Button icon onClick={toggleEditing} className="ml0-5" title={c('Action').t`Close`}>
+            <Button icon onClick={toggleEditing} className="ml-2" title={c('Action').t`Close`}>
                 <Icon name="cross" alt={c('Action').t`Close`} />
             </Button>
         </form>
@@ -53,7 +53,7 @@ const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, read
         <>
             {initialText === null ? '--' : initialText}
             {!readOnly && (
-                <Button icon onClick={toggleEditing} className="ml0-5" title={c('Action').t`Toggle edit`}>
+                <Button icon onClick={toggleEditing} className="ml-2" title={c('Action').t`Toggle edit`}>
                     <Icon name={icon} />
                 </Button>
             )}

@@ -1,11 +1,16 @@
 import { c } from 'ttag';
 
+
+
 import { Alert } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
+
+
 import { InvitationModel } from '../../../../helpers/calendar/invite';
+
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -20,7 +25,7 @@ const ExtraEventWarning = ({ model }: Props) => {
         isFromFuture,
     } = model;
 
-    const alertClassName = 'mt0-5 mb0-5 text-break';
+    const alertClassName = 'my-2 text-break';
 
     if ((isOutdated || isFromFuture) && method !== ICAL_METHOD.REFRESH) {
         return null;

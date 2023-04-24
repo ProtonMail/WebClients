@@ -37,7 +37,7 @@ const PrivacySection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="telemetry" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Collect usage diagnostics`}</span>
+                        <span className="mr-2">{c('Label').t`Collect usage diagnostics`}</span>
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">
@@ -60,7 +60,7 @@ const PrivacySection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="crashReports" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Send crash reports`}</span>
+                        <span className="mr-2">{c('Label').t`Send crash reports`}</span>
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">

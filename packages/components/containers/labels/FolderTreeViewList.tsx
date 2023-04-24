@@ -1,11 +1,17 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { getParents, order } from '@proton/shared/lib/helpers/folder';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
+
+
 
 import { Icon, Info, TreeViewContainer, TreeViewItem } from '../../components';
 import { classnames } from '../../helpers';
@@ -13,6 +19,7 @@ import { useActiveBreakpoint, useApi, useEventManager, useLoading } from '../../
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';
 import ToggleNotify from './ToggleNotify';
+
 
 const INSIDE = 'inside';
 const AFTER = 'after';
@@ -155,7 +162,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                             />
                                         )}
                                         <FolderIcon
-                                            className="mr0-5 flex-item-noshrink"
+                                            className="mr-2 flex-item-noshrink"
                                             folder={{ ...item, subfolders: parents[item.ID] }}
                                         />
                                         <span className="text-ellipsis" title={item.Name}>

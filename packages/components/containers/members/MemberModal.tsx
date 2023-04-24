@@ -235,13 +235,13 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
 
                 {model.private ? null : (
                     <div className="mb1-5">
-                        <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
+                        <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </div>
                 )}
 
                 <div className="mb1-5">
-                    <div className="text-semibold mb0-5">{c('Label').t`Account storage`}</div>
+                    <div className="text-semibold mb-2">{c('Label').t`Account storage`}</div>
                     <MemberStorageSelector
                         value={model.storage}
                         sizeUnit={storageSizeUnit}

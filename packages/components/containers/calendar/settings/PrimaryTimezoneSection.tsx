@@ -31,7 +31,7 @@ const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: P
         <SettingsLayout>
             <SettingsLayoutLeft>
                 <label className="text-semibold" htmlFor={timeZoneSelectorId} id="label-primary-timezone">
-                    <span className="mr0-5">{c('Primary timezone').t`Primary time zone`}</span>
+                    <span className="mr-2">{c('Primary timezone').t`Primary time zone`}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>

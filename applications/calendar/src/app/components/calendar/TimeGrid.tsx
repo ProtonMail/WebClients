@@ -339,7 +339,7 @@ const TimeGrid = ({
                         )}
 
                         {isDrawerApp ? (
-                            <div className="ml1 mr0-5 mb0-5 flex flex-align-items-end flex-justify-space-between w100">
+                            <div className="ml1 mr-2 mb-2 flex flex-align-items-end flex-justify-space-between w100">
                                 <ButtonGroup size="small" color="weak" shape="outline">
                                     <Tooltip title={previousDay}>
                                         <Button icon onClick={handleClickPrevDay}>

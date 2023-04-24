@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Scroll } from '@proton/atoms';
@@ -247,7 +249,7 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
                             <Icon className="account-button-icon myauto" name="arrow-right" aria-hidden="true" />
                         )}
                     </div>
-                    {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}
+                    {index !== localActiveSessions.length - 1 && <hr className="my-2" />}
                 </Fragment>
             );
         });
@@ -263,11 +265,11 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
                 <div className="w100 max-h-custom" style={{ '--max-height-custom': '25em' }}>
                     <Scroll>{inner()}</Scroll>
                 </div>
-                <div className="w100 text-center mt2 mb0-5">
+                <div className="w100 text-center mt2 mb-2">
                     <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>{c('Action')
                         .t`Add ${BRAND_NAME} Account`}</Button>
                 </div>
-                <div className="w100 text-center mb0-5">
+                <div className="w100 text-center mb-2">
                     <Button
                         size="large"
                         color="norm"

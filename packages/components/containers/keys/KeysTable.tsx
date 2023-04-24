@@ -56,7 +56,7 @@ const KeysTable = ({
                                     <Copy
                                         size="small"
                                         value={fingerprint}
-                                        className="flex-item-noshrink mr1 on-mobile-mr0-5"
+                                        className="flex-item-noshrink mr-2 md:mr-4"
                                     />
                                     <code
                                         className="max-w100 inline-block text-ellipsis"

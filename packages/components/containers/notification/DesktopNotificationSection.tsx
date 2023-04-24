@@ -9,7 +9,7 @@ const DesktopNotificationSection = ({ onTest, infoURL = getKnowledgeBaseUrl('/de
     return (
         <Row>
             <Label>
-                <span className="mr0-5">{c('Label').t`Desktop notification`}</span>
+                <span className="mr-2">{c('Label').t`Desktop notification`}</span>
                 <Info url={infoURL} />
             </Label>
             <DesktopNotificationPanel onTest={onTest} />

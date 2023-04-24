@@ -179,12 +179,12 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            <div className="flex flex-column flex-nowrap mb1">
-                <div className="mb1">
+            <div className="flex flex-column flex-nowrap mb-4">
+                <div className="mb-4">
                     <span className="sr-only" id={`composer-expiration-string-${uid}`}>
                         {descriptionExpirationTime}
                     </span>
-                    <p className="my0">{c('Info')
+                    <p className="my-0">{c('Info')
                         .t`When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?`}</p>
                     <Href href={getKnowledgeBaseUrl('/expiration/')}>{c('Link').t`Learn more`}</Href>
                 </div>
@@ -223,9 +223,9 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                 </div>
             </div>
 
-            <div className="flex flex-nowrap mb1">
+            <div className="flex flex-nowrap mb-4">
                 <Checkbox
-                    className="mr1 inline-block"
+                    className="mr-4 inline-block"
                     checked={isSendOutside}
                     onChange={() => setIsSendOutside(!isSendOutside)}
                 />
