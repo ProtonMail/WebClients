@@ -6,7 +6,10 @@ import browser from '@proton/pass/globals/browser';
 if (BUILD_TARGET === 'chrome' && ENV === 'production') {
     if (window.self === window.top) {
         void browser.tabs.query({ active: true, currentWindow: true, status: 'complete' }).then(async (tabs) => {
-            return tabs.length === 0 && (await browser.tabs.remove((await browser.tabs.getCurrent()).id!));
+            if (tabs.length === 0) {
+                const currentTab = await browser.tabs.getCurrent();
+                if (currentTab.id) await browser.tabs.remove(currentTab.id);
+            }
         });
     }
 }
