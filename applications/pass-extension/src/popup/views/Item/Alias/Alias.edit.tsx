@@ -17,6 +17,7 @@ import { SelectField } from '../../../components/Fields/SelectField';
 import { TextAreaField } from '../../../components/Fields/TextareaField';
 import { TitleField } from '../../../components/Fields/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
+import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditAliasFormValues, validateEditAliasForm } from './Alias.validation';
 
@@ -26,9 +27,11 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
     const { data: item, itemId, aliasEmail, revision: lastRevision } = revision;
     const { metadata, ...uneditable } = item;
     const { name, note, itemUuid } = metadata;
-    const [ready, setReady] = useState(false);
-    const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
 
+    const pasteLengthLimiter = usePasteLengthLimiter();
+    const [ready, setReady] = useState(false);
+
+    const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
     const initialValues: EditAliasFormValues = { name, note, mailboxes: [] };
 
     const form = useFormik<EditAliasFormValues>({
@@ -87,6 +90,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 placeholder={c('Label').t`Untitled`}
                                 component={TitleField}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
+                                onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                             />
                         </FieldsetCluster>
 
@@ -124,6 +128,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 icon="note"
                                 minRows={1}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
+                                onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             />
                         </FieldsetCluster>
                     </Form>
