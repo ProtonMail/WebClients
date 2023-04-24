@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import { createToken } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { useApi, useLoading, useModals } from '../../hooks';
 import PaymentVerificationModal from './PaymentVerificationModal';
+import { AmountAndCurrency, TokenPaymentMethod } from './interface';
 import { process } from './paymentTokenHelper';
 
 interface Model {
@@ -29,11 +30,15 @@ export interface PayPalHook {
     clear: () => void;
 }
 
+type PAYPAL_PAYMENT_METHOD = PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+
+export type OnPayResult = TokenPaymentMethod & AmountAndCurrency & { type: PAYPAL_PAYMENT_METHOD };
+
 interface Props {
     amount: number;
     currency: Currency;
-    type: PAYMENT_METHOD_TYPE;
-    onPay: (data: any) => void;
+    type: PAYPAL_PAYMENT_METHOD;
+    onPay: (data: OnPayResult) => void;
 }
 
 const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay }: Props) => {
@@ -62,7 +67,7 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay }: Props)
 
     const onVerification = async () => {
         const { Token, ApprovalURL, ReturnHost } = model;
-        const result = await new Promise((resolve, reject) => {
+        const result = await new Promise<OnPayResult>((resolve, reject) => {
             const onProcess = () => {
                 const abort = new AbortController();
                 return {
@@ -88,6 +93,7 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay }: Props)
                 />
             );
         });
+
         onPay(result);
     };
 

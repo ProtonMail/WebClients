@@ -1,5 +1,6 @@
+import { KEY as PlansKey } from '@proton/components/hooks/usePlans';
 import { queryPlans } from '@proton/shared/lib/api/payments';
-import { addApiMock } from '@proton/testing';
+import { addApiMock, addToCache } from '@proton/testing';
 
 export const plansDefaultResponse = {
     Code: 1000,
@@ -525,4 +526,8 @@ export const plansDefaultResponse = {
 
 export function mockPlansApi(plans = plansDefaultResponse) {
     addApiMock(queryPlans({}).url, () => plans);
+}
+
+export function mockPlansCache(plans = plansDefaultResponse.Plans) {
+    addToCache(PlansKey, plans);
 }
