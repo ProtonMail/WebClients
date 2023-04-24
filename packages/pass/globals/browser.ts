@@ -17,27 +17,36 @@ const HIDDEN_GLOBALS = {
     browser: self.browser,
 };
 
+/* To ensure that Sentry's internal checks involving the browser
+ * APIs don't interfere with the initialization of our apps, we
+ * wrap the proxy initialization in a setTimeout function, which
+ * delays the initialization until the next tick after our apps load.
+ * ⚠️ Make sure Sentry is always initialized on app boot. */
 export default (() => {
     const polyfill = browser;
 
-    Object.entries(HIDDEN_GLOBALS)
-        .filter(([, value]) => value)
-        .forEach(
-            ([key, value]) =>
-                ((globalThis as any)[key] = new Proxy(value, {
-                    get(target, prop, receiver) {
-                        if (process.env.NODE_ENV !== 'development') {
-                            return logger.error(`[Extension::Error] extension API is protected`);
-                        }
+    setTimeout(
+        () =>
+            Object.entries(HIDDEN_GLOBALS)
+                .filter(([, value]) => value)
+                .forEach(
+                    ([key, value]) =>
+                        ((globalThis as any)[key] = new Proxy(value, {
+                            get(target, prop, receiver) {
+                                if (process.env.NODE_ENV !== 'development') {
+                                    return logger.error(`[Extension::Error] extension API is protected`);
+                                }
 
-                        return Reflect.get(target, prop, receiver);
-                    },
-                    set() {
-                        logger.error(`[Extension::Error] extension API is read-only`);
-                        return false;
-                    },
-                }))
-        );
+                                return Reflect.get(target, prop, receiver);
+                            },
+                            set() {
+                                logger.error(`[Extension::Error] extension API is read-only`);
+                                return false;
+                            },
+                        }))
+                ),
+        0
+    );
 
     return polyfill;
 })();
