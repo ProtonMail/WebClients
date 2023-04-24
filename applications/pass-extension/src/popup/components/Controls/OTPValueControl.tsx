@@ -1,4 +1,4 @@
-import { type VFC, useEffect, useRef } from 'react';
+import { type VFC } from 'react';
 
 import { c } from 'ttag';
 
@@ -29,9 +29,6 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * everytime the OTP countdown updates */
 export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId, totpUri }) => {
     const [otp, percent] = usePeriodicOtpCode({ shareId, itemId, totpUri });
-    const timer = useRef<NodeJS.Timeout>();
-
-    useEffect(() => () => clearTimeout(timer.current), []);
 
     return (
         <ClickToCopyValue value={otp?.token ?? ''}>
