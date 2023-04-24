@@ -1,26 +1,34 @@
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import { selectCanLockSession } from '@proton/pass/store';
-import { type Maybe, OnboardingMessage, type OnboardingState, WorkerMessageType } from '@proton/pass/types';
+import {
+    type Maybe,
+    MaybeNull,
+    type OnboardingAcknowledgment,
+    OnboardingMessage,
+    type OnboardingState,
+    WorkerMessageType,
+} from '@proton/pass/types';
 import { withPayloadLens } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
 import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
+import identity from '@proton/utils/identity';
 
 import { INITIAL_ONBOARDING_STATE } from '../../shared/constants';
 import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
-import { WorkerContextInterface } from '../context/types';
+import { withContext } from '../context/helpers';
 import store from '../store';
 
 type OnboardingContext = { state: OnboardingState };
-type OnboardingRule = {
-    message: OnboardingMessage;
-    when: (ctx: WorkerContextInterface, state: OnboardingState) => boolean;
-};
+type OnboardingWhen = (previousAck: Maybe<OnboardingAcknowledgment>, state: OnboardingState) => boolean;
+type OnboardingOnAck = (ack: OnboardingAcknowledgment) => OnboardingAcknowledgment;
+type OnboardingRule = { message: OnboardingMessage; when?: OnboardingWhen; onAcknowledge?: OnboardingOnAck };
 
-const createOnboardingRule = (message: OnboardingMessage, when?: OnboardingRule['when']): OnboardingRule => ({
-    message,
-    when: (ctx, state) => when?.(ctx, state) ?? !state.acknowledged.some((data) => data.message === message),
+const createOnboardingRule = (options: OnboardingRule): OnboardingRule => ({
+    message: options.message,
+    onAcknowledge: options.onAcknowledge,
+    when: (previousAck, state) =>
+        options.when?.(previousAck, state) ?? !state.acknowledged.some((data) => data.message === options.message),
 });
 
 /* Define the onboarding rules here :
@@ -28,15 +36,35 @@ const createOnboardingRule = (message: OnboardingMessage, when?: OnboardingRule[
  * - define an optional predicate for when to show the message
  * - order is important: we will apply the first matched rule */
 const ONBOARDING_RULES: OnboardingRule[] = [
-    createOnboardingRule(OnboardingMessage.UPDATE_AVAILABLE, (ctx) => ctx.service.activation.shouldUpdate()),
-    createOnboardingRule(OnboardingMessage.WELCOME, () => false),
-    createOnboardingRule(OnboardingMessage.SECURE_EXTENSION, (_ctx, { installedOn, acknowledged }) => {
-        const now = getEpoch();
-        const ack = acknowledged.some(({ message }) => message === OnboardingMessage.SECURE_EXTENSION);
+    createOnboardingRule({
+        message: OnboardingMessage.UPDATE_AVAILABLE,
+        onAcknowledge: withContext<OnboardingOnAck>((ctx, ack) => {
+            /* keep a reference to the current available update so as
+             * not to re-prompt the user with this update if ignored */
+            return merge(ack, {
+                extraData: {
+                    version: ctx.service.activation.getAvailableUpdate(),
+                },
+            });
+        }),
+        when: withContext<OnboardingWhen>((ctx, previous) => {
+            const availableVersion = ctx.service.activation.getAvailableUpdate();
+            const previousAckVersion = previous?.extraData?.version as MaybeNull<string>;
+            const shouldPrompt = !previous || previousAckVersion !== availableVersion;
 
-        /* only prompt if user has no lock */
-        if (ack || selectCanLockSession(store.getState())) return false;
-        return now - installedOn > UNIX_DAY;
+            return availableVersion !== null && shouldPrompt;
+        }),
+    }),
+    createOnboardingRule({ message: OnboardingMessage.WELCOME, when: () => false }),
+    createOnboardingRule({
+        message: OnboardingMessage.SECURE_EXTENSION,
+        when: (previous, { installedOn }) => {
+            const now = getEpoch();
+            const hasLock = selectCanLockSession(store.getState());
+            const shouldPrompt = !previous || now - installedOn > UNIX_DAY;
+
+            return !hasLock && shouldPrompt;
+        },
     }),
 ];
 
@@ -62,11 +90,12 @@ export const createOnboardingService = () => {
     const acknowledge = (message: OnboardingMessage) => {
         logger.info(`[Worker::Onboarding] Acknowledging "${OnboardingMessage[message]}"`);
         const acknowledged = ctx.state.acknowledged.find((data) => data.message === message);
+        const onAcknowledge = ONBOARDING_RULES.find((rule) => rule.message === message)?.onAcknowledge ?? identity;
 
         setState({
             acknowledged: [
                 ...ctx.state.acknowledged.filter((data) => data.message !== message),
-                { message, acknowledgedOn: getEpoch(), count: (acknowledged?.count ?? 0) + 1 },
+                onAcknowledge({ message, acknowledgedOn: getEpoch(), count: (acknowledged?.count ?? 0) + 1 }),
             ],
         });
 
@@ -76,16 +105,18 @@ export const createOnboardingService = () => {
     /* Define extra rules in the `ONBOARDING_RULES` constant :
      * we will resolve the first message that matches the rule's
      * `when` condition */
-    const getMessage = withContext<() => Maybe<OnboardingMessage>>(
-        (workerCtx) => ONBOARDING_RULES.find(({ when }) => when(workerCtx, ctx.state))?.message
-    );
+    const getMessage = () =>
+        ONBOARDING_RULES.find(({ message, when }) =>
+            when?.(
+                ctx.state.acknowledged.find((ack) => message === ack.message),
+                ctx.state
+            )
+        )?.message;
 
     /* hydrate the onboarding state value from the storage
      * on service creation. This will noop on first install */
     void browserLocalStorage.getItem('onboarding').then((data) => data && setState(JSON.parse(data)));
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, () => ({ message: getMessage() }));
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_ACK, withPayloadLens('message', acknowledge));
 
     return { reset, onInstall, onUpdate };
