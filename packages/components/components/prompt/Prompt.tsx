@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode, cloneElement, useContext } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { ModalContentProps, ModalContext, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '../modalTwo';
 
 import './Prompt.scss';
@@ -14,13 +15,24 @@ const PromptTitle = ({ children }: { children: ReactNode }) => (
 export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'title'> {
     title: string | JSX.Element;
     subline?: string;
+    footnote?: string;
     buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element];
     actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | undefined;
     children: ReactNode;
     ModalContentProps?: ModalContentProps;
 }
 
-const Prompt = ({ title, subline, buttons, actions, className, children, ModalContentProps, ...rest }: PromptProps) => {
+const Prompt = ({
+    title,
+    subline,
+    footnote,
+    buttons,
+    actions,
+    className,
+    children,
+    ModalContentProps,
+    ...rest
+}: PromptProps) => {
     const buttonArray = Array.isArray(buttons) ? buttons : [buttons];
 
     const [firstButton, secondButton, thirdButton] = buttonArray.map((child) =>
@@ -45,7 +57,7 @@ const Prompt = ({ title, subline, buttons, actions, className, children, ModalCo
     })();
 
     return (
-        <ModalTwo size="small" {...rest} className={classnames([className, 'prompt'])}>
+        <ModalTwo size="small" {...rest} className={clsx([className, 'prompt'])}>
             <div className="prompt-header">
                 <PromptTitle>{title}</PromptTitle>
                 {subline && <div className="color-weak text-break">{subline}</div>}
@@ -53,9 +65,12 @@ const Prompt = ({ title, subline, buttons, actions, className, children, ModalCo
             <ModalTwoContent {...ModalContentProps}>{children}</ModalTwoContent>
             <div className="prompt-actions">{actionsContent}</div>
             <ModalTwoFooter className="prompt-footer">
-                {firstButton}
-                {secondButton}
-                {thirdButton}
+                <div className={clsx('flex flex-gap-0-5', footnote && 'pb-2')}>
+                    {firstButton}
+                    {secondButton}
+                    {thirdButton}
+                </div>
+                {footnote && <p className="color-weak text-break text-center text-sm">{footnote}</p>}
             </ModalTwoFooter>
         </ModalTwo>
     );
