@@ -8,7 +8,7 @@ export interface PlanCardFeatureDefinition {
     included: boolean;
     status?: 'available' | 'coming-soon';
     tooltip?: string;
-    fire?: boolean;
+    highlight?: boolean;
     icon?: IconName;
 }
 

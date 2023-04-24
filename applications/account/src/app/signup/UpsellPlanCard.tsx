@@ -30,7 +30,7 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
             {!isNarrow ? (
                 <>
                     <div>
-                        <PlanCardFeatureList features={plan.features} icon={icon} fire={false} />
+                        <PlanCardFeatureList features={plan.features} icon={icon} />
                     </div>
                     <div className="pt1 mtauto pb1">{footerWrapper}</div>
                 </>
@@ -38,7 +38,7 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
                 <div className="flex flex-column flex-nowrap">
                     {isExpanded ? (
                         <>
-                            <PlanCardFeatureList features={plan.features} icon={icon} fire={false} />
+                            <PlanCardFeatureList features={plan.features} icon={icon} />
                             <div className="pt1">{footerWrapper}</div>
                         </>
                     ) : (
