@@ -146,12 +146,17 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         void handleShowContactGroupEditModal(props);
     };
 
+    const handleContactLimitReached = (props: ContactGroupLimitReachedProps) => {
+        return handleShowContactGroupLimitReachedModal(props);
+    };
+
     const handleEdit = (props: ContactEditProps) => {
         void handleShowContactEditModal({
             ...props,
             onUpgrade: handleUpgrade,
             onSelectImage: handleSelectImage,
             onGroupEdit: handleGroupEdit,
+            onLimitReached: handleContactLimitReached,
         });
     };
 
@@ -198,10 +203,6 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
 
     const handleSelectEmails = (props: SelectEmailsProps) => {
         return handleShowContactSelectEmailsModal(props);
-    };
-
-    const handleContactLimitReached = (props: ContactGroupLimitReachedProps) => {
-        return handleShowContactGroupLimitReachedModal(props);
     };
 
     const modals = (
