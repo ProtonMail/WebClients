@@ -16,12 +16,11 @@ import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
-import * as config from '../../../app/config';
 import locales from '../../../app/locales';
 import { INITIAL_WORKER_STATE } from '../../constants';
 import { ExtensionContext, type ExtensionContextType } from '../../extension';
@@ -83,18 +82,6 @@ export const ExtensionContextProvider: FC<{
     messageFactory: MessageWithSenderFactory;
     onWorkerMessage?: (message: WorkerMessageWithSender) => void;
 }> = ({ endpoint: origin, messageFactory, onWorkerMessage, children }) => {
-    useEffect(() => {
-        sentry({
-            config,
-            sentryConfig: {
-                host: new URL(config.API_URL).host,
-                release: config.APP_VERSION,
-                environment: `browser-pass::${origin}`,
-            },
-            ignore: () => false,
-        });
-    }, []);
-
     const dispatch = useDispatch();
     const { tabId } = ExtensionContext.get();
 
