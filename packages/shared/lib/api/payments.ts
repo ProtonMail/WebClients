@@ -119,14 +119,7 @@ export const createBitcoinPayment = (Amount: number, Currency: Currency) => ({
 });
 
 export const createBitcoinDonation = (Amount: number, Currency: Currency) => ({
-    url: 'payments/bitcoin/donate', // perhaps, needs to be migrated too
-    method: 'post',
-    data: { Amount, Currency },
-});
-
-// can be removed, unused
-export const createPayPalPayment = (Amount: number, Currency: Currency) => ({
-    url: 'payments/paypal',
+    url: 'payments/bitcoin/donate', // blocked by PAY-963
     method: 'post',
     data: { Amount, Currency },
 });
@@ -151,13 +144,6 @@ export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
     url: 'payments/v4/methods/order',
     method: 'put',
     data: { PaymentMethodIDs },
-});
-
-// can be removed, unused
-export const donate = (data: any) => ({
-    url: 'payments/donate',
-    method: 'post',
-    data,
 });
 
 export interface GiftCodeData {
@@ -193,13 +179,6 @@ export const createToken = (data: CreateTokenData) => ({
 export const getTokenStatus = (paymentToken: string) => ({
     url: `payments/v4/tokens/${paymentToken}`,
     method: 'get',
-});
-
-// can be removed, unused
-export const verifyPayment = ({ Amount, Credit, Currency, Payment, GiftCode }: any) => ({
-    url: 'payments/verify',
-    method: 'post',
-    data: { Amount, Credit, Currency, Payment, GiftCode },
 });
 
 export const getLastCancelledSubscription = () => ({
