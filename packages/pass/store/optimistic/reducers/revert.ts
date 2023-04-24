@@ -1,7 +1,6 @@
 import type { Reducer } from 'redux';
 
 import { arrayRemove } from '@proton/pass/utils/array';
-import { logger } from '@proton/pass/utils/logger';
 
 import type { OptimisticState, WithOptimisticHistory } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
@@ -17,10 +16,7 @@ export const revertReducer = <T>(
     const { history, checkpoint } = optimistic;
     const optimisticActionIndex = history.findIndex(isOptimisticHistoryItemWithId(optimisticId));
 
-    if (optimisticActionIndex === -1) {
-        logger.warn(`Revert failure : No initiated optimistic action could be found for id ${optimisticId}.`);
-        return [inner, optimistic] as const;
-    }
+    if (optimisticActionIndex === -1) return [inner, optimistic] as const;
 
     if (optimisticActionIndex !== 0) {
         const nextHistory = arrayRemove(history, optimisticActionIndex);
