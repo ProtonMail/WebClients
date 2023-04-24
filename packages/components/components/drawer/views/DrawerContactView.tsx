@@ -59,6 +59,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
         onGroupDelete,
         onUpgrade,
         onSelectEmails,
+        onLimitReached,
     } = useContactModals({ onMailTo });
 
     const handleDetails = (contactID: string) => {
@@ -92,6 +93,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                         onGroupEdit={onGroupEdit}
                         onUpgrade={onUpgrade}
                         onSelectEmails={onSelectEmails}
+                        onLimitReached={onLimitReached}
                         isDrawer
                         searchInputRef={searchInputRef}
                     />
