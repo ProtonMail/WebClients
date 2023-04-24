@@ -49,7 +49,7 @@ const InviteShareLink = () => {
                         </span>
                     </Button>
                     <TwitterButton
-                        url={encodeURI(
+                        href={encodeURI(
                             'https://twitter.com/intent/tweet?text=' +
                                 c('Info')
                                     .t`I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${referrerLink}`
