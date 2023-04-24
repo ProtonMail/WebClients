@@ -459,6 +459,34 @@ export const PromptWithOnlyOneButton = () => {
     );
 };
 
+export const PromptWithFootnote = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="text-center">
+            <Button onClick={() => setOpen(true)}>Open Prompt with footnote</Button>
+            <Prompt
+                title="Title"
+                subline="Subline"
+                open={open}
+                onClose={() => setOpen(false)}
+                buttons={[
+                    <Button color="danger">Continue</Button>,
+                    <Button onClick={() => setOpen(false)}>Cancel</Button>,
+                ]}
+                actions={[<Checkbox>Accept me</Checkbox>]}
+                footnote="This is a footnote"
+            >
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
+                    obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
+                    blanditiis quos?
+                </p>
+            </Prompt>
+        </div>
+    );
+};
+
 export const Basic = () => {
     const [open, setOpen] = useState(false);
 
