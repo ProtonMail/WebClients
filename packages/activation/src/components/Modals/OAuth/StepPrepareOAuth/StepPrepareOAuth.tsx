@@ -14,8 +14,8 @@ import useStepPrepare from './hooks/useStepPrepareOAuth';
 
 const StepPrepare = () => {
     const {
-        mailChecked,
-        setMailChecked,
+        emailChecked,
+        setEmailChecked,
         contactChecked,
         setContactChecked,
         calendarChecked,
@@ -45,12 +45,12 @@ const StepPrepare = () => {
                         <StepProductsRowItem
                             id="mail"
                             label={emailTitle}
-                            value={mailChecked}
-                            setValue={setMailChecked}
+                            value={emailChecked}
+                            setValue={setEmailChecked}
                             error={importerData?.emails?.error}
                             disabled={!isEmailsEnabled}
                         >
-                            {isEmailsEnabled && <StepPrepareEmailsSummary isSelected={mailChecked} />}
+                            {isEmailsEnabled && <StepPrepareEmailsSummary isSelected={emailChecked} />}
                         </StepProductsRowItem>
                     )}
 
