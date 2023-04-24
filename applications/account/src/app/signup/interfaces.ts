@@ -2,7 +2,7 @@ import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { Payment } from '@proton/components/containers/payments/interface';
+import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/containers/payments/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
 import { ProductParam } from '@proton/shared/lib/apps/product';
@@ -53,7 +53,7 @@ export interface SubscriptionData {
     skipUpsell: boolean;
     planIDs: PlanIDs;
     checkResult: SubscriptionCheckResponse;
-    payment?: Payment;
+    payment?: CardPayment | TokenPayment | PaypalPayment;
 }
 
 export interface ReferralData {
