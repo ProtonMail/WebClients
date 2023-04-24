@@ -13,6 +13,36 @@
 	}
 
 	&-text {
-		color: var(--promotion-color-text);
+		color: var(--promotion-text-weak);
+	}
+
+	// all links/buttons should behave the same
+	&-weak,
+	.link,
+	a {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--promotion-text-color);
+			font-weight: var(--font-weight-semibold);
+		}
+	}
+
+	.button-underline-norm {
+		&,
+		&:hover,
+		&:focus,
+		&:focus-within {
+			--button-default-text-color: var(--promotion-text-color);
+			--button-hover-text-color: var(--promotion-text-color);
+
+			font-weight: var(--font-weight-semibold);
+		}
+	}
+
+	// close button
+	.button-ghost-weak {
+		--button-hover-background-color: var(--optional-promotion-interaction-hover);
 	}
 }
