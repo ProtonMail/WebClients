@@ -9,7 +9,6 @@ import SignupInviteContainer from 'proton-account/src/app/signup/SignupInviteCon
 import {
     ExperimentsProvider,
     FeaturesProvider,
-    LoaderPage,
     ProtonLoginCallback,
     StandardPublicApp,
     UnAuthenticated,
@@ -20,6 +19,7 @@ import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { setLiteRedirect } from '@proton/shared/lib/subscription/redirect';
 
+import AccountLoaderPage from './AccountLoaderPage';
 import LoginContainer from './containers/LoginContainer';
 
 interface Props {
@@ -32,7 +32,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
 
-    const loader = <LoaderPage />;
+    const loader = <AccountLoaderPage />;
 
     return (
         <StandardPublicApp loader={loader} locales={locales}>
