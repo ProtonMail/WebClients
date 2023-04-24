@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
+import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import diff from '@proton/utils/diff';
@@ -55,6 +56,8 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
         contactEmails: contactGroupID ? existingContactEmails : selectedContactEmails,
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
+
+    const canAddMoreContacts = model.contactEmails.length < CONTACT_GROUP_MAX_MEMBERS;
 
     const contactsAutocompleteItems = useMemo(() => {
         return [...getContactsAutocompleteItems(contactEmails, ({ ID }) => !contactEmailIDs.includes(ID))];
@@ -154,7 +157,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                         <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
                     </Field>
                 </Row>
-                {contactsAutocompleteItems.length ? (
+                {contactsAutocompleteItems.length && canAddMoreContacts ? (
                     <div className="flex flex-nowrap mb-4 on-mobile-flex-column">
                         <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
                         <Field className="flex-item-fluid">
