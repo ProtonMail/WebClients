@@ -1,4 +1,4 @@
-import { Payment, TokenPayment } from '@proton/components/containers/payments/interface';
+import { TokenPayment } from '@proton/components/containers/payments/interface';
 import { APPS, CLIENT_TYPES, CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
@@ -200,7 +200,7 @@ describe('signupActions', () => {
         it('should not use payment token for human verification if it does not exist: Username', () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
-            const payment: Payment = {} as any;
+            const payment = {} as any;
 
             const subscriptionData: SubscriptionData = {
                 currency: 'EUR',

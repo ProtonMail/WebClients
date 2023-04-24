@@ -1,7 +1,5 @@
 import { Location } from 'history';
 
-import { PaymentParameters } from '@proton/components/containers/payments/interface';
-import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APP_NAMES, PLAN_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -9,31 +7,6 @@ import { Api, Currency, Cycle, Plan, SubscriptionCheckResponse } from '@proton/s
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { PlanIDs } from './interfaces';
-
-export const getCardPayment = async ({
-    api,
-    createModal,
-    currency,
-    checkResult,
-    paymentParameters,
-}: {
-    createModal: (modal: JSX.Element) => void;
-    api: Api;
-    currency: Currency;
-    paymentParameters: PaymentParameters;
-    checkResult: SubscriptionCheckResponse;
-}) => {
-    return handlePaymentToken({
-        params: {
-            ...paymentParameters,
-            Amount: checkResult.AmountDue,
-            Currency: currency,
-        },
-        api,
-        createModal,
-        mode: '',
-    });
-};
 
 export const getSubscriptionPrices = async (
     api: Api,

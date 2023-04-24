@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
-import { CardModel, CardPayment, PaymentParameters } from './interface';
+import { CardModel, WrappedCardPayment } from './interface';
 import usePayment from './usePayment';
 
 jest.mock('./usePayPal', () =>
@@ -18,7 +18,7 @@ describe('usePayment', () => {
             usePayment({
                 amount: 1000,
                 currency: 'EUR',
-                onPay: () => {},
+                onPaypalPay: () => {},
             })
         );
 
@@ -30,7 +30,7 @@ describe('usePayment', () => {
             usePayment({
                 amount: 0,
                 currency: 'EUR',
-                onPay: () => {},
+                onPaypalPay: () => {},
             })
         );
 
@@ -42,7 +42,7 @@ describe('usePayment', () => {
             usePayment({
                 amount: 1000,
                 currency: 'EUR',
-                onPay: () => {},
+                onPaypalPay: () => {},
             })
         );
 
@@ -57,7 +57,7 @@ describe('usePayment', () => {
                     amount: 1000,
                     defaultMethod,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                 })
             );
 
@@ -71,7 +71,7 @@ describe('usePayment', () => {
                 amount: 1000,
                 defaultMethod: PAYMENT_METHOD_TYPES.PAYPAL,
                 currency: 'EUR',
-                onPay: () => {},
+                onPaypalPay: () => {},
             })
         );
 
@@ -79,16 +79,16 @@ describe('usePayment', () => {
     });
 
     describe('payment parameters', () => {
-        it('should return empty object if there is no method', () => {
+        it('should return null if there is no method', () => {
             const { result } = renderHook(() =>
                 usePayment({
                     amount: 1000,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                 })
             );
 
-            expect(result.current.parameters).toEqual({});
+            expect(result.current.parameters).toEqual(null);
         });
 
         it('should return PaymentMethodID if user selected an existing method', () => {
@@ -96,7 +96,7 @@ describe('usePayment', () => {
                 usePayment({
                     amount: 1000,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                 })
             );
 
@@ -112,12 +112,12 @@ describe('usePayment', () => {
                 usePayment({
                     amount: 1000,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                     defaultMethod: PAYMENT_METHOD_TYPES.CARD,
                 })
             );
 
-            const expectedPaymentParameters: PaymentParameters<CardPayment> = {
+            const expectedPaymentParameters: WrappedCardPayment = {
                 Payment: {
                     Type: PAYMENT_METHOD_TYPES.CARD,
                     Details: {
@@ -136,18 +136,18 @@ describe('usePayment', () => {
         });
 
         it.each([PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN])(
-            'should return empty paymentMethods for %s',
+            'should return null paymentMethods for %s',
             (defaultMethod) => {
                 const { result } = renderHook(() =>
                     usePayment({
                         amount: 1000,
                         currency: 'EUR',
-                        onPay: () => {},
+                        onPaypalPay: () => {},
                         defaultMethod,
                     })
                 );
 
-                expect(result.current.parameters).toEqual({});
+                expect(result.current.parameters).toEqual(null);
             }
         );
     });
@@ -158,7 +158,7 @@ describe('usePayment', () => {
                 usePayment({
                     amount: 0,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                 })
             );
 
@@ -170,7 +170,7 @@ describe('usePayment', () => {
                 usePayment({
                     amount: 1000,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                     defaultMethod: PAYMENT_METHOD_TYPES.CARD,
                 })
             );
@@ -187,7 +187,7 @@ describe('usePayment', () => {
                 usePayment({
                     amount: 1000,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                     defaultMethod,
                 })
             );
@@ -200,7 +200,7 @@ describe('usePayment', () => {
                 usePayment({
                     amount: 1000,
                     currency: 'EUR',
-                    onPay: () => {},
+                    onPaypalPay: () => {},
                     defaultMethod: PAYMENT_METHOD_TYPES.CARD,
                 })
             );

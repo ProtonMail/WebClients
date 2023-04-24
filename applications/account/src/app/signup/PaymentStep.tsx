@@ -15,7 +15,14 @@ import {
     usePayment,
 } from '@proton/components';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
+import {
+    AmountAndCurrency,
+    CardPayment,
+    PaypalPayment,
+    TokenPayment,
+    TokenPaymentMethod,
+} from '@proton/components/containers/payments/interface';
+import { createPaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
@@ -31,7 +38,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import { getCardPayment, getSignupApplication } from './helper';
+import { getSignupApplication } from './helper';
 import { PlanIDs, SubscriptionData } from './interfaces';
 
 interface Props {
@@ -39,7 +46,7 @@ interface Props {
     plans: Plan[];
     api: Api;
     onBack?: () => void;
-    onPay: (payment: Payment | undefined) => Promise<void>;
+    onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
@@ -85,7 +92,7 @@ const PaymentStep = ({
         defaultMethod: paymentMethods[0],
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
-        onPay({ Payment }: PaymentParameters) {
+        onPaypalPay({ Payment }: TokenPaymentMethod) {
             return onPay(Payment);
         },
     });
@@ -187,20 +194,24 @@ const PaymentStep = ({
                         onSubmit={async (event) => {
                             event.preventDefault();
                             const handle = async () => {
-                                if (!handleCardSubmit()) {
+                                if (!handleCardSubmit() || !paymentParameters) {
                                     return;
                                 }
-                                if (method === PAYMENT_METHOD_TYPES.CARD) {
-                                    const { Payment } = await getCardPayment({
-                                        currency: subscriptionData.currency,
-                                        createModal,
+
+                                const amountAndCurrency: AmountAndCurrency = {
+                                    Currency: subscriptionData.currency,
+                                    Amount: subscriptionData.checkResult.AmountDue,
+                                };
+                                const data = await createPaymentToken(
+                                    {
+                                        params: paymentParameters,
                                         api,
-                                        paymentParameters,
-                                        checkResult: subscriptionData.checkResult,
-                                    });
-                                    return onPay(Payment);
-                                }
-                                throw new Error('Unknown form submit');
+                                        createModal,
+                                    },
+                                    amountAndCurrency
+                                );
+
+                                return onPay(data.Payment);
                             };
                             withLoading(handle()).catch(noop);
                         }}

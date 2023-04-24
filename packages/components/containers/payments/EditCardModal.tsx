@@ -13,7 +13,7 @@ import { useApi, useEventManager, useLoading, useModals, useNotifications } from
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 import { CardModel } from './interface';
-import { handlePaymentToken } from './paymentTokenHelper';
+import { createPaymentToken } from './paymentTokenHelper';
 import toDetails from './toDetails';
 import useCard from './useCard';
 
@@ -39,8 +39,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     } = useRenewToggle({ initialRenewState: renewState });
 
     const handleSubmit = async () => {
-        const { Payment } = await handlePaymentToken({
-            // @ts-expect-error TODO: Fix these types
+        const { Payment } = await createPaymentToken({
             params: {
                 Payment: {
                     Type: PAYMENT_METHOD_TYPES.CARD,

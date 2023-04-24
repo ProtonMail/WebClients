@@ -7,7 +7,7 @@ import useApi from './useApi';
 import useCache from './useCache';
 import useCachedModelResult from './useCachedModelResult';
 
-const KEY = 'plans';
+export const KEY = 'plans';
 
 const getPlans = (api: Api, Currency?: string) =>
     api<{ Plans: Plan[] }>(queryPlans({ Currency })).then(({ Plans }) => Plans);

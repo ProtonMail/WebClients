@@ -1,36 +1,31 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import {
+    mockOrganizationApi,
+    mockPlansCache,
+    mockSubscriptionCache,
+    mockUserCache,
+    mockUserVPNServersCountApi,
+} from '@proton/components/hooks/helpers/test';
+import { createToken, subscribe } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { Audience, PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import {
-    Audience,
-    PlansMap,
-    SubscriptionCheckResponse,
-    SubscriptionModel,
-    UserModel,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+    apiMock,
+    applyHOCs,
+    withApi,
+    withAuthentication,
+    withCache,
+    withConfig,
+    withDeprecatedModals,
+    withEventManager,
+    withFeatures,
+    withNotifications,
+} from '@proton/testing/index';
 
-import { FeatureCode } from '../../../containers';
-import {
-    useApi,
-    useEventManager,
-    useFeature,
-    useGetCalendars,
-    useModals,
-    useNotifications,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '../../../hooks';
-import Payment from '../Payment';
-import { handlePaymentToken } from '../paymentTokenHelper';
-import PlanCustomization from './PlanCustomization';
 import SubscriptionModal, { Model, Props, useProration } from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
-import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 
 describe('useProration', () => {
     let model: Model;
@@ -209,32 +204,33 @@ describe('useProration', () => {
     });
 });
 
-jest.mock('../../../hooks/useApi');
-jest.mock('../../../hooks/useUser');
-jest.mock('../../../hooks/useFeature');
-jest.mock('../../../hooks/useSubscription');
-jest.mock('../../../hooks/useEventManager');
-jest.mock('../../../hooks/useModals');
-jest.mock('../../../hooks/useNotifications');
-jest.mock('../../../hooks/usePlans');
-jest.mock('../../../hooks/useVPNServersCount');
-jest.mock('../../../hooks/useOrganization');
-jest.mock('../../../hooks/useCalendars', () => ({
-    __esModule: true,
-    useGetCalendars: jest.fn(),
-}));
+jest.mock('@proton/components/components/portal/Portal');
+jest.mock('../../paymentMethods/useMethods');
 
-jest.mock('./PlanCustomization');
-jest.mock('../Payment');
-jest.mock('./modal-components/SubscriptionCheckout');
-jest.mock('../../../components/portal/Portal', () => ({ children }: any) => <>{children}</>);
-
-jest.mock('../paymentTokenHelper');
+const ContextSubscriptionModal = applyHOCs(
+    withConfig(),
+    withNotifications(),
+    withEventManager(),
+    withApi(),
+    withCache(),
+    withDeprecatedModals(),
+    withFeatures(),
+    withAuthentication()
+)(SubscriptionModal);
 
 describe('SubscriptionModal', () => {
     let props: Props;
-    let freeUser: UserModel;
-    let api: jest.Mock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+
+        mockUserCache();
+        mockPlansCache();
+        mockSubscriptionCache();
+
+        mockUserVPNServersCountApi();
+        mockOrganizationApi();
+    });
 
     beforeEach(() => {
         props = {
@@ -247,99 +243,25 @@ describe('SubscriptionModal', () => {
             open: true,
             onClose: jest.fn(),
         };
-
-        api = jest.fn();
-        (useApi as jest.Mock).mockReturnValue(api);
-
-        freeUser = {
-            ID: 'yUts9NJMnyh5lEXZG8STllXpIz7y3TyVRR-Uhc1-Ei7rAjYR_UZBxeqcrLg62E3gLdn0VfyEl8-gjwibUtLsbQ==',
-            Name: 'proton721',
-            Currency: 'CHF',
-            Credit: 0,
-            Type: 1,
-            CreateTime: 1675091808,
-            MaxSpace: 524288000,
-            MaxUpload: 26214400,
-            UsedSpace: 248329,
-            Subscribed: 0,
-            Services: 1,
-            MnemonicStatus: 1,
-            Role: 0,
-            Private: 1,
-            Delinquent: 0,
-            Keys: [],
-            ToMigrate: 0,
-            Email: 'proton721@proton.black',
-            DisplayName: 'proton721',
-            isAdmin: false,
-            isPaid: false,
-            isFree: true,
-            isMember: false,
-            isPrivate: true,
-            isSubUser: false,
-            isDelinquent: false,
-            hasNonDelinquentScope: true,
-            hasPaidMail: false,
-            hasPaidVpn: false,
-            canPay: true,
-            DriveEarlyAccess: 0,
-            Idle: 0,
-        };
-        (useUser as jest.Mock).mockReturnValue([freeUser]);
-
-        (useFeature as jest.Mock).mockReturnValue({
-            feature: { [FeatureCode.CalendarSharingEnabled]: { Value: true } },
-        });
-
-        let noSubscription: any = {}; // otherwise it should be SubscriptionModel
-        (useSubscription as jest.Mock).mockReturnValue([noSubscription]);
-
-        let call = jest.fn();
-        (useEventManager as jest.Mock).mockReturnValue({ call });
-
-        let createModal = jest.fn();
-        (useModals as jest.Mock).mockReturnValue({ createModal });
-
-        let createNotification = jest.fn();
-        (useNotifications as jest.Mock).mockReturnValue({ createNotification });
-
-        (usePlans as jest.Mock).mockReturnValue([]);
-
-        let vpnServers: VPNServersCountData = {
-            free: { countries: 3, servers: 150 },
-            paid: { countries: 190, servers: 1900 },
-        };
-        (useVPNServersCount as jest.Mock).mockReturnValue([vpnServers]);
-
-        let noOrganization: any = {}; // otherwise it is Organization
-        (useOrganization as jest.Mock).mockReturnValue([noOrganization]);
-
-        let getCalendars = jest.fn();
-        (useGetCalendars as jest.Mock).mockReturnValue(getCalendars);
     });
 
-    it('should render', async () => {
-        let { container } = render(<SubscriptionModal {...props} />);
+    it('should render', () => {
+        const { container } = render(<ContextSubscriptionModal {...props} />);
         expect(container).not.toBeEmptyDOMElement();
     });
 
     it('should redirect user without supported addons directly to checkout step', async () => {
         props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
 
-        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
-
-        // That's for initial rednering of CUSTOMIZATION step
-        (PlanCustomization as jest.Mock).mockReturnValue(null);
-
-        // These components consitute the checkout logic
-        (Payment as jest.Mock).mockReturnValue(<>Payment component</>);
-
-        let { container } = render(<SubscriptionModal {...props} />);
+        const { container } = render(<ContextSubscriptionModal {...props} />);
         await waitFor(() => {
-            expect(SubscriptionCheckout).toHaveBeenCalled();
-            expect(Payment).toHaveBeenCalled();
-            expect(container).toHaveTextContent('Payment component');
             expect(container).toHaveTextContent('Review subscription and pay');
+
+            // that's text from one of the branches of <Payment> component
+            // depending on the specific test setup, you might need to change this text in the test.
+            // The key idea is to ensure that the Payment component was rendered, and no matter what's exactly inside.
+            // I could mock the Payment component, but I wanted to test the whole flow.
+            expect(container).toHaveTextContent('The minimum payment we accept is');
         });
     });
 
@@ -349,15 +271,9 @@ describe('SubscriptionModal', () => {
             [PLANS.MAIL_PRO]: 1,
         };
 
-        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
-
-        (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
-
-        let { container } = render(<SubscriptionModal {...props} />);
+        const { container } = render(<ContextSubscriptionModal {...props} />);
 
         await waitFor(() => {
-            expect(PlanCustomization).toHaveBeenCalled();
-            expect(container).toHaveTextContent('Plan customization component');
             expect(container).toHaveTextContent('Customize your plan');
         });
     });
@@ -366,50 +282,48 @@ describe('SubscriptionModal', () => {
         props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
         props.planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER]: 329 }; // user with 330 users in the organization
 
-        // this component is rendered during the customization step
-        (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
+        const { findByTestId, container } = render(<ContextSubscriptionModal {...props} />);
+        const continueButton = await findByTestId('continue-to-review');
 
-        // rendering the button from the submit property of <SubscriptionCheckout>
-        (SubscriptionCheckout as jest.Mock).mockImplementation(({ submit }) => submit);
-
-        // this component is rendered during the checkout step
-        (Payment as jest.Mock).mockReturnValue(<>Payment component</>);
-
-        let { findByTestId, container } = render(<SubscriptionModal {...props} />);
-        let continueButton = await findByTestId('continue-to-review');
-
-        api.mockReset();
-        api.mockRejectedValue(new Error());
+        apiMock.mockClear();
+        apiMock.mockRejectedValueOnce(new Error());
 
         await waitFor(() => {
             fireEvent.click(continueButton);
         });
 
-        expect(api).toHaveBeenCalledTimes(1);
+        expect(apiMock).toHaveBeenCalledTimes(1);
 
-        expect(container).toHaveTextContent('Plan customization component');
+        expect(container).toHaveTextContent('Customize your plan');
     });
 
-    it('should NOT handle checkout when user presses Enter during customization', async () => {
-        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
-        (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
-        (handlePaymentToken as jest.Mock).mockRejectedValue(new Error('Error from the test mock: handlePaymentToken'));
+    it('should not create payment token if the amount is 0', async () => {
+        props.step = SUBSCRIPTION_STEPS.CHECKOUT;
+        props.planIDs = { mail2022: 1 };
 
-        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
-        props.planIDs = {
-            [PLANS.MAIL_PRO]: 1,
-        };
-        let { container } = render(<SubscriptionModal {...props} />);
+        const { container } = render(<ContextSubscriptionModal {...props} />);
 
+        let form: HTMLFormElement | null = null;
         await waitFor(() => {
-            expect(PlanCustomization).toHaveBeenCalled();
-            expect(container).toHaveTextContent('Plan customization component');
-            expect(container).toHaveTextContent('Customize your plan');
+            form = container.querySelector('form');
+            expect(form).not.toBeEmptyDOMElement();
         });
 
-        let formElement: Element = container.getElementsByTagName('form').item(0) as Element;
-        fireEvent.submit(formElement);
+        if (!form) {
+            throw new Error('Form not found');
+        }
 
-        expect(handlePaymentToken).not.toHaveBeenCalled();
+        fireEvent.submit(form);
+
+        const createTokenUrl = createToken({} as any).url;
+        const subscribeUrl = subscribe({} as any, '').url;
+
+        await waitFor(() => {
+            expect(apiMock.mock.calls.find((it) => it[0].url === createTokenUrl)).toBeFalsy();
+
+            const subscribeCall = apiMock.mock.calls.find((it) => it[0].url === subscribeUrl);
+            expect(subscribeCall).toBeTruthy();
+            expect(subscribeCall[0].data.Amount).toEqual(0);
+        });
     });
 });
