@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
-import { parseOTPValue } from '@proton/pass/utils/otp';
+import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 

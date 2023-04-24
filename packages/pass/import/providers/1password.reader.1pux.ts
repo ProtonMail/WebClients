@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { parseOTPValue } from '@proton/pass/utils/otp';
+import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
