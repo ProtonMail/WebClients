@@ -45,7 +45,7 @@ const UsernameSection = ({ app }: Props) => {
             <SettingsSection>
                 {user.Type === UserType.EXTERNAL && primaryAddress && APP_NAME === APPS.PROTONACCOUNT && (
                     <Card className="mb2" rounded bordered={false}>
-                        <div className="mb0-5">
+                        <div className="mb-2">
                             {c('Info')
                                 .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}
                             <Href href={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
@@ -80,7 +80,7 @@ const UsernameSection = ({ app }: Props) => {
                                 </div>
                             ) : (
                                 <div className="flex flex-nowrap">
-                                    <div className="text-ellipsis user-select mr0-5">{primaryAddress.DisplayName}</div>
+                                    <div className="text-ellipsis user-select mr-2">{primaryAddress.DisplayName}</div>
                                     <InlineLinkButton
                                         onClick={() => {
                                             setTmpAddress(primaryAddress);

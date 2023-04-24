@@ -128,14 +128,14 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                         <Label htmlFor="encrypt-toggle">
                             {c('Label').t`Encrypt emails`}
                             <Info
-                                className="ml0-5"
+                                className="ml-2"
                                 title={c('Tooltip')
                                     .t`Email encryption forces email signature to help authenticate your sent messages`}
                             />
                         </Label>
                         <Field className="pt0-5 flex flex-align-items-center">
                             <Toggle
-                                className="mr0-5"
+                                className="mr-2"
                                 id="encrypt-toggle"
                                 checked={model.encrypt}
                                 disabled={!hasPinnedKeys && !hasApiKeys}
@@ -155,7 +155,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                         <Label htmlFor="sign-select">
                             {c('Label').t`Sign emails`}
                             <Info
-                                className="ml0-5"
+                                className="ml-2"
                                 title={c('Tooltip')
                                     .t`Digitally signing emails helps authenticating that messages are sent by you`}
                             />
@@ -174,7 +174,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                         <Label>
                             {c('Label').t`PGP scheme`}
                             <Info
-                                className="ml0-5"
+                                className="ml-2"
                                 title={c('Tooltip')
                                     .t`Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages`}
                             />
@@ -193,12 +193,12 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 <Label>
                     {c('Label').t`Public keys`}
                     <Info
-                        className="ml0-5"
+                        className="ml-2"
                         title={c('Tooltip')
                             .t`Upload a public key to enable sending end-to-end encrypted emails to this email`}
                     />
                 </Label>
-                <Field className="on-mobile-mt0-5">
+                <Field className="mt-2 md:mt-0">
                     {model.isPGPExternalWithoutWKDKeys && <SelectKeyFiles onUpload={handleUploadKeys} multiple />}
                 </Field>
             </Row>

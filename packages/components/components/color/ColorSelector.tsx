@@ -23,7 +23,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false, 
         <ul
             aria-label={c('Label').t`Colors`}
             className={clsx([
-                'color-selector-container unstyled m0',
+                'color-selector-container unstyled m-0',
                 inline && 'color-selector-container-inline',
                 className,
             ])}

@@ -69,7 +69,7 @@ const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
                         value={percentageValue}
                         className="flex-item-fluid progress-bar--success"
                     />
-                    <span id="progressLabel" className="ml0-5">{`${percentageValue}%`}</span>
+                    <span id="progressLabel" className="ml-2">{`${percentageValue}%`}</span>
                 </span>
             ) : (
                 <Badge type="primary">{c('Import status').t`In progress`}</Badge>

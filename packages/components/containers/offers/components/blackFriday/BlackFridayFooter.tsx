@@ -33,7 +33,7 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
 
                 return (
                     <p key={key} className="text-sm text-center color-weak">
-                        <sup className="mr0-5">{star}</sup>
+                        <sup className="mr-2">{star}</sup>
                         {description}
                     </p>
                 );

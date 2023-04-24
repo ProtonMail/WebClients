@@ -29,7 +29,7 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
         : c('Action').t`Make this participant optional`;
 
     return (
-        <div key={email} className={clsx(['address-item flex mb0-25 pl0-5'])}>
+        <div key={email} className={clsx(['address-item flex mb-1 pl0-5'])}>
             <div className="flex flex-item-fluid p0-5" title={nameEmail}>
                 <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w100'])}>{nameEmail}</div>
                 {isOptional ? <span className="color-weak w100">{c('Label').t`Optional`}</span> : null}

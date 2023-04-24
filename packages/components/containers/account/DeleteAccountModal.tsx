@@ -181,7 +181,7 @@ const DeleteAccountModal = (props: Props) => {
                             .t`If you wish to combine this account with another one, do NOT delete it.`}</div>
                     </Alert>
                     <InputFieldTwo
-                        rootClassName="mb0-5"
+                        rootClassName="mb-2"
                         as={SelectTwo}
                         label={c('Label').t`What is the main reason you are deleting your account?`}
                         placeholder={c('Placeholder').t`Select a reason`}
@@ -198,7 +198,7 @@ const DeleteAccountModal = (props: Props) => {
                     <InputFieldTwo
                         id="feedback"
                         as={TextAreaTwo}
-                        rootClassName="mt0-5"
+                        rootClassName="mt-2"
                         rows={3}
                         label={c('Label')
                             .t`We are sorry to see you go. Please explain why you are leaving to help us improve.`}
@@ -211,7 +211,7 @@ const DeleteAccountModal = (props: Props) => {
 
                     <InputFieldTwo
                         id="email"
-                        rootClassName="mt0-5"
+                        rootClassName="mt-2"
                         label={c('Label').t`Email address`}
                         placeholder={c('Placeholder').t`Email address`}
                         assistiveText={c('Info').t`Please provide an email address in case we need to contact you.`}

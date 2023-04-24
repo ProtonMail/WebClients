@@ -164,7 +164,7 @@ const KeyUploadContent = ({
                                                 {fingerprint}
                                             </code>
                                             <Button
-                                                className="ml0-5"
+                                                className="ml-2"
                                                 icon
                                                 color="weak"
                                                 shape="outline"
@@ -190,7 +190,7 @@ const KeyUploadContent = ({
 
     return (
         <div className="flex flex-wrap on-mobile-flex-column flex-align-items-center">
-            <div className="mr1 on-mobile-mr0 flex-item-fluid min-w14e">
+            <div className="mr-0 md:mr-4 flex-item-fluid min-w14e">
                 <InputFieldTwo
                     id={id}
                     label={label}
@@ -200,7 +200,7 @@ const KeyUploadContent = ({
                     readOnly
                 />
             </div>
-            <div className="mt0-25">
+            <div className="mt-1">
                 <SelectFiles>{c('Select files').t`Browse`}</SelectFiles>
             </div>
         </div>

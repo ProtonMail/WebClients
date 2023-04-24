@@ -42,7 +42,7 @@ const SPFSection = () => {
                                 <Copy
                                     size="small"
                                     onCopy={handleCopy}
-                                    className="flex-item-noshrink mr0-5"
+                                    className="flex-item-noshrink mr-2"
                                     value={valueToCopy}
                                 />{' '}
                                 <code className="text-ellipsis lh-rg" title={valueToCopy}>

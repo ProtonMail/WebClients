@@ -165,7 +165,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
                 {childStep}
                 {hasDots ? (
                     <div className="text-center">
-                        <StepDots value={step} ulClassName="mb0">
+                        <StepDots value={step} ulClassName="mb-0">
                             {range(0, steps.length).map((index) => (
                                 <StepDot
                                     key={index}

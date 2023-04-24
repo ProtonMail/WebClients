@@ -155,7 +155,7 @@ const LogsSection = () => {
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label className="text-semibold" htmlFor="advanced-logs-toggle">
-                            <span className="mr0-5">{c('Log preference').t`Enable advanced logs`}</span>
+                            <span className="mr-2">{c('Log preference').t`Enable advanced logs`}</span>
                             <Info
                                 title={c('Tooltip')
                                     .t`Enabling advanced logs records the IP address for each event in the security log.`}
@@ -174,7 +174,7 @@ const LogsSection = () => {
 
             <div className="flex flex-justify-space-between flex-align-items-start mt2 mb1">
                 {logAuth !== DISABLE && (
-                    <div className="mb0-5">
+                    <div className="mb-2">
                         <Button
                             shape="outline"
                             className="mr1 inline-flex flex-align-items-center"
@@ -182,7 +182,7 @@ const LogsSection = () => {
                             onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                             title={c('Action').t`Reload`}
                         >
-                            <Icon name="arrow-rotate-right" className="mr0-5" />
+                            <Icon name="arrow-rotate-right" className="mr-2" />
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
 
@@ -198,7 +198,7 @@ const LogsSection = () => {
                     </div>
                 )}
 
-                <div className="mb0-5">
+                <div className="mb-2">
                     <Pagination
                         onNext={onNext}
                         onPrevious={onPrevious}

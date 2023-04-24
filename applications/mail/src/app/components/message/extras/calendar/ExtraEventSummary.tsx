@@ -24,7 +24,7 @@ export const getSummaryContent = (hasBeenUpdatedText?: string, summaryText?: str
     return (
         <div
             data-testid="ics-widget-summary"
-            className="mt0-5 mb0-5 rounded border bg-weak p0-5 flex flex-column text-break"
+            className="my-2 rounded border bg-weak p0-5 flex flex-column text-break"
         >
             {content}
         </div>

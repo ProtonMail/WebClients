@@ -48,7 +48,7 @@ const AddressesGroupModalRow = ({ contact, uid, isChecked, messageSendInfo, onCh
     const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL && !loading;
 
     return (
-        <li className="mb0-5">
+        <li className="mb-2">
             <Checkbox id={id} checked={isChecked(contact)} onChange={onChange} />
             <span className="min-w1-4e inline-flex align-middle">
                 {(icon || loading) && <EncryptionStatusIcon loading={loading} {...icon} />}

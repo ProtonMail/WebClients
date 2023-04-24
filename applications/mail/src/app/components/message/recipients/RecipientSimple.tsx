@@ -22,7 +22,7 @@ const RecipientSimple = ({ isLoading, recipientsOrGroup, isOutside, onContactDet
                     {recipientsOrGroup.length
                         ? recipientsOrGroup.map((recipientOrGroup, index) => {
                               return (
-                                  <span className="mr0-5 flex" key={index}>
+                                  <span className="mr-2 flex" key={index}>
                                       <RecipientItem
                                           recipientOrGroup={recipientOrGroup}
                                           isLoading={isLoading}
@@ -38,7 +38,7 @@ const RecipientSimple = ({ isLoading, recipientsOrGroup, isOutside, onContactDet
                                           }`}
                                       />
                                       {index < recipientsOrGroup.length - 1 && (
-                                          <span className="message-recipient-item-separator mr0-2">,</span>
+                                          <span className="message-recipient-item-separator mr-0.5">,</span>
                                       )}
                                   </span>
                               );

@@ -112,7 +112,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
                 onClick={() => {
                     onNoReceive();
                 }}
-                className="mt0-5"
+                className="mt-2"
             >{c('Action').t`Resend code`}</Button>
         </>
     );

@@ -40,10 +40,10 @@ const ExtraDarkStyle = ({ message }: Props) => {
             <Button
                 onClick={handleClick}
                 data-testid="message-view:remove-dark-style"
-                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr-0 md:mr-2 mb-3 px0-5"
             >
-                <Icon name="circle-half-filled" className="flex-item-noshrink ml0-2" />
-                <span className="ml0-5">{c('Action').t`Revert to original display`}</span>
+                <Icon name="circle-half-filled" className="flex-item-noshrink ml-1" />
+                <span className="ml-2">{c('Action').t`Revert to original display`}</span>
             </Button>
         </Tooltip>
     );

@@ -132,9 +132,9 @@ function StepForm() {
                     </Row>
                     {apiErrorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR && (
                         <>
-                            <p className="text-bold mb0-75">{c('Warning').t`Skip verification?`}</p>
+                            <p className="text-bold mb-3">{c('Warning').t`Skip verification?`}</p>
                             {/* translator: users with self hosted certificate can skip server validation if we're not able to verify the certificate ourselves */}
-                            <p className="my0-5">{c('Warning')
+                            <p className="my-2">{c('Warning')
                                 .t`We couldn't verify the mail server. If you trust it, you can skip this verification.`}</p>
                         </>
                     )}

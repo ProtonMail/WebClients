@@ -89,7 +89,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const clearDataButton =
         dbExists || esEnabled ? (
             <>
-                <hr className="mt0-5 mb0-5" />
+                <hr className="my-2" />
                 <Tooltip
                     title={c('Info')
                         .t`Clears browser data related to message content search including downloaded messages`}
@@ -112,13 +112,13 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 title={labelName}
                 settingsButton={
                     <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
-                        <hr className="mt0-5 mb0-5" />
+                        <hr className="my-2" />
                         <DropdownMenuButton
                             onClick={() => setMailShortcutsModalOpen(true)}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                         >
                             <span className="flex-item-fluid text-left">{c('Action').t`Keyboard shortcuts`}</span>
-                            <span className="color-primary ml0-5">
+                            <span className="color-primary ml-2">
                                 {Shortcuts
                                     ? c('Keyboard Shortcuts Enabled').t`On`
                                     : c('Keyboard Shortcuts Disabled').t`Off`}
@@ -129,7 +129,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                         >
                             <span className="flex-item-fluid text-left">{c('Action').t`Mailbox layout`}</span>
-                            <span className="color-primary ml0-5">
+                            <span className="color-primary ml-2">
                                 {ViewLayout === VIEW_LAYOUT.COLUMN
                                     ? c('Layout mode').t`Column`
                                     : c('Layout mode').t`Row`}
@@ -140,7 +140,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                         >
                             <span className="flex-item-fluid text-left">{c('Action').t`Mailbox density`}</span>
-                            <span className="color-primary flex-item-noshrink ml0-5">
+                            <span className="color-primary flex-item-noshrink ml-2">
                                 {Density === DENSITY.COMFORTABLE
                                     ? c('Density mode').t`Comfortable`
                                     : c('Density mode').t`Compact`}
@@ -151,7 +151,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                         >
                             <span className="flex-item-fluid text-left">{c('Action').t`Composer size`}</span>
-                            <span className="color-primary ml0-5">
+                            <span className="color-primary ml-2">
                                 {ComposerMode === COMPOSER_MODE.MAXIMIZED
                                     ? c('Composer size').t`Maximized`
                                     : c('Composer size').t`Normal`}

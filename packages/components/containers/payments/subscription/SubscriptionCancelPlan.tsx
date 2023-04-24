@@ -15,7 +15,7 @@ interface Props {
 const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Props) => {
     return (
         <div className="pt1 pb1 pr1 on-mobile-pr0 flex-item-fluid">
-            <h3 className="text-bold text-capitalize mb0-5" id={`desc_${name}`}>
+            <h3 className="text-bold text-capitalize mb-2" id={`desc_${name}`}>
                 {name}
             </h3>
             <p className="text-lg subscription-cancel-plan-info">{info}</p>
@@ -27,8 +27,8 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
                                 ? feature.text
                                 : `${feature.tooltip}-${feature.icon}-${feature.included}-${feature.status}`;
                         return (
-                            <li key={key} className="flex flex-nowrap mb0-5">
-                                <span className={clsx('flex-item-noshrink mr1', downgrade && 'color-weak')}>
+                            <li key={key} className="flex flex-nowrap mb-2">
+                                <span className={clsx('flex-item-noshrink mr-4', downgrade && 'color-weak')}>
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
                                 <span className="flex-item-fluid">

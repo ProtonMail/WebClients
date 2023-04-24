@@ -314,7 +314,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
         <ModalTwo as={Form} onSubmit={onSubmit} size="medium" {...rest}>
             <ModalTwoHeader title={c('Title').t`Recover data`} />
             <ModalTwoContent>
-                <p className="mt0">{c('Info')
+                <p className="mt-0">{c('Info')
                     .t`To decrypt and view your locked data after a password reset, select a recovery method.`}</p>
                 {loading ? (
                     <Loader />

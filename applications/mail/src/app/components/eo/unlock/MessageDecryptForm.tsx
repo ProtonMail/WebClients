@@ -19,8 +19,8 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
 
     return (
         <form onSubmit={(e) => e.preventDefault()}>
-            <h1 className="eo-layout-title mb0 on-mobile-mt0-5">{c('Info').t`Unlock message`}</h1>
-            <div className="mt0-25 color-weak mb2">{MAIL_APP_NAME}</div>
+            <h1 className="eo-layout-title mb-0 mt-2 md:mt-0">{c('Info').t`Unlock message`}</h1>
+            <div className="mt-1 color-weak mb2">{MAIL_APP_NAME}</div>
             <InputFieldTwo
                 autoFocus
                 id="password"
@@ -34,7 +34,7 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
                     }
                 }}
                 as={PasswordInputTwo}
-                rootClassName="mt0-5"
+                rootClassName="mt-2"
                 data-testid="unlock:input"
             />
             <Button

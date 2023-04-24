@@ -122,7 +122,7 @@ const ForgotUsernameForm = ({
                 color="norm"
                 shape="ghost"
                 fullWidth
-                className="mt0-5"
+                className="mt-2"
                 onClick={() => history.push(SSO_PATHS.LOGIN)}
             >{c('Action').t`Return to sign in`}</Button>
         </form>

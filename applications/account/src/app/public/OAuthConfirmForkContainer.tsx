@@ -1,14 +1,19 @@
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+
 
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
 import Text from './Text';
+
 
 interface Props {
     name: string;
@@ -36,7 +41,7 @@ const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) 
                 </Text>
                 {image && <img src={`data:image/svg+xml;base64,${image}`} alt="" className="w100 mb1-5" />}
                 <Button
-                    className="mb0-5"
+                    className="mb-2"
                     color="norm"
                     fullWidth
                     size="large"

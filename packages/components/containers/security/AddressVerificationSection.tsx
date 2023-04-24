@@ -36,7 +36,7 @@ const AddressVerificationSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="trustToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Prompt to trust keys`}</span>
+                        <span className="mr-2">{c('Label').t`Prompt to trust keys`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/address-verification')}
                             title={c('Tooltip prompt to trust keys')

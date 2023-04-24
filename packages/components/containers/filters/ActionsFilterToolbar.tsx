@@ -13,10 +13,10 @@ function ActionsFilterToolbar() {
     return (
         <>
             <div className="mb1">
-                <Button color="norm" onClick={() => setFilterModalOpen(true)} className="on-mobile-mb0-5 mr1">
+                <Button color="norm" onClick={() => setFilterModalOpen(true)} className="mb-2 md:mb-0 mr-4">
                     {c('Action').t`Add filter`}
                 </Button>
-                <Button shape="outline" onClick={() => setAdvancedFilterModalOpen(true)} className="on-mobile-mb0-5">
+                <Button shape="outline" onClick={() => setAdvancedFilterModalOpen(true)} className="mb-2 md:mb-0">
                     {c('Action').t`Add sieve filter`}
                 </Button>
             </div>

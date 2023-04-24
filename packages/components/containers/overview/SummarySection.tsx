@@ -50,34 +50,34 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     return (
         <div className="border bg-norm shadow-norm p2">
             <div className="mb2 text-center">
-                <span className="user-initials rounded text-semibold p0-25 mb0-5 inline-flex bg-primary">
+                <span className="user-initials rounded text-semibold p0-25 mb-2 inline-flex bg-primary">
                     <span className="dropdown-logout-text mauto">{initials}</span>
                 </span>
-                <h3 className="mb0-5 lh-rg text-ellipsis" title={DisplayName || Name}>
+                <h3 className="mb-2 lh-rg text-ellipsis" title={DisplayName || Name}>
                     {DisplayName || Name}
                 </h3>
                 {organization?.Name ? (
-                    <p className="mt0 mb0-5 text-ellipsis" title={organization.Name}>
+                    <p className="mt-0 mb-2 text-ellipsis" title={organization.Name}>
                         {organization.Name}
                     </p>
                 ) : null}
-                <p className="mt0 mb0 text-ellipsis" title={Email}>
+                <p className="my-0 text-ellipsis" title={Email}>
                     {Email}
                 </p>
             </div>
             {canPay ? (
                 <div className="mb1">
-                    <strong className="block mb0-5">{c('Title').t`Plans`}</strong>
+                    <strong className="block mb-2">{c('Title').t`Plans`}</strong>
                     {!subscription ? (
                         <Loader />
                     ) : (
-                        <ul className="unstyled mt0 mb0">
+                        <ul className="unstyled my-0">
                             <li className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="brand-proton-vpn" className="mr0-5 flex-item-noshrink" />
+                                <Icon name="brand-proton-vpn" className="mr-2 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(vpnPlan, VPN_APP_NAME)}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="brand-proton-mail" className="mr0-5 flex-item-noshrink" />
+                                <Icon name="brand-proton-mail" className="mr-2 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(mailPlan, MAIL_APP_NAME)}</span>
                             </li>
                         </ul>
@@ -86,10 +86,10 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {languageText ? (
                 <div className="mb1">
-                    <strong className="block mb0-5">{c('Title').t`Default language`}</strong>
-                    <ul className="unstyled mt0 mb0">
+                    <strong className="block mb-2">{c('Title').t`Default language`}</strong>
+                    <ul className="unstyled my-0">
                         <li className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="globe" className="mr0-5 flex-item-noshrink" />
+                            <Icon name="globe" className="mr-2 flex-item-noshrink" />
                             <span className="flex-item-fluid">{languageText}</span>
                         </li>
                     </ul>
@@ -97,11 +97,11 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {isAdmin ? (
                 <div className="mb1">
-                    <strong className="block mb0-5">{c('Title').t`Your organization`}</strong>
+                    <strong className="block mb-2">{c('Title').t`Your organization`}</strong>
                     {!organization ? (
                         <Loader />
                     ) : (
-                        <ul className="unstyled mt0 mb0">
+                        <ul className="unstyled my-0">
                             <li>
                                 {c('Organization attribute').ngettext(
                                     msgid`${UsedMembers}/${MaxMembers} active user`,
@@ -122,16 +122,16 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? (
                 <div className="mb1">
-                    <strong className="block mb0-5">{c('Title').t`Application settings`}</strong>
-                    <ul className="unstyled mt0 mb0">
+                    <strong className="block mb-2">{c('Title').t`Application settings`}</strong>
+                    <ul className="unstyled my-0">
                         <li className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="brand-proton-mail" className="mr0-5 flex-item-noshrink" />
+                            <Icon name="brand-proton-mail" className="mr-2 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONMAIL}>
                                 {c('Link').t`${MAIL_APP_NAME} settings`}
                             </SettingsLink>
                         </li>
                         <li className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="brand-proton-calendar" className="mr0-5 flex-item-noshrink" />
+                            <Icon name="brand-proton-calendar" className="mr-2 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONCALENDAR}>
                                 {c('Link').t`${CALENDAR_APP_NAME} settings`}
                             </SettingsLink>

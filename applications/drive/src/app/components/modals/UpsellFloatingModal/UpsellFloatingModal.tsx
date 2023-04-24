@@ -34,12 +34,12 @@ const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) =>
                 </Tooltip>
                 <img className="block" src={bigLogoWhite} alt={DRIVE_APP_NAME} />
             </div>
-            <div className="m1 ml1-5 mr1-5">
-                <span className="upsell-floating-modal-badge text-semibold rounded pt0-25 pb0-25 pl1 pr1 mt0-5">{c(
+            <div className="my-4 mx-5">
+                <span className="upsell-floating-modal-badge text-semibold rounded pt0-25 pb0-25 pl1 pr1 mt-2">{c(
                     'Info'
                 ).t`Free forever`}</span>
-                <h4 className="text-bold mt0-75">{c('Info').t`Swiss encrypted file storage`}</h4>
-                <p className="m0 mt0-25">
+                <h4 className="text-bold mt-3">{c('Info').t`Swiss encrypted file storage`}</h4>
+                <p className="m-0 mt-1">
                     {c('Info')
                         .t`With ${DRIVE_APP_NAME}, your data is protected with end-to-end encryption. Only you can decrypt it.`}
                 </p>

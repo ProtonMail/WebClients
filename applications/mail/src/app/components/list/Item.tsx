@@ -172,8 +172,8 @@ const Item = ({
                     displaySenderImage={!!firstRecipient?.DisplaySenderImage}
                     checked={checked}
                     onChange={handleCheck}
-                    compactClassName="mr0-75 stop-propagation"
-                    normalClassName={clsx(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
+                    compactClassName="mr-3 stop-propagation"
+                    normalClassName={clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])}
                 />
                 <ItemLayout
                     isCompactView={isCompactView}

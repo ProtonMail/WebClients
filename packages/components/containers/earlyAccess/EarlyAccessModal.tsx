@@ -40,18 +40,18 @@ const EarlyAccessModal = ({ onClose, ...rest }: ModalProps) => {
                         .t`Beta Access lets you use the beta version of ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME} before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.`}
                 </p>
                 <p>{c('Beta access description').t`If you encounter issues, you can always disable Beta Access.`}</p>
-                <div className="mb0-5 flex flex-align-items-center">
+                <div className="mb-2 flex flex-align-items-center">
                     <label className="flex flex-nowrap" htmlFor="enable-early-access-checkbox">
                         <Checkbox
                             id="enable-early-access-checkbox"
                             checked={earlyAccessEnabled}
                             onChange={handleChange}
-                            className="mr0-5"
+                            className="mr-2"
                         />
                         {c('Label').t`Enable Beta Access`}
                     </label>
                 </div>
-                <p className="mb0-5 color-weak">
+                <p className="mb-2 color-weak">
                     {c('Refresh on apply warning').t`Note: the service will reload after you click the Apply button.`}
                 </p>
             </ModalTwoContent>

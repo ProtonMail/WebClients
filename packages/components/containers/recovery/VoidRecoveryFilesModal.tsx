@@ -38,7 +38,7 @@ const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Pro
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
-            <p className="m0">
+            <p className="m-0">
                 {trustedDeviceRecovery
                     ? c('Info')
                           .t`You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.`

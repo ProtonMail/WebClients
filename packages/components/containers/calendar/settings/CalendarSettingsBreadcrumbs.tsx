@@ -57,7 +57,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
                         {calendars.map(({ ID, Name, Color }) => (
                             <Option key={ID} value={ID} title={Name}>
                                 <div className="flex flex-nowrap flex-align-items-center">
-                                    <CalendarSelectIcon color={Color} className="flex-item-noshrink mr0-75" />
+                                    <CalendarSelectIcon color={Color} className="flex-item-noshrink mr-3" />
                                     <div className="text-ellipsis">{Name}</div>
                                 </div>
                             </Option>

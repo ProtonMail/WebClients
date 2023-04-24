@@ -273,11 +273,11 @@ const SubscriptionPanel = ({
     return (
         <div className="border rounded px2 py1-5 subscription-panel-container" data-testid="current-plan">
             <div className="flex flex-wrap flex-align-items-center flex-justify-space-between pt0-5">
-                <h3 className="m0" data-testid="plan-name">
+                <h3 className="m-0" data-testid="plan-name">
                     <strong>{planTitle}</strong>
                 </h3>
                 <Price
-                    className="h3 m0 color-weak"
+                    className="h3 m-0 color-weak"
                     currency={currency}
                     suffix={subscription && amount ? c('Suffix').t`/month` : ''}
                     dataTestId="plan-price"
@@ -299,7 +299,7 @@ const SubscriptionPanel = ({
                 user.isPaid && user.canPay ? (
                     <Button
                         onClick={handleEditPayment}
-                        className="mb0-5"
+                        className="mb-2"
                         size="large"
                         color="weak"
                         fullWidth
@@ -310,7 +310,7 @@ const SubscriptionPanel = ({
             {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
                 <Button
                     onClick={handleCustomizeSubscription}
-                    className="mb0-5"
+                    className="mb-2"
                     size="large"
                     color="weak"
                     shape="outline"

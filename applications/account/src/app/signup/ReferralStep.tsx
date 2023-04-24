@@ -49,14 +49,14 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
                     color="norm"
                     shape="solid"
                     size="large"
-                    className="mb0-5"
+                    className="mb-2"
                     onClick={() => {
                         setType('trial');
                         void withLoading(onPlan({ [PLANS.MAIL]: 1 }));
                     }}
                     fullWidth
                 >{c('Action in trial plan').t`Try free for 30 days`}</Button>
-                <p className="text-center mt0 mb0-5">
+                <p className="text-center mt-0 mb-2">
                     <small className="color-weak">{c('Info').t`No credit card required`}</small>
                 </p>
                 <Button

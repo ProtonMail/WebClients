@@ -92,7 +92,7 @@ export const Tabs = ({
                 <nav className={classnames(['tabs-container border-bottom border-weak', containerClassName])}>
                     <ul
                         className={classnames([
-                            'tabs-list unstyled flex relative m0 p0',
+                            'tabs-list unstyled flex relative m-0 p0',
                             fullWidth && 'tabs-list--fullWidth',
                             'flex-align-items-end',
                         ])}

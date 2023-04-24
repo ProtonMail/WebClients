@@ -18,7 +18,7 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                 hideText && 'wizard-container--no-text-displayed',
             ])}
         >
-            <ul className="wizard mt0 unstyled flex flex-nowrap flex-justify-space-between">
+            <ul className="wizard mt-0 unstyled flex flex-nowrap flex-justify-space-between">
                 {steps.map((text = '', index) => {
                     return (
                         <li
@@ -37,7 +37,7 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                 })}
             </ul>
             {hideText === false && (
-                <ul className="unstyled flex flex-nowrap m0">
+                <ul className="unstyled flex flex-nowrap m-0">
                     {steps.map((text = '', index) => {
                         return (
                             <li

@@ -103,7 +103,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
 
     return (
         <SettingsSectionWide className="container-section-sticky-section">
-            <div className="h2 mb0-25 text-bold">{c('Default calendar event settings section title')
+            <div className="h2 mb-1 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
             {showDuration && (
                 <SettingsLayout className="mt2">
@@ -159,7 +159,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                             setHasTouchedPartDayNotifications(true);
                         }}
                     />
-                    <div className="mt0-25">
+                    <div className="mt-1">
                         <Button
                             color="norm"
                             onClick={() => handleSaveNotifications(false)}
@@ -196,7 +196,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                             setHasTouchedFullDayNotifications(true);
                         }}
                     />
-                    <div className="mt0-25">
+                    <div className="mt-1">
                         <Button
                             color="norm"
                             onClick={() => handleSaveNotifications(true)}

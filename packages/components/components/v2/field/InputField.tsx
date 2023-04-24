@@ -1,25 +1,20 @@
-import {
-    ElementType,
-    ForwardedRef,
-    ReactElement,
-    ReactNode,
-    Ref,
-    forwardRef,
-    useContext,
-    useRef,
-    useState,
-} from 'react';
+import { ElementType, ForwardedRef, ReactElement, ReactNode, Ref, forwardRef, useContext, useRef, useState } from 'react';
 import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
+
+
 
 import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
 
+
+
 import { FormContext } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
+
 
 export type NodeOrBoolean = ReactNode | boolean;
 
@@ -109,13 +104,13 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
 
     const errorElement = error && typeof error !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
+            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
             <span data-testid={dataTestId ? `error-${dataTestId}` : undefined}>{error}</span>
         </>
     );
     const warningElement = warning && typeof warning !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
+            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
             <span data-testid={dataTestId ? `warning-${dataTestId}` : undefined}>{warning}</span>
         </>
     );

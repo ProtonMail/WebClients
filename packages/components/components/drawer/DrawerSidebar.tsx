@@ -64,14 +64,14 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
         >
             <Spotlight
                 content={
-                    <div className="flex flex-nowrap mt0-5 mb0-5">
+                    <div className="flex flex-nowrap my-2">
                         <div className="flex-item-noshrink mr1">
                             <img src={drawerImg} className="w4e" alt="" />
                         </div>
                         <div>
-                            <div className="text-lg text-bold mb0-25">{c('Side panel spotlight')
+                            <div className="text-lg text-bold mb-1">{c('Side panel spotlight')
                                 .t`Try the new side panel`}</div>
-                            <p className="m0">
+                            <p className="m-0">
                                 {c('Side panel spotlight')
                                     .t`Manage your contacts and view your calendar without leaving your app.`}
                             </p>
@@ -83,7 +83,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
                 originalPlacement="left"
                 anchorRef={spotlightRef}
             >
-                <span ref={spotlightRef} className="flex flex-column flex-align-items-center flex-gap-2 mt0-5">
+                <span ref={spotlightRef} className="flex flex-column flex-align-items-center flex-gap-2 mt-2">
                     {clonedButtons}
                 </span>
             </Spotlight>

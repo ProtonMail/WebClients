@@ -31,9 +31,9 @@ const ExtraReadReceipt = ({ message }: Props) => {
 
     if (receiptSent) {
         return (
-            <span className="mr0-5 mb0-85 color-success flex on-mobile-w100 flex-align-items-center on-mobile-flex-justify-center flex-items-align-center">
+            <span className="mr-2 mb-3 color-success flex on-mobile-w100 flex-align-items-center on-mobile-flex-justify-center flex-items-align-center">
                 <Icon name="checkmark" className="flex-item-noshrink myauto" />
-                <span className="ml0-5">{c('Action').t`Read receipt sent`}</span>
+                <span className="ml-2">{c('Action').t`Read receipt sent`}</span>
             </span>
         );
     }
@@ -44,10 +44,10 @@ const ExtraReadReceipt = ({ message }: Props) => {
                 onClick={() => withLoading(handleClick())}
                 disabled={loading}
                 data-testid="message-view:send-receipt"
-                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr-0 md:mr-2 mb-3 px0-5"
             >
-                <Icon name="bell" className="flex-item-noshrink ml0-2" />
-                <span className="ml0-5">{c('Action').t`Send read receipt`}</span>
+                <Icon name="bell" className="flex-item-noshrink ml-1" />
+                <span className="ml-2">{c('Action').t`Send read receipt`}</span>
             </Button>
         </Tooltip>
     );

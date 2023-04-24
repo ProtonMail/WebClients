@@ -55,20 +55,20 @@ const AccountRecoverySection = () => {
         <SettingsSection>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recovery-email-input">
+                    <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">
                         {c('Label').t`Recovery email address`}
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="flex-item-fluid">
                     <RecoveryEmail
-                        className="mb0 on-mobile-mb1"
+                        className="mb-4 md:mb-0"
                         email={userSettings.Email}
                         hasReset={!!userSettings.Email.Reset}
                         hasNotify={!!userSettings.Email.Notify}
                     />
                     <div className="flex flex-align-items-center">
                         <Toggle
-                            className="mr0-5"
+                            className="mr-2"
                             loading={loadingEmailReset}
                             checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
                             id="passwordEmailResetToggle"
@@ -83,24 +83,24 @@ const AccountRecoverySection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            <hr className="mb2 mt2" />
+            <hr className="my-8" />
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="phoneInput">
+                    <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="phoneInput">
                         {c('label').t`Recovery phone number`}
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="flex-item-fluid">
                     <RecoveryPhone
-                        className="mb0 on-mobile-mb1"
+                        className="mb-4 md:mb-0"
                         defaultCountry={defaultCountry}
                         phone={userSettings.Phone}
                         hasReset={!!userSettings.Phone.Reset}
                     />
                     <div className="flex flex-align-items-center">
                         <Toggle
-                            className="mr0-5"
+                            className="mr-2"
                             loading={loadingPhoneReset}
                             checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
                             id="passwordPhoneResetToggle"

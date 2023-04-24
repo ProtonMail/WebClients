@@ -88,19 +88,19 @@ const ContactEditProperty = (
         <div className="flex flex-nowrap flex-item-noshrink" data-contact-property-id={vCardProperty.uid}>
             {sortable ? (
                 <OrderableHandle key="icon">
-                    <div className="cursor-row-resize mr0-5 flex flex-item-noshrink mb1">
-                        <Icon name="text-align-justify" className="mt0-75 " />
+                    <div className="cursor-row-resize mr-2 flex flex-item-noshrink mb-4">
+                        <Icon name="text-align-justify" className="mt-3 " />
                     </div>
                 </OrderableHandle>
             ) : (
-                <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
+                <div className="mr-2 flex flex-align-items-center flex-item-noshrink">
                     <Icon name="text-align-justify" className="visibility-hidden" />
                 </div>
             )}
             <div className="contact-modal-field relative flex flex-nowrap on-mobile-flex-column w100 flex-align-items-start">
                 <span
                     className={classnames([
-                        'contact-modal-select flex flex-nowrap mb1 flex-align-items-start on-mobile-mb0-5 on-mobile-flex-align-self-start',
+                        'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start on-mobile-flex-align-self-start',
                         mainItem && 'text-semibold',
                         labelWidthClassName || 'w30',
                     ])}
@@ -114,7 +114,7 @@ const ContactEditProperty = (
                 </span>
 
                 <div className="flex flex-nowrap flex-align-items-startoupas flex-item-fluid flex-item-noshrink">
-                    <span className="flex-item-fluid mb1">
+                    <span className="flex-item-fluid mb-4">
                         <ContactFieldProperty
                             ref={ref}
                             vCardProperty={vCardProperty}
@@ -124,7 +124,7 @@ const ContactEditProperty = (
                         />
                     </span>
                     {actionRow && (
-                        <span className="mb1 flex ml0-5">
+                        <span className="mb-4 ml-2 flex">
                             {list.length > 0 && (
                                 <div
                                     className={classnames([
@@ -142,7 +142,7 @@ const ContactEditProperty = (
                                             icon
                                             color="weak"
                                             shape="outline"
-                                            className="mr0-5"
+                                            className="mr-2"
                                             contactEmails={[contactEmail as unknown as ContactEmail]}
                                             onDelayedSave={handleUpdateContactGroups}
                                             tooltip={c('Title').t`Contact group`}

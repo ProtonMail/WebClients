@@ -118,9 +118,9 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
         >
             <ModalTwoHeader title={c('Action').t`Submit report`} />
             <ModalTwoContent>
-                <p className="mt0">{INFO_TEXT}</p>
+                <p className="mt-0">{INFO_TEXT}</p>
                 <FileCard linkInfo={linkInfo} className="mb1" />
-                <div className="mb0-5">
+                <div className="mb-2">
                     <InputFieldTwo
                         aria-required
                         as={SelectTwo}
@@ -138,7 +138,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
                         ))}
                     </InputFieldTwo>
                 </div>
-                <div className="mb0-5">
+                <div className="mb-2">
                     <InputFieldTwo
                         data-testid="report-abuse-email"
                         disabled={submitting}
@@ -151,7 +151,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
                         value={model.Email}
                     />
                 </div>
-                <div className="mb0-5">
+                <div className="mb-2">
                     <InputFieldTwo
                         as={TextAreaTwo}
                         disabled={submitting}

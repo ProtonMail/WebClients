@@ -262,7 +262,7 @@ const Composer = (
             >
                 <div
                     ref={bodyRef}
-                    className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt0-5"
+                    className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt-2"
                 >
                     <ComposerMeta
                         message={modelMessage}
