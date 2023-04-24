@@ -17,6 +17,7 @@ import { TextAreaField } from '../../../components/Fields/TextareaField';
 import { TitleField } from '../../../components/Fields/TitleField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
+import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { AliasForm } from './Alias.form';
@@ -25,9 +26,10 @@ import { type NewAliasFormValues, validateNewAliasForm } from './Alias.validatio
 const FORM_ID = 'new-alias';
 
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
+    const { realm, subdomain } = usePopupContext();
+    const pasteLengthLimiter = usePasteLengthLimiter();
     const [ready, setReady] = useState(false);
 
-    const { realm, subdomain } = usePopupContext();
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
     const defaultName = isValidURL ? url! : '';
@@ -118,6 +120,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 autoFocus={canFocus}
                                 key={`alias-name-${canFocus}`}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
+                                onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                             />
                         </FieldsetCluster>
 
@@ -146,6 +149,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 icon="note"
                                 minRows={1}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
+                                onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             />
                         </FieldsetCluster>
                     </Form>
