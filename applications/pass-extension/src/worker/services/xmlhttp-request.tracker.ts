@@ -21,15 +21,17 @@ export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest
 
     const onBeforeRequest = async (request: WebRequest.OnBeforeRequestDetailsType) => {
         const { tabId, requestId } = request;
-        if (tabId >= 0 && requestHasBodyFormData(request)) {
-            const tab = await browser.tabs.get(tabId);
 
-            if (tab.url !== undefined) {
-                const realm = parseUrl(tab.url).domain;
-                if (realm) {
-                    pendingRequests.set(requestId, merge(request, { realm }));
+        if (tabId >= 0 && requestHasBodyFormData(request)) {
+            try {
+                const tab = await browser.tabs.get(tabId);
+                if (tab.url !== undefined) {
+                    const realm = parseUrl(tab.url).domain;
+                    if (realm) {
+                        pendingRequests.set(requestId, merge(request, { realm }));
+                    }
                 }
-            }
+            } catch (_) {}
         }
 
         return {}; /* non-blocking */

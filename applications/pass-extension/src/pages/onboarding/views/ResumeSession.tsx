@@ -52,7 +52,7 @@ const tryResumeSession = async () => {
             }
         }
     } finally {
-        await browser.tabs.remove(tabId);
+        void browser.tabs.remove(tabId);
     }
 };
 
