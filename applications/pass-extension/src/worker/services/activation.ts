@@ -7,6 +7,7 @@ import browser from '@proton/pass/globals/browser';
 import { boot, wakeup } from '@proton/pass/store/actions';
 import type {
     Maybe,
+    MaybeNull,
     PopupState,
     WorkerInitMessage,
     WorkerMessageResponse,
@@ -25,11 +26,11 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
-type ActivationServiceState = { updateAvailable: boolean; checkedUpdateAt: number };
+type ActivationServiceState = { updateAvailable: MaybeNull<string>; checkedUpdateAt: number };
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
-    const state: ActivationServiceState = { updateAvailable: false, checkedUpdateAt: 0 };
+    const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0 };
 
     if (ENV === 'development') {
         createDevReloader(() => {
@@ -151,7 +152,7 @@ export const createActivationService = () => {
     const handleOnUpdateAvailable = (details: Runtime.OnUpdateAvailableDetailsType) => {
         if (details.version) {
             logger.info(`[Worker::Activation] update available ${details.version}`);
-            state.updateAvailable = true;
+            state.updateAvailable = details.version;
 
             const popupPorts = WorkerMessageBroker.ports.query((name) => name.startsWith('popup'));
 
@@ -253,7 +254,7 @@ export const createActivationService = () => {
         onInstall: handleInstall,
         onStartup: handleStartup,
         onUpdateAvailable: handleOnUpdateAvailable,
-        shouldUpdate: () => state.updateAvailable,
+        getAvailableUpdate: () => state.updateAvailable,
     };
 };
 

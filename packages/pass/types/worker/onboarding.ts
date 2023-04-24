@@ -4,12 +4,15 @@ export enum OnboardingMessage {
     UPDATE_AVAILABLE /* update is available - reload required */,
 }
 
+export type OnboardingAcknowledgment = {
+    message: OnboardingMessage;
+    acknowledgedOn: number /* UNIX timestamp for acknowledgment */;
+    count: number /* number of acknowledgments for this message */;
+    extraData?: any;
+};
+
 export type OnboardingState = {
     installedOn: number;
     updatedOn: number;
-    acknowledged: {
-        message: OnboardingMessage;
-        acknowledgedOn: number /* UNIX timestamp for acknowledgment */;
-        count: number /* number of acknowledgments for this message */;
-    }[];
+    acknowledged: OnboardingAcknowledgment[];
 };
