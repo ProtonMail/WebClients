@@ -25,6 +25,7 @@ import { useContactEmails, useEventManager, useHandler, useLoading, useNotificat
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
+import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditProperties from './ContactEditProperties';
 import ContactEditProperty from './ContactEditProperty';
@@ -41,6 +42,7 @@ export interface ContactEditModalProps {
     onUpgrade: () => void;
     onSelectImage: (props: ContactImageProps) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onLimitReached: (props: ContactGroupLimitReachedProps) => void;
 }
 
 type Props = ContactEditProps & ContactEditModalProps & ModalProps;
@@ -52,6 +54,7 @@ const ContactEditModal = ({
     onUpgrade,
     onSelectImage,
     onGroupEdit,
+    onLimitReached,
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -298,6 +301,7 @@ const ContactEditModal = ({
                         onUpgrade={onUpgrade}
                         onSelectImage={onSelectImage}
                         onGroupEdit={onGroupEdit}
+                        onLimitReached={onLimitReached}
                     />
                     <ContactEditProperties
                         field="tel"

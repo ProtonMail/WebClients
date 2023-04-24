@@ -18,6 +18,7 @@ import move from '@proton/utils/move';
 
 import { Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import { ContactImageProps } from '../modals/ContactImageModal';
 import EncryptedIcon from '../view/EncryptedIcon';
 import ContactEditProperty from './ContactEditProperty';
@@ -44,6 +45,7 @@ interface Props {
     onUpgrade: () => void;
     onSelectImage: (props: ContactImageProps) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onLimitReached?: (props: ContactGroupLimitReachedProps) => void;
 }
 
 const ContactEditProperties = (
@@ -61,6 +63,7 @@ const ContactEditProperties = (
         onUpgrade,
         onSelectImage,
         onGroupEdit,
+        onLimitReached,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -117,6 +120,7 @@ const ContactEditProperties = (
                 onUpgrade={onUpgrade}
                 onSelectImage={onSelectImage}
                 onGroupEdit={onGroupEdit}
+                onLimitReached={onLimitReached}
             />
         ));
     }, [properties, vCardContact, onChangeVCard, onRemove, onAdd, sortable]);
