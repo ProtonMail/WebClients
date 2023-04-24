@@ -1,7 +1,6 @@
 import type { Reducer } from 'redux';
 
 import { arrayReplace } from '@proton/pass/utils/array';
-import { logger } from '@proton/pass/utils/logger';
 
 import { HistoryFlag, type OptimisticHistoryItem, type OptimisticState } from '../types';
 import { isOptimisticHistoryItem, isOptimisticHistoryItemWithId } from '../utils/assertions';
@@ -16,10 +15,7 @@ export const commitReducer = <T>(
     const { history, checkpoint } = optimistic;
     const optimisticActionIndex = history.findIndex(isOptimisticHistoryItemWithId(optimisticId));
 
-    if (optimisticActionIndex === -1) {
-        logger.warn(`Commit failure : No initiated optimistic action could be found for id ${optimisticId}.`);
-        return optimistic;
-    }
+    if (optimisticActionIndex === -1) return optimistic;
 
     if (optimisticActionIndex !== 0) {
         const { length: optimisticItemsLeft } = history.filter(isOptimisticHistoryItem);
