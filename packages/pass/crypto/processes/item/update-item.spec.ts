@@ -47,4 +47,20 @@ describe('updateItem crypto process', () => {
             })
         ).rejects.toThrow(PassCryptoItemError);
     });
+
+    test('should throw if base64 content is over MAX_ITEM_CONTENT_B64_LENGTH', async () => {
+        const itemKey: ItemKey = {
+            key: await getSymmetricKey(key),
+            raw: key,
+            rotation: 42,
+        };
+
+        await expect(
+            updateItem({
+                content: new Uint8Array(7000),
+                itemKey,
+                lastRevision: 3,
+            })
+        ).rejects.toThrow(PassCryptoItemError);
+    });
 });
