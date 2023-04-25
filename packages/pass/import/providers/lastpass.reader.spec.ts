@@ -2,32 +2,38 @@ import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 
+import type { ImportPayload } from '../types';
 import { readLastPassData } from './lastpass.reader';
 
 describe('Import LastPass csv', () => {
     let sourceData: string;
+    let payload: ImportPayload;
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/lastpass.csv', 'utf8');
+        payload = await readLastPassData(sourceData);
     });
 
-    it('should handle corrupted files', async () => {
+    it('should throw on corrupted files', async () => {
         await expect(readLastPassData('not-a-csv-file')).rejects.toThrow();
     });
 
-    it('transforms lastpass csv into ImportPayload', async () => {
-        const payload = await readLastPassData(sourceData);
-        const [vault1, vault2] = payload;
+    it('converts LastPass folders to vaults correctly', () => {
+        const [primary, secondary] = payload.vaults;
+        expect(payload.vaults.length).toEqual(2);
 
-        expect(payload.length).toEqual(2);
-        expect(vault1.type).toEqual('new');
-        expect(vault1.type === 'new' && vault1.vaultName).toEqual('LastPass import');
+        expect(primary.type).toEqual('new');
+        expect(primary.type === 'new' && primary.vaultName).toEqual('LastPass import');
+        expect(secondary.type).toEqual('new');
+        expect(secondary.type === 'new' && secondary.vaultName).toEqual('company services');
+    });
 
-        expect(vault2.type).toEqual('new');
-        expect(vault2.type === 'new' && vault2.vaultName).toEqual('company services');
+    it('parses primary `LastPass import` vault items correctly', () => {
+        const [primary] = payload.vaults;
+        expect(primary.items.length).toEqual(2);
 
         /* Login */
-        const loginItem1 = vault1.items[0] as ItemImportIntent<'login'>;
+        const loginItem1 = primary.items[0] as ItemImportIntent<'login'>;
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('nobody');
         expect(loginItem1.metadata.note).toEqual('Secure note');
@@ -36,13 +42,17 @@ describe('Import LastPass csv', () => {
         expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me');
 
         /* Note */
-        const noteItem1 = vault1.items[1] as ItemImportIntent<'login'>;
+        const noteItem1 = primary.items[1] as ItemImportIntent<'login'>;
         expect(noteItem1.type).toEqual('note');
         expect(noteItem1.metadata.name).toEqual('Secure note');
         expect(noteItem1.metadata.note).toEqual('This is a secure note');
+    });
 
+    it('parses secondary vault items correctly', async () => {
+        const [, secondary] = payload.vaults;
+        expect(secondary.items.length).toEqual(4);
         /* Login */
-        const loginItem2 = vault2.items[0] as ItemImportIntent<'login'>;
+        const loginItem2 = secondary.items[0] as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Admin');
         expect(loginItem2.metadata.note).toEqual('');
@@ -51,7 +61,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem2.content.urls[0]).toEqual('https://proton.me');
 
         /* Login */
-        const loginItem3 = vault2.items[1] as ItemImportIntent<'login'>;
+        const loginItem3 = secondary.items[1] as ItemImportIntent<'login'>;
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.name).toEqual('Twitter');
         expect(loginItem3.metadata.note).toEqual('This is a twitter note');
@@ -63,7 +73,7 @@ describe('Import LastPass csv', () => {
         );
 
         /* Login */
-        const loginItem4 = vault2.items[2] as ItemImportIntent<'login'>;
+        const loginItem4 = secondary.items[2] as ItemImportIntent<'login'>;
         expect(loginItem4.type).toEqual('login');
         expect(loginItem4.metadata.name).toEqual('fb.com');
         expect(loginItem4.metadata.note).toEqual('');
@@ -75,12 +85,19 @@ describe('Import LastPass csv', () => {
         );
 
         /* Login broken url */
-        const loginItem5 = vault2.items[3] as ItemImportIntent<'login'>;
+        const loginItem5 = secondary.items[3] as ItemImportIntent<'login'>;
         expect(loginItem5.type).toEqual('login');
         expect(loginItem5.metadata.name).toEqual('Unnamed LastPass item');
         expect(loginItem5.metadata.note).toEqual('');
         expect(loginItem5.content.username).toEqual('');
         expect(loginItem5.content.password).toEqual('');
         expect(loginItem5.content.urls).toEqual([]);
+    });
+
+    test('correctly keeps a reference to ignored items', () => {
+        expect(payload.ignored).not.toEqual([]);
+        expect(payload.ignored[0]).toEqual('[Bank Account] test');
+        expect(payload.ignored[1]).toEqual('[Credit Card] TestCC');
+        expect(payload.ignored[2]).toEqual('[Address] TestID');
     });
 });
