@@ -9,8 +9,14 @@ import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload, ImportVault } from '../types';
-import type { OnePass1PuxData, OnePassItem, OnePassItemDetails } from './1password.1pux.types';
-import { OnePassCategory, OnePassLoginDesignation } from './1password.1pux.types';
+import {
+    OnePass1PuxData,
+    OnePassCategory,
+    OnePassItem,
+    OnePassItemDetails,
+    OnePassLoginDesignation,
+    OnePassState,
+} from './1password.1pux.types';
 
 const extractFullNote = (details: OnePassItemDetails): string => {
     let note = details.notesPlain || '';
@@ -72,7 +78,7 @@ const processNoteItem = (
         },
         content: {},
         extraFields: [],
-        trashed: false,
+        trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     };
@@ -115,7 +121,7 @@ const processLoginItem = (
             totpUri: totp ?? '',
         },
         extraFields: totps.map((totpUri) => ({ fieldName: 'totp', content: { oneofKind: 'totp', totp: { totpUri } } })),
-        trashed: false,
+        trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     };
@@ -144,7 +150,7 @@ const processPasswordItem = (
             totpUri: '',
         },
         extraFields: [],
-        trashed: false,
+        trashed: item.state === OnePassState.ARCHIVED,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
     };
@@ -169,6 +175,7 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
                     vaultName: `${vault.attrs.name}`,
                     id: uniqid(),
                     items: vault.items
+                        .filter((item) => item.state !== OnePassState.TRASHED)
                         .map((item): Maybe<ItemImportIntent> => {
                             switch (item.categoryUuid) {
                                 case OnePassCategory.LOGIN:
