@@ -15,14 +15,13 @@ import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from '
 
 export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
     const dispatch = useAppDispatch();
-    const api = useApi();
     const getMessage = useGetEOMessageState();
 
     return useCallback(async () => {
         const message = getMessage() as MessageState;
 
         const handleLoadEORemoteImages = (imagesToLoad: MessageRemoteImage[]) => {
-            const dispatchResult = dispatch(EOLoadRemote({ imagesToLoad, api }));
+            const dispatchResult = dispatch(EOLoadRemote({ imagesToLoad }));
             return dispatchResult as any as Promise<EOLoadRemoteResults[]>;
         };
 

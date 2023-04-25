@@ -57,7 +57,6 @@ export type EOLoadEmbeddedResults = { attachment: Attachment; blob: string }[];
 
 export interface EOLoadRemoteParams {
     imagesToLoad: MessageRemoteImage[];
-    api: Api;
 }
 
 export interface EOLoadRemoteResults {
