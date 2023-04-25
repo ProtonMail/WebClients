@@ -7,6 +7,7 @@ import { merge } from '@proton/pass/utils/object';
 import { signout, stateDestroy, stateLock, stateSync } from '../actions';
 import type { State } from '../types';
 import alias from './alias';
+import importReducer from './import';
 import items from './items';
 import request from './request';
 import settings from './settings';
@@ -14,12 +15,13 @@ import shares from './shares';
 import user from './user';
 
 export * from './alias';
+export * from './import';
 export * from './items';
 export * from './request';
 export * from './shares';
 export * from './user';
 
-export const reducerMap = { alias, items, request, settings, shares, user };
+export const reducerMap = { alias, items, import: importReducer, request, settings, shares, user };
 export const rootReducer = combineReducers(reducerMap);
 
 const wrappedRootReducer: Reducer<State> = (previousState, action) => {

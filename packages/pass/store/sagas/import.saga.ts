@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import uniqid from 'uniqid';
 
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
+import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
 
 import {
@@ -19,7 +20,7 @@ import {
     vaultCreationIntent,
     vaultCreationSuccess,
 } from '../actions';
-import { WorkerRootSagaOptions } from '../types';
+import type { WorkerRootSagaOptions } from '../types';
 import { importItemsBatch, parseItemRevision } from './workers/items';
 
 /**
@@ -56,14 +57,14 @@ function* importWorker(
     { payload: { data, provider }, meta }: ReturnType<typeof importItemsIntent>
 ) {
     let totalItems: number = 0;
-    const totalVaults = new Set(data.map((vault) => (vault.type === 'existing' ? vault.shareId : vault.id))).size;
+    const ignored: string[] = data.ignored;
+    const vaultIds = data.vaults.map((vault) => (vault.type === 'existing' ? vault.shareId : vault.id));
+    const totalVaults = new Set(vaultIds).size;
 
     try {
-        /**
-         * we want to apply these request sequentially to avoid
-         * swarming the network with too many parallel requests
-         */
-        for (const vaultData of data) {
+        /* we want to apply these request sequentially to avoid
+         * swarming the network with too many parallel requests */
+        for (const vaultData of data.vaults) {
             try {
                 const shareId: string =
                     vaultData.type === 'existing'
@@ -72,7 +73,13 @@ function* importWorker(
 
                 for (const batch of chunk(vaultData.items, 50)) {
                     try {
-                        const revisions: ItemRevisionContentsResponse[] = yield importItemsBatch(shareId, batch);
+                        const revisions: ItemRevisionContentsResponse[] = yield importItemsBatch({
+                            shareId,
+                            importIntents: batch,
+                            onSkippedItem: ({ type, metadata }) =>
+                                ignored.push(`[${capitalize(type)}] ${metadata.name}`),
+                        });
+
                         const items: ItemRevision[] = yield Promise.all(
                             revisions.map((revision) => parseItemRevision(shareId, revision))
                         );
@@ -82,6 +89,7 @@ function* importWorker(
                         yield put(itemsBatchImported({ shareId, items }));
                     } catch (e) {
                         const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
+                        ignored.push(...batch.map((item) => `[${capitalize(item.type)}] ${item.metadata.name}`));
 
                         yield put(
                             notification({
@@ -112,7 +120,7 @@ function* importWorker(
             )
         );
 
-        yield put(importItemsSuccess({ total: totalItems }, meta.receiver));
+        yield put(importItemsSuccess({ total: totalItems, ignored, provider }, meta.receiver));
         onItemsChange?.();
     } catch (error: any) {
         yield put(importItemsFailure(error, meta.receiver));
