@@ -88,23 +88,9 @@ END:VCARD`;
             reader.onload = () => resolve(reader.result);
             reader.readAsText(blob);
         });
-        const actual = (content as string).replaceAll('\r', '');
 
-        const expected = `BEGIN:VCARD
-VERSION:4.0
-FN;PREF=1:J. Doe
-TEL;PREF=1:testtel
-UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
-ITEM1.EMAIL;PREF=1:jdoe@example.com
-END:VCARD
-BEGIN:VCARD
-VERSION:4.0
-FN;PREF=1:Jane Doe
-TEL;PREF=1:testteltt
-UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b2
-ITEM1.EMAIL;PREF=1:janedoe@example.com
-END:VCARD`;
+        const expected = `BEGIN:VCARD\r\nVERSION:4.0\r\nFN;PREF=1:J. Doe\r\nTEL;PREF=1:testtel\r\nUID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1\r\nITEM1.EMAIL;PREF=1:jdoe@example.com\r\nEND:VCARD\r\nBEGIN:VCARD\r\nVERSION:4.0\r\nFN;PREF=1:Jane Doe\r\nTEL;PREF=1:testteltt\r\nUID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b2\r\nITEM1.EMAIL;PREF=1:janedoe@example.com\r\nEND:VCARD`;
 
-        expect(actual).toBe(expected);
+        expect(content).toBe(expected);
     });
 });
