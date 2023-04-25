@@ -26,7 +26,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
     };
 
     return (
-        <div className="text-center mb1 relative">
+        <div className="text-center mb-4 relative">
             <video
                 preload="auto"
                 playsInline

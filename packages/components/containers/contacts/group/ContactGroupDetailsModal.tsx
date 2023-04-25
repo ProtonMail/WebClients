@@ -72,7 +72,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
             />
             <ModalContent>
                 <div className="flex flex-no-min-children flex-item-fluid">
-                    <h4 className="mb1 flex flex-align-items-center flex-item-fluid">
+                    <h4 className="mb-4 flex flex-align-items-center flex-item-fluid">
                         <Icon className="mr-2" name="users" />
                         <span>
                             {c('Title').ngettext(msgid`${emailsCount} member`, `${emailsCount} members`, emailsCount)}

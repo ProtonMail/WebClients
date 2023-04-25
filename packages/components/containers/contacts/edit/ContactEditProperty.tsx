@@ -1,9 +1,15 @@
 import { Ref, forwardRef } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
+
 
 import { DropdownActions, Icon, OrderableHandle } from '../../../components';
 import { classnames } from '../../../helpers';
@@ -12,6 +18,7 @@ import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
+
 
 interface Props {
     vCardProperty: VCardProperty;
@@ -61,7 +68,7 @@ const ContactEditProperty = (
         list.push({
             color: 'weak',
             shape: 'outline',
-            text: <Icon name="trash" className="mauto" alt={c('Action').t`Delete`} />,
+            text: <Icon name="trash" className="m-auto" alt={c('Action').t`Delete`} />,
             onClick: () => {
                 if (vCardProperty.uid) {
                     onRemove(vCardProperty.uid);

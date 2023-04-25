@@ -248,7 +248,7 @@ const LoginForm = ({
                     onValue={setPassword}
                     rootClassName="mt-2"
                 />
-                <div className="flex flex-justify-space-between mt1">
+                <div className="flex flex-justify-space-between mt-4">
                     {needHelp}
                     <Button color="norm" size="large" type="submit" fullWidth loading={loading} data-cy-login="submit">
                         {c('Action').t`Sign in`}

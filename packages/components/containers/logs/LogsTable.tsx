@@ -32,17 +32,17 @@ interface Props {
 const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
     if (logAuth === DISABLE) {
         return (
-            <Alert className="mb1">{c('Info')
+            <Alert className="mb-4">{c('Info')
                 .t`You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.`}</Alert>
         );
     }
 
     if (!loading && !logs.length) {
-        return <Alert className="mb1">{c('Info').t`No logs yet.`}</Alert>;
+        return <Alert className="mb-4">{c('Info').t`No logs yet.`}</Alert>;
     }
 
     if (!loading && error) {
-        return <Alert className="mb1" type="error">{c('Info').t`Failed to fetch logs.`}</Alert>;
+        return <Alert className="mb-4" type="error">{c('Info').t`Failed to fetch logs.`}</Alert>;
     }
 
     return (

@@ -140,7 +140,7 @@ const SMTPSubmissionSection = () => {
                 {c('Info')
                     .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. To use this feature, start by generating a new token.`}
             </SettingsParagraph>
-            <div className="mb1">
+            <div className="mb-4">
                 <Button
                     data-testid="smtp-submission:generate-token"
                     disabled={loadingTokens}

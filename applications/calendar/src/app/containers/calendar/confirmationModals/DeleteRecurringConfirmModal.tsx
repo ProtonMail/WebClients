@@ -141,9 +141,9 @@ const DeleteRecurringConfirmModal = ({
             onSubmit={handleConfirm}
             open={isOpen}
         >
-            <div className="mb1">{alertText}</div>
+            <div className="mb-4">{alertText}</div>
             {warningText && (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {warningText}
                 </Alert>
             )}

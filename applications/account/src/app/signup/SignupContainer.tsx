@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+
+
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
@@ -553,7 +555,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const children = (
         <>
             {stepper && (
-                <Stepper className="mb2-5" position="center" activeStep={stepper.activeStep}>
+                <Stepper className="mb-8" position="center" activeStep={stepper.activeStep}>
                     {stepper.steps.map((step) => (
                         <Step key={step}>{step}</Step>
                     ))}
@@ -1001,7 +1003,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             onBack={handleBackStep}
             bottomRight={<SignupSupportDropdown />}
             hasDecoration={hasDecoration}
-            headerClassName={clsx(stepper && 'mb1 on-tiny-mobile-mb2')}
+            headerClassName={clsx(stepper && 'mb-8 sm:mb-4')}
         >
             {children}
         </Layout>

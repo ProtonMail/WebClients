@@ -28,7 +28,7 @@ const ChallengeError = () => {
     return (
         <>
             {render && <BugModal {...bugReportModal} />}
-            <Alert className="mb1" type="error">
+            <Alert className="mb-4" type="error">
                 {c('Error')
                     .jt`Something went wrong, please ${refresh} in order to proceed. If you still see this error message please contact our ${supportTeam}.`}
             </Alert>

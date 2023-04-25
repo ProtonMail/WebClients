@@ -135,7 +135,7 @@ const CalendarMemberRow = ({
                         color="norm"
                         loading={isLoadingDelete}
                         onClick={handleDelete}
-                        className="mlauto no-mobile no-tablet"
+                        className="ml-auto no-mobile no-tablet"
                     >
                         <Icon name="trash" alt={deleteLabel} />
                     </Button>

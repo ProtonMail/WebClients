@@ -124,11 +124,11 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
     return (
         <div className="border-bottom">
             <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
-                <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleOpen}>
+                <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
                     <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Conditions`}</span>
                 </button>
-                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
+                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                     {conditionsRenderer}
                 </div>
             </div>

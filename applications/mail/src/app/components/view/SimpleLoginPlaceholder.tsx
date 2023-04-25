@@ -21,7 +21,7 @@ const SimpleLoginPlaceholder = () => {
 
     return (
         <>
-            <div className="mb2">
+            <div className="mb-8">
                 <img
                     src={connectSimpleLoginSvg}
                     alt={c('Alternative text for conversation image').t`Conversation`}
@@ -29,7 +29,7 @@ const SimpleLoginPlaceholder = () => {
                 />
             </div>
             <h2 className="text-bold">{c('Title').t`Don't give spam a chance`}</h2>
-            <p className="mxauto text-center max-w30e">
+            <p className="mx-auto text-center max-w30e">
                 {c('Info')
                     .t`They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.`}
             </p>

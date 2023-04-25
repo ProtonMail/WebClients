@@ -48,8 +48,8 @@ const LayoutsSection = () => {
                 <Loader />
             ) : (
                 <>
-                    <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <span className="mb1 text-semibold">
+                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                        <span className="mb-4 text-semibold">
                             <span className="mr-2" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/change-inbox-layout')}
@@ -64,8 +64,8 @@ const LayoutsSection = () => {
                         />
                     </div>
 
-                    <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <span className="mb1 text-semibold">
+                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                        <span className="mb-4 text-semibold">
                             <span className="mr-2" id="composerMode_desc">{c('Label').t`Composer`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/composer')}
@@ -81,8 +81,8 @@ const LayoutsSection = () => {
                         />
                     </div>
 
-                    <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <span className="mb1 text-semibold">
+                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                        <span className="mb-4 text-semibold">
                             <span className="mr-2" id="densityMode_desc">{c('Label').t`Density`}</span>
                             <Info
                                 url={getKnowledgeBaseUrl('/change-inbox-layout')}

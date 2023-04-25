@@ -74,7 +74,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
                         .t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter
-                        className="mt1 mb1"
+                        className="my-4"
                         aria-hidden="true"
                         value={Math.ceil(percentage(user.MaxSpace, user.UsedSpace))}
                     />

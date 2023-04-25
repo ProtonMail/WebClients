@@ -31,7 +31,7 @@ export const Basic = () => {
     return (
         <div className="flex flex-align-items-stretch flex-justify-space-between py2">
             <div className="w50">
-                <strong className="block mb1">Upsell Features</strong>
+                <strong className="block mb-4">Upsell Features</strong>
                 <ul className="unstyled">
                     {Object.entries(upsellFeatures).map(([fakeKey, feature]) => {
                         const key = fakeKey as unknown as UpsellModalProps['features'][number];
@@ -76,7 +76,7 @@ export const Basic = () => {
                     upsellRef="account-banner"
                 />
                 <Button
-                    className="mxauto"
+                    className="mx-auto"
                     size="large"
                     fullWidth
                     color="norm"

@@ -13,7 +13,7 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: 
     return (
         <Toolbar>
             {dateCursorButtons}
-            <span className="mlauto flex no-mobile">
+            <span className="ml-auto flex no-mobile">
                 <Vr />
             </span>
             <span className="flex-item-fluid no-tablet no-mobile max-w24e flex flex-nowrap">{timezoneSelector}</span>

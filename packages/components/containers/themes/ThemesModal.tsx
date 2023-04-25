@@ -44,7 +44,7 @@ const ThemesModal = (props: ModalProps) => {
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="norm" className="mlauto" onClick={props.onClose}>{c('Action').t`OK`}</Button>
+                <Button color="norm" className="ml-auto" onClick={props.onClose}>{c('Action').t`OK`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

@@ -119,7 +119,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
             <ModalTwoHeader title={c('Action').t`Submit report`} />
             <ModalTwoContent>
                 <p className="mt-0">{INFO_TEXT}</p>
-                <FileCard linkInfo={linkInfo} className="mb1" />
+                <FileCard linkInfo={linkInfo} className="mb-4" />
                 <div className="mb-2">
                     <InputFieldTwo
                         aria-required

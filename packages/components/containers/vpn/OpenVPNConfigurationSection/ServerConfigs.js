@@ -57,7 +57,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
     }, [servers, isUpgradeRequired]);
 
     return (
-        <div className="mb1-5">
+        <div className="mb-6">
             {sortedGroups.map((group) => {
                 const server = group[0];
                 return (

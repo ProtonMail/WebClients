@@ -45,7 +45,7 @@ const CustomizeCalendarImportModal = ({
         <ModalTwo {...modalProps} size="xlarge">
             <ModalTwoHeader title={c('Title').t`Customize calendar import`} />
             <ModalTwoContent>
-                <div className="mb1" data-testid="CustomizeCalendarImportModal:description">
+                <div className="mb-4" data-testid="CustomizeCalendarImportModal:description">
                     {c('Info')
                         .t`Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.`}
                     {canMerge &&

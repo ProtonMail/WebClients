@@ -13,7 +13,7 @@ interface Props {
 
 const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Props) => {
     return (
-        <div className="contact-view-row flex flex-nowrap flex-align-items-start mb1">
+        <div className="contact-view-row flex flex-nowrap flex-align-items-start mb-4">
             <div
                 className={classnames([
                     'contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w100',

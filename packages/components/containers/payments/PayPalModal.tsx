@@ -88,12 +88,12 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
         >
             {loading ? (
                 <>
-                    <div className="mb1">{c('Info').t`Please verify payment at the new tab which was opened.`}</div>
+                    <div className="mb-4">{c('Info').t`Please verify payment at the new tab which was opened.`}</div>
                     <div>{c('Info').t`Verification can take a few minutes.`}</div>
                 </>
             ) : (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`This will enable PayPal to be used to pay for your ${BRAND_NAME} subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
                     </div>

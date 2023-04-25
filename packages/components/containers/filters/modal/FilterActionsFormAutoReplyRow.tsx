@@ -47,10 +47,10 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
             >
                 {user.hasPaidMail ? (
                     <>
-                        <label htmlFor="autoReply" className={classnames(['w20 pt0-5', isNarrow && 'mb1'])}>
-                            <span className={classnames([!isNarrow && 'ml1'])}>{c('Label').t`Send auto-reply`}</span>
+                        <label htmlFor="autoReply" className={classnames(['w20 pt0-5', isNarrow && 'mb-4'])}>
+                            <span className={classnames([!isNarrow && 'ml-4'])}>{c('Label').t`Send auto-reply`}</span>
                         </label>
-                        <div className={classnames(['flex flex-column flex-item-fluid pt0-5', !isNarrow && 'ml1'])}>
+                        <div className={classnames(['flex flex-column flex-item-fluid pt0-5', !isNarrow && 'ml-4'])}>
                             <Toggle
                                 id="autoReply"
                                 checked={editorVisible}
@@ -62,7 +62,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                     </>
                 ) : (
                     <>
-                        <div className={classnames(['w20 mr1 pt0-5', isNarrow && 'mb1'])}>
+                        <div className={classnames(['w20 mr-4 pt0-5', isNarrow && 'mb-4'])}>
                             <span className="mx-2">{c('Label').t`Send auto-reply`}</span>
                         </div>
                         <Tooltip title={c('Tooltip').t`This feature is only available for paid users`}>
@@ -74,7 +74,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                 )}
             </div>
             {editorVisible && user.hasPaidMail && (
-                <div className="w100 mt1">
+                <div className="w100 mt-4">
                     <Editor
                         onReady={handleReady}
                         metadata={{ supportImages: false }}

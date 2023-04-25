@@ -26,7 +26,7 @@ const StepPrepareCustomButton = ({ isLabelMapping, handleClickCustomize, handleR
                 </Tooltip>
             )}
             {isCustom && (
-                <InlineLinkButton className="ml1" onClick={handleReset}>
+                <InlineLinkButton className="ml-4" onClick={handleReset}>
                     {c('Action').t`Reset to default`}
                 </InlineLinkButton>
             )}

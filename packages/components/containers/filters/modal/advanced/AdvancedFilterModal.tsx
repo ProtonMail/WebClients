@@ -178,7 +178,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <p className="mb1">
+                    <p className="mb-4">
                         {
                             // translator: full sentence is: To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language
                             c('Info')

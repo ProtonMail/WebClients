@@ -64,7 +64,7 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
             <ModalTwoContent>
                 <div>
                     <div className="flex flex-row">
-                        <div className="mr1">
+                        <div className="mr-4">
                             <FontFaceSelect
                                 id="fontFace"
                                 fontFace={fontFace}

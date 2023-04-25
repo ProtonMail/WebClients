@@ -41,7 +41,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
             )}
 
             {!selectedCalendar && (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Info').t`You have no calendars to export.`}
                 </Alert>
             )}
@@ -56,7 +56,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
 
             <div className="flex">
                 {selectedCalendar && (
-                    <span className="flex-item-fluid mr1">
+                    <span className="flex-item-fluid mr-4">
                         <CalendarSelect
                             calendarID={selectedCalendar.ID}
                             options={calendarOptions}

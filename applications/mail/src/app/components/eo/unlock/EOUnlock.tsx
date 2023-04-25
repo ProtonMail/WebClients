@@ -35,9 +35,9 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
     }
 
     return (
-        <main className="ui-standard shadow-lifted on-tiny-mobile-no-box-shadow relative no-scroll w100 max-w100 mxauto eo-layout mw30r">
+        <main className="ui-standard shadow-lifted on-tiny-mobile-no-box-shadow relative no-scroll w100 max-w100 mx-auto eo-layout mw30r">
             <div className="eo-layout-header">
-                {isError && <h1 className="eo-layout-title mt1" data-testid="eo:error">{c('Title').t`Error`}</h1>}
+                {isError && <h1 className="eo-layout-title mt-4" data-testid="eo:error">{c('Title').t`Error`}</h1>}
             </div>
             <div className="eo-layout-main-content">
                 {isError ? (
@@ -46,8 +46,8 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
                     <MessageDecryptForm onSubmit={handleTryUnlock} />
                 )}
             </div>
-            <div className="flex p1 mlauto mb2">
-                <Href className="mlauto mrauto" href={getKnowledgeBaseUrl('/open-password-protected-emails')}>{c(
+            <div className="flex p1 ml-auto mb-8">
+                <Href className="mx-auto" href={getKnowledgeBaseUrl('/open-password-protected-emails')}>{c(
                     'Action'
                 ).t`Need help?`}</Href>
             </div>

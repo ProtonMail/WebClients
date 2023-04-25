@@ -163,7 +163,7 @@ export const AlignItemStretch = () => {
 export const VerticallyCenterOneItem = () => {
     return (
         <div className="flex rounded overflow-hidden border">
-            <div className="mauto bg-info p1">I'm a div with class "mauto"</div>
+            <div className="m-auto bg-info p1">I'm a div with class "m-auto"</div>
         </div>
     );
 };

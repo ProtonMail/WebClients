@@ -197,7 +197,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                 );
                 return {
                     title: c('Title').t`Change password`,
-                    description: <div className="mb1">{c('Info').jt`Enter new password for user ${userName}.`}</div>,
+                    description: <div className="mb-4">{c('Info').jt`Enter new password for user ${userName}.`}</div>,
                     labels: {
                         newPassword: c('Label').t`User's new password`,
                         confirmPassword: c('Label').t`Confirm new password`,
@@ -265,7 +265,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
             return {
                 title: c('Title').t`Switch to two-password mode`,
                 description: (
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.`}
                     </div>
@@ -449,7 +449,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                     confirmPassword: c('Label').t`Confirm password`,
                 },
                 description: (
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`${MAIL_APP_NAME} can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
                     </div>
@@ -533,11 +533,11 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
             <ModalHeader title={title} />
             <ModalContent>
                 {description}
-                <div className="mb1">
+                <div className="mb-4">
                     {c('Info')
                         .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
                 </div>
-                <div className="mb1">
+                <div className="mb-4">
                     {
                         // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
                         c('Info')

@@ -26,7 +26,7 @@ const GenericError = ({ children, className, small = false }: Props) => {
     const line1 = c('Error message').jt`Please ${refresh} or try again later.`;
 
     return (
-        <div className={clsx('mauto', className)}>
+        <div className={clsx('m-auto', className)}>
             {small ? (
                 <>
                     <h1 className="text-bold h2 mb-1">{title}</h1>

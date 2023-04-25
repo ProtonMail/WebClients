@@ -272,16 +272,16 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             />
             <ModalTwoContent>
                 {!isMimeTypeFixed ? (
-                    <Alert className="mb1">
+                    <Alert className="mb-4">
                         {c('Info')
                             .t`Select the email format you want to be used by default when sending an email to this email address.`}
                     </Alert>
                 ) : null}
                 {isMimeTypeFixed && hasPGPInline ? (
-                    <Alert className="mb1">{c('Info').t`PGP/Inline is only compatible with Plain Text format.`}</Alert>
+                    <Alert className="mb-4">{c('Info').t`PGP/Inline is only compatible with Plain Text format.`}</Alert>
                 ) : null}
                 {isMimeTypeFixed && !hasPGPInline ? (
-                    <Alert className="mb1">
+                    <Alert className="mb-4">
                         {c('Info').t`PGP/MIME automatically sends the message using the current composer mode.`}
                     </Alert>
                 ) : null}
@@ -309,7 +309,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                         />
                     </Field>
                 </Row>
-                <div className="mb1">
+                <div className="mb-4">
                     <Collapsible disabled={loadingPgpSettings}>
                         <CollapsibleHeader
                             suffix={
@@ -328,7 +328,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                                 ? c('Action').t`Hide advanced PGP settings`
                                 : c('Action').t`Show advanced PGP settings`}
                         </CollapsibleHeader>
-                        <CollapsibleContent className="mt1">
+                        <CollapsibleContent className="mt-4">
                             {showPgpSettings && model ? (
                                 <ContactPGPSettings model={model} setModel={setModel} mailSettings={mailSettings} />
                             ) : null}

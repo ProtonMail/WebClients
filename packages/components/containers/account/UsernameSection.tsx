@@ -44,7 +44,7 @@ const UsernameSection = ({ app }: Props) => {
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
             <SettingsSection>
                 {user.Type === UserType.EXTERNAL && primaryAddress && APP_NAME === APPS.PROTONACCOUNT && (
-                    <Card className="mb2" rounded bordered={false}>
+                    <Card className="mb-8" rounded bordered={false}>
                         <div className="mb-2">
                             {c('Info')
                                 .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}

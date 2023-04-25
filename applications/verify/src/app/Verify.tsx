@@ -1,16 +1,13 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
+
+
 import { c } from 'ttag';
 
-import {
-    HumanVerificationForm,
-    HumanVerificationSteps,
-    StandardLoadErrorPage,
-    useApi,
-    useNotifications,
-    useThemeQueryParameter,
-} from '@proton/components';
+
+
+import { HumanVerificationForm, HumanVerificationSteps, StandardLoadErrorPage, useApi, useNotifications, useThemeQueryParameter } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
@@ -22,11 +19,16 @@ import { setLocales } from '@proton/shared/lib/i18n/locales';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
+
+
 import broadcast, { MessageType } from './broadcast';
 import locales from './locales';
 import { VerificationSearchParameters } from './types';
 
+
+
 import './Verify.scss';
+
 
 setLocales(locales);
 
@@ -155,7 +157,7 @@ const Verify = () => {
 
     const wrapInMain = (child: ReactNode) => (
         <main className="hv h100" ref={registerRootRef}>
-            <div className="hv-container shadow-lifted on-tiny-mobile-no-box-shadow ui-standard relative no-scroll w100 max-w100 mxauto mw30r">
+            <div className="hv-container shadow-lifted on-tiny-mobile-no-box-shadow ui-standard relative no-scroll w100 max-w100 mx-auto mw30r">
                 {child}
             </div>
         </main>

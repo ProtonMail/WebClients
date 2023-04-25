@@ -130,7 +130,7 @@ const PaymentStep = ({
                     onBack={onBack}
                     title={c('new_plans: signup').t`Subscription`}
                     right={
-                        <div className="inline-block mt2 on-mobile-mt1">
+                        <div className="inline-block mt-4 md:mt-8">
                             <CurrencySelector
                                 mode="select-two"
                                 currency={subscriptionData.currency}
@@ -140,7 +140,7 @@ const PaymentStep = ({
                     }
                 />
                 <Content>
-                    <div className="text-bold mb1">{c('new_plans: signup').jt`Your selected plan: ${planName}`}</div>
+                    <div className="text-bold mb-4">{c('new_plans: signup').jt`Your selected plan: ${planName}`}</div>
                     {disableCycleSelector ? (
                         <SubscriptionCheckoutCycleItem
                             checkResult={subscriptionData.checkResult}
@@ -232,7 +232,7 @@ const PaymentStep = ({
                                 cardErrors={cardErrors}
                             />
                         ) : (
-                            <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
+                            <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                         )}
                         {method === PAYMENT_METHOD_TYPES.PAYPAL ? (
                             <StyledPayPalButton

@@ -135,7 +135,7 @@ const EditAddressesSection = ({ address }: Props) => {
                         type="submit"
                         disabled={loading}
                         loading={loading}
-                        className="mt1"
+                        className="mt-4"
                         data-testid="settings:identity-section:update"
                     >
                         {c('Action').t`Update`}

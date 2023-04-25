@@ -247,7 +247,7 @@ const QuickReply = ({
 
     return (
         <div ref={quickReplyFrameRef}>
-            <div className="flex flex-nowrap flex-align-items-center mx1 mt1 mb-2">
+            <div className="flex flex-nowrap flex-align-items-center mx-4 mt-4 mb-2">
                 <QuickReplyType
                     referenceMessage={referenceMessage}
                     modelMessage={modelMessage}
@@ -283,7 +283,7 @@ const QuickReply = ({
             </div>
             <div
                 className={clsx([
-                    'border border-weak quick-reply-container bg-norm relative field textarea rounded-lg flex flex-nowrap flex-column mx1 mb1',
+                    'border border-weak quick-reply-container bg-norm relative field textarea rounded-lg flex flex-nowrap flex-column mx-4 mb-4',
                     hasFocus && 'is-focused',
                     needsDarkStyle && 'quick-reply-container-dark-style',
                 ])}

@@ -82,8 +82,8 @@ const AccountSettingsRouter = ({
                         <PrivateMainArea>
                             <div className="container-section-sticky">
                                 <div className="text-center flex">
-                                    <SettingsSectionWide className="mxauto">
-                                        <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans: title')
+                                    <SettingsSectionWide className="mx-auto">
+                                        <SettingsPageTitle className="my-14">{c('new_plans: title')
                                             .t`Unlock premium features by upgrading`}</SettingsPageTitle>
                                         <PlansSection isPassPlusEnabled={isPassPlusEnabled} />
                                     </SettingsSectionWide>

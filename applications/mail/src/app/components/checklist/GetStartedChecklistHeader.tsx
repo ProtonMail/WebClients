@@ -20,7 +20,7 @@ const GetStartedChecklistHeader = ({
         <div>
             <div className="flex flex-align-items-center flex-justify-space-between">
                 <span className={clsx(['flex flex-align-items-center', !onDismiss ? 'w100' : 'w80'])}>
-                    <span className="get-started_gift mr1">
+                    <span className="get-started_gift mr-4">
                         {/*
                          * if we don't put an empty alt attribute here, some vocalizers
                          * will vocalize the src attribute

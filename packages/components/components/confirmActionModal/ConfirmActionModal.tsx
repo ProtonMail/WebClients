@@ -66,7 +66,7 @@ export const ConfirmActionModal = ({
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {message}
                     <br />
                     {!canUndo && c('Info').t`You cannot undo this action.`}

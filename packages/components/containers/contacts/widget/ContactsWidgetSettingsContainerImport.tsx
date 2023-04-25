@@ -21,7 +21,7 @@ const ContactsWidgetSettingsContainerImport = ({ onImport, onClose }: Props) => 
             <span role="heading" aria-level={2}>{c('Label').t`Import contacts`}</span>
         </Label>
 
-        <p className="color-weak mt-2 mb1">
+        <p className="color-weak mt-2 mb-4">
             {c('Info')
                 .t`CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.`}
         </p>

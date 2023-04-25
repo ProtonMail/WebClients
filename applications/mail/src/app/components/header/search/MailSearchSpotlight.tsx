@@ -27,7 +27,7 @@ const MailSearchSpotlight = ({ children, canShow }: Props) => {
             onDisplayed={onDisplayed}
             content={
                 <>
-                    <div className="text-bold text-lg mauto">{c('Spotlight').t`Message Content Search`}</div>
+                    <div className="text-bold text-lg m-auto">{c('Spotlight').t`Message Content Search`}</div>
                     {c('Spotlight').t`You can now search the content of your encrypted emails.`}
                     <br />
                     <Href href={getKnowledgeBaseUrl('/search-message-content')} title="Message Content Search">

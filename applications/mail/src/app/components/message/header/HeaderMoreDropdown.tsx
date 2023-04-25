@@ -304,7 +304,7 @@ const HeaderMoreDropdown = ({
 
     return (
         <>
-            <ButtonGroup className="mr1 mb-2">
+            <ButtonGroup className="mr-4 mb-2">
                 {isSpam ? (
                     <Tooltip title={titleMoveInboxNotSpam}>
                         <Button
@@ -449,7 +449,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:star"
                                     >
                                         <Icon name={isStarred ? 'star-slash' : 'star'} className="mr-2" />
-                                        <span className="flex-item-fluid myauto">{staringText}</span>
+                                        <span className="flex-item-fluid my-auto">{staringText}</span>
                                     </DropdownMenuButton>
 
                                     <hr className="my-2" />
@@ -460,7 +460,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:archive"
                                     >
                                         <Icon name="archive-box" className="mr-2" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`Archive`}</span>
+                                        <span className="flex-item-fluid my-auto">{c('Action').t`Archive`}</span>
                                     </DropdownMenuButton>
                                     {isNarrow && (
                                         <DropdownMenuButton
@@ -468,7 +468,7 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditionnal(0)}
                                         >
                                             <Icon name="folder-arrow-in" className="mr-2" />
-                                            <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            <span className="flex-item-fluid my-auto">{c('Action')
                                                 .t`Move to...`}</span>
                                         </DropdownMenuButton>
                                     )}
@@ -478,7 +478,7 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditionnal(1)}
                                         >
                                             <Icon name="tag" className="mr-2" />
-                                            <span className="flex-item-fluid myauto">{c('Action').t`Label as...`}</span>
+                                            <span className="flex-item-fluid my-auto">{c('Action').t`Label as...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isNarrow && (
@@ -487,7 +487,7 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditionnal(2)}
                                         >
                                             <Icon name="filter" className="mr-2" />
-                                            <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            <span className="flex-item-fluid my-auto">{c('Action')
                                                 .t`Filter on...`}</span>
                                         </DropdownMenuButton>
                                     )}
@@ -498,7 +498,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:unread"
                                         >
                                             <Icon name="eye-slash" className="mr-2" />
-                                            <span className="flex-item-fluid myauto">{c('Action')
+                                            <span className="flex-item-fluid my-auto">{c('Action')
                                                 .t`Mark as unread`}</span>
                                         </DropdownMenuButton>
                                     ) : (
@@ -508,7 +508,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:move-to-spam"
                                         >
                                             <Icon name="fire" className="mr-2" />
-                                            <span className="flex-item-fluid myauto">{c('Action')
+                                            <span className="flex-item-fluid my-auto">{c('Action')
                                                 .t`Move to spam`}</span>
                                         </DropdownMenuButton>
                                     )}
@@ -519,7 +519,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:delete"
                                         >
                                             <Icon name="cross-circle" className="mr-2" />
-                                            <span className="flex-item-fluid myauto">{c('Action').t`Delete`}</span>
+                                            <span className="flex-item-fluid my-auto">{c('Action').t`Delete`}</span>
                                         </DropdownMenuButton>
                                     ) : null}
                                     {canExpire ? (
@@ -532,7 +532,7 @@ const HeaderMoreDropdown = ({
                                                     data-testid="message-view-more-dropdown:remove-expiration"
                                                 >
                                                     <Icon name="hourglass" className="mr-2" />
-                                                    <span className="flex-item-fluid myauto">{c('Action')
+                                                    <span className="flex-item-fluid my-auto">{c('Action')
                                                         .t`Remove self-destruction`}</span>
                                                 </DropdownMenuButton>
                                             ) : (
@@ -543,7 +543,7 @@ const HeaderMoreDropdown = ({
                                                         data-testid="message-view-more-dropdown:expire-7-days"
                                                     >
                                                         <Icon name="hourglass" className="mr-2" />
-                                                        <span className="flex-item-fluid myauto">{c('Action')
+                                                        <span className="flex-item-fluid my-auto">{c('Action')
                                                             .t`Self-destruct in 7 days`}</span>
                                                     </DropdownMenuButton>
                                                     <DropdownMenuButton
@@ -552,7 +552,7 @@ const HeaderMoreDropdown = ({
                                                         data-testid="message-view-more-dropdown:expire-30-days"
                                                     >
                                                         <Icon name="hourglass" className="mr-2" />
-                                                        <span className="flex-item-fluid myauto">{c('Action')
+                                                        <span className="flex-item-fluid my-auto">{c('Action')
                                                             .t`Self-destruct on ...`}</span>
                                                     </DropdownMenuButton>
                                                 </>
@@ -568,7 +568,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:export"
                                     >
                                         <Icon name="arrow-up-from-square" className="mr-2" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`Export`}</span>
+                                        <span className="flex-item-fluid my-auto">{c('Action').t`Export`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
@@ -576,7 +576,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:print"
                                     >
                                         <Icon name="printer" className="mr-2" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`Print`}</span>
+                                        <span className="flex-item-fluid my-auto">{c('Action').t`Print`}</span>
                                     </DropdownMenuButton>
 
                                     <hr className="my-2" />
@@ -587,7 +587,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:view-message-details"
                                     >
                                         <Icon name="list-bullets" className="mr-2" />
-                                        <span className="flex-item-fluid myauto">{c('Action')
+                                        <span className="flex-item-fluid my-auto">{c('Action')
                                             .t`View message details`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
@@ -596,7 +596,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:view-message-headers"
                                     >
                                         <Icon name="window-terminal" className="mr-2" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`View headers`}</span>
+                                        <span className="flex-item-fluid my-auto">{c('Action').t`View headers`}</span>
                                     </DropdownMenuButton>
                                     {!sourceMode && (
                                         <DropdownMenuButton
@@ -605,7 +605,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:view-html"
                                         >
                                             <Icon name="code" className="mr-2" />
-                                            <span className="flex-item-fluid myauto">{c('Action').t`View HTML`}</span>
+                                            <span className="flex-item-fluid my-auto">{c('Action').t`View HTML`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {sourceMode && (
@@ -615,7 +615,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:view-rendered-html"
                                         >
                                             <Icon name="window-image" className="mr-2" />
-                                            <span className="flex-item-fluid myauto">{c('Action')
+                                            <span className="flex-item-fluid my-auto">{c('Action')
                                                 .t`View rendered HTML`}</span>
                                         </DropdownMenuButton>
                                     )}
@@ -628,7 +628,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:report-phishing"
                                     >
                                         <Icon name="hook" className="mr-2 color-danger" />
-                                        <span className="flex-item-fluid myauto color-danger">{c('Action')
+                                        <span className="flex-item-fluid my-auto color-danger">{c('Action')
                                             .t`Report phishing`}</span>
                                     </DropdownMenuButton>
                                 </DropdownMenu>

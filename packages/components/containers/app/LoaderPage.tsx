@@ -53,7 +53,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
             onDrop={preventDefaultEvent}
         >
             <div className={classnames(['absolute-center text-center', isDrawerApp && 'w90'])}>
-                {isDrawerApp && <CircleLoader className="mauto color-primary" size="medium" />}
+                {isDrawerApp && <CircleLoader className="m-auto color-primary" size="medium" />}
                 {!isIframe && (
                     <div>
                         <img

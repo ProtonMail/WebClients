@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { ThemeColorUnion } from '@proton/colors';
@@ -66,12 +68,12 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
 
     const spotlightContent = (
         <div className="flex flex-nowrap">
-            <figure className="flex-item flex-item-noshrink mr1">
+            <figure className="flex-item flex-item-noshrink mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
                 <h6 className="text-semibold">{c('Title').t`You’ve got 1 GB of storage`}</h6>
-                <div className="mb1 color-weak">{c('Info').t`Way to go, you’ve just doubled your free storage!`}</div>
+                <div className="mb-4 color-weak">{c('Info').t`Way to go, you’ve just doubled your free storage!`}</div>
             </div>
         </div>
     );
@@ -107,7 +109,7 @@ function WelcomeActionsSpotlight({
 
     const spotlightContent = showPopup ? (
         <div className="flex flex-nowrap">
-            <figure className="flex-item flex-item-noshrink mr1">
+            <figure className="flex-item flex-item-noshrink mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
@@ -121,7 +123,7 @@ function WelcomeActionsSpotlight({
     ) : (
         <div>
             <h6 className="text-semibold">{c('Title').t`Your welcome actions`}</h6>
-            <div className="mb1 color-weak">
+            <div className="mb-4 color-weak">
                 {c('Info').t`Get to know ${DRIVE_APP_NAME} and earn your 500 MB storage bonus! Take action today.`}
             </div>
             <WelcomeActions
@@ -183,7 +185,7 @@ function FloatingSpotlight({
                 className="w-custom h-custom"
                 style={{ '--width-custom': '3em', '--height-custom': '3em', '--right': `${rightOffset}rem` }}
             >
-                <Icon size={24} name={icon} className="mauto" />
+                <Icon size={24} name={icon} className="m-auto" />
             </FloatingButton>
         </Spotlight>
     );

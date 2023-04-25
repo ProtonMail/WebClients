@@ -18,11 +18,11 @@ const SignatureIssue = ({
     return (
         <div className="file-preview-container">
             <div className="absolute-center w100">
-                <div className={classnames(['mlauto mrauto', isNarrow ? 'w300p' : 'w500p'])}>
+                <div className={classnames(['mx-auto', isNarrow ? 'w300p' : 'w500p'])}>
                     <div className="text-center">
                         <Icon name="lock-exclamation-filled" size={60} className="color-danger" />
                     </div>
-                    <div className="mt1 mb2">{signatureConfirmation}</div>
+                    <div className="mt-4 mb-8">{signatureConfirmation}</div>
                 </div>
                 <div className="text-center">
                     <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onClick}>

@@ -317,7 +317,7 @@ const ContactMergingContent = ({
         <>
             <ModalTwoHeader title={isDeleteOnly ? c('Title').t`Deleting contacts` : c('Title').t`Merging contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {totalBeMerged > 0
                         ? c('Description')
                               .t`Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.`
@@ -341,7 +341,7 @@ const ContactMergingContent = ({
                     loading={!mergeFinished}
                     onClick={onMerged}
                     data-testid="merge-model:close-button"
-                    className="mlauto"
+                    className="ml-auto"
                 >
                     {c('Action').t`Close`}
                 </Button>

@@ -155,7 +155,7 @@ const PlansSection = ({ isPassPlusEnabled }: { isPassPlusEnabled: boolean }) => 
             <Button
                 color="norm"
                 shape="ghost"
-                className="flex mxauto flex-align-items-center mb1"
+                className="flex mx-auto flex-align-items-center mb-4"
                 onClick={() => {
                     open({
                         step: SUBSCRIPTION_STEPS.PLAN_SELECTION,

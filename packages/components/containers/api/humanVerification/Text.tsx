@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Text = ({ children, className }: Props) => {
-    return <div className={classnames(['mb1-75 color-weak text-break', className])}>{children}</div>;
+    return <div className={classnames(['mb-6 color-weak text-break', className])}>{children}</div>;
 };
 
 export default Text;
