@@ -11,10 +11,10 @@ type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
 
 const useUserSettingsProvider = () => {
     const api = useApi();
-    const [{ hasPaidDrive }] = useUser();
+    const [user] = useUser();
 
     const [userSettings, setUserSettings] = useState<UserSettings>(
-        hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : DEFAULT_USER_SETTINGS
+        user?.hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : DEFAULT_USER_SETTINGS
     );
 
     const loadUserSettings = async () => {
@@ -22,7 +22,7 @@ const useUserSettingsProvider = () => {
 
         const userSettingsWithDefaults = Object.entries(UserSettings).reduce((settings, [key, value]) => {
             (settings as any)[key] =
-                value ?? (hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : (DEFAULT_USER_SETTINGS as any))[key];
+                value ?? (user?.hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : (DEFAULT_USER_SETTINGS as any))[key];
             return settings;
         }, {} as UserSettings);
 
