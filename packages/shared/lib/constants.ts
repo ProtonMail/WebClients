@@ -923,7 +923,7 @@ export const PROTON_DOMAINS = [
     'gdpr.eu',
     'protonvpn.net',
     'pm.me',
-    'protonirockerxow.onion',
+    'protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion',
     'proton.me',
 ];
 
