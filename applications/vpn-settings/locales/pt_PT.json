@@ -338,6 +338,9 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
+      "Use your current email instead": [
+        "Utilizar o seu correio electrónico atual"
+      ],
       "User": [
         "Utilizador"
       ],
@@ -385,11 +388,6 @@
       "+ ${ users } user": [
         "+ ${ users } utilizador",
         "+ ${ users } utilizadores"
-      ]
-    },
-    "Badge": {
-      "5 users": [
-        "5 utilizadores"
       ]
     },
     "Billing cycle": {
@@ -1567,6 +1565,11 @@
         "(1 a 2 correios electrónicos por mês)"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Já tem uma conta? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Conta"
@@ -1814,6 +1817,9 @@
       "of": [
         "de"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Uma conta. Todos os serviços da ${ BRAND_NAME }."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -1993,6 +1999,9 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua palavra-passe antiga."
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
@@ -2644,8 +2653,14 @@
       ]
     },
     "new_plans: signup": {
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Ao criar uma conta ${ BRAND_NAME }, concorda com nossos ${ terms }"
+      ],
       "Subscription": [
         "Subscrição"
+      ],
+      "terms and conditions": [
+        "termos e condições"
       ]
     },
     "new_plans: title": {
@@ -2798,6 +2813,9 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Configuração da conta"
+      ],
       "Payment": [
         "Pagamento"
       ],
@@ -3047,6 +3065,9 @@
       ],
       "Congratulations on choosing privacy!": [
         "Parabéns por escolher a privacidade!"
+      ],
+      "Create your ${ BRAND_NAME } Account": [
+        "Crie a sua conta da ${ BRAND_NAME }"
       ],
       "Credits": [
         "Créditos"

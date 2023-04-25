@@ -422,11 +422,6 @@
         "Isso irá desconectar todos os roteadores e clientes usando esse certificado."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 usuários"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: a solução de e-mail e calendário com foco em privacidade para toda a sua comunicação."
@@ -1848,6 +1843,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ storage } storage": [
+        "${ storage } de armazenamento"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
@@ -3242,6 +3240,9 @@
       "1 free VPN connection in total": [
         "1 conexão VPN gratuita no total"
       ],
+      "1 user": [
+        "1 usuário"
+      ],
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
@@ -3708,6 +3709,9 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Quando você se conecta à nossa VPN, seu DNS faz consultas por meio do nosso túnel VPN criptografado, aumentando sua privacidade e segurança on-line"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Ao enviar para outros usuários do ${ MAIL_APP_NAME }, a criptografia é automática. O envio para usuários que não são ${ MAIL_APP_NAME_TWO } requer a definição de uma senha antes do envio."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador primário tem controle sobre o faturamento."
@@ -4454,6 +4458,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Para empresas"
+      ],
+      "For families": [
+        "Para famílias"
       ],
       "For individuals": [
         "Para indivíduos"
