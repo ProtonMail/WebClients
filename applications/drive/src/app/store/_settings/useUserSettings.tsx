@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
-import { useApi, useUser } from '@proton/components';
+import { useApi, useGetUser } from '@proton/components';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { DEFAULT_PAID_USER_SETTINGS, DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import { LayoutSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -11,18 +11,19 @@ type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
 
 const useUserSettingsProvider = () => {
     const api = useApi();
-    const [user] = useUser();
+    const getUser = useGetUser();
 
-    const [userSettings, setUserSettings] = useState<UserSettings>(
-        user?.hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : DEFAULT_USER_SETTINGS
-    );
+    const [userSettings, setUserSettings] = useState<UserSettings>(DEFAULT_USER_SETTINGS);
 
     const loadUserSettings = async () => {
-        const { UserSettings } = await api<UserSettingsResponse>(queryUserSettings());
+        const [{ UserSettings }, { hasPaidDrive }] = await Promise.all([
+            api<UserSettingsResponse>(queryUserSettings()),
+            getUser(),
+        ]);
 
         const userSettingsWithDefaults = Object.entries(UserSettings).reduce((settings, [key, value]) => {
             (settings as any)[key] =
-                value ?? (user?.hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : (DEFAULT_USER_SETTINGS as any))[key];
+                value ?? (hasPaidDrive ? DEFAULT_PAID_USER_SETTINGS : (DEFAULT_USER_SETTINGS as any))[key];
             return settings;
         }, {} as UserSettings);
 
