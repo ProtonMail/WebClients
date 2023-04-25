@@ -2,30 +2,32 @@ import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 
+import type { ImportPayload } from '../types';
 import { readBitwardenData } from './bitwarden.reader';
 
 describe('Import bitwarden json', () => {
     let sourceData: string;
+    let payload: ImportPayload;
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/bitwarden.json', 'utf8');
+        payload = readBitwardenData(sourceData);
     });
 
-    it('should detect encrypted json payload', () => {
+    it('should throw on encrypted json payload', () => {
         expect(() => readBitwardenData(JSON.stringify({ encrypted: true, items: [] }))).toThrow();
     });
 
-    it('should handle corrupted files', () => {
+    it('should throw on corrupted files', () => {
         expect(() => readBitwardenData('not-a-json-body')).toThrow();
         expect(() => readBitwardenData(JSON.stringify({ encrypted: false }))).toThrow();
         expect(() => readBitwardenData(JSON.stringify({ encrypted: false, items: '[]' }))).toThrow();
     });
 
-    it('transforms bitwarden json into ImportPayload', () => {
-        const payload = readBitwardenData(sourceData);
-        const [vaultData] = payload;
+    it('should correctly parse items', () => {
+        const [vaultData] = payload.vaults;
 
-        expect(payload.length).toEqual(1);
+        expect(payload.vaults.length).toEqual(1);
         expect(vaultData.type).toEqual('new');
         expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
 
@@ -73,5 +75,11 @@ describe('Import bitwarden json', () => {
         expect(loginItem3.content.password).toStrictEqual('');
         expect(loginItem3.content.urls).toStrictEqual([]);
         expect(loginItem3.content.totpUri).toStrictEqual('');
+    });
+
+    test('correctly keeps a reference to ignored items', () => {
+        expect(payload.ignored).not.toEqual([]);
+        expect(payload.ignored[0]).toEqual('[Credit Card] CreditCardItem');
+        expect(payload.ignored[1]).toEqual('[Identification] IdentityItem');
     });
 });

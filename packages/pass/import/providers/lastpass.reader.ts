@@ -2,15 +2,17 @@ import { c } from 'ttag';
 import uniqid from 'uniqid';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isValidURL } from '@proton/pass/utils/url';
+import capitalize from '@proton/utils/capitalize';
 import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
-import type { ImportPayload } from '../types';
+import type { ImportPayload, ImportVault } from '../types';
 import type { LastPassItem } from './lastpass.types';
 
 const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
@@ -70,18 +72,30 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
             }))
         );
 
-        return groupedByVault
+        const ignored: string[] = [];
+        const vaults: ImportVault[] = groupedByVault
             .filter(({ length }) => length > 0)
             .map((items) => {
                 return {
                     type: 'new',
                     vaultName: items?.[0].grouping ?? `${c('Title').t`LastPass import`}`,
                     id: uniqid(),
-                    items: items.map((item) =>
-                        item.url === 'http://sn' ? processNoteItem(item) : processLoginItem(item)
-                    ),
+                    items: items
+                        .map((item) => {
+                            const isNote = item.url === 'http://sn';
+                            if (!isNote) return processLoginItem(item);
+
+                            const matchType = isNote && item.extra?.match(/^NoteType:(.*)/);
+                            const noteType = matchType && matchType[1];
+
+                            if (!noteType) return processNoteItem(item);
+                            ignored.push(`[${capitalize(noteType)}] ${item.name}`);
+                        })
+                        .filter(truthy),
                 };
             });
+
+        return { vaults, ignored };
     } catch (e) {
         logger.warn('[Importer::LastPass]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';

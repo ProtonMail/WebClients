@@ -2,27 +2,38 @@ import { c } from 'ttag';
 import uniqid from 'uniqid';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl, isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
-import type { ImportPayload } from '../types';
+import type { ImportPayload, ImportVault } from '../types';
 import { type BitwardenData, BitwardenType } from './bitwarden.types';
+
+const BitwardenTypeMap: Record<number, string> = {
+    1: 'Login',
+    2: 'Note',
+    3: 'Credit Card',
+    4: 'Identification',
+};
 
 export const readBitwardenData = (data: string): ImportPayload => {
     try {
         const { items, encrypted } = JSON.parse(data) as BitwardenData;
         if (encrypted) throw new ImportReaderError(c('Error').t`Encrypted JSON not supported`);
 
-        return [
+        const ignored: string[] = [];
+
+        const vaults: ImportVault[] = [
             {
                 type: 'new',
                 vaultName: c('Title').t`Bitwarden import`,
                 id: uniqid(),
                 items: items
-                    .filter(({ type }) => Object.values(BitwardenType).includes(type))
                     .map((item): Maybe<ItemImportIntent> => {
+                        const name = item.name ?? 'Unnamed Bitwarden item';
+
                         switch (item.type) {
                             case BitwardenType.LOGIN:
                                 const uris = (item.login.uris ?? []).reduce<{ web: string[]; android: string[] }>(
@@ -43,7 +54,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                 const loginCreationIntent: ItemImportIntent<'login'> = {
                                     type: 'login',
                                     metadata: {
-                                        name: item.name,
+                                        name,
                                         note: item.notes ?? '',
                                         itemUuid: uniqid(),
                                     },
@@ -74,7 +85,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                 const noteCreationIntent: ItemImportIntent<'note'> = {
                                     type: 'note',
                                     metadata: {
-                                        name: item.name,
+                                        name,
                                         note: item.notes ?? '',
                                         itemUuid: uniqid(),
                                     },
@@ -85,12 +96,15 @@ export const readBitwardenData = (data: string): ImportPayload => {
 
                                 return noteCreationIntent;
                             default:
+                                ignored.push(`[${BitwardenTypeMap[item.type] ?? 'Other'}] ${item.name}`);
                                 return;
                         }
                     })
-                    .filter((intent): intent is ItemImportIntent => intent !== undefined),
+                    .filter(truthy),
             },
         ];
+
+        return { vaults, ignored };
     } catch (e) {
         logger.warn('[Importer::Bitwarden]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';

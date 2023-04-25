@@ -17,11 +17,11 @@ describe('Import Chrome CSV', () => {
         await expect(readChromeData('not-a-csv-file')).rejects.toThrow();
     });
 
-    it('transforms chrome csv into ImportPayload', async () => {
+    it('should correctly parse items', async () => {
         const payload = await readChromeData(chromeExport);
-        const [vaultData] = payload;
+        const [vaultData] = payload.vaults;
 
-        expect(payload.length).toEqual(1);
+        expect(payload.vaults.length).toEqual(1);
         expect(vaultData.type).toEqual('new');
         expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
 
@@ -64,11 +64,11 @@ describe('Import Chrome CSV', () => {
         expect(loginItem4.content.urls).toEqual([]);
     });
 
-    it('transforms chrome csv (windows) into ImportPayload', async () => {
+    it('correctly parse items if .csv has `notes` column', async () => {
         const payload = await readChromeData(chromeExportWindows);
-        const [vaultData] = payload;
+        const [vaultData] = payload.vaults;
 
-        expect(payload.length).toEqual(1);
+        expect(payload.vaults.length).toEqual(1);
         expect(vaultData.type).toEqual('new');
         expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
 
