@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     Alert,
-    ErrorButton,
     ModalSize,
     ModalStateProps,
     ModalTwo,
@@ -18,6 +17,7 @@ import {
 export interface ConfirmActionModalProps {
     message: string | ReactNode;
     canUndo?: boolean;
+    actionType?: 'danger' | 'norm';
     onCancel?: () => void;
     onSubmit?: () => Promise<void | unknown>;
     title?: string;
@@ -38,6 +38,7 @@ export const ConfirmActionModal = ({
     onSubmit,
     size = 'large',
     message,
+    actionType = 'danger',
     canUndo = false,
     ...modalProps
 }: ConfirmActionModalProps & ModalStateProps) => {
@@ -66,19 +67,23 @@ export const ConfirmActionModal = ({
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>
-                <Alert className="mb-4" type="error">
-                    {message}
-                    <br />
-                    {!canUndo && c('Info').t`You cannot undo this action.`}
-                </Alert>
+                {actionType === 'danger' ? (
+                    <Alert className="mb1" type="error">
+                        {message}
+                        <br />
+                        {!canUndo && c('Info').t`You cannot undo this action.`}
+                    </Alert>
+                ) : (
+                    message
+                )}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="reset" onClick={onCancel} disabled={isLoading}>
                     {cancelText}
                 </Button>
-                <ErrorButton type="submit" loading={isLoading}>
+                <Button type="submit" loading={isLoading} shape="solid" color={actionType}>
                     {submitText}
-                </ErrorButton>
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
