@@ -11,7 +11,10 @@ import type {
     ItemRevision,
     ItemRevisionContentsResponse,
     ItemType,
+    Maybe,
 } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
+import { logger } from '@proton/pass/utils/logger';
 import { parseOpenedItem, serializeItemContent } from '@proton/pass/utils/protobuf';
 import { getEpoch } from '@proton/pass/utils/time';
 
@@ -185,24 +188,37 @@ export async function requestItemsForShareId(shareId: string): Promise<ItemRevis
     return Promise.all(items.map((encryptedItem) => parseItemRevision(shareId, encryptedItem)));
 }
 
-export const importItemsBatch = async (
-    shareId: string,
-    importIntents: ItemImportIntent[]
-): Promise<ItemRevisionContentsResponse[]> => {
+export const importItemsBatch = async (options: {
+    shareId: string;
+    importIntents: ItemImportIntent[];
+    onSkippedItem?: (skipped: ItemImportIntent) => void;
+}): Promise<ItemRevisionContentsResponse[]> => {
+    const { shareId, importIntents, onSkippedItem } = options;
     const data: ImportItemBatchRequest = {
-        Items: await Promise.all(
-            importIntents.map(async ({ trashed, createTime, modifyTime, ...item }): Promise<ImportItemRequest> => {
-                const content = serializeItemContent(item);
-                return {
-                    Item: await PassCrypto.createItem({ shareId, content }),
-                    AliasEmail: item.type === 'alias' ? item.extraData.aliasEmail : null,
-                    Trashed: trashed,
-                    CreateTime: createTime ?? null,
-                    ModifyTime: modifyTime ?? null,
-                };
-            })
-        ),
+        Items: (
+            await Promise.all(
+                importIntents.map(async (importIntent): Promise<Maybe<ImportItemRequest>> => {
+                    const { trashed, createTime, modifyTime, ...item } = importIntent;
+
+                    try {
+                        return {
+                            Item: await PassCrypto.createItem({ shareId, content: serializeItemContent(item) }),
+                            AliasEmail: item.type === 'alias' ? item.extraData.aliasEmail : null,
+                            Trashed: trashed,
+                            CreateTime: createTime ?? null,
+                            ModifyTime: modifyTime ?? null,
+                        };
+                    } catch (e) {
+                        logger.info(`[Saga::Import] could not import "${item.metadata.name}"`);
+                        onSkippedItem?.(importIntent);
+                        return;
+                    }
+                })
+            )
+        ).filter(truthy),
     };
+
+    if (data.Items.length === 0) return [];
 
     const result = await api({
         url: `pass/v1/share/${shareId}/item/import/batch`,

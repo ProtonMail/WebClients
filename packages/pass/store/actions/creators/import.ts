@@ -26,7 +26,7 @@ export const importItemsIntent = createAction(
 
 export const importItemsSuccess = createAction(
     'import items success',
-    ({ total }: { total: number }, target?: ExtensionEndpoint) =>
+    (payload: { total: number; ignored: string[]; provider: ImportProvider }, target?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({
@@ -36,10 +36,13 @@ export const importItemsSuccess = createAction(
             withNotification({
                 type: 'info',
                 target,
-                expiration: -1,
-                text: c('Info').ngettext(msgid`Imported ${total} item`, `Imported ${total} items`, total),
+                text: c('Info').ngettext(
+                    msgid`Imported ${payload.total} item`,
+                    `Imported ${payload.total} items`,
+                    payload.total
+                ),
             })
-        )({ payload: { total } })
+        )({ payload })
 );
 
 export const importItemsFailure = createAction('import items failure', (error: unknown, target?: ExtensionEndpoint) =>
