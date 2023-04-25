@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { type ImportFormContext, SUPPORTED_IMPORT_FILE_TYPES } from '../../hooks/useImportForm';
 import { PasswordField } from '../fields';
 
-const PROVIDER_TITLE_MAP = {
+export const PROVIDER_TITLE_MAP = {
     [ImportProvider.BITWARDEN]: 'Bitwarden',
     [ImportProvider.CHROME]: 'Chrome',
     [ImportProvider.LASTPASS]: 'LastPass',
@@ -20,7 +20,7 @@ const PROVIDER_TITLE_MAP = {
     [ImportProvider.PROTONPASS_PGP]: `${PASS_APP_NAME} (PGP encrypted)`,
 };
 
-export const ImportForm: VFC<Omit<ImportFormContext, 'reset'>> = ({ form, dropzone, busy }) => (
+export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => (
     <>
         <label className="block mb-2 text-bold">{c('Label').t`Provider`}</label>
 

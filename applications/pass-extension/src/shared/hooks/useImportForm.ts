@@ -1,4 +1,4 @@
-import { ComponentProps, useEffect, useState } from 'react';
+import { ComponentProps, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FormikContextType, FormikErrors, useFormik } from 'formik';
@@ -7,15 +7,17 @@ import { c } from 'ttag';
 import { Dropzone, FileInput, onlyDragFiles } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { ImportPayload, ImportProvider, ImportReaderPayload, fileReader } from '@proton/pass/import';
-import { importItemsIntent, selectRequestStatus } from '@proton/pass/store';
+import { ImportState, importItemsIntent, selectLatestImport } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
 import { Maybe } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';
+import noop from '@proton/utils/noop';
 
 import { ExtensionContext } from '../extension';
+import { useRequestStatusEffect } from './useRequestStatusEffect';
 
 type DropzoneProps = ComponentProps<typeof Dropzone>;
 type FileInputProps = ComponentProps<typeof FileInput>;
@@ -26,6 +28,7 @@ export type ImportFormContext = {
     form: FormikContextType<ImportFormValues>;
     reset: () => void;
     busy: boolean;
+    result: ImportState;
     dropzone: {
         hovered: boolean;
         onDragEnter: DropzoneProps['onDragEnter'];
@@ -77,7 +80,7 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
 
 export const useImportForm = ({
     beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
-    onImported,
+    onImported = noop,
 }: UseImportFormOptions): ImportFormContext => {
     const dispatch = useDispatch();
     const { endpoint } = ExtensionContext.get();
@@ -85,6 +88,7 @@ export const useImportForm = ({
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
     const { createNotification } = useNotifications();
+    const result = useSelector(selectLatestImport);
 
     const form: FormikContextType<ImportFormValues> = useFormik<ImportFormValues>({
         initialValues: getInitialFormValues(),
@@ -151,24 +155,16 @@ export const useImportForm = ({
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
 
-    const requestStatus = useSelector(selectRequestStatus(importItems()));
-
-    useEffect(() => {
-        switch (requestStatus) {
-            case 'success': {
-                reset();
-                return onImported?.();
-            }
-            case 'failure': {
-                return setBusy(false);
-            }
-        }
-    }, [requestStatus]);
+    useRequestStatusEffect(importItems(), {
+        onSuccess: () => pipe(reset, onImported),
+        onFailure: () => setBusy(false),
+    });
 
     return {
         form,
         reset,
         busy,
+        result,
         dropzone: {
             hovered: dropzoneHovered,
             onDragEnter: createDragEventHandler(true),

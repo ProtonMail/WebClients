@@ -24,16 +24,17 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
-            onSubmit(
-                values.vaults
+            onSubmit({
+                vaults: values.vaults
                     .filter((vault) => vault.selected)
-                    .map((vault) => omit(vault, ['selected'])) as ImportPayload
-            ),
+                    .map((vault) => omit(vault, ['selected']) as ImportVault),
+                ignored: payload.ignored,
+            }),
         [onSubmit]
     );
 
     const form = useFormik<VaultsPickerFormValues>({
-        initialValues: { vaults: payload.map((vault) => ({ ...vault, selected: true })) },
+        initialValues: { vaults: payload.vaults.map((vault) => ({ ...vault, selected: true })) },
         onSubmit: handleSubmit,
     });
 
@@ -47,7 +48,7 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                         .t`Select the destination vault for each vault you are trying to import. By default we will create a new vault for each imported vault.`}
                 </Card>
 
-                {payload.map((importedVault) => {
+                {payload.vaults.map((importedVault) => {
                     const value = form.values.vaults.find(({ id }) => id === importedVault.id)!;
                     const { selected } = value;
 
