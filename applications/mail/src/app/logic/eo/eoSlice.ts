@@ -16,8 +16,7 @@ import {
     EODocumentInitializeFulfilled as EODocumentInitializeFulfilledReducer,
     EODocumentInitializePending as EODocumentInitializePendingReducer,
     EOLoadEmbeddedFulfilled,
-    EOLoadRemoteFulfilled,
-    EOLoadRemotePending,
+    EOLoadRemote as EOLoadRemoteReducer,
     reset as globalResetReducer,
     initFulfilled,
     loadEOMessageFulfilled,
@@ -47,8 +46,8 @@ export const eoSlice = createSlice({
         builder.addCase(EODocumentInitializeFulfilled, EODocumentInitializeFulfilledReducer);
 
         builder.addCase(EOLoadEmbedded.fulfilled, EOLoadEmbeddedFulfilled);
-        builder.addCase(EOLoadRemote.pending, EOLoadRemotePending);
-        builder.addCase(EOLoadRemote.fulfilled, EOLoadRemoteFulfilled);
+
+        builder.addCase(EOLoadRemote, EOLoadRemoteReducer);
 
         builder.addCase(EOAddReply, EOAddReplyReducer);
     },
