@@ -90,6 +90,7 @@ interface Props {
     plans: Plan[];
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    isPassPlusEnabled: boolean;
 }
 
 const getHighSpeedVPN = (connections: number) => {
@@ -112,7 +113,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app, isPassPlusEnabled }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -240,7 +241,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
 
     const passPlan = plans.find(({ Name }) => Name === PLANS.PASS_PLUS);
     // Pass upsell
-    if (user.isFree && app === APPS.PROTONPASS && passPlan) {
+    if (isPassPlusEnabled && user.isFree && app === APPS.PROTONPASS && passPlan) {
         const plan = passPlan;
         const { features, description } = getPassPlan(plan);
 

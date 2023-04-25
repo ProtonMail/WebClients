@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink } from '@proton/components/components';
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
-import { usePlans, useUser } from '@proton/components/hooks';
+import { FeatureCode, SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import { useFeature, usePlans, useUser } from '@proton/components/hooks';
 import { PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -12,9 +12,12 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
     const [plans, loadingPlans] = usePlans();
     const passPlan = plans?.find(({ Name }) => Name === PLANS.PASS_PLUS);
 
+    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
+    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
+
     const shouldUpgrade = user.isFree;
 
-    if (loadingPlans || !shouldUpgrade || !passPlan) {
+    if (loadingPlans || !shouldUpgrade || !passPlan || !isPassPlusEnabled) {
         return null;
     }
 
