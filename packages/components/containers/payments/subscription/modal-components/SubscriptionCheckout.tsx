@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { APPS, PLANS } from '@proton/shared/lib/constants';

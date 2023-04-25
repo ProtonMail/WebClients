@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { Button } from '@proton/atoms';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
@@ -14,19 +10,34 @@ import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-
-
+import {
+    Audience,
+    Currency,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    SubscriptionCheckResponse,
+} from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader } from '../../components';
-import { useApi, useConfig, useFeature, useLoad, useLoading, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
+import {
+    useApi,
+    useConfig,
+    useFeature,
+    useLoad,
+    useLoading,
+    useOrganization,
+    usePlans,
+    useSubscription,
+    useUser,
+    useVPNServersCount,
+} from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { FeatureCode } from '../index';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import { getCurrency, getDefaultSelectedProductPlans } from './subscription/helpers';
-
 
 const FREE_SUBSCRIPTION = {} as Subscription;
 
@@ -37,7 +48,7 @@ const getSearchParams = (search: string) => {
     };
 };
 
-const PlansSection = () => {
+const PlansSection = ({ isPassPlusEnabled }: { isPassPlusEnabled: boolean }) => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -54,7 +65,7 @@ const PlansSection = () => {
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const settingsApp = appFromPathname || APP_NAME;
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
-        return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription));
+        return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription), isPassPlusEnabled);
     });
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const [open] = useSubscriptionModal();
@@ -100,7 +111,9 @@ const PlansSection = () => {
             return;
         }
         setCycle(subscription.Cycle || DEFAULT_CYCLE);
-        setSelectedProductPlans(getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription)));
+        setSelectedProductPlans(
+            getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription), isPassPlusEnabled)
+        );
     }, [isLoading, subscription, settingsApp]);
 
     // @ts-ignore
@@ -115,6 +128,7 @@ const PlansSection = () => {
     return (
         <>
             <PlanSelection
+                isPassPlusEnabled={isPassPlusEnabled}
                 mode="settings"
                 audience={audience}
                 onChangeAudience={setAudience}

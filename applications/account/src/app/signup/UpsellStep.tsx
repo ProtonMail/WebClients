@@ -34,6 +34,7 @@ interface Props {
     onBack?: () => void;
     vpnServers: VPNServersCountData;
     upsellPlanName: PLANS;
+    isPassPlusEnabled: boolean;
 }
 
 const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
@@ -71,6 +72,7 @@ const UpsellStep = ({
     onPlan,
     upsellPlanName,
     onBack,
+    isPassPlusEnabled,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const plansMap = toMap(plans, 'Name');
@@ -84,14 +86,20 @@ const UpsellStep = ({
             return getFreeDrivePlan();
         }
 
-        if (upsellPlanName === PLANS.PASS_PLUS) {
+        if (isPassPlusEnabled && upsellPlanName === PLANS.PASS_PLUS) {
             return getFreePassPlan();
         }
 
         return getFreePlan();
     })();
 
-    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnServers, { boldStorageSize: true });
+    const upsellShortPlan = getShortPlan(
+        upsellPlanName,
+        plansMap,
+        vpnServers,
+        { boldStorageSize: true },
+        isPassPlusEnabled
+    );
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 

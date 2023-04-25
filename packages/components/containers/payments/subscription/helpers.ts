@@ -81,13 +81,13 @@ export const getCurrency = (
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
 
-export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: PlanIDs) => {
+export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: PlanIDs, isPassPlusEnabled: boolean) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
         defaultB2CPlan = PLANS.VPN;
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
-    } else if (appName === APPS.PROTONPASS) {
+    } else if (isPassPlusEnabled && appName === APPS.PROTONPASS) {
         defaultB2CPlan = PLANS.PASS_PLUS;
     }
     const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find((x) => planIDs[x]);
