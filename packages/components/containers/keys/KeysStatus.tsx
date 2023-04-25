@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+
+
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -59,12 +61,12 @@ const KeysStatus = ({
         .filter(isTruthy)
         .map(({ tooltip, title, type }) => {
             return (
-                <Badge key={title} tooltip={tooltip} type={type}>
+                <Badge className="m-0" key={title} tooltip={tooltip} type={type}>
                     {title}
                 </Badge>
             );
         });
-    return <>{list}</>;
+    return <div className="flex gap-1">{list}</div>;
 };
 
 export default KeysStatus;

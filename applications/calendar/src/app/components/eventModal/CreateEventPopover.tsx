@@ -181,7 +181,7 @@ const CreateEventPopover = ({
                     <Button
                         disabled={loadingAction}
                         data-testid="create-event-popover:more-event-options"
-                        className="mr1"
+                        className="mr-4"
                         onClick={handleMore}
                     >{c('Action').t`More options`}</Button>
                     <PrimaryButton

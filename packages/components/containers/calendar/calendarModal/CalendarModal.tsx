@@ -377,7 +377,7 @@ export const CalendarModal = ({
                         </ModalTwoContent>
                         <ModalTwoFooter>
                             {hasError ? (
-                                <Button onClick={() => window.location.reload()} className="mlauto" color="norm">{c(
+                                <Button onClick={() => window.location.reload()} className="ml-auto" color="norm">{c(
                                     'Action'
                                 ).t`Close`}</Button>
                             ) : (

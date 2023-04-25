@@ -2,16 +2,11 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+
+
 import { Button, Href } from '@proton/atoms';
 import InputField from '@proton/components/components/v2/field/InputField';
-import {
-    useApi,
-    useGetAddressKeys,
-    useGetDecryptedPassphraseAndCalendarKeys,
-    useGetEncryptionPreferences,
-    useLoading,
-    useNotifications,
-} from '@proton/components/hooks';
+import { useApi, useGetAddressKeys, useGetDecryptedPassphraseAndCalendarKeys, useGetEncryptionPreferences, useLoading, useNotifications } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
@@ -33,20 +28,11 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import {
-    AddressesAutocompleteTwo,
-    AddressesInput,
-    AddressesInputItem,
-    Icon,
-    Loader,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    ModalProps,
-    RadioGroup,
-} from '../../../components';
+
+
+import { AddressesAutocompleteTwo, AddressesInput, AddressesInputItem, Icon, Loader, ModalTwo as Modal, ModalTwoContent as ModalContent, ModalTwoFooter as ModalFooter, ModalTwoHeader as ModalHeader, ModalProps, RadioGroup } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
+
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,
@@ -174,7 +160,7 @@ const loadRecipient = async ({
 const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }: ExtendedRecipient) => {
     if (loading) {
         return {
-            icon: <Loader className="icon-16p pl0-5 mauto flex flex-item-noshrink" />,
+            icon: <Loader className="icon-16p pl0-5 m-auto flex flex-item-noshrink" />,
         };
     }
     if (error) {
@@ -190,7 +176,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     }
     return {
         icon: (
-            <span className="inline-flex pl0-5 flex-item-noshrink mtauto mbauto">
+            <span className="inline-flex pl0-5 flex-item-noshrink my-auto">
                 <Icon size={16} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
             </span>
         ),

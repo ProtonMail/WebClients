@@ -20,7 +20,7 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
             </h3>
             <p className="text-lg subscription-cancel-plan-info">{info}</p>
             {features.length ? (
-                <ul className="unstyled mt1">
+                <ul className="unstyled mt-4">
                     {features.map((feature) => {
                         const key =
                             typeof feature.text === 'string'

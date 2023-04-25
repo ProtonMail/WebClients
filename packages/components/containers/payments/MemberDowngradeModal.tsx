@@ -62,8 +62,8 @@ const MemberDowngradeModal = ({ organization, onConfirm, onClose, ...rest }: Pro
         >
             <ModalHeader title={modalTitle} />
             <ModalContent>
-                <div className="mb1">{warningMessage}</div>
-                <Card rounded className="text-break user-select mb1">
+                <div className="mb-4">{warningMessage}</div>
+                <Card rounded className="text-break user-select mb-4">
                     {organizationName}
                 </Card>
                 <InputFieldTwo

@@ -340,8 +340,8 @@ export const Sandbox = () => {
 
         items.forEach((item) => {
             if (item.checked) {
-                if (item.id === 'mx' && item.value === 'mxauto') {
-                    classes.push('mxauto');
+                if (item.id === 'mx' && item.value === 'mx-auto') {
+                    classes.push('mx-auto');
                 } else {
                     classes.push(`${item.id}${item.value}`);
                 }
@@ -383,10 +383,10 @@ export const Sandbox = () => {
 
     const containerClasses = (classes: string | string[]) => {
         if (
-            classes.includes('mauto') ||
-            classes.includes('myauto') ||
-            classes.includes('mtauto') ||
-            classes.includes('mbauto')
+            classes.includes('m-auto') ||
+            classes.includes('my-auto') ||
+            classes.includes('mt-auto') ||
+            classes.includes('mb-auto')
         ) {
             return 'h100';
         } else if (classes.includes('auto')) {
@@ -395,11 +395,11 @@ export const Sandbox = () => {
             return 'absolute';
         }
     };
-    // display: assembleClasses(selectedMargin).includes('mauto') ? 'flex' : 'flow-root'
+    // display: assembleClasses(selectedMargin).includes('m-auto') ? 'flex' : 'flow-root'
     const containerDisplay = (classes: string | string[]) => {
-        if (classes.includes('mauto') || classes.includes('mxauto myauto')) {
+        if (classes.includes('m-auto') || classes.includes('mx-auto my-auto')) {
             return 'flex';
-        } else if (classes.includes('myauto') || classes.includes('mtauto') || classes.includes('mbauto')) {
+        } else if (classes.includes('my-auto') || classes.includes('mt-auto') || classes.includes('mb-auto')) {
             return 'inline-flex';
         } else {
             return 'flow-root';
@@ -408,13 +408,13 @@ export const Sandbox = () => {
 
     return (
         <>
-            <div className="flex flex-justify-space-between mb2">
+            <div className="flex flex-justify-space-between mb-8">
                 <div className="w25">
                     {selectedMargin.map(({ id, checked, value }) => (
                         <Label
                             htmlFor={id}
                             key={id}
-                            className="flex flex-nowrap flex-align-items-center flex-gap-1 mb1"
+                            className="flex flex-nowrap flex-align-items-center flex-gap-1 mb-4"
                         >
                             <Checkbox
                                 id={id}
@@ -468,7 +468,7 @@ export const Sandbox = () => {
                 <Button onClick={() => setSelectedMargin(marginsCentered)}>center element in flex container</Button>
             </ButtonGroup>
 
-            <div className="block mt2">
+            <div className="block mt-8">
                 <strong>Classes:</strong> <Code>{assembleClasses(selectedMargin)}</Code>
             </div>
         </>

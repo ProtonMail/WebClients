@@ -19,7 +19,7 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
 
     return (
         <Alert
-            className="mb1"
+            className="mb-4"
             type="error"
             learnMore={
                 errorCode !== RATE_LIMIT_EXCEEDED ? getKnowledgeBaseUrl('/troubleshooting-easy-switch/') : undefined
@@ -27,14 +27,14 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
         >
             {isReconnect === true && (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Import error').t`${BRAND_NAME} can't connect to your account. Please make sure that:`}
                     </div>
                     <ul className="m-0 pb1">
                         <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your password is correct.`}</li>
                     </ul>
-                    <div className="mb1">{c('Import error').t`Use your app password if:`}</div>
+                    <div className="mb-4">{c('Import error').t`Use your app password if:`}</div>
                     <ul className="m-0 pb1">
                         <li>{c('Import error').t`2-step verification is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your email account requires one to export your data.`}</li>
@@ -47,7 +47,7 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
             )}
             {errorCode === AUTHENTICATION_ERROR && (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Import error')
                             .t`${BRAND_NAME} can't connect to your external account. Please make sure that:`}
                     </div>
@@ -55,7 +55,7 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
                         <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your email address and password are correct.`}</li>
                     </ul>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Import error').t`Use your app password instead of your regular password if:`}
                     </div>
                     <ul className="m-0 pb1">

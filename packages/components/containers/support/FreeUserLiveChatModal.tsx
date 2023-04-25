@@ -40,7 +40,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
             {render && <AuthenticatedBugModal {...bugReportModal} onClose={onCloseChildModal} />}
             <Modal open={open} onExit={onExit} onClose={handleClose} size="small">
                 <ModalHeader />
-                <ModalContent className="flex flex-column flex-align-items-center mb2">
+                <ModalContent className="flex flex-column flex-align-items-center mb-8">
                     <div className="flex flex-row flex-justify-center flex-align-items-center p1 rounded-full bg-weak">
                         <Icon name="speech-bubble" size={20} className="color-primary" />
                     </div>
@@ -53,7 +53,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
                     </p>
                     <ButtonLike
                         as={SettingsLink}
-                        className="text-bold mt2"
+                        className="text-bold mt-8"
                         size="small"
                         pill
                         color="norm"
@@ -66,7 +66,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
                         shape="ghost"
                         pill
                         size="small"
-                        className="color-primary mt1 text-bold"
+                        className="color-primary mt-4 text-bold"
                         onClick={handleBugReportClick}
                     >{c('Live Chat Modal').t`Open support form`}</Button>
                 </ModalContent>

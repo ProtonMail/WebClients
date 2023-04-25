@@ -12,14 +12,14 @@ import DealTitle from './DealTitle';
 const Deals = (props: OfferProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
     return (
-        <div className="offer-wrapper flex flex-nowrap flex-justify-space-around on-mobile-flex-column mt3">
+        <div className="offer-wrapper flex flex-nowrap flex-justify-space-around on-mobile-flex-column mt-11">
             {props.offer.deals.map((deal) => (
                 <Deal key={deal.ref} {...props} deal={deal}>
                     <DealMostPopular />
                     <DealTitle />
                     <DealPrice />
                     <DealCTA />
-                    <div className="offer-features flex-item-fluid-auto w100 mb1">
+                    <div className="offer-features flex-item-fluid-auto w100 mb-4">
                         <DealFeatures isExpanded={isExpanded} expand={() => setIsExpanded(true)} />
                     </div>
                     <DealPriceInfos />

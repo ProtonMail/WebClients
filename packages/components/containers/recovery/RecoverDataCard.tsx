@@ -37,8 +37,8 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
                 </Href>
             </p>
 
-            <Button color="norm" onClick={onReactivate} className="mr1 mt1">{c('Action').t`Unlock data`}</Button>
-            <Button className="mt1" onClick={onDismiss}>{c('Action').t`Don't show again`}</Button>
+            <Button color="norm" onClick={onReactivate} className="mr-4 mt-4">{c('Action').t`Unlock data`}</Button>
+            <Button className="mt-4" onClick={onDismiss}>{c('Action').t`Don't show again`}</Button>
         </Card>
     );
 };

@@ -43,7 +43,7 @@ const PasswordInputTwoBase = (
                         size="small"
                         icon
                     >
-                        <Icon className="mauto" name={type === 'password' ? 'eye' : 'eye-slash'} />
+                        <Icon className="m-auto" name={type === 'password' ? 'eye' : 'eye-slash'} />
                     </Button>
                 </>
             }

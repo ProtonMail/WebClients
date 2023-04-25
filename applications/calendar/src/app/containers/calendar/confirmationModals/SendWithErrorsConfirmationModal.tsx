@@ -1,6 +1,10 @@
 import * as React from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button } from '@proton/atoms';
 import { BasicModal } from '@proton/components';
@@ -10,7 +14,10 @@ import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
+
+
 import { CleanSendIcsActionData, INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
+
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION, NONE } =
     INVITE_ACTION_TYPES;
@@ -165,7 +172,7 @@ const getModalContent = (
             return {
                 title: c('Title').t`Organizer cannot be notified`,
                 warningText: c('Info').t`The organizer could not be notified that you changed your answer:`,
-                close: <Button className="mlauto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
+                close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
             };
         }
         return {
@@ -179,7 +186,7 @@ const getModalContent = (
             warningText: c('Info').t`The organizer cannot be notified that you decline the invitation:`,
             alertText: c('Info').t`Would you like to delete the event anyway?`,
             submit: (
-                <Button className="mlauto" onClick={onSubmit} color="danger" type="submit">{c('Action')
+                <Button className="ml-auto" onClick={onSubmit} color="danger" type="submit">{c('Action')
                     .t`Delete`}</Button>
             ),
         };
@@ -275,7 +282,7 @@ const SendWithErrorsConfirmationModal = ({
             onClose={onClose}
             isOpen={isOpen}
         >
-            <div className="mb1">{warningText}</div>
+            <div className="mb-4">{warningText}</div>
             <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
             {alertText && <div>{alertText}</div>}
         </BasicModal>

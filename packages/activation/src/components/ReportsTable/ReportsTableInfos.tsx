@@ -33,7 +33,7 @@ const ReportsTableInfos = () => {
                 <SettingsParagraph>{c('Info').t`Check the status of imports and forwarding.`}</SettingsParagraph>
             )}
             {importErrors.includes('storageLimit') && (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Info').t`${BRAND_NAME} paused an import because your account is running low on space. You can:`}
                     <ul className="m-0">
                         <li>{c('Info').t`free up space by deleting older messages or other data`}</li>
@@ -42,13 +42,13 @@ const ReportsTableInfos = () => {
                 </Alert>
             )}
             {importErrors.includes('authConnection') && (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Info')
                         .t`${BRAND_NAME} paused an import because it lost the connection with your other email provider. Please reconnect.`}
                 </Alert>
             )}
             {importErrors.includes('delayedImport') && (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Info').ngettext(
                         msgid`Your import from ${accounts} is temporarily delayed.`,
                         `Your imports from ${accounts} are temporarily delayed.`,

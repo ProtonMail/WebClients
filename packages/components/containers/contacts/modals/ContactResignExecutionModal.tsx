@@ -70,7 +70,7 @@ const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
         <ModalTwo {...rest}>
             <ModalTwoHeader title={c('Title').t`Re-signing contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="info">{c('Info')
+                <Alert className="mb-4" type="info">{c('Info')
                     .t`Please wait while we look for contacts that can be re-signed with the primary encryption key.`}</Alert>
                 <DynamicProgress
                     id="clear-data-execution-progress"

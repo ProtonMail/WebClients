@@ -15,11 +15,11 @@ const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
         <InnerModal className="modal-content pb2 pt2 text-center">
             <h1 className="mb-2 text-2xl text-bold">{c('Get started checklist instructions')
                 .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
-            <div className="mb2 ">{c('Get started checklist instructions').t`Available on iOS and Android.`}</div>
-            <div className=" mb2">
+            <div className="mb-8 ">{c('Get started checklist instructions').t`Available on iOS and Android.`}</div>
+            <div className=" mb-8">
                 <QRCode value="https://pm.me/app?type=qr" size={200} />
             </div>
-            <div className="mb1">{c('Get started checklist instructions')
+            <div className="mb-4">{c('Get started checklist instructions')
                 .t`Using your mobile device, scan this QR code or visit`}</div>
             <div className="text-2xl text-bold">
                 <Href href="https://pm.me/app">pm.me/app</Href>

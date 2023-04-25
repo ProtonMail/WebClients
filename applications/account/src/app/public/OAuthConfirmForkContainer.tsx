@@ -39,7 +39,7 @@ const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) 
                         c('Info').t`Continuing will connect your ${BRAND_NAME} Account to ${name}.`
                     }
                 </Text>
-                {image && <img src={`data:image/svg+xml;base64,${image}`} alt="" className="w100 mb1-5" />}
+                {image && <img src={`data:image/svg+xml;base64,${image}`} alt="" className="w100 mb-6" />}
                 <Button
                     className="mb-2"
                     color="norm"

@@ -14,7 +14,7 @@ const SPFSection = () => {
     const valueToCopy = 'v=spf1 include:_spf.protonmail.ch mx ~all';
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
+            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
                 {c('Info')
                     .t`SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${MAIL_APP_NAME} in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
@@ -53,7 +53,7 @@ const SPFSection = () => {
                     />
                 </TableBody>
             </Table>
-            <Alert className="mb1">{c('Info')
+            <Alert className="mb-4">{c('Info')
                 .jt`If you want to keep an existing SPF record, you can just add ${spf} to it after the ${spfValue}. Do not create multiple SPF records.`}</Alert>
         </>
     );

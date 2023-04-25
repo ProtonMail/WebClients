@@ -141,7 +141,7 @@ const MessageBodyIframe = ({
                             }}
                             data-testid="message-view:expand-codeblock"
                         >
-                            <Icon name="three-dots-horizontal" size={14} className="mauto" />
+                            <Icon name="three-dots-horizontal" size={14} className="m-auto" />
                             <span className="proton-sr-only">
                                 {showBlockquote
                                     ? c('Info').t`Hide original message`

@@ -139,7 +139,7 @@ const Spotlight = ({
                     onAnimationEnd={handleAnimationEnd}
                 >
                     <div className={classnames(['spotlight-inner', type && 'flex flex-nowrap flex-align-items-start'])}>
-                        {illustrationURL && <img className="flex-item-noshrink mr1-5" src={illustrationURL} alt="" />}
+                        {illustrationURL && <img className="flex-item-noshrink mr-6" src={illustrationURL} alt="" />}
                         <div>{content}</div>
                     </div>
 

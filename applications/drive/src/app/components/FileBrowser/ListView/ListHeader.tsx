@@ -59,7 +59,7 @@ const HeaderCell = <T,>({
                         }
                     >
                         {selection?.selectionState !== SelectionState.NONE ? (
-                            <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span>
+                            <span className="ml-4">{c('Info').jt`${selectedCount} selected`}</span>
                         ) : null}
                     </Checkbox>
                     {selection?.selectionState !== SelectionState.NONE && isLoading ? (

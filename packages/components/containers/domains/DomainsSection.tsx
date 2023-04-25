@@ -96,8 +96,8 @@ const DomainsSectionInternal = () => {
                     <RestoreAdministratorPrivileges />
                     <DomainsSectionText />
 
-                    <div className="mb1">
-                        <Button color="norm" onClick={() => setNewDomainModalOpen(true)} className="mr1">
+                    <div className="mb-4">
+                        <Button color="norm" onClick={() => setNewDomainModalOpen(true)} className="mr-4">
                             {c('Action').t`Add domain`}
                         </Button>
                         <Button
@@ -167,7 +167,7 @@ const DomainsSectionInternal = () => {
                             </TableBody>
                         </Table>
                     )}
-                    <div className="mb1 color-weak">
+                    <div className="mb-4 color-weak">
                         {UsedDomains} / {MaxDomains}{' '}
                         {c('Info').ngettext(msgid`domain used`, `domains used`, MaxDomains)}
                     </div>

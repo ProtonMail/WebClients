@@ -202,11 +202,11 @@ const MemberStorageSelector = ({
                             <div className="w-custom" style={{ '--width-custom': `${(rect?.height || 0) / ratio}px` }}>
                                 <Donut segments={segments.map(({ value }) => value)} />
                             </div>
-                            <div className="ml1 text-sm">
+                            <div className="ml-4 text-sm">
                                 <div ref={labelRef}>
                                     <div ref={sizeRef} style={{ width: `${sizeElementWidth}px` }} />
                                     {segments.map(({ label, size, tooltip, value: [share, color] }) => (
-                                        <div className="mb1 flex flex-align-items-center" key={tooltip}>
+                                        <div className="mb-4 flex flex-align-items-center" key={tooltip}>
                                             <Tooltip
                                                 title={
                                                     <>

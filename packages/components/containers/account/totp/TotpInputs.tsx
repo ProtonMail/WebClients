@@ -16,7 +16,7 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
         <>
             {type === 'totp' && (
                 <>
-                    <div className="mb1-75">{c('Info').t`Enter the code from your authenticator app`}</div>
+                    <div className="mb-6">{c('Info').t`Enter the code from your authenticator app`}</div>
                     <InputFieldTwo
                         id="totp"
                         as={TotpInput}
@@ -33,7 +33,7 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
             )}
             {type === 'recovery-code' && (
                 <>
-                    <div className="mb1-75 flex flex-align-items-center">
+                    <div className="mb-6 flex flex-align-items-center">
                         {c('Info').t`Each code can only be used once`}{' '}
                         <Info
                             className="ml-2"

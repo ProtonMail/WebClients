@@ -131,7 +131,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, on
         <ModalTwo size="large" {...rest}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {contactText}
                     <br />
                     {groupText}
@@ -145,7 +145,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, on
                                 <Field className="flex flex-column w100">
                                     {contactEmails.map(({ ID: contactEmailID, Email, isChecked }: CheckableContact) => {
                                         return (
-                                            <label key={contactEmailID} className="mb1" htmlFor={contactEmailID}>
+                                            <label key={contactEmailID} className="mb-4" htmlFor={contactEmailID}>
                                                 <Checkbox
                                                     id={contactEmailID}
                                                     checked={isChecked}

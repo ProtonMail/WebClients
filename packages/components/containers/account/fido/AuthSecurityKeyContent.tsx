@@ -10,7 +10,7 @@ import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner
 const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
     return (
         <>
-            <div className="flex flex-justify-center mt1 mb1-5">
+            <div className="flex flex-justify-center mt-4 mb-6">
                 <img src={physicalKey} alt={c('fido2: Info').t`Security key`} />
             </div>
             <div>
@@ -19,7 +19,7 @@ const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
                 <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </div>
             {error && (
-                <div className="mt1">
+                <div className="mt-4">
                     <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.WEAK}>
                         {c('fido2: Error')
                             .t`Something went wrong authenticating with your security key. Please try again.`}

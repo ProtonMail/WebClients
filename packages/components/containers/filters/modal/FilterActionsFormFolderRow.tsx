@@ -109,7 +109,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
         if (['archive', 'inbox', 'spam', 'trash'].includes(moveTo?.folder)) {
             selectedFolder = (
-                <span className="inline-flex flex-align-items-center mr2">
+                <span className="inline-flex flex-align-items-center mr-8">
                     <Icon name={moveTo.folder as IconName} className="mr-2" />
                     {options.find((o) => o.value === moveTo?.folder)?.text}
                 </span>
@@ -149,11 +149,11 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
             data-testid="filter-modal:folder-row"
         >
-            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
+            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
-            <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
+            <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
                     <div className="w100">
                         <InputFieldTwo
@@ -165,7 +165,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                             {folderOptions}
                         </InputFieldTwo>
                         {canCreateLabel && (
-                            <Button shape="outline" className="mt1" onClick={() => setEditLabelModalOpen(true)}>
+                            <Button shape="outline" className="mt-4" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Create folder`}
                             </Button>
                         )}

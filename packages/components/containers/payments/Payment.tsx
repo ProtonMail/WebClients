@@ -82,7 +82,7 @@ const Payment = ({
         );
 
         return (
-            <Alert className="mb1" type="error">{c('Error')
+            <Alert className="mb-4" type="error">{c('Error')
                 .jt`The minimum amount that can be donated is ${price}`}</Alert>
         );
     }
@@ -94,7 +94,7 @@ const Payment = ({
             </Price>
         );
         return (
-            <Alert className="mb1" type="error">{c('Error')
+            <Alert className="mb-4" type="error">{c('Error')
                 .jt`The minimum amount of credit that can be added is ${price}`}</Alert>
         );
     }
@@ -105,7 +105,7 @@ const Payment = ({
                 {0}
             </Price>
         );
-        return <Alert className="mb1" type="error">{c('Error').jt`The minimum payment we accept is ${price}`}</Alert>;
+        return <Alert className="mb-4" type="error">{c('Error').jt`The minimum payment we accept is ${price}`}</Alert>;
     }
 
     if (loading) {
@@ -123,7 +123,7 @@ const Payment = ({
                 ])}
             >
                 <div>
-                    {type !== 'signup' && <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment method`}</h2>}
+                    {type !== 'signup' && <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment method`}</h2>}
                     <PaymentMethodSelector
                         options={allMethods}
                         method={method}
@@ -131,7 +131,7 @@ const Payment = ({
                         lastUsedMethod={lastUsedMethod}
                     />
                 </div>
-                <div className="mt1">
+                <div className="mt-4">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
@@ -167,7 +167,7 @@ const Payment = ({
             {type === 'subscription' &&
             method &&
             [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any) ? (
-                <Alert className="mb1" type="warning">{c('Warning')
+                <Alert className="mb-4" type="warning">{c('Warning')
                     .t`Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.`}</Alert>
             ) : null}
         </>

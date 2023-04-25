@@ -50,9 +50,9 @@ const TextItem = ({ className }: ColorItemProps) => (
 const ColorPalette = ({ children }: ColorPaletteProps) => (
     <>
         <strong className="block mb-2">on UI Standard</strong>
-        <div className={clsx('ui-standard border rounded-lg p1 mb2 flex flex-wrap flex-gap-1')}>{children}</div>
+        <div className={clsx('ui-standard border rounded-lg p1 mb-8 flex flex-wrap flex-gap-1')}>{children}</div>
         <strong className="block mb-2">on UI prominent</strong>
-        <div className={clsx('ui-prominent border rounded-lg p1 mb2 flex flex-wrap flex-gap-1')}>{children}</div>
+        <div className={clsx('ui-prominent border rounded-lg p1 mb-8 flex flex-wrap flex-gap-1')}>{children}</div>
     </>
 );
 

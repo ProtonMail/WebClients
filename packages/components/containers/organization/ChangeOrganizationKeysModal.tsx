@@ -131,7 +131,7 @@ const ChangeOrganizationKeysModal = ({
             return {
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}
                         </div>
@@ -150,10 +150,10 @@ const ChangeOrganizationKeysModal = ({
                 section: (
                     <>
                         {hasOtherAdmins && (
-                            <Alert className="mb1">{c('Info')
+                            <Alert className="mb-4">{c('Info')
                                 .t`Other administrators exist in your organization, you are responsible for communicating the new password to them.`}</Alert>
                         )}
-                        <Alert className="mb1" type="warning">
+                        <Alert className="mb-4" type="warning">
                             {c('Info')
                                 .t`Do NOT forget this password. If you forget it, you will not be able to manage your organization.`}
                             <br />

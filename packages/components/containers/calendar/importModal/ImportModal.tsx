@@ -285,7 +285,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
         }
         // model.step === IMPORT_STEPS.FINISHED at this stage
         const submit = (
-            <Button className="mlauto" onClick={onClose} color="norm" type="submit">{c('Action').t`Close`}</Button>
+            <Button className="ml-auto" onClick={onClose} color="norm" type="submit">{c('Action').t`Close`}</Button>
         );
 
         return {

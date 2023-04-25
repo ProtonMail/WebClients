@@ -51,14 +51,14 @@ export const Screenreaders = () => (
 
 export const PointerEventsNone = () => (
     <div className="p2 bg-weak">
-        <Button className="no-pointer-events mr2">Hover me (no-pointer-events)</Button>
+        <Button className="no-pointer-events mr-8">Hover me (no-pointer-events)</Button>
         <Button>Hover me (default)</Button>
     </div>
 );
 {
     /*
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Applies <code>pointer-events: none</code> to element.
         <br />

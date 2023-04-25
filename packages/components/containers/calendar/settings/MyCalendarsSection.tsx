@@ -114,7 +114,7 @@ const MyCalendarsSection = ({
             );
             const defaultCalendarWarning =
                 isDeleteDefaultCalendar && firstRemainingCalendar ? (
-                    <div className="mb1">{c('Info').jt`${calendarName} will be set as default calendar.`}</div>
+                    <div className="mb-4">{c('Info').jt`${calendarName} will be set as default calendar.`}</div>
                 ) : null;
 
             updateModal('deleteCalendarModal', {
@@ -159,7 +159,7 @@ const MyCalendarsSection = ({
     });
 
     const createCalendarButton = (
-        <div className="mb1">
+        <div className="mb-4">
             <PrimaryButton
                 data-testid="calendar-setting-page:add-calendar"
                 disabled={!canAdd}
@@ -170,7 +170,7 @@ const MyCalendarsSection = ({
         </div>
     );
     const isCalendarsLimitReachedNode = isFreeUser ? (
-        <Card rounded className="mb1">
+        <Card rounded className="mb-4">
             <div className="flex flex-nowrap flex-align-items-center">
                 <p className="flex-item-fluid my-0 pr2">{calendarsLimitReachedText}</p>
                 <ButtonLike
@@ -185,7 +185,7 @@ const MyCalendarsSection = ({
             </div>
         </Card>
     ) : (
-        <Alert className="mb1" type="info">
+        <Alert className="mb-4" type="info">
             {calendarsLimitReachedText}
         </Alert>
     );
@@ -202,7 +202,7 @@ const MyCalendarsSection = ({
                 ]}
                 onClose={deleteCalendarModal.props?.onClose}
             >
-                <div className="mb1">{c('Info').t`Are you sure you want to delete this calendar?`}</div>
+                <div className="mb-4">{c('Info').t`Are you sure you want to delete this calendar?`}</div>
                 {deleteCalendarModal.props?.defaultCalendarWarning}
             </Prompt>
             {!!exportCalendarModal.props?.exportCalendar && (

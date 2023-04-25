@@ -58,8 +58,8 @@ export const Sandbox = () => {
     return (
         <div className="p2">
             <div className="flex flex-align-items-stretch">
-                <div className="mr2">
-                    <strong className="block mb1">Target size</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">Target size</strong>
                     <RadioGroup
                         name="target-size"
                         onChange={handleChangeSize}
@@ -67,8 +67,8 @@ export const Sandbox = () => {
                         options={sizeOptions}
                     />
                 </div>
-                <div className="mr2">
-                    <strong className="block mb1">Placement</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">Placement</strong>
                     <RadioGroup
                         name="placement"
                         onChange={handleChangePlacement}

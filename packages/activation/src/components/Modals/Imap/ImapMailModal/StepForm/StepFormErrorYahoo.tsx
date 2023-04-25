@@ -21,7 +21,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
 
     return (
         <Alert
-            className="mb1"
+            className="mb-4"
             type="error"
             learnMore={
                 errorCode !== RATE_LIMIT_EXCEEDED ? getKnowledgeBaseUrl('/troubleshooting-easy-switch/') : undefined
@@ -29,7 +29,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
         >
             {isReconnect === true && (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Import error').t`${BRAND_NAME} can't connect to your Yahoo account. Please make sure that:`}
                     </div>
                     <ul className="m-0 pb1">
@@ -47,7 +47,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
             )}
             {errorCode === AUTHENTICATION_ERROR && (
                 <>
-                    <div className="mb1" data-testid="StepForm:yahooAuthError">
+                    <div className="mb-4" data-testid="StepForm:yahooAuthError">
                         {c('Import error')
                             .t`${BRAND_NAME} can't connect to your external account. Please make sure that:`}
                     </div>

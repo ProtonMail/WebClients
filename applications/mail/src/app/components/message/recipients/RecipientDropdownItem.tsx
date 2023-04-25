@@ -49,7 +49,7 @@ const RecipientDropdownItem = ({
     return (
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
-                <span className="mauto">
+                <span className="m-auto">
                     {isOutside ? (
                         <>{getInitials(label)}</>
                     ) : (

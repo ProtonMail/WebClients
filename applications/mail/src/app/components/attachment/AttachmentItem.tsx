@@ -138,7 +138,7 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                         data-testid={`attachment-item:${name}--primary-action`}
                     >
-                        <span className="myauto flex flex-align-items-baseline flex-nowrap pr0-5">
+                        <span className="my-auto flex flex-align-items-baseline flex-nowrap pr0-5">
                             <FileNameDisplay text={name} />
                             <span
                                 className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml-1"
@@ -164,9 +164,9 @@ const AttachmentItem = ({
                         </span>
                         <span className="message-attachmentSecondaryAction-download flex">
                             {loading ? (
-                                <CircleLoader className="mauto" size="small" />
+                                <CircleLoader className="m-auto" size="small" />
                             ) : (
-                                <Icon name={actionIcon[secondaryAction]} className="mauto" alt={secondaryActionTitle} />
+                                <Icon name={actionIcon[secondaryAction]} className="m-auto" alt={secondaryActionTitle} />
                             )}
                         </span>
                     </button>

@@ -1,9 +1,14 @@
 import { ButtonHTMLAttributes, ReactElement, ReactNode, Ref, cloneElement, forwardRef } from 'react';
 
+
+
 import noop from '@proton/utils/noop';
+
+
 
 import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
+
 
 interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
     icon?: ReactElement;
@@ -27,7 +32,7 @@ const ToolbarButton = (
         >
             {icon &&
                 cloneElement(icon, {
-                    className: classnames([icon.props.className, 'toolbar-icon mauto']),
+                    className: classnames([icon.props.className, 'toolbar-icon m-auto']),
                 })}
             {children}
         </button>

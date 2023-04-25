@@ -21,7 +21,7 @@ const ZoomControl = ({ className, scale, onZoomIn, onZoomOut, onReset }: Props) 
 
     return (
         <div className={classnames(['w100 p2 flex', className])}>
-            <div className="mxauto flex flex-align-items-center">
+            <div className="mx-auto flex flex-align-items-center">
                 <Button
                     icon
                     shape="ghost"

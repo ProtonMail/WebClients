@@ -1,7 +1,11 @@
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button } from '@proton/atoms';
 import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
@@ -15,22 +19,13 @@ import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import {
-    Form,
-    InlineLinkButton,
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    ModalProps,
-    PasswordInputTwo,
-    Tabs,
-    useFormErrors,
-} from '../../components';
+
+
+import { Form, InlineLinkButton, InputFieldTwo, ModalTwo as Modal, ModalTwoContent as ModalContent, ModalTwoFooter as ModalFooter, ModalTwoHeader as ModalHeader, ModalProps, PasswordInputTwo, Tabs, useFormErrors } from '../../components';
 import { useApi, useConfig, useErrorHandler, useLoading, useUser, useUserSettings } from '../../hooks';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
+
 
 const FORM_ID = 'auth-form';
 
@@ -86,7 +81,7 @@ const TOTPForm = ({
                 loading={loading}
                 setCode={setCode}
             />
-            <div className="mt1">
+            <div className="mt-4">
                 <InlineLinkButton
                     type="button"
                     onClick={() => {
@@ -126,7 +121,7 @@ const PasswordForm = ({
             }}
         >
             {isSignedInAsAdmin && (
-                <div className="mb1">{c('Info').t`Enter your own password (as organization admin).`}</div>
+                <div className="mb-4">{c('Info').t`Enter your own password (as organization admin).`}</div>
             )}
             <InputFieldTwo
                 autoFocus

@@ -48,8 +48,8 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
         const bankIcon = getBankSvg(BANKS[Brand]);
         return (
             <Bordered className="bg-weak rounded inline-flex flex-column w100 p2">
-                {bankIcon ? <img width="70" src={bankIcon} alt={Brand} className="mb1" /> : null}
-                <span className="block mb1 opacity-40">{c('Label').t`Card number`}</span>
+                {bankIcon ? <img width="70" src={bankIcon} alt={Brand} className="mb-4" /> : null}
+                <span className="block mb-4 opacity-40">{c('Label').t`Card number`}</span>
                 <div className="ratio-container-5-1 text-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -83,11 +83,11 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
         return (
             <Bordered className="p2 rounded">
                 <div>
-                    <img width="70" src={bankIcon} alt="PayPal" className="mb1" />
+                    <img width="70" src={bankIcon} alt="PayPal" className="mb-4" />
                 </div>
                 <div className="flex flex-wrap flex-align-items-center">
-                    <label className="flex-item-noshrink mr1" htmlFor="paypal-payer">{c('Label').t`Payer`}</label>
-                    <code id="paypal-payer" className="block text-xl mb-0 mb1 text-ellipsis" title={Payer}>
+                    <label className="flex-item-noshrink mr-4" htmlFor="paypal-payer">{c('Label').t`Payer`}</label>
+                    <code id="paypal-payer" className="block text-xl mb-0 mb-4 text-ellipsis" title={Payer}>
                         {Payer}
                     </code>
                 </div>

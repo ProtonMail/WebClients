@@ -27,7 +27,7 @@ const ContactUpgradeModal = ({ ...rest }: ModalProps) => {
         <ModalTwo size="small" {...rest}>
             <ModalTwoHeader title={c('Title').t`Upgrade required`} />
             <ModalContent>
-                <Alert className="mb1" type="warning">{c('Warning')
+                <Alert className="mb-4" type="warning">{c('Warning')
                     .t`This feature requires a paid ${BRAND_NAME} account`}</Alert>
             </ModalContent>
             <ModalFooter>

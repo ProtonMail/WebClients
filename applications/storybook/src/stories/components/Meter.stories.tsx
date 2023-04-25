@@ -1,7 +1,10 @@
 import { Meter } from '@proton/components';
 
+
+
 import { getTitle } from '../../helpers/title';
 import mdx from './Meter.mdx';
+
 
 export default {
     component: Meter,
@@ -27,9 +30,9 @@ Primary.args = {
 export const Basic = () => {
     return (
         <>
-            <Meter className="mt1 mb1" value={20} />
-            <Meter className="mt1 mb1" value={75} />
-            <Meter className="mt1 mb1" value={100} />
+            <Meter className="my-4" value={20} />
+            <Meter className="my-4" value={75} />
+            <Meter className="my-4" value={100} />
         </>
     );
 };
@@ -37,8 +40,8 @@ export const Basic = () => {
 export const Variants = () => {
     return (
         <>
-            <Meter className="mt1 mb1" value={40} />
-            <Meter className="mt1 mb1" thin value={40} />
+            <Meter className="my-4" value={40} />
+            <Meter className="my-4" thin value={40} />
         </>
     );
 };

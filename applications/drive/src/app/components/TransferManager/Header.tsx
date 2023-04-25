@@ -184,13 +184,13 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
                     aria-expanded={!minimized}
                     aria-controls="transfer-manager"
                 >
-                    <Icon className={clsx(['mauto', minimized && 'rotateX-180'])} name="low-dash" />
+                    <Icon className={clsx(['m-auto', minimized && 'rotateX-180'])} name="low-dash" />
                     <span className="sr-only">{minMaxTitle}</span>
                 </Button>
             </Tooltip>
             <Tooltip title={closeTitle}>
                 <Button icon type="button" shape="ghost" data-testid="drive-transfers-manager:close" onClick={onClose}>
-                    <Icon className="mauto" name="cross" alt={closeTitle} />
+                    <Icon className="m-auto" name="cross" alt={closeTitle} />
                 </Button>
             </Tooltip>
         </div>

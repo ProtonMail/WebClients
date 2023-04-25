@@ -25,9 +25,9 @@ const DriveOnboardingModal = (props: Props) => {
     if (isLoading) {
         return (
             <ModalTwo open={true} size="small">
-                <ModalTwoContent className="mt2 mb2">
+                <ModalTwoContent className="my-8">
                     <div className="flex flex-column flex-align-items-center">
-                        <Loader size="medium" className="mt1 mb1" />
+                        <Loader size="medium" className="my-4" />
                     </div>
                 </ModalTwoContent>
             </ModalTwo>
@@ -69,7 +69,7 @@ const DriveOnboardingModal = (props: Props) => {
                         `Simply complete the following in the next ${expiresInDays} days:`,
                         expiresInDays
                     )}
-                    <ul className="unstyled mt1">
+                    <ul className="unstyled mt-4">
                         <li className="my-2">
                             <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Upload a file`}
                         </li>

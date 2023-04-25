@@ -11,7 +11,7 @@ const PaymentInfo = ({ method }: Props) => {
     }
 
     return (
-        <div className="mb1">{c('Info')
+        <div className="mb-4">{c('Info')
             .t`Your payment details are protected with TLS encryption and Swiss privacy laws.`}</div>
     );
 };

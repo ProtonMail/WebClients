@@ -246,7 +246,7 @@ const ContactEditModal = ({
         <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <div className="mb1">
+                <div className="mb-4">
                     <ContactEditProperty
                         ref={nameFieldRef}
                         isSubmitted={isSubmitted}

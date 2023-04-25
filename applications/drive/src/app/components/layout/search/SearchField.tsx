@@ -89,7 +89,7 @@ export const SearchField = () => {
                             {imageProps && <img className="hauto" {...imageProps} alt={imageProps.alt || ''} />}
                         </figure>
                         <div className="flex-item">
-                            <div className="text-bold text-lg mauto">{c('Spotlight').t`Encrypted search is here`}</div>
+                            <div className="text-bold text-lg m-auto">{c('Spotlight').t`Encrypted search is here`}</div>
                             {c('Spotlight').t`Now you can easily search Drive files while keeping your data secure.`}
                             <br />
                             <Href href={getKnowledgeBaseUrl('/search-drive')} title="How does encrypted search work?">
