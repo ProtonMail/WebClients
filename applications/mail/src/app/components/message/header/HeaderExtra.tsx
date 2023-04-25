@@ -46,8 +46,9 @@ const HeaderExtra = ({
     const isScheduledMessage = isScheduled(message.data);
     const showCalendarWidget = messageLoaded && received;
 
-    const isFrozen = isFrozenExpiration(message.data);
-    const hasExpiration = message.data?.ExpirationTime;
+    // TODO: Remove when API has fixed expiresIn and freeze flag issue
+    const isFrozen = isFrozenExpiration(message.data) || !!message.draftFlags?.expiresIn;
+    const hasExpiration = !!(message.data?.ExpirationTime || message.draftFlags?.expiresIn);
     const isSpamOrTrash = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.TRASH || MAILBOX_LABEL_IDS.SPAM);
 
     if (!getMessageHasData(message)) {
