@@ -85,6 +85,7 @@ export enum FeatureCode {
     KeyTransparencyWEB = 'KeyTransparencyWEB',
     AutoDelete = 'AutoDelete',
     FamilyPlan = 'FamilyPlan',
+    PassSettings = 'PassSettings',
 }
 
 export interface FeaturesContextValue {
