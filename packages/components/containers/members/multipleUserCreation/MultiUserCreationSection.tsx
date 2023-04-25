@@ -28,13 +28,13 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
             )}
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`Add multiple users to your organization at once.`}</SettingsParagraph>
-                <SettingsParagraph className="mb1">
+                <SettingsParagraph className="mb-4">
                     {c('Info')
                         .t`Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.`}
                 </SettingsParagraph>
 
                 <div>
-                    <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" className="mr1" />
+                    <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" className="mr-4" />
                     <Button onClick={downloadSampleCSV}>{c('Action').t`Download CSV sample`}</Button>
                 </div>
             </SettingsSectionWide>

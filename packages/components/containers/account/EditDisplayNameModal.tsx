@@ -62,7 +62,7 @@ const EditDisplayNameModal = ({ address, ...rest }: Props) => {
             <ModalHeader title={c('Title').t`Edit display name`} />
             <ModalContent>
                 {initialDisplayName && (
-                    <div className="mb1-5">
+                    <div className="mb-6">
                         <div className="text-semibold mb-1">{c('Label').t`Current display name`}</div>
                         <div className="text-ellipsis" title={initialDisplayName}>
                             {initialDisplayName}

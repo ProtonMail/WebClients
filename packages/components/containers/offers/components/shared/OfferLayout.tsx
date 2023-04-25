@@ -41,7 +41,7 @@ const OfferLayout = ({ children, offer }: Props) => {
                 )}
             >
                 {hasMultipleDeals ? (
-                    <div className="offer-top-banner-container text-center mb1 no-mobile">
+                    <div className="offer-top-banner-container text-center mb-4 no-mobile">
                         {/* if viewport is higher than 990 px (image size), we'll use the 2x version for a proper display */}
                         <picture>
                             <source media="(min-width: 61.875em)" srcSet={`${bannerImage2x}`} />

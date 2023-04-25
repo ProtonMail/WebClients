@@ -160,7 +160,7 @@ const HumanVerificationForm = ({
 
     if (tabs.length === 0) {
         return (
-            <Alert className="mb1" type="error">{c('Human verification method')
+            <Alert className="mb-4" type="error">{c('Human verification method')
                 .t`No verification method available`}</Alert>
         );
     }

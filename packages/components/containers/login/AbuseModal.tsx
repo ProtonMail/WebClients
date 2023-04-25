@@ -62,7 +62,7 @@ const AbuseModal = ({ message, open, onClose }: Props) => {
                 purifyMessage(message)
             ) : (
                 <>
-                    <div className="mb1">{c('Info')
+                    <div className="mb-4">{c('Info')
                         .t`This account has been suspended due to a potential policy violation.`}</div>
                     <div>{c('Info').jt`If you believe this is in error, please contact us ${contactLink}.`}</div>
                 </>

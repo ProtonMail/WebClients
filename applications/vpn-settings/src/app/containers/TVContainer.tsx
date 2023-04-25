@@ -53,7 +53,7 @@ const TVContainer = () => {
                     <TVCodeInputs value={code} setValue={setCode} />
                     {error ? (
                         <>
-                            <p className="mt2 mb-0 pl1 text-center color-danger">{c('Error')
+                            <p className="mt-8 mb-0 pl1 text-center color-danger">{c('Error')
                                 .t`Code wrong or not valid anymore`}</p>
                             <p className="m-0 text-center border-none">{c('Error')
                                 .t`If the time on your TV has expired, click on Refresh on your TV and enter your code again.`}</p>
@@ -64,7 +64,7 @@ const TVContainer = () => {
                             loading={loading}
                             type="submit"
                             pill
-                            className="text-uppercase text-bold mt2 mb1-5 mxauto"
+                            className="text-uppercase text-bold mt-8 mb-6 mx-auto"
                         >
                             <span className="p0-5 inline-flex">
                                 {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
@@ -79,7 +79,7 @@ const TVContainer = () => {
             return (
                 <>
                     <h2>{c('Title').t`Device connected!`}</h2>
-                    <div className="flex flex-justify-center mt2 mb2">
+                    <div className="flex flex-justify-center my-8">
                         <span className="inline-flex bg-success rounded-50 p2">
                             <Icon name="checkmark" size={60} />
                         </span>
@@ -102,7 +102,7 @@ const TVContainer = () => {
                 <h3 className="mb-0 pl0-25 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
             </div>
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
-                <div className="mauto p2 flex-item-noshrink max-w30e">{render()}</div>
+                <div className="m-auto p2 flex-item-noshrink max-w30e">{render()}</div>
             </div>
         </div>
     );

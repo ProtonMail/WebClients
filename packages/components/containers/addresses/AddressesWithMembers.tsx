@@ -103,10 +103,10 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
             </SettingsParagraph>
 
             {currentMember && !user.isSubUser && (
-                <div className="mb1 flex flex-align-self-start flex-align-items-center">
-                    <div className="mr1">
+                <div className="mb-4 flex flex-align-self-start flex-align-items-center">
+                    <div className="mr-4">
                         {mustActivateOrganizationKey ? (
-                            <Alert className="mb1" type="warning">
+                            <Alert className="mb-4" type="warning">
                                 {c('Warning')
                                     .jt`You must ${activateLink} organization keys before adding an email address to a non-private member.`}
                             </Alert>

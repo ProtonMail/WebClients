@@ -29,7 +29,7 @@ const ContactsWidgetSettingsContainerExport = ({ onExport }: Props) => {
             <Label htmlFor="export-contacts-button" className="text-semibold">
                 <span role="heading" aria-level={2}>{c('Label').t`Export contacts`}</span>
             </Label>
-            <p className="color-weak mt-2 mb1">
+            <p className="color-weak mt-2 mb-4">
                 {c('Info')
                     .t`The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.`}
             </p>

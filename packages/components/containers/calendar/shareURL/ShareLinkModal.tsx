@@ -109,7 +109,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
             footer={
                 <>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                    <Button type="submit" loading={isLoading} className="mlauto" onClick={handleSubmit} color="norm">{c(
+                    <Button type="submit" loading={isLoading} className="ml-auto" onClick={handleSubmit} color="norm">{c(
                         'Action'
                     ).t`Create`}</Button>
                 </>

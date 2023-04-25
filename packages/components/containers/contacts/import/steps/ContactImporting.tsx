@@ -115,7 +115,7 @@ const ContactImporting = ({ model, setModel, onClose }: Props) => {
         <>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Description')
                         .t`Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
                 </Alert>

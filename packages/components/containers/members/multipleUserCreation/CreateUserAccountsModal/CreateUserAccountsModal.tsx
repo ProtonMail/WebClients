@@ -327,7 +327,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 create-user-accounts-additional-content mt1">
+                    <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 create-user-accounts-additional-content mt-4">
                         <Checkbox
                             id="selectAll"
                             checked={isSelectAllChecked}
@@ -429,7 +429,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                         <span className="mt-2">
                             {currentProgress} / {numberOfUsersToImport}
                         </span>
-                        <p className="mt1 color-weak mb-0">
+                        <p className="mt-4 color-weak mb-0">
                             {c('Info')
                                 .t`This could take up to 15 minutes. Please do not close this page or disconnect from the internet.`}
                         </p>

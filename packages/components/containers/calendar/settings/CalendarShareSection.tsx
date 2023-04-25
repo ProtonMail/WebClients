@@ -129,8 +129,8 @@ const CalendarShareSection = ({
                 {hasPaidMail ? (
                     isCalendarSharingEnabled ? (
                         <>
-                            <div className="mb3 mt1-5">
-                                <div className="mb1-75">
+                            <div className="mb-11 mt-6">
+                                <div className="mb-6">
                                     <h3
                                         className="text-bold mb-2"
                                         id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}
@@ -172,7 +172,7 @@ const CalendarShareSection = ({
                         />
                     )
                 ) : (
-                    <Card rounded className="mt1" data-testid="card:upgrade">
+                    <Card rounded className="mt-4" data-testid="card:upgrade">
                         <div className="flex flex-nowrap flex-align-items-center">
                             <p className="flex-item-fluid my-0 pr2">
                                 {c('Upgrade notice')

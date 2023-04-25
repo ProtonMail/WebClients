@@ -60,11 +60,11 @@ const ImportSummaryModalContent = ({ model }: Props) => {
 
     const getAlert = () => {
         if (isSuccess) {
-            return <div className="mb1">{alertMessage}</div>;
+            return <div className="mb-4">{alertMessage}</div>;
         }
 
         return (
-            <Alert className="mb1" type={isPartialSuccess ? 'warning' : 'error'}>
+            <Alert className="mb-4" type={isPartialSuccess ? 'warning' : 'error'}>
                 {alertMessage}
             </Alert>
         );

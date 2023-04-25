@@ -150,7 +150,7 @@ const DayGrid = ({
                                         key={+monday}
                                         className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
                                     >
-                                        <span className="mauto opacity-40 text-sm">{week}</span>
+                                        <span className="m-auto opacity-40 text-sm">{week}</span>
                                     </div>
                                 );
                             })}

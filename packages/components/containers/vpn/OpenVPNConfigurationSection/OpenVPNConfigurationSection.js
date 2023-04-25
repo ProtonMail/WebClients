@@ -152,7 +152,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     .t`These configuration files let you choose which ${VPN_APP_NAME} server you connect to when using a third-party VPN app or setting up a VPN connection on a router.
                         `}
                             </SettingsParagraph>
-                            <h3 className="mt2 mb-2">{c('Title').t`1. Select platform`}</h3>
+                            <h3 className="mt-8 mb-2">{c('Title').t`1. Select platform`}</h3>
                             <div className="flex on-mobile-flex-column">
                                 {[
                                     {
@@ -187,7 +187,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     },
                                 ].map(({ value, label, link }) => {
                                     return (
-                                        <div key={value} className="mr2 mb1">
+                                        <div key={value} className="mr-8 mb-4">
                                             <Radio
                                                 onChange={() => setPlatform(value)}
                                                 checked={platform === value}
@@ -199,14 +199,14 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                             <Href
                                                 href={link}
                                                 className="text-sm m-0 block ml-custom"
-                                                style={{ '--padding-left-custom': `1.312rem` }}
+                                                style={{ '--ml-custom': '1.75rem' }}
                                             >{c('Link').t`View guide`}</Href>
                                         </div>
                                     );
                                 })}
                             </div>
 
-                            <h3 className="mt2 mb-2">{c('Title').t`2. Select protocol`}</h3>
+                            <h3 className="mt-8 mb-2">{c('Title').t`2. Select protocol`}</h3>
                             <div className="flex on-mobile-flex-column mb-2">
                                 <RadioGroup
                                     name="protocol"
@@ -218,15 +218,15 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     ]}
                                 />
                             </div>
-                            <div className="mb1">
+                            <div className="mb-4">
                                 <Href href="https://protonvpn.com/support/udp-tcp/" className="text-sm m-0">{c('Link')
                                     .t`What is the difference between UDP and TCP protocols?`}</Href>
                             </div>
 
-                            <h3 className="mt2 mb-2">{c('Title').t`3. Select config file and download`}</h3>
+                            <h3 className="mt-8 mb-2">{c('Title').t`3. Select config file and download`}</h3>
                         </>
                     )}
-                    <div className="flex on-mobile-flex-column mb1-5">
+                    <div className="flex on-mobile-flex-column mb-6">
                         <RadioGroup
                             name={'category' + (listOnly ? '-list' : '')}
                             value={selectedCategory}
@@ -332,7 +332,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                 )}
                 {!listOnly && (
                     <>
-                        <div className="mb2">
+                        <div className="mb-8">
                             {isUpgradeRequiredForDownloadAll ? (
                                 <Tooltip title={c('Info').t`Plan upgrade required`}>
                                     <Button loading={vpnLoading} disabled>{c('Action')
@@ -345,28 +345,28 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         </div>
                         {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
                             <div className="border p2 text-center">
-                                <h3 className="color-primary mt-0 mb1">{
+                                <h3 className="color-primary mt-0 mb-4">{
                                     // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
                                     c('Title').t`Get ${vpnPlus} to access all servers`
                                 }</h3>
-                                <ul className="unstyled inline-flex mt-0 mb2 on-mobile-flex-column">
-                                    <li className="flex flex-nowrap flex-align-items-center mr1">
+                                <ul className="unstyled inline-flex mt-0 mb-8 on-mobile-flex-column">
+                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr1">
+                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr1">
+                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr1">
+                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr1">
+                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">
                                             {c('Feature').ngettext(

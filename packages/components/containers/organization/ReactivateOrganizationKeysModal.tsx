@@ -124,8 +124,8 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
         >
             <ModalHeader title={title} />
             <ModalContent>
-                <div className="mb1">{message}</div>
-                <Alert className="mb1" type="warning">
+                <div className="mb-4">{message}</div>
+                <Alert className="mb-4" type="warning">
                     {warning}
                 </Alert>
                 <InputFieldTwo
@@ -150,7 +150,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
                 <div>
                     {onResetKeys && (
                         <Button
-                            className="mr1"
+                            className="mr-4"
                             onClick={() => {
                                 onClose?.();
                                 onResetKeys();

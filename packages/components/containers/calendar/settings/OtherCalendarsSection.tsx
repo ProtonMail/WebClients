@@ -102,14 +102,14 @@ const OtherCalendarsSection = ({
     });
 
     const addCalendarButton = (
-        <div className="mb1">
+        <div className="mb-4">
             <PrimaryButton data-testid="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={handleCreate}>
                 {addCalendarText}
             </PrimaryButton>
         </div>
     );
     const isCalendarsLimitReachedNode = isFreeUser ? (
-        <Card rounded className="mb1">
+        <Card rounded className="mb-4">
             <div className="flex flex-nowrap flex-align-items-center">
                 <p className="flex-item-fluid my-0 pr2">{calendarsLimitReachedText}</p>
                 <ButtonLike
@@ -124,7 +124,7 @@ const OtherCalendarsSection = ({
             </div>
         </Card>
     ) : (
-        <Alert className="mb1" type="info">
+        <Alert className="mb-4" type="info">
             {calendarsLimitReachedText}
         </Alert>
     );

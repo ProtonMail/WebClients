@@ -102,8 +102,8 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-html"
                 >
-                    <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Normal`}</span>
-                    <Icon name="checkmark" className={clsx(['ml1', getClassname(!editorMetadata.isPlainText)])} />
+                    <span className="my-auto flex-item-fluid pl0-25">{c('Info').t`Normal`}</span>
+                    <Icon name="checkmark" className={clsx(['ml-4', getClassname(!editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={4}
@@ -115,8 +115,8 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-plaintext"
                 >
-                    <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Plain text`}</span>
-                    <Icon name="checkmark" className={clsx(['ml1', getClassname(editorMetadata.isPlainText)])} />
+                    <span className="my-auto flex-item-fluid pl0-25">{c('Info').t`Plain text`}</span>
+                    <Icon name="checkmark" className={clsx(['ml-4', getClassname(editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-more-options" />,
             ]}
@@ -125,16 +125,16 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 onClick={handleTogglePublicKey}
                 data-testid="composer:attach-public-key-button"
             >
-                <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Attach public key`}</span>
-                <Icon name="checkmark" className={clsx(['ml1', getClassname(isAttachPublicKey)])} />
+                <span className="my-auto flex-item-fluid pl0-25">{c('Info').t`Attach public key`}</span>
+                <Icon name="checkmark" className={clsx(['ml-4', getClassname(isAttachPublicKey)])} />
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={handleToggleReceiptRequest}
                 data-testid="composer:read-receipt-button"
             >
-                <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Request read receipt`}</span>
-                <Icon name="checkmark" className={clsx(['ml1', getClassname(isReceiptRequest)])} />
+                <span className="my-auto flex-item-fluid pl0-25">{c('Info').t`Request read receipt`}</span>
+                <Icon name="checkmark" className={clsx(['ml-4', getClassname(isReceiptRequest)])} />
             </DropdownMenuButton>
         </>
     );

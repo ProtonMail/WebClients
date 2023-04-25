@@ -6,27 +6,16 @@ import { flushSync } from 'react-dom';
 import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
 
+
+
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 
-import {
-    Alert,
-    ConfirmModal,
-    Details,
-    ErrorButton,
-    Icon,
-    Info,
-    InputFieldTwo,
-    Option,
-    Radio,
-    Row,
-    SelectTwo,
-    Summary,
-    TextArea,
-    Toggle,
-} from '../../../components';
+
+
+import { Alert, ConfirmModal, Details, ErrorButton, Icon, Info, InputFieldTwo, Option, Radio, Row, SelectTwo, Summary, TextArea, Toggle } from '../../../components';
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import { getObjectKeys } from '../../../helpers';
 import { getCountryByAbbr } from '../../../helpers/countries';
@@ -42,21 +31,10 @@ import { KeyPair } from './KeyPair';
 import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
-import {
-    FeatureFlagsConfig,
-    FeatureOption,
-    FeatureSelection,
-    FeaturesConfig,
-    FeaturesValues,
-    clientConfigKeys,
-    formatFeatureShortName,
-    formatFeatureValue,
-    getKeyOfCheck,
-    initialFeaturesConfig,
-    isFeatureSelection,
-} from './feature';
+import { FeatureFlagsConfig, FeatureOption, FeatureSelection, FeaturesConfig, FeaturesValues, clientConfigKeys, formatFeatureShortName, formatFeatureValue, getKeyOfCheck, initialFeaturesConfig, isFeatureSelection } from './feature';
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
+
 
 enum PLATFORM {
     MACOS = 'macOS',
@@ -531,13 +509,13 @@ const WireGuardConfigurationSection = () => {
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     onClose={reject}
                 >
-                    <Alert className="mb1" type="info">
+                    <Alert className="mb-4" type="info">
                         {
                             // translator: name is arbitrary name given by the user or a random key if not set
                             c('Info').t`Revoke certificate ${name}`
                         }
                     </Alert>
-                    <Alert className="mb1" type="error">
+                    <Alert className="mb-4" type="error">
                         {c('Alter').t`This will disconnect all the routers and clients using this certificate.`}
                     </Alert>
                 </ConfirmModal>
@@ -651,7 +629,7 @@ const WireGuardConfigurationSection = () => {
             </SettingsParagraph>
             {creationModal}
             {logicalInfoLoading || certificatesLoading ? (
-                <div aria-busy="true" className="text-center mb1">
+                <div aria-busy="true" className="text-center mb-4">
                     <CircleLoader />
                 </div>
             ) : (
@@ -715,7 +693,7 @@ const WireGuardConfigurationSection = () => {
                                         .t`Extend`}</Button>
                                     {certificate?.config && (
                                         <Button
-                                            className="ml1"
+                                            className="ml-4"
                                             loading={creating}
                                             onClick={getDownloadCallback(certificate)}
                                         >{c('Action').t`Download`}</Button>
@@ -734,7 +712,7 @@ const WireGuardConfigurationSection = () => {
                         );
                     })}
                     {moreToLoad && (
-                        <div aria-busy="true" className="text-center mt1">
+                        <div aria-busy="true" className="text-center mt-4">
                             <Button
                                 type="button"
                                 onClick={() => setLimit(limit + paginationSize)}
@@ -742,8 +720,8 @@ const WireGuardConfigurationSection = () => {
                             >{c('Action').t`Load more`}</Button>
                         </div>
                     )}
-                    <form onSubmit={handleFormSubmit} className="mt2">
-                        <h3 className="mt2 mb-2">{c('Title').t`1. Give a name to the config to be generated`}</h3>
+                    <form onSubmit={handleFormSubmit} className="mt-8">
+                        <h3 className="mt-8 mb-2">{c('Title').t`1. Give a name to the config to be generated`}</h3>
                         <InputFieldTwo
                             id="certificate-device-name"
                             ref={nameInputRef}
@@ -760,7 +738,7 @@ const WireGuardConfigurationSection = () => {
                             placeholder={c('Label').t`Choose a name for the generated certificate file`}
                             maxLength={100}
                         />
-                        <h3 className="mt2 mb-2">{c('Title').t`2. Select platform`}</h3>
+                        <h3 className="mt-8 mb-2">{c('Title').t`2. Select platform`}</h3>
                         <div className="flex on-mobile-flex-column">
                             {[
                                 {
@@ -789,7 +767,7 @@ const WireGuardConfigurationSection = () => {
                                 },
                             ].map(({ value, label }) => {
                                 return (
-                                    <div key={value} className="mr2 mb1">
+                                    <div key={value} className="mr-8 mb-4">
                                         <Radio
                                             id={'platform-' + value}
                                             onChange={() => setPlatform(value)}
@@ -803,9 +781,9 @@ const WireGuardConfigurationSection = () => {
                                 );
                             })}
                         </div>
-                        <h3 className="mt2 mb-2">{c('Title').t`3. Select VPN options`}</h3>
+                        <h3 className="mt-8 mb-2">{c('Title').t`3. Select VPN options`}</h3>
                         {getFeatureKeys().map((key) => (
-                            <div className="mb1" key={'feature-' + key}>
+                            <div className="mb-4" key={'feature-' + key}>
                                 <label className="field-two-container w100" htmlFor={'feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
@@ -848,16 +826,16 @@ const WireGuardConfigurationSection = () => {
                         ))}
                         {logical && (
                             <>
-                                <h3 className="mt2 mb-2">{c('Title').t`4. Select a server to connect to`}</h3>
+                                <h3 className="mt-8 mb-2">{c('Title').t`4. Select a server to connect to`}</h3>
 
-                                <div className="mb2">
+                                <div className="mb-8">
                                     {bestServerName && (
                                         <>
                                             <p className="mt-0">
                                                 {c('Info')
                                                     .jt`Use the best server according to current load and position: ${formattedBestServerName}`}
                                             </p>
-                                            <div className="mt1">
+                                            <div className="mt-4">
                                                 <Button type="submit" color="norm" loading={creating}>{c('Action')
                                                     .t`Create`}</Button>
                                             </div>
@@ -865,7 +843,7 @@ const WireGuardConfigurationSection = () => {
                                     )}
                                 </div>
 
-                                <p className="my2">{c('Info').t`Or select a particular server:`}</p>
+                                <p className="my-8">{c('Info').t`Or select a particular server:`}</p>
 
                                 <OpenVPNConfigurationSection
                                     onSelect={createWithLogical}

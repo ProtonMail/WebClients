@@ -32,7 +32,7 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Props)
             onClose={onClose}
             {...rest}
         >
-            <Alert className="mb1" type="error">
+            <Alert className="mb-4" type="error">
                 {(() => {
                     if (hasBundle) {
                         return c('Info')

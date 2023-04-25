@@ -2,7 +2,11 @@ import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
+
+
 
 import { Icon, Input, Radio, Select, Tooltip } from '../../../components';
 import { OptionProps } from '../../../components/select/Select';
@@ -10,7 +14,10 @@ import { classnames } from '../../../helpers';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
 
+
+
 import './FilterConditionsFormRow.scss';
+
 
 const { SELECT, SUBJECT, SENDER, RECIPIENT } = ConditionType;
 
@@ -108,11 +115,11 @@ const FilterConditionsRow = ({
         };
 
         return (
-            <div className="mt1 flex">
+            <div className="mt-4 flex">
                 <Radio
                     id={`condition-${conditionIndex}-with-attachment`}
                     name={`attachment-condition-${conditionIndex}`}
-                    className="flex flex-nowrap radio--ontop mr1"
+                    className="flex flex-nowrap radio--ontop mr-4"
                     checked={withAttachment}
                     onChange={toggleAttachment}
                 >
@@ -152,7 +159,7 @@ const FilterConditionsRow = ({
 
     const renderGenericCondition = () => {
         return (
-            <div className="mt1 flex-item-fluid">
+            <div className="mt-4 flex-item-fluid">
                 {tokens.length ? <div className="mb-2">{tokens.map(renderToken)}</div> : null}
                 <div className="flex flex-nowrap">
                     <span className="flex-item-fluid pr1">
@@ -239,13 +246,13 @@ const FilterConditionsRow = ({
             >
                 <button
                     type="button"
-                    className={classnames(['w20 text-left', isNarrow && 'mb1'])}
+                    className={classnames(['w20 text-left', isNarrow && 'mb-4'])}
                     onClick={toggleSection}
                 >
                     <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
                     <span className={classnames(['ml-2', condition.error && 'color-danger'])}>{label}</span>
                 </button>
-                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
+                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                     {isOpen ? (
                         <div className="flex">
                             <span className="w50 pr1">
@@ -294,7 +301,7 @@ const FilterConditionsRow = ({
                         <Tooltip title={c('Action').t`Delete`}>
                             <Button
                                 onClick={() => handleDelete(conditionIndex)}
-                                className={classnames([isNarrow ? 'mt1' : 'ml1'])}
+                                className={classnames([isNarrow ? 'mt-4' : 'ml-4'])}
                                 icon
                             >
                                 <Icon name="trash" className="color-danger" alt={c('Action').t`Delete`} />

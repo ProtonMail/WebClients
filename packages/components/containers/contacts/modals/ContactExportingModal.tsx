@@ -91,7 +91,7 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest
         <ModalTwo {...rest}>
             <ModalTwoHeader title={c('Title').t`Exporting contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Description')
                         .t`Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.`}
                 </Alert>

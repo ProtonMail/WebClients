@@ -86,7 +86,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="norm" className="mlauto" onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button color="norm" className="ml-auto" onClick={rest.onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

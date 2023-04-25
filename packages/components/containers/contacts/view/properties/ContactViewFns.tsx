@@ -19,7 +19,7 @@ const ContactViewFns = ({ vCardContact, isSignatureVerified = false }: Props) =>
     }
 
     return (
-        <ContactViewProperties className="mb1">
+        <ContactViewProperties className="mb-4">
             {fns.map((fn, i) => (
                 <ContactViewProperty
                     // I have nothing better for the key there

@@ -238,7 +238,7 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
                 />
 
                 {model.private ? null : (
-                    <div className="mb1-5">
+                    <div className="mb-6">
                         <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </div>
@@ -255,7 +255,7 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
 
                 {hasVPN ? (
                     <div className="flex flex-align-center mb-5">
-                        <label className="text-semibold mr1" htmlFor="vpn-toggle">
+                        <label className="text-semibold mr-4" htmlFor="vpn-toggle">
                             {c('Label for new member').t`VPN connections`}
                         </label>
                         <Toggle
@@ -266,8 +266,8 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
                     </div>
                 ) : null}
 
-                <div className="flex flex-align-center mb1-5">
-                    <label className="text-semibold mr1" htmlFor="private-toggle">
+                <div className="flex flex-align-center mb-6">
+                    <label className="text-semibold mr-4" htmlFor="private-toggle">
                         {c('Label for new member').t`Private`}
                     </label>
                     <Toggle
@@ -277,8 +277,8 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
                     />
                 </div>
 
-                <div className="flex flex-align-center mb1-5">
-                    <label className="text-semibold mr1" htmlFor="admin-toggle">
+                <div className="flex flex-align-center mb-6">
+                    <label className="text-semibold mr-4" htmlFor="admin-toggle">
                         {c('Label for new member').t`Admin`}
                     </label>
                     <Toggle

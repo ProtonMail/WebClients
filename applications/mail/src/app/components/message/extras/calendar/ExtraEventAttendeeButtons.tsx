@@ -256,7 +256,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         };
 
         if (loadingRetry) {
-            return <Loader className="mxauto flex my1 " />;
+            return <Loader className="mx-auto flex my-4 " />;
         }
 
         return (
@@ -278,8 +278,8 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
         return (
-            <div className="mt1-5 flex flex-align-items-center">
-                <div className="text-bold mr1">{c('Calendar invite buttons label').t`Attending?`}</div>
+            <div className="mt-6 flex flex-align-items-center">
+                <div className="text-bold mr-4">{c('Calendar invite buttons label').t`Attending?`}</div>
                 <CalendarInviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} />
             </div>
         );

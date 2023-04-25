@@ -122,7 +122,7 @@ const UpsellStep = ({
     return (
         <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
             {shortFreePlan && (
-                <Main center={false} className="on-tablet-mb2 sign-layout-upsell">
+                <Main center={false} className="mb-8 lg:mb-0 sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
                     <Content>
                         <Text className="mb-2 md:mb-0 text-lg">{shortFreePlan.description}</Text>

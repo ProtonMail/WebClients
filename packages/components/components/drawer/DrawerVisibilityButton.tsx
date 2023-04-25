@@ -48,7 +48,7 @@ const DrawerVisibilityButton = ({ spotlightSeenRef }: Props) => {
                 )}
             >
                 <Button
-                    className={clsx('mauto drawer-visibility-control-button', showDrawerSidebar && 'color-weak')}
+                    className={clsx('m-auto drawer-visibility-control-button', showDrawerSidebar && 'color-weak')}
                     size="small"
                     shape={showDrawerSidebar ? 'ghost' : 'solid'}
                     color="weak"

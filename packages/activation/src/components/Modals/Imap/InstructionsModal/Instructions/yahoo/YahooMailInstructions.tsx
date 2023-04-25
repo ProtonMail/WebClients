@@ -43,11 +43,11 @@ const YahooMailInstructions = () => {
 
     return (
         <>
-            <div className="mb1" data-testid="Instruction:yahooMailInstructions">
+            <div className="mb-4" data-testid="Instruction:yahooMailInstructions">
                 {yahooAppPasswordMessage}
             </div>
 
-            <ol className="pl1 ml2 mr2">
+            <ol className="pl1 mx-8">
                 <li className="mb-2">{step1}</li>
                 <li className="mb-2">{step2}</li>
                 <li className="mb-2">{step3}</li>

@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
+
+
 import { Icon, classnames } from '@proton/components';
 import { Referral } from '@proton/shared/lib/interfaces';
+
 
 interface Props {
     referral: Referral;
@@ -9,7 +12,7 @@ interface Props {
 
 const UserCell = ({ referral }: Props) => (
     <div className="flex flex-nowrap flex-align-items-center">
-        <span className="flex-item-noshrink mr1 no-mobile">
+        <span className="flex-item-noshrink mr-4 no-mobile">
             <Icon name={referral.Email ? 'envelope' : 'link'} />
         </span>
 

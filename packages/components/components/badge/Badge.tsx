@@ -1,9 +1,14 @@
 import { ReactNode } from 'react';
 
-import { Href } from '@proton/atoms';
 
-import { classnames } from '../../helpers';
+
+import { Href } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
+
+
+
 import Tooltip from '../tooltip/Tooltip';
+
 
 const CLASSNAMES = {
     default: 'badge-label-norm',
@@ -27,9 +32,9 @@ export interface Props {
     'data-testid'?: string;
 }
 
-const Badge = ({ children, type = 'default', url, tooltip, className = 'mr1', 'data-testid': dataTestId }: Props) => {
+const Badge = ({ children, type = 'default', url, tooltip, className = 'mr-2', 'data-testid': dataTestId }: Props) => {
     const badge = (
-        <span className={classnames([CLASSNAMES[type], className])} data-testid={dataTestId}>
+        <span className={clsx(CLASSNAMES[type], className)} data-testid={dataTestId}>
             {children}
         </span>
     );

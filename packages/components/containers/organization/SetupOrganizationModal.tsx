@@ -136,7 +136,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 title: c('Title').t`Set organization keys`,
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}
                         </div>
@@ -154,11 +154,11 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 title: c('Title').t`Set organization password`,
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .t`Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.`}
                         </div>
-                        <Alert className="mb1" type="warning">
+                        <Alert className="mb-4" type="warning">
                             {c('Info')
                                 .t`Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.`}
                             <br />

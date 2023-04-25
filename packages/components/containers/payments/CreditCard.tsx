@@ -95,7 +95,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                     />
                 </div>
             </div>
-            <div className="flex flex-justify-space-between mb1 on-tiny-mobile-flex-column">
+            <div className="flex flex-justify-space-between mb-4 on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mr-2 mr-0 sm:mr-2">
                     <InputFieldTwo
                         label={c('Label').t`Country`}

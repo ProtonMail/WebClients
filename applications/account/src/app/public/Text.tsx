@@ -10,7 +10,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 
 const Text = ({ children, margin, className, ...rest }: Props) => {
     return (
-        <div className={clsx(margin === 'small' ? 'mb1' : 'mb1-75', 'text-break color-weak', className)} {...rest}>
+        <div className={clsx(margin === 'small' ? 'mb-4' : 'mb-6', 'text-break color-weak', className)} {...rest}>
             {children}
         </div>
     );

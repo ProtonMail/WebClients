@@ -75,12 +75,12 @@ const ItemRowLayout = ({
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className="myauto flex w2e" data-testid={unread}>
+            <div className="my-auto flex w2e" data-testid={unread}>
                 <ItemStar element={element} />
             </div>
-            <div className={clsx(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+            <div className={clsx(['item-senders flex flex-nowrap m-auto pr1', unread && 'text-bold'])}>
                 <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
-                <ItemAction element={element} className="mr-2 flex-item-noshrink myauto" />
+                <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
                 <span
                     className="max-w100 text-ellipsis flex flex-align-items-center"
                     data-testid="message-row:sender-address"
@@ -89,12 +89,12 @@ const ItemRowLayout = ({
                 </span>
             </div>
 
-            <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap mauto">
+            <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
                 <div className="flex flex-column inline-block">
                     <span
                         role="heading"
                         aria-level={2}
-                        className={clsx(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                        className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
                         title={Subject}
                         data-testid="message-row:subject"
                     >
@@ -115,7 +115,7 @@ const ItemRowLayout = ({
                     {!!resultJSX && highlightData && (
                         <>
                             <span
-                                className={clsx(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                                className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
                                 title={bodyTitle}
                                 aria-hidden="true"
                             >
@@ -132,7 +132,7 @@ const ItemRowLayout = ({
                 element={element}
                 labelID={labelID}
                 maxNumber={1}
-                className="flex-item-noshrink mlauto"
+                className="flex-item-noshrink ml-auto"
                 showDropdown={false}
                 isCollapsed={false}
             />
@@ -148,7 +148,7 @@ const ItemRowLayout = ({
                 />
             </span>
 
-            <span className="ml1 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
+            <span className="ml-4 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
                 <ItemHoverButtons
                     element={element}
                     labelID={labelID}

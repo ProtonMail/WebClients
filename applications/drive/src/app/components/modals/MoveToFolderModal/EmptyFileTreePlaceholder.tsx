@@ -11,11 +11,11 @@ const EmptyFileTreePlaceholder = ({ onCreate }: Props) => {
     const title = c('Title').t`You have no folders yet`;
     return (
         <div className="p1 flex flex-column flex-align-items-center w100">
-            <img src={noContentSvg} alt={title} className="p1 mb1 w50" />
+            <img src={noContentSvg} alt={title} className="p1 mb-4 w50" />
             <h2 className="text-bold">{title}</h2>
             <p className="m-0">{c('Info').t`Create your first folder and start moving your files.`}</p>
-            <div className="mt2 mb2 flex flex-column w13e">
-                <Button size="large" color="norm" className="ml1 mr1 mt-1 text-strong" onClick={onCreate}>
+            <div className="my-8 flex flex-column w13e">
+                <Button size="large" color="norm" className="mx-4 mt-1 text-strong" onClick={onCreate}>
                     {c('Action').t`Create`}
                 </Button>
             </div>

@@ -76,7 +76,7 @@ const QuickReplyContainer = ({
     return (
         <div className="quick-reply-wrapper bg-norm color-norm pt0-75 pb1">
             {!newMessageID ? (
-                <div className="flex flex-nowrap flex-align-items-center border border-weak rounded-lg color-weak mx1 px0-5 py0-25 cursor-pointer quick-reply-collapsed relative">
+                <div className="flex flex-nowrap flex-align-items-center border border-weak rounded-lg color-weak mx-4 px0-5 py0-25 cursor-pointer quick-reply-collapsed relative">
                     <Icon className="mr-2 flex-item-noshrink" name="arrow-up-and-left-big" aria-hidden="true" />
                     <button
                         type="button"

@@ -1,23 +1,15 @@
 import { useState } from 'react';
 
+
+
 import { Button } from '@proton/atoms';
-import {
-    Checkbox,
-    ColorPicker,
-    Icon,
-    InputFieldTwo,
-    Option,
-    PasswordInputTwo,
-    PhoneInput,
-    RadioGroup,
-    SelectTwo,
-    TextAreaTwo,
-    Toggle,
-    TotpInput,
-} from '@proton/components';
+import { Checkbox, ColorPicker, Icon, InputFieldTwo, Option, PasswordInputTwo, PhoneInput, RadioGroup, SelectTwo, TextAreaTwo, Toggle, TotpInput } from '@proton/components';
+
+
 
 import { getTitle } from '../../helpers/title';
 import mdx from './InputField.mdx';
+
 
 export default {
     component: InputFieldTwo,
@@ -134,7 +126,7 @@ export const Sandbox = () => {
                     <InputFieldTwo label="Warning" value={warning} onValue={setWarning} />
                 </div>
                 <div>
-                    <strong className="block mb1">Prefix</strong>
+                    <strong className="block mb-4">Prefix</strong>
                     <RadioGroup
                         name="selected-prefix"
                         value={selectedPrefixId}
@@ -143,7 +135,7 @@ export const Sandbox = () => {
                     />
                 </div>
                 <div>
-                    <strong className="block mb1">Suffix</strong>
+                    <strong className="block mb-4">Suffix</strong>
                     <RadioGroup
                         name="selected-suffix"
                         value={selectedSuffixId}
@@ -152,7 +144,7 @@ export const Sandbox = () => {
                     />
                 </div>
                 <div>
-                    <strong className="block mb1">Toggles</strong>
+                    <strong className="block mb-4">Toggles</strong>
                     {toggles.map((prop, i) => {
                         return (
                             <div className="mb-2">
@@ -185,7 +177,7 @@ export const Intermediate = () => {
         <>
             <InputFieldTwo label="Placeholder" placeholder={placeholder} />
             <InputFieldTwo label="Hint" hint={`${value.length}/100`} value={value} onValue={setValue} />
-            <div className="mb1">
+            <div className="mb-4">
                 <InputFieldTwo label="Assistive Text" assistiveText="Your legal surname/s (separated by spaces)" />
             </div>
             <InputFieldTwo
@@ -205,21 +197,21 @@ export const Validation = () => {
 
     return (
         <>
-            <div className="mb1">
+            <div className="mb-4">
                 <InputFieldTwo
                     label="Warning as string"
                     warning="Something's not quite right here"
                     {...sharedInputProps}
                 />
             </div>
-            <div className="mb1">
+            <div className="mb-4">
                 <InputFieldTwo
                     label="Error as string"
                     error="Something's definitely not right here"
                     {...sharedInputProps}
                 />
             </div>
-            <div className="mb1">
+            <div className="mb-4">
                 <InputFieldTwo
                     label="Warning as boolean"
                     warning

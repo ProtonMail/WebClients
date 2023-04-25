@@ -17,7 +17,7 @@ const DisableAddressModal = ({ email, onDisable, ...rest }: Props) => {
         <ModalTwo {...rest}>
             <ModalTwoHeader title={c('Title').t`Disable ${email}`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="warning">{c('Warning')
+                <Alert className="mb-4" type="warning">{c('Warning')
                     .t`By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will also be disabled. Are you sure you want to disable this address?`}</Alert>
             </ModalTwoContent>
             <ModalTwoFooter>

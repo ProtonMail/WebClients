@@ -42,7 +42,7 @@ const TrashToolbar = ({ items }: Props) => {
     return (
         <Toolbar>
             {renderSelectionActions()}
-            <span className="mlauto flex">
+            <span className="ml-auto flex">
                 <LayoutButton />
             </span>
         </Toolbar>

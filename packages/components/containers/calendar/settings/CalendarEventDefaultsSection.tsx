@@ -106,7 +106,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
             <div className="h2 mb-1 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
             {showDuration && (
-                <SettingsLayout className="mt2">
+                <SettingsLayout className="mt-8">
                     <SettingsLayoutLeft>
                         <label htmlFor="event-duration" className="text-semibold">
                             {c('Label for default event settings').t`Duration`}

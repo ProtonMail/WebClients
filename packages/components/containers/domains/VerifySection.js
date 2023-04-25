@@ -12,11 +12,11 @@ const VerifySection = ({ domain }) => {
     const domainName = domain.DomainName;
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
+            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
                 {c('Info for domain modal')
                     .t`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
-            <Alert className="mb1" type="warning">
+            <Alert className="mb-4" type="warning">
                 {c('Warning for domain modal')
                     .t`After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.`}
             </Alert>
@@ -54,7 +54,7 @@ const VerifySection = ({ domain }) => {
                     />
                 </TableBody>
             </Table>
-            <Alert className="mb1" type="warning">{c('Warning for domain modal')
+            <Alert className="mb-4" type="warning">{c('Warning for domain modal')
                 .t`It can take up to a day for DNS changes to update.`}</Alert>
         </>
     );

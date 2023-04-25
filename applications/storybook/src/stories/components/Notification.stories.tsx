@@ -1,5 +1,7 @@
 import { ChangeEvent, SetStateAction, useState } from 'react';
 
+
+
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
@@ -85,7 +87,7 @@ export const Basic = () => {
         return (
             <div className="block">
                 <form>
-                    <div className="flex flex-column flex-gap-1 mb1">
+                    <div className="flex flex-column flex-gap-1 mb-4">
                         <InputFieldTwo
                             name="content"
                             id="content"
@@ -95,7 +97,7 @@ export const Basic = () => {
                         />
 
                         <div>
-                            <strong className="block mb1">Type</strong>
+                            <strong className="block mb-4">Type</strong>
                             <RadioGroup
                                 name="type"
                                 onChange={(v) => setByoType(v)}
@@ -165,7 +167,7 @@ export const Basic = () => {
                             showCloseButton: byoCloseButton,
                             expiration: byoExpiration,
                         })}
-                        className="mr1 mb1"
+                        className="mr-4 mb-4"
                     >
                         Trigger
                     </Button>
@@ -176,28 +178,28 @@ export const Basic = () => {
 
     return (
         <div>
-            <h4 className="mb1">Presets</h4>
+            <h4 className="mb-4">Presets</h4>
             <Button
                 color="success"
                 onClick={handleClick({
                     type: 'success',
                     text: 'You did it',
                 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Default notification
             </Button>
             <Button
                 color="info"
                 onClick={handleClick({ key: 'close', type: 'info', text: <CloseableNotification /> })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Default with action
             </Button>
             <Button
                 color="info"
                 onClick={handleClick({ type: 'info', text: 'whoop', showCloseButton: false })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Default without close button
             </Button>
@@ -209,7 +211,7 @@ export const Basic = () => {
                     text: <CloseableNotification />,
                     showCloseButton: false,
                 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Default without close button but with an action
             </Button>
@@ -225,7 +227,7 @@ export const Basic = () => {
                         </>
                     ),
                 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Default with spinner
             </Button>
@@ -236,21 +238,21 @@ export const Basic = () => {
                     type: 'warning',
                     text: 'Uh oh',
                 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Default warning
             </Button>
             <Button
                 color="warning"
                 onClick={handleClick({ key: 'warning', type: 'warning', text: <WarningNotification /> })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Warning with action
             </Button>
             <Button
                 color="warning"
                 onClick={handleClick({ key: 'warning2', type: 'warning', text: 'Dammit', showCloseButton: false })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Warning without close button
             </Button>
@@ -262,7 +264,7 @@ export const Basic = () => {
                     text: <WarningNotification />,
                     showCloseButton: false,
                 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Warning without close button but with an action
             </Button>
@@ -274,13 +276,13 @@ export const Basic = () => {
                     text: <ExpandableNotification />,
                     expiration: -1,
                 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Expandable notification
             </Button>
 
             <hr />
-            <h4 className="mb1">Build your own</h4>
+            <h4 className="mb-4">Build your own</h4>
             <BuildYourOwn />
         </div>
     );
@@ -297,13 +299,13 @@ export const Expiration = () => {
         <div>
             <Button
                 onClick={handleClick({ type: 'info', text: 'I expire after 5 seconds!', expiration: 3000 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Expires after 3 seconds
             </Button>
             <Button
                 onClick={handleClick({ type: 'info', text: 'I expire after 500 milliseconds!', expiration: 500 })}
-                className="mr1 mb1"
+                className="mr-4 mb-4"
             >
                 Expires after 500 milliseconds
             </Button>

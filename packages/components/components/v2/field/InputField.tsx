@@ -5,6 +5,8 @@ import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { isFocusable } from 'tabbable';
 
+
+
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
 
@@ -100,7 +102,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         ]),
     };
     const labelElement = label && <span className="field-two-label">{label}</span>;
-    const hintElement = hint && <span className="field-two-hint mlauto">{hint}</span>;
+    const hintElement = hint && <span className="field-two-hint ml-auto">{hint}</span>;
 
     const errorElement = error && typeof error !== 'boolean' && (
         <>

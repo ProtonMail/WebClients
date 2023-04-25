@@ -33,7 +33,7 @@ const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) 
             onClose={onClose}
             {...rest}
         >
-            <div className="mb1">
+            <div className="mb-4">
                 {c('Info').t`Since you're a loyal user, your account has additional features enabled.`}
             </div>
             <div>

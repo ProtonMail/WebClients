@@ -1,7 +1,11 @@
 import * as React from 'react';
 
+
+
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
+
+
 
 import { Loader, useUser } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -10,7 +14,10 @@ import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import capitalize from '@proton/utils/capitalize';
 
+
+
 import { isConversationMode } from '../../helpers/mailSettings';
+
 
 interface ContainerProps {
     children: React.ReactNode;
@@ -18,7 +25,7 @@ interface ContainerProps {
 
 const Container = ({ children }: ContainerProps) => (
     <div className="flex h100 scroll-if-needed pt1 pb1 pr2 pl2">
-        <div className="mauto text-center max-w30e">{children}</div>
+        <div className="m-auto text-center max-w30e">{children}</div>
     </div>
 );
 interface Props {
@@ -76,7 +83,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
-                <hr className="mb2 mt2" />
+                <hr className="my-8" />
                 <div className="text-rg">
                     <img className="hauto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </div>

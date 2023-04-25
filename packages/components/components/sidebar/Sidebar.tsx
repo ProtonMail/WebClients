@@ -104,7 +104,7 @@ const Sidebar = ({
                 </div>
             </div>
             {primary ? <div className="px0-5 pb0-5 flex-item-noshrink">{primary}</div> : null}
-            <div className="on-mobile-mt1" aria-hidden="true" />
+            <div className="mt-4 md:mt-0" aria-hidden="true" />
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed pb1">{children}</div>
             {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                 <div className="app-infos px1">

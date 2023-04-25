@@ -1,5 +1,7 @@
 import { ChangeEvent, DragEvent } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import {
@@ -48,11 +50,11 @@ const AttachingModalContent = ({
     };
 
     const alert = model.failure ? (
-        <Alert className="mb1" type="error">
+        <Alert className="mb-4" type="error">
             {model.failure?.message}
         </Alert>
     ) : (
-        <div className="mb1">
+        <div className="mb-4">
             {c('Description')
                 .t`You can import events in iCal format (ICS file). The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_EVENTS_STRING} events. If your file is bigger, please split it into smaller files.`}
             <div>
@@ -80,7 +82,7 @@ const AttachingModalContent = ({
                         onDragLeave={onDragLeave}
                         className="w100"
                     >
-                        <FileInput className="mxauto" accept=".ics" id="import-calendar" onChange={onAttach}>
+                        <FileInput className="mx-auto" accept=".ics" id="import-calendar" onChange={onAttach}>
                             {c('Action').t`Choose a file or drag it here`}
                         </FileInput>
                     </Dropzone>

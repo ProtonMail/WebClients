@@ -72,7 +72,7 @@ const ComposerInnerModals = ({
                     onSubmit={handleDelete}
                     submitActions={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                 >
-                    <Alert className="mb1" type="error">{c('Info')
+                    <Alert className="mb-4" type="error">{c('Info')
                         .t`Are you sure you want to permanently delete this draft?`}</Alert>
                 </ComposerInnerModal>
             )}
