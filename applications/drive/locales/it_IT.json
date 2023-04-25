@@ -2339,6 +2339,9 @@
       "Something went wrong": [
         "Qualcosa è andato storto"
       ],
+      "We couldn't load this page. ": [
+        "Non è stato possibile caricare questa pagina. "
+      ],
       "You may also refresh the page or try again later.": [
         "Puoi anche aggiornare la pagina o riprovare più tardi."
       ]
@@ -2979,7 +2982,7 @@
         "Attenzione"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "Poiché ${ DRIVE_APP_NAME } è crittografato end-to-end, non possiamo accedere\no decrittografa i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere uno dei seguenti:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -3246,7 +3249,7 @@
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "Se disponi di uno di questi, passa alle impostazioni dell'Account ${ BRAND_NAME } per\niniziare il processo di sblocco."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
@@ -3637,7 +3640,7 @@
         "Questo sovrascriverà la cartella esistente"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "Questo rimuoverà da ${ DRIVE_APP_NAME } il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per abilitare la ricerca davvero privata, ${ DRIVE_APP_NAME } deve indicizzare i tuoi file localmente."

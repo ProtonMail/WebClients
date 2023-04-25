@@ -3089,7 +3089,7 @@
         "Потребує уваги"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "Оскільки ${ DRIVE_APP_NAME } наскрізно зашифровано, ми не можемо отримати доступ\nчи розшифрувати ваші файли. Щоб розблокувати сховище після скидання пароля,\nвам необхідно мати будь-що з вказаного:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
@@ -3362,7 +3362,7 @@
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "Якщо у вас є будь-що з вказаного, перейдіть до налаштувань облікового запису ${ BRAND_NAME },\nщоб розпочати процес розблокування."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
@@ -3761,7 +3761,7 @@
         "Це перезапише наявну теку"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "Ця дія вилучить з ${ DRIVE_APP_NAME } синхронізований пристрій ${ deviceName }. Ці зміни не вплинуть на локальні файли пристрою."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Щоб увімкнути повноцінний приватний пошук, ${ DRIVE_APP_NAME } повинен індексувати ваші файли локально."

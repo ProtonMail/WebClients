@@ -31,6 +31,9 @@
       "Add address": [
         "Aggiungi indirizzo"
       ],
+      "Add Bcc recipients": [
+        "Aggiungi destinatario in Ccn"
+      ],
       "Add Cc recipients": [
         "Aggiungi destinatario in Cc"
       ],
@@ -3621,6 +3624,9 @@
       "Something went wrong": [
         "Qualcosa è andato storto"
       ],
+      "We couldn't load this page. ": [
+        "Non è stato possibile caricare questa pagina. "
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Non hai ancora alcun contatto. Inizia creandone uno nuovo"
       ]
@@ -4773,8 +4779,8 @@
         "Scade tra meno di ${ hoursDiff } ore"
       ],
       "file attached": [
-        "attachment",
-        "attachments"
+        "file allegato",
+        "file allegati"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "I filtri funzionano su tutte le email, incluse le email in arrivo e quelle inviate. Ogni filtro deve contenere almeno un nome, una condizione e un'azione."
@@ -4796,9 +4802,6 @@
       ],
       "From": [
         "Da"
-      ],
-      "Get more storage and premium features.": [
-        "Ottieni ulteriore archiviazione e funzionalità premium."
       ],
       "Group assignment applied": [
         "Assegnazione di gruppo applicata"
@@ -4864,9 +4867,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
-      ],
-      "Increase storage space starting at ${ planPrice } per month.": [
-        "Aumenta lo spazio di archiviazione a partire da ${ planPrice }/mese."
       ],
       "Indexing paused": [
         "Indicizzazione in pausa"

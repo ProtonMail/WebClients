@@ -2481,6 +2481,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
       ]
     },
     "Error importing contacts": {
@@ -2613,6 +2616,18 @@
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } alstublieft of controleer uw internetverbinding."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } alstublieft of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
+      "We couldn't load this page. ": [
+        "We konden deze pagina niet laden. "
       ],
       "You need an active personal calendar to import events": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren"
@@ -2863,6 +2878,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-versies < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5026,6 +5044,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Agenda beheren"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Ondertekening verificatiefout"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "U heeft adresverificatie ingeschakeld voor ${ boldSenderEmail }. We konden de authenticatie van deze agenda-uitnodiging niet verifiëren. Dit kan voorkomen door wijzigingen in de encryptiesleutel van dit contact. Controleer alstublieft de geavanceerde PGP-instellingen hiervan of u kan ${ boldSenderEmail } vragen om een nieuwe uitnodiging."
       ]
     },
     "Signing preference for emails": {

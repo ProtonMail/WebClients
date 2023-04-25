@@ -2946,7 +2946,7 @@
         "Figyelem szükséges"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "Mivel a ${ DRIVE_APP_NAME } végpontok közt titkosított, nem tudjuk elérni vagy visszafejetni önnek a a fájljait. Jelszó visszaállítás után, a fájlok helyreállításához, ezek valamelyike szükséges:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
@@ -3180,7 +3180,7 @@
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "Ha ezek bármelyike rendelkezésére áll, nyissa meg a ${ BRAND_NAME } fiókjában a beállításokat,\na feloldási folyamat indításához."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
@@ -3520,7 +3520,7 @@
         "Felülírja a meglévő mappát"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "Ez eltávolítja a ${ DRIVE_APP_NAME }-ot az alábbi szinkronizált eszközről: ${ deviceName }. Az eszközön tárolt helyi fájlok nem lesznek érintve."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."

@@ -426,11 +426,6 @@
         "Spowoduje to rozłączenie wszystkich routerów i klientów używających tego certyfikatu."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 użytkowników"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: Prywatna poczta i kalendarz do codziennej komunikacji."
@@ -1872,6 +1867,9 @@
         "${ number } serwerów",
         "${ number } serwerów"
       ],
+      "${ storage } storage": [
+        "${ storage } przestrzeni dyskowej"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
@@ -2399,6 +2397,9 @@
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Do ${ FAMILY_MAX_USERS } użytkowników"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Zaktualizuj konto w promocyjnej cenie, aby uzyskać dostęp do usług i funkcji premium oraz większej przestrzeni dyskowej"
@@ -3232,6 +3233,12 @@
         "${ n } kalendarzy",
         "${ n } kalendarzy"
       ],
+      "${ n } calendar per user": [
+        "${ n } kalendarz na użytkownika",
+        "${ n } kalendarze na użytkownika",
+        "${ n } kalendarzy na użytkownika",
+        "${ n } kalendarzy na użytkownika"
+      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -3303,6 +3310,9 @@
       ],
       "1 free VPN connection in total": [
         "Łącznie 1 darmowe połączenie VPN"
+      ],
+      "1 user": [
+        "1 użytkownik"
       ],
       "99.95% SLA": [
         "Umowa SLA 99,95%"
@@ -3447,6 +3457,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Nielimitowana przepustowość"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Do ${ FAMILY_MAX_USERS } użytkowników"
+      ],
+      "Up to ${ n } users": [
+        "Do ${ n } użytkowników"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
@@ -4567,6 +4583,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Dla biznesów"
+      ],
+      "For families": [
+        "Dla rodzin"
       ],
       "For individuals": [
         "Dla Ciebie"

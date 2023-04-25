@@ -2838,7 +2838,7 @@
         "需要关注"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "因为 ${ DRIVE_APP_NAME } 是端到端加密的，我们无法为您\n访问或解密您的文件。要在密码重置后解锁您的网盘，\n您必须具备以下条件之一："
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
@@ -3072,7 +3072,7 @@
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "如果您有其中之一，请前往 ${ BRAND_NAME } 账户设置以\n启动解锁进程。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -3420,7 +3420,7 @@
         "现有文件夹将被覆盖"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "此操作将把已同步的设备 ${ deviceName } 从 ${ DRIVE_APP_NAME } 中移除。该设备上已下载的文件不会受到影响。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "为了在搜索过程中保护您的隐私，${ DRIVE_APP_NAME } 需要将文件下载至本设备后进行索引。"

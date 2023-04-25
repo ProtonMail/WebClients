@@ -1069,11 +1069,6 @@
         "Nu sunt la birou și am acces limitat la e-mail."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 utilizatori"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Dezactivat"
@@ -4548,6 +4543,9 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
+      "${ storage } storage": [
+        "${ storage } stocare"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } spațiu"
       ],
@@ -4678,6 +4676,9 @@
       ],
       "Align right": [
         "Aliniere la dreapta"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (Un folder)",
@@ -5242,8 +5243,8 @@
         "Conexiunea la internet a revenit."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent",
+        "Invitație trimisă cu succes",
+        "Invitații trimise cu succes.",
         "Invitații trimise cu succes."
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -5917,6 +5918,9 @@
       ],
       "Unsupported file": [
         "Fişier nesuportat"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Update recovery file": [
         "Actualizare fișier de recuperare"
@@ -8150,6 +8154,11 @@
         "${ n } calendare",
         "${ n } de calendare"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendar pe utilizator",
+        "${ n } calendare pe utilizator",
+        "${ n } calendare pe utilizator"
+      ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
         "${ n } domenii personale de e-mail",
@@ -8211,6 +8220,9 @@
       ],
       "1 free VPN connection in total": [
         "O conexiune VPN gratuită"
+      ],
+      "1 user": [
+        "1 utilizator"
       ],
       "99.95% SLA": [
         "Disponibilitate minimă a serviciului 99,95%"
@@ -8367,6 +8379,12 @@
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Până la ${ FAMILY_MAX_USERS } utilizatori"
+      ],
+      "Up to ${ n } users": [
+        "Până la ${ n } utilizatori"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
@@ -8467,6 +8485,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Suită de confidențialitate și securitate pentru companii, incluzând toate serviciile premium ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Protejați confidențialitatea familiei dvs. cu toate serviciile ${ BRAND_NAME } combinate."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
@@ -8600,6 +8621,9 @@
         "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Creați până la ${ n } adrese de e-mail/alias pentru întreaga familie. Folosiți-le pentru identitățile dvs. online, de exemplu, MyFamilySubs@${ domain } pentru abonamente online."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
       ],
@@ -8623,6 +8647,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Suportul IMAP este limitat la utilizarea aplicațiilor desktop (de ex., Outlook, Apple Mail, Thunderbird) prin ${ MAIL_APP_NAME } Bridge. În prezent, integrările IMAP bazate pe cloud nu sunt acceptate."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Păstrați-vă planurile private pentru dvs. și familia dvs. cu un calendar criptat"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Vă protejează blocând toate conexiunile din rețea atunci când conexiunea la serverul nostru VPN cade neașteptat."
@@ -8663,6 +8690,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Protejați fiecare dispozitiv conectat la rețeaua WiFi. De asemenea, este util dacă aveți dispozitive care nu acceptă direct setări VPN."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Protejați-vă familia de site-urile web dăunătoare și accesați serverele noastre VPN de mare viteză pentru a vă transmite conținutul preferat"
+      ],
       "Quickly set up out-of-office messages": [
         "Configurați rapid mesaje de răspuns automat"
       ],
@@ -8677,6 +8707,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Redirecționați traficul din Internet prin rețeaua Tor cu un singur clic."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
@@ -8701,6 +8734,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }. Administratorii pot aloca spațiu de stocare diferit utilizatorilor din organizația lor."
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este partajat între utilizatori prin ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
@@ -10084,6 +10120,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Pentru firme"
+      ],
+      "For families": [
+        "Pentru familii"
       ],
       "For individuals": [
         "Pentru persoane"
