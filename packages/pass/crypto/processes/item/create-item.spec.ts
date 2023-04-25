@@ -45,4 +45,14 @@ describe('createItem crypto process', () => {
 
         await expect(createItem({ content: new Uint8Array(0), vaultKey })).rejects.toThrow(PassCryptoItemError);
     });
+
+    test('should throw if base64 content is over MAX_ITEM_CONTENT_B64_LENGTH', async () => {
+        const vaultKey: VaultKey = {
+            raw: key,
+            key: await getSymmetricKey(key),
+            rotation: 1,
+        };
+
+        await expect(createItem({ content: new Uint8Array(7000), vaultKey })).rejects.toThrow(PassCryptoItemError);
+    });
 });
