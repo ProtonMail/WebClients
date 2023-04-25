@@ -1071,11 +1071,6 @@
         "Jestem poza biurem i mam ograniczony dostęp do poczty."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 użytkowników"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Wyłączona"
@@ -4591,6 +4586,9 @@
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
       ],
+      "${ storage } storage": [
+        "${ storage } przestrzeni dyskowej"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
@@ -5294,8 +5292,8 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent",
+        "Zaproszenie zostało wysłane",
+        "Zaproszenia zostały wysłane",
         "Zaproszenia zostały wysłane",
         "Zaproszenia zostały wysłane"
       ],
@@ -5976,6 +5974,9 @@
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Do ${ FAMILY_MAX_USERS } użytkowników"
       ],
       "Update recovery file": [
         "Zaktualizuj plik odzyskiwania"
@@ -8230,6 +8231,12 @@
         "${ n } kalendarzy",
         "${ n } kalendarzy"
       ],
+      "${ n } calendar per user": [
+        "${ n } kalendarz na użytkownika",
+        "${ n } kalendarze na użytkownika",
+        "${ n } kalendarzy na użytkownika",
+        "${ n } kalendarzy na użytkownika"
+      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -8301,6 +8308,9 @@
       ],
       "1 free VPN connection in total": [
         "Łącznie 1 darmowe połączenie VPN"
+      ],
+      "1 user": [
+        "1 użytkownik"
       ],
       "99.95% SLA": [
         "Umowa SLA 99,95%"
@@ -8457,6 +8467,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Nielimitowana przepustowość"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Do ${ FAMILY_MAX_USERS } użytkowników"
+      ],
+      "Up to ${ n } users": [
+        "Do ${ n } użytkowników"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
@@ -10456,6 +10472,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Dla biznesów"
+      ],
+      "For families": [
+        "Dla rodzin"
       ],
       "For individuals": [
         "Dla Ciebie"

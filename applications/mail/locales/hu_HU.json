@@ -4551,10 +4551,10 @@
         "Figyelem szükséges"
       ],
       "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Törölje a 30 napnál régebben spam-ba került üzeneteket."
+        "A 30 napnál régebben Levélszemét mappába került üzenetek automatikus törlése."
       ],
       "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Törölje a 30 napnál régebben kukába helyezett üzeneteket."
+        "A 30 napnál régebben a lomtárba helyezett üzenetek automatikus törlése."
       ],
       "Background color": [
         "Háttérszín"
@@ -4771,8 +4771,8 @@
         "Kevesebb, mint ${ hoursDiff } órán belül lejár"
       ],
       "file attached": [
-        "attachment",
-        "attachments"
+        "fájl csatolva",
+        "fájlok csatolva"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
@@ -4794,9 +4794,6 @@
       ],
       "From": [
         "Forrás:"
-      ],
-      "Get more storage and premium features.": [
-        "Szerezzen több térhelyet és prémium szolgáltatásokat."
       ],
       "Group assignment applied": [
         "Csoport hozzárendelés alkalmazva"
@@ -4862,9 +4859,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
-      ],
-      "Increase storage space starting at ${ planPrice } per month.": [
-        "Növelje a tárhelyét már ${ planPrice } havidíjtól."
       ],
       "Indexing paused": [
         "Feldolgozás szüneteltetve"
@@ -4966,7 +4960,7 @@
         "Az üzenet holnap, ${ formattedTime }-kor lesz elküldve"
       ],
       "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "A 30 napnál régebben a Spam mappába került üzenetek automatikusan törlésre kerülnek."
+        "A 30 napnál régebben a Levélszemét mappába került üzenetek automatikusan törlésre kerülnek."
       ],
       "Messages that have been in trash more than 30 days will be automatically deleted.": [
         "A 30 napnál régebben lomtárba került üzenetek automatikusan törlésre kerülnek."
@@ -5432,10 +5426,10 @@
         "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
       ],
       "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Váltson fizetős csomagra a 30 napja a spam-ban lévő üzenetek automatikus törléséhez."
+        "Váltson nagyobb csomagra csomagra a 30 napja a Levélszemét mappában lévő üzenetek automatikus törléséhez."
       ],
       "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Váltson fizetős csomagra a 30 napja kukában lévő üzenetek automatikus törléséhez."
+        "Váltson nagyobb csomagra a 30 napja lomtárban lévő üzenetek automatikus törléséhez."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
@@ -6933,7 +6927,7 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "A spam-ba vagy kukába került üzenetek automatikus törlése"
+        "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
       ],
       "Custom email domains": [
         "Saját domain nevek"

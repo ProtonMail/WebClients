@@ -2852,6 +2852,9 @@
       "No labels": [
         "Ingen etiketter"
       ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail-logo og et plustegn"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
@@ -4647,6 +4650,9 @@
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Henter besked ${ currentProgress } ud af ${ totalProgress }"
+      ],
       "Draft": [
         "Kladde"
       ],
@@ -4752,8 +4758,8 @@
         "Udløber om mindre end ${ hoursDiff } timer"
       ],
       "file attached": [
-        "attachment",
-        "attachments"
+        "fil vedhæftet",
+        "filer vedhæftet"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
@@ -4775,9 +4781,6 @@
       ],
       "From": [
         "Fra"
-      ],
-      "Get more storage and premium features.": [
-        "Få mere lagerplads og premium-funktioner."
       ],
       "Group assignment applied": [
         "Gruppetildeling anvendt"
@@ -6980,7 +6983,7 @@
         "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
-        "Du kan altid ændre dette i dine indstillingerne."
+        "Du kan altid ændre dette i dine indstillinger."
       ]
     },
     "Option": {

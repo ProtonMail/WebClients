@@ -1071,11 +1071,6 @@
         "Jsem mimo kancelář s omezeným přístupem ke svému e-mailu."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 uživatelů"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Vypnuto"
@@ -4594,6 +4589,9 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
+      "${ storage } storage": [
+        "${ storage } úložiště"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
@@ -4728,6 +4726,9 @@
       ],
       "Align right": [
         "Zarovnat doprava"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
@@ -5297,8 +5298,8 @@
         "Připojení k internetu obnoveno."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent",
+        "Pozvánka byla úspěšně odeslána",
+        "Pozvánky byla úspěšně odeslány",
         "Pozvánek bylo úspěšně odesláno",
         "Pozvánek bylo úspěšně odesláno"
       ],
@@ -5979,6 +5980,9 @@
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Update recovery file": [
         "Aktualizovat soubor pro obnovení"
@@ -8233,6 +8237,12 @@
         "${ n } kalendářů",
         "${ n } kalendářů"
       ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
+      ],
       "${ n } custom email domain": [
         "${ n } vlastní e-mailová doména",
         "${ n } vlastní e-mailové domény",
@@ -8304,6 +8314,9 @@
       ],
       "1 free VPN connection in total": [
         "Celkem 1 bezplatné připojení VPN"
+      ],
+      "1 user": [
+        "1 uživatel"
       ],
       "99.95% SLA": [
         "99.95% SLA Dostupnost"
@@ -8460,6 +8473,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezená šířka pásma"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } uživatelů"
+      ],
+      "Up to ${ n } users": [
+        "Až ${ n } uživatelů"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
@@ -8696,6 +8715,9 @@
         "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
         "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Vytvořte až ${ n } e-mailových adres/aliasů pro celou rodinu. Použijte je pro vaše online identity, např. MojeRodinnePredplatne@${ domain } pro online předplatná."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
@@ -8719,6 +8741,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP podpora je omezená na využití v desktop aplikacích (např. Outlook, Apple Mail, Thunderbird) přes ${ MAIL_APP_NAME } Most. Kloudové IMAP integrace momentálně nejsou podporovány."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mějte své plány v soukromí pro sebe a svou rodinu pomocí šifrovaného kalendáře"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Chrání vás blokováním všech síťových připojení, když se náhodou odpojíte od našeho VPN serveru."
@@ -8759,6 +8784,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Chraňte každé zařízení připojené do vaší WiFi sítě. Je to užitečné pokud některá vaše zařízení nemají VPN nastavení."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Chraňte vaši rodinu před škodlivými webovými stránkami a mějte přístup k našim vysokorychlostním VPN serverům pro streamování vašeho oblíbeného obsahu"
+      ],
       "Quickly set up out-of-office messages": [
         "Rychle nastavte zprávy mimo kancelář"
       ],
@@ -8773,6 +8801,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Směrujte svůj internetový provoz skrz sít Tor jediným kliknutím"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani ${ BRAND_NAME } si nemůže přečíst tyto údaje."
@@ -8797,6 +8828,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }.\nSprávci mohou uživatelům v organizaci přidělovat různé objemy úložišť"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Úložný prostor je sdílen mezi uživateli napříč ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
@@ -10204,6 +10238,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Pro firmy"
+      ],
+      "For families": [
+        "Pro rodiny"
       ],
       "For individuals": [
         "Pro jednotlivce"

@@ -1234,6 +1234,23 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } voltooid"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }s inbox"
+      ],
+      "5 trackers removed": [
+        "5 trackers verwijderd"
+      ],
+      "Auto forwarded": [
+        "Automatisch doorgestuurd"
+      ],
+      "Email received": [
+        "E-mail ontvangen"
+      ],
+      "Encrypted": [
+        "Versleuteld"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -1609,6 +1626,11 @@
       ],
       "Event in progress": [
         "Gebeurtenis in uitvoering"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel expiration": [
+        "Vervaldatum annuleren"
       ]
     },
     "Collapsible tooltip": {
@@ -2834,7 +2856,7 @@
         "Geen labels"
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail logo en een plus teken"
+        "Proton Mail logo en een plus teken"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -3454,6 +3476,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
       ]
     },
     "Error importing contacts": {
@@ -3589,6 +3614,18 @@
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } alstublieft of controleer uw internetverbinding."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } alstublieft of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
+      "We couldn't load this page. ": [
+        "We konden deze pagina niet laden. "
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "U hebt nog geen contactpersonen. Start met het aanmaken van een contactpersoon"
@@ -3809,6 +3846,11 @@
         "Ongelezen"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Heeft bestand"
+      ]
+    },
     "Filter preview": {
       "read": [
         "gelezen"
@@ -3909,6 +3951,11 @@
     "Get started checklist title": {
       "Get started": [
         "Aan de slag"
+      ]
+    },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Inloggen met Google"
       ]
     },
     "Group": {
@@ -4014,6 +4061,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-versies < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4735,8 +4785,8 @@
         "Verloopt over minder dan ${ hoursDiff } uur"
       ],
       "file attached": [
-        "attachment",
-        "attachments"
+        "bestandsbijlage",
+        "bestandsbijlagen"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -4758,9 +4808,6 @@
       ],
       "From": [
         "Afzender"
-      ],
-      "Get more storage and premium features.": [
-        "Krijg meer opslagruimte en premium functies."
       ],
       "Group assignment applied": [
         "Groep toewijzing toegepast"
@@ -4826,9 +4873,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
-      ],
-      "Increase storage space starting at ${ planPrice } per month.": [
-        "Verhoog de opslagruimte vanaf ${ planPrice } per maand."
       ],
       "Indexing paused": [
         "Indexeren gepauzeerd"
@@ -7292,6 +7336,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } d",
         "${ remainingDays } d"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {
