@@ -79,6 +79,7 @@ interface Props {
     vpnServers: VPNServersCountData;
     addresses?: Address[];
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    isPassPlusEnabled: boolean;
 }
 
 const SubscriptionPanel = ({
@@ -90,6 +91,7 @@ const SubscriptionPanel = ({
     user,
     addresses,
     openSubscriptionModal,
+    isPassPlusEnabled,
 }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
@@ -360,10 +362,10 @@ const SubscriptionPanel = ({
                 if (hasVPN(subscription)) {
                     return getVpnPlus();
                 }
-                if (user.isFree && app === APPS.PROTONPASS) {
+                if (isPassPlusEnabled && user.isFree && app === APPS.PROTONPASS) {
                     return getPassAppFree();
                 }
-                if (hasPassPlus(subscription)) {
+                if (isPassPlusEnabled && hasPassPlus(subscription)) {
                     return getPassAppPassPlus();
                 }
                 return getDefault();

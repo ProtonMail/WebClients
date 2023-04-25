@@ -86,6 +86,7 @@ export enum FeatureCode {
     AutoDelete = 'AutoDelete',
     FamilyPlan = 'FamilyPlan',
     PassSettings = 'PassSettings',
+    PassPlusPlan = 'PassPlusPlan',
 }
 
 export interface FeaturesContextValue {

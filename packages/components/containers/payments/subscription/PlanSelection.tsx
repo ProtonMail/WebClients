@@ -85,6 +85,7 @@ interface Props {
     subscription?: Subscription;
     organization?: Organization;
     calendarSharingEnabled: boolean;
+    isPassPlusEnabled: boolean;
 }
 
 const PlanSelection = ({
@@ -107,6 +108,7 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     calendarSharingEnabled,
+    isPassPlusEnabled,
 }: Props) => {
     const featureContext = useFeature(FeatureCode.FamilyPlan);
     if (featureContext.loading) {
@@ -116,7 +118,12 @@ const PlanSelection = ({
 
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
-    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS];
+    const enabledProductB2CPlans = [
+        PLANS.MAIL,
+        PLANS.VPN,
+        PLANS.DRIVE,
+        isPassPlusEnabled ? PLANS.PASS_PLUS : undefined,
+    ].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const B2CPlans = [
@@ -143,7 +150,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers);
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers, {}, isPassPlusEnabled);
 
         if (!shortPlan) {
             return null;
@@ -200,7 +207,12 @@ const PlanSelection = ({
                     mode === 'settings' ? (
                         <PlanCardFeaturesShort plan={shortPlan} icon />
                     ) : (
-                        <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
+                        <PlanCardFeatures
+                            audience={audience}
+                            features={features}
+                            planName={plan.Name as PLANS}
+                            isPassPlusEnabled={isPassPlusEnabled}
+                        />
                     )
                 }
                 onSelect={(planName) => {
@@ -290,8 +302,12 @@ const PlanSelection = ({
             <DriveLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
             <VpnLogo variant="glyph-only" />
-            <Icon name="plus" alt="+" className="mx-2" />
-            <PassLogo variant="glyph-only" />
+            {isPassPlusEnabled && (
+                <>
+                    <Icon name="plus" alt="+" className="mx-2" />
+                    <PassLogo variant="glyph-only" />
+                </>
+            )}
         </div>
     );
 

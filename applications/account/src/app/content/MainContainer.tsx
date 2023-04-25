@@ -93,6 +93,7 @@ const MainContainer = () => {
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.EasySwitch,
         FeatureCode.PassSettings,
+        FeatureCode.PassPlusPlan,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
@@ -101,6 +102,7 @@ const MainContainer = () => {
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
     const isPassSettingsEnabled = getFeature(FeatureCode.PassSettings).feature?.Value === true;
+    const isPassPlusEnabled = getFeature(FeatureCode.PassPlusPlan).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
@@ -209,6 +211,7 @@ const MainContainer = () => {
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter
+                        isPassPlusEnabled={isPassPlusEnabled}
                         app={app}
                         path={prefixPath}
                         accountAppRoutes={routes.account}
