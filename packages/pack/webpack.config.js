@@ -9,9 +9,11 @@ const getOptimizations = require('./webpack/optimization');
 
 const getConfig = (env) => {
     const isProduction = process.env.NODE_ENV === 'production';
+    const isRelease = !!process.env.CI_COMMIT_TAG;
 
     const options = {
         isProduction,
+        isRelease,
         publicPath: env.publicPath || '/',
         api: env.api,
         appMode: env.appMode || 'standalone',

@@ -10,6 +10,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
+const SentryCliPlugin = require('@sentry/webpack-plugin');
 const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
@@ -20,6 +21,7 @@ const faviconConfig = require(path.resolve('./favicon.config.js'));
 
 module.exports = ({
     isProduction,
+    isRelease,
     publicPath,
     appMode,
     buildData,
@@ -65,6 +67,26 @@ module.exports = ({
                           },
                       }),
               ]),
+
+        /*
+         * Sentry webpack plugin is only run on tag creation (IS_RELEASE_BUNDLE)
+         * Needed values for source-maps upload
+         * project: defined in sentry.properties of each app
+         * org: defined in SENTRY_ORG (gitlab env)
+         * url: defined in SENTRY_URL (gitlab env)
+         * authToken: defined in SENTRY_AUTH_TOKEN (gitlab env)
+         * */
+        isRelease &&
+            new SentryCliPlugin({
+                include: './dist',
+                ignore: ['node_modules', 'webpack.config.js'],
+                configFile: 'sentry.properties',
+                // This prevents build to fail if any issue happened
+                errorHandler: (err, invokeErr, compilation) => {
+                    compilation.warnings.push('Sentry CLI Plugin: ' + err.message);
+                },
+                release: buildData.version,
+            }),
 
         new CopyWebpackPlugin({
             patterns: [
