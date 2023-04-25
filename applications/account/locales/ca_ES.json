@@ -1036,11 +1036,6 @@
         "Sóc fora de l'oficina i amb accés limitat al meu correu electrònic."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 usuaris"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Desactivat"
@@ -3354,8 +3349,20 @@
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } o comproveu la vostra connexió."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } o tornar-ho a intentar més tard."
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Massa sessions actives. Netegeu les galetes i torneu a iniciar sessió."
+      ],
+      "We couldn't load this page. ": [
+        "No hem pogut carregar aquesta pàgina. "
       ]
     },
     "Error message, recovery": {
@@ -4866,8 +4873,8 @@
         "S'ha restaurat la connexió a Internet."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
+        "S'ha convidat correctament",
+        "S'han enviat les invitacions correctament"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sembla que algunes de les vostres dades estan xifrades i bloquejades."

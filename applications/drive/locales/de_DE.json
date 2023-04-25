@@ -2985,7 +2985,7 @@
         "Aufmerksamkeit erforderlich"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "Da ${ DRIVE_APP_NAME } Ende-zu-Ende verschlüsselt ist, haben wir keinen Zugriff auf deine Dateien und können sie auch nicht für dich entschlüsseln. Um dein Laufwerk nach einem Zurücksetzen des Passworts zu entsperren, musst du einen der folgenden Punkte erfüllen:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
@@ -3252,7 +3252,7 @@
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "Wenn du einen davon hast, fahre fort zu den ${ BRAND_NAME }-Kontoeinstellungen,\num den Entsperrungsprozess zu starten."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
@@ -3643,7 +3643,7 @@
         "Dadurch wird der vorhandene Ordner überschrieben"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "Dadurch wird das synchronisierte Gerät ${ deviceName } aus ${ DRIVE_APP_NAME } entfernt. Lokale Dateien auf dem Gerät sind davon nicht betroffen."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
@@ -5561,7 +5561,7 @@
         "Dateidetails"
       ],
       "Folder details": [
-        "Orderndetails"
+        "Ordnerdetails"
       ],
       "Folders details": [
         "Ordnerdetails"

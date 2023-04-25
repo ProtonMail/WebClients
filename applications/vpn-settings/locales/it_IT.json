@@ -422,11 +422,6 @@
         "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 utenti"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: la soluzione di posta e calendario incentrata sulla privacy per le tue esigenze di comunicazione quotidiane."
@@ -1605,6 +1600,9 @@
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "We couldn't load this page. ": [
+        "Non è stato possibile caricare questa pagina. "
       ]
     },
     "Error notification": {
@@ -1844,6 +1842,9 @@
       "${ number } server": [
         "${ number } server",
         "${ number } server"
+      ],
+      "${ storage } storage": [
+        "${ storage } di archiviazione"
       ],
       "${ storageSize } storage": [
         "${ storageSize } di archiviazione"
@@ -2370,6 +2371,9 @@
       ],
       "Unsupported file": [
         "File non supportato"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
@@ -3187,6 +3191,10 @@
         "${ n } calendario",
         "${ n } calendari"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendario per utente",
+        "${ n } calendari per utente"
+      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -3238,6 +3246,9 @@
       ],
       "1 free VPN connection in total": [
         "1 connessione VPN gratuita in totale"
+      ],
+      "1 user": [
+        "1 utente"
       ],
       "99.95% SLA": [
         "SLA del 99,95%"
@@ -3380,6 +3391,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Larghezza di banda/volume illimitati"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
+      ],
+      "Up to ${ n } users": [
+        "Fino a ${ n } utenti"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
@@ -3690,6 +3707,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }. Gli amministratori possono assegnare diverse quantità di spazio di archiviazione agli utenti nella loro organizzazione"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
@@ -4430,6 +4450,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Per le aziende"
+      ],
+      "For families": [
+        "Per le famiglie"
       ],
       "For individuals": [
         "Per gli individui"

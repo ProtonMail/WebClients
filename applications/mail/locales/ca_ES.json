@@ -3624,6 +3624,18 @@
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } o comproveu la vostra connexió."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } o tornar-ho a intentar més tard."
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
+      "We couldn't load this page. ": [
+        "No hem pogut carregar aquesta pàgina. "
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "No ha creat cap contacte encara. Comença creant un nou contacte"
       ]
@@ -4788,8 +4800,8 @@
         "Caduca en menys de ${ hoursDiff } hores."
       ],
       "file attached": [
-        "attachment",
-        "attachments"
+        "arxiu adjunt",
+        "arxius adjunts"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
@@ -4811,9 +4823,6 @@
       ],
       "From": [
         "De"
-      ],
-      "Get more storage and premium features.": [
-        "Obteniu més emmagatzematge i funcionalitats premium."
       ],
       "Group assignment applied": [
         "Assignació de grup aplicada"
@@ -4879,9 +4888,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
-      ],
-      "Increase storage space starting at ${ planPrice } per month.": [
-        "Augmenteu l'espai d'emmagatzematge a partir de ${ planPrice }/mes."
       ],
       "Indexing paused": [
         "Indexació pausada"

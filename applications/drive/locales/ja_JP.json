@@ -2287,6 +2287,9 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
+      "Something went wrong": [
+        "不具合が発生しました"
+      ],
       "You may also refresh the page or try again later.": [
         "ページを更新するか、後ほどもう一度お試しください。"
       ]
@@ -2870,7 +2873,7 @@
         "注意が必要です"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "${ DRIVE_APP_NAME } はエンドツーエンド暗号化を利用しているため、パスワードなしにファイルにアクセスしたり、復号したりはできません。パスワードを変更したあとにドライブを開くには、以下の手順に従う必要があります。"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
@@ -3016,6 +3019,9 @@
       "Encrypted search is here": [
         "暗号化検索が利用できます"
       ],
+      "End-to-end encrypted": [
+        "エンドツーエンド暗号化"
+      ],
       "Enter password": [
         "パスワードを入力"
       ],
@@ -3122,7 +3128,7 @@
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "以上の中からできることがあれば、${ BRAND_NAME } アカウントの設定から必要な手順を実行してください。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -3138,6 +3144,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -3470,7 +3479,7 @@
         "既存のフォルダーに上書きします"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "この操作により、同期デバイス ${ deviceName } が ${ DRIVE_APP_NAME } から削除されます。デバイス上のローカルファイルは影響を受けません。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
