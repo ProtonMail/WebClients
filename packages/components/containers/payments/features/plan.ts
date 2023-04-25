@@ -293,7 +293,8 @@ export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
     vpnServers: VPNServersCountData,
-    options: { boldStorageSize?: boolean } = {}
+    options: { boldStorageSize?: boolean } = {},
+    isPassPlusEnabled: boolean
 ) => {
     const { boldStorageSize } = options;
     if (plan === PLANS.FREE) {
@@ -311,7 +312,7 @@ export const getShortPlan = (
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:
-            return getPassPlan(planData);
+            return isPassPlusEnabled ? getPassPlan(planData) : null;
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:

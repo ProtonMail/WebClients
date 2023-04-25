@@ -75,10 +75,11 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
 interface Props {
     planName: PLANS;
     features: AllFeatures;
+    isPassPlusEnabled: boolean;
     audience: Audience;
 }
 
-const PlanCardFeatures = ({ planName, features, audience }: Props) => {
+const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: Props) => {
     const highlightFeatures = (
         <div>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
@@ -143,7 +144,7 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
             {calendarFeatures}
             {driveFeatures}
             {vpnFeatures}
-            {passFeatures}
+            {isPassPlusEnabled ? passFeatures : null}
             {teamFeatures}
             {supportFeatures}
         </>
