@@ -31,3 +31,5 @@ export const oneOf =
     <T extends any>(...args: T[]) =>
     (value: T): boolean =>
         args.includes(value);
+
+export const truthy = <T>(value: T | undefined | null): value is T => Boolean(value);
