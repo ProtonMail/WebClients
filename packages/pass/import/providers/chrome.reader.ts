@@ -16,35 +16,38 @@ export const readChromeData = async (data: string): Promise<ImportPayload> => {
     try {
         const items = await readCSV<ChromeItem>(data, CHROME_EXPECTED_HEADERS);
 
-        return [
-            {
-                type: 'new',
-                vaultName: c('Title').t`Chrome import`,
-                id: uniqid(),
-                items: items.map((item): ItemImportIntent<'login'> => {
-                    const urlResult = isValidURL(item.url ?? '');
-                    const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-                    const name = item.name || url?.hostname || 'Unnamed LastPass item';
+        return {
+            vaults: [
+                {
+                    type: 'new',
+                    vaultName: c('Title').t`Chrome import`,
+                    id: uniqid(),
+                    items: items.map((item): ItemImportIntent<'login'> => {
+                        const urlResult = isValidURL(item.url ?? '');
+                        const url = urlResult.valid ? new URL(urlResult.url) : undefined;
+                        const name = item.name || url?.hostname || 'Unnamed Chrome item';
 
-                    return {
-                        type: 'login',
-                        metadata: {
-                            name,
-                            note: item.note ?? '',
-                            itemUuid: uniqid(),
-                        },
-                        content: {
-                            username: item.username || '',
-                            password: item.password || '',
-                            urls: [url?.origin].filter(Boolean) as string[],
-                            totpUri: '',
-                        },
-                        extraFields: [],
-                        trashed: false,
-                    };
-                }),
-            },
-        ];
+                        return {
+                            type: 'login',
+                            metadata: {
+                                name,
+                                note: item.note ?? '',
+                                itemUuid: uniqid(),
+                            },
+                            content: {
+                                username: item.username || '',
+                                password: item.password || '',
+                                urls: [url?.origin].filter(Boolean) as string[],
+                                totpUri: '',
+                            },
+                            extraFields: [],
+                            trashed: false,
+                        };
+                    }),
+                },
+            ],
+            ignored: [],
+        };
     } catch (e) {
         logger.warn('[Importer::Chrome]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';
