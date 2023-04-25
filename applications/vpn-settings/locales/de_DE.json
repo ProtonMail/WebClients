@@ -422,11 +422,6 @@
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 Benutzer"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen Kommunikationsbedürfnisse."
@@ -1848,6 +1843,9 @@
         "${ number } Server",
         "${ number } Server"
       ],
+      "${ storage } storage": [
+        "${ storage } Speicherplatz"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } Speicherplatz"
       ],
@@ -1902,6 +1900,9 @@
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
@@ -2373,6 +2374,9 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
@@ -3190,6 +3194,10 @@
         "${ n } Kalender",
         "${ n } Kalender"
       ],
+      "${ n } calendar per user": [
+        "${ n } Kalender je Benutzer",
+        "${ n } Kalender je Benutzer"
+      ],
       "${ n } custom email domain": [
         "${ n } eigene E-Mail-Domain",
         "${ n } eigene E-Mail-Domains"
@@ -3241,6 +3249,9 @@
       ],
       "1 free VPN connection in total": [
         "Insgesamt 1 kostenlose VPN-Verbindung"
+      ],
+      "1 user": [
+        "1 Benutzer"
       ],
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
@@ -3384,6 +3395,12 @@
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
+      ],
+      "Up to ${ n } users": [
+        "Bis zu ${ n } Benutzer"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
@@ -3447,6 +3464,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Privatsphären- und Sicherheitssuite für Unternehmen, einschließlich aller Premium-${ BRAND_NAME }-Dienste."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
@@ -3592,6 +3612,9 @@
         "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu",
         "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Erstelle bis zu ${ n } E-Mail-Adressen/Aliasse für die ganze Familie. Verwende diese für deine Online-Identitäten, z. B. AbosMeinerFamilie@${ domain } für Online-Abonnements."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
       ],
@@ -3615,6 +3638,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Die IMAP-Unterstützung ist auf die Nutzung von Desktop-Apps (z. B. Outlook, Apple Mail, Thunderbird) über ${ MAIL_APP_NAME } Bridge beschränkt. Cloud-basierte IMAP-Integrationen werden derzeit nicht unterstützt."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Sichere die Privatsphäre deiner Familienaktivitäten mit einem verschlüsselten Kalender ab."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Diese Funktion schützt dich durch das Blockieren aller Netzwerkverbindungen, wenn deine Verbindung mit unserem VPN-Server unerwartet getrennt wurde."
@@ -3655,6 +3681,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Schütze jedes Gerät, das mit deinem WLAN-Netzwerk verbunden ist. Das ist auch nützlich, wenn du Geräte besitzt, die VPN-Einstellungen nicht direkt unterstützen."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Schütze deine Familie vor schädlichen Websites und greife auf unsere Hochgeschwindigkeits-VPN-Server zu, um deine Lieblingsinhalte zu streamen."
+      ],
       "Quickly set up out-of-office messages": [
         "Richte Abwesenheitsnotizen im Handumdrehen ein."
       ],
@@ -3669,6 +3698,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
@@ -3693,6 +3725,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt. Administratoren können den Benutzern in ihrer Organisation unterschiedlich viel Speicherplatz zuweisen."
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Der Speicherplatz wird von allen Benutzern über die Anwendungen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } hinweg gemeinsam genutzt."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Unterstützung für File-Sharing-Protokolle wie BitTorrent"
@@ -4454,6 +4489,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Für Unternehmen"
+      ],
+      "For families": [
+        "Für Familien"
       ],
       "For individuals": [
         "Für Einzelpersonen"

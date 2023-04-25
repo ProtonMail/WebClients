@@ -1067,11 +1067,6 @@
         "Estoy fuera de la oficina con acceso limitado a mi correo."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 usuarios"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Deshabilitado"
@@ -4502,6 +4497,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
@@ -5187,8 +5185,8 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
+        "Invitación enviada",
+        "Invitaciones enviadas"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que algunos de tus datos están cifrados y bloqueados."
@@ -8066,6 +8064,10 @@
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendario por usuario",
+        "${ n } calendarios por usuario"
       ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",

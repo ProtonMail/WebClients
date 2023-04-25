@@ -3089,7 +3089,7 @@
         "Требуется внимание"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "Поскольку ${ DRIVE_APP_NAME } зашифровано сквозным методом, мы не можем получить доступ к вашим файлам или их расшифровать. Чтобы разблокировать хранилище после сброса пароля, вы должны иметь что-то из этого:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
@@ -3362,7 +3362,7 @@
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "Если у вас есть что-то из этого, перейдите к настройкам аккаунта ${ BRAND_NAME }, чтобы начать процесс разблокировки."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
@@ -3761,7 +3761,7 @@
         "Это перезапишет существующую папку"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "Это удалит из ${ DRIVE_APP_NAME } синхронизированное устройство ${ deviceName }. Локальные файлы на\nустройстве не будут затронуты."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально."

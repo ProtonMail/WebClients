@@ -2568,6 +2568,9 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
+      "Something went wrong": [
+        "不具合が発生しました"
+      ],
       "You need an active personal calendar to import events": [
         "予定をインポートするためにはアクティブな個人カレンダーが必要です"
       ]
@@ -2590,6 +2593,11 @@
     "Event canceled status badge": {
       "canceled": [
         "中止"
+      ]
+    },
+    "Event form": {
+      "${ numberOfAttendees } participants": [
+        "${ numberOfAttendees }人の参加者"
       ]
     },
     "Event info. Organizer name": {
@@ -3269,6 +3277,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
@@ -3657,6 +3668,16 @@
     "Info on errors": {
       "Click for details": [
         "クリックして詳細を確認"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "${ BRAND_NAME } アカウントの所有者を、カレンダーの予定の閲覧や編集に招待できます。"
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
       ]
     },
     "Input label": {
@@ -4075,6 +4096,9 @@
       "My calendars": [
         "マイカレンダー"
       ],
+      "Other calendars": [
+        "他のカレンダー"
+      ],
       "Pay invoice": [
         "請求の支払い"
       ],
@@ -4167,6 +4191,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "カレンダーをこれ以上追加できません"
+      ],
       "How to import calendars from another service": [
         "その他のサービスからカレンダーをインポートする方法"
       ],
@@ -4758,6 +4785,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "設定の更新に失敗しました"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5428,6 +5460,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "番号を選択"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "予定を立てるのがより簡単に！"
       ]
     },
     "Title; create calendar modal": {

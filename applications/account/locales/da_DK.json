@@ -47,6 +47,9 @@
       "activate": [
         "aktivér"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "Aktiver ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
@@ -1045,11 +1048,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
-      ]
-    },
-    "Badge": {
-      "5 users": [
-        "5 brugere"
       ]
     },
     "Badge for domain": {
@@ -2599,6 +2597,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail-logo og et plustegn"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
@@ -4417,6 +4418,9 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagerplads"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landniveau."
       ],
@@ -5077,8 +5081,8 @@
         "Internetforbindelse genoprettet."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
+        "Invitation sendt",
+        "Invitationer sendt"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ud til, at nogle af dine data er krypteret og låst."
@@ -5196,6 +5200,9 @@
       ],
       "No contact encryption keys exist": [
         "Ingen kontaktkrypteringsnøgler findes"
+      ],
+      "No credit card required": [
+        "Der kræves ikke kreditkort"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen metode til datagendannelse indstillet. Du risikerer at miste adgang til dine data"
@@ -7137,6 +7144,9 @@
       "Time format": [
         "Tidsformat"
       ],
+      "Time zone": [
+        "Tidszone"
+      ],
       "To: ${ to }": [
         "Til: ${ to }"
       ],
@@ -7334,6 +7344,11 @@
       ],
       "Row": [
         "Række"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label/folder modal": {
@@ -7860,6 +7875,10 @@
         "${ n } kalender",
         "${ n } kalendere"
       ],
+      "${ n } calendar per user": [
+        "${ n } kalender pr. bruger",
+        "${ n } kalendere pr. bruger"
+      ],
       "${ n } custom email domain": [
         "${ n } brugerdefineret e-maildomæne",
         "${ n } brugerdefinerede e-maildomæner"
@@ -8067,6 +8086,9 @@
       ]
     },
     "new_plans: heading": {
+      "Support": [
+        "Støtte"
+      ],
       "Team management": [
         "Brugeradministration"
       ]
@@ -9300,6 +9322,16 @@
         "Højhastigheds VPN på ${ maxVpn } enheder"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Forstået"
+      ]
+    },
+    "Subscription renewal state": {
+      "Disable": [
+        "Deaktivér"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Spar"
@@ -10183,6 +10215,9 @@
       "Organization and keys": [
         "Organisation og nøgler"
       ],
+      "Other calendars": [
+        "Andre kalendere"
+      ],
       "Password": [
         "Adgangskode"
       ],
@@ -10191,6 +10226,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Payment failed": [
+        "Betaling mislykkedes"
       ],
       "Payment methods": [
         "Betalingsmetoder"
@@ -10421,6 +10459,9 @@
       ],
       "Verify email address": [
         "Bekræft e-mailadresse"
+      ],
+      "Verifying your payment...": [
+        "Verificerer din betaling..."
       ],
       "VPN apps": [
         "VPN-apps"
@@ -10788,6 +10829,9 @@
       ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Er du sikker på, at du vil slette denne adresse?"
       ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"

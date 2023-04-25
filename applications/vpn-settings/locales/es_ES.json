@@ -422,11 +422,6 @@
         "Esto desconectará todos los routers y clientes que utilicen este certificado."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 usuarios"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: la solución de correo electrónico y calendario centrada en la privacidad para tus comunicaciones diarias."
@@ -1848,6 +1843,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
@@ -3189,6 +3187,10 @@
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendario por usuario",
+        "${ n } calendarios por usuario"
       ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
