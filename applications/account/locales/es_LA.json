@@ -1067,11 +1067,6 @@
         "Estoy fuera de la oficina con acceso limitado a mi correo."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 usuarios"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Deshabilitada"
@@ -4502,6 +4497,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
@@ -4628,6 +4626,9 @@
       ],
       "Align right": [
         "Alinear a la derecha"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todas las apps de ${ BRAND_NAME } y sus funciones premium"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
@@ -5187,8 +5188,8 @@
         "Conexión a internet restaurada."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
+        "Invitación enviada con éxito",
+        "Invitaciones enviadas con éxito"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que algunos de sus datos están cifrados y bloqueados."
@@ -5855,6 +5856,9 @@
       ],
       "Unsupported file": [
         "Archivo no soportado"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
       ],
       "Update recovery file": [
         "Actualizar archivo de recuperación"
@@ -8067,6 +8071,10 @@
         "${ n } calendario",
         "${ n } calendarios"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendario por usuario",
+        "${ n } calendarios por usuario"
+      ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
         "${ n } dominios de correo electrónico personalizados"
@@ -8118,6 +8126,9 @@
       ],
       "1 free VPN connection in total": [
         "1 conexión VPN gratuita en total"
+      ],
+      "1 user": [
+        "1 usuario"
       ],
       "99.95% SLA": [
         "SLA del 99,95%"
@@ -8273,6 +8284,12 @@
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
+      ],
+      "Up to ${ n } users": [
+        "Hasta ${ n } usuarios"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
@@ -8373,6 +8390,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Suite de privacidad y seguridad para empresas, incluyendo todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Proteja la privacidad de su familia con todos los servicios combinados de ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Almacenamiento seguro en la nube que le permite almacenar, sincronizar y compartir archivos de manera fácil y segura."
@@ -8504,6 +8524,9 @@
         "Cree hasta ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones",
         "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Cree hasta ${ n } direcciones de correo/alias para toda la familia. Úselas para sus identidades en línea, p.ej., SubsDeFamilia@${ domain } para suscripciones en línea."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
       ],
@@ -8527,6 +8550,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantenga privados sus planes y los de su familia con un calendario cifrado"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Le protege bloqueando todas las conexiones de red si se produce una desconexión inesperada de nuestro servidor VPN."
@@ -8567,6 +8593,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Protege todos los dispositivos que se conecten a su red WiFi. También resulta muy útil si tiene dispositivos que no admitan directamente los ajustes de la VPN."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Proteja su familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir su contenido favorito"
+      ],
       "Quickly set up out-of-office messages": [
         "Configure mensajes rápidamente para informar de que no está en la oficina"
       ],
@@ -8581,6 +8610,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Envía su tráfico de Internet a través de la red Tor con un solo clic"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Asegure sus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Almacene de forma segura los detalles de sus contactos, como el número de teléfono, la dirección, la fecha de nacimiento y las notas personales. El cifrado de acceso cero garantiza que incluso ${ BRAND_NAME } no pueda acceder a ellos."
@@ -8605,6 +8637,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de su organización"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre usuarios en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
@@ -10207,6 +10242,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Para empresas"
+      ],
+      "For families": [
+        "Para familias"
       ],
       "For individuals": [
         "Para personas"

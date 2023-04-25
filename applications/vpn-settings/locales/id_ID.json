@@ -420,11 +420,6 @@
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 pengguna"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
@@ -1836,6 +1831,9 @@
       "${ number } servers": [
         "${ number } server"
       ],
+      "${ storage } storage": [
+        "Kuota penyimpanan ${ storage }"
+      ],
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
       ],
@@ -1889,6 +1887,9 @@
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
@@ -2361,6 +2362,9 @@
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hingga ${ FAMILY_MAX_USERS } pengguna"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
@@ -2527,10 +2531,10 @@
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melakukan pembayaran. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak dan telah ditangguhkan. Kelalaian membayar yang berkelanjutan akan memblokir email dan tautan berbagi Anda. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan. Apabila Anda terus-menerus lalai membayar, seluruh email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -2994,7 +2998,7 @@
         "Masalah umum proses masuk"
       ],
       "Common sign up issues": [
-        "Masalah umum proses daftar"
+        "Masalah pendaftaran umum"
       ],
       "Create account": [
         "Buat akun"
@@ -3169,6 +3173,9 @@
       "${ n } calendars": [
         "${ n } kalender"
       ],
+      "${ n } calendars per user": [
+        "${ n } kalender per pengguna"
+      ],
       "${ n } custom email domains": [
         "${ n } domain email khusus"
       ],
@@ -3210,6 +3217,9 @@
       ],
       "1 free VPN connection in total": [
         "1 koneksi VPN gratis"
+      ],
+      "1 user": [
+        "1 pengguna"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -3352,6 +3362,12 @@
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hingga ${ FAMILY_MAX_USERS } pengguna"
+      ],
+      "Up to ${ n } users": [
+        "Hingga ${ n } pengguna"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Kuota penyimpanan hingga ${ totalStorageSize }"
       ],
@@ -3415,6 +3431,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Rangkaian gawai privasi dan keamanan untuk bisnis, dengan seluruh layanan premium ${ BRAND_NAME } yang terkandung di dalamnya."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk mengarsipkan, menyinkronkan, dan membagikan berkas dengan mudah dan aman."
@@ -4170,6 +4189,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Untuk bisnis"
+      ],
+      "For families": [
+        "Untuk keluarga"
       ],
       "For individuals": [
         "Untuk individu"

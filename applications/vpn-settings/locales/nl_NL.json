@@ -422,11 +422,6 @@
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 gebruikers"
-      ]
-    },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: de e-mail- en agenda oplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
@@ -1596,6 +1591,18 @@
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } alstublieft of controleer uw internetverbinding."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } alstublieft of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
+      "We couldn't load this page. ": [
+        "We konden deze pagina niet laden. "
       ]
     },
     "Error notification": {
@@ -3322,6 +3329,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
+      ],
       "Share calendar via link": [
         "Agenda delen via koppeling"
       ],
@@ -4251,6 +4261,32 @@
         "Supersnelle VPN op ${ maxVpn } apparaten"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Begrepen"
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Beheer uw abonnement op ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonnement wordt beheerd door ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Abonneren van gebruiker ID-${ userId } is gedaan via een in-app aankoop. Om het abonnement te beheren, moet de gebruiker naar de Abonnement-sectie van diens ${ subscriptionManager }-account."
+      ],
+      "Subscriptions": [
+        "Abonnementen"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Uw abonnement was gekocht met een Android app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Google Play Store gaan."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Uw abonnement was gekocht met een iOS app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Voor"
@@ -4552,6 +4588,9 @@
       ],
       "Downloads": [
         "Downloads"
+      ],
+      "Duration": [
+        "Duur"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
