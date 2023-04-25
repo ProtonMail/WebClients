@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
-import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
 import type { VaultCreateRequest } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
