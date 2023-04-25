@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import uniqid from 'uniqid';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isValidURL } from '@proton/pass/utils/url';
@@ -11,12 +12,21 @@ import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload, ImportVault } from '../types';
 import {
     OnePass1PuxData,
+    OnePassBaseItem,
     OnePassCategory,
     OnePassItem,
     OnePassItemDetails,
     OnePassLoginDesignation,
     OnePassState,
 } from './1password.1pux.types';
+
+const OnePasswordTypeMap: Record<string, string> = {
+    '001': 'Login',
+    '002': 'Credit Card',
+    '003': 'Note',
+    '004': 'Identification',
+    '005': 'Password',
+};
 
 const extractFullNote = (details: OnePassItemDetails): string => {
     let note = details.notesPlain || '';
@@ -167,8 +177,9 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
         }
 
         const parsedData = JSON.parse(content) as OnePass1PuxData;
+        const ignored: string[] = [];
 
-        return parsedData.accounts.flatMap((account) =>
+        const vaults = parsedData.accounts.flatMap((account) =>
             account.vaults.map(
                 (vault): ImportVault => ({
                     type: 'new',
@@ -184,12 +195,21 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
                                     return processNoteItem(item);
                                 case OnePassCategory.PASSWORD:
                                     return processPasswordItem(item);
+                                default:
+                                    const { categoryUuid, overview } = item as OnePassBaseItem;
+                                    ignored.push(
+                                        `[${OnePasswordTypeMap[categoryUuid] ?? 'Other'}] ${
+                                            overview.title ?? overview.subtitle
+                                        }`
+                                    );
                             }
                         })
-                        .filter((item): item is ItemImportIntent => item !== undefined),
+                        .filter(truthy),
                 })
             )
         );
+
+        return { vaults, ignored };
     } catch (e) {
         logger.warn('[Importer::1Password]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';

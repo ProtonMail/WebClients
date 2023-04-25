@@ -66,12 +66,13 @@ export type OnePassLogin = OnePassItemDetails & {
     }[];
 };
 
-type OnePassBaseItem = {
+export type OnePassBaseItem = {
     uuid: string;
     favIndex: number;
     createdAt: number;
     updatedAt: number;
     state: OnePassState;
+    categoryUuid: string;
     overview: {
         title: string;
         subtitle: string;

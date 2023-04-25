@@ -19,8 +19,8 @@ describe('Import 1password 1pux', () => {
     });
 
     test('result should contain the correct number of vaults', () => {
-        const [main, secondary, shared] = payload;
-        expect(payload.length).toEqual(3);
+        const [main, secondary, shared] = payload.vaults;
+        expect(payload.vaults.length).toEqual(3);
 
         expect(main.type).toEqual('new');
         expect(main.type === 'new' && main.vaultName).toEqual('Private');
@@ -33,7 +33,7 @@ describe('Import 1password 1pux', () => {
     });
 
     test('should parse `private` vault items correctly', () => {
-        const [main] = payload;
+        const [main] = payload.vaults;
         expect(main.items.length).toEqual(8);
 
         /* Note item */
@@ -166,7 +166,7 @@ describe('Import 1password 1pux', () => {
     });
 
     test('should parse `secondary` vault items correctly', () => {
-        const [, secondary] = payload;
+        const [, secondary] = payload.vaults;
         expect(secondary.items.length).toEqual(2); /* deleted items not included */
 
         const archivedItem = secondary.items[0] as ItemImportIntent<'login'>;
@@ -203,7 +203,7 @@ describe('Import 1password 1pux', () => {
     });
 
     test('should parse `shared` vault items correctly', () => {
-        const [, , shared] = payload;
+        const [, , shared] = payload.vaults;
         expect(shared.items.length).toEqual(0);
     });
 });

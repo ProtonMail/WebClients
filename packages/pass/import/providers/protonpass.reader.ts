@@ -55,21 +55,24 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
 
         const { vaults } = JSON.parse(exportData) as ExportPayload;
 
-        return Object.values(vaults).map(({ name, items }) => ({
-            type: 'new',
-            vaultName: name,
-            id: uniqid(),
-            items: items.map(
-                (item) =>
-                    ({
-                        ...item.data,
-                        ...(item.data.type === 'alias' ? { extraData: { aliasEmail: item.aliasEmail! } } : {}),
-                        trashed: item.state === ItemState.Trashed,
-                        createTime: item.createTime,
-                        modifyTime: item.modifyTime,
-                    } as ItemImportIntent)
-            ),
-        }));
+        return {
+            vaults: Object.values(vaults).map(({ name, items }) => ({
+                type: 'new',
+                vaultName: name,
+                id: uniqid(),
+                items: items.map(
+                    (item) =>
+                        ({
+                            ...item.data,
+                            ...(item.data.type === 'alias' ? { extraData: { aliasEmail: item.aliasEmail! } } : {}),
+                            trashed: item.state === ItemState.Trashed,
+                            createTime: item.createTime,
+                            modifyTime: item.modifyTime,
+                        } as ItemImportIntent)
+                ),
+            })),
+            ignored: [],
+        };
     } catch (e) {
         logger.warn('[Importer::Proton]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';
