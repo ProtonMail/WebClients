@@ -21,6 +21,7 @@ export interface RevisionsProviderState {
     openRevisionPreview: (revision: DriveFileRevision) => void;
     openRevisionDetails: (revision: DriveFileRevision) => void;
     deleteRevision: (abortSignal: AbortSignal, revision: DriveFileRevision) => void;
+    restoreRevision: (abortSignal: AbortSignal, revision: DriveFileRevision) => void;
     downloadRevision: (revisionId: string) => void;
 }
 
@@ -38,6 +39,7 @@ export const RevisionsProvider = ({
         isLoading,
         revisions: [currentRevision, ...olderRevisions],
         deleteRevision,
+        restoreRevision,
     } = useRevisionsView(link.rootShareId, link.linkId);
     const [revisionPreview, showRevisionPreview] = useRevisionPreview();
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
@@ -99,12 +101,44 @@ export const RevisionsProvider = ({
                             text: c('Info').t`Version is deleted`,
                         });
                     })
-                    .catch(() => {
-                        createNotification({
-                            type: 'error',
-                            text: c('Notification').t`Version failed to be deleted`,
-                        });
-                    }),
+        });
+    };
+
+    const handleRevisionRestore = (abortSignal: AbortSignal, revision: DriveFileRevision) => {
+        const formattedRevisionDate = new Intl.DateTimeFormat(dateLocale.code, {
+            dateStyle: 'long',
+            timeStyle: 'short',
+        }).format(fromUnixTime(revision.CreateTime));
+        void showConfirmModal({
+            size: 'small',
+            title: c('Action').t`Restore this version`,
+            submitText: c('Action').t`Restore`,
+            actionType: 'norm',
+            canUndo: true,
+            message: (
+                <>
+                    <span className="text-bold">{link.name}</span>
+                    &nbsp;
+                    {
+                        // translator: complete sentence example: Yearly reports.docx. will be restored to the version from February 6, 2023 at 12:00. All other versions will still be saved.
+                        c('Info')
+                            .t`will be restored to the version from ${formattedRevisionDate}. All other versions will still be saved.`
+                    }
+                </>
+            ),
+            onSubmit: () =>
+                restoreRevision(abortSignal, revision.ID)
+                    .then((Code) => {
+                        if (Code === 1000) {
+                            createNotification({
+                                text: c('Info').t`Version is restored`,
+                            });
+                        } else {
+                            createNotification({
+                                text: c('Info').t`Version is queue for restore`,
+                            });
+                        }
+                    })
         });
     };
 
@@ -114,6 +148,7 @@ export const RevisionsProvider = ({
                 hasPreviewAvailable,
                 isLoading,
                 deleteRevision: handleRevisionDelete,
+                restoreRevision: handleRevisionRestore,
                 currentRevision,
                 categorizedRevisions,
                 openRevisionPreview,
