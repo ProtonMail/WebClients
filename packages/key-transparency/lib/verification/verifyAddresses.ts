@@ -1,5 +1,6 @@
 import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, KEY_FLAG } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
     ActiveSignedKeyList,
     Address,
@@ -16,7 +17,7 @@ import { isTimestampOldEnough, isTimestampTooOld, ktSentryReport } from '../help
 import { AuditData, KeyWithFlags, PartialKTBlobContent, VerifiedEpoch } from '../interfaces';
 import { storeAuditResult } from '../storage/storageHelpers';
 import { verifySKLInsideEpochID } from './verifyEpochs';
-import { checkKeysInSKL, checkSKLEquality, importKeys } from './verifyKeys';
+import { checkKeysInSKL, checkSKLEquality, importKeys, verifySKLSignature } from './verifyKeys';
 import { checkLSBlobs } from './verifyLocalStorage';
 
 /**
@@ -29,7 +30,7 @@ export const bootstrapInitialEpoch = async (
     email: string,
     api: Api,
     inputSKL: ActiveSignedKeyList,
-    verificationKeys: PublicKeyReference[]
+    addressVerificationKeys: PublicKeyReference[]
 ): Promise<AuditData | undefined> => {
     if (newSKLs.length === 0) {
         ktSentryReport('No SKL returned during bootstrap', {
@@ -48,17 +49,15 @@ export const bootstrapInitialEpoch = async (
             });
             throw new Error('Bootstrapping failed');
         }
-        const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
-            textData: inputSKL.Data,
-            armoredSignature: inputSKL.Signature,
-            verificationKeys,
-        });
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
-            ktSentryReport('The current SKL fails signature verification', {
-                context: 'bootstrapInitialEpoch',
-                errors: JSON.stringify(errors),
-                email,
-            });
+
+        const signatureTimestamp = await verifySKLSignature(
+            addressVerificationKeys,
+            inputSKL.Data,
+            inputSKL.Signature,
+            'bootstrapInitialEpoch'
+        );
+
+        if (!signatureTimestamp) {
             throw new Error('Bootstrapping failed');
         }
         if (isTimestampTooOld(+signatureTimestamp)) {
@@ -104,7 +103,8 @@ export const getAuditData = async (
     email: string,
     apis: Api[],
     inputSKL: ActiveSignedKeyList,
-    verificationKeys: PublicKeyReference[]
+    userVerificationKeys: PublicKeyReference[],
+    addressVerificationKeys: PublicKeyReference[]
 ): Promise<AuditData | undefined> => {
     // silentApi is used to prevent the error notification banner when a verified epoch is not found
     const [api, silentApi] = apis;
@@ -113,7 +113,7 @@ export const getAuditData = async (
     if (verifiedEpoch) {
         const { verified, errors } = await CryptoProxy.verifyMessage({
             armoredSignature: verifiedEpoch.Signature,
-            verificationKeys,
+            verificationKeys: userVerificationKeys,
             textData: verifiedEpoch.Data,
             context: KT_VE_VERIFICATION_CONTEXT,
         });
@@ -135,7 +135,7 @@ export const getAuditData = async (
 
                 // The verified epoch is too old
                 if (Revision > verifiedEpoch.Revision + 1) {
-                    return bootstrapInitialEpoch(newSKLs, email, api, inputSKL, verificationKeys);
+                    return bootstrapInitialEpoch(newSKLs, email, api, inputSKL, addressVerificationKeys);
                 }
             }
 
@@ -147,7 +147,7 @@ export const getAuditData = async (
     }
 
     const newSKLs = await fetchSignedKeyLists(api, 0, email);
-    return bootstrapInitialEpoch(newSKLs, email, api, inputSKL, verificationKeys);
+    return bootstrapInitialEpoch(newSKLs, email, api, inputSKL, addressVerificationKeys);
 };
 
 /**
@@ -174,7 +174,7 @@ export const auditAddresses = async (
     );
 
     const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
-    const verificationKeys = userKeys.map(({ publicKey }) => publicKey);
+    const userVerificationKeys = userKeys.map(({ publicKey }) => publicKey);
 
     try {
         await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, addressesKeys, apis);
@@ -202,10 +202,21 @@ export const auditAddresses = async (
 
         const inputKeys = addressesKeys.get(addressID)!;
 
+        const addressVerificationKeys = inputKeys
+            .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+            .map(({ PublicKey }) => PublicKey);
+
         let initialEpoch: VerifiedEpoch;
         let newSKLs: FetchedSignedKeyList[];
         try {
-            const auditData = await getAuditData(addressID, Email, apis, SignedKeyList, verificationKeys);
+            const auditData = await getAuditData(
+                addressID,
+                Email,
+                apis,
+                SignedKeyList,
+                userVerificationKeys,
+                addressVerificationKeys
+            );
 
             // In this case self audit for this address has to stop
             // since nothing can be audited yet
@@ -288,22 +299,15 @@ export const auditAddresses = async (
             // be under audit
             let signatureTimestamp: Date | undefined;
             if (skl.Data && skl.Signature) {
-                const {
-                    verified,
-                    errors,
-                    signatureTimestamp: timestamp,
-                } = await CryptoProxy.verifyMessage({
-                    armoredSignature: skl.Signature,
-                    verificationKeys: inputKeys.map(({ PublicKey }) => PublicKey),
-                    textData: skl.Data,
-                });
+                // Verify signature
+                const timestamp = await verifySKLSignature(
+                    addressVerificationKeys,
+                    skl.Data,
+                    skl.Signature,
+                    'auditAddresses'
+                );
 
-                if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !timestamp) {
-                    ktSentryReport('SKL signature verification failed', {
-                        context: 'auditAddresses',
-                        errors: JSON.stringify(errors),
-                        addressID,
-                    });
+                if (!timestamp) {
                     errorFlag = true;
                     break;
                 }
@@ -460,28 +464,26 @@ export const verifyAuditAddressesResult = async (
     address: Address,
     submittedSKL: SignedKeyList,
     selfAuditPromise: Promise<void>,
-    verificationKeys: PublicKeyReference[]
+    addressVerificationKeys: PublicKeyReference[]
 ): Promise<PartialKTBlobContent> => {
     // In case self audit is running, we must wait for it to be over
     await selfAuditPromise;
 
-    const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
-        armoredSignature: submittedSKL.Signature,
-        verificationKeys,
-        textData: submittedSKL.Data,
-    });
+    const signatureTimestamp = await verifySKLSignature(
+        addressVerificationKeys,
+        submittedSKL.Data,
+        submittedSKL.Signature,
+        'verifyAuditAddressesResult'
+    );
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
-        ktSentryReport('Submitted SKL signature verification failed', {
-            context: 'verifyAuditAddressesResult',
-            errors: JSON.stringify(errors),
-            addressID: address.ID,
-        });
+    if (!signatureTimestamp) {
         throw new Error('Submitted SKL signature verification failed');
     }
 
     return {
-        PublicKeys: await Promise.all(verificationKeys.map((key) => CryptoProxy.exportPublicKey({ key }))),
+        PublicKeys: await Promise.all(
+            addressVerificationKeys.map((key) => CryptoProxy.exportPublicKey({ key }))
+        ),
         creationTimestamp: signatureTimestamp.getTime(),
         email: address.Email,
         isObsolete: false,
