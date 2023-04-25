@@ -11,7 +11,7 @@ import {
 import { SimpleMap } from '../interfaces/utils';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 
-export const getSignature = async (data: string, signingKey: PrivateKeyReference) => {
+export const getSignedKeyListSignature = async (data: string, signingKey: PrivateKeyReference) => {
     const signature = await CryptoProxy.signMessage({
         textData: data,
         stripTrailingSpaces: true,
@@ -47,7 +47,7 @@ export const getSignedKeyList = async (
 
     const signedKeyList: SignedKeyList = {
         Data: data,
-        Signature: await getSignature(data, signingKey),
+        Signature: await getSignedKeyListSignature(data, signingKey),
     };
 
     await keyTransparencyVerify(address, signedKeyList, publicKeys);
