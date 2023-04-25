@@ -69,7 +69,7 @@ const PrivateHeader = ({
     return (
         <Header>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            {title && isNarrow ? <span className="text-xl lh-rg myauto text-ellipsis">{title}</span> : null}
+            {title && isNarrow ? <span className="text-xl lh-rg my-auto text-ellipsis">{title}</span> : null}
             {isNarrow ? null : searchBox}
             <TopNavbar>
                 <TopNavbarList>
@@ -80,7 +80,7 @@ const PrivateHeader = ({
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}
                     {!isNarrow && (
                         <TopNavbarListItem noShrink className="flex-align-self-stretch topnav-vr">
-                            <Vr className="h100 mr1 ml1" />
+                            <Vr className="h100 mx-4" />
                         </TopNavbarListItem>
                     )}
                     {userDropdown && <TopNavbarListItem className="relative">{userDropdown}</TopNavbarListItem>}

@@ -16,7 +16,7 @@ const MXSection = () => {
 
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
+            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
                 {c('Info')
                     .t`Before you can receive emails for your custom domain addresses at ${MAIL_APP_NAME}, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
@@ -29,7 +29,7 @@ const MXSection = () => {
                     <TableRow labels={tableTitles} cells={['MX', '@', 'mailsec.protonmail.ch', '20']} />
                 </TableBody>
             </Table>
-            <Alert className="mb1">
+            <Alert className="mb-4">
                 {c('Info')
                     .t`Delete any other MX records or make sure ${MAIL_APP_NAME}'s Priority is the lowest number.`}
                 <br />

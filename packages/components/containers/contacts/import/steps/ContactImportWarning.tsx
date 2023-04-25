@@ -39,7 +39,7 @@ const ContactImportWarning = ({ model, setModel, onClose }: Props) => {
         <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Warning`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     <div>{c('Import contacts warning').jt`${CONTACTS_APP_NAME} does not support ${forNow}:`}</div>
                     <ul>
                         <li>{c('Import calendar warning').t`vCard versions < 3.0`}</li>

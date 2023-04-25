@@ -73,7 +73,7 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
         >
             <ModalHeader title={c('Title').t`Export private key`} />
             <ModalContent>
-                <div className="mb1">
+                <div className="mb-4">
                     {c('Info')
                         .t`This will download a file containing your private key. Protect this file by encrypting it with a password.`}
                 </div>

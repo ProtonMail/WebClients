@@ -12,7 +12,7 @@ const DealCTA = () => {
         <Button
             color="norm"
             shape={popular ? 'solid' : 'outline'}
-            className="mb1"
+            className="mb-4"
             fullWidth
             onClick={() => {
                 onSelectDeal(offer, deal, currency);

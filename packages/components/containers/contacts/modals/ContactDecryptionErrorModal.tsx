@@ -64,14 +64,14 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
         <ModalTwo {...rest}>
             <ModalTwoHeader title={c('Title').t`Recover data`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="info">
+                <Alert className="mb-4" type="info">
                     {c('Info')
                         .t`To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.`}
                 </Alert>
                 {errorKey && (
-                    <div className="flex flex-align-items-center mb1">
-                        <span className="mr1">{c('Info').t`Key fingerprint`}</span>
-                        <span className="flex-item-fluid text-ellipsis mr1">{errorKey.Fingerprint}</span>
+                    <div className="flex flex-align-items-center mb-4">
+                        <span className="mr-4">{c('Info').t`Key fingerprint`}</span>
+                        <span className="flex-item-fluid text-ellipsis mr-4">{errorKey.Fingerprint}</span>
                         <Copy
                             value={errorKey.Fingerprint}
                             onCopy={() => {
@@ -80,7 +80,7 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
                         />
                     </div>
                 )}
-                <Alert className="mb1" type="info">
+                <Alert className="mb-4" type="info">
                     {c('Info')
                         .t`Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.`}
                     <UnderlineButton className="ml-2" onClick={handleClear} disabled={!errorKey}>

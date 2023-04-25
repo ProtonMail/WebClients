@@ -164,11 +164,11 @@ const Editor = ({
                             onDropCapture={handleDrop}
                             className={classnames([
                                 'composer-editor-dropzone absolute-cover flex flex-justify-center flex-align-items-center rounded-xl',
-                                /*!isOutside && */ 'mr1-75 ml1-75',
+                                /*!isOutside && */ 'mx-6',
                             ])}
                         >
                             <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
-                                <img src={dragAndDrop} alt="" className="mb1" />
+                                <img src={dragAndDrop} alt="" className="mb-4" />
                                 <br />
                                 {c('Info').t`Drop a file here to upload`}
                             </span>

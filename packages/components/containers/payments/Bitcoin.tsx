@@ -48,7 +48,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
         return (
-            <Alert className="mb1" type="warning">
+            <Alert className="mb-4" type="warning">
                 {i18n(
                     <Price key="price" currency={currency}>
                         {MIN_BITCOIN_AMOUNT}
@@ -65,7 +65,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
     if (error || !model.amountBitcoin || !model.address) {
         return (
             <>
-                <Alert className="mb1" type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
+                <Alert className="mb-4" type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
                 <Button onClick={() => withLoading(request())}>{c('Action').t`Try again`}</Button>
             </>
         );
@@ -83,10 +83,10 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
             <BitcoinDetails amount={model.amountBitcoin} address={model.address} />
             <div className="pt1 pl1 pr1">
                 {type === 'invoice' ? (
-                    <div className="mb1">{c('Info')
+                    <div className="mb-4">{c('Info')
                         .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</div>
                 ) : (
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`After making your Bitcoin payment, please follow the instructions below to upgrade.`}
                         <div>

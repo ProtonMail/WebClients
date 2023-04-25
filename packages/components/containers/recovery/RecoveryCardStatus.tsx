@@ -18,13 +18,13 @@ const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: Rec
         <>
             <span className="flex flex-align-items-center flex-nowrap">
                 <RecoveryStatusIcon className="flex-item-noshrink" type={type} />
-                <RecoveryStatusText className="ml1" type={type}>
+                <RecoveryStatusText className="ml-4" type={type}>
                     {statusText}
                 </RecoveryStatusText>
             </span>
 
             {items.length > 0 && (
-                <ul className="unstyled ml4">
+                <ul className="unstyled ml-14">
                     {items.map(({ text, path }) => {
                         return (
                             <li key={text} className="flex flex-align-items-center flex-nowrap">

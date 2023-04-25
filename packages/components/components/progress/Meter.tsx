@@ -1,8 +1,13 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+
+
 import isBetween from '@proton/utils/isBetween';
 
+
+
 import { classnames } from '../../helpers';
+
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     /** whether or not the meter should be thin */
@@ -105,7 +110,7 @@ const Meter = ({
         {...rest}
     >
         <div
-            className={classnames(['meter-bar-thumb w-custom', `meter-bar-thumb--${getMeterColor(value)}`, 'mrauto'])}
+            className={classnames(['meter-bar-thumb w-custom', `meter-bar-thumb--${getMeterColor(value)}`, 'mr-auto'])}
             style={{ '--width-custom': `${Math.ceil((value / max) * 100)}%` }}
         >
             {!rest['aria-labelledby'] && <span className="sr-only">{label || `${value} / ${max}`}</span>}

@@ -17,7 +17,7 @@ const DefaultMailInstructions = () => {
         .jt`Depending on your email service provider, you may need to generate an ${knowledgeBaseLink} first before you can import to ${BRAND_NAME}.`;
 
     return (
-        <div className="mb1" data-testid="Instruction:defaultMailInstructions">
+        <div className="mb-4" data-testid="Instruction:defaultMailInstructions">
             {defaultAppPasswordMessage}
         </div>
     );

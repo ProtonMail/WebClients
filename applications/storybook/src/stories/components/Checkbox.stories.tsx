@@ -20,20 +20,20 @@ export const Basic = () => {
     return (
         <div>
             Whachu wanna eat?
-            <div className="my1">
+            <div className="my-4">
                 <Checkbox id="tofu">Tofu</Checkbox>
             </div>
-            <div className="my1">
+            <div className="my-4">
                 <Checkbox id="spaghetti" checked>
                     Spaghetti
                 </Checkbox>
             </div>
-            <div className="my1">
+            <div className="my-4">
                 <Checkbox id="upsetti" checked disabled>
                     Upsetti
                 </Checkbox>
             </div>
-            <div className="my1">
+            <div className="my-4">
                 <Checkbox id="overflow">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,

@@ -45,12 +45,12 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
         <ModalTwo open onClose={handleQuit}>
             <ModalTwoHeader title={c('Title').t`Sign in and grant access`} />
             <ModalTwoContent>
-                <div className="mb2" data-testid="StepInstruction:modal">
+                <div className="mb-8" data-testid="StepInstruction:modal">
                     {instructions}
                 </div>
-                <div className="mb2">{instructionsVideo}</div>
+                <div className="mb-8">{instructionsVideo}</div>
                 <div className="sr-only">{instructionsVideoAlt}</div>
-                <div className="text-center mb1 relative" aria-hidden="true">
+                <div className="text-center mb-4 relative" aria-hidden="true">
                     <VideoInstructions>
                         <source src={oauthInstructionsWebm} type="video/webm" />
                         <source src={oauthInstructionsMp4} type="video/mp4" />

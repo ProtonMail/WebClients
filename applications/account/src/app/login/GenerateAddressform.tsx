@@ -53,7 +53,7 @@ const GenerateAddressform = ({ defaultUsername = '', onSubmit, availableDomains 
                 onValue={setUsername}
                 suffix={`@${domain}`}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {c('Action').t`Continue`}
             </Button>
         </form>

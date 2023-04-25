@@ -32,22 +32,22 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                     <img src={isVPN ? vpnThanksSvg : mailThanksSvg} alt="Thanks" />
                 </h1>
                 {method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any) ? (
-                    <p className="text-center mb1">{c('Info')
+                    <p className="text-center mb-4">{c('Info')
                         .t`Your account will be updated once the payment is cleared.`}</p>
                 ) : (
-                    <p className="text-center mb1 text-bold text-xl" data-testid="successfull-update">{c('Info')
+                    <p className="text-center mb-4 text-bold text-xl" data-testid="successfull-update">{c('Info')
                         .t`Account successfully updated`}</p>
                 )}
-                <p className="text-center mb2" data-testid="more-info">{c('Info')
+                <p className="text-center mb-8" data-testid="more-info">{c('Info')
                     .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
-                <div className="mt1 mb2 text-center">
+                <div className="mt-4 mb-8 text-center">
                     <Href
                         href={
                             isVPN
                                 ? 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
                                 : 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
                         }
-                        className="mr2"
+                        className="mr-8"
                     >
                         <img width="150" src={playStoreSvg} alt="Play Store" />
                     </Href>

@@ -12,7 +12,7 @@ const DealPrice = () => {
     const { withCoupon = 0 } = prices || {};
 
     return (
-        <div className="mb1 mt1 text-center">
+        <div className="my-4 text-center">
             <Price
                 currency={currency}
                 className="offer-monthly-price color-norm"

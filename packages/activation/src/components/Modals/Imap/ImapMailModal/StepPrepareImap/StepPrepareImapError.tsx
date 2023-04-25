@@ -20,8 +20,8 @@ const StepPrepareError = ({ isLabelMapping, errors, showSizeWarning }: Props) =>
     return (
         <>
             {showSizeWarning && (
-                <Alert className="mb1 mt1" type="warning">
-                    <div className="mb1">
+                <Alert className="my-4" type="warning">
+                    <div className="mb-4">
                         {c('Warning')
                             .t`This import may exceed the storage capacity currently available in your ${BRAND_NAME} account. Please consider customizing your import.`}
                     </div>
@@ -29,26 +29,26 @@ const StepPrepareError = ({ isLabelMapping, errors, showSizeWarning }: Props) =>
             )}
 
             {errors.includes(MAX_FOLDERS_LIMIT_REACHED) && (
-                <Alert className="mb1 mt1" type="error">
+                <Alert className="my-4" type="error">
                     {c('Error')
                         .t`There are too many folders in your external account. Please customize the import to delete some folders.`}
                 </Alert>
             )}
 
             {(errors.includes(FOLDER_NAMES_TOO_LONG) || errors.includes(LABEL_NAMES_TOO_LONG)) && (
-                <Alert className="mb1 mt1" type="error">
+                <Alert className="my-4" type="error">
                     {trans.errorItemsLimit()}
                 </Alert>
             )}
 
             {errors.includes(UNAVAILABLE_NAMES) && (
-                <Alert className="mb1 mt1" type="error">
+                <Alert className="my-4" type="error">
                     {trans.errorUnavailableName()}
                 </Alert>
             )}
 
             {errors.includes(RESERVED_NAMES) && (
-                <Alert className="mb1 mt1" type="error">
+                <Alert className="my-4" type="error">
                     {trans.errorReservedName()}
                 </Alert>
             )}

@@ -1,5 +1,7 @@
 import { isValidElement, useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -81,8 +83,8 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
         <OnboardingStep>
             <OnboardingSetupOrganization />
             <footer>
-                <div className="flex flex-nowrap mb1">
-                    <Button size="large" color="weak" className="mr1" fullWidth onClick={handleBack}>{c('Action')
+                <div className="flex flex-nowrap mb-4">
+                    <Button size="large" color="weak" className="mr-4" fullWidth onClick={handleBack}>{c('Action')
                         .t`Back`}</Button>
                     <Button
                         size="large"
@@ -96,7 +98,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
                         {c('Action').t`Start setup`}
                     </Button>
                 </div>
-                <Button size="large" color="norm" shape="ghost" className="mb1" fullWidth onClick={handleNext}>{c(
+                <Button size="large" color="norm" shape="ghost" className="mb-4" fullWidth onClick={handleNext}>{c(
                     'Action'
                 ).t`Skip`}</Button>
             </footer>
@@ -107,7 +109,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
         <OnboardingStep>
             <OnboardingThemes themeIdentifier={theme} themes={PROTON_THEMES} onChange={handleThemeChange} />
             <footer className="flex flex-nowrap">
-                <Button size="large" color="weak" className="mr1" fullWidth onClick={handleBack}>{c('Action')
+                <Button size="large" color="weak" className="mr-4" fullWidth onClick={handleBack}>{c('Action')
                     .t`Back`}</Button>
                 <Button size="large" color="norm" fullWidth onClick={handleNext}>
                     {c('Action').t`Next`}
@@ -120,7 +122,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
         <OnboardingStep>
             <OnboardingDiscoverApps />
             <footer className="flex flex-nowrap">
-                <Button size="large" className="mr1" fullWidth onClick={handleBack}>{c('Action').t`Back`}</Button>
+                <Button size="large" className="mr-4" fullWidth onClick={handleBack}>{c('Action').t`Back`}</Button>
                 <Button size="large" color="norm" fullWidth onClick={handleNext}>
                     {c('Action').t`Get started`}
                 </Button>
@@ -161,7 +163,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
 
     return (
         <ModalTwo {...rest} size="small" className="onboarding-modal">
-            <ModalContent className="m2">
+            <ModalContent className="m-8">
                 {childStep}
                 {hasDots ? (
                     <div className="text-center">

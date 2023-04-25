@@ -68,7 +68,7 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Email`,
                         content: (
                             <>
-                                <div className="mb1 color-weak">
+                                <div className="mb-4 color-weak">
                                     {c('Info')
                                         .t`Enter your recovery email address and we will send you your username or email address.`}
                                 </div>
@@ -90,7 +90,7 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Phone`,
                         content: (
                             <>
-                                <div className="mb1 color-weak">
+                                <div className="mb-4 color-weak">
                                     {c('Info')
                                         .t`Enter your recovery phone number and we will send you your username or email address.`}
                                 </div>
@@ -114,7 +114,7 @@ const ForgotUsernameForm = ({
                 value={method === 'email' ? 0 : 1}
                 onChange={(id) => onChangeMethod(id === 0 ? 'email' : 'phone')}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {c('Action').t`Send my username`}
             </Button>
             <Button

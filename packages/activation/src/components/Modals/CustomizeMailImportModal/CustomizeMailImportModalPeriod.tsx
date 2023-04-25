@@ -14,7 +14,7 @@ const CustomizeMailImportModalPeriod = ({ selectedPeriod, onChange }: Props) => 
     const periodOptions = Object.values(TIME_PERIOD).map((item) => ({ value: item, text: timeUnitLabels[item] }));
 
     return (
-        <div className="mb1 border-bottom flex-align-items-center">
+        <div className="mb-4 border-bottom flex-align-items-center">
             <Row>
                 <Label className="flex flex-align-items-center">
                     {c('Label').t`Import interval`}

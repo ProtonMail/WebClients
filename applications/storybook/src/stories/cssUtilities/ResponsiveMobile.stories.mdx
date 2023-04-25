@@ -8,7 +8,7 @@ import { getTitle } from '../../helpers/title';
 
 ## Hiding something on mobile and lower
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Applies <code>display: none</code> to the element for mobile breakpoint. (will stay hidden even on tinymobile
         breakpoint)
@@ -27,7 +27,7 @@ import { getTitle } from '../../helpers/title';
 
 ## Linearizing content on mobile
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Applies <code>float: none; display: block; width: auto;</code> to the element for mobile and smaller
         breakpoints.
@@ -51,7 +51,7 @@ import { getTitle } from '../../helpers/title';
 </code>
 .
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
   <div class="w49 flex-align-self-center">
     <div class="flex flex-justify-space-between on-mobile-flex-column border color-global-light">
       <div class="bg-primary p1 w30">.w30</div>
@@ -87,7 +87,7 @@ Other flexbox helpers for mobile:
     breakpoints.
 -   <code>on-mobile-flex-wrap</code> applies <code>flex-wrap: wrap;</code> to the element for mobile and smaller breakpoints.
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Applies <code>position: static</code> to the element for mobile and smaller breakpoints.
     </div>
@@ -114,29 +114,29 @@ Please check before how <a href="?path=/docs/front-end-helpers-margin-padding--p
 
 Examples:
 
-<div class="flex flex-justify-space-between mb1 on-mobile-flex-column">
-    <div class="w49 on-mobile-mb1 border">
+<div class="flex flex-justify-space-between mb-4 on-mobile-flex-column">
+    <div class="w49 mb-4 md:mb-0 border">
         <div class="on-mobile-pt2 bg-primary ">
             <code>.on-mobile-pt2</code> = <code>padding-top: 2em</code>{' '}
             <span class="color-white">on mobile and smaller</span>.
         </div>
     </div>
-    <div class="w49 on-mobile-mb1 border">
+    <div class="w49 mb-4 md:mb-0 border">
         <div class="on-mobile-pl2 bg-primary">
             <code>.on-mobile-pl2</code> = <code>padding-left: 2em</code>{' '}
             <span class="color-white">on mobile and smaller</span>.
         </div>
     </div>
 </div>
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
-    <div class="w49 on-mobile-mb1 border">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
+    <div class="w49 mb-4 md:mb-0 border">
         <div class="on-mobile-p1 bg-primary">
             <code>.on-mobile-p1</code> = <code>padding: 1em</code>{' '}
             <span class="color-white">on mobile and smaller</span>.
         </div>
     </div>
-    <div class="w49 on-mobile-mb1 border">
-        <div class="on-mobile-pl1 on-mobile-pr1 on-mobile-m1 bg-primary">
+    <div class="w49 mb-4 md:mb-0 border">
+        <div class="on-mobile-pl1 on-mobile-pr1 m-4 md:m-0 bg-primary">
             <code>.on-mobile-pl1</code> + <code>.on-mobile-pr1</code> + <code>.on-mobile-m1</code> ={' '}
             <code>padding-left: 1em</code> + <code>padding-right: 1em</code> + <code>margin: 1em</code>{' '}
             <span class="color-white">on mobile and smaller</span>.
@@ -170,7 +170,7 @@ These apply for mobile breakpoint and smaller.
 
 ## Text alignments
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Applies <code>text-align: left</code>/<code>text-align: center</code>/<code>text-align: right</code> to the
         element for mobile and smaller breakpoints.
@@ -191,7 +191,7 @@ These apply for mobile breakpoint and smaller.
 
 ## Table helpers
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
   <div class="w49 flex-align-self-center">
 	Hides the second, third, fourth and fifth column of a table for mobile breakpoint and smaller.
   </div>
@@ -213,7 +213,7 @@ These apply for mobile breakpoint and smaller.
 
 ## List helper
 
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w49 flex-align-self-center">
         Will use css multicolumn to display the list on 2 columns. On mobile, the list will be put on one column.
         <ul class="list-2columns on-mobile-list-1column">

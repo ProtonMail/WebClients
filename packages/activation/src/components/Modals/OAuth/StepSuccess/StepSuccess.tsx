@@ -82,15 +82,15 @@ const StepSuccess = () => {
     return (
         <ModalTwo {...modalProps} size="xlarge">
             <ModalTwoContent>
-                <div className="text-center mb2" data-testid="StepSuccess:Modal">
+                <div className="text-center mb-8" data-testid="StepSuccess:Modal">
                     <img src={importStartedSvg} alt="" className="max-w80" />
                     <h3>{c('Info').t`Import in progress`}</h3>
-                    <div className="mb1">{c('Info').t`Importing your data from ${fromEmail} to ${toEmail}.`}</div>
+                    <div className="mb-4">{c('Info').t`Importing your data from ${fromEmail} to ${toEmail}.`}</div>
                     <div>{c('Info').t`We'll notify you when the import is done.`}</div>
-                    <div className="mb1">{c('Info').t`Large imports can take several days.`}</div>
+                    <div className="mb-4">{c('Info').t`Large imports can take several days.`}</div>
 
                     {!isCurrentLocationImportPage && (
-                        <div className="mb1" data-testid="StepSuccess:SettingsLink">{c('Info')
+                        <div className="mb-4" data-testid="StepSuccess:SettingsLink">{c('Info')
                             .jt`You can check the progress ${importProgressLink}.`}</div>
                     )}
 

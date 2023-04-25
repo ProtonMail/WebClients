@@ -49,9 +49,9 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
 
     return (
         <div className="border bg-norm shadow-norm p2">
-            <div className="mb2 text-center">
+            <div className="mb-8 text-center">
                 <span className="user-initials rounded text-semibold p0-25 mb-2 inline-flex bg-primary">
-                    <span className="dropdown-logout-text mauto">{initials}</span>
+                    <span className="dropdown-logout-text m-auto">{initials}</span>
                 </span>
                 <h3 className="mb-2 lh-rg text-ellipsis" title={DisplayName || Name}>
                     {DisplayName || Name}
@@ -66,7 +66,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 </p>
             </div>
             {canPay ? (
-                <div className="mb1">
+                <div className="mb-4">
                     <strong className="block mb-2">{c('Title').t`Plans`}</strong>
                     {!subscription ? (
                         <Loader />
@@ -85,7 +85,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 </div>
             ) : null}
             {languageText ? (
-                <div className="mb1">
+                <div className="mb-4">
                     <strong className="block mb-2">{c('Title').t`Default language`}</strong>
                     <ul className="unstyled my-0">
                         <li className="flex flex-nowrap flex-align-items-center">
@@ -96,7 +96,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 </div>
             ) : null}
             {isAdmin ? (
-                <div className="mb1">
+                <div className="mb-4">
                     <strong className="block mb-2">{c('Title').t`Your organization`}</strong>
                     {!organization ? (
                         <Loader />
@@ -121,7 +121,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 </div>
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? (
-                <div className="mb1">
+                <div className="mb-4">
                     <strong className="block mb-2">{c('Title').t`Application settings`}</strong>
                     <ul className="unstyled my-0">
                         <li className="flex flex-nowrap flex-align-items-center">
@@ -140,7 +140,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 </div>
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? null : (
-                <div className="mb1">
+                <div className="mb-4">
                     <SettingsLink path="/dashboard">{c('Link').t`Manage account`}</SettingsLink>
                 </div>
             )}

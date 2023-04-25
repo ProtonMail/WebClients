@@ -25,7 +25,7 @@ const SavingDraftNotification = ({ onDiscard }: Props, ref: Ref<SavingDraftNotif
     if (step === SavingStep.sent) {
         return (
             <>
-                <span className="mr1">{c('Info').t`Draft saved.`}</span>
+                <span className="mr-4">{c('Info').t`Draft saved.`}</span>
                 <InlineLinkButton onClick={onDiscard}>{c('Action').t`Discard`}</InlineLinkButton>
             </>
         );

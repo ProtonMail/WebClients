@@ -157,7 +157,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
         return (
             <div className="flex h100 pt1 pb1 pr2 pl2">
-                <div className="mauto text-center max-w30e">
+                <div className="m-auto text-center max-w30e">
                     <Loader />
                 </div>
             </div>
@@ -165,7 +165,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     }
 
     return (
-        <div className="mauto text-center p2 max-w100">
+        <div className="m-auto text-center p2 max-w100">
             {showSimpleLoginPlaceholder ? (
                 <SimpleLoginPlaceholder />
             ) : (
@@ -175,8 +175,8 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                             {labelName}
                         </h3>
                     )}
-                    <p className="mb2 text-keep-space">{showText ? getFormattedText(text) : null}</p>
-                    <div className="mb2">
+                    <p className="mb-8 text-keep-space">{showText ? getFormattedText(text) : null}</p>
+                    <div className="mb-8">
                         <img
                             src={conversationSvg}
                             alt={c('Alternative text for conversation image').t`Conversation`}

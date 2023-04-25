@@ -211,21 +211,21 @@ const LoginForm = ({
                     </div>
                 )}
 
-                <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt1-5">
+                <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-6">
                     {
                         // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
                         submitting ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
 
-                <div className="text-center mt1-25">
+                <div className="text-center mt-4">
                     {
                         // translator: Full sentence "New to Proton? Create account"
                         c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
                     }
                 </div>
 
-                <hr className="my1-25" />
+                <hr className="my-4" />
 
                 <div className="text-center">
                     <SupportDropdown content={c('Link').t`Trouble signing in?`}>

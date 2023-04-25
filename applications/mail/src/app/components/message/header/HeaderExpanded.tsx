@@ -230,7 +230,7 @@ const HeaderExpanded = ({
                             <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
                         )}
                         {messageLoaded && isSendingMessage && !isScheduledMessage && (
-                            <span className="ml-2 flex-item-noshrink myauto">
+                            <span className="ml-2 flex-item-noshrink my-auto">
                                 <span className="badge-label-primary">{c('Info').t`Sending`}</span>
                             </span>
                         )}

@@ -33,9 +33,9 @@ const ContactClearDataConfirmModal = ({ errorKey, onClearData, ...rest }: Props)
         <ModalTwo {...rest}>
             <ModalTwoHeader title={c('Title').t`Warning`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="info">{c('Warning')
+                <Alert className="mb-4" type="info">{c('Warning')
                     .t`If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.`}</Alert>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {c('Warning')
                         .jt`This action is irreversible. Please enter the word ${boldDanger} in the field to proceed.`}
                 </Alert>

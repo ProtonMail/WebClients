@@ -13,7 +13,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
     const [editLabelModalProps, openEditLabelModal, renderEditLabelModal] = useModalState();
 
     return (
-        <div className="mb1 border-bottom flex-align-items-center">
+        <div className="mb-4 border-bottom flex-align-items-center">
             <Row>
                 <Label className="flex flex-align-items-center">
                     {c('Label').t`Label messages as`}
@@ -36,7 +36,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                     )}
                     <Button
                         shape="outline"
-                        className="flex-item-noshrink ml1"
+                        className="flex-item-noshrink ml-4"
                         onClick={() => openEditLabelModal(true)}
                         data-testid="CustomizeModal:editLabel"
                     >

@@ -61,7 +61,7 @@ const FooterFilterModal = ({ model, errors, onClose, onChange, loading }: Props)
                         shape="outline"
                         disabled={isNextButtonDisabled()}
                         onClick={handleNext}
-                        className={classnames([step === Step.ACTIONS && 'mr1'])}
+                        className={classnames([step === Step.ACTIONS && 'mr-4'])}
                         data-testid="filter-modal:next-button"
                     >
                         {step === Step.ACTIONS ? c('Action').t`Preview` : c('Action').t`Next`}

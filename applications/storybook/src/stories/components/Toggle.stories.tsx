@@ -69,7 +69,7 @@ export const Loading = () => {
 export const Disabled = () => {
     return (
         <>
-            <Toggle id="toggle-disabled-unchecked" disabled className="mr1" />
+            <Toggle id="toggle-disabled-unchecked" disabled className="mr-4" />
             <Toggle id="toggle-disabled-checked" checked disabled />
         </>
     );

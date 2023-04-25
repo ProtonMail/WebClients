@@ -62,7 +62,7 @@ const ItemCheckbox = ({
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
             >
-                <span className="mauto item-abbr rounded no-scroll" aria-hidden="true">
+                <span className="m-auto item-abbr rounded no-scroll" aria-hidden="true">
                     <ContactImage
                         email={email}
                         name={name}
@@ -71,7 +71,7 @@ const ItemCheckbox = ({
                         className="rounded relative"
                     />
                 </span>
-                <span className="item-icon-fakecheck mauto">
+                <span className="item-icon-fakecheck m-auto">
                     <Icon name="checkmark" className="item-icon-fakecheck-icon" />
                 </span>
             </span>

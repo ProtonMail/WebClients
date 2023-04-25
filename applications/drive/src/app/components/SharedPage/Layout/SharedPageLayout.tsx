@@ -58,9 +58,9 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                         'flex-item-fluid',
                     ])}
                 >
-                    <div className="flex-item-fluid on-mobile-mb1 flex flex-column flex-nowrap">{children}</div>
+                    <div className="flex-item-fluid mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
                 </main>
-                <Footer className="flex-justify-space-between flex-align-items-center p0 on-mobile-mt1-5">
+                <Footer className="flex-justify-space-between flex-align-items-center p-0 mt-6 md:mt-0">
                     {FooterComponent}
                 </Footer>
             </div>

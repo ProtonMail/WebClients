@@ -10,7 +10,7 @@ const BitcoinDetails = ({ amount, address }) => {
                 <>
                     <div className="flex flex-nowrap flex-align-items-center p1 border-bottom">
                         <span className="flex-item-noshrink">{c('Label').t`BTC amount:`}</span>
-                        <strong className="ml-1 mr1 text-ellipsis" title={amount}>
+                        <strong className="ml-1 mr-4 text-ellipsis" title={amount}>
                             {amount}
                         </strong>
                         <Copy value={`${amount}`} />
@@ -19,7 +19,7 @@ const BitcoinDetails = ({ amount, address }) => {
             ) : null}
             <div className="flex max-w100 flex-nowrap flex-align-items-center p1 border-bottom">
                 <span className="flex-item-noshrink">{c('Label').t`BTC address:`}</span>
-                <strong className="ml-1 mr1 text-ellipsis" title={address}>
+                <strong className="ml-1 mr-4 text-ellipsis" title={address}>
                     {address}
                 </strong>
                 <Copy value={address} />

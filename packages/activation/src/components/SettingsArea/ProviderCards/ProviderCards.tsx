@@ -28,14 +28,14 @@ const ProviderCards = () => {
 
     return (
         <>
-            <div className="mb1 text-bold">{c('Info').t`Select a service provider to start`}</div>
+            <div className="mb-4 text-bold">{c('Info').t`Select a service provider to start`}</div>
             <div className="mt-2">
                 <ProviderCard
                     loading={easySwitchFeature.loading}
                     provider={ImportProvider.GOOGLE}
                     onClick={handleGoogleClick}
                     disabled={disabled}
-                    className="mb1 mr1"
+                    className="mb-4 mr-4"
                     data-testid="ProviderCard:googleCard"
                 />
 
@@ -43,7 +43,7 @@ const ProviderCards = () => {
                     provider={ImportProvider.YAHOO}
                     onClick={() => dispatch(startImapDraft({ provider: ImportProvider.YAHOO }))}
                     disabled={disabled}
-                    className="mb1 mr1"
+                    className="mb-4 mr-4"
                     data-testid="ProviderCard:yahooCard"
                 />
 
@@ -58,7 +58,7 @@ const ProviderCards = () => {
                         )
                     }
                     disabled={disabled}
-                    className="mb1 mr1"
+                    className="mb-4 mr-4"
                     data-testid="ProviderCard:outlookCard"
                 />
 
@@ -66,7 +66,7 @@ const ProviderCards = () => {
                     provider={ImportProvider.DEFAULT}
                     onClick={() => dispatch(startImapDraft({ provider: ImportProvider.DEFAULT }))}
                     disabled={disabled}
-                    className="mb1"
+                    className="mb-4"
                     data-testid="ProviderCard:imapCard"
                 />
             </div>

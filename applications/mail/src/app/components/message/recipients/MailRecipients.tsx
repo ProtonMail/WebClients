@@ -63,7 +63,7 @@ const MailRecipients = ({
                 />
             )}
             {!isLoading && (
-                <div className="flex-item-noshrink flex mlauto">
+                <div className="flex-item-noshrink flex ml-auto">
                     <Button
                         onClick={toggleDetails}
                         aria-expanded={expanded}
@@ -71,7 +71,7 @@ const MailRecipients = ({
                         color="weak"
                         data-testid="message-show-details"
                         icon
-                        className="mlauto mbauto message-header-expand-button"
+                        className="ml-auto mb-auto message-header-expand-button"
                         title={titleAction}
                         size="small"
                         aria-controls="message-recipients" // hack to get proper styles AND proper vocalization

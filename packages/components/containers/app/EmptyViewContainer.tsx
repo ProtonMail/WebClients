@@ -7,10 +7,10 @@ interface Props extends ComponentPropsWithRef<'div'> {
 
 const EmptyViewContainer = ({ imageProps, children, ...containerProps }: Props) => {
     return (
-        <div className="mauto p3" {...containerProps}>
+        <div className="m-auto p3" {...containerProps}>
             <figure className="flex-item-fluid text-center p1">
                 {imageProps && <img className="hauto" {...imageProps} alt={imageProps.alt || ''} />}
-                <figcaption className="mt2">{children}</figcaption>
+                <figcaption className="mt-8">{children}</figcaption>
             </figure>
         </div>
     );

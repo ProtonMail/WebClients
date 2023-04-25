@@ -55,7 +55,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                 setCode={setCode}
                 bigger={true}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {c('Action').t`Authenticate`}
             </Button>
             <Button

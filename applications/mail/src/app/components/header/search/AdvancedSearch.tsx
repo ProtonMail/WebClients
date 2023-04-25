@@ -196,10 +196,10 @@ const AdvancedSearch = ({
                         onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
                     />
                 </div>
-                <hr className="my1" />
+                <hr className="my-4" />
                 {showMore && (
                     <>
-                        <div className="mt1">
+                        <div className="mt-4">
                             <Button
                                 className="mb-2 on-mobile-w100"
                                 onClick={toggleShowMore}
@@ -302,7 +302,7 @@ const AdvancedSearch = ({
                     </>
                 )}
             </div>
-            <div className="my1 mx1-5 flex flex-align-items-center flex-justify-space-between">
+            <div className="my-4 mx-6 flex flex-align-items-center flex-justify-space-between">
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"
@@ -313,11 +313,11 @@ const AdvancedSearch = ({
                         {c('Action').t`More search options`}
                     </Button>
                 )}
-                <div className="mlauto on-mobile-w100">
+                <div className="ml-auto on-mobile-w100">
                     {canReset ? (
                         <Button
                             data-testid="advanced-search:reset"
-                            className="mb-2 on-mobile-w100 mr1"
+                            className="mb-2 on-mobile-w100 mr-4"
                             type="reset"
                             title={c('Action').t`Reset search form`}
                         >{c('Action').t`Reset`}</Button>

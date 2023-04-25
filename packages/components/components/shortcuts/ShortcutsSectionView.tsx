@@ -14,10 +14,10 @@ interface Props {
 
 const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
     return (
-        <div className="mb2">
+        <div className="mb-8">
             <h2 className="h5 mb-2">{name}</h2>
             {shortcuts.length > 0 && (
-                <ul className="unstyled mt1 on-mobile-pr0 list-2columns-no-break">
+                <ul className="unstyled mt-4 on-mobile-pr0 list-2columns-no-break">
                     {shortcuts.map(({ name, keys }) => (
                         <li key={name} className="flex flex-align-items-center flex-justify-space-between mb-2">
                             <span>{name}</span>

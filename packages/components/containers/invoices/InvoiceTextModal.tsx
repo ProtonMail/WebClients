@@ -42,7 +42,7 @@ const InvoiceTextModal = (props: ModalProps) => {
         <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>
             <ModalTwoHeader title={c('Title').t`Add invoice details`} />
             <ModalTwoContent>
-                <div className="mb1">{c('Info message for custom invoice modal')
+                <div className="mb-4">{c('Info message for custom invoice modal')
                     .t`Add your name (or company name) and address to your invoices.`}</div>
                 <InputFieldTwo
                     as={TextAreaTwo}

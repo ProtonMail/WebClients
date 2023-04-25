@@ -41,7 +41,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
         return (
             <div className="pt0-5">
                 {markAs?.read && (
-                    <span className="inline-flex flex-align-items-center mr2">
+                    <span className="inline-flex flex-align-items-center mr-8">
                         <Icon name="eye" className="mr-2" />
                         {c('Label').t`Read`}
                     </span>
@@ -61,11 +61,11 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
             className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
             data-testid="filter-modal:mark-as-row"
         >
-            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
+            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
             </button>
-            <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
+            <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
                     <div className="w100 pt0-5 pb0-5">
                         <Checkbox
@@ -78,7 +78,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
                             <span className="ml-2">{c('Label').t`Read`}</span>
                         </Checkbox>
                         <Checkbox
-                            className="ml2"
+                            className="ml-8"
                             checked={markAs.starred}
                             onChange={(e) => {
                                 handleChangeModel({ starred: e.target.checked });

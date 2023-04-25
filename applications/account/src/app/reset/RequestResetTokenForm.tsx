@@ -5,23 +5,26 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
 import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
-import MnemonicInputField, {
-    useMnemonicInputValidation,
-} from '@proton/components/containers/mnemonic/MnemonicInputField';
+import MnemonicInputField, { useMnemonicInputValidation } from '@proton/components/containers/mnemonic/MnemonicInputField';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+
+
 import Text from '../public/Text';
 import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmModal';
 
+
 const BorderedWarningText = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="mb1 p1 border border-weak rounded">
+        <div className="mb-4 p1 border border-weak rounded">
             <Icon className="color-danger mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
             {children}
         </div>
@@ -190,7 +193,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                         title: c('Recovery method').t`Phone number`,
                         content: (
                             <>
-                                <div className="mb1 color-weak">
+                                <div className="mb-4 color-weak">
                                     {c('Info')
                                         .t`We’ll send a reset code to the phone number you provided for account recovery.`}
                                 </div>
@@ -231,7 +234,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                     setTabIndex(newIndex);
                 }}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {currentMethod === 'mnemonic' ? c('Action').t`Reset password` : c('Action').t`Send code`}
             </Button>
             <Button

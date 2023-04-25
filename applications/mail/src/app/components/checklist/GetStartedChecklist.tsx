@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
+
+
 import { ButtonLike } from '@proton/atoms';
 import { ChecklistItem, Loader, SettingsLink, useApi } from '@proton/components';
 import { useDateCountdown } from '@proton/hooks';
@@ -14,10 +16,15 @@ import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import gift from '@proton/styles/assets/img/illustrations/gift.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
+
+
 import { useGetStartedChecklist } from '../../containers/checklists';
 import GetStartedChecklistHeader from './GetStartedChecklistHeader';
 
+
+
 import './GetStartedChecklist.scss';
+
 
 /*
  * This component is separated out so that a "seen" request can be sent
@@ -40,9 +47,9 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
 
     return (
         <div className="p1 text-center">
-            <img className="mb1-5 mt1-5" src={gift} width={48} alt="" />
+            <img className="my-6" src={gift} width={48} alt="" />
             <p className="h3 mb-0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
-            <p className="color-weak mt-2 mb1-5">
+            <p className="color-weak mt-2 mb-6">
                 <span className="get-started_completion-text inline-block">
                     {c('Get started checklist completion')
                         .t`We've increased the total storage of your account to ${rewardInGb} GB. Get additional storage and unlock premium features today.`}
@@ -106,7 +113,7 @@ const GetStartedChecklist = ({ onDismiss, onItemSelection }: GetStartedChecklist
 
     if (loading) {
         return (
-            <div className="p1 mauto">
+            <div className="p1 m-auto">
                 <Loader />
             </div>
         );

@@ -45,7 +45,7 @@ const ImportTypeButton = ({ importType, onClick, disabled }: ImportTypeButtonPro
             data-testid="MailModal:ProductButton"
         >
             <span className="flex flex-nowrap flex-column pl1 pr1">
-                <img src={typeMap[importType].illustration} alt="" className="w5e mb1" />
+                <img src={typeMap[importType].illustration} alt="" className="w5e mb-4" />
                 <span>{typeMap[importType].text}</span>
             </span>
         </Button>

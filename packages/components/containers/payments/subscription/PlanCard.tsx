@@ -63,8 +63,8 @@ const PlanCard = ({
             >
                 {recommended ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
-                        <div className="plan-selection-plan-recommended-pill inline-flex mlauto mrauto flex-items-align-center bg-primary p0-25 pl0-75 pr0-75">
-                            <Icon name="star-filled" className="myauto" />
+                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto flex-items-align-center bg-primary p0-25 pl0-75 pr0-75">
+                            <Icon name="star-filled" className="my-auto" />
                             <span className="ml-1">{c('Title').t`Recommended`}</span>
                         </div>
                     </div>
@@ -77,8 +77,8 @@ const PlanCard = ({
                         {planTitle}
                     </h2>
                 </div>
-                <p className="text-lg plan-selection-info text-left color-weak mb1">{info}</p>
-                <div className="mb1 flex flex-wrap flex-align-items-baseline plan-selection-price">
+                <p className="text-lg plan-selection-info text-left color-weak mb-4">{info}</p>
+                <div className="mb-4 flex flex-wrap flex-align-items-baseline plan-selection-price">
                     <span className="mr-2">
                         <Price large currency={currency}>
                             {price / cycle}

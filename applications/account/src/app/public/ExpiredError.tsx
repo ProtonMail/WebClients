@@ -27,7 +27,7 @@ const getTexts = (type: 'email' | 'unsubscribe') => {
 const ExpiredError = ({ type }: Props) => {
     const { title, description, cta } = getTexts(type);
     return (
-        <div className="mauto text-center max-w20e">
+        <div className="m-auto text-center max-w20e">
             <div className="mb-8">
                 <img src={expired} alt={c('Error').t`Expired`} />
             </div>

@@ -158,7 +158,7 @@ const SubscriptionsSection = () => {
                         )}
                     </TableBody>
                 </Table>
-                <div className="flex w100 mb1 color-weak text-right mt1">
+                <div className="flex w100 mb-4 color-weak text-right mt-4">
                     <div
                         className="on-mobile-text-left on-tablet-text-left text-right w100"
                         data-testid="renewalDateInfo"

@@ -23,26 +23,26 @@ type UpsellBoxProps = Required<
 const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxProps) => (
     <div>
         <div className="text-center">
-            <div className="mb1 rounded">
+            <div className="mb-4 rounded">
                 <img
                     src={headerImage}
                     className="w100 block"
                     alt={c('Description').t`ProtonMail logo and a plus sign`}
                 />
             </div>
-            <h1 className="h3 text-bold mb1">{title}</h1>
-            <div className="color-weak mb1 px1">{description}</div>
+            <h1 className="h3 text-bold mb-4">{title}</h1>
+            <div className="color-weak mb-4 px1">{description}</div>
         </div>
 
         <div className="border border-primary rounded p1-5 pt1">
-            <ul className="m-0 unstyled mb1">
+            <ul className="m-0 unstyled mb-4">
                 {features.map((featureName) => {
                     const feature = upsellFeatures[featureName];
                     return (
                         <li className="py0-5 rounded" key={feature.getText()}>
                             <div className="flex flex-nowrap flex-align-items-center">
                                 <div className="mr-3 flex-item-noshrink flex">
-                                    <Icon className="color-primary mauto" size={20} name={feature.icon} />
+                                    <Icon className="color-primary m-auto" size={20} name={feature.icon} />
                                 </div>
                                 <div className="flex-item-fluid">
                                     {feature.getText()}
