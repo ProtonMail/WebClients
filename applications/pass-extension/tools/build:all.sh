@@ -8,6 +8,8 @@ echo "Building for chrome & firefox"
 
 mkdir -p "./release/ProtonPass-chrome-${VERSION}"
 mkdir -p "./release/ProtonPass-chrome-${VERSION}-black"
+mkdir -p "./release/ProtonPass-firefox-${VERSION}"
+mkdir -p "./release/ProtonPass-firefox-${VERSION}-black"
 
 BUILD_TARGET=chrome yarn run build
 mv ./dist/* "./release/ProtonPass-chrome-${VERSION}"
@@ -15,11 +17,8 @@ mv ./dist/* "./release/ProtonPass-chrome-${VERSION}"
 BUILD_TARGET=chrome yarn run build:dev
 mv ./dist/* "./release/ProtonPass-chrome-${VERSION}-black"
 
-cp -R "./release/ProtonPass-chrome-${VERSION}" "./release/ProtonPass-firefox-${VERSION}"
-cp -R "./release/ProtonPass-chrome-${VERSION}-black" "./release/ProtonPass-firefox-${VERSION}-black"
+BUILD_TARGET=firefox yarn run build
+mv ./dist/* "./release/ProtonPass-firefox-${VERSION}"
 
-rm "./release/ProtonPass-firefox-${VERSION}/manifest.json"
-rm "./release/ProtonPass-firefox-${VERSION}-black/manifest.json"
-
-cp "./manifest-firefox.json" "./release/ProtonPass-firefox-${VERSION}/manifest.json"
-cp "./manifest-firefox.json" "./release/ProtonPass-firefox-${VERSION}-black/manifest.json"
+BUILD_TARGET=firefox yarn run build:dev
+mv ./dist/* "./release/ProtonPass-firefox-${VERSION}-black"
