@@ -1071,11 +1071,6 @@
         "Я не на працоўным месцы і ў мяне няма поўнага доступу да пошты."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 карыстальнікаў"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Адключана"
@@ -4594,6 +4589,9 @@
         "Выбраны ${ selectedFoldersCountLocalized } метак",
         "Выбраны ${ selectedFoldersCountLocalized } меткі"
       ],
+      "${ storage } storage": [
+        "${ storage } сховішча"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } сховішча"
       ],
@@ -4728,6 +4726,9 @@
       ],
       "Align right": [
         "Выраўнаваць па правым краі"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Уся (${ totalFoldersCount } папка)",
@@ -5297,8 +5298,8 @@
         "Падключэнне да інтэрнэту адноўлена."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent",
+        "Запрашэнне паспяхова адпраўлена",
+        "Запрашэнні паспяхова адпраўлены",
         "Запрашэнні паспяхова адпраўлены",
         "Запрашэнні паспяхова адпраўлены"
       ],
@@ -5979,6 +5980,9 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Update recovery file": [
         "Абнавіць файл аднаўлення"
@@ -8233,6 +8237,12 @@
         "${ n } календароў",
         "${ n } календары"
       ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календары на карыстальніка"
+      ],
       "${ n } custom email domain": [
         "${ n } карыстальніцкі дамен электроннай пошты",
         "${ n } карыстальніцкія дамены электроннай пошты",
@@ -8304,6 +8314,9 @@
       ],
       "1 free VPN connection in total": [
         "Агулам 1 бясплатнае падключэнне па VPN"
+      ],
+      "1 user": [
+        "1 карыстальнік"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -8461,6 +8474,12 @@
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
+      ],
+      "Up to ${ n } users": [
+        "Да ${ n } карыстальнікаў"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
       ],
@@ -8561,6 +8580,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Прыватнасць і бяспека, якія пасуюць для бізнесу, а таксама ўключаць усе прэміяльныя сэрвісы ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Абараніце прыватнасць вашай сям'і з усімі камбінаванымі сэрвісамі ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
@@ -8696,6 +8718,9 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў для ўсёй сям'і. Выкарыстоўвайце іх для свайго сеткавага пасведчання. Напрыклад, MyFamilySubs@${ domain } для падпісак у сетцы."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -8719,6 +8744,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Абараняе вас, блакіруючы ўсе падключэнні да сеткі пры нечаканым адключэнні ад нашага сервера VPN."
@@ -8759,6 +8787,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашага высакахуткаснага сэрвісу VPN для трансляцый улюбёнага змесціва"
+      ],
       "Quickly set up out-of-office messages": [
         "Хутка наладжвайце паведамленні пры адсутнасці ў офісе"
       ],
@@ -8773,6 +8804,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Накіроўвайце свой трафік праз сетку Tor адным націскам"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключаючы аўтаматычную сінхранізацыі, абагуленне зашыфраванага файла і іншыя функцыі."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
@@ -8797,6 +8831,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }. Адміністратары могуць вылучаць розныя аб'ёмы сховішча для карыстальнікаў у межах іх арганізацыі"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Прастора сховішча размеркавана паміж карыстальнікамі сярод ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
@@ -10204,6 +10241,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Для бізнесу"
+      ],
+      "For families": [
+        "Для сем'яў"
       ],
       "For individuals": [
         "Для асабістага карыстання"

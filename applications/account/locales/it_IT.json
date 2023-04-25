@@ -1064,11 +1064,6 @@
         "Non sono in ufficio, con accesso limitato alla mia email."
       ]
     },
-    "Badge": {
-      "5 users": [
-        "5 utenti"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Disabilitata"
@@ -3496,6 +3491,9 @@
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Troppe sessioni per bambini, sei pregato di cancellare i tuoi cookie e accedere nuovamente."
+      ],
+      "We couldn't load this page. ": [
+        "Non è stato possibile caricare questa pagina. "
       ]
     },
     "Error message, recovery": {
@@ -4484,6 +4482,9 @@
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
       ],
+      "${ storage } storage": [
+        "${ storage } di archiviazione"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } di archiviazione"
       ],
@@ -5169,8 +5170,8 @@
         "Connessione Internet ripristinata."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
+        "Invito inviato con successo",
+        "Inviti inviati con successo"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sembra che alcuni dei tuoi dati siano criptati e bloccati."
@@ -5825,6 +5826,9 @@
       ],
       "Unsupported file": [
         "File non supportato"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
       "Update recovery file": [
         "Aggiorna il file di ripristino"
@@ -8034,6 +8038,10 @@
         "${ n } calendario",
         "${ n } calendari"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendario per utente",
+        "${ n } calendari per utente"
+      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -8085,6 +8093,9 @@
       ],
       "1 free VPN connection in total": [
         "1 connessione VPN gratuita in totale"
+      ],
+      "1 user": [
+        "1 utente"
       ],
       "99.95% SLA": [
         "SLA del 99,95%"
@@ -8236,6 +8247,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Larghezza di banda/volume illimitati"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
+      ],
+      "Up to ${ n } users": [
+        "Fino a ${ n } utenti"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
@@ -8569,6 +8586,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }. Gli amministratori possono assegnare diverse quantità di spazio di archiviazione agli utenti nella loro organizzazione"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
@@ -10147,6 +10167,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Per le aziende"
+      ],
+      "For families": [
+        "Per le famiglie"
       ],
       "For individuals": [
         "Per gli individui"

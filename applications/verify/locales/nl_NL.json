@@ -879,6 +879,18 @@
     "Error message": {
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } alstublieft of controleer uw internetverbinding."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } alstublieft of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
+      "We couldn't load this page. ": [
+        "We konden deze pagina niet laden. "
       ]
     },
     "fido2: Error": {

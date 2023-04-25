@@ -1012,6 +1012,23 @@
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }s inbox"
+      ],
+      "5 trackers removed": [
+        "5 trackers verwijderd"
+      ],
+      "Auto forwarded": [
+        "Automatisch doorgestuurd"
+      ],
+      "Email received": [
+        "E-mail ontvangen"
+      ],
+      "Encrypted": [
+        "Versleuteld"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -1045,11 +1062,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ik ben afwezig en heb beperkte toegang tot mijn e-mail."
-      ]
-    },
-    "Badge": {
-      "5 users": [
-        "5 gebruikers"
       ]
     },
     "Badge for domain": {
@@ -2610,7 +2622,7 @@
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail logo en een plus teken"
+        "Proton Mail logo en een plus teken"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -2832,6 +2844,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } is uw gebruikersnaam. Om ${ Local }@${ Domain } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -3315,6 +3330,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
       ]
     },
     "Error importing contacts": {
@@ -3465,8 +3483,20 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } alstublieft of controleer uw internetverbinding."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } alstublieft of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Te veel onderliggende sessies, wis uw cookies en log opnieuw in."
+      ],
+      "We couldn't load this page. ": [
+        "We konden deze pagina niet laden. "
       ]
     },
     "Error message, recovery": {
@@ -3860,6 +3890,11 @@
         "(gedurende uw eerste maand)"
       ]
     },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Inloggen met Google"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Heeft u al een account? ${ signIn }"
@@ -4042,6 +4077,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-versies < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5127,14 +5165,17 @@
         "Internetverbinding hersteld."
       ],
       "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
+        "Uitnodiging succesvol verzonden",
+        "Uitnodigingen succesvol verzonden"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Het ziet er naar uit dat een deel van uw data versleuteld en vergrendeld is."
       ],
       "it’s imperative": [
         "is het noodzakelijk"
+      ],
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Ik ben @ProtonMail aan het gebruiken en dacht dat u dit misschien leuk vindt. Het is een veilige e-maildienst die uw privacy beschermd. Meld u aan met mijn doorverwijslink om gratis 1 maand premium functies te krijgen: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -6639,6 +6680,9 @@
       ],
       "Auto show remote images": [
         "Externe afbeeldingen automatisch weergeven"
+      ],
+      "Auto-delete unwanted messages": [
+        "Automatisch ongewenste berichten verwijderen"
       ],
       "Auto-detect primary time zone": [
         "Automatisch primaire tijdzone detecteren"
@@ -8162,6 +8206,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
+      ],
       "Share calendar via link": [
         "Agenda delen via koppeling"
       ],
@@ -9408,6 +9455,14 @@
         "Aangemaakt door ${ ownerName }"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Ondertekening verificatiefout"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "U heeft adresverificatie ingeschakeld voor ${ boldSenderEmail }. We konden de authenticatie van deze agenda-uitnodiging niet verifiëren. Dit kan voorkomen door wijzigingen in de encryptiesleutel van dit contact. Controleer alstublieft de geavanceerde PGP-instellingen hiervan of u kan ${ boldSenderEmail } vragen om een nieuwe uitnodiging."
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Weergavenaam"
@@ -9794,6 +9849,32 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Supersnelle VPN op ${ maxVpn } apparaat",
         "Supersnelle VPN op ${ maxVpn } apparaten"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Begrepen"
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Beheer uw abonnement op ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonnement wordt beheerd door ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Abonneren van gebruiker ID-${ userId } is gedaan via een in-app aankoop. Om het abonnement te beheren, moet de gebruiker naar de Abonnement-sectie van diens ${ subscriptionManager }-account."
+      ],
+      "Subscriptions": [
+        "Abonnementen"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Uw abonnement was gekocht met een Android app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Google Play Store gaan."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Uw abonnement was gekocht met een iOS app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
       ]
     },
     "Subscription price": {
@@ -10500,6 +10581,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
+      ],
+      "Duration": [
+        "Duur"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
