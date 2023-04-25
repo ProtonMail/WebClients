@@ -1,10 +1,10 @@
-import { ExtensionEndpoint, Maybe, TabId } from '@proton/pass/types';
+import type { ExtensionEndpoint, Maybe, TabId } from '@proton/pass/types';
 import { invert } from '@proton/pass/utils/fp/predicates';
 
 import { boot, syncing, wakeup } from '../actions/requests';
-import { RequestType } from '../actions/with-request';
-import { RequestEntry } from '../reducers/request';
-import { State } from '../types';
+import type { RequestType } from '../actions/with-request';
+import type { RequestEntry } from '../reducers/request';
+import type { State } from '../types';
 
 export const selectRequest =
     (namespaceOrId: string) =>
