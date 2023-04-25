@@ -64,6 +64,9 @@
       "Back": [
         "Terug"
       ],
+      "Back to Homepage": [
+        "Terug naar Startpagina"
+      ],
       "Beta Access": [
         "Bèta toegang"
       ],
@@ -599,6 +602,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Try for free": [
+        "Probeer het gratis"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
@@ -2182,6 +2188,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
       ]
     },
     "Error importing contacts": {
@@ -2323,6 +2332,18 @@
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
+      ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } alstublieft of controleer uw internetverbinding."
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } alstublieft of probeer het later opnieuw."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan"
+      ],
+      "We couldn't load this page. ": [
+        "We konden deze pagina niet laden. "
       ],
       "You may also refresh the page or try again later.": [
         "Vernieuw de pagina of probeer het later opnieuw."
@@ -2535,6 +2556,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-versies < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2961,7 +2985,7 @@
         "Aandacht vereist"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+        "Omdat ${ DRIVE_APP_NAME } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
@@ -3228,7 +3252,7 @@
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
-        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+        "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om\nhet deblokkeerproces voort te zetten."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
@@ -3309,6 +3333,9 @@
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
+      "Link owner has the password": [
+        "De eigenaar van de koppeling heeft het wachtwoord"
+      ],
       "Loading": [
         "Laden"
       ],
@@ -3344,6 +3371,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Moet u een bestand delen? Kies dan voor ${ DRIVE_APP_NAME }, de veiligste manier om uw bestanden te delen, op te slaan en te synchroniseren."
       ],
       "Network issue": [
         "Netwerk probleem"
@@ -3386,6 +3416,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
+      ],
+      "Nothing here yet": [
+        "Nog niets om te weergeven"
       ],
       "of": [
         "van"
@@ -3578,6 +3611,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
       ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Dit bestand is mogelijk verwijderd, verplaatst of onbeschikbaar gemaakt. Probeer in contact te komen met de eigenaar van het bestand."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
@@ -3607,7 +3643,7 @@
         "Dit zal de bestaande map overschrijven"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+        "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
@@ -3983,6 +4019,9 @@
       ],
       "Download anyway": [
         "Toch downloaden"
+      ],
+      "Downloading ${ percentageValue }%": [
+        "Downloaden ${ percentageValue }$"
       ],
       "Email": [
         "E-mailadres"

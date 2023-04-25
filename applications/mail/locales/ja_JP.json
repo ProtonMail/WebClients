@@ -490,6 +490,9 @@
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
+      "In the morning": [
+        "午前中"
+      ],
       "Inline": [
         "インライン"
       ],
@@ -1206,6 +1209,11 @@
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } 完了"
+      ]
+    },
+    "Animation": {
+      "Encrypted": [
+        "暗号化済み"
       ]
     },
     "Apps dropdown": {
@@ -2804,6 +2812,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "プランをアップグレードすると、カスタムメッセージの送信予約などを使用できます。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -2982,6 +2993,9 @@
       ],
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
+      ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
+        "次の ${ EXPIRATION_TIME_MAX_DAYS } 日間から日付を選択してください"
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
         "次の ${ SCHEDULED_MAX_DATE_DAYS } 日間から日付を選択してください"
@@ -3509,6 +3523,9 @@
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
+      ],
+      "Something went wrong": [
+        "不具合が発生しました"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
@@ -4475,6 +4492,9 @@
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "${ totalProgress }件中${ currentProgress }件目のメールをダウンロード中"
+      ],
       "Draft": [
         "下書き"
       ],
@@ -4565,8 +4585,11 @@
       "Expiration time": [
         "有効期限"
       ],
+      "Expires in ${ formattedDate }": [
+        "${ formattedDate } に期限が切れます"
+      ],
       "files attached": [
-        "attachment"
+        "個のファイル添付"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
@@ -4588,9 +4611,6 @@
       ],
       "From": [
         "差出人"
-      ],
-      "Get more storage and premium features.": [
-        "さらなるストレージとプレミアム機能を入手"
       ],
       "Group assignment applied": [
         "グループの割り当てが適用されました"
@@ -4645,6 +4665,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -4801,6 +4824,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
+      ],
+      "Normal": [
+        "標準"
       ],
       "Not a valid URL": [
         "有効な URL ではありません"
@@ -5104,6 +5130,12 @@
       ],
       "This message will expire ${ formattedDate }": [
         "このメッセージの期限は ${ formattedDate } までです"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "このメッセージの有効期限は今日の ${ shortDateMessage } までです"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "このメッセージの有効期限は明日の ${ shortDateMessage } までです"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
