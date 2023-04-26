@@ -5,6 +5,10 @@ import type { ItemImportIntent } from '@proton/pass/types';
 import type { ImportPayload } from '../types';
 import { readLastPassData } from './lastpass.reader';
 
+jest.mock('@proton/pass/utils/time/get-epoch', () => ({
+    getEpoch: jest.fn(() => 1682585156),
+}));
+
 describe('Import LastPass csv', () => {
     let sourceData: string;
     let payload: ImportPayload;
@@ -14,6 +18,10 @@ describe('Import LastPass csv', () => {
         payload = await readLastPassData(sourceData);
     });
 
+    afterAll(() => {
+        jest.clearAllMocks();
+    });
+
     it('should throw on corrupted files', async () => {
         await expect(readLastPassData('not-a-csv-file')).rejects.toThrow();
     });
@@ -21,9 +29,8 @@ describe('Import LastPass csv', () => {
     it('converts LastPass folders to vaults correctly', () => {
         const [primary, secondary] = payload.vaults;
         expect(payload.vaults.length).toEqual(2);
-
         expect(primary.type).toEqual('new');
-        expect(primary.type === 'new' && primary.vaultName).toEqual('LastPass import');
+        expect(primary.type === 'new' && primary.vaultName).toEqual('Import - 27 Apr 2023');
         expect(secondary.type).toEqual('new');
         expect(secondary.type === 'new' && secondary.vaultName).toEqual('company services');
     });
@@ -87,7 +94,7 @@ describe('Import LastPass csv', () => {
         /* Login broken url */
         const loginItem5 = secondary.items[3] as ItemImportIntent<'login'>;
         expect(loginItem5.type).toEqual('login');
-        expect(loginItem5.metadata.name).toEqual('Unnamed LastPass item');
+        expect(loginItem5.metadata.name).toEqual('Unnamed item');
         expect(loginItem5.metadata.note).toEqual('');
         expect(loginItem5.content.username).toEqual('');
         expect(loginItem5.content.password).toEqual('');

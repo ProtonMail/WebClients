@@ -5,6 +5,8 @@ import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl, isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
@@ -28,11 +30,11 @@ export const readBitwardenData = (data: string): ImportPayload => {
         const vaults: ImportVault[] = [
             {
                 type: 'new',
-                vaultName: c('Title').t`Bitwarden import`,
+                vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
                 id: uniqid(),
                 items: items
                     .map((item): Maybe<ItemImportIntent> => {
-                        const name = item.name ?? 'Unnamed Bitwarden item';
+                        const name = item.name ?? 'Unnamed item';
 
                         switch (item.type) {
                             case BitwardenType.LOGIN:
