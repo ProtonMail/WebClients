@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react';
 
-import type { FormikContextType } from 'formik';
+import { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -8,8 +8,10 @@ import { Icon, Option } from '@proton/components';
 import type { AliasMailbox } from '@proton/pass/types';
 
 import type { UseAliasOptionsResult } from '../../../../shared/hooks/useAliasOptions';
-import { FieldsetCluster } from '../../../components/Fields';
-import { Field, SelectField, TextField } from '../../../components/Fields';
+import { Field } from '../../../components/Field/Field';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
+import { SelectField } from '../../../components/Field/SelectField';
+import { TextField } from '../../../components/Field/TextField';
 import { AliasFormValues } from './Alias.validation';
 
 type AliasFormProps<V extends AliasFormValues> = {

@@ -1,8 +1,6 @@
 import type { FieldProps } from 'formik';
 
-type UseFieldControlProps = FieldProps & { [key: string]: any };
-
-export const useFieldControl = (props: UseFieldControlProps) => {
+export const useFieldControl = (props: FieldProps) => {
     const { field, form } = props;
     const { name } = field;
     const { touched, errors } = form;

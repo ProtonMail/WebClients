@@ -7,8 +7,8 @@ import { InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 
-import { FieldBox, type FieldBoxProps } from './shared/FieldBox';
-import { useFieldControl } from './shared/useFieldControl';
+import { useFieldControl } from '../../hooks/useFieldControl';
+import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type BaseTextFieldProps = FieldProps & InputFieldProps<typeof Input>;
 

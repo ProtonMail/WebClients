@@ -15,18 +15,15 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
-import { FieldsetCluster } from '../../../components/Fields';
-import {
-    Field,
-    PasswordField,
-    TextAreaField,
-    TextField,
-    TitleField,
-    UrlGroupField,
-    createNewUrl,
-} from '../../../components/Fields';
+import { Field } from '../../../components/Field/Field';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
+import { PasswordField } from '../../../components/Field/PasswordField';
+import { TextField } from '../../../components/Field/TextField';
+import { TextAreaField } from '../../../components/Field/TextareaField';
+import { TitleField } from '../../../components/Field/TitleField';
+import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
+import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';

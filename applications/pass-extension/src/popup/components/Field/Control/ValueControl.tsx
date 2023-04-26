@@ -3,7 +3,7 @@ import type { ReactNode, VFC } from 'react';
 import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { FieldBox, FieldBoxProps } from '../shared/FieldBox';
+import { FieldBox, type FieldBoxProps } from '../Layout/FieldBox';
 
 import './ValueControl.scss';
 

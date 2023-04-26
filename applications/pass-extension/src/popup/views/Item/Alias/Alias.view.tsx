@@ -15,9 +15,9 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
-import { FieldsetCluster } from '../../../components/Fields';
-import { ClickToCopyValue } from '../../../components/Fields/controls/ClickToCopyValue';
-import { ValueControl } from '../../../components/Fields/controls/ValueControl';
+import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
+import { ValueControl } from '../../../components/Field/Control/ValueControl';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {
@@ -52,11 +52,11 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     return (
         <ItemViewPanel type="alias" name={name} vault={vault} {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
-                <ClickToCopyValue value={aliasEmail ?? ''}>
+                <ClickToCopyValueControl value={aliasEmail ?? ''}>
                     <ValueControl interactive icon="alias" label={c('Label').t`Alias address`}>
                         {aliasEmail}
                     </ValueControl>
-                </ClickToCopyValue>
+                </ClickToCopyValueControl>
 
                 <ValueControl as="ul" icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
                     {(!ready || requestFailure) && <div className="pass-skeleton pass-skeleton--select" />}

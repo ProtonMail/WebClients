@@ -1,10 +1,12 @@
 import type { VFC } from 'react';
 
-import { Field, Form, FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import type { ItemEditProps } from '../../../../shared/items';
-import { BaseTextAreaField, BaseTitleField } from '../../../components/Fields';
+import { Field } from '../../../components/Field/Field';
+import { BaseTextAreaField } from '../../../components/Field/TextareaField';
+import { BaseTitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';

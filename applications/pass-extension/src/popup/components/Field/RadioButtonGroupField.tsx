@@ -7,7 +7,7 @@ import { type InputFieldProps } from '@proton/components/components/v2/field/Inp
 import { type ColorRGB, MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
-import { useFieldControl } from './shared/useFieldControl';
+import { useFieldControl } from '../../hooks/useFieldControl';
 
 import './RadioButtonGroupField.scss';
 

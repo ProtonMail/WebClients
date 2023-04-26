@@ -7,9 +7,11 @@ import uniqid from 'uniqid';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemNewProps } from '../../../../shared/items';
-import { BaseTextAreaField, BaseTitleField, Field } from '../../../components/Fields';
+import { Field } from '../../../components/Field/Field';
+import { BaseTextAreaField } from '../../../components/Field/TextareaField';
+import { BaseTitleField } from '../../../components/Field/TitleField';
+import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import type { NoteFormValues } from './Note.validation';
