@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { Option } from '@proton/components';
 import { selectAllVaults } from '@proton/pass/store';
 
-import { FieldsetCluster } from '../Fields';
-import { SelectField, type SelectFieldProps } from '../Fields';
-import { VaultIcon } from './VaultIcon';
+import { VaultIcon } from '../Vault/VaultIcon';
+import { FieldsetCluster } from './Layout/FieldsetCluster';
+import { SelectField, type SelectFieldProps } from './SelectField';
 
 type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'>;
 

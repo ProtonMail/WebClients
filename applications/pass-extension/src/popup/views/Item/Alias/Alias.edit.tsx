@@ -10,9 +10,12 @@ import { merge } from '@proton/pass/utils/object';
 
 import { useAliasOptions } from '../../../../shared/hooks';
 import { type ItemEditProps } from '../../../../shared/items';
-import { FieldsetCluster } from '../../../components/Fields';
-import { Field, SelectField, TextAreaField, TitleField } from '../../../components/Fields';
-import { ValueControl } from '../../../components/Fields/controls/ValueControl';
+import { ValueControl } from '../../../components/Field/Control/ValueControl';
+import { Field } from '../../../components/Field/Field';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
+import { SelectField } from '../../../components/Field/SelectField';
+import { TextAreaField } from '../../../components/Field/TextareaField';
+import { TitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';

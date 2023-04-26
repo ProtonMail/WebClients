@@ -10,11 +10,11 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
-import { FieldsetCluster } from '../../../components/Fields';
-import { ClickToCopyValue } from '../../../components/Fields/controls/ClickToCopyValue';
-import { OTPValueControl } from '../../../components/Fields/controls/OTPValueControl';
-import { PasswordValueControl } from '../../../components/Fields/controls/PasswordValueControl';
-import { ValueControl } from '../../../components/Fields/controls/ValueControl';
+import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
+import { OTPValueControl } from '../../../components/Field/Control/OTPValueControl';
+import { PasswordValueControl } from '../../../components/Field/Control/PasswordValueControl';
+import { ValueControl } from '../../../components/Field/Control/ValueControl';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ...itemViewProps }) => {
@@ -27,7 +27,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
     return (
         <ItemViewPanel type="login" name={name} vault={vault} {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
-                <ClickToCopyValue value={username}>
+                <ClickToCopyValueControl value={username}>
                     <ValueControl
                         interactive
                         icon={relatedAlias ? 'alias' : 'user'}
@@ -39,7 +39,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
                             <span className="color-weak text-italic">{c('Info').t`None`}</span>
                         )}
                     </ValueControl>
-                </ClickToCopyValue>
+                </ClickToCopyValueControl>
 
                 <PasswordValueControl password={password} />
 

@@ -7,7 +7,7 @@ import { ThemeColor } from '@proton/colors/types';
 import clsx from '@proton/utils/clsx';
 
 import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
-import { ClickToCopyValue } from './ClickToCopyValue';
+import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 
 import './OTPValueControl.scss';
@@ -31,7 +31,7 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId,
     const [otp, percent] = usePeriodicOtpCode({ shareId, itemId, totpUri });
 
     return (
-        <ClickToCopyValue value={otp?.token ?? ''}>
+        <ClickToCopyValueControl value={otp?.token ?? ''}>
             <ValueControl
                 interactive
                 icon="lock"
@@ -52,6 +52,6 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId,
             >
                 {renderOtpCodeDisplayValue(otp?.token ?? '')}
             </ValueControl>
-        </ClickToCopyValue>
+        </ClickToCopyValueControl>
     );
 };

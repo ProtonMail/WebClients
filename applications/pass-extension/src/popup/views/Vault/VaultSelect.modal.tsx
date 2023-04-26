@@ -9,7 +9,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { selectAllVaultWithItemsCount } from '@proton/pass/store/selectors';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
-import { RadioButtonGroup, RadioLabelledButton } from '../../components/Fields';
+import { RadioButtonGroup, RadioLabelledButton } from '../../components/Field/RadioButtonGroupField';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
 import { VaultIcon } from '../../components/Vault/VaultIcon';
