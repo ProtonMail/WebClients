@@ -8,7 +8,6 @@ import { Field } from '../../../components/Field/Field';
 import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import type { NoteFormValues } from './Note.validation';
 import { validateNoteForm } from './Note.validation';
@@ -19,7 +18,6 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, extraFields } = item;
     const { name, note, itemUuid } = metadata;
-    const pasteLengthLimiter = usePasteLengthLimiter();
 
     const form = useFormik<NoteFormValues>({
         initialValues: { name, note, shareId },
@@ -58,7 +56,6 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
                             name="name"
                             placeholder={c('Placeholder').t`Untitled`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
-                            onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                         />
                         <Field
                             component={BaseTextAreaField}
@@ -66,7 +63,8 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
                             maxLength={MAX_ITEM_NOTE_LENGTH}
-                            onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
+                            minRows={5}
+                            rows={Number.MAX_SAFE_INTEGER}
                         />
                     </Form>
                 </FormikProvider>

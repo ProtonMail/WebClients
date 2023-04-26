@@ -25,7 +25,6 @@ import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditLoginItemFormValues, useLoginItemAliasModal, validateEditLoginForm } from './Login.validation';
@@ -42,7 +41,6 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     } = item;
 
     const dispatch = useDispatch();
-    const pasteLengthLimiter = usePasteLengthLimiter();
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -142,7 +140,6 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     label={c('Label').t`Title`}
                                     component={TitleField}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
-                                    onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                                 />
                             </FieldsetCluster>
 
@@ -242,7 +239,6 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     component={TextAreaField}
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
-                                    onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                                 />
                             </FieldsetCluster>
                         </Form>
