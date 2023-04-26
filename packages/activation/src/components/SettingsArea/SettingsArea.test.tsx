@@ -46,8 +46,10 @@ describe('SettingsArea', () => {
         easySwitchRender(<SettingsArea config={settingsAreaConfig} />);
 
         const googleInScreen = screen.getAllByText('Google');
+        const gmailInScreen = screen.getByTestId('ProviderCard:googleCardForward');
 
         screen.getByTestId('SettingsArea:forwardSection');
-        expect(googleInScreen).toHaveLength(2);
+        expect(googleInScreen).toHaveLength(1);
+        expect(gmailInScreen).toBeVisible();
     });
 });

@@ -1,0 +1,11 @@
+.account-login--item {
+	> .account-login--actions {
+		opacity: 0;
+	}
+
+	&:hover {
+		> .account-login--actions {
+			opacity: 1;
+		}
+	}
+}

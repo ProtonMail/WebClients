@@ -22,8 +22,8 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
-import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import MailOnboardingWrapper from '../components/onboarding/MailOnboardingWrapper';
+import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
