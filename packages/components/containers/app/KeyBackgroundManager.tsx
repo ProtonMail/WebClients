@@ -26,7 +26,7 @@ import {
     useGetUserKeys,
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
-import { useKTAbsenceVerifier, useKTVerifier } from '../keyTransparency';
+import { useKTVerifier, useKeyMigrationKTVerifier } from '../keyTransparency';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
@@ -49,7 +49,7 @@ const KeyBackgroundManager = ({
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
-    const { keyTransparencyAbsenceVerifier } = useKTAbsenceVerifier();
+    const { keyMigrationKTVerifier } = useKeyMigrationKTVerifier();
 
     useEffect(() => {
         const run = async () => {
@@ -123,7 +123,7 @@ const KeyBackgroundManager = ({
                 keyPassword,
                 addresses,
                 preAuthKTVerify: () => keyTransparencyVerify,
-                keyTransparencyAbsenceVerifier,
+                keyMigrationKTVerifier,
             });
 
             if (hasDoneMigration) {

@@ -21,13 +21,12 @@ import {
 } from '../interfaces';
 import { srpVerify } from '../srp';
 import { generateAddressKeyTokens, reformatAddressKey } from './addressKeys';
-import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { getCachedOrganizationKey } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { reformatOrganizationKey } from './organizationKeys';
-import { getSignedKeyList } from './signedKeyList';
+import { getOrCreateSignedKeyList } from './signedKeyList';
 import { USER_KEY_USERID } from './userKeys';
 
 export const getV2KeyToUpgrade = (Key: tsKey) => {
@@ -221,14 +220,11 @@ export const upgradeV2KeysV2 = async ({
                 },
                 [[], []]
             );
-            const activeKeys = getNormalizedActiveKeys(
-                address,
-                await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
-            );
+            const signedKeyList = await getOrCreateSignedKeyList(address, decryptedKeys, keyTransparencyVerify);
             return {
                 address,
                 addressKeys,
-                signedKeyList: await getSignedKeyList(activeKeys, address, keyTransparencyVerify),
+                signedKeyList: signedKeyList,
             };
         })
     );
@@ -236,7 +232,9 @@ export const upgradeV2KeysV2 = async ({
     const AddressKeys = reformattedAddressesKeys.map(({ addressKeys }) => addressKeys).flat();
     const SignedKeyLists = reformattedAddressesKeys.reduce<{ [id: string]: SignedKeyList }>(
         (acc, { address, signedKeyList }) => {
-            acc[address.ID] = signedKeyList;
+            if (signedKeyList) {
+                acc[address.ID] = signedKeyList;
+            }
             return acc;
         },
         {}

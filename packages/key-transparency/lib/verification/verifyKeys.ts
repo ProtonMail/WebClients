@@ -1,4 +1,6 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
     Api,
     ArmoredKeyWithFlags,
@@ -112,6 +114,30 @@ export const checkKeysInSKL = async (importedKeysWithFlags: KeyWithFlags[], sklD
     return verifyKeyList(keyListInfo, parsedSKL);
 };
 
+export const verifySKLSignature = async (
+    keys: KeyWithFlags[],
+    signedKeyListData: string,
+    signedKeyListSignature: string,
+    context: string
+): Promise<Date | null> => {
+    const verificationKeys = keys
+        .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+        .map(({ PublicKey }) => PublicKey);
+    const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
+        armoredSignature: signedKeyListSignature,
+        verificationKeys,
+        textData: signedKeyListData,
+    });
+    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        ktSentryReport('SKL signature verification failed', {
+            context: context,
+            errors: JSON.stringify(errors),
+        });
+        return null;
+    }
+    return signatureTimestamp;
+};
+
 /**
  * Verify that public keys associated to an email address are correctly stored in KT
  */
@@ -145,17 +171,9 @@ export const verifyPublicKeys = async (
         const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
 
         // Verify signature
-        const { verified, errors } = await CryptoProxy.verifyMessage({
-            armoredSignature: Signature,
-            verificationKeys: importedKeysWithFlags.map(({ PublicKey }) => PublicKey),
-            textData: Data,
-        });
+        const verified = await verifySKLSignature(importedKeysWithFlags, Data, Signature, 'verifyPublicKeys');
 
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            ktSentryReport('Signature verification failed (SKL during PK verification)', {
-                context: 'verifyPublicKeys',
-                errors: JSON.stringify(errors),
-            });
+        if (!verified) {
             return KT_STATUS.KT_FAILED;
         }
 

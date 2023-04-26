@@ -181,7 +181,7 @@ export const verifyLatestProofOfAbsence = async (api: Api, email: string) => {
 
     if (Proof.Type !== KTPROOF_TYPE.ABSENCE) {
         ktSentryReport('Proof type should be of abscence', {
-            context: 'verifyPoAExistence',
+            context: 'verifyLatestProofOfAbsence',
             proofType: Proof.Type,
         });
         return;
@@ -193,7 +193,7 @@ export const verifyLatestProofOfAbsence = async (api: Api, email: string) => {
         // Since this function is used inside the apps directly, we shouldn't let
         // it throw nor, for the time being of UI-less KT, trigger anything
         ktSentryReport('Proof of abscence verification failed', {
-            context: 'verifyPoAExistence',
+            context: 'verifyLatestProofOfAbsence',
         });
     }
 };
