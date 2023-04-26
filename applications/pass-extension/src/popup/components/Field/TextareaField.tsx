@@ -7,6 +7,7 @@ import { type InputFieldProps } from '@proton/components/components/v2/field/Inp
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
+import { usePasteLengthLimiter } from '../../hooks/usePasteLengthLimiter';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type BaseTextAreaFieldProps = FieldProps & InputFieldProps<typeof TextAreaTwo>;
@@ -14,6 +15,7 @@ export type BaseTextAreaFieldProps = FieldProps & InputFieldProps<typeof TextAre
 export const BaseTextAreaField: VFC<BaseTextAreaFieldProps> = ({ form, field, meta, ...props }) => {
     const { className, labelContainerClassName, ...rest } = props;
     const { error } = useFieldControl({ form, field, meta });
+    const pasteLengthLimiter = usePasteLengthLimiter();
 
     return (
         <TextAreaTwo
@@ -21,6 +23,7 @@ export const BaseTextAreaField: VFC<BaseTextAreaFieldProps> = ({ form, field, me
             unstyled
             className={clsx('border-none flex p-0 resize-none', className)}
             error={error}
+            onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength) : undefined}
             {...field}
             {...rest}
         />
@@ -41,6 +44,7 @@ export const TextAreaField: VFC<TextAreaFieldProps> = ({
     ...props
 }) => {
     const { error } = useFieldControl({ form, field, meta });
+    const pasteLengthLimiter = usePasteLengthLimiter();
 
     return (
         <FieldBox
@@ -63,6 +67,7 @@ export const TextAreaField: VFC<TextAreaFieldProps> = ({
                     error ? 'color-danger' : 'color-weak',
                     labelContainerClassName
                 )}
+                onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength) : undefined}
                 {...field}
                 {...props}
             />

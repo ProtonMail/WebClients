@@ -17,7 +17,6 @@ import { SelectField } from '../../../components/Field/SelectField';
 import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditAliasFormValues, validateEditAliasForm } from './Alias.validation';
 
@@ -28,7 +27,6 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
     const { metadata, ...uneditable } = item;
     const { name, note, itemUuid } = metadata;
 
-    const pasteLengthLimiter = usePasteLengthLimiter();
     const [ready, setReady] = useState(false);
 
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
@@ -90,7 +88,6 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 placeholder={c('Label').t`Untitled`}
                                 component={TitleField}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
-                                onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                             />
                         </FieldsetCluster>
 
@@ -127,7 +124,6 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 component={TextAreaField}
                                 icon="note"
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
-                                onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             />
                         </FieldsetCluster>
                     </Form>

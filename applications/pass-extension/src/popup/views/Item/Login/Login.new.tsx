@@ -24,7 +24,6 @@ import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
@@ -42,7 +41,6 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
     const defaultName = isValidURL ? url! : '';
-    const pasteLengthLimiter = usePasteLengthLimiter();
 
     const initialValues: LoginItemFormValues = {
         name: defaultName,
@@ -152,7 +150,6 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     autoFocus={canFocus}
                                     key={`login-name-${canFocus}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
-                                    onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                                 />
                             </FieldsetCluster>
 
@@ -251,7 +248,6 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={TextAreaField}
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
-                                    onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                                 />
                             </FieldsetCluster>
                         </Form>
