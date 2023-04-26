@@ -79,7 +79,7 @@ html,
 		inset: 0;
 		z-index: $layer-mobile-navigation;
 		inline-size: 100%;
-		max-inline-size: 100%;
+		max-inline-size: rem(272);
 		max-block-size: none;
 		padding-block-start: 1em;
 		transform-origin: 0 50%;
@@ -102,11 +102,23 @@ html,
 			transform: translateX(0);
 		}
 	}
+
+	&-backdrop {
+		display: none;
+
+		@include media('<=small') {
+			display: block;
+			background-color: var(--backdrop-norm);
+			position: fixed;
+			inset: 0;
+			z-index: $layer-mobile-navigation - 1;
+		}
+	}
 }
 
 .logo-container {
 	padding-block: 0;
-	padding-inline: 1em;
+	padding-inline: var(--space-4);
 
 	& > a {
 		display: flex;

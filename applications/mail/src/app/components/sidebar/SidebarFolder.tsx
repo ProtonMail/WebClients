@@ -68,11 +68,11 @@ const SidebarFolder = ({
             onFocus={onFocus}
             className={isOptionDropdownOpened ? 'navigation-item-dropdown-opened' : undefined}
             content={
-                <div className="flex flex-nowrap flex-align-items-center" data-level={level}>
+                <div className="flex flex-nowrap flex-align-items-center gap-2" data-level={level}>
                     {folder.subfolders?.length ? (
                         <button
                             type="button"
-                            className="mr-2 flex-item-noshrink navigation-link--expand"
+                            className="flex-item-noshrink navigation-link--expand relative interactive-pseudo-inset interactive--no-background"
                             aria-expanded={!!folder.Expanded}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -81,7 +81,7 @@ const SidebarFolder = ({
                             }}
                         >
                             <Icon
-                                name="chevron-down"
+                                name="chevron-down-filled"
                                 className={clsx([
                                     'navigation-icon navigation-icon--expand',
                                     !folder.Expanded && 'rotateZ-270',
@@ -92,11 +92,11 @@ const SidebarFolder = ({
                         noChevron
                     )}
                     <FolderIcon
-                        className="mr-2 navigation-icon flex-item-noshrink"
+                        className="navigation-icon flex-item-noshrink"
                         alt={c('Info').t`Folder`}
                         folder={folder}
                     />
-                    <div className="text-ellipsis px0-5">{formatFolderName(level, folder.Name)}</div>
+                    <div className="text-ellipsis">{formatFolderName(level, folder.Name)}</div>
                 </div>
             }
             itemOptions={

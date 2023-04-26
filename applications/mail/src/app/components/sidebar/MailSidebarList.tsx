@@ -272,7 +272,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         showScheduled={showScheduled}
                         onToggleMoreItems={toggleDisplayMoreItems}
                     />
-                    <hr aria-hidden="true" className="my-1" />
                     <SimpleSidebarListItemHeader
                         toggle={displayFolders}
                         onToggle={(display: boolean) => toggleFolders(display)}
@@ -281,6 +280,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         id="toggle-folders"
                         onFocus={setFocusedItem}
                         right={<MailSidebarListActions type="folder" items={folders || []} />}
+                        spaceAbove
                     />
                     {displayFolders && (
                         <SidebarFolders
@@ -293,7 +293,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                             foldersTreeview={foldersTreeview}
                         />
                     )}
-                    <hr aria-hidden="true" className="my-1" />
                     <SimpleSidebarListItemHeader
                         toggle={displayLabels}
                         onToggle={(display: boolean) => toggleLabels(display)}
@@ -302,6 +301,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         id="toggle-labels"
                         onFocus={setFocusedItem}
                         right={<MailSidebarListActions type="label" items={labels || []} />}
+                        spaceAbove
                     />
                     {displayLabels && (
                         <SidebarLabels

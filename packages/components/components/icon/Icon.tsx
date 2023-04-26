@@ -28,6 +28,7 @@ export type IconSize =
 
 export type IconName =
     | 'alias'
+    | 'app-switch'
     | 'archive-box'
     | 'arrow-down'
     | 'arrow-down-arrow-up'
