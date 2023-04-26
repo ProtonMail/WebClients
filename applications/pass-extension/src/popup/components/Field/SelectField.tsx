@@ -12,10 +12,17 @@ export type SelectFieldProps = FieldProps &
     InputFieldProps<typeof SelectTwo> &
     Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'>;
 
-export const SelectField: FC<SelectFieldProps> = (props) => {
-    const { children, field, form, icon, loading, onValue, ...rest } = props;
-
-    const { error } = useFieldControl(props);
+export const SelectField: FC<SelectFieldProps> = ({
+    field,
+    form,
+    meta,
+    children,
+    icon,
+    loading,
+    onValue,
+    ...props
+}) => {
+    const { error } = useFieldControl({ field, form, meta });
 
     return (
         <FieldBox icon={icon}>
@@ -29,7 +36,7 @@ export const SelectField: FC<SelectFieldProps> = (props) => {
                 renderSelected={loading ? () => <div className="pass-skeleton pass-skeleton--select" /> : undefined}
                 rootClassName="static"
                 {...field}
-                {...rest}
+                {...props}
                 onChange={undefined}
                 onValue={(value: unknown) => {
                     onValue?.(value);
