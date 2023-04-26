@@ -49,10 +49,14 @@ export const Import: VFC = () => {
     return (
         <>
             <Card rounded className="mb-4 p-3 relative">
-                <strong className="color-norm block">{c('Label').t`Import`}</strong>
-                <em className="block text-sm color-weak mt-1">
+                <strong className="color-norm block mb-1">{c('Label').t`Import`}</strong>
+                <em className="block text-sm color-weak mb-2">
                     {c('Info')
                         .t`In order to migrate your data to ${PASS_APP_NAME} from another password manager, export your passwords from your current provider and import them using the form below. Once all your items have been imported, delete the previously exported file.`}
+                </em>
+                <em className="block text-sm color-weak mb-2">
+                    {c('Info')
+                        .t`${PASS_APP_NAME} only supports importing logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.`}
                 </em>
 
                 <hr className="mt-2 mb-4 border-weak" />
