@@ -8,7 +8,7 @@ import { isEmptyString } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
 
 import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
-import { ClickToCopyValue } from './ClickToCopyValue';
+import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 
 type Props = {
@@ -32,7 +32,7 @@ export const PasswordValueControl: VFC<Props> = ({ password }) => {
     }, [masked, password]);
 
     return (
-        <ClickToCopyValue value={password}>
+        <ClickToCopyValueControl value={password}>
             <ValueControl
                 interactive={!isEmpty}
                 actions={
@@ -57,6 +57,6 @@ export const PasswordValueControl: VFC<Props> = ({ password }) => {
             >
                 {passwordDisplay}
             </ValueControl>
-        </ClickToCopyValue>
+        </ClickToCopyValueControl>
     );
 };

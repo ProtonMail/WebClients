@@ -17,16 +17,13 @@ import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
-import { FieldsetCluster } from '../../../components/Fields';
-import {
-    Field,
-    PasswordField,
-    TextAreaField,
-    TextField,
-    TitleField,
-    UrlGroupField,
-    createNewUrl,
-} from '../../../components/Fields';
+import { Field } from '../../../components/Field/Field';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
+import { PasswordField } from '../../../components/Field/PasswordField';
+import { TextField } from '../../../components/Field/TextField';
+import { TextAreaField } from '../../../components/Field/TextareaField';
+import { TitleField } from '../../../components/Field/TitleField';
+import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { AliasModal } from '../Alias/Alias.modal';
