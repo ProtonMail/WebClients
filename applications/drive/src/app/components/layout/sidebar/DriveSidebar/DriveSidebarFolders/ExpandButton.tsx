@@ -33,7 +33,7 @@ export default function ExpandButton({ className, expanded, onClick, style }: Pr
             style={style}
         >
             <Icon
-                name={expanded ? 'chevron-down' : 'chevron-right'}
+                name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'}
                 alt={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
             />
         </Button>

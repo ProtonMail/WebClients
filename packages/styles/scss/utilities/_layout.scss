@@ -198,3 +198,19 @@
 		opacity: 1;
 	}
 }
+
+.opacity-on-focus {
+	opacity: 0;
+	pointer-events: none;
+
+	&-no-width {
+		inline-size: 0;
+	}
+
+	&:focus,
+	&:focus-visible {
+		opacity: 1;
+		inline-size: auto;
+		pointer-events: all;
+	}
+}
