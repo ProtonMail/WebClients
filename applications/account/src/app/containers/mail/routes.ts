@@ -170,7 +170,7 @@ export const getMailAppRoutes = ({
                         id: 'addresses',
                     },
                     {
-                        text: c('Title').t`Contact encryption keys`,
+                        text: c('Title').t`Account keys`,
                         id: 'user',
                     },
                 ],
