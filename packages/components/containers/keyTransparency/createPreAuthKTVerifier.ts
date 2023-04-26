@@ -1,10 +1,5 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import {
-    PartialKTBlobContent,
-    commitOwnKeystoLS,
-    ktSentryReport,
-    verifyLatestProofOfAbsence,
-} from '@proton/key-transparency';
+import { PartialKTBlobContent, commitOwnKeystoLS, ktSentryReport } from '@proton/key-transparency';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Api, DecryptedKey, PreAuthKTVerifier, PreAuthKTVerify } from '@proton/shared/lib/interfaces';
@@ -86,16 +81,8 @@ const createPreAuthKTVerifier = (APP_NAME: APP_NAMES, feature: KT_FF, api: Api):
         }
     };
 
-    const preAuthKTAbsenceVerify = async (email: string) => {
-        if (!(await isKTActive(APP_NAME, feature))) {
-            return;
-        }
-        return verifyLatestProofOfAbsence(api, email);
-    };
-
     return {
         preAuthKTVerify,
-        preAuthKTAbsenceVerify,
         preAuthKTCommit,
     };
 };
