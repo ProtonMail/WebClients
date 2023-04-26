@@ -3,6 +3,8 @@ import uniqid from 'uniqid';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -20,12 +22,12 @@ export const readChromeData = async (data: string): Promise<ImportPayload> => {
             vaults: [
                 {
                     type: 'new',
-                    vaultName: c('Title').t`Chrome import`,
+                    vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
                     id: uniqid(),
                     items: items.map((item): ItemImportIntent<'login'> => {
                         const urlResult = isValidURL(item.url ?? '');
                         const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-                        const name = item.name || url?.hostname || 'Unnamed Chrome item';
+                        const name = item.name || url?.hostname || 'Unnamed item';
 
                         return {
                             type: 'login',
