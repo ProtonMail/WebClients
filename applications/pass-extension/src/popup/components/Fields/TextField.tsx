@@ -1,10 +1,52 @@
-import type { VFC } from 'react';
+import { VFC } from 'react';
 
-import { TextInputControl, Props as TextInputControlProps } from '../Controls/TextInputControl';
-import { AbstractField, type AbstractFieldProps } from './AbstractField';
+import { type FieldProps } from 'formik';
 
-export const TextField: VFC<AbstractFieldProps<TextInputControlProps>> = (props) => (
-    <AbstractField<TextInputControlProps> {...props}>
-        {(inputControlProps) => <TextInputControl {...inputControlProps} />}
-    </AbstractField>
-);
+import { Input } from '@proton/atoms/Input';
+import { InputFieldTwo } from '@proton/components';
+import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import clsx from '@proton/utils/clsx';
+
+import { FieldBox, type FieldBoxProps } from './shared/FieldBox';
+import { useFieldControl } from './shared/useFieldControl';
+
+export type BaseTextFieldProps = FieldProps & InputFieldProps<typeof Input>;
+
+export const BaseTextField: VFC<BaseTextFieldProps> = (props) => {
+    const { field, inputClassName, labelContainerClassName, ...rest } = props;
+
+    const { error } = useFieldControl(props);
+
+    return (
+        <InputFieldTwo
+            unstyled
+            assistContainerClassName="hidden-empty"
+            error={error}
+            inputClassName={clsx('color-norm p-0 rounded-none', inputClassName)}
+            labelContainerClassName={clsx(
+                'text-normal text-sm',
+                error ? 'color-danger' : 'color-weak',
+                labelContainerClassName
+            )}
+            {...field}
+            {...rest}
+        />
+    );
+};
+
+export type TextFieldProps = FieldBoxProps & BaseTextFieldProps;
+
+export const TextField: VFC<TextFieldProps> = (props) => {
+    const { actions, actionsContainerClassName, className, icon, ...rest } = props;
+
+    return (
+        <FieldBox
+            actions={actions}
+            actionsContainerClassName={actionsContainerClassName}
+            className={className}
+            icon={icon}
+        >
+            <BaseTextField {...rest} />
+        </FieldBox>
+    );
+};

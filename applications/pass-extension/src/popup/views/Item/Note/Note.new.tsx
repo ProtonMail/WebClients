@@ -7,8 +7,7 @@ import uniqid from 'uniqid';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemNewProps } from '../../../../shared/items';
-import { Field } from '../../../components/Fields/Field';
-import { NoteTextAreaField, NoteTitleField } from '../../../components/Fields/Note/index';
+import { BaseTextAreaField, BaseTitleField, Field } from '../../../components/Fields';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
@@ -55,9 +54,12 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                     <Form id={FORM_ID}>
                         <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
                         <Field
+                            dense
                             name="name"
-                            component={NoteTitleField}
+                            className="mb-4"
+                            component={BaseTitleField}
                             label={c('Label').t`Name`}
+                            labelContainerClassName="sr-only"
                             placeholder={c('Placeholder').t`Untitled`}
                             autoFocus={canFocus}
                             key={`note-name-${canFocus}`}
@@ -65,7 +67,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                         />
                         <Field
-                            component={NoteTextAreaField}
+                            component={BaseTextAreaField}
                             label={c('Label').t`Note`}
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}

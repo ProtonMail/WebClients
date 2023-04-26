@@ -39,7 +39,7 @@ export const NoteView: VFC<ItemTypeViewProps<'note'>> = ({ vault, revision, ...i
             }
             {...itemViewProps}
         >
-            <pre className="pass-note-view text-break">{note}</pre>
+            <pre className="text-break">{note}</pre>
         </ItemViewPanel>
     );
 };

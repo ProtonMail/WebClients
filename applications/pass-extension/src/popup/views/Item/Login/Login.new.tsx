@@ -14,14 +14,17 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
-import { FieldsetCluster } from '../../../components/Controls/FieldsetCluster';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
-import { Field } from '../../../components/Fields/Field';
-import { PasswordField } from '../../../components/Fields/PasswordField';
-import { TextField } from '../../../components/Fields/TextField';
-import { TextAreaField } from '../../../components/Fields/TextareaField';
-import { TitleField } from '../../../components/Fields/TitleField';
-import { UrlGroupFieldCluster, createNewUrl } from '../../../components/Fields/UrlGroupFieldCluster';
+import { FieldsetCluster } from '../../../components/Fields';
+import {
+    Field,
+    PasswordField,
+    TextAreaField,
+    TextField,
+    TitleField,
+    UrlGroupField,
+    createNewUrl,
+} from '../../../components/Fields';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
@@ -239,7 +242,9 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                 />
                             </FieldsetCluster>
 
-                            <UrlGroupFieldCluster form={form} />
+                            <FieldsetCluster>
+                                <UrlGroupField form={form} />
+                            </FieldsetCluster>
 
                             <FieldsetCluster>
                                 <Field
@@ -248,7 +253,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     placeholder={c('Placeholder').t`Enter a note...`}
                                     component={TextAreaField}
                                     icon="note"
-                                    minRows={1}
+                                    minRows={3}
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                     onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                                 />

@@ -8,10 +8,8 @@ import { Icon, Option } from '@proton/components';
 import type { AliasMailbox } from '@proton/pass/types';
 
 import type { UseAliasOptionsResult } from '../../../../shared/hooks/useAliasOptions';
-import { FieldsetCluster } from '../../../components/Controls/FieldsetCluster';
-import { Field } from '../../../components/Fields/Field';
-import { SelectField } from '../../../components/Fields/SelectField';
-import { TextField } from '../../../components/Fields/TextField';
+import { FieldsetCluster } from '../../../components/Fields';
+import { Field, SelectField, TextField } from '../../../components/Fields';
 import { AliasFormValues } from './Alias.validation';
 
 type AliasFormProps<V extends AliasFormValues> = {

@@ -9,12 +9,12 @@ import { isEmptyString } from '@proton/pass/utils/string';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
-import { ClickToCopyValue } from '../../../components/Controls/ClickToCopyValue';
-import { FieldsetCluster } from '../../../components/Controls/FieldsetCluster';
-import { OTPValueControl } from '../../../components/Controls/OTPValueControl';
-import { PasswordValueControl } from '../../../components/Controls/PasswordValueControl';
-import { ValueControl } from '../../../components/Controls/ValueControl';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
+import { FieldsetCluster } from '../../../components/Fields';
+import { ClickToCopyValue } from '../../../components/Fields/controls/ClickToCopyValue';
+import { OTPValueControl } from '../../../components/Fields/controls/OTPValueControl';
+import { PasswordValueControl } from '../../../components/Fields/controls/PasswordValueControl';
+import { ValueControl } from '../../../components/Fields/controls/ValueControl';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ...itemViewProps }) => {
@@ -61,7 +61,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
             {note && (
                 <FieldsetCluster mode="read" as="div">
                     <ValueControl as="pre" icon="note" label={c('Label').t`Note`}>
-                        {note}
+                        <pre className="text-break">{note}</pre>
                     </ValueControl>
                 </FieldsetCluster>
             )}

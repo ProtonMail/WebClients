@@ -7,7 +7,7 @@ import { Icon } from '@proton/components/components';
 import { isEmptyString } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
 
-import { getCharsGroupedByColor } from '../../../shared/hooks/usePasswordGenerator';
+import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
 import { ClickToCopyValue } from './ClickToCopyValue';
 import { ValueControl } from './ValueControl';
 
