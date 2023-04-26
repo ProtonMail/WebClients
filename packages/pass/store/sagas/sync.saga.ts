@@ -5,17 +5,18 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { syncFailure, syncIntent, syncSuccess } from '../actions';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '../reducers';
-import { State } from '../types';
-import { SyncType, SynchronizationResult, synchronize } from './workers/sync';
+import type { State, WorkerRootSagaOptions } from '../types';
+import { SyncType, type SynchronizationResult, synchronize } from './workers/sync';
 
-function* syncWorker() {
+function* syncWorker(options: WorkerRootSagaOptions) {
     const state = (yield select()) as State;
     try {
         yield wait(1500);
         const sync: SynchronizationResult = yield call(
             synchronize,
             asIfNotOptimistic(state, reducerMap),
-            SyncType.FULL
+            SyncType.FULL,
+            options
         );
         yield put(syncSuccess(sync));
     } catch (e: unknown) {
@@ -23,6 +24,6 @@ function* syncWorker() {
     }
 }
 
-export default function* watcher(): Generator {
-    yield takeLeading(syncIntent.match, syncWorker);
+export default function* watcher(options: WorkerRootSagaOptions): Generator {
+    yield takeLeading(syncIntent.match, syncWorker, options);
 }
