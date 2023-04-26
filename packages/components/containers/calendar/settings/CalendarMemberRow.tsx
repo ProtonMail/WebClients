@@ -132,6 +132,7 @@ const CalendarMemberRow = ({
                     <Button
                         icon
                         shape="ghost"
+                        color="norm"
                         loading={isLoadingDelete}
                         onClick={handleDelete}
                         className="mlauto no-mobile no-tablet"
@@ -139,15 +140,19 @@ const CalendarMemberRow = ({
                         <Icon name="trash" alt={deleteLabel} />
                     </Button>
                 </Tooltip>
-                <Button
-                    shape="outline"
-                    size="small"
-                    loading={isLoadingDelete}
-                    onClick={handleDelete}
-                    className="no-desktop"
-                >
-                    {deleteLabel}
-                </Button>
+                <div className="no-desktop">
+                    <Button
+                        shape="outline"
+                        color="norm"
+                        size="small"
+                        loading={isLoadingDelete}
+                        onClick={handleDelete}
+                        className="inline-flex flex-align-items-center flex-nowrap"
+                    >
+                        <Icon name="trash" alt="" className="mr-1 flex-item-noshrink" />
+                        <span>{deleteLabel}</span>
+                    </Button>
+                </div>
             </TableCell>
         </TableRow>
     );
