@@ -1,4 +1,4 @@
-import { type VFC, useState } from 'react';
+import { type VFC, useCallback, useState } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components';
@@ -20,6 +20,8 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
     const imageSize = Math.round(size * 0.6);
 
+    const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
+
     const renderIndicators = () => {
         if (failed) {
             return (
@@ -37,44 +39,33 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
         }
     };
 
-    const renderIcon = () => {
-        if (domainURL && imageStatus !== ImageStatus.ERROR) {
-            return (
-                <ProxiedDomainImage
-                    className={clsx(
-                        'w-custom h-custom absolute-center',
-                        optimistic && 'opacity-30',
-                        failed && 'hidden'
-                    )}
-                    style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
-                    onStatusChange={setImageStatus}
-                    status={imageStatus}
-                    url={domainURL}
-                />
-            );
-        }
-
-        return (
-            <Icon
-                className={clsx('absolute-center', optimistic && 'opacity-30', failed && 'hidden')}
-                color="var(--interaction-norm)"
-                name={presentItemIcon(data)}
-                size={20}
-            />
-        );
-    };
-
     return (
         <div
             className={clsx(
                 'pass-item-icon w-custom h-custom rounded-xl overflow-hidden relative',
                 className,
-                domainURL && imageStatus !== ImageStatus.ERROR && 'pass-item-icon--has-image'
+                domainURL && imageStatus === ImageStatus.READY && 'pass-item-icon--has-image'
             )}
             style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
         >
             <span className="sr-only">{data.type}</span>
-            {renderIcon()}
+            <ProxiedDomainImage
+                className={clsx('w-custom h-custom absolute-center', optimistic && 'opacity-30', failed && 'hidden')}
+                style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
+                onStatusChange={handleStatusChange}
+                status={imageStatus}
+                url={domainURL ?? ''}
+            />
+
+            {imageStatus !== ImageStatus.READY && (
+                <Icon
+                    className={clsx('absolute-center', optimistic && 'opacity-30', failed && 'hidden')}
+                    color="var(--interaction-norm)"
+                    name={presentItemIcon(data)}
+                    size={20}
+                />
+            )}
+
             {renderIndicators()}
         </div>
     );

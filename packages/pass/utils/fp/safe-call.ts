@@ -1,7 +1,9 @@
+import type { Maybe } from '@proton/pass/types';
+
 export const safeCall =
     <T extends (...args: any[]) => any>(fn?: T) =>
-    (...args: Parameters<T>) => {
+    (...args: Parameters<T>): Maybe<ReturnType<T>> => {
         try {
-            fn?.(...args);
+            return fn?.(...args);
         } catch (_) {}
     };
