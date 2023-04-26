@@ -1,7 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 
 import { Address } from './Address';
-import { DecryptedKey } from './Key';
+import { AddressKey, DecryptedKey } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 
 export enum IGNORE_KT {
@@ -37,7 +37,6 @@ export type KeyTransparencyCommit = (userKeys: DecryptedKey[]) => Promise<void>;
 
 export interface PreAuthKTVerifier {
     preAuthKTVerify: PreAuthKTVerify;
-    preAuthKTAbsenceVerify: (email: string) => Promise<void>;
     preAuthKTCommit: (userID: string) => Promise<void>;
 }
 
@@ -46,4 +45,10 @@ export type VerifyOutboundPublicKeys = (
     email: string,
     SignedKeyList: FetchedSignedKeyList | null,
     IgnoreKT?: IGNORE_KT
+) => Promise<void>;
+
+export type KeyMigrationKTVerifier = (
+    email: string,
+    keyList: AddressKey[],
+    SignedKeyList: FetchedSignedKeyList | null
 ) => Promise<void>;
