@@ -5,11 +5,8 @@ import { c } from 'ttag';
 
 import { VaultColor as VaultColorEnum, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
 
-import { FieldsetCluster } from '../../components/Controls/FieldsetCluster';
-import { RadioButton } from '../../components/Controls/RadioButtonGroup';
-import { Field } from '../../components/Fields/Field';
-import { RadioButtonGroupField } from '../../components/Fields/RadioButtonGroupField';
-import { TitleField } from '../../components/Fields/TitleField';
+import { FieldsetCluster } from '../../components/Fields';
+import { Field, RadioButton, RadioButtonGroupField, TitleField } from '../../components/Fields';
 import { VaultIcon } from '../../components/Vault/VaultIcon';
 import { VAULT_COLORS, VAULT_ICONS } from '../../components/Vault/constants';
 

@@ -9,7 +9,7 @@ import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
-import { type UrlGroupValues, validateUrl, validateUrls } from '../../../components/Fields/UrlGroupFieldCluster';
+import { type UrlGroupValues, validateUrl, validateUrls } from '../../../components/Fields/UrlGroupField';
 import { type AliasFormValues, validateAliasForm } from '../Alias/Alias.validation';
 import { validateItemErrors } from '../Item/Item.validation';
 

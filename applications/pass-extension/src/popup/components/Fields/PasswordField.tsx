@@ -2,12 +2,10 @@ import { type VFC, useCallback, useState } from 'react';
 
 import { pipe } from '@proton/pass/utils/fp';
 
-import type { Props as TextInputControlProps } from '../Controls/TextInputControl';
 import { PasswordGeneratorButton } from '../PasswordGenerator/PasswordGeneratorButton';
-import { type AbstractFieldProps } from './AbstractField';
-import { TextField } from './TextField';
+import { TextField, TextFieldProps } from './TextField';
 
-export const PasswordField: VFC<AbstractFieldProps<TextInputControlProps>> = ({ form, field, ...rest }) => {
+export const PasswordField: VFC<TextFieldProps> = ({ form, field, ...rest }) => {
     const [masked, setMasked] = useState<boolean>(true);
 
     const handlePasswordGeneratorDone = useCallback(

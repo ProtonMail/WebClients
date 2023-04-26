@@ -6,7 +6,7 @@ import { Donut } from '@proton/atoms/Donut';
 import { ThemeColor } from '@proton/colors/types';
 import clsx from '@proton/utils/clsx';
 
-import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../hooks/usePeriodicOtpCode';
+import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
 import { ClickToCopyValue } from './ClickToCopyValue';
 import { ValueControl } from './ValueControl';
 
