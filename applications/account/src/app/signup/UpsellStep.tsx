@@ -7,6 +7,7 @@ import { CurrencySelector, Price, useConfig, useLoading } from '@proton/componen
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getFreeDrivePlan,
+    getFreePassPlan,
     getFreePlan,
     getFreeVPNPlan,
     getShortPlan,
@@ -33,6 +34,7 @@ interface Props {
     onBack?: () => void;
     vpnServers: VPNServersCountData;
     upsellPlanName: PLANS;
+    isPassPlusEnabled: boolean;
 }
 
 const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
@@ -70,6 +72,7 @@ const UpsellStep = ({
     onPlan,
     upsellPlanName,
     onBack,
+    isPassPlusEnabled,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const plansMap = toMap(plans, 'Name');
@@ -83,10 +86,20 @@ const UpsellStep = ({
             return getFreeDrivePlan();
         }
 
+        if (isPassPlusEnabled && upsellPlanName === PLANS.PASS_PLUS) {
+            return getFreePassPlan();
+        }
+
         return getFreePlan();
     })();
 
-    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnServers, { boldStorageSize: true });
+    const upsellShortPlan = getShortPlan(
+        upsellPlanName,
+        plansMap,
+        vpnServers,
+        { boldStorageSize: true },
+        isPassPlusEnabled
+    );
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
@@ -112,7 +125,7 @@ const UpsellStep = ({
                 <Main center={false} className="on-tablet-mb2 sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
                     <Content>
-                        <Text className="mb-2 md:mb-0">{shortFreePlan.description}</Text>
+                        <Text className="mb-2 md:mb-0 text-lg">{shortFreePlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={shortFreePlan}
@@ -155,7 +168,7 @@ const UpsellStep = ({
                         }
                     />
                     <Content>
-                        <Text className="mb-2 md:mb-0">{upsellShortPlan.description}</Text>
+                        <Text className="mb-2 md:mb-0 text-lg">{upsellShortPlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={upsellShortPlan}

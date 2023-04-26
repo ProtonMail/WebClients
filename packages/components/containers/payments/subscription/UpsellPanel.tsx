@@ -21,6 +21,7 @@ import {
     hasDrive,
     hasMail,
     hasMailPro,
+    hasPassPlus,
     hasVPN,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
@@ -30,7 +31,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { Icon, Price, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
-import { getDrivePlan } from '../features/plan';
+import { getDrivePlan, getPassPlan } from '../features/plan';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -51,8 +52,8 @@ interface UpsellBoxProps {
 
 const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxProps) => {
     return (
-        <div className="border border-primary rounded px2 py1-5 pt0-5 upsell-box">
-            <h3>
+        <div className="border border-primary rounded p-6 pt-10 upsell-box flex-align-self-start">
+            <h3 className="mb-2">
                 <strong>{title}</strong>
             </h3>
             {children}
@@ -89,6 +90,7 @@ interface Props {
     plans: Plan[];
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    isPassPlusEnabled: boolean;
 }
 
 const getHighSpeedVPN = (connections: number) => {
@@ -111,7 +113,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app, isPassPlusEnabled }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -172,9 +174,9 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 items={items}
                 actions={
                     <>
-                        <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
-                            'new_plans: Action'
-                        ).t`Upgrade now`}</Button>
+                        <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                            {c('new_plans: Action').t`Upgrade now`}
+                        </Button>
                         <Button
                             onClick={handleExplorePlans}
                             size="large"
@@ -182,7 +184,9 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                             shape="ghost"
                             className="mt-2"
                             fullWidth
-                        >{c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`}</Button>
+                        >
+                            {c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`}
+                        </Button>
                     </>
                 }
             >
@@ -235,10 +239,50 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
         );
     }
 
+    const passPlan = plans.find(({ Name }) => Name === PLANS.PASS_PLUS);
+    // Pass upsell
+    if (isPassPlusEnabled && user.isFree && app === APPS.PROTONPASS && passPlan) {
+        const plan = passPlan;
+        const { features, description } = getPassPlan(plan);
+
+        const price = (
+            <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
+                {(plan.Pricing[cycle] || 0) / cycle}
+            </Price>
+        );
+        const handleUpgrade = () =>
+            openSubscriptionModal({
+                cycle,
+                plan: PLANS.PASS_PLUS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+            });
+
+        return (
+            <UpsellBox
+                title={getUpgradeText(plan.Title)}
+                description={description}
+                items={features}
+                actions={
+                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                        {c('new_plans: Action').jt`From ${price}`}
+                    </Button>
+                }
+            />
+        );
+    }
+
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Bundle upsell
-    if ((user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) && bundlePlan) {
+    if (
+        (user.isFree ||
+            hasMail(subscription) ||
+            hasDrive(subscription) ||
+            hasPassPlus(subscription) ||
+            hasVPN(subscription)) &&
+        bundlePlan
+    ) {
         const vpnPlan = plans.find(({ Name }) => Name === PLANS.VPN);
         const vpnPlanName = vpnPlan?.Title || '';
         const plan = bundlePlan;
