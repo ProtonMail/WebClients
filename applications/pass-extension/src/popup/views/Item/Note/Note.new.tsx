@@ -12,7 +12,6 @@ import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import type { NoteFormValues } from './Note.validation';
 import { validateNoteForm } from './Note.validation';
@@ -21,7 +20,6 @@ const FORM_ID = 'new-note';
 
 export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
     const initialValues: NoteFormValues = { name: '', note: '', shareId };
-    const pasteLengthLimiter = usePasteLengthLimiter();
 
     const form = useFormik<NoteFormValues>({
         initialValues,
@@ -66,7 +64,6 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             autoFocus={canFocus}
                             key={`note-name-${canFocus}`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
-                            onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                         />
                         <Field
                             component={BaseTextAreaField}
@@ -74,7 +71,6 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
                             maxLength={MAX_ITEM_NOTE_LENGTH}
-                            onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             minRows={5}
                             rows={Number.MAX_SAFE_INTEGER}
                         />

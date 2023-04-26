@@ -17,7 +17,6 @@ import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { AliasForm } from './Alias.form';
@@ -27,7 +26,6 @@ const FORM_ID = 'new-alias';
 
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
     const { realm, subdomain } = usePopupContext();
-    const pasteLengthLimiter = usePasteLengthLimiter();
     const [ready, setReady] = useState(false);
 
     const isValidURL = realm !== undefined;
@@ -120,7 +118,6 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 autoFocus={canFocus}
                                 key={`alias-name-${canFocus}`}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
-                                onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                             />
                         </FieldsetCluster>
 
@@ -148,7 +145,6 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 component={TextAreaField}
                                 icon="note"
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
-                                onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             />
                         </FieldsetCluster>
                     </Form>
