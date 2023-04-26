@@ -47,7 +47,7 @@ interface LabelsProps {
 
 const SidebarLabels = ({ currentLabelID, counterMap, labels, updateFocusItem }: LabelsProps) => {
     return labels.length === 0 ? (
-        <div className="py0-75 ml-8 text-sm color-weak">{c('Description').t`No labels`}</div>
+        <div className="py-2 ml-7 text-sm color-weak">{c('Description').t`No labels`}</div>
     ) : (
         <>
             {labels.map((label) => (

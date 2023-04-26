@@ -157,7 +157,7 @@ const MiniCalendar = ({
     return (
         <div className="minicalendar" onMouseDown={handleMouseDown} aria-label={monthLabel}>
             <h2 className="sr-only">{c('Title').t`Minicalendar`}</h2>
-            <div className="flex flex-align-items-center flex-nowrap p1">
+            <div className="flex flex-align-items-center flex-nowrap p-3 pt-1">
                 <span className="text-bold flex-item-fluid text-ellipsis">{monthLabel}</span>
 
                 {hasToday ? (
@@ -216,7 +216,7 @@ const MiniCalendar = ({
                     !fixedSize && cellWidth && cellWidth > 0 ? { '--computed-cell-width': `${cellWidth}px` } : undefined
                 }
                 className={classnames([
-                    'minicalendar-grid pl0-75 pr0-75 pb1',
+                    'minicalendar-grid px-3 pb-7',
                     displayWeekNumbers && 'with-weeknumbers',
                     fixedSize && 'is-fixed-size',
                 ])}
