@@ -104,6 +104,8 @@ export enum FeatureCode {
     OrgTwoFactor = 'OrgTwoFactor',
     UnreadFavicon = 'UnreadFavicon',
     PassSignup = 'PassSignup',
+    OnboardingChecklist = 'OnboardingChecklist',
+    NewOnboardingChecklist = 'NewOnboardingChecklist',
 }
 
 export interface FeaturesContextValue {

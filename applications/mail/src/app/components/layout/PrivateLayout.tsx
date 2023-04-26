@@ -65,14 +65,7 @@ const PrivateLayout = (
         />
     );
 
-    const sidebar = (
-        <MailSidebar
-            labelID={labelID}
-            expanded={expanded}
-            onToggleExpand={handleToggleExpand}
-            onSendMessage={() => setExpand(false)}
-        />
-    );
+    const sidebar = <MailSidebar labelID={labelID} expanded={expanded} onToggleExpand={handleToggleExpand} />;
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
 

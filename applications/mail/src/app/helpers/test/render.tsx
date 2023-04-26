@@ -1,5 +1,5 @@
-import { ReactElement, ReactNode, useRef } from 'react';
 import * as React from 'react';
+import { ReactElement, ReactNode, useRef } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Route, Router } from 'react-router';
 
@@ -32,6 +32,7 @@ import { MAIN_ROUTE_PATH } from '../../constants';
 import { ComposeProvider } from '../../containers/ComposeProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
+import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
 import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
@@ -95,23 +96,25 @@ const TestProvider = ({ children }: Props) => {
                                                     />
                                                     <ReduxProviderWrapper>
                                                         <MailContentRefProvider mailContentRef={contentRef}>
-                                                            <MailboxContainerContextProvider
-                                                                isResizing={false}
-                                                                containerRef={contentRef}
-                                                                elementID={undefined}
-                                                            >
-                                                                <ComposeProvider onCompose={onCompose}>
-                                                                    <Router history={history}>
-                                                                        <Route path={MAIN_ROUTE_PATH}>
-                                                                            <EncryptedSearchProvider>
-                                                                                <LabelActionsContextProvider>
-                                                                                    {children}
-                                                                                </LabelActionsContextProvider>
-                                                                            </EncryptedSearchProvider>
-                                                                        </Route>
-                                                                    </Router>
-                                                                </ComposeProvider>
-                                                            </MailboxContainerContextProvider>
+                                                            <ChecklistsProvider>
+                                                                <MailboxContainerContextProvider
+                                                                    isResizing={false}
+                                                                    containerRef={contentRef}
+                                                                    elementID={undefined}
+                                                                >
+                                                                    <ComposeProvider onCompose={onCompose}>
+                                                                        <Router history={history}>
+                                                                            <Route path={MAIN_ROUTE_PATH}>
+                                                                                <EncryptedSearchProvider>
+                                                                                    <LabelActionsContextProvider>
+                                                                                        {children}
+                                                                                    </LabelActionsContextProvider>
+                                                                                </EncryptedSearchProvider>
+                                                                            </Route>
+                                                                        </Router>
+                                                                    </ComposeProvider>
+                                                                </MailboxContainerContextProvider>
+                                                            </ChecklistsProvider>
                                                         </MailContentRefProvider>
                                                     </ReduxProviderWrapper>
                                                 </ExperimentsProvider>
