@@ -45,7 +45,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
     return {
         layout,
         folderName,
-        isActiveLinkReadOnly,
+        isActiveLinkReadOnly: isActiveLinkReadOnly === undefined ? true : isActiveLinkReadOnly,
         items: sortedList,
         sortParams,
         setSorting,
