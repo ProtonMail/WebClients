@@ -9,7 +9,7 @@ import { Icon, InputFieldTwo } from '@proton/components/';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 
-import { FieldBox } from './shared/FieldBox';
+import { FieldBox } from './Layout/FieldBox';
 
 type UrlItem = { url: string; id: string };
 

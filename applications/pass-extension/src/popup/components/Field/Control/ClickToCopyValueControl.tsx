@@ -12,7 +12,7 @@ type Props = {
     onCopyFailure?: () => void;
 };
 
-export const ClickToCopyValue: FC<Props> = ({ children, value }) => {
+export const ClickToCopyValueControl: FC<Props> = ({ children, value }) => {
     const copyToClipboard = useCopyToClipboard();
 
     const handleKeyDown = (evt: KeyboardEvent<HTMLElement>) => {
