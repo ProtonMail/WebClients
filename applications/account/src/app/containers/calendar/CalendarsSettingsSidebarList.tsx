@@ -36,7 +36,7 @@ const CalendarSettingsSidebarListItem = ({ sectionPath, calendar }: CalendarSett
     return (
         <SidebarListItem>
             <SidebarListItemLink to={`${sectionPath}/${ID}`} className="navigation-link-child">
-                <SidebarListItemContent left={<CalendarSelectIcon color={Color} className="mr-2" />}>
+                <SidebarListItemContent left={<CalendarSelectIcon color={Color} />}>
                     <span title={Name} className="text-ellipsis">
                         {Name}
                     </span>
@@ -156,7 +156,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                                 aria-describedby={headerId}
                                 aria-controls={contentId}
                             >
-                                <Icon name="chevron-down" className={clsx(isExpanded && 'rotateX-180')} />
+                                <Icon name="chevron-down-filled" className={clsx(isExpanded && 'rotateX-180')} />
                             </Button>
                         }
                     >

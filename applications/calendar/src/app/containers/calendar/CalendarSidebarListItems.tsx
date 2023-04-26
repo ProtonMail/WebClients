@@ -175,7 +175,7 @@ const CalendarSidebarListItems = ({
 
         const left = (
             <Checkbox
-                className="mr-3 flex-item-noshrink"
+                className="flex-item-noshrink"
                 color={COLORS.WHITE}
                 backgroundColor={Display ? Color : 'transparent'}
                 borderColor={Color}
@@ -195,12 +195,12 @@ const CalendarSidebarListItems = ({
             <SidebarListItem key={ID}>
                 <SidebarListItemLabel
                     htmlFor={`calendar-${ID}`}
-                    className="calendar-sidebar-list-item opacity-on-hover-container py0-25 pr0-5"
+                    className="calendar-sidebar-list-item opacity-on-hover-container py-1 pr-2"
                 >
                     <SidebarListItemContent
                         data-testid="calendar-sidebar:user-calendars"
                         left={left}
-                        className={clsx(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
+                        className={clsx(['flex w100 gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                     >
                         <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100">
                             <div className="flex flex-nowrap mr-2">
