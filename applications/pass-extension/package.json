@@ -3,10 +3,10 @@
     "description": "Password Manager Browser Extension",
     "license": "GPL-3.0",
     "scripts": {
-        "build": "yarn clean && yarn run config && NODE_ENV=production yarn build:extension",
+        "build": "yarn clean && yarn run config && yarn build:extension",
         "build:all": "./tools/build:all.sh",
-        "build:dev": "yarn clean && yarn config:dev && NODE_ENV=development yarn build:extension",
-        "build:extension": "LOG_LEVEL=trace webpack --config webpack.config.js",
+        "build:dev": "yarn clean && yarn config:dev && yarn build:extension",
+        "build:extension": "NODE_ENV=production LOG_LEVEL=trace webpack --config webpack.config.js",
         "build:ff": "cat ./src/app/config.ff-release.ts > ./src/app/config.ts && BUILD_TARGET=firefox yarn run build:extension",
         "check-types": "tsc",
         "check-types:watch": "tsc --watch",
