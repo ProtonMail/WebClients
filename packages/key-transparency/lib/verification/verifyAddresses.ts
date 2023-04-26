@@ -41,6 +41,22 @@ export const bootstrapInitialEpoch = async (
 
     const [oldestSKL] = newSKLs;
     const { MinEpochID } = oldestSKL;
+
+    const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
+        textData: inputSKL.Data,
+        armoredSignature: inputSKL.Signature,
+        verificationKeys,
+    });
+
+    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
+        ktSentryReport('The current SKL fails signature verification', {
+            context: 'bootstrapInitialEpoch',
+            errors: JSON.stringify(errors),
+            email,
+        });
+        throw new Error('Bootstrapping failed');
+    }
+
     if (MinEpochID === null) {
         if (!checkSKLEquality(inputSKL, oldestSKL)) {
             ktSentryReport('The oldest new SKL has null MinEpochID but is different from the current SKL', {
@@ -49,22 +65,6 @@ export const bootstrapInitialEpoch = async (
             });
             throw new Error('Bootstrapping failed');
         }
-
-        const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
-            textData: inputSKL.Data,
-            armoredSignature: inputSKL.Signature,
-            verificationKeys,
-        });
-
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
-            ktSentryReport('The current SKL fails signature verification', {
-                context: 'bootstrapInitialEpoch',
-                errors: JSON.stringify(errors),
-                email,
-            });
-            throw new Error('Bootstrapping failed');
-        }
-
         if (isTimestampTooOld(+signatureTimestamp)) {
             ktSentryReport(
                 'The current SKL is older than the maximum epoch interval despite having MinEpochID equal to null',
@@ -75,7 +75,6 @@ export const bootstrapInitialEpoch = async (
             );
             throw new Error('Bootstrapping failed');
         }
-
         // In this case the verified epoch can legitimately be undefined
         return;
     }
@@ -94,6 +93,7 @@ export const bootstrapInitialEpoch = async (
     const initialEpoch: VerifiedEpoch = {
         EpochID: MinEpochID,
         Revision,
+        SKLCreationTime: +signatureTimestamp,
     };
 
     return { initialEpoch, newSKLs };
@@ -262,7 +262,7 @@ export const auditAddresses = async (
 
             if (SignedKeyList.MaxEpochID > initialEpoch.EpochID) {
                 await uploadVerifiedEpoch(
-                    { EpochID: SignedKeyList.MaxEpochID, Revision },
+                    { EpochID: SignedKeyList.MaxEpochID, Revision, SKLCreationTime: initialEpoch.SKLCreationTime },
                     addressID,
                     userPrivateKeys[0],
                     api
@@ -275,7 +275,14 @@ export const auditAddresses = async (
 
         const revisionChain: number[] = [];
         let errorFlag = false;
-        let lastSKLInKT: { lastRevision: number; lastCertificateTimestamp: number; lastMaxEpochID: number } | undefined;
+        let lastSKLInKT:
+            | {
+                  lastRevision: number;
+                  lastCertificateTimestamp: number;
+                  lastMaxEpochID: number;
+                  lastSKLTimestamp: Date | undefined;
+              }
+            | undefined;
 
         for (let index = 0; index < newSKLs.length; index++) {
             const skl = newSKLs[index];
@@ -283,15 +290,19 @@ export const auditAddresses = async (
             // Note that skl might be either an obsolete or an active SKL, however it
             // cannot be the most recent and be obsolete, otherwise this address wouldn't
             // be under audit
-            let signatureTime: number | undefined;
+            let signatureTimestamp: Date | undefined;
             if (skl.Data && skl.Signature) {
-                const { verified, errors, signatureTimestamp } = await CryptoProxy.verifyMessage({
+                const {
+                    verified,
+                    errors,
+                    signatureTimestamp: timestamp,
+                } = await CryptoProxy.verifyMessage({
                     armoredSignature: skl.Signature,
                     verificationKeys: inputKeys.map(({ PublicKey }) => PublicKey),
                     textData: skl.Data,
                 });
 
-                if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
+                if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !timestamp) {
                     ktSentryReport('SKL signature verification failed', {
                         context: 'auditAddresses',
                         errors: JSON.stringify(errors),
@@ -301,7 +312,7 @@ export const auditAddresses = async (
                     break;
                 }
 
-                signatureTime = +signatureTimestamp;
+                signatureTimestamp = timestamp;
             }
 
             if (skl.MaxEpochID === null) {
@@ -314,7 +325,7 @@ export const auditAddresses = async (
                     break;
                 }
 
-                if (!signatureTime || isTimestampTooOld(signatureTime)) {
+                if (!signatureTimestamp || isTimestampTooOld(+signatureTimestamp)) {
                     ktSentryReport(
                         'MaxEpochID is null in a SKL which either obsolete or older than max epoch interval',
                         {
@@ -338,6 +349,7 @@ export const auditAddresses = async (
                     lastRevision: Revision,
                     lastCertificateTimestamp: certificateTimestamp,
                     lastMaxEpochID: skl.MaxEpochID,
+                    lastSKLTimestamp: signatureTimestamp,
                 };
             }
         }
@@ -404,7 +416,7 @@ export const auditAddresses = async (
         }
 
         if (typeof lastSKLInKT !== 'undefined') {
-            const { lastRevision, lastCertificateTimestamp, lastMaxEpochID } = lastSKLInKT;
+            const { lastRevision, lastCertificateTimestamp, lastMaxEpochID, lastSKLTimestamp } = lastSKLInKT;
 
             if (isTimestampTooOld(lastCertificateTimestamp)) {
                 ktSentryReport('Last certificate timestamp is older than max epoch interval ago', {
@@ -415,8 +427,17 @@ export const auditAddresses = async (
                 continue;
             }
 
+            if (!lastSKLTimestamp) {
+                ktSentryReport('Last SKL timestamp is null', {
+                    context: 'auditAddresses',
+                    lastCertificateTimestamp,
+                    addressID,
+                });
+                continue;
+            }
+
             await uploadVerifiedEpoch(
-                { EpochID: lastMaxEpochID, Revision: lastRevision },
+                { EpochID: lastMaxEpochID, Revision: lastRevision, SKLCreationTime: +lastSKLTimestamp },
                 addressID,
                 userPrivateKeys[0],
                 api
