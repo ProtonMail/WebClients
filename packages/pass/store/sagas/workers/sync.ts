@@ -1,13 +1,13 @@
-import { Share, ShareGetResponse, ShareType } from '@proton/pass/types';
+import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { ItemsByShareId } from '../../reducers';
-import { SharesState } from '../../reducers/shares';
+import type { ItemsByShareId } from '../../reducers';
+import type { SharesState } from '../../reducers/shares';
 import { selectAllShares, selectItems } from '../../selectors';
-import { State } from '../../types';
+import type { State, WorkerRootSagaOptions } from '../../types';
 import { requestItemsForShareId } from './items';
 import { loadShare, requestShares } from './shares';
 import { createVault } from './vaults';
@@ -28,7 +28,11 @@ export enum SyncType {
  * as our only source of truth
  * FIXME: handle ItemShares
  */
-export function* synchronize(state: State, type: SyncType): Generator<unknown, SynchronizationResult> {
+export function* synchronize(
+    state: State,
+    type: SyncType,
+    { onShareEventDisabled }: WorkerRootSagaOptions
+): Generator<unknown, SynchronizationResult> {
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort((a, b) => b.CreateTime - a.CreateTime);
     const vaults = remote.filter((share) => share.TargetType === ShareType.Vault);
@@ -36,6 +40,9 @@ export function* synchronize(state: State, type: SyncType): Generator<unknown, S
     const cachedShareIds = cachedShares.map(({ shareId }) => shareId);
     const remoteShareIds = remote.map(({ ShareID }) => ShareID);
     const deletedShareIds = cachedShareIds.filter((shareId) => !remoteShareIds.includes(shareId));
+
+    /* notify clients of possible deleted shares */
+    deletedShareIds.forEach((shareId) => onShareEventDisabled?.(shareId));
 
     /**
      * only load shares that are
