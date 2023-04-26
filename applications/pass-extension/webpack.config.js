@@ -9,6 +9,7 @@ const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const getOptimizations = require('@proton/pack/webpack/optimization');
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('@proton/pack/webpack/helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('@proton/pack/webpack/constants');
+const fs = require('fs');
 const parseEnvVar = require('./tools/env-var.parser');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox'];
@@ -22,7 +23,13 @@ if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
     throw new Error(`Build target "${BUILD_TARGET}" is not supported`);
 }
 
-console.log(`Building with env`, JSON.stringify({ ENV, BUILD_TARGET, RUNTIME_RELOAD, RESUME_FALLBACK }, null, 4));
+const config = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(export const |;)/gm, '');
+
+console.log(`ENV = ${ENV}`);
+console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
+console.log(`RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
+console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
+console.log(config);
 
 const production = ENV === 'production';
 
