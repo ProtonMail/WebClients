@@ -4,7 +4,7 @@ import { Field, Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import type { ItemEditProps } from '../../../../shared/items';
-import { NoteTextAreaField, NoteTitleField } from '../../../components/Fields/Note/index';
+import { BaseTextAreaField, BaseTitleField } from '../../../components/Fields';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
@@ -48,15 +48,18 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <Field
-                            component={NoteTitleField}
+                            dense
+                            className="mb-4"
+                            component={BaseTitleField}
                             label={c('Label').t`Name`}
+                            labelContainerClassName="sr-only"
                             name="name"
                             placeholder={c('Placeholder').t`Untitled`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                             onPaste={pasteLengthLimiter(MAX_ITEM_NAME_LENGTH)}
                         />
                         <Field
-                            component={NoteTextAreaField}
+                            component={BaseTextAreaField}
                             label={c('Label').t`Note`}
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}

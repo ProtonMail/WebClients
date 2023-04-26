@@ -27,7 +27,7 @@ const SIZE_MAP: { [key in Size]: IconSize } = {
 
 export const VaultIcon: VFC<Props> = ({ icon = 'pass-all-vaults', color, size = 'large', className }) => (
     <span
-        className={clsx([`pass-vault-icon ${size} rounded-50 relative`, className])}
+        className={clsx([`pass-vault-icon ${size} rounded-xl relative`, className])}
         style={{ '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1] }}
     >
         <Icon

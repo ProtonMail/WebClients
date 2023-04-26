@@ -1,24 +1,16 @@
-import {
-    Children,
-    type FC,
-    type MouseEvent,
-    type ReactElement,
-    type ReactNode,
-    cloneElement,
-    isValidElement,
-} from 'react';
+import { Children, type FC, type ReactElement, cloneElement, isValidElement } from 'react';
 
+import { Icon, type IconName } from '@proton/components';
 import type { MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
-import './InputGroup.scss';
+import './FieldBox.scss';
 
-export type Props = {
+export type FieldBoxProps = {
     actions?: MaybeArray<ReactElement>;
     actionsContainerClassName?: string;
-    actionsStopPropagation?: boolean;
-    icon?: ReactNode;
     className?: string;
+    icon?: IconName | ReactElement;
 };
 
 const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<ReactElement> =>
@@ -41,11 +33,23 @@ const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<Rea
             : node;
     });
 
-export const BaseInputGroup: FC<Props> = ({ className, actions, actionsContainerClassName, children, icon }) => {
+export const FieldBox: FC<FieldBoxProps> = (props) => {
+    const { className, actions, actionsContainerClassName, children, icon } = props;
+
     return (
-        <div className={clsx('flex flex-nowrap flex-align-items-center pass-input-group', className)}>
+        <div className={clsx('pass-field-box flex flex-nowrap flex-align-items-center px-4 py-3', className)}>
             {icon && (
-                <span className="flex flex-justify-center flex-align-items-center flex-item-noshrink pr-4">{icon}</span>
+                <span className="flex flex-justify-center flex-align-items-center flex-item-noshrink pr-4">
+                    {isValidElement(icon) ? (
+                        icon
+                    ) : (
+                        <Icon
+                            name={icon as IconName}
+                            size={20}
+                            style={{ color: 'var(--fieldset-cluster-icon-color)' }}
+                        />
+                    )}
+                </span>
             )}
 
             <div className="w100">{children}</div>
@@ -57,8 +61,4 @@ export const BaseInputGroup: FC<Props> = ({ className, actions, actionsContainer
             )}
         </div>
     );
-};
-
-export const InputGroup: FC<Props> = (props) => {
-    return <BaseInputGroup {...props} className={clsx(props.className, 'px-4 py-3')} />;
 };

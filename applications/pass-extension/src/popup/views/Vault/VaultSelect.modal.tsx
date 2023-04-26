@@ -9,7 +9,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { selectAllVaultWithItemsCount } from '@proton/pass/store/selectors';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
-import { RadioButtonGroup, RadioLabelledButton } from '../../components/Controls/RadioButtonGroup';
+import { RadioButtonGroup, RadioLabelledButton } from '../../components/Fields';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
 import { VaultIcon } from '../../components/Vault/VaultIcon';
@@ -42,7 +42,7 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                     />
                 }
             >
-                <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onValue={onSubmit}>
+                <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
                     {vaultsWithItemCount.map((vault) => (
                         <RadioLabelledButton value={vault.shareId} key={vault.shareId}>
                             <VaultIcon

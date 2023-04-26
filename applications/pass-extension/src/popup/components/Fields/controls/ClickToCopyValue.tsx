@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 
 type Props = {
     value: string;
