@@ -91,6 +91,7 @@ export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onE
     disableCycleSelector?: boolean;
     defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
+    isPassPlusEnabled: boolean;
 }
 
 export interface Model {
@@ -153,6 +154,7 @@ const SubscriptionModal = ({
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
+    isPassPlusEnabled,
     ...rest
 }: Props) => {
     const TITLE = {
@@ -518,6 +520,7 @@ const SubscriptionModal = ({
                 {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
                 {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
                     <PlanSelection
+                        isPassPlusEnabled={isPassPlusEnabled}
                         loading={loadingCheck}
                         plans={plans}
                         plansMap={plansMap}

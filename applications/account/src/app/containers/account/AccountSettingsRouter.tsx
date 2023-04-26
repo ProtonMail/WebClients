@@ -44,11 +44,13 @@ const AccountSettingsRouter = ({
     path,
     accountAppRoutes,
     app,
+    isPassPlusEnabled,
 }: {
     redirect: ReactNode;
     path: string;
     accountAppRoutes: ReturnType<typeof getAccountAppRoutes>;
     app: APP_NAMES;
+    isPassPlusEnabled: boolean;
 }) => {
     const {
         routes: { dashboard, upgrade, easySwitch, referral, recovery, security, password, language },
@@ -82,7 +84,7 @@ const AccountSettingsRouter = ({
                                     <SettingsSectionWide className="mxauto">
                                         <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans: title')
                                             .t`Unlock premium features by upgrading`}</SettingsPageTitle>
-                                        <PlansSection />
+                                        <PlansSection isPassPlusEnabled={isPassPlusEnabled} />
                                     </SettingsSectionWide>
                                 </div>
                             </div>

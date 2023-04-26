@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getPrimaryPlan, hasPassPlus, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Address,
     Currency,
@@ -20,6 +20,14 @@ import percentage from '@proton/utils/percentage';
 
 import { Icon, Meter, Price, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
+import {
+    getCustomDomainForEmailAliases,
+    getDevices,
+    getForwardingMailboxes,
+    getHideMyEmailAliases,
+    getPasswordsAndNotes,
+    getVaults,
+} from '../features/pass';
 import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,
@@ -71,6 +79,7 @@ interface Props {
     vpnServers: VPNServersCountData;
     addresses?: Address[];
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    isPassPlusEnabled: boolean;
 }
 
 const SubscriptionPanel = ({
@@ -82,6 +91,7 @@ const SubscriptionPanel = ({
     user,
     addresses,
     openSubscriptionModal,
+    isPassPlusEnabled,
 }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
@@ -188,6 +198,63 @@ const SubscriptionPanel = ({
         );
     };
 
+    const getPassAppFree = () => {
+        /**
+         * To be added when pass endpoint is ready
+         */
+        // const getNumberOfEmailAliases = (usedAliases: number, totalAliases: number) => {
+        //     return c('new_plans: feature').ngettext(
+        //         msgid`${usedAliases} of ${totalAliases} Hide My Email alias`,
+        //         `${usedAliases} of ${totalAliases} Hide My Email aliases`,
+        //         totalAliases
+        //     );
+        // };
+
+        const items: Item[] = [
+            /**
+             * To be added when pass endpoint is ready
+             */
+            // {
+            //     icon: 'eye-slash',
+            //     text: getNumberOfEmailAliases(usedAliases, maxAliases),
+            // },
+            getPasswordsAndNotes(),
+            getDevices(),
+        ];
+
+        return (
+            <StripedList>
+                {storageItem}
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
+    const getPassAppPassPlus = () => {
+        const items: Item[] = [
+            getHideMyEmailAliases('unlimited'),
+            {
+                ...getVaults('unlimited'),
+                text: c('new_plans: feature').t`Unlimited vaults`,
+            },
+            {
+                ...getCustomDomainForEmailAliases(true),
+                text: c('new_plans: feature').t`Custom domains for email aliases`,
+            },
+
+            getForwardingMailboxes('multiple'),
+            getPasswordsAndNotes(),
+            getDevices(),
+        ];
+
+        return (
+            <StripedList>
+                {storageItem}
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
     const getDefault = () => {
         const items: Item[] = [
             ...(() => {
@@ -271,13 +338,16 @@ const SubscriptionPanel = ({
     };
 
     return (
-        <div className="border rounded px2 py1-5 subscription-panel-container" data-testid="current-plan">
-            <div className="flex flex-wrap flex-align-items-center flex-justify-space-between pt0-5">
-                <h3 className="m-0" data-testid="plan-name">
+        <div
+            className="border rounded p-6 pt-10 subscription-panel-container flex-align-self-start"
+            data-testid="current-plan"
+        >
+            <div className="flex flex-wrap flex-align-items-center flex-justify-space-between">
+                <h3 data-testid="plan-name">
                     <strong>{planTitle}</strong>
                 </h3>
                 <Price
-                    className="h3 m-0 color-weak"
+                    className="h3 color-weak"
                     currency={currency}
                     suffix={subscription && amount ? c('Suffix').t`/month` : ''}
                     dataTestId="plan-price"
@@ -291,6 +361,12 @@ const SubscriptionPanel = ({
                 }
                 if (hasVPN(subscription)) {
                     return getVpnPlus();
+                }
+                if (isPassPlusEnabled && user.isFree && app === APPS.PROTONPASS) {
+                    return getPassAppFree();
+                }
+                if (isPassPlusEnabled && hasPassPlus(subscription)) {
+                    return getPassAppPassPlus();
                 }
                 return getDefault();
             })()}

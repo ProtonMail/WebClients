@@ -13,6 +13,7 @@ import {
     DeleteSection,
     EmailSubscriptionSection,
     ErrorBoundary,
+    FeatureCode,
     FreeUserLiveChatModal,
     GiftCodeSection,
     InvoicesSection,
@@ -43,6 +44,7 @@ import {
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
+    useFeature,
     useModalState,
     useSubscription,
     useToggle,
@@ -72,6 +74,9 @@ const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 
 const MainContainer = () => {
     useTelemetryScreenSize();
+
+    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
+    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
 
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
@@ -213,7 +218,7 @@ const MainContainer = () => {
                                     >
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea config={routes.dashboard}>
-                                            <PlansSection />
+                                            <PlansSection isPassPlusEnabled={isPassPlusEnabled} />
                                             <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
                                             <SubscriptionsSection />
                                             <CreditsSection />

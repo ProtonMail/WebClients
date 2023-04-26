@@ -24,6 +24,8 @@ RewriteRule ^vpn/signup$ /vpn.signup.html [NC,L]
 RewriteRule ^vpn$ /vpn.html [NC,L]
 RewriteRule ^drive/signup$ /drive.signup.html [NC,L]
 RewriteRule ^drive$ /drive.html [NC,L]
+RewriteRule ^pass/signup$ /pass.signup.html [NC,L]
+RewriteRule ^pass$ /pass.html [NC,L]
 RewriteRule ^refer-a-friend$ /refer-a-friend.html [NC,L]
 RewriteRule ^trial$ /trial.html [NC,L]
 
