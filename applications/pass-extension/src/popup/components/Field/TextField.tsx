@@ -12,10 +12,15 @@ import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type BaseTextFieldProps = FieldProps & InputFieldProps<typeof Input>;
 
-export const BaseTextField: VFC<BaseTextFieldProps> = (props) => {
-    const { field, inputClassName, labelContainerClassName, ...rest } = props;
-
-    const { error } = useFieldControl(props);
+export const BaseTextField: VFC<BaseTextFieldProps> = ({
+    field,
+    form,
+    meta,
+    inputClassName,
+    labelContainerClassName,
+    ...props
+}) => {
+    const { error } = useFieldControl({ field, form, meta });
 
     return (
         <InputFieldTwo
@@ -29,7 +34,7 @@ export const BaseTextField: VFC<BaseTextFieldProps> = (props) => {
                 labelContainerClassName
             )}
             {...field}
-            {...rest}
+            {...props}
         />
     );
 };

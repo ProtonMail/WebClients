@@ -101,10 +101,8 @@ export const RadioButtonGroup = <T extends RadioValue>(props: RadioButtonGroupPr
 
 type RadioButtonGroupFieldProps = FieldProps & InputFieldProps<typeof RadioButtonGroup>;
 
-export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = (props) => {
-    const { field, form, onChange, ...rest } = props;
-
-    const { error } = useFieldControl(props);
+export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = ({ field, form, meta, onChange, ...props }) => {
+    const { error } = useFieldControl({ field, form, meta });
 
     return (
         <InputFieldTwo<typeof RadioButtonGroup>
@@ -112,7 +110,7 @@ export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = (props) => 
             assistContainerClassName="hidden-empty"
             error={error}
             {...field}
-            {...rest}
+            {...props}
             onChange={(value: RadioValue) => {
                 onChange?.(value);
                 form.setFieldValue(field.name, value);

@@ -75,6 +75,8 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             placeholder={c('Placeholder').t`Write your note`}
                             maxLength={MAX_ITEM_NOTE_LENGTH}
                             onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
+                            minRows={5}
+                            rows={Number.MAX_SAFE_INTEGER}
                         />
                     </Form>
                 </FormikProvider>
