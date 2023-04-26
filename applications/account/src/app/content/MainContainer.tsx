@@ -52,11 +52,15 @@ const VpnSettingsRouter = lazy(
 const DriveSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/DriveSettingsRouter" */ '../containers/drive/DriveSettingsRouter')
 );
+const PassSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/PassSettingsRouter" */ '../containers/pass/PassSettingsRouter')
+);
 
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
+const passSlug = getSlugFromApp(APPS.PROTONPASS);
 
 const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
     return sectionConfigs.map((section) => getSectionPath(prefix, section));
@@ -88,6 +92,8 @@ const MainContainer = () => {
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.EasySwitch,
+        FeatureCode.PassSettings,
+        FeatureCode.PassPlusPlan,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
@@ -95,6 +101,8 @@ const MainContainer = () => {
     const isSpyTrackerEnabled = getFeature(FeatureCode.SpyTrackerProtection).feature?.Value === true;
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
+    const isPassSettingsEnabled = getFeature(FeatureCode.PassSettings).feature?.Value === true;
+    const isPassPlusEnabled = getFeature(FeatureCode.PassPlusPlan).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
@@ -181,12 +189,17 @@ const MainContainer = () => {
         })
     );
 
-    const redirect =
-        loadingOrganization || loadingFeatures ? (
-            <PrivateMainAreaLoading />
-        ) : (
-            <Redirect to={`/${appSlug}${getDefaultRedirect(routes.account)}`} />
-        );
+    const redirect = (() => {
+        if (loadingOrganization || loadingFeatures) {
+            return <PrivateMainAreaLoading />;
+        }
+
+        if (app === APPS.PROTONPASS && !isPassSettingsEnabled) {
+            return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(routes.account)}`} />;
+        }
+
+        return <Redirect to={`/${appSlug}${getDefaultRedirect(routes.account)}`} />;
+    })();
 
     if (getRequiresAddressSetup(app, user)) {
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}`} />;
@@ -198,6 +211,7 @@ const MainContainer = () => {
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter
+                        isPassPlusEnabled={isPassPlusEnabled}
                         app={app}
                         path={prefixPath}
                         accountAppRoutes={routes.account}
@@ -239,6 +253,13 @@ const MainContainer = () => {
                         <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
                     </Suspense>
                 </Route>
+                {isPassSettingsEnabled && (
+                    <Route path={`/${passSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                )}
                 {redirect}
             </Switch>
         </PrivateAppContainer>

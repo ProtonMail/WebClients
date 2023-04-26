@@ -213,9 +213,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         const toApp = getToApp(appIntent?.app || maybePreAppIntent || maybeLocalRedirect?.toApp, user);
 
         // Handle special case going for internal vpn on account settings.
-        const localRedirect =
-            maybeLocalRedirect ||
-            (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
+        const localRedirect = (() => {
+            if (maybeLocalRedirect) {
+                return maybeLocalRedirect;
+            }
+            if (toApp === APPS.PROTONVPN_SETTINGS || toApp === APPS.PROTONPASS) {
+                return getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug);
+            }
+        })();
 
         if (getRequiresAddressSetup(toApp, user) && !localRedirect?.pathname.includes(SETUP_ADDRESS_PATH)) {
             const blob = loginPassword
@@ -269,6 +274,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             if (localRedirect) {
                 if (args.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS) {
                     pathname = `/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}/vpn-apps?prompt=true`;
+                } else if (args.flow === 'signup' && toApp === APPS.PROTONPASS) {
+                    pathname = `/${getSlugFromApp(APPS.PROTONPASS)}/download`;
                 } else {
                     pathname = localRedirect.pathname || '';
                 }
@@ -475,6 +482,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,
                                                         SSO_PATHS.VPN_SIGNUP,
+                                                        SSO_PATHS.PASS_SIGNUP,
                                                     ]}
                                                 >
                                                     <SignupContainer
@@ -518,6 +526,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.CALENDAR_SIGN_IN,
                                                         SSO_PATHS.DRIVE_SIGN_IN,
                                                         SSO_PATHS.VPN_SIGN_IN,
+                                                        SSO_PATHS.PASS_SIGN_IN,
                                                     ]}
                                                     exact
                                                 >

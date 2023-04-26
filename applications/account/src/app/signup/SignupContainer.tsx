@@ -132,6 +132,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
     const normalApi = useApi();
     const history = useHistory();
+
+    const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
+    const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
+    
+    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
+    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
+
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
@@ -470,6 +477,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             return PLANS.DRIVE;
         }
 
+        if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
+            return PLANS.PASS_PLUS;
+        }
+
         return PLANS.MAIL;
     })();
 
@@ -733,6 +744,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             )}
             {step === Upsell && (
                 <UpsellStep
+                    isPassPlusEnabled={isPassPlusEnabled}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
@@ -950,6 +962,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             )}
             {step === Explore && (
                 <ExploreStep
+                    isPassSettingsEnabled={isPassSettingsEnabled}
                     onExplore={async (app) => {
                         try {
                             if (!cache) {

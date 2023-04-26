@@ -18,6 +18,19 @@ import {
     getNMessagesFeature,
 } from './mail';
 import {
+    FREE_PASS_ALIASES,
+    get2FAAuthenticator,
+    getCustomDomainForEmailAliases,
+    getDataBreachMonitoring,
+    getDevices,
+    getE2Encryption,
+    getForwardingMailboxes,
+    getHideMyEmailAliases,
+    getPasswordsAndNotes,
+    getSharing,
+    getVaults,
+} from './pass';
+import {
     getB2BHighSpeedVPNConnections,
     getCountries,
     getNetShield,
@@ -89,6 +102,38 @@ export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan =
             getVPNConnections(1),
             getSupport('priority'),
         ],
+    };
+};
+
+export const getPassPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.PASS_PLUS,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`For next-level password management and identity protection.`,
+        cta: getCTA(plan.Title),
+        features: [
+            get2FAAuthenticator(true),
+            getVaults('unlimited'),
+            getHideMyEmailAliases('unlimited'),
+            getCustomDomainForEmailAliases(true),
+            getForwardingMailboxes('multiple'),
+            getSharing(true),
+            getDataBreachMonitoring(true),
+            getSupport('priority'),
+        ],
+    };
+};
+
+export const getFreePassPlan = (): ShortPlan => {
+    return {
+        plan: PLANS.FREE,
+        title: PLAN_NAMES[PLANS.FREE],
+        label: '',
+        description: c('new_plans: info')
+            .t`The no-cost starter account designed to empower everyone with privacy by default.`,
+        cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
+        features: [getPasswordsAndNotes(), getDevices(), getHideMyEmailAliases(FREE_PASS_ALIASES), getE2Encryption()],
     };
 };
 
@@ -248,7 +293,8 @@ export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
     vpnServers: VPNServersCountData,
-    options: { boldStorageSize?: boolean } = {}
+    options: { boldStorageSize?: boolean } = {},
+    isPassPlusEnabled: boolean
 ) => {
     const { boldStorageSize } = options;
     if (plan === PLANS.FREE) {
@@ -265,6 +311,8 @@ export const getShortPlan = (
             return getVPNPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
+        case PLANS.PASS_PLUS:
+            return isPassPlusEnabled ? getPassPlan(planData) : null;
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:

@@ -8,6 +8,7 @@ import { getDriveFeatures } from './drive';
 import { getHighlightFeatures } from './highlights';
 import { PlanCardFeature } from './interface';
 import { getMailFeatures } from './mail';
+import { getPassFeatures } from './pass';
 import { getVPNFeatures } from './vpn';
 
 export const getAllFeatures = (
@@ -20,6 +21,7 @@ export const getAllFeatures = (
         mail: getMailFeatures(plansMap),
         calendar: getCalendarFeatures(plansMap, calendarSharingEnabled),
         drive: getDriveFeatures(plansMap),
+        pass: getPassFeatures(),
         vpn: getVPNFeatures(serversCount),
         team: getTeamManagementFeatures(),
         support: getSupportFeatures(),

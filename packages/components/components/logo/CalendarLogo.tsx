@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
 
-import { classnames, generateUID } from '@proton/components';
+import { generateUID } from '@proton/components';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { LogoProps } from './Logo';
 
@@ -22,7 +23,7 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, hasTitle = t
             height="36"
             fill="none"
             role="img"
-            className={classnames(['logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className])}
+            className={clsx('logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >

@@ -4,6 +4,7 @@ import { Loader } from '../../../components';
 import {
     useAddresses,
     useCalendars,
+    useFeature,
     useOrganization,
     usePlans,
     useSubscription,
@@ -12,6 +13,7 @@ import {
 } from '../../../hooks';
 import { SettingsSectionWide } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
+import { FeatureCode } from '../../features';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import SubscriptionPanel from './SubscriptionPanel';
 import UpsellPanel from './UpsellPanel';
@@ -34,9 +36,12 @@ const YourPlanSection = ({ app }: Props) => {
     const [vpnServers] = useVPNServersCount();
     const [openSubscriptionModal] = useSubscriptionModal();
 
+    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
+    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
+
     const loading = loadingSubscription || loadingOrganization || loadingPlans;
 
-    if (loading) {
+    if (loading || passPlusPlanFeature.loading) {
         return <Loader />;
     }
 
@@ -50,8 +55,9 @@ const YourPlanSection = ({ app }: Props) => {
 
     return (
         <SettingsSectionWide>
-            <div className="your-plan-section-container flex-gap-2">
+            <div className="your-plan-section-container gap-8">
                 <SubscriptionPanel
+                    isPassPlusEnabled={isPassPlusEnabled}
                     app={app}
                     currency={currency}
                     subscription={subscription}
@@ -62,6 +68,7 @@ const YourPlanSection = ({ app }: Props) => {
                     openSubscriptionModal={openSubscriptionModal}
                 />
                 <UpsellPanel
+                    isPassPlusEnabled={isPassPlusEnabled}
                     app={app}
                     currency={currency}
                     subscription={subscription}

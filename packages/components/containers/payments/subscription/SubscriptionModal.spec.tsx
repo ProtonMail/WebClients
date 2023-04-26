@@ -242,6 +242,7 @@ describe('SubscriptionModal', () => {
             },
             open: true,
             onClose: jest.fn(),
+            isPassPlusEnabled: true,
         };
     });
 

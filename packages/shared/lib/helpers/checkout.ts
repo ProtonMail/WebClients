@@ -1,5 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import {
+    get2FAAuthenticatorText,
+    getDevicesText,
+    getPasswordsAndNotesText,
+    getUnlimitedHideMyEmailAliasesText,
+} from '@proton/components/containers/payments/features/pass';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import {
@@ -186,6 +192,27 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getVpnConnections(10),
+            },
+        ];
+    }
+    const passPremium = planIDs[PLANS.PASS_PLUS];
+    if (passPremium !== undefined && passPremium > 0) {
+        return [
+            {
+                type: 'text',
+                text: getPasswordsAndNotesText(),
+            },
+            {
+                type: 'text',
+                text: getDevicesText(),
+            },
+            {
+                type: 'text',
+                text: getUnlimitedHideMyEmailAliasesText(),
+            },
+            {
+                type: 'text',
+                text: get2FAAuthenticatorText(),
             },
         ];
     }
