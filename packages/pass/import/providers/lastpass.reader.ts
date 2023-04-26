@@ -5,6 +5,8 @@ import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 import capitalize from '@proton/utils/capitalize';
 import groupWith from '@proton/utils/groupWith';
@@ -28,7 +30,7 @@ const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
 const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> => {
     const urlResult = isValidURL(item.url ?? '');
     const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-    const name = item.name || url?.hostname || 'Unnamed LastPass item';
+    const name = item.name || url?.hostname || 'Unnamed item';
 
     return {
         type: 'login',
@@ -51,7 +53,7 @@ const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> => {
 const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
     type: 'note',
     metadata: {
-        name: item.name || 'LastPass note',
+        name: item.name || 'Unnamed note',
         note: item.extra ?? '',
         itemUuid: uniqid(),
     },
@@ -78,7 +80,8 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
             .map((items) => {
                 return {
                     type: 'new',
-                    vaultName: items?.[0].grouping ?? `${c('Title').t`LastPass import`}`,
+                    vaultName:
+                        items?.[0].grouping ?? `${c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`}`,
                     id: uniqid(),
                     items: items
                         .map((item) => {
