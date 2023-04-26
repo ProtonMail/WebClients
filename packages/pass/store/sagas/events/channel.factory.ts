@@ -11,11 +11,11 @@ import type { EventChannel, EventChannelOnError, EventChannelOptions } from './t
 
 const channelErrorHandler = <T extends ChannelType, O>(onError?: EventChannelOnError<T, O>) => {
     const wrappedOnError: EventChannelOnError<T, O> = function* (error, eventsChannel, options) {
+        yield onError?.(error, eventsChannel, options);
+
         if (error instanceof Error && ['LockedSession', 'InactiveSession'].includes(error.name)) {
             eventsChannel.channel.close();
         }
-
-        onError?.(error, eventsChannel, options);
     };
 
     return wrappedOnError;
