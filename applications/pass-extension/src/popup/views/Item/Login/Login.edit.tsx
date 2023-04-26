@@ -241,7 +241,6 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     placeholder={c('Placeholder').t`Enter a note...`}
                                     component={TextAreaField}
                                     icon="note"
-                                    minRows={3}
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                     onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                                 />
