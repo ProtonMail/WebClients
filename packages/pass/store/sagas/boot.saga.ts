@@ -15,7 +15,7 @@ import getCachedState, { type ExtensionCache } from './workers/cache';
 import { SyncType, type SynchronizationResult, synchronize } from './workers/sync';
 import { getUserData } from './workers/user';
 
-function* bootWorker({ onBoot }: WorkerRootSagaOptions) {
+function* bootWorker(options: WorkerRootSagaOptions) {
     try {
         const sessionLockToken: Maybe<string> = yield select(selectSessionLockToken);
         const cache: Maybe<ExtensionCache> = yield getCachedState(sessionLockToken);
@@ -37,15 +37,15 @@ function* bootWorker({ onBoot }: WorkerRootSagaOptions) {
         yield put(stateSync(state, { receiver: 'background' }));
 
         /* trigger a partial synchronization */
-        const sync = (yield synchronize(state, SyncType.PARTIAL)) as SynchronizationResult;
+        const sync = (yield synchronize(state, SyncType.PARTIAL, options)) as SynchronizationResult;
         yield put(bootSuccess({ user, tier, addresses, eventId, sync }));
 
-        onBoot?.({ ok: true });
+        options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
 
-        onBoot?.({
+        options.onBoot?.({
             ok: false,
             clearCache: error instanceof PassCryptoHydrationError,
         });
