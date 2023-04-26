@@ -8,9 +8,9 @@ import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getStorageFeature = (
     bytes: number,
-    options: { fire?: boolean; boldStorageSize?: boolean; family?: boolean } = {}
+    options: { highlight?: boolean; boldStorageSize?: boolean; family?: boolean } = {}
 ): PlanCardFeatureDefinition => {
-    const { fire = false, boldStorageSize = false } = options;
+    const { highlight = false, boldStorageSize = false } = options;
     if (bytes === -1) {
         const freeStorageSize = humanSize(500 * 1024 ** 2, undefined, undefined, 0);
         const totalStorageSize = humanSize(1 * 1024 ** 3, undefined, undefined, 0);
@@ -38,19 +38,19 @@ export const getStorageFeature = (
         text: c('new_plans: feature').jt`${size} storage`,
         tooltip,
         included: true,
-        fire,
+        highlight,
         icon: 'storage',
     };
 };
 
-export const getStorageFeatureB2B = (bytes: number, fire?: boolean): PlanCardFeatureDefinition => {
+export const getStorageFeatureB2B = (bytes: number, highlight?: boolean): PlanCardFeatureDefinition => {
     const size = humanSize(bytes, undefined, undefined, 0);
     return {
         text: c('new_plans: feature').t`${size} storage per user`,
         tooltip: c('new_plans: tooltip')
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}. Administrators can allocate different storage amounts to users in their organization`,
         included: true,
-        fire,
+        highlight,
         icon: 'storage',
     };
 };
@@ -110,17 +110,16 @@ export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
         name: 'storage',
         plans: {
             [PLANS.FREE]: getStorageFeature(-1),
-            [PLANS.BUNDLE]: getStorageFeature(plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000, { fire: true }),
+            [PLANS.BUNDLE]: getStorageFeature(plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000),
             [PLANS.MAIL]: getStorageFeature(plansMap[PLANS.MAIL]?.MaxSpace ?? 16106127360),
             [PLANS.VPN]: getStorageFeature(-1),
             [PLANS.DRIVE]: getStorageFeature(plansMap[PLANS.DRIVE]?.MaxSpace ?? 214748364800),
             [PLANS.PASS_PLUS]: getStorageFeature(-1),
             [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, {
                 family: true,
-                fire: true,
             }),
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360),
-            [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000, true),
+            [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000),
         },
     };
 };

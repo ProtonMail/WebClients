@@ -37,7 +37,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 
 import './UpsellPanel.scss';
 
-interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'fire' | 'included'> {
+interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];
     included?: PlanCardFeatureDefinition['included'];
 }

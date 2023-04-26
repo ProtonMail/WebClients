@@ -191,15 +191,15 @@ export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): Short
             .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`,
         cta: getCTA(plan.Title),
         features: [
-            getVPNConnections(VPN_CONNECTIONS, true),
-            getCountries(plusServers, true),
-            getVPNSpeed('highest', true),
+            getVPNConnections(VPN_CONNECTIONS),
+            getCountries(plusServers),
+            getVPNSpeed('highest'),
             getNoLogs(true),
-            getNetShield(true, true),
-            getStreaming(true, true),
-            getP2P(true, true),
-            getSecureCore(true, true),
-            getTor(true, true),
+            getNetShield(true),
+            getStreaming(true),
+            getP2P(true),
+            getSecureCore(true),
+            getTor(true),
         ],
     };
 };
