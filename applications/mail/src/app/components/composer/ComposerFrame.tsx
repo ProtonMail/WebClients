@@ -38,7 +38,7 @@ const ComposerFrame = ({
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
     const composerIDRef = useRef(composerID);
-    // Needed for rerenders when window size changes
+    // Needed for re-renders when window size changes
     const [, windowHeight] = useWindowSize();
 
     // Minimized status of the composer
