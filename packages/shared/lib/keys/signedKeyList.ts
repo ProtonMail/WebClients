@@ -1,7 +1,15 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 
-import { ActiveKey, Address, KeyTransparencyVerify, SignedKeyList, SignedKeyListItem } from '../interfaces';
+import {
+    ActiveKey,
+    Address,
+    DecryptedKey,
+    KeyTransparencyVerify,
+    SignedKeyList,
+    SignedKeyListItem,
+} from '../interfaces';
 import { SimpleMap } from '../interfaces/utils';
+import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 
 export const getSignature = async (data: string, signingKey: PrivateKeyReference) => {
     const signature = await CryptoProxy.signMessage({
@@ -45,6 +53,24 @@ export const getSignedKeyList = async (
     await keyTransparencyVerify(address, signedKeyList, publicKeys);
 
     return signedKeyList;
+};
+
+export const getOrCreateSignedKeyList = async (
+    address: Address,
+    decryptedKeys: DecryptedKey[],
+    keyTransparencyVerify: KeyTransparencyVerify
+): Promise<SignedKeyList | undefined> => {
+    if (address.SignedKeyList) {
+        return {
+            Data: address.SignedKeyList.Data,
+            Signature: address.SignedKeyList.Signature,
+        };
+    }
+    const activeKeys = getNormalizedActiveKeys(
+        address,
+        await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
+    );
+    return activeKeys.length > 0 ? getSignedKeyList(activeKeys, address, keyTransparencyVerify) : undefined;
 };
 
 const signedKeyListItemParser = ({ Primary, Flags, Fingerprint, SHA256Fingerprints }: any) =>

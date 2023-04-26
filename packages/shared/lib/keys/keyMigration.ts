@@ -15,6 +15,7 @@ import {
     Address,
     Api,
     DecryptedKey,
+    KeyMigrationKTVerifier,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     Member,
@@ -25,12 +26,11 @@ import {
     User,
 } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
-import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
-import { getSignedKeyList } from './signedKeyList';
+import { getOrCreateSignedKeyList } from './signedKeyList';
 
 export const getSentryError = (e: any): any => {
     // Only interested in api errors where the API gave a valid error response, or run time errors.
@@ -106,12 +106,12 @@ export async function getAddressKeysMigrationPayload(
         | {
               Address: Address;
               AddressKeys: MigrateAddressKeyPayload[];
-              SignedKeyList: SignedKeyList;
+              SignedKeyList: SignedKeyList | undefined;
           }
         | {
               Address: Address;
               AddressKeys: MigrateMemberAddressKeyPayload[];
-              SignedKeyList: SignedKeyList;
+              SignedKeyList: SignedKeyList | undefined;
           }
     >(
         addressesKeys.map(async ({ address, keys }) => {
@@ -142,16 +142,10 @@ export async function getAddressKeysMigrationPayload(
                     publicKey: await toPublicKeyReference(privateKey),
                 }))
             );
-            const activeKeys = getNormalizedActiveKeys(
-                address,
-                await getActiveKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys)
-            );
+            const signedKeyList = await getOrCreateSignedKeyList(address, migratedDecryptedKeys, keyTransparencyVerify);
             return {
                 Address: address,
-                SignedKeyList:
-                    activeKeys.length > 0
-                        ? await getSignedKeyList(activeKeys, address, keyTransparencyVerify)
-                        : (undefined as any),
+                SignedKeyList: signedKeyList,
                 AddressKeys: migratedKeys.map((migratedKey) => {
                     return {
                         ID: migratedKey.ID,
@@ -171,7 +165,9 @@ export async function getAddressKeysMigrationPayload(
             // Some addresses may not have keys and thus won't have generated a signed key list
             if (AddressKeys.length > 0) {
                 acc.AddressKeys = acc.AddressKeys.concat(AddressKeys as any); // forcing any since it's typed in the promise result above
-                acc.SignedKeyLists[Address.ID] = SignedKeyList;
+                if (SignedKeyList) {
+                    acc.SignedKeyLists[Address.ID] = SignedKeyList;
+                }
             }
             return acc;
         },
@@ -347,7 +343,7 @@ export const migrateUser = async ({
     keyPassword,
     timeout = 120000,
     preAuthKTVerify,
-    keyTransparencyAbsenceVerifier,
+    keyMigrationKTVerifier,
 }: {
     api: Api;
     user: User;
@@ -355,7 +351,7 @@ export const migrateUser = async ({
     keyPassword: string;
     timeout?: number;
     preAuthKTVerify: PreAuthKTVerify;
-    keyTransparencyAbsenceVerifier(email: string): Promise<void>;
+    keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }) => {
     if (user.ToMigrate !== 1 || getHasMigratedAddressKeys(addresses)) {
         return false;
@@ -365,15 +361,13 @@ export const migrateUser = async ({
         return false;
     }
 
-    // Key migration can be triggered by the server. Since the only legitimate
-    // case in which this can happen is when an address is not in KT (otherwise
-    // its keys must have been already upgraded and migrated), we check whether
-    // this is the case by verifying that an absence proof exists and verifies.
-    // If either is not satisfied, key migration is considered to be malicious
+    // Key migration can be triggered by the server.
+    // Since the server could use that logic to regenerate
+    // new SKLs on demand, we need to check the KT state.
     await Promise.all(
-        addresses.map(async ({ Keys, Email }) => {
+        addresses.map(async ({ Keys, Email, SignedKeyList }) => {
             if (!Keys.some(getHasMigratedAddressKey)) {
-                return keyTransparencyAbsenceVerifier(canonicalizeInternalEmail(Email));
+                await keyMigrationKTVerifier(canonicalizeInternalEmail(Email), Keys, SignedKeyList);
             }
         })
     );
@@ -494,16 +488,10 @@ export async function restoreBrokenSKL({
 
         const signedKeyLists = await Promise.all(
             memberAddressesKeys.map(async ({ address, keys }) => {
-                const activeKeys = getNormalizedActiveKeys(
-                    address,
-                    await getActiveKeys(address, null, address.Keys, keys)
-                );
+                const signedKeyList = await getOrCreateSignedKeyList(address, keys, keyTransparencyVerify);
                 return {
                     Address: address,
-                    SignedKeyList:
-                        activeKeys.length > 0
-                            ? await getSignedKeyList(activeKeys, address, keyTransparencyVerify)
-                            : (undefined as any),
+                    SignedKeyList: signedKeyList,
                 };
             })
         );
