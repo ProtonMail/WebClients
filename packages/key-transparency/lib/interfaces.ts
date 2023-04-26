@@ -42,6 +42,7 @@ export interface KTBlobValuesWithInfo {
 export interface VerifiedEpoch {
     EpochID: number;
     Revision: number;
+    SKLCreationTime: number;
 }
 
 export interface AuditData {
