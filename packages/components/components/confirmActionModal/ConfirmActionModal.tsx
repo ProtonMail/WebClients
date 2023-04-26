@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    Alert,
     ModalSize,
     ModalStateProps,
     ModalTwo,
@@ -67,15 +66,9 @@ export const ConfirmActionModal = ({
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>
-                {actionType === 'danger' ? (
-                    <Alert className="mb1" type="error">
-                        {message}
-                        <br />
-                        {!canUndo && c('Info').t`You cannot undo this action.`}
-                    </Alert>
-                ) : (
-                    message
-                )}
+                {message}
+                <br />
+                {!canUndo && c('Info').t`You cannot undo this action.`}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="reset" onClick={onCancel} disabled={isLoading}>
