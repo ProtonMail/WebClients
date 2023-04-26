@@ -114,7 +114,7 @@ const UserKeysSections = () => {
         if (!userKeysDisplay.length) {
             return (
                 <SettingsSectionWide>
-                    <SettingsParagraph>{c('Info').t`No contact encryption keys exist`}</SettingsParagraph>
+                    <SettingsParagraph>{c('Info').t`No account keys exist`}</SettingsParagraph>
                 </SettingsSectionWide>
             );
         }
