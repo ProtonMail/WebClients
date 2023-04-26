@@ -66,7 +66,7 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
             <ModalTwoContent>
                 <Alert className="mb1" type="info">
                     {c('Info')
-                        .t`To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.`}
+                        .t`To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.`}
                 </Alert>
                 {errorKey && (
                     <div className="flex flex-align-items-center mb1">
