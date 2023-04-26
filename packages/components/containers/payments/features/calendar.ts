@@ -90,6 +90,7 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.MAIL]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL]?.MaxCalendars),
                 [PLANS.VPN]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.VPN]?.MaxCalendars),
                 [PLANS.DRIVE]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.DRIVE]?.MaxCalendars),
+                [PLANS.PASS_PLUS]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.PASS_PLUS]?.MaxCalendars),
                 [PLANS.FAMILY]: getNCalendarsPerUserFeature(
                     Math.floor((MAX_CALENDARS_FAMILY ?? plansMap[PLANS.FAMILY]?.MaxCalendars) / FAMILY_MAX_USERS)
                 ),
@@ -107,6 +108,7 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.MAIL]: getEndToEndEncryption(),
                 [PLANS.VPN]: getEndToEndEncryption(),
                 [PLANS.DRIVE]: getEndToEndEncryption(),
+                [PLANS.PASS_PLUS]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
@@ -120,6 +122,7 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL, calendarSharingEnabled),
                 [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN, calendarSharingEnabled),
                 [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE, calendarSharingEnabled),
+                [PLANS.PASS_PLUS]: getShareFeature(plansMap, PLANS.PASS_PLUS, calendarSharingEnabled),
                 [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY, calendarSharingEnabled),
                 [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, calendarSharingEnabled, Audience.B2B),
                 [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, calendarSharingEnabled, Audience.B2B),
@@ -133,6 +136,7 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.MAIL]: getInvitation(),
                 [PLANS.VPN]: getInvitation(),
                 [PLANS.DRIVE]: getInvitation(),
+                [PLANS.PASS_PLUS]: getInvitation(),
                 [PLANS.FAMILY]: getInvitation(),
                 [PLANS.BUNDLE_PRO]: getInvitation(),
                 [PLANS.MAIL_PRO]: getInvitation(),

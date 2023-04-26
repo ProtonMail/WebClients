@@ -3,13 +3,31 @@ import { c } from 'ttag';
 import { useFeature } from '@proton/components/hooks';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { Audience, Currency, Cycle, Organization, Plan, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Currency,
+    Cycle,
+    Organization,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
-
-
-import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
+import {
+    CalendarLogo,
+    DriveLogo,
+    Icon,
+    MailLogo,
+    Option,
+    PassLogo,
+    SelectTwo,
+    Tabs,
+    VpnLogo,
+} from '../../../components';
 import { FeatureCode } from '../../features';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
@@ -18,10 +36,7 @@ import { getShortPlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
 
-
-
 import './PlanSelection.scss';
-
 
 export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;
@@ -70,6 +85,7 @@ interface Props {
     subscription?: Subscription;
     organization?: Organization;
     calendarSharingEnabled: boolean;
+    isPassPlusEnabled: boolean;
 }
 
 const PlanSelection = ({
@@ -92,6 +108,7 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     calendarSharingEnabled,
+    isPassPlusEnabled,
 }: Props) => {
     const featureContext = useFeature(FeatureCode.FamilyPlan);
     if (featureContext.loading) {
@@ -101,7 +118,12 @@ const PlanSelection = ({
 
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
-    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
+    const enabledProductB2CPlans = [
+        PLANS.MAIL,
+        PLANS.VPN,
+        PLANS.DRIVE,
+        isPassPlusEnabled ? PLANS.PASS_PLUS : undefined,
+    ].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const B2CPlans = [
@@ -128,7 +150,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers);
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers, {}, isPassPlusEnabled);
 
         if (!shortPlan) {
             return null;
@@ -185,7 +207,12 @@ const PlanSelection = ({
                     mode === 'settings' ? (
                         <PlanCardFeaturesShort plan={shortPlan} icon />
                     ) : (
-                        <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
+                        <PlanCardFeatures
+                            audience={audience}
+                            features={features}
+                            planName={plan.Name as PLANS}
+                            isPassPlusEnabled={isPassPlusEnabled}
+                        />
                     )
                 }
                 onSelect={(planName) => {
@@ -207,7 +234,7 @@ const PlanSelection = ({
             title: c('Tab subscription modal').t`For individuals`,
             content: (
                 <div
-                    className="plan-selection plan-selection--b2c mt1"
+                    className="plan-selection plan-selection--b2c mt-4"
                     style={{ '--plan-selection-number': B2CPlans.length }}
                 >
                     {B2CPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
@@ -233,7 +260,7 @@ const PlanSelection = ({
             title: c('Tab subscription modal').t`For businesses`,
             content: (
                 <div
-                    className="plan-selection plan-selection--b2b mt1"
+                    className="plan-selection plan-selection--b2b mt-4"
                     style={{ '--plan-selection-number': B2BPlans.length }}
                 >
                     {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))}
@@ -262,19 +289,25 @@ const PlanSelection = ({
                     ]}
                 />
             </div>
-            <div className="flex on-mobile-center on-mobile-mt1">{currencyItem}</div>
+            <div className="flex on-mobile-center mt-4 md:mt-0">{currencyItem}</div>
         </div>
     );
 
     const logosRow = (
-        <div className="mt2 mb2 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
-            <MailLogo />
+        <div className="my-6 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
+            <MailLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
-            <CalendarLogo />
+            <CalendarLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
-            <DriveLogo />
+            <DriveLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
-            <VpnLogo />
+            <VpnLogo variant="glyph-only" />
+            {isPassPlusEnabled && (
+                <>
+                    <Icon name="plus" alt="+" className="mx-2" />
+                    <PassLogo variant="glyph-only" />
+                </>
+            )}
         </div>
     );
 
@@ -289,7 +322,7 @@ const PlanSelection = ({
 
     return (
         <>
-            <div className="mb2">
+            <div className="mb-6">
                 <Tabs
                     value={audienceToTabNumber(audience)}
                     onChange={(tabNumber) => onChangeAudience(tabNumberToAudience(tabNumber))}
@@ -304,7 +337,7 @@ const PlanSelection = ({
                                 {currencySelectorRow}
                             </>
                         ) : (
-                            <div className="mt1">{currencySelectorRow}</div>
+                            <div className="mt-6">{currencySelectorRow}</div>
                         )
                     }
                 />

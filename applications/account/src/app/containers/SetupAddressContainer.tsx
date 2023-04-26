@@ -54,7 +54,7 @@ interface From {
 const defaultSwitchResult = { type: 'switch', app: APPS.PROTONACCOUNT } as const;
 
 const getApp = (app: string) => {
-    if (app === APPS.PROTONVPN_SETTINGS) {
+    if (app === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONPASS) {
         return app;
     }
     return getValidatedApp(app);
@@ -121,7 +121,7 @@ const SetupAddressContainer = () => {
         }
         let url = '';
         const localID = authentication.getLocalID();
-        if (from.app === APPS.PROTONVPN_SETTINGS || from.type === 'settings') {
+        if (from.app === APPS.PROTONVPN_SETTINGS || from.app === APPS.PROTONPASS || from.type === 'settings') {
             url = getAppHref(`/${getSlugFromApp(from.app)}/dashboard`, APPS.PROTONACCOUNT, localID);
         } else {
             url = getAppHref('/', from.app, localID);

@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, useState } from 'react';
 
 import { LogoProps, classnames, generateUID } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 type Version = 'full' | 'glyph-only';
 
@@ -22,7 +23,7 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
             height="36"
             fill="none"
             role="img"
-            className={classnames(['logo', size && `icon-${size}p`, variant, className])}
+            className={clsx('logo', size && `icon-${size}p`, variant, className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >

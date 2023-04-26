@@ -1,12 +1,11 @@
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
-
-
+import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, Logo, SettingsLink } from '../../components';
-import { useConfig, useUser } from '../../hooks';
-
+import { useConfig, useFeature, useUser } from '../../hooks';
+import { FeatureCode } from '../features';
 
 interface AppsProps {
     app: APP_NAMES;
@@ -19,7 +18,18 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
     const [user] = useUser();
     const { APP_NAME } = useConfig();
 
-    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].map((app) => {
+    const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
+    const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
+
+    const apps = [
+        APPS.PROTONMAIL,
+        APPS.PROTONCALENDAR,
+        APPS.PROTONDRIVE,
+        APPS.PROTONVPN_SETTINGS,
+        isPassSettingsEnabled ? APPS.PROTONPASS : undefined,
+    ].filter(isTruthy);
+
+    return apps.map((app) => {
         const appName = getAppName(app);
         const inner = (
             <>
@@ -49,6 +59,20 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
             );
         }
         if (app === APPS.PROTONVPN_SETTINGS) {
+            return (
+                <SettingsLink
+                    path="/"
+                    app={app}
+                    key={app}
+                    title={appName}
+                    className={itemClassName}
+                    aria-current={current}
+                >
+                    {inner}
+                </SettingsLink>
+            );
+        }
+        if (app === APPS.PROTONPASS) {
             return (
                 <SettingsLink
                     path="/"

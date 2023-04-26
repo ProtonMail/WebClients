@@ -24,6 +24,7 @@ import SubscriptionModalProvider, {
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/components/portal/Portal');
 jest.mock('@proton/components/containers/payments/subscription/SubscriptionModal');
+jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 
 beforeEach(() => {
     mockUserCache();
