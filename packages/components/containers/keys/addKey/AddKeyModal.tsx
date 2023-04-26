@@ -105,7 +105,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                 children: (
                     <Alert className="mb1">
                         {type === 'user'
-                            ? // Translator: encryption keys are referred to "contact encryption keys"
+                            ? // Translator: encryption keys are referred to as "account keys"
                               c('Key generation')
                                   .t`The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.`
                             : c('Key generation')
