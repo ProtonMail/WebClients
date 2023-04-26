@@ -56,76 +56,76 @@ export const getVPNAppFeature = (options?: { family?: boolean }): PlanCardFeatur
     };
 };
 
-export const getCountries = (text: string, fire?: boolean): PlanCardFeatureDefinition => {
+export const getCountries = (text: string, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text,
         included: true,
-        fire,
+        highlight,
         icon: 'earth',
     };
 };
 
-export const getVPNSpeed = (type: 'medium' | 'highest', fire?: boolean): PlanCardFeatureDefinition => {
+export const getVPNSpeed = (type: 'medium' | 'highest', highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: type === 'medium' ? c('new_plans').t`Medium VPN speed` : c('new_plans').t`Highest VPN speed`,
         included: true,
-        fire,
+        highlight,
         icon: 'chevrons-right',
     };
 };
 
-export const getStreaming = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
+export const getStreaming = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Worldwide streaming services`,
         tooltip: c('new_plans: tooltip')
             .t`Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere`,
         included,
-        fire,
+        highlight,
         icon: 'play',
     };
 };
 
-export const getP2P = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
+export const getP2P = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`P2P/BitTorrent`,
         tooltip: c('new_plans: tooltip').t`Support for file-sharing protocols like BitTorrent`,
         included,
-        fire,
+        highlight,
         icon: 'arrows-switch',
     };
 };
 
-export const getNetShield = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
+export const getNetShield = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`NetShield malware and ad-blocker`,
         tooltip: c('new_plans: tooltip')
             .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware`,
         included,
-        fire,
+        highlight,
         icon: 'shield',
     };
 };
-export const getSecureCore = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
+export const getSecureCore = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Secure Core servers`,
         tooltip: c('new_plans: tooltip')
             .t`Defends against the threat to VPN privacy by passing your internet traffic through multiple servers`,
         included,
-        fire,
+        highlight,
         icon: 'servers',
     };
 };
-export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefinition => {
+export const getTor = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Tor over VPN`,
         tooltip: c('new_plans: tooltip').t`Route your internet traffic through the Tor network with a single click`,
         included,
-        fire,
+        highlight,
         icon: 'brand-tor',
     };
 };
 
-const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
+const getVPNConnectionsB2B = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text:
             n === 1
@@ -138,26 +138,26 @@ const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition 
         tooltip: c('new_plans: tooltip')
             .t`One VPN connection allows one device to connect to ${BRAND_NAME} VPN at any given time. For instance, to connect a phone and a laptop to ${BRAND_NAME} VPN at the same time, you need two VPN connections.`,
         included: true,
-        fire,
+        highlight,
         icon: 'brand-proton-vpn',
     };
 };
 
-export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
+export const getVPNConnections = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n),
         included: true,
-        fire,
+        highlight,
         icon: 'brand-proton-vpn',
     };
 };
-export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
+export const getNoLogs = (highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Strict no-logs policy`,
         tooltip: c('new_plans: tooltip')
             .t`We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy`,
         included: true,
-        fire,
+        highlight,
         icon: 'alias',
     };
 };
@@ -235,14 +235,14 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
             target: Audience.B2C,
             plans: {
                 [PLANS.FREE]: getVPNConnections(1),
-                [PLANS.BUNDLE]: getVPNConnections(VPN_CONNECTIONS, true),
+                [PLANS.BUNDLE]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.MAIL]: getVPNConnections(1),
-                [PLANS.VPN]: getVPNConnections(VPN_CONNECTIONS, true),
+                [PLANS.VPN]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.DRIVE]: getVPNConnections(1),
                 [PLANS.PASS_PLUS]: getVPNConnections(1),
                 [PLANS.FAMILY]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnections(1),
-                [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS, true),
+                [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS),
             },
         },
         {
@@ -250,14 +250,14 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
             target: Audience.B2B,
             plans: {
                 [PLANS.FREE]: getVPNConnectionsB2B(1),
-                [PLANS.BUNDLE]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.BUNDLE]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.MAIL]: getVPNConnectionsB2B(1),
-                [PLANS.VPN]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.VPN]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.DRIVE]: getVPNConnectionsB2B(1),
                 [PLANS.PASS_PLUS]: getVPNConnectionsB2B(1),
                 [PLANS.FAMILY]: getVPNConnectionsB2B(1),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
-                [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
             },
         },
         {
@@ -265,112 +265,112 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
             target: Audience.FAMILY,
             plans: {
                 [PLANS.FREE]: getVPNConnections(1),
-                [PLANS.BUNDLE]: getVPNConnections(VPN_CONNECTIONS, true),
+                [PLANS.BUNDLE]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.MAIL]: getVPNConnections(1),
-                [PLANS.VPN]: getVPNConnections(VPN_CONNECTIONS, true),
+                [PLANS.VPN]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.DRIVE]: getVPNConnections(1),
                 [PLANS.PASS_PLUS]: getVPNConnections(1),
-                [PLANS.FAMILY]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.FAMILY]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
-                [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
             },
         },
         {
             name: 'countries',
             plans: {
                 [PLANS.FREE]: getCountries(freeServers),
-                [PLANS.BUNDLE]: getCountries(plusServers, true),
+                [PLANS.BUNDLE]: getCountries(plusServers),
                 [PLANS.MAIL]: getCountries(freeServers),
-                [PLANS.VPN]: getCountries(plusServers, true),
+                [PLANS.VPN]: getCountries(plusServers),
                 [PLANS.DRIVE]: getCountries(freeServers),
                 [PLANS.PASS_PLUS]: getCountries(freeServers),
-                [PLANS.FAMILY]: getCountries(plusServers, true),
+                [PLANS.FAMILY]: getCountries(plusServers),
                 [PLANS.MAIL_PRO]: getCountries(freeServers),
-                [PLANS.BUNDLE_PRO]: getCountries(plusServers, true),
+                [PLANS.BUNDLE_PRO]: getCountries(plusServers),
             },
         },
         {
             name: 'vpn-speed',
             plans: {
                 [PLANS.FREE]: getVPNSpeed('medium'),
-                [PLANS.BUNDLE]: getVPNSpeed('highest', true),
+                [PLANS.BUNDLE]: getVPNSpeed('highest'),
                 [PLANS.MAIL]: getVPNSpeed('medium'),
-                [PLANS.VPN]: getVPNSpeed('highest', true),
+                [PLANS.VPN]: getVPNSpeed('highest'),
                 [PLANS.DRIVE]: getVPNSpeed('medium'),
                 [PLANS.PASS_PLUS]: getVPNSpeed('medium'),
-                [PLANS.FAMILY]: getVPNSpeed('highest', true),
+                [PLANS.FAMILY]: getVPNSpeed('highest'),
                 [PLANS.MAIL_PRO]: getVPNSpeed('medium'),
-                [PLANS.BUNDLE_PRO]: getVPNSpeed('highest', true),
+                [PLANS.BUNDLE_PRO]: getVPNSpeed('highest'),
             },
         },
         {
             name: 'netshield',
             plans: {
                 [PLANS.FREE]: getNetShield(false),
-                [PLANS.BUNDLE]: getNetShield(true, true),
+                [PLANS.BUNDLE]: getNetShield(true),
                 [PLANS.MAIL]: getNetShield(false),
-                [PLANS.VPN]: getNetShield(true, true),
+                [PLANS.VPN]: getNetShield(true),
                 [PLANS.DRIVE]: getNetShield(false),
                 [PLANS.PASS_PLUS]: getNetShield(false),
-                [PLANS.FAMILY]: getNetShield(true, true),
+                [PLANS.FAMILY]: getNetShield(true),
                 [PLANS.MAIL_PRO]: getNetShield(false),
-                [PLANS.BUNDLE_PRO]: getNetShield(true, true),
+                [PLANS.BUNDLE_PRO]: getNetShield(true),
             },
         },
         {
             name: 'streaming',
             plans: {
                 [PLANS.FREE]: getStreaming(false),
-                [PLANS.BUNDLE]: getStreaming(true, true),
+                [PLANS.BUNDLE]: getStreaming(true),
                 [PLANS.MAIL]: getStreaming(false),
-                [PLANS.VPN]: getStreaming(true, true),
+                [PLANS.VPN]: getStreaming(true),
                 [PLANS.DRIVE]: getStreaming(false),
                 [PLANS.PASS_PLUS]: getStreaming(false),
-                [PLANS.FAMILY]: getStreaming(true, true),
+                [PLANS.FAMILY]: getStreaming(true),
                 [PLANS.MAIL_PRO]: getStreaming(false),
-                [PLANS.BUNDLE_PRO]: getStreaming(true, true),
+                [PLANS.BUNDLE_PRO]: getStreaming(true),
             },
         },
         {
             name: 'p2p',
             plans: {
                 [PLANS.FREE]: getP2P(false),
-                [PLANS.BUNDLE]: getP2P(true, true),
+                [PLANS.BUNDLE]: getP2P(true),
                 [PLANS.MAIL]: getP2P(false),
-                [PLANS.VPN]: getP2P(true, true),
+                [PLANS.VPN]: getP2P(true),
                 [PLANS.DRIVE]: getP2P(false),
                 [PLANS.PASS_PLUS]: getP2P(false),
-                [PLANS.FAMILY]: getP2P(true, true),
+                [PLANS.FAMILY]: getP2P(true),
                 [PLANS.MAIL_PRO]: getP2P(false),
-                [PLANS.BUNDLE_PRO]: getP2P(true, true),
+                [PLANS.BUNDLE_PRO]: getP2P(true),
             },
         },
         {
             name: 'secure',
             plans: {
                 [PLANS.FREE]: getSecureCore(false),
-                [PLANS.BUNDLE]: getSecureCore(true, true),
+                [PLANS.BUNDLE]: getSecureCore(true),
                 [PLANS.MAIL]: getSecureCore(false),
-                [PLANS.VPN]: getSecureCore(true, true),
+                [PLANS.VPN]: getSecureCore(true),
                 [PLANS.DRIVE]: getSecureCore(false),
                 [PLANS.PASS_PLUS]: getSecureCore(false),
-                [PLANS.FAMILY]: getSecureCore(true, true),
+                [PLANS.FAMILY]: getSecureCore(true),
                 [PLANS.MAIL_PRO]: getSecureCore(false),
-                [PLANS.BUNDLE_PRO]: getSecureCore(true, true),
+                [PLANS.BUNDLE_PRO]: getSecureCore(true),
             },
         },
         {
             name: 'tor',
             plans: {
                 [PLANS.FREE]: getTor(false),
-                [PLANS.BUNDLE]: getTor(true, true),
+                [PLANS.BUNDLE]: getTor(true),
                 [PLANS.MAIL]: getTor(false),
-                [PLANS.VPN]: getTor(true, true),
+                [PLANS.VPN]: getTor(true),
                 [PLANS.DRIVE]: getTor(false),
                 [PLANS.PASS_PLUS]: getTor(false),
-                [PLANS.FAMILY]: getTor(true, true),
+                [PLANS.FAMILY]: getTor(true),
                 [PLANS.MAIL_PRO]: getTor(false),
-                [PLANS.BUNDLE_PRO]: getTor(true, true),
+                [PLANS.BUNDLE_PRO]: getTor(true),
             },
         },
         {
