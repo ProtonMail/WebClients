@@ -13,15 +13,15 @@ import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 interface FeatureListProps {
     features: PlanCardFeatureDefinition[];
     icon?: boolean;
-    fire?: boolean;
+    highlight?: boolean;
 }
 
-export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureListProps) => {
+export const PlanCardFeatureList = ({ features, icon, highlight = false }: FeatureListProps) => {
     return (
         <ul className="bg-weak-odd unstyled mt-4 mb-0 md:mb-8">
             {features.map((feature) => {
                 const iconToDisplay = (() => {
-                    if (feature.fire && fire) {
+                    if (feature.highlight && highlight) {
                         return <Icon size={20} name="fire" className="color-warning" />;
                     }
 
@@ -43,7 +43,7 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                 const key =
                     typeof feature.text === 'string'
                         ? feature.text
-                        : `${feature.tooltip}-${feature.fire}-${feature.icon}`;
+                        : `${feature.tooltip}-${feature.highlight}-${feature.icon}`;
                 return (
                     <li key={key} className="px0-75 py0-5 flex rounded">
                         <div
@@ -159,7 +159,7 @@ interface PlanCardFeaturesShortProps {
 export const PlanCardFeaturesShort = ({ plan, icon }: PlanCardFeaturesShortProps) => {
     const highlightFeatures = (
         <div>
-            <PlanCardFeatureList features={plan.features} icon={icon} fire={false} />
+            <PlanCardFeatureList features={plan.features} icon={icon} />
         </div>
     );
     return <>{highlightFeatures}</>;
