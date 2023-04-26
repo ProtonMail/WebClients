@@ -15,15 +15,18 @@ import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
-import { FieldsetCluster } from '../../../components/Controls/FieldsetCluster';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
-import { Field } from '../../../components/Fields/Field';
-import { PasswordField } from '../../../components/Fields/PasswordField';
-import { TextField } from '../../../components/Fields/TextField';
-import { TextAreaField } from '../../../components/Fields/TextareaField';
-import { TitleField } from '../../../components/Fields/TitleField';
-import { UrlGroupFieldCluster, createNewUrl } from '../../../components/Fields/UrlGroupFieldCluster';
+import { FieldsetCluster } from '../../../components/Fields';
+import {
+    Field,
+    PasswordField,
+    TextAreaField,
+    TextField,
+    TitleField,
+    UrlGroupField,
+    createNewUrl,
+} from '../../../components/Fields';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { AliasModal } from '../Alias/Alias.modal';
@@ -230,7 +233,9 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                 />
                             </FieldsetCluster>
 
-                            <UrlGroupFieldCluster form={form} />
+                            <FieldsetCluster>
+                                <UrlGroupField form={form} />
+                            </FieldsetCluster>
 
                             <FieldsetCluster>
                                 <Field
@@ -239,7 +244,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     placeholder={c('Placeholder').t`Enter a note...`}
                                     component={TextAreaField}
                                     icon="note"
-                                    minRows={1}
+                                    minRows={3}
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                     onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                                 />

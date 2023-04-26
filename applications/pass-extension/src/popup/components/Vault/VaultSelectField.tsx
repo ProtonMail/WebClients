@@ -6,15 +6,13 @@ import { c } from 'ttag';
 import { Option } from '@proton/components';
 import { selectAllVaults } from '@proton/pass/store';
 
-import { FieldsetCluster } from '../Controls/FieldsetCluster';
-import type { Props as SelectControlProps } from '../Controls/SelectControl';
-import type { AbstractFieldProps } from '../Fields/AbstractField';
-import { SelectField } from '../Fields/SelectField';
+import { FieldsetCluster } from '../Fields';
+import { SelectField, type SelectFieldProps } from '../Fields';
 import { VaultIcon } from './VaultIcon';
 
-type Props = AbstractFieldProps<Omit<SelectControlProps, 'children'>>;
+type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'>;
 
-export const VaultSelectField: VFC<Props> = (props) => {
+export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
     const vaults = useSelector(selectAllVaults);
 
     const selectedVault = useMemo(
@@ -30,31 +28,27 @@ export const VaultSelectField: VFC<Props> = (props) => {
         );
 
     return vaults.length > 1 ? (
-        <FieldsetCluster>
-            <div className="flex flex-align-items-center">
-                <VaultIcon
-                    icon={selectedVault?.content.display.icon}
-                    color={selectedVault?.content.display.color}
-                    size="large"
-                    className="ml-4"
-                />
-                <div className="flex-item-fluid">
-                    <SelectField {...props} renderSelected={renderSelected}>
-                        {vaults.map(({ shareId, content }) => (
-                            <Option key={shareId} value={shareId} title={content.name}>
-                                <div className="flex gap-x-3 flex-align-items-center">
-                                    <VaultIcon
-                                        icon={content.display.icon}
-                                        color={content.display.color}
-                                        size="medium"
-                                    />
-                                    <span className="flex-item-fluid text-ellipsis">{content.name}</span>
-                                </div>
-                            </Option>
-                        ))}
-                    </SelectField>
-                </div>
-            </div>
+        <FieldsetCluster className="mb-4">
+            <SelectField
+                {...props}
+                icon={
+                    <VaultIcon
+                        icon={selectedVault?.content.display.icon}
+                        color={selectedVault?.content.display.color}
+                        size="large"
+                    />
+                }
+                renderSelected={renderSelected}
+            >
+                {vaults.map(({ shareId, content }) => (
+                    <Option key={shareId} value={shareId} title={content.name}>
+                        <div className="flex gap-x-3 flex-align-items-center">
+                            <VaultIcon icon={content.display.icon} color={content.display.color} size="medium" />
+                            <span className="flex-item-fluid text-ellipsis">{content.name}</span>
+                        </div>
+                    </Option>
+                ))}
+            </SelectField>
         </FieldsetCluster>
     ) : null;
 };

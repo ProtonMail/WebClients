@@ -1,10 +1,48 @@
-import type { VFC } from 'react';
+import { VFC } from 'react';
 
-import { Props as TextareControlProps, TextareaControl } from '../Controls/TextareaControl';
-import { AbstractField, type AbstractFieldProps } from './AbstractField';
+import { type FieldProps } from 'formik';
 
-export const TextAreaField: VFC<AbstractFieldProps<TextareControlProps>> = (props) => (
-    <AbstractField<TextareControlProps> {...props}>
-        {(inputControlProps) => <TextareaControl {...inputControlProps} />}
-    </AbstractField>
-);
+import { TextAreaTwo } from '@proton/components';
+import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import clsx from '@proton/utils/clsx';
+
+import { FieldBox, type FieldBoxProps } from './shared/FieldBox';
+import { useFieldControl } from './shared/useFieldControl';
+
+export type BaseTextAreaFieldProps = FieldProps & InputFieldProps<typeof TextAreaTwo>;
+
+export const BaseTextAreaField: VFC<BaseTextAreaFieldProps> = (props) => {
+    const { className, field, labelContainerClassName, ...rest } = props;
+
+    const { error } = useFieldControl(props);
+
+    return (
+        <TextAreaTwo
+            autoGrow
+            unstyled
+            className={clsx('border-none flex p-0 resize-none', className)}
+            error={error}
+            minRows={2}
+            rows={Number.MAX_SAFE_INTEGER}
+            {...field}
+            {...rest}
+        />
+    );
+};
+
+export type TextAreaFieldProps = FieldBoxProps & BaseTextAreaFieldProps;
+
+export const TextAreaField: VFC<TextAreaFieldProps> = (props) => {
+    const { actions, actionsContainerClassName, className, icon, ...rest } = props;
+
+    return (
+        <FieldBox
+            actions={actions}
+            actionsContainerClassName={actionsContainerClassName}
+            className={className}
+            icon={icon}
+        >
+            <BaseTextAreaField {...rest} />
+        </FieldBox>
+    );
+};

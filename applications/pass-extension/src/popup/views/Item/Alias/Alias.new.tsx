@@ -10,11 +10,9 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { type ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
-import { FieldsetCluster } from '../../../components/Controls/FieldsetCluster';
-import { ValueControl } from '../../../components/Controls/ValueControl';
-import { Field } from '../../../components/Fields/Field';
-import { TextAreaField } from '../../../components/Fields/TextareaField';
-import { TitleField } from '../../../components/Fields/TitleField';
+import { FieldsetCluster } from '../../../components/Fields';
+import { Field, TextAreaField, TitleField } from '../../../components/Fields';
+import { ValueControl } from '../../../components/Fields/controls/ValueControl';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { VaultSelectField } from '../../../components/Vault/VaultSelectField';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
@@ -147,7 +145,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 placeholder={c('Placeholder').t`Enter a note...`}
                                 component={TextAreaField}
                                 icon="note"
-                                minRows={1}
+                                minRows={3}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                                 onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             />

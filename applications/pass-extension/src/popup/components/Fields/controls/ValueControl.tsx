@@ -3,13 +3,13 @@ import type { ReactNode, VFC } from 'react';
 import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { InputGroup, Props as InputGroupProps } from './InputGroup';
+import { FieldBox, FieldBoxProps } from '../shared/FieldBox';
 
 import './ValueControl.scss';
 
 type ContainerElement = 'div' | 'pre' | 'p' | 'ul';
 
-type Props = Omit<InputGroupProps, 'icon'> & {
+type Props = Omit<FieldBoxProps, 'icon'> & {
     as?: ContainerElement;
     children: ReactNode;
     icon?: IconName;
@@ -33,15 +33,15 @@ export const ValueControl: VFC<Props> = ({
 
     return (
         <div className={clsx(interactive && 'pass-value-control--interactive', !loading && invalid && 'border-danger')}>
-            <InputGroup
-                icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
+            <FieldBox
                 actions={actions}
+                icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
             >
                 <div className="color-weak text-sm">{label}</div>
                 <ValueContainer className="pass-value-control--value m-0 p-0 text-ellipsis">
                     {loading ? <div className="pass-skeleton pass-skeleton--value" /> : children}
                 </ValueContainer>
-            </InputGroup>
+            </FieldBox>
         </div>
     );
 };

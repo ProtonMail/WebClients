@@ -1,23 +1,43 @@
-import type { VFC } from 'react';
+import { type FC } from 'react';
 
-import { SelectControl, Props as SelectControlProps } from '../Controls/SelectControl';
-import { AbstractField, type AbstractFieldProps } from './AbstractField';
+import { type FieldProps } from 'formik';
 
-export const SelectField: VFC<AbstractFieldProps<SelectControlProps>> = (props) => {
+import { InputFieldTwo, SelectTwo } from '@proton/components';
+import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+
+import { FieldBox, type FieldBoxProps } from './shared/FieldBox';
+import { useFieldControl } from './shared/useFieldControl';
+
+export type SelectFieldProps = FieldProps &
+    InputFieldProps<typeof SelectTwo> &
+    Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'>;
+
+export const SelectField: FC<SelectFieldProps> = (props) => {
+    const { children, field, form, icon, loading, onValue, ...rest } = props;
+
+    const { error } = useFieldControl(props);
+
     return (
-        <AbstractField<SelectControlProps> {...props}>
-            {(inputControlProps) => (
-                <SelectControl
-                    {...inputControlProps}
-                    onChange={undefined}
-                    onValue={(value: unknown) => {
-                        inputControlProps.onValue?.(value);
-                        props.form.setFieldValue(props.field.name, value);
-                    }}
-                >
-                    {props.children}
-                </SelectControl>
-            )}
-        </AbstractField>
+        <FieldBox icon={icon}>
+            <InputFieldTwo<typeof SelectTwo>
+                unstyled
+                as={SelectTwo}
+                assistContainerClassName="hidden-empty"
+                caretIconName="chevron-down"
+                error={error}
+                labelContainerClassName="increase-click-surface color-weak text-normal text-sm"
+                renderSelected={loading ? () => <div className="pass-skeleton pass-skeleton--select" /> : undefined}
+                rootClassName="static"
+                {...field}
+                {...rest}
+                onChange={undefined}
+                onValue={(value: unknown) => {
+                    onValue?.(value);
+                    form.setFieldValue(field.name, value);
+                }}
+            >
+                {children}
+            </InputFieldTwo>
+        </FieldBox>
     );
 };

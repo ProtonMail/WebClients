@@ -10,12 +10,9 @@ import { merge } from '@proton/pass/utils/object';
 
 import { useAliasOptions } from '../../../../shared/hooks';
 import { type ItemEditProps } from '../../../../shared/items';
-import { FieldsetCluster } from '../../../components/Controls/FieldsetCluster';
-import { ValueControl } from '../../../components/Controls/ValueControl';
-import { Field } from '../../../components/Fields/Field';
-import { SelectField } from '../../../components/Fields/SelectField';
-import { TextAreaField } from '../../../components/Fields/TextareaField';
-import { TitleField } from '../../../components/Fields/TitleField';
+import { FieldsetCluster } from '../../../components/Fields';
+import { Field, SelectField, TextAreaField, TitleField } from '../../../components/Fields';
+import { ValueControl } from '../../../components/Fields/controls/ValueControl';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
@@ -126,7 +123,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                 placeholder={c('Placeholder').t`Enter a note...`}
                                 component={TextAreaField}
                                 icon="note"
-                                minRows={1}
+                                minRows={3}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                                 onPaste={pasteLengthLimiter(MAX_ITEM_NOTE_LENGTH)}
                             />
