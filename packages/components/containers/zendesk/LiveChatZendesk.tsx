@@ -282,7 +282,15 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
                 sendMessage(contentWindow, [
                     'webWidget',
                     'updateSettings',
-                    { webWidget: { color: { theme: '#02811A' } } },
+                    {
+                        webWidget: {
+                            color: {
+                                launcher: '#6d4aff',
+                                button: '#6d4aff',
+                                header: '#261b57',
+                            },
+                        },
+                    },
                 ]);
             }
         };
