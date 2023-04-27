@@ -6,6 +6,7 @@ import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Info, Loader, Option, SelectTwo } from '../../components';
 import { useAddresses, useMailSettings, useUser, useUserSettings } from '../../hooks';
@@ -73,7 +74,7 @@ const IdentitySection = () => {
                     {selectedAddress && <EditAddressesSection address={selectedAddress} />}
 
                     <SettingsLayout>
-                        <SettingsLayoutLeft>
+                        <SettingsLayoutLeft className={clsx([!hasPaidMail && 'settings-layout-left--has-upsell'])}>
                             <label
                                 htmlFor="pmSignatureToggle"
                                 className="text-semibold"
@@ -81,15 +82,17 @@ const IdentitySection = () => {
                             >
                                 <span className="mr-2">{c('Label').t`${MAIL_APP_NAME} footer`}</span>
                                 <Info title={c('Info').t`Let your contacts know you care about their privacy.`} />
-                                {!hasPaidMail && <UpsellIcon className="ml-1" />}
+                                {!hasPaidMail && <UpsellIcon className="ml-1 mt-1" />}
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight>
-                            <PMSignature
-                                id="pmSignatureToggle"
-                                mailSettings={mailSettings}
-                                userSettings={userSettings}
-                            />
+                            <div className={clsx([hasPaidMail && 'pt-0.5'])}>
+                                <PMSignature
+                                    id="pmSignatureToggle"
+                                    mailSettings={mailSettings}
+                                    userSettings={userSettings}
+                                />
+                            </div>
                         </SettingsLayoutRight>
                     </SettingsLayout>
                 </>
