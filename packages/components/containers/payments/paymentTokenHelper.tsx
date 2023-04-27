@@ -17,7 +17,7 @@ import {
     isExistingPayment,
     isTokenPaymentMethod,
 } from './interface';
-import { toParams } from './paymentTokenToParams';
+import { toTokenPaymentMethod } from './paymentTokenToParams';
 
 const { STATUS_PENDING, STATUS_CHARGEABLE, STATUS_FAILED, STATUS_CONSUMED, STATUS_NOT_SUPPORTED } =
     PAYMENT_TOKEN_STATUS;
@@ -116,7 +116,6 @@ export const process = (
                     }
                     throw new Error(c('Error').t`Tab closed`);
                 } catch (error: any) {
-                    // eslint-disable-next-line prefer-promise-reject-errors
                     return reject({ ...error, tryAgain: true });
                 }
             }
@@ -200,7 +199,7 @@ export const createPaymentToken = async (
         mode,
     }: {
         createModal: (modal: JSX.Element) => void;
-        mode?: string;
+        mode?: 'add-card';
         api: Api;
         params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment;
     },
@@ -214,7 +213,7 @@ export const createPaymentToken = async (
 
     if (Status === STATUS_CHARGEABLE) {
         // If the payment token is already chargeable then we're all set. Just prepare the format and return it.
-        return toParams(params, Token);
+        return toTokenPaymentMethod(Token);
     }
 
     let Payment: CardPayment;
@@ -234,7 +233,6 @@ export const createPaymentToken = async (
             <PaymentVerificationModal
                 mode={mode}
                 payment={Payment}
-                params={params}
                 token={Token}
                 onSubmit={resolve}
                 onClose={reject}
