@@ -10,7 +10,7 @@ import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { LabelsUpsellModal, Loader, useDebounceInput, useModalState } from '../../components';
+import { Icon, LabelsUpsellModal, Loader, useDebounceInput, useModalState } from '../../components';
 import { useApi, useEventManager, useLabels, useLoading, useNotifications, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import LabelSortableList from './LabelSortableList';
@@ -82,7 +82,7 @@ function LabelsSection() {
                 <Loader />
             ) : (
                 <>
-                    <div className="mb2">
+                    <div className="mb-7">
                         {canCreateLabel ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add label`}
@@ -91,15 +91,19 @@ function LabelsSection() {
                             <Button
                                 shape="outline"
                                 onClick={() => handleUpsellModalDisplay(true)}
-                                className="on-mobile-mb0-5"
+                                className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
                             >
+                                <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
+                                <span className="flex-item-noshrink mr-2" aria-hidden="true">
+                                    +
+                                </span>
                                 {c('Action').t`Get more labels`}
                             </Button>
                         )}
                         {localLabels.length ? (
                             <Button
                                 shape="outline"
-                                className="ml1"
+                                className="ml-4"
                                 title={c('Title').t`Sort labels alphabetically`}
                                 loading={loading}
                                 onClick={() => withLoading(handleSortLabel())}
@@ -113,7 +117,11 @@ function LabelsSection() {
                     <EditLabelModal {...editLabelProps} type="label" />
 
                     {renderUpsellModal && (
-                        <LabelsUpsellModal modalProps={upsellModalProps} feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS} />
+                        <LabelsUpsellModal
+                            modalProps={upsellModalProps}
+                            feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS}
+                            isSettings
+                        />
                     )}
                 </>
             )}

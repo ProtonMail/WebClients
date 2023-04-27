@@ -14,7 +14,7 @@ interface Props {
     onCloseCustomAction?: () => void;
     isSettings?: boolean;
 }
-const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings }: Props) => {
+const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = false }: Props) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,

@@ -213,7 +213,10 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div className="move-dropdown-list overflow-auto mt-4 flex-item-fluid-auto" data-testid="move-dropdown-list">
+            <div
+                className="move-dropdown-list overflow-auto mt-4 flex-item-fluid-auto"
+                data-testid="move-dropdown-list"
+            >
                 <ul className="unstyled my-0">
                     {list.map((folder: FolderItem) => {
                         return (
@@ -307,7 +310,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
             {renderUpsellModal && (
                 <LabelsUpsellModal
                     modalProps={upsellModalProps}
-                    feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS}
                     onCloseCustomAction={() => {
                         setContainFocus(true);
                         onClose();
