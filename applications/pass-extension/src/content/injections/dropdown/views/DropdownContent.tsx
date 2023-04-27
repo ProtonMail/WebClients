@@ -10,7 +10,7 @@ import { merge } from '@proton/pass/utils/object';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useNavigateToLogin } from '../../../../shared/hooks';
+import { useAccountFork } from '../../../../shared/hooks';
 import { DropdownAction, IFrameMessage, IFrameMessageType } from '../../../types';
 import { useIFrameContext, useRegisterMessageHandler } from '../../iframe/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
@@ -35,7 +35,7 @@ export const DropdownContent: VFC = () => {
     });
 
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const navigateToLogin = useNavigateToLogin();
+    const accountFork = useAccountFork();
 
     const handleAction = useCallback(({ payload }: IFrameMessage<IFrameMessageType.DROPDOWN_ACTION>) => {
         switch (payload.action) {
@@ -89,7 +89,7 @@ export const DropdownContent: VFC = () => {
                         <DropdownItem
                             onClick={async () => {
                                 closeIFrame();
-                                await navigateToLogin(FORK_TYPE.SWITCH);
+                                await accountFork(FORK_TYPE.SWITCH);
                             }}
                             title={PASS_APP_NAME}
                             subTitle={c('Info').t`Login with your ${BRAND_NAME} account`}
