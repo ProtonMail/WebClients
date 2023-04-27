@@ -27,9 +27,9 @@ const MailSidebarListActions = ({ type, items }: Props) => {
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const canCreate = type === 'folder' ? !hasReachedFolderLimit(user, items) : !hasReachedLabelLimit(user, items);
-
     const handleCreate = () => {
+        const canCreate = type === 'folder' ? !hasReachedFolderLimit(user, items) : !hasReachedLabelLimit(user, items);
+
         if (canCreate) {
             createLabel(type);
         } else {
@@ -62,7 +62,12 @@ const MailSidebarListActions = ({ type, items }: Props) => {
             />
 
             {renderUpsellModal && (
-                <LabelsUpsellModal modalProps={upsellModalProps} feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS} />
+                <LabelsUpsellModal
+                    modalProps={upsellModalProps}
+                    feature={
+                        type === 'label' ? MAIL_UPSELL_PATHS.UNLIMITED_LABELS : MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS
+                    }
+                />
             )}
         </div>
     );
