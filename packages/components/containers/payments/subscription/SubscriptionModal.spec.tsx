@@ -317,7 +317,7 @@ describe('SubscriptionModal', () => {
         fireEvent.submit(form);
 
         const createTokenUrl = createToken({} as any).url;
-        const subscribeUrl = subscribe({} as any, '').url;
+        const subscribeUrl = subscribe({} as any, '' as any).url;
 
         await waitFor(() => {
             expect(apiMock.mock.calls.find((it) => it[0].url === createTokenUrl)).toBeFalsy();
