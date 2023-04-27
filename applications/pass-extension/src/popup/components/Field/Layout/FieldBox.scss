@@ -27,12 +27,6 @@
 				color: var(--text-norm);
 			}
 		}
-
-		&:has(button[aria-expanded]) {
-			&::before {
-				border-radius: var(--border-radius-xl);
-			}
-		}
 	}
 
 	&:has(button[aria-expanded='false']:focus) button {
