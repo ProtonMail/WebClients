@@ -29,7 +29,7 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.58",
-        "@types/react-dom": "^17.0.19",
+        "@types/react-dom": "^17.0.20",
         "client-zip": "2.3.0",
         "cross-env": "^7.0.3",
         "ejs-webpack-loader": "^2.2.2",
@@ -40,7 +40,7 @@
         "react-window": "^1.8.9",
         "ttag": "^1.7.24",
         "web-streams-polyfill": "^3.2.1",
-        "webpack": "^5.80.0"
+        "webpack": "^5.81.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
