@@ -39,9 +39,9 @@ export const validateUrls = <V extends UrlGroupValues>({ urls }: V) => {
         const isEmpty = isEmptyString(url);
         const { valid: validURL, url: safeUrl } = isValidURL(url);
 
-        if ((duplicatesCount.get(safeUrl) ?? 0) > 1) return { url: c('Validation').t`Duplicated url` };
         if (isEmpty) return { url: c('Validation').t`Url cannot be empty` };
         if (!validURL) return { url: c('Validation').t`Url is invalid` };
+        if ((duplicatesCount.get(safeUrl) ?? 0) > 1) return { url: c('Validation').t`Duplicated url` };
 
         return {};
     });
@@ -78,11 +78,8 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form }: UrlGroupProps<
                         helpers.replace(index, { id: values.urls[index].id, url });
 
                     const handleAdd = (url: string) => {
-                        if (!errors.url) {
-                            helpers.push(createNewUrl(isValidURL(url).url));
-                            form.setFieldValue('url', '');
-                            inputRef.current?.focus();
-                        }
+                        helpers.push(createNewUrl(isValidURL(url).url));
+                        form.setFieldValue('url', '');
                     };
 
                     return (
@@ -135,20 +132,20 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form }: UrlGroupProps<
                                 ref={inputRef}
                             />
 
-                            {values.url && (
-                                <Button
-                                    icon
-                                    color="norm"
-                                    shape="ghost"
-                                    size="small"
-                                    title={c('Action').t`Add`}
-                                    className="flex flex-align-items-center gap-1 mt-1"
-                                    disabled={Boolean(errors.url)}
-                                    /*  clicking will trigger onBlur on active field */
-                                >
-                                    <Icon name="plus" /> {c('Action').t`Add`}
-                                </Button>
-                            )}
+                            <Button
+                                icon
+                                color="norm"
+                                shape="ghost"
+                                size="small"
+                                title={c('Action').t`Add`}
+                                className="flex flex-align-items-center gap-1 mt-1"
+                                onClick={() => {
+                                    handleAdd(values.url);
+                                    inputRef.current?.focus();
+                                }}
+                            >
+                                <Icon name="plus" /> {c('Action').t`Add`}
+                            </Button>
                         </>
                     );
                 }}
