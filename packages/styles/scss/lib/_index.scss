@@ -11,8 +11,6 @@
 	'em',
 	'rem',
 	'im-to-em',
-	'line-height',
-	'margin-em',
 	'logical',
 	'str-replace',
 	'easing',
@@ -20,7 +18,6 @@
 
 // Mixins
 @import
-	'rhythm',
 	'vendor-prefix',
 	'spacing-generator',
 	'body-before',

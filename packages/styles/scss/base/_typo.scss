@@ -1,77 +1,16 @@
-html {
-	/* base font size at 10px */
-	@if $root-equiv-10-px==true {
-		font-size: 62.5%;
-
-		@if $use-ie-calc-font-fallback==true {
-			font-size: calc(1em * 0.625);
-		}
-	}
-}
-
 body {
 	color: var(--text-norm);
 	line-height: $base-line-height;
-
-	@if $typo-unit == 'use_em' {
-		@if $root-equiv-10-px == true {
-			font-size: em($base-font-size, 10);
-		} @else {
-			font-size: em($base-font-size, $root-default-font-size);
-		}
-	} @else if $typo-unit == 'use_rem' {
-		font-size: var(--body-fontsize, rem($base-font-size));
-	} @else if $typo-unit == 'use_rem_with_em_fallback' {
-		@if $root-equiv-10-px == true {
-			font-size: em($base-font-size, 10);
-		} @else {
-			font-size: em($base-font-size, $root-default-font-size);
-		}
-
-		font-size: rem($base-font-size);
-	}
+	font-size: em($base-font-size, $root-default-font-size);
 }
 
 @each $tag, $size in $title-sizes {
 	#{$tag},
 	.#{$tag} {
 		display: block;
-		@include rhythm($size, 'single_bottom');
-
+		margin: 0;
+		font-size: em($size);
 		font-weight: var(--font-weight-normal);
-	}
-}
-
-/* avoid margin problems */
-@if $vertical-rhythm == 'single_top' or $vertical-rhythm == 'double_top_single_bottom' {
-	h1,
-	.h1,
-	h2,
-	.h2,
-	h3,
-	.h3,
-	h4,
-	.h4,
-	h5,
-	.h5,
-	h6,
-	.h6 {
-		&:first-child {
-			margin-block-start: 0;
-		}
-	}
-
-	/* remove bottom margin on last child */
-	p,
-	ul,
-	ol,
-	dl,
-	blockquote,
-	pre,
-	table {
-		&:last-child {
-			margin-block-end: 0;
-		}
 	}
 }
 
