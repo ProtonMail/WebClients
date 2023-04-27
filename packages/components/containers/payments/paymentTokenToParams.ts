@@ -1,15 +1,11 @@
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
-import { ExistingPayment, TokenPayment, TokenPaymentMethod, WrappedCardPayment } from './interface';
+import { TokenPayment, TokenPaymentMethod } from './interface';
 
 /**
  * Prepare parameters to be sent to API
  */
-export const toParams = (
-    params: WrappedCardPayment | ExistingPayment,
-    Token: string,
-    type?: string
-): TokenPaymentMethod & { type?: string } => {
+export const toTokenPaymentMethod = (Token: string): TokenPaymentMethod => {
     const Payment: TokenPayment = {
         Type: PAYMENT_METHOD_TYPES.TOKEN,
         Details: {
@@ -18,8 +14,6 @@ export const toParams = (
     };
 
     return {
-        ...params,
-        type,
         Payment,
     };
 };
