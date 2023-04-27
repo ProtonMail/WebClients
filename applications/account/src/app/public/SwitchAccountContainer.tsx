@@ -1,7 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Scroll } from '@proton/atoms';
@@ -43,8 +41,6 @@ import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
-
-import './SwitchAccountContainer.scss';
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
@@ -162,7 +158,7 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
             );
 
             return (
-                <Alert className="mb1" type="error">
+                <Alert className="mb-3" type="error">
                     {
                         // translator: Full sentence is "Failed to get active sessions. Please refresh the page or try again later."
                         c('Error').jt`Failed to get active sessions. Please ${refresh} or try again later.`
@@ -198,7 +194,7 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
                 <Fragment key={LocalID}>
                     <div
                         className={clsx(
-                            'account-button p1 interactive flex flex-align-items-start w100 text-left rounded relative',
+                            'account-button p-3 interactive-pseudo-inset flex flex-align-items-start w100 text-left rounded relative',
                             isLoading && 'is-loading'
                         )}
                     >
@@ -207,10 +203,13 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
                                 {initials}
                             </span>
                         </span>
-                        <div className="account-button-content mx1 flex-item-fluid">
+                        <div
+                            className="account-button-content mx-3 flex-item-fluid mt-custom"
+                            style={{ '--mt-custom': `-0.25em` }}
+                        >
                             <button
                                 type="button"
-                                className="text-left increase-click-surface"
+                                className="text-left increase-click-surface outline-none--at-all"
                                 title={continueWithText}
                                 aria-label={continueWithText}
                                 onClick={() => {
@@ -265,7 +264,7 @@ const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onA
                 <div className="w100 max-h-custom" style={{ '--max-height-custom': '25em' }}>
                     <Scroll>{inner()}</Scroll>
                 </div>
-                <div className="w100 text-center mt2 mb-2">
+                <div className="w100 text-center mt-7 mb-2">
                     <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>{c('Action')
                         .t`Add ${BRAND_NAME} Account`}</Button>
                 </div>
