@@ -2,19 +2,13 @@
 
 .modal-content-inner-changelog {
 	h1 {
-		@include rhythm(map-get($title-sizes, 'h2'));
+		font-size: em(map-get($title-sizes, 'h2'));
 	}
 
-	h2 {
-		@include rhythm(map-get($title-sizes, 'h4'));
-
-		margin-block-end: 0.5em;
-	}
-
+	h2,
 	h3 {
-		@include rhythm(map-get($title-sizes, 'h4'));
-
 		margin-block-end: 0.5em;
+		font-size: em(map-get($title-sizes, 'h4'));
 	}
 
 	ul {

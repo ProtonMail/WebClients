@@ -65,17 +65,6 @@ $use-clearleft-right: false !default;
 $use-clearhidden: false !default;
 $use-clearfix: false !default;
 
-// vertical rhythm
-// possible values     : 'double_top_single_bottom', 'single_top_single_bottom', 'single_top', 'single_bottom', 'none'
-$vertical-rhythm: 'single_bottom' !default;
-
-// units for typo
-// possible values     : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
-$typo-unit: 'use_em' !default;
-
-// applies 62.5% on html (to make 10px default font size), simplifies rem calculation
-$root-equiv-10-px: false !default;
-
 // basic premise: default user setting for font size is at 16 pixels in the browser
 // you should NEVER update this value, however… who can predict the future…
 $root-default-font-size: 16 !default;
