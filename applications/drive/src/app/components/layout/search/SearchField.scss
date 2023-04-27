@@ -1,7 +1,18 @@
+@import '~@proton/styles/scss/lib';
+
 .searchfield-container {
 	margin-block: auto;
 	align-self: center;
 	inline-size: 35%;
+	position: relative;
+}
+
+.searchfield-disabled-input-button {
+	position: absolute;
+	inline-size: 100%;
+	block-size: 100%;
+	z-index: $layer-upper;
+	cursor: default;
 }
 
 .search-spotlight {
