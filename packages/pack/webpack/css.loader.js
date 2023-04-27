@@ -28,10 +28,7 @@ module.exports = ({ browserslist, logical }) => {
                             flexbox: 'no-2009',
                         }),
                         require('postcss-color-functional-notation')(),
-                        !logical &&
-                            require('postcss-logical')({
-                                dir: 'ltr',
-                            }),
+                        !logical && require('postcss-logical')(),
                     ].filter(Boolean),
                 },
             },

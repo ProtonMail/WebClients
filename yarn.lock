@@ -4108,7 +4108,7 @@ __metadata:
     postcss: ^8.4.23
     postcss-color-functional-notation: ^4.2.4
     postcss-loader: ^7.2.4
-    postcss-logical: ^5.0.4
+    postcss-logical: ^6.1.0
     prettier: ^2.8.8
     react-refresh: ^0.14.0
     resolve-url-loader: ^5.0.0
@@ -25016,12 +25016,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss-logical@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "postcss-logical@npm:5.0.4"
+"postcss-logical@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "postcss-logical@npm:6.1.0"
+  dependencies:
+    postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 17c71291ed6a03883a5aa54b9923b874c32710707d041a0f0752e6febdb09dee5d2abf4ef271978d932e4a4c948f349bb23edf633c03e3427ba15e71bfc66ac7
+  checksum: a84b22b1e2839fcf2199da8670775ee07afe6826408a80d350e7a0966de4baf21d165cbfb7a0a2c30d029a2f9e62330ac96bbcc5a5663c97f32ee108feace097
   languageName: node
   linkType: hard
 
