@@ -3134,6 +3134,11 @@
         "Não lido"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Tem ficheiros"
+      ]
+    },
     "Filter preview": {
       "read": [
         "lido"
@@ -4176,9 +4181,6 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Para recuperar os seus dados, é necessário reativar a chave de encriptação do contacto, usada quando os dados foram criados. Isto requer que se lembre da palavra-passe usada quando a chave foi gerada."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para cancelar a subscrição desta lista, será enviado um correio electrónico de ${ boldFrom } com os seguintes detalhes, como definido pelo autor do boletim:"

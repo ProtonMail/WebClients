@@ -4451,6 +4451,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
+      "${ storage } storage": [
+        "${ storage } 儲存空間"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -4573,6 +4576,9 @@
       ],
       "Align right": [
         "靠右對齊"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "所有 ${ BRAND_NAME } 應用程式與其進階功能"
       ],
       "All (${ totalFoldersCount } folders)": [
         "全部 (${ totalFoldersCount } 個資料夾)"
@@ -5249,9 +5255,6 @@
       "No addresses exist": [
         "無任何電郵位址"
       ],
-      "No contact encryption keys exist": [
-        "聯絡人沒有加密金鑰"
-      ],
       "No credit card required": [
         "毋須信用卡"
       ],
@@ -5788,6 +5791,9 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Update recovery file": [
         "更新帳號救援檔案"
@@ -7979,6 +7985,9 @@
       "${ n } calendars": [
         "${ n } 個行事曆"
       ],
+      "${ n } calendars per user": [
+        "${ n } 個行事曆分配給每位使用者"
+      ],
       "${ n } custom email domains": [
         "${ n } 個自訂電郵網域"
       ],
@@ -8020,6 +8029,9 @@
       ],
       "1 free VPN connection in total": [
         "1 個完全免費 VPN 連線"
+      ],
+      "1 user": [
+        "1 位使用者"
       ],
       "99.95% SLA": [
         "99.95% 服務層級協議"
@@ -8174,6 +8186,12 @@
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "多達 ${ FAMILY_MAX_USERS } 位使用者"
+      ],
+      "Up to ${ n } users": [
+        "多達 ${ n } 位使用者"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
@@ -8207,26 +8225,6 @@
       ],
       "Team management": [
         "團隊管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8275,6 +8273,9 @@
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "隱私和保密套裝，專為企業而設，包含所有尊享 ${ BRAND_NAME } 服務。"
       ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
       ],
@@ -8298,6 +8299,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8403,6 +8424,9 @@
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "建立多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "為整個家庭建立最多 ${ n } 個電子郵件地址/別名。將其用於您的線上身份，例如，MyFamilySubs@${ domain } 用於線上訂閱。"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
@@ -8426,6 +8450,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "使用加密日曆讓您的計劃對您和您的家人保密"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "當您意外從我們的 VPN 伺服器斷線時，封鎖所有網路連線以保持安全。"
@@ -8466,6 +8493,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "保護所有連接到 WiFi 的裝置，這對那些不能直接設置 VPN 的裝置尤為有效。"
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "保護您的家人免受有害網站的侵害並存取我們的高速 VPN 伺服器以串流觀看您喜愛的內容"
+      ],
       "Quickly set up out-of-office messages": [
         "快速設立容後再覆訊息"
       ],
@@ -8480,6 +8510,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "一按即可把您的網際網路流量繞經 Tor 網路"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "安全地儲存您的聯絡人詳細資訊，例如電話號碼、地址、生日以及個人備忘。零存取加密，確保即使 ${ BRAND_NAME } 也無法存取。"
@@ -8504,6 +8537,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "儲存空間會在 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 間共享"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
@@ -9840,6 +9876,9 @@
       "For businesses": [
         "商業使用"
       ],
+      "For families": [
+        "家庭用"
+      ],
       "For individuals": [
         "個人使用"
       ]
@@ -10123,9 +10162,6 @@
       ],
       "Connect ${ name }": [
         "連接 ${ name }"
-      ],
-      "Contact encryption keys": [
-        "聯絡人加密金鑰"
       ],
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
