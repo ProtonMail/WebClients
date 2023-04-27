@@ -134,7 +134,7 @@
 
 		@include media('<=xsmall') {
 			padding-inline: 0;
-			@include rhythm(map-get($title-sizes, 'h3'));
+			margin: 0;
 		}
 	}
 
