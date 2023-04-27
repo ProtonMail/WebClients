@@ -55,7 +55,7 @@ export default function ConflictModal({
     );
     const [applyAll, setApplyAll] = useState(false);
 
-    const isSameType = originalIsFolder && isFolder;
+    const isSameType = originalIsFolder === isFolder;
 
     const uploadName = (
         <strong className="text-break" key="filename">
@@ -97,7 +97,7 @@ export default function ConflictModal({
                     <br />
                     {c('Info').t`What do you want to do?`}
                 </p>
-                {originalIsFolder && (
+                {originalIsFolder && isFolder && (
                     <Row>
                         <Radio
                             id={TransferConflictStrategy.Merge}

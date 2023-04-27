@@ -151,6 +151,7 @@ export default function useUploadConflict(
             openConflictStrategyModal(conflictingFileUpload.id, fileConflictStrategy, {
                 name: conflictingFileUpload.meta.filename,
                 originalIsDraft: conflictingFileUpload.originalIsDraft,
+                originalIsFolder: conflictingFileUpload.originalIsFolder,
             });
         }
     }, [fileUploads, folderUploads]);

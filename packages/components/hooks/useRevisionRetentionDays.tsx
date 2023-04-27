@@ -78,6 +78,7 @@ const useRevisionRetentionDays = (
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (originalRevisionRetentionDays > revisionRetentionDays) {
+            const rententionLabel = getRetentionLabel(revisionRetentionDays);
             const message =
                 revisionRetentionDays === 0
                     ? [
@@ -85,9 +86,7 @@ const useRevisionRetentionDays = (
                           <br />,
                           c('Info').jt`${DRIVE_APP_NAME} will no longer keep previous versions of your files.`,
                       ]
-                    : c('Info').t`This will delete all previous versions of your files older than ${getRetentionLabel(
-                          revisionRetentionDays
-                      )}.`;
+                    : c('Info').t`This will delete all previous versions of your files older than ${rententionLabel}.`;
             void showConfirmActionModal({
                 title: c('Title').t`Delete version history?`,
                 onSubmit: updateRevisionRetentionDay,
