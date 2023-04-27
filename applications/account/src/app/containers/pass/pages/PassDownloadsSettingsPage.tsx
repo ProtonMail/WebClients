@@ -68,6 +68,11 @@ const PassDownloadsSettingsPage = () => {
                     icon="brand-brave"
                     link="https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde"
                 />
+                <DownloadClientCard
+                    title={c('VPNClient').t`Firefox`}
+                    icon="brand-firefox"
+                    link="https://addons.mozilla.org/en-US/firefox/addon/proton-pass/"
+                />
             </div>
         </SettingsSectionWide>
     );
