@@ -7,6 +7,10 @@
 	padding-block-start: 0.5em;
 	padding-inline-end: 0.5em;
 
+	&--has-upsell {
+		padding-block-start: 0.2em;
+	}
+
 	@include media('<=small') {
 		inline-size: 100%;
 		max-inline-size: none;
