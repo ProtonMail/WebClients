@@ -37,6 +37,10 @@ const createOnboardingRule = (options: OnboardingRule): OnboardingRule => ({
  * - order is important: we will apply the first matched rule */
 const ONBOARDING_RULES: OnboardingRule[] = [
     createOnboardingRule({
+        message: OnboardingMessage.PERMISSIONS_REQUIRED,
+        when: withContext<OnboardingWhen>((ctx) => !ctx.service.activation.getPermissionsGranted()),
+    }),
+    createOnboardingRule({
         message: OnboardingMessage.UPDATE_AVAILABLE,
         onAcknowledge: withContext<OnboardingOnAck>((ctx, ack) => {
             /* keep a reference to the current available update so as
