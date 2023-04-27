@@ -23,6 +23,7 @@ interface LinkUpload {
 export interface FileUpload extends LinkUpload {
     file: File;
     meta: TransferMeta; // To be compatible with Upload of TransferManager.
+    originalIsFolder?: boolean;
 }
 
 export interface FileUploadReady extends FileUpload {
