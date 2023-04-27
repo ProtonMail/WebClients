@@ -248,7 +248,11 @@ export default function useUploadFile() {
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
-                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId);
+                const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
+
+                const originalIsFolder = link ? !link.isFile : false;
+
+                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
