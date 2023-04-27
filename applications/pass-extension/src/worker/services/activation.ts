@@ -1,4 +1,4 @@
-import type { Runtime } from 'webextension-polyfill';
+import type { Permissions, Runtime } from 'webextension-polyfill';
 
 import { getPersistedSession } from '@proton/pass/auth';
 import { backgroundMessage } from '@proton/pass/extension/message';
@@ -22,6 +22,7 @@ import { parseUrl } from '@proton/pass/utils/url';
 import { workerCanBoot } from '@proton/pass/utils/worker';
 
 import { createDevReloader } from '../../shared/extension';
+import { checkExtensionPermissions } from '../../shared/extension/permissions';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
@@ -173,6 +174,21 @@ export const createActivationService = () => {
         }
     };
 
+    const handlePermissionsChange = async ({ permissions, origins }: Permissions.Permissions) => {
+        logger.info(`[Worker::Activation] extension permissions change detected`);
+        logger.debug(`[Worker::Activation] ${permissions ?? []} for origins ${origins ?? []}`);
+
+        const check = await checkExtensionPermissions();
+        if (!check) logger.info(`[Worker::Activation] missing permissions`);
+
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.PERMISSIONS_UPDATE,
+                payload: { check },
+            })
+        );
+    };
+
     /* When waking up from the pop-up (or page) we need to trigger the background wakeup
      * saga while immediately resolving the worker state so the UI can respond to state
      * changes as soon as possible. Regarding the content-script, we simply wait for a
@@ -236,6 +252,8 @@ export const createActivationService = () => {
     /* throttle update checks for updates every hour */
     browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
+    browser.permissions.onAdded.addListener(handlePermissionsChange);
+    browser.permissions.onRemoved.addListener(handlePermissionsChange);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleInit);
