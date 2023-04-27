@@ -1,16 +1,20 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Copy } from '../../components';
 
-const BitcoinDetails = ({ amount, address }) => {
+export interface Props {
+    amount: number;
+    address: string;
+}
+
+const BitcoinDetails = ({ amount, address }: Props) => {
     return (
-        <figcaption>
+        <div>
             {amount ? (
                 <>
                     <div className="flex flex-nowrap flex-align-items-center p1 border-bottom">
                         <span className="flex-item-noshrink">{c('Label').t`BTC amount:`}</span>
-                        <strong className="ml-1 mr-4 text-ellipsis" title={amount}>
+                        <strong className="ml-1 mr-4 text-ellipsis" title={`${amount}`}>
                             {amount}
                         </strong>
                         <Copy value={`${amount}`} />
@@ -24,13 +28,8 @@ const BitcoinDetails = ({ amount, address }) => {
                 </strong>
                 <Copy value={address} />
             </div>
-        </figcaption>
+        </div>
     );
-};
-
-BitcoinDetails.propTypes = {
-    amount: PropTypes.number,
-    address: PropTypes.string.isRequired,
 };
 
 export default BitcoinDetails;
