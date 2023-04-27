@@ -112,9 +112,15 @@ export const OnboardingPanel: VFC = () => {
 
     useEffect(() => {
         const handleMessage = (message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.UPDATE_AVAILABLE) {
-                setMessage(OnboardingMessage.UPDATE_AVAILABLE);
-                setOpen(true);
+            if (message.sender === 'background') {
+                switch (message.type) {
+                    case WorkerMessageType.UPDATE_AVAILABLE:
+                        setMessage(OnboardingMessage.UPDATE_AVAILABLE);
+                        setOpen(true);
+                    case WorkerMessageType.PERMISSIONS_UPDATE:
+                        setMessage(OnboardingMessage.PERMISSIONS_REQUIRED);
+                        setOpen(true);
+                }
             }
         };
 
