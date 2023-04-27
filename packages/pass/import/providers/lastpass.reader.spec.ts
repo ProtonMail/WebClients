@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ImportPayload } from '../types';
 import { readLastPassData } from './lastpass.reader';
@@ -18,9 +19,7 @@ describe('Import LastPass csv', () => {
         payload = await readLastPassData(sourceData);
     });
 
-    afterAll(() => {
-        jest.clearAllMocks();
-    });
+    afterAll(() => (getEpoch as jest.Mock).mockClear());
 
     it('should throw on corrupted files', async () => {
         await expect(readLastPassData('not-a-csv-file')).rejects.toThrow();
