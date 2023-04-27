@@ -23,7 +23,7 @@ const KeysActions = ({
 }: Props) => {
     const list = [
         onExportPublicKey && {
-            text: c('Keys actions').t`Export`,
+            text: c('Keys actions').t`Export public key`,
             onClick: () => onExportPublicKey(ID),
         },
         onExportPrivateKey && {
