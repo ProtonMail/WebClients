@@ -5,7 +5,7 @@ import { orderFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
-import { Info, LabelsUpsellModal, Loader, useModalState } from '../../components';
+import { Icon, Info, LabelsUpsellModal, Loader, useModalState } from '../../components';
 import {
     useApi,
     useEventManager,
@@ -86,7 +86,7 @@ function LabelsSection() {
                         </SettingsLayout>
                     ) : null}
 
-                    <div className="mt2 mb2">
+                    <div className="my-7">
                         {canCreateFolder ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add folder`}
@@ -95,14 +95,18 @@ function LabelsSection() {
                             <Button
                                 shape="outline"
                                 onClick={() => handleUpsellModalDisplay(true)}
-                                className="on-mobile-mb0-5"
+                                className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
                             >
+                                <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
+                                <span className="flex-item-noshrink mr-2" aria-hidden="true">
+                                    +
+                                </span>
                                 {c('Action').t`Get more folders`}
                             </Button>
                         )}
                         {folders.length ? (
                             <Button
-                                className="ml1"
+                                className="ml-4"
                                 shape="outline"
                                 title={c('Title').t`Sort folders alphabetically`}
                                 loading={loading}
@@ -121,6 +125,7 @@ function LabelsSection() {
                         <LabelsUpsellModal
                             modalProps={upsellModalProps}
                             feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS}
+                            isSettings
                         />
                     )}
                 </>
