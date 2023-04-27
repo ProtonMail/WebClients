@@ -896,6 +896,9 @@
       "Yes": [
         "Sí"
       ],
+      "Yes, undo": [
+        "Si, desfés"
+      ],
       "Zoom in": [
         "Apropa"
       ],
@@ -4984,9 +4987,6 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
-      "No contact encryption keys exist": [
-        "No existeixen claus de xifratge de contactes"
-      ],
       "No credit card required": [
         "No es requereix targeta de crèdit"
       ],
@@ -7468,6 +7468,10 @@
         "${ n } calendari",
         "${ n } calendaris"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendari per usuari",
+        "${ n } calendaris per usuari"
+      ],
       "${ n } custom email domain": [
         "${ n } domini de correu electrònic personalitzat",
         "${ n } dominis de correu electrònic personalitzats"
@@ -7655,11 +7659,6 @@
         "Gestió d'equip"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7669,6 +7668,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9185,9 +9189,6 @@
       ],
       "Connect ${ name }": [
         "Connecta ${ name }"
-      ],
-      "Contact encryption keys": [
-        "Claus de xifratge de contacte"
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"

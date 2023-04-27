@@ -64,6 +64,9 @@
       "Back": [
         "戻る"
       ],
+      "Back to Homepage": [
+        "ホームページに戻る"
+      ],
       "Beta Access": [
         "ベータ版アクセス"
       ],
@@ -582,6 +585,12 @@
       ],
       "Theme": [
         "テーマ"
+      ],
+      "Toggle Calendar app": [
+        "カレンダーアプリを切り替え"
+      ],
+      "Toggle Contact app": [
+        "連絡先アプリを切り替え"
       ],
       "Trust": [
         "信頼する"
@@ -1983,6 +1992,9 @@
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
+      "Please activate your search again": [
+        "検索を再度有効にしてください"
+      ],
       "Please fix the highlighted conflicts to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
@@ -2929,6 +2941,9 @@
       "Country code": [
         "国コード"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "${ calendarsToBeCreatedCount } 件の新しいカレンダーを作成"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
       ],
@@ -3129,6 +3144,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "以上の中からできることがあれば、${ BRAND_NAME } アカウントの設定から必要な手順を実行してください。"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -3424,6 +3442,9 @@
       "support team": [
         "サポートチーム"
       ],
+      "Swiss encrypted file storage": [
+        "スイスの暗号化ファイルストレージ"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
       ],
@@ -3495,9 +3516,6 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
@@ -4765,6 +4783,9 @@
       ],
       "Bug reported": [
         "バグの報告が送信されました"
+      ],
+      "Canceling import": [
+        "インポートをキャンセル中"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"

@@ -435,7 +435,7 @@
         "Kép beillesztése"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beszúrása"
       ],
       "Italic": [
         "Dőlt"
@@ -2890,7 +2890,7 @@
         "Érvénytelen lejárati dátum"
       ],
       "Invalid invitation link": [
-        "Érvénytelen meghívó link"
+        "Érvénytelen meghívó hivatkozás"
       ],
       "Invalid name": [
         "Érvénytelen név"
@@ -3130,7 +3130,7 @@
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+        "Ez az üzenet olyan hivatkozást tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
       ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
@@ -4089,7 +4089,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME } fiókjába importál."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
@@ -4961,7 +4961,7 @@
         "Kép beillesztése"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beszúrása"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Telepítsen egy országkonfigurációs fájlt, ha véletlenszerű szerverhez szeretne kapcsolódni a választott országban."
@@ -5037,7 +5037,7 @@
         "Hivatkozás törölve"
       ],
       "Link type": [
-        "Link típusa"
+        "Hivatkozás típusa"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "A betöltött tartalmat a proxy szervereink védik, amennyiben a követés elleni védelem be van kapcsolva."
@@ -5095,9 +5095,6 @@
       ],
       "No addresses exist": [
         "Nincsenek címek"
-      ],
-      "No contact encryption keys exist": [
-        "Nincs névjegy titkosító kulcs"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nincs beállítva adat helyreállítási módszer; megvan a veszélye, hogy elveszti adatai elérését"
@@ -5223,7 +5220,7 @@
         "Válassza ki az importálásra kerülő mappákat:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Válassza ki a beszúrandó link típusát és adja meg az adatait."
+        "Válassza ki a beszúrandó hivatkozás típusát és adja meg az adatait."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Kérjük, próbálja újra, válasszon más fizetési módot vagy kérjen segítséget a PayPaltól."
@@ -5382,7 +5379,7 @@
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
       "Test link": [
-        "Link kipróbálása"
+        "Hivatkozás kipróbálása"
       ],
       "Text color": [
         "Szöveg színe"
@@ -5391,7 +5388,7 @@
         "Megjelenő szöveg"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
-        "A ${ boldDataLocked } üzenetet többé nem mutatjuk, de az adatait továbbra is feloldhatja ezen a linken keresztül: ${ encryptionAndKeysLink } ."
+        "A ${ boldDataLocked } üzenetet többé nem mutatjuk, de az adatait továbbra is feloldhatja ezen a hivatkozáson keresztül: ${ encryptionAndKeysLink } ."
       ],
       "The calendar will be removed from your account.": [
         "Ez a naptár eltávolításra kerül a fiókjából."
@@ -5460,10 +5457,10 @@
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy megbízható, használjon egy másik böngészőt a megnyitáshoz."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a címet kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
@@ -5649,7 +5646,7 @@
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
       "Web URL": [
-        "Weblap link"
+        "Weblap hivatkozás"
       ],
       "Week": [
         "Hét"
@@ -5715,7 +5712,7 @@
         "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
+        "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Könyveléshez személyre szabhatja és letöltheti számláit."
@@ -6094,7 +6091,7 @@
         "Ugrás a lomtárhoz"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beszúrása"
       ],
       "Jump to first": [
         "Ugrás az elsőre"
@@ -7924,26 +7921,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -8013,6 +7990,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9732,9 +9729,6 @@
       "Connect ${ name }": [
         "${ name } kapcsolása"
       ],
-      "Contact encryption keys": [
-        "Névjegyek titkosítási kulcsai"
-      ],
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
       ],
@@ -10015,7 +10009,7 @@
         "Elrendezés"
       ],
       "Link confirmation": [
-        "Link jóváhagyása"
+        "Hivatkozás jóváhagyása"
       ],
       "Login password": [
         "Bejelentkezési jelszó"
