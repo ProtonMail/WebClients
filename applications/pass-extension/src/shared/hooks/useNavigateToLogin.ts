@@ -1,10 +1,33 @@
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components/hooks';
 import { requestFork } from '@proton/pass/auth';
 import browser from '@proton/pass/globals/browser';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SSO_URL } from '../../app/config';
+import { promptForPermissions } from '../extension/permissions';
+import { usePermissionsGranted } from './usePermissionsGranted';
 
-export const useNavigateToLogin = () => async (type: FORK_TYPE) => {
-    const url = await requestFork(SSO_URL, type);
-    await browser.tabs.create({ url });
+/* before navigating to login we should prompt the
+ * user for any extension permissions required for PASS
+ * to work correctly. IE: on FF we absolutely need the user
+ * to do so for fallback account communication to work  */
+export const useNavigateToLogin = () => {
+    const { createNotification } = useNotifications();
+    const permissionsGranted = usePermissionsGranted();
+
+    return async (type: FORK_TYPE) => {
+        if (permissionsGranted || (await promptForPermissions())) {
+            const url = await requestFork(SSO_URL, type);
+            return browser.tabs.create({ url });
+        }
+
+        createNotification({
+            type: 'error',
+            text: c('Error').t`Please grant ${PASS_APP_NAME} the required extension permissions`,
+            expiration: -1,
+        });
+    };
 };
