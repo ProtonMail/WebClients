@@ -3299,6 +3299,9 @@
       "1 free VPN connection in total": [
         "Всего 1 бесплатное подключение к VPN"
       ],
+      "1 user": [
+        "1 пользователь"
+      ],
       "99.95% SLA": [
         "99,95% SLA"
       ],
@@ -3443,6 +3446,12 @@
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } пользователей"
+      ],
+      "Up to ${ n } users": [
+        "До ${ n } пользователей"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
@@ -3506,6 +3515,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Пакет обеспечения конфиденциальности и безопасности для бизнеса, включающий все платные услуги ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Защитите конфиденциальность своей семьи, используя все услуги ${ BRAND_NAME } в комплексе."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
@@ -3655,6 +3667,9 @@
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Создайте до ${ n } адресов электронной почты/псевдонимов для всей семьи. Используйте их для своих онлайн-идентичностей, например, MyFamilySubs@${ domain } для онлайн подписок."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -3678,6 +3693,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Обеспечьте конфиденциальность своих планов и планов вашей семьи с помощью зашифрованного календаря"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Защищает вас, блокируя все сетевые подключения, когда вы неожиданно отключаетесь от нашего сервера VPN."
@@ -3718,6 +3736,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Защитите каждое устройство, подключенное к сети Wi-Fi. Это также будет полезно, если у вас есть устройства, которые не поддерживают настройки VPN напрямую"
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Защитите свою семью от вредоносных веб-сайтов и получите доступ к высокоскоростным серверам VPN для просмотра любимого контента"
+      ],
       "Quickly set up out-of-office messages": [
         "Быстро настраивайте сообщения о своем отсутствии"
       ],
@@ -3732,6 +3753,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Направляйте свой трафик через сеть Tor одним нажатием"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
@@ -3757,6 +3781,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
       ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Хранилище распределяется между пользователями на ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
       ],
@@ -3771,6 +3798,9 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "При подключении к нашей сети VPN ваши запросы DNS проходят через зашифрованный туннель VPN, что повышает уровень конфиденциальности и безопасности в Интернете"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование происходит автоматически. Отправка сообщений пользователям вне ${ MAIL_APP_NAME_TWO } предполагает предварительную установку пароля."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
@@ -4556,6 +4586,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Для предприятий"
+      ],
+      "For families": [
+        "Для семьи"
       ],
       "For individuals": [
         "Для частных лиц"
