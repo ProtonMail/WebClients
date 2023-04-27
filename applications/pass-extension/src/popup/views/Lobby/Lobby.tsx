@@ -24,9 +24,8 @@ const LobbyContent: VFC = () => {
     const [promptForReload, setPromptForReload] = useState(false);
     const stale = workerStale(state.status);
     const busy = workerBusy(state.status);
-
-    const canSignOut = [WorkerStatus.RESUMING_FAILED, WorkerStatus.LOCKED].includes(state.status);
     const locked = state.status === WorkerStatus.LOCKED;
+    const canSignOut = workerErrored(state.status) || locked;
 
     const login = useNavigateToLogin();
 
