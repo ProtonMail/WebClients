@@ -262,8 +262,12 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
         }),
 
         logout: withContext(async (ctx) => {
-            store.dispatch(stateDestroy());
+            /* important to call setStatus before dispatching the
+             * the `stateDestroy` action : we might have active
+             * clients currently consuming the store data */
+            ctx.setStatus(WorkerStatus.UNAUTHORIZED);
 
+            store.dispatch(stateDestroy());
             void browserSessionStorage.removeItems(['AccessToken', 'RefreshToken', 'UID', 'keyPassword']);
             void browserLocalStorage.clear();
 
@@ -274,7 +278,6 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
             api.unsubscribe();
             api.configure();
 
-            ctx.setStatus(WorkerStatus.UNAUTHORIZED);
             onUnauthorized?.();
 
             return true;
