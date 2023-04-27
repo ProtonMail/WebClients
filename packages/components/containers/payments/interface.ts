@@ -33,6 +33,10 @@ export interface PaypalPayment {
     Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
 }
 
+export interface WrappedPaypalPayment {
+    Payment: PaypalPayment;
+}
+
 export function isPaypalPayment(payment: any): payment is PaypalPayment {
     return (
         payment && (payment.Type === PAYMENT_METHOD_TYPES.PAYPAL || payment.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT)

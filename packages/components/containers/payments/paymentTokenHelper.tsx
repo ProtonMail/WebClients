@@ -172,13 +172,7 @@ const fetchPaymentToken = async (
     },
     amountAndCurrency?: AmountAndCurrency
 ): Promise<PaymentTokenResult> => {
-    let data: CreateTokenData = { ...amountAndCurrency };
-
-    if (isExistingPayment(params)) {
-        data.PaymentMethodID = params.PaymentMethodID;
-    } else {
-        data.Payment = params.Payment;
-    }
+    const data: CreateTokenData = { ...amountAndCurrency, ...params };
 
     return api<PaymentTokenResult>({
         ...createToken(data),
