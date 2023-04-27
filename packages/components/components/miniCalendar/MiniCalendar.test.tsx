@@ -6,7 +6,7 @@ describe('MiniCalendar', () => {
     const getFakeNow = () => new Date(Date.UTC(2021, 0, 1, 0, 0, 0));
 
     beforeAll(() => {
-        jest.useFakeTimers('modern').setSystemTime(getFakeNow().getTime());
+        jest.useFakeTimers().setSystemTime(getFakeNow().getTime());
     });
 
     it('disables today button when out of range', async () => {
