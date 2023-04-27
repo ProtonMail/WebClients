@@ -16,6 +16,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { promptForPermissions } from '../../../shared/extension/permissions';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { OnboardingContent, type OnboardingMessageDefinition } from './OnboardingContent';
@@ -42,21 +43,19 @@ export const OnboardingPanel: VFC = () => {
 
     const openSettings = useOpenSettingsTab();
 
-    /* Ensure acknowledge message goes through by waiting for
-     * next tick in case we close the popup in the callback */
     const withAcknowledge = useCallback(
         (message: OnboardingMessage, cb: Callback = noop) =>
             async () => {
-                await sendMessage.onSuccess(
+                void sendMessage.onSuccess(
                     popupMessage({
                         type: WorkerMessageType.ONBOARDING_ACK,
                         payload: { message },
                     }),
-                    () => {
-                        setOpen(false);
-                        cb();
-                    }
+                    () => {}
                 );
+
+                cb();
+                setOpen(false);
             },
         []
     );
@@ -94,6 +93,17 @@ export const OnboardingPanel: VFC = () => {
                     label: c('Label').t`Update`,
                     type: 'button',
                     onClick: () => browser.runtime.reload(),
+                },
+            },
+            [OnboardingMessage.PERMISSIONS_REQUIRED]: {
+                title: c('Title').t`Grant permissions`,
+                message: c('Info')
+                    .t`In order to get the best experience out of ${PASS_APP_NAME}, please grant the necessary extension permissions`,
+                className: 'ui-note',
+                action: {
+                    label: c('Label').t`Grant`,
+                    type: 'button',
+                    onClick: () => promptForPermissions(),
                 },
             },
         }),
