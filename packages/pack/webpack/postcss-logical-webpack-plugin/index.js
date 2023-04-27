@@ -10,11 +10,7 @@ function PostCssLogicalWebpackPlugin() {
                     stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
                 },
                 async (assets) => {
-                    const processor = postcss([
-                        require('postcss-logical')({
-                            dir: 'ltr',
-                        }),
-                    ]);
+                    const processor = postcss([require('postcss-logical')()]);
                     return Promise.all(
                         Object.entries(assets)
                             .filter(([path]) => path.endsWith('.css'))
