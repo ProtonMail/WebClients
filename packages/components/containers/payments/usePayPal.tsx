@@ -68,7 +68,7 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
 
     const onVerification = async () => {
         const { Token, ApprovalURL, ReturnHost } = model;
-        const result = await new Promise<OnPayResult>((resolve, reject) => {
+        const tokenPaymentMethod = await new Promise<TokenPaymentMethod>((resolve, reject) => {
             const onProcess = () => {
                 const abort = new AbortController();
                 return {
@@ -84,7 +84,6 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
             };
             createModal(
                 <PaymentVerificationModal
-                    params={{ Amount: amount, Currency }}
                     token={Token}
                     onSubmit={resolve}
                     onClose={reject}
@@ -95,7 +94,7 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
             );
         });
 
-        onPay(result);
+        onPay({ ...tokenPaymentMethod, Amount: amount, Currency, type: Type });
     };
 
     return {
