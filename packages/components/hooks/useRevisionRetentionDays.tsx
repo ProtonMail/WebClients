@@ -2,12 +2,16 @@ import { FormEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useConfirmActionModal } from '@proton/components/components';
-import { useApi, useLoading, useNotifications } from '@proton/components/hooks/index';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DEFAULT_PAID_USER_SETTINGS, DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { RevisionRetentionDaysSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
+
+import { useConfirmActionModal } from '../components/confirmActionModal';
+import { getRetentionLabel } from '../containers/drive/settings/retentionLabels';
+import useApi from './useApi';
+import useLoading from './useLoading';
+import useNotifications from './useNotifications';
 
 type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
 
@@ -76,10 +80,14 @@ const useRevisionRetentionDays = (
         if (originalRevisionRetentionDays > revisionRetentionDays) {
             const message =
                 revisionRetentionDays === 0
-                    ? c('Info')
-                          .t`This will delete all previous versions of your files. ${DRIVE_APP_NAME} will no longer keep previous versions of your files.`
-                    : c('Info')
-                          .t`This will delete all previous versions of your files older than ${revisionRetentionDays}. You cannot undo this action. Are you sure you want to proceed?`;
+                    ? [
+                          c('Info').t`This will delete all previous versions of your files.`,
+                          <br />,
+                          c('Info').jt`${DRIVE_APP_NAME} will no longer keep previous versions of your files.`,
+                      ]
+                    : c('Info').t`This will delete all previous versions of your files older than ${getRetentionLabel(
+                          revisionRetentionDays
+                      )}.`;
             void showConfirmActionModal({
                 title: c('Title').t`Delete version history?`,
                 onSubmit: updateRevisionRetentionDay,
