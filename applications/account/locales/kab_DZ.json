@@ -4068,9 +4068,6 @@
       "No addresses exist": [
         "Ulac tansa yellan"
       ],
-      "No contact encryption keys exist": [
-        "Ulac tisura n uwgelhen n unermas i yellan"
-      ],
       "No credit card required": [
         "Ulac takarḍa n usmad yettwasran"
       ],
@@ -6272,17 +6269,17 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Aneεruḍ-ik·im ad yekfu deg ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Mucaɛ"
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Sbadu tiririyin tiwurmanin i wakken ad telɣuḍ inermisen mačči deg lbiru i telliḍ neɣ ur tezmireḍ ara ad terreḍ."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Aneεruḍ-ik·im ad yekfu deg ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7543,9 +7540,6 @@
       ],
       "Connect ${ name }": [
         "Qqen ɣer ${ name }"
-      ],
-      "Contact encryption keys": [
-        "Tisura n uwgelhen n unermis"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Rnu amiḍan-ik ${ BRAND_NAME }"

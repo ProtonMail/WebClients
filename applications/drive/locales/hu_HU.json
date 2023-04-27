@@ -2101,7 +2101,7 @@
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+        "Ez az üzenet olyan hivatkozást tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
       ],
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
@@ -2655,7 +2655,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME } fiókjába importál."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
@@ -3010,7 +3010,7 @@
         "Létrehozás itt"
       ],
       "Create links and share your files with others.": [
-        "Hozzon létre linkeket, így ossza meg a fájljait másokkal."
+        "Ossza meg a fájljait másokkal, hivatkozások létrehozásával."
       ],
       "Create your first folder and start moving your files.": [
         "Hozza létre első mappáját és helyezze el benne a fájljait."
@@ -3019,7 +3019,7 @@
         "Létrehozás"
       ],
       "Creating link to file": [
-        "A fájl linkjének létrehozása"
+        "A fájl hivatkozásának létrehozása"
       ],
       "Creating link to folder": [
         "Mappa hivatkozásának előkészítése"
@@ -3111,7 +3111,7 @@
         "Sikertelen"
       ],
       "Failed to generate a secure link. Try again later.": [
-        "Nem sikerült a biztonságos link létrehozása. Próbálja meg később."
+        "Nem sikerült a biztonságos hivatkozás létrehozása. Próbálja meg később."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Biztonságos hivatkozás megnyitása sikertelen. Az oka: ${ error }"
@@ -3265,7 +3265,7 @@
         "Link betöltése"
       ],
       "Loading links": [
-        "Linkek betöltése"
+        "Hivatkozások betöltése"
       ],
       "Loading preview": [
         "Előnézet betöltése"
@@ -3381,7 +3381,7 @@
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
       ],
       "Preparing link to file": [
-        "A fájl linkjének előkészítése"
+        "A fájl hivatkozásának előkészítése"
       ],
       "Preparing link to folder": [
         "A mappa hivatkozásának előkészítése"
@@ -3444,7 +3444,7 @@
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
       "Share files with links": [
-        "Fájlok megosztása linkekkel"
+        "Fájlok megosztása hivatkozással"
       ],
       "Shareable link for ${ boldNameText }": [
         "Megosztható hivatkozás ehhez: ${ boldNameText }"
@@ -3495,10 +3495,10 @@
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy megbízható, használjon egy másik böngészőt a megnyitáshoz."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a címet kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "A hivatkozás egy korábbiváltozatban lett létrehozva és nem módosítható. A beállítások megváltoztatásához törölje a hivatkozást és készítsen egy újat."
@@ -3530,9 +3530,6 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
@@ -3634,7 +3631,7 @@
         "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
+        "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -5181,7 +5178,7 @@
         "Elem adatai"
       ],
       "Link confirmation": [
-        "Link jóváhagyása"
+        "Hivatkozás jóváhagyása"
       ],
       "Location": [
         "Hely"
@@ -5358,7 +5355,7 @@
         "A mappa aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
       ],
       "This link is password protected": [
-        "Ez a link jelszóval védett"
+        "Ez a hivatkozás jelszóval védett"
       ],
       "Total size": [
         "Teljes méret"

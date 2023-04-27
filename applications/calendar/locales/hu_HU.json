@@ -2231,7 +2231,7 @@
         "Érvénytelen e-mail cím"
       ],
       "Invalid link to the event": [
-        "Érvénytelen link az eseményhez"
+        "Érvénytelen hivatkozás az eseményhez"
       ],
       "Invalid name": [
         "Érvénytelen név"
@@ -2410,7 +2410,7 @@
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+        "Ez az üzenet olyan hivatkozást tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
       ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
@@ -3001,7 +3001,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME } fiókjába importál."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
@@ -3607,10 +3607,10 @@
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy megbízható, használjon egy másik böngészőt a megnyitáshoz."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a címet kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -3620,9 +3620,6 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
@@ -3694,7 +3691,7 @@
         "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
+        "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -5526,7 +5523,7 @@
         "Érvénytelen ellenőrző kód"
       ],
       "Link confirmation": [
-        "Link jóváhagyása"
+        "Hivatkozás jóváhagyása"
       ],
       "Merge contacts": [
         "Névjegyek egyesítése"
