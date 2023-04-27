@@ -1,4 +1,4 @@
-import type { Permissions, Runtime } from 'webextension-polyfill';
+import type { Runtime } from 'webextension-polyfill';
 
 import { getPersistedSession } from '@proton/pass/auth';
 import { backgroundMessage } from '@proton/pass/extension/message';
@@ -27,11 +27,15 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
-type ActivationServiceState = { updateAvailable: MaybeNull<string>; checkedUpdateAt: number };
+type ActivationServiceState = {
+    updateAvailable: MaybeNull<string>;
+    checkedUpdateAt: number;
+    permissionsGranted: boolean;
+};
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
-    const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0 };
+    const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0, permissionsGranted: false };
 
     if (ENV === 'development') {
         createDevReloader(() => {
@@ -174,17 +178,16 @@ export const createActivationService = () => {
         }
     };
 
-    const handlePermissionsChange = async ({ permissions, origins }: Permissions.Permissions) => {
+    const checkPermissionsUpdate = async () => {
         logger.info(`[Worker::Activation] extension permissions change detected`);
-        logger.debug(`[Worker::Activation] ${permissions ?? []} for origins ${origins ?? []}`);
 
-        const check = await checkExtensionPermissions();
-        if (!check) logger.info(`[Worker::Activation] missing permissions`);
+        state.permissionsGranted = await checkExtensionPermissions();
+        if (!state.permissionsGranted) logger.info(`[Worker::Activation] missing permissions`);
 
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
                 type: WorkerMessageType.PERMISSIONS_UPDATE,
-                payload: { check },
+                payload: { check: state.permissionsGranted },
             })
         );
     };
@@ -252,8 +255,8 @@ export const createActivationService = () => {
     /* throttle update checks for updates every hour */
     browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
-    browser.permissions.onAdded.addListener(handlePermissionsChange);
-    browser.permissions.onRemoved.addListener(handlePermissionsChange);
+    browser.permissions.onAdded.addListener(checkPermissionsUpdate);
+    browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleInit);
@@ -270,6 +273,7 @@ export const createActivationService = () => {
     }
 
     void checkAvailableUpdate();
+    void checkPermissionsUpdate();
 
     return {
         boot: handleBoot,
@@ -277,6 +281,7 @@ export const createActivationService = () => {
         onStartup: handleStartup,
         onUpdateAvailable: handleOnUpdateAvailable,
         getAvailableUpdate: () => state.updateAvailable,
+        getPermissionsGranted: () => state.permissionsGranted,
     };
 };
 
