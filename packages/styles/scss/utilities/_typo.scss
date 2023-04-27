@@ -5,7 +5,7 @@
 @if $use-other-typo-helpers==true {
 	@each $name, $size in (2xs: 9, xs: 10, sm: 12, rg: $base-font-size, lg: 16, xl: 18, 2xl: 20, 3xl: 22, 4xl: 24) {
 		.text-#{$name} {
-			@include rhythm($size, 'none');
+			font-size: em($size);
 		}
 	}
 
