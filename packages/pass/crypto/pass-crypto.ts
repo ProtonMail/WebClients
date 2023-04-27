@@ -8,7 +8,13 @@ import { logger } from '../utils/logger';
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
-import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
+import {
+    PassCryptoError,
+    PassCryptoHydrationError,
+    PassCryptoNotHydratedError,
+    PassCryptoShareError,
+    isPassCryptoError,
+} from './utils/errors';
 
 function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<PassCryptoManagerContext> {
     if (
@@ -130,45 +136,49 @@ const createPassCrypto = (): PassCryptoWorker => {
         async openShare({ encryptedShare, shareKeys }) {
             assertHydrated(context);
 
-            const shareId = encryptedShare.ShareID;
-            const maybeShareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
+            try {
+                const shareId = encryptedShare.ShareID;
+                const maybeShareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
 
-            const vaultKeys = await Promise.all(
-                shareKeys.map((shareKey) =>
-                    maybeShareManager?.hasVaultKey(shareKey.KeyRotation)
-                        ? maybeShareManager.getVaultKey(shareKey.KeyRotation)
-                        : processes.openVaultKey({ shareKey, userKeys: context.userKeys })
-                )
-            );
+                const vaultKeys = await Promise.all(
+                    shareKeys.map((shareKey) =>
+                        maybeShareManager?.hasVaultKey(shareKey.KeyRotation)
+                            ? maybeShareManager.getVaultKey(shareKey.KeyRotation)
+                            : processes.openVaultKey({ shareKey, userKeys: context.userKeys })
+                    )
+                );
 
-            const share = await (() => {
-                switch (encryptedShare.TargetType) {
-                    case ShareType.Vault: {
-                        const rotation = encryptedShare.ContentKeyRotation!;
-                        const vaultKey = vaultKeys.find((key) => key.rotation === rotation);
+                const share = await (() => {
+                    switch (encryptedShare.TargetType) {
+                        case ShareType.Vault: {
+                            const rotation = encryptedShare.ContentKeyRotation!;
+                            const vaultKey = vaultKeys.find((key) => key.rotation === rotation);
 
-                        if (vaultKey === undefined) {
-                            throw new PassCryptoShareError(`Missing vault key for rotation ${rotation}`);
+                            if (vaultKey === undefined) {
+                                throw new PassCryptoShareError(`Missing vault key for rotation ${rotation}`);
+                            }
+
+                            return processes.openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
                         }
 
-                        return processes.openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
+                        case ShareType.Item:
+                            return processes.openShare({ type: ShareType.Item, encryptedShare });
+
+                        default:
+                            throw new PassCryptoShareError('Unsupported share type');
                     }
+                })();
 
-                    case ShareType.Item:
-                        return processes.openShare({ type: ShareType.Item, encryptedShare });
+                const shareManager = maybeShareManager ?? createShareManager(share);
+                context.shareManagers.set(shareId, shareManager);
 
-                    default:
-                        throw new PassCryptoShareError('Unsupported share type');
-                }
-            })();
+                shareManager.setShare(share); /* handle update when recyling */
+                await worker.updateShareKeys({ shareId, shareKeys });
 
-            const shareManager = maybeShareManager ?? createShareManager(share);
-            context.shareManagers.set(shareId, shareManager);
-
-            shareManager.setShare(share); /* handle update when recyling */
-            await worker.updateShareKeys({ shareId, shareKeys });
-
-            return shareManager.getShare();
+                return shareManager.getShare();
+            } catch (err: any) {
+                throw isPassCryptoError(err) ? err : new PassCryptoError(err);
+            }
         },
 
         /**
