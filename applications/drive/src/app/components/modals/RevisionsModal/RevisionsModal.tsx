@@ -32,7 +32,11 @@ const RevisionsSettingsBanner = ({
     const retentionLabel = getRetentionLabel(revisionRetentionDays);
     return (
         <div className="flex flex-align-items-center flex-justify-space-between">
-            <p className="m0 color-weak">{c('Info').t`Version history is set to: ${retentionLabel}`}</p>
+            <p className="m0 color-weak">
+                {revisionRetentionDays === 0
+                    ? c('Info').t`Previous versions are not saved`
+                    : c('Info').t`Previous versions are kept for ${retentionLabel}`}
+            </p>
             <ButtonLike
                 as={AppLink}
                 to="/drive/version-history"
