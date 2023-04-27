@@ -4544,7 +4544,7 @@
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
       "${ storage } storage": [
-        "${ storage } stocare"
+        "Stocare ${ storage }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } spațiu"
@@ -5366,9 +5366,6 @@
       ],
       "No addresses exist": [
         "Nu există adrese"
-      ],
-      "No contact encryption keys exist": [
-        "Nu există chei de criptare contacte"
       ],
       "No credit card required": [
         "Nu trebuie card de credit"
@@ -8155,9 +8152,9 @@
         "${ n } de calendare"
       ],
       "${ n } calendar per user": [
-        "${ n } calendar pe utilizator",
-        "${ n } calendare pe utilizator",
-        "${ n } calendare pe utilizator"
+        "${ n } calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
       ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
@@ -8222,7 +8219,7 @@
         "O conexiune VPN gratuită"
       ],
       "1 user": [
-        "1 utilizator"
+        "Un utilizator"
       ],
       "99.95% SLA": [
         "Disponibilitate minimă a serviciului 99,95%"
@@ -8420,26 +8417,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8487,7 +8464,7 @@
         "Suită de confidențialitate și securitate pentru companii, incluzând toate serviciile premium ${ BRAND_NAME }."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Protejați confidențialitatea familiei dvs. cu toate serviciile ${ BRAND_NAME } combinate."
+        "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
@@ -8512,6 +8489,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8622,7 +8619,7 @@
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Creați până la ${ n } adrese de e-mail/alias pentru întreaga familie. Folosiți-le pentru identitățile dvs. online, de exemplu, MyFamilySubs@${ domain } pentru abonamente online."
+        "Creați până la ${ n } adrese de e-mail/alias pentru întreaga familie. Folosiți-le pentru identitățile personale online, de exemplu, abonamente@${ domain } pentru abonamente online."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
@@ -8649,7 +8646,7 @@
         "Suportul IMAP este limitat la utilizarea aplicațiilor desktop (de ex., Outlook, Apple Mail, Thunderbird) prin ${ MAIL_APP_NAME } Bridge. În prezent, integrările IMAP bazate pe cloud nu sunt acceptate."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Păstrați-vă planurile private pentru dvs. și familia dvs. cu un calendar criptat"
+        "Păstrați-vă private propriile planuri și ale familiei cu calendarul criptat"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Vă protejează blocând toate conexiunile din rețea atunci când conexiunea la serverul nostru VPN cade neașteptat."
@@ -8736,7 +8733,7 @@
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }. Administratorii pot aloca spațiu de stocare diferit utilizatorilor din organizația lor."
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Spațiul de stocare este partajat între utilizatori prin ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }"
+        "Spațiul de stocare este partajat între utilizatori în aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
@@ -10419,9 +10416,6 @@
       ],
       "Connect ${ name }": [
         "Conectare ${ name }"
-      ],
-      "Contact encryption keys": [
-        "Chei de criptare contacte"
       ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"

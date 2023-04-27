@@ -521,7 +521,7 @@
         "Kép beillesztése"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beszúrása"
       ],
       "Italic": [
         "Dőlt"
@@ -3362,7 +3362,7 @@
         "Az üzenet már elküldésre került. Egy új piszkozat került mentésre."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+        "Ez az üzenet olyan hivatkozást tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Túl sok bekapcsolt szűrő. Váltson nagyobb csomagra további szűrők bekapcsolásához."
@@ -3405,7 +3405,7 @@
         "Az üzenetek visszafejtése nem lehetséges, a jelszó korábbi visszaállítása miatt. Ha emlékszik az előző jelszavára, ${ reActivateKeyLink } az üzenetek eléréséhez. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Az üzenetek visszafejltése nem lehetséges. Ezt okozhattja a jelszó korábbi visszaállítása. ${ learnMoreLink }"
+        "Az üzenetek visszafejtése nem lehetséges. Ezt okozhatja a jelszó korábbi visszaállítása. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -4184,7 +4184,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME } fiókjába importál."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
@@ -4870,7 +4870,7 @@
         "Kép beillesztése"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beszúrása"
       ],
       "Internet connection lost": [
         "Az internetkapcsolat megszakadt"
@@ -4903,7 +4903,7 @@
         "Balról jobbra"
       ],
       "Link type": [
-        "Link típusa"
+        "Hivatkozás típusa"
       ],
       "Loading": [
         "Betöltés"
@@ -5065,7 +5065,7 @@
         "Válassza ki az importálásra kerülő mappákat:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Válassza ki a beszúrandó link típusát és adja meg az adatait."
+        "Válassza ki a beszúrandó hivatkozás típusát és adja meg az adatait."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz.",
@@ -5225,7 +5225,7 @@
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
       "Test link": [
-        "Link kipróbálása"
+        "Hivatkozás kipróbálása"
       ],
       "Text color": [
         "Szöveg színe"
@@ -5308,10 +5308,10 @@
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy megbízható, használjon egy másik böngészőt a megnyitáshoz."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
+        "Ez a hivatkozás egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a címet kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Ez az üzenet módosításra került, hogy sötét háttérrel is megfelelő legyen."
@@ -5382,9 +5382,6 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Az adatok helyreállításához újra aktiválnia kell a névjegy létrehozásakor használt titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "A levelezési listáról való leiratkozáshoz egy e-mail kerül elküldésre a ${ boldFrom } címről, a hírlevél feladójának beállításai szerinti alábbi adatokkal:"
@@ -5495,7 +5492,7 @@
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
       "Web URL": [
-        "Weblap link"
+        "Weblap hivatkozás"
       ],
       "Week": [
         "Hét"
@@ -5540,7 +5537,7 @@
         "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
+        "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
@@ -5776,7 +5773,7 @@
         "Ugrás a lomtárhoz"
       ],
       "Insert link": [
-        "Link beillesztése"
+        "Hivatkozás beszúrása"
       ],
       "Jump to first": [
         "Ugrás az elsőre"
@@ -8172,7 +8169,7 @@
         "Címke beállításai"
       ],
       "Link confirmation": [
-        "Link jóváhagyása"
+        "Hivatkozás jóváhagyása"
       ],
       "Load embedded images": [
         "Beágyazott képek betöltése"
