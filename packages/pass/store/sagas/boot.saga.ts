@@ -2,7 +2,7 @@ import { call, put, select, takeLeading } from 'redux-saga/effects';
 
 import { authentication } from '@proton/pass/auth/authentication';
 import { PassCrypto } from '@proton/pass/crypto';
-import { PassCryptoHydrationError } from '@proton/pass/crypto/utils/errors';
+import { isPassCryptoError } from '@proton/pass/crypto/utils/errors';
 import type { Maybe, RequiredNonNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
@@ -47,7 +47,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         options.onBoot?.({
             ok: false,
-            clearCache: error instanceof PassCryptoHydrationError,
+            clearCache: isPassCryptoError(error),
         });
     }
 }
