@@ -178,6 +178,9 @@
       "Close": [
         "閉じる"
       ],
+      "Close & discard": [
+        "閉じて破棄"
+      ],
       "Close composer": [
         "閉じる"
       ],
@@ -853,6 +856,9 @@
       "Search message content": [
         "メッセージ内容の検索"
       ],
+      "See business plans": [
+        "ビジネスプランを表示"
+      ],
       "See plan features": [
         "プランの特徴を見る"
       ],
@@ -987,6 +993,12 @@
       ],
       "This message contains remote content.": [
         "このメッセージには外部コンテンツが含まれています。"
+      ],
+      "Toggle Calendar app": [
+        "カレンダーアプリを切り替え"
+      ],
+      "Toggle Contact app": [
+        "連絡先アプリを切り替え"
       ],
       "Tomorrow": [
         "明日"
@@ -3153,6 +3165,9 @@
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
+      "Please activate your search again": [
+        "検索を再度有効にしてください"
+      ],
       "Please fix the highlighted conflicts to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
@@ -4441,6 +4456,9 @@
       "Country code": [
         "国コード"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "${ calendarsToBeCreatedCount } 件の新しいカレンダーを作成"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
       ],
@@ -4650,6 +4668,9 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "自動返信では許可されていないため画像は削除されました"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -5152,9 +5173,6 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
-      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "このニュースレターの配信を解除するには、送信元が指定している方法に基づき${ boldFrom }からのメールを受信することになります。"
       ],
@@ -5194,6 +5212,9 @@
       "Upgrade to send email from @pm.me addresses.": [
         "アップグレードして @pm.me アドレスからメールを送信します。"
       ],
+      "Upgrade to send emails from your custom email domain.": [
+        "独自メールドメインからメールを送信するにはアップグレードしてください。"
+      ],
       "Upgrade to send emails to contact groups easily.": [
         "簡単に連絡先グループにメールを送信するためにアップグレードしてください。"
       ],
@@ -5205,6 +5226,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "さらなる機能を入手しプライバシーをサポートするためにアップグレードしてください。"
+      ],
+      "Upgrade to unlock premium features.": [
+        "プレミアム機能をロック解除するためアップグレードしましょう。"
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "${ MAIL_APP_NAME } を Apple Mail、Outlook、Thunderbird で使用するにはアップグレードしてください。"
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "離席中に自動返信を使用するにはアップグレードしてください。"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -7303,6 +7333,9 @@
       ],
       "Bug reported": [
         "バグの報告が送信されました"
+      ],
+      "Canceling import": [
+        "インポートをキャンセル中"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
