@@ -23,7 +23,7 @@ export function* channelEventsWorker<T extends ChannelType>(
         while (true) {
             try {
                 const event = (yield take(channel)) as ServerEvent<T>;
-                yield put(serverEvent(event));
+                if (!event.error) yield put(serverEvent(event));
                 yield call(onEvent, event, eventChannel, options);
             } catch (error: unknown) {
                 logger.warn(`[Saga::Events] received an event error`, error);
