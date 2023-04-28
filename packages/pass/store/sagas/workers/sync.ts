@@ -1,3 +1,6 @@
+import { put } from 'redux-saga/effects';
+import { c } from 'ttag';
+
 import { PassCrypto } from '@proton/pass/crypto';
 import { Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array';
@@ -8,6 +11,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import { notification } from '../../actions';
 import type { ItemsByShareId } from '../../reducers';
 import type { SharesState } from '../../reducers/shares';
 import { selectAllShares, selectItems } from '../../selectors';
@@ -64,9 +68,22 @@ export function* synchronize(
 
     /* split active from inactive shares */
     const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
+    const totalInactiveShares = inactiveRemoteShares.length + inactiveCachedShareIds.length;
 
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
+
+    if (totalInactiveShares > 0) {
+        yield put(
+            notification({
+                target: 'popup',
+                type: 'error',
+                expiration: -1,
+                text: c('Error')
+                    .t`Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access.`,
+            })
+        );
+    }
 
     /* when checking the presence of an active vault we must both
      * check the active remote shares and the local cached shares */
@@ -89,7 +106,7 @@ export function* synchronize(
     logger.info(`[Saga::Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
     logger.info(`[Saga::Sync] User has ${remote.length} share(s) in database`);
     logger.info(`[Saga::Sync] ${deletedShareIds.length} share(s) deleted`);
-    logger.info(`[Saga::Sync] User has ${disabledShareIds.length} total inactive share(s)`);
+    logger.info(`[Saga::Sync] User has ${totalInactiveShares} total inactive share(s)`);
     logger.info(`[Saga::Sync] ${incomingShares.length} share(s) need to be synced`);
     logger.info(`[Saga::Sync] Performing ${type} sync`);
 
