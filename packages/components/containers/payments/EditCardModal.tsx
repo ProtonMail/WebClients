@@ -13,7 +13,7 @@ import { useApi, useEventManager, useLoading, useModals, useNotifications } from
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 import { CardModel } from './interface';
-import { createPaymentToken } from './paymentTokenHelper';
+import { getCreatePaymentToken, getDefaultVerifyPayment } from './paymentTokenHelper';
 import toDetails from './toDetails';
 import useCard from './useCard';
 
@@ -39,6 +39,9 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     } = useRenewToggle({ initialRenewState: renewState });
 
     const handleSubmit = async () => {
+        const verify = getDefaultVerifyPayment(createModal, api);
+        const createPaymentToken = getCreatePaymentToken(verify);
+
         const { Payment } = await createPaymentToken({
             params: {
                 Payment: {
@@ -48,7 +51,6 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
             },
             mode: ADD_CARD_MODE,
             api,
-            createModal,
         });
         await api(setPaymentMethod({ ...Payment, Autopay: renewToggleProps.renewState }));
         await call();
