@@ -1,6 +1,5 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { syncFailure, syncIntent, syncSuccess } from '../actions';
@@ -25,8 +24,6 @@ function* syncWorker(options: WorkerRootSagaOptions) {
         yield put(syncSuccess(sync));
     } catch (e: unknown) {
         yield put(syncFailure(e));
-    } finally {
-        logger.info('[Saga::Sync] Cancelling sync task');
     }
 }
 
