@@ -11,10 +11,8 @@ type OpenVaultKeyProcessParams = {
     userKeys: DecryptedKey[];
 };
 
-export const openVaultKey = async ({
-    shareKey: { Key, KeyRotation },
-    userKeys,
-}: OpenVaultKeyProcessParams): Promise<VaultKey> => {
+export const openVaultKey = async ({ shareKey, userKeys }: OpenVaultKeyProcessParams): Promise<VaultKey> => {
+    const { Key, KeyRotation, UserKeyID } = shareKey;
     const privateUserKeys = userKeys.map(({ privateKey }) => privateKey);
 
     const { data: vaultKey, verified } = await CryptoProxy.decryptMessage({
@@ -32,5 +30,6 @@ export const openVaultKey = async ({
         raw: vaultKey,
         key: await getSymmetricKey(vaultKey),
         rotation: KeyRotation,
+        userKeyId: UserKeyID,
     };
 };

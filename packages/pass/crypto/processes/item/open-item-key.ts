@@ -1,5 +1,5 @@
-import { EncryptionTag } from '@proton/pass/types';
 import type { ItemKey, ItemKeyResponse, VaultKey } from '@proton/pass/types';
+import { EncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, getSymmetricKey } from '../../utils/crypto-helpers';

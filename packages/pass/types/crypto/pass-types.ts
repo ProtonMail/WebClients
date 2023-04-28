@@ -1,4 +1,4 @@
-import { ItemState, MaybeNull, ShareType } from '@proton/pass/types';
+import { ItemState, Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 
 export enum EncryptionTag {
     VaultContent = 'vaultcontent',
@@ -19,14 +19,8 @@ export type RotationKey = {
     rotation: Rotation;
 };
 
-/**
- * When serialized, a rotation key (item/share/vaultKeys)
- * should base64 encode its raw key
- */
-export type SerializedRotationKey = {
-    raw: string;
-    rotation: Rotation;
-};
+export type VaultKey = RotationKey & { userKeyId: Maybe<string> };
+export type ItemKey = RotationKey;
 
 type OpenedShareBase = {
     shareId: string;
@@ -55,9 +49,6 @@ export type OpenedShare = OpenedShareBase &
     );
 
 export type TypedOpenedShare<T extends ShareType> = Extract<OpenedShare, { targetType: T }>;
-
-export type VaultKey = RotationKey;
-export type ItemKey = RotationKey;
 
 export type OpenedItem = {
     itemId: string;

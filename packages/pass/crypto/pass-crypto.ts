@@ -1,10 +1,19 @@
-import * as Comlink from 'comlink';
-
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
-import type { PassCryptoManagerContext, PassCryptoWorker, ShareManager } from '../types';
+import type {
+    PassCryptoManagerContext,
+    PassCryptoWorker,
+    SerializedCryptoContext,
+    ShareContext,
+    ShareGetResponse,
+    ShareKeyResponse,
+    ShareManager,
+    TypedOpenedShare,
+} from '../types';
 import { ShareType } from '../types';
-import { logger } from '../utils/logger';
+import { unwrap } from '../utils/fp/promises';
+import { logId, logger } from '../utils/logger';
+import { entriesMap } from '../utils/object';
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
@@ -47,6 +56,8 @@ const createPassCrypto = (): PassCryptoWorker => {
     };
 
     const worker: PassCryptoWorker = {
+        getContext: () => context,
+
         async hydrate({ user, addresses, keyPassword, snapshot }) {
             logger.info('[PassCrypto::Worker] Hydrating...');
 
@@ -64,14 +75,16 @@ const createPassCrypto = (): PassCryptoWorker => {
                 context.primaryUserKey = userKeys[0];
 
                 if (snapshot) {
-                    context.shareManagers = new Map(
-                        await Promise.all(
-                            Object.values(snapshot.shareManagers).map(
-                                async ([shareId, shareSnapshot]) =>
-                                    [shareId, await createShareManager.fromSnapshot(shareSnapshot)] as const
-                            )
-                        )
-                    );
+                    const entries = snapshot.shareManagers as [string, SerializedCryptoContext<ShareContext>][];
+                    const shareManagers = await unwrap(entriesMap(entries)(createShareManager.fromSnapshot));
+                    context.shareManagers = new Map(shareManagers);
+
+                    context.shareManagers.forEach((shareManager, shareId) => {
+                        if (!shareManager.isActive(context.userKeys)) {
+                            logger.info(`[PassCrypto::Worker] Unregistering share ${logId(shareId)} (inactive)`);
+                            context.shareManagers.delete(shareId);
+                        }
+                    });
 
                     logger.info('[PassCrypto::Worker] Hydrated from snapshot');
                 }
@@ -92,10 +105,8 @@ const createPassCrypto = (): PassCryptoWorker => {
 
         getShareManager,
 
-        /**
-         * Creating a vault does not register a share manager :
-         * call PassCrypto::openShare to register it
-         */
+        /* Creating a vault does not register a share manager :
+         * call PassCrypto::openShare to register it */
         async createVault(content) {
             assertHydrated(context);
 
@@ -106,15 +117,13 @@ const createPassCrypto = (): PassCryptoWorker => {
             });
         },
 
-        /**
-         * Updating a vault does not register a share manager :
+        /* Updating a vault does not register a share manager :
          * call PassCrypto::openShare to register it.
          *
          * ⚠️ Key rotation : We're assuming the shareManager will
          * always hold the latest rotation keys - In order to future
          * -proof this, each vault update should be preceded by a
-         * call to retrieve the latest shareKeys.
-         */
+         * call to retrieve the latest shareKeys */
         async updateVault({ shareId, content }) {
             assertHydrated(context);
 
@@ -125,32 +134,52 @@ const createPassCrypto = (): PassCryptoWorker => {
             return processes.updateVault({ vaultKey, content });
         },
 
-        /**
-         * Opening a new share has the side-effect of registering a
+        canOpenShare(shareId) {
+            try {
+                return worker.getShareManager(shareId).isActive(context.userKeys);
+            } catch (_) {
+                return false;
+            }
+        },
+
+        /* Opening a new share has the side-effect of registering a
          * shareManager for this share. When opening a pre-registered
          * share (most likely hydrated from a snapshot) - filter the
          * vault keys to only open those we haven't already processed.
          * This can happen during a vault  share content update or during
-         * a full data sync.
-         */
-        async openShare({ encryptedShare, shareKeys }) {
+         * a full data sync. */
+        openShare: async <T extends ShareType = ShareType>(data: {
+            encryptedShare: ShareGetResponse;
+            shareKeys: ShareKeyResponse[];
+        }) => {
             assertHydrated(context);
 
             try {
+                const { encryptedShare, shareKeys } = data;
+
+                if (shareKeys.length === 0) throw new PassCryptoShareError('Empty share keys');
+
+                /* before processing the current encryptedShare - ensure the
+                 * latest rotation key can be decrypted with an active userKey */
+                const latestKey = shareKeys.reduce((acc, curr) => (curr.KeyRotation > acc.KeyRotation ? curr : acc));
+                const canOpenShare = context.userKeys.some(({ ID }) => ID === latestKey.UserKeyID);
+
+                if (!canOpenShare) return null;
+
                 const shareId = encryptedShare.ShareID;
                 const maybeShareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
 
-                const vaultKeys = await Promise.all(
-                    shareKeys.map((shareKey) =>
-                        maybeShareManager?.hasVaultKey(shareKey.KeyRotation)
-                            ? maybeShareManager.getVaultKey(shareKey.KeyRotation)
-                            : processes.openVaultKey({ shareKey, userKeys: context.userKeys })
-                    )
-                );
-
-                const share = await (() => {
+                const share = await (async () => {
                     switch (encryptedShare.TargetType) {
                         case ShareType.Vault: {
+                            const vaultKeys = await Promise.all(
+                                shareKeys.map((shareKey) =>
+                                    maybeShareManager?.hasVaultKey(shareKey.KeyRotation)
+                                        ? maybeShareManager.getVaultKey(shareKey.KeyRotation)
+                                        : processes.openVaultKey({ shareKey, userKeys: context.userKeys })
+                                )
+                            );
+
                             const rotation = encryptedShare.ContentKeyRotation!;
                             const vaultKey = vaultKeys.find((key) => key.rotation === rotation);
 
@@ -170,21 +199,19 @@ const createPassCrypto = (): PassCryptoWorker => {
                 })();
 
                 const shareManager = maybeShareManager ?? createShareManager(share);
-                context.shareManagers.set(shareId, shareManager);
 
+                context.shareManagers.set(shareId, shareManager);
                 shareManager.setShare(share); /* handle update when recyling */
                 await worker.updateShareKeys({ shareId, shareKeys });
 
-                return shareManager.getShare();
+                return shareManager.getShare() as TypedOpenedShare<T>;
             } catch (err: any) {
                 throw isPassCryptoError(err) ? err : new PassCryptoError(err);
             }
         },
 
-        /**
-         * TODO: add support for itemKeys when we
-         * support ItemShares
-         */
+        /* FIXME: add support for itemKeys when we
+         * support ItemShares */
         async updateShareKeys({ shareId, shareKeys }) {
             assertHydrated(context);
 
@@ -200,10 +227,8 @@ const createPassCrypto = (): PassCryptoWorker => {
 
         removeShare: (shareId) => context.shareManagers.delete(shareId),
 
-        /**
-         * Resolve the latest rotation for this share
-         * and use the vault key for that rotation
-         */
+        /* Resolve the latest rotation for this share
+         * and use the vault key for that rotation */
         async createItem({ shareId, content }) {
             assertHydrated(context);
 
@@ -223,11 +248,9 @@ const createPassCrypto = (): PassCryptoWorker => {
             return processes.openItem({ encryptedItem, vaultKey });
         },
 
-        /**
-         * We're assuming that every call to PassCrypto::updateItem will
+        /* We're assuming that every call to PassCrypto::updateItem will
          * be preceded by a request to resolve the latest encrypted item
-         * key for future-proofing.
-         */
+         * key for future-proofing */
         async updateItem({ shareId, content, latestItemKey, lastRevision }) {
             assertHydrated(context);
 
@@ -260,4 +283,3 @@ const createPassCrypto = (): PassCryptoWorker => {
 };
 
 export const PassCrypto = createPassCrypto();
-Comlink.expose(PassCrypto);

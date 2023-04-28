@@ -12,17 +12,8 @@ import {
     VaultUpdateRequest,
 } from '../api';
 import { ShareType } from '../data/shares';
-import {
-    ItemKey,
-    OpenedItem,
-    OpenedShare,
-    Rotation,
-    RotationKey,
-    SerializedRotationKey,
-    ShareId,
-    TypedOpenedShare,
-    VaultKey,
-} from './pass-types';
+import type { MaybeNull } from '../utils';
+import { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
 
 export type PassCryptoManagerContext = {
     user?: User;
@@ -36,6 +27,7 @@ export type PassCryptoManagerContext = {
 export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
 
 export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSnapshot> {
+    getContext: () => PassCryptoManagerContext;
     hydrate: (data: {
         keyPassword: string;
         user: User;
@@ -46,7 +38,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     getShareManager: (shareId: string) => ShareManager;
     createVault: (content: Uint8Array) => Promise<VaultCreateRequest>;
     updateVault: (data: { shareId: string; content: Uint8Array }) => Promise<VaultUpdateRequest>;
-    openShare: (data: { encryptedShare: ShareGetResponse; shareKeys: ShareKeyResponse[] }) => Promise<OpenedShare>;
+    canOpenShare: (shareId: string) => boolean;
+    openShare: <T extends ShareType = ShareType>(data: {
+        encryptedShare: ShareGetResponse;
+        shareKeys: ShareKeyResponse[];
+    }) => Promise<MaybeNull<TypedOpenedShare<T>>>;
     updateShareKeys: (data: { shareId: string; shareKeys: ShareKeyResponse[] }) => Promise<void>;
     removeShare: (shareId: string) => void;
     openItem: (data: { shareId: string; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
@@ -75,6 +71,7 @@ export interface ShareManager<T extends ShareType = ShareType> extends Serializa
     hasVaultKey: (rotation: Rotation) => boolean;
     getVaultKey: (rotation: Rotation) => VaultKey;
     addVaultKey: (vaultKey: VaultKey) => void;
+    isActive: (userKeys?: DecryptedKey[]) => boolean;
 }
 
 export interface SerializableCryptoContext<S> {
@@ -83,8 +80,6 @@ export interface SerializableCryptoContext<S> {
 
 export type SerializedCryptoContext<T> = T extends SerializableCryptoContext<infer U>
     ? SerializedCryptoContext<U>
-    : T extends RotationKey
-    ? SerializedRotationKey
     : T extends Uint8Array
     ? string
     : T extends Map<infer K, infer U>
@@ -92,5 +87,5 @@ export type SerializedCryptoContext<T> = T extends SerializableCryptoContext<inf
     : T extends (infer U)[]
     ? SerializedCryptoContext<U>[]
     : T extends {}
-    ? { [K in keyof T]: SerializedCryptoContext<T[K]> }
+    ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
     : T;
