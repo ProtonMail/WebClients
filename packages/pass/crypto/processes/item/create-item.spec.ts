@@ -3,7 +3,7 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';
-import { randomContents } from '../../utils/testing';
+import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { createItem } from './create-item';
 
 describe('createItem crypto process', () => {
@@ -15,6 +15,7 @@ describe('createItem crypto process', () => {
             raw: key,
             key: await getSymmetricKey(key),
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const item = await createItem({ content, vaultKey });
@@ -41,6 +42,7 @@ describe('createItem crypto process', () => {
             raw: key,
             key: await getSymmetricKey(key),
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         await expect(createItem({ content: new Uint8Array(0), vaultKey })).rejects.toThrow(PassCryptoItemError);
@@ -51,6 +53,7 @@ describe('createItem crypto process', () => {
             raw: key,
             key: await getSymmetricKey(key),
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         await expect(createItem({ content: new Uint8Array(7000), vaultKey })).rejects.toThrow(PassCryptoItemError);

@@ -28,7 +28,7 @@ export function randomKey(): Promise<PrivateKeyReference> {
 }
 
 export const TEST_KEY_PASSWORD = 'p4ssphr4se';
-export const TEST_KEY_ID = '123';
+export const TEST_USER_KEY_ID = 'userkey_123';
 
 export const createRandomKey = async (): Promise<DecryptedKey> => {
     const generatedKey = await randomKey();
@@ -36,7 +36,7 @@ export const createRandomKey = async (): Promise<DecryptedKey> => {
     return {
         privateKey: generatedKey,
         publicKey: generatedKey,
-        ID: TEST_KEY_ID,
+        ID: TEST_USER_KEY_ID,
     };
 };
 
@@ -93,6 +93,7 @@ export const createRandomShareResponses = async (
             Key: vault.EncryptedVaultKey,
             KeyRotation: 1,
             CreateTime: 0,
+            UserKeyID: userKey.ID,
         },
     ];
 };
