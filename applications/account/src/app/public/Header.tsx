@@ -12,21 +12,21 @@ interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
 
 const Header = ({ right, title, subTitle, onBack, headingLevel, ...rest }: Props) => {
     return (
-        <div className="sign-layout-header" {...rest}>
+        <div className="sign-layout-header mb-6" {...rest}>
             {onBack ? (
                 <span className="absolute sign-layout-backbutton no-mobile">
                     <BackButton onClick={onBack} />
                 </span>
             ) : null}
             {title ? (
-                <div className="flex flex-align-items-center flex-justify-space-between mb-2">
-                    <h1 className="sign-layout-title my-0 sm:mt-4 md:mt-8" aria-level={headingLevel}>
+                <div className="flex flex-align-items-center flex-justify-space-between">
+                    <h1 className="sign-layout-title" aria-level={headingLevel}>
                         {title}
                     </h1>
                     {right}
                 </div>
             ) : null}
-            {subTitle ? <div className="mt-1 color-weak mb-8 md:mb-0">{subTitle}</div> : null}
+            {subTitle ? <div className="mt-3 color-weak">{subTitle}</div> : null}
         </div>
     );
 };

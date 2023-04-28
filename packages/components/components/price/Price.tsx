@@ -1,7 +1,6 @@
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
 import { Currency } from '@proton/shared/lib/interfaces';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 import './Price.scss';
 
@@ -38,22 +37,18 @@ const Price = ({
     const [integer, decimal] = `${value}`.split('.');
     const p = amount < 0 ? <span className="prefix">-</span> : null;
     const v = (
-        <span className={classnames(['amount', 'amount--large'])} data-testid={dataTestId}>
+        <span className={clsx(['amount', 'amount--large'])} data-testid={dataTestId}>
             <span className="integer">{integer}</span>
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
     );
-    const s = suffix ? (
-        <span className={classnames(['suffix', !isDisplayedInSentence && 'ml-1'])}>{suffix}</span>
-    ) : null;
-    const pr = prefix ? (
-        <span className={classnames(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span>
-    ) : null;
+    const s = suffix ? <span className={clsx(['suffix', !isDisplayedInSentence && 'ml-1'])}>{suffix}</span> : null;
+    const pr = prefix ? <span className={clsx(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span> : null;
 
     if (currency === 'CHF') {
         return (
             <span
-                className={classnames([
+                className={clsx([
                     'price flex-item-noshrink inline-flex flex-align-items-baseline',
                     large && 'price--large',
                     className,
@@ -72,7 +67,7 @@ const Price = ({
     if (currency === 'EUR') {
         return (
             <span
-                className={classnames([
+                className={clsx([
                     'price flex-item-noshrink inline-flex flex-align-items-baseline',
                     large && 'price--large',
                     className,
@@ -89,7 +84,7 @@ const Price = ({
     }
     return (
         <span
-            className={classnames([
+            className={clsx([
                 'price flex-item-noshrink inline-flex flex-align-items-baseline',
                 large && 'price--large',
                 className,
