@@ -55,6 +55,15 @@ const createPassCrypto = (): PassCryptoWorker => {
         return context.shareManagers.get(shareId)!;
     };
 
+    const unregisterInactiveShares = () => {
+        context.shareManagers.forEach((shareManager, shareId) => {
+            if (!shareManager.isActive(context.userKeys)) {
+                logger.info(`[PassCrypto::Worker] Unregistering share ${logId(shareId)} (inactive)`);
+                context.shareManagers.delete(shareId);
+            }
+        });
+    };
+
     const worker: PassCryptoWorker = {
         getContext: () => context,
 
@@ -78,20 +87,14 @@ const createPassCrypto = (): PassCryptoWorker => {
                     const entries = snapshot.shareManagers as [string, SerializedCryptoContext<ShareContext>][];
                     const shareManagers = await unwrap(entriesMap(entries)(createShareManager.fromSnapshot));
                     context.shareManagers = new Map(shareManagers);
-
-                    context.shareManagers.forEach((shareManager, shareId) => {
-                        if (!shareManager.isActive(context.userKeys)) {
-                            logger.info(`[PassCrypto::Worker] Unregistering share ${logId(shareId)} (inactive)`);
-                            context.shareManagers.delete(shareId);
-                        }
-                    });
-
                     logger.info('[PassCrypto::Worker] Hydrated from snapshot');
                 }
             } catch (e) {
                 logger.warn('[PassCrypto::Worker] hydration failed', e);
                 throw new PassCryptoHydrationError('Hydration failure');
             }
+
+            unregisterInactiveShares();
         },
 
         clear() {
