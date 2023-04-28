@@ -7,7 +7,10 @@ import { useNotifications } from '@proton/components/hooks';
 export const usePasteLengthLimiter = () => {
     const { createNotification } = useNotifications();
 
-    return (maxLength: number): ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement> =>
+    return (
+            maxLength: number,
+            originalOnPaste?: ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement>
+        ): ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement> =>
         (event) => {
             const text = event.clipboardData?.getData('text') ?? '';
             const { value, selectionStart, selectionEnd } = event.currentTarget;
@@ -15,10 +18,14 @@ export const usePasteLengthLimiter = () => {
 
             if (base + text.length > maxLength) {
                 createNotification({
-                    type: 'info',
+                    key: 'max-length-limiter',
+                    type: 'warning',
+                    deduplicate: true,
                     text: c('Info')
                         .t`The text you're trying to paste is longer than the maximum allowed length of ${maxLength} characters.`,
                 });
             }
+
+            originalOnPaste?.(event);
         };
 };

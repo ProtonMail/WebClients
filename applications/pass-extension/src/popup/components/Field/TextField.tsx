@@ -8,6 +8,7 @@ import { type InputFieldProps } from '@proton/components/components/v2/field/Inp
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
+import { useMaxLengthLimiter } from '../../hooks/useMaxLengthLimiter';
 import { usePasteLengthLimiter } from '../../hooks/usePasteLengthLimiter';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
@@ -19,10 +20,13 @@ export const BaseTextField: VFC<BaseTextFieldProps> = ({
     meta,
     inputClassName,
     labelContainerClassName,
+    onKeyDown,
+    onPaste,
     ...props
 }) => {
     const { error } = useFieldControl({ field, form, meta });
     const pasteLengthLimiter = usePasteLengthLimiter();
+    const maxLengthLimiter = useMaxLengthLimiter();
 
     return (
         <InputFieldTwo
@@ -35,9 +39,10 @@ export const BaseTextField: VFC<BaseTextFieldProps> = ({
                 error ? 'color-danger' : 'color-weak',
                 labelContainerClassName
             )}
-            onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength) : undefined}
             {...field}
             {...props}
+            onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
+            onKeyDown={props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
         />
     );
 };
