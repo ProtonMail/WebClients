@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import type { Api, ServerEvent, Share, SharesGetResponse } from '@proton/pass/types';
+import type { Api, Maybe, ServerEvent, Share, SharesGetResponse } from '@proton/pass/types';
 import { ChannelType, ShareType } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -23,8 +24,7 @@ import type { EventChannel } from './types';
 /* We're only interested in new shares in this effect :
  * deleted shares will be handled by the share's EventChannel
  * error handling. see `channel.share.ts` code `300004`
- * FIXME: handle ItemShares
- */
+ * FIXME: handle ItemShares */
 function* onSharesEvent(
     event: ServerEvent<ChannelType.SHARES>,
     { api }: EventChannel<ChannelType.SHARES>,
@@ -39,22 +39,26 @@ function* onSharesEvent(
     logger.info(`[Saga::SharesChannel]`, `${newShares.length} new share(s)`);
 
     if (newShares.length) {
-        const shares: Share[] = yield Promise.all(
-            newShares
-                .filter((share) => share.TargetType === ShareType.Vault)
-                .map(({ ShareID }) => loadShare(ShareID, ShareType.Vault))
-        );
-
-        const items = (
+        const shares = (
             (yield Promise.all(
-                shares.map(async ({ shareId }) => ({
-                    [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
-                }))
-            )) as ItemsByShareId[]
-        ).reduce(diadic(merge));
+                newShares
+                    .filter((share) => share.TargetType === ShareType.Vault)
+                    .map(({ ShareID }) => loadShare(ShareID, ShareType.Vault))
+            )) as Maybe<Share>[]
+        ).filter(truthy);
 
-        yield put(sharesSync({ shares: toMap(shares, 'shareId'), items }));
-        yield all(shares.map(getShareChannelForks(api, options)).flat());
+        if (shares.length > 0) {
+            const items = (
+                (yield Promise.all(
+                    shares.map(async ({ shareId }) => ({
+                        [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
+                    }))
+                )) as ItemsByShareId[]
+            ).reduce(diadic(merge));
+
+            yield put(sharesSync({ shares: toMap(shares, 'shareId'), items }));
+            yield all(shares.map(getShareChannelForks(api, options)).flat());
+        }
     }
 }
 
