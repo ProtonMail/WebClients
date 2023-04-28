@@ -5,7 +5,7 @@ export { usePublicAuth } from './_api';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useRevisions } from './_revisions';
-export { useUserSettings, SettingsProvider } from './_settings';
+export { useUserSettings, UserSettingsProvider } from './_settings';
 export {
     useDefaultShare,
     usePublicShare,
