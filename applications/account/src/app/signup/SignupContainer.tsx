@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-
-
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
@@ -51,7 +49,6 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -137,7 +134,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
     const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
     const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
-    
+
     const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
     const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
 
@@ -554,13 +551,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
     const children = (
         <>
-            {stepper && (
-                <Stepper className="mb-8" position="center" activeStep={stepper.activeStep}>
-                    {stepper.steps.map((step) => (
-                        <Step key={step}>{step}</Step>
-                    ))}
-                </Stepper>
-            )}
             {step === AccountCreationUsername && (
                 <AccountStep
                     toApp={toApp}
@@ -1003,7 +993,15 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             onBack={handleBackStep}
             bottomRight={<SignupSupportDropdown />}
             hasDecoration={hasDecoration}
-            headerClassName={clsx(stepper && 'mb-8 sm:mb-4')}
+            stepper={
+                stepper && (
+                    <Stepper position="center" activeStep={stepper.activeStep}>
+                        {stepper.steps.map((step) => (
+                            <Step key={step}>{step}</Step>
+                        ))}
+                    </Stepper>
+                )
+            }
         >
             {children}
         </Layout>
