@@ -135,6 +135,7 @@
 		@include media('<=xsmall') {
 			padding-inline: 0;
 			margin: 0;
+			font-size: em(map-get($title-sizes, 'h3'));
 		}
 	}
 
