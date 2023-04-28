@@ -28,9 +28,10 @@ export const checkSKLEquality = (skl1: FetchedSignedKeyList, skl2: FetchedSigned
  */
 export const importKeys = async (keyList: ArmoredKeyWithFlags[]): Promise<KeyWithFlags[]> =>
     Promise.all(
-        keyList.map(async ({ PublicKey: armoredKey, Flags }) => ({
+        keyList.map(async ({ PublicKey: armoredKey, Flags, Primary }) => ({
             PublicKey: await CryptoProxy.importPublicKey({ armoredKey }),
             Flags,
+            Primary,
         }))
     );
 
@@ -39,10 +40,10 @@ export const importKeys = async (keyList: ArmoredKeyWithFlags[]): Promise<KeyWit
  */
 export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyListItem[]> =>
     Promise.all(
-        keyList.map(async ({ PublicKey, Flags }, index) => ({
+        keyList.map(async ({ PublicKey, Flags, Primary }, index) => ({
             Fingerprint: PublicKey.getFingerprint(),
             SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: PublicKey }),
-            Primary: index === 0 ? 1 : 0,
+            Primary: Primary ?? index === 0 ? 1 : 0,
             Flags: Flags,
         }))
     );
