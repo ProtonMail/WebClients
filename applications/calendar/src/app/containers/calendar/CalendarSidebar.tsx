@@ -123,7 +123,7 @@ const CalendarSidebar = ({
 
     const primaryAction = (
         <SidebarPrimaryButton
-            data-test-id="calendar-view:new-event-button"
+            data-testid="calendar-view:new-event-button"
             disabled={!onCreateEvent}
             onClick={onCreateEvent}
             className="no-mobile"
@@ -260,7 +260,7 @@ const CalendarSidebar = ({
                 <CalendarLimitReachedModal {...isLimitReachedModal} isFreeUser={!user.hasPaidMail} />
             )}
 
-            <SidebarNav data-test-id="calendar-sidebar:calendars-list-area">
+            <SidebarNav data-testid="calendar-sidebar:calendars-list-area">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
                 {myCalendarsList}
                 {otherCalendarsList}

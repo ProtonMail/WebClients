@@ -12,7 +12,7 @@ export const EmptyPlaceholder = () => (
         <EmptyViewContainer
             className="p1"
             imageProps={{ src: noContentSvg, title: c('Info').t`Nothing here yet` }}
-            data-test-id="shared-folder-empty-placeholder"
+            data-testid="shared-folder-empty-placeholder"
         >
             <h3 className="text-bold">{c('Info').t`Nothing here yet`}</h3>
             <p className="color-hint shared-folder-empty-placeholder-text">

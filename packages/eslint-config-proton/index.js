@@ -161,6 +161,17 @@ module.exports = {
          */
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
+        'react/forbid-component-props': [
+            'warn',
+            {
+                forbid: [
+                    {
+                        propName: 'data-test-id',
+                        message: 'Please use `data-testid` instead',
+                    },
+                ],
+            },
+        ],
         'es/no-regexp-lookbehind-assertions': 'error',
         'deprecation/deprecation': 'warn',
         'no-only-tests/no-only-tests': 'error',

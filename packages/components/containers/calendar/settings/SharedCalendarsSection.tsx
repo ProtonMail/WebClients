@@ -85,7 +85,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
                 </div>
             </TableCell>
             <TableCell label={filteredBadges.length > 0 && statusHeader}>
-                <div data-test-id="calendar-settings-page:calendar-status" key="status">
+                <div data-testid="calendar-settings-page:calendar-status" key="status">
                     {filteredBadges.map(({ statusType, badgeType, text, tooltipText }) => (
                         <CalendarBadge key={statusType} badgeType={badgeType} text={text} tooltipText={tooltipText} />
                     ))}

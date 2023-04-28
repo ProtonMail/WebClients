@@ -16,7 +16,7 @@ function LabelItem({ label, ...rest }: Props) {
             cells={[
                 <div key="label" className="flex flex-nowrap">
                     <Icon name="tag" style={{ fill: Color }} className="icon-16p flex-item-noshrink mr1 myauto" />
-                    <span className="text-ellipsis" title={Name} data-test-id="folders/labels:item-name">
+                    <span className="text-ellipsis" title={Name} data-testid="folders/labels:item-name">
                         {Name}
                     </span>
                 </div>,

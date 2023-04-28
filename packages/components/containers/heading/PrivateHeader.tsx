@@ -48,7 +48,7 @@ const PrivateHeader = ({
         return (
             <Header>
                 <TopNavbarListItemButton
-                    data-test-id="view:general-back"
+                    data-testid="view:general-back"
                     as={AppLink}
                     to={backUrl}
                     icon={<Icon name="arrow-left" />}

@@ -37,7 +37,7 @@ const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: P
             <SettingsLayoutRight>
                 <TimeZoneSelector
                     id={timeZoneSelectorId}
-                    data-test-id="settings/primary-time-zone:dropdown"
+                    data-testid="settings/primary-time-zone:dropdown"
                     loading={loadingPrimaryTimeZone}
                     timezone={PrimaryTimezone}
                     onChange={(PrimaryTimezone) => withLoadingPrimaryTimeZone(handleChange({ PrimaryTimezone }))}
