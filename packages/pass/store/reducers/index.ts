@@ -1,10 +1,10 @@
 import { type Reducer, combineReducers } from 'redux';
 
 import type { Maybe } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 
-import { signout, stateDestroy, stateLock, stateSync } from '../actions';
+import { stateSync } from '../actions';
+import { isStateResetAction } from '../actions/utils';
 import type { State } from '../types';
 import alias from './alias';
 import importReducer from './import';
@@ -30,13 +30,8 @@ const wrappedRootReducer: Reducer<State> = (previousState, action) => {
      * - on `stateSync` : merge the incoming state */
     return rootReducer(
         ((): Maybe<State> => {
-            if (or(stateDestroy.match, stateLock.match, signout.match)(action)) {
-                return undefined;
-            }
-
-            if (stateSync.match(action)) {
-                return merge(previousState ?? {}, action.payload.state);
-            }
+            if (isStateResetAction(action)) return undefined;
+            if (stateSync.match(action)) return merge(previousState ?? {}, action.payload.state);
 
             return previousState;
         })(),
