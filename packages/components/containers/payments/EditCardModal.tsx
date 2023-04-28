@@ -3,17 +3,17 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import usePaymentToken from '@proton/components/hooks/usePaymentToken';
 import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
 import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Autopay } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useApi, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 import { CardModel } from './interface';
-import { getCreatePaymentToken, getDefaultVerifyPayment } from './paymentTokenHelper';
 import toDetails from './toDetails';
 import useCard from './useCard';
 
@@ -28,7 +28,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
+    const createPaymentToken = usePaymentToken();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
     const { card, setCard, errors, isValid } = useCard(existingCard);
     const [submitted, setSubmitted] = useState(false);
@@ -39,9 +39,6 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     } = useRenewToggle({ initialRenewState: renewState });
 
     const handleSubmit = async () => {
-        const verify = getDefaultVerifyPayment(createModal, api);
-        const createPaymentToken = getCreatePaymentToken(verify);
-
         const { Payment } = await createPaymentToken({
             params: {
                 Payment: {
