@@ -135,7 +135,7 @@ const PartDayEvent = ({
 
         return (
             <>
-                <div data-test-id="calendar-day-week-view:part-day-event" className="calendar-eventcell-title">
+                <div data-testid="calendar-day-week-view:part-day-event" className="calendar-eventcell-title">
                     {titleString}
                 </div>
                 <div className={clsx(['text-ellipsis calendar-eventcell-timestring', shouldHideTime && 'sr-only'])}>

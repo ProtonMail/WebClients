@@ -53,7 +53,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                         <span className="w6e">
                             <IntegerInput
                                 id="event-custom-frequency-number"
-                                data-test-id="event-modal/custom-frequency/interval:input"
+                                data-testid="event-modal/custom-frequency/interval:input"
                                 min={1}
                                 value={frequencyModel.interval}
                                 onChange={handleChangeInterval}
@@ -70,7 +70,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                         <span className="flex-item-fluid ml-2">
                             <SelectTwo
                                 id="event-custom-frequency-select"
-                                data-test-id="event-modal/custom-frequency/interval:frequency"
+                                data-testid="event-modal/custom-frequency/interval:frequency"
                                 value={frequencyModel.frequency}
                                 onChange={({ value }) => handleChangeFrequency(value as FREQUENCY)}
                                 title={c('Title').t`Select event frequency interval`}

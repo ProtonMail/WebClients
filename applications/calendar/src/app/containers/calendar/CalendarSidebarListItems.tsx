@@ -176,7 +176,7 @@ const CalendarSidebarListItems = ({
                     className="calendar-sidebar-list-item opacity-on-hover-container py0-25 pr0-5"
                 >
                     <SidebarListItemContent
-                        data-test-id="calendar-sidebar:user-calendars"
+                        data-testid="calendar-sidebar:user-calendars"
                         left={left}
                         className={clsx(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                     >

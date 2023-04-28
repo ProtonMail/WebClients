@@ -244,12 +244,7 @@ const FilePreview = (
     ]);
 
     return (
-        <div
-            className={`file-preview ui-${colorUi}`}
-            ref={combinedRefs}
-            data-test-id="file-preview"
-            {...focusTrapProps}
-        >
+        <div className={`file-preview ui-${colorUi}`} ref={combinedRefs} data-testid="file-preview" {...focusTrapProps}>
             <Header
                 mimeType={mimeType}
                 name={fileName}

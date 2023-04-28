@@ -32,7 +32,7 @@ function LabelSortableList({ items, ...rest }: Props) {
                         key={`item-${label.ID}`}
                         index={index}
                         label={label}
-                        data-test-id="folders/labels:item-type:label"
+                        data-testid="folders/labels:item-type:label"
                     />
                 ))}
             </OrderableTableBody>

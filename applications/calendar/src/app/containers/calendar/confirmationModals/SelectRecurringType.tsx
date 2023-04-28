@@ -10,10 +10,10 @@ interface Props {
     types: RECURRING_TYPES[];
     type: RECURRING_TYPES;
     setType: Dispatch<SetStateAction<RECURRING_TYPES>>;
-    'data-test-id': string;
+    'data-testid': string;
 }
 
-const SelectRecurringType = ({ types, type, setType, 'data-test-id': dataTestId }: Props) => {
+const SelectRecurringType = ({ types, type, setType, 'data-testid': dataTestId }: Props) => {
     const radios = [
         types.includes(RECURRING_TYPES.SINGLE) && {
             label: c('Option').t`This event`,
@@ -37,7 +37,7 @@ const SelectRecurringType = ({ types, type, setType, 'data-test-id': dataTestId 
                     <Row key={label}>
                         <Radio
                             className="flex-nowrap"
-                            data-test-id={dataTestId}
+                            data-testid={dataTestId}
                             id={`recurringTypeChoice${id}`}
                             name="recurringType"
                             checked={value === type}

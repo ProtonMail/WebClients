@@ -249,7 +249,7 @@ export const CalendarModal = ({
             as={SelectTwo}
             label={c('Label').t`Event duration`}
             id="duration-select"
-            data-test-id="create-calendar/event-settings:event-duration"
+            data-testid="create-calendar/event-settings:event-duration"
             value={model.duration}
             // @ts-ignore
             onChange={({ value }: SelectChangeEvent<string>) => setModel({ ...model, duration: +value })}
@@ -271,7 +271,7 @@ export const CalendarModal = ({
                 id="default-notification"
                 as={Notifications}
                 label={c('Label').t`Event notifications`}
-                data-test-id="create-calendar/event-settings:default-notification"
+                data-testid="create-calendar/event-settings:default-notification"
                 hasType
                 notifications={model.partDayNotifications}
                 canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
@@ -288,7 +288,7 @@ export const CalendarModal = ({
                 id="default-full-day-notification"
                 as={Notifications}
                 label={c('Label').t`All-day event notifications`}
-                data-test-id="create-calendar/event-settings:default-full-day-notification"
+                data-testid="create-calendar/event-settings:default-full-day-notification"
                 hasType
                 notifications={model.fullDayNotifications}
                 canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}

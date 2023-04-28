@@ -152,7 +152,7 @@ const DeleteRecurringConfirmModal = ({
                     types={types}
                     type={type}
                     setType={setType}
-                    data-test-id="delete-recurring-popover:delete-option-radio"
+                    data-testid="delete-recurring-popover:delete-option-radio"
                 />
             ) : null}
         </Prompt>

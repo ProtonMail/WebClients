@@ -95,7 +95,7 @@ const CalendarInviteButtons = ({
             className={className}
             title={c('Title').t`Change my answer`}
             content={<div className="text-ellipsis">{text}</div>}
-            data-test-id="dropdown:open"
+            data-testid="dropdown:open"
         >
             <DropdownMenu>
                 {restList.map(({ text, ...restProps }, index) => {
