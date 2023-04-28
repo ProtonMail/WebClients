@@ -90,11 +90,10 @@ const ExtendedExtensionContext: FC = ({ children }) => {
 };
 
 export const PopupContextProvider: FC = ({ children }) => {
-    const { createNotification, clearNotifications } = useNotifications();
+    const { createNotification } = useNotifications();
 
     const onWorkerMessage = (message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION) {
-            clearNotifications();
             createNotification(message.payload.notification);
         }
     };
