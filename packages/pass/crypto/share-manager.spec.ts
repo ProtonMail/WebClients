@@ -2,7 +2,7 @@ import { ShareType, VaultKey } from '../types';
 import { createShareManager } from './share-manager';
 import { generateKey, getSymmetricKey } from './utils';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
-import { createRandomShare } from './utils/testing';
+import { TEST_USER_KEY_ID, createRandomShare } from './utils/testing';
 
 describe('ShareManager', () => {
     test('createShareManager should init manager with share', () => {
@@ -33,6 +33,7 @@ describe('ShareManager', () => {
             raw: key,
             key: await getSymmetricKey(key),
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const itemShare = createRandomShare(ShareType.Item);
@@ -68,6 +69,7 @@ describe('ShareManager', () => {
             raw: key,
             key: await getSymmetricKey(key),
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const share = createRandomShare(ShareType.Item);
@@ -82,6 +84,7 @@ describe('ShareManager', () => {
             raw: key,
             key: await getSymmetricKey(key),
             rotation: 42,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const share = createRandomShare(ShareType.Vault);
@@ -100,6 +103,7 @@ describe('ShareManager', () => {
                     raw: key,
                     key: await getSymmetricKey(key),
                     rotation: i + 1,
+                    userKeyId: TEST_USER_KEY_ID,
                 };
             })
         );

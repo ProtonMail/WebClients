@@ -2,7 +2,7 @@ import { ItemRevisionContentsResponse, ItemState, VaultKey } from '@proton/pass/
 
 import { generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';
-import { randomContents } from '../../utils/testing';
+import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { createItem } from './create-item';
 import { openItem } from './open-item';
 
@@ -17,6 +17,7 @@ describe('openItem crypto process', () => {
             key: await getSymmetricKey(key),
             raw: key,
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const createItemRequest = await createItem({ content, vaultKey });
@@ -49,6 +50,7 @@ describe('openItem crypto process', () => {
             key: await getSymmetricKey(key),
             raw: key,
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const createItemRequest = await createItem({ content, vaultKey });

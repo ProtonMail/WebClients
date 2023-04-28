@@ -2,6 +2,7 @@ import { EncryptionTag, ItemKeyResponse, VaultKey } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { encryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
+import { TEST_USER_KEY_ID } from '../../utils/testing';
 import { openItemKey } from './open-item-key';
 
 describe('openItemKey crypto process', () => {
@@ -13,6 +14,7 @@ describe('openItemKey crypto process', () => {
             key: await getSymmetricKey(key),
             raw: key,
             rotation: 1,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const encryptedItemKey: ItemKeyResponse = {

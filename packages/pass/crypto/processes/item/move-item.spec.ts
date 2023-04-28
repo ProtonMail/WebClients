@@ -1,9 +1,9 @@
-import { CONTENT_FORMAT_VERSION, EncryptionTag, ItemKey, VaultKey } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, EncryptionTag, VaultKey } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';
-import { randomContents } from '../../utils/testing';
+import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { moveItem } from './move-item';
 
 describe('moveItem crypto process', () => {
@@ -12,10 +12,11 @@ describe('moveItem crypto process', () => {
 
     test('should re-encrypt item content with destination vault key', async () => {
         const destinationShareId = `shareId-${Math.random()}`;
-        const destinationVaultKey: ItemKey = {
+        const destinationVaultKey: VaultKey = {
             key: await getSymmetricKey(key),
             raw: key,
             rotation: 42,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const movedItem = await moveItem({ content, destinationVaultKey, destinationShareId });
@@ -43,6 +44,7 @@ describe('moveItem crypto process', () => {
             key: await getSymmetricKey(key),
             raw: key,
             rotation: 42,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         await expect(

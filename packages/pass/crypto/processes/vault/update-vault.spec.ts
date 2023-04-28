@@ -3,7 +3,7 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoVaultError } from '../../utils/errors';
-import { randomContents } from '../../utils/testing';
+import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { updateVault } from './update-vault';
 
 describe('updateVault crypto process', () => {
@@ -16,6 +16,7 @@ describe('updateVault crypto process', () => {
             key: shareKey,
             raw: key,
             rotation: 42,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         const vaultUpdate = await updateVault({ vaultKey, content });
@@ -39,6 +40,7 @@ describe('updateVault crypto process', () => {
             key: shareKey,
             raw: key,
             rotation: 42,
+            userKeyId: TEST_USER_KEY_ID,
         };
 
         await expect(
