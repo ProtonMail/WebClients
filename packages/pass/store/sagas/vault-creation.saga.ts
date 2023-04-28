@@ -8,7 +8,7 @@ import { createVault } from './workers/vaults';
 function* createVaultWorker({ payload, meta }: ReturnType<typeof vaultCreationIntent>) {
     const { callback: onCreateVaultProcessed } = meta;
     try {
-        const share: Share<ShareType.Vault> = yield createVault(payload.content);
+        const share: Share<ShareType.Vault> = yield createVault({ content: payload.content });
 
         const vaultCreationSuccessAction = vaultCreationSuccess({ id: payload.id, share });
         yield put(vaultCreationSuccessAction);

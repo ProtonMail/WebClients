@@ -1,6 +1,6 @@
 import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
-import { Share, ShareGetResponse, ShareType, TypedOpenedShare } from '@proton/pass/types';
+import { type Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 
 import { getAllShareKeys } from './vaults';
@@ -13,29 +13,29 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         })
     ).EventID ?? '';
 
-const loadVaultShareById = async (shareId: string): Promise<Share<ShareType.Vault>> => {
+const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareType.Vault>>> => {
     const [shareInfo, shareKeys, eventId] = await Promise.all([
         api({ url: `pass/v1/share/${shareId}`, method: 'get' }),
         getAllShareKeys(shareId),
         getShareLatestEventId(shareId),
     ]);
 
-    const share = (await PassCrypto.openShare({
+    const share = await PassCrypto.openShare<ShareType.Vault>({
         encryptedShare: shareInfo.Share!,
         shareKeys,
-    })) as TypedOpenedShare<ShareType.Vault>;
+    });
 
-    const content = decodeVaultContent(share.content);
-
-    return {
-        shareId: share.shareId,
-        targetId: share.targetId,
-        targetType: share.targetType,
-        vaultId: share.vaultId,
-        eventId,
-        content,
-        primary: Boolean(shareInfo.Share?.Primary),
-    };
+    if (share) {
+        return {
+            shareId: share.shareId,
+            targetId: share.targetId,
+            targetType: share.targetType,
+            vaultId: share.vaultId,
+            eventId,
+            content: decodeVaultContent(share.content),
+            primary: Boolean(shareInfo.Share?.Primary),
+        };
+    }
 };
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>
@@ -46,11 +46,10 @@ export const requestShares = async (): Promise<ShareGetResponse[]> =>
         })
     ).Shares;
 
-export const loadShare = async <T extends ShareType>(shareId: string, targetType: T): Promise<Share<T>> => {
+export const loadShare = async <T extends ShareType>(shareId: string, targetType: T): Promise<Maybe<Share<T>>> => {
     switch (targetType) {
         case ShareType.Vault:
-            const vaultShare = await loadVaultShareById(shareId);
-            return vaultShare as Share<T>;
+            return (await loadVaultShareById(shareId)) as Maybe<Share<T>>;
         default:
             throw new Error(`Unsupported share type ${ShareType[targetType]}`);
     }
