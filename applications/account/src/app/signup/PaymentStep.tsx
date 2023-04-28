@@ -11,7 +11,6 @@ import {
     StyledPayPalButton,
     useConfig,
     useLoading,
-    useModals,
     usePayment,
 } from '@proton/components';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
@@ -22,14 +21,11 @@ import {
     TokenPayment,
     TokenPaymentMethod,
 } from '@proton/components/containers/payments/interface';
-import {
-    getCreatePaymentToken,
-    getDefaultVerifyPayment,
-} from '@proton/components/containers/payments/paymentTokenHelper';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
 } from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
+import usePaymentToken from '@proton/components/hooks/usePaymentToken';
 import metrics from '@proton/metrics';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
@@ -100,7 +96,7 @@ const PaymentStep = ({
         },
     });
 
-    const { createModal } = useModals();
+    const createPaymentToken = usePaymentToken();
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -200,9 +196,6 @@ const PaymentStep = ({
                                 if (!handleCardSubmit() || !paymentParameters) {
                                     return;
                                 }
-
-                                const verify = getDefaultVerifyPayment(createModal, api);
-                                const createPaymentToken = getCreatePaymentToken(verify);
 
                                 const amountAndCurrency: AmountAndCurrency = {
                                     Currency: subscriptionData.currency,

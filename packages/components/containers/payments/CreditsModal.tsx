@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import usePaymentToken from '@proton/components/hooks/usePaymentToken';
 import { buyCredit } from '@proton/shared/lib/api/payments';
 import {
     APPS,
@@ -24,13 +25,12 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useApi, useConfig, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useConfig, useEventManager, useLoading, useNotifications } from '../../hooks';
 import AmountRow from './AmountRow';
 import Payment from './Payment';
 import PaymentInfo from './PaymentInfo';
 import StyledPayPalButton from './StyledPayPalButton';
 import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from './interface';
-import { getCreatePaymentToken, getDefaultVerifyPayment } from './paymentTokenHelper';
 import usePayment from './usePayment';
 
 const getCurrenciesI18N = () => ({
@@ -43,7 +43,7 @@ const CreditsModal = (props: ModalProps) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
-    const { createModal } = useModals();
+    const createPaymentToken = usePaymentToken();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [currency, setCurrency] = useState<Currency>(DEFAULT_CURRENCY);
@@ -53,9 +53,6 @@ const CreditsModal = (props: ModalProps) => {
     const i18nCurrency = i18n[currency];
 
     const handleSubmit = async (params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment) => {
-        const verify = getDefaultVerifyPayment(createModal, api);
-        const createPaymentToken = getCreatePaymentToken(verify);
-
         const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
         const tokenPaymentMethod = await createPaymentToken(
             {

@@ -6,7 +6,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import PaymentVerificationModal from './PaymentVerificationModal';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -262,37 +261,3 @@ export const getCreatePaymentToken =
             },
             amountAndCurrency
         );
-
-export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): VerifyPayment =>
-    async function verify({
-        mode,
-        Payment,
-        Token,
-        ApprovalURL,
-        ReturnHost,
-    }: Parameters<VerifyPayment>[0]): Promise<TokenPaymentMethod> {
-        return new Promise<TokenPaymentMethod>((resolve, reject) => {
-            createModal(
-                <PaymentVerificationModal
-                    mode={mode}
-                    payment={Payment}
-                    token={Token}
-                    onSubmit={resolve}
-                    onClose={reject}
-                    onProcess={() => {
-                        const abort = new AbortController();
-                        return {
-                            promise: process({
-                                Token,
-                                api,
-                                ReturnHost,
-                                ApprovalURL,
-                                signal: abort.signal,
-                            }),
-                            abort,
-                        };
-                    }}
-                />
-            );
-        });
-    };
