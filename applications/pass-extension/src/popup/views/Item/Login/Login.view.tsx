@@ -60,9 +60,11 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
 
             {note && (
                 <FieldsetCluster mode="read" as="div">
-                    <ValueControl as="pre" icon="note" label={c('Label').t`Note`}>
-                        <pre className="text-break">{note}</pre>
-                    </ValueControl>
+                    <ClickToCopyValueControl value={note}>
+                        <ValueControl interactive as="pre" icon="note" label={c('Label').t`Note`}>
+                            <pre className="text-break">{note}</pre>
+                        </ValueControl>
+                    </ClickToCopyValueControl>
                 </FieldsetCluster>
             )}
 
