@@ -7,15 +7,17 @@ import { type InputFieldProps } from '@proton/components/components/v2/field/Inp
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
+import { useMaxLengthLimiter } from '../../hooks/useMaxLengthLimiter';
 import { usePasteLengthLimiter } from '../../hooks/usePasteLengthLimiter';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type BaseTextAreaFieldProps = FieldProps & InputFieldProps<typeof TextAreaTwo>;
 
 export const BaseTextAreaField: VFC<BaseTextAreaFieldProps> = ({ form, field, meta, ...props }) => {
-    const { className, labelContainerClassName, ...rest } = props;
+    const { className, labelContainerClassName, onKeyDown, onPaste, ...rest } = props;
     const { error } = useFieldControl({ form, field, meta });
     const pasteLengthLimiter = usePasteLengthLimiter();
+    const maxLengthLimiter = useMaxLengthLimiter();
 
     return (
         <TextAreaTwo
@@ -23,9 +25,10 @@ export const BaseTextAreaField: VFC<BaseTextAreaFieldProps> = ({ form, field, me
             unstyled
             className={clsx('border-none flex p-0 resize-none', className)}
             error={error}
-            onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength) : undefined}
             {...field}
             {...rest}
+            onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
+            onKeyDown={props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
         />
     );
 };
@@ -41,10 +44,13 @@ export const TextAreaField: VFC<TextAreaFieldProps> = ({
     form,
     field,
     meta,
+    onKeyDown,
+    onPaste,
     ...props
 }) => {
     const { error } = useFieldControl({ form, field, meta });
     const pasteLengthLimiter = usePasteLengthLimiter();
+    const maxLengthLimiter = useMaxLengthLimiter();
 
     return (
         <FieldBox
@@ -67,9 +73,10 @@ export const TextAreaField: VFC<TextAreaFieldProps> = ({
                     error ? 'color-danger' : 'color-weak',
                     labelContainerClassName
                 )}
-                onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength) : undefined}
                 {...field}
                 {...props}
+                onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
+                onKeyDown={props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
             />
         </FieldBox>
     );
