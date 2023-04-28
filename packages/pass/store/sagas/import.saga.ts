@@ -39,15 +39,12 @@ function* createVaultForImport(vaultName: string) {
     yield put(
         vaultCreationIntent(
             { id: uniqid(), content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} } },
-            (action) => (vaultCreationSuccess.match(action) ? resolver(action.payload.share.shareId) : undefined)
+            (action) => resolver(vaultCreationSuccess.match(action) ? action.payload.share.shareId : undefined)
         )
     );
 
     const shareId: Maybe<string> = yield creationResult;
-
-    if (shareId === undefined) {
-        throw new Error(c('Warning').t`Could not create vault "${vaultName}"`);
-    }
+    if (shareId === undefined) throw new Error(c('Warning').t`Could not create vault "${vaultName}"`);
 
     return shareId;
 }
