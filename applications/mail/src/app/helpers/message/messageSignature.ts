@@ -91,7 +91,7 @@ export const templateBuilder = (
     const template = dedentTpl`
         <div ${defaultStyle}class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
             <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">
-                ${replaceLineBreaks(signature)}
+                ${!isHTMLEmpty(signature) ? replaceLineBreaks(signature) : ''}
             </div>
             ${space.between}
             <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">
