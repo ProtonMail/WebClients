@@ -193,12 +193,12 @@ const fetchPaymentToken = async (
  */
 export const createPaymentToken = async (
     {
-        params,
-        api,
-        createModal,
+        verify,
         mode,
+        api,
+        params,
     }: {
-        createModal: (modal: JSX.Element) => void;
+        verify: VerifyPayment;
         mode?: 'add-card';
         api: Api;
         params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment;
@@ -216,7 +216,7 @@ export const createPaymentToken = async (
         return toTokenPaymentMethod(Token);
     }
 
-    let Payment: CardPayment;
+    let Payment: CardPayment | undefined;
     if (!isExistingPayment(params)) {
         Payment = params.Payment;
     }
@@ -228,28 +228,71 @@ export const createPaymentToken = async (
      * the payment token status (e.g. every 5 seconds). Once {@link process} resolves then the entire return promise
      * resolves to a {@link TokenPaymentMethod} – newly created payment token.
      */
-    return new Promise<TokenPaymentMethod>((resolve, reject) => {
-        createModal(
-            <PaymentVerificationModal
-                mode={mode}
-                payment={Payment}
-                token={Token}
-                onSubmit={resolve}
-                onClose={reject}
-                onProcess={() => {
-                    const abort = new AbortController();
-                    return {
-                        promise: process({
-                            Token,
-                            api,
-                            ReturnHost,
-                            ApprovalURL,
-                            signal: abort.signal,
-                        }),
-                        abort,
-                    };
-                }}
-            />
-        );
-    });
+    return verify({ mode, Payment, Token, ApprovalURL, ReturnHost });
 };
+
+export type VerifyPayment = (params: {
+    mode?: 'add-card';
+    Payment?: CardPayment;
+    Token: string;
+    ApprovalURL?: string;
+    ReturnHost?: string;
+}) => Promise<TokenPaymentMethod>;
+
+export const getCreatePaymentToken =
+    (verify: VerifyPayment) =>
+    (
+        {
+            mode,
+            api,
+            params,
+        }: {
+            mode?: 'add-card';
+            api: Api;
+            params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment;
+        },
+        amountAndCurrency?: AmountAndCurrency
+    ): Promise<TokenPaymentMethod> =>
+        createPaymentToken(
+            {
+                verify,
+                mode,
+                api,
+                params,
+            },
+            amountAndCurrency
+        );
+
+export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): VerifyPayment =>
+    async function verify({
+        mode,
+        Payment,
+        Token,
+        ApprovalURL,
+        ReturnHost,
+    }: Parameters<VerifyPayment>[0]): Promise<TokenPaymentMethod> {
+        return new Promise<TokenPaymentMethod>((resolve, reject) => {
+            createModal(
+                <PaymentVerificationModal
+                    mode={mode}
+                    payment={Payment}
+                    token={Token}
+                    onSubmit={resolve}
+                    onClose={reject}
+                    onProcess={() => {
+                        const abort = new AbortController();
+                        return {
+                            promise: process({
+                                Token,
+                                api,
+                                ReturnHost,
+                                ApprovalURL,
+                                signal: abort.signal,
+                            }),
+                            abort,
+                        };
+                    }}
+                />
+            );
+        });
+    };

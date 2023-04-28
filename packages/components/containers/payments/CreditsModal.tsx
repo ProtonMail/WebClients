@@ -30,7 +30,7 @@ import Payment from './Payment';
 import PaymentInfo from './PaymentInfo';
 import StyledPayPalButton from './StyledPayPalButton';
 import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from './interface';
-import { createPaymentToken } from './paymentTokenHelper';
+import { getCreatePaymentToken, getDefaultVerifyPayment } from './paymentTokenHelper';
 import usePayment from './usePayment';
 
 const getCurrenciesI18N = () => ({
@@ -53,12 +53,14 @@ const CreditsModal = (props: ModalProps) => {
     const i18nCurrency = i18n[currency];
 
     const handleSubmit = async (params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment) => {
+        const verify = getDefaultVerifyPayment(createModal, api);
+        const createPaymentToken = getCreatePaymentToken(verify);
+
         const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
         const tokenPaymentMethod = await createPaymentToken(
             {
                 params,
                 api,
-                createModal,
             },
             amountAndCurrency
         );

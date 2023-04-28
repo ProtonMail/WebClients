@@ -63,7 +63,7 @@ import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import Payment from '../Payment';
 import PaymentGiftCode from '../PaymentGiftCode';
-import { createPaymentToken } from '../paymentTokenHelper';
+import { getCreatePaymentToken, getDefaultVerifyPayment } from '../paymentTokenHelper';
 import usePayment from '../usePayment';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
@@ -400,10 +400,12 @@ const SubscriptionModal = ({
 
             let params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment = parameters;
             if (amountAndCurrency.Amount !== 0) {
+                const verify = getDefaultVerifyPayment(createModal, api);
+                const createPaymentToken = getCreatePaymentToken(verify);
+
                 params = await createPaymentToken(
                     {
                         params: parameters,
-                        createModal,
                         api,
                     },
                     amountAndCurrency
