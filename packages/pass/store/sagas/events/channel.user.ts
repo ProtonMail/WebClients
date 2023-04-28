@@ -14,6 +14,7 @@ import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 
 function* onUserEvent(event: ServerEvent<ChannelType.USER>) {
     if (event.error) throw event.error;
+    /* check for user key validity */
     logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
 }
 
