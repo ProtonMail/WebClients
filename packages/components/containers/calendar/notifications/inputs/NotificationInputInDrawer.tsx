@@ -104,7 +104,7 @@ const NotificationInputInDrawer = ({
                     <span className="flex-item-noshrink">
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
-                                data-test-id="delete-notification"
+                                data-testid="delete-notification"
                                 className="flex flex-item-noshrink"
                                 disabled={disabled}
                                 onClick={onDelete}
@@ -129,7 +129,7 @@ const NotificationInputInDrawer = ({
                         <span className="flex-item-noshrink w-custom" style={{ '--width-custom': '4.5em' }}>
                             <IntegerInput
                                 id={NOTIFICATION_INPUT_ID}
-                                data-test-id="notification-time-input"
+                                data-testid="notification-time-input"
                                 step={1}
                                 min={0}
                                 max={NOTIFICATION_UNITS_MAX[unit]}
@@ -153,7 +153,7 @@ const NotificationInputInDrawer = ({
                     )}
                     <span className="flex-item-fluid">
                         <SelectTwo
-                            data-test-id="notification-time-dropdown"
+                            data-testid="notification-time-dropdown"
                             value={optionsValue}
                             disabled={disabled}
                             onChange={({ value }) => {
@@ -179,7 +179,7 @@ const NotificationInputInDrawer = ({
                 {isAllDay && at && (
                     <span className="flex-item-fluid">
                         <TimeInput
-                            data-test-id="notification-time-at"
+                            data-testid="notification-time-at"
                             value={at}
                             prefix={atText}
                             disabled={disabled}

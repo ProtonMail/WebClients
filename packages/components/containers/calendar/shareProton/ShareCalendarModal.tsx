@@ -1,7 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
-
-
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
@@ -491,7 +489,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     );
 
     return (
-        <Modal size="large" {...rest} data-test-id="share-calendar-privately">
+        <Modal size="large" {...rest} data-testid="share-calendar-privately">
             <ModalHeader title={c('Share calendar modal title').t`Share with ${BRAND_NAME} users`} />
             <ModalContent>
                 <div className="mb-4">

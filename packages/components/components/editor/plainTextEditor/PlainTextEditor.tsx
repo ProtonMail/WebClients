@@ -48,7 +48,6 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, placeholder }: Props) => 
                 onChange(event.target.value);
             }}
             placeholder={placeholder}
-            data-test-id="composer:body"
             data-testid="editor-textarea"
         />
     );

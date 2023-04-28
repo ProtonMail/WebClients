@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-import { configure } from '@testing-library/react';
 
 const { getComputedStyle } = window;
 
@@ -9,8 +8,6 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
     unobserve: jest.fn(),
     disconnect: jest.fn(),
 }));
-
-configure({ testIdAttribute: 'data-test-id' });
 
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();

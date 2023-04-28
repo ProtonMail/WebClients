@@ -88,7 +88,7 @@ const FullDayEvent = ({
 
             {eventReadError ? <Icon name="lock-filled" className="calendar-dayeventcell-lock-icon" /> : null}
 
-            <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid text-ellipsis">
+            <span data-testid="calendar-view:all-day-event" className="flex-item-fluid text-ellipsis">
                 {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
                 <span className="calendar-dayeventcell-title">{titleString}</span>
             </span>
