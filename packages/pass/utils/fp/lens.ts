@@ -1,3 +1,8 @@
+export const prop =
+    <T extends { [key: string]: any }, K extends keyof T>(key: K) =>
+    (obj: T): T[K] =>
+        obj[key];
+
 export const withPayload =
     <T extends { payload: any }, F extends (payload: T['payload']) => any>(fn: F) =>
     (obj: T): ReturnType<F> =>
