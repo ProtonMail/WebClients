@@ -112,7 +112,7 @@ const NotificationInput = ({
                     <span className="flex-item-noshrink mr-2 w5e">
                         <IntegerInput
                             id={NOTIFICATION_INPUT_ID}
-                            data-test-id="notification-time-input"
+                            data-testid="notification-time-input"
                             step={1}
                             min={0}
                             max={NOTIFICATION_UNITS_MAX[unit]}
@@ -135,7 +135,7 @@ const NotificationInput = ({
                     </span>
                 )}
                 <SelectTwo
-                    data-test-id="notification-time-dropdown"
+                    data-testid="notification-time-dropdown"
                     className="flex-item-fluid"
                     value={optionsValue}
                     disabled={disabled}
@@ -172,7 +172,7 @@ const NotificationInput = ({
                             </span>
                             <span className="w8e">
                                 <TimeInput
-                                    data-test-id="notification-time-at"
+                                    data-testid="notification-time-at"
                                     value={at}
                                     disabled={disabled}
                                     onChange={(at) => onEdit({ ...notification, at })}

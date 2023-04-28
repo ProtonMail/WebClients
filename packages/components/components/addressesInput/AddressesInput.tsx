@@ -13,8 +13,8 @@ interface AddressesInputItemProps extends ComponentPropsWithoutRef<'div'> {
     onRemove: (event: MouseEvent<HTMLButtonElement>) => void;
     icon?: ReactElement;
     label?: string;
-    labelProps?: HTMLProps<HTMLSpanElement> & { 'data-test-id'?: string };
-    removeProps?: HTMLProps<HTMLButtonElement> & { 'data-test-id'?: string };
+    labelProps?: HTMLProps<HTMLSpanElement> & { 'data-testid'?: string };
+    removeProps?: HTMLProps<HTMLButtonElement> & { 'data-testid'?: string };
 }
 
 export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemProps>(function AddressesInputItemProps(

@@ -117,7 +117,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                             disabled={loadingDuration || cannotEdit}
                             as={SelectTwo}
                             id="event-duration"
-                            data-test-id="create-calendar/event-settings:event-duration"
+                            data-testid="create-calendar/event-settings:event-duration"
                             value={model.duration}
                             // @ts-ignore
                             onChange={handleChangeDuration}
@@ -143,7 +143,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                 <SettingsLayoutRight className="w100">
                     <Notifications
                         id="default-part-day-notifications"
-                        data-test-id="create-calendar/event-settings:default-notification"
+                        data-testid="create-calendar/event-settings:default-notification"
                         hasType
                         fullWidth={false}
                         notifications={model.partDayNotifications}
@@ -180,7 +180,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                 <SettingsLayoutRight className="w100">
                     <Notifications
                         id="default-full-day-notifications"
-                        data-test-id="create-calendar/event-settings:default-full-day-notification"
+                        data-testid="create-calendar/event-settings:default-full-day-notification"
                         hasType
                         fullWidth={false}
                         notifications={model.fullDayNotifications}

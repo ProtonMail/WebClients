@@ -63,7 +63,7 @@ const NotificationsInDrawer = ({
                         className="p0"
                         shape={addIcon ? 'ghost' : 'underline'}
                         color={addIcon ? 'weak' : 'norm'}
-                        data-test-id="add-notification"
+                        data-testid="add-notification"
                         title={addNotificationTitle}
                         disabled={disabled}
                         onClick={() =>

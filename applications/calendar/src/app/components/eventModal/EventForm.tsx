@@ -144,7 +144,7 @@ const EventForm = ({
             <FrequencyInput
                 className={clsx([isCustomFrequencySet && 'mb-2', 'w100'])}
                 id={FREQUENCY_INPUT_ID}
-                data-test-id="event-modal/frequency:select"
+                data-testid="event-modal/frequency:select"
                 value={frequencyModel.type}
                 onChange={(type) =>
                     setModel({

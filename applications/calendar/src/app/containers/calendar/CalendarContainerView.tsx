@@ -594,7 +594,7 @@ const CalendarContainerView = ({
                     }
                     viewSelector={
                         <ViewSelector
-                            data-test-id="calendar-view:view-options"
+                            data-testid="calendar-view:view-options"
                             view={view}
                             range={range}
                             onChange={onChangeView}
@@ -602,7 +602,7 @@ const CalendarContainerView = ({
                     }
                     timezoneSelector={
                         <TimeZoneSelector
-                            data-test-id="calendar-view:time-zone-dropdown"
+                            data-testid="calendar-view:time-zone-dropdown"
                             className="no-mobile no-tablet"
                             date={noonDate}
                             timezone={tzid}
@@ -611,7 +611,7 @@ const CalendarContainerView = ({
                     }
                 />
             )}
-            <PrivateMainArea hasToolbar data-test-id="calendar-view:events-area">
+            <PrivateMainArea hasToolbar data-testid="calendar-view:events-area">
                 {loader}
                 {children}
             </PrivateMainArea>
