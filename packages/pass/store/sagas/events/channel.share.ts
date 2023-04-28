@@ -6,6 +6,7 @@ import { PassCrypto } from '@proton/pass/crypto';
 import type {
     Api,
     ItemRevision,
+    MaybeNull,
     PassEventListResponse,
     ServerEvent,
     Share,
@@ -52,25 +53,27 @@ export function* onShareEvent(
 
     if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
         const shareKeys: ShareKeyResponse[] = yield getAllShareKeys(UpdatedShare.ShareID);
-        const share: TypedOpenedShare<ShareType.Vault> = yield PassCrypto.openShare({
+        const share: MaybeNull<TypedOpenedShare<ShareType.Vault>> = yield PassCrypto.openShare({
             encryptedShare: UpdatedShare,
             shareKeys,
         });
 
-        yield put(
-            shareEditSync({
-                id: share.shareId,
-                share: {
-                    shareId: share.shareId,
-                    vaultId: share.vaultId,
-                    targetId: share.targetId,
-                    targetType: share.targetType,
-                    content: decodeVaultContent(share.content),
-                    primary: Boolean(UpdatedShare.Primary),
-                    eventId: LatestEventID,
-                },
-            })
-        );
+        if (share) {
+            yield put(
+                shareEditSync({
+                    id: share.shareId,
+                    share: {
+                        shareId: share.shareId,
+                        vaultId: share.vaultId,
+                        targetId: share.targetId,
+                        targetType: share.targetType,
+                        content: decodeVaultContent(share.content),
+                        primary: Boolean(UpdatedShare.Primary),
+                        eventId: LatestEventID,
+                    },
+                })
+            );
+        }
     }
 
     if (DeletedItemIDs.length > 0) {
