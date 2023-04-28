@@ -1,4 +1,8 @@
-import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import { PassCrypto } from '@proton/pass/crypto';
+import { Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import { partition } from '@proton/pass/utils/array';
+import { invert, notIn, pipe, prop, truthy } from '@proton/pass/utils/fp';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
@@ -18,72 +22,79 @@ export type SynchronizationResult = {
 };
 
 export enum SyncType {
-    FULL = 'full',
-    PARTIAL = 'partial',
+    FULL = 'full' /* fetches all items */,
+    PARTIAL = 'partial' /* fetches only diff */,
 }
 
-/**
- * TODO: Handle offline mode here
- * If no network, fallback to using the initial state
- * as our only source of truth
- * FIXME: handle ItemShares
- */
+const isActiveVault = ({ targetType, shareId }: Share) =>
+    targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
+
 export function* synchronize(
     state: State,
     type: SyncType,
     { onShareEventDisabled }: WorkerRootSagaOptions
 ): Generator<unknown, SynchronizationResult> {
     const cachedShares = selectAllShares(state);
-    const remote = ((yield requestShares()) as ShareGetResponse[]).sort((a, b) => b.CreateTime - a.CreateTime);
-    const vaults = remote.filter((share) => share.TargetType === ShareType.Vault);
+    const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
 
-    const cachedShareIds = cachedShares.map(({ shareId }) => shareId);
-    const remoteShareIds = remote.map(({ ShareID }) => ShareID);
-    const deletedShareIds = cachedShareIds.filter((shareId) => !remoteShareIds.includes(shareId));
+    /* `cachedShareIds`: all shares currently in local cache
+     * `inactiveCachedShareIds` : cached shares which can no longer be opened
+     * `remoteShareIds` : all shares available server-side
+     * `deletedShareIds` : local shares which have been deleted
+     * `disabledShareIds` : `deletedShareIds` + `inactiveCachedShareIds` */
+    const cachedShareIds = cachedShares.map(prop('shareId'));
+    const inactiveCachedShareIds = cachedShareIds.filter(invert(PassCrypto.canOpenShare));
+    const remoteShareIds = remote.map(prop('ShareID'));
+    const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
+    const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
 
-    /* notify clients of possible deleted shares */
-    deletedShareIds.forEach((shareId) => onShareEventDisabled?.(shareId));
+    /* notify clients of any disabled shares */
+    disabledShareIds.forEach((shareId) => onShareEventDisabled?.(shareId));
 
-    /**
-     * only load shares that are
-     * not currently present in cache
-     */
-    const synced = (yield Promise.all(
-        remote
-            .filter((data) => !cachedShareIds.includes(data.ShareID))
-            .map((share) => loadShare(share.ShareID, share.TargetType))
-    )) as Share[];
+    /* only load shares that are not currently present
+     * in cache and have not been registered on PassCrypto.
+     * Share loading may fail if the userkey it was encrypted
+     * with is inactive */
+    const [activeRemoteShares, inactiveRemoteShares] = partition(
+        (yield Promise.all(
+            remote
+                .filter(pipe(prop('ShareID'), notIn(cachedShareIds)))
+                .map((share) => loadShare(share.ShareID, share.TargetType))
+        )) as Maybe<Share>[],
+        Boolean
+    );
 
-    /**
-     * On first login, remote shares will be
-     * empty and we need to create the initial
-     * vault share
-     */
-    if (vaults.length === 0) {
-        logger.info(`[Saga::Sync] No vault found, creating default..`);
-        synced.push(
+    /* when checking the presence of an active vault we must both
+     * check the active remote shares and the local cached shares */
+    const incomingShares = activeRemoteShares.filter(truthy);
+    const totalDisabledShares = disabledShareIds.length + inactiveRemoteShares.length;
+    const hasActiveVault = incomingShares.concat(cachedShares).some(isActiveVault);
+
+    /* On first login or if the user's primary vault has been disabled
+     * we need to (re-)create the primary vault share */
+    if (!hasActiveVault) {
+        logger.info(`[Saga::Sync] No vault found, creating primary vault..`);
+        incomingShares.push(
             (yield createVault({
-                name: 'Personal',
-                description: 'Personal vault',
-                display: {},
+                content: { name: 'Personal', description: 'Personal vault', display: {} },
+                primary: true,
             })) as Share<ShareType.Vault>
         );
     }
 
-    logger.info(`[Sync::Shares] Discovered ${cachedShares.length} share(s) in cache`);
-    logger.info(`[Sync::Shares] User has ${remote.length} share(s) in database`);
-    logger.info(`[Sync::Shares] ${deletedShareIds.length} share(s) deleted`);
-    logger.info(`[Sync::Shares] ${synced.length} share(s) need to be synced`);
-    logger.info(`[Sync::Shares] Performing ${type} sync`);
+    logger.info(`[Saga::Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
+    logger.info(`[Saga::Sync] User has ${remote.length} share(s) in database`);
+    logger.info(`[Saga::Sync] ${deletedShareIds.length} share(s) deleted`);
+    logger.info(`[Saga::Sync] User has ${totalDisabledShares} total inactive share(s)`);
+    logger.info(`[Saga::Sync] ${incomingShares.length} share(s) need to be synced`);
+    logger.info(`[Saga::Sync] Performing ${type} sync`);
 
-    /**
-     * On full sync : we want to request all items for each share
+    /* On full sync : we want to request all items for each share
      * On partial sync : only request items for new shares (event-loop
-     * will take care of updates) and remove items from deleted shares;
-     */
+     * will take care of updates) and remove items from deleted shares */
     const fullSync = type === SyncType.FULL;
-    const itemShareIds = fullSync ? remoteShareIds : synced.map(({ shareId }) => shareId);
-    const itemState = fullSync ? {} : objectFilter(selectItems(state), (shareId) => !deletedShareIds.includes(shareId));
+    const itemShareIds = fullSync ? remoteShareIds : incomingShares.map(prop('shareId'));
+    const itemState = fullSync ? {} : objectFilter(selectItems(state), notIn(disabledShareIds));
 
     const syncedItems = (yield Promise.all(
         itemShareIds.map(
@@ -93,11 +104,9 @@ export function* synchronize(
         )
     )) as ItemsByShareId[];
 
-    /**
-     * Exclude the deleted shares from the cached shares
-     * and merge with the new shares
-     */
-    const shares = cachedShares.filter(({ shareId }) => !deletedShareIds.includes(shareId)).concat(synced);
+    /* Exclude the deleted shares from the cached shares
+     * and merge with the new shares */
+    const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
 
     return {
         shares: toMap(shares, 'shareId'),
