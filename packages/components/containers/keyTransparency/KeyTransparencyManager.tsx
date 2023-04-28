@@ -22,6 +22,7 @@ import { useApi, useFeature, useGetUserKeys, useUser } from '../../hooks';
 import { FeatureCode } from '../features';
 import { KTContext } from './ktContext';
 import { KT_FF, KtFeatureEnum, isKTActive, removeKTBlobs } from './ktStatus';
+import { useFixMultiplePrimaryKeys } from './useFixMultiplePrimaryKeys';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 
 /**
@@ -53,6 +54,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { get } = useFeature<KT_FF | undefined>(FeatureCode.KeyTransparencyWEB);
     const ktLSAPI = getKTLocalStorage(APP_NAME);
+    const fixMultiplePrimaryKeys = useFixMultiplePrimaryKeys();
 
     const ktState = useRef<KeyTransparencyState>({
         selfAuditPromise: Promise.resolve(),
@@ -173,7 +175,14 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
             let timer = EXP_EPOCH_INTERVAL;
             if (elapsedTime > EXP_EPOCH_INTERVAL) {
                 const addresses = await addressesPromise;
-                const selfAuditPromise = auditAddresses(userID, [normalApi, silentApi], addresses, userKeys, ktLSAPI);
+                const selfAuditPromise = auditAddresses(
+                    userID,
+                    [normalApi, silentApi],
+                    addresses,
+                    userKeys,
+                    ktLSAPI,
+                    fixMultiplePrimaryKeys
+                );
 
                 selfAuditPromise.catch((e) => console.log({ e, stack: e.stack }));
 
