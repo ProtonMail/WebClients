@@ -36,7 +36,7 @@ function* onSharesEvent(
     const localShareIds = localShares.map(({ shareId }) => shareId);
 
     const newShares = event.Shares.filter((share) => !localShareIds.includes(share.ShareID));
-    logger.info(`[Saga::SharesChannel]`, `${newShares.length} new share(s)`);
+    logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
 
     if (newShares.length) {
         const shares = (
