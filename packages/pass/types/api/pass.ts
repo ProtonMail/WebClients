@@ -149,6 +149,8 @@ export type VaultCreateRequest = {
     ContentFormatVersion: number;
     /* Vault key encrypted and signed with the primary user key */
     EncryptedVaultKey: string;
+    /* Mark this vault as primary vault */
+    Primary?: boolean;
 };
 
 export type VaultUpdateRequest = {
@@ -268,7 +270,7 @@ export type EventIDGetResponse = {
 
 export type PassEventListResponse = {
     /* Updated share in case the vault content changes */
-    UpdatedShare?: ShareGetResponse | null;
+    UpdatedShare?: ShareGetResponse | undefined | null;
     /* New or updated items */
     UpdatedItems: ItemRevisionContentsResponse[];
     /* Deleted items */
