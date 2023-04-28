@@ -9,6 +9,7 @@ import {
     ItemRevisionContentsResponse,
     ItemState,
     ShareGetResponse,
+    ShareKeyResponse,
     ShareType,
 } from '../types';
 import { PassCrypto } from './pass-crypto';
@@ -16,8 +17,8 @@ import * as processes from './processes';
 import { decryptData } from './utils';
 import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
 import {
-    TEST_KEY_ID,
     TEST_KEY_PASSWORD,
+    TEST_USER_KEY_ID,
     createRandomKey,
     createRandomShareResponses,
     randomContents,
@@ -47,9 +48,10 @@ describe('PassCrypto', () => {
         user = {
             Keys: [
                 {
-                    ID: TEST_KEY_ID,
+                    ID: TEST_USER_KEY_ID,
                     PrivateKey,
                     Version: 3,
+                    Active: 1,
                 } as Key,
             ],
         } as User;
@@ -84,6 +86,57 @@ describe('PassCrypto', () => {
             await expect(
                 PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD })
             ).resolves.not.toThrow();
+        });
+
+        test('should throw if no active user keys', async () => {
+            const userKey = user.Keys[0];
+            const inactiveKey = await createRandomKey();
+            const inactiveUserKey = await CryptoProxy.exportPrivateKey({
+                privateKey: inactiveKey.privateKey,
+                passphrase: `${TEST_KEY_PASSWORD}-inactive`,
+            });
+
+            const userReset = {
+                ...user,
+                Keys: [
+                    {
+                        ...userKey,
+                        ID: `${TEST_USER_KEY_ID}-inactive-1`,
+                        Active: 0,
+                        PrivateKey: inactiveUserKey,
+                    },
+                ],
+            } as User;
+
+            await expect(
+                PassCrypto.hydrate({ user: userReset, addresses: [address], keyPassword: TEST_KEY_PASSWORD })
+            ).rejects.toThrow(PassCryptoHydrationError);
+        });
+
+        test('should only track  active user keys', async () => {
+            const userKey = user.Keys[0];
+            const inactiveKey = await createRandomKey();
+            const inactiveUserKey = await CryptoProxy.exportPrivateKey({
+                privateKey: inactiveKey.privateKey,
+                passphrase: `${TEST_KEY_PASSWORD}-inactive`,
+            });
+
+            const userReset = {
+                ...user,
+                Keys: [
+                    userKey,
+                    {
+                        ...userKey,
+                        ID: `${TEST_USER_KEY_ID}-inactive-1`,
+                        Active: 0,
+                        PrivateKey: inactiveUserKey,
+                    },
+                ],
+            } as User;
+
+            await PassCrypto.hydrate({ user: userReset, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
+            expect(PassCrypto.getContext().userKeys!.length).toEqual(1);
+            expect(PassCrypto.getContext().userKeys?.[0].ID).toEqual(TEST_USER_KEY_ID);
         });
     });
 
@@ -134,10 +187,11 @@ describe('PassCrypto', () => {
 
             const vault = await PassCrypto.createVault(randomContents());
 
-            const shareKey = {
+            const shareKey: ShareKeyResponse = {
                 Key: vault.EncryptedVaultKey,
                 KeyRotation: 42,
                 CreateTime: 0,
+                UserKeyID: TEST_USER_KEY_ID,
             };
 
             const encryptedShare: ShareGetResponse = {
@@ -158,8 +212,8 @@ describe('PassCrypto', () => {
             /* register the share */
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
             const contentUpdate = randomContents();
-            const vaultUpdate = await PassCrypto.updateVault({ shareId: share.shareId, content: contentUpdate });
-            const vaultKey = PassCrypto.getShareManager(share.shareId).getVaultKey(42);
+            const vaultUpdate = await PassCrypto.updateVault({ shareId: share!.shareId, content: contentUpdate });
+            const vaultKey = PassCrypto.getShareManager(share!.shareId).getVaultKey(42);
 
             const decryptedContent = await decryptData(
                 vaultKey.key,
@@ -186,10 +240,11 @@ describe('PassCrypto', () => {
             /* create a vault */
             const content = randomContents();
             const vault = await PassCrypto.createVault(content);
-            const shareKey = {
+            const shareKey: ShareKeyResponse = {
                 Key: vault.EncryptedVaultKey,
                 KeyRotation: 1,
                 CreateTime: 0,
+                UserKeyID: TEST_USER_KEY_ID,
             };
 
             /* mock response */
@@ -211,7 +266,7 @@ describe('PassCrypto', () => {
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
             const shareManager = PassCrypto.getShareManager(encryptedShare.ShareID);
 
-            expect(share.content).toEqual(content);
+            expect(share!.content).toEqual(content);
             expect(PassCrypto.getShareManager(encryptedShare.ShareID)).toBeDefined();
             expect(shareManager.getShare()).toStrictEqual(share);
             expect(shareManager.hasVaultKey(1)).toBe(true);
@@ -222,10 +277,11 @@ describe('PassCrypto', () => {
                 ContentKeyRotation: 2,
             };
 
-            const newShareKey = {
+            const newShareKey: ShareKeyResponse = {
                 Key: vault.EncryptedVaultKey,
                 KeyRotation: 2,
                 CreateTime: 0,
+                UserKeyID: TEST_USER_KEY_ID,
             };
 
             jest.spyOn(shareManager, 'addVaultKey');
@@ -238,6 +294,95 @@ describe('PassCrypto', () => {
             expect(shareManager.getShare()).toStrictEqual(shareUpdate);
             expect(shareManager.hasVaultKey(1)).toBe(true);
             expect(shareManager.hasVaultKey(2)).toBe(true);
+        });
+
+        test('should throw if share keys list is empty', async () => {
+            await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
+
+            const content = randomContents();
+            const vault = await PassCrypto.createVault(content);
+
+            const encryptedShare: ShareGetResponse = {
+                ShareID: `shareId-${Math.random()}`,
+                VaultID: `vaultId-${Math.random()}`,
+                AddressID: vault.AddressID,
+                TargetType: ShareType.Vault,
+                TargetID: `targetId-${Math.random()}`,
+                Content: vault.Content,
+                Permission: 1,
+                ContentKeyRotation: 2,
+                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ExpireTime: 0,
+                CreateTime: 0,
+                Primary: false,
+            };
+
+            await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [] })).rejects.toThrow(
+                new PassCryptoShareError(`Empty share keys`)
+            );
+        });
+
+        test('should throw if there are no share keys for current share rotation', async () => {
+            await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
+
+            const content = randomContents();
+            const vault = await PassCrypto.createVault(content);
+
+            const shareKey: ShareKeyResponse = {
+                Key: vault.EncryptedVaultKey,
+                KeyRotation: 1,
+                CreateTime: 0,
+                UserKeyID: TEST_USER_KEY_ID,
+            };
+
+            const encryptedShare: ShareGetResponse = {
+                ShareID: `shareId-${Math.random()}`,
+                VaultID: `vaultId-${Math.random()}`,
+                AddressID: vault.AddressID,
+                TargetType: ShareType.Vault,
+                TargetID: `targetId-${Math.random()}`,
+                Content: vault.Content,
+                Permission: 1,
+                ContentKeyRotation: 2,
+                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ExpireTime: 0,
+                CreateTime: 0,
+                Primary: false,
+            };
+
+            await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).rejects.toThrow(
+                new PassCryptoShareError(`Missing vault key for rotation 2`)
+            );
+        });
+
+        test('should return null if no user key can decrypt current share', async () => {
+            await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
+
+            const content = randomContents();
+            const vault = await PassCrypto.createVault(content);
+            const shareKey: ShareKeyResponse = {
+                Key: vault.EncryptedVaultKey,
+                KeyRotation: 1,
+                CreateTime: 0,
+                UserKeyID: `${TEST_USER_KEY_ID}-inactive`,
+            };
+
+            const encryptedShare: ShareGetResponse = {
+                ShareID: `shareId-${Math.random()}`,
+                VaultID: `vaultId-${Math.random()}`,
+                AddressID: vault.AddressID,
+                TargetType: ShareType.Vault,
+                TargetID: `targetId-${Math.random()}`,
+                Content: vault.Content,
+                Permission: 1,
+                ContentKeyRotation: 1,
+                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ExpireTime: 0,
+                CreateTime: 0,
+                Primary: false,
+            };
+
+            expect(await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).toEqual(null);
         });
     });
 
@@ -261,10 +406,11 @@ describe('PassCrypto', () => {
 
             const content = randomContents();
             const vault = await processes.createVault({ content, userKey, addressId: address.ID });
-            const newShareKey = {
+            const newShareKey: ShareKeyResponse = {
                 Key: vault.EncryptedVaultKey,
                 KeyRotation: 2,
                 CreateTime: 0,
+                UserKeyID: TEST_USER_KEY_ID,
             };
 
             await PassCrypto.updateShareKeys({ shareId, shareKeys: [shareKey] });

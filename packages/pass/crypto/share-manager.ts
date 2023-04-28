@@ -1,6 +1,5 @@
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { ShareType } from '../types';
 import type {
     OpenedShare,
     Rotation,
@@ -10,6 +9,7 @@ import type {
     TypedOpenedShare,
     VaultKey,
 } from '../types';
+import { ShareType } from '../types';
 import { getSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 
@@ -66,6 +66,26 @@ export const createShareManager = <T extends ShareType = ShareType>(
             }
         },
 
+        /* a share is considered `active` if its latest rotation key
+         * was encrypted with an active user key - if the user key is
+         * inactive, then share should be ignored until it becomes
+         * active again */
+        isActive(userKeys = []) {
+            try {
+                const { targetType } = shareManager.getShare();
+                const latestRotation = shareManager.getLatestRotation();
+
+                if (targetType === ShareType.Vault) {
+                    const vaultKey = shareManager.getVaultKey(latestRotation);
+                    return userKeys.some(({ ID }) => ID === vaultKey.userKeyId);
+                }
+
+                return false;
+            } catch (_) {
+                return false;
+            }
+        },
+
         serialize: () => ({
             ...shareContext,
             share: (() => {
@@ -85,6 +105,7 @@ export const createShareManager = <T extends ShareType = ShareType>(
                 {
                     rotation: vaultKey.rotation,
                     raw: uint8ArrayToBase64String(vaultKey.raw),
+                    userKeyId: vaultKey.userKeyId,
                 },
             ]),
             itemKeys: [],
@@ -94,9 +115,7 @@ export const createShareManager = <T extends ShareType = ShareType>(
     return shareManager as ShareManager<T>;
 };
 
-createShareManager.fromSnapshot = async (
-    snapshot: SerializedCryptoContext<ShareContext<ShareType>>
-): Promise<ShareManager<ShareType>> => {
+createShareManager.fromSnapshot = async (snapshot: SerializedCryptoContext<ShareContext>): Promise<ShareManager> => {
     /**
      * Item shares do not have a content property
      * Only encode the vault content when dealing
@@ -116,7 +135,15 @@ createShareManager.fromSnapshot = async (
     const vaultKeys: [Rotation, VaultKey][] = await Promise.all(
         snapshot.vaultKeys.map(async ([rotation, vaultKey]) => {
             const rawKey = base64StringToUint8Array(vaultKey.raw);
-            return [rotation, { rotation: vaultKey.rotation, raw: rawKey, key: await getSymmetricKey(rawKey) }];
+            return [
+                rotation,
+                {
+                    rotation: vaultKey.rotation,
+                    raw: rawKey,
+                    key: await getSymmetricKey(rawKey),
+                    userKeyId: vaultKey.userKeyId,
+                },
+            ];
         })
     );
 
