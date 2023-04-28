@@ -1,7 +1,7 @@
 import { PassCrypto } from '@proton/pass/crypto';
 import { Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array';
-import { invert, notIn, pipe, prop, truthy } from '@proton/pass/utils/fp';
+import { invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -55,19 +55,23 @@ export function* synchronize(
      * in cache and have not been registered on PassCrypto.
      * Share loading may fail if the userkey it was encrypted
      * with is inactive */
-    const [activeRemoteShares, inactiveRemoteShares] = partition(
-        (yield Promise.all(
-            remote
-                .filter(pipe(prop('ShareID'), notIn(cachedShareIds)))
-                .map((share) => loadShare(share.ShareID, share.TargetType))
-        )) as Maybe<Share>[],
-        Boolean
-    );
+    const remoteShares = (yield Promise.all(
+        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(async (share) => ({
+            shareId: share.ShareID,
+            share: await loadShare(share.ShareID, share.TargetType),
+        }))
+    )) as { shareId: string; share: Maybe<Share> }[];
+
+    /* split active from inactive shares */
+    const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
+
+    /* update the disabled shareIds list with any inactive remote shares */
+    disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
 
     /* when checking the presence of an active vault we must both
      * check the active remote shares and the local cached shares */
-    const incomingShares = activeRemoteShares.filter(truthy);
-    const totalDisabledShares = disabledShareIds.length + inactiveRemoteShares.length;
+    const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
+    const incomingShareIds = incomingShares.map(prop('shareId'));
     const hasActiveVault = incomingShares.concat(cachedShares).some(isActiveVault);
 
     /* On first login or if the user's primary vault has been disabled
@@ -85,7 +89,7 @@ export function* synchronize(
     logger.info(`[Saga::Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
     logger.info(`[Saga::Sync] User has ${remote.length} share(s) in database`);
     logger.info(`[Saga::Sync] ${deletedShareIds.length} share(s) deleted`);
-    logger.info(`[Saga::Sync] User has ${totalDisabledShares} total inactive share(s)`);
+    logger.info(`[Saga::Sync] User has ${disabledShareIds.length} total inactive share(s)`);
     logger.info(`[Saga::Sync] ${incomingShares.length} share(s) need to be synced`);
     logger.info(`[Saga::Sync] Performing ${type} sync`);
 
@@ -93,7 +97,7 @@ export function* synchronize(
      * On partial sync : only request items for new shares (event-loop
      * will take care of updates) and remove items from deleted shares */
     const fullSync = type === SyncType.FULL;
-    const itemShareIds = fullSync ? remoteShareIds : incomingShares.map(prop('shareId'));
+    const itemShareIds = (fullSync ? remoteShareIds : incomingShareIds).filter(notIn(disabledShareIds));
     const itemState = fullSync ? {} : objectFilter(selectItems(state), notIn(disabledShareIds));
 
     const syncedItems = (yield Promise.all(
