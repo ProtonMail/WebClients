@@ -22,7 +22,10 @@ import {
     TokenPayment,
     TokenPaymentMethod,
 } from '@proton/components/containers/payments/interface';
-import { createPaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
+import {
+    getCreatePaymentToken,
+    getDefaultVerifyPayment,
+} from '@proton/components/containers/payments/paymentTokenHelper';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
@@ -198,6 +201,9 @@ const PaymentStep = ({
                                     return;
                                 }
 
+                                const verify = getDefaultVerifyPayment(createModal, api);
+                                const createPaymentToken = getCreatePaymentToken(verify);
+
                                 const amountAndCurrency: AmountAndCurrency = {
                                     Currency: subscriptionData.currency,
                                     Amount: subscriptionData.checkResult.AmountDue,
@@ -206,7 +212,6 @@ const PaymentStep = ({
                                     {
                                         params: paymentParameters,
                                         api,
-                                        createModal,
                                     },
                                     amountAndCurrency
                                 );

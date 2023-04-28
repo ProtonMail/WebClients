@@ -11,7 +11,7 @@ import { useApi, useApiResult, useEventManager, useLoading, useModals, useNotifi
 import Payment from '../payments/Payment';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from '../payments/interface';
-import { createPaymentToken } from '../payments/paymentTokenHelper';
+import { getCreatePaymentToken, getDefaultVerifyPayment } from '../payments/paymentTokenHelper';
 import usePayment from '../payments/usePayment';
 import { Invoice } from './interface';
 
@@ -54,11 +54,13 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         };
 
         if (params) {
+            const verify = getDefaultVerifyPayment(createModal, api);
+            const createPaymentToken = getCreatePaymentToken(verify);
+
             let paymentToken = await createPaymentToken(
                 {
                     params,
                     api,
-                    createModal,
                 },
                 amountAndCurrency
             );
