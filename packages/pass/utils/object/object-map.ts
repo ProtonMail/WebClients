@@ -5,3 +5,8 @@ export const objectMap =
             [K in keyof Obj]: R;
         };
     };
+
+export const entriesMap =
+    <K extends string, T extends any>(entries: [K, T][]) =>
+    <R extends any>(map: (value: T) => R): [K, R][] =>
+        entries.map(([key, value]) => [key, map(value)]);

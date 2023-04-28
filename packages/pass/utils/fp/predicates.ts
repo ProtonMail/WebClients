@@ -1,13 +1,10 @@
 import { Unpack } from '@proton/pass/types';
 
 type Predicate<Params extends any[] = any[]> = (...args: Params) => boolean;
-/**
- * inverts a predicate function :
- *
+
+/* inverts a predicate function :
  * const isPositive = (x: number) => x >= 0;
- * [-1, 0, 1].filter(invert(isPositive))
- *
- */
+ * [-1, 0, 1].filter(invert(isPositive)) */
 export const invert =
     <T extends Predicate = Predicate>(predicate: T): ((...args: Parameters<T>) => boolean) =>
     (...args: Parameters<T>) =>
@@ -33,3 +30,8 @@ export const oneOf =
         args.includes(value);
 
 export const truthy = <T>(value: T | undefined | null): value is T => Boolean(value);
+
+export const notIn =
+    <T extends any>(haystack: T[]) =>
+    (item: T): boolean =>
+        !haystack.includes(item);
