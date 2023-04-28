@@ -120,9 +120,9 @@ const UpsellStep = ({
     }, []);
 
     return (
-        <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
+        <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center gap-6 mb-8">
             {shortFreePlan && (
-                <Main center={false} className="mb-8 lg:mb-0 sign-layout-upsell">
+                <Main center={false} className="sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
                     <Content>
                         <Text className="mb-2 md:mb-0 text-lg">{shortFreePlan.description}</Text>
@@ -162,7 +162,7 @@ const UpsellStep = ({
                     <Header
                         title={upsellShortPlan.title}
                         right={
-                            <div className="inline-block mt-0 sm:mt-4 md:mt-8">
+                            <div className="inline-block">
                                 <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} />
                             </div>
                         }
