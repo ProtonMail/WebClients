@@ -13,6 +13,7 @@ export enum IGNORE_KT {
 export interface ArmoredKeyWithFlags {
     Flags: number;
     PublicKey: string;
+    Primary?: 0 | 1;
 }
 
 export interface KTLocalStorageAPI {
@@ -52,3 +53,5 @@ export type KeyMigrationKTVerifier = (
     keyList: AddressKey[],
     SignedKeyList: FetchedSignedKeyList | null
 ) => Promise<void>;
+
+export type FixMultiplePrimaryKeys = (address: Address) => Promise<void>;
