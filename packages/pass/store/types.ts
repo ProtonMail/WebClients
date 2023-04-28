@@ -9,13 +9,13 @@ export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
 
 export interface WorkerRootSagaOptions {
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
-    onSignout?: () => void;
+    onItemsChange?: () => void;
+    onNotification?: (notification: Notification) => void;
     onSessionLocked?: (storageToken: string) => void;
     onSessionUnlocked?: (storageToken: string) => void;
-    onNotification?: (notification: Notification) => void;
-    onItemsChange?: () => void;
+    onSettingUpdate?: (settings: ProxiedSettings) => Promise<void>;
     onShareEventDisabled?: (shareId: string) => void;
     onShareEventItemsDeleted?: (shareId: string, itemIds: string[]) => void;
-    onSettingUpdate?: (settings: ProxiedSettings) => Promise<void>;
+    onSignout?: () => void;
     telemetry?: (message: TelemetryEvent) => void;
 }
