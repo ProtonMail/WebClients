@@ -27,7 +27,7 @@ const LobbyContent: VFC = () => {
     const locked = state.status === WorkerStatus.LOCKED;
     const canSignOut = workerErrored(state.status) || locked;
 
-    const login = useNavigateToLogin();
+    const login = useNavigateToLogin({ autoClose: true });
 
     const handleSignInClick = useCallback(
         async () =>

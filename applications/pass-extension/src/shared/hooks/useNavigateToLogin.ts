@@ -19,14 +19,16 @@ export const useAccountFork = () => async (type: FORK_TYPE) => {
  * user for any extension permissions required for PASS
  * to work correctly. IE: on FF we absolutely need the user
  * to do so for fallback account communication to work  */
-export const useNavigateToLogin = () => {
+export const useNavigateToLogin = (options?: { autoClose: boolean }) => {
     const { createNotification } = useNotifications();
     const accountFork = useAccountFork();
     const permissionsGranted = usePermissionsGranted();
 
     return async (type: FORK_TYPE) => {
         if (permissionsGranted || (await promptForPermissions())) {
-            return accountFork(type);
+            return accountFork(type).finally(async () => {
+                if (options?.autoClose) window.close();
+            });
         }
 
         createNotification({
