@@ -92,7 +92,7 @@ describe('Composer scheduled messages', () => {
         it('Should contain default fields', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-            jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+            jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             setupMessage('Subject', [user as Recipient]);
             setupTest({ hasPaidMail: false, featureFlagActive: true });
@@ -124,7 +124,7 @@ describe('Composer scheduled messages', () => {
             ${'In the morning'} | ${new Date(2023, 0, 1, 2, 0, 0)}
             ${'In the morning'} | ${new Date(2023, 0, 1, 7, 30, 0)}
         `('Should display "$expected" on "$date"', async ({ expected, date }) => {
-            jest.useFakeTimers('modern').setSystemTime(date.getTime());
+            jest.useFakeTimers().setSystemTime(date.getTime());
 
             setupMessage('Subject', [user as Recipient]);
             setupTest({ hasPaidMail: false, featureFlagActive: true });
@@ -140,7 +140,7 @@ describe('Composer scheduled messages', () => {
         it('Should contain "as scheduled" field when editing', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-            jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+            jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             setupMessage('Subject', [user as Recipient], getUnixTime(new Date(2023, 0, 5, 10, 0, 0)));
             setupTest({ hasPaidMail: false, featureFlagActive: true });

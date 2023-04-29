@@ -5,8 +5,9 @@ import { TextDecoder, TextEncoder } from 'util';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
-// JSDom does not include webcrypto
-window.crypto = require('crypto').webcrypto;
+// JSDom does not include a full implementation of webcrypto
+const crypto = require('crypto').webcrypto;
+global.crypto.subtle = crypto.subtle;
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({

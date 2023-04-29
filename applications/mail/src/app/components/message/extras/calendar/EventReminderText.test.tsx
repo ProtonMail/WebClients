@@ -16,7 +16,7 @@ describe('EventReminderText', () => {
     const fakeNow = new Date(1969, 11, 31, 7, 58, 10);
 
     beforeEach(() => {
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
     });
 
     afterEach(() => {

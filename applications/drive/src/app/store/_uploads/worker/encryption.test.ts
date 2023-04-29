@@ -11,6 +11,8 @@ import {
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import generateBlocks from './encryption';
 
+jest.setTimeout(20000);
+
 describe('block generator', () => {
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
