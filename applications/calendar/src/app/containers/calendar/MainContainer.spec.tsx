@@ -275,7 +275,7 @@ describe.skip('MainContainer', () => {
     const fakeNow = new Date(Date.UTC(2021, 0, 1, 0, 0, 0));
 
     beforeAll(() => {
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
     });
 
     it(`should disable the new event button when there are no calendars, or they're all disabled or subscribed calendars`, async () => {
