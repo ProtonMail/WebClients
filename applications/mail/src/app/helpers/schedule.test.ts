@@ -7,7 +7,7 @@ describe('getMinScheduleTime', () => {
 
     it('should get the correct min scheduled time if selected date is not today', () => {
         const fakeNow = new Date(2021, 0, 1, 9, 20, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         // Date which is currently selected is not today
         const date = new Date(2021, 0, 5, 9, 20, 0);
@@ -22,7 +22,7 @@ describe('getMinScheduleTime', () => {
 
     it('should get the correct min scheduled time if time < XX:30 and still in 2 minutes limit', () => {
         const fakeNow = new Date(2021, 0, 1, 9, 20, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const minTimeDate = getMinScheduleTime(fakeNow);
         const expectedMinTimeDate = new Date(2021, 0, 1, 9, 30, 0);
@@ -32,7 +32,7 @@ describe('getMinScheduleTime', () => {
 
     it('should get the correct min scheduled time if time < XX:30 and not in 2 minutes limit', () => {
         const fakeNow = new Date(2021, 0, 1, 9, 28, 30);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const minTimeDate = getMinScheduleTime(fakeNow);
 
@@ -44,7 +44,7 @@ describe('getMinScheduleTime', () => {
 
     it('should get the correct min scheduled time if time > XX:30 and still in 2 minutes limit', () => {
         const fakeNow = new Date(2021, 0, 1, 9, 55, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const minTimeDate = getMinScheduleTime(fakeNow);
         const expectedMinTimeDate = new Date(2021, 0, 1, 10, 0, 0);
@@ -54,7 +54,7 @@ describe('getMinScheduleTime', () => {
 
     it('should get the correct min scheduled time if time > XX:30 and not in 2 minutes limit', () => {
         const fakeNow = new Date(2021, 0, 1, 9, 58, 30);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const minTimeDate = getMinScheduleTime(fakeNow);
 
