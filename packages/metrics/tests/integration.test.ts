@@ -65,7 +65,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const url = fetchMock.mock.lastCall[0];
+            const url = fetchMock.mock.lastCall?.[0];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(url).toBe('api/data/v1/metrics');
@@ -76,7 +76,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.method).toBe('post');
@@ -87,7 +87,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.headers).toEqual({
@@ -103,7 +103,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -116,7 +116,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -129,7 +129,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -142,7 +142,7 @@ describe('metrics', () => {
                 foo: 'bar',
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -157,7 +157,7 @@ describe('metrics', () => {
             };
             metrics.counter.increment(labels);
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -175,7 +175,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const url = fetchMock.mock.lastCall[0];
+            const url = fetchMock.mock.lastCall?.[0];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(url).toBe('api/data/v1/metrics');
@@ -189,7 +189,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.method).toBe('post');
@@ -203,7 +203,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.headers).toEqual({
@@ -222,7 +222,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -238,7 +238,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -254,7 +254,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -271,7 +271,7 @@ describe('metrics', () => {
                 Value,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 
@@ -289,7 +289,7 @@ describe('metrics', () => {
                 Value: 1,
             });
 
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
             // @ts-ignore
             const body = JSON.parse(content?.body);
 

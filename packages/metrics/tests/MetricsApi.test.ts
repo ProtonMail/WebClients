@@ -23,7 +23,7 @@ describe('MetricsApi', () => {
                 const metricsApi = new MetricsApi({ uid });
 
                 await metricsApi.fetch('/route');
-                const content = fetchMock.mock.lastCall[1];
+                const content = fetchMock.mock.lastCall?.[1];
 
                 expect(fetchMock).toHaveBeenCalledTimes(1);
                 expect(getHeader(content?.headers, 'x-pm-uid')).toBe(uid);
@@ -33,7 +33,7 @@ describe('MetricsApi', () => {
                 const metricsApi = new MetricsApi();
 
                 await metricsApi.fetch('/route');
-                const content = fetchMock.mock.lastCall[1];
+                const content = fetchMock.mock.lastCall?.[1];
 
                 expect(fetchMock).toHaveBeenCalledTimes(1);
                 expect(getHeader(content?.headers, 'x-pm-uid')).toBe(undefined);
@@ -47,7 +47,7 @@ describe('MetricsApi', () => {
                 const metricsApi = new MetricsApi({ clientID, appVersion });
 
                 await metricsApi.fetch('/route');
-                const content = fetchMock.mock.lastCall[1];
+                const content = fetchMock.mock.lastCall?.[1];
 
                 expect(fetchMock).toHaveBeenCalledTimes(1);
                 expect(getHeader(content?.headers, 'x-pm-appversion')).toBe(`${clientID}@${appVersion}-dev`);
@@ -58,7 +58,7 @@ describe('MetricsApi', () => {
                 const metricsApi = new MetricsApi({ appVersion });
 
                 await metricsApi.fetch('/route');
-                const content = fetchMock.mock.lastCall[1];
+                const content = fetchMock.mock.lastCall?.[1];
 
                 expect(fetchMock).toHaveBeenCalledTimes(1);
                 expect(getHeader(content?.headers, 'x-pm-appversion')).toBe(undefined);
@@ -69,7 +69,7 @@ describe('MetricsApi', () => {
                 const metricsApi = new MetricsApi({ clientID });
 
                 await metricsApi.fetch('/route');
-                const content = fetchMock.mock.lastCall[1];
+                const content = fetchMock.mock.lastCall?.[1];
 
                 expect(fetchMock).toHaveBeenCalledTimes(1);
                 expect(getHeader(content?.headers, 'x-pm-appversion')).toBe(undefined);
@@ -85,7 +85,7 @@ describe('MetricsApi', () => {
             metricsApi.setAuthHeaders(uid);
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-uid')).toBe(uid);
@@ -98,7 +98,7 @@ describe('MetricsApi', () => {
             metricsApi.setAuthHeaders(uid);
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-uid')).toBe(undefined);
@@ -114,7 +114,7 @@ describe('MetricsApi', () => {
             metricsApi.setVersionHeaders(clientID, appVersion);
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-appversion')).toBe(`${clientID}@${appVersion}-dev`);
@@ -128,7 +128,7 @@ describe('MetricsApi', () => {
             metricsApi.setVersionHeaders(clientID, appVersion);
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-appversion')).toBe(undefined);
@@ -142,7 +142,7 @@ describe('MetricsApi', () => {
             metricsApi.setVersionHeaders(clientID, appVersion);
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-appversion')).toBe(undefined);
@@ -163,7 +163,7 @@ describe('MetricsApi', () => {
             const metricsApi = new MetricsApi();
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'content-type')).toBe('application/json');
@@ -173,7 +173,7 @@ describe('MetricsApi', () => {
             const metricsApi = new MetricsApi();
 
             await metricsApi.fetch('/route');
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'priority')).toBe('u=6');
@@ -184,7 +184,7 @@ describe('MetricsApi', () => {
             const metricsApi = new MetricsApi();
 
             await metricsApi.fetch(route);
-            const url = fetchMock.mock.lastCall[0];
+            const url = fetchMock.mock.lastCall?.[0];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(url).toBe(route);
@@ -202,7 +202,7 @@ describe('MetricsApi', () => {
                     foo: 'bar',
                 },
             });
-            const content = fetchMock.mock.lastCall[1];
+            const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.method).toBe(method);
