@@ -77,7 +77,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
         });
 
         beforeEach(async () => {
-            jest.useFakeTimers('modern').setSystemTime(getFakeNow.getTime());
+            jest.useFakeTimers().setSystemTime(getFakeNow.getTime());
 
             const toKeys = await generateKeys('user', fromFields.meAddress);
 
@@ -163,7 +163,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
         });
 
         beforeEach(async () => {
-            jest.useFakeTimers('modern').setSystemTime(getFakeNow.getTime());
+            jest.useFakeTimers().setSystemTime(getFakeNow.getTime());
         });
 
         afterEach(() => {
