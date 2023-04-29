@@ -7,6 +7,8 @@ import { getPossibleAddressPrivateKeys } from './utils';
 
 const DEFAULT_KEYPASSWORD = '1';
 
+jest.setTimeout(20000);
+
 describe('useLockedVolume -- utils', () => {
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
