@@ -15,7 +15,7 @@ describe('formatSimpleDate', () => {
     it('should return today date correctly formatted', function () {
         // Sunday 1 2023
         const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const expected = '10:00 AM';
 
@@ -27,7 +27,7 @@ describe('formatSimpleDate', () => {
         const fakeNow = new Date(2023, 0, 2, 10, 0, 0);
         // Sunday 1 2023
         const yesterday = new Date(2023, 0, 1, 10, 0, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const expected = 'Yesterday';
 
@@ -39,7 +39,7 @@ describe('formatSimpleDate', () => {
         const fakeNow = new Date(2023, 0, 2, 10, 0, 0);
         // Wednesday 4 2023
         const inTheWeek = new Date(2023, 0, 4, 10, 0, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const expected = 'Wednesday';
 
@@ -51,7 +51,7 @@ describe('formatSimpleDate', () => {
         const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
         // Tuesday 10 2023
         const inTheWeek = new Date(2023, 0, 10, 10, 0, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const expected = 'Jan 10, 2023';
 
@@ -80,7 +80,7 @@ describe('formatDistanceToNow', () => {
         const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
         // Saturday 1 2022
         const lastyear = new Date(2022, 0, 1, 10, 0, 0);
-        jest.useFakeTimers('modern').setSystemTime(fakeNow.getTime());
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
         const expected = 'about 1 year ago';
 
