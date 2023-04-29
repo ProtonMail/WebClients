@@ -47,7 +47,7 @@ describe('removeProxyURLAttributes', () => {
                        </video>
 
                        <svg width="90" height="90">
-                           <img proton-xlink:href='${originalImageURL}-4' xlink:href='${imageURL}-4'/>
+                           <image proton-xlink:href='${originalImageURL}-4' xlink:href='${imageURL}-4'/>
                        </svg>
                   </div>`;
 
@@ -67,7 +67,7 @@ describe('removeProxyURLAttributes', () => {
                        </video>
 
                        <svg width="90" height="90">
-                           <img xlink:href="${originalImageURL}-4">
+                           <image xlink:href="${originalImageURL}-4"></image>
                        </svg>
                   </div>`;
 
@@ -131,7 +131,7 @@ describe('replaceProxyWithOriginalURLAttributes', () => {
                        </video>
 
                        <svg width="90" height="90">
-                           <img proton-xlink:href='${originalImageURL}-7' xlink:href='${imageURL}-7'/>
+                           <image proton-xlink:href='${originalImageURL}-7' xlink:href='${imageURL}-7'/>
                        </svg>
                   </div>`;
 
@@ -171,7 +171,8 @@ describe('replaceProxyWithOriginalURLAttributes', () => {
                        </video>
 
                        <svg width="90" height="90">
-                           <img xlink:href="${originalImageURL}-7"></svg>
+                           <image xlink:href="${originalImageURL}-7"></image>
+                       </svg>
                   </div>`;
 
         const result = replaceProxyWithOriginalURLAttributes(message, createDocument(content));
