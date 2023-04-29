@@ -4,7 +4,7 @@
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
-    "ignoreDeps": ["roosterjs", "emoji-mart", "@emoji-mart/data", "client-zip", "pmcrypto"],
+    "ignoreDeps": ["roosterjs", "emoji-mart", "@emoji-mart/data", "client-zip", "pmcrypto", "nwsapi"],
     "ignorePaths": ["**/node_modules/**"],
     "packageRules": [
         {
