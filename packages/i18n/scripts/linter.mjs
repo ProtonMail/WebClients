@@ -3,7 +3,7 @@
  *  - arg can be a directory or a single file (default src)
  */
 import { readFile } from 'fs/promises';
-import glob from 'glob';
+import { sync } from 'glob';
 import path from 'path';
 
 /**
@@ -57,7 +57,7 @@ async function* errorIterator(source = 'src', options = {}) {
     const { ext } = path.parse(source);
     const files = ext
         ? [source]
-        : glob.sync(path.join(source, '**', '*.{js,jsx,ts,tsx}'), {
+        : sync(path.join(source, '**', '*.{js,jsx,ts,tsx}'), {
               ignore: [path.join(source, 'node_modules', '**')],
           });
 
