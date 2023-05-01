@@ -3,7 +3,12 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { MAX_IMPORT_CONTACTS, MAX_IMPORT_CONTACTS_STRING, MAX_IMPORT_FILE_SIZE, MAX_IMPORT_FILE_SIZE_STRING } from '@proton/shared/lib/contacts/constants';
+import {
+    MAX_IMPORT_CONTACTS,
+    MAX_IMPORT_CONTACTS_STRING,
+    MAX_IMPORT_FILE_SIZE,
+    MAX_IMPORT_FILE_SIZE_STRING,
+} from '@proton/shared/lib/contacts/constants';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '@proton/shared/lib/contacts/errors/ImportFileError';
 import { prepare, readCsv } from '@proton/shared/lib/contacts/helpers/csv';
@@ -12,7 +17,6 @@ import { extractVcards, readVcf } from '@proton/shared/lib/contacts/vcard';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
-import clsx from '@proton/utils/clsx';
 
 import {
     Alert,
@@ -164,12 +168,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             <ModalTwoContent>
                 {alert}
                 <Dropzone onDrop={onAddFiles} size="small" shape="flashy">
-                    <div
-                        className={clsx([
-                            'flex flex-align-items-center flex-justify-center border p-8 rounded-xl',
-                            !!model.failure && 'border-danger',
-                        ])}
-                    >
+                    <div className="flex flex-align-items-center flex-justify-center border p-4 rounded-xl">
                         {model.fileAttached ? (
                             <AttachedFile
                                 file={model.fileAttached}

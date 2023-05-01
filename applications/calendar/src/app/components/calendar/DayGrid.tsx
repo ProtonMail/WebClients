@@ -1,4 +1,4 @@
-import { ReactNode, Ref, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, Ref, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { getISOWeek } from 'date-fns';
 
@@ -13,7 +13,7 @@ import { DAY_EVENT_HEIGHT } from './constants';
 import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
 import useDayGridEventLayout from './useDayGridEventLayout';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     tzid: string;
     now: Date;
     date: Date;

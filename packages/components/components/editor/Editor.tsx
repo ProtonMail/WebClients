@@ -47,7 +47,7 @@ interface Props {
 }
 
 const DROPZONE_COMPOSER_SETTINGS: DropzoneContentProps = {
-    shape: 'norm',
+    shape: 'white',
     border: true,
     rounded: true,
 };
