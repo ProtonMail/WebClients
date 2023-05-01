@@ -46,5 +46,10 @@
 			border: 1px solid var(--primary);
 			color: var(--primary);
 		}
+
+		&--white {
+			// In some places (e.g. the composer), we want the background to be white whatever the theme
+			background-color: white;
+		}
 	}
 }

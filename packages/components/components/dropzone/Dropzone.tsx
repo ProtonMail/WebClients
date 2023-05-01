@@ -8,7 +8,7 @@ import DropzoneContent from './DropzoneContent';
 import './Dropzone.scss';
 
 export type DropzoneSize = 'small' | 'medium' | 'large';
-export type DropzoneShape = 'norm' | 'transparent' | 'flashy' | 'invisible';
+export type DropzoneShape = 'norm' | 'transparent' | 'flashy' | 'white' | 'invisible';
 
 export interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onDrop'> {
     /**
@@ -36,7 +36,7 @@ export interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'on
      */
     rounded?: boolean;
     /**
-     * Dropzone's shade : norm | transparent | flashy | invisible
+     * Dropzone's shade : norm | transparent | flashy | white | invisible
      */
     shape?: DropzoneShape;
     /**
@@ -51,6 +51,16 @@ export interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'on
      * Prevents setting the Dropzone's children div to position "relative"
      */
     isStatic?: boolean;
+    /**
+     * Title displayed under the illustration in "large" Dropzones (without custom content). Default text is "Drop to import"
+     */
+    contentTitle?: string;
+    /**
+     * Sub text displayed under the illustration in Dropzones (without custom content).
+     * Default text is "Drop file here to upload" for "small" and "medium" Dropzones,
+     * and "Your files will be encrypted and then saved" for "large" Dropzones
+     */
+    contentSubText?: string;
 }
 
 const Dropzone = ({
@@ -65,6 +75,8 @@ const Dropzone = ({
     border = true,
     shape = 'norm',
     isStatic = false,
+    contentTitle,
+    contentSubText,
     ...rest
 }: DropzoneProps) => {
     const handleDrop = (event: ReactDragEvent) => {
@@ -93,11 +105,21 @@ const Dropzone = ({
             rounded={rounded}
             shape={shape}
             size={size}
+            contentTitle={contentTitle}
+            contentSubText={contentSubText}
         />
     ) : null;
 
     /**
-     * Warning: To avoid having a container div which would contain the children and the content, we clone the children element.
+     * Warning:
+     * To display this dropzone we had two solutions
+     * 1. Add a container, wrapping the child and the content
+     * 2. Clone the element and update some props
+     *
+     * The first solution is easier to implement and to use, however in some cases (mostly CSS), adding this container could break the UI
+     * The developer would then need to do tricky CSS manipulation in order to get a working dropzone.
+     *
+     * To avoid having a container div which would contain the children and the content, we clone the children element.
      * However, the Dropzone children might need some configuration to work properly:
      * Because we're adding the dropzone content as a new children, and we're adding some props to the children element,
      * you'll need to spread the rest operator in the wrapping div AND render the children.

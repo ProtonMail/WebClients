@@ -1,4 +1,5 @@
 import {
+    ComponentPropsWithoutRef,
     ReactNode,
     Ref,
     RefObject,
@@ -49,7 +50,7 @@ export interface TimeGridActionRef {
     scrollToNow: () => void;
 }
 
-interface Props {
+interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
     isNarrow?: boolean;
     displaySecondaryTimezone?: boolean;
     primaryTimezone: string;
