@@ -135,81 +135,46 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-            {!isHolidaysCalendar && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="default-part-day-notifications" className="text-semibold">
-                            {c('Label for default event notifications').t`Notifications`}
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="w100">
-                        <Notifications
-                            id="default-part-day-notifications"
-                            data-testid="create-calendar/event-settings:default-notification"
-                            hasType
-                            fullWidth={false}
-                            notifications={model.partDayNotifications}
-                            canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSavePartDayNotifications || cannotEdit}
-                            addIcon="plus"
-                            defaultNotification={getDefaultModel().defaultPartDayNotification}
-                            onChange={(notifications: NotificationModel[]) => {
-                                setModel({
-                                    ...model,
-                                    partDayNotifications: notifications,
-                                });
-                                setHasTouchedPartDayNotifications(true);
-                            }}
-                        />
-                        <div className="mt1">
-                            <Button
-                                color="norm"
-                                onClick={() => handleSaveNotifications(false)}
-                                loading={loadingSavePartDayNotifications}
-                                disabled={!hasTouchedPartDayNotifications || cannotEdit}
-                            >
-                                {c('Action').t`Save`}
-                            </Button>
-                        </div>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
             <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="default-part-day-notifications" className="text-semibold">
-                        {c('Label for default event notifications').t`Notifications`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="w100">
-                    <Notifications
-                        id="default-part-day-notifications"
-                        data-testid="create-calendar/event-settings:default-notification"
-                        hasType
-                        fullWidth={false}
-                        notifications={model.partDayNotifications}
-                        canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                        disabled={loadingSavePartDayNotifications || cannotEdit}
-                        addIcon="plus"
-                        defaultNotification={getDefaultModel().defaultPartDayNotification}
-                        onChange={(notifications: NotificationModel[]) => {
-                            setModel({
-                                ...model,
-                                partDayNotifications: notifications,
-                            });
-                            setHasTouchedPartDayNotifications(true);
-                        }}
-                    />
-                    <div className="mt-1">
-                        <Button
-                            color="norm"
-                            onClick={() => handleSaveNotifications(false)}
-                            loading={loadingSavePartDayNotifications}
-                            disabled={!hasTouchedPartDayNotifications || cannotEdit}
-                        >
-                            {c('Action').t`Save`}
-                        </Button>
-                    </div>
-                </SettingsLayoutRight>
+                {!isHolidaysCalendar && (
+                    <>
+                        <SettingsLayoutLeft>
+                            <label htmlFor="default-part-day-notifications" className="text-semibold">
+                                {c('Label for default event notifications').t`Notifications`}
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight className="w100">
+                            <Notifications
+                                id="default-part-day-notifications"
+                                data-testid="create-calendar/event-settings:default-notification"
+                                hasType
+                                fullWidth={false}
+                                notifications={model.partDayNotifications}
+                                canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                disabled={loadingSavePartDayNotifications || cannotEdit}
+                                addIcon="plus"
+                                defaultNotification={getDefaultModel().defaultPartDayNotification}
+                                onChange={(notifications: NotificationModel[]) => {
+                                    setModel({
+                                        ...model,
+                                        partDayNotifications: notifications,
+                                    });
+                                    setHasTouchedPartDayNotifications(true);
+                                }}
+                            />
+                            <div className="mt-1">
+                                <Button
+                                    color="norm"
+                                    onClick={() => handleSaveNotifications(false)}
+                                    loading={loadingSavePartDayNotifications}
+                                    disabled={!hasTouchedPartDayNotifications || cannotEdit}
+                                >
+                                    {c('Action').t`Save`}
+                                </Button>
+                            </div>
+                        </SettingsLayoutRight>
+                    </>
+                )}
             </SettingsLayout>
             <SettingsLayout>
                 <SettingsLayoutLeft>

@@ -13,35 +13,48 @@ import {
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { HolidaysDirectoryCalendar, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '../calendarModal/CalendarModal';
 import HolidaysCalendarModal from '../holidaysCalendarModal/HolidaysCalendarModal';
-import useHolidaysDirectory from '../hooks/useHolidaysDirectory';
 import CalendarBadge from './CalendarBadge';
 
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     defaultCalendar?: VisualCalendar;
     holidaysCalendars: VisualCalendar[];
+    holidaysDirectory?: HolidaysDirectoryCalendar[];
     onEdit?: () => void;
     canEdit: boolean;
 }
 
-const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalendars, onEdit, canEdit }: Props) => {
+const CalendarSubpageHeaderSection = ({
+    calendar,
+    defaultCalendar,
+    holidaysCalendars,
+    holidaysDirectory,
+    onEdit,
+    canEdit,
+}: Props) => {
     const { contactEmailsMap } = useContactEmailsCache();
 
-    const { Name, Description, Color, Email: memberEmail, Permissions: memberPermissions } = calendar;
+    const {
+        Name,
+        Description,
+        Color,
+        Email: memberEmail,
+        Permissions: memberPermissions,
+        Type: calendarType,
+    } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
     const createdByText = getCalendarCreatedByText(calendar, contactEmailsMap);
-    const subline = getCalendarNameSubline({ displayEmail: true, memberEmail, memberPermissions });
+    const subline = getCalendarNameSubline({ calendarType, displayEmail: true, memberEmail, memberPermissions });
     const editCalendarText = c('Calendar edit button tooltip').t`Edit calendar`;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
     const [holidaysCalendarModal, setHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
-    const [holidaysDirectory] = useHolidaysDirectory();
 
     const handleEdit = () => {
         if (getIsHolidaysCalendar(calendar)) {

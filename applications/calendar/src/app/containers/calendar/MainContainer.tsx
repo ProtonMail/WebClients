@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { useInstance } from '@proton/hooks/index';
-import { getOwnedPersonalCalendars, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
@@ -46,13 +46,18 @@ const MainContainer = () => {
     useFeatures([FeatureCode.CalendarSharingEnabled]);
 
     const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);
-    const ownedPersonalCalendars = useMemo(() => getOwnedPersonalCalendars(memoedCalendars), [memoedCalendars]);
+    const { ownedPersonalCalendars, holidaysCalendars } = useMemo(() => {
+        return groupCalendarsByTaxonomy(memoedCalendars);
+    }, [memoedCalendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 
-    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const [{ isWelcomeFlow, isDone }, setWelcomeFlagsDone] = useWelcomeFlags();
 
     const [hasCalendarToGenerate, setHasCalendarToGenerate] = useState(() => {
         return ownedPersonalCalendars.length === 0;
+    });
+    const [hasHolidaysCalendarToGenerate, setHasHolidayCalendarToGenerate] = useState(() => {
+        return isWelcomeFlow && !holidaysCalendars.length;
     });
 
     const [calendarsToUnlock, setCalendarsToUnlock] = useState(() => {
@@ -67,15 +72,24 @@ const MainContainer = () => {
         });
     });
 
-    if (hasCalendarToGenerate) {
-        return <CalendarSetupContainer onDone={() => setHasCalendarToGenerate(false)} />;
+    if (hasCalendarToGenerate || hasHolidaysCalendarToGenerate) {
+        return (
+            <CalendarSetupContainer
+                hasCalendarToGenerate={hasCalendarToGenerate}
+                hasHolidaysCalendarToGenerate={hasHolidaysCalendarToGenerate}
+                onDone={() => {
+                    setHasCalendarToGenerate(false);
+                    setHasHolidayCalendarToGenerate(false);
+                }}
+            />
+        );
     }
 
     if (calendarsToSetup.length) {
         return <CalendarSetupContainer calendars={calendarsToSetup} onDone={() => setCalendarsToSetup([])} />;
     }
 
-    if (!welcomeFlags.isDone) {
+    if (!isDone) {
         return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
     }
 
