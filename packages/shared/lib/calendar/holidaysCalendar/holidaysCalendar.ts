@@ -1,11 +1,12 @@
 import { SessionKey } from '@proton/crypto';
-import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { encryptPassphraseSessionKey, signPassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { Address } from '@proton/shared/lib/interfaces';
-import { HolidaysDirectoryCalendar, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
+import unique from '@proton/utils/unique';
 
 import { getPrimaryAddress } from '../../helpers/address';
 import { base64StringToUint8Array } from '../../helpers/encoding';
+import { getLanguageCode, getNaiveCountryCode } from '../../i18n/helper';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 
 /**
@@ -29,68 +30,92 @@ export const getHolidaysCalendarsFromCountryCode = (
 };
 
 /**
- * Given a list of holidays calendars, find the first that matches a given language code
+ * Given a list of country codes, find the preferred one based on language preferences. Result can be undefined.
+ * See `getSuggestedHolidaysCalendar` for more details on the logic.
  */
-export const findHolidaysCalendarByLanguageCode = (
-    holidayCalendars: HolidaysDirectoryCalendar[],
-    userLanguageCode: string
-) => {
-    return holidayCalendars.find(({ LanguageCode }) => LanguageCode === userLanguageCode);
+export const findPreferredCountryCode = (codes: string[], languageTags: string[]) => {
+    if (codes.length === 1) {
+        return codes[0];
+    }
+    for (const tag of languageTags) {
+        const languageCountryCode = getNaiveCountryCode(tag);
+        const preferredCountryCode = codes.find((code) => code === languageCountryCode);
+        if (preferredCountryCode) {
+            return preferredCountryCode;
+        }
+    }
 };
 
 /**
- * Get default option that will be proposed to the user from a country code and a language code
- * Result can be undefined if nothing is found
+ * Given a list of holidays directory calendars, find the preferred one based on language preferences. Result can be undefined.
+ * See `getSuggestedHolidaysCalendar` for more details on the logic.
  */
-export const findHolidaysCalendarByCountryCodeAndLanguageCode = (
+export const findPreferredCalendarByLanguageTag = (calendars: HolidaysDirectoryCalendar[], languageTags: string[]) => {
+    if (calendars.length === 1) {
+        return calendars[0];
+    }
+    for (const tag of languageTags) {
+        const code = getLanguageCode(tag);
+        const preferredCalendar = calendars.find(({ LanguageCode }) => code === LanguageCode);
+        if (preferredCalendar) {
+            return preferredCalendar;
+        }
+    }
+};
+
+/**
+ * Given a list of holidays directory calendars belonging to one country, find the preferred one based on language preferences. Result can be undefined.
+ * See `getSuggestedHolidaysCalendar` for more details on the logic.
+ */
+export const findHolidaysCalendarByCountryCodeAndLanguageTag = (
     calendars: HolidaysDirectoryCalendar[],
     countryCode: string,
-    languageCode: string
+    languageTags: string[]
 ) => {
-    // TODO check this step. I don't know if we could get calendars with the same timezone but different country
-    //      In case this is possible, filter all calendars using the country of the first calendar using the same timezone than the user
-    const calendarsFromSameCountry = getHolidaysCalendarsFromCountryCode(calendars, countryCode);
+    const calendarsFromCountry = getHolidaysCalendarsFromCountryCode(calendars, countryCode);
 
-    if (calendarsFromSameCountry.length === 1) {
-        // If there is only one Calendar for this country, return this calendar
-
-        return calendarsFromSameCountry[0];
-    } else if (calendarsFromSameCountry.length > 0) {
-        // Else, we have several calendars for the same country, with different languages
-
-        // Get the holiday calendar with the same language code as the language set by the user in settings
-        const defaultCalendarFromLanguage = findHolidaysCalendarByLanguageCode(calendarsFromSameCountry, languageCode);
-
-        // If there is a calendar with the same language as the user has in settings, return this one.
-        // Else return the first calendar from the country selected
-        return defaultCalendarFromLanguage ? defaultCalendarFromLanguage : calendarsFromSameCountry[0];
-    }
+    return findPreferredCalendarByLanguageTag(calendarsFromCountry, languageTags) || calendarsFromCountry[0];
 };
 
 /**
- * Get the default calendar pre-selected in the HolidaysCalendarsModal.
- * Result can be undefined if nothing is found
- * This default calendar is calculated based on the user timezone and user language code
+ * Given the user time zone preference, and a list of language tags (RFC-5646) ordered by user preference,
+ * we try to find a calendar that matches those in a directory of holidays calendars.
+ * The logic for matching is as follows:
+ *
+ * * First filter the calendars that are compatible with the user time zone.
+ *
+ * * Then try to match a country:
+ * * * If the filtering above returned the empty array, return undefined.
+ * * * If the filtered calendars all belong to one country, pick that country.
+ * * * If there are several countries in the filtered calendars, use the language tags to find a match.
+ * * * If there's no match, return undefined.
+ *
+ * * If we got a country match, some calendars (calendar <-> language) will be associated to it:
+ * * * If the country has just one associated calendar (<-> language), pick that one.
+ * * * If the country has multiple associated calendars (<-> languages):
+ * * * * If any of the language tags matches one of the languages (we try in the order of preference given), pick that one.
+ * * * * If no match, pick the first language in the list.
  */
-export const getDefaultHolidaysCalendar = (
+export const getSuggestedHolidaysCalendar = (
     calendars: HolidaysDirectoryCalendar[],
     tzid: string,
-    languageCode: string
+    languageTags: string[]
 ) => {
     // Get all calendars in the same time zone as the user
-    const calendarsFromTimezone = getHolidaysCalendarsFromTimeZone(calendars, tzid);
+    const calendarsFromTimeZone = getHolidaysCalendarsFromTimeZone(calendars, tzid);
 
-    // If some calendars are found
-    if (calendarsFromTimezone.length > 0) {
-        return findHolidaysCalendarByCountryCodeAndLanguageCode(
-            calendars,
-            calendarsFromTimezone[0].CountryCode,
-            languageCode
-        );
+    if (!calendarsFromTimeZone.length) {
+        return;
     }
 
-    // If no option is found based on the time zone, return undefined
-    return undefined;
+    const countryCodes = unique(calendarsFromTimeZone.map(({ CountryCode }) => CountryCode));
+    const countryCode = findPreferredCountryCode(countryCodes, languageTags);
+
+    if (!countryCode) {
+        return;
+    }
+
+    return findHolidaysCalendarByCountryCodeAndLanguageTag(calendarsFromTimeZone, countryCode, languageTags);
 };
 
 export const getJoinHolidaysCalendarData = async ({
@@ -104,7 +129,7 @@ export const getJoinHolidaysCalendarData = async ({
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
     color: string;
-    notifications: NotificationModel[];
+    notifications: CalendarNotificationSettings[];
 }) => {
     const {
         CalendarID,
@@ -136,7 +161,7 @@ export const getJoinHolidaysCalendarData = async ({
             PassphraseKeyPacket: encryptedSessionKey,
             Signature: signature,
             Color: color,
-            DefaultFullDayNotifications: modelToNotifications(notifications),
+            DefaultFullDayNotifications: notifications,
         },
     };
 };

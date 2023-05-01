@@ -22,6 +22,7 @@ import {
     CalendarMemberInvitation,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
+    HolidaysDirectoryCalendar,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -37,6 +38,7 @@ interface Props {
     calendars: VisualCalendar[];
     subscribedCalendars: SubscribedCalendar[];
     holidaysCalendars: VisualCalendar[];
+    holidaysDirectory?: HolidaysDirectoryCalendar[];
     defaultCalendar?: VisualCalendar;
     addresses: Address[];
     user: UserModel;
@@ -46,6 +48,7 @@ const CalendarSubpage = ({
     calendars,
     subscribedCalendars,
     holidaysCalendars,
+    holidaysDirectory,
     defaultCalendar,
     addresses,
     user,
@@ -164,6 +167,7 @@ const CalendarSubpage = ({
                 <CalendarSubpageHeaderSection
                     calendar={calendar}
                     holidaysCalendars={holidaysCalendars}
+                    holidaysDirectory={holidaysDirectory}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}
                     canEdit={user.hasNonDelinquentScope}

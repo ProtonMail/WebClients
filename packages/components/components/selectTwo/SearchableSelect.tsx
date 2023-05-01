@@ -2,9 +2,8 @@ import { FormEvent, KeyboardEvent, MouseEvent, ReactNode, useMemo, useRef, useSt
 
 import { c } from 'ttag';
 
-import uniqueBy from '@proton/utils/uniqueBy';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { Dropdown, DropdownSizeUnit } from '../dropdown';
 import { SearchInput } from '../input';
 import Option, { Props as OptionProps } from '../option/Option';
@@ -19,7 +18,6 @@ export interface Props<V> extends SelectProps<V> {
     search?: boolean | ((option: OptionProps<V>, keyword?: string) => void);
     searchPlaceholder?: string;
     noSearchResults?: ReactNode;
-    uniqueSearchResult?: boolean;
 }
 
 const SearchableSelect = <V extends any>({
@@ -36,7 +34,6 @@ const SearchableSelect = <V extends any>({
     onOpen,
     onChange,
     renderSelected,
-    uniqueSearchResult,
     ...rest
 }: Props<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -126,9 +123,7 @@ const SearchableSelect = <V extends any>({
 
         const filterFunction = typeof search === 'function' ? search : defaultFilterFunction;
 
-        const filtered = optionChildren.filter((child) => filterFunction(child.props, searchValue));
-
-        return uniqueSearchResult ? uniqueBy(filtered, (option) => option.props.title) : filtered;
+        return optionChildren.filter((child) => filterFunction(child.props, searchValue));
     }, [children, search, searchValue]);
 
     const selectedIndexesInFilteredOptions =
@@ -156,7 +151,7 @@ const SearchableSelect = <V extends any>({
                 noCaret
                 size={{ width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport }}
                 disableDefaultArrowNavigation={!searchValue}
-                className={classnames([
+                className={clsx([
                     searchContainerRef?.current && 'dropdown--is-searchable',
                     multiple && 'select-dropdown--togglable',
                 ])}

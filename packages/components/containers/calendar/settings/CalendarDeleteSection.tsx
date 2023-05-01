@@ -8,7 +8,9 @@ import { SettingsParagraph } from '@proton/components/containers';
 import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
 import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
+    getIsHolidaysCalendar,
     getIsOwnedCalendar,
+    getIsPersonalCalendar,
     getIsSubscribedCalendar,
     getOwnedPersonalCalendars,
     getProbablyActiveCalendars,
@@ -21,10 +23,12 @@ import SettingsSection from '../../account/SettingsSection';
 
 const getTexts = ({
     isSubscribedCalendar,
+    isHolidaysCalendar,
     isSharedAsMember,
     isSharedAsOwner,
 }: {
     isSubscribedCalendar: boolean;
+    isHolidaysCalendar: boolean;
     isSharedAsMember: boolean;
     isSharedAsOwner: boolean;
 }) => {
@@ -35,6 +39,15 @@ const getTexts = ({
             description: c('Remove calendar section description')
                 .t`By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.`,
             deleteText: c('Action').t`Unsubscribe`,
+        };
+    }
+    if (isHolidaysCalendar) {
+        return {
+            modalTitle: c('Remove calendar section title').t`Delete calendar?`,
+            modalText: c('Info')
+                .t`Are you sure you want to delete this calendar? You can add the holidays calendar back later.`,
+            description: c('Delete calendar section description').t`You will no longer have access to this calendar.`,
+            deleteText: c('Action').t`Delete`,
         };
     }
     if (isSharedAsMember) {
@@ -74,7 +87,10 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
     const [deleteModal, setIsDeleteModalOpen, renderDeleteModal] = useModalState();
 
     const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
+    const isHolidaysCalendar = getIsHolidaysCalendar(calendar);
     const isOwner = getIsOwnedCalendar(calendar);
+    const isSharedAsOwner = getIsPersonalCalendar(calendar) && isOwner && isShared;
+    const isSharedAsMember = getIsPersonalCalendar(calendar) && !isOwner;
     const isDeleteDefaultCalendar = calendar.ID === defaultCalendar?.ID;
     const firstRemainingCalendar = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars)).find(
         ({ ID: calendarID }) => calendarID !== calendar.ID
@@ -82,8 +98,9 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
 
     const { modalTitle, modalText, description, deleteText } = getTexts({
         isSubscribedCalendar,
-        isSharedAsOwner: isOwner && isShared,
-        isSharedAsMember: !isOwner,
+        isHolidaysCalendar,
+        isSharedAsOwner,
+        isSharedAsMember,
     });
 
     const firstRemainingCalendarName = firstRemainingCalendar ? (

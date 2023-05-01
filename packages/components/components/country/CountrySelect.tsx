@@ -4,21 +4,27 @@ import { c } from 'ttag';
 
 import generateUID from '@proton/atoms/generateUID';
 import { InputFieldTwo, Option, SearchableSelect } from '@proton/components/components';
-import { CountryOption, getCountryDropdownOptions } from '@proton/components/components/country/helpers';
+import {
+    CountryOption,
+    PRESELECTED_COUNTRY_OPTION_SUFFIX,
+    getAllDropdownOptions,
+    getCleanCountryCode,
+    getIsCountryOption,
+} from '@proton/components/components/country/helpers';
 import { Props as OptionProps } from '@proton/components/components/option/Option';
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
 
-import { arrayIncludesString, includesString } from '../selectTwo/helpers';
+import { defaultFilterFunction } from '../selectTwo/helpers';
 
 /**
  * Filter options based on the search string and their option disabled state.
  * If an option is disabled, it's a divider, and we don't want to display it
  */
-const countryFilterFunction = <V,>(option: OptionProps<V>, keyword?: string) =>
+const countryFilterFunction = (option: OptionProps<string>, keyword?: string) =>
     keyword &&
-    ((option.title && includesString(option.title, keyword)) ||
-        (option.searchStrings && arrayIncludesString(option.searchStrings, keyword))) &&
-    !option.disabled;
+    defaultFilterFunction(option, keyword) &&
+    !option.disabled &&
+    !option.value.endsWith(PRESELECTED_COUNTRY_OPTION_SUFFIX);
 
 interface Props {
     /**
@@ -39,9 +45,7 @@ interface Props {
      */
     value?: CountryOption;
     onSelectCountry?: (value: string) => void;
-    validator?: (validations: string[]) => string;
-    errorText?: string;
-    error?: boolean;
+    error?: string;
     hint?: string;
 }
 
@@ -51,53 +55,38 @@ const CountrySelect = ({
     preSelectedOption,
     value,
     onSelectCountry,
-    validator,
-    errorText,
     error,
     hint,
 }: Props) => {
-    const [selectedCountry, setSelectedCountry] = useState<CountryOption | undefined>(value || preSelectedOption);
+    const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
+        value || preSelectedOption
+    );
 
-    const handleSelectCountry = ({ value }: { value: any }) => {
-        const selectedOption = options.find(({ countryCode }) => countryCode === value);
-        setSelectedCountry(selectedOption);
+    const { dropdownOptions, countryOptions } = useMemo(() => {
+        const dropdownOptions = getAllDropdownOptions(options, preSelectedOption, preSelectedOptionDivider);
+        const countryOptions = dropdownOptions.filter(getIsCountryOption);
 
-        onSelectCountry?.(value);
-    };
-
-    const dropdownOptions = useMemo(() => {
-        return getCountryDropdownOptions(options, preSelectedOption, preSelectedOptionDivider);
+        return { dropdownOptions, countryOptions };
     }, [options, preSelectedOption, preSelectedOptionDivider]);
 
-    const getErrorText = () => {
-        const hasError = selectedCountry === undefined || error;
+    const handleSelectOption = ({ value }: { value: string }) => {
+        const selectedOption = countryOptions.find(({ countryCode }) => countryCode === value);
 
-        if (errorText && hasError) {
-            return errorText;
-        }
+        setSelectedCountryOption(selectedOption);
 
-        return '';
-    };
-
-    const getError = () => {
-        if (error && errorText) {
-            return errorText;
-        }
-
-        return validator ? validator([getErrorText()]) : undefined;
+        onSelectCountry?.(value);
     };
 
     return (
         <InputFieldTwo
             id="countrySelect"
-            as={SearchableSelect}
+            as={SearchableSelect<string>}
             placeholder={c('Placeholder').t`Please select a country`}
             label={c('Label').t`Country`}
-            value={selectedCountry?.countryCode}
-            onChange={handleSelectCountry}
+            value={selectedCountryOption?.countryCode}
+            onChange={handleSelectOption}
             search={countryFilterFunction}
-            uniqueSearchResult
-            error={getError()}
+            error={error}
             aria-describedby="countrySelect"
             noSearchResults={
                 <>
@@ -122,7 +111,7 @@ const CountrySelect = ({
                                 <img
                                     className="flex-item-noshrink mr0-5"
                                     alt=""
-                                    src={getFlagSvg(option.countryCode)}
+                                    src={getFlagSvg(getCleanCountryCode(option.countryCode))}
                                     width="30"
                                     height="20"
                                 />
