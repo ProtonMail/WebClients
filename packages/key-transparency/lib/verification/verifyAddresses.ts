@@ -7,6 +7,7 @@ import {
     Api,
     DecryptedKey,
     FetchedSignedKeyList,
+    FixMultiplePrimaryKeys,
     KTLocalStorageAPI,
     SignedKeyList,
 } from '@proton/shared/lib/interfaces';
@@ -159,7 +160,8 @@ export const auditAddresses = async (
     apis: Api[],
     addresses: Address[],
     userKeys: DecryptedKey[],
-    ktLSAPI: KTLocalStorageAPI
+    ktLSAPI: KTLocalStorageAPI,
+    fixMultiplePrimaryKeys: FixMultiplePrimaryKeys
 ) => {
     const [api] = apis;
     const addressesKeys = new Map(
@@ -185,7 +187,8 @@ export const auditAddresses = async (
     }
 
     // Main loop through own addresses
-    for (const { ID: addressID, Email, SignedKeyList, Status } of addresses) {
+    for (const address of addresses) {
+        const { ID: addressID, Email, SignedKeyList, Status } = address;
         if (Status !== ADDRESS_STATUS.STATUS_ENABLED) {
             // We don't audit disabled addresses. When SAL will be available those
             // won't be present at all
@@ -275,6 +278,8 @@ export const auditAddresses = async (
                     api
                 );
             }
+
+            await fixMultiplePrimaryKeys(address);
 
             // Self audit has succeeded for this address
             continue;
@@ -452,6 +457,8 @@ export const auditAddresses = async (
                 api
             );
         }
+
+        await fixMultiplePrimaryKeys(address);
     }
 
     await storeAuditResult(userID, ktLSAPI);
@@ -481,9 +488,7 @@ export const verifyAuditAddressesResult = async (
     }
 
     return {
-        PublicKeys: await Promise.all(
-            addressVerificationKeys.map((key) => CryptoProxy.exportPublicKey({ key }))
-        ),
+        PublicKeys: await Promise.all(addressVerificationKeys.map((key) => CryptoProxy.exportPublicKey({ key }))),
         creationTimestamp: signatureTimestamp.getTime(),
         email: address.Email,
         isObsolete: false,
