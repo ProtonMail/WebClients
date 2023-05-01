@@ -1,5 +1,7 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
 import { MAX_EPOCH_INTERVAL } from '../constants';
@@ -16,6 +18,7 @@ import {
 import { KTBlobContent, KeyWithFlags } from '../interfaces';
 import { encryptKTtoLS, getAllKTBlobValuesWithInfo, removeKTFromLS } from '../storage/storageHelpers';
 import { verifySKLInsideEpochID } from './verifyEpochs';
+import { verifySKLSignature } from './verifyKeys';
 
 /**
  * Verify that the SKL(s) stored in one (or more) localStorage blob(s)
@@ -56,20 +59,11 @@ const verifyKTBlobsContent = async (
         const { Data, Signature, MinEpochID } = targetSKL;
         let signatureTime: number | undefined;
         if (Data && Signature) {
-            const verificationResult = await CryptoProxy.verifyMessage({
-                armoredSignature: Signature,
-                verificationKeys: [...publicKeys, ...localKeys],
-                textData: Data,
-            });
-            const { verified, errors, signatureTimestamp } = verificationResult;
-
-            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
+            const verificationKeys = [...publicKeys, ...localKeys];
+            const signatureTimestamp = await verifySKLSignature(verificationKeys, Data, Signature, 'checkLSBlobs');
+            if (!signatureTimestamp) {
                 // Note that this shouldn't be considered an hard failure since signature verification
                 // might fail in case keys drastically changed
-                ktSentryReport('Active target SKL signature verification failed', {
-                    context: 'checkLSBlobs',
-                    errors: JSON.stringify(errors),
-                });
                 continue;
             }
 
@@ -177,7 +171,10 @@ export const checkLSBlobs = async (
         // If this address is owned by the user, verificationKeys are the address keys
         const ownKeys = ownAddressKeys.get(addressID);
         if (ownKeys) {
-            verificationKeys.push(...ownKeys.map(({ PublicKey }) => PublicKey));
+            const addressVerificationKeys = ownKeys
+                .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+                .map(({ PublicKey }) => PublicKey);
+            verificationKeys.push(...addressVerificationKeys);
         } else {
             // Otherwise we fetch the keys of the other user
             const { publicKeys } = await getPublicKeysEmailHelper(
@@ -187,9 +184,12 @@ export const checkLSBlobs = async (
                 true,
                 true
             );
-            verificationKeys.push(
-                ...(await Promise.all(publicKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))))
+            const addressVerificationKeys = await Promise.all(
+                publicKeys
+                    .filter(({ flags }) => hasBit(flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+                    .map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
             );
+            verificationKeys.push(...addressVerificationKeys);
         }
 
         await verifyKTBlobsContent(
