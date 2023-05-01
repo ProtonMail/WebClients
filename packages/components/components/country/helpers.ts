@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { SimpleMap } from '@proton/shared/lib/interfaces';
+
 export interface CountryOption {
     countryCode: string;
     countryName: string;
@@ -17,6 +19,18 @@ interface DropdownDividerOption {
 }
 
 export type DropdownOption = DropdownCountryOption | DropdownDividerOption;
+
+export const getIsCountryOption = (option: DropdownOption): option is DropdownCountryOption => {
+    return !!(option as DropdownCountryOption).countryCode;
+};
+
+export const PRESELECTED_COUNTRY_OPTION_SUFFIX = '-preselected';
+
+export const getCleanCountryCode = (code: string) => {
+    return code.endsWith(PRESELECTED_COUNTRY_OPTION_SUFFIX)
+        ? code.slice(0, -PRESELECTED_COUNTRY_OPTION_SUFFIX.length)
+        : code;
+};
 
 /**
  * Group all countries by their starting letter in an object with the first letter as the key
@@ -72,24 +86,26 @@ export const groupCountriesByStartingLetter = (countries: CountryOption[]) => {
  *      {type: 'country', countryName: 'Switzerland', countryCode: 'ch'},
  * ]
  */
-export const divideSortedCountries = (groupedCountries: { [key: string]: CountryOption[] }) => {
-    const sortedKeys = Object.keys(groupedCountries).sort((a, b) => a.localeCompare(b));
+export const divideSortedCountries = (groupedCountries: SimpleMap<CountryOption[]>) => {
+    const sortedCountryKeys = Object.keys(groupedCountries).sort((a, b) => a.localeCompare(b));
 
-    const flatAndDividedArray: DropdownOption[] = sortedKeys
-        .map((letter) =>
-            groupedCountries[letter].map(
-                (country) =>
-                    ({
-                        type: 'country',
-                        countryName: country.countryName,
-                        countryCode: country.countryCode,
-                    } as DropdownOption)
-            )
-        )
-        .reduce(
-            (acc, countries, i) => acc.concat(countries, { type: 'divider', text: sortedKeys[i + 1] }),
-            [{ type: 'divider', text: sortedKeys[0] }]
-        );
+    const flatAndDividedArray: DropdownOption[] = [{ type: 'divider', text: sortedCountryKeys[0] }];
+
+    sortedCountryKeys.forEach((letter, i) => {
+        const countries = groupedCountries[letter];
+
+        if (!countries) {
+            return;
+        }
+
+        const countryOptions: DropdownCountryOption[] = countries.map(({ countryCode, countryName }) => ({
+            type: 'country',
+            countryName,
+            countryCode,
+        }));
+
+        flatAndDividedArray.push(...countryOptions, { type: 'divider', text: sortedCountryKeys[i + 1] });
+    });
 
     flatAndDividedArray.pop();
 
@@ -131,7 +147,7 @@ export const divideSortedCountries = (groupedCountries: { [key: string]: Country
  *      {type: 'country', countryName: 'Switzerland', countryCode: 'ch'},
  * ]
  */
-export const getCountryDropdownOptions = (
+export const getAllDropdownOptions = (
     options: CountryOption[],
     preSelectedOption?: CountryOption,
     preSelectedOptionDivider = c('Country select label').t`Based on your time zone`
@@ -141,7 +157,8 @@ export const getCountryDropdownOptions = (
               { type: 'divider', text: preSelectedOptionDivider },
               {
                   type: 'country',
-                  countryCode: preSelectedOption.countryCode,
+                  // adding a suffix here to make this option non searchable. The ideal solution would be to have an object here
+                  countryCode: `${preSelectedOption.countryCode}${PRESELECTED_COUNTRY_OPTION_SUFFIX}`,
                   countryName: preSelectedOption.countryName,
               },
           ]

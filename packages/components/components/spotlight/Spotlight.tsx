@@ -19,7 +19,7 @@ import discoverIllustration from '@proton/styles/assets/img/illustrations/spotli
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 
-import { classnames, generateUID } from '../../helpers';
+import { generateUID } from '../../helpers';
 import { useIsClosing } from '../../hooks';
 import { Icon } from '../icon';
 import { PopperPlacement, usePopper, usePopperState } from '../popper';
@@ -138,7 +138,7 @@ const Spotlight = ({
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                 >
-                    <div className={classnames(['spotlight-inner', type && 'flex flex-nowrap flex-align-items-start'])}>
+                    <div className={clsx(['spotlight-inner', type && 'flex flex-nowrap flex-align-items-start'])}>
                         {illustrationURL && <img className="flex-item-noshrink mr-6" src={illustrationURL} alt="" />}
                         <div>{content}</div>
                     </div>

@@ -401,9 +401,22 @@ export const userBuilder = build('User', {
     },
 });
 
+interface GenerateSimpleCalendarCustomParams {
+    id?: string;
+    name?: string;
+    calendarEmail?: string;
+    ownerEmail?: string;
+    permissions?: number;
+    type?: CALENDAR_TYPE;
+    flags?: CALENDAR_FLAGS;
+    display?: CALENDAR_DISPLAY;
+    color?: string;
+}
+
 export const generateSimpleCalendar = (
     i: number,
     {
+        id = `id-${i}`,
         name = `name-${i}`,
         calendarEmail = 'calendarEmail',
         ownerEmail = 'calendarEmail',
@@ -412,18 +425,9 @@ export const generateSimpleCalendar = (
         flags = CALENDAR_FLAGS.ACTIVE,
         display = CALENDAR_DISPLAY.VISIBLE,
         color = '#F00',
-    }: {
-        name?: string;
-        calendarEmail?: string;
-        ownerEmail?: string;
-        permissions?: number;
-        type?: CALENDAR_TYPE;
-        flags?: CALENDAR_FLAGS;
-        display?: CALENDAR_DISPLAY;
-        color?: string;
-    }
+    }: GenerateSimpleCalendarCustomParams
 ): VisualCalendar => ({
-    ID: `id-${i}`,
+    ID: id,
     Name: name,
     Description: `description-${i}`,
     Type: type,
@@ -449,17 +453,32 @@ export const generateSimpleCalendar = (
     ],
 });
 
-export const generateSubscribedCalendar = ({
-    calendar,
-    status = CALENDAR_SUBSCRIPTION_STATUS.OK,
-    url = '#',
-}: {
-    calendar: VisualCalendar;
+export const generateSharedCalendar = (i: number, params: GenerateSimpleCalendarCustomParams) => {
+    const calendar = generateSimpleCalendar(i, params);
+
+    if (params.calendarEmail && params.ownerEmail && params.calendarEmail === params.ownerEmail) {
+        throw new Error('Owner matches calendar email, not a shared calendar!');
+    }
+
+    if (calendar.Email === calendar.Owner.Email) {
+        calendar.Owner.Email = calendar.Owner.Email === 'calendarEmail' ? 'ownerEmail' : `${calendar.Email}-owner`;
+    }
+
+    return calendar;
+};
+
+interface GenerateSubscribedCalendarCustomParams extends GenerateSimpleCalendarCustomParams {
     status?: CALENDAR_SUBSCRIPTION_STATUS;
     url?: string;
-}) => {
+}
+
+export const generateSubscribedCalendar = (
+    i: number,
+    { status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#', ...rest }: GenerateSubscribedCalendarCustomParams
+) => {
+    const simpleCalendar = generateSimpleCalendar(i, rest);
     const SubscriptionParameters = {
-        CalendarID: calendar.ID,
+        CalendarID: simpleCalendar.ID,
         CreateTime: 0,
         LastUpdateTime: Math.floor(+Date.now() / 1000),
         Status: status,
@@ -467,33 +486,57 @@ export const generateSubscribedCalendar = ({
     };
 
     return {
-        ...calendar,
+        ...simpleCalendar,
         Type: CALENDAR_TYPE.SUBSCRIPTION,
         SubscriptionParameters,
     };
 };
 
-export const generateOwnedPersonalCalendars = (n: number) => {
-    return Array(n)
-        .fill(1)
-        .map((val, i) => generateSimpleCalendar(i, {}));
+export const generateHolidaysCalendar = (i: number, params: GenerateSimpleCalendarCustomParams) => {
+    const simpleCalendar = generateSimpleCalendar(i, params);
+
+    return {
+        ...simpleCalendar,
+        Type: CALENDAR_TYPE.HOLIDAYS,
+    };
 };
 
-export const generateSharedCalendars = (n: number) => {
+export const generateOwnedPersonalCalendars = (n: number, customParams?: GenerateSimpleCalendarCustomParams[]) => {
     if (n <= 0) {
         return [];
     }
+
     return Array(n)
         .fill(1)
-        .map((val, i) => generateSimpleCalendar(i, { calendarEmail: 'calendarEmail', ownerEmail: 'ownerEmail' }));
+        .map((val, i) => generateSimpleCalendar(i, customParams?.[i] || {}));
 };
 
-export const generateSubscribedCalendars = (n: number) => {
+export const generateSharedCalendars = (n: number, customParams?: GenerateSimpleCalendarCustomParams[]) => {
+    if (n <= 0) {
+        return [];
+    }
+
     return Array(n)
         .fill(1)
-        .map((val, i) =>
-            generateSubscribedCalendar({
-                calendar: generateSimpleCalendar(i, { type: CALENDAR_TYPE.SUBSCRIPTION }),
-            })
-        );
+        .map((val, i) => generateSharedCalendar(i, customParams?.[i] || {}));
+};
+
+export const generateSubscribedCalendars = (n: number, customParams?: GenerateSubscribedCalendarCustomParams[]) => {
+    if (n <= 0) {
+        return [];
+    }
+
+    return Array(n)
+        .fill(1)
+        .map((val, i) => generateSubscribedCalendar(i, customParams?.[i] || {}));
+};
+
+export const generateHolidaysCalendars = (n: number, customParams?: GenerateSimpleCalendarCustomParams[]) => {
+    if (n <= 0) {
+        return [];
+    }
+
+    return Array(n)
+        .fill(1)
+        .map((val, i) => generateHolidaysCalendar(i, customParams?.[i] || {}));
 };
