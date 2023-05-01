@@ -31,7 +31,6 @@ const useCalendarsEvents = (
         utcDateRange,
         tzid,
         cacheRef,
-        getOpenedMailEvents,
         initializeCacheOnlyCalendarsIDs,
         onCacheInitialized
     );
