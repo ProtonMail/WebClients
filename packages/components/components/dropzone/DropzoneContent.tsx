@@ -6,7 +6,10 @@ import clsx from '@proton/utils/clsx';
 import { DropzoneProps } from './Dropzone';
 
 export interface DropzoneContentProps
-    extends Pick<DropzoneProps, 'size' | 'shape' | 'rounded' | 'border' | 'customContent' | 'className'> {
+    extends Pick<
+        DropzoneProps,
+        'size' | 'shape' | 'rounded' | 'border' | 'customContent' | 'className' | 'contentTitle' | 'contentSubText'
+    > {
     /** Embedded in iframe */
     embedded?: boolean;
 }
@@ -19,12 +22,29 @@ const DropzoneContent = ({
     shape,
     size,
     embedded = false,
+    contentTitle = c('Info').t`Drop to import`,
+    contentSubText,
 }: DropzoneContentProps) => {
     const isSmallDropView = size === 'small';
     const isLargeDropView = size === 'large';
 
     const isTransparentShape = shape === 'transparent';
     const isFlashyShape = shape === 'flashy';
+    const isWhite = shape === 'white';
+
+    const getSubText = () => {
+        if (contentSubText) {
+            return contentSubText;
+        } else {
+            if (isLargeDropView) {
+                return c('Info').t`Your files will be encrypted and then saved`;
+            } else {
+                return c('Info').t`Drop file here to upload`;
+            }
+        }
+    };
+
+    const subText = getSubText();
 
     /** Prefix css classes with `proton-` for iframe embedded situation */
     const prefixClasses = (classes: string) =>
@@ -45,6 +65,7 @@ const DropzoneContent = ({
                 border && 'dropzone--bordered',
                 isTransparentShape && 'dropzone-content--transparent',
                 isFlashyShape && 'dropzone-content--flashy',
+                isWhite && 'dropzone-content--white',
                 className
             )}
         >
@@ -53,19 +74,17 @@ const DropzoneContent = ({
             ) : (
                 <div className={prefixClasses('text-center')}>
                     {!isSmallDropView && (
-                        <img src={dragAndDrop} alt="" aria-hidden="true" className={prefixClasses('mb1')} />
+                        <img src={dragAndDrop} alt="" aria-hidden="true" className={prefixClasses('mb-4')} />
                     )}
                     {isLargeDropView ? (
-                        <p className={prefixClasses('mb0 mt1-5')}>
-                            <span className={prefixClasses('text-xl text-bold')}>{c('Info').t`Drop to import`}</span>
+                        <p className={prefixClasses('mb-0 mt-5')}>
+                            <span className={prefixClasses('text-xl text-bold')}>{contentTitle}</span>
                             <br />
-                            <span className={!isFlashyShape ? prefixClasses('color-weak') : undefined}>
-                                {c('Info').t`Your files will be encrypted and then saved`}
-                            </span>
+                            <span className={!isFlashyShape ? prefixClasses('color-weak') : undefined}>{subText}</span>
                         </p>
                     ) : (
-                        <p className={clsx(prefixClasses('m0'), !isFlashyShape && prefixClasses('color-weak'))}>
-                            {c('Info').t`Drop file here to upload`}
+                        <p className={clsx(prefixClasses('m-0'), !isFlashyShape && prefixClasses('color-weak'))}>
+                            {subText}
                         </p>
                     )}
                 </div>

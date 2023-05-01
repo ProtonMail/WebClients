@@ -1,7 +1,5 @@
 import { ChangeEvent } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import {
@@ -12,7 +10,6 @@ import {
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
-import clsx from '@proton/utils/clsx';
 
 import { Alert, AttachedFile, Dropzone, Field, FileInput, Label, LearnMore, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
@@ -54,12 +51,7 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
         <>
             {alert}
             <Dropzone onDrop={onDrop} size="small" shape="flashy">
-                <div
-                    className={clsx([
-                        'flex flex-align-items-center flex-justify-center border p-8 rounded-xl',
-                        !!model.failure && 'border-danger',
-                    ])}
-                >
+                <div className="flex flex-align-items-center flex-justify-center border p-4 rounded-xl mb-4">
                     {model.fileAttached ? (
                         <AttachedFile
                             file={model.fileAttached}
