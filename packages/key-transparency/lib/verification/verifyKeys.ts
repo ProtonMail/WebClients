@@ -1,4 +1,4 @@
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
@@ -115,14 +115,11 @@ export const checkKeysInSKL = async (importedKeysWithFlags: KeyWithFlags[], sklD
 };
 
 export const verifySKLSignature = async (
-    keys: KeyWithFlags[],
+    verificationKeys: PublicKeyReference[],
     signedKeyListData: string,
     signedKeyListSignature: string,
     context: string
 ): Promise<Date | null> => {
-    const verificationKeys = keys
-        .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
-        .map(({ PublicKey }) => PublicKey);
     const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
         armoredSignature: signedKeyListSignature,
         verificationKeys,
@@ -170,8 +167,12 @@ export const verifyPublicKeys = async (
     if (Data && Signature) {
         const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
 
+        const verificationKeys = importedKeysWithFlags
+            .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
+            .map(({ PublicKey }) => PublicKey);
+
         // Verify signature
-        const verified = await verifySKLSignature(importedKeysWithFlags, Data, Signature, 'verifyPublicKeys');
+        const verified = await verifySKLSignature(verificationKeys, Data, Signature, 'verifyPublicKeys');
 
         if (!verified) {
             return KT_STATUS.KT_FAILED;
