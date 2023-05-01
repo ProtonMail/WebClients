@@ -27,7 +27,6 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
-import useHolidaysDirectory from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
@@ -65,6 +64,7 @@ import {
     CalendarUrlsResponse,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
+    HolidaysDirectoryCalendar,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -96,6 +96,7 @@ type ModalsMap = {
 export interface CalendarSidebarListItemsProps {
     calendars: VisualCalendar[] | SubscribedCalendar[];
     allCalendars: VisualCalendar[];
+    holidaysDirectory?: HolidaysDirectoryCalendar[];
     loadingVisibility?: boolean;
     loadingSubscriptionParameters?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
@@ -105,6 +106,7 @@ export interface CalendarSidebarListItemsProps {
 const CalendarSidebarListItems = ({
     calendars,
     allCalendars,
+    holidaysDirectory,
     loadingVisibility = false,
     loadingSubscriptionParameters = false,
     onChangeVisibility = noop,
@@ -119,7 +121,6 @@ const CalendarSidebarListItems = ({
 
     const [loadingFetchMemberAndInvitations, withLoadingFetchMemberAndInvitations] = useLoading();
     const [loadingLinks, withLoadingLinks] = useLoading();
-    const [holidaysDirectory] = useHolidaysDirectory();
 
     const [importModalCalendar, setImportModalCalendar] = useState<Nullable<VisualCalendar>>(null);
     const [calendarModalCalendar, setCalendarModalCalendar] = useState<Nullable<VisualCalendar>>(null);
