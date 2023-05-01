@@ -14,7 +14,7 @@ import { useApi, useLoading, useNotifications } from '@proton/components/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
-import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarWritable, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import {
     CalendarBootstrap,
@@ -47,7 +47,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const [loadingSavePartDayNotifications, withLoadingSavePartDayNotifications] = useLoading();
     const [loadingSaveFullDayNotifications, withLoadingSaveFullDayNotifications] = useLoading();
 
-    const showDuration = getIsCalendarWritable(calendar);
+    const showDuration = getIsCalendarWritable(calendar) && getIsOwnedCalendar(calendar);
     const cannotEdit = !canEdit;
 
     const displaySuccessNotification = () => {
