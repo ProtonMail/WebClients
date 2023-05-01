@@ -1,7 +1,5 @@
 import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -299,7 +297,7 @@ const FilterConditionsRow = ({
                                 className={classnames([isNarrow ? 'mt1' : 'ml1'])}
                                 icon
                             >
-                                <Icon name="trash" className="color-danger" />
+                                <Icon name="trash" className="color-danger" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
                     </div>
