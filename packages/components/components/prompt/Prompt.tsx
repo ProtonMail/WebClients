@@ -49,9 +49,11 @@ const Prompt = ({
         const [firstAction, secondAction] = actionsArray.map((child) => cloneElement(child as ReactElement));
 
         return (
-            <div className="flex flex-column flex-gap-0-5">
-                {firstAction}
-                {secondAction}
+            <div className="prompt-actions">
+                <div className="flex flex-column flex-gap-0-5">
+                    {firstAction}
+                    {secondAction}
+                </div>
             </div>
         );
     })();
@@ -63,7 +65,7 @@ const Prompt = ({
                 {subline && <div className="color-weak text-break">{subline}</div>}
             </div>
             <ModalTwoContent {...ModalContentProps}>{children}</ModalTwoContent>
-            <div className="prompt-actions">{actionsContent}</div>
+            {actionsContent}
             <ModalTwoFooter className="prompt-footer">
                 <div className={clsx('flex flex-gap-0-5', footnote && 'pb-2')}>
                     {firstButton}
