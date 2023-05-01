@@ -38,29 +38,25 @@ export const bootstrapInitialEpoch = async (
         });
         throw new Error('Bootstrapping failed');
     }
-
     const [oldestSKL] = newSKLs;
     const { MinEpochID } = oldestSKL;
-
-    const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
-        textData: inputSKL.Data,
-        armoredSignature: inputSKL.Signature,
-        verificationKeys,
-    });
-
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
-        ktSentryReport('The current SKL fails signature verification', {
-            context: 'bootstrapInitialEpoch',
-            errors: JSON.stringify(errors),
-            email,
-        });
-        throw new Error('Bootstrapping failed');
-    }
-
     if (MinEpochID === null) {
         if (!checkSKLEquality(inputSKL, oldestSKL)) {
             ktSentryReport('The oldest new SKL has null MinEpochID but is different from the current SKL', {
                 context: 'bootstrapInitialEpoch',
+                email,
+            });
+            throw new Error('Bootstrapping failed');
+        }
+        const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
+            textData: inputSKL.Data,
+            armoredSignature: inputSKL.Signature,
+            verificationKeys,
+        });
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
+            ktSentryReport('The current SKL fails signature verification', {
+                context: 'bootstrapInitialEpoch',
+                errors: JSON.stringify(errors),
                 email,
             });
             throw new Error('Bootstrapping failed');
@@ -93,7 +89,7 @@ export const bootstrapInitialEpoch = async (
     const initialEpoch: VerifiedEpoch = {
         EpochID: MinEpochID,
         Revision,
-        SKLCreationTime: +signatureTimestamp,
+        SKLCreationTime: 0,
     };
 
     return { initialEpoch, newSKLs };
@@ -283,7 +279,7 @@ export const auditAddresses = async (
                   lastSKLTimestamp: Date | undefined;
               }
             | undefined;
-
+        let previousSKLCreationTime = initialEpoch.SKLCreationTime;
         for (let index = 0; index < newSKLs.length; index++) {
             const skl = newSKLs[index];
 
@@ -312,6 +308,15 @@ export const auditAddresses = async (
                     break;
                 }
 
+                if (+timestamp < previousSKLCreationTime) {
+                    ktSentryReport('SKL creation time is decreasing', {
+                        context: 'auditAddresses',
+                        addressID,
+                    });
+                    errorFlag = true;
+                    break;
+                }
+                previousSKLCreationTime = +timestamp;
                 signatureTimestamp = timestamp;
             }
 
