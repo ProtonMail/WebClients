@@ -1,10 +1,9 @@
 import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import getPaginatedEvents from '../getPaginatedEvents';
 import { CalendarEventsCache } from '../interface';
-import upsertCalendarApiEvent from './upsertCalendarApiEvent';
+import upsertCalendarApiEventWithoutBlob from './upsertCalendarApiEventWithoutBlobs';
 
 const getIsContained = (range: [Date, Date], otherRange: [Date, Date]) => {
     return otherRange && +otherRange[1] >= +range[1] && +otherRange[0] <= +range[0];
@@ -24,7 +23,6 @@ export const fetchCalendarEvents = (
     api: Api,
     calendarID: string,
     tzid: string,
-    getOpenedMailEvents: () => OpenedMailEvent[],
     noFetch: boolean
 ) => {
     const existingFetch = getExistingFetch(dateRange, calendarEventsCache);
@@ -36,7 +34,7 @@ export const fetchCalendarEvents = (
         const getEventsPromise = noFetch
             ? Promise.resolve([])
             : getPaginatedEvents(api, calendarID, dateRange, tzid, (Event) =>
-                  upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents)
+                  upsertCalendarApiEventWithoutBlob(Event, calendarEventsCache)
               );
         const promise = getEventsPromise
             .then(() => {

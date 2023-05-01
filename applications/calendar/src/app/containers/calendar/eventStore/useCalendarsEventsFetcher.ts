@@ -4,7 +4,6 @@ import { useApi } from '@proton/components';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { fetchCalendarEvents } from './cache/fetchCalendarEvents';
 import getCalendarEventsCache from './cache/getCalendarEventsCache';
 import { CalendarsEventsCache } from './interface';
@@ -14,7 +13,6 @@ const useCalendarsEventsFetcher = (
     utcDateRange: [Date, Date],
     tzid: string,
     cacheRef: MutableRefObject<CalendarsEventsCache>,
-    getOpenedMailEvents: () => OpenedMailEvent[],
     initializeCacheOnlyCalendarsIDs: string[],
     onCacheInitialized: () => void
 ) => {
@@ -35,7 +33,6 @@ const useCalendarsEventsFetcher = (
                     api,
                     CalendarID,
                     tzid,
-                    getOpenedMailEvents,
                     initializeCacheOnlyCalendarsIDs.includes(CalendarID)
                 );
             })
