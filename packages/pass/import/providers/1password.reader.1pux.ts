@@ -82,7 +82,7 @@ const processNoteItem = (
     return {
         type: 'note',
         metadata: {
-            name: item.overview.title,
+            name: item.overview.title || 'Unnamed note',
             note: note,
             itemUuid: uniqid(),
         },
@@ -120,7 +120,7 @@ const processLoginItem = (
     return {
         type: 'login',
         metadata: {
-            name: item.overview.title,
+            name: item.overview.title || 'Unnamed item',
             note: note,
             itemUuid: uniqid(),
         },
@@ -149,7 +149,7 @@ const processPasswordItem = (
     return {
         type: 'login',
         metadata: {
-            name: item.overview.title,
+            name: item.overview.title || 'Unnamed item',
             note: note,
             itemUuid: uniqid(),
         },
