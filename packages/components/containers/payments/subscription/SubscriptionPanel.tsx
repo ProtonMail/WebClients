@@ -350,7 +350,7 @@ const SubscriptionPanel = ({
                     className="h3 color-weak"
                     currency={currency}
                     suffix={subscription && amount ? c('Suffix').t`/month` : ''}
-                    dataTestId="plan-price"
+                    data-testid="plan-price"
                 >
                     {amount}
                 </Price>
