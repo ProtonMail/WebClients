@@ -1,4 +1,4 @@
-import { PAYMENT_METHOD_TYPES } from '../constants';
+import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '../constants';
 
 export interface PaymentMethodStatus {
     Card: boolean;
@@ -69,3 +69,22 @@ export type PaymentMethod = PaymentMethodPaypal | PaymentMethodCardDetails;
 export interface LatestSubscription {
     LastSubscriptionEnd: number;
 }
+
+export function methodMatches(
+    method: PaymentMethodType | undefined,
+    methods: PlainPaymentMethodType[]
+): method is PlainPaymentMethodType {
+    if (!method) {
+        return false;
+    }
+
+    return (methods as string[]).includes(method);
+}
+
+export type ExistingPaymentMethod = string;
+
+export function isExistingPaymentMethod(paymentMethod: PaymentMethodType): paymentMethod is ExistingPaymentMethod {
+    return typeof paymentMethod === 'string' && !methodMatches(paymentMethod, Object.values(PAYMENT_METHOD_TYPES));
+}
+
+export type PaymentMethodType = PlainPaymentMethodType | ExistingPaymentMethod;

@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { Currency, PaymentMethodType } from '@proton/shared/lib/interfaces';
 
 import { Field, Row } from '../../components';
 import PaymentSelector from './PaymentSelector';
 
 interface Props {
-    method?: PAYMENT_METHOD_TYPE;
+    method?: PaymentMethodType;
     amount: number;
     onChangeAmount: (value: number) => void;
     currency?: Currency;
