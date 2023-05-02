@@ -7,9 +7,9 @@ import AuthenticationProvider, {
 import { CacheProvider } from '@proton/components/containers/cache';
 import { ConfigProvider } from '@proton/components/containers/config';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
-import { FeaturesProvider } from '@proton/components/containers/features';
+import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
-import { NotificationsProvider } from '@proton/components/containers/notifications';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
