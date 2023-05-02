@@ -3,7 +3,15 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    BRAND_NAME,
+    MAIL_UPSELL_PATHS,
+    PLANS,
+    PLAN_NAMES,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { DomainsModel } from '@proton/shared/lib/models';
@@ -172,10 +180,18 @@ const DomainsSectionInternal = () => {
 const DomainsSectionUpgrade = () => {
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
+
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: MAIL_UPSELL_PATHS.DOMAIN_NAMES,
+        isSettings: true,
+    });
+
     return (
         <SettingsSectionWide>
             <DomainsSectionText />
-            <UpgradeBanner upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.DOMAIN_NAMES}`}>
+            <UpgradeBanner upsellPath={upsellRef}>
                 {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
             </UpgradeBanner>
         </SettingsSectionWide>

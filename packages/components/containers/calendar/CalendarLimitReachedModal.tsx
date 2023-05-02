@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
+import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import { SettingsLink } from '../../components/link';
 import { Prompt } from '../../components/prompt';
@@ -14,7 +16,13 @@ interface Props {
 }
 const CalendarLimitReachedModal = ({ open, onClose, isFreeUser }: Props) => {
     const { maxReachedText, addNewCalendarText } = getCalendarsLimitReachedText(isFreeUser);
-    const submitButtonPath = isFreeUser ? '/upgrade' : getCalendarsSettingsPath();
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: CALENDAR_UPSELL_PATHS.MAX_CAL,
+    });
+    const upgradeLink = addUpsellPath('/upgrade', upsellRef);
+    const submitButtonPath = isFreeUser ? upgradeLink : getCalendarsSettingsPath();
     const submitButtonText = isFreeUser ? c('Modal action').t`Upgrade` : c('Modal action').t`Manage calendars`;
 
     return (
