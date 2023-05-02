@@ -1338,6 +1338,9 @@
       "Other": [
         "Outro"
       ],
+      "Pass problem": [
+        "Problema no Pass"
+      ],
       "Payments problem": [
         "Problema com pagamento"
       ],
@@ -5331,7 +5334,7 @@
         "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Este e-mail falhou nos requisitos de autenticação de domínio. Ele pode ser falsificado ou encaminhado incorretamente."
+        "Este e-mail falhou nos requisitos de autenticação de domínio. Pode ser falsificado ou encaminhado indevidamente."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Este convite está salvo em um calendário desativado."
@@ -5415,6 +5418,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente seus contatos, precisamos comparar todos os contatos com a lista de chaves criptográficas disponíveis em sua conta. Se nenhuma correspondência for encontrada, seu contato será assinado novamente com a chave de criptografia principal."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Para recuperar seus dados, você precisa reativar a chave da conta utilizada quando os dados foram criados. Isso exigirá que você lembre a senha utilizada quando a chave foi gerada."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para cancelar a inscrição desta lista de e-mail, um e-mail será enviado de ${ boldFrom } com os seguintes detalhes definidos pelo remetente da newsletter:"
       ],
@@ -5455,10 +5461,10 @@
         "Atualize para adicionar mais endereços à sua conta."
       ],
       "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Atualize para excluir automaticamente as mensagens que estão em spam por mais de 30 dias."
+        "Faça upgrade para excluir automaticamente as mensagens que estão em spam por mais de 30 dias."
       ],
       "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Atualize para excluir automaticamente as mensagens que estão na lixeira há mais de 30 dias."
+        "Faça upgrade para excluir automaticamente as mensagens que estão na lixeira há mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Atualize para criar mais pastas, filtros e endereços."
@@ -5467,13 +5473,13 @@
         "Faça upgrade para aumentar o nível de sua privacidade."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Atualize para enviar email de endereços @pm.me"
+        "Faça upgrade para enviar email de endereços @pm.me"
       ],
       "Upgrade to send emails from your custom email domain.": [
         "Faça upgrade para enviar e-mails de seu domínio de e-mail personalizado."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Atualize para enviar e-mails para grupos de contato com facilidade."
+        "Faça upgrade para enviar e-mails para grupos de contato com facilidade."
       ],
       "Upgrade to support a privacy-first internet.": [
         "Atualize para oferecer suporte a uma Internet que prioriza a privacidade."
@@ -5485,7 +5491,7 @@
         "Atualize para oferecer suporte à privacidade e obter mais recursos."
       ],
       "Upgrade to unlock premium features.": [
-        "Desbloquear funcionalidades premium."
+        "Faça upgrade para desbloquear recursos premium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Faça upgrade para usar ${ MAIL_APP_NAME } com Apple Mail, Outlook ou Thunderbird."

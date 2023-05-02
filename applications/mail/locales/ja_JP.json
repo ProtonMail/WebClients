@@ -1226,6 +1226,9 @@
     "Animation": {
       "Encrypted": [
         "暗号化済み"
+      ],
+      "New email": [
+        "新しいメール"
       ]
     },
     "Apps dropdown": {
@@ -2821,6 +2824,9 @@
       "No labels": [
         "ラベルがありません"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail ロゴとプラスマーク"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
@@ -2987,6 +2993,9 @@
     "Error": {
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
+      ],
+      "A problem occurred, please try again.": [
+        "問題が発生しました。もう一度お試しください。"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -3329,6 +3338,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "10 件以上の連絡先の vCard ファイルを送信することはできません"
       ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "同時に ${ maxActiveComposer } つ以上の作成画面を開くことはできません"
@@ -3754,6 +3766,11 @@
       ],
       "Unread": [
         "未読"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "添付ファイルあり"
       ]
     },
     "Filter preview": {
@@ -4404,6 +4421,12 @@
       ],
       "Attention required": [
         "注意が必要です"
+      ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "30 日以上迷惑メールフォルダーに入っているメッセージを自動で削除します。"
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "30 日以上ごみ箱に入っているメッセージを自動で削除します。"
       ],
       "Background color": [
         "背景色"
@@ -6656,6 +6679,9 @@
       ]
     },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "迷惑メールとごみ箱のメッセージを自動削除"
+      ],
       "Custom email domains": [
         "独自メールドメイン"
       ],
@@ -6679,6 +6705,9 @@
       ]
     },
     "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
@@ -7673,8 +7702,14 @@
       "Create folder": [
         "フォルダーを作成"
       ],
+      "Create folder \"${ search }\"": [
+        "「${ search }」というフォルダーを作成"
+      ],
       "Create label": [
         "ラベルを作成"
+      ],
+      "Create label \"${ search }\"": [
+        "「${ search }」というラベルを作成"
       ],
       "Create new group": [
         "新しいグループを作成"

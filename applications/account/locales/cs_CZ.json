@@ -1167,6 +1167,9 @@
       "Other": [
         "Ostatní"
       ],
+      "Pass problem": [
+        "Problém s aplikací Pass"
+      ],
       "Payments problem": [
         "Problém s platbami"
       ],
@@ -4661,6 +4664,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Získejte přístup ke svým heslům a chraňte svou online identitu bez problémů na všech svých zařízeních. Stáhněte si a nainstalujte příslušné aplikace a rozšíření ${ PASS_APP_NAME }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
       ],
@@ -5413,6 +5419,9 @@
       ],
       "New": [
         "Nový"
+      ],
+      "No account keys exist": [
+        "Neexistují žádné klíče k účtu"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Není nastavena žádná metoda obnovení účtu; riskujete ztrátu přístupu k Vašemu účtu"
@@ -6699,11 +6708,11 @@
       "Enable signature verification and encryption with this key": [
         "Povolit ověření podpisu a šifrování tímto klíčem"
       ],
-      "Export": [
-        "Exportovat"
-      ],
       "Export private key": [
         "Exportovat soukromý klíč"
+      ],
+      "Export public key": [
+        "Exportovat veřejný klíč"
       ],
       "Make primary": [
         "Nastavit jako výchozí"
@@ -7724,6 +7733,9 @@
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
+      "Apps and extensions": [
+        "Aplikace a rozšíření"
+      ],
       "Calendars": [
         "Kalendáře"
       ],
@@ -8276,6 +8288,18 @@
         "${ n } složek a štítků",
         "${ n } složek a štítků"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } přeposílání poštovní schránky",
+        "${ n } přeposílání poštovních schránek",
+        "${ n } přeposílání poštovních schránek",
+        "${ n } přeposílání poštovních schránek"
+      ],
+      "${ n } Hide My Email alias": [
+        "Skrýt ${ n } alias mého e-mailu",
+        "Skrýt ${ n } aliasy mého e-mailu",
+        "Skrýt ${ n } aliasů mého e-mailu",
+        "Skrýt ${ n } aliasů mého e-mailu"
+      ],
       "${ n } label": [
         "${ n } štítek",
         "${ n } štítky",
@@ -8287,6 +8311,12 @@
         "${ n } zprávy denně",
         "${ n } zpráv denně",
         "${ n } zpráv denně"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezory",
+        "${ n } trezorů",
+        "${ n } trezorů"
       ],
       "${ n } VPN connection": [
         "${ n } připojení VPN",
@@ -8345,8 +8375,20 @@
       "Contact groups management": [
         "Správa skupin kontaktů"
       ],
+      "Custom domain for email aliases": [
+        "Vlastní doména pro e-mailové aliasy"
+      ],
+      "Custom domains for email aliases": [
+        "Vlastní domény pro e-mailové aliasy"
+      ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
+      ],
+      "Data breach monitoring": [
+        "Monitorování narušení bezpečnosti dat"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitorování narušení bezpečnosti dat (již brzy)"
       ],
       "DNS leak prevention": [
         "Prevence úniků DNS"
@@ -8390,6 +8432,9 @@
       "HTML signatures": [
         "HTML podpisy"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrovaný ověřovací modul 2FA"
+      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/trvalá síť VPN"
       ],
@@ -8398,6 +8443,9 @@
       ],
       "Multiple admin roles": [
         "Více rolí správce"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Vícenásobné přesměrování poštovních schránek"
       ],
       "NetShield malware and ad-blocker": [
         "Blokování reklam a malware NetShield"
@@ -8444,6 +8492,9 @@
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
       ],
+      "Strong E2E encryption": [
+        "Silné E2E šifrování"
+      ],
       "Team management": [
         "Řízení týmu"
       ],
@@ -8452,6 +8503,9 @@
       ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
+      ],
+      "Unlimited devices": [
+        "Neomezený počet zařízení"
       ],
       "Unlimited filters": [
         "Neomezeně filtrů"
@@ -8462,11 +8516,20 @@
       "Unlimited folders, labels, and filters": [
         "Neomezený počet složek, štítků a filtrů"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Neomezené skrytí aliasů mého e-mailu"
+      ],
       "Unlimited labels": [
         "Neomezeně štítků"
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
+      ],
+      "Unlimited passwords and notes": [
+        "Neomezený počet hesel a poznámek"
+      ],
+      "Unlimited vaults": [
+        "Neomezené trezory"
       ],
       "Unlimited volume/bandwidth": [
         "Neomezená šířka pásma"
@@ -8491,6 +8554,12 @@
       ],
       "User session management": [
         "Správa uživatelských relací"
+      ],
+      "Vault and Item sharing": [
+        "Sdílení trezoru a položek"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Sdílení trezoru a položek (již brzy)"
       ],
       "Worldwide streaming services": [
         "Celosvětové streamovací služby"
@@ -8540,6 +8609,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
       ],
+      "For next-level password management and identity protection.": [
+        "Pro správu hesel a ochranu identit na další úrovni."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Pokud svůj účet odstraníte, ztratíte všechny výhody tarifu ${ visionary } a při vytvoření nového účtu nebudou k dispozici."
       ],
@@ -8559,7 +8631,7 @@
         "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb ${ BRAND_NAME }."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Chraňte soukromí své rodiny pomocí všech kombinovaných služeb ${ BRAND_NAME }."
+        "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME } zároveň."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
@@ -8716,7 +8788,7 @@
         "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Vytvořte až ${ n } e-mailových adres/aliasů pro celou rodinu. Použijte je pro vaše online identity, např. MojeRodinnePredplatne@${ domain } pro online předplatná."
+        "Vytvořte až ${ n } e-mailových adres/aliasů pro celou rodinu. Použijte je pro vaše online identity, např. MojeRodinnePredplatne@${ domain } pro online předplatné."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
@@ -8743,13 +8815,16 @@
         "IMAP podpora je omezená na využití v desktop aplikacích (např. Outlook, Apple Mail, Thunderbird) přes ${ MAIL_APP_NAME } Most. Kloudové IMAP integrace momentálně nejsou podporovány."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Mějte své plány v soukromí pro sebe a svou rodinu pomocí šifrovaného kalendáře"
+        "Pomocí šifrovaného kalendáře uchovejte své plány v soukromí pouze pro sebe a svou rodinu"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Chrání vás blokováním všech síťových připojení, když se náhodou odpojíte od našeho VPN serveru."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Stejně jako složka je i trezor praktickým způsobem organizace položek. Sdílení trezorů s přáteli a rodinou se připravuje."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Spravujte své předplatné a parametry služby. Podporované platební možnosti jsou kreditní karta, PayPal, kryptoměna a nebo bankovní převod."
@@ -8834,6 +8909,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Jedinečné e-mailové adresy, které chrání vaši online identitu a umožňují vám kontrolovat, co vám přijde do schránky. Od SimpleLogin by ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
@@ -10376,6 +10454,9 @@
       "Account and password": [
         "Účet a heslo"
       ],
+      "Account keys": [
+        "Klíče účtu"
+      ],
       "Account recovery": [
         "Obnovení účtu"
       ],
@@ -11455,6 +11536,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Upgradujte na ${ passPlusPlanName } a získejte neomezený počet Skrýt můj e-mail"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
         "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
@@ -11533,6 +11617,17 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {
