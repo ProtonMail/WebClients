@@ -745,6 +745,9 @@
       "Other": [
         "Diğer"
       ],
+      "Pass problem": [
+        "Parola sorunu"
+      ],
       "Payments problem": [
         "Ödeme sorunu"
       ],
@@ -2148,7 +2151,7 @@
         "Kimlik doğrulaması iptal edildi."
       ],
       "Authentication error.": [
-        "Kimlik doğrulama hatası."
+        "Kimlik doğrulama sorunu."
       ],
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
@@ -2419,10 +2422,10 @@
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Bilinmeyen sorun"
       ],
       "Validation error": [
-        "Doğrulama hatası"
+        "Doğrulama sorunu"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
@@ -2684,7 +2687,7 @@
         "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
       ],
       "Unexpected error": [
-        "Beklenmeyen hata"
+        "Beklenmeyen sorun"
       ],
       "Unsupported invitation": [
         "Davet desteklenmiyor"
@@ -3626,6 +3629,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
@@ -5864,7 +5870,7 @@
         "Doğrulama atlansın mı?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Birleştirilecek kişilerden bazılarında hatalar görüntüleniyor. Lütfen bunları ayrı ayrı inceleyin"
+        "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kişi verileri bozulmuş olduğundan görüntülenemiyor."

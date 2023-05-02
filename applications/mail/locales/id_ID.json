@@ -1333,6 +1333,9 @@
       "Other": [
         "Lainnya"
       ],
+      "Pass problem": [
+        "Masalah Pass"
+      ],
       "Payments problem": [
         "Masalah pembayaran"
       ],
@@ -2854,6 +2857,9 @@
       "No labels": [
         "Tidak ada label"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail dan tanda plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
@@ -3427,13 +3433,13 @@
         "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terjadi kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
@@ -3464,16 +3470,16 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
+        "Terdapat kesalahan pada saat membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename } Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename } milik Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
@@ -3929,6 +3935,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Teruskan secara otomatis"
+      ],
+      "Gmail messages to your inbox": [
+        "Pesan Gmail ke kotak masuk Anda"
+      ],
       "Sign in with Google": [
         "Masuk dengan Google"
       ]
@@ -4005,13 +4017,13 @@
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
+        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Terjadi kesalahan saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
+        "Terdapat kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
@@ -4056,13 +4068,13 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
+        "Terdapat kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontak berhasil diimpor. Kontak yang diimpor akan muncul pada daftar kontak Anda."
@@ -5312,6 +5324,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Untuk menandatangani ulang kontak Anda, kami perlu memeriksa setiap kontak dengan daftar kunci enkripsi yang tersedia di akun Anda. Jika tidak ada yang cocok, kontak Anda akan ditandatangani ulang dengan kunci enkripsi utama."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Untuk memulihkan data, Anda perlu mengaktifkan ulang kunci akun yang digunakan saat data dibuat. Ini membutuhkan Anda mengingat kata sandi yang digunakan saat kuncinya dibuat."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Untuk berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang diterakan oleh pengelola milis:"
@@ -7215,7 +7230,7 @@
         "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access"
       ],
       "Stored with zero-access encryption": [
-        "Disimpan dengan enkripsi zero access"
+        "Disimpan dengan enkripsi zero-access"
       ]
     },
     "Refresh on apply warning": {
@@ -7332,7 +7347,7 @@
         "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipients": [
-        "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access untuk penerima yang telah terverifikasi"
+        "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access kepada penerima yang terverifikasi"
       ],
       "Sent by you with end-to-end encryption": [
         "Dikirim oleh Anda dengan enkripsi ujung ke ujung"
@@ -7341,7 +7356,7 @@
         "Dikirim oleh Anda dengan enkripsi ujung ke ujung untuk penerima terverifikasi"
       ],
       "Stored with zero-access encryption": [
-        "Disimpan dengan enkripsi zero access"
+        "Disimpan dengan enkripsi zero-access"
       ]
     },
     "Side panel spotlight": {

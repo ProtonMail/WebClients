@@ -33,6 +33,9 @@
       "activate": [
         "激活"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "激活 ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "激活机构密钥"
       ],
@@ -927,6 +930,9 @@
       ],
       "Saving": [
         "正在保存"
+      ],
+      "Set as default": [
+        "设为默认"
       ]
     },
     "Address status": {
@@ -960,6 +966,26 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "正在使用此证书的所有路由器和客户端都将断开连接。"
+      ]
+    },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件箱"
+      ],
+      "5 trackers removed": [
+        "已移除 5 个跟踪器"
+      ],
+      "Auto forwarded": [
+        "已自动转发"
+      ],
+      "Email received": [
+        "收到邮件"
+      ],
+      "Encrypted": [
+        "已加密"
+      ],
+      "New email": [
+        "新邮件"
       ]
     },
     "Apps dropdown": {
@@ -2972,10 +2998,10 @@
         "请先设置密保/通知邮箱"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "请升级到包含多个用户的商务版套餐以获得多用户支持"
+        "请先升级为支持多用户的商务账户"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "请升级到包含多个用户的商务版套餐以管理多用户。"
+        "请升级为支持多用户的商务账户后再执行用户管理操作。"
       ],
       "Port is required": [
         "端口号必须填写"
@@ -3685,7 +3711,7 @@
         "邮件被 ${ BRAND_NAME } 识别或被您手动标记为垃圾邮件后，来自其发件人的后续邮件都将被归为垃圾邮件。如需正常接收其邮件，请将对应发件人地址标为非垃圾邮件。"
       ],
       "Emails from blocked addresses won't be delivered.": [
-        "您将不会收到来自屏蔽邮箱地址的邮件"
+        "已屏蔽的邮箱发来的邮件将被直接删除，不会投递。"
       ],
       "Search list": [
         "搜索名单"
@@ -3710,6 +3736,17 @@
       ],
       "(1-2 emails per month)": [
         "（每月 1 至 2 封邮件）"
+      ],
+      "(during your first month)": [
+        "（账户注册首月）"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自动转发"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 邮件到您的邮箱"
       ]
     },
     "Go to sign in": {
@@ -4730,6 +4767,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、万事达卡和发现卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
+      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -4792,6 +4832,9 @@
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "如果您忘记了账号或密码，${ boldAccountAndRecovery }是找回账户和数据的${ boldImperative }，若不事先设置，届时您很可能失去所有的邮件、文件和联系人信息。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -4990,6 +5033,9 @@
       ],
       "No folder selected": [
         "未选择文件夹"
+      ],
+      "No imports or forwarding history.": [
+        "暂无邮件导入与自动转发记录。"
       ],
       "No label selected": [
         "未选择标签"
@@ -5209,6 +5255,9 @@
       ],
       "Select what you want to import.": [
         "选择需要导入的内容。"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -6144,9 +6193,6 @@
       "Enable signature verification and encryption with this key": [
         "允许使用此密钥加密及验证数字签名"
       ],
-      "Export": [
-        "导出"
-      ],
       "Export private key": [
         "导出私钥"
       ],
@@ -7064,6 +7110,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } 产品公告"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } 欢迎信"
       ]
     },
     "Label in domain modal": {
@@ -7962,7 +8011,7 @@
         "切换计划？"
       ],
       "Unlock premium features by upgrading": [
-        "升级账户可解锁更多高级功能"
+        "升级账户即可解锁更多高级功能"
       ]
     },
     "new_plans: tooltip": {
@@ -7989,6 +8038,12 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain } 用于收取时事新闻"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "为全家创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 dingyue@${ domain } 用于订阅在线刊物。"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "通过多台服务器中转流量，增强 VPN 安全性"
@@ -8113,7 +8168,7 @@
         "开通 ${ plus }、${ bundle } 或 ${ BRAND_NAME } 企业版即可使用此功能。"
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
-        "包含在所有 ${ BRAND_NAME } 的商务版套餐中。"
+        "所有 ${ BRAND_NAME } 商务账户等级均包含此功能。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8137,6 +8192,9 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 个自有域名更显游刃有余"
+      ],
+      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
+        "创建多达 ${ MAX_CALENDARS_PAID } 份日历"
       ],
       "Everything in ${ vpnPlanName }": [
         "包含 ${ vpnPlanName } 所有功能"
@@ -8436,7 +8494,7 @@
         "10 秒"
       ],
       "20 seconds": [
-        "20秒"
+        "20 秒"
       ],
       "5 seconds": [
         "5 秒"
@@ -8845,6 +8903,9 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "使用我们的安全导入与转发工具即可迈出捍卫隐私的第一步。"
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "一封邮件可以有多个标签，但通常只能位于一个文件夹中。文件夹和标签的顺序可以在下方通过拖动调整。"
       ]
@@ -9816,6 +9877,9 @@
       "Gift code": [
         "礼品码"
       ],
+      "History": [
+        "历史记录"
+      ],
       "How does it work?": [
         "如何操作？"
       ],
@@ -9848,6 +9912,9 @@
       ],
       "Import key": [
         "导入密钥"
+      ],
+      "Import messages": [
+        "导入邮件"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
@@ -10055,6 +10122,9 @@
       ],
       "Set organization password": [
         "设定机构密码"
+      ],
+      "Set up forwarding": [
+        "设置邮件自动转发"
       ],
       "Set up two-factor authentication": [
         "设置双重验证"
@@ -10352,7 +10422,7 @@
         "调整邮件列表的显示方式。"
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "设置编辑窗的默认尺寸（常规或全屏）。"
+        "设置编辑窗的默认尺寸（常规或满屏）。"
       ],
       "Set the default layout for your Inbox.": [
         "设置您收件箱的默认布局。"

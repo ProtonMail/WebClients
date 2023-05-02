@@ -20,7 +20,7 @@
         "Ograniczony odczyt"
       ],
       "Limited view (see only free/busy)": [
-        "Ograniczony odczyt (informacja o stanie wolny/zajęty)"
+        "Ograniczony odczyt (informacja o stanie wolny / zajęty)"
       ]
     },
     "account": {
@@ -1166,6 +1166,9 @@
       ],
       "Other": [
         "Inna"
+      ],
+      "Pass problem": [
+        "Problem z menadżerem haseł"
       ],
       "Payments problem": [
         "Problem z płatnościami"
@@ -3432,7 +3435,7 @@
         "Czas w formacie \"floating\" nie jest obsługiwany"
       ],
       "Free-busy time information": [
-        "Kalendarz zawiera informację o stanie wolny/zajęty"
+        "Kalendarz zawiera informację o stanie wolny / zajęty"
       ],
       "Invalid event": [
         "Wydarzenie jest nieprawidłowe"
@@ -4146,6 +4149,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
+      ],
+      "vCard versions < 3.0": [
+        "Plików vCard w wersji starszej niż 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -6180,7 +6186,7 @@
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Możesz używać poczty ${ MAIL_APP_NAME } z każdą desktopową aplikacją, która obsługuje IMAP/SMTP, w tym Outlook, Apple Mail i Thunderbird."
+        "Możesz używać poczty ${ MAIL_APP_NAME } z każdą desktopową aplikacją, która obsługuje IMAP / SMTP, w tym Outlook, Apple Mail i Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
@@ -6696,9 +6702,6 @@
       "Enable signature verification and encryption with this key": [
         "Włącza weryfikację podpisu i szyfrowanie za pomocą tego klucza"
       ],
-      "Export": [
-        "Eksportuj"
-      ],
       "Export private key": [
         "Eksportuj klucz prywatny"
       ],
@@ -7169,7 +7172,7 @@
         "Zapamiętaj mnie"
       ],
       "Keep messages in Sent/Drafts": [
-        "Zachowaj wiadomości w Wysłanych/Szkicach"
+        "Zachowaj wiadomości w Wysłanych / Szkicach"
       ],
       "Key": [
         "Klucz"
@@ -8355,7 +8358,7 @@
         "Asystent importu Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Wsparcie aplikacji pocztowych (przez IMAP/SMTP)"
+        "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
       ],
       "Enables HIPAA compliance": [
         "Zgodność z wymogami HIPAA"
@@ -9676,7 +9679,7 @@
     },
     "Settings/labels": {
       "Labels/Folders": [
-        "Etykiety/Foldery"
+        "Etykiety / Foldery"
       ]
     },
     "Settings/labels - table": {
@@ -10627,6 +10630,9 @@
       ],
       "Account and password": [
         "Konto i hasło"
+      ],
+      "Account keys": [
+        "Klucze konta"
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
@@ -11679,6 +11685,14 @@
         "Automatycznie podpisuj wszystkie wychodzące wiadomości, aby użytkownicy mogli zweryfikować ich autentyczność. Ta operacja jest połączona z ustawieniami domyślnymi PGP, które możesz ustawić poniżej."
       ]
     },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Udostępniono z szyfrowaniem end-to-end"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Udostępniono z szyfrowaniem end-to-end do zweryfikowanego kontaktu"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
@@ -12045,13 +12059,13 @@
         "Co ${ interval } tygodnia w środę, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Co tydzień w ${ multipleDaysString }"
+        "Co tydzień w: ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ timesString }"
+        "Co tydzień w: ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ untilString }"
+        "Co tydzień w: ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Codziennie"
@@ -12128,25 +12142,25 @@
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "Piątek"
+        "piątek"
       ],
       "Monday": [
-        "Poniedziałek"
+        "poniedziałek"
       ],
       "Saturday": [
-        "Sobota"
+        "sobota"
       ],
       "Sunday": [
-        "Niedziela"
+        "niedziela"
       ],
       "Thursday": [
-        "Czwartek"
+        "czwartek"
       ],
       "Tuesday": [
-        "Wtorek"
+        "wtorek"
       ],
       "Wednesday": [
-        "Środa"
+        "środa"
       ]
     },
     "Yearly recurring event, frequency": {

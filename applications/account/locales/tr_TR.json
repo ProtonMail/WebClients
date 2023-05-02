@@ -1163,6 +1163,9 @@
       "Other": [
         "Diğer"
       ],
+      "Pass problem": [
+        "Parola sorunu"
+      ],
       "Payments problem": [
         "Ödeme sorunu"
       ],
@@ -2518,7 +2521,7 @@
     },
     "CSV format error": {
       "Error on row ${ erroredRowsString }.": [
-        "${ erroredRowsString } satırında hata."
+        "${ erroredRowsString } satırda sorun."
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
         "Dosyanızda '${ options.fieldName }' başlığı eksik gibi görünüyor."
@@ -2878,7 +2881,7 @@
         "Kimlik doğrulaması iptal edildi."
       ],
       "Authentication error.": [
-        "Kimlik doğrulama hatası."
+        "Kimlik doğrulama sorunu."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Otomatik yanıt ücretli bir özelliktir. Bu özelliği kullanmak için ücretli bir tarifeye yükseltin."
@@ -3234,7 +3237,7 @@
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Bilinmeyen sorun"
       ],
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
@@ -3246,7 +3249,7 @@
         "Yüklenen dosyalar geçerli kişisel anahtarlar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
       "Validation error": [
-        "Doğrulama hatası"
+        "Doğrulama sorunu"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Doğrulama başarısız oldu. Lütfen bir saat içinde yeniden deneyin."
@@ -3574,7 +3577,7 @@
         "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
       ],
       "Unexpected error": [
-        "Beklenmeyen hata"
+        "Beklenmeyen sorun"
       ],
       "Unsupported invitation": [
         "Davet desteklenmiyor"
@@ -4497,6 +4500,9 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ storage } storage": [
+        "${ storage } depolama alanı"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
       ],
@@ -4559,6 +4565,9 @@
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
+      ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Çevrimiçi olarak parolalarınıza erişin ve kimliklerinizi tüm aygıtlarınızda sorunsuz bir şekilde koruyun. İlgili ${ PASS_APP_NAME } uygulamalarını ve eklentilerini indirip kurun."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
@@ -5299,6 +5308,9 @@
       "New": [
         "Yeni"
       ],
+      "No account keys exist": [
+        "Herhangi bir hesap anahtarı yok"
+      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Bir hesap kurtarma yöntemi ayarlanmamış. Hesabınıza erişimi kaybetme riskiniz var"
       ],
@@ -5394,12 +5406,12 @@
         "Tarifenin yükseltilmesi gerekli"
       ],
       "Please add a password for the user on row": [
-        "Lütfen satırdaki kullanıcı için bir parola yazın",
-        "Lütfen satırlardaki kullanıcılar için parolaları yazın"
+        "Lütfen satırdaki kullanıcının parolasını yazın",
+        "Lütfen satırlardaki kullanıcıların parolalarını yazın"
       ],
       "Please add an email address for the user on row": [
-        "Lütfen satırdaki kullanıcı için bir e-posta adresi yazın",
-        "Lütfen satırlardaki kullanıcılar için e-posta adreslerini yazın"
+        "Lütfen satırdaki kullanıcının e-posta adresini yazın",
+        "Lütfen satırlardaki kullanıcıların e-posta adreslerini yazın"
       ],
       "Please authenticate your card in the verification tab.": [
         "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
@@ -5850,6 +5862,9 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Update recovery file": [
         "Kurtarma dosyasını güncelle"
@@ -6557,11 +6572,11 @@
       "Enable signature verification and encryption with this key": [
         "Bu anahtarla imza doğrulamayı ve şifrelemeyi etkinleştir"
       ],
-      "Export": [
-        "Dışa aktar"
-      ],
       "Export private key": [
         "Kişisel anahtarı dışa aktar"
+      ],
+      "Export public key": [
+        "Herkese açık anahtarı dışa aktar"
       ],
       "Make primary": [
         "Birincil yap"
@@ -7578,6 +7593,9 @@
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
       ],
+      "Apps and extensions": [
+        "Uygulamalar ve eklentiler"
+      ],
       "Calendars": [
         "Takvimler"
       ],
@@ -8062,6 +8080,10 @@
         "${ n } takvim",
         "${ n } takvim"
       ],
+      "${ n } calendar per user": [
+        "Kullanıcı başına ${ n } takvim",
+        "Kullanıcı başına ${ n } takvim"
+      ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",
         "${ n } özel e-posta etki alanı"
@@ -8086,6 +8108,14 @@
         "${ n } klasör ve etiket",
         "${ n } klasör ve etiket"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } iletme e-posta kutusu",
+        "${ n } iletme e-posta kutusu"
+      ],
+      "${ n } Hide My Email alias": [
+        "${ n } e-posta takma adımı gizle",
+        "${ n } e-posta takma adımı gizle"
+      ],
       "${ n } label": [
         "${ n } etiket",
         "${ n } etiket"
@@ -8093,6 +8123,10 @@
       "${ n } message per day": [
         "Her gün ${ n } ileti",
         "Her gün ${ n } ileti"
+      ],
+      "${ n } vault": [
+        "${ n } kasa",
+        "${ n } kasa"
       ],
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
@@ -8147,8 +8181,20 @@
       "Contact groups management": [
         "Kişi grupları yönetimi"
       ],
+      "Custom domain for email aliases": [
+        "E-posta takma adları için özel etki alanı"
+      ],
+      "Custom domains for email aliases": [
+        "E-posta takma adları için özel etki alanları "
+      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Data breach monitoring": [
+        "Veri ihlali izleme"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Veri ihlali izleme (yakında)"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
@@ -8190,6 +8236,9 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
@@ -8198,6 +8247,9 @@
       ],
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Çok sayıda ileti e-posta kutusu"
       ],
       "NetShield malware and ad-blocker": [
         "NetShield zararlı yazılım ve reklam engelleyici"
@@ -8244,6 +8296,9 @@
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
       ],
+      "Strong E2E encryption": [
+        "Güçlü uçtan uca şifreleme"
+      ],
       "Team management": [
         "Ekip yönetimi"
       ],
@@ -8252,6 +8307,9 @@
       ],
       "Two-factor authentication": [
         "İki aşamalı doğrulama"
+      ],
+      "Unlimited devices": [
+        "Sınırsız sayıda aygıt"
       ],
       "Unlimited filters": [
         "Sınırsız süzgeç"
@@ -8262,14 +8320,29 @@
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Sınırsız sayıda e-postamı gizle takma adı"
+      ],
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız ileti"
       ],
+      "Unlimited passwords and notes": [
+        "Sınırsız sayıda parola ve not"
+      ],
+      "Unlimited vaults": [
+        "Sınırsız kasa"
+      ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
+      ],
+      "Up to ${ n } users": [
+        "En fazla ${ n } kullanıcı"
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
@@ -8285,6 +8358,12 @@
       ],
       "User session management": [
         "Kullanıcı oturumları yönetimi"
+      ],
+      "Vault and Item sharing": [
+        "Kasa ve öge paylaşımı"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Kasa ve öge paylaşımı (yakında)"
       ],
       "Worldwide streaming services": [
         "Tüm dünyadaki yayın akışı hizmetleri"
@@ -8334,6 +8413,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
+      "For next-level password management and identity protection.": [
+        "Gelecek nesil parola yönetimi ve kimlik koruması için."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hesabınızı silerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
       ],
@@ -8351,6 +8433,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için gizlilik ve güvenlik paketi."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolaması."
@@ -8502,6 +8587,9 @@
         "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
         "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Tüm aile için ${ n } taneye kadar e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrimiçi kimlikleriniz olarak kullanabilirsiniz. Örneğin, çevrimiçi abonelikler için AileAboneliklerim@${ domain }."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
@@ -8526,11 +8614,17 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Şifrelenmiş bir takvim kullanarak planlarınızı kendiniz ve aileniz için gizli tutun"
+      ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "VPN sunucumuzla bağlantınız beklenmedik şekilde kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Bir kasa da bir klasör gibi ögelerinizi düzenlemenin bir yoludur. Kasaları arkadaşlarınızla ve ailenizle paylaşmanız için çalışmalarımız sürüyor."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -8565,6 +8659,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "WiFi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+      ],
       "Quickly set up out-of-office messages": [
         "Ofis dışında iletilerini hızlıca ayarlayın"
       ],
@@ -8579,6 +8676,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolaması ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve başka pek çok özellik sağlar."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
@@ -8604,8 +8704,14 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır. Yöneticiler kuruluşlarındaki kullanıcılara farklı depolama alanları atayabilir"
       ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı kullanıcılar arasında ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } tarafından paylaşılır"
+      ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Çevrimiçi kimliğinizi koruyan ve gelen kutunuza nelerin alınacağını denetlemenizi sağlayan benzersiz, anlık e-posta adresleri. SimpleLogin ile ${ BRAND_NAME } tarafından."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
@@ -10088,6 +10194,9 @@
       "Account and password": [
         "Hesap ve parola"
       ],
+      "Account keys": [
+        "Hesap anahtarları"
+      ],
       "Account recovery": [
         "Hesap kurtarma"
       ],
@@ -11157,6 +11266,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Sınırsız sayıda e-postamı gizle takma adı kullanmak için ${ passPlusPlanName } tarifesine yükseltin"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
         "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin"
@@ -11223,6 +11335,17 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {
