@@ -22,7 +22,6 @@ import { SettingsParagraph, SettingsSectionWide } from '../account';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
-import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import { getKeyByID } from './shared/helper';
 import useDisplayKeys from './shared/useDisplayKeys';
 
@@ -53,17 +52,6 @@ const UserKeysSections = () => {
             throw new Error('Could not find key');
         }
         createModal(<ExportPrivateKeyModal name={userName} privateKey={userKey.privateKey} />);
-    };
-
-    const handleExportPublic = (ID: string) => {
-        const userKey = getKeyByID(userKeys, ID);
-        const Key = getKeyByID(User.Keys, ID);
-        if (!Key) {
-            throw new Error('Could not find key');
-        }
-        createModal(
-            <ExportPublicKeyModal name={userName} fallbackPrivateKey={Key.PrivateKey} publicKey={userKey?.publicKey} />
-        );
     };
 
     const handleAddKey = () => {
@@ -128,11 +116,7 @@ const UserKeysSections = () => {
                         </Button>
                     </div>
                 )}
-                <KeysTable
-                    keys={userKeysDisplay}
-                    onExportPrivateKey={handleExportPrivate}
-                    onExportPublicKey={handleExportPublic}
-                />
+                <KeysTable keys={userKeysDisplay} onExportPrivateKey={handleExportPrivate} />
             </SettingsSectionWide>
         );
     })();
