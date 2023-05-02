@@ -35,7 +35,11 @@ interface Props {
 }
 
 const InvoiceState = ({ invoice }: Props) => {
-    return <Badge type={TYPES[invoice.State] || 'default'}>{getStatesI18N(invoice.State)}</Badge>;
+    return (
+        <Badge type={TYPES[invoice.State] || 'default'} data-testid="invoice-state">
+            {getStatesI18N(invoice.State)}
+        </Badge>
+    );
 };
 
 export default InvoiceState;
