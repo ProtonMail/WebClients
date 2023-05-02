@@ -63,9 +63,12 @@ const ONBOARDING_RULES: OnboardingRule[] = [
     createOnboardingRule({
         message: OnboardingMessage.SECURE_EXTENSION,
         when: (previous, { installedOn }) => {
+            /* should prompt only if user has no extension lock AND
+             * message was not previously acknowledged AND user has
+             * installed at least one day ago */
             const now = getEpoch();
             const hasLock = selectCanLockSession(store.getState());
-            const shouldPrompt = !previous || now - installedOn > UNIX_DAY;
+            const shouldPrompt = !previous && now - installedOn > UNIX_DAY;
 
             return !hasLock && shouldPrompt;
         },
