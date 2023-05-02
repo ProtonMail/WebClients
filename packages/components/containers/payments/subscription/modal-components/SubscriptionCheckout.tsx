@@ -195,6 +195,7 @@ const SubscriptionCheckout = ({
                     }
                     amount={proration}
                     currency={currency}
+                    data-testid="proration-value"
                 />
             )}
             {displayStartDate && nextSubscriptionStart && (
