@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { Currency, PaymentMethodType, isExistingPaymentMethod, methodMatches } from '@proton/shared/lib/interfaces';
 
 import { ExistingPayment, WrappedCardPayment } from './interface';
 import toDetails from './toDetails';
@@ -9,11 +9,6 @@ import useCard from './useCard';
 import usePayPal, { OnPayResult } from './usePayPal';
 
 const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
-
-function isExistingPaymentMethod(paymentMethod: string) {
-    const newPaymentMethods: string[] = Object.values(PAYMENT_METHOD_TYPES);
-    return !newPaymentMethods.includes(paymentMethod);
-}
 
 interface Props {
     amount: number;
@@ -25,7 +20,7 @@ interface Props {
 
 const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMethod }: Props) => {
     const { card, setCard, errors: cardErrors, isValid } = useCard();
-    const [method, setMethod] = useState<PAYMENT_METHOD_TYPE | undefined>(defaultMethod);
+    const [method, setMethod] = useState<PaymentMethodType | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
     const isPayPalActive = method === PAYPAL;
 
@@ -82,12 +77,7 @@ const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMe
             return true;
         }
 
-        if (!method) {
-            return false;
-        }
-
-        const methodsWithDifferentProcessing: string[] = [BITCOIN, CASH, PAYPAL];
-        if (methodsWithDifferentProcessing.includes(method)) {
+        if (!method || methodMatches(method, [BITCOIN, CASH, PAYPAL])) {
             return false;
         }
 
