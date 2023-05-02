@@ -14,25 +14,22 @@ import { ImportReaderError } from '../helpers/reader.error';
 import { type ImportPayload, ImportVault } from '../types';
 import { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
 
-const getKeyPassEntryValue = ({ Value }: KeyPassEntryValue) => (typeof Value === 'string' ? Value : Value.__text);
+const getKeyPassEntryValue = (Value: KeyPassEntryValue) => (typeof Value === 'string' ? Value : Value.__text);
 
 function entryToItem(entry: KeePassEntry): ItemImportIntent<'login'> {
     const item = entry.String.reduce<KeePassItem>((acc, { Key, Value }) => {
         switch (Key) {
-            case 'Password':
-                acc.password = getKeyPassEntryValue(Value);
-                break;
             case 'Title':
-                acc.name = Value;
+                acc.name = getKeyPassEntryValue(Value);
                 break;
             case 'Notes':
-                acc.note = Value;
+                acc.note = getKeyPassEntryValue(Value);
                 break;
-            case 'TimeOtp-Secret-Base32':
-                acc.totp = Value;
+            case 'otp':
+                acc.totp = getKeyPassEntryValue(Value);
                 break;
             default:
-                acc[Key.toLowerCase() as keyof KeePassItem] = Value;
+                acc[Key.toLowerCase() as keyof KeePassItem] = getKeyPassEntryValue(Value);
         }
 
         return acc;
@@ -65,7 +62,7 @@ function groupToVault(group: KeePassGroup): ImportVault | null {
 
     if (!entry) return null;
 
-    const vaultName = group.Name || c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`;
+    const vaultName = group.Name || c('Title').t`Import (${getFormattedDayFromTimestamp(getEpoch())})`;
 
     return {
         type: 'new',
@@ -75,29 +72,20 @@ function groupToVault(group: KeePassGroup): ImportVault | null {
     };
 }
 
-function extractVaults(group: KeePassGroup) {
-    const vaults: ImportVault[] = [];
+function extractVaults(group: KeePassGroup, vaults: ImportVault[] = []): ImportVault[] {
+    const vault = groupToVault(group);
+    if (vault) vaults.push(vault);
 
-    function extract(group: KeePassGroup) {
-        const vault = groupToVault(group);
-        if (vault) vaults.push(vault);
+    const nestedGroup = get(group, 'Group');
 
-        const nestedGroup = get(group, 'Group');
+    if (!nestedGroup) return vaults;
 
-        if (!nestedGroup) return;
-
-        if (Array.isArray(nestedGroup)) {
-            nestedGroup.forEach(extract);
-        } else {
-            extract(nestedGroup);
-        }
-    }
-
-    extract(group);
-    return vaults;
+    return Array.isArray(nestedGroup)
+        ? nestedGroup.reduce((acc, cur) => acc.concat(extractVaults(cur, [])), vaults)
+        : extractVaults(nestedGroup, vaults);
 }
 
-export const readKeePassData = async (data: string): Promise<ImportPayload> => {
+export const readKeePassData = (data: string): ImportPayload => {
     try {
         const x2js = new X2JS();
         const importXml: KeePassFile = x2js.xml2js(data);
@@ -110,6 +98,6 @@ export const readKeePassData = async (data: string): Promise<ImportPayload> => {
     } catch (e) {
         logger.warn('[Importer::KeePass]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new ImportReaderError(c('Error').t`LastPass export file could not be parsed. ${errorDetail}`);
+        throw new ImportReaderError(c('Error').t`KeePass export file could not be parsed. ${errorDetail}`);
     }
 };
