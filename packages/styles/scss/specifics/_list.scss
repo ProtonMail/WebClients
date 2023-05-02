@@ -15,8 +15,8 @@
 
 .items-column-list {
 	inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
-	min-inline-size: 320px; // Subjective value
-	max-inline-size: calc(100% - 400px); // Subjective value
+	min-inline-size: 360px; // Subjective value
+	max-inline-size: calc(100vw - 450px - #{$width-sidebar}px - var(--drawer-width, 0rem)); // Subjective value
 }
 
 // trick to have proper direction on react virtual lists
@@ -29,6 +29,11 @@
 .ReactVirtualized__Grid__innerScrollContainer {
 	border-inline-end: 1px solid var(--border-weak);
 	min-block-size: 100%;
+}
+
+// prevent double border on the right
+.main-area--row-mode .items-column-list-inner {
+	margin-inline-end: -1px;
 }
 
 .items-column-list-inner--border-none {
@@ -315,13 +320,15 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	.item-container {
 		&:not(.item-container-row) {
-			margin-block-end: em(4);
+			margin-block-end: var(--space-1);
 		}
 
 		// just a 12 margin only for first element, not on mobile
 		&-wrapper:first-child .item-container {
+			margin-block-start: var(--space-2);
+
 			@include media('>small') {
-				margin-block-start: em(12);
+				margin-block-start: var(--space-3);
 			}
 		}
 

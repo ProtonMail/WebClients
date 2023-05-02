@@ -33,9 +33,6 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
             title={c('Apps dropdown').t`${BRAND_NAME} applications`}
             onClick={onDropdownClick}
             disableDefaultArrowNavigation
-            contentProps={{
-                className: 'rounded-lg',
-            }}
             {...rest}
             ref={ref}
             as="button"

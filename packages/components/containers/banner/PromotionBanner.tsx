@@ -39,7 +39,7 @@ const PromotionBanner = ({
     return (
         <div
             className={clsx(
-                'flex flex-nowrap bg-promotion relative',
+                'flex flex-nowrap flex-item-noshrink bg-promotion relative',
                 contentCentered && 'text-center on-tablet-text-left p-0-5',
                 rounded && 'rounded'
             )}

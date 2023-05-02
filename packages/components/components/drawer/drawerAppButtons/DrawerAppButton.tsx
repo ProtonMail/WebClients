@@ -1,24 +1,40 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import { ComponentPropsWithRef, ReactNode } from 'react';
 
+import { c } from 'ttag';
+
+import { NotificationDot } from '@proton/atoms/NotificationDot';
+import { ThemeColor } from '@proton/colors/types';
 import { Tooltip } from '@proton/components/components';
+import clsx from '@proton/utils/clsx';
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
+export interface Props extends ComponentPropsWithRef<'button'> {
     tooltipText: string;
     buttonContent: ReactNode;
     onClick: () => void;
     /** If specified, renders an sr-only element for screenreaders */
     alt?: string;
+    notificationDotColor?: ThemeColor;
 }
 
-const DrawerAppButton = ({ tooltipText, buttonContent, onClick, alt, ...rest }: Props) => {
+const DrawerAppButton = ({ tooltipText, buttonContent, onClick, alt, notificationDotColor, ...rest }: Props) => {
     const button = (
         <button
-            className="drawer-sidebar-button rounded flex interactive no-pointer-events-children"
+            className={clsx(
+                'drawer-sidebar-button rounded flex interactive no-pointer-events-children relative',
+                notificationDotColor && 'drawer-sidebar-button--notification'
+            )}
             type="button"
             onClick={onClick}
             {...rest}
         >
             {buttonContent}
+            {notificationDotColor && (
+                <NotificationDot
+                    className="top right notification-dot--top-right"
+                    color={notificationDotColor}
+                    alt={c('Action').t`Attention required`}
+                />
+            )}
             {alt ? <span className="sr-only">{alt}</span> : null}
         </button>
     );

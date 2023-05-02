@@ -11,7 +11,6 @@ import {
     CacheProvider,
     CalendarModelEventManagerProvider,
     EventModelListener,
-    ExperimentsProvider,
     ModalsChildren,
     ModalsProvider,
     PrivateAuthenticationStore,
@@ -27,6 +26,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 
+import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
+
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';
 import { ComposeProvider } from '../../containers/ComposeProvider';
@@ -37,6 +38,7 @@ import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
 import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
 import { minimalCache, mockCache } from './cache';
+import ExperimentsTestProvider from './experiments';
 import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
@@ -86,41 +88,43 @@ const TestProvider = ({ children }: Props) => {
                         <AuthenticationProvider store={authentication}>
                             <CalendarModelEventManagerProvider>
                                 <CacheProvider cache={mockCache}>
-                                    <FeaturesProvider>
-                                        <SpotlightProvider>
-                                            <DrawerProvider>
-                                                <ExperimentsProvider>
-                                                    <ModalsChildren />
-                                                    <EventModelListener
-                                                        models={[ConversationCountsModel, MessageCountsModel]}
-                                                    />
-                                                    <ReduxProviderWrapper>
-                                                        <MailContentRefProvider mailContentRef={contentRef}>
-                                                            <ChecklistsProvider>
-                                                                <MailboxContainerContextProvider
-                                                                    isResizing={false}
-                                                                    containerRef={contentRef}
-                                                                    elementID={undefined}
-                                                                >
-                                                                    <ComposeProvider onCompose={onCompose}>
-                                                                        <Router history={history}>
-                                                                            <Route path={MAIN_ROUTE_PATH}>
-                                                                                <EncryptedSearchProvider>
-                                                                                    <LabelActionsContextProvider>
-                                                                                        {children}
-                                                                                    </LabelActionsContextProvider>
-                                                                                </EncryptedSearchProvider>
-                                                                            </Route>
-                                                                        </Router>
-                                                                    </ComposeProvider>
-                                                                </MailboxContainerContextProvider>
-                                                            </ChecklistsProvider>
-                                                        </MailContentRefProvider>
-                                                    </ReduxProviderWrapper>
-                                                </ExperimentsProvider>
-                                            </DrawerProvider>
-                                        </SpotlightProvider>
-                                    </FeaturesProvider>
+                                    <QuickSettingsTestProvider>
+                                        <FeaturesProvider>
+                                            <SpotlightProvider>
+                                                <DrawerProvider>
+                                                    <ExperimentsTestProvider>
+                                                        <ModalsChildren />
+                                                        <EventModelListener
+                                                            models={[ConversationCountsModel, MessageCountsModel]}
+                                                        />
+                                                        <ReduxProviderWrapper>
+                                                            <MailContentRefProvider mailContentRef={contentRef}>
+                                                                <ChecklistsProvider>
+                                                                    <MailboxContainerContextProvider
+                                                                        isResizing={false}
+                                                                        containerRef={contentRef}
+                                                                        elementID={undefined}
+                                                                    >
+                                                                        <ComposeProvider onCompose={onCompose}>
+                                                                            <Router history={history}>
+                                                                                <Route path={MAIN_ROUTE_PATH}>
+                                                                                    <EncryptedSearchProvider>
+                                                                                        <LabelActionsContextProvider>
+                                                                                            {children}
+                                                                                        </LabelActionsContextProvider>
+                                                                                    </EncryptedSearchProvider>
+                                                                                </Route>
+                                                                            </Router>
+                                                                        </ComposeProvider>
+                                                                    </MailboxContainerContextProvider>
+                                                                </ChecklistsProvider>
+                                                            </MailContentRefProvider>
+                                                        </ReduxProviderWrapper>
+                                                    </ExperimentsTestProvider>
+                                                </DrawerProvider>
+                                            </SpotlightProvider>
+                                        </FeaturesProvider>
+                                    </QuickSettingsTestProvider>
                                 </CacheProvider>
                             </CalendarModelEventManagerProvider>
                         </AuthenticationProvider>

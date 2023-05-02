@@ -34,7 +34,7 @@ $breakpoints: im-to-em(
 ) !default;
 
 // specific breakpoints
-$breakpoint-for-drawer: 1280px; // Temporary breakpoint used to display the drawer app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
+$breakpoint-for-drawer: 1400px; // Temporary breakpoint used to display the drawer app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
 
 // Media expressions for include-media
 $media-expressions: (
@@ -82,7 +82,8 @@ $use-height-auto-table: true !default;
 $path-images: '~@proton/styles/assets/img/illustrations/' !default;
 
 // variables for global layouts, allowing you to use calc for components and adapt quickly if needed
-$header-height: 68 !default;
+$header-height: 60 !default;
+$header-height-small: 44 !default;
 $width-sidebar: 250 !default; // main navigation
 $toolbar-height: 44 !default;
 $context-bar-width: 25vw !default; // context bar on the right

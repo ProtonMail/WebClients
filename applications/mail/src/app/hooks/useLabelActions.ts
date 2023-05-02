@@ -8,10 +8,7 @@ const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED
 
 type Actions = 'inbox' | 'trash' | 'delete' | 'archive' | 'spam' | 'nospam';
 
-export const useLabelActions = (
-    labelID: string,
-    isNarrow: boolean
-): [primaryActions: Actions[], secondaryActions: Actions[]] => {
+export const useLabelActions = (labelID: string): [primaryActions: Actions[], secondaryActions: Actions[]] => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
 
@@ -40,12 +37,6 @@ export const useLabelActions = (
         primaryActions = ['trash', 'archive', 'spam'];
     } else if (isCustomLabel(labelID, labels)) {
         primaryActions = ['trash', 'archive', 'spam'];
-    }
-
-    if (isNarrow) {
-        const [first, ...rest] = primaryActions;
-        primaryActions = [first];
-        secondaryActions = rest;
     }
 
     return [primaryActions, secondaryActions];

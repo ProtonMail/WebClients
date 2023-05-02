@@ -12,8 +12,8 @@ type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 interface OwnProps {
     color?: ButtonButtonLikeProps['color'];
     shape?: ButtonButtonLikeProps['shape'];
-    icon: ReactElement;
-    text: string;
+    icon?: ReactElement;
+    text?: string;
     notificationDotColor?: ThemeColor;
 }
 
@@ -46,7 +46,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             color={color}
             shape={shape}
             className={clsx([
-                'topnav-link inline-flex flex-nowrap flex-align-items-center relative',
+                'topnav-link inline-flex flex-nowrap flex-align-items-center flex-item-noshrink relative',
                 className,
                 notificationDotColor && 'topnav-link--notification',
             ])}
@@ -55,9 +55,10 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             ref={ref}
             {...rest}
         >
-            {cloneElement(icon, {
-                className: clsx([icon.props.className, 'topnav-icon mr-2']),
-            })}
+            {icon &&
+                cloneElement(icon, {
+                    className: clsx([icon.props.className, 'topnav-icon mr-2 flex-item-noshrink']),
+                })}
             <span className="navigation-title">{text}</span>
             {notificationDotColor && (
                 <NotificationDot

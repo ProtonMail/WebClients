@@ -91,8 +91,8 @@ const SimpleDropdownBase = <E extends ElementType>(
                 className={dropdownClassName}
                 style={dropdownStyle}
                 disableDefaultArrowNavigation={disableDefaultArrowNavigation}
-                contentProps={contentProps}
                 size={dropdownSize}
+                {...contentProps}
             >
                 {children}
             </Dropdown>

@@ -1,6 +1,10 @@
 .calendar-daygrid {
 	min-block-size: rem(410);
 
+	@include media('print') {
+		min-block-size: rem(700);
+	}
+
 	&-weeknumber {
 		border-block-end: $calendar-grid-border;
 		border-inline-end: $calendar-grid-border;
@@ -30,7 +34,7 @@
 		inset: 0;
 	}
 
-	&-column {
+	&-column:not(:last-child) {
 		border-inline-end: $calendar-grid-border;
 	}
 }

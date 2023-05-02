@@ -1,7 +1,8 @@
-import { PrivateMainArea, useAppTitle } from '@proton/components';
+import { useAppTitle } from '@proton/components';
 
 import { useDevicesView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import Devices from './Devices';
 import DevicesToolbar from './Toolbar/DevicesToolbar';
 import { getDevicesSectionName } from './constants';
@@ -14,11 +15,11 @@ function DevicesView() {
 
     return (
         <FileBrowserStateProvider itemIds={driveView.items.map(({ id }) => id)}>
-            <DevicesToolbar items={driveView.items} />
-            <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p-4 text-strong border-bottom section--header">{sectionTitle}</div>
-                <Devices view={driveView} />
-            </PrivateMainArea>
+            <ToolbarRow
+                titleArea={<span className="text-strong pl-1">{sectionTitle}</span>}
+                toolbar={<DevicesToolbar items={driveView.items} />}
+            />
+            <Devices view={driveView} />
         </FileBrowserStateProvider>
     );
 }

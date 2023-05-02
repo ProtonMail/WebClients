@@ -1,11 +1,17 @@
-import { ChangeEvent, Fragment, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
+import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { PaginationRow, useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
+import {
+    PaginationRow,
+    useConversationCounts,
+    useItemsDraggable,
+    useMailSettings,
+    useMessageCounts,
+} from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
-import { CHECKLIST_DISPLAY_TYPE, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -18,13 +24,12 @@ import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
-import { Filter, Sort } from '../../models/tools';
+import { Filter } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import OnboardingChecklistWrapper from '../checklist/OnboardingChecklistWrapper';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import ESSlowToolbar from './ESSlowToolbar';
 import Item from './Item';
-import ListSettings from './ListSettings';
 import MailUpsellBanner from './MailUpsellBanner';
 import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
@@ -66,11 +71,8 @@ interface Props {
     onMove: (labelID: string) => void;
     onDelete: () => void;
     onBack: () => void;
-    sort: Sort;
-    onSort: (sort: Sort) => void;
-    onFilter: (filter: Filter) => void;
-    mailSettings: MailSettings;
     userSettings: UserSettings;
+    toolbar?: ReactNode | undefined;
 }
 
 const List = (
@@ -103,14 +105,12 @@ const List = (
         onDelete,
         onMove,
         onBack,
-        sort,
-        onSort,
-        onFilter,
-        mailSettings,
         userSettings,
+        toolbar,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
+    const [mailSettings] = useMailSettings();
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = getESDBStatus();
@@ -192,87 +192,102 @@ const List = (
 
     return (
         <div className={clsx(['relative items-column-list relative', !show && 'hidden'])}>
-            <div ref={ref} className={clsx(['h100 scroll-if-needed', isCompactView && 'list-compact'])}>
+            <div ref={ref} className={clsx(['h100', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
                     {c('Title').ngettext(msgid`${unreads} unread message`, `${unreads} unread messages`, unreads)}
                 </h1>
-                <div className="items-column-list-inner flex flex-nowrap flex-column relative items-column-list-inner--mail">
-                    <ListSettings
-                        sort={sort}
-                        onSort={onSort}
-                        onFilter={onFilter}
-                        filter={filter}
-                        conversationMode={conversationMode}
-                        mailSettings={mailSettings}
-                        isSearch={isSearch}
-                        labelID={labelID}
-                    />
-                    {showESSlowToolbar && <ESSlowToolbar />}
-                    {canDisplayUpsellBanner && (
-                        <MailUpsellBanner
-                            needToShowUpsellBanner={needToShowUpsellBanner}
-                            columnMode={columnLayout}
-                            onClose={handleDismissBanner}
-                        />
-                    )}
-                    {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt-4'} />}
-                    <AutoDeleteBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
-                    {elements.length === 0 && displayState !== FULL && (
-                        <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
-                    )}
-                    {elements.length === 0 && displayState === FULL && <OnboardingChecklistWrapper />}
-                    {elements.length > 0 && (
-                        <>
-                            {/* div needed here for focus management */}
-                            <div>
-                                {elements.map((element, index) => (
-                                    <Fragment key={element.ID}>
-                                        <Item
-                                            conversationMode={conversationMode}
-                                            isCompactView={isCompactView}
-                                            labelID={labelID}
-                                            loading={displayPlaceholders}
-                                            columnLayout={columnLayout}
-                                            elementID={elementID}
-                                            element={element}
-                                            checked={checkedIDs.includes(element.ID || '')}
-                                            onCheck={onCheckOne}
-                                            onClick={onClick}
-                                            onContextMenu={onContextMenu}
-                                            onDragStart={handleDragStart}
-                                            onDragEnd={handleDragEnd}
-                                            dragged={draggedIDs.includes(element.ID || '')}
-                                            index={index}
-                                            breakpoints={breakpoints}
-                                            onFocus={onFocus}
-                                            onBack={onBack}
-                                        />
-                                    </Fragment>
-                                ))}
-                            </div>
 
-                            {!loading && !(total > 1) && (
-                                <>
-                                    {displayState === FULL && (
-                                        <OnboardingChecklistWrapper displayOnMobile={isColumnMode(mailSettings)} />
+                <div
+                    className={clsx(
+                        breakpoints.isDesktop && 'items-column-list-inner bg-norm',
+                        !columnLayout && 'items-column-list-inner--border-none',
+                        'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h100'
+                    )}
+                >
+                    <div className="flex-item-noshrink">{toolbar}</div>
+                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
+                        <div className="flex-item-noshrink">
+                            {showESSlowToolbar && <ESSlowToolbar />}
+                            {canDisplayUpsellBanner && (
+                                <MailUpsellBanner
+                                    needToShowUpsellBanner={needToShowUpsellBanner}
+                                    columnMode={columnLayout}
+                                    onClose={handleDismissBanner}
+                                />
+                            )}
+                            {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt-4'} />}
+                            <AutoDeleteBanner
+                                labelID={labelID}
+                                columnLayout={columnLayout}
+                                isCompactView={isCompactView}
+                            />
+                        </div>
+                        {elements.length === 0 && displayState !== FULL && (
+                            <EmptyListPlaceholder
+                                labelID={labelID}
+                                isSearch={isSearch}
+                                isUnread={filter.Unread === 1}
+                            />
+                        )}
+                        {elements.length === 0 && displayState === FULL && <OnboardingChecklistWrapper />}
+                        {elements.length > 0 && (
+                            <>
+                                {/* div needed here for focus management */}
+                                <div
+                                    className={clsx(
+                                        !columnLayout && 'border-right border-weak',
+                                        'w100 flex-item-noshrink'
                                     )}
-                                </>
-                            )}
-
-                            {useLoadingElement && loadingElement}
-
-                            {!loading && total > 1 && (
-                                <div className="p-5 flex flex-column flex-align-items-center">
-                                    <PaginationRow
-                                        {...pagingHandlers}
-                                        disabled={loading}
-                                        disableGoToLast={disableGoToLast}
-                                    />
+                                >
+                                    {elements.map((element, index) => (
+                                        <Fragment key={element.ID}>
+                                            <Item
+                                                conversationMode={conversationMode}
+                                                isCompactView={isCompactView}
+                                                labelID={labelID}
+                                                loading={displayPlaceholders}
+                                                columnLayout={columnLayout}
+                                                elementID={elementID}
+                                                element={element}
+                                                checked={checkedIDs.includes(element.ID || '')}
+                                                onCheck={onCheckOne}
+                                                onClick={onClick}
+                                                onContextMenu={onContextMenu}
+                                                onDragStart={handleDragStart}
+                                                onDragEnd={handleDragEnd}
+                                                dragged={draggedIDs.includes(element.ID || '')}
+                                                index={index}
+                                                breakpoints={breakpoints}
+                                                onFocus={onFocus}
+                                                onBack={onBack}
+                                            />
+                                        </Fragment>
+                                    ))}
                                 </div>
-                            )}
-                        </>
-                    )}
+
+                                {!loading && !(total > 1) && (
+                                    <>
+                                        {displayState === FULL && (
+                                            <OnboardingChecklistWrapper displayOnMobile={isColumnMode(mailSettings)} />
+                                        )}
+                                    </>
+                                )}
+
+                                {useLoadingElement && loadingElement}
+
+                                {!loading && total > 1 && (
+                                    <div className="p-5 flex flex-column flex-align-items-center flex-item-noshrink">
+                                        <PaginationRow
+                                            {...pagingHandlers}
+                                            disabled={loading}
+                                            disableGoToLast={disableGoToLast}
+                                        />
+                                    </div>
+                                )}
+                            </>
+                        )}
+                    </div>
                 </div>
             </div>
             {elements.length !== 0 && showContentPanel && (

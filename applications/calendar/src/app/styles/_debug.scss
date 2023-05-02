@@ -2,7 +2,7 @@
 .is-day-view,
 .is-week-view,
 .is-month-view {
-	&::after {
+	.calendar-time-grid::after {
 		content: '';
 		display: flex;
 		inline-size: 100%;
@@ -14,8 +14,8 @@
 	.is-day-view,
 	.is-week-view,
 	.is-month-view {
-		&::after {
-			padding-block-end: 8em; // thanks Apple for the fixed toolbar at the bottom
+		.calendar-time-grid::after {
+			padding-block-end: env(safe-area-inset-bottom); // thanks Apple for the fixed toolbar at the bottom
 		}
 	}
 }
@@ -25,7 +25,7 @@
 	.is-day-view,
 	.is-week-view,
 	.is-month-view {
-		&::after {
+		.calendar-time-grid::after {
 			content: none;
 		}
 	}

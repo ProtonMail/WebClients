@@ -5,9 +5,17 @@ import clsx from '@proton/utils/clsx';
 interface Props extends ComponentPropsWithoutRef<'li'> {
     noShrink?: boolean;
     collapsedOnDesktop?: boolean;
+    noCollapse?: boolean;
 }
 
-const TopNavbarListItem = ({ children, noShrink, collapsedOnDesktop = true, className, ...rest }: Props) => {
+const TopNavbarListItem = ({
+    children,
+    noShrink,
+    collapsedOnDesktop = true,
+    noCollapse = false,
+    className,
+    ...rest
+}: Props) => {
     if (!isValidElement(children)) {
         return null;
     }
@@ -17,6 +25,7 @@ const TopNavbarListItem = ({ children, noShrink, collapsedOnDesktop = true, clas
                 'topnav-listItem',
                 noShrink && 'flex-item-noshrink',
                 !collapsedOnDesktop && 'topnav-listItem--noCollapse',
+                noCollapse && 'topnav-listItem--noCollapse',
                 className,
             ])}
             {...rest}

@@ -11,6 +11,7 @@ import {
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
+import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInstance } from '@proton/hooks/index';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
@@ -122,7 +123,9 @@ const MainContainer = () => {
 const WrappedMainContainer = () => {
     return (
         <ErrorBoundary component={<StandardErrorPage big />}>
-            <MainContainer />
+            <QuickSettingsRemindersProvider>
+                <MainContainer />
+            </QuickSettingsRemindersProvider>
         </ErrorBoundary>
     );
 };

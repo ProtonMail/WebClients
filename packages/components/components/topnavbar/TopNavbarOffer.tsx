@@ -3,7 +3,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
@@ -11,9 +10,8 @@ import { OfferModal, useOfferModal } from '../../containers';
 import { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { useSubscription, useUser, useWelcomeFlags } from '../../hooks';
-import Icon from '../icon/Icon';
+import { PromotionButton } from '../button/PromotionButton';
 import TopNavbarListItem from './TopNavbarListItem';
-import TopNavbarListItemButton from './TopNavbarListItemButton';
 
 interface Props {
     offerConfig: OfferConfig;
@@ -93,25 +91,21 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     return (
         <>
             <TopNavbarListItem collapsedOnDesktop={false} noShrink>
-                <TopNavbarListItemButton
+                <PromotionButton
                     as="button"
                     type="button"
                     color="norm"
                     shape={offerConfig.shapeButton || 'solid'}
-                    icon={<Icon name={offerConfig.icon || 'bag-percent'} />}
-                    text={offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special offer`}
+                    iconName={offerConfig.icon || 'bag-percent'}
                     onClick={() => {
                         setOfferModalOpen(true);
                         setFetchOffer(true);
                     }}
+                    loading={loadingOffer && !offer}
                     data-testid="cta:special-offer"
                 >
-                    {loadingOffer && !offer && (
-                        <span className="ml-2">
-                            <CircleLoader />
-                        </span>
-                    )}
-                </TopNavbarListItemButton>
+                    {offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special offer`}
+                </PromotionButton>
             </TopNavbarListItem>
             {renderOfferModal && offer && (
                 <OfferModal

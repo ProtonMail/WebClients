@@ -2,8 +2,8 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateTheme } from '@proton/shared/lib/api/settings';
-import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { postMessageToIframe, getIsDrawerApp } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { ThemeSetting, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
 import debounce from '@proton/utils/debounce';
@@ -32,10 +32,9 @@ const ThemeInjector = () => {
         // If apps are opened in drawer, update their theme too
         if (iframeSrcMap) {
             Object.keys(iframeSrcMap).map((app) => {
-                postMessageToIframe(
-                    { type: DRAWER_EVENTS.UPDATE_THEME, payload: { themeSetting: settings } },
-                    app as DRAWER_APPS
-                );
+                if (getIsDrawerApp(app)) {
+                    postMessageToIframe({ type: DRAWER_EVENTS.UPDATE_THEME, payload: { themeSetting: settings } }, app);
+                }
             });
         }
     }, [settings]);

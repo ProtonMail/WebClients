@@ -137,6 +137,7 @@ const MainContainer = () => {
         <PrivateHeader
             userDropdown={
                 <UserDropdown
+                    app={APPS.PROTONVPN_SETTINGS}
                     onOpenChat={
                         canEnableChat
                             ? () => {
