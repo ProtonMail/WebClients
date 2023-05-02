@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import uniqid from 'uniqid';
 import X2JS from 'x2js';
 
-import type { ItemImportIntent } from '@proton/pass/types';
+import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
@@ -14,9 +15,9 @@ import { ImportReaderError } from '../helpers/reader.error';
 import { type ImportPayload, ImportVault } from '../types';
 import { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
 
-const getKeyPassEntryValue = (Value: KeyPassEntryValue) => (typeof Value === 'string' ? Value : Value.__text);
+const getKeyPassEntryValue = (Value: KeyPassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
 
-function entryToItem(entry: KeePassEntry): ItemImportIntent<'login'> {
+const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     const item = entry.String.reduce<KeePassItem>((acc, { Key, Value }) => {
         switch (Key) {
             case 'Title':
@@ -49,17 +50,16 @@ function entryToItem(entry: KeePassEntry): ItemImportIntent<'login'> {
         content: {
             username: item.username || '',
             password: item.password || '',
-            urls: [url?.origin].filter(Boolean) as string[],
+            urls: [url?.origin].filter(truthy),
             totpUri: item.totp ? parseOTPValue(item.totp, { label: name }) : '',
         },
         extraFields: [],
         trashed: false,
     };
-}
+};
 
-function groupToVault(group: KeePassGroup): ImportVault | null {
+const groupToVault = (group: KeePassGroup): MaybeNull<ImportVault> => {
     const entry = get(group, 'Entry');
-
     if (!entry) return null;
 
     const vaultName = group.Name || c('Title').t`Import (${getFormattedDayFromTimestamp(getEpoch())})`;
@@ -70,9 +70,9 @@ function groupToVault(group: KeePassGroup): ImportVault | null {
         id: uniqid(),
         items: Array.isArray(entry) ? entry.map(entryToItem) : [entryToItem(entry)],
     };
-}
+};
 
-function extractVaults(group: KeePassGroup, vaults: ImportVault[] = []): ImportVault[] {
+const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = []): ImportVault[] => {
     const vault = groupToVault(group);
     if (vault) vaults.push(vault);
 
@@ -83,7 +83,7 @@ function extractVaults(group: KeePassGroup, vaults: ImportVault[] = []): ImportV
     return Array.isArray(nestedGroup)
         ? nestedGroup.reduce((acc, cur) => acc.concat(extractVaults(cur, [])), vaults)
         : extractVaults(nestedGroup, vaults);
-}
+};
 
 export const readKeePassData = (data: string): ImportPayload => {
     try {
