@@ -1167,6 +1167,9 @@
       "Other": [
         "Іншае"
       ],
+      "Pass problem": [
+        "Праблема з Proton Pass"
+      ],
       "Payments problem": [
         "Праблема з плацяжамі"
       ],
@@ -6699,11 +6702,11 @@
       "Enable signature verification and encryption with this key": [
         "Уключыць праверку подпісу і шыфраванне гэтым ключом"
       ],
-      "Export": [
-        "Экспартаваць"
-      ],
       "Export private key": [
         "Экспартаваць прыватны ключ"
+      ],
+      "Export public key": [
+        "Экспарт публічнага ключа"
       ],
       "Make primary": [
         "Зрабіць асноўным"
@@ -7724,6 +7727,9 @@
       "Add a gift code": [
         "Дадаць падарункавы код"
       ],
+      "Apps and extensions": [
+        "Праграмы і пашырэнні"
+      ],
       "Calendars": [
         "Календары"
       ],
@@ -8276,6 +8282,12 @@
         "${ n } папак і метак",
         "${ n } папкі і меткі"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } псеўданім Hide My Email",
+        "${ n } псеўданімы Hide My Email",
+        "${ n } псеўданімаў Hide My Email",
+        "${ n } псеўданімы Hide My Email"
+      ],
       "${ n } label": [
         "${ n } метка",
         "${ n } меткі",
@@ -8345,6 +8357,9 @@
       "Contact groups management": [
         "Кіраванне групамі кантактаў"
       ],
+      "Custom domain for email aliases": [
+        "Карыстальніцкі дамен для псеўданімаў электроннай пошты"
+      ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
@@ -8390,6 +8405,9 @@
       "HTML signatures": [
         "Подпісы HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваная 2ФА аўтэнтыфікацыя"
+      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Пастаянны VPN"
       ],
@@ -8427,13 +8445,13 @@
         "Серверы Secure Core"
       ],
       "Send & receive invitations": [
-        "Адпраўляйце і атрымлівайце запрашэнні"
+        "Адпраўленне і атрымліванне запрашэнняў"
       ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
       ],
       "Share files and folders via link": [
-        "Абагульваць файлы і папкі праз спасылкі"
+        "Абагульванне файлаў і папак праз спасылкі"
       ],
       "Sign in as user": [
         "Увайсці як карыстальнік"
@@ -8444,6 +8462,9 @@
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
+      "Strong E2E encryption": [
+        "Надзейнае шыфраванне E2E"
+      ],
       "Team management": [
         "Кіраванне камандамі"
       ],
@@ -8452,6 +8473,9 @@
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Unlimited devices": [
+        "Неабмежаваная колькасць прылад"
       ],
       "Unlimited filters": [
         "Неабмежаваная колькасць фільтраў"
@@ -8462,11 +8486,17 @@
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Неабмежаваная колькасць псеўданімаў Hide My Email"
+      ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
+      ],
+      "Unlimited passwords and notes": [
+        "Неабмежаваная колькасць пароляў і нататак"
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
@@ -8559,7 +8589,7 @@
         "Прыватнасць і бяспека, якія пасуюць для бізнесу, а таксама ўключаць усе прэміяльныя сэрвісы ${ BRAND_NAME }."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Абараніце прыватнасць вашай сям'і з усімі камбінаванымі сэрвісамі ${ BRAND_NAME }."
+        "Абараніце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } разам."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
@@ -8803,7 +8833,7 @@
         "Накіроўвайце свой трафік праз сетку Tor адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключаючы аўтаматычную сінхранізацыі, абагуленне зашыфраванага файла і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагуленне файлаў і іншыя функцыі."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
@@ -10376,6 +10406,9 @@
       "Account and password": [
         "Уліковы запіс і пароль"
       ],
+      "Account keys": [
+        "Ключы ад уліковага запісу"
+      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -11455,6 +11488,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Палепшыце да ${ passPlusPlanName }, каб мець неабмежаваную колькасць псеўданімаў Hide My Email"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылады да VPN",
         "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN",
@@ -11533,6 +11569,17 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {

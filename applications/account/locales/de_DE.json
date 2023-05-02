@@ -1163,6 +1163,9 @@
       "Other": [
         "Andere"
       ],
+      "Pass problem": [
+        "Problem mit Pass"
+      ],
       "Payments problem": [
         "Zahlungsproblem"
       ],
@@ -4563,6 +4566,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Greife auf deine Passwörter zu und schütze deine Online-Identitäten nahtlos über deine Geräte hinweg. Lade die entsprechenden ${ PASS_APP_NAME } Apps und Erweiterungen herunter und installiere sie."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
@@ -5301,6 +5307,9 @@
       ],
       "New": [
         "Neu"
+      ],
+      "No account keys exist": [
+        "Es sind keine Kontoschlüssel vorhanden"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Wenn keine Methode zur Wiederherstellung des Kontos festgelegt wurde, besteht die Gefahr, dass du den Zugriff auf dein Konto unwiderruflich verlierst"
@@ -6563,11 +6572,11 @@
       "Enable signature verification and encryption with this key": [
         "Signaturprüfung und Verschlüsselung mit diesem Schlüssel aktivieren"
       ],
-      "Export": [
-        "Exportieren"
-      ],
       "Export private key": [
         "Privaten Schlüssel exportieren"
+      ],
+      "Export public key": [
+        "Öffentlichen Schlüssel exportieren"
       ],
       "Make primary": [
         "Als Haupt festlegen"
@@ -7584,6 +7593,9 @@
       "Add a gift code": [
         "Gutscheincode hinzufügen"
       ],
+      "Apps and extensions": [
+        "Apps und Erweiterungen"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -8096,6 +8108,14 @@
         "${ n } Ordner und Kategorie",
         "${ n } Ordner und Kategorien"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } Weiterleitungs-Postfach",
+        "${ n } Weiterleitungs-Postfächer"
+      ],
+      "${ n } Hide My Email alias": [
+        "${ n } Hide My Email-Alias",
+        "${ n } Hide My Email-Aliasse"
+      ],
       "${ n } label": [
         "${ n } Kategorie",
         "${ n } Kategorien"
@@ -8103,6 +8123,10 @@
       "${ n } message per day": [
         "${ n } Nachricht pro Tag",
         "${ n } Nachrichten pro Tag"
+      ],
+      "${ n } vault": [
+        "${ n } Tresor",
+        "${ n } Tresore"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
@@ -8157,8 +8181,20 @@
       "Contact groups management": [
         "Kontaktgruppenverwaltung"
       ],
+      "Custom domain for email aliases": [
+        "Eigene Domain für E-Mail-Aliasse"
+      ],
+      "Custom domains for email aliases": [
+        "Eigene Domains für E-Mail-Aliasse"
+      ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"
+      ],
+      "Data breach monitoring": [
+        "Überwachung von Datenlecks"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Überwachung von Datenlecks (Demnächst verfügbar)"
       ],
       "DNS leak prevention": [
         "DNS-Leakschutz"
@@ -8200,6 +8236,9 @@
       "HTML signatures": [
         "HTML-Signaturen"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Always-On-VPN"
       ],
@@ -8208,6 +8247,9 @@
       ],
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Mehrere Weiterleitungs-Postfächer"
       ],
       "NetShield malware and ad-blocker": [
         "NetShield-Malware- und Werbe-Blocker"
@@ -8254,6 +8296,9 @@
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
       ],
+      "Strong E2E encryption": [
+        "Starke Ende-zu-Ende-Verschlüsselung"
+      ],
       "Team management": [
         "Teamverwaltung"
       ],
@@ -8262,6 +8307,9 @@
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
+      ],
+      "Unlimited devices": [
+        "Unbegrenzte Geräte"
       ],
       "Unlimited filters": [
         "Unbegrenzte Anzahl von Filtern"
@@ -8272,11 +8320,20 @@
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
       ],
+      "Unlimited Hide My Email aliases": [
+        "Unbegrenzte Hide My Email-Aliasse"
+      ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
+      ],
+      "Unlimited passwords and notes": [
+        "Unbegrenzte Passwörter und Notizen"
+      ],
+      "Unlimited vaults": [
+        "Unbegrenzte Tresore"
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
@@ -8301,6 +8358,12 @@
       ],
       "User session management": [
         "Verwaltung von Benutzersitzungen"
+      ],
+      "Vault and Item sharing": [
+        "Teilen von Tresoren und Einträgen"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Teilen von Tresoren und Einträgen (Demnächst verfügbar)"
       ],
       "Worldwide streaming services": [
         "Weltweite Streaming-Dienste"
@@ -8349,6 +8412,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Umfassender Schutz der Privatsphäre und Sicherheit bei allen ${ BRAND_NAME }-Diensten."
+      ],
+      "For next-level password management and identity protection.": [
+        "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Wenn du dein Konto löschst, verlierst du alle Vorteile des ${ visionary }-Abonnements und es wird für dich nicht verfügbar sein, wenn du ein neues Konto erstellst."
@@ -8557,6 +8623,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Wie ein Ordner ist ein Tresor eine praktische Möglichkeit, deine Objekte zu organisieren. Die gemeinsame Nutzung von Tresoren mit Freunden und Familie ist in Vorbereitung."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Verwalte dein Abonnement einschließlich dessen Anpassung. Es werden folgende Zahlungsmethoden akzeptiert: Kreditkarte, PayPal, Kryptowährung und Überweisung."
       ],
@@ -8640,6 +8709,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Unterstützung für File-Sharing-Protokolle wie BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Einzigartige, sofort verfügbare E-Mail-Adressen, die deine Online-Identität schützen und dir die Kontrolle darüber geben, was in deinem Posteingang landet. SimpleLogin von ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
@@ -10362,6 +10434,9 @@
       "Account and password": [
         "Konto und Passwort"
       ],
+      "Account keys": [
+        "Kontoschlüssel"
+      ],
       "Account recovery": [
         "Kontowiederherstellung"
       ],
@@ -11431,6 +11506,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Upgrade auf ${ passPlusPlanName } für unbegrenzte Hide My Email-Aliasse"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Auf ${ planName } umsteigen, um bis zu ${ n } Gerät auf einmal mit dem VPN verbinden zu können",
         "Auf ${ planName } umsteigen, um bis zu ${ n } Geräte auf einmal mit dem VPN verbinden zu können"
@@ -11497,6 +11575,17 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {

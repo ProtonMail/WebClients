@@ -1338,6 +1338,9 @@
       "Other": [
         "Diğer"
       ],
+      "Pass problem": [
+        "Parola sorunu"
+      ],
       "Payments problem": [
         "Ödeme sorunu"
       ],
@@ -3052,7 +3055,7 @@
         "Kimlik doğrulaması iptal edildi."
       ],
       "Authentication error.": [
-        "Kimlik doğrulama hatası."
+        "Kimlik doğrulama sorunu."
       ],
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
@@ -3090,7 +3093,7 @@
         "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Şifre çözme hatası: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
+        "Şifre çözme sorunu: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "En az ${ calendarsToFixCount } takvimi kaldırın",
@@ -3186,7 +3189,7 @@
         "Öncelikle iletinin gönderilmesi gerekiyor"
       ],
       "Message processing error.": [
-        "İleti işleme hatası."
+        "İleti işleme sorunu."
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
@@ -3195,7 +3198,7 @@
         "İmza eksik"
       ],
       "Network error: Please check your connection and try again.": [
-        "Ağ hatası: Lütfen bağlantınızı denetleyip yeniden deneyin."
+        "Ağ sorunu: Lütfen bağlantınızı denetleyip yeniden deneyin."
       ],
       "No address with keys available to compose a message": [
         "Bir ileti oluşturmak için kullanılabilecek anahtarları olan bir adres yok"
@@ -3283,7 +3286,7 @@
         "İmza doğrulanamadı"
       ],
       "Signature verification error.": [
-        "İmza doğrulama hatası."
+        "İmza doğrulama sorunu."
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
@@ -3386,10 +3389,10 @@
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Bilinmeyen sorun"
       ],
       "Unknown error.": [
-        "Bilinmeyen hata."
+        "Bilinmeyen sorun."
       ],
       "Wrong mailbox password": [
         "Posta kutusu parolası yanlış"
@@ -3680,7 +3683,7 @@
         "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
       ],
       "Unexpected error": [
-        "Beklenmeyen hata"
+        "Beklenmeyen sorun"
       ],
       "Unsupported invitation": [
         "Davet desteklenmiyor"
@@ -5414,6 +5417,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Bu e-posta listesinden ayrılmak için, bültenin göndericisi tarafından belirtilen ${ boldFrom } adresine şu bilgileri içeren bir e-posta gönderilecek:"
@@ -8381,7 +8387,7 @@
         "Gönderici değiştirildi"
       ],
       "Sending error": [
-        "Gönderme hatası"
+        "Gönderme sorunu"
       ],
       "Sending notice": [
         "Bildirim gönderiliyor"
@@ -8448,7 +8454,7 @@
         "Yükseltme gerekli"
       ],
       "Verification error": [
-        "Doğrulama hatası"
+        "Doğrulama sorunu"
       ],
       "View contacts": [
         "Kişileri görüntüle"
@@ -8633,7 +8639,7 @@
         "Doğrulama atlansın mı?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Birleştirilecek kişilerden bazılarında hatalar görüntüleniyor. Lütfen bunları ayrı ayrı inceleyin"
+        "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Ek dosyanın imzası doğrulanamadı.\nBu ek dosyasını yine de indirebilirsiniz, ancak üzerinde oynanmış olabilir.",

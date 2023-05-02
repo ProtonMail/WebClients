@@ -289,6 +289,9 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "Go to Drive": [
+        "Drive に移動"
+      ],
       "Go to label": [
         "ラベルへ移動"
       ],
@@ -597,6 +600,9 @@
       ],
       "Try another method": [
         "別の方法を試してください"
+      ],
+      "Try for free": [
+        "無料で試す"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
@@ -1869,6 +1875,9 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
+      "A problem occurred, please try again.": [
+        "問題が発生しました。もう一度お試しください。"
+      ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
@@ -2117,6 +2126,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "10 件以上の連絡先の vCard ファイルを送信することはできません"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -3223,6 +3235,9 @@
       "Link copied to clipboard": [
         "リンクがクリップボードにコピーされました"
       ],
+      "Link owner has the password": [
+        "リンク所有者がパスワードを設定しました"
+      ],
       "Loading": [
         "読み込み中"
       ],
@@ -3420,6 +3435,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText }の共有リンク"
+      ],
+      "Shared link not found": [
+        "共有リンクが見つかりません"
       ],
       "Signature check will be ignored": [
         "署名確認は無視されます。"

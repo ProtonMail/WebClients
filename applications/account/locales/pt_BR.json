@@ -1163,6 +1163,9 @@
       "Other": [
         "Outro"
       ],
+      "Pass problem": [
+        "Problema no Pass"
+      ],
       "Payments problem": [
         "Problema com pagamento"
       ],
@@ -4627,6 +4630,9 @@
       "Align right": [
         "Alinhar à direita"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
         "Todas (${ totalFoldersCount } pastas)"
@@ -4786,7 +4792,7 @@
         "Centralizar"
       ],
       "Check the status of imports and forwarding.": [
-        "Verificar o estado das importações e encaminhamento."
+        "Verificar o status das importações e encaminhamento."
       ],
       "Choose the look and feel of the application.": [
         "Escolha a aparência do aplicativo."
@@ -5851,6 +5857,9 @@
       "Unsupported file": [
         "Arquivo não suportado"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } usuários"
+      ],
       "Update recovery file": [
         "Atualizar o arquivo de recuperação"
       ],
@@ -6124,7 +6133,7 @@
         "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
-        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
+        "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta de ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
@@ -6556,9 +6565,6 @@
       ],
       "Enable signature verification and encryption with this key": [
         "Ativa a verificação de assinatura e criptografia com essa chave"
-      ],
-      "Export": [
-        "Exportar"
       ],
       "Export private key": [
         "Exportar chave privada"
@@ -8062,6 +8068,10 @@
         "${ n } calendário",
         "${ n } calendários"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuário",
+        "${ n } calendários por usuário"
+      ],
       "${ n } custom email domain": [
         "${ n } domínio de e-mail personalizado",
         "${ n } domínios de e-mail personalizados"
@@ -8271,6 +8281,12 @@
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } usuários"
+      ],
+      "Up to ${ n } users": [
+        "Até ${ n } usuários"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
@@ -8351,6 +8367,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar arquivos com facilidade e segurança."
@@ -8502,6 +8521,9 @@
         "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações",
         "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Crie até ${ n } endereços de email/pseudônimos para toda a família. Use-os para as suas identidades online, como por exemplo, MeuPlanoFamilia@${ domain } para planos online."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores"
       ],
@@ -8525,6 +8547,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "O suporte a IMAP está limitado ao uso de apps para desktop (por exemplo, Outlook, Apple Mail, Thunderbird) por meio do ${ MAIL_APP_NAME } Bridge. Integrações de IMAP baseadas na nuvem não são compatíveis no momento."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantenha seus planos privados para você e sua família com um calendário criptografado"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Mantém você protegido ao bloquear todas as conexões de rede quando você é desconectado inesperadamente do nosso servidor VPN."
@@ -8565,6 +8590,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Proteja todos os dispositivos conectados à sua rede WiFi. Também é útil quando você tem dispositivos que não são diretamente compatíveis com configurações de VPN."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Proteja sua família de sites perigosos e acesse nossos servidores VPN de alta velocidade para assistir seus conteúdos favoritos"
+      ],
       "Quickly set up out-of-office messages": [
         "Configure rapidamente mensagens de ausência temporária"
       ],
@@ -8579,6 +8607,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Envie todo o seu tráfego na internet por meio da rede Tor com um único clique"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Armazene com segurança os detalhes dos seus contatos, como número de telefone, endereço, aniversário e anotações pessoais. A criptografia de acesso zero garante que nem mesmo o ${ BRAND_NAME } pode acessá-los."
@@ -8603,6 +8634,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }. Os administradores podem alocar quantidades de armazenamento diferentes aos usuários da organização"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre usuários entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
@@ -9894,10 +9928,10 @@
         "Entendido"
       ],
       "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Basta fazer login na sua conta da Apple App Store e pressionar ${ subscriptions }."
+        "Basta iniciar sessão na sua conta da Apple App Store e pressionar ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Basta fazer login na sua conta da Play Store e pressionar ${ subscriptions }."
+        "Basta iniciar sessão na sua conta da Play Store e pressionar ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gerencie sua assinatura em ${ subscriptionManager }."
@@ -10330,6 +10364,9 @@
       ],
       "Account and password": [
         "Conta e senha"
+      ],
+      "Account keys": [
+        "Chave da conta"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -10788,7 +10825,7 @@
         "Idioma e horário"
       ],
       "Layout": [
-        "Disposição"
+        "Layout"
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"

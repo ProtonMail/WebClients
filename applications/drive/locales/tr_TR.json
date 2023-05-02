@@ -780,6 +780,9 @@
       "Other": [
         "Diğer"
       ],
+      "Pass problem": [
+        "Parola sorunu"
+      ],
       "Payments problem": [
         "Ödeme sorunu"
       ],
@@ -1888,7 +1891,7 @@
         "Kimlik doğrulaması iptal edildi."
       ],
       "Authentication error.": [
-        "Kimlik doğrulama hatası."
+        "Kimlik doğrulama sorunu."
       ],
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
@@ -2131,7 +2134,7 @@
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Bilinmeyen sorun"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
@@ -2319,13 +2322,13 @@
         "Erişim reddedildi"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Lütfen biz hatayı düzeltene kadar bekleyin."
+        "Lütfen biz sorunu giderene kadar bekleyin."
       ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
       "Internal server error": [
-        "İç sunucu hatası"
+        "İç sunucu sorunu"
       ],
       "Not found": [
         "Bulunamadı"
@@ -2384,7 +2387,7 @@
         "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
       ],
       "Unexpected error": [
-        "Beklenmeyen hata"
+        "Beklenmeyen sorun"
       ],
       "Unsupported invitation": [
         "Davet desteklenmiyor"
@@ -2973,7 +2976,7 @@
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
+        "Çöp kutusunu boşaltmak ve tüm ögeleri kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Çöp kutusundaki ${ itemName } ögesini kalıcı olarak silmek istediğinize emin misiniz?"
@@ -3660,6 +3663,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
       ],
@@ -3682,7 +3688,7 @@
         "Dosya adına, tarihine ya da türüne göre aramayı deneyin."
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Bilinmeyen sorun"
       ],
       "Unlock drive to recover files": [
         "Dosyaları kurtarmak için sürücünün kilidini açın"
@@ -4235,6 +4241,9 @@
       ],
       "Set recovery method": [
         "Kurtarma yöntemini ayarlayın"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Şifrelenmiş aramanın dizine ekleme işlemini görüntüle"
       ],
       "Sign emails": [
         "E-postaları imzala"
@@ -5744,7 +5753,7 @@
         "Doğrulama atlansın mı?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Birleştirilecek kişilerden bazılarında hatalar görüntüleniyor. Lütfen bunları ayrı ayrı inceleyin"
+        "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kişi verileri bozulmuş olduğundan görüntülenemiyor."
