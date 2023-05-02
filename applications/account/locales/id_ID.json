@@ -279,7 +279,7 @@
         "Rincian"
       ],
       "Didn't receive a code?": [
-        "Belum menerima kode?"
+        "Tidak menerima kode?"
       ],
       "Disable": [
         "Nonaktifkan"
@@ -1160,6 +1160,9 @@
       ],
       "Other": [
         "Lainnya"
+      ],
+      "Pass problem": [
+        "Masalah Pass"
       ],
       "Payments problem": [
         "Masalah pembayaran"
@@ -2616,6 +2619,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail dan tanda plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
@@ -3288,13 +3294,13 @@
         "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terjadi kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
@@ -3325,16 +3331,16 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
+        "Terdapat kesalahan pada saat membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename } Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
+        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename } milik Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
@@ -3452,7 +3458,7 @@
         "Terdapat kesalahan pada saat mengunggah \"${ formattedFilename }\". Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
         "Unggah berkas CSV yang mengandung sebanyak-banyaknya ${ MAX_NUMBER_OF_USER_ROWS } akun pengguna."
@@ -3871,6 +3877,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Teruskan secara otomatis"
+      ],
+      "Gmail messages to your inbox": [
+        "Pesan Gmail ke kotak masuk Anda"
+      ],
       "Sign in with Google": [
         "Masuk dengan Google"
       ]
@@ -4032,13 +4044,13 @@
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
+        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Terjadi kesalahan saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
+        "Terdapat kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
@@ -4083,13 +4095,13 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
+        "Terdapat kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontak berhasil diimpor. Kontak yang diimpor akan muncul pada daftar kontak Anda."
@@ -4605,7 +4617,7 @@
         "Di bawah jumlah minimum (${ amount })."
       ],
       "An error occurred while communicating with the extension": [
-        "Terjadi kesalahan pada saat berkomunikasi dengan ekstensi"
+        "Terdapat kesalahan pada saat berkomunikasi dengan ekstensi"
       ],
       "and": [
         "dan"
@@ -5202,7 +5214,7 @@
         "Catatan mencakup segala upaya autentikasi yang terhubung dengan kredensial ${ BRAND_NAME } Anda pada seluruh layanan ${ BRAND_NAME }."
       ],
       "lose access to all current encrypted data": [
-        "kehilangan akses ke semua data yang terenkripsi"
+        "kehilangan akses ke seluruh data yang saat ini terenkripsi"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
@@ -6033,7 +6045,7 @@
         "Anda tetap harus membalas undangan ini agar penyelenggara acara dapat melihat respon Anda."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
+        "Anda akan ${ loseAllData } pada akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -6485,9 +6497,6 @@
       ],
       "Enable signature verification and encryption with this key": [
         "Aktifkan verifikasi dan enkripsi tanda tangan dengan kunci ini"
-      ],
-      "Export": [
-        "Ekspor"
       ],
       "Export private key": [
         "Ekspor kunci pribadi"
@@ -8442,6 +8451,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis Cloud saat ini tidak didukung."
       ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+      ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
       ],
@@ -8499,6 +8511,9 @@
       "Route your internet traffic through the Tor network with a single click": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik"
       ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
       ],
@@ -8522,6 +8537,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan. Para administrator dapat mengatur besar kuota penyimpanan yang akan dapat digunakan oleh masing-masing pengguna di dalam organisasi mereka"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
@@ -9977,6 +9995,9 @@
       "Account and password": [
         "Akun dan kata sandi"
       ],
+      "Account keys": [
+        "Kunci akun"
+      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -10966,7 +10987,7 @@
         "Kunci ini digunakan oleh ${ MAIL_APP_NAME } untuk mengenkripsi data kontak Anda"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
+        "Kami mendeteksi adanya masalah pada konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan menonaktifkan penandatanganan DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
@@ -11171,7 +11192,7 @@
         "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
+        "Kami mendeteksi adanya masalah pada konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan menonaktifkan penandatanganan DKIM."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Anda harus ${ activateLink } kunci organisasi sebelum menambahkan alamat email ke anggota non-pribadi."

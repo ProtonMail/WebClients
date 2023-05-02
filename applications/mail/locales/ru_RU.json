@@ -1249,7 +1249,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Почтовый ящик ${ nameToDisplay }"
+        "Почтовый ящик пользователя ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "Удалено 5 трекеров"
@@ -1258,7 +1258,7 @@
         "Автоматически переслано"
       ],
       "Email received": [
-        "Получено письмо"
+        "Письмо получено"
       ],
       "Encrypted": [
         "Зашифровано"
@@ -1347,6 +1347,9 @@
       ],
       "Other": [
         "Другая"
+      ],
+      "Pass problem": [
+        "Проблема с Pass"
       ],
       "Payments problem": [
         "Проблема с платежами"
@@ -2852,7 +2855,7 @@
         "${ manageBlockedAddressesSettingsLink } в настройках."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Автоматически очищать сообщения старше 30 дней из корзины и спама. Воспользуйтесь этими и другими преимуществами после улучшения."
+        "Автоматически удалять сообщения старше 30 дней из корзины и спама. Воспользуйтесь этим и другими преимуществами после улучшения."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
@@ -2885,7 +2888,7 @@
         "Нет ярлыков"
       ],
       "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail и знак \"плюс\""
+        "Логотип ProtonMail и знак «плюс»"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -4029,10 +4032,10 @@
         "Автоматически пересылать"
       ],
       "Gmail messages to your inbox": [
-        "Сообщения Gmail в вашем почтовом ящике"
+        "Сообщения Gmail в ваш почтовый ящик"
       ],
       "Sign in with Google": [
-        "Войти с Google"
+        "Войти при помощи Google"
       ]
     },
     "Group": {
@@ -4738,10 +4741,10 @@
         "Требуется внимание"
       ],
       "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Автоматическое удаление сообщений, находящихся в спаме более 30 дней."
+        "Автоматически удалять сообщения, находящиеся в спаме более 30 дней."
       ],
       "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Автоматическое удаление сообщений, находящихся в корзине более 30 дней."
+        "Автоматически удалять сообщения, находящиеся в корзине более 30 дней."
       ],
       "Background color": [
         "Цвет фона"
@@ -5600,6 +5603,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для повторной подписи контактов нам необходимо проверить каждый контакт с помощью списка ключей шифрования, доступных в вашем аккаунте. Если совпадение не найдено, ваш контакт будет повторно подписан основным ключом шифрования."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Для восстановления данных, вам необходимо повторно активировать ключ аккаунта, использованный в момент создания данных. Для этого потребуется вспомнить пароль, использованный при генерации ключа."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Для удаления из этого списка рассылки будет отправлено письмо от ${ boldFrom } со следующими параметрами, определенными отправителем рассылки:"
@@ -8560,7 +8566,7 @@
         "Изменить мой ответ"
       ],
       "Clear out the junk": [
-        "Очистка от мусора"
+        "Очистить от мусора"
       ],
       "Clearing data": [
         "Очистка данных"
