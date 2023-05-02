@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SettingsLink } from '../../components';
@@ -14,6 +14,13 @@ interface Props {
 }
 
 const PmMeSection = ({ isPMAddressActive }: Props) => {
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: MAIL_UPSELL_PATHS.PM_ME,
+        isSettings: true,
+    });
+
     return (
         <SettingsSection>
             {!isPMAddressActive ? (
@@ -31,14 +38,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                             .t`You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.`}
                     </SettingsParagraph>
 
-                    <ButtonLike
-                        color="norm"
-                        as={SettingsLink}
-                        path={addUpsellPath(
-                            '/upgrade',
-                            `${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.PM_ME}`
-                        )}
-                    >
+                    <ButtonLike color="norm" as={SettingsLink} path={addUpsellPath('/upgrade', upsellRef)}>
                         {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </>

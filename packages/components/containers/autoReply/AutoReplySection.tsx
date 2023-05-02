@@ -12,7 +12,9 @@ import {
     MAIL_UPSELL_PATHS,
     PLANS,
     PLAN_NAMES,
+    UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import { Editor, EditorActions, Toggle } from '../../components';
@@ -190,6 +192,12 @@ const AutoReplySection = () => {
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: MAIL_UPSELL_PATHS.AUTO_REPLY,
+    });
+
     return (
         <SettingsSectionWide className="no-scroll">
             <SettingsParagraph className="mt-0 mb1">
@@ -218,10 +226,7 @@ const AutoReplySection = () => {
             {hasPaidMail ? (
                 isEnabled && renderForm()
             ) : (
-                <UpgradeBanner
-                    className="mt2"
-                    upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.AUTO_REPLY}`}
-                >
+                <UpgradeBanner className="mt2" upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
