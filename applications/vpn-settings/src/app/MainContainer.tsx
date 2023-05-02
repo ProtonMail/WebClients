@@ -60,6 +60,7 @@ import LiveChatZendesk, {
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
+import { DEFAULT_APP, getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -99,6 +100,7 @@ const MainContainer = () => {
             ignoreOnboarding: location.pathname !== '/downloads',
         };
     });
+    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
 
     const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
         setAuthenticatedBugReportMode(mode);
@@ -158,6 +160,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
+            app={app}
         />
     );
 

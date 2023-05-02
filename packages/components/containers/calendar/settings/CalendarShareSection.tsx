@@ -14,8 +14,9 @@ import {
     BRAND_NAME,
     CALENDAR_UPSELL_PATHS,
     MAIL_SHORT_APP_NAME,
+    UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -105,6 +106,13 @@ const CalendarShareSection = ({
     const pendingInvitations = filterOutAcceptedInvitations(invitations);
     const isMaximumMembersReached = members.length + pendingInvitations.length >= MAX_CALENDAR_MEMBERS;
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: CALENDAR_UPSELL_PATHS.SHARE_CAL,
+        isSettings: true,
+    });
+
     return (
         <SettingsSectionWide className="container-section-sticky-section">
             {renderShareCalendarModal && (
@@ -172,10 +180,7 @@ const CalendarShareSection = ({
                             </p>
                             <ButtonLike
                                 as={SettingsLink}
-                                path={addUpsellPath(
-                                    '/upgrade',
-                                    `${APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH}${CALENDAR_UPSELL_PATHS.SHARE_CAL}`
-                                )}
+                                path={addUpsellPath('/upgrade', upsellRef)}
                                 color="norm"
                                 shape="solid"
                                 size="small"
