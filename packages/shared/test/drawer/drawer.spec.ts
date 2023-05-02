@@ -1,5 +1,5 @@
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
-import { DRAWER_ACTION, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_ACTION, DRAWER_EVENTS, DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import {
     addParentAppToUrl,
@@ -22,6 +22,9 @@ import { mockWindowLocation, resetWindowLocation } from '../helpers/url.helper';
 
 const windowHostname = 'mail.proton.me';
 
+const tsDrawerNativeApps: string[] = [...drawerNativeApps];
+const tsDrawerIframeApps: string[] = [...drawerIframeApps];
+
 describe('drawer helpers', () => {
     describe('isNativeDrawerApp', () => {
         it('should be a drawer native app', () => {
@@ -32,7 +35,7 @@ describe('drawer helpers', () => {
 
         it('should not be a drawer native app', () => {
             Object.values(APPS).forEach((app) => {
-                if (!drawerNativeApps.includes(app)) {
+                if (!tsDrawerNativeApps.includes(app)) {
                     expect(getIsNativeDrawerApp(app)).toBeFalsy();
                 }
             });
@@ -48,7 +51,7 @@ describe('drawer helpers', () => {
 
         it('should not be a iframe drawer native app', () => {
             Object.values(APPS).forEach((app) => {
-                if (!drawerIframeApps.includes(app)) {
+                if (!tsDrawerIframeApps.includes(app)) {
                     expect(getIsIframedDrawerApp(app)).toBeFalsy();
                 }
             });
@@ -240,13 +243,13 @@ describe('drawer helpers', () => {
 
     describe('isAppInView', () => {
         it('should be the app in view', () => {
-            const appInView = APPS.PROTONCONTACTS;
-            const currentApp = APPS.PROTONCONTACTS;
+            const appInView = DRAWER_NATIVE_APPS.CONTACTS;
+            const currentApp = DRAWER_NATIVE_APPS.CONTACTS;
             expect(isAppInView(currentApp, appInView)).toBeTruthy();
         });
 
         it('should not be the app in view', () => {
-            const appInView = APPS.PROTONCONTACTS;
+            const appInView = DRAWER_NATIVE_APPS.CONTACTS;
             const currentApp = APPS.PROTONCALENDAR;
             expect(isAppInView(currentApp, appInView)).toBeFalsy();
         });
@@ -273,7 +276,7 @@ describe('drawer helpers', () => {
             const apps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
 
             apps.forEach((app) => {
-                expect(getDisplayDrawerApp(app, APPS.PROTONCONTACTS)).toBeTruthy();
+                expect(getDisplayDrawerApp(app, DRAWER_NATIVE_APPS.CONTACTS)).toBeTruthy();
             });
         });
 
@@ -281,7 +284,7 @@ describe('drawer helpers', () => {
             const apps: APP_NAMES[] = [APPS.PROTONCONTACTS, APPS.PROTONACCOUNT];
 
             apps.forEach((app) => {
-                expect(getDisplayDrawerApp(app, APPS.PROTONCONTACTS)).toBeFalsy();
+                expect(getDisplayDrawerApp(app, DRAWER_NATIVE_APPS.CONTACTS)).toBeFalsy();
             });
         });
     });

@@ -36,7 +36,7 @@
 		}
 	}
 
-	@include media('<=small') {
+	@include media('<=medium') {
 		inset: 0;
 		display: flex;
 		padding-block: 15%;
@@ -48,11 +48,11 @@
 		background-color: var(--backdrop-norm);
 	}
 
-	@include media('<=xsmall') {
+	@include media('<=medium') {
 		padding: 5%;
 	}
 
-	@include media('>small') {
+	@include media('>medium') {
 		inset-block-start: calc(var(--top) * 1px - 1px);
 		/* stylelint-disable */
 		inset-inline-start: calc(var(--left) * 1px - 1px);
@@ -67,7 +67,7 @@
 
 	/* Backdrop button, meant to override 'autoClose' option on mobile */
 	&-backdrop {
-		@include media('<=small') {
+		@include media('<=medium') {
 			position: absolute;
 			inset: 0;
 			z-index: 0;
@@ -81,7 +81,7 @@
 			background: none;
 		}
 
-		@include media('>small') {
+		@include media('>medium') {
 			display: none;
 		}
 	}
@@ -103,7 +103,7 @@
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 
-		@include media('<=small') {
+		@include media('<=medium') {
 			position: relative;
 			z-index: 1;
 			inline-size: 100%;
@@ -111,7 +111,7 @@
 			transition: transform 0.1s ease-out;
 		}
 
-		@include media('>small') {
+		@include media('>medium') {
 			inline-size: calc(var(--width) * 1px + 2em); // 2em for paddings
 			max-inline-size: var(--max-width, unset);
 			max-block-size: var(--max-height, unset);

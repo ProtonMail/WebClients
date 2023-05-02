@@ -2,6 +2,7 @@ import { AnimationEvent, HTMLAttributes, ReactNode } from 'react';
 
 import DrawerHeaderTitleDropdown from '@proton/components/components/drawer/views/DrawerHeaderTitleDropdown';
 import { DrawerAppFooter, DrawerAppHeader } from '@proton/components/containers';
+import clsx from '@proton/utils/clsx';
 
 export interface SelectedDrawerOption {
     text: string;
@@ -17,7 +18,16 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
     onAnimationEnd?: () => void;
 }
 
-const DrawerView = ({ options, tab, onSelectDrawerOption, content, footerButtons, onAnimationEnd, ...rest }: Props) => {
+const DrawerView = ({
+    options,
+    tab,
+    onSelectDrawerOption,
+    content,
+    footerButtons,
+    onAnimationEnd,
+    className,
+    ...rest
+}: Props) => {
     const drawerHeaderTitle = options ? (
         <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
     ) : (
@@ -33,7 +43,11 @@ const DrawerView = ({ options, tab, onSelectDrawerOption, content, footerButtons
     };
 
     return (
-        <div className="drawer-app-view h100 w100 flex flex-column" onAnimationEnd={handleOnAnimationEnd} {...rest}>
+        <div
+            className={clsx('drawer-app-view h100 w100 flex flex-column', className)}
+            onAnimationEnd={handleOnAnimationEnd}
+            {...rest}
+        >
             <DrawerAppHeader title={drawerHeaderTitle} />
             <div className="flex-item-fluid contacts-widget w100">{content}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}

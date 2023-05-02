@@ -1,0 +1,34 @@
+@import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/base/interactive';
+
+.quickSettingsSectionRow {
+	min-block-size: rem(32);
+
+	&:not(:only-child) {
+		padding-block: var(--space-1);
+	}
+
+	&-action {
+		.toggle-label {
+			line-height: 0;
+		}
+	}
+
+	.select-unstyled {
+		@extend .interactive-pseudo-protrude;
+		@extend .interactive--no-background;
+
+		color: var(--link-norm);
+		position: relative;
+		outline: none !important;
+
+		&:hover {
+			color: var(--link-hover);
+		}
+
+		&[aria-expanded='true'],
+		&:focus-visible {
+			color: var(--link-active);
+		}
+	}
+}

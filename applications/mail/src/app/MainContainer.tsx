@@ -10,6 +10,7 @@ import {
     useActiveBreakpoint,
     useFeatures,
 } from '@proton/components';
+import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
@@ -66,25 +67,29 @@ const MainContainer = () => {
     }, [featureSw, loadingSw]);
 
     return (
-        <ReduxProvider store={store}>
-            <EncryptedSearchProvider>
-                <SimpleLoginExtensionProvider>
-                    <MailContentRefProvider mailContentRef={mailContentRef}>
-                        <ChecklistsProvider>
-                            <ComposerContainer breakpoints={breakpoints}>
-                                <ModalsChildren />
-                                <Switch>
-                                    <Route
-                                        path={MAIN_ROUTE_PATH}
-                                        render={() => <PageContainer ref={mailContentRef} breakpoints={breakpoints} />}
-                                    />
-                                </Switch>
-                            </ComposerContainer>
-                        </ChecklistsProvider>
-                    </MailContentRefProvider>
-                </SimpleLoginExtensionProvider>
-            </EncryptedSearchProvider>
-        </ReduxProvider>
+        <QuickSettingsRemindersProvider>
+            <ReduxProvider store={store}>
+                <EncryptedSearchProvider>
+                    <SimpleLoginExtensionProvider>
+                        <MailContentRefProvider mailContentRef={mailContentRef}>
+                            <ChecklistsProvider>
+                                <ComposerContainer breakpoints={breakpoints}>
+                                    <ModalsChildren />
+                                    <Switch>
+                                        <Route
+                                            path={MAIN_ROUTE_PATH}
+                                            render={() => (
+                                                <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                            )}
+                                        />
+                                    </Switch>
+                                </ComposerContainer>
+                            </ChecklistsProvider>
+                        </MailContentRefProvider>
+                    </SimpleLoginExtensionProvider>
+                </EncryptedSearchProvider>
+            </ReduxProvider>
+        </QuickSettingsRemindersProvider>
     );
 };
 

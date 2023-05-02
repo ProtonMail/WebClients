@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useMemo, useState } from 'react';
 
-export const useElementBreakpoints = (ref: RefObject<HTMLElement>, breakpoints: { [key: string]: number }) => {
+const useElementBreakpoints = (ref: RefObject<HTMLElement>, breakpoints: { [key: string]: number }) => {
     const [breakpoint, setBreakpoint] = useState<string>();
 
     const orderedBreakpoints = useMemo(() => {
@@ -31,3 +31,5 @@ export const useElementBreakpoints = (ref: RefObject<HTMLElement>, breakpoints: 
 
     return breakpoint;
 };
+
+export default useElementBreakpoints;

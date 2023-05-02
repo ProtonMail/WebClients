@@ -7,12 +7,12 @@
 	&-search-container,
 	&-toolbar,
 	.item-container {
-		padding-inline: 1em;
+		padding-inline: var(--space-4);
 	}
 
 	&-tabs {
-		padding-block-start: 1em;
-		margin-inline: 1em;
+		padding-block-start: var(--space-4);
+		margin-inline: var(--space-4);
 	}
 
 	.ReactVirtualized__Grid__innerScrollContainer {
@@ -27,7 +27,7 @@
 	.item-container {
 		border-radius: 0;
 		margin-inline: 0;
-		padding-block: em(8);
+		padding-block: var(--space-2);
 
 		&:not(.item-in-drawer) {
 			border-block-end: 1px solid var(--border-weak);

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useActiveBreakpoint } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -12,11 +12,10 @@ interface Props {
     filter: Filter;
     onFilter: (filter: Filter) => void;
     mailSettings: MailSettings;
+    dropdown?: boolean;
 }
 
-const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
-    const { isDesktop } = useActiveBreakpoint();
-
+const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props) => {
     const noFilterApply = !Object.values(filter).length;
 
     const FILTER_OPTIONS = {
@@ -75,7 +74,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
         },
     ];
 
-    if (!isDesktop) {
+    if (dropdown) {
         const { text = '' } = buttons.find(({ isActive }) => isActive) || {};
 
         return (
@@ -83,10 +82,10 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                 as={Button}
                 shape="ghost"
                 size="small"
-                hasCaret={false}
+                hasCaret={true}
+                className="toolbar-button toolbar-button--small"
                 content={
                     <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
-                        <Icon className="toolbar-icon mr-2" name="filter" />
                         <span className="text-sm m-0">{text}</span>
                     </span>
                 }
@@ -112,7 +111,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
     }
 
     return (
-        <div className="flex">
+        <div className="flex flex-nowrap md:gap-1">
             {buttons.map(({ ID, text, isActive, onClick }) => {
                 return (
                     <Button
@@ -121,7 +120,10 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                         size="small"
                         shape="ghost"
                         aria-pressed={isActive}
-                        className={clsx(['text-sm my-0 mx-1', isActive && 'no-pointer-events bg-strong'])}
+                        className={clsx([
+                            'toolbar-button toolbar-button--small text-sm m-0',
+                            isActive && 'no-pointer-events bg-strong',
+                        ])}
                         onClick={onClick}
                     >
                         {text}

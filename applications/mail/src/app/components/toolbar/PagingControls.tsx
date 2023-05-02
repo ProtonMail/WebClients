@@ -17,10 +17,9 @@ interface Props {
     page: number;
     total: number | undefined;
     onPage: (page: number) => void;
-    narrowMode: boolean;
 }
 
-const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage, narrowMode }: Props) => {
+const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage }: Props) => {
     const location = useLocation();
     const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputTotal, inputOnPage);
     const { getESDBStatus } = useEncryptedSearchContext();
@@ -44,57 +43,22 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         </DropdownMenuButton>
     );
 
-    if (narrowMode) {
-        return (
-            <>
-                <ToolbarDropdown
-                    title={c('Action').t`Change page`}
-                    content={String(page)}
-                    disabled={total <= 1}
-                    data-testid="toolbar:page-number-dropdown"
-                >
-                    {{
-                        render: () => (
-                            <DropdownMenu>
-                                {[...Array(total)].map((_, i) => {
-                                    const pageNumber = i + 1; // paging tooling is 0 based
-                                    const active = page === pageNumber;
-                                    return (
-                                        <DropdownMenuButton
-                                            key={i} // eslint-disable-line react/no-array-index-key
-                                            loading={loading}
-                                            aria-selected={active}
-                                            isSelected={active}
-                                            onClick={() => onPage(i + 1)}
-                                            aria-label={c('Action').t`Page ${pageNumber}`}
-                                            data-testid={`toolbar:page-number-${pageNumber}`}
-                                            className={clsx(['flex flex-row'])}
-                                        >
-                                            <span className="text-left flex-item-fluid">{pageNumber}</span>
-                                            {active ? <Icon name="checkmark" /> : null}
-                                        </DropdownMenuButton>
-                                    );
-                                })}
-                                {useLoadMore && loadMore}
-                            </DropdownMenu>
-                        ),
-                    }}
-                </ToolbarDropdown>
-            </>
-        );
-    }
-
     const totalText = total || 1; // total is 0 when no items
-    // translator: Used for pagination, both values are number. Ex: "3 of 15"
-    const paginationLabel = c('Pagination').t`${page} of ${totalText}`;
+    const paginationLabel = (
+        <>
+            {page}
+            <span>/</span>
+            {totalText}
+        </>
+    );
 
     return (
-        <>
+        <div className="flex flex-item-noshrink">
             <ToolbarButton
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
                 onClick={onPrevious}
-                className="on-rtl-mirror"
+                className="on-rtl-mirror toolbar-button--small toolbar-button--small-icon"
                 icon={<Icon name="chevron-left" alt={c('Action').t`Previous page`} />}
                 data-testid="toolbar:previous-page"
             />
@@ -104,6 +68,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 disabled={loading || total <= 1}
                 data-testid="toolbar:page-number-dropdown"
                 hasCaret={false}
+                className="toolbar-button--small interactive--no-background toolbar-page-number-dropdown text-tabular-nums"
             >
                 {{
                     render: () => (
@@ -138,11 +103,11 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 disabled={loading || page >= total}
                 title={c('Action').t`Next page`}
                 onClick={onNext}
-                className="on-rtl-mirror"
+                className="on-rtl-mirror toolbar-button--small toolbar-button--small-icon"
                 icon={<Icon name="chevron-right" alt={c('Action').t`Next page`} />}
                 data-testid="toolbar:next-page"
             />
-        </>
+        </div>
     );
 };
 

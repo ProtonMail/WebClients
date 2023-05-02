@@ -46,7 +46,7 @@ const HeaderCell = <T,>({
     if (item.type === HeaderCellsPresets.Checkbox && selection) {
         return (
             <TableHeaderCell className="file-browser-header-checkbox-cell">
-                <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
+                <div role="presentation" key="select-all" className="flex pl-2" onClick={stopPropagation}>
                     <Checkbox
                         indeterminate={selection.selectionState === SelectionState.SOME}
                         className="increase-click-surface mr-1"
@@ -59,7 +59,7 @@ const HeaderCell = <T,>({
                         }
                     >
                         {selection?.selectionState !== SelectionState.NONE ? (
-                            <span className="ml-4">{c('Info').jt`${selectedCount} selected`}</span>
+                            <span className="ml-2">{c('Info').jt`${selectedCount} selected`}</span>
                         ) : null}
                     </Checkbox>
                     {selection?.selectionState !== SelectionState.NONE && isLoading ? (

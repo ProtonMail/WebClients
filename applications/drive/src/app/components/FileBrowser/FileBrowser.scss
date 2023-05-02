@@ -11,6 +11,12 @@
 	margin: -0.5em;
 }
 
+.file-browser-table {
+	th {
+		block-size: rem(44); // set height for thead as well
+	}
+}
+
 .file-browser-table .filebrowser-list-header-name-cell,
 .file-browser-table .filebrowser-list-device-name-cell {
 	padding-inline-start: 1em;

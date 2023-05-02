@@ -52,7 +52,7 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            <WeekStartSection />
+            <WeekStartSection/>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="week-numbers-display" id="label-week-numbers-display">

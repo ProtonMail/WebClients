@@ -19,18 +19,25 @@ interface Props {
     size?: ThemeSvgSize;
 }
 
-const ThemeCards = ({ themeIdentifier, onChange, disabled, className, list, size = 'medium' }: Props) => {
+const ThemeCards = ({ themeIdentifier, onChange, disabled, className, list, size = 'medium-wide' }: Props) => {
     const { minGridTemplateColumnSize, gridGap } = (() => {
         if (size === 'small') {
             return {
-                minGridTemplateColumnSize: 3,
+                minGridTemplateColumnSize: 4,
                 gridGap: 2,
+            };
+        }
+
+        if (size === 'medium-wide') {
+            return {
+                minGridTemplateColumnSize: 6,
+                gridGap: 4,
             };
         }
 
         if (size === 'medium') {
             return {
-                minGridTemplateColumnSize: 6,
+                minGridTemplateColumnSize: 4,
                 gridGap: 4,
             };
         }

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown, ToolbarButton } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -22,24 +22,35 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
         // { text: c('Calendar view').t`Agenda`, value: AGENDA },
     ];
 
+    const selectedOption = options.find((option) => option.value === view);
+
     return (
         <>
-            {options.map(({ text, value }) => {
-                const v = range ? CUSTOM : value;
-                return (
-                    <ToolbarButton
-                        key={value}
-                        title={c('Calendar view selector').t`Change time range to`}
-                        disabled={loading || disabled}
-                        className={clsx(['color-inherit', v === view && 'is-active'])}
-                        aria-pressed={v === view ? true : undefined}
-                        onClick={() => onChange(value)}
-                        {...rest}
-                    >
-                        <span className="m-auto">{text}</span>
-                    </ToolbarButton>
-                );
-            })}
+            <SimpleDropdown
+                as={ToolbarButton}
+                content={range === 0 ? selectedOption?.text : c('Calendar view').t`Custom`}
+                title={c('Calendar view selector').t`Change time range`}
+                originalPlacement="bottom-start"
+            >
+                <DropdownMenu>
+                    {options.map(({ text, value }) => {
+                        const v = range ? CUSTOM : value;
+                        return (
+                            <DropdownMenuButton
+                                key={value}
+                                title={c('Calendar view selector').t`Change time range to`}
+                                disabled={loading || disabled}
+                                className={clsx(['color-inherit text-left', v === view && 'is-active'])}
+                                aria-pressed={v === view ? true : undefined}
+                                onClick={() => onChange(value)}
+                                {...rest}
+                            >
+                                {text}
+                            </DropdownMenuButton>
+                        );
+                    })}
+                </DropdownMenu>
+            </SimpleDropdown>
         </>
     );
 };

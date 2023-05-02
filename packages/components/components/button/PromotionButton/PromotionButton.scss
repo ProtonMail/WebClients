@@ -47,7 +47,7 @@
 		}
 	}
 
-	&:not(.button-ghost-weak),
+	&:not([class*='ghost']),
 	&.button-for-icon:hover,
 	&.button-for-icon:focus-visible {
 		background: linear-gradient(to right, var(--upgrade-color-stop-1) 0%, var(--upgrade-color-stop-2) 100%);
@@ -66,11 +66,7 @@
 	}
 
 	&--icon-gradient {
-		svg {
-			fill: url(#gradient-horizontal) var(--text-norm);
-		}
-
-		#gradient-horizontal {
+		linearGradient {
 			--color-stop-1: var(--upgrade-color-stop-1);
 			--color-stop-2: var(--upgrade-color-stop-2);
 		}

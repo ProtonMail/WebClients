@@ -15,7 +15,7 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle, ...rest }: Props) => 
         <Button
             shape="ghost"
             color="weak"
-            className="hamburger ml-2 no-desktop no-tablet no-print"
+            className="hamburger no-desktop no-tablet no-print mr-2"
             aria-expanded={expanded === false ? false : undefined}
             aria-controls={sidebarId}
             onClick={onToggle}
@@ -24,7 +24,7 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle, ...rest }: Props) => 
             icon
         >
             <Icon
-                size={24}
+                size={16}
                 name={expanded ? 'cross' : 'hamburger'}
                 alt={expanded ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
             />

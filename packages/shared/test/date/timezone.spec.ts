@@ -5,7 +5,10 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
+    getAbbreviatedTimezoneName,
+    getReadableCityTimezone,
     getSupportedTimezone,
+    getTimezoneAndOffset,
     guessTimezone,
 } from '../../lib/date/timezone';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
@@ -233,5 +236,55 @@ describe('guessTimeZone', () => {
         it('guesses "Africa/Algiers", first in the list with that GMT offset', () => {
             expect(guessTimezone(timeZoneList)).toBe('Africa/Algiers');
         });
+    });
+});
+
+describe('getReadableCityTimezone', () => {
+    it('should return city timezone without underscores', () => {
+        const cityTimezone = 'Los_Angeles';
+
+        expect(getReadableCityTimezone(cityTimezone)).toEqual('Los Angeles');
+    });
+
+    it('should return city timezone without change', () => {
+        const cityTimezone = 'Paris';
+
+        expect(getReadableCityTimezone(cityTimezone)).toEqual('Paris');
+    });
+});
+
+describe('getAbbreviatedTimezoneName', () => {
+    it('should return the expected offset timezone', () => {
+        const timezone = 'Europe/Paris';
+        const result = getAbbreviatedTimezoneName('offset', timezone) || '';
+
+        expect(['GMT+1', 'GMT+2']).toContain(result);
+    });
+
+    it('should return the expected city timezone', () => {
+        const timezone = 'Europe/Paris';
+
+        expect(getAbbreviatedTimezoneName('city', timezone)).toEqual('Paris');
+    });
+
+    it('should return the expected city timezone on a readable format', () => {
+        const timezone = 'America/Los_Angeles';
+
+        expect(getAbbreviatedTimezoneName('city', timezone)).toEqual('Los Angeles');
+    });
+
+    it('should return the expected city timezone for a longer timezone', () => {
+        const timezone = 'America/North_Dakota/New_Salem';
+
+        expect(getAbbreviatedTimezoneName('city', timezone)).toEqual('New Salem');
+    });
+});
+
+describe('getTimezoneAndOffset', () => {
+    it('should return the expected timezone string, containing offset and name', () => {
+        const timezone = 'Europe/Paris';
+        const result = getTimezoneAndOffset(timezone);
+
+        expect(['GMT+1 • Europe/Paris', 'GMT+2 • Europe/Paris']).toContain(result);
     });
 });

@@ -1,14 +1,10 @@
 import { ReactNode } from 'react';
 
-import { c } from 'ttag';
-
-import { Vr } from '@proton/atoms';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { AppLink, Hamburger, Icon } from '../../components';
+import { Hamburger } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
-import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import { useIsPaidUserCookie, useIsProtonUserCookie } from '../../hooks';
 
 interface Props extends HeaderProps {
@@ -16,11 +12,11 @@ interface Props extends HeaderProps {
     userDropdown?: ReactNode;
     contactsButton?: ReactNode;
     feedbackButton?: ReactNode;
-    backUrl?: string;
     floatingButton?: ReactNode;
     upsellButton?: ReactNode;
-    searchBox?: ReactNode;
-    searchDropdown?: ReactNode;
+    hideMenuButton?: boolean;
+    hideUpsellButton?: boolean;
+    actionArea?: ReactNode;
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
@@ -33,57 +29,32 @@ const PrivateHeader = ({
     upsellButton,
     userDropdown,
     settingsButton,
-    contactsButton,
     feedbackButton,
-    backUrl,
-    searchBox,
-    searchDropdown,
+    actionArea,
     floatingButton,
     expanded,
     onToggleExpand,
-    title,
+    hideMenuButton = false,
+    hideUpsellButton = false,
     app,
 }: Props) => {
     useIsPaidUserCookie();
     useIsProtonUserCookie();
 
-    if (backUrl) {
-        return (
-            <Header>
-                <TopNavbarListItemButton
-                    data-testid="view:general-back"
-                    as={AppLink}
-                    to={backUrl}
-                    icon={<Icon name="arrow-left" />}
-                    text={c('Title').t`Back`}
-                />
-                <TopNavbar>
-                    <TopNavbarList>
-                        <TopNavbarListItem>{userDropdown}</TopNavbarListItem>
-                    </TopNavbarList>
-                </TopNavbar>
-            </Header>
-        );
-    }
-
     return (
         <Header>
-            <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            {title && isNarrow ? <span className="text-xl lh-rg my-auto text-ellipsis">{title}</span> : null}
-            {isNarrow ? null : searchBox}
+            {!hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
+            {/* Handle actionArea in components itself rather than here */}
+            <div className="flex-item-fluid">{actionArea}</div>
+
             <TopNavbar>
                 <TopNavbarList>
-                    {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
-                    {upsellButton !== undefined ? upsellButton : <TopNavbarUpsell app={app} />}
+                    {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
-                    {contactsButton ? <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem> : null}
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}
-                    {!isNarrow && (
-                        <TopNavbarListItem noShrink className="flex-align-self-stretch topnav-vr">
-                            <Vr className="h100 mx-4" />
-                        </TopNavbarListItem>
-                    )}
-                    {userDropdown && <TopNavbarListItem className="relative">{userDropdown}</TopNavbarListItem>}
+                    {userDropdown && !isNarrow ? (
+                        <TopNavbarListItem className="ml-4 relative">{userDropdown}</TopNavbarListItem>
+                    ) : null}
                 </TopNavbarList>
             </TopNavbar>
             {isNarrow && floatingButton ? floatingButton : null}
