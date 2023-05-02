@@ -6,11 +6,9 @@ import { merge } from '@proton/pass/utils/object';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 export type Notification = CreateNotificationOptions & { target?: ExtensionEndpoint };
-
+export type WithNotification<T = AnyAction> = T & { meta: { notification: Notification } };
 export type NotificationOptions = Notification &
     ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });
-
-export type WithNotification<T = AnyAction> = T & { meta: { notification: Notification } };
 
 /* type guard utility */
 export const isActionWithNotification = <T extends AnyAction>(action?: T): action is WithNotification<T> =>
@@ -39,8 +37,11 @@ const parseNotification = (notification: NotificationOptions): Notification => {
 };
 
 const withNotification =
-    (notification: NotificationOptions) =>
-    <T extends object>(action: T): WithNotification<T> =>
-        merge(action, { meta: { notification: parseNotification(notification) } });
+    (options: NotificationOptions) =>
+    <T extends object>(action: T): WithNotification<T> => {
+        const notification = parseNotification(options);
+
+        return merge(action, { meta: { notification } });
+    };
 
 export default withNotification;
