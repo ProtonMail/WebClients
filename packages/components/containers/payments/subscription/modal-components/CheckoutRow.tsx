@@ -13,9 +13,10 @@ interface Props {
     currency?: Currency;
     className?: string;
     suffix?: string;
+    'data-testid'?: string;
 }
 
-const CheckoutRow = ({ title, amount = 0, currency, className = '', suffix }: Props) => {
+const CheckoutRow = ({ title, amount = 0, currency, className = '', suffix, 'data-testid': dataTestId }: Props) => {
     if (amount === 0 && !currency) {
         return (
             <div className={classnames(['flex flex-nowrap flex-justify-space-between mb1', className])}>
@@ -27,7 +28,7 @@ const CheckoutRow = ({ title, amount = 0, currency, className = '', suffix }: Pr
     return (
         <div className={classnames(['flex flex-nowrap flex-justify-space-between mb1', className])}>
             <div className="pr0-5">{title}</div>
-            <Price currency={currency} suffix={suffix}>
+            <Price currency={currency} suffix={suffix} data-testid={dataTestId}>
                 {amount}
             </Price>
         </div>
