@@ -870,7 +870,7 @@ export enum PAYMENT_METHOD_TYPES {
     TOKEN = 'token',
 }
 
-export type PAYMENT_METHOD_TYPE = PAYMENT_METHOD_TYPES | string;
+export type PlainPaymentMethodType = `${PAYMENT_METHOD_TYPES}`;
 
 export enum CLIENT_TYPES {
     MAIL = 1,
