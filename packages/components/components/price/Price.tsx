@@ -1,8 +1,6 @@
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-
-
 import { classnames } from '../../helpers';
 
 import './Price.scss';
@@ -22,7 +20,7 @@ export interface Props {
     prefix?: string;
     isDisplayedInSentence?: boolean;
     large?: boolean;
-    dataTestId?: string;
+    'data-testid'?: string;
 }
 
 const Price = ({
@@ -34,7 +32,7 @@ const Price = ({
     prefix = '',
     isDisplayedInSentence = false,
     large,
-    dataTestId,
+    'data-testid': dataTestId,
 }: Props) => {
     const value = humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
