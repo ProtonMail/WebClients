@@ -782,6 +782,9 @@
       "Other": [
         "Altele"
       ],
+      "Pass problem": [
+        "Problemă manager parole"
+      ],
       "Payments problem": [
         "Problemă plăți"
       ],
@@ -3719,6 +3722,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Pentru a vă recupera datele, trebuie să reactivați cheia de criptare a contului folosită în momentul creării datelor. Va trebui să vă amintiți parola utilizată atunci când a fost generată cheia."
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
@@ -4295,6 +4301,9 @@
       ],
       "Set recovery method": [
         "Setați metoda de recuperare"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Afișare progres indexare pentru căutarea criptată"
       ],
       "Sign emails": [
         "Semnare mesaje"

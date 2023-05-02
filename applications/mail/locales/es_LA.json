@@ -1338,6 +1338,9 @@
       "Other": [
         "Otro"
       ],
+      "Pass problem": [
+        "Problema con Proton Pass"
+      ],
       "Payments problem": [
         "Problema de pagos"
       ],
@@ -3152,10 +3155,10 @@
         "Servidor IMAP requerido"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales de acceso incorrectas. Por favor, intente de nuevo."
+        "Credenciales de acceso incorrectas. Intente de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Contraseña del buzón incorrecta. Por favor, intente de nuevo."
+        "Contraseña del buzón incorrecta. Intente de nuevo."
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
@@ -3310,7 +3313,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+        "Algo salió mal, ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Lo sentimos, ${ BRAND_NAME } no puede descifrar su mensaje. Verifique que todas sus claves están activas."
@@ -3625,10 +3628,10 @@
         "¡Ahh! Algo salió mal"
       ],
       "Please ${ refresh } or check your internet connection.": [
-        "Por favor ${ refresh } o compruebe su conexión."
+        "${ refresh } o compruebe su conexión."
       ],
       "Please ${ refresh } or try again later.": [
-        "Por favor ${ refresh } o intente más tarde."
+        "${ refresh } o intente más tarde."
       ],
       "Something went wrong": [
         "Algo salió mal"
@@ -4048,8 +4051,8 @@
         "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a su calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado con éxito.",
-        "Ocurrió un error al cifrar y añadir sus eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados con éxito."
+        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado.",
+        "Ocurrió un error al cifrar y añadir sus eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Se ha producido un error al cifrar y añadir el evento. No se ha podido importar ningún evento."
@@ -4064,10 +4067,10 @@
         "Cifrando y añadiendo eventos a su calendario: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado con éxito. El evento importado aparecerá ahora en su calendario."
+        "Evento importado. El evento importado aparecerá ahora en su calendario."
       ],
       "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Eventos importados con éxito. Los eventos importados aparecerán ahora en su calendario."
+        "Eventos importados. Los eventos importados aparecerán ahora en su calendario."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No cierre la pestaña antes de que el proceso de importación haya terminado."
@@ -4106,16 +4109,16 @@
         "Ocurrió un error al cifrar y añadir su contacto. No se pudo importar ningún contacto."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ocurrió un error al cifrar y añadir sus contactos. ${ totalImported } de ${ totalToImport } contactos importados con éxito."
+        "Ocurrió un error al cifrar y añadir sus contactos. ${ totalImported } de ${ totalToImport } contactos importados."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Ocurrió un error al cifrar y añadir sus contactos. No se pudo importar ningún contacto."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado con éxito. El contacto importado aparecerá ahora en su lista de contactos."
+        "Contacto importado. El contacto importado aparecerá ahora en su lista de contactos."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Contactos importados con éxito. Los contactos importados aparecerán ahora en su lista de contactos."
+        "Contactos importados. Los contactos importados aparecerán ahora en su lista de contactos."
       ]
     },
     "Import contact error": {
@@ -4465,8 +4468,8 @@
         "${ unreadCount } mensaje sin leer"
       ],
       "${ updated } contact updated successfully.": [
-        "${ updated } contacto actualizado con éxito.",
-        "${ updated } contacto actualizado con éxito."
+        "${ updated } contacto actualizado.",
+        "${ updated } contacto actualizado."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
@@ -5415,6 +5418,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar sus contactos, necesitamos verificar cada contacto contra la lista de claves de cifrado disponibles en su cuenta. Si no se encuentra ninguna coincidencia, su contacto volverá a estar firmado con la clave de cifrado principal."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Para recuperar sus datos, debe volver a reactivar la clave de la cuenta usada en el momento en que se crearon los datos. Esto requerirá que recuerde la contraseña usada cuando se generó la clave."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para darse de baja de esta lista de correo, se enviará un correo desde ${ boldFrom } con los siguientes detalles definidos por el remitente del boletín:"
       ],
@@ -5652,10 +5658,10 @@
         "Su cuenta de ${ BRAND_NAME } incluye SimpleLogin. Instale la extensión de navegador con un clic para comenzar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, por favor pague cualquier factura pendiente."
+        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, por favor pague cualquier factura pendiente."
+        "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, pague cualquier factura pendiente."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
@@ -7012,7 +7018,7 @@
         "Grupo de contactos actualizado"
       ],
       "Password has been set successfully": [
-        "La contraseña se ha cambiado con éxito"
+        "La contraseña se ha cambiado."
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Remitente ${ firstSenderAddress } bloqueado"
@@ -7246,16 +7252,16 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contacto fue exportado con éxito.",
-        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
+        "${ contactsExported.length } de ${ countContacts } contacto fue exportado.",
+        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
-        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
-        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito."
+        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados."
       ],
       "No contacts exported.": [
         "Ningún contacto exportado."

@@ -1179,6 +1179,26 @@
         "已完成 ${ numberOfCompletedItems }/${ totalNumberOfItems }"
       ]
     },
+    "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件箱"
+      ],
+      "5 trackers removed": [
+        "已移除 5 个跟踪器"
+      ],
+      "Auto forwarded": [
+        "已自动转发"
+      ],
+      "Email received": [
+        "收到邮件"
+      ],
+      "Encrypted": [
+        "已加密"
+      ],
+      "New email": [
+        "新邮件"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 应用"
@@ -3675,6 +3695,11 @@
         "未读"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "含附件"
+      ]
+    },
     "Filter preview": {
       "read": [
         "已读"
@@ -3774,6 +3799,14 @@
     "Get started checklist title": {
       "Get started": [
         "入门步骤"
+      ]
+    },
+    "Gmail forwarding": {
+      "Automatically forward": [
+        "自动转发"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 邮件到您的邮箱"
       ]
     },
     "Group": {
@@ -4511,6 +4544,9 @@
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
+      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -4700,6 +4736,9 @@
       "No group found": [
         "未找到群组"
       ],
+      "No imports or forwarding history.": [
+        "暂无邮件导入与自动转发记录。"
+      ],
       "No label found": [
         "未找到标签"
       ],
@@ -4861,6 +4900,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -5178,7 +5220,7 @@
         "您的收件箱有 ${ unreadsLabel }。"
       ],
       "You have **${ count } conversations** stored in this folder": [
-        "此文件夹中有 **${ count } 个会话**"
+        "此文件夹中有 **${ count } 项会话**"
       ],
       "You have **${ count } conversations** tagged with this label": [
         "您有 **${ count } 个会话** 标有此标签"
