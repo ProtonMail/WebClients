@@ -784,6 +784,9 @@
       "Other": [
         "Inna"
       ],
+      "Pass problem": [
+        "Problem z menadżerem haseł"
+      ],
       "Payments problem": [
         "Problem z płatnościami"
       ],
@@ -2274,7 +2277,7 @@
         "Czas w formacie \"floating\" nie jest obsługiwany"
       ],
       "Free-busy time information": [
-        "Kalendarz zawiera informację o stanie wolny/zajęty"
+        "Kalendarz zawiera informację o stanie wolny / zajęty"
       ],
       "Invalid event": [
         "Wydarzenie jest nieprawidłowe"
@@ -2592,6 +2595,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
+      ],
+      "vCard versions < 3.0": [
+        "Plików vCard w wersji starszej niż 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3772,6 +3778,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Aby odzyskać dane, musisz reaktywować klucz konta użyty podczas jego tworzenia. Wymaga to znajomości hasła użytego podczas generowania klucza."
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Aby używać weryfikacji adresu, musisz dodać do zaufanych co najmniej jeden z dostępnych kluczy publicznych, w tym klucz, którego chcesz używać do wysyłania wiadomości. Zapobiega to podrabianiu kluczy szyfrowania."
       ],
@@ -4349,6 +4358,9 @@
       ],
       "Set recovery method": [
         "Ustaw metodę odzyskiwania"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Pokaż postęp indeksowania wyszukiwania zawartości"
       ],
       "Sign emails": [
         "Podpisz wiadomości"

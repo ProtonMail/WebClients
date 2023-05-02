@@ -1867,6 +1867,9 @@
         "${ number } серверів",
         "${ number } серверів"
       ],
+      "${ storage } storage": [
+        "${ storage } сховища"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
@@ -3227,6 +3230,12 @@
         "${ n } календарів",
         "${ n } календарів"
       ],
+      "${ n } calendar per user": [
+        "${ n } календар на користувача",
+        "${ n } календарі на користувача",
+        "${ n } календарів на користувача",
+        "${ n } календарів на користувача"
+      ],
       "${ n } custom email domain": [
         "${ n } власний домен",
         "${ n } власні домени",
@@ -3298,6 +3307,9 @@
       ],
       "1 free VPN connection in total": [
         "Загалом 1 безплатне VPN-з'єднання"
+      ],
+      "1 user": [
+        "1 користувач"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -3442,6 +3454,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } користувачів"
+      ],
+      "Up to ${ n } users": [
+        "До ${ n } користувачів"
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
@@ -3756,6 +3774,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Обсяг сховища використовується спільно для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }. Адміністратори можуть призначати різний обсяг сховища користувачам своєї організації"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Простір сховища спільний для користувачів ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
@@ -4312,6 +4333,9 @@
     "Tab subscription modal": {
       "For businesses": [
         "Для бізнесу"
+      ],
+      "For families": [
+        "Для родин"
       ],
       "For individuals": [
         "Для особистого користування"
