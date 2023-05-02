@@ -71,7 +71,7 @@
         </Times>
         <String>
           <Key>Title</Key>
-          <Value>Entry A1</Value>
+          <Value>Login item with note</Value>
         </String>
         <String>
           <Key>UserName</Key>
@@ -87,7 +87,7 @@
         </String>
         <String>
           <Key>Notes</Key>
-          <Value>Entry A1 note</Value>
+          <Value>Login item</Value>
         </String>
         <String>
           <Key>otp</Key>
@@ -466,7 +466,7 @@
       </Entry>
       <Group>
         <UUID>tYs0rRprTleeiYokvLuT1g==</UUID>
-        <Name>Group C</Name>
+        <Name>Group B</Name>
         <Notes/>
         <IconID>48</IconID>
         <Times>
@@ -502,7 +502,7 @@
           </Times>
           <String>
             <Key>Title</Key>
-            <Value>Entry C1</Value>
+            <Value>Broken URL</Value>
           </String>
           <String>
             <Key>UserName</Key>
@@ -514,7 +514,7 @@
           </String>
           <String>
             <Key>URL</Key>
-            <Value>brokenURL...com</Value>
+            <Value>ht:////broken.proton.me</Value>
           </String>
           <String>
             <Key>Notes</Key>
@@ -571,7 +571,7 @@
       </Group>
       <Group>
         <UUID>LRGWyF2uTzKftDuafPUKRQ==</UUID>
-        <Name>Group B</Name>
+        <Name>Group C</Name>
         <Notes/>
         <IconID>48</IconID>
         <Times>
@@ -607,11 +607,11 @@
           </Times>
           <String>
             <Key>Title</Key>
-            <Value>Entry B1</Value>
+            <Value>Login item</Value>
           </String>
           <String>
             <Key>UserName</Key>
-            <Value>nobodyB@proton.me</Value>
+            <Value>nobody@proton.me</Value>
           </String>
           <String>
             <Key>Password</Key>
@@ -793,11 +793,11 @@
             </Times>
             <String>
               <Key>Title</Key>
-              <Value>Entry D1</Value>
+              <Value>Login item</Value>
             </String>
             <String>
               <Key>UserName</Key>
-              <Value>nobodyD@proton.me</Value>
+              <Value>nobody@proton.me</Value>
             </String>
             <String>
               <Key>Password</Key>
@@ -809,7 +809,7 @@
             </String>
             <String>
               <Key>Notes</Key>
-              <Value>Entry D1 note</Value>
+              <Value>some note</Value>
             </String>
             <AutoType>
               <Enabled>True</Enabled>
@@ -940,6 +940,51 @@
                 </AutoType>
               </Entry>
             </History>
+          </Entry>
+            <Entry>
+            <UUID>AA1bcmlmTtudvdYXcRv3wg==</UUID>
+            <IconID>0</IconID>
+            <ForegroundColor/>
+            <BackgroundColor/>
+            <OverrideURL/>
+            <Tags/>
+            <Times>
+              <LastModificationTime>2023-05-02T09:24:27Z</LastModificationTime>
+              <CreationTime>2023-05-02T08:55:14Z</CreationTime>
+              <LastAccessTime>2023-05-02T08:55:14Z</LastAccessTime>
+              <ExpiryTime>4001-01-01T00:00:00Z</ExpiryTime>
+              <Expires>False</Expires>
+              <UsageCount>0</UsageCount>
+              <LocationChanged>2023-05-02T08:55:14Z</LocationChanged>
+            </Times>
+            <String>
+              <Key>Title</Key>
+              <Value>Broken URL</Value>
+            </String>
+            <String>
+              <Key>UserName</Key>
+              <Value>nobody@proton.me</Value>
+            </String>
+            <String>
+              <Key>Password</Key>
+              <Value ProtectInMemory="True">proton123</Value>
+            </String>
+            <String>
+              <Key>URL</Key>
+              <Value>htp::/broken.proton.me</Value>
+            </String>
+            <String>
+              <Key>Notes</Key>
+              <Value></Value>
+            </String>
+            <String>
+              <Key>Custom</Key>
+              <Value ProtectInMemory="True">ABCDEF</Value>
+            </String>
+            <AutoType>
+              <Enabled>True</Enabled>
+              <DataTransferObfuscation>0</DataTransferObfuscation>
+            </AutoType>
           </Entry>
         </Group>
       </Group>
