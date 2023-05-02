@@ -492,6 +492,9 @@
       "Other": [
         "Otro"
       ],
+      "Pass problem": [
+        "Problema con Proton Pass"
+      ],
       "Payments problem": [
         "Problema de pagos"
       ],
@@ -1419,7 +1422,7 @@
         "Faltan funciones"
       ],
       "My reason isn't listed, please comment": [
-        "Mi motivo no está listado, por favor coméntenos"
+        "Mi motivo no está en la lista. Déjenos un comentario."
       ],
       "Streaming service unsupported": [
         "Servicio de transmisión no compatible"
@@ -1468,10 +1471,10 @@
         "Si la hora en su televisor ha expirado, haga clic en Actualizar en su televisor e ingrese su código de nuevo."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales de acceso incorrectas. Por favor, intente de nuevo."
+        "Credenciales de acceso incorrectas. Intente de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Contraseña del buzón incorrecta. Por favor, intente de nuevo."
+        "Contraseña del buzón incorrecta. Intente de nuevo."
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -1540,7 +1543,7 @@
         "Falló la verificación de la firma"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+        "Algo salió mal, ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
       "Tab closed": [
         "Pestaña cerrada"
@@ -1593,10 +1596,10 @@
         "¡Ahh! Algo salió mal"
       ],
       "Please ${ refresh } or check your internet connection.": [
-        "Por favor ${ refresh } o compruebe su conexión."
+        "${ refresh } o compruebe su conexión."
       ],
       "Please ${ refresh } or try again later.": [
-        "Por favor ${ refresh } o intente más tarde."
+        "${ refresh } o intente más tarde."
       ],
       "Something went wrong": [
         "Algo salió mal"
@@ -1887,7 +1890,7 @@
         "Tamaño de la cuenta"
       ],
       "Account successfully updated": [
-        "Cuenta actualizada con éxito"
+        "Cuenta actualizada"
       ],
       "add a recovery method": [
         "añadir un método de recuperación"
@@ -2536,10 +2539,10 @@
         "Seguirá conectado incluso después de cerrar el navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, por favor pague cualquier factura pendiente."
+        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, por favor pague cualquier factura pendiente."
+        "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, pague cualquier factura pendiente."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Sus cuentas de ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicie sesión en ${ loginLink } y elimine su cuenta allí."
@@ -2586,7 +2589,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Para evitar cualquier interrupción del servicio debido a facturas vencidas, por favor asegúrese de tener al menos un método de pago válido guardado en todo momento."
+        "Para evitar cualquier interrupción del servicio debido a facturas vencidas, asegúrese de tener al menos un método de pago válido guardado en todo momento."
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2943,7 +2946,7 @@
         "Código de verificación"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Lamentamos que se vaya. Por favor, indíquenos por qué se va para ayudarnos a mejorar."
+        "Lamentamos que se vaya. Indíquenos por qué se va para ayudarnos a mejorar."
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
