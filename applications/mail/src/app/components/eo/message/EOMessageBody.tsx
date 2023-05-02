@@ -14,9 +14,18 @@ interface Props {
     messageLoaded: boolean;
     bodyLoaded: boolean;
     sourceMode: boolean;
+    originalMessageMode: boolean;
+    onBlockquoteToggle?: () => void;
 }
 
-const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSourceMode }: Props) => {
+const EOMessageBody = ({
+    message,
+    messageLoaded,
+    bodyLoaded,
+    sourceMode: inputSourceMode,
+    originalMessageMode,
+    onBlockquoteToggle,
+}: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const plain = isPlainText(message.data);
@@ -63,8 +72,9 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
                         iframeRef={iframeRef}
                         content={content}
                         blockquoteContent={blockquote}
-                        showBlockquote={false}
+                        showBlockquote={originalMessageMode}
                         showBlockquoteToggle={isBlockquote}
+                        onBlockquoteToggle={onBlockquoteToggle}
                         onContentLoaded={() => {}}
                         isPlainText={plain}
                         message={message}
