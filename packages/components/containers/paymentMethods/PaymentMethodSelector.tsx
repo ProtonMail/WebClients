@@ -1,4 +1,4 @@
-import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import { PaymentMethodType } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Option, Radio, SelectTwo } from '../../components';
@@ -6,8 +6,8 @@ import { PaymentMethodData } from './interface';
 
 interface Props {
     options: PaymentMethodData[];
-    method?: PAYMENT_METHOD_TYPE;
-    onChange: (value: PAYMENT_METHOD_TYPE) => void;
+    method?: PaymentMethodType;
+    onChange: (value: PaymentMethodType) => void;
     lastUsedMethod?: PaymentMethodData;
 }
 
