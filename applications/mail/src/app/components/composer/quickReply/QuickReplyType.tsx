@@ -2,6 +2,7 @@ import React, { MutableRefObject, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, EditorActions, Icon, SimpleDropdown } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 
@@ -55,10 +56,11 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
     return (
         <>
             <SimpleDropdown
-                as="button"
+                as={Button}
+                shape="ghost"
                 type="button"
                 hasCaret
-                className="navigation-link-header-group-control flex mr-2"
+                className="flex mr-2 p-2 color-weak"
                 content={
                     <Icon
                         className="flex-item-noshrink mr-custom"
