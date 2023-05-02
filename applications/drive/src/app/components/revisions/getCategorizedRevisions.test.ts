@@ -4,7 +4,7 @@ import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 describe('getCategorizedRevisions', () => {
     beforeEach(() => {
-        jest.useFakeTimers('modern').setSystemTime(new Date('2023-03-17T20:00:00'));
+        jest.useFakeTimers().setSystemTime(new Date('2023-03-17T20:00:00'));
     });
 
     afterEach(() => {
