@@ -2,11 +2,12 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { PrivateMainArea, useAppTitle } from '@proton/components';
+import { useAppTitle } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useTrashView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import EmptyTrashNotification from './EmptyTrashNotification';
 import Trash from './Trash';
 import TrashToolbar from './TrashToolbar';
@@ -20,12 +21,12 @@ const TrashView = () => {
 
     return (
         <FileBrowserStateProvider itemIds={trashView.items.map(({ linkId }) => linkId)}>
-            <TrashToolbar items={trashView.items} />
-            <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p-4 text-strong section--header">{c('Info').t`Trash`}</div>
-                <EmptyTrashNotification className="border-bottom" disabled={trashView.items.length === 0} />
-                <Trash shareId={activeShareId} trashView={trashView} />
-            </PrivateMainArea>
+            <ToolbarRow
+                titleArea={<span className="text-strong pl-1">{c('Info').t`Trash`}</span>}
+                toolbar={<TrashToolbar items={trashView.items} />}
+            />
+            <EmptyTrashNotification className="border-bottom border-weak" disabled={trashView.items.length === 0} />
+            <Trash shareId={activeShareId} trashView={trashView} />
         </FileBrowserStateProvider>
     );
 };

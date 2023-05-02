@@ -91,6 +91,7 @@ const TableBodyRenderer = ({
     return (
         <Table
             {...props}
+            borderWeak
             className={clsx(['file-browser-table simple-table--is-hoverable border-none border-collapse', className])}
         >
             <TableBody>{children}</TableBody>
@@ -136,7 +137,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
     const rect = useElementRect(containerRef);
 
     const itemCount = loading ? items.length + 1 : items.length;
-    const itemHeight = rootFontSize() * 2.5; // 2.5 x 16 = we want 40px by default
+    const itemHeight = rootFontSize() * 2.75; // 2.75 x 16 = we want 44px by default
 
     const itemData = {
         items,
@@ -163,7 +164,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
             ref={containerRef}
             role="presentation"
         >
-            <Table caption={caption} className="file-browser-table m-0">
+            <Table borderWeak caption={caption} className="file-browser-table m-0">
                 <ListHeader
                     scrollAreaRef={scrollAreaRef}
                     items={headerItems}

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import DrawerAppButton, { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { useDrawer } from '@proton/components/hooks';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Optional } from '@proton/shared/lib/interfaces';
 
 import { ContactsDrawerLogo } from '../drawerIcons';
@@ -15,7 +15,7 @@ const ContactDrawerAppButton = ({
 
     const handleClick = () => {
         onClick?.();
-        toggleDrawerApp({ app: APPS.PROTONCONTACTS })();
+        toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
     };
 
     return (

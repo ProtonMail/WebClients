@@ -11,6 +11,7 @@ interface Props {
     disabled?: boolean;
     view: SETTINGS_VIEW;
     onChange: (view: SETTINGS_VIEW) => void;
+    unstyledSelect?: boolean;
 }
 
 const ViewPreferenceSelector = ({
@@ -18,6 +19,7 @@ const ViewPreferenceSelector = ({
     loading = false,
     disabled = false,
     view,
+    unstyledSelect,
     onChange,
     ...rest
 }: Props) => {
@@ -37,6 +39,7 @@ const ViewPreferenceSelector = ({
             title={c('Action').t`Select calendar view`}
             value={view}
             onChange={({ value }) => onChange(+value)}
+            unstyled={unstyledSelect}
             {...rest}
         >
             {options.map(({ text, value }) => (

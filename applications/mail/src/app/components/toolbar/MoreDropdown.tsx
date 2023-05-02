@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms/Vr';
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
@@ -44,14 +44,13 @@ const MoreDropdown = ({
     elementIDs,
     selectedIDs,
     isSearch,
-    isNarrow,
     isTiny,
     isExtraTiny,
     onMove,
     onDelete,
     breakpoints,
 }: Props) => {
-    let [firstActions, actions] = useLabelActions(labelID, isNarrow);
+    let [firstActions, actions] = useLabelActions(labelID);
     if (isExtraTiny) {
         actions = [...firstActions, ...actions];
     }
@@ -198,7 +197,7 @@ const MoreDropdown = ({
                             {inMore.additionalDropdowns ? (
                                 <>
                                     <DropdownMenuButton
-                                        className="text-left border-top"
+                                        className={clsx('text-left', inMore.move && 'border-top')}
                                         onClick={() => onOpenAdditionnal(0)}
                                         data-testid="toolbar:more-dropdown--moveto"
                                     >
@@ -259,7 +258,6 @@ const MoreDropdown = ({
                     ),
                 }}
             </ToolbarDropdown>
-            <Vr />
             {deleteAllModal}
             {moveAllModal}
         </>

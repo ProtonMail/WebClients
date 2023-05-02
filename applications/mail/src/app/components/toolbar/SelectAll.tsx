@@ -20,6 +20,8 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
 
     const checked = elementIDs.length ? elementIDs.length === checkedIDs.length : false;
 
+    const indeterminate = elementIDs.length ? checkedIDs.length > 0 && elementIDs.length !== checkedIDs.length : false;
+
     const handleAll = (checked: boolean) => () => onCheck(elementIDs, checked, true);
 
     const handleRead = (read: boolean) => () =>
@@ -41,12 +43,13 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
         );
 
     return (
-        <>
+        <div className="flex flex-nowrap select-all-wrapper rounded p-1 m-auto">
             <Tooltip title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}>
                 <span className="select-all-container flex pl-1 md:pl-0">
                     <Checkbox
                         className="select-all"
                         checked={checked}
+                        indeterminate={indeterminate}
                         id="idSelectAll"
                         disabled={disabled}
                         loading={loading}
@@ -113,7 +116,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                     ),
                 }}
             </ToolbarDropdown>
-        </>
+        </div>
     );
 };
 

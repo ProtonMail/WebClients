@@ -1,7 +1,9 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { AppsDropdown, Sidebar, SidebarNav } from '@proton/components';
+import { AppsDropdown, Sidebar, SidebarContactItem, SidebarNav, useDrawer } from '@proton/components';
+import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
@@ -20,6 +22,7 @@ interface Props {
 const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }: Props) => {
     const { activeShareId } = useActiveShare();
     const { getDefaultShare } = useDefaultShare();
+    const { toggleDrawerApp } = useDrawer();
     const debug = useDebug();
 
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
@@ -28,6 +31,8 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
     useEffect(() => {
         void getDefaultShare().then(setDefaultShare);
     }, [getDefaultShare]);
+
+    const displayContactsInHeader = useDisplayContactsWidget();
 
     /*
      * The sidebar supports multiple shares, but as we currently have
@@ -43,6 +48,16 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
             onToggleExpand={toggleHeaderExpanded}
             primary={primary}
             version={<DriveSidebarFooter />}
+            contactsButton={
+                displayContactsInHeader && (
+                    <SidebarContactItem
+                        onClick={() => {
+                            toggleHeaderExpanded();
+                            toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
+                        }}
+                    />
+                )
+            }
         >
             <SidebarNav>
                 <div>

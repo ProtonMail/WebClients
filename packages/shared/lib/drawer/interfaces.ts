@@ -1,3 +1,5 @@
+import { ThemeColor } from '@proton/colors/types';
+import { IconName } from '@proton/components/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { Environment } from '@proton/shared/lib/interfaces';
 
@@ -5,7 +7,14 @@ import { User as tsUser } from '../interfaces';
 import { VCardContact } from '../interfaces/contacts/VCard';
 import { ThemeSetting } from '../themes/themes';
 
-export type DRAWER_APPS = typeof APPS.PROTONCALENDAR | typeof APPS.PROTONCONTACTS;
+export enum DRAWER_NATIVE_APPS {
+    QUICK_SETTINGS = 'quick-settings',
+    CONTACTS = 'contacts',
+}
+export type DRAWER_APPS =
+    | typeof APPS.PROTONCALENDAR
+    | typeof DRAWER_NATIVE_APPS.QUICK_SETTINGS
+    | typeof DRAWER_NATIVE_APPS.CONTACTS;
 export type IframeSrcMap = Partial<Record<DRAWER_APPS, string | undefined>>;
 
 export interface OpenDrawerArgs {
@@ -215,3 +224,16 @@ export type DRAWER_ACTION =
     | REQUEST_OPEN_EVENTS
     | REFRESH_WIDGET
     | OPEN_CONTACT_MODAL;
+
+/**
+ * QUICK SETTINGS
+ */
+
+export const KEY_TRANSPARENCY_REMINDER_UPDATE = 'KEY_TRANSPARENCY_REMINDER_UPDATE';
+
+export interface QuickSettingsReminders {
+    icon?: IconName;
+    color?: ThemeColor;
+    text?: string;
+    callback: () => void;
+}

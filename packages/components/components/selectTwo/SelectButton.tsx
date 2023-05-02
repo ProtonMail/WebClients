@@ -42,6 +42,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-invalid={Boolean(error)}
                 className={clsx([
                     !unstyled && 'select field',
+                    unstyled && 'select-unstyled',
                     'outline-none w100 flex flex-justify-space-between flex-align-items-center flex-nowrap no-pointer-events-children',
                     className,
                 ])}
@@ -50,9 +51,9 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 <span className="flex-item-fluid text-ellipsis text-left">{children}</span>
 
                 {loading ? (
-                    <CircleLoader className="flex-item-noshrink ml-2" />
+                    <CircleLoader className="flex-item-noshrink ml-1" />
                 ) : (
-                    <DropdownCaret className="flex-item-noshrink ml-2" isOpen={isOpen} />
+                    <DropdownCaret className="flex-item-noshrink ml-1" isOpen={isOpen} />
                 )}
             </button>
         );

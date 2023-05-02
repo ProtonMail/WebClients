@@ -5,10 +5,10 @@ import { useDrawer } from '@proton/components/hooks';
 const useDrawerWidth = () => {
     const [sidebarWidth, setSidebarWidth] = useState(0);
     const [appWidth, setAppWidth] = useState(0);
-    const { showDrawerSidebar, drawerSidebarMounted } = useDrawer();
+    const { drawerSidebarMounted } = useDrawer();
 
     useEffect(() => {
-        if (!showDrawerSidebar || !drawerSidebarMounted) {
+        if (!drawerSidebarMounted) {
             setSidebarWidth(0);
             setAppWidth(0);
             return;
@@ -36,7 +36,7 @@ const useDrawerWidth = () => {
             sidebarResizeObserver.disconnect();
             appResizeObserver.disconnect();
         };
-    }, [showDrawerSidebar, drawerSidebarMounted]);
+    }, [drawerSidebarMounted]);
 
     return appWidth + sidebarWidth;
 };

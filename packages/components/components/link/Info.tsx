@@ -8,6 +8,8 @@ import { generateUID } from '../../helpers';
 import Icon, { IconProps } from '../icon/Icon';
 import Tooltip from '../tooltip/Tooltip';
 
+import './Info.scss';
+
 interface Props extends Omit<IconProps, 'title' | 'name'> {
     originalPlacement?: ComponentPropsWithoutRef<typeof Tooltip>['originalPlacement'];
     url?: string;
@@ -64,7 +66,7 @@ const Info = ({
             <button
                 tabIndex={buttonTabIndex}
                 className={clsx(
-                    'inline-flex color-inherit relative interactive-pseudo-protrude interactive--no-background rounded-full',
+                    'info-button inline-flex color-inherit relative interactive-pseudo interactive--no-background rounded-full',
                     buttonClass
                 )}
                 onClick={handleClick}

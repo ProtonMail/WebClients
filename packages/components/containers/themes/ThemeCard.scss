@@ -1,7 +1,52 @@
 @import '~@proton/styles/scss/lib';
 
 .theme-card-button {
+	&.rounded {
+		--custom-border-radius: #{rem(8)};
+	}
+
+	&.rounded-sm {
+		--custom-border-radius: #{rem(4)};
+	}
+
 	&#{&} {
+		position: relative;
 		background-color: transparent; // Force transparent background even when active
+		border-radius: var(
+			--custom-border-radius
+		); // fix border radius to prevent border radius change when switching themes
+
+		box-shadow: 0 0 0 0 var(--button-default-border-color);
+	}
+
+	svg {
+		border-radius: calc(var(--custom-border-radius) - 1px);
+	}
+
+	&-medium-wide,
+	&-large {
+		svg {
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: -1px;
+		z-index: 1;
+		border-radius: var(--custom-border-radius);
+		border: 1px solid var(--button-default-border-color);
+		pointer-events: none;
+		transition: 0.15s easing(ease-out-quad);
+	}
+
+	&.is-active {
+		box-shadow: 0 0 0 1px var(--button-active-border-color);
+
+		&::after {
+			border: 1px solid var(--button-active-border-color);
+		}
 	}
 }
