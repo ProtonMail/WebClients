@@ -45,16 +45,57 @@ html,
 }
 
 .header {
-	padding-block: rem(10);
-	padding-inline: 0 rem(10);
-	block-size: rem($header-height);
+	padding-block: var(--space-1);
+	padding-inline: var(--space-2) var(--space-3);
+	block-size: rem($header-height-small);
 	flex-shrink: 0;
 	background-color: var(--header-background-color);
 	color: var(--header-text-color, var(--text-norm));
+
+	@include media('>small') {
+		padding-block: var(--space-3);
+		padding-inline: var(--space-3) rem(10);
+		block-size: rem($header-height);
+	}
+
+	&--drawer {
+		block-size: rem($header-height);
+	}
 }
 
 .searchbox {
-	inline-size: calc(100vw * #{math.div($conversations-column-width, 100%)});
+	--field-background-color: var(--background-weak);
+	--field-hover-background-color: var(--field-background-color);
+	--field-focus-background-color: var(--search-field-focus-background);
+
+	inline-size: clamp(
+		#{rem(340)},
+		calc(100vw * #{math.div($conversations-column-width, 100%)} - #{rem(20)}),
+		#{rem(520)}
+	);
+	max-inline-size: 100%;
+	min-inline-size: rem(340);
+
+	&--adaptWidth {
+		inline-size: clamp(
+			340px,
+			calc(var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)})) - #{rem(20)}),
+			#{rem(520)}
+		);
+		max-inline-size: calc(
+			100vw - #{rem(450)} - #{$width-sidebar}px - #{rem(20)} - var(--drawer-width)
+		); // Same max width as list
+	}
+
+	.input {
+		--field-text-color: var(--color-weak);
+
+		border-color: var(--background-weak);
+	}
+
+	button {
+		--button-default-text-color: var(--color-weak);
+	}
 }
 
 .footer {
@@ -155,19 +196,13 @@ html,
 
 .main {
 	overflow: hidden;
-	border-start-start-radius: var(--border-radius-md);
 	border: solid var(--main-border-color);
-	border-block-start-width: 1px;
+	border-block-start-width: 0;
 	border-block-end-width: 0;
 	border-inline-start-width: 1px;
 	border-inline-end-width: 0;
 	box-shadow: var(--main-box-shadow);
 	background: var(--background-norm);
-
-	&--bordered {
-		border-start-end-radius: var(--border-radius-md);
-		border-inline-end-width: 1px;
-	}
 
 	@include media('<=small') {
 		margin-inline-end: 0;
@@ -186,6 +221,18 @@ html,
 
 	&.no-scroll {
 		overflow: hidden;
+	}
+
+	&-border {
+		border-block-start: 1px solid var(--border-weak);
+	}
+
+	&-rounded {
+		@include media('>small') {
+			border-inline-end: 1px solid var(--border-weak);
+			border-start-end-radius: var(--border-radius-lg);
+			overflow: hidden;
+		}
 	}
 }
 

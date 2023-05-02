@@ -67,10 +67,12 @@ jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
 
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 
+jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
+
 jest.mock('@proton/components/hooks/useUser', () => ({
     __esModule: true,
     default: jest.fn(() => [{ hasPaidMail: true }, false]),
-    useGetUser: jest.fn(),
+    useGetUser: jest.fn(() => () => [{ hasPaidMail: true }, false]),
 }));
 
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
@@ -109,6 +111,10 @@ jest.mock('@proton/components/containers/calendar/hooks/useHolidaysDirectory', (
     __esModule: true,
     default: jest.fn(() => []),
 }));
+
+jest.mock('@proton/components/hooks/drawer/useDrawer', () => () => {
+    return { toggleDrawerApp: jest.fn() };
+});
 
 const mockedUseSubscribedCalendars = useSubscribedCalendars as jest.Mock<ReturnType<typeof useSubscribedCalendars>>;
 
@@ -158,7 +164,6 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
     });
     const defaultProps: CalendarSidebarProps = {
         onToggleExpand: jest.fn(),
-        logo: <span>mockedLogo</span>,
         isNarrow: false,
         addresses: [],
         calendars: [mockCalendar],
@@ -192,7 +197,6 @@ describe('CalendarSidebar', () => {
 
         expect(mockedUseSubscribedCalendars).toHaveBeenCalled();
 
-        expect(getByText(/mockedLogo/)).toBeInTheDocument();
         expect(getByText(/mockedMiniCalendar/)).toBeInTheDocument();
 
         const myCalendarsButton = getByTestId('calendar-sidebar:my-calendars-button');

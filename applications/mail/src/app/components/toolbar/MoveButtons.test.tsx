@@ -18,6 +18,7 @@ const getProps = (labelID: string) => {
         labelID,
         isExtraTiny: false,
         isNarrow: false,
+        isTiny: false,
         selectedIDs: ['randomID'],
         onMove: jest.fn(),
         onDelete: jest.fn(),

@@ -86,7 +86,7 @@ const NavigationControls = ({
                 data-testid="toolbar:previous-element"
                 icon={
                     <Icon
-                        name="chevron-left"
+                        name="arrow-up"
                         alt={conversationMode ? c('Action').t`Previous conversation` : c('Action').t`Previous message`}
                     />
                 }
@@ -99,7 +99,7 @@ const NavigationControls = ({
                 data-testid="toolbar:next-element"
                 icon={
                     <Icon
-                        name="chevron-right"
+                        name="arrow-down"
                         alt={conversationMode ? c('Action').t`Next conversation` : c('Action').t`Next message`}
                     />
                 }

@@ -4,7 +4,7 @@ import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
 import window from '../window';
-import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS } from './interfaces';
+import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS, DRAWER_NATIVE_APPS } from './interfaces';
 
 const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
@@ -16,18 +16,22 @@ export const drawerAuthorizedApps = [
 
 export const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
 
-export const drawerNativeApps: APP_NAMES[] = [APPS.PROTONCONTACTS];
-export const drawerIframeApps: APP_NAMES[] = [APPS.PROTONCALENDAR];
+export const drawerNativeApps: DRAWER_APPS[] = [DRAWER_NATIVE_APPS.CONTACTS, DRAWER_NATIVE_APPS.QUICK_SETTINGS];
+export const drawerIframeApps: DRAWER_APPS[] = [APPS.PROTONCALENDAR];
 
-export const getIsNativeDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
-    return drawerNativeApps.includes(app);
+export const getIsNativeDrawerApp = (app: string): app is DRAWER_APPS => {
+    const tsDrawerNativeApps: string[] = [...drawerNativeApps];
+
+    return tsDrawerNativeApps.includes(app);
 };
 
-export const getIsIframedDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
-    return drawerIframeApps.includes(app);
+export const getIsIframedDrawerApp = (app: string): app is DRAWER_APPS & APP_NAMES => {
+    const tsDrawerIframeApps: string[] = [...drawerIframeApps];
+
+    return tsDrawerIframeApps.includes(app);
 };
 
-export const getIsDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
+export const getIsDrawerApp = (app: string): app is DRAWER_APPS => {
     return getIsNativeDrawerApp(app) || getIsIframedDrawerApp(app);
 };
 
@@ -76,7 +80,7 @@ export const postMessageFromIframe = (message: DRAWER_ACTION, parentApp: APP_NAM
     window.parent?.postMessage(message, parentUrl);
 };
 
-export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: APP_NAMES) => {
+export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: DRAWER_APPS) => {
     if (!getIsAuthorizedApp(iframedApp)) {
         return;
     }
@@ -127,6 +131,10 @@ export const getDisplayContactsInDrawer = (app: APP_NAMES) => {
     return app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONDRIVE;
 };
 
+export const getDisplaySettingsInDrawer = (app: APP_NAMES) => {
+    return app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONDRIVE;
+};
+
 export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NAMES, closeDefinitely?: boolean) => {
     if (!getIsIframedDrawerApp(currentApp)) {
         throw new Error('Cannot close non-iframed app');
@@ -148,7 +156,9 @@ export const isAppInView = (currentApp: DRAWER_APPS, appInView?: DRAWER_APPS) =>
 export const getDisplayDrawerApp = (currentApp: APP_NAMES, toOpenApp: DRAWER_APPS) => {
     if (toOpenApp === APPS.PROTONCALENDAR) {
         return currentApp === APPS.PROTONMAIL || currentApp === APPS.PROTONDRIVE;
-    } else if (toOpenApp === APPS.PROTONCONTACTS) {
+    } else if (toOpenApp === DRAWER_NATIVE_APPS.CONTACTS) {
         return getDisplayContactsInDrawer(currentApp);
+    } else if (toOpenApp === DRAWER_NATIVE_APPS.QUICK_SETTINGS) {
+        return getDisplaySettingsInDrawer(currentApp);
     }
 };

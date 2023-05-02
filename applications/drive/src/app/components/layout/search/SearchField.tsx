@@ -66,7 +66,7 @@ export const SearchField = () => {
     const shouldShowSpotlight = searchSpotlight.isOpen && !indexingDropdownControl.isOpen;
 
     return (
-        <div ref={indexingDropdownAnchorRef} className="searchfield-container">
+        <div ref={indexingDropdownAnchorRef} className="searchfield-container searchbox">
             {
                 // On Firefox, no event is fired when the input field is disabled.
                 // This is a small "hack" to open the spotlight when the user clicks on the disabled input.

@@ -1,12 +1,9 @@
-import { Ref, forwardRef, memo, useRef } from 'react';
+import { Ref, forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import {
-    CalendarDrawerAppButton,
-    ContactDrawerAppButton,
     FeatureCode,
     MailShortcutsModal,
-    useDrawer,
     useFeatures,
     useFolders,
     useLabels,
@@ -15,11 +12,8 @@ import {
     useOpenDrawerOnLoad,
     useUserSettings,
 } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
-import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import isTruthy from '@proton/utils/isTruthy';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailOnboardingWrapper from '../components/onboarding/MailOnboardingWrapper';
@@ -46,7 +40,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     const [userSettings] = useUserSettings();
     const [mailSettings] = useMailSettings();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-    const { showDrawerSidebar, appInView } = useDrawer();
 
     useOpenDrawerOnLoad();
     const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
@@ -57,26 +50,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     useContactsListener();
     useConversationsEvent();
     useMessagesEvents();
-
-    const drawerSpotlightSeenRef = useRef(false);
-    const markSpotlightAsSeen = () => {
-        if (drawerSpotlightSeenRef) {
-            drawerSpotlightSeenRef.current = true;
-        }
-    };
-
-    const drawerSidebarButtons = [
-        <ContactDrawerAppButton
-            onClick={markSpotlightAsSeen}
-            aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)}
-        />,
-        <CalendarDrawerAppButton
-            onClick={markSpotlightAsSeen}
-            aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
-        />,
-    ].filter(isTruthy);
-
-    const canShowDrawer = drawerSidebarButtons.length > 0;
 
     /**
      * Incoming defaults
@@ -93,15 +66,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     }
 
     return (
-        <PrivateLayout
-            ref={ref}
-            labelID={labelID}
-            elementID={elementID}
-            breakpoints={breakpoints}
-            drawerSidebarButtons={drawerSidebarButtons}
-            drawerSpotlightSeenRef={drawerSpotlightSeenRef}
-            showDrawerSidebar={showDrawerSidebar}
-        >
+        <PrivateLayout ref={ref} labelID={labelID} elementID={elementID} breakpoints={breakpoints}>
             <MailOnboardingWrapper />
             {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
             <LabelActionsContextProvider>
@@ -112,7 +77,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
                     breakpoints={breakpoints}
                     elementID={elementID}
                     messageID={messageID}
-                    toolbarBordered={canShowDrawer && showDrawerSidebar}
                 />
             </LabelActionsContextProvider>
             <MailShortcutsModal {...mailShortcutsProps} />

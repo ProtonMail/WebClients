@@ -39,14 +39,19 @@ const useActiveBreakpoint = () => {
     }, []);
 
     return useMemo(() => {
-        const isDesktop = breakpoint === 'desktop';
+        const isLargeDesktop = breakpoint === 'large-desktop';
+        const isMediumDesktop = breakpoint === 'medium-desktop';
+        const isSmallDesktop = breakpoint === 'small-desktop';
         const isTablet = breakpoint === 'tablet';
         const isMobile = breakpoint === 'mobile';
         const isTinyMobile = breakpoint === 'tinymobile';
 
         return {
             breakpoint,
-            isDesktop,
+            isLargeDesktop,
+            isMediumDesktop,
+            isSmallDesktop,
+            isDesktop: isLargeDesktop || isMediumDesktop || isSmallDesktop,
             isTablet,
             isMobile,
             isTinyMobile,

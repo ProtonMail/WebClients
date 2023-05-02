@@ -7,24 +7,37 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: ReactNode;
     hasToolbar?: boolean;
     hasRowMode?: boolean;
+    drawerSidebar?: ReactNode;
+    isDrawerApp?: boolean;
 }
 
 const PrivateMainAreaBase = (
-    { className, hasToolbar = false, children, hasRowMode = false, ...rest }: Props,
+    { className, hasToolbar = false, children, hasRowMode = false, drawerSidebar, isDrawerApp, ...rest }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     return (
         <main
             className={clsx([
                 hasToolbar ? 'main-area--with-toolbar' : 'main-area',
-                hasRowMode ? 'main-area--row-mode' : '',
+                hasRowMode ? 'main-area--row-mode' : undefined,
+                !drawerSidebar ? 'main-area-border' : undefined,
                 'flex-item-fluid-auto relative',
                 className,
             ])}
             ref={ref}
             {...rest}
         >
-            {children}
+            <div className={clsx('flex flex-nowrap w100', drawerSidebar ? 'h100' : undefined)}>
+                <div
+                    className={clsx(
+                        'flex flex-nowrap w100 h100',
+                        drawerSidebar && !isDrawerApp ? 'main-area-border main-area-rounded' : 'scroll-if-needed'
+                    )}
+                >
+                    {children}
+                </div>
+                {drawerSidebar}
+            </div>
         </main>
     );
 };

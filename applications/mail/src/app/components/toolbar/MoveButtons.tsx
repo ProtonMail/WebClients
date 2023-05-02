@@ -14,16 +14,17 @@ interface Props {
     labelID: string;
     isExtraTiny: boolean;
     isNarrow: boolean;
+    viewportIsNarrow?: boolean;
     selectedIDs: string[];
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
 }
 
-const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
+const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [loading, withLoading] = useLoading();
 
-    let [actions] = useLabelActions(labelID, isNarrow);
+    let [actions] = useLabelActions(labelID);
     if (isExtraTiny) {
         actions = [];
     }
@@ -144,7 +145,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
 
     return (
         <>
-            <Vr />
+            {!viewportIsNarrow && <Vr />}
             {buttons}
         </>
     );

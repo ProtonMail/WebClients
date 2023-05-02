@@ -26,7 +26,7 @@ const LayoutButton = () => {
             onClick={handleClick}
             icon={
                 <Icon
-                    name={layout === LayoutSetting.Grid ? 'list-bullets' : 'grid-2'}
+                    name={layout === LayoutSetting.Grid ? 'list-bullets' : 'grid-3'}
                     alt={layout === LayoutSetting.Grid ? c('Action').t`Grid layout` : 'List layout'}
                 />
             }

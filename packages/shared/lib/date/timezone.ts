@@ -344,3 +344,44 @@ export const fromUTCDateToLocalFakeUTCDate = (utcDate: Date, isAllDay: boolean, 
 export const convertTimestampToTimezone = (timestamp: number, timezone: string) => {
     return convertUTCDateTimeToZone(fromUTCDate(new Date(timestamp)), timezone);
 };
+
+/**
+ * Remove potential underscores from time zone city
+ * E.g. "Los_Angeles" should become "Los Angeles"
+ */
+export const getReadableCityTimezone = (timezone: string = '') => {
+    return timezone.replaceAll('_', ' ');
+};
+
+export type AbbreviatedTimezone = 'offset' | 'city';
+
+/**
+ * Get an abbreviated time zone, from AbbreviatedTimezone type:
+ * - "offset": "Europe/Paris" should return "GMT+1" (winter time) or 'GMT+2' (summer time)
+ * - "city": "EuropesParis" should return "Paris"
+ */
+export const getAbbreviatedTimezoneName = (abbreviatedTimezone: AbbreviatedTimezone, timezone: string | undefined) => {
+    if (timezone) {
+        if (abbreviatedTimezone === 'offset') {
+            const timezoneOffset = getTimezoneOffset(new Date(), timezone).offset;
+            const abbreviatedTimezoneName = formatGMTOffsetAbbreviation(timezoneOffset);
+            return abbreviatedTimezoneName;
+        }
+
+        if (abbreviatedTimezone === 'city') {
+            // Return the city if found e.g "Europe/Paris" should return "Paris"
+            const match = getTimeZoneDisplayName(timezone).match(/(.+?)(?:\/|$)/g);
+
+            // However, we can also get longer time zones. That's why we need to take the last matched element
+            // e.g. "America/North_Dakota/New_Salem" should return "New Salem"
+            return getReadableCityTimezone(match?.[match?.length - 1]) || timezone;
+        }
+    }
+};
+
+export const getTimezoneAndOffset = (timezone?: string) => {
+    const timezoneOffset = getAbbreviatedTimezoneName('offset', timezone);
+    const timezoneName = getTimeZoneDisplayName(timezone || '');
+
+    return `${timezoneOffset} • ${timezoneName}`;
+};

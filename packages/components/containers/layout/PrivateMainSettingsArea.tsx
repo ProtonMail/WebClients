@@ -1,12 +1,8 @@
 import { Children, ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
-
-
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
-
-
 
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import useAppTitle from '../../hooks/useAppTitle';
@@ -17,7 +13,6 @@ import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 import { SettingsAreaConfig } from './interface';
 import useActiveSection from './useActiveSection';
-
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;

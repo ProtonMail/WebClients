@@ -1,1 +1,1 @@
-export { PromotionButton } from './PromotionButton';
+export { default as PromotionButton } from './PromotionButton';

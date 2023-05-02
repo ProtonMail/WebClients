@@ -1,9 +1,12 @@
+import { ReactNode, useLayoutEffect } from 'react';
+
 import { c } from 'ttag';
 
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
+import DrawerSettingsView from '@proton/components/components/drawer/views/DrawerSettingsView';
 import { ErrorBoundary, StandardErrorPage } from '@proton/components/containers';
 import { CustomAction } from '@proton/components/containers/contacts/widget/types';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -13,6 +16,10 @@ import DrawerContactModals from './DrawerContactModals';
 import './DrawerApp.scss';
 
 interface Props {
+    /**
+     * Shared
+     */
+    customAppSettings?: ReactNode;
     /**
      * Mail specific
      */
@@ -24,17 +31,26 @@ interface Props {
     contactCustomActions?: CustomAction[];
 }
 
-const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
+const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions }: Props) => {
     const { appInView, iframeSrcMap } = useDrawer();
+
+    useLayoutEffect(() => {
+        if (appInView !== undefined) {
+            document.body.classList.add('drawer-is-open');
+        }
+        return () => {
+            document.body.classList.remove('drawer-is-open');
+        };
+    }, [appInView]);
 
     return (
         <>
             <DrawerContactModals />
             <aside
                 className={clsx([
-                    'drawer-app border-left bg-norm overflow-hidden no-print',
+                    'drawer-app border-left border-weak bg-norm overflow-hidden no-print',
                     !appInView && 'hidden',
-                    appInView !== APPS.PROTONCONTACTS && 'drawer-app--hide-on-mobile',
+                    appInView !== DRAWER_NATIVE_APPS.CONTACTS && 'drawer-app--hide-on-mobile',
                 ])}
             >
                 <ErrorBoundary component={<StandardErrorPage />}>
@@ -51,12 +67,16 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
                                     allow="clipboard-read; clipboard-write"
                                 />
                             ))}
-                        {appInView === APPS.PROTONCONTACTS && (
+                        {appInView === DRAWER_NATIVE_APPS.CONTACTS && (
                             <DrawerContactView
                                 onCompose={onCompose}
                                 onMailTo={onMailTo}
                                 customActions={contactCustomActions}
                             />
+                        )}
+
+                        {appInView === DRAWER_NATIVE_APPS.QUICK_SETTINGS && (
+                            <DrawerSettingsView customAppSettings={customAppSettings} />
                         )}
                     </div>
                 </ErrorBoundary>

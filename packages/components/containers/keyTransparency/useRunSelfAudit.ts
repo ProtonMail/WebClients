@@ -10,6 +10,7 @@ import {
 } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';
+import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import { useApi, useConfig, useGetAddressKeys, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
@@ -59,6 +60,16 @@ const useRunSelfAudit = () => {
                 uploadMissingSKL,
                 getAddressKeys
             );
+
+            // Update local storage value
+            document.dispatchEvent(
+                new CustomEvent(KEY_TRANSPARENCY_REMINDER_UPDATE, {
+                    detail: {
+                        value: false,
+                    },
+                })
+            );
+
             await reportSelfAuditErrors(selfAuditResult);
             await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
             return { selfAuditResult, nextSelfAuditInterval: selfAuditBaseInterval };

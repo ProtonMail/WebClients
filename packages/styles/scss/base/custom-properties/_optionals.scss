@@ -35,13 +35,13 @@
 		navigation-current-item-text-color      : var(--text-norm),
 
 		main-box-shadow  : none,
-		main-border-color: var(--border-norm),
+		main-border-color: var(--border-weak),
 
 		navigation-item-count-background-color: var(--primary),
 		navigation-item-count-text-color      : var(--primary-contrast),
 
 		toolbar-background-color   : var(--background-norm),
-		toolbar-border-bottom-color: var(--border-norm),
+		toolbar-border-bottom-color: var(--border-weak),
 		toolbar-text-color         : var(--text-norm),
 		toolbar-separator-color    : var(--border-norm),
 
@@ -50,6 +50,9 @@
 
 		tooltip-background-color: var(--background-invert),
 		tooltip-text-color      : var(--text-invert),
+
+		background-elevated     : var(--background-norm),
+		background-lowered      : var(--background-weak),
 
 		email-item-unread-background-color     : var(--background-norm),
 		email-item-unread-text-color           : var(--text-norm),
