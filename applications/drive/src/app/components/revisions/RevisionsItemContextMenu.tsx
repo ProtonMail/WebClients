@@ -8,7 +8,6 @@ import {
     RevisionDetailsButton,
     RevisionDownloadButton,
     RevisionPreviewButton,
-    RevisionRestoreButton,
 } from './ContextMenuButtons';
 import { useRevisionsProvider } from './RevisionsProvider';
 
@@ -53,7 +52,6 @@ export function RevisionsItemContextMenu({
                     <ContextSeparator />
                 </>
             )}
-            <RevisionRestoreButton close={close} />
             <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
             <ContextSeparator />
             <RevisionDetailsButton revision={revision} openRevisionDetails={openRevisionDetails} close={close} />
