@@ -1163,6 +1163,9 @@
       "Other": [
         "Otro"
       ],
+      "Pass problem": [
+        "Problema con Proton Pass"
+      ],
       "Payments problem": [
         "Problema con los pagos"
       ],
@@ -4627,6 +4630,9 @@
       "Align right": [
         "Alinear a la derecha"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todas las aplicaciiones de ${ BRAND_NAME } y sus funciones premium"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -5851,6 +5857,9 @@
       "Unsupported file": [
         "Archivo no admitido"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
+      ],
       "Update recovery file": [
         "Actualizar archivo de recuperación"
       ],
@@ -6556,9 +6565,6 @@
       ],
       "Enable signature verification and encryption with this key": [
         "Habilita la verificación de la firma y el cifrado con esta clave"
-      ],
-      "Export": [
-        "Exportar"
       ],
       "Export private key": [
         "Exportar clave privada"
@@ -8118,6 +8124,9 @@
       "1 free VPN connection in total": [
         "1 conexión VPN gratuita en total"
       ],
+      "1 user": [
+        "1 usuario"
+      ],
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
@@ -8272,6 +8281,12 @@
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
+      ],
+      "Up to ${ n } users": [
+        "Hasta ${ n } usuarios"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
@@ -8352,6 +8367,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Conjunto de soluciones de privacidad y seguridad para empresas con todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Almacenamiento seguro en la nube que te permite almacenar, sincronizar y compartir archivos de forma fácil y segura."
@@ -8503,6 +8521,9 @@
         "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones",
         "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Crea hasta ${ n } direcciones de correo/alias para toda la familia. Úsalas para tus identidades en línea, p.ej., SubsDeFamilia@${ domain } para suscripciones en línea."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Te defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores."
       ],
@@ -8526,6 +8547,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantén privados tus planes y los de tu familia con un calendario cifrado."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Te mantiene protegido bloqueando todas las conexiones de red cuando te desconectas inesperadamente de nuestro servidor VPN."
@@ -8566,6 +8590,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Protege todos los dispositivos que se conecten a tu red wifi. También resulta muy útil si tienes dispositivos que no admitan directamente la configuración de la VPN."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Protege tu familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir tu contenido favorito"
+      ],
       "Quickly set up out-of-office messages": [
         "Configura rápidamente mensajes para informar de que no estás en la oficina"
       ],
@@ -8580,6 +8607,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Asigna el tráfico de internet a la red Tor con un solo clic."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Asegura tus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Guarda a buen recaudo los datos de tus contactos (teléfono, dirección, cumpleaños y notas personales). El cifrado de acceso cero garantiza que ni ${ BRAND_NAME } pueda acceder a ellos."
@@ -8604,6 +8634,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de tu organización"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre usuarios en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
@@ -10204,6 +10237,9 @@
       "For businesses": [
         "Para empresas"
       ],
+      "For families": [
+        "Para familias"
+      ],
       "For individuals": [
         "Para particulares"
       ]
@@ -10325,6 +10361,9 @@
       ],
       "Account and password": [
         "Cuenta y contraseña"
+      ],
+      "Account keys": [
+        "Claves de la cuenta"
       ],
       "Account recovery": [
         "Recuperación de cuenta"

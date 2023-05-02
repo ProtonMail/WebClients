@@ -991,6 +991,9 @@
     "Animation": {
       "Encrypted": [
         "暗号化済み"
+      ],
+      "New email": [
+        "新しいメール"
       ]
     },
     "Apps dropdown": {
@@ -1243,6 +1246,14 @@
       ],
       "Share with anyone": [
         "ほかの人に共有"
+      ]
+    },
+    "Calendar share permission label": {
+      "Edit event details": [
+        "予定の詳細を編集"
+      ],
+      "See all event details": [
+        "すべての予定の詳細を表示"
       ]
     },
     "Calendar sharing access option label": {
@@ -2531,6 +2542,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail ロゴとプラスマーク"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
@@ -2936,6 +2950,9 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
+      ],
+      "Payment process canceled": [
+        "支払い処理がキャンセルされました"
       ],
       "Payment process consumed": [
         "支払い処理は消費されました"
@@ -6126,9 +6143,6 @@
       "Enable signature verification and encryption with this key": [
         "この鍵での暗号化および、署名の検証を有効にします"
       ],
-      "Export": [
-        "エクスポート"
-      ],
       "Export private key": [
         "秘密鍵のエクスポート"
       ],
@@ -7638,6 +7652,9 @@
       "Advanced sharing security": [
         "高度な共有セキュリティ"
       ],
+      "Auto-delete spam and trashed messages": [
+        "迷惑メールとごみ箱のメッセージを自動削除"
+      ],
       "Auto-reply": [
         "自動返信"
       ],
@@ -7790,6 +7807,9 @@
       ]
     },
     "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
@@ -10097,6 +10117,9 @@
       ],
       "Verification": [
         "検証"
+      ],
+      "Verification failed": [
+        "検証に失敗しました"
       ],
       "Verify email address": [
         "メールアドレスを認証"
