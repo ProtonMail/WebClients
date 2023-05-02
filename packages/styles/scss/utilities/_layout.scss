@@ -4,6 +4,11 @@
 	overflow: auto;
 }
 
+.overflow-overlay {
+	overflow: auto; // fallback
+	overflow: overlay;
+}
+
 .scroll-horizontal-if-needed,
 .overflow-x-auto {
 	overflow-x: auto;
