@@ -28,6 +28,7 @@ import { INITIAL_POPUP_STATE, INITIAL_WORKER_STATE } from '../../../shared/const
 import { ExtensionContext } from '../../../shared/extension';
 import { useExtensionContext } from '../../../shared/hooks';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
+import { enhanceNotification } from '../../../shared/notification';
 
 export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
     state: RequiredProps<ExtensionContextState, 'popup'>;
@@ -94,7 +95,7 @@ export const PopupContextProvider: FC = ({ children }) => {
 
     const onWorkerMessage = (message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION) {
-            createNotification(message.payload.notification);
+            createNotification(enhanceNotification(message.payload.notification));
         }
     };
 
