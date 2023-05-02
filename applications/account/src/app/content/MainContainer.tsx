@@ -150,18 +150,19 @@ const MainContainer = () => {
         </AppLink>
     );
 
-    const top = <TopBanners />;
+    const top = <TopBanners app={app} />;
 
     const header = (
         <PrivateHeader
             userDropdown={<UserDropdown />}
             // No onboarding in account
-            upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} />}
+            upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
             searchBox={<SettingsSearch routes={routes} path={prefixPath} app={app} />}
+            app={app}
         />
     );
 

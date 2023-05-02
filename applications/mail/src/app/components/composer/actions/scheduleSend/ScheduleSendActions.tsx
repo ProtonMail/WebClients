@@ -11,8 +11,9 @@ import {
     UpsellModal,
     useModalState,
 } from '@proton/components/components';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
@@ -153,6 +154,12 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             handleUpsellModalDisplay(true);
         };
 
+        const upsellRef = getUpsellRef({
+            app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+            component: UPSELL_COMPONENT.MODAL,
+            feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
+        });
+
         return (
             <>
                 <SimpleDropdown
@@ -183,7 +190,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                         description={c('Description')
                             .t`Unlock custom message scheduling and other benefits when you upgrade your plan.`}
                         modalProps={upsellModalProps}
-                        upsellRef={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_MODAL_REF_PATH}${MAIL_UPSELL_PATHS.SCHEDULE_SEND}`}
+                        upsellRef={upsellRef}
                         features={[
                             'schedule-messages',
                             'auto-delete-trash-and-spam',

@@ -8,7 +8,8 @@ import { ButtonLike } from '@proton/atoms';
 import { ChecklistItem, Loader, SettingsLink, useApi } from '@proton/components';
 import { useDateCountdown } from '@proton/hooks';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import gift from '@proton/styles/assets/img/illustrations/gift.svg';
 import isTruthy from '@proton/utils/isTruthy';
@@ -26,6 +27,12 @@ import './GetStartedChecklist.scss';
  */
 const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => {
     const api = useApi();
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BUTTON,
+        feature: MAIL_UPSELL_PATHS.GET_STARTED_CHECKLIST,
+    });
+    const link = addUpsellPath('/dashboard', upsellRef);
 
     useEffect(() => {
         void api({ ...seenCompletedChecklist('get-started'), silence: true });
@@ -46,7 +53,7 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
                 shape="outline"
                 as={SettingsLink}
                 app={APPS.PROTONMAIL}
-                path="/"
+                path={link}
             >
                 {c('Action').t`Upgrade now`}
             </ButtonLike>

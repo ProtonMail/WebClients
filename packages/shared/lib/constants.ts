@@ -529,32 +529,42 @@ export enum ORGANIZATION_TWOFA_SETTING {
 }
 
 export enum APP_UPSELL_REF_PATH {
-    MAIL_UPSELL_REF_PATH = 'upsell_mail-banner-',
-    MAIL_UPSELL_MODAL_REF_PATH = 'upsell_mail-modal-',
-    CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-banner-',
-    DRIVE_UPSELL_REF_PATH = 'upsell_drive-banner-',
-    VPN_UPSELL_REF_PATH = 'upsell_vpn-banner-',
+    MAIL_UPSELL_REF_PATH = 'upsell_mail-',
+    CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-',
+    DRIVE_UPSELL_REF_PATH = 'upsell_drive-',
+    VPN_UPSELL_REF_PATH = 'upsell_vpn-',
+}
+
+export enum UPSELL_COMPONENT {
+    BANNER = 'banner-',
+    MODAL = 'modal-',
+    BUTTON = 'button-',
 }
 
 export enum MAIL_UPSELL_PATHS {
     AUTO_REPLY = 'auto-reply',
     DOMAIN_NAMES = 'domain-names',
-    CATCH_ALL = 'catchall',
+    CATCH_ALL = 'catch-all',
     BRIDGE = 'bridge',
-    PM_ME = 'pm_me',
-    SCHEDULE_SEND = 'schedule_send',
-    AUTO_DELETE = 'auto_delete',
+    PM_ME = 'pm-me',
+    AUTO_DELETE = 'auto-delete',
+    SCHEDULE_SEND = 'schedule-send',
+    STORAGE_FULL = 'storage-full',
+    GET_STARTED_CHECKLIST = 'get-started-checklist',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
-    MULTI_CAL = 'multi_cal',
-    SHARE_CAL = 'share_cal',
+    MULTI_CAL = 'multi-cal',
+    SHARE_CAL = 'share-cal',
+    MAX_CAL = 'max-cal',
 }
 
 export enum SHARED_UPSELL_PATHS {
-    MULTI_USER = 'multi_user',
-    CONTACT_GROUP = 'contact_groups',
+    MULTI_USER = 'multi-user',
+    CONTACT_GROUP = 'contact-groups',
     STORAGE = 'storage',
+    STORAGE_PERCENTAGE = 'storage-percentage',
+    ORGANIZATION_CAPACITY = 'organization-capacity',
 }
 
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
