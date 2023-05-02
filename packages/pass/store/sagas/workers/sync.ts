@@ -1,8 +1,8 @@
 import { put } from 'redux-saga/effects';
-import { c } from 'ttag';
 
 import { PassCrypto } from '@proton/pass/crypto';
 import { Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array';
 import { invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -79,8 +79,8 @@ export function* synchronize(
                 target: 'popup',
                 type: 'error',
                 expiration: -1,
-                text: c('Error')
-                    .t`Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access.`,
+                key: NotificationKey.INACTIVE_SHARES,
+                text: '',
             })
         );
     }
