@@ -13,7 +13,7 @@ import { PasswordField } from '../fields';
 
 export const PROVIDER_TITLE_MAP = {
     [ImportProvider.BITWARDEN]: 'Bitwarden',
-    [ImportProvider.CHROME]: 'Chromium (CSV)',
+    [ImportProvider.CHROME]: 'Chrome, Brave, Edge (CSV)',
     [ImportProvider.KEEPASS]: 'KeePass (XML)',
     [ImportProvider.LASTPASS]: 'LastPass',
     [ImportProvider.ONEPASSWORD]: '1Password (1PUX)',
