@@ -1,40 +1,54 @@
-import { MutableRefObject, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useApi } from '@proton/components';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { fetchCalendarEvents } from './cache/fetchCalendarEvents';
 import getCalendarEventsCache from './cache/getCalendarEventsCache';
 import { CalendarsEventsCache } from './interface';
 
-const useCalendarsEventsFetcher = (
-    requestedCalendars: Calendar[],
-    utcDateRange: [Date, Date],
-    tzid: string,
-    cacheRef: MutableRefObject<CalendarsEventsCache>,
-    initializeCacheOnlyCalendarsIDs: string[],
-    onCacheInitialized: () => void
-) => {
+const useCalendarsEventsFetcher = ({
+    calendars,
+    dateRange,
+    tzid,
+    calendarsEventsCache,
+    initializeCacheOnlyCalendarsIDs,
+    getOpenedMailEvents,
+    onCacheInitialized,
+    metadataOnly,
+}: {
+    calendars: Calendar[];
+    dateRange: [Date, Date];
+    tzid: string;
+    calendarsEventsCache: CalendarsEventsCache;
+    getOpenedMailEvents: () => OpenedMailEvent[];
+    initializeCacheOnlyCalendarsIDs: string[];
+    onCacheInitialized: () => void;
+    metadataOnly?: boolean;
+}) => {
     const [loading, setLoading] = useState(false);
     const api = useApi();
 
     useEffect(() => {
-        const calendarFetchPromises = requestedCalendars
-            .map(({ ID: CalendarID }) => {
-                let calendarEventsCache = cacheRef.current.calendars[CalendarID];
+        const calendarFetchPromises = calendars
+            .map(({ ID: calendarID }) => {
+                let calendarEventsCache = calendarsEventsCache.calendars[calendarID];
                 if (!calendarEventsCache) {
                     calendarEventsCache = getCalendarEventsCache();
-                    cacheRef.current.calendars[CalendarID] = calendarEventsCache;
+                    calendarsEventsCache.calendars[calendarID] = calendarEventsCache;
                 }
-                return fetchCalendarEvents(
-                    utcDateRange,
-                    calendarEventsCache,
-                    api,
-                    CalendarID,
+                return fetchCalendarEvents({
+                    calendarID,
+                    dateRange,
                     tzid,
-                    initializeCacheOnlyCalendarsIDs.includes(CalendarID)
-                );
+                    calendarEventsCache,
+                    noFetch: initializeCacheOnlyCalendarsIDs.includes(calendarID),
+                    metadataOnly,
+                    api,
+                    getOpenedMailEvents,
+                });
             })
             .filter(isTruthy);
 
@@ -57,7 +71,7 @@ const useCalendarsEventsFetcher = (
         return () => {
             isActive = false;
         };
-    }, [requestedCalendars, utcDateRange]);
+    }, [calendars, dateRange]);
 
     return loading;
 };

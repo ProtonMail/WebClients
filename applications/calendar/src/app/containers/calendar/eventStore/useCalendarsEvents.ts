@@ -1,5 +1,7 @@
 import { MutableRefObject, useEffect, useMemo, useState } from 'react';
 
+import { FeatureCode } from '@proton/components/containers';
+import { useFeature } from '@proton/components/hooks';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DAY } from '@proton/shared/lib/constants';
@@ -25,15 +27,18 @@ const useCalendarsEvents = (
     initializeCacheOnlyCalendarsIDs: string[],
     onCacheInitialized: () => void
 ): [CalendarViewEvent[], boolean] => {
+    const metadataOnly = !!useFeature(FeatureCode.CalendarFetchMetadataOnly)?.feature?.Value;
     const [rerender, setRerender] = useState<any>();
-    const loading = useCalendarsEventsFetcher(
-        requestedCalendars,
-        utcDateRange,
+    const loading = useCalendarsEventsFetcher({
+        calendars: requestedCalendars,
+        dateRange: utcDateRange,
         tzid,
-        cacheRef,
+        calendarsEventsCache: cacheRef.current,
+        getOpenedMailEvents,
         initializeCacheOnlyCalendarsIDs,
-        onCacheInitialized
-    );
+        onCacheInitialized,
+        metadataOnly,
+    });
 
     useEffect(() => {
         let isActive = true;
