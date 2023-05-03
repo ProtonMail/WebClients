@@ -1,7 +1,7 @@
 import { fromUnixTime, isBefore } from 'date-fns';
 
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasBlackFridayDiscount, isExternal, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasBlackFridayDiscount, isManagedExternally, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
@@ -25,7 +25,7 @@ const isEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0 
         user.canPay &&
         isVpnApp &&
         !user.isDelinquent &&
-        !isExternal(subscription)
+        !isManagedExternally(subscription)
     );
 };
 

@@ -1,5 +1,10 @@
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasVPNBlackFridayDiscount, isExternal, isTrial } from '@proton/shared/lib/helpers/subscription';
+import {
+    getPlan,
+    hasVPNBlackFridayDiscount,
+    isManagedExternally,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -17,7 +22,7 @@ const isEligible = ({ subscription, protonConfig, user }: Props) => {
         protonConfig?.APP_NAME === APPS.PROTONACCOUNTLITE;
     const noBFVPN = !hasVPNBlackFridayDiscount(subscription);
     const notTrial = !isTrial(subscription);
-    const isNotExternal = !isExternal(subscription);
+    const isNotExternal = !isManagedExternally(subscription);
     return hasPaidPlan && notTrial && isNotExternal && user.canPay && isValidApp && !user.isDelinquent && noBFVPN;
 };
 
