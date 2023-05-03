@@ -43,8 +43,8 @@ export const createContentScriptService = (id: string) => {
         listeners.removeAll();
 
         context.formManager.sleep();
-        context.iframes.dropdown.close();
-        context.iframes.notification?.close();
+        context.iframes.dropdown.destroy();
+        context.iframes.notification?.destroy();
         context.active = false;
 
         /* may fail if context already invalidated */
@@ -182,10 +182,7 @@ export const createContentScriptService = (id: string) => {
      * one and let the incoming one take over. */
     const handlePostMessage = (message: MessageEvent) => {
         if (message.data?.type === CONTENT_SCRIPT_INJECTED_MESSAGE && message?.data?.id !== id) {
-            logger.info(`[ContentScript::${id}] a newer content-script::${message.data.id} was detected !`);
-            context.active = false;
-            context.iframes.dropdown.destroy();
-            context.iframes.notification?.destroy();
+            logger.info(`[ContentScript::${id}] a newer content-script::${message.data.id} was detected`);
 
             window.removeEventListener('visibilitychange', handleVisibilityChange);
             window.removeEventListener('message', handlePostMessage);
