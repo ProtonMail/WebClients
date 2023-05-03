@@ -318,9 +318,8 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             await wait(200);
         }
 
-        const iterator = esCacheRef.current.esCache.values();
         searchResults = cachedSearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
-            iterator,
+            esCacheRef.current.esCache.values(),
             esSearchParams,
             abortSearchingRef,
             hasApostrophe,
@@ -334,8 +333,10 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             setResultsList(searchResults);
         }
 
-        // If the cache is still being built, incremental portions of cache are searched
-        while (!esCacheRef.current.isCacheReady) {
+        let isCacheReady = esCacheRef.current.isCacheReady;
+
+        // If the cache is still being built, rerun search when build
+        while (!isCacheReady) {
             if (abortSearchingRef.current.signal.aborted) {
                 return {
                     searchResults,
@@ -343,36 +344,25 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
                 };
             }
 
-            searchResults.push(
-                ...cachedSearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
-                    iterator,
+            if (esCacheRef.current.isCacheReady) {
+                const results = cachedSearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
+                    esCacheRef.current.esCache.values(),
                     esSearchParams,
                     abortSearchingRef,
                     hasApostrophe,
                     esHelpers
-                )
-            );
+                );
 
-            // In case there are new results, we show them
-            if (searchResults.length > resultsCounter) {
-                setResultsList(searchResults);
+                searchResults = results;
+                break;
             }
 
-            resultsCounter = searchResults.length;
             await wait(200);
         }
 
-        // To avoid any race condition at the end of the while loop, one last search of the very last portion
-        // is performed
-        searchResults.push(
-            ...cachedSearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
-                iterator,
-                esSearchParams,
-                abortSearchingRef,
-                hasApostrophe,
-                esHelpers
-            )
-        );
+        if (searchResults.length > resultsCounter) {
+            setResultsList(searchResults);
+        }
 
         // Once caching has terminated, if the cache turns out to be not limited, we stop searching
         if (!esCacheRef.current.isCacheLimited || abortSearchingRef.current.signal.aborted) {
