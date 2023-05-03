@@ -3,11 +3,11 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { SidebarList } from '@proton/components';
+import {  SidebarList } from '@proton/components';
 
-import { ShareWithKey } from '../../../../store';
+import { ShareWithKey, usePhotosFeatureFlag } from '../../../../store';
 import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
-import SidebarDevices from './DriveSidebarDevices';
+import DriveSidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
 
@@ -18,6 +18,7 @@ interface Props {
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
+    const isPhotosEnabled = usePhotosFeatureFlag();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
@@ -36,7 +37,14 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                     setSidebarLevel={setSidebarLevel}
                 />
             ))}
-            <SidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />
+            <DriveSidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />
+            {isPhotosEnabled && (
+                <DriveSidebarListItem to="/photos" icon="image" isActive={match.url === '/photos'}>
+                    <span className="text-ellipsis" title={c('Link').t`Photos`}>
+                        {c('Link').t`Photos`}
+                    </span>
+                </DriveSidebarListItem>
+            )}
             <DriveSidebarListItem
                 to="/shared-urls"
                 icon="link"

@@ -3,12 +3,14 @@ import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
+import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { Device } from '../_devices';
 import { DriveEvents } from '../_events/interface';
 import { EncryptedLink } from '../_links/interface';
+import { Photo } from '../_photos/interfaces';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type { Share, ShareURL, ShareWithKey } from '../_shares/interface';
 
@@ -155,5 +157,15 @@ export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL =
         srpModulusID: shareUrl.SRPModulusID,
         maxAccesses: shareUrl.MaxAccesses,
         permissions: shareUrl.Permissions,
+    };
+};
+
+export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
+    return {
+        linkId: photo.LinkID,
+        captureTime: photo.CaptureTime,
+        mainPhotoLinkId: photo.MainPhotoLinkID ?? undefined,
+        hash: photo.Hash ?? undefined,
+        contentHash: photo.ContentHash ?? undefined,
     };
 };
