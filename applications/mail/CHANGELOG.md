@@ -2,6 +2,7 @@
 
 ### New features
 
+-   If you benefit from a paid plan, you can now enable the automatic deletion of trash and spam messages after 30 days
 -   Select only messages that have attachments with the new has file filter
 -   Improve insert contact modal opened from the email composer
 
