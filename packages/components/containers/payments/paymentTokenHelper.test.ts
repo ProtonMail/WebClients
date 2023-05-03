@@ -139,11 +139,7 @@ describe('createPaymentToken', () => {
             },
         };
 
-        const result = await createPaymentToken({
-            params,
-            verify,
-            api,
-        });
+        const result = await createPaymentToken(params, verify, api);
 
         expect(result).toEqual(params);
     });
@@ -171,11 +167,7 @@ describe('createPaymentToken', () => {
             })
         );
 
-        const result = await createPaymentToken({
-            params,
-            verify,
-            api,
-        });
+        const result = await createPaymentToken(params, verify, api);
 
         expect(result).toEqual({
             Payment: {
@@ -223,11 +215,7 @@ describe('createPaymentToken', () => {
 
         (verify as any).mockReturnValue(verifyResult);
 
-        const result = await createPaymentToken({
-            params,
-            verify,
-            api,
-        });
+        const result = await createPaymentToken(params, verify, api);
 
         expect(verify).toHaveBeenCalledWith({
             Payment: params.Payment,

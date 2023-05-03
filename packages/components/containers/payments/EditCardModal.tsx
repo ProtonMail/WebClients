@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import usePaymentToken from '@proton/components/hooks/usePaymentToken';
 import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
-import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Autopay } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -39,16 +39,17 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     } = useRenewToggle({ initialRenewState: renewState });
 
     const handleSubmit = async () => {
-        const { Payment } = await createPaymentToken({
-            params: {
+        const { Payment } = await createPaymentToken(
+            {
                 Payment: {
                     Type: PAYMENT_METHOD_TYPES.CARD,
                     Details: toDetails(card),
                 },
             },
-            mode: ADD_CARD_MODE,
-            api,
-        });
+            {
+                addCardMode: true,
+            }
+        );
         await api(setPaymentMethod({ ...Payment, Autopay: renewToggleProps.renewState }));
         await call();
         rest.onClose?.();

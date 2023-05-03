@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
@@ -33,7 +33,7 @@ export interface Props {
     onClose: () => void;
     token: string;
     payment?: CardPayment | {};
-    mode?: 'add-card';
+    isAddCard?: boolean;
     type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
     onProcess: () => PromiseWithController;
     initialProcess?: PromiseWithController;
@@ -44,14 +44,13 @@ const PaymentVerificationModal = ({
     token,
     onSubmit,
     payment = {},
-    mode,
+    isAddCard,
     type = PAYMENT_METHOD_TYPES.CARD,
     onProcess,
     initialProcess,
     processingDelay = DEFAULT_PROCESSING_DELAY,
     ...rest
 }: Props) => {
-    const isAddCard = mode === ADD_CARD_MODE;
     const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
 
     let failTitle;

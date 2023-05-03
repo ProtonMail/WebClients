@@ -1,8 +1,8 @@
 import { addWeeks } from 'date-fns';
 
-import { External } from '@proton/shared/lib/interfaces';
+import { External, Plan, Subscription } from '@proton/shared/lib/interfaces';
 
-import { COUPON_CODES, CYCLE } from '../../lib/constants';
+import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
     getPlanIDs,
     hasLifetime,
@@ -12,65 +12,123 @@ import {
     willTrialExpire,
 } from '../../lib/helpers/subscription';
 
+let subscription: Subscription;
+let defaultPlan: Plan;
+
+beforeEach(() => {
+    subscription = {
+        ID: 'id-123',
+        InvoiceID: 'invoice-id-123',
+        Cycle: CYCLE.MONTHLY,
+        PeriodStart: 123,
+        PeriodEnd: 777,
+        CreateTime: 123,
+        CouponCode: null,
+        Currency: 'EUR',
+        Amount: 123,
+        RenewAmount: 123,
+        Discount: 123,
+        Plans: [],
+        External: External.Default,
+    };
+
+    defaultPlan = {
+        ID: 'plan-id-123',
+        Type: 0,
+        Cycle: CYCLE.MONTHLY,
+        Name: PLANS.BUNDLE,
+        Title: 'Bundle',
+        Currency: 'EUR',
+        Amount: 123,
+        MaxDomains: 123,
+        MaxAddresses: 123,
+        MaxSpace: 123,
+        MaxCalendars: 123,
+        MaxMembers: 123,
+        MaxVPN: 123,
+        MaxTier: 123,
+        Services: 123,
+        Features: 123,
+        Quantity: 123,
+        Pricing: {
+            [CYCLE.MONTHLY]: 123,
+            [CYCLE.YEARLY]: 123,
+            [CYCLE.TWO_YEARS]: 123,
+        },
+        State: 123,
+    };
+});
+
 describe('getPlanIDs', () => {
     it('should extract plans properly', () => {
         expect(
             getPlanIDs({
+                ...subscription,
                 Plans: [
-                    { Name: 'a', Quantity: 1 },
-                    { Name: 'a', Quantity: 1 },
-                    { Name: 'b', Quantity: 3 },
+                    { ...defaultPlan, Name: PLANS.BUNDLE_PRO, Quantity: 1 },
+                    { ...defaultPlan, Name: PLANS.BUNDLE_PRO, Quantity: 1 },
+                    { ...defaultPlan, Name: ADDON_NAMES.MEMBER_BUNDLE_PRO, Quantity: 3 },
                 ],
-            } as any)
+            })
         ).toEqual({
-            a: 2,
-            b: 3,
-        } as any);
+            [PLANS.BUNDLE_PRO]: 2,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 3,
+        });
     });
 });
 
 describe('hasLifetime', () => {
     it('should have LIFETIME', () => {
-        expect(hasLifetime({ CouponCode: COUPON_CODES.LIFETIME } as any)).toBe(true);
+        subscription = {
+            ...subscription,
+            CouponCode: COUPON_CODES.LIFETIME,
+        };
+
+        expect(hasLifetime(subscription)).toBe(true);
     });
 
     it('should not have LIFETIME', () => {
-        expect(hasLifetime({ CouponCode: 'PANDA' } as any)).toBe(false);
+        subscription = {
+            ...subscription,
+            CouponCode: 'PANDA',
+        };
+
+        expect(hasLifetime(subscription)).toBe(false);
     });
 });
 
 describe('isTrial', () => {
     it('should be a trial', () => {
-        expect(isTrial({ CouponCode: COUPON_CODES.REFERRAL } as any)).toBe(true);
+        expect(isTrial({ ...subscription, CouponCode: COUPON_CODES.REFERRAL })).toBe(true);
     });
 
     it('should not be a trial', () => {
-        expect(isTrial({ CouponCode: 'PANDA' } as any)).toBe(false);
+        expect(isTrial({ ...subscription, CouponCode: 'PANDA' })).toBe(false);
     });
 });
 
 describe('isTrialExpired', () => {
     it('should detect expired subscription', () => {
         const ts = Math.round((new Date().getTime() - 1000) / 1000);
-        expect(isTrialExpired({ PeriodEnd: ts } as any)).toBe(true);
+        expect(isTrialExpired({ ...subscription, PeriodEnd: ts })).toBe(true);
     });
 
     it('should detect non-expired subscription', () => {
         const ts = Math.round((new Date().getTime() + 1000) / 1000);
-        expect(isTrialExpired({ PeriodEnd: ts } as any)).toBe(false);
+        expect(isTrialExpired({ ...subscription, PeriodEnd: ts })).toBe(false);
     });
 });
 
 describe('willTrialExpire', () => {
     it('should detect close expiration', () => {
         const ts = Math.round((addWeeks(new Date(), 1).getTime() - 1000) / 1000);
-        expect(willTrialExpire({ PeriodEnd: ts } as any)).toBe(true);
+        expect(willTrialExpire({ ...subscription, PeriodEnd: ts })).toBe(true);
     });
 
     it('should detect far expiration', () => {
         // Add 2 weeks from now and convert Date to unix timestamp
         const ts = Math.round(addWeeks(new Date(), 2).getTime() / 1000);
-        expect(willTrialExpire({ PeriodEnd: ts } as any)).toBe(false);
+        expect(willTrialExpire({ ...subscription, PeriodEnd: ts })).toBe(false);
     });
 });
 
@@ -88,7 +146,7 @@ describe('isManagedExternally', () => {
             Amount: 1199,
             RenewAmount: 1199,
             Discount: 0,
-            Plans: {} as any,
+            Plans: [],
             External: External.Android,
         });
 
@@ -108,7 +166,7 @@ describe('isManagedExternally', () => {
             Amount: 1199,
             RenewAmount: 1199,
             Discount: 0,
-            Plans: {} as any,
+            Plans: [],
             External: External.iOS,
         });
 
@@ -128,7 +186,7 @@ describe('isManagedExternally', () => {
             Amount: 1199,
             RenewAmount: 1199,
             Discount: 0,
-            Plans: {} as any,
+            Plans: [],
             External: External.Default,
         });
 

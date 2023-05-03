@@ -792,7 +792,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             {step === Payment && model.paymentMethodStatus && (
                 <PaymentStep
                     onBack={handleBackStep}
-                    api={normalApi}
                     paymentMethodStatus={model.paymentMethodStatus}
                     plans={model.plans}
                     plan={plan}
