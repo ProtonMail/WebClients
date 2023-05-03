@@ -1,4 +1,12 @@
-import { LoaderPage, StandardPrivateApp, useApi, useAppTitle, useDrawer, useDrawerParent } from '@proton/components';
+import {
+    FeatureCode,
+    LoaderPage,
+    StandardPrivateApp,
+    useApi,
+    useAppTitle,
+    useDrawer,
+    useDrawerParent,
+} from '@proton/components';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
@@ -51,6 +59,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             onInit={() => loadAllowedTimeZones(getSilentApi(api)).catch(noop)}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             preloadModels={PRELOAD_MODELS}
+            preloadFeatures={[FeatureCode.CalendarFetchMetadataOnly]}
             eventModels={EVENT_MODELS}
             loader={<LoaderPage />}
             hasPrivateMemberKeyGeneration
