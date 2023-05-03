@@ -1,7 +1,7 @@
 import { addDays, fromUnixTime, isBefore } from 'date-fns';
 
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasMonthly, isExternal } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasMonthly, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -21,7 +21,7 @@ const isEligible = ({ user, subscription, protonConfig }: Props) => {
         user.canPay &&
         isValidApp &&
         !user.isDelinquent &&
-        !isExternal(subscription)
+        !isManagedExternally(subscription)
     );
 };
 
