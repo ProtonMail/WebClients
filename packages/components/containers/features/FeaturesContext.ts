@@ -49,6 +49,8 @@ export enum FeatureCode {
     CleanUTMTrackers = 'CleanUTMTrackers',
     DarkStylesInBody = 'DarkStylesInBody',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
+    DriveMyDevices = 'DriveWebMyDevices',
+    DrivePhotos = 'DrivePhotos',
     DrivePlan = 'DrivePlan',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     DriveWindowsGAMailSpotlight = 'DriveWindowsGAMailSpotlight',
