@@ -11,6 +11,7 @@ export const readCSV = async <T extends Record<string, any>>(
         return await new Promise<T[]>((resolve, reject) => {
             Papa.parse<T>(data, {
                 header: true,
+                transformHeader: (h) => h.trim().toLocaleLowerCase(),
                 skipEmptyLines: true,
                 delimiter: ',',
                 complete: ({ data, errors }) => {
