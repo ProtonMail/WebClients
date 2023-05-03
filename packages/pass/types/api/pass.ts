@@ -360,6 +360,8 @@ export type ActiveShareGetResponse = {
     CreateTime: number;
 };
 
+export type UserAccessGetResponse = { Plan: PassPlanResponse };
+
 export type GetMissingAliasResponse = {
     /* MissingAlias */
     MissingAlias?: MissingAliasDto[];
@@ -521,12 +523,31 @@ export type VaultInviteData = {
     ModifyTime: number;
 };
 
+export type PassPlanResponse = {
+    Type: PlanType;
+    /* Internal name of the plan */
+    InternalName: string;
+    /* Display name of the plan */
+    DisplayName: string;
+    /* Vault limit, null for plans with Pass plus */
+    VaultLimit?: number | null;
+    /* Alias limit, null for plans with Pass plus */
+    AliasLimit?: number | null;
+    /* TOTP limit, null for plans with Pass plus */
+    TotpLimit?: number | null;
+};
+
 export type MissingAliasDto = {
     /* Email of the alias */
     Email?: string;
     /* Email note as stored in SL */
     Note?: string;
 };
+
+export enum PlanType {
+    free = 'free',
+    plus = 'plus',
+}
 
 export type ApiMethod = string;
 
@@ -568,7 +589,7 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         : never
     : Path extends `pass/v1/user/access`
     ? Method extends `post`
-        ? { Code?: ResponseCodeSuccess }
+        ? { Code?: ResponseCodeSuccess; Access?: UserAccessGetResponse }
         : never
     : Path extends `pass/v1/share/${string}/user/${string}`
     ? Method extends `get`
