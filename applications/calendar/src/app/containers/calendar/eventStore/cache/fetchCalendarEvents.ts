@@ -1,8 +1,11 @@
 import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
 import { Api } from '@proton/shared/lib/interfaces';
+import { CalendarEvent, CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
 
-import getPaginatedEvents from '../getPaginatedEvents';
+import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import { getPaginatedCalendarEvents, getPaginatedCalendarEventsWithoutBlob } from '../getPaginatedEvents';
 import { CalendarEventsCache } from '../interface';
+import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 import upsertCalendarApiEventWithoutBlob from './upsertCalendarApiEventWithoutBlobs';
 
 const getIsContained = (range: [Date, Date], otherRange: [Date, Date]) => {
@@ -17,25 +20,54 @@ export const getExistingFetch = (dateRange: [Date, Date], { fetchTree, fetchCach
     });
 };
 
-export const fetchCalendarEvents = (
-    dateRange: [Date, Date],
-    calendarEventsCache: CalendarEventsCache,
-    api: Api,
-    calendarID: string,
-    tzid: string,
-    noFetch: boolean
-) => {
+export const fetchCalendarEvents = ({
+    calendarID,
+    dateRange,
+    tzid,
+    calendarEventsCache,
+    noFetch,
+    getOpenedMailEvents,
+    metadataOnly,
+    api,
+}: {
+    calendarID: string;
+    dateRange: [Date, Date];
+    tzid: string;
+    calendarEventsCache: CalendarEventsCache;
+    getOpenedMailEvents: () => OpenedMailEvent[];
+    noFetch: boolean;
+    metadataOnly?: boolean;
+    api: Api;
+}) => {
     const existingFetch = getExistingFetch(dateRange, calendarEventsCache);
 
     const { fetchCache, fetchTree } = calendarEventsCache;
 
     if (!existingFetch) {
         const fetchId = generateProtonCalendarUID();
-        const getEventsPromise = noFetch
-            ? Promise.resolve([])
-            : getPaginatedEvents(api, calendarID, dateRange, tzid, (Event) =>
-                  upsertCalendarApiEventWithoutBlob(Event, calendarEventsCache)
-              );
+        const getEventsPromise = (() => {
+            if (noFetch) {
+                return Promise.resolve([]);
+            }
+            if (metadataOnly) {
+                return getPaginatedCalendarEventsWithoutBlob({
+                    calendarID,
+                    dateRange,
+                    tzid,
+                    api,
+                    upsertEvent: (event: CalendarEventWithoutBlob) =>
+                        upsertCalendarApiEventWithoutBlob(event, calendarEventsCache),
+                });
+            }
+            return getPaginatedCalendarEvents({
+                calendarID,
+                dateRange,
+                tzid,
+                api,
+                upsertEvent: (event: CalendarEvent) =>
+                    upsertCalendarApiEvent(event, calendarEventsCache, getOpenedMailEvents),
+            });
+        })();
         const promise = getEventsPromise
             .then(() => {
                 if (fetchCache.get(fetchId)?.promise !== promise) {
