@@ -5,10 +5,5 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: './tsconfig.json',
     },
-    rules: {
-        'no-console': 'off',
-        'no-nested-ternary': 'off',
-        '@typescript-eslint/no-misused-promises': 'off',
-    },
-    ignorePatterns: ['.eslintrc.js', 'assets/sandbox.js'],
+    ignorePatterns: ['.eslintrc.js'],
 };

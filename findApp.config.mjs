@@ -73,6 +73,6 @@ export default {
         directory: 'applications',
         globIgnore: [TEST_FILES_GLOB],
         sourcesGlob: 'src/app/**/*.{js,jsx,ts,tsx}',
-        ignore: ['storybook'],
+        ignore: ['storybook', 'preview-sandbox'],
     },
 };

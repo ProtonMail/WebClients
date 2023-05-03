@@ -23,11 +23,11 @@ import ImagePreview from './ImagePreview';
 import PDFPreview from './PDFPreview';
 import PreviewError from './PreviewError';
 import PreviewLoader from './PreviewLoader';
+import SandboxedPreview from './SandboxedPreview';
 import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
-import WordPreview from './WordPreview';
 
 interface Props {
     isMetaLoading?: boolean;
@@ -146,7 +146,7 @@ export const FilePreviewContent = ({
             return <PDFPreview contents={contents} filename={fileName} />;
         }
         if (isWordDocument(mimeType)) {
-            return <WordPreview contents={contents} onDownload={onDownload} />;
+            return <SandboxedPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
     };
 
