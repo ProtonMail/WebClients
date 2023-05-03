@@ -48,7 +48,7 @@ export const ConfirmActionModal = ({
         e.preventDefault();
         if (onSubmit) {
             setSubmitLoading(true);
-            await onSubmit();
+            await onSubmit().catch(() => undefined);
             setSubmitLoading(false);
         }
         onClose();
