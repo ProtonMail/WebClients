@@ -88,8 +88,8 @@ export const createFieldIconHandles = ({ field }: CreateIconOptions): FieldIconH
             });
         },
         detach: () => {
-            cleanupInjectionStyles({ input, wrapper });
             listeners.removeAll();
+            cleanupInjectionStyles({ input, wrapper });
             icon.parentElement?.remove();
         },
     };

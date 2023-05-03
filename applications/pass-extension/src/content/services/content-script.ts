@@ -2,16 +2,13 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState, WorkerStatus } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom';
-import { safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import debounce from '@proton/utils/debounce';
-import noop from '@proton/utils/noop';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
-import { CONTENT_SCRIPT_INJECTED_MESSAGE } from '../constants';
 import CSContext, { ContentScriptContext } from '../context';
 import { getAllFields } from '../handles/form';
 import { DOMCleanUp } from '../injections/cleanup';
@@ -37,19 +34,36 @@ export const createContentScriptService = (id: string) => {
         state: { loggedIn: false, status: WorkerStatus.IDLE, UID: undefined },
     });
 
-    const destroy = (options: { dom?: boolean; reason: string }) => {
-        logger.info(`[ContentScript::${id}] destroying.. [reason: "${options.reason}"]`);
+    /* Some SPA websites might wipe the whole DOM on page change :
+     * this will cause our IFrame root to be removed. If this is the
+     * case we must re-init the injected frames with the current port
+     * and the current worker state */
+    const ensureIFramesAttached = () => {
+        if (!isIFrameRootAttached()) {
+            const { port } = ExtensionContext.get();
+            context.iframes = createIFrames();
+            context.iframes.dropdown.init(port).reset(context.state);
+            context.iframes.notification?.init(port).reset(context.state);
+        }
+    };
 
-        listeners.removeAll();
+    /* Only destroy the injection DOM if we're not going to
+     * recycle this content-script service.  */
+    const destroy = (options: { reason: string; recycle?: boolean }) => {
+        if (context.active) {
+            logger.info(`[ContentScript::${id}] destroying.. [reason: "${options.reason}"]`, options.recycle);
 
-        context.formManager.sleep();
-        context.iframes.dropdown.destroy();
-        context.iframes.notification?.destroy();
-        context.active = false;
+            context.active = options.recycle ?? false;
+            context.formManager.sleep();
 
-        /* may fail if context already invalidated */
-        safeCall(() => ExtensionContext.get().port.disconnect)();
-        if (options.dom) DOMCleanUp();
+            context.iframes.dropdown[options.recycle ? 'close' : 'destroy']();
+            context.iframes.notification?.[options.recycle ? 'close' : 'destroy']();
+
+            listeners.removeAll();
+            ExtensionContext.read()?.port.disconnect();
+
+            if (!options.recycle) DOMCleanUp();
+        }
     };
 
     const onWorkerStateChange = (workerState: WorkerState) => {
@@ -81,7 +95,7 @@ export const createContentScriptService = (id: string) => {
         if (message.sender === 'background') {
             switch (message.type) {
                 case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                    return destroy({ dom: true, reason: 'unload script' });
+                    return destroy({ recycle: false, reason: 'unload script' });
                 case WorkerMessageType.WORKER_STATUS:
                     return onWorkerStateChange(message.payload.state);
                 case WorkerMessageType.SETTINGS_UPDATE:
@@ -92,128 +106,51 @@ export const createContentScriptService = (id: string) => {
         }
     };
 
-    /* Some SPA websites might wipe the whole DOM on page change :
-     * this will cause our IFrame root to be removed. If this is the
-     * case we must re-init the injected frames with the current port
-     * and the current worker state */
-    const ensureIFramesAttached = () => {
-        if (!isIFrameRootAttached()) {
-            const { port } = ExtensionContext.get();
-            context.iframes = createIFrames();
-            context.iframes.dropdown.init(port).reset(context.state);
-            context.iframes.notification?.init(port).reset(context.state);
-        }
-    };
-
     const handleStart = async ({ tabId, port }: ExtensionContextType) => {
-        try {
-            const res = await sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.WORKER_WAKEUP,
-                    payload: { endpoint: 'content-script', tabId },
-                })
-            );
+        const res = await sendMessage(
+            contentScriptMessage({
+                type: WorkerMessageType.WORKER_WAKEUP,
+                payload: { endpoint: 'content-script', tabId },
+            })
+        );
+
+        if (res.type === 'success' && context.active) {
+            const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
+            logger.info(`[ContentScript::${id}] Worker status resolved "${workerState.status}"`);
 
             ensureIFramesAttached();
 
             context.iframes.dropdown.init(port);
             context.iframes.notification?.init(port);
 
-            if (res.type === 'success') {
-                const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-                logger.info(`[ContentScript::${id}] Worker status resolved "${workerState.status}"`);
+            onWorkerStateChange(workerState);
+            onSettingsChange(res.settings!);
 
-                onWorkerStateChange(workerState);
-                onSettingsChange(res.settings!);
+            context.formManager.detect('VisibilityChange');
+            context.formManager.observe();
 
-                context.formManager.observe();
-                context.formManager.detect('VisibilityChange');
-                context.active = true;
-
-                port.onMessage.addListener(onPortMessage);
-                listeners.addObserver(debounce(ensureIFramesAttached, 500), document.body, { childList: true });
-            }
-        } catch (_) {
-            context.active = false;
+            port.onMessage.addListener(onPortMessage);
+            listeners.addObserver(debounce(ensureIFramesAttached, 500), document.body, { childList: true });
         }
     };
 
-    const setup = async () => {
+    const start = async () => {
         try {
             const extensionContext = await setupExtensionContext({
                 endpoint: 'content-script',
-                onDisconnect: () => destroy({ dom: false, reason: 'port disconnected' }),
-                onContextChange: (nextCtx) => handleStart(nextCtx).catch(noop),
+                onDisconnect: () => destroy({ recycle: true, reason: 'port disconnected' }),
+                onContextChange: (nextCtx) => context.active && handleStart(nextCtx),
             });
 
             logger.info(`[ContentScript::${id}] Registering content-script`);
-            return extensionContext;
+            return await handleStart(extensionContext);
         } catch (e) {
             logger.warn(`[ContentScript::${id}] Setup error`, e);
+            destroy({ recycle: true, reason: 'setup error' });
         }
     };
 
-    const handleVisibilityChange = async () => {
-        try {
-            switch (document.visibilityState) {
-                case 'visible': {
-                    const extensionContext = await setup();
-                    return extensionContext && (await handleStart(extensionContext));
-                }
-                case 'hidden': {
-                    return destroy({ dom: true, reason: 'visibility change' });
-                }
-            }
-        } catch (e) {
-            logger.warn(`[ContentScript::${id}] invalidation error`, e);
-
-            /* Reaching this catch block will likely happen
-             * when the setup function fails due to an extension
-             * update. At this point we should remove any listeners
-             * in this now-stale content-script and delete any
-             * allocated resources*/
-            context.active = false;
-            destroy({ dom: true, reason: 'context invalidated' });
-        }
-    };
-
-    /* If another content-script is being injected - if
-     * the extension updates - we should destroy the current
-     * one and let the incoming one take over. */
-    const handlePostMessage = (message: MessageEvent) => {
-        if (message.data?.type === CONTENT_SCRIPT_INJECTED_MESSAGE && message?.data?.id !== id) {
-            logger.info(`[ContentScript::${id}] a newer content-script::${message.data.id} was detected`);
-
-            window.removeEventListener('visibilitychange', handleVisibilityChange);
-            window.removeEventListener('message', handlePostMessage);
-
-            destroy({ dom: true, reason: 'incoming injection' });
-        }
-    };
-
-    window.addEventListener('message', handlePostMessage);
-
-    return {
-        watch: (mainFrame: boolean) => {
-            setup()
-                .then((extensionContext) => {
-                    /* When browser recovers a browsing session (ie: upon
-                     * restarting after an exit) content-scripts will be
-                     * re-injected in all the recovered tabs. As such, we
-                     * want to only "start" the content-script if the tab
-                     * is visible to avoid swarming the worker with wake-ups  */
-                    if (document.visibilityState === 'visible' && extensionContext && context.active) {
-                        return handleStart(extensionContext);
-                    }
-                })
-                .then(() => {
-                    /* We only want to track visibility change on the
-                     * root main frame to avoid unnecessary detections */
-                    if (mainFrame) {
-                        window.addEventListener('visibilitychange', handleVisibilityChange);
-                    }
-                })
-                .catch(noop);
-        },
-    };
+    return { start, destroy };
 };
+
+export type ContentScriptService = ReturnType<typeof createContentScriptService>;
