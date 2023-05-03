@@ -136,7 +136,7 @@ const MailboxContainer = ({
 
     const [isMessageOpening, setIsMessageOpening] = useState(false);
 
-    const onMessageLoad = () => setIsMessageOpening(true);
+    const onMessageLoad = useCallback(() => setIsMessageOpening(true), []);
     const onMessageReady = useCallback(() => setIsMessageOpening(false), [setIsMessageOpening]);
 
     const elementsParams = {
