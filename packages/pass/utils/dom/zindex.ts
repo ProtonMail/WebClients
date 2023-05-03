@@ -10,15 +10,15 @@ export const inferZIndexFromParent = (el: HTMLElement, returnEarly: boolean = fa
     const value = parseInt(zIndex, 10);
 
     if (isNaN(value)) return inferZIndexFromParent(parent, returnEarly);
-    return returnEarly ? value : Math.max(inferZIndexFromParent(parent, true));
+
+    return returnEarly ? value : Math.max(value, inferZIndexFromParent(parent, true));
 };
 
-export const getMaxZIndex = (rootElement: HTMLElement) => {
-    return Math.max(
+export const getMaxZIndex = (rootElement: HTMLElement) =>
+    Math.max(
         inferZIndexFromParent(rootElement),
         ...Array.from(rootElement.querySelectorAll('*'), (el) =>
             parseInt(window.getComputedStyle(el).zIndex, 10)
         ).filter((zIndex) => !Number.isNaN(zIndex)),
         0
     );
-};
