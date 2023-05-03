@@ -1,5 +1,5 @@
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasBlackFridayDiscount, isExternal, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasBlackFridayDiscount, isManagedExternally, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -24,7 +24,7 @@ const isEligible = ({ protonConfig, subscription, user }: Props) => {
         user.canPay &&
         isVpnApp &&
         !user.isDelinquent &&
-        !isExternal(subscription)
+        !isManagedExternally(subscription)
     );
 };
 
