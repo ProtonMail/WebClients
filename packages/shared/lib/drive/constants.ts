@@ -251,3 +251,5 @@ export const fileDescriptions: { [type: string]: string } = {
 
 // Delete once sharing between members is fully implemented.
 export const MEMBER_SHARING_ENABLED = false;
+
+export const PHOTOS_PAGE_SIZE = 500;

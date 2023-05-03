@@ -16,3 +16,4 @@ export * from './_shares/interface';
 export * from './_devices/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
+export * from './_photos';

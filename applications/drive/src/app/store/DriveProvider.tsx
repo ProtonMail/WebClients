@@ -5,6 +5,7 @@ import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
 import { DriveEventManagerProvider } from './_events';
 import { LinksProvider, PublicLinksProvider } from './_links';
+import { PhotosProvider } from './_photos';
 import { SearchProvider } from './_search';
 import { SharesProvider } from './_shares';
 import { UploadProvider } from './_uploads';
@@ -23,7 +24,9 @@ export function DriveProvider({ children }: DriveProviderProps) {
                         <DevicesProvider>
                             <DownloadsProvider>
                                 <UploadProvider>
-                                    <SearchProvider>{children}</SearchProvider>
+                                    <SearchProvider>
+                                        <PhotosProvider>{children}</PhotosProvider>
+                                    </SearchProvider>
                                 </UploadProvider>
                             </DownloadsProvider>
                         </DevicesProvider>
