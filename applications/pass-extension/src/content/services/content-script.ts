@@ -37,20 +37,6 @@ export const createContentScriptService = (id: string) => {
         state: { loggedIn: false, status: WorkerStatus.IDLE, UID: undefined },
     });
 
-    /**
-     * Disable sentry in the content-script for now to avoid
-     * swarming external JS errors as sentry will catch them
-        sentry({
-            config,
-            sentryConfig: {
-                host: new URL(config.API_URL).host,
-                release: config.APP_VERSION,
-                environment: `browser-pass::content-script`,
-            },
-            ignore: () => false,
-        });
-    */
-
     const destroy = (options: { dom?: boolean; reason: string }) => {
         logger.info(`[ContentScript::${id}] destroying.. [reason: "${options.reason}"]`);
 
@@ -128,6 +114,8 @@ export const createContentScriptService = (id: string) => {
                 })
             );
 
+            ensureIFramesAttached();
+
             context.iframes.dropdown.init(port);
             context.iframes.notification?.init(port);
 
@@ -173,7 +161,7 @@ export const createContentScriptService = (id: string) => {
                     return extensionContext && (await handleStart(extensionContext));
                 }
                 case 'hidden': {
-                    return destroy({ dom: false, reason: 'visibility change' });
+                    return destroy({ dom: true, reason: 'visibility change' });
                 }
             }
         } catch (e) {
