@@ -5,7 +5,6 @@ import { ModalStateProps, useModalTwo } from '@proton/components/components';
 import { Portal } from '@proton/components/components/portal';
 import { FilePreview } from '@proton/components/containers';
 import type { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
-import { FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
 
 import { useFileView } from '../../store';
 
@@ -44,13 +43,13 @@ const RevisionPreview = ({ shareId, linkId, revision, onClose, onExit, open }: P
                         onExit();
                     }}
                     onDownload={downloadFile}
-                    onRestore={
-                        revision.State !== FileRevisionState.Active
-                            ? () => {
-                                  // TODO: Add revision restore logic
-                              }
-                            : undefined
-                    }
+                    // onRestore={
+                    //     revision.State !== FileRevisionState.Active
+                    //         ? () => {
+                    //               // TODO: Add revision restore logic
+                    //           }
+                    //         : undefined
+                    // }
                     date={fromUnixTime(revision.CreateTime)}
                 />
             </div>
