@@ -1,4 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
+import type { Callback, Maybe } from '@proton/pass/types';
 
 /**
  * Removing every listener from a DOM node
@@ -38,6 +38,8 @@ export type ListenerStore = ReturnType<typeof createListenerStore>;
 export const createListenerStore = () => {
     const listeners: Listener[] = [];
 
+    const cancelDebounce = (fn: Callback) => (fn as any)?.cancel?.();
+
     const addListener = <T extends EventSource, E extends keyof EventMap<T>>(
         element: Maybe<T>,
         type: E,
@@ -51,20 +53,31 @@ export const createListenerStore = () => {
 
     const addObserver = (mutationCb: MutationCallback, target: Node, options?: MutationObserverInit) => {
         const observer = new MutationObserver(mutationCb);
+
+        const disconnect = observer.disconnect;
+
+        observer.disconnect = () => {
+            cancelDebounce(mutationCb);
+            disconnect.bind(observer)();
+        };
+
         listeners.push({ kind: 'observer', observer });
         observer.observe(target, options);
     };
 
     const removeAll = () => {
         listeners.forEach((listener) => {
-            if (listener.kind === 'listener') {
-                listener.element.removeEventListener(listener.type, listener.fn);
-            }
-
             if (listener.kind === 'observer') {
                 listener.observer.disconnect();
             }
+
+            if (listener.kind === 'listener') {
+                cancelDebounce(listener.fn);
+                listener.element.removeEventListener(listener.type, listener.fn);
+            }
         });
+
+        listeners.length = 0;
     };
 
     return {
