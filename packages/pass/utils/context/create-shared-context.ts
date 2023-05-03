@@ -1,8 +1,9 @@
-import type { Callback } from '@proton/pass/types';
+import type { Callback, Maybe } from '@proton/pass/types';
 
 interface SharedContext<T = any> {
     set: (ctx: T) => T;
     get: () => T;
+    read: () => Maybe<T>;
 }
 
 type SharedContextValue<T extends SharedContext = SharedContext> = T extends SharedContext<infer U> ? U : never;
@@ -30,7 +31,9 @@ export const createSharedContext = <T>(id: string): SharedContext<T> => {
         return ref.ctx;
     };
 
-    return { set, get };
+    const read = (): Maybe<T> => ref.ctx;
+
+    return { set, get, read };
 };
 
 /**
