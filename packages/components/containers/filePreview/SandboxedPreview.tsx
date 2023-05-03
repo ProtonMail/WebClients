@@ -32,7 +32,8 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
         const onSandboxMessage = (event: MessageEvent) => {
             const contentWindow = sandbox.contentWindow;
             const { origin, data, source } = event;
-            if (!contentWindow || origin !== window.location.origin || !data || source !== contentWindow) {
+
+            if (!contentWindow || origin !== 'null' || !data || source !== contentWindow) {
                 return;
             }
 
