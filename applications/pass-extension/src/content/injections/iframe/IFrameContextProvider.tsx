@@ -92,6 +92,11 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                     )
                 );
 
+                framePortRef.onDisconnect.addListener(() => {
+                    setPortContext({ port: null, forwardTo: null });
+                    window.addEventListener('message', portInitHandler);
+                });
+
                 setPortContext({ port: framePortRef, forwardTo: message.payload.port });
             }
         };
@@ -108,13 +113,14 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
      * through the worker's MessageBroker.
      * see `@proton/pass/extension/message/message-broker` */
     const postMessage = useCallback(
-        (rawMessage: IFrameMessage) =>
+        (rawMessage: IFrameMessage) => {
             port?.postMessage(
                 portForwardingMessage<IFrameMessageWithSender>(forwardTo!, {
                     ...rawMessage,
                     sender: endpoint,
                 })
-            ),
+            );
+        },
         [port, forwardTo]
     );
 

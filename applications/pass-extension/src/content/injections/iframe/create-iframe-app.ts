@@ -179,6 +179,7 @@ export const createIFrameApp = ({
         listeners.removeAll();
         safeCall(() => iframeRoot.removeChild(iframe))();
         safeCall(state?.port?.disconnect)();
+        state.port = null;
     };
 
     registerMessageHandler(IFrameMessageType.IFRAME_CONNECTED, ({ payload: { framePort } }) => {
