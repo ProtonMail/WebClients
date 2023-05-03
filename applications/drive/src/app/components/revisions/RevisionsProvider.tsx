@@ -135,7 +135,7 @@ export const RevisionsProvider = ({
                             });
                         } else {
                             createNotification({
-                                text: c('Info').t`Version is queue for restore`,
+                                text: c('Info').t`Restore is in progress. This can take a few seconds.`,
                             });
                         }
                     })
