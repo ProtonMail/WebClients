@@ -74,17 +74,18 @@ const Header = ({
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
                 <FileNameDisplay text={name} data-testid="file-preview:file-name" />
                 {signatureStatus}
-                <span className="ml-5">
-                    {date &&
-                        new Intl.DateTimeFormat(dateLocale.code, {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric',
-                            hour: 'numeric',
-                            minute: 'numeric',
-                        }).format(date)}
-                </span>
             </div>
+            {date && (
+                <span className="flex-item-fluid text-ellipsis ml-5">
+                    {new Intl.DateTimeFormat(dateLocale.code, {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: 'numeric',
+                    }).format(date)}
+                </span>
+            )}
             {children}
             <div className="flex flex-align-items-center">
                 {onRestore && (
