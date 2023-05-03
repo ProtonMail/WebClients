@@ -21,6 +21,7 @@ import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl 
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
 import OnboardingContainer from './OnboardingContainer';
+import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
@@ -103,6 +104,7 @@ const InitContainer = () => {
                     <Route path="/devices" component={DevicesContainer} />
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
+                    <Route path="/photos" component={PhotosContainer} />
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />

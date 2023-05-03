@@ -184,9 +184,9 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                         itemSize={itemHeight}
                         // @ts-ignore
                         // FixedSizeList wraps our ListItemRow which breaks the type safety.
-                        // The reason is that we have generit type for several fields and all
+                        // The reason is that we have generic type for several fields and all
                         // has to be the same one to make it work. We can ignore it as far as
-                        // we properly state types on all places to gurantee the types.
+                        // we properly state types on all places to guarantee the types.
                         itemData={itemData}
                         onScroll={onScroll}
                         width={rect.width}
