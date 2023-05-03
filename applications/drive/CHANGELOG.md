@@ -1,3 +1,23 @@
+# Release 5.0.13.0 – May 10, 2023
+
+## Added
+
+-   Version history of files
+
+## Improved
+
+-   Office Open XML (docx) documents previewed in sandbox for better security
+-   Automatic mitigation of bitflips
+-   Better position of download button on download page
+
+## Fixed
+
+-   Avoiding full local storage
+-   Replacing unfinished file uploads with new folders
+-   Displaying indexing dropdown for encrypted search
+-   Cutting file names with emojis
+-   Unifying sorting in sharing modal
+
 # Release 5.0.12.0 – March 22, 2023
 
 ## Improved
