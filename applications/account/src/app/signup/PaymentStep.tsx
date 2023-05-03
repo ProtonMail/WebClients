@@ -30,7 +30,7 @@ import metrics from '@proton/metrics';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Api, Currency, Cycle, PaymentMethodStatus, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, PaymentMethodStatus, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -43,7 +43,6 @@ import { PlanIDs, SubscriptionData } from './interfaces';
 export interface Props {
     subscriptionData: SubscriptionData;
     plans: Plan[];
-    api: Api;
     onBack?: () => void;
     onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
@@ -55,7 +54,6 @@ export interface Props {
 }
 
 const PaymentStep = ({
-    api,
     onBack,
     onPay,
     onChangeCycle,
@@ -201,13 +199,7 @@ const PaymentStep = ({
                                     Currency: subscriptionData.currency,
                                     Amount: subscriptionData.checkResult.AmountDue,
                                 };
-                                const data = await createPaymentToken(
-                                    {
-                                        params: paymentParameters,
-                                        api,
-                                    },
-                                    amountAndCurrency
-                                );
+                                const data = await createPaymentToken(paymentParameters, { amountAndCurrency });
 
                                 return onPay(data.Payment);
                             };

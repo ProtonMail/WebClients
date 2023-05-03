@@ -8,7 +8,7 @@ import useModals from './useModals';
 
 export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): VerifyPayment =>
     async function verify({
-        mode,
+        addCardMode,
         Payment,
         Token,
         ApprovalURL,
@@ -17,7 +17,7 @@ export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => voi
         return new Promise<TokenPaymentMethod>((resolve, reject) => {
             createModal(
                 <PaymentVerificationModal
-                    mode={mode}
+                    isAddCard={addCardMode}
                     payment={Payment}
                     token={Token}
                     onSubmit={resolve}
@@ -44,7 +44,7 @@ const usePaymentToken = () => {
     const api = useApi();
     const { createModal } = useModals();
 
-    return getCreatePaymentToken(getDefaultVerifyPayment(createModal, api));
+    return getCreatePaymentToken(getDefaultVerifyPayment(createModal, api), api);
 };
 
 export default usePaymentToken;

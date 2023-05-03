@@ -918,7 +918,6 @@ export enum AutoReplyDuration {
     PERMANENT = 4,
 }
 
-export const ADD_CARD_MODE = 'add-card';
 export const DKIM_RSA_1024 = 0;
 export const DKIM_RSA_2048 = 1;
 

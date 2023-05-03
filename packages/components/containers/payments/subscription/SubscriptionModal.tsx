@@ -401,13 +401,7 @@ const SubscriptionModal = ({
 
             let params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment = parameters;
             if (amountAndCurrency.Amount !== 0) {
-                params = await createPaymentToken(
-                    {
-                        params: parameters,
-                        api,
-                    },
-                    amountAndCurrency
-                );
+                params = await createPaymentToken(parameters, { amountAndCurrency });
             }
 
             return await handleSubscribe({ ...params, ...amountAndCurrency });

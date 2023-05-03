@@ -161,13 +161,8 @@ export const process = (
  * @param amountAndCurrency
  */
 const fetchPaymentToken = async (
-    {
-        params,
-        api,
-    }: {
-        params: WrappedCardPayment | ExistingPayment;
-        api: Api;
-    },
+    params: WrappedCardPayment | ExistingPayment,
+    api: Api,
     amountAndCurrency?: AmountAndCurrency
 ): Promise<PaymentTokenResult> => {
     const data: CreateTokenData = { ...amountAndCurrency, ...params };
@@ -176,6 +171,11 @@ const fetchPaymentToken = async (
         ...createToken(data),
         notificationExpiration: 10000,
     });
+};
+
+type CreatePaymentTokenOptions = {
+    addCardMode?: boolean;
+    amountAndCurrency?: AmountAndCurrency;
 };
 
 /**
@@ -191,24 +191,16 @@ const fetchPaymentToken = async (
  * can't be used for payment purposes. But it still can be used to create a new payment method, e.g. save credit card.
  */
 export const createPaymentToken = async (
-    {
-        verify,
-        mode,
-        api,
-        params,
-    }: {
-        verify: VerifyPayment;
-        mode?: 'add-card';
-        api: Api;
-        params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment;
-    },
-    amountAndCurrency?: AmountAndCurrency
+    params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment,
+    verify: VerifyPayment,
+    api: Api,
+    { addCardMode, amountAndCurrency }: CreatePaymentTokenOptions = {}
 ): Promise<TokenPaymentMethod> => {
     if (isTokenPaymentMethod(params)) {
         return params;
     }
 
-    const { Token, Status, ApprovalURL, ReturnHost } = await fetchPaymentToken({ params, api }, amountAndCurrency);
+    const { Token, Status, ApprovalURL, ReturnHost } = await fetchPaymentToken(params, api, amountAndCurrency);
 
     if (Status === STATUS_CHARGEABLE) {
         // If the payment token is already chargeable then we're all set. Just prepare the format and return it.
@@ -227,11 +219,11 @@ export const createPaymentToken = async (
      * the payment token status (e.g. every 5 seconds). Once {@link process} resolves then the entire return promise
      * resolves to a {@link TokenPaymentMethod} – newly created payment token.
      */
-    return verify({ mode, Payment, Token, ApprovalURL, ReturnHost });
+    return verify({ addCardMode, Payment, Token, ApprovalURL, ReturnHost });
 };
 
 export type VerifyPayment = (params: {
-    mode?: 'add-card';
+    addCardMode?: boolean;
     Payment?: CardPayment;
     Token: string;
     ApprovalURL?: string;
@@ -239,25 +231,9 @@ export type VerifyPayment = (params: {
 }) => Promise<TokenPaymentMethod>;
 
 export const getCreatePaymentToken =
-    (verify: VerifyPayment) =>
+    (verify: VerifyPayment, api: Api) =>
     (
-        {
-            mode,
-            api,
-            params,
-        }: {
-            mode?: 'add-card';
-            api: Api;
-            params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment;
-        },
-        amountAndCurrency?: AmountAndCurrency
+        paymentParams: WrappedCardPayment | TokenPaymentMethod | ExistingPayment,
+        options: CreatePaymentTokenOptions
     ): Promise<TokenPaymentMethod> =>
-        createPaymentToken(
-            {
-                verify,
-                mode,
-                api,
-                params,
-            },
-            amountAndCurrency
-        );
+        createPaymentToken(paymentParams, verify, api, options);
