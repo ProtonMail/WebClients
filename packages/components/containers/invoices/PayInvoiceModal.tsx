@@ -54,13 +54,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         };
 
         if (params) {
-            let paymentToken = await createPaymentToken(
-                {
-                    params,
-                    api,
-                },
-                amountAndCurrency
-            );
+            let paymentToken = await createPaymentToken(params, { amountAndCurrency });
 
             payInvoiceData = { ...payInvoiceData, ...paymentToken };
         }

@@ -54,14 +54,7 @@ const CreditsModal = (props: ModalProps) => {
 
     const handleSubmit = async (params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment) => {
         const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
-        const tokenPaymentMethod = await createPaymentToken(
-            {
-                params,
-                api,
-            },
-            amountAndCurrency
-        );
-
+        const tokenPaymentMethod = await createPaymentToken(params, { amountAndCurrency });
         await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
         await call();
         props.onClose?.();
