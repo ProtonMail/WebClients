@@ -189,7 +189,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                 autoClose={false}
                 onClose={close}
                 originalPlacement="bottom-end"
-                size={{ height: DropdownSizeUnit.Dynamic }}
+                size={{ height: DropdownSizeUnit.Dynamic, maxHeight: DropdownSizeUnit.Viewport }}
             >
                 <DropdownMenu>
                     <div className="px1 py0-5">
