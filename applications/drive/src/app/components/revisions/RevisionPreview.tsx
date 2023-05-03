@@ -43,11 +43,10 @@ const RevisionPreview = ({ shareId, linkId, revision, onClose, onExit, open }: P
                         onExit();
                     }}
                     onDownload={downloadFile}
+                    // TODO: Uncomment it when modal conflict with preview is fixed
                     // onRestore={
                     //     revision.State !== FileRevisionState.Active
-                    //         ? () => {
-                    //               // TODO: Add revision restore logic
-                    //           }
+                    //         ? () => restoreRevision(new AbortController().signal, revision)
                     //         : undefined
                     // }
                     date={fromUnixTime(revision.CreateTime)}
