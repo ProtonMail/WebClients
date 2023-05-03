@@ -98,7 +98,7 @@ echo -e "${SUCCESS} ↳ Compressed release : \"$OUT_DIR/$BUILD_ID.zip\"${NOCOLOR
 echo -e "${INFO}🧬 Cloning monorepo on branch $BRANCH...${NOCOLOR}"
 cd $TARGET_DIR
 
-git clone -b $BRANCH --depth $CLONE_DEPTH --single-branch $ORIGIN $TARGET_DIR --quiet || exit 1
+git clone -b $BRANCH --depth $CLONE_DEPTH --single-branch $REPO_DIR $TARGET_DIR --quiet || exit 1
 echo -e "${SUCCESS} ↳ Cloned to \"${TARGET_DIR}\"${NOCOLOR}"
 
 # Checkout the to commit hash
@@ -146,6 +146,7 @@ if [ "$CHECKSUM_SOURCE" == "$CHECKSUM_TARGET" ]; then
     cd $TARGET_DIR
     rm -rf $(find . -type d -name node_modules) || true # remove all node_modules
     rm -rf /applications/pass-extension/dist || true    # remove dist
+    cp applications/pass-extension/FIREFOX.md README.md || true
     zip -r $OUT_DIR/$BUILD_ID-sources.zip . \
         -x "*.DS_Store" \
         -x .yarn/cache/* \
