@@ -7934,10 +7934,10 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "for ${ n } month": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minuty"
+        "za ${ n } miesiąc",
+        "za ${ n } miesiące",
+        "za ${ n } miesięcy",
+        "za ${ n } miesięcy"
       ],
       "Get the deal": [
         "Uzyskaj ofertę"
@@ -8885,6 +8885,9 @@
       ],
       "Phone numbers": [
         "Numery telefonów"
+      ],
+      "Preview": [
+        "Podgląd"
       ],
       "Previous conversation": [
         "Poprzedni wątek"
