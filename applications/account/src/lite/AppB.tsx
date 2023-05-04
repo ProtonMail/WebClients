@@ -136,7 +136,9 @@ const App = () => {
                                                             <FeaturesProvider>
                                                                 <ExperimentsProvider>
                                                                     <NotificationsChildren />
-                                                                    <ErrorBoundary component={<StandardErrorPage />}>
+                                                                    <ErrorBoundary
+                                                                        component={<StandardErrorPage big />}
+                                                                    >
                                                                         {isLogout ? null : (
                                                                             <Setup UID={UID} onLogin={handleLogin}>
                                                                                 <MainContainer
