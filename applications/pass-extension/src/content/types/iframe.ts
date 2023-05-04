@@ -30,12 +30,12 @@ export interface IFrameApp {
     destroy: () => void;
 }
 
-export interface IFrameService<OpenOptions = {}> {
+export interface IFrameAppService<OpenOptions = {}> {
     getState: () => IFrameState;
-    open: (options: OpenOptions) => IFrameService<OpenOptions>;
-    close: () => IFrameService<OpenOptions>;
-    init: (port: Runtime.Port) => IFrameService<OpenOptions>;
-    reset: (workerState: WorkerState) => IFrameService<OpenOptions>;
+    open: (options: OpenOptions) => IFrameAppService<OpenOptions>;
+    close: () => IFrameAppService<OpenOptions>;
+    init: (port: Runtime.Port) => IFrameAppService<OpenOptions>;
+    reset: (workerState: WorkerState) => IFrameAppService<OpenOptions>;
     destroy: () => void;
 }
 

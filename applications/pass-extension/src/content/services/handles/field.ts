@@ -92,11 +92,11 @@ export const createFieldHandles =
             attachListeners: withContext(({ service: { iframe }, getSettings }, onSubmit) => {
                 const onFocus = () => {
                     const settings = getSettings();
-                    iframe.apps.dropdown?.close(); /* dropdown might be open */
+                    iframe.dropdown?.close(); /* dropdown might be open */
 
                     return (
                         settings.autofill.openOnFocus &&
-                        iframe.apps.dropdown?.open({
+                        iframe.dropdown?.open({
                             action: DropdownAction.AUTOFILL,
                             focus: true,
                             field,
@@ -110,8 +110,8 @@ export const createFieldHandles =
                 }
 
                 listeners.addListener(field.element, 'input', () => {
-                    if (iframe.apps.dropdown?.getState().visible) {
-                        iframe.apps.dropdown?.close();
+                    if (iframe.dropdown?.getState().visible) {
+                        iframe.dropdown?.close();
                     }
 
                     field.setValue(element.value);

@@ -23,8 +23,9 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
 
     const clickHandler = withContext(({ service: { iframe } }) => {
         if (state.action !== null) {
-            const dropdown = iframe.apps.dropdown;
-            return dropdown?.getState().visible ? dropdown?.close() : dropdown?.open({ action: state.action, field });
+            return iframe.dropdown?.getState().visible
+                ? iframe.dropdown?.close()
+                : iframe.dropdown?.open({ action: state.action, field });
         }
     });
 

@@ -1,12 +1,7 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { fathom } from '@proton/pass/fathom';
-import {
-    type FormEntry,
-    FormEntryStatus,
-    type PromptedFormEntry,
-    type WithAutoSavePromptOptions,
-    WorkerMessageType,
-} from '@proton/pass/types';
+import type { FormEntry, PromptedFormEntry, WithAutoSavePromptOptions } from '@proton/pass/types';
+import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
@@ -26,29 +21,30 @@ export const createFormManager = () => {
     const ctx: FormManagerContext = { active: false, trackedForms: [] };
     const listeners = createListenerStore();
 
+    /* FIXME: if no autosave.prompt setting we should avoid
+     * setting any listeners at all for form submissions */
+    const onCommittedSubmission: (submission: WithAutoSavePromptOptions<FormEntry<FormEntryStatus.COMMITTED>>) => void =
+        withContext(({ getSettings, service: { iframe } }, submission) => {
+            const shouldPrompt = getSettings().autosave.prompt && submission.autosave.shouldPrompt;
+
+            if (shouldPrompt) {
+                iframe.attachNotification();
+                iframe.notification?.open({
+                    action: NotificationAction.AUTOSAVE_PROMPT,
+                    submission: submission as PromptedFormEntry,
+                });
+            }
+        });
+
     /* Reconciliation is responsible for syncing the service
      * worker state with our local detection in order to take
      * the appropriate action for auto-save */
     const reconciliate: () => Promise<void> = withContext(
-        async ({ getSettings, getExtensionContext, service: { autofill, iframe } }) => {
+        async ({ getExtensionContext, service: { autofill, iframe } }) => {
+            const needsDropdown = ctx.trackedForms.length > 0;
+            iframe[needsDropdown ? 'attachDropdown' : 'detachDropdown']();
+
             await autofill.queryItems();
-
-            /* FIXME: if no autosave.prompt setting we should avoid
-             * setting any listeners at all for form submissions */
-            const onCommittedSubmission = (
-                submission: WithAutoSavePromptOptions<FormEntry<FormEntryStatus.COMMITTED>>
-            ) => {
-                const settings = getSettings();
-
-                return (
-                    settings.autosave.prompt &&
-                    submission.autosave.shouldPrompt &&
-                    iframe.apps.notification?.open({
-                        action: NotificationAction.AUTOSAVE_PROMPT,
-                        submission: submission as PromptedFormEntry,
-                    })
-                );
-            };
 
             const submission = await sendMessage.map(
                 contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
@@ -60,10 +56,12 @@ export const createFormManager = () => {
                 const currentRealm = getExtensionContext().realm;
 
                 if (status === FormEntryStatus.STAGING && !partial) {
-                    const shouldCommit =
-                        currentRealm === realm && !ctx.trackedForms.some(({ formType }) => formType === type);
+                    const realmMatch = currentRealm === realm;
+                    const formRemoved = !ctx.trackedForms.some(({ formType }) => formType === type);
+                    const shouldCommit = realmMatch && formRemoved;
+
                     if (shouldCommit) {
-                        await sendMessage.onSuccess(
+                        return sendMessage.onSuccess(
                             contentScriptMessage({
                                 type: WorkerMessageType.FORM_ENTRY_COMMIT,
                                 payload: { reason: 'INFERRED_FORM_REMOVAL' },
@@ -73,8 +71,10 @@ export const createFormManager = () => {
                     }
                 }
 
-                if (isSubmissionCommitted(submission)) onCommittedSubmission(submission);
+                if (isSubmissionCommitted(submission)) return onCommittedSubmission(submission);
             }
+
+            iframe.detachNotification();
         }
     );
 
@@ -86,12 +86,13 @@ export const createFormManager = () => {
     /* Garbage collection is used to free resources
      * and clear listeners on any removed tracked form
      * before running any new detection on the current document */
-    const garbagecollect = () =>
+    const garbagecollect = () => {
         ctx.trackedForms.forEach((form) => {
             if (form.shouldRemove() || !isVisible(form.element)) {
                 detachTrackedForm(form);
             }
         });
+    };
 
     const trackForms = (forms: FormHandle[]): void => {
         forms.forEach((detectedForm) => {
@@ -106,15 +107,15 @@ export const createFormManager = () => {
         void reconciliate();
     };
 
-    const detect = withContext<(reason: string) => void>(({ service: { detector }, mainFrame }, reason) => {
+    const detect: (reason: string) => void = withContext(({ service: { detector }, mainFrame }, reason) => {
         const frame = mainFrame ? 'main_frame' : 'iframe';
         logger.info(`[FormTracker::Detector]: Running detection for "${reason}" on ${frame}`);
         garbagecollect();
         trackForms(detector.runDetection(document));
     });
 
-    const onMutation = debounce(
-        withContext<() => void>(({ service: { detector } }) => {
+    const onMutation: () => void = debounce(
+        withContext(({ service: { detector } }) => {
             const results = detector.reconciliate(ctx.trackedForms);
             results.removeForms.forEach(detachTrackedForm);
             return results.runDetection && detect('MutationObserver');
