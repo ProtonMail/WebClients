@@ -1,31 +1,32 @@
-import { Maybe, WorkerStatus } from '@proton/pass/types';
+import { WorkerStatus } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
-import { EXTENSION_PREFIX, ICON_CLASSNAME } from '../constants';
-import CSContext from '../context';
-import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from '../injections/icon';
-import { createCircleLoader, createLockIcon } from '../injections/icon/svg';
-import { DropdownAction, FieldHandles, FieldIconHandles } from '../types';
+import { EXTENSION_PREFIX, ICON_CLASSNAME } from '../../constants';
+import { withContext } from '../../context/context';
+import { applyInjectionStyles, cleanupInjectionStyles, createIcon } from '../../injections/icon';
+import { createCircleLoader, createLockIcon } from '../../injections/icon/svg';
+import { DropdownAction, type FieldHandle, type FieldIconHandle, type IconHandleState } from '../../types';
 
-type CreateIconOptions = { field: FieldHandles };
-type IconHandlesContext = { timer: Maybe<NodeJS.Timeout>; loading: boolean };
+type CreateIconOptions = { field: FieldHandle };
 
-const handleIconClick = (field: FieldHandles) => (action: DropdownAction) => {
-    const dropdown = CSContext.get().iframes.dropdown;
-    return dropdown.getState().visible ? dropdown.close() : dropdown.open({ action, field });
-};
-
-export const createFieldIconHandles = ({ field }: CreateIconOptions): FieldIconHandles => {
-    const context = CSContext.get();
+export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHandle => {
+    const state: IconHandleState = { timer: undefined, loading: false, action: null };
     const listeners = createListenerStore();
+
     const input = field.element as HTMLInputElement;
     const inputBox = field.boxElement;
+
     const { icon, wrapper } = createIcon(field);
     const loader = createCircleLoader();
     const lock = createLockIcon();
 
-    const ctx: IconHandlesContext = { timer: undefined, loading: false };
+    const clickHandler = withContext(({ service: { iframe } }) => {
+        if (state.action !== null) {
+            const dropdown = iframe.apps.dropdown;
+            return dropdown?.getState().visible ? dropdown?.close() : dropdown?.open({ action: state.action, field });
+        }
+    });
 
     const setStatus = (status: WorkerStatus) => {
         icon.classList.remove(`${ICON_CLASSNAME}--loading`);
@@ -45,15 +46,25 @@ export const createFieldIconHandles = ({ field }: CreateIconOptions): FieldIconH
         }
     };
 
+    const setAction = (action: DropdownAction) => {
+        state.action = action;
+
+        listeners.addListener(icon, 'click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            return !state.loading && clickHandler();
+        });
+    };
+
     const setCount = (count: number) => {
         const safeCount = count === 0 || !count ? '' : String(count);
         icon.style.setProperty(`--${EXTENSION_PREFIX}-items-count`, `"${safeCount}"`);
     };
 
     const setLoading = (loading: boolean) => {
-        clearTimeout(ctx.timer);
+        clearTimeout(state.timer);
 
-        ctx.timer = setTimeout(
+        state.timer = setTimeout(
             () =>
                 safeCall(() => {
                     icon.classList[loading ? 'add' : 'remove'](`${ICON_CLASSNAME}--loading`);
@@ -62,35 +73,28 @@ export const createFieldIconHandles = ({ field }: CreateIconOptions): FieldIconH
             50
         );
 
-        ctx.loading = loading;
+        state.loading = loading;
     };
-
-    const clickHandler = handleIconClick(field);
 
     const handleResize = () => {
         cleanupInjectionStyles({ input, wrapper });
         applyInjectionStyles({ input, wrapper, inputBox, icon });
     };
 
+    const detach = () => {
+        listeners.removeAll();
+        cleanupInjectionStyles({ input, wrapper });
+        icon.parentElement?.remove();
+    };
+
     listeners.addListener(window, 'resize', handleResize);
-    setStatus(context.state.status);
 
     return {
         element: icon,
         setStatus,
         setLoading,
         setCount,
-        setOnClickAction: (action) => {
-            listeners.addListener(icon, 'click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                return !ctx.loading && clickHandler(action);
-            });
-        },
-        detach: () => {
-            listeners.removeAll();
-            cleanupInjectionStyles({ input, wrapper });
-            icon.parentElement?.remove();
-        },
+        setAction,
+        detach,
     };
 };

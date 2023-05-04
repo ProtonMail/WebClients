@@ -10,9 +10,9 @@ import { merge } from '@proton/pass/utils/object';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useAccountFork } from '../../../../shared/hooks';
-import { DropdownAction, IFrameMessage, IFrameMessageType } from '../../../types';
-import { useIFrameContext, useRegisterMessageHandler } from '../../iframe/IFrameContextProvider';
+import { useAccountFork } from '../../../../../shared/hooks';
+import { DropdownAction, IFrameMessage, IFrameMessageType } from '../../../../types';
+import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 import { AliasAutoSuggest } from './AliasAutoSuggest';
 import { ItemsList } from './ItemsList';
@@ -64,7 +64,7 @@ export const DropdownContent: VFC = () => {
         <div ref={dropdownRef} className="min-h-custom bg-norm" style={{ '--min-height-custom': pixelEncoder(60) }}>
             {(() => {
                 if (workerState === undefined) {
-                    return <CircleLoader />;
+                    return <CircleLoader className="absolute absolute-center mauto" />;
                 }
 
                 const { loggedIn, status } = workerState;

@@ -36,7 +36,7 @@ export interface IFrameService<OpenOptions = {}> {
     close: () => IFrameService<OpenOptions>;
     init: (port: Runtime.Port) => IFrameService<OpenOptions>;
     reset: (workerState: WorkerState) => IFrameService<OpenOptions>;
-    destroy: () => IFrameService<OpenOptions>;
+    destroy: () => void;
 }
 
 export enum IFrameMessageType {

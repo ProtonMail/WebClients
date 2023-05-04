@@ -42,8 +42,8 @@ module.exports = {
     entry: {
         background: './src/worker/index.ts',
         content: './src/content/index.ts',
-        dropdown: nonAccessibleWebResource('./src/content/injections/dropdown/index.tsx'),
-        notification: nonAccessibleWebResource('./src/content/injections/notification/index.tsx'),
+        dropdown: nonAccessibleWebResource('./src/content/injections/apps/dropdown/index.tsx'),
+        notification: nonAccessibleWebResource('./src/content/injections/apps/notification/index.tsx'),
         onboarding: './src/pages/onboarding/index.tsx',
         popup: nonAccessibleWebResource('./src/popup/index.tsx'),
         settings: './src/pages/settings/index.tsx',

@@ -16,7 +16,7 @@ import identity from '@proton/utils/identity';
 
 import { INITIAL_ONBOARDING_STATE } from '../../shared/constants';
 import WorkerMessageBroker from '../channel';
-import { withContext } from '../context/helpers';
+import { withContext } from '../context';
 import store from '../store';
 
 type OnboardingContext = { state: OnboardingState };

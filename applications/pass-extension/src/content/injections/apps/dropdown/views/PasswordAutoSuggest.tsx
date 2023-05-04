@@ -2,9 +2,9 @@ import type { VFC } from 'react';
 
 import { c } from 'ttag';
 
-import { generatePassword, getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
-import { IFrameMessageType } from '../../../types';
-import { useIFrameContext } from '../../iframe/IFrameContextProvider';
+import { generatePassword, getCharsGroupedByColor } from '../../../../../shared/hooks/usePasswordGenerator';
+import { IFrameMessageType } from '../../../../types';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 
 export const PasswordAutoSuggest: VFC = () => {
