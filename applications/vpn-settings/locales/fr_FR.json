@@ -2688,7 +2688,7 @@
         "Bloquer uniquement les logiciels malveillants"
       ],
       "Block malware, ads and trackers": [
-        "Bloquez les programmes malveillants, publicités et traqueurs"
+        "Bloquez les logiciels malveillants, publicités et traqueurs"
       ],
       "Browser": [
         "Navigateur"
@@ -3225,6 +3225,10 @@
         "${ n } dossier et label",
         "${ n } dossiers et labels"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } alias « Hide My Email »",
+        "${ n } alias « Hide My Email »"
+      ],
       "${ n } label": [
         "${ n } label",
         "${ n } labels"
@@ -3232,6 +3236,10 @@
       "${ n } message per day": [
         "${ n } message par jour",
         "${ n } messages par jour"
+      ],
+      "${ n } vault": [
+        "${ n } coffre-fort",
+        "${ n } coffres-forts"
       ],
       "${ n } VPN connection": [
         "${ n } connexion VPN",
@@ -3283,8 +3291,17 @@
       "Contact groups management": [
         "Gestion des groupes de contacts"
       ],
+      "Custom domains for email aliases": [
+        "Domaines personnalisés pour les alias d'adresses e-mail"
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
+      ],
+      "Data breach monitoring": [
+        "Surveillance des fuites de données"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Surveillance des fuites de données (prochainement)"
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
@@ -3322,6 +3339,9 @@
       ],
       "HTML signatures": [
         "Signatures HTML"
+      ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
       ],
       "Kill switch/always-on VPN": [
         "Arrêt d'urgence (kill switch)/VPN permanent"
@@ -3371,6 +3391,9 @@
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
       ],
+      "Strong E2E encryption": [
+        "Chiffrement de bout en bout renforcé"
+      ],
       "Team management": [
         "Gestion de l'équipe"
       ],
@@ -3379,6 +3402,9 @@
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
+      ],
+      "Unlimited devices": [
+        "Nombre illimité d'appareils"
       ],
       "Unlimited filters": [
         "Filtres illimités"
@@ -3389,11 +3415,20 @@
       "Unlimited folders, labels, and filters": [
         "Dossiers, labels et filtres illimités"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Nombre illimité d'alias « Hide My Email »"
+      ],
       "Unlimited labels": [
         "Labels illimités"
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
+      ],
+      "Unlimited passwords and notes": [
+        "Nombre illimité de mots de passe et de notes"
+      ],
+      "Unlimited vaults": [
+        "Nombre illimité de coffres-forts"
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
@@ -3412,6 +3447,12 @@
       ],
       "User session management": [
         "Gestion des sessions des utilisateurs"
+      ],
+      "Vault and Item sharing": [
+        "Partage de coffres-forts et d'éléments"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Partage de coffres-forts et d'éléments (prochainement)"
       ],
       "Worldwide streaming services": [
         "Accès aux services de streaming dans le monde entier"
@@ -3449,6 +3490,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
+      ],
+      "For next-level password management and identity protection.": [
+        "Pour un niveau supérieur de gestion des mots de passe et de protection de l'identité."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si vous supprimez votre compte, vous perdrez tous les avantages de l'abonnement ${ visionary }, qui ne sera plus disponible si vous créez un nouveau compte."
@@ -3651,6 +3695,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments. Le partage des coffres-forts avec vos amis et votre famille est en cours de développement."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gérez votre abonnement, notamment sa personnalisation. Les moyens de paiement acceptés sont les cartes de crédit, PayPal, les cryptomonnaies et les virements bancaires."
       ],
@@ -3734,6 +3781,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Des adresses e-mail uniques, à la demande, qui protègent votre identité en ligne et vous permettent de mieux contrôler les messages qui arrivent dans votre boîte de réception. SimpleLogin par ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilisez vos adresses e-mail personnalisées à partir de votre propre nom de domaine (vous@votrenom.com)."
@@ -4145,8 +4195,8 @@
         "Facturé ${ amount } pour 30 mois"
       ],
       "for ${ n } month": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
+        "pour ${ n } mois",
+        "pour ${ n } mois"
       ],
       "Get the deal": [
         "J'en profite"
@@ -4768,6 +4818,9 @@
       ],
       "Plans": [
         "Abonnements"
+      ],
+      "Preview": [
+        "Aperçu"
       ],
       "Previous": [
         "Précédent"

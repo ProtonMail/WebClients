@@ -312,7 +312,7 @@
         "编辑草稿"
       ],
       "Edit email address": [
-        "编辑电子邮件地址"
+        "更改邮箱地址"
       ],
       "Edit encryption": [
         "编辑加密"
@@ -5351,7 +5351,7 @@
         "你想用以下指纹信任主公钥吗？"
       ],
       "You have enabled Address Verification with Trusted Keys for these email addresses,\nbut no active encryption keys have been trusted.\nYou must trust keys valid for sending in order to send a message to these email addresses.": [
-        "您已经为这个电子邮件地址启用了可信密钥的地址验证。\n但没有信任任何有效的加密密钥。\n你必须信任一个有效的发送密钥，才能向这个电子邮件地址发送信息。"
+        "您已为所选邮箱地址开启可信密钥验证，\n但尚未信任其任何可用于发送邮件的有效密钥。\n请先信任其密钥后再向该邮箱地址发送邮件。"
       ]
     },
     "Key validation warning": {
@@ -6699,7 +6699,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+        "在邮件发送密钥的用户 ID（${ keyUserIds }）中找不到本邮箱地址"
       ]
     },
     "Placeholder": {
@@ -6773,7 +6773,7 @@
         "起始日期"
       ],
       "Start typing an email address": [
-        "开始输入电子邮件地址"
+        "请输入邮箱地址"
       ],
       "Subject": [
         "主题"
@@ -6843,6 +6843,14 @@
       ],
       "Work": [
         "工作"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "官方"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 官方邮件"
       ]
     },
     "Received email icon": {
