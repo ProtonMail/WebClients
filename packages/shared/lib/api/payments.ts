@@ -7,7 +7,7 @@ import { getProductHeaders } from '../apps/product';
 import { Autopay, Currency, Cycle } from '../interfaces';
 
 export const getSubscription = () => ({
-    url: 'payments/subscription',
+    url: 'payments/v4/subscription',
     method: 'get',
 });
 
@@ -19,7 +19,7 @@ export interface FeedbackDowngradeData {
 }
 
 export const deleteSubscription = (data: FeedbackDowngradeData) => ({
-    url: 'payments/subscription',
+    url: 'payments/v4/subscription',
     method: 'delete',
     data,
 });
@@ -33,13 +33,13 @@ export type CheckSubscriptionParams = {
 };
 
 export const checkSubscription = (data: CheckSubscriptionParams) => ({
-    url: 'payments/subscription/check',
+    url: 'payments/v4/subscription/check',
     method: 'post',
     data,
 });
 
 export const subscribe = (data: any, product: any) => ({
-    url: 'payments/subscription',
+    url: 'payments/v4/subscription',
     method: 'post',
     data,
     headers: getProductHeaders(product, {
@@ -63,36 +63,36 @@ export interface QueryInvoicesPayload {
  * Query list of invoices for the current user. The response is {@link InvoiceResponse}
  */
 export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesPayload) => ({
-    url: 'payments/invoices',
+    url: 'payments/v4/invoices',
     method: 'get',
     params: { Page, PageSize, Owner, State, Type },
 });
 
 export const queryPlans = (params: any) => ({
-    url: 'payments/plans',
+    url: 'payments/v4/plans',
     method: 'get',
     params,
 });
 
 export const getInvoice = (invoiceID: string) => ({
-    url: `payments/invoices/${invoiceID}`,
+    url: `payments/v4/invoices/${invoiceID}`,
     method: 'get',
     output: 'arrayBuffer',
 });
 
 export const checkInvoice = (invoiceID: string, GiftCode?: string) => ({
-    url: `payments/invoices/${invoiceID}/check`,
+    url: `payments/v4/invoices/${invoiceID}/check`,
     method: 'put',
     data: { GiftCode },
 });
 
 export const queryPaymentMethods = () => ({
-    url: 'payments/methods',
+    url: 'payments/v4/methods',
     method: 'get',
 });
 
 export const setPaymentMethod = (data: any) => ({
-    url: 'payments/methods',
+    url: 'payments/v4/methods',
     method: 'post',
     data,
 });
@@ -102,30 +102,24 @@ export interface UpdatePaymentMethodsParams {
 }
 
 export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsParams) => ({
-    url: `payments/methods/${methodId}`,
+    url: `payments/v4/methods/${methodId}`,
     method: 'put',
     data,
 });
 
 export const deletePaymentMethod = (methodID: string) => ({
-    url: `payments/methods/${methodID}`,
+    url: `payments/v4/methods/${methodID}`,
     method: 'delete',
 });
 
 export const createBitcoinPayment = (Amount: number, Currency: Currency) => ({
-    url: 'payments/bitcoin',
+    url: 'payments/bitcoin', // blocked by PAY-963
     method: 'post',
     data: { Amount, Currency },
 });
 
 export const createBitcoinDonation = (Amount: number, Currency: Currency) => ({
-    url: 'payments/bitcoin/donate',
-    method: 'post',
-    data: { Amount, Currency },
-});
-
-export const createPayPalPayment = (Amount: number, Currency: Currency) => ({
-    url: 'payments/paypal',
+    url: 'payments/bitcoin/donate', // blocked by PAY-963
     method: 'post',
     data: { Amount, Currency },
 });
@@ -136,26 +130,20 @@ export const createPayPalPayment = (Amount: number, Currency: Currency) => ({
  * must be set to 0 and payment token must not be supplied.
  */
 export const payInvoice = (invoiceID: string, data: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency) => ({
-    url: `payments/invoices/${invoiceID}`,
+    url: `payments/v4/invoices/${invoiceID}`,
     method: 'post',
     data,
 });
 
 export const queryPaymentMethodStatus = () => ({
-    url: 'payments/status',
+    url: 'payments/v4/status',
     method: 'get',
 });
 
 export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
-    url: 'payments/methods/order',
+    url: 'payments/v4/methods/order',
     method: 'put',
     data: { PaymentMethodIDs },
-});
-
-export const donate = (data: any) => ({
-    url: 'payments/donate',
-    method: 'post',
-    data,
 });
 
 export interface GiftCodeData {
@@ -164,13 +152,13 @@ export interface GiftCodeData {
 }
 
 export const buyCredit = (data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData) => ({
-    url: 'payments/credit',
+    url: 'payments/v4/credit',
     method: 'post',
     data,
 });
 
 export const validateCredit = (data: any) => ({
-    url: 'payments/credit/check',
+    url: 'payments/v4/credit/check',
     method: 'post',
     data,
 });
@@ -183,23 +171,17 @@ export interface CreateTokenData {
 }
 
 export const createToken = (data: CreateTokenData) => ({
-    url: 'payments/tokens',
+    url: 'payments/v4/tokens',
     method: 'post',
     data,
 });
 
 export const getTokenStatus = (paymentToken: string) => ({
-    url: `payments/tokens/${paymentToken}`,
+    url: `payments/v4/tokens/${paymentToken}`,
     method: 'get',
 });
 
-export const verifyPayment = ({ Amount, Credit, Currency, Payment, GiftCode }: any) => ({
-    url: 'payments/verify',
-    method: 'post',
-    data: { Amount, Credit, Currency, Payment, GiftCode },
-});
-
 export const getLastCancelledSubscription = () => ({
-    url: 'payments/subscription/latest',
+    url: 'payments/v4/subscription/latest',
     method: 'get',
 });
