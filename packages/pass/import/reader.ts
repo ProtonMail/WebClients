@@ -12,7 +12,11 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
     switch (payload.provider) {
         case ImportProvider.BITWARDEN:
             return readBitwardenData(await payload.file.text());
+        case ImportProvider.BRAVE:
+            return readChromeData(await payload.file.text());
         case ImportProvider.CHROME:
+            return readChromeData(await payload.file.text());
+        case ImportProvider.EDGE:
             return readChromeData(await payload.file.text());
         case ImportProvider.KEEPASS:
             return readKeePassData(await payload.file.text());
