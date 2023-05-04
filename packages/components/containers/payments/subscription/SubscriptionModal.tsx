@@ -593,11 +593,11 @@ const SubscriptionModal = ({
                 {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                     <div className="subscriptionCheckout-top-container">
                         <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
-                            <div className="mlauto mrauto max-w37e subscriptionCheckout-options ">
+                            <div className="mx-auto max-w37e subscriptionCheckout-options ">
                                 {!disableCycleSelector && (
                                     <>
-                                        <h2 className="text-2xl text-bold mb1">{c('Label').t`Subscription options`}</h2>
-                                        <div className="mb2">
+                                        <h2 className="text-2xl text-bold mb-4">{c('Label').t`Subscription options`}</h2>
+                                        <div className="mb-8">
                                             <SubscriptionCycleSelector
                                                 mode="buttons"
                                                 plansMap={plansMap}
@@ -628,10 +628,10 @@ const SubscriptionModal = ({
                                     />
                                 </div>
                                 <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-                                    <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment details`}</h2>
-                                    <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
+                                    <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
+                                    <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                                     {checkResult?.Credit && creditsRemaining ? (
-                                        <div className="mb1">{c('Info')
+                                        <div className="mb-4">{c('Info')
                                             .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
                                     ) : null}
                                 </div>

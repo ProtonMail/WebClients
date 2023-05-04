@@ -17,7 +17,7 @@ const SenderImagesSection = () => {
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
-                <SenderImagesToggle className="mr1" id="senderImagesToggle" />
+                <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
             </SettingsLayoutRight>
         </SettingsLayout>
     );

@@ -86,11 +86,11 @@ const ImportCsvModalContent = ({ model, setModel, onClose }: Props) => {
         <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Description of the purpose of the import CSV modal')
                         .t`We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.`}
                 </Alert>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Description of the purpose of the import CSV modal')
                         .t`Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.`}
                 </Alert>

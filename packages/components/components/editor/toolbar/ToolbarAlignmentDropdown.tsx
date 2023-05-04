@@ -27,7 +27,7 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
                 data-testid="editor-alignment-left"
             >
                 <Icon name="text-align-left" />
-                <span className="ml-2 myauto flex-item-fluid">{c('Info').t`Align left`}</span>
+                <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Align left`}</span>
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
@@ -35,7 +35,7 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
                 data-testid="editor-alignment-center"
             >
                 <Icon name="text-align-center" />
-                <span className="ml-2 myauto flex-item-fluid">{c('Info').t`Center`}</span>
+                <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Center`}</span>
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
@@ -43,7 +43,7 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
                 data-testid="editor-alignment-right"
             >
                 <Icon name="text-align-right" />
-                <span className="ml-2 myauto flex-item-fluid">{c('Info').t`Align right`}</span>
+                <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Align right`}</span>
             </DropdownMenuButton>
         </DropdownMenu>
     </ToolbarDropdown>

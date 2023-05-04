@@ -68,7 +68,7 @@ const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubm
                         value={displayName}
                         onValue={setDisplayName}
                     />
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                         {c('Action').t`Next`}
                     </Button>
                 </form>

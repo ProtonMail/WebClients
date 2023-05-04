@@ -52,14 +52,14 @@ const SubUserDeleteModal = ({ member, onDelete, ...rest }: Props) => {
         >
             <ModalTwoHeader title={c('Title').t`Delete user`} />
             <ModalTwoContent>
-                <div className="mb1">
+                <div className="mb-4">
                     {c('Info')
                         .t`This will permanently delete the data and all email addresses associated with this user.`}
                 </div>
-                <Card rounded className="text-pre-wrap break user-select mb1">
+                <Card rounded className="text-pre-wrap break user-select mb-4">
                     {member.Name}
                 </Card>
-                <Alert className="mb1" type="error">{c('Info')
+                <Alert className="mb-4" type="error">{c('Info')
                     .t`To confirm, please enter the name of the user you wish to delete.`}</Alert>
                 <InputFieldTwo
                     autoComplete="false"

@@ -50,7 +50,7 @@ function StepForm() {
             <ModalTwoContent>
                 <ProviderWrapper isConnectingToProvider={isConnectingToProvider}>
                     <StepFormError isReconnect={isReconnectStep} errorCode={apiErrorCode} />
-                    <div className="mb2">
+                    <div className="mb-8">
                         {c('Info').t`Enter the credentials of the email account you want to import from.`}
                         <br />
                         {c('Info').t`Your login information will not be saved after the import is completed.`}

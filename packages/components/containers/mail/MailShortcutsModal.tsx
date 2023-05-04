@@ -7,22 +7,16 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
-import {
-    Alert,
-    Field,
-    Label,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Row,
-    ShortcutsSectionView,
-} from '../../components';
+
+
+import { Alert, Field, Label, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Row, ShortcutsSectionView } from '../../components';
 import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
+
+
 import './MailShortcutsModal.scss';
+
 
 const MailShortCutsModal = (props: ModalProps) => {
     const title = c('Title').t`${MAIL_APP_NAME} Keyboard Shortcuts`;
@@ -41,7 +35,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                     {c('Info')
                         .t`Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.`}
                 </Alert>
-                <div className="list-2columns on-mobile-list-1column">
+                <div className="list-2columns on-mobile-list-1column gap-8">
                     {alwaysOnSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}
@@ -54,14 +48,14 @@ const MailShortCutsModal = (props: ModalProps) => {
                         <ShortcutsToggle id="toggle-shortcuts" />
                     </Field>
                 </Row>
-                <div className={clsx('list-2columns on-mobile-list-1column', !Shortcuts && 'opacity-50')}>
+                <div className={clsx('list-2columns on-mobile-list-1column gap-8', !Shortcuts && 'opacity-50')}>
                     {shortcutEnabledSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="mlauto" onClick={onClose}>{c('Action').t`Close`}</Button>
+                <Button className="ml-auto" onClick={onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

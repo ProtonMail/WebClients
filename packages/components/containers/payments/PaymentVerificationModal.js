@@ -122,7 +122,7 @@ const PaymentVerificationModal = ({
                         <p className="text-center">
                             <PaymentVerificationImage payment={payment} type={type} />
                         </p>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {isAddCard
                                 ? c('Info')
                                       .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
@@ -139,7 +139,7 @@ const PaymentVerificationModal = ({
                                 : c('Info').t`You may be redirected to your bank’s website.`}
                         </p>
                         <Loader />
-                        <div className="mb1">{c('Info')
+                        <div className="mb-4">{c('Info')
                             .t`Don’t see anything? Remember to turn off pop-up blockers.`}</div>
                     </>
                 ),
@@ -154,7 +154,7 @@ const PaymentVerificationModal = ({
                         <p className="text-center">
                             <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                         </p>
-                        <div className="mb1">{c('Info').t`Verification may take a few minutes.`}</div>
+                        <div className="mb-4">{c('Info').t`Verification may take a few minutes.`}</div>
                     </>
                 ),
                 [STEPS.DO_NOT_WINDOW_OPEN]: () => (

@@ -23,8 +23,8 @@ const DayButtons = ({ days, now, date, formattedDates, onClickDate }: Props) => 
                         aria-pressed={isSameDay(day, date) ? true : undefined}
                         onClick={() => onClickDate(day)}
                     >
-                        <span className="calendar-monthgrid-day-number flex mauto">
-                            <span className="mauto">{day.getUTCDate()}</span>
+                        <span className="calendar-monthgrid-day-number flex m-auto">
+                            <span className="m-auto">{day.getUTCDate()}</span>
                         </span>
                     </button>
                 );

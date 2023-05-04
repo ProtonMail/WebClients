@@ -61,7 +61,7 @@ const RenameDeviceModal = ({ device, onClose, ...modalProps }: Props & ModalStat
         >
             <ModalTwoHeader closeButtonProps={{ disabled: submitting }} title={c('Title').t`Rename device`} />
             <ModalTwoContent>
-                <Row className="mt1 mb1">
+                <Row className="my-4">
                     <InputFieldTwo
                         aria-required
                         autoFocus

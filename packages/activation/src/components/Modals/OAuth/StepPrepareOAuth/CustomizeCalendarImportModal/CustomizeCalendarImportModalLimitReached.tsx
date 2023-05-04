@@ -10,7 +10,7 @@ interface Props {
 const CustomizeCalendarImportModalLimitReached = ({ canMerge, calendarsToFixCount }: Props) => {
     return (
         <div
-            className="rounded-lg p1 mb1 bg-danger color-white text-semibold border-none"
+            className="rounded-lg p1 mb-4 bg-danger color-white text-semibold border-none"
             data-testid="CustomizeCalendarImportModalLimitReached:container"
         >
             {c('Error').t`You have reached the maximum number of calendars. Some calendars couldn't be imported.`}

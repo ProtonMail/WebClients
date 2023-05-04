@@ -329,7 +329,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
                                           title: c('Label').t`Phrase`,
                                           content: (
                                               <>
-                                                  <div className="mb1">{c('Info')
+                                                  <div className="mb-4">{c('Info')
                                                       .t`This is a 12-word phrase that you were prompted to set.`}</div>
                                                   <MnemonicInputField
                                                       disableChange={isSubmitting}
@@ -350,7 +350,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
                                     title: c('Label').t`Password`,
                                     content: (
                                         <>
-                                            <div className="mb1">{c('Info')
+                                            <div className="mb-4">{c('Info')
                                                 .t`This is the password you used before the password reset.`}</div>
                                             <InputFieldTwo
                                                 id="password"
@@ -373,7 +373,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
                                     title: c('Label').t`File`,
                                     content: (
                                         <>
-                                            <div className="mb1">{fileDescription}</div>
+                                            <div className="mb-4">{fileDescription}</div>
                                             <RecoveryFileTabContent
                                                 recoverySecrets={recoverySecrets}
                                                 uploadedKeys={uploadedFileKeys}

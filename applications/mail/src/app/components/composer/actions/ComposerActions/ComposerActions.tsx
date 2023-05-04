@@ -89,7 +89,7 @@ const ComposerActions = ({
             className={clsx(['composer-actions flex-item-noshrink flex max-w100', className])}
             onClick={addressesBlurRef.current}
         >
-            <div className="flex flex-row-reverse flex-align-self-center w100 ml-2 mr1-5 pl1-25 pr0-25 mb1">
+            <div className="flex flex-row-reverse flex-align-self-center w100 ml-2 mr-6 pl1-25 pr0-25 mb-4">
                 <ComposerScheduleSendSpotlight
                     anchorRef={scheduleSendSpotlight.anchorRef}
                     onDisplayed={scheduleSendSpotlight.spotlight.onDisplayed}
@@ -155,7 +155,7 @@ const ComposerActions = ({
                         />
                     </div>
                     <div className="flex-item-fluid flex pr1">
-                        <span className="mr-2 mauto no-mobile color-weak">{dateMessage}</span>
+                        <span className="mr-2 m-auto no-mobile color-weak">{dateMessage}</span>
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton
                                 isAttachments={isAttachments}

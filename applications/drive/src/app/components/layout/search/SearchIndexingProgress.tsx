@@ -42,7 +42,7 @@ export const SearchIndexingProgress = () => {
               );
 
     return (
-        <div className="mt1-5 flex flex-column">
+        <div className="mt-6 flex flex-column">
             <span className="color-weak relative advanced-search-progress-status" aria-live="polite" aria-atomic="true">
                 {progressStatus}
             </span>

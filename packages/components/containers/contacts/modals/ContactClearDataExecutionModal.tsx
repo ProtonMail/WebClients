@@ -78,7 +78,7 @@ const ContactClearDataExecutionModal = ({ errorKey, ...rest }: Props) => {
         <ModalTwo {...rest}>
             <ModalTwoHeader title={c('Title').t`Clearing data`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="info">{c('Info')
+                <Alert className="mb-4" type="info">{c('Info')
                     .t`Please wait while we look for contacts that contain data encrypted with the inactive key.`}</Alert>
                 <DynamicProgress
                     id="clear-data-execution-progress"

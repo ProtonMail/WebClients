@@ -188,7 +188,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                     <FloatingButton
                         onClick={() => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })}
                     >
-                        <Icon size={24} name="pen" className="mauto" />
+                        <Icon size={24} name="pen" className="m-auto" />
                     </FloatingButton>
                 }
             />

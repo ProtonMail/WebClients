@@ -6,7 +6,7 @@ interface Props {
 
 const CustomizeMailImportModalHeader = ({ isLabelMapping }: Props) => {
     return (
-        <div className="mb1" data-testid={`CustomizeModal:${isLabelMapping ? 'labelHeader' : 'folderHeader'}`}>
+        <div className="mb-4" data-testid={`CustomizeModal:${isLabelMapping ? 'labelHeader' : 'folderHeader'}`}>
             {EasyTrans.get(isLabelMapping).infoHeader()}
         </div>
     );

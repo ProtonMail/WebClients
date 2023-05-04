@@ -215,7 +215,7 @@ const EditRecurringConfirmModal = ({
             onClose={onClose}
             isOpen={isOpen}
         >
-            <div className="mb1">{alertText}</div>
+            <div className="mb-4">{alertText}</div>
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}
@@ -225,12 +225,12 @@ const EditRecurringConfirmModal = ({
                 />
             ) : null}
             {recurringWarningText ? (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {recurringWarningText}
                 </Alert>
             ) : null}
             {rruleWarningText ? (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {rruleWarningText}
                 </Alert>
             ) : null}

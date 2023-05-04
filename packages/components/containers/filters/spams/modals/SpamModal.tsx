@@ -95,7 +95,7 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
                                 id="email-mode"
                                 checked={mode === 'email'}
                                 onChange={() => setMode('email')}
-                                className="mr1"
+                                className="mr-4"
                                 name="filterMode"
                             >
                                 {c('Label').t`Email`}

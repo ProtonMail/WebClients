@@ -36,7 +36,7 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
                         onClick={() => onChange(value)}
                         {...rest}
                     >
-                        <span className="mauto">{text}</span>
+                        <span className="m-auto">{text}</span>
                     </ToolbarButton>
                 );
             })}

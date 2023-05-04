@@ -83,7 +83,7 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
             ]}
             {...rest}
         >
-            <Alert className="mb1" type="error">
+            <Alert className="mb-4" type="error">
                 {text}
             </Alert>
         </Prompt>

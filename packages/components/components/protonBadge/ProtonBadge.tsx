@@ -19,7 +19,7 @@ const ProtonBadge = ({ text, tooltipText, selected = false }: Props) => {
                 )}
                 data-testid="proton-badge"
             >
-                <span className="label-proton-badge-text color-primary mauto">{text}</span>
+                <span className="label-proton-badge-text color-primary m-auto">{text}</span>
             </span>
         </Tooltip>
     );

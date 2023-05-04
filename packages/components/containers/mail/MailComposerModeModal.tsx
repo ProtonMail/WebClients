@@ -32,8 +32,8 @@ const MailComposerModeModal = (props: ModalProps) => {
         <ModalTwo {...props}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                    <span className="mb1" id="composerMode_desc">
+                <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                    <span className="mb-4" id="composerMode_desc">
                         {c('Label').t`Select how your composer opens by default.`}
                     </span>
                     <ComposerModeCards
@@ -47,7 +47,7 @@ const MailComposerModeModal = (props: ModalProps) => {
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="mlauto" color="norm" onClick={handleSubmit}>{c('Action').t`OK`}</Button>
+                <Button className="ml-auto" color="norm" onClick={handleSubmit}>{c('Action').t`OK`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

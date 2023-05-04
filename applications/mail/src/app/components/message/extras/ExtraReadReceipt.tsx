@@ -32,7 +32,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
     if (receiptSent) {
         return (
             <span className="mr-2 mb-3 color-success flex on-mobile-w100 flex-align-items-center on-mobile-flex-justify-center flex-items-align-center">
-                <Icon name="checkmark" className="flex-item-noshrink myauto" />
+                <Icon name="checkmark" className="flex-item-noshrink my-auto" />
                 <span className="ml-2">{c('Action').t`Read receipt sent`}</span>
             </span>
         );

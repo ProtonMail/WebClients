@@ -21,7 +21,7 @@ const RestoreAdministratorPrivileges = () => {
     if (organizationKeyInfo.userNeedsToReactivateKey) {
         return (
             <Block>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     <div>
                         {c('Restore administrator panel')
                             .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
@@ -33,7 +33,7 @@ const RestoreAdministratorPrivileges = () => {
                         <li>{c('Restore administrator panel').t`Changing organization keys`}</li>
                     </ul>
                 </Alert>
-                <ButtonLike as={SettingsLink} path="/organization-keys" color="norm" className="mr1">
+                <ButtonLike as={SettingsLink} path="/organization-keys" color="norm" className="mr-4">
                     {c('Action').t`Restore administrator privileges`}
                 </ButtonLike>
                 <LearnMore className="inline-block" url={getKnowledgeBaseUrl('/proton-for-business')} />
@@ -44,7 +44,7 @@ const RestoreAdministratorPrivileges = () => {
     if (organizationKeyInfo.userNeedsToActivateKey) {
         return (
             <Block>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {getActivationText()}
                 </Alert>
                 <ButtonLike as={SettingsLink} path="/organization-keys" color="norm">

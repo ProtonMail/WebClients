@@ -15,7 +15,7 @@ const AddressesSection = ({ onClose }: Props) => {
 
     if (!organization?.HasKeys) {
         return (
-            <div className="mb1">
+            <div className="mb-4">
                 <ButtonLike
                     as={SettingsLink}
                     onClick={() => onClose?.()}
@@ -29,16 +29,16 @@ const AddressesSection = ({ onClose }: Props) => {
     if (organization?.MaxMembers > 1) {
         return (
             <>
-                <Alert className="mb1">{c('Info for domain modal')
+                <Alert className="mb-4">{c('Info for domain modal')
                     .t`Add a new user to your organization and create an address for it.`}</Alert>
-                <div className="mb1">
+                <div className="mb-4">
                     <ButtonLike as={SettingsLink} color="norm" onClick={() => onClose?.()} path="/users-addresses">{c(
                         'Action'
                     ).t`Add user`}</ButtonLike>
                 </div>
-                <Alert className="mb1">{c('Info for domain modal')
+                <Alert className="mb-4">{c('Info for domain modal')
                     .t`Add a new address for any user of your organization.`}</Alert>
-                <div className="mb1">
+                <div className="mb-4">
                     <ButtonLike as={SettingsLink} color="norm" onClick={() => onClose?.()} path="/users-addresses">{c(
                         'Action'
                     ).t`Add address`}</ButtonLike>
@@ -48,7 +48,7 @@ const AddressesSection = ({ onClose }: Props) => {
     }
 
     return (
-        <div className="mb1">
+        <div className="mb-4">
             <ButtonLike as={SettingsLink} onClick={() => onClose?.()} path="/users-addresses">{c('Action')
                 .t`Add address`}</ButtonLike>
         </div>

@@ -32,7 +32,7 @@ export const Basic = () => {
                 ))}
             </Stepper>
 
-            <div className="mt3 flex flex-justify-end">
+            <div className="mt-11 flex flex-justify-end">
                 <Button
                     className="mr-2"
                     color="norm"
@@ -63,8 +63,8 @@ export const Centered = () => {
 
     return (
         <>
-            <div className="mb2">
-                <strong className="block mb1">Position</strong>
+            <div className="mb-8">
+                <strong className="block mb-4">Position</strong>
                 <RadioGroup
                     name="selected-variant"
                     onChange={setPosition}
@@ -79,7 +79,7 @@ export const Centered = () => {
                 ))}
             </Stepper>
 
-            <div className="mt3 flex flex-justify-end">
+            <div className="mt-11 flex flex-justify-end">
                 <Button
                     className="mr-2"
                     color="norm"

@@ -32,12 +32,12 @@ const InviteActions = () => {
             <div
                 className={classnames([
                     'flex flex-justify-space-between flex-align-items-center',
-                    showHowItWorksSection && 'mb2',
+                    showHowItWorksSection && 'mb-8',
                 ])}
             >
                 <ReferralSignatureToggle />
                 {!showHowItWorksSection && (
-                    <div className="mlauto pl1">
+                    <div className="ml-auto pl1">
                         <InlineLinkButton
                             onClick={() => {
                                 setShowHowItWorksSection(true);

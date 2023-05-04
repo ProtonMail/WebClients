@@ -102,7 +102,7 @@ const CreditsModal = (props: ModalProps) => {
             <ModalTwoHeader title={c('Title').t`Add credits`} />
             <ModalTwoContent>
                 <PaymentInfo method={method} />
-                <div className="mb1">
+                <div className="mb-4">
                     <div>
                         {c('Info')
                             .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}

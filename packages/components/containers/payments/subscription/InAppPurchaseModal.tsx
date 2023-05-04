@@ -65,10 +65,10 @@ const InAppPurchaseModal = ({ subscription, adminPanelInfo, ...rest }: Props) =>
             <ModalTwoHeader title={title}></ModalTwoHeader>
             <ModalTwoContent>
                 <p data-testid="InAppPurchaseModal/text">{firstLine}</p>
-                {secondLine && <p className="mt1">{secondLine}</p>}
+                {secondLine && <p className="mt-4">{secondLine}</p>}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="center" color="norm" onClick={rest.onClose} data-testid="InAppPurchaseModal/onClose">
+                <Button className="mx-auto" color="norm" onClick={rest.onClose} data-testid="InAppPurchaseModal/onClose">
                     {c('Subscription change warning').t`Got it`}
                 </Button>
             </ModalTwoFooter>

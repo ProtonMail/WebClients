@@ -106,7 +106,7 @@ const ItemColumnLayout = ({
                                 className={clsx('item-unread-dot flex-item-noshrink', isCompactView && 'mr-1')}
                                 isSelected={isSelected}
                             />
-                            <ItemAction element={element} className="mr-1 myauto flex-item-noshrink" />
+                            <ItemAction element={element} className="mr-1 my-auto flex-item-noshrink" />
                             <span
                                 className="inline-flex max-w100 text-ellipsis"
                                 data-testid="message-column:sender-address"

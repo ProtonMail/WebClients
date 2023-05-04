@@ -28,7 +28,7 @@ const EncryptionStatusIcon = ({
     isDetailsModal = false,
 }: Props) => {
     if (loading) {
-        return <Loader className="icon-16p mauto flex" />;
+        return <Loader className="icon-16p m-auto flex" />;
     }
     if (fill === undefined && isEncrypted === undefined) {
         return null;
@@ -62,7 +62,7 @@ const EncryptionStatusIcon = ({
         <Tooltip title={tooltip}>
             <span className={clsx(['inline-flex flex-item-noshrink align-middle', className])}>
                 {href ? (
-                    <Href href={href} className="flex flex-item-noshrink mauto" tabIndex={disabled ? -1 : undefined}>
+                    <Href href={href} className="flex flex-item-noshrink m-auto" tabIndex={disabled ? -1 : undefined}>
                         {icon}
                     </Href>
                 ) : (

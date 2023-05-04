@@ -247,7 +247,7 @@ const PlanSelection = ({
                   title: c('Tab subscription modal').t`For families`,
                   content: (
                       <div
-                          className="plan-selection plan-selection--family mt1"
+                          className="plan-selection plan-selection--family mt-4"
                           style={{ '--plan-selection-number': FamilyPlans.length }}
                       >
                           {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}

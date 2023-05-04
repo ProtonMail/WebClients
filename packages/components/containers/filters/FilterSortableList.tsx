@@ -1,10 +1,15 @@
 import { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
 import FilterItemRow from './FilterItemRow';
 import { Filter } from './interfaces';
+
 
 interface Props {
     items: Filter[];
@@ -14,7 +19,7 @@ interface Props {
 }
 
 const FilterSortableList = ({ items, onApplyFilter, ...rest }: Props) => (
-    <OrderableTable className="border-none border-collapse mt1 simple-table--has-actions" {...rest}>
+    <OrderableTable className="border-none border-collapse mt-4 simple-table--has-actions" {...rest}>
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
             <tr>

@@ -168,12 +168,12 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <div className="m1">
+                <div className="m-4">
                     <span className="text-bold" tabIndex={-2}>
                         {c('CustomFilter').t`Filter on`}
                     </span>
                 </div>
-                <ul className="unstyled mt1 mb1">
+                <ul className="unstyled my-4">
                     {FILTER_TYPES.map((filterType: FilterType) => (
                         <li
                             key={filterType.value}
@@ -196,7 +196,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                         </li>
                     ))}
                 </ul>
-                <div className="m1">
+                <div className="m-4">
                     <PrimaryButton
                         className="w100"
                         disabled={buttonDisabled}

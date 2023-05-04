@@ -24,7 +24,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
 
     return (
         <>
-            <div className="mb1">
+            <div className="mb-4">
                 <Input
                     id={`${uid}-street`}
                     value={address.streetAddress || ''}
@@ -34,7 +34,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 />
             </div>
             {address.extendedAddress ? (
-                <div className="mb1">
+                <div className="mb-4">
                     <Input
                         id={`${uid}-extended`}
                         value={address.extendedAddress || ''}
@@ -44,7 +44,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     />
                 </div>
             ) : null}
-            <div className="mb1">
+            <div className="mb-4">
                 <Input
                     id={`${uid}-postalCode`}
                     value={address.postalCode || ''}
@@ -53,7 +53,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     data-testid="postalCode"
                 />
             </div>
-            <div className="mb1">
+            <div className="mb-4">
                 <Input
                     id={`${uid}-locality`}
                     value={address.locality || ''}
@@ -63,7 +63,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 />
             </div>
             {address.postOfficeBox ? (
-                <div className="mb1">
+                <div className="mb-4">
                     <Input
                         id={`${uid}-postBox`}
                         value={address.postOfficeBox || ''}
@@ -73,7 +73,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     />
                 </div>
             ) : null}
-            <div className="mb1">
+            <div className="mb-4">
                 <label className="text-sm color-weak" htmlFor={`${uid}-region`} />
                 <Input
                     id={`${uid}-region`}

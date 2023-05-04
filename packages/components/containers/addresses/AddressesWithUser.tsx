@@ -110,7 +110,7 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
     );
 
     if (!loadingAddresses && !addresses.length) {
-        return <Alert className="mb1">{c('Info').t`No addresses exist`}</Alert>;
+        return <Alert className="mb-4">{c('Info').t`No addresses exist`}</Alert>;
     }
 
     return (

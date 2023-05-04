@@ -50,7 +50,7 @@ const PlanCustomization = ({
                     currentPlan={currentPlan}
                     organization={organization}
                     onChangePlanIDs={onChangePlanIDs}
-                    className="pb2 mb2"
+                    className="pb2 mb-8"
                 />
             )}
         </>

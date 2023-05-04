@@ -306,7 +306,7 @@ const AddressKeysSection = () => {
                     {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
                 </SettingsParagraph>
                 {!!allKeysToReactivate.length && (
-                    <div className="mb1">
+                    <div className="mb-4">
                         <Button disabled={isLoadingKey} color="norm" onClick={() => setReactivateKeyModalOpen(true)}>
                             {c('Action').t`Reactivate keys`}
                         </Button>

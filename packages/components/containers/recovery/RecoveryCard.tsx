@@ -196,7 +196,7 @@ const RecoveryCard = ({ ids }: Props) => {
                 </Href>
             </p>
 
-            <h3 className="text-bold text-rg mb1">{c('Title').t`Your recovery status`}</h3>
+            <h3 className="text-bold text-rg mb-4">{c('Title').t`Your recovery status`}</h3>
 
             <ul className="unstyled m-0">
                 <li>

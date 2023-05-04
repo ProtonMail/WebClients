@@ -62,7 +62,7 @@ const ContactGroupRow = ({
             data-shortcut-target="contact-container"
             data-testid={`group-item:${group.Name}`}
         >
-            <div className="flex flex-nowrap w100 h100 myauto flex-align-items-center pl0-5">
+            <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-center pl0-5">
                 <Checkbox
                     id={ID}
                     name={Name}
@@ -70,7 +70,7 @@ const ContactGroupRow = ({
                     onChange={onCheck}
                     onClick={(e) => e.stopPropagation()}
                 />
-                <div className="flex flex-column flex-item-fluid flex-justify-space-between mt1-5">
+                <div className="flex flex-column flex-item-fluid flex-justify-space-between mt-6">
                     <span className="w100 flex pl1 pr1">
                         <span
                             role="heading"

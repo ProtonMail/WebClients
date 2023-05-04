@@ -12,7 +12,7 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
         <DialogModal intermediate onClose {...rest}>
             <ModalCloseButton onClose={onClose} />
             <InnerModal className="modal-content pb2 pt2 text-center">
-                <div className="mlauto mrauto">
+                <div className="mx-auto">
                     <img
                         src={onboardingImportAssistant}
                         alt={c('Get started checklist instructions').t`Import your contacts or messages`}
@@ -21,7 +21,7 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                 <h1 className="mb-2 text-2xl text-bold">
                     {c('Get started checklist instructions').t`Import your contacts or messages`}
                 </h1>
-                <p className="mb2">
+                <p className="mb-8">
                     {c('Get started checklist instructions')
                         .t`Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.`}
                 </p>

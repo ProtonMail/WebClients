@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+
+
 import { Alert, SettingsLink } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
@@ -7,7 +9,10 @@ import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
+
+
 import { InvitationModel } from '../../../../helpers/calendar/invite';
+
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -28,7 +33,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         hasNoCalendars,
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
-    const alertClassName = 'mb1 mt1 text-break';
+    const alertClassName = 'my-4 text-break';
 
     if (isImport && hasMultipleVevents) {
         return null;

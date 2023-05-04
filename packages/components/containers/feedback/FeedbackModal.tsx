@@ -90,9 +90,9 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMo
         >
             <ModalHeader title={c('Feedback Modal Title').t`Your feedback`} />
             <ModalContent>
-                {description && <p className="mb2">{description}</p>}
-                <div className="mb2">
-                    <label className="mb1 block text-semibold" id="score-label">
+                {description && <p className="mb-8">{description}</p>}
+                <div className="mb-8">
+                    <label className="mb-4 block text-semibold" id="score-label">
                         {scaleTitle}
                     </label>
                     <div>
@@ -107,7 +107,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMo
 
                 {model.Score !== undefined && (
                     <div>
-                        <label className="mb1 block text-semibold" htmlFor="feedback-label">{c('new_plans: label')
+                        <label className="mb-4 block text-semibold" htmlFor="feedback-label">{c('new_plans: label')
                             .t`Tell us about your experience. (Optional)`}</label>
                         <TextArea
                             id="feedback-label"

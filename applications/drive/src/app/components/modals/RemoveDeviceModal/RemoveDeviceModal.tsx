@@ -75,7 +75,7 @@ const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
                     the device won’t be affected.`}
                 </p>
                 <p>Enter the device name to confirm removal.</p>
-                <Row className="mt1 mb1">
+                <Row className="my-4">
                     <InputFieldTwo
                         aria-required
                         autoFocus

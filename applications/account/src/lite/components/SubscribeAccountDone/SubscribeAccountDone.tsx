@@ -8,7 +8,7 @@ const SubscribeAccountDone = ({ type }: { type: SubscribeType }) => {
     return (
         <div className="text-center">
             {type === SubscribeType.Subscribed && (
-                <div className="mb1">
+                <div className="mb-4">
                     <h3 className="text-bold text-xl">{successText}</h3>
                     <img src={updateSuccess} alt={successText} />
                 </div>

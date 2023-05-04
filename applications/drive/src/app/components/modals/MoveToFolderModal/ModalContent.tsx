@@ -50,7 +50,7 @@ export const ModalContent = ({
         <>
             <ModalTwoHeader title={title} closeButtonProps={{ disabled: isLoading }} />
             <ModalTwoContent>
-                <Alert className="mb1">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
+                <Alert className="mb-4">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
                 <FolderTree
                     treeItems={rootItems}
                     isLoaded={true}
@@ -82,7 +82,7 @@ export const ModalContent = ({
                         <Button type="reset" disabled={isLoading} autoFocus>
                             {c('Action').t`Close`}
                         </Button>
-                        <PrimaryButton className="ml1" loading={isLoading} type="submit" disabled={isMoveDisabled}>
+                        <PrimaryButton className="ml-4" loading={isLoading} type="submit" disabled={isMoveDisabled}>
                             {c('Action').t`Move`}
                         </PrimaryButton>
                     </div>

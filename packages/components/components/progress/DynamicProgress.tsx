@@ -54,10 +54,10 @@ const DynamicProgress = ({
           };
 
     return (
-        <div className={classnames(['text-center', !display && 'mb1'])}>
+        <div className={classnames(['text-center', !display && 'mb-4'])}>
             {icon}
             <Progress
-                className={classnames(['mt1', progressClassname])}
+                className={classnames(['mt-4', progressClassname])}
                 aria-describedby={id}
                 value={value}
                 max={max}

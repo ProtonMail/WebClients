@@ -18,7 +18,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
     return (
         <div className="absolute-center text-center w100 pl1 pr1">
             <img
-                className="mb1 w80p"
+                className="mb-4 w80p"
                 src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
                 alt={c('Info').t`Unsupported file`}
                 data-testid="file-preview:unsupported-preview-image"

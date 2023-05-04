@@ -252,7 +252,7 @@ const ContactsWidgetContainer = ({
             <div className="flex-item-fluid w100">
                 {loading ? (
                     <div className="flex h100">
-                        <CircleLoader className="mauto color-primary" size="large" />
+                        <CircleLoader className="m-auto color-primary" size="large" />
                     </div>
                 ) : null}
                 {showPlaceholder ? (

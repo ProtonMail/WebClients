@@ -11,7 +11,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
 const Row = ({ children, className = '', collapseOnMobile = true, ...rest }: Props) => {
     return (
         <div
-            className={classnames(['flex flex-nowrap mb1', collapseOnMobile && 'on-mobile-flex-column', className])}
+            className={classnames(['flex flex-nowrap mb-4', collapseOnMobile && 'on-mobile-flex-column', className])}
             {...rest}
         >
             {children}

@@ -24,7 +24,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
             <div
                 ref={ref}
                 className={clsx([
-                    'relative flex flex-item-fluid offer-plan-container on-mobile-mt1',
+                    'relative flex flex-item-fluid offer-plan-container mt-4 md:mt-0',
                     popular && 'offer-plan-container--mostPopular',
                 ])}
             >
@@ -40,7 +40,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                 ) : null}
                 <div
                     className={clsx([
-                        'offer-plan w100 border rounded p1 mb1 flex flex-column flex-align-items-center flex-justify-end',
+                        'offer-plan w100 border rounded p1 mb-4 flex flex-column flex-align-items-center flex-justify-end',
                         popular && 'border-primary is-focused',
                     ])}
                 >

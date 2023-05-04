@@ -59,7 +59,7 @@ const StepPrepare = () => {
 
                     <StepPrepareHeader fromEmail={email} toEmail={importAddress?.Email || ''} />
 
-                    <div className="pb1 mb1 border-bottom">
+                    <div className="pb1 mb-4 border-bottom">
                         <StepPrepareContent
                             isLabelMapping={isLabelMapping}
                             selectedPeriod={importPeriod}

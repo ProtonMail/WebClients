@@ -72,7 +72,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         return (
             <div className="border bg-norm rounded ratio-container-square mb-0">
                 <span className="inner-ratio-container flex">
-                    <span className="mauto color-weak h1">{getInitials(name)}</span>
+                    <span className="m-auto color-weak h1">{getInitials(name)}</span>
                 </span>
             </div>
         );
@@ -113,7 +113,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
             <div className="ratio-container-square mb-0">
                 <span className="inner-ratio-container flex rounded border overflow-hidden">
                     <div
-                        className="mauto flex w-custom"
+                        className="m-auto flex w-custom"
                         style={{ '--width-custom': `${Math.min(image.width || 0, image.height || 0)}px` }}
                     >
                         <div className="ratio-container-square" style={style}>
@@ -128,7 +128,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     return (
         <button type="button" className="border rounded bg-norm ratio-container-square mb-0" onClick={handleClick}>
             <span className="inner-ratio-container flex">
-                <span className="mauto lh-rg flex flex-column flex-align-items-center">
+                <span className="m-auto lh-rg flex flex-column flex-align-items-center">
                     <Icon name="file-shapes" />
                     <div className="m-2 color-primary">{c('Action').t`Load image`}</div>
                 </span>

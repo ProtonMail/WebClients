@@ -43,7 +43,7 @@ const DevicesToolbar = ({ items }: Props) => {
     return (
         <Toolbar>
             {renderSelectionActions()}
-            <span className="mlauto flex flex-nowrap">
+            <span className="ml-auto flex flex-nowrap">
                 <LayoutButton />
             </span>
         </Toolbar>

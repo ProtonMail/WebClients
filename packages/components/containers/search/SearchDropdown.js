@@ -49,7 +49,7 @@ const SearchDropdown = ({
                 onClose={close}
             >
                 <form className="p1" name="search-dropdown" onSubmit={handleSubmit}>
-                    <div className="mb1">
+                    <div className="mb-4">
                         <SearchInput
                             autoFocus
                             delay={0}
@@ -61,7 +61,7 @@ const SearchDropdown = ({
                     <div className="flex flex-nowrap">
                         <Button type="reset" disabled={!search} className="w50" onClick={handleReset}>{c('Action')
                             .t`Clear`}</Button>
-                        <PrimaryButton className="w50 ml1" type="submit">{c('Action').t`Search`}</PrimaryButton>
+                        <PrimaryButton className="w50 ml-4" type="submit">{c('Action').t`Search`}</PrimaryButton>
                     </div>
                 </form>
             </Dropdown>

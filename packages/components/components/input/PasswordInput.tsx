@@ -26,7 +26,7 @@ const PasswordInput = ({ disabled = false, ...rest }: Props) => {
                     type="button"
                     onClick={toggle}
                 >
-                    <Icon className="mauto" name={type === 'password' ? 'eye' : 'eye-slash'} />
+                    <Icon className="m-auto" name={type === 'password' ? 'eye' : 'eye-slash'} />
                 </button>
             }
             {...rest}

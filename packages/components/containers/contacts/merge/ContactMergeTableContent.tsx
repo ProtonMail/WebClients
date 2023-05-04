@@ -94,11 +94,11 @@ const ContactMergeTableContent = ({
         <>
             <ModalTwoHeader title={c('Title').t`Merge contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1">
+                <Alert className="mb-4">
                     {c('Description')
                         .t`Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.`}
                 </Alert>
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Description')
                         .t`You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked`}
                 </Alert>

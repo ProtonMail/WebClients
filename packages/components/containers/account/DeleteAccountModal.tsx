@@ -185,7 +185,7 @@ const DeleteAccountModal = (props: Props) => {
             >
                 {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} />}
                 <ModalTwoContent>
-                    <Alert className="mb1" type="warning" learnMore={getKnowledgeBaseUrl('/combine-accounts')}>
+                    <Alert className="mb-4" type="warning" learnMore={getKnowledgeBaseUrl('/combine-accounts')}>
                         <div className="text-bold text-uppercase">
                             {c('Info')
                                 .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}
@@ -235,7 +235,7 @@ const DeleteAccountModal = (props: Props) => {
                     />
 
                     <InputFieldTwo
-                        rootClassName="mt1"
+                        rootClassName="mt-4"
                         id="check"
                         as={Checkbox}
                         error={validator([!model.check ? requiredValidator(undefined) : ''])}

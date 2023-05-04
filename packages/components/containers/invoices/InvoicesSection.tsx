@@ -97,7 +97,7 @@ const InvoicesSection = () => {
                 <SettingsParagraph>{c('Info')
                     .t`You can customize and download your invoices for accounting purposes.`}</SettingsParagraph>
                 {hasUnpaid ? (
-                    <Alert className="mb1" type="error">
+                    <Alert className="mb-4" type="error">
                         {c('Error')
                             .t`Your account or organization has an overdue invoice. Please pay all unpaid invoices.`}
                     </Alert>
@@ -105,7 +105,7 @@ const InvoicesSection = () => {
                 <Block className="flex flex-justify-space-between">
                     <div className="flex flex-align-items-center">
                         {user.isPaid ? (
-                            <ButtonGroup className="mr1">
+                            <ButtonGroup className="mr-4">
                                 <Button className={owner === USER ? 'is-selected' : ''} onClick={handleOwner(USER)}>
                                     {c('Action').t`User`}
                                 </Button>

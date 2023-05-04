@@ -97,29 +97,29 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
     return (
         <>
             {!hasApiKeys && (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>
+                <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>
                     {c('Info')
                         .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-${BRAND_NAME} user that uses a PGP compatible service.`}
                 </Alert>
             )}
             {!!model.publicKeys.pinnedKeys.length && askForPinning && (
-                <Alert className="mb1" type="error">{c('Info')
+                <Alert className="mb-4" type="error">{c('Info')
                     .t`Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.`}</Alert>
             )}
             {hasCompromisedPinnedKeys && (
-                <Alert className="mb1" type="warning">{c('Info')
+                <Alert className="mb-4" type="warning">{c('Info')
                     .t`One or more of your trusted keys were marked "compromised" by their owner. We recommend that you "untrust" these keys.`}</Alert>
             )}
             {model.pgpAddressDisabled && (
-                <Alert className="mb1" type="warning">{c('Info')
+                <Alert className="mb-4" type="warning">{c('Info')
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
             {hasApiKeys && !hasPinnedKeys && (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
+                <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
                     .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
             )}
             {model.isPGPExternal && (noPinnedKeyCanSend || noApiKeyCanSend) && model.encrypt && (
-                <Alert className="mb1" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
+                <Alert className="mb-4" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
                     .t`None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable "Encrypt emails".`}</Alert>
             )}
             {model.isPGPExternal && (

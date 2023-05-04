@@ -117,11 +117,11 @@ const ExportSummaryModalContent = ({ model }: Props) => {
         const message = getAlertMessage();
 
         if (isSuccess) {
-            return <div className="mb1">{message}</div>;
+            return <div className="mb-4">{message}</div>;
         }
 
         return (
-            <Alert className="mb1" type={isPartialSuccess ? 'warning' : 'error'}>
+            <Alert className="mb-4" type={isPartialSuccess ? 'warning' : 'error'}>
                 {message}
             </Alert>
         );

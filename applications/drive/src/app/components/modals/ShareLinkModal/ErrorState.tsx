@@ -14,7 +14,7 @@ function ErrorState({ error, isCreationError, onClose }: Props) {
         <>
             <ModalTwoHeader title={c('Title').t`Manage secure link`} />
             <ModalTwoContent>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {isCreationError
                         ? c('Info').t`Failed to generate a secure link. Try again later.`
                         : c('Info').t`Failed to open a secure link. The reason is: ${error}`}
