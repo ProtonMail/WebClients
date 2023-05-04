@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { DKIM_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -16,9 +17,12 @@ const DKIMSection = ({ domain }) => {
 
     return (
         <>
-            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
+            <Alert className="mb-4">
                 {c('Info')
                     .t`${MAIL_APP_NAME} supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.`}
+                <div>
+                    <Href href={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>{c('Link').t`Learn more`}</Href>
+                </div>
             </Alert>
             {State === DKIM_STATE.DKIM_STATE_ERROR && (
                 <Alert className="mb-4" type="error">
