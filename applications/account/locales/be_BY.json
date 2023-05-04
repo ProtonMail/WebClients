@@ -4664,6 +4664,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Атрымайце доступ да сваіх пароляў і абараніце свае пасведчанні ў інтэрнэце на ўсіх прыладах, якімі валодаеце. Спампуйце і ўсталюйце адпаведныя праграмы ${ PASS_APP_NAME } і пашырэнні."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
@@ -5416,6 +5419,9 @@
       ],
       "New": [
         "Новы"
+      ],
+      "No account keys exist": [
+        "Адсутнічаюць ключы ўліковага запісу"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Не зададзены метад аднаўлення вашага ўліковага запісу, таму вы можаце страціць доступ да яго"
@@ -6706,7 +6712,7 @@
         "Экспартаваць прыватны ключ"
       ],
       "Export public key": [
-        "Экспарт публічнага ключа"
+        "Экспартаванне публічнага ключа"
       ],
       "Make primary": [
         "Зрабіць асноўным"
@@ -7400,7 +7406,7 @@
         "Адправіць аўтаматычны адказ"
       ],
       "Send crash reports": [
-        "Адпраўляць справаздачы па збоях"
+        "Адпраўляць справаздачы пра збоі"
       ],
       "Send in": [
         "Адправіць у"
@@ -7668,7 +7674,7 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "Камфортны"
+        "Камфортная"
       ],
       "Compact": [
         "Кампактны"
@@ -8282,6 +8288,12 @@
         "${ n } папак і метак",
         "${ n } папкі і меткі"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } паштовая скрыня для пераадрасацыі",
+        "${ n } паштовыя скрыні для пераадрасацыі",
+        "${ n } паштовых скрынь для пераадрасацыі",
+        "${ n } паштовыя скрыні для пераадрасацыі"
+      ],
       "${ n } Hide My Email alias": [
         "${ n } псеўданім Hide My Email",
         "${ n } псеўданімы Hide My Email",
@@ -8299,6 +8311,12 @@
         "${ n } паведамленні ў дзень",
         "${ n } паведамленняў у дзень",
         "${ n } паведамленні ў дзень"
+      ],
+      "${ n } vault": [
+        "${ n } сховішча",
+        "${ n } сховішчы",
+        "${ n } сховішчаў",
+        "${ n } сховішчы"
       ],
       "${ n } VPN connection": [
         "${ n } падключэнне па VPN",
@@ -8360,8 +8378,17 @@
       "Custom domain for email aliases": [
         "Карыстальніцкі дамен для псеўданімаў электроннай пошты"
       ],
+      "Custom domains for email aliases": [
+        "Карыстальніцкія дамены для псеўданімаў электроннай пошты"
+      ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Data breach monitoring": [
+        "Адсочванне ўзлому даных"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Адсочванне ўзлому даных (неўзабаве з'явіцца)"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -8406,7 +8433,7 @@
         "Подпісы HTML"
       ],
       "Integrated 2FA authenticator": [
-        "Інтэграваная 2ФА аўтэнтыфікацыя"
+        "Інтэграваная аўтэнтыфікацыя 2ФА"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Пастаянны VPN"
@@ -8416,6 +8443,9 @@
       ],
       "Multiple admin roles": [
         "Некалькі роляў адміністратара"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Некалькі паштовых скрынь для пераадрасацыі"
       ],
       "NetShield malware and ad-blocker": [
         "Блакіроўшчык рэкламы і шкодных праграм NetShield"
@@ -8498,6 +8528,9 @@
       "Unlimited passwords and notes": [
         "Неабмежаваная колькасць пароляў і нататак"
       ],
+      "Unlimited vaults": [
+        "Неабмежаваныя сховішчы"
+      ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
       ],
@@ -8522,6 +8555,12 @@
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
       ],
+      "Vault and Item sharing": [
+        "Сховішча і абагульванне элементаў"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Сховішча і абагульванне элементаў (неўзабаве з'явіцца)"
+      ],
       "Worldwide streaming services": [
         "Сэрвісы з трансляцыямі з усяго свету"
       ]
@@ -8540,6 +8579,26 @@
       ],
       "Team management": [
         "Кіраванне камандамі"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8569,6 +8628,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
+      ],
+      "For next-level password management and identity protection.": [
+        "Для больш высокага ўзроўню кіравання паролямі і абароны пасведчаннямі."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Калі вы выдаліце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым яго нельга будзе выбраць падчас стварэння новага ўліковага запісу."
@@ -8614,26 +8676,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8781,6 +8823,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Сховішча, як і папкі, з'яўляюцца зручным спосабам арганізаваць вашы элементы. Абагульванне сховішчаў з сябрамі і сям'ёй знаходзіцца ў стадыі распрацоўкі."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Кіруйце падпіскай і наладжвайце свой тарыфны план. Вы можаце разлічыцца з намі банкаўскай карткай, PayPal, крыптавалютай і банкаўскім пераводам."
       ],
@@ -8815,7 +8860,7 @@
         "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашага высакахуткаснага сэрвісу VPN для трансляцый улюбёнага змесціва"
+        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый улюбёнага змесціва"
       ],
       "Quickly set up out-of-office messages": [
         "Хутка наладжвайце паведамленні пры адсутнасці ў офісе"
@@ -8833,7 +8878,7 @@
         "Накіроўвайце свой трафік праз сетку Tor адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагуленне файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
@@ -8864,6 +8909,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Унікальныя, дынамічныя адрасы электроннай пошты, якія абараняюць ваша пасведчанне ў інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -10957,6 +11005,9 @@
       ],
       "Plan summary": [
         "Зводка па тарыфным плане"
+      ],
+      "Preview": [
+        "Папярэдні прагляд"
       ],
       "Previous": [
         "Папярэдні"

@@ -24,7 +24,7 @@
         "Adicionar conta ${ BRAND_NAME }"
       ],
       "Add address": [
-        "Adicionar endereço"
+        "Adicionar morada"
       ],
       "Add calendar": [
         "Adicionar um calendário"
@@ -82,6 +82,9 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
+      ],
+      "Attention required": [
+        "Requer atenção"
       ],
       "Authenticate": [
         "Autenticar"
@@ -270,7 +273,7 @@
         "Editar o nome a mostrar"
       ],
       "Edit email address": [
-        "Editar o endereço de correio electrónico"
+        "Editar o endereço de email"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -388,6 +391,9 @@
       ],
       "Loading verification": [
         "A carregar verificação"
+      ],
+      "Manage folders": [
+        "Gerir pastas"
       ],
       "Manage labels": [
         "Gerir etiquetas"
@@ -682,6 +688,9 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Tente gravar novamente. O processo de gravar falhou devido a: ${ saveError }"
       ],
       "Underline": [
         "Sublinhado"
@@ -2157,6 +2166,10 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro é maior, por favor divida-o em ficheiros mais pequenos.",
+        "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro é maior, por favor divida-o em ficheiros mais pequenos."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, divida-o."
       ]
@@ -2325,6 +2338,14 @@
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desconsidere pelo menos ${ calendarsToFixCount } calendários"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desconsidere pelo menos ${ calendarsToFixCount } calendários ou"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -2438,6 +2459,10 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Por favor corrija o conflito selecionado para proceder.",
+        "Por favor corrija os conflitos selecionados para proceder."
       ],
       "Please set a recovery email first": [
         "Defina primeiro um correio electrónico de recuperação."
@@ -2928,6 +2953,11 @@
         "(1 a 2 correios electrónicos por mês)"
       ]
     },
+    "Gmail forwarding": {
+      "Sign in with Google": [
+        "Iniciar sessão com o Google"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Já tem uma conta? ${ signIn }"
@@ -3142,6 +3172,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Export to CSV file": [
+        "Exportar para ficheiro CSV"
       ]
     },
     "Import instructions link": {
@@ -3256,7 +3289,7 @@
         "${ numContact } contactos"
       ],
       "${ numGroups } contact group": [
-        "${ numGroups } grupo de contatos",
+        "${ numGroups } grupo de contactos",
         "${ numGroups } grupos de contatos"
       ],
       "${ providerFoldersNumLocalized } folder found": [
@@ -3309,6 +3342,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Um número de telemóvel pode ser usado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Um arquivo de recuperação permite desbloquear e visualizar o seus dados após uma reinicialização de conta."
@@ -3420,6 +3456,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "Tem a certeza de que deseja eliminar este filtro?"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Tem a certeza de que quer eliminar esta pasta? Todas as subpastas serão também apagadas."
       ],
       "Are you sure you want to delete this label?": [
         "Tem a certeza de que deseja eliminar esta etiqueta?"
@@ -3581,6 +3620,9 @@
       ],
       "Drop the file here to upload": [
         "Largue o ficheiro aqui para enviar"
+      ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma vez"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -3952,6 +3994,9 @@
       "Please verify payment at the new tab which was opened.": [
         "Verifique o pagamento no separador que abriu."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Por favor espere até as suas mudanças estarem sincronizadas com o servidor."
+      ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
@@ -3963,6 +4008,9 @@
       ],
       "Queued": [
         "Em espera"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informação de recuperação ficará neste aparelho a não ser que escolha apagá-lo."
       ],
       "Recovery phrase copied to clipboard": [
         "Frase recuperação copiada para a memória"
@@ -3996,6 +4044,9 @@
       ],
       "Select what you want to import.": [
         "Selecione o que deseja importar."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado com o correio electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -4108,6 +4159,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
+      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para se manter atualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários correios electrónicos e visitar o nosso blog de vez em quando."
       ],
@@ -4186,6 +4240,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, desative-os."
       ],
+      "We'll notify you when the import is done.": [
+        "Vamos avisá-lo quando a importação for concluída."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
@@ -4209,6 +4266,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Gostaria de receber um novo código de verificação?"
       ],
       "Yearly": [
         "Anualmente"
@@ -4931,6 +4991,18 @@
       "Emails": [
         "Correios electronicos"
       ],
+      "Emails (all messages)": [
+        "Emails (todas as mensagens)"
+      ],
+      "Emails (last 12 months)": [
+        "Emails (últimos 12 meses)"
+      ],
+      "Emails (last 3 months)": [
+        "Emails (últimos 3 meses)"
+      ],
+      "Emails (last month)": [
+        "Emails (mês passado)"
+      ],
       "End date": [
         "Data final"
       ],
@@ -4972,6 +5044,9 @@
       ],
       "From: ${ from }": [
         "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "Gift code": [
         "Código de oferta"
@@ -5273,6 +5348,9 @@
       "To: ${ to }": [
         "Para: ${ to }"
       ],
+      "To: ${ toEmail }": [
+        "Para: ${ toEmail }"
+      ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
       ],
@@ -5468,6 +5546,11 @@
         "Preferência gravada"
       ]
     },
+    "Limit of calendars reached": {
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Atingiu o número máximo de calendários disponível no seu plano."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Adicionar código de oferta"
@@ -5543,6 +5626,10 @@
       ]
     },
     "Loading info": {
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Montante de calendário criado:  ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Montante de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "A ligar ao seu fornecedor de correio electrónico"
       ],
@@ -5556,6 +5643,20 @@
       ],
       "Enable authentication logs": [
         "Ativar os diários de autenticação"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
+        "Importar todas as mensagens das ${ itemsToImportCount } pastas e etiquetá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } da ${ itemsToImportCount } pasta e etiquetá-la como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } das ${ itemsToImportCount } pastas e etiquetá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta e etiquetá-la como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -5905,6 +6006,9 @@
       "Router support": [
         "Suporte para router"
       ],
+      "Search message content": [
+        "Pesquisar conteúdo da mensagem"
+      ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
@@ -5943,6 +6047,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Largura de banda e volume ilimitados"
+      ],
+      "Up to 15 email addresses": [
+        "Até 15 endereços de email"
+      ],
+      "Up to 500 GB of storage": [
+        "Até 500 GB de armazenamento"
       ],
       "Worldwide streaming services": [
         "Serviços de streaming internacionais"
@@ -6736,6 +6846,9 @@
       "Calendar updated": [
         "Calendário atualizado"
       ],
+      "Canceling import": [
+        "A cancelar importação"
+      ],
       "Catch-all address updated": [
         "Endereço Catch-all atualizado"
       ],
@@ -6928,6 +7041,22 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -7273,7 +7402,7 @@
         "Importar"
       ],
       "Import as simple event?": [
-        "Importar com um evento simples?",
+        "Importar como um evento simples?",
         "Importar com eventos simples?"
       ],
       "Import contacts": [
@@ -7326,6 +7455,9 @@
       ],
       "Messages and composing": [
         "Mensagens e composição"
+      ],
+      "Minicalendar": [
+        "Minicalendário"
       ],
       "Multi-user support": [
         "Suporte a múltiplos utilizadores"
@@ -7820,8 +7952,12 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres",
         "A palavra-passe deve conter pelo menos ${ length } caracteres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de caracter ${ n })",
+        "Tente um nome de utilizador mais pequeno (máximo de caracteres ${ n })"
       ]
     },
     "VPN info": {

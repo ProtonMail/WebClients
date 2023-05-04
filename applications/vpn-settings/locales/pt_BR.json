@@ -1471,7 +1471,7 @@
         "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de acesso inválidas. Por favor, tente novamente."
+        "Credenciais de início de sessão inválidos. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Por favor, tente novamente."
@@ -3055,7 +3055,7 @@
         "Termos"
       ],
       "Trouble signing in?": [
-        "Problemas para fazer login?"
+        "Problemas para iniciar sessão?"
       ],
       "Upgrade account": [
         "Upgrade de conta"
@@ -3225,6 +3225,10 @@
         "${ n } pasta e marcador",
         "${ n } pastas e marcadores"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } Esconda meus endereços de encaminhamento",
+        "${ n } Esconda meus endereços de encaminhamento"
+      ],
       "${ n } label": [
         "${ n } marcador",
         "${ n } marcadores"
@@ -3232,6 +3236,10 @@
       "${ n } message per day": [
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
+      ],
+      "${ n } vault": [
+        "${ n } cofre",
+        "${ n } cofres"
       ],
       "${ n } VPN connection": [
         "${ n } conexão VPN",
@@ -3283,8 +3291,20 @@
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
       ],
+      "Custom domain for email aliases": [
+        "Domínio customizado para apelidos de emails"
+      ],
+      "Custom domains for email aliases": [
+        "Domínios customizados para encaminhamento de mensagens"
+      ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
+      ],
+      "Data breach monitoring": [
+        "Monitoramento de violação de dados"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitoramento de violação de dados (em breve)"
       ],
       "DNS leak prevention": [
         "Proteção de vazamento de DNS"
@@ -3323,6 +3343,9 @@
       "HTML signatures": [
         "Assinaturas HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre ativa"
       ],
@@ -3331,6 +3354,9 @@
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Múltiplos redirecionadores de emails"
       ],
       "NetShield malware and ad-blocker": [
         "Bloqueador de malware e anúncios NetShield"
@@ -3371,6 +3397,9 @@
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
       ],
+      "Strong E2E encryption": [
+        "Criptografia E2E forte"
+      ],
       "Team management": [
         "Gerenciamento de equipes"
       ],
@@ -3379,6 +3408,9 @@
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
+      ],
+      "Unlimited devices": [
+        "Dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -3389,11 +3421,20 @@
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Endereços ilimitados do Hide My Email"
+      ],
       "Unlimited labels": [
         "Marcadores ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited passwords and notes": [
+        "Notas e senhas ilimitadas"
+      ],
+      "Unlimited vaults": [
+        "Cofres ilimitados"
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
@@ -3412,6 +3453,12 @@
       ],
       "User session management": [
         "Gerenciamento de sessões de usuário"
+      ],
+      "Vault and Item sharing": [
+        "Cofre e compartilhamento de Itens"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Cofre e compartilhamento de Itens (em breve)"
       ],
       "Worldwide streaming services": [
         "Serviços de streaming internacionais"
@@ -3449,6 +3496,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
+      ],
+      "For next-level password management and identity protection.": [
+        "Para um próximo nível em gerenciamento de senhas e proteção de identidade."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Se excluir sua conta, você perderá todos os benefícios do plano ${ visionary }, o qual não estará mais disponível se você criar uma nova conta."
@@ -3651,6 +3701,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Tal como uma pasta, o Cofre é uma forma conveniente de organizar seus itens. Compartilhamento de Cofres com amigos e família já está sendo desenvolvido."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gerencie sua assinatura, incluindo a personalização do seu plano. Os métodos de pagamento aceitos são cartão de crédito, PayPal, criptomoeda e transferência eletrônica."
       ],
@@ -3734,6 +3787,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Único, endereços de emails temporários para proteger sua identidade online e permitir que você controle o que é enviado para sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"
@@ -4148,8 +4204,8 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "for ${ n } month": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "por ${ n } mês",
+        "por ${ n } meses"
       ],
       "Get the deal": [
         "Aproveite a oferta"
@@ -4713,7 +4769,7 @@
         "Idioma"
       ],
       "Login password": [
-        "Senha de acesso"
+        "Senha de início de sessão"
       ],
       "Network error": [
         "Erro de rede"
@@ -4771,6 +4827,9 @@
       ],
       "Plans": [
         "Planos"
+      ],
+      "Preview": [
+        "Pré-visualização"
       ],
       "Previous": [
         "Anterior"

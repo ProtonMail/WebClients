@@ -1238,6 +1238,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Posta in arrivo di ${ nameToDisplay }"
+      ],
       "5 trackers removed": [
         "5 tracciatori rimossi"
       ],
@@ -2833,6 +2836,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } nelle impostazioni."
       ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Cancella automaticamente i messaggi indesiderati e cestinati più vecchi di 30 giorni. Questo e altri benefici quando effettui l'aggiornamento del piano."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decodifica dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
@@ -3342,6 +3348,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Si è verificato un problema con la ricerca di contenuti. E' stata utilizzata la ricerca predefinita."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "C'è un problema che impedisce l'aggiornamento dei tuoi messaggi locali, verranno riscaricati per riattivare la ricerca dei contenuti"
       ],
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
@@ -3957,6 +3966,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Inoltra automaticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "Messaggi da Gmail nella tua posta in arrivo"
+      ],
       "Sign in with Google": [
         "Accedi con Google"
       ]
@@ -4566,6 +4581,12 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Elimina automaticamente i messaggi che sono stati nello spam per più di 30 giorni."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Elimina automaticamente i messaggi che sono stati nel cestino per più di 30 giorni."
       ],
       "Background color": [
         "Colore di sfondo"
@@ -5397,6 +5418,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Per recuperare i dati, è necessario riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Per disiscriverti da questa mailing list, sarà inviata un'email da ${ boldFrom } con i seguenti dettagli come definito dal mittente della newsletter:"
       ],
@@ -5426,6 +5450,9 @@
       ],
       "Updating message content search...": [
         "Aggiornando la ricerca del contenuto del messaggio..."
+      ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Aggiornamento dei messaggi locali, la ricerca dei contenuti dei messaggi non sarà disponibile durante l'aggiornamento"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
@@ -6934,6 +6961,9 @@
       ]
     },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Cancella automaticamente messaggi indesiderati e cestinati"
+      ],
       "Custom email domains": [
         "Domini email personalizzati"
       ],
@@ -7644,8 +7674,8 @@
         "Addebito di ${ amount } per 30 mesi"
       ],
       "for ${ n } month": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -8209,6 +8239,9 @@
       ],
       "Change my answer": [
         "Modifica la mia risposta"
+      ],
+      "Clear out the junk": [
+        "Ripulisci la posta indesiderata"
       ],
       "Clearing data": [
         "Cancellazione dati"
