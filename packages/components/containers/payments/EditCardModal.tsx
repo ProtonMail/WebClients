@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import usePaymentToken from '@proton/components/hooks/usePaymentToken';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Autopay } from '@proton/shared/lib/interfaces';

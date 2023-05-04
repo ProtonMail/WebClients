@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import usePaymentToken from '@proton/components/hooks/usePaymentToken';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { buyCredit } from '@proton/shared/lib/api/payments';
 import {
     APPS,
