@@ -12,11 +12,13 @@ import { type ImportFormContext, SUPPORTED_IMPORT_FILE_TYPES } from '../../hooks
 import { PasswordField } from '../fields';
 
 export const PROVIDER_TITLE_MAP = {
-    [ImportProvider.BITWARDEN]: 'Bitwarden',
-    [ImportProvider.CHROME]: 'Chrome, Brave, Edge (CSV)',
-    [ImportProvider.KEEPASS]: 'KeePass (XML)',
-    [ImportProvider.LASTPASS]: 'LastPass',
-    [ImportProvider.ONEPASSWORD]: '1Password (1PUX)',
+    [ImportProvider.BITWARDEN]: 'Bitwarden (json)',
+    [ImportProvider.BRAVE]: 'Brave (csv)',
+    [ImportProvider.CHROME]: 'Chrome (csv)',
+    [ImportProvider.EDGE]: 'Edge (csv)',
+    [ImportProvider.KEEPASS]: 'KeePass (xml)',
+    [ImportProvider.LASTPASS]: 'LastPass (csv)',
+    [ImportProvider.ONEPASSWORD]: '1Password (1pux)',
     [ImportProvider.PROTONPASS]: PASS_APP_NAME,
     [ImportProvider.PROTONPASS_PGP]: `${PASS_APP_NAME} (PGP encrypted)`,
 };
