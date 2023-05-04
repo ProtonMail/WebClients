@@ -331,7 +331,6 @@ export const handleValidateResetToken = async ({
     api,
     cache,
     token,
-    hasDanger = false,
 }: {
     api: Api;
     cache: ResetCacheResult;
@@ -341,7 +340,7 @@ export const handleValidateResetToken = async ({
     const { username } = cache;
     const resetResponse = await api<ValidateResetTokenResponse>(validateResetToken(username, token));
     return {
-        to: hasDanger ? STEPS.DANGER_VERIFICATION : STEPS.NEW_PASSWORD,
+        to: STEPS.NEW_PASSWORD,
         cache: {
             ...cache,
             token,
