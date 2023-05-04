@@ -81,12 +81,12 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
                 <ModalHeader title={c('Title').t`Change organization password`} />
                 <ModalContent>
                     {hasOtherAdmins && (
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .t`Other administrators exist in your organization, you are responsible for communicating the new password to them.`}
                         </div>
                     )}
-                    <Alert className="mb1" type="warning">
+                    <Alert className="mb-4" type="warning">
                         {c('Info')
                             .t`Do NOT forget this password. If you forget it, you will not be able to manage your organization.`}
                         <br />

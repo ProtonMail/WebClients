@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 import {
     CalendarLogo,
     DriveLogo,
@@ -50,10 +52,10 @@ export const Sandbox = () => {
     const logo = <Logo appName={selectedAppName} variant={selectedVariant} />;
 
     return (
-        <div className="my2">
+        <div className="my-8">
             <div className="flex flex-align-items-stretch">
-                <div className="mr2">
-                    <strong className="block mb1">App Name</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">App Name</strong>
                     <RadioGroup
                         name="selected-app-name"
                         onChange={setSelectedAppName}
@@ -61,8 +63,8 @@ export const Sandbox = () => {
                         options={appNames.map((appName) => ({ value: appName, label: appName }))}
                     />
                 </div>
-                <div className="mr2">
-                    <strong className="block mb1">Variant</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">Variant</strong>
                     <RadioGroup
                         name="selected-variant"
                         onChange={setSelectedVariant}
@@ -78,19 +80,19 @@ export const Sandbox = () => {
 
 export const Individual = () => (
     <div>
-        <div className="mb2">
+        <div className="mb-8">
             <ProtonLogo variant="glyph-only" />
         </div>
-        <div className="mb2">
+        <div className="mb-8">
             <ProtonLogo />
         </div>
-        <div className="mb2">
+        <div className="mb-8">
             <MailLogo />
         </div>
-        <div className="mb2">
+        <div className="mb-8">
             <CalendarLogo />
         </div>
-        <div className="mb2">
+        <div className="mb-8">
             <DriveLogo />
         </div>
         <div className="mb2">

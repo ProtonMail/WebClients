@@ -162,7 +162,7 @@ const ParticipantsInput = ({
                 }}
             />
             {error && (
-                <Alert className="mb1 mt-2" type="error">
+                <Alert className="mb-4 mt-2" type="error">
                     {error}
                 </Alert>
             )}

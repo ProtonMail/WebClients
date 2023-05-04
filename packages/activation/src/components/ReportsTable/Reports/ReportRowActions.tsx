@@ -61,7 +61,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                     ]}
                     data-testid="ReportsTable:deleteModal"
                 >
-                    <Alert className="mb1" type="error">
+                    <Alert className="mb-4" type="error">
                         {c('Warning').t`You will not see this import record in the list any more.`}
                     </Alert>
                 </Prompt>
@@ -82,7 +82,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                         <Button color="weak" onClick={() => showRollbackModal(false)}>{c('Action').t`Cancel`}</Button>,
                     ]}
                 >
-                    <Alert className="mb1" type="error">
+                    <Alert className="mb-4" type="error">
                         {c('Warning').t`This will remove all messages, folders, and labels created during the import.`}
                     </Alert>
                 </Prompt>

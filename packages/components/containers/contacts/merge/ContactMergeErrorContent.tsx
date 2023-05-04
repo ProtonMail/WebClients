@@ -22,8 +22,8 @@ const ContactMergeErrorContent = ({ model, onClose }: Props) => {
             <ModalTwoHeader title={c('Title').t`Contact Details`} />
             <ModalTwoContent>
                 <Alert type="warning">
-                    <Icon name="exclamation-circle" className="mr1" />
-                    <span className="mr1">{error}</span>
+                    <Icon name="exclamation-circle" className="mr-4" />
+                    <span className="mr-4">{error}</span>
                 </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>

@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
+
+
 import Slider from './Slider';
 import mdx from './Slider.mdx';
+
 
 export default {
     component: Slider,
@@ -41,19 +44,19 @@ export const Color = () => {
             <div>
                 <Slider color="success" value={value} onInput={setValue} />
             </div>
-            <div className="mt2">
+            <div className="mt-8">
                 <Slider color="danger" value={value} onInput={setValue} />
             </div>
-            <div className="mt2">
+            <div className="mt-8">
                 <Slider color="info" value={value} onInput={setValue} />
             </div>
-            <div className="mt2">
+            <div className="mt-8">
                 <Slider color="norm" value={value} onInput={setValue} />
             </div>
-            <div className="mt2">
+            <div className="mt-8">
                 <Slider color="warning" value={value} onInput={setValue} />
             </div>
-            <div className="mt2">
+            <div className="mt-8">
                 <Slider color="weak" value={value} onInput={setValue} />
             </div>
         </div>
@@ -68,7 +71,7 @@ export const Size = () => {
             <div>
                 <Slider size="small" value={value} onInput={setValue} />
             </div>
-            <div className="mt2">
+            <div className="mt-8">
                 <Slider value={value} onInput={setValue} />
             </div>
         </div>

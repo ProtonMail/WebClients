@@ -80,7 +80,7 @@ const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) 
                 title={!item.isFile ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             />
             <ModalTwoContent>
-                <Row className="mt1 mb1">
+                <Row className="my-4">
                     <Label>{!item.isFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                     <Field>
                         <Input

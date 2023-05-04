@@ -1,9 +1,14 @@
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
+
+
 
 import { Alert, ConfirmModal } from '../../components';
 import { useLoading, useModals } from '../../hooks';
+
 
 interface Props {
     onWipe: () => Promise<void>;
@@ -25,7 +30,7 @@ const WipeLogsButton = ({ onWipe, className }: Props) => {
                 onConfirm={handleConfirm}
                 confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
             >
-                <Alert className="mb1" type="error">{c('Info')
+                <Alert className="mb-4" type="error">{c('Info')
                     .t`Are you sure you want to permanently delete all your logs?`}</Alert>
             </ConfirmModal>
         );

@@ -47,7 +47,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 title: c('Action').t`Export key before deleting`,
                 children: (
                     <>
-                        <div className="mb1">{c('Info').t`Key deletion is irreversible!`}</div>
+                        <div className="mb-4">{c('Info').t`Key deletion is irreversible!`}</div>
                         <div>
                             {c('Info')
                                 .t`You should export a backup of this key in case you need to restore data it encrypted.`}
@@ -82,7 +82,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 title: c('Title').t`Delete key permanently?`,
                 children: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .t`You will NOT be able to decrypt any messages, files, and other data encrypted with this key.`}
                         </div>

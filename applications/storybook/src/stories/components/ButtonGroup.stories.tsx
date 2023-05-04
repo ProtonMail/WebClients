@@ -90,10 +90,10 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="my2">
+        <div className="my-8">
             <div className="flex flex-align-items-stretch">
-                <div className="mr2">
-                    <strong className="block mb1">Color</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">Color</strong>
                     <RadioGroup
                         name="selected-color"
                         onChange={(v) => setSelectedColor(v)}
@@ -101,8 +101,8 @@ export const Sandbox = () => {
                         options={colors.map((color) => ({ value: color, label: color }))}
                     />
                 </div>
-                <div className="mr2">
-                    <strong className="block mb1">Shape</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">Shape</strong>
                     <RadioGroup
                         name="selected-shape"
                         onChange={(v) => setSelectedShape(v)}
@@ -110,8 +110,8 @@ export const Sandbox = () => {
                         options={shapes.map((shape) => ({ value: shape, label: shape }))}
                     />
                 </div>
-                <div className="mr2">
-                    <strong className="block mb1">Size</strong>
+                <div className="mr-8">
+                    <strong className="block mb-4">Size</strong>
                     <RadioGroup
                         name="selected-size"
                         onChange={(v) => setSelectedSize(v)}

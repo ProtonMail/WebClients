@@ -45,7 +45,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     <div className="flex on-mobile-flex-column pb2">
                         <div className="flex-item-fluid">
                             {children ? (
-                                <section className="overview-grid-item overview-grid-item--full border bg-norm shadow-norm p2 mb1-5">
+                                <section className="overview-grid-item overview-grid-item--full border bg-norm shadow-norm p2 mb-6">
                                     {children}
                                 </section>
                             ) : null}
@@ -62,8 +62,8 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     organization={organization}
                 />
                 {subscription && hasMailPlus(subscription) ? (
-                    <div className="bg-primary rounded text-center p1 mt2 relative">
-                        <p className="mt-0 mb1">
+                    <div className="bg-primary rounded text-center p1 mt-8 relative">
+                        <p className="mt-0 mb-4">
                             {c('Info')
                                 .t`Upgrade to a paid plan with multi-user support to add more users to your organization.`}
                         </p>
@@ -81,8 +81,8 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 ) : null}
                 {hasPaidMail ? null : (
-                    <div className="bg-primary rounded text-center p1 mt2 relative">
-                        <p className="mt-0 mb1">
+                    <div className="bg-primary rounded text-center p1 mt-8 relative">
+                        <p className="mt-0 mb-4">
                             {c('Info')
                                 .t`Upgrade to a paid plan to unlock premium features and increase your storage space.`}
                         </p>

@@ -32,7 +32,7 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
                     <div>
                         <PlanCardFeatureList features={plan.features} icon={icon} />
                     </div>
-                    <div className="pt1 mtauto pb1">{footerWrapper}</div>
+                    <div className="pt1 mt-auto pb1">{footerWrapper}</div>
                 </>
             ) : (
                 <div className="flex flex-column flex-nowrap">

@@ -64,7 +64,7 @@ const PaidUserGetStartedChecklist = ({ onDismiss, onItemSelection }: Props) => {
 
     if (loading) {
         return (
-            <div className="p1 mauto">
+            <div className="p1 m-auto">
                 <Loader />
             </div>
         );

@@ -76,7 +76,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     title={c('Action').t`Bold`}
                     data-testid="editor-bold"
                 >
-                    <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
+                    <Icon name="text-bold" className="m-auto" alt={c('Action').t`Bold`} />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.italic.toggle}
@@ -85,7 +85,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     title={c('Action').t`Italic`}
                     data-testid="editor-italic"
                 >
-                    <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
+                    <Icon name="text-italic" className="m-auto" alt={c('Action').t`Italic`} />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.underline.toggle}
@@ -94,7 +94,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     title={c('Action').t`Underline`}
                     data-testid="editor-underline"
                 >
-                    <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
+                    <Icon name="text-underline" className="m-auto" alt={c('Action').t`Underline`} />
                 </ToolbarButton>
             </>
             {!isNarrow ? (
@@ -106,7 +106,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Unordered list`}
                         data-testid="editor-unordered-list"
                     >
-                        <Icon name="list-bullets" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
+                        <Icon name="list-bullets" className="m-auto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.orderedList.toggle}
@@ -115,7 +115,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Ordered list`}
                         data-testid="editor-ordered-list"
                     >
-                        <Icon name="list-numbers" className="mauto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
+                        <Icon name="list-numbers" className="m-auto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
                     </ToolbarButton>
                     <Vr aria-hidden="true" />
                     <ToolbarAlignmentDropdown setAlignment={config.alignment.setValue} />
@@ -136,7 +136,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Quote`}
                         data-testid="editor-quote"
                     >
-                        <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
+                        <Icon name="text-quote" className="m-auto" alt={c('Action').t`Quote`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.link.showModal}
@@ -144,7 +144,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Insert link`}
                         data-testid="editor-insert-link"
                     >
-                        <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
+                        <Icon name="link" className="m-auto" alt={c('Action').t`Insert link`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.formatting.clear}
@@ -152,7 +152,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Clear all formatting`}
                         data-testid="editor-clear-formatting"
                     >
-                        <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
+                        <Icon name="eraser" className="m-auto" alt={c('Action').t`Clear all formatting`} />
                     </ToolbarButton>
                     {simple && metadata.supportImages && (
                         <>
@@ -162,7 +162,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Insert image`}
                             >
-                                <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
+                                <Icon name="file-image" className="m-auto" alt={c('Action').t`Insert image`} />
                             </ToolbarButton>
                         </>
                     )}

@@ -56,7 +56,7 @@ const MessagesGeneralSection = () => {
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
-                        <ShortcutsToggle className="mr1" id="shortcutsToggle" />
+                        <ShortcutsToggle className="mr-4" id="shortcutsToggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
                 <SettingsLayout>

@@ -62,7 +62,7 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 onValue={setConfirmNewPassword}
                 rootClassName="mt-2"
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {c('Action').t`Confirm`}
             </Button>
         </form>

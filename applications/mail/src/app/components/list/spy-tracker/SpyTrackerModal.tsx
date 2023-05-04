@@ -1,5 +1,7 @@
 import { c, msgid } from 'ttag';
 
+
+
 import { Button, Href } from '@proton/atoms';
 import {
     Collapsible,
@@ -66,7 +68,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
             <>
                 {modalText}
                 <div>{learnMoreLink}</div>
-                <div className="mt1">
+                <div className="mt-4">
                     <PreventTrackingToggle
                         id="preventTrackingToggle"
                         preventTracking={mailSettings?.ImageProxy || 0}
@@ -95,7 +97,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
         content = (
             <>
                 {modalText}
-                <div className="mb1">{learnMoreLink}</div>
+                <div className="mb-4">{learnMoreLink}</div>
                 {trackers.map((tracker, index) => {
                     return (
                         <Collapsible
@@ -140,7 +142,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
             <ModalTwoHeader title={title} />
             <ModalTwoContent>{content}</ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="mlauto" color="norm" onClick={onClose}>
+                <Button className="ml-auto" color="norm" onClick={onClose}>
                     {footerText}
                 </Button>
             </ModalTwoFooter>

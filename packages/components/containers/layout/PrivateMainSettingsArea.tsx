@@ -1,9 +1,13 @@
 import { Children, ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
+
+
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { classnames } from '../../helpers';
+
+
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import useAppTitle from '../../hooks/useAppTitle';
 import { SettingsPageTitle, SettingsParagraph } from '../account';
@@ -13,6 +17,7 @@ import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 import { SettingsAreaConfig } from './interface';
 import useActiveSection from './useActiveSection';
+
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
@@ -122,13 +127,13 @@ export const PrivateMainSettingsAreaBase = ({
     return (
         <PrivateMainArea ref={mainAreaRef}>
             <div className="container-section-sticky">
-                {breadcrumbs && <div className="on-mobile-mt1-5">{breadcrumbs}</div>}
+                {breadcrumbs && <div className="mt-6 md:mt-0">{breadcrumbs}</div>}
                 {!noTitle && (
-                    <SettingsPageTitle className={classnames(['mt1-5', description ? 'mb-2' : 'mb1-5'])}>
+                    <SettingsPageTitle className={clsx('mt-14', description ? 'mb-5' : 'mb-14')}>
                         {title}
                     </SettingsPageTitle>
                 )}
-                {description && <SettingsParagraph className="mb1-5">{description}</SettingsParagraph>}
+                {description && <SettingsParagraph className="mb-6">{description}</SettingsParagraph>}
                 <ErrorBoundary>{wrappedSections}</ErrorBoundary>
             </div>
         </PrivateMainArea>

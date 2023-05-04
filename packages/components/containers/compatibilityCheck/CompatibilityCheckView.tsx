@@ -23,7 +23,7 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
     const app = getAppName(appName);
 
     return (
-        <div className="w50 p2 mt2 mxauto text-lg auto-mobile">
+        <div className="w50 p2 mt-8 mx-auto text-lg auto-mobile">
             <div className="text-center">
                 <h1>Compatibility check</h1>
                 <p>
@@ -41,7 +41,7 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
                     More info
                 </Href>
             </div>
-            <div className="mt2 text-center">
+            <div className="mt-8 text-center">
                 <img src={unsupportedBrowserSettings} alt="Compatibility check" />
             </div>
             <ul>

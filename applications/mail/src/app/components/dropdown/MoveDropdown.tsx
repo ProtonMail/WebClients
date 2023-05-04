@@ -184,7 +184,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
             className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb-0">
+            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>
@@ -202,7 +202,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     </Button>
                 </Tooltip>
             </div>
-            <div className="flex-item-noshrink m1 mb-0">
+            <div className="flex-item-noshrink m-4 mb-0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -260,7 +260,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         <span className="flex w100">
                             <Button
                                 key="create-new-folder"
-                                className="w100 mr2 ml2 text-ellipsis"
+                                className="w100 mx-8 text-ellipsis"
                                 data-testid="folder-dropdown:create-folder-option"
                                 title={createFolderButtonText}
                                 onClick={handleCreate}
@@ -284,7 +284,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     {c('Label').t`Always move sender's emails`}
                 </Checkbox>
             </div>
-            <div className="m1 flex-item-noshrink">
+            <div className="m-4 flex-item-noshrink">
                 <PrimaryButton
                     className="w100"
                     loading={loading}

@@ -17,7 +17,7 @@ interface Props {
 const DomainSection = ({ domain, domainName, onValue, validator }: Props) => {
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
+            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
                 {c('Label for adding a new custom domain')
                     .t`Add a domain that you own to your ${MAIL_APP_NAME} account.`}
             </Alert>
@@ -38,7 +38,7 @@ const DomainSection = ({ domain, domainName, onValue, validator }: Props) => {
                 />
             )}
             {!domain.ID && domainName.toLowerCase().startsWith('www.') ? (
-                <Alert className="mb1" type="warning">{c('Domain modal')
+                <Alert className="mb-4" type="warning">{c('Domain modal')
                     .t`'www' subdomains are typically not used for email. Are you sure you want to use this domain value?`}</Alert>
             ) : null}
         </>

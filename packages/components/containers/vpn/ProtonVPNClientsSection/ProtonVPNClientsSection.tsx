@@ -18,7 +18,7 @@ interface DownloadModalProps extends ModalProps {
 const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
     return (
         <ModalTwo {...rest} size="small">
-            <ModalTwoContent className="m2 text-center">
+            <ModalTwoContent className="m-8 text-center">
                 <OnboardingContent
                     img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                     title={c('Title').t`Download ${VPN_APP_NAME}`}

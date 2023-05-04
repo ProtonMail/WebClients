@@ -31,9 +31,9 @@ const MinimalForgotUsernameContainer = () => {
                 withLoading(handleSubmit());
             }}
         >
-            <Alert className="mb1">{c('Info')
+            <Alert className="mb-4">{c('Info')
                 .t`Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)`}</Alert>
-            <div className="mb1">
+            <div className="mb-4">
                 <EmailInput
                     name="email"
                     autoFocus
@@ -46,7 +46,7 @@ const MinimalForgotUsernameContainer = () => {
                     required
                 />
             </div>
-            <div className="flex flex-nowrap flex-justify-space-between mb1">
+            <div className="flex flex-nowrap flex-justify-space-between mb-4">
                 <Link to="/login">{c('Link').t`Back to login`}</Link>
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Email me my username(s)`}</PrimaryButton>
             </div>

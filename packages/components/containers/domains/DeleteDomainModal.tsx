@@ -38,9 +38,9 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            <Alert className="mb1" type="info">{c('Info')
+            <Alert className="mb-4" type="info">{c('Info')
                 .t`Please note that if you delete this domain, all the addresses associated with it will be disabled.`}</Alert>
-            <Alert className="mb1" type="error">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
+            <Alert className="mb-4" type="error">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
         </Prompt>
     );
 };

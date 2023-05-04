@@ -48,7 +48,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
             <ModalHeader title={c('Title').t`Downgrade account`} />
             <ModalContent>
                 {daysRemaining > 0 && (
-                    <Alert className="mb1" type="warning">
+                    <Alert className="mb-4" type="warning">
                         {planTimeRemainingString}
                         <br />
                         {c('Info')
@@ -71,7 +71,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
             </ModalContent>
             <ModalFooter>
                 <Button
-                    className="on-mobile-w100 on-mobile-mb1"
+                    className="on-mobile-w100 mb-4 md:mb-0"
                     onClick={() => {
                         onConfirm();
                         onClose?.();

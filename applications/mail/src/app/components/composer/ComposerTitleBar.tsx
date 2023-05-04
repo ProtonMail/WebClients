@@ -120,7 +120,7 @@ const ComposerTitleBar = ({
                 onClick={toggleMinimized}
                 dataTestId="composer:minimize-button"
             >
-                <Icon name="low-dash" alt={title} className="mauto" />
+                <Icon name="low-dash" alt={title} className="m-auto" />
             </TitleBarButton>
             <TitleBarButton
                 title={titleMaximize}
@@ -128,10 +128,10 @@ const ComposerTitleBar = ({
                 onClick={toggleMaximized}
                 dataTestId="composer:maximize-button"
             >
-                <Icon name={maximized ? 'arrows-to-center' : 'arrows-from-center'} alt={title} className="mauto" />
+                <Icon name={maximized ? 'arrows-to-center' : 'arrows-from-center'} alt={title} className="m-auto" />
             </TitleBarButton>
             <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
-                <Icon name="cross" alt={title} className="mauto" />
+                <Icon name="cross" alt={title} className="m-auto" />
             </TitleBarButton>
         </header>
     );

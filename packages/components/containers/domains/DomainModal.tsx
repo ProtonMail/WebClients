@@ -396,7 +396,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
         <ModalTwo className="modal--full" as={Form} onSubmit={onSubmit} {...rest}>
             <ModalTwoHeader title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`} />
             <ModalTwoContent>
-                <ButtonGroup className="mb1">
+                <ButtonGroup className="mb-4">
                     {breadcrumbLabels.map((label, index) => (
                         <Button
                             icon

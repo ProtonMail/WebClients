@@ -3,26 +3,13 @@ import { useState } from 'react';
 
 
 import { Button } from '@proton/atoms';
-import {
-    BasicModal,
-    Checkbox,
-    Form,
-    Icon,
-    InputFieldTwo,
-    ModalProps,
-    ModalSize,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Prompt,
-    RadioGroup,
-    Tooltip,
-    useModalState,
-} from '@proton/components';
+import { BasicModal, Checkbox, Form, Icon, InputFieldTwo, ModalProps, ModalSize, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Prompt, RadioGroup, Tooltip, useModalState } from '@proton/components';
+
+
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Modal.mdx';
+
 
 export default {
     component: ModalTwo,
@@ -89,8 +76,8 @@ export const Primary = () => {
                         qui vero, blanditiis quos?
                     </p>
 
-                    <div className="mr2">
-                        <strong className="block mb1">Shape</strong>
+                    <div className="mr-8">
+                        <strong className="block mb-4">Shape</strong>
                         <RadioGroup
                             name="selected-shape"
                             onChange={setSize}
@@ -350,7 +337,7 @@ export const WithFormRoot = () => {
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
                         qui vero, blanditiis quos?
                     </p>
-                    <div className="mt1">
+                    <div className="mt-4">
                         <InputFieldTwo
                             label="Name"
                             value={value}

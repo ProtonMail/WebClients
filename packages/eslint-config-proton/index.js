@@ -198,7 +198,7 @@ module.exports = {
         'jsx-a11y/label-has-for': 'off',
         'jsx-a11y/no-autofocus': 'off',
         'jsx-a11y/no-onchange': 'off',
-        'custom-rules/deprecate-spacing-utility-classes': 'off',
+        'custom-rules/deprecate-spacing-utility-classes': 'warn',
     },
     settings: {
         'import/resolver': {

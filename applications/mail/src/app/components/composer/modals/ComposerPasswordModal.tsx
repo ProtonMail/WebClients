@@ -119,7 +119,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             onCancel={handleCancel}
         >
             <p className="mt-0 mb-2 color-weak">{encryptionText}</p>
-            <p className="mt-0 mb1 color-weak">
+            <p className="mt-0 mb-4 color-weak">
                 {expirationText}
                 <br />
                 <Href href={getKnowledgeBaseUrl('/password-protected-emails')}>{c('Info').t`Learn more`}</Href>

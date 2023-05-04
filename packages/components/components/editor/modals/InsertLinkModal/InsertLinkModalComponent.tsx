@@ -86,7 +86,7 @@ const InsertLinkModalComponent = ({
                 <ModalTwoHeader title={url ? c('Info').t`Edit link` : c('Info').t`Insert link`} />
                 <ModalTwoContent>
                     <div ref={modalContentRef}>
-                        <div className="mb1">{c('Info')
+                        <div className="mb-4">{c('Info')
                             .t`Please select the type of link you want to insert and fill in all the fields.`}</div>
                         <Row>
                             <Label htmlFor="link-modal-type" className="flex flex-column">

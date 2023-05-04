@@ -4,12 +4,17 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
 import { Icon, Loader, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+
+
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+
 
 interface Props {
     message: MessageState;
@@ -37,7 +42,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
         <Button
             onClick={handleReply}
             color="norm"
-            className="mlauto flex flex-align-items-center"
+            className="ml-auto flex flex-align-items-center"
             disabled={!canReply}
             data-testid="eoreply:button"
         >

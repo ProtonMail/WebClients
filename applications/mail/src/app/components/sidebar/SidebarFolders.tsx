@@ -55,7 +55,7 @@ const SidebarFolders = ({
     };
 
     return emptyFolders ? (
-        <div className="py0-75 ml2 text-sm color-weak">{c('Description').t`No folders`}</div>
+        <div className="py0-75 ml-8 text-sm color-weak">{c('Description').t`No folders`}</div>
     ) : (
         <>
             {foldersTreeview.reduce(

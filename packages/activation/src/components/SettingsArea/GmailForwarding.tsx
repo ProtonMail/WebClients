@@ -22,7 +22,7 @@ const GmailForwarding = () => {
                 provider={ImportProvider.GOOGLE}
                 onClick={() => setSyncModalProps(true)}
                 disabled={disabled}
-                className="mb1 mr1"
+                className="mb-4 mr-4"
                 data-testid="ProviderCard:googleCardForward"
             />
             {renderSyncModal && <GmailSyncModal noSkip onSyncCallback={handleModalClose} {...syncModalProps} />}

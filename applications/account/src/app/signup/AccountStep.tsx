@@ -341,7 +341,7 @@ const AccountStep = ({
                         innerChallenge
                     )}
                     {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
-                        <div className={clsx('text-center mb1', isLoadingView && 'hidden')}>
+                        <div className={clsx('text-center mb-4', isLoadingView && 'hidden')}>
                             <InlineLinkButton
                                 id="existing-email-button"
                                 onClick={() => {
@@ -408,18 +408,18 @@ const AccountStep = ({
                         onValue={setConfirmPassword}
                         rootClassName="mt-2"
                     />
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
+                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                         {c('Action').t`Create account`}
                     </Button>
 
-                    <div className="text-center mt1-25">
+                    <div className="text-center mt-4">
                         {
                             // translator: Full sentence "Already have an account? Sign in"
                             c('Go to sign in').jt`Already have an account? ${signIn}`
                         }
                     </div>
 
-                    <hr className="my1-25" />
+                    <hr className="my-4" />
 
                     <div className="color-weak text-center text-sm px2 on-tiny-mobile-px0">
                         {

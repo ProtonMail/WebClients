@@ -18,7 +18,7 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
         <div style={style} className="flex">
             <div
                 className={clsx([
-                    'flex flex-nowrap flex-item-fluid h100 myauto contact-list-row pl1 pr1',
+                    'flex flex-nowrap flex-item-fluid h100 my-auto contact-list-row pl1 pr1',
                     checked && 'contact-list-row--selected',
                 ])}
             >

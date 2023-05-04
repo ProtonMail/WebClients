@@ -1,5 +1,7 @@
 import { ThemeColor } from '@proton/colors';
 
+
+
 import { Card } from '..';
 import NotificationDot from './NotificationDot';
 import mdx from './NotificationDot.mdx';
@@ -15,14 +17,14 @@ export const Basic = () => <NotificationDot />;
 export const Colors = () => (
     <div className="flex">
         {Object.values(ThemeColor).map((color) => (
-            <NotificationDot className="mr1" color={color} />
+            <NotificationDot className="mr-4" color={color} />
         ))}
     </div>
 );
 
 export const PositionHelper = () => (
     <>
-        <Card className="relative mb1">
+        <Card className="relative mb-4">
             With helper
             <NotificationDot className="absolute top right notification-dot--top-right" />
         </Card>

@@ -13,14 +13,14 @@ const EquivalentAttendeesModal = ({ onClose, equivalentAttendees, isOpen }: Prop
     return (
         <BasicModal
             title={c('Title').t`You have invited participants with equivalent emails`}
-            footer={<Button color="norm" className="mlauto" onClick={onClose}>{c('Action').t`OK`}</Button>}
+            footer={<Button color="norm" className="ml-auto" onClick={onClose}>{c('Action').t`OK`}</Button>}
             onSubmit={onClose}
             isOpen={isOpen}
             onClose={onClose}
         >
             <p>{c('Info').t`Please remove the duplicates and try again.`}</p>
             {equivalentAttendees.map((group) => (
-                <Alert className="mb1" type="warning" key={group.join('')}>
+                <Alert className="mb-4" type="warning" key={group.join('')}>
                     {group.map((email) => (
                         <p className="text-ellipsis" key={email} title={email}>
                             {email}

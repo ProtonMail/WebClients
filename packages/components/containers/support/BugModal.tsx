@@ -311,7 +311,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 />
                 {model.OSArtificial && OSAndOSVersionFields}
 
-                <Collapsible className="mt1">
+                <Collapsible className="mt-4">
                     <CollapsibleHeader
                         disableFullWidth
                         suffix={
@@ -323,7 +323,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                         <label className="text-semibold">{c('Label').t`System information`}</label>
                     </CollapsibleHeader>
 
-                    <CollapsibleContent className="mt1">
+                    <CollapsibleContent className="mt-4">
                         {!model.OSArtificial && OSAndOSVersionFields}
 
                         <InputFieldTwo

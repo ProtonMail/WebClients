@@ -69,7 +69,7 @@ const LogsSection = () => {
         return new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal title={c('Title').t`Clear`} onConfirm={resolve} onClose={reject}>
-                    <Alert className="mb1" type="warning">{c('Warning')
+                    <Alert className="mb-4" type="warning">{c('Warning')
                         .t`By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?`}</Alert>
                 </ConfirmModal>
             );
@@ -172,12 +172,12 @@ const LogsSection = () => {
                 </SettingsLayout>
             )}
 
-            <div className="flex flex-justify-space-between flex-align-items-start mt2 mb1">
+            <div className="flex flex-justify-space-between flex-align-items-start mt-8 mb-4">
                 {logAuth !== DISABLE && (
                     <div className="mb-2">
                         <Button
                             shape="outline"
-                            className="mr1 inline-flex flex-align-items-center"
+                            className="mr-4 inline-flex flex-align-items-center"
                             loading={loadingRefresh}
                             onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                             title={c('Action').t`Reload`}
@@ -186,11 +186,11 @@ const LogsSection = () => {
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
 
-                        {state.logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
+                        {state.logs.length ? <WipeLogsButton className="mr-4" onWipe={handleWipe} /> : null}
                         {state.logs.length ? (
                             <Button
                                 shape="outline"
-                                className="mr1"
+                                className="mr-4"
                                 onClick={() => withLoadingDownload(handleDownload())}
                                 loading={loadingDownload}
                             >{c('Action').t`Download`}</Button>

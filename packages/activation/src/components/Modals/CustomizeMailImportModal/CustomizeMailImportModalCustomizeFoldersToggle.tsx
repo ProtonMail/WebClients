@@ -22,7 +22,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
     const toggleActionCopy = organizeFolderVisible ? t.hide() : t.show();
 
     return (
-        <div className="mb1 border-bottom flex-align-items-center">
+        <div className="mb-4 border-bottom flex-align-items-center">
             <Row>
                 <Label>{t.manage()}</Label>
                 <div className="flex flex-align-items-center">
@@ -34,7 +34,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
                     )}
                     <Button
                         shape="outline"
-                        className="ml2"
+                        className="ml-8"
                         onClick={toggleFolderVisibility}
                         data-testid="CustomizeModal:toggleFolders"
                     >

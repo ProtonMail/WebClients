@@ -53,12 +53,12 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
     return (
         <>
             <div className="flex flex-nowrap mb-0 on-mobile-flex-column border-bottom">
-                <div className={classnames(['w20', isNarrow && 'mb1'])}>{c('Label').t`Statement`}</div>
-                <div className={classnames([!isNarrow && 'ml1'])}>
+                <div className={classnames(['w20', isNarrow && 'mb-4'])}>{c('Label').t`Statement`}</div>
+                <div className={classnames([!isNarrow && 'ml-4'])}>
                     <Radio
                         id="statement-all"
                         name="filterConditionStatement"
-                        className="flex flex-nowrap mb1 radio--ontop"
+                        className="flex flex-nowrap mb-4 radio--ontop"
                         checked={model.statement === FilterStatement.ALL}
                         onChange={() =>
                             onChange({
@@ -73,7 +73,7 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
                     <Radio
                         id="statement-any"
                         name="filterConditionStatement"
-                        className="flex flex-nowrap mb1 radio--ontop"
+                        className="flex flex-nowrap mb-4 radio--ontop"
                         checked={model.statement === FilterStatement.ANY}
                         onChange={() =>
                             onChange({

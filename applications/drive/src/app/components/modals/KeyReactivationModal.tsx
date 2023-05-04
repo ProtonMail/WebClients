@@ -4,20 +4,17 @@ import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
-import {
-    ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    RadioGroup,
-    useModalTwo,
-} from '@proton/components';
+import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup, useModalTwo } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+
+
 import { LockedVolumeResolveMethod } from '../ResolveLockedVolumes/KeyReactivation/interfaces';
+
 
 interface Props {
     defaultResolveMethod: LockedVolumeResolveMethod;
@@ -109,7 +106,7 @@ const KeyReactivationModal = ({
                     value={radioGroupValue}
                     onChange={handleChange}
                     name="action-type"
-                    className="flex-nowrap mb1"
+                    className="flex-nowrap mb-4"
                 />
             </ModalTwoContent>
             <ModalTwoFooter>

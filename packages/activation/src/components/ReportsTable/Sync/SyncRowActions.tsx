@@ -111,7 +111,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                     ]}
                     {...deleteModalProps}
                 >
-                    <Alert className="mb1" type="error">
+                    <Alert className="mb-4" type="error">
                         {c('account').t`You will stop the mail forwarding.`}
                     </Alert>
                 </Prompt>

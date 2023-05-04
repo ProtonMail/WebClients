@@ -1,16 +1,23 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Checkbox, Icon, InlineLinkButton, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
+
+
 import { FOLDER_ICONS, FolderMapItem } from '../../CustomizeMailImportModal.interface';
 import ManageFoldersRowFolderErrors from './ManageFoldersRowFolderErrors';
 import ManageFolderRowInput from './ManageFoldersRowInput';
 import ManageFoldersRowLabelErrors from './ManageFoldersRowLabelErrors';
+
 
 const DIMMED_OPACITY_CLASSNAMES = 'opacity-30';
 
@@ -48,7 +55,7 @@ interface Props {
 
 const debouncedRenameCallback = debounce((callback) => callback(), 150);
 const indentStyle = (level: number) => {
-    return { '--margin-left-custom': `${level}em` };
+    return { '--ml-custom': `${level}em` };
 };
 
 const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorSaved }: Props) => {

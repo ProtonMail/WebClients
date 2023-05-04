@@ -6,7 +6,7 @@ const DealMostPopular = () => {
     } = useDealContext();
 
     return (
-        <div className="text-center offer-most-popular mt1 text-sm text-semibold">
+        <div className="text-center offer-most-popular mt-4 text-sm text-semibold">
             {header && <span className="text-uppercase color-primary">{header()}</span>}
         </div>
     );

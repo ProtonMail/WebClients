@@ -83,9 +83,9 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
                     <strong>{c('Info').t`How Hide My Email works`}</strong>
                 </div>
                 <ul className="my-0">
-                    <li className="mb1">{c('Info')
+                    <li className="mb-4">{c('Info')
                         .t`When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.`}</li>
-                    <li className="mb1">{c('Info')
+                    <li className="mb-4">{c('Info')
                         .t`Email is forwarded to your mailbox; your email address stays hidden.`}</li>
                     <li>{c('Info')
                         .t`If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.`}</li>
@@ -97,7 +97,7 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
                 <div>{installAndGoText}</div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <PrimaryButton onClick={handlePluginAction} className="mlauto" loading={loading}>
+                <PrimaryButton onClick={handlePluginAction} className="ml-auto" loading={loading}>
                     {getButtonText()}
                 </PrimaryButton>
             </ModalTwoFooter>

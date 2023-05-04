@@ -489,7 +489,7 @@ export const Sandbox = () => {
             return 'absolute';
         }
     };
-    // display: assembleClasses(selectedMargin).includes('mauto') ? 'flex' : 'flow-root'
+    // display: assembleClasses(selectedMargin).includes('m-auto') ? 'flex' : 'flow-root'
     const containerDisplay = (classes: string | string[]) => {
         if (classes.includes('m-auto') || classes.includes('mx-auto my-auto')) {
             return 'flex';

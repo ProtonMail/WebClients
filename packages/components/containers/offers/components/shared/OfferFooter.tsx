@@ -16,7 +16,7 @@ const OfferFooter = forwardRef<HTMLDivElement, Props>((props, ref) => {
     return (
         <footer ref={ref}>
             {user.isFree ? (
-                <div className="my1 text-center offers-currency-selector">
+                <div className="my-4 text-center offers-currency-selector">
                     <CurrencySelector
                         id="offers-currency-selector"
                         mode="buttons"
@@ -26,7 +26,7 @@ const OfferFooter = forwardRef<HTMLDivElement, Props>((props, ref) => {
                 </div>
             ) : null}
             {props.offer.canBeDisabled ? (
-                <div className="mb1 text-center">
+                <div className="mb-4 text-center">
                     <OfferDisableButton {...props} />
                 </div>
             ) : null}

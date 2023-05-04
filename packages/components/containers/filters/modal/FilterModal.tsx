@@ -345,7 +345,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                     />
                     {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
                     {[Step.ACTIONS, Step.PREVIEW].includes(model.step) && (
-                        <div className="mt1">
+                        <div className="mt-4">
                             <Checkbox
                                 id="applyfilter"
                                 onChange={(event) => setModel({ ...model, apply: !!event.target.checked })}

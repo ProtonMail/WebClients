@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
+
+
 import { NotificationButton } from '@proton/components';
+
 
 interface Props {
     onMoveAll: () => void;
@@ -31,7 +34,7 @@ const MoveAllNotificationButton = ({ onMoveAll, isMessage, isLabel, disabled }: 
         onClick={onMoveAll}
         disabled={disabled}
         className="ml-custom"
-        style={{ '--margin-left-custom': '-0.8em' }}
+        style={{ '--ml-custom': 'var(--space-3)' }}
     >
         {getText(isMessage, isLabel)}
     </NotificationButton>

@@ -66,7 +66,7 @@ const KeysTable = ({
                                         {fingerprint}
                                     </code>
                                     {status.isWeak && (
-                                        <PersonalKeyWarningIcon className="mlauto no-mobile flex-item-noshrink" />
+                                        <PersonalKeyWarningIcon className="ml-auto no-mobile flex-item-noshrink" />
                                     )}
                                 </div>,
                                 algorithm,

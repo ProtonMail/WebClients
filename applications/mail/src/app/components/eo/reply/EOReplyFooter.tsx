@@ -1,17 +1,24 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
+
+
 import { c } from 'ttag';
+
+
 
 import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
+
+
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
 import { MessageKeys, MessageState } from '../../../logic/messages/messagesTypes';
 import AttachmentsButton from '../../attachment/AttachmentsButton';
+
 
 interface Props {
     id: string;
@@ -53,7 +60,7 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey, 
 
     const sendButton = (
         <Button
-            className="ml1"
+            className="ml-4"
             size="large"
             color="norm"
             type="button"

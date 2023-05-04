@@ -131,7 +131,7 @@ const HeaderCollapsed = ({
                                 <ItemAttachmentIcon
                                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                     element={message.data}
-                                    className="mauto"
+                                    className="m-auto"
                                 />
                             </span>
                         )}

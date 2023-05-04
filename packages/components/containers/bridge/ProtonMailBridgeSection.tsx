@@ -125,14 +125,14 @@ const ProtonMailBridgeSection = () => {
         return (
             <div key={id} className="flex">
                 <div className="border p2 flex-item-fluid rounded flex flex-column flex-align-items-center">
-                    <Icon size={48} name={icon} className="mb1" />
+                    <Icon size={48} name={icon} className="mb-4" />
 
                     <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>
 
-                    <span className="bridge-client-version mb1 text-center">{version}</span>
+                    <span className="bridge-client-version mb-4 text-center">{version}</span>
 
                     {downloads.length > 1 && (
-                        <Select value={linuxLink} options={options} onChange={handleSelect} className="mb1" />
+                        <Select value={linuxLink} options={options} onChange={handleSelect} className="mb-4" />
                     )}
 
                     {downloads.length > 0 && (
@@ -140,7 +140,7 @@ const ProtonMailBridgeSection = () => {
                             as="a"
                             color="norm"
                             shape="solid"
-                            className="w100 mtauto"
+                            className="w100 mt-auto"
                             href={id === 'linux' ? linuxLink : downloads[0]}
                             target="_self"
                         >
@@ -164,12 +164,12 @@ const ProtonMailBridgeSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph className="mt-0 mb1" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
+            <SettingsParagraph className="mt-0 mb-4" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
                 {c('Info')
                     .t`You can use ${MAIL_APP_NAME} with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
             </SettingsParagraph>
             {hasPaidMail ? (
-                <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
+                <div className="mt-8 bridge-grid">{bridgeClients.map(renderBox)}</div>
             ) : (
                 <UpgradeBanner upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}

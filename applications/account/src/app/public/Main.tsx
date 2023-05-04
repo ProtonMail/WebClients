@@ -11,7 +11,7 @@ const Main = ({ children, className, center = true, larger, ...rest }: Props) =>
             className={clsx(
                 'ui-standard w100 relative sign-layout shadow-lifted on-tiny-mobile-no-box-shadow',
                 !larger ? 'mw30r' : '',
-                center && 'max-w100 center',
+                center && 'max-w100 mx-auto',
                 className
             )}
             {...rest}

@@ -11,7 +11,7 @@ const StepPrepareDescription = () => {
 
     return (
         <>
-            <div className="mb1">
+            <div className="mb-4">
                 {c('Info')
                     .jt`Your data is ready to import from ${importedEmailAddressStrong} to your ${BRAND_NAME} account.`}
             </div>

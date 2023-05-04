@@ -30,7 +30,7 @@ const ImportCsvContactButton = ({
     return (
         <>
             <EasySwitchOauthImportButton
-                className="mr1 mb-2"
+                className="mr-4 mb-2"
                 defaultCheckedTypes={[ImportType.CONTACTS]}
                 displayOn="GoogleContacts"
                 source={easySwitchSource}

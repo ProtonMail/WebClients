@@ -16,7 +16,7 @@ const Countdown = ({ periodEnd }: Props) => {
     }
 
     return (
-        <div className="mt1 text-center">
+        <div className="mt-4 text-center">
             {[
                 days > 0
                     ? c('specialoffer: Countdown unit').ngettext(msgid`${days} day`, `${days} days`, days)
@@ -29,7 +29,7 @@ const Countdown = ({ periodEnd }: Props) => {
                 .map((value) => {
                     const [number, unit] = value.split(' ');
                     return (
-                        <span className="inline-flex flex-column flex-nowrap flex-align-items-center mr1" key={unit}>
+                        <span className="inline-flex flex-column flex-nowrap flex-align-items-center mr-4" key={unit}>
                             <span className="bg-weak text-bold w2e offer-countdown-number py0-25 rounded">
                                 {number}
                             </span>

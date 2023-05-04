@@ -70,10 +70,10 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
             ]}
             {...rest}
         >
-            <Alert className="mb1" type="info">
+            <Alert className="mb-4" type="info">
                 {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
             </Alert>
-            <Alert className="mb1" type="error">
+            <Alert className="mb-4" type="error">
                 {alertText}
             </Alert>
         </Prompt>

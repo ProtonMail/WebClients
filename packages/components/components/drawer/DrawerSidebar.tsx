@@ -65,7 +65,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
             <Spotlight
                 content={
                     <div className="flex flex-nowrap my-2">
-                        <div className="flex-item-noshrink mr1">
+                        <div className="flex-item-noshrink mr-4">
                             <img src={drawerImg} className="w4e" alt="" />
                         </div>
                         <div>

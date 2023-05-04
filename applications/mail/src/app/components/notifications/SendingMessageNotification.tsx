@@ -83,7 +83,7 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
         return (
             <>
                 <span>{notification}</span>
-                {onUndo && <UndoNotificationButton className="mr1" onUndo={onUndo} />}
+                {onUndo && <UndoNotificationButton className="mr-4" onUndo={onUndo} />}
             </>
         );
     };

@@ -251,7 +251,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 />
             )}
 
-            <div className="mb1-75">
+            <div className="mb-6">
                 {noTitle ? (
                     content
                 ) : (

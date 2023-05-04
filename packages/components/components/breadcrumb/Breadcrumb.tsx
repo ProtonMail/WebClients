@@ -40,7 +40,7 @@ const Breadcrumb = ({ list, current = 0, onClick, className, getIsDisabled }: Pr
                         </li>
                         {!isLast && (
                             <li aria-hidden="true" className="inline-flex color-disabled">
-                                <Icon size={14} className="flex-item-noshrink mauto" name="chevron-right" />
+                                <Icon size={14} className="flex-item-noshrink m-auto" name="chevron-right" />
                             </li>
                         )}
                     </Fragment>

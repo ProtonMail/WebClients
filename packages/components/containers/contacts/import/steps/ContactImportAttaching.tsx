@@ -1,14 +1,13 @@
 import { ChangeEvent, Dispatch, DragEvent, FormEvent, SetStateAction, useState } from 'react';
 
+
+
 import { c, msgid } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
-import {
-    MAX_IMPORT_CONTACTS,
-    MAX_IMPORT_CONTACTS_STRING,
-    MAX_IMPORT_FILE_SIZE,
-    MAX_IMPORT_FILE_SIZE_STRING,
-} from '@proton/shared/lib/contacts/constants';
+import { MAX_IMPORT_CONTACTS, MAX_IMPORT_CONTACTS_STRING, MAX_IMPORT_FILE_SIZE, MAX_IMPORT_FILE_SIZE_STRING } from '@proton/shared/lib/contacts/constants';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '@proton/shared/lib/contacts/errors/ImportFileError';
 import { prepare, readCsv } from '@proton/shared/lib/contacts/helpers/csv';
@@ -18,21 +17,14 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import {
-    Alert,
-    AttachedFile,
-    Bordered,
-    Dropzone,
-    FileInput,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    onlyDragFiles,
-} from '../../../../components';
+
+
+import { Alert, AttachedFile, Bordered, Dropzone, FileInput, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, onlyDragFiles } from '../../../../components';
 import { classnames } from '../../../../helpers';
 import { useFeature } from '../../../../hooks';
 import { FeatureCode } from '../../../features';
 import { getInitialState } from '../ContactImportModal';
+
 
 const { CSV, VCF } = EXTENSION;
 
@@ -163,11 +155,11 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
     };
 
     const alert = model.failure ? (
-        <Alert className="mb1" type="error">
+        <Alert className="mb-4" type="error">
             {model.failure?.message}
         </Alert>
     ) : (
-        <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/adding-contacts')}>
+        <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/adding-contacts')}>
             {c('Description').ngettext(
                 msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
                 `The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files.`,

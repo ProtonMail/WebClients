@@ -18,9 +18,9 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
             <ModalTwoHeader title={c('Title').t`File recovery process`} closeButtonProps={{ disabled: recovering }} />
             <ModalTwoContent>
                 <div className="p1 flex w100">
-                    <img src={keyAndFileSvg} alt={title} className="w50 mauto" />
+                    <img src={keyAndFileSvg} alt={title} className="w50 m-auto" />
                 </div>
-                <Alert className="mb1 mt1">
+                <Alert className="my-4">
                     <div>{c('Info').jt`Would you like to restore your files?`}</div>
                     <div>{c('Info').jt`Recovery process might take some time.`}</div>
                 </Alert>
