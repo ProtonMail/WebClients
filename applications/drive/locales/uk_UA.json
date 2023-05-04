@@ -784,6 +784,9 @@
       "Other": [
         "Інше"
       ],
+      "Pass problem": [
+        "Проблема з Proton Pass"
+      ],
       "Payments problem": [
         "Проблема з оплатою"
       ],
@@ -3778,6 +3781,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Щоб повторно підписати контакти, нам необхідно перевірити кожен контакт на відповідність списку ключів шифрування, доступних у вашому обліковому записі. Якщо збігів не знайдеться, ваш контакт буде повторно підписано з використанням основного ключа шифрування."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Для відновлення ваших даних вам необхідно повторно активувати ключ облікового запису, що використовувався в момент створення даних. Для цього необхідно пригадати пароль, який ви використовували при генеруванні ключа."
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
@@ -4355,6 +4361,9 @@
       ],
       "Set recovery method": [
         "Налаштуйте спосіб відновлення"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Показувати прогрес індексування Захищеного Пошуку"
       ],
       "Sign emails": [
         "Підписувати листи"
