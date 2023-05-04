@@ -41,10 +41,11 @@ export default function useDownload() {
         abortSignal: AbortSignal,
         shareId: string,
         linkId: string,
-        pagination: Pagination
+        pagination: Pagination,
+        revisionId?: string
     ): Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }> => {
         let link = await getLink(abortSignal, shareId, linkId);
-        const revisionId = link.activeRevision?.id;
+        revisionId ||= link.activeRevision?.id;
         if (!revisionId) {
             throw new Error(`Invalid link metadata, expected file`);
         }
@@ -156,7 +157,12 @@ export default function useDownload() {
         return downloadThumbnailPure(url, token, () => getKeysUnsafe(abortSignal, shareId, linkId));
     };
 
-    const checkFirstBlockSignature = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+    const checkFirstBlockSignature = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkId: string,
+        revisionId?: string
+    ) => {
         const link = await getLink(abortSignal, shareId, linkId);
         if (!link.isFile) {
             return;
@@ -170,7 +176,7 @@ export default function useDownload() {
                 {
                     getChildren,
                     getBlocks: (abortSignal) =>
-                        getBlocks(abortSignal, shareId, linkId, { FromBlockIndex: 1, PageSize: 1 }),
+                        getBlocks(abortSignal, shareId, linkId, { FromBlockIndex: 1, PageSize: 1 }, revisionId),
                     getKeys: getKeysGenerator(),
                     onError: reject,
                     onNetworkError: reject,

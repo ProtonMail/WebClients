@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import {
     Tabs,
     useActiveBreakpoint,
+    useConfirmActionModal,
     useDrawerWidth,
     useElementRect,
     useRightToLeft,
@@ -18,7 +19,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useTransfersView } from '../../store';
 import { isTransferFailed } from '../../utils/transfer';
-import { useConfirmModal } from '../modals/ConfirmationModal';
 import Header from './Header';
 import HeaderButtons from './HeaderButtons';
 import Transfer from './TransferItem';
@@ -110,7 +110,7 @@ const TransferManager = ({
     const rect = useElementRect(containerRef);
     const rectHeader = useElementRect(headerRef);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
-    const [confirmModal, showConfirmModal] = useConfirmModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { isNarrow } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
 

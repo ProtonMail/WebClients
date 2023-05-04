@@ -46,6 +46,8 @@ interface Props {
     onSave?: (content: Uint8Array[]) => Promise<void>;
     onDetail?: () => void;
     onShare?: () => void;
+    onRestore?: () => void; // revision's specific
+    date?: number | Date;
 
     colorUi?: 'standard' | 'prominent';
 
@@ -173,6 +175,8 @@ const FilePreview = (
         onSave,
         onDetail,
         onShare,
+        onRestore,
+        date,
 
         colorUi = 'prominent',
     }: Props,
@@ -260,6 +264,8 @@ const FilePreview = (
                 onSave={handleSave}
                 onDetail={onDetail}
                 onShare={onShare}
+                onRestore={onRestore}
+                date={date}
             >
                 {isDirty ? (
                     <div className="flex flex-align-items-center absolute-center">{c('Info').t`Unsaved changes`}</div>

@@ -29,6 +29,7 @@ export const getInfo = (User: User) => {
         hasNonDelinquentScope: getHasNonDelinquentScope(User),
         hasPaidMail: hasPaidMail(User),
         hasPaidVpn: hasPaidVpn(User),
+        hasPaidDrive: hasPaidDrive(User),
         canPay: canPay(User),
     };
 };

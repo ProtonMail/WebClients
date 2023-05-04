@@ -248,7 +248,11 @@ export default function useUploadFile() {
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
-                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId);
+                const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
+
+                const originalIsFolder = link ? !link.isFile : false;
+
+                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
@@ -385,20 +389,6 @@ export default function useUploadFile() {
                     );
 
                     createdFileRevision.uploadFinished();
-
-                    // Replacing file should keep only one revision because we
-                    // don't use revisions now at all (UI is not ready to handle
-                    // situation that size of the file is sum of all revisions,
-                    // there is no option to list them or delete them and so on).
-                    if (createdFileRevision.previousRevisionID) {
-                        await debouncedRequest(
-                            queryDeleteFileRevision(
-                                shareId,
-                                createdFileRevision.fileID,
-                                createdFileRevision.previousRevisionID
-                            )
-                        );
-                    }
 
                     const volumeId = volumeState.findVolumeId(shareId);
                     if (volumeId) {
