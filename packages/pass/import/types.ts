@@ -2,7 +2,9 @@ import { ItemImportIntent } from '../types';
 
 export enum ImportProvider {
     BITWARDEN = 'bitwarden',
+    BRAVE = 'brave',
     CHROME = 'chrome',
+    EDGE = 'edge',
     KEEPASS = 'keepass',
     LASTPASS = 'lastpass',
     ONEPASSWORD = '1password',
