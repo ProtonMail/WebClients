@@ -13,7 +13,7 @@ import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton
 import { isValidURL } from '@proton/pass/utils/url';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useIFrameContext } from '../../iframe/IFrameContextProvider';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 
 import './Autosave.scss';
 

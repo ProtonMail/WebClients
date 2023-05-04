@@ -1,19 +1,17 @@
-import { DropdownAction } from './dropdown';
-import { FieldIconHandles } from './icon';
+import type { MaybeNull } from '@proton/pass/types';
 
-/**
- * Form types based on protonpass-fathom
- * predicted form types.
- */
+import { DropdownAction } from './dropdown';
+import type { FieldIconHandle } from './icon';
+
+/* Form types based on protonpass-fathom
+ * predicted form types */
 export enum FormType {
     LOGIN = 'login',
     REGISTER = 'register',
 }
 
-/**
- * Form field types based on protonpass-fathom
- * predicted form field
- */
+/* Form field types based on protonpass-fathom
+ * predicted form field */
 export enum FormField {
     USERNAME = 'username',
     PASSWORD = 'password',
@@ -21,11 +19,9 @@ export enum FormField {
     SUBMIT = 'submit',
 }
 
-/**
- * For each form type, specify the form fields
+/* For each form type, specify the form fields
  * we will be dealing with for icon injection,
- * auto-filling / auto-suggesting
- */
+ * auto-filling | auto-suggesting */
 export type FormFieldMap = {
     [FormType.LOGIN]: FormField.USERNAME | FormField.PASSWORD | FormField.SUBMIT;
     [FormType.REGISTER]: FormField.USERNAME | FormField.PASSWORD | FormField.SUBMIT;
@@ -44,12 +40,13 @@ export type FormFields<T extends FormType> = {
 
 export type FieldsForForm<T extends FormType> = FormFieldMap[T];
 
-export interface FormHandles<T extends FormType = FormType> {
+export interface FormHandle<T extends FormType = FormType> {
     id: string;
     formType: T;
     element: HTMLElement;
     props: { injections: { zIndex: number } };
-    fields: { [Field in FieldsForForm<T>]: FieldHandles<T, Field>[] };
+    fields: { [Field in FieldsForForm<T>]: FieldHandle<T, Field>[] };
+    listFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     tracker?: FormTracker;
     shouldRemove: () => boolean;
     shouldUpdate: () => boolean;
@@ -57,15 +54,17 @@ export interface FormHandles<T extends FormType = FormType> {
     detach: () => void;
 }
 
-export interface FieldHandles<T extends FormType = FormType, U extends FormField = FormField> {
+export interface FieldHandle<T extends FormType = FormType, U extends FormField = FormField> {
     formType: T;
     fieldType: U;
     element: FormFieldTypeMap[U];
     boxElement: HTMLElement;
-    icon: FieldIconHandles | null;
+    icon: FieldIconHandle | null;
+    action: MaybeNull<DropdownAction>;
     value: string;
-    getFormHandle: () => FormHandles<T>;
+    getFormHandle: () => FormHandle<T>;
     setValue: (value: string) => void;
+    sync: () => void;
     autofill: (value: string) => void;
     attachIcon: (action: DropdownAction) => void;
     detachIcon: () => void;

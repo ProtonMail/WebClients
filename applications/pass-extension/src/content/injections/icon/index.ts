@@ -21,7 +21,7 @@ import {
     ICON_WRAPPER_CLASSNAME,
     INPUT_STYLES_ATTR,
 } from '../../constants';
-import type { FieldHandles } from '../../types';
+import type { FieldHandle } from '../../types';
 
 type InjectionElements = {
     icon: HTMLButtonElement;
@@ -202,13 +202,11 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     }
 };
 
-/**
- * The injection styles application is a two pass process :
+/* The injection styles application is a two pass process :
  * - First correctly position the wrapper element by computing
  *   its possible margin left offset + max width
  * - Use the re-renderer wrapper element for positioning the icon
- * + Pre-compute shared styles and DOMRects between two passes
- */
+ * + Pre-compute shared styles and DOMRects between two passes */
 export const applyInjectionStyles = (elements: InjectionElements) => {
     const { input, inputBox } = elements;
 
@@ -222,7 +220,7 @@ export const applyInjectionStyles = (elements: InjectionElements) => {
     applyIconInjectionStyles(elements, sharedOptions);
 };
 
-export const createIcon = (field: FieldHandles): InjectionElements => {
+export const createIcon = (field: FieldHandle): InjectionElements => {
     const input = field.element as HTMLInputElement;
     const inputBox = field.boxElement;
 

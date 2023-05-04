@@ -1,68 +1,35 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState, WorkerStatus } from '@proton/pass/types';
-import { isMainFrame } from '@proton/pass/utils/dom';
+import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import debounce from '@proton/utils/debounce';
 
-import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
-import CSContext, { ContentScriptContext } from '../context';
-import { getAllFields } from '../handles/form';
+import { createContentScriptContext } from '../context/factory';
 import { DOMCleanUp } from '../injections/cleanup';
-import { isIFrameRootAttached } from '../injections/iframe/create-iframe-root';
-import { createFormManager } from './form/manager';
-import { createDropdown } from './iframes/dropdown';
-import { createNotification } from './iframes/notification';
 
-export const createContentScriptService = (id: string) => {
+export const createContentScriptService = (scriptId: string, mainFrame: boolean) => {
+    const context = createContentScriptContext(scriptId, mainFrame);
     const listeners = createListenerStore();
-
-    const createIFrames = () => ({
-        dropdown: createDropdown(),
-        notification: isMainFrame() ? createNotification() : null,
-    });
-
-    const context: ContentScriptContext = CSContext.set({
-        id,
-        active: true,
-        formManager: createFormManager(),
-        iframes: createIFrames(),
-        settings: INITIAL_SETTINGS,
-        state: { loggedIn: false, status: WorkerStatus.IDLE, UID: undefined },
-    });
-
-    /* Some SPA websites might wipe the whole DOM on page change :
-     * this will cause our IFrame root to be removed. If this is the
-     * case we must re-init the injected frames with the current port
-     * and the current worker state */
-    const ensureIFramesAttached = () => {
-        if (!isIFrameRootAttached()) {
-            const { port } = ExtensionContext.get();
-            context.iframes = createIFrames();
-            context.iframes.dropdown.init(port).reset(context.state);
-            context.iframes.notification?.init(port).reset(context.state);
-        }
-    };
 
     /* Only destroy the injection DOM if we're not going to
      * recycle this content-script service.  */
     const destroy = (options: { reason: string; recycle?: boolean }) => {
-        if (context.active) {
-            logger.info(`[ContentScript::${id}] destroying.. [reason: "${options.reason}"]`, options.recycle);
+        if (context.getState().active) {
+            logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
 
-            context.active = options.recycle ?? false;
-            context.formManager.sleep();
-
-            context.iframes.dropdown[options.recycle ? 'close' : 'destroy']();
-            context.iframes.notification?.[options.recycle ? 'close' : 'destroy']();
+            context.setState({ active: options.recycle ?? false });
+            context.service.formManager.destroy();
 
             listeners.removeAll();
             ExtensionContext.read()?.port.disconnect();
 
-            if (!options.recycle) DOMCleanUp();
+            if (!options.recycle) {
+                context.service.iframe.destroy();
+                DOMCleanUp();
+            }
         }
     };
 
@@ -70,25 +37,19 @@ export const createContentScriptService = (id: string) => {
         const { loggedIn, UID } = workerState;
         setSentryUID(UID);
 
-        context.state = workerState;
-        context.iframes.dropdown.reset(workerState);
+        context.setState(workerState);
+        context.service.iframe.reset();
+        context.service.formManager.sync();
 
-        context.formManager.getForms().forEach((form) => {
-            const fields = getAllFields(form);
-            fields.forEach((field) => {
-                field.icon?.setStatus(workerState.status);
-                return !loggedIn && field?.icon?.setCount(0);
-            });
-        });
-
-        if (!loggedIn) {
-            context.formManager.autofill.setLoginItemsCount(0);
-            context.iframes.notification?.reset?.(workerState);
-        }
+        if (!loggedIn) context.service.autofill.setLoginItemsCount(0);
     };
 
     const onSettingsChange = (settings: ProxiedSettings) => {
-        context.settings = settings;
+        context.setSettings(settings);
+        context.service.iframe.reset();
+        context.service.formManager.sync();
+
+        void context.service.autofill.queryItems();
     };
 
     const onPortMessage = async (message: WorkerMessageWithSender): Promise<void> => {
@@ -101,7 +62,7 @@ export const createContentScriptService = (id: string) => {
                 case WorkerMessageType.SETTINGS_UPDATE:
                     return onSettingsChange(message.payload);
                 case WorkerMessageType.AUTOFILL_SYNC:
-                    return context.formManager.autofill.setLoginItemsCount(message.payload.count);
+                    return context.service.autofill.setLoginItemsCount(message.payload.count);
             }
         }
     };
@@ -114,23 +75,25 @@ export const createContentScriptService = (id: string) => {
             })
         );
 
-        if (res.type === 'success' && context.active) {
+        if (res.type === 'success' && context.getState().active) {
             const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-            logger.info(`[ContentScript::${id}] Worker status resolved "${workerState.status}"`);
+            logger.info(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
 
-            ensureIFramesAttached();
-
-            context.iframes.dropdown.init(port);
-            context.iframes.notification?.init(port);
+            context.service.iframe.attach(port);
 
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings!);
 
-            context.formManager.detect('VisibilityChange');
-            context.formManager.observe();
+            context.service.formManager.detect('VisibilityChange');
+            context.service.formManager.observe();
 
             port.onMessage.addListener(onPortMessage);
-            listeners.addObserver(debounce(ensureIFramesAttached, 500), document.body, { childList: true });
+
+            listeners.addObserver(
+                debounce(() => context.service.iframe.attach(port), 500),
+                document.body,
+                { childList: true }
+            );
         }
     };
 
@@ -139,13 +102,13 @@ export const createContentScriptService = (id: string) => {
             const extensionContext = await setupExtensionContext({
                 endpoint: 'content-script',
                 onDisconnect: () => destroy({ recycle: true, reason: 'port disconnected' }),
-                onContextChange: (nextCtx) => context.active && handleStart(nextCtx),
+                onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
             });
 
-            logger.info(`[ContentScript::${id}] Registering content-script`);
+            logger.info(`[ContentScript::${scriptId}] Registering content-script`);
             return await handleStart(extensionContext);
         } catch (e) {
-            logger.warn(`[ContentScript::${id}] Setup error`, e);
+            logger.warn(`[ContentScript::${scriptId}] Setup error`, e);
             destroy({ recycle: true, reason: 'setup error' });
         }
     };

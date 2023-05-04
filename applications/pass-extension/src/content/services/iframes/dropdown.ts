@@ -6,14 +6,13 @@ import { first } from '@proton/pass/utils/array';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
-import { ExtensionContext } from '../../../shared/extension';
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
-import CSContext from '../../context';
-import { canProcessAction } from '../../handles/field';
+import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
 import type { DropdownSetActionPayload, DropdownState, InjectedDropdown, OpenDropdownOptions } from '../../types';
 import { DropdownAction, FormType } from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
+import { canProcessAction } from '../handles/field';
 
 export const createDropdown = (): InjectedDropdown => {
     const state: DropdownState = { field: undefined };
@@ -27,9 +26,7 @@ export const createDropdown = (): InjectedDropdown => {
         getIframePosition: (iframeRoot) => {
             const field = state.field;
 
-            if (!field) {
-                return { top: 0, left: 0 };
-            }
+            if (!field) return { top: 0, left: 0 };
 
             const bodyTop = iframeRoot.getBoundingClientRect().top;
             /* FIXME: should account for boxElement and offsets */
@@ -50,58 +47,70 @@ export const createDropdown = (): InjectedDropdown => {
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive detection : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = async ({ field, action, focus }: OpenDropdownOptions) => {
-        await waitUntil(() => iframe.state.ready, 50);
+    const open = withContext<(options: OpenDropdownOptions) => Promise<void>>(
+        async (
+            { service: { autofill, alias }, getState, getSettings, getExtensionContext },
+            { field, action, focus }
+        ) => {
+            await waitUntil(() => iframe.state.ready, 50);
 
-        state.field = field;
-        const icon = field.icon;
+            state.field = field;
+            field.icon?.setLoading(true);
 
-        icon?.setLoading(true);
+            const { loggedIn } = getState();
 
-        const payload = await (async (): Promise<DropdownSetActionPayload> => {
-            const { formManager, state } = CSContext.get();
-            switch (action) {
-                case DropdownAction.AUTOFILL: {
-                    const items = state.loggedIn ? await formManager.autofill.queryItems() : [];
-                    return { action, items };
+            const payload = await (async (): Promise<DropdownSetActionPayload> => {
+                switch (action) {
+                    case DropdownAction.AUTOFILL: {
+                        const items = loggedIn ? await autofill.queryItems() : [];
+                        return { action, items };
+                    }
+                    case DropdownAction.AUTOSUGGEST_ALIAS: {
+                        const options = loggedIn ? await alias.getOptions() : null;
+                        return { action, options, realm: getExtensionContext().realm! };
+                    }
+                    case DropdownAction.AUTOSUGGEST_PASSWORD: {
+                        return { action };
+                    }
                 }
-                case DropdownAction.AUTOSUGGEST_ALIAS: {
-                    const options = state.loggedIn ? await formManager.alias.getOptions() : null;
-                    return { action, options, realm: ExtensionContext.get().realm! };
+            })();
+
+            /* If the opening action is coming from a focus event
+             * for an autofill action and the we have no login
+             * items that match the current domain, avoid auto-opening
+             * the dropdown */
+            const validFocusAction = !(
+                focus &&
+                payload.action === DropdownAction.AUTOFILL &&
+                payload.items.length === 0
+            );
+            const shouldProcessAction = canProcessAction(payload.action, getSettings());
+
+            if (shouldProcessAction && validFocusAction) {
+                iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+                const scrollParent = getScrollParent(field.element);
+
+                if (!iframe.state.visible) {
+                    void sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.TELEMETRY_EVENT,
+                            payload: {
+                                event: createTelemetryEvent(
+                                    TelemetryEventName.AutofillDisplay,
+                                    {},
+                                    { location: 'source' }
+                                ),
+                            },
+                        })
+                    );
                 }
-                case DropdownAction.AUTOSUGGEST_PASSWORD: {
-                    return { action };
-                }
+
+                iframe.open(scrollParent);
             }
-        })();
 
-        /* If the opening action is coming from a focus event
-         * for an autofill action and the we have no login
-         * items that match the current domain, avoid auto-opening
-         * the dropdown */
-        const validFocusAction = !(focus && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0);
-        const shouldProcessAction = canProcessAction(payload.action, CSContext.get().settings);
-
-        if (shouldProcessAction && validFocusAction) {
-            iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
-            const scrollParent = getScrollParent(field.element);
-
-            if (!iframe.state.visible) {
-                void sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.TELEMETRY_EVENT,
-                        payload: {
-                            event: createTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' }),
-                        },
-                    })
-                );
-            }
-
-            iframe.open(scrollParent);
+            field.icon?.setLoading(false);
         }
-
-        icon?.setLoading(false);
-    };
+    );
 
     /* On a login autofill request - resolve the credentials via
      * worker communication and autofill the parent form of the

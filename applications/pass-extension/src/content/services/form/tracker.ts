@@ -9,13 +9,12 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 
 import { DETECTED_FORM_ID_ATTR, EMAIL_PROVIDERS } from '../../constants';
-import CSContext from '../../context';
-import { getAllFields } from '../../handles/form';
-import { DropdownAction, type FormHandles, type FormTracker, FormType } from '../../types';
+import { withContext } from '../../context/context';
+import { DropdownAction, type FormHandle, type FormTracker, FormType } from '../../types';
 
 const { isVisible } = fathom.utils;
 
-export const createFormTracker = (form: FormHandles): FormTracker => {
+export const createFormTracker = (form: FormHandle): FormTracker => {
     logger.debug(`[FormTracker]: Tracking form [${form.formType}:${form.id}]`);
     const context = { isSubmitting: false };
 
@@ -34,8 +33,9 @@ export const createFormTracker = (form: FormHandles): FormTracker => {
         };
     };
 
-    const onSubmitHandler = async () => {
-        CSContext.get().iframes.dropdown.close();
+    const onSubmitHandler = withContext(async ({ service: { iframe } }) => {
+        iframe.apps.dropdown?.close();
+
         const { username, password } = getFormData();
 
         if (!context.isSubmitting && username !== undefined) {
@@ -65,17 +65,15 @@ export const createFormTracker = (form: FormHandles): FormTracker => {
              */
             setTimeout(() => (context.isSubmitting = false), 500);
         }
-    };
+    });
 
-    /**
-     * Icon injection depends on form type :
+    /* Icon injection depends on form type :
      * - LOGIN : match first visible element of interest
      *   in order to support multi-step forms for autofill
      * - REGISTER : match first username & password fields
-     *   for auto-suggestion action
-     */
-    const injectFieldIcon = (form: FormHandles): void => {
-        getAllFields(form).forEach((field) => field.detachIcon());
+     *   for auto-suggestion action */
+    const injectFieldIcon = (form: FormHandle): void => {
+        form.listFields().forEach((field) => field.detachIcon());
 
         switch (form.formType) {
             case FormType.LOGIN: {
@@ -109,7 +107,7 @@ export const createFormTracker = (form: FormHandles): FormTracker => {
 
     const detach = () => {
         listeners.removeAll();
-        getAllFields(form).forEach((field) => {
+        form.listFields().forEach((field) => {
             field.detachListeners();
             field.detachIcon();
         });
