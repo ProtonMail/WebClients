@@ -83,6 +83,7 @@ export type IconName =
     | 'brand-proton-calendar'
     | 'brand-proton-drive'
     | 'brand-proton-mail'
+    | 'brand-proton-mail-filled'
     | 'brand-proton-vpn'
     | 'brand-simple-login'
     | 'brand-tor'

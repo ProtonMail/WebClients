@@ -1,16 +1,11 @@
 import { useMemo, useState } from 'react';
 
-
-
 import { c, msgid } from 'ttag';
 
-
-
-import { Button } from '@proton/atoms';
-import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { Button, Href } from '@proton/atoms';
+import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
-
-
 
 import { Alert, Loader, SettingsLink, useModalState } from '../../components';
 import { useAddresses, useMemberAddresses, useMembers, useNotifications, useOrganizationKey } from '../../hooks';
@@ -18,7 +13,6 @@ import { SettingsParagraph } from '../account';
 import AddressModal from './AddressModal';
 import AddressesTable from './AddressesTable';
 import AddressesWithUser from './AddressesWithUser';
-
 
 const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: boolean) => {
     const newMemberIndex =
@@ -101,8 +95,11 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const children = (
         <>
             <SettingsParagraph className="mt-2">
-                {c('Info')
-                    .t`The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.`}
+                <span>
+                    {c('Info').t`Use the different types of email addresses and aliases offered by ${BRAND_NAME}.`}
+                </span>
+                <br />
+                <Href href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link').t`Learn more`}</Href>
             </SettingsParagraph>
 
             {currentMember && !user.isSubUser && (
@@ -134,7 +131,12 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
             )}
 
             {isSelfSelected ? (
-                <AddressesWithUser user={user} member={currentMember} organizationKey={organizationKey} />
+                <AddressesWithUser
+                    user={user}
+                    member={currentMember}
+                    organizationKey={organizationKey}
+                    hasDescription={false}
+                />
             ) : (
                 <AddressesTable
                     hasUsername={hasUsernameDisplay}

@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import { SectionConfig } from '@proton/components';
+import Href from '@proton/atoms/Href/Href';
+import { SidebarConfig } from '@proton/components';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
@@ -29,14 +31,17 @@ export const getMailAppRoutes = ({
     organization: Organization;
     isSpyTrackerEnabled: boolean;
     isSmtpTokenEnabled: boolean;
-}) => {
+}): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
     const isB2BOrganization = (organization?.MaxMembers || 0) > 6;
     const hasSmtpOrganization = hasSMTPSubmission(organization);
-    return <const>{
+
+    const learnMoreLink = <Href href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>;
+
+    return {
         header: MAIL_APP_NAME,
         routes: {
-            general: <SectionConfig>{
+            general: {
                 text: c('Title').t`Messages and composing`,
                 to: '/general',
                 icon: 'grid-2',
@@ -60,14 +65,14 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            privacy: <SectionConfig>{
+            privacy: {
                 text: c('Title').t`Email privacy`,
                 to: '/email-privacy',
                 icon: 'shield',
                 available: isSpyTrackerEnabled,
                 subsections: [{ id: 'email-privacy' }],
             },
-            identity: <SectionConfig>{
+            identity: {
                 text: c('Title').t`Identity and addresses`,
                 to: '/identity-addresses',
                 icon: 'card-identity',
@@ -82,7 +87,7 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            appearance: <SectionConfig>{
+            appearance: {
                 text: c('Title').t`Appearance`,
                 to: '/appearance',
                 icon: 'paint-roller',
@@ -101,12 +106,12 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            folder: <SectionConfig>{
+            folder: {
                 text: c('Title').t`Folders and labels`,
                 to: '/folders-labels',
                 icon: 'tags',
                 description: c('Settings description')
-                    .t`You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.`,
+                    .jt`Keep your inbox organized with folders and labels. ${learnMoreLink}`,
                 subsections: [
                     {
                         text: c('Title').t`Folders`,
@@ -118,7 +123,7 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            filter: <SectionConfig>{
+            filter: {
                 text: c('Title').t`Filters`,
                 to: '/filters',
                 icon: 'filter',
@@ -133,13 +138,13 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            autoReply: <SectionConfig>{
+            autoReply: {
                 text: c('Title').t`Auto-reply`,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
                 subsections: [{ id: 'auto-reply' }],
             },
-            domainNames: <SectionConfig>{
+            domainNames: {
                 text: c('Title').t`Domain names`,
                 to: '/domain-names',
                 icon: 'globe',
@@ -152,7 +157,7 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            keys: <SectionConfig>{
+            keys: {
                 text: c('Title').t`Encryption and keys`,
                 to: '/encryption-keys',
                 icon: 'lock-filled',
@@ -175,7 +180,7 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            imap: <SectionConfig>{
+            imap: {
                 text: c('Title').t`IMAP/SMTP`,
                 to: '/imap-smtp',
                 icon: 'servers',
@@ -191,7 +196,7 @@ export const getMailAppRoutes = ({
                     },
                 ],
             },
-            backup: <SectionConfig>{
+            backup: {
                 text: c('Title').t`Backup and export`,
                 to: '/backup-export',
                 icon: 'arrow-up-from-square',

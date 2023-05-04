@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import {
     Checkbox,
     Icon,
+    LabelsUpsellModal,
     Mark,
     PrimaryButton,
     SearchInput,
@@ -14,10 +15,12 @@ import {
     useLabels,
     useLoading,
     useModalState,
+    useUser,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
-import { LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -106,9 +109,9 @@ interface Props {
 }
 
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
-    const [labels = []] = useLabels();
-
     const [uid] = useState(generateUID('label-dropdown'));
+    const [labels = []] = useLabels();
+    const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
@@ -129,6 +132,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const createLabelButtonText = c('Title').t`Create label "${search}"`;
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
@@ -252,8 +256,15 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     };
 
     const handleCreate = () => {
+        // Set focus state to lock the dropdown
+        // We need this otherwise modal that is rendered in the dropdown will be closed if dropdown disappear from the DOM
         setContainFocus(false);
-        setEditLabelModalOpen(true);
+
+        if (hasReachedLabelLimit(user, labels)) {
+            handleUpsellModalDisplay(true);
+        } else {
+            setEditLabelModalOpen(true);
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -292,14 +303,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                         <Icon name="tag" /> +
                     </Button>
                 </Tooltip>
-                {renderLabelModal && (
-                    <EditLabelModal
-                        label={newLabel}
-                        onAdd={(label) => handleAddNewLabel(label)}
-                        onCloseCustomAction={() => setContainFocus(true)}
-                        {...editLabelProps}
-                    />
-                )}
             </div>
             <div className="flex-item-noshrink m1 mb-0">
                 <SearchInput
@@ -409,6 +412,24 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             {moveScheduledModal}
             {moveAllModal}
             {moveToSpamModal}
+            {renderLabelModal && (
+                <EditLabelModal
+                    label={newLabel}
+                    onAdd={(label) => handleAddNewLabel(label)}
+                    onCloseCustomAction={() => setContainFocus(true)}
+                    {...editLabelProps}
+                />
+            )}
+            {renderUpsellModal && (
+                <LabelsUpsellModal
+                    modalProps={upsellModalProps}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS}
+                    onCloseCustomAction={() => {
+                        setContainFocus(true);
+                        onClose();
+                    }}
+                />
+            )}
         </form>
     );
 };

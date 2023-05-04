@@ -1,19 +1,20 @@
 import React from 'react';
 
-
-
 import { c } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms/Button';
-import { Icon, Info, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useSettingsLink } from '@proton/components/components';
+import {
+    Icon,
+    Info,
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
+    useSettingsLink,
+} from '@proton/components/components';
 import headerImage from '@proton/styles/assets/img/illustrations/upsell-header.svg';
 
-
-
 import { UpsellFeatureName, upsellFeatures } from './constants';
-
 
 type UpsellBoxProps = Required<
     Pick<UpsellModalProps, 'description' | 'title' | 'features'> & { handleUpgrade: () => void }
@@ -67,6 +68,7 @@ export interface UpsellModalProps {
     modalProps: ModalStateProps;
     title: string;
     upsellRef: string;
+    onClose?: () => void;
 }
 
 const UpsellModal = ({
@@ -76,6 +78,7 @@ const UpsellModal = ({
     title,
     upsellRef,
     'data-testid': dataTestid,
+    onClose,
 }: UpsellModalProps) => {
     const goToSettings = useSettingsLink();
     const handleUpgrade = () => {
@@ -83,8 +86,13 @@ const UpsellModal = ({
         modalProps.onClose();
     };
 
+    const handleClose = () => {
+        onClose?.();
+        modalProps.onClose();
+    };
+
     return (
-        <ModalTwo data-testid={dataTestid} {...modalProps}>
+        <ModalTwo data-testid={dataTestid} {...modalProps} onClose={handleClose}>
             <ModalTwoHeader />
             <ModalTwoContent>
                 <UpsellBox title={title} description={description} features={features} handleUpgrade={handleUpgrade} />
