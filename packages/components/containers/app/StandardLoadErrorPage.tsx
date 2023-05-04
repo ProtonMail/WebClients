@@ -38,7 +38,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
 
     return (
         <div className="h100 flex flex-align-items-center pb4 scroll-if-needed">
-            <GenericError>
+            <GenericError isNetworkError>
                 <span>{c('Error message').t`We couldn't load this page. `}</span>
                 <span>
                     {
