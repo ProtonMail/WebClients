@@ -7,7 +7,7 @@ export const handleForkFallback = () =>
         try {
             if (message.data && message.data.type === 'fork') {
                 const { keyPassword, selector, state, persistent, trusted } = message.data.payload;
-                await sendMessage.onSuccess(
+                await sendMessage.on(
                     contentScriptMessage({
                         type: WorkerMessageType.FORK,
                         payload: {
@@ -18,7 +18,7 @@ export const handleForkFallback = () =>
                             trusted,
                         },
                     }),
-                    () => window.postMessage({ fork: 'success' })
+                    (message) => window.postMessage({ fork: 'success', ...message })
                 );
             }
         } catch (e) {
