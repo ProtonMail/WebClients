@@ -1,12 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useConfirmModal } from '../../components/modals/ConfirmationModal';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
@@ -25,9 +24,9 @@ import useListNotifications from './useListNotifications';
  *
  * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash/stopSharingLinks
  */
-export default function useAction() {
+export default function useActions() {
     const { showErrorNotification } = useErrorHandler();
-    const [confirmModal, showConfirmModal] = useConfirmModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { createNotification } = useNotifications();
     const {
         createMovedItemsNotifications,

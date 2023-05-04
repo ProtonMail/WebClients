@@ -95,6 +95,7 @@ export { default as usePrimaryRecoverySecret } from './usePrimaryRecoverySecret'
 export { default as usePromiseResult } from './usePromiseResult';
 export { default as useRecoverySecrets } from './useRecoverySecrets';
 export { default as useRecoveryStatus } from './useRecoveryStatus';
+export { default as useRevisionRetentionDays } from './useRevisionRetentionDays';
 export { default as useSearch } from './useSearch';
 export { default as useRecoveryNotification } from './useRecoveryNotification';
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';

@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Tooltip } from '@proton/components';
+import { DropdownMenuButton, Tooltip, useConfirmActionModal } from '@proton/components';
 
 import { useSearchControl } from '../../../store';
-import { useConfirmModal } from '../../modals/ConfirmationModal';
 
 interface Props {
-    showConfirmModal: ReturnType<typeof useConfirmModal>[1];
+    showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 export default function ClearSearchDataButton({ showConfirmModal }: Props) {
     const { searchEnabled, hasData, deleteData } = useSearchControl();

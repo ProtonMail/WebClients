@@ -30,6 +30,13 @@ export const DEFAULT_SORT_ORDER: SORT_DIRECTION = SORT_DIRECTION.DESC;
 export const DEFAULT_USER_SETTINGS: UserSettings = {
     Layout: LayoutSetting.List,
     Sort: SortSetting.ModifiedDesc,
+    RevisionRetentionDays: 7,
+};
+
+export const DEFAULT_PAID_USER_SETTINGS: UserSettings = {
+    Layout: LayoutSetting.List,
+    Sort: SortSetting.ModifiedDesc,
+    RevisionRetentionDays: 180,
 };
 
 export const UPLOAD_TIMEOUT = 90000;
