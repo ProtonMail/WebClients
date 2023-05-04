@@ -4205,8 +4205,8 @@
         "Für 30 Monate mit ${ amount } abgerechnet"
       ],
       "for ${ n } month": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
+        "für ${ n } Monat",
+        "für ${ n } Monate"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -4828,6 +4828,9 @@
       ],
       "Plans": [
         "Abonnements"
+      ],
+      "Preview": [
+        "Vorschau"
       ],
       "Previous": [
         "Zurück"

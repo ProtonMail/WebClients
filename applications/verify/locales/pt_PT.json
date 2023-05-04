@@ -21,7 +21,7 @@
         "Continuar"
       ],
       "Edit email address": [
-        "Editar o endereço de correio electrónico"
+        "Editar o endereço de email"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
@@ -894,6 +894,9 @@
       ]
     },
     "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Um número de telemóvel pode ser usado para verificar apenas uma conta ${ BRAND_NAME }"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
       ],
@@ -902,6 +905,9 @@
       ],
       "Country code": [
         "Código de país"
+      ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma vez"
       ],
       "Enter the code from your authenticator app": [
         "Introduza o código da sua aplicação de autenticação."
@@ -944,6 +950,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Gostaria de receber um novo código de verificação?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
@@ -1018,8 +1027,12 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres",
         "A palavra-passe deve conter pelo menos ${ length } caracteres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de caracter ${ n })",
+        "Tente um nome de utilizador mais pequeno (máximo de caracteres ${ n })"
       ]
     }
   }

@@ -1167,6 +1167,9 @@
       "Other": [
         "Інше"
       ],
+      "Pass problem": [
+        "Проблема з Proton Pass"
+      ],
       "Payments problem": [
         "Проблема з оплатою"
       ],
@@ -4727,6 +4730,9 @@
       "Align right": [
         "Вирівняти праворуч"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Всі додатки від ${ BRAND_NAME } та їхні преміальні функції"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Усі (${ totalFoldersCount } тека)",
         "Усі (${ totalFoldersCount } теки)",
@@ -5974,6 +5980,9 @@
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Update recovery file": [
         "Оновити файл відновлення"
@@ -8503,6 +8512,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8549,6 +8578,9 @@
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Комплект із приватності та безпеки для компаній, включно з преміумслужбами ${ BRAND_NAME }."
       ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Захистіть приватність вашої родити з усіма сервісами від ${ BRAND_NAME } водночас."
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
       ],
@@ -8572,26 +8604,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8703,6 +8715,9 @@
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Створюйте до ${ n } адрес електронної пошти/псевдонімів для всієї родини. Використовуйте їх для своїх онлайн сутностей, наприклад, MyFamilySubs@${ domain } для онлайн підписок."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -8726,6 +8741,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Залиште ваші та родинні особисті плани приватними з зашифрованим календарем"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Захищає вас, блокуючи всі мережеві з'єднання під час неочікуваного відімкнення від нашого VPN-сервера."
@@ -8766,6 +8784,9 @@
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Захистіть кожен пристрій у своїй мережі WiFi. Також це корисно для пристроїв, які не підтримують безпосередньо налаштування VPN."
       ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Захистіть свою родину від шкідливих вебсайтів та підключайтесь до наших швидкісних VPN-серверів, щоб переглядати онлайн улюблений контент"
+      ],
       "Quickly set up out-of-office messages": [
         "Швидко налаштовуйте автоматичні відповіді"
       ],
@@ -8780,6 +8801,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Спрямовуйте свій інтернет-трафік через мережу Tor одним натиском"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Захистіть свої файли у зашифрованому хмарному сховищі, включаючи автоматичну синхронізацію, зашифрований обмін файлами та багато іншого."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження та особисті примітки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для ${ BRAND_NAME }."
@@ -10351,6 +10375,9 @@
       ],
       "Account and password": [
         "Обліковий запис і пароль"
+      ],
+      "Account keys": [
+        "Ключі облікового запису"
       ],
       "Account recovery": [
         "Відновлення облікового запису"

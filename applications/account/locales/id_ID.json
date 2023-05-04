@@ -6501,6 +6501,9 @@
       "Export private key": [
         "Ekspor kunci pribadi"
       ],
+      "Export public key": [
+        "Ekspor kunci publik"
+      ],
       "Make primary": [
         "Jadikan yang utama"
       ],
@@ -7514,6 +7517,9 @@
       "Add a gift code": [
         "Tambahkan kode hadiah"
       ],
+      "Apps and extensions": [
+        "Aplikasi dan ekstensi"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -8006,11 +8012,20 @@
       "${ n } folders and labels": [
         "${ n } folder and label"
       ],
+      "${ n } forwarding mailboxes": [
+        "${ n } kotak surat untuk penerusan"
+      ],
+      "${ n } Hide My Email aliases": [
+        "${ n } alias Hide My Email"
+      ],
       "${ n } labels": [
         "${ n } label"
       ],
       "${ n } messages per day": [
         "${ n } pesan per hari"
+      ],
+      "${ n } vaults": [
+        "${ n } brankas"
       ],
       "${ n } VPN connections": [
         "${ n } koneksi VPN"
@@ -8105,6 +8120,9 @@
       "HTML signatures": [
         "Tanda tangan HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA yang terintegrasi"
+      ],
       "Kill switch/always-on VPN": [
         "Fitur kill switch/always-on VPN"
       ],
@@ -8158,6 +8176,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Strong E2E encryption": [
+        "Enkripsi E2E yang kuat"
       ],
       "Team management": [
         "Manajemen tim"
@@ -8225,6 +8246,26 @@
       ],
       "Team management": [
         "Manajemen tim"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8299,26 +8340,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11062,6 +11083,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Tingkatkan ke ${ passPlusPlanName } untuk memperoleh alias Hide My Email tanpa batas"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "Tingkatkan akun Anda ke ${ planName } untuk dapat menghubungkan ${ n } perangkat ke jaringan VPN secara bersamaan"
       ]
@@ -11122,6 +11146,17 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {

@@ -97,6 +97,9 @@
       "Archive": [
         "アーカイブ"
       ],
+      "As Scheduled": [
+        "予定通り"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -970,6 +973,9 @@
       "Skip verification": [
         "検証をスキップする"
       ],
+      "Some images could not be loaded with tracker protection.": [
+        "一部の画像はトラッキング防止により読み込まれませんでした。"
+      ],
       "Star": [
         "星印を付ける"
       ],
@@ -1023,6 +1029,9 @@
       ],
       "Turn on tracker protection": [
         "トラッカー防止を有効にする"
+      ],
+      "Unblock": [
+        "ブロックを解除する"
       ],
       "Underline": [
         "下線"
@@ -4335,6 +4344,9 @@
       "(No Recipient)": [
         "(宛先なし)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "回復用フレーズはアカウントへのアクセスを保護するための手段のうちの 1 つです。回復用フレーズを使用すると、パスワードを忘れた場合でもアカウントにアクセスしたり暗号化されたデータを復元したりすることができます。"
       ],
@@ -4388,6 +4400,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "このフォルダー内のすべてのラベルを削除してよろしいですか?"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "本当にこのフォルダーを削除してよろしいですか？サブフォルダーもすべて削除されます。"
       ],
       "Are you sure you want to delete this label?": [
         "このラベルを削除してよろしいですか?"
@@ -4628,6 +4643,12 @@
       ],
       "Expires in ${ formattedDate }": [
         "${ formattedDate } に期限が切れます"
+      ],
+      "Expires in ${ minutesDiff } minutes": [
+        "有効期限は ${ minutesDiff } 分です。"
+      ],
+      "Expires in less than ${ hoursDiff } hours": [
+        "有効期限は ${ hoursDiff } 時間未満です。"
       ],
       "files attached": [
         "個のファイル添付"
@@ -4935,6 +4956,9 @@
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
+      "Preview for this file type is not supported": [
+        "申し訳ございません、このファイル形式はサポートされておりません"
+      ],
       "Primary": [
         "プライマリー"
       ],
@@ -4998,6 +5022,9 @@
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
+      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "パスワード保護され暗号化されたメッセージを${ boldText } メールアドレスに送信します。"
       ],
@@ -5012,6 +5039,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます。"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> セキュアなメールで送信されます。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -5157,6 +5187,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "このメッセージは ${ longDateMEssage } に自動的に削除されます。"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "このメッセージは ${ shortDateMessage } に自動的に削除されます。"
+      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "編集のため、このメッセージは下書きへ移動されます。送信するにはもう一度、送信を予約する必要があります。"
       ],
@@ -5174,6 +5210,9 @@
       ],
       "This message will expire ${ formattedDate }": [
         "このメッセージの期限は ${ formattedDate } までです"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "このメッセージの有効期限は ${ longDateMEssage } です。"
       ],
       "This message will expire today at ${ shortDateMessage }": [
         "このメッセージの有効期限は今日の ${ shortDateMessage } までです"
@@ -5195,6 +5234,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "このニュースレターの配信を解除するには、送信元が指定している方法に基づき${ boldFrom }からのメールを受信することになります。"
@@ -5225,6 +5267,9 @@
       ],
       "Updating message content search...": [
         "メッセージ内容の検索を更新中..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
       "Upgrade to add more addresses to your account.": [
         "アップグレードして更なるアドレスを手に入れましょう。"
@@ -6414,6 +6459,9 @@
       "Almost there": [
         "もう少しです"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "カレンダーの作成数：${ createdCalendarCount } のうち、${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
       ],
@@ -6428,6 +6476,20 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } の全メッセージをインポートし、ラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
       ]
     },
     "Mailbox": {

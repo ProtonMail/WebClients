@@ -3341,8 +3341,20 @@
       "Contact groups management": [
         "Управление группами контактов"
       ],
+      "Custom domain for email aliases": [
+        "Пользовательский домен для псевдонимов электронной почты"
+      ],
+      "Custom domains for email aliases": [
+        "Пользовательские домены для псевдонимов электронной почты"
+      ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
+      ],
+      "Data breach monitoring": [
+        "Отслеживание утечек данных"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Отслеживание утечек данных (скоро появится)"
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
@@ -3383,6 +3395,9 @@
       "HTML signatures": [
         "Подписи HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Встроенная двухфакторная аутентификация"
+      ],
       "Kill switch/always-on VPN": [
         "Kill Switch и VPN постоянно вкл."
       ],
@@ -3391,6 +3406,9 @@
       ],
       "Multiple admin roles": [
         "Несколько должностей администраторов"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Несколько почтовых ящиков для пересылки"
       ],
       "NetShield malware and ad-blocker": [
         "Блокировщик вредоносных программ и рекламы NetShield"
@@ -3431,6 +3449,9 @@
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
+      "Strong E2E encryption": [
+        "Надежное сквозное шифрование"
+      ],
       "Team management": [
         "Управление командой"
       ],
@@ -3439,6 +3460,9 @@
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
+      ],
+      "Unlimited devices": [
+        "Неограниченное число устройств"
       ],
       "Unlimited filters": [
         "Неограниченное количество фильтров"
@@ -3449,11 +3473,20 @@
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Неограниченное число псевдонимов Hide My Email"
+      ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited passwords and notes": [
+        "Неограниченное число паролей и заметок"
+      ],
+      "Unlimited vaults": [
+        "Неограниченное число хранилищ"
       ],
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
@@ -3472,6 +3505,12 @@
       ],
       "User session management": [
         "Управление сеансом пользователя"
+      ],
+      "Vault and Item sharing": [
+        "Совместный доступ к хранилищам и элементам"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Совместный доступ к хранилищам и элементам (скоро появится)"
       ],
       "Worldwide streaming services": [
         "Стриминговые сервисы со всего мира"
@@ -3509,6 +3548,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
+      ],
+      "For next-level password management and identity protection.": [
+        "Для нового уровня управления паролями и защиты личных данных."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Если вы удалите аккаунт, то потеряете все преимущества тарифа ${ visionary } и он не будет доступен, если вы создадите новый аккаунт."
@@ -3715,6 +3757,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Хранилище — это удобный способ хранения элементов, как папка. Возможность делиться хранилищами с друзьями и семьей пока в разработке."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Управляйте своей подпиской, включая настройку вашего тарифа. Принимаются следующие способы оплаты: кредитная карта, PayPal, криптовалюта и банковский перевод."
       ],
@@ -3798,6 +3843,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Уникальные, сгенерированные по запросу адреса электронной почты защищают ваши данные и позволяют вам решать, что попадет в ваш почтовый ящик. Благодаря SimpleLogin от ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
@@ -4223,10 +4271,10 @@
         "Оплата ${ amount } за 30 месяцев."
       ],
       "for ${ n } month": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минуты"
+        "за ${ n } месяц",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -4874,6 +4922,9 @@
       ],
       "Plans": [
         "Тарифы"
+      ],
+      "Preview": [
+        "Предпросмотр"
       ],
       "Previous": [
         "Назад"

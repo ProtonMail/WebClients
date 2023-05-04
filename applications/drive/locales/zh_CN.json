@@ -222,7 +222,7 @@
         "更改"
       ],
       "Edit email address": [
-        "编辑电子邮件地址"
+        "更改邮箱地址"
       ],
       "Edit label": [
         "编辑标签"
@@ -4507,7 +4507,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+        "在邮件发送密钥的用户 ID（${ keyUserIds }）中找不到本邮箱地址"
       ]
     },
     "Placeholder": {
@@ -4563,7 +4563,7 @@
         "选择"
       ],
       "Start typing an email address": [
-        "开始输入电子邮件地址"
+        "请输入邮箱地址"
       ]
     },
     "Placeholder for contact group name": {
