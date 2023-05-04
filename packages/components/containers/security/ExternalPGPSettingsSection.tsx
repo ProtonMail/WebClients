@@ -28,6 +28,7 @@ const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalPr
                         onConfirm(true);
                         rest.onClose?.();
                     }}
+                    data-testid="automatically-sign-modal:confirm"
                 >{c('Action').t`Yes`}</Button>,
                 <Button
                     onClick={() => {
