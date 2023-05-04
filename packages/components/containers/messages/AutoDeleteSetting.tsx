@@ -19,7 +19,7 @@ interface Props {
 const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
     const api = useApi();
     const { feature: autoDeleteFeature } = useFeature(FeatureCode.AutoDelete);
-    const [{ isFree }, userLoading] = useUser();
+    const [{ hasPaidMail }, userLoading] = useUser();
     const { call } = useEventManager();
 
     const [loadingAutoDelete, withLoadingAutoDelete] = useLoading();
@@ -31,7 +31,7 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
         onSaved();
     };
 
-    const disabled = userLoading || isFree;
+    const disabled = userLoading || !hasPaidMail;
 
     return autoDeleteFeature?.Value === true ? (
         <>
@@ -48,7 +48,7 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
                                     .t`Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.`}
                             />
                         </span>
-                        {isFree && <UpsellIcon className="mt-1" />}
+                        {!hasPaidMail && <UpsellIcon className="mt-1" />}
                     </label>
                 </SettingsLayoutLeft>
 
