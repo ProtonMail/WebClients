@@ -8,6 +8,8 @@ import { blackFridayMailPro2022Config, useBlackFridayMailPro2022 } from '../oper
 import { blackFridayVPN1Deal2022Config, useBlackFridayVPN1Deal2022 } from '../operations/blackFridayVPN1Deal2022';
 import { blackFridayVPN2Deal2022Config, useBlackFridayVPN2Deal2022 } from '../operations/blackFridayVPN2Deal2022';
 import { blackFridayVPN3Deal2022Config, useBlackFridayVPN3Deal2022 } from '../operations/blackFridayVPN3Deal2022';
+import { family1Deal2023Config, useFamily1Deal2023 } from '../operations/family1Deal2023';
+import { family3Deal2023Config, useFamily3Deal2023 } from '../operations/family3Deal2023';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { specialOffer2022Config, useSpecialOffer2022 } from '../operations/specialOffer2022';
@@ -22,6 +24,8 @@ const configs: Record<OfferId, OfferConfig> = {
     'black-friday-vpn-2-deal-2022': blackFridayVPN2Deal2022Config,
     'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022Config,
     'mail-trial-2023': mailTrial2023Config,
+    'family-3-deal-2023': family3Deal2023Config,
+    'family-1-deal-2023': family1Deal2023Config,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -39,7 +43,10 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const blackFridayVPN2Deal2022 = useBlackFridayVPN2Deal2022();
     const blackFridayVPN3Deal2022 = useBlackFridayVPN3Deal2022();
     const mailTrial2023 = useMailTrial2023();
+    const family3Deal2023 = useFamily3Deal2023();
+    const family1Deal2023 = useFamily1Deal2023();
 
+    // Offer order matters
     const operations: OperationsMap = {
         'black-friday-mail-free-2022': blackFridayMailFree2022,
         'black-friday-mail-2022': blackFridayMail2022,
@@ -47,6 +54,8 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         'black-friday-vpn-1-deal-2022': blackFridayVPN1Deal2022,
         'black-friday-vpn-2-deal-2022': blackFridayVPN2Deal2022,
         'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022,
+        'family-3-deal-2023': family3Deal2023,
+        'family-1-deal-2023': family1Deal2023,
         'go-unlimited-2022': goUnlimited2022,
         'special-offer-2022': specialOffer2022,
         'mail-trial-2023': mailTrial2023,

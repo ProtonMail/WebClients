@@ -26,6 +26,7 @@ export * from './VPN';
 export * from './config';
 export * from './utils';
 export * from './KeyTransparency';
+export * from './PendingInvitation';
 
 export interface EncryptionConfig {
     type?: 'ecc' | 'rsa';

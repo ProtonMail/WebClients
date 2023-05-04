@@ -4,8 +4,8 @@ import { Button } from '@proton/atoms';
 import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Loader } from '../../components';
-import { useConfig, useModals, useMozillaCheck, usePaymentMethods } from '../../hooks';
+import { Loader, useModalState } from '../../components';
+import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import EditCardModal from '../payments/EditCardModal';
@@ -16,7 +16,8 @@ const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
     const [isManagedByMozilla, loadingCheck] = useMozillaCheck();
-    const { createModal } = useModals();
+    const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
+    const [paypalModalProps, setPaypalModalOpen, renderPaypalModal] = useModalState();
 
     if (loadingPaymentMethods || loadingCheck) {
         return <Loader />;
@@ -25,14 +26,6 @@ const PaymentMethodsSection = () => {
     if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
-
-    const handleCard = () => {
-        createModal(<EditCardModal />);
-    };
-
-    const handlePayPal = () => {
-        createModal(<PayPalModal />);
-    };
 
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
@@ -47,18 +40,20 @@ const PaymentMethodsSection = () => {
                 {c('Info for payment methods')
                     .t`You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.`}
             </SettingsParagraph>
-            <div className="mb1">
-                <Button shape="outline" className="mr1" onClick={handleCard}>
+            <div className="mb-4">
+                <Button shape="outline" className="mr-4" onClick={() => setCreditCardModalOpen(true)}>
                     {c('Action').t`Add credit / debit card`}
                 </Button>
 
                 {!hasPayPal && (
-                    <Button shape="outline" onClick={handlePayPal}>
+                    <Button shape="outline" onClick={() => setPaypalModalOpen(true)}>
                         {c('Action').t`Add PayPal`}
                     </Button>
                 )}
             </div>
             <PaymentMethodsTable loading={false} methods={paymentMethods} />
+            {renderCreditCardModal && <EditCardModal {...creditCardModalProps} />}
+            {renderPaypalModal && <PayPalModal {...paypalModalProps} />}
         </SettingsSection>
     );
 };

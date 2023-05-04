@@ -14,7 +14,9 @@ export type OfferId =
     | 'black-friday-vpn-1-deal-2022'
     | 'black-friday-vpn-2-deal-2022'
     | 'black-friday-vpn-3-deal-2022'
-    | 'mail-trial-2023';
+    | 'mail-trial-2023'
+    | 'family-3-deal-2023'
+    | 'family-1-deal-2023';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -50,6 +52,7 @@ export interface OfferImages {
 }
 export interface OfferConfig {
     ID: OfferId;
+    icon?: IconName;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
     canBeDisabled?: boolean;
@@ -60,6 +63,7 @@ export interface OfferConfig {
     getCTAContent?: () => string;
     shapeButton?: ButtonLikeShape;
     images?: OfferImages;
+    darkBackground?: boolean;
 }
 
 interface Feature {

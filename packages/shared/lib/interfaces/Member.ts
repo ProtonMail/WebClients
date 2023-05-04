@@ -6,6 +6,12 @@ export interface PartialMemberAddress {
     Email: string;
 }
 
+export enum FAMILY_PLAN_INVITE_STATE {
+    STATUS_DISABLED = 0,
+    STATUS_ENABLED = 1,
+    STATUS_INVITED = 2,
+}
+
 export interface Member {
     ID: string;
     Role: MEMBER_ROLE;
@@ -22,5 +28,6 @@ export interface Member {
     PublicKey: string;
     BrokenSKL: 0 | 1;
     Addresses?: PartialMemberAddress[];
-    "2faStatus": number;
+    '2faStatus': number;
+    State?: FAMILY_PLAN_INVITE_STATE; //This is only available for the family invitations
 }

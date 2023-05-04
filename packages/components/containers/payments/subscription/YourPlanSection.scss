@@ -4,6 +4,10 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 
+	& > div {
+		block-size: fit-content;
+	}
+
 	@include media('<=medium') {
 		grid-template-columns: repeat(1, 1fr);
 	}
