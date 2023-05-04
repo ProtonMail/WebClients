@@ -38,10 +38,10 @@ describe('PageContainer', () => {
         addApiMock('importer/v1/importers', () => ({ Importers: [] }));
         addApiMock('settings/calendar', () => ({}));
         addApiMock('calendar/v1', () => ({}));
-        addApiMock('payments/plans', () => ({}));
+        addApiMock('payments/v4/plans', () => ({}));
         addApiMock('mail/v4/conversations', () => ({}));
         addApiMock('domains/optin', () => ({}));
-        addApiMock('payments/subscription/latest', () => ({}));
+        addApiMock('payments/v4/subscription/latest', () => ({}));
         addApiMock('mail/v4/incomingdefaults', () => ({
             IncomingDefaults: [],
             Total: 0,
