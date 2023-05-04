@@ -121,7 +121,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
             onClose={onClose}
             {...rest}
         >
-            <div className="mb1 text-break">{c('Info').jt`You are signed in to the account ${memberAddress}.`}</div>
+            <div className="mb-4 text-break">{c('Info').jt`You are signed in to the account ${memberAddress}.`}</div>
             <div>
                 {c('Info').t`You can now access and manage the account as an administrator.`}{' '}
                 <LearnMore url={getKnowledgeBaseUrl('/manage-public-users-organization')} />

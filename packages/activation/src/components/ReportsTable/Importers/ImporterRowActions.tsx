@@ -148,7 +148,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                         >{c('Action').t`Continue`}</Button>,
                     ]}
                 >
-                    <Alert className="mb1" type="error">
+                    <Alert className="mb-4" type="error">
                         {c('Warning')
                             .t`If you cancel this import, you won't be able to resume it. ${BRAND_NAME} saved all progress in your account. Cancel anyway?`}
                     </Alert>

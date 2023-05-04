@@ -16,44 +16,6 @@ pre code {
 	white-space: pre-wrap;
 }
 
-.mauto {
-	margin: auto !important;
-}
-
-.mlauto {
-	margin-inline-start: auto !important;
-}
-
-.center {
-	margin-inline: auto !important;
-}
-
-.mb1 {
-	margin-block-end: 1em !important;
-}
-
-.mb-2 {
-	margin-block-end: 0.5em !important;
-}
-
-@include media('<=medium') {
-	.on-tablet-m1 {
-		margin: 1em !important;
-	}
-}
-
-@include media('<=small') {
-	.on-mobile-m1 {
-		margin: 1em !important;
-	}
-}
-
-@include media('<=xsmall') {
-	.on-tiny-mobile-m1 {
-		margin: 1em !important;
-	}
-}
-
 .icon-ko,
 .icon-ok {
 	&::after {

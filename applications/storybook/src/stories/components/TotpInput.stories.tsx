@@ -35,7 +35,7 @@ export const Type = () => {
         <>
             <TotpInput value={value} length={type === 'alphabet' ? 8 : 6} onValue={setValue} type={type} />
             <InlineLinkButton
-                className="mt1"
+                className="mt-4"
                 onClick={() => {
                     setType(type === 'alphabet' ? 'number' : 'alphabet');
                 }}

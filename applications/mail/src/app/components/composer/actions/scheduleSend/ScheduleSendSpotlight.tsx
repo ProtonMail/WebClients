@@ -26,7 +26,7 @@ const ScheduleSendSpotlight = ({ children, showSpotlight, onDisplayed, anchorRef
             size="large"
             content={
                 <div className="flex flex-nowrap my-2">
-                    <div className="flex-item-noshrink mr1">
+                    <div className="flex-item-noshrink mr-4">
                         <img src={scheduledImg} className="w4e" alt="" />
                     </div>
                     <div>

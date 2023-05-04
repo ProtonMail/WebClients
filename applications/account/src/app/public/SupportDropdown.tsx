@@ -19,7 +19,7 @@ const SupportDropdown = ({ content = c('Action').t`Need help?`, children, ...res
     return (
         <>
             <SupportDropdownButton
-                className="mlauto mrauto link"
+                className="mx-auto link"
                 aria-describedby={uid}
                 buttonRef={anchorRef}
                 isOpen={isOpen}

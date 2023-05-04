@@ -70,7 +70,7 @@ const ContactView = ({
 
     return (
         <div>
-            <div className={classnames(['contact-summary-wrapper border-bottom pb1 mb1'])}>
+            <div className={classnames(['contact-summary-wrapper border-bottom pb1 mb-4'])}>
                 <ContactSummary
                     vCardContact={vCardContact}
                     onExport={onExport}
@@ -108,7 +108,7 @@ const ContactView = ({
                 <ContactViewOthers vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
             </div>
             {!isPreview ? (
-                <div className={classnames(['mt1-5 '])}>
+                <div className={classnames(['mt-6 '])}>
                     {hasEmail ? null : (
                         <div className="mb-2">
                             <Button shape="outline" color="norm" onClick={() => onEdit('email')}>

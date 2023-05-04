@@ -29,7 +29,7 @@ const PDFPreview = ({ filename = 'preview.pdf', contents }: Props) => {
                     title={filename}
                 >
                     <embed src={url} className="flex" type="application/pdf" />
-                    <p className="mauto">{c('Info')
+                    <p className="m-auto">{c('Info')
                         .t`This browser does not support previewing PDF documents. Please download the file.`}</p>
                 </object>
             )}

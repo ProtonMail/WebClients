@@ -73,7 +73,7 @@ const ContactsWidgetToolbar = ({
     return (
         <div className="flex flex-items-align-center">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
-                <span className="ml-2 mr1 flex">
+                <span className="ml-2 mr-4 flex">
                     <Checkbox
                         id="id_contact-widget-select-all"
                         checked={allChecked}
@@ -157,7 +157,7 @@ const ContactsWidgetToolbar = ({
                         <Button
                             icon
                             color="norm"
-                            className="mlauto inline-flex pt0-5 pb0-5"
+                            className="ml-auto inline-flex pt0-5 pb0-5"
                             onClick={onCreate}
                             title={c('Action').t`Add new contact`}
                             data-testid="contacts:add-new-contact"

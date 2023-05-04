@@ -17,7 +17,7 @@ export default {
 
 export const Basic = () => {
     return (
-        <div className="max-w50e mauto">
+        <div className="max-w50e m-auto">
             <VideoInstructions>
                 <source src={videoWebm} type="video/webm" />
                 <source src={videoMp4} type="video/mp4" />

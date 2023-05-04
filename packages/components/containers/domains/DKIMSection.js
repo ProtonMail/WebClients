@@ -16,23 +16,23 @@ const DKIMSection = ({ domain }) => {
 
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
+            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
                 {c('Info')
                     .t`${MAIL_APP_NAME} supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
             {State === DKIM_STATE.DKIM_STATE_ERROR && (
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {c('Error')
                         .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`}
                 </Alert>
             )}
             {State === DKIM_STATE.DKIM_STATE_WARNING && (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Warning')
                         .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
                 </Alert>
             )}
-            <p className="mb1">
+            <p className="mb-4">
                 {c('Label')
                     .t`Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.`}
             </p>
@@ -74,11 +74,11 @@ const DKIMSection = ({ domain }) => {
                     ))}
                 </TableBody>
             </Table>
-            <Alert className="mb1" type="warning">
+            <Alert className="mb-4" type="warning">
                 {c('Info')
                     .t`IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.`}
             </Alert>
-            <Alert className="mb1" type="warning">
+            <Alert className="mb-4" type="warning">
                 {c('Info').t`Keep those records in your DNS for as long as you want to use DKIM.`}
             </Alert>
         </>

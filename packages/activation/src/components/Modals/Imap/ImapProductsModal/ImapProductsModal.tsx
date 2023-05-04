@@ -42,12 +42,12 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
             data-testid="MailModal:ProductModal"
         >
             <ModalTwoHeader title={c('Title').t`What would you like to import?`} />
-            <ModalTwoContent className="mb2">
+            <ModalTwoContent className="mb-8">
                 {loading ? (
                     <Loader />
                 ) : (
                     <div>
-                        <div className="mb2">{c('Info').t`You can import one data type at a time.`}</div>
+                        <div className="mb-8">{c('Info').t`You can import one data type at a time.`}</div>
                         <div className="import-buttons">
                             <ImapProductsModalButtons
                                 importType={ImportType.MAIL}

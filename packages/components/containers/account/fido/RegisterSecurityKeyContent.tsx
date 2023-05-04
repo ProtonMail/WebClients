@@ -13,7 +13,7 @@ interface Props {
 const RegisterSecurityKeyContent = ({ loading, error }: Props) => {
     return (
         <>
-            <div className="flex flex-justify-center mt1 mb1-5 relative">
+            <div className="flex flex-justify-center mt-4 mb-6 relative">
                 {loading && (
                     <div className="text-center absolute absolute-center">
                         <CircleLoader className="color-primary" />
@@ -27,7 +27,7 @@ const RegisterSecurityKeyContent = ({ loading, error }: Props) => {
             </div>
             <div>{c('fido2: Info').t`Insert your security key into your device's USB port.`}</div>
             {error && (
-                <div className="mt1">
+                <div className="mt-4">
                     <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.WEAK}>
                         {c('fido2: Error').t`Something went wrong registering your security key. Please try again.`}
                     </Banner>

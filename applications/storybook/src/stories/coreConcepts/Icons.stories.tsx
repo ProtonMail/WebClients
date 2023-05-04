@@ -54,11 +54,11 @@ export const Icons = () => {
                     ))}
                 </ButtonGroup>
             </div>
-            <div className="icon-grid mt2">
+            <div className="icon-grid mt-8">
                 {iconResults.map((iconName) => (
                     <div className="border rounded text-center p1" key={iconName}>
                         <Icon name={iconName} size={selectedSize} />
-                        <div className="mt1 text-monospace lh120 user-select">
+                        <div className="mt-4 text-monospace lh120 user-select">
                             <Mark value={search}>{iconName}</Mark>
                         </div>
                     </div>

@@ -109,7 +109,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
 
     // Organization is not setup.
     if (!organization?.HasKeys) {
-        return <Alert className="mb1" type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
+        return <Alert className="mb-4" type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
     return (
@@ -121,7 +121,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
             <Block>
                 {organizationKey?.privateKey && (
                     <>
-                        <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr1">
+                        <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr-4">
                             {c('Action').t`Change password`}
                         </Button>
                         <Button onClick={() => handleChangeOrganizationKeys()}>
@@ -131,27 +131,27 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                 )}
                 {organizationKeyInfo.userNeedsToReactivateKey && (
                     <>
-                        <Alert className="mb1" type="error">
+                        <Alert className="mb-4" type="error">
                             {c('Error')
                                 .t`You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
                         </Alert>
-                        <Button onClick={handleResetOrganizationKeys} className="mr1">
+                        <Button onClick={handleResetOrganizationKeys} className="mr-4">
                             {c('Action').t`Reset organization keys`}
                         </Button>
-                        <Button color="norm" onClick={handleReactivateOrganizationKeys} className="mr1">
+                        <Button color="norm" onClick={handleReactivateOrganizationKeys} className="mr-4">
                             {c('Action').t`Restore administrator privileges`}
                         </Button>
                     </>
                 )}
                 {organizationKeyInfo.userNeedsToActivateKey && (
                     <>
-                        <Alert className="mb1" type="error">
+                        <Alert className="mb-4" type="error">
                             {getActivationText()}
                         </Alert>
-                        <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr1">
+                        <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr-4">
                             {c('Action').t`Activate organization key`}
                         </Button>
-                        <Button onClick={handleResetOrganizationKeys} className="mr1">
+                        <Button onClick={handleResetOrganizationKeys} className="mr-4">
                             {c('Action').t`Reset organization keys`}
                         </Button>
                     </>

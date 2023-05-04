@@ -44,10 +44,10 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
                 </span>
             )}
             <span
-                className="myauto text-sm rounded border p0-25 inline-block relative flex flex-item-noshrink user-initials"
+                className="my-auto text-sm rounded border p0-25 inline-block relative flex flex-item-noshrink user-initials"
                 aria-hidden="true"
             >
-                <span className="mauto">{initials}</span>
+                <span className="m-auto">{initials}</span>
             </span>
             {notification && (
                 <NotificationDot

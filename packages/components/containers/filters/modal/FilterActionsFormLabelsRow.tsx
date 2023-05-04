@@ -98,11 +98,11 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
             className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
             data-testid="filter-modal:label-row"
         >
-            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
+            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
             </button>
-            <div className={classnames(['flex-item-fluid', !isNarrow && 'ml1'])}>
+            <div className={classnames(['flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
                     <>
                         <div className="w100">
@@ -111,7 +111,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                     <div className="mb-2 inline-block text-ellipsis" key={label.Path}>
                                         <Checkbox
                                             title={label.Name}
-                                            className="mr1 flex-nowrap"
+                                            className="mr-4 flex-nowrap"
                                             checked={labelAs.labels.includes(label.Path)}
                                             onChange={() => handleCheckLabel(label)}
                                             labelOnClick={(e) => e.stopPropagation()}
@@ -130,7 +130,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                     </div>
                                 ))
                             ) : (
-                                <div className="pt0-5 mb1">{c('Label').t`No label found`}</div>
+                                <div className="pt0-5 mb-4">{c('Label').t`No label found`}</div>
                             )}
                         </div>
                         {canCreateLabel && (

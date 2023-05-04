@@ -1,5 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 
+
+
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 
 import Donut from './Donut';
@@ -37,7 +39,7 @@ export const WithSlider = () => {
     return (
         <div>
             <input
-                className="mb2"
+                className="mb-8"
                 style={{ appearance: 'auto' }}
                 type="range"
                 value={success}
@@ -72,14 +74,14 @@ export const Accessibility = () => {
 
     return (
         <div className="flex flex-align-items-center">
-            <div className="mr2" style={{ width: 160, height: 160 }}>
+            <div className="mr-8" style={{ width: 160, height: 160 }}>
                 <Donut segments={labelledSegments.map(({ value }) => value as [number, string])} />
             </div>
             <div>
                 {labelledSegments.map(({ label, value: [share, color] }) => (
-                    <div className="mb1 flex flex-align-items-center">
+                    <div className="mb-4 flex flex-align-items-center">
                         <span
-                            className="inline-block mr1"
+                            className="inline-block mr-4"
                             style={{
                                 width: 36,
                                 height: 24,

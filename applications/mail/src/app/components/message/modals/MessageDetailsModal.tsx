@@ -108,7 +108,7 @@ const MessageDetailsModal = ({
             <ModalTwoHeader title={c('Title').t`Message details`} />
             <ModalTwoContent>
                 <div
-                    className="message-detailed-header-extra pt0-5 mb2"
+                    className="message-detailed-header-extra pt0-5 mb-8"
                     data-testid="message:message-expanded-header-extra"
                 >
                     {icon && (
@@ -129,7 +129,7 @@ const MessageDetailsModal = ({
                                     needsMoreProtection={needsMoreProtection}
                                     title={title}
                                     isStandaloneIcon
-                                    className="mauto"
+                                    className="m-auto"
                                 />
                             </span>
                             <span className="pl0-25 flex-item-fluid text-ellipsis" title={title}>
@@ -139,7 +139,7 @@ const MessageDetailsModal = ({
                     )}
                     <div className="mb-2 flex flex-nowrap" data-testid="message-details:date">
                         <span className="mr-2 flex">
-                            <Icon name="calendar-grid" className="mauto" alt={c('Label').t`Date:`} />
+                            <Icon name="calendar-grid" className="m-auto" alt={c('Label').t`Date:`} />
                         </span>
                         <span className="pl0-25 flex-item-fluid text-ellipsis">
                             <ItemDate element={message.data} labelID={labelID} mode="full" />
@@ -147,7 +147,7 @@ const MessageDetailsModal = ({
                     </div>
                     <div className="mb-2 flex flex-nowrap">
                         <span className="mr-2 flex">
-                            <span className="mauto flex">
+                            <span className="m-auto flex">
                                 <ItemLocation
                                     element={message.data}
                                     labelID={labelID}
@@ -164,7 +164,7 @@ const MessageDetailsModal = ({
                     </div>
                     <div className="mb-2 flex flex-nowrap" data-testid="message-details:size">
                         <span className="mr-2 flex">
-                            <Icon name="filing-cabinet" className="mauto" alt={c('Label').t`Size:`} />
+                            <Icon name="filing-cabinet" className="m-auto" alt={c('Label').t`Size:`} />
                         </span>
                         <span className="pl0-25 flex-item-fluid text-ellipsis" title={sizeText}>
                             {sizeText}
@@ -173,7 +173,7 @@ const MessageDetailsModal = ({
                     {showAttachmentsDetails && (
                         <div className="mb-2 flex flex-nowrap">
                             <span className="mr-2 flex">
-                                <span className="mauto flex">
+                                <span className="m-auto flex">
                                     <ItemAttachmentIcon element={message.data} />
                                 </span>
                             </span>
@@ -184,7 +184,7 @@ const MessageDetailsModal = ({
                     )}
                 </div>
                 {sender && (
-                    <div className="mb1">
+                    <div className="mb-4">
                         <div className="mb-2">
                             <strong>{c('Title').t`Sender`}</strong>
                         </div>
@@ -207,7 +207,7 @@ const MessageDetailsModal = ({
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="mlauto" color="norm" onClick={onClose}>{c('Action').t`Close`}</Button>
+                <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

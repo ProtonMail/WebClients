@@ -16,14 +16,14 @@ const PublicLayout = ({ main, footer, below }: PublicLayoutProps) => {
     return (
         <div className="flex flex-column flex-align-items-center">
             <PublicContainer>
-                <ProtonLogo className="mb2" />
+                <ProtonLogo className="mb-8" />
 
                 <div className="public-layout--main text-center">{main}</div>
 
-                {footer && <div className="mt2">{footer}</div>}
+                {footer && <div className="mt-8">{footer}</div>}
             </PublicContainer>
 
-            {below && <div className="mt2">{below}</div>}
+            {below && <div className="mt-8">{below}</div>}
         </div>
     );
 };

@@ -59,7 +59,7 @@ const DeleteLockedVolumesConfirmModal = ({
         >
             <ModalTwoHeader title={modalTitle} />
             <ModalTwoContent>
-                <Alert type="warning" className="mb2">
+                <Alert type="warning" className="mb-8">
                     <span>
                         <strong>{warningTitle}</strong>
                     </span>

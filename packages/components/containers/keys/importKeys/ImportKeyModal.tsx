@@ -141,7 +141,7 @@ Please also note that the public key corresponding to this private key will be p
                 onNext: () => selectRef.current?.click(),
                 children: (
                     <>
-                        <Alert className="mb1">{c('Label').t`Please select files to upload`}</Alert>
+                        <Alert className="mb-4">{c('Label').t`Please select files to upload`}</Alert>
                         <SelectKeyFiles
                             ref={selectRef}
                             onUpload={handleUploadKeys}
@@ -189,7 +189,7 @@ Please also note that the public key corresponding to this private key will be p
             <ModalTwoHeader title={c('Title').t`Import key`} />
             <ModalTwoContent>{children}</ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={rest.onClose} className={submit === null ? 'mlauto' : undefined}>
+                <Button onClick={rest.onClose} className={submit === null ? 'ml-auto' : undefined}>
                     {submit === null ? c('Action').t`Close` : c('Action').t`Cancel`}
                 </Button>
                 {submit !== null && (

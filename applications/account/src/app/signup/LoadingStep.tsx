@@ -54,9 +54,9 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
         <Main>
             <Content>
                 <div className="text-center on-mobile-pt2" role="alert">
-                    <img className="m1" width="140" height="140" src={accountSetupImg} alt="" />
+                    <img className="m-4" width="140" height="140" src={accountSetupImg} alt="" />
 
-                    <hr className="mb2 mt2" />
+                    <hr className="my-8" />
                     <div className="inline-block">
                         {steps.map((step, i) => {
                             const isCurrentStep = i === stepIndex;

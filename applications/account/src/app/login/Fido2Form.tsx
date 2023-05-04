@@ -27,7 +27,7 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                 type="submit"
                 fullWidth
                 loading={loading}
-                className="mt1-5"
+                className="mt-6"
                 onClick={() => {
                     if (loading) {
                         return;

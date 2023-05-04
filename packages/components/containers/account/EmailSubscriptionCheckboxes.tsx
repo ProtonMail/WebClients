@@ -84,10 +84,10 @@ const EmailSubscriptionCheckboxes = ({ disabled, News, onChange }: EmailSubscrip
         <ul className="unstyled relative">
             {checkboxes.map(({ id, flag, frequency }) => {
                 return (
-                    <li key={id} className="mb1 flex flex-align-items-center">
+                    <li key={id} className="mb-4 flex flex-align-items-center">
                         <Toggle
                             id={id}
-                            className="mr1"
+                            className="mr-4"
                             checked={hasBit(News, flag)}
                             disabled={disabled}
                             onChange={handleChange(flag)}

@@ -4,8 +4,11 @@ import { Ref } from 'react';
 
 import { c } from 'ttag';
 
+
+
 import { DropdownCaret, Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     children?: React.ReactNode;
@@ -39,7 +42,7 @@ const SupportDropdownButton = ({
             {...rest}
         >
             {children}
-            {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml-2 expand-caret myauto" />}
+            {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml-2 expand-caret my-auto" />}
         </button>
     );
 };

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 import { Button, ButtonLike } from '@proton/atoms';
 import { Checkbox, Icon, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
@@ -65,8 +67,8 @@ export const Sandbox = () => {
 
     return (
         <div className="flex flex-align-items-stretch py2">
-            <div className="mr2">
-                <strong className="block mb1">Color</strong>
+            <div className="mr-8">
+                <strong className="block mb-4">Color</strong>
                 <RadioGroup
                     name="selected-color"
                     onChange={(v) => setSelectedColor(v)}
@@ -74,8 +76,8 @@ export const Sandbox = () => {
                     options={colors.map((color) => ({ value: color, label: color }))}
                 />
             </div>
-            <div className="mr2">
-                <strong className="block mb1">Shape</strong>
+            <div className="mr-8">
+                <strong className="block mb-4">Shape</strong>
                 <RadioGroup
                     name="selected-shape"
                     onChange={(v) => setSelectedShape(v)}
@@ -83,8 +85,8 @@ export const Sandbox = () => {
                     options={shapes.map((shape) => ({ value: shape, label: shape }))}
                 />
             </div>
-            <div className="mr2">
-                <strong className="block mb1">Size</strong>
+            <div className="mr-8">
+                <strong className="block mb-4">Size</strong>
                 <RadioGroup
                     name="selected-size"
                     onChange={(v) => setSelectedSize(v)}
@@ -92,8 +94,8 @@ export const Sandbox = () => {
                     options={sizes.map((size) => ({ value: size, label: size }))}
                 />
             </div>
-            <div className="mr2">
-                <strong className="block mb1">Toggles</strong>
+            <div className="mr-8">
+                <strong className="block mb-4">Toggles</strong>
                 {toggles.map((prop, i) => {
                     return (
                         <div className="mb-2">
@@ -170,8 +172,8 @@ export const Like = () => {
                     Link
                 </ButtonLike>
             </div>
-            <div className="mt1">
-                <ButtonLike as={Component} color="danger" className="mb1" />
+            <div className="mt-4">
+                <ButtonLike as={Component} color="danger" className="mb-4" />
             </div>
         </div>
     );

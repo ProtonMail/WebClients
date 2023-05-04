@@ -57,7 +57,7 @@ const EmailMethodForm = ({ onSubmit, defaultEmail = '' }: Props) => {
                 fullWidth
                 loading={loading}
                 onClick={() => withLoading(handleSubmit()).catch(noop)}
-                className="mt1-5"
+                className="mt-6"
             >
                 {c('Action').t`Get verification code`}
             </Button>

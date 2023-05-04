@@ -21,7 +21,7 @@ interface Props {
 const UpgradeBanner = ({ free, className, children, audience, upsellPath }: Props) => {
     return (
         <Card className={classnames(['flex flex-align-items-center', className])} rounded>
-            <p className="m-0 mr2 flex-item-fluid">{children}</p>
+            <p className="m-0 mr-8 flex-item-fluid">{children}</p>
             <ButtonLike
                 as={SettingsLink}
                 path={(() => {
@@ -34,7 +34,7 @@ const UpgradeBanner = ({ free, className, children, audience, upsellPath }: Prop
                     return addUpsellPath('/upgrade', upsellPath);
                 })()}
                 color="norm"
-                className="mtauto"
+                className="mt-auto"
                 aria-label={c('Action').t`Upgrade your plan`}
             >{c('Action').t`Upgrade`}</ButtonLike>
         </Card>

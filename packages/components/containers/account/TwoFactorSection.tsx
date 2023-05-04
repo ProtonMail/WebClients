@@ -162,7 +162,7 @@ const TwoFactorSection = () => {
                         </SettingsLayoutRight>
                     </SettingsLayout>
                     {registeredKeys.length > 0 && (
-                        <div className="mb1">
+                        <div className="mb-4">
                             <div>
                                 <Button
                                     disabled={registeredKeys.length >= maxSecurityKeyLength}
@@ -175,7 +175,7 @@ const TwoFactorSection = () => {
                                     {c('fido2: Action').t`Add security key`}
                                 </Button>
                             </div>
-                            <div className="mt1 w100">
+                            <div className="mt-4 w100">
                                 <div className="text-bold pb0-5 border-bottom">
                                     {c('fido2: Title').t`Registered security keys`}
                                 </div>

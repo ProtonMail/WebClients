@@ -62,7 +62,7 @@ const SessionsSection = () => {
     const handleOpenModal = () => {
         createModal(
             <ConfirmModal onConfirm={() => withLoadingRevokeAll(handleRevokeAllSessions())}>
-                <Alert className="mb1">{c('Info')
+                <Alert className="mb-4">{c('Info')
                     .t`Do you want to revoke all other sessions than the current one?`}</Alert>
             </ConfirmModal>
         );
@@ -84,8 +84,8 @@ const SessionsSection = () => {
                 {c('Info')
                     .t`Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.`}
             </SettingsParagraph>
-            <div className="flex flex-justify-space-between flex-align-items-start mb1">
-                <div className="on-mobile-mb1">
+            <div className="flex flex-justify-space-between flex-align-items-start mb-4">
+                <div className="mb-4 md:mb-0">
                     <Button shape="outline" onClick={handleOpenModal} loading={loadingRevokeAll}>{c('Action')
                         .t`Revoke all other sessions`}</Button>
                 </div>

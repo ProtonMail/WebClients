@@ -1,10 +1,15 @@
 import { useState } from 'react';
 
+
+
 import { InputButton } from '@proton/components';
 import remove from '@proton/utils/remove';
 
+
+
 import { getTitle } from '../../helpers/title';
 import mdx from './InputButton.mdx';
+
 
 export default {
     component: InputButton,
@@ -49,7 +54,7 @@ export const Multiple = () => {
                     title="checkbox"
                     checked={checkedIds.includes(n)}
                     onChange={handleChange(n)}
-                    labelProps={{ className: 'mr1' }}
+                    labelProps={{ className: 'mr-4' }}
                 >
                     {n}
                 </InputButton>
@@ -75,7 +80,7 @@ export const Exclusivity = () => {
                     value={n}
                     checked={n === checkedId}
                     onChange={handleChange}
-                    labelProps={{ className: 'mr1' }}
+                    labelProps={{ className: 'mr-4' }}
                 >
                     {n}
                 </InputButton>

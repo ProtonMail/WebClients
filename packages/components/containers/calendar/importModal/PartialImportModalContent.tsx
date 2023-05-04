@@ -34,8 +34,8 @@ const PartialImportModalContent = ({ model }: Props) => {
     return (
         <>
             <div>{c('Import calendar; import invitation').t`This file contains some data that we cannot import:`}</div>
-            {fileAttached && <AttachedFile file={fileAttached} iconName="calendar-grid" className="mb1 mt1" />}
-            <Alert className="mb1" type="warning" learnMore={learnMore}>
+            {fileAttached && <AttachedFile file={fileAttached} iconName="calendar-grid" className="my-4" />}
+            <Alert className="mb-4" type="warning" learnMore={learnMore}>
                 {c('Import calendar warning')
                     .t`${CALENDAR_APP_NAME} currently does not support certain event types, details and formats.`}
             </Alert>

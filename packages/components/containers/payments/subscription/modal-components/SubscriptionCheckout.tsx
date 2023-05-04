@@ -2,36 +2,27 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+
+
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import {
-    Included,
-    RequiredCheckResponse,
-    getCheckout,
-    getDiscountText,
-    getWhatsIncluded,
-} from '@proton/shared/lib/helpers/checkout';
+import { Included, RequiredCheckResponse, getCheckout, getDiscountText, getWhatsIncluded } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-import {
-    Badge,
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-    Info,
-} from '../../../../components';
+
+
+import { Badge, Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton, Icon, Info } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
 import CheckoutRow from './CheckoutRow';
 
+
 const PlanDescription = ({ list }: { list: Included[] }) => {
     return (
-        <div className="mt2">
+        <div className="mt-8">
             <hr />
             <Collapsible>
                 <CollapsibleHeader
@@ -49,7 +40,7 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                         if (item.type === 'value') {
                             return (
                                 <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
-                                    <div className="flex-item-fluid-auto text-ellipsis mr1">{item.text}</div>
+                                    <div className="flex-item-fluid-auto text-ellipsis mr-4">{item.text}</div>
                                     <div className="flex-item-fluid-auto flex-item-noshrink text-right">
                                         {item.value}
                                     </div>
@@ -136,7 +127,7 @@ const SubscriptionCheckout = ({
             hasPayments={!isOptimistic}
             description={<PlanDescription list={list} />}
         >
-            <div className="mb1">
+            <div className="mb-4">
                 <strong>{planTitle}</strong>
             </div>
             <CheckoutRow
@@ -156,14 +147,14 @@ const SubscriptionCheckout = ({
             />
             {addons.map((addon) => {
                 return (
-                    <div className="mb1" key={addon.name}>
+                    <div className="mb-4" key={addon.name}>
                         {addon.title}
                     </div>
                 );
             })}
             {!isFreePlanSelected && (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         <hr />
                     </div>
                     <CheckoutRow
@@ -205,7 +196,7 @@ const SubscriptionCheckout = ({
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
             {!isOptimistic && (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         <hr />
                     </div>
                     <CheckoutRow
@@ -216,7 +207,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            <div className="mt1 mb1">{submit}</div>
+            <div className="my-4">{submit}</div>
             {!isOptimistic && amount > 0 && gift ? gift : null}
         </Checkout>
     );

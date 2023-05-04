@@ -21,9 +21,9 @@ const ContactSelectorEmptyContacts = ({ onEdit, onClose = noop }: Props) => {
 
     return (
         <div className="flex flex-column flex-align-items-center flex-item-fluid p0-5">
-            <span className="mb1">{c('Error message')
+            <span className="mb-4">{c('Error message')
                 .t`You do not have any contact yet. Start by creating a new contact`}</span>
-            <img src={noContactsImg} alt={title} className="p1 mb1" />
+            <img src={noContactsImg} alt={title} className="p1 mb-4" />
             <Button color="norm" onClick={handleClick}>{c('Action').t`Create new contact`}</Button>
         </div>
     );

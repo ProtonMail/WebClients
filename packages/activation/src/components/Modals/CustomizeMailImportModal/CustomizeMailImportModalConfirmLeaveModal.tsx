@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms/Button';
 import { Alert, ModalStateProps, Prompt } from '@proton/components/components';
+
 
 interface Props {
     onContinue: () => void;
@@ -20,7 +23,7 @@ const CustomizeMailImportModalConfirmLeaveModal = ({ modalProps, onContinue, onS
         onClose={onContinue}
         data-testid="CancelModal:container"
     >
-        <Alert className="mb1" type="error">{c('Warning').t`You will lose any customization you made so far.`}</Alert>
+        <Alert className="mb-4" type="error">{c('Warning').t`You will lose any customization you made so far.`}</Alert>
     </Prompt>
 );
 

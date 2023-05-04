@@ -237,7 +237,7 @@ const List = (
                             onClose={handleDismissBanner}
                         />
                     )}
-                    {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
+                    {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt-4'} />}
                     <AutoDeleteBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />

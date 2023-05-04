@@ -35,7 +35,7 @@ export const WidthPixels = () => {
         <div className={demoContainerClasses}>
             {sizes.map((size) => (
                 <div className={`${demoItemClasses} w${size}p`}>
-                    <span className={`${size === 10 ? 'color-norm relative ml2' : ''}`}>w{size}p</span>
+                    <span className={`${size === 10 ? 'color-norm relative ml-8' : ''}`}>w{size}p</span>
                 </div>
             ))}
         </div>

@@ -1,5 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
+
+
 import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
@@ -8,8 +10,11 @@ import { ModalStateProps } from '@proton/components';
 import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 
+
+
 import CustomizeMailImportModal from './CustomizeMailImportModal';
 import { MailImportFields } from './CustomizeMailImportModal.interface';
+
 
 const address: Address = {
     DisplayName: 'Testing',
@@ -380,15 +385,15 @@ describe('Customize modal tests', () => {
 
         const sourceItems = screen.getAllByTestId('CustomizeModal:sourceItem');
         sourceItems.every((item, index) => {
-            expect(item).toHaveStyle(`--margin-left-custom: ${index + 1}em`);
+            expect(item).toHaveStyle(`--ml-custom: ${index + 1}em`);
         });
 
         const destinationItem = screen.getAllByTestId('CustomizeModal:destinationItem');
         destinationItem.forEach((item, index) => {
             if (index < 3) {
-                expect(item).toHaveStyle(`--margin-left-custom: ${index + 1}em`);
+                expect(item).toHaveStyle(`--ml-custom: ${index + 1}em`);
             } else {
-                expect(item).toHaveStyle('--margin-left-custom: 3em');
+                expect(item).toHaveStyle('--ml-custom: 3em');
             }
         });
     });

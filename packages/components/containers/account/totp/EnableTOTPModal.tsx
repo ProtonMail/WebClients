@@ -111,11 +111,11 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .t`This wizard will enable Two-Factor Authentication (2FA) on your ${BRAND_NAME} account. Two-factor authentication will make your ${BRAND_NAME} account more secure so we recommend enabling it.`}
                         </div>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {
                                 // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
                                 c('Info')
@@ -144,7 +144,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
                         </div>
@@ -167,7 +167,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             {c('Info')
                                 .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
                         </div>
@@ -216,7 +216,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <div className="mb1">{c('Info').t`Enter the code from your authenticator app`}</div>
+                        <div className="mb-4">{c('Info').t`Enter the code from your authenticator app`}</div>
                         <InputFieldTwo
                             as={TotpInput}
                             autoFocus
@@ -251,7 +251,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <div className="mb1">
+                        <div className="mb-4">
                             <span className="text-bold">{c('Info')
                                 .t`Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.`}</span>
                             <br />
