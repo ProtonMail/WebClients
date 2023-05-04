@@ -2,45 +2,52 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import clsx from '@proton/utils/clsx';
 
-import InlineLinkButton from '../../components/button/InlineLinkButton';
+import { Icon } from '../..';
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 interface Props {
     className?: string;
     children?: ReactNode;
-    small?: boolean;
+    big?: boolean;
 }
 
-const GenericError = ({ children, className, small = false }: Props) => {
-    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
-    const refresh = (
-        <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
-            .t`refresh the page`}</InlineLinkButton>
-    );
+const GenericError = ({ children, className, big }: Props) => {
+    const handleRefresh = () => window.location.reload();
 
     const title = c('Error message').t`Something went wrong`;
-    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
-    const line1 = c('Error message').jt`Please ${refresh} or try again later.`;
+    const line1 = c('Error message').jt`Please refresh the page or try again later.`;
+
+    const status: 'child' | 'big' | 'small' = (() => {
+        if (!children && big) {
+            return 'big';
+        }
+        if (!children && !big) {
+            return 'small';
+        }
+        return 'child';
+    })();
 
     return (
-        <div className={clsx('m-auto', className)}>
-            {small ? (
-                <>
-                    <h1 className="text-bold h2 mb-1">{title}</h1>
-                    <div className="text-center">{line1}</div>
-                </>
-            ) : (
-                <IllustrationPlaceholder title={title} url={errorImg}>
-                    {children || (
-                        <>
-                            <span>{line1}</span>
-                        </>
-                    )}
-                </IllustrationPlaceholder>
-            )}
+        <div className={clsx('m-auto', status === 'big' ? 'p-1' : 'p-2', className)}>
+            <IllustrationPlaceholder title={title} url={errorImg}>
+                {status === 'child' && children}
+                {status === 'big' && (
+                    <>
+                        <div>{line1}</div>
+                        <div className="mt-8">
+                            <Button onClick={handleRefresh}>
+                                <Icon name="arrow-rotate-right" />
+                                <span className="ml-4">{c('Action').t`Refresh the page`}</span>
+                            </Button>
+                        </div>
+                    </>
+                )}
+                {status === 'small' && <div className="text-center">{line1}</div>}
+            </IllustrationPlaceholder>
         </div>
     );
 };

@@ -7,14 +7,15 @@ import GenericError from '../error/GenericError';
 
 interface Props {
     children?: ReactNode;
+    big?: boolean;
 }
 
-const StandardErrorPage = ({ children }: Props) => {
+const StandardErrorPage = ({ children, big }: Props) => {
     useDocumentTitle(c('Error message').t`Oops, something went wrong`);
 
     return (
         <div className="h100 flex flex-align-items-center pb4 scroll-if-needed">
-            <GenericError>{children}</GenericError>
+            <GenericError big={big}>{children}</GenericError>
         </div>
     );
 };
