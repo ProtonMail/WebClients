@@ -1,11 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import {
@@ -23,7 +19,12 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
-import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
+import {
+    ResetActionResponse,
+    ResetCacheResult,
+    STEPS,
+    ValidateResetTokenResponse,
+} from '@proton/components/containers/resetPassword/interface';
 import {
     handleNewPassword,
     handleNewPasswordMnemonic,
@@ -31,6 +32,7 @@ import {
     handleRequestToken,
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
+import { validateResetToken } from '@proton/shared/lib/api/reset';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -204,7 +206,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             }
         };
 
-        run();
+        void run();
     }, []);
 
     useSearchParamsEffect(
@@ -226,7 +228,11 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
 
                         const validateFlow = createFlow();
                         await startUnAuthFlow();
+                        const resetResponse = await silentApi<ValidateResetTokenResponse>(
+                            validateResetToken(username, token)
+                        );
                         const result = await handleValidateResetToken({
+                            resetResponse,
                             cache: {
                                 setupVPN,
                                 appName: APP_NAME,
@@ -236,7 +242,6 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 hasTrustedDeviceRecovery,
                                 ktFeature,
                             },
-                            api: silentApi,
                             token,
                         });
                         if (validateFlow()) {
@@ -248,7 +253,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                         setAutomaticVerification({ username, loading: false });
                     }
                 };
-                run();
+                void run();
 
                 return new URLSearchParams();
             }
@@ -386,11 +391,13 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     <Content>
                         <ValidateResetTokenForm
                             method={cache.method}
+                            recoveryMethods={cache.Methods}
                             value={cache.value}
-                            onSubmit={async (token) => {
+                            username={cache.username}
+                            onSubmit={async ({ resetResponse, token }) => {
                                 try {
                                     const validateFlow = createFlow();
-                                    const result = await handleValidateResetToken({ api: silentApi, cache, token });
+                                    const result = await handleValidateResetToken({ resetResponse, cache, token });
                                     if (validateFlow()) {
                                         return await handleResult(result);
                                     }
@@ -479,8 +486,9 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     <Header title={c('Title').t`Error`} onBack={handleBackStep} />
                     <Content>
                         <GenericError />
-                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt-6">{c('Action')
-                            .t`Return to sign in`}</Button>
+                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt-6">
+                            {c('Action').t`Return to sign in`}
+                        </Button>
                         <ButtonLike
                             as={Href}
                             color="norm"
@@ -490,7 +498,9 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                             target="_self"
                             fullWidth
                             className="mt-2"
-                        >{c('Action').t`Contact support`}</ButtonLike>
+                        >
+                            {c('Action').t`Contact support`}
+                        </ButtonLike>
                     </Content>
                 </>
             )}
