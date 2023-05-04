@@ -111,6 +111,32 @@ export const getVisionaryFeatures = () => [
     },
 ];
 
+export const getFamilyFeatures = () => [
+    {
+        name: c('familyOffer_2023:Deal details').t`Up to 6 users`,
+    },
+    {
+        name: c('familyOffer_2023: Deal details').t`3 TB total storage`,
+        tooltip: c('familyOffer_2023: Tooltip')
+            .t`Storage space is shared between family members across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
+    },
+    {
+        name: c('familyOffer_2023:Deal details').t`Premium Mail and Calendar`,
+        tooltip: c('familyOffer_2023:Tooltip')
+            .t`Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.`,
+    },
+    {
+        name: c('familyOffer_2023:Deal details').t`Premium Drive`,
+        tooltip: c('familyOffer_2023:Tooltip')
+            .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
+    },
+    {
+        name: c('familyOffer_2023:Deal details').t`Premium VPN`,
+        tooltip: c('familyOffer_2023:Tooltip')
+            .t`Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
+    },
+];
+
 export const getVPNPlusFeatures = () => [
     {
         name: c('specialoffer: Deal details').t`64 countries`,

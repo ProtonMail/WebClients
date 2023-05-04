@@ -104,3 +104,25 @@ export const authMember = (memberID: string) => ({
     method: 'post',
     url: `core/v4/members/${memberID}/auth`,
 });
+
+export const inviteMember = (email: string, maxSpace: number) => ({
+    url: `core/v4/members/invitations`,
+    method: 'post',
+    data: {
+        Email: email,
+        MaxSpace: maxSpace,
+    },
+});
+
+export const deleteMember = (memberId: string) => ({
+    url: `core/v4/members/${memberId}`,
+    method: 'delete',
+});
+
+export const editMemberInvitation = (memberID: string, maxSpace: number) => ({
+    method: 'put',
+    url: `core/v4/members/invitations/${memberID}`,
+    data: {
+        MaxSpace: maxSpace,
+    },
+});

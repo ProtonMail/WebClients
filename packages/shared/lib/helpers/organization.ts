@@ -58,3 +58,11 @@ export const humanReadableFlags = (organization: Partial<Organization> = {}) => 
 export const hasFlag = (organization: Partial<Organization> = {}, mask: number) => {
     return hasBit(Number(organization.Flags), Number(mask));
 };
+
+export const hasOrganizationSetup = (organization: Partial<Organization> = {}) => {
+    return !organization.RequiresKey && !!organization.Name;
+};
+
+export const hasOrganizationSetupWithKeys = (organization: Partial<Organization> = {}) => {
+    return !!organization.RequiresKey && !!organization.HasKeys;
+};

@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -10,6 +11,7 @@ import { emailValidator, minLengthValidator, requiredValidator } from '@proton/s
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -39,6 +41,7 @@ import {
     useEventManager,
     useLoading,
     useNotifications,
+    useOrganization,
     useUser,
 } from '../../hooks';
 
@@ -72,6 +75,7 @@ const DeleteAccountModal = (props: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const [{ isAdmin, Name, Email }] = useUser();
+    const [organization] = useOrganization();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
@@ -122,6 +126,15 @@ const DeleteAccountModal = (props: Props) => {
                         Description: model.feedback,
                     })
                 );
+            }
+
+            // If a user is part of a family plan we first need to leave the organization before deleting the account.
+            // Refreshing the event manager is necessary to update the organization state
+            if (isOrganizationFamily(organization) && !isAdmin) {
+                eventManager.start();
+                await api(leaveOrganisation());
+                await eventManager.call();
+                eventManager.stop();
             }
 
             await api(

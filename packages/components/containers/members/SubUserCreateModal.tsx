@@ -51,7 +51,7 @@ interface Props extends ModalProps {
     domains: Domain[];
 }
 
-const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props) => {
+const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -142,11 +142,15 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
     const handleSubmit = async () => {
         await save();
         await call();
-        rest.onClose?.();
+        onClose?.();
         createNotification({ text: c('Success').t`User created` });
     };
 
-    const handleClose = submitting ? undefined : rest.onClose;
+    const handleClose = () => {
+        if (!submitting) {
+            onClose?.();
+        }
+    };
 
     return (
         <Modal
@@ -163,7 +167,7 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
                 if (error) {
                     return createNotification({ type: 'error', text: error });
                 }
-                withLoading(handleSubmit());
+                void withLoading(handleSubmit());
             }}
         >
             <ModalHeader title={c('Title').t`Add user`} />
@@ -240,19 +244,17 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
                     </div>
                 )}
 
-                <div className="mb1-5">
-                    <div className="text-semibold mb-2">{c('Label').t`Account storage`}</div>
-                    <MemberStorageSelector
-                        value={model.storage}
-                        sizeUnit={storageSizeUnit}
-                        range={storageRange}
-                        totalStorage={getTotalStorage({}, organization)}
-                        onChange={handleChange('storage')}
-                    />
-                </div>
+                <MemberStorageSelector
+                    className="mb-5"
+                    value={model.storage}
+                    sizeUnit={storageSizeUnit}
+                    range={storageRange}
+                    totalStorage={getTotalStorage({}, organization)}
+                    onChange={handleChange('storage')}
+                />
 
                 {hasVPN ? (
-                    <div className="flex flex-align-center mb1-5">
+                    <div className="flex flex-align-center mb-5">
                         <label className="text-semibold mr1" htmlFor="vpn-toggle">
                             {c('Label for new member').t`VPN connections`}
                         </label>
@@ -298,4 +300,4 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
     );
 };
 
-export default MemberModal;
+export default SubUserCreateModal;
