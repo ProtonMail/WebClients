@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { ThemeColor } from '@proton/colors';
 
 import { IconName } from '../../components';
@@ -12,7 +14,7 @@ export interface SubSectionConfig {
 export interface SettingsAreaConfig {
     text: string;
     title?: string;
-    description?: string;
+    description?: ReactNode;
     subsections: SubSectionConfig[];
 }
 

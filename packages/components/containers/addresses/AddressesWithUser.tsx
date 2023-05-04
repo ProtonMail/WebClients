@@ -1,13 +1,28 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
+import { Href } from '@proton/atoms/Href';
+import { SettingsParagraph } from '@proton/components/containers';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import move from '@proton/utils/move';
 
-import { Alert, OrderableTable, OrderableTableBody, OrderableTableHeader, OrderableTableRow } from '../../components';
+import {
+    Alert,
+    Icon,
+    OrderableTable,
+    OrderableTableBody,
+    OrderableTableHeader,
+    OrderableTableRow,
+    UpsellModal,
+    useModalState,
+} from '../../components';
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
@@ -17,15 +32,25 @@ interface Props {
     user: UserModel;
     member?: Member;
     organizationKey?: CachedOrganizationKey;
+    hasDescription?: boolean;
 }
 
-const AddressesUser = ({ user, member, organizationKey }: Props) => {
+const AddressesUser = ({ user, member, organizationKey, hasDescription = true }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState();
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(formatAddresses(addresses));
+
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
+        isSettings: true,
+    });
+
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     useEffect(() => {
         setAddresses(formatAddresses(addresses));
@@ -90,6 +115,30 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
 
     return (
         <>
+            {hasDescription && (
+                <SettingsParagraph className="mt-2">
+                    <span>
+                        {c('Info').t`Use the different types of email addresses and aliases offered by ${BRAND_NAME}.`}
+                    </span>
+                    <br />
+                    <Href href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link').t`Learn more`}</Href>
+                </SettingsParagraph>
+            )}
+
+            {!user.hasPaidMail && (
+                <Button
+                    shape="outline"
+                    onClick={() => handleUpsellModalDisplay(true)}
+                    className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
+                >
+                    <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
+                    <span className="flex-item-noshrink mr-2" aria-hidden="true">
+                        +
+                    </span>
+                    {c('Action').t`Get more addresses`}
+                </Button>
+            )}
+
             <OrderableTable
                 onSortEnd={handleSortEnd}
                 className="simple-table--has-actions"
@@ -139,6 +188,22 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                         })}
                 </OrderableTableBody>
             </OrderableTable>
+
+            {renderUpsellModal && (
+                <UpsellModal
+                    title={c('Title').t`Increase your privacy with more addresses`}
+                    description={c('Description')
+                        .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
+                    modalProps={upsellModalProps}
+                    upsellRef={upsellRef}
+                    features={[
+                        'more-storage',
+                        'more-email-addresses',
+                        'unlimited-folders-and-labels',
+                        'custom-email-domains',
+                    ]}
+                />
+            )}
         </>
     );
 };

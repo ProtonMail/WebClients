@@ -8,6 +8,7 @@ import {
     FolderIcon,
     Icon,
     IconName,
+    LabelsUpsellModal,
     Mark,
     PrimaryButton,
     Radio,
@@ -17,11 +18,12 @@ import {
     useFolders,
     useLoading,
     useModalState,
+    useUser,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
-import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { buildTreeview } from '@proton/shared/lib/helpers/folder';
+import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { buildTreeview, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
@@ -70,9 +72,9 @@ interface Props {
 
 const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
-
-    const [loading, withLoading] = useLoading();
     const [folders = []] = useFolders();
+    const [user] = useUser();
+    const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [selectedFolder, setSelectedFolder] = useState<Folder | undefined>();
     const [always, setAlways] = useState(false);
@@ -83,6 +85,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -148,8 +151,14 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     };
 
     const handleCreate = () => {
+        // Set focus state to lock the dropdown
+        // We need this otherwise modal that is rendered in the dropdown will be closed if dropdown disappear from the DOM
         setContainFocus(false);
-        setEditLabelModalOpen(true);
+        if (hasReachedFolderLimit(user, folders)) {
+            handleUpsellModalDisplay(true);
+        } else {
+            setEditLabelModalOpen(true);
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -192,14 +201,6 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         <Icon name="folder" /> +
                     </Button>
                 </Tooltip>
-                {renderLabelModal && (
-                    <EditLabelModal
-                        label={newFolder}
-                        type="folder"
-                        onCloseCustomAction={() => setContainFocus(true)}
-                        {...editLabelProps}
-                    />
-                )}
             </div>
             <div className="flex-item-noshrink m1 mb-0">
                 <SearchInput
@@ -212,7 +213,10 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div className="move-dropdown-list overflow-auto mt-4 flex-item-fluid-auto" data-testid="move-dropdown-list">
+            <div
+                className="move-dropdown-list overflow-auto mt-4 flex-item-fluid-auto"
+                data-testid="move-dropdown-list"
+            >
                 <ul className="unstyled my-0">
                     {list.map((folder: FolderItem) => {
                         return (
@@ -295,6 +299,24 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
             {moveScheduledModal}
             {moveAllModal}
             {moveToSpamModal}
+            {renderLabelModal && (
+                <EditLabelModal
+                    label={newFolder}
+                    type="folder"
+                    onCloseCustomAction={() => setContainFocus(true)}
+                    {...editLabelProps}
+                />
+            )}
+            {renderUpsellModal && (
+                <LabelsUpsellModal
+                    modalProps={upsellModalProps}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS}
+                    onCloseCustomAction={() => {
+                        setContainFocus(true);
+                        onClose();
+                    }}
+                />
+            )}
         </form>
     );
 };
