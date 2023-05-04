@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
+import { Autopay } from '@proton/components/payments/core';
 import { updatePaymentMethod } from '@proton/shared/lib/api/payments';
-import { Autopay } from '@proton/shared/lib/interfaces';
 import {
     apiMock,
     applyHOCs,

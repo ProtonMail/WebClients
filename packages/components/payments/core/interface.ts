@@ -1,5 +1,6 @@
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
+
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 
 export interface CardPayment {
     Type: PAYMENT_METHOD_TYPES.CARD;
@@ -84,3 +85,5 @@ export interface PaymentTokenResult {
     ApprovalURL?: string;
     ReturnHost?: string;
 }
+
+export type PlainPaymentMethodType = `${PAYMENT_METHOD_TYPES}`;

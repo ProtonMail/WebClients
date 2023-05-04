@@ -2,9 +2,10 @@ import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/containers/payments/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
+import { PaymentMethodStatus } from '@proton/components/payments/core';
+import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import {
     Currency,
     Cycle,
     HumanVerificationMethodType,
-    PaymentMethodStatus,
     Plan,
     SubscriptionCheckResponse,
     User,

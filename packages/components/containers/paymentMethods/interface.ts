@@ -1,4 +1,4 @@
-import { PaymentMethodType } from '@proton/shared/lib/interfaces';
+import { PaymentMethodType } from '@proton/components/payments/core';
 
 import { IconName } from '../../components/icon';
 

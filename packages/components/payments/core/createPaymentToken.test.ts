@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { VerifyPayment, createPaymentToken, process } from '@proton/components/containers/payments/paymentTokenHelper';
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
+import { VerifyPayment, createPaymentToken, process } from './createPaymentToken';
 import { TokenPaymentMethod, WrappedCardPayment } from './interface';
 
 let tab: { closed: boolean; close: () => any };

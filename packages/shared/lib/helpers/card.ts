@@ -1,4 +1,5 @@
-import { CardDetails, isCardDetails } from '../interfaces';
+// todo: move to payments/core
+import { CardDetails, isCardDetails } from '@proton/components/payments/core';
 
 /**
  * Check if card is expired at the end of current month

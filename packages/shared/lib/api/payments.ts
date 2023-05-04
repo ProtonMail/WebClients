@@ -1,5 +1,6 @@
 import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 
+import { Autopay } from '@proton/components/payments/core';
 import {
     AmountAndCurrency,
     ExistingPayment,
@@ -7,11 +8,11 @@ import {
     TokenPaymentMethod,
     WrappedCardPayment,
     WrappedPaypalPayment,
-} from '@proton/components/containers/payments/interface';
+} from '@proton/components/payments/core/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import { ProductParam, getProductHeaders } from '../apps/product';
-import { Autopay, Currency, Cycle } from '../interfaces';
+import { Currency, Cycle } from '../interfaces';
 
 export const getSubscription = () => ({
     url: 'payments/v4/subscription',

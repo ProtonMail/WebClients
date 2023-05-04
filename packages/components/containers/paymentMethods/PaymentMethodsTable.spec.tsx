@@ -1,7 +1,12 @@
 import { render } from '@testing-library/react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Autopay, CardDetails, PayPalDetails, PaymentMethod } from '@proton/shared/lib/interfaces';
+import {
+    Autopay,
+    CardDetails,
+    PAYMENT_METHOD_TYPES,
+    PayPalDetails,
+    PaymentMethod,
+} from '@proton/components/payments/core';
 
 import TableBody from '../../components/table/TableBody';
 import TableRow from '../../components/table/TableRow';

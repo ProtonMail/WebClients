@@ -1,10 +1,10 @@
+import { VerifyPayment, getCreatePaymentToken, process } from '@proton/components/payments/core';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import { PaymentVerificationModal } from '..';
 import useApi from '../../hooks/useApi';
 import useModals from '../../hooks/useModals';
-import { TokenPaymentMethod } from './interface';
-import { VerifyPayment, getCreatePaymentToken, process } from './paymentTokenHelper';
+import { TokenPaymentMethod } from '../../payments/core/interface';
 
 export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): VerifyPayment =>
     async function verify({

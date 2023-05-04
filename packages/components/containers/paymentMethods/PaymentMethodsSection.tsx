@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader, useModalState } from '../../components';

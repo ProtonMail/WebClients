@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { isEmpty } from '@proton/shared/lib/helpers/validators';
 
-import { CardModel } from './interface';
+import { CardModel } from '../../payments/core/interface';
 
 export const isCardNumber = (value: string) => valid.number(value).isValid;
 export const isCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isValid;
