@@ -140,3 +140,18 @@ export const queryCheckVerificationCode = (
     method: 'put',
     data: { Token, TokenType, Type },
 });
+
+export const getInvitations = () => ({
+    url: 'core/v4/users/invitations',
+    method: 'get',
+});
+
+export const acceptInvitation = (invitationID: string) => ({
+    url: `core/v4/users/invitations/${invitationID}/accept`,
+    method: 'post',
+});
+
+export const rejectInvitation = (invitationID: string) => ({
+    url: `core/v4/users/invitations/${invitationID}/reject`,
+    method: 'post',
+});

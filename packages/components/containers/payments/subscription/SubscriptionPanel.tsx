@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getHasB2BPlan, getPrimaryPlan, hasPassPlus, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Address,
@@ -11,14 +12,16 @@ import {
     Organization,
     Subscription,
     UserModel,
+    UserType,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, Meter, Price, StripedItem, StripedList } from '../../../components';
+import { Icon, Meter, Price, SettingsLink, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
 import {
     getCustomDomainForEmailAliases,
@@ -95,6 +98,8 @@ const SubscriptionPanel = ({
 }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
+
+    const isAdmin = user.isAdmin && !user.isSubUser && user.Type !== UserType.EXTERNAL;
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
@@ -191,6 +196,7 @@ const SubscriptionPanel = ({
                 text: getPlusServers(vpnServers.paid.servers, vpnServers.paid.countries),
             },
         ];
+
         return (
             <StripedList alternate="odd">
                 <SubscriptionItems items={items} />
@@ -256,22 +262,15 @@ const SubscriptionPanel = ({
     };
 
     const getDefault = () => {
-        const items: Item[] = [
-            ...(() => {
-                if (MaxMembers > 1 || getHasB2BPlan(subscription)) {
-                    return [
-                        {
-                            icon: 'users',
-                            text: c('Subscription attribute').ngettext(
-                                msgid`${UsedMembers} of ${MaxMembers} user`,
-                                `${UsedMembers} of ${MaxMembers} users`,
-                                MaxMembers
-                            ),
-                        } as const,
-                    ];
-                }
-                return [];
-            })(),
+        const items: (Item | false)[] = [
+            (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
+                icon: 'users',
+                text: c('Subscription attribute').ngettext(
+                    msgid`${UsedMembers} of ${MaxMembers} user`,
+                    `${UsedMembers} of ${MaxMembers} users`,
+                    MaxMembers
+                ),
+            },
             {
                 icon: 'envelope',
                 text:
@@ -283,21 +282,14 @@ const SubscriptionPanel = ({
                               MaxAddresses
                           ),
             },
-            ...(() => {
-                if (!!MaxDomains) {
-                    return [
-                        {
-                            icon: 'globe',
-                            text: c('Subscription attribute').ngettext(
-                                msgid`${UsedDomains} of ${MaxDomains} custom domain`,
-                                `${UsedDomains} of ${MaxDomains} custom domains`,
-                                MaxDomains
-                            ),
-                        } as const,
-                    ];
-                }
-                return [];
-            })(),
+            !!MaxDomains && {
+                icon: 'globe',
+                text: c('Subscription attribute').ngettext(
+                    msgid`${UsedDomains} of ${MaxDomains} custom domain`,
+                    `${UsedDomains} of ${MaxDomains} custom domains`,
+                    MaxDomains
+                ),
+            },
             {
                 icon: 'calendar-checkmark',
                 text: (() => {
@@ -329,31 +321,35 @@ const SubscriptionPanel = ({
                 })(),
             },
         ];
+
         return (
             <StripedList>
                 {storageItem}
-                <SubscriptionItems items={items} />
+                <SubscriptionItems items={items.filter(isTruthy)} />
             </StripedList>
         );
     };
 
     return (
         <div
-            className="border rounded p-6 pt-10 subscription-panel-container flex-align-self-start"
+            className="border rounded px-6 py-5 subscription-panel-container flex-align-self-start on-tablet-order-1 on-mobile-order-1"
             data-testid="current-plan"
         >
-            <div className="flex flex-wrap flex-align-items-center flex-justify-space-between">
-                <h3 data-testid="plan-name">
-                    <strong>{planTitle}</strong>
-                </h3>
-                <Price
-                    className="h3 color-weak"
-                    currency={currency}
-                    suffix={subscription && amount ? c('Suffix').t`/month` : ''}
-                    data-testid="plan-price"
-                >
-                    {amount}
-                </Price>
+            <h3 className="mb-1">
+                <strong>{c('Title').t`Your Plan`}</strong>
+            </h3>
+            <div className="flex flex-wrap flex-align-items-center flex-justify-space-between color-weak">
+                <strong data-testid="plan-name">{planTitle}</strong>
+                {user.hasPaidMail && (
+                    <Price
+                        className="h3 color-weak"
+                        currency={currency}
+                        suffix={subscription && amount ? c('Suffix').t`/month` : ''}
+                        data-testid="plan-price"
+                    >
+                        {amount}
+                    </Price>
+                )}
             </div>
             {(() => {
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
@@ -370,6 +366,11 @@ const SubscriptionPanel = ({
                 }
                 return getDefault();
             })()}
+            {isAdmin && (hasOrganizationSetup(organization) || hasOrganizationSetupWithKeys(organization)) && (
+                <ButtonLike as={SettingsLink} className="mb-2" color="norm" path="/users-addresses" fullWidth>{c(
+                    'familyOffer_2023:Family plan'
+                ).t`Manage user accounts`}</ButtonLike>
+            )}
             {
                 // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
                 user.isPaid && user.canPay ? (
@@ -387,8 +388,8 @@ const SubscriptionPanel = ({
                 <Button
                     onClick={handleCustomizeSubscription}
                     className="mb-2"
-                    size="large"
                     color="weak"
+                    size="large"
                     shape="outline"
                     data-testid="customize-plan"
                     fullWidth
@@ -398,8 +399,8 @@ const SubscriptionPanel = ({
                 <Button
                     onClick={handleExplorePlans}
                     size="large"
-                    color="norm"
-                    shape="ghost"
+                    shape={user.isPaid ? 'ghost' : 'outline'}
+                    color={user.isPaid ? 'norm' : 'weak'}
                     fullWidth
                     data-testid="explore-other-plan"
                 >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>

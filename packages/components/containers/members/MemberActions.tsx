@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { CachedOrganizationKey, Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -11,7 +12,7 @@ interface Props {
     member: Member;
     onLogin: (member: Member) => void;
     onEdit: (member: Member) => void;
-    onDelete: (member: Member) => Promise<void>;
+    onDelete: (member: Member) => void;
     onRevoke: (member: Member) => Promise<void>;
     addresses: PartialMemberAddress[] | undefined;
     organization: Organization;
@@ -20,13 +21,17 @@ interface Props {
 
 const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses = [], organization }: Props) => {
     const [loading, withLoading] = useLoading();
-
+    const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
+    const hasSetupOrganization = hasOrganizationSetup(organization);
     const canDelete = !member.Self;
-    const canEdit = organization.HasKeys;
-    const canRevokeSessions = !member.Self;
-
+    const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
+    const canRevokeSessions = hasSetupOrganizationWithKeys && !member.Self && member.Type === MEMBER_TYPE.MANAGED;
     const canLogin =
-        !member.Self && member.Private === MEMBER_PRIVATE.READABLE && member.Keys.length && addresses.length;
+        hasSetupOrganizationWithKeys &&
+        !member.Self &&
+        member.Private === MEMBER_PRIVATE.READABLE &&
+        member.Keys.length > 0 &&
+        addresses.length > 0;
 
     const list = [
         canEdit && {
@@ -37,10 +42,10 @@ const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses 
         },
         canDelete &&
             ({
-                text: c('Member action').t`Delete`,
+                text: canRevokeSessions ? c('Member action').t`Delete` : c('Member action').t`Remove`,
                 actionType: 'delete',
                 onClick: () => {
-                    withLoading(onDelete(member));
+                    onDelete(member);
                 },
             } as const),
         canLogin && {
@@ -53,7 +58,7 @@ const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses 
         canRevokeSessions && {
             text: c('Member action').t`Revoke sessions`,
             onClick: () => {
-                withLoading(onRevoke(member));
+                void withLoading(onRevoke(member));
             },
         },
     ].filter(isTruthy);

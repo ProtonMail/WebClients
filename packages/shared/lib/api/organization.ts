@@ -96,3 +96,8 @@ export const activateOrganizationKey = (PrivateKey: string) => ({
     method: 'put',
     data: { PrivateKey },
 });
+
+export const leaveOrganisation = () => ({
+    url: 'core/v4/organizations/membership',
+    method: 'delete',
+});

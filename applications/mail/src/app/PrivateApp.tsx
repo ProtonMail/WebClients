@@ -1,4 +1,5 @@
-import { LoaderPage, StandardPrivateApp, useApi, useDrawer } from '@proton/components';
+import { LoaderPage, StandardPrivateApp } from '@proton/components/containers';
+import { useApi, useDrawer } from '@proton/components/hooks';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
@@ -20,6 +21,7 @@ import {
     OrganizationModel,
     PaymentMethodsModel,
     SubscriptionModel,
+    UserInvitationModel,
     UserModel,
     UserSettingsModel,
 } from '@proton/shared/lib/models';
@@ -29,6 +31,35 @@ interface Props {
     onLogout: () => void;
     locales: TtagLocaleMap;
 }
+
+const EVENTS_MODELS = [
+    UserModel,
+    AddressesModel,
+    ConversationCountsModel as Model<any>,
+    MessageCountsModel as Model<any>,
+    MailSettingsModel,
+    UserSettingsModel,
+    LabelsModel,
+    SubscriptionModel,
+    OrganizationModel,
+    ContactsModel,
+    ContactEmailsModel,
+    DomainsModel,
+    FiltersModel,
+    MembersModel,
+    PaymentMethodsModel,
+    ImportersModel,
+    UserInvitationModel,
+];
+
+const PRELOAD_MODELS = [
+    UserModel,
+    UserSettingsModel,
+    LabelsModel,
+    AddressesModel,
+    MailSettingsModel,
+    ContactEmailsModel,
+];
 
 const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './MainContainer');
 
@@ -48,32 +79,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             }}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             locales={locales}
-            preloadModels={[
-                UserModel,
-                UserSettingsModel,
-                LabelsModel,
-                AddressesModel,
-                MailSettingsModel,
-                ContactEmailsModel,
-            ]}
-            eventModels={[
-                UserModel,
-                AddressesModel,
-                ConversationCountsModel as Model<any>,
-                MessageCountsModel as Model<any>,
-                MailSettingsModel,
-                UserSettingsModel,
-                LabelsModel,
-                SubscriptionModel,
-                OrganizationModel,
-                ContactsModel,
-                ContactEmailsModel,
-                DomainsModel,
-                FiltersModel,
-                MembersModel,
-                PaymentMethodsModel,
-                ImportersModel,
-            ]}
+            preloadModels={PRELOAD_MODELS}
+            eventModels={EVENTS_MODELS}
             eventQuery={(eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 })}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
