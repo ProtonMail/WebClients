@@ -42,7 +42,7 @@ export const createAutoFillService = () => {
 
     const updateTabsBadgeCount = async () => {
         try {
-            const tabs = await browser.tabs.query({});
+            const tabs = await browser.tabs.query({ active: true });
             await Promise.all(
                 tabs.map(({ id: tabId, url, active }) => {
                     const { domain: realm, subdomain } = parseUrl(url ?? '');
@@ -67,11 +67,9 @@ export const createAutoFillService = () => {
         } catch (_) {}
     };
 
-    /**
-     * Clears badge count for each valid tab
+    /* Clears badge count for each valid tab
      * Triggered on logout detection to avoid
-     * showing stale counts
-     */
+     * showing stale counts */
     const clearTabsBadgeCount = async (): Promise<void> => {
         try {
             const tabs = await browser.tabs.query({});
@@ -84,6 +82,8 @@ export const createAutoFillService = () => {
         onContextReady((_, sender) => {
             const { realm, tabId, subdomain } = parseSender(sender);
             const items = getAutofillCandidates({ realm, subdomain });
+
+            void setPopupIconBadge(tabId, items.length);
 
             return { items: tabId !== undefined && items.length > 0 ? items : [] };
         })
@@ -103,11 +103,9 @@ export const createAutoFillService = () => {
         })
     );
 
-    /**
-     * onUpdated will be triggered every time a tab
+    /* onUpdated will be triggered every time a tab
      * has been loaded with a new url : update the
-     * badge count accordingly
-     */
+     * badge count accordingly */
     browser.tabs.onUpdated.addListener(
         onContextReady(async (tabId, _, tab) => {
             const { domain: realm, subdomain } = parseUrl(tab.url ?? '');
