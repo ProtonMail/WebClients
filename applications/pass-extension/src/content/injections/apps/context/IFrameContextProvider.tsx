@@ -14,7 +14,7 @@ import {
     IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
-} from '../../types';
+} from '../../../types';
 
 type IFrameContextValue = {
     workerState: Maybe<Omit<WorkerState, 'UID'>>;
@@ -65,9 +65,8 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
 
                 framePortRef.onMessage.addListener((message: Maybe<IFrameMessage | WorkerMessage>) => {
                     switch (message?.type) {
-                        case IFrameMessageType.IFRAME_INIT: {
+                        case IFrameMessageType.IFRAME_INIT:
                             return setWorkerState(message.payload.workerState);
-                        }
 
                         /* If for any reason we get a `PORT_UNAUTHORIZED`
                          * message : it likely means the iframe was injected

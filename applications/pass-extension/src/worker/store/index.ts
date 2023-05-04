@@ -12,7 +12,7 @@ import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 
 import WorkerMessageBroker from '../channel';
-import { withContext } from '../context/helpers';
+import { withContext } from '../context';
 import { workerMiddleware } from './worker.middleware';
 
 const sagaMiddleware = createSagaMiddleware();

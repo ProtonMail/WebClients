@@ -22,8 +22,7 @@ import { createOTPService } from '../services/otp';
 import { createSettingsService } from '../services/settings';
 import { createStoreService } from '../services/store';
 import { createTelemetryService } from '../services/telemetry';
-import { WorkerContext } from './context';
-import { withContext } from './helpers';
+import { WorkerContext, withContext } from './context';
 
 export const createWorkerContext = (options: { api: Api; status: WorkerStatus }) => {
     const auth = createAuthService({

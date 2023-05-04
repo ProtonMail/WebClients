@@ -1,24 +1,23 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
-import { isMainFrame } from '@proton/pass/utils/dom';
+import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 
-import CSContext from '../context';
+import { withContext } from '../context/context';
 import { FormType } from '../types';
 
-export const createAutofillService = () => {
-    const queryItems = async (): Promise<SafeLoginItem[]> =>
+export const createCSAutofillService = () => {
+    const queryItems: () => Promise<SafeLoginItem[]> = withContext(async ({ mainFrame }) =>
         sendMessage.map(
             contentScriptMessage({
                 type: WorkerMessageType.AUTOFILL_QUERY,
-                payload: { mainFrame: isMainFrame() },
+                payload: { mainFrame },
             }),
             (response) => (response.type === 'success' ? response.items ?? [] : [])
-        );
+        )
+    );
 
-    const setLoginItemsCount = (count: number): void => {
-        const forms = CSContext.get().formManager.getForms();
-        const loginForms = forms.filter((form) => form.formType === FormType.LOGIN);
+    const setLoginItemsCount: (count: number) => void = withContext(({ service: { formManager } }, count): void => {
+        const loginForms = formManager.getForms().filter((form) => form.formType === FormType.LOGIN);
 
         if (loginForms.length > 0) {
             loginForms.forEach((form) => {
@@ -31,7 +30,7 @@ export const createAutofillService = () => {
                     });
             });
         }
-    };
+    });
 
     return {
         queryItems: pipe(
@@ -41,3 +40,5 @@ export const createAutofillService = () => {
         setLoginItemsCount,
     };
 };
+
+export type CSAutofillService = ReturnType<typeof createCSAutofillService>;

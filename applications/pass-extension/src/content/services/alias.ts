@@ -1,8 +1,8 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { AliasState } from '@proton/pass/store';
+import type { AliasState } from '@proton/pass/store';
 import { WorkerMessageType } from '@proton/pass/types';
 
-export const createAliasService = () => {
+export const createCSAliasService = () => {
     const getOptions = async (): Promise<AliasState['aliasOptions']> =>
         sendMessage.map(
             contentScriptMessage({
@@ -11,7 +11,7 @@ export const createAliasService = () => {
             (response) => (response.type === 'success' ? response.options : null)
         );
 
-    return {
-        getOptions,
-    };
+    return { getOptions };
 };
+
+export type CSAliasService = ReturnType<typeof createCSAliasService>;

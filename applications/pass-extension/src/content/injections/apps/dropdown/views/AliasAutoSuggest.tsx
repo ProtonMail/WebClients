@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import type { AliasState } from '@proton/pass/store';
 
-import { AliasPreview } from '../../../../shared/components/alias/Alias.preview';
-import { IFrameMessageType } from '../../../types';
-import { useIFrameContext } from '../../iframe/IFrameContextProvider';
+import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
+import { IFrameMessageType } from '../../../../types';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 
 export const AliasAutoSuggest: VFC<{ options: AliasState['aliasOptions']; prefix: string }> = ({ options, prefix }) => {
