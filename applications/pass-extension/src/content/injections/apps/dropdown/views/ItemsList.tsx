@@ -2,8 +2,8 @@ import type { VFC } from 'react';
 
 import { SafeLoginItem } from '@proton/pass/types';
 
-import { IFrameMessageType } from '../../../types';
-import { useIFrameContext } from '../../iframe/IFrameContextProvider';
+import { IFrameMessageType } from '../../../../types';
+import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 import { DropdownItemsList } from '../components/DropdownItemsList';
 

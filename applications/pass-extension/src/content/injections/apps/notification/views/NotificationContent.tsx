@@ -7,8 +7,8 @@ import { type Maybe, type PromptedFormEntry, WorkerMessageType } from '@proton/p
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { merge } from '@proton/pass/utils/object';
 
-import { type IFrameMessage, IFrameMessageType, NotificationAction } from '../../../types';
-import { useIFrameContext, useRegisterMessageHandler } from '../../iframe/IFrameContextProvider';
+import { type IFrameMessage, IFrameMessageType, NotificationAction } from '../../../../types';
+import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { Autosave } from './Autosave';
 
 type NotificationAppState = {

@@ -4,14 +4,10 @@ import { getMaxZIndex, isInputElement } from '@proton/pass/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 import { objectMap } from '@proton/pass/utils/object';
 
-import { PROCESSED_INPUT_ATTR } from '../constants';
-import { createFormTracker } from '../services/form/tracker';
-import { FormFields, FormHandles, FormType } from '../types';
+import { PROCESSED_INPUT_ATTR } from '../../constants';
+import { FormFields, FormHandle, FormType } from '../../types';
+import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
-
-export const getAllFields = (form: FormHandles) => Object.values(form.fields).flat();
-export const getAllInputFields = (form: FormHandles) =>
-    getAllFields(form).filter((field) => isInputElement(field.element));
 
 export type CreateFormHandlesOptions<T extends FormType> = {
     formType: T;
@@ -19,14 +15,12 @@ export type CreateFormHandlesOptions<T extends FormType> = {
     fields: FormFields<T>;
 };
 
-export type FormHandlesProps = {
-    zIndex: number;
-};
+export type FormHandlesProps = { zIndex: number };
 
-export const createFormHandles = <T extends FormType = FormType>(options: CreateFormHandlesOptions<T>): FormHandles => {
+export const createFormHandles = <T extends FormType = FormType>(options: CreateFormHandlesOptions<T>): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
 
-    const formHandle: FormHandles = {
+    const formHandle: FormHandle = {
         id: uniqid(),
         element: form,
         formType: formType,
@@ -39,20 +33,24 @@ export const createFormHandles = <T extends FormType = FormType>(options: Create
                     getFormHandle: () => formHandle,
                 })
             )
-        ) as FormHandles['fields'],
+        ) as FormHandle['fields'],
+        listFields: (predicate = () => true) => Object.values(formHandle.fields).flat().filter(predicate),
         shouldRemove: () => !document.body.contains(form),
-        shouldUpdate: () => !getAllInputFields(formHandle).every((field) => form.contains(field.element)),
-        /**
-         * Form tracker is responsible for setting
+        shouldUpdate: () =>
+            !formHandle
+                .listFields((field) => isInputElement(field.element))
+                .every((field) => form.contains(field.element)),
+
+        /* Form tracker is responsible for setting
          * up the submission handlers and the input
-         * changes handler.
-         */
-        attach: () => {
+         * changes handler */
+        attach() {
             logger.debug(`[FormHandles]: Attaching tracker for form [${formType}:${formHandle.id}]`);
             formHandle.tracker = formHandle.tracker ?? createFormTracker(formHandle);
             formHandle.tracker?.attach();
         },
-        detach: () => {
+
+        detach() {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             Array.from(form.querySelectorAll('input')).forEach((el) => el.removeAttribute(PROCESSED_INPUT_ATTR));
             formHandle.tracker?.detach();
