@@ -1,4 +1,4 @@
-import { PropsWithChildren, createContext, useContext, useMemo } from 'react';
+import { PropsWithChildren, cloneElement, createContext, useContext, useMemo } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -95,12 +95,11 @@ export const RevisionsProvider = ({
                 </>
             ),
             onSubmit: () =>
-                deleteRevision(abortSignal, revision.ID)
-                    .then(() => {
-                        createNotification({
-                            text: c('Info').t`Version is deleted`,
-                        });
-                    })
+                deleteRevision(abortSignal, revision.ID).then(() => {
+                    createNotification({
+                        text: c('Info').t`Version is deleted`,
+                    });
+                }),
         });
     };
 
@@ -127,18 +126,17 @@ export const RevisionsProvider = ({
                 </>
             ),
             onSubmit: () =>
-                restoreRevision(abortSignal, revision.ID)
-                    .then((Code) => {
-                        if (Code === 1000) {
-                            createNotification({
-                                text: c('Info').t`Version is restored`,
-                            });
-                        } else {
-                            createNotification({
-                                text: c('Info').t`Restore is in progress. This can take a few seconds.`,
-                            });
-                        }
-                    })
+                restoreRevision(abortSignal, revision.ID).then((Code) => {
+                    if (Code === 1000) {
+                        createNotification({
+                            text: c('Info').t`Version is restored`,
+                        });
+                    } else {
+                        createNotification({
+                            text: c('Info').t`Restore is in progress. This can take a few seconds.`,
+                        });
+                    }
+                }),
         });
     };
 
@@ -157,7 +155,12 @@ export const RevisionsProvider = ({
             }}
         >
             {children}
-            {revisionPreview}
+            {revisionPreview
+                ? cloneElement(revisionPreview, {
+                      className:
+                          (confirmModal?.props.open || revisionDetailsModal?.props.open) && 'revisions-preview--behind',
+                  })
+                : null}
             {revisionDetailsModal}
             {confirmModal}
         </RevisionsContext.Provider>
