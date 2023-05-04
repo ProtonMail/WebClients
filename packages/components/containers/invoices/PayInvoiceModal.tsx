@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import usePaymentToken from '@proton/components/hooks/usePaymentToken';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { toPrice } from '@proton/shared/lib/helpers/string';
