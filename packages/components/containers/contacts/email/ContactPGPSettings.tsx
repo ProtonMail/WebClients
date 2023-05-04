@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { CryptoProxy } from '@proton/crypto';
 import { BRAND_NAME, CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -97,9 +98,12 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
     return (
         <>
             {!hasApiKeys && (
-                <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>
+                <Alert className="mb-4">
                     {c('Info')
                         .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-${BRAND_NAME} user that uses a PGP compatible service.`}
+                    <div>
+                        <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Link').t`Learn more`}</Href>
+                    </div>
                 </Alert>
             )}
             {!!model.publicKeys.pinnedKeys.length && askForPinning && (
@@ -115,12 +119,22 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
             {hasApiKeys && !hasPinnedKeys && (
-                <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
-                    .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
+                <Alert className="mb-4">
+                    {c('Info')
+                        .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}
+                    <div>
+                        <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
+                    </div>
+                </Alert>
             )}
             {model.isPGPExternal && (noPinnedKeyCanSend || noApiKeyCanSend) && model.encrypt && (
-                <Alert className="mb-4" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
-                    .t`None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable "Encrypt emails".`}</Alert>
+                <Alert className="mb-4" type="error">
+                    {c('Info')
+                        .t`None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable "Encrypt emails".`}
+                    <div>
+                        <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Link').t`Learn more`}</Href>
+                    </div>
+                </Alert>
             )}
             {model.isPGPExternal && (
                 <>

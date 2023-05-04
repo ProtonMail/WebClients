@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -17,9 +18,12 @@ interface Props {
 const DomainSection = ({ domain, domainName, onValue, validator }: Props) => {
     return (
         <>
-            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
+            <Alert className="mb-4">
                 {c('Label for adding a new custom domain')
                     .t`Add a domain that you own to your ${MAIL_APP_NAME} account.`}
+                <div>
+                    <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`Learn more`}</Href>
+                </div>
             </Alert>
             {domain.ID ? (
                 <InputFieldTwo label={c('Label').t`Domain name`} as="div">

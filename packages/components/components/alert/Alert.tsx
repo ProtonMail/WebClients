@@ -1,36 +1,26 @@
 import { ReactNode } from 'react';
 
-import { c } from 'ttag';
+import clsx from '@proton/utils/clsx';
 
-import { Href } from '@proton/atoms';
+type AlertType = 'info' | 'error' | 'warning' | 'success';
 
-import { classnames } from '../../helpers';
+type ClassesMap = { [key in AlertType]: string };
 
-const CLASSES = {
+const classesMap: ClassesMap = {
     info: 'alert-block',
     warning: 'alert-block--warning',
     error: 'alert-block--danger',
     success: 'alert-block--success',
-} as const;
+};
 
-interface Props {
-    type?: 'info' | 'error' | 'warning' | 'success';
+interface AlertProps {
+    type?: AlertType;
     children?: ReactNode;
-    learnMore?: string;
     className?: string;
 }
 
-const Alert = ({ type = 'info', children, learnMore, className }: Props) => {
-    return (
-        <div className={classnames([CLASSES[type], className])}>
-            <div>{children}</div>
-            {learnMore ? (
-                <div>
-                    <Href href={learnMore} className={className}>{c('Link').t`Learn more`}</Href>
-                </div>
-            ) : null}
-        </div>
-    );
+const Alert = ({ type = 'info', children, className }: AlertProps) => {
+    return <div className={clsx(classesMap[type], className)}>{children}</div>;
 };
 
 export default Alert;
