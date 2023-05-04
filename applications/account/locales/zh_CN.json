@@ -310,7 +310,7 @@
         "更改计费方式"
       ],
       "Edit email address": [
-        "编辑电子邮件地址"
+        "更改邮箱地址"
       ],
       "Edit label": [
         "编辑标签"
@@ -1041,7 +1041,7 @@
     },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
-        "在${ formattedEndTime } 自动续订"
+        "将于 ${ formattedEndTime } 自动续订"
       ]
     },
     "Billing cycle option": {
@@ -2620,7 +2620,7 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        "Bug 或质量问题"
+        "软件缺陷或质量问题"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "我要改用其他 ${ BRAND_NAME } 账户"
@@ -2629,24 +2629,24 @@
         "缺失功能"
       ],
       "My reason isn't listed, please comment": [
-        "未列原因，请留言"
+        "其他原因，请留言"
       ],
       "Streaming service unsupported": [
-        "不支持串流服务"
+        "不支持在线视频平台"
       ],
       "Subscription is too expensive": [
-        "订阅费太高了"
+        "费用过高"
       ],
       "Switching to a different provider": [
-        "改用其他提供商"
+        "打算改用其他邮箱"
       ],
       "Temporary need, may come back in the future": [
-        "临时需求，以后可能还会回来"
+        "临时需要退订，以后可能会重新开通"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "帮助我们改进产品！"
+        "帮助我们做得更好！"
       ]
     },
     "Duration": {
@@ -4570,13 +4570,13 @@
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
       "Create a new account and share the email address and password with the user.": [
-        "创建一个新的账户并与此用户共享电子邮件地址和密码。"
+        "创建新账户并将账号和密码告知用户本人。"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "使用您自己的域名创建并管理电子邮箱子账户。"
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "为其他人创建电子邮件地址，为企业、学校或社会团体管理${ MAIL_APP_NAME } 。首先，请添加您的组织名称和自定义域名（例如@ yourcompany.com ）。 "
+        "将 ${ MAIL_APP_NAME } 用于企业、学校或各类组织机构，为大量用户统一管理邮箱。首先需要设置机构名称和自有域名（如 @qiye.com）。"
       ],
       "Create in": [
         "创建于"
@@ -4747,7 +4747,7 @@
         "输入您的密保邮箱，我们将发邮件告知您的用户名或邮箱地址。"
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "请输入您的恢复电话号码，我们将发送您的用户名或电子邮件地址信息。"
+        "请输入您的密保手机号，我们将把您的用户名或邮箱地址发送至该号码。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "事件邀请与回应都将采用这一语言发送。"
@@ -5335,7 +5335,7 @@
         "日历将会从您的账号中移除。"
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
+        "置于列表首位的邮箱地址将作为默认地址。拖动即可调整地址顺序。"
       ],
       "The following address is available:": [
         "以下地址可以使用："
@@ -5488,16 +5488,16 @@
         "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等值。"
       ],
       "Total email addresses": [
-        "电子邮件地址总数"
+        "邮箱地址总数"
       ],
       "Total storage": [
         "存储空间总量"
       ],
       "Total supported domains": [
-        "支持的域总数"
+        "自有域名总数"
       ],
       "Total VPN connections": [
-        "VPN连接总数"
+        "VPN 同时在线设备总数"
       ],
       "Two-factor authentication disabled": [
         "双重验证已关闭"
@@ -6450,10 +6450,10 @@
         "复制"
       ],
       "Could you please let us know which provider?": [
-        "请告知我们是哪一个提供商？"
+        "您能告诉我们是哪一款邮箱吗？"
       ],
       "Could you please specify which streaming service?": [
-        "请具体说明下是哪一个串流服务？"
+        "您能具体说明是哪家视频平台吗？"
       ],
       "Could you please specify?": [
         "您能具体说明一下吗？"
@@ -6774,7 +6774,7 @@
         "操作系统版本"
       ],
       "Optional": [
-        "选填"
+        "非必填"
       ],
       "OR": [
         "或"
@@ -7848,6 +7848,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7917,26 +7937,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -8587,7 +8587,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+        "在邮件发送密钥的用户 ID（${ keyUserIds }）中找不到本邮箱地址"
       ]
     },
     "Placeholder": {
@@ -9781,6 +9781,9 @@
       "Download ${ VPN_APP_NAME }": [
         "下载 ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "时长"
+      ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"
       ],
@@ -10019,7 +10022,7 @@
         "电话"
       ],
       "Plan": [
-        "套餐"
+        "等级"
       ],
       "Plan summary": [
         "订单概览"
@@ -10220,7 +10223,7 @@
         "升级账户"
       ],
       "Users": [
-        "用户"
+        "用户数"
       ],
       "Users and addresses": [
         "用户和地址"

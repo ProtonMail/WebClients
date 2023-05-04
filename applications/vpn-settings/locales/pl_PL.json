@@ -3281,6 +3281,12 @@
         "${ n } folderów i etykiet",
         "${ n } folderów i etykiet"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } alias Hide My Email",
+        "${ n } aliasy Hide My Email",
+        "${ n } aliasów Hide My Email",
+        "${ n } aliasów Hide My Email"
+      ],
       "${ n } label": [
         "${ n } etykieta",
         "${ n } etykiety",
@@ -3292,6 +3298,12 @@
         "${ n } wiadomości dziennie",
         "${ n } wiadomości dziennie",
         "${ n } wiadomości dziennie"
+      ],
+      "${ n } vault": [
+        "${ n } sejf",
+        "${ n } sejfy",
+        "${ n } sejfów",
+        "${ n } sejfów"
       ],
       "${ n } VPN connection": [
         "${ n } połączenie VPN",
@@ -3437,6 +3449,9 @@
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
       ],
+      "Strong E2E encryption": [
+        "Silne szyfrowanie E2E"
+      ],
       "Team management": [
         "Zarządzanie zespołem"
       ],
@@ -3445,6 +3460,9 @@
       ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
+      ],
+      "Unlimited devices": [
+        "Nieograniczona liczba urządzeń"
       ],
       "Unlimited filters": [
         "Nieograniczona liczba filtrów"
@@ -3455,11 +3473,20 @@
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Nieograniczona liczba aliasów Hide My Email"
+      ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
       ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
+      ],
+      "Unlimited passwords and notes": [
+        "Nieograniczona liczba haseł i notatek"
+      ],
+      "Unlimited vaults": [
+        "Nieograniczona liczba sejfów"
       ],
       "Unlimited volume/bandwidth": [
         "Nielimitowana przepustowość"
@@ -3478,6 +3505,9 @@
       ],
       "User session management": [
         "Zarządzanie sesją użytkownika"
+      ],
+      "Vault and Item sharing": [
+        "Udostępnianie sejfu i elementu"
       ],
       "Worldwide streaming services": [
         "Globalne usługi streamingu"
@@ -4232,10 +4262,10 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "for ${ n } month": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minuty"
+        "za ${ n } miesiąc",
+        "za ${ n } miesiące",
+        "za ${ n } miesięcy",
+        "za ${ n } miesięcy"
       ],
       "Get the deal": [
         "Uzyskaj ofertę"
@@ -4883,6 +4913,9 @@
       ],
       "Plans": [
         "Plany"
+      ],
+      "Preview": [
+        "Podgląd"
       ],
       "Previous": [
         "Wstecz"

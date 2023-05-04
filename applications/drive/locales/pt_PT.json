@@ -18,13 +18,13 @@
         "Adicionar"
       ],
       "Add address": [
-        "Adicionar endereço"
+        "Adicionar morada"
       ],
       "Add contact": [
         "Adicionar contacto"
       ],
       "Add email": [
-        "Adicionar um correio electrónico"
+        "Adicionar um endereço de email"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -46,6 +46,9 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
+      ],
+      "Attention required": [
+        "Requer atenção"
       ],
       "Authenticate": [
         "Autenticar"
@@ -191,7 +194,7 @@
         "Editar"
       ],
       "Edit email address": [
-        "Editar o endereço de correio electrónico"
+        "Editar o endereço de email"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -282,6 +285,9 @@
       ],
       "Load image": [
         "Carregar imagem"
+      ],
+      "Manage folders": [
+        "Gerir pastas"
       ],
       "Manage labels": [
         "Gerir etiquetas"
@@ -504,6 +510,9 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Tente gravar novamente. O processo de gravar falhou devido a: ${ saveError }"
       ],
       "Undo": [
         "Desfazer"
@@ -1633,6 +1642,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro é maior, por favor divida-o em ficheiros mais pequenos.",
+        "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro é maior, por favor divida-o em ficheiros mais pequenos."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
@@ -1746,6 +1759,14 @@
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desconsidere pelo menos ${ calendarsToFixCount } calendários"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desconsidere pelo menos ${ calendarsToFixCount } calendários ou"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -1795,6 +1816,10 @@
       ],
       "Passwords do not match": [
         "As palavras-passe não coincidem."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Por favor corrija o conflito selecionado para proceder.",
+        "Por favor corrija os conflitos selecionados para proceder."
       ],
       "Signature not verified": [
         "Assinatura não verificada"
@@ -2238,6 +2263,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Export to CSV file": [
+        "Exportar para ficheiro CSV"
       ]
     },
     "Import instructions link": {
@@ -2273,8 +2301,8 @@
     },
     "Info": {
       "${ addressCount } email address": [
-        "${ addressCount } endereço de correio electrónico",
-        "${ addressCount } endereços de correio electrónico"
+        "${ addressCount } endereço de correio eletrónico",
+        "${ addressCount } endereços de correio eletrónico"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -2292,7 +2320,7 @@
         "${ canceledCount } cancelados"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contacto contém vários endereços de correio electrónico.",
+        "${ contactCount } contacto contém vários endereços de correio eletrónico.",
         "${ contactCount } contactos contêm vários endereços de correio electrónico."
       ],
       "${ contactEmailsLength } Member": [
@@ -2331,7 +2359,7 @@
         "${ numContact } contactos"
       ],
       "${ numGroups } contact group": [
-        "${ numGroups } grupo de contatos",
+        "${ numGroups } grupo de contactos",
         "${ numGroups } grupos de contatos"
       ],
       "${ pausedCount } paused": [
@@ -2383,6 +2411,9 @@
       "A number will be added to the folder name": [
         "Será adicionado um número ao nome da pasta"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Um número de telemóvel pode ser usado para verificar apenas uma conta ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta restringido devido a facturas por pagar. Contacte o administrador."
       ],
@@ -2414,6 +2445,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
+      ],
+      "Calendar side panel": [
+        "Painel lateral de calendário"
       ],
       "Canceled": [
         "Cancelado"
@@ -2472,6 +2506,9 @@
       ],
       "Duplicate key updated": [
         "Chave duplicada atualizada"
+      ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma vez"
       ],
       "Enter the code from your authenticator app": [
         "Introduza o código da sua aplicação de autenticação."
@@ -2680,6 +2717,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecione os endereços eletrónicos a adicionar a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Por favor espere até as suas mudanças estarem sincronizadas com o servidor."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Aguarde enquanto procuramos contactos que possam ser re-assinados com a chave de encriptação principal."
       ],
@@ -2695,6 +2735,9 @@
       "Queued": [
         "Em espera"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informação de recuperação ficará neste aparelho a não ser que escolha apagá-lo."
+      ],
       "Recovery process might take some time.": [
         "O processo de recuperação pode levar algum tempo."
       ],
@@ -2706,6 +2749,9 @@
       ],
       "Select what you want to import.": [
         "Selecione o que deseja importar."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
       ],
       "Session timed out": [
         "A sessão expirou."
@@ -2755,6 +2801,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
       ],
@@ -2782,6 +2831,9 @@
       "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
         "Utilize o Drive para Desktop para sincronizar pastas no seu computador com ${ DRIVE_APP_NAME }. Elas aparecerão aqui e serão acessíveis a partir de qualquer ponto. ${ LearnMore }"
       ],
+      "We'll notify you when the import is done.": [
+        "Vamos avisá-lo quando a importação for concluída."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
@@ -2796,6 +2848,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Gostaria de receber um novo código de verificação?"
       ],
       "Would you like to restore your files?": [
         "Deseja restaurar os seus ficheiros?"
@@ -2975,6 +3030,18 @@
       "Emails": [
         "Correios electronicos"
       ],
+      "Emails (all messages)": [
+        "Emails (todas as mensagens)"
+      ],
+      "Emails (last 12 months)": [
+        "Emails (últimos 12 meses)"
+      ],
+      "Emails (last 3 months)": [
+        "Emails (últimos 3 meses)"
+      ],
+      "Emails (last month)": [
+        "Emails (mês passado)"
+      ],
       "Enable Beta Access": [
         "Ativar o acesso Beta"
       ],
@@ -3010,6 +3077,9 @@
       ],
       "From: ${ from }": [
         "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "Good": [
         "Bom"
@@ -3152,6 +3222,9 @@
       "To: ${ to }": [
         "Para: ${ to }"
       ],
+      "To: ${ toEmail }": [
+        "Para: ${ toEmail }"
+      ],
       "Toolbar": [
         "Barra de ferramentas"
       ],
@@ -3217,6 +3290,11 @@
         "Painel lateral"
       ]
     },
+    "Limit of calendars reached": {
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Atingiu o número máximo de calendários disponível no seu plano."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "limpar a memória do navegador"
@@ -3244,11 +3322,29 @@
       ]
     },
     "Loading info": {
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Montante de calendário criado:  ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Montante de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "A ligar ao seu fornecedor de correio electrónico"
       ],
       "Creating new calendars": [
         "Criação de calendários"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
+        "Importar todas as mensagens das ${ itemsToImportCount } pastas e etiquetá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } da ${ itemsToImportCount } pasta e etiquetá-la como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } das ${ itemsToImportCount } pastas e etiquetá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta e etiquetá-la como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
       ]
     },
     "Message display when a new app version is available": {
@@ -3576,6 +3672,9 @@
       "Bug reported": [
         "Erro reportado"
       ],
+      "Canceling import": [
+        "A cancelar importação"
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
@@ -3670,6 +3769,22 @@
     "Text": {
       "Settings": [
         "Definições"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -3822,7 +3937,7 @@
         "Verificação humana"
       ],
       "Import as simple event?": [
-        "Importar com um evento simples?",
+        "Importar como um evento simples?",
         "Importar com eventos simples?"
       ],
       "Import contacts": [
@@ -3854,6 +3969,9 @@
       ],
       "MIME type": [
         "Tipo MIME"
+      ],
+      "Minicalendar": [
+        "Minicalendário"
       ],
       "Modified": [
         "Modificado"
@@ -4039,6 +4157,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A encriptação do correio electrónico força a assinatura para ajudar a autenticar as suas mensagens enviadas"
       ],
+      "Encrypted data": [
+        "Dados encriptados"
+      ],
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
@@ -4063,8 +4184,12 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres",
         "A palavra-passe deve conter pelo menos ${ length } caracteres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de caracter ${ n })",
+        "Tente um nome de utilizador mais pequeno (máximo de caracteres ${ n })"
       ]
     },
     "Validation Error": {

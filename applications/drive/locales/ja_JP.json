@@ -2848,6 +2848,9 @@
       "A number will be added to the folder name": [
         "フォルダーの名前に番号が追加されます"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
@@ -3382,6 +3385,9 @@
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
+      "Preview for this file type is not supported": [
+        "申し訳ございません、このファイル形式はサポートされておりません"
+      ],
       "Primary": [
         "プライマリー"
       ],
@@ -3420,6 +3426,9 @@
       ],
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -3535,6 +3544,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
@@ -3570,6 +3582,9 @@
       ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
       "Uploaded": [
         "アップロード完了"
@@ -4258,6 +4273,9 @@
       "Almost there": [
         "もう少しです"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "カレンダーの作成数：${ createdCalendarCount } のうち、${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
       ],
@@ -4272,6 +4290,20 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } の全メッセージをインポートし、ラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
       ]
     },
     "Message": {

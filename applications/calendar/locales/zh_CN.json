@@ -185,7 +185,7 @@
         "更改"
       ],
       "Edit email address": [
-        "编辑电子邮件地址"
+        "更改邮箱地址"
       ],
       "Edit label": [
         "编辑标签"
@@ -678,7 +678,7 @@
     },
     "Attendee role": {
       "Optional": [
-        "选填"
+        "非必填"
       ]
     },
     "Beta access description": {
@@ -2274,10 +2274,10 @@
         "无法删除部分联系人"
       ],
       "Some contacts don't have a valid email address: ${ list }": [
-        "某个/些联系人没有有效的电子邮件地址: ${ list }"
+        "部分联系人邮箱地址无效：${ list }"
       ],
       "Some contacts have no email addresses: ${ list }": [
-        "某些联系人没有电子邮件地址： ${ list }"
+        "部分联系人缺少邮箱地址：${ list }"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
@@ -2286,7 +2286,7 @@
         "无法删除部分群组"
       ],
       "Some groups have invalid emails: ${ list }": [
-        "某个/些群组存在无效的电子邮件地址: ${ list }"
+        "部分群组包含无效的邮箱地址：${ list }"
       ],
       "Some groups have no contacts: ${ list }": [
         "某些群组没有联系人：${ list }"
@@ -3936,7 +3936,7 @@
         "操作系统版本"
       ],
       "Optional": [
-        "选填"
+        "非必填"
       ],
       "Organizer": [
         "组织者"
@@ -4609,7 +4609,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+        "在邮件发送密钥的用户 ID（${ keyUserIds }）中找不到本邮箱地址"
       ]
     },
     "Placeholder": {
@@ -4668,7 +4668,7 @@
         "选择"
       ],
       "Start typing an email address": [
-        "开始输入电子邮件地址"
+        "请输入邮箱地址"
       ]
     },
     "Placeholder for contact group name": {

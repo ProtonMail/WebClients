@@ -5214,8 +5214,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "durante ${ n } mes",
+        "durante ${ n } meses"
       ],
       "Get the deal": [
         "Obtener la oferta"
