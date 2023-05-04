@@ -139,6 +139,9 @@ export default function useUploadQueue() {
                 if (originalIsDraft) {
                     item.originalIsDraft = originalIsDraft;
                 }
+                if (originalIsFolder) {
+                    item.originalIsFolder = originalIsFolder;
+                }
                 item.error = error;
             };
             const updateFile = (file: FileUpload): FileUpload => {
@@ -168,9 +171,6 @@ export default function useUploadQueue() {
                             parentId: folderId,
                             state: folder.state === TransferState.Initializing ? TransferState.Pending : folder.state,
                         }));
-                    }
-                    if (originalIsFolder) {
-                        folder.originalIsFolder = originalIsFolder;
                     }
                 }
                 folder.files = folder.files.map(updateFile);

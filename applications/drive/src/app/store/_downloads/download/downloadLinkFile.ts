@@ -71,7 +71,8 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
 
     const controls = initDownloadBlocks(link.name, {
         ...callbacks,
-        getBlocks: (abortSignal, pagination) => callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination),
+        getBlocks: (abortSignal, pagination) =>
+            callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination, link.revisionId),
         transformBlockStream,
         checkManifestSignature,
         onProgress: (bytes: number) => callbacks.onProgress?.([link.linkId], bytes),

@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 import { DropdownMenuButton, Icon, IconName } from '@proton/components';
 
 interface Props {
@@ -8,7 +10,7 @@ interface Props {
     close: () => void;
 }
 
-const ContextMenuButton = ({ name, icon, testId, action, close }: Props) => {
+const ContextMenuButton = ({ name, icon, testId, action, close, children }: PropsWithChildren<Props>) => {
     return (
         <DropdownMenuButton
             key={name}
@@ -23,6 +25,7 @@ const ContextMenuButton = ({ name, icon, testId, action, close }: Props) => {
         >
             <Icon className="mr-2" name={icon} />
             {name}
+            {children}
         </DropdownMenuButton>
     );
 };

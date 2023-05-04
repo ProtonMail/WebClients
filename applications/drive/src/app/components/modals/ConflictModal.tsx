@@ -55,6 +55,8 @@ export default function ConflictModal({
     );
     const [applyAll, setApplyAll] = useState(false);
 
+    const isSameType = originalIsFolder === isFolder;
+
     const uploadName = (
         <strong className="text-break" key="filename">
             {name}
@@ -77,8 +79,15 @@ export default function ConflictModal({
     return (
         <ModalTwo as="form" onClose={closeAndCancel} onSubmit={handleSubmit} size="small" {...modalProps}>
             <ModalTwoHeader
-                title={isFolder ? c('Title').t`Duplicate folder found` : c('Title').t`Duplicate file found`}
+                title={
+                    isSameType ? (
+                        <>{isFolder ? c('Title').t`Duplicate folder found` : c('Title').t`Duplicate file found`}</>
+                    ) : (
+                        <>{c('Label').t`Duplicate found`}</>
+                    )
+                }
             />
+
             <ModalTwoContent>
                 <p>
                     {originalIsDraft
@@ -88,7 +97,7 @@ export default function ConflictModal({
                     <br />
                     {c('Info').t`What do you want to do?`}
                 </p>
-                {originalIsFolder && (
+                {originalIsFolder && isFolder && (
                     <Row>
                         <Radio
                             id={TransferConflictStrategy.Merge}
@@ -108,25 +117,6 @@ export default function ConflictModal({
                 )}
                 <Row>
                     <Radio
-                        id={TransferConflictStrategy.Rename}
-                        checked={strategy === TransferConflictStrategy.Rename}
-                        onChange={() => setStrategy(TransferConflictStrategy.Rename)}
-                        name="strategy"
-                        className="inline-flex flex-nowrap"
-                    >
-                        <div>
-                            <strong>{c('Label').t`Upload anyway`}</strong>
-                            <br />
-                            <span className="color-weak">
-                                {isFolder
-                                    ? c('Info').t`A number will be added to the folder name`
-                                    : c('Info').t`A number will be added to the filename`}
-                            </span>
-                        </div>
-                    </Radio>
-                </Row>
-                <Row>
-                    <Radio
                         id={TransferConflictStrategy.Replace}
                         checked={strategy === TransferConflictStrategy.Replace}
                         onChange={() => setStrategy(TransferConflictStrategy.Replace)}
@@ -135,13 +125,54 @@ export default function ConflictModal({
                     >
                         <div>
                             <strong>
-                                {originalIsFolder ? c('Label').t`Replace folder` : c('Label').t`Replace file`}
+                                {originalIsFolder
+                                    ? c('Label').t`Replace existing folder`
+                                    : c('Label').t`Replace existing file`}
                             </strong>
                             <br />
                             <span className="color-weak">
-                                {originalIsFolder
-                                    ? c('Info').t`This will overwrite the existing folder`
-                                    : c('Info').t`This will overwrite the existing file`}
+                                {isSameType ? (
+                                    <>
+                                        {originalIsFolder
+                                            ? c('Info').t`This will overwrite the existing folder`
+                                            : c('Info').t`This will upload a new version of the file`}
+                                    </>
+                                ) : (
+                                    <>
+                                        {originalIsFolder
+                                            ? c('Info').t`This will replace the existing folder with the file`
+                                            : c('Info').t`This will replace the existing file with the folder`}
+                                    </>
+                                )}
+                            </span>
+                        </div>
+                    </Radio>
+                </Row>
+                <Row>
+                    <Radio
+                        id={TransferConflictStrategy.Rename}
+                        checked={strategy === TransferConflictStrategy.Rename}
+                        onChange={() => setStrategy(TransferConflictStrategy.Rename)}
+                        name="strategy"
+                        className="inline-flex flex-nowrap"
+                    >
+                        <div>
+                            <strong>
+                                {isSameType ? (
+                                    <>
+                                        {originalIsFolder
+                                            ? c('Label').t`Keep both folders`
+                                            : c('Label').t`Keep both files`}
+                                    </>
+                                ) : (
+                                    <>{c('Label').t`Keep both`}</>
+                                )}
+                            </strong>
+                            <br />
+                            <span className="color-weak">
+                                {isFolder
+                                    ? c('Info').t`A number will be added to the folder name`
+                                    : c('Info').t`A number will be added to the filename`}
                             </span>
                         </div>
                     </Radio>
@@ -160,7 +191,7 @@ export default function ConflictModal({
                             <span className="color-weak">
                                 {isFolder
                                     ? c('Info').t`Folder will not be uploaded`
-                                    : c('Info').t`File will not be uploaded`}
+                                    : c('Info').t`File will not be updated`}
                             </span>
                         </div>
                     </Radio>

@@ -1,3 +1,3 @@
-export { UserSettingsProvider as SettingsProvider } from './useUserSettings';
+export { UserSettingsProvider } from './useUserSettings';
 
 export { default as useUserSettings } from './useUserSettings';

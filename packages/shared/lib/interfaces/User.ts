@@ -52,5 +52,6 @@ export interface UserModel extends User {
     hasNonDelinquentScope: boolean;
     hasPaidMail: boolean;
     hasPaidVpn: boolean;
+    hasPaidDrive: boolean;
     canPay: boolean;
 }
