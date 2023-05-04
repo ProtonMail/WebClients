@@ -34,7 +34,7 @@ const App = () => {
 
     return (
         <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
-            <ErrorBoundary component={<StandardErrorPage />}>
+            <ErrorBoundary component={<StandardErrorPage big />}>
                 <Switch>
                     <Route path={G_OAUTH_REDIRECT_PATH}>
                         <AccountLoaderPage />
