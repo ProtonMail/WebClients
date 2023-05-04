@@ -1,11 +1,10 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
+import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethod } from '@proton/components/payments/core';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Autopay, PaymentMethod } from '@proton/shared/lib/interfaces';
 
-import { useApi, useEventManager, useModals, useNotifications } from '../..';
 import { DropdownActions } from '../../components';
+import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import PaymentMethodActions from './PaymentMethodActions';
 
 jest.mock('../../hooks/useNotifications', () =>

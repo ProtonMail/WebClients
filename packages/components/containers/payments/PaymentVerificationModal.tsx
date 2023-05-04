@@ -3,15 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
 import { DoNotWindowOpenAlertError, FormModal, Loader, PrimaryButton } from '../../components';
 import { useNotifications } from '../../hooks';
+import { CardPayment, TokenPaymentMethod } from '../../payments/core/interface';
+import { toTokenPaymentMethod } from '../../payments/core/utils';
 import PaymentVerificationImage from './PaymentVerificationImage';
-import { CardPayment, TokenPaymentMethod } from './interface';
-import { toTokenPaymentMethod } from './paymentTokenToParams';
 
 const STEPS = {
     DO_NOT_WINDOW_OPEN: 'do_not_window_open',

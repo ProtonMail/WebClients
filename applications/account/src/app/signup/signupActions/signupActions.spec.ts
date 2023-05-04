@@ -1,5 +1,5 @@
-import { TokenPayment } from '@proton/components/containers/payments/interface';
-import { APPS, CLIENT_TYPES, CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES, TokenPayment } from '@proton/components/payments/core';
+import { APPS, CLIENT_TYPES, CYCLE } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { SignupCacheResult, SignupType, SubscriptionData } from '../interfaces';

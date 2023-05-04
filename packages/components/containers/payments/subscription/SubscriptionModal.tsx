@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { FeatureCode } from '@proton/components/containers';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import {
     AmountAndCurrency,
     ExistingPayment,
     TokenPaymentMethod,
     WrappedCardPayment,
-} from '@proton/components/containers/payments/interface';
-import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+} from '@proton/components/payments/core/interface';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';

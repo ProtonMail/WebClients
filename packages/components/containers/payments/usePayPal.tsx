@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
+import { PAYMENT_METHOD_TYPES, process } from '@proton/components/payments/core';
 import { createToken } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { useApi, useLoading, useModals } from '../../hooks';
+import { AmountAndCurrency, TokenPaymentMethod } from '../../payments/core/interface';
 import PaymentVerificationModal from './PaymentVerificationModal';
-import { AmountAndCurrency, TokenPaymentMethod } from './interface';
-import { process } from './paymentTokenHelper';
 
 interface Model {
     Token: string;
