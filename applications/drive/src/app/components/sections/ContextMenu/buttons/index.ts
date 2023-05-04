@@ -5,3 +5,4 @@ export { default as PreviewButton } from './PreviewButton';
 export { default as RenameButton } from './RenameButton';
 export { default as ShareFileButton } from './ShareFileButton';
 export { default as ShareLinkButton } from './ShareLinkButton';
+export { default as RevisionsButton } from './RevisionsButton';

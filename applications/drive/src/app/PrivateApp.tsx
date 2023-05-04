@@ -11,8 +11,7 @@ import {
     UserSettingsModel,
 } from '@proton/shared/lib/models';
 
-import UserSettingsProvider from './components/sections/UserSettingsProvider';
-import { SettingsProvider, useUserSettings } from './store';
+import { UserSettingsProvider, useUserSettings } from './store';
 
 const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer');
 
@@ -52,9 +51,7 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
 const PrivateApp = (props: Props) => {
     return (
         <UserSettingsProvider>
-            <SettingsProvider>
-                <PrivateAppInner {...props} />
-            </SettingsProvider>
+            <PrivateAppInner {...props} />
         </UserSettingsProvider>
     );
 };

@@ -12,7 +12,10 @@ export enum LayoutSetting {
     Grid = 1,
 }
 
+export type RevisionRetentionDaysSetting = 0 | 7 | 30 | 180 | 365 | 3650;
+
 export interface UserSettings {
     Sort: SortSetting;
     Layout: LayoutSetting;
+    RevisionRetentionDays: RevisionRetentionDaysSetting;
 }

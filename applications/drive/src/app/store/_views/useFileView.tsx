@@ -15,12 +15,13 @@ import { SortParams } from './utils/useSorting';
 /**
  * useFileView provides data for file preview.
  */
-export default function useFileView(shareId: string, linkId: string, useNavigation = false) {
+export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
     const { downloadStream } = useDownload();
     const { isLinkLoading, isContentLoading, error, link, contents, downloadFile } = useFileViewBase(
         shareId,
         linkId,
-        downloadStream
+        downloadStream,
+        revisionId
     );
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
@@ -47,7 +48,8 @@ export function usePublicFileView(
 function useFileViewBase(
     shareId: string,
     linkId: string,
-    downloadStream: ReturnType<typeof usePublicDownload>['downloadStream']
+    downloadStream: ReturnType<typeof usePublicDownload>['downloadStream'],
+    revisionId?: string
 ) {
     const { getLink } = useLink();
     const { download } = useDownloadProvider();
@@ -67,6 +69,7 @@ function useFileViewBase(
                 {
                     ...link,
                     shareId,
+                    revisionId,
                 },
             ]);
             abortSignal.addEventListener('abort', () => {

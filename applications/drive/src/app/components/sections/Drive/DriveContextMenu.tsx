@@ -7,6 +7,7 @@ import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModal } from '../../modals/RenameModal';
+import { useRevisionsModal } from '../../modals/RevisionsModal/RevisionsModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import {
     CopyLinkButton,
@@ -14,6 +15,7 @@ import {
     DownloadButton,
     PreviewButton,
     RenameButton,
+    RevisionsButton,
     ShareLinkButton,
 } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
@@ -45,6 +47,9 @@ export function DriveItemContextMenu({
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [renameModal, showRenameModal] = useRenameModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+
+    const [revisionsModal, showRevisionsModal] = useRevisionsModal();
+
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -83,6 +88,16 @@ export function DriveItemContextMenu({
                     close={close}
                 />
                 <ContextSeparator />
+                {isOnlyOneFileItem && (
+                    <>
+                        <RevisionsButton
+                            selectedLink={selectedLink}
+                            showRevisionsModal={showRevisionsModal}
+                            close={close}
+                        />
+                        <ContextSeparator />
+                    </>
+                )}
                 <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
                 {children}
             </ItemContextMenu>
@@ -91,6 +106,7 @@ export function DriveItemContextMenu({
             {moveToFolderModal}
             {renameModal}
             {linkSharingModal}
+            {revisionsModal}
         </>
     );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalTwo, useLoading, useModalTwo, useNotifications } from '@proton/components';
+import { ModalTwo, useConfirmActionModal, useLoading, useModalTwo, useNotifications } from '@proton/components';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { ShareURL, SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
@@ -15,7 +15,6 @@ import {
     useLinkView,
     useShareUrl,
 } from '../../../store';
-import { useConfirmModal } from '../ConfirmationModal';
 import ModalContentLoader from '../ModalContentLoader';
 import ErrorState from './ErrorState';
 import GeneratedLinkState from './GeneratedLinkState';
@@ -68,7 +67,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
 
     const { loadOrCreateShareUrl, updateShareUrl, deleteShareUrl } = useShareUrl();
     const { createNotification } = useNotifications();
-    const [confirmModal, showConfirmModal] = useConfirmModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
     useEffect(() => {
         if (shareUrlInfo?.ShareURL.ShareID) {

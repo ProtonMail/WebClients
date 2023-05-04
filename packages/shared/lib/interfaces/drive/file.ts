@@ -62,6 +62,7 @@ export interface DriveFileBlock {
     EncSignature?: string;
     BareURL: string;
     Token: string;
+    Hash: string;
 }
 
 export interface DriveFileRevision {
@@ -71,8 +72,14 @@ export interface DriveFileRevision {
     State: number;
     ManifestSignature: string;
     SignatureAddress: string;
+    SignatureEmail: string;
     Blocks: DriveFileBlock[];
     ThumbnailHash: string;
+    XAttr?: string;
+}
+
+export interface DriveFileRevisionsResult {
+    Revisions: DriveFileRevision[];
 }
 
 export interface DriveFileRevisionResult {
