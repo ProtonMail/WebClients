@@ -21,6 +21,7 @@ const {
     ENTERPRISE,
     BUNDLE,
     BUNDLE_PRO,
+    FAMILY,
 } = PLANS;
 
 const { Android, iOS } = External;
@@ -78,6 +79,7 @@ export const hasMailPlus = (subscription: Subscription | undefined) => hasSomePl
 export const hasMailProfessional = (subscription: Subscription | undefined) => hasSomePlan(subscription, PROFESSIONAL);
 export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
 export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
+export const hasFamily = (subscription: Subscription | undefined) => hasSomePlan(subscription, FAMILY);
 export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {

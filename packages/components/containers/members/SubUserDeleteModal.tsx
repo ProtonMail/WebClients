@@ -28,7 +28,7 @@ interface Props extends ModalProps<'form'> {
     onDelete: (member: Member) => Promise<void>;
 }
 
-const DeleteMemberModal = ({ member, onDelete, ...rest }: Props) => {
+const SubUserDeleteModal = ({ member, onDelete, ...rest }: Props) => {
     const [username, setUsername] = useState('');
     const isValid = clean(username) === clean(member.Name);
     const { validator, onFormSubmit } = useFormErrors();
@@ -80,4 +80,4 @@ const DeleteMemberModal = ({ member, onDelete, ...rest }: Props) => {
     );
 };
 
-export default DeleteMemberModal;
+export default SubUserDeleteModal;

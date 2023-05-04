@@ -21,6 +21,7 @@ import {
     useIsDataRecoveryAvailable,
     useOrganization,
     useRecoveryNotification,
+    useSubscription,
     useToggle,
     useUser,
     useUserSettings,
@@ -82,6 +83,7 @@ const MainContainer = () => {
     const [userSettings] = useUserSettings();
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
+    const [subscription, loadingSubscription] = useSubscription();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
@@ -112,6 +114,7 @@ const MainContainer = () => {
         user,
         addresses,
         organization,
+        subscription,
         isSpyTrackerEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
@@ -191,7 +194,7 @@ const MainContainer = () => {
     );
 
     const redirect = (() => {
-        if (loadingOrganization || loadingFeatures) {
+        if (loadingOrganization || loadingFeatures || loadingSubscription) {
             return <PrivateMainAreaLoading />;
         }
 

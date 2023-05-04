@@ -3,9 +3,12 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { Organization } from '@proton/shared/lib/interfaces';
 
+import { useSubscription } from '../..';
 import {
     Form,
     InputFieldTwo,
@@ -23,9 +26,25 @@ interface Props extends ModalProps {
 }
 
 const MemberDowngradeModal = ({ organization, onConfirm, onClose, ...rest }: Props) => {
+    const [subscription] = useSubscription();
     const { validator, onFormSubmit } = useFormErrors();
     const [confirmText, setConfirmText] = useState('');
     const organizationName = organization.Name;
+
+    const modalTitle = hasFamily(subscription)
+        ? c('familyOffer_2023:Title').t`Delete family group?`
+        : c('familyOffer_2023:Title').t`Delete organization?`;
+    const warningMessage = hasFamily(subscription)
+        ? c('familyOffer_2023:Member downgrade modal')
+              .t`This will remove all ${BRAND_NAME} premium features for every family member.`
+        : c('familyOffer_2023:Member downgrade modal')
+              .t`This will permanently delete all sub-users, accounts, and data associated with your organization.`;
+    const label = hasFamily(subscription)
+        ? c('familyOffer_2023:Label').t`Enter family group name to confirm`
+        : c('familyOffer_2023:Label').t`Enter organization name to confirm`;
+    const validatorError = hasFamily(subscription)
+        ? c('familyOffer_2023:Error').t`Family group not recognized. Try again.`
+        : c('familyOffer_2023:Error').t`Organization not recognized. Try again.`;
 
     return (
         <Modal
@@ -41,22 +60,19 @@ const MemberDowngradeModal = ({ organization, onConfirm, onClose, ...rest }: Pro
             onClose={onClose}
             {...rest}
         >
-            <ModalHeader title={c('Title').t`Delete organization?`} />
+            <ModalHeader title={modalTitle} />
             <ModalContent>
-                <div className="mb1">
-                    {c('Member downgrade modal')
-                        .t`This will permanently delete all sub-users, accounts, and data associated with your organization.`}
-                </div>
+                <div className="mb1">{warningMessage}</div>
                 <Card rounded className="text-break user-select mb1">
                     {organizationName}
                 </Card>
                 <InputFieldTwo
                     id="confirm-text"
                     bigger
-                    label={c('Label').t`Enter organization name to confirm`}
+                    label={label}
                     error={validator([
                         requiredValidator(confirmText),
-                        confirmText !== organizationName ? c('Error').t`Organization not recognized. Try again.` : '',
+                        confirmText !== organizationName ? validatorError : '',
                     ])}
                     autoFocus
                     value={confirmText}

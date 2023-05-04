@@ -1,5 +1,5 @@
 import { ThemeColor } from '@proton/colors';
-import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
@@ -12,6 +12,7 @@ import { getVpnAppRoutes } from '../containers/vpn/routes';
 interface Arguments {
     user: UserModel;
     addresses: Address[];
+    subscription: Subscription;
     organization: Organization;
     isSpyTrackerEnabled: boolean;
     isReferralProgramEnabled: boolean;
@@ -25,6 +26,7 @@ export const getRoutes = ({
     user,
     organization,
     addresses,
+    subscription,
     isDataRecoveryAvailable,
     isSpyTrackerEnabled,
     isReferralProgramEnabled,
@@ -39,6 +41,7 @@ export const getRoutes = ({
             isReferralProgramEnabled,
             recoveryNotification,
             isGmailSyncEnabled,
+            organization,
         }),
         mail: getMailAppRoutes({
             user,
@@ -50,7 +53,7 @@ export const getRoutes = ({
         calendar: getCalendarAppRoutes(),
         drive: getDriveAppRoutes(),
         pass: getPassAppRoutes(),
-        organization: getOrganizationAppRoutes({ user, organization }),
+        organization: getOrganizationAppRoutes({ user, organization, subscription }),
         vpn: getVpnAppRoutes(),
     };
 };

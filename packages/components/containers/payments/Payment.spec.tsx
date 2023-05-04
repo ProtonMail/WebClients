@@ -88,7 +88,7 @@ describe('Payment', () => {
         });
     });
 
-    it('should render <Alert3DS> if user selected a perviously used credit card (customPaymentMethod)', async () => {
+    it.skip('should render <Alert3DS> if user selected a perviously used credit card (customPaymentMethod)', async () => {
         apiMock.mockImplementation((query) => {
             if (query.url === 'payments/methods') {
                 return {

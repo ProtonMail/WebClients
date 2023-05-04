@@ -8,6 +8,7 @@ export { PaymentMethodsModel } from './paymentMethodsModel';
 export { LabelsModel } from './labelsModel';
 export { MailSettingsModel } from './mailSettingsModel';
 export { MembersModel } from './membersModel';
+export { UserInvitationModel } from './userInvitationModel';
 export { OrganizationModel } from './organizationModel';
 export { UserModel } from './userModel';
 export { UserSettingsModel } from './userSettingsModel';

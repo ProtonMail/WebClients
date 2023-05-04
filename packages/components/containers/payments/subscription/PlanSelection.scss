@@ -107,8 +107,9 @@
 		grid-template-columns: repeat(1, 1fr);
 	}
 
-	// special case for b2b, put suffix on the line, not enough space
-	&--b2b {
+	// special case for b2b/family, put suffix on the line, not enough space
+	&--b2b,
+	&--family {
 		.plan-selection-suffix {
 			min-inline-size: 100%;
 		}
@@ -118,7 +119,7 @@
 		// centering the 2 plans (free + family) on the large screens. Apply the usual rules on smaller screens.
 		@include media('>=large') {
 			// The variable here for the case if the free plan isn't displayed. In this case the only Family plan will be simply centered
-			grid-template-columns: 0.5fr repeat(var(--plan-selection-number), 1fr) 0.5fr;
+			grid-template-columns: 0.25fr repeat(var(--plan-selection-number), 1fr) 0.25fr;
 
 			.plan-selection-plan:first-child {
 				grid-column-start: 2;

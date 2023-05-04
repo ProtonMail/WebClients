@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { Member } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
 
-const MemberFeatures = ({ member }) => {
+const MemberFeatures = ({ member }: { member: Member }) => {
     const { UsedSpace, MaxSpace, MaxVPN } = member;
 
     return (
@@ -28,10 +28,6 @@ const MemberFeatures = ({ member }) => {
             </span>
         </>
     );
-};
-
-MemberFeatures.propTypes = {
-    member: PropTypes.object.isRequired,
 };
 
 export default MemberFeatures;
