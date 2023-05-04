@@ -320,11 +320,16 @@ describe('SubscriptionModal', () => {
         const subscribeUrl = subscribe({} as any, '' as any).url;
 
         await waitFor(() => {
-            expect(apiMock.mock.calls.find((it) => it[0].url === createTokenUrl)).toBeFalsy();
+            expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: createTokenUrl }));
 
-            const subscribeCall = apiMock.mock.calls.find((it) => it[0].url === subscribeUrl);
-            expect(subscribeCall).toBeTruthy();
-            expect(subscribeCall[0].data.Amount).toEqual(0);
+            expect(apiMock).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    url: subscribeUrl,
+                    data: expect.objectContaining({
+                        Amount: 0,
+                    }),
+                })
+            );
         });
     });
 });
