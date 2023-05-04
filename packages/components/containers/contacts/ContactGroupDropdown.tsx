@@ -91,6 +91,10 @@ const ContactGroupDropdown = ({
     const [lock, setLock] = useState(false);
     const applyGroups = useApplyGroups(setLock, setLoading, onSelectEmails);
 
+    // If contact is not created yet, creating a contact group would create a group with an empty contact in it.
+    // So we hide it in that case
+    const canCreateNewGroup = contactEmails[0]?.Name !== '';
+
     useEffect(() => onLockWidget?.(isOpen), [isOpen]);
 
     const handleClick = () => {
@@ -204,18 +208,21 @@ const ContactGroupDropdown = ({
                 <form onSubmit={handleSubmit}>
                     <div className="flex flex-justify-space-between flex-align-items-center m-4 mb-0">
                         <strong>{c('Label').t`Add to group`}</strong>
-                        <Tooltip title={c('Info').t`Create a new contact group`}>
-                            <Button
-                                icon
-                                color="norm"
-                                size="small"
-                                onClick={handleAdd}
-                                className="flex flex-align-items-center"
-                                data-prevent-arrow-navigation
-                            >
-                                <Icon name="users" alt={c('Action').t`Create a new contact group`} /> +
-                            </Button>
-                        </Tooltip>
+                        {canCreateNewGroup && (
+                            <Tooltip title={c('Info').t`Create a new contact group`}>
+                                <Button
+                                    icon
+                                    color="norm"
+                                    size="small"
+                                    onClick={handleAdd}
+                                    className="flex flex-align-items-center"
+                                    data-prevent-arrow-navigation
+                                    disabled
+                                >
+                                    <Icon name="users" alt={c('Action').t`Create a new contact group`} /> +
+                                </Button>
+                            </Tooltip>
+                        )}
                     </div>
                     <div className="m-4 mb-0">
                         <SearchInput
