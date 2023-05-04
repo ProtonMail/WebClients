@@ -205,6 +205,17 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     }
                 }
 
+                // IF i only want to update metadata
+                // AND item have no content
+                // AND cached item has content
+                // THEN i reassign cached content
+                if (Action === ES_SYNC_ACTIONS.UPDATE_METADATA && !itemToCache.content) {
+                    const previousCachedItem = esCacheRef.current.esCache.get(getItemInfo(itemToCache.metadata).ID);
+                    if (!!previousCachedItem?.content) {
+                        itemToCache.content = previousCachedItem?.content;
+                    }
+                }
+
                 addToESCache<ESItemMetadata, ESItemContent>(itemToCache, esCacheRef, getItemInfo);
 
                 // If results are being shown:
