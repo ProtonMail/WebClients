@@ -57,7 +57,7 @@ const getMarginByFolderLvl = (lvl: number) => {
         case 2:
         case 3:
         case 4:
-            return 'ml1';
+            return 'ml-4';
         default:
             return '';
     }

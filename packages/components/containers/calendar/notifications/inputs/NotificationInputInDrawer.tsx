@@ -80,7 +80,7 @@ const NotificationInputInDrawer = ({
     return (
         <div
             key={notification.id}
-            className={clsx('flex flex-column flex-align-items-stretch flex-item-fluid flex-gap-0-5 mb1', className)}
+            className={clsx('flex flex-column flex-align-items-stretch flex-item-fluid flex-gap-0-5 mb-4', className)}
         >
             {hasType && (
                 <span className="flex flex-nowrap flex-gap-0-5">

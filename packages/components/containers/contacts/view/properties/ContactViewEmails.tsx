@@ -126,7 +126,7 @@ const ContactViewEmails = ({
                             </span>
                         </span>
                         {!!contactGroups.length && (
-                            <div className="mt1">
+                            <div className="mt-4">
                                 <ContactGroupLabels
                                     className="max-w100"
                                     contactGroups={contactGroups}

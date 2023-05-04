@@ -47,7 +47,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
                     }
                 </span>
                 {errorMessage && (
-                    <div className="mt1 p0-5 color-weak">{c('Error message').t`Error: ${errorMessage}`}</div>
+                    <div className="mt-4 p0-5 color-weak">{c('Error message').t`Error: ${errorMessage}`}</div>
                 )}
             </GenericError>
         </div>

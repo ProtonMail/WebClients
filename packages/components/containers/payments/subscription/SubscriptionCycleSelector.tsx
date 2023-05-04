@@ -8,11 +8,14 @@ import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { allCycles, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
+
+
 import { Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
 import { classnames } from '../../../helpers';
 import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
+
 
 interface Props {
     cycle: CYCLE;
@@ -67,7 +70,7 @@ const CycleItemView = ({
         <>
             <div className="flex-item-fluid pl0-5">
                 <div className="flex flex-align-items-center">
-                    <div className="flex-item-fluid-auto mr1">
+                    <div className="flex-item-fluid-auto mr-4">
                         <strong className="text-lg">{text}</strong>
                         {freeMonths > 0 && (
                             <span className="color-success">
@@ -127,7 +130,7 @@ const CycleItem = ({
 };
 
 const singleClassName =
-    'p1 mb1 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
+    'p1 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
 
 const getMonthlySuffix = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -290,7 +293,7 @@ const SubscriptionCycleSelector = ({
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
                 return (
-                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb1">
+                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4">
                         <button
                             className={classnames([
                                 'w100 p1 plan-cycle-button flex flex-nowrap border rounded text-left',

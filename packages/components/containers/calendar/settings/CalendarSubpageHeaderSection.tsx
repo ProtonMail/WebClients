@@ -51,10 +51,10 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                     {...calendarModal}
                 />
             )}
-            <div className="mt1-5 mb1-5 flex flex-justify-space-between flex-nowrap">
+            <div className="my-6 flex flex-justify-space-between flex-nowrap">
                 <div className="grid-align-icon">
-                    <CalendarSelectIcon large color={Color} className="mr-3 mt1 flex-item-noshrink keep-left" />
-                    <h1 className="h1 mb-1 text-bold text-break" title={Name}>
+                    <CalendarSelectIcon large color={Color} className="mr-3 mt-4 flex-item-noshrink keep-left" />
+                    <h1 className="h1 mb-2 text-bold text-break" title={Name}>
                         {Name}
                     </h1>
                     {Description && <div className="mb-1 text-break">{Description}</div>}
@@ -88,7 +88,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                     </div>
                     {isNotSyncedInfo && (
                         <Alert
-                            className="mt1 mb1"
+                            className="my-4"
                             type="warning"
                             learnMore={
                                 isNotSyncedInfo.isSyncing
@@ -100,7 +100,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                         </Alert>
                     )}
                 </div>
-                <span className="ml1 pt0-5 flex-item-noshrink">
+                <span className="ml-4 pt0-5 flex-item-noshrink">
                     <Tooltip title={editCalendarText}>
                         <ButtonLike shape="outline" onClick={handleEdit} icon disabled={!canEdit}>
                             <Icon name="pen" alt={editCalendarText} />

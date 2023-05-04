@@ -31,7 +31,7 @@ const ImportInvitationModalContent = ({ model }: Props) => {
                           totalToImport
                       )}
             </div>
-            {fileAttached && <AttachedFile file={fileAttached} iconName="calendar-grid" className="mb1 mt1" />}
+            {fileAttached && <AttachedFile file={fileAttached} iconName="calendar-grid" className="my-4" />}
             <div>
                 {c('Import calendar; import invitation')
                     .t`Imported invitations appear in ${CALENDAR_APP_NAME} as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${BRAND_NAME} email address.`}

@@ -64,12 +64,12 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeFirst}
                         onKeyUp={handleKeyUpFirst}
                         placeholder="1234"
-                        className="text-bold max-w15e flex-align-self-end mauto"
+                        className="text-bold max-w15e flex-align-self-end m-auto"
                         required
                         autoFocus
                     />
                 </div>
-                <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto no-mobile" />
+                <hr className="w5 tv-hr mx-4 mt-6 mb-auto no-mobile" />
                 <div className="code-input-div flex-item-fluid flex flex-column text-center on-mobile-pb1 on-mobile-pt0-5">
                     <Input
                         ref={refSecondInput}
@@ -79,7 +79,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeSecond}
                         onKeyUp={handleKeyUpSecond}
                         placeholder="ABCD"
-                        className="text-bold max-w15e mauto"
+                        className="text-bold max-w15e m-auto"
                         required
                     />
                 </div>

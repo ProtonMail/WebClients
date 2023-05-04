@@ -89,8 +89,8 @@ const ContactViewErrors = ({
 
     if (error instanceof Error) {
         return (
-            <div className="bg-danger rounded p0-5 mt1 flex flex-nowrap flex-align-items-center">
-                <Icon name="exclamation-circle" className="flex-item-noshrink myauto" />
+            <div className="bg-danger rounded p0-5 mt-4 flex flex-nowrap flex-align-items-center">
+                <Icon name="exclamation-circle" className="flex-item-noshrink my-auto" />
                 <span className="flex-item-fluid pl0-5 pr0-5">
                     {c('Warning').t`The contact data is corrupted and cannot be displayed.`}
                 </span>
@@ -124,8 +124,8 @@ const ContactViewErrors = ({
     };
 
     return (
-        <div className={classnames([bgColor, 'rounded p0-5 mt1 flex flex-nowrap flex-align-items-center'])}>
-            <Icon name="exclamation-circle" className="flex-item-noshrink myauto" />
+        <div className={classnames([bgColor, 'rounded p0-5 mt-4 flex flex-nowrap flex-align-items-center'])}>
+            <Icon name="exclamation-circle" className="flex-item-noshrink my-auto" />
             <span className="flex-item-fluid pl0-5 pr0-5">
                 <span className="mr-2">{text}</span>
                 <Href

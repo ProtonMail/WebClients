@@ -24,7 +24,13 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
-import { handleNewPassword, handleNewPasswordMnemonic, handleRequestRecoveryMethods, handleRequestToken, handleValidateResetToken } from '@proton/components/containers/resetPassword/resetActions';
+import {
+    handleNewPassword,
+    handleNewPasswordMnemonic,
+    handleRequestRecoveryMethods,
+    handleRequestToken,
+    handleValidateResetToken,
+} from '@proton/components/containers/resetPassword/resetActions';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -44,7 +50,6 @@ import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
-
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -282,7 +287,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                 <>
                     <Header title={c('Title').t`Reset password`} />
                     <Content className="text-center">
-                        <CircleLoader className="color-primary my1" size="large" />
+                        <CircleLoader className="color-primary my-4" size="large" />
                     </Content>
                 </>
             )}
@@ -474,7 +479,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     <Header title={c('Title').t`Error`} onBack={handleBackStep} />
                     <Content>
                         <GenericError />
-                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-5">{c('Action')
+                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt-6">{c('Action')
                             .t`Return to sign in`}</Button>
                         <ButtonLike
                             as={Href}

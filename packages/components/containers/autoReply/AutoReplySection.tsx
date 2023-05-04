@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -180,7 +182,7 @@ const AutoReplySection = () => {
                         type="submit"
                         disabled={updatingLoading}
                         loading={updatingLoading}
-                        className="mt1"
+                        className="mt-4"
                     >
                         {c('Action').t`Save`}
                     </Button>
@@ -200,7 +202,7 @@ const AutoReplySection = () => {
 
     return (
         <SettingsSectionWide className="no-scroll">
-            <SettingsParagraph className="mt-0 mb1">
+            <SettingsParagraph className="mt-0 mb-4">
                 {c('new_plans: info')
                     .t`Set automatic replies to inform contacts you are out of the office or unable to respond.`}
             </SettingsParagraph>
@@ -226,7 +228,7 @@ const AutoReplySection = () => {
             {hasPaidMail ? (
                 isEnabled && renderForm()
             ) : (
-                <UpgradeBanner className="mt2" upsellPath={upsellRef}>
+                <UpgradeBanner className="mt-8" upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}

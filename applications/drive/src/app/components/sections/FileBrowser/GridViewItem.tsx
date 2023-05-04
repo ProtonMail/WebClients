@@ -54,7 +54,7 @@ const GridViewItemBase = ({
             </div>
             <div className="file-browser-grid-item--file-name flex border-top">
                 {SignatureIconComponent ? SignatureIconComponent : null}
-                <FileNameDisplay text={item.name} className="mxauto" />
+                <FileNameDisplay text={item.name} className="mx-auto" />
                 <Button
                     shape="ghost"
                     size="small"

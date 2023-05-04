@@ -265,7 +265,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                             >
                                 {insideDropdownRecoveryNotification.text}
                                 <NotificationDot
-                                    className="ml1"
+                                    className="ml-4"
                                     color={insideDropdownRecoveryNotification.color}
                                     alt={c('Action').t`Attention required`}
                                 />
@@ -312,7 +312,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         content={
                             <span className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                                 {c('Header').t`Get help`}
-                                <span className="flex on-rtl-mirror ml1">
+                                <span className="flex on-rtl-mirror ml-4">
                                     <Icon name="chevron-right" />
                                 </span>
                             </span>
@@ -370,7 +370,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         data-testid="userdropdown:link:shop"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
-                        <Icon className="ml1 on-rtl-mirror" name="arrow-out-square" />
+                        <Icon className="ml-4 on-rtl-mirror" name="arrow-out-square" />
                     </DropdownMenuLink>
 
                     <hr className="my-2" />

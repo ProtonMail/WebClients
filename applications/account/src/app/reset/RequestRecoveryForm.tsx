@@ -44,7 +44,7 @@ const RequestRecoveryForm = ({ onSubmit, defaultUsername = '', loading: outerLoa
                 onValue={setUsername}
                 autoFocus
             />
-            <Button size="large" color="norm" loading={loading} type="submit" fullWidth className="mt1-5">{c('Action')
+            <Button size="large" color="norm" loading={loading} type="submit" fullWidth className="mt-6">{c('Action')
                 .t`Next`}</Button>
             <Button
                 size="large"

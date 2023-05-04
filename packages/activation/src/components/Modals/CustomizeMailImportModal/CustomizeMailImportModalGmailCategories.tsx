@@ -18,7 +18,7 @@ const CustomizeMailImportModalGmailCategories = ({ hasCategories, selectedCatego
     return (
         <>
             {hasCategories && (
-                <div className="mb1 flex-align-items-center" data-testid="CustomizeModal:gmailCategories">
+                <div className="mb-4 flex-align-items-center" data-testid="CustomizeModal:gmailCategories">
                     <Row>
                         <Label className="flex flex-align-items-center">
                             {c('Label').t`Manage categories`}

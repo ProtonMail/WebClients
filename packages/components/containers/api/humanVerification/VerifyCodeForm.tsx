@@ -83,7 +83,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
                 onClick={() => {
                     withLoading(handleSubmit()).catch(noop);
                 }}
-                className="mt1-5"
+                className="mt-6"
             >
                 {(() => {
                     if (verification.method === 'ownership-email') {

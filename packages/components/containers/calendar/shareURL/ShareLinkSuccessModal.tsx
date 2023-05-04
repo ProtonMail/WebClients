@@ -23,7 +23,7 @@ const ShareLinkSuccessModal = ({ link, onSubmit, onClose, accessLevel, isOpen }:
             footer={
                 <>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                    <Button className="mlauto" onClick={onSubmit} color="norm">{c('Action').t`Copy link`}</Button>
+                    <Button className="ml-auto" onClick={onSubmit} color="norm">{c('Action').t`Copy link`}</Button>
                 </>
             }
             size="medium"

@@ -32,12 +32,6 @@
 	margin-inline-start: auto;
 }
 
-.ml-custom {
-	&#{&} {
-		margin-inline-start: var(--margin-left-custom);
-	}
-}
-
 .pl-custom {
 	&#{&} {
 		padding-inline-start: var(--padding-left-custom);

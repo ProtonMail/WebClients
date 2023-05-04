@@ -25,7 +25,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
         <SettingsSection>
             {!isPMAddressActive ? (
                 <>
-                    <SettingsParagraph className="mb1" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses')}>
+                    <SettingsParagraph className="mb-4" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses')}>
                         {c('Info')
                             .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}
                     </SettingsParagraph>
@@ -33,7 +33,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                 </>
             ) : (
                 <>
-                    <SettingsParagraph className="mb1">
+                    <SettingsParagraph className="mb-4">
                         {c('Info')
                             .t`You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.`}
                     </SettingsParagraph>

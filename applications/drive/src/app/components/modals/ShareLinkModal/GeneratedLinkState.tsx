@@ -178,7 +178,7 @@ function GeneratedLinkState({
                             ).t`Copy link`}</PrimaryButton>
                         </div>
                     </Row>
-                    <Alert className="mb1">
+                    <Alert className="mb-4">
                         {
                             // Show message "protected by password" only when password is saved.
                             customPassword
@@ -203,7 +203,7 @@ function GeneratedLinkState({
                             </Alert>
                         ) : (
                             <>
-                                <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column mb-2 md:mb-0">
+                                <div className="flex-no-min-children flex-nowrap mb-4 on-mobile-flex-column mb-2 md:mb-0">
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
@@ -289,7 +289,7 @@ function GeneratedLinkState({
                         <Icon name="link-slash" className="mr-2" />
                         {c('Action').t`Stop sharing`}
                     </Button>
-                    <div className="mlauto">
+                    <div className="ml-auto">
                         <PrimaryButton
                             loading={saving}
                             disabled={isSaveDisabled}

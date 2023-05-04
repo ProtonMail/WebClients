@@ -159,7 +159,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                     </Field>
                 </Row>
                 {contactsAutocompleteItems.length ? (
-                    <div className="flex flex-nowrap mb1 on-mobile-flex-column">
+                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column">
                         <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
                         <Field className="flex-item-fluid">
                             <Autocomplete

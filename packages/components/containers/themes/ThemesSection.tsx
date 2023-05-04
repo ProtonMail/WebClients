@@ -22,7 +22,7 @@ const ThemesSection = () => {
             <SettingsParagraph>{c('Info').t`Choose the look and feel of the application.`}</SettingsParagraph>
             <ThemeCards
                 className="flex"
-                liClassName="mr1 mb1"
+                liClassName="mr-4 mb-4"
                 list={PROTON_THEMES}
                 themeIdentifier={theme}
                 onChange={handleThemeChange}

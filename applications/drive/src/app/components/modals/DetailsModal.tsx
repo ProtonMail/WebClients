@@ -206,7 +206,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     signatureAddress={link.signatureAddress}
                     isFile={link.isFile}
                     name={link.name}
-                    className="mb1"
+                    className="mb-4"
                 />
                 <DetailsRow label={c('Title').t`Name`}>
                     <FileNameDisplay text={link.name} />

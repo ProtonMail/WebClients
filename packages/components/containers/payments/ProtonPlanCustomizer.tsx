@@ -4,6 +4,8 @@ import { ComponentPropsWithoutRef, ReactElement, ReactNode, useState } from 'rea
 
 import { c, msgid } from 'ttag';
 
+
+
 import {
     ADDON_NAMES,
     BRAND_NAME,
@@ -92,7 +94,7 @@ const ButtonNumberInput = ({
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="minus" alt={c('Action').t`Decrease`} className="mauto" />
+                <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />
             </button>
             <label htmlFor={id} className="my-2 flex">
                 <input
@@ -135,7 +137,7 @@ const ButtonNumberInput = ({
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="plus" alt={c('Action').t`Increase`} className="mauto" />
+                <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
             </button>
         </div>
     );
@@ -197,14 +199,14 @@ const AccountSizeCustomiser = ({
     mode?: CustomiserMode;
 }) => {
     return (
-        <div className="mb2">
+        <div className="mb-8">
             {mode !== 'signup' && (
                 <>
-                    <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
-                    <div className="mb1">{getAccountSizeString(maxUsers, price)}</div>
+                    <h2 className="text-2xl text-bold mb-4">{c('Info').t`Account size`}</h2>
+                    <div className="mb-4">{getAccountSizeString(maxUsers, price)}</div>
                 </>
             )}
-            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
+            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
                     className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
@@ -235,14 +237,14 @@ const AdditionalOptionsCustomiser = ({
         <>
             {mode !== 'signup' && (
                 <>
-                    <h2 className="text-2xl text-bold mb1">{c('Info').t`Additional options`}</h2>
-                    <div className="mb1">
+                    <h2 className="text-2xl text-bold mb-4">{c('Info').t`Additional options`}</h2>
+                    <div className="mb-4">
                         {c('Info')
                             .jt`Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${price}.`}
                     </div>
                 </>
             )}
-            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
+            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
                     className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"

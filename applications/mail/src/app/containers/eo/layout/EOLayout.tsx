@@ -63,7 +63,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
             </header>
             <div className="pl2 pr2 eo-layout-container flex-item-fluid flex flex-nowrap flex-column">
                 <div>{children}</div>
-                <div className="mxauto mt2">
+                <div className="mx-auto mt-8">
                     <Href
                         href={getStaticURL('/mail')}
                         className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
@@ -116,7 +116,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </span>
                     {hasLanguageSelect && (
                         <span className="auto-mobile inline-flex">
-                            <LanguageSelect className="align-baseline color-primary mxauto" locales={locales} />
+                            <LanguageSelect className="align-baseline color-primary mx-auto" locales={locales} />
                         </span>
                     )}
                 </div>

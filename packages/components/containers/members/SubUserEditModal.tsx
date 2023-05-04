@@ -91,7 +91,7 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                             onConfirm={() => resolve(undefined)}
                             title={c('Title').t`Change role`}
                         >
-                            <Alert className="mb1">
+                            <Alert className="mb-4">
                                 {member.Subscriber === MEMBER_SUBSCRIBER.PAYER
                                     ? c('Info')
                                           .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
@@ -152,7 +152,7 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
 
                 {hasVPN ? (
                     <div className="flex flex-align-center mb-5">
-                        <label className="text-semibold mr1" htmlFor="vpn-toggle">
+                        <label className="text-semibold mr-4" htmlFor="vpn-toggle">
                             {c('Label for new member').t`VPN connections`}
                         </label>
                         <Toggle
@@ -164,8 +164,8 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                 ) : null}
 
                 {canMakePrivate && (
-                    <div className="flex flex-align-center mb1-5">
-                        <label className="text-semibold mr1" htmlFor="private-toggle">
+                    <div className="flex flex-align-center mb-6">
+                        <label className="text-semibold mr-4" htmlFor="private-toggle">
                             {c('Label for new member').t`Private`}
                         </label>
                         <Toggle
@@ -176,8 +176,8 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                     </div>
                 )}
                 {(canMakeAdmin || canRevokeAdmin) && (
-                    <div className="flex flex-align-center mb1-5">
-                        <label className="text-semibold mr1" htmlFor="admin-toggle">
+                    <div className="flex flex-align-center mb-6">
+                        <label className="text-semibold mr-4" htmlFor="admin-toggle">
                             {c('Label for new member').t`Admin`}
                         </label>
                         <Toggle

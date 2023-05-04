@@ -37,7 +37,7 @@ const LoadContentSpotlight = ({ children, anchorRef, show, onDisplayed }: Props)
             content={
                 <>
                     <div className="flex flex-nowrap my-2">
-                        <div className="flex-item-noshrink mr1">
+                        <div className="flex-item-noshrink mr-4">
                             <img src={loadContentImg} className="w4e" alt="" />
                         </div>
                         <div>

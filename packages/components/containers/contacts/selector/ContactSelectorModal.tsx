@@ -259,7 +259,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                 <ContactSelectorList
                                     rowCount={filteredContactEmails.length}
                                     userSettings={userSettings}
-                                    className={clsx([isNarrow && 'mt1'])}
+                                    className={clsx([isNarrow && 'mt-4'])}
                                     rowRenderer={({ index, style }) => (
                                         <ContactSelectorRow
                                             onCheck={handleCheck}

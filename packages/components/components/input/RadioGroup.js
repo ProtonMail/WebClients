@@ -12,7 +12,7 @@ const RadioGroup = ({ name, options, onChange, value, className }) => {
             onChange={handleChangePlatform(option.value)}
             checked={value === option.value}
             name={name}
-            className={classnames(['mr2', 'mb-2', 'flex', 'inline-flex-vcenter', className])}
+            className={classnames(['mr-8', 'mb-2', 'flex', 'inline-flex-vcenter', className])}
             disabled={option.disabled}
         >
             {option.label}

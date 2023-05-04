@@ -195,7 +195,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                         fullWidth
                         loading={loading}
                         disabled={loadingDiscard}
-                        className="mt1-5"
+                        className="mt-6"
                     >
                         {c('Action').t`Save selected`}
                     </Button>

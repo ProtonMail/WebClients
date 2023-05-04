@@ -4,18 +4,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+
+
 import { Href } from '@proton/atoms';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-} from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton, Icon } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import encryptedEventSvg from '@proton/styles/assets/img/illustrations/encrypted-event.svg';
+
 
 const getFirstParagraphText = (resetAll: boolean) => {
     if (resetAll) {
@@ -73,7 +70,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
                 </div>
             )}
             <div className="flex w100">
-                <img src={encryptedEventSvg} alt={altText} className="mauto" />
+                <img src={encryptedEventSvg} alt={altText} className="m-auto" />
             </div>
             <p>
                 {c('Info; reset calendar keys modal; part 2')

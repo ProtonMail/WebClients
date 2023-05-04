@@ -21,6 +21,8 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
+
+
 import { Icon, Meter, Price, SettingsLink, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
 import {
@@ -149,7 +151,7 @@ const SubscriptionPanel = ({
     const storageItem = (
         <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
             <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
-            <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
+            <Meter className="my-4" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
         </StripedItem>
     );
 

@@ -79,14 +79,14 @@ const AddressesEditor = ({
                         <>
                             {!ccExpanded && (
                                 <AddressesCCButton
-                                    classNames="ml1 composer-addresses-ccbcc text-cut"
+                                    classNames="ml-4 composer-addresses-ccbcc text-cut"
                                     onClick={toggleExpanded('CCList')}
                                     type="CCList"
                                 />
                             )}
                             {!bccExpanded && (
                                 <AddressesCCButton
-                                    classNames={clsx(ccExpanded && 'ml1', 'composer-addresses-ccbcc text-cut')}
+                                    classNames={clsx(ccExpanded && 'ml-4', 'composer-addresses-ccbcc text-cut')}
                                     onClick={toggleExpanded('BCCList')}
                                     type="BCCList"
                                 />

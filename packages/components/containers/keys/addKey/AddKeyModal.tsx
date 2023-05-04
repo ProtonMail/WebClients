@@ -65,7 +65,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                 loading: false,
                 children: (
                     <>
-                        <Alert className="mb1">
+                        <Alert className="mb-4">
                             {c('Key generation')
                                 .t`You can generate a new encryption key if you think your previous key has been compromised.`}
                         </Alert>
@@ -85,7 +85,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                 submit: c('Action').t`Continue`,
                 loading: false,
                 children: (
-                    <Alert className="mb1" type="warning">
+                    <Alert className="mb-4" type="warning">
                         {type === 'user'
                             ? c('Key generation')
                                   .t`A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?`
@@ -103,7 +103,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                 submit: c('Action').t`Continue`,
                 close: undefined,
                 children: (
-                    <Alert className="mb1">
+                    <Alert className="mb-4">
                         {type === 'user'
                             ? // Translator: encryption keys are referred to as "account keys"
                               c('Key generation')
@@ -123,7 +123,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                 submit: null,
                 loading: false,
                 children: (
-                    <Alert className="mb1">{c('Key generation')
+                    <Alert className="mb-4">{c('Key generation')
                         .jt`Key with fingerprint ${fp} successfully created.`}</Alert>
                 ),
             };
@@ -137,7 +137,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
             <ModalTwoHeader title={c('Key generation').t`Generate key`} />
             <ModalTwoContent>{children}</ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={rest.onClose} className={submit === null ? 'mlauto' : undefined}>
+                <Button onClick={rest.onClose} className={submit === null ? 'ml-auto' : undefined}>
                     {close || c('Action').t`Cancel`}
                 </Button>
                 {submit !== null && (

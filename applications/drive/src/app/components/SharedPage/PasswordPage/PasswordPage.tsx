@@ -24,8 +24,8 @@ export default function PasswordPage({ submitPassword }: Props) {
 
     return (
         <SharedPageLayout>
-            <div className="flex flex-item-fluid flex-align-items-center py2 mb4">
-                <div className="password-page--form-container ui-standard w100 relative shadow-lifted mw30r max-w100 center px2-25 py3 rounded">
+            <div className="flex flex-item-fluid flex-align-items-center py2 mb-14">
+                <div className="password-page--form-container ui-standard w100 relative shadow-lifted mw30r max-w100 mx-auto px2-25 py3 rounded">
                     <div className="flex flex-justify-center pb2">
                         <span className="password-page--icon-container rounded p1">
                             <Icon name="key-skeleton" className="color-primary" size={28} />
@@ -34,8 +34,8 @@ export default function PasswordPage({ submitPassword }: Props) {
                     <h3 className="text-center text-bold mb-2">{c('Title').t`This link is password protected`}</h3>
                     <p className="text-center mt-0">{c('Info')
                         .t`Please enter the password to decrypt and view content.`}</p>
-                    <form className="w100 mt2" autoComplete="off" onSubmit={handlePasswordSubmit}>
-                        <div className="mt1 mb2">
+                    <form className="w100 mt-8" autoComplete="off" onSubmit={handlePasswordSubmit}>
+                        <div className="mt-4 mb-8">
                             <InputFieldTwo
                                 bigger
                                 as={PasswordInputTwo}

@@ -1,6 +1,8 @@
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+
+
 import { Button } from '@proton/atoms';
 import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState, useUser } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
@@ -90,7 +92,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
             <span>
                 <Toggle
                     id="es-toggle"
-                    className="mlauto flex-item-noshrink"
+                    className="ml-auto flex-item-noshrink"
                     checked={contentIndexingDone && esEnabled && !isEnablingContentSearch}
                     onChange={toggleEncryptedSearch}
                     disabled={showProgress}
@@ -146,7 +148,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Progress
             value={progressValue || 0}
             aria-describedby="timeRemaining"
-            className={clsx(['mt1 mb1 flex-item-fluid', isPaused ? 'progress-bar--disabled' : undefined])}
+            className={clsx(['my-4 flex-item-fluid', isPaused ? 'progress-bar--disabled' : undefined])}
         />
     );
     const disablePauseResumeButton = contentIndexingDone && !isEnablingContentSearch;
@@ -155,14 +157,14 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Button
             shape="solid"
             color="norm"
-            className="ml1"
+            className="ml-4"
             onClick={() => enableContentSearch()}
             disabled={disablePauseResumeButton}
         >
             {c('Action').t`Resume`}
         </Button>
     ) : (
-        <Button className="ml1" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
+        <Button className="ml-4" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
             {c('Action').t`Pause`}
         </Button>
     );
@@ -175,7 +177,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     return (
         <div className="pt0">
             <div className="flex flex-column">
-                <div className="flex flex-nowrap flex-align-items-center mb1">
+                <div className="flex flex-nowrap flex-align-items-center mb-4">
                     {esHeader}
                     {esCTA}
                     <Prompt
@@ -192,9 +194,9 @@ const EncryptedSearchField = ({ esState }: Props) => {
                     </Prompt>
                 </div>
             </div>
-            {showSubTitleSection && <div className="mb1">{subTitleSection}</div>}
+            {showSubTitleSection && <div className="mb-4">{subTitleSection}</div>}
             {showProgress && (
-                <div className="mt-2 mb1 flex flex-column">
+                <div className="mt-2 mb-4 flex flex-column">
                     <span
                         className="color-weak relative advanced-search-progress-status"
                         aria-live="polite"

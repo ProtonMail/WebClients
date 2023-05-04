@@ -80,7 +80,7 @@ function NewLabelForm({
                 {mailSettings?.EnableFolderColor ? (
                     <div>
                         {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
-                            <div className="mb1">
+                            <div className="mb-4">
                                 <strong className="text-semibold">{c('New Label form').t`Color`} </strong>
                                 <div className="mt-2">{c('Info').t`Inherited from parent folder`}</div>
                             </div>
@@ -107,7 +107,7 @@ function NewLabelForm({
                             />
                         </span>
                     </Label>
-                    <div className="pt0-5 ml1">
+                    <div className="pt0-5 ml-4">
                         <Toggle
                             id="notification"
                             checked={folder.Notify === 1}
@@ -120,9 +120,9 @@ function NewLabelForm({
     };
 
     return (
-        <div className="mxauto flex-item-fluid">
+        <div className="mx-auto flex-item-fluid">
             {!labelOrFolder.ID && labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
-                <div className="mb1">
+                <div className="mb-4">
                     {c('Info')
                         .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}
                 </div>

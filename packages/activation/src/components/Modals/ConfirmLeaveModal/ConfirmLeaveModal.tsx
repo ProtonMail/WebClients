@@ -13,8 +13,8 @@ const ConfirmLeaveModal = ({ handleClose, handleContinue }: Props) => {
         <ModalTwo key="easy-switch-confirm-leave-modal" className="easy-switch-modal" open onClose={handleContinue}>
             <ModalTwoHeader title={c('Confirm modal title').t`Quit import?`} />
             <ModalTwoContent>
-                <div className="mb1">{c('Info').t`Your import will not be processed.`}</div>
-                <Alert className="mb1" type="error">{c('Warning')
+                <div className="mb-4">{c('Info').t`Your import will not be processed.`}</div>
+                <Alert className="mb-4" type="error">{c('Warning')
                     .t`Are you sure you want to discard your import?`}</Alert>
             </ModalTwoContent>
             <ModalTwoFooter>

@@ -134,7 +134,7 @@ const Spams = () => {
 
     return (
         <>
-            <div className="mb2">
+            <div className="mb-8">
                 <SpamsButtonDropdown
                     title={c('Action').t`Add address`}
                     actions={getActions().map(({ getName, type }) => ({
@@ -153,7 +153,7 @@ const Spams = () => {
 
             {globalTotal > 0 && (
                 <>
-                    <div className="mb2">
+                    <div className="mb-8">
                         <SearchInput
                             onChange={(nextSearch) => {
                                 if (nextSearch !== search) {

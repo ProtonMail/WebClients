@@ -105,11 +105,11 @@ const AddressesGroupItem = ({
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     <span className="inline-flex composer-addresses-item-icon pl0-5 ml-0.5 pr0-25 no-pointer-events-children h100">
-                        <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="mauto" />
+                        <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
-                            className="composer-addresses-item-label myauto pl0-25 text-ellipsis pr0-5"
+                            className="composer-addresses-item-label my-auto pl0-25 text-ellipsis pr0-5"
                             onClick={() => showModalCallback(true)}
                             onContextMenu={handleContextMenu}
                         >
@@ -124,7 +124,7 @@ const AddressesGroupItem = ({
                         className="composer-addresses-item-remove inline-flex p0-5 no-pointer-events-children h100 relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross" size={12} className="mauto" />
+                        <Icon name="cross" size={12} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -150,14 +150,14 @@ const AddressesGroupItem = ({
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr-2" />
-                        <span className="flex-item-fluid myauto">{c('Action').t`Copy addresses`}</span>
+                        <span className="flex-item-fluid my-auto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={() => showModalCallback(true)}
                     >
                         <Icon name="user" className="mr-2" />
-                        <span className="flex-item-fluid myauto">{c('Action').t`View recipients`}</span>
+                        <span className="flex-item-fluid my-auto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
@@ -165,7 +165,7 @@ const AddressesGroupItem = ({
                         onClick={handleRemove}
                     >
                         <Icon name="cross-circle" className="mr-2" />
-                        <span className="flex-item-fluid myauto">{c('Action').t`Remove`}</span>
+                        <span className="flex-item-fluid my-auto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </ContextMenu>

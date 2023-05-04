@@ -66,13 +66,13 @@ const AuthExtension = () => {
                 <div className="p2 on-mobile-p1 text-center">
                     <Content>
                         {logo && (
-                            <div className="text-center my2">
-                                <img className="mauto w150p" src={logo} alt="" />
+                            <div className="text-center my-8">
+                                <img className="m-auto w150p" src={logo} alt="" />
                             </div>
                         )}
 
                         <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaults[type].title}</h1>
-                        <Text className="mt1">{payload?.message ?? defaults[type].message}</Text>
+                        <Text className="mt-4">{payload?.message ?? defaults[type].message}</Text>
                     </Content>
                 </div>
             </Main>

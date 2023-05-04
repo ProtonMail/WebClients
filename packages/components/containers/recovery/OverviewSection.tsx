@@ -80,7 +80,7 @@ const OverviewSection = ({ ids }: Props) => {
             {renderConfirm && <RecoverDataConfirmModal {...confirmProps} />}
             {!!allKeysToReactivate.length && hasDismissedRecoverDataCard?.Value === false && (
                 <RecoverDataCard
-                    className="mb2"
+                    className="mb-8"
                     onReactivate={() => setReactivateKeyModalOpen(true)}
                     onDismiss={() => setDismissConfirmModalOpen(true)}
                 />

@@ -35,14 +35,14 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 onClick={onToday}
                 icon={<TodayIcon todayDate={now.getDate()} />}
             >
-                <span className="ml-2 myauto no-mobile">{c('Action').t`Today`}</span>
+                <span className="ml-2 my-auto no-mobile">{c('Action').t`Today`}</span>
             </ToolbarButton>
             <Vr />
             <ToolbarButton
                 data-testid="calendar-toolbar:previous"
                 title={previous}
                 onClick={onPrev}
-                icon={<Icon name="chevron-left" className="mauto toolbar-icon" />}
+                icon={<Icon name="chevron-left" className="m-auto toolbar-icon" />}
             >
                 <span className="sr-only">{previous}</span>
             </ToolbarButton>
@@ -50,13 +50,13 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 data-testid="calendar-toolbar:next"
                 title={next}
                 onClick={onNext}
-                icon={<Icon name="chevron-right" className="mauto toolbar-icon" />}
+                icon={<Icon name="chevron-right" className="m-auto toolbar-icon" />}
             >
                 <span className="sr-only">{next}</span>
             </ToolbarButton>
             <Vr />
             <span
-                className="pr0-5 myauto flex-item-noshrink on-tablet-flex-shrink text-ellipsis block"
+                className="pr0-5 my-auto flex-item-noshrink on-tablet-flex-shrink text-ellipsis block"
                 title={currentRange}
             >
                 {currentRange}

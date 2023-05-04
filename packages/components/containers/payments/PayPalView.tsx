@@ -20,14 +20,14 @@ interface Props {
 const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => {
     if (amount < MIN_PAYPAL_AMOUNT) {
         return (
-            <Alert className="mb1" type="error">
+            <Alert className="mb-4" type="error">
                 {c('Error').t`Amount below minimum.`} {`(${(<Price currency={currency}>{MIN_PAYPAL_AMOUNT}</Price>)})`}
             </Alert>
         );
     }
 
     if (amount > MAX_PAYPAL_AMOUNT) {
-        return <Alert className="mb1" type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
+        return <Alert className="mb-4" type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
     if (doNotWindowOpen()) {
@@ -49,15 +49,15 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => 
     );
 
     return (
-        <div className="p1 border rounded bg-weak mb1">
+        <div className="p1 border rounded bg-weak mb-4">
             {paypal.loadingVerification ? <Loader /> : null}
             {!paypal.loadingVerification && type && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
                     </div>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
                         <br />
@@ -67,7 +67,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => 
             ) : null}
             {type && !paypal.loadingVerification && ['donation', 'human-verification'].includes(type) ? (
                 <>
-                    <div className="mb1">
+                    <div className="mb-4">
                         {c('Info')
                             .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
                     </div>

@@ -24,7 +24,7 @@ const DeleteQuickReplyModal = ({ onDeleteDraft, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            <Alert className="mb1" type="error">{c('Info')
+            <Alert className="mb-4" type="error">{c('Info')
                 .t`Are you sure you want to permanently delete this draft?`}</Alert>
         </Prompt>
     );

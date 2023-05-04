@@ -201,7 +201,7 @@ const ContactGroupDropdown = ({
                 size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             >
                 <form onSubmit={handleSubmit}>
-                    <div className="flex flex-justify-space-between flex-align-items-center m1 mb-0">
+                    <div className="flex flex-justify-space-between flex-align-items-center m-4 mb-0">
                         <strong>{c('Label').t`Add to group`}</strong>
                         <Tooltip title={c('Info').t`Create a new contact group`}>
                             <Button
@@ -216,7 +216,7 @@ const ContactGroupDropdown = ({
                             </Button>
                         </Tooltip>
                     </div>
-                    <div className="m1 mb-0">
+                    <div className="m-4 mb-0">
                         <SearchInput
                             value={keyword}
                             onChange={setKeyword}
@@ -225,7 +225,7 @@ const ContactGroupDropdown = ({
                             data-prevent-arrow-navigation
                         />
                     </div>
-                    <div className="scroll-if-needed mt1 contactGroupDropdown-list-container">
+                    <div className="scroll-if-needed mt-4 contactGroupDropdown-list-container">
                         {filteredContactGroups.length ? (
                             <ul className="unstyled my-0">
                                 {filteredContactGroups.map(({ ID, Name, Color }) => {
@@ -269,7 +269,7 @@ const ContactGroupDropdown = ({
                             </div>
                         ) : null}
                     </div>
-                    <div className="m1">
+                    <div className="m-4">
                         <Button
                             color="norm"
                             fullWidth

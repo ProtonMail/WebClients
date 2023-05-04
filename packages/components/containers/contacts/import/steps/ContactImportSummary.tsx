@@ -102,7 +102,7 @@ const ContactImportSummary = ({ model, setModel, onClose }: Props) => {
         <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1" type={alertType}>
+                <Alert className="mb-4" type={alertType}>
                     {alertMessage}
                 </Alert>
                 <DynamicProgress
@@ -118,7 +118,7 @@ const ContactImportSummary = ({ model, setModel, onClose }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 {canImportGroups ? <Button onClick={onClose}>{c('Action').t`Close`}</Button> : null}
-                <Button color="norm" loading={model.loading} type="submit" className="mlauto">
+                <Button color="norm" loading={model.loading} type="submit" className="ml-auto">
                     {canImportGroups ? c('Action').t`Next` : c('Action').t`Close`}
                 </Button>
             </ModalTwoFooter>

@@ -13,7 +13,7 @@ const BorderedBox = ({ children, className }: { children: React.ReactNode; class
 const InviteSection = () => {
     return (
         <SettingsSectionWide>
-            <div className="flex flex-justify-space-between flex-gap-1 mb2 invite-section">
+            <div className="flex flex-justify-space-between flex-gap-1 mb-8 invite-section">
                 <BorderedBox className="flex-item-fluid">
                     <InviteShareLink />
                 </BorderedBox>

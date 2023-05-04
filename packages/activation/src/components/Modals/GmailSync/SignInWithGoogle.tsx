@@ -27,7 +27,7 @@ const SignInWithGoogle = ({ loading, onClick }: Props) => {
             >
                 <img src={googleLogo} alt="" width={20} height={20} aria-hidden="true" />
             </span>
-            <span className="text-semibold mxauto w100">{c('Gmail forwarding').t`Sign in with Google`}</span>
+            <span className="text-semibold mx-auto w100">{c('Gmail forwarding').t`Sign in with Google`}</span>
         </Button>
     );
 };

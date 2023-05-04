@@ -42,7 +42,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
             )}
 
             {hasNonDelinquentScope && !hasActiveCalendars ? (
-                <Alert className="mb1" type="warning">
+                <Alert className="mb-4" type="warning">
                     {c('Info').t`You need to have an active personal calendar to import your events from ICS.`}
                 </Alert>
             ) : null}
@@ -57,7 +57,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
 
             <EasySwitchProvider>
                 <EasySwitchOauthImportButton
-                    className="mr1"
+                    className="mr-4"
                     source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
                     defaultCheckedTypes={[ImportType.CALENDAR]}
                     displayOn={'GoogleCalendar'}

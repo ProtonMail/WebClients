@@ -35,7 +35,7 @@ const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
     }
     return (
         <div className="flex w100 h100">
-            <div className="mauto w50">
+            <div className="m-auto w50">
                 <audio className="w100" onError={handleBrokenAudio} src={url} controls />
             </div>
         </div>

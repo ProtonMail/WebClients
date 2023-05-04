@@ -29,7 +29,7 @@ const RewardSection = () => {
     return (
         <SettingsSectionWide>
             {reachedRewardLimit ? (
-                <Card rounded className="text-center mb2">
+                <Card rounded className="text-center mb-8">
                     <strong>{c('Description')
                         .t`Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${plusPlanName}.`}</strong>
                     <br />
@@ -40,7 +40,7 @@ const RewardSection = () => {
             )}
 
             {showRewardSection && (
-                <div className="border-bottom pb1 mb4">
+                <div className="border-bottom pb1 mb-14">
                     <RewardsProgress rewardsLimit={rewardsLimit} rewards={rewards} />
                 </div>
             )}
