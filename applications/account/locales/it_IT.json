@@ -1013,6 +1013,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Posta in arrivo di ${ nameToDisplay }"
+      ],
       "5 trackers removed": [
         "5 tracciatori rimossi"
       ],
@@ -2609,6 +2612,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Cancella automaticamente i messaggi indesiderati e cestinati più vecchi di 30 giorni. Questo e altri benefici quando effettui l'aggiornamento del piano."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mesi gratuiti di ${ plusPlanName }."
       ],
@@ -3891,6 +3897,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Inoltra automaticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "Messaggi da Gmail nella tua posta in arrivo"
+      ],
       "Sign in with Google": [
         "Accedi con Google"
       ]
@@ -4614,6 +4626,9 @@
       ],
       "Align right": [
         "Allinea a destra"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Tutte le app ${ BRAND_NAME } e le loro funzionalità premium"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
@@ -5628,6 +5643,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "L'indirizzo email posto in cima alla lista è il tuo indirizzo email predefinito. Trascina e rilascia per riordinare i tuoi indirizzi."
+      ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "Il link di verifica dell'e-mail è scaduto. Effettua il login per re inviare un link di verifica."
       ],
       "The following address is available:": [
         "Il seguente indirizzo email è disponibile:"
@@ -8106,6 +8124,9 @@
       "Advanced sharing security": [
         "Sicurezza di condivisione avanzata"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Cancella automaticamente messaggi indesiderati e cestinati"
+      ],
       "Auto-reply": [
         "Risposta automatica"
       ],
@@ -8289,6 +8310,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -8358,26 +8399,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9642,8 +9663,8 @@
         "Addebito di ${ amount } per 30 mesi"
       ],
       "for ${ n } month": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -9878,6 +9899,9 @@
       ],
       "Subscriptions": [
         "Abbonamenti"
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
       ]
     },
     "Subscription price": {
@@ -10439,6 +10463,9 @@
       ],
       "Clear": [
         "Elimina"
+      ],
+      "Clear out the junk": [
+        "Ripulisci la posta indesiderata"
       ],
       "Composing": [
         "Comporre"

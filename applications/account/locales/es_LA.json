@@ -4566,6 +4566,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Acceda a sus contraseñas y proteja sus identidades en línea sin problemas en todos sus dispositivos. Descargue e instale las aplicaciones y extensiones de ${ PASS_APP_NAME } relevantes."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
@@ -5304,6 +5307,9 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "No account keys exist": [
+        "No existen claves de la cuenta"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "No se ha definido ningún método de recuperación de cuenta; corre el riesgo de perder el acceso a su cuenta"
@@ -6569,6 +6575,9 @@
       "Export private key": [
         "Exportar clave privada"
       ],
+      "Export public key": [
+        "Exportar clave pública"
+      ],
       "Make primary": [
         "Hacerla principal"
       ],
@@ -7584,6 +7593,9 @@
       "Add a gift code": [
         "Añadir código de regalo"
       ],
+      "Apps and extensions": [
+        "Apps y extensiones"
+      ],
       "Calendars": [
         "Calendarios"
       ],
@@ -8096,6 +8108,10 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } alias de Hide My Email",
+        "${ n } alias de Hide My Email"
+      ],
       "${ n } label": [
         "${ n } etiqueta",
         "${ n } etiquetas"
@@ -8103,6 +8119,10 @@
       "${ n } message per day": [
         "${ n } mensaje al día",
         "${ n } mensajes al día"
+      ],
+      "${ n } vault": [
+        "${ n } bóveda",
+        "${ n } bóvedas"
       ],
       "${ n } VPN connection": [
         "${ n } conexión VPN",
@@ -8157,8 +8177,20 @@
       "Contact groups management": [
         "Gestión de grupos de contactos"
       ],
+      "Custom domain for email aliases": [
+        "Dominio personalizado para alias de correo"
+      ],
+      "Custom domains for email aliases": [
+        "Dominios personalizados para alias de correo"
+      ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
+      ],
+      "Data breach monitoring": [
+        "Monitoreo de vulneración de datos"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitoreo de vulneración de datos (próximamente)"
       ],
       "DNS leak prevention": [
         "Protección contra filtraciones de DNS"
@@ -8200,6 +8232,9 @@
       "HTML signatures": [
         "Firmas HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
       "Kill switch/always-on VPN": [
         "VPN con interruptor de apagado/siempre activa"
       ],
@@ -8208,6 +8243,9 @@
       ],
       "Multiple admin roles": [
         "Distintos roles de administración"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Múltiples buzones de reenvío"
       ],
       "NetShield malware and ad-blocker": [
         "Bloqueador de publicidad y malware NetShield"
@@ -8254,6 +8292,9 @@
       "Strict no-logs policy": [
         "Política estricta de no registros"
       ],
+      "Strong E2E encryption": [
+        "Cifrado de extremo a extremo robusto"
+      ],
       "Team management": [
         "Gestión de equipos"
       ],
@@ -8262,6 +8303,9 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Unlimited devices": [
+        "Dispositivos ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -8272,11 +8316,20 @@
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Alias ilimitados de Hide My Email"
+      ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
+      ],
+      "Unlimited passwords and notes": [
+        "Contraseñas y notas ilimitadas"
+      ],
+      "Unlimited vaults": [
+        "Bóvedas ilimitadas"
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
@@ -8302,6 +8355,12 @@
       "User session management": [
         "Gestión de sesiones de usuario"
       ],
+      "Vault and Item sharing": [
+        "Uso compartido de bóveda y elementos"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Uso compartido de bóveda y elementos (próximamente)"
+      ],
       "Worldwide streaming services": [
         "Servicios de streaming a nivel mundial"
       ]
@@ -8320,6 +8379,26 @@
       ],
       "Team management": [
         "Gestión de equipos"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8349,6 +8428,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad integral con todos los servicios combinados de ${ BRAND_NAME }."
+      ],
+      "For next-level password management and identity protection.": [
+        "Para la gestión de contraseñas y protección de la identidad a otro nivel."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si elimina su cuenta, perderá todas las ventajas que tiene ser ${ visionary } y no podrá volver al mismo plan creando otra cuenta."
@@ -8394,26 +8476,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8557,6 +8619,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Como una carpeta, una bóveda es una manera conveniente de organizar sus elementos. Compartir bóvedas con amistades y familiares está en desarrollo."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gestione su suscripción, incluida la personalización de su plan. Los métodos de pago aceptados son tarjeta de crédito, PayPal, criptomoneda y transferencia bancaria."
       ],
@@ -8640,6 +8705,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Direcciones de correo únicas y sobre la marcha que protegen su identidad en línea y le permiten controlar lo que llega a su buzón. Desde SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Use sus propias direcciones de dominio de correo personalizadas, por ejemplo, usted@sunombre.com"
@@ -9696,8 +9764,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "durante ${ n } mes",
+        "durante ${ n } meses"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -10911,6 +10979,9 @@
       "Plan summary": [
         "Resumen del plan"
       ],
+      "Preview": [
+        "Vista previa"
+      ],
       "Previous": [
         "Anterior"
       ],
@@ -11437,6 +11508,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Actualice a ${ passPlusPlanName } para obtener alias ilimitados de Hide My Email"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualice a ${ planName } para conectar hasta ${ n } dispositivo al mismo tiempo",
         "Actualice a ${ planName } para conectar hasta ${ n } dispositivos al mismo tiempo"
@@ -11503,6 +11577,17 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {
