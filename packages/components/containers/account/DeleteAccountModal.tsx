@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -185,13 +185,17 @@ const DeleteAccountModal = (props: Props) => {
             >
                 {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} />}
                 <ModalTwoContent>
-                    <Alert className="mb-4" type="warning" learnMore={getKnowledgeBaseUrl('/combine-accounts')}>
+                    <Alert className="mb-4" type="warning">
                         <div className="text-bold text-uppercase">
                             {c('Info')
                                 .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}
                         </div>
-                        <div>{c('Info')
-                            .t`If you wish to combine this account with another one, do NOT delete it.`}</div>
+                        <div>
+                            {c('Info').t`If you wish to combine this account with another one, do NOT delete it.`}
+                        </div>
+                        <div>
+                            <Href href={getKnowledgeBaseUrl('/combine-accounts')}>{c('Link').t`Learn more`}</Href>
+                        </div>
                     </Alert>
                     <InputFieldTwo
                         rootClassName="mb-2"

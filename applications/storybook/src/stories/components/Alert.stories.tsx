@@ -1,10 +1,7 @@
 import { Alert } from '@proton/components';
 
-
-
 import { getTitle } from '../../helpers/title';
 import mdx from './Alert.mdx';
-
 
 export default {
     component: Alert,
@@ -45,12 +42,4 @@ export const Types = () => (
             voluptatibus?
         </Alert>
     </>
-);
-
-export const LearnMoreLink = () => (
-    <Alert learnMore="https://www.proton.me">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, veritatis. Natus odit minus, maxime esse
-        illo perferendis expedita, officia libero ab qui architecto nostrum dignissimos hic aspernatur, ipsum unde
-        voluptatibus?
-    </Alert>
 );
