@@ -1,3 +1,18 @@
+## Release 5.0.22.0 — May 17, 2023
+
+### Improvements
+
+-   Improve the loading of images in password protected messages sent to non Proton addresses
+-   Place cursor outside of emails or links when they are pasted in the composer
+-   Show message expiration time immediately when opening the sent message sent with a set expiration
+-   Keep the email aliases and not the canonized email address used in the recipient field when saving a message in drafts
+
+### Fixes
+
+-   Refresh search results when local cache is being refreshed
+-   Remove empty lines added in composer after an automatic signature is removed
+-   Fix contacts imported from Proton Mail to be compatible with Thunderbird import
+
 ## Release 5.0.21.0 — Apr 26, 2023
 
 ### New features
