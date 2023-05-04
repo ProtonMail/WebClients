@@ -50,9 +50,9 @@ describe('MailHeader', () => {
     const setup = async () => {
         minimalCache();
         addToCache('User', user);
-        addApiMock('payments/plans', () => ({}));
+        addApiMock('payments/v4/plans', () => ({}));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
-        addApiMock('payments/subscription/latest', () => ({}));
+        addApiMock('payments/v4/subscription/latest', () => ({}));
         addApiMock('core/v4/experiments', () => ({}));
 
         props = getProps();
