@@ -25,7 +25,7 @@ import PlanCustomization from '@proton/components/containers/payments/subscripti
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
 } from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
-import usePaymentToken from '@proton/components/hooks/usePaymentToken';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import metrics from '@proton/metrics';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
