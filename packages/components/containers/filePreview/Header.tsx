@@ -93,7 +93,7 @@ const Header = ({
                         title={c('Action').t`Download`}
                         onClick={onRestore}
                         shape="solid"
-                        className="ml0-5 mr-11"
+                        className="ml0-5 mr-2 lg:mr-11"
                         color="norm"
                         data-testid="file-preview:actions:download"
                     >
