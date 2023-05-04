@@ -88,9 +88,9 @@ describe('Payment', () => {
         });
     });
 
-    it.skip('should render <Alert3DS> if user selected a perviously used credit card (customPaymentMethod)', async () => {
+    it('should render <Alert3DS> if user selected a perviously used credit card (customPaymentMethod)', async () => {
         apiMock.mockImplementation((query) => {
-            if (query.url === 'payments/methods') {
+            if (query.url === 'payments/v4/methods') {
                 return {
                     PaymentMethods: [
                         {
@@ -125,7 +125,7 @@ describe('Payment', () => {
 
     it('should render <Alert3DS> if user selected a perviously used method which is not a credit card', async () => {
         apiMock.mockImplementation((query) => {
-            if (query.url === 'payments/methods') {
+            if (query.url === 'payments/v4/methods') {
                 return {
                     PaymentMethods: [
                         {
