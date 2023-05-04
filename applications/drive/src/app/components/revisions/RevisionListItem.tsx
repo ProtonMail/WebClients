@@ -47,7 +47,7 @@ const RevisionListItem = ({
                 <TimeIntl className="flex-item-fluid" options={options}>
                     {revision.CreateTime}
                 </TimeIntl>
-                <p className="m0">{revision.SignatureEmail}</p>
+                <p className="text-ellipsis text-center m0">{revision.SignatureEmail}</p>
                 <Button
                     className="ml-auto"
                     ref={ref}
