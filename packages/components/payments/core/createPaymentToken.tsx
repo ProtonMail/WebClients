@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { CreateTokenData, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
-import { PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
 import { Api } from '@proton/shared/lib/interfaces';
 
+import { PAYMENT_TOKEN_STATUS } from './constants';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -16,7 +16,7 @@ import {
     isExistingPayment,
     isTokenPaymentMethod,
 } from './interface';
-import { toTokenPaymentMethod } from './paymentTokenToParams';
+import { toTokenPaymentMethod } from './utils';
 
 const { STATUS_PENDING, STATUS_CHARGEABLE, STATUS_FAILED, STATUS_CONSUMED, STATUS_NOT_SUPPORTED } =
     PAYMENT_TOKEN_STATUS;

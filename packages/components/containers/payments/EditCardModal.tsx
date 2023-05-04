@@ -4,16 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Autopay } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { CardModel } from '../../payments/core/interface';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
-import { CardModel } from './interface';
 import toDetails from './toDetails';
 import useCard from './useCard';
 

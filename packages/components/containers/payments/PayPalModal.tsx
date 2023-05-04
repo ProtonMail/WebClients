@@ -3,13 +3,13 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { PAYMENT_METHOD_TYPES, process } from '@proton/components/payments/core';
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
-import { BRAND_NAME, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-import { PaymentTokenResult } from './interface';
-import { process } from './paymentTokenHelper';
+import { PaymentTokenResult } from '../../payments/core/interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

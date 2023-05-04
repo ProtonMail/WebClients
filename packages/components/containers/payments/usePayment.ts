@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Currency, PaymentMethodType, isExistingPaymentMethod, methodMatches } from '@proton/shared/lib/interfaces';
+import {
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodType,
+    isExistingPaymentMethod,
+    methodMatches,
+} from '@proton/components/payments/core';
+import { Currency } from '@proton/shared/lib/interfaces';
 
-import { ExistingPayment, WrappedCardPayment } from './interface';
+import { ExistingPayment, WrappedCardPayment } from '../../payments/core/interface';
 import toDetails from './toDetails';
 import useCard from './useCard';
 import usePayPal, { OnPayResult } from './usePayPal';

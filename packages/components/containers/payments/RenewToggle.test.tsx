@@ -2,7 +2,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { mockSubscriptionCache } from '@proton/components/hooks/helpers/test';
-import { Autopay } from '@proton/shared/lib/interfaces';
+import { Autopay } from '@proton/components/payments/core';
 import { applyHOCs, hookWrapper, withCache } from '@proton/testing';
 
 import RenewToggle, { useRenewToggle } from './RenewToggle';

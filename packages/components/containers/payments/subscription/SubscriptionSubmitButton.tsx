@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Currency, PaymentMethodType, SubscriptionCheckResponse, methodMatches } from '@proton/shared/lib/interfaces';
+import { PAYMENT_METHOD_TYPES, PaymentMethodType, methodMatches } from '@proton/components/payments/core';
+import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton } from '../../../components';
 import StyledPayPalButton from '../StyledPayPalButton';
