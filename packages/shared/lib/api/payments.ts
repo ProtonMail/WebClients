@@ -43,7 +43,7 @@ export const subscribe = (data: any, product: any) => ({
     method: 'post',
     data,
     headers: getProductHeaders(product, {
-        endpoint: 'payments/subscription',
+        endpoint: 'payments/v4/subscription',
         product,
     }),
 });
