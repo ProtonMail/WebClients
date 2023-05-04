@@ -3155,7 +3155,7 @@
         "O servidor IMAP é obrigatório"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de acesso inválidas. Por favor, tente novamente."
+        "Credenciais de início de sessão inválidos. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Por favor, tente novamente."
@@ -5682,7 +5682,7 @@
         "Sua importação não será processada."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Suas informações de login não serão salvas após a importação ser concluída."
+        "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Sua mensagem vai expirar em ${ numberOfDays } dia.",
@@ -7680,8 +7680,8 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "for ${ n } month": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "por ${ n } mês",
+        "por ${ n } meses"
       ],
       "Get the deal": [
         "Aproveite a oferta"
@@ -8551,6 +8551,9 @@
       ],
       "Phone numbers": [
         "Números de telefone"
+      ],
+      "Preview": [
+        "Pré-visualização"
       ],
       "Previous conversation": [
         "Conversa anterior"

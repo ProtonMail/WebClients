@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
+      "Attention required": [
+        "Requer atenção"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -132,7 +135,7 @@
         "Editar o nome a mostrar"
       ],
       "Edit email address": [
-        "Editar o endereço de correio electrónico"
+        "Editar o endereço de email"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
@@ -304,6 +307,9 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Tente gravar novamente. O processo de gravar falhou devido a: ${ saveError }"
       ],
       "Unlock": [
         "Desbloquear"
@@ -1631,6 +1637,9 @@
         "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Um número de telemóvel pode ser usado para verificar apenas uma conta ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta restringido devido a facturas por pagar. Contacte o administrador."
       ],
@@ -1696,6 +1705,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
+      ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma vez"
       ],
       "Emailing preference saved": [
         "Preferências do correio electronico atualizadas"
@@ -1838,11 +1850,17 @@
       "Please verify payment at the new tab which was opened.": [
         "Verifique o pagamento no separador que abriu."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Por favor espere até as suas mudanças estarem sincronizadas com o servidor."
+      ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informação de recuperação ficará neste aparelho a não ser que escolha apagá-lo."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
@@ -1969,6 +1987,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Gostaria de receber um novo código de verificação?"
       ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
@@ -3321,8 +3342,12 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres",
         "A palavra-passe deve conter pelo menos ${ length } caracteres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de caracter ${ n })",
+        "Tente um nome de utilizador mais pequeno (máximo de caracteres ${ n })"
       ]
     },
     "VPN info": {
