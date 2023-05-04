@@ -1,13 +1,12 @@
 import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import clsx from '@proton/utils/clsx';
 
 import GenericError from '../error/GenericError';
 
 interface Props {
     className?: string;
-    small?: boolean;
+    big?: boolean;
     resetKey?: string;
     component?: ReactNode;
     onError?: (error: Error, info: ErrorInfo) => void;
@@ -53,11 +52,7 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         if (!state.hasError) {
             return props.children;
         }
-        return (
-            props.component || (
-                <GenericError className={clsx([props.small ? 'p1' : 'p2', props.className])} small={props.small} />
-            )
-        );
+        return props.component || <GenericError className={props.className} big={props.big} />;
     }
 }
 
