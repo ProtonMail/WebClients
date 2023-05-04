@@ -4,14 +4,9 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { buyCredit } from '@proton/shared/lib/api/payments';
-import {
-    APPS,
-    DEFAULT_CREDITS_AMOUNT,
-    DEFAULT_CURRENCY,
-    MIN_CREDIT_AMOUNT,
-    PAYMENT_METHOD_TYPES,
-} from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CREDITS_AMOUNT, DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -26,11 +21,16 @@ import {
     useDebounceInput,
 } from '../../components';
 import { useApi, useConfig, useEventManager, useLoading, useNotifications } from '../../hooks';
+import {
+    AmountAndCurrency,
+    ExistingPayment,
+    TokenPaymentMethod,
+    WrappedCardPayment,
+} from '../../payments/core/interface';
 import AmountRow from './AmountRow';
 import Payment from './Payment';
 import PaymentInfo from './PaymentInfo';
 import StyledPayPalButton from './StyledPayPalButton';
-import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from './interface';
 import usePayment from './usePayment';
 
 const getCurrenciesI18N = () => ({

@@ -3,16 +3,9 @@ import { act } from 'react-dom/test-utils';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CYCLE, PAYMENT_TOKEN_STATUS, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import {
-    addApiMock,
-    apiMock,
-    applyHOCs,
-    withApi,
-    withAuthentication,
-    withConfig,
-    withDeprecatedModals,
-} from '@proton/testing';
+import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
+import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { addApiMock, applyHOCs, withApi, withAuthentication, withConfig, withDeprecatedModals } from '@proton/testing';
 import lastItem from '@proton/utils/lastItem';
 
 import PaymentStep, { Props } from './PaymentStep';
@@ -113,7 +106,6 @@ beforeEach(() => {
             payment: undefined,
         },
         plans,
-        api: apiMock,
         onPay: jest.fn(),
         onChangePlanIDs: jest.fn(),
         onChangeCurrency: jest.fn(),

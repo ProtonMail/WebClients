@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Autopay } from '@proton/components/payments/core';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import { Autopay } from '@proton/shared/lib/interfaces';
 
-import { Prompt } from '../../components/prompt';
 import { PrimaryButton } from '../../components/button';
 import { ModalProps } from '../../components/modalTwo';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
+import { Prompt } from '../../components/prompt';
 import { Toggle } from '../../components/toggle';
 import { useSubscription } from '../../hooks';
 

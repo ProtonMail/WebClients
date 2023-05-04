@@ -1,4 +1,5 @@
-import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '../constants';
+import { PAYMENT_METHOD_TYPES } from './constants';
+import { PlainPaymentMethodType } from './interface';
 
 export interface PaymentMethodStatus {
     Card: boolean;

@@ -19,6 +19,7 @@ import {
     useMyCountry,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import { PaymentMethodStatus } from '@proton/components/payments/core';
 import metrics from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
@@ -41,14 +42,7 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import {
-    Api,
-    Currency,
-    Cycle,
-    HumanVerificationMethodType,
-    PaymentMethodStatus,
-    Plan,
-} from '@proton/shared/lib/interfaces';
+import { Api, Currency, Cycle, HumanVerificationMethodType, Plan } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';

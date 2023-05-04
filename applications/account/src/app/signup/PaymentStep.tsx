@@ -14,23 +14,25 @@ import {
     usePayment,
 } from '@proton/components';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import {
-    AmountAndCurrency,
-    CardPayment,
-    PaypalPayment,
-    TokenPayment,
-    TokenPaymentMethod,
-} from '@proton/components/containers/payments/interface';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
 } from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import {
+    AmountAndCurrency,
+    CardPayment,
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodStatus,
+    PaypalPayment,
+    TokenPayment,
+    TokenPaymentMethod,
+} from '@proton/components/payments/core';
 import metrics from '@proton/metrics';
-import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Currency, Cycle, PaymentMethodStatus, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

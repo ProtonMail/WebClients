@@ -1,5 +1,4 @@
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-
+import { PAYMENT_METHOD_TYPES } from './constants';
 import { TokenPayment, TokenPaymentMethod } from './interface';
 
 /**

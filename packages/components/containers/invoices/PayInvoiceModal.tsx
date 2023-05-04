@@ -2,16 +2,21 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
 import { useApi, useApiResult, useEventManager, useLoading, useNotifications } from '../../hooks';
+import {
+    AmountAndCurrency,
+    ExistingPayment,
+    TokenPaymentMethod,
+    WrappedCardPayment,
+} from '../../payments/core/interface';
 import Payment from '../payments/Payment';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
-import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from '../payments/interface';
 import usePayment from '../payments/usePayment';
 import { Invoice } from './interface';
 
