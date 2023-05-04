@@ -2,7 +2,7 @@ import type { AliasState } from '@proton/pass/store';
 import type { Maybe, Realm, SafeLoginItem } from '@proton/pass/types';
 
 import type { FieldHandle, FormField, FormType } from './form';
-import type { IFrameService } from './iframe';
+import type { IFrameAppService } from './iframe';
 
 export enum DropdownAction {
     AUTOFILL,
@@ -23,4 +23,4 @@ export type OpenDropdownOptions = {
     focus?: boolean;
 };
 
-export interface InjectedDropdown extends IFrameService<OpenDropdownOptions> {}
+export interface InjectedDropdown extends IFrameAppService<OpenDropdownOptions> {}

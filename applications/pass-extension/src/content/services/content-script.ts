@@ -4,7 +4,6 @@ import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } fro
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
-import debounce from '@proton/utils/debounce';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { createContentScriptContext } from '../context/factory';
@@ -79,8 +78,6 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
             const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
             logger.info(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
 
-            context.service.iframe.attach(port);
-
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings!);
 
@@ -88,12 +85,6 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
             context.service.formManager.observe();
 
             port.onMessage.addListener(onPortMessage);
-
-            listeners.addObserver(
-                debounce(() => context.service.iframe.attach(port), 500),
-                document.body,
-                { childList: true }
-            );
         }
     };
 
