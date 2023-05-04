@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, RequestNewCodeModal, useFormErrors, useLoading } from '@proton/components';
-import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import { InputFieldTwo, RequestNewCodeModal, useApi, useFormErrors, useLoading } from '@proton/components';
+import { RecoveryMethod, ValidateResetTokenResponse } from '@proton/components/containers/resetPassword/interface';
+import { validateResetToken } from '@proton/shared/lib/api/reset';
+import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -12,18 +14,34 @@ import Text from '../public/Text';
 import ValidateResetTokenConfirmModal from './ValidateResetTokenConfirmModal';
 
 interface Props {
-    onSubmit: (token: string) => Promise<void>;
+    onSubmit: ({ resetResponse, token }: { resetResponse: ValidateResetTokenResponse; token: string }) => Promise<void>;
     onBack: () => void;
     onRequest: () => Promise<void>;
     method: RecoveryMethod;
+    recoveryMethods: RecoveryMethod[];
     value: string;
+    username: string;
 }
 
-const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: Props) => {
+const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, recoveryMethods, value, username }: Props) => {
+    const normalApi = useApi();
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+
     const [loading, withLoading] = useLoading();
     const [confirmModal, setConfirmModal] = useState(false);
     const [newCodeModal, setNewCodeModal] = useState(false);
     const [token, setToken] = useState('');
+    const [resetResponse, setResetResponse] = useState<ValidateResetTokenResponse>();
+
+    const address = useMemo(() => {
+        const addresses = resetResponse?.Addresses;
+
+        if (!addresses || addresses.length === 0) {
+            return undefined;
+        }
+
+        return getPrimaryAddress(addresses)?.Email || addresses[0].Email;
+    }, [resetResponse?.Addresses, getPrimaryAddress]);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -38,20 +56,34 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
 
     return (
         <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
                 e.preventDefault();
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-                setConfirmModal(true);
+
+                const submit = async () => {
+                    const resetResponse = await silentApi<ValidateResetTokenResponse>(
+                        validateResetToken(username, token)
+                    );
+                    setResetResponse(resetResponse);
+                    setConfirmModal(true);
+                };
+
+                void withLoading(submit()).catch(noop);
             }}
         >
             <ValidateResetTokenConfirmModal
                 onClose={() => setConfirmModal(false)}
                 onConfirm={() => {
-                    withLoading(onSubmit(token.trim())).catch(noop);
+                    if (!resetResponse) {
+                        return;
+                    }
+                    withLoading(onSubmit({ resetResponse, token: token.trim() })).catch(noop);
                 }}
                 open={confirmModal}
+                recoveryMethods={recoveryMethods}
+                address={address}
             />
             {(method === 'sms' || method === 'email') && (
                 <RequestNewCodeModal
@@ -89,7 +121,9 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     disabled={loading}
                     onClick={() => setNewCodeModal(true)}
                     className="mt-2"
-                >{c('Action').t`Didn't receive a code?`}</Button>
+                >
+                    {c('Action').t`Didn't receive a code?`}
+                </Button>
             )}
         </form>
     );
