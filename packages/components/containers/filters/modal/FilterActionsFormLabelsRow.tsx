@@ -3,6 +3,8 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useUser } from '@proton/components/hooks';
+import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { Checkbox, Icon, LabelStack, useModalState } from '../../../components';
@@ -23,10 +25,13 @@ type ChangePayload = {
 };
 
 const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, labels }: Props) => {
+    const [user] = useUser();
     const { labelAs } = actions;
     const { isOpen } = labelAs;
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
+
+    const canCreateLabel = !hasReachedLabelLimit(user, labels);
 
     const handleChangeModel = (payload: Partial<ChangePayload>) => {
         handleUpdateActions({
@@ -128,9 +133,11 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                 <div className="pt0-5 mb1">{c('Label').t`No label found`}</div>
                             )}
                         </div>
-                        <Button shape="outline" className="mt-0" onClick={() => setEditLabelModalOpen(true)}>
-                            {c('Action').t`Create label`}
-                        </Button>
+                        {canCreateLabel && (
+                            <Button shape="outline" className="mt-0" onClick={() => setEditLabelModalOpen(true)}>
+                                {c('Action').t`Create label`}
+                            </Button>
+                        )}
                         <EditLabelModal {...editLabelProps} onAdd={handleCreateLabel} type="label" />
                     </>
                 ) : (

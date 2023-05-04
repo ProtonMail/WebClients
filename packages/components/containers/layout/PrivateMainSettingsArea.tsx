@@ -18,7 +18,7 @@ interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
     title: string;
     noTitle?: boolean;
-    description?: string;
+    description?: ReactNode;
     setActiveSection?: (section: string) => void;
     children?: ReactNode;
 }
