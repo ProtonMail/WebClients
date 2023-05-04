@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
+import networkErrorImg from '@proton/styles/assets/img/errors/error-network.svg';
 import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../..';
@@ -13,9 +14,10 @@ interface Props {
     className?: string;
     children?: ReactNode;
     big?: boolean;
+    isNetworkError?: boolean;
 }
 
-const GenericError = ({ children, className, big }: Props) => {
+const GenericError = ({ children, className, big, isNetworkError }: Props) => {
     const handleRefresh = () => window.location.reload();
 
     const title = c('Error message').t`Something went wrong`;
@@ -33,7 +35,7 @@ const GenericError = ({ children, className, big }: Props) => {
 
     return (
         <div className={clsx('m-auto', status === 'big' ? 'p-1' : 'p-2', className)}>
-            <IllustrationPlaceholder title={title} url={errorImg}>
+            <IllustrationPlaceholder title={title} url={isNetworkError ? networkErrorImg : errorImg}>
                 {status === 'child' && children}
                 {status === 'big' && (
                     <>
