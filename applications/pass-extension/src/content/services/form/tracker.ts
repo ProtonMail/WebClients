@@ -34,7 +34,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     const onSubmitHandler = withContext(async ({ service: { iframe } }) => {
-        iframe.apps.dropdown?.close();
+        iframe.dropdown?.close();
 
         const { username, password } = getFormData();
 

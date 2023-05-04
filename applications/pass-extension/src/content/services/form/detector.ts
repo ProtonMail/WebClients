@@ -1,10 +1,11 @@
-import { FNode, rulesetMaker, trainees, utils } from '@proton/pass/fathom';
+import { type FNode, rulesetMaker, trainees, utils } from '@proton/pass/fathom';
 import { isHTMLElement } from '@proton/pass/utils/dom';
 import { invert } from '@proton/pass/utils/fp/predicates';
 
 import { PROCESSED_INPUT_ATTR } from '../../constants';
 import { createFormHandles } from '../../services/handles/form';
-import { FieldsForForm, FormField, FormFieldTypeMap, FormFields, FormHandle, FormType } from '../../types';
+import type { FieldsForForm, FormFieldTypeMap, FormFields, FormHandle } from '../../types';
+import { FormField, FormType } from '../../types';
 
 const { matchClosestSiblingForms } = utils;
 
