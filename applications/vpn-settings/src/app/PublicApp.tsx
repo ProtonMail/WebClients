@@ -4,7 +4,8 @@ import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
 import AccountResetPasswordContainer from 'proton-account/src/app/reset/ResetPasswordContainer';
 import AccountSignupContainer from 'proton-account/src/app/signup/SignupContainer';
-import SignupInviteContainer from 'proton-account/src/app/signup/SignupInviteContainer';
+import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupInviteContainer';
+import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 
 import {
     ExperimentsProvider,
@@ -53,7 +54,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                         <AccountForgotUsernameContainer />
                                     </Route>
                                     <Route path="/pre-invite/:selector/:token">
-                                        <SignupInviteContainer
+                                        <AccountSignupInviteContainer
                                             loader={loader}
                                             clientType={CLIENT_TYPES.VPN}
                                             onValid={(inviteData) =>
@@ -67,6 +68,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     </Route>
                                     <Route path="/signup">
                                         <AccountSignupContainer
+                                            productParam={APPS.PROTONVPN_SETTINGS}
+                                            clientType={CLIENT_TYPES.VPN}
+                                            onLogin={async (args) =>
+                                                onLogin({
+                                                    ...args,
+                                                    path: '/downloads?prompt',
+                                                })
+                                            }
+                                        />
+                                    </Route>
+                                    <Route path="/pricing">
+                                        <AccountSingleSignupContainer
+                                            loader={loader}
                                             productParam={APPS.PROTONVPN_SETTINGS}
                                             clientType={CLIENT_TYPES.VPN}
                                             onLogin={async (args) =>
