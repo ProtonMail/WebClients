@@ -4,7 +4,6 @@ import { waitUntil } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { workerLoggedOut, workerReady, workerStatusResolved } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
-import noop from '@proton/utils/noop';
 
 import { setPopupIcon } from '../../shared/extension';
 import WorkerMessageBroker from '../channel';
@@ -29,16 +28,19 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         api: options.api,
         onAuthorized: withContext((ctx) => {
             ctx.service.activation.boot();
-            ctx.service.autofill.updateTabsBadgeCount().catch(noop);
             ctx.service.telemetry?.start();
+            ctx.service.autofill.updateTabsBadgeCount();
             setSentryUID(auth.authStore.getUID());
         }),
         onUnauthorized: withContext((ctx) => {
-            ctx.service.autofill.clearTabsBadgeCount().catch(noop);
             ctx.service.formTracker.clear();
             ctx.service.onboarding.reset();
             ctx.service.telemetry?.reset();
+            ctx.service.autofill.clearTabsBadgeCount();
             setSentryUID(undefined);
+        }),
+        onLocked: withContext((ctx) => {
+            ctx.service.autofill.clearTabsBadgeCount();
         }),
     });
 
