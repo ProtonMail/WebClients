@@ -76,7 +76,7 @@ const Header = ({
                 {signatureStatus}
             </div>
             {date && (
-                <span className="flex-item-fluid text-ellipsis ml-5">
+                <time className="flex-item-fluid text-ellipsis ml-5">
                     {new Intl.DateTimeFormat(dateLocale.code, {
                         year: 'numeric',
                         month: 'short',
@@ -84,13 +84,13 @@ const Header = ({
                         hour: 'numeric',
                         minute: 'numeric',
                     }).format(date)}
-                </span>
+                </time>
             )}
             {children}
-            <div className="flex flex-align-items-center">
+            <div className="flex flex-align-items-center mt-2 ml-auto sm:m-0">
                 {onRestore && (
                     <Button
-                        title={c('Action').t`Download`}
+                        title={c('Action').t`Restore`}
                         onClick={onRestore}
                         shape="solid"
                         className="ml0-5 mr-2 lg:mr-11"
