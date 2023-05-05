@@ -4027,7 +4027,7 @@ __metadata:
     eslint: ^8.39.0
     jest: ^29.5.0
     jest-fetch-mock: ^3.0.3
-    json-schema-to-typescript: ^12.0.0
+    json-schema-to-typescript: ^13.0.1
     rimraf: ^5.0.0
     ts-jest: ^29.1.0
     typescript: ^5.0.4
@@ -19858,9 +19858,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"json-schema-to-typescript@npm:^12.0.0":
-  version: 12.0.0
-  resolution: "json-schema-to-typescript@npm:12.0.0"
+"json-schema-to-typescript@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "json-schema-to-typescript@npm:13.0.1"
   dependencies:
     "@bcherny/json-schema-ref-parser": 10.0.5-fork
     "@types/json-schema": ^7.0.11
@@ -19878,7 +19878,7 @@ fsevents@^1.2.7:
     prettier: ^2.6.2
   bin:
     json2ts: dist/src/cli.js
-  checksum: 4d662dd433b08f7a727fc6d464145e273bc347790537305c776f53321994f83d64242d0fe5b3a68d0cf81d866738df78ed4f8300a51d4c79a24657cac8f5e915
+  checksum: 8e95510628b159fdde37092a04bfb8cc1f35a7abd752965f724bd6a913d3ce9eb3c776884f67244ea3c7968ccabb8fac9bd17aed525644b2379a6c0fe899eecb
   languageName: node
   linkType: hard
 
@@ -25485,7 +25485,7 @@ fsevents@^1.2.7:
     esbuild: ^0.17.18
     eslint: ^8.39.0
     prettier: ^2.8.8
-    typescript: ^4.9.5
+    typescript: ^5.0.4
   languageName: unknown
   linkType: soft
 
@@ -30499,16 +30499,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.9.5":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
-  languageName: node
-  linkType: hard
-
 "typescript@npm:^5.0.0, typescript@npm:^5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
@@ -30516,16 +30506,6 @@ fsevents@^1.2.7:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 82b94da3f4604a8946da585f7d6c3025fff8410779e5bde2855ab130d05e4fd08938b9e593b6ebed165bda6ad9292b230984f10952cf82f0a0ca07bbeaa08172
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 1f8f3b6aaea19f0f67cba79057674ba580438a7db55057eb89cc06950483c5d632115c14077f6663ea76fd09fce3c190e6414bb98582ec80aa5a4eaf345d5b68
   languageName: node
   linkType: hard
 
