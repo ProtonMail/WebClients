@@ -24,7 +24,7 @@ const Copy = ({ children, value, onCopy, tooltipText, ...rest }: Props, ref: Ref
 
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
-            <Button icon color="weak" shape="outline" ref={ref} onClick={handleClick} {...rest}>
+            <Button icon color="weak" shape="outline" ref={ref} {...rest} onClick={handleClick}>
                 {children || <Icon name="squares" alt={c('Label').t`Copy`} />}
             </Button>
         </Tooltip>

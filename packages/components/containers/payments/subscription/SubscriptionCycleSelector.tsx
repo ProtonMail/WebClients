@@ -1,21 +1,22 @@
 import { c } from 'ttag';
 
-
-
-import { CYCLE, DEFAULT_CURRENCY, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
-import { allCycles, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
+import {
+    TotalPricing,
+    allCycles,
+    getNormalCycleFromCustomCycle,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
+} from '@proton/shared/lib/helpers/subscription';
 import { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-
-
 
 import { Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
 import { classnames } from '../../../helpers';
 import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
-
 
 interface Props {
     cycle: CYCLE;
@@ -26,12 +27,6 @@ interface Props {
     plansMap: PlansMap;
     planIDs: PlanIDs;
     disabled?: boolean;
-}
-
-interface TotalPricing {
-    discount: number;
-    total: number;
-    totalPerMonth: number;
 }
 
 type TotalPricings = {
@@ -184,64 +179,13 @@ const SubscriptionCycleSelector = ({
 
     const cycles = [CYCLE.TWO_YEARS, ...filteredCycles];
 
-    const pricing = Object.entries(planIDs).reduce(
-        (acc, [planName, quantity]) => {
-            const plan = plansMap[planName as keyof PlansMap];
-            if (!plan) {
-                return acc;
-            }
-
-            const add = (target: any, cycle: CYCLE) => {
-                const price = plan.Pricing[cycle];
-                if (price) {
-                    target[cycle] += quantity * price;
-                }
-            };
-
-            allCycles.forEach((cycle) => {
-                add(acc.all, cycle);
-            });
-
-            if (plan.Type === PLAN_TYPES.PLAN) {
-                allCycles.forEach((cycle) => {
-                    add(acc.plans, cycle);
-                });
-            }
-
-            return acc;
-        },
-        {
-            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0, [CYCLE.THIRTY]: 0, [CYCLE.FIFTEEN]: 0 },
-            plans: {
-                [CYCLE.MONTHLY]: 0,
-                [CYCLE.YEARLY]: 0,
-                [CYCLE.TWO_YEARS]: 0,
-                [CYCLE.THIRTY]: 0,
-                [CYCLE.FIFTEEN]: 0,
-            },
-        }
-    );
-
-    const getTotal = (cycle: CYCLE): TotalPricing => {
-        const total = pricing.all[cycle];
-        const totalPerMonth = pricing.plans[cycle] / cycle;
-        const discount = cycle === CYCLE.MONTHLY ? 0 : pricing.all[CYCLE.MONTHLY] * cycle - total;
-        return {
-            discount,
-            total,
-            totalPerMonth,
-        };
-    };
-
     const monthlySuffix = getMonthlySuffix(planIDs);
 
-    const totals = allCycles.reduce<{ [key in CYCLE]: { discount: number; total: number; totalPerMonth: number } }>(
-        (acc, cycle) => {
-            acc[cycle] = getTotal(cycle);
-            return acc;
-        },
-        {} as any
-    );
+    const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+    const totals = allCycles.reduce<{ [key in CYCLE]: ReturnType<typeof getTotalFromPricing> }>((acc, cycle) => {
+        acc[cycle] = getTotalFromPricing(pricing, cycle);
+        return acc;
+    }, {} as any);
 
     if (cycles.length === 1) {
         const cycle = cycles[0];

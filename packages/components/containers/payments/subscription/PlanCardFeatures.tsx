@@ -14,11 +14,19 @@ interface FeatureListProps {
     features: PlanCardFeatureDefinition[];
     icon?: boolean;
     highlight?: boolean;
+    margin?: boolean;
+    odd?: boolean;
 }
 
-export const PlanCardFeatureList = ({ features, icon, highlight = false }: FeatureListProps) => {
+export const PlanCardFeatureList = ({
+    odd = true,
+    features,
+    icon,
+    highlight = false,
+    margin = true,
+}: FeatureListProps) => {
     return (
-        <ul className="bg-weak-odd unstyled mt-4 mb-0 md:mb-6">
+        <ul className={clsx('unstyled', odd && 'bg-weak-odd', margin ? 'mt-4 mb-0 md:mb-6' : 'm-0')}>
             {features.map((feature) => {
                 const iconToDisplay = (() => {
                     if (feature.highlight && highlight) {
@@ -45,7 +53,7 @@ export const PlanCardFeatureList = ({ features, icon, highlight = false }: Featu
                         ? feature.text
                         : `${feature.tooltip}-${feature.highlight}-${feature.icon}`;
                 return (
-                    <li key={key} className="px-3 py-2 flex rounded">
+                    <li key={key} className={clsx(odd && 'px-3', 'py-2 flex rounded')}>
                         <div
                             className={clsx(
                                 'flex-no-min-children flex-nowrap',

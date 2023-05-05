@@ -39,9 +39,10 @@ interface Props {
     currency: Currency;
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
+    onValidate?: () => boolean;
 }
 
-const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay }: Props) => {
+const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate }: Props) => {
     const api = useApi();
     const [model, setModel] = useState<Model>(DEFAULT_MODEL);
     const [loadingVerification, withLoadingVerification] = useLoading();
@@ -101,8 +102,15 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay }: Props)
         isReady: !!model.Token,
         loadingToken,
         loadingVerification,
-        onToken: () => withLoadingToken(onToken()),
-        onVerification: () => withLoadingVerification(onVerification()),
+        onToken: async () => {
+            return withLoadingToken(onToken());
+        },
+        onVerification: async () => {
+            if (onValidate?.()) {
+                return;
+            }
+            return withLoadingVerification(onVerification());
+        },
         clear,
     };
 };

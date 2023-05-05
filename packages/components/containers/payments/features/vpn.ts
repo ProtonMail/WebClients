@@ -1,6 +1,14 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, PLANS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    PLANS,
+    VPN_APP_NAME,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
@@ -76,7 +84,7 @@ export const getVPNSpeed = (type: 'medium' | 'highest', highlight?: boolean): Pl
 
 export const getStreaming = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Worldwide streaming services`,
+        text: c('new_plans: feature').t`High-speed streaming`,
         tooltip: c('new_plans: tooltip')
             .t`Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere`,
         included,
@@ -87,8 +95,19 @@ export const getStreaming = (included: boolean, highlight?: boolean): PlanCardFe
 
 export const getP2P = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`P2P/BitTorrent`,
+        text: c('new_plans: feature').t`Fast P2P/BitTorrent downloads`,
         tooltip: c('new_plans: tooltip').t`Support for file-sharing protocols like BitTorrent`,
+        included,
+        highlight,
+        icon: 'arrows-switch',
+    };
+};
+
+export const getDoubleHop = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Double hop`,
+        tooltip: c('new_plans: tooltip')
+            .t`Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.`,
         included,
         highlight,
         icon: 'arrows-switch',
@@ -97,7 +116,7 @@ export const getP2P = (included: boolean, highlight?: boolean): PlanCardFeatureD
 
 export const getNetShield = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`NetShield malware and ad-blocker`,
+        text: c('new_plans: feature').t`Ad-blocker & malware protection`,
         tooltip: c('new_plans: tooltip')
             .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware`,
         included,
@@ -151,6 +170,18 @@ export const getVPNConnections = (n = 0, highlight?: boolean): PlanCardFeatureDe
         icon: 'brand-proton-vpn',
     };
 };
+export const getProtectDevices = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').ngettext(
+            msgid`Protect ${n} device at a time`,
+            `Protect ${n} devices at a time`,
+            n
+        ),
+        included: true,
+        highlight,
+        icon: 'brand-proton-vpn',
+    };
+};
 export const getNoLogs = (highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Strict no-logs policy`,
@@ -196,6 +227,36 @@ const getRouterSupport = (): PlanCardFeatureDefinition => {
         text: c('new_plans: feature').t`Router support`,
         tooltip: c('new_plans: tooltip')
             .t`Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.`,
+        included: true,
+    };
+};
+export const getPrioritySupport = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Priority support & live chat`,
+        tooltip: '',
+        included: true,
+        icon: 'life-ring',
+    };
+};
+export const getFreeFeatures = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature')
+            .t`Free features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${CALENDAR_SHORT_APP_NAME}, and ${DRIVE_SHORT_APP_NAME}`,
+        tooltip: '',
+        included: true,
+    };
+};
+export const getAllPlatforms = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Available on all platforms`,
+        tooltip: '',
+        included: true,
+    };
+};
+export const getRefundable = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Fully refundable for 30 days`,
+        tooltip: '',
         included: true,
     };
 };
@@ -343,6 +404,20 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getP2P(true),
                 [PLANS.MAIL_PRO]: getP2P(false),
                 [PLANS.BUNDLE_PRO]: getP2P(true),
+            },
+        },
+        {
+            name: 'hop',
+            plans: {
+                [PLANS.FREE]: getDoubleHop(false),
+                [PLANS.BUNDLE]: getDoubleHop(true, true),
+                [PLANS.MAIL]: getDoubleHop(false),
+                [PLANS.VPN]: getDoubleHop(true, true),
+                [PLANS.DRIVE]: getDoubleHop(false),
+                [PLANS.PASS_PLUS]: getDoubleHop(false),
+                [PLANS.FAMILY]: getDoubleHop(true, true),
+                [PLANS.MAIL_PRO]: getDoubleHop(false),
+                [PLANS.BUNDLE_PRO]: getDoubleHop(true, true),
             },
         },
         {
