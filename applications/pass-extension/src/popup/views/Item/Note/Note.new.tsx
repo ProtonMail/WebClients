@@ -8,6 +8,7 @@ import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemNewProps } from '../../../../shared/items';
 import { Field } from '../../../components/Field/Field';
+import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { BaseTextAreaField } from '../../../components/Field/TextareaField';
 import { BaseTitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
@@ -52,7 +53,10 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
             {({ canFocus }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
-                        <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                        <FieldsetCluster className="mb-4">
+                            <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                        </FieldsetCluster>
+
                         <Field
                             dense
                             name="name"
