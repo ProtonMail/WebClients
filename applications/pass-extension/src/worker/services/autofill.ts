@@ -40,10 +40,9 @@ export const createAutoFillService = () => {
         }
     };
 
-    const updateTabsBadgeCount = async () => {
-        try {
-            const tabs = await browser.tabs.query({ active: true });
-            await Promise.all(
+    const updateTabsBadgeCount = () => {
+        void browser.tabs.query({ active: true }).then((tabs) =>
+            Promise.all(
                 tabs.map(({ id: tabId, url, active }) => {
                     const { domain: realm, subdomain } = parseUrl(url ?? '');
                     if (tabId && realm) {
@@ -63,18 +62,17 @@ export const createAutoFillService = () => {
                         return setPopupIconBadge(tabId, count);
                     }
                 })
-            );
-        } catch (_) {}
+            )
+        );
     };
 
     /* Clears badge count for each valid tab
      * Triggered on logout detection to avoid
      * showing stale counts */
-    const clearTabsBadgeCount = async (): Promise<void> => {
-        try {
-            const tabs = await browser.tabs.query({});
-            await Promise.all(tabs.map(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0)));
-        } catch (_) {}
+    const clearTabsBadgeCount = () => {
+        void browser.tabs
+            .query({})
+            .then((tabs) => Promise.all(tabs.map(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0))));
     };
 
     WorkerMessageBroker.registerMessage(
