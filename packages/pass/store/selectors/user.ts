@@ -1,5 +1,4 @@
 import type { Maybe } from '@proton/pass/types';
-import { PLANS } from '@proton/shared/lib/constants';
 import { type Address, UserType } from '@proton/shared/lib/interfaces';
 
 import { State } from '../types';
@@ -8,8 +7,10 @@ export const selectUserState = ({ user }: State) => user;
 
 export const selectUser = ({ user: { user } }: State) => user;
 
-export const selectUserTier = ({ user: { tier, user } }: State) =>
-    user?.Type === UserType.MANAGED ? 'subuser' : tier ?? PLANS.FREE;
+export const selectUserPlan = ({ user: { plan } }: State) => plan;
+
+export const selectUserTier = ({ user: { user, plan } }: State) =>
+    user?.Type === UserType.MANAGED ? 'subuser' : plan?.InternalName;
 
 export const selectAllAddresses = ({ user: { addresses } }: State): Address[] => Object.values(addresses);
 
