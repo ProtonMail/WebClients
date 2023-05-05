@@ -9,13 +9,33 @@ interface Props {
     url: string;
     uppercase?: boolean;
     children?: ReactNode;
+    titleSize?: 'regular' | 'big';
 }
 
-const IllustrationPlaceholder = ({ className, illustrationClassName, title, url, uppercase, children }: Props) => {
+const IllustrationPlaceholder = ({
+    className,
+    illustrationClassName,
+    title,
+    url,
+    uppercase,
+    children,
+    titleSize = 'big',
+}: Props) => {
     return (
         <div className={clsx('flex-no-min-children flex-column flex-nowrap flex-align-items-center w100', className)}>
-            <img src={url} alt={title} className={clsx('p1 mb-4', illustrationClassName)} />
-            {!!title && <h1 className={clsx('text-bold h2 mb-1', uppercase && 'text-uppercase')}>{title}</h1>}
+            <img src={url} alt={title} className={clsx('p-1 mb-4', illustrationClassName)} />
+            {!!title && (
+                <h1
+                    className={clsx(
+                        'text-bold text-rg mb-1',
+                        titleSize === 'regular' && 'text-rg',
+                        titleSize === 'big' && 'text-4xl',
+                        uppercase && 'text-uppercase'
+                    )}
+                >
+                    {title}
+                </h1>
+            )}
             {children}
         </div>
     );
