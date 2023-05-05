@@ -32,6 +32,7 @@ interface Props {
     senders: ReactNode;
     unread: boolean;
     onBack: () => void;
+    maxLabels?: number;
 }
 
 const ItemRowLayout = ({
@@ -45,6 +46,7 @@ const ItemRowLayout = ({
     senders,
     unread,
     onBack,
+    maxLabels = 4,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -131,7 +133,7 @@ const ItemRowLayout = ({
                 labels={labels}
                 element={element}
                 labelID={labelID}
-                maxNumber={1}
+                maxNumber={maxLabels}
                 className="flex-item-noshrink mlauto"
                 showDropdown={false}
                 isCollapsed={false}

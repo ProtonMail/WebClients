@@ -37,6 +37,7 @@ interface Props {
     unread: boolean;
     onBack: () => void;
     isSelected: boolean;
+    maxLabels?: number;
 }
 
 const ItemColumnLayout = ({
@@ -51,6 +52,7 @@ const ItemColumnLayout = ({
     onBack,
     isSelected,
     senders,
+    maxLabels = 4,
 }: Props) => {
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
@@ -154,7 +156,7 @@ const ItemColumnLayout = ({
                                         labels={labels}
                                         element={element}
                                         labelID={labelID}
-                                        maxNumber={1}
+                                        maxNumber={maxLabels}
                                     />
                                 )}
                                 {hasExpiration && (

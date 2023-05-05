@@ -41,6 +41,7 @@ interface Props {
     index: number;
     breakpoints: Breakpoints;
     onFocus: (index: number) => void;
+    maxLabels?: number;
 }
 
 const Item = ({
@@ -62,6 +63,7 @@ const Item = ({
     index,
     breakpoints,
     onFocus,
+    maxLabels = 4,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [labels] = useLabels();
@@ -188,6 +190,7 @@ const Item = ({
                     breakpoints={breakpoints}
                     onBack={onBack}
                     isSelected={isSelected}
+                    maxLabels={maxLabels}
                 />
             </div>
         </div>
