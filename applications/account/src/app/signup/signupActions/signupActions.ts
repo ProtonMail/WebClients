@@ -1,5 +1,6 @@
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import { createGetKTActivation } from '@proton/components/containers/keyTransparency/useGetKTActivation';
 import { AppIntent } from '@proton/components/containers/login/interface';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -289,7 +290,9 @@ export const handleSetupUser = async ({
             // array, and keys won't be setup.
             const addresses = await getAllAddresses(api);
 
-            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(appName, ktFeature, api);
+            const getKTActivation = createGetKTActivation(Promise.resolve(ktFeature), appName);
+
+            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(getKTActivation, api);
 
             const keyPassword = addresses.length
                 ? await handleSetupKeys({

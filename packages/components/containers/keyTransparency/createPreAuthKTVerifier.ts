@@ -1,11 +1,15 @@
 import { CryptoProxy } from '@proton/crypto';
 import { PartialKTBlobContent, commitOwnKeystoLS, ktSentryReport, verifySKLSignature } from '@proton/key-transparency';
-import { APP_NAMES } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Api, DecryptedKey, PreAuthKTVerifier, PreAuthKTVerify } from '@proton/shared/lib/interfaces';
+import {
+    Api,
+    DecryptedKey,
+    GetKTActivation,
+    KeyTransparencyActivation,
+    PreAuthKTVerifier,
+    PreAuthKTVerify,
+} from '@proton/shared/lib/interfaces';
 import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
-
-import { KT_FF, isKTActive } from './ktStatus';
 
 interface KTBlobPreAuth {
     ktBlobContent: PartialKTBlobContent;
@@ -17,12 +21,12 @@ interface KTBlobPreAuth {
  * Return a KT verifier for when getSignedKeyList is called before apps are properly mounted,
  * e.g. signup or login, such that self audit couldn't have run and user keys are not directly accessible
  */
-const createPreAuthKTVerifier = (APP_NAME: APP_NAMES, feature: KT_FF, api: Api): PreAuthKTVerifier => {
+const createPreAuthKTVerifier = (getKTActivation: GetKTActivation, api: Api): PreAuthKTVerifier => {
     const ktBlobsPreAuth: KTBlobPreAuth[] = [];
 
     const preAuthKTVerify: PreAuthKTVerify =
         (userKeys: DecryptedKey[]) => async (address, signedKeyList, publicKeys) => {
-            if (!(await isKTActive(APP_NAME, feature))) {
+            if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
                 return;
             }
 
@@ -56,7 +60,7 @@ const createPreAuthKTVerifier = (APP_NAME: APP_NAMES, feature: KT_FF, api: Api):
         };
 
     const preAuthKTCommit = async (userID: string) => {
-        if (!(await isKTActive(APP_NAME, feature))) {
+        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
             return;
         }
 
