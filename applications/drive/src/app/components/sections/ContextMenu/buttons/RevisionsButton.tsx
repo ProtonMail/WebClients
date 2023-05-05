@@ -21,11 +21,11 @@ const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => 
             action={() => showRevisionsModal({ link: selectedLink })}
             close={close}
         >
-            {/*// TODO: Remove this after the 22/06/2023*/}
+            {/*// TODO: Remove this after the 17/07/2023*/}
             <NewFeatureTag
                 featureKey="revisions"
                 showOnce
-                endDate={new Date('2023-06-22')}
+                endDate={new Date('2023-07-17')}
                 className="on-mobile-ml1 ml-12"
             />
         </ContextMenuButton>
