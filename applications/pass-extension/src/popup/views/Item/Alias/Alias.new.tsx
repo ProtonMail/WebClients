@@ -10,14 +10,17 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { type ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
+import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
+import { ItemCard } from '../../../components/Item/ItemCard';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { usePopupContext } from '../../../hooks/usePopupContext';
+import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { AliasForm } from './Alias.form';
 import { type NewAliasFormValues, validateNewAliasForm } from './Alias.validation';
@@ -27,6 +30,8 @@ const FORM_ID = 'new-alias';
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
     const { realm, subdomain } = usePopupContext();
     const [ready, setReady] = useState(false);
+
+    const { aliasLimitExceeded } = useUsageLimits();
 
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
@@ -103,52 +108,64 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             handleCancelClick={onCancel}
             valid={ready && form.isValid}
             discardable={!form.dirty}
+            renderSubmitButton={aliasLimitExceeded ? <UpgradeButton key="upgrade-button" /> : undefined}
         >
             {({ canFocus }) => (
-                <FormikProvider value={form}>
-                    <Form id={FORM_ID}>
-                        <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                <>
+                    {aliasLimitExceeded && (
+                        <ItemCard className="mb-2">
+                            {c('Info')
+                                .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
+                        </ItemCard>
+                    )}
+                    <FormikProvider value={form}>
+                        <Form id={FORM_ID}>
+                            <FieldsetCluster>
+                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                                <Field
+                                    name="name"
+                                    label={c('Label').t`Title`}
+                                    placeholder={c('Label').t`Untitled`}
+                                    component={TitleField}
+                                    autoFocus={canFocus && !aliasLimitExceeded}
+                                    key={`alias-name-${canFocus}`}
+                                    maxLength={MAX_ITEM_NAME_LENGTH}
+                                />
+                            </FieldsetCluster>
 
-                        <FieldsetCluster>
-                            <Field
-                                name="name"
-                                label={c('Label').t`Title`}
-                                placeholder={c('Label').t`Untitled`}
-                                component={TitleField}
-                                autoFocus={canFocus}
-                                key={`alias-name-${canFocus}`}
-                                maxLength={MAX_ITEM_NAME_LENGTH}
+                            <FieldsetCluster mode="read" as="div">
+                                <ValueControl
+                                    icon="alias"
+                                    label={c('Label').t`You are about to create`}
+                                    loading={aliasOptionsLoading}
+                                    invalid={Boolean(
+                                        Object.keys(form.touched).length > 0 &&
+                                            (form.errors.aliasPrefix || form.errors.aliasSuffix)
+                                    )}
+                                >
+                                    {`${aliasPrefix}${aliasSuffix?.value ?? ''}`}
+                                </ValueControl>
+                            </FieldsetCluster>
+
+                            <AliasForm
+                                aliasOptions={aliasOptions}
+                                aliasOptionsLoading={aliasOptionsLoading}
+                                form={form}
                             />
-                        </FieldsetCluster>
 
-                        <FieldsetCluster mode="read" as="div">
-                            <ValueControl
-                                icon="alias"
-                                label={c('Label').t`You are about to create`}
-                                loading={aliasOptionsLoading}
-                                invalid={Boolean(
-                                    Object.keys(form.touched).length > 0 &&
-                                        (form.errors.aliasPrefix || form.errors.aliasSuffix)
-                                )}
-                            >
-                                {`${aliasPrefix}${aliasSuffix?.value ?? ''}`}
-                            </ValueControl>
-                        </FieldsetCluster>
-
-                        <AliasForm aliasOptions={aliasOptions} aliasOptionsLoading={aliasOptionsLoading} form={form} />
-
-                        <FieldsetCluster>
-                            <Field
-                                name="note"
-                                label={c('Label').t`Note`}
-                                placeholder={c('Placeholder').t`Enter a note...`}
-                                component={TextAreaField}
-                                icon="note"
-                                maxLength={MAX_ITEM_NOTE_LENGTH}
-                            />
-                        </FieldsetCluster>
-                    </Form>
-                </FormikProvider>
+                            <FieldsetCluster>
+                                <Field
+                                    name="note"
+                                    label={c('Label').t`Note`}
+                                    placeholder={c('Placeholder').t`Enter a note...`}
+                                    component={TextAreaField}
+                                    icon="note"
+                                    maxLength={MAX_ITEM_NOTE_LENGTH}
+                                />
+                            </FieldsetCluster>
+                        </Form>
+                    </FormikProvider>
+                </>
             )}
         </ItemCreatePanel>
     );

@@ -14,12 +14,14 @@ import {
 } from '@proton/components';
 import type { ItemType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
+import clsx from '@proton/utils/clsx';
 
 import { itemTypeToIconName } from '../../../shared/items';
 import { itemTypeToItemClassName } from '../../../shared/items/className';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
+import { useUsageLimits } from '../../hooks/useUsageLimits';
 import { OnboardingPanel } from '../Onboarding/OnboardingPanel';
 import { usePasswordGeneratorContext } from '../PasswordGenerator/PasswordGeneratorContext';
 import { MenuDropdown } from './MenuDropdown';
@@ -48,6 +50,7 @@ export const Header: VFC<{}> = () => {
     const { generatePassword } = usePasswordGeneratorContext();
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
+    const { aliasUsed, aliasLimit, aliasLimitExceeded } = useUsageLimits();
 
     const handleNewItemClick = (type: ItemType) => {
         // Trick to be able to return to the initial route using history.goBack() if user switches
@@ -116,6 +119,12 @@ export const Header: VFC<{}> = () => {
                                     </span>
 
                                     {label}
+
+                                    {type === 'alias' && !!aliasLimit && (
+                                        <span
+                                            className={clsx('ml-1', aliasLimitExceeded ? 'color-danger' : 'color-weak')}
+                                        >{`(${aliasUsed}/${aliasLimit})`}</span>
+                                    )}
                                 </DropdownMenuButton>
                             </span>
                         ))}
