@@ -20,6 +20,9 @@ export interface Props {
     isDisplayedInSentence?: boolean;
     large?: boolean;
     'data-testid'?: string;
+    suffixClassName?: string;
+    currencyClassName?: string;
+    amountClassName?: string;
 }
 
 const Price = ({
@@ -32,17 +35,20 @@ const Price = ({
     isDisplayedInSentence = false,
     large,
     'data-testid': dataTestId,
+    suffixClassName,
+    currencyClassName,
+    amountClassName,
 }: Props) => {
     const value = humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
     const p = amount < 0 ? <span className="prefix">-</span> : null;
     const v = (
-        <span className={clsx(['amount', 'amount--large'])} data-testid={dataTestId}>
+        <span className={clsx(['amount', 'amount--large', amountClassName])} data-testid={dataTestId}>
             <span className="integer">{integer}</span>
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
     );
-    const s = suffix ? <span className={clsx(['suffix', !isDisplayedInSentence && 'ml-1'])}>{suffix}</span> : null;
+    const s = suffix ? <span className={clsx(['suffix', suffixClassName, !isDisplayedInSentence && 'ml-1'])}>{suffix}</span> : null;
     const pr = prefix ? <span className={clsx(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span> : null;
 
     if (currency === 'CHF') {
@@ -57,7 +63,7 @@ const Price = ({
             >
                 {pr}
                 {p}
-                <span className="currency">CHF&nbsp;</span>
+                <span className={clsx(['currency', currencyClassName])}>CHF&nbsp;</span>
                 {v}
                 {s}
             </span>
@@ -77,7 +83,7 @@ const Price = ({
                 {pr}
                 {p}
                 {v}
-                <span className="currency">&nbsp;€</span>
+                <span className={clsx(['currency', currencyClassName])}>&nbsp;€</span>
                 {s}
             </span>
         ); // -2 €/month
@@ -93,7 +99,11 @@ const Price = ({
         >
             {pr}
             {p}
-            {!!currency && <span className="currency">{CURRENCIES[currency as Currency] || currency}</span>}
+            {!!currency && (
+                <span className={clsx(['currency', currencyClassName])}>
+                    {CURRENCIES[currency as Currency] || currency}
+                </span>
+            )}
             {v}
             {s}
         </span>

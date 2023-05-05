@@ -226,3 +226,63 @@ export const hasMonthly = (subscription?: Subscription) => {
 export const hasTwoYears = (subscription?: Subscription) => {
     return subscription?.Cycle === CYCLE.TWO_YEARS;
 };
+
+export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
+    return Object.entries(planIDs).reduce(
+        (acc, [planName, quantity]) => {
+            const plan = plansMap[planName as keyof PlansMap];
+            if (!plan) {
+                return acc;
+            }
+
+            const add = (target: any, cycle: CYCLE) => {
+                const price = plan.Pricing[cycle];
+                if (price) {
+                    target[cycle] += quantity * price;
+                }
+            };
+
+            allCycles.forEach((cycle) => {
+                add(acc.all, cycle);
+            });
+
+            if (plan.Type === PLAN_TYPES.PLAN) {
+                allCycles.forEach((cycle) => {
+                    add(acc.plans, cycle);
+                });
+            }
+
+            return acc;
+        },
+        {
+            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0, [CYCLE.THIRTY]: 0, [CYCLE.FIFTEEN]: 0 },
+            plans: {
+                [CYCLE.MONTHLY]: 0,
+                [CYCLE.YEARLY]: 0,
+                [CYCLE.TWO_YEARS]: 0,
+                [CYCLE.THIRTY]: 0,
+                [CYCLE.FIFTEEN]: 0,
+            },
+        }
+    );
+};
+
+export interface TotalPricing {
+    discount: number;
+    total: number;
+    totalPerMonth: number;
+    discountPercentage: number;
+}
+
+export const getTotalFromPricing = (pricing: ReturnType<typeof getPricingFromPlanIDs>, cycle: CYCLE): TotalPricing => {
+    const total = pricing.all[cycle];
+    const totalPerMonth = pricing.plans[cycle] / cycle;
+    const totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
+    const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
+    return {
+        discount,
+        discountPercentage: Math.round((discount / totalNoDiscount) * 100),
+        total,
+        totalPerMonth,
+    };
+};

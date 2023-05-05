@@ -94,9 +94,12 @@ export const getUpdateKeysPayload = async (
     userKeys: DecryptedKey[],
     organizationKey: PrivateKeyReference | undefined,
     keyPassword: string,
-    keySalt: string
+    keySalt: string,
+    forceMigratedAddressKeys?: boolean
 ) => {
-    const hasMigratedAddressKeys = getHasMigratedAddressKeys(addressesKeys.map(({ address }) => address));
+    const hasMigratedAddressKeys = forceMigratedAddressKeys
+        ? true
+        : getHasMigratedAddressKeys(addressesKeys.map(({ address }) => address));
 
     const [armoredUserKeys, armoredAddressesKeys, armoredOrganizationKey] = await Promise.all([
         getArmoredPrivateUserKeys(userKeys, keyPassword),

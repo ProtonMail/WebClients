@@ -123,7 +123,7 @@ const Payment = ({
                 ])}
             >
                 <div>
-                    {type !== 'signup' && <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment method`}</h2>}
+                    <h2 className="text-rg text-bold mb-1">{c('Label').t`Payment method`}</h2>
                     <PaymentMethodSelector
                         options={allMethods}
                         method={method}
