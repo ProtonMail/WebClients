@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,6 +16,7 @@ type Props = {
     formId: string;
     valid: boolean;
     handleCancelClick: () => void;
+    renderSubmitButton?: ReactElement;
 } & Omit<DiscardableModalProps, 'onDiscard'>;
 
 function getItemTypeSubmitButtonLabel(type: ItemType) {
@@ -31,7 +32,15 @@ function getItemTypeSubmitButtonLabel(type: ItemType) {
     }
 }
 
-export const ItemCreatePanel: FC<Props> = ({ type, formId, valid, discardable, handleCancelClick, children }) => (
+export const ItemCreatePanel: FC<Props> = ({
+    type,
+    formId,
+    valid,
+    discardable,
+    handleCancelClick,
+    renderSubmitButton,
+    children,
+}) => (
     <DiscardableModalPanel onDiscard={handleCancelClick} discardable={discardable}>
         {(props) => (
             <Panel
@@ -50,18 +59,20 @@ export const ItemCreatePanel: FC<Props> = ({ type, formId, valid, discardable, h
                             >
                                 <Icon name="cross" alt={c('Action').t`Cancel`} />
                             </Button>,
-                            <Button
-                                className="text-sm"
-                                key="submit-button"
-                                pill
-                                shape="solid"
-                                color="norm"
-                                type="submit"
-                                form={formId}
-                                disabled={!valid}
-                            >
-                                {getItemTypeSubmitButtonLabel(type)}
-                            </Button>,
+                            renderSubmitButton || (
+                                <Button
+                                    className="text-sm"
+                                    key="submit-button"
+                                    pill
+                                    shape="solid"
+                                    color="norm"
+                                    type="submit"
+                                    form={formId}
+                                    disabled={!valid}
+                                >
+                                    {getItemTypeSubmitButtonLabel(type)}
+                                </Button>
+                            ),
                         ]}
                     />
                 }

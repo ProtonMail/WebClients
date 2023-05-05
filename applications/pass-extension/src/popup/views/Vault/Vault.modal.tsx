@@ -9,8 +9,10 @@ import { pipe, tap } from '@proton/pass/utils/fp';
 import noop from '@proton/utils/noop';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
+import { UpgradeButton } from '../../components/Button/UpgradeButton';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
+import { useUsageLimits } from '../../hooks/useUsageLimits';
 import { VaultEdit, FORM_ID as VaultEditFormId } from './Vault.edit';
 import { type VaultFormConsumerProps } from './Vault.form';
 import { VaultNew, FORM_ID as VaultNewFormId } from './Vault.new';
@@ -27,6 +29,7 @@ export type Props = {
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {
     const [loading, setLoading] = useState(false);
     const [canSubmit, setCanSubmit] = useState(payload.type === 'edit');
+    const { vaultLimitExceeded } = useUsageLimits();
 
     const vaultViewProps = useMemo<VaultFormConsumerProps>(
         () => ({
@@ -59,26 +62,30 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
 
-                            <Button
-                                key="modal-submit-button"
-                                type="submit"
-                                form={payload.type === 'new' ? VaultNewFormId : VaultEditFormId}
-                                color="norm"
-                                pill
-                                loading={loading}
-                                disabled={!canSubmit || loading}
-                            >
-                                {(() => {
-                                    switch (payload.type) {
-                                        case 'new':
-                                            return loading
-                                                ? c('Action').t`Creating vault`
-                                                : c('Action').t`Create vault`;
-                                        case 'edit':
-                                            return loading ? c('Action').t`Saving` : c('Action').t`Save`;
-                                    }
-                                })()}
-                            </Button>,
+                            vaultLimitExceeded && payload.type === 'new' ? (
+                                <UpgradeButton key="upgrade-button" />
+                            ) : (
+                                <Button
+                                    key="modal-submit-button"
+                                    type="submit"
+                                    form={payload.type === 'new' ? VaultNewFormId : VaultEditFormId}
+                                    color="norm"
+                                    pill
+                                    loading={loading}
+                                    disabled={!canSubmit || loading}
+                                >
+                                    {(() => {
+                                        switch (payload.type) {
+                                            case 'new':
+                                                return loading
+                                                    ? c('Action').t`Creating vault`
+                                                    : c('Action').t`Create vault`;
+                                            case 'edit':
+                                                return loading ? c('Action').t`Saving` : c('Action').t`Save`;
+                                        }
+                                    })()}
+                                </Button>
+                            ),
                         ]}
                     />
                 }
