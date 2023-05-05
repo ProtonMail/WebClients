@@ -1,5 +1,7 @@
 import { HTMLProps, ReactNode } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import BackButton from './BackButton';
 
 interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
@@ -10,9 +12,9 @@ interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
     headingLevel?: number;
 }
 
-const Header = ({ right, title, subTitle, onBack, headingLevel, ...rest }: Props) => {
+const Header = ({ className, right, title, subTitle, onBack, headingLevel, ...rest }: Props) => {
     return (
-        <div className="sign-layout-header mb-6" {...rest}>
+        <div className={clsx('sign-layout-header mb-6', className)} {...rest}>
             {onBack ? (
                 <span className="absolute sign-layout-backbutton no-mobile">
                     <BackButton onClick={onBack} />

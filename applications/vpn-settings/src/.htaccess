@@ -14,6 +14,7 @@ RewriteRule ^login$ /login.html [NC,L]
 RewriteRule ^reset-password$ /reset-password.html [NC,L]
 RewriteRule ^forgot-username$ /forgot-username.html [NC,L]
 RewriteRule ^signup$ /signup.html [NC,L]
+RewriteRule ^pricing$ /pricing.html [NC,L]
 
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]

@@ -2,7 +2,7 @@ import { isTokenPayment } from '@proton/components/containers/payments/interface
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { getCroHeaders, mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
@@ -39,9 +39,13 @@ const getSignupTypeQuery = (accountData: SignupCacheResult['accountData']) => {
 export const handleCreateUser = async ({
     cache,
     api,
+    mode,
+    paymentToken,
 }: {
     cache: SignupCacheResult;
     api: Api;
+    mode?: 'cro';
+    paymentToken?: string;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { signupType, username, email, password, payload },
@@ -51,6 +55,7 @@ export const handleCreateUser = async ({
         inviteData,
         referralData,
         clientType,
+        productParam,
     } = cache;
 
     if (signupType === SignupType.Username) {
@@ -84,7 +89,7 @@ export const handleCreateUser = async ({
                             ...getSignupTypeQuery(accountData),
                             ...getReferralDataQuery(referralData),
                         },
-                        cache.productParam
+                        productParam
                     )
                 ),
             });
@@ -110,6 +115,8 @@ export const handleCreateUser = async ({
                         inviteData: undefined,
                     },
                     api,
+                    mode,
+                    paymentToken,
                 });
             }
             const humanVerificationData = hvHandler(error, HumanVerificationTrigger.UserCreation);
@@ -127,18 +134,26 @@ export const handleCreateUser = async ({
         const { User } = await srpVerify<{ User: User }>({
             api,
             credentials: { password },
-            config: withVerificationHeaders(
-                cache.humanVerificationResult?.token,
-                cache.humanVerificationResult?.tokenType,
-                queryCreateUserExternal(
-                    {
-                        Type: clientType,
-                        Email: email,
-                        Payload: payload,
-                        ...getTokenPayment(subscriptionData),
-                    },
-                    cache.productParam
-                )
+            config: mergeHeaders(
+                withVerificationHeaders(
+                    humanVerificationResult?.token,
+                    humanVerificationResult?.tokenType,
+                    queryCreateUserExternal(
+                        {
+                            Type: clientType,
+                            Email: email,
+                            Payload: payload,
+                            ...(mode === 'cro'
+                                ? {
+                                      Token: paymentToken,
+                                      TokenType: 'payment',
+                                  }
+                                : getTokenPayment(subscriptionData)),
+                        },
+                        productParam
+                    )
+                ),
+                mode === 'cro' ? getCroHeaders(paymentToken) : {}
             ),
         });
         return {

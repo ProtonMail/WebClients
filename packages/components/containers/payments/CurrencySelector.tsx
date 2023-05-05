@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Option, Select, SelectTwo } from '../../components';
-import { classnames } from '../../helpers';
 
 const addSymbol = (currency: Currency) => {
     if (currency === 'EUR') {
@@ -38,7 +38,7 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
                 {options.map(({ text, value }) => {
                     return (
                         <Button
-                            className={classnames([currency === value && 'is-selected'])}
+                            className={clsx([currency === value && 'is-selected'])}
                             key={value}
                             onClick={() => onSelect(value as Currency)}
                             disabled={loading}
@@ -67,7 +67,13 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
     if (mode === 'select-two') {
         const handleChange = ({ value }: { value: Currency }) => onSelect(value);
         return (
-            <SelectTwo value={currency} onChange={handleChange} loading={loading}>
+            <SelectTwo
+                value={currency}
+                onChange={handleChange}
+                loading={loading}
+                // eslint-disable-next-line jsx-a11y/aria-props
+                aria-description={c('Title').t`Currency`}
+            >
                 {options.map(({ text, value }) => {
                     return (
                         <Option value={value} title={text} key={value}>

@@ -4,19 +4,26 @@ import { AppIntent } from '@proton/components/containers/login/interface';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { getUser, queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
+import {
+    getUser,
+    queryCheckEmailAvailability,
+    queryCheckUsernameAvailability,
+    unlockPasswordChanges,
+} from '@proton/shared/lib/api/user';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { persistSession, persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { CLIENT_TYPES, COUPON_CODES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
-import { handleSetupKeys } from '@proton/shared/lib/keys';
-import { srpAuth } from '@proton/shared/lib/srp';
+import { generateKeySaltAndPassphrase, getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
+import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
+import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
@@ -152,12 +159,77 @@ export const handleDisplayName = async ({
     };
 };
 
-export const handleSetupUser = async ({
+export const handleSetPassword = async ({
     cache,
     api,
+    newPassword,
 }: {
     cache: SignupCacheResult;
     api: Api;
+    newPassword: string;
+}): Promise<SignupActionResponse> => {
+    const { persistent, setupData, accountData } = cache;
+    const user = setupData?.user;
+    if (!setupData || !user) {
+        throw new Error('Missing user');
+    }
+
+    const userKeys = await getDecryptedUserKeysHelper(user, setupData.keyPassword || '');
+    const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
+    const updateKeysPayload = await getUpdateKeysPayload([], userKeys, undefined, keyPassword, keySalt, true);
+
+    await srpAuth({
+        api,
+        credentials: {
+            password: accountData.password,
+        },
+        config: unlockPasswordChanges(),
+    });
+    await srpVerify({
+        api,
+        credentials: {
+            password: newPassword,
+        },
+        config: updatePrivateKeyRoute(updateKeysPayload),
+    });
+
+    await persistSessionWithPassword({
+        api,
+        keyPassword,
+        User: user,
+        UID: setupData?.authResponse.UID,
+        LocalID: setupData?.authResponse.LocalID,
+        persistent,
+        trusted: false,
+    });
+
+    const updatedUser = await api<{ User: User }>(getUser()).then(({ User }) => User);
+
+    return {
+        cache: {
+            ...cache,
+            accountData: {
+                ...accountData,
+                password: newPassword,
+            },
+            setupData: {
+                ...setupData,
+                keyPassword,
+                user: updatedUser,
+            },
+        },
+        to: SignupSteps.Congratulations,
+    };
+};
+
+export const handleSetupUser = async ({
+    cache,
+    api,
+    ignoreVPN,
+}: {
+    cache: SignupCacheResult;
+    api: Api;
+    ignoreVPN?: boolean;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -251,7 +323,7 @@ export const handleSetupUser = async ({
     };
 
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
-    if (clientType === CLIENT_TYPES.VPN) {
+    if (clientType === CLIENT_TYPES.VPN && !ignoreVPN) {
         return handleDone({ cache: newCache, appIntent: cache.appIntent });
     }
 
