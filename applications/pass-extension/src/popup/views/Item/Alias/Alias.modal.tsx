@@ -9,8 +9,11 @@ import { Icon, type ModalProps } from '@proton/components/components';
 import { SidebarModal } from '../../../../shared/components/sidebarmodal/SidebarModal';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { AliasPreview } from '../../../components/Alias/Alias.preview';
+import { UpgradeButton } from '../../../components/Button/UpgradeButton';
+import { ItemCard } from '../../../components/Item/ItemCard';
 import { PanelHeader } from '../../../components/Panel/Header';
 import { Panel } from '../../../components/Panel/Panel';
+import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { AliasForm } from './Alias.form';
 import { type AliasFormValues, validateAliasForm } from './Alias.validation';
 
@@ -32,6 +35,7 @@ export const AliasModal = <T extends AliasFormValues>({
     ...modalProps
 }: AliasModalProps<T>) => {
     const [ready, setReady] = useState(false);
+    const { aliasLimitExceeded } = useUsageLimits();
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({ shareId });
 
@@ -59,7 +63,6 @@ export const AliasModal = <T extends AliasFormValues>({
                 className="ui-login"
                 header={
                     <PanelHeader
-                        className="mb-8"
                         actions={[
                             <Button
                                 key="modal-close-button"
@@ -71,23 +74,33 @@ export const AliasModal = <T extends AliasFormValues>({
                             >
                                 <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
                             </Button>,
-
-                            <Button
-                                className="text-sm"
-                                key="modal-submit-button"
-                                onClick={handleSubmitClick}
-                                color="norm"
-                                pill
-                                disabled={!(ready && Object.keys(validateAliasForm(form.values)).length === 0)}
-                            >
-                                {c('Action').t`Confirm`}
-                            </Button>,
+                            aliasLimitExceeded ? (
+                                <UpgradeButton key="upgrade-button" />
+                            ) : (
+                                <Button
+                                    className="text-sm"
+                                    key="modal-submit-button"
+                                    onClick={handleSubmitClick}
+                                    color="norm"
+                                    pill
+                                    disabled={!(ready && Object.keys(validateAliasForm(form.values)).length === 0)}
+                                >
+                                    {c('Action').t`Confirm`}
+                                </Button>
+                            ),
                         ]}
                     />
                 }
             >
+                {aliasLimitExceeded && (
+                    <ItemCard>
+                        {c('Info')
+                            .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
+                    </ItemCard>
+                )}
                 <FormikProvider value={form}>
                     <AliasPreview
+                        className="mt-6"
                         prefix={form.values.aliasPrefix ?? '<prefix>'}
                         suffix={form.values.aliasSuffix?.value ?? '<suffix>'}
                         loading={aliasOptionsLoading}
