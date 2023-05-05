@@ -1,9 +1,7 @@
 import { ImportProvider } from '@proton/pass/import';
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type { PassPlanResponse } from '@proton/pass/types';
 
 import { ItemType } from '../protobuf';
-
-export type UserTier = PLANS | ADDON_NAMES;
 
 export type TelemetryPlatform = 'browser' | 'any';
 
@@ -26,7 +24,7 @@ type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
     MeasurementGroup: `pass.${TelemetryPlatform}.user_actions`;
     Event: T;
     Values: V;
-    Dimensions: { user_tier?: UserTier } & D;
+    Dimensions: { user_tier?: PassPlanResponse['InternalName'] } & D;
 } & T;
 
 type AutofillSource = 'source' | 'app';
