@@ -35,11 +35,15 @@ const GenericError = ({ children, className, big, isNetworkError }: Props) => {
 
     return (
         <div className={clsx('m-auto', status === 'big' ? 'p-1' : 'p-2', className)}>
-            <IllustrationPlaceholder title={title} url={isNetworkError ? networkErrorImg : errorImg}>
+            <IllustrationPlaceholder
+                title={title}
+                titleSize={big ? 'big' : 'regular'}
+                url={isNetworkError ? networkErrorImg : errorImg}
+            >
                 {status === 'child' && children}
                 {status === 'big' && (
                     <>
-                        <div>{line1}</div>
+                        <div className="text-weak text-rg">{line1}</div>
                         <div className="mt-8">
                             <Button onClick={handleRefresh}>
                                 <Icon name="arrow-rotate-right" />
@@ -48,7 +52,7 @@ const GenericError = ({ children, className, big, isNetworkError }: Props) => {
                         </div>
                     </>
                 )}
-                {status === 'small' && <div className="text-center">{line1}</div>}
+                {status === 'small' && <div className="text-weak text-sm">{line1}</div>}
             </IllustrationPlaceholder>
         </div>
     );
