@@ -58,6 +58,7 @@ const config: OfferConfig = {
         bannerImage2x,
     },
     darkBackground: true,
+    enableCycleSelector: true,
 };
 
 export default config;

@@ -35,6 +35,7 @@ const config: OfferConfig = {
         sideImage,
         sideImage2x,
     },
+    enableCycleSelector: true,
 };
 
 export default config;
