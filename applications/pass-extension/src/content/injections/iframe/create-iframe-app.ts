@@ -1,7 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import { portForwardingMessage } from '@proton/pass/extension/message';
-import type { Maybe, WorkerState } from '@proton/pass/types';
+import type { Maybe, MaybeNull, WorkerState } from '@proton/pass/types';
 import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
 import { safeCall, waitUntil } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -32,7 +32,7 @@ type CreateIFrameAppOptions = {
     backdropExclude?: () => HTMLElement[];
     onReady?: () => void;
     onOpen?: () => void;
-    onClose?: () => void;
+    onClose?: (options: { userInitiated: boolean }) => void;
     getIframePosition: (iframeRoot: HTMLDivElement) => IframePosition;
     getIframeDimensions: () => IframeDimensions;
 };
@@ -120,15 +120,15 @@ export const createIFrameApp = ({
 
     const positionDropdown = () => setIframePosition(getIframePosition(iframeRoot));
 
-    const close = (e?: Event) =>
+    const close = (options?: { event?: Event; userInitiated: boolean }) =>
         requestAnimationFrame(() => {
             if (state.visible) {
-                const target = e?.target as Maybe<HTMLElement> | null;
+                const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
 
                 if (!target || !backdropExclude?.().includes(target)) {
                     listeners.removeAll();
                     state.visible = false;
-                    onClose?.();
+                    onClose?.({ userInitiated: options?.userInitiated ?? true });
 
                     iframe.classList.remove(`${EXTENSION_PREFIX}-iframe-visible`);
                 }
@@ -148,7 +148,7 @@ export const createIFrameApp = ({
                 listeners.addListener(scrollRef, 'scroll', () => requestAnimationFrame(positionDropdown));
 
                 if (backdropClose) {
-                    listeners.addListener(window, 'mousedown', close);
+                    listeners.addListener(window, 'mousedown', (event) => close({ event, userInitiated: true }));
                 }
 
                 sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
@@ -172,7 +172,7 @@ export const createIFrameApp = ({
 
     const reset = (workerState: WorkerState) => {
         sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload: { workerState } });
-        close();
+        close({ userInitiated: false });
     };
 
     const destroy = () => {
@@ -187,7 +187,7 @@ export const createIFrameApp = ({
         state.framePort = framePort;
     });
 
-    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, () => close());
+    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, () => close({ userInitiated: true }));
 
     registerMessageHandler(IFrameMessageType.IFRAME_DIMENSIONS, (message) => {
         const { width, height } = merge(getIframeDimensions(), { height: message.payload.height });

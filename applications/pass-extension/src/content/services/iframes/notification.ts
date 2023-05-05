@@ -15,7 +15,8 @@ export const createNotification = (): InjectedNotification => {
         animation: 'slidein',
         backdropClose: false,
         classNames: [`${EXTENSION_PREFIX}-iframe-fixed`],
-        onClose: () =>
+        onClose: ({ userInitiated }) =>
+            userInitiated &&
             sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.FORM_ENTRY_STASH,
