@@ -20,6 +20,7 @@ import {
     useTheme,
 } from '@proton/components';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
+import { createGetKTActivation } from '@proton/components/containers/keyTransparency/useGetKTActivation';
 import { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -265,8 +266,10 @@ const SetupAddressContainer = () => {
                     onSubmit={async (payload) => {
                         try {
                             const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(
-                                APP_NAME,
-                                (await ktFeature.get())?.Value,
+                                createGetKTActivation(
+                                    ktFeature.get().then((result) => result?.Value),
+                                    APP_NAME
+                                ),
                                 normalApi
                             );
 
