@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import { ItemImportIntent } from '@proton/pass/types';
 
-import { readChromeData } from './chrome.reader';
+import { readChromiumData } from './chromium.reader';
 
 describe('Import Chrome CSV', () => {
     let chromeExport: string;
@@ -14,11 +14,11 @@ describe('Import Chrome CSV', () => {
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readChromeData('not-a-csv-file')).rejects.toThrow();
+        await expect(readChromiumData('not-a-csv-file')).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
-        const payload = await readChromeData(chromeExport);
+        const payload = await readChromiumData(chromeExport);
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
@@ -65,7 +65,7 @@ describe('Import Chrome CSV', () => {
     });
 
     it('correctly parse items if .csv has `notes` column', async () => {
-        const payload = await readChromeData(chromeExportWindows);
+        const payload = await readChromiumData(chromeExportWindows);
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
