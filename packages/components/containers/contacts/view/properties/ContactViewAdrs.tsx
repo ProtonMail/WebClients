@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
+import { cleanAddressFromCommas } from '@proton/shared/lib/contacts/helpers/address';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
@@ -29,7 +30,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
         <ContactViewProperties>
             {adrs.map((adr, i) => {
                 const { streetAddress, extendedAddress, postalCode, postOfficeBox, locality, region, country } =
-                    adr.value;
+                    cleanAddressFromCommas(adr.value);
 
                 const lines = [
                     streetAddress,
