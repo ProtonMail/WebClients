@@ -154,7 +154,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Delete account`,
                         id: 'delete',
-                        available: user.Type === UserType.PROTON,
+                        available: user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL,
                     },
                 ],
             },
