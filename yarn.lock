@@ -23283,15 +23283,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"openpgp@npm:^5.7.0":
-  version: 5.7.0
-  resolution: "openpgp@npm:5.7.0"
-  dependencies:
-    asn1.js: ^5.0.0
-  checksum: 58aad08f9d0073e70d3652ac8e9766e650299a6d07cfecb6d7519628e1d13f5679cc759fdc4b6e596d92790d6b6e72167f44dcf27f1bfbbd801bcff2386b5d1d
-  languageName: node
-  linkType: hard
-
 "optionator@npm:^0.8.1":
   version: 0.8.3
   resolution: "optionator@npm:0.8.3"
@@ -25417,7 +25408,7 @@ fsevents@^1.2.7:
     eslint: ^8.39.0
     mailosaur: ^8.6.0
     node-fetch: ^3.3.1
-    openpgp: ^5.7.0
+    openpgp: "npm:@protontech/openpgp@~5.8.0-0"
     pdf-parse: ^1.1.1
     playwright: ^1.33.0
     proxy-agent: ^5.0.0
