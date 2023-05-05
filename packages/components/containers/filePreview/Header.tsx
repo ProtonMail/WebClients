@@ -95,7 +95,7 @@ const Header = ({
                         shape="solid"
                         className="ml0-5 mr-2 lg:mr-11"
                         color="norm"
-                        data-testid="file-preview:actions:download"
+                        data-testid="file-preview:actions:restore"
                     >
                         {c('Info').t`Restore`}
                     </Button>
