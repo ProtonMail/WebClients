@@ -10,13 +10,13 @@ import { isValidURL } from '@proton/pass/utils/url';
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload } from '../types';
-import type { ChromeItem } from './chrome.types';
+import type { ChromiumItem } from './chromium.types';
 
-const CHROME_EXPECTED_HEADERS: (keyof ChromeItem)[] = ['name', 'url', 'username', 'password'];
+const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'username', 'password'];
 
-export const readChromeData = async (data: string): Promise<ImportPayload> => {
+export const readChromiumData = async (data: string): Promise<ImportPayload> => {
     try {
-        const items = await readCSV<ChromeItem>(data, CHROME_EXPECTED_HEADERS);
+        const items = await readCSV<ChromiumItem>(data, CHROME_EXPECTED_HEADERS);
 
         return {
             vaults: [
