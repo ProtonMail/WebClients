@@ -24,11 +24,11 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
         ? c('familyOffer_2023:Settings section title').t`Family`
         : c('Settings section title').t`Organization`;
 
-    const setupSectionTitle = isPartOfFamily
+    const subMenuTitle = isPartOfFamily
         ? c('familyOffer_2023:Title').t`Manage family group`
         : c('Title').t`Multi-user support`;
 
-    const multiUserSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
+    const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
 
     return {
         available: Boolean(isAdmin && organization),
@@ -64,13 +64,15 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 ],
             },
             orgKeys: <SectionConfig>{
-                text: c('Title').t`Organization and keys`,
+                text: subMenuTitle,
                 to: '/organization-keys',
                 icon: 'shield',
-                available: (hasOrganizationKey || hasOrganization) && organization && !!organization.RequiresKey,
+                available: isPartOfFamily
+                    ? hasOrganization //Show this section once the family is setup (only requires a name)
+                    : (hasOrganizationKey || hasOrganization) && organization && !!organization.RequiresKey,
                 subsections: [
                     {
-                        text: c('Title').t`Organization`,
+                        text: subSectionTitle,
                         id: 'organization',
                     },
                     {
@@ -81,13 +83,13 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 ],
             },
             setup: <SectionConfig>{
-                text: setupSectionTitle,
+                text: subMenuTitle,
                 to: '/multi-user-support',
                 icon: 'users',
-                available: (!hasOrganizationKey && canHaveOrganization) || isPartOfFamily,
+                available: isPartOfFamily ? !hasOrganization : !hasOrganizationKey && canHaveOrganization,
                 subsections: [
                     {
-                        text: multiUserSectionTitle,
+                        text: subSectionTitle,
                         id: 'name',
                     },
                 ],
