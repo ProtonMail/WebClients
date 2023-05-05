@@ -69,7 +69,7 @@ export const TextAreaField: VFC<TextAreaFieldProps> = ({
                 error={error}
                 className="border-none flex p-0 resize-none"
                 labelContainerClassName={clsx(
-                    'text-normal text-sm',
+                    'm-0 text-normal text-sm',
                     error ? 'color-danger' : 'color-weak',
                     labelContainerClassName
                 )}

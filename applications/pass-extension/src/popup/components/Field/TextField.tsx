@@ -35,7 +35,7 @@ export const BaseTextField: VFC<BaseTextFieldProps> = ({
             error={error}
             inputClassName={clsx('color-norm p-0 rounded-none', inputClassName)}
             labelContainerClassName={clsx(
-                'text-normal text-sm',
+                'm-0 text-normal text-sm',
                 error ? 'color-danger' : 'color-weak',
                 labelContainerClassName
             )}

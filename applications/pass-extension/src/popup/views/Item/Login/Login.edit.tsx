@@ -15,8 +15,10 @@ import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
+import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
+import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { PasswordField } from '../../../components/Field/PasswordField';
@@ -25,6 +27,7 @@ import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
+import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditLoginItemFormValues, useLoginItemAliasModal, validateEditLoginForm } from './Login.validation';
@@ -41,6 +44,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     } = item;
 
     const dispatch = useDispatch();
+    const { totpLimitExceeded } = useUsageLimits();
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -217,14 +221,20 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     icon="key"
                                 />
 
-                                <Field
-                                    name="totpUri"
-                                    label={c('Label').t`2FA secret (TOTP)`}
-                                    placeholder={c('Placeholder').t`Add 2FA secret`}
-                                    component={PasswordField}
-                                    actions={[]}
-                                    icon="lock"
-                                />
+                                {isEmptyString(form.values.totpUri) && totpLimitExceeded ? (
+                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                        <UpgradeButton inline />
+                                    </ValueControl>
+                                ) : (
+                                    <Field
+                                        name="totpUri"
+                                        label={c('Label').t`2FA secret (TOTP)`}
+                                        placeholder={c('Placeholder').t`Add 2FA secret`}
+                                        component={PasswordField}
+                                        actions={[]}
+                                        icon="lock"
+                                    />
+                                )}
                             </FieldsetCluster>
 
                             <FieldsetCluster>
