@@ -48,6 +48,7 @@ type CreateAuthServiceOptions = {
     api: Api;
     onAuthorized?: () => void;
     onUnauthorized?: () => void;
+    onLocked?: () => void;
 };
 
 type AuthContext = {
@@ -55,7 +56,12 @@ type AuthContext = {
     lockStatus: MaybeNull<SessionLockStatus>;
 };
 
-export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateAuthServiceOptions): AuthService => {
+export const createAuthService = ({
+    api,
+    onAuthorized,
+    onUnauthorized,
+    onLocked,
+}: CreateAuthServiceOptions): AuthService => {
     const authCtx: AuthContext = { pendingInit: null, lockStatus: null };
 
     const authService: AuthService = {
@@ -75,6 +81,8 @@ export const createAuthService = ({ api, onAuthorized, onUnauthorized }: CreateA
                 logger.info(`[Worker::Auth] Locking state`);
                 store.dispatch(stateLock());
             }
+
+            onLocked?.();
         }),
 
         unlock: () => {
