@@ -30,4 +30,6 @@ export interface AuthLog {
     Event: AUTH_LOG_EVENTS;
     IP: string;
     Time: number;
+    Device: string;
+    ProtectionDesc: string;
 }
