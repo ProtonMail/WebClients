@@ -1,7 +1,6 @@
 import { Reducer } from 'redux';
 
-import { EventActions, MaybeNull } from '@proton/pass/types';
-import type { UserTier } from '@proton/pass/types/data/telemetry';
+import { EventActions, MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { fullMerge, merge, objectDelete, partialMerge } from '@proton/pass/utils/object';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
@@ -12,21 +11,23 @@ export type AddressState = { [addressId: string]: Address };
 export type UserState = {
     eventId: MaybeNull<string>;
     user: MaybeNull<User>;
-    tier: MaybeNull<UserTier>;
     addresses: AddressState;
+    plan: MaybeNull<PassPlanResponse>;
 };
 
-const reducer: Reducer<UserState> = (state = { user: null, tier: null, addresses: {}, eventId: null }, action) => {
+const reducer: Reducer<UserState> = (state = { user: null, addresses: {}, eventId: null, plan: null }, action) => {
     if (bootSuccess.match(action)) {
         return fullMerge(state, {
             user: action.payload.user,
-            tier: action.payload.tier,
             addresses: action.payload.addresses,
             eventId: action.payload.eventId,
+            plan: action.payload.plan,
         });
     }
 
     if (serverEvent.match(action) && action.payload.event.type === 'user') {
+        // Plan event ?
+
         const { Addresses = [], User, EventID } = action.payload.event;
 
         return {
