@@ -24,6 +24,7 @@ import {
     PrivacySection,
     PrivateMainArea,
     PrivateMainSettingsArea,
+    SentinelSection,
     SessionsSection,
     SettingsPageTitle,
     SettingsSectionWide,
@@ -124,6 +125,7 @@ const AccountSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, security)}>
                 <PrivateMainSettingsArea config={security}>
+                    <SentinelSection />
                     <SessionsSection />
                     <LogsSection />
                     <PrivacySection />
