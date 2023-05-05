@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
 import { Loader } from '@proton/components/components/loader';
 import { useAddresses, useCalendars, useOrganization, useUser } from '@proton/components/hooks';
+import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
 import UsagePanel from '../payments/subscription/UsagePanel';
 import LeaveFamilyModal from './LeaveFamilyModal';
@@ -18,6 +19,8 @@ const FamilyPlanSection = () => {
     const [leaveFamilyModal, setLeaveFamilyModal, renderLeaveFamilyModal] = useModalState();
 
     const isLoading = organisationLoading || userLoading || calendarsLoading || addressLoading;
+
+    const isFamilyPlan = isOrganizationFamily(organization);
 
     return isLoading ? (
         <Loader />
@@ -34,7 +37,11 @@ const FamilyPlanSection = () => {
                         onClick={() => {
                             setLeaveFamilyModal(true);
                         }}
-                    >{c('familyOffer_2023:Family plan').t`Leave family plan`}</Button>
+                    >
+                        {isFamilyPlan
+                            ? c('familyOffer_2023:Family plan').t`Leave family plan`
+                            : c('familyOffer_2023:Family plan').t`Leave visionary plan`}
+                    </Button>
                 </UsagePanel>
             </div>
             {renderLeaveFamilyModal && <LeaveFamilyModal organisationName={organization.Name} {...leaveFamilyModal} />}

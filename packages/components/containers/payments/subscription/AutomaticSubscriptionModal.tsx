@@ -44,7 +44,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         currency: parsedCurrency || getCurrency(user, subscription, plans),
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: type === 'offer' || edit === 'disable',
-        disableCycleSelector: type === 'offer' || Boolean(offer),
+        disableCycleSelector: edit === 'enable' ? false : type === 'offer' || Boolean(offer),
     };
 };
 
