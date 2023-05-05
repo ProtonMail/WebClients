@@ -34,6 +34,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { createPreAuthKTVerifier } from '../keyTransparency';
+import { createGetKTActivation } from '../keyTransparency/useGetKTActivation';
 import {
     AccountType,
     RecoveryMethod,
@@ -58,7 +59,12 @@ export const handleNewPassword = async ({
     }
     const { Addresses: addresses } = resetResponse;
 
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(appName, (await ktFeature.get())?.Value, api);
+    const getKTActivation = createGetKTActivation(
+        ktFeature.get().then((result) => result?.Value),
+        appName
+    );
+
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(getKTActivation, api);
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeysV2({
