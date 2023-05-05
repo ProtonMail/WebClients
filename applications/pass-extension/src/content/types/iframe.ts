@@ -24,7 +24,7 @@ export interface IFrameApp {
     sendPortMessage: (message: IFrameMessage) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
     open: (scrollRef?: HTMLElement) => void;
-    close: () => void;
+    close: (options?: { event?: Event; userInitiated: boolean }) => void;
     init: (port: Runtime.Port) => void;
     reset: (workerState: WorkerState) => void;
     destroy: () => void;
