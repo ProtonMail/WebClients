@@ -9,7 +9,8 @@ interface Props {
 }
 
 const getOfferRedirectionParams = ({ offer, deal, currency }: Props): URLSearchParams => {
-    const { cycle, couponCode, planName } = deal;
+    const { cycle, couponCode, planName, ref } = deal;
+    const { ID, enableCycleSelector } = offer;
 
     const params = new URLSearchParams();
     params.set('cycle', `${cycle}`);
@@ -19,9 +20,9 @@ const getOfferRedirectionParams = ({ offer, deal, currency }: Props): URLSearchP
     }
     params.set('plan', planName);
     params.set('type', 'offer');
-    params.set('edit', 'disable'); // Disable the possibility to edit the configuration in the subscription modal
-    params.set('offer', offer.ID);
-    params.set('ref', deal.ref); // Used by data team
+    params.set('edit', enableCycleSelector ? 'enable' : 'disable' || 'disable'); // Allow to choose to enable or disable the cycle selector in the subscription modal
+    params.set('offer', ID);
+    params.set('ref', ref); // Used by data team
 
     return params;
 };
