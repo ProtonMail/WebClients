@@ -56,15 +56,16 @@ export const createFieldHandles =
             value: isInput ? element.value ?? '' : '',
             getFormHandle,
             setValue: (value) => (field.value = value),
+            setAction: (action) => (field.action = action),
             autofill: isInput ? autofill(element) : noop,
 
             /* make sure the element is actually visible
              * as we may have detected a "hidden" field
              * in order to track it */
-            attachIcon: withContext(({ getSettings, getState }, action) => {
-                field.action = action;
+            attachIcon: withContext(({ getSettings, getState }) => {
+                const { action } = field;
 
-                if (isVisible(field.element) && canProcessAction(action, getSettings())) {
+                if (action && isVisible(field.element) && canProcessAction(action, getSettings())) {
                     const { status, loggedIn } = getState();
                     field.icon = field.icon ?? (isInput ? createFieldIconHandle({ field }) : null);
                     field.icon?.setStatus(status);
@@ -79,9 +80,8 @@ export const createFieldHandles =
             },
 
             sync: withContext(({ getSettings }) => {
-                if (field.action === null) return;
-
-                if (canProcessAction(field.action, getSettings())) return field.attachIcon(field.action);
+                if (!field.action) return;
+                if (canProcessAction(field.action, getSettings())) return field.attachIcon();
 
                 field.icon?.detach();
                 field.icon = null;
@@ -90,12 +90,15 @@ export const createFieldHandles =
             attachListeners: withContext(({ service: { iframe }, getSettings }, onSubmit) => {
                 if (!isInput) return;
 
-                const onFocus = () =>
+                const onFocus = (evt?: FocusEvent) =>
                     requestAnimationFrame(() => {
-                        iframe.dropdown?.close();
+                        const target = evt?.target;
+                        const current = iframe.dropdown?.getCurrentField()?.element;
+                        if (current !== target) iframe.dropdown?.close();
+
                         return (
+                            field.action &&
                             getSettings().autofill.openOnFocus &&
-                            field.action !== null &&
                             iframe.dropdown?.open({
                                 action: field.action,
                                 focus: true,

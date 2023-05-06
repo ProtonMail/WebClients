@@ -1,42 +1,36 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { WorkerMessageType } from '@proton/pass/types';
+import { type Maybe, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
-import { pipe, waitUntil } from '@proton/pass/utils/fp';
+import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
 import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
-import {
-    DropdownAction,
-    DropdownSetActionPayload,
-    DropdownState,
-    FormField,
-    FormType,
-    InjectedDropdown,
-    OpenDropdownOptions,
-} from '../../types';
+import type { DropdownSetActionPayload, FieldHandle, InjectedDropdown, OpenDropdownOptions } from '../../types';
+import { DropdownAction, FormField, FormType } from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
 import { canProcessAction } from '../handles/field';
 
+type DropdownFieldRef = { current: Maybe<FieldHandle> };
+
 export const createDropdown = (): InjectedDropdown => {
-    const state: DropdownState = { field: undefined };
+    const fieldRef: DropdownFieldRef = { current: undefined };
 
     const iframe = createIFrameApp({
         id: 'dropdown',
         src: DROPDOWN_IFRAME_SRC,
         animation: 'fadein',
         backdropClose: true,
-        backdropExclude: () => [state.field?.icon?.element, state.field?.element].filter(Boolean) as HTMLElement[],
+        backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         getIframePosition: (iframeRoot) => {
-            const field = state.field;
-
+            const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
 
-            const bodyTop = iframeRoot.getBoundingClientRect().top;
             /* FIXME: should account for boxElement and offsets */
+            const bodyTop = iframeRoot.getBoundingClientRect().top;
             const { left, top, width, height } = field.element.getBoundingClientRect();
 
             return {
@@ -58,7 +52,7 @@ export const createDropdown = (): InjectedDropdown => {
         async ({ service: { autofill }, getState, getSettings, getExtensionContext }, { field, action, focus }) => {
             await waitUntil(() => iframe.state.ready, 50);
 
-            state.field = field;
+            fieldRef.current = field;
             field.icon?.setLoading(true);
 
             const { loggedIn } = getState();
@@ -126,7 +120,7 @@ export const createDropdown = (): InjectedDropdown => {
                 payload: { shareId, itemId },
             }),
             ({ username, password }) => {
-                const form = state.field?.getFormHandle();
+                const form = fieldRef.current?.getFormHandle();
                 if (form !== undefined && form.formType === FormType.LOGIN) {
                     void sendMessage(
                         contentScriptMessage({
@@ -154,7 +148,7 @@ export const createDropdown = (): InjectedDropdown => {
      * text through the secure extension port channel.
      * FIXME: Handle forms other than REGISTER for autofilling */
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD, (message) => {
-        const form = state.field?.getFormHandle();
+        const form = fieldRef.current?.getFormHandle();
 
         if (form !== undefined && form.formType === FormType.REGISTER) {
             const { password } = message.payload;
@@ -168,17 +162,18 @@ export const createDropdown = (): InjectedDropdown => {
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS, ({ payload }) => {
-        const form = state.field?.getFormHandle();
+        const form = fieldRef.current?.getFormHandle();
         const { aliasEmail } = payload;
 
         if (form !== undefined && form.formType === FormType.REGISTER) {
-            state.field?.autofill(aliasEmail);
+            fieldRef.current?.autofill(aliasEmail);
             iframe.close();
         }
     });
 
     const dropdown: InjectedDropdown = {
         getState: () => iframe.state,
+        getCurrentField: () => fieldRef.current,
         reset: pipe(iframe.reset, () => dropdown),
         close: pipe(iframe.close, () => dropdown),
         init: pipe(iframe.init, () => dropdown),
