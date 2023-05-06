@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useRef, useState } from 'react';
+import { type VFC, useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -57,6 +57,7 @@ export const DropdownContent: VFC = () => {
     }, []);
 
     const handleOpen = useCallback(() => resizeIFrame(dropdownRef.current), [resizeIFrame]);
+    useLayoutEffect(() => resizeIFrame(dropdownRef.current), [resizeIFrame, dropdownState, workerState]);
 
     useRegisterMessageHandler(IFrameMessageType.DROPDOWN_ACTION, handleAction);
     useRegisterMessageHandler(IFrameMessageType.IFRAME_OPEN, handleOpen);
