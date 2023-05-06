@@ -139,10 +139,10 @@ export const createIFrameApp = ({
         requestAnimationFrame(() => {
             if (!state.visible) {
                 state.visible = true;
-                iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
-
                 setIframeDimensions(getIframeDimensions());
                 positionDropdown();
+
+                iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
 
                 listeners.addListener(window, 'resize', positionDropdown);
                 listeners.addListener(scrollRef, 'scroll', () => requestAnimationFrame(positionDropdown));

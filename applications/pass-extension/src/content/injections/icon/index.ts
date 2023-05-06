@@ -242,16 +242,15 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     icon.style.zIndex = field.getFormHandle().props.injections.zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    if (boxed) {
-        root.appendChild(wrapper);
-    } else {
-        root.insertBefore(wrapper, target);
-    }
-
-    wrapper.appendChild(icon);
-
     const elements = { icon, wrapper, input, inputBox };
-    applyInjectionStyles(elements);
+
+    requestAnimationFrame(() => {
+        if (boxed) root.appendChild(wrapper);
+        else root.insertBefore(wrapper, target);
+
+        wrapper.appendChild(icon);
+        applyInjectionStyles(elements);
+    });
 
     return elements;
 };
