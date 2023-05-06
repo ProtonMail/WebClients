@@ -1,6 +1,6 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import type { AliasCreationDTO, MaybeNull, SafeLoginItem, WorkerState } from '@proton/pass/types';
+import type { MaybeNull, SafeLoginItem, WorkerState } from '@proton/pass/types';
 
 import type { DropdownSetActionPayload } from './dropdown';
 import type { NotificationSetActionPayload } from './notification';
@@ -73,7 +73,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownSetActionPayload }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: { item: SafeLoginItem } }
     | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD; payload: { password: string } }
-    | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS; payload: { alias: AliasCreationDTO } }
+    | { type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS; payload: { aliasEmail: string } }
     | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationSetActionPayload },
     { type: T }
 >;

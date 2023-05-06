@@ -3,15 +3,15 @@ import { type VFC, useCallback, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import type { AliasState } from '@proton/pass/store';
-import { type Realm, type SafeLoginItem, WorkerStatus } from '@proton/pass/types';
+import { type Callback, type Realm, type SafeLoginItem, WorkerStatus } from '@proton/pass/types';
 import { pixelEncoder } from '@proton/pass/utils/dom';
+import { pipe, tap } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAccountFork } from '../../../../../shared/hooks';
-import { DropdownAction, IFrameMessage, IFrameMessageType } from '../../../../types';
+import { DropdownAction, type IFrameMessage, IFrameMessageType } from '../../../../types';
 import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 import { AliasAutoSuggest } from './AliasAutoSuggest';
@@ -21,18 +21,20 @@ import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 type DropdownState = {
     action?: DropdownAction;
     items: SafeLoginItem[];
-    aliasOptions: AliasState['aliasOptions'];
     realm: Realm;
 };
 
+const INITIAL_STATE: DropdownState = { action: undefined, items: [], realm: '' };
+
 export const DropdownContent: VFC = () => {
-    const { workerState, resizeIFrame, closeIFrame } = useIFrameContext();
-    const [dropdownState, setDropdownState] = useState<DropdownState>({
-        action: undefined,
-        items: [],
-        aliasOptions: null,
-        realm: '',
-    });
+    const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    const [dropdownState, setDropdownState] = useState<DropdownState>(INITIAL_STATE);
+
+    const withStateReset = <F extends Callback>(fn: F): F =>
+        pipe(
+            fn,
+            tap(() => setDropdownState(INITIAL_STATE))
+        ) as F;
 
     const dropdownRef = useRef<HTMLDivElement>(null);
     const accountFork = useAccountFork();
@@ -48,7 +50,6 @@ export const DropdownContent: VFC = () => {
                     merge(state, {
                         items: [],
                         action: payload.action,
-                        aliasOptions: payload.options,
                         realm: payload.realm,
                     })
                 );
@@ -97,10 +98,18 @@ export const DropdownContent: VFC = () => {
                 switch (action) {
                     case DropdownAction.AUTOFILL:
                         return dropdownState.items.length > 0 ? (
-                            <ItemsList items={dropdownState.items} />
+                            <ItemsList
+                                items={dropdownState.items}
+                                onSubmit={withStateReset((item) =>
+                                    postMessage({
+                                        type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
+                                        payload: { item },
+                                    })
+                                )}
+                            />
                         ) : (
                             <DropdownItem
-                                onClick={closeIFrame}
+                                onClick={withStateReset(closeIFrame)}
                                 title={PASS_APP_NAME}
                                 subTitle={c('Info').t`No login found`}
                                 disabled
@@ -108,10 +117,29 @@ export const DropdownContent: VFC = () => {
                         );
 
                     case DropdownAction.AUTOSUGGEST_PASSWORD:
-                        return <PasswordAutoSuggest />;
+                        return (
+                            <PasswordAutoSuggest
+                                onSubmit={withStateReset((password) =>
+                                    postMessage({
+                                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD,
+                                        payload: { password },
+                                    })
+                                )}
+                            />
+                        );
 
                     case DropdownAction.AUTOSUGGEST_ALIAS:
-                        return <AliasAutoSuggest options={dropdownState.aliasOptions} prefix={dropdownState.realm} />;
+                        return (
+                            <AliasAutoSuggest
+                                realm={dropdownState.realm}
+                                onSubmit={withStateReset((aliasEmail) => {
+                                    postMessage({
+                                        type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
+                                        payload: { aliasEmail },
+                                    });
+                                })}
+                            />
+                        );
                 }
             })()}
         </div>

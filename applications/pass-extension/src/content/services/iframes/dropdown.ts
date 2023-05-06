@@ -48,10 +48,7 @@ export const createDropdown = (): InjectedDropdown => {
      * page load with a positive detection : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
     const open = withContext<(options: OpenDropdownOptions) => Promise<void>>(
-        async (
-            { service: { autofill, alias }, getState, getSettings, getExtensionContext },
-            { field, action, focus }
-        ) => {
+        async ({ service: { autofill }, getState, getSettings, getExtensionContext }, { field, action, focus }) => {
             await waitUntil(() => iframe.state.ready, 50);
 
             state.field = field;
@@ -66,8 +63,8 @@ export const createDropdown = (): InjectedDropdown => {
                         return { action, items };
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {
-                        const options = loggedIn ? await alias.getOptions() : null;
-                        return { action, options, realm: getExtensionContext().realm! };
+                        const { realm, subdomain } = getExtensionContext();
+                        return { action, realm: subdomain ?? realm! };
                     }
                     case DropdownAction.AUTOSUGGEST_PASSWORD: {
                         return { action };
@@ -79,14 +76,11 @@ export const createDropdown = (): InjectedDropdown => {
              * for an autofill action and the we have no login
              * items that match the current domain, avoid auto-opening
              * the dropdown */
-            const validFocusAction = !(
-                focus &&
-                payload.action === DropdownAction.AUTOFILL &&
-                payload.items.length === 0
-            );
+            const blockFocus = focus && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0;
+
             const shouldProcessAction = canProcessAction(payload.action, getSettings());
 
-            if (shouldProcessAction && validFocusAction) {
+            if (shouldProcessAction && !blockFocus) {
                 iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
                 const scrollParent = getScrollParent(field.element);
 
@@ -168,23 +162,11 @@ export const createDropdown = (): InjectedDropdown => {
      * aliases everytime the injected iframe dropdown is opened */
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS, ({ payload }) => {
         const form = state.field?.getFormHandle();
-        const { aliasEmail } = payload.alias;
+        const { aliasEmail } = payload;
 
         if (form !== undefined && form.formType === FormType.REGISTER) {
-            state.field?.icon?.setLoading(true);
+            state.field?.autofill(aliasEmail);
             iframe.close();
-
-            void sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.ALIAS_CREATE, payload }), () => {
-                state.field?.autofill(aliasEmail);
-                state.field?.icon?.setLoading(false);
-
-                void sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.TELEMETRY_EVENT,
-                        payload: { event: createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}) },
-                    })
-                );
-            });
         }
     });
 
