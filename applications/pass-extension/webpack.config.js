@@ -47,6 +47,7 @@ module.exports = {
         onboarding: './src/pages/onboarding/index.tsx',
         popup: nonAccessibleWebResource('./src/popup/index.tsx'),
         settings: './src/pages/settings/index.tsx',
+        ...(BUILD_TARGET === 'firefox' ? { authFallback: './src/content/firefox/auth-fallback.ts' } : {}),
     },
     module: {
         strictExportPresence: true,

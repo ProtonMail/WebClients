@@ -9,7 +9,6 @@ import { isMainFrame } from '@proton/pass/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 
-import { handleForkFallback } from './auth-fallback';
 import { CONTENT_SCRIPT_INJECTED_MESSAGE } from './constants';
 import { DOMCleanUp } from './injections/cleanup';
 import { type ContentScriptService, createContentScriptService } from './services/content-script';
@@ -55,11 +54,9 @@ export const handleIncomingCSPostMessage = (message: MessageEvent) => {
 };
 
 const main = () => {
-    if (BUILD_TARGET === 'firefox' && mainFrame) handleForkFallback();
-
-    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, '*');
     DOMCleanUp();
 
+    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, '*');
     window.addEventListener('message', handleIncomingCSPostMessage);
     window.addEventListener('visibilitychange', handleFrameVisibilityChange);
 
