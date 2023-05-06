@@ -6,6 +6,7 @@ import { getCurrentTab } from '@proton/pass/extension/tabs';
 import browser from '@proton/pass/globals/browser';
 import { type ExtensionEndpoint, type Realm, type TabId, WorkerMessageType } from '@proton/pass/types';
 import { createSharedContext } from '@proton/pass/utils/context';
+import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseUrl } from '@proton/pass/utils/url';
 
@@ -15,6 +16,7 @@ export type ExtensionContextType = {
     port: Runtime.Port;
     realm: Realm | null;
     subdomain: string | null;
+    destroy: () => void;
 };
 
 export type ExtensionContextOptions = {
@@ -33,13 +35,15 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         if (tab !== undefined && tab.id !== undefined) {
             const { domain, subdomain } = parseUrl(tab.url ?? '');
             const name = `${endpoint}-${tab.id}-${uniqid()}`;
+            const port = browser.runtime.connect(browser.runtime.id, { name });
 
             const ctx = ExtensionContext.set({
                 endpoint,
-                port: browser.runtime.connect(browser.runtime.id, { name }),
+                port,
                 tabId: tab.id,
                 realm: domain!,
                 subdomain,
+                destroy: safeCall(() => port.disconnect()),
             });
 
             logger.setLogOptions({
