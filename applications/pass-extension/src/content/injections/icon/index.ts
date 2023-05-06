@@ -77,14 +77,14 @@ const computeIconInjectionStyles = (
     const { top: boxTop } = inputBox.getBoundingClientRect();
     const { top: wrapperTop, right: wrapperRight } = wrapper.getBoundingClientRect();
 
-    const { value: inputWidth } = getComputedWidth(getInputStyle, { asContentBox: true });
+    const { value: inputWidth } = getComputedWidth(getInputStyle, { mode: 'outer' });
     const mbInput = getInputStyle('margin-bottom', pixelParser);
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
      * without offsets in order to correctly position icon
      * if bounding element has some padding-top/border-top */
-    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, { asContentBox: !boxed });
+    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, { mode: 'outer' });
 
     /* if the input is "boxed", we may hit a case where the
      * bounding box grows with any margins applied to the child

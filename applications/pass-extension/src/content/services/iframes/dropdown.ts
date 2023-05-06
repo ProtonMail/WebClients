@@ -3,6 +3,7 @@ import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { type Maybe, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
+import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
 import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
@@ -29,12 +30,19 @@ export const createDropdown = (): InjectedDropdown => {
             const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
 
-            /* FIXME: should account for boxElement and offsets */
             const bodyTop = iframeRoot.getBoundingClientRect().top;
-            const { left, top, width, height } = field.element.getBoundingClientRect();
+            const st = createStyleCompute(field.boxElement);
+
+            const boxed = field.boxElement !== field.element;
+            const {
+                value: height,
+                offset: { top: offsetTop },
+            } = getComputedHeight(st, { mode: boxed ? 'inner' : 'outer' });
+
+            const { left, top, width } = field.boxElement.getBoundingClientRect();
 
             return {
-                top: top - bodyTop + height,
+                top: top - bodyTop + offsetTop + height,
                 left: left + width - DROPDOWN_WIDTH,
                 zIndex: field.getFormHandle().props.injections.zIndex,
             };
