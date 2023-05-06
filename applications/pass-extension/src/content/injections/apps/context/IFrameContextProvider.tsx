@@ -128,13 +128,14 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const closeIFrame = useCallback(() => postMessage({ type: IFrameMessageType.IFRAME_CLOSE }), [postMessage]);
 
     const resizeIFrame = useCallback(
-        (el?: MaybeNull<HTMLElement>) =>
+        (el?: MaybeNull<HTMLElement>) => {
             requestAnimationFrame(() => {
                 if (el) {
                     const { height } = el.getBoundingClientRect();
                     postMessage({ type: IFrameMessageType.IFRAME_DIMENSIONS, payload: { height } });
                 }
-            }),
+            });
+        },
         [postMessage]
     );
 
