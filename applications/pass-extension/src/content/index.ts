@@ -4,13 +4,10 @@
  * over stale ones -> Emit a message on the current tab's
  * window to notify siblings & force clean-up any DOM
  * another content-script may have mutated */
-import uniqid from 'uniqid';
-
-import { fathom } from '@proton/pass/fathom/protonpass-fathom';
 import type { MaybeNull } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom';
-import { waitUntil } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { handleForkFallback } from './auth-fallback';
 import { CONTENT_SCRIPT_INJECTED_MESSAGE } from './constants';
@@ -19,25 +16,19 @@ import { type ContentScriptService, createContentScriptService } from './service
 
 import './injections/injection.scss';
 
-const { isVisible } = fathom.utils;
-
 const mainFrame = isMainFrame();
-const CONTENT_SCRIPT_ID = uniqid();
+const CONTENT_SCRIPT_ID = uniqueId();
+
 export let contentScript: MaybeNull<ContentScriptService> = null;
-
-export const prepare = (id: string) => {
-    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id }, '*');
-    DOMCleanUp();
-};
-
-export const registerContentScript = () => {
-    contentScript = createContentScriptService(CONTENT_SCRIPT_ID, mainFrame);
-    void contentScript.start();
-};
 
 export const unregisterContentScript = (reason: string) => {
     contentScript?.destroy({ recycle: false, reason });
     contentScript = null;
+};
+
+export const registerContentScript = () => {
+    contentScript = createContentScriptService(CONTENT_SCRIPT_ID, mainFrame);
+    contentScript?.start().catch(() => unregisterContentScript('start failure'));
 };
 
 export const handleFrameVisibilityChange = () => {
@@ -66,18 +57,13 @@ export const handleIncomingCSPostMessage = (message: MessageEvent) => {
 const main = () => {
     if (BUILD_TARGET === 'firefox' && mainFrame) handleForkFallback();
 
-    prepare(CONTENT_SCRIPT_ID);
+    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, '*');
+    DOMCleanUp();
 
     window.addEventListener('message', handleIncomingCSPostMessage);
     window.addEventListener('visibilitychange', handleFrameVisibilityChange);
 
-    /* Ensure the content-script service is first created
-     * when the body is visible - on certain websites JS
-     * will defer the body's initial visibility (ie: europa login)
-     * and we may trigger the initial form detection too early */
-    void waitUntil(() => isVisible(document.body), 100).then(
-        () => document.visibilityState === 'visible' && registerContentScript()
-    );
+    return document.visibilityState === 'visible' && registerContentScript();
 };
 
 main();
