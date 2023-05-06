@@ -90,37 +90,32 @@ export const createFieldHandles =
             }),
 
             attachListeners: withContext(({ service: { iframe }, getSettings }, onSubmit) => {
-                const onFocus = () => {
-                    const settings = getSettings();
-                    iframe.dropdown?.close(); /* dropdown might be open */
+                const onFocus = () =>
+                    requestAnimationFrame(() => {
+                        iframe.dropdown?.close();
+                        return (
+                            getSettings().autofill.openOnFocus &&
+                            field.action !== null &&
+                            iframe.dropdown?.open({
+                                action: field.action,
+                                focus: true,
+                                field,
+                            })
+                        );
+                    });
 
-                    return (
-                        settings.autofill.openOnFocus &&
-                        iframe.dropdown?.open({
-                            action: DropdownAction.AUTOFILL,
-                            focus: true,
-                            field,
-                        })
-                    );
+                const onInput = () => {
+                    if (iframe.dropdown?.getState().visible) iframe.dropdown?.close();
+                    field.setValue(element.value);
                 };
 
-                if (formType === FormType.LOGIN) {
-                    if (document.activeElement === field.element) onFocus();
-                    listeners.addListener(field.element, 'focus', onFocus);
-                }
+                const onKeyDown = ({ key }: KeyboardEvent) => key === 'Enter' && onSubmit();
 
-                listeners.addListener(field.element, 'input', () => {
-                    if (iframe.dropdown?.getState().visible) {
-                        iframe.dropdown?.close();
-                    }
+                listeners.addListener(field.element, 'focus', onFocus);
+                listeners.addListener(field.element, 'input', onInput);
+                listeners.addListener(field.element, 'keydown', onKeyDown);
 
-                    field.setValue(element.value);
-                });
-
-                listeners.addListener(field.element, 'keydown', (e) => {
-                    const { key } = e as KeyboardEvent;
-                    return key === 'Enter' && onSubmit();
-                });
+                return document.activeElement === field.element && onFocus();
             }),
 
             detachListeners: () => listeners.removeAll(),

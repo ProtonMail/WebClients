@@ -85,10 +85,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             }
 
             case FormType.REGISTER: {
-                /**
-                 * Avoid prompting for alias auto-suggestion
-                 * when we match an excluded email provider
-                 */
+                /* Avoid prompting for alias auto-suggestion
+                 * when we match an excluded email provider */
                 const exclude = EMAIL_PROVIDERS.includes(parse(window.location.hostname)?.domain ?? '');
                 first(exclude ? [] : form.fields.username)?.attachIcon(DropdownAction.AUTOSUGGEST_ALIAS);
                 first(form.fields.password)?.attachIcon(DropdownAction.AUTOSUGGEST_PASSWORD);
@@ -98,11 +96,11 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     const attach = () => {
+        injectFieldIcon(form);
         username?.attachListeners(onSubmitHandler);
         password?.attachListeners(onSubmitHandler);
         listeners.addListener(form.element, 'submit', onSubmitHandler);
         listeners.addListener(submitBtn?.element, 'click', onSubmitHandler);
-        injectFieldIcon(form);
     };
 
     const detach = () => {
