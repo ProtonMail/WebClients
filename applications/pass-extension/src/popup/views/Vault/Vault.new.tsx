@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 
 import { FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { vaultCreationIntent } from '@proton/pass/store';
 import { vaultCreate } from '@proton/pass/store/actions/requests';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 import { ItemCard } from '../../components/Item/ItemCard';
@@ -21,7 +21,7 @@ export const VaultNew: VFC<VaultFormConsumerProps> = ({ onSubmit, onSuccess, onF
     const dispatch = useDispatch();
     const { vaultLimitExceeded } = useUsageLimits();
 
-    const optimisticId = useMemo(() => uniqid(), []);
+    const optimisticId = useMemo(() => uniqueId(), []);
     const requestId = useMemo(() => vaultCreate(optimisticId), [optimisticId]);
     useRequestStatusEffect(requestId, { onSuccess, onFailure });
 

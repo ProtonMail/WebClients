@@ -2,9 +2,9 @@ import { type VFC, useEffect, useState } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { merge } from '@proton/pass/utils/object';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
@@ -51,7 +51,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         initialValues,
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
-                const optimisticId = uniqid();
+                const optimisticId = uniqueId();
 
                 onSubmit({
                     type: 'alias',

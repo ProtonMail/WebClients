@@ -1,4 +1,3 @@
-import uniqid from 'uniqid';
 import type { Runtime } from 'webextension-polyfill';
 
 import { resolveMessageFactory, sendMessage } from '@proton/pass/extension/message';
@@ -8,6 +7,7 @@ import { type ExtensionEndpoint, type Realm, type TabId, WorkerMessageType } fro
 import { createSharedContext } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string';
 import { parseUrl } from '@proton/pass/utils/url';
 
 export type ExtensionContextType = {
@@ -29,12 +29,11 @@ export const ExtensionContext = createSharedContext<ExtensionContextType>('exten
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
     const { endpoint, onDisconnect, onContextChange } = options;
-
     try {
         const tab = await getCurrentTab();
         if (tab !== undefined && tab.id !== undefined) {
             const { domain, subdomain } = parseUrl(tab.url ?? '');
-            const name = `${endpoint}-${tab.id}-${uniqid()}`;
+            const name = `${endpoint}-${tab.id}-${uniqueId()}`;
             const port = browser.runtime.connect(browser.runtime.id, { name });
 
             const ctx = ExtensionContext.set({

@@ -1,6 +1,5 @@
-import uniqid from 'uniqid';
-
 import { createElement } from '@proton/pass/utils/dom';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { ICON_CIRCLE_LOADER, ICON_ROOT_CLASSNAME, ICON_SVG } from '../../constants';
 
@@ -32,7 +31,7 @@ export const createLockIcon = (): HTMLDivElement => {
 };
 
 export const createCircleLoader = (): HTMLDivElement => {
-    const uuid = uniqid();
+    const uuid = uniqueId();
     const loader = createElement<HTMLDivElement>({
         type: 'div',
         classNames: [ICON_ROOT_CLASSNAME, ICON_CIRCLE_LOADER, ICON_SVG],

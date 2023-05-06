@@ -1,10 +1,10 @@
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
@@ -37,7 +37,7 @@ const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> => {
         metadata: {
             name,
             note: item.extra ?? '',
-            itemUuid: uniqid(),
+            itemUuid: uniqueId(),
         },
         content: {
             username: item.username ?? '',
@@ -55,7 +55,7 @@ const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
     metadata: {
         name: item.name || 'Unnamed note',
         note: item.extra ?? '',
-        itemUuid: uniqid(),
+        itemUuid: uniqueId(),
     },
     content: {},
     extraFields: [],
@@ -82,7 +82,7 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
                     type: 'new',
                     vaultName:
                         items?.[0].grouping ?? `${c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`}`,
-                    id: uniqid(),
+                    id: uniqueId(),
                     items: items
                         .map((item) => {
                             const isNote = item.url === 'http://sn';

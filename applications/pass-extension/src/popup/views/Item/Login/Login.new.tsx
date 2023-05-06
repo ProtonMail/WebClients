@@ -2,14 +2,13 @@ import { type ReactElement, type VFC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { ItemNewProps } from '../../../../shared/items';
@@ -66,7 +65,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
         initialErrors: validateNewLoginForm(initialValues),
         onSubmit: ({ name, note, username, password, shareId, totpUri, url, urls, ...values }) => {
             const createTime = getEpoch();
-            const optimisticId = uniqid();
+            const optimisticId = uniqueId();
 
             const withAlias =
                 values.withAlias &&

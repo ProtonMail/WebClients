@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import type { AnyAction } from 'redux';
-import uniqid from 'uniqid';
 
 import {
     itemCreationDismiss,
@@ -17,6 +16,7 @@ import {
 } from '@proton/pass/store';
 import type { ItemRevisionWithOptimistic, ItemType, Maybe, VaultShare } from '@proton/pass/types';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { useNavigationContext } from '../../../hooks/useNavigationContext';
@@ -77,7 +77,7 @@ export const ItemView: VFC<Props> = ({ item, failureAction, shareId, itemId, vau
 
     const handleVaultSelect = useCallback(
         (destinationShareId: string) => {
-            const optimisticId = uniqid();
+            const optimisticId = uniqueId();
 
             dispatch(
                 itemMoveIntent({
