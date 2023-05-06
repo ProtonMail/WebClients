@@ -22,35 +22,44 @@ const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContex
 export const createIFrameService = () => {
     const apps: IFrameServiceApps = { dropdown: null, notification: null };
 
-    const attachDropdown = () => {
-        logger.info(`[ContentScript::IFrame] attaching dropdown iframe`);
-        apps.dropdown = apps.dropdown ?? createDropdown();
-        onAttached(apps.dropdown!);
-    };
+    const attachDropdown = withContext(({ scriptId }) => {
+        if (apps.dropdown === null) {
+            logger.info(`[ContentScript::${scriptId}] attaching dropdown iframe`);
+            apps.dropdown = createDropdown();
+        }
 
-    const detachDropdown = () => {
-        logger.info(`[ContentScript::IFrame] detaching dropdown iframe`);
-        apps.dropdown?.destroy();
-        apps.dropdown = null;
-    };
-
-    const attachNotification = () => {
-        logger.info(`[ContentScript::IFrame] attaching notification iframe`);
-        apps.notification = apps.notification ?? createNotification();
-        onAttached(apps.notification!);
-    };
-
-    const detachNotification = () => {
-        logger.info(`[ContentScript::IFrame] detaching notification iframe`);
-        apps.notification?.destroy();
-        apps.notification = null;
-    };
-
-    const reset = withContext(({ getState }) => {
-        const state = getState();
-        apps.dropdown?.reset(state);
-        apps.notification?.reset(state);
+        onAttached(apps.dropdown);
     });
+
+    const detachDropdown = withContext(({ scriptId }) => {
+        if (apps.dropdown) {
+            logger.info(`[ContentScript::${scriptId}] detaching dropdown iframe`);
+            apps.dropdown.destroy();
+            apps.dropdown = null;
+        }
+    });
+
+    const attachNotification = withContext(({ scriptId }) => {
+        if (apps.notification === null) {
+            logger.info(`[ContentScript::${scriptId}] attaching notification iframe`);
+            apps.notification = apps.notification ?? createNotification();
+        }
+
+        onAttached(apps.notification);
+    });
+
+    const detachNotification = withContext(({ scriptId }) => {
+        if (apps.notification) {
+            logger.info(`[ContentScript::${scriptId}] detaching notification iframe`);
+            apps.notification.destroy();
+            apps.notification = null;
+        }
+    });
+
+    const reset = () => {
+        if (apps.dropdown) onAttached(apps.dropdown);
+        if (apps.notification) onAttached(apps.notification);
+    };
 
     const destroy = pipe(detachDropdown, detachNotification);
 
