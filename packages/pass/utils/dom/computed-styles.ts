@@ -23,7 +23,7 @@ export const pixelTransformer = (value: string, transformer: (value: number) => 
 
 export const getComputedHeight = (
     boundCompute: ReturnType<typeof createStyleCompute>,
-    options: { asContentBox: boolean } = { asContentBox: true }
+    options: { mode: 'inner' | 'outer' } = { mode: 'outer' }
 ): { value: number; offset: { top: number; bottom: number } } => {
     const h = boundCompute('height', pixelParser);
     const isContentBox = boundCompute('box-sizing') === 'content-box';
@@ -35,17 +35,17 @@ export const getComputedHeight = (
     const offset = pt + bt + pb + bb;
 
     return {
-        value: isContentBox ? h + offset : h - (options?.asContentBox ? 0 : offset),
+        value: isContentBox ? h + (options.mode === 'outer' ? offset : 0) : h - (options.mode === 'inner' ? offset : 0),
         offset: {
-            top: isContentBox || options?.asContentBox ? 0 : pt + bt,
-            bottom: isContentBox || options?.asContentBox ? 0 : pb + bb,
+            top: options.mode === 'outer' ? 0 : pt + bt,
+            bottom: options.mode === 'outer' ? 0 : pb + bb,
         },
     };
 };
 
 export const getComputedWidth = (
     boundCompute: ReturnType<typeof createStyleCompute>,
-    options: { asContentBox: boolean } = { asContentBox: true }
+    options: { mode: 'inner' | 'outer' } = { mode: 'outer' }
 ): { value: number; offset: { left: number; right: number } } => {
     const w = boundCompute('width', pixelParser);
     const isContentBox = boundCompute('box-sizing') === 'content-box';
@@ -57,10 +57,10 @@ export const getComputedWidth = (
     const offset = pl + bl + pr + br;
 
     return {
-        value: isContentBox ? w + offset : w - (options?.asContentBox ? 0 : offset),
+        value: isContentBox ? w + (options.mode === 'outer' ? offset : 0) : w - (options.mode === 'inner' ? offset : 0),
         offset: {
-            left: isContentBox || options?.asContentBox ? 0 : pl + bl,
-            right: isContentBox || options?.asContentBox ? 0 : pr + br,
+            left: options.mode === 'outer' ? 0 : pl + bl,
+            right: options.mode === 'outer' ? 0 : pr + br,
         },
     };
 };
