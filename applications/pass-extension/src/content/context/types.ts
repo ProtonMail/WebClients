@@ -2,7 +2,6 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { WorkerState } from '@proton/pass/types';
 
 import type { ExtensionContextType } from '../../shared/extension';
-import type { CSAliasService } from '../services/alias';
 import type { CSAutofillService } from '../services/autofill';
 import type { DetectorService } from '../services/form/detector';
 import type { FormManager } from '../services/form/manager';
@@ -17,7 +16,6 @@ export interface ContentScriptContext {
     service: {
         formManager: FormManager;
         autofill: CSAutofillService;
-        alias: CSAliasService;
         iframe: IFrameService;
         detector: DetectorService;
     };
