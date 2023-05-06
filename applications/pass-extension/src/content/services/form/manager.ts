@@ -2,6 +2,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import { fathom } from '@proton/pass/fathom';
 import type { FormEntry, PromptedFormEntry, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { notIn, prop, truthy } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
@@ -14,11 +15,17 @@ const { isVisible } = fathom.utils;
 
 export type FormManagerContext = {
     active: boolean;
+    staleForms: Map<HTMLElement, { unsubscribe: () => void }>;
     trackedForms: FormHandle[];
 };
 
 export const createFormManager = () => {
-    const ctx: FormManagerContext = { active: false, trackedForms: [] };
+    const ctx: FormManagerContext = {
+        active: false,
+        staleForms: new Map(),
+        trackedForms: [],
+    };
+
     const listeners = createListenerStore();
 
     /* FIXME: if no autosave.prompt setting we should avoid
@@ -39,10 +46,17 @@ export const createFormManager = () => {
     /* Reconciliation is responsible for syncing the service
      * worker state with our local detection in order to take
      * the appropriate action for auto-save */
-    const reconciliate: () => Promise<void> = withContext(
-        async ({ getExtensionContext, service: { autofill, iframe } }) => {
+    const reconciliate: (incoming: FormHandle[]) => Promise<void> = withContext(
+        async ({ getExtensionContext, service: { autofill, iframe } }, incoming) => {
+            ctx.trackedForms = ctx.trackedForms.concat(incoming);
+
             const needsDropdown = ctx.trackedForms.length > 0;
             iframe[needsDropdown ? 'attachDropdown' : 'detachDropdown']();
+
+            incoming.forEach((form) => {
+                ctx.staleForms.get(form.element)?.unsubscribe();
+                form.attach();
+            });
 
             await autofill.queryItems();
 
@@ -94,52 +108,82 @@ export const createFormManager = () => {
         });
     };
 
-    const trackForms = (forms: FormHandle[]): void => {
-        forms.forEach((detectedForm) => {
-            const trackedForm = ctx.trackedForms.find((trackedForm) => detectedForm.element === trackedForm.element);
-
-            if (!trackedForm) {
-                detectedForm.attach();
-                ctx.trackedForms = [...ctx.trackedForms, detectedForm];
-            }
-        });
-
-        void reconciliate();
-    };
-
+    /* FIXME: if a form prediction changed we should
+     * update the tracked form accordingly */
     const detect: (reason: string) => void = withContext(({ service: { detector }, mainFrame }, reason) => {
         const frame = mainFrame ? 'main_frame' : 'iframe';
         logger.info(`[FormTracker::Detector]: Running detection for "${reason}" on ${frame}`);
         garbagecollect();
-        trackForms(detector.runDetection(document));
+
+        const detected = detector.runDetection(document);
+        const current = ctx.trackedForms.map(prop('element'));
+        const incoming = detected.filter(({ element }) => notIn(current)(element));
+
+        void reconciliate(incoming);
     });
 
-    const onMutation: () => void = debounce(
+    const onFormsChange = debounce(
         withContext(({ service: { detector } }) => {
             const results = detector.reconciliate(ctx.trackedForms);
             results.removeForms.forEach(detachTrackedForm);
             return results.runDetection && detect('MutationObserver');
         }),
-        250
+        500,
+        { leading: true }
     );
 
+    /* The detection will only work on visible forms for performance
+     * reasons. We may miss certain forms becoming visible that were
+     * initially filtered out */
+    const observeStaleForms = () => {
+        const forms = Array.from(document.getElementsByTagName('form'));
+        const untracked = forms.filter((form) => !ctx.trackedForms.some(({ element }) => element === form));
+
+        untracked.forEach((form) => {
+            form.addEventListener('animationend', onFormsChange);
+            const obs = new MutationObserver(onFormsChange);
+
+            [form, form.parentElement]
+                .filter(truthy)
+                .forEach((el) => obs.observe(el, { attributes: true, attributeFilter: ['style', 'class'] }));
+
+            ctx.staleForms.set(form, {
+                unsubscribe: () => {
+                    form.removeEventListener('animationend', onFormsChange);
+                    obs.disconnect();
+                },
+            });
+        });
+    };
+
+    /* the mutation observer in this call will only watch for changes
+     * on the body subtree - this will not catch attribute changes on
+     * elements : we rely on a different mechanism to  detect these
+     * changes (ie: visibility or style changes - the detectors will only
+     * try to match visible forms for performance reasons) */
     const observe = () => {
         if (!ctx.active) {
             ctx.active = true;
-            listeners.addObserver(onMutation, document.body, { childList: true, subtree: true });
-            ctx.trackedForms.forEach((form) => form.attach());
+            listeners.addObserver(onFormsChange, document.body, { childList: true, subtree: true });
+            listeners.addListener(document, 'animationend', onFormsChange);
+            listeners.addListener(document, 'transitionend', onFormsChange);
+            observeStaleForms();
         }
     };
 
     const destroy = () => {
+        onFormsChange.cancel();
         listeners.removeAll();
-        ctx.trackedForms.forEach(detachTrackedForm);
         ctx.active = false;
+        ctx.trackedForms.forEach(detachTrackedForm);
+        ctx.trackedForms.length = 0;
+        ctx.staleForms.forEach(({ unsubscribe }) => unsubscribe());
+        ctx.staleForms = new Map();
     };
 
     const sync = () => ctx.trackedForms.forEach((form) => form.listFields().forEach((field) => field.sync()));
 
-    return { getForms: () => ctx.trackedForms, observe, detect, sync, reconciliate, destroy };
+    return { getForms: () => ctx.trackedForms, observe, detect, sync, destroy };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;
