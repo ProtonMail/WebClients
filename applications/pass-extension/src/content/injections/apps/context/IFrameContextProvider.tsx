@@ -17,6 +17,7 @@ import {
 } from '../../../types';
 
 type IFrameContextValue = {
+    endpoint: string;
     workerState: Maybe<Omit<WorkerState, 'UID'>>;
     port: MaybeNull<Runtime.Port>;
     closeIFrame: () => void;
@@ -28,6 +29,7 @@ type IFrameContextValue = {
 type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
 
 const IFrameContext = createContext<IFrameContextValue>({
+    endpoint: '',
     workerState: undefined,
     port: null,
     closeIFrame: noop,
@@ -151,7 +153,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     const context = useMemo<IFrameContextValue>(
-        () => ({ port, closeIFrame, resizeIFrame, postMessage, registerHandler, workerState }),
+        () => ({ endpoint, port, closeIFrame, resizeIFrame, postMessage, registerHandler, workerState }),
         [port, workerState, closeIFrame, resizeIFrame, postMessage, registerHandler]
     );
 
