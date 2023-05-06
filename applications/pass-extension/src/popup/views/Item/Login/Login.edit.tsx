@@ -3,14 +3,13 @@ import { useDispatch } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { itemCreationIntent } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemEditProps } from '../../../../shared/items';
@@ -79,7 +78,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
             });
 
             if (withAlias) {
-                const aliasOptimisticId = uniqid();
+                const aliasOptimisticId = uniqueId();
 
                 dispatch(
                     itemCreationIntent({

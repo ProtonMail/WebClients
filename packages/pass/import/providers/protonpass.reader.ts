@@ -1,11 +1,11 @@
 import JSZip from 'jszip';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import type { ExportPayload } from '@proton/pass/export/types';
 import { pageMessage, sendMessage } from '@proton/pass/extension/message';
 import { type ItemImportIntent, ItemState, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -59,7 +59,7 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
             vaults: Object.values(vaults).map(({ name, items }) => ({
                 type: 'new',
                 vaultName: name,
-                id: uniqid(),
+                id: uniqueId(),
                 items: items.map(
                     (item) =>
                         ({

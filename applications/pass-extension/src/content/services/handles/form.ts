@@ -1,8 +1,7 @@
-import uniqid from 'uniqid';
-
 import { getMaxZIndex, isInputElement } from '@proton/pass/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 import { objectMap } from '@proton/pass/utils/object';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { PROCESSED_INPUT_ATTR } from '../../constants';
 import { FormFields, FormHandle, FormType } from '../../types';
@@ -21,7 +20,7 @@ export const createFormHandles = <T extends FormType = FormType>(options: Create
     const { form, formType, fields: detectedFields } = options;
 
     const formHandle: FormHandle = {
-        id: uniqid(),
+        id: uniqueId(),
         element: form,
         formType: formType,
         props: { injections: { zIndex: getMaxZIndex(form) + 1 } },

@@ -1,4 +1,4 @@
-import uniqid from 'uniqid';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { OptimisticState } from '../types';
 import { TestState, createTestOptimisticHistoryItem } from '../utils/testing.utils';
@@ -13,7 +13,7 @@ describe('optimistic fail reducer', () => {
             history: [createTestOptimisticHistoryItem('add', 1)],
         };
 
-        const result = failReducer(optimistic, uniqid());
+        const result = failReducer(optimistic, uniqueId());
         expect(result).toEqual(optimistic);
     });
 

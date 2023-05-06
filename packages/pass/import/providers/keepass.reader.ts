@@ -1,12 +1,12 @@
 import get from 'lodash/get';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
@@ -44,7 +44,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
         type: 'login',
         metadata: {
             name,
-            itemUuid: uniqid(),
+            itemUuid: uniqueId(),
             note: item.note || '',
         },
         content: {
@@ -67,7 +67,7 @@ const groupToVault = (group: KeePassGroup): MaybeNull<ImportVault> => {
     return {
         type: 'new',
         vaultName,
-        id: uniqid(),
+        id: uniqueId(),
         items: Array.isArray(entry) ? entry.map(entryToItem) : [entryToItem(entry)],
     };
 };

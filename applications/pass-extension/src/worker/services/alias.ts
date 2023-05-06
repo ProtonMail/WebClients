@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import {
     AliasState,
@@ -11,6 +10,7 @@ import {
 } from '@proton/pass/store';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import WorkerMessageBroker from '../channel';
@@ -35,7 +35,7 @@ export const createAliasService = () => {
         const defaultVault = selectDefaultVaultOrThrow(store.getState());
         const { realm, alias } = message.payload;
         const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
-        const optimisticId = uniqid();
+        const optimisticId = uniqueId();
 
         const aliasCreationIntent: ItemCreateIntent<'alias'> = {
             type: 'alias',
