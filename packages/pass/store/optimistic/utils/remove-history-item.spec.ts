@@ -1,4 +1,4 @@
-import uniqid from 'uniqid';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { OptimisticState } from '../types';
 import { removeHistoryItem } from './remove-history-item';
@@ -16,7 +16,7 @@ describe('removeHistoryItem', () => {
             history: [createTestOptimisticHistoryItem()],
         };
 
-        const nextOptimistic = removeHistoryItem(testReducer, optimistic, uniqid());
+        const nextOptimistic = removeHistoryItem(testReducer, optimistic, uniqueId());
         expect(nextOptimistic).toEqual(optimistic);
     });
 

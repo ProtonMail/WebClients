@@ -3,13 +3,13 @@ import { type VFC, useState } from 'react';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
 import type { FieldProps } from 'formik/dist/Field';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton/pass/types';
+import { uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -68,7 +68,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
                             submission,
                             item: {
                                 type: 'login',
-                                metadata: { name: title, note: revision.note, itemUuid: uniqid() },
+                                metadata: { name: title, note: revision.note, itemUuid: uniqueId() },
                                 content: { username, password, urls: revision.urls, totpUri: '' },
                                 extraFields: [],
                             },

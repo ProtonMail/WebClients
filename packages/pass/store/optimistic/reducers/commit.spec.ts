@@ -1,4 +1,4 @@
-import uniqid from 'uniqid';
+import { uniqueId } from '@proton/pass/utils/string';
 
 import { HistoryFlag, OptimisticState } from '../types';
 import {
@@ -18,7 +18,7 @@ describe('optimistic commit reducer', () => {
             history: [createTestOptimisticHistoryItem('add', 1)],
         };
 
-        const result = commitReducer(testReducer, optimistic, uniqid());
+        const result = commitReducer(testReducer, optimistic, uniqueId());
         expect(result).toEqual(optimistic);
     });
 

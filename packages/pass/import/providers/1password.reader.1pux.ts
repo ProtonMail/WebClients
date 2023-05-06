@@ -1,11 +1,11 @@
 import jszip from 'jszip';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
@@ -84,7 +84,7 @@ const processNoteItem = (
         metadata: {
             name: item.overview.title || 'Unnamed note',
             note: note,
-            itemUuid: uniqid(),
+            itemUuid: uniqueId(),
         },
         content: {},
         extraFields: [],
@@ -122,7 +122,7 @@ const processLoginItem = (
         metadata: {
             name: item.overview.title || 'Unnamed item',
             note: note,
-            itemUuid: uniqid(),
+            itemUuid: uniqueId(),
         },
         content: {
             username: username,
@@ -151,7 +151,7 @@ const processPasswordItem = (
         metadata: {
             name: item.overview.title || 'Unnamed item',
             note: note,
-            itemUuid: uniqid(),
+            itemUuid: uniqueId(),
         },
         content: {
             username: '',
@@ -184,7 +184,7 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
                 (vault): ImportVault => ({
                     type: 'new',
                     vaultName: `${vault.attrs.name}`,
-                    id: uniqid(),
+                    id: uniqueId(),
                     items: vault.items
                         .filter((item) => item.state !== OnePassState.TRASHED)
                         .map((item): Maybe<ItemImportIntent> => {

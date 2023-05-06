@@ -1,5 +1,3 @@
-import uniqid from 'uniqid';
-
 import {
     itemCreationIntent,
     itemCreationSuccess,
@@ -11,6 +9,7 @@ import {
 import type { AutoSavePromptOptions, FormEntry, FormEntryStatus } from '@proton/pass/types';
 import { AutoSaveType, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import WorkerMessageBroker from '../channel';
@@ -62,7 +61,7 @@ export const createAutoSaveService = () => {
                     itemCreationIntent(
                         {
                             ...payload.item,
-                            optimisticId: uniqid(),
+                            optimisticId: uniqueId(),
                             shareId: selectedVault.shareId,
                             createTime: getEpoch(),
                             extraData: { withAlias: false },
