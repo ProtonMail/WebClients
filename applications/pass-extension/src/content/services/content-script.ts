@@ -19,11 +19,11 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
         if (context.getState().active) {
             logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
 
+            listeners.removeAll();
+
             context.setState({ active: options.recycle ?? false });
             context.service.formManager.destroy();
-
-            listeners.removeAll();
-            ExtensionContext.read()?.port.disconnect();
+            ExtensionContext.read()?.destroy();
 
             if (!options.recycle) {
                 context.service.iframe.destroy();
