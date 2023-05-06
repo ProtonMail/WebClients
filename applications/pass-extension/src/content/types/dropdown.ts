@@ -1,4 +1,3 @@
-import type { AliasState } from '@proton/pass/store';
 import type { Maybe, Realm, SafeLoginItem } from '@proton/pass/types';
 
 import type { FieldHandle, FormField, FormType } from './form';
@@ -13,7 +12,7 @@ export enum DropdownAction {
 export type DropdownSetActionPayload =
     | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[] }
     | { action: DropdownAction.AUTOSUGGEST_PASSWORD }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; options: AliasState['aliasOptions']; realm: Realm };
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; realm: Realm };
 
 export type DropdownState = { field: Maybe<FieldHandle<FormType, FormField>> };
 

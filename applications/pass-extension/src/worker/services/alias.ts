@@ -12,7 +12,6 @@ import {
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time';
-import { parseSender } from '@proton/pass/utils/url';
 
 import WorkerMessageBroker from '../channel';
 import store from '../store';
@@ -32,11 +31,10 @@ export const createAliasService = () => {
         };
     });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message, sender) => {
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {
         const defaultVault = selectDefaultVaultOrThrow(store.getState());
-        const { realm, subdomain } = parseSender(sender);
-        const { mailboxes, prefix, signedSuffix, aliasEmail } = message.payload.alias;
-        const url = subdomain ?? realm;
+        const { realm, alias } = message.payload;
+        const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
         const optimisticId = uniqid();
 
         const aliasCreationIntent: ItemCreateIntent<'alias'> = {
@@ -45,8 +43,8 @@ export const createAliasService = () => {
             shareId: defaultVault.shareId,
             createTime: getEpoch(),
             metadata: {
-                name: url,
-                note: c('Placeholder').t`Used on ${url}`,
+                name: realm,
+                note: c('Placeholder').t`Used on ${realm}`,
                 itemUuid: optimisticId,
             },
             content: {},
