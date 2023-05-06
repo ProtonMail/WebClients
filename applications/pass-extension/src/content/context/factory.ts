@@ -3,7 +3,6 @@ import { WorkerStatus } from '@proton/pass/types';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext } from '../../shared/extension';
-import { createCSAliasService } from '../services/alias';
 import { createCSAutofillService } from '../services/autofill';
 import { createDetectorService } from '../services/form/detector';
 import { createFormManager } from '../services/form/manager';
@@ -21,7 +20,6 @@ export const createContentScriptContext = (scriptId: string, mainFrame: boolean)
         service: {
             formManager: createFormManager(),
             autofill: createCSAutofillService(),
-            alias: createCSAliasService(),
             iframe: createIFrameService(),
             detector: createDetectorService(),
         },
