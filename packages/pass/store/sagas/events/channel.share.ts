@@ -93,13 +93,14 @@ export function* onShareEvent(
         ),
     ]);
 
-    onItemsChange?.();
+    const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
+    if (itemsMutated) onItemsChange?.();
 }
 
 function* onShareEventError(
     error: unknown,
     { channel, shareId }: EventChannel<ChannelType.SHARE>,
-    { onShareEventDisabled }: WorkerRootSagaOptions
+    { onShareEventDisabled, onItemsChange }: WorkerRootSagaOptions
 ) {
     const { code } = getApiError(error);
 
@@ -110,6 +111,7 @@ function* onShareEventError(
 
         const share: Share = yield select(selectShare(shareId));
         onShareEventDisabled?.(shareId);
+        onItemsChange?.();
         yield put(shareDeleteSync(share));
     }
 }
