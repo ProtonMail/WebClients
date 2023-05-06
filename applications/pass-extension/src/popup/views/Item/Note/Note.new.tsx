@@ -2,8 +2,8 @@ import type { VFC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
+import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemNewProps } from '../../../../shared/items';
@@ -26,7 +26,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
         initialValues,
         initialErrors: validateNoteForm(initialValues),
         onSubmit: ({ shareId, name, note }) => {
-            const optimisticId = uniqid();
+            const optimisticId = uniqueId();
 
             onSubmit({
                 type: 'note',

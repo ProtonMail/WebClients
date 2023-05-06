@@ -1,5 +1,4 @@
-import uniqid from 'uniqid';
-
+import { uniqueId } from '@proton/pass/utils/string';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import { HistoryFlag, WrappedOptimisticState } from '../types';
@@ -17,7 +16,7 @@ describe('optimistic initiate reducer', () => {
         };
 
         const testAction = createTestAction('add', 1);
-        const optimisticId = uniqid();
+        const optimisticId = uniqueId();
 
         const result = initiateReducer(
             omit(state, ['optimistic']),
@@ -42,7 +41,7 @@ describe('optimistic initiate reducer', () => {
             },
         };
 
-        const optimisticId = uniqid();
+        const optimisticId = uniqueId();
         const testAction = createTestAction('remove', 1);
 
         const result = initiateReducer(

@@ -1,5 +1,4 @@
-import uniqid from 'uniqid';
-
+import { uniqueId } from '@proton/pass/utils/string';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import { WrappedOptimisticState } from '../types';
@@ -23,7 +22,7 @@ describe('optimistic revert reducer', () => {
             },
         };
 
-        const result = revertReducer(omit(state, ['optimistic']), testReducer, state.optimistic, uniqid());
+        const result = revertReducer(omit(state, ['optimistic']), testReducer, state.optimistic, uniqueId());
         expect(result).toEqual([omit(state, ['optimistic']), state.optimistic]);
     });
 

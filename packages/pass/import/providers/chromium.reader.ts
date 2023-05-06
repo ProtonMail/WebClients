@@ -1,8 +1,8 @@
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
@@ -23,7 +23,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                 {
                     type: 'new',
                     vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
-                    id: uniqid(),
+                    id: uniqueId(),
                     items: items.map((item): ItemImportIntent<'login'> => {
                         const urlResult = isValidURL(item.url ?? '');
                         const url = urlResult.valid ? new URL(urlResult.url) : undefined;
@@ -34,7 +34,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                             metadata: {
                                 name,
                                 note: item.note ?? '',
-                                itemUuid: uniqid(),
+                                itemUuid: uniqueId(),
                             },
                             content: {
                                 username: item.username || '',

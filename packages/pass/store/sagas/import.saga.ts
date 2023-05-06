@@ -1,11 +1,11 @@
 import { call, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
@@ -38,7 +38,10 @@ function* createVaultForImport(vaultName: string) {
 
     yield put(
         vaultCreationIntent(
-            { id: uniqid(), content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} } },
+            {
+                id: uniqueId(),
+                content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} },
+            },
             (action) => resolver(vaultCreationSuccess.match(action) ? action.payload.share.shareId : undefined)
         )
     );

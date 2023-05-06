@@ -1,10 +1,10 @@
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { uniqueId } from '@proton/pass/utils/string';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl, isValidURL } from '@proton/pass/utils/url';
@@ -31,7 +31,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
             {
                 type: 'new',
                 vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
-                id: uniqid(),
+                id: uniqueId(),
                 items: items
                     .map((item): Maybe<ItemImportIntent> => {
                         const name = item.name ?? 'Unnamed item';
@@ -58,7 +58,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                     metadata: {
                                         name,
                                         note: item.notes ?? '',
-                                        itemUuid: uniqid(),
+                                        itemUuid: uniqueId(),
                                     },
                                     content: {
                                         username: item.login.username ?? '',
@@ -89,7 +89,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                     metadata: {
                                         name,
                                         note: item.notes ?? '',
-                                        itemUuid: uniqid(),
+                                        itemUuid: uniqueId(),
                                     },
                                     content: {},
                                     extraFields: [],

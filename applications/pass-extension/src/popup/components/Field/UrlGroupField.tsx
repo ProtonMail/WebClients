@@ -2,12 +2,11 @@ import { type KeyboardEvent, useRef } from 'react';
 
 import { FieldArray, type FormikContextType, type FormikErrors } from 'formik';
 import { c } from 'ttag';
-import uniqid from 'uniqid';
 
 import { Button } from '@proton/atoms';
 import { Icon, InputFieldTwo } from '@proton/components/';
 import { duplicates } from '@proton/pass/utils/array';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { FieldBox } from './Layout/FieldBox';
@@ -16,7 +15,7 @@ export type UrlItem = { url: string; id: string };
 export type UrlGroupValues = { url: string; urls: UrlItem[] };
 export type UrlGroupProps<V extends UrlGroupValues = UrlGroupValues> = { form: FormikContextType<V> };
 
-export const createNewUrl = (url: string) => ({ id: uniqid(), url: isValidURL(url).valid ? url : '' });
+export const createNewUrl = (url: string) => ({ id: uniqueId(), url: isValidURL(url).valid ? url : '' });
 
 /* validates the active URL input field */
 export const validateUrl = <V extends UrlGroupValues>({ url, urls }: V) => {
