@@ -9,8 +9,15 @@ import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
 import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
-import type { DropdownSetActionPayload, DropdownState, InjectedDropdown, OpenDropdownOptions } from '../../types';
-import { DropdownAction, FormType } from '../../types';
+import {
+    DropdownAction,
+    DropdownSetActionPayload,
+    DropdownState,
+    FormField,
+    FormType,
+    InjectedDropdown,
+    OpenDropdownOptions,
+} from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
 import { canProcessAction } from '../handles/field';
 
@@ -134,8 +141,8 @@ export const createDropdown = (): InjectedDropdown => {
                         })
                     );
 
-                    first(form.fields.username)?.autofill(username);
-                    form.fields.password.forEach((field) => field.autofill(password));
+                    first(form.getFieldsFor(FormField.USERNAME))?.autofill(username);
+                    form.getFieldsFor(FormField.PASSWORD).forEach((field) => field.autofill(password));
                 }
                 return iframe.close();
             }
@@ -151,7 +158,7 @@ export const createDropdown = (): InjectedDropdown => {
 
         if (form !== undefined && form.formType === FormType.REGISTER) {
             const { password } = message.payload;
-            form.fields.password.forEach((field) => field.autofill(password));
+            form.getFieldsFor(FormField.PASSWORD).forEach((field) => field.autofill(password));
         }
 
         return iframe.close();

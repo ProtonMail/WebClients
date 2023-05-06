@@ -10,7 +10,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { DETECTED_FORM_ID_ATTR, EMAIL_PROVIDERS } from '../../constants';
 import { withContext } from '../../context/context';
-import { DropdownAction, type FormHandle, type FormTracker, FormType } from '../../types';
+import { DropdownAction, FormField, type FormHandle, type FormTracker, FormType } from '../../types';
 
 const { isVisible } = fathom.utils;
 
@@ -22,9 +22,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const listeners = createListenerStore();
 
-    const submitBtn = first(form.fields.submit);
-    const username = first(form.fields.username);
-    const password = first(form.fields.password);
+    const submitBtn = first(form.getFieldsFor(FormField.SUBMIT));
+    const username = first(form.getFieldsFor(FormField.USERNAME));
+    const password = first(form.getFieldsFor(FormField.PASSWORD));
 
     const getFormData = (): { username?: string; password?: string } => {
         return {
@@ -77,9 +77,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
         switch (form.formType) {
             case FormType.LOGIN: {
-                const targets = [form.fields.username, form.fields.password]
-                    .flat()
-                    .filter(({ element }) => isVisible(element));
+                const targets = [username, password].filter((field) => field && isVisible(field.element));
                 first(targets)?.attachIcon(DropdownAction.AUTOFILL);
                 break;
             }
@@ -88,8 +86,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 /* Avoid prompting for alias auto-suggestion
                  * when we match an excluded email provider */
                 const exclude = EMAIL_PROVIDERS.includes(parse(window.location.hostname)?.domain ?? '');
-                first(exclude ? [] : form.fields.username)?.attachIcon(DropdownAction.AUTOSUGGEST_ALIAS);
-                first(form.fields.password)?.attachIcon(DropdownAction.AUTOSUGGEST_PASSWORD);
+                if (!exclude) username?.attachIcon(DropdownAction.AUTOSUGGEST_ALIAS);
+                password?.attachIcon(DropdownAction.AUTOSUGGEST_PASSWORD);
                 break;
             }
         }

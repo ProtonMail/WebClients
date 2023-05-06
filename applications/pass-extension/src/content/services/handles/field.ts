@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import { autofill } from '../../../shared/form';
 import { withContext } from '../../context/context';
-import type { FieldHandle, FormFieldTypeMap, FormHandle } from '../../types';
+import type { FieldHandle, FormHandle } from '../../types';
 import { DropdownAction, FormField, FormType } from '../../types';
 import { createFieldIconHandle } from './icon';
 
@@ -37,13 +37,11 @@ export const createFieldHandles =
         fieldType,
         getFormHandle,
     }: CreateFieldHandlesOptions<T, V>) =>
-    (element: FormFieldTypeMap[V]): FieldHandle => {
-        /**
-         * Since we're creating "field handles" for elements
+    (element: HTMLElement): FieldHandle => {
+        /* Since we're creating "field handles" for elements
          * that may include submit buttons as well : make sure
          * we're dealing with an HTMLInputElement for autofilling
-         * and icon injection
-         */
+         * and icon injection*/
         const isInput = isInputElement(element);
         const listeners = createListenerStore();
         const boxElement = findBoundingElement(element);
@@ -55,7 +53,7 @@ export const createFieldHandles =
             boxElement,
             icon: null,
             action: null,
-            value: element.value ?? '',
+            value: isInput ? element.value ?? '' : '',
             getFormHandle,
             setValue: (value) => (field.value = value),
             autofill: isInput ? autofill(element) : noop,
@@ -90,6 +88,8 @@ export const createFieldHandles =
             }),
 
             attachListeners: withContext(({ service: { iframe }, getSettings }, onSubmit) => {
+                if (!isInput) return;
+
                 const onFocus = () =>
                     requestAnimationFrame(() => {
                         iframe.dropdown?.close();
