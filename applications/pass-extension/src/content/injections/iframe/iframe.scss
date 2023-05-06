@@ -14,7 +14,7 @@ iframe.protonpass-iframe {
 
 	&.protonpass-iframe-visible {
 		display: block;
-		animation: var(--protonpass-iframe-animation) 0.2s ease-in-out both;
+		animation: var(--protonpass-iframe-animation) 0.25s ease-in-out 0.05s both;
 	}
 
 	&.protonpass-iframe-fixed {
