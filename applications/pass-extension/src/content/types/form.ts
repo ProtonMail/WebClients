@@ -15,37 +15,18 @@ export enum FormType {
 export enum FormField {
     USERNAME = 'username',
     PASSWORD = 'password',
-    NEW_PASSWORD = 'new-password',
     SUBMIT = 'submit',
 }
 
-/* For each form type, specify the form fields
- * we will be dealing with for icon injection,
- * auto-filling | auto-suggesting */
-export type FormFieldMap = {
-    [FormType.LOGIN]: FormField.USERNAME | FormField.PASSWORD | FormField.SUBMIT;
-    [FormType.REGISTER]: FormField.USERNAME | FormField.PASSWORD | FormField.SUBMIT;
-};
+export type FormFields = { [Field in FormField]?: HTMLElement[] };
 
-export type FormFieldTypeMap = {
-    [FormField.USERNAME]: HTMLInputElement;
-    [FormField.PASSWORD]: HTMLInputElement;
-    [FormField.NEW_PASSWORD]: HTMLInputElement;
-    [FormField.SUBMIT]: HTMLInputElement | HTMLButtonElement;
-};
-
-export type FormFields<T extends FormType> = {
-    [Field in FieldsForForm<T>]: FormFieldTypeMap[Field][];
-};
-
-export type FieldsForForm<T extends FormType> = FormFieldMap[T];
-
-export interface FormHandle<T extends FormType = FormType> {
+export interface FormHandle {
     id: string;
-    formType: T;
+    formType: FormType;
     element: HTMLElement;
     props: { injections: { zIndex: number } };
-    fields: { [Field in FieldsForForm<T>]: FieldHandle<T, Field>[] };
+    fields: { [Field in FormField]?: FieldHandle[] };
+    getFieldsFor: (type: FormField) => FieldHandle[];
     listFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     tracker?: FormTracker;
     shouldRemove: () => boolean;
@@ -54,15 +35,15 @@ export interface FormHandle<T extends FormType = FormType> {
     detach: () => void;
 }
 
-export interface FieldHandle<T extends FormType = FormType, U extends FormField = FormField> {
-    formType: T;
-    fieldType: U;
-    element: FormFieldTypeMap[U];
+export interface FieldHandle {
+    formType: FormType;
+    fieldType: FormField;
+    element: HTMLElement;
     boxElement: HTMLElement;
     icon: FieldIconHandle | null;
     action: MaybeNull<DropdownAction>;
     value: string;
-    getFormHandle: () => FormHandle<T>;
+    getFormHandle: () => FormHandle;
     setValue: (value: string) => void;
     sync: () => void;
     autofill: (value: string) => void;

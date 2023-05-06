@@ -11,7 +11,7 @@ import { createFieldHandles } from './field';
 export type CreateFormHandlesOptions<T extends FormType> = {
     formType: T;
     form: HTMLFormElement;
-    fields: FormFields<T>;
+    fields: FormFields;
 };
 
 export type FormHandlesProps = { zIndex: number };
@@ -24,8 +24,8 @@ export const createFormHandles = <T extends FormType = FormType>(options: Create
         element: form,
         formType: formType,
         props: { injections: { zIndex: getMaxZIndex(form) + 1 } },
-        fields: objectMap(detectedFields)((fieldType, fieldEl) =>
-            fieldEl.map(
+        fields: objectMap(detectedFields)((fieldType, fieldEls) =>
+            (fieldEls ?? []).map(
                 createFieldHandles({
                     formType,
                     fieldType,
@@ -33,6 +33,7 @@ export const createFormHandles = <T extends FormType = FormType>(options: Create
                 })
             )
         ) as FormHandle['fields'],
+        getFieldsFor: (type) => formHandle.fields[type] ?? [],
         listFields: (predicate = () => true) => Object.values(formHandle.fields).flat().filter(predicate),
         shouldRemove: () => !document.body.contains(form),
         shouldUpdate: () =>

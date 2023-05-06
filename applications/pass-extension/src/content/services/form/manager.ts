@@ -115,7 +115,7 @@ export const createFormManager = () => {
         logger.info(`[FormTracker::Detector]: Running detection for "${reason}" on ${frame}`);
         garbagecollect();
 
-        const detected = detector.runDetection(document);
+        const detected = detector.runDetection();
         const current = ctx.trackedForms.map(prop('element'));
         const incoming = detected.filter(({ element }) => notIn(current)(element));
 
