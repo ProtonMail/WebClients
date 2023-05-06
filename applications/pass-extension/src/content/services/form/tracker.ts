@@ -47,10 +47,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                         type: form.formType,
                         reason: 'FORM_SUBMIT_HANDLER',
                         action: parseFormAction(form.element),
-                        data: {
-                            username,
-                            password,
-                        },
+                        data: { username, password },
                     },
                 })
             );
@@ -72,13 +69,15 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
      *   in order to support multi-step forms for autofill
      * - REGISTER : match first username & password fields
      *   for auto-suggestion action */
-    const injectFieldIcon = (form: FormHandle): void => {
+    const setFieldActions = (form: FormHandle): void => {
         form.listFields().forEach((field) => field.detachIcon());
 
         switch (form.formType) {
             case FormType.LOGIN: {
                 const targets = [username, password].filter((field) => field && isVisible(field.element));
-                first(targets)?.attachIcon(DropdownAction.AUTOFILL);
+                targets.forEach((field) => field?.setAction(DropdownAction.AUTOFILL));
+                first(targets)?.attachIcon();
+
                 break;
             }
 
@@ -86,15 +85,22 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 /* Avoid prompting for alias auto-suggestion
                  * when we match an excluded email provider */
                 const exclude = EMAIL_PROVIDERS.includes(parse(window.location.hostname)?.domain ?? '');
-                if (!exclude) username?.attachIcon(DropdownAction.AUTOSUGGEST_ALIAS);
-                password?.attachIcon(DropdownAction.AUTOSUGGEST_PASSWORD);
+
+                if (!exclude) {
+                    username?.setAction(DropdownAction.AUTOSUGGEST_ALIAS);
+                    username?.attachIcon();
+                }
+
+                password?.setAction(DropdownAction.AUTOSUGGEST_PASSWORD);
+                password?.attachIcon();
+
                 break;
             }
         }
     };
 
     const attach = () => {
-        injectFieldIcon(form);
+        setFieldActions(form);
         username?.attachListeners(onSubmitHandler);
         password?.attachListeners(onSubmitHandler);
         listeners.addListener(form.element, 'submit', onSubmitHandler);

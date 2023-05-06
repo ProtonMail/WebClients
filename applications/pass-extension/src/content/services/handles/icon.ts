@@ -22,7 +22,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const lock = createLockIcon();
 
     const clickHandler = withContext(({ service: { iframe } }) => {
-        if (state.action !== null) {
+        if (state.action) {
             return iframe.dropdown?.getState().visible
                 ? iframe.dropdown?.close()
                 : iframe.dropdown?.open({ action: state.action, field });
