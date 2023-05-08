@@ -11,7 +11,6 @@
  */
 import { chromeAPI } from '@proton/pass/globals/browser';
 
-import { detectBrowser } from '../browser';
 import { createMemoryStorage } from './memory';
 import type { Storage, StorageData } from './types';
 
@@ -76,4 +75,4 @@ const chromeSessionStorage: Storage = {
     clear,
 };
 
-export default detectBrowser() === 'firefox' ? createMemoryStorage() : chromeSessionStorage;
+export default BUILD_TARGET === 'firefox' ? createMemoryStorage() : chromeSessionStorage;
