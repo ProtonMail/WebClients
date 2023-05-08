@@ -10,9 +10,12 @@ import { SSO_URL } from '../../app/config';
 import { promptForPermissions } from '../extension/permissions';
 import { usePermissionsGranted } from './usePermissionsGranted';
 
+/* depending on where we execute this : we may or may not
+ * have access to the tabs API - Firefox content-scripts have
+ * very limited support for the tabs API */
 export const useAccountFork = () => async (type: FORK_TYPE) => {
     const url = await requestFork(SSO_URL, type);
-    return browser.tabs.create({ url });
+    return browser.tabs ? browser.tabs.create({ url }) : window.open(url, '_BLANK');
 };
 
 /* before navigating to login we should prompt the
