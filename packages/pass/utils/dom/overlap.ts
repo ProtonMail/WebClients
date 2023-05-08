@@ -1,5 +1,4 @@
 type Rect = { left: number; right: number; top: number; bottom: number };
-
 const rectOverlap = (from: Rect, to: Rect, offset: number = 0): boolean =>
     !(
         from.right - offset < to.left ||
@@ -8,7 +7,7 @@ const rectOverlap = (from: Rect, to: Rect, offset: number = 0): boolean =>
         from.top + offset > to.bottom
     );
 
-export const allChildrenOverlap = (el: HTMLElement): boolean => {
+export const allChildrenOverlap = (el: HTMLElement, maxOffset: number): boolean => {
     const siblings = [...el.children] as HTMLElement[];
 
     if (siblings.length <= 1) {
@@ -20,7 +19,7 @@ export const allChildrenOverlap = (el: HTMLElement): boolean => {
         ([all, rect], node) => {
             const nodeRect = node.getBoundingClientRect();
             const hidden = nodeRect.height === 0 && nodeRect.width === 0;
-            const overlap = hidden || rectOverlap(nodeRect, rect, 2);
+            const overlap = hidden || rectOverlap(nodeRect, rect, maxOffset);
 
             return [
                 all && overlap,
