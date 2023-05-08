@@ -21,9 +21,6 @@ jest.mock('../../hooks/useApi', () => {
 describe('Payment', () => {
     beforeEach(() => {
         apiMock.mockReset();
-
-        // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918
-        (window as any).SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
     });
 
     it('should render', () => {

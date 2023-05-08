@@ -63,3 +63,7 @@ jest.mock('./components/dialog/Dialog.tsx', () => {
 
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
+
+// That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918
+// In particular, we need this fix to render all the components that have PaymentMethodDetails in their trees
+window.SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
