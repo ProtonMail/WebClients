@@ -49,7 +49,7 @@ export const createNotification = (): InjectedNotification => {
         reset: pipe(iframe.reset, () => notification),
         init: pipe(iframe.init, () => notification),
         close: pipe(iframe.close, () => notification),
-        destroy: pipe(iframe.destroy, () => notification),
+        destroy: iframe.destroy,
         open: pipe(open, () => notification),
     };
 
