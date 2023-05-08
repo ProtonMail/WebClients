@@ -5,6 +5,7 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
 import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
+import { createListenerStore } from '@proton/pass/utils/listener';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
 import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../constants';
@@ -13,12 +14,12 @@ import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
 import type { DropdownSetActionPayload, FieldHandle, InjectedDropdown, OpenDropdownOptions } from '../../types';
 import { DropdownAction, FormField, FormType } from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
-import { canProcessAction } from '../handles/field';
 
 type DropdownFieldRef = { current: Maybe<FieldHandle> };
 
 export const createDropdown = (): InjectedDropdown => {
     const fieldRef: DropdownFieldRef = { current: undefined };
+    const listeners = createListenerStore();
 
     const iframe = createIFrameApp({
         id: 'dropdown',
@@ -54,14 +55,12 @@ export const createDropdown = (): InjectedDropdown => {
      * re-injecting for each field - opening the dropdown involves
      * passing the actual field handle to attach it to
      * Dropdown opening may be automatically triggered on initial
-     * page load with a positive detection : ensure the iframe is
+     * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
     const open = withContext<(options: OpenDropdownOptions) => Promise<void>>(
-        async ({ service: { autofill }, getState, getSettings, getExtensionContext }, { field, action, focus }) => {
+        async ({ service: { autofill }, getState, getExtensionContext }, { field, action, autofocused }) => {
             await waitUntil(() => iframe.state.ready, 50);
-
             fieldRef.current = field;
-            field.icon?.setLoading(true);
 
             const { loggedIn } = getState();
 
@@ -85,11 +84,10 @@ export const createDropdown = (): InjectedDropdown => {
              * for an autofill action and the we have no login
              * items that match the current domain, avoid auto-opening
              * the dropdown */
-            const blockFocus = focus && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0;
+            const blockAutofocus =
+                autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0;
 
-            const shouldProcessAction = canProcessAction(payload.action, getSettings());
-
-            if (shouldProcessAction && !blockFocus) {
+            if (!blockAutofocus) {
                 iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
                 const scrollParent = getScrollParent(field.element);
 
@@ -110,8 +108,6 @@ export const createDropdown = (): InjectedDropdown => {
 
                 iframe.open(scrollParent);
             }
-
-            field.icon?.setLoading(false);
         }
     );
 
@@ -179,14 +175,24 @@ export const createDropdown = (): InjectedDropdown => {
         }
     });
 
+    const destroy = () => {
+        listeners.removeAll();
+        iframe.destroy();
+    };
+
+    listeners.addListener(window, 'popstate', () => iframe.close({ userInitiated: false }));
+    listeners.addListener(window, 'hashchange', () => iframe.close({ userInitiated: false }));
+    listeners.addListener(window, 'unload', () => iframe.close({ userInitiated: false }));
+    listeners.addListener(window, 'beforeunload', () => iframe.close({ userInitiated: false }));
+
     const dropdown: InjectedDropdown = {
         getState: () => iframe.state,
         getCurrentField: () => fieldRef.current,
         reset: pipe(iframe.reset, () => dropdown),
         close: pipe(iframe.close, () => dropdown),
         init: pipe(iframe.init, () => dropdown),
-        destroy: pipe(iframe.destroy, () => dropdown),
         open: pipe(open, () => dropdown),
+        destroy,
     };
 
     return dropdown;

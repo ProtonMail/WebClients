@@ -45,10 +45,9 @@ export interface FieldHandle {
     value: string;
     getFormHandle: () => FormHandle;
     setValue: (value: string) => void;
-    setAction: (action: DropdownAction) => void;
-    sync: () => void;
+    setAction: (action: MaybeNull<DropdownAction>) => void;
     autofill: (value: string) => void;
-    attachIcon: () => void;
+    attachIcon: () => FieldIconHandle;
     detachIcon: () => void;
     attachListeners: (onSubmit: () => void) => void;
     detachListeners: () => void;
