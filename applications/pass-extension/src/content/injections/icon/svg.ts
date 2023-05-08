@@ -1,17 +1,6 @@
 import { createElement } from '@proton/pass/utils/dom';
-import { uniqueId } from '@proton/pass/utils/string';
 
-import { ICON_CIRCLE_LOADER, ICON_ROOT_CLASSNAME, ICON_SVG } from '../../constants';
-
-export const CIRCLE_LOADER_SVG = `
-<svg xmlns="http://www.w3.org/2000/svg" class="circle-loader" viewBox="0 0 16 16">
-   <defs>
-     <circle cx="8" cy="8" r="7" />
-   </defs>
-   <use className="circle-loader-track" />
-   <use className="circle-loader-circle" />
- </svg>
- `;
+import { ICON_ROOT_CLASSNAME, ICON_SVG } from '../../constants';
 
 export const createLockIcon = (): HTMLDivElement => {
     const lockIcon = createElement<HTMLDivElement>({
@@ -28,22 +17,4 @@ export const createLockIcon = (): HTMLDivElement => {
     `;
 
     return lockIcon;
-};
-
-export const createCircleLoader = (): HTMLDivElement => {
-    const uuid = uniqueId();
-    const loader = createElement<HTMLDivElement>({
-        type: 'div',
-        classNames: [ICON_ROOT_CLASSNAME, ICON_CIRCLE_LOADER, ICON_SVG],
-    });
-
-    loader.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" class="protcircle-loader" viewBox="0 0 16 16">
-            <defs><circle cx="8" cy="8" r="7" id="${uuid}" /></defs>
-            <use class="circle-loader-track" href="#${uuid}" />
-            <use class="circle-loader-circle" href="#${uuid}" />
-        </svg>
-    `;
-
-    return loader;
 };

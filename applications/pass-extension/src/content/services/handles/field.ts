@@ -1,5 +1,3 @@
-import { fathom } from '@proton/pass/fathom/protonpass-fathom';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { findBoundingElement, isInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import noop from '@proton/utils/noop';
@@ -7,10 +5,8 @@ import noop from '@proton/utils/noop';
 import { autofill } from '../../../shared/form';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle } from '../../types';
-import { DropdownAction, FormField, FormType } from '../../types';
+import { FormField, FormType } from '../../types';
 import { createFieldIconHandle } from './icon';
-
-const { isVisible } = fathom.utils;
 
 type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {
     formType: T;
@@ -18,18 +14,41 @@ type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {
     getFormHandle: () => FormHandle;
 };
 
-export const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): boolean => {
-    switch (action) {
-        case DropdownAction.AUTOFILL:
-            return settings.autofill.inject;
-        case DropdownAction.AUTOSUGGEST_ALIAS:
-            return settings.autosuggest.email;
-        case DropdownAction.AUTOSUGGEST_PASSWORD:
-            return settings.autosuggest.password;
-        default:
-            return true;
-    }
-};
+/* on input focus : close the dropdown only if the current target
+ * does not match the dropdown's current field : this maybe the case
+ * when changing focus with the dropdown open */
+const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
+    withContext(({ service: { iframe }, getSettings }, evt) => {
+        requestAnimationFrame(() => {
+            const target = evt?.target;
+            const current = iframe.dropdown?.getCurrentField()?.element;
+            if (current !== target) iframe.dropdown?.close();
+
+            return (
+                field.action &&
+                getSettings().autofill.openOnFocus &&
+                iframe.dropdown?.open({
+                    action: field.action,
+                    autofocused: true,
+                    field,
+                })
+            );
+        });
+    });
+
+/* on input change : close the dropdown if it was visible
+ * and update the field's handle tracked value */
+const onInputField = (field: FieldHandle): (() => void) =>
+    withContext(({ service: { iframe } }) => {
+        if (iframe.dropdown?.getState().visible) iframe.dropdown?.close();
+        field.setValue((field.element as HTMLInputElement).value);
+    });
+
+/* trigger the submit handler on keydown enter */
+const onKeyDownField =
+    (onSubmit: () => void) =>
+    ({ key }: KeyboardEvent) =>
+        key === 'Enter' && onSubmit();
 
 export const createFieldHandles =
     <T extends FormType, V extends FormField>({
@@ -58,68 +77,21 @@ export const createFieldHandles =
             setValue: (value) => (field.value = value),
             setAction: (action) => (field.action = action),
             autofill: isInput ? autofill(element) : noop,
-
-            /* make sure the element is actually visible
-             * as we may have detected a "hidden" field
-             * in order to track it */
-            attachIcon: withContext(({ getSettings, getState }) => {
-                const { action } = field;
-
-                if (action && isVisible(field.element) && canProcessAction(action, getSettings())) {
-                    const { status, loggedIn } = getState();
-                    field.icon = field.icon ?? (isInput ? createFieldIconHandle({ field }) : null);
-                    field.icon?.setStatus(status);
-                    field.icon?.setAction(action);
-                    if (!loggedIn) field.icon?.setCount(0);
-                }
-            }),
+            attachIcon: () => (field.icon = field.icon ?? createFieldIconHandle({ field })),
 
             detachIcon() {
                 field.icon?.detach();
                 field.icon = null;
             },
 
-            sync: withContext(({ getSettings }) => {
-                if (!field.action) return;
-                if (canProcessAction(field.action, getSettings())) return field.attachIcon();
+            attachListeners(onSubmit) {
+                field.detachListeners();
+                listeners.addListener(field.element, 'focus', onFocusField(field));
+                listeners.addListener(field.element, 'input', onInputField(field));
+                listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
 
-                field.icon?.detach();
-                field.icon = null;
-            }),
-
-            attachListeners: withContext(({ service: { iframe }, getSettings }, onSubmit) => {
-                if (!isInput) return;
-
-                const onFocus = (evt?: FocusEvent) =>
-                    requestAnimationFrame(() => {
-                        const target = evt?.target;
-                        const current = iframe.dropdown?.getCurrentField()?.element;
-                        if (current !== target) iframe.dropdown?.close();
-
-                        return (
-                            field.action &&
-                            getSettings().autofill.openOnFocus &&
-                            iframe.dropdown?.open({
-                                action: field.action,
-                                focus: true,
-                                field,
-                            })
-                        );
-                    });
-
-                const onInput = () => {
-                    if (iframe.dropdown?.getState().visible) iframe.dropdown?.close();
-                    field.setValue(element.value);
-                };
-
-                const onKeyDown = ({ key }: KeyboardEvent) => key === 'Enter' && onSubmit();
-
-                listeners.addListener(field.element, 'focus', onFocus);
-                listeners.addListener(field.element, 'input', onInput);
-                listeners.addListener(field.element, 'keydown', onKeyDown);
-
-                return document.activeElement === field.element && onFocus();
-            }),
+                return document.activeElement === field.element && onFocusField(field)();
+            },
 
             detachListeners: () => listeners.removeAll(),
         };

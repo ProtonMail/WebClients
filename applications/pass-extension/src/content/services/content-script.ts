@@ -96,7 +96,7 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
                 onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
             });
 
-            logger.info(`[ContentScript::${scriptId}] Registering content-script`);
+            logger.info(`[ContentScript::${scriptId}] Starting content-script service`);
             return await handleStart(extensionContext);
         } catch (e) {
             logger.warn(`[ContentScript::${scriptId}] Setup error`, e);

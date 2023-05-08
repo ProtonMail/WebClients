@@ -128,7 +128,7 @@ export const createFormManager = () => {
             results.removeForms.forEach(detachTrackedForm);
             return results.runDetection && detect('MutationObserver');
         }),
-        500,
+        250,
         { leading: true }
     );
 
@@ -181,7 +181,7 @@ export const createFormManager = () => {
         ctx.staleForms = new Map();
     };
 
-    const sync = () => ctx.trackedForms.forEach((form) => form.listFields().forEach((field) => field.sync()));
+    const sync = () => ctx.trackedForms.forEach((form) => form.tracker?.attach());
 
     return { getForms: () => ctx.trackedForms, observe, detect, sync, destroy };
 };
