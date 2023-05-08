@@ -8,6 +8,7 @@ import { type AutoSaveService } from '../services/autosave';
 import { type CacheProxyService } from '../services/cache-proxy';
 import { type ExportService } from '../services/export';
 import { type FormTrackerService } from '../services/form.tracker';
+import { type InjectionService } from '../services/injection';
 import { type LoggerService } from '../services/logger';
 import { type OnboardingService } from '../services/onboarding';
 import { type OTPService } from '../services/otp';
@@ -31,6 +32,7 @@ export interface WorkerContextInterface {
         cacheProxy: CacheProxyService;
         export: ExportService;
         formTracker: FormTrackerService;
+        injection: InjectionService;
         logger: LoggerService;
         onboarding: OnboardingService;
         otp: OTPService;
