@@ -15,6 +15,7 @@ import { createAutoSaveService } from '../services/autosave';
 import { createCacheProxyService } from '../services/cache-proxy';
 import { createExportService } from '../services/export';
 import { createFormTrackerService } from '../services/form.tracker';
+import { createInjectionService } from '../services/injection';
 import { createLoggerService } from '../services/logger';
 import { createOnboardingService } from '../services/onboarding';
 import { createOTPService } from '../services/otp';
@@ -55,6 +56,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             cacheProxy: createCacheProxyService(),
             export: createExportService(),
             formTracker: createFormTrackerService(),
+            injection: createInjectionService(),
             logger: createLoggerService(),
             onboarding: createOnboardingService(),
             otp: createOTPService(),

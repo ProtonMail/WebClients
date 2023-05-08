@@ -8,9 +8,20 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*"],
+            "matches": ["https://*/*", "http://*/*"],
             "js": ["content.js"],
             "css": ["styles/content.css"],
+            "all_frames": true,
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://account.proton.me/*",
+                "https://account.proton.black/*",
+                "https://account.proton.pink/*",
+                "https://account.proton.local/*"
+            ],
+            "js": ["authFallback.js"],
             "all_frames": true,
             "run_at": "document_end"
         }
@@ -25,7 +36,7 @@
         "webRequest",
         "webRequestBlocking"
     ],
-    "host_permissions": ["https://*/*", "http://*/*", "wss://*/*"],
+    "host_permissions": ["https://*/*", "http://*/*"],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {

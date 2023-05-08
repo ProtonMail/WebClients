@@ -21,7 +21,6 @@ import { UNIX_HOUR, getEpoch } from '@proton/pass/utils/time';
 import { parseUrl } from '@proton/pass/utils/url';
 import { workerCanBoot } from '@proton/pass/utils/worker';
 
-import { createDevReloader } from '../../shared/extension';
 import { checkExtensionPermissions } from '../../shared/extension/permissions';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
@@ -36,17 +35,6 @@ const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
     const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0, permissionsGranted: false };
-
-    if (ENV === 'development') {
-        createDevReloader(() => {
-            WorkerMessageBroker.ports.broadcast(
-                backgroundMessage({
-                    type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT,
-                })
-            );
-            setTimeout(() => browser.runtime.reload(), 100);
-        }, 'reloading chrome runtime');
-    }
 
     /* Safety-net around worker boot-sequence :
      * Ensures no on-going booting sequence */
@@ -96,7 +84,8 @@ export const createActivationService = () => {
 
     /* On extension update :
      * - Re-init so as to resume session as soon as possible
-     * - Re-inject content-scripts to avoid stale extension contexts */
+     * - Re-inject content-scripts to avoid stale extension contexts
+     *   only on Chrome as Firefox handles content-script re-injection */
     const handleInstall = withContext(async (ctx, details: Runtime.OnInstalledDetailsType) => {
         if (details.reason === 'update') {
             if (ENV === 'production') {
@@ -104,35 +93,7 @@ export const createActivationService = () => {
                  * update in case the state/snapshot data-structure
                  * has changed. FIXME: use version migrations */
                 await browserLocalStorage.removeItems(['salt', 'state', 'snapshot']);
-            }
-
-            /* firefox will automatically re-inject the content-script
-             * if an update is detected (when the extension runtime is
-             * reloaded with the update). This is not the case on chrome
-             * so we need to manually re-inject the updated script. */
-            if (BUILD_TARGET === 'chrome') {
-                await Promise.all(
-                    (browser.runtime.getManifest().content_scripts ?? []).flatMap(async (cs) => {
-                        const tabs = await browser.tabs.query({ url: cs.matches });
-                        return tabs.map((tab) => {
-                            logger.info(`[ActivationService::onInstall] Re-injecting script on tab ${tab.id}`);
-                            return (
-                                tab.id !== undefined &&
-                                browser.scripting
-                                    .executeScript({
-                                        target: { tabId: tab.id! },
-                                        files: cs.js,
-                                    })
-                                    .catch((e) =>
-                                        logger.info(
-                                            `[ActivationService::onInstall] Injection error on tab ${tab.id}`,
-                                            e
-                                        )
-                                    )
-                            );
-                        });
-                    })
-                );
+                if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
             }
 
             ctx.service.onboarding.onUpdate();
@@ -150,6 +111,7 @@ export const createActivationService = () => {
 
             void ctx.service.settings.onInstall();
             void ctx.service.onboarding.onInstall();
+            if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
         }
     });
 
