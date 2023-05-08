@@ -41,7 +41,7 @@ import Main from '../public/Main';
 import { getSignupApplication } from './helper';
 import { PlanIDs, SubscriptionData } from './interfaces';
 
-interface Props {
+export interface Props {
     subscriptionData: SubscriptionData;
     plans: Plan[];
     api: Api;
