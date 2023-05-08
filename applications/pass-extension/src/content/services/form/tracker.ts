@@ -2,7 +2,8 @@ import { parse } from 'tldts';
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { fathom } from '@proton/pass/fathom';
-import { WorkerMessageType } from '@proton/pass/types';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -10,36 +11,58 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { DETECTED_FORM_ID_ATTR, EMAIL_PROVIDERS } from '../../constants';
 import { withContext } from '../../context/context';
-import { DropdownAction, FormField, type FormHandle, type FormTracker, FormType } from '../../types';
+import type { FormHandle, FormTracker } from '../../types';
+import { DropdownAction, FieldHandle, FormField, FormType } from '../../types';
 
 const { isVisible } = fathom.utils;
 
+const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): boolean => {
+    switch (action) {
+        case DropdownAction.AUTOFILL:
+            return settings.autofill.inject;
+        case DropdownAction.AUTOSUGGEST_ALIAS:
+            return settings.autosuggest.email;
+        case DropdownAction.AUTOSUGGEST_PASSWORD:
+            return settings.autosuggest.password;
+        default:
+            return true;
+    }
+};
+
+const withAction = (action: DropdownAction, settings: ProxiedSettings): MaybeNull<DropdownAction> =>
+    canProcessAction(action, settings) ? action : null;
+
+type FormTrackerState = { isSubmitting: boolean };
+type FieldsForFormResults = WeakMap<
+    FieldHandle,
+    {
+        action: MaybeNull<DropdownAction>;
+        field: FieldHandle;
+        attachIcon: boolean;
+    }
+>;
+
 export const createFormTracker = (form: FormHandle): FormTracker => {
     logger.debug(`[FormTracker]: Tracking form [${form.formType}:${form.id}]`);
-    const context = { isSubmitting: false };
+
+    const listeners = createListenerStore();
+    const state: FormTrackerState = { isSubmitting: false };
 
     form.element.setAttribute(DETECTED_FORM_ID_ATTR, form.id);
 
-    const listeners = createListenerStore();
-
-    const submitBtn = first(form.getFieldsFor(FormField.SUBMIT));
-    const username = first(form.getFieldsFor(FormField.USERNAME));
-    const password = first(form.getFieldsFor(FormField.PASSWORD));
-
-    const getFormData = (): { username?: string; password?: string } => {
-        return {
-            username: username?.value,
-            password: password?.value,
-        };
-    };
+    /* FIXME: should account for hidden fields */
+    const getFormData = (): { username?: string; password?: string } => ({
+        username: first(form.getFieldsFor(FormField.USERNAME))?.value,
+        password: first(form.getFieldsFor(FormField.PASSWORD))?.value,
+    });
 
     const onSubmitHandler = withContext(async ({ service: { iframe } }) => {
         iframe.dropdown?.close();
 
         const { username, password } = getFormData();
 
-        if (!context.isSubmitting && username !== undefined) {
-            context.isSubmitting = true;
+        if (!state.isSubmitting && username !== undefined) {
+            state.isSubmitting = true;
             await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.FORM_ENTRY_STAGE,
@@ -52,15 +75,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 })
             );
 
-            /**
-             * TODO: attach a short-lived mutation observer to
+            /* TODO: attach a short-lived mutation observer to
              * detect if the form is still there in order to
              * stash the submission if we can infer a failure
-             *
              * TODO: for SPA forms we should also handle the
-             * xmlhttprequests intercepted failures here
-             */
-            setTimeout(() => (context.isSubmitting = false), 500);
+             * xmlhttprequests intercepted failures here */
+            setTimeout(() => (state.isSubmitting = false), 500);
         }
     });
 
@@ -69,46 +89,96 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
      *   in order to support multi-step forms for autofill
      * - REGISTER : match first username & password fields
      *   for auto-suggestion action */
-    const setFieldActions = (form: FormHandle): void => {
-        form.listFields().forEach((field) => field.detachIcon());
+    const getTrackableFields = (settings: ProxiedSettings): FieldsForFormResults => {
+        const results: FieldsForFormResults = new WeakMap();
+
+        const username = first(form.getFieldsFor(FormField.USERNAME));
+        const password = first(form.getFieldsFor(FormField.PASSWORD));
 
         switch (form.formType) {
             case FormType.LOGIN: {
-                const targets = [username, password].filter((field) => field && isVisible(field.element));
-                targets.forEach((field) => field?.setAction(DropdownAction.AUTOFILL));
-                first(targets)?.attachIcon();
+                const action = withAction(DropdownAction.AUTOFILL, settings);
 
+                if (username) {
+                    results.set(username, {
+                        action,
+                        field: username,
+                        attachIcon: action !== null && isVisible(username.element),
+                    });
+                }
+
+                if (password) {
+                    const usernameAttached = Boolean(username && results.get(username)?.attachIcon);
+                    results.set(password, {
+                        action: withAction(DropdownAction.AUTOFILL, settings),
+                        field: password,
+                        attachIcon: action !== null && !usernameAttached && isVisible(password.element),
+                    });
+                }
                 break;
             }
 
             case FormType.REGISTER: {
-                /* Avoid prompting for alias auto-suggestion
-                 * when we match an excluded email provider */
                 const exclude = EMAIL_PROVIDERS.includes(parse(window.location.hostname)?.domain ?? '');
 
-                if (!exclude) {
-                    username?.setAction(DropdownAction.AUTOSUGGEST_ALIAS);
-                    username?.attachIcon();
+                if (!exclude && username) {
+                    results.set(username, {
+                        action: withAction(DropdownAction.AUTOSUGGEST_ALIAS, settings),
+                        field: username,
+                        attachIcon: isVisible(username.element),
+                    });
                 }
 
-                password?.setAction(DropdownAction.AUTOSUGGEST_PASSWORD);
-                password?.attachIcon();
-
+                if (password) {
+                    results.set(password, {
+                        action: withAction(DropdownAction.AUTOSUGGEST_PASSWORD, settings),
+                        field: password,
+                        attachIcon: isVisible(password.element),
+                    });
+                }
                 break;
             }
         }
+
+        return results;
     };
 
-    const attach = () => {
-        setFieldActions(form);
-        username?.attachListeners(onSubmitHandler);
-        password?.attachListeners(onSubmitHandler);
+    const attach = withContext(({ getSettings, getState }) => {
+        const { loggedIn, status } = getState();
+        const settings = getSettings();
+        const fieldsToTrack = getTrackableFields(settings);
+
+        form.listFields().forEach((field) => {
+            const match = fieldsToTrack.get(field);
+
+            if (match === undefined) {
+                field.detachListeners();
+                field.detachIcon();
+                return;
+            }
+
+            field.setAction(match.action);
+
+            if (match.attachIcon) {
+                const icon = field.attachIcon();
+                icon.setStatus(status);
+                if (!loggedIn) icon.setCount(0);
+            } else field.detachIcon();
+
+            match.field.attachListeners(onSubmitHandler);
+        });
+
+        /* setup listener for form submission */
+        const submitBtn = first(form.getFieldsFor(FormField.SUBMIT));
         listeners.addListener(form.element, 'submit', onSubmitHandler);
         listeners.addListener(submitBtn?.element, 'click', onSubmitHandler);
-    };
+    });
 
+    /* when detaching the form tracker : remove every listener
+     * for both the current tracker and all fields*/
     const detach = () => {
         listeners.removeAll();
+
         form.listFields().forEach((field) => {
             field.detachListeners();
             field.detachIcon();

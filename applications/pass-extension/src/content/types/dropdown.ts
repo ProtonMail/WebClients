@@ -17,7 +17,7 @@ export type DropdownSetActionPayload =
 export type OpenDropdownOptions = {
     field: FieldHandle;
     action: DropdownAction;
-    focus?: boolean;
+    autofocused?: boolean;
 };
 
 export interface InjectedDropdown extends IFrameAppService<OpenDropdownOptions> {

@@ -120,41 +120,42 @@ export const createIFrameApp = ({
 
     const positionDropdown = () => setIframePosition(getIframePosition(iframeRoot));
 
-    const close = (options?: { event?: Event; userInitiated: boolean }) =>
-        requestAnimationFrame(() => {
-            if (state.visible) {
-                const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
+    const close = (options?: { event?: Event; userInitiated: boolean }) => {
+        if (state.visible) {
+            const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
 
-                if (!target || !backdropExclude?.().includes(target)) {
-                    listeners.removeAll();
-                    state.visible = false;
+            if (!target || !backdropExclude?.().includes(target)) {
+                listeners.removeAll();
+                state.visible = false;
+
+                requestAnimationFrame(() => {
                     onClose?.({ userInitiated: options?.userInitiated ?? true });
-
                     iframe.classList.remove(`${EXTENSION_PREFIX}-iframe-visible`);
-                }
+                });
             }
-        });
+        }
+    };
 
     const open = (scrollRef?: HTMLElement) => {
-        requestAnimationFrame(() => {
-            if (!state.visible) {
-                state.visible = true;
+        if (!state.visible) {
+            state.visible = true;
+
+            listeners.addListener(window, 'resize', positionDropdown);
+            listeners.addListener(scrollRef, 'scroll', () => requestAnimationFrame(positionDropdown));
+
+            if (backdropClose) {
+                listeners.addListener(window, 'mousedown', (event) => close({ event, userInitiated: true }));
+            }
+
+            sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
+
+            requestAnimationFrame(() => {
+                iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
                 setIframeDimensions(getIframeDimensions());
                 positionDropdown();
-
-                iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
-
-                listeners.addListener(window, 'resize', positionDropdown);
-                listeners.addListener(scrollRef, 'scroll', () => requestAnimationFrame(positionDropdown));
-
-                if (backdropClose) {
-                    listeners.addListener(window, 'mousedown', (event) => close({ event, userInitiated: true }));
-                }
-
-                sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
                 onOpen?.();
-            }
-        });
+            });
+        }
     };
 
     const init = (port: Runtime.Port) => {

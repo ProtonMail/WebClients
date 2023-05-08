@@ -16,21 +16,28 @@ import { type ContentScriptService, createContentScriptService } from './service
 import './injections/injection.scss';
 
 const mainFrame = isMainFrame();
-const CONTENT_SCRIPT_ID = uniqueId();
+const CONTENT_SCRIPT_ID = uniqueId(12);
 
-export let contentScript: MaybeNull<ContentScriptService> = null;
+let contentScript: MaybeNull<ContentScriptService> = null;
 
-export const unregisterContentScript = (reason: string) => {
+/* destroy the content-script service if registered and
+ * resets the current content-script reference */
+const unregisterContentScript = (reason: string) => {
     contentScript?.destroy({ recycle: false, reason });
     contentScript = null;
 };
 
-export const registerContentScript = () => {
+/* creates the content-script service and starts it immediately.
+ * any errors during this sequence will unregister it*/
+const registerContentScript = () => {
     contentScript = createContentScriptService(CONTENT_SCRIPT_ID, mainFrame);
     contentScript?.start().catch(() => unregisterContentScript('start failure'));
 };
 
-export const handleFrameVisibilityChange = () => {
+/* when the frame becomes hidden destroy the content-script
+ * to free-up resources on inactive tabs. As soon as it is
+ * visible: re-create it from scratch */
+const handleFrameVisibilityChange = () => {
     try {
         switch (document.visibilityState) {
             case 'visible':
@@ -44,7 +51,9 @@ export const handleFrameVisibilityChange = () => {
     }
 };
 
-export const handleIncomingCSPostMessage = (message: MessageEvent) => {
+const handleIncomingCSPostMessage = (message: MessageEvent) => {
+    if (window.self !== window.top) return;
+
     if (message.data?.type === CONTENT_SCRIPT_INJECTED_MESSAGE && message?.data?.id !== CONTENT_SCRIPT_ID) {
         logger.info(`[ContentScript::${CONTENT_SCRIPT_ID}] new script detected ${message.data.id}`);
         window.removeEventListener('visibilitychange', handleFrameVisibilityChange);
@@ -53,10 +62,13 @@ export const handleIncomingCSPostMessage = (message: MessageEvent) => {
     }
 };
 
+/* on every new content-script injection : clean-up the DOM
+ * and notify any other content-script living on the same tab */
 const main = () => {
     DOMCleanUp();
 
-    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, '*');
+    logger.info(`[ContentScript::${CONTENT_SCRIPT_ID}] Start injection sequence`);
+    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, window.location.origin);
     window.addEventListener('message', handleIncomingCSPostMessage);
     window.addEventListener('visibilitychange', handleFrameVisibilityChange);
 

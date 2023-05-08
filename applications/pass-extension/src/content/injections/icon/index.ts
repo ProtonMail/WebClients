@@ -137,13 +137,16 @@ export const getInputInitialStyles = (el: HTMLElement): InputInitialStyles => {
     return initialStyles ? JSON.parse(initialStyles) : {};
 };
 
-export const cleanupInputInjectedStyles = (input: HTMLInputElement) =>
+export const cleanupInputInjectedStyles = (input: HTMLInputElement) => {
     Object.entries(getInputInitialStyles(input)).forEach(
         ([prop, value]) =>
             Boolean(value)
                 ? input.style.setProperty(prop, value) /* if has initial style -> reset */
                 : input.style.removeProperty(prop) /* else remove override */
     );
+
+    input.removeAttribute(INPUT_STYLES_ATTR);
+};
 
 export const cleanupInjectionStyles = ({ wrapper, input }: Pick<InjectionElements, 'wrapper' | 'input'>) => {
     wrapper.style.removeProperty('float');
@@ -209,6 +212,7 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
  * + Pre-compute shared styles and DOMRects between two passes */
 export const applyInjectionStyles = (elements: InjectionElements) => {
     const { input, inputBox } = elements;
+    cleanupInputInjectedStyles(input);
 
     const sharedOptions = {
         inputBox,
