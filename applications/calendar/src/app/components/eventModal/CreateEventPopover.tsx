@@ -7,6 +7,7 @@ import { PrimaryButton } from '@proton/components';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
@@ -35,6 +36,7 @@ interface Props {
     isCreateEvent: boolean;
     isInvitation: boolean;
     isDraggingDisabled?: boolean;
+    isDrawerApp?: boolean;
 }
 
 const CreateEventPopover = ({
@@ -52,6 +54,7 @@ const CreateEventPopover = ({
     isCreateEvent,
     isInvitation,
     isDraggingDisabled = false,
+    isDrawerApp,
 }: Props) => {
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
@@ -177,16 +180,17 @@ const CreateEventPopover = ({
                     isInvitation={isInvitation}
                     setParticipantError={setParticipantError}
                 />
-                <PopoverFooter className="flex-nowrap flex-justify-end">
+                <PopoverFooter className={clsx(['flex-justify-end flex-nowrap', isDrawerApp && 'flex-column gap-2'])}>
                     <Button
                         disabled={loadingAction}
                         data-testid="create-event-popover:more-event-options"
-                        className="mr-4"
+                        className={clsx([isDrawerApp ? 'w100' : 'mr-4'])}
                         onClick={handleMore}
                     >{c('Action').t`More options`}</Button>
                     <PrimaryButton
                         data-testid="create-event-popover:save"
                         type="submit"
+                        className={isDrawerApp ? 'w100' : undefined}
                         loading={loadingAction && lastAction === ACTION.SUBMIT}
                         disabled={loadingAction || cannotSave}
                     >
