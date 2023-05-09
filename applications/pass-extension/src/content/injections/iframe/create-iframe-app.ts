@@ -10,18 +10,17 @@ import { merge } from '@proton/pass/utils/object';
 import { EXTENSION_PREFIX } from '../../constants';
 import type {
     IFrameApp,
+    IFrameDimensions,
     IFrameEndpoint,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
+    IFramePosition,
     IFrameState,
 } from '../../types/iframe';
 import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
 import { createIframeRoot } from './create-iframe-root';
 
 import './iframe.scss';
-
-export type IframePosition = { top: number; left?: number; right?: number; zIndex?: number };
-export type IframeDimensions = { width: number; height: number };
 
 type CreateIFrameAppOptions = {
     id: IFrameEndpoint;
@@ -33,8 +32,8 @@ type CreateIFrameAppOptions = {
     onReady?: () => void;
     onOpen?: () => void;
     onClose?: (options: { userInitiated: boolean }) => void;
-    getIframePosition: (iframeRoot: HTMLDivElement) => IframePosition;
-    getIframeDimensions: () => IframeDimensions;
+    position: (iframeRoot: HTMLDivElement) => IFramePosition;
+    dimensions: () => IFrameDimensions;
 };
 
 export const createIFrameApp = ({
@@ -46,8 +45,8 @@ export const createIFrameApp = ({
     backdropExclude,
     onOpen,
     onClose,
-    getIframePosition,
-    getIframeDimensions,
+    position,
+    dimensions,
 }: CreateIFrameAppOptions): IFrameApp => {
     const iframeRoot = createIframeRoot();
     const portMessageHandlers: Map<IFrameMessageType, IFramePortMessageHandler> = new Map();
@@ -58,6 +57,7 @@ export const createIFrameApp = ({
         loaded: false,
         port: null,
         framePort: null,
+        position: { top: -1, left: -1, zIndex: -1 },
     };
 
     const listeners = createListenerStore();
@@ -106,19 +106,24 @@ export const createIFrameApp = ({
         return () => portMessageHandlers.delete(type);
     };
 
-    const setIframePosition = ({ top, left, right, zIndex }: IframePosition) => {
+    const getPosition = (): IFramePosition => state.position;
+
+    const setIframePosition = (values: IFramePosition) => {
+        state.position = values;
+
+        const { top, left, right, zIndex } = values;
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-zindex`, `${zIndex ?? 1}`);
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-top`, pixelEncoder(top));
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-left`, left ? pixelEncoder(left) : 'unset');
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-right`, right ? pixelEncoder(right) : 'unset');
     };
 
-    const setIframeDimensions = ({ width, height }: IframeDimensions) => {
+    const setIframeDimensions = ({ width, height }: IFrameDimensions) => {
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-width`, pixelEncoder(width));
         iframe.style.setProperty(`--${EXTENSION_PREFIX}-iframe-height`, pixelEncoder(height));
     };
 
-    const positionDropdown = () => setIframePosition(getIframePosition(iframeRoot));
+    const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(iframeRoot)));
 
     const close = (options?: { event?: Event; userInitiated: boolean }) => {
         if (state.visible) {
@@ -140,8 +145,8 @@ export const createIFrameApp = ({
         if (!state.visible) {
             state.visible = true;
 
-            listeners.addListener(window, 'resize', positionDropdown);
-            listeners.addListener(scrollRef, 'scroll', () => requestAnimationFrame(positionDropdown));
+            listeners.addListener(window, 'resize', updatePosition);
+            listeners.addListener(scrollRef, 'scroll', updatePosition);
 
             if (backdropClose) {
                 listeners.addListener(window, 'mousedown', (event) => close({ event, userInitiated: true }));
@@ -149,12 +154,10 @@ export const createIFrameApp = ({
 
             sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
 
-            requestAnimationFrame(() => {
-                iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
-                setIframeDimensions(getIframeDimensions());
-                positionDropdown();
-                onOpen?.();
-            });
+            iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
+            setIframeDimensions(dimensions());
+            updatePosition();
+            onOpen?.();
         }
     };
 
@@ -192,7 +195,7 @@ export const createIFrameApp = ({
     registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, () => close({ userInitiated: true }));
 
     registerMessageHandler(IFrameMessageType.IFRAME_DIMENSIONS, (message) => {
-        const { width, height } = merge(getIframeDimensions(), { height: message.payload.height });
+        const { width, height } = merge(dimensions(), { height: message.payload.height });
         return setIframeDimensions({ width, height });
     });
 
@@ -202,6 +205,8 @@ export const createIFrameApp = ({
         sendPostMessage,
         sendPortMessage,
         registerMessageHandler,
+        getPosition,
+        updatePosition,
         reset,
         open,
         close,

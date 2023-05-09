@@ -23,8 +23,8 @@ export const createNotification = (): InjectedNotification => {
                     payload: { reason: 'AUTOSAVE_DISMISSED' },
                 })
             ),
-        getIframePosition: () => ({ top: 15, right: 15 }),
-        getIframeDimensions: () => ({ width: NOTIFICATION_WIDTH, height: NOTIFICATION_HEIGHT }),
+        position: () => ({ top: 15, right: 15 }),
+        dimensions: () => ({ width: NOTIFICATION_WIDTH, height: NOTIFICATION_HEIGHT }),
     });
 
     const open = async ({ action, submission }: OpenNotificationOptions) => {
@@ -48,9 +48,9 @@ export const createNotification = (): InjectedNotification => {
         getState: () => iframe.state,
         reset: pipe(iframe.reset, () => notification),
         init: pipe(iframe.init, () => notification),
+        open: pipe(open, () => notification),
         close: pipe(iframe.close, () => notification),
         destroy: iframe.destroy,
-        open: pipe(open, () => notification),
     };
 
     return notification;
