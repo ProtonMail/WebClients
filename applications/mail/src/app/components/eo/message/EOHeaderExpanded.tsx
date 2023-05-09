@@ -53,7 +53,7 @@ const EOHeaderExpanded = ({
     return (
         <div
             className={clsx([
-                'message-header eo-message-header message-header-expanded is-outbound border-bottom',
+                'message-header eo-message-header px-7 sm:px-0 message-header-expanded is-outbound border-bottom',
                 showDetails && 'message-header--showDetails',
                 !messageLoaded && 'is-loading',
             ])}
