@@ -458,6 +458,9 @@
       "Insert link": [
         "Link invoegen"
       ],
+      "Invite user": [
+        "Gebruiker uitnodigen"
+      ],
       "Italic": [
         "Schuin"
       ],
@@ -1082,7 +1085,7 @@
     },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: de e-mail- en agenda oplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
+        "${ mailPlus }: de e-mail- en agendaoplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
       ]
     },
     "Billing cycle": {
@@ -2622,7 +2625,7 @@
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
       "ProtonMail logo and a plus sign": [
-        "Proton Mail logo en een plus teken"
+        "Proton Mail-logo en een plus-teken"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -3041,9 +3044,6 @@
       ],
       "Organization key is not decrypted.": [
         "Organisatiesleutel is niet gedecodeerd."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisatie niet herkend. Probeer opnieuw."
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -3484,10 +3484,10 @@
         "Oeps, er is iets misgegaan"
       ],
       "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } alstublieft of controleer uw internetverbinding."
+        "${ refresh } of controleer uw internetverbinding."
       ],
       "Please ${ refresh } or try again later.": [
-        "${ refresh } alstublieft of probeer het later opnieuw."
+        "${ refresh } of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
@@ -3643,6 +3643,313 @@
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "U kunt een ICS-bestand van de succesvol geëxporteerde afspraken opslaan."
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB opslagruimte"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen familieleden op ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Nieuwe gebruiker aanmaken"
+      ],
+      "Don't show this offer again": [
+        "Deze aanbieding niet opnieuw weergeven"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Bestaande ${ BRAND_NAME }-gebruiker uitnodigen"
+      ],
+      "Invite member to your family": [
+        "Lid uitnodigen voor uw gezin"
+      ],
+      "Keep current plan": [
+        "Huidig abonnement behouden"
+      ],
+      "Setup family group": [
+        "Gezinsgroep configureren"
+      ],
+      "Switch plans": [
+        "Van abonnement wisselen"
+      ],
+      "View invitation": [
+        "Uitnodiging weergeven"
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging"
+      ],
+      "View the invitations": [
+        "Bekijk de uitnodigingen"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "Tot 6 gebruikers"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Gezinsgroep niet herkend. Probeer het opnieuw."
+      ],
+      "Organization not recognized. Try again.": [
+        "Organisatie niet herkend. Probeer het opnieuw."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME }-groepen"
+      ],
+      "*Only one free trial per customer.": [
+        "*Maximaal één gratis proefversie per gebruiker."
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Visionary- of gezinsabonnement."
+      ],
+      "customer support": [
+        "klantondersteuning"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Uitnodiging van ${ invitation.OrganizationName }"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Uitgenodigd door: ${ inviteEmail }"
+      ],
+      "Leave family plan": [
+        "Gezinsabonnement verlaten"
+      ],
+      "Manage addresses.": [
+        "Beheer adressen."
+      ],
+      "Manage user accounts": [
+        "Gebruikersaccounts beheren"
+      ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Er mogen maximaal 10 uitnodigingen worden geaccepteerd in een periode van 6 maanden."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander groepsabonnement."
+      ],
+      "Pending": [
+        "In behandeling"
+      ],
+      "Pending invitation": [
+        "Openstaande uitnodiging"
+      ],
+      "Pending invitations": [
+        "Openstaande uitnodigingen"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "U kunt op dit moment niet van abonnement wisselen."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Aan u toegewezen opslagruimte: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "De abonnementskosten worden in rekening gebracht bij de primaire beheerder van het Visionary- of gezinsabonnement."
+      ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "Om de overstap makkelijker te maken, geven we u 30 dagen toegang tot ${ BRAND_NAME } Unlimited*."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary- en gezinsabonnmenten bieden op dit moment geen ondersteuning voor externe accounts. Maak een adres voor ${ BRAND_NAME } voordat u zich hierbij aansluit. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary- en gezinsabonnementen bieden op dit moment geen ondersteuning voor levenslange accounts."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
+      ],
+      "You are part of ${ organization.Name }.": [
+        "U bent onderdeel van ${ organization.Name }."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "U hebt de limiet van 10 geaccepteerde uitnodigingen in 6 maanden bereikt. U kunt weer op de knop klikken wanneer u extra gebruikers kunt uitnodigen."
+      ],
+      "You have successfully joined the Family plan": [
+        "U hebt zich aangesloten bij het Family-abonnement"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "U verliest toegang tot alle premium functies en opslagruimte van ${ BRAND_NAME } Family."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Met uw huidige abonnement kunt u zich niet aansluiten bij een Visionary- of gezinsabonnement."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen hetzelfde tarief."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op de standaardprijs per maand."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Maximaal één gratis proefversie per gebruiker."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Standaard wijzen we ${ formattedStorage } opslagruimte toe aan het beheerdersaccount. U kunt de toegewezen opslagruimte die moet worden verdeeld onder aanvullende gebruikers later beheren."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Maak gezinsgebruikers aan, beheer ze en wijs opslagruimte toe die wordt gedeeld tussen ${ DRIVE_APP_NAME } en ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Als de gebruiker al een ${ MAIL_APP_NAME }-adres heeft, voert u het hier in. Anders moet de gebruiker eerst een account aanmaken."
+      ],
+      "Online privacy, for your whole family": [
+        "Online privacy voor het hele gezin"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "De uitnodiging wordt ingetrokken en de gebruiker kan zich niet aansluiten bij ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
+      ],
+      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
+        "U kunt een bestaande ${ BRAND_NAME }-gebruiker uitnodigen of een nieuwe gebruiker aanmaken"
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "U kunt de opslagruimte voor deze gebruiker uitbreiden of beperken."
+      ],
+      "You left this plan": [
+        "U hebt dit abonnement verlaten"
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Voeg gebruikersaccounts toe aan uw gezinsgroep, verwijder accounts en bewerk ze."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Voeg gebruikersaccounts toe aan uw organisatie, verwijder ze en bewerk ze."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Voer de groepsnaam van het gezin in om te bevestigen"
+      ],
+      "Enter organization name to confirm": [
+        "Voer de organisatienaam in om te bevestigen"
+      ],
+      "Family name": [
+        "Gezinsnaam"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Hiermee worden alle subgebruikers, accounts en gegevens die zijn gekoppeld aan uw organisatie, verwijderd."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Family"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } is verwijderd uit ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "Er is een fout opgetreden, probeer het opnieuw"
+      ],
+      "Member updated": [
+        "Lid bijgewerkt"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Gebruiker toevoegen aan uw ${ PLAN_NAMES.visionary2022 }-account"
+      ],
+      "Change family name": [
+        "Gezinsnaam wijzigen"
+      ],
+      "Delete family group?": [
+        "Gezinsgroep verwijderen?"
+      ],
+      "Delete organization?": [
+        "Organisatie verwijderen?"
+      ],
+      "Edit user storage": [
+        "Gebruikersopslag bewerken"
+      ],
+      "Family name": [
+        "Gezinsnaam"
+      ],
+      "Family plan": [
+        "Family-abonnement"
+      ],
+      "Introducing ${ planName }": [
+        "Ontdek ${ planName }"
+      ],
+      "Invite a user": [
+        "Een gebruiker uitnodigen"
+      ],
+      "Manage family group": [
+        "Gezinsgroep beheren"
+      ],
+      "Set family name": [
+        "Gezinsnaam instellen"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide My Email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
     },
     "Feature": {
@@ -3853,9 +4160,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Voeg een aangepast filter toe om automatisch bepaalde acties uit te voeren, zoals het labelen of archiveren van berichten. Filters kunnen rechtstreeks via de programmeertaal Sieve worden bewerkt en aangemaakt."
-      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "E-mails van adressen die door u of ${ BRAND_NAME } als spam zijn gemarkeerd, komen in uw spamfolder terecht. Als u e-mails van een van deze adressen wilt toestaan, markeer het dan als \"geen spam\"."
       ],
@@ -4480,6 +4784,9 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
+      "${ storage } storage": [
+        "${ storage } opslag"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
@@ -4542,6 +4849,9 @@
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
+      ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Krijg toegang tot uw wachtwoorden en bescherm uw online identiteiten naadloos tussen uw apparaten. Download en installeer de relevante ${ PASS_APP_NAME }-apps en extensies."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
@@ -4606,6 +4916,9 @@
       ],
       "Align right": [
         "Rechts uitlijnen"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME }-apps en hun premium functies"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
@@ -4819,9 +5132,6 @@
       ],
       "Credits earned": [
         "Tegoed verdiend"
-      ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
       ],
       "Custom": [
         "Aangepast"
@@ -5175,7 +5485,7 @@
         "is het noodzakelijk"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Ik ben @ProtonMail aan het gebruiken en dacht dat u dit misschien leuk vindt. Het is een veilige e-maildienst die uw privacy beschermd. Meld u aan met mijn doorverwijslink om gratis 1 maand premium functies te krijgen: ${ referrerLink }"
+        "Ik gebruik @ProtonMail en dacht dat u dit misschien ook leuk vindt. Het is een veilige e-maildienst die uw privacy beschermd. Meld u aan met mijn doorverwijslink om gratis 1 maand premium functies te krijgen: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -5278,6 +5588,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "No account keys exist": [
+        "Er bestaan geen accountsleutels"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Geen account herstelmethode ingesteld; loopt u het risico de toegang tot uw account te verliezen"
@@ -5618,9 +5931,6 @@
       "The calendar will be removed from your account.": [
         "De agenda zal verwijderd worden van uw account."
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
-      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "De e-mailverificatielink is verlopen. Log in om de verificatielink opnieuw te verzenden."
       ],
@@ -5831,6 +6141,9 @@
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Tot ${ FAMILY_MAX_USERS } gebruikers"
+      ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
       ],
@@ -6037,6 +6350,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "U kan geen ${ MAIL_APP_NAME }-gebruikers doorverwijzen"
       ],
+      "You cannot undo this action.": [
+        "U kunt deze actie niet ongedaan maken."
+      ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME }-applicaties of op het ${ VPN_APP_NAME }-dashboard. ${ learnMore }"
       ],
@@ -6198,11 +6514,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Om veiligheidsredenen moeten we controleren of u de eigenaar van ${ domainName }. Voeg het volgende TXT-record toe aan de DNS van uw domein. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Toevoegen, verwijderen en beheren van gebruikers binnen uw organisatie. Hier kunt u hun toegewezen opslagruimte aanpassen, admin rechten verlenen en meer. Selecteer een gebruiker om hun e-mailadressen te beheren. Het e-mailadres bovenaan de lijst zal automatisch worden geselecteerd als het standaard e-mailadres."
       ]
     },
     "Info for payment methods": {
@@ -6920,9 +7231,6 @@
       ],
       "End weekday": [
         "Laatste weekdag"
-      ],
-      "Enter organization name to confirm": [
-        "Voer de naam van de organisatie in om te bevestigen"
       ],
       "Enter password": [
         "Vul login wachtwoord in"
@@ -7719,11 +8027,6 @@
         "Log in"
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Hiermee worden alle subgebruikers, accounts en gegevens die aan uw organisatie zijn gekoppeld definitief verwijderd."
-      ]
-    },
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Alle filteracties worden toegepast op alle berichten in uw ${ MAIL_APP_NAME }-account. Er worden geen automatische antwoorden verstuurd."
@@ -8039,6 +8342,10 @@
         "${ n } agenda",
         "${ n } agenda's"
       ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
         "${ n } aangepaste e-maildomeinen"
@@ -8063,6 +8370,10 @@
         "${ n } map en label",
         "${ n } mappen en labels"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } Hide My Email-alias",
+        "${ n } Hide My Email-aliassen"
+      ],
       "${ n } label": [
         "${ n } label",
         "${ n } labels"
@@ -8070,6 +8381,10 @@
       "${ n } message per day": [
         "${ n } bericht per dag",
         "${ n } berichten per dag"
+      ],
+      "${ n } vault": [
+        "${ n } kluis",
+        "${ n } kluizen"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
@@ -8090,6 +8405,9 @@
       ],
       "1 free VPN connection in total": [
         "1 gratis VPN-verbinding"
+      ],
+      "1 user": [
+        "1 gebruiker"
       ],
       "99.95% SLA": [
         "99,95% SLA"
@@ -8120,6 +8438,12 @@
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
+      ],
+      "Custom domain for email aliases": [
+        "Aangepast domein voor e-mailalliassen"
+      ],
+      "Custom domains for email aliases": [
+        "Aangepaste domeinen voor e-mailalliassen"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -8163,6 +8487,9 @@
       ],
       "HTML signatures": [
         "HTML-handtekeningen"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde 2FA-authenticator"
       ],
       "Kill switch/always-on VPN": [
         "IP-beveiliging/altijd-actieve VPN"
@@ -8218,6 +8545,9 @@
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
       ],
+      "Strong E2E encryption": [
+        "Sterke E2E versleuteling"
+      ],
       "Team management": [
         "Teambeheer"
       ],
@@ -8226,6 +8556,9 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
+      ],
+      "Unlimited devices": [
+        "Onbeperkt aantal apparaten"
       ],
       "Unlimited filters": [
         "Onbeperkt aantal filters"
@@ -8236,14 +8569,29 @@
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Onbeperkt aantal Hide My Email-alliassen"
+      ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
+      "Unlimited passwords and notes": [
+        "Onbeperkt aantal wachtwoorden en notities"
+      ],
+      "Unlimited vaults": [
+        "Onbeperkt aantal kluizen"
+      ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Tot ${ FAMILY_MAX_USERS } gebruikers"
+      ],
+      "Up to ${ n } users": [
+        "Tot ${ n } gebruikers"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
@@ -9363,9 +9711,6 @@
       ],
       "Complete the transition to privacy with our secure importing tools.": [
         "Voltooi de transitie naar privacy met onze veilige importeertools."
-      ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "U kunt meerdere labels toepassen op één bericht, maar berichten kunnen meestal slechts in één map voorkomen. Slepen en neerzetten om de volgorde van uw mappen en labels te wijzigen."
       ]
     },
     "Settings section title": {
@@ -9522,9 +9867,6 @@
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
-      ],
-      "3 TB": [
-        "3 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -9865,10 +10207,10 @@
         "Abonnementen"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Uw abonnement was gekocht met een Android app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Google Play Store gaan."
+        "Uw abonnement was gekocht met een Android-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Google Play Store gaan."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Uw abonnement was gekocht met een iOS app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+        "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
       ]
     },
     "Subscription price": {
@@ -10281,6 +10623,9 @@
       "Account and password": [
         "Account en wachtwoord"
       ],
+      "Account keys": [
+        "Accountsleutels"
+      ],
       "Account recovery": [
         "Accountherstel"
       ],
@@ -10545,9 +10890,6 @@
       ],
       "Delete logs": [
         "Logs wissen"
-      ],
-      "Delete organization?": [
-        "Organisatie verwijderen?"
       ],
       "Delete user": [
         "Gebruiker verwijderen"
@@ -10824,6 +11166,9 @@
       "Plan summary": [
         "Samenvatting abonnement"
       ],
+      "Preview": [
+        "Voorbeeld"
+      ],
       "Previous": [
         "Vorige"
       ],
@@ -11072,14 +11417,8 @@
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
-      "Your current plan": [
-        "Uw huidige abonnement"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
-      ],
-      "Your plan": [
-        "Uw abonnement"
       ],
       "Your recovery status": [
         "Uw herstelstatus"

@@ -401,6 +401,18 @@
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
       ],
+      "Get more addresses": [
+        "Få flere adresser"
+      ],
+      "Get more filters": [
+        "Få flere filtre"
+      ],
+      "Get more folders": [
+        "Få flere foldere"
+      ],
+      "Get more labels": [
+        "Få flere etiketter"
+      ],
       "Get verification code": [
         "Få bekræftelseskode"
       ],
@@ -1004,6 +1016,9 @@
     "Animation": {
       "5 trackers removed": [
         "5 trackere fjernet"
+      ],
+      "Auto forwarded": [
+        "Automatisk videresendt"
       ],
       "Email received": [
         "E-mail modtaget"
@@ -3011,9 +3026,6 @@
       "Organization key is not decrypted.": [
         "Organisationsnøgle er ikke dekrypteret."
       ],
-      "Organization not recognized. Try again.": [
-        "Organisation ikke genkendt. Prøv igen."
-      ],
       "Password is required": [
         "Adgangskode er påkrævet."
       ],
@@ -3792,8 +3804,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Tilføj et brugerdefineret filter til automatisk at udføre visse handlinger, f. eks. mærkning eller aktivering af meddelelser. Filtre kan redigeres og oprettes direkte via Sieve-programmeringssproget."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Brug et tilpasset filter til at udføre visse handlinger automatisk, så som at tilføje etiketter eller arkivere beskeder."
       ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "E-mails fra adresser, der er markeret som spam af dig eller ${ BRAND_NAME }, vil blive sendt til din spam-mappe. Hvis du ønsker at tillade e-mails fra en af disse adresser, skal du markere den som \"ikke spam\"."
@@ -4354,6 +4366,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: billede i fuld størrelse"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: forhåndsvisning i lav opløsning"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } vil blive sat som standardkalender."
       ],
@@ -4750,9 +4768,6 @@
       ],
       "Credits earned": [
         "Kreditter optjent"
-      ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
       ],
       "Custom": [
         "Tilpasset"
@@ -5396,6 +5411,9 @@
       "Remove one of your calendars to join this one": [
         "Fjern en af dine kalendere for at deltage i denne"
       ],
+      "Restore": [
+        "Gendan"
+      ],
       "Revoke certificate ${ name }": [
         "Tilbagekald certifikat ${ name }"
       ],
@@ -5509,9 +5527,6 @@
       ],
       "The calendar will be removed from your account.": [
         "Kalenderen vil blive fjernet fra din konto."
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Den e-mailadresse, du placerer øverst på listen, er din standard e-mailadresse. Træk og slip for at omarrangere dine adresser."
       ],
       "The following address is available:": [
         "Den følgende adresse er tilgængelig:"
@@ -5726,6 +5741,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Brug de forskellige typer e-mailadresser og aliasser udbudt af ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
       ],
@@ -5885,6 +5903,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
       ],
+      "You cannot undo this action.": [
+        "Du kan ikke fortryde denne handling."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
       ],
@@ -6034,11 +6055,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Af sikkerhedsmæssige årsager skal vi verificere, at du er ejer af ${ domainName }. Tilføj følgende DNS TXT-post til dit domæne. Det kan du typisk gøre via kontrolpanelet hos din domænenavnsregistrator."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Tilføj, fjern og administrer brugere i din organisation. Her kan du justere deres tildelte lagerplads, tildele administratorrettigheder og meget mere. Vælg en bruger for at administrere deres e-mail-adresser. E-mailadressen øverst på listen vil automatisk blive valgt som standard e-mailadresse."
       ]
     },
     "Info for payment methods": {
@@ -6753,9 +6769,6 @@
       ],
       "End weekday": [
         "Slutdag"
-      ],
-      "Enter organization name to confirm": [
-        "Indtast organisationsnavn for at bekræfte"
       ],
       "Enter password": [
         "Angiv adgangskode"
@@ -7547,11 +7560,6 @@
       ],
       "Sign in": [
         "Log ind"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dette vil permanent slette alle underbrugere, konti og data, der er knyttet til din organisation."
       ]
     },
     "Message": {
@@ -9066,8 +9074,8 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Gennemfør omstillingen til privatliv med vores sikre værktøjer til import og videresendelse."
       ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Du kan anvende flere etiketter på en enkelt besked, men beskeder kan normalt kun være i én enkelt mappe. Træk og slip for at omarrangere rækkefølgen af dine mapper og etiketter."
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "Hold din indbakke organiseret med mapper og etiketter ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -9179,6 +9187,113 @@
       ],
       "Verification": [
         "Bekræftelse"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Luk"
+      ],
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Special offer": [
+        "Specialtilbud"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dage"
+      ],
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } måned GRATIS",
+        "${ n } måneder GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } lagerplads i alt"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 brugere"
+      ],
+      "64 countries": [
+        "64 lande"
+      ],
+      "All paid Mail and Calendar features": [
+        "Alle betalte Mail og Kalender funktioner"
+      ],
+      "High speed VPN": [
+        "Højhastigheds-VPN"
+      ],
+      "Highest VPN speed": [
+        "Højeste VPN-hastighed"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Premium tidlig adgang"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail og Kalender"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Kalender og Drev"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Sikker Cloud-lagerplads"
+      ],
+      "Secure streaming": [
+        "Sikker streaming"
+      ],
+      "Support online privacy": [
+        "Støt privatliv online"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Gå til abonnementer"
+      ],
+      "Upgrade": [
+        "Opgrader"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } month": [
+        "i ${ n } måned",
+        "i ${ n } måneder"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide My Email-aliasser, kalenderdeling med mere."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide My Email-aliasser, kalenderdeling med mere."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -9961,9 +10076,6 @@
       "Delete logs": [
         "Slet logs"
       ],
-      "Delete organization?": [
-        "Slet organisation?"
-      ],
       "Delete user": [
         "Slet bruger"
       ],
@@ -10134,6 +10246,9 @@
       "Import-Export app": [
         "Import-eksport-app"
       ],
+      "Increase your privacy with more addresses": [
+        "Beskyt dit privatliv med flere adresser"
+      ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
@@ -10229,6 +10344,9 @@
       ],
       "PayPal verification failed": [
         "PayPal-bekræftelse fejlede"
+      ],
+      "Personalise your e-mail footer": [
+        "Personaliser din e-mail-sidefod"
       ],
       "Phone": [
         "Telefon"
@@ -10481,14 +10599,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your current plan": [
-        "Dit nuværende abonnement"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
-      ],
-      "Your plan": [
-        "Dit abonnement"
       ],
       "Your recovery status": [
         "Din gendannelsesstatus"

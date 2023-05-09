@@ -1486,6 +1486,9 @@
       ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
+      ],
+      "We couldn't load this page. ": [
+        "Não conseguimos carregar esta página. "
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1613,6 +1616,12 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagem em tamanho máximo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pré-visualização de baixa resolução"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } pode também ser usado com uma única palavra-passe que substitui ambas as palavras-passe de início de sessão e caixa de correio. Para mudar para o modo de uma única palavra-passe, digite a palavra-passe única que gostaria de usar e clique em salvar."
       ],
@@ -1663,6 +1672,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
+      ],
+      "Attention required": [
+        "Atenção Requerida"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
@@ -1856,6 +1868,12 @@
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
+      "Preview failed to be loaded": [
+        "Falha no carregamento da pré-visualização"
+      ],
+      "Preview for this file type is not supported": [
+        "A pré-visualização deste tipo de arquivo não é suportada"
+      ],
       "Priority support": [
         "Apoio ao cliente prioritário"
       ],
@@ -1864,6 +1882,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
+      ],
+      "Restore": [
+        "Restaurar"
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -1876,6 +1897,9 @@
       ],
       "Server load": [
         "Carga do servidor"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Os servidores estão inacessíveis. Por favor, tente novamente dentro de alguns minutos"
       ],
       "Session timed out": [
         "A sessão expirou."
@@ -1958,6 +1982,9 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Atualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial"
+      ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
       ],
@@ -1981,6 +2008,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
@@ -2030,8 +2060,17 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. Os seus links de partilha do Drive estão inativos e não pode fazer upload de novos arquivos. Para continuar a usar sua conta, efetue o pagamento das faturas vencidas."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "A sua conta tem pelo menos uma fatura vencida. A sua conta está restrita e todos os serviços estão bloqueados até o pagamento. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e links de partilha. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será atualizada assim que o pagamento for aprovado."
@@ -2844,6 +2883,64 @@
         "Verificação"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Fechar"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidade"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mês"
+      ],
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ],
+      "for ${ n } month": [
+        "por ${ n } mês",
+        "por ${ n } meses"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Aguarde. Estamos a modificar a sua conta."
@@ -3108,9 +3205,6 @@
       "Delete account": [
         "Eliminar conta"
       ],
-      "Delete organization?": [
-        "Eliminar organização?"
-      ],
       "Device connected!": [
         "Dispositivo ligado!"
       ],
@@ -3221,6 +3315,9 @@
       ],
       "Plans": [
         "Planos"
+      ],
+      "Preview": [
+        "Pré-visualização"
       ],
       "Previous": [
         "Anterior"
