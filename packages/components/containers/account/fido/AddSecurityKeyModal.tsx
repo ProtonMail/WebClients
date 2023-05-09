@@ -7,6 +7,7 @@ import RegisterSecurityKeyContent from '@proton/components/containers/account/fi
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { RegisterCredentialsPayload, getCreatePayload } from '@proton/shared/lib/webauthn/create';
 import { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
@@ -72,6 +73,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             } catch (error) {
                 setFidoError(true);
                 setBehind(false);
+                captureMessage('Security key registration', { level: 'error', extra: { error } });
                 // Purposefully logging the error for somewhat easier debugging
                 console.error(error);
                 return;
