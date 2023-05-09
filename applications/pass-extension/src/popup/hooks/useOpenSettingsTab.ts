@@ -8,7 +8,7 @@ export const useOpenSettingsTab = () => {
         const url = `${settingsUrl}#/${page ?? ''}`;
         const match = await browser.tabs.query({ url: settingsUrl });
 
-        await (match.length > 0
+        await (match.length > 0 && match[0].id
             ? browser.tabs.update(match[0].id, { highlighted: true, url })
             : browser.tabs.create({ url }));
 

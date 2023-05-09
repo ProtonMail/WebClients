@@ -20,7 +20,9 @@ import * as config from '../../../app/config';
  */
 const tryResumeSession = async () => {
     const tab = await browser.tabs.getCurrent();
-    const tabId = tab?.id!;
+    const tabId = tab?.id;
+
+    if (!tab || !tabId) return;
 
     try {
         const persistedSession = await getPersistedSession();
