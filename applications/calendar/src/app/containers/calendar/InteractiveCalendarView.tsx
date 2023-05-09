@@ -1708,6 +1708,7 @@ const InteractiveCalendarView = ({
                                         return noop();
                                     }
                                 }}
+                                isDrawerApp={isDrawerApp}
                             />
                         );
                     }
