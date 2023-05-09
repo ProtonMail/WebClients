@@ -1,11 +1,7 @@
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { Button } from '@proton/atoms';
 import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
@@ -13,19 +9,29 @@ import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Unwrap } from '@proton/shared/lib/interfaces';
 import { Credentials, SrpConfig, srpAuth } from '@proton/shared/lib/srp';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-
-
-import { Form, InlineLinkButton, InputFieldTwo, ModalTwo as Modal, ModalTwoContent as ModalContent, ModalTwoFooter as ModalFooter, ModalTwoHeader as ModalHeader, ModalProps, PasswordInputTwo, Tabs, useFormErrors } from '../../components';
+import {
+    Form,
+    InlineLinkButton,
+    InputFieldTwo,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    PasswordInputTwo,
+    Tabs,
+    useFormErrors,
+} from '../../components';
 import { useApi, useConfig, useErrorHandler, useLoading, useUser, useUserSettings } from '../../hooks';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
-
 
 const FORM_ID = 'auth-form';
 
@@ -209,6 +215,7 @@ const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, prioritised2
         } catch (error) {
             if (twoFa?.type === 'fido2') {
                 setFidoError(true);
+                captureMessage('Security key auth', { level: 'error', extra: { error } });
                 // Purposefully logging the error for somewhat easier debugging
                 console.error(error);
             }
