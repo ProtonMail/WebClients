@@ -106,7 +106,7 @@ const DriveDummyContainer = () => {
                 drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
             >
                 <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                    <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
+                    <div className="max-w100 px-2 py-3 border-bottom">
                         <CollapsingBreadcrumbs
                             breadcrumbs={[
                                 {

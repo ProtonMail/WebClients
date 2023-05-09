@@ -90,7 +90,7 @@ const ContactsWidgetToolbar = ({
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button
                             icon
-                            className="inline-flex pt0-5 pb0-5"
+                            className="inline-flex py-2"
                             onClick={onCompose}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Compose`}
@@ -104,7 +104,7 @@ const ContactsWidgetToolbar = ({
                     <Tooltip title={c('Action').t`Forward as attachment`}>
                         <Button
                             icon
-                            className="inline-flex pt0-5 pb0-5"
+                            className="inline-flex py-2"
                             onClick={onForward}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Forward as attachment`}
@@ -118,7 +118,7 @@ const ContactsWidgetToolbar = ({
                 <Tooltip title={c('Action').t`Merge contacts`}>
                     <Button
                         icon
-                        className="inline-flex pt0-5 pb0-5"
+                        className="inline-flex py-2"
                         onClick={onMerge}
                         disabled={!canMerge}
                         title={c('Action').t`Merge contacts`}
@@ -128,7 +128,7 @@ const ContactsWidgetToolbar = ({
                     </Button>
                 </Tooltip>
                 <ContactGroupDropdown
-                    className="inline-flex pt0-5 pb0-5"
+                    className="inline-flex py-2"
                     contactEmails={contactEmails}
                     disabled={contactEmails.length === 0}
                     forToolbar
@@ -143,7 +143,7 @@ const ContactsWidgetToolbar = ({
                 <Tooltip title={deleteText}>
                     <Button
                         icon
-                        className="inline-flex pt0-5 pb0-5"
+                        className="inline-flex py-2"
                         onClick={onDelete}
                         disabled={noSelection}
                         title={deleteText}
@@ -157,7 +157,7 @@ const ContactsWidgetToolbar = ({
                         <Button
                             icon
                             color="norm"
-                            className="ml-auto inline-flex pt0-5 pb0-5"
+                            className="ml-auto inline-flex py-2"
                             onClick={onCreate}
                             title={c('Action').t`Add new contact`}
                             data-testid="contacts:add-new-contact"

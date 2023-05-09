@@ -222,7 +222,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         return (
                             <li
                                 key={folder.ID}
-                                className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                                className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center py-2 px-4"
                             >
                                 <Radio
                                     className="flex-item-noshrink mr-2"
@@ -252,7 +252,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         );
                     })}
                     {list.length === 0 && !search && (
-                        <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
+                        <li key="empty" className="dropdown-item w100 py-2 px-4">
                             {c('Info').t`No folder found`}
                         </li>
                     )}

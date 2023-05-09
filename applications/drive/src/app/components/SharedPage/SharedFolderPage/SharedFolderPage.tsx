@@ -202,7 +202,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                             name={folderView.folderName}
                             linkId={linkId}
                             onNavigate={setLinkId}
-                            className="shared-folder-header-breadcrumbs pb0-25"
+                            className="shared-folder-header-breadcrumbs pb-1"
                         />
                         <HeaderSubtitle size={totalSize} />
                     </div>

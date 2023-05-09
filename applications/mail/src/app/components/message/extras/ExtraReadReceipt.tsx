@@ -44,7 +44,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
                 onClick={() => withLoading(handleClick())}
                 disabled={loading}
                 data-testid="message-view:send-receipt"
-                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr-0 md:mr-2 mb-3 px0-5"
+                className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr-0 md:mr-2 mb-3 px-2"
             >
                 <Icon name="bell" className="flex-item-noshrink ml-1" />
                 <span className="ml-2">{c('Action').t`Send read receipt`}</span>

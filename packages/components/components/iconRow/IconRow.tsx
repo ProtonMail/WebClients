@@ -21,7 +21,7 @@ const IconRow = ({
     className,
     title,
     iconClassName,
-    labelClassName = 'pb0-5',
+    labelClassName = 'pb-2',
     id,
 }: IconRowProps) => {
     const getIcon = () => {

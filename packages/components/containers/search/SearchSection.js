@@ -18,7 +18,7 @@ const SearchSection = () => {
                     <span className="mr-2">{c('Label').t`Require exact match`}</span>
                     <Info url={getKnowledgeBaseUrl('/search')} />
                 </Label>
-                <Field className="pt0-5">
+                <Field className="pt-2">
                     <Toggle
                         loading={loading}
                         checked={!AutoWildcardSearch}

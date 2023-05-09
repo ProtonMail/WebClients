@@ -6,7 +6,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 
 const Footer = ({ children, className, ...rest }: Props) => {
     return (
-        <div className={clsx(['border-top flex p1', className])} {...rest}>
+        <div className={clsx(['border-top flex p-4 mt-4', className])} {...rest}>
             {children}
         </div>
     );

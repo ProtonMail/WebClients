@@ -3,9 +3,9 @@ import { KeyboardEvent } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
 import { Field } from '../../../components';
-import { classnames } from '../../../helpers';
 import { AdvancedSimpleFilterModalModel, SimpleFilterModalModel, Step } from '../interfaces';
 
 interface Errors {
@@ -49,11 +49,11 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
                         .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.`}
                 </div>
             )}
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
-                <label htmlFor="name" className={classnames(['w20 pt0-5', isNarrow && 'mb-4'])}>
+            <div className="flex flex-nowrap on-mobile-flex-column align-items-center py-4">
+                <label htmlFor="name" className={clsx(['w20 pt-2', isNarrow && 'mb-4'])}>
                     {c('Label').t`Filter Name`}
                 </label>
-                <Field className={classnames([!isNarrow && 'ml-4'])}>
+                <Field className={clsx([!isNarrow && 'ml-4'])}>
                     <Input
                         id="name"
                         placeholder={c('Placeholder').t`Name`}

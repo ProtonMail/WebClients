@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { Editor, EditorActions, Toggle, Tooltip } from '../../../components';
-import { classnames } from '../../../helpers';
 import { useUser } from '../../../hooks';
 import { Actions } from '../interfaces';
 
@@ -42,15 +42,15 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
     return (
         <>
             <div
-                className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 "
+                className="flex flex-nowrap on-mobile-flex-column align-items-center pt-4 "
                 data-testid="filter-modal:auto-reply-row"
             >
                 {user.hasPaidMail ? (
                     <>
-                        <label htmlFor="autoReply" className={classnames(['w20 pt0-5', isNarrow && 'mb-4'])}>
-                            <span className={classnames([!isNarrow && 'ml-4'])}>{c('Label').t`Send auto-reply`}</span>
+                        <label htmlFor="autoReply" className={clsx(['w20 pt-2', isNarrow && 'mb-4'])}>
+                            <span className={clsx([!isNarrow && 'ml-4'])}>{c('Label').t`Send auto-reply`}</span>
                         </label>
-                        <div className={classnames(['flex flex-column flex-item-fluid pt0-5', !isNarrow && 'ml-4'])}>
+                        <div className={clsx(['flex flex-column flex-item-fluid pt-2', !isNarrow && 'ml-4'])}>
                             <Toggle
                                 id="autoReply"
                                 checked={editorVisible}
@@ -62,7 +62,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                     </>
                 ) : (
                     <>
-                        <div className={classnames(['w20 mr-4 pt0-5', isNarrow && 'mb-4'])}>
+                        <div className={clsx(['w20 mr-4 pt-2', isNarrow && 'mb-4'])}>
                             <span className="mx-2">{c('Label').t`Send auto-reply`}</span>
                         </div>
                         <Tooltip title={c('Tooltip').t`This feature is only available for paid users`}>

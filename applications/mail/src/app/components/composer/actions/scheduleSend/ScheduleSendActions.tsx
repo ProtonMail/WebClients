@@ -83,7 +83,7 @@ const ScheduleSendActions = ({
             {
                 title: (
                     <div className="flex flex-justify-start flex-align-items-center">
-                        <span className="pr0-5">{c('Action').t`Custom`}</span>
+                        <span className="pr-2">{c('Action').t`Custom`}</span>
                         {!canScheduleSendCustom && (
                             <span>
                                 <img src={plusLogo} alt="Protonmail plus logo" />
@@ -114,7 +114,7 @@ const ScheduleSendActions = ({
 
     return (
         <>
-            <div className="p1 pt0-75 mb-2 border-bottom">
+            <div className="p-4 pt-3 mb-2 border-bottom">
                 <h6 data-testid="composer:schedule-send:dropdown-title" className="text-bold">{c('Title')
                     .t`Schedule send`}</h6>
                 <p className={clsx('m-0', 'color-weak')}>{c('Description')

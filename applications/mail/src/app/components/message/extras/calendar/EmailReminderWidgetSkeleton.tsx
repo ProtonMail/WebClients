@@ -1,6 +1,5 @@
 import { IconRow } from '@proton/components';
 
-
 export const EmailReminderWidgetSkeleton = () => (
     <div data-testid="calendar-widget-widget-skeleton" className="mb-3">
         <div className="bg-norm rounded border">
@@ -13,9 +12,9 @@ export const EmailReminderWidgetSkeleton = () => (
             <div className="p1-5">
                 <IconRow
                     icon={
-                        <div className="calendar-select-color calendar-widget-skeleton calendar-widget-skeleton--icon p0" />
+                        <div className="calendar-select-color calendar-widget-skeleton calendar-widget-skeleton--icon p-0" />
                     }
-                    labelClassName="inline-flex pt0-25"
+                    labelClassName="inline-flex pt-1"
                 >
                     <div className="calendar-widget-skeleton calendar-widget-skeleton--details" />
                 </IconRow>

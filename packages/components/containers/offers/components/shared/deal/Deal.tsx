@@ -31,7 +31,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                 {discount ? (
                     <span
                         className={clsx([
-                            'text-semibold absolute text-center offer-percentage py0-25 px1',
+                            'text-semibold absolute text-center offer-percentage py-1 px-4',
                             popular ? 'bg-primary' : 'bg-weak color-weak border border-norm',
                         ])}
                     >
@@ -40,7 +40,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                 ) : null}
                 <div
                     className={clsx([
-                        'offer-plan w100 border rounded p1 mb-4 flex flex-column flex-align-items-center flex-justify-end',
+                        'offer-plan w100 border rounded p-4 mb-4 flex flex-column flex-align-items-center flex-justify-end',
                         popular && 'border-primary is-focused',
                     ])}
                 >

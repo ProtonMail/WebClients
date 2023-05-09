@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import { Badge } from '../../badge';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
 import { DEFAULT_FONT_FACE, FONT_FACES } from '../constants';
@@ -103,16 +103,16 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                     <DropdownMenuContainer
                         key={fontId}
                         data-testid={`editor-toolbar:font-face:dropdown-item:${fontId}`}
-                        className={classnames([fontValue === value && 'dropdown-item--is-selected'])}
+                        className={clsx([fontValue === value && 'dropdown-item--is-selected'])}
                         buttonClassName="text-left"
                         aria-pressed={fontValue === value}
                         isSelected={fontValue === value}
                         onClick={() => onChange(fontValue)}
                         style={{ fontFamily: fontValue }}
-                        buttonContent={<span className="pr0-5">{fontLabel}</span>}
+                        buttonContent={<span className="pr-2">{fontLabel}</span>}
                         extraContent={
                             displayDefaultFontButton(defaultValue, fontId, !!showDefaultFontSelector) ? (
-                                <div className="flex pl0-5 pr0-5 flex-item-noshrink">
+                                <div className="flex px-2 flex-item-noshrink">
                                     <Button
                                         color="weak"
                                         shape="ghost"

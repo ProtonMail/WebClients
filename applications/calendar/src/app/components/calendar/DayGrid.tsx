@@ -117,7 +117,7 @@ const DayGrid = ({
                     {rows[0].map((day) => {
                         return (
                             <div
-                                className="flex-item-fluid text-center calendar-daygrid-day text-lg m-0 p0-75 text-ellipsis"
+                                className="flex-item-fluid text-center calendar-daygrid-day text-lg m-0 p-3 text-ellipsis"
                                 key={day.getUTCDate()}
                                 aria-current={
                                     day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : undefined

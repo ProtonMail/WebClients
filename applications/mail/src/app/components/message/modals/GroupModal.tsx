@@ -49,7 +49,7 @@ const GroupModal = ({ recipientGroup, group, globalIcon, mapStatusIcons, onClose
                             <span className="min-w1-4e inline-flex align-middle">
                                 {icon && <EncryptionStatusIcon {...icon} />}
                             </span>
-                            <Label htmlFor={id} className="pt0 pl0-5">
+                            <Label htmlFor={id} className="pt-0 pl-1">
                                 {contactToInput(contact)}
                             </Label>
                         </li>

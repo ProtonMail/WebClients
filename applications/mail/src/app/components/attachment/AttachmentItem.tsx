@@ -113,13 +113,13 @@ const AttachmentItem = ({
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
                 className={clsx([
-                    'message-attachmentList-item flex border flex-nowrap pm_button p0 rounded overflow-hidden',
+                    'message-attachmentList-item flex border flex-nowrap pm_button p-0 rounded overflow-hidden',
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >
                 <span className="relative flex flex-item-fluid message-attachmentPrimaryAction interactive">
                     <button
-                        className="pl0-5 pt0-5 pb0-5 flex flex-item-noshrink message-attachmentTypeIcon"
+                        className="pl-2 py-2 flex flex-item-noshrink message-attachmentTypeIcon"
                         type="button"
                         onClick={handleAction(true)}
                         tabIndex={-1}
@@ -138,7 +138,7 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                         data-testid={`attachment-item:${name}--primary-action`}
                     >
-                        <span className="my-auto flex flex-align-items-baseline flex-nowrap pr0-5">
+                        <span className="my-auto flex flex-align-items-baseline flex-nowrap pr-2">
                             <FileNameDisplay text={name} />
                             <span
                                 className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml-1"
@@ -152,7 +152,7 @@ const AttachmentItem = ({
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex p0-5 pl0-25 no-pointer-events-children relative flex-item-noshrink message-attachmentSecondaryAction interactive"
+                        className="inline-flex p-2 pl-1 no-pointer-events-children relative flex-item-noshrink message-attachmentSecondaryAction interactive"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}
@@ -166,7 +166,11 @@ const AttachmentItem = ({
                             {loading ? (
                                 <CircleLoader className="m-auto" size="small" />
                             ) : (
-                                <Icon name={actionIcon[secondaryAction]} className="m-auto" alt={secondaryActionTitle} />
+                                <Icon
+                                    name={actionIcon[secondaryAction]}
+                                    className="m-auto"
+                                    alt={secondaryActionTitle}
+                                />
                             )}
                         </span>
                     </button>

@@ -366,7 +366,7 @@ const TimeGrid = ({
                         <div className="calendar-aside calendar-aside-weekNumber text-center flex flex-column flex-justify-end">
                             {isDrawerApp && (
                                 <span
-                                    className="h-custom flex flex-column flex-justify-center pt0-25"
+                                    className="h-custom flex flex-column flex-justify-center pt-1"
                                     style={{ '--height-custom': `${dayEventHeight / 16}rem` }}
                                 >
                                     {primaryTimezone}

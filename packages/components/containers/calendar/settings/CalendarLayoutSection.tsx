@@ -58,7 +58,7 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                         <span className="mr-2">{c('Label').t`Show week numbers`}</span>
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5 flex flex-align-items-center">
+                <SettingsLayoutRight className="pt-2 flex flex-align-items-center">
                     <Toggle
                         id="week-numbers-display"
                         aria-describedby="week-numbers-display"

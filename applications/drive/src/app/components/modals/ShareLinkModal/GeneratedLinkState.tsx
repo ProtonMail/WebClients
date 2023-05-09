@@ -252,7 +252,7 @@ function GeneratedLinkState({
                                     <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start pt0-5 mr-0 md:mr-2">
+                                    <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
                                         <Toggle
                                             id="expirationTimeModeToggle"
                                             className="mb-2 md:mb-0"

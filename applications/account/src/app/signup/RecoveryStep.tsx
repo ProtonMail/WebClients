@@ -139,7 +139,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 <span className="sr-only">{c('Label').t`Use a recovery phone number`}</span>
                             </Checkbox>
                         </div>
-                        <div className="flex-item-fluid pl0-5 mt-0.5">
+                        <div className="flex-item-fluid pl-2 mt-0.5">
                             <InputFieldTwo
                                 as={PhoneInput}
                                 id="recovery-phone"
@@ -168,7 +168,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 <span className="sr-only">{c('Label').t`Use a recovery email address`}</span>
                             </Checkbox>
                         </div>
-                        <div className="flex-item-fluid pl0-5 mt-0.5">
+                        <div className="flex-item-fluid pl-2 mt-0.5">
                             <InputFieldTwo
                                 id="recovery-email"
                                 bigger

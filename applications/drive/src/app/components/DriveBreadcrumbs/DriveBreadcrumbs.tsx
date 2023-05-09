@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
-
-
 
 import { DriveFolder } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
@@ -20,7 +14,6 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import SignatureIcon from '../SignatureIcon';
 import { useDetailsModal } from '../modals/DetailsModal';
 import { getDevicesSectionName } from '../sections/Devices/constants';
-
 
 interface Props {
     activeFolder: DriveFolder;
@@ -132,7 +125,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     }, [activeFolder.shareId]);
 
     if (breadcrumbs.length === 0) {
-        return <Loader className="pt0-5 pb0-5 pl0-75 pr0-75" />;
+        return <Loader className="py-2 px-3" />;
     }
 
     if (rootShare?.type === ShareType.device) {
