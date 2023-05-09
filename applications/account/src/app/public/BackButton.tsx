@@ -12,7 +12,7 @@ interface Props {
 const BackButton = ({ onClick }: Props) => {
     return (
         <Button
-            className="shadow-lifted on-tiny-mobile-no-box-shadow"
+            className="shadow-lifted shadow-color-primary on-tiny-mobile-no-box-shadow"
             icon
             shape="outline"
             onClick={onClick}

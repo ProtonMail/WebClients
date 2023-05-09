@@ -19,19 +19,20 @@ const LayoutFooter = ({ className, app, version }: FooterProps) => {
                     c('Footer').t`${BRAND_NAME}. Privacy by default.`
                 }
             </div>
-            <div className="text-center text-sm m-0 pt1 pb0-5 on-tiny-mobile-pb0 flex-item-noshrink">
+            <div className="text-center m-0 pt-4 pb-0 sm:pb-4 flex-item-noshrink">
                 <span className="auto-tiny-mobile">
-                    <Href key="terms" className="signup-footer-link" href={getTermsURL(app)}>{c('Link').t`Terms`}</Href>
+                    <Href key="terms" className="signup-link link-focus" href={getTermsURL(app)}>{c('Link')
+                        .t`Terms`}</Href>
                 </span>
-                <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
+                <span className="color-border px-2 no-tiny-mobile" aria-hidden="true">
                     |
                 </span>
                 <span className="auto-tiny-mobile">
-                    <Href key="privacy" className="signup-footer-link old-link" href={getPrivacyPolicyURL(app)}>{c(
+                    <Href key="privacy" className="signup-link link-focus old-link" href={getPrivacyPolicyURL(app)}>{c(
                         'Link'
                     ).t`Privacy policy`}</Href>
                 </span>
-                <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
+                <span className="color-border px-2 no-tiny-mobile" aria-hidden="true">
                     |
                 </span>
                 <span className="no-tiny-mobile">{c('Info').jt`Version ${version}`}</span>
