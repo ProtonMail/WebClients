@@ -251,6 +251,9 @@
       "Delete": [
         "Elimina"
       ],
+      "Delete and confirm": [
+        "Elimina i confirma"
+      ],
       "Delete link": [
         "Elimina l'enllaç"
       ],
@@ -368,6 +371,9 @@
       "Extend": [
         "Amplia"
       ],
+      "Filters are being applied. This might take a few minutes.": [
+        "S'estan aplicant els filtres. Això pot trigar uns quants minuts."
+      ],
       "Fit to window": [
         "Ajusta a la finestra"
       ],
@@ -394,6 +400,12 @@
       ],
       "Get a new encrypted email address": [
         "Obteniu una nova adreça de correu xifrada"
+      ],
+      "Get more addresses": [
+        "Obteniu més adreces"
+      ],
+      "Get more filters": [
+        "Obteniu més filtres"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
@@ -445,6 +457,12 @@
       ],
       "Insert link": [
         "Insereix l'enllaç"
+      ],
+      "Invite": [
+        "Convida"
+      ],
+      "Invite user": [
+        "Convida l'usuari"
       ],
       "Italic": [
         "Cursiva"
@@ -608,6 +626,9 @@
       "Request new code": [
         "Demana un nou codi"
       ],
+      "Requires a verified recovery email address": [
+        "Requereix una adreça de correu electrònic de recuperació verificada"
+      ],
       "Resend code": [
         "Reenvia codi"
       ],
@@ -661,6 +682,9 @@
       ],
       "Save address": [
         "Desar adreça"
+      ],
+      "Save changes": [
+        "Desa els canvis"
       ],
       "Save ICS file": [
         "Desa el fitxer ICS"
@@ -2572,6 +2596,12 @@
       "Track the status and activity of your referrals.": [
         "Feu un seguiment de les vostres referències."
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Desbloquegeu filtres il·limitats que ordenen la vostra safata d'entrada i més característiques prèmium quan milloreu el vostre pla."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Desbloquegeu carpetes i etiquetes il·limitades i més característiques prèmium quan milloreu el vostre pla."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ]
@@ -2937,9 +2967,6 @@
       ],
       "Organization key is not decrypted.": [
         "La clau d'organització no está desxifrada."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organització no reconeguda. Torneu-ho a provar."
       ],
       "Password is required": [
         "La contrasenya és obligatòria."
@@ -4291,6 +4318,9 @@
         "${ userFound } usuari trobat",
         "${ userFound } usuaris trobats"
       ],
+      "${ vpnPlus } required for Country level connection.": [
+        "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
+      ],
       "${ vpnPlus } required for Secure Core feature.": [
         "La característica Secure Core requereix ${ vpnPlus }."
       ],
@@ -4575,9 +4605,6 @@
       ],
       "Credits earned": [
         "Crèdits obtinguts"
-      ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Actualment tot l'emmagatzematge disponible està assignat al compte d'administrador. Reduïu l'assignació a aquest compte per fer espai per altres usuaris. Podeu ampliar l'espai total sempre que vulgueu mitjançant l'actualització del compte."
       ],
       "Custom": [
         "Personalitzat"
@@ -5023,6 +5050,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
       ],
+      "Only you can see the labels.": [
+        "Sou l'únic/a que podeu veure les etiquetes."
+      ],
       "Organization keys activated": [
         "S'han activat les claus de l'organització"
       ],
@@ -5149,6 +5179,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Restore": [
+        "Restaura"
+      ],
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
       ],
@@ -5238,9 +5271,6 @@
       ],
       "The calendar will be removed from your account.": [
         "El calendari s'eliminarà del vostre compte."
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "L'adreça de correu electrònic que poseu a la primera posició de la llista és la vostra adreça per defecte. Arrossegueu i deixeu anar per reordenar-les."
       ],
       "The following address is available:": [
         "La següent adreça està disponible:"
@@ -5550,8 +5580,17 @@
         "No podeu enviar més de ${ emailSendLimitNumber } invitacio per correu electrònic durant les properes 24 hores",
         "No podeu enviar més de ${ emailSendLimitNumber } invitacions per correu electrònic durant les properes 24 hores"
       ],
+      "You cannot undo this action.": [
+        "No pots desfer aquesta acció."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "No podeu utilitzar les credencials OpenVPN / IKEv2 per iniciar la sessió a les aplicacions ${ VPN_APP_NAME } o el tauler de control de ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
+      ],
+      "You have no calendars to export.": [
+        "No té cap calendari per exportar."
       ],
       "You have no saved payment methods.": [
         "No té mètodes de pagament guardats."
@@ -5638,6 +5677,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "El vostre pla està limitat a 10 versions durant un màxim de 7 dies"
+      ],
       "Your recovery phrase": [
         "La vostra frase de recuperació"
       ],
@@ -5675,11 +5717,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Per motius de seguretat, hem de verificar que sou el propietari de ${ domainName }. Afegiu el següent registre DNS TXT al vostre domini. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Afegiu, suprimiu i gestioneu usuaris dins de la vostra organització. Aquí hi podeu ajustar el seu espai d'emmagatzematge, concedir drets d'administrador/a i més. Seleccioneu un usuari o usuària per gestionar les seves adreces de correu electrònic. L'adreça en primera posició es seleccionarà automàticament com a adreça de correu electrònic per defecte."
       ]
     },
     "Info for payment methods": {
@@ -6379,9 +6416,6 @@
       ],
       "End weekday": [
         "Dia de finalització de la setmana"
-      ],
-      "Enter organization name to confirm": [
-        "Introdueixi el nom de l'organització per confirmar"
       ],
       "Enter password": [
         "Introdueix la contrasenya"
@@ -7158,11 +7192,6 @@
       ],
       "Sign in": [
         "Inicia la sessió"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Això eliminarà permanentment tots els sub-usuaris, comptes, i dades associades amb la vostra organització."
       ]
     },
     "Message": {
@@ -8415,11 +8444,6 @@
         "No s'han trobat resultats."
       ]
     },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Podeu aplicar múltiples etiquetes a un mateix missatge, però els missatges normalment només poden estar a una sola carpeta. Arrossegueu i deixeu anar per canviar l'ordre de les vostres carpetes i etiquetes."
-      ]
-    },
     "Settings section title": {
       "Account": [
         "Compte"
@@ -8529,6 +8553,122 @@
       ],
       "Verification": [
         "Verificació"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Tanca"
+      ],
+      "Don't show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } d'emmagatzematge total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuaris"
+      ],
+      "64 countries": [
+        "64 països"
+      ],
+      "All paid Mail and Calendar features": [
+        "Totes les característiques de pagament de Correu i Calendari"
+      ],
+      "High speed VPN": [
+        "VPN d'alta velocitat"
+      ],
+      "Highest VPN speed": [
+        "La velocitat VPN més alta"
+      ],
+      "Premium Drive": [
+        "Drive Prèmium"
+      ],
+      "Premium early access": [
+        "Accés anticipat prèmium"
+      ],
+      "Premium Mail and Calendar": [
+        "Correu i Calendari Prèmium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Correu, Calendari i Drive Prèmium"
+      ],
+      "Premium VPN": [
+        "VPN Prèmium"
+      ],
+      "Secure cloud storage": [
+        "Emmagatzematge al núvol segur"
+      ],
+      "Secure streaming": [
+        "Transmissió en línia segura"
+      ],
+      "Support online privacy": [
+        "Doneu suport a la privacitat en línia"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta de per vida"
+      ],
+      "Most popular": [
+        "Més popular"
+      ],
+      "Offer ends soon": [
+        "L'oferta s'acaba aviat"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ves als plans de subscripció"
+      ],
+      "Upgrade": [
+        "Millora"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mes"
+      ],
+      "1 year": [
+        "Un any"
+      ],
+      "2 years": [
+        "Dos anys"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Oferta del Black Friday"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide My Email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies Hide My Email, compartició de calendari i més."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -9284,9 +9424,6 @@
       "Delete logs": [
         "Eliminar registres"
       ],
-      "Delete organization?": [
-        "Eliminar l'organització?"
-      ],
       "Delete user": [
         "Eliminar usuari"
       ],
@@ -9463,6 +9600,9 @@
       "Invoices": [
         "Factures"
       ],
+      "Keep your inbox organized": [
+        "Manteniu la vostra safata d'entrada organitzada"
+      ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
       ],
@@ -9559,6 +9699,9 @@
       "Plan summary": [
         "Resum del pla"
       ],
+      "Preview": [
+        "Vista prèvia"
+      ],
       "Previous": [
         "Anterior"
       ],
@@ -9612,6 +9755,9 @@
       ],
       "Save contact details": [
         "Desa els detalls de contacte"
+      ],
+      "Save time with email filters": [
+        "Estalvieu temps amb els filtres de correu electrònic"
       ],
       "Secure email based in Switzerland": [
         "Correu electrònic segur amb seu a Suïssa"
@@ -9768,6 +9914,9 @@
       "Verify email address": [
         "Verifiqueu l'adreça electrònica"
       ],
+      "Version history": [
+        "Historial de versions"
+      ],
       "VPN apps": [
         "Aplicacions VPN"
       ],
@@ -9795,14 +9944,8 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
-      "Your current plan": [
-        "El vostre pla actual"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
-      ],
-      "Your plan": [
-        "El vostre pla"
       ],
       "Your recovery status": [
         "El seu estat de recuperació"

@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Yüklemeyi iptal et"
       ],
+      "Change": [
+        "Değiştir"
+      ],
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
@@ -200,6 +203,12 @@
       ],
       "Delete permanently": [
         "Kalıcı olarak sil"
+      ],
+      "Delete this version": [
+        "Bu sürümü sil"
+      ],
+      "Delete version": [
+        "Sürümü sil"
       ],
       "Deselect all": [
         "Tümünü bırak"
@@ -501,6 +510,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save version as copy": [
+        "Sürümü kopya olarak kaydet"
+      ],
       "Search": [
         "Arama"
       ],
@@ -512,6 +524,9 @@
       ],
       "See plan features": [
         "Tarife özelliklerini görün"
+      ],
+      "See version history": [
+        "Sürüm geçmişini görüntüle"
       ],
       "Select all": [
         "Tümünü seç"
@@ -2978,6 +2993,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Çöp kutusunu boşaltmak ve tüm ögeleri kalıcı olarak silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Kalıcı olarak silmek istediğinize emin misiniz"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Çöp kutusundaki ${ itemName } ögesini kalıcı olarak silmek istediğinize emin misiniz?"
       ],
@@ -3077,6 +3095,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
+      ],
+      "Current version": [
+        "Güncel sürüm"
       ],
       "Decrypting files": [
         "Dosyaların şifresi çözülüyor"
@@ -3188,8 +3209,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Dosya imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
       ],
-      "File will not be uploaded": [
-        "Dosya yüklenmeyecek"
+      "File will not be updated": [
+        "Dosya güncellenmeyecek"
       ],
       "Finalizing": [
         "Tamamlanıyor"
@@ -3222,10 +3243,13 @@
         "Sonsuza kadar ücretsiz"
       ],
       "Free up some space or add more storage space.": [
-        "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
+        "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
       ],
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
+      ],
+      "from the version history?": [
+        "sürüm geçmişinden?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME } uygulamasını tanıyın ve 500 MB depolama alanı hediyenizi kazanın! Bugün harekete geçin."
@@ -3329,6 +3353,9 @@
       ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
+      ],
+      "Last week": [
+        "Geçen hafta"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -3494,6 +3521,12 @@
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Önceki sürümler ${ retentionLabel } süreyle tutulur"
+      ],
+      "Previous versions are not saved": [
+        "Daha önce bir sürüm kaydedilmemiş"
+      ],
       "Primary": [
         "Birincil"
       ],
@@ -3517,6 +3550,9 @@
       ],
       "Report has been sent": [
         "Şikayet gönderildi"
+      ],
+      "Restore": [
+        "Geri yükle"
       ],
       "Restored files ${ formattedDate }": [
         "${ formattedDate } tarihli dosyalar geri yüklendi"
@@ -3582,7 +3618,7 @@
         "destek ekibi"
       ],
       "Swiss encrypted file storage": [
-        "İsviçre'li şifrelenmiş dosya depolaması"
+        "İsviçre'li şifrelenmiş dosya depolama alanı"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -3639,14 +3675,20 @@
         "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
         "Bu işlem, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
       ],
-      "This will overwrite the existing file": [
-        "Bu işlem var olan dosyanın üzerine yazacak"
-      ],
       "This will overwrite the existing folder": [
         "Bu işlem var olan klasörün üzerine yazacak"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Bu işlem ${ DRIVE_APP_NAME } ile eşitlenmiş ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar bu işlemden etkilenmeyecek."
+      ],
+      "This will replace the existing file with the folder": [
+        "Bu işlem var olan dosyayı klasör ile değiştirir"
+      ],
+      "This will replace the existing folder with the file": [
+        "Bu işlem var olan klasörü dosya ile değiştirir"
+      ],
+      "This will upload a new version of the file": [
+        "Bu işlem dosyaya yeni bir sürüm yükler"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
@@ -3668,6 +3710,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
+      ],
+      "Today": [
+        "Bugün"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" dosyasının aktarımı iptal edildi"
@@ -3720,6 +3765,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
       ],
+      "Version is deleted": [
+        "Sürüm silindi"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Çok güzel, ücretsiz depolama alanınızı iki katına çıkardınız!"
       ],
@@ -3762,6 +3810,9 @@
       "Yes": [
         "Evet"
       ],
+      "Yesterday": [
+        "Dün"
+      ],
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
       ],
@@ -3787,10 +3838,10 @@
         "${ expiresInDays } gün içinde 500 MB hoş geldiniz hediyenizi alın ve "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
+        "Depolama alanınızı %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Depolama kapasitenizi %100 oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
+        "Depolama alanınızı 100% oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
@@ -3833,6 +3884,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
       ],
       "Your previous password": [
         "Önceki parolanız"
@@ -3898,6 +3952,14 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } gün",
+        "${ nbDay } gün"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } yıl",
+        "${ nbYear } yıl"
       ],
       "(Expired)": [
         "(Geçerlilik süresi dolmuş)"
@@ -4026,6 +4088,9 @@
       "Downloading ${ percentageValue }%": [
         "İndiriliyor %${ percentageValue }"
       ],
+      "Duplicate found": [
+        "Kopya bulundu"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -4125,6 +4190,15 @@
       "Import to:": [
         "Şunun içine aktar:"
       ],
+      "Keep both": [
+        "İkisi de tutulsun"
+      ],
+      "Keep both files": [
+        "İki dosya da tutulsun"
+      ],
+      "Keep both folders": [
+        "İki klasör de tutulsun"
+      ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
       ],
@@ -4221,11 +4295,11 @@
       "Region": [
         "Bölge"
       ],
-      "Replace file": [
-        "Dosyayı değiştir"
+      "Replace existing file": [
+        "Var olan dosya değiştirilsin"
       ],
-      "Replace folder": [
-        "Klasörü değiştir"
+      "Replace existing folder": [
+        "Var olan klasör değiştirilsin"
       ],
       "Report": [
         "Bildir"
@@ -4298,9 +4372,6 @@
       ],
       "Unlock later": [
         "Kilidi daha sonra aç"
-      ],
-      "Upload anyway": [
-        "Yine de yükle"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -4688,6 +4759,9 @@
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
       ],
+      "Version failed to be deleted": [
+        "Sürüm silinemedi"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
       ],
@@ -4754,6 +4828,9 @@
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
+      ],
+      "Set up your organization testing": [
+        "Kuruluş sınamanızı ayarlayın"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
@@ -4958,6 +5035,241 @@
       ],
       "Sign": [
         "İmzala"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Kapat"
+      ],
+      "Don't show this offer again": [
+        "Bu teklifi bir daha gösterme"
+      ],
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Sınırları kaldırın"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ seconds } second": [
+        "${ seconds } saniye",
+        "${ seconds } saniye"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } ay ücretsiz",
+        "${ n } ay ücretsiz"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } toplam depolama alanı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "64 countries": [
+        "64 ülkede"
+      ],
+      "All paid Mail and Calendar features": [
+        "Tüm ücretli Mail ve Calendar özellikleri"
+      ],
+      "High speed VPN": [
+        "Yüksek hızlı VPN"
+      ],
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
+      ],
+      "Premium Drive": [
+        "Ücretli Drive"
+      ],
+      "Premium early access": [
+        "Öncelikli erken erişim"
+      ],
+      "Premium Mail and Calendar": [
+        "Ücretli Mail ve Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Ücretli Mail, Calendar ve Drive"
+      ],
+      "Premium VPN": [
+        "Ücretli VPN"
+      ],
+      "Secure cloud storage": [
+        "Güvenli bulut depolama alanı"
+      ],
+      "Secure streaming": [
+        "Güvenli yayın akışı"
+      ],
+      "Support online privacy": [
+        "Çevrimiçi gizliliği destekleyin"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "İndirimler standart aylık fiyatlandırmaya göre yapılır."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Ömür boyu teklif"
+      ],
+      "Limited time only": [
+        "Yalnızca sınırlı bir süre için"
+      ],
+      "Most popular": [
+        "En beğenilen"
+      ],
+      "Offer ends soon": [
+        "Teklifin süresi yakında dolacak"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "İndirim, abonelik iptal edilene ya da değiştirilene kadar her yenileme döneminde uygulanır"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Abonelik tarifelerini görüntüle"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ ay"
+      ],
+      "1 year": [
+        "1 yıl"
+      ],
+      "2 years": [
+        "2 yıl"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "1 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "24 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 aylık ${ amount } olarak faturalanır"
+      ],
+      "for ${ n } month": [
+        "${ n } ay için",
+        "${ n } ay için"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Save ${ discount }%": [
+        "${ discount }% indirim"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "1 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "12 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "24 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30 aylık standart fiyat ${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Muhteşem Cuma kampanyası"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week kampanyası"
+      ],
+      "End of year offer": [
+        "Yıl sonu teklifi"
+      ],
+      "End of Year Sale": [
+        "Yıl sonu kampanyası"
+      ],
+      "Get our premium bundle and save more": [
+        "Premium paketimizi alarak daha fazla indirim kazanın"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Eski Visionary tarifemiz yalnızca sınırlı bir süre için geri döndü"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "2 yıllık ${ planName } tarifesi ile daha fazla indirim kazanın"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, her kullanıcı için 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Gelecekte yayınlayacağımız tüm yeni gizlilik hizmetlerinin ücretli sürümlerine ve tüm özelliklere erkenden erişerek ek ücret ödemeden kullanın."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ]
     },
     "Spotlight": {
@@ -5439,7 +5751,7 @@
         "Telefon numaraları"
       ],
       "Preview": [
-        "Önizleme"
+        "Ön izleme"
       ],
       "Privacy settings": [
         "Gizlilik ayarları"
@@ -5578,6 +5890,12 @@
       ],
       "Uploading a large file or folder": [
         "Büyük bir dosya ya da klasör yükleniyor"
+      ],
+      "Version details": [
+        "Sürüm bilgileri"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
       ],
       "View contacts": [
         "Kişileri görüntüle"
@@ -5780,7 +6098,7 @@
         "Bu özellik ücretli bir ${ BRAND_NAME } hesabında kullanılabilir"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
+        "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."

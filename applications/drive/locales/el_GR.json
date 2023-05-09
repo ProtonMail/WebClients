@@ -532,6 +532,9 @@
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
       ],
+      "Show side panel": [
+        "Εμφάνιση πλαϊνού πλαισίου\n*.*, add translation *.*"
+      ],
       "Sign in": [
         "Είσοδος"
       ],
@@ -573,6 +576,9 @@
       ],
       "Theme": [
         "Θέμα"
+      ],
+      "Toggle Calendar app": [
+        "Εναλλαγή εφαρμογής Ημερολόγιο\n*.*, add translation *.*"
       ],
       "Trust": [
         "Αξιόπιστο"
@@ -2955,9 +2961,6 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Το αρχείο δεν θα ανεβεί"
-      ],
       "Finalizing": [
         "Οριστικοποιείται"
       ],
@@ -3237,6 +3240,9 @@
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
+      "Preview for this file type is not supported": [
+        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται\n*.*, add translation *.*"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -3260,6 +3266,9 @@
       ],
       "Report has been sent": [
         "Η αναφορά στάλθηκε"
+      ],
+      "Restore": [
+        "Επαναφορά\n*.*, add translation *.*"
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
@@ -3363,9 +3372,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
         "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
-      ],
-      "This will overwrite the existing file": [
-        "Αυτή η εγγραφή θα διαγράψει το αρχείο που ήδη υπάρχει"
       ],
       "This will overwrite the existing folder": [
         "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
@@ -3922,12 +3928,6 @@
       "Region": [
         "Περιοχή"
       ],
-      "Replace file": [
-        "Αντικατάσταση αρχείου"
-      ],
-      "Replace folder": [
-        "Αντικατάσταση φακέλου"
-      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -3993,9 +3993,6 @@
       ],
       "Unlock later": [
         "Ξεκλείδωμα αργότερα"
-      ],
-      "Upload anyway": [
-        "Ανέβασμα οπωσδήποτε"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"

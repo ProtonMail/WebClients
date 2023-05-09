@@ -1503,9 +1503,6 @@
       "Not a valid number": [
         "Número no válido"
       ],
-      "Organization not recognized. Try again.": [
-        "Organización no reconocida. Intente de nuevo."
-      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
@@ -1616,6 +1613,196 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ninguna imagen seleccionada"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB de almacenamiento total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se comparte entre los miembros de la familia en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Got it": [
+        "Entiendo"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Switch plans": [
+        "Cambiar planes"
+      ],
+      "View invitation": [
+        "Ver invitación"
+      ],
+      "View the invitation": [
+        "Ver la invitación"
+      ],
+      "View the invitations": [
+        "Ver las invitaciones"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Correo y calendario premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Up to 6 users": [
+        "Hasta 6 usuarios"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Grupo familiar no reconocido. Intente otra vez."
+      ],
+      "Organization not recognized. Try again.": [
+        "Organización no reconocida. Intente otra vez."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } grupos"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o un plan familiar."
+      ],
+      "customer support": [
+        "soporte al cliente"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Si acepta la invitación, lo cambiaremos de su plan actual y acreditaremos su cuenta con cualquier saldo restante."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Invitación de ${ invitation.OrganizationName }"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Invitado por: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Gestionar direcciones."
+      ],
+      "Manage user accounts": [
+        "Gestionar cuentas de usuario"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Los propietarios de un plan con miembros no pueden unirse a otro plan grupal."
+      ],
+      "Pending invitation": [
+        "Invitación pendiente"
+      ],
+      "Pending invitations": [
+        "Invitaciones pendientes"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Lamentablemente, no puede cambiar de plan en este momento."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Almacenamiento asignado a usted: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "La suscripción se factura al administrador principal del plan Visionary o Family."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes Visionary y familiar actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Los planes Visionary y familiar actualmente no admiten cuentas de por vida."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Recibió una invitación para unirse a ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Solo puede aceptar 3 invitaciones en un período de 6 meses. Contacte con ${ supportLink } para solicitar una excepción."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Recibió una invitación para unirse a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Se ha unido con éxito al plan familiar"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Está invitado a vincular su cuenta de ${ BRAND_NAME } a este plan de grupo y disfrutar juntos de todas las funciones premium de ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Su cuenta tiene más direcciones de correo electrónico de las que tiene disponibles en este plan. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Su cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente su almacenamiento."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Su plan actual no puede unirse a un plan Visionary o un plan familiar."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Su suscripción se renovará automáticamente a la misma tarifa al final de su ciclo de facturación."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Los descuentos se basan en los precios estándares mensuales."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Privacidad en línea para toda su familia"
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Escriba el nombre del grupo familiar para confirmar"
+      ],
+      "Enter organization name to confirm": [
+        "Escriba el nombre de la organización para confirmar"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Esta acción eliminará permanentemente todos los subusuarios, cuentas y datos asociados con su organización."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Esta acción eliminará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "¿Eliminar grupo familiar?"
+      ],
+      "Delete organization?": [
+        "¿Eliminar organización?"
+      ],
+      "Introducing ${ planName }": [
+        "Presentamos ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Incluye 2700 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Incluye soporte para 3 dominios de correo electrónico personalizados, 90 direcciones de correo electrónico, alias ilimitados de Hide My Email, uso compartido de calendario y más."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteja sus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
       ]
     },
     "Feature": {
@@ -2234,6 +2421,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
       ],
@@ -2789,9 +2979,6 @@
       "Email or username": [
         "Correo o nombre de usuario"
       ],
-      "Enter organization name to confirm": [
-        "Ingrese el nombre de la organización para confirmar"
-      ],
       "Enter the code displayed on your TV": [
         "Ingrese el código mostrado en su TV"
       ],
@@ -3084,11 +3271,6 @@
         "Actualice para desbloquear el soporte por chat y otras funciones premium o use nuestro formulario de soporte gratuito para notificar su problema."
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Esto eliminará permanentemente todos los subusuarios, cuentas y datos asociados con su organización."
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Su prueba gratuita ha terminado. El acceso a su cuenta pronto será deshabilitado. ${ action }"
@@ -3224,6 +3406,10 @@
       "${ n } folder and label": [
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
+      ],
+      "${ n } forwarding mailbox": [
+        "${ n } buzón de reenvío",
+        "${ n } buzones de reenvío"
       ],
       "${ n } Hide My Email alias": [
         "${ n } alias de Hide My Email",
@@ -4699,9 +4885,6 @@
       "Delete account": [
         "Eliminar cuenta"
       ],
-      "Delete organization?": [
-        "¿Eliminar la organización?"
-      ],
       "Device connected!": [
         "¡Dispositivo conectado!"
       ],
@@ -4953,6 +5136,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Su prueba gratuita de Mail Plus termina en ${ textDate }"
+      ],
+      "Your Plan": [
+        "Su plan"
       ],
       "Your plan": [
         "Su plan"

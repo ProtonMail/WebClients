@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Upload abbrechen"
       ],
+      "Change": [
+        "Ändern"
+      ],
       "Chat with us": [
         "Chatte mit uns"
       ],
@@ -200,6 +203,12 @@
       ],
       "Delete permanently": [
         "Dauerhaft löschen"
+      ],
+      "Delete this version": [
+        "Diese Version löschen"
+      ],
+      "Delete version": [
+        "Version löschen"
       ],
       "Deselect all": [
         "Alle abwählen"
@@ -501,6 +510,9 @@
       "Save": [
         "Speichern"
       ],
+      "Save version as copy": [
+        "Version als Kopie speichern"
+      ],
       "Search": [
         "Suchen"
       ],
@@ -512,6 +524,9 @@
       ],
       "See plan features": [
         "Funktionen des Abonnements anzeigen"
+      ],
+      "See version history": [
+        "Versionsverlauf anzeigen"
       ],
       "Select all": [
         "Alle auswählen"
@@ -2416,6 +2431,162 @@
         "(Kein Titel)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB Speicherplatz insgesamt"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Der Speicherplatz wird von Family-Mitgliedern in ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
+      ],
+      "Got it": [
+        "Verstanden"
+      ],
+      "Keep current plan": [
+        "Aktuellen Tarif behalten"
+      ],
+      "Switch plans": [
+        "Tarife wechseln"
+      ],
+      "View the invitation": [
+        "Siehe dir die Einladung an"
+      ],
+      "View the invitations": [
+        "Siehe dir die Einladungen an"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium-Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail und Calendar"
+      ],
+      "Premium VPN": [
+        "Premium-VPN"
+      ],
+      "Up to 6 users": [
+        "Bis zu 6 Benutzer"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME }-Gruppen"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Tarif abschließen."
+      ],
+      "customer support": [
+        "Kundendienst"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Wenn du die Einladung annimmst, wechseln wir deinen aktuellen Tarif und schreiben deinem Konto das verbleibende Guthaben gut."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Eingeladen von: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Adressen verwalten."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Besitzer eines Tarifs mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Du kannst leider derzeit nicht zwischen Tarifen wechseln."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Dir zugewiesener Speicher: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Tarifs in Rechnung gestellt."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary- und Family-Tarife unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Mit Visionary- und Family-Tarifen sind derzeit keine lebenslangen Konten verfügbar."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Du kannst nur drei Einladungen in einem Zeitraum von 6 Monaten annehmen. Bitte wende dich an ${ supportLink }, wenn du eine Ausnahme benötigst."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppentarif zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Tarif zur Verfügung stehen. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Tarif-Administrator, deinen Speicher zu erhöhen."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Mit deinem aktuellen Tarif kannst du kein Visionary- oder Family-Tarif abschließen."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Dein Abonnement wird am Ende deines Abrechnungszeitraums automatisch zum gleichen Preis verlängert."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } holen"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Online-Privatsphäre für deine ganze Family"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Konfiguriere dein Family-Konto und lade andere Benutzer ein "
+      ],
+      "Set up your family": [
+        "Family einrichten"
+      ],
+      "Set up your family account": [
+        "Richte dein Family-Konto ein"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Wir stellen vor: ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Beinhaltet Unterstützung für drei benutzerdefinierte E-Mail-Domains, 90 E-Mail-Adressen, unbegrenzte „Hide My Email“-Aliase, Kalenderfreigabe und mehr."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "Dein Feedback"
@@ -3078,6 +3249,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
+      "Current version": [
+        "Aktuelle Version"
+      ],
       "Decrypting files": [
         "Dateien werden entschlüsselt"
       ],
@@ -3188,8 +3362,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht überprüfen, wer ${ fileName } hochgeladen hat."
       ],
-      "File will not be uploaded": [
-        "Datei wird nicht hochgeladen"
+      "File will not be updated": [
+        "Datei wird nicht aktualisiert."
       ],
       "Finalizing": [
         "Wird abgeschlossen"
@@ -3329,6 +3503,9 @@
       ],
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
+      ],
+      "Last week": [
+        "Letzte Woche"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -3494,6 +3671,9 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Previous versions are not saved": [
+        "Vorherige Versionen werden nicht gespeichert"
+      ],
       "Primary": [
         "Primär"
       ],
@@ -3517,6 +3697,9 @@
       ],
       "Report has been sent": [
         "Bericht wurde gesendet"
+      ],
+      "Restore": [
+        "Wiederherstellen"
       ],
       "Restored files ${ formattedDate }": [
         "Wiederhergestellte Dateien ${ formattedDate }"
@@ -3639,14 +3822,20 @@
         "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, entfernt.",
         "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, entfernt."
       ],
-      "This will overwrite the existing file": [
-        "Dadurch wird die vorhandene Datei überschrieben"
-      ],
       "This will overwrite the existing folder": [
         "Dadurch wird der vorhandene Ordner überschrieben"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Dadurch wird das synchronisierte Gerät ${ deviceName } aus ${ DRIVE_APP_NAME } entfernt. Lokale Dateien auf dem Gerät sind davon nicht betroffen."
+      ],
+      "This will replace the existing file with the folder": [
+        "Dadurch wird die vorhandene Datei durch den Ordner ersetzt."
+      ],
+      "This will replace the existing folder with the file": [
+        "Dadurch wird der vorhandene Ordner durch die Datei ersetzt."
+      ],
+      "This will upload a new version of the file": [
+        "Dadurch wird eine neue Version der Datei hochgeladen."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
@@ -3668,6 +3857,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
+      ],
+      "Today": [
+        "Heute"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Übertragung der Datei „${ name }“ wurde abgebrochen"
@@ -3720,6 +3912,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
       ],
+      "Version is deleted": [
+        "Version gelöscht"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Gut gemacht, du hast soeben deinen kostenlosen Speicherplatz verdoppelt!"
       ],
@@ -3761,6 +3956,9 @@
       ],
       "Yes": [
         "Ja"
+      ],
+      "Yesterday": [
+        "Gestern"
       ],
       "You are about to open another browser tab and visit:": [
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
@@ -3834,6 +4032,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Dein Abonnement ist auf 10 Versionen für bis zu 7 Tage begrenzt."
+      ],
       "Your previous password": [
         "Dein bisheriges Passwort"
       ],
@@ -3898,6 +4099,14 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } Tag",
+        "${ nbDay } Tage"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } Jahr",
+        "${ nbYear } Jahre"
       ],
       "(Expired)": [
         "(Abgelaufen)"
@@ -4026,6 +4235,9 @@
       "Downloading ${ percentageValue }%": [
         "${ percentageValue }% heruntergeladen"
       ],
+      "Duplicate found": [
+        "Duplikat gefunden"
+      ],
       "Email": [
         "E-Mail-Adresse"
       ],
@@ -4125,6 +4337,15 @@
       "Import to:": [
         "Importieren nach:"
       ],
+      "Keep both": [
+        "Beide behalten"
+      ],
+      "Keep both files": [
+        "Beide Dateien behalten"
+      ],
+      "Keep both folders": [
+        "Beide Ordner behalten"
+      ],
       "Label messages as": [
         "Nachrichten kategorisieren als"
       ],
@@ -4221,11 +4442,11 @@
       "Region": [
         "Region"
       ],
-      "Replace file": [
-        "Datei ersetzen"
+      "Replace existing file": [
+        "Vorhandene Datei ersetzen"
       ],
-      "Replace folder": [
-        "Ordner ersetzen"
+      "Replace existing folder": [
+        "Vorhandenen Ordner ersetzen"
       ],
       "Report": [
         "Melden"
@@ -4298,9 +4519,6 @@
       ],
       "Unlock later": [
         "Später entsperren"
-      ],
-      "Upload anyway": [
-        "Trotzdem hochladen"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -4687,6 +4905,9 @@
       ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
+      ],
+      "Version failed to be deleted": [
+        "Version konnte nicht gelöscht werden."
       ],
       "Your old files will be deleted in 72 hours": [
         "Deine alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
@@ -5813,6 +6034,12 @@
       ],
       "Uploading a large file or folder": [
         "Hochladen einer großen Datei oder eines großen Ordners"
+      ],
+      "Version details": [
+        "Versionsdetails"
+      ],
+      "Version history": [
+        "Versionsverlauf"
       ],
       "View contacts": [
         "Kontakte anzeigen"
