@@ -1,5 +1,5 @@
 import { api } from '@proton/pass/api/api';
-import type { ApiResponse, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
+import type { PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import { getUser } from '@proton/shared/lib/api/user';
@@ -18,10 +18,7 @@ export const getUserData = async (state: State): Promise<RequiredNonNull<UserSta
         cached.user ?? api<{ User: User }>(getUser()).then(({ User }) => User),
 
         /* user plan */
-        cached.plan ??
-            api<ApiResponse<'pass/v1/user/access', 'post'>>({ url: 'pass/v1/user/access', method: 'post' }).then(
-                ({ Access }) => Access?.Plan
-            ),
+        cached.plan ?? api({ url: 'pass/v1/user/access', method: 'post' }).then(({ Access }) => Access?.Plan),
 
         /* user addresses */
         Object.keys(cached.addresses).length > 0

@@ -4,7 +4,7 @@ import { EventActions, MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { fullMerge, merge, objectDelete, partialMerge } from '@proton/pass/utils/object';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
-import { bootSuccess, serverEvent } from '../actions';
+import { bootSuccess, serverEvent, setUserPlan } from '../actions';
 
 export type AddressState = { [addressId: string]: Address };
 
@@ -16,6 +16,12 @@ export type UserState = {
 };
 
 const reducer: Reducer<UserState> = (state = { user: null, addresses: {}, eventId: null, plan: null }, action) => {
+    if (setUserPlan.match(action)) {
+        return partialMerge(state, {
+            plan: action.payload,
+        });
+    }
+
     if (bootSuccess.match(action)) {
         return fullMerge(state, {
             user: action.payload.user,
@@ -26,8 +32,6 @@ const reducer: Reducer<UserState> = (state = { user: null, addresses: {}, eventI
     }
 
     if (serverEvent.match(action) && action.payload.event.type === 'user') {
-        // Plan event ?
-
         const { Addresses = [], User, EventID } = action.payload.event;
 
         return {
