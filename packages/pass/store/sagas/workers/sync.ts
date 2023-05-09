@@ -40,6 +40,7 @@ export function* synchronize(
 ): Generator<unknown, SynchronizationResult> {
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
+    const primaryShareId = remote.find(({ Primary }) => Primary === true)?.ShareID;
 
     /* `cachedShareIds`: all shares currently in local cache
      * `inactiveCachedShareIds` : cached shares which can no longer be opened
@@ -127,7 +128,10 @@ export function* synchronize(
 
     /* Exclude the deleted shares from the cached shares
      * and merge with the new shares */
-    const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
+    const shares = cachedShares
+        .filter(({ shareId }) => !disabledShareIds.includes(shareId))
+        .concat(incomingShares)
+        .map((share) => ({ ...share, primary: share.shareId === primaryShareId }));
 
     return {
         shares: toMap(shares, 'shareId'),
