@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '../../components';
+import { Button } from '@proton/atoms/Button';
+
+import { Icon } from '../../components';
 import { useDocumentTitle } from '../../hooks';
 import GenericError from '../error/GenericError';
 
@@ -30,25 +32,20 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
         };
     }, []);
 
-    // translator: The full sentence is "Please refresh the page or check your internet connection", "refresh the page" is a button
-    const refresh = (
-        <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
-            .t`refresh the page`}</InlineLinkButton>
-    );
-
     return (
-        <div className="h100 flex flex-align-items-center pb4 scroll-if-needed">
+        <div className="h100 flex flex-align-items-center pb-4 scroll-if-needed">
             <GenericError isNetworkError>
-                <span>{c('Error message').t`We couldn't load this page. `}</span>
-                <span>
-                    {
-                        // translator: The full sentence is "Please refresh the page or check your internet connection", "refresh the page" is a button
-                        c('Error message').jt`Please ${refresh} or check your internet connection.`
-                    }
-                </span>
+                <div className="text-weak text-sm text-center max-w270p">{c('Error message')
+                    .t`We couldn't load this page. Please refresh the page or check your internet connection.`}</div>
                 {errorMessage && (
-                    <div className="mt-4 p0-5 color-weak">{c('Error message').t`Error: ${errorMessage}`}</div>
+                    <div className="text-weak text-sm mt-4">{c('Error message').t`Error: ${errorMessage}`}</div>
                 )}
+                <div className="mt-8">
+                    <Button onClick={() => window.location.reload()}>
+                        <Icon name="arrow-rotate-right" />
+                        <span className="ml-4">{c('Action').t`Refresh the page`}</span>
+                    </Button>
+                </div>
             </GenericError>
         </div>
     );
