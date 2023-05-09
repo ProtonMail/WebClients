@@ -54,7 +54,7 @@
                 "assets/*.woff",
                 "assets/*.woff2"
             ],
-            "matches": ["https://*/*"]
+            "matches": ["https://*/*", "http://*/*"]
         }
     ]
 }
