@@ -27,7 +27,7 @@ export const createDropdown = (): InjectedDropdown => {
         animation: 'fadein',
         backdropClose: true,
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
-        getIframePosition: (iframeRoot) => {
+        position: (iframeRoot: HTMLElement) => {
             const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
 
@@ -48,8 +48,28 @@ export const createDropdown = (): InjectedDropdown => {
                 zIndex: field.getFormHandle().props.injections.zIndex,
             };
         },
-        getIframeDimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
+        dimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
     });
+
+    /* if the dropdown is opened while the field is being animated
+     * we must update its position until the position stabilizes */
+    const updatePosition = () => {
+        let { top, left, right } = iframe.getPosition();
+
+        const check = () =>
+            requestAnimationFrame(() => {
+                const { top: nTop, left: nLeft, right: nRight } = iframe.getPosition();
+                if (nTop !== top || nLeft !== left || nRight !== right) {
+                    iframe.updatePosition();
+                    top = nTop;
+                    left = nLeft;
+                    right = nRight;
+                    check();
+                }
+            });
+
+        check();
+    };
 
     /* As we are recyling the dropdown iframe sub-app instead of
      * re-injecting for each field - opening the dropdown involves
@@ -107,6 +127,7 @@ export const createDropdown = (): InjectedDropdown => {
                 }
 
                 iframe.open(scrollParent);
+                updatePosition();
             }
         }
     );
