@@ -31,44 +31,7 @@ body.embedded {
 	}
 
 	@include media('>xsmall') {
-		background: top center / cover no-repeat #f7f5ff;
-	}
-
-	/*
-		 * Here we are optimizing the loading of the big background image
-		 * depending on viewport width and orientation
-		 */
-
-	@include media('landscape', '>xsmall', '<=small') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-landscape.jpg);
-	}
-
-	@include media('portrait', '>xsmall', '<=small') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-portrait.jpg);
-	}
-
-	@include media('landscape', '>small', '<=medium') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-landscape.jpg);
-	}
-
-	@include media('portrait', '>small', '<=medium') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-portrait.jpg);
-	}
-
-	@include media('landscape', '>medium', '<=large') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-landscape.jpg);
-	}
-
-	@include media('portrait', '>medium', '<=large') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-portrait.jpg);
-	}
-
-	@include media('>large', '<=xlarge') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1500.jpg);
-	}
-
-	@include media('>xlarge') {
-		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-2000.jpg);
+		background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
 	}
 }
 

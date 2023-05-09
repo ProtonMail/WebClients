@@ -100,8 +100,9 @@
 
 		border-radius: 8,
 
-		shadow-norm: 0 calc(var(--1px)) calc(var(--1px) * 4) rgb(0 0 0 / var(--shadow-norm-opacity, 0.1)),
-		shadow-lifted: 0 calc(var(--1px) * 8) calc(var(--1px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2)),
+		shadow-default-color: 0 0 0,
+		shadow-norm-offset: 0 calc(var(--1px)) calc(var(--1px) * 4),
+		shadow-lifted-offset: 0 calc(var(--1px) * 8) calc(var(--1px) * 24),
 
 		logo-text-proton-color : var(--text-norm),
 		logo-text-product-color: var(--primary),

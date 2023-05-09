@@ -64,7 +64,7 @@ const Info = ({
             <button
                 tabIndex={buttonTabIndex}
                 className={clsx(
-                    'inline-flex color-inherit relative interactive-pseudo-protrude interactive--no-background',
+                    'inline-flex color-inherit relative interactive-pseudo-protrude interactive--no-background rounded-full',
                     buttonClass
                 )}
                 onClick={handleClick}

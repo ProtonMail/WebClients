@@ -18,7 +18,7 @@ interface FeatureListProps {
 
 export const PlanCardFeatureList = ({ features, icon, highlight = false }: FeatureListProps) => {
     return (
-        <ul className="bg-weak-odd unstyled mt-4 mb-0 md:mb-8">
+        <ul className="bg-weak-odd unstyled mt-4 mb-0 md:mb-6">
             {features.map((feature) => {
                 const iconToDisplay = (() => {
                     if (feature.highlight && highlight) {
@@ -45,7 +45,7 @@ export const PlanCardFeatureList = ({ features, icon, highlight = false }: Featu
                         ? feature.text
                         : `${feature.tooltip}-${feature.highlight}-${feature.icon}`;
                 return (
-                    <li key={key} className="px0-75 py0-5 flex rounded">
+                    <li key={key} className="px-3 py-2 flex rounded">
                         <div
                             className={clsx(
                                 'flex-no-min-children flex-nowrap',
