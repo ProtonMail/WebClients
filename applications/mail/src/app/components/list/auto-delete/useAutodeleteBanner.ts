@@ -10,11 +10,12 @@ const useAutoDeleteBanner = (labelID: string) => {
     const [mailSetting, mailSettingsLoading] = useMailSettings();
 
     const type: AutoDeleteBannerType = (() => {
-        if (!isAllowedAutoDeleteLabelID(labelID) || feature?.Value === false || userLoading || mailSettingsLoading) {
+        const isFeatureActive = feature?.Value === true;
+        if (!isAllowedAutoDeleteLabelID(labelID) || !isFeatureActive || userLoading || mailSettingsLoading) {
             return 'hide';
         }
 
-        if (user.isFree) {
+        if (!user.hasPaidMail) {
             return 'free-banner';
         }
 
@@ -24,11 +25,15 @@ const useAutoDeleteBanner = (labelID: string) => {
         }
 
         // User has not enabled yet
-        if (user.isPaid && mailSetting?.AutoDeleteSpamAndTrashDays === null) {
+        if (user.hasPaidMail && mailSetting?.AutoDeleteSpamAndTrashDays === null) {
             return 'paid-banner';
         }
 
-        if (user.isPaid && mailSetting?.AutoDeleteSpamAndTrashDays && mailSetting?.AutoDeleteSpamAndTrashDays > 0) {
+        if (
+            user.hasPaidMail &&
+            mailSetting?.AutoDeleteSpamAndTrashDays &&
+            mailSetting?.AutoDeleteSpamAndTrashDays > 0
+        ) {
             return 'enabled';
         }
 
