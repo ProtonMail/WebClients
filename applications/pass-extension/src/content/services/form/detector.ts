@@ -37,7 +37,7 @@ const shouldRunDetection = (forms: FormHandle[]) => {
     return untracked.filter(invert(isFormChild(forms))).length > 0;
 };
 
-const reconciliate = (forms: FormHandle[]) => {
+const assess = (forms: FormHandle[]) => {
     const runDetection = shouldRunDetection(forms);
     const removeForms = forms.filter((form) => form.shouldRemove());
     const updateForms = forms.filter((form) => !removeForms.includes(form) && form.shouldUpdate());
@@ -125,6 +125,6 @@ const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Do
 };
 
 export const createDetectorService = () => {
-    return { reconciliate, runDetection: createDetectionRunner(ruleset, document) };
+    return { assess, runDetection: createDetectionRunner(ruleset, document) };
 };
 export type DetectorService = ReturnType<typeof createDetectorService>;
