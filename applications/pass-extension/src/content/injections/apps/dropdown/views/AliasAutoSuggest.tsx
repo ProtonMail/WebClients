@@ -6,15 +6,12 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { pageMessage, sendMessage } from '@proton/pass/extension/message';
 import type { AliasState } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { AliasCreationDTO, type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import noop from '@proton/utils/noop';
 
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { deriveAliasPrefixFromName } from '../../../../../shared/items/alias';
-import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 
 const isValidAliasOptions = (
@@ -23,103 +20,127 @@ const isValidAliasOptions = (
     return options !== null && options?.suffixes?.[0] !== undefined;
 };
 
+const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
+
 export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: string) => void }> = ({
     realm,
     onSubmit,
 }) => {
-    const { endpoint } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [, setErrorMessage] = useState<string>();
+    const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
+    const [error, setError] = useState<boolean>(false);
     const prefix = useMemo(() => deriveAliasPrefixFromName(realm), [realm]);
 
-    useEffect(() => {
-        void wait(500).then(() =>
-            sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.type === 'success') setAliasOptions(response.options);
-                setLoading(false);
-            })
-        );
+    const requestAliasOptions = useCallback(async () => {
+        try {
+            setLoadingText(getInitialLoadingText());
+            setError(false);
+
+            await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
+                if (response.type === 'success') return setAliasOptions(response.options);
+                throw new Error();
+            });
+
+            setLoadingText(null);
+        } catch (_) {
+            setError(true);
+        }
     }, []);
 
     const createAlias = useCallback(
-        async (alias: AliasCreationDTO) => {
-            await sendMessage.on(
-                pageMessage({
-                    type: WorkerMessageType.ALIAS_CREATE,
-                    payload: { realm, alias },
-                }),
-                (response) => {
-                    if (response.type === 'success') {
-                        void sendMessage(
-                            pageMessage({
-                                type: WorkerMessageType.TELEMETRY_EVENT,
-                                payload: {
-                                    event: createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}),
-                                },
-                            })
-                        );
-                    }
+        async ({ suffixes, mailboxes }: RequiredNonNull<AliasState['aliasOptions']>) => {
+            const defaultSuffix = suffixes[0];
 
-                    if (response.type === 'error') throw new Error(response.error);
-                }
-            );
+            setLoadingText(c('Info').t`Creating alias...`);
+            const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
+            try {
+                await sendMessage.on(
+                    pageMessage({
+                        type: WorkerMessageType.ALIAS_CREATE,
+                        payload: {
+                            realm,
+                            alias: {
+                                prefix,
+                                mailboxes: [mailboxes[0]],
+                                signedSuffix: defaultSuffix.signedSuffix,
+                                aliasEmail,
+                            },
+                        },
+                    }),
+                    (response) => {
+                        if (response.type === 'success') {
+                            void sendMessage(
+                                pageMessage({
+                                    type: WorkerMessageType.TELEMETRY_EVENT,
+                                    payload: {
+                                        event: createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}),
+                                    },
+                                })
+                            );
+                        }
+
+                        if (response.type === 'error') throw new Error(response.error);
+                    }
+                );
+
+                setLoadingText(null);
+                onSubmit(aliasEmail);
+            } catch (err) {
+                setError(true);
+            }
         },
         [realm]
     );
 
-    const { disabled, subTitle, onClick } = useMemo(() => {
-        if (isValidAliasOptions(aliasOptions)) {
-            const defaultSuffix = aliasOptions.suffixes[0];
+    useEffect(() => {
+        void wait(500).then(requestAliasOptions);
+    }, []);
 
-            return {
-                disabled: false,
-                subTitle: <AliasPreview prefix={realm} suffix={defaultSuffix.suffix} standalone key="alias-preview" />,
-                onClick: async () => {
-                    setLoading(true);
-                    const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
-                    try {
-                        await createAlias({
-                            prefix,
-                            mailboxes: [aliasOptions.mailboxes[0]],
-                            signedSuffix: defaultSuffix.signedSuffix,
-                            aliasEmail,
-                        });
+    useEffect(() => {
+        if (error) setLoadingText(null);
+    }, [error]);
 
-                        setLoading(false);
-                        onSubmit(aliasEmail);
-                    } catch (err) {
-                        setLoading(false);
-                        if (err instanceof Error) {
-                            const errorMessage = err.message;
-                            logger.error(`[IFrame::${endpoint}] Alias creation failed. ${errorMessage}`);
-                            setErrorMessage(
-                                c('Error').t`Could not create alias email at the moment, please try again later`
-                            );
-                        }
-                    }
-                },
-            };
-        }
-
-        return {
-            onClick: noop,
-            disabled: true,
-            subTitle: loading ? (
-                <CircleLoader key="loader" style={{ transform: 'translate3d(0,0,0)' }} />
-            ) : (
-                <span className="color-danger">{c('Warning').t`Cannot create alias`}</span>
-            ),
-        };
-    }, [aliasOptions, loading, prefix, createAlias]);
+    const canCreate = isValidAliasOptions(aliasOptions);
 
     return (
         <DropdownItem
             title={c('Title').t`Create email alias`}
-            subTitle={subTitle}
+            subTitle={(() => {
+                if (loadingText) {
+                    return (
+                        <span>
+                            <CircleLoader className="mr-2" />
+                            {loadingText}
+                        </span>
+                    );
+                }
+
+                if (error) {
+                    return (
+                        <span className="color-danger">
+                            {c('Error').t`Cannot create alias.`}{' '}
+                            <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
+                        </span>
+                    );
+                }
+
+                if (canCreate) {
+                    return (
+                        <AliasPreview
+                            prefix={realm}
+                            suffix={aliasOptions.suffixes[0].suffix}
+                            standalone
+                            key="alias-preview"
+                        />
+                    );
+                }
+            })()}
             icon="alias"
-            disabled={disabled}
-            onClick={onClick}
+            disabled={loadingText !== null}
+            onClick={(() => {
+                if (error) return requestAliasOptions;
+                if (canCreate) return () => createAlias(aliasOptions);
+            })()}
         />
     );
 };
