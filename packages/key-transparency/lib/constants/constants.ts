@@ -29,11 +29,20 @@ export const SCT_THRESHOLD = 2;
 
 export const KT_VE_SIGNING_CONTEXT = {
     value: 'key-transparency.verified-epoch',
-    // TODO: set it to true once the BE understands the notation
-    critical: false,
+    critical: true,
 };
 
 export const KT_VE_VERIFICATION_CONTEXT = {
     value: 'key-transparency.verified-epoch',
     required: true,
+};
+
+export const KT_SKL_SIGNING_CONTEXT = {
+    value: 'key-transparency.key-list',
+    critical: false,
+};
+
+export const KT_SKL_VERIFICATION_CONTEXT = {
+    value: 'key-transparency.key-list',
+    required: false,
 };

@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useEffect, useRef } from 'react';
 
-import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@proton/crypto';
 import {
     EXP_EPOCH_INTERVAL,
     KTBlobContent,
@@ -11,6 +11,7 @@ import {
     getKTLocalStorage,
     ktSentryReport,
     verifyPublicKeys,
+    verifySKLSignature,
 } from '@proton/key-transparency';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -112,17 +113,15 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
                     const verificationKeys = await Promise.all(
                         PublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
                     );
-                    const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
-                        textData: Data,
-                        armoredSignature: Signature,
-                        verificationKeys,
-                    });
 
-                    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
-                        ktSentryReport('Submitted SKL signature verification failed', {
-                            context: 'verifyOutboundPublicKeys',
-                            errors: JSON.stringify(errors),
-                        });
+                    const signatureTimestamp = await verifySKLSignature(
+                        verificationKeys,
+                        Data,
+                        Signature,
+                        'verifyOutboundPublicKeys'
+                    );
+
+                    if (!signatureTimestamp) {
                         return;
                     }
 
