@@ -59,7 +59,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     pickRef.current = false;
                     setIsOpen(!isOpen);
                 }}
-                className="unstyled flex-align-self-stretch my-1 pr0-5 border-right"
+                className="unstyled flex-align-self-stretch my-1 pr-2 border-right"
                 ref={anchorRef}
                 caretClassName="my-auto"
                 aria-live="assertive"
@@ -151,7 +151,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                                     height={height}
                                     width={width}
                                     rowHeight={cache.rowHeight}
-                                    className="unstyled m-0 p0 scroll-if-needed"
+                                    className="unstyled m-0 p-0 scroll-if-needed"
                                     scrollToIndex={selectedIndex < 0 ? 0 : selectedIndex}
                                     rowCount={filteredOptions.length}
                                     rowRenderer={({ index, key, parent, style }) => {

@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import { SimpleFilterModalModel } from '../interfaces';
 import FilterPreviewActions from './FilterPreviewActions';
 import FilterPreviewConditions from './FilterPreviewConditions';
@@ -24,13 +24,13 @@ const FilterPreview = ({ isNarrow, labels, folders, model }: Props) => {
     return (
         <>
             <div className="border-bottom">
-                <div className="flex flex-nowrap on-mobile-flex-column align-items-center pb1">
-                    <div className={classnames(['w20 pt0-5', isNarrow && 'mb-4'])}>
-                        <span className={classnames(['mr-2', !isNarrow && 'ml-2'])}>{c('Label').t`Filter Name`}</span>
+                <div className="flex flex-nowrap on-mobile-flex-column align-items-center pb-4">
+                    <div className={clsx(['w20 pt-2', isNarrow && 'mb-4'])}>
+                        <span className={clsx(['mr-2', !isNarrow && 'ml-2'])}>{c('Label').t`Filter Name`}</span>
                     </div>
                     <div
                         title={model.name}
-                        className={classnames(['pt0-5 flex flex-column flex-item-fluid max-w100', !isNarrow && 'ml-4'])}
+                        className={clsx(['pt-2 flex flex-column flex-item-fluid max-w100', !isNarrow && 'ml-4'])}
                     >
                         <span className="max-w100 text-ellipsis">{model.name}</span>
                     </div>

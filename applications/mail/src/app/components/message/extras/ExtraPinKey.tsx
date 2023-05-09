@@ -192,13 +192,13 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
 
     return (
         <div
-            className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap flex-justify-space-between on-mobile-flex-column"
+            className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-justify-space-between on-mobile-flex-column"
             data-testid="extra-pin-key:banner"
         >
-            <div className="flex flex-nowrap pr1 mb-2 md:mb-0">
+            <div className="flex flex-nowrap pr-4 mb-2 md:mb-0">
                 <Icon name="exclamation-circle-filled" className="mt-1 mr-2 ml-0.5 flex-item-noshrink color-danger" />
                 <div>
-                    <span className="pr0-5 flex flex-item-fluid mt-1">
+                    <span className="pr-2 flex flex-item-fluid mt-1">
                         <span className="mr-1" data-testid="extra-pin-key:content">
                             {getBannerMessage(promptKeyPinningType)}
                         </span>
@@ -215,7 +215,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     </span>
                 </div>
             </div>
-            <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt0-1">
+            <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt-0.5">
                 <Button
                     size="small"
                     color="weak"

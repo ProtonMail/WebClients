@@ -41,7 +41,7 @@ const AutoDetectPrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
                     />
                 </label>
             </SettingsLayoutLeft>
-            <SettingsLayoutRight className="pt0-5 flex flex-align-items-center">
+            <SettingsLayoutRight className="pt-2 flex flex-align-items-center">
                 <Toggle
                     id="autodetect-primary-timezone"
                     aria-describedby="autodetect-primary-timezone"

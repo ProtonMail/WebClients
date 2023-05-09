@@ -1,9 +1,6 @@
 import { c, msgid } from 'ttag';
 
-
-
 import { InlineLinkButton } from '../../../components';
-
 
 interface Props {
     onMerge: () => void;
@@ -27,7 +24,7 @@ const MergeContactBanner = ({ onMerge, countMergeableContacts }: Props) => {
     );
 
     return (
-        <div className="px1 py0-5 bg-weak border-bottom">
+        <div className="px-4 py-2 bg-weak border-bottom">
             <span>
                 {mergeText}
                 {mergeAction}

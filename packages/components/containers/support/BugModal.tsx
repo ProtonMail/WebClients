@@ -123,7 +123,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
         const { type, value } = option;
         if (type === 'label') {
             return (
-                <label className="text-semibold px0-5 py0-25 block" key={value}>
+                <label className="text-semibold px-2 py-1 block" key={value}>
                     {value}
                 </label>
             );

@@ -18,7 +18,7 @@ const SignInWithGoogle = ({ loading, onClick }: Props) => {
             onClick={onClick}
             loading={loading}
             disabled={loading}
-            className="flex flex-align-items-center p0-25 rounded relative h-custom relative google-button"
+            className="flex flex-align-items-center p-1 rounded relative h-custom relative google-button"
             style={{ '--height-custom': '3rem' }}
         >
             <span

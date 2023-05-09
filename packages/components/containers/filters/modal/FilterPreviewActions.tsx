@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, LabelStack } from '../../../components';
-import { classnames } from '../../../helpers';
 import { getDefaultFolders } from '../constants';
 import { SimpleFilterModalModel } from '../interfaces';
 
@@ -163,7 +163,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
         }, '');
 
         return isOpen ? (
-            <div className="pt0-5">
+            <div className="pt-2">
                 {actionsRows.map((action, i) => (
                     <div key={`preview-action-${i}`}>
                         {i === 0 ? c('Label').t`Then` : c('Label').t`And`}
@@ -173,7 +173,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 ))}
             </div>
         ) : (
-            <div className="pt0-5 max-w100 text-ellipsis" title={title}>
+            <div className="pt-2 max-w100 text-ellipsis" title={title}>
                 {actionsRows.map((action, i) => (
                     <span key={`preview-action-${i}`}>
                         {i === 0 ? c('Label').t`Then` : ` ${c('Label').t`and`}`}
@@ -187,14 +187,12 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
     return (
         <div className="border-bottom mb-8">
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
-                <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
-                    <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
+            <div className="flex flex-nowrap on-mobile-flex-column align-items-center py-4">
+                <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
+                    <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Actions`}</span>
                 </button>
-                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
-                    {actionsRenderer}
-                </div>
+                <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>{actionsRenderer}</div>
             </div>
         </div>
     );

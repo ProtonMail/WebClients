@@ -1,23 +1,16 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Checkbox, Icon, InlineLinkButton, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
-
-
 import { FOLDER_ICONS, FolderMapItem } from '../../CustomizeMailImportModal.interface';
 import ManageFoldersRowFolderErrors from './ManageFoldersRowFolderErrors';
 import ManageFolderRowInput from './ManageFoldersRowInput';
 import ManageFoldersRowLabelErrors from './ManageFoldersRowLabelErrors';
-
 
 const DIMMED_OPACITY_CLASSNAMES = 'opacity-30';
 
@@ -31,7 +24,7 @@ interface WrapperProps {
 
 const Wrapper = ({ checked, editMode, disabled, checkboxId, children }: WrapperProps) => {
     const classNames = clsx([
-        'flex flex-nowrap flex-align-items-center pt1 pb1',
+        'flex flex-nowrap flex-align-items-center py-4',
         !checked && DIMMED_OPACITY_CLASSNAMES,
         (disabled || editMode) && 'cursor-default',
     ]);
@@ -95,7 +88,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                 disabled={folderItem.disabled}
                 checkboxId={folderItem.id}
             >
-                <div className="flex w50 flex-nowrap flex-align-items-center flex-item-noshrink pr0-5">
+                <div className="flex w50 flex-nowrap flex-align-items-center flex-item-noshrink pr-2">
                     <div
                         className="flex-item-noshrink ml-custom"
                         style={indentStyle(folderItem.providerPath.length)}
@@ -119,7 +112,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                         {folderProviderName}
                     </div>
                 </div>
-                <div className="flex w50 pl0-5">
+                <div className="flex w50 pl-2">
                     <div
                         className={clsx(['flex flex-nowrap flex-align-items-center ml-custom'])}
                         style={indentStyle(folderItem.protonPath.length)}
@@ -210,7 +203,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                     {((editMode && !folderItem.disabled) || hasError) && (
                         <InlineLinkButton
                             onClick={handleSave}
-                            className={clsx(['ml-2 p0-5', hasError && DIMMED_OPACITY_CLASSNAMES])}
+                            className={clsx(['ml-2 p-2', hasError && DIMMED_OPACITY_CLASSNAMES])}
                             aria-disabled={hasError}
                             disabled={hasError || !folderItem.checked}
                             data-testid="CustomizeModal:rowSave"

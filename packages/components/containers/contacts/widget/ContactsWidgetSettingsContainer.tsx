@@ -35,18 +35,18 @@ const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props)
     return (
         <>
             {loading ? (
-                <div className="flex h100 pb2">
+                <div className="flex h100 pb-7">
                     <CircleLoader className="m-auto color-primary" size="large" />
                 </div>
             ) : (
-                <div className="p1 pt0 scroll-if-needed h100">
+                <div className="p-4 pt-0 scroll-if-needed h100">
                     <div className="flex mb-4 on-mobile-flex-column">
                         <Label htmlFor="saveContactToggle">
                             <span className="mr-2 text-semibold" role="heading" aria-level={2}>{c('Label')
                                 .t`Automatically save contacts`}</span>
                             <Info url={getKnowledgeBaseUrl('/autosave-contact-list')} />
                         </Label>
-                        <Field className="pt0-5">
+                        <Field className="pt-2">
                             <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />
                         </Field>
                     </div>

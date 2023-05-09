@@ -1,5 +1,6 @@
+import clsx from '@proton/utils/clsx';
+
 import { Icon } from '../../components';
-import { classnames } from '../../helpers';
 import { SectionConfig } from '../layout';
 import Sections from './Sections';
 
@@ -10,8 +11,8 @@ const IndexSection = ({ pages, limit = 4 }: { pages: SectionConfig[]; limit?: nu
                 return (
                     <section
                         key={to}
-                        className={classnames([
-                            'overview-grid-item border bg-norm shadow-norm p2',
+                        className={clsx([
+                            'overview-grid-item border bg-norm shadow-norm p-6',
                             subsections.length > limit && 'overview-grid-item--tall',
                         ])}
                     >

@@ -37,7 +37,7 @@ const OfferLayout = ({ children, offer }: Props) => {
             <div
                 className={clsx(
                     'offer-main-content-container',
-                    !hasMultipleDeals && 'flex-item-fluid px2 on-mobile-px1 on-tiny-mobile-px0'
+                    !hasMultipleDeals && 'flex-item-fluid px-0 sm:px-4 md:px-6'
                 )}
             >
                 {hasMultipleDeals ? (
@@ -54,7 +54,7 @@ const OfferLayout = ({ children, offer }: Props) => {
                         </picture>
                     </div>
                 ) : null}
-                <div className={clsx('offer-main-content on-mobile-pt2', !hasMultipleDeals && 'pt2')}>{children}</div>
+                <div className={clsx('offer-main-content pt-6 md:pt-0', !hasMultipleDeals && 'pt-6')}>{children}</div>
             </div>
         </div>
     );

@@ -26,7 +26,7 @@ const DayButtons = ({
     const result = days.map((day) => {
         return (
             <button
-                className="flex-item-fluid flex-justify-center calendar-grid-heading flex flex-align-items-center p0-5 text-lg"
+                className="flex-item-fluid flex-justify-center calendar-grid-heading flex flex-align-items-center p-2 text-lg"
                 type="button"
                 key={day.getUTCDate()}
                 aria-current={isSameDay(day, now) ? 'date' : undefined}
