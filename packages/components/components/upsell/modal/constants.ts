@@ -40,7 +40,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     },
     'more-storage': {
         icon: 'storage',
-        getText: () => c('new_plans: feature').t`Up to 500 GB of storage`,
+        getText: () => c('new_plans: feature').t`Up to 3 TB of storage`,
         getTooltip: () =>
             c('new_plans: feature info')
                 .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME} and ${DRIVE_APP_NAME}`,
