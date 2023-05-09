@@ -3379,9 +3379,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser corrente."
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Troppi filtri attivi. Si prega di effettuare l'aggiornamento ad un piano a pagamento per attivare più filtri."
-      ],
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
       ],
@@ -3710,6 +3707,162 @@
     "Event title": {
       "(no title)": [
         "(nessun titolo)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB di archiviazione totale"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Scegli ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lo spazio di archiviazione è condiviso tra i membri della famiglia su ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Non mostrare più quest'offerta"
+      ],
+      "Got it": [
+        "OK"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano attuale"
+      ],
+      "Switch plans": [
+        "Cambia piano"
+      ],
+      "View the invitation": [
+        "Guarda l'invito"
+      ],
+      "View the invitations": [
+        "Guarda gli inviti"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail e Calendar premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Up to 6 users": [
+        "Fino a 6 utenti"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Gruppi ${ BRAND_NAME }"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Gli account con domini personalizzati non possono entrare a far parte di un piano Visionary o di un piano famiglia."
+      ],
+      "customer support": [
+        "assistenza clienti"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Invito di: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Gestisci gli indirizzi."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "I titolari di un piano dotato di membri non possono entrare a far parte di un piano collettivo."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ci spiace, ma non è possibile cambiare piano al momento."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Spazio di archivazione assegnato a te: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Il costo dell'abbonamento è addebitato all'amministratore principale del piano Visionary o del piano famiglia."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Con i piani Visionary e i piani famiglia per ora non è possibile usare gli account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "I piani Visionary e i piani famiglia per ora non supportano gli account a vita."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Hai ricevuto un invito a ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Puoi accettare solo 3 inviti nell'arco di 6 mesi. Se ti serve un'eccezione, contatta ${ supportLink }."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Hai ricevuto un invito a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Hai aderito al piano Family"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano collettivo, per beneficiare insieme di tutte le funzioni premium di ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Il tuo piano attuale non si può associare a un piano Visionary o a un piano famiglia."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Il tuo abbonamento si rinnoverà automaticamente allo stesso prezzo alla fine del ciclo di fatturazione."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Gli sconti si basano sui prezzi mensili standard."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Scegli ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Privacy online, per tutta la famiglia"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configura il tuo account famiglia e invita degli utenti "
+      ],
+      "Set up your family": [
+        "Configura la tua famiglia"
+      ],
+      "Set up your family account": [
+        "Configura il tuo account famiglia"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Ti presentiamo ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide My Email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
       ]
     },
     "Feedback Modal Title": {
@@ -5153,6 +5306,9 @@
       ],
       "Request read receipt": [
         "Richiedi la conferma di lettura"
+      ],
+      "Restore": [
+        "Ripristina"
       ],
       "Right to Left": [
         "Da destra a sinistra"
@@ -7646,6 +7802,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
+      ],
+      "Upgrade": [
+        "Aggiorna"
       ]
     },
     "specialoffer: Offers": {
@@ -8435,6 +8594,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Keep your inbox organized": [
+        "Mantieni la tua casella email organizzata"
+      ],
       "Label as": [
         "Etichetta come"
       ],
@@ -8545,6 +8707,9 @@
       ],
       "Phone numbers": [
         "Numeri di telefono"
+      ],
+      "Preview": [
+        "Anteprima"
       ],
       "Previous conversation": [
         "Conversazione precedente"

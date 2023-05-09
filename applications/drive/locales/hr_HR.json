@@ -2131,9 +2131,6 @@
       "Failed to generate a secure link. Try again later.": [
         "Generiranje sigurne poveznice nije uspjelo. Pokušajte ponovno kasnije."
       ],
-      "File will not be uploaded": [
-        "Datoteka neće biti učitana"
-      ],
       "Finalizing": [
         "Završavanje"
       ],
@@ -2328,9 +2325,6 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Ova poveznica će biti trajno onemogućena. Nitko s ovom poveznicom neće moći pristupiti vašoj datoteci. Da biste datoteku ponovno podijelili, trebat će vam nova poveznica."
-      ],
-      "This will overwrite the existing file": [
-        "Ovo će presnimiti postojeću datoteku"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -2653,12 +2647,6 @@
       "Region": [
         "Regija"
       ],
-      "Replace file": [
-        "Zamijeni datoteku"
-      ],
-      "Replace folder": [
-        "Zamijeni mapu"
-      ],
       "Reveal password": [
         "Prikaži lozinku"
       ],
@@ -2697,9 +2685,6 @@
       ],
       "Unknown file": [
         "Nepoznata datoteka"
-      ],
-      "Upload anyway": [
-        "Učitaj svejedno"
       ],
       "Upload picture": [
         "Učitaj sliku"
@@ -3158,6 +3143,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# preuzimanja"
+      ],
       "${ emailsCount } member": [
         "${ emailsCount } član",
         "${ emailsCount } člana",
@@ -3337,6 +3325,9 @@
       "Number of files": [
         "Broj datoteka"
       ],
+      "Number of folders": [
+        "Broj mapa"
+      ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
@@ -3345,6 +3336,9 @@
       ],
       "Open settings menu": [
         "Otvori izbornik postavki"
+      ],
+      "Original size": [
+        "Izvorna veličina"
       ],
       "Other information": [
         "Ostale informacije"
@@ -3453,6 +3447,9 @@
       ],
       "Uploaded by": [
         "Prenio"
+      ],
+      "Version history": [
+        "Povijest verzija"
       ],
       "View contacts": [
         "Pregled kontakta"

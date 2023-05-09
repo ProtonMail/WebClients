@@ -3423,9 +3423,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів."
-      ],
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
       ],
@@ -5333,6 +5330,9 @@
       ],
       "Request read receipt": [
         "Запит підтвердження прочитання"
+      ],
+      "Restore": [
+        "Відновити"
       ],
       "Right to Left": [
         "Справа наліво"
@@ -7295,6 +7295,9 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
+      "Set up your organization testing": [
+        "Налаштуйте тестування своєї організації"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -7773,6 +7776,176 @@
       ],
       "Smallest first": [
         "Спочатку найменші"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрити"
+      ],
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунди",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } місяць БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Усього ${ storageSize } сховища"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
+      ],
+      "64 countries": [
+        "64 країни"
+      ],
+      "High speed VPN": [
+        "Високошвидкісна VPN"
+      ],
+      "Highest VPN speed": [
+        "Найвища швидкість VPN"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Ранній преміумдоступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Calendar і Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Безпечне хмарне сховище"
+      ],
+      "Secure streaming": [
+        "Захищена трансляція"
+      ],
+      "Support online privacy": [
+        "Підтримка онлайн-приватності"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ця передплата автоматично продовжуватиметься раз на 2 роки за такою ж ціною, поки її не буде скасовано."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Довічна угода"
+      ],
+      "Limited time only": [
+        "Упродовж обмеженого часу"
+      ],
+      "Most popular": [
+        "Найпопулярніший"
+      ],
+      "Offer ends soon": [
+        "Пропозиція скоро завершиться"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Знижка діятиме після поновлення передплати, доки її не буде скасовано або змінено"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти до тарифних планів"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ місяць"
+      ],
+      "1 year": [
+        "1 рік"
+      ],
+      "2 years": [
+        "2 роки"
+      ],
+      "for ${ n } month": [
+        "на ${ n } місяць",
+        "на ${ n } місяці",
+        "на ${ n } місяців",
+        "на ${ n } місяців"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Save ${ discount }%": [
+        "Знижка ${ discount }%"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Розпродаж у Чорну П'ятницю"
+      ],
+      "Cyber Week Sale": [
+        "Розпродаж Кібертижня"
+      ],
+      "End of year offer": [
+        "Передноворічна пропозиція"
+      ],
+      "End of Year Sale": [
+        "Передноворічний розпродаж"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8636,6 +8809,9 @@
       "Phone numbers": [
         "Номери телефонів"
       ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
       "Previous conversation": [
         "Попередня розмова"
       ],
@@ -8674,6 +8850,9 @@
       ],
       "Request new code": [
         "Запитати новий код"
+      ],
+      "Save time with email filters": [
+        "Заощаджуйте час за допомогою фільтрів електронної пошти"
       ],
       "Schedule send": [
         "Запланувати надсилання"

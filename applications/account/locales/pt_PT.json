@@ -665,6 +665,9 @@
       "Sort": [
         "Ordenar"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Start import": [
         "Iniciar a importação"
       ],
@@ -2329,6 +2332,9 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "A resposta automática é uma funcionalidade paga. Atualize para uma conta paga para utilizar esta funcionalidade."
       ],
+      "Calendar limit reached": [
+        "Chegou ao número limite de calendários"
+      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -2506,6 +2512,9 @@
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "O nome da pasta é demasiado longo. Por favor escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
@@ -2729,6 +2738,9 @@
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Demasiadas sessões abertas. Termine, limpe os cookies e reinicie sessão."
+      ],
+      "We couldn't load this page. ": [
+        "Não conseguimos carregar esta página. "
       ]
     },
     "Error message, recovery": {
@@ -2925,9 +2937,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Adicione um filtro personalizado para executar automaticamente determinadas acções, como etiquetagem ou arquivamento de mensagens. Os filtros podem ser editados e criados directamente através da linguagem de programação Sieve."
-      ],
       "Search list": [
         "Procurar lista"
       ]
@@ -3104,6 +3113,9 @@
       "This file contains an invitation response:": [
         "Este ficheiro contém uma resposta de convite:",
         "Este arquivo contém respostas a convites:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Este ficheiro contém alguns dados que não podemos importar:"
       ]
     },
     "Import contact": {
@@ -3259,6 +3271,12 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } não é válido."
+      ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagem em tamanho máximo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pré-visualização de baixa resolução"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } passará a ser o calendário predefinido."
@@ -3475,6 +3493,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem a certeza de que deseja remover os privilégios administrativos deste utilizador?"
       ],
+      "Attention required": [
+        "Atenção Requerida"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "A resposta automática está ativa em cada mês entre a hora de início e fim seleccionadas."
       ],
@@ -3529,6 +3550,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
+      "Close this screen to exit.": [
+        "Feche este ecrã para sair."
+      ],
       "Continue anyway?": [
         "Continuar mesmo assim?"
       ],
@@ -3559,9 +3583,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua assinatura"
-      ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Atualmente, todo o armazenamento disponível está alocado à conta do administrador. Reduza a alocação do administrador para libertar espaço para utilizadores adicionais. Pode aumentar o armazenamento total a qualquer momento atualizando para um plano superior."
       ],
       "Custom": [
         "Personalizado"
@@ -3756,9 +3777,15 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "As imagens foram removidas porque não são permitidas na resposta automática"
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
+      ],
+      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
+        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar de"
@@ -3777,6 +3804,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANTE: alguns registadores não aceitam valores CNAME com um ponto no final (enquanto outros o obrigam). Se o seu registador não aceita registos CNAME, elimine o ponto no final de cada valor CNAME e tente novamente."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
@@ -3816,6 +3846,9 @@
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Tenho usado o @ProtonMail e pensei que poderia gostar dele. É um serviço de correio electrónico seguro que protege a sua privacidade. Inscreva-se com a minha ligação de referência para obter 1 mês de funcionalidades premium gratuitamente: ${ referrerLink }"
+      ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Confirme apenas a sua seleção e faremos o resto."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantenha estes registos no seu DNS enquanto utilizar DKIM."
@@ -4000,6 +4033,12 @@
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
+      "Preview failed to be loaded": [
+        "Falha no carregamento da pré-visualização"
+      ],
+      "Preview for this file type is not supported": [
+        "A pré-visualização deste tipo de arquivo não é suportada"
+      ],
       "Priority support": [
         "Apoio ao cliente prioritário"
       ],
@@ -4026,6 +4065,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
+      ],
+      "Restore": [
+        "Restaurar"
       ],
       "Right to Left": [
         "Da direita para a esquerda"
@@ -4057,6 +4099,9 @@
       "Server load": [
         "Carga do servidor"
       ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Os servidores estão inacessíveis. Por favor, tente novamente dentro de alguns minutos"
+      ],
       "Session timed out": [
         "A sessão expirou."
       ],
@@ -4084,6 +4129,9 @@
       "support team": [
         "equipa de assistência"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporariamente indisponível. Tente mais tarde."
+      ],
       "Test link": [
         "Testar ligação"
       ],
@@ -4092,9 +4140,6 @@
       ],
       "Text to display": [
         "Texto a mostrar"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "O endereço que pôs no topo da lista é o seu correio electrónico predefinido. Arraste e largue para reordenar os endereços."
       ],
       "The following address is invalid.": [
         "O seguinte endereço não é válido.",
@@ -4122,6 +4167,12 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Este link leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este link poderá ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se tiver certeza de que o link é legítimo, abra-o com um navegador diferente."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
@@ -4213,6 +4264,9 @@
       "Update recovery phrase": [
         "Atualizar frase de recuperação"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Atualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -4258,6 +4312,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
       ],
@@ -4282,6 +4339,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Também pode combinar calendários importados com calendários existentes de ${ BRAND_NAME }."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Pode verificar o progresso ${ importProgressLink }."
+      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
       ],
@@ -4293,6 +4356,9 @@
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
         "Pode usar o ${ MAIL_APP_NAME } com qualquer cliente de email que suporte IMAP/SMTP, incluindo o Outlook, o Apple Mail e o Thunderbird."
+      ],
+      "You cannot undo this action.": [
+        "Esta acção não pode ser desfeita."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
@@ -4327,14 +4393,26 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. Os seus links de partilha do Drive estão inativos e não pode fazer upload de novos arquivos. Para continuar a usar sua conta, efetue o pagamento das faturas vencidas."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "A sua conta tem pelo menos uma fatura vencida. A sua conta está restrita e todos os serviços estão bloqueados até o pagamento. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e links de partilha. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "O método de recuperação da sua conta está definido."
       ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será atualizada assim que o pagamento for aprovado."
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
         "O método de recuperação de seus dados está definido."
@@ -4389,11 +4467,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Por motivos de segurança, temos de verificar se detém ${ domainName }. Adicione o seguinte registo DNS TXT ao seu domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Adicione remova e gira utilizadores dentro da organização. Ajuste o seu armazenamento atribuído, conceda direitos de administração e muito mais. Seleccione um utilizador para gerir os seus endereços de correio. O primeiro da lista será automaticamente seleccionado como predefinição."
       ]
     },
     "Info for payment methods": {
@@ -5101,6 +5174,15 @@
       ],
       "Label messages as": [
         "Etiquetar mensagens como"
+      ],
+      "Last 12 months only": [
+        "Últimos 12 meses"
+      ],
+      "Last 3 months only": [
+        "Últimos 3 meses"
+      ],
+      "Last month only": [
+        "Último mês"
       ],
       "Link label": [
         "Etiqueta da hiperligação"
@@ -6642,9 +6724,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Complete a transição para a privacidade com as nossas ferramentas seguras de importação e encaminhamento."
-      ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Pode aplicar várias etiquetas à mesma mensagem, mas uma mesma mensagem só pode estar numa pasta. Arraste e largue para reordenar as suas pastas e etiquetas."
       ]
     },
     "Settings section title": {
@@ -6714,6 +6793,64 @@
       ],
       "Verification": [
         "Verificação"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Fechar"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidade"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mês"
+      ],
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ],
+      "for ${ n } month": [
+        "por ${ n } mês",
+        "por ${ n } meses"
       ]
     },
     "State": {
@@ -7280,9 +7417,6 @@
       "Delete logs": [
         "Eliminar diários"
       ],
-      "Delete organization?": [
-        "Eliminar organização?"
-      ],
       "Delete user": [
         "Eliminar utilizador"
       ],
@@ -7429,6 +7563,9 @@
       "Invalid verification code": [
         "Código de verificação não válido"
       ],
+      "Invitations": [
+        "Convites"
+      ],
       "Invoices": [
         "Facturas"
       ],
@@ -7518,6 +7655,9 @@
       ],
       "Plan summary": [
         "Resumo do plano"
+      ],
+      "Preview": [
+        "Pré-visualização"
       ],
       "Previous": [
         "Anterior"
@@ -7721,12 +7861,6 @@
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"
-      ],
-      "Your current plan": [
-        "O seu plano atual"
-      ],
-      "Your plan": [
-        "O seu plano"
       ],
       "Your recovery status": [
         "O seu estado de recuperação"
@@ -7958,6 +8092,11 @@
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de caracter ${ n })",
         "Tente um nome de utilizador mais pequeno (máximo de caracteres ${ n })"
+      ]
+    },
+    "Video control": {
+      "Replay video": [
+        "Reproduzir o vídeo novamente"
       ]
     },
     "VPN info": {

@@ -260,6 +260,9 @@
       "Delete": [
         "刪除"
       ],
+      "Delete and confirm": [
+        "同意刪除"
+      ],
       "Delete link": [
         "刪除連結"
       ],
@@ -457,6 +460,12 @@
       ],
       "Insert link": [
         "插入連結"
+      ],
+      "Invite": [
+        "邀請"
+      ],
+      "Invite user": [
+        "邀請使用者"
       ],
       "Italic": [
         "斜體"
@@ -676,6 +685,9 @@
       ],
       "Save address": [
         "儲存電郵位址"
+      ],
+      "Save changes": [
+        "儲存變更"
       ],
       "Save ICS file": [
         "儲存 ICS 檔案"
@@ -2628,6 +2640,12 @@
       "Track the status and activity of your referrals.": [
         "追蹤您推介的狀態和活動。"
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "升級時解鎖用來排序您收件匣的無限過濾條件與更多進階功能。"
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "升級時解鎖無限資料夾、標籤與更多進階功能。"
+      ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "包含 ${ BRAND_NAME } 標誌後跟加號的追加銷售圖示"
       ],
@@ -3038,9 +3056,6 @@
       ],
       "Organization key is not decrypted.": [
         "組織金鑰尚未解密。"
-      ],
-      "Organization not recognized. Try again.": [
-        "未識別組織。再試一次。"
       ],
       "Password is required": [
         "密碼為必填"
@@ -3839,9 +3854,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "新增一個自訂的篩選器可以自動進行某些操作，例如為郵件添加標籤或歸檔。篩選器可以直接使用 Sieve 語言建立或修改。"
-      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "傳送自您已標記或 ${ BRAND_NAME } 判定為垃圾郵件位址的郵件，這些電郵會進入垃圾郵件匣。倘若您想要允許部分郵件從中排除，則可在郵件上標記為「非垃圾郵件」。"
       ],
@@ -4793,9 +4805,6 @@
       "Credits earned": [
         "獲得餘額了"
       ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
-      ],
       "Custom": [
         "自訂"
       ],
@@ -5468,6 +5477,9 @@
       "Remove one of your calendars to join this one": [
         "移除其中一個行事曆以加入目前這個"
       ],
+      "Restore": [
+        "還原"
+      ],
       "Revoke certificate ${ name }": [
         "撤銷憑證 ${ name }"
       ],
@@ -5518,6 +5530,12 @@
       ],
       "Setting up your Drive": [
         "設定您的雲端硬碟"
+      ],
+      "Settings update failed": [
+        "更新設定失敗"
+      ],
+      "Settings updated": [
+        "已更新設定"
       ],
       "Show original message": [
         "顯示原始訊息"
@@ -5584,9 +5602,6 @@
       ],
       "The calendar will be removed from your account.": [
         "該行事曆將會從您的帳號中移除。"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "電郵驗證連結已過期。請登入以重新傳送驗證連結。"
@@ -5999,6 +6014,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "您不能推薦 ${ MAIL_APP_NAME } 使用者"
       ],
+      "You cannot undo this action.": [
+        "此操作無法復原。"
+      ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "您不能使用 OpenVPN / IKEv2 認證登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。${ learnMore }"
       ],
@@ -6122,6 +6140,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "您的方案限制為多達 7 天的 10 個版本"
+      ],
       "Your recovery phrase": [
         "您的復原短語"
       ],
@@ -6159,11 +6180,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "基於安全理由，我們需要驗證您是 ${ domainName } 的擁有者。請加入以下的 DNS TXT 記錄到您的網域中。這通常可以在您的網域名稱註冊機構提供的控制台中達成。"
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "加入、移除並管理您的組織中的使用者。您可在此調整各使用者獲分派的儲存空間、授予管理員權限等等。選取一個使用者以管理其電郵位址。清單首列的電郵位址將自動選為預設電郵位址。"
       ]
     },
     "Info for payment methods": {
@@ -6553,6 +6569,12 @@
       "${ n } months": [
         "${ n } 月"
       ],
+      "${ nbDay } days": [
+        "${ nbDay } 天"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } 年"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
       ],
@@ -6844,6 +6866,9 @@
       "Don't ask again": [
         "不要再次詢問"
       ],
+      "Don't keep versions": [
+        "不要保留版本紀錄"
+      ],
       "Duration": [
         "期間"
       ],
@@ -6882,9 +6907,6 @@
       ],
       "End weekday": [
         "每週的結束日"
-      ],
-      "Enter organization name to confirm": [
-        "輸入組織名稱以確認"
       ],
       "Enter password": [
         "請輸入密碼"
@@ -7667,16 +7689,14 @@
       "Edit": [
         "編輯"
       ],
+      "Remove": [
+        "移除"
+      ],
       "Revoke sessions": [
         "撤銷工作階段"
       ],
       "Sign in": [
         "登入"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "這將會永久刪除所有與您的組織相關的子使用者、帳號與資料。"
       ]
     },
     "Message": {
@@ -9074,6 +9094,9 @@
       "Search": [
         "搜尋"
       ],
+      "Search for a user or address": [
+        "搜尋使用者或電子信箱"
+      ],
       "Search settings": [
         "搜尋設定"
       ],
@@ -9325,9 +9348,6 @@
       ],
       "Complete the transition to privacy with our secure importing tools.": [
         "以我們安全的匯入工具，完成隱私之進化。"
-      ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "您可以為單一郵件套用多個標籤，但一般而言，郵件只能歸於單一資料夾中。拖放以重新排序您的資料夾和標籤。"
       ]
     },
     "Settings section title": {
@@ -9438,6 +9458,240 @@
       ],
       "Verification": [
         "驗證"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "關閉"
+      ],
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Special offer": [
+        "特別優惠"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "使用無限制"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 天"
+      ],
+      "${ hours } hours": [
+        "${ hours } 小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分鐘"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "免費使用 ${ n } 個月"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } 總儲存空間"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 個使用者"
+      ],
+      "64 countries": [
+        "64 個國家"
+      ],
+      "All paid Mail and Calendar features": [
+        "所有付費郵件與行事曆功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
+      "Highest VPN speed": [
+        "業界最高 VPN 速率"
+      ],
+      "Premium Drive": [
+        "進階版雲端硬碟"
+      ],
+      "Premium early access": [
+        "進階版搶先體驗"
+      ],
+      "Premium Mail and Calendar": [
+        "進階版郵件與行事曆"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "進階版郵件、行事曆與雲端硬碟"
+      ],
+      "Premium VPN": [
+        "進階版 VPN"
+      ],
+      "Secure cloud storage": [
+        "安全的雲端儲存空間"
+      ],
+      "Secure streaming": [
+        "安全的串流"
+      ],
+      "Support online privacy": [
+        "支援線上隱私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基於每月基本價格。"
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "specialoffer: Info": {
+      "No available offers found.": [
+        "找不到可用優惠。"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "終身優惠"
+      ],
+      "Limited time only": [
+        "期間限定"
+      ],
+      "Most popular": [
+        "最熱門"
+      ],
+      "Offer ends soon": [
+        "優惠即將結束"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "折扣將在續訂後繼續適用，直到取消訂閱或修改"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "查看訂閱方案"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ 月"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "為期 1 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "為期 12 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "為期 15 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "為期 24 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "為期 30 個月收費 ${ amount } "
+      ],
+      "for ${ n } months": [
+        "為期 ${ n } 個月"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Save ${ discount }%": [
+        "省下  ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "長達 1 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "長達 12 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "長達 15 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "長達 24 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "長達 30 個月的標準價 ${ amount } "
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "黑色星期五特賣"
+      ],
+      "Cyber Week Sale": [
+        "Cyber​​ Week 熱賣"
+      ],
+      "End of year offer": [
+        "年終大優惠"
+      ],
+      "End of Year Sale": [
+        "年終優惠"
+      ],
+      "Get our premium bundle and save more": [
+        "取得我們的進階版組合並節省更多"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "我們已停止的永續未來計畫限時回歸"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "使用兩年的 ${ planName } 節省更多"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "使用兩年的 ${ planName } 升級並節省更多"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 個電子郵件地址、支援 10 個自訂網域、無限制的隱藏 Hide My Email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 個電子郵件地址、10 個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 個電子郵件地址、無限個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免費取得我們未來釋出的所有新隱私服務的付費版本，以及對所有未來功能和產品的搶先體驗。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -9716,6 +9970,9 @@
       ],
       "Import record deleted": [
         "匯入記錄已刪除"
+      ],
+      "Invitation sent": [
+        "已送出邀請"
       ],
       "Invoice customized": [
         "帳單已自訂"
@@ -10268,11 +10525,11 @@
       "Delete logs": [
         "刪除記錄檔"
       ],
-      "Delete organization?": [
-        "刪除組織？"
-      ],
       "Delete user": [
         "刪除使用者"
+      ],
+      "Delete version history?": [
+        "刪除版本紀錄?"
       ],
       "Disable ${ email }": [
         "停用 ${ email }"
@@ -10448,6 +10705,9 @@
       "Invoices": [
         "帳單"
       ],
+      "Keep your inbox organized": [
+        "保持收件匣井然有序"
+      ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
       ],
@@ -10459,6 +10719,9 @@
       ],
       "Layout": [
         "版面配置"
+      ],
+      "Leave ${ organisationName }?": [
+        "退出 ${ organisationName } ?"
       ],
       "Link confirmation": [
         "外部連結確認"
@@ -10510,6 +10773,9 @@
       ],
       "Organization and keys": [
         "組織與金鑰"
+      ],
+      "Organization name": [
+        "組織名稱"
       ],
       "Other calendars": [
         "其他行事曆"
@@ -10577,6 +10843,9 @@
       "Remove calendar": [
         "移除行事曆"
       ],
+      "Remove user?": [
+        "要移除使用者嗎？"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -10600,6 +10869,9 @@
       ],
       "Save contact details": [
         "儲存聯絡人詳細資訊"
+      ],
+      "Save time with email filters": [
+        "使用篩選器來幫你節省時間"
       ],
       "Secure email based in Switzerland": [
         "總部設於瑞士的安全電郵"
@@ -10766,6 +11038,9 @@
       "Verifying your payment...": [
         "正在驗證您的付款..."
       ],
+      "Version history": [
+        "版本歷史紀錄"
+      ],
       "VPN apps": [
         "VPN 應用程式"
       ],
@@ -10793,14 +11068,11 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your current plan": [
-        "您目前的方案"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ],
-      "Your plan": [
-        "您的方案"
+      "Your Plan": [
+        "你的方案"
       ],
       "Your recovery status": [
         "你的復原狀態"

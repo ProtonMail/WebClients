@@ -77,7 +77,7 @@
         "Скасаваць усе"
       ],
       "Cancel all downloads": [
-        "Скасаваць усе спампоўванні"
+        "Скасаваць усе спампоўкі"
       ],
       "Cancel all uploads": [
         "Скасаваць усе запампоўванні"
@@ -87,6 +87,9 @@
       ],
       "Cancel upload": [
         "Скасаваць запампоўванне"
+      ],
+      "Change": [
+        "Змяніць"
       ],
       "Chat with us": [
         "Чат з намі"
@@ -204,6 +207,12 @@
       ],
       "Delete permanently": [
         "Выдаліць незваротна"
+      ],
+      "Delete this version": [
+        "Выдаліць гэту версію"
+      ],
+      "Delete version": [
+        "Выдаліць версію"
       ],
       "Deselect all": [
         "Зняць выбар з усіх"
@@ -505,6 +514,9 @@
       "Save": [
         "Захаваць"
       ],
+      "Save version as copy": [
+        "Захаваць версію як копію"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -516,6 +528,9 @@
       ],
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
+      ],
+      "See version history": [
+        "Паглядзець гісторыю версій"
       ],
       "Select all": [
         "Выбраць усе"
@@ -3082,6 +3097,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы сапраўды хочаце ачысціць сметніцу і незваротна выдаліць усе элементы?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Вы сапраўды хочаце незваротна выдаліць"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць \"${ itemName }\" са сметніцы?"
       ],
@@ -3183,6 +3201,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
+      ],
+      "Current version": [
+        "Бягучая версія"
       ],
       "Decrypting files": [
         "Расшыфроўка файлаў"
@@ -3298,8 +3319,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Файл не мае подпісу. Мы не можам праверыць хто запампаваў ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Файл не будзе запампаваны"
+      "File will not be updated": [
+        "Файл не будзе абноўлены"
       ],
       "Finalizing": [
         "Завяршэнне"
@@ -3336,6 +3357,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Вызваліце ​​месца або звяжыцеся з вашым адміністратарам."
+      ],
+      "from the version history?": [
+        "з гісторыі версій?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 500 МБ! Гэта можна зрабіць ужо сёння."
@@ -3441,6 +3465,9 @@
       ],
       "Large imports can take several days.": [
         "Вялікае імпартаванне можа заняць некалькі дзён."
+      ],
+      "Last week": [
+        "Апошні тыдзень"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -3610,6 +3637,12 @@
       "Preview for this file type is not supported": [
         "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Папярэднія версіі пакідаюцца для ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Папярэднія версіі не захоўваюцца"
+      ],
       "Primary": [
         "Асноўны"
       ],
@@ -3633,6 +3666,9 @@
       ],
       "Report has been sent": [
         "Скарга была адпраўлена"
+      ],
+      "Restore": [
+        "Аднавіць"
       ],
       "Restored files ${ formattedDate }": [
         "Файлы адноўлены ${ formattedDate }"
@@ -3757,14 +3793,20 @@
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
       ],
-      "This will overwrite the existing file": [
-        "Гэта перазапіша існуючы файл"
-      ],
       "This will overwrite the existing folder": [
         "Гэта перазапіша існуючую папку"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Гэта выдаліць з ${ DRIVE_APP_NAME } сінхранізаваную прыладу з назвай ${ deviceName }. Лакальныя файлы застануцца не змененымі."
+      ],
+      "This will replace the existing file with the folder": [
+        "Гэта заменіць існуючы файл папкай"
+      ],
+      "This will replace the existing folder with the file": [
+        "Гэта заменіць існуючую папку файлам"
+      ],
+      "This will upload a new version of the file": [
+        "Гэта запампуе новую версію файла"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
@@ -3786,6 +3828,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
+      ],
+      "Today": [
+        "Сёння"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Перадача скасавана для файла \"${ name }\""
@@ -3838,6 +3883,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
       ],
+      "Version is deleted": [
+        "Версія выдалена"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Так трымаць! Мы толькі што падвоілі ваша бясплатнае сховішча."
       ],
@@ -3879,6 +3927,9 @@
       ],
       "Yes": [
         "Так"
+      ],
+      "Yesterday": [
+        "Учора"
       ],
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
@@ -3952,6 +4003,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Ваш тарыфны план абмежаваны 10 версіямі на тэрмін да 7 дзён"
+      ],
       "Your previous password": [
         "Ваш папярэдні пароль"
       ],
@@ -4016,6 +4070,18 @@
       ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } дзень",
+        "${ nbDay } дні",
+        "${ nbDay } дзён",
+        "${ nbDay } дні"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } год",
+        "${ nbYear } гады",
+        "${ nbYear } гадоў",
+        "${ nbYear } гадоў"
       ],
       "(Expired)": [
         "(Пратэрмінавана)"
@@ -4146,6 +4212,9 @@
       "Downloading ${ percentageValue }%": [
         "Спампавана ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "Знойдзены дублікат"
+      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -4245,6 +4314,15 @@
       "Import to:": [
         "Імпартаваць у:"
       ],
+      "Keep both": [
+        "Пакінуць абодва"
+      ],
+      "Keep both files": [
+        "Пакінуць абодва файлы"
+      ],
+      "Keep both folders": [
+        "Пакінуць абедзве папкі"
+      ],
       "Label messages as": [
         "Пазначыць паведамленні як"
       ],
@@ -4341,11 +4419,11 @@
       "Region": [
         "Вобласць"
       ],
-      "Replace file": [
-        "Замяніць файл"
+      "Replace existing file": [
+        "Замяніць бягучы файл"
       ],
-      "Replace folder": [
-        "Замяніць папку"
+      "Replace existing folder": [
+        "Замяніць існуючую папку"
       ],
       "Report": [
         "Справаздача"
@@ -4418,9 +4496,6 @@
       ],
       "Unlock later": [
         "Разблакіраваць пазней"
-      ],
-      "Upload anyway": [
-        "Запампаваць усё роўна"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -4854,6 +4929,9 @@
       "Trash failed to be emptied": [
         "Не ўдалося ачысціць сметніцу"
       ],
+      "Version failed to be deleted": [
+        "Не ўдалося выдаліць версію"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
       ],
@@ -4922,6 +5000,9 @@
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
+      ],
+      "Set up your organization testing": [
+        "Наладзьце тэсціраванне сваёй арганізацыі"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
@@ -5132,6 +5213,253 @@
       ],
       "Sign": [
         "Падпісаць"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыць"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
+      "Special offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перайсці на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дні"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Агульны аб'ём сховішча: ${ storageSize }"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "64 countries": [
+        "64 краіны"
+      ],
+      "All paid Mail and Calendar features": [
+        "Усе платныя функцыі Mail і Calendar"
+      ],
+      "High speed VPN": [
+        "Высакахуткасны VPN"
+      ],
+      "Highest VPN speed": [
+        "Найвышэйшая хуткасць VPN"
+      ],
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium early access": [
+        "Ранні доступ да новых функцый"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Прэміяльныя функцыі Mail, Calendar і Drive"
+      ],
+      "Premium VPN": [
+        "Прэміяльныя функцыі VPN"
+      ],
+      "Secure cloud storage": [
+        "Бяспечнае воблачнае сховішча"
+      ],
+      "Secure streaming": [
+        "Бяспечнае патокавае вяшчанне"
+      ],
+      "Support online privacy": [
+        "Падтрыманне прыватнасці ў інтэрнэце"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Пажыццёвая прапанова"
+      ],
+      "Limited time only": [
+        "Прапанова абмежавана па часе"
+      ],
+      "Most popular": [
+        "Самы папулярны"
+      ],
+      "Offer ends soon": [
+        "Прапанова неўзабаве скончыцца"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Скідка будзе працягваць дзейнічаць да таго часу, пакуль падпіска не будзе скасавана або зменена"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перайсці да тарыфных планаў"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Аплачваецца ${ amount } за 1 месяц"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Аплачваецца ${ amount } за 12 месяцаў"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Аплачваецца ${ amount } за 15 месяцаў"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Аплачваецца ${ amount } за 24 месяцы"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Аплачваецца ${ amount } за 30 месяцаў"
+      ],
+      "for ${ n } month": [
+        "за ${ n } месяц",
+        "за ${ n } месяцы",
+        "за ${ n } месяцаў",
+        "за ${ n } месяцы"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Падаўжаецца праз 2 гады па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Эканомія ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Стандартная цана ${ amount } за 1 месяц"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Стандартная цана ${ amount } за 12 месяцаў"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Стандартная цана ${ amount } за 15 месяцаў"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Стандартная цана ${ amount } за 24 месяцы"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Стандартная цана ${ amount } за 30 месяцаў"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Распродаж з нагоды \"Чорнай Пятніцы\""
+      ],
+      "Cyber Week Sale": [
+        "Распродаж з нагоды \"Кібертыдня\""
+      ],
+      "End of year offer": [
+        "Прапанова з нагоды заканчэння года"
+      ],
+      "End of Year Sale": [
+        "Распродаж з нагоды заканчэння года"
+      ],
+      "Get our premium bundle and save more": [
+        "Набудзьце наш прэміяльны камплект і зэканомце больш"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Мы зноў прапануем скідку на тарыфны план Visionary, але прапанова абмежавана па часе"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш як 60 краінах, найвышэйшую хуткасць VPN, 10 падключэнняў на карыстальніка, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш як 60 краінах, найвышэйшую хуткасць VPN, 10 падключэнняў па VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide My Email, абагульванне календара, зашыфраванае воблачнае сховішча і абагульванне файлаў, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ідэальна пасуе для сем'яў або невялікіх каманд. У кожнага карыстальніка будзе свая ўласная паштовая скрыня і псеўданімы. Патрабуецца карыстальніцкі дамен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Атрымлівайце платныя версіі ўсіх сэрвісаў, якія будуць выпушчаны ў будучым, а таксама ранні доступ да ўсіх будучых функцый і прадуктаў без дадатковай платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5788,6 +6116,12 @@
       ],
       "Uploading a large file or folder": [
         "Запампоўванне вялікага файла або папкі"
+      ],
+      "Version details": [
+        "Падрабязнасці версіі"
+      ],
+      "Version history": [
+        "Гісторыя версій"
       ],
       "View contacts": [
         "Прагледзець кантакты"
