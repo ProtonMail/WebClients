@@ -14,7 +14,7 @@
 	&-composer {
 		// need to size it, because EO does not have dimensions like the composer container
 		block-size: em(300);
-		margin-inline: 1em;
+
 		@include media('<=xsmall') {
 			margin-inline: 0;
 		}
@@ -29,6 +29,10 @@
 			@include media('<=xsmall') {
 				padding-inline: 0;
 			}
+		}
+
+		.composer-attachments-list {
+			margin-inline: 0.75em;
 		}
 
 		&-attachments-list {
