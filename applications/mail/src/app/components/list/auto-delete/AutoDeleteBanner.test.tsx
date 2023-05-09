@@ -17,7 +17,7 @@ const setup = ({
 }: Partial<Record<'isFree' | 'isPaid' | 'featureActive', boolean> & { setting: number | null }>) => {
     minimalCache();
     setFeatureFlags('AutoDelete', featureActive);
-    addToCache('User', { UsedSpace: 10, MaxSpace: 100, isFree, isPaid });
+    addToCache('User', { UsedSpace: 10, MaxSpace: 100, isFree, hasPaidMail: isPaid });
     addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: setting });
 };
 
