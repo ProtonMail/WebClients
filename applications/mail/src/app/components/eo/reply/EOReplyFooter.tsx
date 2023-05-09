@@ -1,24 +1,17 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
-
-
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
 import { MessageKeys, MessageState } from '../../../logic/messages/messagesTypes';
 import AttachmentsButton from '../../attachment/AttachmentsButton';
-
 
 interface Props {
     id: string;
@@ -82,7 +75,7 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey, 
     );
 
     return (
-        <div className="flex flex-justify-space-between border-top px2 py1 on-tiny-mobile-pl0 on-tiny-mobile-pr0">
+        <div className="flex flex-justify-space-between border-top p-4 mx-3">
             <Button size="large" color="weak" type="button" onClick={handleCancel}>
                 {c('Action').t`Cancel`}
             </Button>
