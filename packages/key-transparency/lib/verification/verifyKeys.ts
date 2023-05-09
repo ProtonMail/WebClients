@@ -10,6 +10,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
+import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchEpoch } from '../helpers/fetchHelpers';
 import { getEmailDomain, isTimestampTooOld, ktSentryReport } from '../helpers/utils';
@@ -119,16 +120,17 @@ export const verifySKLSignature = async (
     verificationKeys: PublicKeyReference[],
     signedKeyListData: string,
     signedKeyListSignature: string,
-    context: string
+    sentryReportContext: string
 ): Promise<Date | null> => {
     const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
         armoredSignature: signedKeyListSignature,
         verificationKeys,
         textData: signedKeyListData,
+        context: KT_SKL_VERIFICATION_CONTEXT,
     });
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         ktSentryReport('SKL signature verification failed', {
-            context: context,
+            context: sentryReportContext,
             errors: JSON.stringify(errors),
         });
         return null;
