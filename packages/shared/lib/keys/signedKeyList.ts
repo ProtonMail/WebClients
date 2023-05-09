@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib';
 
 import {
     ActiveKey,
@@ -17,6 +18,7 @@ export const getSignedKeyListSignature = async (data: string, signingKey: Privat
         stripTrailingSpaces: true,
         signingKeys: [signingKey],
         detached: true,
+        context: KT_SKL_SIGNING_CONTEXT,
     });
     return signature;
 };
