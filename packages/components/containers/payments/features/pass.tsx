@@ -64,12 +64,9 @@ export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureD
     };
 };
 
-export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
+export const getVaults = (n: number): PlanCardFeatureDefinition => {
     return {
-        text:
-            n === 'unlimited'
-                ? c('new_plans: feature').t`Unlimited vaults`
-                : c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
+        text: c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
         tooltip: c('new_plans: tooltip')
             .t`Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.`,
         included: true,
@@ -121,6 +118,8 @@ export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeat
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 1;
 export const FREE_FORWARDING_MAILBOXES = 1;
+
+export const PASS_PLUS_VAULTS = 20;
 
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
@@ -184,14 +183,14 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             name: 'vaults',
             plans: {
                 [PLANS.FREE]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE]: getVaults('unlimited'),
+                [PLANS.BUNDLE]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.MAIL]: getVaults(FREE_VAULTS),
                 [PLANS.VPN]: getVaults(FREE_VAULTS),
                 [PLANS.DRIVE]: getVaults(FREE_VAULTS),
-                [PLANS.PASS_PLUS]: getVaults('unlimited'),
+                [PLANS.PASS_PLUS]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.FAMILY]: getVaults(FREE_VAULTS),
                 [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE_PRO]: getVaults('unlimited'),
+                [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
             },
         },
         {

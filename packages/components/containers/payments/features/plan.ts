@@ -19,6 +19,7 @@ import {
 } from './mail';
 import {
     FREE_PASS_ALIASES,
+    PASS_PLUS_VAULTS,
     get2FAAuthenticator,
     getCustomDomainForEmailAliases,
     getDataBreachMonitoring,
@@ -117,7 +118,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
         cta: getCTA(plan.Title),
         features: [
             get2FAAuthenticator(true),
-            getVaults('unlimited'),
+            getVaults(PASS_PLUS_VAULTS),
             getHideMyEmailAliases('unlimited'),
             getCustomDomainForEmailAliases(true),
             getForwardingMailboxes('multiple'),
