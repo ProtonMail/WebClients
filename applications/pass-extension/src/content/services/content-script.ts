@@ -18,17 +18,16 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
     const destroy = (options: { reason: string; recycle?: boolean }) => {
         if (context.getState().active) {
             logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
-
             listeners.removeAll();
-
-            context.setState({ active: options.recycle ?? false });
-            context.service.formManager.destroy();
-            ExtensionContext.read()?.destroy();
 
             if (!options.recycle) {
                 context.service.iframe.destroy();
                 DOMCleanUp();
             }
+
+            context.setState({ active: options.recycle ?? false });
+            context.service.formManager.destroy();
+            ExtensionContext.read()?.destroy();
         }
     };
 
@@ -80,6 +79,11 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
 
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings!);
+
+            if (!mainFrame) {
+                const { runDetection } = context.service.detector.assess([]);
+                if (!runDetection) return destroy({ reason: 'subframe discarded', recycle: false });
+            }
 
             context.service.formManager.detect('VisibilityChange');
             context.service.formManager.observe();

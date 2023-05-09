@@ -124,7 +124,7 @@ export const createFormManager = () => {
 
     const onFormsChange = debounce(
         withContext(({ service: { detector } }) => {
-            const results = detector.reconciliate(ctx.trackedForms);
+            const results = detector.assess(ctx.trackedForms);
             results.removeForms.forEach(detachTrackedForm);
             return results.runDetection && detect('MutationObserver');
         }),
