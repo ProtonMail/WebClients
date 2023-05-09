@@ -22,11 +22,15 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         requestAnimationFrame(() => {
             const target = evt?.target;
             const current = iframe.dropdown?.getCurrentField()?.element;
-            if (current !== target) iframe.dropdown?.close();
+            const opened = iframe.dropdown?.getState().visible;
+            const shouldClose = opened && current !== target;
+            const canOpen = (!opened || shouldClose) && getSettings().autofill.openOnFocus;
+
+            if (shouldClose) iframe.dropdown?.close();
 
             return (
+                canOpen &&
                 field.action &&
-                getSettings().autofill.openOnFocus &&
                 iframe.dropdown?.open({
                     action: field.action,
                     autofocused: true,
