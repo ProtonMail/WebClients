@@ -2952,9 +2952,6 @@
       "Organization key is not decrypted.": [
         "机构密钥尚未解密。"
       ],
-      "Organization not recognized. Try again.": [
-        "无法识别机构，请重试。"
-      ],
       "Password is required": [
         "密码必须填写"
       ],
@@ -3704,9 +3701,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "定制筛选规则可以自动执行某些操作，例如加标签或将邮件存档。使用 Sieve 编程语言可以直接创建或修改规则。"
-      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "邮件被 ${ BRAND_NAME } 识别或被您手动标记为垃圾邮件后，来自其发件人的后续邮件都将被归为垃圾邮件。如需正常接收其邮件，请将对应发件人地址标为非垃圾邮件。"
       ],
@@ -4590,9 +4584,6 @@
       "Credits earned": [
         "已赚取奖励"
       ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "目前存储空间已全部分配给管理员账户，请留出部分空间给其他用户。您可以随时升级账户获得更大的存储空间。"
-      ],
       "Custom": [
         "自定义"
       ],
@@ -5334,9 +5325,6 @@
       "The calendar will be removed from your account.": [
         "日历将会从您的账号中移除。"
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "置于列表首位的邮箱地址将作为默认地址。拖动即可调整地址顺序。"
-      ],
       "The following address is available:": [
         "以下地址可以使用："
       ],
@@ -5703,6 +5691,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "您不能邀请其他 ${ MAIL_APP_NAME } 用户"
       ],
+      "You cannot undo this action.": [
+        "您无法撤销此操作。"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
@@ -5854,11 +5845,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "出于安全考虑，我们需要验证您是否持有域名 ${ domainName }。请将下列 DNS TXT 记录加入您的域名中，通常可以在域名注册商的控制面板上设置。"
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "添加、删除和管理您单位的用户。您可以在此处调整他们分配的存储空间、授予管理员权限等。选择一个用户来管理他们的邮箱地址。列表最上的地址将自动被选为默认邮箱地址。"
       ]
     },
     "Info for payment methods": {
@@ -6571,9 +6557,6 @@
       ],
       "End weekday": [
         "结束日"
-      ],
-      "Enter organization name to confirm": [
-        "请输入机构名称进行确认"
       ],
       "Enter password": [
         "输入密码"
@@ -7325,11 +7308,6 @@
       ],
       "Sign in": [
         "登录"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
       ]
     },
     "Message": {
@@ -8905,9 +8883,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "使用我们的安全导入与转发工具即可迈出捍卫隐私的第一步。"
-      ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "一封邮件可以有多个标签，但通常只能位于一个文件夹中。文件夹和标签的顺序可以在下方通过拖动调整。"
       ]
     },
     "Settings section title": {
@@ -9754,9 +9729,6 @@
       "Delete logs": [
         "删除日志"
       ],
-      "Delete organization?": [
-        "删除机构?"
-      ],
       "Delete user": [
         "删除用户"
       ],
@@ -10267,14 +10239,8 @@
       "Your changes are not synced yet": [
         "您的改动尚未同步"
       ],
-      "Your current plan": [
-        "您的账户等级"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
-      ],
-      "Your plan": [
-        "您的账户等级"
       ],
       "Your recovery status": [
         "您的恢复状态"

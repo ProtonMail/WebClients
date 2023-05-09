@@ -1503,9 +1503,6 @@
       "Not a valid number": [
         "Numara geçerli değil"
       ],
-      "Organization not recognized. Try again.": [
-        "Kuruluş belirlenemedi. Yeniden deneyin."
-      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -2046,7 +2043,7 @@
         "Visa, MasterCard ve Discover için kartınızın arkasındaki 3 rakam. American Express için kartınızın ön yüzündeki 4 rakam."
       ],
       "Free up some space or add more storage space.": [
-        "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
+        "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
       ],
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
@@ -2233,6 +2230,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Restore": [
+        "Geri yükle"
       ],
       "Revoke certificate ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
@@ -2521,10 +2521,10 @@
         "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
+        "Depolama alanınızı %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Depolama kapasitenizi %100 oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
+        "Depolama alanınızı 100% oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ BRAND_NAME } hesabınızdaki ${ loseAllData }. Geri yüklemek için, eski parolanızı yeniden yazmanız gerekecek."
@@ -2788,9 +2788,6 @@
       ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
-      ],
-      "Enter organization name to confirm": [
-        "Onaylamak için kuruluş adını yazın"
       ],
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
@@ -3082,11 +3079,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Destek ekibi ile sohbete ve diğer ücretli özelliklere erişmek için abonelik tarifenizi yükseltin ya da sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
       ]
     },
     "Message": {
@@ -3526,7 +3518,7 @@
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolaması."
+        "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Profesyoneller ve kuruluşlar için güvenli e-posta ve takvim."
@@ -3760,7 +3752,7 @@
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Dosyalarınızı şifrelenmiş bulut depolaması ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve başka pek çok özellik sağlar."
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
@@ -4057,6 +4049,241 @@
       ],
       "Verification": [
         "Doğrulama"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Kapat"
+      ],
+      "Don't show this offer again": [
+        "Bu teklifi bir daha gösterme"
+      ],
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Sınırları kaldırın"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ seconds } second": [
+        "${ seconds } saniye",
+        "${ seconds } saniye"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } ay ücretsiz",
+        "${ n } ay ücretsiz"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } toplam depolama alanı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "64 countries": [
+        "64 ülkede"
+      ],
+      "All paid Mail and Calendar features": [
+        "Tüm ücretli Mail ve Calendar özellikleri"
+      ],
+      "High speed VPN": [
+        "Yüksek hızlı VPN"
+      ],
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
+      ],
+      "Premium Drive": [
+        "Ücretli Drive"
+      ],
+      "Premium early access": [
+        "Öncelikli erken erişim"
+      ],
+      "Premium Mail and Calendar": [
+        "Ücretli Mail ve Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Ücretli Mail, Calendar ve Drive"
+      ],
+      "Premium VPN": [
+        "Ücretli VPN"
+      ],
+      "Secure cloud storage": [
+        "Güvenli bulut depolama alanı"
+      ],
+      "Secure streaming": [
+        "Güvenli yayın akışı"
+      ],
+      "Support online privacy": [
+        "Çevrimiçi gizliliği destekleyin"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "İndirimler standart aylık fiyatlandırmaya göre yapılır."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Ömür boyu teklif"
+      ],
+      "Limited time only": [
+        "Yalnızca sınırlı bir süre için"
+      ],
+      "Most popular": [
+        "En beğenilen"
+      ],
+      "Offer ends soon": [
+        "Teklifin süresi yakında dolacak"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "İndirim, abonelik iptal edilene ya da değiştirilene kadar her yenileme döneminde uygulanır"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Abonelik tarifelerini görüntüle"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ ay"
+      ],
+      "1 year": [
+        "1 yıl"
+      ],
+      "2 years": [
+        "2 yıl"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "1 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "24 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 aylık ${ amount } olarak faturalanır"
+      ],
+      "for ${ n } month": [
+        "${ n } ay için",
+        "${ n } ay için"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Save ${ discount }%": [
+        "${ discount }% indirim"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "1 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "12 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "24 aylık standart fiyat ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30 aylık standart fiyat ${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Muhteşem Cuma kampanyası"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week kampanyası"
+      ],
+      "End of year offer": [
+        "Yıl sonu teklifi"
+      ],
+      "End of Year Sale": [
+        "Yıl sonu kampanyası"
+      ],
+      "Get our premium bundle and save more": [
+        "Premium paketimizi alarak daha fazla indirim kazanın"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Eski Visionary tarifemiz yalnızca sınırlı bir süre için geri döndü"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "2 yıllık ${ planName } tarifesi ile daha fazla indirim kazanın"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, her kullanıcı için 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız e-postamı gizle takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Gelecekte yayınlayacağımız tüm yeni gizlilik hizmetlerinin ücretli sürümlerine ve tüm özelliklere erkenden erişerek ek ücret ödemeden kullanın."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ]
     },
     "Spotlight": {
@@ -4465,9 +4692,6 @@
       "Delete account": [
         "Hesabı sil"
       ],
-      "Delete organization?": [
-        "Kuruluş silinsin mi?"
-      ],
       "Device connected!": [
         "Aygıt bağlandı!"
       ],
@@ -4595,7 +4819,7 @@
         "Tarifeler"
       ],
       "Preview": [
-        "Önizleme"
+        "Ön izleme"
       ],
       "Previous": [
         "Önceki"
@@ -4719,6 +4943,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
+      ],
+      "Your Plan": [
+        "Tarifeniz"
       ],
       "Your plan": [
         "Tarifeniz"

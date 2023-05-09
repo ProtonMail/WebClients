@@ -2959,9 +2959,6 @@
       "Organization key is not decrypted.": [
         "A szervezeti kulcs nincs visszafejtve."
       ],
-      "Organization not recognized. Try again.": [
-        "Nem felismerhető szervezet. Próbálja meg újra."
-      ],
       "Password is required": [
         "Jelszó megadása szükséges"
       ],
@@ -3746,9 +3743,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Hozzon létre szűrőket, bizonyos műveletek automatikus végrehajtásához, mint például címke hozzárendelése vagy üzenet archiválása. A szűrők Sieve programnyelven hozhatók létre."
-      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Az ön által vagy a ${ BRAND_NAME } által levélszemétként megjelölt címekről érkező levelek a levélszemét mappába kerülnek. Ha egy ide került levél feladójának címét szeretné engedélyezni, jelölje meg a levelet, mint \"Nem levélszemét\"."
       ],
@@ -4661,9 +4655,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
       ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Jelenleg az összes tárhely kiosztásra került az adminisztrátor fiókhoz. Kérjük csökkentse az adminisztrátor fiókhoz kiosztott tárhelyet, hogy helyet szabadítson fel a többi felhasználónak. Bármikor növelheti a rendelkezésre álló tárhelyet nagyobb csomagra váltással."
-      ],
       "Custom": [
         "Egyéni"
       ],
@@ -5393,9 +5384,6 @@
       "The calendar will be removed from your account.": [
         "Ez a naptár eltávolításra kerül a fiókjából."
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Az e-mail cím, amit a lista tetejére helyez lesz az alapértelmezett címe. Húzással mozgassa a címeket annak érdekében hogy módosíthassa a sorrendet."
-      ],
       "The following address is available:": [
         "A következő cím érhető el:"
       ],
@@ -5745,6 +5733,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nem ajánljhat ${ MAIL_APP_NAME } felhasználókat"
       ],
+      "You cannot undo this action.": [
+        "Ez a művelet nem vonható vissza."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nem állított be helyreállítási módszert. Ha elveszíti a jelszavát, így lehetetlen lesz visszaszereznie a fiók elérést. Biztos, hogy folytatja helyreállítási módszer nélkül?"
       ],
@@ -5890,11 +5881,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Biztonsági okokból ellenőriznünk kell, hogy ön a tulajdonosa a domain névnek (${ domainName }). Kérjük, az alábbi TXT rekordot vegye fel a DNS beállításaiba. Ezt általában a domain név regisztrátor adminisztrálási felületén teheti meg."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Vegye fel, törölje és kezelje a szervezet felhasználóit. Megadhatja az számukra elérhető tárhely méretét, adminisztrátori jogokat stb. Válasszon ki egy felhasználót az e-mail címei kezeléséhez. A lista legelején szereplő cím lesz a felhasználó alapértelmezett e-mail címe."
       ]
     },
     "Info for payment methods": {
@@ -6609,9 +6595,6 @@
       ],
       "End weekday": [
         "A hét befejező napja"
-      ],
-      "Enter organization name to confirm": [
-        "Írja be a szervezet nevét a jóváhagyáshoz"
       ],
       "Enter password": [
         "Jelszó megadása"
@@ -7368,11 +7351,6 @@
       ],
       "Sign in": [
         "Bejelentkezés"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ez véglegesen törli a szervezetéhez tartozó összes al-felhasználót, fiókot és adatot."
       ]
     },
     "Message": {
@@ -8952,11 +8930,6 @@
         "Nincs találat"
       ]
     },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Egy üzenetre több címkét is alkalmazhat, de egy üzenet általában egy mappában lehet. Húzza arrébb a címkéket és a mappákat a sorrendjük megváltoztatásához."
-      ]
-    },
     "Settings section title": {
       "Account": [
         "Fiók"
@@ -9820,9 +9793,6 @@
       "Delete logs": [
         "Naplók törlése"
       ],
-      "Delete organization?": [
-        "Szervezet törlése?"
-      ],
       "Delete user": [
         "Felhasználó törlése"
       ],
@@ -10316,14 +10286,8 @@
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
       ],
-      "Your current plan": [
-        "Jelenlegi csomag"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
-      ],
-      "Your plan": [
-        "Az ön csomagja"
       ],
       "Your recovery status": [
         "A helyreállítási állapota"

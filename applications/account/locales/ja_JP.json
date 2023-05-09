@@ -444,6 +444,9 @@
       "Insert link": [
         "リンクを挿入"
       ],
+      "Invite": [
+        "招待"
+      ],
       "Italic": [
         "イタリック体"
       ],
@@ -662,6 +665,9 @@
       ],
       "Save address": [
         "メールアドレスを保存"
+      ],
+      "Save changes": [
+        "変更を保存"
       ],
       "Save ICS file": [
         "ICS ファイルを保存"
@@ -989,6 +995,18 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } の受信トレイ"
+      ],
+      "5 trackers removed": [
+        "5 件のトラッカーを削除"
+      ],
+      "Auto forwarded": [
+        "自動転送"
+      ],
+      "Email received": [
+        "メールを受信"
+      ],
       "Encrypted": [
         "暗号化済み"
       ],
@@ -1121,6 +1139,9 @@
       ],
       "Other": [
         "その他"
+      ],
+      "Pass problem": [
+        "Pass に関する問題"
       ],
       "Payments problem": [
         "支払いに関する問題"
@@ -1262,6 +1283,11 @@
       ],
       "View (see all event details)": [
         "閲覧 (すべての予定詳細を閲覧できます)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "${ address } の連絡先情報の取得に失敗しました"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2533,6 +2559,9 @@
       ]
     },
     "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "ごみ箱や迷惑メールフォルダーで30日以上経過したメッセージを自動削除します。アップグレードすれば、これだけでなく他の利点も享受できます。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
@@ -2550,6 +2579,12 @@
       ],
       "Track the status and activity of your referrals.": [
         "招待の状態やアクティビティを確認します。"
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "アップグレードすると、受信トレイを整理するフィルターを無制限に作成するなどのプレミアム機能が利用できます。"
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "アップグレードすると、フォルダーやラベルを無制限に作成するなどのプレミアム機能が利用できます。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
@@ -2942,9 +2977,6 @@
       "Organization key is not decrypted.": [
         "組織の鍵が復号されていません。"
       ],
-      "Organization not recognized. Try again.": [
-        "組織が認識されていません。再度お試しください。"
-      ],
       "Password is required": [
         "パスワードは必須です"
       ],
@@ -3155,6 +3187,9 @@
       "You have no invoices.": [
         "請求書はありません。"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
       ],
@@ -3184,6 +3219,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。不正なファイル形式です。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
@@ -3215,9 +3253,15 @@
     "Error importing contact": {
       "Encryption failed": [
         "暗号化に失敗しました"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard バージョン 3.0 未満はサポートされていません"
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。不正なファイル形式です。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
       ],
@@ -3356,8 +3400,17 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
+      "Please ${ refresh } or check your internet connection.": [
+        "${ refresh } またはインターネット接続を確認してください。"
+      ],
+      "Please ${ refresh } or try again later.": [
+        "${ refresh } するか後ほどお試しください。"
+      ],
       "Something went wrong": [
         "不具合が発生しました"
+      ],
+      "We couldn't load this page. ": [
+        "このページの読み込みに失敗しました。 "
       ]
     },
     "Error message, recovery": {
@@ -3694,9 +3747,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
-      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "あなたまたは ${ BRAND_NAME } によって迷惑メールと指定されたアドレスからのメールは、迷惑メールフォルダーに送られます。これらのアドレスのいずれかからのメールを許可したい場合は、「迷惑メールでない」と指定してください。"
       ],
@@ -3729,6 +3779,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "自動転送"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail メッセージをあなたの受信トレイに"
+      ],
       "Sign in with Google": [
         "Google でサインイン"
       ]
@@ -3884,6 +3940,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 予定が暗号化され、カレンダーに追加されました"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
@@ -3915,11 +3974,17 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "インポートされた招待は、${ CALENDAR_APP_NAME }にシンプルなイベントとして主催者と参加者の詳細なしで表示されます。イベントの最新情報を入手して参加者を確認するには、${ BRAND_NAME }メールアドレスを使用して主催者に招待するよう依頼してください。"
+      ],
       "This file contains event invitations:": [
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains invitation responses:": [
         "以下のファイルには参加の是非の回答があります。"
+      ],
+      "This file contains some data that we cannot import:": [
+        "このファイルにはインポートできないデータが含まれています:"
       ]
     },
     "Import contact": {
@@ -4583,9 +4648,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
       ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "現在利用可能なストレージは、すべて管理者アカウントに割り当てられています。追加ユーザーに割り当てたい場合は、管理者アカウントへの割り当てを減らしてください。アカウントをアップグレードすることでいつでもストレージ全体の容量を増やすこともできます。"
-      ],
       "Custom": [
         "カスタム設定"
       ],
@@ -5219,6 +5281,9 @@
       "Remove one of your calendars to join this one": [
         "このカレンダーに参加するには、いずれかのカレンダーを削除してください"
       ],
+      "Restore": [
+        "復元"
+      ],
       "Revoke certificate ${ name }": [
         "証明書 ${ name } を失効させます"
       ],
@@ -5269,6 +5334,12 @@
       ],
       "Setting up your Drive": [
         "Drive をセットアップしています"
+      ],
+      "Settings update failed": [
+        "設定の更新に失敗しました"
+      ],
+      "Settings updated": [
+        "設定が更新されました"
       ],
       "Show original message": [
         "元のメッセージを表示"
@@ -5329,9 +5400,6 @@
       ],
       "The calendar will be removed from your account.": [
         "このカレンダーはアカウントから削除されます。"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "リストの一番上にあるものが、デフォルトのメールアドレスとして使用されます。メールアドレスを並び替えるには、ドラッグ＆ドロップしてください。"
       ],
       "The following address is available:": [
         "以下のアドレスが利用可能です："
@@ -5687,6 +5755,12 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } のユーザーは招待できません"
       ],
+      "You cannot undo this action.": [
+        "この操作は取り消すことができません。"
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "OpenVPN / IKEv2 認証情報は、${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードへのサインインには使用できません。${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
       ],
@@ -5798,6 +5872,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "あなたのプランでは、最大 7 日間 10 バージョンに制限されています"
+      ],
       "Your recovery phrase": [
         "回復フレーズ"
       ],
@@ -5852,6 +5929,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "未払いによるサービスの中断を避けるため、少なくとも 1 つの有効な支払い方法を設定しておく必要があります。"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "閲覧のみ"
       ]
     },
     "Input label": {
@@ -6020,7 +6102,7 @@
         "星印付きを開く"
       ],
       "Go to Trash": [
-        "ゴミ箱を開く"
+        "ごみ箱を開く"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -6212,6 +6294,12 @@
       ],
       "${ n } months": [
         "${ n } か月"
+      ],
+      "${ nbDay } days": [
+        "${ nbDay } 日"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } 年"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "${ MaxAddresses } 件のうち ${ UsedAddresses } 件のメールアドレス"
@@ -6537,9 +6625,6 @@
       "End weekday": [
         "週の終わり"
       ],
-      "Enter organization name to confirm": [
-        "続行するために組織名を入力してください"
-      ],
       "Enter password": [
         "パスワードを入力"
       ],
@@ -6751,7 +6836,7 @@
         "または"
       ],
       "Organization name": [
-        "組織の名前"
+        "組織名"
       ],
       "Organization password": [
         "組織のパスワード"
@@ -7325,11 +7410,6 @@
         "サインイン"
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "これにより、組織に関連付けられているすべての副ユーザー、アカウント、データが完全に削除されます。"
-      ]
-    },
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "${ BRAND_NAME } に独自ドメインを接続し、独自メールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードの指示に従って操作してください。"
@@ -7657,11 +7737,17 @@
       "${ n } folders and labels": [
         "${ n } 件のフォルダーおよびラベル"
       ],
+      "${ n } Hide My Email aliases": [
+        "${ n } 件の Hide My Email エイリアス"
+      ],
       "${ n } labels": [
         "${ n } 件のラベル"
       ],
       "${ n } messages per day": [
         "1 日あたり ${ n } メッセージ"
+      ],
+      "${ n } vaults": [
+        "${ n } 個の保管庫"
       ],
       "${ n } VPN connections": [
         "${ n } 件の VPN 接続"
@@ -7707,6 +7793,12 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Data breach monitoring": [
+        "情報漏洩のモニタリング"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "情報漏洩のモニタリング (準備中)"
       ],
       "DNS leak prevention": [
         "DNS 漏洩防止"
@@ -7795,6 +7887,9 @@
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
       ],
+      "Strong E2E encryption": [
+        "強力なエンドツーエンド暗号化"
+      ],
       "Team management": [
         "チームマネジメント"
       ],
@@ -7813,11 +7908,17 @@
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
       ],
+      "Unlimited Hide My Email aliases": [
+        "無制限の Hide My Email エイリアス"
+      ],
       "Unlimited labels": [
         "ラベル制限なし"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
+      ],
+      "Unlimited vaults": [
+        "無制限の保管庫"
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
@@ -7836,6 +7937,12 @@
       ],
       "User session management": [
         "ユーザーセッション管理"
+      ],
+      "Vault and Item sharing": [
+        "保管庫とアイテム共有"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "保管庫とアイテム共有 (準備中)"
       ],
       "Worldwide streaming services": [
         "世界的なストリーミングサービス"
@@ -8210,6 +8317,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "${ BRAND_NAME } のアクセス権を選択してください: メールメッセージと設定の閲覧 / 連絡先の閲覧とダウンロード / Google Agendaの全アジェンダの閲覧とダウンロード。"
       ]
     },
     "Onboarding": {
@@ -8794,9 +8906,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "安全なインポート・転送ツールで、プライバシーに移行しましょう。"
-      ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグ＆ドロップしてください。"
       ]
     },
     "Settings section title": {
@@ -8854,6 +8963,11 @@
         "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
       ]
     },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "${ calendarName } を共有したい人の ${ BRAND_NAME } アカウントを追加してください。招待を送信します。"
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "メールアドレスまたはグループ名を入力してください"
@@ -8872,6 +8986,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "${ ownerName }が作成"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "署名の検証でエラーが発生しました"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "${ boldSenderEmail } のアドレス検証が有効ですが、このカレンダー招待の信頼性を検証できませんでした。この連絡先の暗号鍵が変更された可能性があります。高度な PGP 設定を確認するか、${ boldSenderEmail } から新たな招待を受け取ってください。"
       ]
     },
     "Signup label": {
@@ -8894,6 +9016,235 @@
       ],
       "Verification": [
         "検証"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "閉じる"
+      ],
+      "Don't show this offer again": [
+        "今後このオファーを表示しない"
+      ],
+      "Special offer": [
+        "特別オファー"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Unlimited にする"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 日"
+      ],
+      "${ hours } hours": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } か月間無料"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "合計 ${ storageSize } のストレージ"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 ユーザー"
+      ],
+      "64 countries": [
+        "64 か国"
+      ],
+      "All paid Mail and Calendar features": [
+        "有料の Mail と Calendar の全機能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
+      "Highest VPN speed": [
+        "最高速 VPN"
+      ],
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium early access": [
+        "プレミアム早期アクセス"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "プレミアム Mail、Calendar、Drive"
+      ],
+      "Premium VPN": [
+        "プレミアム VPN"
+      ],
+      "Secure cloud storage": [
+        "安全なクラウドストレージ"
+      ],
+      "Secure streaming": [
+        "安全なストリーミング"
+      ],
+      "Support online privacy": [
+        "オンラインプライバシーをサポート"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "割引は標準の月額料金に基づいて計算されます。"
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "ライフタイム割引"
+      ],
+      "Limited time only": [
+        "期間限定"
+      ],
+      "Most popular": [
+        "最も人気"
+      ],
+      "Offer ends soon": [
+        "もうすぐセール終了"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "サブスクリプションがキャンセルまたは変更されるまで割引は更新時に適用されます"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "サブスクリプションプランへ移動"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ 月"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2 年"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "1 か月毎に ${ amount } の支払い"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 か月毎に ${ amount } の支払い"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15 か月毎に ${ amount } の支払い"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "24 か月毎に ${ amount } の支払い"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 か月毎に ${ amount } の支払い"
+      ],
+      "for ${ n } months": [
+        "${ n } か月間"
+      ],
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "1年後に割引価格 ${ discountedAmount } (標準価格 ${ regularAmount } から ${ discount }%割引) で契約更新"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2年後に割引価格 ${ discountedAmount } (標準価格 ${ regularAmount } から ${ discount }%割引) で契約更新"
+      ],
+      "Save ${ discount }%": [
+        "${ discount }% 割引"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "標準価格では 1 か月毎に ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "標準価格では 12 か月毎に ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "標準価格では 15 か月毎に ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "標準価格では 24 か月毎に ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "標準価格では 30 か月毎に ${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "ブラックフライデーセール"
+      ],
+      "Cyber Week Sale": [
+        "サイバーウィークセール"
+      ],
+      "End of year offer": [
+        "年末セール"
+      ],
+      "End of Year Sale": [
+        "年末セール"
+      ],
+      "Get our premium bundle and save more": [
+        "プレミアムバンドルでもっとお得に"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "廃止されたVisionaryプランが期間限定で復活しています"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "${ planName }の2年契約でもっとお得に"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "アップグレードして${ planName }の2年契約でもっとお得に"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、ユーザー毎に 10 件の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、10 件の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Netflix、Disney+、Prime Video などのストリーミングサービス上のコンテンツにどこからでもアクセスします。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の Hide My Email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の Hide My Email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "3 件の独自メールドメイン対応、15 件のメールアドレス、無制限の Hide My Email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "ファミリーや小規模なチームに最適で、各自が受信トレイとエイリアスを持ちます。カスタムドメインが必要です。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "私たちが今後リリースする全ての有償プライバシーサービスの機能/製品および早期アクセスを追加コストなしで利用できます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "Spotlight": {
@@ -9556,6 +9907,9 @@
       "Clear": [
         "消去"
       ],
+      "Clear out the junk": [
+        "ジャンクメールを自動で削除"
+      ],
       "Composing": [
         "組版"
       ],
@@ -9673,11 +10027,11 @@
       "Delete logs": [
         "ログの削除"
       ],
-      "Delete organization?": [
-        "組織を削除しますか?"
-      ],
       "Delete user": [
         "ユーザーを削除"
+      ],
+      "Delete version history?": [
+        "バージョン履歴を削除しますか？"
       ],
       "Disable ${ email }": [
         "${ email } を無効化"
@@ -9853,6 +10207,9 @@
       "Invoices": [
         "請求書"
       ],
+      "Keep your inbox organized": [
+        "受信トレイを整理整頓"
+      ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
       ],
@@ -9916,6 +10273,9 @@
       "Organization and keys": [
         "組織と鍵"
       ],
+      "Organization name": [
+        "組織名"
+      ],
       "Other calendars": [
         "他のカレンダー"
       ],
@@ -9949,6 +10309,9 @@
       "Plan summary": [
         "プランの概要"
       ],
+      "Preview": [
+        "プレビュー"
+      ],
       "Previous": [
         "前へ"
       ],
@@ -9979,6 +10342,9 @@
       "Remove calendar": [
         "カレンダーを削除"
       ],
+      "Remove user?": [
+        "ユーザーを削除しますか？"
+      ],
       "Report a problem": [
         "問題を報告"
       ],
@@ -10002,6 +10368,9 @@
       ],
       "Save contact details": [
         "連絡先の詳細を保存"
+      ],
+      "Save time with email filters": [
+        "メールフィルターで時間を節約"
       ],
       "Secure email based in Switzerland": [
         "スイスに拠点を置くセキュアなメール"
@@ -10168,6 +10537,9 @@
       "Verifying your payment...": [
         "支払いを検証中..."
       ],
+      "Version history": [
+        "バージョン履歴"
+      ],
       "VPN apps": [
         "VPN アプリ"
       ],
@@ -10195,14 +10567,11 @@
       "Your changes are not synced yet": [
         "変更は同期されていません"
       ],
-      "Your current plan": [
-        "現在のプラン"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mial Plusのトライアル期間が ${ textDate } に終了します。"
       ],
-      "Your plan": [
-        "現在のプラン"
+      "Your Plan": [
+        "あなたのプラン"
       ],
       "Your recovery status": [
         "回復状態"
@@ -10412,6 +10781,14 @@
         "この設定を有効にすると、あなたが送信する各メッセージに公開鍵が自動的に追加されます。受信者はこれを使用して、メッセージの信頼性を検証し、あなたに暗号化されたメッセージを送信できます。"
       ]
     },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "エンドツーエンド暗号化された共有"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "検証済みの連絡先とのエンドツーエンド暗号化された共有"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "安定版"
@@ -10487,6 +10864,17 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ]
+    },
+    "VPNClient": {
+      "Brave": [
+        "Brave"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Firefox": [
+        "Firefox"
       ]
     },
     "Warning": {

@@ -3691,13 +3691,13 @@
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan. Apabila Anda terus-menerus lalai membayar, seluruh email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Alamat Anda sedang dinonaktifkan. Email pembatalan tidak akan dapat dikirim kepada para peserta acara. Apakah Anda tetap ingin menghapus seluruh acara yang terdapat pada rangkaian ini?"
@@ -4657,6 +4657,9 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
+      "Set up your organization testing": [
+        "Siapkan pengujian organisasi Anda"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gunakan pemindah aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses seluruh layanan ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -4964,6 +4967,104 @@
       ],
       "Sign": [
         "Tandatangani"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Tutup"
+      ],
+      "Don't show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Special offer": [
+        "Penawaran spesial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } hari"
+      ],
+      "${ hours } hours": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } menit"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } detik"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } bulan GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } jumlah penyimpanan"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "64 countries": [
+        "64 negara"
+      ],
+      "All paid Mail and Calendar features": [
+        "Semua fitur Mail dan Calendar yang berbayar"
+      ],
+      "High speed VPN": [
+        "VPN berkecepatan tinggi"
+      ],
+      "Highest VPN speed": [
+        "Kecepatan VPN tertinggi"
+      ],
+      "Premium Drive": [
+        "Drive Premium"
+      ],
+      "Premium early access": [
+        "Akses dini Premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail dan Calendar Premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar, dan Drive Premium"
+      ],
+      "Premium VPN": [
+        "VPN Premium"
+      ],
+      "Secure cloud storage": [
+        "Penyimpanan awan aman"
+      ],
+      "Secure streaming": [
+        "Streaming aman"
+      ],
+      "Support online privacy": [
+        "Dukung privasi daring"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Pergi ke paket langganan"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } months": [
+        "untuk ${ n } bulan"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Beserta dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, pembagian kalender, dan lebih banyak lagi."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
