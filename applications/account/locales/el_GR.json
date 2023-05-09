@@ -2733,9 +2733,6 @@
       "Organization key is not decrypted.": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
       ],
-      "Organization not recognized. Try again.": [
-        "Ο οργανισμός δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
-      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
@@ -3356,11 +3353,6 @@
       ],
       "starred": [
         "με αστέρι"
-      ]
-    },
-    "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Για την αυτόματη εκτέλεση κάποιων ενεργειών, όπως απόδοση ετικετών ή αρχειοθέτηση μηνυμάτων, προσθέστε ένα προσαρμοσμένο φίλτρο. Τα φίλτρα μπορούν να συνταχθούν και διορθωθούν άμεσα, στη γλώσσα προγραμματισμού Sieve."
       ]
     },
     "Font Face Default": {
@@ -4173,9 +4165,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
       ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Προς το παρόν, όλος ο διαθέσιμος αποθηκευτικός χώρος, διατίθεται στο λογαριασμό διαχειριστή. Μειώστε την κατανομή λογαριασμού διαχειριστή για να ελευθερώσετε χώρο για επιπλέον χρήστες. Μπορείτε να αυξήσετε το συνολικό χώρο αποθήκευσης ανά πάσα στιγμή, αναβαθμίζοντας το λογαριασμό σας."
-      ],
       "Custom": [
         "Προσαρμοσμένο"
       ],
@@ -4728,6 +4717,9 @@
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
+      "Preview for this file type is not supported": [
+        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται\n*.*, add translation *.*"
+      ],
       "Public link invite": [
         "Πρόσκληση δημόσιου σύνδεσμου"
       ],
@@ -4769,6 +4761,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "Restore": [
+        "Επαναφορά\n*.*, add translation *.*"
       ],
       "Revoke certificate ${ name }": [
         "Ανάκληση πιστοποιητικού ${ name }"
@@ -4862,9 +4857,6 @@
       ],
       "The calendar will be removed from your account.": [
         "Το ημερολόγιο θα αφαιρεθεί από τον λογαριασμό σας."
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου που τοποθετείτε στην κορυφή της λίστας είναι η προεπιλεγμένη διεύθυνσή σας. Σύρετε και αφήστε για να αναδιατάξετε τις διευθύνσεις σας."
       ],
       "The following address is invalid.": [
         "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
@@ -5164,6 +5156,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
       ],
+      "You cannot undo this action.": [
+        "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
       ],
@@ -5301,11 +5296,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Για λόγους ασφαλείας, πρέπει να επαληθεύσουμε ότι είστε ο κάτοχος του τομέα ${ domainName }. Προσθέστε την ακόλουθη εγγραφή DNS TXT στο domain σας. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή ονομάτων τομέα σας domain name registrar."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Προσθέστε, αφαιρέστε και διαχειριστείτε χρήστες εντός του οργανισμού σας. Εδώ μπορείτε να προσαρμόσετε τον διατιθέμενο χώρο αποθήκευσης, να εκχωρήσετε δικαιώματα διαχειριστή και άλλα. Επιλέξτε έναν χρήστη για να διαχειριστείτε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου του. Η διεύθυνση που βρίσκεται στην κορυφή της λίστας θα επιλεγεί αυτόματα ως η προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ]
     },
     "Info for payment methods": {
@@ -5973,9 +5963,6 @@
       ],
       "End weekday": [
         "Λήξη εβδομάδας"
-      ],
-      "Enter organization name to confirm": [
-        "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
       ],
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
@@ -6712,11 +6699,6 @@
       ],
       "Sign in": [
         "Είσοδος"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
       ]
     },
     "Message display when a new app version is available": {
@@ -7937,11 +7919,6 @@
         "Δεν βρέθηκαν αποτελέσματα"
       ]
     },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
-      ]
-    },
     "Settings section title": {
       "Account": [
         "Λογαριασμός"
@@ -8774,9 +8751,6 @@
       "Delete logs": [
         "Διαγραφή αρχείων καταγραφής"
       ],
-      "Delete organization?": [
-        "Διαγραφή οργανισμού;"
-      ],
       "Delete user": [
         "Διαγραφή χρήστη"
       ],
@@ -9242,14 +9216,8 @@
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
       ],
-      "Your current plan": [
-        "Το τρέχον πακέτο σας"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
-      ],
-      "Your plan": [
-        "Το πακέτο σας"
       ],
       "Your recovery status": [
         "Το καθεστώς σας ανάκτησης"

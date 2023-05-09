@@ -750,7 +750,7 @@
         "Другая"
       ],
       "Pass problem": [
-        "Проблема с Pass"
+        "Проблема с Proton Pass"
       ],
       "Payments problem": [
         "Проблема с платежами"
@@ -1081,7 +1081,7 @@
         "Имя"
       ],
       "Note": [
-        "Заметки"
+        "Примечания"
       ],
       "Organization": [
         "Организация"
@@ -2532,7 +2532,7 @@
         "Ошибка шифрования"
       ],
       "vCard versions < 3.0 not supported": [
-        "Версии vCard < 3.0 не поддерживаются"
+        "vCard версий < 3.0 не поддерживается"
       ]
     },
     "Error importing contacts": {
@@ -2783,6 +2783,162 @@
         "(без названия)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Хранилище на 3 ТБ"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Перейти на тариф ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } доступно всем членам семьи."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Больше не показывать"
+      ],
+      "Got it": [
+        "ОК"
+      ],
+      "Keep current plan": [
+        "Остаться на текущем тарифе"
+      ],
+      "Switch plans": [
+        "Сменить тариф"
+      ],
+      "View the invitation": [
+        "Посмотреть приглашение"
+      ],
+      "View the invitations": [
+        "Посмотреть приглашения"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Платная версия Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Платная версия Mail и Calendar"
+      ],
+      "Premium VPN": [
+        "Платная версия VPN"
+      ],
+      "Up to 6 users": [
+        "До 6 пользователей"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Группы ${ BRAND_NAME }"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Аккаунты с пользовательскими доменами не могут подключиться к семейному плану или перейти на тариф Visionary."
+      ],
+      "customer support": [
+        "служба поддержки"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Вас приглашает: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Управляйте адресами."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Смена тарифа на данный момент недоступна."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Доступный объем хранилища: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Подписка оплачивается основным администратором семейного плана или тарифа Visionary."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "На данный момент семейный план и тариф Visionary не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "На данный момент тариф Visionary и семейный план не доступны для пожизненных аккаунтов."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Вы можете принять не более 3 приглашений за полгода. Если вам необходимо увеличить это число, обратитесь по ссылке: ${ supportLink }."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Вы успешно присоединились к тарифу Family"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Ваш текущий план не позволяет присоединиться к семейной подписке или тарифу Visionary."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Ваша подписка автоматически продлевается по той же цене в конце платежного цикла."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Скидки рассчитываются исходя из стандартной платы за месяц."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Перейти на тариф ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Конфиденциальность онлайн для всей семьи"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Создайте семейный аккаунт и приглашайте пользователей "
+      ],
+      "Set up your family": [
+        "Создайте семейную группу"
+      ],
+      "Set up your family account": [
+        "Настройте семейный аккаунт"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Представляем план ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Включает поддержку 3 пользовательских доменов, 90 электронных адресов, неограниченное количество псевдонимов Hide My Email, возможность делиться календарями и многое другое."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "Ваш отзыв"
@@ -2947,7 +3103,7 @@
         "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
       ],
       "vCard versions < 3.0": [
-        "Версии vCard < 3.0"
+        "vCard версии < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3226,7 +3382,7 @@
         "${ contactEmailsLength } адресатов"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "Контакт ${ contactName } содержит несколько адресов электронной почты."
+        "Контакт ${ contactName } содержит несколько email-адресов."
       ],
       "${ contactsCount } contact found": [
         "Найден ${ contactsCount } контакт",
@@ -3406,7 +3562,7 @@
         "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
       "Custom": [
-        "Своё значение"
+        "Пользовательский"
       ],
       "Custom daily": [
         "Настраиваемое ежедневное"
@@ -3610,7 +3766,7 @@
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline совместимы только с форматом «простой текст»."
+        "PGP/Inline совместим только с форматом «простой текст»."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
@@ -3658,7 +3814,7 @@
         "Удаленные участники будут уведомлены."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений на этом адрес эл. почты."
+        "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений на этот адрес."
       ],
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
@@ -3673,7 +3829,7 @@
         "Время сеанса истекло"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Настройка PGP позволяет отправлять электронную почту, зашифрованную сквозным методом, не пользователю ${ BRAND_NAME }, который использует службу, совместимую с PGP."
+        "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Некоторые ваши ответы на события, ранее обновленные организатором, будут потеряны."
@@ -3718,7 +3874,7 @@
         "Этот аккаунт был отключен из-за возможного нарушения политики."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Этот адрес отключён. Чтобы была возможность отправки на этот адрес, его владелец должен включить его."
+        "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Это событие было обновлено организатором. Вы хотели бы изменить свой ответ только для этого события в серии?"
@@ -3877,7 +4033,7 @@
         "В вашем аккаунте есть как минимум один просроченный счёт. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
+        "У Вас есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Ваш адрес отключен. Участникам мероприятия нельзя отправить письмо об отмене. Всё равно хотите удалить все события в этой серии?"
@@ -4446,10 +4602,10 @@
         "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
+        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount }/${ itemsToImportCount } папок и пометить их как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
@@ -4930,8 +5086,11 @@
       "Set up your organization": [
         "Настройка организации"
       ],
+      "Set up your organization testing": [
+        "Настройте тестирование вашей организации"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Используйте селектор приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
+        "Используйте переключатель приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Вы можете изменить это в любой момент в настройках."
@@ -5420,7 +5579,7 @@
       ],
       "for ${ n } month": [
         "за ${ n } месяц",
-        "за ${ n } месяца",
+        "за ${ n } месяцев",
         "за ${ n } месяцев",
         "за ${ n } месяца"
       ],
@@ -5822,7 +5981,7 @@
         "${ emailsCount } участника"
       ],
       "Account suspended": [
-        "Аккаунт заблокирован"
+        "Аккаунт временно заблокирован"
       ],
       "Add another notification to remind you of this event": [
         "Добавить другое уведомление, чтобы напомнить вам об этом событии"
@@ -6375,7 +6534,7 @@
         "Эта функция требует платного аккаунта ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Этот импорт может превысить объём хранилища, доступный в настоящее время в вашем аккаунте ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
+        "Объём импортируемого материала может вызвать переполнение хранилища, доступного в настоящее время для Вашего аккаунта ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."

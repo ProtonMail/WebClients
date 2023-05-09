@@ -1511,9 +1511,6 @@
       "Not a valid number": [
         "Несапраўдны нумар"
       ],
-      "Organization not recognized. Try again.": [
-        "Арганізацыя не распазнана. Паспрабуйце яшчэ раз."
-      ],
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
@@ -1860,9 +1857,9 @@
       ],
       "${ number } city": [
         "${ number } горад",
-        "${ number } горада",
+        "${ number } гарады",
         "${ number } гарадоў",
-        "${ number } горада"
+        "${ number } гарадоў"
       ],
       "${ number } server": [
         "${ number } сервер",
@@ -2260,6 +2257,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Restore": [
+        "Аднавіць"
+      ],
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
       ],
@@ -2330,7 +2330,7 @@
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі. Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх для таго, каб працягнуць."
+        "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Гэта незваротна выдаліць ваш уліковы запіс і ўсе звязаныя з ім даныя. У вас не будзе магчымасці аднавіць яго пазней."
@@ -2825,9 +2825,6 @@
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
       ],
-      "Enter organization name to confirm": [
-        "Увядзіце назву арганізацыі для пацвярджэння"
-      ],
       "Enter the code displayed on your TV": [
         "Увядзіце код, які вы бачыце на сваім тэлевізары"
       ],
@@ -3010,7 +3007,7 @@
         "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
       ],
       "${ BRAND_NAME } company announcements": [
-        "Апавяшчэнне кампаніі ${ BRAND_NAME }"
+        "Аб'явы кампаніі ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Навіны ${ BRAND_NAME } для бізнесу"
@@ -3118,11 +3115,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Палепшыце сваю падпіску, каб разблакіраваць падтрымку ў чаце і іншыя прэміяльныя функцыі або скарыстайцеся нашай бясплатнай формай падтрымкі, калі хочаце паведаміць пра праблему."
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Гэта незваротна выдаліць усіх падпарадкаваных карыстальнікаў, уліковыя запісы і даныя, якія звязаны з вашай арганізацыяй."
       ]
     },
     "Message": {
@@ -3510,7 +3502,7 @@
         "Неабмежаваная колькасць пароляў і нататак"
       ],
       "Unlimited vaults": [
-        "Неабмежаваныя сховішчы"
+        "Неабмежаваная колькасць сховішчаў"
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
@@ -3574,7 +3566,7 @@
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
-        "Для больш высокага ўзроўню кіравання паролямі і абароны пасведчаннямі."
+        "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтыфікацыі."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Калі вы выдаліце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым яго нельга будзе выбраць падчас стварэння новага ўліковага запісу."
@@ -3595,7 +3587,7 @@
         "Прыватнасць і бяспека, якія пасуюць для бізнесу, а таксама ўключаць усе прэміяльныя сэрвісы ${ BRAND_NAME }."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Абараніце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } разам."
+        "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
@@ -3869,7 +3861,7 @@
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Унікальныя, дынамічныя адрасы электроннай пошты, якія абараняюць ваша пасведчанне ў інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
+        "Унікальныя, дынамічныя адрасы электроннай пошты, якія абараняюць вашы асабістыя даныя ў інтэрнэце і дазваляюць кантраляваць, што трапляе ў вашу паштовую скрыню. З SimpleLogin ад ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -4137,6 +4129,253 @@
       ],
       "Verification": [
         "Праверка"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыць"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
+      "Special offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перайсці на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дні"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Агульны аб'ём сховішча: ${ storageSize }"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "64 countries": [
+        "64 краіны"
+      ],
+      "All paid Mail and Calendar features": [
+        "Усе платныя функцыі Mail і Calendar"
+      ],
+      "High speed VPN": [
+        "Высакахуткасны VPN"
+      ],
+      "Highest VPN speed": [
+        "Найвышэйшая хуткасць VPN"
+      ],
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium early access": [
+        "Ранні доступ да новых функцый"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Прэміяльныя функцыі Mail, Calendar і Drive"
+      ],
+      "Premium VPN": [
+        "Прэміяльныя функцыі VPN"
+      ],
+      "Secure cloud storage": [
+        "Бяспечнае воблачнае сховішча"
+      ],
+      "Secure streaming": [
+        "Бяспечнае патокавае вяшчанне"
+      ],
+      "Support online privacy": [
+        "Падтрыманне прыватнасці ў інтэрнэце"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Пажыццёвая прапанова"
+      ],
+      "Limited time only": [
+        "Прапанова абмежавана па часе"
+      ],
+      "Most popular": [
+        "Самы папулярны"
+      ],
+      "Offer ends soon": [
+        "Прапанова неўзабаве скончыцца"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Скідка будзе працягваць дзейнічаць да таго часу, пакуль падпіска не будзе скасавана або зменена"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перайсці да тарыфных планаў"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Аплачваецца ${ amount } за 1 месяц"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Аплачваецца ${ amount } за 12 месяцаў"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Аплачваецца ${ amount } за 15 месяцаў"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Аплачваецца ${ amount } за 24 месяцы"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Аплачваецца ${ amount } за 30 месяцаў"
+      ],
+      "for ${ n } month": [
+        "за ${ n } месяц",
+        "за ${ n } месяцы",
+        "за ${ n } месяцаў",
+        "за ${ n } месяцы"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Падаўжаецца праз 2 гады па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Эканомія ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Стандартная цана ${ amount } за 1 месяц"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Стандартная цана ${ amount } за 12 месяцаў"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Стандартная цана ${ amount } за 15 месяцаў"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Стандартная цана ${ amount } за 24 месяцы"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Стандартная цана ${ amount } за 30 месяцаў"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Распродаж з нагоды \"Чорнай Пятніцы\""
+      ],
+      "Cyber Week Sale": [
+        "Распродаж з нагоды \"Кібертыдня\""
+      ],
+      "End of year offer": [
+        "Прапанова з нагоды заканчэння года"
+      ],
+      "End of Year Sale": [
+        "Распродаж з нагоды заканчэння года"
+      ],
+      "Get our premium bundle and save more": [
+        "Набудзьце наш прэміяльны камплект і зэканомце больш"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Мы зноў прапануем скідку на тарыфны план Visionary, але прапанова абмежавана па часе"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш як 60 краінах, найвышэйшую хуткасць VPN, 10 падключэнняў на карыстальніка, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш як 60 краінах, найвышэйшую хуткасць VPN, 10 падключэнняў па VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide My Email, абагульванне календара, зашыфраванае воблачнае сховішча і абагульванне файлаў, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ідэальна пасуе для сем'яў або невялікіх каманд. У кожнага карыстальніка будзе свая ўласная паштовая скрыня і псеўданімы. Патрабуецца карыстальніцкі дамен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Атрымлівайце платныя версіі ўсіх сэрвісаў, якія будуць выпушчаны ў будучым, а таксама ранні доступ да ўсіх будучых функцый і прадуктаў без дадатковай платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -4571,9 +4810,6 @@
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
-      "Delete organization?": [
-        "Выдаліць арганізацыю?"
-      ],
       "Device connected!": [
         "Прылада падключана!"
       ],
@@ -4587,7 +4823,7 @@
         "Спампаваць ${ VPN_APP_NAME }"
       ],
       "Downloads": [
-        "Спампоўванні"
+        "Спампоўкі"
       ],
       "Duration": [
         "Працягласць"
@@ -4825,6 +5061,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
+      ],
+      "Your Plan": [
+        "Ваш тарыфны план"
       ],
       "Your plan": [
         "Ваш тарыфны план"

@@ -1511,9 +1511,6 @@
       "Not a valid number": [
         "Номер недійсний"
       ],
-      "Organization not recognized. Try again.": [
-        "Організацію не розпізнано. Спробуйте знову."
-      ],
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
@@ -1931,7 +1928,7 @@
         "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
-        "Всі додатки від ${ BRAND_NAME } та їхні преміальні функції"
+        "Всі програми від ${ BRAND_NAME } з преміумфункціями"
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
@@ -2259,6 +2256,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
+      ],
+      "Restore": [
+        "Відновити"
       ],
       "Revoke certificate ${ name }": [
         "Відкликати сертифікат ${ name }"
@@ -2825,9 +2825,6 @@
       "Email or username": [
         "Е-пошта чи ім'я користувача"
       ],
-      "Enter organization name to confirm": [
-        "Введіть назву організації для підтвердження"
-      ],
       "Enter the code displayed on your TV": [
         "Введіть код, показаний на вашому телевізорі"
       ],
@@ -3120,11 +3117,6 @@
         "Передплатіть тарифний план для доступу до підтримки в чаті та інших преміумфункцій, або скористайтеся нашою формою підтримки та повідомте про свою проблему."
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ця дія остаточно видалить усіх підлеглих користувачів, облікові записи, а також дані, пов'язані з вашою організацією."
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
@@ -3281,6 +3273,12 @@
         "${ n } тек і міток",
         "${ n } тек і міток"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } псевдонім Hide My Email",
+        "${ n } псевдоніми Hide My Email",
+        "${ n } псевдонімів Hide My Email",
+        "${ n } псевдонімів Hide My Email"
+      ],
       "${ n } label": [
         "${ n } мітка",
         "${ n } мітки",
@@ -3292,6 +3290,12 @@
         "${ n } повідомлення на добу",
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
+      ],
+      "${ n } vault": [
+        "${ n } сховище",
+        "${ n } сховища",
+        "${ n } сховищ",
+        "${ n } сховищ"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-з'єднання",
@@ -3347,6 +3351,12 @@
       "Contact groups management": [
         "Керування групами контактів"
       ],
+      "Custom domain for email aliases": [
+        "Користувацький домен для псевдонімів електронної пошти"
+      ],
+      "Custom domains for email aliases": [
+        "Користувацькі домени для псевдонімів електронної пошти"
+      ],
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
@@ -3389,6 +3399,9 @@
       "HTML signatures": [
         "HTML-підписи"
       ],
+      "Integrated 2FA authenticator": [
+        "Інтегрований 2FA автентифікатор"
+      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
       ],
@@ -3397,6 +3410,9 @@
       ],
       "Multiple admin roles": [
         "Різні адміністративні ролі"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Кілька поштових скриньок для переадресації"
       ],
       "NetShield malware and ad-blocker": [
         "NetShield — блокувальник зловмисних програм та реклами"
@@ -3437,6 +3453,9 @@
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
       ],
+      "Strong E2E encryption": [
+        "Надійне наскрізне шифрування"
+      ],
       "Team management": [
         "Керування командою"
       ],
@@ -3445,6 +3464,9 @@
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
+      ],
+      "Unlimited devices": [
+        "Необмежена кількість пристроїв"
       ],
       "Unlimited filters": [
         "Необмежена кількість фільтрів"
@@ -3455,11 +3477,20 @@
       "Unlimited folders, labels, and filters": [
         "Необмежена кількість тек, міток і фільтрів"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Необмежена кількість псевдонімів Hide My Email"
+      ],
       "Unlimited labels": [
         "Необмежена кількість міток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
+      ],
+      "Unlimited passwords and notes": [
+        "Необмежена кількість паролів і приміток"
+      ],
+      "Unlimited vaults": [
+        "Необмежена кількість сховищ"
       ],
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
@@ -3516,6 +3547,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
       ],
+      "For next-level password management and identity protection.": [
+        "Для вищого рівня керування паролями та захисту особистих даних."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Якщо ви видалите свій обліковий запис, то втратите всі переваги тарифного плану ${ visionary } та не зможете передплатити його знову після створення нового облікового запису."
       ],
@@ -3535,7 +3569,7 @@
         "Комплект із приватності та безпеки для компаній, включно з преміумслужбами ${ BRAND_NAME }."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Захистіть приватність вашої родити з усіма сервісами від ${ BRAND_NAME } водночас."
+        "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
@@ -3686,7 +3720,7 @@
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Створюйте до ${ n } адрес електронної пошти/псевдонімів для всієї родини. Використовуйте їх для своїх онлайн сутностей, наприклад, MyFamilySubs@${ domain } для онлайн підписок."
+        "Створюйте до ${ n } адрес електронної пошти/псевдонімів для всієї родини. Використовуйте їх для мережевих облікових записів, наприклад, MyFamilySubs@${ domain } для сімейних передплат."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
@@ -3713,7 +3747,7 @@
         "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Залиште ваші та родинні особисті плани приватними з зашифрованим календарем"
+        "Захистіть приватність власних і родинних планів, користуючись зашифрованим календарем"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Захищає вас, блокуючи всі мережеві з'єднання під час неочікуваного відімкнення від нашого VPN-сервера."
@@ -3755,7 +3789,7 @@
         "Захистіть кожен пристрій у своїй мережі WiFi. Також це корисно для пристроїв, які не підтримують безпосередньо налаштування VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Захистіть свою родину від шкідливих вебсайтів та підключайтесь до наших швидкісних VPN-серверів, щоб переглядати онлайн улюблений контент"
+        "Захистіть свою родину від небезпечних вебсайтів та отримайте доступ до наших швидкісних VPN-серверів, щоб переглядати улюблені матеріали"
       ],
       "Quickly set up out-of-office messages": [
         "Швидко налаштовуйте автоматичні відповіді"
@@ -3773,7 +3807,7 @@
         "Спрямовуйте свій інтернет-трафік через мережу Tor одним натиском"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Захистіть свої файли у зашифрованому хмарному сховищі, включаючи автоматичну синхронізацію, зашифрований обмін файлами та багато іншого."
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження та особисті примітки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для ${ BRAND_NAME }."
@@ -4071,6 +4105,176 @@
       ],
       "Verification": [
         "Перевірка"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрити"
+      ],
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунди",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } місяць БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Усього ${ storageSize } сховища"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
+      ],
+      "64 countries": [
+        "64 країни"
+      ],
+      "High speed VPN": [
+        "Високошвидкісна VPN"
+      ],
+      "Highest VPN speed": [
+        "Найвища швидкість VPN"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Ранній преміумдоступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Calendar і Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Безпечне хмарне сховище"
+      ],
+      "Secure streaming": [
+        "Захищена трансляція"
+      ],
+      "Support online privacy": [
+        "Підтримка онлайн-приватності"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ця передплата автоматично продовжуватиметься раз на 2 роки за такою ж ціною, поки її не буде скасовано."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Довічна угода"
+      ],
+      "Limited time only": [
+        "Упродовж обмеженого часу"
+      ],
+      "Most popular": [
+        "Найпопулярніший"
+      ],
+      "Offer ends soon": [
+        "Пропозиція скоро завершиться"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Знижка діятиме після поновлення передплати, доки її не буде скасовано або змінено"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти до тарифних планів"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ місяць"
+      ],
+      "1 year": [
+        "1 рік"
+      ],
+      "2 years": [
+        "2 роки"
+      ],
+      "for ${ n } month": [
+        "на ${ n } місяць",
+        "на ${ n } місяці",
+        "на ${ n } місяців",
+        "на ${ n } місяців"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Save ${ discount }%": [
+        "Знижка ${ discount }%"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Розпродаж у Чорну П'ятницю"
+      ],
+      "Cyber Week Sale": [
+        "Розпродаж Кібертижня"
+      ],
+      "End of year offer": [
+        "Передноворічна пропозиція"
+      ],
+      "End of Year Sale": [
+        "Передноворічний розпродаж"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -4505,9 +4709,6 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
-      "Delete organization?": [
-        "Видалити організацію?"
-      ],
       "Device connected!": [
         "Пристрій під'єднано!"
       ],
@@ -4634,6 +4835,9 @@
       "Plans": [
         "Тарифні плани"
       ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
       "Previous": [
         "Назад"
       ],
@@ -4756,6 +4960,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
+      ],
+      "Your Plan": [
+        "Ваш план"
       ],
       "Your plan": [
         "Ваш тарифний план"

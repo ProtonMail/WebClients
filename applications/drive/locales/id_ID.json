@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Batalkan pengunggahan"
       ],
+      "Change": [
+        "Ubah"
+      ],
       "Chat with us": [
         "Mengobrol dengan kami"
       ],
@@ -198,6 +201,12 @@
       ],
       "Delete permanently": [
         "Hapus secara permanen"
+      ],
+      "Delete this version": [
+        "Hapus versi ini"
+      ],
+      "Delete version": [
+        "Hapus versi"
       ],
       "Deselect all": [
         "Batalkan semua pilihan"
@@ -499,6 +508,9 @@
       "Save": [
         "Simpan"
       ],
+      "Save version as copy": [
+        "Simpan versi sebagai salinan"
+      ],
       "Search": [
         "Pencarian"
       ],
@@ -510,6 +522,9 @@
       ],
       "See plan features": [
         "Lihat seluruh fitur paket"
+      ],
+      "See version history": [
+        "Lihat riwayat versi"
       ],
       "Select all": [
         "Pilih semua"
@@ -2926,6 +2941,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Apakah Anda yakin untuk mengosongkan sampah dan menghapus seluruh berkas yang ada di dalamnya secara permanen?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Apakah Anda yakin untuk menghapus"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Apakah Anda yakin untuk menghapus \"${ itemName }\" dari sampah secara permanen?"
       ],
@@ -3024,6 +3042,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Anda dapat mengimpor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
+      ],
+      "Current version": [
+        "Versi saat ini"
       ],
       "Decrypting files": [
         "Mendekripsi berkas"
@@ -3133,8 +3154,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Berkas tidak akan diunggah"
+      "File will not be updated": [
+        "Berkas tidak akan diperbarui"
       ],
       "Finalizing": [
         "Finalisasi"
@@ -3171,6 +3192,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Kosongkan beberapa ruang atau hubungi administrator Anda."
+      ],
+      "from the version history?": [
+        "dari riwayat versi secara permanen?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Kenali ${ DRIVE_APP_NAME } lebih dalam dan dapatkan bonus kuota penyimpanan 500 GB! Jangan lewatkan kesempatan ini sekarang juga."
@@ -3273,6 +3297,9 @@
       ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
+      ],
+      "Last week": [
+        "Minggu lalu"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -3436,6 +3463,12 @@
       "Preview for this file type is not supported": [
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Versi sebelumnya disimpan selama ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Versi sebelumnya tidak disimpan"
+      ],
       "Primary": [
         "Utama"
       ],
@@ -3459,6 +3492,9 @@
       ],
       "Report has been sent": [
         "Laporan telah dikirim"
+      ],
+      "Restore": [
+        "Pulihkan"
       ],
       "Restored files ${ formattedDate }": [
         "Berkas yang dipulihkan ${ formattedDate }"
@@ -3580,14 +3616,20 @@
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "Tindakan ini akan menonaktifkan tautan ini dan membuat berkas atau folder Anda tidak lagi dapat diakses melalui tautan yang bersangkutan."
       ],
-      "This will overwrite the existing file": [
-        "Tindakan ini akan menimpa berkas yang sudah ada"
-      ],
       "This will overwrite the existing folder": [
         "Tindakan ini akan menimpa folder yang sudah ada"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Tindakan ini akan menghapus perangkat ${ deviceName } yang telah disinkronkan sebelumnya dari ${ DRIVE_APP_NAME }. Berkas lokal yang\nterdapat pada perangkat yang bersangkutan tidak akan terpengaruh."
+      ],
+      "This will replace the existing file with the folder": [
+        "Dengan ini, berkas yang telah ada akan diganti dengan folder"
+      ],
+      "This will replace the existing folder with the file": [
+        "Dengan ini, folder yang telah ada akan diganti dengan berkas"
+      ],
+      "This will upload a new version of the file": [
+        "Dengan ini, versi baru berkas akan diunggah"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Untuk mengaktifkan mode pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } perlu untuk terlebih dahulu mengindeks berkas Anda secara lokal."
@@ -3609,6 +3651,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
+      ],
+      "Today": [
+        "Hari ini"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer berkas \"${ name }\" dibatalkan"
@@ -3661,6 +3706,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gunakan formulir berikut untuk melaporkan berkas yang berisikan hal-hal yang\ntidak pantas, ilegal, ataupun berbahaya kepada kami. Anda akan melaporkan:"
       ],
+      "Version is deleted": [
+        "Versi dihapus"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Selamat, Anda telah menggandakan kuota penyimpanan gratis Anda!"
       ],
@@ -3703,6 +3751,9 @@
       "Yes": [
         "Ya"
       ],
+      "Yesterday": [
+        "Kemarin"
+      ],
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
@@ -3743,13 +3794,13 @@
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan. Apabila Anda terus-menerus lalai membayar, seluruh email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Browser Anda saat ini tidak dapat digunakan untuk mengunduh berkas yang berukuran besar karena tidak tersedianya dukungan service worker yang memadai. Mengunduh berkas yang berukuran besar dapat membekukan layar atau menonaktifkan browser Anda sepenuhnya. Mohon gunakan versi terbaru dari ${ recommendedBrowser } dan coba lagi."
@@ -3774,6 +3825,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Paket Anda terbatas pada 10 versi hingga 7 hari"
       ],
       "Your previous password": [
         "Kata sandi Anda sebelumnya"
@@ -3839,6 +3893,12 @@
       ],
       "${ BRAND_NAME } username": [
         "Pengguna ${ BRAND_NAME }"
+      ],
+      "${ nbDay } days": [
+        "${ nbDay } hari"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } tahun"
       ],
       "(Expired)": [
         "(Kedaluwarsa)"
@@ -3966,6 +4026,9 @@
       "Downloading ${ percentageValue }%": [
         "Unduhan ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "Duplikat ditemukan"
+      ],
       "Email": [
         "Email"
       ],
@@ -4065,6 +4128,15 @@
       "Import to:": [
         "Impor ke:"
       ],
+      "Keep both": [
+        "Simpan keduanya"
+      ],
+      "Keep both files": [
+        "Simpan kedua berkas"
+      ],
+      "Keep both folders": [
+        "Simpan kedua folder"
+      ],
       "Label messages as": [
         "Labeli pesan-pesan ini dengan"
       ],
@@ -4161,11 +4233,11 @@
       "Region": [
         "Provinsi"
       ],
-      "Replace file": [
-        "Ganti berkas"
+      "Replace existing file": [
+        "Gantikan berkas yang telah ada"
       ],
-      "Replace folder": [
-        "Ganti folder"
+      "Replace existing folder": [
+        "Gantikan folder yang telah ada"
       ],
       "Report": [
         "Laporkan"
@@ -4238,9 +4310,6 @@
       ],
       "Unlock later": [
         "Buka di kemudian waktu"
-      ],
-      "Upload anyway": [
-        "Tetap unggah"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -4605,6 +4674,9 @@
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
       ],
+      "Version failed to be deleted": [
+        "Versi gagal dihapus"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Berkas lama Anda akan terhapus dalam 72 jam"
       ],
@@ -4670,6 +4742,9 @@
       ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
+      ],
+      "Set up your organization testing": [
+        "Siapkan pengujian organisasi Anda"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gunakan pemindah aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses seluruh layanan ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }."
@@ -4871,6 +4946,104 @@
       ],
       "Sign": [
         "Tandatangani"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Tutup"
+      ],
+      "Don't show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Special offer": [
+        "Penawaran spesial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } hari"
+      ],
+      "${ hours } hours": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } menit"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } detik"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } bulan GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } jumlah penyimpanan"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "64 countries": [
+        "64 negara"
+      ],
+      "All paid Mail and Calendar features": [
+        "Semua fitur Mail dan Calendar yang berbayar"
+      ],
+      "High speed VPN": [
+        "VPN berkecepatan tinggi"
+      ],
+      "Highest VPN speed": [
+        "Kecepatan VPN tertinggi"
+      ],
+      "Premium Drive": [
+        "Drive Premium"
+      ],
+      "Premium early access": [
+        "Akses dini Premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail dan Calendar Premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar, dan Drive Premium"
+      ],
+      "Premium VPN": [
+        "VPN Premium"
+      ],
+      "Secure cloud storage": [
+        "Penyimpanan awan aman"
+      ],
+      "Secure streaming": [
+        "Streaming aman"
+      ],
+      "Support online privacy": [
+        "Dukung privasi daring"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Pergi ke paket langganan"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } months": [
+        "untuk ${ n } bulan"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Beserta dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, pembagian kalender, dan lebih banyak lagi."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5330,6 +5503,9 @@
       "Phone numbers": [
         "Nomor telepon"
       ],
+      "Preview": [
+        "Pratinjau"
+      ],
       "Privacy settings": [
         "Pengaturan privasi"
       ],
@@ -5467,6 +5643,12 @@
       ],
       "Uploading a large file or folder": [
         "Mengunggah berkas atau folder berukuran besar"
+      ],
+      "Version details": [
+        "Rincian versi"
+      ],
+      "Version history": [
+        "Riwayat versi"
       ],
       "View contacts": [
         "Lihat kontak"
