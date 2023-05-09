@@ -10,7 +10,7 @@ import {
     resumeSession,
 } from '@proton/pass/auth';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
-import { notification, sessionLockSync, stateDestroy, stateLock } from '@proton/pass/store';
+import { notification, sessionLockSync, setUserPlan, stateDestroy, stateLock } from '@proton/pass/store';
 import type { Api, MaybeNull, WorkerForkMessage, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
@@ -157,11 +157,15 @@ export const createAuthService = ({
                  * removing the session-lock mechanism (and moving to biometrics)
                  * make sure to catch 403 in this catch block. It is handled by
                  * the session lock check in the AuthService::login call right now */
-                await api({ url: `pass/v1/user/access`, method: 'post' }).catch((e) => {
+                const accessResponse = await api({ url: `pass/v1/user/access`, method: 'post' }).catch((e) => {
                     if (!api.getStatus().sessionLocked) {
                         throw e;
                     }
                 });
+
+                if (accessResponse?.Access) {
+                    store.dispatch(setUserPlan(accessResponse.Access.Plan));
+                }
 
                 return {
                     payload: {

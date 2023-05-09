@@ -1,9 +1,10 @@
-import { VFC } from 'react';
+import { type VFC } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLikeShape } from '@proton/atoms';
 import { Icon, InlineLinkButton } from '@proton/components/components';
+import browser from '@proton/pass/globals/browser';
 import clsx from '@proton/utils/clsx';
 
 import { SSO_URL } from '../../../app/config';
@@ -26,7 +27,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ inline = false }) => {
         <ButtonComponent
             className={clsx('flex flex-align-items-center', !inline && 'text-sm')}
             color="norm"
-            onClick={() => window.open(UPGRADE_PLAN_PATH, '_blank')}
+            onClick={() => browser.tabs.create({ url: UPGRADE_PLAN_PATH })}
             {...(!inline && buttonProps)}
         >
             {c('Action').t`Upgrade`}

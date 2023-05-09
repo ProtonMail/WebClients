@@ -9,5 +9,6 @@ export * from './creators/request';
 export * from './creators/settings';
 export * from './creators/share';
 export * from './creators/trash';
+export * from './creators/user';
 export * from './creators/vault';
 export * from './creators/worker';

@@ -11,8 +11,8 @@ export const useUsageLimits = () => {
     return {
         aliasUsed,
         aliasLimit: plan?.AliasLimit,
-        aliasLimitExceeded: !!plan?.AliasLimit && aliasUsed >= plan.AliasLimit,
-        totpLimitExceeded: !!plan?.TotpLimit && totpUsed >= plan.TotpLimit,
-        vaultLimitExceeded: !!plan?.VaultLimit && vaultUsed >= plan.VaultLimit,
+        aliasLimitExceeded: typeof plan?.AliasLimit === 'number' && aliasUsed >= plan.AliasLimit,
+        totpLimitExceeded: typeof plan?.TotpLimit === 'number' && totpUsed >= plan.TotpLimit,
+        vaultLimitExceeded: typeof plan?.VaultLimit === 'number' && vaultUsed >= plan.VaultLimit,
     };
 };
