@@ -177,6 +177,7 @@ export const createIFrameApp = ({
     };
 
     const destroy = () => {
+        close({ userInitiated: false });
         listeners.removeAll();
         safeCall(() => iframeRoot.removeChild(iframe))();
         safeCall(state?.port?.disconnect)();

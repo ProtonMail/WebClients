@@ -28,10 +28,13 @@ const unregisterContentScript = (reason: string) => {
 };
 
 /* creates the content-script service and starts it immediately.
- * any errors during this sequence will unregister it*/
+ * any errors during this sequence will unregister it. As we may
+ * trigger the registration multiple times, make sure it's null */
 const registerContentScript = () => {
-    contentScript = createContentScriptService(CONTENT_SCRIPT_ID, mainFrame);
-    contentScript?.start().catch(() => unregisterContentScript('start failure'));
+    if (contentScript === null) {
+        contentScript = createContentScriptService(CONTENT_SCRIPT_ID, mainFrame);
+        contentScript?.start().catch(() => unregisterContentScript('start failure'));
+    }
 };
 
 /* when the frame becomes hidden destroy the content-script
@@ -56,21 +59,23 @@ const handleIncomingCSPostMessage = (message: MessageEvent) => {
 
     if (message.data?.type === CONTENT_SCRIPT_INJECTED_MESSAGE && message?.data?.id !== CONTENT_SCRIPT_ID) {
         logger.info(`[ContentScript::${CONTENT_SCRIPT_ID}] new script detected ${message.data.id}`);
-        window.removeEventListener('visibilitychange', handleFrameVisibilityChange);
+        document.removeEventListener('visibilitychange', handleFrameVisibilityChange);
         window.removeEventListener('message', handleIncomingCSPostMessage);
         unregisterContentScript('incoming injection');
     }
 };
 
 /* on every new content-script injection : clean-up the DOM
- * and notify any other content-script living on the same tab */
+ * and notify any other content-script living on the same tab.
+ * On the main_frame: we use a combination of visibilitychange,
+ * focus & blur events in order to detect inactivity */
 const main = () => {
-    DOMCleanUp();
-
     logger.info(`[ContentScript::${CONTENT_SCRIPT_ID}] Start injection sequence`);
-    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, window.location.origin);
+
+    DOMCleanUp();
+    window.postMessage({ type: CONTENT_SCRIPT_INJECTED_MESSAGE, id: CONTENT_SCRIPT_ID }, '*');
     window.addEventListener('message', handleIncomingCSPostMessage);
-    window.addEventListener('visibilitychange', handleFrameVisibilityChange);
+    if (mainFrame) document.addEventListener('visibilitychange', handleFrameVisibilityChange);
 
     return document.visibilityState === 'visible' && registerContentScript();
 };
