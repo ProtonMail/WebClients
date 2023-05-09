@@ -62,7 +62,7 @@ export const getOrCreateSignedKeyList = async (
     decryptedKeys: DecryptedKey[],
     keyTransparencyVerify: KeyTransparencyVerify
 ): Promise<SignedKeyList | undefined> => {
-    if (address.SignedKeyList) {
+    if (address.SignedKeyList?.Data) {
         return {
             Data: address.SignedKeyList.Data,
             Signature: address.SignedKeyList.Signature,
