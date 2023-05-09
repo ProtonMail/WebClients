@@ -81,12 +81,15 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings!);
 
-            if (!mainFrame) {
-                const { runDetection } = context.service.detector.assess([]);
-                if (!runDetection) return destroy({ reason: 'subframe discarded', recycle: false });
+            const { runDetection } = context.service.detector.assess([]);
+
+            if (!mainFrame && !runDetection) {
+                /* if we're in an iframe and the initial detection should not
+                 * be triggered : destroy this content-script */
+                return destroy({ reason: 'subframe discarded', recycle: false });
             }
 
-            context.service.formManager.detect('VisibilityChange');
+            if (runDetection) context.service.formManager.detect('VisibilityChange');
             context.service.formManager.observe();
 
             port.onMessage.addListener(onPortMessage);
