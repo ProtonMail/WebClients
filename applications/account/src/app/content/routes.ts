@@ -20,6 +20,7 @@ interface Arguments {
     isDataRecoveryAvailable: boolean;
     isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
+    isRevisionsEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -33,6 +34,7 @@ export const getRoutes = ({
     isSmtpTokenEnabled,
     isGmailSyncEnabled,
     recoveryNotification,
+    isRevisionsEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -51,7 +53,7 @@ export const getRoutes = ({
             isSmtpTokenEnabled,
         }),
         calendar: getCalendarAppRoutes(),
-        drive: getDriveAppRoutes(),
+        drive: getDriveAppRoutes({ isRevisionsEnabled }),
         pass: getPassAppRoutes(),
         organization: getOrganizationAppRoutes({ user, organization, subscription }),
         vpn: getVpnAppRoutes(),
