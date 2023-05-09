@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Zrušit nahrávání"
       ],
+      "Change": [
+        "Změnit"
+      ],
       "Chat with us": [
         "Chatujte s námi"
       ],
@@ -204,6 +207,12 @@
       ],
       "Delete permanently": [
         "Trvale smazat"
+      ],
+      "Delete this version": [
+        "Odstranit tuto verzi"
+      ],
+      "Delete version": [
+        "Odstranit verzi"
       ],
       "Deselect all": [
         "Zrušit výběr všeho"
@@ -505,6 +514,9 @@
       "Save": [
         "Uložit"
       ],
+      "Save version as copy": [
+        "Uložit verzi jako kopii"
+      ],
       "Search": [
         "Vyhledat"
       ],
@@ -516,6 +528,9 @@
       ],
       "See plan features": [
         "Zobrazit funkce tarifu"
+      ],
+      "See version history": [
+        "Zobrazit historii verzí"
       ],
       "Select all": [
         "Vybrat vše"
@@ -3082,6 +3097,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Jste si jistí, že chcete trvale odstranit"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Opravdu chcete trvale smazat \"${ itemName }\" z koše?"
       ],
@@ -3183,6 +3201,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Podporovány jsou soubory CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
+      ],
+      "Current version": [
+        "Současná verze"
       ],
       "Decrypting files": [
         "Dešifrování souborů"
@@ -3298,8 +3319,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Soubor nebude nahrán"
+      "File will not be updated": [
+        "Soubor nebude aktualizován"
       ],
       "Finalizing": [
         "Dokončování"
@@ -3336,6 +3357,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
+      ],
+      "from the version history?": [
+        "z historie verzí?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Seznamte se s ${ DRIVE_APP_NAME } a získejte bonus 500 MB úložného prostoru! Učiňte tak ještě dnes."
@@ -3441,6 +3465,9 @@
       ],
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
+      ],
+      "Last week": [
+        "Minulý týden"
       ],
       "Learn more": [
         "Zjistěte více"
@@ -3610,6 +3637,12 @@
       "Preview for this file type is not supported": [
         "Náhled tohoto typu souboru není podporován"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Předchozí verze jsou uchovávány do ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Předchozí verze nejsou uloženy"
+      ],
       "Primary": [
         "Hlavní"
       ],
@@ -3633,6 +3666,9 @@
       ],
       "Report has been sent": [
         "Hlášení bylo odesláno"
+      ],
+      "Restore": [
+        "Obnovit"
       ],
       "Restored files ${ formattedDate }": [
         "Soubory obnoveny ${ formattedDate }"
@@ -3757,14 +3793,20 @@
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
         "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy."
       ],
-      "This will overwrite the existing file": [
-        "Tím se přepíše existující soubor"
-      ],
       "This will overwrite the existing folder": [
         "Tím se přepíše existující složka"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Tím odstraníte z ${ DRIVE_APP_NAME } synchronizované zařízení ${ deviceName }. Místní soubory v zařízení nebudou ovlivněny."
+      ],
+      "This will replace the existing file with the folder": [
+        "Tímto se nahradí existující soubor složkou"
+      ],
+      "This will replace the existing folder with the file": [
+        "Tímto se nahradí existující složka souborem"
+      ],
+      "This will upload a new version of the file": [
+        "Tímto se nahraje nová verze souboru"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby bylo možné povolit soukromé vyhledávání, musí ${ DRIVE_APP_NAME } indexovat vaše soubory lokálně."
@@ -3786,6 +3828,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Chcete-li použít Ověření Adresy, musíte důvěřovat jednomu nebo více dostupným veřejným klíčům, včetně toho, který chcete použít pro odesílání. Toto zamezuje zfalšování šifrovacích klíčů."
+      ],
+      "Today": [
+        "Dnes"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Přenos zrušen pro soubor \"${ name }\""
@@ -3838,6 +3883,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
       ],
+      "Version is deleted": [
+        "Verze odstraněna"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Výborně, právě jste zdvojnásobili své bezplatné úložiště!"
       ],
@@ -3879,6 +3927,9 @@
       ],
       "Yes": [
         "Ano"
+      ],
+      "Yesterday": [
+        "Včera"
       ],
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít v nové kartě prohlížeče:"
@@ -3952,6 +4003,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Váš plán je limitovaný na 10 verzí až na 7 dní"
+      ],
       "Your previous password": [
         "Vaše předchozí heslo"
       ],
@@ -4016,6 +4070,18 @@
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } den",
+        "${ nbDay } dny",
+        "${ nbDay } dnů",
+        "${ nbDay } dnů"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } rok",
+        "${ nbYear } roky",
+        "${ nbYear } let",
+        "${ nbYear } let"
       ],
       "(Expired)": [
         "(Vypršelo)"
@@ -4146,6 +4212,9 @@
       "Downloading ${ percentageValue }%": [
         "Stahování ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "Nalezeny duplicity"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4245,6 +4314,15 @@
       "Import to:": [
         "Importovat do:"
       ],
+      "Keep both": [
+        "Ponechat obě"
+      ],
+      "Keep both files": [
+        "Ponechat oba soubory"
+      ],
+      "Keep both folders": [
+        "Ponechat obě složky"
+      ],
       "Label messages as": [
         "Označit zprávy jako"
       ],
@@ -4341,11 +4419,11 @@
       "Region": [
         "Kraj"
       ],
-      "Replace file": [
-        "Nahradit soubor"
+      "Replace existing file": [
+        "Nahradit existující soubor"
       ],
-      "Replace folder": [
-        "Nahradit složku"
+      "Replace existing folder": [
+        "Nahradit existující složku"
       ],
       "Report": [
         "Nahlásit"
@@ -4418,9 +4496,6 @@
       ],
       "Unlock later": [
         "Odemknout později"
-      ],
-      "Upload anyway": [
-        "Přesto nahrát"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -4854,6 +4929,9 @@
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
       ],
+      "Version failed to be deleted": [
+        "Nepodařilo se smazat verzi"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
       ],
@@ -4922,6 +5000,9 @@
       ],
       "Set up your organization": [
         "Nastavení organizace"
+      ],
+      "Set up your organization testing": [
+        "Nastavte testování Vaší organizace"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Pomocí výběru aplikací v levém horním rohu získáte přístup ke všem službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }."
@@ -5132,6 +5213,230 @@
       ],
       "Sign": [
         "Podepsat"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Don't show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
+      "Special offer": [
+        "Speciální nabídka"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } den",
+        "${ days } dny",
+        "${ days } dnů",
+        "${ days } dnů"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } měsíc ZDARMA",
+        "${ n } měsíce ZDARMA",
+        "${ n } měsíců ZDARMA",
+        "${ n } měsíců ZDARMA"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } úložného prostoru"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 uživatelů"
+      ],
+      "64 countries": [
+        "64 zemí"
+      ],
+      "All paid Mail and Calendar features": [
+        "Všechny placené Mail a Calendar funkce"
+      ],
+      "High speed VPN": [
+        "Vysokorychlostní VPN"
+      ],
+      "Highest VPN speed": [
+        "Nejvyšší rychlost VPN"
+      ],
+      "Premium Drive": [
+        "Prémiový Disk"
+      ],
+      "Premium early access": [
+        "Prémiový předběžný přístup"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémiový Mail a Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Prémiový Mail, Calendar a Drive"
+      ],
+      "Premium VPN": [
+        "Prémiová VPN"
+      ],
+      "Secure cloud storage": [
+        "Bezpečné cloudové úložiště"
+      ],
+      "Secure streaming": [
+        "Bezpečné streamování"
+      ],
+      "Support online privacy": [
+        "Podpořte online soukromí"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Slevy jsou počítány na základě standardních měsíčních cen."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ]
+    },
+    "specialoffer: Label": {
+      "Limited time only": [
+        "Časově omezeno"
+      ],
+      "Most popular": [
+        "Nejpopulárnější"
+      ],
+      "Offer ends soon": [
+        "Nabídka brzy končí"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Sleva bude platit i při obnovení, dokud nebude předplatné zrušeno nebo změněno"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Přejít na předplatné"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ měsíc"
+      ],
+      "1 year": [
+        "1 rok"
+      ],
+      "2 years": [
+        "2 roky"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Účtováno ${ amount } za 1 měsíc"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Účtováno ${ amount } za 12 měsíců"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Účtováno ${ amount } za 15 měsíců"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Účtováno ${ amount } za 24 měsíců"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Účtováno ${ amount } za 30 měsíců"
+      ],
+      "for ${ n } month": [
+        "na ${ n } měsíc",
+        "na ${ n } měsíce",
+        "na ${ n } měsíců",
+        "na ${ n } měsíců"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovení po 1 roce za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount }% sleva)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovení po 2 letech za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount }% sleva)"
+      ],
+      "Save ${ discount }%": [
+        "Ušetřete ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardní cena ${ amount } za 1 měsíc"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardní cena ${ amount } za 12 měsíců"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardní cena ${ amount } za 15 měsíců"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardní cena ${ amount } za 24 měsíců"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardní cena ${ amount } za 30 měsíců"
+      ]
+    },
+    "specialoffer: Title": {
+      "End of year offer": [
+        "Nabídka na závěr roku"
+      ],
+      "Get our premium bundle and save more": [
+        "Získejte náš prémiový balíček a ušetřete více"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Ušetřete více s 2 roky ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malwaru a reklamy a další."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokátor malwaru a reklamy a další."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů Skryj můj e-mail, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů Hide My Email, sdílení kalendáře a další funkce."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 3 vlastních e-mailových domén, 15 e-mailových adres, neomezený počet aliasů Hide My Email, sdílení kalendáře a další funkce."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ideální pro rodiny nebo malé týmy, každý může mít vlastní schránku a aliasy. Vyžaduje vlastní doménu."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu spustíme, a také včasný přístup k novým produktům a funkcím."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5788,6 +6093,12 @@
       ],
       "Uploading a large file or folder": [
         "Nahrávání velkého souboru nebo složky"
+      ],
+      "Version details": [
+        "Detaily verze"
+      ],
+      "Version history": [
+        "Historie verzí"
       ],
       "View contacts": [
         "Zobrazit kontakty"

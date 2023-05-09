@@ -17,7 +17,7 @@
         "El reenvío iniciará pronto. Los correos nuevos aparecerán en tu bandeja de entrada."
       ],
       "Mail forward stopped": [
-        "Se ha detenido el reenvío de correo."
+        "Se ha detenido el reenvío de correo"
       ]
     },
     "Action": {
@@ -2735,6 +2735,162 @@
         "(sin título)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB de almacenamiento total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtén ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se reparte entre los miembros de la familia en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Switch plans": [
+        "Cambiar de plan"
+      ],
+      "View the invitation": [
+        "Ver la invitación"
+      ],
+      "View the invitations": [
+        "Ver las invitaciones"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive prémium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail y Calendar prémium"
+      ],
+      "Premium VPN": [
+        "VPN prémium"
+      ],
+      "Up to 6 users": [
+        "Hasta 6 usuarios"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } grupos"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o familiar."
+      ],
+      "customer support": [
+        "atención al cliente"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Invitación de: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Gestiona las direcciones."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Los dueños de un plan con miembros no pueden unirse al plan de otro grupo."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Lo sentimos, no puedes cambiar de plan en este momento."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Espacio de almacenamiento que te ha asignado: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "El pago de la suscripción lo acomete el administrador principal del plan Visionary o familiar."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes Visionary y familiar no admiten cuentas externas en este momento. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Los planes Visionary y familiar no admiten cuentas vitalicias en este momento."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Solo puedes aceptar 3 invitaciones en un plazo de 6 meses. Contacta con ${ supportLink } si necesitas que se te aplique una excepción."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Has recibido una invitación para unirte a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Te has unido correctamente al plan familiar"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones prémium de ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Tu plan actual no puede formar parte de un plan Visionary o familiar."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "* Tu suscripción se renovará automáticamente con el mismo precio al término del ciclo de facturación."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtén ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Privacidad en línea para toda tu familia"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configura tu cuenta familiar e invita a usuarios a ella "
+      ],
+      "Set up your family": [
+        "Configura tu familia"
+      ],
+      "Set up your family account": [
+        "Configurar cuenta familiar"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Presentamos ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Incluye 2700 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "Tus comentarios"
@@ -5108,9 +5264,6 @@
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } de almacenamiento total"
-      ],
-      "3 TB": [
-        "3 TB"
       ],
       "6 users": [
         "6 usuarios"

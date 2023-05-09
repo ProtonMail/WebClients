@@ -88,6 +88,9 @@
       "Cancel upload": [
         "取消上載"
       ],
+      "Change": [
+        "變更"
+      ],
       "Chat with us": [
         "與我們交談"
       ],
@@ -198,6 +201,12 @@
       ],
       "Delete permanently": [
         "永久刪除"
+      ],
+      "Delete this version": [
+        "刪除此版本"
+      ],
+      "Delete version": [
+        "刪除版本"
       ],
       "Deselect all": [
         "取消全選"
@@ -499,6 +508,9 @@
       "Save": [
         "儲存"
       ],
+      "Save version as copy": [
+        "將版本另存為複本"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -510,6 +522,9 @@
       ],
       "See plan features": [
         "看看方案功能"
+      ],
+      "See version history": [
+        "查看版本紀錄"
       ],
       "Select all": [
         "全選"
@@ -2926,6 +2941,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
       ],
+      "Are you sure you want to permanently delete": [
+        "您確定您想要永久刪除"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "您確定要從垃圾桶中永久刪除 “${ itemName }” 嗎？"
       ],
@@ -3024,6 +3042,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
+      ],
+      "Current version": [
+        "目前版本"
       ],
       "Decrypting files": [
         "正在解密檔案"
@@ -3133,8 +3154,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "檔案遺失簽章。我們無法驗證 ${ fileName } 由誰上載。"
       ],
-      "File will not be uploaded": [
-        "檔案將不會被上載"
+      "File will not be updated": [
+        "將不會上傳檔案"
       ],
       "Finalizing": [
         "即將完成"
@@ -3171,6 +3192,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "請釋出部分空間或聯絡您的系統管理員。"
+      ],
+      "from the version history?": [
+        "來自版本歷史紀錄？"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "了解 ${ DRIVE_APP_NAME } 並獲得您的 500 MB 儲存空間獎勵！今天就行動。"
@@ -3273,6 +3297,9 @@
       ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
+      ],
+      "Last week": [
+        "上週"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -3436,6 +3463,12 @@
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "先前版本會保留 ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "前一個版本並未儲存成功"
+      ],
       "Primary": [
         "主要"
       ],
@@ -3459,6 +3492,9 @@
       ],
       "Report has been sent": [
         "回報已傳送"
+      ],
+      "Restore": [
+        "還原"
       ],
       "Restored files ${ formattedDate }": [
         "已還原的檔案 ${ formattedDate }"
@@ -3580,14 +3616,20 @@
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
-      "This will overwrite the existing file": [
-        "這將會覆寫現有的檔案"
-      ],
       "This will overwrite the existing folder": [
         "這將會覆寫現有的資料夾"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "這將從 ${ DRIVE_APP_NAME } 中刪除同步的裝置 ${ deviceName }。裝置上的本機檔案不會受影響。"
+      ],
+      "This will replace the existing file with the folder": [
+        "這將會使用資料夾取代既有檔案"
+      ],
+      "This will replace the existing folder with the file": [
+        "這將會使用檔案取代既有資料夾"
+      ],
+      "This will upload a new version of the file": [
+        "這將會上傳新版本的檔案"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } 需在您的機器上建立索引，以啟用真正的私密搜尋。"
@@ -3609,6 +3651,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
+      ],
+      "Today": [
+        "今天"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消檔案「${ name }」的傳輸"
@@ -3661,6 +3706,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
       ],
+      "Version is deleted": [
+        "已刪除版本"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "成功了，您的免費儲存空間加倍了！"
       ],
@@ -3702,6 +3750,9 @@
       ],
       "Yes": [
         "是"
+      ],
+      "Yesterday": [
+        "昨天"
       ],
       "You are about to open another browser tab and visit:": [
         "您將要開啟其他瀏覽器分頁並造訪："
@@ -3775,6 +3826,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "您的方案限制為多達 7 天的 10 個版本"
+      ],
       "Your previous password": [
         "您先前的密碼"
       ],
@@ -3839,6 +3893,12 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
+      ],
+      "${ nbDay } days": [
+        "${ nbDay } 天"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } 年"
       ],
       "(Expired)": [
         "(已失效)"
@@ -3966,6 +4026,9 @@
       "Downloading ${ percentageValue }%": [
         "正在下載 ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "發現重複項目"
+      ],
       "Email": [
         "電郵"
       ],
@@ -4065,6 +4128,15 @@
       "Import to:": [
         "匯入到："
       ],
+      "Keep both": [
+        "兩者皆保留"
+      ],
+      "Keep both files": [
+        "保留這兩個檔案"
+      ],
+      "Keep both folders": [
+        "保留這兩個資料夾"
+      ],
       "Label messages as": [
         "將郵件加上標籤"
       ],
@@ -4161,11 +4233,11 @@
       "Region": [
         "地區"
       ],
-      "Replace file": [
-        "取代檔案"
+      "Replace existing file": [
+        "取代已存在的檔案"
       ],
-      "Replace folder": [
-        "取代資料夾"
+      "Replace existing folder": [
+        "取代已存在的資料夾"
       ],
       "Report": [
         "回報"
@@ -4238,9 +4310,6 @@
       ],
       "Unlock later": [
         "稍後解鎖"
-      ],
-      "Upload anyway": [
-        "仍要上載"
       ],
       "Upload picture": [
         "上載圖像"
@@ -4605,6 +4674,9 @@
       "Trash failed to be emptied": [
         "無法清空垃圾桶"
       ],
+      "Version failed to be deleted": [
+        "版本刪除失敗"
+      ],
       "Your old files will be deleted in 72 hours": [
         "您的舊資料夾將於72小時後刪除"
       ],
@@ -4670,6 +4742,9 @@
       ],
       "Set up your organization": [
         "設定您的組織"
+      ],
+      "Set up your organization testing": [
+        "設定您的組織測試"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
@@ -4871,6 +4946,235 @@
       ],
       "Sign": [
         "簽章"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "關閉"
+      ],
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Special offer": [
+        "特別優惠"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "使用無限制"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 天"
+      ],
+      "${ hours } hours": [
+        "${ hours } 小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分鐘"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "免費使用 ${ n } 個月"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } 總儲存空間"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 個使用者"
+      ],
+      "64 countries": [
+        "64 個國家"
+      ],
+      "All paid Mail and Calendar features": [
+        "所有付費郵件與行事曆功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
+      "Highest VPN speed": [
+        "業界最高 VPN 速率"
+      ],
+      "Premium Drive": [
+        "進階版雲端硬碟"
+      ],
+      "Premium early access": [
+        "進階版搶先體驗"
+      ],
+      "Premium Mail and Calendar": [
+        "進階版郵件與行事曆"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "進階版郵件、行事曆與雲端硬碟"
+      ],
+      "Premium VPN": [
+        "進階版 VPN"
+      ],
+      "Secure cloud storage": [
+        "安全的雲端儲存空間"
+      ],
+      "Secure streaming": [
+        "安全的串流"
+      ],
+      "Support online privacy": [
+        "支援線上隱私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基於每月基本價格。"
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "終身優惠"
+      ],
+      "Limited time only": [
+        "期間限定"
+      ],
+      "Most popular": [
+        "最熱門"
+      ],
+      "Offer ends soon": [
+        "優惠即將結束"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "折扣將在續訂後繼續適用，直到取消訂閱或修改"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "查看訂閱方案"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ 月"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "為期 1 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "為期 12 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "為期 15 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "為期 24 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "為期 30 個月收費 ${ amount } "
+      ],
+      "for ${ n } months": [
+        "為期 ${ n } 個月"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Save ${ discount }%": [
+        "省下  ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "長達 1 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "長達 12 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "長達 15 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "長達 24 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "長達 30 個月的標準價 ${ amount } "
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "黑色星期五特賣"
+      ],
+      "Cyber Week Sale": [
+        "Cyber​​ Week 熱賣"
+      ],
+      "End of year offer": [
+        "年終大優惠"
+      ],
+      "End of Year Sale": [
+        "年終優惠"
+      ],
+      "Get our premium bundle and save more": [
+        "取得我們的進階版組合並節省更多"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "我們已停止的永續未來計畫限時回歸"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "使用兩年的 ${ planName } 節省更多"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "使用兩年的 ${ planName } 升級並節省更多"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 個電子郵件地址、支援 10 個自訂網域、無限制的隱藏 Hide My Email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 個電子郵件地址、10 個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 個電子郵件地址、無限個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免費取得我們未來釋出的所有新隱私服務的付費版本，以及對所有未來功能和產品的搶先體驗。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5470,6 +5774,12 @@
       ],
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"
+      ],
+      "Version details": [
+        "版本詳細資訊"
+      ],
+      "Version history": [
+        "版本歷史紀錄"
       ],
       "View contacts": [
         "檢視聯絡人"

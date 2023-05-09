@@ -260,6 +260,9 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete and confirm": [
+        "Supprimer et confirmer"
+      ],
       "Delete link": [
         "Supprimer le lien"
       ],
@@ -407,6 +410,18 @@
       "Get a new encrypted email address": [
         "Obtenir une nouvelle adresse e-mail chiffrée"
       ],
+      "Get more addresses": [
+        "Bénéficiez de plus d'adresses"
+      ],
+      "Get more filters": [
+        "Bénéficiez de plus de filtres"
+      ],
+      "Get more folders": [
+        "Bénéficiez de plus de dossiers"
+      ],
+      "Get more labels": [
+        "Bénéficiez de plus de labels"
+      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -457,6 +472,12 @@
       ],
       "Insert link": [
         "Insérer un lien"
+      ],
+      "Invite": [
+        "Inviter"
+      ],
+      "Invite user": [
+        "Inviter un utilisateur"
       ],
       "Italic": [
         "Italique"
@@ -676,6 +697,9 @@
       ],
       "Save address": [
         "Enregistrer l'adresse"
+      ],
+      "Save changes": [
+        "Enregistrer les modifications"
       ],
       "Save ICS file": [
         "Enregistrer le fichier ICS"
@@ -2630,12 +2654,21 @@
       "ProtonMail logo and a plus sign": [
         "Logo Proton Mail et un signe plus"
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boîte de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "Icône de promotion avec le logo ${ BRAND_NAME } suivi d'un signe plus"
@@ -3050,9 +3083,6 @@
       ],
       "Organization key is not decrypted.": [
         "La clé de l'organisation n'est pas déchiffrée."
-      ],
-      "Organization not recognized. Try again.": [
-        "L'organisation n'est pas reconnue. Nous vous invitons à réessayer."
       ],
       "Password is required": [
         "Le mot de passe est nécessaire."
@@ -3654,6 +3684,301 @@
         "Vous pouvez enregistrer un fichier ICS des événements qui ont été exportés."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 Go d'espace de stockage total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Get ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'espace de stockage est partagé entre les membres de la famille et entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Créer un nouvel utilisateur"
+      ],
+      "Don't show this offer again": [
+        "Ne plus montrer cette offre"
+      ],
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Inviter un utilisateur ${ BRAND_NAME } déjà existant"
+      ],
+      "Keep current plan": [
+        "Garder l'abonnement actuel"
+      ],
+      "Switch plans": [
+        "Changer d'abonnement"
+      ],
+      "View invitation": [
+        "Voir l'invitation"
+      ],
+      "View the invitation": [
+        "Voir l'invitation"
+      ],
+      "View the invitations": [
+        "Voir les invitations"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive version premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail et Calendar version premium"
+      ],
+      "Premium VPN": [
+        "VPN version premium"
+      ],
+      "Up to 6 users": [
+        "Jusqu'à 6 utilisateurs"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Le groupe familial n'est pas reconnu. Nous vous invitons à réessayer."
+      ],
+      "Organization not recognized. Try again.": [
+        "L'organisation n'est pas reconnue. Nous vous invitons à réessayer."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Groupes ${ BRAND_NAME }"
+      ],
+      "*Only one free trial per customer.": [
+        "*Un seul essai gratuit par client."
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement Visionary ou un abonnement familial."
+      ],
+      "customer support": [
+        "service client"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Si vous acceptez l'invitation, nous changerons votre abonnement actuel et nous créditerons votre compte de l'éventuel solde restant."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Invitation envoyée par ${ invitation.OrganizationName }"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Invitation de : ${ inviteEmail }"
+      ],
+      "Leave family plan": [
+        "Quitter l'abonnement familial"
+      ],
+      "Manage user accounts": [
+        "Gérer les comptes utilisateur"
+      ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Le nombre d'invitations acceptées est limité à 10 par période de 6 mois."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement de groupe."
+      ],
+      "Pending": [
+        "En attente"
+      ],
+      "Pending invitation": [
+        "Invitation en attente"
+      ],
+      "Pending invitations": [
+        "Invitations en attente"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Vous ne pouvez malheureusement pas changer d'abonnement pour l'instant."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Espace de stockage qui vous est attribué : ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "L'abonnement est facturé à l'administrateur principal de l'abonnement Visionary ou de l'abonnement familial."
+      ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "Pour faciliter la transition, nous vous offrons un essai gratuit de 30 jours pour ${ BRAND_NAME } Unlimited*."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Actuellement, le plan Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Vous avez une invitation pour rejoindre ${ invite.OrganizationName }."
+      ],
+      "You are part of ${ organization.Name }.": [
+        "Vous faites partie de ${ organization.Name }."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Vous ne pouvez accepter que 3 invitations par période de 6 mois. Contactez le ${ supportLink } si vous avez besoin d'une exception."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Vous avez une invitation pour rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "Vous avez atteint la limite de 10 invitations acceptées en 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs."
+      ],
+      "You have successfully joined the Family plan": [
+        "Vous avez rejoint l'abonnement Family."
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Vous devez configurer un domaine personnalisé avant de créer un nouvel utilisateur."
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "Vous n'aurez plus accès à toutes les fonctionnalités premium et à l'espace de stockage inclus dans ${ BRAND_NAME } Family."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe et à profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Votre abonnement actuel ne peut pas être associé à un abonnement Visionary ou à un abonnement familial."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Votre abonnement sera automatiquement renouvelé au même tarif à la fin de votre cycle de facturation."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Les réductions sont calculées sur les prix mensuels habituels."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Un seul essai gratuit par utilisateur."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Nous attribuons par défaut ${ formattedStorage } d'espace de stockage au compte de l'administrateur. Vous pouvez gérer cet espace pour le répartir entre d'autres utilisateurs par la suite."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Créez et gérez les membres de votre famille et attribuez-leur un espace de stockage qui est partagé entre eux et entre ${ DRIVE_APP_NAME } et ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Si l'utilisateur a déjà une adresse ${ MAIL_APP_NAME }, saisissez-la ici. Sinon, il doit d'abord créer un compte."
+      ],
+      "Online privacy, for your whole family": [
+        "Pour que toute la famille protège sa vie privée en ligne"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "L'invitation sera annulée et l'utilisateur ne pourra pas rejoindre ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Le compte de l'utilisateur sera transféré vers l'abonnement ${ BRAND_NAME } Unlimited pour un essai gratuit de 30 jours*."
+      ],
+      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
+        "Vous pouvez inviter un utilisateur ${ BRAND_NAME } existant ou créer un nouvel utilisateur."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Vous pouvez augmenter ou réduire l'espace de stockage de cet utilisateur."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Ajoutez, supprimez et modifiez les comptes utilisateurs de votre groupe familial."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Ajoutez, supprimez et modifiez les comptes utilisateurs de votre organisation."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Entrez le nom du groupe familial pour confirmer"
+      ],
+      "Enter organization name to confirm": [
+        "Entrez le nom de l'organisation pour confirmer"
+      ],
+      "Family name": [
+        "Nom de la famille"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Ceci supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Cela supprimera toutes les fonctions premium de ${ BRAND_NAME } pour chaque membre de la famille."
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Famille"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } a été retiré de ${ organization.Name }."
+      ],
+      "An error occurred, please try again": [
+        "Une erreur s'est produite, nous vous invitons à réessayer."
+      ],
+      "Member updated": [
+        "Le membre a été mis à jour."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Ajouter un utilisateur à votre compte ${ PLAN_NAMES.visionary2022 }"
+      ],
+      "Change family name": [
+        "Modifier le nom de la famille"
+      ],
+      "Delete family group?": [
+        "Supprimer le groupe familial ?"
+      ],
+      "Delete organization?": [
+        "Supprimer l'organisation ?"
+      ],
+      "Edit user storage": [
+        "Modifier l'espace de stockage de l'utilisateur"
+      ],
+      "Family name": [
+        "Nom de la famille"
+      ],
+      "Family plan": [
+        "Abonnement Family"
+      ],
+      "Introducing ${ planName }": [
+        "Voici ${ planName }"
+      ],
+      "Invite a user": [
+        "Inviter un utilisateur"
+      ],
+      "Manage family group": [
+        "Gérer le groupe familial"
+      ],
+      "Set family name": [
+        "Définir le nom de la famille"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendriers et bien d'autres fonctionnalités."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } connexion VPN",
@@ -3862,8 +4187,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Ajoutez un filtre personnalisé pour que certaines actions soient exécutées automatiquement, comme appliquer un label ou archiver des messages. Les filtres peuvent être modifiés et créés directement via le langage de programmation Sieve."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Ajoutez un filtre personnalisé pour effectuer automatiquement certaines actions, comme labelliser ou archiver des messages."
       ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Les messages provenant d'adresses marquées comme indésirables/spam, par vous ou ${ BRAND_NAME }, seront placés dans votre dossier Indésirables/spam. Pour autoriser les messages provenant de l'une de ces adresses, marquez-la comme « non indésirable/spam »."
@@ -4427,6 +4752,9 @@
       "${ current } of ${ total }": [
         "${ current } sur ${ total }"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } ne conservera plus les versions précédentes de vos fichiers."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide."
       ],
@@ -4848,9 +5176,6 @@
       ],
       "Credits earned": [
         "Crédits gagnés"
-      ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Tout l'espace de stockage est alloué au compte administrateur. Vous pouvez réduire l'espace alloué à ce compte et libérer de l'espace pour d'autres utilisateurs. Vous pouvez aussi augmenter l'espace de stockage en passant à un abonnement supérieur."
       ],
       "Custom": [
         "Personnalisé"
@@ -5533,6 +5858,9 @@
       "Remove one of your calendars to join this one": [
         "Retirez un de vos calendriers pour rejoindre celui-ci."
       ],
+      "Restore": [
+        "Restaurer"
+      ],
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
       ],
@@ -5583,6 +5911,12 @@
       ],
       "Setting up your Drive": [
         "Configuration de votre Drive"
+      ],
+      "Settings update failed": [
+        "La mise à jour des paramètres n'a pas abouti."
+      ],
+      "Settings updated": [
+        "Les paramètres ont été mis à jour."
       ],
       "Show original message": [
         "Afficher le message d'origine"
@@ -5649,9 +5983,6 @@
       ],
       "The calendar will be removed from your account.": [
         "Le calendrier sera retiré de votre compte."
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "L'adresse e-mail que vous placez en haut de la liste est votre adresse e-mail par défaut. Faites un glisser-déposer pour réorganiser vos adresses."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Le lien de vérification par e-mail a expiré. Nous vous invitons à vous connecter pour renvoyer un lien de vérification."
@@ -5746,6 +6077,12 @@
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Une clé de chiffrement sera créée pour votre organisation. Les clés 4096 bits ne fonctionnent que sur des ordinateurs performants. Pour la plupart des utilisateurs, nous vous recommandons d'utiliser les clés 2048 bits."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Cela supprimera toutes les versions précédentes de vos fichiers qui datent de plus de ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Cela supprimera toutes les versions précédentes de vos fichiers."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Cela désactivera votre phrase de récupération actuelle. Vous ne pourrez pas l'utiliser pour accéder à votre compte ou déchiffrer vos données."
       ],
@@ -5787,6 +6124,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Pour vous assurer d'avoir toujours accès à votre compte, définissez une méthode de récupération du compte."
+      ],
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Pour vous éviter de perdre des données importantes, ${ DRIVE_APP_NAME } enregistre les versions précédentes de vos fichiers au fur et à mesure que vous et vos collaborateurs les modifiez. Sélectionnez la durée pendant laquelle ${ BRAND_NAME } doit conserver les versions précédentes."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
@@ -5875,6 +6215,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
+      "Upgrade to unlock": [
+        "Changez d'abonnement pour disposer de cette fonctionnalité"
+      ],
       "Upload picture": [
         "Importer une image"
       ],
@@ -5886,6 +6229,9 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
+      ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Utilisez les différents types d'adresses e-mail et d'alias proposés par ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ${ VPN_APP_NAME } sans application. Quelques exemples de cas d'utilisation : Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
@@ -6072,6 +6418,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Vous ne pouvez pas parrainer les utilisateurs de ${ MAIL_APP_NAME }."
       ],
+      "You cannot undo this action.": [
+        "Vous ne pouvez pas annuler cette action."
+      ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ${ VPN_APP_NAME } ou au tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
@@ -6196,6 +6545,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Votre abonnement est limité à 10 versions pour une durée maximum de 7 jours."
+      ],
       "Your recovery phrase": [
         "Votre phrase de récupération"
       ],
@@ -6233,11 +6585,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Pour des raisons de sécurité, nous devons vérifier que vous êtes le propriétaire de ${ domainName }. Veuillez ajouter l'enregistrement DNS TXT suivant à votre domaine. Ceci peut généralement être fait depuis le panneau de contrôle du registraire de votre nom de domaine."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Ajoutez, supprimez et gérez les utilisateurs de votre organisation. Ici, vous pouvez ajuster leur espace de stockage, accorder les droits d'administration et plus encore. Sélectionnez un utilisateur pour gérer ses adresses. L'adresse e-mail en haut de la liste sera automatiquement sélectionnée comme adresse par défaut."
       ]
     },
     "Info for payment methods": {
@@ -6628,6 +6975,14 @@
         "${ n } mois",
         "${ n } mois"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } jour",
+        "${ nbDay } jours"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } an",
+        "${ nbYear } ans"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } adresse e-mail sur ${ MaxAddresses }",
         "${ UsedAddresses } adresses e-mail sur ${ MaxAddresses }"
@@ -6920,6 +7275,9 @@
       "Don't ask again": [
         "Ne plus demander"
       ],
+      "Don't keep versions": [
+        "Ne pas garder les versions"
+      ],
       "Duration": [
         "Durée"
       ],
@@ -6958,9 +7316,6 @@
       ],
       "End weekday": [
         "Dernier jour de la semaine"
-      ],
-      "Enter organization name to confirm": [
-        "Saisissez le nom de l'organisation pour confirmer."
       ],
       "Enter password": [
         "Saisissez le mot de passe"
@@ -7753,16 +8108,14 @@
       "Edit": [
         "Modifier"
       ],
+      "Remove": [
+        "Supprimer"
+      ],
       "Revoke sessions": [
         "Révoquer les sessions"
       ],
       "Sign in": [
         "Se connecter"
-      ]
-    },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Cela supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
       ]
     },
     "Message": {
@@ -8176,6 +8529,9 @@
       ],
       "Contact groups management": [
         "Gestion des groupes de contacts"
+      ],
+      "Custom domain for email aliases": [
+        "Domaine personnalisé pour les alias d'adresses e-mail"
       ],
       "Custom domains for email aliases": [
         "Domaines personnalisés pour les alias d'adresses e-mail"
@@ -9236,6 +9592,9 @@
       "Search": [
         "Rechercher"
       ],
+      "Search for a user or address": [
+        "Recherchez un utilisateur ou une adresse"
+      ],
       "Search settings": [
         "Paramètres de recherche"
       ],
@@ -9489,8 +9848,8 @@
       "Complete the transition to privacy with our secure importing tools.": [
         "Terminez votre transition vers un internet respectueux de votre vie privée avec nos outils d'importation sécurisés."
       ],
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Vous pouvez appliquer plusieurs labels à un seul message, mais les messages ne peuvent généralement être que dans un seul dossier. Glissez et déposez pour réorganiser l'ordre de vos dossiers et labels."
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "Organisez votre boîte de réception avec des dossiers et des labels. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -10134,6 +10493,9 @@
       "Import record deleted": [
         "L'enregistrement d'importation a été supprimé."
       ],
+      "Invitation sent": [
+        "L'invitation a été envoyée."
+      ],
       "Invoice customized": [
         "La facture a été personnalisée."
       ],
@@ -10692,11 +11054,11 @@
       "Delete logs": [
         "Supprimer les journaux"
       ],
-      "Delete organization?": [
-        "Supprimer l’organisation ?"
-      ],
       "Delete user": [
         "Supprimer l'utilisateur"
+      ],
+      "Delete version history?": [
+        "Supprimer l'historique des versions ?"
       ],
       "Disable ${ email }": [
         "Désactiver ${ email }"
@@ -10865,6 +11227,9 @@
       "Import-Export app": [
         "Application Import-Export"
       ],
+      "Increase your privacy with more addresses": [
+        "Protégez encore plus votre vie privée en utilisant plus d'adresses"
+      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
@@ -10873,6 +11238,9 @@
       ],
       "Invoices": [
         "Factures"
+      ],
+      "Keep your inbox organized": [
+        "Gardez votre boîte de réception organisée"
       ],
       "Keyboard shortcuts": [
         "Raccourcis clavier"
@@ -10885,6 +11253,9 @@
       ],
       "Layout": [
         "Disposition"
+      ],
+      "Leave ${ organisationName }?": [
+        "Quitter ${ organisationName } ?"
       ],
       "Link confirmation": [
         "Confirmation du lien"
@@ -10937,6 +11308,9 @@
       "Organization and keys": [
         "Organisation et clés"
       ],
+      "Organization name": [
+        "Nom de l'organisation"
+      ],
       "Other calendars": [
         "Autres calendriers"
       ],
@@ -10960,6 +11334,9 @@
       ],
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
+      ],
+      "Personalise your e-mail footer": [
+        "Personnalisez le pied de page de votre message"
       ],
       "Phone": [
         "Téléphone"
@@ -11003,6 +11380,9 @@
       "Remove calendar": [
         "Supprimer le calendrier"
       ],
+      "Remove user?": [
+        "Supprimer l'utilisateur ?"
+      ],
       "Report a problem": [
         "Signaler un bug"
       ],
@@ -11026,6 +11406,9 @@
       ],
       "Save contact details": [
         "Enregistrer les coordonnées du contact"
+      ],
+      "Save time with email filters": [
+        "Gagnez du temps avec les filtres de messagerie"
       ],
       "Secure email based in Switzerland": [
         "Messagerie sécurisée basée en Suisse"
@@ -11194,6 +11577,9 @@
       "Verifying your payment...": [
         "Vérification de votre paiement..."
       ],
+      "Version history": [
+        "Historique de la version"
+      ],
       "VPN apps": [
         "Applications VPN"
       ],
@@ -11221,13 +11607,10 @@
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
       ],
-      "Your current plan": [
-        "Votre abonnement actuel"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
-      "Your plan": [
+      "Your Plan": [
         "Votre abonnement"
       ],
       "Your recovery status": [
