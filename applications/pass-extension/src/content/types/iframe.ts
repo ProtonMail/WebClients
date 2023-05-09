@@ -5,12 +5,16 @@ import type { MaybeNull, SafeLoginItem, WorkerState } from '@proton/pass/types';
 import type { DropdownSetActionPayload } from './dropdown';
 import type { NotificationSetActionPayload } from './notification';
 
+export type IFramePosition = { top: number; left?: number; right?: number; zIndex?: number };
+export type IFrameDimensions = { width: number; height: number };
+
 export type IFrameState = {
     visible: boolean;
     ready: boolean;
     loaded: boolean;
     port: MaybeNull<Runtime.Port>;
     framePort: MaybeNull<string>;
+    position: IFramePosition;
 };
 
 export type IFramePortMessageHandler<T extends IFrameMessageType = IFrameMessageType> = (
@@ -23,6 +27,8 @@ export interface IFrameApp {
     sendPostMessage: (message: IFrameMessage) => void;
     sendPortMessage: (message: IFrameMessage) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
+    getPosition: () => IFramePosition;
+    updatePosition: () => void;
     open: (scrollRef?: HTMLElement) => void;
     close: (options?: { event?: Event; userInitiated: boolean }) => void;
     init: (port: Runtime.Port) => void;
