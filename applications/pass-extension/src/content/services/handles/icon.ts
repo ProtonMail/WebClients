@@ -60,7 +60,10 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const detach = () => {
         listeners.removeAll();
         cleanupInjectionStyles({ input, wrapper });
-        icon.parentElement?.remove();
+        safeCall(() => {
+            icon.parentElement!.removeChild(icon);
+            wrapper.parentElement!.removeChild(wrapper);
+        })();
     };
 
     listeners.addListener(window, 'resize', onResize);
