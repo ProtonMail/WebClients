@@ -1,14 +1,13 @@
 @import '~@proton/styles/scss/lib';
 
 .stepper {
-	$mobile-padding: 10%;
 	$dot-size: em(12);
-	$weak-opacity: 0.2;
+	$weak-opacity: 0.7;
 	$connector-height: em(2);
 	$connector-gap: em(2);
 	$connector-max-width: em(120);
 
-	padding-inline: $mobile-padding;
+	inline-size: 100%;
 
 	&-item {
 		max-inline-size: calc($connector-max-width + $dot-size - $connector-gap);
@@ -50,10 +49,6 @@
 		$connector-max-width: em(40); // smaller for mobile
 		&-item {
 			max-inline-size: calc($connector-max-width + $dot-size - $connector-gap);
-		}
-
-		&-labels {
-			margin-inline: -$mobile-padding;
 		}
 
 		&-label {

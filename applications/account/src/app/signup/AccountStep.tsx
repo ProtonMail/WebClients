@@ -255,7 +255,7 @@ const AccountStep = ({
     );
 
     const signIn = (
-        <Link key="signin" className="link text-nowrap" to={SSO_PATHS.LOGIN}>
+        <Link key="signin" className="link link-focus text-nowrap" to={SSO_PATHS.LOGIN}>
             {c('Link').t`Sign in`}
         </Link>
     );
@@ -421,7 +421,7 @@ const AccountStep = ({
 
                     <hr className="my-4" />
 
-                    <div className="color-weak text-center text-sm px2 on-tiny-mobile-px0">
+                    <div className="color-weak text-center text-sm px-0 md:px-7">
                         {
                             // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                             c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}`

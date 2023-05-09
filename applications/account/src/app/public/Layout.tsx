@@ -24,22 +24,23 @@ export interface Props {
     onBack?: () => void;
     hasWelcome?: boolean;
     headerClassName?: string;
+    stepper?: ReactNode;
 }
 
-const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName }: Props) => {
+const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerClassName }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
 
-    const protonLogo = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />;
+    const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
     return (
-        <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
+        <div className="flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative sign-layout-bg">
             <PublicTopBanners />
             <header
                 className={clsx(
                     headerClassName,
-                    'sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5'
+                    'sign-layout-main-header gap-1 sm:gap-4 px-6 py-3 lg:px-12 md:pt-5 md:pb-10 mb-2 md:mb-0'
                 )}
             >
                 <div className="inline-flex flex-nowrap flex-item-noshrink">
@@ -48,22 +49,34 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
                     </div>
                     {hasDecoration ? (
                         <Href
-                            className="flex-item-noshrink"
+                            className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"
                             href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
                         >
-                            {protonLogo}
+                            {protonLogoBrand}
                         </Href>
                     ) : (
-                        <div className="flex-item-noshrink">{protonLogo}</div>
+                        <div className="flex-item-noshrink">{protonLogoBrand}</div>
                     )}
                 </div>
-                {hasDecoration && <LanguageSelect className="max-w100 ml-4" outlined globe locales={locales} />}
+                <div>
+                    <div className="no-mobile">{stepper}</div>
+                </div>
+                <div>
+                    {hasDecoration && (
+                        <LanguageSelect
+                            className="signup-link mr-custom"
+                            style={{ '--mr-custom': 'calc(var(--space-3) * -1)' }}
+                            globe
+                            locales={locales}
+                        />
+                    )}
+                </div>
             </header>
-            <div className="sign-layout-container flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between">
+            <div className="sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between">
                 <div>
                     {children}
                     {hasDecoration && (
-                        <div className="flex-item-noshrink text-center p1-5 on-mobile-p1 on-mobile-pb0">
+                        <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
                             <LayoutLogos size={48} />
                         </div>
                     )}
@@ -71,12 +84,8 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
             </div>
             {hasDecoration ? (
                 <>
-                    <LayoutFooter
-                        app={APP_NAME}
-                        className="flex-item-noshrink text-center p1 on-mobile-pt0 on-mobile-pb0"
-                        version={appVersion}
-                    />
-                    <div className="fixed m-0 lg:m-8 mb-4 lg:mb-5 bottom right on-tablet-text-center on-tablet-static on-tiny-mobile-text-sm">
+                    <LayoutFooter app={APP_NAME} className="flex-item-noshrink text-center p-4" version={appVersion} />
+                    <div className="fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom right on-tablet-text-center on-tablet-static on-tiny-mobile-text-sm">
                         {bottomRight}
                     </div>
                     <p
@@ -85,7 +94,7 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
                     >{c('Info').jt`Version ${version}`}</p>
                 </>
             ) : (
-                <footer className="pt2 on-mobile-pt0" />
+                <footer className="pt-0 md:pt-7" />
             )}
         </div>
     );
