@@ -1,20 +1,13 @@
 import { useHistory } from 'react-router';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { Button } from '@proton/atoms';
 import { Icon, Loader, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-
-
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-
 
 interface Props {
     message: MessageState;
@@ -54,11 +47,11 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
     return (
         <div
             className={clsx([
-                'flex flex-align-items-center border-bottom px2 py1-5 on-tiny-mobile-pl0 on-tiny-mobile-pr0',
+                'flex flex-align-items-center border-bottom px-7 py-5',
                 !canReply && 'flex-justify-space-between',
             ])}
         >
-            <h1 className="text-ellipsis m-0 eo-layout-title" title={subject} data-testid="eo:subject">
+            <h1 className="text-ellipsis m-0 mb-2 eo-layout-title" title={subject} data-testid="eo:subject">
                 {subject}
             </h1>
             {canReply ? (
