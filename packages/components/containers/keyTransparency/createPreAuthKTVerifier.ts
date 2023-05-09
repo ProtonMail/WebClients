@@ -1,5 +1,5 @@
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { PartialKTBlobContent, commitOwnKeystoLS, ktSentryReport } from '@proton/key-transparency';
+import { CryptoProxy } from '@proton/crypto';
+import { PartialKTBlobContent, commitOwnKeystoLS, ktSentryReport, verifySKLSignature } from '@proton/key-transparency';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Api, DecryptedKey, PreAuthKTVerifier, PreAuthKTVerify } from '@proton/shared/lib/interfaces';
@@ -26,18 +26,14 @@ const createPreAuthKTVerifier = (APP_NAME: APP_NAMES, feature: KT_FF, api: Api):
                 return;
             }
 
-            const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
-                textData: signedKeyList.Data,
-                armoredSignature: signedKeyList.Signature,
-                verificationKeys: publicKeys,
-            });
+            const signatureTimestamp = await verifySKLSignature(
+                publicKeys,
+                signedKeyList.Data,
+                signedKeyList.Signature,
+                'preAuthKTVerify'
+            );
 
-            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID || !signatureTimestamp) {
-                ktSentryReport('Submitted SKL signature verification failed', {
-                    context: 'preAuthKTVerify',
-                    verified,
-                    signatureTimestamp,
-                });
+            if (!signatureTimestamp) {
                 // This shouldn't throw as long as KT is UI-less
                 return;
             }
