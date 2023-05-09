@@ -2,7 +2,7 @@ import { addDays, addHours, addMinutes, addSeconds, getUnixTime } from 'date-fns
 
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { clearAll, render } from '../../../helpers/test/helper';
+import { clearAll, render, tick } from '../../../helpers/test/helper';
 import EOExpirationTime from './EOExpirationTime';
 
 describe('EOExpirationTime', () => {
@@ -38,21 +38,25 @@ describe('EOExpirationTime', () => {
         // The message will expire in 0 day 3h 59min 59s, so we display "Expires in less than 4 hours"
         const hoursInSeconds1 = getUnixTime(addHours(new Date(), 4));
         banner = await result.rerender(hoursInSeconds1);
+        await tick();
         expect(banner?.textContent).toBe('Expires in less than 4 hours');
 
         // The message will expire in 0 day 1h 59min 59s, so we display "Expires in less than 2 hour"
         const hoursInSeconds2 = getUnixTime(addHours(new Date(), 2));
         banner = await result.rerender(hoursInSeconds2);
+        await tick();
         expect(banner?.textContent).toBe('Expires in less than 2 hours');
 
         // The message will expire in 0 day 0h 1min 59s, so we display "Expires in 2 minutes"
         const minutesInSeconds = getUnixTime(addMinutes(new Date(), 2));
         banner = await result.rerender(minutesInSeconds);
+        await tick();
         expect(banner?.textContent).toBe('Expires in 2 minutes');
 
         // The message will expire in 0 day 0h 0min Xs, so we display "Expires in less than X seconds"
         banner = await result.rerender(getUnixTime(addSeconds(new Date(), seconds)));
         const value = Number(/\d+/.exec(banner?.textContent || '')?.[0]);
+        await tick();
         expect(value).toBeLessThanOrEqual(seconds);
     });
 });
