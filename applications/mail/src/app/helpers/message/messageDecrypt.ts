@@ -71,11 +71,16 @@ const decryptMimeMessage = async (
 
         const decryptedStringData =
             decryption.data instanceof Uint8Array ? binaryToString(decryption.data) : decryption.data;
-        processing = await CryptoProxy.processMIME({
-            data: decryptedStringData,
-            headerFilename,
-            sender,
-        });
+        try {
+            processing = await CryptoProxy.processMIME({
+                data: decryptedStringData,
+                headerFilename,
+                sender,
+            });
+        } catch (e) {
+            console.log('Failed to process decrypted MIME message:', decryptedStringData);
+            throw e;
+        }
 
         const decryptedRawContent =
             decryption.data instanceof Uint8Array ? decryption.data : stringToUtf8Array(decryption.data);
