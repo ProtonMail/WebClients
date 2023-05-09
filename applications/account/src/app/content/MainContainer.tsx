@@ -96,6 +96,7 @@ const MainContainer = () => {
         FeatureCode.EasySwitch,
         FeatureCode.PassSettings,
         FeatureCode.PassPlusPlan,
+        FeatureCode.DriveRevisions,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
@@ -105,6 +106,7 @@ const MainContainer = () => {
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
     const isPassSettingsEnabled = getFeature(FeatureCode.PassSettings).feature?.Value === true;
     const isPassPlusEnabled = getFeature(FeatureCode.PassPlusPlan).feature?.Value === true;
+    const isRevisionsEnabled = getFeature(FeatureCode.DriveRevisions).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
@@ -121,6 +123,7 @@ const MainContainer = () => {
         isDataRecoveryAvailable,
         isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
+        isRevisionsEnabled,
     });
 
     useEffect(() => {

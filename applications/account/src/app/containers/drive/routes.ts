@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getDriveAppRoutes = () => {
+export const getDriveAppRoutes = ({ isRevisionsEnabled }: { isRevisionsEnabled: boolean }) => {
     return <const>{
         header: DRIVE_APP_NAME,
         routes: {
@@ -19,6 +19,7 @@ export const getDriveAppRoutes = () => {
                 ],
             },
             revisions: <SectionConfig>{
+                available: isRevisionsEnabled,
                 text: c('Title').t`Version history`,
                 to: '/version-history',
                 icon: 'clock-rotate-left',
