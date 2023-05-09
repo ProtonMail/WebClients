@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { AuthSecurityKeyContent, useLoading } from '@proton/components';
 import { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import noop from '@proton/utils/noop';
 
@@ -40,6 +41,7 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                         } catch (error) {
                             setFidoError(true);
                             // Purposefully logging the error for somewhat easier debugging
+                            captureMessage('Security key auth', { level: 'error', extra: { error } });
                             console.error(error);
                             return;
                         }
