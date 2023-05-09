@@ -6,7 +6,6 @@ import {
     CalendarDrawerAppButton,
     ContactDrawerAppButton,
     FeatureCode,
-    LocationErrorBoundary,
     MailShortcutsModal,
     useDrawer,
     useFeatures,
@@ -128,19 +127,17 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
                     )}
                 </>
             </EasySwitchProvider>
-            <LocationErrorBoundary>
-                {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
-                <MailboxContainer
-                    labelID={labelID}
-                    mailSettings={mailSettings as MailSettings}
-                    userSettings={userSettings as UserSettings}
-                    breakpoints={breakpoints}
-                    elementID={elementID}
-                    messageID={messageID}
-                    toolbarBordered={canShowDrawer && showDrawerSidebar}
-                />
-                <MailShortcutsModal {...mailShortcutsProps} />
-            </LocationErrorBoundary>
+            {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
+            <MailboxContainer
+                labelID={labelID}
+                mailSettings={mailSettings as MailSettings}
+                userSettings={userSettings as UserSettings}
+                breakpoints={breakpoints}
+                elementID={elementID}
+                messageID={messageID}
+                toolbarBordered={canShowDrawer && showDrawerSidebar}
+            />
+            <MailShortcutsModal {...mailShortcutsProps} />
         </PrivateLayout>
     );
 };
