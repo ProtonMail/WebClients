@@ -9,3 +9,7 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
 }));
+
+jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
+    __esModule: true,
+}));
