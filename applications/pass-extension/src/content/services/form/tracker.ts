@@ -180,8 +180,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         listeners.removeAll();
 
         form.listFields().forEach((field) => {
-            field.detachListeners();
             field.detachIcon();
+            field.detachListeners();
         });
     };
 
