@@ -2334,10 +2334,10 @@
         "Oeps, er is iets misgegaan"
       ],
       "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } alstublieft of controleer uw internetverbinding."
+        "${ refresh } of controleer uw internetverbinding."
       ],
       "Please ${ refresh } or try again later.": [
-        "${ refresh } alstublieft of probeer het later opnieuw."
+        "${ refresh } of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
@@ -2411,6 +2411,162 @@
     "Event title": {
       "(no title)": [
         "(geen titel)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB opslagruimte"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen familieleden op ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Deze aanbieding niet opnieuw weergeven"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Keep current plan": [
+        "Huidig abonnement behouden"
+      ],
+      "Switch plans": [
+        "Van abonnement wisselen"
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging"
+      ],
+      "View the invitations": [
+        "Bekijk de uitnodigingen"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "Tot 6 gebruikers"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME }-groepen"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Visionary- of gezinsabonnement."
+      ],
+      "customer support": [
+        "klantondersteuning"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Uitgenodigd door: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Beheer adressen."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander groepsabonnement."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "U kunt op dit moment niet van abonnement wisselen."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Aan u toegewezen opslagruimte: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "De abonnementskosten worden in rekening gebracht bij de primaire beheerder van het Visionary- of gezinsabonnement."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary- en gezinsabonnmenten bieden op dit moment geen ondersteuning voor externe accounts. Maak een adres voor ${ BRAND_NAME } voordat u zich hierbij aansluit. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary- en gezinsabonnementen bieden op dit moment geen ondersteuning voor levenslange accounts."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "U hebt zich aangesloten bij het Family-abonnement"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Met uw huidige abonnement kunt u zich niet aansluiten bij een Visionary- of gezinsabonnement."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen hetzelfde tarief."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op de standaardprijs per maand."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Online privacy voor het hele gezin"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configureer uw gezinsaccount en nodig gebruikers uit "
+      ],
+      "Set up your family": [
+        "Uw gezin configureren"
+      ],
+      "Set up your family account": [
+        "Uw gezinsaccount configureren"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Ontdek ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide My Email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
     },
     "Feedback Modal Title": {
@@ -3185,9 +3341,6 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Handtekening van bestand ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
       ],
-      "File will not be uploaded": [
-        "Bestand zal niet worden geüpload"
-      ],
       "Finalizing": [
         "Afronden"
       ],
@@ -3636,9 +3789,6 @@
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
       ],
-      "This will overwrite the existing file": [
-        "Dit zal het bestaande bestand overschrijven"
-      ],
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
       ],
@@ -3659,6 +3809,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Om uw data te herstellen moet u de accountsleutels die u heeft gebruikt toen u de data aanmaakte heractiveren."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
@@ -4215,12 +4368,6 @@
       "Region": [
         "Regio/Provincie"
       ],
-      "Replace file": [
-        "Bestand vervangen"
-      ],
-      "Replace folder": [
-        "Map vervangen"
-      ],
       "Report": [
         "Melden"
       ],
@@ -4289,9 +4436,6 @@
       ],
       "Unlock later": [
         "Ontgrendel later"
-      ],
-      "Upload anyway": [
-        "Toch uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -4995,9 +5139,6 @@
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
       ],
-      "3 TB": [
-        "3 TB"
-      ],
       "6 users": [
         "6 gebruikers"
       ],
@@ -5651,6 +5792,9 @@
       ],
       "Phone numbers": [
         "Telefoonnummers"
+      ],
+      "Preview": [
+        "Voorbeeld"
       ],
       "Privacy settings": [
         "Privacyinstellingen"

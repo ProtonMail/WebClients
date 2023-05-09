@@ -2438,9 +2438,6 @@
       "Organization key is not decrypted.": [
         "Tasarut n tuddsa ur tettwazmek ara."
       ],
-      "Organization not recognized. Try again.": [
-        "Tuddsa ur tettwaɛqal ara. Eɛreḍ tikkelt-nniḍen."
-      ],
       "Passwords do not match": [
         "Awalen uffiren ur menṭaḍen ara"
       ],
@@ -3721,9 +3718,6 @@
       "Creating your account": [
         "Timerna n umiḍan-ik·im"
       ],
-      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Akka tura, akk amḍiq n usekles yellan yettunefk i unmidan anedbal. Ttxil-k, senɣes amḍiq n usekles n umiḍan anedbal akken ad tserrḥeḍ cwiṭ i yimiḍanen-nniḍen. Ad tizmireḍ ad ternuḍ amḍiq n usekles amatu melmi tebɣiḍ ticki yuli uswir n umiḍan-ik."
-      ],
       "Custom": [
         "Udmawan"
       ],
@@ -4185,6 +4179,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
       ],
+      "Restore": [
+        "Err-d"
+      ],
       "Revoke certificate ${ name }": [
         "Ḥwi aselkin ${ name }"
       ],
@@ -4256,9 +4253,6 @@
       ],
       "The calendar will be removed from your account.": [
         "Awitay ad yettwakkes seg umiḍan-ik·im."
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Tansa n yimayl i teskecmeḍ nnig n tebdart d tansa-inek·inem s wudem amezwer. Zuɣer syen sres i wakken ad tsuddseḍ tansiwin-ik·im."
       ],
       "The following address is available:": [
         "Tansa-a tella:"
@@ -4459,6 +4453,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Tzemreḍ ad tesqedceḍ inekcam-a akken ad teqqneḍ ɣer uqeddac ${ VPN_APP_NAME }, s useqdec n usnas VPN n wis kraḍ, n uɣbalu yeldin, akka am Tunnelblick i macOS neɣ OpenVPN i GNU/Linux."
       ],
+      "You cannot undo this action.": [
+        "Ur tezmireḍ ara ad tesfesxeḍ tigawt-a."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
       ],
@@ -4565,11 +4562,6 @@
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Ɣef ddemma n tɣellist, nesra ad nsenqed ma yella d kečč i d bab n ${ domainName }. Ma ulac aɣilif, rnu asekles-a DNS TXT ɣer taɣult-ik·im. S umata, tawila-a deg ugalis n usenqed n useklas-inek·inem n yismawen n taɣult."
-      ]
-    },
-    "Info for members section": {
-      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Rnu, kkes, sefrek iseqdacen n tkebbanit-ik·im. Dagi tzemreḍ ad tsemsawiḍ tallunt-nsen n uklas yettwaḥarren, amuddu n yizerfan n unedbal, d wayen-nniḍen. Fren aseqdac i usefrek n tansiwin-nsen n yimayl. Tansa n yimayl yellan usawen akk n tebdart ad tettwafran s wudem awurman d tansa n yimayl tamezwert."
       ]
     },
     "Info for payment methods": {
@@ -5210,9 +5202,6 @@
       ],
       "End weekday": [
         "Tagra n wass n dduṛt"
-      ],
-      "Enter organization name to confirm": [
-        "Sekcem isem n tuddsa akken ad tsentmeḍ"
       ],
       "Enter password": [
         "Sekcem Awal Uffir"
@@ -6899,11 +6888,6 @@
         "Ulac igmaḍ"
       ]
     },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Tzemreḍ ad tesqedceḍ aṭas n tebzimin i yiwen yizen, maca iznan zemren deg tuget ad ilin kan deg yiwen ukaram. Zuɣer syen sres i wakken ad talseḍ aṣeggem n yikaramen d tebzimin-inek·inem."
-      ]
-    },
     "Settings section title": {
       "Account": [
         "Amiḍan"
@@ -7613,9 +7597,6 @@
       "Delete logs": [
         "Kkes iɣmisen"
       ],
-      "Delete organization?": [
-        "Kkes tuddsa?"
-      ],
       "Delete user": [
         "Kkes aseqdac"
       ],
@@ -8082,12 +8063,6 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
-      ],
-      "Your current plan": [
-        "Aɣawas-ik·im amiran"
-      ],
-      "Your plan": [
-        "Aɣawas-ik·im"
       ],
       "Your recovery status": [
         "Addad n tririt-inek•inem"

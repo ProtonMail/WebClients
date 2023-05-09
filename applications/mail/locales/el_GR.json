@@ -845,6 +845,9 @@
       "Search message content": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
       ],
+      "See business plans": [
+        "Δείτε επιχειρηματικά Προγράμματα\n*.*, add translation *.*"
+      ],
       "See plan features": [
         "Προβολή χαρακτηριστικών προγράμματος"
       ],
@@ -926,6 +929,9 @@
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
       ],
+      "Show side panel": [
+        "Εμφάνιση πλαϊνού πλαισίου\n*.*, add translation *.*"
+      ],
       "Sign in": [
         "Είσοδος"
       ],
@@ -970,6 +976,9 @@
       ],
       "This message contains remote content.": [
         "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
+      ],
+      "Toggle Calendar app": [
+        "Εναλλαγή εφαρμογής Ημερολόγιο\n*.*, add translation *.*"
       ],
       "Tomorrow": [
         "Αύριο"
@@ -3108,9 +3117,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Υπερβολικός αριθμός ενεργών φίλτρων. Για ενεργοποίηση περισσότερων φίλτρων, παρακαλούμε αναβαθμίστε σε πρόγραμμα επί πληρωμή."
-      ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
       ],
@@ -4149,6 +4155,12 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Αυτόματη διαγραφή μηνυμάτων που είναι στα ανεπιθύμητα για περισσότερες από 30 ημέρες."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Αυτόματη διαγραφή μηνυμάτων που βρίσκονται στον κάδο απορριμμάτων για περισσότερες από 30 ημέρες."
+      ],
       "Background color": [
         "Χρώμα φόντου"
       ],
@@ -4529,6 +4541,12 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Το μήνυμα θα αποσταλεί αύριο στις ${ formattedTime }"
       ],
+      "Messages that have been in spam more than 30 days will be automatically deleted.": [
+        "Τα μηνύματα που είναι ανεπιθύμητα για περισσότερες από 30 ημέρες θα διαγράφονται αυτόματα."
+      ],
+      "Messages that have been in trash more than 30 days will be automatically deleted.": [
+        "Τα μηνύματα που βρίσκονται στον κάδο απορριμμάτων για περισσότερες από 30 ημέρες θα διαγράφονται αυτόματα."
+      ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
@@ -4582,6 +4600,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Κανένα από τα κλειδιά που ανεβάσατε είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
+      ],
+      "Normal": [
+        "Κανονικό\n*.*, add translation *.*"
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -4647,6 +4668,9 @@
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
+      "Preview for this file type is not supported": [
+        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται\n*.*, add translation *.*"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -4677,6 +4701,9 @@
       "Request read receipt": [
         "Αίτημα αποδεικτικού ανάγνωσης"
       ],
+      "Restore": [
+        "Επαναφορά\n*.*, add translation *.*"
+      ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
       ],
@@ -4695,11 +4722,17 @@
       "Saving draft…": [
         "Αποθήκευση προχείρου…"
       ],
+      "Scheduled send of this message will be canceled.": [
+        "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
+      ],
       "Scheduling message...": [
         "Γίνεται προγραμματισμός μηνύματος..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Η αναζήτηση διαρκεί πολύ; ${ dropdownButton } ή ${ toggleOffButton } από την παρούσα αναζήτηση."
+      ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud δωρεάν, σήμερα."
       ],
       "Seems like you are all caught up for now": [
         "Φαίνεται να είστε πλήρως ενημερωμένοι για τώρα"
@@ -4819,6 +4852,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
       ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η αποστολή αυτού του μηνύματος θα ακυρωθεί."
+      ],
       "This conversation contains non-trashed messages.": [
         "Αυτή η συνομιλία περιέχει μη διαγραμμένα μηνύματα."
       ],
@@ -4828,6 +4864,9 @@
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Αυτή η συνομιλία θα επισημανθεί ως ανεπιθύμητη. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;",
         "Αυτές οι συνομιλίες θα επισημανθούν ως ανεπιθύμητες. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;"
+      ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου απέτυχε στις απαιτήσεις ελέγχου ταυτότητας του τομέα του. Μπορεί να είναι πλαστογραφημένο ή εσφαλμένα."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Αυτή η πρόσκληση είναι αποθηκευμένη σε ένα απενεργοποιημένο ημερολόγιο."
@@ -4862,6 +4901,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Αυτό το μήνυμα θα μετακινηθεί στα Πρόχειρα, ώστε να μπορείτε να το επεξεργαστείτε. Θα πρέπει να επαναπρογραμματίσετε πότε θα σταλεί."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Αυτό το μήνυμα θα σταλεί το πρωί στις ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Αυτό το μήνυμα θα αποσταλεί τη ${ dateString } στις ${ formattedTime }"
@@ -4929,11 +4971,23 @@
       "Upgrade to add more addresses to your account.": [
         "Αναβαθμίστε για να προσθέσετε περισσότερες διευθύνσεις στο λογαριασμό σας."
       ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Κάντε αναβάθμιση για να διαγράψετε αυτόματα μηνύματα που ήταν ανεπιθύμητα για περισσότερες από 30 ημέρες."
+      ],
+      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
+        "Κάντε αναβάθμιση για να διαγράψετε αυτόματα μηνύματα που βρίσκονται στον κάδο απορριμμάτων για περισσότερες από 30 ημέρες."
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Για τη δημιουργία περισσότερων φακέλων, φίλτρων και διευθύνσεων, αναβαθμίστε."
       ],
+      "Upgrade to level up your privacy.": [
+        "Κάντε αναβάθμιση για να αναβαθμίσετε το απόρρητό σας."
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "Αναβάθμιση για αποστολή ηλεκτρονικού ταχυδρομείου από διευθύνσεις @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Κάντε αναβάθμιση για αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου από τον προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Αναβαθμίστε για εύκολη αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου σε ομάδες επαφών."
@@ -4946,6 +5000,12 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Αναβαθμίστε για να υποστηρίξετε το απόρρητο και να αποκτήσετε περισσότερες δυνατότητες."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Κάντε αναβάθμιση για να ξεκλειδώσετε premium λειτουργίες."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Κάντε αναβάθμιση για να χρησιμοποιήσετε την αυτόματη απάντηση όταν λείπετε."
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -4982,6 +5042,9 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Πότε θέλετε να διαγραφεί αυτόματα το μήνυμά σας από τα εισερχόμενα του παραλήπτη και τον απεσταλμένο σας φάκελο;\n*.*, add translation *.*\n*?*, please add *;*;"
       ],
       "When do you want your message to be sent?": [
         "Πότε θέλετε να αποσταλεί το μήνυμά σας;"
@@ -5030,6 +5093,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Μπορείτε να χρησιμοποιήσετε το ${ VPN_APP_NAME } δωρεάν, σήμερα."
       ],
       "You cannot reply from the invited address.": [
         "Δεν μπορείτε να απαντήσετε από την προσκεκλημένη διεύθυνση."

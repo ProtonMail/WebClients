@@ -1013,7 +1013,7 @@
         "信任"
       ],
       "Trust keys": [
-        "信任金鑰"
+        "信任的金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -2866,6 +2866,12 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "升級方案以解鎖自訂訊息排程與其他好處。"
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "升級時解鎖用來排序您收件匣的無限過濾條件與更多進階功能。"
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "升級時解鎖無限資料夾、標籤與更多進階功能。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
@@ -3356,9 +3362,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "使用中篩選器太多。請升級至付費方案以啟用更多篩選器。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
@@ -5063,6 +5066,9 @@
       ],
       "Request read receipt": [
         "要求讀取回條"
+      ],
+      "Restore": [
+        "還原"
       ],
       "Right to Left": [
         "由右至左"
@@ -6959,6 +6965,9 @@
       "Set up your organization": [
         "設定您的組織"
       ],
+      "Set up your organization testing": [
+        "設定您的組織測試"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -7407,6 +7416,235 @@
       ],
       "Smallest first": [
         "從最小排序"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "關閉"
+      ],
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Special offer": [
+        "特別優惠"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "使用無限制"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 天"
+      ],
+      "${ hours } hours": [
+        "${ hours } 小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分鐘"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "免費使用 ${ n } 個月"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } 總儲存空間"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 個使用者"
+      ],
+      "64 countries": [
+        "64 個國家"
+      ],
+      "All paid Mail and Calendar features": [
+        "所有付費郵件與行事曆功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
+      "Highest VPN speed": [
+        "業界最高 VPN 速率"
+      ],
+      "Premium Drive": [
+        "進階版雲端硬碟"
+      ],
+      "Premium early access": [
+        "進階版搶先體驗"
+      ],
+      "Premium Mail and Calendar": [
+        "進階版郵件與行事曆"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "進階版郵件、行事曆與雲端硬碟"
+      ],
+      "Premium VPN": [
+        "進階版 VPN"
+      ],
+      "Secure cloud storage": [
+        "安全的雲端儲存空間"
+      ],
+      "Secure streaming": [
+        "安全的串流"
+      ],
+      "Support online privacy": [
+        "支援線上隱私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣基於每月基本價格。"
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "終身優惠"
+      ],
+      "Limited time only": [
+        "期間限定"
+      ],
+      "Most popular": [
+        "最熱門"
+      ],
+      "Offer ends soon": [
+        "優惠即將結束"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "折扣將在續訂後繼續適用，直到取消訂閱或修改"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "查看訂閱方案"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ 月"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "為期 1 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "為期 12 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "為期 15 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "為期 24 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "為期 30 個月收費 ${ amount } "
+      ],
+      "for ${ n } months": [
+        "為期 ${ n } 個月"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Save ${ discount }%": [
+        "省下  ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "長達 1 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "長達 12 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "長達 15 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "長達 24 個月的標準價 ${ amount } "
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "長達 30 個月的標準價 ${ amount } "
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "黑色星期五特賣"
+      ],
+      "Cyber Week Sale": [
+        "Cyber​​ Week 熱賣"
+      ],
+      "End of year offer": [
+        "年終大優惠"
+      ],
+      "End of Year Sale": [
+        "年終優惠"
+      ],
+      "Get our premium bundle and save more": [
+        "取得我們的進階版組合並節省更多"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "我們已停止的永續未來計畫限時回歸"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "使用兩年的 ${ planName } 節省更多"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "使用兩年的 ${ planName } 升級並節省更多"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被封鎖的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流服務、惡意軟體與廣告封鎖器等。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 個電子郵件地址、支援 10 個自訂網域、無限制的隱藏 Hide My Email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 個電子郵件地址、10 個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 個電子郵件地址、無限個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免費取得我們未來釋出的所有新隱私服務的付費版本，以及對所有未來功能和產品的搶先體驗。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8039,6 +8277,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Keep your inbox organized": [
+        "保持收件匣井然有序"
+      ],
       "Label as": [
         "標籤為"
       ],
@@ -8191,6 +8432,9 @@
       ],
       "Request new code": [
         "重新傳送驗證碼"
+      ],
+      "Save time with email filters": [
+        "使用篩選器來幫你節省時間"
       ],
       "Schedule send": [
         "排程傳送"

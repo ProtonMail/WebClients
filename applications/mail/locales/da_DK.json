@@ -1238,6 +1238,9 @@
       "5 trackers removed": [
         "5 trackere fjernet"
       ],
+      "Auto forwarded": [
+        "Automatisk videresendt"
+      ],
       "Email received": [
         "E-mail modtaget"
       ],
@@ -3358,9 +3361,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "For mange aktive filtre. Opgrader venligst til et betalt abonnement for at aktivere flere filtre."
-      ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
@@ -4333,6 +4333,12 @@
         "${ embeddedAttachmentsCount } indlejret billede",
         "${ embeddedAttachmentsCount } indlejrede billeder"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: billede i fuld størrelse"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: forhåndsvisning i lav opløsning"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
@@ -5097,6 +5103,9 @@
       "Request read receipt": [
         "Anmod om kvittering for læsning"
       ],
+      "Restore": [
+        "Gendan"
+      ],
       "Right to Left": [
         "Højre mod venstre"
       ],
@@ -5411,6 +5420,9 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Opgrader for at støtte privatlivets fred og for at få flere funktioner."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Opgrader for at bruge auto-svar, når du er væk."
       ],
       "Upload picture": [
         "Upload billede"
@@ -7434,6 +7446,113 @@
       ],
       "Smallest first": [
         "Mindste først"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Luk"
+      ],
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Special offer": [
+        "Specialtilbud"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dage"
+      ],
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } måned GRATIS",
+        "${ n } måneder GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } lagerplads i alt"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 brugere"
+      ],
+      "64 countries": [
+        "64 lande"
+      ],
+      "All paid Mail and Calendar features": [
+        "Alle betalte Mail og Kalender funktioner"
+      ],
+      "High speed VPN": [
+        "Højhastigheds-VPN"
+      ],
+      "Highest VPN speed": [
+        "Højeste VPN-hastighed"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Premium tidlig adgang"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail og Kalender"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Kalender og Drev"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Sikker Cloud-lagerplads"
+      ],
+      "Secure streaming": [
+        "Sikker streaming"
+      ],
+      "Support online privacy": [
+        "Støt privatliv online"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Gå til abonnementer"
+      ],
+      "Upgrade": [
+        "Opgrader"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } month": [
+        "i ${ n } måned",
+        "i ${ n } måneder"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide My Email-aliasser, kalenderdeling med mere."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide My Email-aliasser, kalenderdeling med mere."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
