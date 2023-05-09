@@ -62,7 +62,7 @@
                 "assets/*.woff",
                 "assets/*.woff2"
             ],
-            "matches": ["https://*/*"]
+            "matches": ["https://*/*", "http://*/*"]
         }
     ],
     "browser_specific_settings": {
