@@ -1,0 +1,79 @@
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+
+import { getTitle } from '../../helpers/title';
+import mdx from './Shadow.mdx';
+
+export default {
+    title: getTitle(__filename, false),
+    parameters: {
+        docs: {
+            page: mdx,
+        },
+    },
+};
+
+export const Shadow = () => {
+    return (
+        <Table className="color-norm">
+            <TableHeader>
+                <TableRow>
+                    <TableCell type="header">Class</TableCell>
+                    <TableCell type="header" className="w50">
+                        Explanation
+                    </TableCell>
+                    <TableCell type="header" className="text-right">
+                        Quick look
+                    </TableCell>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                <TableRow>
+                    <TableCell>
+                        <code>shadow-norm</code>
+                    </TableCell>
+                    <TableCell>
+                        Applies a <code>--shadow-norm</code> shadow on an element.
+                    </TableCell>
+                    <TableCell className="text-right">
+                        <span className="inline-block shadow-norm w3e">&nbsp;</span>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        <code>shadow-lifted</code>
+                    </TableCell>
+                    <TableCell>
+                        Applies a <code>--shadow-lifted</code> shadow on an element.
+                        <br />
+                        Should only be applied on lifted and out of flow elements, such as modals or tooltips.
+                    </TableCell>
+                    <TableCell className="text-right">
+                        <span className="inline-block shadow-lifted w3e">&nbsp;</span>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        <code>shadow-primary</code>
+                    </TableCell>
+                    <TableCell>Applies the primary colored shadow on an element.</TableCell>
+                    <TableCell className="text-right">
+                        <span className="inline-block shadow-norm shadow-color-primary w3e mr-2">&nbsp;</span>
+                        <span className="inline-block shadow-lifted shadow-color-primary w3e">&nbsp;</span>
+                    </TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+    );
+};
+
+// ## Example
+
+// Applies the common box shadow on this element.
+
+// <Source
+//     language="html"
+//     format
+//     code={`
+// <div className="shadow-norm">Lorem ipsum dolor sit amet</div>
+// `}
+// />

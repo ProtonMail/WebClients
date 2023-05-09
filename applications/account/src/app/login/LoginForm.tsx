@@ -93,7 +93,11 @@ const LoginForm = ({
     );
 
     const keepMeSignedInLearnMoreLink = (
-        <Href className="color-inherit inline-block" key="learn-more" href={getKnowledgeBaseUrl('/keep-me-signed-in')}>
+        <Href
+            className="color-inherit inline-block link-focus"
+            key="learn-more"
+            href={getKnowledgeBaseUrl('/keep-me-signed-in')}
+        >
             {c('Info').t`Why?`}
         </Href>
     );
@@ -101,7 +105,7 @@ const LoginForm = ({
     const signUp = (
         <Link
             key="signup"
-            className="link text-nowrap"
+            className="link link-focus text-nowrap"
             to={SSO_PATHS.SIGNUP + stringifySearchParams(signupOptions || {}, '?')}
         >
             {c('Link').t`Create account`}
@@ -228,7 +232,10 @@ const LoginForm = ({
                 <hr className="my-4" />
 
                 <div className="text-center">
-                    <SupportDropdown content={c('Link').t`Trouble signing in?`}>
+                    <SupportDropdown
+                        buttonClassName="link color-primary link-focus"
+                        content={c('Link').t`Trouble signing in?`}
+                    >
                         <Link
                             to={SSO_PATHS.RESET_PASSWORD}
                             className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"

@@ -1,5 +1,6 @@
 import { CalendarLogo, DriveLogo, IconSize, MailLogo, VpnLogo } from '@proton/components/components';
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 interface AppLogosProps {
     size: IconSize;
@@ -8,7 +9,7 @@ interface AppLogosProps {
 
 const LayoutLogos = ({ size, className }: AppLogosProps) => {
     return (
-        <div className={className}>
+        <div className={clsx(className, 'flex flex-justify-center gap-4 sm:gap-8')}>
             {[
                 {
                     title: MAIL_APP_NAME,
@@ -28,7 +29,7 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 },
             ].map(({ title, logo }) => {
                 return (
-                    <div key={title} className="inline-block m-0 md:mx-2 on-tiny-mobile-max-w50p" title={title}>
+                    <div key={title} className="inline-block on-tiny-mobile-max-w50p" title={title}>
                         {logo}
                     </div>
                 );

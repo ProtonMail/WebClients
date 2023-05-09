@@ -15,7 +15,7 @@ const SignupSupportDropdown = () => {
     return (
         <>
             {render && <BugModal {...bugReportModal} />}
-            <SupportDropdown>
+            <SupportDropdown buttonClassName="signup-link link-focus">
                 <DropdownMenuLink
                     href={getKnowledgeBaseUrl('/common-sign-up-problems-and-solutions')}
                     target="_blank"
