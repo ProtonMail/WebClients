@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Anulare încărcare"
       ],
+      "Change": [
+        "Schimbare"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -202,6 +205,12 @@
       ],
       "Delete permanently": [
         "Ștergere permanentă"
+      ],
+      "Delete this version": [
+        "Ștergere această versiune"
+      ],
+      "Delete version": [
+        "Ștergere versiune"
       ],
       "Deselect all": [
         "Deselectare toate"
@@ -503,6 +512,9 @@
       "Save": [
         "Salvare"
       ],
+      "Save version as copy": [
+        "Salvare versiune ca și copie"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -514,6 +526,9 @@
       ],
       "See plan features": [
         "Afișare caracteristici plan"
+      ],
+      "See version history": [
+        "Afișare istoric versiuni"
       ],
       "Select all": [
         "Selectare toate"
@@ -3030,6 +3045,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sigur doriți să goliți folderul «Gunoi» și să ștergeți definitiv tot din el?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Sigur doriți să ștergeți definitiv"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Sigur doriți să ștergeți definitiv „${ itemName }” din «Gunoi»?"
       ],
@@ -3130,6 +3148,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
+      ],
+      "Current version": [
+        "Versiune curentă"
       ],
       "Decrypting files": [
         "Decriptare fișiere"
@@ -3243,8 +3264,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Lipsește semnătura fișierului. Nu am putut verifica cine a încărcat ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Fișierul nu va fi încărcat."
+      "File will not be updated": [
+        "Fișierul nu va fi actualizat."
       ],
       "Finalizing": [
         "Finalizare"
@@ -3281,6 +3302,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Eliberați ceva spațiu sau contactați administratorul."
+      ],
+      "from the version history?": [
+        "din istoricul versiunilor?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Descoperiți ${ DRIVE_APP_NAME } și câștigați 500 MB spațiu bonus! Acționați astăzi."
@@ -3385,6 +3409,9 @@
       ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
+      ],
+      "Last week": [
+        "Săptămâna trecută"
       ],
       "Learn more": [
         "Detalii"
@@ -3552,6 +3579,12 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Versiunile anterioare sunt păstrate timp de ${ retentionLabel }."
+      ],
+      "Previous versions are not saved": [
+        "Versiunile anterioare nu sunt salvate."
+      ],
       "Primary": [
         "Primară"
       ],
@@ -3575,6 +3608,9 @@
       ],
       "Report has been sent": [
         "Raportul a fost trimis."
+      ],
+      "Restore": [
+        "Restaurare"
       ],
       "Restored files ${ formattedDate }": [
         "Fișiere restaurate ${ formattedDate }"
@@ -3698,14 +3734,20 @@
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
       ],
-      "This will overwrite the existing file": [
-        "Aceasta va suprascrie fișierul existent."
-      ],
       "This will overwrite the existing folder": [
         "Aceasta va suprascrie folderul existent."
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Acest lucru va elimina din ${ DRIVE_APP_NAME } dispozitivul sincronizat ${ deviceName }. Fișierele locale de pe dispozitiv nu vor fi afectate."
+      ],
+      "This will replace the existing file with the folder": [
+        "Aceasta va înlocui fișierul existent cu folderul."
+      ],
+      "This will replace the existing folder with the file": [
+        "Aceasta va înlocui folderul existent cu fișierul."
+      ],
+      "This will upload a new version of the file": [
+        "Aceasta va încărca o nouă versiune a fișierului."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
@@ -3727,6 +3769,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
+      ],
+      "Today": [
+        "Astăzi"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer anulat pentru fișierul „${ name }”."
@@ -3779,6 +3824,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
       ],
+      "Version is deleted": [
+        "Versiunea a fost ștearsă."
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Bună treabă. Tocmai v-ați dublat spațiul de stocare!"
       ],
@@ -3820,6 +3868,9 @@
       ],
       "Yes": [
         "Da"
+      ],
+      "Yesterday": [
+        "Ieri"
       ],
       "You are about to open another browser tab and visit:": [
         "Se va deschide o nouă filă în navigator cu adresa:"
@@ -3893,6 +3944,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Planul este limitat la 10 versiuni pentru maxim 7 zile."
+      ],
       "Your previous password": [
         "Parola anterioară"
       ],
@@ -3957,6 +4011,16 @@
       ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } zi",
+        "${ nbDay } zile",
+        "${ nbDay } de zile"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } an",
+        "${ nbYear } ani",
+        "${ nbYear } de ani"
       ],
       "(Expired)": [
         "(Expirat)"
@@ -4086,6 +4150,9 @@
       "Downloading ${ percentageValue }%": [
         "Se descarcă ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "S-a găsit o dublură."
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4185,6 +4252,15 @@
       "Import to:": [
         "Importare în:"
       ],
+      "Keep both": [
+        "Păstrare ambele"
+      ],
+      "Keep both files": [
+        "Păstrare ambele fișiere"
+      ],
+      "Keep both folders": [
+        "Păstrare ambele foldere"
+      ],
       "Label messages as": [
         "Etichetare mesaje cu"
       ],
@@ -4281,11 +4357,11 @@
       "Region": [
         "Județ"
       ],
-      "Replace file": [
-        "Înlocuire fişier"
+      "Replace existing file": [
+        "Înlocuire fișier existent"
       ],
-      "Replace folder": [
-        "Înlocuire folder"
+      "Replace existing folder": [
+        "Înlocuire folder existent"
       ],
       "Report": [
         "Raportare"
@@ -4358,9 +4434,6 @@
       ],
       "Unlock later": [
         "Deblocare mai târziu"
-      ],
-      "Upload anyway": [
-        "Încărcare așa"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -4771,6 +4844,9 @@
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
       ],
+      "Version failed to be deleted": [
+        "Ștergerea versiunii a eșuat."
+      ],
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
       ],
@@ -4838,6 +4914,9 @@
       ],
       "Set up your organization": [
         "Setați organizația"
+      ],
+      "Set up your organization testing": [
+        "Configurare testare organizație"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
@@ -5544,7 +5623,7 @@
         "Numere de telefon"
       ],
       "Preview": [
-        "Previzualizare"
+        "Examinare"
       ],
       "Privacy settings": [
         "Setări intimitate"
@@ -5683,6 +5762,12 @@
       ],
       "Uploading a large file or folder": [
         "Se încarcă un fișier sau folder mare"
+      ],
+      "Version details": [
+        "Detalii versiune"
+      ],
+      "Version history": [
+        "Istoric versiuni"
       ],
       "View contacts": [
         "Afișare contacte"

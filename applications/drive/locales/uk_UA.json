@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Скасувати вивантаження"
       ],
+      "Change": [
+        "Змінити"
+      ],
       "Chat with us": [
         "Чат з нами"
       ],
@@ -204,6 +207,12 @@
       ],
       "Delete permanently": [
         "Видалити остаточно"
+      ],
+      "Delete this version": [
+        "Видалити цю версію"
+      ],
+      "Delete version": [
+        "Видалити версію"
       ],
       "Deselect all": [
         "Скасувати вибір"
@@ -505,6 +514,9 @@
       "Save": [
         "Зберегти"
       ],
+      "Save version as copy": [
+        "Зберегти версію як копію"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -516,6 +528,9 @@
       ],
       "See plan features": [
         "Переглянути можливості тарифного плану"
+      ],
+      "See version history": [
+        "Переглянути історію версій"
       ],
       "Select all": [
         "Вибрати все"
@@ -3082,6 +3097,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Ви дійсно хочете остаточно видалити"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ви дійсно хочете остаточно видалити ${ itemName } зі смітника?"
       ],
@@ -3183,6 +3201,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
+      ],
+      "Current version": [
+        "Поточна версія"
       ],
       "Decrypting files": [
         "Розшифрування файлів"
@@ -3298,8 +3319,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "У файлі відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Файл не буде вивантажено"
+      "File will not be updated": [
+        "Файл не буде оновлено"
       ],
       "Finalizing": [
         "Завершення"
@@ -3336,6 +3357,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Звільніть місце або зверніться до свого адміністратора."
+      ],
+      "from the version history?": [
+        "з історії версій?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Ознайомтеся з ${ DRIVE_APP_NAME } та отримайте винагороду – 500 MB обсягу сховища! Не зволікайте."
@@ -3441,6 +3465,9 @@
       ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
+      ],
+      "Last week": [
+        "Минулого тижня"
       ],
       "Learn more": [
         "Докладніше"
@@ -3610,6 +3637,12 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Попередні версії зберігаються ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Попередні версії не збережено"
+      ],
       "Primary": [
         "Основний"
       ],
@@ -3633,6 +3666,9 @@
       ],
       "Report has been sent": [
         "Звіт надіслано"
+      ],
+      "Restore": [
+        "Відновити"
       ],
       "Restored files ${ formattedDate }": [
         "Відновлені файли ${ formattedDate }"
@@ -3757,14 +3793,20 @@
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання."
       ],
-      "This will overwrite the existing file": [
-        "Це перезапише наявний файл"
-      ],
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Ця дія вилучить з ${ DRIVE_APP_NAME } синхронізований пристрій ${ deviceName }. Ці зміни не вплинуть на локальні файли пристрою."
+      ],
+      "This will replace the existing file with the folder": [
+        "Це призведе до заміни наявного файлу текою"
+      ],
+      "This will replace the existing folder with the file": [
+        "Це призведе до заміни наявної теки файлом"
+      ],
+      "This will upload a new version of the file": [
+        "Це призведе до вивантаження нової версії файлу"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Щоб увімкнути повноцінний приватний пошук, ${ DRIVE_APP_NAME } повинен індексувати ваші файли локально."
@@ -3786,6 +3828,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
+      ],
+      "Today": [
+        "Сьогодні"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Передавання скасовано для файлу \"${ name }\""
@@ -3838,6 +3883,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
       ],
+      "Version is deleted": [
+        "Версію видалено"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Усе готово! Ви щойно подвоїли обсяг свого безплатного сховища!"
       ],
@@ -3879,6 +3927,9 @@
       ],
       "Yes": [
         "Так"
+      ],
+      "Yesterday": [
+        "Учора"
       ],
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
@@ -3952,6 +4003,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Ваш тарифний план обмежений 10 версіями на термін до 7 днів"
+      ],
       "Your previous password": [
         "Ваш попередній пароль"
       ],
@@ -4016,6 +4070,18 @@
       ],
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } день",
+        "${ nbDay } дні",
+        "${ nbDay } днів",
+        "${ nbDay } днів"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } рік",
+        "${ nbYear } роки",
+        "${ nbYear } років",
+        "${ nbYear } років"
       ],
       "(Expired)": [
         "(Термін дії завершився)"
@@ -4146,6 +4212,9 @@
       "Downloading ${ percentageValue }%": [
         "Завантаження ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "Знайдено дублікат"
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -4245,6 +4314,15 @@
       "Import to:": [
         "Імпортувати до:"
       ],
+      "Keep both": [
+        "Зберегти обидва"
+      ],
+      "Keep both files": [
+        "Зберегти обидва файли"
+      ],
+      "Keep both folders": [
+        "Зберегти обидві теки"
+      ],
       "Label messages as": [
         "Позначити повідомлення"
       ],
@@ -4341,11 +4419,11 @@
       "Region": [
         "Область"
       ],
-      "Replace file": [
-        "Замінити файл"
+      "Replace existing file": [
+        "Замінити наявний файл"
       ],
-      "Replace folder": [
-        "Замінити теку"
+      "Replace existing folder": [
+        "Замінити наявну теку"
       ],
       "Report": [
         "Звіт"
@@ -4363,7 +4441,7 @@
         "Налаштуйте спосіб відновлення"
       ],
       "Show indexing progress of Encrypted Search": [
-        "Показувати прогрес індексування Захищеного Пошуку"
+        "Показувати хід індексування зашифрованого пошуку"
       ],
       "Sign emails": [
         "Підписувати листи"
@@ -4418,9 +4496,6 @@
       ],
       "Unlock later": [
         "Розблокувати пізніше"
-      ],
-      "Upload anyway": [
-        "Все одно вивантажити"
       ],
       "Upload picture": [
         "Завантажити зображення"
@@ -4854,6 +4929,9 @@
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
       ],
+      "Version failed to be deleted": [
+        "Не вдалося видалити версію"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Ваші старі файли будуть видалені протягом 72 годин"
       ],
@@ -4922,6 +5000,9 @@
       ],
       "Set up your organization": [
         "Налаштуйте свою організацію"
+      ],
+      "Set up your organization testing": [
+        "Налаштуйте тестування своєї організації"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
@@ -5132,6 +5213,176 @@
       ],
       "Sign": [
         "Підписати"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрити"
+      ],
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунди",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } місяць БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Усього ${ storageSize } сховища"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
+      ],
+      "64 countries": [
+        "64 країни"
+      ],
+      "High speed VPN": [
+        "Високошвидкісна VPN"
+      ],
+      "Highest VPN speed": [
+        "Найвища швидкість VPN"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Ранній преміумдоступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Calendar і Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Безпечне хмарне сховище"
+      ],
+      "Secure streaming": [
+        "Захищена трансляція"
+      ],
+      "Support online privacy": [
+        "Підтримка онлайн-приватності"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ця передплата автоматично продовжуватиметься раз на 2 роки за такою ж ціною, поки її не буде скасовано."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Довічна угода"
+      ],
+      "Limited time only": [
+        "Упродовж обмеженого часу"
+      ],
+      "Most popular": [
+        "Найпопулярніший"
+      ],
+      "Offer ends soon": [
+        "Пропозиція скоро завершиться"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Знижка діятиме після поновлення передплати, доки її не буде скасовано або змінено"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти до тарифних планів"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ місяць"
+      ],
+      "1 year": [
+        "1 рік"
+      ],
+      "2 years": [
+        "2 роки"
+      ],
+      "for ${ n } month": [
+        "на ${ n } місяць",
+        "на ${ n } місяці",
+        "на ${ n } місяців",
+        "на ${ n } місяців"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Save ${ discount }%": [
+        "Знижка ${ discount }%"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Розпродаж у Чорну П'ятницю"
+      ],
+      "Cyber Week Sale": [
+        "Розпродаж Кібертижня"
+      ],
+      "End of year offer": [
+        "Передноворічна пропозиція"
+      ],
+      "End of Year Sale": [
+        "Передноворічний розпродаж"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Доступ звідусіль до матеріалів сервісів трансляції, включно з Netflix, Disney+ і Prime Video."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5648,6 +5899,9 @@
       "Phone numbers": [
         "Номери телефонів"
       ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
       "Privacy settings": [
         "Налаштування приватності"
       ],
@@ -5785,6 +6039,12 @@
       ],
       "Uploading a large file or folder": [
         "Вивантаження великого файлу або теки"
+      ],
+      "Version details": [
+        "Опис версії"
+      ],
+      "Version history": [
+        "Історія версій"
       ],
       "View contacts": [
         "Переглянути контакти"

@@ -3125,9 +3125,6 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "Fájl nem lesz feltöltve"
-      ],
       "Finalizing": [
         "Befejezés"
       ],
@@ -3512,9 +3509,6 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
         "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
-      ],
-      "This will overwrite the existing file": [
-        "Felülírja a meglévő fájlt"
       ],
       "This will overwrite the existing folder": [
         "Felülírja a meglévő mappát"
@@ -4065,12 +4059,6 @@
       "Region": [
         "Régió"
       ],
-      "Replace file": [
-        "Fájl lecserélése"
-      ],
-      "Replace folder": [
-        "Mappa lecserélése"
-      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -4136,9 +4124,6 @@
       ],
       "Unlock later": [
         "Feloldás később"
-      ],
-      "Upload anyway": [
-        "Feltöltés mindenképpen"
       ],
       "Upload picture": [
         "Kép feltöltése"

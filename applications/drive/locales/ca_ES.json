@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Cancel·lar càrrega"
       ],
+      "Change": [
+        "Canvia"
+      ],
       "Chat with us": [
         "Xategeu amb nosaltres"
       ],
@@ -200,6 +203,12 @@
       ],
       "Delete permanently": [
         "Suprimeix permanentment"
+      ],
+      "Delete this version": [
+        "Elimina aquesta versió"
+      ],
+      "Delete version": [
+        "Elimina la versió"
       ],
       "Deselect all": [
         "Desseleccionar-ho tot"
@@ -501,6 +510,9 @@
       "Save": [
         "Desa"
       ],
+      "Save version as copy": [
+        "Desa la versió com a còpia"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -512,6 +524,9 @@
       ],
       "See plan features": [
         "Veure les funcionalitats del pla"
+      ],
+      "See version history": [
+        "Veure l'historial de versions"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -2978,6 +2993,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Segur que voleu buidar la paperera i eliminar completament tots els elements?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Segur que voleu eliminar definitivament"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Segur que voleu eliminar completament «${ itemName }» de la paperera?"
       ],
@@ -3077,6 +3095,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
+      ],
+      "Current version": [
+        "Versió actual"
       ],
       "Decrypting files": [
         "Desxifrant els arxius"
@@ -3188,8 +3209,8 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "El fitxer no està signat. No podem verificar qui va carregar ${ fileName }."
       ],
-      "File will not be uploaded": [
-        "El fitxer no es pujarà"
+      "File will not be updated": [
+        "El fitxer no s'actualitzarà"
       ],
       "Finalizing": [
         "Finalitzant"
@@ -3226,6 +3247,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
+      ],
+      "from the version history?": [
+        "de l'historial de versions?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Coneix ${ DRIVE_APP_NAME } i guanya la teva bonificació d'emmagatzematge de 500 MB! Fes-ho avui."
@@ -3329,6 +3353,9 @@
       ],
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
+      ],
+      "Last week": [
+        "La setmana passada"
       ],
       "Learn more": [
         "Més informació"
@@ -3494,6 +3521,9 @@
       "Preview for this file type is not supported": [
         "La previsualització d'aquest tipus de fitxers no és compatible."
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Les versions anteriors es mantenen durant ${ retentionLabel }"
+      ],
       "Primary": [
         "Principal"
       ],
@@ -3517,6 +3547,9 @@
       ],
       "Report has been sent": [
         "S'ha enviat l'informe"
+      ],
+      "Restore": [
+        "Restaura"
       ],
       "Restored files ${ formattedDate }": [
         "Fitxers restaurats ${ formattedDate }"
@@ -3639,14 +3672,20 @@
         "Això suprimirà l'enllaç i eliminarà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
         "Això suprimirà els enllaços i eliminarà l'accés als teus fitxers o carpetes per a qualsevol persona que els tingui."
       ],
-      "This will overwrite the existing file": [
-        "Se sobreescriurà el fitxer actual"
-      ],
       "This will overwrite the existing folder": [
         "Se sobreescriurà la carpeta existent"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Això eliminarà des de ${ DRIVE_APP_NAME } el dispositiu sincronitzat ${ deviceName }. Els fitxers locals al dispositiu no es veuran afectats."
+      ],
+      "This will replace the existing file with the folder": [
+        "Això substituirà el fitxer existent per la carpeta"
+      ],
+      "This will replace the existing folder with the file": [
+        "Això substituirà la carpeta existent pel fitxer"
+      ],
+      "This will upload a new version of the file": [
+        "Això carregarà una nova versió del fitxer"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per activar la cerca realment privada ${ DRIVE_APP_NAME } necessita indexar els teus fitxers localment."
@@ -3668,6 +3707,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
+      ],
+      "Today": [
+        "Avui"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "S'ha cancel·lat la transferència del fitxer \"${ name }\""
@@ -3720,6 +3762,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilitza aquest formulari per notificar-nos de casos inapropiats, il·legals o fitxers compartits maliciosos. Reportes sobre:"
       ],
+      "Version is deleted": [
+        "La versió s'ha eliminat"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Molt bé, acabes de doblar el teu emmagatzematge gratuït!"
       ],
@@ -3761,6 +3806,9 @@
       ],
       "Yes": [
         "Sí"
+      ],
+      "Yesterday": [
+        "Ahir"
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
@@ -3833,6 +3881,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "El vostre pla està limitat a 10 versions durant un màxim de 7 dies"
       ],
       "Your previous password": [
         "Contrasenya anterior"
@@ -4025,6 +4076,9 @@
       ],
       "Downloading ${ percentageValue }%": [
         "Descàrrega ${ percentageValue } %"
+      ],
+      "Duplicate found": [
+        "Duplicat trobat"
       ],
       "Email": [
         "Correu electrònic"
@@ -4221,11 +4275,11 @@
       "Region": [
         "Regió"
       ],
-      "Replace file": [
-        "Substituir fitxer"
+      "Replace existing file": [
+        "Substitueix el fitxer existent"
       ],
-      "Replace folder": [
-        "Substituir carpeta"
+      "Replace existing folder": [
+        "Substitueix la carpeta existent"
       ],
       "Report": [
         "Reporta"
@@ -4241,6 +4295,9 @@
       ],
       "Set recovery method": [
         "Establir un mètode de recuperació"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Mostra el progrés d'indexació de la Cerca Xifrada"
       ],
       "Sign emails": [
         "Signar correu electrònics"
@@ -4295,9 +4352,6 @@
       ],
       "Unlock later": [
         "Desbloqueja més tard"
-      ],
-      "Upload anyway": [
-        "Càrrega de totes maneres"
       ],
       "Upload picture": [
         "Carrega imatge"
@@ -4685,6 +4739,9 @@
       "Trash failed to be emptied": [
         "El buidatge de la paperera va fallar"
       ],
+      "Version failed to be deleted": [
+        "No s'ha pogut eliminar la versió"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Els teus fitxers antics s'esborraran en 72 hores"
       ],
@@ -4751,6 +4808,9 @@
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
+      ],
+      "Set up your organization testing": [
+        "Configureu les proves de la vostra organització"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Feu servir el selector d'aplicacions de dalt a l'esquerra per accedir a tots els serveis de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
@@ -4955,6 +5015,122 @@
       ],
       "Sign": [
         "Signar"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Tanca"
+      ],
+      "Don't show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } d'emmagatzematge total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuaris"
+      ],
+      "64 countries": [
+        "64 països"
+      ],
+      "All paid Mail and Calendar features": [
+        "Totes les característiques de pagament de Correu i Calendari"
+      ],
+      "High speed VPN": [
+        "VPN d'alta velocitat"
+      ],
+      "Highest VPN speed": [
+        "La velocitat VPN més alta"
+      ],
+      "Premium Drive": [
+        "Drive Prèmium"
+      ],
+      "Premium early access": [
+        "Accés anticipat prèmium"
+      ],
+      "Premium Mail and Calendar": [
+        "Correu i Calendari Prèmium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Correu, Calendari i Drive Prèmium"
+      ],
+      "Premium VPN": [
+        "VPN Prèmium"
+      ],
+      "Secure cloud storage": [
+        "Emmagatzematge al núvol segur"
+      ],
+      "Secure streaming": [
+        "Transmissió en línia segura"
+      ],
+      "Support online privacy": [
+        "Doneu suport a la privacitat en línia"
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta de per vida"
+      ],
+      "Most popular": [
+        "Més popular"
+      ],
+      "Offer ends soon": [
+        "L'oferta s'acaba aviat"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ves als plans de subscripció"
+      ],
+      "Upgrade": [
+        "Millora"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mes"
+      ],
+      "1 year": [
+        "Un any"
+      ],
+      "2 years": [
+        "Dos anys"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Oferta del Black Friday"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide My Email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies Hide My Email, compartició de calendari i més."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5435,6 +5611,9 @@
       "Phone numbers": [
         "Números de telèfon"
       ],
+      "Preview": [
+        "Vista prèvia"
+      ],
       "Privacy settings": [
         "Configuració de privacitat"
       ],
@@ -5572,6 +5751,12 @@
       ],
       "Uploading a large file or folder": [
         "Carrega un fitxer gran o una carpeta"
+      ],
+      "Version details": [
+        "Detalls de la versió"
+      ],
+      "Version history": [
+        "Historial de versions"
       ],
       "View contacts": [
         "Veure contactes"

@@ -1750,6 +1750,9 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
+      "Calendar limit reached": [
+        "Chegou ao número limite de calendários"
+      ],
       "Contact could not be saved": [
         "Impossível gravar o contacto"
       ],
@@ -1841,6 +1844,9 @@
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "O nome da pasta é demasiado longo. Por favor escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
@@ -2021,6 +2027,9 @@
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
       ],
+      "We couldn't load this page. ": [
+        "Não conseguimos carregar esta página. "
+      ],
       "You may also refresh the page or try again later.": [
         "Também pode atualizar a página ou tentar de novo mais tarde."
       ]
@@ -2200,6 +2209,9 @@
       "This file contains an invitation response:": [
         "Este ficheiro contém uma resposta de convite:",
         "Este arquivo contém respostas a convites:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Este ficheiro contém alguns dados que não podemos importar:"
       ]
     },
     "Import contact": {
@@ -2350,6 +2362,12 @@
         "${ errorCount } falhado",
         "${ errorCount } falhados"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagem em tamanho máximo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pré-visualização de baixa resolução"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
@@ -2443,6 +2461,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
       ],
+      "Attention required": [
+        "Atenção Requerida"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
       ],
@@ -2463,6 +2484,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
+      ],
+      "Close this screen to exit.": [
+        "Feche este ecrã para sair."
       ],
       "Conflict": [
         "Conflito"
@@ -2495,6 +2519,9 @@
       "Creating link to file": [
         "A criar ligação ao ficheiro"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e algumas outras aplicações, bem como os formatos vCard 3.1 e 4.0 (codificação UTF-8)."
+      ],
       "Downloaded": [
         "Transferido"
       ],
@@ -2509,6 +2536,9 @@
       ],
       "Each code can only be used once": [
         "Cada código só pode ser usado uma vez"
+      ],
+      "Emails are automatically signed": [
+        "Os e-mails são assinados automaticamente"
       ],
       "Enter the code from your authenticator app": [
         "Introduza o código da sua aplicação de autenticação."
@@ -2540,9 +2570,6 @@
       ],
       "Failed to generate a secure link. Try again later.": [
         "Falha ao gerar uma ligação segura. Tente novamente mais tarde."
-      ],
-      "File will not be uploaded": [
-        "O ficheiro não será enviado"
       ],
       "Finalizing": [
         "A finalizar"
@@ -2587,6 +2614,9 @@
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
       ],
+      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
+        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
+      ],
       "Import from": [
         "Importar de"
       ],
@@ -2598,6 +2628,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importe os seus correios electrónicos, calendários e contactos de outro serviço para ${ BRAND_NAME }."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
@@ -2616,6 +2649,9 @@
       ],
       "Internet connection restored.": [
         "Ligação à Internet reposta."
+      ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Confirme apenas a sua seleção e faremos o resto."
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
@@ -2689,17 +2725,29 @@
       "No synced folders": [
         "Nenhuma pasta sincronizada"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Nenhuma das chaves carregadas é válida para criptografia. Para poder enviar mensagens para este endereço, faça o upload de uma chave válida ou desative \"Criptografar e-mails\"."
+      ],
       "Not a valid URL": [
         "Não é um URL válido"
       ],
       "of": [
         "de"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Uma ou mais chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que \"desconfie\" dessas chaves."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Só as pessoas com a ligação e a palavra-passe podem aceder ao ficheiro."
       ],
       "Paused": [
         "Em pausa"
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline é apenas compatível com o formato Texto Simples."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME envia automaticamente a mensagem usando o modo de composição atual."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Note que os endereços atribuídos a este grupo NÃO serão eliminados."
@@ -2729,6 +2777,12 @@
       "Preparing link to file": [
         "A preparar ligação ao ficheiro"
       ],
+      "Preview failed to be loaded": [
+        "Falha no carregamento da pré-visualização"
+      ],
+      "Preview for this file type is not supported": [
+        "A pré-visualização deste tipo de arquivo não é suportada"
+      ],
       "Primary": [
         "Principal"
       ],
@@ -2744,6 +2798,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de correio electrónico predefinido a utilizar para este endereço de correio electrónico."
       ],
@@ -2752,6 +2809,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Os servidores estão inacessíveis. Por favor, tente novamente dentro de alguns minutos"
       ],
       "Session timed out": [
         "A sessão expirou."
@@ -2771,6 +2831,9 @@
       "support team": [
         "equipa de assistência"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporariamente indisponível. Tente mais tarde."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Temos de desencriptar localmente os seus contactos antes que os possa exportar. No final do processo, será gerado um ficheiro VCF e poderá transferi-lo."
       ],
@@ -2786,14 +2849,17 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta a antevisão de documentos PDF. Transfira o ficheiro."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Este link leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este link poderá ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se tiver certeza de que o link é legítimo, abra-o com um navegador diferente."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "A ligação será permanentemente desativada. Ninguém poderá aceder ao ficheiro com ela. Para voltar a partilhá-lo, precisará de uma nova ligação."
-      ],
-      "This will overwrite the existing file": [
-        "Isto vai sobrescrever o ficheiro existente"
       ],
       "This will overwrite the existing folder": [
         "Isto vai sobrescrever a pasta existente"
@@ -2807,6 +2873,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Para recuperar os seus dados, é necessário reativar a chave de conta usada no momento em que os dados foram criados. Isso exigirá que se lembre da senha usada aquando da geração da chave."
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
       ],
@@ -2818,6 +2887,9 @@
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Atualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial"
       ],
       "Uploaded": [
         "Enviado"
@@ -2846,6 +2918,9 @@
       "What would you like to do?": [
         "O que gostaria de fazer?"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Após a configuração da autenticação de dois fatores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
       ],
@@ -2863,6 +2938,12 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
+      ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Também pode combinar calendários importados com calendários existentes de ${ BRAND_NAME }."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Pode verificar o progresso ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
@@ -2885,8 +2966,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os correios electrónicos deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. Os seus links de partilha do Drive estão inativos e não pode fazer upload de novos arquivos. Para continuar a usar sua conta, efetue o pagamento das faturas vencidas."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "A sua conta tem pelo menos uma fatura vencida. A sua conta está restrita e todos os serviços estão bloqueados até o pagamento. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e links de partilha. ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu correio electrónico só será usado para esta verificação única."
@@ -3108,6 +3201,15 @@
       "Label messages as": [
         "Etiquetar mensagens como"
       ],
+      "Last 12 months only": [
+        "Últimos 12 meses"
+      ],
+      "Last 3 months only": [
+        "Últimos 3 meses"
+      ],
+      "Last month only": [
+        "Último mês"
+      ],
       "Location": [
         "Localização"
       ],
@@ -3186,12 +3288,6 @@
       "Region": [
         "Região"
       ],
-      "Replace file": [
-        "Substituir ficheiro"
-      ],
-      "Replace folder": [
-        "Substituir pasta"
-      ],
       "Reveal password": [
         "Mostrar a palavra-passe"
       ],
@@ -3233,9 +3329,6 @@
       ],
       "Unknown file": [
         "Ficheiro desconhecido"
-      ],
-      "Upload anyway": [
-        "Enviar mesmo assim"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -3650,6 +3743,64 @@
         "Experimente o novo painel lateral"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Fechar"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidade"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mês"
+      ],
+      "1 year": [
+        "1 ano"
+      ],
+      "2 years": [
+        "2 anos"
+      ],
+      "for ${ n } month": [
+        "por ${ n } mês",
+        "por ${ n } meses"
+      ]
+    },
     "Storage": {
       "Release notes": [
         "Notas de lançamento"
@@ -4003,6 +4154,9 @@
       "Phone numbers": [
         "Números de telefone"
       ],
+      "Preview": [
+        "Pré-visualização"
+      ],
       "Privacy settings": [
         "Definições de privacidade"
       ],
@@ -4211,6 +4365,11 @@
       ],
       "Name must not end with a space": [
         "O nome não pode terminar com um espaço"
+      ]
+    },
+    "Video control": {
+      "Replay video": [
+        "Reproduzir o vídeo novamente"
       ]
     },
     "Warning": {

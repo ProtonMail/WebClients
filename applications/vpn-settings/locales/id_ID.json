@@ -1499,9 +1499,6 @@
       "Not a valid number": [
         "Nomor telepon tidak valid"
       ],
-      "Organization not recognized. Try again.": [
-        "Organisasi tidak dikenal. Silakan coba lagi."
-      ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
@@ -2221,6 +2218,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
+      "Restore": [
+        "Pulihkan"
+      ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
       ],
@@ -2531,13 +2531,13 @@
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, silakan masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan. Apabila Anda terus-menerus lalai membayar, seluruh email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -2770,9 +2770,6 @@
       ],
       "Email or username": [
         "Email atau nama pengguna"
-      ],
-      "Enter organization name to confirm": [
-        "Masukkan nama organisasi untuk dapat melanjutkan"
       ],
       "Enter the code displayed on your TV": [
         "Masukkan kode yang tertera pada TV Anda"
@@ -3066,11 +3063,6 @@
         "Tingkatkan paket langganan Anda untuk memperoleh dukungan melalui chat dan berbagai fitur premium lainnya, atau gunakan formulir layanan dukungan gratis kami untuk melaporkan masalah Anda."
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tindakan ini akan menghapus seluruh akun, sub-pengguna, dan data yang terhubung dengan organisasi Anda secara permanen."
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
@@ -3198,7 +3190,7 @@
         "${ n } folder and label"
       ],
       "${ n } forwarding mailboxes": [
-        "${ n } kotak surat untuk penerusan"
+        "${ n } kotak surat penerusan"
       ],
       "${ n } Hide My Email aliases": [
         "${ n } alias Hide My Email"
@@ -3260,8 +3252,20 @@
       "Contact groups management": [
         "Pengelolaan grup kontak"
       ],
+      "Custom domain for email aliases": [
+        "Domain kustom untuk alias email"
+      ],
+      "Custom domains for email aliases": [
+        "Domain khusus untuk alias email"
+      ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Data breach monitoring": [
+        "Pemantauan kebocoran data"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Pemantauan kebocoran data (segera hadir)"
       ],
       "DNS leak prevention": [
         "Perlindungan terhadap kebocoran DNS"
@@ -3310,6 +3314,9 @@
       ],
       "Multiple admin roles": [
         "Peran admin berangkap"
+      ],
+      "Multiple forwarding mailboxes": [
+        "Kotak surat penerusan berganda"
       ],
       "NetShield malware and ad-blocker": [
         "Pemblokir malware dan iklan NetShield"
@@ -3362,6 +3369,9 @@
       "Two-factor authentication": [
         "Autentikasi dua faktor"
       ],
+      "Unlimited devices": [
+        "Tanpa batasan jumlah perangkat"
+      ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
       ],
@@ -3371,11 +3381,20 @@
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Tanpa batasan jumlah alias Hide My Email"
+      ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
+      ],
+      "Unlimited passwords and notes": [
+        "Tanpa batasan kata sandi dan catatan"
+      ],
+      "Unlimited vaults": [
+        "Tanpa batasan jumlah brankas"
       ],
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
@@ -3394,6 +3413,12 @@
       ],
       "User session management": [
         "Pengelolaan sesi pengguna"
+      ],
+      "Vault and Item sharing": [
+        "Pembagian brankas dan item"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Pembagian brankas dan item (segera hadir)"
       ],
       "Worldwide streaming services": [
         "Akses ke berbagai layanan streaming di seluruh dunia"
@@ -3431,6 +3456,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
+      ],
+      "For next-level password management and identity protection.": [
+        "Manajemen kata sandi dan perlindungan identitas tingkat lanjut."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Dengan menghapus akun Anda, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan paket tersebut tidak akan lagi tersedia apabila Anda membuat akun baru."
@@ -3631,6 +3659,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Brankas, seperti folder, merupakan cara yang mudah untuk mengatur item Anda. Fitur pembagian brankas dengan teman dan keluarga saat ini sedang dikembangkan."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Kelola status berlangganan Anda dan atur sendiri paket yang ingin Anda langgan. Kami menerima pembayaran melalui kartu kredit, PayPal, mata uang kripto, dan transfer bank."
       ],
@@ -3714,6 +3745,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Membuat alamat email yang unik dan tersedia seketika, melindungi identitas online Anda dan memberi Anda kendali atas apa yang masuk ke kotak masuk Anda. SimpleLogin oleh ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -3975,6 +4009,104 @@
       ],
       "Verification": [
         "Verifikasi"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Tutup"
+      ],
+      "Don't show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Special offer": [
+        "Penawaran spesial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } hari"
+      ],
+      "${ hours } hours": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } menit"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } detik"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } bulan GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } jumlah penyimpanan"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "64 countries": [
+        "64 negara"
+      ],
+      "All paid Mail and Calendar features": [
+        "Semua fitur Mail dan Calendar yang berbayar"
+      ],
+      "High speed VPN": [
+        "VPN berkecepatan tinggi"
+      ],
+      "Highest VPN speed": [
+        "Kecepatan VPN tertinggi"
+      ],
+      "Premium Drive": [
+        "Drive Premium"
+      ],
+      "Premium early access": [
+        "Akses dini Premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail dan Calendar Premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar, dan Drive Premium"
+      ],
+      "Premium VPN": [
+        "VPN Premium"
+      ],
+      "Secure cloud storage": [
+        "Penyimpanan awan aman"
+      ],
+      "Secure streaming": [
+        "Streaming aman"
+      ],
+      "Support online privacy": [
+        "Dukung privasi daring"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Pergi ke paket langganan"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } months": [
+        "untuk ${ n } bulan"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Beserta dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide My Email, pembagian kalender, dan lebih banyak lagi."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -4370,9 +4502,6 @@
       "Delete account": [
         "Hapus akun"
       ],
-      "Delete organization?": [
-        "Hapus organisasi?"
-      ],
       "Device connected!": [
         "Perangkat tersambung!"
       ],
@@ -4499,6 +4628,9 @@
       "Plans": [
         "Paket"
       ],
+      "Preview": [
+        "Pratinjau"
+      ],
       "Previous": [
         "Sebelumnya"
       ],
@@ -4623,7 +4755,7 @@
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ],
       "Your plan": [
-        "Paket anda"
+        "Paket Anda"
       ],
       "Your subscriptions": [
         "Langganan Anda"
