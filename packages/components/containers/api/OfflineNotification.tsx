@@ -10,7 +10,7 @@ interface Props {
 const OfflineNotification = ({ onRetry, message }: Props) => {
     const [loading, withLoading] = useLoading();
     const retryNow = (
-        <UnderlineButton className="align-baseline p0" disabled={loading} onClick={() => withLoading(onRetry())}>
+        <UnderlineButton className="align-baseline p-0" disabled={loading} onClick={() => withLoading(onRetry())}>
             {c('Action').t`Retry now`}
         </UnderlineButton>
     );

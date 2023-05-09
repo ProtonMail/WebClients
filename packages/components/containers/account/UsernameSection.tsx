@@ -66,7 +66,7 @@ const UsernameSection = ({ app }: Props) => {
                     <SettingsLayoutLeft>
                         <div className="text-semibold">{c('Label').t`Username`}</div>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt0-5">
+                    <SettingsLayoutRight className="pt-2">
                         {user.Type === UserType.EXTERNAL && primaryAddress ? primaryAddress.Email : user.Name}
                     </SettingsLayoutRight>
                 </SettingsLayout>
@@ -75,7 +75,7 @@ const UsernameSection = ({ app }: Props) => {
                         <SettingsLayoutLeft>
                             <div className="text-semibold">{c('Label').t`Display name`}</div>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt0-5">
+                        <SettingsLayoutRight className="pt-2">
                             {!primaryAddress || loadingAddresses ? (
                                 <div className="flex flex-nowrap">
                                     <CircleLoader />
@@ -102,7 +102,7 @@ const UsernameSection = ({ app }: Props) => {
                         <SettingsLayoutLeft>
                             <div className="text-semibold">{c('Label').t`${MAIL_APP_NAME} address`}</div>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt0-5">
+                        <SettingsLayoutRight className="pt-2">
                             {loadingAddresses ? (
                                 <div className="flex flex-nowrap">
                                     <CircleLoader />

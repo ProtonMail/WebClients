@@ -323,7 +323,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
-                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center py-2 px-4"
                         >
                             <Checkbox
                                 className="flex-item-noshrink mrO-5"
@@ -353,7 +353,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                         </li>
                     ))}
                     {list.length === 0 && !search && (
-                        <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
+                        <li key="empty" className="dropdown-item w100 py-2 px-4">
                             {c('Info').t`No label found`}
                         </li>
                     )}
@@ -373,7 +373,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 </ul>
             </div>
             <hr className="m-0 flex-item-noshrink" />
-            <div className={clsx(['px1 mt-4 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <div className={clsx(['px-4 mt-4 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}
@@ -385,7 +385,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Label').t`Always label sender's emails`}
                 </Checkbox>
             </div>
-            <div className="px1 mt-4 flex-item-noshrink">
+            <div className="px-4 mt-4 flex-item-noshrink">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}

@@ -369,7 +369,7 @@ export const Sandbox = () => {
                         </Label>
                     ))}
                 </div>
-                <div className="border rounded w60 relative flex flex-justify-center flex-align-items-center p4">
+                <div className="border rounded w60 relative flex flex-justify-center flex-align-items-center p-14">
                     <div className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                         <div
                             className={assembleClasses(selectedPadding)}
@@ -381,7 +381,7 @@ export const Sandbox = () => {
                 </div>
             </div>
             <strong>Classes:</strong>{' '}
-            <code className="inline-block user-select rounded-sm p0-25 px0-5 border bg-weak text-norm text-sm hidden-empty">
+            <code className="inline-block user-select rounded-sm py-1 px-2 border bg-weak text-norm text-sm hidden-empty">
                 {assembleClasses(selectedPadding)}
             </code>
         </>

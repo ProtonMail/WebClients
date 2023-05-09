@@ -189,15 +189,15 @@ const AddressesRecipientItem = ({
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     {(icon || loading) && (
-                        <span className="flex pl0-5 flex-item-noshrink">
+                        <span className="flex pl-2 flex-item-noshrink">
                             <EncryptionStatusIcon loading={loading} {...icon} />
                         </span>
                     )}
                     <Tooltip title={title}>
                         <span
                             className={clsx([
-                                'composer-addresses-item-label my-auto text-ellipsis pr0-5',
-                                icon || loading || !valid ? 'pl0-25' : 'pl0-5',
+                                'composer-addresses-item-label my-auto text-ellipsis pr-2',
+                                icon || loading || !valid ? 'pl-1' : 'pl-2',
                             ])}
                             contentEditable={editableMode}
                             onDoubleClick={handleDoubleClick}
@@ -212,7 +212,7 @@ const AddressesRecipientItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove flex flex-item-noshrink p0-5 relative interactive-pseudo-inset"
+                        className="composer-addresses-item-remove flex flex-item-noshrink p-2 relative interactive-pseudo-inset"
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >

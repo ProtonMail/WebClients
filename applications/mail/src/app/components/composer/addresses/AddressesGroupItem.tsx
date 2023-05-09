@@ -104,12 +104,12 @@ const AddressesGroupItem = ({
                 {...dragHandlers}
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
-                    <span className="inline-flex composer-addresses-item-icon pl0-5 ml-0.5 pr0-25 no-pointer-events-children h100">
+                    <span className="inline-flex composer-addresses-item-icon px-2 ml-0.5 no-pointer-events-children h100">
                         <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
-                            className="composer-addresses-item-label my-auto pl0-25 text-ellipsis pr0-5"
+                            className="composer-addresses-item-label my-auto pl-1 pr-2 text-ellipsis"
                             onClick={() => showModalCallback(true)}
                             onContextMenu={handleContextMenu}
                         >
@@ -121,7 +121,7 @@ const AddressesGroupItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove inline-flex p0-5 no-pointer-events-children h100 relative interactive-pseudo-inset"
+                        className="composer-addresses-item-remove inline-flex p-2 no-pointer-events-children h100 relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
                         <Icon name="cross" size={12} className="m-auto" />

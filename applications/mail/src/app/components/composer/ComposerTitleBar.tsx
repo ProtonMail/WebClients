@@ -21,7 +21,7 @@ const TitleBarButton = ({ onClick, children, className = '', title, disabled = f
         <Tooltip title={title}>
             <button
                 type="button"
-                className={clsx(['composer-title-bar-button interactive-pseudo-inset relative flex p0-5', className])}
+                className={clsx(['composer-title-bar-button interactive-pseudo-inset relative flex p-2', className])}
                 onClick={onClick}
                 disabled={disabled}
                 data-testid={dataTestId}
@@ -101,13 +101,13 @@ const ComposerTitleBar = ({
 
     return (
         <header
-            className="composer-title-bar ui-prominent flex flex-row flex-align-items-stretch flex-nowrap pl1 pr0-25 w100"
+            className="composer-title-bar ui-prominent flex flex-row flex-align-items-stretch flex-nowrap pl-4 pr-1 w100"
             data-testid="composer:header"
             onDoubleClick={handleDoubleClick}
         >
             <span
                 className={clsx([
-                    'flex-item-fluid p0-5 pr1 pl0-75 text-ellipsis user-select-none',
+                    'flex-item-fluid p-2 pr-4 text-ellipsis user-select-none',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}

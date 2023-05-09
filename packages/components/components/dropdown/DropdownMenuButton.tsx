@@ -1,8 +1,7 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
     loading?: boolean;
@@ -34,8 +33,8 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
                 ref={ref}
                 type="button"
                 disabled={disabled || loading}
-                className={classnames([
-                    'dropdown-item-button w100 pr1 pl1 pt0-5 pb0-5',
+                className={clsx([
+                    'dropdown-item-button w100 px-4 py-2',
                     isSelected && 'dropdown-item--is-selected',
                     className,
                 ])}

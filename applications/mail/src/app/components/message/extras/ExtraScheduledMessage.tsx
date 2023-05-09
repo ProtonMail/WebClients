@@ -126,11 +126,11 @@ const ExtraScheduledMessage = ({ message }: Props) => {
 
     return (
         <div
-            className="bg-info rounded border border-info pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap"
+            className="bg-info rounded border border-info pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
             data-testid="message:schedule-banner"
         >
             <Icon name="clock" className="mt-1 ml-0.5 flex-item-noshrink" />
-            <span className={clsx(['pl0-5 pr0-5 flex-item-fluid mt-1', isScheduleSentShortly && 'mb-1'])}>
+            <span className={clsx(['px-2 flex-item-fluid mt-1', isScheduleSentShortly && 'mb-1'])}>
                 {getScheduleBannerMessage()}
             </span>
             {!isScheduleSentShortly ? (

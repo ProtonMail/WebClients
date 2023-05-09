@@ -11,10 +11,10 @@ import {
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
 import { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
-import { classnames } from '../../../helpers';
 import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
 
@@ -63,7 +63,7 @@ const CycleItemView = ({
 }) => {
     return (
         <>
-            <div className="flex-item-fluid pl0-5">
+            <div className="flex-item-fluid pl-2">
                 <div className="flex flex-align-items-center">
                     <div className="flex-item-fluid-auto mr-4">
                         <strong className="text-lg">{text}</strong>
@@ -125,7 +125,7 @@ const CycleItem = ({
 };
 
 const singleClassName =
-    'p1 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
+    'p-4 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
 
 const getMonthlySuffix = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -217,10 +217,7 @@ const SubscriptionCycleSelector = ({
                             <div className="flex flex-justify-space-between">
                                 <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
                                 <span
-                                    className={classnames([
-                                        'flex-item-noshrink',
-                                        cycle !== cycleSelected && 'color-success',
-                                    ])}
+                                    className={clsx(['flex-item-noshrink', cycle !== cycleSelected && 'color-success'])}
                                 >
                                     {getDiscountPrice(totals[cycle].discount, currency)}
                                 </span>
@@ -239,8 +236,8 @@ const SubscriptionCycleSelector = ({
                 return (
                     <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4">
                         <button
-                            className={classnames([
-                                'w100 p1 plan-cycle-button flex flex-nowrap border rounded text-left',
+                            className={clsx([
+                                'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
                                 isSelected && 'border-primary',
                                 isSelected && 'border-2',
                             ])}

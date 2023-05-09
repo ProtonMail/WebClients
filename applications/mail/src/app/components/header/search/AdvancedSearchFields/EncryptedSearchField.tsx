@@ -1,8 +1,6 @@
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
 import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState, useUser } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
@@ -108,12 +106,12 @@ const EncryptedSearchField = ({ esState }: Props) => {
     );
     const info = <Info questionMark title={esExplanation} />;
     const esHeader = showToggle ? (
-        <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center w100">
+        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center w100">
             {esTitle}
             {info}
         </Label>
     ) : (
-        <div className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center">
+        <div className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center">
             {esTitle}
             {info}
         </div>
@@ -175,7 +173,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     };
 
     return (
-        <div className="pt0">
+        <div className="pt-0">
             <div className="flex flex-column">
                 <div className="flex flex-nowrap flex-align-items-center mb-4">
                     {esHeader}

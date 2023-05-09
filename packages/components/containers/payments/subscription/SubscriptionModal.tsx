@@ -545,7 +545,7 @@ const SubscriptionModal = ({
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
                     <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
+                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
                             <div className="max-w50e">
                                 <PlanCustomization
                                     loading={loadingCheck}
@@ -592,11 +592,12 @@ const SubscriptionModal = ({
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                     <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
+                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
                             <div className="mx-auto max-w37e subscriptionCheckout-options ">
                                 {!disableCycleSelector && (
                                     <>
-                                        <h2 className="text-2xl text-bold mb-4">{c('Label').t`Subscription options`}</h2>
+                                        <h2 className="text-2xl text-bold mb-4">{c('Label')
+                                            .t`Subscription options`}</h2>
                                         <div className="mb-8">
                                             <SubscriptionCycleSelector
                                                 mode="buttons"

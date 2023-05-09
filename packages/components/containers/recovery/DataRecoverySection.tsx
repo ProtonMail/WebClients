@@ -124,7 +124,7 @@ const DataRecoverySection = () => {
 
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonic-phrase-toggle">
+                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="mnemonic-phrase-toggle">
                                     <span className="mr-2">{c('label').t`Recovery phrase`}</span>
                                     <Info
                                         title={c('Info')
@@ -132,7 +132,7 @@ const DataRecoverySection = () => {
                                     />
                                 </label>
                             </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="flex-item-fluid pt0-5">
+                            <SettingsLayoutRight className="flex-item-fluid pt-2">
                                 {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
                                     <Button color="norm" onClick={() => setGenerateMnemonicModalButtonOpen(true)}>
                                         {c('Action').t`Update recovery phrase`}
@@ -186,10 +186,7 @@ const DataRecoverySection = () => {
                         {trustedDeviceRecoveryFeature.feature?.Value && (
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
-                                    <label
-                                        className="pt0 mb-2 md:mb-0 text-semibold"
-                                        htmlFor="device-recovery-toggle"
-                                    >
+                                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="device-recovery-toggle">
                                         <span className="mr-2">{c('label').t`Trusted device recovery`}</span>
                                         <Info
                                             title={c('Info')
@@ -197,7 +194,7 @@ const DataRecoverySection = () => {
                                         />
                                     </label>
                                 </SettingsLayoutLeft>
-                                <SettingsLayoutRight className="flex-item-fluid pt0-5">
+                                <SettingsLayoutRight className="flex-item-fluid pt-2">
                                     <div className="flex flex-align-items-center">
                                         <Toggle
                                             className="mr-2"
@@ -221,7 +218,7 @@ const DataRecoverySection = () => {
                         )}
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="recoveryFile">
+                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recoveryFile">
                                     <span className="mr-2">{c('Title').t`Recovery file`}</span>
                                     <Info
                                         title={c('Info')

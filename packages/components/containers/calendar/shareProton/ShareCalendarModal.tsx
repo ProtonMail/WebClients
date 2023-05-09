@@ -2,11 +2,16 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-
-
 import { Button, Href } from '@proton/atoms';
 import InputField from '@proton/components/components/v2/field/InputField';
-import { useApi, useGetAddressKeys, useGetDecryptedPassphraseAndCalendarKeys, useGetEncryptionPreferences, useLoading, useNotifications } from '@proton/components/hooks';
+import {
+    useApi,
+    useGetAddressKeys,
+    useGetDecryptedPassphraseAndCalendarKeys,
+    useGetEncryptionPreferences,
+    useLoading,
+    useNotifications,
+} from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
@@ -28,11 +33,20 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-
-
-import { AddressesAutocompleteTwo, AddressesInput, AddressesInputItem, Icon, Loader, ModalTwo as Modal, ModalTwoContent as ModalContent, ModalTwoFooter as ModalFooter, ModalTwoHeader as ModalHeader, ModalProps, RadioGroup } from '../../../components';
+import {
+    AddressesAutocompleteTwo,
+    AddressesInput,
+    AddressesInputItem,
+    Icon,
+    Loader,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    RadioGroup,
+} from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
-
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,
@@ -160,7 +174,7 @@ const loadRecipient = async ({
 const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }: ExtendedRecipient) => {
     if (loading) {
         return {
-            icon: <Loader className="icon-16p pl0-5 m-auto flex flex-item-noshrink" />,
+            icon: <Loader className="icon-16p pl-2 m-auto flex flex-item-noshrink" />,
         };
     }
     if (error) {
@@ -176,7 +190,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     }
     return {
         icon: (
-            <span className="inline-flex pl0-5 flex-item-noshrink my-auto">
+            <span className="inline-flex pl-2 flex-item-noshrink my-auto">
                 <Icon size={16} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
             </span>
         ),
@@ -438,7 +452,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 labelTooltipTitle={labelTooltip}
                 label={Name}
                 labelProps={{
-                    className: clsx(['pt0-25 pb0-25', error && 'pl0-25']),
+                    className: clsx(['py-1', error && 'pl-1']),
                 }}
                 icon={icon}
                 iconTooltipTitle={iconTooltip}
@@ -508,7 +522,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 className="min-w5e unstyled"
                                 inputClassName={clsx([
                                     !totalRecipients && 'my-0.5',
-                                    !!totalRecipients && 'p0 rounded-none',
+                                    !!totalRecipients && 'p-0 rounded-none',
                                 ])}
                                 title={addressesInputText}
                                 onKeyDown={onAutocompleteKeyDown}
@@ -522,7 +536,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                         }
                         items={items}
                         error={maxReachedError}
-                        className={clsx(['multi-select-container', !!totalRecipients && 'px0-5 py0-15'])}
+                        className={clsx(['multi-select-container', !!totalRecipients && 'px-2 py-0.5'])}
                         label={addressesInputText}
                     />
                 </div>

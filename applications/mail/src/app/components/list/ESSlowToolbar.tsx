@@ -16,7 +16,7 @@ const ESSlowToolbar = () => {
     }, []);
 
     const dropdownButton = (
-        <InlineLinkButton className="pl0-25 pr0-25" onClick={openDropdown} key="dropdownButton">
+        <InlineLinkButton className="px-1" onClick={openDropdown} key="dropdownButton">
             {
                 // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
                 c('Action').t`Refine it`
@@ -24,7 +24,7 @@ const ESSlowToolbar = () => {
         </InlineLinkButton>
     );
     const toggleOffButton = (
-        <InlineLinkButton className="pl0-25 pr0-25" onClick={setTemporaryToggleOff} key="toggleOffButton">
+        <InlineLinkButton className="px-1" onClick={setTemporaryToggleOff} key="toggleOffButton">
             {
                 // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
                 c('Action').t`exclude message content`
@@ -33,11 +33,11 @@ const ESSlowToolbar = () => {
     );
 
     return (
-        <div className="bg-weak rounded m-4 px1 py0-5 flex flex-nowrap">
+        <div className="bg-weak rounded m-4 px-4 py-2 flex flex-nowrap">
             <div className="flex-item-noshrink">
                 <Icon name="magnifier" className="mr-2" />
             </div>
-            <div className="flex-item-fluid pl0-25">
+            <div className="flex-item-fluid pl-1">
                 {
                     // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
                     c('Info')

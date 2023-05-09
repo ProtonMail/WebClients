@@ -1,6 +1,7 @@
 import { Fragment, ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Icon from '../icon/Icon';
 
 interface Props {
@@ -19,7 +20,7 @@ const Breadcrumb = ({ list, current = 0, onClick, className, getIsDisabled }: Pr
     };
 
     return (
-        <ul className={classnames(['breadcrumb-container unstyled inline-flex pl0-5 pr0-5', className])}>
+        <ul className={clsx(['breadcrumb-container unstyled inline-flex px-2', className])}>
             {list.map((item, index) => {
                 const key = index.toString();
                 const isLast = index === list.length - 1;

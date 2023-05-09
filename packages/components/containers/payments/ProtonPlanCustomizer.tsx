@@ -1,10 +1,6 @@
 import { ComponentPropsWithoutRef, ReactElement, ReactNode, useState } from 'react';
 
-
-
 import { c, msgid } from 'ttag';
-
-
 
 import {
     ADDON_NAMES,
@@ -18,9 +14,9 @@ import {
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import { Currency, Cycle, Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, Price } from '../../components';
-import { classnames } from '../../helpers';
 
 const AddonKey = {
     [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
@@ -83,7 +79,7 @@ const ButtonNumberInput = ({
             <button
                 type="button"
                 title={c('Action').t`Decrease`}
-                className={classnames(['p0-5 flex', isDecDisabled && 'color-disabled'])}
+                className={clsx(['p-2 flex', isDecDisabled && 'color-disabled'])}
                 disabled={isDecDisabled}
                 onClick={() => {
                     if (!isValidTmpValue || tmpValue === undefined) {
@@ -126,7 +122,7 @@ const ButtonNumberInput = ({
             <button
                 type="button"
                 title={c('Action').t`Increase`}
-                className={classnames(['p0-5 flex', isIncDisabled && 'color-disabled'])}
+                className={clsx(['p-2 flex', isIncDisabled && 'color-disabled'])}
                 disabled={isIncDisabled}
                 onClick={() => {
                     if (!isValidTmpValue || tmpValue === undefined) {
@@ -209,7 +205,7 @@ const AccountSizeCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
                 >
                     {c('Info').t`Number of users`}
                     <Info
@@ -247,7 +243,7 @@ const AdditionalOptionsCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
                 >
                     {c('Info').t`Custom email domains`}
                     <Info
@@ -278,7 +274,7 @@ const ProtonPlanCustomizer = ({
     const supportedAddons = getSupportedAddons(planIDs);
 
     return (
-        <div className={classnames(['plan-customiser', className])} {...rest}>
+        <div className={clsx(['plan-customiser', className])} {...rest}>
             {Object.entries(supportedAddons).map(([addonName]) => {
                 const addon = plansMap[addonName];
 

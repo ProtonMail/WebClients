@@ -1,6 +1,7 @@
 import { Ref, forwardRef } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Icon, { IconName } from './Icon';
 
 const TYPES = {
@@ -19,17 +20,12 @@ interface Props {
 }
 
 const RoundedIcon = (
-    { className = '', iconClassName, type = 'success', padding = 'p0-5', title, name, ...rest }: Props,
+    { className = '', iconClassName, type = 'success', padding = 'p-2', title, name, ...rest }: Props,
     ref: Ref<HTMLSpanElement>
 ) => {
     return (
         <span
-            className={classnames([
-                'inline-flex rounded-50 flex-item-noshrink',
-                className,
-                padding,
-                type && TYPES[type],
-            ])}
+            className={clsx(['inline-flex rounded-50 flex-item-noshrink', className, padding, type && TYPES[type]])}
             title={title}
             ref={ref}
         >

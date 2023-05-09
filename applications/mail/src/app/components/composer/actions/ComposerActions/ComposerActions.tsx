@@ -89,7 +89,7 @@ const ComposerActions = ({
             className={clsx(['composer-actions flex-item-noshrink flex max-w100', className])}
             onClick={addressesBlurRef.current}
         >
-            <div className="flex flex-row-reverse flex-align-self-center w100 ml-2 mr-6 pl1-25 pr0-25 mb-4">
+            <div className="flex flex-row-reverse flex-align-self-center w100 ml-2 mr-6 pl-5 pr-1 mb-4">
                 <ComposerScheduleSendSpotlight
                     anchorRef={scheduleSendSpotlight.anchorRef}
                     onDisplayed={scheduleSendSpotlight.spotlight.onDisplayed}
@@ -107,7 +107,7 @@ const ComposerActions = ({
                                     data-testid="composer:send-button"
                                 >
                                     <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
-                                    <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
+                                    <span className="px-4 no-mobile">{c('Action').t`Send`}</span>
                                 </Button>
                             </Tooltip>
                         }
@@ -154,7 +154,7 @@ const ComposerActions = ({
                             onChange={onChange}
                         />
                     </div>
-                    <div className="flex-item-fluid flex pr1">
+                    <div className="flex-item-fluid flex pr-4">
                         <span className="mr-2 m-auto no-mobile color-weak">{dateMessage}</span>
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton

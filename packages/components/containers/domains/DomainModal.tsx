@@ -25,6 +25,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { clearExternalFlags, getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import clsx from '@proton/utils/clsx';
 
 import {
     ButtonGroup,
@@ -39,7 +40,6 @@ import {
     Tooltip,
     useFormErrors,
 } from '../../components';
-import { classnames } from '../../helpers';
 import {
     useApi,
     useDomains,
@@ -401,8 +401,8 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         <Button
                             icon
                             key={label}
-                            className={classnames([
-                                'flex flex-nowrap flex-align-items-center on-mobile-pl0-25 on-mobile-pr0-25',
+                            className={clsx([
+                                'flex flex-nowrap flex-align-items-center',
                                 index === step && 'is-selected',
                             ])}
                             disabled={

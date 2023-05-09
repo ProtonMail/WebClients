@@ -43,8 +43,9 @@ import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getHasLegacyPlans, getPlan, getPrimaryPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { Subscription } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
-import { classnames, generateUID } from '../../helpers';
+import { generateUID } from '../../helpers';
 import { AuthenticatedBugModal } from '../support';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 
@@ -192,7 +193,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                 size={{ height: DropdownSizeUnit.Dynamic, maxHeight: DropdownSizeUnit.Viewport }}
             >
                 <DropdownMenu>
-                    <div className="px1 py0-5">
+                    <div className="px-4 py-2">
                         {organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                             <div
                                 className="text-ellipsis-two-lines text-bold"
@@ -205,7 +206,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
                         {nameToDisplay ? (
                             <div
-                                className={classnames([
+                                className={clsx([
                                     'text-ellipsis-two-lines',
                                     (!organizationName || APP_NAME === APPS.PROTONVPN_SETTINGS) && 'text-bold',
                                 ])}
@@ -219,7 +220,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         {Email ? (
                             <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center opacity-on-hover-container">
                                 <span
-                                    className={classnames([
+                                    className={clsx([
                                         'text-ellipsis user-select',
                                         !nameToDisplay &&
                                             (!organizationName || APP_NAME === APPS.PROTONVPN_SETTINGS) &&
@@ -246,7 +247,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         ) : null}
 
                         {planName ? (
-                            <div className="pt0-25">
+                            <div className="pt-1">
                                 <span className="badge-label-primary" data-testid="userdropdown:label:plan-name">
                                     {planName}
                                 </span>
@@ -376,7 +377,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                     <hr className="my-2" />
 
                     {isSSOMode ? (
-                        <div className="px1 pt0-5 pb0-75">
+                        <div className="px-4 pt-2 pb-3">
                             <ButtonLike
                                 as="a"
                                 href={switchHref}
@@ -401,7 +402,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         </div>
                     ) : null}
 
-                    <div className="px1 pb0-75">
+                    <div className="px-4 pb-3">
                         <Button
                             shape="solid"
                             color="norm"

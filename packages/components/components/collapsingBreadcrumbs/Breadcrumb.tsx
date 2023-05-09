@@ -1,13 +1,7 @@
 import { LiHTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
 
-
-
 import { Button } from '@proton/atoms/';
-
-
-
-import { classnames } from '../../helpers';
-
+import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     title?: string;
@@ -21,15 +15,15 @@ const Breadcrumb = (
     { title, children, onClick, active, noShrink, className, ...rest }: Props,
     ref: Ref<HTMLLIElement>
 ) => {
-    const textClass = classnames([
-        'text-pre p0-25 m-0 text-ellipsis no-pointer-events-children',
+    const textClass = clsx([
+        'text-pre p-1 m-0 text-ellipsis no-pointer-events-children',
         active ? 'text-strong' : 'color-weak',
     ]);
     return (
         <li
             {...rest}
             ref={ref}
-            className={classnames(['collapsing-breadcrumb', noShrink && 'collapsing-breadcrumb--no-shrink', className])}
+            className={clsx(['collapsing-breadcrumb', noShrink && 'collapsing-breadcrumb--no-shrink', className])}
         >
             {onClick ? (
                 <Button shape="ghost" color="weak" title={title} onClick={onClick} className={textClass}>

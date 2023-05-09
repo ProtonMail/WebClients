@@ -180,7 +180,7 @@ const AttachmentList = ({
                 outsideKey={outsideKey}
             />
             <div
-                className="flex flex-row w100 pt0-5 flex-justify-space-between composer-attachment-list-wrapper"
+                className="flex flex-row w100 pt-2 flex-justify-space-between composer-attachment-list-wrapper"
                 data-testid="attachment-list:header"
             >
                 <TagButton
@@ -238,8 +238,8 @@ const AttachmentList = ({
                     </div>
                 )}
             </div>
-            {expanded && ( // composer-attachments-expand pt1 pb0-5
-                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList flex-gap-0-5 py0-5">
+            {expanded && ( // composer-attachments-expand
+                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList flex-gap-0-5 py-2">
                     {attachmentsToShow.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}

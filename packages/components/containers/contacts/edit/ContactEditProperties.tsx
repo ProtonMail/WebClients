@@ -151,7 +151,7 @@ const ContactEditProperties = (
                 )}
             </h3>
             {field && ['email'].includes(field) && (
-                <span className="text-semibold ml-5 pl0-25 mb-2">{c('Info').t`Primary`}</span>
+                <span className="text-semibold ml-5 pl-1 mb-2">{c('Info').t`Primary`}</span>
             )}
             {sortable ? (
                 <OrderableContainer helperClass="row--orderable" onSortEnd={handleSortEnd} useDragHandle>

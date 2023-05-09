@@ -28,9 +28,10 @@ const StepPrepareEmailsSummary = ({ isSelected }: Props) => {
     return (
         <>
             <StepPrepareEmailsSummaryText label={fields.importLabel} errors={errors} summary={summary} />
-            <UnderlineButton className="flex-align-self-start pb0" onClick={() => handleDisplayCustomizeModal(true)}>{c(
-                'Action'
-            ).t`Customize`}</UnderlineButton>
+            <UnderlineButton
+                className="flex-align-self-start pb-0"
+                onClick={() => handleDisplayCustomizeModal(true)}
+            >{c('Action').t`Customize`}</UnderlineButton>
             {renderCustomizeModal && (
                 <CustomizeMailImportModal
                     displayCategories={provider === ImportProvider.GOOGLE}

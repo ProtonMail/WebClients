@@ -31,7 +31,7 @@ export function SearchView() {
                 showOptionsForNoSelection={false}
             />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="max-w100 text-pre pt1 pb1 pl0-75 pr0-75 border-bottom section--header text-strong">
+                <div className="max-w100 text-pre py-4 px-3 border-bottom section--header text-strong">
                     {searchView.isLoading
                         ? c('Title').t`Searching…`
                         : c('Title').ngettext(

@@ -56,7 +56,7 @@ const CreateEventCalendarSelect = ({
 
     if (frozen) {
         return (
-            <div className="pt0-5 pb0-5 flex">
+            <div className="py-2 flex">
                 <span className="text-ellipsis" title={name}>
                     {name}
                 </span>

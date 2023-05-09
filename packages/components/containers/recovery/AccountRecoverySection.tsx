@@ -55,7 +55,7 @@ const AccountRecoverySection = () => {
         <SettingsSection>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">
+                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">
                         {c('Label').t`Recovery email address`}
                     </label>
                 </SettingsLayoutLeft>
@@ -87,7 +87,7 @@ const AccountRecoverySection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="pt0 mb-2 md:mb-0 text-semibold" htmlFor="phoneInput">
+                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="phoneInput">
                         {c('label').t`Recovery phone number`}
                     </label>
                 </SettingsLayoutLeft>

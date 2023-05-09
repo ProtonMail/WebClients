@@ -164,7 +164,7 @@ const AdvancedSearch = ({
 
     return (
         <form name="advanced-search" onSubmit={handleSubmit} onReset={handleReset}>
-            <div className="flex border-bottom pl1 pr1 pt0-25 pb0-5">
+            <div className="flex border-bottom px-4 pt-1 pb-2">
                 <SearchField
                     unstyled
                     value={model.keyword}
@@ -188,7 +188,7 @@ const AdvancedSearch = ({
                     }
                 />
             </div>
-            <div className={clsx(['pt1 px1-5 pb0'])}>
+            <div className={clsx(['pt-4 px-5 pb-0'])}>
                 {showEncryptedSearch && <EncryptedSearchField esState={esState} />}
                 <div>
                     <LocationField
@@ -210,7 +210,7 @@ const AdvancedSearch = ({
                             </Button>
                         </div>
                         <div className="mb-2 flex flex-justify-space-between on-mobile-flex-column">
-                            <div className={clsx(['flex-item-fluid', isNarrow ? 'on-mobile-pr0' : 'pr1'])}>
+                            <div className={clsx(['flex-item-fluid', !isNarrow && 'pr-4'])}>
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
                                 <DateInput
