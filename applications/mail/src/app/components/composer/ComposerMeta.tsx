@@ -42,11 +42,11 @@ const ComposerMeta = ({
     };
 
     return (
-        <div className="composer-meta flex-item-noshrink ml-2 mr-5 pl1-25 pr0-25">
+        <div className="composer-meta flex-item-noshrink ml-2 mr-5 pl-4 pr-1">
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w100">
                 <Label
                     htmlFor={`from-${uid}`}
-                    className={clsx(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
+                    className={clsx(['composer-meta-label pt-0 text-semibold', disabled && 'placeholder'])}
                 >
                     {c('Info').t`From`}
                 </Label>
@@ -69,7 +69,7 @@ const ComposerMeta = ({
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center mt-0 mb-2">
                 <Label
                     htmlFor={`subject-${uid}`}
-                    className={clsx(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
+                    className={clsx(['composer-meta-label pt-0 text-semibold', disabled && 'placeholder'])}
                 >
                     {c('Info').t`Subject`}
                 </Label>

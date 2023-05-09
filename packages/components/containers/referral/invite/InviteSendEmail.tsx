@@ -117,7 +117,7 @@ const InviteSendEmail = () => {
             <div className="flex flex-gap-0-5 flex-nowrap flex-align-items-end on-mobile-flex-column rounded">
                 <div className="flex-item-fluid-auto">
                     <div
-                        className="addresses-wrapper field hauto flex flex-gap-0-5 px0-5"
+                        className="addresses-wrapper field hauto flex flex-gap-0-5 px-2"
                         onClick={() => {
                             anchorRef.current?.focus();
                         }}
@@ -136,7 +136,7 @@ const InviteSendEmail = () => {
                         <div className="flex-item-fluid flex referral-program-invite-input">
                             <AddressesAutocomplete
                                 id="recipientsAutocomplete"
-                                className="border-none p0-25"
+                                className="border-none p-1"
                                 ref={anchorRef}
                                 anchorRef={anchorRef}
                                 loading={contactEmailIsLoading}

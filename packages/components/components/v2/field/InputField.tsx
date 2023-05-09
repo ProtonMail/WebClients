@@ -1,22 +1,25 @@
-import { ElementType, ForwardedRef, ReactElement, ReactNode, Ref, forwardRef, useContext, useRef, useState } from 'react';
+import {
+    ElementType,
+    ForwardedRef,
+    ReactElement,
+    ReactNode,
+    Ref,
+    forwardRef,
+    useContext,
+    useRef,
+    useState,
+} from 'react';
 import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
-
-
 
 import { isFocusable } from 'tabbable';
 
-
-
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
-
-
 
 import { FormContext } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
-
 
 export type NodeOrBoolean = ReactNode | boolean;
 
@@ -136,7 +139,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                         originalPlacement="top-end"
                         isOpen={isTooltipOpen}
                     >
-                        <span className="flex flex-item-noshrink p0-25">
+                        <span className="flex flex-item-noshrink p-1">
                             <Icon name="exclamation-circle-filled" className={iconClassName} />
                         </span>
                     </Tooltip>

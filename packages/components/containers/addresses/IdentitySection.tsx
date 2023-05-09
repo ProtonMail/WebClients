@@ -51,11 +51,11 @@ const IdentitySection = () => {
                 <>
                     <SettingsLayout>
                         <SettingsLayoutLeft>
-                            <label className="on-mobile-pb0 text-semibold" htmlFor="addressSelector">
+                            <label className="pb-0 text-semibold" htmlFor="addressSelector">
                                 {c('Label').t`Email address`}
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="on-mobile-pb0 flex flex-row flex-nowrap">
+                        <SettingsLayoutRight className="pb-0 flex flex-row flex-nowrap">
                             <SelectTwo<Address>
                                 id="addressSelector"
                                 onValue={(address) => {

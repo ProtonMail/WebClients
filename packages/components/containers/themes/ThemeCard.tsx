@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 import './ThemeCard.scss';
 
@@ -25,7 +24,7 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
             color={selected ? 'norm' : 'weak'}
             id={id}
             fullWidth
-            className={classnames(['theme-card-button', selected && 'is-active no-pointer-events text-bold'])}
+            className={clsx(['theme-card-button', selected && 'is-active no-pointer-events text-bold'])}
             aria-pressed={selected}
             onClick={onChange}
             disabled={disabled}
@@ -35,7 +34,7 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
         >
             <span className="flex flex-nowrap flex-column flex-align-items-center">
                 <img alt="" src={src} className="mb-2 theme-card-image rounded-sm on-rtl-mirror" />
-                <div className="py0-25">{label}</div>
+                <div className="py-1">{label}</div>
             </span>
         </Button>
     );

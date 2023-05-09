@@ -286,7 +286,7 @@ const EventForm = ({
             id={NOTIFICATION_INPUT_ID}
             icon="bell"
             title={c('Label').t`Notifications`}
-            labelClassName={isDrawerApp ? '' : 'pb0-5 mt-2 md:mt-0'}
+            labelClassName={isDrawerApp ? '' : 'pb-2 mt-2 md:mt-0'}
         >
             {isAllDay ? allDayNotificationsRow : partDayNotificationsRow}
         </IconRow>

@@ -56,7 +56,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
             </ToolbarButton>
             <Vr />
             <span
-                className="pr0-5 my-auto flex-item-noshrink on-tablet-flex-shrink text-ellipsis block"
+                className="pr-2 my-auto flex-item-noshrink on-tablet-flex-shrink text-ellipsis block"
                 title={currentRange}
             >
                 {currentRange}

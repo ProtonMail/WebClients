@@ -66,7 +66,7 @@ const TVContainer = () => {
                             pill
                             className="text-uppercase text-bold mt-8 mb-6 mx-auto"
                         >
-                            <span className="p0-5 inline-flex">
+                            <span className="p-2 inline-flex">
                                 {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
                             </span>
                         </PrimaryButton>
@@ -99,7 +99,7 @@ const TVContainer = () => {
                         <VpnLogo />
                     </Href>
                 </div>
-                <h3 className="mb-0 pl0-25 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
+                <h3 className="mb-0 pl-1 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
             </div>
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
                 <div className="m-auto p2 flex-item-noshrink max-w30e">{render()}</div>

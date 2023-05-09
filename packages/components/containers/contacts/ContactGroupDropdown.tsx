@@ -6,6 +6,7 @@ import { Button, ButtonProps } from '@proton/atoms';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import clsx from '@proton/utils/clsx';
 
 import { DropdownButton, DropdownSizeUnit } from '../../components';
 import Dropdown from '../../components/dropdown/Dropdown';
@@ -15,7 +16,7 @@ import SearchInput from '../../components/input/SearchInput';
 import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
 import Tooltip from '../../components/tooltip/Tooltip';
-import { classnames, generateUID } from '../../helpers';
+import { generateUID } from '../../helpers';
 import { useContactGroups, useUser } from '../../hooks';
 import { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
@@ -184,7 +185,7 @@ const ContactGroupDropdown = ({
                     onClick={handleClick}
                     hasCaret={!forToolbar}
                     disabled={disabled}
-                    className={classnames([forToolbar ? 'button-for-icon' : 'flex flex-align-items-center', className])}
+                    className={clsx([forToolbar ? 'button-for-icon' : 'flex flex-align-items-center', className])}
                     {...rest}
                 >
                     {children}
@@ -233,7 +234,7 @@ const ContactGroupDropdown = ({
                                     return (
                                         <li
                                             key={ID}
-                                            className="dropdown-item w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                                            className="dropdown-item w100 flex flex-nowrap flex-align-items-center py-2 px-4"
                                         >
                                             <Checkbox
                                                 className="flex-item-noshrink"
@@ -263,7 +264,7 @@ const ContactGroupDropdown = ({
                             </ul>
                         ) : null}
                         {!filteredContactGroups.length && keyword ? (
-                            <div className="w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1">
+                            <div className="w100 flex flex-nowrap flex-align-items-center py-2 px-4">
                                 <Icon name="exclamation-circle" className="mr-2" />
                                 {c('Info').t`No group found`}
                             </div>

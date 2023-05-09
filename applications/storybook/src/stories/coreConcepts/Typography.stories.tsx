@@ -18,7 +18,7 @@ type CodeProps = {
 };
 
 const Code = ({ children }: CodeProps) => (
-    <code className="inline-block user-select rounded-sm p0-25 px0-5 border bg-weak text-norm text-sm">{children}</code>
+    <code className="inline-block user-select rounded-sm py-1 px-2 border bg-weak text-norm text-sm">{children}</code>
 );
 
 export const Font = () => (
@@ -281,7 +281,7 @@ export const Colors = () => (
         <TypoColorsTable />
 
         <h4>On ui-prominent background</h4>
-        <div className="ui-prominent rounded p1">
+        <div className="ui-prominent rounded p-4">
             <TypoColorsTable />
         </div>
     </>

@@ -3,9 +3,9 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
 import Icon from '../../components/icon/Icon';
-import { classnames } from '../../helpers';
 
 interface Props {
     children: ReactNode;
@@ -17,12 +17,9 @@ const TopBanner = ({ children, className, onClose }: Props) => {
     return (
         <div
             role="alert"
-            className={classnames([
-                'flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print',
-                className,
-            ])}
+            className={clsx(['flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print', className])}
         >
-            <div className="flex-item-fluid p0-5">{children}</div>
+            <div className="flex-item-fluid p-2">{children}</div>
             {onClose ? (
                 <Button
                     icon

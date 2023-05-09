@@ -32,7 +32,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
         <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative my-0">
             <Label
                 className={clsx([
-                    'composer-meta-label composer-meta-label-to pr0-5 text-semibold',
+                    'composer-meta-label composer-meta-label-to pr-2 text-semibold',
                     disabled && 'placeholder',
                 ])}
             >
@@ -46,7 +46,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                 data-testid="composer:address"
             >
                 <span
-                    className="text-ellipsis flex-item-fluid composer-addresses-fakefield-inner pr1"
+                    className="text-ellipsis flex-item-fluid composer-addresses-fakefield-inner pr-4"
                     title={title}
                     onClick={onFocus}
                     onFocus={onFocus}
@@ -123,7 +123,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                             tabIndex={-1}
                             onClick={handleContactModal('ToList')}
                             color="weak"
-                            className="pt0-25 pb0-25 flex-item-noshrink"
+                            className="py-1 flex-item-noshrink"
                             shape="ghost"
                             icon
                             data-testid="composer:to-button"

@@ -44,10 +44,10 @@ const GridItemCell = <T extends FileBrowserBaseItem>({
         <ItemCell
             {...getItemProps(item)}
             className={clsx([
-                columnIndex === 0 && 'pl0-5',
-                rowIndex === 0 && 'pt0-5',
-                columnIndex === itemsPerRow - 1 && 'pr0-5',
-                rowIndex === rowCount - 1 && 'pb0-5',
+                columnIndex === 0 && 'pl-2',
+                rowIndex === 0 && 'pt-2',
+                columnIndex === itemsPerRow - 1 && 'pr-2',
+                rowIndex === rowCount - 1 && 'pb-2',
             ])}
             style={style}
             isMultiSelectionDisabled={isMultiSelectionDisabled}

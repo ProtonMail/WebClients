@@ -4,9 +4,9 @@ import { Button, Href } from '@proton/atoms';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import Icon from '../../../components/icon/Icon';
-import { classnames } from '../../../helpers';
 
 const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
@@ -89,9 +89,9 @@ const ContactViewErrors = ({
 
     if (error instanceof Error) {
         return (
-            <div className="bg-danger rounded p0-5 mt-4 flex flex-nowrap flex-align-items-center">
+            <div className="bg-danger rounded p-2 mt-4 flex flex-nowrap flex-align-items-center">
                 <Icon name="exclamation-circle" className="flex-item-noshrink my-auto" />
-                <span className="flex-item-fluid pl0-5 pr0-5">
+                <span className="flex-item-fluid py-2">
                     {c('Warning').t`The contact data is corrupted and cannot be displayed.`}
                 </span>
             </div>
@@ -124,9 +124,9 @@ const ContactViewErrors = ({
     };
 
     return (
-        <div className={classnames([bgColor, 'rounded p0-5 mt-4 flex flex-nowrap flex-align-items-center'])}>
+        <div className={clsx([bgColor, 'rounded p-2 mt-4 flex flex-nowrap flex-align-items-center'])}>
             <Icon name="exclamation-circle" className="flex-item-noshrink my-auto" />
-            <span className="flex-item-fluid pl0-5 pr0-5">
+            <span className="flex-item-fluid py-2">
                 <span className="mr-2">{text}</span>
                 <Href
                     className="underline inline-block color-inherit"

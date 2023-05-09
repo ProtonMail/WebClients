@@ -50,13 +50,13 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
             <ModalTwoContent>
                 <Row>
                     <Label style={{ cursor: 'default' }}>{labelCount}</Label>
-                    <Field className="pt0-5">
+                    <Field className="pt-2">
                         <b>{count}</b>
                     </Field>
                 </Row>
                 <Row>
                     <Label style={{ cursor: 'default' }}>{c('Title').t`Total size`}</Label>
-                    <Field className="pt0-5">
+                    <Field className="pt-2">
                         <b>{humanSize(size)}</b>
                     </Field>
                 </Row>

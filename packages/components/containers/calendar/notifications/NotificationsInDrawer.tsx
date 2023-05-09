@@ -60,7 +60,7 @@ const NotificationsInDrawer = ({
             {canAdd && (
                 <div className={clsx(['mb-2', notifications.length === 0 && 'mt-2'])}>
                     <Button
-                        className="p0"
+                        className="p-0"
                         shape={addIcon ? 'ghost' : 'underline'}
                         color={addIcon ? 'weak' : 'norm'}
                         data-testid="add-notification"

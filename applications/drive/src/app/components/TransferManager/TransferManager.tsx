@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
-
-
 import { c, msgid } from 'ttag';
 
 import {
@@ -19,8 +17,6 @@ import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-
-
 import { useTransfersView } from '../../store';
 import { isTransferFailed } from '../../utils/transfer';
 import Header from './Header';
@@ -28,7 +24,6 @@ import HeaderButtons from './HeaderButtons';
 import Transfer from './TransferItem';
 import { Download, STATE_TO_GROUP_MAP, TransferGroup, TransferType, TransfersStats, Upload } from './transfer';
 import useTransferControls from './useTransferControls';
-
 
 interface TransferListEntry<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
@@ -313,7 +308,7 @@ const TransferManager = ({
                             />
                             {!isNarrow && (
                                 <HeaderButtons
-                                    className="transfers-manager-header-buttons p0-5 pr1"
+                                    className="transfers-manager-header-buttons p-2 pr-4"
                                     entries={entries}
                                 />
                             )}

@@ -11,7 +11,7 @@ export default {
 };
 
 const demoItemClasses =
-    'user-select flex flex-align-items-center py0-5 flex-justify-center bg-primary rounded-sm text-center';
+    'user-select flex flex-align-items-center py-2 flex-justify-center bg-primary rounded-sm text-center';
 const demoContainerClasses = 'border p1 rounded w100 relative flex flex-column flex-gap-0-5 scroll-if-needed text-2xs';
 
 export const WidthPercents = () => {

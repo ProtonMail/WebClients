@@ -61,7 +61,7 @@ function LabelsSection() {
                                 {c('Label').t`Use folder colors`}
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt0-5">
+                        <SettingsLayoutRight className="pt-2">
                             <ToggleEnableFolderColor id="folder-colors" />
                         </SettingsLayoutRight>
                     </SettingsLayout>
@@ -80,7 +80,7 @@ function LabelsSection() {
                                     />
                                 </label>
                             </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="pt0-5">
+                            <SettingsLayoutRight className="pt-2">
                                 <ToggleInheritParentFolderColor id="parent-folder-color" />
                             </SettingsLayoutRight>
                         </SettingsLayout>
