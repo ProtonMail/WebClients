@@ -7,8 +7,10 @@ if (BUILD_TARGET === 'chrome' && ENV === 'production') {
     if (window.self === window.top) {
         void browser.tabs.query({ active: true, currentWindow: true, status: 'complete' }).then(async (tabs) => {
             if (tabs.length === 0) {
-                const currentTab = await browser.tabs.getCurrent();
-                if (currentTab.id) await browser.tabs.remove(currentTab.id);
+                try {
+                    const currentTab = await browser.tabs.getCurrent();
+                    if (currentTab?.id) await browser.tabs.remove(currentTab.id);
+                } catch (_) {}
             }
         });
     }
