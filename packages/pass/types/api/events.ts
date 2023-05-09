@@ -4,7 +4,7 @@
  * specifies the keys we're consuming
  * in the extension sagas for now
  */
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { Address, Subscription, User } from '@proton/shared/lib/interfaces';
 
 import type { PassEventListResponse, SharesGetResponse } from './pass';
 
@@ -31,6 +31,7 @@ export type UserEvent = {
     Refresh?: number;
     User?: User;
     Addresses?: AddressEvent[];
+    Subscription?: Subscription;
 };
 
 export type AddressEvent = {
