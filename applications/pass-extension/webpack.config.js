@@ -40,7 +40,11 @@ module.exports = {
         ? { mode: 'production', devtool: 'source-map' }
         : { mode: 'development', devtool: 'inline-source-map' }),
     entry: {
-        background: './src/worker/index.ts',
+        background: {
+            import: './src/worker/index.ts',
+            filename: 'background.js',
+            chunkLoading: 'import-scripts',
+        },
         content: './src/content/index.ts',
         dropdown: nonAccessibleWebResource('./src/content/injections/apps/dropdown/index.tsx'),
         notification: nonAccessibleWebResource('./src/content/injections/apps/notification/index.tsx'),

@@ -29,13 +29,15 @@ const sanitizeWebpackConfig = (config) => {
     Object.keys(config.entry).forEach((entryName) => {
         if (!EXCLUDED_WEBPACK_ENTRIES.includes(entryName)) {
             const entries = [config.entry[entryName]].flat();
-            config.entry[entryName] = [
-                /* runtime code for hotmodule replacement */
-                'webpack/hot/dev-server',
-                /* dev-server client for web socket transport */
-                `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=wss:`,
-                ...entries,
-            ];
+            if (typeof config.entry[entryName] === 'string') {
+                config.entry[entryName] = [
+                    /* runtime code for hotmodule replacement */
+                    'webpack/hot/dev-server',
+                    /* dev-server client for web socket transport */
+                    `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=wss:`,
+                    ...entries,
+                ];
+            }
         }
     });
 
