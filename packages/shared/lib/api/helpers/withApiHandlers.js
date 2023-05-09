@@ -2,10 +2,16 @@ import { setRefreshCookies } from '@proton/shared/lib/api/auth';
 
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
-import { getUIDHeaderValue, getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
+import {
+    getDeviceVerificationHeaders,
+    getUIDHeaderValue,
+    getVerificationHeaders,
+    withUIDHeaders,
+} from '../../fetch/headers';
 import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
 import { getApiError } from './apiErrorHelper';
+import { createDeviceHandlers } from './deviceVerificationHandler';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from './refreshHandlers';
 import { retryHandler } from './retryHandler';
 
@@ -36,6 +42,8 @@ export default ({ call, UID, onMissingScopes, onVerification }) => {
     const refreshHandler = createRefreshHandlers((UID) => {
         return refresh(() => call(withUIDHeaders(UID, setRefreshCookies())), 1, RETRY_ATTEMPTS_MAX);
     });
+
+    const deviceVerificationHandler = createDeviceHandlers();
 
     return (options) => {
         const perform = (attempts, maxAttempts) => {
@@ -164,6 +172,28 @@ export default ({ call, UID, onMissingScopes, onVerification }) => {
                     };
 
                     return onVerification({ token: captchaToken, methods, onVerify, title }, e);
+                }
+
+                const ignoreDeviceVerification =
+                    Array.isArray(ignoreHandler) &&
+                    ignoreHandler.includes(API_CUSTOM_ERROR_CODES.DEVICE_VERIFICATION_REQUIRED);
+                if (code === API_CUSTOM_ERROR_CODES.DEVICE_VERIFICATION_REQUIRED && !ignoreDeviceVerification) {
+                    const { Details: { ChallengeType: challengType, ChallengePayload: challengePayload } = {} } =
+                        e.data || {};
+                    const requestUID = getUIDHeaderValue(headers) ?? UID;
+                    return deviceVerificationHandler(requestUID, challengType, challengePayload)
+                        .then((result) => {
+                            return call({
+                                ...options,
+                                headers: {
+                                    ...options.headers,
+                                    ...getDeviceVerificationHeaders(result),
+                                },
+                            });
+                        })
+                        .catch((error) => {
+                            throw error;
+                        });
                 }
 
                 throw e;
