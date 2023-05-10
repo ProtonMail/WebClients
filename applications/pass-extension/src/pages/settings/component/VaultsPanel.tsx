@@ -1,4 +1,4 @@
-import { type VFC, useEffect } from 'react';
+import { type VFC, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -6,56 +6,45 @@ import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
 import { selectAllVaults, vaultSetPrimaryIntent } from '@proton/pass/store';
+import type { Maybe } from '@proton/pass/types';
 
 import { Field } from '../../../popup/components/Field/Field';
 import { VaultSelectField } from '../../../popup/components/Field/VaultSelectField';
 
-import './PrimaryVaultSelect.scss';
+import './VaultsPanel.scss';
 
-type FormValues = {
-    primaryVaultId: string | undefined;
-};
+type FormValues = { primaryVaultId: Maybe<string> };
 
-export const PrimaryVaultSelect: VFC = () => {
+export const VaultsPanel: VFC = () => {
     const dispatch = useDispatch();
     const allVaults = useSelector(selectAllVaults);
-    const primaryVaultId = allVaults.find((vault) => vault.primary)?.shareId;
+    const primaryVaultId = useMemo(() => allVaults.find((vault) => vault.primary)?.shareId, [allVaults]);
 
     const form = useFormik<FormValues>({
         initialValues: { primaryVaultId },
+        enableReinitialize: true,
         onSubmit: async (values) => {
-            if (values.primaryVaultId) {
-                dispatch(
-                    vaultSetPrimaryIntent({
-                        id: values.primaryVaultId,
-                        name: allVaults.find(({ shareId }) => shareId === values.primaryVaultId)?.content
-                            .name as string,
-                    })
-                );
+            const match = allVaults.find(({ shareId }) => shareId === values.primaryVaultId);
+
+            if (match && match.shareId !== primaryVaultId) {
+                dispatch(vaultSetPrimaryIntent({ id: match.shareId, name: match.content.name }));
             }
         },
-        enableReinitialize: true,
     });
-
-    const { initialValues, handleSubmit, values } = form;
-
-    useEffect(() => {
-        if (values !== initialValues) {
-            handleSubmit();
-        }
-    }, [initialValues, values]);
 
     return (
         <Card rounded className="mb-4 p-3">
-            <span className="text-bold">{c('Label').t`Vaults`}</span>
+            <span className="text-bold block">{c('Label').t`Vaults`}</span>
+
             <hr className="my-2 border-weak" />
             <FormikProvider value={form}>
                 <Form>
                     <Field
                         name="primaryVaultId"
-                        className="pass-primary-vault-select-field"
+                        className="pass-primary-vault-select-field pass-input-group--no-focus"
                         component={VaultSelectField}
                         label={c('Label').t`Primary vault`}
+                        onValue={() => form.handleSubmit()}
                     />
                 </Form>
             </FormikProvider>
