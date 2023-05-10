@@ -183,7 +183,7 @@ export const createFormManager = () => {
 
     const sync = () => ctx.trackedForms.forEach((form) => form.tracker?.attach());
 
-    return { getForms: () => ctx.trackedForms, observe, detect, sync, destroy };
+    return { getForms: () => ctx.trackedForms, observe, detect, sync, destroy, reconciliate };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;
