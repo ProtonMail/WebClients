@@ -5,7 +5,7 @@ interface Headers {
 }
 
 interface MergeHeaderArgs {
-    headers: Headers;
+    headers?: Headers;
 
     [key: string]: any;
 }
@@ -66,6 +66,15 @@ export const getVerificationHeaders = (
 export const getDeviceVerificationHeaders = (challengeB64: string) => {
     return {
         'X-PM-DV': challengeB64,
+    };
+};
+
+export const getCroHeaders = (paymentToken: string | undefined) => {
+    if (!paymentToken) {
+        return {};
+    }
+    return {
+        'x-pm-payment-info-token': paymentToken,
     };
 };
 
