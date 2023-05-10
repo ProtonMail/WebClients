@@ -13,6 +13,7 @@ export type SelectFieldProps = FieldProps &
     Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'>;
 
 export const SelectField: FC<SelectFieldProps> = ({
+    className,
     field,
     form,
     meta,
@@ -25,7 +26,7 @@ export const SelectField: FC<SelectFieldProps> = ({
     const { error } = useFieldControl({ field, form, meta });
 
     return (
-        <FieldBox icon={icon}>
+        <FieldBox className={className} icon={icon}>
             <InputFieldTwo<typeof SelectTwo>
                 unstyled
                 as={SelectTwo}

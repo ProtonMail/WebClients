@@ -21,6 +21,9 @@ import {
     vaultEditFailure,
     vaultEditIntent,
     vaultEditSuccess,
+    vaultSetPrimaryFailure,
+    vaultSetPrimaryIntent,
+    vaultSetPrimarySuccess,
 } from '../actions';
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
 import withOptimistic from '../optimistic/with-optimistic';
@@ -46,6 +49,11 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             initiate: vaultDeleteIntent.optimisticMatch,
             revert: vaultDeleteFailure.optimisticMatch,
             commit: vaultDeleteSuccess.optimisticMatch,
+        },
+        {
+            initiate: vaultSetPrimaryIntent.optimisticMatch,
+            revert: vaultSetPrimaryFailure.optimisticMatch,
+            commit: vaultSetPrimarySuccess.optimisticMatch,
         },
     ],
     (state = {}, action: AnyAction) => {
@@ -104,6 +112,15 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
         if (shareDeleteSync.match(action)) {
             return objectDelete(state, action.payload.shareId);
+        }
+
+        if (vaultSetPrimarySuccess.match(action)) {
+            return Object.fromEntries(
+                Object.entries(state).map(([shareId, share]) => [
+                    shareId,
+                    { ...share, primary: shareId === action.payload.id },
+                ])
+            );
         }
 
         return state;

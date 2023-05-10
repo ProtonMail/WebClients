@@ -142,9 +142,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                 {({ canFocus }) => (
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
-                            <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
-
                             <FieldsetCluster>
+                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
                                 <Field
                                     name="name"
                                     label={c('Label').t`Title`}
