@@ -40,6 +40,10 @@ export type OptionsWithIntl = {
      */
     localeCode?: string | string[];
     /**
+     * If true time will be shown in 12h format with AM/PM
+     */
+    hour12?: boolean;
+    /**
      * Intl format options.
      */
     intlOptions?: Intl.DateTimeFormatOptions;
@@ -59,7 +63,7 @@ export type OptionsWithIntl = {
  * @param {Object} [options.sameDayIntlOptions={month: 'short', day: 'numeric', year: 'numeric'}]
  */
 export const readableTimeIntl = (unixTime: number, options: OptionsWithIntl = {}) => {
-    let { sameDayIntlOptions, localeCode = 'en-US', intlOptions } = options;
+    let { sameDayIntlOptions, localeCode = 'en-US', hour12, intlOptions } = options;
 
     const defaultIntlOptions: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
     intlOptions = intlOptions ?? defaultIntlOptions;
@@ -70,9 +74,9 @@ export const readableTimeIntl = (unixTime: number, options: OptionsWithIntl = {}
     const date = new Date(unixTime * 1000);
 
     if (sameDayIntlOptions && isSameDay(date, Date.now())) {
-        return Intl.DateTimeFormat(localeCode, sameDayIntlOptions).format(date);
+        return Intl.DateTimeFormat(localeCode, { hour12, ...sameDayIntlOptions }).format(date);
     }
-    return Intl.DateTimeFormat(localeCode, intlOptions).format(date);
+    return Intl.DateTimeFormat(localeCode, { hour12, ...intlOptions }).format(date);
 };
 
 export const getCurrentUnixTimestamp = () => {

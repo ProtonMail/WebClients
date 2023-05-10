@@ -140,4 +140,16 @@ describe('readableTimeIntl()', () => {
 
         expect(result).toEqual('Oct 22, 2022');
     });
+
+    it('should work with force 24h format', () => {
+        expect(
+            readableTimeIntl(unixTime, {
+                intlOptions: {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                },
+                hour12: false,
+            })
+        ).not.toMatch(/AM|PM/);
+    });
 });
