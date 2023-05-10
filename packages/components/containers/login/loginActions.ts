@@ -201,12 +201,8 @@ const handleKeyUpgrade = async ({
     keyPassword: string;
     isOnePasswordMode?: boolean;
 }) => {
-    const { appName, api, preAuthKTVerifier, keyMigrationKTVerifier } = cache;
+    const { api, preAuthKTVerifier, keyMigrationKTVerifier } = cache;
     let keyPassword = maybeKeyPassword;
-
-    if (appName !== APPS.PROTONACCOUNT) {
-        return finalizeLogin({ cache, loginPassword, keyPassword });
-    }
 
     let [user, addresses] = await Promise.all([
         cache.data.user || syncUser(cache),
