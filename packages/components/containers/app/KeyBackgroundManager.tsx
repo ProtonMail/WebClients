@@ -12,7 +12,6 @@ import {
     getSentryError,
     migrateMemberAddressKeys,
     migrateUser,
-    restoreBrokenSKL,
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -148,22 +147,6 @@ const KeyBackgroundManager = ({
             }
         };
 
-        const runBrokenSKLRestoration = async () => {
-            const [user, organization] = await Promise.all([getUser(), getOrganization()]);
-
-            if (!organization.BrokenSKL) {
-                return;
-            }
-
-            await restoreBrokenSKL({
-                api: silentApi,
-                user,
-                keyPassword: authentication.getPassword(),
-                keyTransparencyVerify,
-                keyTransparencyCommit,
-            });
-        };
-
         if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
             return;
         }
@@ -178,7 +161,6 @@ const KeyBackgroundManager = ({
                                   captureMessage('Key migration error', { extra: { error } });
                               }
                           })
-                          .then(runBrokenSKLRestoration)
                           .catch((e) => {
                               const error = getSentryError(e);
                               if (error) {
