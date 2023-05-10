@@ -38,7 +38,9 @@ export enum WorkerMessageType {
     WORKER_INIT = 'WORKER_INIT',
     WORKER_STATUS = 'WORKER_STATUS',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
+    LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
+    START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     RESOLVE_TAB = 'RESOLVE_TAB',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
@@ -73,6 +75,8 @@ export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { syn
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
+export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
+export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_ACTION, { action: AnyAction }>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ResumedSessionResult>;
@@ -109,6 +113,8 @@ export type WorkerMessage =
     | WorkerStatusMessage
     | UpdateAvailableMessage
     | UnloadContentScriptMessage
+    | StartContentScriptMessage
+    | LoadContentScriptMessage
     | ResumeSessionSuccessMessage
     | AutofillQueryMessage
     | AutofillSelectMessage
