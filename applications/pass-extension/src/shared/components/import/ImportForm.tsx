@@ -18,7 +18,7 @@ export const PROVIDER_TITLE_MAP = {
     [ImportProvider.EDGE]: 'Edge (csv)',
     [ImportProvider.KEEPASS]: 'KeePass (xml)',
     [ImportProvider.LASTPASS]: 'LastPass (csv)',
-    [ImportProvider.ONEPASSWORD]: '1Password (1pux)',
+    [ImportProvider.ONEPASSWORD]: '1Password (1pux or 1pif)',
     [ImportProvider.PROTONPASS]: PASS_APP_NAME,
     [ImportProvider.PROTONPASS_PGP]: `${PASS_APP_NAME} (PGP encrypted)`,
 };
