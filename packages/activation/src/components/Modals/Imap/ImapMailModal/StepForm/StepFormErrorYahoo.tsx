@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { IMPORT_ERROR } from '@proton/activation/src/interface';
+import { Href } from '@proton/atoms/Href';
 import { Alert } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -19,14 +20,10 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
 
     const boldNot = <strong key="boldNot">{c('Import error emphasis').t`not`}</strong>;
 
+    const learnMoreUrl =
+        errorCode !== RATE_LIMIT_EXCEEDED ? getKnowledgeBaseUrl('/troubleshooting-easy-switch/') : undefined;
     return (
-        <Alert
-            className="mb-4"
-            type="error"
-            learnMore={
-                errorCode !== RATE_LIMIT_EXCEEDED ? getKnowledgeBaseUrl('/troubleshooting-easy-switch/') : undefined
-            }
-        >
+        <Alert className="mb-4" type="error">
             {isReconnect === true && (
                 <>
                     <div className="mb-4">
@@ -60,6 +57,12 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
             )}
             {errorCode === RATE_LIMIT_EXCEEDED &&
                 c('Import error').t`Too many recent requests. Please try again in a few moments.`}
+
+            {learnMoreUrl && (
+                <div>
+                    <Href href={learnMoreUrl}>{c('Link').t`Learn more`}</Href>
+                </div>
+            )}
         </Alert>
     );
 };

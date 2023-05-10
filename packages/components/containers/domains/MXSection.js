@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -16,9 +17,12 @@ const MXSection = () => {
 
     return (
         <>
-            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
+            <Alert className="mb-4">
                 {c('Info')
                     .t`Before you can receive emails for your custom domain addresses at ${MAIL_APP_NAME}, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
+                <div>
+                    <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`Learn more`}</Href>
+                </div>
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following MX record. Note, DNS records can take several hours to update.`}</Label>
