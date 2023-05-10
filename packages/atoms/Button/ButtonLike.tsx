@@ -59,6 +59,10 @@ interface ButtonLikeOwnProps {
      * For a selected item inside a group.
      */
     selected?: boolean;
+    /**
+     * Locator for e2e tests.
+     */
+    'data-testid'?: string;
 }
 
 export type ButtonLikeProps<E extends ElementType> = PolymorphicPropsWithRef<ButtonLikeOwnProps, E>;
@@ -81,6 +85,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         group,
         selected = false,
         as,
+        'data-testid': dataTestId,
         ...restProps
     }: ButtonLikeProps<E>,
     ref: ForwardedRef<Element>
@@ -114,6 +119,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
             disabled={isDisabled}
             tabIndex={isDisabled ? -1 : tabIndex}
             aria-busy={loading}
+            data-testid={dataTestId}
             {...roleProps}
             {...restProps}
         >

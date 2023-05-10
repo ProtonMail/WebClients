@@ -20,6 +20,7 @@ export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'tit
     actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | undefined;
     children: ReactNode;
     ModalContentProps?: ModalContentProps;
+    'data-testid'?: string;
 }
 
 const Prompt = ({
@@ -31,6 +32,7 @@ const Prompt = ({
     className,
     children,
     ModalContentProps,
+    'data-testid': dataTestId,
     ...rest
 }: PromptProps) => {
     const buttonArray = Array.isArray(buttons) ? buttons : [buttons];
@@ -60,7 +62,7 @@ const Prompt = ({
 
     return (
         <ModalTwo size="small" {...rest} className={clsx([className, 'prompt'])}>
-            <div className="prompt-header">
+            <div className="prompt-header" data-testid={dataTestId}>
                 <PromptTitle>{title}</PromptTitle>
                 {subline && <div className="color-weak text-break">{subline}</div>}
             </div>
