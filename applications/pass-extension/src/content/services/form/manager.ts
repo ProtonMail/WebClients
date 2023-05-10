@@ -68,24 +68,35 @@ export const createFormManager = () => {
             if (submission !== undefined) {
                 const { status, partial, realm, type } = submission;
                 const currentRealm = getExtensionContext().realm;
+                const formRemoved = !ctx.trackedForms.some(({ formType }) => formType === type);
 
-                if (status === FormEntryStatus.STAGING && !partial) {
-                    const realmMatch = currentRealm === realm;
-                    const formRemoved = !ctx.trackedForms.some(({ formType }) => formType === type);
-                    const shouldCommit = realmMatch && formRemoved;
+                const realmMatch = currentRealm === realm;
+                const canCommit = realmMatch && formRemoved;
 
-                    if (shouldCommit) {
-                        return sendMessage.onSuccess(
-                            contentScriptMessage({
-                                type: WorkerMessageType.FORM_ENTRY_COMMIT,
-                                payload: { reason: 'INFERRED_FORM_REMOVAL' },
-                            }),
-                            ({ committed }) => committed !== undefined && onCommittedSubmission(committed)
-                        );
-                    }
+                /* if we have a non-partial staging form submission at
+                 * this stage either commit it if no forms of the same
+                 * type are present in the DOM - or stash it if it's the
+                 * case : we may be dealing with a failed login */
+                if (status === FormEntryStatus.STAGING && !partial && canCommit) {
+                    return sendMessage.onSuccess(
+                        contentScriptMessage({
+                            type: WorkerMessageType.FORM_ENTRY_COMMIT,
+                            payload: { reason: 'FORM_TYPE_REMOVED' },
+                        }),
+                        ({ committed }) => committed !== undefined && onCommittedSubmission(committed)
+                    );
                 }
 
-                if (isSubmissionCommitted(submission)) return onCommittedSubmission(submission);
+                if (isSubmissionCommitted(submission) && formRemoved) return onCommittedSubmission(submission);
+
+                if (!formRemoved) {
+                    void sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.FORM_ENTRY_STASH,
+                            payload: { reason: 'FORM_TYPE_PRESENT' },
+                        })
+                    );
+                }
             }
 
             iframe.detachNotification();
