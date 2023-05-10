@@ -1,22 +1,14 @@
 import { render } from '@testing-library/react';
 
-
-
 import Alert from './Alert';
-
 
 describe('Alert component', () => {
     const text = 'Panda';
-    const learnMoreText = 'Learn more';
-    const { container } = render(
-        <Alert className="mb-4" learnMore="https://protonmail.com">
-            {text}
-        </Alert>
-    );
+    const { container } = render(<Alert className="mb-4">{text}</Alert>);
     const { firstChild } = container;
 
-    it('renders children and should contain "Learn more" link', () => {
-        expect(firstChild?.textContent).toBe(`${text}${learnMoreText}`);
+    it('renders children', () => {
+        expect(firstChild?.textContent).toBe(text);
     });
 
     it('has default class', () => {
