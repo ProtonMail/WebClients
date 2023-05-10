@@ -167,7 +167,7 @@ const ExtraEvent = ({
                     getCalendarInfo,
                     getCalendarEventRaw,
                     calendars,
-                    defaultCalendar,
+                    suggestedCalendar: defaultCalendar,
                     message,
                     contactEmails,
                     ownAddresses,

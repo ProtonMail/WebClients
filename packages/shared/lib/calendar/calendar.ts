@@ -1,18 +1,25 @@
+import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
+import { updateCalendarSettings, updateMember } from '../api/calendars';
 import { hasBit, toggleBit } from '../helpers/bitset';
 import { Address, Api } from '../interfaces';
 import {
     Calendar,
+    CalendarCreateData,
+    CalendarNotificationSettings,
+    CalendarSettings,
     CalendarUserSettings,
     CalendarWithOwnMembers,
     SubscribedCalendar,
     VisualCalendar,
 } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
+import { GetAddresses } from '../interfaces/hooks/GetAddresses';
 import { getHasUserReachedCalendarsLimit } from './calendarLimits';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from './constants';
 import { reactivateCalendarsKeys } from './crypto/keys/reactivateCalendarKeys';
+import { getMemberAndAddress } from './members';
 import { getCanWrite } from './permissions';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
@@ -53,6 +60,10 @@ export const getIsOwnedCalendar = (calendar: CalendarWithOwnMembers) => {
     return calendar.Owner.Email === calendar.Members[0].Email;
 };
 
+export const getIsSharedCalendar = (calendar: VisualCalendar) => {
+    return getIsPersonalCalendar(calendar) && !getIsOwnedCalendar(calendar);
+};
+
 export const getIsSubscribedCalendar = (
     calendar: Calendar | VisualCalendar | SubscribedCalendar
 ): calendar is SubscribedCalendar => {
@@ -71,11 +82,16 @@ export const getWritableCalendars = (calendars: VisualCalendar[]) => {
     return calendars.filter(unary(getIsCalendarWritable));
 };
 
+export const getIsHolidaysCalendar = (calendar: VisualCalendar) => {
+    return calendar.Type === CALENDAR_TYPE.HOLIDAYS;
+};
+
 export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
     return calendars.reduce<{
         ownedPersonalCalendars: VisualCalendar[];
         sharedCalendars: VisualCalendar[];
         subscribedCalendars: VisualCalendar[];
+        holidaysCalendars: VisualCalendar[];
         unknownCalendars: VisualCalendar[];
     }>(
         (acc, calendar) => {
@@ -84,12 +100,20 @@ export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
             } else if (getIsPersonalCalendar(calendar)) {
                 const calendarsGroup = getIsOwnedCalendar(calendar) ? acc.ownedPersonalCalendars : acc.sharedCalendars;
                 calendarsGroup.push(calendar);
+            } else if (getIsHolidaysCalendar(calendar)) {
+                acc.holidaysCalendars.push(calendar);
             } else {
                 acc.unknownCalendars.push(calendar);
             }
             return acc;
         },
-        { ownedPersonalCalendars: [], sharedCalendars: [], subscribedCalendars: [], unknownCalendars: [] }
+        {
+            ownedPersonalCalendars: [],
+            sharedCalendars: [],
+            subscribedCalendars: [],
+            holidaysCalendars: [],
+            unknownCalendars: [],
+        }
     );
 };
 
@@ -109,7 +133,8 @@ enum CALENDAR_WEIGHT {
     PERSONAL = 0,
     SUBSCRIBED = 1,
     SHARED = 2,
-    UNKNOWN = 3,
+    HOLIDAYS = 3,
+    UNKNOWN = 4,
 }
 
 const getCalendarWeight = (calendar: VisualCalendar) => {
@@ -118,6 +143,9 @@ const getCalendarWeight = (calendar: VisualCalendar) => {
     }
     if (getIsSubscribedCalendar(calendar)) {
         return CALENDAR_WEIGHT.SUBSCRIBED;
+    }
+    if (getIsHolidaysCalendar(calendar)) {
+        return CALENDAR_WEIGHT.HOLIDAYS;
     }
     return CALENDAR_WEIGHT.UNKNOWN;
 };
@@ -253,4 +281,84 @@ export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
     ViewPreference: SETTINGS_VIEW.WEEK,
     InviteLocale: null,
     AutoImportInvite: 0,
+};
+
+const getHasChangedCalendarMemberData = (calendarPayload: CalendarCreateData, calendar: VisualCalendar) => {
+    const { Name: oldName, Description: oldDescription, Color: oldColor, Display: oldDisplay } = calendar;
+    const { Name: newName, Description: newDescription, Color: newColor, Display: newDisplay } = calendarPayload;
+
+    return (
+        oldColor.toLowerCase() !== newColor.toLowerCase() ||
+        oldDisplay !== newDisplay ||
+        oldName !== newName ||
+        oldDescription !== newDescription
+    );
+};
+
+const getHasChangedCalendarNotifications = (
+    newNotifications: CalendarNotificationSettings[],
+    oldNotifications: CalendarNotificationSettings[]
+) => {
+    return (
+        newNotifications.length !== oldNotifications.length ||
+        newNotifications.some(
+            ({ Type: newType, Trigger: newTrigger }) =>
+                !oldNotifications.find(
+                    ({ Type: oldType, Trigger: oldTrigger }) => oldType === newType && oldTrigger === newTrigger
+                )
+        )
+    );
+};
+
+const getHasChangedCalendarSettings = (
+    newSettings: Required<
+        Pick<CalendarSettings, 'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'>
+    >,
+    oldSettings?: CalendarSettings
+) => {
+    if (!oldSettings) {
+        // we should not fall in here. If we do, assume changes are needed
+        return true;
+    }
+    const {
+        DefaultEventDuration: newDuration,
+        DefaultPartDayNotifications: newPartDayNotifications,
+        DefaultFullDayNotifications: newFullDayNotifications,
+    } = newSettings;
+    const {
+        DefaultEventDuration: oldDuration,
+        DefaultPartDayNotifications: oldPartDayNotifications,
+        DefaultFullDayNotifications: oldFullDayNotifications,
+    } = oldSettings;
+    return (
+        newDuration !== oldDuration ||
+        getHasChangedCalendarNotifications(newPartDayNotifications, oldPartDayNotifications) ||
+        getHasChangedCalendarNotifications(newFullDayNotifications, oldFullDayNotifications)
+    );
+};
+export const updateCalendar = async (
+    calendar: VisualCalendar,
+    calendarPayload: CalendarCreateData,
+    calendarSettingsPayload: Required<
+        Pick<CalendarSettings, 'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'>
+    >,
+    readCalendarBootstrap: (calendarID: string) => any,
+    getAddresses: GetAddresses,
+    api: Api
+) => {
+    const calendarID = calendar.ID;
+    const { Color, Display, Description, Name } = calendarPayload;
+    const [{ ID: memberID }] = getMemberAndAddress(await getAddresses(), calendar.Members);
+    const hasChangedMemberData = getHasChangedCalendarMemberData(calendarPayload, calendar);
+    const hasChangedSettings = getHasChangedCalendarSettings(
+        calendarSettingsPayload,
+        readCalendarBootstrap(calendarID)?.CalendarSettings
+    );
+
+    await Promise.all(
+        [
+            hasChangedMemberData && api(updateMember(calendarID, memberID, { Display, Color, Description, Name })),
+            hasChangedSettings && api(updateCalendarSettings(calendarID, calendarSettingsPayload)),
+        ].filter(isTruthy)
+    );
 };

@@ -32,9 +32,17 @@ interface Props {
     addresses: Address[];
     user: UserModel;
     onSetDefault?: (id: string) => Promise<void>;
+    nameHeader?: string;
 }
 
-const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDefault }: Props) => {
+const CalendarsTable = ({
+    calendars,
+    defaultCalendarID,
+    addresses,
+    user,
+    onSetDefault,
+    nameHeader: inputNameHeader,
+}: Props) => {
     const { hasNonDelinquentScope } = user;
     const [isLoading, setIsLoading] = useState<string>();
 
@@ -44,7 +52,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDe
         return null;
     }
 
-    const nameHeader = c('Header').t`Name`;
+    const nameHeader = inputNameHeader || c('Header').t`Name`;
     const statusHeader = (
         <div className="flex flex-align-items-center">
             <span className="mr-2">{c('Header').t`Status`}</span>
