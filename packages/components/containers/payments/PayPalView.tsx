@@ -36,6 +36,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => 
 
     const clickHere = (
         <PayPalButton
+            id="paypal-credit"
             shape="outline"
             color="norm"
             flow={type}

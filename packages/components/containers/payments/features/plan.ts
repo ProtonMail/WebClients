@@ -33,9 +33,12 @@ import {
 import {
     getB2BHighSpeedVPNConnections,
     getCountries,
+    getDoubleHop,
     getNetShield,
     getNoLogs,
     getP2P,
+    getPrioritySupport,
+    getProtectDevices,
     getSecureCore,
     getStreaming,
     getTor,
@@ -191,15 +194,15 @@ export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): Short
             .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`,
         cta: getCTA(plan.Title),
         features: [
-            getVPNConnections(VPN_CONNECTIONS),
             getCountries(plusServers),
             getVPNSpeed('highest'),
-            getNoLogs(true),
-            getNetShield(true),
+            getProtectDevices(VPN_CONNECTIONS),
             getStreaming(true),
             getP2P(true),
-            getSecureCore(true),
+            getDoubleHop(true),
+            getNetShield(true),
             getTor(true),
+            getPrioritySupport(),
         ],
     };
 };

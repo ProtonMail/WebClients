@@ -60,6 +60,7 @@ import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getProductParams } from '../signup/searchParams';
+import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 
@@ -488,6 +489,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     <SignupContainer
                                                         productParam={productParam}
                                                         clientType={clientType}
+                                                        toApp={maybePreAppIntent}
+                                                        toAppName={toAppName}
+                                                        onLogin={handleLogin}
+                                                        onBack={
+                                                            hasBackToSwitch ? () => history.push('/login') : undefined
+                                                        }
+                                                    />
+                                                </Route>
+                                                <Route path="/pricing">
+                                                    <SingleSignupContainer
+                                                        loader={loader}
+                                                        productParam={APPS.PROTONVPN_SETTINGS}
+                                                        clientType={CLIENT_TYPES.VPN}
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
                                                         onLogin={handleLogin}

@@ -104,7 +104,11 @@
 		}
 
 		&-flex-justify-end {
-			justify-content: start;
+			justify-content: end;
+		}
+
+		&-flex-justify-center {
+			justify-content: center;
 		}
 
 		&-order-1 {

@@ -12,8 +12,8 @@ export const getServersInWithoutPlus = (numberOfServers: string, numberOfCountri
 export const getServersIn = (numberOfServers: string, numberOfCountries: number) => {
     // translator: numberOfServers is a string that looks like `1300+ servers`, It has been pluralized earlier.
     return c('VPN Plan Feature').ngettext(
-        msgid`${numberOfServers} in ${numberOfCountries} country`,
-        `${numberOfServers} in ${numberOfCountries}+ countries`,
+        msgid`${numberOfServers} across ${numberOfCountries} country`,
+        `${numberOfServers} across ${numberOfCountries}+ countries`,
         numberOfCountries
     );
 };
