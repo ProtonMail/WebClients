@@ -22,10 +22,10 @@ const AutoDeleteBanner = ({ labelID, columnLayout = false, isCompactView = false
 
     return (
         <div data-testid="auto-delete:banner">
-            {bannerType === 'free-banner' && <AutoDeleteFreeBanner labelID={labelID} />}
-            {bannerType === 'paid-banner' && <AutoDeletePaidBanner labelID={labelID} />}
+            {bannerType === 'free-banner' && <AutoDeleteFreeBanner />}
+            {bannerType === 'paid-banner' && <AutoDeletePaidBanner />}
             {bannerType === 'enabled' && (
-                <AutoDeleteEnabledBanner labelID={labelID} columnLayout={columnLayout} isCompactView={isCompactView} />
+                <AutoDeleteEnabledBanner columnLayout={columnLayout} isCompactView={isCompactView} />
             )}
         </div>
     );
