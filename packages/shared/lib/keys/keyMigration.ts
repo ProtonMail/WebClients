@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 import { queryScopes } from '../api/auth';
 import { getApiError } from '../api/helpers/apiErrorHelper';
 import { migrateAddressKeysRoute } from '../api/keys';
-import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
+import { migrateMembersAddressKeysRoute } from '../api/memberKeys';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
 import { getOrganizationKeys } from '../api/organization';
 import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
@@ -16,7 +16,6 @@ import {
     Api,
     DecryptedKey,
     KeyMigrationKTVerifier,
-    KeyTransparencyCommit,
     KeyTransparencyVerify,
     Member,
     Organization,
@@ -400,112 +399,3 @@ export const migrateUser = async ({
     await api({ ...migrateAddressKeysRoute(payload), timeout });
     return true;
 };
-
-interface RestoreBrokenSKLArguments {
-    api: Api;
-    keyPassword: string;
-    timeout?: number;
-    user: User;
-    keyTransparencyVerify: KeyTransparencyVerify;
-    keyTransparencyCommit: KeyTransparencyCommit;
-}
-
-export async function restoreBrokenSKL({
-    api,
-    keyPassword,
-    timeout = 120000,
-    user,
-    keyTransparencyVerify,
-    keyTransparencyCommit,
-}: RestoreBrokenSKLArguments) {
-    if (user.Role !== USER_ROLES.ADMIN_ROLE) {
-        return;
-    }
-
-    // NOTE: The API following calls are done in a waterfall to lower the amount of unnecessary requests.
-    // Ensure scope...
-    const { Scopes } = await api<{ Scopes: string[] }>(queryScopes());
-    if (!Scopes.includes('organization')) {
-        return;
-    }
-
-    const organizationKey = await api<OrganizationKey>(getOrganizationKeys());
-    // Ensure that the organization key can be decrypted...
-    const decryptedOrganizationKeyResult = await getDecryptedOrganizationKey(
-        organizationKey?.PrivateKey ?? '',
-        keyPassword
-    ).catch(noop);
-    if (!decryptedOrganizationKeyResult?.privateKey) {
-        return;
-    }
-
-    // Ensure that there are members to restore...
-    const members = await getAllMembers(api);
-    const membersToRestore = members.filter(({ BrokenSKL }) => {
-        return BrokenSKL === 1;
-    });
-    if (!membersToRestore.length) {
-        return;
-    }
-
-    for (const member of membersToRestore) {
-        // Some members might not be setup.
-        if (!member.Keys?.length) {
-            continue;
-        }
-        const memberAddresses = await getAllMemberAddresses(api, member.ID);
-        const memberUserKeys = await getDecryptedUserKeys(member.Keys, '', decryptedOrganizationKeyResult);
-        const primaryMemberUserKey = getPrimaryKey(memberUserKeys)?.privateKey;
-        if (!primaryMemberUserKey) {
-            throw new Error('Not able to decrypt the primary member user key');
-        }
-
-        const memberAddressesKeys = (
-            await Promise.all(
-                memberAddresses.map(async (address) => {
-                    const result = {
-                        address,
-                        keys: await getDecryptedAddressKeys(
-                            address.Keys,
-                            memberUserKeys,
-                            '',
-                            decryptedOrganizationKeyResult
-                        ),
-                    };
-                    // Some non-private members don't have keys generated
-                    if (!result.keys.length) {
-                        return;
-                    }
-                    return result;
-                })
-            )
-        ).filter(isTruthy);
-
-        // Some members might not have keys setup for the address.
-        if (!memberAddressesKeys.length) {
-            continue;
-        }
-
-        const signedKeyLists = await Promise.all(
-            memberAddressesKeys.map(async ({ address, keys }) => {
-                const signedKeyList = await getOrCreateSignedKeyList(address, keys, keyTransparencyVerify);
-                return {
-                    Address: address,
-                    SignedKeyList: signedKeyList,
-                };
-            })
-        );
-
-        const SignedKeyLists = signedKeyLists.reduce<{ [key: string]: SignedKeyList }>((acc, cur) => {
-            if (cur.SignedKeyList) {
-                acc[cur.Address.ID] = cur.SignedKeyList;
-            }
-            return acc;
-        }, {});
-
-        if (Object.keys(SignedKeyLists).length > 0) {
-            await api({ ...restoreBrokenSKLRoute({ MemberID: member.ID, SignedKeyLists }), timeout });
-            await keyTransparencyCommit(memberUserKeys);
-        }
-    }
-}
