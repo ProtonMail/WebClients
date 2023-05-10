@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import type { Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { ExtensionEndpoint, Share, ShareContent, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
 import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
-import { vaultCreate, vaultDelete, vaultEdit } from '../requests';
+import { vaultCreate, vaultDelete, vaultEdit, vaultSetPrimary } from '../requests';
 import withCacheBlock from '../with-cache-block';
 import type { ActionCallback } from '../with-callback';
 import withCallback from '../with-callback';
@@ -157,6 +157,55 @@ export const vaultDeleteSuccess = createOptimisticAction(
             withNotification({
                 type: 'info',
                 text: c('Info').t`Vault "${payload.content.name}" successfully deleted`,
+            })
+        )({ payload }),
+    ({ payload }) => payload.id
+);
+
+export const vaultSetPrimaryIntent = createOptimisticAction(
+    'vault set primary intent',
+    (payload: { id: string; name: string }) =>
+        pipe(
+            withCacheBlock,
+            withRequest({
+                type: 'start',
+                id: vaultSetPrimary(payload.id),
+            })
+        )({ payload }),
+    ({ payload }) => payload.id
+);
+
+export const vaultSetPrimaryFailure = createOptimisticAction(
+    'vault set primary failure',
+    (payload: { id: string; name: string }, error: unknown, target?: ExtensionEndpoint) =>
+        pipe(
+            withCacheBlock,
+            withRequest({
+                type: 'failure',
+                id: vaultSetPrimary(payload.id),
+            }),
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Setting "${payload.name}" as primary vault failed`,
+                target,
+                error,
+            })
+        )({ payload, error }),
+    ({ payload }) => payload.id
+);
+
+export const vaultSetPrimarySuccess = createOptimisticAction(
+    'vault set primary success',
+    (payload: { id: string; name: string }, target?: ExtensionEndpoint) =>
+        pipe(
+            withRequest({
+                type: 'success',
+                id: vaultSetPrimary(payload.id),
+            }),
+            withNotification({
+                type: 'info',
+                text: c('Info').t`"${payload.name}" set as primary vault`,
+                target,
             })
         )({ payload }),
     ({ payload }) => payload.id
