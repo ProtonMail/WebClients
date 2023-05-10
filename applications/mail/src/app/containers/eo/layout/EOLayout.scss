@@ -48,12 +48,6 @@
 		min-block-size: rem(100);
 	}
 
-	.message-attachments {
-		margin-inline: 2em;
-		@include media('<=xsmall') {
-			margin-inline: 0;
-		}
-	}
 	@include media('<=xsmall') {
 		.message-attachmentList-item-container {
 			max-inline-size: 100%;
