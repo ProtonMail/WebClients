@@ -23,7 +23,7 @@ const getFormId = (tabId: TabId, realm: Realm): FormIdentifier => `${tabId}:${re
 export const createFormTrackerService = () => {
     const submissions: Map<FormIdentifier, FormEntry> = new Map();
 
-    const get = (tabId: TabId, realm: string): FormEntry | undefined => {
+    const get = (tabId: TabId, realm: string): Maybe<FormEntry> => {
         const submission = submissions.get(getFormId(tabId, realm));
         if (submission && submission.realm === realm) {
             return submission;
@@ -97,7 +97,12 @@ export const createFormTrackerService = () => {
      */
     createXMLHTTPRequestTracker({
         shouldTakeRequest: (tabId, realm) => submissions.has(getFormId(tabId, realm)),
-        onFailedRequest: (tabId, realm) => stash(tabId, realm, 'XMLHTTP_ERROR_DETECTED'),
+        onFailedRequest: (tabId, realm) => {
+            const submission = get(tabId, realm);
+            if (submission && submission.status === FormEntryStatus.STAGING) {
+                stash(tabId, realm, 'XMLHTTP_ERROR_DETECTED');
+            }
+        },
     });
 
     WorkerMessageBroker.registerMessage(
