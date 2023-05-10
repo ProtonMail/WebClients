@@ -139,6 +139,7 @@ const KeyBackgroundManager = ({
                     organization,
                     keyPassword,
                     keyTransparencyVerify,
+                    keyMigrationKTVerifier,
                 });
 
                 if (typeof hasDoneAddressKeysMigration === 'undefined') {
@@ -154,19 +155,12 @@ const KeyBackgroundManager = ({
         run()
             .then(() =>
                 hasMemberKeyMigration
-                    ? runMigration()
-                          .catch((e) => {
-                              const error = getSentryError(e);
-                              if (error) {
-                                  captureMessage('Key migration error', { extra: { error } });
-                              }
-                          })
-                          .catch((e) => {
-                              const error = getSentryError(e);
-                              if (error) {
-                                  captureMessage('Key SKL restoration error', { extra: { error } });
-                              }
-                          })
+                    ? runMigration().catch((e) => {
+                          const error = getSentryError(e);
+                          if (error) {
+                              captureMessage('Key migration error', { extra: { error } });
+                          }
+                      })
                     : undefined
             )
             .catch(noop);

@@ -116,6 +116,7 @@ describe('key migration', () => {
             addresses: Addresses,
             keyPassword: DEFAULT_KEYPASSWORD,
             preAuthKTVerify: () => async () => {},
+            keyMigrationKTVerifier: async () => {},
         });
         await verifyStandard({
             organizationKey,
@@ -156,6 +157,7 @@ describe('key migration', () => {
             addresses: Addresses,
             keyPassword: DEFAULT_KEYPASSWORD,
             preAuthKTVerify: () => async () => {},
+            keyMigrationKTVerifier: async () => {},
         });
         await verifyStandard({
             organizationKey,
@@ -190,6 +192,7 @@ describe('key migration', () => {
             organizationKey: organizationKey.Key,
             keyPassword: DEFAULT_KEYPASSWORD,
             preAuthKTVerify: () => async () => {},
+            keyMigrationKTVerifier: async () => {},
         });
         await verifyStandard({
             organizationKey,
