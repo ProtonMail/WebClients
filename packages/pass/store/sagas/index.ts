@@ -28,6 +28,7 @@ import trashRestore from './trash-restore.saga';
 import vaultCreation from './vault-creation.saga';
 import vaultDelete from './vault-delete.saga';
 import vaultEdit from './vault-edit.saga';
+import vaultSetPrimary from './vault-set-primary.saga';
 import wakeup from './wakeup.saga';
 
 export function* workerRootSaga(options: WorkerRootSagaOptions) {
@@ -60,6 +61,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             vaultCreation,
             vaultEdit,
             vaultDelete,
+            vaultSetPrimary,
             wakeup,
         ].map((saga) => saga(options))
     );

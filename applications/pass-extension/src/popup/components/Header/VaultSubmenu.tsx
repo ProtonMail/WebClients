@@ -57,9 +57,7 @@ const handleClickEvent = (handler: () => void) => (evt: React.MouseEvent) => {
 };
 
 export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, onSelect, onDelete, onEdit }) => {
-    const canEdit = Boolean(onEdit);
-    const canDelete = Boolean(!share?.primary && onDelete);
-    const withActions = canEdit || canDelete;
+    const withActions = onEdit || onDelete;
 
     return (
         <DropdownMenuButton
@@ -69,18 +67,18 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
             quickActions={
                 withActions && (
                     <>
+                        {onEdit && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
+                            >
+                                <Icon name="pen" className="mr-3 color-weak" />
+                                {c('Action').t`Edit vault`}
+                            </DropdownMenuButton>
+                        )}
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
-                            onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
-                            disabled={!canEdit}
-                        >
-                            <Icon name="pen" className="mr-3 color-weak" />
-                            {c('Action').t`Edit vault`}
-                        </DropdownMenuButton>
-
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
-                            disabled={!canDelete}
+                            disabled={!onDelete}
                             onClick={onDelete ? handleClickEvent(onDelete) : undefined}
                         >
                             <Icon name="trash" className="mr-3 color-weak" />
@@ -119,14 +117,14 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
             quickActions={
                 <>
                     <DropdownMenuButton className="flex flex-align-items-center py-2 px-4" onClick={handleRestoreTrash}>
-                        <Icon name="arrow-up-and-left" className="mr1" />
+                        <Icon name="arrow-up-and-left" className="mr-1" />
                         {c('Label').t`Restore all items`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="flex flex-align-items-center py-2 px-4 color-danger"
                         onClick={handleEmptyTrash}
                     >
-                        <Icon name="trash-cross" className="mr1" />
+                        <Icon name="trash-cross" className="mr-1" />
                         {c('Label').t`Empty trash`}
                     </DropdownMenuButton>
                 </>
@@ -162,13 +160,9 @@ export const VaultSubmenu: VFC<{
     const vaults = useSelector(selectAllVaultWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
 
-    const { totalCount, allowDelete } = useMemo(
-        () => ({
-            totalCount: vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0),
-            allowDelete: vaults.length > 1,
-        }),
-        [vaults]
-    );
+    console.log(vaults);
+
+    const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
 
     const handleSelect = (vault: VaultOption) => {
         const { id, path } = getVaultOptionInfo(vault);
@@ -208,18 +202,21 @@ export const VaultSubmenu: VFC<{
                     onSelect={() => handleSelect('all')}
                 />
 
-                {vaults.map((vault) => (
-                    <VaultItem
-                        key={vault.shareId}
-                        share={vault}
-                        count={vault.count}
-                        label={vault.content.name}
-                        selected={!inTrash && selectedShareId === vault.shareId}
-                        onSelect={() => handleSelect(vault)}
-                        onDelete={allowDelete ? () => handleVaultDeleteClick(vault) : undefined}
-                        onEdit={() => handleVaultEditClick(vault)}
-                    />
-                ))}
+                {vaults.map((vault) => {
+                    const isPrimary = Boolean(vault.primary);
+                    return (
+                        <VaultItem
+                            key={vault.shareId}
+                            share={vault}
+                            count={vault.count}
+                            label={vault.content.name}
+                            selected={!inTrash && selectedShareId === vault.shareId}
+                            onSelect={() => handleSelect(vault)}
+                            onDelete={!isPrimary ? () => handleVaultDeleteClick(vault) : undefined}
+                            onEdit={() => handleVaultEditClick(vault)}
+                        />
+                    );
+                })}
 
                 <TrashItem
                     handleRestoreTrash={handleRestoreTrash}
