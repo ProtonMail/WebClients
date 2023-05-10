@@ -3,7 +3,7 @@ import { WorkerStatus } from '@proton/pass/types';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext } from '../../shared/extension';
-import { createCSAutofillService } from '../services/autofill';
+import { createCSAutofillService } from '../services/form/autofill';
 import { createDetectorService } from '../services/form/detector';
 import { createFormManager } from '../services/form/manager';
 import { createIFrameService } from '../services/iframes/service';

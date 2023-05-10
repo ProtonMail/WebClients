@@ -93,8 +93,9 @@ export const createActivationService = () => {
                  * update in case the state/snapshot data-structure
                  * has changed. FIXME: use version migrations */
                 await browserLocalStorage.removeItems(['salt', 'state', 'snapshot']);
-                if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
             }
+
+            if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
 
             ctx.service.onboarding.onUpdate();
             return ctx.init({ force: true });

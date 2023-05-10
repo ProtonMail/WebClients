@@ -1,3 +1,15 @@
+/* This file defines the core client code for the browser extension's content script.
+ * The client sets up the context, manages the state and provides functions to start and destroy
+ * the content script service. It listens to messages from the background script,
+ * and registers or unregisters the content script service based on state changes / errors.
+ *
+ * Sequences:
+ * - Normal start: client is registered with the background script and starts normally.
+ * - Unregister request: background requests to unregister -> client destroys itself.
+ * - Successful recovery: extension context change with successful recovery (i.e., port disconnected).
+ * - Failed recovery: extension context change with failed recovery -> destroy.
+ * - Error during setup: client encounters an error during setup -> destroy.
+ */
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
@@ -9,7 +21,9 @@ import { ExtensionContext, type ExtensionContextType, setupExtensionContext } fr
 import { createContentScriptContext } from '../context/factory';
 import { DOMCleanUp } from '../injections/cleanup';
 
-export const createContentScriptService = (scriptId: string, mainFrame: boolean) => {
+import '../injections/injection.scss';
+
+export const createContentScriptClient = (scriptId: string, mainFrame: boolean) => {
     const context = createContentScriptContext(scriptId, mainFrame);
     const listeners = createListenerStore();
 
@@ -17,7 +31,7 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
      * recycle this content-script service.  */
     const destroy = (options: { reason: string; recycle?: boolean }) => {
         if (context.getState().active) {
-            logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
+            logger.debug(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`, options.recycle);
 
             listeners.removeAll();
             context.setState({ active: options.recycle ?? false });
@@ -76,7 +90,7 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
 
         if (res.type === 'success' && context.getState().active) {
             const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-            logger.info(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
 
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings!);
@@ -85,9 +99,7 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
-            if (!mainFrame && !runDetection) {
-                return destroy({ reason: 'subframe discarded', recycle: false });
-            }
+            if (!mainFrame && !runDetection) return destroy({ reason: 'subframe discarded', recycle: false });
 
             /* if no detection was ran on start : reconciliate for auto-save */
             if (!runDetection) void context.service.formManager.reconciliate([]);
@@ -106,15 +118,15 @@ export const createContentScriptService = (scriptId: string, mainFrame: boolean)
                 onContextChange: (nextCtx) => context.getState().active && handleStart(nextCtx),
             });
 
-            logger.info(`[ContentScript::${scriptId}] Starting content-script service`);
+            logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
             return await handleStart(extensionContext);
         } catch (e) {
-            logger.warn(`[ContentScript::${scriptId}] Setup error`, e);
-            destroy({ recycle: true, reason: 'setup error' });
+            logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
+            destroy({ recycle: false, reason: 'setup error' });
         }
     };
 
     return { start, destroy };
 };
 
-export type ContentScriptService = ReturnType<typeof createContentScriptService>;
+export type ContentScriptClientService = ReturnType<typeof createContentScriptClient>;

@@ -2,8 +2,8 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 
-import { withContext } from '../context/context';
-import { FormType } from '../types';
+import { withContext } from '../../context/context';
+import { FormType } from '../../types';
 
 export const createCSAutofillService = () => {
     const queryItems: () => Promise<SafeLoginItem[]> = withContext(async ({ mainFrame }) =>

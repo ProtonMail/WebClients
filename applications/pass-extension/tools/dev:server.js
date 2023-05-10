@@ -18,7 +18,7 @@ const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 1337, Number);
 const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, Boolean);
 const REDUX_DEVTOOLS_PORT = parseEnvVar('REDUX_DEVTOOLS_PORT', 8000, Number);
 
-const EXCLUDED_WEBPACK_ENTRIES = ['authFallback', 'background', 'content', 'dropdown', 'notification'];
+const EXCLUDED_WEBPACK_ENTRIES = ['authFallback', 'background', 'client', 'dropdown', 'notification', 'orchestrator'];
 
 const sanitizeWebpackConfig = (config) => {
     /**
