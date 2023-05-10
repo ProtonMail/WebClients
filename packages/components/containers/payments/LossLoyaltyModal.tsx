@@ -25,12 +25,14 @@ const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) 
                         onClose?.();
                     }}
                     color="danger"
+                    data-testid="confirm-loss-btn"
                 >
                     {c('Action').t`Remove bonuses`}
                 </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             onClose={onClose}
+            data-testid="confirm-loss"
             {...rest}
         >
             <div className="mb-4">
