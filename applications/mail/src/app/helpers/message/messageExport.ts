@@ -37,11 +37,16 @@ export const prepareExport = (message: MessageState) => {
 
     const document = message.messageDocument.document.cloneNode(true) as Element;
 
+    // Using create element will create a DOM element that will not be added to the window's document, but images will be loaded
+    // Use a DOMParser instead so that images are not loaded.
+    const parser = new DOMParser();
+    const dom = parser.parseFromString(document.innerHTML, 'text/html');
+
     // Embedded images
-    insertActualEmbeddedImages(document);
+    insertActualEmbeddedImages(dom.body);
 
     // Clean remote images
-    return replaceProxyWithOriginalURLAttributes(message, document);
+    return replaceProxyWithOriginalURLAttributes(message, dom.body);
 };
 
 const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
