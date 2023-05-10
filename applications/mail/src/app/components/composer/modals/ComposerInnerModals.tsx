@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { Alert, ErrorButton } from '@proton/components';
 import { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -107,9 +108,12 @@ const ComposerInnerModals = ({
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
                 >
-                    <Alert learnMore={getKnowledgeBaseUrl('/attachment-reminders')}>
+                    <Alert>
                         {c('Info')
                             .t`You wrote “${attachmentsFoundKeyword}”, but no attachment has been added. Do you want to send your message anyway?`}
+                        <div>
+                            <Href href={getKnowledgeBaseUrl('/attachment-reminders')}>{c('Link').t`Learn more`}</Href>
+                        </div>
                     </Alert>
                 </ComposerInnerModal>
             )}

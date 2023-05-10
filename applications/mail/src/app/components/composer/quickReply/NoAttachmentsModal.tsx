@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button, Href } from '@proton/atoms';
 import { Alert, ModalProps, PrimaryButton, Prompt } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -20,9 +20,12 @@ const NoAttachmentsModal = ({ attachmentsFoundKeyword, onResolve, onReject, ...r
             ]}
             {...rest}
         >
-            <Alert learnMore={getKnowledgeBaseUrl('/attachment-reminders')}>
+            <Alert>
                 {c('Info')
                     .t`You wrote “${attachmentsFoundKeyword}”, but no attachment has been added. Do you want to send your message anyway?`}
+                <div>
+                    <Href href={getKnowledgeBaseUrl('/attachment-reminders')}>{c('Link').t`Learn more`}</Href>
+                </div>
             </Alert>
         </Prompt>
     );
