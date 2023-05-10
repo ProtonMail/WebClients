@@ -160,8 +160,6 @@ export const VaultSubmenu: VFC<{
     const vaults = useSelector(selectAllVaultWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
 
-    console.log(vaults);
-
     const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
 
     const handleSelect = (vault: VaultOption) => {
