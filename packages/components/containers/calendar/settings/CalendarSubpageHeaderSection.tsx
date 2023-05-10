@@ -5,40 +5,63 @@ import { Alert, Icon, Tooltip, useModalState } from '@proton/components/componen
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { SettingsSectionWide } from '@proton/components/containers';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { classnames } from '@proton/components/helpers';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
+import { getIsHolidaysCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     getCalendarCreatedByText,
     getCalendarNameSubline,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { HolidaysDirectoryCalendar, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '../calendarModal/CalendarModal';
+import HolidaysCalendarModal from '../holidaysCalendarModal/HolidaysCalendarModal';
 import CalendarBadge from './CalendarBadge';
 
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     defaultCalendar?: VisualCalendar;
+    holidaysCalendars: VisualCalendar[];
+    holidaysDirectory?: HolidaysDirectoryCalendar[];
     onEdit?: () => void;
     canEdit: boolean;
 }
 
-const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEdit }: Props) => {
+const CalendarSubpageHeaderSection = ({
+    calendar,
+    defaultCalendar,
+    holidaysCalendars,
+    holidaysDirectory,
+    onEdit,
+    canEdit,
+}: Props) => {
     const { contactEmailsMap } = useContactEmailsCache();
 
-    const { Name, Description, Color, Email: memberEmail, Permissions: memberPermissions } = calendar;
+    const {
+        Name,
+        Description,
+        Color,
+        Email: memberEmail,
+        Permissions: memberPermissions,
+        Type: calendarType,
+    } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
     const createdByText = getCalendarCreatedByText(calendar, contactEmailsMap);
-    const subline = getCalendarNameSubline({ displayEmail: true, memberEmail, memberPermissions });
+    const subline = getCalendarNameSubline({ calendarType, displayEmail: true, memberEmail, memberPermissions });
     const editCalendarText = c('Calendar edit button tooltip').t`Edit calendar`;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
+    const [holidaysCalendarModal, setHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
 
     const handleEdit = () => {
-        setIsCalendarModalOpen(true);
+        if (getIsHolidaysCalendar(calendar)) {
+            setHolidaysCalendarModalOpen(true);
+        } else {
+            setIsCalendarModalOpen(true);
+        }
     };
 
     return (
@@ -49,6 +72,15 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                     type={CALENDAR_MODAL_TYPE.VISUAL}
                     onEditCalendar={onEdit}
                     {...calendarModal}
+                />
+            )}
+            {renderHolidaysCalendarModal && holidaysDirectory && (
+                <HolidaysCalendarModal
+                    {...holidaysCalendarModal}
+                    directory={holidaysDirectory}
+                    calendar={calendar}
+                    holidaysCalendars={holidaysCalendars}
+                    showNotification={false}
                 />
             )}
             <div className="my-6 flex flex-justify-space-between flex-nowrap">
@@ -68,7 +100,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                     </div>
                     {isSubscribed && (
                         <div
-                            className={classnames(['text-break text-sm mt-1 color-weak', !url && 'calendar-email'])}
+                            className={clsx(['text-break text-sm mt-1 color-weak', !url && 'calendar-email'])}
                             title={url || ''}
                         >
                             {url}

@@ -15,6 +15,7 @@ import {
     useCalendars,
     useSubscribedCalendars,
 } from '@proton/components';
+import { useHolidaysDirectory } from '@proton/components/containers/calendar/hooks';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
 import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
 import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar';
@@ -40,12 +41,7 @@ interface Props {
     redirect: ReactNode;
 }
 
-const CalendarSettingsRouter = ({
-    user,
-    loadingFeatures,
-    calendarAppRoutes,
-    redirect,
-}: Props) => {
+const CalendarSettingsRouter = ({ user, loadingFeatures, calendarAppRoutes, redirect }: Props) => {
     const { path } = useRouteMatch();
 
     const [addresses, loadingAddresses] = useAddresses();
@@ -60,6 +56,7 @@ const CalendarSettingsRouter = ({
         ownedPersonalCalendars: myCalendars,
         sharedCalendars,
         subscribedCalendars: subscribedCalendarsWithoutParams,
+        holidaysCalendars,
         unknownCalendars,
     } = useMemo(() => {
         const visualCalendars = sortCalendars(getVisualCalendars(calendars || []));
@@ -79,6 +76,7 @@ const CalendarSettingsRouter = ({
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
+    const [holidaysDirectory, loadingHolidaysDirectory] = useHolidaysDirectory();
 
     const defaultCalendar = getDefaultCalendar(myCalendars, calendarUserSettings.DefaultCalendarID);
     const preferredPersonalActiveCalendar = getPreferredActiveWritableCalendar(
@@ -93,7 +91,8 @@ const CalendarSettingsRouter = ({
         loadingCalendars ||
         loadingCalendarUserSettings ||
         loadingFeatures ||
-        loadingSubscribedCalendars
+        loadingSubscribedCalendars ||
+        loadingHolidaysDirectory
     ) {
         return <PrivateMainAreaLoading />;
     }
@@ -121,6 +120,8 @@ const CalendarSettingsRouter = ({
                     myCalendars={myCalendars}
                     subscribedCalendars={subscribedCalendars}
                     sharedCalendars={sharedCalendars}
+                    holidaysCalendars={holidaysCalendars}
+                    holidaysDirectory={holidaysDirectory}
                     unknownCalendars={unknownCalendars}
                     defaultCalendar={defaultCalendar}
                 />
@@ -130,6 +131,8 @@ const CalendarSettingsRouter = ({
                     calendars={visualCalendars}
                     addresses={addresses}
                     subscribedCalendars={subscribedCalendars}
+                    holidaysCalendars={holidaysCalendars}
+                    holidaysDirectory={holidaysDirectory}
                     defaultCalendar={defaultCalendar}
                     user={user}
                 />

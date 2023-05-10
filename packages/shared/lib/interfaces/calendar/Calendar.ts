@@ -91,3 +91,17 @@ export interface CalendarErrors {
     name?: string;
     description?: string;
 }
+
+export interface HolidaysDirectoryCalendar {
+    CalendarID: string;
+    Country: string;
+    CountryCode: string;
+    Language: string;
+    LanguageCode: string;
+    Passphrase: string;
+    SessionKey: {
+        Key: string;
+        Algorithm: string;
+    };
+    Timezones: string[];
+}

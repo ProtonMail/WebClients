@@ -93,6 +93,7 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
+        FeatureCode.HolidaysCalendars,
         FeatureCode.EasySwitch,
         FeatureCode.PassSettings,
         FeatureCode.PassPlusPlan,

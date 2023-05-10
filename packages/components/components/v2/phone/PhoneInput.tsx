@@ -4,7 +4,7 @@ import { Input, InputProps } from '@proton/atoms';
 
 import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
 import { classnames } from '../../../helpers';
-import CountrySelect from './CountrySelect';
+import PhoneCountrySelect from './PhoneCountrySelect';
 import {
     getCountries,
     getCountryFromNumber,
@@ -135,7 +135,7 @@ const PhoneInput = ({
             containerProps={{ dir: 'ltr' }}
             className={classnames([isRTL ? 'text-right' : null])}
             prefix={
-                <CountrySelect
+                <PhoneCountrySelect
                     embedded={embedded}
                     value={selectedValue}
                     options={countries}
