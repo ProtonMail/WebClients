@@ -49,7 +49,7 @@ const EOMessageBody = ({
         <div
             ref={bodyRef}
             className={clsx([
-                'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm px2 py1 on-tiny-mobile-pl0 on-tiny-mobile-pr0',
+                'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm px-7 py-1',
                 plain && 'plain',
             ])}
             data-testid="message-content:body"

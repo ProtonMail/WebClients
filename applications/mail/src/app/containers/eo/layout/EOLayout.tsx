@@ -48,7 +48,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">
             <PublicTopBanners />
-            <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink p2 on-tiny-mobile-flex-column">
+            <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink p-7 on-tiny-mobile-flex-column">
                 <AppLink to="/" toApp={toApp} target="_self">
                     <Logo appName={toApp} />
                 </AppLink>
@@ -61,7 +61,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </div>
                 </div>
             </header>
-            <div className="pl2 pr2 eo-layout-container flex-item-fluid flex flex-nowrap flex-column">
+            <div className="eo-layout-container sm:mx-7 flex-item-fluid flex flex-nowrap flex-column">
                 <div>{children}</div>
                 <div className="mx-auto mt-8">
                     <Href
