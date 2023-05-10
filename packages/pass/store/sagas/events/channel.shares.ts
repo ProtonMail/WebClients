@@ -3,14 +3,14 @@ import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import type { Api, Maybe, ServerEvent, Share, SharesGetResponse } from '@proton/pass/types';
 import { ChannelType, ShareType } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
+import { prop, truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { sharesSync, vaultCreationSuccess } from '../../actions';
+import { sharesSync, vaultCreationSuccess, vaultSetPrimarySync } from '../../actions';
 import { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
@@ -33,13 +33,16 @@ function* onSharesEvent(
     if (event.error) throw event.error;
 
     const localShares: Share[] = yield select(selectAllShares);
+    const localPrimaryShareId = localShares.find(prop('primary'))?.shareId;
     const localShareIds = localShares.map(({ shareId }) => shareId);
 
-    const newShares = event.Shares.filter((share) => !localShareIds.includes(share.ShareID));
+    const remoteShares = event.Shares;
+    const remotePrimaryShareId = remoteShares.find(prop('Primary'))?.ShareID;
+    const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
     logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
 
     if (newShares.length) {
-        const shares = (
+        const activeNewShares = (
             (yield Promise.all(
                 newShares
                     .filter((share) => share.TargetType === ShareType.Vault)
@@ -47,18 +50,22 @@ function* onSharesEvent(
             )) as Maybe<Share>[]
         ).filter(truthy);
 
-        if (shares.length > 0) {
+        if (activeNewShares.length > 0) {
             const items = (
                 (yield Promise.all(
-                    shares.map(async ({ shareId }) => ({
+                    activeNewShares.map(async ({ shareId }) => ({
                         [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
                     }))
                 )) as ItemsByShareId[]
             ).reduce(diadic(merge));
 
-            yield put(sharesSync({ shares: toMap(shares, 'shareId'), items }));
-            yield all(shares.map(getShareChannelForks(api, options)).flat());
+            yield put(sharesSync({ shares: toMap(activeNewShares, 'shareId'), items }));
+            yield all(activeNewShares.map(getShareChannelForks(api, options)).flat());
         }
+    }
+
+    if (remotePrimaryShareId && localPrimaryShareId !== remotePrimaryShareId) {
+        yield put(vaultSetPrimarySync({ id: remotePrimaryShareId }));
     }
 }
 
