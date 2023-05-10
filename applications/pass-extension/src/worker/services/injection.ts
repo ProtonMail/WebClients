@@ -13,8 +13,8 @@ export const createInjectionService = () => {
     const inject = async (options: { tabId: TabId }) => {
         const { tabId } = options;
         Promise.all([
-            browser.scripting.insertCSS({ target: { tabId, allFrames: true }, files: CSS_FILES }),
-            browser.scripting.executeScript({ target: { tabId, allFrames: true }, files: JS_FILES }),
+            browser.scripting.insertCSS({ target: { tabId, allFrames: false }, files: CSS_FILES }),
+            browser.scripting.executeScript({ target: { tabId, allFrames: false }, files: JS_FILES }),
         ]).catch((e) => logger.info(`[InjectionService::inject] Injection error on tab ${tabId}`, e));
     };
 
