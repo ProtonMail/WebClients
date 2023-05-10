@@ -22,8 +22,10 @@ const CreditsSection = () => {
                 <Button shape="outline" onClick={() => setCreditModalOpen(true)}>{c('Action').t`Add credits`}</Button>
             </div>
             <div className="px-4 mb-4 flex flex-justify-space-between">
-                <span className="text-bold">{c('Credits').t`Available credits`}</span>
-                <span className="text-bold">{Credit / 100}</span>
+                <span className="text-bold" data-testid="unused-credits">{c('Credits').t`Available credits`}</span>
+                <span className="text-bold" data-testid="avalaible-credits">
+                    {Credit / 100}
+                </span>
             </div>
             <hr />
             {renderCreditModal && <CreditsModal {...creditModalProps} />}
