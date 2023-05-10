@@ -189,7 +189,7 @@ describe('CalendarSidebar', () => {
 
         const myCalendarsButton = getByTestId('calendar-sidebar:my-calendars-button');
         expect(myCalendarsButton).toBeInTheDocument();
-        expect(queryByText(/Subscribed calendars/)).not.toBeInTheDocument();
+        expect(queryByText(/Other calendars/)).not.toBeInTheDocument();
 
         expect(getByText(/calendar3/)).toBeInTheDocument();
         expect(getByText(/Add calendar/)).toBeInTheDocument();
