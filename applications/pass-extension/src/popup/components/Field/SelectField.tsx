@@ -35,7 +35,6 @@ export const SelectField: FC<SelectFieldProps> = ({
                 error={error}
                 labelContainerClassName="increase-click-surface color-weak m-0 text-normal text-sm"
                 renderSelected={loading ? () => <div className="pass-skeleton pass-skeleton--select" /> : undefined}
-                rootClassName="static"
                 {...field}
                 {...props}
                 onChange={undefined}
