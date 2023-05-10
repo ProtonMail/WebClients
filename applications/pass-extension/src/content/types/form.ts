@@ -56,4 +56,5 @@ export interface FieldHandle {
 export interface FormTracker {
     attach: () => void;
     detach: () => void;
+    autofocus: () => void;
 }

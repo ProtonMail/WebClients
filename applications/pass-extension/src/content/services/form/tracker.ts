@@ -185,5 +185,16 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         });
     };
 
-    return { attach, detach };
+    const autofocus = () => {
+        form.listFields().forEach((field) => {
+            /* if the field is already focused by the browser we need
+             * to re-dispatch the event on the input element */
+            if (field.element === document.activeElement) {
+                const focusEvent = new FocusEvent('focus', { bubbles: true, cancelable: true, relatedTarget: null });
+                field.element.dispatchEvent(focusEvent);
+            }
+        });
+    };
+
+    return { attach, detach, autofocus };
 };

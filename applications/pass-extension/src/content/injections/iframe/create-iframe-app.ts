@@ -176,7 +176,6 @@ export const createIFrameApp = ({
 
     const reset = (workerState: WorkerState) => {
         sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload: { workerState } });
-        close({ userInitiated: false });
     };
 
     const destroy = () => {
