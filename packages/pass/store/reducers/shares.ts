@@ -2,6 +2,7 @@ import type { AnyAction } from 'redux';
 
 import type { Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp';
 import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
 
 import {
@@ -23,6 +24,7 @@ import {
     vaultSetPrimaryFailure,
     vaultSetPrimaryIntent,
     vaultSetPrimarySuccess,
+    vaultSetPrimarySync,
 } from '../actions';
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
 import withOptimistic from '../optimistic/with-optimistic';
@@ -113,8 +115,8 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return objectDelete(state, action.payload.shareId);
         }
 
-        if (vaultSetPrimaryIntent.match(action)) {
-            return objectMap(state)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
+        if (or(vaultSetPrimaryIntent.match, vaultSetPrimarySync.match)(action)) {
+            return objectMap(state!)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
         }
 
         return state;

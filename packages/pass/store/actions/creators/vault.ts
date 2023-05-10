@@ -1,3 +1,4 @@
+import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ExtensionEndpoint, Share, ShareContent, ShareType } from '@proton/pass/types';
@@ -210,3 +211,5 @@ export const vaultSetPrimarySuccess = createOptimisticAction(
         )({ payload }),
     ({ payload }) => payload.id
 );
+
+export const vaultSetPrimarySync = createAction('vault set primary sync', (payload: { id: string }) => ({ payload }));
