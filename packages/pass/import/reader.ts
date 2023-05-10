@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
 import { readBitwardenData } from './providers/bitwarden.reader';
 import { readChromiumData } from './providers/chromium.reader';
@@ -21,7 +22,11 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         case ImportProvider.LASTPASS:
             return readLastPassData(await payload.file.text());
         case ImportProvider.ONEPASSWORD:
-            return read1Password1PuxData(await payload.file.arrayBuffer());
+            if (payload.file.name.endsWith('.1pif')) {
+                return read1Password1PifData(await payload.file.text());
+            } else {
+                return read1Password1PuxData(await payload.file.arrayBuffer());
+            }
         case ImportProvider.PROTONPASS:
             return readProtonPassData({ data: await payload.file.arrayBuffer(), encrypted: false });
         case ImportProvider.PROTONPASS_PGP:
