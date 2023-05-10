@@ -173,7 +173,7 @@ const Dropdown = ({
          *
          * The behaviour on click inside said label seems to be the following:
          * Emit one click event with the target of the clicked element (imagine an icon inside
-         * an input field for example, e.g. CountrySelect input)
+         * an input field for example, e.g. PhoneCountrySelect input)
          * Emit a second click event seemingly coming from and with the target being the input
          * element which is linked to the label via the "for" attribute OR whichever input
          * element is the first to appear in the children of the label.

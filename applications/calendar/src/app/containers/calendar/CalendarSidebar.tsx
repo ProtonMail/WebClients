@@ -7,6 +7,7 @@ import {
     AppsDropdown,
     DropdownMenu,
     DropdownMenuButton,
+    FeatureCode,
     Icon,
     Sidebar,
     SidebarList,
@@ -15,16 +16,23 @@ import {
     SidebarPrimaryButton,
     SimpleDropdown,
     SimpleSidebarListItemHeader,
+    Spotlight,
     Tooltip,
     useApi,
     useEventManager,
     useLoading,
     useModalState,
+    useSpotlightOnFeature,
+    useSpotlightShow,
     useUser,
+    useWelcomeFlags,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
+import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
+import { useHolidaysDirectory } from '@proton/components/containers/calendar/hooks';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
+import useFeature from '@proton/components/hooks/useFeature';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -43,6 +51,7 @@ export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
+    isNarrow: boolean;
     logo?: ReactNode;
     miniCalendar: ReactNode;
     onToggleExpand: () => void;
@@ -56,6 +65,7 @@ const CalendarSidebar = ({
     calendarUserSettings,
     logo,
     expanded = false,
+    isNarrow,
     onToggleExpand,
     miniCalendar,
     onCreateEvent,
@@ -64,12 +74,18 @@ const CalendarSidebar = ({
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
+    const [{ isWelcomeFlow }] = useWelcomeFlags();
+    const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [loadingVisibility, withLoadingVisibility] = useLoading();
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
+    const [holidaysCalendarModal, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
-    const [isLimitReachedModal, setIsLimitReachedModalOpen, renderIsLimitReachedModal] = useModalState();
+    const [limitReachedModal, setIsLimitReachedModalOpen, renderLimitReachedModal] = useModalState();
+
+    const [holidaysDirectory] = useHolidaysDirectory();
+    const canShowAddHolidaysCalendar = holidaysCalendarsEnabled && !!holidaysDirectory?.length;
 
     const headerRef = useRef(null);
     const dropdownRef = useRef(null);
@@ -78,6 +94,7 @@ const CalendarSidebar = ({
         ownedPersonalCalendars: myCalendars,
         sharedCalendars,
         subscribedCalendars: subscribedCalendarsWithoutParams,
+        holidaysCalendars,
         unknownCalendars,
     } = useMemo(() => {
         return groupCalendarsByTaxonomy(calendars);
@@ -88,6 +105,7 @@ const CalendarSidebar = ({
     const otherCalendars = sortCalendars([
         ...(loadingSubscribedCalendars ? subscribedCalendarsWithoutParams : subscribedCalendars),
         ...sharedCalendars,
+        ...holidaysCalendars,
         ...unknownCalendars,
     ]);
 
@@ -95,6 +113,18 @@ const CalendarSidebar = ({
         calendars,
         !user.hasPaidMail
     );
+
+    const { show: showHolidaysSpotlight, onDisplayed: onHolidaysSpotlightDisplayed } = useSpotlightOnFeature(
+        FeatureCode.HolidaysCalendarsSpotlight,
+        !isWelcomeFlow && !isNarrow && !holidaysCalendars.length,
+        // TODO: update
+        {
+            alpha: Date.UTC(2023, 4, 25, 12),
+            beta: Date.UTC(2023, 4, 25, 12),
+            default: Date.UTC(2023, 4, 25, 12),
+        }
+    );
+    const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
 
     const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
 
@@ -108,6 +138,14 @@ const CalendarSidebar = ({
     const handleCreatePersonalCalendar = () => {
         if (!isCalendarsLimitReached) {
             setIsCalendarModalOpen(true);
+        } else {
+            setIsLimitReachedModalOpen(true);
+        }
+    };
+
+    const handleAddHolidaysCalendar = () => {
+        if (!isCalendarsLimitReached) {
+            setIsHolidaysCalendarModalOpen(true);
         } else {
             setIsLimitReachedModalOpen(true);
         }
@@ -153,31 +191,55 @@ const CalendarSidebar = ({
                 right={
                     <div className="flex flex-nowrap flex-align-items-center pr0-75">
                         {!isOtherCalendarsLimitReached ? (
-                            <Tooltip title={addCalendarText}>
-                                <SimpleDropdown
-                                    as="button"
-                                    type="button"
-                                    hasCaret={false}
-                                    className="navigation-link-header-group-control flex"
-                                    content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
-                                    ref={dropdownRef}
-                                >
-                                    <DropdownMenu>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={handleCreatePersonalCalendar}
-                                        >
-                                            {c('Action').t`Create calendar`}
-                                        </DropdownMenuButton>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={handleCreateSubscribedCalendar}
-                                        >
-                                            {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
-                                        </DropdownMenuButton>
-                                    </DropdownMenu>
-                                </SimpleDropdown>
-                            </Tooltip>
+                            <Spotlight
+                                show={shouldShowHolidaysSpotlight}
+                                onDisplayed={onHolidaysSpotlightDisplayed}
+                                type="new"
+                                content={
+                                    <>
+                                        <div className="text-lg text-bold mb0-25">{c('Spotlight')
+                                            .t`Public holidays are here!`}</div>
+                                        <p className="m0">
+                                            {c('Spotlight').t`Add your country's public holidays to your calendar.`}
+                                        </p>
+                                    </>
+                                }
+                                anchorRef={dropdownRef}
+                            >
+                                <Tooltip title={addCalendarText}>
+                                    <SimpleDropdown
+                                        as="button"
+                                        type="button"
+                                        hasCaret={false}
+                                        className="navigation-link-header-group-control flex"
+                                        content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
+                                        ref={dropdownRef}
+                                    >
+                                        <DropdownMenu>
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={handleCreatePersonalCalendar}
+                                            >
+                                                {c('Action').t`Create calendar`}
+                                            </DropdownMenuButton>
+                                            {canShowAddHolidaysCalendar && (
+                                                <DropdownMenuButton
+                                                    className="text-left"
+                                                    onClick={handleAddHolidaysCalendar}
+                                                >
+                                                    {c('Action').t`Add public holidays`}
+                                                </DropdownMenuButton>
+                                            )}
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={handleCreateSubscribedCalendar}
+                                            >
+                                                {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
+                                            </DropdownMenuButton>
+                                        </DropdownMenu>
+                                    </SimpleDropdown>
+                                </Tooltip>
+                            </Spotlight>
                         ) : (
                             <Button
                                 shape="ghost"
@@ -202,6 +264,7 @@ const CalendarSidebar = ({
                 <CalendarSidebarListItems
                     calendars={myCalendars}
                     allCalendars={calendars}
+                    holidaysDirectory={holidaysDirectory}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingVisibility(handleChangeVisibility(calendarID, value))
                     }
@@ -226,6 +289,7 @@ const CalendarSidebar = ({
                     loadingSubscriptionParameters={loadingSubscribedCalendars}
                     calendars={otherCalendars}
                     allCalendars={calendars}
+                    holidaysDirectory={holidaysDirectory}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingVisibility(handleChangeVisibility(calendarID, value))
                     }
@@ -256,8 +320,15 @@ const CalendarSidebar = ({
             {renderSubscribedCalendarModal && (
                 <SubscribedCalendarModal {...subscribedCalendarModal} onCreateCalendar={onCreateCalendar} />
             )}
-            {renderIsLimitReachedModal && (
-                <CalendarLimitReachedModal {...isLimitReachedModal} isFreeUser={!user.hasPaidMail} />
+            {renderHolidaysCalendarModal && holidaysDirectory && (
+                <HolidaysCalendarModal
+                    {...holidaysCalendarModal}
+                    directory={holidaysDirectory}
+                    holidaysCalendars={holidaysCalendars}
+                />
+            )}
+            {renderLimitReachedModal && (
+                <CalendarLimitReachedModal {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
             )}
 
             <SidebarNav data-testid="calendar-sidebar:calendars-list-area">

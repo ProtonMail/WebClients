@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/components';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { createCalendar, updateCalendarUserSettings } from '../../../api/calendars';
-import { ACCENT_COLORS } from '../../../colors';
+import { getRandomAccentColor } from '../../../colors';
 import { getTimezone } from '../../../date/timezone';
 import { getActiveAddresses } from '../../../helpers/address';
 import { Address, Api } from '../../../interfaces';
@@ -34,7 +33,7 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
     const { Calendar } = await api<{ Calendar: CalendarWithOwnMembers }>(
         createCalendar({
             Name: DEFAULT_CALENDAR.name,
-            Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+            Color: getRandomAccentColor(),
             Description: DEFAULT_CALENDAR.description,
             Display: 1,
             AddressID: addressID,

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { SimpleMap } from '@proton/shared/lib/interfaces';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export const ACCENT_COLORS_MAP = {
     purple: { color: '#8080FF', getName: () => c('color').t`purple` },
@@ -36,3 +37,5 @@ const COLOR_NAME_MAP = Object.values(ACCENT_COLORS_MAP).reduce<SimpleMap<() => s
 export const getColorName = (color: string) => {
     return COLOR_NAME_MAP[color.toUpperCase()]?.();
 };
+
+export const getRandomAccentColor = () => ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)];

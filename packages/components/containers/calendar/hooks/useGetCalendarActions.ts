@@ -3,28 +3,17 @@ import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal';
-import {
-    createCalendar,
-    updateCalendarSettings,
-    updateCalendarUserSettings,
-    updateMember,
-} from '@proton/shared/lib/api/calendars';
+import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getOwnedPersonalCalendars,
     getProbablyActiveCalendars,
     getVisualCalendar,
+    updateCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import {
-    CalendarNotificationSettings,
-    CalendarSettings,
-    CalendarWithOwnMembers,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+import { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
-import isTruthy from '@proton/utils/isTruthy';
 
 import {
     useApi,
@@ -35,60 +24,6 @@ import {
     useReadCalendarBootstrap,
 } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar';
-
-const getHasChangedCalendarMemberData = (calendarPayload: CalendarCreateData, calendar: VisualCalendar) => {
-    const { Name: oldName, Description: oldDescription, Color: oldColor, Display: oldDisplay } = calendar;
-    const { Name: newName, Description: newDescription, Color: newColor, Display: newDisplay } = calendarPayload;
-
-    return (
-        oldColor.toLowerCase() !== newColor.toLowerCase() ||
-        oldDisplay !== newDisplay ||
-        oldName !== newName ||
-        oldDescription !== newDescription
-    );
-};
-
-const getHasChangedCalendarNotifications = (
-    newNotifications: CalendarNotificationSettings[],
-    oldNotifications: CalendarNotificationSettings[]
-) => {
-    return (
-        newNotifications.length !== oldNotifications.length ||
-        newNotifications.some(
-            ({ Type: newType, Trigger: newTrigger }) =>
-                !oldNotifications.find(
-                    ({ Type: oldType, Trigger: oldTrigger }) => oldType === newType && oldTrigger === newTrigger
-                )
-        )
-    );
-};
-
-const getHasChangedCalendarSettings = (
-    newSettings: Required<
-        Pick<CalendarSettings, 'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'>
-    >,
-    oldSettings?: CalendarSettings
-) => {
-    if (!oldSettings) {
-        // we should not fall in here. If we do, assume changes are needed
-        return true;
-    }
-    const {
-        DefaultEventDuration: newDuration,
-        DefaultPartDayNotifications: newPartDayNotifications,
-        DefaultFullDayNotifications: newFullDayNotifications,
-    } = newSettings;
-    const {
-        DefaultEventDuration: oldDuration,
-        DefaultPartDayNotifications: oldPartDayNotifications,
-        DefaultFullDayNotifications: oldFullDayNotifications,
-    } = oldSettings;
-    return (
-        newDuration !== oldDuration ||
-        getHasChangedCalendarNotifications(newPartDayNotifications, oldPartDayNotifications) ||
-        getHasChangedCalendarNotifications(newFullDayNotifications, oldFullDayNotifications)
-    );
-};
 
 interface Props {
     type?: CALENDAR_MODAL_TYPE;
@@ -204,19 +139,13 @@ const useGetCalendarActions = ({
         >
     ) => {
         const calendarID = calendar.ID;
-        const { Color, Display, Description, Name } = calendarPayload;
-        const [{ ID: memberID }] = getMemberAndAddress(await getAddresses(), calendar.Members);
-        const hasChangedMemberData = getHasChangedCalendarMemberData(calendarPayload, calendar);
-        const hasChangedSettings = getHasChangedCalendarSettings(
+        await updateCalendar(
+            calendar,
+            calendarPayload,
             calendarSettingsPayload,
-            readCalendarBootstrap(calendarID)?.CalendarSettings
-        );
-
-        await Promise.all(
-            [
-                hasChangedMemberData && api(updateMember(calendarID, memberID, { Display, Color, Description, Name })),
-                hasChangedSettings && api(updateCalendarSettings(calendarID, calendarSettingsPayload)),
-            ].filter(isTruthy)
+            readCalendarBootstrap,
+            getAddresses,
+            api
         );
 
         await call();

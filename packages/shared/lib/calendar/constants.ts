@@ -52,13 +52,8 @@ export enum CALENDAR_FLAGS {
 export enum CALENDAR_TYPE {
     PERSONAL = 0,
     SUBSCRIPTION = 1,
+    HOLIDAYS = 2,
 }
-
-export enum CALENDAR_TYPE_EXTENDED {
-    SHARED = 2,
-}
-
-export type EXTENDED_CALENDAR_TYPE = CALENDAR_TYPE | CALENDAR_TYPE_EXTENDED;
 
 export enum CALENDAR_DISPLAY {
     HIDDEN = 0,

@@ -14,8 +14,8 @@ import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } fr
 import { ContactEmail } from '../../../interfaces/contacts';
 import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
-import { getIsOwnedCalendar, getIsSubscribedCalendar } from '../../calendar';
-import { CALENDAR_PERMISSIONS } from '../../constants';
+import { getIsSharedCalendar } from '../../calendar';
+import { CALENDAR_PERMISSIONS, CALENDAR_TYPE } from '../../constants';
 import { decryptPassphrase, decryptPassphraseSessionKey, signPassphrase } from '../../crypto/keys/calendarKeys';
 import { getCanWrite } from '../../permissions';
 
@@ -130,7 +130,7 @@ export const rejectCalendarShareInvitation = ({
 
 export const getCalendarCreatedByText = (calendar: VisualCalendar, contactEmailsMap: SimpleMap<ContactEmail>) => {
     // we only need to display the owner for shared calendars
-    if (getIsSubscribedCalendar(calendar) || getIsOwnedCalendar(calendar)) {
+    if (!getIsSharedCalendar(calendar)) {
         return;
     }
     const { Name: contactName, Email: contactEmail } = contactEmailsMap[canonicalizeEmail(calendar.Owner.Email)] || {};
@@ -155,18 +155,21 @@ export const getCalendarNameWithOwner = ({
 };
 
 export const getCalendarNameSubline = ({
+    calendarType,
     displayEmail,
     memberEmail,
     memberPermissions,
 }: {
+    calendarType: CALENDAR_TYPE;
     displayEmail: boolean;
     memberEmail: string;
     memberPermissions: CALENDAR_PERMISSIONS;
 }) => {
     const email = displayEmail ? memberEmail : '';
-    const viewOnlyText = !getCanWrite(memberPermissions)
-        ? c('Info; access rights for shared calendar').t`View only`
-        : '';
+    const viewOnlyText =
+        !getCanWrite(memberPermissions) && calendarType === CALENDAR_TYPE.PERSONAL
+            ? c('Info; access rights for shared calendar').t`View only`
+            : '';
 
     if (!email && !viewOnlyText) {
         return '';

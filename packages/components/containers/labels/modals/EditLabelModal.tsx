@@ -4,13 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
-import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import noop from '@proton/utils/noop';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
     Form,
@@ -71,7 +70,7 @@ const EditLabelModal = ({
     const [model, setModel] = useState<LabelModel>(
         label || {
             Name: '',
-            Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+            Color: getRandomAccentColor(),
             Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
             ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
             Notify: type === 'folder' ? 1 : 0,
@@ -82,7 +81,7 @@ const EditLabelModal = ({
         setModel(
             label || {
                 Name: '',
-                Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+                Color: getRandomAccentColor(),
                 Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
                 ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
                 Notify: type === 'folder' ? 1 : 0,

@@ -2,8 +2,8 @@ import { ComponentPropsWithoutRef, useEffect, useRef } from 'react';
 
 import usePrevious from '@proton/hooks/usePrevious';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { DropdownMenuButton } from '../dropdown';
 
 export interface Props<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
@@ -59,7 +59,7 @@ const Option = <V,>({
                 isSelected={selected}
                 onClick={handleClick}
                 title={title}
-                className={classnames([
+                className={clsx([
                     className,
                     'block w100 text-left',
                     active && 'active',

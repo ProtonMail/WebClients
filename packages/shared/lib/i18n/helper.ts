@@ -12,6 +12,20 @@ export const getLanguageCode = (locale = '') => {
 };
 
 /**
+ * Takes the second portion, e.g. nl_NL => nl, fr_CA => ca
+ * ** Use only for the locale user setting (you are guaranteed to get an ISO_3166-1_alpha-2 country code for those) **
+ */
+export const getNaiveCountryCode = (locale = '') => {
+    return getNormalizedLocale(locale).split('_')[1];
+};
+
+export const getBrowserLanguageTags = (): string[] => {
+    const tags = window.navigator?.languages;
+
+    return [...tags] || [];
+};
+
+/**
  * Gets the first specified locale from the browser, if any.
  *
  * If the first locale does not have a region and the second is a regional variant of the first, take it instead.
