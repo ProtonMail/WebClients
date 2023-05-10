@@ -25,11 +25,20 @@ interface Props extends HTMLAttributes<HTMLTimeElement> {
     options?: OptionsWithIntl['intlOptions'];
 }
 
+// Current dateLocale is based on date-fns and
+// the only way to get TimeFormat for now is to check date-fns time format
+// If an 'a' or 'b' is present in the format string it will be 12H TimeFormat
+const is12HourDateFnsFormat = (formatString: string) => {
+    const regex = /a|b/;
+    return regex.test(formatString);
+};
+
 const TimeIntl = ({ children, sameDayOptions, options, ...rest }: Props) => {
     return (
         <time {...rest}>
             {readableTimeIntl(getValue(children), {
                 localeCode: dateLocale.code,
+                hour12: is12HourDateFnsFormat(dateLocale.formatLong?.time()),
                 sameDayIntlOptions: sameDayOptions,
                 intlOptions: options,
             })}
