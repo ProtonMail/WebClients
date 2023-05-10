@@ -6,7 +6,7 @@ const flagsMap = flags.keys().reduce<Partial<{ [key: string]: () => string }>>((
 }, {});
 
 export const getFlagSvg = (abbreviation: string) => {
-    const key = `./${abbreviation}.svg`;
+    const key = `./${abbreviation.toUpperCase()}.svg`;
     if (!flagsMap[key]) {
         return;
     }

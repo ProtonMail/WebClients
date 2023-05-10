@@ -244,6 +244,7 @@ const MyCalendarsSection = ({
                 onEdit={handleEditCalendar}
                 onDelete={handleDeleteCalendar}
                 onExport={handleExportCalendar}
+                data-testid="my-calendars-section"
             >
                 <SettingsParagraph>
                     {c('Personal calendar section description')

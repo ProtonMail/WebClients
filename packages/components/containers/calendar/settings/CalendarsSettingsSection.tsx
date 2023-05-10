@@ -5,7 +5,7 @@ import {
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { HolidaysDirectoryCalendar, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { MyCalendarsSection, PrivateMainAreaLoading, PrivateMainSettingsArea, SectionConfig } from '../..';
 import { useCalendarShareInvitations } from '../../../hooks';
@@ -19,6 +19,8 @@ export interface CalendarsSettingsSectionProps {
     myCalendars: VisualCalendar[];
     subscribedCalendars: SubscribedCalendar[];
     sharedCalendars: VisualCalendar[];
+    holidaysCalendars: VisualCalendar[];
+    holidaysDirectory?: HolidaysDirectoryCalendar[];
     unknownCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
 }
@@ -31,17 +33,19 @@ const CalendarsSettingsSection = ({
     myCalendars,
     subscribedCalendars,
     sharedCalendars,
+    holidaysCalendars,
+    holidaysDirectory,
     unknownCalendars,
     defaultCalendar,
 }: CalendarsSettingsSectionProps) => {
-    const { invitations: calendarInvitations, loading } = useCalendarShareInvitations();
+    const { invitations: calendarInvitations, loading: loadingCalendarInvitations } = useCalendarShareInvitations();
     const { isCalendarsLimitReached, isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(
         calendars,
         !user.hasPaidMail
     );
     const canAddCalendar = user.hasNonDelinquentScope && getActiveAddresses(addresses).length > 0;
 
-    if (loading) {
+    if (loadingCalendarInvitations) {
         return <PrivateMainAreaLoading />;
     }
 
@@ -59,6 +63,8 @@ const CalendarsSettingsSection = ({
                 subscribedCalendars={subscribedCalendars}
                 sharedCalendars={sharedCalendars}
                 calendarInvitations={filterOutExpiredInvitations(getPendingInvitations(calendarInvitations))}
+                holidaysCalendars={holidaysCalendars}
+                holidaysDirectory={holidaysDirectory}
                 unknownCalendars={unknownCalendars}
                 addresses={addresses}
                 user={user}

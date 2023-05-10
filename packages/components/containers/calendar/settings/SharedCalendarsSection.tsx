@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
@@ -10,6 +8,7 @@ import {
     getCalendarStatusBadges,
     getDisabledCalendarBadge,
 } from '@proton/shared/lib/calendar/badges';
+import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
 import {
@@ -57,12 +56,13 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
         Owner: { Email: ownerEmail },
         Email: memberEmail,
         Permissions: memberPermissions,
+        Type: calendarType,
     } = calendar;
     const calendarNameWithOwner = getCalendarNameWithOwner({ calendarName, ownerEmail });
 
     const { badges } = getCalendarStatusBadges(calendar);
     const filteredBadges = badges.filter(({ statusType }) => statusType === CALENDAR_STATUS_TYPE.DISABLED);
-    const subline = getCalendarNameSubline({ displayEmail, memberEmail, memberPermissions });
+    const subline = getCalendarNameSubline({ calendarType, displayEmail, memberEmail, memberPermissions });
 
     const statusHeader = (
         <div className="flex flex-align-items-center">
@@ -134,7 +134,12 @@ const InvitationRow = ({
         calendarName: Calendar.Name,
         ownerEmail: Calendar.SenderEmail,
     });
-    const subline = getCalendarNameSubline({ displayEmail, memberEmail, memberPermissions });
+    const subline = getCalendarNameSubline({
+        calendarType: CALENDAR_TYPE.PERSONAL,
+        displayEmail,
+        memberEmail,
+        memberPermissions,
+    });
 
     const handleAccept = () => withLoadingAccept(onAccept(invitation));
     const handleDecline = () => withLoadingDecline(onDecline(invitation));
@@ -263,7 +268,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
             )}
             <SettingsSectionWide>
                 <h4 className="no-desktop text-bold text-rg mb-2">{sharedWithMeTitle}</h4>
-                <Table hasActions responsive="cards">
+                <Table hasActions responsive="cards" data-testid="shared-calendars-section">
                     <TableHeader>
                         <TableRow>
                             <TableHeaderCell className="text-left w50">{sharedWithMeTitle}</TableHeaderCell>

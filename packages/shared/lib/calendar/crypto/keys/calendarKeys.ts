@@ -84,7 +84,16 @@ export const encryptPassphrase = async ({
     };
 };
 
-export const encryptPassphraseSessionKey = async ({
+export function encryptPassphraseSessionKey({
+    sessionKey,
+    publicKey,
+    signingKey,
+}: {
+    sessionKey: SessionKey;
+    publicKey: PublicKeyReference;
+    signingKey: PrivateKeyReference;
+}): Promise<{ encryptedSessionKey: string; armoredSignature: string }>;
+export function encryptPassphraseSessionKey({
     sessionKey,
     memberPublicKeys,
     signingKey,
@@ -92,7 +101,28 @@ export const encryptPassphraseSessionKey = async ({
     sessionKey: SessionKey;
     memberPublicKeys: SimpleMap<PublicKeyReference>;
     signingKey: PrivateKeyReference;
-}): Promise<{ armoredSignature: string; encryptedSessionKeyMap: SimpleMap<string> }> => {
+}): Promise<{ encryptedSessionKeyMap: SimpleMap<string>; armoredSignature: string }>;
+export function encryptPassphraseSessionKey({
+    sessionKey,
+    memberPublicKeys,
+    signingKey,
+}: {
+    sessionKey: SessionKey;
+    memberPublicKeys: SimpleMap<PublicKeyReference>;
+    signingKey: PrivateKeyReference;
+}): Promise<{ encryptedSessionKey?: string; encryptedSessionKeyMap?: SimpleMap<string>; armoredSignature: string }>;
+
+export async function encryptPassphraseSessionKey({
+    sessionKey,
+    publicKey,
+    memberPublicKeys,
+    signingKey,
+}: {
+    sessionKey: SessionKey;
+    publicKey?: PublicKeyReference;
+    memberPublicKeys?: SimpleMap<PublicKeyReference>;
+    signingKey: PrivateKeyReference;
+}) {
     const armoredSignaturePromise = CryptoProxy.signMessage({
         binaryData: sessionKey.data,
         signingKeys: signingKey,
@@ -100,26 +130,42 @@ export const encryptPassphraseSessionKey = async ({
         format: 'armored',
         context: { critical: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
     });
-    const encryptedSessionKeysPromise = Promise.all(
-        Object.entries(memberPublicKeys).map(async ([id, publicKey]) => {
-            if (!publicKey) {
-                throw new Error('Missing public key for member');
-            }
-            const keyPacket = uint8ArrayToBase64String(await getEncryptedSessionKey(sessionKey, publicKey));
 
-            return [id, keyPacket];
-        })
-    );
-    const [armoredSignature, encryptedSessionKeys] = await Promise.all([
-        armoredSignaturePromise,
-        encryptedSessionKeysPromise,
-    ]);
+    if (publicKey) {
+        const [armoredSignature, encryptedSessionKey] = await Promise.all([
+            armoredSignaturePromise,
+            uint8ArrayToBase64String(await getEncryptedSessionKey(sessionKey, publicKey)),
+        ]);
 
-    return {
-        encryptedSessionKeyMap: Object.fromEntries(encryptedSessionKeys),
-        armoredSignature,
-    };
-};
+        return {
+            encryptedSessionKey,
+            armoredSignature,
+        };
+    } else if (memberPublicKeys) {
+        const encryptedSessionKeysPromise = Promise.all(
+            Object.entries(memberPublicKeys).map(async ([id, publicKey]) => {
+                if (!publicKey) {
+                    throw new Error('Missing public key for member');
+                }
+                const keyPacket = uint8ArrayToBase64String(await getEncryptedSessionKey(sessionKey, publicKey));
+
+                return [id, keyPacket];
+            })
+        );
+
+        const [armoredSignature, encryptedSessionKeys] = await Promise.all([
+            armoredSignaturePromise,
+            encryptedSessionKeysPromise,
+        ]);
+
+        return {
+            encryptedSessionKeyMap: Object.fromEntries(encryptedSessionKeys),
+            armoredSignature,
+        };
+    }
+
+    throw new Error('Missing parameters to encrypt session key');
+}
 
 /**
  * Decrypts a calendar passphrase with either some private keys or a session key
