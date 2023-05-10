@@ -2,8 +2,7 @@ import type { AnyAction } from 'redux';
 
 import type { Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp';
-import { fullMerge, objectDelete, partialMerge } from '@proton/pass/utils/object';
+import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
 
 import {
     bootSuccess,
@@ -101,7 +100,7 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return partialMerge(state, { [id]: { content } });
         }
 
-        if (or(vaultEditSuccess.match, shareEditSync.match)(action)) {
+        if (shareEditSync.match(action)) {
             const { id, share } = action.payload;
             return fullMerge(state, { [id]: share });
         }
@@ -114,13 +113,8 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return objectDelete(state, action.payload.shareId);
         }
 
-        if (vaultSetPrimarySuccess.match(action)) {
-            return Object.fromEntries(
-                Object.entries(state).map(([shareId, share]) => [
-                    shareId,
-                    { ...share, primary: shareId === action.payload.id },
-                ])
-            );
+        if (vaultSetPrimaryIntent.match(action)) {
+            return objectMap(state)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
         }
 
         return state;
