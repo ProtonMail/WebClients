@@ -1,13 +1,12 @@
 module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
-    collectCoverage: true,
     collectCoverageFrom: [
         'components/**/*.{js,jsx,ts,tsx}',
         'containers/**/*.{js,jsx,ts,tsx}',
         'helpers/**/*.{js,jsx,ts,tsx}',
         'hooks/**/*.{js,jsx,ts,tsx}',
-        '!src/app/locales.ts'
+        '!src/app/locales.ts',
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
