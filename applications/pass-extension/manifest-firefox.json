@@ -16,10 +16,10 @@
         },
         {
             "matches": [
-                "https://account.proton.me/*",
-                "https://account.proton.black/*",
-                "https://account.proton.pink/*",
-                "https://account.proton.local/*"
+                "https://*.proton.me/*",
+                "https://*.proton.black/*",
+                "https://*.proton.pink/*",
+                "https://*.proton.local/*"
             ],
             "js": ["authFallback.js"],
             "all_frames": true,
