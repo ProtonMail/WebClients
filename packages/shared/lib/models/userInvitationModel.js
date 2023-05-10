@@ -1,6 +1,5 @@
-import { fetchPendingUserInvitations } from '@proton/components/hooks/usePendingUserInvitations';
-
 import updateCollection from '../helpers/updateCollection';
+import { fetchPendingUserInvitations } from './userInvitationModelApi';
 
 export const UserInvitationModel = {
     key: 'UserInvitations',

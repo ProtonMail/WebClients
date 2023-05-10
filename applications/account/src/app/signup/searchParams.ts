@@ -74,6 +74,7 @@ export const getSignupSearchParams = (search: string) => {
     const invite = searchParams.get('invite') || undefined;
     const coupon = searchParams.get('coupon') || undefined;
     const type = searchParams.get('type') || undefined;
+    const hideFreePlan = searchParams.get('hfp') || undefined;
 
     return {
         coupon,
@@ -87,6 +88,7 @@ export const getSignupSearchParams = (search: string) => {
         referrer,
         invite,
         type,
+        hideFreePlan: hideFreePlan === 'true',
     };
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;

@@ -213,6 +213,7 @@ export const SSO_PATHS = {
     PASS_SIGNUP: '/pass/signup',
     PASS_SIGN_IN: '/pass',
     SIGNUP: '/signup',
+    PRICING: '/pricing',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
     TRIAL: '/trial',

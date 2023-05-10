@@ -1,0 +1,13 @@
+@import '~@proton/styles/scss/lib';
+
+.bg-norm-weak {
+	background-color: rgba(109 74 255 / 0.1);
+}
+
+.pricing {
+	&-bg {
+		@include media('>xsmall') {
+			background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
+		}
+	}
+}

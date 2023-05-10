@@ -19,10 +19,11 @@ interface Props {
     amount: number;
     currency: Currency;
     onPaypalPay: (data: OnPayResult) => void;
+    onValidatePaypal?: () => boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
 }
 
-const usePayment = ({ amount, currency, onPaypalPay, defaultMethod }: Props) => {
+const usePayment = ({ amount, currency, onValidatePaypal, onPaypalPay, defaultMethod }: Props) => {
     const { card, setCard, errors: cardErrors, isValid } = useCard();
     const [method, setMethod] = useState<PAYMENT_METHOD_TYPE | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
@@ -32,6 +33,7 @@ const usePayment = ({ amount, currency, onPaypalPay, defaultMethod }: Props) => 
         amount,
         currency,
         type: PAYPAL,
+        onValidate: onValidatePaypal,
         onPay: onPaypalPay,
     });
 
@@ -39,6 +41,7 @@ const usePayment = ({ amount, currency, onPaypalPay, defaultMethod }: Props) => 
         amount,
         currency,
         type: PAYPAL_CREDIT,
+        onValidate: onValidatePaypal,
         onPay: onPaypalPay,
     });
 
