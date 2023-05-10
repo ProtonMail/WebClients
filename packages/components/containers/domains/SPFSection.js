@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -14,9 +15,12 @@ const SPFSection = () => {
     const valueToCopy = 'v=spf1 include:_spf.protonmail.ch mx ~all';
     return (
         <>
-            <Alert className="mb-4" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
+            <Alert className="mb-4">
                 {c('Info')
                     .t`SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${MAIL_APP_NAME} in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.`}
+                <div>
+                    <Href href={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>{c('Link').t`Learn more`}</Href>
+                </div>
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following TXT record. Note, DNS records can take several hours to update.`}</Label>

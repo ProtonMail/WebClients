@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
 import { Alert, Icon, Tooltip, useModalState } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { SettingsSectionWide } from '@proton/components/containers';
@@ -87,16 +87,15 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                             ))}
                     </div>
                     {isNotSyncedInfo && (
-                        <Alert
-                            className="my-4"
-                            type="warning"
-                            learnMore={
-                                isNotSyncedInfo.isSyncing
-                                    ? undefined
-                                    : getKnowledgeBaseUrl('/subscribe-to-external-calendar#troubleshooting')
-                            }
-                        >
+                        <Alert className="my-4" type="warning">
                             {isNotSyncedInfo.longText}
+                            {isNotSyncedInfo.isSyncing ? null : (
+                                <div>
+                                    <Href href={getKnowledgeBaseUrl('/subscribe-to-external-calendar#troubleshooting')}>
+                                        {c('Link').t`Learn more`}
+                                    </Href>
+                                </div>
+                            )}
                         </Alert>
                     )}
                 </div>
