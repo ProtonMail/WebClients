@@ -502,8 +502,8 @@ const Step1 = ({
                                     error={emailValidationError}
                                     disableChange={loadingPayment}
                                     value={email}
-                                    onValue={setEmail}
-                                    onKeyDown={() => {
+                                    onValue={(value: string) => {
+                                        setEmail(value);
                                         mergeInputState('email', { interactive: true });
                                     }}
                                     onFocus={() => {
@@ -524,9 +524,9 @@ const Step1 = ({
                                         error={emailConfirmValidationError}
                                         disableChange={loadingPayment}
                                         value={confirmEmail}
-                                        onValue={setConfirmEmail}
-                                        onKeyDown={() => {
-                                            mergeInputState('emailConfirm', { interactive: true });
+                                        onValue={(value: string) => {
+                                            setConfirmEmail(value);
+                                            mergeInputState('email', { interactive: true });
                                         }}
                                         onFocus={() => {
                                             onUpdate({ email: 'confirm' });
