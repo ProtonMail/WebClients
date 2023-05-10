@@ -105,7 +105,9 @@ const CalendarMemberRow = ({
         <TableRow>
             <TableCell className="on-mobile-pl0">
                 <div className="flex flex-nowrap flex-align-items-center flex-gap-0-5 on-mobile-w40">
-                    <Avatar className="avatar--weak flex-item-noshrink">{getInitials(name)}</Avatar>
+                    <Avatar color="weak" className="flex-item-noshrink">
+                        {getInitials(name)}
+                    </Avatar>
 
                     <div>
                         <div className="text-ellipsis" title={name}>
