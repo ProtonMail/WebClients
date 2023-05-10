@@ -47,7 +47,7 @@ export type UseImportFormOptions = {
     onImported?: () => void;
 };
 
-export const SUPPORTED_IMPORT_FILE_TYPES = ['json', '1pux', 'pgp', 'zip', 'csv', 'xml'];
+export const SUPPORTED_IMPORT_FILE_TYPES = ['json', '1pif', '1pux', 'pgp', 'zip', 'csv', 'xml'];
 
 const createFileValidator = (allow: string[]) =>
     pipe(
