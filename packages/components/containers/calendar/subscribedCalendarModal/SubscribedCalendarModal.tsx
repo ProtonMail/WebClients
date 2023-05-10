@@ -186,7 +186,7 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
                 errorContent || (
                     <>
                         <p className="mt-0 text-pre-wrap">{c('Subscribe to calendar modal')
-                            .jt`To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.
+                            .jt`To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.
 ${kbLink}
 `}</p>
                         <InputFieldTwo
