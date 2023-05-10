@@ -23,4 +23,12 @@ module.exports = {
     },
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageThreshold: {
+        global: {
+            branches: 21,
+            functions: 20,
+            lines: 27,
+            statements: 27,
+        },
+    },
 };
