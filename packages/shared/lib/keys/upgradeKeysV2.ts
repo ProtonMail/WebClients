@@ -10,6 +10,7 @@ import {
     CachedOrganizationKey,
     DecryptedKey,
     Key,
+    KeyMigrationKTVerifier,
     KeyTransparencyVerify,
     PreAuthKTVerify,
     SignedKeyList,
@@ -26,7 +27,7 @@ import { getCachedOrganizationKey } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { reformatOrganizationKey } from './organizationKeys';
-import { getOrCreateSignedKeyList } from './signedKeyList';
+import { createSignedKeyListForMigration } from './signedKeyList';
 import { USER_KEY_USERID } from './userKeys';
 
 export const getV2KeyToUpgrade = (Key: tsKey) => {
@@ -174,6 +175,7 @@ export const upgradeV2KeysLegacy = async ({
 
 interface UpgradeV2KeysArgs extends UpgradeV2KeysLegacyArgs {
     keyTransparencyVerify: KeyTransparencyVerify;
+    keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }
 
 export const upgradeV2KeysV2 = async ({
@@ -186,6 +188,7 @@ export const upgradeV2KeysV2 = async ({
     isOnePasswordMode,
     api,
     keyTransparencyVerify,
+    keyMigrationKTVerifier,
 }: UpgradeV2KeysArgs) => {
     if (!userKeys.length) {
         return;
@@ -220,7 +223,12 @@ export const upgradeV2KeysV2 = async ({
                 },
                 [[], []]
             );
-            const signedKeyList = await getOrCreateSignedKeyList(address, decryptedKeys, keyTransparencyVerify);
+            const signedKeyList = await createSignedKeyListForMigration(
+                address,
+                decryptedKeys,
+                keyTransparencyVerify,
+                keyMigrationKTVerifier
+            );
             return {
                 address,
                 addressKeys,
@@ -270,6 +278,7 @@ interface UpgradeV2KeysHelperArgs {
     api: Api;
     isOnePasswordMode?: boolean;
     preAuthKTVerify: PreAuthKTVerify;
+    keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }
 
 export const upgradeV2KeysHelper = async ({
@@ -281,6 +290,7 @@ export const upgradeV2KeysHelper = async ({
     isOnePasswordMode,
     api,
     preAuthKTVerify,
+    keyMigrationKTVerifier,
 }: UpgradeV2KeysHelperArgs) => {
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
@@ -338,6 +348,7 @@ export const upgradeV2KeysHelper = async ({
             clearKeyPassword,
             isOnePasswordMode,
             keyTransparencyVerify,
+            keyMigrationKTVerifier,
         });
     }
 
