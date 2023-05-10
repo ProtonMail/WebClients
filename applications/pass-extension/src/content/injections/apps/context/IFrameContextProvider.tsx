@@ -5,6 +5,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { portForwardingMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import { Maybe, MaybeNull, WorkerMessage, WorkerMessageType, WorkerState } from '@proton/pass/types';
+import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -52,7 +53,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     useEffect(() => {
         let framePortRef: Runtime.Port;
 
-        const portInitHandler = (event: MessageEvent<Maybe<IFrameMessageWithSender>>) => {
+        const portInitHandler = safeCall((event: MessageEvent<Maybe<IFrameMessageWithSender>>) => {
             if (
                 event.data !== undefined &&
                 event.data?.type === IFrameMessageType.IFRAME_INJECT_PORT &&
@@ -76,8 +77,8 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                          * accidentally or intentionnally. Just to be safe, clear
                          * the frame's innerHTML */
                         case WorkerMessageType.PORT_UNAUTHORIZED: {
-                            logger.warn(`[IFrame::${endpoint}] Unauthorized iframe injection`);
-                            return window.document.documentElement.remove();
+                            logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
+                            return window.document?.documentElement?.remove();
                         }
                     }
                 });
@@ -100,7 +101,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
 
                 setPortContext({ port: framePortRef, forwardTo: message.payload.port });
             }
-        };
+        });
 
         window.addEventListener('message', portInitHandler);
 

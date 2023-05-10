@@ -9,8 +9,7 @@
     "content_scripts": [
         {
             "matches": ["https://*/*", "http://*/*"],
-            "js": ["content.js"],
-            "css": ["styles/content.css"],
+            "js": ["orchestrator.js"],
             "all_frames": false,
             "run_at": "document_end"
         }
