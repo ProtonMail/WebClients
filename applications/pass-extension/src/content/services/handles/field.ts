@@ -93,8 +93,6 @@ export const createFieldHandles =
                 listeners.addListener(field.element, 'focus', onFocusField(field));
                 listeners.addListener(field.element, 'input', onInputField(field));
                 listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
-
-                return document.activeElement === field.element && onFocusField(field)();
             },
 
             detachListeners: () => listeners.removeAll(),

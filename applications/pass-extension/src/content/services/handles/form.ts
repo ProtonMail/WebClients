@@ -48,6 +48,7 @@ export const createFormHandles = <T extends FormType = FormType>(options: Create
             logger.debug(`[FormHandles]: Attaching tracker for form [${formType}:${formHandle.id}]`);
             formHandle.tracker = formHandle.tracker ?? createFormTracker(formHandle);
             formHandle.tracker?.attach();
+            formHandle.tracker?.autofocus();
         },
 
         detach() {
