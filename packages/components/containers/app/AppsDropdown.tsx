@@ -20,7 +20,9 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
         <SimpleDropdown
             type="button"
             hasCaret={false}
-            content={<Icon name="grid-3" className="apps-dropdown-button-icon flex-item-noshrink no-print" />}
+            content={
+                <Icon name="app-switch" size={24} className="apps-dropdown-button-icon flex-item-noshrink no-print" />
+            }
             className="apps-dropdown-button flex-item-noshrink"
             dropdownClassName="apps-dropdown"
             originalPlacement="bottom-start"

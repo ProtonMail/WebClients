@@ -39,7 +39,7 @@ export const SidebarDeviceItem = ({
                     {device.name}
                 </span>
                 <ExpandButton
-                    className="ml-2 flex-item-noshrink"
+                    className="flex-item-noshrink"
                     expanded={Boolean(rootFolder?.isExpanded)}
                     onClick={() => toggleExpand(device.linkId)}
                 />

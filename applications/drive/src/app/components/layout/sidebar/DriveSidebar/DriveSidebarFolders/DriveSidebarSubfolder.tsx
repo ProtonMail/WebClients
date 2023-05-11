@@ -45,17 +45,15 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
                 title={folder.link.name}
             >
                 <SidebarListItemContent>
-                    <div className="flex flex-nowrap" style={generateSidebarItemStyle(level)}>
-                        <ExpandButton
-                            className="mr-2"
-                            expanded={folder.isExpanded}
-                            onClick={toggleExpand}
-                            style={expandeButtonStyle}
-                        />
+                    <div
+                        className="flex flex-nowrap flex-align-items-center gap-2"
+                        style={generateSidebarItemStyle(level)}
+                    >
+                        <ExpandButton expanded={folder.isExpanded} onClick={toggleExpand} style={expandeButtonStyle} />
                         {isLoading ? (
-                            <Loader className="mr-2 flex flex-item-noshrink drive-sidebar--icon" />
+                            <Loader className="flex flex-item-noshrink drive-sidebar--icon" />
                         ) : (
-                            <FileIcon className="mr-2 flex-item-centered-vert drive-sidebar--icon" mimeType="Folder" />
+                            <FileIcon className="flex-item-centered-vert drive-sidebar--icon" mimeType="Folder" />
                         )}
                         <FileNameDisplay text={folder.link.name} />
                     </div>

@@ -7,9 +7,9 @@ import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import { classnames } from '../../helpers';
 import { useConfig, useSubscription, useUser } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
@@ -80,7 +80,7 @@ const Sidebar = ({
 
     const storageText = (
         <>
-            <span className={classnames(['used-space text-bold', `color-${getMeterColor(spacePercentage)}`])}>
+            <span className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentage)}`])}>
                 {humanSize(UsedSpace)}
             </span>
             &nbsp;/&nbsp;<span className="max-space">{humanSize(MaxSpace)}</span>
@@ -88,61 +88,64 @@ const Sidebar = ({
     );
 
     return (
-        <div
-            ref={rootRef}
-            className="sidebar flex flex-nowrap flex-column no-print outline-none"
-            data-expanded={expanded}
-            {...rest}
-            {...focusTrapProps}
-        >
-            <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-            <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap">
-                {logo}
-                <div className="no-mobile">{appsDropdown}</div>
-                <div className="no-desktop no-tablet flex-item-noshrink">
-                    <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-                </div>
-            </div>
-            {primary ? <div className="px0-5 pb0-5 flex-item-noshrink">{primary}</div> : null}
-            <div className="mt-4 md:mt-0" aria-hidden="true" />
-            <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed pb1">{children}</div>
-            {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
-                <div className="app-infos px1">
-                    <Meter
-                        thin
-                        label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
-                            MaxSpace
-                        )}`}
-                        value={Math.ceil(spacePercentage)}
-                    />
-                    <div className="flex flex-nowrap flex-justify-space-between py0-5">
-                        <span>
-                            {canAddStorage ? (
-                                <Tooltip title={c('Storage').t`Upgrade storage`}>
-                                    <SettingsLink
-                                        path={addUpsellPath('/upgrade', upsellRef)}
-                                        className="app-infos-storage text-no-decoration text-xs m-0"
-                                    >
-                                        {storageText}
-                                    </SettingsLink>
-                                </Tooltip>
-                            ) : (
-                                <span className="app-infos-storage text-xs m-0">{storageText}</span>
-                            )}
-                            {storageGift}
-                        </span>
-
-                        <span className="app-infos-compact">{version}</span>
+        <>
+            <div
+                ref={rootRef}
+                className="sidebar flex flex-nowrap flex-column no-print outline-none"
+                data-expanded={expanded}
+                {...rest}
+                {...focusTrapProps}
+            >
+                <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
+                <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap">
+                    {logo}
+                    <div className="no-mobile">{appsDropdown}</div>
+                    <div className="no-desktop no-tablet flex-item-noshrink absolute right mr-3">
+                        <Hamburger expanded={expanded} onToggle={onToggleExpand} className="opacity-on-focus" />
                     </div>
                 </div>
-            ) : (
-                <div className="border-top">
-                    <div className="text-center pt0-5 pr1 pb0-5 pl1">{version}</div>
-                </div>
-            )}
+                {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
+                <div className="mt-1 md:mt-0" aria-hidden="true" />
+                <div className="flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4">{children}</div>
+                {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                    <div className="app-infos px-3">
+                        <Meter
+                            thin
+                            label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
+                                MaxSpace
+                            )}`}
+                            value={Math.ceil(spacePercentage)}
+                        />
+                        <div className="flex flex-nowrap flex-justify-space-between py-2">
+                            <span>
+                                {canAddStorage ? (
+                                    <Tooltip title={c('Storage').t`Upgrade storage`}>
+                                        <SettingsLink
+                                            path={addUpsellPath('/upgrade', upsellRef)}
+                                            className="app-infos-storage text-no-decoration text-xs m-0"
+                                        >
+                                            {storageText}
+                                        </SettingsLink>
+                                    </Tooltip>
+                                ) : (
+                                    <span className="app-infos-storage text-xs m-0">{storageText}</span>
+                                )}
+                                {storageGift}
+                            </span>
 
-            {hasAppLinks ? <MobileAppsLinks app={app || APP_NAME} /> : null}
-        </div>
+                            <span className="app-infos-compact">{version}</span>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="border-top">
+                        <div className="text-center py-2 px-3">{version}</div>
+                    </div>
+                )}
+
+                {hasAppLinks ? <MobileAppsLinks app={app || APP_NAME} /> : null}
+            </div>
+            {expanded ? <div className="sidebar-backdrop" onClick={onToggleExpand}></div> : undefined}
+        </>
     );
 };
 

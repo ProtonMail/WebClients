@@ -189,7 +189,7 @@ const CalendarSidebar = ({
                 toggle={displayMyCalendars}
                 onToggle={() => setDisplayMyCalendars((prevState) => !prevState)}
                 right={
-                    <div className="flex flex-nowrap flex-align-items-center pr0-75">
+                    <div className="flex flex-nowrap flex-align-items-center">
                         {!isOtherCalendarsLimitReached ? (
                             <Spotlight
                                 show={shouldShowHolidaysSpotlight}
@@ -283,6 +283,7 @@ const CalendarSidebar = ({
                 text={c('Link').t`Other calendars`}
                 testId="calendar-sidebar:other-calendars-button"
                 headerRef={headerRef}
+                spaceAbove
             />
             {displayOtherCalendars && (
                 <CalendarSidebarListItems

@@ -8,7 +8,7 @@ interface Props extends SidebarConfig {
 const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
     return (
         <SidebarList>
-            <SidebarListItem className="text-uppercase text-sm navigation-link-header-group">
+            <SidebarListItem className="navigation-link-header-group">
                 <h3>{header}</h3>
             </SidebarListItem>
             {Object.values(routes).map(
