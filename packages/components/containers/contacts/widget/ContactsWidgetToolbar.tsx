@@ -99,7 +99,7 @@ const ContactsWidgetToolbar = ({
                             title={c('Action').t`Compose`}
                             data-testid="contacts:compose"
                         >
-                            <Icon name="envelope" alt={c('Action').t`Compose`} />
+                            <Icon name="pen-square" alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                 )}
