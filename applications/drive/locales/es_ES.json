@@ -492,8 +492,17 @@
       "Restart upload": [
         "Reiniciar carga"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Restore from trash": [
         "Restaurar desde la papelera"
+      ],
+      "Restore this version": [
+        "Restaurar esta versión"
+      ],
+      "Restore version": [
+        "Restaurar versión"
       ],
       "Resume all": [
         "Reanudar todo"
@@ -2482,7 +2491,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o familiar."
@@ -3677,6 +3686,9 @@
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Las versiones anteriores son conservadas para ${ retentionLabel }."
+      ],
       "Previous versions are not saved": [
         "Las versiones anteriores no están guardadas."
       ],
@@ -3706,6 +3718,9 @@
       ],
       "Restore": [
         "Restaurar"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Restauración en proceso. Esto puede tardar algunos segundos."
       ],
       "Restored files ${ formattedDate }": [
         "Archivos restaurados ${ formattedDate }"
@@ -3834,6 +3849,12 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Esto elimina de ${ DRIVE_APP_NAME } el dispositivo sincronizado ${ deviceName }. Los archivos locales en el dispositivo no se verán afectados."
       ],
+      "This will replace the existing file with the folder": [
+        "Esto reemplazará el archivo existente con la carpeta"
+      ],
+      "This will replace the existing folder with the file": [
+        "Esto reemplazará la carpeta existente con el archivo"
+      ],
       "This will upload a new version of the file": [
         "Esto cargará una nueva versión del archivo."
       ],
@@ -3915,6 +3936,9 @@
       "Version is deleted": [
         "La versión ha sido eliminada."
       ],
+      "Version is restored": [
+        "La versión ha sido restaurada."
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "¡Felicidades! Acabas de doblar tu almacenamiento gratuito."
       ],
@@ -3941,6 +3965,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "será restaurado a la versión del ${ formattedRevisionDate }. Todas las otras versiones se guardarán."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Con ${ DRIVE_APP_NAME }, tus datos están protegidos con cifrado de extremo a extremo. Solo tu puedes descifrarlos."
@@ -4906,9 +4933,6 @@
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
-      "Version failed to be deleted": [
-        "Error al eliminar versión"
-      ],
       "Your old files will be deleted in 72 hours": [
         "Se eliminarán tus archivos antiguos en 72 horas."
       ],
@@ -4974,6 +4998,9 @@
         "Seleccionar un tema"
       ],
       "Set up your organization": [
+        "Configura tu organización"
+      ],
+      "Set up your organization testing": [
         "Configura tu organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5197,33 +5224,12 @@
         "Pásate a Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 usuarios"
@@ -5322,10 +5328,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Al precio de ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
       ],
       "Get the deal": [
         "Aprovecha la oportunidad"

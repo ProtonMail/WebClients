@@ -4674,9 +4674,6 @@
       "Trash failed to be emptied": [
         "無法清空垃圾桶"
       ],
-      "Version failed to be deleted": [
-        "版本刪除失敗"
-      ],
       "Your old files will be deleted in 72 hours": [
         "您的舊資料夾將於72小時後刪除"
       ],
@@ -4742,9 +4739,6 @@
       ],
       "Set up your organization": [
         "設定您的組織"
-      ],
-      "Set up your organization testing": [
-        "設定您的組織測試"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
@@ -4964,25 +4958,6 @@
         "使用無限制"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } days": [
-        "${ days } 天"
-      ],
-      "${ hours } hours": [
-        "${ hours } 小時"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分鐘"
-      ],
-      "${ seconds } seconds": [
-        "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } months FREE": [
-        "免費使用 ${ n } 個月"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } 總儲存空間"
@@ -5087,9 +5062,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "為期 30 個月收費 ${ amount } "
-      ],
-      "for ${ n } months": [
-        "為期 ${ n } 個月"
       ],
       "Get the deal": [
         "取得優惠"
