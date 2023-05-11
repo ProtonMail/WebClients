@@ -7,6 +7,7 @@
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { disableBrowserProxyTrap } from '@proton/pass/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
@@ -18,8 +19,7 @@ import { DOMCleanUp } from './injections/cleanup';
  * access to a dedicated execution context with a proxy to the window object,
  * so even if this flag is set, it won't be inspectable in the console where
  * this script is running. See `@pass/globals/browser.ts` */
-const self = globalThis as any;
-self.__DISABLE_BROWSER_TRAP__ = true;
+disableBrowserProxyTrap();
 
 const listeners = createListenerStore();
 let clientLoaded: boolean = false;
