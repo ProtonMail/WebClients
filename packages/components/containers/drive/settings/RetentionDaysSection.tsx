@@ -38,19 +38,22 @@ const RetentionDaysSection = () => {
     ];
 
     return (
-        <div className="w500p">
+        <div className="max-w37e">
             {!hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
-            <form className="flex flex-column flex-align-items-start flex-gap-0-5 mt-6" onSubmit={handleSubmit}>
+            <form className="flex flex-column flex-align-items-start gap-2 mt-6" onSubmit={handleSubmit}>
+                <span className="sr-only" id="id_desc_history">
+                    {c('Info').t`Version history`}
+                </span>
                 {options.map((option) => {
                     const id = option.value.toString();
                     const radioProps = {
                         onChange: () => handleChange(option.value),
-                        id,
-                        name: option.label,
+                        id: `retention${id}`,
+                        name: 'retention',
                         disabled: isLoading || isSubmitLoading || option.disabled,
                         checked: !isLoading && revisionRetentionDays === option.value,
                         className: clsx(
-                            'w100 block border rounded p-3',
+                            'w100 flex flex-nowrap border rounded p-3',
                             !isLoading && revisionRetentionDays === option.value ? 'border-primary' : 'border-norm'
                         ),
                     };
@@ -59,13 +62,15 @@ const RetentionDaysSection = () => {
                         return (
                             <Tooltip key={id} title={c('Info').t`Upgrade to unlock`} originalPlacement="right">
                                 <div className="w100">
-                                    <Radio {...radioProps}>{option.label}</Radio>
+                                    <Radio aria-describedby="id_desc_history" {...radioProps}>
+                                        {option.label}
+                                    </Radio>
                                 </div>
                             </Tooltip>
                         );
                     }
                     return (
-                        <Radio key={id} {...radioProps}>
+                        <Radio aria-describedby="id_desc_history" key={id} {...radioProps}>
                             {option.label}
                         </Radio>
                     );
