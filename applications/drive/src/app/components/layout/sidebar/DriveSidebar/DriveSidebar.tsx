@@ -45,7 +45,9 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
             version={<DriveSidebarFooter />}
         >
             <SidebarNav>
-                <DriveSidebarList shareId={activeShareId} userShares={shares} />
+                <div>
+                    <DriveSidebarList shareId={activeShareId} userShares={shares} />
+                </div>
             </SidebarNav>
             {debug ? <button onClick={createDevice}>Create device</button> : null}
         </Sidebar>

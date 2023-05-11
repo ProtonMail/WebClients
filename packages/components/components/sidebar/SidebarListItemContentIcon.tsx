@@ -1,12 +1,10 @@
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Icon, { IconProps } from '../icon/Icon';
 
 const SidebarListItemContentIcon = ({ className, ...rest }: IconProps) => {
     return (
-        <Icon
-            className={classnames(['navigation-icon flex-item-noshrink mr-2 flex-item-centered-vert', className])}
-            {...rest}
-        />
+        <Icon className={clsx(['navigation-icon flex-item-noshrink flex-item-centered-vert', className])} {...rest} />
     );
 };
 

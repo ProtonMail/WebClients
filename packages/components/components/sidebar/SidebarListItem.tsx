@@ -1,9 +1,6 @@
 import { LiHTMLAttributes } from 'react';
 
-
-
-import { classnames } from '../../helpers';
-
+import clsx from '@proton/utils/clsx';
 
 interface Props extends LiHTMLAttributes<HTMLLIElement> {
     itemClassName?: string;
@@ -11,12 +8,12 @@ interface Props extends LiHTMLAttributes<HTMLLIElement> {
 
 const SidebarListItem = ({
     className = '',
-    itemClassName = 'navigation-item px0-5 mb-0.5',
+    itemClassName = 'navigation-item w100 px-3 mb-0.5',
     children,
     ...rest
 }: Props) => {
     return (
-        <li className={classnames([itemClassName, className])} {...rest}>
+        <li className={clsx([itemClassName, className])} {...rest}>
             {children}
         </li>
     );
