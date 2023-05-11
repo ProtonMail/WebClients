@@ -64,7 +64,7 @@ export const getPrimaryAddress = (addresses: Address[]) => {
     const [address] = getActiveAddresses(addresses);
 
     if (!address) {
-        throw new Error('No primary address');
+        return undefined;
     }
 
     return address;

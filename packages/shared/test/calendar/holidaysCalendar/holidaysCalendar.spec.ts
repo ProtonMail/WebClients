@@ -121,7 +121,7 @@ const directory: HolidaysDirectoryCalendar[] = [
     auCalendar,
 ];
 
-fdescribe('Holidays calendars helpers', () => {
+describe('Holidays calendars helpers', () => {
     describe('getHolidaysCalendarsFromTimezone', () => {
         it('should return all holidays calendars from the same time zone', () => {
             const tzid = 'Europe/Zurich';
