@@ -43,6 +43,8 @@
 		&:focus,
 		&:active {
 			@include reset;
+
+			transform: none !important;
 		}
 
 		&::before {
