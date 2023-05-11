@@ -2421,6 +2421,42 @@
         "（タイトルなし）"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "合計 3 TB のストレージ"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "カスタマーサポート"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "家族アカウントを設定し、ユーザーを招待します "
+      ],
+      "Set up your family": [
+        "家族を設定"
+      ],
+      "Set up your family account": [
+        "家族アカウントの設定"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "${ planName } のご紹介"
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "あなたのご意見"
@@ -3177,6 +3213,9 @@
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
+      ],
+      "Free forever": [
+        "永久に無料"
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -4629,9 +4668,6 @@
       "Trash failed to be emptied": [
         "ごみ箱を空にできませんでした"
       ],
-      "Version failed to be deleted": [
-        "バージョンを削除できませんでした"
-      ],
       "Your old files will be deleted in 72 hours": [
         "古いファイルは72時間で削除されます"
       ],
@@ -4916,25 +4952,6 @@
         "Unlimited にする"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } days": [
-        "${ days } 日"
-      ],
-      "${ hours } hours": [
-        "${ hours } 時間"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分"
-      ],
-      "${ seconds } seconds": [
-        "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } months FREE": [
-        "${ n } か月間無料"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "合計 ${ storageSize } のストレージ"
@@ -5039,9 +5056,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 か月毎に ${ amount } の支払い"
-      ],
-      "for ${ n } months": [
-        "${ n } か月間"
       ],
       "Get the deal": [
         "割引を入手"

@@ -251,6 +251,9 @@
       "Reset password": [
         "Redefinir senha"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Retry": [
         "Tentar novamente"
       ],
@@ -1548,6 +1551,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não são iguais"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
@@ -1677,7 +1683,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos do ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
@@ -3544,9 +3550,6 @@
       "Multiple forwarding mailboxes": [
         "Múltiplos redirecionadores de emails"
       ],
-      "NetShield malware and ad-blocker": [
-        "Bloqueador de malware e anúncios NetShield"
-      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
@@ -3645,9 +3648,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Cofre e compartilhamento de Itens (em breve)"
-      ],
-      "Worldwide streaming services": [
-        "Serviços de streaming internacionais"
       ]
     },
     "new_plans: heading": {
@@ -4259,26 +4259,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
+        "${ days } dia",
+        "${ days } dias"
       ],
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
+        "${ minutes } minutos",
         "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -4319,7 +4319,7 @@
         "Mail, Calendar e Drive premium"
       ],
       "Premium VPN": [
-        "VPN Premium"
+        "VPN premium"
       ],
       "Secure cloud storage": [
         "Armazenamento na nuvem seguro"

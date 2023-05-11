@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Wiederherstellung aktivieren"
       ],
+      "Add": [
+        "Hinzufügen"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto hinzufügen"
       ],
       "Add address": [
         "Adresse hinzufügen"
-      ],
-      "Add calendar": [
-        "Kalender hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
@@ -97,6 +97,9 @@
       ],
       "Add PayPal": [
         "Paypal hinzufügen"
+      ],
+      "Add public holidays": [
+        "Feiertage hinzufügen"
       ],
       "Add sieve filter": [
         "Sieve-Filter hinzufügen"
@@ -417,10 +420,10 @@
         "Hol dir mehr Filter"
       ],
       "Get more folders": [
-        "Mehr Ordner holen"
+        "Hol dir mehr Ordner"
       ],
       "Get more labels": [
-        "Mehr Kategorien holen"
+        "Hol dir mehr Kategorien"
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
@@ -661,6 +664,9 @@
       ],
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
+      ],
+      "Restore": [
+        "Wiederherstellen"
       ],
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
@@ -2902,7 +2908,7 @@
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduzieren Sie den anderen Benutzern zugewiesenen Speicherplatz."
+        "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
       ],
       "Already a member of this calendar": [
         "Bereits Mitglied dieses Kalenders"
@@ -2929,7 +2935,7 @@
         "Max. Anzahl von Kalendern erreicht"
       ],
       "Checkout expired, please try again": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
+        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
       "Condition incomplete": [
         "Bedingung unvollständig"
@@ -3106,23 +3112,23 @@
         "Bezahlvorgang nicht unterstützt"
       ],
       "Payments are currently not available, please try again later": [
-        "Zahlungen sind derzeit nicht verfügbar, bitte versuchen Sie es später erneut"
+        "Zahlungen sind derzeit nicht verfügbar, bitte versuche es später erneut."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Bitte konfigurieren Sie eine eigene Domain, bevor Sie Benutzer zu Ihrer Organisation hinzufügen."
+        "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Bitte aktivieren Sie die Mehrbenutzerunterstützung, bevor Sie Benutzer zu Ihrer Organisation hinzufügen."
+        "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
       ],
       "Please generate keys before you try to change your password": [
-        "Bitte generieren Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern"
+        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
       "Please set a recovery email first": [
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest."
@@ -3177,7 +3183,7 @@
         "Signaturprüfung fehlgeschlagen"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Einige Ihrer Ordnernamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+        "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -3202,6 +3208,9 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
+      ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
@@ -3276,10 +3285,10 @@
         "Unbekannter Status des Zahlungstoken"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfen Sie die Datei und versuchen Sie es erneut."
+        "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Die hochgeladenen Dateien sind keine gültige privaten Schlüssel. Bitte überprüfen Sie die Dateien und versuchen Sie es erneut."
+        "Die hochgeladenen Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
       ],
       "Validation error": [
         "Überprüfungsfehler"
@@ -3296,8 +3305,11 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Ungültiger Bestätigungscode. Bitte stelle sicher, dass du den Bestätigungscode korrekt kopiert hast und versuche es erneut. Es kann bis zu 24 Stunden dauern, bis Änderungen wirksam werden."
       ],
+      "You already added this holidays calendar": [
+        "Du hast diesen Feiertag bereits hinzugefügt."
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Sie haben den Zugriff auf Ihre Organisationsschlüssel verloren. Ohne deren Wiederherstellung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
+        "Du hast den Zugriff auf deine Organisationsschlüssel verloren. Ohne deren Wiederherstellung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
       ],
       "You have no invoices.": [
         "Keine Rechnungen vorhanden."
@@ -3306,10 +3318,10 @@
         "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Alle Adressen in Ihrem Abonnement werden bereits verwendet. Bitte wechseln Sie Ihr Abonnement, um eine neue Adresse hinzufügen zu können."
+        "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Sie haben die max. Anzahl von Benutzern in Ihrem Abonnement ausgeschöpft. Bitte wechseln Sie Ihr Abonnement, um weitere Benutzer hinzufügen zu können."
+        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte wechsle dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du musst deine Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
@@ -3934,7 +3946,7 @@
     },
     "familyOffer_2023:Settings section title": {
       "Family": [
-        "Family"
+        "Familie"
       ]
     },
     "familyOffer_2023:Success": {
@@ -4203,7 +4215,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten, automatisch durchzuführen."
+        "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten zu automatisieren."
       ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Nachrichten von Adressen, die von dir oder von ${ BRAND_NAME } als Spam markiert wurden, landen in deinem Spam-Ordner. Wenn du Nachrichten von einer dieser Adressen zulassen möchtest, markiere sie als „Kein Spam“."
@@ -4804,8 +4816,8 @@
         "${ number } Server"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfen Sie die Datei und versuchen Sie es erneut.",
-        "${ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfen Sie die Dateien und versuchen Sie es erneut."
+        "${ numberOfNonPrivateKeys } hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut.",
+        "${ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
       ],
       "${ numContact } contact": [
         "${ numContact } Kontakt",
@@ -6246,7 +6258,7 @@
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Verwende die verschiedenen Arten von E-Mail-Adressen und Aliasse, die dir ${ BRAND_NAME } bietet."
+        "Verwende die verschiedenen Arten von E-Mail-Adressen und Aliassen, die dir ${ BRAND_NAME } bietet."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
@@ -7431,6 +7443,9 @@
       "Label messages as": [
         "Nachrichten kategorisieren als"
       ],
+      "Language": [
+        "Sprache"
+      ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
       ],
@@ -7517,6 +7532,9 @@
       ],
       "Notification": [
         "Benachrichtigung"
+      ],
+      "Notifications": [
+        "Benachrichtigungen"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN‐/IKEv2‐Passwort"
@@ -8619,9 +8637,6 @@
       "Multiple forwarding mailboxes": [
         "Mehrere Weiterleitungs-Postfächer"
       ],
-      "NetShield malware and ad-blocker": [
-        "NetShield-Malware- und Werbe-Blocker"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -8732,9 +8747,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Teilen von Tresoren und Einträgen (Demnächst verfügbar)"
-      ],
-      "Worldwide streaming services": [
-        "Weltweite Streaming-Dienste"
       ]
     },
     "new_plans: feature info": {
@@ -9608,6 +9620,9 @@
       "Please insert link first": [
         "Füge bitte zuerst den Link ein"
       ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
+      ],
       "Printer": [
         "Drucker"
       ],
@@ -10003,26 +10018,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
-      "${ hours } hour": [
         "${ days } Tag",
         "${ days } Tage"
       ],
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
       "${ minutes } minute": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "${ seconds } second": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ]
     },
     "specialoffer: Deal details": {
@@ -10267,8 +10282,8 @@
       "Calendar URL": [
         "Kalender-URL"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Um einen externen oder öffentlichen Kalender und dessen Aktualisierungen zu abonnieren, gib die entsprechende Internetadresse ein. Eine schreibgeschützte Version des Kalenders wird zu deinen abonnierten Kalendern hinzugefügt.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Um einen externen oder öffentlichen Kalender und dessen Aktualisierungen zu abonnieren, gib die entsprechende Internetadresse ein. Eine schreibgeschützte Version des Kalenders wird zu deinen weiteren Kalendern hinzugefügt.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -11250,7 +11265,7 @@
         "Import-Export-App"
       ],
       "Increase your privacy with more addresses": [
-        "Erhöhe deine Privatsphäre mit zusätzlichen Adressen."
+        "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
@@ -11358,7 +11373,7 @@
         "PayPal-Verifizierung fehlgeschlagen"
       ],
       "Personalise your e-mail footer": [
-        "Personalisiere deine E-Mail-Fußzeile."
+        "Personalisiere deine E-Mail-Fußzeile"
       ],
       "Phone": [
         "Telefon"

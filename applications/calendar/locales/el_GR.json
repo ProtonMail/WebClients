@@ -992,6 +992,9 @@
       "Birthday": [
         "Γενέθλια"
       ],
+      "Email": [
+        "Email"
+      ],
       "Gender": [
         "Φύλο"
       ],
@@ -1025,8 +1028,14 @@
       "Role": [
         "Ρόλος"
       ],
+      "Time zone": [
+        "Ζώνη ώρας"
+      ],
       "Title": [
         "Τίτλος"
+      ],
+      "URL": [
+        "Διεύθυνση URL"
       ]
     },
     "Contact type label": {
@@ -1874,6 +1883,11 @@
         "Χρήση γενικής προεπιλογής (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Χρήση γενικής προεπιλογής (${ globalDefaultText })"
+      ]
+    },
     "Delete event button tooltip": {
       "Delete event": [
         "Διαγραφή γεγονότος"
@@ -2085,6 +2099,9 @@
       ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
+      ],
+      "Contact name is too long": [
+        "Το όνομα της επαφής είναι πολύ μεγάλο"
       ],
       "Contact signature could not be verified": [
         "Δεν ήταν δυνατή η επαλήθευση της υπογραφής επαφής"
@@ -2413,6 +2430,9 @@
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
       ],
+      "Custom time zone": [
+        "Προσαρμοσμένη ζώνη ώρας"
+      ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
       ],
@@ -2479,6 +2499,9 @@
       "Start time out of bounds": [
         "Ώρα έναρξης εκτός ορίων"
       ],
+      "Time zone": [
+        "Ζώνη ώρας"
+      ],
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
       ],
@@ -2501,6 +2524,9 @@
       ],
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ],
       "You need an active personal calendar to import events": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τα συμβάντα σας"
@@ -2593,15 +2619,151 @@
         "(χωρίς τίτλο)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Συνολικός αποθηκευτικός χώρος 3 TB"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των μελών της οικογένειας στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
+      ],
+      "Switch plans": [
+        "Αλλαγή προγράμματος;"
+      ],
+      "View the invitation": [
+        "Δείτε την πρόσκληση"
+      ],
+      "View the invitations": [
+        "Δείτε τις προσκλήσεις"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium μονάδα αποθήκευσης"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium αλληλογραφία και ημερολόγιο"
+      ],
+      "Premium VPN": [
+        "Premium εικονικό ιδιωτικό δίκτυο"
+      ],
+      "Up to 6 users": [
+        "Έως 6 χρήστες"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } groups"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε οραματικό ή οικογενειακό πρόγραμμα."
+      ],
+      "customer support": [
+        "υποστήριξη πελατών"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Προσκλήθηκε από: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Διαχείριση διευθύνσεων."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο ομαδικό σχέδιο."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Λυπούμαστε, δεν μπορείτε να αλλάξετε σχέδια αυτήν τη στιγμή."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Αποθηκευτικός χώρος που σας έχει εκχωρηθεί: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Η συνδρομή χρεώνεται στον κύριο διαχειριστή του Visionary ή του οικογενειακού προγράμματος."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν επί του παρόντος λογαριασμούς διάρκειας ζωής."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Μπορείτε να δεχτείτε μόνο 3 προσκλήσεις σε μια περίοδο 6 μηνών. Επικοινωνήστε με το ${ supportLink } εάν χρειάζεστε εξαίρεση."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Έχετε εγγραφεί επιτυχώς στο Οικογενειακό πρόγραμμα"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασια κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, 90 διευθύνσεις email, απεριόριστα ψευδώνυμα Hide My Email, κοινή χρήση ημερολογίου και άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "Η γνώμη σας"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
       ]
     },
     "file size format": {
       "byte": [
         "byte",
         "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "file size format, long": {
@@ -2668,6 +2830,9 @@
       ]
     },
     "Human verification method": {
+      "Email": [
+        "Email"
+      ],
       "Manual": [
         "Χειροκίνητα"
       ],
@@ -2683,6 +2848,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
         "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
@@ -2706,6 +2874,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "Η ${ CALENDAR_APP_NAME } δεν υποστηρίζει προς το παρόν συγκεκριμένους τύπους συμβάντων, λεπτομέρειες και μορφές."
+      ],
+      "vCard versions < 3.0": [
+        "εκδόσεις vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2779,6 +2950,9 @@
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
+      "2-step verification is enabled in your external email account.": [
+        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
+      ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -2796,6 +2970,9 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
@@ -3602,6 +3779,9 @@
       "Expired": [
         "Έχει λήξει"
       ],
+      "Obsolete": [
+        "Ξεπερασμένο"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -3644,6 +3824,9 @@
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
+      ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
       ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
@@ -3698,6 +3881,9 @@
       ],
       "Description": [
         "Περιγραφή"
+      ],
+      "Don't ask again": [
+        "Να μην ερωτηθώ ξανά"
       ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -4630,6 +4816,9 @@
       "Address": [
         "Διεύθυνση"
       ],
+      "Email": [
+        "Email"
+      ],
       "Fax": [
         "Φαξ"
       ],
@@ -4716,6 +4905,76 @@
         "Υπογράψτε"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } συνολικός αποθηκευτικός χώρος"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "High speed VPN": [
+        "VPN υψηλής ταχύτητας"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
+    "specialoffer: Label": {
+      "Limited time only": [
+        "Για περιορισμένο διάστημα"
+      ],
+      "Most popular": [
+        "Τα πιο δημοφιλή"
+      ]
+    },
+    "specialoffer: Link": {
+      "Upgrade": [
+        "Αναβάθμιση"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ μήνας"
+      ],
+      "1 year": [
+        "1 έτος"
+      ],
+      "2 years": [
+        "2 χρόνια"
+      ],
+      "for ${ n } month": [
+        "για ${ n } μήνα",
+        "για ${ n } μήνες"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ]
+    },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
@@ -4735,9 +4994,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL Ημερολογίου"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα Εγγεγραμμένα ημερολόγιά σας.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5409,6 +5665,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
       ],
+      "Show side panel": [
+        "Εμφάνιση πλαϊνού πλαισίου"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
@@ -5477,6 +5736,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
+      ],
+      "Skip verification?": [
+        "Παράλειψη επαλήθευσης;"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"

@@ -492,8 +492,17 @@
       "Restart upload": [
         "Upload neu starten"
       ],
+      "Restore": [
+        "Wiederherstellen"
+      ],
       "Restore from trash": [
         "Aus dem Papierkorb wiederherstellen"
+      ],
+      "Restore this version": [
+        "Diese Version wiederherstellen"
+      ],
+      "Restore version": [
+        "Version wiederherstellen"
       ],
       "Resume all": [
         "Alle fortsetzen"
@@ -2071,7 +2080,7 @@
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Einige Ihrer Ordnernamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+        "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -2087,6 +2096,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
+      ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
@@ -3671,6 +3683,9 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Frühere Versionen werden für ${ retentionLabel } aufbewahrt."
+      ],
       "Previous versions are not saved": [
         "Vorherige Versionen werden nicht gespeichert"
       ],
@@ -3700,6 +3715,9 @@
       ],
       "Restore": [
         "Wiederherstellen"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Die Wiederherstellung läuft gerade. Dies kann einige Sekunden dauern."
       ],
       "Restored files ${ formattedDate }": [
         "Wiederhergestellte Dateien ${ formattedDate }"
@@ -3914,6 +3932,9 @@
       ],
       "Version is deleted": [
         "Version gelöscht"
+      ],
+      "Version is restored": [
+        "Version wiederhergestellt."
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Gut gemacht, du hast soeben deinen kostenlosen Speicherplatz verdoppelt!"
@@ -4906,9 +4927,6 @@
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
       ],
-      "Version failed to be deleted": [
-        "Version konnte nicht gelöscht werden."
-      ],
       "Your old files will be deleted in 72 hours": [
         "Deine alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
       ],
@@ -4975,6 +4993,9 @@
       ],
       "Set up your organization": [
         "Organisation einrichten"
+      ],
+      "Set up your organization testing": [
+        "Richte deine Organisation ein"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
@@ -5199,26 +5220,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
-      "${ hours } hour": [
         "${ days } Tag",
         "${ days } Tage"
       ],
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
       "${ minutes } minute": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "${ seconds } second": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ]
     },
     "specialoffer: Deal details": {

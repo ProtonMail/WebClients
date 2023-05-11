@@ -835,6 +835,9 @@
       "Reset to default": [
         "Restaurar para padrão"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Resume": [
         "Retomar"
       ],
@@ -3328,6 +3331,9 @@
         "O anexo não pôde ser descriptografado.\nCaso tenha a chave privada correspondente, você ainda será capaz de descriptografar\no arquivo com um programa como o GnuPG.",
         "Alguns dos anexos não puderam ser descriptografados.\nCaso tenha a chave privada correspondente, você ainda será capaz de descriptografar\nos arquivos com um programa como o GnuPG."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não são iguais"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta é inválido. Por favor, escolha um nome diferente."
       ],
@@ -3766,7 +3772,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos do ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
@@ -4019,7 +4025,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has file": [
-        "Tem arquivos"
+        "Possui anexo"
       ]
     },
     "Filter preview": {
@@ -7714,26 +7720,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
+        "${ days } dia",
+        "${ days } dias"
       ],
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
+        "${ minutes } minutos",
         "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -7774,7 +7780,7 @@
         "Mail, Calendar e Drive premium"
       ],
       "Premium VPN": [
-        "VPN Premium"
+        "VPN premium"
       ],
       "Secure cloud storage": [
         "Armazenamento na nuvem seguro"

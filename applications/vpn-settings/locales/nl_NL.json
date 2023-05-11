@@ -1651,14 +1651,8 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -3520,9 +3514,6 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
-      "NetShield malware and ad-blocker": [
-        "Malware- en adblocker NetShield"
-      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -3560,7 +3551,7 @@
         "Strikt geen-logboekbeleid"
       ],
       "Strong E2E encryption": [
-        "Sterke E2E versleuteling"
+        "Sterke E2E-versleuteling"
       ],
       "Team management": [
         "Teambeheer"
@@ -3615,9 +3606,6 @@
       ],
       "User session management": [
         "Gebruikerssessiebeheer"
-      ],
-      "Worldwide streaming services": [
-        "Wereldwijde streamingdiensten"
       ]
     },
     "new_plans: heading": {
@@ -4197,30 +4185,6 @@
         "Kies Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ hours } uur",
-        "${ hours } uur"
-      ],
-      "${ hours } hour": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ minutes } minute": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
-      ],
-      "${ seconds } second": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
@@ -4316,10 +4280,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
-      ],
-      "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
       ],
       "Get the deal": [
         "Kies deze deal"

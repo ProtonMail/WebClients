@@ -62,14 +62,14 @@
       "Activate recovery": [
         "啟動還原"
       ],
+      "Add": [
+        "加入"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "加入 ${ BRAND_NAME } 帳號"
       ],
       "Add address": [
         "加入電郵位址"
-      ],
-      "Add calendar": [
-        "加入行事曆"
       ],
       "Add condition": [
         "加入條件"
@@ -7094,6 +7094,9 @@
       "Notification": [
         "通知"
       ],
+      "Notifications": [
+        "通知"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 密碼"
       ],
@@ -8137,9 +8140,6 @@
       "Multiple admin roles": [
         "多重管理員角色"
       ],
-      "NetShield malware and ad-blocker": [
-        "NetShield 惡意軟體與廣告封鎖工具"
-      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
@@ -8232,9 +8232,6 @@
       ],
       "User session management": [
         "使用者作業階段管理"
-      ],
-      "Worldwide streaming services": [
-        "全球的串流服務"
       ]
     },
     "new_plans: feature info": {
@@ -9476,25 +9473,6 @@
         "使用無限制"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } days": [
-        "${ days } 天"
-      ],
-      "${ hours } hours": [
-        "${ hours } 小時"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分鐘"
-      ],
-      "${ seconds } seconds": [
-        "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } months FREE": [
-        "免費使用 ${ n } 個月"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } 總儲存空間"
@@ -9604,9 +9582,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "為期 30 個月收費 ${ amount } "
-      ],
-      "for ${ n } months": [
-        "為期 ${ n } 個月"
       ],
       "Get the deal": [
         "取得優惠"
@@ -9735,9 +9710,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "行事曆 URL"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "請輸入 URL 以訂購授權外部或公開的行事曆及其後的更新。該行事曆的唯讀版本將會加入到您「已訂購授權的行事曆」中。${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

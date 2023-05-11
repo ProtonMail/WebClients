@@ -251,6 +251,9 @@
       "Reset password": [
         "Скінуць пароль"
       ],
+      "Restore": [
+        "Аднавіць"
+      ],
       "Retry": [
         "Паўтарыць"
       ],
@@ -1556,6 +1559,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Ваш браўзер не дазваляе цалкам аўтарызаваць плацеж. Скарыстайцеся іншым браўзерам або ўвайдзіце з камп'ютара."
       ],
+      "The email addresses do not match": [
+        "Адрасы электроннай пошты не супадаюць"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
@@ -1621,6 +1627,196 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Відарыс не выбраны"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Сховішча памерам у 3 ТБ"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Прастора сховішча размеркавана паміж удзельнікамі сямейнага тарыфнага плана ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
+      ],
+      "Switch plans": [
+        "Змяніць тарыфны план"
+      ],
+      "View invitation": [
+        "Паглядзець запрашэнне"
+      ],
+      "View the invitation": [
+        "Паглядзець запрашэнне"
+      ],
+      "View the invitations": [
+        "Паглядзець запрашэнні"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium VPN": [
+        "Прэміяльныя функцыі VPN"
+      ],
+      "Up to 6 users": [
+        "Да 6 карыстальнікаў"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Сямейная група не распазнана. Паспрабуйце яшчэ раз."
+      ],
+      "Organization not recognized. Try again.": [
+        "Арганізацыя не распазнана. Паспрабуйце яшчэ раз."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Групы ${ BRAND_NAME }"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Уліковыя запісы з карыстальніцкімі даменамі не могуць далучацца да сямейнага тарыфнага плана або перайсці на тарыфны план Visionary."
+      ],
+      "customer support": [
+        "падтрымка кліентаў"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Запрашэнне ад ${ invitation.OrganizationName }"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Запрашэнне адпраўлена: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Кіраванне адрасамі."
+      ],
+      "Manage user accounts": [
+        "Кіраванне ўліковымі запісамі карыстальнікаў"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Уладальнікі тарыфных планаў з удзельнікамі не могуць далучацца да іншых групавых тарыфных планаў."
+      ],
+      "Pending invitation": [
+        "Запрашэнне, якое чакае адказу"
+      ],
+      "Pending invitations": [
+        "Запрашэнні, якія чакаюць адказу"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "У дадзены момант змена тарыфнага плана недаступна."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Прызначанае вам сховішча: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Падпіска аплачваецца асноўным адміністратарам сямейнага тарыфнага плана або адміністратарам тарыфнага плана Visionary."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Тарыфны план Visionary і сямейны тарыфны план у цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "У цяперашні час тарыфныя планы Visionary і сямейны недаступны для ўліковых запісаў з пажыццёвай падпіскай."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Вы можаце прыняць толькі 3 запрашэнні на працягу 6 месячнага перыяду. Калі вам неабходна павялічыць іх колькасць, перайдзіце па спасылцы ${ supportLink }."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Вы паспяхова далучыліся да тарыфнага плана Family"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае выдзеленае вам сховішча ў ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Ваш бягучы тарыфны план не дазваляе далучацца да тарыфнага плана Visionary або сямейнага тарыфнага плана."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца па той жа самай цане ў канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Прыватнасць у інтэрнэце для ўсёй вашай сям'і"
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Увядзіце назву сямейнай групы для пацвярджэння"
+      ],
+      "Enter organization name to confirm": [
+        "Увядзіце назву арганізацыі для пацвярджэння"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Гэта незваротна выдаліць усіх дадатковых карыстальнікаў, уліковыя запісы, а таксама даныя, якія звязаны з вашай арганізацыяй."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Гэта выдаліць усе прэміяльныя функцыі ${ BRAND_NAME } для кожнага ўдзельніка сямейнай групы."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "Выдаліць сямейную групу?"
+      ],
+      "Delete organization?": [
+        "Выдаліць арганізацыю?"
+      ],
+      "Introducing ${ planName }": [
+        "Прадстаўляем тарыфны план ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае 2700 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 90 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide My Email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
       ]
     },
     "Feature": {
@@ -3426,9 +3622,6 @@
       "Multiple forwarding mailboxes": [
         "Некалькі паштовых скрынь для пераадрасацыі"
       ],
-      "NetShield malware and ad-blocker": [
-        "Блакіроўшчык рэкламы і шкодных праграм NetShield"
-      ],
       "Password-protected Emails": [
         "Лісты абаронены паролем"
       ],
@@ -3527,9 +3720,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Сховішча і абагульванне элементаў (неўзабаве з'явіцца)"
-      ],
-      "Worldwide streaming services": [
-        "Сэрвісы з трансляцыямі з усяго свету"
       ]
     },
     "new_plans: heading": {
@@ -4170,7 +4360,7 @@
         "${ seconds } секунда",
         "${ seconds } секунды",
         "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ seconds } секунд"
       ]
     },
     "specialoffer: Deal": {

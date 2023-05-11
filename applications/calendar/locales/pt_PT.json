@@ -472,6 +472,9 @@
       "Today": [
         "Hoje"
       ],
+      "Toggle Contact app": [
+        "Alternar aplicação de contactos"
+      ],
       "Trust": [
         "Confiar"
       ],
@@ -622,6 +625,9 @@
       ]
     },
     "Attached ics file error": {
+      "Empty ICS file": [
+        "Arquivo ICS vazio"
+      ],
       "Invalid event": [
         "Evento não válido"
       ],
@@ -1996,6 +2002,9 @@
       "Email address disabled": [
         "Endereço de correio electrónico desativado"
       ],
+      "Email address is required": [
+        "O endereço de correio electrónico é obrigatório."
+      ],
       "Email is not valid": [
         "O correio electrónico não é válido."
       ],
@@ -2016,6 +2025,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Falha ao obter a ocorrência original na série"
+      ],
+      "Folder name cannot be empty.": [
+        "O nome da pasta não pode estar vazio."
       ],
       "Image upload failed": [
         "Falha ao enviar a imagem"
@@ -2086,9 +2098,18 @@
         "Por favor corrija o conflito selecionado para proceder.",
         "Por favor corrija os conflitos selecionados para proceder."
       ],
+      "Primary key is not valid for sending": [
+        "A chave primária não é válida para o envio"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "A chave primária recuperada para o utilizador ${ BRAND_NAME } não é válida para o envio"
+      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatário duplicado removido: ${ joinedRecipients }",
         "Destinatários duplicados removidos: ${ joinedRecipients }"
+      ],
+      "Request timed out": [
+        "O pedido expirou"
       ],
       "Self invitation not allowed": [
         "Impossível convidar-se a si próprio"
@@ -2107,6 +2128,9 @@
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de pasta estão indisponíveis. Personalize esses nomes antes de importar."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Alguns dos nomes das suas pastas excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
@@ -2129,6 +2153,9 @@
       "The sending key is not valid": [
         "A chave de envio não é válida"
       ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
       ],
@@ -2138,8 +2165,14 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
       ],
+      "This folder name is not available. Please choose a different name.": [
+        "Este nome de pasta não está disponível. Escolha um nome diferente."
+      ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -2221,6 +2254,9 @@
       "Calendar": [
         "Calendário"
       ],
+      "Calendar time zone not supported": [
+        "Fuso horário do calendário não suportado"
+      ],
       "Component with wrong format": [
         "Componente com formato errado"
       ],
@@ -2269,6 +2305,9 @@
       "Missing start time": [
         "Hora inicial em falta"
       ],
+      "No UID, title or start time": [
+        "Sem UID, título ou hora de início"
+      ],
       "Non-Gregorian": [
         "Não-gregoriano"
       ],
@@ -2306,6 +2345,9 @@
       ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
+      ],
+      "Something went wrong": [
+        "Ocorreu um erro"
       ],
       "We couldn't load this page. ": [
         "Não conseguimos carregar esta página. "
@@ -2385,6 +2427,48 @@
     "Event title": {
       "(no title)": [
         "(sem título)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB de armazenamento total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
+      "Got it": [
+        "Entendido"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Up to 6 users": [
+        "Até 6 utilizadores"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Grupos do ${ BRAND_NAME }"
+      ],
+      "customer support": [
+        "apoio ao cliente"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
       ]
     },
     "fido2: Info": {
@@ -2575,12 +2659,20 @@
         "não"
       ]
     },
+    "Import instructions": {
+      "Select ${ boldExportCSV }.": [
+        "Selecionar ${ boldExportCSV }."
+      ]
+    },
     "Import instructions emphasis": {
       "Account info": [
         "Informação da conta"
       ],
       "Account security": [
         "Segurança da conta"
+      ],
+      "app password": [
+        "palavra-passe da aplicação"
       ],
       "Export": [
         "Exportar"
@@ -3320,6 +3412,12 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "Nome de usuário do ${ BRAND_NAME }"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Temporariamente indisponível. Tente mais tarde.)"
+      ],
       "Add email address": [
         "Adicionar um endereço de correio electrónico"
       ],
@@ -3395,6 +3493,9 @@
       "Description": [
         "Descrição"
       ],
+      "Don't ask again": [
+        "Não perguntar novamente"
+      ],
       "Email": [
         "Correio electrónico"
       ],
@@ -3463,6 +3564,9 @@
       ],
       "Hide password": [
         "Ocultar a palavra-passe"
+      ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Como você descreveria a sua experiência com o novo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
@@ -3706,6 +3810,10 @@
         "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
         "Importar todas as mensagens das ${ itemsToImportCount } pastas e etiquetá-las como"
       ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } etiqueta e etiquetá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } etiquetas e etiquetá-las como"
+      ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "Importar todas as mensagens de ${ selectedItemsToImportCount } da ${ itemsToImportCount } pasta e etiquetá-la como",
         "Importar todas as mensagens de ${ selectedItemsToImportCount } das ${ itemsToImportCount } pastas e etiquetá-las como"
@@ -3930,6 +4038,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "Trocar ou adicionar conta"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Conte-nos a sua experiência. (Opcional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4339,6 +4452,14 @@
         "Gerir o calendário"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Não assinar"
+      ],
+      "Sign": [
+        "Assinar"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Fechar"
@@ -4375,11 +4496,33 @@
       "3 TB": [
         "3 TB"
       ],
+      "6 users": [
+        "6 utilizadores"
+      ],
       "64 countries": [
         "64 países"
       ],
       "High speed VPN": [
         "VPN de alta velocidade"
+      ],
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar e Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ]
+    },
+    "specialoffer: Label": {
+      "Most popular": [
+        "Mais popular"
+      ]
+    },
+    "specialoffer: Link": {
+      "Upgrade": [
+        "Actualizar"
       ]
     },
     "specialoffer: Offers": {
@@ -4625,12 +4768,20 @@
         "${ hours } h",
         "${ hours } h"
       ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
       "${ minutes } min": [
         "${ minutes } min",
         "${ minutes } min"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minutos"
@@ -4722,6 +4873,15 @@
       ],
       "Currency": [
         "Moeda"
+      ],
+      "Customize and confirm": [
+        "Personalize e confirme"
+      ],
+      "Customize calendar import": [
+        "Personalize a importação de calendário"
+      ],
+      "Customize your mail import": [
+        "Personalize a sua importação de e-mail"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -4939,6 +5099,12 @@
       "Show time zones for event start and end times": [
         "Mostrar fusos horários para horas inicial e final dos eventos"
       ],
+      "Sign in and grant access": [
+        "Faça login e conceda acesso"
+      ],
+      "Sign in with 2FA": [
+        "Autenticação com 2FA"
+      ],
       "Sign out": [
         "Terminar sessão"
       ],
@@ -4977,6 +5143,9 @@
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "O seu teste gratuito do Mail Plus finaliza em ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
