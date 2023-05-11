@@ -137,6 +137,9 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
+      "Edit password": [
+        "Изменить пароль"
+      ],
       "Edit phone number": [
         "Изменить номер телефона"
       ],
@@ -251,6 +254,9 @@
       "Reset password": [
         "Сбросить пароль"
       ],
+      "Restore": [
+        "Восстановить"
+      ],
       "Retry": [
         "Повторить"
       ],
@@ -283,6 +289,9 @@
       ],
       "Send my username": [
         "Отправить мое имя пользователя"
+      ],
+      "Set new password": [
+        "Задать новый пароль"
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
@@ -1556,6 +1565,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Используемый браузер не позволяет полностью провести платёж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
@@ -2006,6 +2018,9 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "Лучшее предложение"
+      ],
       "Get help": [
         "Получить помощь"
       ]
@@ -2146,6 +2161,21 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
+      "Billed every 12 months": [
+        "Оплата раз в 12 месяцев"
+      ],
+      "Billed every 15 months": [
+        "Оплата раз в 15 месяцев"
+      ],
+      "Billed every 24 months": [
+        "Оплата раз в 24 месяца"
+      ],
+      "Billed every 30 months": [
+        "Оплата раз в 30 месяцев"
+      ],
+      "Billed every month": [
+        "Ежемесячная оплата"
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
@@ -2492,6 +2522,9 @@
       "support team": [
         "служба поддержки"
       ],
+      "Thank you": [
+        "Спасибо"
+      ],
       "The securest way to browse, stream, and be online.": [
         "Самый безопасный способ просматривать сайты, смотреть видео и находиться онлайн."
       ],
@@ -2656,6 +2689,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
+      ],
+      "Welcome": [
+        "Добро пожаловать"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
@@ -3592,9 +3628,6 @@
       "Multiple forwarding mailboxes": [
         "Несколько почтовых ящиков для пересылки"
       ],
-      "NetShield malware and ad-blocker": [
-        "Блокировщик вредоносных программ и рекламы NetShield"
-      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -3693,9 +3726,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Совместный доступ к хранилищам и элементам (скоро появится)"
-      ],
-      "Worldwide streaming services": [
-        "Стриминговые сервисы со всего мира"
       ]
     },
     "new_plans: heading": {
@@ -4315,36 +4345,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часа"
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
       "${ hours } hour": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
       ],
       "${ minutes } minute": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "${ seconds } second": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } БЕСПЛАТНЫХ месяца"
       ]
     },
     "specialoffer: Deal details": {
@@ -4454,7 +4484,7 @@
       ],
       "for ${ n } month": [
         "за ${ n } месяц",
-        "за ${ n } месяцев",
+        "за ${ n } месяца",
         "за ${ n } месяцев",
         "за ${ n } месяца"
       ],
@@ -5146,6 +5176,9 @@
       ],
       "Set up two-factor authentication": [
         "Настройка двухфакторной аутентификации"
+      ],
+      "Set your password": [
+        "Задайте пароль"
       ],
       "Settings": [
         "Настройки"

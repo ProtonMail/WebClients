@@ -48,14 +48,14 @@
       "Activate recovery": [
         "回復を有効にする"
       ],
+      "Add": [
+        "追加"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを追加"
       ],
       "Add address": [
         "住所を追加"
-      ],
-      "Add calendar": [
-        "カレンダーを追加"
       ],
       "Add condition": [
         "条件を追加"
@@ -3546,6 +3546,69 @@
         "正常にエクスポートされた予定の ICS ファイルを保存することができます。"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "合計 3 TB のストレージ"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Setup family group": [
+        "家族グループを設定"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "カスタマーサポート"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } を入手"
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Family name": [
+        "家族名"
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "家族"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "Member updated": [
+        "メンバーが更新されました"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Change family name": [
+        "家族名の変更"
+      ],
+      "Delete family group?": [
+        "家族グループを削除しますか？"
+      ],
+      "Delete organization?": [
+        "組織を削除しますか？"
+      ],
+      "Family name": [
+        "家族名"
+      ],
+      "Family plan": [
+        "家族プラン"
+      ],
+      "Introducing ${ planName }": [
+        "${ planName } のご紹介"
+      ],
+      "Set family name": [
+        "家族名の設定"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connections": [
         "${ MaxVPN } 件の VPN 接続"
@@ -6246,6 +6309,9 @@
       "Export private key": [
         "秘密鍵のエクスポート"
       ],
+      "Export public key": [
+        "公開鍵をエクスポート"
+      ],
       "Make primary": [
         "プライマリーにする"
       ],
@@ -6809,6 +6875,9 @@
         "迷惑メールでない"
       ],
       "Notification": [
+        "通知"
+      ],
+      "Notifications": [
         "通知"
       ],
       "OpenVPN / IKEv2 password": [
@@ -7403,6 +7472,9 @@
       "Edit": [
         "編集"
       ],
+      "Remove": [
+        "削除"
+      ],
       "Revoke sessions": [
         "セッションを失効させる"
       ],
@@ -7798,7 +7870,7 @@
         "情報漏洩のモニタリング"
       ],
       "Data breach monitoring (coming soon)": [
-        "情報漏洩のモニタリング (準備中)"
+        "情報漏洩のモニタリング (近日公開)"
       ],
       "DNS leak prevention": [
         "DNS 漏洩防止"
@@ -7844,9 +7916,6 @@
       ],
       "Limited support": [
         "限定的なサポート"
-      ],
-      "NetShield malware and ad-blocker": [
-        "NetShield マルウェア・広告ブロッカー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -7942,10 +8011,7 @@
         "保管庫とアイテム共有"
       ],
       "Vault and Item sharing (coming soon)": [
-        "保管庫とアイテム共有 (準備中)"
-      ],
-      "Worldwide streaming services": [
-        "世界的なストリーミングサービス"
+        "保管庫とアイテム共有 (近日公開)"
       ]
     },
     "new_plans: feature info": {
@@ -9034,25 +9100,6 @@
         "Unlimited にする"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } days": [
-        "${ days } 日"
-      ],
-      "${ hours } hours": [
-        "${ hours } 時間"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分"
-      ],
-      "${ seconds } seconds": [
-        "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } months FREE": [
-        "${ n } か月間無料"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "合計 ${ storageSize } のストレージ"
@@ -9157,9 +9204,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 か月毎に ${ amount } の支払い"
-      ],
-      "for ${ n } months": [
-        "${ n } か月間"
       ],
       "Get the deal": [
         "割引を入手"
@@ -9288,9 +9332,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "カレンダーのURL"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「購読カレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9309,6 +9350,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "URL を使用して公開、外部、共有カレンダーを追加できます。"
+      ],
+      "Add public, external, or shared calendars.": [
+        "公開、外部、共有カレンダーを追加できます。"
       ]
     },
     "Subscribed calendar URL length warning": {

@@ -496,8 +496,17 @@
       "Restart upload": [
         "Перезапустить загрузку"
       ],
+      "Restore": [
+        "Восстановить"
+      ],
       "Restore from trash": [
         "Восстановить из корзины"
+      ],
+      "Restore this version": [
+        "Восстановить эту версию"
+      ],
+      "Restore version": [
+        "Восстановить версию"
       ],
       "Resume all": [
         "Продолжить все"
@@ -2105,6 +2114,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
+      ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
@@ -3826,6 +3838,9 @@
       "Restore": [
         "Восстановить"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Восстановление идёт. Это может занять несколько секунд."
+      ],
       "Restored files ${ formattedDate }": [
         "Файлы восстановлены ${ formattedDate }"
       ],
@@ -4042,6 +4057,9 @@
       "Version is deleted": [
         "Версия удалена"
       ],
+      "Version is restored": [
+        "Версия восстановлена"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Так держать, вы только что удвоили ваше бесплатное хранилище!"
       ],
@@ -4068,6 +4086,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "будет восстановлена версия от ${ formattedRevisionDate }. Все другие версии также будут сохранены."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "С ${ DRIVE_APP_NAME }, ваши данные защищены сквозным шифрованием. Только вы можете их расшифровать."
@@ -5073,9 +5094,6 @@
       "Trash failed to be emptied": [
         "Не удалось очистить корзину"
       ],
-      "Version failed to be deleted": [
-        "Версию не удалось удалить"
-      ],
       "Your old files will be deleted in 72 hours": [
         "Ваши старые файлы будут удалены в течение 72 часов"
       ],
@@ -5146,7 +5164,7 @@
         "Настройка организации"
       ],
       "Set up your organization testing": [
-        "Настройте тестирование вашей организации"
+        "Настройка организации"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Используйте переключатель приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
@@ -5377,36 +5395,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часа"
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
       "${ hours } hour": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
       ],
       "${ minutes } minute": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "${ seconds } second": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } БЕСПЛАТНЫХ месяца"
       ]
     },
     "specialoffer: Deal details": {
@@ -5516,7 +5534,7 @@
       ],
       "for ${ n } month": [
         "за ${ n } месяц",
-        "за ${ n } месяцев",
+        "за ${ n } месяца",
         "за ${ n } месяцев",
         "за ${ n } месяца"
       ],

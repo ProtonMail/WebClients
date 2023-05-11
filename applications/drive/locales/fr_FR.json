@@ -492,8 +492,17 @@
       "Restart upload": [
         "Relancer le chargement"
       ],
+      "Restore": [
+        "Restaurer"
+      ],
       "Restore from trash": [
         "Restaurer depuis le dossier Corbeille"
+      ],
+      "Restore this version": [
+        "Restaurer cette version"
+      ],
+      "Restore version": [
+        "Restaurer la version"
       ],
       "Resume all": [
         "Tout redémarrer"
@@ -2088,6 +2097,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ],
+      "The email addresses do not match": [
+        "Les adresses e-mail ne correspondent pas."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Le nom du dossier n'est pas valide, veuillez en choisir un autre."
       ],
@@ -2433,12 +2445,12 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Go d'espace de stockage total"
+        "3 To d'espace de stockage total"
       ]
     },
     "familyOffer_2023: Get Proton Family": {
       "Get ${ planName }": [
-        "Get ${ planName }"
+        "Obtenir ${ planName }"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -2496,6 +2508,9 @@
       "Invited by: ${ inviteEmail }": [
         "Invitation de : ${ inviteEmail }"
       ],
+      "Manage addresses.": [
+        "Gérer les adresses"
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement de groupe."
       ],
@@ -2515,19 +2530,19 @@
         "Actuellement, le plan Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "Vous avez une invitation pour rejoindre ${ invite.OrganizationName }."
+        "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Vous ne pouvez accepter que 3 invitations par période de 6 mois. Contactez le ${ supportLink } si vous avez besoin d'une exception."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Vous avez une invitation pour rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
+        "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
         "Vous avez rejoint l'abonnement Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe et à profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
+        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -2559,7 +2574,7 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
-        "Configurez votre compte familial et invitez des utilisateurs "
+        "Configurez votre compte familial et invitez des utilisateurs. "
       ],
       "Set up your family": [
         "Configurez votre famille"
@@ -3674,6 +3689,9 @@
       "Preview for this file type is not supported": [
         "La prévisualisation de ce type de fichier n'est pas prise en charge."
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Les versions précédentes sont conservées pendant ${ retentionLabel }."
+      ],
       "Previous versions are not saved": [
         "Les versions précédentes ne sont pas enregistrées."
       ],
@@ -3702,7 +3720,10 @@
         "Le rapport a été envoyé."
       ],
       "Restore": [
-        "Restaurer"
+        "Restauration"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "La restauration est en cours. Cela peut prendre quelques secondes."
       ],
       "Restored files ${ formattedDate }": [
         "Fichiers restaurés ${ formattedDate }"
@@ -3918,6 +3939,9 @@
       "Version is deleted": [
         "La version est supprimée."
       ],
+      "Version is restored": [
+        "La version est restaurée."
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Bien joué, vous venez de doubler votre espace de stockage gratuit !"
       ],
@@ -3944,6 +3968,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "sera restauré dans sa version datée du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Avec ${ DRIVE_APP_NAME }, vos données sont protégées par un chiffrement de bout en bout. Personne d'autre que vous ne peut les déchiffrer."
@@ -4467,7 +4494,7 @@
         "Définissez une méthode de récupération"
       ],
       "Show indexing progress of Encrypted Search": [
-        "Afficher l'état de l'indexation de la recherche chiffrée"
+        "Afficher l'état d'avancement de l'indexation de la recherche chiffrée"
       ],
       "Sign emails": [
         "Signer les e-mails"
@@ -4909,9 +4936,6 @@
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
       ],
-      "Version failed to be deleted": [
-        "La version n'a pas pu être supprimée."
-      ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures."
       ],
@@ -4980,7 +5004,7 @@
         "Configurez votre organisation"
       ],
       "Set up your organization testing": [
-        "Configurez le test de votre organisation"
+        "Configurez votre organisation"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
@@ -5203,36 +5227,12 @@
         "Je passe à Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ hours } hour": [
-        "${ days } jour",
-        "${ days } jours"
-      ],
-      "${ minutes } minute": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
-      ],
-      "${ seconds } second": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ seconds } seconde",
-        "${ seconds } secondes"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'espace de stockage total"
       ],
       "3 TB": [
-        "3 To"
+        "3 To"
       ],
       "6 users": [
         "6 utilisateurs"
@@ -5332,10 +5332,6 @@
       "Billed at ${ amount } for 30 months": [
         "Facturé ${ amount } pour 30 mois"
       ],
-      "for ${ n } month": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
-      ],
       "Get the deal": [
         "J'en profite"
       ],
@@ -5392,22 +5388,22 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accédez au contenu des services de streaming, dont Netflix, Disney+ et Prime Video, où que vous soyez."
+        "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide My Email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés..."
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide My Email, du partage de calendrier..."
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier..."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide My Email, du partage de calendrier..."
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier..."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boîte de réception et de ses propres alias. Nécessite un domaine personnalisé."

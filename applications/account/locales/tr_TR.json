@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Kurtarmayı etkinleştir"
       ],
+      "Add": [
+        "Ekle"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabı ekle"
       ],
       "Add address": [
         "Adres ekle"
-      ],
-      "Add calendar": [
-        "Takvim ekle"
       ],
       "Add condition": [
         "Koşul ekle"
@@ -303,7 +303,7 @@
         "Tamam"
       ],
       "Downgrade": [
-        "Düşür"
+        "Tarifeyi düşür"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
@@ -661,6 +661,9 @@
       ],
       "Reset to default": [
         "Varsayılana sıfırla"
+      ],
+      "Restore": [
+        "Geri yükle"
       ],
       "Restore administrator privileges": [
         "Yönetici yetkilerini geri yükle"
@@ -2738,10 +2741,10 @@
         "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
-        "Özellikler eksik"
+        "Eksik özellikler"
       ],
       "My reason isn't listed, please comment": [
-        "Gerekçem listede yok. Lütfen yorum yazın"
+        "Gerekçem listede yok. Lütfen açıklayın"
       ],
       "Streaming service unsupported": [
         "Yayın akışı hizmetinin desteklenmemesi"
@@ -3202,6 +3205,9 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bilgisayar ile oturum açın."
+      ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
@@ -3685,6 +3691,313 @@
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Dışa aktarılan etkinliklerin ICS dosyasını kaydedebilirsiniz."
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3TB toplam depolama alanı"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı aile üyeleri arasında ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } tarafından paylaşılır."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Yeni bir kullanıcı oluştur"
+      ],
+      "Don't show this offer again": [
+        "Bu teklifi bir daha gösterme"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Var olan bir ${ BRAND_NAME } kullanıcısı davet et"
+      ],
+      "Invite member to your family": [
+        "Aile üyesi davet et"
+      ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
+      "Setup family group": [
+        "Aile grubu oluştur"
+      ],
+      "Switch plans": [
+        "Tarifeleri değiştir"
+      ],
+      "View invitation": [
+        "Daveti görüntüle"
+      ],
+      "View the invitation": [
+        "Daveti görüntüle"
+      ],
+      "View the invitations": [
+        "Davetleri görüntüle"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Ücretli Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Ücretli Mail ve Calendar"
+      ],
+      "Premium VPN": [
+        "Ücretli VPN"
+      ],
+      "Up to 6 users": [
+        "6 kullanıcıya kadar"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Aile grubu belirlenemedi. Yeniden deneyin."
+      ],
+      "Organization not recognized. Try again.": [
+        "Kuruluş belirlenemedi. Yeniden deneyin."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } grupları"
+      ],
+      "*Only one free trial per customer.": [
+        "* Her müşteri için yalnızca bir ücretsiz deneme."
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Özel etki alanları olan hesaplar, Visionary ya da Family tarifesine katılamaz."
+      ],
+      "customer support": [
+        "müşteri desteği"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "${ invitation.OrganizationName } daveti"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Davet eden: ${ inviteEmail }"
+      ],
+      "Leave family plan": [
+        "Aile tarifesinden ayrıl"
+      ],
+      "Manage addresses.": [
+        "Adres yönetimi."
+      ],
+      "Manage user accounts": [
+        "Kullanıcı hesaplarını yönet"
+      ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "6 ay içinde yalnızca 10 kabul edilen davete izin verilir."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Üyeleri olan bir tarifenin sahipleri başka bir grup tarifesine katılamaz."
+      ],
+      "Pending": [
+        "Bekliyor"
+      ],
+      "Pending invitation": [
+        "Bekleyen davet"
+      ],
+      "Pending invitations": [
+        "Bekleyen davetler"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ne yazık ki şu anda tarifeleri değiştiremezsiniz."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Size ayrılmış depolama alanı: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Abonelik faturası, Visionary ya da Family planının birincil yöneticisine kesilir."
+      ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "Geçişi kolaylaştırmak için size 30 günlük ücretsiz ${ BRAND_NAME } Unlimited* deneme süresi sunuyoruz."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary ve Family tarifeleri şu anda ömür boyu hesapları desteklemiyor."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } kuruluşuna davet edildiniz"
+      ],
+      "You are part of ${ organization.Name }.": [
+        "${ organization.Name } üyesisiniz."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "6 aylık dönemde yalnızca 3 davet kabul edebilirsiniz. Bu sınırı aşmaya gerek duyuyorsanız lütfen ${ supportLink } ile görüşün."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "6 ayda kabul edilebilecek 10 davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak."
+      ],
+      "You have successfully joined the Family plan": [
+        "Aile tarifesine katıldınız"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "${ BRAND_NAME } Family tarifesindeki tüm ücretli özelliklere ve depolama alanına erişiminizi kaybedeceksiniz."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Geçerli tarifeniz bir Visionary ya da Family tarifesine katılamaz."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak aynı tutarla yenilenir."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "İndirimler standart aylık fiyatlandırmaya göre yapılır."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "* Her kullanıcı için yalnızca bir ücretsiz deneme."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Varsayılan olarak, yönetici hesabına ${ formattedStorage } depolama alanı veririz. Bu depolama alanını yöneterek daha sonra başka kullanıcılar arasında dağıtabilirsiniz."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Aile üyeleri ekleyin ve yönetin ve onlara ${ DRIVE_APP_NAME } ile ${ MAIL_APP_NAME } arasında paylaşılan depolama alanı ayırın."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Kullanıcının zaten bir ${ MAIL_APP_NAME } adresi varsa buraya yazın. Yoksa önce bir hesap açmaları gerekir."
+      ],
+      "Online privacy, for your whole family": [
+        "Tüm aileniz için çevrimiçi gizlilik"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Davet iptal edilecek ve kullanıcı ${ organization.Name } kuruluşuna katılamayacak."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Kullanıcının hesabı, 30 günlük ücretsiz deneme* için ${ BRAND_NAME } Unlimited tarifesine geçirilecek."
+      ],
+      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
+        "Var olan bir ${ BRAND_NAME } kullanıcısını davet edebilir ya da yeni bir kullanıcı oluşturabilirsiniz"
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Bu kullanıcının depolama alanını artırabilir ya da azaltabilirsiniz."
+      ],
+      "You left this plan": [
+        "Bu tarifeden ayrıldınız"
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Aile grubunuzdaki kullanıcı hesaplarını ekleyin, kaldırın ve değiştirin."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Kuruluşunuzdaki kullanıcı hesaplarını ekleyin, kaldırın ve değiştirin."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Onaylamak için aile grubunun adını yazın"
+      ],
+      "Enter organization name to confirm": [
+        "Onaylamak için kuruluş adını yazın"
+      ],
+      "Family name": [
+        "Aile adı"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Bu işlem, her aile üyesi için tüm ${ BRAND_NAME } ücretli özelliklerini kaldıracak."
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Aile"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name }, ${ organization.Name } kuruluşundan kaldırıldı"
+      ],
+      "An error occurred, please try again": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin"
+      ],
+      "Member updated": [
+        "Üye güncellendi"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "${ PLAN_NAMES.visionary2022 } hesabınıza bir kullanıcı ekleyin"
+      ],
+      "Change family name": [
+        "Aile adını değiştir"
+      ],
+      "Delete family group?": [
+        "Aile grubu silinsin mi?"
+      ],
+      "Delete organization?": [
+        "Kuruluş silinsin mi?"
+      ],
+      "Edit user storage": [
+        "Kullanıcı depolama alanını düzenle"
+      ],
+      "Family name": [
+        "Aile adı"
+      ],
+      "Family plan": [
+        "Aile tarifesi"
+      ],
+      "Introducing ${ planName }": [
+        "${ planName } ile tanışın"
+      ],
+      "Invite a user": [
+        "Kullanıcı davet et"
+      ],
+      "Manage family group": [
+        "Aile grubu yönetimi"
+      ],
+      "Set family name": [
+        "Aile adını ayarla"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
     },
     "Feature": {
@@ -7211,6 +7524,9 @@
       "Notification": [
         "Bildirim"
       ],
+      "Notifications": [
+        "Bildirimler"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
       ],
@@ -8312,9 +8628,6 @@
       "Multiple forwarding mailboxes": [
         "Çok sayıda ileti e-posta kutusu"
       ],
-      "NetShield malware and ad-blocker": [
-        "NetShield zararlı yazılım ve reklam engelleyici"
-      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
@@ -8425,9 +8738,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Kasa ve öge paylaşımı (yakında)"
-      ],
-      "Worldwide streaming services": [
-        "Tüm dünyadaki yayın akışı hizmetleri"
       ]
     },
     "new_plans: feature info": {
@@ -9653,7 +9963,7 @@
         "İmza doğrulanırken sorun çıktı"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "${ boldSenderEmail } için adres doğrulamasını etkinleştirdiniz. Bu takvim davetinin gerçek olduğunbu doğrulayamadık. Bu durum, bu kişinin şifreleme anahtarlarındaki değişikliklerden kaynaklanıyor olabilir. Lütfen gelişmiş PGP ayarlarını gözden geçirin ya da ${ boldSenderEmail } adresinden yeni bir davetiye isteyin."
+        "${ boldSenderEmail } için adres doğrulamasını etkinleştirdiniz. Bu takvim davetinin gerçek olduğunbu doğrulayamadık. Bu durum, bu kişinin şifreleme anahtarlarındaki değişikliklerden kaynaklanıyor olabilir. Lütfen gelişmiş PGP ayarlarını gözden geçirin ya da ${ boldSenderEmail } adresinden yeni bir davet isteyin."
       ]
     },
     "Signup label": {
@@ -9714,8 +10024,8 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } ay ücretsiz",
-        "${ n } ay ücretsiz"
+        "${ n } ay ÜCRETSİZ",
+        "${ n } ay ÜCRETSİZ"
       ]
     },
     "specialoffer: Deal details": {
@@ -9960,8 +10270,8 @@
       "Calendar URL": [
         "Takvim adresi"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Takvime ve güncellemelerine abone olmak istediğiniz dış ya da herkese açık takvimin adresini yazın. Bu takvim salt okunur şekilde abone olduğunuz takvimler arasına eklenir.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Takvime ve güncellemelerine abone olmak istediğiniz dış ya da herkese açık takvimin adresini yazın. Bu takvim salt okunur şekilde Diğer takvimler arasına eklenir.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10658,7 +10968,7 @@
         "E-posta adresini onaylayın"
       ],
       "Confirm downgrade": [
-        "Düşürmeyi onayla"
+        "Tarife düşürmeyi onayla"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"

@@ -492,8 +492,17 @@
       "Restart upload": [
         "Reiniciar carga"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Restore from trash": [
         "Restaurar desde la papelera"
+      ],
+      "Restore this version": [
+        "Restaurar esta versión"
+      ],
+      "Restore version": [
+        "Restaurar versión"
       ],
       "Resume all": [
         "Reanudar todo"
@@ -2088,6 +2097,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
+      "The email addresses do not match": [
+        "Las direcciónes de correo electrónico no son las mismas"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elija un nombre diferente."
       ],
@@ -2482,7 +2494,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "Grupos de ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o un plan familiar."
@@ -3710,6 +3722,9 @@
       "Restore": [
         "Restaurar"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Restauración en proceso. Esto puede tardar algunos segundos."
+      ],
       "Restored files ${ formattedDate }": [
         "Archivos restaurados ${ formattedDate }"
       ],
@@ -3924,6 +3939,9 @@
       "Version is deleted": [
         "La versión fue eliminada"
       ],
+      "Version is restored": [
+        "La versión fue restaurada"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "¡Felicidades, ha duplicado su almacenamiento gratuito!"
       ],
@@ -3950,6 +3968,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "será restaurado a la versión del ${ formattedRevisionDate }. Todas las otras versiones se guardarán."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Con ${ DRIVE_APP_NAME }, sus datos están protegidos con cifrado de extremo a extremo. Solo usted puede descifrarlos."
@@ -4915,9 +4936,6 @@
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
-      "Version failed to be deleted": [
-        "Error al eliminar versión"
-      ],
       "Your old files will be deleted in 72 hours": [
         "Sus archivos antiguos serán eliminados en 72 horas"
       ],
@@ -4986,7 +5004,7 @@
         "Configure su organización"
       ],
       "Set up your organization testing": [
-        "Configure su prueba de organización"
+        "Configure su organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use el selector de aplicaciones en la esquina superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
@@ -5211,26 +5229,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hours } hour": [
         "${ days } día",
         "${ days } días"
       ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
       "${ minutes } minute": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mes gratis",
+        "${ n } meses gratis"
       ]
     },
     "specialoffer: Deal details": {
@@ -5342,8 +5360,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
+        "por ${ n } mes",
+        "por ${ n } meses"
       ],
       "Get the deal": [
         "Obtener la oferta"

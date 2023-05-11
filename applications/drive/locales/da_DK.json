@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Annullér overførsel"
       ],
+      "Change": [
+        "Skift"
+      ],
       "Chat with us": [
         "Chat med os"
       ],
@@ -200,6 +203,12 @@
       ],
       "Delete permanently": [
         "Slet permanent"
+      ],
+      "Delete this version": [
+        "Slet denne version"
+      ],
+      "Delete version": [
+        "Slet version"
       ],
       "Deselect all": [
         "Fravælg alle"
@@ -483,8 +492,17 @@
       "Restart upload": [
         "Genstart overførsel"
       ],
+      "Restore": [
+        "Gendan"
+      ],
       "Restore from trash": [
         "Gendan fra papirkurven"
+      ],
+      "Restore this version": [
+        "Gendan denne version"
+      ],
+      "Restore version": [
+        "Genskab version"
       ],
       "Resume all": [
         "Genoptag alle"
@@ -501,6 +519,9 @@
       "Save": [
         "Gem"
       ],
+      "Save version as copy": [
+        "Gem version som kopi"
+      ],
       "Search": [
         "Søg"
       ],
@@ -512,6 +533,9 @@
       ],
       "See plan features": [
         "Se abonnementfunktioner"
+      ],
+      "See version history": [
+        "Se versionshistorik"
       ],
       "Select all": [
         "Vælg alle"
@@ -2070,6 +2094,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
+      "The email addresses do not match": [
+        "E-Mailadresserne stemmer ikke overens"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -2185,6 +2212,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering mislykkedes"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versioner < 3.0 understøttes ikke"
       ]
     },
     "Error importing contacts": {
@@ -2402,6 +2432,58 @@
     "Event title": {
       "(no title)": [
         "(ingen titel)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB samlet lagerplads"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Switch plans": [
+        "Skift abonnement"
+      ],
+      "View the invitation": [
+        "Se invitationen"
+      ],
+      "View the invitations": [
+        "Se invitationerne"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail og Kalender"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "Op til 6 brugere"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "kundeservice"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Inviteret af: ${ inviteEmail }"
       ]
     },
     "Feedback Modal Title": {
@@ -2963,6 +3045,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Er du sikker på at du permanent vil slette"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Er du sikker på, at du vil slette \"${ itemName }\" permanent fra papirkurv?"
       ],
@@ -3062,6 +3147,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
+      "Current version": [
+        "Aktuel version"
       ],
       "Decrypting files": [
         "Dekrypterer filer"
@@ -3173,6 +3261,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Filen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
       ],
+      "File will not be updated": [
+        "Filen vil ikke blive opdateret"
+      ],
       "Finalizing": [
         "Færdiggører"
       ],
@@ -3208,6 +3299,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Frigør lidt plads eller kontakt din administrator."
+      ],
+      "from the version history?": [
+        "fra versionshistorikken"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Lær ${ DRIVE_APP_NAME } at kende og optjen din bonus på 500 MB lagerplads! Gør noget i dag."
@@ -3311,6 +3405,9 @@
       ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
+      ],
+      "Last week": [
+        "Sidste uge"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3473,6 +3570,15 @@
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
+      "Preview for this file type is not supported": [
+        "Forhåndsvisning af denne filtype er ikke understøttet"
+      ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Tidligere versioner er gemt i ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Tidligere versioner er ikke gemt"
+      ],
       "Primary": [
         "Primær"
       ],
@@ -3499,6 +3605,9 @@
       ],
       "Restore": [
         "Gendan"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Gendannelsen er i gang. Dette kan tage nogle sekunder."
       ],
       "Restored files ${ formattedDate }": [
         "Gendannede filer ${ formattedDate }"
@@ -3627,6 +3736,15 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME }. Lokale filer på enheden vil ikke blive påvirket."
       ],
+      "This will replace the existing file with the folder": [
+        "Dette vil erstatte eksisterende fil med mappen"
+      ],
+      "This will replace the existing folder with the file": [
+        "Dette vil erstatte eksisterende mappe med filen"
+      ],
+      "This will upload a new version of the file": [
+        "Dette vil uploade en ny version af filen"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
       ],
@@ -3644,6 +3762,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "For at bruge Adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
+      ],
+      "Today": [
+        "I dag"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Overførsel annulleret for fil \"${ name }\""
@@ -3696,6 +3817,12 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
+      "Version is deleted": [
+        "Versionen er slettet"
+      ],
+      "Version is restored": [
+        "Versionen er gendannet"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Godt gået, du har lige fordoblet din gratis lagerplads!"
       ],
@@ -3723,6 +3850,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil blive gemt."
+      ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Med ${ DRIVE_APP_NAME } er dine data beskyttet med end-to-end kryptering. Kun du kan dekryptere det."
       ],
@@ -3737,6 +3867,9 @@
       ],
       "Yes": [
         "Ja"
+      ],
+      "Yesterday": [
+        "I går"
       ],
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en anden browserfane og besøge:"
@@ -3810,6 +3943,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Dit abonnement er begrænset til 10 version i op til 7 dage"
+      ],
       "Your previous password": [
         "Din tidligere adgangskode"
       ],
@@ -3874,6 +4010,14 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dage"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } år",
+        "${ nbYear } år"
       ],
       "(Expired)": [
         "(Udløbet)"
@@ -4002,6 +4146,9 @@
       "Downloading ${ percentageValue }%": [
         "Henter ${ percentageValue }%"
       ],
+      "Duplicate found": [
+        "Dublet fundet"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4101,6 +4248,15 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Keep both": [
+        "Behold begge"
+      ],
+      "Keep both files": [
+        "Behold begge filer"
+      ],
+      "Keep both folders": [
+        "Behold begge mapper"
+      ],
       "Label messages as": [
         "Giv beskeder etiketten"
       ],
@@ -4196,6 +4352,12 @@
       ],
       "Region": [
         "Område"
+      ],
+      "Replace existing file": [
+        "Erstat eksisterende fil"
+      ],
+      "Replace existing folder": [
+        "Erstat eksisterende mappe"
       ],
       "Report": [
         "Anmeld"
@@ -4714,6 +4876,9 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
+      "Set up your organization testing": [
+        "Konfigurer din organisation"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -5010,9 +5175,41 @@
       ]
     },
     "specialoffer: Offers": {
+      "/ month": [
+        "/ måned"
+      ],
+      "1 year": [
+        "1 år"
+      ],
+      "2 years": [
+        "2 år"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Faktureret med ${ amount } for 1 måned"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Faktureret med ${ amount } for 12 måneder"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Faktureret med ${ amount } for 15 måneder"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Faktureret med ${ amount } for 24 måneder"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Faktureret med ${ amount } for 30 måneder"
+      ],
       "for ${ n } month": [
         "i ${ n } måned",
         "i ${ n } måneder"
+      ],
+      "Get the deal": [
+        "Få tilbuddet"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-tilbud"
       ]
     },
     "specialoffer: Tooltip": {
@@ -5641,6 +5838,12 @@
       ],
       "Uploading a large file or folder": [
         "Uploader en stor fil eller mappe"
+      ],
+      "Version details": [
+        "Versionsdetaljer"
+      ],
+      "Version history": [
+        "Versionshistorik"
       ],
       "View contacts": [
         "Vis kontakter"
