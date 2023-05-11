@@ -13,6 +13,7 @@ import {
     useNotifications,
     usePopperAnchor,
 } from '@proton/components';
+import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -23,7 +24,6 @@ import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import GroupModal from '../modals/GroupModal';
-import RecipientDropdownItem from './RecipientDropdownItem';
 import RecipientItemLayout from './RecipientItemLayout';
 
 interface Props {
@@ -120,7 +120,7 @@ const RecipientItemGroup = ({
                                     closeDropdown={close}
                                     key={recipient.Address}
                                     bimiSelector={recipient?.BimiSelector || undefined}
-                                    isOutside={isOutside}
+                                    simple={isOutside}
                                 />
                             );
                         })}

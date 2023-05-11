@@ -29,7 +29,7 @@ export interface ContactDetailsProps {
     onEdit: (props: ContactEditProps) => void;
     onDelete: (props: ContactDeleteProps) => void;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
-    onGroupDetails: (contactGroupID: string) => void;
+    onGroupDetails: (contactGroupID: string, onCloseContactDetailsModal?: () => void) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
     onSignatureError: (contactID: string) => void;
@@ -137,6 +137,7 @@ const ContactDetailsModal = ({
                                 onUpgrade={onUpgrade}
                                 onSignatureError={onSignatureError}
                                 onDecryptionError={onDecryptionError}
+                                onCloseModal={onClose}
                             />
                         )}
                     </div>

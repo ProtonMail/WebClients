@@ -63,7 +63,7 @@ describe('ContactGroupDetailsModal', () => {
         const { getByText } = render(<ContactGroupDetailsModal open={true} {...props} />, false);
 
         getByText(group.Name);
-        getByText('3 members');
+        getByText('3 email addresses');
         getByText(contactEmail1.Name);
         getByText(contactEmail2.Name);
         getByText(contactEmail3.Name);
