@@ -137,7 +137,7 @@ const ExtraEvents = ({ message }: Props) => {
 
                     return {
                         calendars: ownedPersonalCalendars,
-                        suggestedCalendar: defaultCalendar,
+                        defaultCalendar,
                         canCreateCalendar,
                         maxUserCalendarsDisabled,
                     };
@@ -265,7 +265,7 @@ const ExtraEvents = ({ message }: Props) => {
                         invitationOrError={invitation}
                         message={message}
                         calendars={calData.calendars}
-                        defaultCalendar={calData.suggestedCalendar}
+                        defaultCalendar={calData.defaultCalendar}
                         canCreateCalendar={calData.canCreateCalendar}
                         maxUserCalendarsDisabled={calData.maxUserCalendarsDisabled}
                         contactEmails={contactEmails}
