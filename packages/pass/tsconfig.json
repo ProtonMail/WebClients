@@ -4,6 +4,6 @@
     "compilerOptions": {
         "target": "ESNext",
         "lib": ["dom", "dom.iterable", "esnext", "WebWorker"],
-        "types": ["webpack-env", "jest", "chrome", "webextension-polyfill", "./webpack.d.ts"]
+        "types": ["webpack-env", "jest", "chrome", "webextension-polyfill", "./globals.d.ts"]
     }
 }
