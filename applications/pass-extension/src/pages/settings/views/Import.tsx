@@ -5,8 +5,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
 import type { ImportPayload } from '@proton/pass/import';
+import * as requests from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -17,17 +18,22 @@ import {
     type ImportVaultsPickerHandle,
     PROVIDER_TITLE_MAP,
 } from '../../../shared/components/import';
+import { ImportProgress } from '../../../shared/components/import/ImportProgress';
 import {
     type UseImportFormBeforeSubmit,
     type UseImportFormBeforeSubmitValue,
+    useExtensionContext,
     useImportForm,
 } from '../../../shared/hooks';
 
 export const Import: VFC = () => {
+    const { createNotification } = useNotifications();
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
     const vaultPickerRef = useRef<ImportVaultsPickerHandle>(null);
     const beforeSubmitResolver = useRef<(value: UseImportFormBeforeSubmitValue) => void>();
     const reset = () => beforeSubmitResolver.current?.({ ok: false });
+
+    const { context } = useExtensionContext();
 
     const beforeSubmit = useCallback<UseImportFormBeforeSubmit>(
         async (payload) =>
@@ -44,7 +50,18 @@ export const Import: VFC = () => {
         []
     );
 
-    const { form, dropzone, busy, result } = useImportForm({ beforeSubmit });
+    const { form, dropzone, busy, result } = useImportForm({
+        beforeSubmit,
+        onSubmit: (payload) => {
+            const total = payload.vaults.reduce((count, vault) => count + vault.items.length, 0);
+            createNotification({
+                key: requests.importItems(),
+                showCloseButton: false,
+                expiration: -1,
+                text: <ImportProgress total={total} port={context?.port} />,
+            });
+        },
+    });
 
     return (
         <>
