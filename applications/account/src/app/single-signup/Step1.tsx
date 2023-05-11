@@ -507,7 +507,7 @@ const Step1 = ({
                                         mergeInputState('email', { interactive: true });
                                     }}
                                     onFocus={() => {
-                                        onUpdate({ email: 'set' });
+                                        onUpdate({ emType: 'set' });
                                     }}
                                     onBlur={() => {
                                         mergeInputState('email', { focus: true });
@@ -529,7 +529,7 @@ const Step1 = ({
                                             mergeInputState('email', { interactive: true });
                                         }}
                                         onFocus={() => {
-                                            onUpdate({ email: 'confirm' });
+                                            onUpdate({ emType: 'confirm' });
                                         }}
                                         onBlur={() => {
                                             mergeInputState('emailConfirm', { focus: true });
