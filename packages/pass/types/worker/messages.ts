@@ -67,6 +67,7 @@ export enum WorkerMessageType {
     LOG_REQUEST = 'LOG_REQUEST',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
+    IMPORT_PROGRESS = 'IMPORT_PROGRESS',
 }
 
 export type WorkerForkMessage = WithPayload<WorkerMessageType.FORK, ForkPayload>;
@@ -103,6 +104,7 @@ export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: st
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
+export type ImportProgressMessage = WithPayload<WorkerMessageType.IMPORT_PROGRESS, { progress: number }>;
 
 export type WorkerMessage =
     | StoreActionMessage
@@ -139,7 +141,8 @@ export type WorkerMessage =
     | LogEventMessage
     | LogRequestMessage
     | SettingsUpdateMessage
-    | PermissionsUpdateMessage;
+    | PermissionsUpdateMessage
+    | ImportProgressMessage;
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & { sender: ExtensionEndpoint };
 export type MessageFailure = { type: 'error'; error: string; payload?: string };
