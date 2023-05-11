@@ -92,7 +92,7 @@ const MainContainer = () => {
 
 const WrappedMainContainer = () => {
     return (
-        <ErrorBoundary component={<StandardErrorPage />}>
+        <ErrorBoundary component={<StandardErrorPage big />}>
             <MainContainer />
         </ErrorBoundary>
     );
