@@ -54,8 +54,7 @@ import Step3 from './Step3';
 import Step4 from './Step4';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
-import vpnImg2x from './vpn2x.jpg';
-import vpnImg from './vpn.jpg';
+import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
 export const defaultSignupModel: SignupModel = {
     domains: [],
@@ -256,8 +255,7 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
         <>
             <link rel="preload" href={onboardingVPNWelcome} as="image" />
             <link rel="preload" href={onboardingVPNWelcome2} as="image" />
-            <link rel="preload" href={vpnImg} as="image" />
-            <link rel="preload" href={vpnImg2x} as="image" />
+            <link rel="preload" href={vpnUpsellIllustration} as="image" />
             <UnAuthenticated>
                 {step === Steps.One && (
                     <Step1
@@ -276,7 +274,7 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                             }
                         }}
                         hideFreePlan={signupParameters.hideFreePlan}
-                        upsellImgs={[vpnImg, vpnImg2x]}
+                        upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
                     />
                 )}
                 {step === Steps.Two && (
