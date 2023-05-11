@@ -26,7 +26,7 @@ const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => 
                 featureKey="revisions"
                 showOnce
                 endDate={new Date('2023-07-17')}
-                className="on-mobile-ml1 ml-12"
+                className="ml-2 md:ml-12 flex-item-noshrink"
             />
         </ContextMenuButton>
     );
