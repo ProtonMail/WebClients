@@ -36,10 +36,10 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
     const cache = useCache();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
-    const getHolidaysDirectory = useGetHolidaysDirectory(true);
 
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
+    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
 
     const [error, setError] = useState();
 

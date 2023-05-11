@@ -64,7 +64,6 @@ import {
     CalendarUrlsResponse,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
-    HolidaysDirectoryCalendar,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -96,7 +95,6 @@ type ModalsMap = {
 export interface CalendarSidebarListItemsProps {
     calendars: VisualCalendar[] | SubscribedCalendar[];
     allCalendars: VisualCalendar[];
-    holidaysDirectory?: HolidaysDirectoryCalendar[];
     loadingVisibility?: boolean;
     loadingSubscriptionParameters?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
@@ -106,7 +104,6 @@ export interface CalendarSidebarListItemsProps {
 const CalendarSidebarListItems = ({
     calendars,
     allCalendars,
-    holidaysDirectory,
     loadingVisibility = false,
     loadingSubscriptionParameters = false,
     onChangeVisibility = noop,
@@ -489,10 +486,9 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     type={calendarModalType}
                 />
             )}
-            {calendarModalCalendar && renderHolidaysCalendarModal && holidaysDirectory && (
+            {calendarModalCalendar && renderHolidaysCalendarModal && (
                 <HolidaysCalendarModal
                     {...holidaysCalendarModalProps}
-                    directory={holidaysDirectory}
                     calendar={calendarModalCalendar}
                     holidaysCalendars={holidaysCalendars}
                 />

@@ -188,12 +188,8 @@ const OtherCalendarsSection = ({
             </Prompt>
 
             {renderSubscribedCalendarModal && <SubscribedCalendarModal {...subscribedCalendarModal} />}
-            {renderHolidaysCalendarModal && holidaysDirectory && (
-                <HolidaysCalendarModal
-                    {...holidaysCalendarModal}
-                    directory={holidaysDirectory}
-                    holidaysCalendars={holidaysCalendars}
-                />
+            {renderHolidaysCalendarModal && (
+                <HolidaysCalendarModal {...holidaysCalendarModal} holidaysCalendars={holidaysCalendars} />
             )}
             {calendarModal.props?.editCalendar && (
                 <CalendarModal
