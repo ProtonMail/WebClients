@@ -5,7 +5,7 @@ import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
-import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
+import { requestLoginResetToken } from '@proton/shared/lib/api/reset';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { GetMnemonicResetData, getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
@@ -328,20 +328,16 @@ export const handleRequestToken = async ({
 };
 
 export const handleValidateResetToken = async ({
-    api,
+    resetResponse,
     cache,
     token,
-    hasDanger = false,
 }: {
-    api: Api;
+    resetResponse: ValidateResetTokenResponse;
     cache: ResetCacheResult;
     token: string;
-    hasDanger?: boolean;
 }): Promise<ResetActionResponse> => {
-    const { username } = cache;
-    const resetResponse = await api<ValidateResetTokenResponse>(validateResetToken(username, token));
     return {
-        to: hasDanger ? STEPS.DANGER_VERIFICATION : STEPS.NEW_PASSWORD,
+        to: STEPS.NEW_PASSWORD,
         cache: {
             ...cache,
             token,
