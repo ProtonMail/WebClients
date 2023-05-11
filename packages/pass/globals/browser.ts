@@ -9,11 +9,15 @@ import browser from 'webextension-polyfill';
 import { logger } from '../utils/logger';
 
 const self = globalThis as any;
-
-const HIDDEN_GLOBALS = {
-    chrome: self.chrome,
-    browser: self.browser,
+const context = {
+    allowProxy: true,
+    globals: {
+        chrome: self.chrome,
+        browser: self.browser,
+    },
 };
+
+export const disableBrowserProxyTrap = () => (context.allowProxy = false);
 
 /* To ensure that Sentry's internal checks involving the browser
  * APIs don't interfere with the initialization of our apps, we
@@ -25,8 +29,8 @@ export default (() => {
 
     setTimeout(
         () =>
-            !self.__DISABLE_BROWSER_TRAP__ &&
-            Object.entries(HIDDEN_GLOBALS)
+            context.allowProxy &&
+            Object.entries(context.globals)
                 .filter(([, value]) => value)
                 .forEach(([key, value]) => {
                     self[key] = new Proxy(value, {
@@ -49,4 +53,4 @@ export default (() => {
     return polyfill;
 })();
 
-export const chromeAPI = HIDDEN_GLOBALS.chrome as typeof chrome;
+export const chromeAPI = context.globals.chrome as typeof chrome;
