@@ -1,9 +1,15 @@
 import { HTMLAttributes } from 'react';
 
+import { getUnixTime } from 'date-fns';
+
 import { OptionsWithIntl, readableTimeIntl } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-const getValue = (value?: string | number | null) => {
+const getValue = (value?: string | number | Date | null) => {
+    if (value instanceof Date) {
+        return getUnixTime(value);
+    }
+
     if (typeof value === 'string') {
         const numberValue = parseInt(value, 10);
         if (!Number.isNaN(numberValue)) {
@@ -19,7 +25,7 @@ const getValue = (value?: string | number | null) => {
 };
 
 interface Props extends HTMLAttributes<HTMLTimeElement> {
-    children?: string | number | null;
+    children?: string | number | Date | null;
     localeCode?: string;
     sameDayOptions?: OptionsWithIntl['sameDayIntlOptions'];
     options?: OptionsWithIntl['intlOptions'];
