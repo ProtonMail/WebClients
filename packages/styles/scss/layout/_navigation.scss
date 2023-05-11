@@ -1,24 +1,25 @@
-$padding-inline-start-link: rem(14) !default;
-$padding-inline-end-link: rem(7) !default;
-$padding-block-link: rem(7) !default;
+$padding-inline-start-link: var(--space-3) !default;
+$padding-inline-end-link: var(--space-2) !default;
 
 .navigation > .navigation-list,
 .navigation > div > .navigation-list {
 	&:first-child {
-		padding-block-start: em(2); // make some space on the top for keyboard focus outline
+		padding-block-start: $focus-ring-size; // make some space on the top for keyboard focus outline
 	}
 
 	&:last-child {
-		padding-block-end: em(20); // make some space between the end of the list and the storage indicator
+		padding-block-end: rem(20); // make some space between the end of the list and the storage indicator
 	}
 }
 
 .navigation-link,
 .navigation-link-header-group {
-	padding-block: $padding-block-link;
+	block-size: rem(36);
 	padding-inline: $padding-inline-start-link $padding-inline-end-link;
 	text-decoration: none;
-	display: block;
+	display: flex;
+	align-items: center;
+	inline-size: 100%;
 
 	h3 {
 		font-size: inherit;
@@ -33,22 +34,11 @@ $padding-block-link: rem(7) !default;
 	}
 }
 
-// get spacing right and add line in accounts sidebar
+// accounts sidebar spacing
 .navigation-list:not(:first-child)
 	> .navigation-link-header-group:first-child:not(.navigation-link-header-group--expandable) {
 	position: relative;
-	padding-block-start: $padding-block-link * 2;
-	margin-block-start: $padding-block-link;
-
-	&::before {
-		content: '';
-		position: absolute;
-		inline-size: 100%;
-		block-size: 1px;
-		background-color: var(--border-norm);
-		inset-inline: 0;
-		inset-block-start: 0;
-	}
+	margin-block-start: var(--space-4);
 }
 
 .navigation-link-header-group--expandable {
@@ -57,9 +47,10 @@ $padding-block-link: rem(7) !default;
 
 .navigation-icon {
 	color: var(--text-weak);
+	transition: color 0.15s easing(ease-out-quint);
 
 	&-empty {
-		inline-size: rem(23);
+		inline-size: rem(16);
 	}
 }
 
@@ -77,6 +68,10 @@ $padding-block-link: rem(7) !default;
 	&:hover,
 	&:focus {
 		text-decoration: none;
+
+		.navigation-icon {
+			color: inherit;
+		}
 	}
 
 	&--collapsible {
@@ -136,10 +131,10 @@ label.navigation-link {
 .navigation-link-header-group-link {
 	@extend .interactive;
 
+	block-size: rem(36);
 	border: 1px solid transparent;
 	border-radius: var(--border-radius-md);
 	color: var(--text-weak);
-	padding-block: $padding-block-link;
 	padding-inline: $padding-inline-start-link $padding-inline-end-link;
 
 	@supports selector(:focus-visible) {
@@ -202,13 +197,11 @@ label.navigation-link {
 
 /* items counters */
 .navigation-counter-item {
-	padding-inline: 0.5em;
 	border-radius: var(--border-radius-sm);
 	background: var(--navigation-item-count-background-color);
 	font-size: em(11);
 	font-variant: tabular-nums;
 	line-height: em(20, 11);
-	min-inline-size: em(20, 11);
 	text-align: center;
 	color: var(--navigation-item-count-text-color);
 	transition: 0.15s easing(ease-out-quint);
@@ -222,9 +215,6 @@ label.navigation-link {
 		background: transparent;
 		color: var(--text-weak);
 
-		// To avoid shift when hovering and displaying options
-		min-inline-size: em(28, 11);
-
 		.active & {
 			color: currentcolor;
 		}
@@ -232,6 +222,16 @@ label.navigation-link {
 
 	&:empty {
 		display: none; // removes a bug on Webkit
+	}
+
+	// prevent layout shift when font-weight changes
+	&[data-unread-count]::after {
+		content: attr(data-unread-count);
+		font-weight: var(--font-weight-bold);
+		display: block;
+		block-size: 0;
+		overflow: hidden;
+		visibility: hidden;
 	}
 }
 
@@ -252,11 +252,11 @@ label.navigation-link {
 	}
 
 	[data-level='1'] {
-		padding-inline-start: 0.6em;
+		padding-inline-start: rem(8);
 	}
 
 	[data-level='2'] {
-		padding-inline-start: 1.2em;
+		padding-inline-start: rem(16);
 	}
 }
 

@@ -4,14 +4,13 @@
 
 		border-radius: var(--border-radius-md);
 		border: 1px solid transparent;
-		padding: 0.25em;
-		margin-inline-end: -0.5em;
+		margin-inline-end: rem(-4);
+		inline-size: rem(36);
+		block-size: rem(36);
+		color: var(--text-weak);
 
-		& &-icon {
-			// override icon-16p
-			inline-size: 1em;
-			block-size: 1em;
-			font-size: 2em;
+		&:hover {
+			color: var(--text-norm);
 		}
 	}
 }
