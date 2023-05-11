@@ -18,6 +18,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
+import { CSContext } from '../context/context';
 import { createContentScriptContext } from '../context/factory';
 import { DOMCleanUp } from '../injections/cleanup';
 
@@ -39,6 +40,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
             if (!options.recycle) {
                 context.service.iframe.destroy();
+                CSContext.clear();
                 DOMCleanUp();
             }
 
