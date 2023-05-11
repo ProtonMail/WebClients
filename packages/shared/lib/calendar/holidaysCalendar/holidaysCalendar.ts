@@ -138,6 +138,9 @@ export const getJoinHolidaysCalendarData = async ({
     } = holidaysCalendar;
 
     const primaryAddress = getPrimaryAddress(addresses);
+    if (!primaryAddress) {
+        throw new Error('No primary address');
+    }
     const primaryAddressKey = (await getAddressKeys(primaryAddress.ID))[0];
     if (!primaryAddressKey) {
         throw new Error('No primary address key');
