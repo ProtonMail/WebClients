@@ -13,6 +13,14 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { DOMCleanUp } from './injections/cleanup';
 
+/* Since content-scripts cannot be inspected, it is safe to disable the
+ * browser API trap in this context. Additionally, content-scripts have
+ * access to a dedicated execution context with a proxy to the window object,
+ * so even if this flag is set, it won't be inspectable in the console where
+ * this script is running. See `@pass/globals/browser.ts` */
+const self = globalThis as any;
+self.__DISABLE_BROWSER_TRAP__ = true;
+
 const listeners = createListenerStore();
 let clientLoaded: boolean = false;
 
