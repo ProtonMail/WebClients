@@ -32,12 +32,13 @@ interface Props {
     onEdit: (newField?: string) => void;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
     onExport: () => void;
-    onGroupDetails: (contactGroupID: string) => void;
+    onGroupDetails: (contactGroupID: string, onCloseContactDetailsModal?: () => void) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
     onSignatureError: (contactID: string) => void;
     onDecryptionError: (contactID: string) => void;
     isPreview?: boolean;
+    onCloseModal?: () => void;
 }
 
 const ContactView = ({
@@ -59,6 +60,7 @@ const ContactView = ({
     onSignatureError,
     onDecryptionError,
     isPreview = false,
+    onCloseModal,
 }: Props) => {
     const hasError = errors?.some(
         (error) => error instanceof Error || error.type !== CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED
@@ -102,6 +104,7 @@ const ContactView = ({
                     onGroupDetails={onGroupDetails}
                     onUpgrade={onUpgrade}
                     onGroupEdit={onGroupEdit}
+                    onCloseModal={onCloseModal}
                 />
                 <ContactViewTels vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
                 <ContactViewAdrs vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />

@@ -3,17 +3,18 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useContactList from '@proton/components/containers/contacts/hooks/useContactList';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
 
 import { Loader, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
-import { useAddresses, useApi, useContactEmails, useContactGroups, useLoading, useUserKeys } from '../../../hooks';
+import { useAddresses, useApi, useContactGroups, useLoading, useUserKeys } from '../../../hooks';
 import ContactView from '../view/ContactView';
 
 export interface ContactMergeDetailsModalProps {
@@ -34,7 +35,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
         errors: [],
     });
 
-    const [contactEmails, loadingContactEmails] = useContactEmails();
+    const { loading: loadingContactEmails, contactEmailsMap } = useContactList({});
 
     const [addresses = [], loadingAddresses] = useAddresses();
     const ownAddresses = useMemo(() => addresses.map(({ Email }) => Email), [addresses]);
@@ -70,7 +71,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
                         contactID={contactID}
                         onDelete={noop}
                         isPreview
-                        contactEmails={contactEmails}
+                        contactEmails={contactEmailsMap[contactID] as ContactEmail[]}
                         contactGroupsMap={contactGroupsMap}
                         ownAddresses={ownAddresses}
                         onReload={noop}

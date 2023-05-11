@@ -1,7 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import noop from '@proton/utils/noop';
 
 import { Icon, ModalProps, ModalTwo } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
@@ -10,9 +12,9 @@ import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import Tooltip from '../../../components/tooltip/Tooltip';
 import { useContactEmails, useContactGroups, useUser } from '../../../hooks';
 import { ContactExportingProps } from '../modals/ContactExportingModal';
+import RecipientDropdownItem from '../view/RecipientDropdownItem';
 import { ContactGroupDeleteProps } from './ContactGroupDeleteModal';
 import { ContactGroupEditProps } from './ContactGroupEditModal';
-import ContactGroupTable from './ContactGroupTable';
 
 import './ContactGroupDetailsModal.scss';
 
@@ -22,11 +24,22 @@ export interface ContactGroupDetailsProps {
     onDelete: (props: ContactGroupDeleteProps) => void;
     onExport: (props: ContactExportingProps) => void;
     onUpgrade: () => void;
+    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    onCloseContactDetailsModal?: () => void;
 }
 
 type Props = ContactGroupDetailsProps & ModalProps;
 
-const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, onUpgrade, ...rest }: Props) => {
+const ContactGroupDetailsModal = ({
+    contactGroupID,
+    onEdit,
+    onDelete,
+    onExport,
+    onUpgrade,
+    onCompose,
+    onCloseContactDetailsModal,
+    ...rest
+}: Props) => {
     const [user] = useUser();
     const [contactGroups = [], loadingGroups] = useContactGroups();
     const [contactEmails = [], loadingEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
@@ -55,78 +68,137 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
         onExport({ contactGroupID });
     };
 
+    const handleCompose = () => {
+        if (onCompose) {
+            const recipients = emails.map((email) => ({ Name: email.Name, Address: email.Email }));
+            onCompose([...recipients], []);
+            rest.onClose?.();
+            onCloseContactDetailsModal?.();
+        }
+    };
+
+    const handleComposeSingle = (recipient: Recipient) => {
+        if (onCompose) {
+            onCompose([recipient], []);
+            rest.onClose?.();
+            onCloseContactDetailsModal?.();
+        }
+    };
+
+    const getComposeAction = (recipient: Recipient) => {
+        return (
+            onCompose && (
+                <div className="opacity-on-hover mr-2">
+                    <Tooltip title={c('Action').t`Compose`}>
+                        <Button color="weak" shape="ghost" icon onClick={() => handleComposeSingle(recipient)}>
+                            <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                        </Button>
+                    </Tooltip>
+                </div>
+            )
+        );
+    };
+
     return (
         <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalHeader
                 title={
                     <div className="flex flex-nowrap flex-align-items-center">
-                        <div
-                            className="contact-group-details-chip rounded-50 mr-2 flex-item-noshrink"
-                            style={{ backgroundColor: group?.Color }}
-                        />
                         <span className="text-ellipsis" title={group?.Name}>
                             {group?.Name}
                         </span>
                     </div>
                 }
+                actions={[
+                    <Tooltip title={c('Action').t`Edit`}>
+                        <Button
+                            icon
+                            shape="ghost"
+                            color="weak"
+                            onClick={handleEdit}
+                            disabled={loading}
+                            className="inline-flex ml-2"
+                            data-testid="group-summary:edit"
+                        >
+                            <Icon name="pen" alt={c('Action').t`Edit`} />
+                        </Button>
+                    </Tooltip>,
+                    <Tooltip title={c('Action').t`Export contact group`}>
+                        <Button
+                            color="weak"
+                            shape="ghost"
+                            icon
+                            onClick={handleExportContactGroup}
+                            disabled={loading}
+                            className="inline-flex ml-2"
+                            data-testid="group-summary:export"
+                        >
+                            <Icon name="arrow-down-line" alt={c('Action').t`Export contact group`} />
+                        </Button>
+                    </Tooltip>,
+                    <Tooltip title={c('Action').t`Delete`}>
+                        <Button
+                            color="weak"
+                            shape="ghost"
+                            icon
+                            onClick={handleDelete}
+                            disabled={loading}
+                            className="inline-flex ml-2"
+                            data-testid="group-summary:delete"
+                        >
+                            <Icon name="trash" alt={c('Action').t`Delete`} />
+                        </Button>
+                    </Tooltip>,
+                ]}
             />
             <ModalContent>
                 <div className="flex flex-no-min-children flex-item-fluid">
                     <h4 className="mb-4 flex flex-align-items-center flex-item-fluid">
-                        <Icon className="mr-2" name="users" />
+                        <div
+                            className="contact-group-details-chip rounded-50 mr-2 flex-item-noshrink"
+                            style={{ backgroundColor: group?.Color }}
+                        />
                         <span>
-                            {c('Title').ngettext(msgid`${emailsCount} member`, `${emailsCount} members`, emailsCount)}
+                            {c('Title').ngettext(
+                                msgid`${emailsCount} email address`,
+                                `${emailsCount} email addresses`,
+                                emailsCount
+                            )}
                         </span>
                     </h4>
-                    <div className="flex-item-noshrink">
-                        <Tooltip title={c('Action').t`Export contact group`}>
-                            <Button
-                                color="weak"
-                                shape="outline"
-                                icon
-                                onClick={handleExportContactGroup}
-                                disabled={loading}
-                                className="inline-flex ml-2"
-                                data-testid="group-summary:export"
-                            >
-                                <Icon name="arrow-up-from-square" alt={c('Action').t`Export contact group`} />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={c('Action').t`Delete`}>
-                            <Button
-                                color="weak"
-                                shape="outline"
-                                icon
-                                onClick={handleDelete}
-                                disabled={loading}
-                                className="inline-flex ml-2"
-                                data-testid="group-summary:delete"
-                            >
-                                <Icon name="trash" alt={c('Action').t`Delete`} />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={c('Action').t`Edit`}>
-                            <Button
-                                icon
-                                shape="solid"
-                                color="norm"
-                                onClick={handleEdit}
-                                disabled={loading}
-                                className="inline-flex ml-2"
-                                data-testid="group-summary:edit"
-                            >
-                                <Icon name="pen" alt={c('Action').t`Edit`} />
-                            </Button>
-                        </Tooltip>
-                    </div>
                 </div>
-                <ContactGroupTable contactEmails={emails} />
+                {emails.map((email) => {
+                    const recipient: Recipient = { Name: email.Name, Address: email.Email };
+                    return (
+                        <RecipientDropdownItem
+                            label={recipient.Name}
+                            recipient={recipient}
+                            displaySenderImage={false}
+                            closeDropdown={noop}
+                            additionalAction={getComposeAction(recipient)}
+                            simple
+                            key={email.Email}
+                        />
+                    );
+                })}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
-                <Button color="norm" onClick={() => handleEdit()} disabled={loading}>
-                    {c('Action').t`Edit`}
-                </Button>
+                {onCompose && (
+                    <Button
+                        color="norm"
+                        onClick={handleCompose}
+                        disabled={loading}
+                        className="inline-flex flex-justify-center"
+                    >
+                        <Icon
+                            name="pen-square"
+                            className="flex-align-self-center mr-2"
+                            alt={c('Action').t`New message`}
+                        />
+                        {c('Action').t`New message`}
+                    </Button>
+                )}
             </ModalFooter>
         </ModalTwo>
     );

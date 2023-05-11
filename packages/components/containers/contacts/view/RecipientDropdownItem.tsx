@@ -1,8 +1,8 @@
-import { MouseEvent } from 'react';
+import React, { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ContactImage, Copy, ProtonBadgeType, useNotifications } from '@proton/components';
+import { ContactImage, Copy, ProtonBadgeType, useNotifications } from '@proton/components/index';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
@@ -12,7 +12,8 @@ interface Props {
     bimiSelector?: string;
     closeDropdown: () => void;
     displaySenderImage: boolean;
-    isOutside?: boolean;
+    simple?: boolean;
+    additionalAction?: ReactNode;
 }
 
 const RecipientDropdownItem = ({
@@ -21,7 +22,8 @@ const RecipientDropdownItem = ({
     label,
     recipient,
     closeDropdown,
-    isOutside,
+    simple = false,
+    additionalAction,
 }: Props) => {
     const { createNotification } = useNotifications();
 
@@ -50,7 +52,7 @@ const RecipientDropdownItem = ({
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p-2" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
                 <span className="m-auto">
-                    {isOutside ? (
+                    {simple ? (
                         <>{getInitials(label)}</>
                     ) : (
                         <ContactImage
@@ -66,16 +68,17 @@ const RecipientDropdownItem = ({
             <div className="flex flex-column flex-item-fluid px-2" data-testid="recipient:dropdown-item--contact-name">
                 <span className="text-ellipsis user-select" title={label}>
                     {label}
-                    {!isOutside && recipient && <ProtonBadgeType recipient={recipient} />}
+                    {!simple && recipient && <ProtonBadgeType recipient={recipient} />}
                 </span>
                 {hasName && <span className="color-weak text-ellipsis user-select">{`<${recipient.Address}>`}</span>}
             </div>
+            {additionalAction}
             <Copy
                 value={recipient.Address}
-                className="opacity-on-hover mr-2 flex-item-noshrink"
+                className="mr-2 flex-item-noshrink opacity-on-hover"
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
-                size="small"
+                shape="ghost"
                 data-testid="recipient:dropdown-item--copy-address-button"
             />
         </div>

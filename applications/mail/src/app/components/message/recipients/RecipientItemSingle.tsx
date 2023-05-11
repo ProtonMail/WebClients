@@ -1,13 +1,13 @@
 import { ReactNode, RefObject, useState } from 'react';
 
 import { Dropdown, DropdownMenu, DropdownSizeUnit, generateUID } from '@proton/components';
+import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import RecipientDropdownItem from './RecipientDropdownItem';
 import RecipientItemLayout from './RecipientItemLayout';
 
 interface Props {
@@ -102,7 +102,7 @@ const RecipientItemSingle = ({
                             label={label}
                             closeDropdown={close}
                             bimiSelector={recipient?.BimiSelector || undefined}
-                            isOutside={isOutside}
+                            simple={isOutside}
                         />
                         {customDropdownActions}
                     </DropdownMenu>
