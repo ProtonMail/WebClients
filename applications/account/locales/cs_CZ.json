@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
+      "Add": [
+        "Přidat"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Přidat ${ BRAND_NAME } Účet"
       ],
       "Add address": [
         "Přidat adresu"
-      ],
-      "Add calendar": [
-        "Přidat kalendář"
       ],
       "Add condition": [
         "Přidat podmínku"
@@ -164,6 +164,9 @@
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
+      "Choose my own password": [
+        "Zvolit si vlastní heslo"
+      ],
       "Claim it": [
         "Získat ji"
       ],
@@ -205,6 +208,9 @@
       ],
       "Continue with Google": [
         "Pokračovat skrze Google"
+      ],
+      "Continue with this password": [
+        "Pokračovat s tímto heslem"
       ],
       "Copy": [
         "Kopírovat"
@@ -341,6 +347,9 @@
       "Edit label": [
         "Upravit štítek"
       ],
+      "Edit password": [
+        "Upravit heslo"
+      ],
       "Edit phone number": [
         "Upravit telefonní číslo"
       ],
@@ -421,6 +430,9 @@
       ],
       "Get more labels": [
         "Získat více štítků"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
@@ -662,6 +674,9 @@
       "Reset to default": [
         "Obnovit výchozí nastavení"
       ],
+      "Restore": [
+        "Obnovit"
+      ],
       "Restore administrator privileges": [
         "Obnovit oprávnění správce"
       ],
@@ -749,6 +764,9 @@
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
+      "Set new password": [
+        "Nastavit nové heslo"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
@@ -790,6 +808,9 @@
       ],
       "Sign out of all accounts": [
         "Odhlásit se ze všech účtů"
+      ],
+      "Sign up for free": [
+        "Zaregistrujte se zdarma"
       ],
       "Signing in": [
         "Přihlašování"
@@ -2685,6 +2706,12 @@
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Navýšením tarifu odemknete neomezený počet filtrů, které za vás třídí doručenou poštu a další prémiové funkce."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Navýšením tarifu odemknete neomezený počet složek, štítků a dalších prémiových funkcí."
+      ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "Ikona obsahující logo ${ BRAND_NAME } následované znaménkem plus"
       ],
@@ -3225,6 +3252,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Prohlížeč, který používáte, neumožňuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
+      "The email addresses do not match": [
+        "E-mailové adresy se neshodují"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Název složky je neplatný. Zvolte prosím jiný název."
       ],
@@ -3713,6 +3743,266 @@
         "Můžete uložit ICS soubor s událostmi, které byly úspěšně exportovány."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB celkového úložiště"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Získat ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi členy rodiny v ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Vytvořit nového uživatele"
+      ],
+      "Don't show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Pozvat stávajícího ${ BRAND_NAME } uživatele"
+      ],
+      "Invite member to your family": [
+        "Pozvat člena do vaší rodiny"
+      ],
+      "Keep current plan": [
+        "Zachovat aktuální tarif"
+      ],
+      "Setup family group": [
+        "Nastavit rodinnou skupinu"
+      ],
+      "Switch plans": [
+        "Změnit tarif"
+      ],
+      "View invitation": [
+        "Zobrazit pozvánku"
+      ],
+      "View the invitation": [
+        "Zobrazit pozvánku"
+      ],
+      "View the invitations": [
+        "Zobrazit pozvánky"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Prémiový Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémiový Mail a Calendar"
+      ],
+      "Premium VPN": [
+        "Prémiová VPN"
+      ],
+      "Up to 6 users": [
+        "Až 6 uživatelů"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Rodinná skupina nebyla rozpoznána. Zkuste to znovu."
+      ],
+      "Organization not recognized. Try again.": [
+        "Organizace nebyla rozpoznána. Zkuste to znovu."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } skupiny"
+      ],
+      "*Only one free trial per customer.": [
+        "*Pouze jedna bezplatná zkušební verze na zákazníka."
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Účty s vlastními doménami se nemohou připojit k tarifu Visionary nebo rodinnému tarifu."
+      ],
+      "customer support": [
+        "zákaznická podpora"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Pozvání od ${ invitation.OrganizationName }"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Pozván od: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Spravovat adresy."
+      ],
+      "Manage user accounts": [
+        "Spravovat uživatelské účty"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Majitelé tarifu se členy se nemohou připojit k jinému skupinovému tarifu."
+      ],
+      "Pending": [
+        "Čekající"
+      ],
+      "Pending invitation": [
+        "Čekající pozvánka"
+      ],
+      "Pending invitations": [
+        "Čekající pozvánky"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Úložiště, které vám bylo přiděleno: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Předplatné se účtuje hlavnímu správci tarifu Visionary nebo rodinného tarifu."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Tarify Visionary a rodinné tarify v současné době nepodporují doživotní účty."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Jste pozváni do ${ invite.OrganizationName }"
+      ],
+      "You are part of ${ organization.Name }.": [
+        "Jste součástí ${ organization.Name }."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Během 6 měsíců můžete přijmout pouze 3 pozvánky. Pokud požadujete výjimku, kontaktujte prosím ${ supportLink }."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
+      ],
+      "You have successfully joined the Family plan": [
+        "Úspěšně jste se připojili k rodinnému tarifu"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Odstraňte některá data nebo požádejte správce plánu o zvětšení úložiště."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Váš aktuální tarif se nemůže připojit k tarifu Visionary nebo rodinnému tarifu."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Slevy jsou počítány na základě standardních měsíčních cen."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Získat ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Pouze jedna bezplatná zkušební verze na uživatele."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Ve výchozím nastavení přiřazujeme účtu správce ${ formattedStorage } úložiště. Přidělené úložiště můžete později rozdělit mezi další uživatele."
+      ],
+      "Online privacy, for your whole family": [
+        "Soukromí online, pro celou vaši rodinu"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organization.Name }."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Můžete zvětšit nebo zmenšit úložiště pro tohoto uživatele."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Zadejte název rodinné skupiny pro potvrzení"
+      ],
+      "Enter organization name to confirm": [
+        "Zadejte název organizace pro potvrzení"
+      ],
+      "Family name": [
+        "Rodinné jméno"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Toto trvale smaže všechny dílčí uživatele, účty a data spojená s vaší organizací."
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Rodina"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } byl odstraněn z ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "Došlo k chybě, zkuste to prosím znovu"
+      ],
+      "Member updated": [
+        "Člen aktualizován"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Přidat uživatele do vašeho ${ PLAN_NAMES.visionary2022 } účtu"
+      ],
+      "Delete family group?": [
+        "Smazat rodinnou skupinu?"
+      ],
+      "Delete organization?": [
+        "Smazat organizaci?"
+      ],
+      "Edit user storage": [
+        "Upravit uživatelské úložiště"
+      ],
+      "Family name": [
+        "Rodinné jméno"
+      ],
+      "Family plan": [
+        "Rodinné předplatné"
+      ],
+      "Introducing ${ planName }": [
+        "Představujeme ${ planName }"
+      ],
+      "Invite a user": [
+        "Pozvat uživatele"
+      ],
+      "Manage family group": [
+        "Spravovat rodinnou skupinu"
+      ],
+      "Set family name": [
+        "Nastavit jméno rodiny"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Obsahuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide My Email, sdílení kalendáře a další."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN připojení",
@@ -4022,6 +4312,12 @@
       ],
       "App version": [
         "Verze aplikace"
+      ],
+      "Best deal": [
+        "Nejlepší nabídka"
+      ],
+      "Enter your email address": [
+        "Zadejte vaši e-mailovou adresu"
       ],
       "Event": [
         "Událost"
@@ -4676,6 +4972,9 @@
       "3. You earn credits": [
         "3. Získáte kredity"
       ],
+      "30-day money-back guarantee": [
+        "30denní záruka vrácení peněz"
+      ],
       "30-day money-back guarantee.": [
         "30denní záruka vrácení peněz."
       ],
@@ -4903,6 +5202,21 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      ],
+      "Billed every 12 months": [
+        "Účtováno každých 12 měsíců"
+      ],
+      "Billed every 15 months": [
+        "Účtováno každých 15 měsíců"
+      ],
+      "Billed every 24 months": [
+        "Účtováno každých 24 měsíců"
+      ],
+      "Billed every 30 months": [
+        "Účtováno každých 30 měsíců"
+      ],
+      "Billed every month": [
+        "Účtováno každý měsíc"
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
@@ -5534,6 +5848,9 @@
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
       ],
+      "Password copied to clipboard": [
+        "Heslo bylo zkopírované do schránky"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
@@ -5693,6 +6010,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Uložte si heslo na bezpečné místo. Kliknutím na ikonu potvrďte, že jste heslo zadali správně."
       ],
+      "Saving your password": [
+        "Uložení hesla"
+      ],
       "Scan QR code instead": [
         "Namísto toho naskenujte QR kód"
       ],
@@ -5786,6 +6106,9 @@
       "support team": [
         "tým podpory"
       ],
+      "Swiss based": [
+        "Vytvořeno ve Švýcarsku"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -5797,6 +6120,9 @@
       ],
       "Text to display": [
         "Text k zobrazení"
+      ],
+      "Thank you": [
+        "Děkujeme"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
@@ -6133,6 +6459,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Zobrazení týdne a měsíce platí pouze pro stolní počítače."
+      ],
+      "Welcome": [
+        "Vítejte"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
@@ -7349,6 +7678,9 @@
       "Notification": [
         "Oznámení"
       ],
+      "Notifications": [
+        "Upozornění"
+      ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
       ],
@@ -8419,6 +8751,9 @@
       "Auto-reply": [
         "Automatická odpověď"
       ],
+      "Available on all platforms": [
+        "Dostupné na všech platformách"
+      ],
       "Calendar sharing": [
         "Sdílení kalendáře"
       ],
@@ -8505,9 +8840,6 @@
       ],
       "Multiple forwarding mailboxes": [
         "Vícenásobné přesměrování poštovních schránek"
-      ],
-      "NetShield malware and ad-blocker": [
-        "Blokování reklam a malware NetShield"
       ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
@@ -8619,9 +8951,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Sdílení trezoru a položek (již brzy)"
-      ],
-      "Worldwide streaming services": [
-        "Celosvětové streamovací služby"
       ]
     },
     "new_plans: feature info": {
@@ -9909,6 +10238,11 @@
         "Speciální nabídka"
       ]
     },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Bez omezení"
+      ]
+    },
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } den",
@@ -10168,9 +10502,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL kalendáře"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "K odběru externího nebo veřejného kalendáře a jeho aktualizacím zadejte jeho URL adresu. Jeho verze ke čtení bude přidána do Odebíraných kalendářů.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -11428,6 +11759,9 @@
       ],
       "Set up two-factor authentication": [
         "Nastavit dvoufázové ověření"
+      ],
+      "Set your password": [
+        "Nastavte si heslo"
       ],
       "Settings": [
         "Nastavení"

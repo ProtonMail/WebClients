@@ -56,14 +56,14 @@
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
+      "Add": [
+        "Tilføj"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Tilføj ${ BRAND_NAME }-konto"
       ],
       "Add address": [
         "Tilføj adresse"
-      ],
-      "Add calendar": [
-        "Tilføj kalender"
       ],
       "Add condition": [
         "Tilføj betingelse"
@@ -646,6 +646,9 @@
       ],
       "Reset to default": [
         "Nulstil til standard"
+      ],
+      "Restore": [
+        "Gendan"
       ],
       "Restore administrator privileges": [
         "Gendan administratorprivilegier"
@@ -3139,6 +3142,9 @@
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
       ],
+      "The email addresses do not match": [
+        "E-Mailadresserne stemmer ikke overens"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -3302,6 +3308,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering mislykkedes"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versioner < 3.0 understøttes ikke"
       ]
     },
     "Error importing contacts": {
@@ -3603,6 +3612,58 @@
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret."
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB samlet lagerplads"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Switch plans": [
+        "Skift abonnement"
+      ],
+      "View the invitation": [
+        "Se invitationen"
+      ],
+      "View the invitations": [
+        "Se invitationerne"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail og Kalender"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "Op til 6 brugere"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "kundeservice"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Inviteret af: ${ inviteEmail }"
       ]
     },
     "Feature": {
@@ -5357,6 +5418,9 @@
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
+      "Preview for this file type is not supported": [
+        "Forhåndsvisning af denne filtype er ikke understøttet"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
       ],
@@ -6018,6 +6082,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Dit abonnement er begrænset til 10 version i op til 7 dage"
+      ],
       "Your recovery phrase": [
         "Din gendannelsessætning"
       ],
@@ -6441,6 +6508,14 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dage"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } år",
+        "${ nbYear } år"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
@@ -6955,6 +7030,9 @@
       ],
       "Notification": [
         "Notifikation"
+      ],
+      "Notifications": [
+        "Notifikationer"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-adgangskode"
@@ -8074,9 +8152,6 @@
       ],
       "User session management": [
         "Administration af brugersessioner"
-      ],
-      "Worldwide streaming services": [
-        "Verdensomspændende streamingtjenester"
       ]
     },
     "new_plans: feature info": {
@@ -9280,9 +9355,41 @@
       ]
     },
     "specialoffer: Offers": {
+      "/ month": [
+        "/ måned"
+      ],
+      "1 year": [
+        "1 år"
+      ],
+      "2 years": [
+        "2 år"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Faktureret med ${ amount } for 1 måned"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Faktureret med ${ amount } for 12 måneder"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Faktureret med ${ amount } for 15 måneder"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Faktureret med ${ amount } for 24 måneder"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Faktureret med ${ amount } for 30 måneder"
+      ],
       "for ${ n } month": [
         "i ${ n } måned",
         "i ${ n } måneder"
+      ],
+      "Get the deal": [
+        "Få tilbuddet"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-tilbud"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9337,9 +9444,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Kalender-URL"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Hvis du vil abonnere på en ekstern eller offentlig kalender og dens opdateringer, skal du indtaste URL-adressen. En skrivebeskyttet version af kalenderen vil blive tilføjet til dine kalenderabonnementer.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10258,6 +10362,9 @@
       "Invoices": [
         "Fakturaer"
       ],
+      "Keep your inbox organized": [
+        "Hold din indbakke organiseret"
+      ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
       ],
@@ -10571,6 +10678,9 @@
       ],
       "Verifying your payment...": [
         "Verificerer din betaling..."
+      ],
+      "Version history": [
+        "Versionshistorik"
       ],
       "VPN apps": [
         "VPN-apps"

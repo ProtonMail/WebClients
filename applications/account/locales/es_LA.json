@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Activar recuperación"
       ],
+      "Add": [
+        "Añadir"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Añadir cuenta de ${ BRAND_NAME }"
       ],
       "Add address": [
         "Añadir dirección"
-      ],
-      "Add calendar": [
-        "Añadir calendario"
       ],
       "Add condition": [
         "Añadir condición"
@@ -164,6 +164,9 @@
       "Choose a file or drag it here": [
         "Elija un archivo o arrástrelo aquí"
       ],
+      "Choose my own password": [
+        "Escoge tu propia contraseña"
+      ],
       "Claim it": [
         "Reclamarla"
       ],
@@ -205,6 +208,9 @@
       ],
       "Continue with Google": [
         "Continuar con Google"
+      ],
+      "Continue with this password": [
+        "Continúa con la misma contraseña"
       ],
       "Copy": [
         "Copiar"
@@ -341,6 +347,9 @@
       "Edit label": [
         "Editar etiqueta"
       ],
+      "Edit password": [
+        "Cambia tu contraseña"
+      ],
       "Edit phone number": [
         "Editar número de teléfono"
       ],
@@ -421,6 +430,9 @@
       ],
       "Get more labels": [
         "Obtener más etiquetas"
+      ],
+      "Get the deal": [
+        "Obtiene la promoción"
       ],
       "Get verification code": [
         "Obtener código de verificación"
@@ -662,6 +674,9 @@
       "Reset to default": [
         "Restablecer valores por defecto"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
       ],
@@ -749,6 +764,9 @@
       "Set catch-all": [
         "Configurar catch-all"
       ],
+      "Set new password": [
+        "Establece una nueva contraseña"
+      ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
       ],
@@ -790,6 +808,9 @@
       ],
       "Sign out of all accounts": [
         "Cerrar la sesión de todas las cuentas"
+      ],
+      "Sign up for free": [
+        "Regístrate gratis"
       ],
       "Signing in": [
         "Iniciando sesión"
@@ -3203,6 +3224,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "El navegador que está usando no permite que el pago sea autorizado. Use un navegador diferente o inicie sesión a través de una computadora."
       ],
+      "The email addresses do not match": [
+        "Las direcciónes de correo electrónico no son las mismas"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elija un nombre diferente."
       ],
@@ -3761,7 +3785,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "Grupos de ${ BRAND_NAME }"
       ],
       "*Only one free trial per customer.": [
         "*Solo una prueba gratuita por cliente."
@@ -5113,6 +5137,21 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
       ],
+      "Billed every 12 months": [
+        "Facturado cada 12 meses"
+      ],
+      "Billed every 15 months": [
+        "Facturado cada 15 meses"
+      ],
+      "Billed every 24 months": [
+        "Facturado cada 24 meses"
+      ],
+      "Billed every 30 months": [
+        "Facturado cada 30 meses"
+      ],
+      "Billed every month": [
+        "Facturado cada mes"
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
@@ -5151,6 +5190,9 @@
       ],
       "Continue anyway?": [
         "¿Continuar de todos modos?"
+      ],
+      "Continue with ${ freeName }": [
+        "Continúa con ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará su cuenta de ${ BRAND_NAME } a ${ name }."
@@ -5366,6 +5408,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos, incluyendo los entrantes y enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
+      ],
+      "For choosing ${ product }": [
+        "Por elegir ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa, MasterCard y Discover, los 3 dígitos de la parte trasera de la tarjeta. Para American Express, los 4 dígitos de la parte frontal de la tarjeta."
@@ -5705,6 +5750,9 @@
       "Only you can see the labels.": [
         "Solo usted puede ver las etiquetas."
       ],
+      "Open source": [
+        "Código abierto"
+      ],
       "Or select a particular server:": [
         "O seleccione un servidor en particular:"
       ],
@@ -5824,6 +5872,9 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido por las leyes de privacidad de Suiza"
       ],
       "Public link invite": [
         "Enlace de invitación público"
@@ -5981,6 +6032,9 @@
       "support team": [
         "equipo de soporte"
       ],
+      "Swiss based": [
+        "Basado en Suiza"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
       ],
@@ -5993,8 +6047,14 @@
       "Text to display": [
         "Texto a mostrar"
       ],
+      "Thank you": [
+        "Gracias"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje de ${ boldDataLocked } ya no se mostrará, pero aún puede desbloquear sus datos en ${ encryptionAndKeysLink }."
+      ],
+      "The ${ planName } plan includes:": [
+        "El plan ${ planName } incluye:"
       ],
       "The calendar will be removed from your account.": [
         "El calendario se eliminará de su cuenta."
@@ -6182,6 +6242,9 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
+      "Try ${ upsellPlanName } risk free": [
+        "Prueba ${ upsellPlanName } sin riesgos"
+      ],
       "Two-factor authentication disabled": [
         "Autenticación de dos factores deshabilitada"
       ],
@@ -6322,6 +6385,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Las vistas semanal y mensual solo funcionan en computadora."
+      ],
+      "Welcome": [
+        "Bienvenido"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos un código de restablecimiento a la dirección de correo que proporcionó para la recuperación de la cuenta."
@@ -7518,6 +7584,9 @@
       "Notification": [
         "Notificación"
       ],
+      "Notifications": [
+        "Notificaciones"
+      ],
       "OpenVPN / IKEv2 password": [
         "Contraseña OpenVPN / IKEv2"
       ],
@@ -8619,9 +8688,6 @@
       "Multiple forwarding mailboxes": [
         "Múltiples buzones de reenvío"
       ],
-      "NetShield malware and ad-blocker": [
-        "Bloqueador de publicidad y malware NetShield"
-      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -8728,13 +8794,10 @@
         "Gestión de sesiones de usuario"
       ],
       "Vault and Item sharing": [
-        "Uso compartido de bóveda y elementos"
+        "Uso compartido de bóvedas y elementos"
       ],
       "Vault and Item sharing (coming soon)": [
-        "Uso compartido de bóveda y elementos (próximamente)"
-      ],
-      "Worldwide streaming services": [
-        "Servicios de streaming a nivel mundial"
+        "Uso compartido de bóvedas y elementos (próximamente)"
       ]
     },
     "new_plans: feature info": {
@@ -8952,8 +9015,8 @@
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Cree hasta ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones",
-        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones"
+        "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
+        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
         "Cree hasta ${ n } direcciones de correo/alias para toda la familia. Úselas para sus identidades en línea, p.ej., SubsDeFamilia@${ domain } para suscripciones en línea."
@@ -10003,26 +10066,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hours } hour": [
         "${ days } día",
         "${ days } días"
       ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
       "${ minutes } minute": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mes gratis",
+        "${ n } meses gratis"
       ]
     },
     "specialoffer: Deal details": {
@@ -10139,8 +10202,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
+        "por ${ n } mes",
+        "por ${ n } meses"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -10270,8 +10333,8 @@
       "Calendar URL": [
         "URL del calendario"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para suscribirse a un calendario externo o público y sus actualizaciones, ingrese la URL. Se añadirá una versión de solo lectura del calendario a sus calendarios suscritos.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Para suscribirse a un calendario externo o público y sus actualizaciones, ingrese la URL. Se añadirá una versión de solo lectura del calendario a sus otros calendarios.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -11485,6 +11548,9 @@
       ],
       "Set up two-factor authentication": [
         "Configurar autenticación de dos factores"
+      ],
+      "Set your password": [
+        "Establece tu contraseña"
       ],
       "Settings": [
         "Ajustes"

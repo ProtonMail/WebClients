@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Activar recuperación"
       ],
+      "Add": [
+        "Añadir"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Añadir cuenta de ${ BRAND_NAME }"
       ],
       "Add address": [
         "Añadir dirección"
-      ],
-      "Add calendar": [
-        "Añadir calendario"
       ],
       "Add condition": [
         "Añadir condición"
@@ -410,6 +410,18 @@
       "Get a new encrypted email address": [
         "Obtener una nueva dirección de correo cifrada"
       ],
+      "Get more addresses": [
+        "Disfruta de más direcciones"
+      ],
+      "Get more filters": [
+        "Disfruta de más filtros"
+      ],
+      "Get more folders": [
+        "Disfruta de más carpetas"
+      ],
+      "Get more labels": [
+        "Disfruta de más etiquetas"
+      ],
       "Get verification code": [
         "Obtener código de verificación"
       ],
@@ -460,6 +472,12 @@
       ],
       "Insert link": [
         "Insertar enlace"
+      ],
+      "Invite": [
+        "Invitar"
+      ],
+      "Invite user": [
+        "Invitar usuario"
       ],
       "Italic": [
         "Cursiva"
@@ -643,6 +661,9 @@
       ],
       "Reset to default": [
         "Restablecer valores por defecto"
+      ],
+      "Restore": [
+        "Restaurar"
       ],
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
@@ -2630,6 +2651,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obtén hasta ${ credits } créditos por invitar amigos a ${ BRAND_NAME }."
       ],
+      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
+        "Si deseas dejar de correr la voz acerca de nuestra misión, considera actualizar tu plan y desbloquear más funciones premium."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
@@ -2645,6 +2669,12 @@
       ],
       "Track the status and activity of your referrals.": [
         "Sigue el estado y la actividad de tus referidos."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Disfruta de un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium cuando actualizas tu plan."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Disfruta de un número ilimitado de carpetas y etiquetas y más funciones premium cuando actualizas tu plan."
       ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "Ícono de venta adicional que contiene el logotipo de ${ BRAND_NAME } seguido de un signo más"
@@ -3734,7 +3764,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos ${ BRAND_NAME }"
       ],
       "*Only one free trial per customer.": [
         "* Solo una prueba gratuita por cliente."
@@ -4175,6 +4205,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Añade un filtro personalizado para realizar automáticamente ciertas acciones, como etiquetar o archivar mensajes."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Los correos desde direcciones marcadas como spam por ti o por ${ BRAND_NAME } irán a tu carpeta de spam. Si quieres permitir correos de una de estas direcciones, márcala como \"no es spam\"."
       ],
@@ -5618,6 +5651,9 @@
       "New": [
         "Nuevo"
       ],
+      "No account keys exist": [
+        "No existen claves para la cuenta."
+      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "No has establecido ningún método de recuperación de la cuenta. Corres el riesgo de perder el acceso a tu cuenta."
       ],
@@ -5893,6 +5929,12 @@
       ],
       "Setting up your Drive": [
         "Configurando tu drive"
+      ],
+      "Settings update failed": [
+        "Error al actualizar los ajustes"
+      ],
+      "Settings updated": [
+        "Ajustes actualizados"
       ],
       "Show original message": [
         "Mostrar el mensaje original"
@@ -6191,6 +6233,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
+      "Upgrade to unlock": [
+        "Actualiza para desbloquear"
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
@@ -6202,6 +6247,9 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
+      ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Usa diferentes tipos de direcciones de correo y alias ofrecidos por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como con Tunnelblick en macOSu OpenVPN en GNU/Linux."
@@ -7473,6 +7521,9 @@
       "Notification": [
         "Notificación"
       ],
+      "Notifications": [
+        "Notificaciones"
+      ],
       "OpenVPN / IKEv2 password": [
         "Contraseña OpenVPN / IKEv2"
       ],
@@ -7917,6 +7968,9 @@
     "Link": {
       "Add a gift code": [
         "Añadir código promocional"
+      ],
+      "Apps and extensions": [
+        "Aplicaciones y extensiones"
       ],
       "Calendars": [
         "Calendarios"
@@ -8428,6 +8482,10 @@
         "${ n } carpeta y etiqueta",
         "${ n } carpetas y etiquetas"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } buzón de reenvío",
+        "${ n } buzones de reenvío"
+      ],
       "${ n } Hide My Email alias": [
         "${ n } alias de \"Hide My Email\"",
         "${ n } alias de \"Hide My Email\""
@@ -8497,11 +8555,20 @@
       "Contact groups management": [
         "Administración de grupos de contactos"
       ],
+      "Custom domain for email aliases": [
+        "Dominio personalizado para alias de correo"
+      ],
       "Custom domains for email aliases": [
         "Dominios personalizados para alias de correo"
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Data breach monitoring": [
+        "Monitoreo de vulneración de datos"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitoreo de vulneración de datos (próximamente)"
       ],
       "DNS leak prevention": [
         "Protección contra filtraciones del DNS"
@@ -8543,6 +8610,9 @@
       "HTML signatures": [
         "Firmas HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
       "Kill switch/always-on VPN": [
         " Kill switch/VPN siempre activa"
       ],
@@ -8552,8 +8622,8 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
-      "NetShield malware and ad-blocker": [
-        "Bloqueador de anuncios y malware NetShield"
+      "Multiple forwarding mailboxes": [
+        "Múltiples buzones de reenvío"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
@@ -8597,6 +8667,9 @@
       "Strict no-logs policy": [
         "Política estricta de cero registros"
       ],
+      "Strong E2E encryption": [
+        "Cifrado de extremo a extremo fuerte"
+      ],
       "Team management": [
         "Gestión de equipos"
       ],
@@ -8618,6 +8691,9 @@
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
       ],
+      "Unlimited Hide My Email aliases": [
+        "Un número ilimitado de alias Hide My Email"
+      ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
@@ -8626,6 +8702,9 @@
       ],
       "Unlimited passwords and notes": [
         "Contraseñas y notas ilimitadas"
+      ],
+      "Unlimited vaults": [
+        "Un número ilimitado de cajas fuertes"
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
@@ -8651,8 +8730,11 @@
       "User session management": [
         "Administración de sesiones de usuario"
       ],
-      "Worldwide streaming services": [
-        "Servicios de streaming en el mundo entero"
+      "Vault and Item sharing": [
+        "Uso compartido de bóvedas y elementos"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Uso compartido de cajas fuertes y elementos (próximamente)"
       ]
     },
     "new_plans: feature info": {
@@ -8718,6 +8800,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
+      ],
+      "For next-level password management and identity protection.": [
+        "Para una gestión de contraseñas e identidad del más alto nivel."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si eliminas la cuenta, perderás todas las ventajas que tienes con ${ visionary } y no podrás volver al mismo plan creando otra cuenta."
@@ -8867,8 +8952,8 @@
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones",
-        "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones"
+        "Crea ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
+        "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
         "Crea hasta ${ n } direcciones de correo/alias para toda la familia. Úsalas para tus identidades en línea, p.ej., SubsDeFamilia@${ domain } para suscripciones en línea."
@@ -8905,6 +8990,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Como una carpeta, una caja fuerte es una manera conveniente de organizar tus elementos. Se está desarollando las funciones para compartir cajas fuertes con amistades y familiares."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administra tu suscripción y personaliza también tu plan. Puedes pagar con tarjeta de crédito, PayPal, criptomonedas y transferencia."
@@ -8989,6 +9077,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Direcciones de correo únicas y instantáneas que protegen tu identidad en línea y te permiten controlar lo que llega a tu bandeja de entrada. Desde SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
@@ -9778,6 +9869,9 @@
       ],
       "Complete the transition to privacy with our secure importing tools.": [
         "Termina tu transición a la privacidad con nuestras herramientas seguras de importación."
+      ],
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "Organiza tu bandeja de entrada con carpetas y etiquetas. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -9907,33 +10001,12 @@
         "Pásate a Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 usuarios"
@@ -10037,10 +10110,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Al precio de ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
       ],
       "Get the deal": [
         "Aprovecha la oportunidad"
@@ -10169,9 +10238,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para suscribirte a un calendario externo o público y a sus actualizaciones, introduce la URL. Se añadirá una versión de solo lectura del calendario a tus calendarios suscritos.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -11152,6 +11218,9 @@
       "Import-Export app": [
         "Aplicación Import-Export"
       ],
+      "Increase your privacy with more addresses": [
+        "Protege aún más tu privacidad con más direcciones"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
@@ -11160,6 +11229,9 @@
       ],
       "Invoices": [
         "Facturas"
+      ],
+      "Keep your inbox organized": [
+        "Mantén tu bandeja de entrada organizada."
       ],
       "Keyboard shortcuts": [
         "Atajos de teclado"
@@ -11325,6 +11397,9 @@
       ],
       "Save contact details": [
         "Guardar detalles de contacto"
+      ],
+      "Save time with email filters": [
+        "Ahorra tiempo con filtros de correo."
       ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
@@ -11798,6 +11873,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Actualiza a ${ passPlusPlanName } para obtener alias ilimitados de Hide My Email."
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualiza a ${ planName } para conectar hasta ${ n } dispositivo a la VPN a la vez.",
         "Actualiza a ${ planName } para conectar hasta ${ n } dispositivos a la VPN a la vez."

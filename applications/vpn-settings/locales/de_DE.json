@@ -251,6 +251,9 @@
       "Reset password": [
         "Passwort zurücksetzen"
       ],
+      "Restore": [
+        "Wiederherstellen"
+      ],
       "Retry": [
         "Erneut versuchen"
       ],
@@ -1450,7 +1453,7 @@
         "Mindestbetrag unterschritten."
       ],
       "Checkout expired, please try again": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
+        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
       "Code wrong or not valid anymore": [
         "Code falsch oder inzwischen verfallen"
@@ -1519,10 +1522,10 @@
         "Bezahlvorgang nicht unterstützt"
       ],
       "Payments are currently not available, please try again later": [
-        "Zahlungen sind derzeit nicht verfügbar, bitte versuchen Sie es später erneut"
+        "Zahlungen sind derzeit nicht verfügbar, bitte versuche es später erneut."
       ],
       "Please generate keys before you try to change your password": [
-        "Bitte generieren Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern"
+        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
       "Please set a recovery email first": [
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest."
@@ -1547,6 +1550,9 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
+      ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
@@ -3544,9 +3550,6 @@
       "Multiple forwarding mailboxes": [
         "Mehrere Weiterleitungs-Postfächer"
       ],
-      "NetShield malware and ad-blocker": [
-        "NetShield-Malware- und Werbe-Blocker"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -3645,9 +3648,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Teilen von Tresoren und Einträgen (Demnächst verfügbar)"
-      ],
-      "Worldwide streaming services": [
-        "Weltweite Streaming-Dienste"
       ]
     },
     "new_plans: heading": {
@@ -4259,26 +4259,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
-      "${ hours } hour": [
         "${ days } Tag",
         "${ days } Tage"
       ],
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
       "${ minutes } minute": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "${ seconds } second": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ]
     },
     "specialoffer: Deal details": {

@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Ativar a recuperação"
       ],
+      "Add": [
+        "Adicionar"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Adicionar conta ${ BRAND_NAME }"
       ],
       "Add address": [
         "Adicionar endereço"
-      ],
-      "Add calendar": [
-        "Adicionar calendário"
       ],
       "Add condition": [
         "Adicionar condição"
@@ -661,6 +661,9 @@
       ],
       "Reset to default": [
         "Restaurar para padrão"
+      ],
+      "Restore": [
+        "Restaurar"
       ],
       "Restore administrator privileges": [
         "Restaurar os privilégios de administrador"
@@ -3203,6 +3206,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não são iguais"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta é inválido. Por favor, escolha um nome diferente."
       ],
@@ -3761,7 +3767,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos do ${ BRAND_NAME }"
       ],
       "*Only one free trial per customer.": [
         "*Somente uma avaliação gratuita por cliente."
@@ -7518,6 +7524,9 @@
       "Notification": [
         "Notificação"
       ],
+      "Notifications": [
+        "Notificações"
+      ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN / IKEv2"
       ],
@@ -8619,9 +8628,6 @@
       "Multiple forwarding mailboxes": [
         "Múltiplos redirecionadores de emails"
       ],
-      "NetShield malware and ad-blocker": [
-        "Bloqueador de malware e anúncios NetShield"
-      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
@@ -8732,9 +8738,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Cofre e compartilhamento de Itens (em breve)"
-      ],
-      "Worldwide streaming services": [
-        "Serviços de streaming internacionais"
       ]
     },
     "new_plans: feature info": {
@@ -10003,26 +10006,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
+        "${ days } dia",
+        "${ days } dias"
       ],
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
+        "${ minutes } minutos",
         "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -10063,7 +10066,7 @@
         "Mail, Calendar e Drive premium"
       ],
       "Premium VPN": [
-        "VPN Premium"
+        "VPN premium"
       ],
       "Secure cloud storage": [
         "Armazenamento na nuvem seguro"
@@ -10269,9 +10272,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL do calendário"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para se inscrever em uma agenda externa ou pública e suas atualizações, digite a URL. Uma versão de somente leitura do calendário será adicionada aos calendários assinados.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

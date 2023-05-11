@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Herstel activeren"
       ],
+      "Add": [
+        "Voeg toe"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Account Toevoegen"
       ],
       "Add address": [
         "Adres toevoegen"
-      ],
-      "Add calendar": [
-        "Agenda toevoegen"
       ],
       "Add condition": [
         "Voorwaarde toevoegen"
@@ -3696,14 +3696,8 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -3888,11 +3882,6 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
-      ]
-    },
-    "familyOffer_2023:Settings section title": {
-      "Family": [
-        "Family"
       ]
     },
     "familyOffer_2023:Success": {
@@ -7418,6 +7407,9 @@
       "Notification": [
         "Notificatie"
       ],
+      "Notifications": [
+        "Meldingen"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 wachtwoord"
       ],
@@ -8500,9 +8492,6 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
-      "NetShield malware and ad-blocker": [
-        "Malware- en adblocker NetShield"
-      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -8546,7 +8535,7 @@
         "Strikt geen-logboekbeleid"
       ],
       "Strong E2E encryption": [
-        "Sterke E2E versleuteling"
+        "Sterke E2E-versleuteling"
       ],
       "Team management": [
         "Teambeheer"
@@ -8607,9 +8596,6 @@
       ],
       "User session management": [
         "Gebruikerssessiebeheer"
-      ],
-      "Worldwide streaming services": [
-        "Wereldwijde streamingdiensten"
       ]
     },
     "new_plans: feature info": {
@@ -9840,30 +9826,6 @@
         "Kies Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ hours } uur",
-        "${ hours } uur"
-      ],
-      "${ hours } hour": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ minutes } minute": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
-      ],
-      "${ seconds } second": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
@@ -9964,10 +9926,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
-      ],
-      "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -10090,9 +10048,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Agenda-URL"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Om u te abonneren op een externe of openbare agenda en de updates ervan, voert u de URL in. Een alleen-lezen versie van de agenda wordt toegevoegd aan uw geabonneerde agenda's.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
