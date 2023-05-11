@@ -116,12 +116,14 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
      * see `@proton/pass/extension/message/message-broker` */
     const postMessage = useCallback(
         (rawMessage: IFrameMessage) => {
-            port?.postMessage(
-                portForwardingMessage<IFrameMessageWithSender>(forwardTo!, {
-                    ...rawMessage,
-                    sender: endpoint,
-                })
-            );
+            try {
+                port?.postMessage(
+                    portForwardingMessage<IFrameMessageWithSender>(forwardTo!, {
+                        ...rawMessage,
+                        sender: endpoint,
+                    })
+                );
+            } catch (_) {}
         },
         [port, forwardTo]
     );
