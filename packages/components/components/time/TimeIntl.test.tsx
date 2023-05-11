@@ -31,8 +31,8 @@ describe('TimeIntl component', () => {
 
         expect(container.firstChild?.textContent).toBe(
             readableTimeIntl(unixDate, {
+                hour12: true,
                 intlOptions: {
-                    hour12: true,
                     hour: 'numeric',
                     minute: 'numeric',
                 },
@@ -49,8 +49,8 @@ describe('TimeIntl component', () => {
 
         expect(container.firstChild?.textContent).toBe(
             readableTimeIntl(unixDate, {
+                hour12: true,
                 intlOptions: {
-                    hour12: true,
                     hour: 'numeric',
                     minute: 'numeric',
                 },
@@ -72,6 +72,7 @@ describe('TimeIntl component', () => {
         expect(container.firstChild?.textContent).toBe(
             readableTimeIntl(unixDate, {
                 intlOptions: options,
+                hour12: true,
             })
         );
     });
