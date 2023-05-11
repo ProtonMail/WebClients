@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode, cloneElement } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll';
 import { ModalProps, ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
@@ -10,30 +10,21 @@ interface Props extends ModalProps {
     features: PlanCardFeatureDefinition[];
     info: string;
     footer: ReactNode;
-    imgs: string[];
+    img: ReactElement;
 }
 
-const UpsellModal = ({ title, imgs, info, features, footer, ...rest }: Props) => {
+const UpsellModal = ({ title, img, info, features, footer, ...rest }: Props) => {
     return (
         <ModalTwo {...rest} size="xlarge">
             <Scroll>
                 <div className="flex flex-nowrap">
                     <div className="flex-item-fluid no-mobile">
-                        <picture>
-                            <source
-                                media="(-webkit-min-device-pixel-ratio: 1.25), min-resolution: 1.25dppx"
-                                srcSet={`${imgs[1]}`}
-                            />
-                            <img
-                                className="h100"
-                                src={imgs[0]}
-                                srcSet={`${imgs[0]}, ${imgs[1]} 2x`}
-                                alt=""
-                                style={{
-                                    objectFit: 'cover',
-                                }}
-                            />
-                        </picture>
+                        {cloneElement(img, {
+                            className: 'h100',
+                            style: {
+                                objectFit: 'cover',
+                            },
+                        })}
                     </div>
                     <div className="flex-item-fluid">
                         <ModalTwoHeader />
