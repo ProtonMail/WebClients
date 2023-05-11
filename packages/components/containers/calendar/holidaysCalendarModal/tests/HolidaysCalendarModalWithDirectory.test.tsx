@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import { useCalendarUserSettings, useNotifications } from '@proton/components/hooks';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -9,6 +8,8 @@ import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
+
+import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
 jest.mock('@proton/components/hooks/useAddresses', () => ({
     __esModule: true,
@@ -207,9 +208,9 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
         showNotification?: boolean;
     }) => {
         render(
-            <HolidaysCalendarModal
-                directory={directory}
+            <HolidaysCalendarModalWithDirectory
                 calendar={inputCalendar}
+                directory={directory}
                 holidaysCalendars={holidaysCalendars}
                 showNotification={showNotification}
                 open
@@ -219,7 +220,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
 
     describe('Add a holidays calendar', () => {
         describe('Pre-selected fields', () => {
-            it('should pre-select the default holidays calendar based on time zone', () => {
+            it('should pre-select the default holidays calendar based on time zone', async () => {
                 // Mock user's time zone to Paris
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Paris' }, false]);
