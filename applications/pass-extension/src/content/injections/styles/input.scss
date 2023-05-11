@@ -4,29 +4,20 @@
 @import '@proton/styles/scss/utilities/shadow';
 @import '@proton/styles/scss/base/custom-properties/';
 
-@mixin reset {
-	margin-inline-start: unset;
-	padding: 0 !important;
-	outline: none !important;
-	outline-color: none !important;
-	background-color: transparent !important;
-	border: none !important;
-	box-shadow: none !important;
-	min-inline-size: unset !important;
-	min-block-size: unset !important;
-}
+@import './reset';
 
 .protonpass-input {
 	&--wrapper {
 		pointer-events: none;
 		position: relative;
-		display: block;
 		margin: 0 !important;
 		inline-size: 100%;
 		block-size: 0;
 		flex: 0 0 0;
 		opacity: 1;
 		@include reset;
+
+		display: block !important;
 
 		> input {
 			pointer-events: all;

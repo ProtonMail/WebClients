@@ -21,7 +21,7 @@ import { ExtensionContext, type ExtensionContextType, setupExtensionContext } fr
 import { createContentScriptContext } from '../context/factory';
 import { DOMCleanUp } from '../injections/cleanup';
 
-import '../injections/injection.scss';
+import '../injections/styles/injection.scss';
 
 export const createContentScriptClient = (scriptId: string, mainFrame: boolean) => {
     const context = createContentScriptContext(scriptId, mainFrame);
@@ -96,7 +96,6 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             onSettingsChange(res.settings!);
 
             const { runDetection } = context.service.detector.assess([]);
-
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
             if (!mainFrame && !runDetection) return destroy({ reason: 'subframe discarded', recycle: false });

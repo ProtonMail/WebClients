@@ -18,12 +18,12 @@ export const createIframeRoot = (): HTMLDivElement => {
         attributes: { id: `${EXTENSION_PREFIX}-iframe--root` },
     });
 
-    iframeRoot.style.position = 'absolute';
-    iframeRoot.style.top = '0px';
-    iframeRoot.style.left = '0px;';
-    iframeRoot.style.width = '100%';
-    iframeRoot.style.display = 'block';
-    iframeRoot.style.border = '0';
+    /* we may hit a case where the content-script is reloaded - on
+     * firefox, this will cause our injected stylesheets to be removed
+     * from the DOM and induce a small flickering glitch. To be safe
+     * hide the iframe root by default, this value is override in the
+     * `iframe.scss` */
+    iframeRoot.style.display = 'none';
 
     return iframeRoot;
 };
