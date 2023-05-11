@@ -12,19 +12,20 @@ import {
     useNotifications,
     useUser,
 } from '@proton/components/hooks';
-import { setAddressFlags } from '@proton/shared/lib/api/members';
+import { updateAddressFlags } from '@proton/shared/lib/api/members';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Address } from '@proton/shared/lib/interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { getSignedKeyList } from '@proton/shared/lib/keys/signedKeyList';
 
-type UseAddressFlags = {
+type UseAddressFlags = (address: Address) => {
     encryptionDisabled: boolean;
     expectSignatureDisabled: boolean;
     handleSetAddressFlags: (encryptionDisabled: boolean, expectSignatureDisabled: boolean) => Promise<void>;
-};
+} | null;
 
-const useAddressFlags = (address: Address): UseAddressFlags | null => {
+const useAddressFlags: UseAddressFlags = (address) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -42,16 +43,16 @@ const useAddressFlags = (address: Address): UseAddressFlags | null => {
         encryptionDisabled: boolean,
         expectSignatureDisabled: boolean
     ): Promise<void> => {
-        const addressID = address.ID;
-        const addressWithKeys = addressesKeys?.find(({ address }) => address.ID === addressID);
-        const addressKeys = addressWithKeys?.keys;
-
-        if (addressKeys === undefined) {
-            throw new Error('addressKeys is undefined!');
+        const { ID: addressID, SignedKeyList: currentSignedKeyList, Keys: currentKeys } = address;
+        const addressWithKeys = addressesKeys?.find(({ address: { ID } }) => ID === addressID);
+        if (addressWithKeys === undefined) {
+            throw new Error('addressWithKeys is undefined!');
         }
 
-        const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
-        const updatedActiveKeys = getNormalizedActiveKeys(
+        const { keys } = addressWithKeys;
+
+        const activeKeys = await getActiveKeys(address, currentSignedKeyList, currentKeys, keys);
+        const newActiveKeys = getNormalizedActiveKeys(
             address,
             activeKeys.map((activeKey) => ({
                 ...activeKey,
@@ -64,15 +65,15 @@ const useAddressFlags = (address: Address): UseAddressFlags | null => {
                 ),
             }))
         );
-        const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+        const newSignedKeyList = await getSignedKeyList(newActiveKeys, address, keyTransparencyVerify);
 
-        await api(setAddressFlags(address.ID, !encryptionDisabled, !expectSignatureDisabled, SignedKeyList));
+        await api(updateAddressFlags(address.ID, !encryptionDisabled, !expectSignatureDisabled, newSignedKeyList));
         await call();
-        createNotification({ text: c('Success notification').t`Address flags set` });
+        createNotification({ text: c('Success notification').t`Preference updated` });
     };
 
-    const encryptionDisabled = (address.Flags & ADDRESS_FLAGS.FLAG_DISABLE_E2EE) !== 0;
-    const expectSignatureDisabled = (address.Flags & ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED) !== 0;
+    const encryptionDisabled = hasBit(address.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
+    const expectSignatureDisabled = hasBit(address.Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
     return {
         encryptionDisabled,
