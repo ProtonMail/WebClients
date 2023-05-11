@@ -280,6 +280,7 @@ const ContactsWidgetContainer = ({
                         activateDrag={false}
                         onGroupDetails={onGroupDetails}
                         isDrawer={isDrawer}
+                        onCompose={onCompose}
                     />
                 ) : null}
             </div>
