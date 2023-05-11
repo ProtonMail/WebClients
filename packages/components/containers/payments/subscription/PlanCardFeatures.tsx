@@ -89,12 +89,12 @@ interface Props {
 
 const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: Props) => {
     const highlightFeatures = (
-        <div>
+        <div data-testid={planName}>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
         </div>
     );
     const mailFeatures = (
-        <div>
+        <div data-testid={`${planName}-mail`}>
             <h3>
                 <MailLogo />
             </h3>
@@ -102,7 +102,7 @@ const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: P
         </div>
     );
     const calendarFeatures = (
-        <div>
+        <div data-testid={`${planName}-calendar`}>
             <h3>
                 <CalendarLogo />
             </h3>
@@ -110,7 +110,7 @@ const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: P
         </div>
     );
     const driveFeatures = (
-        <div>
+        <div data-testid={`${planName}-drive`}>
             <h3>
                 <DriveLogo />
             </h3>
@@ -118,7 +118,7 @@ const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: P
         </div>
     );
     const passFeatures = (
-        <div>
+        <div data-testid={`${planName}-pass`}>
             <h3>
                 <PassLogo />
             </h3>
@@ -126,7 +126,7 @@ const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: P
         </div>
     );
     const vpnFeatures = (
-        <div>
+        <div data-testid={`${planName}-vpn`}>
             <h3>
                 <VpnLogo />
             </h3>

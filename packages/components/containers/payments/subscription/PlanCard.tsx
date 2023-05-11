@@ -60,6 +60,7 @@ const PlanCard = ({
                     isCurrentPlan && 'plan-selection-plan-current-card',
                     recommended && 'plan-selection-plan-recommended border-primary',
                 ])}
+                data-testid={planName}
             >
                 {recommended ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
