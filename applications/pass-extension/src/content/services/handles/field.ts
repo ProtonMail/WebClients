@@ -18,13 +18,14 @@ type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {
  * does not match the dropdown's current field : this maybe the case
  * when changing focus with the dropdown open */
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
-    withContext(({ service: { iframe }, getSettings }, evt) => {
+    withContext(({ service: { iframe }, getSettings, getState }, evt) => {
         requestAnimationFrame(() => {
             const target = evt?.target;
+
             const current = iframe.dropdown?.getCurrentField()?.element;
             const opened = iframe.dropdown?.getState().visible;
             const shouldClose = opened && current !== target;
-            const canOpen = (!opened || shouldClose) && getSettings().autofill.openOnFocus;
+            const canOpen = getState().loggedIn && (!opened || shouldClose) && getSettings().autofill.openOnFocus;
 
             if (shouldClose) iframe.dropdown?.close();
 
