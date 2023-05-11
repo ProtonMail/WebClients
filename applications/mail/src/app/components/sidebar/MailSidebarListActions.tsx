@@ -38,7 +38,7 @@ const MailSidebarListActions = ({ type, items }: Props) => {
     };
 
     return (
-        <div className="flex flex-align-items-center pr0-75">
+        <div className="flex flex-align-items-center">
             <button
                 type="button"
                 className="flex navigation-link-header-group-control flex-item-noshrink"

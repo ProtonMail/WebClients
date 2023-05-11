@@ -48,6 +48,8 @@ const LocationAside = ({
         return c('Info').ngettext(msgid`${unreadCount} unread message`, `${unreadCount} unread messages`, unreadCount);
     };
 
+    const unreadText = unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount;
+
     return (
         <>
             {active && (
@@ -61,15 +63,16 @@ const LocationAside = ({
             {unreadCount > 0 ? (
                 <span
                     className={clsx([
-                        'navigation-counter-item flex-item-noshrink',
+                        'navigation-counter-item px-1 flex-item-noshrink',
                         hideCountOnHover && 'hide-on-hover',
-                        weak && 'navigation-counter-item--weak',
+                        weak && 'navigation-counter-item--weak pl-0',
                     ])}
                     title={getUnreadTitle()}
                     aria-label={getUnreadTitle()}
                     data-testid="navigation-link:unread-count"
+                    data-unread-count={unreadText}
                 >
-                    {unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount}
+                    {unreadText}
                 </span>
             ) : null}
             {itemOptions && (
