@@ -835,6 +835,9 @@
       "Reset to default": [
         "Restablecer valores por defecto"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Resume": [
         "Reanudar"
       ],
@@ -2877,6 +2880,12 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Desbloquea la programación personalizada de mensajes y otros beneficios al pasar a un plan superior."
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Disfruta de un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium cuando actualizas tu plan."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Disfruta de un número ilimitado de carpetas y etiquetas y más funciones premium cuando actualizas tu plan."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
       ],
@@ -3760,7 +3769,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o familiar."
@@ -7227,6 +7236,9 @@
       "Set up your organization": [
         "Configura tu organización"
       ],
+      "Set up your organization testing": [
+        "Configura la prueba para tu organización"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utiliza el selector de aplicaciones de la parte superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -7703,33 +7715,12 @@
         "Pásate a Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 usuarios"
@@ -7828,10 +7819,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Al precio de ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
       ],
       "Get the deal": [
         "Aprovecha la oportunidad"
@@ -8591,6 +8578,9 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
+      "Keep your inbox organized": [
+        "Mantén tu bandeja de entrada organizada."
+      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -8743,6 +8733,9 @@
       ],
       "Request new code": [
         "Solicitar un nuevo código"
+      ],
+      "Save time with email filters": [
+        "Ahorra tiempo con filtros de correo."
       ],
       "Schedule send": [
         "Programar envío"

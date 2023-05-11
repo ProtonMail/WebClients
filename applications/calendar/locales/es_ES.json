@@ -2786,7 +2786,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o familiar."
@@ -4904,6 +4904,9 @@
       "Set up your organization": [
         "Configura tu organización"
       ],
+      "Set up your organization testing": [
+        "Configura tu organización"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utiliza el selector de aplicaciones de la parte superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -5265,6 +5268,9 @@
       "${ storageSize } total storage": [
         "${ storageSize } de almacenamiento total"
       ],
+      "3 TB": [
+        "3 TB"
+      ],
       "6 users": [
         "6 usuarios"
       ],
@@ -5475,9 +5481,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para suscribirte a un calendario externo o público y a sus actualizaciones, introduce la URL. Se añadirá una versión de solo lectura del calendario a tus calendarios suscritos.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

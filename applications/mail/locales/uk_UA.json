@@ -7789,40 +7789,6 @@
         "Спеціальна пропозиція"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дні",
-        "${ days } днів",
-        "${ days } днів"
-      ],
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } годин"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
-      ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунди",
-        "${ seconds } секунд",
-        "${ seconds } секунд"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } місяць БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяців БЕЗПЛАТНО",
-        "${ n } місяців БЕЗПЛАТНО"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "Усього ${ storageSize } сховища"
@@ -7909,12 +7875,6 @@
       ],
       "2 years": [
         "2 роки"
-      ],
-      "for ${ n } month": [
-        "на ${ n } місяць",
-        "на ${ n } місяці",
-        "на ${ n } місяців",
-        "на ${ n } місяців"
       ],
       "Get the deal": [
         "Скористатися пропозицією"

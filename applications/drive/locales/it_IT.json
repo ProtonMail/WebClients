@@ -204,6 +204,9 @@
       "Delete permanently": [
         "Elimina permanentemente"
       ],
+      "Delete this version": [
+        "Elimina questa versione"
+      ],
       "Delete version": [
         "Elimina versione"
       ],
@@ -489,6 +492,9 @@
       "Restart upload": [
         "Riavvia il caricamento"
       ],
+      "Restore": [
+        "Ripristina"
+      ],
       "Restore from trash": [
         "Ripristina dal cestino"
       ],
@@ -518,6 +524,9 @@
       ],
       "See plan features": [
         "Visualizzare le funzionalità del piano"
+      ],
+      "See version history": [
+        "Visualizza cronologia delle versioni"
       ],
       "Select all": [
         "Seleziona tutti"
@@ -5158,30 +5167,6 @@
         "Scegli Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ hours } ora",
-        "${ hours } ore"
-      ],
-      "${ hours } hour": [
-        "${ days } giorno",
-        "${ days } giorni"
-      ],
-      "${ minutes } minute": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
-      ],
-      "${ seconds } second": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ seconds } secondo",
-        "${ seconds } secondi"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } di spazio di archiviazione totale"
@@ -5286,10 +5271,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
-      ],
-      "for ${ n } month": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"

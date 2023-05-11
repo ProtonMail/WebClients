@@ -2125,8 +2125,8 @@
         "Certains contacts n'ont pas d'adresse e-mail : ${ list }"
       ],
       "${ list } has invalid emails": [
-        "${ list } a des e-mails qui ne sont pas valides.",
-        "Certains groupes ont des e-mails qui ne sont pas valides : ${ list }."
+        "${ list } a des adresses e-mail qui ne sont pas valides.",
+        "Certains groupes ont des adresses e-mail qui ne sont pas valides : ${ list }."
       ],
       "${ list } has no contacts": [
         "${ list } n'a aucun contact",
@@ -2375,6 +2375,9 @@
       ],
       "The address might be misspelled": [
         "L'adresse est peut-être mal orthographiée."
+      ],
+      "The email addresses do not match": [
+        "Les adresses e-mail ne correspondent pas."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Le nom du dossier n'est pas valide, veuillez en choisir un autre."
@@ -2737,12 +2740,12 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Go d'espace de stockage total"
+        "3 To d'espace de stockage total"
       ]
     },
     "familyOffer_2023: Get Proton Family": {
       "Get ${ planName }": [
-        "Get ${ planName }"
+        "Obtenir ${ planName }"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -2800,6 +2803,9 @@
       "Invited by: ${ inviteEmail }": [
         "Invitation de : ${ inviteEmail }"
       ],
+      "Manage addresses.": [
+        "Gérer les adresses"
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement de groupe."
       ],
@@ -2819,19 +2825,19 @@
         "Actuellement, le plan Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "Vous avez une invitation pour rejoindre ${ invite.OrganizationName }."
+        "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Vous ne pouvez accepter que 3 invitations par période de 6 mois. Contactez le ${ supportLink } si vous avez besoin d'une exception."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Vous avez une invitation pour rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
+        "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
         "Vous avez rejoint l'abonnement Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe et à profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
+        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -2863,7 +2869,7 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
-        "Configurez votre compte familial et invitez des utilisateurs "
+        "Configurez votre compte familial et invitez des utilisateurs. "
       ],
       "Set up your family": [
         "Configurez votre famille"
@@ -4902,7 +4908,7 @@
         "Configurez votre organisation"
       ],
       "Set up your organization testing": [
-        "Configurez le test de votre organisation"
+        "Configurez votre organisation"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
@@ -5239,26 +5245,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ hours } hour": [
         "${ days } jour",
         "${ days } jours"
       ],
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
       "${ minutes } minute": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
+        "${ minutes } minute",
+        "${ minutes } minutes"
       ],
       "${ seconds } second": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
+        "${ seconds } seconde",
+        "${ seconds } secondes"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } seconde",
-        "${ seconds } secondes"
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
       ]
     },
     "specialoffer: Deal details": {
@@ -5266,7 +5272,7 @@
         "${ storageSize } d'espace de stockage total"
       ],
       "3 TB": [
-        "3 To"
+        "3 To"
       ],
       "6 users": [
         "6 utilisateurs"
@@ -5426,22 +5432,22 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accédez au contenu des services de streaming, dont Netflix, Disney+ et Prime Video, où que vous soyez."
+        "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias Hide My Email, le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés..."
+        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias Hide My Email, du partage de calendrier..."
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier..."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias Hide My Email, du partage de calendrier..."
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier..."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boîte de réception et de ses propres alias. Nécessite un domaine personnalisé."
@@ -5478,9 +5484,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL du calendrier"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Pour vous abonner à un calendrier externe ou public et à ses mises à jour, saisissez l'URL. Une version en lecture seule du calendrier sera ajoutée à vos calendriers souscrits.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5968,7 +5971,7 @@
         "Nouvelle signature des contacts"
       ],
       "Reactivate calendar keys": [
-        "Réactiver les clés de calendrier"
+        "Réactiver les clés du calendrier"
       ],
       "Reconnect your account": [
         "Reconnecter votre compte"
