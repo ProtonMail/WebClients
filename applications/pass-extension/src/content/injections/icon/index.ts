@@ -238,6 +238,10 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
         classNames: [ICON_ROOT_CLASSNAME, ICON_WRAPPER_CLASSNAME],
     });
 
+    /* overridden by `injection.scss` in order to properly handle
+     * content-script re-injection flickering glitch */
+    wrapper.style.display = 'none';
+
     const icon = createElement<HTMLButtonElement>({
         type: 'button',
         classNames: [ICON_ROOT_CLASSNAME, ICON_CLASSNAME],

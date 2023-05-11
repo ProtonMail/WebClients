@@ -20,8 +20,6 @@ import type {
 import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
 import { createIframeRoot } from './create-iframe-root';
 
-import './iframe.scss';
-
 type CreateIFrameAppOptions = {
     id: IFrameEndpoint;
     src: string;
@@ -135,7 +133,7 @@ export const createIFrameApp = ({
 
                 requestAnimationFrame(() => {
                     onClose?.({ userInitiated: options?.userInitiated ?? true });
-                    iframe.classList.remove(`${EXTENSION_PREFIX}-iframe-visible`);
+                    iframe.classList.remove(`${EXTENSION_PREFIX}-iframe--visible`);
                 });
             }
         }
@@ -154,7 +152,7 @@ export const createIFrameApp = ({
 
             sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
 
-            iframe.classList.add(`${EXTENSION_PREFIX}-iframe-visible`);
+            iframe.classList.add(`${EXTENSION_PREFIX}-iframe--visible`);
             setIframeDimensions(dimensions());
             updatePosition();
             onOpen?.();
