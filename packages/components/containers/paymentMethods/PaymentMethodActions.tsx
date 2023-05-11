@@ -1,13 +1,9 @@
 import { c } from 'ttag';
 
-
-
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { isExpired } from '@proton/shared/lib/helpers/card';
 import { PaymentMethod, PaymentMethodCardDetails } from '@proton/shared/lib/interfaces';
-
-
 
 import { Alert } from '../../components/alert';
 import { ErrorButton } from '../../components/button';
@@ -16,7 +12,6 @@ import { ConfirmModal } from '../../components/modal';
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import EditCardModal from '../payments/EditCardModal';
 import { CardModel } from '../payments/interface';
-
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
     return {
@@ -87,10 +82,11 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
                     title={c('Confirmation title').t`Delete payment method`}
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                 >
-                    <Alert className="mb-4">{c('Info when deleting payment method')
+                    <Alert className="mb-4" data-testid="valid-payment-alert">{c('Info when deleting payment method')
                         .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>
-                    <Alert className="mb-4" type="error">{c('Confirmation message to delete payment method')
-                        .t`Are you sure you want to delete this payment method?`}</Alert>
+                    <Alert className="mb-4" type="error" data-testid="confirmation-alert">{c(
+                        'Confirmation message to delete payment method'
+                    ).t`Are you sure you want to delete this payment method?`}</Alert>
                 </ConfirmModal>
             );
         },

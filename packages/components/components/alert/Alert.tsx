@@ -17,10 +17,15 @@ interface AlertProps {
     type?: AlertType;
     children?: ReactNode;
     className?: string;
+    'data-testid'?: string;
 }
 
-const Alert = ({ type = 'info', children, className }: AlertProps) => {
-    return <div className={clsx(classesMap[type], className)}>{children}</div>;
+const Alert = ({ type = 'info', children, className, 'data-testid': dataTestId }: AlertProps) => {
+    return (
+        <div className={clsx(classesMap[type], className)} data-testid={dataTestId}>
+            {children}
+        </div>
+    );
 };
 
 export default Alert;
