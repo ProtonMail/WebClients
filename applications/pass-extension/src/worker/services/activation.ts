@@ -203,7 +203,7 @@ export const createActivationService = () => {
                     /* no need for any redux operations on content-script
                      * wakeup as it doesn't hold any store. */
                     return resolve({
-                        ...(await ctx.ensureReady()).getState(),
+                        ...ctx.getState(),
                         settings: await ctx.service.settings.resolve(),
                     });
                 }
