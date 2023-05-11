@@ -11,6 +11,7 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
+import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
 import { deriveAliasPrefixFromName } from '../../../../../shared/items/alias';
 import { DropdownItem } from '../components/DropdownItem';
 
@@ -26,9 +27,11 @@ export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: strin
     realm,
     onSubmit,
 }) => {
+    const ensureMounted = useEnsureMounted();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
+
     const prefix = useMemo(() => deriveAliasPrefixFromName(realm), [realm]);
 
     const requestAliasOptions = useCallback(async () => {
@@ -37,13 +40,12 @@ export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: strin
             setError(false);
 
             await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.type === 'success') return setAliasOptions(response.options);
+                if (response.type === 'success') return ensureMounted(setAliasOptions)(response.options);
                 throw new Error();
             });
-
-            setLoadingText(null);
+            ensureMounted(setLoadingText)(null);
         } catch (_) {
-            setError(true);
+            ensureMounted(setError)(true);
         }
     }, []);
 
@@ -83,10 +85,12 @@ export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: strin
                     }
                 );
 
-                setLoadingText(null);
-                onSubmit(aliasEmail);
+                ensureMounted(() => {
+                    setLoadingText(null);
+                    onSubmit(aliasEmail);
+                })();
             } catch (err) {
-                setError(true);
+                ensureMounted(setError)(true);
             }
         },
         [realm]
