@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { fromUnixTime } from 'date-fns';
+import { fromUnixTime, getUnixTime } from 'date-fns';
 
 import { readableTimeIntl } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -129,11 +129,18 @@ describe('TimeIntl component', () => {
     });
 
     it('should support 24hour date format', () => {
-        mockedFormatLongTime.mockReturnValue('h:mm:ss zzzz');
+        mockedFormatLongTime.mockReturnValueOnce('h:mm:ss zzzz');
         const todayUnixDate = Math.floor(Date.now() / 1000);
 
         const { container } = render(<TimeIntl>{todayUnixDate}</TimeIntl>);
 
         expect(container.firstChild?.textContent).toBe(readableTimeIntl(todayUnixDate, { hour12: false }));
+    });
+
+    it('should support date as children', () => {
+        const date = new Date('2023-03-22');
+        const { container } = render(<TimeIntl>{date}</TimeIntl>);
+
+        expect(container.firstChild?.textContent).toBe(readableTimeIntl(getUnixTime(date)));
     });
 });

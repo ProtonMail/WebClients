@@ -27,7 +27,7 @@ interface Props {
     onDetail?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
-    date?: number;
+    date?: Date | string | number;
     children?: ReactNode;
 }
 
