@@ -62,11 +62,19 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         await ctx.init({ force: true });
     }),
 
-    /**
-     * Update the extension's badge count on every
-     * item state change
-     */
+    /* Update the extension's badge count on every
+     * item state change */
     onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
+
+    onImportProgress: (progress, endpoint) => {
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.IMPORT_PROGRESS,
+                payload: { progress },
+            }),
+            (name) => (endpoint ? name.startsWith(endpoint) : false)
+        );
+    },
 
     onShareEventDisabled: (shareId) => {
         WorkerMessageBroker.ports.broadcast(
