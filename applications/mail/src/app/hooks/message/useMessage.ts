@@ -46,7 +46,7 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
 
     const messageState = useSelector((state: RootState) => messageByID(state, { ID: inputLocalID }));
 
-    const initMessage = () => {
+    const initMessage = (canDispatch = true) => {
         const localID = getLocalID(inputLocalID);
 
         // Selector may be late
@@ -64,13 +64,16 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
 
         const message = messageFromCache ? { localID, data: messageFromCache } : { localID };
 
-        dispatch(initialize(message));
+        if (canDispatch) {
+            dispatch(initialize(message));
+        }
         return message;
     };
 
     // Main subject of the hook
     // Will be updated based on an effect listening on the event manager
-    const [message, setMessage] = useState<MessageState>(initMessage);
+    // Not allowed to dispatch if not inside a useEffect to avoid warnings
+    const [message, setMessage] = useState<MessageState>(() => initMessage(false));
 
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
