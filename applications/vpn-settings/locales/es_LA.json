@@ -50,6 +50,9 @@
       "Chat with us": [
         "Chatee con nosotros"
       ],
+      "Choose my own password": [
+        "Escoge tu propia contraseña"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -67,6 +70,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Continue with this password": [
+        "Continúa con la misma contraseña"
       ],
       "Copy": [
         "Copiar"
@@ -137,6 +143,9 @@
       "Edit email address": [
         "Editar dirección de correo"
       ],
+      "Edit password": [
+        "Cambia tu contraseña"
+      ],
       "Edit phone number": [
         "Editar número de teléfono"
       ],
@@ -163,6 +172,9 @@
       ],
       "Get a new encrypted email address": [
         "Obtener una dirección de correo cifrado nueva"
+      ],
+      "Get the deal": [
+        "Obtiene la promoción"
       ],
       "Get verification code": [
         "Obtener código de verificación"
@@ -251,6 +263,9 @@
       "Reset password": [
         "Restablecer contraseña"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Retry": [
         "Reintentar"
       ],
@@ -284,6 +299,9 @@
       "Send my username": [
         "Enviar mi nombre de usuario"
       ],
+      "Set new password": [
+        "Establece una nueva contraseña"
+      ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
       ],
@@ -304,6 +322,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Sign up for free": [
+        "Regístrate gratis"
       ],
       "Signing in": [
         "Iniciando sesión"
@@ -1548,6 +1569,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "El navegador que está usando no permite que el pago sea autorizado. Use un navegador diferente o inicie sesión a través de una computadora."
       ],
+      "The email addresses do not match": [
+        "Las direcciónes de correo electrónico no son las mismas"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede añadir es de ${ price }"
       ],
@@ -1677,7 +1701,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "Grupos de ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o un plan familiar."
@@ -2121,6 +2145,21 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
+      "Billed every 12 months": [
+        "Facturado cada 12 meses"
+      ],
+      "Billed every 15 months": [
+        "Facturado cada 15 meses"
+      ],
+      "Billed every 24 months": [
+        "Facturado cada 24 meses"
+      ],
+      "Billed every 30 months": [
+        "Facturado cada 30 meses"
+      ],
+      "Billed every month": [
+        "Facturado cada mes"
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
@@ -2144,6 +2183,9 @@
       ],
       "Continue anyway?": [
         "¿Continuar de todos modos?"
+      ],
+      "Continue with ${ freeName }": [
+        "Continúa con ${ freeName }"
       ],
       "Country code": [
         "Código de país"
@@ -2228,6 +2270,9 @@
       ],
       "expires ${ expirationDate }": [
         "expira el ${ expirationDate }"
+      ],
+      "For choosing ${ product }": [
+        "Por elegir ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa, MasterCard y Discover, los 3 dígitos de la parte trasera de la tarjeta. Para American Express, los 4 dígitos de la parte frontal de la tarjeta."
@@ -2358,6 +2403,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Una cuenta. Todos los servicios de ${ BRAND_NAME }."
       ],
+      "Open source": [
+        "Código abierto"
+      ],
       "Or select a particular server:": [
         "O seleccione un servidor en particular:"
       ],
@@ -2408,6 +2456,9 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido por las leyes de privacidad de Suiza"
       ],
       "read our two-factor authentication guide first": [
         "leer primero nuestra guía de autenticación de dos factores"
@@ -2465,6 +2516,15 @@
       ],
       "support team": [
         "equipo de soporte"
+      ],
+      "Swiss based": [
+        "Basado en Suiza"
+      ],
+      "Thank you": [
+        "Gracias"
+      ],
+      "The ${ planName } plan includes:": [
+        "El plan ${ planName } incluye:"
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, transmitir y estar en línea."
@@ -2540,6 +2600,9 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
+      ],
+      "Try ${ upsellPlanName } risk free": [
+        "Prueba ${ upsellPlanName } sin riesgos"
       ],
       "Two-factor authentication disabled": [
         "Autenticación de dos factores deshabilitada"
@@ -2630,6 +2693,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "Welcome": [
+        "Bienvenido"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos un código de restablecimiento a la dirección de correo que proporcionó para la recuperación de la cuenta."
@@ -3544,9 +3610,6 @@
       "Multiple forwarding mailboxes": [
         "Múltiples buzones de reenvío"
       ],
-      "NetShield malware and ad-blocker": [
-        "Bloqueador de publicidad y malware NetShield"
-      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
@@ -3641,13 +3704,10 @@
         "Gestión de sesiones de usuario"
       ],
       "Vault and Item sharing": [
-        "Uso compartido de bóveda y elementos"
+        "Uso compartido de bóvedas y elementos"
       ],
       "Vault and Item sharing (coming soon)": [
-        "Uso compartido de bóveda y elementos (próximamente)"
-      ],
-      "Worldwide streaming services": [
-        "Servicios de streaming a nivel mundial"
+        "Uso compartido de bóvedas y elementos (próximamente)"
       ]
     },
     "new_plans: heading": {
@@ -3848,8 +3908,8 @@
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Cree hasta ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones",
-        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones"
+        "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
+        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
         "Cree hasta ${ n } direcciones de correo/alias para toda la familia. Úselas para sus identidades en línea, p.ej., SubsDeFamilia@${ domain } para suscripciones en línea."
@@ -4259,26 +4319,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hours } hour": [
         "${ days } día",
         "${ days } días"
       ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
       "${ minutes } minute": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "${ seconds } second": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "${ n } mes gratis",
+        "${ n } meses gratis"
       ]
     },
     "specialoffer: Deal details": {
@@ -4390,8 +4450,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
+        "por ${ n } mes",
+        "por ${ n } meses"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -5055,6 +5115,9 @@
       ],
       "Set up two-factor authentication": [
         "Configurar autenticación de dos factores"
+      ],
+      "Set your password": [
+        "Establece tu contraseña"
       ],
       "Settings": [
         "Ajustes"
