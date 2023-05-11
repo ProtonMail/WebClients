@@ -23,7 +23,7 @@ export function ItemContextMenu({ anchorRef, isOpen, position, open, close, chil
             isOpen={isOpen}
             close={close}
             position={position}
-            size={{ maxHeight: DropdownSizeUnit.Viewport }}
+            size={{ maxHeight: DropdownSizeUnit.Viewport, maxWidth: DropdownSizeUnit.Viewport }}
             anchorRef={anchorRef}
         >
             {children}
