@@ -43,6 +43,7 @@ export type UseImportFormBeforeSubmit = (payload: ImportPayload) => Promise<UseI
 
 export type UseImportFormOptions = {
     beforeSubmit?: UseImportFormBeforeSubmit;
+    onSubmit?: (payload: ImportPayload) => void;
     onImported?: () => void;
 };
 
@@ -80,6 +81,7 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
 
 export const useImportForm = ({
     beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
+    onSubmit,
     onImported = noop,
 }: UseImportFormOptions): ImportFormContext => {
     const dispatch = useDispatch();
@@ -116,7 +118,7 @@ export const useImportForm = ({
                 if (!result.ok) {
                     return setBusy(false);
                 }
-
+                onSubmit?.(result.payload);
                 dispatch(importItemsIntent({ data: result.payload, provider: values.provider }, endpoint));
             } catch (e) {
                 setBusy(false);
