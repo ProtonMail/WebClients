@@ -1,4 +1,4 @@
-import { Fragment, ReactNode, useRef, useState } from 'react';
+import { Fragment, ReactElement, ReactNode, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -122,7 +122,7 @@ const Step1 = ({
     vpnServersCountData,
     productParam,
     hideFreePlan,
-    upsellImgs,
+    upsellImg,
 }: {
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
     vpnServersCountData: VPNServersCountData;
@@ -133,7 +133,7 @@ const Step1 = ({
     setModel: (model: Partial<SignupModel>) => void;
     productParam: ProductParam;
     hideFreePlan: boolean;
-    upsellImgs: string[];
+    upsellImg: ReactElement;
 }) => {
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -507,7 +507,7 @@ const Step1 = ({
                                         mergeInputState('email', { interactive: true });
                                     }}
                                     onFocus={() => {
-                                        onUpdate({ email: 'set' });
+                                        onUpdate({ emType: 'set' });
                                     }}
                                     onBlur={() => {
                                         mergeInputState('email', { focus: true });
@@ -529,7 +529,7 @@ const Step1 = ({
                                             mergeInputState('email', { interactive: true });
                                         }}
                                         onFocus={() => {
-                                            onUpdate({ email: 'confirm' });
+                                            onUpdate({ emType: 'confirm' });
                                         }}
                                         onBlur={() => {
                                             mergeInputState('emailConfirm', { focus: true });
@@ -668,7 +668,7 @@ const Step1 = ({
             </div>
             {renderUpsellModal && (
                 <UpsellModal
-                    imgs={upsellImgs}
+                    img={upsellImg}
                     title={c('Info').t`Try ${upsellPlanName} risk free`}
                     info={c('Info').t`If it’s not right for you, we’ll refund you.`}
                     features={[
