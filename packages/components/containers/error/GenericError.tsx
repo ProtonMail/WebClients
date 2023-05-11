@@ -2,45 +2,53 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
+import networkErrorImg from '@proton/styles/assets/img/errors/error-network.svg';
 import clsx from '@proton/utils/clsx';
 
-import InlineLinkButton from '../../components/button/InlineLinkButton';
+import Icon from '../../components/icon/Icon';
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 interface Props {
     className?: string;
     children?: ReactNode;
-    small?: boolean;
+    big?: boolean;
+    isNetworkError?: boolean;
 }
 
-const GenericError = ({ children, className, small = false }: Props) => {
-    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
-    const refresh = (
-        <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
-            .t`refresh the page`}</InlineLinkButton>
-    );
-
+const GenericError = ({ children, className, big, isNetworkError }: Props) => {
     const title = c('Error message').t`Something went wrong`;
-    // translator: The full sentence is "Please refresh the page or try again later", "refresh the page" is a button
-    const line1 = c('Error message').jt`Please ${refresh} or try again later.`;
+    const line1 = c('Error message').jt`Please refresh the page or try again later.`;
+
+    const display: 'default' | 'with-refresh' | 'custom' = (() => {
+        if (children) {
+            return 'custom';
+        }
+        return big ? 'with-refresh' : 'default';
+    })();
 
     return (
-        <div className={clsx('m-auto', className)}>
-            {small ? (
-                <>
-                    <h1 className="text-bold h2 mb-1">{title}</h1>
-                    <div className="text-center">{line1}</div>
-                </>
-            ) : (
-                <IllustrationPlaceholder title={title} url={errorImg}>
-                    {children || (
-                        <>
-                            <span>{line1}</span>
-                        </>
-                    )}
-                </IllustrationPlaceholder>
-            )}
+        <div className={clsx('m-auto', big ? 'p-1' : 'p-2', className)}>
+            <IllustrationPlaceholder
+                title={title}
+                titleSize={big ? 'big' : 'regular'}
+                url={isNetworkError ? networkErrorImg : errorImg}
+            >
+                {display === 'default' && <div className="text-weak text-sm">{line1}</div>}
+                {display === 'with-refresh' && (
+                    <>
+                        <div className="text-weak text-rg">{line1}</div>
+                        <div className="mt-8">
+                            <Button onClick={() => window.location.reload()}>
+                                <Icon name="arrow-rotate-right" />
+                                <span className="ml-4">{c('Action').t`Refresh the page`}</span>
+                            </Button>
+                        </div>
+                    </>
+                )}
+                {display === 'custom' && children}
+            </IllustrationPlaceholder>
         </div>
     );
 };
