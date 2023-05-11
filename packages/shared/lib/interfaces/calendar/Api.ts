@@ -86,6 +86,7 @@ export interface CalendarEventsQuery extends PaginationParams {
     End: number;
     Timezone: string;
     Type: CalendarEventsQueryType;
+    MetaDataOnly?: 0 | 1; // default is 0
 }
 
 export interface CalendarExportEventsQuery extends PaginationParams {

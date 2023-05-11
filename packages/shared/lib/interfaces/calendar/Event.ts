@@ -82,10 +82,6 @@ export interface CalendarEventMetadata {
 
 export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlobData, CalendarEventMetadata {}
 
-export interface CalendarEventWithNotifications
-    extends CalendarEventSharedData,
-        CalendarEventBlobDataWithNotifications {}
-
 export interface CalendarEventWithoutBlob extends CalendarEventSharedData, CalendarEventMetadata {}
 
 export interface SyncMultipleApiSuccessResponses {

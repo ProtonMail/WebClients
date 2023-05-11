@@ -42,6 +42,7 @@ export enum FeatureCode {
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     CalendarSharingEnabled = 'CalendarSharingEnabled',
     CalendarSharingSpotlight = 'CalendarSharingSpotlight',
+    CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
     HolidaysCalendars = 'HolidaysCalendars',
     HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
     SpyTrackerProtection = 'SpyTrackerProtection',
