@@ -45,7 +45,7 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
                             <Info
                                 className="flex-item-noshrink"
                                 title={c('Tooltip')
-                                    .t`Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.`}
+                                    .t`Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.`}
                             />
                         </span>
                         {!hasPaidMail && <UpsellIcon className="mt-1" />}

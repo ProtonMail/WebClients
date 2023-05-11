@@ -4,16 +4,9 @@ import { Button } from '@proton/atoms/Button';
 import { PromotionBanner } from '@proton/components/containers';
 import { useApi, useEventManager, useLoading } from '@proton/components/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { AutoDeleteSpamAndTrashDaysSetting } from '@proton/shared/lib/interfaces';
 
-import type { AutoDeleteLabelIDs } from '../interface';
-
-interface Props {
-    labelID: AutoDeleteLabelIDs;
-}
-
-const AutoDeletePaidBanner = ({ labelID }: Props) => {
+const AutoDeletePaidBanner = () => {
     const api = useApi();
     const { call } = useEventManager();
 
@@ -25,19 +18,11 @@ const AutoDeletePaidBanner = ({ labelID }: Props) => {
         await call();
     };
 
-    const message: string = (() => {
-        switch (labelID) {
-            case MAILBOX_LABEL_IDS.TRASH:
-                return c('Info').t`Automatically delete messages that have been in trash for more than 30 days.`;
-            case MAILBOX_LABEL_IDS.SPAM:
-                return c('Info').t`Automatically delete messages that have been in spam for more than 30 days.`;
-        }
-    })();
-
     return (
         <PromotionBanner
             contentCentered
-            description={message}
+            description={c('Info')
+                .t`Automatically delete messages that have been in trash and spam for more than 30 days.`}
             data-testid="auto-delete:banner:paid"
             hasDismissAction
             onClose={() => {

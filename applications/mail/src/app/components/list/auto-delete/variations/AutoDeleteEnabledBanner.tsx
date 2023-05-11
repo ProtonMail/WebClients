@@ -1,26 +1,13 @@
 import { c } from 'ttag';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { AutoDeleteLabelIDs } from '../interface';
-
 interface Props {
-    labelID: AutoDeleteLabelIDs;
     columnLayout: boolean;
     isCompactView: boolean;
 }
 
-const AutoDeleteEnabledBanner = ({ labelID, columnLayout, isCompactView }: Props) => {
-    const message: string = (() => {
-        switch (labelID) {
-            case MAILBOX_LABEL_IDS.TRASH:
-                return c('Info').t`Messages that have been in trash more than 30 days will be automatically deleted.`;
-            case MAILBOX_LABEL_IDS.SPAM:
-                return c('Info').t`Messages that have been in spam more than 30 days will be automatically deleted.`;
-        }
-    })();
-
+const AutoDeleteEnabledBanner = ({ columnLayout, isCompactView }: Props) => {
     return (
         <div
             data-testid="auto-delete:banner:enabled"
@@ -30,7 +17,7 @@ const AutoDeleteEnabledBanner = ({ labelID, columnLayout, isCompactView }: Props
                 isCompactView && 'auto-delete-banner-enabled--compact'
             )}
         >
-            {message}
+            {c('Info').t`Messages that have been in trash and spam more than 30 days will be automatically deleted.`}
         </div>
     );
 };
