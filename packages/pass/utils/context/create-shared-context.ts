@@ -4,6 +4,7 @@ interface SharedContext<T = any> {
     set: (ctx: T) => T;
     get: () => T;
     read: () => Maybe<T>;
+    clear: () => void;
 }
 
 type SharedContextValue<T extends SharedContext = SharedContext> = T extends SharedContext<infer U> ? U : never;
@@ -32,8 +33,12 @@ export const createSharedContext = <T>(id: string): SharedContext<T> => {
     };
 
     const read = (): Maybe<T> => ref.ctx;
+    const clear = () => {
+        delete ref.ctx;
+        ref.ctx = undefined;
+    };
 
-    return { set, get, read };
+    return { set, get, read, clear };
 };
 
 /**

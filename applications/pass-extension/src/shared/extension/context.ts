@@ -42,7 +42,10 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
                 tabId: tab.id,
                 realm: domain!,
                 subdomain,
-                destroy: safeCall(() => port.disconnect()),
+                destroy: () => {
+                    safeCall(() => port.disconnect())();
+                    ExtensionContext.clear();
+                },
             });
 
             logger.setLogOptions({
