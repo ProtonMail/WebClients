@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Активировать восстановление"
       ],
+      "Add": [
+        "Добавить"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Добавить учетную запись ${ BRAND_NAME }"
       ],
       "Add address": [
         "Добавить адрес"
-      ],
-      "Add calendar": [
-        "Добавить календарь"
       ],
       "Add condition": [
         "Добавить условие"
@@ -340,6 +340,9 @@
       ],
       "Edit label": [
         "Изменить ярлык"
+      ],
+      "Edit password": [
+        "Изменить пароль"
       ],
       "Edit phone number": [
         "Изменить номер телефона"
@@ -662,6 +665,9 @@
       "Reset to default": [
         "Сбросить к умолчанию"
       ],
+      "Restore": [
+        "Восстановить"
+      ],
       "Restore administrator privileges": [
         "Восстановить права администратора"
       ],
@@ -748,6 +754,9 @@
       ],
       "Set catch-all": [
         "Установить прием всей почты домена"
+      ],
+      "Set new password": [
+        "Задать новый пароль"
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
@@ -3231,6 +3240,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Используемый браузер не позволяет полностью провести платёж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
       ],
@@ -4336,6 +4348,9 @@
       "App version": [
         "Версия приложения"
       ],
+      "Best deal": [
+        "Лучшее предложение"
+      ],
       "Event": [
         "Событие"
       ],
@@ -5216,6 +5231,21 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
+      ],
+      "Billed every 12 months": [
+        "Оплата раз в 12 месяцев"
+      ],
+      "Billed every 15 months": [
+        "Оплата раз в 15 месяцев"
+      ],
+      "Billed every 24 months": [
+        "Оплата раз в 24 месяца"
+      ],
+      "Billed every 30 months": [
+        "Оплата раз в 30 месяцев"
+      ],
+      "Billed every month": [
+        "Ежемесячная оплата"
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
@@ -6111,6 +6141,9 @@
       "Text to display": [
         "Текст для отображения"
       ],
+      "Thank you": [
+        "Спасибо"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Сообщение ${ boldDataLocked } больше не будет отображаться, но вы по-прежнему можете разблокировать свои данные по ссылке: ${ encryptionAndKeysLink }."
       ],
@@ -6446,6 +6479,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Отображение недели и месяца применяется только для рабочего стола."
+      ],
+      "Welcome": [
+        "Добро пожаловать"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
@@ -7650,6 +7686,9 @@
       "Notification": [
         "Уведомление"
       ],
+      "Notifications": [
+        "Уведомления"
+      ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
       ],
@@ -8783,9 +8822,6 @@
       "Multiple forwarding mailboxes": [
         "Несколько почтовых ящиков для пересылки"
       ],
-      "NetShield malware and ad-blocker": [
-        "Блокировщик вредоносных программ и рекламы NetShield"
-      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -8896,9 +8932,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Совместный доступ к хранилищам и элементам (скоро появится)"
-      ],
-      "Worldwide streaming services": [
-        "Стриминговые сервисы со всего мира"
       ]
     },
     "new_plans: feature info": {
@@ -10193,36 +10226,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часа"
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
       "${ hours } hour": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
       ],
       "${ minutes } minute": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "${ seconds } second": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } БЕСПЛАТНЫХ месяца"
       ]
     },
     "specialoffer: Deal details": {
@@ -10337,7 +10370,7 @@
       ],
       "for ${ n } month": [
         "за ${ n } месяц",
-        "за ${ n } месяцев",
+        "за ${ n } месяца",
         "за ${ n } месяцев",
         "за ${ n } месяца"
       ],
@@ -10469,8 +10502,8 @@
       "Calendar URL": [
         "Ссылка на календарь"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Чтобы подписаться на внешний или публичный календарь и его обновления, введите URL-адрес. Версия календаря, доступная только для чтения, будет добавлена в список подписанных календарей.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Чтобы подписаться на внешний или общедоступный календарь с обновлениями, введите URL-адрес. Версия календаря только для чтения будет добавлена к другим Вашим календарям.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -11728,6 +11761,9 @@
       ],
       "Set up two-factor authentication": [
         "Настройка двухфакторной аутентификации"
+      ],
+      "Set your password": [
+        "Задайте пароль"
       ],
       "Settings": [
         "Настройки"

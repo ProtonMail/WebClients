@@ -57,6 +57,9 @@
       "Add phone number": [
         "Telefonnummer hinzufügen"
       ],
+      "Add public holidays": [
+        "Feiertage hinzufügen"
+      ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
@@ -2353,7 +2356,7 @@
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Einige Ihrer Ordnernamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+        "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -2375,6 +2378,9 @@
       ],
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
+      ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
@@ -2426,6 +2432,9 @@
       ],
       "Validation error": [
         "Überprüfungsfehler"
+      ],
+      "You already added this holidays calendar": [
+        "Du hast diesen Feiertag bereits hinzugefügt."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
@@ -4217,6 +4226,9 @@
       "Label messages as": [
         "Nachrichten kategorisieren als"
       ],
+      "Language": [
+        "Sprache"
+      ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
       ],
@@ -4904,6 +4916,9 @@
       "Set up your organization": [
         "Organisation einrichten"
       ],
+      "Set up your organization testing": [
+        "Richte deine Organisation ein"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -5057,6 +5072,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
+      ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
       ],
       "Search for group name": [
         "Nach Gruppenname suchen"
@@ -5479,8 +5497,8 @@
       "Calendar URL": [
         "Kalender-URL"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Um einen externen oder öffentlichen Kalender und dessen Aktualisierungen zu abonnieren, gib die entsprechende Internetadresse ein. Eine schreibgeschützte Version des Kalenders wird zu deinen abonnierten Kalendern hinzugefügt.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Um einen externen oder öffentlichen Kalender und dessen Aktualisierungen zu abonnieren, gib die entsprechende Internetadresse ein. Eine schreibgeschützte Version des Kalenders wird zu deinen weiteren Kalendern hinzugefügt.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

@@ -2376,6 +2376,9 @@
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não são iguais"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta é inválido. Por favor, escolha um nome diferente."
       ],
@@ -2786,7 +2789,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "grupos do ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
@@ -4905,7 +4908,7 @@
         "Configure a sua organização"
       ],
       "Set up your organization testing": [
-        "Configure o teste da sua organização"
+        "Configure a sua organização"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
@@ -5302,7 +5305,7 @@
         "Mail, Calendar e Drive premium"
       ],
       "Premium VPN": [
-        "VPN Premium"
+        "VPN premium"
       ],
       "Secure cloud storage": [
         "Armazenamento na nuvem seguro"
@@ -5484,9 +5487,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL do calendário"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para se inscrever em uma agenda externa ou pública e suas atualizações, digite a URL. Uma versão de somente leitura do calendário será adicionada aos calendários assinados.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

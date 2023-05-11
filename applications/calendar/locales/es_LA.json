@@ -2376,6 +2376,9 @@
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
       ],
+      "The email addresses do not match": [
+        "Las direcciónes de correo electrónico no son las mismas"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elija un nombre diferente."
       ],
@@ -2786,7 +2789,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupos"
+        "Grupos de ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o un plan familiar."
@@ -4905,7 +4908,7 @@
         "Configure su organización"
       ],
       "Set up your organization testing": [
-        "Configure su prueba de organización"
+        "Configure su organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Use el selector de aplicaciones en la esquina superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
@@ -5485,8 +5488,8 @@
       "Calendar URL": [
         "URL del calendario"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para suscribirse a un calendario externo o público y sus actualizaciones, ingrese la URL. Se añadirá una versión de solo lectura del calendario a sus calendarios suscritos.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Para suscribirse a un calendario externo o público y sus actualizaciones, ingrese la URL. Se añadirá una versión de solo lectura del calendario a sus otros calendarios.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

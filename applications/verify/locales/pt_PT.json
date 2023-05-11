@@ -857,11 +857,17 @@
       "Passwords do not match": [
         "As palavras-passe não coincidem."
       ],
+      "Request timed out": [
+        "O pedido expirou"
+      ],
       "This field is required": [
         "Este campo é requerido"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -870,6 +876,9 @@
     "Error message": {
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
+      ],
+      "Something went wrong": [
+        "Ocorreu um erro"
       ],
       "We couldn't load this page. ": [
         "Não conseguimos carregar esta página. "
@@ -1035,6 +1044,9 @@
       ],
       "Request new code": [
         "Pedir novo código"
+      ],
+      "Sign in with 2FA": [
+        "Autenticação com 2FA"
       ]
     },
     "Validation": {

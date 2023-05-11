@@ -835,6 +835,9 @@
       "Reset to default": [
         "Restableix els valors per defecte"
       ],
+      "Restore": [
+        "Restaura"
+      ],
       "Resume": [
         "Continuar"
       ],
@@ -3713,6 +3716,162 @@
     "Event title": {
       "(no title)": [
         "(sense títol)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        " 3 TB d'emmagatzematge total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'espai d'emmagatzematge es comparteix entre membres de la família entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Keep current plan": [
+        "Manté el pla actual"
+      ],
+      "Switch plans": [
+        "Canvia de pla"
+      ],
+      "View the invitation": [
+        "Mostra l'invitació"
+      ],
+      "View the invitations": [
+        "Mostra les invitacions"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Versió prèmium de Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Versió prèmium de Mail i Calendar"
+      ],
+      "Premium VPN": [
+        "Versió prèmium de VPN"
+      ],
+      "Up to 6 users": [
+        "Fins a 6 usuaris"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Grups de ${ BRAND_NAME }"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Els comptes amb dominis personalitzats no poden unir-se a un pla Visionary o familiar."
+      ],
+      "customer support": [
+        "atenció al client"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Convidat per: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Gestionar adreces."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ho sentim, no podeu canviar de pla en aquest moment."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "La subscripció es factura a l'administrador principal del pla Visionary o familiar."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Els plans Visionary i familiar actualment no admeten comptes vitalicis."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Només podeu acceptar 3 invitacions en un període de 6 mesos. Poseu-vos en contacte amb ${ supportLink } si necessiteu una excepció."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Heu estat convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Us heu unit correctament al pla familiar"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Esteu convidats a enllaçar el vostre Compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "El vostre pla actual no pot unir-se a un pla Visionary o familiar."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*La vostra subscripció es renovarà automàticament a la mateixa tarifa al final del cicle de facturació."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Els descomptes es basen en els preus mensuals estàndard."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Privacitat en línia per a tota la vostra família"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configureu el vostre compte familiar i convideu usuaris "
+      ],
+      "Set up your family": [
+        "Configureu la vostra família"
+      ],
+      "Set up your family account": [
+        "Configureu el vostre compte familiar"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Presentem ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en tot el món, bloquejador de programari maliciós i d'anuncis i més."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
     },
     "Feedback Modal Title": {
@@ -7548,6 +7707,11 @@
         "Oferta especial"
       ]
     },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Passeu-vos a Unlimited"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'emmagatzematge total"
@@ -7595,15 +7759,29 @@
         "Doneu suport a la privacitat en línia"
       ]
     },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Els descomptes es basen en els preus mensuals estàndard."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ]
+    },
     "specialoffer: Label": {
       "Lifetime deal": [
         "Oferta de per vida"
+      ],
+      "Limited time only": [
+        "Només per temps limitat"
       ],
       "Most popular": [
         "Més popular"
       ],
       "Offer ends soon": [
         "L'oferta s'acaba aviat"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "El descompte es continuarà aplicant a la renovació fins que la subscripció es cancel·li o es modifiqui"
       ]
     },
     "specialoffer: Link": {
@@ -7623,16 +7801,85 @@
       ],
       "2 years": [
         "Dos anys"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Facturat a ${ amount } durant 1 mes"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Facturat a ${ amount } durant 12 mesos"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Facturat a ${ amount } durant 15 mesos"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Facturat a ${ amount } durant 24 mesos"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Facturat a ${ amount } durant 30 mesos"
+      ],
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Es renova al cap d'1 any a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Es renova al cap de 2 anys a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
+      ],
+      "Save ${ discount }%": [
+        "Estalvia el ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Preu estàndard ${ amount } durant 1 mes"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Preu estàndard ${ amount } durant 12 mesos"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Preu estàndard ${ amount } durant 15 mesos"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Preu estàndard ${ amount } durant 24 mesos"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Preu estàndard ${ amount } durant 30 mesos"
       ]
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
         "Oferta del Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Oferta Cyber Week"
+      ],
+      "End of year offer": [
+        "Oferta de final d'any"
+      ],
+      "End of Year Sale": [
+        "Oferta de final d'any"
+      ],
+      "Get our premium bundle and save more": [
+        "Aconsegueix el nostre paquet prèmium i estalvia més"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "El nostre pla Visionary interromput ha tornat només per un temps limitat"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Estalvieu més amb 2 anys de ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Milloreu el vostre pla i estalvieu més amb 2 anys de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide My Email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
@@ -7645,6 +7892,9 @@
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Rebeu sense cap cost addicional les versions de pagament de tots els nous serveis de privacitat que publicarem en el futur, juntament amb l'accés anticipat a totes les característiques i productes futurs."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."

@@ -2420,6 +2420,9 @@
       "The address might be misspelled": [
         "Возможно, адрес указан неверно"
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
       ],
@@ -5087,7 +5090,7 @@
         "Настройка организации"
       ],
       "Set up your organization testing": [
-        "Настройте тестирование вашей организации"
+        "Настройка организации"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Используйте переключатель приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
@@ -5692,8 +5695,8 @@
       "Calendar URL": [
         "Ссылка на календарь"
       ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Чтобы подписаться на внешний или публичный календарь и его обновления, введите URL-адрес. Версия календаря, доступная только для чтения, будет добавлена в список подписанных календарей.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Чтобы подписаться на внешний или общедоступный календарь с обновлениями, введите URL-адрес. Версия календаря только для чтения будет добавлена к другим Вашим календарям.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

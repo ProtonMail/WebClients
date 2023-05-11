@@ -4844,9 +4844,6 @@
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
       ],
-      "Version failed to be deleted": [
-        "Ștergerea versiunii a eșuat."
-      ],
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
       ],
@@ -4914,9 +4911,6 @@
       ],
       "Set up your organization": [
         "Setați organizația"
-      ],
-      "Set up your organization testing": [
-        "Configurare testare organizație"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
@@ -5124,6 +5118,213 @@
       ],
       "Sign": [
         "Semnare"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Închidere"
+      ],
+      "Don't show this offer again": [
+        "Nu mai arăta această ofertă"
+      ],
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Alegeți nelimitat"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } spațiu total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 utilizatori"
+      ],
+      "64 countries": [
+        "64 de țări"
+      ],
+      "All paid Mail and Calendar features": [
+        "Toate funcțiile cu plată de la Mail și Calendar"
+      ],
+      "High speed VPN": [
+        "VPN de mare viteză"
+      ],
+      "Highest VPN speed": [
+        "Viteză VPN maximă"
+      ],
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium early access": [
+        "Acces timpuriu premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail și Calendar premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar și Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Secure cloud storage": [
+        "Stocare securizată în cloud"
+      ],
+      "Secure streaming": [
+        "Redare în flux securizată"
+      ],
+      "Support online privacy": [
+        "Susțineți confidențialitatea online"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Reducerile sunt bazate pe prețul standard lunar."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Ofertă pe viață"
+      ],
+      "Limited time only": [
+        "Timp limitat"
+      ],
+      "Most popular": [
+        "Cel mai popular"
+      ],
+      "Offer ends soon": [
+        "Oferta expiră în curând"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Reducerea va continua să se aplice la reînnoire până când abonamentul este anulat sau modificat."
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "Upgrade": [
+        "Modernizare"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ lună"
+      ],
+      "1 year": [
+        "1 an"
+      ],
+      "2 years": [
+        "2 ani"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Facturat cu ${ amount } pentru o lună"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Facturat cu ${ amount } pentru 12 luni"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Facturat cu ${ amount } pentru 15 luni"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Facturat cu ${ amount } pentru 24 de luni"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Facturat cu ${ amount } pentru 30 de luni"
+      ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Reînnoire după un an la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Reînnoire după doi ani la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
+      ],
+      "Save ${ discount }%": [
+        "Salvați ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Preț standard ${ amount } pentru o lună"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Preț standard ${ amount } pentru 12 luni"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Preț standard ${ amount } pentru 15 luni"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Preț standard ${ amount } pentru 24 de luni"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Preț standard ${ amount } pentru 30 de luni"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Reducere de Vinerea Neagră"
+      ],
+      "Cyber Week Sale": [
+        "Reducere de Lunea cibernetică"
+      ],
+      "End of year offer": [
+        "Ofertă de sfârșit de an"
+      ],
+      "End of Year Sale": [
+        "Reducere de sfârșit de an"
+      ],
+      "Get our premium bundle and save more": [
+        "Luați pachetul premium și salvați mai mult"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Planul redus Visionary a revenit pentru o perioadă limitată"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Salvați mai mult cu doi ani la ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Modernizați contul și salvați mai mult cu doi ani la ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN per utilizator, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Toate serviciile noastre premium cu limitele la maxim: 100 de adrese de e-mail, suport pentru 10 domenii personale, pseudonime nelimitate Hide My Email, partajare calendar, stocare criptată în cloud și fișiere partajate și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri Hide My Email, partajare calendar și altele."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Include suport pentru 3 domenii de e-mail personal, 15 adrese de e-mail, aliasuri nelimitate Hide My Email, partajare calendar și altele."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfect pentru familii sau echipe mici, fiecare poate avea propria adresă de e-mail și pseudonime. Necesită un domeniu personal."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Primiți fără costuri suplimentare versiunile plătite ale tuturor serviciilor de confidențialitate pe care le lansăm în viitor, împreună cu acces anticipat la toate funcțiile și produsele viitoare."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {

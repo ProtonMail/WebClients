@@ -492,8 +492,17 @@
       "Restart upload": [
         "Yüklemeyi yeniden başlat"
       ],
+      "Restore": [
+        "Geri yükle"
+      ],
       "Restore from trash": [
         "Çöp kutusundan geri yükle"
+      ],
+      "Restore this version": [
+        "Bu sürümü geri yükle"
+      ],
+      "Restore version": [
+        "Sürümü geri yükle"
       ],
       "Resume all": [
         "Tümünü sürdür"
@@ -2088,6 +2097,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
       ],
@@ -2429,6 +2441,162 @@
     "Event title": {
       "(no title)": [
         "(başlıksız)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3TB toplam depolama alanı"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı aile üyeleri arasında ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } tarafından paylaşılır."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Bu teklifi bir daha gösterme"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
+      "Switch plans": [
+        "Tarifeleri değiştir"
+      ],
+      "View the invitation": [
+        "Daveti görüntüle"
+      ],
+      "View the invitations": [
+        "Davetleri görüntüle"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Ücretli Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Ücretli Mail ve Calendar"
+      ],
+      "Premium VPN": [
+        "Ücretli VPN"
+      ],
+      "Up to 6 users": [
+        "6 kullanıcıya kadar"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } grupları"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Özel etki alanları olan hesaplar, Visionary ya da Family tarifesine katılamaz."
+      ],
+      "customer support": [
+        "müşteri desteği"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Davet eden: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Adres yönetimi."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Üyeleri olan bir tarifenin sahipleri başka bir grup tarifesine katılamaz."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ne yazık ki şu anda tarifeleri değiştiremezsiniz."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Size ayrılmış depolama alanı: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Abonelik faturası, Visionary ya da Family planının birincil yöneticisine kesilir."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary ve Family tarifeleri şu anda ömür boyu hesapları desteklemiyor."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } kuruluşuna davet edildiniz"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "6 aylık dönemde yalnızca 3 davet kabul edebilirsiniz. Bu sınırı aşmaya gerek duyuyorsanız lütfen ${ supportLink } ile görüşün."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "Aile tarifesine katıldınız"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Geçerli tarifeniz bir Visionary ya da Family tarifesine katılamaz."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak aynı tutarla yenilenir."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "İndirimler standart aylık fiyatlandırmaya göre yapılır."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Tüm aileniz için çevrimiçi gizlilik"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Aile hesabınızı yapılandırın ve kullanıcıları davet edin "
+      ],
+      "Set up your family": [
+        "Ailenizi oluşturun"
+      ],
+      "Set up your family account": [
+        "Aile hesabınızı oluşturun"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "${ planName } ile tanışın"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda e-postamı gizle takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
     },
     "Feedback Modal Title": {
@@ -3554,6 +3722,9 @@
       "Restore": [
         "Geri yükle"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Geri yükleniyor. Bu işlem bir kaç saniye sürebilir."
+      ],
       "Restored files ${ formattedDate }": [
         "${ formattedDate } tarihli dosyalar geri yüklendi"
       ],
@@ -3768,6 +3939,9 @@
       "Version is deleted": [
         "Sürüm silindi"
       ],
+      "Version is restored": [
+        "Sürüm geri yüklendi"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Çok güzel, ücretsiz depolama alanınızı iki katına çıkardınız!"
       ],
@@ -3794,6 +3968,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "${ DRIVE_APP_NAME } ile verileriniz uçtan uca şifreleme ile korunu. Şifreyi yalnızca siz açabilirsiniz."
@@ -4759,9 +4936,6 @@
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
       ],
-      "Version failed to be deleted": [
-        "Sürüm silinemedi"
-      ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
       ],
@@ -4830,7 +5004,7 @@
         "Kuruluşunuzu ayarlayın"
       ],
       "Set up your organization testing": [
-        "Kuruluş sınamanızı ayarlayın"
+        "Kuruluşunuzu ayarlayın"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
@@ -5073,8 +5247,8 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } ay ücretsiz",
-        "${ n } ay ücretsiz"
+        "${ n } ay ÜCRETSİZ",
+        "${ n } ay ÜCRETSİZ"
       ]
     },
     "specialoffer: Deal details": {
