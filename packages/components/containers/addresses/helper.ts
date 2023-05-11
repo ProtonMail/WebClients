@@ -7,6 +7,7 @@ import {
     MEMBER_PRIVATE,
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
@@ -19,8 +20,8 @@ export const getStatus = (address: Address, i: number) => {
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
     const isOrphan = DomainID === null && !isExternal;
     const isMissingKeys = !HasKeys;
-    const isNotEncrypted = Flags !== undefined && (Flags & ADDRESS_FLAGS.FLAG_DISABLE_E2EE) !== 0;
-    const isSignatureNotExpected = Flags !== undefined && (Flags & ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED) !== 0;
+    const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
+    const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
     return {
         isDefault: i === 0,

@@ -127,7 +127,7 @@ export const editMemberInvitation = (memberID: string, maxSpace: number) => ({
     },
 });
 
-export const setAddressFlags = (
+export const updateAddressFlags = (
     addressID: string,
     Encrypt: boolean,
     Sign: boolean,
