@@ -2449,14 +2449,8 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -3479,6 +3473,9 @@
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
+      ],
+      "Last week": [
+        "Laatste week"
       ],
       "Learn more": [
         "Meer informatie"
@@ -5111,30 +5108,6 @@
         "Kies Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ hours } uur",
-        "${ hours } uur"
-      ],
-      "${ hours } hour": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ minutes } minute": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
-      ],
-      "${ seconds } second": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
@@ -5230,10 +5203,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
-      ],
-      "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
       ],
       "Get the deal": [
         "Kies deze deal"

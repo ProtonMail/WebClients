@@ -53,14 +53,14 @@
       "Activate recovery": [
         "Activa la recuperació"
       ],
+      "Add": [
+        "Afegeix"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Afegeix un compte de ${ BRAND_NAME }"
       ],
       "Add address": [
         "Afegeix una adreça"
-      ],
-      "Add calendar": [
-        "Afegeix calendari"
       ],
       "Add condition": [
         "Afegeix una condició"
@@ -407,6 +407,12 @@
       "Get more filters": [
         "Obteniu més filtres"
       ],
+      "Get more folders": [
+        "Obteniu més carpetes"
+      ],
+      "Get more labels": [
+        "Obteniu més etiquetes"
+      ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
@@ -646,6 +652,9 @@
       ],
       "Reset to default": [
         "Restableix els valors per defecte"
+      ],
+      "Restore": [
+        "Restaura"
       ],
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
@@ -2583,11 +2592,17 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Rebeu fins a ${ credits } en crèdits convidant els vostres amics a unir-se a ${ BRAND_NAME }."
       ],
+      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
+        "Si voleu deixar de difondre la nostra missió, penseu a millorar el vostre pla i desbloquejar més característiques prèmium."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
       "ProtonMail logo and a plus sign": [
         "Logo de Proton Mail i un signe de més"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
@@ -2773,6 +2788,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } és el vostre nom d'usuari. Per crear ${ Local }@${ Domain }, aneu a Preferències > Missatges i redacció > Domini curt (pm.me)."
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -3529,6 +3547,305 @@
         "Podeu desar l'arxiu ICS dels esdeveniments que han estat exportats satisfactòriament."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        " 3 TB d'emmagatzematge total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'espai d'emmagatzematge es comparteix entre membres de la família entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Crea un usuari nou"
+      ],
+      "Don't show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Convida un usuari de ${ BRAND_NAME } existent"
+      ],
+      "Invite member to your family": [
+        "Convideu un membre a la vostra família"
+      ],
+      "Keep current plan": [
+        "Manté el pla actual"
+      ],
+      "Setup family group": [
+        "Configura el grup familiar"
+      ],
+      "Switch plans": [
+        "Canvia de pla"
+      ],
+      "View invitation": [
+        "Veure la invitació"
+      ],
+      "View the invitation": [
+        "Mostra l'invitació"
+      ],
+      "View the invitations": [
+        "Mostra les invitacions"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Versió prèmium de Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Versió prèmium de Mail i Calendar"
+      ],
+      "Premium VPN": [
+        "Versió prèmium de VPN"
+      ],
+      "Up to 6 users": [
+        "Fins a 6 usuaris"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Grup familiar no reconegut. Torneu-ho a provar."
+      ],
+      "Organization not recognized. Try again.": [
+        "Organització no reconeguda. Torneu-ho a provar."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Grups de ${ BRAND_NAME }"
+      ],
+      "*Only one free trial per customer.": [
+        "*Només una prova gratuïta per client."
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Els comptes amb dominis personalitzats no poden unir-se a un pla Visionary o familiar."
+      ],
+      "customer support": [
+        "atenció al client"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Invitació de ${ invitation.OrganizationName }"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Convidat per: ${ inviteEmail }"
+      ],
+      "Leave family plan": [
+        "Deixa el pla familiar"
+      ],
+      "Manage addresses.": [
+        "Gestionar adreces."
+      ],
+      "Manage user accounts": [
+        "Gestiona comptes d'usuari"
+      ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Només es permeten 10 invitacions acceptades en un període de 6 mesos."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
+      ],
+      "Pending": [
+        "Pendent"
+      ],
+      "Pending invitation": [
+        "Invitació pendent"
+      ],
+      "Pending invitations": [
+        "Invitacions pendents"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ho sentim, no podeu canviar de pla en aquest moment."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "La subscripció es factura a l'administrador principal del pla Visionary o familiar."
+      ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "Per facilitar la transició, us oferim una prova de cortesia de 30 dies de ${ BRAND_NAME } Il·limitat*."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Els plans Visionary i familiar actualment no admeten comptes vitalicis."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
+      ],
+      "You are part of ${ organization.Name }.": [
+        "Formeu part de ${ organization.Name }."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Només podeu acceptar 3 invitacions en un període de 6 mesos. Poseu-vos en contacte amb ${ supportLink } si necessiteu una excepció."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Heu estat convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "Heu arribat al límit de 10 invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
+      ],
+      "You have successfully joined the Family plan": [
+        "Us heu unit correctament al pla familiar"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Heu de configurar un domini personalitzat abans de crear un nou usuari."
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "Perdreu l'accés a totes les característiques prèmium i a l'espai d'emmagatzematge inclòs amb ${ BRAND_NAME } Family."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Esteu convidats a enllaçar el vostre Compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "El vostre pla actual no pot unir-se a un pla Visionary o familiar."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*La vostra subscripció es renovarà automàticament a la mateixa tarifa al final del cicle de facturació."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Els descomptes es basen en els preus mensuals estàndard."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Només una prova gratuïta per usuari."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "De manera predeterminada, assignem ${ formattedStorage } d'emmagatzematge al compte d'administrador. Podeu gestionar l'emmagatzematge assignat per distribuir-lo entre usuaris addicionals més endavant."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Creeu i gestioneu els membres de la família i assigneu-los espai d'emmagatzematge compartit entre ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Si l'usuari ja té una adreça ${ MAIL_APP_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
+      ],
+      "Online privacy, for your whole family": [
+        "Privacitat en línia per a tota la vostra família"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "El compte de l'usuari es traslladarà a un pla de ${ BRAND_NAME } Il·limitat per a una prova gratuïta de 30 dies*."
+      ],
+      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
+        "Pots convidar un usuari de ${ BRAND_NAME } existent o crear-ne un de nou"
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Podeu augmentar o reduir l'emmagatzematge d'aquest usuari."
+      ],
+      "You left this plan": [
+        "Heu abandonat aquest pla."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Introduïu el nom del grup familiar per confirmar"
+      ],
+      "Enter organization name to confirm": [
+        "Introduïu el nom de l'organització per confirmar"
+      ],
+      "Family name": [
+        "Nom de la família"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Això eliminarà permanentment tots els subusuaris, comptes i dades associades amb la vostra organització."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Això eliminarà totes les característiques prèmium de ${ BRAND_NAME } per a tots els membres de la família."
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Família"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } s'ha suprimit de ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "S'ha produït un error. Intenteu-ho de nou."
+      ],
+      "Member updated": [
+        "Membre actualitzat"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Afegiu un usuari al vostre compte de ${ PLAN_NAMES.visionary2022 }"
+      ],
+      "Change family name": [
+        "Canvia el nom de la família"
+      ],
+      "Delete family group?": [
+        "Voleu eliminar el grup familiar?"
+      ],
+      "Delete organization?": [
+        "Voleu eliminar l'organització?"
+      ],
+      "Edit user storage": [
+        "Edita l'emmagatzematge de l'usuari"
+      ],
+      "Family name": [
+        "Nom de la família"
+      ],
+      "Family plan": [
+        "Pla familiar"
+      ],
+      "Introducing ${ planName }": [
+        "Presentem ${ planName }"
+      ],
+      "Invite a user": [
+        "Convida un usuari"
+      ],
+      "Manage family group": [
+        "Gestiona el grup familiar"
+      ],
+      "Set family name": [
+        "Configura el nom de la família"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en tot el món, bloquejador de programari maliciós i d'anuncis i més."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide My Email, compartició de calendari i més."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } connexió VPN",
@@ -3707,6 +4024,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
+      ],
       "Search list": [
         "Llista de cerca"
       ]
@@ -4311,6 +4631,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
+      "${ storage } storage": [
+        "${ storage } d'emmagatzematge"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
       ],
@@ -4817,6 +5140,9 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si heu definit SPF i DKIM, DMARC us permet especificar com altres serveis de correu electrònic haurien de lliurar el correu electrònic per al vostre domini si han fallat tant les comprovacions SPF com DKIM. Això pot fer que els spammers que facin passar per vosaltres siguin més difícils, però també poden causar problemes de lliurament si no es fan correctament."
       ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Si perdeu el dispositiu habilitat per dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si fas efectiu la baixada perdràs l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
       ],
@@ -5007,6 +5333,9 @@
       ],
       "New": [
         "Nova"
+      ],
+      "No account keys exist": [
+        "No existeixen claus per a aquest compte"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "No s'ha establert un mètode de recuperació; esteu en risc de perdre l'accés al vostre compte"
@@ -5254,6 +5583,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
+      "Support for 1 custom email domain": [
+        "Suport per a 1 domini de correu personalitzat"
+      ],
       "support team": [
         "equip de suport"
       ],
@@ -5401,6 +5733,9 @@
       "Two-factor authentication enabled": [
         "S'ha activat l'autenticació de dos factors"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "El mode de dues contrasenyes requereix dues claus de pas: una per iniciar sessió al vostre compte i l'altra per desxifrar la vostra bústia de correu. (Avançat)"
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar la bústia de correu. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una per a la bústia de correu."
       ],
@@ -5413,6 +5748,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tret que tanqueu la sessió del vostre compte o canvieu la vostra contrasenya, la vostra sessió es mantindrà activa. Les sessions expiraran després de 30 dies d'inactivitat."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetes, etiquetes i filtres sense límit"
+      ],
       "Unlimited messages": [
         "Missatges il·limitats"
       ],
@@ -5421,6 +5759,9 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -5439,6 +5780,9 @@
       ],
       "URL link": [
         "Enllaç URL"
+      ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Utilitzeu els diferents tipus d'adreces de correu electrònic i àlies que ofereix ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilitzeu les següents credencials connectant a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
@@ -5630,6 +5974,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "El vostre compte ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuraren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius, i no podeu carregar-hi nous fitxers. Per a continuar utilitzant el vostre compte pagueu qualsevol factura vençuda."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Els vostres comptes ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } estan enllaçats. Per suprimir-les, inicieu la sessió a ${ loginLink } i suprimiu-ne el compte."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
@@ -6100,6 +6447,14 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } mesos"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dia",
+        "${ nbDay } dies"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } any",
+        "${ nbYear } anys"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
@@ -6596,6 +6951,9 @@
       ],
       "Notification": [
         "Notificació"
+      ],
+      "Notifications": [
+        "Notificacions"
       ],
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
@@ -7525,6 +7883,14 @@
         "${ n } carpeta i etiqueta",
         "${ n } carpetes i etiquetes"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } bústia de reenviament",
+        "${ n } bústies de reenviament"
+      ],
+      "${ n } Hide My Email alias": [
+        "${ n } àlies de Hide My Email",
+        "${ n } àlies de Hide My Email"
+      ],
       "${ n } label": [
         "${ n } etiqueta",
         "${ n } etiquetes"
@@ -7532,6 +7898,10 @@
       "${ n } message per day": [
         "${ n } missatge per dia",
         "${ n } missatges per dia"
+      ],
+      "${ n } vault": [
+        "${ n } caixa forta",
+        "${ n } caixes fortes"
       ],
       "${ n } VPN connection": [
         "${ n } connexió VPN",
@@ -7546,6 +7916,9 @@
       ],
       "${ size } storage per user": [
         "${ size } emmagatzematge per usuari"
+      ],
+      "1 user": [
+        "1 usuari"
       ],
       "Admin console": [
         "Consola d'administració"
@@ -7564,6 +7937,9 @@
       ],
       "Contact groups management": [
         "Gestió de grups de contactes"
+      ],
+      "Custom domain for email aliases": [
+        "Domini personalitzat per a àlies de correu electrònic"
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
@@ -7662,6 +8038,12 @@
       "Unlimited messages per day": [
         "Missatges il·limitats diaris"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fins a ${ FAMILY_MAX_USERS } usuaris"
+      ],
+      "Up to ${ n } users": [
+        "Fins a ${ n } usuaris"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
       ],
@@ -7757,6 +8139,10 @@
       ]
     },
     "new_plans: tooltip": {
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creeu ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
+        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
       ],
@@ -8444,6 +8830,11 @@
         "No s'han trobat resultats."
       ]
     },
+    "Settings description": {
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "Organitza la teva safata d'entrada amb carpetes i etiquetes. ${ learnMoreLink }"
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Compte"
@@ -8566,6 +8957,11 @@
         "Oferta especial"
       ]
     },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Passeu-vos a Unlimited"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'emmagatzematge total"
@@ -8613,15 +9009,34 @@
         "Doneu suport a la privacitat en línia"
       ]
     },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Els descomptes es basen en els preus mensuals estàndard."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ]
+    },
+    "specialoffer: Info": {
+      "No available offers found.": [
+        "No s'han trobat ofertes disponibles."
+      ]
+    },
     "specialoffer: Label": {
       "Lifetime deal": [
         "Oferta de per vida"
+      ],
+      "Limited time only": [
+        "Només per temps limitat"
       ],
       "Most popular": [
         "Més popular"
       ],
       "Offer ends soon": [
         "L'oferta s'acaba aviat"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "El descompte es continuarà aplicant a la renovació fins que la subscripció es cancel·li o es modifiqui"
       ]
     },
     "specialoffer: Link": {
@@ -8641,16 +9056,85 @@
       ],
       "2 years": [
         "Dos anys"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Facturat a ${ amount } durant 1 mes"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Facturat a ${ amount } durant 12 mesos"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Facturat a ${ amount } durant 15 mesos"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Facturat a ${ amount } durant 24 mesos"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Facturat a ${ amount } durant 30 mesos"
+      ],
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Es renova al cap d'1 any a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Es renova al cap de 2 anys a un preu amb descompte de ${ discountedAmount } en lloc de ${ regularAmount } (${ discount }% de descompte)"
+      ],
+      "Save ${ discount }%": [
+        "Estalvia el ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Preu estàndard ${ amount } durant 1 mes"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Preu estàndard ${ amount } durant 12 mesos"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Preu estàndard ${ amount } durant 15 mesos"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Preu estàndard ${ amount } durant 24 mesos"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Preu estàndard ${ amount } durant 30 mesos"
       ]
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
         "Oferta del Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Oferta Cyber Week"
+      ],
+      "End of year offer": [
+        "Oferta de final d'any"
+      ],
+      "End of Year Sale": [
+        "Oferta de final d'any"
+      ],
+      "Get our premium bundle and save more": [
+        "Aconsegueix el nostre paquet prèmium i estalvia més"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "El nostre pla Visionary interromput ha tornat només per un temps limitat"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Estalvieu més amb 2 anys de ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Milloreu el vostre pla i estalvieu més amb 2 anys de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per 10 dominis personalitzats, àlies Hide My Email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
@@ -8663,6 +9147,9 @@
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfecte per famílies o equips petits, cadascú pot tenir la seva pròpia safata d'entrada i àlies. Requereix un domini personalitzat."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Rebeu sense cap cost addicional les versions de pagament de tots els nous serveis de privacitat que publicarem en el futur, juntament amb l'accés anticipat a totes les característiques i productes futurs."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -8712,9 +9199,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendari"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, entreu la URL. Una versió de només lectura del calendari s'afegirà als vostres calendaris subscrits.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9171,6 +9655,9 @@
       "Account and password": [
         "Compte i contrasenya"
       ],
+      "Account keys": [
+        "Claus del compte"
+      ],
       "Account recovery": [
         "Recuperació de compte"
       ],
@@ -9212,6 +9699,9 @@
       ],
       "Add Sieve filter": [
         "Afegeix un filtre Sieve"
+      ],
+      "Add to Not spam list": [
+        "Afegeix a la llista de correu no brossa"
       ],
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
@@ -9591,6 +10081,9 @@
       "Import-Export app": [
         "Aplicació d'importació-exportació"
       ],
+      "Increase your privacy with more addresses": [
+        "Augmenteu la vostra privacitat amb més adreces"
+      ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
@@ -9666,6 +10159,9 @@
       "Organization and keys": [
         "Organització i claus"
       ],
+      "Organization name": [
+        "Nom de l'organització"
+      ],
       "Other calendars": [
         "Altres calendaris"
       ],
@@ -9689,6 +10185,9 @@
       ],
       "PayPal verification failed": [
         "Ha fallat la verificació de PayPal"
+      ],
+      "Personalise your e-mail footer": [
+        "Personalitzeu el peu de pàgina del vostre correu electrònic"
       ],
       "Phone": [
         "Telèfon"
@@ -9914,6 +10413,9 @@
       "Verify email address": [
         "Verifiqueu l'adreça electrònica"
       ],
+      "Verifying your card...": [
+        "S'està verificant la targeta…"
+      ],
       "Version history": [
         "Historial de versions"
       ],
@@ -9946,6 +10448,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
+      ],
+      "Your Plan": [
+        "El vostre pla"
       ],
       "Your recovery status": [
         "El seu estat de recuperació"

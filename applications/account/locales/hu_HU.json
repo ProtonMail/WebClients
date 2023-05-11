@@ -47,14 +47,14 @@
       "Activate recovery": [
         "Helyreállítás aktiválása"
       ],
+      "Add": [
+        "Hozzáadás"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók hozzáadása"
       ],
       "Add address": [
         "Cím hozzáadása"
-      ],
-      "Add calendar": [
-        "Naptár hozzáadása"
       ],
       "Add condition": [
         "Új feltétel"
@@ -3535,6 +3535,49 @@
         "A sikeresen exportált eseményeket tartalmazó ICS fájlt lementheti."
       ]
     },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Ne jelenjen meg többet ez az ajánlat"
+      ],
+      "Got it": [
+        "Értem"
+      ],
+      "Keep current plan": [
+        "Jelenlegi csomag megtartása"
+      ],
+      "Switch plans": [
+        "Csomag váltása"
+      ],
+      "View the invitation": [
+        "Meghívás megjelenítése"
+      ],
+      "View the invitations": [
+        "Meghívások megjelenítése"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } csoportok"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Saját domain névvel rendelkező felhasználók nem csatlakozhatnak Visionary és családi csomagokhoz."
+      ],
+      "customer support": [
+        "ügyfélszolgálat"
+      ],
+      "Manage addresses.": [
+        "Címek kezelése."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Meglévő csomaggal rendelkező felhasználók nem csatlakozhatnak csoportos előfizetéshez."
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "A Visionary és a családi csomagok jelenleg nem támogatják az egész életre szóló fiókokat."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Meghívást kapott a következőhöz: ${ bannerOrganization }. ${ viewInviteButton }"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN kapcsolat",
@@ -6779,6 +6822,9 @@
       "Notification": [
         "Értesítés"
       ],
+      "Notifications": [
+        "Emlékeztetők"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 jelszó"
       ],
@@ -7792,9 +7838,6 @@
       "Multiple admin roles": [
         "Több adminisztrátori szerep"
       ],
-      "NetShield malware and ad-blocker": [
-        "Netshield reklám és virusvédelem"
-      ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
       ],
@@ -7875,9 +7918,6 @@
       ],
       "User session management": [
         "Felhasználói munkafolyamatok kezelése"
-      ],
-      "Worldwide streaming services": [
-        "Videós szolgáltatások világszerte"
       ]
     },
     "new_plans: feature info": {
@@ -9082,9 +9122,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Naptár URL"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Egy külső vagy nyilvános naptárra és annak eseményeire való feliratkozáshoz, írja be annak URL címét. Egy csak olvasható naptárként fog megjelenni a feliratkozott naptárainál. ${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

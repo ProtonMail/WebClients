@@ -835,6 +835,9 @@
       "Reset to default": [
         "Nulstil til standard"
       ],
+      "Restore": [
+        "Gendan"
+      ],
       "Resume": [
         "Genoptag"
       ],
@@ -3307,6 +3310,9 @@
         "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
         "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne med et program som for eksempel GnuPG."
       ],
+      "The email addresses do not match": [
+        "E-Mailadresserne stemmer ikke overens"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -3464,6 +3470,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering mislykkedes"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versioner < 3.0 understøttes ikke"
       ]
     },
     "Error importing contacts": {
@@ -3680,6 +3689,58 @@
     "Event title": {
       "(no title)": [
         "(ingen titel)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB samlet lagerplads"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Switch plans": [
+        "Skift abonnement"
+      ],
+      "View the invitation": [
+        "Se invitationen"
+      ],
+      "View the invitations": [
+        "Se invitationerne"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail og Kalender"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "Op til 6 brugere"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "kundeservice"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Inviteret af: ${ inviteEmail }"
       ]
     },
     "Feedback Modal Title": {
@@ -4549,6 +4610,12 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Automatically delete messages that have been in spam for more than 30 days.": [
+        "Slet automatisk beskeder, der har været i spam i mere end 30 dage."
+      ],
+      "Automatically delete messages that have been in trash for more than 30 days.": [
+        "Slet automatisk beskeder, der har været i papirkurven i mere end 30 dage."
+      ],
       "Background color": [
         "Baggrundsfarve"
       ],
@@ -5073,6 +5140,9 @@
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
+      "Preview for this file type is not supported": [
+        "Forhåndsvisning af denne filtype er ikke understøttet"
+      ],
       "Primary": [
         "Primær"
       ],
@@ -5399,6 +5469,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Opgrader for at tilføje flere adresser til din konto."
+      ],
+      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
+        "Opgradér for automatisk at slette beskeder, der har været i spam i mere end 30 dage."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Opgrader for at oprette flere foldere, filtre og adresser."
@@ -6988,6 +7061,9 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
+      "Set up your organization testing": [
+        "Konfigurer din organisation"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -7539,9 +7615,41 @@
       ]
     },
     "specialoffer: Offers": {
+      "/ month": [
+        "/ måned"
+      ],
+      "1 year": [
+        "1 år"
+      ],
+      "2 years": [
+        "2 år"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Faktureret med ${ amount } for 1 måned"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Faktureret med ${ amount } for 12 måneder"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Faktureret med ${ amount } for 15 måneder"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Faktureret med ${ amount } for 24 måneder"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Faktureret med ${ amount } for 30 måneder"
+      ],
       "for ${ n } month": [
         "i ${ n } måned",
         "i ${ n } måneder"
+      ],
+      "Get the deal": [
+        "Få tilbuddet"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-tilbud"
       ]
     },
     "specialoffer: Tooltip": {
@@ -8223,6 +8331,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
+      ],
+      "Keep your inbox organized": [
+        "Hold din indbakke organiseret"
       ],
       "Label as": [
         "Etikettér som"

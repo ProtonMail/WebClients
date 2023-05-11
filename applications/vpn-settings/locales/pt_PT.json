@@ -242,6 +242,9 @@
       "Reset password": [
         "Repor palavra-passe"
       ],
+      "Restore": [
+        "Restaurar"
+      ],
       "Retry": [
         "Repetir"
       ],
@@ -1446,6 +1449,9 @@
       "Process aborted": [
         "Processo abortado"
       ],
+      "Request timed out": [
+        "O pedido expirou"
+      ],
       "Signature verification failed": [
         "Falha ao verificar a assinatura"
       ],
@@ -1470,6 +1476,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -1487,6 +1496,9 @@
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
       ],
+      "Something went wrong": [
+        "Ocorreu um erro"
+      ],
       "We couldn't load this page. ": [
         "Não conseguimos carregar esta página. "
       ]
@@ -1494,6 +1506,48 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem seleccionada"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB de armazenamento total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
+      "Got it": [
+        "Entendido"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Up to 6 users": [
+        "Até 6 utilizadores"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Grupos do ${ BRAND_NAME }"
+      ],
+      "customer support": [
+        "apoio ao cliente"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Obter o ${ planName }"
       ]
     },
     "Feature": {
@@ -2158,6 +2212,9 @@
       "${ BRAND_NAME } email or username": [
         "Correio electrónico ou nome de usuário do ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } username": [
+        "Nome de usuário do ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
@@ -2586,6 +2643,12 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } de armazenamento"
+      ],
+      "${ size } storage per user": [
+        "${ size } de armazenamento por utilizador"
+      ],
       "Advanced sharing security": [
         "Segurança avançada de partilha"
       ],
@@ -2631,9 +2694,6 @@
       "Limited support": [
         "Apoio ao cliente limitado"
       ],
-      "NetShield malware and ad-blocker": [
-        "Bloqueador de anúncios e de malware NetShield"
-      ],
       "Password-protected Emails": [
         "Correios electrónicos protegidos por palavra-passe"
       ],
@@ -2657,6 +2717,9 @@
       ],
       "Strict no-logs policy": [
         "Política estrita sem diários"
+      ],
+      "Team management": [
+        "Gestão de equipa"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -2682,21 +2745,36 @@
       "Unlimited volume/bandwidth": [
         "Largura de banda e volume ilimitados"
       ],
-      "Worldwide streaming services": [
-        "Serviços de streaming internacionais"
+      "Up to ${ totalStorageSize } storage": [
+        "Até ${ totalStorageSize } de armazenamento"
       ]
     },
     "new_plans: heading": {
       "Support": [
         "Apoio ao cliente"
+      ],
+      "Team management": [
+        "Gestão de equipa"
       ]
     },
     "new_plans: info": {
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar arquivos com facilidade e segurança."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "Correio electrónico e calendário seguros para profissionais e empresas."
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "Correio electrónico seguro com características avançadas para as suas comunicações diárias."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "A conta inicial gratuita criada para oferecer privacidade a todos por defeito."
@@ -2734,6 +2812,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } de armazenamento total"
+      ],
       "Priority support": [
         "Apoio ao cliente prioritário"
       ],
@@ -2891,39 +2972,37 @@
         "Oferta especial"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "3 TB": [
         "3 TB"
+      ],
+      "6 users": [
+        "6 utilizadores"
       ],
       "64 countries": [
         "64 países"
       ],
       "High speed VPN": [
         "VPN de alta velocidade"
+      ],
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar e Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ]
+    },
+    "specialoffer: Label": {
+      "Most popular": [
+        "Mais popular"
+      ]
+    },
+    "specialoffer: Link": {
+      "Upgrade": [
+        "Actualizar"
       ]
     },
     "specialoffer: Offers": {
@@ -2935,10 +3014,6 @@
       ],
       "2 years": [
         "2 anos"
-      ],
-      "for ${ n } month": [
-        "por ${ n } mês",
-        "por ${ n } meses"
       ]
     },
     "State": {
@@ -3154,6 +3229,9 @@
       "Apply gift code": [
         "Aplicar código de oferta"
       ],
+      "Are you sure you want to close the preview?": [
+        "Tem a certeza de que deseja fechar a pré-visualização?"
+      ],
       "Back": [
         "Recuar"
       ],
@@ -3361,6 +3439,9 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Sign in with 2FA": [
+        "Autenticação com 2FA"
+      ],
       "Sign out": [
         "Terminar sessão"
       ],
@@ -3406,8 +3487,14 @@
       "What's new": [
         "O que há de novo"
       ],
+      "Your changes are not synced yet": [
+        "As suas alterações ainda não foram sincronizadas"
+      ],
       "Your current plan": [
         "O seu plano atual"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "O seu teste gratuito do Mail Plus finaliza em ${ textDate }"
       ],
       "Your plan": [
         "O seu plano"
@@ -3435,6 +3522,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, insira-o aqui."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "O novo ciclo de subscrição começa em ${ formattedTime }"
       ]
     },
     "Validation": {

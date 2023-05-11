@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Attiva il ripristino"
       ],
+      "Add": [
+        "Aggiungi"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Aggiungi un Account ${ BRAND_NAME }"
       ],
       "Add address": [
         "Aggiungi indirizzo"
-      ],
-      "Add calendar": [
-        "Aggiungi calendario"
       ],
       "Add condition": [
         "Aggiungi condizione"
@@ -646,6 +646,9 @@
       ],
       "Reset to default": [
         "Reimposta al valore predefinito"
+      ],
+      "Restore": [
+        "Ripristina"
       ],
       "Restore administrator privileges": [
         "Ripristina i privilegi da amministratore"
@@ -6909,7 +6912,7 @@
         " e ${ l }"
       ],
       "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } email o nome utente"
+        "Email o nome utente ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
@@ -7448,6 +7451,9 @@
       ],
       "Notification": [
         "Notifica"
+      ],
+      "Notifications": [
+        "Notifiche"
       ],
       "OpenVPN / IKEv2 password": [
         "Password OpenVPN / IKEv2"
@@ -8521,9 +8527,6 @@
       "Multiple admin roles": [
         "Ruoli di amministratore multipli"
       ],
-      "NetShield malware and ad-blocker": [
-        "Blocco di pubblicità e malware NetShield"
-      ],
       "Password-protected Emails": [
         "Email protette da password"
       ],
@@ -8616,9 +8619,6 @@
       ],
       "User session management": [
         "Gestione della sessione utente"
-      ],
-      "Worldwide streaming services": [
-        "Servizi di trasmissione globale"
       ]
     },
     "new_plans: feature info": {
@@ -9477,6 +9477,9 @@
       "Search": [
         "Cerca"
       ],
+      "Search for a user or address": [
+        "Cerca un utente o un indirizzo"
+      ],
       "Search settings": [
         "Impostazioni di ricerca"
       ],
@@ -9858,30 +9861,6 @@
         "Scegli Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ hours } ora",
-        "${ hours } ore"
-      ],
-      "${ hours } hour": [
-        "${ days } giorno",
-        "${ days } giorni"
-      ],
-      "${ minutes } minute": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
-      ],
-      "${ seconds } second": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ seconds } secondo",
-        "${ seconds } secondi"
-      ]
-    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } di spazio di archiviazione totale"
@@ -9991,10 +9970,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
-      ],
-      "for ${ n } month": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -10123,9 +10098,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Per iscriverti a un calendario esterno o pubblico e ai suoi aggiornamenti, inserisci l'URL. Una versione di sola lettura del calendario verrà aggiunta ai tuoi calendari sottoscritti.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10920,6 +10892,9 @@
       ],
       "Delete user": [
         "Eliminazione utente"
+      ],
+      "Delete version history?": [
+        "Elimina la cronologia delle versioni?"
       ],
       "Disable ${ email }": [
         "Disattiva ${ email }"

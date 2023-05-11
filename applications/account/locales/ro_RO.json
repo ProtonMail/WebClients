@@ -62,14 +62,14 @@
       "Activate recovery": [
         "Activare recuperare"
       ],
+      "Add": [
+        "Adăugare"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Adăugare cont ${ BRAND_NAME }"
       ],
       "Add address": [
         "Adăugare adresă"
-      ],
-      "Add calendar": [
-        "Adăugare calendar"
       ],
       "Add condition": [
         "Adăugare condiție"
@@ -410,6 +410,18 @@
       "Get a new encrypted email address": [
         "Obțineți o adresă nouă de e-mail criptată"
       ],
+      "Get more addresses": [
+        "Obțineți mai multe adrese"
+      ],
+      "Get more filters": [
+        "Obțineți mai multe filtre"
+      ],
+      "Get more folders": [
+        "Obțineți mai multe foldere"
+      ],
+      "Get more labels": [
+        "Obțineți mai multe etichete"
+      ],
       "Get verification code": [
         "Obținere cod de verificare"
       ],
@@ -460,6 +472,12 @@
       ],
       "Insert link": [
         "Inserare legătură"
+      ],
+      "Invite": [
+        "Invitare"
+      ],
+      "Invite user": [
+        "Invitare utilizator"
       ],
       "Italic": [
         "Înclinat"
@@ -2638,11 +2656,17 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obțineți până la ${ credits } credite invitând persoane la ${ BRAND_NAME }."
       ],
+      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
+        "Dacă doriți să nu mai răspândiți vestea despre misiunea noastră, luați în considerare modernizarea și deblocarea mai multor funcții premium."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "ProtonMail logo and a plus sign": [
         "Logo ProtonMail și semnul plus"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -2651,6 +2675,12 @@
       ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Deblocați filtre nelimitate care vă sortează mesajele și alte funcții premium dacă modernizați contul."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Deblocați foldere și etichete nelimitate și multe alte funcții premium când modernizați contul."
       ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "Pictograma postvânzare care conține logo-ul ${ BRAND_NAME } urmat de semnul plus"
@@ -3888,6 +3918,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Adăugați un filtru personal pentru a efectua în mod automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către ${ BRAND_NAME } vor ajunge în folderul «Nedorite». Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „acceptată”."
       ],
@@ -5967,6 +6000,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Folosiți tipuri diferite de adrese de e-mail și pseudonime oferite de ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
       ],
@@ -7247,6 +7283,9 @@
       "Notification": [
         "Notificare"
       ],
+      "Notifications": [
+        "Notificări"
+      ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
       ],
@@ -7859,6 +7898,9 @@
       "Edit": [
         "Editare"
       ],
+      "Remove": [
+        "Eliminare"
+      ],
       "Revoke sessions": [
         "Anulare sesiuni"
       ],
@@ -8373,9 +8415,6 @@
       "Multiple forwarding mailboxes": [
         "Adrese multiple pentru redirecționare"
       ],
-      "NetShield malware and ad-blocker": [
-        "Blocare malware și reclame cu NetShield"
-      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
@@ -8486,9 +8525,6 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Partajarea seifurilor și a datelor (în curând)"
-      ],
-      "Worldwide streaming services": [
-        "Servicii de transmisie în flux globale"
       ]
     },
     "new_plans: feature info": {
@@ -8541,7 +8577,7 @@
         "* Cu abonament de 12 luni. Alte opțiuni de abonament sunt disponibile la finalizare."
       ],
       "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Cu abonament de 15 de luni. Alte opțiuni de abonament sunt disponibile la finalizare."
+        "* Cu abonament de 15 luni. Alte opțiuni de abonament sunt disponibile la finalizare."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Cu abonament de 24 de luni. Alte opțiuni de abonament sunt disponibile la finalizare."
@@ -9379,6 +9415,9 @@
       "Search": [
         "Căutare"
       ],
+      "Search for a user or address": [
+        "Căutați utilizator sau adresă"
+      ],
       "Search settings": [
         "Setări căutare"
       ],
@@ -9632,6 +9671,9 @@
       ],
       "Complete the transition to privacy with our secure importing tools.": [
         "Completați tranziția la confidențialitate cu ajutorul uneltelor de importare sigure."
+      ],
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "Păstrați-vă mesajele organizate cu foldere și etichete. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -9746,6 +9788,218 @@
         "Verificare"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Închidere"
+      ],
+      "Don't show this offer again": [
+        "Nu mai arăta această ofertă"
+      ],
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Alegeți nelimitat"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } spațiu total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 utilizatori"
+      ],
+      "64 countries": [
+        "64 de țări"
+      ],
+      "All paid Mail and Calendar features": [
+        "Toate funcțiile cu plată de la Mail și Calendar"
+      ],
+      "High speed VPN": [
+        "VPN de mare viteză"
+      ],
+      "Highest VPN speed": [
+        "Viteză VPN maximă"
+      ],
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium early access": [
+        "Acces timpuriu premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail și Calendar premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar și Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Secure cloud storage": [
+        "Stocare securizată în cloud"
+      ],
+      "Secure streaming": [
+        "Redare în flux securizată"
+      ],
+      "Support online privacy": [
+        "Susțineți confidențialitatea online"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Reducerile sunt bazate pe prețul standard lunar."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
+    "specialoffer: Info": {
+      "No available offers found.": [
+        "Nu s-au găsit oferte disponibile."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Ofertă pe viață"
+      ],
+      "Limited time only": [
+        "Timp limitat"
+      ],
+      "Most popular": [
+        "Cel mai popular"
+      ],
+      "Offer ends soon": [
+        "Oferta expiră în curând"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Reducerea va continua să se aplice la reînnoire până când abonamentul este anulat sau modificat."
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "Upgrade": [
+        "Modernizare"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ lună"
+      ],
+      "1 year": [
+        "1 an"
+      ],
+      "2 years": [
+        "2 ani"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Facturat cu ${ amount } pentru o lună"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Facturat cu ${ amount } pentru 12 luni"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Facturat cu ${ amount } pentru 15 luni"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Facturat cu ${ amount } pentru 24 de luni"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Facturat cu ${ amount } pentru 30 de luni"
+      ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Reînnoire după un an la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Reînnoire după doi ani la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
+      ],
+      "Save ${ discount }%": [
+        "Salvați ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Preț standard ${ amount } pentru o lună"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Preț standard ${ amount } pentru 12 luni"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Preț standard ${ amount } pentru 15 luni"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Preț standard ${ amount } pentru 24 de luni"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Preț standard ${ amount } pentru 30 de luni"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Reducere de Vinerea Neagră"
+      ],
+      "Cyber Week Sale": [
+        "Reducere de Lunea cibernetică"
+      ],
+      "End of year offer": [
+        "Ofertă de sfârșit de an"
+      ],
+      "End of Year Sale": [
+        "Reducere de sfârșit de an"
+      ],
+      "Get our premium bundle and save more": [
+        "Luați pachetul premium și salvați mai mult"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Planul redus Visionary a revenit pentru o perioadă limitată"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Salvați mai mult cu doi ani la ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Modernizați contul și salvați mai mult cu doi ani la ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN per utilizator, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Toate serviciile noastre premium cu limitele la maxim: 100 de adrese de e-mail, suport pentru 10 domenii personale, pseudonime nelimitate Hide My Email, partajare calendar, stocare criptată în cloud și fișiere partajate și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri Hide My Email, partajare calendar și altele."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Include suport pentru 3 domenii de e-mail personal, 15 adrese de e-mail, aliasuri nelimitate Hide My Email, partajare calendar și altele."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfect pentru familii sau echipe mici, fiecare poate avea propria adresă de e-mail și pseudonime. Necesită un domeniu personal."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Primiți fără costuri suplimentare versiunile plătite ale tuturor serviciilor de confidențialitate pe care le lansăm în viitor, împreună cu acces anticipat la toate funcțiile și produsele viitoare."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
@@ -9787,9 +10041,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL calendar"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la «Abonări calendare».\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10048,6 +10299,9 @@
       ],
       "Import record deleted": [
         "Înregistrare importare ștearsă"
+      ],
+      "Invitation sent": [
+        "Invitația a fost trimisă."
       ],
       "Invoice customized": [
         "Factură personalizată"
@@ -10789,6 +11043,9 @@
       "Import-Export app": [
         "Aplicația „Import-Export”"
       ],
+      "Increase your privacy with more addresses": [
+        "Măriți-vă intimitatea cu adrese mai multe"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
@@ -10797,6 +11054,9 @@
       ],
       "Invoices": [
         "Facturi"
+      ],
+      "Keep your inbox organized": [
+        "Păstrați-vă mesajele organizate"
       ],
       "Keyboard shortcuts": [
         "Combinații de taste"
@@ -10809,6 +11069,9 @@
       ],
       "Layout": [
         "Aspect"
+      ],
+      "Leave ${ organisationName }?": [
+        "Părăsiți ${ organisationName }?"
       ],
       "Link confirmation": [
         "Legătură de confirmare"
@@ -10861,6 +11124,9 @@
       "Organization and keys": [
         "Organizație și chei"
       ],
+      "Organization name": [
+        "Nume organizație"
+      ],
       "Other calendars": [
         "Alte calendare"
       ],
@@ -10884,6 +11150,9 @@
       ],
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
+      ],
+      "Personalise your e-mail footer": [
+        "Personalizați subsolul mesajelor"
       ],
       "Phone": [
         "Telefon"
@@ -10927,6 +11196,9 @@
       "Remove calendar": [
         "Eliminare calendar"
       ],
+      "Remove user?": [
+        "Eliminare utilizator?"
+      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -10950,6 +11222,9 @@
       ],
       "Save contact details": [
         "Salvare detalii contact"
+      ],
+      "Save time with email filters": [
+        "Salvați timp cu filtrele de e-mail"
       ],
       "Secure email based in Switzerland": [
         "E-mail securizat găzduit în Elveția"
@@ -11152,6 +11427,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
+      ],
+      "Your Plan": [
+        "Abonament actual"
       ],
       "Your recovery status": [
         "Starea actuală de recuperare"

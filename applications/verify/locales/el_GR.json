@@ -873,9 +873,25 @@
     "Error message": {
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
       ]
     },
     "Human verification method": {
+      "Email": [
+        "Email"
+      ],
       "Manual": [
         "Χειροκίνητα"
       ],
@@ -961,6 +977,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
