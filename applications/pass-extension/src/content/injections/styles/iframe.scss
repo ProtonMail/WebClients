@@ -10,6 +10,8 @@
 	inline-size: 100% !important;
 	display: block !important;
 	border: 0 !important;
+	z-index: unset !important;
+	inset: unset !important;
 }
 
 iframe.protonpass-iframe {
