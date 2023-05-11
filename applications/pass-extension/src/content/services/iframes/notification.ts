@@ -14,7 +14,7 @@ export const createNotification = (): InjectedNotification => {
         src: NOTIFICATION_IFRAME_SRC,
         animation: 'slidein',
         backdropClose: false,
-        classNames: [`${EXTENSION_PREFIX}-iframe-fixed`],
+        classNames: [`${EXTENSION_PREFIX}-iframe--fixed`],
         onClose: ({ userInitiated }) =>
             userInitiated &&
             sendMessage(
