@@ -2,7 +2,7 @@
 
 .label-proton-badge {
 	padding-inline: em(6, 12);
-	block-size: rem(18, 12);
+	block-size: rem(18);
 
 	&--selected {
 		// only to use when component is in a selected element in mail list
