@@ -50,7 +50,7 @@ export const Header: VFC<{}> = () => {
     const { generatePassword } = usePasswordGeneratorContext();
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
-    const { aliasUsed, aliasLimit, aliasLimitExceeded } = useUsageLimits();
+    const { aliasUsed, aliasLimit, aliasLimitFilled } = useUsageLimits();
 
     const handleNewItemClick = (type: ItemType) => {
         // Trick to be able to return to the initial route using history.goBack() if user switches
@@ -122,7 +122,7 @@ export const Header: VFC<{}> = () => {
 
                                     {type === 'alias' && !!aliasLimit && (
                                         <span
-                                            className={clsx('ml-1', aliasLimitExceeded ? 'color-danger' : 'color-weak')}
+                                            className={clsx('ml-1', aliasLimitFilled ? 'color-danger' : 'color-weak')}
                                         >{`(${aliasUsed}/${aliasLimit})`}</span>
                                     )}
                                 </DropdownMenuButton>

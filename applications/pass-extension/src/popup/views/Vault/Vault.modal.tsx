@@ -29,7 +29,7 @@ export type Props = {
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {
     const [loading, setLoading] = useState(false);
     const [canSubmit, setCanSubmit] = useState(payload.type === 'edit');
-    const { vaultLimitExceeded } = useUsageLimits();
+    const { vaultLimitFilled } = useUsageLimits();
 
     const vaultViewProps = useMemo<VaultFormConsumerProps>(
         () => ({
@@ -62,7 +62,7 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
 
-                            vaultLimitExceeded && payload.type === 'new' ? (
+                            vaultLimitFilled && payload.type === 'new' ? (
                                 <UpgradeButton key="upgrade-button" />
                             ) : (
                                 <Button

@@ -43,7 +43,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
     const defaultName = isValidURL ? url! : '';
-    const { totpLimitExceeded } = useUsageLimits();
+    const { totpLimitFilled } = useUsageLimits();
 
     const initialValues: LoginItemFormValues = {
         name: defaultName,
@@ -228,7 +228,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={PasswordField}
                                 />
 
-                                {totpLimitExceeded ? (
+                                {totpLimitFilled ? (
                                     <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
                                         <UpgradeButton inline />
                                     </ValueControl>
