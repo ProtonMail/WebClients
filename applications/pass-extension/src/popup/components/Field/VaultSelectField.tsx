@@ -4,9 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Option } from '@proton/components';
-import { selectAllVaults, selectPrimaryVault } from '@proton/pass/store';
+import { selectAllVaults, selectLimits, selectPrimaryVault } from '@proton/pass/store';
 
-import { useUsageLimits } from '../../hooks/useUsageLimits';
 import { VaultIcon } from '../Vault/VaultIcon';
 import { SelectField, type SelectFieldProps } from './SelectField';
 
@@ -15,7 +14,7 @@ type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'>;
 export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
     const vaults = useSelector(selectAllVaults);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const { isOverLimits } = useUsageLimits();
+    const { isOverLimits } = useSelector(selectLimits);
 
     useEffect(() => {
         if (isOverLimits) {

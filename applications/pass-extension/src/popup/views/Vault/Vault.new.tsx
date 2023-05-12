@@ -1,17 +1,16 @@
 import { type VFC, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { vaultCreationIntent } from '@proton/pass/store';
+import { selectLimits, vaultCreationIntent } from '@proton/pass/store';
 import { vaultCreate } from '@proton/pass/store/actions/requests';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import { uniqueId } from '@proton/pass/utils/string';
 
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 import { ItemCard } from '../../components/Item/ItemCard';
-import { useUsageLimits } from '../../hooks/useUsageLimits';
 import { VaultForm, type VaultFormConsumerProps, type VaultFormValues } from './Vault.form';
 import { validateVaultVaultsWithEffect } from './Vault.validation';
 
@@ -19,7 +18,7 @@ export const FORM_ID = 'vault-create';
 
 export const VaultNew: VFC<VaultFormConsumerProps> = ({ onSubmit, onSuccess, onFailure, onFormValidChange }) => {
     const dispatch = useDispatch();
-    const { vaultLimitFilled } = useUsageLimits();
+    const { vaultLimitFilled } = useSelector(selectLimits);
 
     const optimisticId = useMemo(() => uniqueId(), []);
     const requestId = useMemo(() => vaultCreate(optimisticId), [optimisticId]);

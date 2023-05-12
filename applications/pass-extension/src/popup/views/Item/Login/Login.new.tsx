@@ -1,10 +1,12 @@
 import { type ReactElement, type VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
+import { selectLimits } from '@proton/pass/store';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -26,7 +28,6 @@ import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupF
 import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { usePopupContext } from '../../../hooks/usePopupContext';
-import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import {
@@ -43,7 +44,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
     const defaultName = isValidURL ? url! : '';
-    const { totpLimitFilled } = useUsageLimits();
+    const { totpLimitFilled } = useSelector(selectLimits);
 
     const initialValues: LoginItemFormValues = {
         name: defaultName,
