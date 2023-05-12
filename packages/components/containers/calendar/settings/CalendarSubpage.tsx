@@ -13,7 +13,7 @@ import {
 import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
 import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
-import { getIsOwnedCalendar, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -153,7 +153,7 @@ const CalendarSubpage = ({
 
     const hasMembersOrInvitations = !!(members.length || invitations.length);
     const isOwner = getIsOwnedCalendar(calendar);
-    const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
+    const isPersonalCalendar = getIsPersonalCalendar(calendar);
 
     const reRender = () => setRenderCount((count) => count + 1);
 
@@ -177,7 +177,7 @@ const CalendarSubpage = ({
                     bootstrap={bootstrap}
                     canEdit={user.hasNonDelinquentScope}
                 />
-                {isOwner && !isSubscribedCalendar && (
+                {isOwner && isPersonalCalendar && (
                     <CalendarShareSection
                         calendar={calendar}
                         addresses={addresses}

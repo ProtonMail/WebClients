@@ -9,6 +9,7 @@ import {
     getIsCalendarWritable,
     getIsOwnedCalendar,
     getIsSubscribedCalendar,
+    getIsUnknownCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     DAILY_TYPE,
@@ -131,6 +132,7 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
             isSubscribed: getIsSubscribedCalendar(calendar),
             isOwned: getIsOwnedCalendar(calendar),
             isWritable: getIsCalendarWritable(calendar),
+            isUnknown: getIsUnknownCalendar(calendar),
         })),
         calendar: {
             id: Calendar.ID,
@@ -139,6 +141,7 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
             isSubscribed: getIsSubscribedCalendar(Calendar),
             isOwned: getIsOwnedCalendar(Calendar),
             isWritable: getIsCalendarWritable(Calendar),
+            isUnknown: getIsUnknownCalendar(Calendar),
         },
     };
 };
