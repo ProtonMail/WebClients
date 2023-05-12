@@ -16,5 +16,17 @@ export const getNewKeyFlags = (Flags = 0, action: FlagAction) => {
     if (action === FlagAction.MARK_NOT_COMPROMISED) {
         return setBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED);
     }
+    if (action === FlagAction.ENABLE_ENCRYPTION) {
+        return clearBit(Flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+    }
+    if (action === FlagAction.DISABLE_ENCRYPTION) {
+        return setBit(Flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+    }
+    if (action === FlagAction.ENABLE_EXPECT_SIGNED) {
+        return clearBit(Flags, KEY_FLAG.FLAG_EMAIL_NO_SIGN);
+    }
+    if (action === FlagAction.DISABLE_EXPECT_SIGNED) {
+        return setBit(Flags, KEY_FLAG.FLAG_EMAIL_NO_SIGN);
+    }
     throw new Error('Unknown action');
 };
