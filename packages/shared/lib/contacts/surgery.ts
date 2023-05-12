@@ -85,3 +85,12 @@ export const prepareForSaving = (vCardContact: VCardContact) => {
 
     return result;
 };
+
+/**
+ * Some contacts might miss the "FN" property, but we expect one for the vCard to be valid.
+ * In that case, use the contact email as FN instead.
+ * If no email is found, return undefined
+ */
+export const getSupportedContactName = (contact: VCardContact) => {
+    return contact.email?.[0]?.value;
+};
