@@ -24,8 +24,20 @@ export const getEventStatusTraits = (model: EventModelReadView) => {
     };
 };
 
-export const getCanEditEvent = ({ isCalendarDisabled }: { isCalendarDisabled: boolean }) => {
-    return !isCalendarDisabled;
+export const getCanEditEvent = ({
+    isUnknownCalendar,
+    isCalendarDisabled,
+}: {
+    isUnknownCalendar: boolean;
+    isCalendarDisabled: boolean;
+}) => {
+    if (isUnknownCalendar) {
+        return false;
+    }
+    if (isCalendarDisabled) {
+        return false;
+    }
+    return true;
 };
 
 export const getCanDeleteEvent = ({
@@ -47,16 +59,21 @@ export const getCanDeleteEvent = ({
 };
 
 export const getCanDuplicateEvent = ({
+    isUnknownCalendar,
     isSubscribedCalendar,
     isOwnedCalendar,
     isOrganizer,
     isInvitation,
 }: {
+    isUnknownCalendar: boolean;
     isSubscribedCalendar: boolean;
     isOwnedCalendar: boolean;
     isOrganizer: boolean;
     isInvitation: boolean;
 }) => {
+    if (isUnknownCalendar) {
+        return false;
+    }
     if (isSubscribedCalendar) {
         return false;
     }

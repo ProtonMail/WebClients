@@ -82,19 +82,21 @@ describe('getCannotSaveEvent()', () => {
 });
 
 describe('getCanEditEvent()', () => {
-    test('User can edit events as long as the calendar is not disabled', () => {
+    test('User can edit events only if the calendar is of known type and is not disabled', () => {
         const combinations = [];
-        for (let i = 0; i < 1 ** 2; i++) {
-            const isCalendarDisabled = !!(1 & i);
+        for (let i = 0; i < 2 ** 2; i++) {
+            const isUnknownCalendar = !!(1 & i);
+            const isCalendarDisabled = !!(2 & i);
 
-            combinations.push({ isCalendarDisabled });
+            combinations.push({ isUnknownCalendar, isCalendarDisabled });
         }
-        combinations.forEach(({ isCalendarDisabled }) => {
+        combinations.forEach(({ isUnknownCalendar, isCalendarDisabled }) => {
             expect(
                 getCanEditEvent({
+                    isUnknownCalendar,
                     isCalendarDisabled,
                 })
-            ).toEqual(!isCalendarDisabled);
+            ).toEqual(!isCalendarDisabled && !isUnknownCalendar);
         });
     });
 });
@@ -190,7 +192,7 @@ describe('getCanEditSharedEventData()', () => {
         ).toEqual(false);
     });
 
-    test('User cannot edit shared event data in subscribed calendars', () => {
+    test('User cannot edit shared event data in subscribed calendars or other read-only calendars', () => {
         const combinations = [];
         for (let i = 0; i < 2 ** 3; i++) {
             const isOrganizer = !!(1 & i);
@@ -446,7 +448,7 @@ describe('getCanChangeCalendar()', () => {
 });
 
 describe('getIsAvailableCalendar()', () => {
-    test('User cannot change calendar of events in subscribed or other read-only calendars', () => {
+    test('User cannot change calendar of events to subscribed or other read-only calendars', () => {
         const combinations = [];
         for (let i = 0; i < 2 ** 2; i++) {
             const isOwnedCalendar = !!(1 & i);
@@ -505,6 +507,29 @@ describe('getIsAvailableCalendar()', () => {
 });
 
 describe('getCanDuplicateEvent()', () => {
+    test('User cannot duplicate events in unknown calendars', () => {
+        const combinations = [];
+        for (let i = 0; i < 2 ** 4; i++) {
+            const isSubscribedCalendar = !!(1 & i);
+            const isOwnedCalendar = !!(2 & i);
+            const isOrganizer = !!(4 & i);
+            const isInvitation = !!(8 & i);
+
+            combinations.push({ isSubscribedCalendar, isOwnedCalendar, isOrganizer, isInvitation });
+        }
+        combinations.forEach(({ isSubscribedCalendar, isOwnedCalendar, isOrganizer, isInvitation }) => {
+            expect(
+                getCanDuplicateEvent({
+                    isUnknownCalendar: true,
+                    isSubscribedCalendar,
+                    isOwnedCalendar,
+                    isInvitation,
+                    isOrganizer,
+                })
+            ).toEqual(false);
+        });
+    });
+
     test('User cannot duplicate events in subscribed calendars', () => {
         const combinations = [];
         for (let i = 0; i < 2 ** 2; i++) {
@@ -516,6 +541,7 @@ describe('getCanDuplicateEvent()', () => {
         combinations.forEach(({ isOrganizer, isInvitation }) => {
             expect(
                 getCanDuplicateEvent({
+                    isUnknownCalendar: false,
                     isSubscribedCalendar: true,
                     isOwnedCalendar: true,
                     isInvitation,
@@ -528,6 +554,7 @@ describe('getCanDuplicateEvent()', () => {
     test('Owner can duplicate events that are not invitations', () => {
         expect(
             getCanDuplicateEvent({
+                isUnknownCalendar: false,
                 isSubscribedCalendar: false,
                 isOwnedCalendar: true,
                 isInvitation: false,
@@ -539,6 +566,7 @@ describe('getCanDuplicateEvent()', () => {
     test('Owner can duplicate invitations that she is organizing', () => {
         expect(
             getCanDuplicateEvent({
+                isUnknownCalendar: false,
                 isSubscribedCalendar: false,
                 isOwnedCalendar: true,
                 isInvitation: true,
@@ -550,6 +578,7 @@ describe('getCanDuplicateEvent()', () => {
     test('Owner cannot duplicate invitations if she is not the organizer', () => {
         expect(
             getCanDuplicateEvent({
+                isUnknownCalendar: false,
                 isSubscribedCalendar: false,
                 isOwnedCalendar: true,
                 isInvitation: true,
@@ -561,6 +590,7 @@ describe('getCanDuplicateEvent()', () => {
     test('Member can duplicate events that are not invitations', () => {
         expect(
             getCanDuplicateEvent({
+                isUnknownCalendar: false,
                 isSubscribedCalendar: false,
                 isOwnedCalendar: false,
                 isInvitation: false,
@@ -579,6 +609,7 @@ describe('getCanDuplicateEvent()', () => {
         combinations.forEach(({ isOrganizer }) => {
             expect(
                 getCanDuplicateEvent({
+                    isUnknownCalendar: false,
                     isSubscribedCalendar: false,
                     isOwnedCalendar: false,
                     isInvitation: true,

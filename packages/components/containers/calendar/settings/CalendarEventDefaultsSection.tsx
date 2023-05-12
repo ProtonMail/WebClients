@@ -14,7 +14,7 @@ import { useApi, useLoading, useNotifications } from '@proton/components/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
-import { getIsCalendarWritable, getIsHolidaysCalendar, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsHolidaysCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import {
     CalendarBootstrap,
@@ -47,7 +47,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const [loadingSavePartDayNotifications, withLoadingSavePartDayNotifications] = useLoading();
     const [loadingSaveFullDayNotifications, withLoadingSaveFullDayNotifications] = useLoading();
 
-    const showDuration = getIsCalendarWritable(calendar) && getIsOwnedCalendar(calendar);
+    const showDuration = getShowDuration(calendar);
     const cannotEdit = !canEdit;
     const isHolidaysCalendar = getIsHolidaysCalendar(calendar);
 

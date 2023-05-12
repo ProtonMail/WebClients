@@ -43,7 +43,7 @@ const CreateEventCalendarSelect = ({
                     isInvitation: !!organizer,
                 })
         )
-        .map(({ value, text, color, permissions, isOwned, isSubscribed, isWritable }) => ({
+        .map(({ value, text, color, permissions, isOwned, isSubscribed, isWritable, isUnknown }) => ({
             id: value,
             name: text,
             color,
@@ -51,6 +51,7 @@ const CreateEventCalendarSelect = ({
             isOwned,
             isSubscribed,
             isWritable,
+            isUnknown,
         }));
     const { name } = options.find(({ id }) => id === calendarID) || options[0];
 
@@ -65,7 +66,7 @@ const CreateEventCalendarSelect = ({
     }
 
     const handleChangeCalendar = async (newId: string) => {
-        const { color, permissions, isOwned, isSubscribed, isWritable } =
+        const { color, permissions, isOwned, isSubscribed, isWritable, isUnknown } =
             options.find(({ id }) => id === newId) || options[0];
 
         // grab members and default settings for the new calendar
@@ -98,7 +99,7 @@ const CreateEventCalendarSelect = ({
 
         setModel({
             ...model,
-            calendar: { id: newId, color, permissions, isOwned, isSubscribed, isWritable },
+            calendar: { id: newId, color, permissions, isOwned, isSubscribed, isWritable, isUnknown },
             ...getInitialMemberModel(addresses, Members, Member, address),
             ...getOrganizerAndSelfAddressModel({ attendees: model.attendees, addresses, addressID: address.ID }),
             defaultEventDuration,
