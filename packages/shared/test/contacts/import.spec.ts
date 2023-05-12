@@ -347,12 +347,13 @@ END:VCARD`;
     it('should import BDAY and ANNIVERSARY', () => {
         const vCard = `BEGIN:VCARD
 VERSION:4.0
+FN:Name
 BDAY:19990101
 ANNIVERSARY:19990101
 END:VCARD`;
 
         const expected: VCardContact = {
-            fn: [],
+            fn: [{ field: 'fn', value: 'Name', uid: '' }],
             version: { field: 'version', value: '4.0', uid: '' },
             bday: { field: 'bday', value: { date: parseISO('1999-01-01') }, uid: '' },
             anniversary: { field: 'anniversary', value: { date: parseISO('1999-01-01') }, uid: '' },
@@ -366,12 +367,13 @@ END:VCARD`;
     it('should import BDAY and ANNIVERSARY with text format', () => {
         const vCard = `BEGIN:VCARD
 VERSION:4.0
+FN:Name
 BDAY;VALUE=text:bidet
 ANNIVERSARY;VALUE=text:annie
 END:VCARD`;
 
         const expected: VCardContact = {
-            fn: [],
+            fn: [{ field: 'fn', value: 'Name', uid: '' }],
             version: { field: 'version', value: '4.0', uid: '' },
             bday: { field: 'bday', value: { text: 'bidet' }, params: { type: 'text' }, uid: '' },
             anniversary: { field: 'anniversary', value: { text: 'annie' }, params: { type: 'text' }, uid: '' },
@@ -380,5 +382,32 @@ END:VCARD`;
         const contact = getSupportedContact(vCard);
 
         expect(excludeUids(contact)).toEqual(excludeUids(expected));
+    });
+
+    it('should import the contact using email as FN when no FN specified', () => {
+        const vCard = `BEGIN:VCARD
+VERSION:4.0
+ITEM1.EMAIL;PREF=1:email1@protonmail.com
+END:VCARD`;
+
+        const expected: VCardContact = {
+            fn: [{ field: 'fn', value: 'email1@protonmail.com', uid: '' }],
+            version: { field: 'version', value: '4.0', uid: '' },
+            email: [{ field: 'email', value: 'email1@protonmail.com', params: { pref: '1' }, group: 'item1', uid: '' }],
+        };
+
+        const contact = getSupportedContact(vCard);
+
+        expect(excludeUids(contact)).toEqual(excludeUids(expected));
+    });
+
+    it(`should not import a contact with a missing FN for which we can't find an alternative`, () => {
+        const vCard = `BEGIN:VCARD
+VERSION:4.0
+CATEGORIES:MISSING_FN,MISSING_EMAIL
+BDAY:20000505
+END:VCARD`;
+
+        expect(() => getSupportedContact(vCard)).toThrowError('Missing FN property');
     });
 });

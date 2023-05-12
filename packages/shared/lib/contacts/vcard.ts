@@ -356,3 +356,7 @@ export const extractVcards = (vcf = ''): string[] => {
     const strippedEndVcards = vcf.split('END:VCARD');
     return strippedEndVcards.filter((line) => isTruthy(line.trim())).map((vcard) => `${vcard}END:VCARD`.trim());
 };
+
+export const getContactHasName = (contact: VCardContact) => {
+    return !!contact.fn?.[0]?.value;
+};
