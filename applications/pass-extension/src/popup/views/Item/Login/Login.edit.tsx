@@ -43,7 +43,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     } = item;
 
     const dispatch = useDispatch();
-    const { totpLimitExceeded } = useUsageLimits();
+    const { totpLimitFilled } = useUsageLimits();
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -220,7 +220,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     icon="key"
                                 />
 
-                                {isEmptyString(form.values.totpUri) && totpLimitExceeded ? (
+                                {isEmptyString(form.values.totpUri) && totpLimitFilled ? (
                                     <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
                                         <UpgradeButton inline />
                                     </ValueControl>

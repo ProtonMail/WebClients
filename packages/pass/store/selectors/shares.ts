@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { Maybe, MaybeNull, Share, ShareType, VaultShare } from '@proton/pass/types';
+import type { Maybe, MaybeNull, Share, ShareType } from '@proton/pass/types';
 import { invert } from '@proton/pass/utils/fp';
 import { isVaultShare } from '@proton/pass/utils/pass/share';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
@@ -16,12 +16,23 @@ export const selectAllShares = createSelector(
 );
 
 export const selectAllVaults = createSelector([selectAllShares], (shares) => shares.filter(isVaultShare));
+
 export const selectAllVaultWithItemsCount = createSelector([selectAllVaults, selectItems], (shares, itemsByShareId) =>
     shares.map((share) => ({
         ...share,
         count: Object.values(itemsByShareId?.[share.shareId] ?? {}).filter(invert(isTrashed)).length,
     }))
 );
+
+export const selectPrimaryVault = createSelector([selectAllVaults], (vaults) => {
+    const primaryVault = vaults.find((vault) => vault.primary);
+
+    if (!primaryVault) {
+        throw new SelectorError(`Primary vault not found`);
+    }
+
+    return primaryVault;
+});
 
 export const selectShare =
     <T extends ShareType = ShareType>(shareId?: MaybeNull<string>) =>
@@ -39,16 +50,3 @@ export const selectShareOrThrow =
 
         return share;
     };
-
-export const selectDefaultVault = (state: State): Maybe<VaultShare> =>
-    Object.values(selectAllShares(state).filter(isVaultShare))[0];
-
-export const selectDefaultVaultOrThrow = (state: State): VaultShare => {
-    const defaultVault = selectDefaultVault(state);
-
-    if (!defaultVault) {
-        throw new SelectorError(`Default vault not found`);
-    }
-
-    return defaultVault;
-};

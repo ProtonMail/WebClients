@@ -2,7 +2,7 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
-import { itemCreationIntent, selectDefaultVaultOrThrow } from '@proton/pass/store';
+import { itemCreationIntent, selectPrimaryVault } from '@proton/pass/store';
 import { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
 import { ItemNewProps } from '../../../shared/items/types';
@@ -26,7 +26,7 @@ export const ItemNewContainer: VFC = () => {
     const { selectItem } = useNavigationContext();
     const { shareId: selectedShareId, setShareId } = useItemsFilteringContext();
 
-    const defaultVault = useSelector(selectDefaultVaultOrThrow);
+    const defaultVault = useSelector(selectPrimaryVault);
     const shareId = selectedShareId ?? defaultVault.shareId;
 
     const ItemNewComponent = itemNewMap[itemType];

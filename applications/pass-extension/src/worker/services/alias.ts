@@ -6,7 +6,7 @@ import {
     aliasOptionsRequested,
     itemCreationIntent,
     itemCreationSuccess,
-    selectDefaultVaultOrThrow,
+    selectPrimaryVault,
 } from '@proton/pass/store';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -18,7 +18,7 @@ import store from '../store';
 
 export const createAliasService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_OPTIONS, async () => {
-        const defaultVault = selectDefaultVaultOrThrow(store.getState());
+        const defaultVault = selectPrimaryVault(store.getState());
 
         return {
             options: await new Promise<AliasState['aliasOptions']>((resolve) =>
@@ -32,7 +32,7 @@ export const createAliasService = () => {
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {
-        const defaultVault = selectDefaultVaultOrThrow(store.getState());
+        const defaultVault = selectPrimaryVault(store.getState());
         const { realm, alias } = message.payload;
         const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
         const optimisticId = uniqueId();

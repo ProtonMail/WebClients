@@ -7,6 +7,7 @@ import { ThemeColor } from '@proton/colors/types';
 import clsx from '@proton/utils/clsx';
 
 import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
+import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 
@@ -29,6 +30,12 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * everytime the OTP countdown updates */
 export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId, totpUri }) => {
     const [otp, percent] = usePeriodicOtpCode({ shareId, itemId, totpUri });
+    const { isOverLimits, totpInLimitItemIds } = useUsageLimits();
+
+    const displayValue =
+        isOverLimits && !totpInLimitItemIds.includes(itemId)
+            ? c('Info').t`Not available in the free plan`
+            : renderOtpCodeDisplayValue(otp?.token ?? '');
 
     return (
         <ClickToCopyValueControl value={otp?.token ?? ''}>
@@ -50,7 +57,7 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId,
                     </div>
                 }
             >
-                {renderOtpCodeDisplayValue(otp?.token ?? '')}
+                {displayValue}
             </ValueControl>
         </ClickToCopyValueControl>
     );
