@@ -19,7 +19,7 @@ export const FORM_ID = 'vault-create';
 
 export const VaultNew: VFC<VaultFormConsumerProps> = ({ onSubmit, onSuccess, onFailure, onFormValidChange }) => {
     const dispatch = useDispatch();
-    const { vaultLimitExceeded } = useUsageLimits();
+    const { vaultLimitFilled } = useUsageLimits();
 
     const optimisticId = useMemo(() => uniqueId(), []);
     const requestId = useMemo(() => vaultCreate(optimisticId), [optimisticId]);
@@ -54,7 +54,7 @@ export const VaultNew: VFC<VaultFormConsumerProps> = ({ onSubmit, onSuccess, onF
 
     return (
         <>
-            {vaultLimitExceeded && (
+            {vaultLimitFilled && (
                 <ItemCard className="mb-4">
                     {c('Info')
                         .t`You have reached the limit of vaults you can create. Create an unlimited number of vaults when you upgrade your subscription.`}

@@ -6,13 +6,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { selectAllVaultWithItemsCount } from '@proton/pass/store/selectors';
+import { selectAllVaultWithItemsCount, selectPrimaryVault } from '@proton/pass/store/selectors';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { RadioButtonGroup, RadioLabelledButton } from '../../components/Field/RadioButtonGroupField';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
 import { VaultIcon } from '../../components/Vault/VaultIcon';
+import { useUsageLimits } from '../../hooks/useUsageLimits';
 
 export type Props = Omit<ModalProps, 'onSubmit'> & {
     shareId: string;
@@ -21,6 +22,8 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
 
 export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) => {
     const vaultsWithItemCount = useSelector(selectAllVaultWithItemsCount);
+    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
+    const { isOverLimits } = useUsageLimits();
 
     return (
         <SidebarModal {...props}>
@@ -44,7 +47,11 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
             >
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
                     {vaultsWithItemCount.map((vault) => (
-                        <RadioLabelledButton value={vault.shareId} key={vault.shareId}>
+                        <RadioLabelledButton
+                            value={vault.shareId}
+                            key={vault.shareId}
+                            disabled={isOverLimits && vault.shareId !== primaryVaultId}
+                        >
                             <VaultIcon
                                 size="large"
                                 color={vault.content.display.color}

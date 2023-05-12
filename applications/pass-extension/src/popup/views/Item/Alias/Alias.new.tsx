@@ -31,7 +31,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
     const { realm, subdomain } = usePopupContext();
     const [ready, setReady] = useState(false);
 
-    const { aliasLimitExceeded } = useUsageLimits();
+    const { aliasLimitFilled } = useUsageLimits();
 
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
@@ -108,11 +108,11 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             handleCancelClick={onCancel}
             valid={ready && form.isValid}
             discardable={!form.dirty}
-            renderSubmitButton={aliasLimitExceeded ? <UpgradeButton key="upgrade-button" /> : undefined}
+            renderSubmitButton={aliasLimitFilled ? <UpgradeButton key="upgrade-button" /> : undefined}
         >
             {({ canFocus }) => (
                 <>
-                    {aliasLimitExceeded && (
+                    {aliasLimitFilled && (
                         <ItemCard className="mb-2">
                             {c('Info')
                                 .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
@@ -127,7 +127,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={canFocus && !aliasLimitExceeded}
+                                    autoFocus={canFocus && !aliasLimitFilled}
                                     key={`alias-name-${canFocus}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />

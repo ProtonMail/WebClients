@@ -1,6 +1,12 @@
 import browser from '@proton/pass/globals/browser';
-import { itemAutofillIntent, itemUsed, selectAutofillCandidates, selectItemByShareIdAndId } from '@proton/pass/store';
-import type { Maybe, MaybeNull, Realm, SafeLoginItem } from '@proton/pass/types';
+import {
+    type SelectAutofillCandidatesOptions,
+    itemAutofillIntent,
+    itemUsed,
+    selectAutofillCandidates,
+    selectItemByShareIdAndId,
+} from '@proton/pass/store';
+import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
 
@@ -10,11 +16,8 @@ import { onContextReady } from '../context';
 import store from '../store';
 
 export const createAutoFillService = () => {
-    const getAutofillCandidates = (options: { realm: Realm; subdomain: MaybeNull<string> }): SafeLoginItem[] =>
-        selectAutofillCandidates(
-            options.realm,
-            options.subdomain
-        )(store.getState()).map((item) => ({
+    const getAutofillCandidates = (options: SelectAutofillCandidatesOptions): SafeLoginItem[] =>
+        selectAutofillCandidates(options)(store.getState()).map((item) => ({
             name: item.data.metadata.name,
             username: item.data.content.username,
             itemId: item.itemId,

@@ -24,6 +24,24 @@ const flattenItemsByShareId = (itemsByShareId: {
     [shareId: string]: { [itemId: string]: ItemRevision };
 }): ItemRevision[] => Object.values(itemsByShareId).flatMap(Object.values);
 
+const sortItems = <T extends (ItemRevision | ItemRevisionWithOptimistic)[]>(items: T, sort: ItemsSortOption) => {
+    return items.sort((a, b) => {
+        switch (sort) {
+            case 'createTimeASC':
+                return a.createTime - b.createTime;
+            case 'createTimeDESC':
+                return b.createTime - a.createTime;
+            case 'recent':
+                return (
+                    Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -
+                    Math.max(a.lastUseTime ?? a.modifyTime, a.modifyTime)
+                );
+            case 'titleASC':
+                return a.data.metadata.name.localeCompare(b.data.metadata.name);
+        }
+    }) as T;
+};
+
 export const selectByShareId = (state: State) => state.items.byShareId;
 export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
 export const selectItems = createSelector([selectByShareId], unwrapOptimisticState);
@@ -79,13 +97,17 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
-/**
- * SEARCH SELECTORS
- * selectMatchItems : select all items by needle
- * selectAutofillCandidates : select login items by url
- */
+export const selectItemsByType = <T extends ItemType>(type: T, sort: ItemsSortOption = 'recent') =>
+    createSelector(
+        [selectAllItems, () => type],
+        (items, type) =>
+            sortItems(
+                items.filter((item) => item.data.type === type),
+                sort
+            ) as ItemRevision<T>[]
+    );
 
-export type MatchItemsSelectorOptions = {
+export type SelectMatchItemsOptions = {
     matchItem: (item: Item) => (searchTerm: string) => boolean;
     needle?: string;
     shareId?: string;
@@ -93,14 +115,8 @@ export type MatchItemsSelectorOptions = {
     trash?: boolean;
 };
 
-export const selectItemsByType = <T extends ItemType>(type: T) =>
-    createSelector(
-        [selectAllItems, () => type],
-        (items, type) => items.filter((item) => item.data.type === type) as ItemRevision<T>[]
-    );
-
 export const selectMatchItems = createSelector(
-    [selectItemsWithOptimistic, (_: State, options: MatchItemsSelectorOptions) => options],
+    [selectItemsWithOptimistic, (_: State, options: SelectMatchItemsOptions) => options],
     (items, options) => {
         const { needle = '', shareId, sort = 'recent', trash = false, matchItem } = options;
 
@@ -111,21 +127,7 @@ export const selectMatchItems = createSelector(
         const matchedItems =
             needle.trim() === '' ? itemsByShareId : itemsByShareId.filter((item) => matchItem(item.data)(needle));
 
-        const sortedItems = matchedItems.sort((a, b) => {
-            switch (sort) {
-                case 'createTimeASC':
-                    return a.createTime - b.createTime;
-                case 'createTimeDESC':
-                    return b.createTime - a.createTime;
-                case 'recent':
-                    return (
-                        Math.max(b.lastUseTime ?? b.modifyTime, b.modifyTime) -
-                        Math.max(a.lastUseTime ?? a.modifyTime, a.modifyTime)
-                    );
-                case 'titleASC':
-                    return a.data.metadata.name.localeCompare(b.data.metadata.name);
-            }
-        });
+        const sortedItems = sortItems(matchedItems, sort);
 
         return {
             result: sortedItems,
@@ -159,10 +161,18 @@ export const selectItemsByURL = (url?: MaybeNull<string>) =>
  * level and other possible subdomain matches) with
  * top-level domain matches first
  */
-export const selectAutofillCandidates = (realm?: Realm, subdomain?: MaybeNull<string>) =>
+
+export type SelectAutofillCandidatesOptions = {
+    realm?: Realm;
+    shareId?: string;
+    subdomain?: MaybeNull<string>;
+};
+
+export const selectAutofillCandidates = ({ realm, shareId, subdomain }: SelectAutofillCandidatesOptions) =>
     createSelector([selectItemsByURL(realm), selectItemsByURL(subdomain)], (realmMatches, subdomainMatches) => [
         ...subdomainMatches,
         ...realmMatches
+            .filter((item) => !shareId || shareId === item.shareId)
             .map((item) => {
                 const urls = item.data.content.urls
                     .map((url) => {
