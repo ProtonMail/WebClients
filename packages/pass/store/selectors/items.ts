@@ -24,7 +24,7 @@ const flattenItemsByShareId = (itemsByShareId: {
     [shareId: string]: { [itemId: string]: ItemRevision };
 }): ItemRevision[] => Object.values(itemsByShareId).flatMap(Object.values);
 
-const sortItems = <T extends (ItemRevision | ItemRevisionWithOptimistic)[]>(items: T, sort: ItemsSortOption) => {
+export const sortItems = <T extends (ItemRevision | ItemRevisionWithOptimistic)[]>(items: T, sort: ItemsSortOption) => {
     return items.sort((a, b) => {
         switch (sort) {
             case 'createTimeASC':
@@ -97,14 +97,10 @@ export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
                 : undefined
     );
 
-export const selectItemsByType = <T extends ItemType>(type: T, sort: ItemsSortOption = 'recent') =>
+export const selectItemsByType = <T extends ItemType>(type: T) =>
     createSelector(
         [selectAllItems, () => type],
-        (items, type) =>
-            sortItems(
-                items.filter((item) => item.data.type === type),
-                sort
-            ) as ItemRevision<T>[]
+        (items, type) => items.filter((item) => item.data.type === type) as ItemRevision<T>[]
     );
 
 export type SelectMatchItemsOptions = {

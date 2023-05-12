@@ -1,8 +1,10 @@
 import { type VFC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { selectLimits } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -20,7 +22,6 @@ import { VaultSelectField } from '../../../components/Field/VaultSelectField';
 import { ItemCard } from '../../../components/Item/ItemCard';
 import { ItemCreatePanel } from '../../../components/Panel/ItemCreatePanel';
 import { usePopupContext } from '../../../hooks/usePopupContext';
-import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { AliasForm } from './Alias.form';
 import { type NewAliasFormValues, validateNewAliasForm } from './Alias.validation';
@@ -31,7 +32,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
     const { realm, subdomain } = usePopupContext();
     const [ready, setReady] = useState(false);
 
-    const { aliasLimitFilled } = useUsageLimits();
+    const { aliasLimitFilled } = useSelector(selectLimits);
 
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
