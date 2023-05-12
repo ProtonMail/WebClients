@@ -119,21 +119,21 @@ const MessageBody = ({
                 'message-content relative bg-norm color-norm overflow-hidden',
                 plain && 'plain',
                 isPrint && 'message-content-print',
-                isPrint || !isIframeContentSet ? '' : 'pt1 pb1 px1-25',
+                isPrint || !isIframeContentSet ? '' : 'py-4 px-5',
                 !placeholderMode && !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
                 hasQuickReply && 'message-content-has-quick-reply',
             ])}
             data-testid="message-content:body"
         >
-            {encryptedMode && <pre className="m-0 p1">{message.data?.Body}</pre>}
-            {sourceMode && <pre className="m-0 p1">{message.decryption?.decryptedBody}</pre>}
+            {encryptedMode && <pre className="m-0 p-4">{message.data?.Body}</pre>}
+            {sourceMode && <pre className="m-0 p-4">{message.decryption?.decryptedBody}</pre>}
             {placeholderMode && !encryptedMode && (
-                <div className="bg-norm color-norm p1">
-                    <div className="message-content-loading-placeholder mx-4 mb-1 max-w8e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-1 max-w50e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-1 max-w40e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-1 max-w50e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-1 max-w15e" />
+                <div className="bg-norm color-norm p-4">
+                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w8e" />
+                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w50e" />
+                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w40e" />
+                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w50e" />
+                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w15e" />
                     <div className="message-content-loading-placeholder mx-4 mb-4 max-w8e" />
                 </div>
             )}
@@ -142,7 +142,7 @@ const MessageBody = ({
                     className={clsx([
                         'message-iframe',
                         !contentModeShow && 'message-iframe--hidden',
-                        !isPrint && isIframeContentSet && 'p1',
+                        !isPrint && isIframeContentSet && 'p-4',
                     ])}
                 >
                     <MessageBodyIframe

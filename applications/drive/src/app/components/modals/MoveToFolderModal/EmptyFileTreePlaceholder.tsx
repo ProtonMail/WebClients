@@ -10,8 +10,8 @@ interface Props {
 const EmptyFileTreePlaceholder = ({ onCreate }: Props) => {
     const title = c('Title').t`You have no folders yet`;
     return (
-        <div className="p1 flex flex-column flex-align-items-center w100">
-            <img src={noContentSvg} alt={title} className="p1 mb-4 w50" />
+        <div className="p-4 flex flex-column flex-align-items-center w100">
+            <img src={noContentSvg} alt={title} className="p-4 mb-4 w50" />
             <h2 className="text-bold">{title}</h2>
             <p className="m-0">{c('Info').t`Create your first folder and start moving your files.`}</p>
             <div className="my-8 flex flex-column w13e">

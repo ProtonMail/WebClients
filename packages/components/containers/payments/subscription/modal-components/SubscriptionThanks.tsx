@@ -24,7 +24,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
     return (
         <div className="relative">
             {loading && (
-                <div className="text-center absolute absolute-center pb4">
+                <div className="text-center absolute absolute-center pb-14">
                     <CircleLoader size="large" className="color-primary" />
                 </div>
             )}
@@ -62,7 +62,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                         <img width="150" src={appStoreSvg} alt="App Store" />
                     </Href>
                 </div>
-                <div className="text-center pb2">
+                <div className="text-center pb-7">
                     <PrimaryButton fullWidth onClick={onClose} data-testid="modal:close">{c('Action')
                         .t`Close`}</PrimaryButton>
                 </div>

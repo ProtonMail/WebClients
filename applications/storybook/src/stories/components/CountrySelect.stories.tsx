@@ -38,7 +38,7 @@ export const PreSelect = () => {
 
     return (
         <>
-            <div className="flex flex-item-fluid flex-align-items-center flex-justify-center border p2">
+            <div className="flex flex-item-fluid flex-align-items-center flex-justify-center border p-7">
                 <CountrySelect
                     options={options}
                     preSelectedOption={options[0]}
@@ -46,7 +46,7 @@ export const PreSelect = () => {
                     hint={hint}
                 />
             </div>
-            <div className="flex flex-nowrap flex-gap-2 py2">
+            <div className="flex flex-nowrap gap-7 py-7">
                 <InputFieldTwo
                     label="Divider"
                     placeholder="Change the pre-selected option divider text"

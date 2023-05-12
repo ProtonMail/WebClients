@@ -6,10 +6,10 @@ const EmptyFileTreePlaceholder = () => {
     const title = c('Title').t`You have no files to share`;
 
     return (
-        <div className="p1 flex flex-column flex-align-items-center w100">
-            <img src={noContentSvg} alt={title} className="p1 mb-4 w50" />
+        <div className="p-4 flex flex-column flex-align-items-center w100">
+            <img src={noContentSvg} alt={title} className="p-4 mb-4 w50" />
             <h2 className="text-bold">{title}</h2>
-            <p className="m-0 pb3">{c('Info').t`Go to "My files" and upload some files first.`}</p>
+            <p className="m-0 pb-11">{c('Info').t`Go to "My files" and upload some files first.`}</p>
         </div>
     );
 };

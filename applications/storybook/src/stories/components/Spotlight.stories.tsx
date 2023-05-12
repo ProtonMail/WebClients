@@ -56,7 +56,7 @@ export const Sandbox = () => {
     };
 
     return (
-        <div className="p2">
+        <div className="p-7">
             <div className="flex flex-align-items-stretch">
                 <div className="mr-8">
                     <strong className="block mb-4">Target size</strong>

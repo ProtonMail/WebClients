@@ -24,7 +24,7 @@ import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmMod
 
 const BorderedWarningText = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="mb-4 p1 border border-weak rounded">
+        <div className="mb-4 p-4 border border-weak rounded">
             <Icon className="color-danger mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
             {children}
         </div>

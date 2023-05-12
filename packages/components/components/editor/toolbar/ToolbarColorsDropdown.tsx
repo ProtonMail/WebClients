@@ -40,7 +40,7 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
             data-testid="editor-font-color"
             title={c('Action').t`Color`}
         >
-            <div className="p1">
+            <div className="p-4">
                 <Tabs tabs={tabs} value={tabIndex} onChange={setTabIndex} />
             </div>
         </ToolbarDropdown>

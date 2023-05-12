@@ -174,7 +174,7 @@ const CalendarShareSection = ({
                 ) : (
                     <Card rounded className="mt-4" data-testid="card:upgrade">
                         <div className="flex flex-nowrap flex-align-items-center">
-                            <p className="flex-item-fluid my-0 pr2">
+                            <p className="flex-item-fluid my-0 pr-7">
                                 {c('Upgrade notice')
                                     .t`Upgrade to a ${MAIL_SHORT_APP_NAME} paid plan to share your calendar.`}
                             </p>

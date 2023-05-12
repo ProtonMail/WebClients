@@ -17,7 +17,7 @@ export default {
 };
 
 export const Hidden = () => (
-    <div className="p2 bg-weak">
+    <div className="p-7 bg-weak">
         Here are two hidden elements:
         <p hidden>I'm hidden</p>
         <p className="hidden">I'm also hidden</p>
@@ -25,7 +25,7 @@ export const Hidden = () => (
 );
 
 export const HiddenEmpty = () => (
-    <div className="p2 bg-weak">
+    <div className="p-7 bg-weak">
         Here are two elements, one empty, one not empty:
         <p className="hidden-empty m-0">I'm not empty</p>
         <p className="hidden-empty m-0">{/* I'm empty */}</p>
@@ -33,7 +33,7 @@ export const HiddenEmpty = () => (
 );
 
 export const VisibilityHidden = () => (
-    <div className="p2 bg-weak">
+    <div className="p-7 bg-weak">
         Here is one hidden element
         <span className="visibility-hidden">I'm hidden but still need my space</span>
         which still keeps its space
@@ -41,7 +41,7 @@ export const VisibilityHidden = () => (
 );
 
 export const Screenreaders = () => (
-    <div className="p2 bg-weak">
+    <div className="p-7 bg-weak">
         <Button>
             <Icon name="emoji" />
             <span className="sr-only">I'm hidden but will can vocalized when using a screen reader</span>
@@ -50,7 +50,7 @@ export const Screenreaders = () => (
 );
 
 export const PointerEventsNone = () => (
-    <div className="p2 bg-weak">
+    <div className="p-7 bg-weak">
         <Button className="no-pointer-events mr-8">Hover me (no-pointer-events)</Button>
         <Button>Hover me (default)</Button>
     </div>

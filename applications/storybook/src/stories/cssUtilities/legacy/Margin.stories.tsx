@@ -52,7 +52,7 @@ const Code = ({ children }: CodeProps) => (
 export const Margin = () => {
     return (
         <div
-            className="border rounded w100 relative flex flex-nowrap flex-gap-0-5 scroll-if-needed flex-align-items-center flex-justify-space-between"
+            className="border rounded w100 relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center flex-justify-space-between"
             style={{ height: '9rem' }}
         >
             {marginSize.map((size) => (
