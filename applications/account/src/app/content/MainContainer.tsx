@@ -92,6 +92,7 @@ const MainContainer = () => {
         FeatureCode.SpyTrackerProtection,
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
+        FeatureCode.MailForwarding,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.HolidaysCalendars,
         FeatureCode.EasySwitch,
