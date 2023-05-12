@@ -22,6 +22,7 @@ import {
     getIsCalendarWritable,
     getIsOwnedCalendar,
     getIsSubscribedCalendar,
+    getIsUnknownCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
@@ -99,6 +100,7 @@ const EventPopover = ({
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
     const isOwnedCalendar = getIsOwnedCalendar(calendarData);
+    const isUnknownCalendar = getIsUnknownCalendar(calendarData);
     const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const recurrenceDate = toLocalDate(fromUTCDate(start));
@@ -180,7 +182,7 @@ const EventPopover = ({
     const reloadText = c('Reload event button tooltip').t`Reload event`;
     const viewText = c('View event button tooltip').t`Open in a new tab`;
 
-    const editButton = getCanEditEvent({ isCalendarDisabled }) && (
+    const editButton = getCanEditEvent({ isUnknownCalendar, isCalendarDisabled }) && (
         <Tooltip title={editText}>
             <ButtonLike
                 data-testid="event-popover:edit"
@@ -210,6 +212,7 @@ const EventPopover = ({
     );
     const duplicateButton = onDuplicate &&
         getCanDuplicateEvent({
+            isUnknownCalendar,
             isSubscribedCalendar,
             isOwnedCalendar,
             isOrganizer: model.isOrganizer,
