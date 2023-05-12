@@ -6,7 +6,7 @@ import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/inter
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useAddressFlags, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import DeleteAddressModal from './DeleteAddressModal';
 import DisableAddressModal from './DisableAddressModal';
 import { AddressPermissions } from './helper';
@@ -22,6 +22,34 @@ interface Props {
     permissions: AddressPermissions;
 }
 
+const useAddressFlagsActionsList = (address: Address) => {
+    const addressFlags = useAddressFlags(address);
+    if (!addressFlags) {
+        return [];
+    }
+
+    const { encryptionDisabled, expectSignatureDisabled, handleSetAddressFlags } = addressFlags;
+
+    return [
+        encryptionDisabled && {
+            text: c('Address action').t`Enable encryption`,
+            onClick: () => handleSetAddressFlags(false, expectSignatureDisabled),
+        },
+        !encryptionDisabled && {
+            text: c('Address action').t`Disable encryption`,
+            onClick: () => handleSetAddressFlags(true, expectSignatureDisabled),
+        },
+        expectSignatureDisabled && {
+            text: c('Address action').t`Enable expect signed`,
+            onClick: () => handleSetAddressFlags(encryptionDisabled, false),
+        },
+        !expectSignatureDisabled && {
+            text: c('Address action').t`Disable expect signed`,
+            onClick: () => handleSetAddressFlags(encryptionDisabled, true),
+        },
+    ];
+};
+
 const AddressActions = ({
     address,
     member,
@@ -35,6 +63,7 @@ const AddressActions = ({
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const addressFlagsActionsList = useAddressFlagsActionsList(address);
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
@@ -88,6 +117,7 @@ const AddressActions = ({
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
                       } as const),
+                  ...addressFlagsActionsList,
               ].filter(isTruthy);
 
     return (
