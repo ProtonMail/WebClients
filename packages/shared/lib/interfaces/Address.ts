@@ -1,4 +1,4 @@
-import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
+import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
 import { AddressKey } from './Key';
 import { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
@@ -17,6 +17,7 @@ export interface Address {
     Signature: string;
     Status: ADDRESS_STATUS;
     Type: ADDRESS_TYPE;
+    Flags?: ADDRESS_FLAGS;
 }
 
 export interface DomainAddress extends Omit<Address, 'SignedKeyList' | 'Keys'> {

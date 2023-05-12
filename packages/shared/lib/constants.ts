@@ -402,6 +402,11 @@ export enum ADDRESS_SEND {
     SEND_NO = 0,
 }
 
+export enum ADDRESS_FLAGS {
+    FLAG_DISABLE_E2EE = 16,
+    FLAG_DISABLE_EXPECTED_SIGNED = 32,
+}
+
 export enum MEMBER_PRIVATE {
     READABLE = 0,
     UNREADABLE = 1,
@@ -758,9 +763,9 @@ export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
 };
 
 export enum KEY_FLAG {
-    NO_EMAIL_SIGN = 8,
+    FLAG_EMAIL_NO_SIGN = 8,
     // Flag used for external addresses
-    NO_EMAIL_ENCRYPT = 4,
+    FLAG_EMAIL_NO_ENCRYPT = 4,
     // Key can be used to encrypt
     FLAG_NOT_OBSOLETE = 2,
     // Key can be used to verify signatures
