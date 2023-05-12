@@ -19,11 +19,13 @@ import {
     EncryptedContact,
     ImportContactsModel,
 } from '../../interfaces/contacts/Import';
-import { VCardContact } from '../../interfaces/contacts/VCard';
+import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
 import { SimpleMap } from '../../interfaces/utils';
 import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
-import { parseToVCard } from '../vcard';
+import { createContactPropertyUid } from '../properties';
+import { getSupportedContactName } from '../surgery';
+import { getContactHasName, parseToVCard } from '../vcard';
 
 export const getIsAcceptedExtension = (extension: string): extension is ACCEPTED_EXTENSIONS => {
     return Object.values(EXTENSION).includes(extension as EXTENSION);
@@ -77,15 +79,38 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
 };
 
 export const getSupportedContact = (vcard: string) => {
-    if (vcard.includes('VERSION:2.1')) {
-        const contactId = getContactId(vcard);
-        return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
-    }
     try {
-        return parseToVCard(vcard);
-    } catch (error: any) {
         const contactId = getContactId(vcard);
-        return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
+
+        if (vcard.includes('VERSION:2.1')) {
+            throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
+        }
+
+        const contact = parseToVCard(vcard);
+
+        if (!getContactHasName(contact)) {
+            const supportedContactName = getSupportedContactName(contact);
+
+            if (!supportedContactName) {
+                throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.MISSING_FN, contactId);
+            }
+
+            const supportedFnProperty: VCardProperty<string> = {
+                field: 'fn',
+                uid: createContactPropertyUid(),
+                value: supportedContactName,
+            };
+
+            contact.fn = [supportedFnProperty];
+        }
+
+        return contact;
+    } catch (error: any) {
+        if (error instanceof ImportContactError) {
+            throw error;
+        }
+        const contactId = getContactId(vcard);
+        throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
     }
 };
 
