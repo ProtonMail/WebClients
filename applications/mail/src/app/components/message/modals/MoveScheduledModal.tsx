@@ -24,7 +24,8 @@ const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomActio
         <Prompt
             title={c('Title').t`Moving a scheduled message`}
             buttons={[
-                <Button color="norm" onClick={onResolve}>{c('Action').t`OK`}</Button>,
+                <Button color="norm" onClick={onResolve} data-testid="moveScheduledMessage">{c('Action')
+                    .t`OK`}</Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
