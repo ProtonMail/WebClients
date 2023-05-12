@@ -24,7 +24,7 @@ interface ContainerProps {
 }
 
 const Container = ({ children }: ContainerProps) => (
-    <div className="flex h100 scroll-if-needed pt1 pb1 pr2 pl2">
+    <div className="flex h100 scroll-if-needed py-4 px-7">
         <div className="m-auto text-center max-w30e">{children}</div>
     </div>
 );

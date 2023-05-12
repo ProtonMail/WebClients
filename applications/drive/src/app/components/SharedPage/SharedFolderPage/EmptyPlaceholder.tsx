@@ -9,7 +9,7 @@ import noContentSvg from '@proton/styles/assets/img/illustrations/shared-page-em
 export const EmptyPlaceholder = () => (
     <div className="flex flex-item-fluid flex-justify-center shared-folder-empty-placeholder-container">
         <EmptyViewContainer
-            className="p1"
+            className="p-4"
             imageProps={{ src: noContentSvg, title: c('Info').t`Nothing here yet` }}
             data-testid="shared-folder-empty-placeholder"
         >

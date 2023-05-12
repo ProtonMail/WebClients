@@ -78,7 +78,7 @@ const MorePopoverEvent = ({
     return (
         <PopoverContainer
             style={isNarrow ? undefined : style}
-            className="eventpopover flex flex-nowrap flex-column pt2 pl1-5 pr1-5 pb2"
+            className="eventpopover flex flex-nowrap flex-column py-7 px-5"
             ref={popoverRef}
         >
             <PopoverHeader onClose={onClose} className="flex-item-noshrink">

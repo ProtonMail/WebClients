@@ -87,7 +87,7 @@ const AddressesContactsModal = ({
                 </TableBody>
             </Table>
             {value.length > 0 && (
-                <div className="composer-addresses-container flex-item-fluid pl1-25 pr1-25">
+                <div className="composer-addresses-container flex-item-fluid px-5">
                     {value.map((recipient) => (
                         <AddressesRecipientItem
                             key={recipient.Address}

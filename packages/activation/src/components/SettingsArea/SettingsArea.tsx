@@ -25,7 +25,7 @@ const SettingsArea = ({ config }: Props) => {
         <EasySwitchStoreProvider>
             {loading ? (
                 <PrivateMainSettingsAreaBase title={config.text} description={config.description}>
-                    <Loader size="medium" className="py4 text-center" />
+                    <Loader size="medium" className="py-14 text-center" />
                 </PrivateMainSettingsAreaBase>
             ) : (
                 <PrivateMainSettingsArea config={config}>

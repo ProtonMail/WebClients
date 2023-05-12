@@ -4,7 +4,7 @@ import { Loader, ModalTwoContent, TextLoader } from '@proton/components';
 
 const ModalContentLoader: React.FunctionComponent = ({ children }) => {
     return (
-        <div className="modal-content pt2 pb2">
+        <div className="modal-content py-7">
             <ModalTwoContent className="my-8">
                 <div className="flex flex-column flex-align-items-center">
                     <Loader size="medium" className="my-4" />

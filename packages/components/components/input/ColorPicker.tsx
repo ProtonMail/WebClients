@@ -54,7 +54,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
                 isOpen={isOpen}
                 onClick={toggle}
             >
-                <span className="flex-item-fluid text-left flex flex-nowrap flex-align-items-center flex-gap-0-5">
+                <span className="flex-item-fluid text-left flex flex-nowrap flex-align-items-center gap-2">
                     <Icon className="flex-item-noshrink" name="circle-filled" size={28} color={iconColor} />
                     {colorName && <span className="text-capitalize text-ellipsis">{colorName}</span>}
                 </span>

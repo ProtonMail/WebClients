@@ -138,7 +138,7 @@ export const Tabs = ({
             {gap}
             <div
                 id={key}
-                className={classnames(['tabs-tabcontent pt1', contentClassName])}
+                className={classnames(['tabs-tabcontent pt-4', contentClassName])}
                 role="tabpanel"
                 aria-labelledby={label}
             >

@@ -185,7 +185,7 @@ const ContactsWidgetGroupsContainer = ({
                     {c('Info').ngettext(msgid`${groupCounts} group found`, `${groupCounts} groups found`, groupCounts)}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar py1 border-bottom border-weak flex-item-noshrink">
+            <div className="contacts-widget-toolbar py-4 border-bottom border-weak flex-item-noshrink">
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
                     selected={selectedIDs}

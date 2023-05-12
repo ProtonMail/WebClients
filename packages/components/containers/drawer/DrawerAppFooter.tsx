@@ -46,7 +46,7 @@ const DrawerAppFooter = ({ buttons }: Props) => {
 
     return (
         <div className="relative" ref={ref}>
-            <Footer className="p1 flex-column flex-gap-0-5">{clonedButtons}</Footer>
+            <Footer className="p-4 flex-column gap-2">{clonedButtons}</Footer>
         </div>
     );
 };

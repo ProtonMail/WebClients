@@ -47,7 +47,7 @@ const YahooMailInstructions = () => {
                 {yahooAppPasswordMessage}
             </div>
 
-            <ol className="pl1 mx-8">
+            <ol className="pl-4 mx-8">
                 <li className="mb-2">{step1}</li>
                 <li className="mb-2">{step2}</li>
                 <li className="mb-2">{step3}</li>
