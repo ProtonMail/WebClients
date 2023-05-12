@@ -5,6 +5,8 @@ import {
     itemUsed,
     selectAutofillCandidates,
     selectItemByShareIdAndId,
+    selectLimits,
+    selectPrimaryVault,
 } from '@proton/pass/store';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -49,7 +51,14 @@ export const createAutoFillService = () => {
                 tabs.map(({ id: tabId, url, active }) => {
                     const { domain: realm, subdomain } = parseUrl(url ?? '');
                     if (tabId && realm) {
-                        const items = getAutofillCandidates({ realm, subdomain });
+                        const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
+                        const { isOverLimits } = selectLimits(store.getState());
+
+                        const items = getAutofillCandidates({
+                            realm,
+                            subdomain,
+                            shareId: isOverLimits ? primaryVaultId : undefined,
+                        });
                         const count = items.length;
 
                         if (active) {

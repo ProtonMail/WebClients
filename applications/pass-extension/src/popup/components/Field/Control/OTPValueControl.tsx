@@ -1,13 +1,14 @@
 import { type VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Donut } from '@proton/atoms/Donut';
 import { ThemeColor } from '@proton/colors/types';
+import { selectLimits } from '@proton/pass/store';
 import clsx from '@proton/utils/clsx';
 
 import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
-import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 
@@ -30,7 +31,7 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * everytime the OTP countdown updates */
 export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId, totpUri }) => {
     const [otp, percent] = usePeriodicOtpCode({ shareId, itemId, totpUri });
-    const { isOverLimits, totpInLimitItemIds } = useUsageLimits();
+    const { isOverLimits, totpInLimitItemIds } = useSelector(selectLimits);
 
     const displayValue =
         isOverLimits && !totpInLimitItemIds.includes(itemId)

@@ -1,9 +1,11 @@
 import { type FC, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, type ModalProps } from '@proton/components/components';
+import { selectLimits } from '@proton/pass/store';
 import type { VaultShare } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import noop from '@proton/utils/noop';
@@ -12,7 +14,6 @@ import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarMod
 import { UpgradeButton } from '../../components/Button/UpgradeButton';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
-import { useUsageLimits } from '../../hooks/useUsageLimits';
 import { VaultEdit, FORM_ID as VaultEditFormId } from './Vault.edit';
 import { type VaultFormConsumerProps } from './Vault.form';
 import { VaultNew, FORM_ID as VaultNewFormId } from './Vault.new';
@@ -29,7 +30,7 @@ export type Props = {
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {
     const [loading, setLoading] = useState(false);
     const [canSubmit, setCanSubmit] = useState(payload.type === 'edit');
-    const { vaultLimitFilled } = useUsageLimits();
+    const { vaultLimitFilled } = useSelector(selectLimits);
 
     const vaultViewProps = useMemo<VaultFormConsumerProps>(
         () => ({

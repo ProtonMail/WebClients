@@ -1,12 +1,12 @@
 import { type ReactElement, type VFC } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { itemCreationIntent } from '@proton/pass/store';
+import { itemCreationIntent, selectLimits } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
@@ -26,7 +26,6 @@ import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
-import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditLoginItemFormValues, useLoginItemAliasModal, validateEditLoginForm } from './Login.validation';
@@ -43,7 +42,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     } = item;
 
     const dispatch = useDispatch();
-    const { totpLimitFilled } = useUsageLimits();
+    const { totpLimitFilled } = useSelector(selectLimits);
 
     const initialValues: EditLoginItemFormValues = {
         name,
