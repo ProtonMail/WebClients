@@ -25,7 +25,7 @@ const SpamFiltersNav = ({ selected, onChange }: Props) => (
                 key={type}
                 onClick={() => onChange(type)}
                 className={classnames([
-                    'cursor-pointer inline-block border-bottom padding p1 text-center',
+                    'cursor-pointer inline-block border-bottom padding p-4 text-center',
                     selected !== type && 'color-weak',
                     selected === type && 'border-primary text-bold color-norm',
                 ])}

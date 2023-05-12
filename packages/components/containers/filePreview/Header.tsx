@@ -65,7 +65,7 @@ const Header = ({
     };
 
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center p2 relative">
+        <div className="flex flex-justify-space-between flex-align-items-center p-7 relative">
             <div
                 className="file-preview-filename flex flex-align-items-center flex-nowrap"
                 data-testid="preview:file-name"
@@ -96,7 +96,7 @@ const Header = ({
                         title={c('Action').t`Restore`}
                         onClick={onRestore}
                         shape="solid"
-                        className="ml0-5 mr-2 lg:mr-11"
+                        className="mx-2 lg:mr-11"
                         color="norm"
                         data-testid="file-preview:actions:restore"
                     >

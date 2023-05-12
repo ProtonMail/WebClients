@@ -37,7 +37,7 @@ const InviteActions = () => {
             >
                 <ReferralSignatureToggle />
                 {!showHowItWorksSection && (
-                    <div className="ml-auto pl1">
+                    <div className="ml-auto pl-4">
                         <InlineLinkButton
                             onClick={() => {
                                 setShowHowItWorksSection(true);

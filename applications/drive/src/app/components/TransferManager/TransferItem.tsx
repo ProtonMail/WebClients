@@ -47,7 +47,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
     return (
         <div
             className={clsx([
-                'transfers-manager-list-item pb1 pt1 pl1 pr1',
+                'transfers-manager-list-item p-4',
                 isCanceled && 'transfers-manager-list-item--canceled',
                 className,
             ])}

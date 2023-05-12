@@ -173,7 +173,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                     onDragOver={preventDefaultEvent}
                     onDrop={handleDrop}
                 >
-                    <section className="upload-drag-drop-infobox p4 pt3">
+                    <section className="upload-drag-drop-infobox p-14 pt-11">
                         <img className="upload-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
                         <h2 className="text-bold mt-4 mb-0">{c('Title').t`Drop to upload`}</h2>
                         <p className="mt-4 mb-0">{c('Info').t`Your files will be encrypted and then saved.`}</p>

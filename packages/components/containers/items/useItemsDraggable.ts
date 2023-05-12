@@ -106,7 +106,7 @@ const useItemsDraggable = <Item extends AbstractItem>(
 
             const dragElement = document.createElement('div');
             dragElement.innerHTML = getDragHtml(selection);
-            dragElement.className = 'drag-element p1 border rounded';
+            dragElement.className = 'drag-element p-4 border rounded';
             dragElement.id = generateUID(DRAG_ITEM_ID_KEY);
             // Wiring the dragend event on the drag element because the one from drag start is not reliable
             dragElement.addEventListener('dragend', (event) => handleDragSucceed(event.dataTransfer?.dropEffect));

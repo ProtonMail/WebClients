@@ -271,7 +271,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
                             <TableRow
                                 key={address.ID}
                                 cells={[
-                                    <span key={0} className="text-ellipsis block pr1" title={address.Email}>
+                                    <span key={0} className="text-ellipsis block pr-4" title={address.Email}>
                                         {address.Email}
                                     </span>,
                                     <MissingKeysStatus key={1} {...address.status} />,

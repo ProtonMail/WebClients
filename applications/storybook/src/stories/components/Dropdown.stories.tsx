@@ -49,7 +49,7 @@ export const Basic = () => {
                         );
                     })}
                 </DropdownMenu>
-                <div className="p1">
+                <div className="p-4">
                     <Button className="w100" color="norm">
                         Action
                     </Button>
@@ -140,7 +140,7 @@ export const Size = () => {
                 autoClose={false}
                 autoCloseOutside={false}
             >
-                <Collapsible className="p1">
+                <Collapsible className="p-4">
                     <CollapsibleHeader
                         suffix={
                             <CollapsibleHeaderIconButton>

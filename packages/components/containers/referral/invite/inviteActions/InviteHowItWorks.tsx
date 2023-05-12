@@ -13,7 +13,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
     const planName = PLAN_NAMES[PLANS.MAIL];
 
     return (
-        <div className="relative rounded p2 bg-primary">
+        <div className="relative rounded p-7 bg-primary">
             <Button
                 className="absolute top right"
                 icon
@@ -25,7 +25,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
             </Button>
             <h2 className="text-bold">{c('Title').t`How to refer a friend and get credits`}</h2>
 
-            <ol className="flex flex-nowrap flex-gap-1 unstyled on-tablet-flex-column mb-8">
+            <ol className="flex flex-nowrap gap-4 unstyled on-tablet-flex-column mb-8">
                 <li className="flex-item-fluid">
                     <h3 className="mb-2 text-bold">{c('Info').t`1. Invite friends to ${BRAND_NAME}`}</h3>
                     {c('Info').t`Just send them your personal referral link.`}
