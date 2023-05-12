@@ -1,4 +1,5 @@
 import type { VFC } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -12,6 +13,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
+import { selectLimits } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
@@ -21,7 +23,6 @@ import { itemTypeToItemClassName } from '../../../shared/items/className';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
-import { useUsageLimits } from '../../hooks/useUsageLimits';
 import { OnboardingPanel } from '../Onboarding/OnboardingPanel';
 import { usePasswordGeneratorContext } from '../PasswordGenerator/PasswordGeneratorContext';
 import { MenuDropdown } from './MenuDropdown';
@@ -50,7 +51,7 @@ export const Header: VFC<{}> = () => {
     const { generatePassword } = usePasswordGeneratorContext();
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
-    const { aliasUsed, aliasLimit, aliasLimitFilled } = useUsageLimits();
+    const { aliasUsed, aliasLimit, aliasLimitFilled } = useSelector(selectLimits);
 
     const handleNewItemClick = (type: ItemType) => {
         // Trick to be able to return to the initial route using history.goBack() if user switches

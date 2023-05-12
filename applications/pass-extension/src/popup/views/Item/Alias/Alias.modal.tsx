@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
+import { selectLimits } from '@proton/pass/store';
 
 import { SidebarModal } from '../../../../shared/components/sidebarmodal/SidebarModal';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
@@ -13,7 +15,6 @@ import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { ItemCard } from '../../../components/Item/ItemCard';
 import { PanelHeader } from '../../../components/Panel/Header';
 import { Panel } from '../../../components/Panel/Panel';
-import { useUsageLimits } from '../../../hooks/useUsageLimits';
 import { AliasForm } from './Alias.form';
 import { type AliasFormValues, validateAliasForm } from './Alias.validation';
 
@@ -35,7 +36,7 @@ export const AliasModal = <T extends AliasFormValues>({
     ...modalProps
 }: AliasModalProps<T>) => {
     const [ready, setReady] = useState(false);
-    const { aliasLimitFilled } = useUsageLimits();
+    const { aliasLimitFilled } = useSelector(selectLimits);
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({ shareId });
 
