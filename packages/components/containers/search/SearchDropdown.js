@@ -48,7 +48,7 @@ const SearchDropdown = ({
                 anchorRef={anchorRef}
                 onClose={close}
             >
-                <form className="p1" name="search-dropdown" onSubmit={handleSubmit}>
+                <form className="p-4" name="search-dropdown" onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <SearchInput
                             autoFocus

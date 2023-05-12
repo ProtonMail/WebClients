@@ -15,7 +15,7 @@ const showUnsupported = () => {
     // Not using getKnowledgeBaseUrl( to minimize the bundle size since it apparently doesn't tree-shake the bundle correctly and adds an extra 40k
 
     document.body.innerHTML = `
-        <div class='h100 flex flex-align-items-center pb4 scroll-if-needed'>
+        <div class='h100 flex flex-align-items-center pb-14 scroll-if-needed'>
             <div class='m-auto text-center max-w30e'>
                 <h1 class='text-bold text-4xl'>Unsupported browser</h1>
                 <p>
@@ -34,7 +34,7 @@ const showUnsupported = () => {
 
 const showError = () => {
     document.body.innerHTML = `
-        <div class='h100 flex flex-align-items-center pb4 scroll-if-needed'>
+        <div class='h100 flex flex-align-items-center pb-14 scroll-if-needed'>
             <div class='m-auto text-center max-w30e'>
                 <div class='mb-8'>
                     <img src='${errorImg}' alt='Error'/>

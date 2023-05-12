@@ -35,7 +35,7 @@ const ImportTypeButton = ({ importType, onClick, disabled }: ImportTypeButtonPro
     return (
         <Button
             aria-label={typeMap[importType].title}
-            className="flex flex-align-center flex-justify-center pt1-5 pb1 pl2 pr2"
+            className="flex flex-align-center flex-justify-center pt-5 pb-4 px-7"
             color="weak"
             disabled={disabled}
             onClick={onClick}
@@ -44,7 +44,7 @@ const ImportTypeButton = ({ importType, onClick, disabled }: ImportTypeButtonPro
             type="button"
             data-testid="MailModal:ProductButton"
         >
-            <span className="flex flex-nowrap flex-column pl1 pr1">
+            <span className="flex flex-nowrap flex-column px-4">
                 <img src={typeMap[importType].illustration} alt="" className="w5e mb-4" />
                 <span>{typeMap[importType].text}</span>
             </span>

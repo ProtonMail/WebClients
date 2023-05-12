@@ -326,7 +326,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center py-2 px-4"
                         >
                             <Checkbox
-                                className="flex-item-noshrink mrO-5"
+                                className="flex-item-noshrink mr-2"
                                 id={labelCheckID(ID)}
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}

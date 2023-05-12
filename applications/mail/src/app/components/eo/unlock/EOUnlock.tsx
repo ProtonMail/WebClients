@@ -46,7 +46,7 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
                     <MessageDecryptForm onSubmit={handleTryUnlock} />
                 )}
             </div>
-            <div className="flex p1 ml-auto mb-8">
+            <div className="flex p-4 ml-auto mb-8">
                 <Href className="mx-auto" href={getKnowledgeBaseUrl('/open-password-protected-emails')}>{c(
                     'Action'
                 ).t`Need help?`}</Href>

@@ -11,9 +11,9 @@ import SharedPageLayout from '../Layout/SharedPageLayout';
 export default function SharedPageError() {
     return (
         <SharedPageLayout>
-            <div className="flex flex-item-fluid flex-align-items-center py2 mb-14">
-                <div className="password-page--form-container ui-standard w100 relative shadow-lifted mw30r max-w100 mx-auto px2-25 py3 rounded">
-                    <figure className="flex flex-justify-center pb2">
+            <div className="flex flex-item-fluid flex-align-items-center py-7 mb-14">
+                <div className="password-page--form-container ui-standard w100 relative shadow-lifted mw30r max-w100 mx-auto px-8 py-11 rounded">
+                    <figure className="flex flex-justify-center pb-7">
                         <img className="hauto" src={notFoundSvg} alt={c('Info').t`Shared link not found`} />
                     </figure>
                     <h3 className="text-center text-bold">{c('Title').t`Hm, we couldn't find that one`}</h3>

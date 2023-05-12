@@ -73,7 +73,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
 
     return (
         <Bordered className="bg-weak rounded">
-            <div className="p1 border-bottom">
+            <div className="p-4 border-bottom">
                 <BitcoinQRCode
                     className="flex flex-align-items-center flex-column"
                     amount={model.amountBitcoin}
@@ -81,7 +81,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
                 />
             </div>
             <BitcoinDetails amount={model.amountBitcoin} address={model.address} />
-            <div className="pt1 pl1 pr1">
+            <div className="pt-4 px-4">
                 {type === 'invoice' ? (
                     <div className="mb-4">{c('Info')
                         .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</div>

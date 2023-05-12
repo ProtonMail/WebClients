@@ -87,7 +87,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                                 )}
                             </div>
                         </Summary>
-                        <div className="p1">
+                        <div className="p-4">
                             <ConfigsTable
                                 {...rest}
                                 category={category}

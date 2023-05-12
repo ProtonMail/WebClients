@@ -314,7 +314,7 @@ const EventPopover = ({
 
     if (isEventReadLoading) {
         return (
-            <PopoverContainer {...commonContainerProps} className="eventpopover p1">
+            <PopoverContainer {...commonContainerProps} className="eventpopover p-4">
                 <Loader />
             </PopoverContainer>
         );

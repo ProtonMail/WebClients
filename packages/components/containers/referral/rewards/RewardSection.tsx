@@ -40,7 +40,7 @@ const RewardSection = () => {
             )}
 
             {showRewardSection && (
-                <div className="border-bottom pb1 mb-14">
+                <div className="border-bottom pb-4 mb-14">
                     <RewardsProgress rewardsLimit={rewardsLimit} rewards={rewards} />
                 </div>
             )}

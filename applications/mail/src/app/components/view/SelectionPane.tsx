@@ -156,7 +156,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
         return (
-            <div className="flex h100 pt1 pb1 pr2 pl2">
+            <div className="flex h100 py-4 px-7">
                 <div className="m-auto text-center max-w30e">
                     <Loader />
                 </div>
@@ -165,7 +165,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     }
 
     return (
-        <div className="m-auto text-center p2 max-w100">
+        <div className="m-auto text-center p-7 max-w100">
             {showSimpleLoginPlaceholder ? (
                 <SimpleLoginPlaceholder />
             ) : (

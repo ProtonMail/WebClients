@@ -42,7 +42,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                 className="dropdown-content--wide advanced-search-dropdown search-dropdown"
                 disableDefaultArrowNavigation
             >
-                <div className="pl1-5 pr1-5 pt1-5 pb1">
+                <div className="px-5 pt-5 pb-4">
                     <div>
                         <div className="flex">
                             <span className="inline-flex text-bold text-lg">
