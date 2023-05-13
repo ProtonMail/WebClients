@@ -27,7 +27,7 @@ import {
     getE2Encryption,
     getForwardingMailboxes,
     getHideMyEmailAliases,
-    getPasswordsAndNotes,
+    getLoginsAndNotes,
     getSharing,
     getVaults,
 } from './pass';
@@ -137,7 +137,7 @@ export const getFreePassPlan = (): ShortPlan => {
         description: c('new_plans: info')
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getPasswordsAndNotes(), getDevices(), getHideMyEmailAliases(FREE_PASS_ALIASES), getE2Encryption()],
+        features: [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(FREE_PASS_ALIASES), getE2Encryption()],
     };
 };
 
