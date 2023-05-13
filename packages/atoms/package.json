@@ -11,8 +11,8 @@
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "storybook": "start-storybook -p 6006 --docs --no-manager-cache",
         "storybook-raw": "start-storybook -p 6006",
-        "test": "jest --runInBand --ci --logHeapUsage",
-        "test:dev": "jest --watch --coverage=false"
+        "test": "jest --coverage --runInBand --ci",
+        "test:dev": "jest --watch"
     },
     "dependencies": {
         "@proton/pack": "workspace:packages/pack",
