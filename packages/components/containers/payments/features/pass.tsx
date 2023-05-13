@@ -75,11 +75,11 @@ export const getCustomDomainForEmailAliases = (included: boolean = false): PlanC
     };
 };
 
-export const getForwardingMailboxes = (n: number | 'multiple'): PlanCardFeatureDefinition => {
+export const getForwardingMailboxes = (n: number | 'up to 5'): PlanCardFeatureDefinition => {
     return {
         text:
-            n === 'multiple'
-                ? c('new_plans: feature').t`Multiple forwarding mailboxes`
+            n === 'up to 5'
+                ? c('new_plans: feature').t`Up to 5 forwarding mailboxes`
                 : c('new_plans: feature').ngettext(msgid`${n} forwarding mailbox`, `${n} forwarding mailboxes`, n),
         included: true,
         icon: 'envelope-arrow-up-and-right',
@@ -204,14 +204,14 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             name: 'forwarding-mailboxes',
             plans: {
                 [PLANS.FREE]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.BUNDLE]: getForwardingMailboxes('multiple'),
+                [PLANS.BUNDLE]: getForwardingMailboxes('up to 5'),
                 [PLANS.MAIL]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
                 [PLANS.VPN]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
                 [PLANS.DRIVE]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.PASS_PLUS]: getForwardingMailboxes('multiple'),
+                [PLANS.PASS_PLUS]: getForwardingMailboxes('up to 5'),
                 [PLANS.FAMILY]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
                 [PLANS.MAIL_PRO]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.BUNDLE_PRO]: getForwardingMailboxes('multiple'),
+                [PLANS.BUNDLE_PRO]: getForwardingMailboxes('up to 5'),
             },
         },
         {
