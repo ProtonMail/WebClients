@@ -25,7 +25,6 @@ import { Icon, Meter, Price, SettingsLink, StripedItem, StripedList } from '../.
 import { PlanCardFeatureDefinition } from '../features/interface';
 import {
     PASS_PLUS_VAULTS,
-    getCustomDomainForEmailAliases,
     getDevices,
     getForwardingMailboxes,
     getHideMyEmailAliases,
@@ -241,11 +240,6 @@ const SubscriptionPanel = ({
         const items: Item[] = [
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
-            {
-                ...getCustomDomainForEmailAliases(true),
-                text: c('new_plans: feature').t`Custom domains for email aliases`,
-            },
-
             getForwardingMailboxes('up to 5'),
             getLoginsAndNotes(),
             getDevices(),
