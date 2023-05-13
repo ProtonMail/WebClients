@@ -16,4 +16,12 @@ module.exports = {
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     collectCoverageFrom: ['**/*.tsx', '!**/*.stories.tsx'],
     coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageThreshold: {
+        global: {
+            branches: 66,
+            functions: 50,
+            lines: 51,
+            statements: 52,
+        },
+    },
 };
