@@ -19,12 +19,12 @@ import {
 } from './mail';
 import {
     FREE_PASS_ALIASES,
+    FREE_VAULTS,
     PASS_PLUS_VAULTS,
     get2FAAuthenticator,
     getCustomDomainForEmailAliases,
     getDataBreachMonitoring,
     getDevices,
-    getE2Encryption,
     getForwardingMailboxes,
     getHideMyEmailAliases,
     getLoginsAndNotes,
@@ -137,7 +137,7 @@ export const getFreePassPlan = (): ShortPlan => {
         description: c('new_plans: info')
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(FREE_PASS_ALIASES), getE2Encryption()],
+        features: [getLoginsAndNotes(), getDevices(), getVaults(FREE_VAULTS), getHideMyEmailAliases(FREE_PASS_ALIASES)],
     };
 };
 
