@@ -67,14 +67,6 @@ export const getVaults = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCustomDomainForEmailAliases = (included: boolean = false): PlanCardFeatureDefinition => {
-    return {
-        text: c('new_plans: feature').t`Custom domain for email aliases`,
-        included,
-        icon: 'earth',
-    };
-};
-
 export const getForwardingMailboxes = (n: number | 'up to 5'): PlanCardFeatureDefinition => {
     return {
         text:
@@ -145,6 +137,20 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             },
         },
         {
+            name: 'vaults',
+            plans: {
+                [PLANS.FREE]: getVaults(FREE_VAULTS),
+                [PLANS.BUNDLE]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.MAIL]: getVaults(FREE_VAULTS),
+                [PLANS.VPN]: getVaults(FREE_VAULTS),
+                [PLANS.DRIVE]: getVaults(FREE_VAULTS),
+                [PLANS.PASS_PLUS]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.FAMILY]: getVaults(FREE_VAULTS),
+                [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
+                [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
+            },
+        },
+        {
             name: 'hide-my-email-aliases',
             plans: {
                 [PLANS.FREE]: getHideMyEmailAliases(FREE_PASS_ALIASES),
@@ -170,34 +176,6 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: get2FAAuthenticator(),
                 [PLANS.MAIL_PRO]: get2FAAuthenticator(),
                 [PLANS.BUNDLE_PRO]: get2FAAuthenticator(true),
-            },
-        },
-        {
-            name: 'vaults',
-            plans: {
-                [PLANS.FREE]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE]: getVaults(PASS_PLUS_VAULTS),
-                [PLANS.MAIL]: getVaults(FREE_VAULTS),
-                [PLANS.VPN]: getVaults(FREE_VAULTS),
-                [PLANS.DRIVE]: getVaults(FREE_VAULTS),
-                [PLANS.PASS_PLUS]: getVaults(PASS_PLUS_VAULTS),
-                [PLANS.FAMILY]: getVaults(FREE_VAULTS),
-                [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
-            },
-        },
-        {
-            name: 'custom-domain-email-aliases',
-            plans: {
-                [PLANS.FREE]: getCustomDomainForEmailAliases(),
-                [PLANS.BUNDLE]: getCustomDomainForEmailAliases(true),
-                [PLANS.MAIL]: getCustomDomainForEmailAliases(),
-                [PLANS.VPN]: getCustomDomainForEmailAliases(),
-                [PLANS.DRIVE]: getCustomDomainForEmailAliases(),
-                [PLANS.PASS_PLUS]: getCustomDomainForEmailAliases(true),
-                [PLANS.FAMILY]: getCustomDomainForEmailAliases(),
-                [PLANS.MAIL_PRO]: getCustomDomainForEmailAliases(),
-                [PLANS.BUNDLE_PRO]: getCustomDomainForEmailAliases(true),
             },
         },
         {
