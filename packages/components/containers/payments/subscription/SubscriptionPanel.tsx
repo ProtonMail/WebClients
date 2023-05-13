@@ -29,7 +29,7 @@ import {
     getDevices,
     getForwardingMailboxes,
     getHideMyEmailAliases,
-    getPasswordsAndNotes,
+    getLoginsAndNotes,
     getVaults,
 } from '../features/pass';
 import {
@@ -225,7 +225,7 @@ const SubscriptionPanel = ({
             //     icon: 'eye-slash',
             //     text: getNumberOfEmailAliases(usedAliases, maxAliases),
             // },
-            getPasswordsAndNotes(),
+            getLoginsAndNotes(),
             getDevices(),
         ];
 
@@ -247,7 +247,7 @@ const SubscriptionPanel = ({
             },
 
             getForwardingMailboxes('multiple'),
-            getPasswordsAndNotes(),
+            getLoginsAndNotes(),
             getDevices(),
         ];
 
