@@ -4,13 +4,13 @@ import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-export const getPasswordsAndNotesText = () => {
-    return c('new_plans: feature').t`Unlimited passwords and notes`;
+export const getLoginsAndNotesText = () => {
+    return c('new_plans: feature').t`Unlimited logins and notes`;
 };
 
-export const getPasswordsAndNotes = (): PlanCardFeatureDefinition => {
+export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
-        text: getPasswordsAndNotesText(),
+        text: getLoginsAndNotesText(),
         included: true,
         icon: 'note',
     };
@@ -126,15 +126,15 @@ export const getPassFeatures = (): PlanCardFeature[] => {
         {
             name: 'passwords-and-notes',
             plans: {
-                [PLANS.FREE]: getPasswordsAndNotes(),
-                [PLANS.BUNDLE]: getPasswordsAndNotes(),
-                [PLANS.MAIL]: getPasswordsAndNotes(),
-                [PLANS.VPN]: getPasswordsAndNotes(),
-                [PLANS.DRIVE]: getPasswordsAndNotes(),
-                [PLANS.PASS_PLUS]: getPasswordsAndNotes(),
-                [PLANS.FAMILY]: getPasswordsAndNotes(),
-                [PLANS.MAIL_PRO]: getPasswordsAndNotes(),
-                [PLANS.BUNDLE_PRO]: getPasswordsAndNotes(),
+                [PLANS.FREE]: getLoginsAndNotes(),
+                [PLANS.BUNDLE]: getLoginsAndNotes(),
+                [PLANS.MAIL]: getLoginsAndNotes(),
+                [PLANS.VPN]: getLoginsAndNotes(),
+                [PLANS.DRIVE]: getLoginsAndNotes(),
+                [PLANS.PASS_PLUS]: getLoginsAndNotes(),
+                [PLANS.FAMILY]: getLoginsAndNotes(),
+                [PLANS.MAIL_PRO]: getLoginsAndNotes(),
+                [PLANS.BUNDLE_PRO]: getLoginsAndNotes(),
             },
         },
         {
