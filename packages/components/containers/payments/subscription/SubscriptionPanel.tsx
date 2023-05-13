@@ -246,7 +246,7 @@ const SubscriptionPanel = ({
                 text: c('new_plans: feature').t`Custom domains for email aliases`,
             },
 
-            getForwardingMailboxes('multiple'),
+            getForwardingMailboxes('up to 5'),
             getLoginsAndNotes(),
             getDevices(),
         ];

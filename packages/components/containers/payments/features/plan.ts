@@ -22,13 +22,10 @@ import {
     FREE_VAULTS,
     PASS_PLUS_VAULTS,
     get2FAAuthenticator,
-    getCustomDomainForEmailAliases,
-    getDataBreachMonitoring,
     getDevices,
     getForwardingMailboxes,
     getHideMyEmailAliases,
     getLoginsAndNotes,
-    getSharing,
     getVaults,
 } from './pass';
 import {
@@ -117,13 +114,12 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`For next-level password management and identity protection.`,
         cta: getCTA(plan.Title),
         features: [
-            get2FAAuthenticator(true),
+            getLoginsAndNotes(),
+            getDevices(),
             getVaults(PASS_PLUS_VAULTS),
             getHideMyEmailAliases('unlimited'),
-            getCustomDomainForEmailAliases(true),
-            getForwardingMailboxes('multiple'),
-            getSharing(true),
-            getDataBreachMonitoring(true),
+            get2FAAuthenticator(true),
+            getForwardingMailboxes('up to 5'),
             getSupport('priority'),
         ],
     };
