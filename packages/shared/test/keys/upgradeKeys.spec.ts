@@ -61,6 +61,7 @@ describe('upgrade keys v2', () => {
                 isOnePasswordMode: true,
                 api,
                 preAuthKTVerify: () => async () => {},
+                keyMigrationKTVerifier: async () => {},
             });
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
@@ -157,6 +158,7 @@ describe('upgrade keys v2', () => {
                 isOnePasswordMode: true,
                 api,
                 preAuthKTVerify: () => async () => {},
+                keyMigrationKTVerifier: async () => {},
             });
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
@@ -232,6 +234,7 @@ describe('upgrade keys v2', () => {
                 isOnePasswordMode: false,
                 api,
                 preAuthKTVerify: () => async () => {},
+                keyMigrationKTVerifier: async () => {},
             });
             expect(api.calls.all().length).toBe(1);
             if (!newKeyPassword) {
@@ -306,6 +309,7 @@ describe('upgrade keys v2', () => {
                 isOnePasswordMode: false,
                 api,
                 preAuthKTVerify: () => async () => {},
+                keyMigrationKTVerifier: async () => {},
             });
             if (!newKeyPassword) {
                 throw new Error('Missing password');
@@ -377,6 +381,7 @@ describe('upgrade keys v2', () => {
                 isOnePasswordMode: false,
                 api,
                 preAuthKTVerify: () => async () => {},
+                keyMigrationKTVerifier: async () => {},
             });
             expect(api.calls.all().length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
@@ -422,6 +427,7 @@ describe('upgrade keys v2', () => {
                 isOnePasswordMode: true,
                 api,
                 preAuthKTVerify: () => async () => {},
+                keyMigrationKTVerifier: async () => {},
             });
             expect(api.calls.all().length).toBe(0);
             expect(newKeyPassword).toBeUndefined();

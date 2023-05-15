@@ -1,7 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 
 import { Address } from './Address';
-import { AddressKey, DecryptedKey } from './Key';
+import { DecryptedKey } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 
 export enum IGNORE_KT {
@@ -48,10 +48,6 @@ export type VerifyOutboundPublicKeys = (
     IgnoreKT?: IGNORE_KT
 ) => Promise<void>;
 
-export type KeyMigrationKTVerifier = (
-    email: string,
-    keyList: AddressKey[],
-    SignedKeyList: FetchedSignedKeyList | null
-) => Promise<void>;
+export type KeyMigrationKTVerifier = (email: string) => Promise<void>;
 
 export type FixMultiplePrimaryKeys = (address: Address) => Promise<void>;

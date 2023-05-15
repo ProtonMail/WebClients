@@ -5,6 +5,7 @@ import {
     ActiveKey,
     Address,
     DecryptedKey,
+    KeyMigrationKTVerifier,
     KeyTransparencyVerify,
     SignedKeyList,
     SignedKeyListItem,
@@ -57,22 +58,25 @@ export const getSignedKeyList = async (
     return signedKeyList;
 };
 
-export const getOrCreateSignedKeyList = async (
+export const createSignedKeyListForMigration = async (
     address: Address,
     decryptedKeys: DecryptedKey[],
-    keyTransparencyVerify: KeyTransparencyVerify
+    keyTransparencyVerify: KeyTransparencyVerify,
+    keyMigrationKTVerifier: KeyMigrationKTVerifier
 ): Promise<SignedKeyList | undefined> => {
-    if (address.SignedKeyList?.Data) {
-        return {
-            Data: address.SignedKeyList.Data,
-            Signature: address.SignedKeyList.Signature,
-        };
+    let signedKeyList: SignedKeyList | undefined;
+    if (!address.SignedKeyList) {
+        // Only create a new signed key list if the address didn't have one already.
+        await keyMigrationKTVerifier(address.Email);
+        const activeKeys = getNormalizedActiveKeys(
+            address,
+            await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
+        );
+        if (activeKeys.length > 0) {
+            signedKeyList = await getSignedKeyList(activeKeys, address, keyTransparencyVerify);
+        }
     }
-    const activeKeys = getNormalizedActiveKeys(
-        address,
-        await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
-    );
-    return activeKeys.length > 0 ? getSignedKeyList(activeKeys, address, keyTransparencyVerify) : undefined;
+    return signedKeyList;
 };
 
 const signedKeyListItemParser = ({ Primary, Flags, Fingerprint, SHA256Fingerprints }: any) =>
