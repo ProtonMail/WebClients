@@ -55,7 +55,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
     return (
         <>
             <div className="code-input-container flex flex-justify-center auto-mobile">
-                <div className="code-input-div flex-item-fluid flex flex-column text-center on-mobile-pb1 on-mobile-pt0-5">
+                <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refFirstInput}
                         minLength={4}
@@ -70,7 +70,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                     />
                 </div>
                 <hr className="w5 tv-hr mx-4 mt-6 mb-auto no-mobile" />
-                <div className="code-input-div flex-item-fluid flex flex-column text-center on-mobile-pb1 on-mobile-pt0-5">
+                <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refSecondInput}
                         minLength={4}

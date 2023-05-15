@@ -6,9 +6,9 @@ import { Button } from '@proton/atoms';
 import { useUser } from '@proton/components/hooks';
 import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, IconName, InputFieldTwo, Option, SelectTwo, useModalState } from '../../../components';
-import { classnames } from '../../../helpers';
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';
 import { Actions } from '../interfaces';
@@ -74,7 +74,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         const { type, text, value, disabled } = option;
         if (type === 'label') {
             return (
-                <label className="text-semibold px0-5 py0-25 block" key={text}>
+                <label className="text-semibold px-2 py-1 block" key={text}>
                     {text}
                 </label>
             );
@@ -102,7 +102,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
     const renderClosed = () => {
         if (!moveTo?.folder) {
-            return <em className={classnames(['pt0-5', 'color-weak'])}>{c('Info').t`No folder selected`}</em>;
+            return <em className={clsx(['pt-1', 'color-weak'])}>{c('Info').t`No folder selected`}</em>;
         }
 
         let selectedFolder;
@@ -127,7 +127,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                         />
                     )}
                     <span
-                        className={classnames([
+                        className={clsx([
                             'max-w100 flex-nowrap inline-flex flex-align-items-center',
                             i !== 0 && 'ml-2',
                         ])}
@@ -141,19 +141,19 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             ));
         }
 
-        return <div className="pt0-5 flex flex-align-items-center max-w100">{selectedFolder}</div>;
+        return <div className="pt-2 flex flex-align-items-center max-w100">{selectedFolder}</div>;
     };
 
     return (
         <div
-            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
+            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center py-4"
             data-testid="filter-modal:folder-row"
         >
-            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
-                <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
+            <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+                <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
-            <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
+            <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
                     <div className="w100">
                         <InputFieldTwo

@@ -199,7 +199,7 @@ const LoginForm = ({
                         ) : (
                             <div className="flex-item-fluid">
                                 <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
-                                    <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
+                                    <span className="pr-2">{c('Label').t`Keep me signed in`}</span>
                                     <span className="flex">
                                         <Info
                                             title={c('Info').t`You'll stay signed in even after you close the browser.`}
@@ -238,14 +238,14 @@ const LoginForm = ({
                     >
                         <Link
                             to={SSO_PATHS.RESET_PASSWORD}
-                            className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
+                            className="dropdown-item-link w100 px-4 py-2 block text-no-decoration text-left"
                         >
                             <Icon name="user-circle" className="mr-2" />
                             {c('Link').t`Reset password`}
                         </Link>
                         <Link
                             to={SSO_PATHS.FORGOT_USERNAME}
-                            className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
+                            className="dropdown-item-link w100 px-4 py-2 block text-no-decoration text-left"
                         >
                             <Icon name="key" className="mr-2" />
                             {c('Link').t`Forgot username?`}

@@ -37,7 +37,7 @@ const InviteShareLink = () => {
             <h2 className="h3 text-bold">{c('Label').t`Your referral link`}</h2>
             <div className="invite-section-share-link flex flex-align-items-stretch flex-gap-0-5">
                 <div
-                    className="flex-item-fluid flex flex-align-items-center p0-5 user-select border rounded"
+                    className="flex-item-fluid flex flex-align-items-center p-2 user-select border rounded"
                     title={referrerLink}
                 >
                     <span className="text-ellipsis">{referrerLink}</span>

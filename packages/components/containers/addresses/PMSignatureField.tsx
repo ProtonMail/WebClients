@@ -49,7 +49,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     return (
         <div className="flex flex-item-fluid">
             <div
-                className="border-container flex-item-fluid pr1 pt0-5 pb0-5 mb-4"
+                className="border-container flex-item-fluid pr-4 py-2 mb-4"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: getProtonMailSignature({
@@ -58,7 +58,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                     }),
                 }}
             />
-            <div className="ml-0 md:ml-2 pt0-5" data-testid="settings:identity-section:signature-toggle">
+            <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
                 <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
             </div>
 

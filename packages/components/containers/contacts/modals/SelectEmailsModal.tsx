@@ -141,7 +141,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, on
                     .map(({ ID: contactID, Name, contactEmails = [] }) => {
                         return (
                             <Row key={contactID} className="border-bottom">
-                                {!isSingleContact && <Label className="text-semibold pt0">{Name}</Label>}
+                                {!isSingleContact && <Label className="text-semibold pt-0">{Name}</Label>}
                                 <Field className="flex flex-column w100">
                                     {contactEmails.map(({ ID: contactEmailID, Email, isChecked }: CheckableContact) => {
                                         return (

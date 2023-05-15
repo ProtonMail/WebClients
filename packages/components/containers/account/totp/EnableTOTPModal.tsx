@@ -264,7 +264,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         <div className="flex text-center">
                             {recoveryCodes.map((code) => {
                                 return (
-                                    <code data-testid="totp:recovery-code" key={code} className="w49 p0-5">
+                                    <code data-testid="totp:recovery-code" key={code} className="w49 p-2">
                                         {code}
                                     </code>
                                 );

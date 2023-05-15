@@ -17,11 +17,11 @@ const AttachedFile = ({ file, iconName, className, clear, onClear, ...rest }: Pr
 
     return (
         <div className={`flex border w100 rounded ${className}`} {...rest}>
-            <div className="p0-5 flex flex-item-noshrink w10">
+            <div className="p-2 flex flex-item-noshrink w10">
                 <Icon name={iconName} className="m-auto" />
             </div>
-            <div className="message-attachmentInfo p0-5 flex flex-nowrap w90">
-                <div className="flex-item-fluid pr1">
+            <div className="message-attachmentInfo p-2 flex flex-nowrap w90">
+                <div className="flex-item-fluid pr-4">
                     <div className="text-ellipsis" title={fileName}>
                         {fileName}
                     </div>

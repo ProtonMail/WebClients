@@ -114,7 +114,7 @@ const ParticipantsInput = ({
     };
 
     const participantRows = (
-        <div className="pt0-25">
+        <div className="pt-1">
             {value.map((participant) => {
                 return (
                     <ParticipantRow
@@ -182,7 +182,7 @@ const ParticipantsInput = ({
                     participantRows
                 ))}
             {numberOfAttendees > 0 && organizer && (
-                <div className="pt0-25">
+                <div className="pt-1">
                     <OrganizerRow organizer={organizer} />
                 </div>
             )}

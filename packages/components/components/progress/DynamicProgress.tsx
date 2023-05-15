@@ -1,4 +1,5 @@
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Icon from '../icon/Icon';
 import { Loader } from '../loader';
 import Progress from './Progress';
@@ -29,7 +30,7 @@ const DynamicProgress = ({
         : success
         ? {
               icon: (
-                  <span className="inline-flex bg-success rounded-50 p0-5">
+                  <span className="inline-flex bg-success rounded-50 p-2">
                       <Icon name="checkmark" size={24} />
                   </span>
               ),
@@ -38,7 +39,7 @@ const DynamicProgress = ({
         : partialSuccess
         ? {
               icon: (
-                  <span className="inline-flex bg-warning rounded-50 p0-5">
+                  <span className="inline-flex bg-warning rounded-50 p-2">
                       <Icon name="cross" size={24} />
                   </span>
               ),
@@ -46,7 +47,7 @@ const DynamicProgress = ({
           }
         : {
               icon: (
-                  <span className="inline-flex bg-danger rounded-50 p0-5">
+                  <span className="inline-flex bg-danger rounded-50 p-2">
                       <Icon name="cross" size={24} />
                   </span>
               ),
@@ -54,10 +55,10 @@ const DynamicProgress = ({
           };
 
     return (
-        <div className={classnames(['text-center', !display && 'mb-4'])}>
+        <div className={clsx(['text-center', !display && 'mb-4'])}>
             {icon}
             <Progress
-                className={classnames(['mt-4', progressClassname])}
+                className={clsx(['mt-4', progressClassname])}
                 aria-describedby={id}
                 value={value}
                 max={max}

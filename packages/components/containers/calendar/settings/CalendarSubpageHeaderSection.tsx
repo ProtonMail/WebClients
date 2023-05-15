@@ -131,7 +131,7 @@ const CalendarSubpageHeaderSection = ({
                         </Alert>
                     )}
                 </div>
-                <span className="ml-4 pt0-5 flex-item-noshrink">
+                <span className="ml-4 pt-2 flex-item-noshrink">
                     <Tooltip title={editCalendarText}>
                         <ButtonLike shape="outline" onClick={handleEdit} icon disabled={!canEdit}>
                             <Icon name="pen" alt={editCalendarText} />

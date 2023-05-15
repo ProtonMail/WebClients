@@ -1,4 +1,5 @@
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import Icon from '../icon/Icon';
 
 interface Props {
@@ -13,8 +14,8 @@ interface Props {
 const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
     return (
         <div
-            className={classnames([
-                'wizard-container relative pt0 pb1 mb-4',
+            className={clsx([
+                'wizard-container relative pt-0 pb-4 mb-4',
                 hideText && 'wizard-container--no-text-displayed',
             ])}
         >
@@ -23,13 +24,17 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                     return (
                         <li
                             key={index.toString()}
-                            className={classnames(['wizard-item', index < step && 'is-complete'])}
+                            className={clsx(['wizard-item', index < step && 'is-complete'])}
                             aria-current={index === step ? 'step' : undefined}
                             title={text}
                         >
                             <span className="wizard-marker flex">
                                 {index < step && (
-                                    <Icon name="checkmark" size={12} className="upper-layer m-auto wizard-marker-icon" />
+                                    <Icon
+                                        name="checkmark"
+                                        size={12}
+                                        className="upper-layer m-auto wizard-marker-icon"
+                                    />
                                 )}
                             </span>
                         </li>
@@ -42,7 +47,7 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                         return (
                             <li
                                 key={`wizard-label-${index.toString()}`}
-                                className={classnames(['wizard-label', index < step && 'is-complete'])}
+                                className={clsx(['wizard-label', index < step && 'is-complete'])}
                                 aria-current={index === step ? 'step' : undefined}
                             >
                                 <span>{text}</span>

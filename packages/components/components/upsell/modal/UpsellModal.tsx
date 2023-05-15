@@ -31,15 +31,15 @@ const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxPro
                 />
             </div>
             <h1 className="h3 text-bold mb-4">{title}</h1>
-            <div className="color-weak mb-4 px1">{description}</div>
+            <div className="color-weak mb-4 px-4">{description}</div>
         </div>
 
-        <div className="border border-primary rounded p1-5 pt1">
+        <div className="border border-primary rounded p-6 pt-4">
             <ul className="m-0 unstyled mb-4">
                 {features.map((featureName) => {
                     const feature = upsellFeatures[featureName];
                     return (
-                        <li className="py0-5 rounded" key={feature.getText()}>
+                        <li className="py-2 rounded" key={feature.getText()}>
                             <div className="flex flex-nowrap flex-align-items-center">
                                 <div className="mr-3 flex-item-noshrink flex">
                                     <Icon className="color-primary m-auto" size={20} name={feature.icon} />

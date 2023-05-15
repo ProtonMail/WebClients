@@ -181,7 +181,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     canToggleTzSelector &&
                     (showTzSelector ? (
                         <UnderlineButton
-                            className="p0"
+                            className="p-0"
                             data-testid="hide-tz"
                             onClick={() => setShowTzSelector(false)}
                             title={c('Title').t`Hide time zones for event start and end times`}
@@ -190,7 +190,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </UnderlineButton>
                     ) : (
                         <UnderlineButton
-                            className="p0"
+                            className="p-0"
                             data-testid="show-tz"
                             onClick={() => setShowTzSelector(true)}
                             title={c('Title').t`Show time zones for event start and end times`}

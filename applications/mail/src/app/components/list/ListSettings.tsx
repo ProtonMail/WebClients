@@ -19,7 +19,7 @@ interface Props {
 
 const ListSettings = ({ sort, onSort, onFilter, filter, conversationMode, mailSettings, isSearch, labelID }: Props) => {
     return (
-        <div className="sticky-top upper-layer bg-norm border-bottom border-weak px0-5 py0-25 flex flex-wrap flex-justify-space-between">
+        <div className="sticky-top upper-layer bg-norm border-bottom border-weak px-2 py-1 flex flex-wrap flex-justify-space-between">
             <FilterActions filter={filter} onFilter={onFilter} mailSettings={mailSettings} />
             <SortDropdown
                 conversationMode={conversationMode}

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import { Badge } from '../../badge';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
 import { FONT_SIZES } from '../constants';
@@ -65,7 +65,7 @@ const ToolbarFontSizeDropdown = ({ setValue, value, onClickDefault, defaultValue
                 {Object.entries(FONT_SIZES).map(([sizeInPx, sizeInPt]) => (
                     <DropdownMenuContainer
                         key={sizeInPt}
-                        className={classnames([sizeInPt === value && 'dropdown-item--is-selected'])}
+                        className={clsx([sizeInPt === value && 'dropdown-item--is-selected'])}
                         buttonClassName="text-left"
                         aria-pressed={sizeInPt === value}
                         isSelected={sizeInPt === value}
@@ -76,7 +76,7 @@ const ToolbarFontSizeDropdown = ({ setValue, value, onClickDefault, defaultValue
                         buttonContent={<span>{sizeInPx}</span>}
                         extraContent={
                             sizeInPx === defaultValue && showDefaultFontSelector ? (
-                                <div className="flex pl0-5 pr0-5 flex-item-noshrink">
+                                <div className="flex px-2 flex-item-noshrink">
                                     <Button
                                         color="weak"
                                         shape="ghost"

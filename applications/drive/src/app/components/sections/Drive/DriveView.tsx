@@ -50,7 +50,7 @@ function DriveView() {
                     <Toolbar />
                 )}
                 <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                    <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom section--header">
+                    <div className="max-w100 py-2 px-3 border-bottom section--header">
                         {activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />}
                     </div>
                     {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}

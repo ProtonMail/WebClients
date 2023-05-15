@@ -2,22 +2,15 @@ import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
-
-
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Input, Radio, Select, Tooltip } from '../../../components';
 import { OptionProps } from '../../../components/select/Select';
-import { classnames } from '../../../helpers';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
 
-
-
 import './FilterConditionsFormRow.scss';
-
 
 const { SELECT, SUBJECT, SENDER, RECIPIENT } = ConditionType;
 
@@ -162,7 +155,7 @@ const FilterConditionsRow = ({
             <div className="mt-4 flex-item-fluid">
                 {tokens.length ? <div className="mb-2">{tokens.map(renderToken)}</div> : null}
                 <div className="flex flex-nowrap">
-                    <span className="flex-item-fluid pr1">
+                    <span className="flex-item-fluid pr-4">
                         <Input
                             onChange={onChangeInputValue}
                             type="text"
@@ -185,7 +178,7 @@ const FilterConditionsRow = ({
 
     const renderClosed = () => {
         if (condition?.error) {
-            return <em className="pt0-5 color-danger">{condition?.error}</em>;
+            return <em className="pt-2 color-danger">{condition?.error}</em>;
         }
 
         let label;
@@ -230,7 +223,7 @@ const FilterConditionsRow = ({
         }
 
         return (
-            <span className="max-w100 pt0-5 text-ellipsis" title={title}>
+            <span className="max-w100 pt-2 text-ellipsis" title={title}>
                 {label}
             </span>
         );
@@ -241,21 +234,17 @@ const FilterConditionsRow = ({
     return (
         <div className="border-bottom">
             <div
-                className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
+                className="flex flex-nowrap on-mobile-flex-column align-items-center py-4"
                 data-testid={`filter-modal:condition-${conditionIndex}`}
             >
-                <button
-                    type="button"
-                    className={classnames(['w20 text-left', isNarrow && 'mb-4'])}
-                    onClick={toggleSection}
-                >
-                    <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                    <span className={classnames(['ml-2', condition.error && 'color-danger'])}>{label}</span>
+                <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+                    <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                    <span className={clsx(['ml-2', condition.error && 'color-danger'])}>{label}</span>
                 </button>
-                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
+                <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                     {isOpen ? (
                         <div className="flex">
-                            <span className="w50 pr1">
+                            <span className="w50 pr-4">
                                 <Select
                                     options={typeOptions}
                                     value={type}
@@ -301,7 +290,7 @@ const FilterConditionsRow = ({
                         <Tooltip title={c('Action').t`Delete`}>
                             <Button
                                 onClick={() => handleDelete(conditionIndex)}
-                                className={classnames([isNarrow ? 'mt-4' : 'ml-4'])}
+                                className={clsx([isNarrow ? 'mt-4' : 'ml-4'])}
                                 icon
                             >
                                 <Icon name="trash" className="color-danger" alt={c('Action').t`Delete`} />

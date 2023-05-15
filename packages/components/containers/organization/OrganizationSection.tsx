@@ -159,7 +159,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
             </SettingsParagraph>
             <Row>
                 <Label htmlFor="organization-name-edit-button">{inputLabel}</Label>
-                <Field className="pt0-5">
+                <Field className="pt-2">
                     <div className="text-bold text-ellipsis">{organizationName}</div>
                 </Field>
                 <div className="ml-0 md:ml-4">

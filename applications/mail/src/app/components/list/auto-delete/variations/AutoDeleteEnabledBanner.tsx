@@ -12,7 +12,7 @@ const AutoDeleteEnabledBanner = ({ columnLayout, isCompactView }: Props) => {
         <div
             data-testid="auto-delete:banner:enabled"
             className={clsx(
-                'p0-5 color-hint text-center text-sm auto-delete-banner-enabled',
+                'p-2 color-hint text-center text-sm auto-delete-banner-enabled',
                 columnLayout && 'auto-delete-banner-enabled--column',
                 isCompactView && 'auto-delete-banner-enabled--compact'
             )}

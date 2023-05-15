@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-
-
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
@@ -365,7 +363,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const [startDate, endDate] = getEventLocalStartEndDates(calendarEvent, parseInt(occurrenceHeader, 10));
     const isOutdated = (sequence?.value || 0) > parseInt(`${sequenceHeader}`, 10);
 
-    const labelClassName = 'inline-flex pt0-25';
+    const labelClassName = 'inline-flex pt-1';
 
     return (
         <div className="calendar-widget mb-3" ref={eventReminderRef}>
@@ -378,7 +376,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
             />
             {!isOutdated && (
                 <div className="rounded border bg-norm scroll-if-needed">
-                    <div className="p1-5">
+                    <div className="p-5">
                         <h2 className="h3 mb-1 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader
                             className="text-lg mt-0 mb-3"
@@ -394,7 +392,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         />
                     </div>
                     <hr className="m-0" />
-                    <div className="p1-5">
+                    <div className="p-5">
                         <IconRow
                             title={c('Label').t`Calendar`}
                             icon={<CalendarSelectIcon color={Color} />}

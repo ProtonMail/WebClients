@@ -59,9 +59,9 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                                     </Fragment>
                                 ))}
                             </span>
-                            <span className="flex-item-noshrink flex py0-25 pr0-25 contact-view-actions">
+                            <span className="flex-item-noshrink flex py-1 contact-view-actions">
                                 <Copy
-                                    className="ml-2 pt0-5 pb0-5 mt-0.5"
+                                    className="ml-2 py-2 mt-0.5"
                                     value={lines.join(', ')}
                                     onCopy={() => {
                                         createNotification({ text: c('Success').t`Address copied to clipboard` });

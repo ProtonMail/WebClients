@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { PLANS } from '@proton/shared/lib/constants';
 import { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Price, PrimaryButton } from '../../../components';
-import { classnames } from '../../../helpers';
 
 interface Props {
     planName: PLANS;
@@ -55,25 +55,22 @@ const PlanCard = ({
     return (
         <>
             <div
-                className={classnames([
-                    'border relative h100 plan-selection-plan p2 pb0 flex flex-column flex-nowrap',
+                className={clsx([
+                    'border relative h100 plan-selection-plan p-6 pb-0 flex flex-column flex-nowrap',
                     isCurrentPlan && 'plan-selection-plan-current-card',
                     recommended && 'plan-selection-plan-recommended border-primary',
                 ])}
             >
                 {recommended ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
-                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto flex-items-align-center bg-primary p0-25 pl0-75 pr0-75">
+                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto flex-items-align-center bg-primary py-1 px-3">
                             <Icon name="star-filled" className="my-auto" />
                             <span className="ml-1">{c('Title').t`Recommended`}</span>
                         </div>
                     </div>
                 ) : null}
                 <div className="flex flex-row flex-align-items-center">
-                    <h2
-                        className="h3 plan-selection-title flex text-bold text-capitalize mb-2"
-                        id={`desc_${planName}`}
-                    >
+                    <h2 className="h3 plan-selection-title flex text-bold text-capitalize mb-2" id={`desc_${planName}`}>
                         {planTitle}
                     </h2>
                 </div>

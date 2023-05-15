@@ -13,7 +13,7 @@ export default function SharedPageHeader({ children, rootItem, items }: Props) {
             className="flex flex-nowrap flex-justify-space-between mb-4 min-h-custom"
             style={{ '--min-height-custom': '80px' }}
         >
-            <div className="flex flex-nowrap flex-item-fluid flex-align-items-center mb-0 pb0 mr-4 shared-page-layout-header">
+            <div className="flex flex-nowrap flex-item-fluid flex-align-items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}
             </div>
             {isNarrow || items.length === 0 ? null : <DownloadButton rootItem={rootItem} items={items} />}

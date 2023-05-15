@@ -76,7 +76,7 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
                     <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
                         {spyTrackerIcon}
                     </span>
-                    <span className="pl0-25 flex-item-fluid" title={title}>
+                    <span className="pl-1 flex-item-fluid" title={title}>
                         {title}
                     </span>
                 </div>

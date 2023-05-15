@@ -1,7 +1,5 @@
 import { useRef, useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -209,11 +207,11 @@ const AutoReplySection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="autoReplyToggle" className="on-mobile-pb0 on-mobile-border-none text-semibold">
+                    <label htmlFor="autoReplyToggle" className="pb-0 on-mobile-border-none text-semibold">
                         {c('Label').t`Auto-reply`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <Toggle
                         id="autoReplyToggle"
                         loading={enablingLoading}

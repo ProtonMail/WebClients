@@ -14,7 +14,7 @@ const ContactImportCsvSelectType = ({ field = '', value, onChangeType }: Props) 
     const handleChangeType = ({ value }: SelectChangeEvent<string>) => onChangeType(value);
 
     return (
-        <Label className="pt0">
+        <Label className="pt-0">
             <SelectTwo value={value} onChange={handleChangeType}>
                 {types[field as keyof typeof types].map((type) => (
                     <Option key={type.value} title={type.text} value={type.value} />
