@@ -9,7 +9,6 @@ import {
     eventConversationUpdate,
     eventDelete,
     eventMessageUpdate,
-    expireConversations,
     initialize,
     load,
     optimisticDelete,
@@ -26,9 +25,6 @@ import {
     deleteConversation as deleteConversationReducer,
     eventConversationUpdate as eventConversationUpdateReducer,
     eventMessagesUpdates as eventMessageUpdateReducer,
-    expireConversationsFullfilled,
-    expireConversationsPending,
-    expireConversationsRejected,
     globalReset as globalResetReducer,
     initialize as initializeReducer,
     loadFulfilled,
@@ -69,9 +65,6 @@ const conversationSlice = createSlice({
         builder.addCase(eventConversationUpdate, eventConversationUpdateReducer);
         builder.addCase(loadElements.fulfilled, updateFromElements);
         builder.addCase(eventUpdates.fulfilled, updateFromLoadElements);
-        builder.addCase(expireConversations.pending, expireConversationsPending);
-        builder.addCase(expireConversations.fulfilled, expireConversationsFullfilled);
-        builder.addCase(expireConversations.rejected, expireConversationsRejected);
     },
 });
 

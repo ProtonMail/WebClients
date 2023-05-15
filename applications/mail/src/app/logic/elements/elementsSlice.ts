@@ -3,7 +3,6 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
-import { expireConversations } from '../conversations/conversationsActions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
 import { expireMessages } from '../messages/expire/messagesExpireActions';
 import {
@@ -125,10 +124,6 @@ const elementsSlice = createSlice({
         builder.addCase(pollTaskRunning.fulfilled, pollTaskRunningFulfilled);
 
         builder.addCase(deleteDraft, deleteDraftReducer);
-
-        builder.addCase(expireConversations.pending, expireElementsPending);
-        builder.addCase(expireConversations.fulfilled, expireElementsFulfilled);
-        builder.addCase(expireConversations.rejected, expireElementsRejected);
 
         builder.addCase(expireMessages.pending, expireElementsPending);
         builder.addCase(expireMessages.fulfilled, expireElementsFulfilled);
