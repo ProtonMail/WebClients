@@ -1,23 +1,26 @@
 import { MutableRefObject, useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
-
-
-import { Icon, Option, SelectTwo, SettingsLink, generateUID, useAddresses, useMailSettings, useUser, useUserSettings } from '@proton/components';
+import {
+    Icon,
+    Option,
+    SelectTwo,
+    SettingsLink,
+    generateUID,
+    useAddresses,
+    useMailSettings,
+    useUser,
+    useUserSettings,
+} from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
-
-
 
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { changeSignature } from '../../../helpers/message/messageSignature';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MessageChange } from '../Composer';
-
 
 interface Props {
     message: MessageState;
@@ -54,7 +57,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     if (user.hasPaidMail) {
         addressesOptions.push(
-            <div key="create-new-adress" className="pl1 pt0-5 pb0-5 border-top">
+            <div key="create-new-adress" className="pl-4 py-2 border-top">
                 <SettingsLink path="/identity-addresses#addresses" app={APPS.PROTONMAIL}>
                     {c('Label').t`Manage my addresses`}
                 </SettingsLink>

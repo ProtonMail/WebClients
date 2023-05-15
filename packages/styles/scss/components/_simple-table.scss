@@ -10,13 +10,8 @@
 
 	td,
 	th {
-		padding: em(9);
+		padding: var(--space-2);
 		border-block-end: 1px solid var(--border-norm);
-		@include media('<=small') {
-			&.on-mobile-pl0 {
-				@extend .on-mobile-pl0;
-			}
-		}
 	}
 
 	// NEW RESPONSIVE TABLES
@@ -42,12 +37,12 @@
 	&--responsive-stacked {
 		@include media('<=medium') {
 			tr {
-				margin-block-end: em(8);
+				margin-block-end: var(--space-2);
 				border-block-end: 1px solid var(--border-norm);
 			}
 
 			td {
-				padding-block-end: em(8);
+				padding-block-end: var(--space-2);
 			}
 		}
 	}
@@ -55,18 +50,18 @@
 	&--responsive-cards {
 		@include media('<=medium') {
 			tr {
-				padding: em(12);
+				padding: var(--space-3);
 				border: 1px solid var(--border-norm);
 				border-radius: var(--border-radius-lg);
 
 				&:not(:last-child) {
-					margin-block-end: em(12);
+					margin-block-end: var(--space-3);
 				}
 			}
 
 			td {
 				&:not(:last-child) {
-					padding-block-end: em(8);
+					padding-block-end: var(--space-2);
 				}
 			}
 		}
@@ -197,7 +192,7 @@
 
 	td,
 	th {
-		padding: em(9);
+		padding: var(--space-2);
 	}
 
 	/* alternate bg for rows */

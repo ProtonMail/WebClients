@@ -14,7 +14,7 @@ const GlobalLoader = () => {
 
     return (
         <div
-            className="fixed flex absolute-center-x bg-norm color-weak p0-5 rounded top-custom global-loader"
+            className="fixed flex absolute-center-x bg-norm color-weak p-2 rounded top-custom global-loader"
             style={{ '--top-custom': '1.5em' }}
         >
             <Loader size="small" className="flex" />

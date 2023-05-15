@@ -40,7 +40,7 @@ const ShowSecondaryTimezoneToggle = ({
                     <span className="mr-2">{c('Label').t`Show secondary time zone`}</span>
                 </label>
             </SettingsLayoutLeft>
-            <SettingsLayoutRight className="pt0-5 flex flex-align-items-center">
+            <SettingsLayoutRight className="pt-2 flex flex-align-items-center">
                 <Toggle
                     id="show-secondary-timezone"
                     aria-describedby="show-secondary-timezone"

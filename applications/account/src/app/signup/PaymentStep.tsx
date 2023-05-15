@@ -172,7 +172,7 @@ const PaymentStep = ({
                             <span className="flex-item-noshrink mr-2">
                                 <Icon name="shield" />
                             </span>
-                            <span className="flex-item-fluid pt0-1">{c('Info')
+                            <span className="flex-item-fluid pt-0.5">{c('Info')
                                 .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                         </div>
                         {hasGuarantee && (

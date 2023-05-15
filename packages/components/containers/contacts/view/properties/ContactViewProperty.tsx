@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import ContactLabelProperty from '../ContactLabelProperty';
 import EncryptedIcon from '../EncryptedIcon';
 
@@ -15,12 +16,10 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
     return (
         <div className="contact-view-row flex flex-nowrap flex-align-items-start mb-4">
             <div
-                className={classnames([
-                    'contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w100',
-                ])}
+                className={clsx(['contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w100'])}
             >
                 <div
-                    className={classnames([
+                    className={clsx([
                         'contact-view-row-label flex-no-min-children on-mobile-max-w100 flex-item-noshrink flex-align-items-start label max-w100p',
                     ])}
                 >
@@ -34,8 +33,8 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                     </div>
                 </div>
                 <span
-                    className={classnames([
-                        'contact-view-row-content mr-2 flex-item-fluid pl2 pt0-5 on-mobile-pl0',
+                    className={clsx([
+                        'contact-view-row-content mr-2 flex-item-fluid pt-2 pl-0 md:pl-7',
                         !['note'].includes(field) && 'text-ellipsis',
                         ['note'].includes(field) && 'text-pre',
                     ])}

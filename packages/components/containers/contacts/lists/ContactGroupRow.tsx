@@ -5,8 +5,7 @@ import { c, msgid } from 'ttag';
 import { Checkbox } from '@proton/components/components';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-
-import { classnames } from '../../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     checked: boolean;
@@ -50,7 +49,7 @@ const ContactGroupRow = ({
             key={ID}
             style={style}
             onClick={() => onClick(ID)}
-            className={classnames([
+            className={clsx([
                 'item-container item-contact flex cursor-pointer bg-global-white',
                 hasFocus && 'item-is-focused',
                 isDrawer && 'item-in-drawer',
@@ -62,7 +61,7 @@ const ContactGroupRow = ({
             data-shortcut-target="contact-container"
             data-testid={`group-item:${group.Name}`}
         >
-            <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-center pl0-5">
+            <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-center pl-2">
                 <Checkbox
                     id={ID}
                     name={Name}
@@ -71,17 +70,17 @@ const ContactGroupRow = ({
                     onClick={(e) => e.stopPropagation()}
                 />
                 <div className="flex flex-column flex-item-fluid flex-justify-space-between mt-6">
-                    <span className="w100 flex pl1 pr1">
+                    <span className="w100 flex pl-4 pr-4">
                         <span
                             role="heading"
                             aria-level={2}
-                            className="text-sm text-semibold inline-block px0-75 py0 rounded-full text-ellipsis"
+                            className="text-sm text-semibold inline-block px-3 py-0 rounded-full text-ellipsis"
                             style={{ backgroundColor: Color, color: 'white' }}
                         >
                             {Name}
                         </span>
                     </span>
-                    <span className="pl1 mt-0.5 flex-item-noshrink text-sm">
+                    <span className="pl-4 mt-0.5 flex-item-noshrink text-sm">
                         {addressCount === 0
                             ? c('Info').t`No email address`
                             : c('Info').ngettext(

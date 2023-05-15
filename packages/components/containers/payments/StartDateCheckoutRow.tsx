@@ -11,7 +11,7 @@ const StartDateCheckoutRow = ({ nextSubscriptionStart }: Props) => {
 
     return (
         <div className="flex flex-nowrap flex-justify-space-between mb-4">
-            <div className="pr0-5">
+            <div className="pr-2">
                 {c('Label').t`Start date`}{' '}
                 <Info title={c('Tooltip').jt`The new subscription cycle starts on ${formattedTime}`} />
             </div>

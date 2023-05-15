@@ -4,8 +4,9 @@ import tinycolor from 'tinycolor2';
 
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
+import clsx from '@proton/utils/clsx';
 
-import { classnames, generateUID } from '../../helpers';
+import { generateUID } from '../../helpers';
 import ColorSelector from '../color/ColorSelector';
 import { Dropdown, DropdownButton, DropdownSizeUnit } from '../dropdown';
 import { DropdownButtonProps } from '../dropdown/DropdownButton';
@@ -47,7 +48,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
                 {...restDropdownProps}
                 as="button"
                 type="button"
-                className={classnames([className, 'field select w50 flex flex-align-items-center py0 pl0-5'])}
+                className={clsx([className, 'field select w50 flex flex-align-items-center py-0 pl-2'])}
                 hasCaret
                 ref={anchorRef}
                 isOpen={isOpen}
@@ -66,7 +67,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
                 onClose={close}
                 disableDefaultArrowNavigation
             >
-                <ColorSelector selected={color} onChange={onChange} colors={options} className="p1" />
+                <ColorSelector selected={color} onChange={onChange} colors={options} className="p-4" />
             </Dropdown>
         </>
     );

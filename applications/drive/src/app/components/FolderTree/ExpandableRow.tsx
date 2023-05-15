@@ -76,7 +76,7 @@ const ExpandableRow = ({
                     {isSelected && (
                         <div className="folder-tree-list-item-selected flex flex-item-noshrink">
                             <span className="inline-flex bg-primary rounded-50 folder-tree-list-item-selected-check">
-                                <Icon name="checkmark" className="p0-25" size={16} />
+                                <Icon name="checkmark" className="p-1" size={16} />
                             </span>
                         </div>
                     )}

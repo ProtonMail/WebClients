@@ -62,7 +62,7 @@ const ComposerContent = ({
     return (
         <section
             className={clsx([
-                'flex-item-fluid-auto mb-2 flex flex-column flex-nowrap relative composer-content pt0-5',
+                'flex-item-fluid-auto mb-2 flex flex-column flex-nowrap relative composer-content pt-2',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
         >

@@ -27,7 +27,7 @@ const Checkout = ({
     description,
 }: Props) => {
     return (
-        <div className="p2">
+        <div className="p-6">
             <div className="flex flex-nowrap flex row mb-4">
                 <h2 className="h4 text-bold mt-1 mb-0 text-cut flex-item-fluid">{c('Title').t`Plan summary`}</h2>
                 <span className="flex-item-noshrink" data-testid="checkoutCurrencyDropdown">

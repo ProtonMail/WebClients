@@ -63,7 +63,7 @@ const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex,
                 disableFocusTrap
                 disableDefaultArrowNavigation
             >
-                <ul id={id} className="unstyled m-0 p0" onMouseDown={handleListMouseDown}>
+                <ul id={id} className="unstyled m-0 p-0" onMouseDown={handleListMouseDown}>
                     {items}
                 </ul>
             </Dropdown>

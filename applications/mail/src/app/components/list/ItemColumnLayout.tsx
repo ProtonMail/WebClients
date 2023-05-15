@@ -93,13 +93,13 @@ const ItemColumnLayout = ({
 
     return (
         <div
-            className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender pr0-25"
+            className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender pr-1"
             data-testid="message-list:message"
         >
             <div className="flex flex-align-items-center flex-nowrap">
                 <div className="flex-item-fluid">
                     <div className="flex flex-align-items-center item-firstline">
-                        <div className="item-senders flex-item-fluid flex flex-align-items-center flex-nowrap pr1">
+                        <div className="item-senders flex-item-fluid flex flex-align-items-center flex-nowrap pr-4">
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}

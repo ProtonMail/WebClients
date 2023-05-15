@@ -52,7 +52,7 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
 
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <Toggle
                         id="autoDelete"
                         loading={loadingAutoDelete}

@@ -144,7 +144,7 @@ const LogsSection = () => {
                         {c('Log preference').t`Enable authentication logs`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <Toggle
                         id="logs-toggle"
                         checked={logAuth === BASIC || logAuth === ADVANCED}
@@ -164,7 +164,7 @@ const LogsSection = () => {
                             />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt0-5">
+                    <SettingsLayoutRight className="pt-2">
                         <Toggle
                             id="advanced-logs-toggle"
                             checked={logAuth === ADVANCED}

@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { classnames } from '@proton/components/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
+import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
 import { useConfig, useNotifications, useUserSettings } from '../../hooks';
@@ -99,7 +99,7 @@ const TwoFactorSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -131,7 +131,7 @@ const TwoFactorSection = () => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label htmlFor="twoFactorKeyToggle" className="text-semibold">
-                                <span className={classnames(['mr-2', !canEnableFido2 && 'color-weak'])}>
+                                <span className={clsx(['mr-2', !canEnableFido2 && 'color-weak'])}>
                                     {c('fido2: Info').t`Security key`}
                                 </span>
                                 <Info
@@ -141,7 +141,7 @@ const TwoFactorSection = () => {
                                 />
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt0-5">
+                        <SettingsLayoutRight className="pt-2">
                             <Tooltip
                                 title={
                                     !canEnableFido2
@@ -176,13 +176,13 @@ const TwoFactorSection = () => {
                                 </Button>
                             </div>
                             <div className="mt-4 w100">
-                                <div className="text-bold pb0-5 border-bottom">
+                                <div className="text-bold pb-2 border-bottom">
                                     {c('fido2: Title').t`Registered security keys`}
                                 </div>
                                 {registeredKeys.map((registeredKey) => {
                                     const id = getId(registeredKey);
                                     return (
-                                        <div key={id} className="flex flex-align-items-center py0-5 border-bottom">
+                                        <div key={id} className="flex flex-align-items-center py-2 border-bottom">
                                             <div className="flex-item-fluid text-break mr-2">{registeredKey.Name}</div>
                                             <ButtonGroup size="small">
                                                 <Button

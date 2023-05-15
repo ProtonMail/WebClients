@@ -34,7 +34,7 @@ export default function SharedFilePage({ token, link }: Props) {
                             token={token}
                             name={link.name}
                             linkId={link.linkId}
-                            className="shared-folder-header-breadcrumbs pb0-25"
+                            className="shared-folder-header-breadcrumbs pb-1"
                         />
                         <HeaderSubtitle size={link.size} />
                     </div>
