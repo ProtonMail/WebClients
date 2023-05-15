@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
@@ -45,10 +45,8 @@ export const useApplyEncryptedSearch = ({
     onPage,
 }: EncryptedSearchParams) => {
     const history = useHistory();
-    const api = useApi();
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
-    const { call } = useEventManager();
 
     const { getESDBStatus, encryptedSearch } = useEncryptedSearchContext();
     const esDBStatus = getESDBStatus();
@@ -85,9 +83,7 @@ export const useApplyEncryptedSearch = ({
                     dispatch(manualFulfilled());
                     onPage(0);
                 } else {
-                    void dispatch(
-                        loadAction({ api, call, conversationMode, page, params, abortController: undefined })
-                    );
+                    void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
                 }
             }
         } catch (error: any) {
@@ -95,7 +91,7 @@ export const useApplyEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            void dispatch(loadAction({ api, call, conversationMode, page, params, abortController: undefined }));
+            void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
         }
     };
 
