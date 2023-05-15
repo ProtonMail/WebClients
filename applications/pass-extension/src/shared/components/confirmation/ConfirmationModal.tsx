@@ -33,7 +33,7 @@ export const ConfirmationModal = ({
         <ModalTwo onClose={onClose} onReset={onClose} open={open} size="small">
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <Alert className="mb1" type="error">
+                <Alert className="mb-4" type="error">
                     {children}
                 </Alert>
             </ModalTwoContent>

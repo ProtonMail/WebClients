@@ -63,7 +63,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form }: UrlGroupProps<
         <FieldBox icon={<Icon name="earth" size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}>
             <label
                 htmlFor="next-url-field"
-                className="field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end flex-gap-0-5 color-norm text-normal"
+                className="field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end gap-2 color-norm text-normal"
             >
                 <span className="field-two-label color-weak text-sm">{c('Label').t`Websites`}</span>
             </label>
@@ -83,7 +83,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form }: UrlGroupProps<
 
                     return (
                         <>
-                            <ul className="unstyled m0">
+                            <ul className="unstyled m-0">
                                 {values.urls.map(({ url, id }, index) => (
                                     <li key={id}>
                                         <div className="flex flex-align-items-center flex-nowrap">

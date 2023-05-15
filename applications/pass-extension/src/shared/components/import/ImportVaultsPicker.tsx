@@ -58,7 +58,7 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                             style={{ opacity: selected ? 1 : 0.5 }}
                             rounded
                             key={importedVault.id}
-                            className="mb0-75"
+                            className="mb-3"
                         >
                             <ImportVaultPickerOption
                                 value={value.type === 'existing' ? value.shareId : value.id}
