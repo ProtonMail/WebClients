@@ -11,6 +11,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 
+import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
@@ -39,6 +40,8 @@ export const useScheduleSend = ({
     handleNoSubjects,
     handleNoAttachments,
 }: Props) => {
+    const { canScheduleSend } = useScheduleSendFeature();
+
     const location = useLocation();
     const dispatch = useAppDispatch();
 
@@ -116,5 +119,12 @@ export const useScheduleSend = ({
         }
     };
 
-    return { scheduleCount, loadingScheduleCount, handleScheduleSendModal, handleScheduleSend, modal };
+    return {
+        canScheduleSend: canScheduleSend && !modelMessage.draftFlags?.expiresIn && !modelMessage.data?.ExpirationTime,
+        scheduleCount,
+        loadingScheduleCount,
+        handleScheduleSendModal,
+        handleScheduleSend,
+        modal,
+    };
 };
