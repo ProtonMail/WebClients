@@ -180,11 +180,16 @@ const CreateEventPopover = ({
                     isInvitation={isInvitation}
                     setParticipantError={setParticipantError}
                 />
-                <PopoverFooter className={clsx(['flex-justify-end flex-nowrap', isDrawerApp && 'flex-column gap-2'])}>
+                <PopoverFooter
+                    className={clsx([
+                        'flex-justify-end flex-nowrap on-tiny-mobile-flex-column-reverse gap-2',
+                        isDrawerApp && 'flex-column ',
+                    ])}
+                >
                     <Button
                         disabled={loadingAction}
                         data-testid="create-event-popover:more-event-options"
-                        className={clsx([isDrawerApp ? 'w100' : 'mr-4'])}
+                        className="on-tiny-mobile-w100"
                         onClick={handleMore}
                     >{c('Action').t`More options`}</Button>
                     <PrimaryButton
