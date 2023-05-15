@@ -6,7 +6,8 @@
         "check-types": "tsc",
         "generate": "ts-node --skipProject gen-themes",
         "lint": "eslint . --ext ts --quiet --cache",
-        "test": "jest"
+        "test": "jest --coverage --runInBand --ci",
+        "test:dev": "jest --watch"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",

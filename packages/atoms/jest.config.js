@@ -1,8 +1,6 @@
 module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
-    collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto|bip39)/)'],
     transform: {
@@ -15,5 +13,14 @@ module.exports = {
         'sieve.js': '@proton/components/__mocks__/sieve.js',
     },
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
+    collectCoverageFrom: ['**/*.tsx', '!**/*.stories.tsx'],
     coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageThreshold: {
+        global: {
+            branches: 66,
+            functions: 50,
+            lines: 51,
+            statements: 52,
+        },
+    },
 };
