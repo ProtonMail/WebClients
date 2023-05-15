@@ -88,6 +88,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
                 if (!ExpectedMinEpochID) {
                     ktSentryReport('ExpectedMinEpochID set to null for a SKL with MinEpochID set to null', {
                         context: 'verifyOutboundPublicKeys',
+                        email,
                     });
                     return;
                 }
@@ -118,7 +119,8 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
                         verificationKeys,
                         Data,
                         Signature,
-                        'verifyOutboundPublicKeys'
+                        'verifyOutboundPublicKeys',
+                        email
                     );
 
                     if (!signatureTimestamp) {

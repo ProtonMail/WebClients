@@ -19,6 +19,7 @@ const createKeyMigrationKTVerifier = (
         } catch (error: any) {
             ktSentryReport('Key migration checks failed', {
                 context: 'KeyMigrationKTVerifier',
+                email,
                 error: error.message,
             });
             return;
