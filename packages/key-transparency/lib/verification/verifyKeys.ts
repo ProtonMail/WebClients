@@ -120,7 +120,8 @@ export const verifySKLSignature = async (
     verificationKeys: PublicKeyReference[],
     signedKeyListData: string,
     signedKeyListSignature: string,
-    sentryReportContext: string
+    sentryReportContext: string,
+    email: string
 ): Promise<Date | null> => {
     const { verified, signatureTimestamp, errors } = await CryptoProxy.verifyMessage({
         armoredSignature: signedKeyListSignature,
@@ -132,6 +133,7 @@ export const verifySKLSignature = async (
         ktSentryReport('SKL signature verification failed', {
             context: sentryReportContext,
             errors: JSON.stringify(errors),
+            email,
         });
         return null;
     }
@@ -175,7 +177,7 @@ export const verifyPublicKeys = async (
             .map(({ PublicKey }) => PublicKey);
 
         // Verify signature
-        const verified = await verifySKLSignature(verificationKeys, Data, Signature, 'verifyPublicKeys');
+        const verified = await verifySKLSignature(verificationKeys, Data, Signature, 'verifyPublicKeys', email);
 
         if (!verified) {
             return KT_STATUS.KT_FAILED;

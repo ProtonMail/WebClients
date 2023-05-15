@@ -127,6 +127,7 @@ const verifyProofOfObsolescence = async (proof: Proof, email: string, TreeHash: 
     if (Type !== KTPROOF_TYPE.OBSOLESCENCE) {
         ktSentryReport('Proof type should be of obsolescence', {
             context: 'verifyProofOfObsolescence',
+            email,
             proofType: Type,
         });
         throw new Error('Proof type should be of obsolescence');
@@ -134,6 +135,7 @@ const verifyProofOfObsolescence = async (proof: Proof, email: string, TreeHash: 
     if (!/^[a-f0-9]+$/.test(ObsolescenceToken)) {
         ktSentryReport('ObsolescenceToken should be an hex string', {
             context: 'verifyProofOfObsolescence',
+            email,
             ObsolescenceToken,
         });
         throw new Error('ObsolescenceToken should be an hex string');
@@ -153,6 +155,7 @@ const verifyProofOfExistence = async (proof: Proof, email: string, TreeHash: str
     if (Type !== KTPROOF_TYPE.EXISTENCE) {
         ktSentryReport('Proof type should be of existence', {
             context: 'verifyProofOfExistence',
+            email,
             proofType: Type,
         });
         throw new Error('Proof type should be of existence');
@@ -182,6 +185,7 @@ export const verifyLatestProofOfAbsence = async (api: Api, email: string) => {
     if (Proof.Type !== KTPROOF_TYPE.ABSENCE) {
         ktSentryReport('Proof type should be of abscence', {
             context: 'verifyLatestProofOfAbsence',
+            email,
             proofType: Proof.Type,
         });
         return;
@@ -194,6 +198,7 @@ export const verifyLatestProofOfAbsence = async (api: Api, email: string) => {
         // it throw nor, for the time being of UI-less KT, trigger anything
         ktSentryReport('Proof of abscence verification failed', {
             context: 'verifyLatestProofOfAbsence',
+            email,
         });
     }
 };
@@ -222,6 +227,7 @@ export const verifySKLAbsenceOrObsolescence = async (api: Api, email: string) =>
             context: 'verifySKLAbsenceOrObsolescence',
             ObsolescenceToken,
             proofType: Type,
+            email,
         });
         throw new Error('Proof type should be of absence or obsolescence');
     }
@@ -268,6 +274,7 @@ export const verifySKLExistence = async (
             ktSentryReport('Proof type should be of obsolescence', {
                 context: 'verifySKLExistence',
                 proofType: Type,
+                email,
             });
             throw new Error('Proof type should be of obsolescence');
         }
@@ -279,6 +286,7 @@ export const verifySKLExistence = async (
                 signedKeyList: JSON.stringify(signedKeyList),
                 CatchAllProof,
                 proofType: Type,
+                email,
             });
             throw new Error('Proof type should be of existence');
         }
