@@ -8,7 +8,7 @@ import './LobbyLayout.scss';
 
 export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => {
     return (
-        <FadeIn className="pass-lobby relative p2" duration={450}>
+        <FadeIn className="pass-lobby relative p-7" duration={450}>
             <FadeIn
                 className="absolute absolute-center-x top-custom"
                 style={{ '--top-custom': '-200px' }}

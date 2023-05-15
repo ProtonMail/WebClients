@@ -28,7 +28,7 @@ export const SessionLockPinModal: VFC<Props> = ({ title, assistiveText, loading,
             <ModalTwoHeader title={title} />
             <ModalTwoContent className="mb-8">
                 {assistiveText && (
-                    <Card rounded className="text-sm mb2">
+                    <Card rounded className="text-sm mb-7">
                         {assistiveText}
                     </Card>
                 )}

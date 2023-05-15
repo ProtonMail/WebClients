@@ -93,7 +93,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
         <FormikProvider value={form}>
             <Form className="flex flex-column h100">
                 <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
-                    <div className="mt0-25">
+                    <div className="mt-1">
                         <h3 className="text-bold text-2xl">
                             {submission.autosave.data.action === AutoSaveType.NEW &&
                                 c('Info').t`Add to ${PASS_APP_NAME}`}
@@ -107,8 +107,8 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
                     </div>
                 </div>
                 <div className="flex-item-fluid">
-                    <div className="flex flex-align-items-center mt1-5 mb1">
-                        <Icon name={'key'} className="mr0-5 item-icon" color="#6D4AFF" />
+                    <div className="flex flex-align-items-center mt-5 mb-4">
+                        <Icon name={'key'} className="mr-2 item-icon" color="#6D4AFF" />
                         <Field name="title">
                             {({ field }: FieldProps<AutosaveFormValues['title'], AutosaveFormValues>) => (
                                 <input
@@ -123,7 +123,7 @@ export const Autosave: VFC<{ submission: PromptedFormEntry; onAutoSaved: () => v
 
                     <Field name="username">
                         {({ field }: FieldProps<AutosaveFormValues['username'], AutosaveFormValues>) => (
-                            <InputFieldTwo dense label="Username" className="mb0-75" {...field} />
+                            <InputFieldTwo dense label="Username" className="mb-2" {...field} />
                         )}
                     </Field>
 

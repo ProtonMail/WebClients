@@ -15,7 +15,7 @@ export const AliasPreview: VFC<{
     const suffixLastChars = (suffix.split('@')?.[1]?.length ?? 5) + 1;
 
     const content = loading ? (
-        <div className="ml0-2 pass-skeleton pass-skeleton--alias-preview" />
+        <div className="ml-0.5 pass-skeleton pass-skeleton--alias-preview" />
     ) : (
         <MiddleEllipsis charsToDisplayEnd={suffixLastChars} text={prefix + suffix} />
     );
@@ -23,8 +23,8 @@ export const AliasPreview: VFC<{
     return standalone ? (
         <div className={clsx(['color-primary', className])}>{content}</div>
     ) : (
-        <div className={clsx(['flex mb1', className])}>
-            <small className="flex-item-nogrow flex-item-noshrink mr0-2">{c('Info').t`You're about to create`}</small>
+        <div className={clsx(['flex mb-4', className])}>
+            <small className="flex-item-nogrow flex-item-noshrink mr-0.5">{c('Info').t`You're about to create`}</small>
             <small className="color-primary flex-item-fluid">{content}</small>
         </div>
     );

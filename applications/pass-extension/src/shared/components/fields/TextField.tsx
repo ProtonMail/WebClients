@@ -18,7 +18,7 @@ const TextField: FC<TextFieldProps> = ({ field, form, action, ...rest }) => {
     const content = <InputFieldTwo dense error={error} {...field} {...rest} />;
 
     return (
-        <div className="flex flex-nowrap flex-align-items-end mb0-75">
+        <div className="flex flex-nowrap flex-align-items-end mb-3">
             {content}
             {action}
         </div>

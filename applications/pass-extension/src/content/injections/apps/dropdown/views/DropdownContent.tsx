@@ -66,7 +66,7 @@ export const DropdownContent: VFC = () => {
         <div ref={dropdownRef} className="min-h-custom bg-norm" style={{ '--min-height-custom': pixelEncoder(60) }}>
             {(() => {
                 if (workerState === undefined) {
-                    return <CircleLoader className="absolute absolute-center mauto" />;
+                    return <CircleLoader className="absolute absolute-center m-auto" />;
                 }
 
                 const { loggedIn, status } = workerState;
