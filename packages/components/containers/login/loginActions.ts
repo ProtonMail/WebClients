@@ -13,7 +13,6 @@ import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallba
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
@@ -30,7 +29,7 @@ import {
     migrateUser,
 } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
-import { getHasV2KeysToUpgrade, getV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
+import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
 import {
     attemptDeviceRecovery,
     getIsDeviceRecoveryAvailable,
@@ -212,17 +211,6 @@ const handleKeyUpgrade = async ({
     const { preAuthKTVerify } = preAuthKTVerifier;
 
     if (getHasV2KeysToUpgrade(user, addresses)) {
-        // Key upgrade can be triggered by the server.
-        // Since the server could use that logic to regenerate
-        // new SKLs on demand, we need to check the KT state.
-        await Promise.all(
-            addresses.map(async ({ Keys, Email, SignedKeyList }) => {
-                if (getV2KeysToUpgrade(Keys).length > 0) {
-                    await keyMigrationKTVerifier(canonicalizeInternalEmail(Email), Keys, SignedKeyList);
-                }
-            })
-        );
-
         const newKeyPassword = await upgradeV2KeysHelper({
             user,
             addresses,
@@ -232,6 +220,7 @@ const handleKeyUpgrade = async ({
             isOnePasswordMode,
             api,
             preAuthKTVerify,
+            keyMigrationKTVerifier,
         }).catch((e) => {
             const error = getSentryError(e);
             if (error) {
