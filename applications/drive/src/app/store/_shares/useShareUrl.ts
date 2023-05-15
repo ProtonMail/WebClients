@@ -22,10 +22,9 @@ import {
 } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import {
-    ShareURL,
+    ShareURL as ShareURLPayload,
     SharedURLFlags,
     SharedURLSessionKeyPayload,
-    UpdateSharedURL,
 } from '@proton/shared/lib/interfaces/drive/sharing';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
@@ -38,11 +37,12 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useDebouncedRequest } from '../_api';
+import { shareUrlPayloadToShareUrl, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';
+import { ShareURL, UpdateSharedURL } from './interface';
 import { getSharedLink } from './shareUrl';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
@@ -71,10 +71,10 @@ export default function useShareUrl() {
 
     const fetchShareUrl = async (abortSignal: AbortSignal, shareId: string): Promise<ShareURL | undefined> => {
         const { ShareURLs = [] } = await debouncedRequest<{
-            ShareURLs: ShareURL[];
+            ShareURLs: ShareURLPayload[];
         }>(querySharedLinks(shareId, { Page: 0, Recursive: 0, PageSize: 10 }), abortSignal);
 
-        return ShareURLs.length ? ShareURLs[0] : undefined;
+        return ShareURLs.length ? shareUrlPayloadToShareUrl(ShareURLs[0]) : undefined;
     };
 
     const decryptShareSessionKey = async (keyPacket: string | Uint8Array, password: string) => {
@@ -83,21 +83,21 @@ export default function useShareUrl() {
     };
 
     const decryptShareUrl = async ({
-        CreatorEmail,
-        Password,
-        SharePassphraseKeyPacket,
-        SharePasswordSalt,
+        creatorEmail,
+        password,
+        sharePassphraseKeyPacket,
+        sharePasswordSalt,
         ...rest
     }: ShareURL) => {
-        const privateKeys = await driveCrypto.getPrivateAddressKeys(CreatorEmail);
+        const privateKeys = await driveCrypto.getPrivateAddressKeys(creatorEmail);
         const decryptedPassword = await decryptUnsigned({
-            armoredMessage: Password,
+            armoredMessage: password,
             privateKey: privateKeys,
         });
 
-        const sharedLinkPassword: string = await computeKeyPassword(decryptedPassword, SharePasswordSalt);
+        const sharedLinkPassword: string = await computeKeyPassword(decryptedPassword, sharePasswordSalt);
         const shareSessionKey = await decryptShareSessionKey(
-            base64StringToUint8Array(SharePassphraseKeyPacket),
+            base64StringToUint8Array(sharePassphraseKeyPacket),
             sharedLinkPassword
         );
 
@@ -106,15 +106,15 @@ export default function useShareUrl() {
         }
 
         return {
-            ShareURL: {
+            shareUrl: {
                 ...rest,
-                CreatorEmail,
-                Password: decryptedPassword,
-                SharePassphraseKeyPacket,
-                SharePasswordSalt,
+                creatorEmail,
+                password: decryptedPassword,
+                sharePassphraseKeyPacket,
+                sharePasswordSalt,
             },
             keyInfo: {
-                sharePasswordSalt: SharePasswordSalt,
+                sharePasswordSalt,
                 shareSessionKey,
             },
         };
@@ -160,7 +160,7 @@ export default function useShareUrl() {
         linkShareId: string,
         linkShareSessionKey: SessionKey
     ): Promise<{
-        ShareURL: ShareURL;
+        shareUrl: ShareURL;
         keyInfo: {
             shareSessionKey: SessionKey;
             sharePasswordSalt: string;
@@ -190,8 +190,8 @@ export default function useShareUrl() {
             }),
         ]);
 
-        const { ShareURL } = await preventLeave(
-            debouncedRequest<{ ShareURL: ShareURL }>(
+        const shareUrl = await preventLeave(
+            debouncedRequest<{ ShareURL: ShareURLPayload }>(
                 queryCreateSharedLink(linkShareId, {
                     Flags: SharedURLFlags.GeneratedPasswordIncluded,
                     Permissions: 4,
@@ -206,7 +206,7 @@ export default function useShareUrl() {
                     Password,
                 })
             )
-        );
+        ).then(({ ShareURL }) => shareUrlPayloadToShareUrl(ShareURL));
 
         const volumeId = volumeState.findVolumeId(shareId);
         if (volumeId) {
@@ -214,9 +214,9 @@ export default function useShareUrl() {
         }
 
         return {
-            ShareURL: {
-                ...ShareURL,
-                Password: password,
+            shareUrl: {
+                ...shareUrl,
+                password,
             },
             keyInfo: {
                 shareSessionKey: linkShareSessionKey,
@@ -230,7 +230,7 @@ export default function useShareUrl() {
         shareId: string,
         linkId: string
     ): Promise<{
-        ShareURL: ShareURL;
+        shareUrl: ShareURL;
         keyInfo: {
             shareSessionKey: SessionKey;
             sharePasswordSalt: string;
@@ -278,8 +278,8 @@ export default function useShareUrl() {
             return;
         }
 
-        const { ShareURL } = await decryptShareUrl(shareUrl);
-        return ShareURL;
+        const { shareUrl: decryptedShareUrl } = await decryptShareUrl(shareUrl);
+        return decryptedShareUrl;
     };
 
     const loadShareUrlLink = async (
@@ -297,7 +297,7 @@ export default function useShareUrl() {
         linkId: string
     ): Promise<number | undefined> => {
         const shareUrl = await loadShareUrl(abortSignal, shareId, linkId);
-        return shareUrl?.NumAccesses;
+        return shareUrl?.numAccesses;
     };
 
     /*
@@ -331,10 +331,10 @@ export default function useShareUrl() {
         const { sharePasswordSalt, shareSessionKey } = keyInfo;
 
         const [
-            SharePassphraseKeyPacket,
-            Password,
+            sharePassphraseKeyPacket,
+            password,
             {
-                Auth: { Salt: UrlPasswordSalt, Verifier: SRPVerifier, ModulusID: SRPModulusID },
+                Auth: { Salt: urlPasswordSalt, Verifier: srpVerifier, ModulusID: srpModulusID },
             },
         ] = await Promise.all([
             computeKeyPassword(newPassword, sharePasswordSalt).then((sharedLinkPassword) =>
@@ -348,12 +348,12 @@ export default function useShareUrl() {
         ]);
 
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
-            Flags: getSharedLinkUpdatedFlags(newPassword),
-            Password,
-            SharePassphraseKeyPacket,
-            SRPVerifier,
-            SRPModulusID,
-            UrlPasswordSalt,
+            flags: getSharedLinkUpdatedFlags(newPassword),
+            password,
+            sharePassphraseKeyPacket,
+            srpVerifier,
+            srpModulusID,
+            urlPasswordSalt,
         };
         return fieldsToUpdate;
     };
@@ -373,7 +373,7 @@ export default function useShareUrl() {
         let fieldsToUpdate: Partial<UpdateSharedURL> = {};
 
         if (newDuration !== undefined) {
-            fieldsToUpdate = { ExpirationDuration: newDuration };
+            fieldsToUpdate = { expirationDuration: newDuration };
         }
 
         if (newPassword !== undefined) {
@@ -389,20 +389,34 @@ export default function useShareUrl() {
             };
         }
 
-        const { ShareURL } = await preventLeave(
-            debouncedRequest<{ ShareURL: ShareURL }>(queryUpdateSharedLink(shareId, shareUrlId, fieldsToUpdate))
-        );
+        const shareUrl = await preventLeave(
+            debouncedRequest<{ ShareURL: ShareURLPayload }>(
+                queryUpdateSharedLink(shareId, shareUrlId, {
+                    SharePasswordSalt: fieldsToUpdate.sharePasswordSalt,
+                    SharePassphraseKeyPacket: fieldsToUpdate.sharePassphraseKeyPacket,
+                    Permissions: fieldsToUpdate.permissions,
+                    Password: fieldsToUpdate.password,
+                    MaxAccesses: fieldsToUpdate.maxAccesses,
+                    Flags: fieldsToUpdate.flags,
+                    ExpirationDuration: fieldsToUpdate.expirationDuration,
+                    ExpirationTime: fieldsToUpdate.expirationTime,
+                    SRPModulusID: fieldsToUpdate.srpModulusID,
+                    SRPVerifier: fieldsToUpdate.srpVerifier,
+                    UrlPasswordSalt: fieldsToUpdate.urlPasswordSalt,
+                })
+            )
+        ).then(({ ShareURL }) => shareUrlPayloadToShareUrl(ShareURL));
 
         // Update password value to decrypted one.
         if (newPassword) {
-            fieldsToUpdate.Password = newPassword;
+            fieldsToUpdate.password = newPassword;
         }
 
         await events.pollEvents.driveEvents();
 
         return {
             ...fieldsToUpdate,
-            ExpirationTime: ShareURL.ExpirationTime,
+            expirationTime: shareUrl.expirationTime,
         };
     };
 
