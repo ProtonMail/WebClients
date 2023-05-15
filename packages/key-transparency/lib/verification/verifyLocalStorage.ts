@@ -48,6 +48,7 @@ const verifyKTBlobsContent = async (
                 if (isTimestampTooOld(creationTimestamp)) {
                     ktSentryReport('No target SKL found for a local timestamp older than max epoch interval', {
                         context: 'checkLSBlobs',
+                        email,
                     });
                 } else {
                     newKTBlobsContent.push(ktBlobContent);
@@ -60,7 +61,13 @@ const verifyKTBlobsContent = async (
         let signatureTime: number | undefined;
         if (Data && Signature) {
             const verificationKeys = [...publicKeys, ...localKeys];
-            const signatureTimestamp = await verifySKLSignature(verificationKeys, Data, Signature, 'checkLSBlobs');
+            const signatureTimestamp = await verifySKLSignature(
+                verificationKeys,
+                Data,
+                Signature,
+                'checkLSBlobs',
+                email
+            );
             if (!signatureTimestamp) {
                 // Note that this shouldn't be considered an hard failure since signature verification
                 // might fail in case keys drastically changed
@@ -76,6 +83,7 @@ const verifyKTBlobsContent = async (
                     context: 'checkLSBlobs',
                     signatureTime,
                     creationTimestamp,
+                    email,
                 });
                 continue;
             }
@@ -86,6 +94,7 @@ const verifyKTBlobsContent = async (
                 context: 'checkLSBlobs',
                 MinEpochID,
                 ExpectedMinEpochID,
+                email,
             });
             continue;
         }
@@ -103,6 +112,7 @@ const verifyKTBlobsContent = async (
                     context: 'checkLSBlobs',
                     certificateTimestamp,
                     creationTimestamp,
+                    email,
                 }
             );
             continue;
@@ -124,6 +134,7 @@ const verifyKTBlobsContent = async (
                         context: 'checkLSBlobs',
                         signatureTime,
                         creationTimestamp,
+                        email,
                     });
                 }
             } else if (
@@ -134,6 +145,7 @@ const verifyKTBlobsContent = async (
                     context: 'checkLSBlobs',
                     ObsolescenceToken,
                     creationTimestamp,
+                    email,
                 });
                 continue;
             }
