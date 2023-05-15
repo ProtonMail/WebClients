@@ -55,7 +55,8 @@ export const bootstrapInitialEpoch = async (
             addressVerificationKeys,
             inputSKL.Data,
             inputSKL.Signature,
-            'bootstrapInitialEpoch'
+            'bootstrapInitialEpoch',
+            email
         );
 
         if (!signatureTimestamp) {
@@ -309,7 +310,8 @@ export const auditAddresses = async (
                     addressVerificationKeys,
                     skl.Data,
                     skl.Signature,
-                    'auditAddresses'
+                    'auditAddresses',
+                    Email
                 );
 
                 if (!timestamp) {
@@ -480,7 +482,8 @@ export const verifyAuditAddressesResult = async (
         addressVerificationKeys,
         submittedSKL.Data,
         submittedSKL.Signature,
-        'verifyAuditAddressesResult'
+        'verifyAuditAddressesResult',
+        address.Email
     );
 
     if (!signatureTimestamp) {
