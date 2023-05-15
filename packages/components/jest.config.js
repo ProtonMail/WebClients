@@ -1,13 +1,12 @@
 module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
-    collectCoverage: true,
     collectCoverageFrom: [
         'components/**/*.{js,jsx,ts,tsx}',
         'containers/**/*.{js,jsx,ts,tsx}',
         'helpers/**/*.{js,jsx,ts,tsx}',
         'hooks/**/*.{js,jsx,ts,tsx}',
-        '!src/app/locales.ts'
+        '!src/app/locales.ts',
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
@@ -24,4 +23,12 @@ module.exports = {
     },
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageThreshold: {
+        global: {
+            branches: 21,
+            functions: 20,
+            lines: 27,
+            statements: 27,
+        },
+    },
 };

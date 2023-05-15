@@ -3,6 +3,7 @@ module.exports = {
     clearMocks: true,
     testEnvironment: 'jsdom',
     collectCoverageFrom: ['*.ts', '!index.ts'],
+    coverageReporters: ['text', 'lcov', 'cobertura'],
     coverageThreshold: {
         global: {
             branches: 100,
