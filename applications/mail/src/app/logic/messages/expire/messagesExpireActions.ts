@@ -1,12 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { setExpiration } from '@proton/shared/lib/api/messages';
-import { Api } from '@proton/shared/lib/interfaces';
+
+import { AppThunkExtra } from '../../store';
 
 export const expireMessages = createAsyncThunk<
     Promise<void>,
-    { IDs: string[]; conversationID?: string; expirationTime: number | null; api: Api; call: () => Promise<void> }
->('messages/setExpiration', async ({ IDs, expirationTime, api, call }) => {
-    await api(setExpiration(IDs, expirationTime));
-    await call();
+    { IDs: string[]; conversationID?: string; expirationTime: number | null },
+    AppThunkExtra
+>('messages/setExpiration', async ({ IDs, expirationTime }, { extra }) => {
+    await extra.api(setExpiration(IDs, expirationTime));
+    await extra.eventManager.call();
 });

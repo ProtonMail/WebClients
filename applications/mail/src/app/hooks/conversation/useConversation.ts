@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
-import { useApi, useEventManager } from '@proton/components';
+import { useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -48,7 +48,6 @@ interface UseConversation {
 
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
     const dispatch = useAppDispatch();
-    const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversation = useGetConversation();
     const isMounted = useIsMounted();
@@ -100,7 +99,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         if (isMounted()) {
             setPendingRequest(true);
         }
-        (await dispatch(loadAction({ api, conversationID, messageID }))) as any as Promise<any>;
+        (await dispatch(loadAction({ conversationID, messageID }))) as any as Promise<any>;
 
         const updatedConversation = getConversation(conversationID);
 

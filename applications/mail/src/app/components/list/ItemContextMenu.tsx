@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit, useModalState } from '@proton/components';
-import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { getExpirationTime } from '../../helpers/expiration';
@@ -49,8 +49,6 @@ const ItemContextMenu = ({
 }: Props) => {
     const dispatch = useAppDispatch();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
-    const api = useApi();
     const [modalProps, handleSetOpen, render] = useModalState();
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
     const buttonMarkAsRead = useMemo(() => {
@@ -77,7 +75,7 @@ const ItemContextMenu = ({
 
     const handleCustomExpiration = (expirationDate: Date) => {
         const expirationTime = getExpirationTime(expirationDate);
-        void dispatch(expireMessages({ IDs: checkedIDs, expirationTime, api, call }));
+        void dispatch(expireMessages({ IDs: checkedIDs, expirationTime }));
         handleSetOpen(false);
         createNotification({ text: c('Success').t`Self-destruction set` });
     };

@@ -3,15 +3,13 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useApi, useEventManager, useModalState } from '@proton/components';
+import { ErrorButton, Prompt, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { moveAll } from '../../logic/elements/elementsActions';
 import { useAppDispatch } from '../../logic/store';
 
 export const useMoveAll = () => {
-    const api = useApi();
-    const { call } = useEventManager();
     const dispatch = useAppDispatch();
 
     const [modalProps, setModalOpen] = useModalState();
@@ -21,7 +19,7 @@ export const useMoveAll = () => {
     });
 
     const handleSubmit = async () => {
-        void dispatch(moveAll({ api, call, ...actionProps }));
+        void dispatch(moveAll({ ...actionProps }));
         modalProps.onClose?.();
     };
 

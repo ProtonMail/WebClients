@@ -1,21 +1,21 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getConversation, setExpiration } from '@proton/shared/lib/api/conversations';
-import { Api } from '@proton/shared/lib/interfaces';
+import { getConversation } from '@proton/shared/lib/api/conversations';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { Conversation } from '../../models/conversation';
+import { AppThunkExtra } from '../store';
 import { ConversationEvent, ConversationParams, ConversationResult, ConversationState } from './conversationsTypes';
 
 export const initialize = createAction<ConversationState>('conversations/initialize');
 
-export const load = createAsyncThunk<ConversationResult, ConversationParams>(
+export const load = createAsyncThunk<ConversationResult, ConversationParams, AppThunkExtra>(
     'conversations/load',
-    async ({ api, conversationID, messageID }) => {
+    async ({ silentFetch = false, conversationID, messageID }, thunkApi) => {
         try {
-            return await api(getConversation(conversationID, messageID));
+            return await thunkApi.extra.api({ ...getConversation(conversationID, messageID), silent: silentFetch });
         } catch (error: any | undefined) {
             console.error(error);
             throw error;
@@ -72,11 +72,3 @@ export const eventDelete = createAction<string>('conversations/event/delete');
 export const eventConversationUpdate = createAction<{ ID: string; updatedConversation: Conversation }>(
     'conversations/event/update'
 );
-
-export const expireConversations = createAsyncThunk<
-    Promise<void>,
-    { IDs: string[]; expirationTime: number | null; api: Api; call: () => Promise<void> }
->('conversations/setExpiration', async ({ IDs, expirationTime, api, call }) => {
-    await api(setExpiration(IDs, expirationTime));
-    await call();
-});
