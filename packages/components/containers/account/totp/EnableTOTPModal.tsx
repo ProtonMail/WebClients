@@ -108,12 +108,14 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     .t`read our two-factor authentication guide first`}</Href>
             );
 
+            const BRAND_NAME_TWO = BRAND_NAME;
+
             return {
                 section: (
                     <>
                         <div className="mb-4">
                             {c('Info')
-                                .t`This wizard will enable Two-Factor Authentication (2FA) on your ${BRAND_NAME} account. Two-factor authentication will make your ${BRAND_NAME} account more secure so we recommend enabling it.`}
+                                .t`This wizard will enable Two-Factor Authentication (2FA) on your ${BRAND_NAME} account. Two-factor authentication will make your ${BRAND_NAME_TWO} account more secure so we recommend enabling it.`}
                         </div>
                         <div className="mb-4">
                             {
