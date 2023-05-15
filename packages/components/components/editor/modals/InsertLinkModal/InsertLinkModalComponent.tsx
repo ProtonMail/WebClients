@@ -146,7 +146,7 @@ const InsertLinkModalComponent = ({
                         {!hasImageInSelection && (
                             <Row>
                                 <Label>{c('Info').t`Test link`}</Label>
-                                <Field className="pt0-5 text-ellipsis">
+                                <Field className="pt-2 text-ellipsis">
                                     {url && label ? (
                                         <Href href={addLinkPrefix(url, type)} title={label}>
                                             {label}

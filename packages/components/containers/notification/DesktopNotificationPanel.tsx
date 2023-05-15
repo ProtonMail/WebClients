@@ -34,7 +34,7 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }: Props) =
 
     return (
         <>
-            <Field className="pt0-5">
+            <Field className="pt-2">
                 <div className="mb-4">
                     <span className="mr-2">{c('Info').t`Desktop notifications are currently`}</span>
                     {status === Status.GRANTED ? (

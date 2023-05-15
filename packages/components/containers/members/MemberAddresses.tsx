@@ -4,9 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
-import { classnames } from '../../helpers';
 
 const amountOfDisplayedAddresses = 3;
 
@@ -38,7 +38,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
         const displayAsFade = !expanded && isLastDisplayedAddress && amountOfAddresses > amountOfDisplayedAddresses;
 
-        const listItemClassName = classnames([displayAsFade && 'color-weak', 'my-2']);
+        const listItemClassName = clsx([displayAsFade && 'color-weak', 'my-2']);
 
         return (
             <li key={ID} className={listItemClassName}>
@@ -60,7 +60,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
     const getAddressesListItems = () => {
         if (amountOfAddresses === 0) {
             return (
-                <li className="pt0-5 pb0-5">
+                <li className="py-2">
                     {amountOfAddresses}
                     <span className="no-mobile"> {addressesPluralized}</span>
                 </li>

@@ -25,7 +25,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
     return (
         <div
             className={clsx([
-                'rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 flex flex-align-items-center flex-gap-0-5 mb-2',
+                'rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 flex flex-align-items-center flex-gap-0-5 mb-2',
                 isExpiringDraft ? 'bg-info border-info' : 'bg-warning border-warning',
             ])}
             data-testid="expiration-banner"

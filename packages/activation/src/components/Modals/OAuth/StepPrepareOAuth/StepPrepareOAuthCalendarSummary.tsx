@@ -74,9 +74,10 @@ const StepPrepareCalendarSummary = ({ isSelected }: Props) => {
                     {summary}
                 </div>
             )}
-            <UnderlineButton onClick={() => handleDisplayCustomizeModal(true)} className="flex-align-self-start pb0">{c(
-                'Action'
-            ).t`Customize`}</UnderlineButton>
+            <UnderlineButton
+                onClick={() => handleDisplayCustomizeModal(true)}
+                className="flex-align-self-start pb-0"
+            >{c('Action').t`Customize`}</UnderlineButton>
             {renderCustomizeModal && (
                 <CustomizeCalendarImportModal
                     handleSubmit={handleSubmit}

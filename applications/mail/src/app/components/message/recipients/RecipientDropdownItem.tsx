@@ -47,7 +47,7 @@ const RecipientDropdownItem = ({
     };
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5" onClick={handleClick}>
+        <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p-2" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
                 <span className="m-auto">
                     {isOutside ? (
@@ -63,7 +63,7 @@ const RecipientDropdownItem = ({
                     )}
                 </span>
             </span>
-            <div className="flex flex-column flex-item-fluid px0-5" data-testid="recipient:dropdown-item--contact-name">
+            <div className="flex flex-column flex-item-fluid px-2" data-testid="recipient:dropdown-item--contact-name">
                 <span className="text-ellipsis user-select" title={label}>
                     {label}
                     {!isOutside && recipient && <ProtonBadgeType recipient={recipient} />}

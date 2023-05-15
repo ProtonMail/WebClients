@@ -44,7 +44,7 @@ type CodeProps = {
 };
 
 const Code = ({ children }: CodeProps) => (
-    <code className="inline-block user-select rounded-sm p0-25 px0-5 border bg-weak text-norm text-sm hidden-empty">
+    <code className="inline-block user-select rounded-sm py-1 px-1 border bg-weak text-norm text-sm hidden-empty">
         {children}
     </code>
 );

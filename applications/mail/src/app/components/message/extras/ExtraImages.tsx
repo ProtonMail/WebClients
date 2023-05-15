@@ -69,7 +69,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
                 <Button
                     onClick={onLoadImages}
                     data-testid="embedded-content:load"
-                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr-0 md:mr-0 mb-3 px0-5"
+                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr-0 md:mr-0 mb-3 px-2"
                 >
                     <Icon name="image" className="flex-item-noshrink ml-1" />
                     <span className="ml-2">{actionText}</span>
@@ -79,12 +79,12 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     }
 
     return (
-        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap on-mobile-flex-column">
+        <div className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
                 <Icon name={couldLoadDirect ? 'info-circle' : 'image'} className="mt-2 ml-1 flex-item-noshrink" />
-                <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">{text}</span>
+                <span className="px-2 flex flex-item-fluid flex-align-items-center">{text}</span>
             </div>
-            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
+            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt-0.5">
                 <Tooltip title={tooltip}>
                     <Button
                         onClick={onLoadImages}

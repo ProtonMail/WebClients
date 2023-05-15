@@ -2,8 +2,9 @@ import { Fragment, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import clsx from '@proton/utils/clsx';
+
 import { Icon } from '../../../components';
-import { classnames } from '../../../helpers';
 import { getComparatorLabels, getConditionTypeLabels } from '../constants';
 import { ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
 
@@ -99,7 +100,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
         }, '');
 
         return isOpen ? (
-            <div className="pt0-5">
+            <div className="pt-2">
                 {conditionsRows.map((cond, i) => (
                     <div key={`preview-condition-${i}`}>
                         {i === 0 ? ifLabel : operator}
@@ -109,7 +110,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                 ))}
             </div>
         ) : (
-            <div className="pt0-5 max-w100 text-ellipsis" title={title}>
+            <div className="pt-2 max-w100 text-ellipsis" title={title}>
                 {conditionsRows.map((cond, i) => (
                     <span key={`preview-condition-${i}`}>
                         {i === 0 ? ifLabel : operator.toLowerCase()}
@@ -123,12 +124,12 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
 
     return (
         <div className="border-bottom">
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
-                <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
-                    <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
+            <div className="flex flex-nowrap on-mobile-flex-column align-items-center py-4">
+                <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
+                    <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Conditions`}</span>
                 </button>
-                <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
+                <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                     {conditionsRenderer}
                 </div>
             </div>

@@ -78,7 +78,7 @@ const Notifications = ({
             {canAdd && (
                 <Button
                     className={clsx([
-                        fullWidth ? 'p0' : 'p0-5',
+                        fullWidth ? 'p-0' : 'p-2',
                         notifications.length === 0 && noNotificationsButtonClassName,
                     ])}
                     shape={addIcon ? 'ghost' : 'underline'}

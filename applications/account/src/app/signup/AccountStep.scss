@@ -1,21 +1,21 @@
 @import '~@proton/styles/scss/lib';
 
 // Increase the challenge width on the iframe to show the input outline correctly.
-// These values (0.5 em) go with the bodyClassName on the challenge
+// These values (--space-2) go with the bodyClassName on the challenge
 .challenge-width-increase {
-	margin-inline-start: -0.5em;
-	inline-size: calc(100% + 1em);
+	margin-inline-start: calc(var(--space-2) * -1);
+	inline-size: calc(100% + var(--space-4));
 }
 
 .email-input-field {
 	&#{&} {
-		padding-inline: em(16);
+		padding-inline: var(--space-4);
 		font-size: em($base-font-size);
 	}
 
 	// Rely on parent frame size through a flag classname
 	.tinymobile & {
-		padding-inline: em(8);
+		padding-inline: var(--space-8);
 	}
 
 	.tinymobile &,

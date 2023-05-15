@@ -1,25 +1,18 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { getParents, order } from '@proton/shared/lib/helpers/folder';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
-
-
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, TreeViewContainer, TreeViewItem } from '../../components';
-import { classnames } from '../../helpers';
 import { useActiveBreakpoint, useApi, useEventManager, useLoading } from '../../hooks';
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';
 import ToggleNotify from './ToggleNotify';
-
 
 const INSIDE = 'inside';
 const AFTER = 'after';
@@ -31,7 +24,7 @@ interface HeaderProps {
 
 const Header = ({ isNarrow }: HeaderProps) => {
     return (
-        <div className="flex flex-nowrap w100 border-bottom pb0-5">
+        <div className="flex flex-nowrap w100 border-bottom pb-2">
             <span className="text-bold flex-item-fluid">
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
@@ -146,8 +139,8 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                             title={item.Path}
                             content={
                                 <div
-                                    className={classnames([
-                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w100 pt0-5 pb0-5 treeview-item relative',
+                                    className={clsx([
+                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w100 py-2 treeview-item relative',
                                         isOverred && position === BEFORE && 'treeview-item--move-top',
                                         isOverred && position === AFTER && 'treeview-item--move-bottom',
                                         isOverred && position === INSIDE && 'treeview-item--move-inside',

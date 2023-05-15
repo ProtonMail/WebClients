@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
@@ -8,5 +8,5 @@ interface Props {
 }
 
 export const ContactViewProperties = ({ className, children }: Props) => {
-    return <div className={classnames(['border-bottom mb-2 pb0-25', className])}>{children}</div>;
+    return <div className={clsx(['border-bottom mb-2 pb-1', className])}>{children}</div>;
 };

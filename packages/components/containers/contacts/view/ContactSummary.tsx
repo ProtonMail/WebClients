@@ -5,9 +5,9 @@ import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Tooltip } from '../../../components';
-import { classnames } from '../../../helpers';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import ContactImageSummary from './ContactImageSummary';
 
@@ -39,22 +39,19 @@ const ContactSummary = ({
 
     return (
         <div
-            className={classnames([
-                'contactsummary-container my-4',
-                !isNarrow && 'flex flex-nowrap flex-align-items-center',
-            ])}
+            className={clsx(['contactsummary-container my-4', !isNarrow && 'flex flex-nowrap flex-align-items-center'])}
         >
             <div
-                className={classnames([
-                    'text-center contactsummary-photo-container pt0-5 mb-2 md:mb-0 on-mobile-center',
+                className={clsx([
+                    'text-center contactsummary-photo-container pt-2 mb-2 md:mb-0 on-mobile-center',
                     leftBlockWidth,
                 ])}
             >
                 <ContactImageSummary photo={photo} name={name} />
             </div>
-            <div className="contactsummary-contact-name-container pl2 on-mobile-pl0 flex-no-min-children flex-item-fluid">
+            <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-no-min-children flex-item-fluid">
                 <h2
-                    className={classnames([
+                    className={clsx([
                         'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines',
                         // Several email addresses are a single word but too long, for this case, we break at any char
                         nameIsEmail && 'text-break',

@@ -130,7 +130,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                     {...inputProps}
                     placeholder={c('Placeholder').t`Search settings`}
                     prefix={<Icon name="magnifier" alt={c('Action').t`Search settings`} />}
-                    className="pl0"
+                    className="pl-0"
                     ref={inputRef}
                     containerRef={containerRef}
                     value={value}
@@ -154,7 +154,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                             }}
                         >
                             <div className="flex">
-                                <div className="pr1">
+                                <div className="pr-4">
                                     <Icon name={option.icon} />
                                 </div>
                                 <div className="flex-item-fluid">

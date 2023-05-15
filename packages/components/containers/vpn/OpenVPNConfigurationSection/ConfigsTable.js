@@ -1,7 +1,5 @@
 import { memo } from 'react';
 
-
-
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
@@ -57,7 +55,7 @@ const ServerDown = () => (
 export const P2PIcon = () => (
     <span className="mx-2">
         <Tooltip title={c('Info').t`P2P`}>
-            <Icon name="arrow-right-arrow-left" size={18} className="rounded bg-strong p0-25" />
+            <Icon name="arrow-right-arrow-left" size={18} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );
@@ -65,7 +63,7 @@ export const P2PIcon = () => (
 export const TorIcon = () => (
     <span className="mx-2">
         <Tooltip title={c('Info').t`Tor`}>
-            <Icon name="brand-tor" size={18} className="rounded bg-strong p0-25" />
+            <Icon name="brand-tor" size={18} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );

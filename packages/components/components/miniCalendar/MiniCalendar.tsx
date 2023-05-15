@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { createObserver } from '../../hooks/useElementRect';
 import { TodayIcon } from '../icon';
 import Icon from '../icon/Icon';
@@ -215,7 +215,7 @@ const MiniCalendar = ({
                 style={
                     !fixedSize && cellWidth && cellWidth > 0 ? { '--computed-cell-width': `${cellWidth}px` } : undefined
                 }
-                className={classnames([
+                className={clsx([
                     'minicalendar-grid px-3 pb-7',
                     displayWeekNumbers && 'with-weeknumbers',
                     fixedSize && 'is-fixed-size',

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import clsx from '@proton/utils/clsx';
+
 import { Checkbox, Icon } from '../../../components';
-import { classnames } from '../../../helpers';
 import { Actions } from '../interfaces';
 
 interface Props {
@@ -35,11 +36,11 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
 
     const renderClosed = () => {
         if (!markAs?.read && !markAs?.starred) {
-            return <em className="pt0-5">{c('Info').t`No action selected`}</em>;
+            return <em className="pt-2">{c('Info').t`No action selected`}</em>;
         }
 
         return (
-            <div className="pt0-5">
+            <div className="pt-2">
                 {markAs?.read && (
                     <span className="inline-flex flex-align-items-center mr-8">
                         <Icon name="eye" className="mr-2" />
@@ -58,16 +59,16 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
 
     return (
         <div
-            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
+            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center py-4"
             data-testid="filter-modal:mark-as-row"
         >
-            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
-                <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
+            <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+                <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
             </button>
-            <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
+            <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
-                    <div className="w100 pt0-5 pb0-5">
+                    <div className="w100 py-2">
                         <Checkbox
                             checked={markAs.read}
                             onChange={(e) => {

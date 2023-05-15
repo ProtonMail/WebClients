@@ -71,7 +71,7 @@ const ContactsWidgetGroupsToolbar = ({
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button
                             icon
-                            className="inline-flex pt0-5 pb0-5"
+                            className="inline-flex py-2"
                             onClick={onCompose}
                             disabled={noContactInSelected}
                             data-testid="contacts:compose-contact-group"
@@ -86,7 +86,7 @@ const ContactsWidgetGroupsToolbar = ({
                 <Tooltip title={deleteText}>
                     <Button
                         icon
-                        className="inline-flex pt0-5 pb0-5"
+                        className="inline-flex py-2"
                         onClick={onDelete}
                         disabled={noSelection}
                         data-testid="contacts:delete-contact-group"
@@ -99,7 +99,7 @@ const ContactsWidgetGroupsToolbar = ({
                         <Button
                             icon
                             color="norm"
-                            className="ml-auto inline-flex pt0-5 pb0-5"
+                            className="ml-auto inline-flex py-2"
                             onClick={onCreate}
                             data-testid="contacts:add-contact-group"
                         >

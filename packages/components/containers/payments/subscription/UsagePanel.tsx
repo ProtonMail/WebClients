@@ -65,7 +65,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     ];
 
     return (
-        <div className="border rounded px2 py1-5 pt0-5 your-account-usage-container">
+        <div className="border rounded px-6 pb-5 pt-2 your-account-usage-container">
             <h3>
                 <strong>{c('new_plans: Title').t`Your account's usage`}</strong>
             </h3>

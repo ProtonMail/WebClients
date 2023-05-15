@@ -56,7 +56,7 @@ const HeaderExtra = ({
     }
 
     return (
-        <section className="message-header-extra pt0-5 hidden-empty">
+        <section className="message-header-extra pt-2 hidden-empty">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />

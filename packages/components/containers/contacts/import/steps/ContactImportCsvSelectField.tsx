@@ -13,7 +13,7 @@ const ContactImportCsvSelectField = ({ value = '', onChangeField }: Props) => {
     const handleChangeField = ({ value }: SelectChangeEvent<string>) => onChangeField(value);
 
     return (
-        <Label className="pt0">
+        <Label className="pt-0">
             <SelectTwo value={value} onChange={handleChangeField}>
                 {fields.map((field) => (
                     <Option key={field.value} title={field.text} value={field.value} />

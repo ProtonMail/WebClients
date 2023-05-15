@@ -70,7 +70,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <span className="label pt0">{c('Label').t`OpenVPN / IKEv2 username`}</span>
+                    <span className="label pt-0">{c('Label').t`OpenVPN / IKEv2 username`}</span>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="flex flex-align-items-center">
                     <div className="text-ellipsis max-w100 mr-0 md:mr-4">
@@ -83,7 +83,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
             </SettingsLayout>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <span className="label pt0">{c('Label').t`OpenVPN / IKEv2 password`}</span>
+                    <span className="label pt-0">{c('Label').t`OpenVPN / IKEv2 password`}</span>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="flex flex-align-items-center">
                     <div className="text-ellipsis max-w100 mr-0 md:mr-4">
