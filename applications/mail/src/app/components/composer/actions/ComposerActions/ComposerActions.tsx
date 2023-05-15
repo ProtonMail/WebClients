@@ -18,7 +18,6 @@ import ComposerPasswordActions from '../ComposerPasswordActions';
 import ComposerSendButton from '../ComposerSendButton';
 import ComposerScheduleSendActions from '../scheduleSend/ScheduleSendActions';
 import ComposerScheduleSendSpotlight from '../scheduleSend/ScheduleSendSpotlight';
-import useScheduleSendFeature from '../scheduleSend/useScheduleSendFeature';
 import useScheduleSendSpotlight from '../scheduleSend/useScheduleSendSpotlight';
 import useComposerSendActionsText from './useComposerActionsText';
 
@@ -39,6 +38,7 @@ interface Props {
     onPassword: () => void;
     onScheduleSendModal: () => void;
     onScheduleSend: (scheduledAt: number) => void;
+    canScheduleSend: boolean;
     onSend: () => Promise<void>;
     opening: boolean;
     syncInProgress: boolean;
@@ -64,9 +64,9 @@ const ComposerActions = ({
     onSend,
     opening,
     syncInProgress,
+    canScheduleSend,
 }: Props) => {
     const disabled = opening;
-    const { canScheduleSend } = useScheduleSendFeature();
     const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
     const scheduleSendSpotlight = useScheduleSendSpotlight(!opening);
 
