@@ -32,13 +32,15 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
 
     const { onClose } = rest;
 
+    const BRAND_NAME_TWO = BRAND_NAME;
+
     const installAndGoText = isSafari()
         ? // translator: Full sentence "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.""
           c('Info')
               .t`Your ${BRAND_NAME} Account includes SimpleLogin. Install the browser extension with one click to get started.`
         : // translator: Full sentence "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias."
           c('Info')
-              .t`SimpleLogin is a ${BRAND_NAME} service, and your ${BRAND_NAME} Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
+              .t`SimpleLogin is a ${BRAND_NAME} service, and your ${BRAND_NAME_TWO} Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
 
     const handlePluginAction = async () => {
         setLoading(true);
