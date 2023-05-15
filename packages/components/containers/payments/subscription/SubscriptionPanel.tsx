@@ -24,6 +24,8 @@ import percentage from '@proton/utils/percentage';
 import { Icon, Meter, Price, SettingsLink, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
 import {
+    FREE_PASS_ALIASES,
+    FREE_VAULTS,
     PASS_PLUS_VAULTS,
     getDevices,
     getForwardingMailboxes,
@@ -226,6 +228,8 @@ const SubscriptionPanel = ({
             // },
             getLoginsAndNotes(),
             getDevices(),
+            getVaults(FREE_VAULTS),
+            getHideMyEmailAliases(FREE_PASS_ALIASES),
         ];
 
         return (
