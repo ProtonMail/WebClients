@@ -30,7 +30,8 @@ const createPreAuthKTVerifier = (APP_NAME: APP_NAMES, feature: KT_FF, api: Api):
                 publicKeys,
                 signedKeyList.Data,
                 signedKeyList.Signature,
-                'preAuthKTVerify'
+                'preAuthKTVerify',
+                address.Email
             );
 
             if (!signatureTimestamp) {
@@ -72,6 +73,7 @@ const createPreAuthKTVerifier = (APP_NAME: APP_NAMES, feature: KT_FF, api: Api):
                 ktSentryReport('Failure during own keys commitment', {
                     context: 'preAuthKTCommit',
                     errorMessage: error.message,
+                    addressID,
                 });
             });
         }
