@@ -39,6 +39,8 @@ const UsernameSection = ({ app }: Props) => {
 
     const primaryAddress = addresses?.find(getIsAddressEnabled);
 
+    const BRAND_NAME_TWO = BRAND_NAME;
+
     return (
         <>
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
@@ -47,7 +49,7 @@ const UsernameSection = ({ app }: Props) => {
                     <Card className="mb-8" rounded bordered={false}>
                         <div className="mb-2">
                             {c('Info')
-                                .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}
+                                .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}
                             <Href href={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
                         </div>
                         <ButtonLike
