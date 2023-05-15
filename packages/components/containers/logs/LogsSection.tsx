@@ -130,11 +130,13 @@ const LogsSection = () => {
         withLoading(fetchAndSetState());
     }, [page]);
 
+    const BRAND_NAME_TWO = BRAND_NAME;
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`Logs include authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME} credentials.`}
+                    .t`Logs include authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME_TWO} credentials.`}
             </SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>

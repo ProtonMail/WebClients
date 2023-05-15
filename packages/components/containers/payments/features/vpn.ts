@@ -145,6 +145,8 @@ export const getTor = (included: boolean, highlight?: boolean): PlanCardFeatureD
 };
 
 const getVPNConnectionsB2B = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
+    const BRAND_NAME_TWO = BRAND_NAME;
+
     return {
         text:
             n === 1
@@ -155,7 +157,7 @@ const getVPNConnectionsB2B = (n = 0, highlight?: boolean): PlanCardFeatureDefini
                       n
                   ),
         tooltip: c('new_plans: tooltip')
-            .t`One VPN connection allows one device to connect to ${BRAND_NAME} VPN at any given time. For instance, to connect a phone and a laptop to ${BRAND_NAME} VPN at the same time, you need two VPN connections.`,
+            .t`One VPN connection allows one device to connect to ${BRAND_NAME} VPN at any given time. For instance, to connect a phone and a laptop to ${BRAND_NAME_TWO} VPN at the same time, you need two VPN connections.`,
         included: true,
         highlight,
         icon: 'brand-proton-vpn',
