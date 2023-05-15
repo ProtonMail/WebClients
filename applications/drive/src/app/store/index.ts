@@ -6,17 +6,7 @@ export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useRevisions } from './_revisions';
 export { useUserSettings, UserSettingsProvider } from './_settings';
-export {
-    useDefaultShare,
-    usePublicShare,
-    useLockedVolume,
-    useShareUrl,
-    // It would be good to make custom type to contain such computed values one day.
-    hasCustomPassword,
-    hasGeneratedPasswordIncluded,
-    splitGeneratedAndCustomPassword,
-    getSharedLink,
-} from './_shares';
+export { useDefaultShare, usePublicShare, useLockedVolume, useShareUrl } from './_shares';
 export { useUpload, useFileUploadInput, useFolderUploadInput } from './_uploads';
 export * from './_uploads/interface';
 export { useDownloadProvider as useDownload, useThumbnailsDownload } from './_downloads';
