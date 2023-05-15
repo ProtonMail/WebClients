@@ -31,7 +31,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
         <>
             <div className="flex flex-justify-space-between flex-align-items-center">
                 <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)}>
-                    <div className="w-custom ml0-5" style={{ '--width-custom': '100px' }}>
+                    <div className="w-custom ml-2" style={{ '--width-custom': '100px' }}>
                         <strong className="text-sm block text-ellipsis">{vaultName}</strong>
                         <span className="text-sm text-weak">
                             {c('Info').ngettext(msgid`${count} item`, `${count} items`, count)}
@@ -54,7 +54,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                 className="text-sm"
                             >
                                 <span className="flex flex-align-items-center">
-                                    <Icon name="plus" size={14} className="mr0-75 flex-item-nogrow" />
+                                    <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
                                     <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
                                 </span>
                             </Option>,
@@ -73,7 +73,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                                     : 'vault'
                                             }
                                             size={14}
-                                            className="mr0-75 flex-item-nogrow"
+                                            className="mr-3 flex-item-nogrow"
                                         />
                                         <span className="flex-item-fluid text-ellipsis">{vault.content.name}</span>
                                     </span>

@@ -12,12 +12,12 @@ const TextFieldValue: FC<{ children: string; fallback?: string }> = ({ children,
 
     return (
         <div className="flex flex-nowrap flex-align-items-center">
-            <div className="mr1 text-ellipsis user-select">
+            <div className="mr-4 text-ellipsis user-select">
                 {isNonEmpty ? children : <span className="text-sm color-weak">{fallback}</span>}
             </div>
             {isNonEmpty && (
                 <Copy
-                    className="mlauto flex-item-noshrink"
+                    className="ml-auto flex-item-noshrink"
                     value={children}
                     onCopy={() =>
                         createNotification({

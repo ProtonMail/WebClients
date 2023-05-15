@@ -81,14 +81,14 @@ export const ItemViewPanel: FC<Props> = ({
                                         className="flex flex-align-items-center text-left"
                                         onClick={handleRestoreClick}
                                     >
-                                        <Icon name="arrows-rotate" className="mr0-5" />
+                                        <Icon name="arrows-rotate" className="mr-2" />
                                         {c('Action').t`Restore item`}
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
                                         className="flex flex-align-items-center text-left"
                                         onClick={handleDeleteClick}
                                     >
-                                        <Icon name="trash-cross" className="mr0-5" />
+                                        <Icon name="trash-cross" className="mr-2" />
                                         {c('Action').t`Delete permanently`}
                                     </DropdownMenuButton>
                                 </QuickActionsDropdown>,

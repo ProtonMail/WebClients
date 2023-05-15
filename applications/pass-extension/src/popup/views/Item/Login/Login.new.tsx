@@ -185,7 +185,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                                             )
                                                         }
                                                     >
-                                                        <Icon name="trash" className="mr0-5" />
+                                                        <Icon name="trash" className="mr-2" />
                                                         {c('Action').t`Delete alias`}
                                                     </DropdownMenuButton>
                                                 </QuickActionsDropdown>

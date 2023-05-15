@@ -48,7 +48,7 @@ export const InstallationSuccess: VFC = () => {
                     alt=""
                 />
                 <Vr className="block h-custom" style={{ '--height-custom': '220px' }} />
-                <div className="m-auto w100 text-center p4 color-norm">
+                <div className="m-auto w100 text-center p-14 color-norm">
                     <h1 className="h2 pass-onboarding--heading mb-4 text-bold flex flex-align-items-center flex-justify-center">
                         {c('Title').jt`Thank you for installing ${brandNameJSX}`}
                     </h1>
@@ -57,10 +57,10 @@ export const InstallationSuccess: VFC = () => {
                         {c('Info').t`Follow these simple steps to get the best experience using ${PASS_APP_NAME}`}
                     </h2>
 
-                    <div className="mxauto flex flex-justify-center mb-4">
+                    <div className="mx-auto flex flex-justify-center mb-4">
                         <ol className="unstyled m-0">
                             {steps.map(({ key, icon, description }, idx) => (
-                                <li key={key} className="flex mb2 flex-align-items-center">
+                                <li key={key} className="flex mb-7 flex-align-items-center">
                                     <div
                                         className="pass-onboarding--dot bg-primary rounded-50 text-center mr-4 relative"
                                         aria-hidden="true"

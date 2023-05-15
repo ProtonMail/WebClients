@@ -19,7 +19,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
     <div className="flex-column flex gap-y-5">
         <div className="mb-4 px-4 py-2 flex flex-align-items-center">
             <span
-                className="text-2xl text-center text-break-all text-monospace mauto h-custom"
+                className="text-2xl text-center text-break-all text-monospace m-auto h-custom"
                 style={{ '--height-custom': '72px' }}
             >
                 {getCharsGroupedByColor(password)}

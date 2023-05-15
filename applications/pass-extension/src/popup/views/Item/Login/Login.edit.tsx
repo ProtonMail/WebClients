@@ -176,7 +176,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                                             )
                                                         }
                                                     >
-                                                        <Icon name="trash" className="mr0-5" />
+                                                        <Icon name="trash" className="mr-2" />
                                                         {c('Action').t`Delete alias`}
                                                     </DropdownMenuButton>
                                                 </QuickActionsDropdown>
