@@ -3899,7 +3899,7 @@ __metadata:
     karma-webpack: ^5.0.0
     mocha: ^10.2.0
     playwright: ^1.33.0
-    pmcrypto: "npm:@protontech/pmcrypto@^7.7.0"
+    pmcrypto: "npm:@protontech/pmcrypto@^7.9.0"
     prettier: ^2.8.8
     ts-loader: ^9.4.2
     typescript: ^5.0.4
@@ -23239,12 +23239,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~5.8.0-0":
-  version: 5.8.0-0
-  resolution: "@protontech/openpgp@npm:5.8.0-0"
+"openpgp@npm:@protontech/openpgp@~5.9.0":
+  version: 5.9.0
+  resolution: "@protontech/openpgp@npm:5.9.0"
   dependencies:
     asn1.js: ^5.0.0
-  checksum: b51796939100ee95858e17e65575c3fafc0f9f531dd075ac07e0a63c843322c8c9ff4d1bf4467edc354a78313354efabaa748913a7ac2671c30e77f6ab2d5e8b
+  checksum: a0f30a48ad3d20db9d6b69de6835cde73c1084e3a50b54f8063a6aba4bc8c256617dc1ee405fd91f4eb519c1b1a640145155f75367a750654225967755b2db3e
   languageName: node
   linkType: hard
 
@@ -24268,16 +24268,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^7.7.0":
-  version: 7.7.0
-  resolution: "@protontech/pmcrypto@npm:7.7.0"
+"pmcrypto@npm:@protontech/pmcrypto@^7.9.0":
+  version: 7.9.0
+  resolution: "@protontech/pmcrypto@npm:7.9.0"
   dependencies:
     "@openpgp/asmcrypto.js": ^2.3.3-0
     "@openpgp/tweetnacl": ^1.0.3
     "@openpgp/web-stream-tools": ^0.0.13
     jsmimeparser: "npm:@protontech/jsmimeparser@^2.0.1"
-    openpgp: "npm:@protontech/openpgp@~5.8.0-0"
-  checksum: 00f94339f572f1c8fc88ede85a53337b36955d25ed25c4b1c4d4e667659f3674916396c2bdf63428fa80dbd3ee69bbae1aaa6f98adebd1db79cb3e6e98db6a01
+    openpgp: "npm:@protontech/openpgp@~5.9.0"
+  checksum: be437df0b76f0fb5da47ed6ec1b6ef271c4ac39b979b6a44e1fa4555755626623b9d39b7e7b0c93ff3dd4e462517286c460992a9cce24726526555d3286af947
   languageName: node
   linkType: hard
 
@@ -25366,7 +25366,7 @@ fsevents@^1.2.7:
     eslint: ^8.39.0
     mailosaur: ^8.6.1
     node-fetch: ^3.3.1
-    openpgp: "npm:@protontech/openpgp@~5.8.0-0"
+    openpgp: "npm:@protontech/openpgp@~5.9.0"
     pdf-parse: ^1.1.1
     playwright: ^1.33.0
     proxy-agent: ^5.0.0
