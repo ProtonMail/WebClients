@@ -6,9 +6,9 @@ import { Button } from '@proton/atoms';
 import { useUser } from '@proton/components/hooks';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import clsx from '@proton/utils/clsx';
 
 import { Checkbox, Icon, LabelStack, useModalState } from '../../../components';
-import { classnames } from '../../../helpers';
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 import { Actions } from '../interfaces';
 
@@ -95,14 +95,14 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
 
     return (
         <div
-            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
+            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center py-4"
             data-testid="filter-modal:label-row"
         >
-            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
-                <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
+            <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+                <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
             </button>
-            <div className={classnames(['flex-item-fluid', !isNarrow && 'ml-4'])}>
+            <div className={clsx(['flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
                     <>
                         <div className="w100">
@@ -130,7 +130,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                     </div>
                                 ))
                             ) : (
-                                <div className="pt0-5 mb-4">{c('Label').t`No label found`}</div>
+                                <div className="pt-2 mb-4">{c('Label').t`No label found`}</div>
                             )}
                         </div>
                         {canCreateLabel && (

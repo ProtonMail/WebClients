@@ -1,22 +1,26 @@
 import { c } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
-
-
-import { Alert, Field, Label, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Row, ShortcutsSectionView } from '../../components';
+import {
+    Alert,
+    Field,
+    Label,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Row,
+    ShortcutsSectionView,
+} from '../../components';
 import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
-
-
 import './MailShortcutsModal.scss';
-
 
 const MailShortCutsModal = (props: ModalProps) => {
     const title = c('Title').t`${MAIL_APP_NAME} Keyboard Shortcuts`;
@@ -44,7 +48,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                 <hr className="my-8 border-bottom" />
                 <Row className="mb-8">
                     <Label htmlFor="toggle-shortcuts" className="mr-4">{c('Label').t`Keyboard shortcuts`}</Label>
-                    <Field className="pt0-5">
+                    <Field className="pt-2">
                         <ShortcutsToggle id="toggle-shortcuts" />
                     </Field>
                 </Row>

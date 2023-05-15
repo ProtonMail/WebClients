@@ -68,7 +68,7 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                     pill
                     content={<Icon name="envelope-lock" className="color-primary" />}
                     hasCaret={false}
-                    className="pt0 pr0-75 pl0-75"
+                    className="pt-0 px-3"
                 >
                     <DropdownMenu>
                         <DropdownMenuButton className="text-left" onClick={() => setSpyTrackerModalOpen(true)}>
@@ -83,7 +83,7 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                                         color="#D42C83"
                                         alt={c('Alternative text for simple login image').t`Simple Login`}
                                     />
-                                    <span className="pl0-25 flex-item-fluid">
+                                    <span className="pl-1 flex-item-fluid">
                                         {
                                             // translator : Received message has been delivered to the user via a Simple Login alias
                                             c('Message has been sent to the user via a SimpleLogin alias')

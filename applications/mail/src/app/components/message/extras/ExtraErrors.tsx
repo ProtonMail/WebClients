@@ -59,7 +59,7 @@ const ExtraErrors = ({ message }: Props) => {
                 return (
                     <div
                         key={errorType}
-                        className="bg-norm border rounded pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap on-mobile-flex-column"
+                        className="bg-norm border rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column"
                         data-testid="errors-banner"
                     >
                         <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
@@ -67,7 +67,7 @@ const ExtraErrors = ({ message }: Props) => {
                                 name="exclamation-circle-filled"
                                 className="flex-item-noshrink mt-1 ml-0.5 color-danger"
                             />
-                            <span className="pl0-5 mt-1 pr0-5 flex-item-fluid" data-testid="errors-banner:content">
+                            <span className="px-2 mt-1 flex-item-fluid" data-testid="errors-banner:content">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>

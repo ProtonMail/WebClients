@@ -12,8 +12,8 @@ const OrganizerRow = ({ organizer }: Props) => {
     const displayFull = name && name !== email;
 
     return (
-        <div key={email} className={clsx(['address-item flex mb-1 pl0-5 pr0-5'])}>
-            <div className="flex flex-item-fluid p0-5" title={displayFull ? `${name} <${email}>` : email}>
+        <div key={email} className={clsx(['address-item flex mb-1 px-2'])}>
+            <div className="flex flex-item-fluid p-2" title={displayFull ? `${name} <${email}>` : email}>
                 {displayFull ? (
                     <div className="text-ellipsis">{`${name} <${email}>`}</div>
                 ) : (

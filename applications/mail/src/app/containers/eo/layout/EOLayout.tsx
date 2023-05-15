@@ -94,24 +94,24 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </Href>
                 </div>
             </div>
-            <footer className="flex-item-noshrink text-center p1">
+            <footer className="flex-item-noshrink text-center p-4">
                 <div className="auto-mobile">
                     {
                         // translator: full sentence 'Proton. Privacy by default.'
                         c('Footer').t`${BRAND_NAME}. Privacy by default.`
                     }
                 </div>
-                <div className="text-center text-sm m-0 pt1 pb0-5 flex-item-noshrink">
+                <div className="text-center text-sm m-0 pt-4 pb-2 flex-item-noshrink">
                     <span className="auto-mobile">{termsLink}</span>
-                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                    <span className="color-weak px-3 no-mobile" aria-hidden="true">
                         |
                     </span>
                     <span className="auto-mobile">{privacyLink}</span>
-                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                    <span className="color-weak px-3 no-mobile" aria-hidden="true">
                         |
                     </span>
                     <span className="auto-mobile">{c('Info').jt`Version ${appVersion}`}</span>
-                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                    <span className="color-weak px-3 no-mobile" aria-hidden="true">
                         |
                     </span>
                     {hasLanguageSelect && (

@@ -14,7 +14,7 @@ interface Props {
 
 const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Props) => {
     return (
-        <div className="pt1 pb1 pr1 on-mobile-pr0 flex-item-fluid">
+        <div className="pr-0 py-4 md:pr-4 flex-item-fluid">
             <h3 className="text-bold text-capitalize mb-2" id={`desc_${name}`}>
                 {name}
             </h3>

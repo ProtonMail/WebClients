@@ -104,7 +104,7 @@ const MailSidebarSystemFolders = ({
         dragOverlay.current = document.createElement('div');
         // translator: This is the text overlay following the cursor when dragging a sidebar element. Ex: Move Inbox
         dragOverlay.current.innerHTML = c('Label').t`Move ${sidebarElementName}`;
-        dragOverlay.current.className = 'absolute bg-weak text-white py0-5 px1 rounded';
+        dragOverlay.current.className = 'absolute bg-weak text-white py-2 px-4 rounded';
         document.body.appendChild(dragOverlay.current);
 
         event.dataTransfer.setDragImage(dragOverlay.current, 0, 30);

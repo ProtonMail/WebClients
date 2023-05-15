@@ -419,7 +419,7 @@ const CalendarContainerView = ({
                     <Tooltip key="createEvent" title={createEventText}>
                         <Button
                             icon
-                            className="mr-2 inline-flex pt0-5 pb0-5"
+                            className="mr-2 inline-flex py-2"
                             onClick={onClick}
                             disabled={noSelection || !onCreateEvent}
                             title={createEventText}
@@ -569,7 +569,7 @@ const CalendarContainerView = ({
             drawerApp={isDrawerApp ? null : <DrawerApp contactCustomActions={contactCustomActions} />}
             mainBordered={canShowDrawer && showDrawerSidebar}
         >
-            <div className="only-print p1">
+            <div className="only-print p-4">
                 {tzid} <br />
                 {calendars
                     .filter((calendar) => calendar.Display)

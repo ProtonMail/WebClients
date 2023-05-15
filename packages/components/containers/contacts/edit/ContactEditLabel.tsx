@@ -47,7 +47,7 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
         );
 
         return (
-            <Label className="pt0 mr-4 on-mobile-w100">
+            <Label className="pt-0 mr-4 on-mobile-w100">
                 <SelectTwo
                     value={field}
                     onChange={handleChangeField}
@@ -68,13 +68,13 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
     }
 
     if (field === 'fn' || fixedType || !fieldTypes.map(({ value: type }) => type).includes(type)) {
-        return <ContactLabelProperty className="pt0-5" field={field} type={type} />;
+        return <ContactLabelProperty className="pt-2" field={field} type={type} />;
     }
 
     const selectedType = fieldTypes.find((fieldType) => fieldType.value === type) || fieldTypes[0];
 
     return (
-        <Label className="pt0 mr-4 on-mobile-w100">
+        <Label className="pt-0 mr-4 on-mobile-w100">
             <SelectTwo value={type} onChange={handleChangeType} title={selectedType.text}>
                 {fieldTypes.map((fieldType) => (
                     <Option key={fieldType.value} title={fieldType.text} value={fieldType.value} />

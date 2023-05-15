@@ -1,7 +1,5 @@
 import { RefObject, useMemo } from 'react';
 
-
-
 import { c, msgid } from 'ttag';
 
 import {
@@ -199,7 +197,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
         groupedReplies[organizerPartstat].count += 1;
     }
 
-    const labelClassName = 'inline-flex pt0-25';
+    const labelClassName = 'inline-flex pt-1';
 
     const eventDetailsContent = (
         <>
@@ -253,7 +251,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
             )}
             <IconRow
                 className="flex-item-fluid"
-                labelClassName="inline-flex pt0"
+                labelClassName="inline-flex pt-0"
                 title={c('Label').t`Calendar`}
                 icon={<CalendarSelectIcon color={Color} />}
             >

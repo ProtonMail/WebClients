@@ -103,8 +103,8 @@ const CalendarMemberRow = ({
 
     return (
         <TableRow>
-            <TableCell className="on-mobile-pl0">
-                <div className="flex flex-nowrap flex-align-items-center flex-gap-0-5 on-mobile-w40">
+            <TableCell>
+                <div className="flex flex-nowrap flex-align-items-center gap-2 on-mobile-w40">
                     <Avatar color="weak" className="flex-item-noshrink">
                         {getInitials(name)}
                     </Avatar>

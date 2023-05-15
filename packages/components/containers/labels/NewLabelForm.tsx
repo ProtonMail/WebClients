@@ -1,19 +1,14 @@
 import { c } from 'ttag';
 
-
-
 import { getColorName } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
-
-
 import { ColorPicker, Info, InputFieldTwo, Label, Toggle } from '../../components';
 import { useMailSettings } from '../../hooks';
 import ParentFolderSelector from './ParentFolderSelector';
-
 
 interface Props {
     label: Partial<tsLabel | Folder>;
@@ -107,7 +102,7 @@ function NewLabelForm({
                             />
                         </span>
                     </Label>
-                    <div className="pt0-5 ml-4">
+                    <div className="pt-2 ml-4">
                         <Toggle
                             id="notification"
                             checked={folder.Notify === 1}

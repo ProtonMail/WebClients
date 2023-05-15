@@ -113,7 +113,7 @@ const MessagesOtherSection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="settings-layout-right-fixed-size flex flex-row">
-                    <div className="flex-item-fluid pr0-5">
+                    <div className="flex-item-fluid pr-2">
                         <FontFaceSelect
                             id="fontFace"
                             aria-describedby="label-composer-default-font-size"

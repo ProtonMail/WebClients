@@ -323,7 +323,7 @@ const AccountStep = ({
                     />
                     {hasChallenge ? (
                         <Challenge
-                            bodyClassName="pl0-5 pr0-5"
+                            bodyClassName="px-2"
                             iframeClassName="challenge-width-increase"
                             challengeRef={challengeRefLogin}
                             type={0}

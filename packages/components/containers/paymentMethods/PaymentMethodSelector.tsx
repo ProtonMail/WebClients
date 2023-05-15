@@ -1,7 +1,7 @@
 import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Option, Radio, SelectTwo } from '../../components';
-import { classnames } from '../../helpers';
 import { PaymentMethodData } from './interface';
 
 interface Props {
@@ -20,8 +20,8 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange }: Pr
                         <label
                             htmlFor={value}
                             key={value}
-                            className={classnames([
-                                'pt0-5 pb0-5 flex flex-nowrap flex-align-items-center',
+                            className={clsx([
+                                'py-2 flex flex-nowrap flex-align-items-center',
                                 lastUsedMethod?.value === value && 'border-bottom',
                             ])}
                         >
@@ -55,7 +55,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange }: Pr
                 if (lastUsedMethod?.value === option.value) {
                     return [
                         child,
-                        <div className="py0-5 block" key={`${option.value}-separator`}>
+                        <div className="py-2 block" key={`${option.value}-separator`}>
                             <hr className="my-0" />
                         </div>,
                     ];

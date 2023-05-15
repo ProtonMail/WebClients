@@ -113,7 +113,7 @@ export function RevisionDetailsModal({
                     signatureAddress={revision.SignatureAddress}
                     isFile
                     name={name}
-                    className="mb1"
+                    className="mb-4"
                 />
                 <DetailsRow label={c('Title').t`Name`}>
                     <FileNameDisplay text={name} />
@@ -135,7 +135,7 @@ export function RevisionDetailsModal({
                     label={
                         <>
                             {c('Title').t`Size`}
-                            <Tooltip title={sizeTooltipMessage} className="ml0-25 mb0-25">
+                            <Tooltip title={sizeTooltipMessage} className="ml-1 mb-1">
                                 <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
                             </Tooltip>
                         </>
@@ -283,7 +283,7 @@ function DetailsRow({ label, title, children, dataTestId }: RowProps) {
     return (
         <Row title={title}>
             <span className="label cursor-default">{label}</span>
-            <div className="pt0-5" data-testid={dataTestId}>
+            <div className="pt-2" data-testid={dataTestId}>
                 <b>{children}</b>
             </div>
         </Row>

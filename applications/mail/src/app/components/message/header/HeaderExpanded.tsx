@@ -193,7 +193,7 @@ const HeaderExpanded = ({
     return (
         <div
             className={clsx([
-                'message-header px1-25 message-header-expanded',
+                'message-header px-5 message-header-expanded',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 !messageLoaded && 'is-loading',
                 showDetails ? 'message-header-expanded--with-details' : 'message-header-expanded--without-details',
@@ -300,13 +300,13 @@ const HeaderExpanded = ({
                             labelID={labelID}
                             labels={labels}
                             isCollapsed={false}
-                            className="on-mobile-pt0-25 ml-2"
+                            className="pt-1 md:pt-0 ml-2"
                         />
                     </div>
                 </>
             )}
 
-            <div className="pt0 flex flex-justify-space-between">
+            <div className="pt-0 flex flex-justify-space-between">
                 <div className="flex">
                     <HeaderMoreDropdown
                         labelID={labelID}

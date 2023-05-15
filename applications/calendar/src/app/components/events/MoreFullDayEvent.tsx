@@ -26,7 +26,7 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
         >
             <div
                 className={clsx([
-                    'calendar-dayeventcell-inner isNotAllDay isLoaded text-ellipsis inline-flex text-left w100 pl0-5 pr0-5',
+                    'calendar-dayeventcell-inner isNotAllDay isLoaded text-ellipsis inline-flex text-left w100 px-2',
                     isSelected && 'isSelected',
                 ])}
                 ref={eventRef}

@@ -25,11 +25,11 @@ const ExtraSpamScore = ({ message }: Props) => {
     if (isDMARCValidationFailure(message.data)) {
         return (
             <div
-                className="bg-norm rounded px0-5 py0-25 mb-3 flex flex-nowrap"
+                className="bg-norm rounded px-2 py-1 mb-3 flex flex-nowrap"
                 data-testid="spam-banner:failed-dmarc-validation"
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink mt-1 ml-0.5 color-danger" />
-                <span className="pl0-5 pr0-5 pb0-25 mt-0.5 flex-item-fluid">
+                <span className="px-2 pb-1 mt-0.5 flex-item-fluid">
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}{' '}
                     <Href
@@ -54,14 +54,14 @@ const ExtraSpamScore = ({ message }: Props) => {
 
         return (
             <div
-                className="bg-danger border border-danger rounded pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap"
+                className="bg-danger border border-danger rounded  pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
                 data-testid="spam-banner:phishing-banner"
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1" />
-                <span className="pl0-5 mt-0.5 pr0-5 flex-item-fluid">
+                <span className="px-2 mt-0.5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                    <Href className="pl0-5 pr0-5" href={getBlogURL('/prevent-phishing-attacks')}>
+                    <Href className="px-2" href={getBlogURL('/prevent-phishing-attacks')}>
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>

@@ -152,7 +152,7 @@ const TotpInput = ({
                             }}
                             type={type === 'number' ? 'tel' : 'text'}
                             inputMode={type === 'number' ? 'numeric' : undefined}
-                            inputClassName="text-center p0 flex-item-noshrink"
+                            inputClassName="text-center p-0 flex-item-noshrink"
                             maxLength={1}
                             error={error}
                             aria-label={c('Info').t`Enter verification code. Digit ${digit}.`}

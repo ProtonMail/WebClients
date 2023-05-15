@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
+import clsx from '@proton/utils/clsx';
 
 import { PrimaryButton } from '../../components';
-import { classnames } from '../../helpers';
 import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
@@ -16,7 +16,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     return (
-        <div className="absolute-center text-center w100 pl1 pr1">
+        <div className="absolute-center text-center w100 px-4">
             <img
                 className="mb-4 w80p"
                 src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
@@ -25,7 +25,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
             />
 
             <h2
-                className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}
+                className={clsx(['p-1 text-bold', isNarrow && 'h3'])}
                 data-testid="file-preview:unsupported-preview-text"
             >
                 {c('Info').t`Preview for this file type is not supported`}

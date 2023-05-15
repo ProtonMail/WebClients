@@ -85,7 +85,7 @@ const MessagesSection = () => {
                             />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt0-5">
+                    <SettingsLayoutRight className="pt-2">
                         <RemoteToggle
                             id="remoteToggle"
                             hideRemoteImages={hideRemoteImages}
@@ -105,7 +105,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <EmbeddedToggle
                         id="embeddedToggle"
                         hideEmbeddedImages={hideEmbeddedImages}
@@ -123,7 +123,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <ShowMovedToggle id="showMovedToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -137,7 +137,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -153,7 +153,7 @@ const MessagesSection = () => {
                     </label>
                 </SettingsLayoutLeft>
 
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <ViewModeToggle
                         id="viewMode"
                         viewMode={ViewMode}
@@ -176,7 +176,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <StickyLabelsToggle
                         id="stickyLabelsToggle"
                         stickyLabels={StickyLabels}
@@ -198,7 +198,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
+                <SettingsLayoutRight className="pt-2">
                     <SpamActionSelect
                         id="spamActionLabelSelect"
                         value={SpamAction}

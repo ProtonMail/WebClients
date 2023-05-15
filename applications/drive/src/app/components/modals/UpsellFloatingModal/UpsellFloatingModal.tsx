@@ -25,7 +25,7 @@ interface ChildProps {
 const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) => {
     return (
         <>
-            <div className="upsell-floating-modal-content w100 flex flex-justify-center p5">
+            <div className="upsell-floating-modal-content w100 flex flex-justify-center p-14">
                 <Tooltip className="upsell-floating-modal-tooltip" title={c('Action').t`Close`} onClick={onClose}>
                     <Button className="flex-item-noshrink" icon shape="ghost" data-testid="modal:close">
                         <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
@@ -34,9 +34,8 @@ const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) =>
                 <img className="block" src={bigLogoWhite} alt={DRIVE_APP_NAME} />
             </div>
             <div className="my-4 mx-5">
-                <span className="upsell-floating-modal-badge text-semibold rounded pt0-25 pb0-25 pl1 pr1 mt-2">{c(
-                    'Info'
-                ).t`Free forever`}</span>
+                <span className="upsell-floating-modal-badge text-semibold rounded py-1 px-4 mt-2">{c('Info')
+                    .t`Free forever`}</span>
                 <h4 className="text-bold mt-3">{c('Info').t`Swiss encrypted file storage`}</h4>
                 <p className="m-0 mt-1">
                     {c('Info')

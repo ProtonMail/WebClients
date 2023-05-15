@@ -62,7 +62,7 @@ const MessagesGeneralSection = () => {
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
-                            <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
+                            <span className="pr-2 text-semibold">{c('Label').t`Daily email notifications`}</span>
                             <Info
                                 url={getStaticURL('/support/notification-email')}
                                 title={c('Info')

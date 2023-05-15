@@ -108,7 +108,7 @@ const MessageDetailsModal = ({
             <ModalTwoHeader title={c('Title').t`Message details`} />
             <ModalTwoContent>
                 <div
-                    className="message-detailed-header-extra pt0-5 mb-8"
+                    className="message-detailed-header-extra pt-2 mb-8"
                     data-testid="message:message-expanded-header-extra"
                 >
                     {icon && (
@@ -116,7 +116,7 @@ const MessageDetailsModal = ({
                             <span className="mr-2 flex">
                                 <EncryptionStatusIcon useTooltip={false} isDetailsModal {...icon} />
                             </span>
-                            <span className="pl0-25 flex-item-fluid text-ellipsis" title={icon.text}>
+                            <span className="pl-1 flex-item-fluid text-ellipsis" title={icon.text}>
                                 {icon.text}
                             </span>
                         </div>
@@ -132,7 +132,7 @@ const MessageDetailsModal = ({
                                     className="m-auto"
                                 />
                             </span>
-                            <span className="pl0-25 flex-item-fluid text-ellipsis" title={title}>
+                            <span className="pl-1 flex-item-fluid text-ellipsis" title={title}>
                                 {title}
                             </span>
                         </div>
@@ -141,7 +141,7 @@ const MessageDetailsModal = ({
                         <span className="mr-2 flex">
                             <Icon name="calendar-grid" className="m-auto" alt={c('Label').t`Date:`} />
                         </span>
-                        <span className="pl0-25 flex-item-fluid text-ellipsis">
+                        <span className="pl-1 flex-item-fluid text-ellipsis">
                             <ItemDate element={message.data} labelID={labelID} mode="full" />
                         </span>
                     </div>
@@ -158,7 +158,7 @@ const MessageDetailsModal = ({
                                 />
                             </span>
                         </span>
-                        <span className="pl0-25 flex-item-fluid text-ellipsis" title={locationText}>
+                        <span className="pl-1 flex-item-fluid text-ellipsis" title={locationText}>
                             {locationText}
                         </span>
                     </div>
@@ -166,7 +166,7 @@ const MessageDetailsModal = ({
                         <span className="mr-2 flex">
                             <Icon name="filing-cabinet" className="m-auto" alt={c('Label').t`Size:`} />
                         </span>
-                        <span className="pl0-25 flex-item-fluid text-ellipsis" title={sizeText}>
+                        <span className="pl-1 flex-item-fluid text-ellipsis" title={sizeText}>
                             {sizeText}
                         </span>
                     </div>
@@ -177,7 +177,7 @@ const MessageDetailsModal = ({
                                     <ItemAttachmentIcon element={message.data} />
                                 </span>
                             </span>
-                            <span className="pl0-25 flex-item-fluid text-ellipsis" title={attachmentsText}>
+                            <span className="pl-1 flex-item-fluid text-ellipsis" title={attachmentsText}>
                                 {attachmentsText}
                             </span>
                         </div>

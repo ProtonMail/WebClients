@@ -41,11 +41,11 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                 className="relative flex-nowrap flex-item-fluid bg-weak on-desktop-h100 scroll-if-needed"
             >
                 <SettingsPageTitle>{title}</SettingsPageTitle>
-                <div className="container-section-sticky pt0">
-                    <div className="flex on-mobile-flex-column pb2">
+                <div className="container-section-sticky pt-0">
+                    <div className="flex on-mobile-flex-column pb-8">
                         <div className="flex-item-fluid">
                             {children ? (
-                                <section className="overview-grid-item overview-grid-item--full border bg-norm shadow-norm p2 mb-6">
+                                <section className="overview-grid-item overview-grid-item--full border bg-norm shadow-norm p-8 mb-6">
                                     {children}
                                 </section>
                             ) : null}
@@ -54,7 +54,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 </div>
             </div>
-            <aside className="context-bar on-desktop-h100 scroll-if-needed p2">
+            <aside className="context-bar on-desktop-h100 scroll-if-needed p-6">
                 <SummarySection
                     user={user}
                     userSettings={userSettings}
@@ -62,7 +62,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     organization={organization}
                 />
                 {subscription && hasMailPlus(subscription) ? (
-                    <div className="bg-primary rounded text-center p1 mt-8 relative">
+                    <div className="bg-primary rounded text-center p-4 mt-8 relative">
                         <p className="mt-0 mb-4">
                             {c('Info')
                                 .t`Upgrade to a paid plan with multi-user support to add more users to your organization.`}
@@ -81,7 +81,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 ) : null}
                 {hasPaidMail ? null : (
-                    <div className="bg-primary rounded text-center p1 mt-8 relative">
+                    <div className="bg-primary rounded text-center p-4 mt-8 relative">
                         <p className="mt-0 mb-4">
                             {c('Info')
                                 .t`Upgrade to a paid plan to unlock premium features and increase your storage space.`}

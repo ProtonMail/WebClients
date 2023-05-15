@@ -109,7 +109,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
                 <br />
                 <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
-                <div className="text-bold rounded border p1 bg-weak text-break my-4">{c('Info')
+                <div className="text-bold rounded border p-4 bg-weak text-break my-4">{c('Info')
                     .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
             </>
         );
@@ -144,7 +144,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         <span className="mr-2">{c('Info').t`Recipient: `}</span>
                     </Label>
                     <Field className="border bg-weak">
-                        <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={toEmails}>
+                        <div className="px-4 py-2 text-ellipsis" title={toEmails}>
                             {toEmails}
                         </div>
                     </Field>
@@ -154,7 +154,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         <span className="mr-2">{c('Info').t`Subject: `}</span>
                     </Label>
                     <Field className="border bg-weak">
-                        <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={Subject}>
+                        <div className="px-4 py-2 text-ellipsis" title={Subject}>
                             {Subject}
                         </div>
                     </Field>
@@ -164,7 +164,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         <span className="mr-2">{c('Info').t`Body: `}</span>
                     </Label>
                     <Field className="border bg-weak">
-                        <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={Body}>
+                        <div className="px-4 py-2 text-ellipsis" title={Body}>
                             {Body}
                         </div>
                     </Field>
@@ -250,13 +250,13 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;
 
     return (
-        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb-3 flex flex-nowrap on-mobile-flex-column">
+        <div className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
                 <Icon name="envelope" className="mt-1 ml-0.5 flex-item-noshrink" />
-                <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">{c('Status')
+                <span className="px-2 flex flex-item-fluid flex-align-items-center">{c('Status')
                     .t`This message is from a mailing list.`}</span>
             </div>
-            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
+            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt-0.5">
                 <Tooltip title={c('Info').t`This message is from a mailing list.`}>
                     <Button
                         onClick={() => setUnsubscribeModalOpen(true)}
