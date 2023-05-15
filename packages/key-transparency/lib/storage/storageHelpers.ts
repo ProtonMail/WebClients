@@ -113,6 +113,7 @@ export const commitOwnKeystoLS = async (
     if (!ExpectedMinEpochID) {
         ktSentryReport('Could not fetch ExpectedMinEpochID', {
             context: 'commitOwnKeystoLS',
+            addressID,
         });
         return;
     }
@@ -135,6 +136,7 @@ export const commitOwnKeystoLS = async (
                 // The lastSKL must exist because it was created when this LS blob was added
                 ktSentryReport('Latest SKL from LS blob not returned', {
                     context: 'commitOwnKeystoLS',
+                    addressID,
                 });
                 return;
             }
@@ -166,6 +168,7 @@ export const commitOwnKeystoLS = async (
                 // The lastSKL must exist because it was created when this LS blob was added
                 ktSentryReport('Latest SKL from LS blob not returned', {
                     context: 'commitOwnKeystoLS',
+                    addressID,
                 });
                 return;
             }
@@ -175,6 +178,7 @@ export const commitOwnKeystoLS = async (
                 // run for more than EXP_EPOCH_INTERVAL while allowing the given SKL change
                 ktSentryReport('Latest SKL from LS blob already in KT, self-audit must have not run', {
                     context: 'commitOwnKeystoLS',
+                    addressID,
                 });
                 return;
             }
@@ -195,6 +199,7 @@ export const commitOwnKeystoLS = async (
         default:
             ktSentryReport('There are too many KT blobs in localStorage', {
                 context: 'commitOwnKeystoLS',
+                addressID,
                 ktBlobsContentlength: ktBlobsContent.length,
             });
             return;
