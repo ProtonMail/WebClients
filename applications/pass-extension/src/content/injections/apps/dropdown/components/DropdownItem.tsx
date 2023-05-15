@@ -20,16 +20,16 @@ export const DropdownItem: VFC<{
         onClick={onClick}
         disabled={disabled}
     >
-        <div className="flex flex-align-items-center py0-3">
+        <div className="flex flex-align-items-center py-1">
             {icon !== undefined ? (
-                <Icon name={icon} className="mr1 item-icon" size={24} color="#6D4AFF" />
+                <Icon name={icon} className="mr-4 item-icon" size={24} color="#6D4AFF" />
             ) : (
-                <div className="mr1 w-custom text-align-center" style={{ '--width-custom': '24px' }}>
+                <div className="mr-4 w-custom text-align-center" style={{ '--width-custom': '24px' }}>
                     <img
                         src={'/assets/protonpass-icon-32.png'}
                         width={18}
                         height={18}
-                        className="ml0-25"
+                        className="ml-1"
                         alt={c('Action').t`Toggle ${PASS_APP_NAME}`}
                     />
                 </div>
