@@ -1,4 +1,5 @@
 import { Integer as asn1jsInteger } from 'asn1js';
+import { updateServerTime } from 'pmcrypto';
 
 import {
     parseCertChain,
@@ -10,6 +11,14 @@ import {
 import { epoch } from './verifyKeys.data';
 
 describe('certificate transparency', () => {
+    beforeAll(() => {
+        updateServerTime(epoch.CertificateTime + 86_400); // 24h after epoch was published.
+    });
+
+    afterAll(() => {
+        updateServerTime(null);
+    });
+
     it('should fail to parse with corrupt certificate', () => {
         let errorThrown = true;
         try {
