@@ -1,4 +1,4 @@
-import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { Conversation } from '../../models/conversation';
@@ -9,7 +9,7 @@ export interface ConversationResult {
 }
 
 export interface ConversationParams {
-    api: Api;
+    silentFetch?: boolean;
     conversationID: string;
     messageID: string | undefined;
 }

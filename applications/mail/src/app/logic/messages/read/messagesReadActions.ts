@@ -6,7 +6,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { LOAD_RETRY_DELAY } from '../../../constants';
 import { MessageEvent } from '../../../models/event';
-import { RootState } from '../../store';
+import { AppThunkExtra, RootState } from '../../store';
 import { messageByID } from '../messagesSelectors';
 import {
     DocumentInitializeParams,
@@ -24,23 +24,26 @@ export const errors = createAction<{ ID: string; errors: MessageErrors }>('messa
 
 export const event = createAction<MessageEvent>('messages/event');
 
-export const load = createAsyncThunk<Message, LoadParams>('messages/load', async ({ ID, api }, { getState }) => {
-    const messageState = messageByID(getState() as RootState, { ID });
-    const actualID = messageState?.data?.ID || ID;
+export const load = createAsyncThunk<Message, LoadParams, AppThunkExtra>(
+    'messages/load',
+    async ({ ID }, { getState, extra }) => {
+        const messageState = messageByID(getState() as RootState, { ID });
+        const actualID = messageState?.data?.ID || ID;
 
-    // If the Body is already there, no need to send a request
-    if (!messageState?.data?.Body) {
-        try {
-            const { Message: message } = await api(getMessage(actualID));
-            return message;
-        } catch (error: any) {
-            await wait(LOAD_RETRY_DELAY);
-            throw error;
+        // If the Body is already there, no need to send a request
+        if (!messageState?.data?.Body) {
+            try {
+                const { Message: message } = await extra.api(getMessage(actualID));
+                return message;
+            } catch (error: any) {
+                await wait(LOAD_RETRY_DELAY);
+                throw error;
+            }
         }
-    }
 
-    return messageState?.data;
-});
+        return messageState?.data;
+    }
+);
 
 export const documentInitializePending = createAction<string>('messages/document/initialize/pending');
 

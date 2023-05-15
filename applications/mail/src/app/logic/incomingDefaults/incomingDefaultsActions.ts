@@ -6,7 +6,7 @@ import {
     getIncomingDefaults,
 } from '@proton/shared/lib/api/incomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import { Api, IncomingDefault } from '@proton/shared/lib/interfaces';
+import { IncomingDefault } from '@proton/shared/lib/interfaces';
 
 import { IncomingDefaultEvent } from '../../models/event';
 import { AppThunkExtra } from '../store';
@@ -58,16 +58,15 @@ export const load = createAsyncThunk<LoadResults, undefined, AppThunkExtra>(
 export const event = createAction<IncomingDefaultEvent>('incomingDefaults/event');
 
 interface AddBlockAddressesParams {
-    api: Api;
     addresses: string[];
     overwrite?: boolean;
 }
 
-export const addBlockAddresses = createAsyncThunk<IncomingDefault[], AddBlockAddressesParams>(
+export const addBlockAddresses = createAsyncThunk<IncomingDefault[], AddBlockAddressesParams, AppThunkExtra>(
     'incomingDefaults/addBlockAddresses',
-    async ({ api, addresses, overwrite }) => {
+    async ({ addresses, overwrite }, thunkApi) => {
         const promises = addresses.map((address) => {
-            return api<{ IncomingDefault: IncomingDefault }>(
+            return thunkApi.extra.api<{ IncomingDefault: IncomingDefault }>(
                 addIncomingDefault({
                     Email: address,
                     Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
@@ -88,11 +87,11 @@ export const addBlockAddresses = createAsyncThunk<IncomingDefault[], AddBlockAdd
 export const remove = createAsyncThunk<
     { ID: string }[],
     {
-        api: Api;
         ID: string;
-    }
->('incomingDefaults/remove', async ({ api, ID }) => {
-    const result = await api<{ Responses: { ID: string }[] }>(deleteIncomingDefaults([ID]));
+    },
+    AppThunkExtra
+>('incomingDefaults/remove', async ({ ID }, thunkApi) => {
+    const result = await thunkApi.extra.api<{ Responses: { ID: string }[] }>(deleteIncomingDefaults([ID]));
 
     return result.Responses;
 });

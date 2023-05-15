@@ -86,9 +86,9 @@ export const useSendMessage = () => {
                 const request = async () => {
                     if (isScheduledMessage) {
                         await dispatch(cancelScheduled({ ID: savedMessage.localID }));
-                        await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID, api })).unwrap();
+                        await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID })).unwrap();
                     } else {
-                        await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID, api })).unwrap();
+                        await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID })).unwrap();
                     }
                     await call();
                 };
