@@ -212,6 +212,7 @@ const Composer = (
         loadingScheduleCount,
         handleScheduleSendModal,
         handleScheduleSend,
+        canScheduleSend,
         modal: waitBeforeScheduleModal,
     } = useScheduleSend({
         modelMessage: modelMessage as MessageStateWithData,
@@ -309,6 +310,7 @@ const Composer = (
                     onSend={handleSend({ sendAsScheduled: false })}
                     opening={opening}
                     syncInProgress={pendingSave.isPending}
+                    canScheduleSend={canScheduleSend}
                 />
             </div>
             {waitBeforeScheduleModal}
