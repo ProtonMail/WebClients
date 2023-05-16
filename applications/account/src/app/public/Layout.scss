@@ -84,9 +84,37 @@
 		max-inline-size: rem(1500);
 	}
 
+	$three-column-breakpoint: 1300px;
+	@include media('>#{$three-column-breakpoint}') {
+		&-three-columns {
+			.sign-layout {
+				max-inline-size: rem(375);
+				padding: rem(24);
+			}
+
+			.sign-layout-title {
+				font-size: rem(24);
+			}
+		}
+	}
+
+	// had to add this adaptation because not enough space for back button as we increased size of main content
+	@include media('<=#{$three-column-breakpoint}') {
+		&-three-columns {
+			&#{&} {
+				flex-direction: column;
+				align-items: center;
+
+				.sign-layout {
+					margin-block-end: 2em;
+				}
+			}
+		}
+	}
+
 	// had to add this adaptation because not enough space for back button as we increased size of main content
 	@include media('<=#{em(1120, 16)}') {
-		&-two-column {
+		&-mobile-columns {
 			&#{&} {
 				flex-direction: column;
 				align-items: center;
@@ -94,14 +122,23 @@
 		}
 	}
 
+	&-upsell-most-popular {
+		border: 1px solid var(--primary);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
 	@include media('<=xsmall') {
-		&-two-column {
+		&-mobile-columns {
 			&#{&} {
 				.sign-layout-upsell {
 					border-block-end: 1px solid var(--border-weak);
 					border-radius: 0;
 				}
 			}
+		}
+
+		&-upsell-most-popular {
+			display: none;
 		}
 	}
 
