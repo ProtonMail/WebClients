@@ -4,7 +4,8 @@ import { FeatureCode } from '@proton/components/containers';
 import { useConfig, useFeature, useUser } from '@proton/components/hooks';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import appsLinks from '../../containers/app/appsLinks';
+import ProductLink, { apps } from '../../containers/app/ProductLink';
+import { Logo } from '../logo';
 import MobileNavServices from './MobileNavServices';
 
 interface Props {
@@ -19,8 +20,14 @@ const MobileAppsLinks = ({ app }: Props) => {
 
     return (
         <MobileNavServices>
-            {appsLinks({ app, user, isPassSettingsEnabled, ownerApp: APP_NAME }).map((app) => {
-                return <Fragment key={app.key}>{app}</Fragment>;
+            {apps({ isPassSettingsEnabled }).map((appToLinkTo) => {
+                return (
+                    <Fragment key={appToLinkTo}>
+                        <ProductLink ownerApp={APP_NAME} app={app} appToLinkTo={appToLinkTo} user={user}>
+                            <Logo appName={appToLinkTo} variant="glyph-only" className="flex-item-noshrink mr-2" />
+                        </ProductLink>
+                    </Fragment>
+                );
             })}
         </MobileNavServices>
     );
