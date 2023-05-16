@@ -38,7 +38,6 @@ const ContactGroupRow = ({
     const [hasFocus, setHasFocus] = useState(false);
 
     const addressCount = groupsEmailsMap[ID]?.length || 0;
-    console.log({ groupsEmailsMap: groupsEmailsMap[ID] });
 
     const handleFocus = () => {
         setHasFocus(true);

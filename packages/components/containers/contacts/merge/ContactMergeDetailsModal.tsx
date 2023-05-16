@@ -69,14 +69,12 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
                         vCardContact={model.vCardContact}
                         errors={model.errors}
                         contactID={contactID}
-                        onDelete={noop}
                         isPreview
                         contactEmails={contactEmailsMap[contactID] as ContactEmail[]}
                         contactGroupsMap={contactGroupsMap}
                         ownAddresses={ownAddresses}
                         onReload={noop}
                         onEdit={noop}
-                        onExport={noop}
                         onEmailSettings={noop}
                         onGroupDetails={noop}
                         onGroupEdit={noop}
