@@ -12,7 +12,7 @@ import {
     useErrorHandler,
     useFormErrors,
     useLoading,
-    useMyLocation,
+    useMyCountry,
     useNotifications,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -141,8 +141,7 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
     const { createNotification } = useNotifications();
     const errorHandler = useErrorHandler();
     const [method, setMethod] = useState<Method>('email');
-    const [myLocation] = useMyLocation();
-    const defaultCountry = myLocation?.Country?.toUpperCase();
+    const [defaultCountry] = useMyCountry();
 
     const createFlow = useFlowRef();
 

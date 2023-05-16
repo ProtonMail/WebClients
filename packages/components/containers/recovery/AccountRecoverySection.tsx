@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 
 import { Loader, Toggle } from '../../components';
-import { useEventManager, useLoading, useModals, useMyLocation, useNotifications, useUserSettings } from '../../hooks';
+import { useEventManager, useLoading, useModals, useMyCountry, useNotifications, useUserSettings } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -19,10 +19,9 @@ const AccountRecoverySection = () => {
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const [myLocation, loadingMyLocation] = useMyLocation();
-    const defaultCountry = myLocation?.Country?.toUpperCase();
+    const [defaultCountry, loadingCountry] = useMyCountry();
 
-    if (loadingUserSettings || !userSettings || loadingMyLocation) {
+    if (loadingUserSettings || !userSettings || loadingCountry) {
         return <Loader />;
     }
 
