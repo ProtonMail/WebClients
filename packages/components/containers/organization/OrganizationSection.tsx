@@ -82,7 +82,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
 
     if (!organization.RequiresKey && !organization.Name) {
         const buttonCTA = hasFamily(subscription)
-            ? c('familyOffer_2023:Action').t`Setup family group`
+            ? c('familyOffer_2023:Action').t`Set up family group`
             : c('Action').t`Enable multi-user support`;
 
         return (

@@ -80,11 +80,11 @@ const InviteUserCreateSubUserModal = ({
                     <Button onClick={handleInviteUser} color="norm">{c('familyOffer_2023:Action')
                         .t`Invite an existing ${BRAND_NAME} user`}</Button>,
                     <AddUserButton handleAddUser={handleAddUser} />,
+                    <Button onClick={modalState.onClose} shape="ghost">{c('Action').t`Cancel`}</Button>,
                 ]}
                 {...modalState}
             >
-                <p>{c('familyOffer_2023:Info')
-                    .t`You can either invite an existing ${BRAND_NAME} user or create a new user`}</p>
+                <p>{c('familyOffer_2023:Info').t`To create a new user, a configured custom domain is required.`}</p>
             </Prompt>
             {renderSubUserCreateModal && organizationKey && verifiedDomains?.length > 0 && (
                 <SubUserCreateModal
