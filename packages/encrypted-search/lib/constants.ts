@@ -164,7 +164,11 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     handleEvent: async () => {},
     isSearchResult: () => false,
     esDelete: async () => {},
-    getESDBStatus: () => ({ ...defaultESStatus, isCacheLimited: defaultESCache.isCacheLimited }),
+    getESDBStatus: () => ({
+        ...defaultESStatus,
+        isCacheLimited: defaultESCache.isCacheLimited,
+        isCacheReady: defaultESCache.isCacheReady,
+    }),
     getProgressRecorderRef: () => ({ current: [0, 0] }),
     shouldHighlight: () => false,
     initializeES: async () => {},
