@@ -57,6 +57,9 @@
       "Add phone number": [
         "Добавить номер телефона"
       ],
+      "Add public holidays": [
+        "Добавить государственные праздники"
+      ],
       "Add to group": [
         "Добавить в группу"
       ],
@@ -396,11 +399,11 @@
       "Refer a friend": [
         "Порекомендуйте другу"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -1895,6 +1898,11 @@
         "Аландские острова"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "На основе вашего часового пояса"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "После повтора…"
@@ -2474,6 +2482,9 @@
       "Validation error": [
         "Ошибка проверки"
       ],
+      "You already added this holidays calendar": [
+        "Вы уже добавили календарь этих праздников"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Нельзя отправить письмо более чем 100 получателям"
       ],
@@ -2669,17 +2680,14 @@
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } или проверьте подключение к Интернету."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } или попробуйте позже."
+      "Please refresh the page or try again later.": [
+        "Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "Something went wrong": [
         "Что-то пошло не так"
       ],
-      "We couldn't load this page. ": [
-        "Не удалось загрузить эту страницу. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ],
       "You need an active personal calendar to import events": [
         "Вам нужен активный личный календарь для импорта событий"
@@ -3053,6 +3061,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "На основе вашего часового пояса"
       ]
     },
     "Human verification method": {
@@ -4342,6 +4355,9 @@
       "Label messages as": [
         "Отметить сообщения как"
       ],
+      "Language": [
+        "Язык"
+      ],
       "Last 12 months only": [
         "Только последние 12 месяцев"
       ],
@@ -4666,8 +4682,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Добавить праздничные дни"
+      ],
       "Cannot add more calendars": [
         "Невозможно добавить больше календарей"
+      ],
+      "Edit calendar": [
+        "Редактировать календарь"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Получите официальный календарь государственных праздников страны."
       ],
       "How to import calendars from another service": [
         "Как импортировать календари из другой службы"
@@ -4870,6 +4895,11 @@
       ],
       "Contact group updated": [
         "Группа контактов обновлена"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Календарь добавлен"
       ]
     },
     "Notification in share calendar modal": {
@@ -5254,6 +5284,9 @@
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
       ],
+      "Please select a country": [
+        "Пожалуйста, выберите страну"
+      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
@@ -5354,6 +5387,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Проверьте правописание или выберите страну из списка."
+      ],
       "No results found": [
         "Результаты не найдены"
       ]
@@ -5673,11 +5709,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Добавить государственные праздники вашей страны в календарь."
+      ],
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Пригласите друзей в ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Государственные праздники"
       ]
     },
     "Storage": {

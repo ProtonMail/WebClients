@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "atualizar a página"
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Request new code": [
         "Solicitar um novo código"
@@ -883,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Por favor, ${ refresh } ou verifique sua conexão com a internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Por favor ${ refresh } ou tente novamente mais tarde."
+      "Please refresh the page or try again later.": [
+        "Por favor, atualize a página ou tente novamente mais tarde."
       ],
       "Something went wrong": [
         "Algo deu errado"
       ],
-      "We couldn't load this page. ": [
-        "Não foi possível carregar esta página. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ]
     },
     "fido2: Error": {

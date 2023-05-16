@@ -71,6 +71,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add calendar from URL": [
+        "Dodaj kalendarz z adresu URL"
+      ],
       "Add condition": [
         "Dodaj warunek"
       ],
@@ -97,6 +100,9 @@
       ],
       "Add PayPal": [
         "Dodaj konto PayPal"
+      ],
+      "Add public holidays": [
+        "Dodaj święta"
       ],
       "Add sieve filter": [
         "Dodaj filtr Sieve"
@@ -165,7 +171,7 @@
         "Wybierz plik lub przeciągnij go tutaj"
       ],
       "Choose my own password": [
-        "Ustaw hasło"
+        "Ustaw własne hasło"
       ],
       "Claim it": [
         "Odbierz"
@@ -210,7 +216,7 @@
         "Kontynuuj z Google"
       ],
       "Continue with this password": [
-        "Kontynuuj z hasłem"
+        "Kontynuuj z tym hasłem"
       ],
       "Copy": [
         "Kopiuj"
@@ -1018,8 +1024,14 @@
       "Disable": [
         "Wyłącz"
       ],
+      "Disable encryption": [
+        "Wyłącz szyfrowanie"
+      ],
       "Enable": [
         "Włącz"
+      ],
+      "Enable encryption": [
+        "Włącz szyfrowanie"
       ],
       "Generate missing keys": [
         "Generuj brakujące klucze"
@@ -1046,6 +1058,12 @@
       ],
       "Missing keys": [
         "Brak kluczy"
+      ],
+      "No E2EE": [
+        "Brak E2EE"
+      ],
+      "No signing": [
+        "Brak podpisywania"
       ],
       "Orphan": [
         "Osierocony"
@@ -2555,6 +2573,11 @@
         "Wyspy Alandzkie"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Na podstawie strefy czasowej"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(przez ${ entryCountryName })"
@@ -2668,6 +2691,9 @@
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Wszystkie wydarzenia w tym kalendarzu zostaną usunięte."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Nie posiadasz już dostępu do tego kalendarza."
       ]
     },
     "Delinquent modal title": {
@@ -3351,6 +3377,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Kod weryfikacyjny jest nieprawidłowy. Upewnij się, że skopiowany kod jest prawidłowy i spróbuj ponownie. Wprowadzenie zmian może potrwać do 24 godzin."
       ],
+      "You already added this holidays calendar": [
+        "Posiadasz już kalendarz świąt"
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utraciłeś dostęp do kluczy organizacji. Bez ich odzyskania nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
       ],
@@ -3582,11 +3611,8 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } lub sprawdź swoje połączenie."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } lub spróbuj ponownie później."
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
@@ -3594,8 +3620,8 @@
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Zbyt wiele sesji podrzędnych. Wyczyść pliki cookies i zaloguj się ponownie."
       ],
-      "We couldn't load this page. ": [
-        "Nie możemy załadować strony. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
       ]
     },
     "Error message, recovery": {
@@ -4378,6 +4404,9 @@
       "Get help": [
         "Uzyskaj pomoc"
       ],
+      "Holidays": [
+        "Święta"
+      ],
       "Key type": [
         "Typ klucza"
       ],
@@ -4404,6 +4433,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Subscribed": [
+        "Subskrybowane"
       ],
       "Time": [
         "Czas"
@@ -4477,6 +4509,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Użyj klawiszy strzałek w górę i w dół, aby zobaczyć i wybrać sugestie. Naciśnij klawisz Enter, aby potwierdzić swój wybór lub Escape, aby zamknąć pole sugestii."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Na podstawie strefy czasowej"
       ]
     },
     "Human verification method": {
@@ -5166,6 +5203,9 @@
       "and": [
         "i"
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "${ twoFa } zostanie wyłączone na koncie."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Każdy, kto posiada link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
       ],
@@ -5186,6 +5226,9 @@
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Czy na pewno chcesz usunąć ten kalendarz? Wszystkie wydarzenia w tym kalendarzu zostaną usunięte."
+      ],
+      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
+        "Czy na pewno chcesz usunąć ten kalendarz? Kalendarz świąt możesz dodać później."
       ],
       "Are you sure you want to delete this domain?": [
         "Czy na pewno chcesz usunąć tę domenę?"
@@ -5312,9 +5355,6 @@
       ],
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
-      ],
-      "Continue anyway?": [
-        "Kontynuować mimo to?"
       ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
@@ -5565,8 +5605,8 @@
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Uzyskaj adres ${ BRAND_NAME }, aby używać go do wszystkich usług ${ BRAND_NAME }, w tym poczty ${ MAIL_SHORT_APP_NAME } i kalendarza ${ CALENDAR_SHORT_APP_NAME }."
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Uzyskaj adres ${ BRAND_NAME }, aby używać go do wszystkich usług ${ BRAND_NAME_TWO }, w tym poczty ${ MAIL_SHORT_APP_NAME } i kalendarza ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Uzyskaj adres ${ BRAND_NAME }"
@@ -5796,11 +5836,8 @@
       "Loading...": [
         "Ładowanie..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Dzienniki obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME }."
-      ],
-      "lose access to all current encrypted data": [
-        "Stracisz dostęp do wszystkich obecnie zaszyfrowanych danych"
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Dzienniki obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME_TWO }."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
@@ -5882,6 +5919,12 @@
       ],
       "of": [
         "z"
+      ],
+      "old password": [
+        "starego hasła"
+      ],
+      "Once you reset your password:": [
+        "Po zresetowaniu hasła:"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Jedno konto. Wszystkie usługi ${ BRAND_NAME }."
@@ -6309,9 +6352,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Ta czynność spowoduje również wyłączenie uwierzytelniania dwustopniowego skojarzonego z tym kontem."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
       ],
@@ -6345,8 +6385,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta ${ BRAND_NAME_TWO }, dlatego zalecamy włączenie tej opcji."
       ],
       "To ${ planName }": [
         "w planie ${ planName }"
@@ -6413,6 +6453,9 @@
       ],
       "Try ${ upsellPlanName } risk free": [
         "Wypróbuj plan ${ upsellPlanName } bez ryzyka"
+      ],
+      "two-factor authentication (2FA)": [
+        "Uwierzytelnianie dwustopniowe"
       ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
@@ -6507,6 +6550,9 @@
       "Version ${ version }": [
         "Wersja ${ version }"
       ],
+      "Version history": [
+        "Historia wersji"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -6585,8 +6631,8 @@
       "Why?": [
         "Dlaczego?"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Dzięki szyfrowanemu adresowi e-mail ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Dzięki szyfrowanemu adresowi ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME_TWO }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktywacji nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
@@ -6726,9 +6772,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Nadal musisz odpowiedzieć na zaproszenia, aby organizator zobaczył odpowiedź."
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ loseAllData } na koncie ${ BRAND_NAME }. Aby je przywrócić, wpisz stare hasło."
-      ],
       "You will be redirected to the VPN download page": [
         "Zostaniesz przekierowany do strony pobierania aplikacji VPN"
       ],
@@ -6788,6 +6831,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować ${ oldPassword }."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
@@ -7695,6 +7744,9 @@
       "Label messages as": [
         "Oznacz wiadomości etykietą"
       ],
+      "Language": [
+        "Język"
+      ],
       "Last 12 months only": [
         "Tylko ostatnie 12 miesięcy"
       ],
@@ -8431,6 +8483,15 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Dodaj święta"
+      ],
+      "Edit calendar": [
+        "Edytuj kalendarz"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Uzyskaj kalendarz świąt krajowych."
+      ],
       "How to import calendars from another service": [
         "Jak zaimportować kalendarze z innej usługi"
       ],
@@ -8853,7 +8914,7 @@
         "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "Auto-delete spam and trashed messages": [
-        "Automatyczne usuwanie spamu i kosza"
+        "Automatyczne usuwanie Spamu i Kosza"
       ],
       "Auto-reply": [
         "Autoresponder"
@@ -9363,8 +9424,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME_TWO } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
@@ -9533,6 +9594,11 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalendarz został dodany"
       ]
     },
     "Notification in share calendar modal": {
@@ -9989,6 +10055,9 @@
       "Please insert link first": [
         "Najpierw wstaw link"
       ],
+      "Please select a country": [
+        "Wybierz kraj"
+      ],
       "Printer": [
         "Drukarka"
       ],
@@ -10242,6 +10311,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Sprawdź pisownię lub wybierz kraj z listy."
+      ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ]
@@ -11086,6 +11158,9 @@
       ],
       "Filter removed": [
         "Filtr został usunięty"
+      ],
+      "Preference updated": [
+        "Ustawienia zostały zaktualizowane"
       ],
       "Status updated": [
         "Status został zaktualizowany"
@@ -12068,9 +12143,6 @@
       "Warning": [
         "Ostrzeżenie"
       ],
-      "Warning!": [
-        "Ostrzeżenie!"
-      ],
       "Warning: suspected fake website": [
         "Ostrzeżenie: podejrzana strona internetowa"
       ],
@@ -12213,8 +12285,8 @@
       "Customize import to reduce the number of labels": [
         "Dostosuj proces importowania, aby zmniejszyć liczbę etykiet"
       ],
-      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
-        "Usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Włączenie tej opcji spowoduje usunięcie wszystkich obecnych wiadomości z Kosza i Spamu. Przyszłe wiadomości, które znajdują się w tych folderach dłużej niż 30 dni, zostaną automatycznie usunięte."
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Włączenie tej opcji spowoduje usuwanie wiadomości z Kosza i Spamu, które znajdują się w tych folderach dłużej niż 30 dni."
       ],
       "Each imported email will have this label": [
         "Każda zaimportowana wiadomość będzie posiadała tę etykietę"

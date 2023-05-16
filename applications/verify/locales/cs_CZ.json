@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "obnovit stránku"
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -883,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Prosím ${ refresh } nebo zkontrolujte své internetové připojení."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Prosím ${ refresh } nebo to zkuste později."
+      "Please refresh the page or try again later.": [
+        "Aktualizujte prosím stránku nebo to zkuste znovu později."
       ],
       "Something went wrong": [
         "Něco se pokazilo"
       ],
-      "We couldn't load this page. ": [
-        "Stránku se nepodařilo načíst. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
       ]
     },
     "fido2: Error": {

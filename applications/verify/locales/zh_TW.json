@@ -35,7 +35,7 @@
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Request new code": [
@@ -860,6 +860,9 @@
       "Request timed out": [
         "請求逾時"
       ],
+      "The email addresses do not match": [
+        "電子郵件地址不相符"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
       ],
@@ -880,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "請${ refresh }或檢查您的網路連線。"
-      ],
-      "Please ${ refresh } or try again later.": [
-        "請${ refresh }或稍後再試。"
+      "Please refresh the page or try again later.": [
+        "請重新整理頁面或稍後再試。"
       ],
       "Something went wrong": [
         "發生錯誤"
       ],
-      "We couldn't load this page. ": [
-        "無法載入頁面"
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ]
     },
     "fido2: Error": {

@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -883,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Lütfen ${ refresh }yin veya internet bağlantınızı kontrol edin."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
       ],
-      "We couldn't load this page. ": [
-        "Bu sayfayı yükleyemedik. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ]
     },
     "fido2: Error": {

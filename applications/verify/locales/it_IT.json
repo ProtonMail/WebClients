@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
+      "Refresh the page": [
+        "Aggiorna la pagina"
       ],
       "Request new code": [
         "Richiedi nuovo codice"
@@ -860,6 +860,9 @@
       "Request timed out": [
         "Timeout della richiesta"
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
@@ -880,17 +883,11 @@
       "Error: ${ errorMessage }": [
         "Errore: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Si prega di ${ refresh } o riprovare più tardi."
+      "Please refresh the page or try again later.": [
+        "Si prega di aggiornare la pagina o di riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
-      ],
-      "We couldn't load this page. ": [
-        "Non è stato possibile caricare questa pagina. "
       ]
     },
     "fido2: Error": {

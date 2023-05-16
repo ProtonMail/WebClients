@@ -775,10 +775,10 @@
       "Refine it": [
         "絞り込む"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -831,6 +831,9 @@
       ],
       "Reset to default": [
         "初期値に戻す"
+      ],
+      "Restore": [
+        "復元"
       ],
       "Resume": [
         "再開"
@@ -974,7 +977,7 @@
         "検証をスキップする"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "一部の画像はトラッキング防止により読み込まれませんでした。"
+        "トラッキング防止が一部の画像の読み込みをブロックしました。"
       ],
       "Star": [
         "星印を付ける"
@@ -3306,6 +3309,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } はメッセージを復号できません。すべてのキーが有効か確認してください。"
       ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "このフォルダー名は無効です。別の名前を選択してください。"
       ],
@@ -3605,17 +3611,14 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } またはインターネット接続を確認してください。"
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } するか後ほどお試しください。"
+      "Please refresh the page or try again later.": [
+        "ページを再読み込みするか、後でもう一度お試しください。"
       ],
       "Something went wrong": [
         "不具合が発生しました"
       ],
-      "We couldn't load this page. ": [
-        "このページの読み込みに失敗しました。 "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
@@ -3700,14 +3703,123 @@
         "${ planName } を入手"
       ]
     },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "ストレージ容量は家族メンバー間で ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "今後このオファーを表示しない"
+      ],
+      "Got it": [
+        "了解"
+      ],
+      "Keep current plan": [
+        "現在のプランを維持"
+      ],
+      "Switch plans": [
+        "プランを変更"
+      ],
+      "View the invitation": [
+        "招待を見る"
+      ],
+      "View the invitations": [
+        "招待を見る"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium VPN": [
+        "プレミアム VPN"
+      ],
+      "Up to 6 users": [
+        "最大6人のユーザー"
+      ]
+    },
     "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } グループ"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "カスタムドメインを持つアカウントはVisionaryやファミリープランに参加できません。"
+      ],
       "customer support": [
         "カスタマーサポート"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "招待者: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "アドレスの管理"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "申し訳ありませんが、現在あなたのプランは変更できません。"
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "割り当てられたストレージ: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "サブスクリプション料金は Visionary またはファミリープランのプライマリー管理者に請求されます。"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary とファミリープランは外部のアカウントをサポートしていません。参加するには ${ BRAND_NAME } アドレスを作成してください。 ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary とファミリープランは現時点では永久アカウントをサポートしていません。"
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } に招待されました"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "ファミリープランに参加しました"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "あなたの現在のプランでは Visionary またはファミリープランに参加できません。"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*サブスクリプションは支払い間隔終了時に同じ料金で自動更新されます。"
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "割引は標準の月額料金に基づいて計算されます。"
       ]
     },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "${ planName } を入手"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "家族全員のオンラインプライバシー"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -3724,6 +3836,17 @@
     "familyOffer_2023:Title": {
       "Introducing ${ planName }": [
         "${ planName } のご紹介"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "3 件の独自メールドメイン対応、90 件のメールアドレス、無制限の Hide My Email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
     "Feedback Modal Title": {
@@ -4542,11 +4665,8 @@
       "Attention required": [
         "注意が必要です"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "30 日以上迷惑メールフォルダーに入っているメッセージを自動で削除します。"
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "30 日以上ごみ箱に入っているメッセージを自動で削除します。"
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "30 日以上経過したごみ箱のメールと迷惑メールを自動で削除します。"
       ],
       "Background color": [
         "背景色"
@@ -4941,11 +5061,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "メッセージは明日の ${ formattedTime } に送信されます"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "迷惑メールとして30日以上経過したメッセージは自動的に削除されます。"
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "ごみ箱で30日以上経過したメッセージは自動的に削除されます。"
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "30日以上経過したごみ箱のメールと迷惑メールは自動的に削除されます。"
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
@@ -5184,9 +5301,6 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin は ${ BRAND_NAME } サービスであり、あなたの ${ BRAND_NAME } アカウントには Hide My Email エイリアスが含まれています。SimpleLogin でエイリアスを作成し、あなたのメールアドレスを保護しましょう。"
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin は、信頼のおけない第三者サイトで、本来のメールアドレスを公開せずにアカウントを作成するためのシンプルな方法を提供します。"
       ],
@@ -5409,11 +5523,8 @@
       "Upgrade to add more addresses to your account.": [
         "アップグレードして更なるアドレスを手に入れましょう。"
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "アップグレードして、30 日以上迷惑メールフォルダーに入っているメッセージを自動で削除します。"
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "アップグレードして、30 日以上ごみ箱に入っているメッセージを自動で削除します。"
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "アップグレードして、30 日以上経過したごみ箱のメールと迷惑メールを自動で削除しましょう。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "アップグレードしてさらなるフォルダー、フィルター、アドレスを作成します。"
@@ -7470,6 +7581,25 @@
         "Unlimited にする"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 日"
+      ],
+      "${ hours } hours": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } か月無料"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "合計 ${ storageSize } のストレージ"
@@ -7574,6 +7704,9 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 か月毎に ${ amount } の支払い"
+      ],
+      "for ${ n } months": [
+        "${ n } か月間"
       ],
       "Get the deal": [
         "割引を入手"
