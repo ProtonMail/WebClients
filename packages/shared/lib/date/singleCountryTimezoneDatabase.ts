@@ -322,6 +322,7 @@ export const singleCountryTimezoneDatabase = {
     'Europe/Monaco': 'MC',
     'Europe/Moscow': 'RU',
     'Europe/Oslo': 'NO',
+    'Europe/Paris': 'FR',
     'Europe/Podgorica': 'ME',
     'Europe/Riga': 'LV',
     'Europe/Samara': 'RU',

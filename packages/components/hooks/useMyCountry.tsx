@@ -16,12 +16,13 @@ const KEY = 'country';
 const getCountryFromTimezone = () =>  {
     try {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const tryTimezone = (tz: string): string | undefined => singleCountryTimezoneDatabase[
+            tz as keyof typeof singleCountryTimezoneDatabase
+        ];
 
         if (timezone) {
-            return singleCountryTimezoneDatabase[timezone as keyof typeof singleCountryTimezoneDatabase]
-                || singleCountryTimezoneDatabase[
-                    (manualFindTimeZone(timezone) || findTimeZone(timezone).name) as keyof typeof singleCountryTimezoneDatabase
-                ];
+            return tryTimezone(timezone)
+                || tryTimezone(manualFindTimeZone(timezone) || findTimeZone(timezone).name);
         }
     } catch (e) {
         // undefined
