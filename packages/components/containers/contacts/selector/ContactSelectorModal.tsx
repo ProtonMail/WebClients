@@ -283,7 +283,13 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                     {c('Action').t`Cancel`}
                 </Button>
                 {contactEmails.length ? (
-                    <Button color="norm" loading={loading} type="submit" disabled={!totalChecked}>
+                    <Button
+                        color="norm"
+                        loading={loading}
+                        type="submit"
+                        disabled={!totalChecked}
+                        data-testid="modal:contactlist:submit"
+                    >
                         {actionText}
                     </Button>
                 ) : null}
