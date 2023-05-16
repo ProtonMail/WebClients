@@ -1,11 +1,13 @@
-import { Children, ForwardedRef, Fragment, forwardRef, isValidElement } from 'react';
+import { ForwardedRef, Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { FeatureCode } from '@proton/components/containers';
+import { useConfig, useFeature, useUser } from '@proton/components/hooks';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Icon, SimpleDropdown } from '../../components';
-import AppsLinks from './AppsLinks';
+import appsLinks from './appsLinks';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;
@@ -15,6 +17,11 @@ interface AppsDropdownProps {
 const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const itemClassName =
         'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-5 pl1 pr1-5 color-norm text-no-decoration';
+
+    const [user] = useUser();
+    const { APP_NAME } = useConfig();
+    const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
+    const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
 
     return (
         <SimpleDropdown
@@ -34,16 +41,21 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
             as="button"
         >
             <ul className="unstyled my-0">
-                {Children.toArray(<AppsLinks app={app} itemClassName={itemClassName} name />)
-                    .filter(isValidElement)
-                    .map((child, i, array) => {
-                        return (
-                            <Fragment key={child.key}>
-                                <li className="dropdown-item">{child}</li>
-                                {i !== array.length - 1 && <li className="dropdown-item-hr" aria-hidden="true" />}
-                            </Fragment>
-                        );
-                    })}
+                {appsLinks({
+                    ownerApp: APP_NAME,
+                    user,
+                    isPassSettingsEnabled,
+                    app,
+                    itemClassName,
+                    name: true,
+                }).map((app, i, array) => {
+                    return (
+                        <Fragment key={app.key}>
+                            <li className="dropdown-item">{app}</li>
+                            {i !== array.length - 1 && <li className="dropdown-item-hr" aria-hidden="true" />}
+                        </Fragment>
+                    );
+                })}
             </ul>
         </SimpleDropdown>
     );

@@ -1,26 +1,30 @@
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, Logo, SettingsLink } from '../../components';
-import { useConfig, useFeature, useUser } from '../../hooks';
-import { FeatureCode } from '../features';
 
 interface AppsProps {
+    ownerApp: APP_NAMES;
     app: APP_NAMES;
+    user: UserModel;
     name?: boolean;
     itemClassName?: string;
     currentItem?: boolean;
+    isPassSettingsEnabled: boolean;
 }
 
-const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: AppsProps) => {
-    const [user] = useUser();
-    const { APP_NAME } = useConfig();
-
-    const passSettingsFeature = useFeature<boolean>(FeatureCode.PassSettings);
-    const isPassSettingsEnabled = passSettingsFeature.feature?.Value === true;
-
+const appsLinks = ({
+    ownerApp,
+    user,
+    app: currentApp,
+    name,
+    itemClassName,
+    currentItem,
+    isPassSettingsEnabled,
+}: AppsProps): JSX.Element[] => {
     const apps = [
         APPS.PROTONMAIL,
         APPS.PROTONCALENDAR,
@@ -42,7 +46,7 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
             const params = new URLSearchParams();
             params.set('to', app);
             params.set('from', currentApp);
-            if (APP_NAME === APPS.PROTONACCOUNT) {
+            if (ownerApp === APPS.PROTONACCOUNT) {
                 params.set('type', 'settings');
             }
             return (
@@ -94,4 +98,4 @@ const AppsLinks: any = ({ app: currentApp, name, itemClassName, currentItem }: A
     });
 };
 
-export default AppsLinks;
+export default appsLinks;
