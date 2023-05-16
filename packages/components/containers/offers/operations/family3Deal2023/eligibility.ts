@@ -26,7 +26,6 @@ const isEligible = ({ user, subscription, protonConfig }: Props) => {
         : protonConfig.APP_NAME === APPS.PROTONACCOUNT ||
           protonConfig.APP_NAME === APPS.PROTONCALENDAR ||
           protonConfig.APP_NAME === APPS.PROTONDRIVE ||
-          protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS ||
           protonConfig.APP_NAME === APPS.PROTONMAIL;
     if (!isValidApp) {
         return false;
