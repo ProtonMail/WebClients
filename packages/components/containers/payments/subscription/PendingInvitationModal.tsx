@@ -61,9 +61,9 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
     const BRAND_NAME_TWO = BRAND_NAME;
 
     return (
-        <ModalTwo {...modalProps}>
+        <ModalTwo {...modalProps} size="large">
             <ModalTwoHeader
-                // translator: Title of the modal to accept or reject an invitation to join a family plan. Looks like: "You are invited to join Bernie's family"
+                // translator: Title of the modal to accept or reject an invitation to join a family plan, no period at the end of the sentence. Looks like: "You are invited to join Bernie's family"
                 title={c('familyOffer_2023:Family plan').t`You are invited to join ${invite.OrganizationName}`}
             />
             <ModalTwoContent>
@@ -100,7 +100,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                 ) : (
                     <Button
                         disabled={loadingReject}
-                        loading={loadingAccept}
+                        loading={true}
                         color="norm"
                         onClick={() => withLoadingAccept(handleAcceptInvitation())}
                     >{c('familyOffer_2023:Action').t`Switch plans`}</Button>

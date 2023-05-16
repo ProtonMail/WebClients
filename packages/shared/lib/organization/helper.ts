@@ -7,6 +7,7 @@ export const getHasOtherAdmins = (members: Member[]) =>
 export const getNonPrivateMembers = (members: Member[]) => members.filter(({ Private }) => Private === 0);
 
 export const isOrganizationFamily = (organization: Organization) => organization.PlanName === PLANS.FAMILY;
+export const isOrganizationVisionary = (organization: Organization) => organization.PlanName === PLANS.NEW_VISIONARY;
 
 export const getOrganizationKeyInfo = (
     organization: Organization | undefined,

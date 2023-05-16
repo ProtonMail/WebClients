@@ -68,6 +68,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
 
+    const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
 
     const cleanTmpState = () => {
@@ -141,7 +142,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     };
 
     const handleInviteUser = () => {
-        setTmpMember(null);
         setUserInviteOrEditModalOpen(true);
     };
 
@@ -193,6 +193,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
 
     const disableInviteUserButton = loadingOrganization || loadingDomains || hasReachedLimit;
     const disableAddUserButton = loadingOrganization || loadingDomains || loadingOrganizationKey;
+    const loadingAddAddresses = loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers;
 
     const settingsTitle = hasFamily(subscription)
         ? c('familyOffer_2023:Info for members section')
@@ -250,45 +251,35 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 )}
 
-                <div className="flex flex-align-items-center mb-2 md:mb-0 mr-3 flex-gap-0-5">
+                <div className="flex flex-align-items-center mb-2 lg:mb-0 flex-gap-1">
                     {hasSetupOrganization && (
-                        <div>
-                            <Button
-                                color="norm"
-                                disabled={disableInviteUserButton}
-                                onClick={handleInviteUser}
-                                className="mr-3"
-                            >
-                                {c('Action').t`Invite user`}
-                            </Button>
-
-                            {hasReachedLimit ? (
-                                <Info
-                                    className="color-danger"
-                                    title={c('familyOffer_2023:Family plan')
-                                        .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`}
-                                />
-                            ) : (
-                                <Info
-                                    title={c('familyOffer_2023:Family plan')
-                                        .t`Only 10 accepted invitations are allowed in a 6-month period.`}
-                                />
-                            )}
-                        </div>
+                        <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
+                            {c('Action').t`Invite user`}
+                        </Button>
                     )}
+
                     {hasSetupOrganizationWithKeys && (
                         <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
                             {c('Action').t`Add user`}
                         </Button>
                     )}
-                </div>
-                <div className="mb-4 mr-4">
-                    <Button
-                        shape="outline"
-                        disabled={loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers}
-                        onClick={handleAddAddress}
-                        className="mb-2 md:mb-0"
-                    >
+
+                    {/* Only family and visionary can invite existing Proton users */}
+                    {canInviteProtonUsers &&
+                        (hasReachedLimit ? (
+                            <Info
+                                className="color-danger"
+                                title={c('familyOffer_2023:Family plan')
+                                    .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`}
+                            />
+                        ) : (
+                            <Info
+                                title={c('familyOffer_2023:Family plan')
+                                    .t`Only 10 accepted invitations are allowed in a 6-month period.`}
+                            />
+                        ))}
+
+                    <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
                         {c('Action').t`Add address`}
                     </Button>
                 </div>

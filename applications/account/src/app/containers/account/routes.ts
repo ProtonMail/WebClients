@@ -5,7 +5,7 @@ import { SectionConfig } from '@proton/components';
 import { BRAND_NAME, DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
-import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 import { recoveryIds } from './recoveryIds';
 
@@ -28,8 +28,13 @@ export const getAccountAppRoutes = ({
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     const isExternal = Type === UserType.EXTERNAL;
 
+    //Used to determine if a user is on a family plan
     const isFamilyPlan = !!organization && isOrganizationFamily(organization);
     const isFamilyPlanMember = isFamilyPlan && isMember && isPaid;
+
+    //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
+    const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
+    const isMemberProton = Type === UserType.PROTON;
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -129,27 +134,29 @@ export const getAccountAppRoutes = ({
                         id: 'two-fa',
                     },
                     {
-                        text: c('familyOffer_2023:Title').t`Family plan`,
+                        text: isFamilyPlan
+                            ? c('familyOffer_2023:Title').t`Family plan`
+                            : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
-                        available: isFamilyPlan && !isAdmin,
+                        available: (isFamilyPlan && !isAdmin) || (isVisionaryPlan && isMemberProton),
                     },
-                    //Family members don't have access to the dashboard, display the payment methods for them here
+                    //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
-                        available: isFamilyPlanMember,
+                        available: isFamilyPlanMember || (isVisionaryPlan && isMemberProton),
                     },
-                    //Family members don't have access to the dashboard, display the credits for them here
+                    //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the credits for them here
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
-                        available: isFamilyPlanMember,
+                        available: isFamilyPlanMember || (isVisionaryPlan && isMemberProton),
                     },
-                    //Family members don't have access to the dashboard, display the invoices for them here
+                    //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the invoices for them here
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: isFamilyPlanMember,
+                        available: isFamilyPlanMember || (isVisionaryPlan && isMemberProton),
                     },
                     {
                         text: c('Title').t`Delete account`,
