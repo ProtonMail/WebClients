@@ -133,7 +133,7 @@ const ContactGroupDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="group-summary:export"
                         >
-                            <Icon name="arrow-down-line" alt={c('Action').t`Export contact group`} />
+                            <Icon name="arrow-up-from-square" alt={c('Action').t`Export contact group`} />
                         </Button>
                     </Tooltip>,
                     <Tooltip title={c('Action').t`Delete`}>

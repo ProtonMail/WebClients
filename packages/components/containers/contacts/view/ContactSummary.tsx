@@ -2,14 +2,12 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, Tooltip } from '../../../components';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import LoadRemoteImageBanner from '../../banner/LoadRemoteImageBanner';
 import ContactImageSummary from './ContactImageSummary';
@@ -18,21 +16,10 @@ import './ContactSummary.scss';
 
 interface Props {
     vCardContact: VCardContact;
-    onExport: () => void;
-    onDelete: () => void;
     leftBlockWidth?: string;
-    isPreview?: boolean;
-    hasError?: boolean;
 }
 
-const ContactSummary = ({
-    vCardContact,
-    onDelete,
-    onExport,
-    isPreview,
-    leftBlockWidth = 'w30',
-    hasError = false,
-}: Props) => {
+const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [showLoadImageBanner, setShowLoadImageBanner] = useState(false);
     const loadImageDirectRef = useRef<() => void>(null);
@@ -82,37 +69,6 @@ const ContactSummary = ({
                     >
                         {name}
                     </h2>
-                    {!isPreview && (
-                        <div className="contactsummary-action-buttons flex-item-noshrink on-mobile-text-center ">
-                            {!hasError && (
-                                <Tooltip title={c('Action').t`Export`}>
-                                    <Button
-                                        color="weak"
-                                        shape="outline"
-                                        icon
-                                        onClick={onExport}
-                                        className="inline-flex ml-2"
-                                        data-testid="contact-summary:export"
-                                    >
-                                        <Icon name="arrow-up-from-square" alt={c('Action').t`Export`} />
-                                    </Button>
-                                </Tooltip>
-                            )}
-
-                            <Tooltip title={c('Action').t`Delete`}>
-                                <Button
-                                    color="weak"
-                                    shape="outline"
-                                    icon
-                                    onClick={onDelete}
-                                    className="inline-flex ml-2"
-                                    data-testid="contact-summary:delete"
-                                >
-                                    <Icon name="trash" alt={c('Action').t`Delete`} />
-                                </Button>
-                            </Tooltip>
-                        </div>
-                    )}
                 </div>
             </div>
         </>
