@@ -778,11 +778,11 @@
       "Refine it": [
         "Affinalo"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Remove": [
         "Rimuovi"
@@ -3325,6 +3325,9 @@
         "L'allegato non può essere decifrato.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decifrare il file con un programma come GnuPG.",
         "Alcuni allegati non possono essere decifrati.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decifrare i file con un programma come GnuPG."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
       ],
@@ -3627,17 +3630,11 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Si prega di ${ refresh } o riprovare più tardi."
+      "Please refresh the page or try again later.": [
+        "Si prega di aggiornare la pagina o di riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
-      ],
-      "We couldn't load this page. ": [
-        "Non è stato possibile caricare questa pagina. "
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Non hai ancora alcun contatto. Inizia creandone uno nuovo"
@@ -4738,11 +4735,8 @@
       "Attention required": [
         "Attenzione"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Elimina automaticamente i messaggi che sono stati nello spam per più di 30 giorni."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Elimina automaticamente i messaggi che sono stati nel cestino per più di 30 giorni."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Elimina automaticamente i messaggi che sono stati nella cartella Cestino o Spam per più di 30 giorni."
       ],
       "Background color": [
         "Colore di sfondo"
@@ -5147,11 +5141,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Il messaggio verrà inviato domani alle ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Gli elementi nella cartella spam verranno automaticamente eliminati dopo 30 giorni."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Gli elementi nel cestino saranno eliminati automaticamente dopo 30 giorni."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Gli elementi nella cartella Cestino o Spam saranno eliminati automaticamente dopo 30 giorni."
       ],
       "Monthly ${ onDayString }": [
         "Mensile ${ onDayString }"
@@ -5391,9 +5382,6 @@
       "Show original message": [
         "Mostra il messaggio originale"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin è un servizio ${ BRAND_NAME } e il tuo Account ${ BRAND_NAME } include alias Hide My Email. Per iniziare a mascherare il tuo indirizzo email, vai su SimpleLogin e crea il tuo primo alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin fornisce un modo semplice per creare accessi a siti di terze parti non attendibili in cui non si desidera esporre il proprio indirizzo email."
       ],
@@ -5619,11 +5607,8 @@
       "Upgrade to add more addresses to your account.": [
         "Aggiorna per aggiungere altri indirizzi al tuo profilo."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nella cartella spam dopo 30 giorni."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nel cestino dopo 30 giorni."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nella cartella Cestino o Spam dopo 30 giorni."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Aggiorna per creare altre cartelle, filtri e indirizzi."
@@ -7230,6 +7215,9 @@
       "Set up your organization": [
         "Configura la tua organizzazione"
       ],
+      "Set up your organization testing": [
+        "Configura la tua organizzazione"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilizza il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -7706,6 +7694,30 @@
         "Scegli Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secondo",
+        "${ seconds } secondi"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } di spazio di archiviazione totale"
@@ -7810,6 +7822,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
+      ],
+      "for ${ n } month": [
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"

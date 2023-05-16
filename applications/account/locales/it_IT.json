@@ -71,6 +71,9 @@
       "Add address": [
         "Aggiungi indirizzo"
       ],
+      "Add calendar from URL": [
+        "Aggiungi calendario da un URL"
+      ],
       "Add condition": [
         "Aggiungi condizione"
       ],
@@ -97,6 +100,9 @@
       ],
       "Add PayPal": [
         "Aggiungi PayPal"
+      ],
+      "Add public holidays": [
+        "Aggiungi i giorni festivi"
       ],
       "Add sieve filter": [
         "Aggiungi filtro sieve"
@@ -205,6 +211,9 @@
       ],
       "Continue with Google": [
         "Continua con Google"
+      ],
+      "Continue with this password": [
+        "Continua con questa password"
       ],
       "Copy": [
         "Copia"
@@ -338,6 +347,9 @@
       "Edit label": [
         "Modifica dell'etichetta"
       ],
+      "Edit password": [
+        "Modifica la password"
+      ],
       "Edit phone number": [
         "Modifica il numero di telefono"
       ],
@@ -406,6 +418,15 @@
       ],
       "Get a new encrypted email address": [
         "Ottieni un nuovo indirizzo email crittografato"
+      ],
+      "Get more addresses": [
+        "Ottieni più indirizzi"
+      ],
+      "Get more filters": [
+        "Approfitta di più filtri"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
       ],
       "Get verification code": [
         "Ottieni il codice di verifica"
@@ -737,6 +758,9 @@
       "Set catch-all": [
         "Imposta catch-all"
       ],
+      "Set new password": [
+        "Imposta una nuova password"
+      ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
       ],
@@ -778,6 +802,9 @@
       ],
       "Sign out of all accounts": [
         "Disconnetti tutti gli account"
+      ],
+      "Sign up for free": [
+        "Registrati gratuitamente"
       ],
       "Signing in": [
         "Accesso"
@@ -2511,6 +2538,11 @@
         "Isole Aland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "In base al fuso orario"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -3176,6 +3208,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure accedi da un computer."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
       ],
@@ -3268,6 +3303,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Codice di verifica errato. Assicurati di aver copiato il codice correttamente e riprova. Ci possono volere fino a 24 ore affinché le modifiche vengano applicate."
+      ],
+      "You already added this holidays calendar": [
+        "Hai già aggiunto questo calendario delle festività"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Hai perso l'accesso alle tue chiavi dell'organizzazione. Senza ripristino non sarai in grado di creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere ad account utente non privati."
@@ -3498,20 +3536,14 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Si prega di ${ refresh } o riprovare più tardi."
+      "Please refresh the page or try again later.": [
+        "Si prega di aggiornare la pagina o di riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Troppe sessioni per bambini, sei pregato di cancellare i tuoi cookie e accedere nuovamente."
-      ],
-      "We couldn't load this page. ": [
-        "Non è stato possibile caricare questa pagina. "
       ]
     },
     "Error message, recovery": {
@@ -4260,6 +4292,9 @@
       "App version": [
         "Versione applicazione"
       ],
+      "Best deal": [
+        "Miglior offerta"
+      ],
       "Event": [
         "Evento"
       ],
@@ -4268,6 +4303,9 @@
       ],
       "Get help": [
         "Ottieni supporto"
+      ],
+      "Holidays": [
+        "Festività"
       ],
       "Key type": [
         "Tipo di chiave"
@@ -4286,6 +4324,9 @@
       ],
       "Permissions": [
         "Permessi"
+      ],
+      "Select your preferred method of payment": [
+        "Seleziona il metodo di pagamento che preferisci."
       ],
       "Status": [
         "Stato"
@@ -4360,6 +4401,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Usa i tasti Su e Giù per accedere e sfogliare i suggerimenti dopo l'input. Premi Invio per confermare la tua scelta o Esc per chiudere la casella dei suggerimenti."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "In base al fuso orario"
       ]
     },
     "Human verification method": {
@@ -4858,6 +4904,9 @@
       "3. You earn credits": [
         "3. Guadagni crediti"
       ],
+      "30-day money-back guarantee": [
+        "Rimborso garantito durante 30 giorni"
+      ],
       "30-day money-back guarantee.": [
         "Rimborso garantito in 30 giorni."
       ],
@@ -5077,6 +5126,18 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Prima di iniziare a inviare e ricevere email dai tuoi nuovi indirizzi devi creare le loro chiavi di crittografia."
       ],
+      "Billed every 12 months": [
+        "Fatturazione ogni 12 mesi"
+      ],
+      "Billed every 15 months": [
+        "Fatturazione ogni 15 mesi"
+      ],
+      "Billed every 24 months": [
+        "Fatturazione ogni 24 mesi"
+      ],
+      "Billed every 30 months": [
+        "Fatturazione ogni 30 mesi"
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
@@ -5113,8 +5174,8 @@
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
       ],
-      "Continue anyway?": [
-        "Continuare comunque?"
+      "Continue with ${ freeName }": [
+        "Continua con ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuando, il tuo Account ${ BRAND_NAME } verrà connesso a ${ name }."
@@ -5349,8 +5410,8 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generazione di una nuova frase di ripristino disattiverà quella vecchia."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Ottieni un indirizzo ${ BRAND_NAME } per utilizzare tutti i servizi ${ BRAND_NAME } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      "Get ${ upsellPlanName }": [
+        "Scegli ${ upsellPlanName }"
       ],
       "Get my ${ BRAND_NAME } address": [
         "Ottieni un indirizzo ${ BRAND_NAME }"
@@ -5573,12 +5634,6 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "I log includono i tentativi di accesso di tutti i servizi ${ BRAND_NAME } che usano le sue credenziali ${ BRAND_NAME }."
-      ],
-      "lose access to all current encrypted data": [
-        "perderai l'accesso a tutti i dati crittografati attuali"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assicurati di ${ addARecoveryMethod } in modo da poter tornare al tuo account se dimentichi la password."
       ],
@@ -5657,6 +5712,9 @@
       "of": [
         "di"
       ],
+      "old password": [
+        "vecchia password"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Un account per tutti i servizi ${ BRAND_NAME }."
       ],
@@ -5665,6 +5723,9 @@
       ],
       "Only you can see the labels.": [
         "Solo tu puoi vedere le etichette."
+      ],
+      "Open source": [
+        "Open source"
       ],
       "Or select a particular server:": [
         "O seleziona un server specifico:"
@@ -5693,6 +5754,9 @@
       ],
       "Paid for a monthly plan": [
         "Pagato per un piano mensile"
+      ],
+      "Password copied to clipboard": [
+        "Password copiata negli appunti"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -5785,6 +5849,9 @@
       ],
       "Priority support": [
         "Assistenza prioritaria"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protezione dalle leggi svizzere sulla privacy"
       ],
       "Public link invite": [
         "Link di invito pubblico"
@@ -5918,6 +5985,10 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF viene utilizzato per specificare a chi è consentito inviare email per il dominio quindi è consigliabile includere ${ MAIL_APP_NAME } nel suo record SPF. Per favore aggiunga il seguente record TXT nel DNS. Questo in genere può essere fatto nel pannello di controllo del registrar del suo dominio."
       ],
+      "Step ${ step }": [
+        "Passaggio ${ step }",
+        "Passaggio ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
       ],
@@ -5942,6 +6013,9 @@
       "support team": [
         "team di supporto"
       ],
+      "Swiss based": [
+        "Con sede in Svizzera"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -5953,6 +6027,9 @@
       ],
       "Text to display": [
         "Testo da visualizzare"
+      ],
+      "Thank you": [
+        "Grazie"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Il messaggio ${ boldDataLocked } non verrà più mostrato, ma puoi ancora sbloccare i tuoi dati in ${ encryptionAndKeysLink }."
@@ -6041,9 +6118,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Questo disabiliterà anche qualsiasi metodo di autenticazione a due fattori associato a questo account."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
       ],
@@ -6070,9 +6144,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Questa procedura guidata abiliterà l'Autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a 2 fattori renderà il tuo account ${ BRAND_NAME } molto più sicuro e per questo ti raccomandiamo di attivarla."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitare la perdita di dati, eliminali solo se sai cosa stai facendo o se ne hai esportato una copia."
@@ -6130,6 +6201,9 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
+      ],
+      "two-factor authentication (2FA)": [
+        "autenticazione a due fattori (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Autenticazione a due fattori disabilitata"
@@ -6218,6 +6292,9 @@
       "Version ${ version }": [
         "Versione ${ version }"
       ],
+      "Version history": [
+        "Cronologia versioni"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -6266,6 +6343,9 @@
       "Week and month views only apply to desktop.": [
         "Le visualizzazioni settimanali e mensili si applicano solo al desktop."
       ],
+      "Welcome": [
+        "Ti diamo il benvenuto"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
       ],
@@ -6292,9 +6372,6 @@
       ],
       "Why?": [
         "Perché?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
@@ -6424,8 +6501,8 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Devi ancora rispondere agli inviti affinché l'host possa vedere la tua risposta."
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ loseAllData } nel tuo account ${ BRAND_NAME } . Per ripristinarlo, dovrai inserire la tua vecchia password."
+      "You will be redirected to the VPN download page": [
+        "Sarai reindirizzato alla pagina per scaricare la VPN"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -6502,6 +6579,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "L'abbonamento è limitato a 10 versioni per un massimo di 7 giorni."
       ],
       "Your recovery phrase": [
         "La tua frase di recupero"
@@ -7365,6 +7445,9 @@
       "Label messages as": [
         "Etichetta messaggi come"
       ],
+      "Language": [
+        "Lingua"
+      ],
       "Last 12 months only": [
         "Solo gli ultimi 12 mesi"
       ],
@@ -7900,6 +7983,9 @@
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
+      "Apps and extensions": [
+        "Applicazioni ed estensioni"
+      ],
       "Calendars": [
         "Calendari"
       ],
@@ -8084,6 +8170,15 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Aggiungi i giorni festivi"
+      ],
+      "Edit calendar": [
+        "Modifica il calendario"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Ottieni il calendario ufficiale dei giorni festivi di un paese."
+      ],
       "How to import calendars from another service": [
         "Come importare i calendari da un altro servizio"
       ],
@@ -8410,6 +8505,10 @@
         "${ n } cartella ed etichetta",
         "${ n } cartelle ed etichette"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } alias Hide My Email",
+        "${ n } alias Hide My Email"
+      ],
       "${ n } label": [
         "${ n } etichetta",
         "${ n } etichette"
@@ -8484,6 +8583,9 @@
       "Document editors (docs, sheets, slides)": [
         "Editor di documenti (documenti, fogli di lavoro, diapositive)"
       ],
+      "Double hop": [
+        "Double hop"
+      ],
       "Easy Switch import assistant": [
         "Assistente di importazione Easy Switch"
       ],
@@ -8502,6 +8604,9 @@
       "End-to-end encryption": [
         "Crittografia end-to-end"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Scaricamenti P2P/BitTorrent veloci"
+      ],
       "Free VPN on a single device": [
         "VPN gratuita su un solo dispositivo"
       ],
@@ -8518,6 +8623,9 @@
       "HTML signatures": [
         "Firme HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre attiva"
       ],
@@ -8526,6 +8634,9 @@
       ],
       "Multiple admin roles": [
         "Ruoli di amministratore multipli"
+      ],
+      "No-logs policy": [
+        "Politica di non conservazione dei log"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -8589,6 +8700,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Cartelle, etichette e filtri illimitati"
+      ],
+      "Unlimited Hide My Email aliases": [
+        "Numero illimitato di alias Hide My Email"
       ],
       "Unlimited labels": [
         "Etichette illimitate"
@@ -8748,6 +8862,9 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Creando un account ${ BRAND_NAME }, accetti i nostri ${ terms }"
       ],
+      "By paying, you agree to our ${ termsAndConditions }": [
+        "Procedendo con il pagamento, accetti i nostri ${ termsAndConditions }."
+      ],
       "Payment details": [
         "Dettagli del pagamento"
       ],
@@ -8836,6 +8953,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server."
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Condividi facilmente i tuoi calendari con colleghi, familiari e amici tramite un link"
       ],
@@ -8868,9 +8988,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nei giorni lavorativi, ricevi assistenza dal team di assistenza clienti ${ BRAND_NAME } entro 24 ore dalle richieste"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Una connessione VPN permette a un dispositivo di connettersi a ${ BRAND_NAME } VPN in qualsiasi momento. Ad esempio, per collegare un telefono e un computer portatile a ${ BRAND_NAME } VPN allo stesso tempo, sono necessarie due connessioni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
@@ -9031,6 +9148,11 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenziali OpenVPN / IKEv2 rigenerate"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Calendario aggiunto"
       ]
     },
     "Notification in share calendar modal": {
@@ -9471,6 +9593,9 @@
       "Please insert link first": [
         "Inserisci prima il collegamento"
       ],
+      "Please select a country": [
+        "Seleziona un paese"
+      ],
       "Printer": [
         "Stampante"
       ],
@@ -9722,6 +9847,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Controlla l'ortografia o seleziona un paese nell'elenco."
+      ],
       "No results found": [
         "Nessun risultato trovato"
       ]
@@ -9830,6 +9958,9 @@
       "Email": [
         "Email"
       ],
+      "Email address": [
+        "Indirizzo email"
+      ],
       "Username": [
         "Nome utente"
       ]
@@ -9859,6 +9990,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Scegli Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secondo",
+        "${ seconds } secondi"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -9970,6 +10125,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
+      ],
+      "for ${ n } month": [
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -10098,6 +10257,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Per iscriverti a un calendario esterno o pubblico e ai suoi aggiornamenti, inserisci l'URL. Una versione di sola lettura del calendario verrà aggiunta ai tuoi Altri calendari.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10202,6 +10364,9 @@
       "Subscriptions": [
         "Abbonamenti"
       ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Il piano è stato acquistato dall'app per Android. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso il Play Store di Google."
+      ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
       ]
@@ -10240,6 +10405,9 @@
     "Subscription saving": {
       "Save": [
         "Risparmia"
+      ],
+      "Save ${ discountPercentage }%": [
+        "Risparmia il ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -11087,6 +11255,9 @@
       "Layout": [
         "Layout"
       ],
+      "Leave ${ organisationName }?": [
+        "Vuoi abbandonare ${ organisationName }?"
+      ],
       "Link confirmation": [
         "Conferma link"
       ],
@@ -11410,9 +11581,6 @@
       "Warning": [
         "Attenzione"
       ],
-      "Warning!": [
-        "Attenzione!"
-      ],
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
       ],
@@ -11435,7 +11603,7 @@
         "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ],
       "Your Plan": [
-        "Il tuo Piano"
+        "Il tuo piano"
       ],
       "Your recovery status": [
         "Il tuo stato di recupero"
@@ -11765,6 +11933,10 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } paese",
+        "${ numberOfServers } in oltre ${ numberOfCountries } paesi"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",

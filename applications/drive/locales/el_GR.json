@@ -469,8 +469,17 @@
       "Restart upload": [
         "Επανεκκίνηση ανεβάσματος"
       ],
+      "Restore": [
+        "Επαναφορά"
+      ],
       "Restore from trash": [
         "Επαναφορά από Διαγραμμένα"
+      ],
+      "Restore this version": [
+        "Επαναφέρετε αυτήν την έκδοση"
+      ],
+      "Restore version": [
+        "Επαναφορά Έκδοσης"
       ],
       "Resume all": [
         "Συνέχιση όλων"
@@ -579,6 +588,9 @@
       ],
       "Toggle Calendar app": [
         "Εναλλαγή εφαρμογής Ημερολόγιο\n*.*, add translation *.*"
+      ],
+      "Toggle Contact app": [
+        "Εναλλαγή στο πρόγραμμα Επαφών"
       ],
       "Trust": [
         "Αξιόπιστο"
@@ -3447,6 +3459,9 @@
       "Restore": [
         "Επαναφορά\n*.*, add translation *.*"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Η επαναφορά είναι σε εξέλιξη. Αυτό μπορεί να διαρκέσει μερικά δευτερόλεπτα."
+      ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
@@ -3625,6 +3640,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Χρησιμοποιήστε αυτή τη φόρμα για να μας ενημερώσετε για ακατάλληλες, παράνομες,\nή άλλως κακόβουλα κοινόχρηστα αρχεία. Πρόκειται να αναφέρετε:"
       ],
+      "Version is restored": [
+        "Έγινε επαναφορά της έκδοσης"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Συγχαρητήρια, μόλις διπλασιάσατε τον δωρεάν αποθηκευτικό χώρο σας!"
       ],
@@ -3651,6 +3669,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "Θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις Θα εξακολουθούν να αποθηκεύονται."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -4783,6 +4804,30 @@
         "Κλείσιμο"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } συνολικός αποθηκευτικός χώρος"
@@ -4795,6 +4840,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
@@ -4822,8 +4870,15 @@
       "2 years": [
         "2 χρόνια"
       ],
+      "for ${ n } month": [
+        "για ${ n } μήνα",
+        "για ${ n } μήνες"
+      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
+      ],
+      "Save ${ discount }%": [
+        "Εξοικονομήστε ${ discount }%"
       ]
     },
     "Spotlight": {
@@ -4858,6 +4913,9 @@
       ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
+      ],
+      "Canceling import": [
+        "Ακύρωση εισαγωγής"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"

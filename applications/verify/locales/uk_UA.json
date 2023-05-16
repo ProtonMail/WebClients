@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "оновити сторінку"
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Request new code": [
         "Запитати новий код"
@@ -860,6 +860,9 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "У цьому полі перевищено обмеження ${ maximumLength } символів."
       ],
@@ -880,17 +883,11 @@
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } або перевірте своє інтернет-з'єднання."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh }, або спробуйте знову пізніше."
+      "Please refresh the page or try again later.": [
+        "Оновіть сторінку або повторіть спробу пізніше."
       ],
       "Something went wrong": [
         "Виникла проблема"
-      ],
-      "We couldn't load this page. ": [
-        "Не вдається завантажити цю сторінку. "
       ]
     },
     "fido2: Error": {

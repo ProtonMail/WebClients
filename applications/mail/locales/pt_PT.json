@@ -770,11 +770,11 @@
       "Refine it": [
         "Refine"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -3292,9 +3292,6 @@
       "Something went wrong": [
         "Ocorreu um erro"
       ],
-      "We couldn't load this page. ": [
-        "Não conseguimos carregar esta página. "
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ainda não tem contactos. Comece por criar um contacto"
       ]
@@ -3561,16 +3558,26 @@
       ]
     },
     "Get started checklist incentive": {
+      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
+        "Complete todos os passos para obter um total de ${ rewardInGb } GB na sua conta."
+      ],
       "Expires soon": [
         "Expira em breve"
       ],
       "Expires today": [
         "Expira hoje"
+      ],
+      "Only ${ days } day left": [
+        "Restam apenas ${ days } dia",
+        "Restam apenas ${ days } dias"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
         "Disponível em iOS e Android."
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Obter a aplicação móvel do ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Importar contactos ou emails"
@@ -3580,8 +3587,17 @@
       ]
     },
     "Get started checklist item": {
+      "Get mobile app": [
+        "Obter a aplicação móvel"
+      ],
+      "Import contacts or emails": [
+        "Importar contactos ou correios electronicos"
+      ],
       "Send a message": [
         "Enviar uma mensagem"
+      ],
+      "Set up a recovery method": [
+        "Configurar um método de recuperação"
       ]
     },
     "Get started checklist title": {
@@ -4072,12 +4088,6 @@
       "Attention required": [
         "Atenção Requerida"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Apague automaticamente as mensagens que estão em spam há mais de 30 dias."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Apague automaticamente as mensagens que estão na lixeira há mais de 30 dias."
-      ],
       "Background color": [
         "Cor de fundo"
       ],
@@ -4478,12 +4488,6 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "A mensagem será enviada amanhã às${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Mensagens que estão na pasta de spam há mais de 30 dias serão automaticamente eliminadas."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Mensagens que estão no lixo há mais de 30 dias serão automaticamente eliminadas."
-      ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
       ],
@@ -4722,9 +4726,6 @@
       "Show original message": [
         "Mostrar mensagem original"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin é um serviço ${ BRAND_NAME } e a sua conta ${ BRAND_NAME } inclui aliases Hide My Email. Para começar a mascarar o seu endereço de e-mail, vá para SimpleLogin e crie o seu primeiro alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin fornece um meio simples de criar logins em sites de terceiros não confiáveis, de forma a que o seu endereço de e-mail real não seja exposto."
       ],
@@ -4946,12 +4947,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Faça o upgrade para poder adicionar mais endereços à sua conta."
-      ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Faça o upgrade para poder apagar automaticamente as mensagens que estão em spam há mais de 30 dias."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Faça o upgrade para poder apagar automaticamente as mensagens que estão na lixeira há mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Faça o upgrade para poder criar mais pastas, filtros e endereços."
@@ -6490,8 +6485,17 @@
       ]
     },
     "Paid user checklist item": {
+      "Get mobile app": [
+        "Obter a aplicação móvel"
+      ],
       "Import contacts or emails": [
         "Importar contactos ou emails"
+      ],
+      "Send a message": [
+        "Enviar uma mensagem"
+      ],
+      "Set up a recovery method": [
+        "Configurar um método de recuperação"
       ]
     },
     "Participant name": {

@@ -778,11 +778,11 @@
       "Refine it": [
         "Afina"
       ],
-      "refresh the page": [
-        "refrescar la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refrescar la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -3331,6 +3331,9 @@
         "No s'ha pogut desxifrar el fitxer adjunt.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nel fitxer amb un programa com GnuPG.",
         "No s'ha pogut desxifrar els fitxers adjunts.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nels fitxers amb un programa com GnuPG."
       ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
       ],
@@ -3633,17 +3636,14 @@
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } o comproveu la vostra connexió."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } o tornar-ho a intentar més tard."
+      "Please refresh the page or try again later.": [
+        "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
         "S'ha produït un error."
       ],
-      "We couldn't load this page. ": [
-        "No hem pogut carregar aquesta pàgina. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "No ha creat cap contacte encara. Comença creant un nou contacte"
@@ -4744,11 +4744,8 @@
       "Attention required": [
         "Requereix atenció"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Suprimeix automàticament els missatges que han estat al correu brossa durant més de 30 dies."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Suprimeix automàticament els missatges que han estat a la paperera durant més de 30 dies."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Suprimeix automàticament els missatges que han estat a la carpeta Paperera i Correu brossa durant més de 30 dies."
       ],
       "Background color": [
         "Color de fons"
@@ -5153,11 +5150,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "El missatge s'enviarà demà a les ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Els missatges que hagin estat a la bustia de correu brossa més de 30 dies es suprimiran automàticament."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Els missatges que hagin estat a la paperera més de 30 dies es suprimiran automàticament."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Els missatges que hagin estat a la carpeta Paperera i Correu brossa més de 30 dies se suprimiran automàticament."
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -5394,9 +5388,6 @@
       "Show original message": [
         "Mostra el missatge original"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin és un servei de ${ BRAND_NAME } i el vostre Compte de ${ BRAND_NAME } inclou àlies Hide My Email. Per començar a emmascarar la vostra adreça de correu electrònic aneu a SimpleLogin i creeu el vostre primer àlies."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers que no són de confiança on no voleu revelar la vostra adreça de correu electrònic actual."
       ],
@@ -5622,11 +5613,8 @@
       "Upgrade to add more addresses to your account.": [
         "Actualitzeu per afegir més adreces al vostre compte."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Actualitza per eliminar automàticament els missatges que han estat al correu brossa durant més de 30 dies."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Actualitza per eliminar automàticament els missatges que han estat a la paperera durant més de 30 dies."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Actualitza per eliminar automàticament els missatges que han estat a la carpeta Paperera i Correu brossa durant més de 30 dies."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
@@ -7712,6 +7700,30 @@
         "Passeu-vos a Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } mesos GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'emmagatzematge total"
@@ -7816,6 +7828,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturat a ${ amount } durant 30 mesos"
+      ],
+      "for ${ n } month": [
+        "per a ${ n } mes",
+        "durant ${ n } mesos"
       ],
       "Get the deal": [
         "Obteniu l’oferta"

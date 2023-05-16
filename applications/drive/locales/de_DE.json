@@ -2363,17 +2363,14 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Bitte ${ refresh } oder überprüfe deine Internetverbindung."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Bitte ${ refresh } oder versuche es später erneut."
+      "Please refresh the page or try again later.": [
+        "Aktualisiere die Seite oder versuche es später erneut."
       ],
       "Something went wrong": [
         "Etwas ist schief gelaufen."
       ],
-      "We couldn't load this page. ": [
-        "Diese Seite konnte nicht geladen werden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
       ],
       "You may also refresh the page or try again later.": [
         "Du kannst auch die Seite aktualisieren oder es später erneut versuchen."
@@ -2472,10 +2469,10 @@
         "Tarife wechseln"
       ],
       "View the invitation": [
-        "Siehe dir die Einladung an"
+        "Sieh dir die Einladung an"
       ],
       "View the invitations": [
-        "Siehe dir die Einladungen an"
+        "Sieh dir die Einladungen an"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3161,6 +3158,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Bist du sicher, dass du die Datei "
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Möchtest du „${ itemName }“ dauerhaft aus dem Papierkorb löschen?"
       ],
@@ -3412,6 +3412,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Gib etwas Platz frei oder wende dich an deinen Administrator."
+      ],
+      "from the version history?": [
+        "dauerhaft aus der Versionshistorie löschen möchtest?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Lerne ${ DRIVE_APP_NAME } kennen und sichere dir deinen 500 MB Speicherplatzbonus! Fange noch heute an."
@@ -3962,6 +3965,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "wird auf die Version vom ${ formattedRevisionDate } wiederhergestellt. Alle anderen Versionen bleiben erhalten."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Mit ${ DRIVE_APP_NAME } sind deine Daten mit Ende-zu-Ende-Verschlüsselung geschützt. Nur du kannst sie entschlüsseln."
@@ -4646,7 +4652,7 @@
         "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
+        "Verbindung zu deinem E-Mail-Anbieter wird aufgebaut"
       ],
       "Creating new calendars": [
         "Neue Kalender werden angelegt"
@@ -5928,7 +5934,7 @@
         "Kontakte neu signieren"
       ],
       "Reconnect your account": [
-        "Erneut mit Ihrem Konto verbinden"
+        "Erneut mit deinem Konto verbinden"
       ],
       "Recover data": [
         "Daten wiederherstellen"

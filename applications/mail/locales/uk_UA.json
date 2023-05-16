@@ -784,11 +784,11 @@
       "Refine it": [
         "Вдосконалити його"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -840,6 +840,9 @@
       ],
       "Reset to default": [
         "Відновити типові"
+      ],
+      "Restore": [
+        "Відновити"
       ],
       "Resume": [
         "Продовжити"
@@ -3366,6 +3369,9 @@
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG.",
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG."
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Назва теки неправильна. Оберіть іншу назву."
       ],
@@ -3674,17 +3680,11 @@
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } або перевірте своє інтернет-з'єднання."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh }, або спробуйте знову пізніше."
+      "Please refresh the page or try again later.": [
+        "Оновіть сторінку або повторіть спробу пізніше."
       ],
       "Something went wrong": [
         "Виникла проблема"
-      ],
-      "We couldn't load this page. ": [
-        "Не вдається завантажити цю сторінку. "
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас поки що немає жодного контакту. Почніть зі створення нового"
@@ -3757,6 +3757,84 @@
     "Event title": {
       "(no title)": [
         "(без назви)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Усього 3 ТБ сховища"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для учасників родини ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Keep current plan": [
+        "Лишити поточний тарифний план"
+      ],
+      "Switch plans": [
+        "Змінити тарифний план"
+      ],
+      "View the invitation": [
+        "Переглянути запрошення"
+      ],
+      "View the invitations": [
+        "Переглянути запрошення"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "До 6 користувачів"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Групи ${ BRAND_NAME }"
+      ],
+      "customer support": [
+        "клієнтська підтримка"
+      ],
+      "Manage addresses.": [
+        "Керувати адресами."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Вас запрошено приєднатися до ${ invite.OrganizationName }"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Set up your family account": [
+        "Налаштувати родинний обліковий запис"
       ]
     },
     "Feedback Modal Title": {
@@ -4737,11 +4815,8 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Автоматично видаляти повідомлення, що позначені як спам, через 30 днів."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Автоматично видаляти повідомлення, які перебувають у смітнику понад 30 днів."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Автоматично видаляти повідомлення, які перебувають у смітнику та спамі понад 30 днів."
       ],
       "Background color": [
         "Колір тла"
@@ -5166,11 +5241,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Повідомлення буде надіслано завтра ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Повідомлення, що позначені як спам, автоматично видалятимуться через 30 днів."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Повідомлення, що перебувають у смітнику понад 30 днів, автоматично видалятимуться."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Повідомлення, що перебувають у смітнику та спамі понад 30 днів, автоматично видалятимуться."
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -5412,9 +5484,6 @@
       "Show original message": [
         "Показати оригінальне повідомлення"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin — це служба ${ BRAND_NAME }, і ваш обліковий запис ${ BRAND_NAME } містить псевдоніми Hide My Email. Щоб почати маскувати адресу електронної пошти, перейдіть до SimpleLogin і створіть свій перший псевдонім."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin забезпечує простий спосіб створення облікових записів на не довірених сторонніх сайтах, де ви не хочете розкривати свою справжню адресу електронної пошти."
       ],
@@ -5605,7 +5674,7 @@
         "Щоб повторно підписати контакти, нам необхідно перевірити кожен контакт на відповідність списку ключів шифрування, доступних у вашому обліковому записі. Якщо збігів не знайдеться, ваш контакт буде повторно підписано з використанням основного ключа шифрування."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Для відновлення ваших даних вам необхідно повторно активувати ключ облікового запису, що використовувався в момент створення даних. Для цього необхідно пригадати пароль, який ви використовували при генеруванні ключа."
+        "Для відновлення ваших даних необхідно повторно активувати ключ облікового запису, що використовувався під час створення даних. Для цього потрібен пароль, який ви використовували для генерування ключа."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Щоб відмовитися від цієї розсилки, з ${ boldFrom } буде надіслано лист з такими подробицями, як визначено відправником цього листа:"
@@ -5646,11 +5715,8 @@
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Придбайте передплату, щоб повідомлення, які позначені як спам, видалялися автоматично через 30 днів."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Придбайте передплату, щоб повідомлення, які перебувають у смітнику понад 30 днів, видалялися автоматично."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Придбайте передплату, щоб повідомлення, які перебувають у смітнику та спамі понад 30 днів, видалялися автоматично."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Передплатіть тарифний план, щоб створити більше тек, фільтрів та адрес."
@@ -7801,6 +7867,9 @@
       ],
       "64 countries": [
         "64 країни"
+      ],
+      "All paid Mail and Calendar features": [
+        "Усі платні функції пошти й календарів"
       ],
       "High speed VPN": [
         "Високошвидкісна VPN"

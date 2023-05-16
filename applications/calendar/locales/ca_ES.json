@@ -57,6 +57,9 @@
       "Add phone number": [
         "Afegeix número de telèfon"
       ],
+      "Add public holidays": [
+        "Afegeix dies festius"
+      ],
       "Add to group": [
         "Afegeix al grup"
       ],
@@ -392,11 +395,11 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
-      "refresh the page": [
-        "refrescar la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refrescar la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -1885,6 +1888,11 @@
         "Illes Aland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "En funció de la teva zona horària"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Després de repetir…"
@@ -2376,6 +2384,9 @@
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
       ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
       ],
@@ -2426,6 +2437,9 @@
       ],
       "Validation error": [
         "Error de validació"
+      ],
+      "You already added this holidays calendar": [
+        "Ja heu afegit aquest calendari de festius"
       ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
@@ -2620,17 +2634,14 @@
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } o comproveu la vostra connexió."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } o tornar-ho a intentar més tard."
+      "Please refresh the page or try again later.": [
+        "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
         "S'ha produït un error."
       ],
-      "We couldn't load this page. ": [
-        "No hem pogut carregar aquesta pàgina. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
       "You need an active personal calendar to import events": [
         "Necessiteu tenir un calendari personal actiu per importar esdeveniments"
@@ -2990,6 +3001,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "En funció de la teva zona horària"
       ]
     },
     "Human verification method": {
@@ -4217,6 +4233,9 @@
       "Label messages as": [
         "Etiquetar els missatges com"
       ],
+      "Language": [
+        "Idioma"
+      ],
       "Last 12 months only": [
         "Només els darrers 12 mesos"
       ],
@@ -4529,8 +4548,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Afegeix dies festius"
+      ],
       "Cannot add more calendars": [
         "No es poden afegir més calendaris."
+      ],
+      "Edit calendar": [
+        "Edita el calendari"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Obteniu el calendari oficial de festius d'un país."
       ],
       "How to import calendars from another service": [
         "Com importar calendaris des d'un altre servei"
@@ -4727,6 +4755,11 @@
       ],
       "Contact group updated": [
         "Grup de contactes actualitzat"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "S'ha afegit el calendari"
       ]
     },
     "Notification in share calendar modal": {
@@ -5061,6 +5094,9 @@
       "Please describe the problem and include any error messages": [
         "Descriu el problema i inclou-hi qualssevol missatges d'error."
       ],
+      "Please select a country": [
+        "Seleccioneu un país"
+      ],
       "Search for group name": [
         "Buscar per nom de grup"
       ],
@@ -5155,6 +5191,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Comproveu l'ortografia o seleccioneu un país de la llista."
+      ],
       "No results found": [
         "No s'han trobat resultats."
       ]
@@ -5460,11 +5499,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Afegiu els dies festius del vostre país al vostre calendari."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obtingui fins a ${ credits } en crèdits."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Els festius són aquí!"
       ]
     },
     "Storage": {
@@ -5481,6 +5526,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendari"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, introduïu-ne la URL. Una versió de només lectura del calendari s'afegirà als vostres Altres calendaris.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

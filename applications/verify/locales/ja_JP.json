@@ -35,7 +35,7 @@
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Request new code": [
@@ -860,6 +860,9 @@
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
       ],
@@ -880,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "エラー: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } またはインターネット接続を確認してください。"
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } するか後ほどお試しください。"
+      "Please refresh the page or try again later.": [
+        "ページを再読み込みするか、後でもう一度お試しください。"
       ],
       "Something went wrong": [
         "不具合が発生しました"
       ],
-      "We couldn't load this page. ": [
-        "このページの読み込みに失敗しました。 "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ]
     },
     "fido2: Error": {

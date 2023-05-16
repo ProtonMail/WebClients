@@ -775,11 +775,11 @@
       "Refine it": [
         "Verfijnen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -831,6 +831,9 @@
       ],
       "Reset to default": [
         "Terugzetten naar standaard"
+      ],
+      "Restore": [
+        "Herstel"
       ],
       "Resume": [
         "Hervatten"
@@ -1249,6 +1252,9 @@
       ],
       "Encrypted": [
         "Versleuteld"
+      ],
+      "New email": [
+        "Nieuwe e-mailadres"
       ]
     },
     "Apps dropdown": {
@@ -1331,6 +1337,9 @@
       ],
       "Other": [
         "Anders"
+      ],
+      "Pass problem": [
+        "Probleem met Pass"
       ],
       "Payments problem": [
         "Probleem met betalingen"
@@ -2868,6 +2877,12 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Krijg onbeperkt mappen, labels en meer premium functies als u upgrade."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -3313,6 +3328,9 @@
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
         "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -3615,17 +3633,14 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } of controleer uw internetverbinding."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } of probeer het later opnieuw."
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
       ],
-      "We couldn't load this page. ": [
-        "We konden deze pagina niet laden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "U hebt nog geen contactpersonen. Start met het aanmaken van een contactpersoon"
@@ -3736,8 +3751,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -4714,11 +4735,8 @@
       "Attention required": [
         "Aandacht vereist"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Automatisch berichten verwijderen die al 30 of meer dagen in de spam zitten."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Automatisch berichten verwijderen die al 30 of meer dagen in de prullenbak zitten."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Automatisch berichten verwijderen die meer dan 30 dagen in de prullenbak of spam zitten."
       ],
       "Background color": [
         "Achtergrondkleur"
@@ -5123,11 +5141,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Bericht zal morgen worden verzonden om ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Berichten die meer dan 30 dagen in de spam zitten worden automatisch verwijderd."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Berichten die meer dan 30 dagen in de prullenbak zitten worden automatisch verwijderd."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Berichten die meer dan 30 dagen in de prullenbak of spam zitten worden automatisch verwijderd."
       ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
@@ -5286,6 +5301,9 @@
       "Request read receipt": [
         "Leesbevestiging vragen"
       ],
+      "Restore": [
+        "Herstel"
+      ],
       "Right to Left": [
         "Van rechts naar links"
       ],
@@ -5363,9 +5381,6 @@
       ],
       "Show original message": [
         "Toon origineel bericht"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin is een ${ BRAND_NAME }dienst, en uw ${ BRAND_NAME } Account bevat Verberg Mijn E-mailaliassen. Om te beginnen met het maskeren van uw e-mailadres, ga naar SimpleLogin en maak uw eerste alias aan."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
@@ -5592,11 +5607,8 @@
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Upgrade om automatisch berichten te verwijderen die al 30 of meer dagen in de spam zitten."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Upgrade om automatisch berichten te verwijderen die al 30 of meer dagen in de prullenbak zitten."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Upgrade om automatisch berichten te verwijderen die meer dan 30 dagen in de prullenbak of spam zitten."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgrade om meer mappen, filters en adressen te maken."
@@ -7203,6 +7215,9 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
+      "Set up your organization testing": [
+        "Stel uw organisatie in"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -7679,9 +7694,36 @@
         "Kies Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -7698,6 +7740,9 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -7706,6 +7751,9 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -7775,6 +7823,10 @@
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
       ],
+      "for ${ n } month": [
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
+      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -7804,6 +7856,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-aanbieding"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-aanbieding"
+      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -8527,6 +8585,9 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Keep your inbox organized": [
+        "Houd uw postvak georganiseerd"
+      ],
       "Label as": [
         "Labellen als"
       ],
@@ -8679,6 +8740,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Save time with email filters": [
+        "Bespaar tijd met e-mailfilters"
       ],
       "Schedule send": [
         "Ingepland versturen"

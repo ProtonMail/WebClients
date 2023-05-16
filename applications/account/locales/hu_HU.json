@@ -3387,9 +3387,6 @@
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Túl sok al-folyamat van használatban. Kérjük, törölje a sütiket és jelentkezzen be újra."
-      ],
-      "We couldn't load this page. ": [
-        "Az oldal nem található. "
       ]
     },
     "Error message, recovery": {
@@ -4661,9 +4658,6 @@
       "Close this screen to exit.": [
         "A kilépéshez zárja be ezt a képernyőt."
       ],
-      "Continue anyway?": [
-        "Mindenképp folytatja?"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "A folytatással összekapcsolja a ${ BRAND_NAME } fiókját a ${ name } szolgáltatással."
       ],
@@ -4876,9 +4870,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Új helyreállító jelmondat létrehozása érvényteleníti a korábbit."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Szerezzen ${ BRAND_NAME } címet és használja az összes ${ BRAND_NAME } szolgáltatást, mint például a ${ MAIL_SHORT_APP_NAME } és a ${ CALENDAR_SHORT_APP_NAME }."
-      ],
       "Get my ${ BRAND_NAME } address": [
         "Saját ${ BRAND_NAME } cím létrehozása"
       ],
@@ -5087,12 +5078,6 @@
       ],
       "Loading...": [
         "Betöltés..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "A naplók minden azonosítási kísérletet tárolnak, az összes ${ BRAND_NAME } szolgáltatáshoz, amelyek a ${ BRAND_NAME } bejelentkezését használják."
-      ],
-      "lose access to all current encrypted data": [
-        "elveszti elérését az összes jelenlegi, titkosított adathoz"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Feltétlenül ${ addARecoveryMethod }, hogy akkor is visszatérhessen a fiókjához, ha elfelejtené a jelszavát."
@@ -5496,9 +5481,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Ez a fiókhoz tartozó kétlépcsős hitelesítést is ki fogja kapcsolni."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ezzel megszünteti jelenlegi előfizetését és elveszít minden felhalmozott hűség bónuszt. A fennmaradó egyenlege elszámolásra kerül a fiókjában, mint felhasználható egyenleg."
       ],
@@ -5525,9 +5507,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ez minden aktív munkafolyamatból kilépteti és kikapcsolja a kétlépcsős hitelesítést."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést (2FA) a ${ BRAND_NAME } fiókjában. A kétlépcsős hitelesítés biztonságosabbá teszi a ${ BRAND_NAME } fiókját, ezért javasolt engedélyezni."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Az adatvesztés elkerülése érdekében csak akkor töröljön, ha tudja, mit csinál, vagy már exportált egy másolatot."
@@ -5712,9 +5691,6 @@
       "Why?": [
         "Miért?"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Egy titkosított ${ BRAND_NAME } címmel hozzáférhet az összes ${ BRAND_NAME } szolgáltatáshoz"
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Aktiválás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
       ],
@@ -5814,9 +5790,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Még válaszolnia kell a meghívókra, hogy a szervező lássa a válaszát."
-      ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "A ${ BRAND_NAME } fiókban ${ loseAllData }. A helyreállításhoz meg kell adnia a régi jelszavát."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
@@ -10301,9 +10274,6 @@
       ],
       "Warning": [
         "Figyelem"
-      ],
-      "Warning!": [
-        "Figyelem!"
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
