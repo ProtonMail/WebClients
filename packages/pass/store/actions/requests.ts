@@ -19,3 +19,5 @@ export const aliasDetails = (aliasEmail: string) => `alias-details-${aliasEmail}
 
 export const unlockSession = `unlock-session`;
 export const settingsEdit = (setting: string) => `settings-change::${setting}`;
+
+export const reportProblem = () => `report-problem-request`;

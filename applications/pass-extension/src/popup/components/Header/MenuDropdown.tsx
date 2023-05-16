@@ -40,6 +40,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
     const { trash } = useItems();
+
     const trashedItems = trash.result;
 
     const openSettings = useOpenSettingsTab();
@@ -147,7 +148,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
-                            onClick={() => window.open('mailto:pass@proton.me', '_blank')}
+                            onClick={() => openSettings('support')}
                         >
                             <Icon name="bug" className="mr-3 color-weak" />
                             {c('Action').t`Report a problem`}
