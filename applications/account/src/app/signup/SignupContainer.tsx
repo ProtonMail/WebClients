@@ -4,13 +4,15 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import {
+    useActiveBreakpoint,
     useApi,
     useConfig,
     useErrorHandler,
+    useExperiment,
     useFeature,
     useLoading,
     useLocalState,
@@ -127,6 +129,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
 
+    const { isTinyMobile } = useActiveBreakpoint();
+
     useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial, isMailRefer }));
 
     const normalApi = useApi();
@@ -160,6 +164,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const [myLocation] = useMyLocation();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
+    const multipleUpsellExperiment = useExperiment(ExperimentCode.MultipleUpsell);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
         SignupSteps.AccountCreationUsername,
@@ -467,28 +472,38 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             };
         }
     })();
-    const upsellPlanName = (() => {
-        if (getIsVPNApp(toApp, clientType)) {
-            return PLANS.VPN;
-        }
-
-        if (toApp === APPS.PROTONDRIVE) {
-            return PLANS.DRIVE;
-        }
-
-        if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
-            return PLANS.PASS_PLUS;
-        }
-
-        return PLANS.MAIL;
-    })();
 
     // True while loading, and then true if it's fetched correctly.
     const hasValidPlanSelected = model === DEFAULT_SIGNUP_MODEL || plan;
+    const hasPaidPlanPreSelected =
+        signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free' && hasValidPlanSelected;
+
+    const { upsellPlanName, mostPopularPlanName }: { upsellPlanName: PLANS; mostPopularPlanName?: PLANS } = (() => {
+        if (getIsVPNApp(toApp, clientType)) {
+            return { upsellPlanName: PLANS.VPN };
+        }
+
+        if (toApp === APPS.PROTONDRIVE) {
+            if (multipleUpsellExperiment.value === 'B' && !isTinyMobile) {
+                // Show most popular plan
+                return { upsellPlanName: PLANS.BUNDLE, mostPopularPlanName: PLANS.DRIVE };
+            }
+
+            return { upsellPlanName: PLANS.DRIVE };
+        }
+
+        if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
+            return { upsellPlanName: PLANS.PASS_PLUS };
+        }
+
+        if (hasPaidPlanPreSelected) {
+            return { upsellPlanName: PLANS.MAIL };
+        }
+
+        return { upsellPlanName: PLANS.MAIL };
+    })();
 
     const stepper = (() => {
-        const hasPaidPlanPreSelected =
-            signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free' && hasValidPlanSelected;
         const stepLabels = {
             accountSetup: c('Signup step').t`Account setup`,
             verification: c('Signup step').t`Verification`,
@@ -737,10 +752,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             {step === Upsell && (
                 <UpsellStep
                     isPassPlusEnabled={isPassPlusEnabled}
+                    experiment={multipleUpsellExperiment}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
                     plans={model.plans}
+                    mostPopularPlanName={mostPopularPlanName}
                     upsellPlanName={upsellPlanName}
                     onChangeCurrency={handleChangeCurrency}
                     vpnServers={vpnServers}

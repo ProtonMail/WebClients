@@ -17,15 +17,18 @@ import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Currency, Cycle, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import Loader from './Loader';
 import UpsellPlanCard from './UpsellPlanCard';
 import { getSignupApplication } from './helper';
 
 interface Props {
+    experiment: { loading: boolean; value: string };
     onPlan: (planIDs: PlanIDs) => Promise<void>;
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
@@ -33,6 +36,7 @@ interface Props {
     plans: Plan[];
     onBack?: () => void;
     vpnServers: VPNServersCountData;
+    mostPopularPlanName?: PLANS;
     upsellPlanName: PLANS;
     isPassPlusEnabled: boolean;
 }
@@ -64,17 +68,44 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 };
 
 const UpsellStep = ({
+    experiment,
     plans,
     vpnServers,
     cycle,
     currency,
     onChangeCurrency,
     onPlan,
+    mostPopularPlanName: mostPopularPlanNameProp,
     upsellPlanName,
     onBack,
     isPassPlusEnabled,
 }: Props) => {
     const { APP_NAME } = useConfig();
+
+    const [loading, withLoading] = useLoading();
+    const [type, setType] = useState('free');
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'upsell',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
+
+    if (experiment.loading) {
+        return (
+            <Main className={clsx('sign-layout-upsell')}>
+                <Content>
+                    <div className="text-center">
+                        <Loader />
+                    </div>
+                </Content>
+            </Main>
+        );
+    }
+
+    const mostPopularPlanName = experiment.value === 'B' ? mostPopularPlanNameProp : undefined;
+
     const plansMap = toMap(plans, 'Name');
 
     const shortFreePlan = (() => {
@@ -82,7 +113,7 @@ const UpsellStep = ({
             return getFreeVPNPlan(vpnServers);
         }
 
-        if (upsellPlanName === PLANS.DRIVE) {
+        if (upsellPlanName === PLANS.DRIVE || mostPopularPlanName === PLANS.DRIVE) {
             return getFreeDrivePlan();
         }
 
@@ -103,24 +134,85 @@ const UpsellStep = ({
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
-    const [loading, withLoading] = useLoading();
-    const [type, setType] = useState('free');
-
     const freeFooterNotes = getFooterNotes(PLANS.FREE, cycle);
     const upsellFooterNotes = getFooterNotes(upsellPlanName, cycle);
 
     // If there's a feature with a checkmark, don't show any icons
     const noIcon = hasNoIcon(shortFreePlan?.features || []) || hasNoIcon(upsellShortPlan?.features || []);
 
-    useEffect(() => {
-        void metrics.core_signup_pageLoad_total.increment({
-            step: 'upsell',
-            application: getSignupApplication(APP_NAME),
-        });
-    }, []);
+    const mostPopularPlan = (() => {
+        if (!mostPopularPlanName) {
+            return null;
+        }
+
+        const mostPopularShortPlan = getShortPlan(
+            mostPopularPlanName,
+            plansMap,
+            vpnServers,
+            {
+                boldStorageSize: true,
+            },
+            isPassPlusEnabled
+        );
+
+        if (!mostPopularShortPlan) {
+            return null;
+        }
+
+        const mostPopularPlan = plansMap[mostPopularPlanName];
+        const mostPopularFooterNotes = getFooterNotes(mostPopularPlanName, cycle);
+
+        return (
+            <Main center={false} disableShadow className="sign-layout-upsell sign-layout-upsell-most-popular">
+                <div className="absolute top left w100 absolute-center-y absolute-center-x flex flex-justify-center">
+                    <div className="rounded-full bg-primary text-uppercase text-semibold px-4 py-1">{c(
+                        'new_plans: info'
+                    ).t`Most popular`}</div>
+                </div>
+                <Header title={mostPopularShortPlan.title} />
+                <Content>
+                    <Text className="mb-2 md:mb-0 text-lg">{mostPopularShortPlan.description}</Text>
+                    <UpsellPlanCard
+                        icon={!noIcon}
+                        plan={mostPopularShortPlan}
+                        footer={mostPopularFooterNotes}
+                        button={
+                            <Button
+                                fullWidth
+                                color="norm"
+                                size="large"
+                                loading={loading && type === 'popular'}
+                                disabled={loading}
+                                onClick={() => {
+                                    setType('popular');
+                                    void withLoading(onPlan({ [mostPopularShortPlan.plan]: 1 }));
+                                }}
+                            >
+                                {c('new_plans: action').t`Get ${mostPopularShortPlan.title}`}
+                            </Button>
+                        }
+                        price={
+                            <Price
+                                large
+                                currency={currency}
+                                suffix={`${c('Suffix').t`/month`}${mostPopularFooterNotes ? '*' : ''}`}
+                            >
+                                {(mostPopularPlan?.Pricing?.[cycle] || 0) / cycle}
+                            </Price>
+                        }
+                    />
+                </Content>
+            </Main>
+        );
+    })();
 
     return (
-        <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center gap-6 mb-8">
+        <div
+            className={clsx(
+                'sign-layout-mobile-columns w100 flex flex-align-items-start flex-justify-center mb-8',
+                mostPopularPlanName ? 'sign-layout-three-columns gap-4' : 'gap-6'
+            )}
+        >
             {shortFreePlan && (
                 <Main center={false} className="sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
@@ -157,6 +249,7 @@ const UpsellStep = ({
                     </Content>
                 </Main>
             )}
+            {mostPopularPlan}
             {upsellShortPlan && (
                 <Main center={false} className="sign-layout-upsell">
                     <Header
@@ -176,7 +269,7 @@ const UpsellStep = ({
                             button={
                                 <Button
                                     fullWidth
-                                    color="norm"
+                                    color={mostPopularPlan ? 'weak' : 'norm'}
                                     size="large"
                                     loading={loading && type === 'bundle'}
                                     disabled={loading}
