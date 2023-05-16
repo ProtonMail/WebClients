@@ -124,7 +124,7 @@ const PaymentStep = ({
         getIsOfferBasedOnCoupon(subscriptionData.checkResult.Coupon?.Code || '');
 
     return (
-        <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
+        <div className="sign-layout-mobile-columns w100 flex flex-align-items-start flex-justify-center flex-gap-2">
             <Main center={false}>
                 <Header
                     onBack={onBack}
