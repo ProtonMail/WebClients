@@ -3455,20 +3455,11 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } eller tjek din internetforbindelse."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } eller prøv igen senere."
-      ],
       "Something went wrong": [
         "Noget gik galt"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "For mange undersessioner, ryd dine cookies og log på igen."
-      ],
-      "We couldn't load this page. ": [
-        "Siden kunne ikke indlæses. "
       ]
     },
     "Error message, recovery": {
@@ -3664,6 +3655,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Administrer adresser."
       ]
     },
     "Feature": {
@@ -4787,9 +4781,6 @@
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
       ],
-      "Continue anyway?": [
-        "Vil du fortsætte alligevel?"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "At fortsætte vil forbinde din ${ BRAND_NAME }-konto til ${ name }."
       ],
@@ -5017,9 +5008,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Få en ${ BRAND_NAME }-adresse for at bruge alle ${ BRAND_NAME }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
-      ],
       "Get my ${ BRAND_NAME } address": [
         "FÅ min ${ BRAND_NAME }-adresse"
       ],
@@ -5225,12 +5213,6 @@
       ],
       "Loading...": [
         "Indlæser..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Logger omfatter godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, som benytter dine ${ BRAND_NAME }-legitimationsoplysninger."
-      ],
-      "lose access to all current encrypted data": [
-        "miste adgang til alle aktuelt krypterede data"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
@@ -5664,9 +5646,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Dette vil også deaktivere enhver to-faktor-godkendelsesmetode tilknyttet denne konto."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste alle loyalitetsfordele, du har akkumuleret. Den resterende saldo for dit abonnement vil blive returneret som kontokreditter."
       ],
@@ -5693,9 +5672,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Denne hjælper aktiverer to-faktor-godkendelse (2FA) på din ${ BRAND_NAME }. 2FA vil gøre din ${ BRAND_NAME } mere sikker, så du anbefales at aktivere det."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "For at undgå tab af data skal du kun slette den, hvis du ved, hvad du gør, eller hvis du har eksporteret en kopi."
@@ -5895,9 +5871,6 @@
       "Why?": [
         "Hvorfor?"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
@@ -6005,9 +5978,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du skal stadig svare på invitationer for at værten kan se dit svar."
-      ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Du vil ${ loseAllData } i din ${ BRAND_NAME } konto. For at gendanne det, skal du indtaste din gamle adgangskode."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -10464,6 +10434,9 @@
       "Plan summary": [
         "Abonnementoversigt"
       ],
+      "Preview": [
+        "Forhåndsvisning"
+      ],
       "Previous": [
         "Forrige"
       ],
@@ -10687,9 +10660,6 @@
       ],
       "Warning": [
         "Advarsel"
-      ],
-      "Warning!": [
-        "Advarsel!"
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"

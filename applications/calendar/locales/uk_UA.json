@@ -57,6 +57,9 @@
       "Add phone number": [
         "Додати номер телефону"
       ],
+      "Add public holidays": [
+        "Додати державні свята"
+      ],
       "Add to group": [
         "Додати до групи"
       ],
@@ -396,11 +399,11 @@
       "Refer a friend": [
         "Запросити друга"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -1895,6 +1898,11 @@
         "Аландські острови"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "На основі вашого часового поясу"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Після повторення…"
@@ -2420,6 +2428,9 @@
       "The address might be misspelled": [
         "Ймовірно, адреса неправильна"
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Назва теки неправильна. Оберіть іншу назву."
       ],
@@ -2470,6 +2481,9 @@
       ],
       "Validation error": [
         "Помилка перевірки"
+      ],
+      "You already added this holidays calendar": [
+        "Ви вже додали цей календар свят"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ви не можете надіслати лист понад 100 отримувачам"
@@ -2666,17 +2680,11 @@
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } або перевірте своє інтернет-з'єднання."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh }, або спробуйте знову пізніше."
+      "Please refresh the page or try again later.": [
+        "Оновіть сторінку або повторіть спробу пізніше."
       ],
       "Something went wrong": [
         "Виникла проблема"
-      ],
-      "We couldn't load this page. ": [
-        "Не вдається завантажити цю сторінку. "
       ],
       "You need an active personal calendar to import events": [
         "Вам необхідний активний особистий календар для імпортування подій"
@@ -2781,6 +2789,84 @@
     "Event title": {
       "(no title)": [
         "(без назви)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Усього 3 ТБ сховища"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для учасників родини ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Keep current plan": [
+        "Лишити поточний тарифний план"
+      ],
+      "Switch plans": [
+        "Змінити тарифний план"
+      ],
+      "View the invitation": [
+        "Переглянути запрошення"
+      ],
+      "View the invitations": [
+        "Переглянути запрошення"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "До 6 користувачів"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Групи ${ BRAND_NAME }"
+      ],
+      "customer support": [
+        "клієнтська підтримка"
+      ],
+      "Manage addresses.": [
+        "Керувати адресами."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Вас запрошено приєднатися до ${ invite.OrganizationName }"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Set up your family account": [
+        "Налаштувати родинний обліковий запис"
       ]
     },
     "Feedback Modal Title": {
@@ -2894,6 +2980,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "На основі вашого часового поясу"
       ]
     },
     "Human verification method": {
@@ -3751,7 +3842,7 @@
         "Щоб повторно підписати контакти, нам необхідно перевірити кожен контакт на відповідність списку ключів шифрування, доступних у вашому обліковому записі. Якщо збігів не знайдеться, ваш контакт буде повторно підписано з використанням основного ключа шифрування."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Для відновлення ваших даних вам необхідно повторно активувати ключ облікового запису, що використовувався в момент створення даних. Для цього необхідно пригадати пароль, який ви використовували при генеруванні ключа."
+        "Для відновлення ваших даних необхідно повторно активувати ключ облікового запису, що використовувався під час створення даних. Для цього потрібен пароль, який ви використовували для генерування ключа."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
@@ -4183,6 +4274,9 @@
       "Label messages as": [
         "Позначити повідомлення"
       ],
+      "Language": [
+        "Мова"
+      ],
       "Last 12 months only": [
         "Лише останні 12 місяців"
       ],
@@ -4507,8 +4601,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Додати державні свята"
+      ],
       "Cannot add more calendars": [
         "Неможливо додати більше календарів"
+      ],
+      "Edit calendar": [
+        "Редагувати календар"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Отримати офіційний календар державних свят країни."
       ],
       "How to import calendars from another service": [
         "Як імпортувати календарі з іншого сервісу"
@@ -4711,6 +4814,11 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Календар доданий"
       ]
     },
     "Notification in share calendar modal": {
@@ -5095,6 +5203,9 @@
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилку"
       ],
+      "Please select a country": [
+        "Виберіть країну"
+      ],
       "Search for group name": [
         "Шукати назву групи"
       ],
@@ -5195,6 +5306,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Перевірте правильність написання або виберіть країну зі списку."
+      ],
       "No results found": [
         "Результатів не знайдено"
       ]
@@ -5324,6 +5438,9 @@
       "64 countries": [
         "64 країни"
       ],
+      "All paid Mail and Calendar features": [
+        "Усі платні функції пошти й календарів"
+      ],
       "High speed VPN": [
         "Високошвидкісна VPN"
       ],
@@ -5437,11 +5554,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Додайте державні свята вашої країни до свого календаря."
+      ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Державні свята вже тут!"
       ]
     },
     "Storage": {
@@ -5458,6 +5581,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL календаря"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Щоб підписатися на зовнішній або загальнодоступний календар і його оновлення, введіть URL-адресу. Версія календаря лише для читання буде додана до вашого календаря Інші.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

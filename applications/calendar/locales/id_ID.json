@@ -57,6 +57,9 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
+      "Add public holidays": [
+        "Tambahkan hari libur umum"
+      ],
       "Add to group": [
         "Tambah ke grup"
       ],
@@ -390,11 +393,11 @@
       "Refer a friend": [
         "Rujuk teman"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Remove": [
         "Hapus"
@@ -1880,6 +1883,11 @@
         "Kepulauan Åland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Berdasarkan zona waktu Anda"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Setelah mengulang…"
@@ -2354,6 +2362,9 @@
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
       ],
+      "The email addresses do not match": [
+        "Alamat surel tidak cocok"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
       ],
@@ -2404,6 +2415,9 @@
       ],
       "Validation error": [
         "Kesalahan validasi"
+      ],
+      "You already added this holidays calendar": [
+        "Anda sudah menambahkan kalender liburan ini"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
@@ -2597,17 +2611,14 @@
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Silakan ${ refresh } atau periksa koneksi internet Anda."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Silakan ${ refresh } atau coba lagi nanti."
+      "Please refresh the page or try again later.": [
+        "Silakan muat ulang laman atau coba lagi nanti."
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
       ],
-      "We couldn't load this page. ": [
-        "Kami tidak dapat memuat halaman ini. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
       ],
       "You need an active personal calendar to import events": [
         "Anda harus memiliki kalender pribadi yang aktif untuk dapat mengimpor acara"
@@ -2962,6 +2973,11 @@
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
     },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Berdasarkan zona waktu Anda"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Email"
@@ -3310,7 +3326,7 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
+        "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Peserta yang ditambahkan dan dihapus akan diberi tahu tentang semua rangkaian acara ini."
@@ -3850,7 +3866,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
@@ -4155,6 +4171,9 @@
       ],
       "Label messages as": [
         "Labeli pesan-pesan ini dengan"
+      ],
+      "Language": [
+        "Bahasa"
       ],
       "Last 12 months only": [
         "Hanya 12 bulan terakhir"
@@ -4462,8 +4481,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Tambahkan hari libur umum"
+      ],
       "Cannot add more calendars": [
         "Tidak dapat menambahkan lebih banyak kalender"
+      ],
+      "Edit calendar": [
+        "Sunting kalender"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Dapatkan kalender liburan umum resmi dari negara."
       ],
       "How to import calendars from another service": [
         "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
@@ -4657,6 +4685,11 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalender ditambahkan"
       ]
     },
     "Notification in share calendar modal": {
@@ -4966,6 +4999,9 @@
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
       ],
+      "Please select a country": [
+        "Silakan pilih negara"
+      ],
       "Search for group name": [
         "Cari nama grup"
       ],
@@ -5057,6 +5093,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Periksa pengejaan Anda atau pilih negara dari daftar."
+      ],
       "No results found": [
         "Hasil tidak ditemukan"
       ]
@@ -5251,19 +5290,19 @@
         "2 tahun"
       ],
       "Billed at ${ amount } for 1 month": [
-        "Ditagih ${ amount } untuk 1 bulan"
+        "Tertagih dengan harga ${ amount } selama 1 bulan"
       ],
       "Billed at ${ amount } for 12 months": [
-        "Ditagih ${ amount } untuk 12 bulan"
+        "Tertagih dengan harga ${ amount } selama 12 bulan"
       ],
       "Billed at ${ amount } for 15 months": [
-        "Ditagih ${ amount } untuk 15 bulan"
+        "Tertagih dengan harga ${ amount } selama 15 bulan"
       ],
       "Billed at ${ amount } for 24 months": [
-        "Ditagih ${ amount } untuk 24 bulan"
+        "Tertagih dengan harga ${ amount } selama 24 bulan"
       ],
       "Billed at ${ amount } for 30 months": [
-        "Ditagih ${ amount } untuk 30 bulan"
+        "Tertagih dengan harga ${ amount } selama 30 bulan"
       ],
       "for ${ n } months": [
         "untuk ${ n } bulan"
@@ -5281,19 +5320,19 @@
         "Hemat ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
-        "Harga standar ${ amount } untuk 1 bulan"
+        "Dengan harga standar ${ amount } selama 1 bulan"
       ],
       "Standard price ${ amount } for 12 months": [
-        "Harga standar ${ amount } untuk 12 bulan"
+        "Dengan harga standar ${ amount } selama 12 bulan"
       ],
       "Standard price ${ amount } for 15 months": [
-        "Harga standar ${ amount } untuk 15 bulan"
+        "Dengan harga standar ${ amount } selama 15 bulan"
       ],
       "Standard price ${ amount } for 24 months": [
-        "Harga standar ${ amount } untuk 24 bulan"
+        "Dengan harga standar ${ amount } selama 24 bulan"
       ],
       "Standard price ${ amount } for 30 months": [
-        "Harga standar ${ amount } untuk 30 bulan"
+        "Dengan harga standar ${ amount } selama 30 bulan"
       ]
     },
     "specialoffer: Title": {
@@ -5355,11 +5394,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Tambahkan liburan umum negara Anda ke kalender Anda."
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Liburan umum telah hadir!"
       ]
     },
     "Storage": {
@@ -5376,6 +5421,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL kalender"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Untuk berlangganan ke kalender eksternal atau publik dan pembaruannya, masukkan URL. Versi hanya baca dari kalender akan ditambahkan ke Kalender lain Anda.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

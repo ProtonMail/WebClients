@@ -57,6 +57,9 @@
       "Add address": [
         "住所を追加"
       ],
+      "Add calendar from URL": [
+        "URL からカレンダーを追加"
+      ],
       "Add condition": [
         "条件を追加"
       ],
@@ -324,6 +327,9 @@
       "Edit label": [
         "ラベルを編集"
       ],
+      "Edit password": [
+        "パスワードを編集"
+      ],
       "Edit phone number": [
         "電話番号を編集"
       ],
@@ -446,6 +452,9 @@
       ],
       "Invite": [
         "招待"
+      ],
+      "Invite user": [
+        "ユーザーを招待"
       ],
       "Italic": [
         "イタリック体"
@@ -630,6 +639,9 @@
       "Reset to default": [
         "初期値に戻す"
       ],
+      "Restore": [
+        "復元"
+      ],
       "Restore administrator privileges": [
         "管理者権限を修復"
       ],
@@ -716,6 +728,9 @@
       ],
       "Set catch-all": [
         "Catch-All を設定"
+      ],
+      "Set new password": [
+        "新しいパスワードを設定"
       ],
       "Set recovery phrase": [
         "回復フレーズを設定"
@@ -3088,6 +3103,9 @@
       "The address might be misspelled": [
         "アドレスの綴りが違う可能性があります"
       ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "このフォルダー名は無効です。別の名前を選択してください。"
       ],
@@ -3400,17 +3418,14 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } またはインターネット接続を確認してください。"
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } するか後ほどお試しください。"
+      "Please refresh the page or try again later.": [
+        "ページを再読み込みするか、後でもう一度お試しください。"
       ],
       "Something went wrong": [
         "不具合が発生しました"
       ],
-      "We couldn't load this page. ": [
-        "このページの読み込みに失敗しました。 "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ]
     },
     "Error message, recovery": {
@@ -3556,19 +3571,126 @@
         "${ planName } を入手"
       ]
     },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "ストレージ容量は家族メンバー間で ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ]
+    },
     "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "今後このオファーを表示しない"
+      ],
+      "Got it": [
+        "了解"
+      ],
+      "Keep current plan": [
+        "現在のプランを維持"
+      ],
       "Setup family group": [
         "家族グループを設定"
+      ],
+      "Switch plans": [
+        "プランを変更"
+      ],
+      "View the invitation": [
+        "招待を見る"
+      ],
+      "View the invitations": [
+        "招待を見る"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium VPN": [
+        "プレミアム VPN"
+      ],
+      "Up to 6 users": [
+        "最大6人のユーザー"
       ]
     },
     "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } グループ"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "カスタムドメインを持つアカウントはVisionaryやファミリープランに参加できません。"
+      ],
       "customer support": [
         "カスタマーサポート"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "招待者: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "アドレスの管理"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "申し訳ありませんが、現在あなたのプランは変更できません。"
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "割り当てられたストレージ: ${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "サブスクリプション料金は Visionary またはファミリープランのプライマリー管理者に請求されます。"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary とファミリープランは外部のアカウントをサポートしていません。参加するには ${ BRAND_NAME } アドレスを作成してください。 ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary とファミリープランは現時点では永久アカウントをサポートしていません。"
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } に招待されました"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "ファミリープランに参加しました"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "あなたの現在のプランでは Visionary またはファミリープランに参加できません。"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*サブスクリプションは支払い間隔終了時に同じ料金で自動更新されます。"
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "割引は標準の月額料金に基づいて計算されます。"
       ]
     },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "${ planName } を入手"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "家族全員のオンラインプライバシー"
       ]
     },
     "familyOffer_2023:Label": {
@@ -3607,6 +3729,17 @@
       ],
       "Set family name": [
         "家族名の設定"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "3 件の独自メールドメイン対応、90 件のメールアドレス、無制限の Hide My Email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
     "Feature": {
@@ -4645,6 +4778,21 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
       ],
+      "Billed every 12 months": [
+        "12 か月ごとに支払い"
+      ],
+      "Billed every 15 months": [
+        "15 か月ごとに支払い"
+      ],
+      "Billed every 24 months": [
+        "24 か月ごとに支払い"
+      ],
+      "Billed every 30 months": [
+        "30 か月ごとに支払い"
+      ],
+      "Billed every month": [
+        "1 か月ごとに支払い"
+      ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
       ],
@@ -4677,9 +4825,6 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
-      ],
-      "Continue anyway?": [
-        "続けますか?"
       ],
       "Copy your referral link": [
         "招待リンクをコピー"
@@ -5110,12 +5255,6 @@
       "Loading...": [
         "読み込み中..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "すべての ${ BRAND_NAME } サービスへの、あなたの ${ BRAND_NAME } 認証情報による認証の試行がログに記録されます。"
-      ],
-      "lose access to all current encrypted data": [
-        "すべての暗号化されたデータにアクセスできなくなります"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }すると、パスワードを忘れた場合にアカウントに再び戻ることができます。"
       ],
@@ -5199,6 +5338,9 @@
       ],
       "Only you can see the labels.": [
         "ラベルが見えるのはあなただけです。"
+      ],
+      "Open source": [
+        "オープンソース"
       ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
@@ -5422,6 +5564,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF は送信元のドメインを明示するために使用されます。そのため、SPFレコードに ${ MAIL_APP_NAME } を含めることを強く推奨します。次の TXT レコードを DNS に追加してください。これは通常、ドメイン名登録のコントロールパネルから設定できます。"
       ],
+      "Step ${ step }": [
+        "ステップ ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
       ],
@@ -5530,9 +5675,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "これにより、このアカウントに関連付けられている 2 要素認証も無効になります。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
       ],
@@ -5556,9 +5698,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "すべての有効なセッションからサインアウトし、2 段階認証を無効にします。"
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "このウィザードは ${ BRAND_NAME } アカウントで 2 要素認証 (2FA) を有効にします。${ BRAND_NAME } アカウントのセキュリティをより高めるため 2 要素認証の使用をおすすめします。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
@@ -5691,6 +5830,9 @@
       ],
       "Version ${ version }": [
         "バージョン ${ version }"
+      ],
+      "Version history": [
+        "バージョン履歴"
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
@@ -5856,9 +5998,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "主催者に招待への応答を返信する必要があります。"
-      ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ BRAND_NAME } アカウントに${ loseAllData }。復元するには、古いパスワードが必要です。"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
@@ -6790,6 +6929,9 @@
       "Label messages as": [
         "メッセージにつけるラベル"
       ],
+      "Language": [
+        "言語"
+      ],
       "Last 12 months only": [
         "過去 12 か月のみ"
       ],
@@ -7496,6 +7638,9 @@
       ]
     },
     "Modal title": {
+      "Edit calendar": [
+        "カレンダーの編集"
+      ],
       "How to import calendars from another service": [
         "その他のサービスからカレンダーをインポートする方法"
       ],
@@ -9100,6 +9245,25 @@
         "Unlimited にする"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 日"
+      ],
+      "${ hours } hours": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } か月無料"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "合計 ${ storageSize } のストレージ"
@@ -9204,6 +9368,9 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 か月毎に ${ amount } の支払い"
+      ],
+      "for ${ n } months": [
+        "${ n } か月間"
       ],
       "Get the deal": [
         "割引を入手"
@@ -10589,9 +10756,6 @@
       ],
       "Warning": [
         "警告"
-      ],
-      "Warning!": [
-        "警告!"
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"

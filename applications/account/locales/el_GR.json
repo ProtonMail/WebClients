@@ -601,6 +601,9 @@
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
       ],
+      "Restore": [
+        "Επαναφορά"
+      ],
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
@@ -937,6 +940,14 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Αυτό θα αποσυνδέσει όλους τους δρομολογητές και πελάτες που χρησιμοποιούν αυτό το πιστοποιητικό."
+      ]
+    },
+    "Animation": {
+      "Encrypted": [
+        "Κρυπτογραφημένα"
+      ],
+      "New email": [
+        "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Attached ics file error": {
@@ -4302,9 +4313,6 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
-      "Continue anyway?": [
-        "Συνέχεια οπωσδήποτε;"
-      ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
       ],
@@ -4517,9 +4525,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Η παραγωγή μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Αποκτήστε μία ${ BRAND_NAME } διεύθυνση για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες συμπεριλαμβανομένου του ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
-      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Δώστε το δημόσιο κλειδί σας στους φίλους σας ή δημοσιεύστε το στο δίκτυο, ώστε όλοι να μπορούν να σας στέλνουν διατερματικά κρυπτογραφημένα μηνύματα!"
       ],
@@ -4713,12 +4718,6 @@
       ],
       "Loading...": [
         "Φόρτωση..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME }."
-      ],
-      "lose access to all current encrypted data": [
-        "χάσετε την πρόσβαση σε όλα τα τρέχοντα κρυπτογραφημένα δεδομένα"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
@@ -5089,9 +5088,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Αυτό θα απενεργοποιήσει επίσης οποιαδήποτε μέθοδο ελέγχου ταυτότητας 2 παραγόντων (2FA) που σχετίζεται με αυτόν τον λογαριασμό."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή σας επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συσσωρεύσει. Το υπόλοιπο ποσό της εγγραφής σας θα επιστραφεί στον λογαριασμό σας ως πίστωση."
       ],
@@ -5118,9 +5114,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Αυτό θα σας βγάλει εκτός κάθε ενεργής συνεδρίας και θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Αυτός ο οδηγός θα ενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων (2FA) στον λογαριασμό σας ${ BRAND_NAME }. Ο έλεγχος ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας ${ BRAND_NAME } πιο ασφαλή, γι αυτό συνιστούμε να τον ενεργοποιήσετε."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Προς αποφυγή απώλειας δεδομένων, διαγράψτε το μόνο εφόσον γνωρίζετε τι κάνετε ή έχετε εξάγει αντίγραφο."
@@ -5365,9 +5358,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
-      ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Θα ${ loseAllData } στον ${ BRAND_NAME } λογαριασμό σας. Για να το επαναφέρετε, θα πρέπει να εισάγετε τον παλιό κωδικό πρόσβασης σας."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "ΔΕΝ θα μπορείτε να αποκρυπτογραφήσετε τυχόν μηνύματα, αρχεία και άλλα δεδομένα κρυπτογραφημένα με αυτό το κλειδί."
@@ -8205,6 +8195,30 @@
         "Κλείσιμο"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } συνολικός αποθηκευτικός χώρος"
@@ -8217,6 +8231,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
@@ -8244,8 +8261,15 @@
       "2 years": [
         "2 χρόνια"
       ],
+      "for ${ n } month": [
+        "για ${ n } μήνα",
+        "για ${ n } μήνες"
+      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
+      ],
+      "Save ${ discount }%": [
+        "Εξοικονομήστε ${ discount }%"
       ]
     },
     "Spotlight": {
@@ -8425,6 +8449,9 @@
       ],
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
+      ],
+      "Canceling import": [
+        "Ακύρωση εισαγωγής"
       ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
@@ -9431,9 +9458,6 @@
       ],
       "Warning": [
         "Προειδοποίηση"
-      ],
-      "Warning!": [
-        "Προσοχή!"
       ],
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"

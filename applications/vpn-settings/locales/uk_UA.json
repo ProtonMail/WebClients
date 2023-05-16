@@ -50,6 +50,9 @@
       "Chat with us": [
         "Чат з нами"
       ],
+      "Choose my own password": [
+        "Обрати власний пароль"
+      ],
       "Close": [
         "Закрити"
       ],
@@ -67,6 +70,9 @@
       ],
       "Continue": [
         "Продовжити"
+      ],
+      "Continue with this password": [
+        "Продовжити з цим паролем"
       ],
       "Copy": [
         "Копіювати"
@@ -137,6 +143,9 @@
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
+      "Edit password": [
+        "Редагувати пароль"
+      ],
       "Edit phone number": [
         "Змінити номер телефону"
       ],
@@ -158,11 +167,17 @@
       "Fit to window": [
         "Припасувати до вікна"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "Отримайте знижку ${ discountPercentage } з передплатою на 24 місяці"
+      ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Отримайте нову зашифровану адресу електронної пошти"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
       ],
       "Get verification code": [
         "Отримати код підтвердження"
@@ -251,6 +266,9 @@
       "Reset password": [
         "Скинути пароль"
       ],
+      "Restore": [
+        "Відновити"
+      ],
       "Retry": [
         "Повторити спробу"
       ],
@@ -284,6 +302,9 @@
       "Send my username": [
         "Надіслати моє ім'я користувача"
       ],
+      "Set new password": [
+        "Встановити новий пароль"
+      ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
@@ -304,6 +325,9 @@
       ],
       "Sign out": [
         "Вийти"
+      ],
+      "Sign up for free": [
+        "Зареєструватися безплатно"
       ],
       "Signing in": [
         "Виконується вхід"
@@ -1556,6 +1580,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
       ],
@@ -1600,17 +1627,11 @@
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } або перевірте своє інтернет-з'єднання."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh }, або спробуйте знову пізніше."
+      "Please refresh the page or try again later.": [
+        "Оновіть сторінку або повторіть спробу пізніше."
       ],
       "Something went wrong": [
         "Виникла проблема"
-      ],
-      "We couldn't load this page. ": [
-        "Не вдається завантажити цю сторінку. "
       ]
     },
     "Error notification": {
@@ -1621,6 +1642,126 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Жодного зображення не вибрано"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Усього 3 ТБ сховища"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для учасників родини ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Keep current plan": [
+        "Лишити поточний тарифний план"
+      ],
+      "Switch plans": [
+        "Змінити тарифний план"
+      ],
+      "View invitation": [
+        "Переглянути запрошення"
+      ],
+      "View the invitation": [
+        "Переглянути запрошення"
+      ],
+      "View the invitations": [
+        "Переглянути запрошення"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Up to 6 users": [
+        "До 6 користувачів"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Родинну групу не розпізнано. Спробуйте знову."
+      ],
+      "Organization not recognized. Try again.": [
+        "Організацію не розпізнано. Спробуйте знову."
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Групи ${ BRAND_NAME }"
+      ],
+      "customer support": [
+        "клієнтська підтримка"
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "Запрошення від ${ invitation.OrganizationName }"
+      ],
+      "Manage addresses.": [
+        "Керувати адресами."
+      ],
+      "Manage user accounts": [
+        "Керувати обліковими записами користувачів"
+      ],
+      "Pending invitation": [
+        "Очікування запрошення"
+      ],
+      "Pending invitations": [
+        "Черга запрошень"
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Вас запрошено приєднатися до ${ invite.OrganizationName }"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Введіть назву родини для підтвердження"
+      ],
+      "Enter organization name to confirm": [
+        "Введіть назву організації для підтвердження"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Ця дія остаточно видалить усіх підлеглих користувачів, облікові записи, а також дані, пов'язані з вашою організацією."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Це вилучить усі преміумфункції ${ BRAND_NAME } для всіх учасників родини."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "Видалити родинну групу?"
+      ],
+      "Delete organization?": [
+        "Видалити організацію?"
       ]
     },
     "Feature": {
@@ -1816,8 +1957,17 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "Найкраща пропозиція"
+      ],
+      "Enter your email address": [
+        "Введіть адресу своєї е-пошти"
+      ],
       "Get help": [
         "Отримати допомогу"
+      ],
+      "Select your pricing plan": [
+        "Виберіть свій тариф"
       ]
     },
     "Heading in trial plan": {
@@ -1894,6 +2044,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "30-day money-back guarantee": [
+        "Гарантія повернення грошей протягом 30 днів"
+      ],
       "30-day money-back guarantee.": [
         "Гарантія повернення грошей протягом 30 днів."
       ],
@@ -1957,6 +2110,21 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
+      "Billed every 12 months": [
+        "Оплата раз на 12 місяців"
+      ],
+      "Billed every 15 months": [
+        "Оплата раз на 15 місяців"
+      ],
+      "Billed every 24 months": [
+        "Оплата раз на 24 місяці"
+      ],
+      "Billed every 30 months": [
+        "Оплата раз на 30 місяців"
+      ],
+      "Billed every month": [
+        "Щомісячна оплата"
+      ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
       ],
@@ -1978,8 +2146,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
-      "Continue anyway?": [
-        "Все одно продовжити?"
+      "Continue with ${ freeName }": [
+        "Продовжити з ${ freeName }"
       ],
       "Country code": [
         "Код країни"
@@ -2065,6 +2233,9 @@
       "expires ${ expirationDate }": [
         "чинний до ${ expirationDate }"
       ],
+      "For choosing ${ product }": [
+        "За вибір ${ product }"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard та Discover — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
@@ -2074,8 +2245,8 @@
       "Free up some space or contact your administrator.": [
         "Звільніть місце або зверніться до свого адміністратора."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Отримайте адресу ${ BRAND_NAME }, щоб користуватися всіма службами ${ BRAND_NAME }, включно з ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
+      "Get ${ upsellPlanName }": [
+        "Отримати ${ upsellPlanName }"
       ],
       "Get my ${ BRAND_NAME } address": [
         "Отримати свою адресу ${ BRAND_NAME }"
@@ -2158,9 +2329,6 @@
       "Loading...": [
         "Завантаження..."
       ],
-      "lose access to all current encrypted data": [
-        "втратите доступ до всіх наявних зашифрованих даних"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
       ],
@@ -2191,11 +2359,23 @@
       "of": [
         "з"
       ],
+      "old password": [
+        "старий пароль"
+      ],
+      "Once you reset your password:": [
+        "Після скидання пароля:"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Один обліковий запис. Усі служби ${ BRAND_NAME }."
       ],
+      "Open source": [
+        "Відкритий код"
+      ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера обміну"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
@@ -2245,6 +2425,9 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
+      "Protected by Swiss privacy laws": [
+        "Захищено швейцарським законодавством про приватність"
+      ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
       ],
@@ -2262,6 +2445,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Відкликати сертифікат ${ name }"
+      ],
+      "Saving your password": [
+        "Збереження вашого пароля"
       ],
       "Scan QR code instead": [
         "Cканувати QR-код натомість"
@@ -2293,6 +2479,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
+      "Step ${ step }": [
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
       ],
@@ -2301,6 +2493,15 @@
       ],
       "support team": [
         "командою підтримки"
+      ],
+      "Swiss based": [
+        "Розташовано у Швейцарії"
+      ],
+      "Thank you": [
+        "Дякуємо"
+      ],
+      "The ${ planName } plan includes:": [
+        "Тарифний план ${ planName } включає:"
       ],
       "The securest way to browse, stream, and be online.": [
         "Найзахищеніший спосіб переглядати, передавати та бути онлайн."
@@ -2323,9 +2524,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Це також вимкне будь-які способи двоетапної перевірки, пов'язані з цим обліковим записом."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Це скасує вашу поточну передплату і ви втратите будь-які накопичені переваги лояльності. Залишковий баланс вашої передплати буде повернено як кредити облікового запису."
       ],
@@ -2340,9 +2538,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Цей майстер активує двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Це зробить ваш обліковий запис ${ BRAND_NAME } захищенішим, тому ми радимо ввімкнути її."
       ],
       "to continue to ${ toAppName }": [
         "для переходу до ${ toAppName }"
@@ -2376,6 +2571,9 @@
       ],
       "Total VPN connections": [
         "Усього VPN-з'єднань"
+      ],
+      "two-factor authentication (2FA)": [
+        "двоетапна перевірка (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Двоетапну перевірку вимкнено"
@@ -2467,6 +2665,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
+      "Welcome": [
+        "Вітаємо"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
       ],
@@ -2484,9 +2685,6 @@
       ],
       "Why?": [
         "Навіщо?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Маючи зашифровану адресу ${ BRAND_NAME }, ви можете користуватися всіма службами ${ BRAND_NAME }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -2560,9 +2758,6 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Ви ${ loseAllData } у вашому обліковому записі ${ BRAND_NAME }. Щоб відновити його, вам потрібно буде ввести свій старий пароль."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
@@ -2577,6 +2772,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
+      ],
+      "Your ${ BRAND_NAME } password": [
+        "Ваш пароль ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
@@ -3327,6 +3525,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Ad-blocker & malware protection": [
+        "Блокування реклами й захист від зловмисних програм"
+      ],
       "Admin console": [
         "Консоль адміністратора"
       ],
@@ -3335,6 +3536,9 @@
       ],
       "Auto-reply": [
         "Автовідповідь"
+      ],
+      "Available on all platforms": [
+        "Доступність на всіх платформах"
       ],
       "Calendar sharing": [
         "Спільний доступ до календаря"
@@ -3360,6 +3564,12 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
+      "Data breach monitoring": [
+        "Відстеження витоків даних"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Відстеження витоків даних (скоро з'явиться)"
+      ],
       "DNS leak prevention": [
         "Захист від витоку DNS"
       ],
@@ -3384,11 +3594,26 @@
       "End-to-end encryption": [
         "Наскрізне шифрування"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Швидкі завантаження P2P/BitTorrent"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Безплатні функції з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, і ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Free VPN on a single device": [
         "Безплатна VPN для одного пристрою"
       ],
+      "Fully refundable for 30 days": [
+        "Повернення всіх коштів упродовж 30 днів"
+      ],
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
+      ],
+      "High-speed streaming": [
+        "Високошвидкісний стримінг"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Високошвидкісна швейцарська VPN, що захищає вашу приватність"
       ],
       "High-speed VPN on ${ n } device": [
         "Високошвидкісна VPN на ${ n } пристрої",
@@ -3413,6 +3638,9 @@
       ],
       "Multiple forwarding mailboxes": [
         "Кілька поштових скриньок для переадресації"
+      ],
+      "No-logs policy": [
+        "Політика без журналювання"
       ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
@@ -3629,6 +3857,9 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Створюючи обліковий запис ${ BRAND_NAME }, ви погоджуєтеся на наші ${ terms }"
       ],
+      "By paying, you agree to our ${ termsAndConditions }": [
+        "Сплачуючи, ви погоджуєтеся з нашими ${ termsAndConditions }"
+      ],
       "Payment details": [
         "Подробиці платежу"
       ],
@@ -3754,9 +3985,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Одне VPN-з'єднання дає змогу користуватися ${ BRAND_NAME } VPN на одному пристрої в будь-який час. Наприклад, щоб під'єднати до ${ BRAND_NAME } VPN телефон і ноутбук одночасно, необхідно два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -4080,11 +4308,17 @@
       ]
     },
     "Signup label": {
+      "Confirm email address": [
+        "Підтвердьте електрону адресу"
+      ],
       "Display name": [
         "Ім'я"
       ],
       "Email": [
         "Е-пошта"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
       ],
       "Username": [
         "Ім'я користувача"
@@ -4124,6 +4358,9 @@
       ],
       "64 countries": [
         "64 країни"
+      ],
+      "All paid Mail and Calendar features": [
+        "Усі платні функції пошти й календарів"
       ],
       "High speed VPN": [
         "Високошвидкісна VPN"
@@ -4410,6 +4647,9 @@
     "Subscription saving": {
       "Save": [
         "Зберегти"
+      ],
+      "Save ${ discountPercentage }%": [
+        "Заощадьте ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -4834,6 +5074,9 @@
       "Set up two-factor authentication": [
         "Налаштувати двоетапну перевірку"
       ],
+      "Set your password": [
+        "Встановіть свій пароль"
+      ],
       "Settings": [
         "Налаштування"
       ],
@@ -4896,9 +5139,6 @@
       ],
       "Warning": [
         "Попередження"
-      ],
-      "Warning!": [
-        "Попередження!"
       ],
       "What's new": [
         "Що нового"
@@ -4992,11 +5232,22 @@
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
       ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } країні",
+        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
+        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
+        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах"
+      ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } країні",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
+    "VPN signup": {
+      "Swiss flag": [
+        "Швейцарський прапор"
       ]
     },
     "Warning": {

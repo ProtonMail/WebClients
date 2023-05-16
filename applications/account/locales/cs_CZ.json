@@ -71,6 +71,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add calendar from URL": [
+        "Přidat kalendář z URL"
+      ],
       "Add condition": [
         "Přidat podmínku"
       ],
@@ -97,6 +100,9 @@
       ],
       "Add PayPal": [
         "Přidat PayPal"
+      ],
+      "Add public holidays": [
+        "Přidat státní svátky"
       ],
       "Add sieve filter": [
         "Přidat filtr Sieve"
@@ -412,6 +418,9 @@
       ],
       "Generate token": [
         "Vygenerovat token"
+      ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "Získejte ${ discountPercentage } slevu v případě 24 měsíců"
       ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
@@ -1015,8 +1024,14 @@
       "Disable": [
         "Vypnout"
       ],
+      "Disable encryption": [
+        "Vypnout šifrování"
+      ],
       "Enable": [
         "Zapnout"
+      ],
+      "Enable encryption": [
+        "Povolit šifrování"
       ],
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
@@ -1043,6 +1058,9 @@
       ],
       "Missing keys": [
         "Chybějící klíče"
+      ],
+      "No E2EE": [
+        "Žádné E2EE"
       ],
       "Orphan": [
         "Sirotek"
@@ -2552,6 +2570,11 @@
         "Ålandské ostrovy"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Na základě vašeho časového pásma"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(prostřednictvím ${ entryCountryName })"
@@ -2665,6 +2688,9 @@
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Všechny události v tomto kalendáři budou smazány."
+      ],
+      "You will no longer have access to this calendar.": [
+        "K tomuto kalendáři již nebudete mít přístup."
       ]
     },
     "Delinquent modal title": {
@@ -3348,6 +3374,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Nesprávný ověřovací kód. Ujistěte se prosím, že jste zkopírovali ověřovací kód správně a akci opakujte. Než se změny projeví, může to trvat až 24 hodin."
       ],
+      "You already added this holidays calendar": [
+        "Tento kalendář svátků jste již přidali"
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Přišli jste o přístup ke klíčům organizace. Bez jejich obnovení nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
@@ -3579,11 +3608,8 @@
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Prosím ${ refresh } nebo zkontrolujte své internetové připojení."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Prosím ${ refresh } nebo to zkuste později."
+      "Please refresh the page or try again later.": [
+        "Aktualizujte prosím stránku nebo to zkuste znovu později."
       ],
       "Something went wrong": [
         "Něco se pokazilo"
@@ -3591,8 +3617,8 @@
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Příliš mnoho přidružených relací, prosím vymažte soubory cookie a znovu se přihlaste."
       ],
-      "We couldn't load this page. ": [
-        "Stránku se nepodařilo načíst. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
       ]
     },
     "Error message, recovery": {
@@ -3769,13 +3795,13 @@
         "Rozumím"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
-        "Pozvat stávajícího ${ BRAND_NAME } uživatele"
+        "Pozvat stávajícího uživatele ${ BRAND_NAME }"
       ],
       "Invite member to your family": [
         "Pozvat člena do vaší rodiny"
       ],
       "Keep current plan": [
-        "Zachovat aktuální tarif"
+        "Zůstat na aktuálním tarifu"
       ],
       "Setup family group": [
         "Nastavit rodinnou skupinu"
@@ -3829,13 +3855,16 @@
         "zákaznická podpora"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
+        "Pokud pozvánku přijmete, převedeme vás z aktuálního tarifu a na váš účet připíšeme nevyužitou částku."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
-        "Pozvání od ${ invitation.OrganizationName }"
+        "Pozvánka od ${ invitation.OrganizationName }"
       ],
       "Invited by: ${ inviteEmail }": [
-        "Pozván od: ${ inviteEmail }"
+        "Pozvánka od: ${ inviteEmail }"
+      ],
+      "Leave family plan": [
+        "Odejít z rodinného tarifu"
       ],
       "Manage addresses.": [
         "Spravovat adresy."
@@ -3843,8 +3872,11 @@
       "Manage user accounts": [
         "Spravovat uživatelské účty"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Během 6 měsíců je povoleno přijmout jen 10 pozvánek."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Majitelé tarifu se členy se nemohou připojit k jinému skupinovému tarifu."
+        "Majitelé tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Pending": [
         "Čekající"
@@ -3863,6 +3895,9 @@
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "Předplatné se účtuje hlavnímu správci tarifu Visionary nebo rodinného tarifu."
+      ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "Abychom vám usnadnili přechod, nabízíme vám 30denní zkušební verzi služby ${ BRAND_NAME } Unlimited*."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -3886,7 +3921,13 @@
         "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
       ],
       "You have successfully joined the Family plan": [
-        "Úspěšně jste se připojili k rodinnému tarifu"
+        "Úspěšně jste se připojili k Rodinnému tarifu"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Před vytvořením nového uživatele je třeba nakonfigurovat vlastní doménu."
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "Ztratíte přístup ke všem prémiovým funkcím a úložnému prostoru, které jsou součástí služby ${ BRAND_NAME } Rodina."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
@@ -3895,13 +3936,16 @@
         "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Odstraňte některá data nebo požádejte správce plánu o zvětšení úložiště."
+        "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Váš aktuální tarif se nemůže připojit k tarifu Visionary nebo rodinnému tarifu."
       ]
     },
     "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Na konci zúčtovacího cyklu se vaše předplatné automaticky obnoví za stejnou cenu."
+      ],
       "Discounts are based on the standard monthly pricing.": [
         "Slevy jsou počítány na základě standardních měsíčních cen."
       ]
@@ -3913,19 +3957,42 @@
     },
     "familyOffer_2023:Info": {
       "*Only one free trial per user.": [
-        "*Pouze jedna bezplatná zkušební verze na uživatele."
+        "*Pouze jedna bezplatná zkušební doba na uživatele."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Ve výchozím nastavení přiřazujeme účtu správce ${ formattedStorage } úložiště. Přidělené úložiště můžete později rozdělit mezi další uživatele."
+        "Ve výchozím stavu je správci přiřazeno ${ formattedStorage } úložného prostoru. Velikost prostoru přiřazeného dalším uživatelům, můžete později změnit."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Vytvářejte a spravujte členy rodiny a přidělujte jim úložný prostor sdílený mezi ${ DRIVE_APP_NAME } a ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Pokud již uživatel má adresu ${ MAIL_APP_NAME }, zadejte ji zde. V opačném případě si musí nejprve vytvořit účet."
       ],
       "Online privacy, for your whole family": [
-        "Soukromí online, pro celou vaši rodinu"
+        "Online soukromí, pro celou vaši rodinu"
       ],
       "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
         "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organization.Name }."
       ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
+      ],
+      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
+        "Můžete pozvat stávajícího uživatele ${ BRAND_NAME } nebo vytvořit uživatele nového"
+      ],
       "You can increase or reduce the storage for this user.": [
-        "Můžete zvětšit nebo zmenšit úložiště pro tohoto uživatele."
+        "Můžete zvětšit nebo zmenšit úložiště tohoto uživatele."
+      ],
+      "You left this plan": [
+        "Opustili jste tento tarif"
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Přidejte, odeberte a měňte uživatelské účty ve své rodinné skupině."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Přidejte, odeberte a měňte uživatelské účty ve své organizaci."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3936,12 +4003,15 @@
         "Zadejte název organizace pro potvrzení"
       ],
       "Family name": [
-        "Rodinné jméno"
+        "Jméno rodiny"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Toto trvale smaže všechny dílčí uživatele, účty a data spojená s vaší organizací."
+        "Toto trvale smaže všechny podřízené uživatele, účty a data spojená s vaší organizací."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Toto odebere všechny prémiové funkce ${ BRAND_NAME } všem členům rodiny."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -3962,7 +4032,10 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "Přidat uživatele do vašeho ${ PLAN_NAMES.visionary2022 } účtu"
+        "Přidat uživatele do vašeho účtu ${ PLAN_NAMES.visionary2022 }"
+      ],
+      "Change family name": [
+        "Změna rodinného jména"
       ],
       "Delete family group?": [
         "Smazat rodinnou skupinu?"
@@ -3974,10 +4047,10 @@
         "Upravit uživatelské úložiště"
       ],
       "Family name": [
-        "Rodinné jméno"
+        "Jméno rodiny"
       ],
       "Family plan": [
-        "Rodinné předplatné"
+        "Rodinný tarif"
       ],
       "Introducing ${ planName }": [
         "Představujeme ${ planName }"
@@ -3997,7 +4070,7 @@
         "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
-        "Obsahuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide My Email, sdílení kalendáře a další."
+        "Zahrnuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide My Email, sdílení kalendáře a další."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -4328,6 +4401,9 @@
       "Get help": [
         "Získejte pomoc"
       ],
+      "Holidays": [
+        "Svátky"
+      ],
       "Key type": [
         "Typ klíče"
       ],
@@ -4346,8 +4422,17 @@
       "Permissions": [
         "Oprávnění"
       ],
+      "Select your preferred method of payment": [
+        "Vyberte preferovaný způsob platby"
+      ],
+      "Select your pricing plan": [
+        "Vyberte si cenový tarif"
+      ],
       "Status": [
         "Stav"
+      ],
+      "Subscribed": [
+        "Odběry"
       ],
       "Time": [
         "Čas"
@@ -4421,6 +4506,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Na základě vašeho časového pásma"
       ]
     },
     "Human verification method": {
@@ -5110,6 +5200,9 @@
       "and": [
         "a"
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Jakákoliv metoda ${ twoFa } bude na vašem účtu deaktivována."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Kdokoli s tímto odkazem uvidí všechny podrobnosti události v tomto kalendáři, jako je název, umístění nebo účastníci."
       ],
@@ -5130,6 +5223,9 @@
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Opravdu chcete smazat tento kalendář? Všechny události v něm budou odstraněny."
+      ],
+      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
+        "Opravdu chcete tento kalendář smazat? Kalendář svátků můžete přidat později."
       ],
       "Are you sure you want to delete this domain?": [
         "Opravdu chcete smazat tuto doménu?"
@@ -5187,6 +5283,9 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Basic, Plus nebo Visionary"
+      ],
+      "Be sure to copy your password and store it somewhere safe.": [
+        "Nezapomeňte si heslo zkopírovat a uložit na bezpečné místo."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Před vytvořením této adresy je třeba zadat heslo a vytvořit pro ni šifrovací klíče."
@@ -5254,11 +5353,14 @@
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
       ],
-      "Continue anyway?": [
-        "Přesto pokračovat?"
+      "Continue with ${ freeName }": [
+        "Pokračovat jako ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Pokračováním se váš ${ BRAND_NAME } účet připojí k ${ name }."
+      ],
+      "Copy the suggested password to clipboard": [
+        "Zkopírujte navržené heslo do schránky"
       ],
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
@@ -5476,6 +5578,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
+      "For choosing ${ product }": [
+        "Za výběr ${ product }"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pro Visa, MasterCard a Discover, 3 číslice na zadní straně vaší karty. Pro American Express 4 číslice na přední straně vaší karty."
       ],
@@ -5494,8 +5599,8 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Vygenerováním nové obnovovací fráze bude deaktivována stará."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Získejte adresu ${ BRAND_NAME } a používejte všechny služby ${ BRAND_NAME } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      "Get ${ upsellPlanName }": [
+        "Získat ${ upsellPlanName }"
       ],
       "Get my ${ BRAND_NAME } address": [
         "Získat ${ BRAND_NAME } adresu"
@@ -5514,6 +5619,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokud některý ze správců změnil heslo, budete ho muset požádat o nové heslo organizace."
+      ],
+      "If it’s not right for you, we’ll refund you.": [
+        "Pokud vám nebude vyhovovat, vrátíme vám peníze."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Pokud časové pásmo nastavené v systému neodpovídá aktuálnímu nastavení časového pásma, budete vyzváni k aktualizaci (maximálně jednou denně)."
@@ -5722,12 +5830,6 @@
       "Loading...": [
         "Načítání..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME }."
-      ],
-      "lose access to all current encrypted data": [
-        "ztratíte přístup ke všem šifrovaným datům"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
       ],
@@ -5809,6 +5911,12 @@
       "of": [
         "z"
       ],
+      "old password": [
+        "staré heslo"
+      ],
+      "Once you reset your password:": [
+        "Po resetu vašeho hesla:"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Jeden účet. Všechny služby ${ BRAND_NAME }."
       ],
@@ -5817,6 +5925,9 @@
       ],
       "Only you can see the labels.": [
         "Pouze vy můžete vidět štítky."
+      ],
+      "Open source": [
+        "Open source"
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
@@ -5849,7 +5960,7 @@
         "Zaplaceno za měsíční tarif"
       ],
       "Password copied to clipboard": [
-        "Heslo bylo zkopírované do schránky"
+        "Heslo bylo zkopírováno do schránky"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -5946,6 +6057,9 @@
       ],
       "Priority support": [
         "Prioritní podpora"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chráněno švýcarskými zákony o ochraně soukromí"
       ],
       "Public link invite": [
         "Pozvánka na veřejný odkaz"
@@ -6082,6 +6196,12 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF záznamy se používají k určení, kdo může odesílat e-maily z Vaší domény. Proto důrazně doporučujeme zahrnout ${ MAIL_APP_NAME } mezi SPF záznamy. Přidejte prosím následující TXT záznam k DNS domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
       ],
+      "Step ${ step }": [
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
       ],
@@ -6107,7 +6227,7 @@
         "tým podpory"
       ],
       "Swiss based": [
-        "Vytvořeno ve Švýcarsku"
+        "se sídlem ve Švýcarsku"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -6126,6 +6246,9 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
+      ],
+      "The ${ planName } plan includes:": [
+        "Tarif ${ planName } zahrnuje:"
       ],
       "The calendar will be removed from your account.": [
         "Kalendář bude odstraněn z vašeho účtu."
@@ -6220,9 +6343,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Tímto také zakážete dvoufázovou metodu ověření, spojenou s tímto účtem."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tímto úkonem zrušíte aktuální placené předplatné a ztratíte všechny věrnostní výhody, které jste nashromáždili. Zbývající zůstatek předplatného bude vrácen jako kredit na účet."
       ],
@@ -6255,9 +6375,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME } účet."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
@@ -6318,6 +6435,12 @@
       ],
       "Total VPN connections": [
         "Celkem VPN připojení"
+      ],
+      "Try ${ upsellPlanName } risk free": [
+        "Zkusit ${ upsellPlanName } bez rizika"
+      ],
+      "two-factor authentication (2FA)": [
+        "dvoufázové ověření (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Dvoufázové ověřování je vypnuto"
@@ -6412,6 +6535,9 @@
       "Version ${ version }": [
         "Verze ${ version }"
       ],
+      "Version history": [
+        "Historie verzí"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -6489,9 +6615,6 @@
       ],
       "Why?": [
         "Proč?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
@@ -6631,8 +6754,8 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Aby host viděl vaši odpověď, musíte stále odpovídat na pozvánky."
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ loseAllData } ve Vašem ${ BRAND_NAME } účtu. Chcete-li jej obnovit, musíte zadat Vaše původní heslo."
+      "You will be redirected to the VPN download page": [
+        "Budete přesměrováni na stránku stažení VPN"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -6661,6 +6784,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
       ],
+      "Your ${ BRAND_NAME } password": [
+        "Vaše ${ BRAND_NAME } heslo"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } jsou propojeny. Chcete-li je odstranit, přihlaste se prosím na ${ loginLink } a smažte tam svůj účet."
       ],
@@ -6688,6 +6814,12 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "Vaše současné zprávy, kalendáře nebo kontakty budou uzamčeny. Pro obnovení těchto dat budete potřebovat vaše ${ oldPassword }."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "Vaše současné zprávy, kalendáře nebo kontakty budou uzamčeny. Pro obnovení těchto dat budete potřebovat vaši obnovovací frázi nebo vaše ${ oldPassword }."
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasně opožděn.",
         "Vaše importy z ${ accounts } jsou dočasně opožděny.",
@@ -6696,6 +6828,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -7591,6 +7726,9 @@
       "Label messages as": [
         "Označit zprávy jako"
       ],
+      "Language": [
+        "Jazyk"
+      ],
       "Last 12 months only": [
         "Pouze posledních 12 měsíců"
       ],
@@ -8327,6 +8465,15 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Přidat státní svátky"
+      ],
+      "Edit calendar": [
+        "Upravit kalendář"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Získejte oficiální kalendář státních svátků."
+      ],
       "How to import calendars from another service": [
         "Jak importovat kalendáře z jiné služby"
       ],
@@ -8739,6 +8886,9 @@
       "99.95% SLA": [
         "99.95% SLA Dostupnost"
       ],
+      "Ad-blocker & malware protection": [
+        "Blokování reklam a ochrana před malwarem"
+      ],
       "Admin console": [
         "Konzole správce"
       ],
@@ -8790,6 +8940,9 @@
       "Document editors (docs, sheets, slides)": [
         "Editory dokumentů (dokumenty, tabulky, prezentace)"
       ],
+      "Double hop": [
+        "Double hop"
+      ],
       "Easy Switch import assistant": [
         "Easy Switch asistent importu"
       ],
@@ -8808,14 +8961,29 @@
       "End-to-end encryption": [
         "Koncové šifrování"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Rychlé P2P/BitTorrent stahování"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Bezplatné funkce ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }."
+      ],
       "Free VPN on a single device": [
         "Bezplatná VPN na jednom zařízení"
+      ],
+      "Fully refundable for 30 days": [
+        "Lze vrátit po dobu 30 dnů"
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
       ],
       "Hide My Email aliases": [
         "Hide My Email aliasy"
+      ],
+      "High-speed streaming": [
+        "Vysokorychlostní streamování"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
       ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
@@ -8841,6 +9009,9 @@
       "Multiple forwarding mailboxes": [
         "Vícenásobné přesměrování poštovních schránek"
       ],
+      "No-logs policy": [
+        "Politika žádných logů"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -8852,6 +9023,15 @@
       ],
       "Priority support": [
         "Prioritní podpora"
+      ],
+      "Priority support & live chat": [
+        "Přednostní podpora a živý chat"
+      ],
+      "Protect ${ n } device at a time": [
+        "Chránit ${ n } zařízení zároveň",
+        "Chránit ${ n } zařízení zároveň",
+        "Chránit ${ n } zařízení zároveň",
+        "Chránit ${ n } zařízení zároveň"
       ],
       "Router support": [
         "Podpora routeru"
@@ -9088,6 +9268,9 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Vytvořením ${ BRAND_NAME } účtu souhlasíte s našimi ${ terms }"
       ],
+      "By paying, you agree to our ${ termsAndConditions }": [
+        "Zaplacením vyjadřujete souhlas s našimi ${ termsAndConditions }"
+      ],
       "Payment details": [
         "Platební údaje"
       ],
@@ -9181,6 +9364,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Chrání před ohrožením soukromí VPN tím, že váš internetový provoz prochází přes více serverů."
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Snadno sdílejte své kalendáře s kolegy, rodinou, přáteli pomocí odkazu"
       ],
@@ -9219,9 +9405,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Jedno VPN připojení umožňuje v jednom okamžiku použít ${ BRAND_NAME } VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k ${ BRAND_NAME } VPN v jeden okamžik budete potřebovat dvě VPN připojení."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
@@ -9390,6 +9573,11 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalendář přidán"
       ]
     },
     "Notification in share calendar modal": {
@@ -9846,6 +10034,9 @@
       "Please insert link first": [
         "Nejdříve prosím vložte odkaz"
       ],
+      "Please select a country": [
+        "Vyberte prosím zemi"
+      ],
       "Printer": [
         "Tiskárna"
       ],
@@ -10099,6 +10290,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Zkontrolujte chyby v textu nebo vyberte zemi ze seznamu."
+      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ]
@@ -10184,7 +10378,7 @@
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Sdílet s uživately ${ BRAND_NAME }"
+        "Sdílet s uživateli ${ BRAND_NAME }"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -10206,11 +10400,17 @@
       ]
     },
     "Signup label": {
+      "Confirm email address": [
+        "Potvrdit e-mailovou adresu"
+      ],
       "Display name": [
         "Zobrazované jméno"
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email address": [
+        "E-mailová adresa"
       ],
       "Username": [
         "Uživatelské jméno"
@@ -10240,7 +10440,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Bez omezení"
+        "Přejít na Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -10338,6 +10538,9 @@
       ]
     },
     "specialoffer: Label": {
+      "Lifetime deal": [
+        "Doživotní nabídka"
+      ],
       "Limited time only": [
         "Časově omezeno"
       ],
@@ -10425,8 +10628,14 @@
       "Get our premium bundle and save more": [
         "Získejte náš prémiový balíček a ušetřete více"
       ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Náš ukončený tarif Visionary je zpět pouze po omezenou dobu"
+      ],
       "Save more with 2 years of ${ planName }": [
         "Ušetřete více s 2 roky ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10502,6 +10711,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL kalendáře"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "K odběru externího nebo veřejného kalendáře a jeho aktualizací zadejte jeho URL adresu. Bude přidána verze pro čtení do vašich Ostatních kalendářů.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10685,6 +10897,9 @@
     "Subscription saving": {
       "Save": [
         "Ušetříte"
+      ],
+      "Save ${ discountPercentage }%": [
+        "Ušetřete ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -10910,6 +11125,9 @@
       ],
       "Filter removed": [
         "Filtr odstraněn"
+      ],
+      "Preference updated": [
+        "Nastavení bylo uloženo"
       ],
       "Status updated": [
         "Stav byl aktualizován"
@@ -11892,9 +12110,6 @@
       "Warning": [
         "Varování"
       ],
-      "Warning!": [
-        "Pozor!"
-      ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
       ],
@@ -12036,9 +12251,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Přizpůsobit import pro snížení počtu štítků"
-      ],
-      "Delete trash and spam messages after 30 days. Enabling this option will delete all messages currently in your trash and spam folders. Future spam and trash messages will be automatically deleted after 30 days.": [
-        "Smazat zprávy v koši a spamu po 30 dnech. Zapnutím této možnosti odstraníte všechny zprávy, které se aktuálně nacházejí ve složkách koš a spam. Budoucí zprávy ve spamu a koši budou automaticky smazány po 30 dnech."
       ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"
@@ -12264,11 +12476,22 @@
         "${ n } VPN připojení",
         "${ n } VPN připojení"
       ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } zemi",
+        "${ numberOfServers } ve ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } zemi",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ]
+    },
+    "VPN signup": {
+      "Swiss flag": [
+        "Švýcarská vlajka"
       ]
     },
     "VPNClient": {

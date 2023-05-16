@@ -364,11 +364,11 @@
       "Refer a friend": [
         "Referencie um amigo"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -2348,9 +2348,6 @@
       ],
       "Something went wrong": [
         "Ocorreu um erro"
-      ],
-      "We couldn't load this page. ": [
-        "Não conseguimos carregar esta página. "
       ]
     },
     "Error notification": {
@@ -3793,6 +3790,11 @@
         "Abrir no ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "O que é um método de recuperação?"
+      ]
+    },
     "Loading info": {
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "Montante de calendário criado:  ${ createdCalendarCount } de ${ calendarsToBeCreated }",
@@ -3850,6 +3852,9 @@
       ],
       "Manage calendars": [
         "Gerir os calendários"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
       ]
     },
     "Modal for received invitation to share calendar; Title": {
