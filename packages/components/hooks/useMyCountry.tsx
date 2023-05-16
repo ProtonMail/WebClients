@@ -18,8 +18,10 @@ const getCountryFromTimezone = () =>  {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         if (timezone) {
-            return singleCountryTimezoneDatabase[timezone]
-                || singleCountryTimezoneDatabase[manualFindTimeZone(timezone) || findTimeZone(timezone).name];
+            return singleCountryTimezoneDatabase[timezone as keyof typeof singleCountryTimezoneDatabase]
+                || singleCountryTimezoneDatabase[
+                    (manualFindTimeZone(timezone) || findTimeZone(timezone).name) as keyof typeof singleCountryTimezoneDatabase
+                ];
         }
     } catch (e) {
         // undefined
