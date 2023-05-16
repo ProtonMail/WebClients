@@ -2,10 +2,11 @@ import { ChangeEvent, useMemo, useRef } from 'react';
 import { AutoSizer, List } from 'react-virtualized';
 
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
 import ContactGroupRow from './ContactGroupRow';
@@ -18,6 +19,7 @@ interface Props {
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     isDrawer?: boolean;
+    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
 const ContactsGroupsList = ({
@@ -28,6 +30,7 @@ const ContactsGroupsList = ({
     checkedIDs,
     onClick,
     isDrawer = false,
+    onCompose,
 }: Props) => {
     const listRef = useRef<List>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
@@ -58,7 +61,7 @@ const ContactsGroupsList = ({
     );
 
     return (
-        <div ref={elementRef} className={classnames([isDesktop ? 'items-column-list' : 'items-column-list--mobile'])}>
+        <div ref={elementRef} className={clsx(isDesktop ? 'items-column-list' : 'items-column-list--mobile')}>
             <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
                 <AutoSizer>
                     {({ height, width }) => (
@@ -77,6 +80,7 @@ const ContactsGroupsList = ({
                                     index={index}
                                     onFocus={handleFocus}
                                     isDrawer={isDrawer}
+                                    onCompose={onCompose}
                                 />
                             )}
                             rowCount={groups.length}
