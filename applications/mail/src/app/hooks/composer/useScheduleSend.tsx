@@ -71,6 +71,7 @@ export const useScheduleSend = ({
             buttons={[
                 <Button color="norm" onClick={waitBeforeScheduleModalProps.onClose}>{c('Action').t`Got it`}</Button>,
             ]}
+            data-testid="composer:schedule-send:schedule-limit-reached"
             {...waitBeforeScheduleModalProps}
         >
             {c('Info')
