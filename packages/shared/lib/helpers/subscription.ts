@@ -55,7 +55,7 @@ export const hasMigrationDiscount = (subscription: Subscription) => {
 };
 
 export const isManagedExternally = (
-    subscription: Subscription | Pick<Subscription, 'External'> | undefined
+    subscription: Subscription | Pick<Subscription, 'External'> | undefined | null
 ): boolean => {
     if (!subscription) {
         return false;
