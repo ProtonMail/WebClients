@@ -8,6 +8,7 @@ export * from './creators/notification';
 export * from './creators/request';
 export * from './creators/settings';
 export * from './creators/share';
+export * from './creators/report';
 export * from './creators/trash';
 export * from './creators/user';
 export * from './creators/vault';

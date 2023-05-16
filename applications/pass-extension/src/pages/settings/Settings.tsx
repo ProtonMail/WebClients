@@ -24,6 +24,7 @@ import { Export } from './views/Export';
 import { General } from './views/General';
 import { Import } from './views/Import';
 import { Security } from './views/Security';
+import { Support } from './views/Support';
 
 import './Settings.scss';
 
@@ -49,6 +50,11 @@ const SETTINGS_TABS: (Tab & { pathname: string })[] = [
         pathname: '/export',
         title: c('Label').t`Export`,
         content: <Export />,
+    },
+    {
+        pathname: '/support',
+        title: c('Label').t`Support`,
+        content: <Support />,
     },
 ];
 
