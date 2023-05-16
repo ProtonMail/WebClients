@@ -781,11 +781,11 @@
       "Refine it": [
         "Redefiniți-o"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -838,6 +838,9 @@
       "Reset to default": [
         "Revenire la setări inițiale"
       ],
+      "Restore": [
+        "Restaurare"
+      ],
       "Resume": [
         "Reluare"
       ],
@@ -866,7 +869,7 @@
         "Căutare în conținut mesaj"
       ],
       "See business plans": [
-        "Vedeți planurile tarifare"
+        "Vedeți planurile business"
       ],
       "See plan features": [
         "Afișare caracteristici plan"
@@ -3082,7 +3085,7 @@
         "Alegeți o dată în viitor."
       ],
       "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Alegeți o dată în următoarea ${ EXPIRATION_TIME_MAX_DAYS } zi.",
+        "Alegeți o dată mai târziu cu ${ EXPIRATION_TIME_MAX_DAYS } zi.",
         "Alegeți o dată în următoarele ${ EXPIRATION_TIME_MAX_DAYS } zile.",
         "Alegeți o dată în următoarele ${ EXPIRATION_TIME_MAX_DAYS } de zile."
       ],
@@ -3349,6 +3352,9 @@
         "Atașamentul nu a putut fi decriptat.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierul cu un program cum ar fi GnuPG.",
         "Unele atașamente nu a putut fi decriptate.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierele cu un program cum ar fi GnuPG.",
         "Unele atașamente nu au putut fi decriptate.\nDacă dețineți cheia privată corespunzătoare, veți putea decripta în continuare\nfișierele cu un program cum ar fi GnuPG."
+      ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Numele folderului nu este valid. Alegeți alt nume."
@@ -3655,17 +3661,14 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } sau verificați conexiunea."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } sau încercați mai târziu."
+      "Please refresh the page or try again later.": [
+        "Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
       ],
-      "We couldn't load this page. ": [
-        "Nu s-a putut încărca această pagină."
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
@@ -3738,6 +3741,162 @@
     "Event title": {
       "(no title)": [
         "(fără titlu)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB spațiu total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este partajat între membri de familie între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Nu mai arăta această ofertă"
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Keep current plan": [
+        "Păstrare plan actual"
+      ],
+      "Switch plans": [
+        "Schimbare plan"
+      ],
+      "View the invitation": [
+        "Afișare invitație"
+      ],
+      "View the invitations": [
+        "Afișare invitații"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail și Calendar premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Up to 6 users": [
+        "Până la 6 utilizatori"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Grupuri ${ BRAND_NAME }"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Conturile cu domenii personale nu se pot alătura unui plan Visionary sau de familie."
+      ],
+      "customer support": [
+        "suportul tehnic"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Invitație de la: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Gestionare adrese."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de grup."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ne pare rău, nu puteți schimba planurile în acest moment."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Spațiu disponibil: ${ assignedStorage }:"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Abonamentul este facturat administratorului principal al planului Visionary sau de familie."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Planurile vizionare și de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Planurile Visionary și de familie momentan nu suportă conturi pe viață."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Ați primit o invitație la ${ invite.OrganizationName }."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Puteți accepta doar 3 invitații într-o perioadă de 6 luni. Contactați ${ supportLink } dacă aveți nevoie de o excepție."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "V-ați alăturat cu succes planului de familie."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Planul actual nu se poate alătura unui plan Visionary sau de familie."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Reducerile sunt bazate pe prețul standard lunar."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Confidențialitate online, pentru întreaga familie"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configurați contul de familie și invitați utilizatori"
+      ],
+      "Set up your family": [
+        "Configurare familie"
+      ],
+      "Set up your family account": [
+        "Configurare cont de familie"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Vă prezentăm ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2700 de servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisie în flux la nivel mondial, blocare malware și reclame și multe altele."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Include suport pentru 3 domenii de e-mail personal, 90 adrese de e-mail, aliasuri nelimitate Hide My Email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
     },
     "Feedback Modal Title": {
@@ -4664,11 +4823,8 @@
       "Attention required": [
         "Necesită atenție"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Ștergere automată mesaje nedorite mai vechi de 30 de zile."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Ștergere automată mesaje din gunoi mai vechi de 30 de zile."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Ștergere automată mesaje din folderul «Gunoi» și «Nedorite» mai vechi de 30 de zile."
       ],
       "Background color": [
         "Culoare fundal"
@@ -5083,11 +5239,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Mesajul va fi trimis mâine la ora ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Mesajele din folderul «Nedorite» mai vechi de 30 de zile vor fi șterse automat."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Mesajele care au stat în coșul de gunoi mai mult de 30 de zile vor fi șterse automat."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile vor fi șterse automat."
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
@@ -5328,9 +5481,6 @@
       "Show original message": [
         "Afișare mesaj original"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin este un serviciu ${ BRAND_NAME }, iar acest cont ${ BRAND_NAME } include aliasuri Hide My Email de ascundere a adresei de e-mail. Pentru a începe să vă mascați adresa, accesați SimpleLogin și creați-vă primul alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin furnizează o metodă simplă de a crea adrese de autorizare pe site-urile de neîncredere unde nu doriți să vă expuneți adevărata adresă de e-mail."
       ],
@@ -5559,11 +5709,8 @@
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Modernizați-vă planul pentru a putea șterge automat mesajele din folderul «Nedorite» mai vechi de 30 de zile."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Modernizați-vă planul pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» mai mult de 30 de zile."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Modernizați-vă planul pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
@@ -7678,6 +7825,35 @@
         "Alegeți nelimitat"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } zi",
+        "${ days } zile",
+        "${ days } de zile"
+      ],
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secundă",
+        "${ seconds } secunde",
+        "${ seconds } de secunde"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } lună GRATUIT",
+        "${ n } luni GRATUITE",
+        "${ n } de luni GRATUITE"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } spațiu total"
@@ -7782,6 +7958,11 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturat cu ${ amount } pentru 30 de luni"
+      ],
+      "for ${ n } month": [
+        "pentru ${ n } lună",
+        "pentru ${ n } luni",
+        "pentru ${ n } de luni"
       ],
       "Get the deal": [
         "Obțineți oferta"
@@ -8380,7 +8561,7 @@
         "Schimbare răspuns"
       ],
       "Clear out the junk": [
-        "Eliberare mesaje din gunoi"
+        "Eliminare mesaje din gunoi"
       ],
       "Clearing data": [
         "Ştergere date"

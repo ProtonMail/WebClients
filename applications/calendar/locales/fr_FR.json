@@ -14,7 +14,7 @@
     },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boîte de réception."
+        "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boite de réception."
       ],
       "Mail forward stopped": [
         "Le transfert automatique de messages a été arrêté."
@@ -56,6 +56,9 @@
       ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
+      ],
+      "Add public holidays": [
+        "Ajouter les jours fériés"
       ],
       "Add to group": [
         "Ajouter au groupe"
@@ -392,11 +395,11 @@
       "Refer a friend": [
         "Parrainer un ami"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Remove": [
         "Supprimer"
@@ -1885,6 +1888,11 @@
         "Îles d'Åland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Selon votre fuseau horaire"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Après (nombre de répétitions)"
@@ -2277,7 +2285,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boîte de réception."
+        "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
@@ -2429,6 +2437,9 @@
       ],
       "Validation error": [
         "Une erreur de validation s'est produite."
+      ],
+      "You already added this holidays calendar": [
+        "Vous avez déjà ajouté ce calendrier de jours fériés."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
@@ -2623,17 +2634,14 @@
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Veuillez ${ refresh } ou réessayer plus tard."
+      "Please refresh the page or try again later.": [
+        "Nous vous invitons à actualiser la page ou à réessayer plus tard."
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
-      "We couldn't load this page. ": [
-        "Cette page n'a pu être chargée. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
       ],
       "You need an active personal calendar to import events": [
         "Vous devez avoir un calendrier personnel actif pour importer vos événements."
@@ -2822,7 +2830,7 @@
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Actuellement, le plan Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
+        "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -2992,7 +3000,12 @@
         "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boîte de suggestions."
+        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Selon votre fuseau horaire"
       ]
     },
     "Human verification method": {
@@ -3418,7 +3431,7 @@
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Vérification des contacts : ${ progress } de ${ max }..."
+        "Vérification des contacts : ${ progress } de ${ max }…"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -3506,7 +3519,7 @@
         "Les participants existants, ajoutés et supprimés seront informés."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boîte de réception sécurisée ${ MAIL_APP_NAME }."
+        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -3530,7 +3543,7 @@
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
@@ -3904,10 +3917,10 @@
         "Vous allez mettre à jour tous les événements de cette série. Les participants supprimés seront informés."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
@@ -4220,6 +4233,9 @@
       "Label messages as": [
         "Labelliser les messages"
       ],
+      "Language": [
+        "Langue"
+      ],
       "Last 12 months only": [
         "Seulement les 12 derniers mois"
       ],
@@ -4248,7 +4264,7 @@
         "Déplacer dans le dossier Archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boîte de réception"
+        "Déplacer dans le dossier Boite de réception"
       ],
       "Name": [
         "Nom"
@@ -4297,7 +4313,7 @@
         "Port"
       ],
       "Post office box": [
-        "Boîte postale"
+        "Boite postale"
       ],
       "Postal code": [
         "Code postal"
@@ -4532,8 +4548,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Ajouter les jours fériés"
+      ],
       "Cannot add more calendars": [
         "Impossible d'ajouter d'autres calendriers"
+      ],
+      "Edit calendar": [
+        "Modifier le calendrier"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Accéder au calendrier officiel des jours fériés d'un pays."
       ],
       "How to import calendars from another service": [
         "Comment importer des calendriers depuis un autre service"
@@ -4730,6 +4755,11 @@
       ],
       "Contact group updated": [
         "Le groupe de contacts a été mis à jour."
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Le calendrier a été ajouté."
       ]
     },
     "Notification in share calendar modal": {
@@ -5064,6 +5094,9 @@
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
+      "Please select a country": [
+        "Sélectionnez un pays."
+      ],
       "Search for group name": [
         "Rechercher un nom de groupe"
       ],
@@ -5158,6 +5191,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Vérifiez l'orthographe ou sélectionnez un pays dans la liste."
+      ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ]
@@ -5344,7 +5380,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Changer d'offre"
+        "Changer d'abonnement"
       ]
     },
     "specialoffer: Offers": {
@@ -5427,7 +5463,7 @@
         "Économisez plus avec 2 ans de ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Passez au niveau supérieur et économisez plus avec 2 ans de ${ planName }"
+        "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -5435,7 +5471,7 @@
         "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
@@ -5444,13 +5480,13 @@
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier..."
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier..."
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boîte de réception et de ses propres alias. Nécessite un domaine personnalisé."
+        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Profitez sans frais supplémentaires des versions payantes de tous nos futurs services respectueux de la vie privée, ainsi que d'un accès en avant-première à nos nouvelles fonctionnalités et à nos nouveaux produits."
@@ -5463,11 +5499,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Ajoutez les jours fériés de votre pays à votre calendrier."
+      ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Les jours fériés sont arrivés !"
       ]
     },
     "Storage": {
@@ -5484,6 +5526,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL du calendrier"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Pour vous abonner à un calendrier externe ou public et à ses mises à jour, saisissez l'URL. Une version en lecture seule du calendrier sera ajoutée à vos Autres calendriers.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

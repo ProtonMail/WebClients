@@ -51,7 +51,7 @@
         "Czatuj z nami"
       ],
       "Choose my own password": [
-        "Ustaw hasło"
+        "Ustaw własne hasło"
       ],
       "Close": [
         "Zamknij"
@@ -72,7 +72,7 @@
         "Kontynuuj"
       ],
       "Continue with this password": [
-        "Kontynuuj z hasłem"
+        "Kontynuuj z tym hasłem"
       ],
       "Copy": [
         "Kopiuj"
@@ -1627,17 +1627,14 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } lub sprawdź swoje połączenie."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } lub spróbuj ponownie później."
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
       ],
-      "We couldn't load this page. ": [
-        "Nie możemy załadować strony. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
       ]
     },
     "Error notification": {
@@ -2171,6 +2168,9 @@
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "${ twoFa } zostanie wyłączone na koncie."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
       ],
@@ -2227,9 +2227,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
-      ],
-      "Continue anyway?": [
-        "Kontynuować mimo to?"
       ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
@@ -2336,8 +2333,8 @@
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Uzyskaj adres ${ BRAND_NAME }, aby używać go do wszystkich usług ${ BRAND_NAME }, w tym poczty ${ MAIL_SHORT_APP_NAME } i kalendarza ${ CALENDAR_SHORT_APP_NAME }."
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Uzyskaj adres ${ BRAND_NAME }, aby używać go do wszystkich usług ${ BRAND_NAME_TWO }, w tym poczty ${ MAIL_SHORT_APP_NAME } i kalendarza ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Uzyskaj adres ${ BRAND_NAME }"
@@ -2423,9 +2420,6 @@
       "Loading...": [
         "Ładowanie..."
       ],
-      "lose access to all current encrypted data": [
-        "Stracisz dostęp do wszystkich obecnie zaszyfrowanych danych"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
       ],
@@ -2455,6 +2449,12 @@
       ],
       "of": [
         "z"
+      ],
+      "old password": [
+        "starego hasła"
+      ],
+      "Once you reset your password:": [
+        "Po zresetowaniu hasła:"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Jedno konto. Wszystkie usługi ${ BRAND_NAME }."
@@ -2615,9 +2615,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "W zależności od urządzenia, ten proces może potrwać kilka sekund lub minut"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Ta czynność spowoduje również wyłączenie uwierzytelniania dwustopniowego skojarzonego z tym kontem."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
       ],
@@ -2633,8 +2630,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta ${ BRAND_NAME_TWO }, dlatego zalecamy włączenie tej opcji."
       ],
       "To ${ planName }": [
         "w planie ${ planName }"
@@ -2674,6 +2671,9 @@
       ],
       "Try ${ upsellPlanName } risk free": [
         "Wypróbuj plan ${ upsellPlanName } bez ryzyka"
+      ],
+      "two-factor authentication (2FA)": [
+        "Uwierzytelnianie dwustopniowe"
       ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
@@ -2786,8 +2786,8 @@
       "Why?": [
         "Dlaczego?"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Dzięki szyfrowanemu adresowi e-mail ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Dzięki szyfrowanemu adresowi ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME_TWO }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -2861,9 +2861,6 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ loseAllData } na koncie ${ BRAND_NAME }. Aby je przywrócić, wpisz stare hasło."
-      ],
       "You will be redirected to the VPN download page": [
         "Zostaniesz przekierowany do strony pobierania aplikacji VPN"
       ],
@@ -2902,6 +2899,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować ${ oldPassword }."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje informacje są u nas bezpieczne. Będziemy się z Tobą kontaktować tylko wtedy, gdy będzie to konieczne do świadczenia naszych usług."
@@ -4128,8 +4131,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME_TWO } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
@@ -5404,9 +5407,6 @@
       ],
       "Warning": [
         "Ostrzeżenie"
-      ],
-      "Warning!": [
-        "Ostrzeżenie!"
       ],
       "What's new": [
         "Co nowego"

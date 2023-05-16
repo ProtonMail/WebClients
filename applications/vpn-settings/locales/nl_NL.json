@@ -50,6 +50,9 @@
       "Chat with us": [
         "Chat met ons"
       ],
+      "Choose my own password": [
+        "Mijn eigen wachtwoord kiezen"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -67,6 +70,9 @@
       ],
       "Continue": [
         "Doorgaan"
+      ],
+      "Continue with this password": [
+        "Ga verder met dit wachtwoord"
       ],
       "Copy": [
         "Kopieer"
@@ -137,6 +143,9 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "Edit password": [
+        "Wachtwoord wijzigen"
+      ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
       ],
@@ -158,11 +167,17 @@
       "Fit to window": [
         "Passend in venster"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "Krijg ${ discountPercentage } korting met 24 maanden"
+      ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Verkrijg een nieuw versleuteld e-mailadres"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -251,6 +266,9 @@
       "Reset password": [
         "Wachtwoord resetten"
       ],
+      "Restore": [
+        "Herstel"
+      ],
       "Retry": [
         "Opnieuw proberen"
       ],
@@ -284,6 +302,9 @@
       "Send my username": [
         "Stuur mijn gebruikersnaam"
       ],
+      "Set new password": [
+        "Nieuw wachtwoord instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
@@ -304,6 +325,9 @@
       ],
       "Sign out": [
         "Uitloggen"
+      ],
+      "Sign up for free": [
+        "Gratis inschrijven"
       ],
       "Signing in": [
         "Aanmelden"
@@ -491,6 +515,9 @@
       ],
       "Other": [
         "Anders"
+      ],
+      "Pass problem": [
+        "Probleem met Pass"
       ],
       "Payments problem": [
         "Probleem met betalingen"
@@ -1545,6 +1572,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
@@ -1589,17 +1619,14 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } of controleer uw internetverbinding."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } of probeer het later opnieuw."
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
       ],
-      "We couldn't load this page. ": [
-        "We konden deze pagina niet laden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ]
     },
     "Error notification": {
@@ -1651,8 +1678,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -1977,8 +2010,17 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "Beste deal"
+      ],
+      "Enter your email address": [
+        "Voer uw e-mailadres in"
+      ],
       "Get help": [
         "Krijg hulp"
+      ],
+      "Select your pricing plan": [
+        "Selecteer uw abonnement"
       ]
     },
     "Human verification method": {
@@ -2044,6 +2086,9 @@
       "10 email addresses": [
         "10 e-mailadressen"
       ],
+      "30-day money-back guarantee": [
+        "30-dagen geld terug garantie"
+      ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
       ],
@@ -2089,6 +2134,9 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Alle ${ twoFa }methodes op uw account worden uitgeschakeld."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
       ],
@@ -2106,6 +2154,21 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
+      ],
+      "Billed every 12 months": [
+        "Per 12 maanden betaald"
+      ],
+      "Billed every 15 months": [
+        "Per 15 maanden betaald"
+      ],
+      "Billed every 24 months": [
+        "Per 24 maanden betaald"
+      ],
+      "Billed every 30 months": [
+        "Per 30 maanden betaald"
+      ],
+      "Billed every month": [
+        "Per maand betaald"
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
@@ -2127,9 +2190,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "Continue anyway?": [
-        "Toch doorgaan?"
       ],
       "Country code": [
         "Landcode"
@@ -2224,9 +2284,6 @@
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Kies een ${ BRAND_NAME } e-mailadres om gebruik te maken van alle ${ BRAND_NAME } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
-      ],
       "Get my ${ BRAND_NAME } address": [
         "Haal mijn ${ BRAND_NAME }-adres"
       ],
@@ -2308,9 +2365,6 @@
       "Loading...": [
         "Laden..."
       ],
-      "lose access to all current encrypted data": [
-        "toegang tot alle huidige versleutelde gegevens verliezen"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
       ],
@@ -2341,8 +2395,17 @@
       "of": [
         "van"
       ],
+      "old password": [
+        "oud wachtwoord"
+      ],
+      "Once you reset your password:": [
+        "Zodra u uw wachtwoord herstelt:"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Eén account. Alle ${ BRAND_NAME }-diensten."
+      ],
+      "Open source": [
+        "Open-source"
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -2395,6 +2458,9 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Protected by Swiss privacy laws": [
+        "Beschermd door Zwitserse privacywetten"
+      ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
       ],
@@ -2406,6 +2472,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
+      ],
+      "Restore": [
+        "Herstel"
       ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
@@ -2440,6 +2509,10 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Step ${ step }": [
+        "Stap ${ step }",
+        "Stap ${ step }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
       ],
@@ -2470,9 +2543,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Dit schakelt ook de tweestapsverificatiemethode uit die gekoppeld is aan dit account."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
@@ -2487,9 +2557,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME } account. Tweestapsverificatie zal uw ${ BRAND_NAME } account veiliger maken en daarom raden we aan om het in te schakelen."
       ],
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
@@ -2523,6 +2590,9 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
+      ],
+      "two-factor authentication (2FA)": [
+        "tweestapsverificatie (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Tweestapsverificatie uitgeschakeld"
@@ -2632,9 +2702,6 @@
       "Why?": [
         "Waarom?"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
@@ -2698,9 +2765,6 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
@@ -3526,6 +3590,10 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Protect ${ n } device at a time": [
+        "Bescherm ${ n } apparaat tegelijkertijd",
+        "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
       "Router support": [
         "Routerondersteuning"
       ],
@@ -3838,9 +3906,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME } VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME } VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
@@ -4185,9 +4250,36 @@
         "Kies Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -4204,6 +4296,9 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -4212,6 +4307,9 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -4281,6 +4379,10 @@
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
       ],
+      "for ${ n } month": [
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
+      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -4310,6 +4412,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-aanbieding"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-aanbieding"
+      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -4932,6 +5040,9 @@
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
       ],
+      "Set your password": [
+        "Stel uw wachtwoord in"
+      ],
       "Settings": [
         "Instellingen"
       ],
@@ -4995,9 +5106,6 @@
       "Warning": [
         "Waarschuwing"
       ],
-      "Warning!": [
-        "Let op!"
-      ],
       "What's new": [
         "Wat is er nieuw"
       ],
@@ -5012,6 +5120,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
+      ],
+      "Your Plan": [
+        "Uw abonnement"
       ],
       "Your plan": [
         "Uw abonnement"
@@ -5078,6 +5189,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",

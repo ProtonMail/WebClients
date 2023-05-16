@@ -2097,6 +2097,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
       ],
@@ -2360,17 +2363,14 @@
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } o comproveu la vostra connexió."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } o tornar-ho a intentar més tard."
+      "Please refresh the page or try again later.": [
+        "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
         "S'ha produït un error."
       ],
-      "We couldn't load this page. ": [
-        "No hem pogut carregar aquesta pàgina. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
       "You may also refresh the page or try again later.": [
         "També podeu refrescar la pàgina o provar de nou més tard."
@@ -5224,6 +5224,30 @@
         "Passeu-vos a Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } mesos GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'emmagatzematge total"
@@ -5328,6 +5352,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturat a ${ amount } durant 30 mesos"
+      ],
+      "for ${ n } month": [
+        "per a ${ n } mes",
+        "durant ${ n } mesos"
       ],
       "Get the deal": [
         "Obteniu l’oferta"

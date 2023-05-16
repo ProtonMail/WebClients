@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Request new code": [
         "Begär ny kod"
@@ -860,6 +860,9 @@
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
+      "The email addresses do not match": [
+        "E-postadresserna matchar inte"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
@@ -880,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } eller kontrollera din Internetanslutning."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } eller försök igen senare."
+      "Please refresh the page or try again later.": [
+        "Uppdatera sidan eller försök igen senare."
       ],
       "Something went wrong": [
         "Något gick fel"
       ],
-      "We couldn't load this page. ": [
-        "Vi kunde inte ladda denna sida. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
       ]
     },
     "fido2: Error": {

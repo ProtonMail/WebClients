@@ -395,11 +395,11 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Remove": [
         "Entfernen"
@@ -1888,6 +1888,11 @@
         "Åland‐Inseln"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Basierend auf deiner Zeitzone"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Nach Wiederholung …"
@@ -2434,7 +2439,7 @@
         "Überprüfungsfehler"
       ],
       "You already added this holidays calendar": [
-        "Du hast diesen Feiertag bereits hinzugefügt."
+        "Du hast diesen Feiertagskalender bereits hinzugefügt."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
@@ -2629,17 +2634,14 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Bitte ${ refresh } oder überprüfe deine Internetverbindung."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Bitte ${ refresh } oder versuche es später erneut."
+      "Please refresh the page or try again later.": [
+        "Aktualisiere die Seite oder versuche es später erneut."
       ],
       "Something went wrong": [
         "Etwas ist schief gelaufen."
       ],
-      "We couldn't load this page. ": [
-        "Diese Seite konnte nicht geladen werden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
       ],
       "You need an active personal calendar to import events": [
         "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine importieren zu können"
@@ -2773,10 +2775,10 @@
         "Tarife wechseln"
       ],
       "View the invitation": [
-        "Siehe dir die Einladung an"
+        "Sieh dir die Einladung an"
       ],
       "View the invitations": [
-        "Siehe dir die Einladungen an"
+        "Sieh dir die Einladungen an"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -2999,6 +3001,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Basierend auf deiner Zeitzone"
       ]
     },
     "Human verification method": {
@@ -4459,7 +4466,7 @@
         "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
+        "Verbindung zu deinem E-Mail-Anbieter wird aufgebaut"
       ],
       "Creating new calendars": [
         "Neue Kalender werden angelegt"
@@ -4541,8 +4548,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Feiertage hinzufügen"
+      ],
       "Cannot add more calendars": [
         "Es können keine weiteren Kalender hinzugefügt werden"
+      ],
+      "Edit calendar": [
+        "Kalender bearbeiten"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Hol dir den offiziellen Feiertagskalender eines Landes."
       ],
       "How to import calendars from another service": [
         "Wie du Kalender von einem anderen Dienst importierst"
@@ -4739,6 +4755,11 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalender hinzugefügt"
       ]
     },
     "Notification in share calendar modal": {
@@ -5170,6 +5191,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Überprüfe die Schreibweise oder wähle ein Land aus der Liste aus."
+      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ]
@@ -5475,11 +5499,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Füge die Feiertage deines Landes zu deinem Kalender hinzu."
+      ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
+      ],
+      "Public holidays are here!": [
+        "Die Feiertage sind da!"
       ]
     },
     "Storage": {
@@ -5989,7 +6019,7 @@
         "Kalenderschlüssel reaktivieren"
       ],
       "Reconnect your account": [
-        "Erneut mit Ihrem Konto verbinden"
+        "Erneut mit deinem Konto verbinden"
       ],
       "Recover data": [
         "Daten wiederherstellen"

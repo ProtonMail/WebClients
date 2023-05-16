@@ -392,11 +392,11 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -744,6 +744,9 @@
       ],
       "Other": [
         "Anders"
+      ],
+      "Pass problem": [
+        "Probleem met Pass"
       ],
       "Payments problem": [
         "Probleem met betalingen"
@@ -1882,6 +1885,11 @@
         "Aland Eilanden"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Na herhaling…"
@@ -2373,6 +2381,9 @@
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -2617,17 +2628,14 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } of controleer uw internetverbinding."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } of probeer het later opnieuw."
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
       ],
-      "We couldn't load this page. ": [
-        "We konden deze pagina niet laden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ],
       "You need an active personal calendar to import events": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren"
@@ -2768,8 +2776,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -2981,6 +2995,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
       ]
     },
     "Human verification method": {
@@ -4208,6 +4227,9 @@
       "Label messages as": [
         "Berichten labelen als"
       ],
+      "Language": [
+        "Taal"
+      ],
       "Last 12 months only": [
         "Alleen afgelopen 12 maanden"
       ],
@@ -4523,6 +4545,9 @@
       "Cannot add more calendars": [
         "Kan niet meer agenda's toevoegen"
       ],
+      "Edit calendar": [
+        "Agenda bewerken"
+      ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
       ],
@@ -4720,6 +4745,11 @@
         "Contactgroep bijgewerkt"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Agenda toegevoegd"
+      ]
+    },
     "Notification in share calendar modal": {
       "Member added": [
         "Lid toegevoegd",
@@ -4895,6 +4925,9 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
+      "Set up your organization testing": [
+        "Stel uw organisatie in"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -5049,6 +5082,9 @@
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
       ],
+      "Please select a country": [
+        "Kies een land"
+      ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
       ],
@@ -5143,6 +5179,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Controleer de spelling of selecteer een land uit de lijst."
+      ],
       "No results found": [
         "Geen resultaten gevonden"
       ]
@@ -5256,6 +5295,9 @@
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
       ],
+      "3 TB": [
+        "3 TB"
+      ],
       "6 users": [
         "6 gebruikers"
       ],
@@ -5271,6 +5313,9 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5279,6 +5324,9 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -5381,6 +5429,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-aanbieding"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-aanbieding"
+      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -5454,6 +5508,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Agenda-URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Voer de URl in om u te abonneren op een externe of openbare agenda en de updates ervan. Er wordt een alleen-lezen versie van de agenda toegevoegd aan uw Andere agenda's.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

@@ -68,6 +68,9 @@
       "Continue": [
         "Continua"
       ],
+      "Continue with this password": [
+        "Continua con questa password"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -137,6 +140,9 @@
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
+      "Edit password": [
+        "Modifica la password"
+      ],
       "Edit phone number": [
         "Modifica il numero di telefono"
       ],
@@ -163,6 +169,9 @@
       ],
       "Get a new encrypted email address": [
         "Ottieni un nuovo indirizzo email crittografato"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
       ],
       "Get verification code": [
         "Ottieni il codice di verifica"
@@ -287,6 +296,9 @@
       "Send my username": [
         "Invia il mio nome utente"
       ],
+      "Set new password": [
+        "Imposta una nuova password"
+      ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
       ],
@@ -307,6 +319,9 @@
       ],
       "Sign out": [
         "Esci"
+      ],
+      "Sign up for free": [
+        "Registrati gratuitamente"
       ],
       "Signing in": [
         "Accesso"
@@ -1551,6 +1566,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure accedi da un computer."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
       ],
@@ -1595,17 +1613,11 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Si prega di ${ refresh } o riprovare più tardi."
+      "Please refresh the page or try again later.": [
+        "Si prega di aggiornare la pagina o di riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
-      ],
-      "We couldn't load this page. ": [
-        "Non è stato possibile caricare questa pagina. "
       ]
     },
     "Error notification": {
@@ -1989,8 +2001,14 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "Miglior offerta"
+      ],
       "Get help": [
         "Ottieni supporto"
+      ],
+      "Select your preferred method of payment": [
+        "Seleziona il metodo di pagamento che preferisci."
       ]
     },
     "Heading in trial plan": {
@@ -2061,6 +2079,9 @@
       "10 email addresses": [
         "10 indirizzi email"
       ],
+      "30-day money-back guarantee": [
+        "Rimborso garantito durante 30 giorni"
+      ],
       "30-day money-back guarantee.": [
         "Rimborso garantito in 30 giorni."
       ],
@@ -2124,6 +2145,18 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
+      "Billed every 12 months": [
+        "Fatturazione ogni 12 mesi"
+      ],
+      "Billed every 15 months": [
+        "Fatturazione ogni 15 mesi"
+      ],
+      "Billed every 24 months": [
+        "Fatturazione ogni 24 mesi"
+      ],
+      "Billed every 30 months": [
+        "Fatturazione ogni 30 mesi"
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
@@ -2145,8 +2178,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
-      "Continue anyway?": [
-        "Continuare comunque?"
+      "Continue with ${ freeName }": [
+        "Continua con ${ freeName }"
       ],
       "Country code": [
         "Codice nazione"
@@ -2241,8 +2274,8 @@
       "Free up some space or contact your administrator.": [
         "Libera dello spazio o contatta il tuo amministratore."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Ottieni un indirizzo ${ BRAND_NAME } per utilizzare tutti i servizi ${ BRAND_NAME } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      "Get ${ upsellPlanName }": [
+        "Scegli ${ upsellPlanName }"
       ],
       "Get my ${ BRAND_NAME } address": [
         "Ottieni un indirizzo ${ BRAND_NAME }"
@@ -2325,9 +2358,6 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
-      "lose access to all current encrypted data": [
-        "perderai l'accesso a tutti i dati crittografati attuali"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assicurati di ${ addARecoveryMethod } in modo da poter tornare al tuo account se dimentichi la password."
       ],
@@ -2358,11 +2388,20 @@
       "of": [
         "di"
       ],
+      "old password": [
+        "vecchia password"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Un account per tutti i servizi ${ BRAND_NAME }."
       ],
+      "Open source": [
+        "Open source"
+      ],
       "Or select a particular server:": [
         "O seleziona un server specifico:"
+      ],
+      "Password copied to clipboard": [
+        "Password copiata negli appunti"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -2412,6 +2451,9 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
+      "Protected by Swiss privacy laws": [
+        "Protezione dalle leggi svizzere sulla privacy"
+      ],
       "read our two-factor authentication guide first": [
         "leggi prima la nostra guida all'autenticazione a due fattori"
       ],
@@ -2460,6 +2502,10 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "Step ${ step }": [
+        "Passaggio ${ step }",
+        "Passaggio ${ step }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
       ],
@@ -2468,6 +2514,12 @@
       ],
       "support team": [
         "team di supporto"
+      ],
+      "Swiss based": [
+        "Con sede in Svizzera"
+      ],
+      "Thank you": [
+        "Grazie"
       ],
       "The securest way to browse, stream, and be online.": [
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
@@ -2490,9 +2542,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Questo può richiedere alcuni secondi o alcuni minuti a seconda del dispositivo"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Questo disabiliterà anche qualsiasi metodo di autenticazione a due fattori associato a questo account."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
       ],
@@ -2507,9 +2556,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Questa procedura guidata abiliterà l'Autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a 2 fattori renderà il tuo account ${ BRAND_NAME } molto più sicuro e per questo ti raccomandiamo di attivarla."
       ],
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
@@ -2543,6 +2589,9 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
+      ],
+      "two-factor authentication (2FA)": [
+        "autenticazione a due fattori (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Autenticazione a due fattori disabilitata"
@@ -2634,6 +2683,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
       ],
+      "Welcome": [
+        "Ti diamo il benvenuto"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
       ],
@@ -2651,9 +2703,6 @@
       ],
       "Why?": [
         "Perché?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi ${ BRAND_NAME }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -2719,8 +2768,8 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ loseAllData } nel tuo account ${ BRAND_NAME } . Per ripristinarlo, dovrai inserire la tua vecchia password."
+      "You will be redirected to the VPN download page": [
+        "Sarai reindirizzato alla pagina per scaricare la VPN"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -3410,6 +3459,10 @@
         "${ n } cartella ed etichetta",
         "${ n } cartelle ed etichette"
       ],
+      "${ n } Hide My Email alias": [
+        "${ n } alias Hide My Email",
+        "${ n } alias Hide My Email"
+      ],
       "${ n } label": [
         "${ n } etichetta",
         "${ n } etichette"
@@ -3481,6 +3534,9 @@
       "Document editors (docs, sheets, slides)": [
         "Editor di documenti (documenti, fogli di lavoro, diapositive)"
       ],
+      "Double hop": [
+        "Double hop"
+      ],
       "Easy Switch import assistant": [
         "Assistente di importazione Easy Switch"
       ],
@@ -3499,6 +3555,9 @@
       "End-to-end encryption": [
         "Crittografia end-to-end"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Scaricamenti P2P/BitTorrent veloci"
+      ],
       "Free VPN on a single device": [
         "VPN gratuita su un solo dispositivo"
       ],
@@ -3512,6 +3571,9 @@
       "HTML signatures": [
         "Firme HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre attiva"
       ],
@@ -3520,6 +3582,9 @@
       ],
       "Multiple admin roles": [
         "Ruoli di amministratore multipli"
+      ],
+      "No-logs policy": [
+        "Politica di non conservazione dei log"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -3577,6 +3642,9 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Cartelle, etichette e filtri illimitati"
+      ],
+      "Unlimited Hide My Email aliases": [
+        "Numero illimitato di alias Hide My Email"
       ],
       "Unlimited labels": [
         "Etichette illimitate"
@@ -3716,6 +3784,9 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Creando un account ${ BRAND_NAME }, accetti i nostri ${ terms }"
       ],
+      "By paying, you agree to our ${ termsAndConditions }": [
+        "Procedendo con il pagamento, accetti i nostri ${ termsAndConditions }."
+      ],
       "Payment details": [
         "Dettagli del pagamento"
       ],
@@ -3801,6 +3872,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server."
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Condividi facilmente i tuoi calendari con colleghi, familiari e amici tramite un link"
       ],
@@ -3833,9 +3907,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nei giorni lavorativi, ricevi assistenza dal team di assistenza clienti ${ BRAND_NAME } entro 24 ore dalle richieste"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Una connessione VPN permette a un dispositivo di connettersi a ${ BRAND_NAME } VPN in qualsiasi momento. Ad esempio, per collegare un telefono e un computer portatile a ${ BRAND_NAME } VPN allo stesso tempo, sono necessarie due connessioni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
@@ -4158,6 +4229,9 @@
       "Email": [
         "Email"
       ],
+      "Email address": [
+        "Indirizzo email"
+      ],
       "Username": [
         "Nome utente"
       ]
@@ -4187,6 +4261,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Scegli Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secondo",
+        "${ seconds } secondi"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -4293,6 +4391,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
+      ],
+      "for ${ n } month": [
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -4480,6 +4582,9 @@
       "Subscriptions": [
         "Abbonamenti"
       ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Il piano è stato acquistato dall'app per Android. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso il Play Store di Google."
+      ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
       ]
@@ -4518,6 +4623,9 @@
     "Subscription saving": {
       "Save": [
         "Risparmia"
+      ],
+      "Save ${ discountPercentage }%": [
+        "Risparmia il ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -5005,9 +5113,6 @@
       "Warning": [
         "Attenzione"
       ],
-      "Warning!": [
-        "Attenzione!"
-      ],
       "What's new": [
         "Cosa c'è di nuovo"
       ],
@@ -5024,7 +5129,7 @@
         "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ],
       "Your Plan": [
-        "Il tuo Piano"
+        "Il tuo piano"
       ],
       "Your plan": [
         "Il tuo piano"
@@ -5091,6 +5196,10 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } paese",
+        "${ numberOfServers } in oltre ${ numberOfCountries } paesi"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",

@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
@@ -860,6 +860,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
@@ -880,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } of controleer uw internetverbinding."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } of probeer het later opnieuw."
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
       ],
-      "We couldn't load this page. ": [
-        "We konden deze pagina niet laden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ]
     },
     "fido2: Error": {
