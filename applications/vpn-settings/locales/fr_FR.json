@@ -1427,7 +1427,7 @@
         "/mois"
       ],
       "/user per month": [
-        "/utilisateur par mois"
+        "par utilisateur et par mois"
       ]
     },
     "Delinquent modal title": {
@@ -1619,17 +1619,14 @@
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Veuillez ${ refresh } ou réessayer plus tard."
+      "Please refresh the page or try again later.": [
+        "Nous vous invitons à actualiser la page ou à réessayer plus tard."
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
-      "We couldn't load this page. ": [
-        "Cette page n'a pu être chargée. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
       ]
     },
     "Error notification": {
@@ -1749,7 +1746,7 @@
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Actuellement, le plan Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
+        "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -2024,6 +2021,9 @@
       ],
       "Select your preferred method of payment": [
         "Choisissez votre moyen de paiement préféré."
+      ],
+      "Select your pricing plan": [
+        "Sélectionnez votre plan tarifaire"
       ]
     },
     "Heading in trial plan": {
@@ -2059,7 +2059,7 @@
         "${ fileName } : aperçu en basse résolution"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boîte de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
+        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boite de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
       "${ number } city": [
         "${ number } ville",
@@ -2107,7 +2107,7 @@
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boîte aux lettres et une seule personne."
+        "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
@@ -2141,6 +2141,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
+      ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Toute méthode ${ twoFa } sur vote compte sera désactivée."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Voulez-vous vraiment désactiver l'authentification à deux facteurs ?"
@@ -2198,9 +2201,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
-      ],
-      "Continue anyway?": [
-        "Continuer quand même ?"
       ],
       "Continue with ${ freeName }": [
         "Continuer avec ${ freeName }"
@@ -2263,7 +2263,7 @@
         "Saisissez le code envoyé à votre numéro de téléphone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Saisissez le code qui a été envoyé à ${ email }. Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez dans votre dossier Indésirables/spam."
+        "Saisissez le code qui a été envoyé à ${ email }. Si vous ne trouvez pas le message dans votre boite de réception, vérifiez dans votre dossier Indésirables/spam."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -2292,6 +2292,9 @@
       "expires ${ expirationDate }": [
         "expire le ${ expirationDate }"
       ],
+      "For choosing ${ product }": [
+        "Pour avoir choisi ${ product }"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pour Visa, MasterCard et Discover, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
       ],
@@ -2303,9 +2306,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME }, y compris ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtenir mon adresse ${ BRAND_NAME }"
@@ -2323,7 +2323,7 @@
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si vous avez un code cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
@@ -2389,10 +2389,7 @@
         "Chargement de l'aperçu"
       ],
       "Loading...": [
-        "Chargement en cours..."
-      ],
-      "lose access to all current encrypted data": [
-        "perdre l'accès à toutes les données actuellement chiffrées"
+        "Chargement en cours"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
@@ -2423,6 +2420,12 @@
       ],
       "of": [
         "sur"
+      ],
+      "old password": [
+        "ancien mot de passe"
+      ],
+      "Once you reset your password:": [
+        "Une fois votre mot de passe réinitialisé :"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Un seul compte. Tous les services ${ BRAND_NAME }."
@@ -2506,7 +2509,7 @@
         "Révoquer le certificat ${ name }"
       ],
       "Saving your password": [
-        "Enregistrez votre mot de passe"
+        "Enregistrement de votre mot de passe"
       ],
       "Scan QR code instead": [
         "Scanner plutôt le code QR"
@@ -2537,6 +2540,10 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Step ${ step }": [
+        "Étape ${ step }",
+        "Étape ${ step }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -2577,9 +2584,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Cela peut prendre quelques secondes ou minutes selon votre appareil."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Cela désactivera aussi toute méthode d'authentification à deux facteurs associée à ce compte."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ceci annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité que vous avez accumulés. Le solde restant de votre abonnement sera restitué sous forme de crédits de compte."
       ],
@@ -2595,8 +2599,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Cela vous déconnectera de toutes les sessions actives et désactivera l'authentification à deux facteurs."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Cet assistant activera l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Nous vous recommandons de l'activer, cela renforce la sécurité de votre compte."
+      "To ${ planName }": [
+        "À : ${ planName }"
       ],
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }."
@@ -2634,6 +2638,9 @@
       "Try ${ upsellPlanName } risk free": [
         "Essayez ${ upsellPlanName }, satisfait ou remboursé"
       ],
+      "two-factor authentication (2FA)": [
+        "authentification à deux facteurs (2FA)"
+      ],
       "Two-factor authentication disabled": [
         "L'authentification à deux facteurs est désactivée."
       ],
@@ -2641,7 +2648,7 @@
         "L'authentification à deux facteurs est activée."
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer votre boîte aux lettres (avancé)."
+        "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer votre boite aux lettres (avancé)."
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Avec l'option deux mots de passe, vous utilisez un mot de passe pour vous connecter à votre compte et un autre mot de passe pour déchiffrer votre messagerie. Cela représente une petite sécurité supplémentaire dans certains cas, mais nous recommandons d'utiliser un seul mot de passe, cela convient pour la majorité des utilisateurs. Pour utiliser deux mots de passe, définissez d'abord un mot de passe de connexion à votre compte, puis choisissez un mot de passe pour votre messagerie."
@@ -2745,9 +2752,6 @@
       "Why?": [
         "Pourquoi ?"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
@@ -2812,9 +2816,6 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux messages. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Vous allez ${ loseAllData } dans votre compte ${ BRAND_NAME }. Pour le restaurer, vous devrez saisir votre ancien mot de passe."
-      ],
       "You will be redirected to the VPN download page": [
         "Vous serez redirigé vers la page de téléchargement du VPN."
       ],
@@ -2828,10 +2829,10 @@
         "Vous resterez connecté même après avoir fermé le navigateur."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
       ],
       "Your ${ BRAND_NAME } password": [
         "Votre mot de passe ${ BRAND_NAME }"
@@ -2853,6 +2854,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "Vos messages, calendriers ou contacts existants seront verrouillés. Pour récupérer ces données, vous aurez besoin de votre ${ oldPassword }."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "Vos messages, calendriers ou contacts existants seront verrouillés. Pour récupérer ces données, vous aurez besoin d'une phrase de récupération ou de votre ${ oldPassword }."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
@@ -3402,7 +3409,7 @@
         "Vitesse VPN maximale"
       ],
       "Keep your inbox organized with folders": [
-        "Organisez votre boîte de réception avec des dossiers."
+        "Organisez votre boite de réception avec des dossiers."
       ],
       "Medium VPN speed": [
         "Vitesse VPN moyenne"
@@ -3960,7 +3967,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Accédez aux contenus des services de streaming, dont Netflix, Disney+ et Prime Video, où que vous soyez."
+        "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Chaque adresse peut envoyer et recevoir des messages. Un utilisateur peut avoir plusieurs adresses, mais une adresse ne peut être attribuée qu'à un seul utilisateur."
@@ -4035,11 +4042,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Une connexion VPN permet à un seul appareil de se connecter à ${ BRAND_NAME } VPN. Pour connecter en même temps un téléphone et un ordinateur portable à ${ BRAND_NAME } VPN par exemple, vous avez besoin de deux connexions VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Possibilité d'afficher les boîtes de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
+        "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de supprimer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
@@ -4051,7 +4055,7 @@
         "Les disques durs de nos serveurs sont entièrement chiffrés avec plusieurs couches de mots de passe pour protéger vos données même si notre matériel est compromis."
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées..."
+        "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
         "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 6 utilisateurs ou plus."
@@ -4114,7 +4118,7 @@
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Des adresses e-mail uniques, à la demande, qui protègent votre identité en ligne et vous permettent de mieux contrôler les messages qui arrivent dans votre boîte de réception. SimpleLogin par ${ BRAND_NAME }."
+        "Des adresses e-mail uniques, à la demande, qui protègent votre identité en ligne et vous permettent de mieux contrôler les messages qui arrivent dans votre boite de réception. SimpleLogin par ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilisez vos adresses e-mail personnalisées à partir de votre propre nom de domaine (vous@votrenom.com)."
@@ -4402,6 +4406,30 @@
         "Je passe à Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minute",
+        "${ minutes } minutes"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } secondes"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'espace de stockage total"
@@ -4479,7 +4507,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Changer d'offre"
+        "Changer d'abonnement"
       ]
     },
     "specialoffer: Offers": {
@@ -4506,6 +4534,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturé ${ amount } pour 30 mois"
+      ],
+      "for ${ n } month": [
+        "pour ${ n } mois",
+        "pour ${ n } mois"
       ],
       "Get the deal": [
         "J'en profite"
@@ -4558,7 +4590,7 @@
         "Économisez plus avec 2 ans de ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Passez au niveau supérieur et économisez plus avec 2 ans de ${ planName }"
+        "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4566,7 +4598,7 @@
         "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
@@ -4575,13 +4607,13 @@
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier..."
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier..."
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boîte de réception et de ses propres alias. Nécessite un domaine personnalisé."
+        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Profitez sans frais supplémentaires des versions payantes de tous nos futurs services respectueux de la vie privée, ainsi que d'un accès en avant-première à nos nouvelles fonctionnalités et à nos nouveaux produits."
@@ -4651,20 +4683,20 @@
         "${ UsedAddresses } adresses"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } adresse e-mail sur ${ MaxAddresses }",
-        "${ UsedAddresses } adresses e-mail sur ${ MaxAddresses }"
+        "Nombre d'adresses e-mail : ${ UsedAddresses } sur ${ MaxAddresses }",
+        "Nombre d'adresses e-mail : ${ UsedAddresses } sur ${ MaxAddresses }"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendrier",
         "${ UsedCalendars } calendriers"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } domaine personnalisé sur ${ MaxDomains }",
-        "${ UsedDomains } domaines personnalisés sur ${ MaxDomains }"
+        "Nombre de domaines personnalisés : ${ UsedDomains } sur ${ MaxDomains }",
+        "Nombre de domaines personnalisés : ${ UsedDomains } sur ${ MaxDomains }"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } utilisateur sur ${ MaxMembers }",
-        "${ UsedMembers } utilisateurs sur ${ MaxMembers }"
+        "Nombre d'utilisateurs : ${ UsedMembers } sur ${ MaxMembers }",
+        "Nombre d'utilisateurs : ${ UsedMembers } sur ${ MaxMembers }"
       ],
       "1 email address": [
         "1 adresse e-mail"
@@ -4843,7 +4875,7 @@
         "/mois"
       ],
       "/user per month": [
-        "/utilisateur par mois"
+        "par utilisateur et par mois"
       ]
     },
     "Suffix for price": {
@@ -5231,15 +5263,12 @@
         "Vérifiez l'adresse e-mail"
       ],
       "Verifying your card...": [
-        "Vérification de votre carte..."
+        "Vérification de votre carte en cours"
       ],
       "Verifying your payment...": [
-        "Vérification de votre paiement..."
+        "Vérification de votre paiement en cours"
       ],
       "Warning": [
-        "Attention"
-      ],
-      "Warning!": [
         "Attention"
       ],
       "What's new": [
@@ -5314,7 +5343,7 @@
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now..."
+        "Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1…"
       ]
     },
     "VPN Plan Feature": {

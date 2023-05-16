@@ -57,6 +57,9 @@
       "Add phone number": [
         "Adăugare număr de telefon"
       ],
+      "Add public holidays": [
+        "Adăugare sărbătoare publică"
+      ],
       "Add to group": [
         "Adăugare la grup"
       ],
@@ -394,11 +397,11 @@
       "Refer a friend": [
         "Recomandați pe cineva"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -1890,6 +1893,11 @@
         "Insulele Åland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Pe baza fusului orar"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "După repetare…"
@@ -2398,6 +2406,9 @@
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
       ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Numele folderului nu este valid. Alegeți alt nume."
       ],
@@ -2448,6 +2459,9 @@
       ],
       "Validation error": [
         "Eroare validare."
+      ],
+      "You already added this holidays calendar": [
+        "Ați adăugat deja acest calendar de sărbători."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
@@ -2643,17 +2657,14 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } sau verificați conexiunea."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } sau încercați mai târziu."
+      "Please refresh the page or try again later.": [
+        "Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
       ],
-      "We couldn't load this page. ": [
-        "Nu s-a putut încărca această pagină."
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
       ],
       "You need an active personal calendar to import events": [
         "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele"
@@ -2757,6 +2768,162 @@
     "Event title": {
       "(no title)": [
         "(fără titlu)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB spațiu total"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este partajat între membri de familie între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "Nu mai arăta această ofertă"
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Keep current plan": [
+        "Păstrare plan actual"
+      ],
+      "Switch plans": [
+        "Schimbare plan"
+      ],
+      "View the invitation": [
+        "Afișare invitație"
+      ],
+      "View the invitations": [
+        "Afișare invitații"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail și Calendar premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Up to 6 users": [
+        "Până la 6 utilizatori"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "Grupuri ${ BRAND_NAME }"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Conturile cu domenii personale nu se pot alătura unui plan Visionary sau de familie."
+      ],
+      "customer support": [
+        "suportul tehnic"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Invitație de la: ${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "Gestionare adrese."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de grup."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Ne pare rău, nu puteți schimba planurile în acest moment."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Spațiu disponibil: ${ assignedStorage }:"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "Abonamentul este facturat administratorului principal al planului Visionary sau de familie."
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Planurile vizionare și de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Planurile Visionary și de familie momentan nu suportă conturi pe viață."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Ați primit o invitație la ${ invite.OrganizationName }."
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "Puteți accepta doar 3 invitații într-o perioadă de 6 luni. Contactați ${ supportLink } dacă aveți nevoie de o excepție."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "V-ați alăturat cu succes planului de familie."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "Planul actual nu se poate alătura unui plan Visionary sau de familie."
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Reducerile sunt bazate pe prețul standard lunar."
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Confidențialitate online, pentru întreaga familie"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Configurați contul de familie și invitați utilizatori"
+      ],
+      "Set up your family": [
+        "Configurare familie"
+      ],
+      "Set up your family account": [
+        "Configurare cont de familie"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Vă prezentăm ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2700 de servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisie în flux la nivel mondial, blocare malware și reclame și multe altele."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "Include suport pentru 3 domenii de e-mail personal, 90 adrese de e-mail, aliasuri nelimitate Hide My Email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
     },
     "Feedback Modal Title": {
@@ -2864,6 +3031,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Pe baza fusului orar"
       ]
     },
     "Human verification method": {
@@ -4122,6 +4294,9 @@
       "Label messages as": [
         "Etichetare mesaje cu"
       ],
+      "Language": [
+        "Limba"
+      ],
       "Last 12 months only": [
         "Doar ultimele 12 luni"
       ],
@@ -4440,8 +4615,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Adăugare sărbătoare publică"
+      ],
       "Cannot add more calendars": [
         "Nu se mai pot adăuga calendare"
+      ],
+      "Edit calendar": [
+        "Editare calendar"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Obțineți calendarul oficial al vacanțelor publice al unei țări."
       ],
       "How to import calendars from another service": [
         "Cum se importă calendarele din alt serviciu"
@@ -4643,6 +4827,11 @@
         "Grup de contacte actualizat"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Calendar adăugat"
+      ]
+    },
     "Notification in share calendar modal": {
       "Member added": [
         "Membru adăugat",
@@ -4839,6 +5028,9 @@
       "Set up your organization": [
         "Setați organizația"
       ],
+      "Set up your organization testing": [
+        "Setare testare pentru organizație"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -4997,6 +5189,9 @@
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
       ],
+      "Please select a country": [
+        "Selectați o țară"
+      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
@@ -5094,6 +5289,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Verificați ortografia sau selectați o țară din listă."
+      ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ]
@@ -5406,11 +5604,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Adăugați sărbătorile publice ale propriei țări în calendarul personal."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Sărbătorile publice sunt aici!"
       ]
     },
     "Storage": {
@@ -5427,6 +5631,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL calendar"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la «Alte calendare».\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

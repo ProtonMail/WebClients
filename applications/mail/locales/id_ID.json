@@ -775,11 +775,11 @@
       "Refine it": [
         "Persempit kata kunci pencarian"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Remove": [
         "Hapus"
@@ -3309,6 +3309,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Maaf, ${ BRAND_NAME } tidak dapat mendekripsi pesan Anda. Mohon pastikan seluruh kunci Anda aktif."
       ],
+      "The email addresses do not match": [
+        "Alamat surel tidak cocok"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
       ],
@@ -3608,17 +3611,14 @@
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Silakan ${ refresh } atau periksa koneksi internet Anda."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Silakan ${ refresh } atau coba lagi nanti."
+      "Please refresh the page or try again later.": [
+        "Silakan muat ulang laman atau coba lagi nanti."
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
       ],
-      "We couldn't load this page. ": [
-        "Kami tidak dapat memuat halaman ini. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Anda belum mempunyai kontak. Buat kontak baru sekarang"
@@ -4582,7 +4582,7 @@
         "Permintaan untuk berhenti langganan dari milis ini akan dikirim ke pengirim newsletter dan akan diproses secara otomatis."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
+        "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
       ],
       "Activation in progress": [
         "Aktivasi sedang dalam proses"
@@ -4665,11 +4665,8 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Hapus pesan yang telah ditandai sebagai spam selama lebih dari 30 hari secara otomatis."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Hapus pesan yang telah dibuang ke sampah selama lebih dari 30 hari secara otomatis."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Hapus pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari secara otomatis."
       ],
       "Background color": [
         "Warna latar belakang"
@@ -5064,11 +5061,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Pesan akan terkirim besok pada pukul ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Pesan yang telah tertanda sebagai spam selama lebih dari 30 hari akan dihapus secara otomatis."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Pesan yang telah terbuang ke sampah selama lebih dari 30 hari akan dihapus secara otomatis."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari akan dihapus secara otomatis."
       ],
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
@@ -5307,9 +5301,6 @@
       "Show original message": [
         "Tampilkan pesan asli"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin merupakan layanan milik ${ BRAND_NAME }, dan akun ${ BRAND_NAME } Anda meliputi perlindungan Hide My Email. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan buat alamat email samaran Anda."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
       ],
@@ -5532,11 +5523,8 @@
       "Upgrade to add more addresses to your account.": [
         "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Tingkatkan jenis akun Anda agar pesan yang telah ditandai sebagai spam selama lebih dari 30 hari dapat terhapus secara otomatis."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Tingkatkan jenis akun Anda agar pesan yang telah dibuang ke sampah selama lebih dari 30 hari dapat terhapus secara otomatis."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Tingkatkan untuk menghapus pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari secara otomatis."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Tingkatkan jenis akun Anda untuk dapat membuat lebih banyak folder, filter, dan alamat."
@@ -5731,7 +5719,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
@@ -7593,6 +7581,25 @@
         "Dapatkan yang Tidak Terbatas"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } hari"
+      ],
+      "${ hours } hours": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } menit"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } detik"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } bulan GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } jumlah penyimpanan"
@@ -7684,19 +7691,22 @@
         "2 tahun"
       ],
       "Billed at ${ amount } for 1 month": [
-        "Ditagih ${ amount } untuk 1 bulan"
+        "Tertagih dengan harga ${ amount } selama 1 bulan"
       ],
       "Billed at ${ amount } for 12 months": [
-        "Ditagih ${ amount } untuk 12 bulan"
+        "Tertagih dengan harga ${ amount } selama 12 bulan"
       ],
       "Billed at ${ amount } for 15 months": [
-        "Ditagih ${ amount } untuk 15 bulan"
+        "Tertagih dengan harga ${ amount } selama 15 bulan"
       ],
       "Billed at ${ amount } for 24 months": [
-        "Ditagih ${ amount } untuk 24 bulan"
+        "Tertagih dengan harga ${ amount } selama 24 bulan"
       ],
       "Billed at ${ amount } for 30 months": [
-        "Ditagih ${ amount } untuk 30 bulan"
+        "Tertagih dengan harga ${ amount } selama 30 bulan"
+      ],
+      "for ${ n } months": [
+        "untuk ${ n } bulan"
       ],
       "Get the deal": [
         "Dapatkan penawaran"
@@ -7711,19 +7721,19 @@
         "Hemat ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
-        "Harga standar ${ amount } untuk 1 bulan"
+        "Dengan harga standar ${ amount } selama 1 bulan"
       ],
       "Standard price ${ amount } for 12 months": [
-        "Harga standar ${ amount } untuk 12 bulan"
+        "Dengan harga standar ${ amount } selama 12 bulan"
       ],
       "Standard price ${ amount } for 15 months": [
-        "Harga standar ${ amount } untuk 15 bulan"
+        "Dengan harga standar ${ amount } selama 15 bulan"
       ],
       "Standard price ${ amount } for 24 months": [
-        "Harga standar ${ amount } untuk 24 bulan"
+        "Dengan harga standar ${ amount } selama 24 bulan"
       ],
       "Standard price ${ amount } for 30 months": [
-        "Harga standar ${ amount } untuk 30 bulan"
+        "Dengan harga standar ${ amount } selama 30 bulan"
       ]
     },
     "specialoffer: Title": {

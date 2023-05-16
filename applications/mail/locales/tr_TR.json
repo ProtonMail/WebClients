@@ -778,11 +778,11 @@
       "Refine it": [
         "daraltın"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -3636,17 +3636,14 @@
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Lütfen ${ refresh }yin veya internet bağlantınızı kontrol edin."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
       ],
-      "We couldn't load this page. ": [
-        "Bu sayfayı yükleyemedik. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Henüz herhangi bir kişiniz yok. Bir kişi ekleyin"
@@ -4747,11 +4744,8 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "İstenmeyen kutusunda 30 günden uzun süre kalan iletileri otomatik olarak silin."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Çöp kutusunda 30 günden uzun süre kalan iletileri otomatik olarak silin."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletileri otomatik olarak silin."
       ],
       "Background color": [
         "Arka plan rengi"
@@ -4981,7 +4975,7 @@
         "${ oldestDate } tarihinden daha yeni iletiler için"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Gelen postaları başka bir hesaptan güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
+        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
@@ -5015,7 +5009,7 @@
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
+        "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -5156,11 +5150,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "30 günden uzun süre istenmeyen kutusunda kalan iletiler otomatik olarak silinecektir."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "30 günden uzun süre çöp kutusunda duran iletiler otomatik olarak silinecektir."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletiler otomatik olarak silinir."
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
@@ -5400,9 +5391,6 @@
       "Show original message": [
         "Özgün iletiyi göster"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME } hesabınızda E-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
       ],
@@ -5474,7 +5462,7 @@
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. E-postamı gizle özelliği ile e-posta kutunuzu koruyun."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
+        "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
@@ -5628,11 +5616,8 @@
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "İstenmeyen kutusunda 30 günden uzun süre kalan iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Çöp kutusunda 30 günden uzun süre kalan iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Çöp istenmeyen kutularında 30 günden uzun süredir duran iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Daha fazla klasör, süzgeç ve adres oluşturmak için yükseltin."
@@ -5653,7 +5638,7 @@
         "Gizliğe öncelik veren interneti desteklemek için tarifenizi yükseltin."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Herkes için gizlilik misyonumuza destek olmak için tarifenizi yükseltin."
+        "Herkes için gizlilik sağlama amacımızı desteklemek için tarifenizi yükseltin."
       ],
       "Upgrade to support privacy and get more features.": [
         "Gizliliği desteklemek ve daha fazla özellikten yararlanmak için tarifenizi yükseltin."

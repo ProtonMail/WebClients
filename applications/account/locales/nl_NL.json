@@ -71,6 +71,9 @@
       "Add address": [
         "Adres toevoegen"
       ],
+      "Add calendar from URL": [
+        "Agenda met URL toevoegen"
+      ],
       "Add condition": [
         "Voorwaarde toevoegen"
       ],
@@ -164,6 +167,9 @@
       "Choose a file or drag it here": [
         "Kies een bestand of sleep het hierheen"
       ],
+      "Choose my own password": [
+        "Mijn eigen wachtwoord kiezen"
+      ],
       "Claim it": [
         "Eis het op"
       ],
@@ -205,6 +211,9 @@
       ],
       "Continue with Google": [
         "Ga verder met Google"
+      ],
+      "Continue with this password": [
+        "Ga verder met dit wachtwoord"
       ],
       "Copy": [
         "Kopieer"
@@ -259,6 +268,9 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete and confirm": [
+        "Verwijder en bevestig"
       ],
       "Delete link": [
         "Verwijder hyperlink"
@@ -338,6 +350,9 @@
       "Edit label": [
         "Label bewerken"
       ],
+      "Edit password": [
+        "Wachtwoord wijzigen"
+      ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
       ],
@@ -401,11 +416,29 @@
       "Generate token": [
         "Sleutel genereren"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "Krijg ${ discountPercentage } korting met 24 maanden"
+      ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Verkrijg een nieuw versleuteld e-mailadres"
+      ],
+      "Get more addresses": [
+        "Krijg meer adressen"
+      ],
+      "Get more filters": [
+        "Krijg meer filters"
+      ],
+      "Get more folders": [
+        "Krijg meer mappen"
+      ],
+      "Get more labels": [
+        "Krijg meer labels"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -457,6 +490,9 @@
       ],
       "Insert link": [
         "Link invoegen"
+      ],
+      "Invite": [
+        "Uitnodigen"
       ],
       "Invite user": [
         "Gebruiker uitnodigen"
@@ -644,6 +680,9 @@
       "Reset to default": [
         "Terugzetten naar standaard"
       ],
+      "Restore": [
+        "Herstel"
+      ],
       "Restore administrator privileges": [
         "Herstel beheerdersbevoegdheden"
       ],
@@ -679,6 +718,9 @@
       ],
       "Save address": [
         "Adres opslaan"
+      ],
+      "Save changes": [
+        "Wijzigingen opslaan"
       ],
       "Save ICS file": [
         "ICS-bestand opslaan"
@@ -728,6 +770,9 @@
       "Set catch-all": [
         "Stel catch-all in"
       ],
+      "Set new password": [
+        "Nieuw wachtwoord instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
@@ -769,6 +814,9 @@
       ],
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
+      ],
+      "Sign up for free": [
+        "Gratis inschrijven"
       ],
       "Signing in": [
         "Aanmelden"
@@ -1030,6 +1078,9 @@
       ],
       "Encrypted": [
         "Versleuteld"
+      ],
+      "New email": [
+        "Nieuwe e-mailadres"
       ]
     },
     "Apps dropdown": {
@@ -1162,6 +1213,9 @@
       ],
       "Other": [
         "Anders"
+      ],
+      "Pass problem": [
+        "Probleem met Pass"
       ],
       "Payments problem": [
         "Probleem met betalingen"
@@ -2496,6 +2550,11 @@
         "Aland Eilanden"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -2601,6 +2660,9 @@
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Alle gebeurtenissen in deze agenda worden verwijderd."
+      ],
+      "You will no longer have access to this calendar.": [
+        "U zult niet langer toegang hebben tot deze agenda."
       ]
     },
     "Delinquent modal title": {
@@ -2633,6 +2695,12 @@
       ],
       "Track the status and activity of your referrals.": [
         "Volg de status en activiteiten van uw doorverwijzingen."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Krijg onbeperkt mappen, labels en meer premium functies als u upgrade."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "U kan vrienden blijven uitnodigen, maar u kan geen tegoed meer ontvangen"
@@ -3161,6 +3229,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -3483,11 +3554,8 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } of controleer uw internetverbinding."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } of probeer het later opnieuw."
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
@@ -3495,8 +3563,8 @@
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Te veel onderliggende sessies, wis uw cookies en log opnieuw in."
       ],
-      "We couldn't load this page. ": [
-        "We konden deze pagina niet laden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ]
     },
     "Error message, recovery": {
@@ -3696,8 +3764,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -4149,6 +4223,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Voeg een aangepaste filter toe om bepaalde acties, zoals berichten labelen of archiveren, automatisch uit te voeren."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "E-mails van adressen die door u of ${ BRAND_NAME } als spam zijn gemarkeerd, komen in uw spamfolder terecht. Als u e-mails van een van deze adressen wilt toestaan, markeer het dan als \"geen spam\"."
       ],
@@ -4228,6 +4305,12 @@
       "App version": [
         "App versie"
       ],
+      "Best deal": [
+        "Beste deal"
+      ],
+      "Enter your email address": [
+        "Voer uw e-mailadres in"
+      ],
       "Event": [
         "Gebeurtenis"
       ],
@@ -4255,8 +4338,14 @@
       "Permissions": [
         "Rechten"
       ],
+      "Select your pricing plan": [
+        "Selecteer uw abonnement"
+      ],
       "Status": [
         "Status"
+      ],
+      "Subscribed": [
+        "Geabonneerd"
       ],
       "Time": [
         "Tijd"
@@ -4323,6 +4412,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
       ]
     },
     "Human verification method": {
@@ -4700,6 +4794,9 @@
       "${ current } of ${ total }": [
         "${ current } van ${ total }"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } zal niet langer vorige versies van uw bestanden behouden."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } is ongeldig"
       ],
@@ -4820,6 +4917,9 @@
       ],
       "3. You earn credits": [
         "3. U verdient tegoed"
+      ],
+      "30-day money-back guarantee": [
+        "30-dagen geld terug garantie"
       ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
@@ -4950,6 +5050,9 @@
       "and": [
         "en"
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Alle ${ twoFa }methodes op uw account worden uitgeschakeld."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Iedereen met deze link kan alle details van deze agenda zien, zoals titel, locatie of deelnemers."
       ],
@@ -5043,6 +5146,21 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
+      "Billed every 12 months": [
+        "Per 12 maanden betaald"
+      ],
+      "Billed every 15 months": [
+        "Per 15 maanden betaald"
+      ],
+      "Billed every 24 months": [
+        "Per 24 maanden betaald"
+      ],
+      "Billed every 30 months": [
+        "Per 30 maanden betaald"
+      ],
+      "Billed every month": [
+        "Per maand betaald"
+      ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
       ],
@@ -5078,9 +5196,6 @@
       ],
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
-      ],
-      "Continue anyway?": [
-        "Toch doorgaan?"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Doorgaan zal uw ${ BRAND_NAME }-account verbinden met ${ name }."
@@ -5315,9 +5430,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Kies een ${ BRAND_NAME } e-mailadres om gebruik te maken van alle ${ BRAND_NAME } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
-      ],
       "Get my ${ BRAND_NAME } address": [
         "Haal mijn ${ BRAND_NAME }-adres"
       ],
@@ -5539,12 +5651,6 @@
       "Loading...": [
         "Laden..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Logboeken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME }-inloggegevens gebruiken."
-      ],
-      "lose access to all current encrypted data": [
-        "toegang tot alle huidige versleutelde gegevens verliezen"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
       ],
@@ -5626,6 +5732,12 @@
       "of": [
         "van"
       ],
+      "old password": [
+        "oud wachtwoord"
+      ],
+      "Once you reset your password:": [
+        "Zodra u uw wachtwoord herstelt:"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Eén account. Alle ${ BRAND_NAME }-diensten."
       ],
@@ -5634,6 +5746,9 @@
       ],
       "Only you can see the labels.": [
         "Alleen u kunt de labels zien."
+      ],
+      "Open source": [
+        "Open-source"
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -5755,6 +5870,9 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Protected by Swiss privacy laws": [
+        "Beschermd door Zwitserse privacywetten"
+      ],
       "Public link invite": [
         "Publieke uitnodigingslink"
       ],
@@ -5802,6 +5920,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Verwijderen één van uw agenda's om lid te worden van deze"
+      ],
+      "Restore": [
+        "Herstel"
       ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
@@ -5854,6 +5975,12 @@
       "Setting up your Drive": [
         "Uw Drive aan het instellen"
       ],
+      "Settings update failed": [
+        "Bijwerken instellingen mislukt"
+      ],
+      "Settings updated": [
+        "Instellingen bijgewerkt"
+      ],
       "Show original message": [
         "Toon origineel bericht"
       ],
@@ -5877,6 +6004,10 @@
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Met SPF kan u bepalen wie uw domein mag gebruiken om e-mails te versturen. Het is raadzaam om ${ MAIL_APP_NAME } toe te voegen aan uw SPF-record. Voeg het volgende TXT-record toe aan uw DNS. Dit kunt u meestal doen in het beheerpaneel van uw domeinnaamregistrar of hostingprovider."
+      ],
+      "Step ${ step }": [
+        "Stap ${ step }",
+        "Stap ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -6004,14 +6135,17 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Dit schakelt ook de tweestapsverificatiemethode uit die gekoppeld is aan dit account."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Dit maakt een nieuwe versleutelingssleutel aan voor uw organisatie. Sleutels met een lengte van 4096-bits werken alleen op krachtige computers. Voor de meeste gebruikers is het aangeraden de standaardwaarde van 2048-bits te gebruiken."
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Dit zal alle vorige versies van uw bestanden die ouder zijn dan ${ rententionLabel } verwijderen."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Dit zal alle vorige versies van uw bestanden verwijderen."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dit zal uw huidige herstelzin uitschakelen. U kunt deze dan niet meer gebruiken om toegang te krijgen tot uw account of om uw gegevens te ontsleutelen."
@@ -6034,9 +6168,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME } account. Tweestapsverificatie zal uw ${ BRAND_NAME } account veiliger maken en daarom raden we aan om het in te schakelen."
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Om verlies van data te voorkomen, verwijder alleen als u weet wat u doet of een kopie hebt geëxporteerd."
       ],
@@ -6054,6 +6185,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Stel een herstelmethode in om ervoor te zorgen dat u blijvende toegang tot uw account heeft"
+      ],
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "Om te garanderen dat u geen belangrijke data verliest, bewaart ${ DRIVE_APP_NAME } oude versies van uw bestanden als u en de mensen met wie u samenwerkt veranderingen maken. Selecteer hoe lang ${ BRAND_NAME } vorige versies moet bewaren."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -6093,6 +6227,9 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
+      ],
+      "two-factor authentication (2FA)": [
+        "tweestapsverificatie (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Tweestapsverificatie uitgeschakeld"
@@ -6154,6 +6291,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Gebruik de verschillende types e-mailadressen en aliassen die aangeboden worden door ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME }-servers zonder toepassing. Voorbeelden van gebruik zijn: Tunnelblick on macOS, OpenVPN op GNU/Linux."
       ],
@@ -6180,6 +6320,9 @@
       ],
       "Version ${ version }": [
         "Versie ${ version }"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -6255,9 +6398,6 @@
       ],
       "Why?": [
         "Waarom?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
@@ -6387,9 +6527,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "U moet nog steeds reageren op uitnodigingen om de host uw reactie te laten zien."
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
@@ -6465,6 +6602,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
       ],
       "Your recovery phrase": [
         "Uw herstelzin"
@@ -6890,6 +7030,14 @@
         "${ n } maand",
         "${ n } maanden"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dagen"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } jaar",
+        "${ nbYear } jaren"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
         "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
@@ -7182,6 +7330,9 @@
       "Don't ask again": [
         "Niet opnieuw vragen"
       ],
+      "Don't keep versions": [
+        "Versies niet behouden"
+      ],
       "Duration": [
         "Duur"
       ],
@@ -7319,6 +7470,9 @@
       ],
       "Label messages as": [
         "Berichten labelen als"
+      ],
+      "Language": [
+        "Taal"
       ],
       "Last 12 months only": [
         "Alleen afgelopen 12 maanden"
@@ -7855,6 +8009,9 @@
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
+      "Apps and extensions": [
+        "Apps en extensies"
+      ],
       "Calendars": [
         "Agenda's"
       ],
@@ -8012,6 +8169,9 @@
       "Edit": [
         "Bewerken"
       ],
+      "Remove": [
+        "Verwijderen"
+      ],
       "Revoke sessions": [
         "Sessies intrekken"
       ],
@@ -8036,6 +8196,9 @@
       ]
     },
     "Modal title": {
+      "Edit calendar": [
+        "Agenda bewerken"
+      ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
       ],
@@ -8504,6 +8667,10 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Protect ${ n } device at a time": [
+        "Bescherm ${ n } apparaat tegelijkertijd",
+        "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
       "Router support": [
         "Routerondersteuning"
       ],
@@ -8846,9 +9013,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME } VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME } VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
@@ -8999,6 +9163,11 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Agenda toegevoegd"
       ]
     },
     "Notification in share calendar modal": {
@@ -9439,11 +9608,17 @@
       "Please insert link first": [
         "Voeg eerst koppeling in"
       ],
+      "Please select a country": [
+        "Kies een land"
+      ],
       "Printer": [
         "Printer"
       ],
       "Search": [
         "Zoeken"
+      ],
+      "Search for a user or address": [
+        "Naar gebruiker of adres zoeken"
       ],
       "Search settings": [
         "Zoekinstellingen"
@@ -9687,6 +9862,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Controleer de spelling of selecteer een land uit de lijst."
+      ],
       "No results found": [
         "Geen resultaten gevonden"
       ]
@@ -9826,9 +10004,36 @@
         "Kies Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -9845,6 +10050,9 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -9853,6 +10061,9 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -9927,6 +10138,10 @@
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
       ],
+      "for ${ n } month": [
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
+      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -9956,6 +10171,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-aanbieding"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-aanbieding"
+      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -10048,6 +10269,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Agenda-URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Voer de URl in om u te abonneren op een externe of openbare agenda en de updates ervan. Er wordt een alleen-lezen versie van de agenda toegevoegd aan uw Andere agenda's.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10290,6 +10514,9 @@
       ],
       "Import record deleted": [
         "Import record verwijderd"
+      ],
+      "Invitation sent": [
+        "Uitnodiging verzonden"
       ],
       "Invoice customized": [
         "Factuur aangepast"
@@ -10849,6 +11076,9 @@
       "Delete user": [
         "Gebruiker verwijderen"
       ],
+      "Delete version history?": [
+        "Versiegeschiedenis verwijderen?"
+      ],
       "Disable ${ email }": [
         "Schakel ${ email } uit"
       ],
@@ -11016,6 +11246,9 @@
       "Import-Export app": [
         "Import-Export app"
       ],
+      "Increase your privacy with more addresses": [
+        "Verbeter uw privacy met meer adressen"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
@@ -11024,6 +11257,9 @@
       ],
       "Invoices": [
         "Facturen"
+      ],
+      "Keep your inbox organized": [
+        "Houd uw postvak georganiseerd"
       ],
       "Keyboard shortcuts": [
         "Sneltoetsen"
@@ -11036,6 +11272,9 @@
       ],
       "Layout": [
         "Lay-out"
+      ],
+      "Leave ${ organisationName }?": [
+        "${ organisationName } verlaten?"
       ],
       "Link confirmation": [
         "Link bevestigen"
@@ -11088,6 +11327,9 @@
       "Organization and keys": [
         "Organisatie en sleutels"
       ],
+      "Organization name": [
+        "Organisatienaam"
+      ],
       "Other calendars": [
         "Andere agenda's"
       ],
@@ -11111,6 +11353,9 @@
       ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
+      ],
+      "Personalise your e-mail footer": [
+        "De voettekst van uw e-mail personaliseren"
       ],
       "Phone": [
         "Telefoon"
@@ -11154,6 +11399,9 @@
       "Remove calendar": [
         "Agenda verwijderen"
       ],
+      "Remove user?": [
+        "Gebruiker verwijderen?"
+      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -11177,6 +11425,9 @@
       ],
       "Save contact details": [
         "Bewaar contactgegevens"
+      ],
+      "Save time with email filters": [
+        "Bespaar tijd met e-mailfilters"
       ],
       "Secure email based in Switzerland": [
         "Veilige e-maildienst gevestigd in Zwitserland"
@@ -11228,6 +11479,9 @@
       ],
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
+      ],
+      "Set your password": [
+        "Stel uw wachtwoord in"
       ],
       "Settings": [
         "Instellingen"
@@ -11345,14 +11599,14 @@
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
       ],
+      "Version history": [
+        "Versiegeschiedenis"
+      ],
       "VPN apps": [
         "VPN-apps"
       ],
       "Warning": [
         "Waarschuwing"
-      ],
-      "Warning!": [
-        "Let op!"
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
@@ -11374,6 +11628,9 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
+      ],
+      "Your Plan": [
+        "Uw abonnement"
       ],
       "Your recovery status": [
         "Uw herstelstatus"
@@ -11703,6 +11960,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",

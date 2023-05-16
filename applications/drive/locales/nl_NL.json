@@ -88,6 +88,9 @@
       "Cancel upload": [
         "Upload annuleren"
       ],
+      "Change": [
+        "Wijzigen"
+      ],
       "Chat with us": [
         "Chat met ons"
       ],
@@ -200,6 +203,12 @@
       ],
       "Delete permanently": [
         "Permanent verwijderen"
+      ],
+      "Delete this version": [
+        "Deze versie verwijderen"
+      ],
+      "Delete version": [
+        "Versie verwijderen"
       ],
       "Deselect all": [
         "Alles deselecteren"
@@ -483,8 +492,17 @@
       "Restart upload": [
         "Upload herstarten"
       ],
+      "Restore": [
+        "Herstel"
+      ],
       "Restore from trash": [
         "Herstellen uit prullenbak"
+      ],
+      "Restore this version": [
+        "Deze versie herstellen"
+      ],
+      "Restore version": [
+        "Versie herstellen"
       ],
       "Resume all": [
         "Zet alle verder"
@@ -501,6 +519,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Save version as copy": [
+        "Versie als kopie opslaan"
+      ],
       "Search": [
         "Zoeken"
       ],
@@ -512,6 +533,9 @@
       ],
       "See plan features": [
         "Bekijk de abonnementskenmerken"
+      ],
+      "See version history": [
+        "Versiegeschiedenis bekijken"
       ],
       "Select all": [
         "Alles selecteren"
@@ -779,6 +803,9 @@
       ],
       "Other": [
         "Anders"
+      ],
+      "Pass problem": [
+        "Probleem met Pass"
       ],
       "Payments problem": [
         "Probleem met betalingen"
@@ -2070,6 +2097,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -2333,17 +2363,14 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } of controleer uw internetverbinding."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } of probeer het later opnieuw."
+      "Please refresh the page or try again later.": [
+        "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
       ],
-      "We couldn't load this page. ": [
-        "We konden deze pagina niet laden. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ],
       "You may also refresh the page or try again later.": [
         "Vernieuw de pagina of probeer het later opnieuw."
@@ -2449,8 +2476,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
@@ -3225,6 +3258,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
+      "Current version": [
+        "Huidige versie"
+      ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
       ],
@@ -3334,6 +3370,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Handtekening van bestand ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
+      ],
+      "File will not be updated": [
+        "Het bestand zal niet worden bijgewerkt"
       ],
       "Finalizing": [
         "Afronden"
@@ -3641,6 +3680,12 @@
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Vorige versies worden bewaard voor ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "Vorige versies worden niet opgeslagen"
+      ],
       "Primary": [
         "Primair"
       ],
@@ -3664,6 +3709,12 @@
       ],
       "Report has been sent": [
         "Rapport werd verzonden"
+      ],
+      "Restore": [
+        "Herstel"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Bezig met herstellen. Dit kan enkele seconden duren."
       ],
       "Restored files ${ formattedDate }": [
         "Herstelde bestanden ${ formattedDate }"
@@ -3792,6 +3843,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
       ],
+      "This will upload a new version of the file": [
+        "Dit zal een nieuwe versie van het bestand uploaden."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
       ],
@@ -3812,6 +3866,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
+      ],
+      "Today": [
+        "Vandaag"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Overdracht geannuleerd voor bestand \"${ name }\""
@@ -3864,6 +3921,12 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
       ],
+      "Version is deleted": [
+        "Versie verwijderd"
+      ],
+      "Version is restored": [
+        "Versie hersteld"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Goed zo, u heeft net uw gratis opslag verdubbeld!"
       ],
@@ -3905,6 +3968,9 @@
       ],
       "Yes": [
         "Ja"
+      ],
+      "Yesterday": [
+        "Gisteren"
       ],
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
@@ -3978,6 +4044,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
+      ],
       "Your previous password": [
         "Uw vorige wachtwoord"
       ],
@@ -4042,6 +4111,14 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dagen"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } jaar",
+        "${ nbYear } jaren"
       ],
       "(Expired)": [
         "(Verlopen)"
@@ -4170,6 +4247,9 @@
       "Downloading ${ percentageValue }%": [
         "Downloaden ${ percentageValue }$"
       ],
+      "Duplicate found": [
+        "Duplicaat gevonden"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -4269,6 +4349,15 @@
       "Import to:": [
         "Importeren naar:"
       ],
+      "Keep both": [
+        "Beide behouden"
+      ],
+      "Keep both files": [
+        "Beide bestanden behouden"
+      ],
+      "Keep both folders": [
+        "Beide folders behouden"
+      ],
       "Label messages as": [
         "Berichten labelen als"
       ],
@@ -4364,6 +4453,12 @@
       ],
       "Region": [
         "Regio/Provincie"
+      ],
+      "Replace existing file": [
+        "Bestaand bestand vervangen"
+      ],
+      "Replace existing folder": [
+        "Bestaande map vervangen"
       ],
       "Report": [
         "Melden"
@@ -4638,7 +4733,7 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "\"${ name }\" succesvol aangemaakt"
+        "\"${ name }\" aangemaakt"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
@@ -4668,16 +4763,16 @@
         "\"${ name }\" uit de prullenbak hersteld"
       ],
       "\"${ name }\" saved successfully": [
-        "\"${ name }\" succesvol opgeslagen"
+        "\"${ name }\" aangemaakt"
       ],
       "\"${ name }\" successfully moved": [
-        "\"${ name }\" succesvol verplaatst"
+        "\"${ name }\" verplaatst"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
       ],
       "\"${ newName }\" renamed successfully": [
-        "\"${ newName }\" succesvol hernoemd"
+        "\"${ newName }\" hernoemd"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
@@ -4827,7 +4922,7 @@
         "Uw instellingen konden niet worden bewaard"
       ],
       "Your settings have been changed successfully": [
-        "Uw instellingen zijn succesvol gewijzigd"
+        "Uw instellingen zijn gewijzigd."
       ]
     },
     "Oauth instructions": {
@@ -4885,6 +4980,9 @@
         "Selecteer een thema"
       ],
       "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
+      "Set up your organization testing": [
         "Stel uw organisatie in"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5108,9 +5206,36 @@
         "Kies Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } opslagruimte"
+      ],
+      "3 TB": [
+        "3 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -5127,6 +5252,9 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5135,6 +5263,9 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -5204,6 +5335,10 @@
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
       ],
+      "for ${ n } month": [
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
+      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -5233,6 +5368,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-aanbieding"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-aanbieding"
+      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -5362,7 +5503,7 @@
         "Herstel is gestart"
       ],
       "The link to your file was successfully copied": [
-        "De link naar uw bestand is succesvol gekopieerd"
+        "De link naar uw bestand is gekopieerd."
       ],
       "Undo in progress": [
         "Bezig met ongedaan maken"
@@ -5902,6 +6043,12 @@
       ],
       "Uploading a large file or folder": [
         "Groot bestand of map aan het uploaden"
+      ],
+      "Version details": [
+        "Versiegegevens"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
       ],
       "View contacts": [
         "Contacten weergeven"

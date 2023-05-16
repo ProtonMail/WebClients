@@ -57,6 +57,9 @@
       "Add phone number": [
         "加入手機號碼"
       ],
+      "Add public holidays": [
+        "新增公眾假期"
+      ],
       "Add to group": [
         "加入至群組"
       ],
@@ -390,10 +393,10 @@
       "Refer a friend": [
         "推薦好友"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -1880,6 +1883,11 @@
         "奧蘭群島"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "依據您的時區"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "一俟重複…"
@@ -2354,6 +2362,9 @@
       "The address might be misspelled": [
         "位址可能拼錯了"
       ],
+      "The email addresses do not match": [
+        "電子郵件地址不相符"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
       ],
@@ -2404,6 +2415,9 @@
       ],
       "Validation error": [
         "驗證錯誤"
+      ],
+      "You already added this holidays calendar": [
+        "您已新增此假期行事曆"
       ],
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
@@ -2597,17 +2611,14 @@
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "請${ refresh }或檢查您的網路連線。"
-      ],
-      "Please ${ refresh } or try again later.": [
-        "請${ refresh }或稍後再試。"
+      "Please refresh the page or try again later.": [
+        "請重新整理頁面或稍後再試。"
       ],
       "Something went wrong": [
         "發生錯誤"
       ],
-      "We couldn't load this page. ": [
-        "無法載入頁面"
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ],
       "You need an active personal calendar to import events": [
         "您需要一個使用中的個人行事曆以便匯入事件"
@@ -2711,6 +2722,162 @@
         "(無標題)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 的總儲存空間"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的家庭成員共享。"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Got it": [
+        "我知道了"
+      ],
+      "Keep current plan": [
+        "維持目前方案"
+      ],
+      "Switch plans": [
+        "切換方案"
+      ],
+      "View the invitation": [
+        "檢視邀請"
+      ],
+      "View the invitations": [
+        "檢視邀請"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "進階版雲端硬碟"
+      ],
+      "Premium Mail and Calendar": [
+        "進階版郵件與行事曆"
+      ],
+      "Premium VPN": [
+        "進階版 VPN"
+      ],
+      "Up to 6 users": [
+        "多達 6 位使用者"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } 群組"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "有自訂網域的帳號無法加入 Visionary 或家庭方案。"
+      ],
+      "customer support": [
+        "客服"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "邀請人：${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "管理電子郵件地址。"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "有成員的方案的擁有者無法加入其他群組方案。"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "抱歉，目前無法切換方案。"
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "指派給您的儲存空間：${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "訂閱費用由 Visionary 或家庭方案的主要管理員支付。"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary 與家庭方案目前不支援外部帳號。請在加入前建立 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary 與家庭方案目前不支援 lifetime 帳號。"
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "謹邀請閣下加入 ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "您已成功加入家庭方案"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "您帳號中的電子郵件地址多於此方案中可用的電子郵件地址。${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "您目前的方案無法加入 Visionary 或家庭方案。"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣是以每月標準價格為基礎。"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "您整個家庭的線上隱私"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "設定您的家庭帳號並邀請使用者 "
+      ],
+      "Set up your family": [
+        "設定您的家庭"
+      ],
+      "Set up your family account": [
+        "設定您的家庭帳號"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "介紹 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "包含對 3 個自訂電子郵件網域、90 個電子郵件地址、無限個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "您的意見回饋"
@@ -2804,6 +2971,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "依據您的時區"
       ]
     },
     "Human verification method": {
@@ -3139,7 +3311,7 @@
         "已成功更新 ${ updated } 位聯絡人。"
       ],
       "(${ memberCount } members)": [
-        "(${ memberCount } 個成員)"
+        "(${ memberCount } 位成員)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "取消函將傳送給已移除的參與者。"
@@ -3373,7 +3545,7 @@
         "連結已複製到剪貼簿"
       ],
       "Link created": [
-        "連結已創建"
+        "連結已建立"
       ],
       "Loading": [
         "正在載入"
@@ -4000,6 +4172,9 @@
       "Label messages as": [
         "將郵件加上標籤"
       ],
+      "Language": [
+        "語言"
+      ],
       "Last 12 months only": [
         "僅過去 12 個月"
       ],
@@ -4306,8 +4481,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "新增公眾假期"
+      ],
       "Cannot add more calendars": [
         "無法新增更多行事曆"
+      ],
+      "Edit calendar": [
+        "編輯行事曆"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "取得某個國家的官方公眾假期行事曆。"
       ],
       "How to import calendars from another service": [
         "如何從其它服務匯入行事曆"
@@ -4503,6 +4687,11 @@
         "聯絡人群組已更新"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "行事曆已新增"
+      ]
+    },
     "Notification in share calendar modal": {
       "Members added": [
         "成員已新增"
@@ -4657,6 +4846,9 @@
       "Set up your organization": [
         "設定您的組織"
       ],
+      "Set up your organization testing": [
+        "設定您的組織"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -4807,6 +4999,9 @@
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
+      "Please select a country": [
+        "請選擇一個國家"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -4898,6 +5093,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "請檢查拼字，或從清單中選擇一個國家。"
+      ],
       "No results found": [
         "查無結果"
       ]
@@ -5196,11 +5394,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "新增您所在國家的公眾假期至您的行事曆中。"
+      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "公眾假期登場！"
       ]
     },
     "Storage": {
@@ -5217,6 +5421,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "行事曆 URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "要訂閱外部或公開行事曆與其更新，請輸入 URL。該行事曆的唯讀版本將會新增至您的「其他行事曆」中。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5546,7 +5753,7 @@
         "建立新群組"
       ],
       "Create public link": [
-        "創建公共連結"
+        "建立公用連結"
       ],
       "Currency": [
         "貨幣"

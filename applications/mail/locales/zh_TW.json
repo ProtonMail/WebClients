@@ -775,10 +775,10 @@
       "Refine it": [
         "重組"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -831,6 +831,9 @@
       ],
       "Reset to default": [
         "還原成預設值"
+      ],
+      "Restore": [
+        "還原"
       ],
       "Resume": [
         "繼續"
@@ -1013,7 +1016,7 @@
         "信任"
       ],
       "Trust keys": [
-        "信任的金鑰"
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -3306,6 +3309,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "抱歉，${ BRAND_NAME } 無法解密您的郵件。請檢查您所有的金鑰是否在使用中。"
       ],
+      "The email addresses do not match": [
+        "電子郵件地址不相符"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
       ],
@@ -3605,17 +3611,14 @@
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "請${ refresh }或檢查您的網路連線。"
-      ],
-      "Please ${ refresh } or try again later.": [
-        "請${ refresh }或稍後再試。"
+      "Please refresh the page or try again later.": [
+        "請重新整理頁面或稍後再試。"
       ],
       "Something went wrong": [
         "發生錯誤"
       ],
-      "We couldn't load this page. ": [
-        "無法載入頁面"
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始建立一個新的聯絡人"
@@ -3688,6 +3691,162 @@
     "Event title": {
       "(no title)": [
         "(無標題)"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 的總儲存空間"
+      ]
+    },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的家庭成員共享。"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Got it": [
+        "我知道了"
+      ],
+      "Keep current plan": [
+        "維持目前方案"
+      ],
+      "Switch plans": [
+        "切換方案"
+      ],
+      "View the invitation": [
+        "檢視邀請"
+      ],
+      "View the invitations": [
+        "檢視邀請"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Premium Drive": [
+        "進階版雲端硬碟"
+      ],
+      "Premium Mail and Calendar": [
+        "進階版郵件與行事曆"
+      ],
+      "Premium VPN": [
+        "進階版 VPN"
+      ],
+      "Up to 6 users": [
+        "多達 6 位使用者"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } 群組"
+      ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "有自訂網域的帳號無法加入 Visionary 或家庭方案。"
+      ],
+      "customer support": [
+        "客服"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "邀請人：${ inviteEmail }"
+      ],
+      "Manage addresses.": [
+        "管理電子郵件地址。"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "有成員的方案的擁有者無法加入其他群組方案。"
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "抱歉，目前無法切換方案。"
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "指派給您的儲存空間：${ assignedStorage }"
+      ],
+      "The subscription is billed to the Visionary or family plan's primary admin.": [
+        "訂閱費用由 Visionary 或家庭方案的主要管理員支付。"
+      ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary 與家庭方案目前不支援外部帳號。請在加入前建立 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary 與家庭方案目前不支援 lifetime 帳號。"
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "謹邀請閣下加入 ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
+      ],
+      "You have successfully joined the Family plan": [
+        "您已成功加入家庭方案"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "您帳號中的電子郵件地址多於此方案中可用的電子郵件地址。${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Your current plan cannot join a Visionary or family plan.": [
+        "您目前的方案無法加入 Visionary 或家庭方案。"
+      ]
+    },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "折扣是以每月標準價格為基礎。"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "您整個家庭的線上隱私"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "設定您的家庭帳號並邀請使用者 "
+      ],
+      "Set up your family": [
+        "設定您的家庭"
+      ],
+      "Set up your family account": [
+        "設定您的家庭帳號"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "介紹 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited Hide My Email aliases, calendar sharing and more.": [
+        "包含對 3 個自訂電子郵件網域、90 個電子郵件地址、無限個 Hide My Email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
     },
     "Feedback Modal Title": {
@@ -4402,7 +4561,7 @@
         "已成功更新 ${ updated } 位聯絡人。"
       ],
       "(${ memberCount } members)": [
-        "(${ memberCount } 個成員)"
+        "(${ memberCount } 位成員)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(篩選須符合下列「全部」條件)"
@@ -4506,11 +4665,8 @@
       "Attention required": [
         "需要您的處理"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "自動刪除在垃圾郵件中超過30天的訊息。"
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "自動刪除在垃圾桶中超過30天的訊息。"
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "自動刪除在垃圾桶與垃圾郵件中超過30天的訊息。"
       ],
       "Background color": [
         "背景顏色"
@@ -4905,11 +5061,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "郵件將在名天 ${ formattedTime } 寄出"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "垃圾郵件中超過30天的訊息將會被自動刪除。"
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "垃圾桶中超過30天的訊息將會被自動刪除。"
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "垃圾桶與垃圾郵件中超過30天的訊息將會被自動刪除。"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
@@ -5148,9 +5301,6 @@
       "Show original message": [
         "顯示原始訊息"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin 是 ${ BRAND_NAME } 的服務，您的 ${ BRAND_NAME } 帳戶包含 「藏起我的郵箱」別名。要開始藏起您的電子郵件地址，造訪 SimpleLogin並建立起您的第一個別名。"
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "簡單登入提供了一個簡單的方法，讓您可以建立使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
       ],
@@ -5373,11 +5523,8 @@
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "升級以自動刪除在垃圾郵件中超過30天的訊息。"
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "升級以自動刪除在垃圾桶中超過30天的訊息。"
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "升級以自動刪除在垃圾桶與垃圾郵件中超過30天的訊息。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升級以建立更多資料夾、過濾條件與位址。"
@@ -7434,6 +7581,25 @@
         "使用無限制"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days }天"
+      ],
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds }秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n }個月免費"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } 總儲存空間"
@@ -7538,6 +7704,9 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "為期 30 個月收費 ${ amount } "
+      ],
+      "for ${ n } months": [
+        "為期${ n }個月"
       ],
       "Get the deal": [
         "取得優惠"

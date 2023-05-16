@@ -731,6 +731,9 @@
       "Upgrade now": [
         "Atualizar agora"
       ],
+      "Upgrade your plan": [
+        "Melhorar o seu plano"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -2851,9 +2854,6 @@
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Demasiadas sessões abertas. Termine, limpe os cookies e reinicie sessão."
-      ],
-      "We couldn't load this page. ": [
-        "Não conseguimos carregar esta página. "
       ]
     },
     "Error message, recovery": {
@@ -3719,9 +3719,6 @@
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
       ],
-      "Continue anyway?": [
-        "Continuar mesmo assim?"
-      ],
       "Country code": [
         "Código de país"
       ],
@@ -4064,12 +4061,6 @@
       "Loading...": [
         "A carregar..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Os diários incluem tentativas de autenticação a todos os serviços do ${ BRAND_NAME } que utilizem as suas credenciais do ${ BRAND_NAME }."
-      ],
-      "lose access to all current encrypted data": [
-        "perder o acesso a todos os dados encriptados actuais"
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Introduza manualmente esta informação no seu dispositivo de autenticação de dois factores para configurar a sua conta. ${ switchButton }."
       ],
@@ -4346,9 +4337,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Isto também desativará qualquer método de autenticação em dois passos associado a esta conta."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Isto cancelará a sua assinatura paga atual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
@@ -4546,9 +4534,6 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos correios electrónicos. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua palavra-passe antiga."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -5875,6 +5860,9 @@
       "Upgrade account": [
         "Atualizar conta"
       ],
+      "Upgrade your plan": [
+        "Melhorar o seu plano"
+      ],
       "View guide": [
         "Ver guia"
       ],
@@ -6869,6 +6857,9 @@
       ],
       "Email address has been verified.": [
         "O endereço de correio electrónico foi verificado."
+      ],
+      "Verify now": [
+        "Verificar agora"
       ]
     },
     "Recovery method": {
@@ -6888,6 +6879,9 @@
       ],
       "Phone number not yet verified.": [
         "O número de telefone ainda não está verificado."
+      ],
+      "Verify now": [
+        "Verificar agora"
       ]
     },
     "Remark about a key type option": {
@@ -8093,9 +8087,6 @@
       ],
       "Warning": [
         "Aviso"
-      ],
-      "Warning!": [
-        "Aviso!"
       ],
       "Warning: suspected fake website": [
         "Aviso: suspeita de sítio web falso"
