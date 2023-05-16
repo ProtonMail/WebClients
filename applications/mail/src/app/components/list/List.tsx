@@ -146,7 +146,7 @@ const List = (
         useGetStartedChecklist();
     const { dismissed: isPaidUserChecklistDismissed, handleDismiss: dismissPaidUserChecklist } = usePaidUserChecklist();
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
-    const { page, total } = pagingHandlers;
+    const { total, page } = pagingHandlers;
 
     const { call } = useEventManager();
     const [mnemonicPromptModal, setMnemonicPromptModalOpen, render] = useModalState({ onExit: call });
