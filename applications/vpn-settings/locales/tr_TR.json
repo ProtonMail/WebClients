@@ -50,6 +50,9 @@
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
+      "Choose my own password": [
+        "Kendi parolamı seçeceğim"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -67,6 +70,9 @@
       ],
       "Continue": [
         "İlerle"
+      ],
+      "Continue with this password": [
+        "Bu parolayı kullanmayı sürdür"
       ],
       "Copy": [
         "Kopyala"
@@ -137,6 +143,9 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
+      "Edit password": [
+        "Parolayı düzenle"
+      ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
       ],
@@ -158,11 +167,17 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "24 ay için ${ discountPercentage } indirim alın"
+      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
       ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi alın"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
@@ -287,6 +302,9 @@
       "Send my username": [
         "Kullanıcı adımı gönder"
       ],
+      "Set new password": [
+        "Yeni parola ayarla"
+      ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
@@ -307,6 +325,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Sign up for free": [
+        "Ücretsiz hesap açın"
       ],
       "Signing in": [
         "Oturum açılıyor"
@@ -1598,17 +1619,14 @@
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Lütfen ${ refresh }yin veya internet bağlantınızı kontrol edin."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
       ],
-      "We couldn't load this page. ": [
-        "Bu sayfayı yükleyemedik. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ]
     },
     "Error notification": {
@@ -1992,8 +2010,20 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "En iyi teklif"
+      ],
+      "Enter your email address": [
+        "E-posta adresinizi yazın"
+      ],
       "Get help": [
         "Yardım alın"
+      ],
+      "Select your preferred method of payment": [
+        "Kullanmayı yeğlediğiniz ödeme yöntemini seçin"
+      ],
+      "Select your pricing plan": [
+        "Ücretlendirme tarifenizi seçin"
       ]
     },
     "Heading in trial plan": {
@@ -2064,6 +2094,9 @@
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "30-day money-back guarantee": [
+        "30 gün ücret iade garantisi"
+      ],
       "30-day money-back guarantee.": [
         "30 gün ücret iade garantisi."
       ],
@@ -2109,6 +2142,9 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Hesabınızda kullanılan tüm ${ twoFa } yöntemleri devre dışı bırakılacak."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "İki aşamalı doğrulamayı kapatmak istediğinize emin misiniz?"
       ],
@@ -2124,8 +2160,26 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus veya Visionary aboneliği gerekli"
       ],
+      "Be sure to copy your password and store it somewhere safe.": [
+        "Parolanızı kopyaladığınızdan ve güvenli bir yerde sakladığınızdan emin olun."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "Billed every 12 months": [
+        "12 ayda bir faturalanır"
+      ],
+      "Billed every 15 months": [
+        "15 ayda bir faturalanır"
+      ],
+      "Billed every 24 months": [
+        "24 ayda bir faturalanır"
+      ],
+      "Billed every 30 months": [
+        "30 ayda bir faturalanır"
+      ],
+      "Billed every month": [
+        "Aylık faturalanır"
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
@@ -2148,8 +2202,11 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
-      "Continue anyway?": [
-        "Yine de ilerlemek istiyor musunuz?"
+      "Continue with ${ freeName }": [
+        "${ freeName } ile ilerle"
+      ],
+      "Copy the suggested password to clipboard": [
+        "Önerilen parolayı panoya kopyala"
       ],
       "Country code": [
         "Ülke kodu"
@@ -2235,6 +2292,9 @@
       "expires ${ expirationDate }": [
         "${ expirationDate } tarihinde geçersiz olacak"
       ],
+      "For choosing ${ product }": [
+        "${ product } seçtiğiniz için"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa, MasterCard ve Discover için kartınızın arkasındaki 3 rakam. American Express için kartınızın ön yüzündeki 4 rakam."
       ],
@@ -2244,8 +2304,8 @@
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME } hizmetlerini kullanabilmek için bir ${ BRAND_NAME } adresi edinin."
+      "Get ${ upsellPlanName }": [
+        "${ upsellPlanName } tarifesini edinin"
       ],
       "Get my ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresimi al"
@@ -2253,11 +2313,14 @@
       "here": [
         "buraya"
       ],
+      "If it’s not right for you, we’ll refund you.": [
+        "Gereksinimlerinizi karşılamazsa ödediğiniz ücreti iade ederiz."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
+        "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -2328,9 +2391,6 @@
       "Loading...": [
         "Yükleniyor..."
       ],
-      "lose access to all current encrypted data": [
-        "tüm şifrelenmiş verilere erişimi kaybedeceksiniz"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
@@ -2361,11 +2421,23 @@
       "of": [
         "/"
       ],
+      "old password": [
+        "eski parola"
+      ],
+      "Once you reset your password:": [
+        "Parolanızı sıfırladığınızda:"
+      ],
       "One account. All ${ BRAND_NAME } services.": [
         "Tek hesap. Tüm ${ BRAND_NAME } hizmetleri."
       ],
+      "Open source": [
+        "Açık kaynaklı"
+      ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
+      ],
+      "Password copied to clipboard": [
+        "Parola panoya kopyalandı"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -2415,6 +2487,9 @@
       "Priority support": [
         "Öncelikli destek"
       ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunmaktadır"
+      ],
       "read our two-factor authentication guide first": [
         "önce iki aşamalı doğrulama rehberimizi okuyun"
       ],
@@ -2432,6 +2507,9 @@
       ],
       "Revoke certificate ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
+      ],
+      "Saving your password": [
+        "Parolanız kaydediliyor"
       ],
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
@@ -2463,6 +2541,10 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
       ],
+      "Step ${ step }": [
+        "${ step }. adım",
+        "${ step }. adım"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ],
@@ -2471,6 +2553,15 @@
       ],
       "support team": [
         "destek ekibi"
+      ],
+      "Swiss based": [
+        "İsviçre merkezli"
+      ],
+      "Thank you": [
+        "Teşekkürler"
+      ],
+      "The ${ planName } plan includes:": [
+        "${ planName } tarifesinin özellikleri:"
       ],
       "The securest way to browse, stream, and be online.": [
         "Web üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrimiçi olmanın en güvenli yolu."
@@ -2485,16 +2576,13 @@
         "Bu yapılandırmalar WireGuard yönelticileri ve resmi istemciler ile çalışmak üzere sunulmuştur."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
+        "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
-      ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        "Bu işlem ayrıca, bu hesapla ilişkili iki aşamalı doğrulama yöntemlerini de kapatır."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı avantajlarını kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
@@ -2511,8 +2599,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızın kapatılmasını ve 2 aşamalı kimlik doğrulamasının devre dışı bırakılmasını sağlar."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki aşamalı doğrulamayı (2FA) açar. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki aşamalı doğrulamayı açmanızı öneririz."
+      "To ${ planName }": [
+        "${ planName } tarifesine"
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına ilerlemek için"
@@ -2546,6 +2634,12 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
+      ],
+      "Try ${ upsellPlanName } risk free": [
+        "Risk almadan ${ upsellPlanName } tarifesini deneyin"
+      ],
+      "two-factor authentication (2FA)": [
+        "iki adımlı doğrulama (2FA)"
       ],
       "Two-factor authentication disabled": [
         "İki aşamalı doğrulama kapatıldı"
@@ -2637,6 +2731,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "Welcome": [
+        "Hoş geldiniz"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Hesap kurtarma için ayarladığınız e-posta adresine bir sıfırlama kodu göndereceğiz."
       ],
@@ -2654,9 +2751,6 @@
       ],
       "Why?": [
         "Neden?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -2722,8 +2816,8 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama alanınızı 100% oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "${ BRAND_NAME } hesabınızdaki ${ loseAllData }. Geri yüklemek için, eski parolanızı yeniden yazmanız gerekecek."
+      "You will be redirected to the VPN download page": [
+        "VPN indirme sayfasına yönlendirileceksiniz"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
@@ -2739,6 +2833,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } parolanız"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
@@ -2757,6 +2854,15 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için ${ oldPassword }nıza gerek duyacaksınız."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için kurtarma ifadenize veya ${ oldPassword }nıza gerek duyacaksınız."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -3459,6 +3565,9 @@
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
+      "Ad-blocker & malware protection": [
+        "Reklam ve kötü amaçlı yazılım engelleyici"
+      ],
       "Admin console": [
         "Yönetici panosu"
       ],
@@ -3468,11 +3577,14 @@
       "Auto-reply": [
         "Otomatik yanıt"
       ],
+      "Available on all platforms": [
+        "Tüm platformlarda kullanılabilir"
+      ],
       "Calendar sharing": [
         "Takvim paylaşımı"
       ],
       "Catch-all": [
-        "Tümünü yakalayan e-posta"
+        "Tümünü toplayan e-posta"
       ],
       "Centralized billing": [
         "Tek merkezden faturalama"
@@ -3493,16 +3605,19 @@
         "Özel e-posta etki alanları"
       ],
       "Data breach monitoring": [
-        "Veri ihlali izleme"
+        "Verilerin ele geçirilmesini izleme"
       ],
       "Data breach monitoring (coming soon)": [
-        "Veri ihlali izleme (yakında)"
+        "Verilerin ele geçirilmesini izleme (yakında)"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
       "Document editors (docs, sheets, slides)": [
         "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar)"
+      ],
+      "Double hop": [
+        "Çift durak"
       ],
       "Easy Switch import assistant": [
         "Easy Switch içe aktarma yardımcısı"
@@ -3522,11 +3637,26 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Hızlı P2P/BitTorrent indirmeleri"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretsiz ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME } özellikleri"
+      ],
       "Free VPN on a single device": [
         "Tek bir aygıt için ücretsiz VPN"
       ],
+      "Fully refundable for 30 days": [
+        "30 gün içinde tamamı geri ödenebilir"
+      ],
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
+      ],
+      "High-speed streaming": [
+        "Yüksek hızlı yayın akışı izleme"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Gizliliğinizi koruyan yüksek hızlı İsviçre VPN hizmeti"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
@@ -3550,6 +3680,9 @@
       "Multiple forwarding mailboxes": [
         "Çok sayıda ileti e-posta kutusu"
       ],
+      "No-logs policy": [
+        "Kayıt tutmama ilkesi"
+      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
@@ -3561,6 +3694,13 @@
       ],
       "Priority support": [
         "Öncelikli destek"
+      ],
+      "Priority support & live chat": [
+        "Öncelikli destek ve canlı sohbet"
+      ],
+      "Protect ${ n } device at a time": [
+        "Aynı anda ${ n } aygıtı koruyun",
+        "Aynı anda ${ n } aygıtı koruyun"
       ],
       "Router support": [
         "Yöneltici desteği"
@@ -3720,7 +3860,7 @@
         "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan özel VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Ücretsiz başlangıç hesabı gizliliği doğal sayan herkesin gereksinimlerine göre tasarlanmıştır."
+        "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesabınızı silerseniz, fırsat fiyatınızı kaybedersiniz ve yeni bir hesap açtığınızda bu fiyatı kullanamazsınız."
@@ -3768,6 +3908,9 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz"
+      ],
+      "By paying, you agree to our ${ termsAndConditions }": [
+        "Ödeme yaparak ${ termsAndConditions } metnini kabul etmiş olursunuz"
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
@@ -3857,6 +4000,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Takvimlerinizi bir bağlantı ile iş arkadaşlarınız, aileniz ve arkadaşlarınızla paylaşın"
       ],
@@ -3895,9 +4041,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -4220,10 +4363,16 @@
       ]
     },
     "Signup label": {
+      "Confirm email address": [
+        "E-posta adresi onayı"
+      ],
       "Display name": [
         "Görüntülenecek ad"
       ],
       "Email": [
+        "E-posta adresi"
+      ],
+      "Email address": [
         "E-posta adresi"
       ],
       "Username": [
@@ -4629,6 +4778,9 @@
     "Subscription saving": {
       "Save": [
         "Kazancınız"
+      ],
+      "Save ${ discountPercentage }%": [
+        "%${ discountPercentage } indirim"
       ]
     },
     "Subscription status": {
@@ -5053,6 +5205,9 @@
       "Set up two-factor authentication": [
         "İki aşamalı doğrulamayı ayarla"
       ],
+      "Set your password": [
+        "Parolanızı ayarlayın"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -5115,9 +5270,6 @@
       ],
       "Warning": [
         "Uyarı"
-      ],
-      "Warning!": [
-        "Uyarı!"
       ],
       "What's new": [
         "Yenilikler"
@@ -5203,9 +5355,18 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülkede ${ numberOfServers }",
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ]
+    },
+    "VPN signup": {
+      "Swiss flag": [
+        "İsviçre bayrağı"
       ]
     },
     "Warning": {

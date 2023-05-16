@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Request new code": [
         "Solicitare cod nou"
@@ -860,6 +860,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -880,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } sau verificați conexiunea."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } sau încercați mai târziu."
+      "Please refresh the page or try again later.": [
+        "Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
       ],
-      "We couldn't load this page. ": [
-        "Nu s-a putut încărca această pagină."
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
       ]
     },
     "fido2: Error": {
