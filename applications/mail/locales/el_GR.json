@@ -764,11 +764,11 @@
       "Refine it": [
         "Βελτιώστε το"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -817,6 +817,9 @@
       ],
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
+      ],
+      "Restore": [
+        "Επαναφορά"
       ],
       "Resume": [
         "Συνέχεια"
@@ -979,6 +982,9 @@
       ],
       "Toggle Calendar app": [
         "Εναλλαγή εφαρμογής Ημερολόγιο\n*.*, add translation *.*"
+      ],
+      "Toggle Contact app": [
+        "Εναλλαγή στο πρόγραμμα Επαφών"
       ],
       "Tomorrow": [
         "Αύριο"
@@ -1192,6 +1198,14 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκε",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκαν"
+      ]
+    },
+    "Animation": {
+      "Encrypted": [
+        "Κρυπτογραφημένα"
+      ],
+      "New email": [
+        "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Attached ics file error": {
@@ -2564,6 +2578,9 @@
       "Attachment": [
         "Συνημμένο"
       ],
+      "Filter on": [
+        "Φιλτράρισμα σε"
+      ],
       "Next": [
         "Επόμενο"
       ],
@@ -2855,6 +2872,10 @@
       ],
       "Choose a date in the future.": [
         "Επιλογή μελλοντικής ημερομηνίας."
+      ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Επιλέξτε μια ημ/νία εντός της επόμενης ${ EXPIRATION_TIME_MAX_DAYS } ημέρας",
+        "Επιλέξτε μια ημ/νία εντός των επόμενων ${ EXPIRATION_TIME_MAX_DAYS } ημερών."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Επιλέξτε μια ημ/νία εντός της επόμενης ${ SCHEDULED_MAX_DATE_DAYS } ημέρας.",
@@ -4350,12 +4371,6 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Αυτόματη διαγραφή μηνυμάτων που είναι στα ανεπιθύμητα για περισσότερες από 30 ημέρες."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Αυτόματη διαγραφή μηνυμάτων που βρίσκονται στον κάδο απορριμμάτων για περισσότερες από 30 ημέρες."
-      ],
       "Background color": [
         "Χρώμα φόντου"
       ],
@@ -4562,6 +4577,14 @@
       "Expires in ${ formattedDate }": [
         "Λήγει σε ${ formattedDate }"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Λήγει σε ${ minutesDiff } λεπτό",
+        "Λήγουν σε ${ minutesDiff } λεπτά"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Λήγει σε λιγότερο από ${ hoursDiff } ώρα",
+        "Λήγει σε λιγότερο από ${ hoursDiff } ώρες"
+      ],
       "file attached": [
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
@@ -4741,12 +4764,6 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Το μήνυμα θα αποσταλεί αύριο στις ${ formattedTime }"
-      ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Τα μηνύματα που είναι ανεπιθύμητα για περισσότερες από 30 ημέρες θα διαγράφονται αυτόματα."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Τα μηνύματα που βρίσκονται στον κάδο απορριμμάτων για περισσότερες από 30 ημέρες θα διαγράφονται αυτόματα."
       ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
@@ -4977,9 +4994,6 @@
       "Show original message": [
         "Εμφάνιση αρχικού μηνύματος"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "Το SimpleLogin είναι μία ${ BRAND_NAME } υπηρεσία, και ο ${ BRAND_NAME } λογαριασμός σας συμπεριλαμβάνει και τα ψευδώνυμα Hide My Email. Για να ξεκινήσετε να αποκρύψετε τη διεύθυνση αλληλογραφίας σας, πηγαίνετε στο SimpleLogin και δημιουργήστε το πρώτο σας ψευδώνυμο."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Το SimpleLogin προσφέρει έναν απλό τρόπο για να δημιουργήσετε όνομα και κωδικό χρήστη σε αναξιόπιστες σελίδες όπου δεν θέλετε να εκθέσετε την πραγματική σας ηλ. διεύθυνση."
       ],
@@ -5177,12 +5191,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Αναβαθμίστε για να προσθέσετε περισσότερες διευθύνσεις στο λογαριασμό σας."
-      ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Κάντε αναβάθμιση για να διαγράψετε αυτόματα μηνύματα που ήταν ανεπιθύμητα για περισσότερες από 30 ημέρες."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Κάντε αναβάθμιση για να διαγράψετε αυτόματα μηνύματα που βρίσκονται στον κάδο απορριμμάτων για περισσότερες από 30 ημέρες."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Για τη δημιουργία περισσότερων φακέλων, φίλτρων και διευθύνσεων, αναβαθμίστε."
@@ -6722,6 +6730,11 @@
         "Συγχώνευση με ημερολόγιο"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ totalText }": [
+        "${ page } από ${ totalText }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Λήψη εφαρμογής για κινητά"
@@ -6942,6 +6955,12 @@
         "Σημείωση: η υπηρεσία θα φορτωθεί ξανά αφού κάνετε κλικ στο κουμπί Εφαρμογή."
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } μ",
+        "${ remainingDays } μ"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Η απάντηση στάλθηκε"
@@ -7105,6 +7124,30 @@
         "Κλείσιμο"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } συνολικός αποθηκευτικός χώρος"
@@ -7117,6 +7160,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
@@ -7144,8 +7190,15 @@
       "2 years": [
         "2 χρόνια"
       ],
+      "for ${ n } month": [
+        "για ${ n } μήνα",
+        "για ${ n } μήνες"
+      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
+      ],
+      "Save ${ discount }%": [
+        "Εξοικονομήστε ${ discount }%"
       ]
     },
     "Spotlight": {
@@ -7290,6 +7343,9 @@
       ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
+      ],
+      "Canceling import": [
+        "Ακύρωση εισαγωγής"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"

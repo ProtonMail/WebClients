@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boîte de réception."
+        "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boite de réception."
       ],
       "Mail forward stopped": [
         "Le transfert automatique de messages a été arrêté."
@@ -533,7 +533,7 @@
         "Labelliser"
       ],
       "Label as...": [
-        "Labelliser..."
+        "Labelliser…"
       ],
       "label emails as": [
         "labelliser les messages comme"
@@ -650,10 +650,10 @@
         "Déplacer dans le dossier Archives"
       ],
       "Move to inbox": [
-        "Déplacer dans le dossier Boîte de réception"
+        "Déplacer dans le dossier Boite de réception"
       ],
       "Move to inbox (not spam)": [
-        "Déplacer dans le dossier Boîte de réception (non indésirable/spam)"
+        "Déplacer dans le dossier Boite de réception (non indésirable/spam)"
       ],
       "Move to spam": [
         "Déplacer dans le dossier Indésirables/spam"
@@ -665,7 +665,7 @@
         "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer..."
+        "Déplacer…"
       ],
       "Need help?": [
         "Besoin d'aide ?"
@@ -778,11 +778,11 @@
       "Refine it": [
         "Affinez-la"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Remove": [
         "Supprimer"
@@ -887,7 +887,7 @@
         "Confirmer l'autodestruction du message"
       ],
       "Self-destruct on ...": [
-        "Autodétruire le..."
+        "Autodétruire le…"
       ],
       "Send": [
         "Envoyer"
@@ -1242,7 +1242,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Boîte de réception appartenant à ${ nameToDisplay }"
+        "Boite de réception appartenant à ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 traqueurs supprimés"
@@ -2881,7 +2881,7 @@
         "Débloquez l'envoi programmé de messages personnalisé et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boîte de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
+        "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boite de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
@@ -3219,7 +3219,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boîte de réception."
+        "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
@@ -3446,13 +3446,13 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Les brouillons ne peuvent pas être déplacés dans le dossier Boîte de réception."
+        "Les brouillons ne peuvent pas être déplacés dans le dossier Boite de réception."
       ],
       "Drafts cannot be moved to Spam": [
         "Les brouillons ne peuvent pas être déplacés dans le dossier Indésirables/spam."
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Les messages envoyés ne peuvent pas être déplacés dans le dossier Boîte de réception."
+        "Les messages envoyés ne peuvent pas être déplacés dans le dossier Boite de réception."
       ],
       "Sent messages cannot be moved to Spam": [
         "Les messages envoyés ne peuvent pas être déplacés dans le dossier Indésirables/spam."
@@ -3636,17 +3636,14 @@
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Veuillez ${ refresh } ou réessayer plus tard."
+      "Please refresh the page or try again later.": [
+        "Nous vous invitons à actualiser la page ou à réessayer plus tard."
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
-      "We couldn't load this page. ": [
-        "Cette page n'a pu être chargée. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
@@ -3805,7 +3802,7 @@
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Actuellement, le plan Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
+        "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -3946,10 +3943,10 @@
         "Ne pas déplacer"
       ],
       "Inbox": [
-        "Boîte de réception"
+        "Boite de réception"
       ],
       "Inbox - Default": [
-        "Boîte de réception - Par défaut"
+        "Boite de réception - Par défaut"
       ],
       "Select a folder": [
         "Sélectionner un dossier"
@@ -4135,7 +4132,7 @@
         "Transférez automatiquement"
       ],
       "Gmail messages to your inbox": [
-        "les messages Gmail vers votre boîte de réception"
+        "les messages Gmail vers votre boite de réception"
       ],
       "Sign in with Google": [
         "Se connecter avec Google"
@@ -4187,7 +4184,7 @@
         "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boîte de suggestions."
+        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
       ]
     },
     "Human verification method": {
@@ -4747,11 +4744,8 @@
       "Attention required": [
         "Attention requise"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Supprimez automatiquement les messages qui sont dans le dossier Indésirables/spam depuis plus de 30 jours."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Supprimez automatiquement les messages qui sont dans le dossier Corbeille depuis plus de 30 jours."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Supprimez automatiquement les messages qui sont dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours."
       ],
       "Background color": [
         "Couleur d'arrière-plan"
@@ -4775,7 +4769,7 @@
         "Centrer"
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Vérification des contacts : ${ progress } de ${ max }..."
+        "Vérification des contacts : ${ progress } de ${ max }…"
       ],
       "Clear data": [
         "Effacer les données"
@@ -4897,7 +4891,7 @@
         "Adresse e-mail"
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "Le message est transféré dans votre boîte aux lettres et votre adresse e-mail reste cachée."
+        "Le message est transféré dans votre boite aux lettres et votre adresse e-mail reste cachée."
       ],
       "Email tracker protection is disabled": [
         "La protection contre les traqueurs dans les messages est désactivée."
@@ -4951,7 +4945,7 @@
         "Temps restant estimé : moins d'une minute"
       ],
       "Estimating time remaining...": [
-        "Estimation du temps restant..."
+        "Estimation du temps restant en cours"
       ],
       "Expiration time": [
         "Délai d’expiration"
@@ -4981,7 +4975,7 @@
         "Pour les messages après le ${ oldestDate }"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boîte de réception sécurisée ${ MAIL_APP_NAME }."
+        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -5018,7 +5012,7 @@
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si votre alias est vendu, divulgué ou utilisé de manière abusive, il suffit de le désactiver pour ne plus recevoir d'indésirables/spam."
@@ -5115,7 +5109,7 @@
         "Chargement de l'aperçu"
       ],
       "Loading...": [
-        "Chargement en cours..."
+        "Chargement en cours"
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -5156,11 +5150,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Le message sera envoyé demain à ${ formattedTime }."
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "Les messages dans le dossier Indésirables/spam depuis plus de 30 jours seront automatiquement supprimés."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "Les messages dans le dossier Corbeille depuis plus de 30 jours seront automatiquement supprimés."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Les messages dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours seront automatiquement supprimés."
       ],
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
@@ -5344,7 +5335,7 @@
         "L'envoi programmé de ce message sera annulé."
       ],
       "Scheduling message...": [
-        "Programmation du message..."
+        "Programmation du message en cours"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette recherche."
@@ -5374,7 +5365,7 @@
         "Envoi en cours"
       ],
       "Sending message...": [
-        "Envoi du message en cours..."
+        "Envoi du message en cours"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'envoi de messages depuis une adresse @pm.me est une fonctionnalité payante. Votre message sera envoyé à partir de votre adresse par défaut ${ email }."
@@ -5399,9 +5390,6 @@
       ],
       "Show original message": [
         "Afficher le message d'origine"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin est un service ${ BRAND_NAME }, et votre compte ${ BRAND_NAME } inclut des alias Hide My Email. Pour commencer à masquer votre adresse e-mail, allez sur SimpleLogin et créez votre premier alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas révéler votre véritable adresse e-mail."
@@ -5617,7 +5605,7 @@
         "Le fichier n'est pas pris en charge."
       ],
       "Updating message content search...": [
-        "Mise à jour de la recherche dans le contenu des messages..."
+        "Mise à jour de la recherche dans le contenu des messages en cours"
       ],
       "Updating your local messages, message content won't be searched during this update": [
         "Mise à jour de vos messages locaux, le contenu des messages ne sera pas recherché pendant cette mise à jour."
@@ -5628,11 +5616,8 @@
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Passez à la version supérieure pour supprimer automatiquement les messages qui sont dans le dossier Indésirables/spam depuis plus de 30 jours."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Passez à la version supérieure pour supprimer automatiquement les messages qui sont dans le dossier Corbeille depuis plus de 30 jours."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Changez d'abonnement pour supprimer automatiquement les messages qui sont dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Passez à l’offre supérieure pour créer plus de dossiers, de filtres et d’adresses."
@@ -5704,7 +5689,7 @@
         "Semaine"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "Quand voulez-vous que votre message soit automatiquement supprimé de la boîte de réception du destinataire et de votre dossier des messages envoyés ?"
+        "Quand voulez-vous que votre message soit automatiquement supprimé de la boite de réception du destinataire et de votre dossier des messages envoyés ?"
       ],
       "When do you want your message to be sent?": [
         "Quand voulez-vous que votre message soit envoyé ?"
@@ -5767,10 +5752,10 @@
         "Vous n'avez aucun message ici."
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Vous avez ${ totalLabel } dans votre Boîte de réception."
+        "Vous avez ${ totalLabel } dans votre Boite de réception."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "Vous avez ${ unreadsLabel } dans votre boîte de réception."
+        "Vous avez ${ unreadsLabel } dans votre boite de réception."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez **${ count } conversation** stockée dans ce dossier.",
@@ -5826,10 +5811,10 @@
         "Votre compte ${ BRAND_NAME } inclut SimpleLogin. Installez l'extension de navigateur en un clic pour commencer."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
@@ -5988,7 +5973,7 @@
         "Aller au dernier"
       ],
       "Label as...": [
-        "Labelliser..."
+        "Labelliser…"
       ],
       "Load embedded images": [
         "Charger les images intégrées"
@@ -6018,7 +6003,7 @@
         "Déplacer dans le dossier Archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boîte de réception"
+        "Déplacer dans le dossier Boite de réception"
       ],
       "Move to Spam": [
         "Déplacer dans le dossier Indésirables/spam"
@@ -6027,7 +6012,7 @@
         "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer..."
+        "Déplacer…"
       ],
       "Move up": [
         "Déplacer vers le haut"
@@ -6401,7 +6386,7 @@
         "Déplacer dans le dossier Archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans le dossier Boîte de réception"
+        "Déplacer dans le dossier Boite de réception"
       ],
       "Name": [
         "Nom"
@@ -6452,7 +6437,7 @@
         "Port"
       ],
       "Post office box": [
-        "Boîte postale"
+        "Boite postale"
       ],
       "Postal code": [
         "Code postal"
@@ -6488,7 +6473,7 @@
         "Choisissez comment se présente votre liste de messages."
       ],
       "Select how your mailbox looks like by default.": [
-        "Choisissez la présentation de votre boîte de réception."
+        "Choisissez la présentation de votre boite de réception."
       ],
       "Send auto-reply": [
         "Envoyer une réponse automatique"
@@ -6720,7 +6705,7 @@
         "Dossiers"
       ],
       "Inbox": [
-        "Boîte de réception"
+        "Boite de réception"
       ],
       "Labels": [
         "Labels"
@@ -6753,7 +6738,7 @@
         "Ou vous pouvez supprimer l'un de vos calendriers et en créer un nouveau lié à une adresse e-mail active."
       ],
       "Outbox": [
-        "Boîte d'envoi"
+        "Boite d'envoi"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -6885,7 +6870,7 @@
         "Brouillons"
       ],
       "Inbox": [
-        "Boîte de réception"
+        "Boite de réception"
       ],
       "Scheduled": [
         "Programmés"
@@ -6943,7 +6928,7 @@
         "L'envoi a été annulé."
       ],
       "Undoing send...": [
-        "Annulation de l'envoi..."
+        "Annulation de l'envoi en cours"
       ]
     },
     "MIME type": {
@@ -7274,7 +7259,7 @@
         "Dossiers par défaut"
       ],
       "Move to...": [
-        "Déplacer..."
+        "Déplacer…"
       ]
     },
     "Option group label": {
@@ -7718,6 +7703,30 @@
         "Je passe à Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minute",
+        "${ minutes } minutes"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } secondes"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } d'espace de stockage total"
@@ -7795,7 +7804,7 @@
         "Voir les abonnements"
       ],
       "Upgrade": [
-        "Changer d'offre"
+        "Changer d'abonnement"
       ]
     },
     "specialoffer: Offers": {
@@ -7822,6 +7831,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturé ${ amount } pour 30 mois"
+      ],
+      "for ${ n } month": [
+        "pour ${ n } mois",
+        "pour ${ n } mois"
       ],
       "Get the deal": [
         "J'en profite"
@@ -7874,7 +7887,7 @@
         "Économisez plus avec 2 ans de ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Passez au niveau supérieur et économisez plus avec 2 ans de ${ planName }"
+        "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7882,7 +7895,7 @@
         "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités..."
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
@@ -7891,13 +7904,13 @@
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « Hide My Email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier..."
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « Hide My Email », du partage de calendrier…"
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier..."
+        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « Hide My Email », du partage de calendrier…"
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boîte de réception et de ses propres alias. Nécessite un domaine personnalisé."
+        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Profitez sans frais supplémentaires des versions payantes de tous nos futurs services respectueux de la vie privée, ainsi que d'un accès en avant-première à nos nouvelles fonctionnalités et à nos nouveaux produits."
@@ -8582,7 +8595,7 @@
         "Le code de vérification n'est pas valide."
       ],
       "Keep your inbox organized": [
-        "Gardez votre boîte de réception organisée"
+        "Gardez votre boite de réception organisée"
       ],
       "Label as": [
         "Labelliser"
@@ -8651,10 +8664,10 @@
         "Déplacer"
       ],
       "Move to inbox": [
-        "Déplacer dans le dossier Boîte de réception"
+        "Déplacer dans le dossier Boite de réception"
       ],
       "Move to inbox (not spam)": [
-        "Déplacer dans le dossier Boîte de réception (non indésirable/spam)"
+        "Déplacer dans le dossier Boite de réception (non indésirable/spam)"
       ],
       "Move to spam": [
         "Déplacer dans le dossier Indésirables/spam"
