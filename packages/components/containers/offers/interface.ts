@@ -63,7 +63,8 @@ export interface OfferConfig {
     getCTAContent?: () => string;
     shapeButton?: ButtonLikeShape;
     images?: OfferImages;
-    darkBackground?: boolean;
+    darkBackground?: boolean; //Will use a light close button if true (ghost button with white text)
+    enableCycleSelector?: boolean; //Allow the selection of cycles if true in the checkout process
 }
 
 interface Feature {
