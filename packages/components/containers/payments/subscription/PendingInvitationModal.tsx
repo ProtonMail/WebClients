@@ -100,7 +100,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                 ) : (
                     <Button
                         disabled={loadingReject}
-                        loading={true}
+                        loading={loadingAccept}
                         color="norm"
                         onClick={() => withLoadingAccept(handleAcceptInvitation())}
                     >{c('familyOffer_2023:Action').t`Switch plans`}</Button>
