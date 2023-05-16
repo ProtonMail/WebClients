@@ -8,12 +8,13 @@ import { Button, Card } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
 import AttachScreenshot, { type Screenshot } from '@proton/components/containers/support/AttachScreenshot';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
-import { reportProblemIntent, selectRequestInFlight, selectUser } from '@proton/pass/store';
+import { reportProblemIntent, selectUser } from '@proton/pass/store';
 import { reportProblem } from '@proton/pass/store/actions/requests';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 
 import { APP_NAME, APP_VERSION, CLIENT_TYPE } from '../../../app/config';
+import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 
 type FormValues = {
     description: string;
@@ -40,7 +41,7 @@ export const ReportAProblem: VFC = () => {
     const user = useSelector(selectUser);
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
-    const requestInFlight = useSelector(selectRequestInFlight(reportProblem()));
+    const [requestInFlight, setRequestInFlight] = useState(false);
 
     const form = useFormik<FormValues>({
         initialValues: INITIAL_VALUES,
@@ -48,7 +49,7 @@ export const ReportAProblem: VFC = () => {
         validateOnChange: true,
         validateOnMount: true,
         validate,
-        onSubmit: async ({ description }, helpers) => {
+        onSubmit: async ({ description }) => {
             const screenshotBlobs = screenshots.reduce((acc: { [key: string]: Blob }, { name, blob }) => {
                 acc[name] = blob;
                 return acc;
@@ -67,10 +68,17 @@ export const ReportAProblem: VFC = () => {
             };
 
             dispatch(reportProblemIntent(payload));
+        },
+    });
 
-            helpers.resetForm();
+    useRequestStatusEffect(reportProblem(), {
+        onStart: () => setRequestInFlight(true),
+        onSuccess: () => {
+            setRequestInFlight(false);
+            form.resetForm();
             setScreenshots([]);
         },
+        onFailure: () => setRequestInFlight(false),
     });
 
     const submitDisabled = !form.isValid || uploadingScreenshots || requestInFlight;
