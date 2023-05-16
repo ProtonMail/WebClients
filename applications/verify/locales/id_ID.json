@@ -35,8 +35,8 @@
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Request new code": [
         "Minta kode baru"
@@ -860,6 +860,9 @@
       "Request timed out": [
         "Waktu permintaan habis"
       ],
+      "The email addresses do not match": [
+        "Alamat surel tidak cocok"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
       ],
@@ -880,17 +883,14 @@
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Silakan ${ refresh } atau periksa koneksi internet Anda."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Silakan ${ refresh } atau coba lagi nanti."
+      "Please refresh the page or try again later.": [
+        "Silakan muat ulang laman atau coba lagi nanti."
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
       ],
-      "We couldn't load this page. ": [
-        "Kami tidak dapat memuat halaman ini. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
       ]
     },
     "fido2: Error": {

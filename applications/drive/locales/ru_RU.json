@@ -2383,17 +2383,14 @@
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } или проверьте подключение к Интернету."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } или попробуйте позже."
+      "Please refresh the page or try again later.": [
+        "Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "Something went wrong": [
         "Что-то пошло не так"
       ],
-      "We couldn't load this page. ": [
-        "Не удалось загрузить эту страницу. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ],
       "You may also refresh the page or try again later.": [
         "Также вы можете обновить страницу или повторить попытку позже."
@@ -4247,6 +4244,18 @@
       ],
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } день",
+        "${ nbDay } дня",
+        "${ nbDay } дней",
+        "${ nbDay } дней"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } год",
+        "${ nbYear } года",
+        "${ nbYear } лет",
+        "${ nbYear } лет"
       ],
       "(Expired)": [
         "(Истек)"

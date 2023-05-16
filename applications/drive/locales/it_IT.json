@@ -498,6 +498,12 @@
       "Restore from trash": [
         "Ripristina dal cestino"
       ],
+      "Restore this version": [
+        "Ripristina questa versione"
+      ],
+      "Restore version": [
+        "Ripristina la versione"
+      ],
       "Resume all": [
         "Riprendi tutto"
       ],
@@ -512,6 +518,9 @@
       ],
       "Save": [
         "Salva"
+      ],
+      "Save version as copy": [
+        "Salva la versione come copia"
       ],
       "Search": [
         "Cerca"
@@ -2088,6 +2097,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
       ],
@@ -2351,17 +2363,11 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Per favore ${ refresh } o controlla la tua connessione internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Si prega di ${ refresh } o riprovare più tardi."
+      "Please refresh the page or try again later.": [
+        "Si prega di aggiornare la pagina o di riprovare più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
-      ],
-      "We couldn't load this page. ": [
-        "Non è stato possibile caricare questa pagina. "
       ],
       "You may also refresh the page or try again later.": [
         "Puoi anche aggiornare la pagina o riprovare più tardi."
@@ -3149,6 +3155,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Sei sicuro di voler eliminare permanentemente"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Sei sicuro di voler eliminare definitivamente \"${ itemName }\" dal cestino?"
       ],
@@ -3362,6 +3371,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Firma mancante nel file. Non è stato possibile verificare chi ha caricato ${ fileName }."
       ],
+      "File will not be updated": [
+        "Il file non verrà aggiornato."
+      ],
       "Finalizing": [
         "Finalizzare"
       ],
@@ -3397,6 +3409,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libera dello spazio o contatta il tuo amministratore."
+      ],
+      "from the version history?": [
+        "della cronologia delle versioni?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Vieni a conoscere ${ DRIVE_APP_NAME } ed guadagnati 500 MB di bonus memoria! Agisci ora."
@@ -3668,6 +3683,12 @@
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Le versioni precedenti sono conservate per ${ retentionLabel }."
+      ],
+      "Previous versions are not saved": [
+        "Le versioni precedenti non sono salvate."
+      ],
       "Primary": [
         "Principale"
       ],
@@ -3694,6 +3715,9 @@
       ],
       "Restore": [
         "Ripristina"
+      ],
+      "Restore is in progress. This can take a few seconds.": [
+        "Il ripristino è in corso. Questo può richiedere alcuni secondi."
       ],
       "Restored files ${ formattedDate }": [
         "File ripristinati ${ formattedDate }"
@@ -3822,6 +3846,15 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Questo rimuoverà da ${ DRIVE_APP_NAME } il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
       ],
+      "This will replace the existing file with the folder": [
+        "Questo sostituirà il file esistente con la cartella."
+      ],
+      "This will replace the existing folder with the file": [
+        "Questo sostituirà la cartella esistente con il file."
+      ],
+      "This will upload a new version of the file": [
+        "Si importerà una nuova versione del file."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per abilitare la ricerca davvero privata, ${ DRIVE_APP_NAME } deve indicizzare i tuoi file localmente."
       ],
@@ -3900,6 +3933,9 @@
       "Version is deleted": [
         "Versione eliminata"
       ],
+      "Version is restored": [
+        "La versione è ripristinata."
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Ce n'è di strada da percorrere, hai appena raddoppiato il tuo spazio di archiviazione gratuito!"
       ],
@@ -3926,6 +3962,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "verrà ripristinato alla versione del ${ formattedRevisionDate }. Tutte le altre versioni saranno salvate."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Con ${ DRIVE_APP_NAME }, i tuoi dati sono protetti da crittografia end-to-end. Solo tu puoi decifrarli."
@@ -4016,6 +4055,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "L'abbonamento è limitato a 10 versioni per un massimo di 7 giorni."
       ],
       "Your previous password": [
         "La tua password precedente"
@@ -4325,6 +4367,9 @@
       "Keep both files": [
         "Mantieni entrambi i file"
       ],
+      "Keep both folders": [
+        "Mantieni entrambe le cartella"
+      ],
       "Label messages as": [
         "Etichetta messaggi come"
       ],
@@ -4420,6 +4465,12 @@
       ],
       "Region": [
         "Regione"
+      ],
+      "Replace existing file": [
+        "Sostituisci il file esistente"
+      ],
+      "Replace existing folder": [
+        "Sostituisci la cartella esistente"
       ],
       "Report": [
         "Segnala"
@@ -4946,6 +4997,9 @@
       "Set up your organization": [
         "Configura la tua organizzazione"
       ],
+      "Set up your organization testing": [
+        "Configura la tua organizzazione"
+      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Utilizza il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ],
@@ -5167,6 +5221,30 @@
         "Scegli Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secondo",
+        "${ seconds } secondi"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } di spazio di archiviazione totale"
@@ -5271,6 +5349,10 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
+      ],
+      "for ${ n } month": [
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -5978,7 +6060,7 @@
         "File di grandi dimensioni o cartella in caricamento."
       ],
       "Version details": [
-        "Dettagli Versione"
+        "Dettagli versione"
       ],
       "Version history": [
         "Cronologia versioni"

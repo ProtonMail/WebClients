@@ -57,6 +57,9 @@
       "Add phone number": [
         "Añadir número telefónico"
       ],
+      "Add public holidays": [
+        "Añadir días festivos"
+      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -392,11 +395,11 @@
       "Refer a friend": [
         "Recomendar a un amigo"
       ],
-      "refresh the page": [
-        "actualizar la página"
-      ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ],
       "Remove": [
         "Eliminar"
@@ -1885,6 +1888,11 @@
         "Islas Aland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Basado en tu zona horaria"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Después de repetir…"
@@ -2376,6 +2384,9 @@
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
       ],
+      "The email addresses do not match": [
+        "Las direcciones de correo electrónico no coinciden."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
       ],
@@ -2426,6 +2437,9 @@
       ],
       "Validation error": [
         "Error de validación"
+      ],
+      "You already added this holidays calendar": [
+        "Ya has añadido este calendario de días festivos."
       ],
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios."
@@ -2620,17 +2634,14 @@
       "Oops, something went wrong": [
         "Se ha producido un error."
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } o verifica tu conexión internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } o intentalo de nuevo más tarde."
+      "Please refresh the page or try again later.": [
+        "Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
         "Se ha producido un error."
       ],
-      "We couldn't load this page. ": [
-        "No pudimos encontrar esta página."
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "No hemos podido cargar esta página. Actualiza la página o verifica tu conexión a internet."
       ],
       "You need an active personal calendar to import events": [
         "Necesitas un calendario personal activo donde importar todos tus eventos."
@@ -2990,6 +3001,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Basado en tu zona horaria"
       ]
     },
     "Human verification method": {
@@ -4217,6 +4233,9 @@
       "Label messages as": [
         "Etiquetar mensajes como"
       ],
+      "Language": [
+        "Idioma"
+      ],
       "Last 12 months only": [
         "Solo los últimos 12 meses"
       ],
@@ -4529,8 +4548,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Añadir días festivos"
+      ],
       "Cannot add more calendars": [
         "No se pueden añadir más calendarios"
+      ],
+      "Edit calendar": [
+        "Editar calendario"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Obtén un calendario oficial de días festivos de tu país."
       ],
       "How to import calendars from another service": [
         "Cómo importar calendarios desde otro servicio"
@@ -4727,6 +4755,11 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "El calendario ha sido añadido."
       ]
     },
     "Notification in share calendar modal": {
@@ -5061,6 +5094,9 @@
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
       ],
+      "Please select a country": [
+        "Selecciona un país."
+      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
@@ -5155,6 +5191,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Verifica tu ortografía o selecciona un país de la lista."
+      ],
       "No results found": [
         "No se han encontrado resultados."
       ]
@@ -5460,11 +5499,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Añade los días festivos de tu país a tu calendario."
+      ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "¡Los días festivos están aquí!"
       ]
     },
     "Storage": {
@@ -5481,6 +5526,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Para suscribirte a un calendario externo o público y sus actualizaciones, introduce la URL. Se añadirá una versión de solo lectura del calendario a t us otros calendarios.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

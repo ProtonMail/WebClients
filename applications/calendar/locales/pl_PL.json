@@ -57,6 +57,9 @@
       "Add phone number": [
         "Dodaj numer telefonu"
       ],
+      "Add public holidays": [
+        "Dodaj święta"
+      ],
       "Add to group": [
         "Dodaj do grupy"
       ],
@@ -396,10 +399,10 @@
       "Refer a friend": [
         "Poleć znajomemu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Remove": [
@@ -1895,6 +1898,11 @@
         "Wyspy Alandzkie"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Na podstawie strefy czasowej"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Po powtórzeniu…"
@@ -2474,6 +2482,9 @@
       "Validation error": [
         "Błąd weryfikacji"
       ],
+      "You already added this holidays calendar": [
+        "Posiadasz już kalendarz świąt"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
       ],
@@ -2669,17 +2680,14 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } lub sprawdź swoje połączenie."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } lub spróbuj ponownie później."
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
       ],
-      "We couldn't load this page. ": [
-        "Nie możemy załadować strony. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
       ],
       "You need an active personal calendar to import events": [
         "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia"
@@ -3053,6 +3061,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Użyj klawiszy strzałek w górę i w dół, aby zobaczyć i wybrać sugestie. Naciśnij klawisz Enter, aby potwierdzić swój wybór lub Escape, aby zamknąć pole sugestii."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Na podstawie strefy czasowej"
       ]
     },
     "Human verification method": {
@@ -4342,6 +4355,9 @@
       "Label messages as": [
         "Oznacz wiadomości etykietą"
       ],
+      "Language": [
+        "Język"
+      ],
       "Last 12 months only": [
         "Tylko ostatnie 12 miesięcy"
       ],
@@ -4666,8 +4682,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Dodaj święta"
+      ],
       "Cannot add more calendars": [
         "Nie można dodać więcej kalendarzy"
+      ],
+      "Edit calendar": [
+        "Edytuj kalendarz"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Uzyskaj kalendarz świąt krajowych."
       ],
       "How to import calendars from another service": [
         "Jak zaimportować kalendarze z innej usługi"
@@ -4870,6 +4895,11 @@
       ],
       "Contact group updated": [
         "Grupa kontaktów została zaktualizowana"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalendarz został dodany"
       ]
     },
     "Notification in share calendar modal": {
@@ -5254,6 +5284,9 @@
       "Please describe the problem and include any error messages": [
         "Opisz problem i dołącz wszelkie informacje o błędach"
       ],
+      "Please select a country": [
+        "Wybierz kraj"
+      ],
       "Search for group name": [
         "Szukaj nazwy grupy"
       ],
@@ -5354,6 +5387,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Sprawdź pisownię lub wybierz kraj z listy."
+      ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ]
@@ -5676,11 +5712,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Dodaj święta do kalendarza."
+      ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Święta są tutaj"
       ]
     },
     "Storage": {

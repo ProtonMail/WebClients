@@ -778,11 +778,11 @@
       "Refine it": [
         "Refine-a"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -3636,17 +3636,14 @@
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "Por favor, ${ refresh } ou verifique sua conexão com a internet."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "Por favor ${ refresh } ou tente novamente mais tarde."
+      "Please refresh the page or try again later.": [
+        "Por favor, atualize a página ou tente novamente mais tarde."
       ],
       "Something went wrong": [
         "Algo deu errado"
       ],
-      "We couldn't load this page. ": [
-        "Não foi possível carregar esta página. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Você ainda não tem nenhum contato. Comece criando um novo contato"
@@ -4747,11 +4744,8 @@
       "Attention required": [
         "Atenção necessária"
       ],
-      "Automatically delete messages that have been in spam for more than 30 days.": [
-        "Exclua automaticamente as mensagens que estão em spam há mais de 30 dias."
-      ],
-      "Automatically delete messages that have been in trash for more than 30 days.": [
-        "Exclua automaticamente as mensagens que estão na lixeira há mais de 30 dias."
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Excluir automaticamente as mensagens que estão na lixeira e no spam há mais de 30 dias."
       ],
       "Background color": [
         "Cor de fundo"
@@ -5156,11 +5150,8 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "A mensagem será enviada amanhã às ${ formattedTime }"
       ],
-      "Messages that have been in spam more than 30 days will be automatically deleted.": [
-        "As mensagens que estiverem em spam por mais de 30 dias serão excluídas automaticamente."
-      ],
-      "Messages that have been in trash more than 30 days will be automatically deleted.": [
-        "As mensagens que estiverem na lixeira por mais de 30 dias serão excluídas automaticamente."
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "As mensagens que estiverem na lixeira e no spam há mais de 30 dias serão automaticamente apagadas."
       ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
@@ -5400,9 +5391,6 @@
       "Show original message": [
         "Exibir mensagem original"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "O SimpleLogin é um serviço do ${ BRAND_NAME }, e sua conta ${ BRAND_NAME } inclui os aliases do Hide My Email. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não confiáveis nos quais você não quer expor o seu endereço de e-mail real."
       ],
@@ -5628,11 +5616,8 @@
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
       ],
-      "Upgrade to automatically delete messages that have been in spam for more than 30 days.": [
-        "Faça upgrade para excluir automaticamente as mensagens que estão em spam por mais de 30 dias."
-      ],
-      "Upgrade to automatically delete messages that have been in trash for more than 30 days.": [
-        "Faça upgrade para excluir automaticamente as mensagens que estão na lixeira há mais de 30 dias."
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Atualize para eliminar automaticamente as mensagens que se encontram na lixeira e no spam há mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Atualize para criar mais pastas, filtros e endereços."

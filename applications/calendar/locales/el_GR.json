@@ -381,11 +381,11 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -491,6 +491,9 @@
       ],
       "Today": [
         "Σήμερα"
+      ],
+      "Toggle Contact app": [
+        "Εναλλαγή στο πρόγραμμα Επαφών"
       ],
       "Trust": [
         "Αξιόπιστο"
@@ -4928,6 +4931,12 @@
         "${ seconds } δευτερόλεπτα"
       ]
     },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "${ storageSize } συνολικός αποθηκευτικός χώρος"
@@ -4940,6 +4949,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
@@ -4973,6 +4985,9 @@
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
+      ],
+      "Save ${ discount }%": [
+        "Εξοικονομήστε ${ discount }%"
       ]
     },
     "Spotlight": {
@@ -5054,6 +5069,9 @@
       ],
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
+      ],
+      "Canceling import": [
+        "Ακύρωση εισαγωγής"
       ],
       "Cancellation sent and all events deleted": [
         "Η ακύρωση στάλθηκε και όλες οι εκδηλώσεις διαγράφηκαν"

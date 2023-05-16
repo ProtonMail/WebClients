@@ -57,6 +57,9 @@
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
+      "Add public holidays": [
+        "Дадаць дзяржаўныя святы"
+      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -214,7 +217,7 @@
         "Налады электроннай пошты"
       ],
       "enable desktop notifications": [
-        "уключыць апавяшчэнні на працоўным стале"
+        "уключэнне апавяшчэнняў на працоўным стале"
       ],
       "Export": [
         "Экспартаваць"
@@ -396,11 +399,11 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Remove": [
         "Выдаліць"
@@ -1895,6 +1898,11 @@
         "Аландскія астравы"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "На падставе вашага часавага пояса"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Пасля паўтарэння…"
@@ -2474,6 +2482,9 @@
       "Validation error": [
         "Памылка праверкі"
       ],
+      "You already added this holidays calendar": [
+        "Вы ўжо дадавалі гэтыя святы ў каляндар"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Вы не можаце адправіць ліст больш чым 100 атрымальнікам"
       ],
@@ -2669,17 +2680,14 @@
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
-      "Please ${ refresh } or check your internet connection.": [
-        "${ refresh } або праверце ваша падключэнне да інтэрнэту."
-      ],
-      "Please ${ refresh } or try again later.": [
-        "${ refresh } або паспрабуйце яшчэ раз пазней."
+      "Please refresh the page or try again later.": [
+        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
       ],
-      "We couldn't load this page. ": [
-        "Не ўдалося загрузіць гэту старонку. "
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
       ],
       "You need an active personal calendar to import events": [
         "Вам неабходны асабісты актыўны каляндар для імпартавання падзей"
@@ -2846,7 +2854,7 @@
         "падтрымка кліентаў"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс."
+        "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
@@ -2876,7 +2884,7 @@
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "Вы можаце прыняць толькі 3 запрашэнні на працягу 6 месячнага перыяду. Калі вам неабходна павялічыць іх колькасць, перайдзіце па спасылцы ${ supportLink }."
+        "Вы можаце прыняць толькі 3 запрашэнні за 6 месяцаў. Калі вам неабходна павялічыць іх колькасць, перайдзіце па спасылцы ${ supportLink }."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
@@ -2891,7 +2899,7 @@
         "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае выдзеленае вам сховішча ў ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+        "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Ваш бягучы тарыфны план не дазваляе далучацца да тарыфнага плана Visionary або сямейнага тарыфнага плана."
@@ -2920,7 +2928,7 @@
         "Сканфігуруйце сямейны ўліковы запіс і запрасіце карыстальнікаў "
       ],
       "Set up your family": [
-        "Стварыце сваю сем'ю"
+        "Наладзьце сямейны ўліковы запіс"
       ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
@@ -3053,6 +3061,11 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
+      ]
+    },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "На падставе вашага часавага пояса"
       ]
     },
     "Human verification method": {
@@ -4342,6 +4355,9 @@
       "Label messages as": [
         "Пазначыць паведамленні як"
       ],
+      "Language": [
+        "Мова"
+      ],
       "Last 12 months only": [
         "Толькі за апошнія 12 месяцаў"
       ],
@@ -4666,8 +4682,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Дадаць дзяржаўныя святы"
+      ],
       "Cannot add more calendars": [
         "Немагчыма дадаць больш календароў"
+      ],
+      "Edit calendar": [
+        "Рэдагаваць каляндар"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Атрымаць афіцыйны каляндар з дзяржаўнымі святамі краіны."
       ],
       "How to import calendars from another service": [
         "Як імпартаваць календары з іншага сэрвісу"
@@ -4870,6 +4895,11 @@
       ],
       "Contact group updated": [
         "Група кантактаў абноўлена"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Каляндар дададзены"
       ]
     },
     "Notification in share calendar modal": {
@@ -5090,7 +5120,7 @@
         "Наладзьце сваю арганізацыю"
       ],
       "Set up your organization testing": [
-        "Наладзьце тэсціраванне сваёй арганізацыі"
+        "Наладзьце сваю арганізацыю"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
@@ -5254,6 +5284,9 @@
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
       ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
       "Search for group name": [
         "Шукаць па назве групы"
       ],
@@ -5354,6 +5387,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Праверце правільнасць напісання або выберыце краіну са спісу."
+      ],
       "No results found": [
         "Нічога не знойдзена"
       ]
@@ -5673,11 +5709,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Дадайце дзяржаўныя святы вашай краіны ў свой каляндар."
+      ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Дзяржаўныя святы знаходзяцца тут!"
       ]
     },
     "Storage": {
