@@ -267,6 +267,7 @@ export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
  * @var isSearchPartial whether the current search only has partial results. It happens when IndexedDB does not fit in cache
  * @var isSearching whether a search is ongoing
  * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
+ * @var isCacheReady whether in-memory cache load is filled
  * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
  * @var isPaused whether content indexing is paused
  * @var contentIndexingDone whether content indexing is finished
@@ -286,4 +287,4 @@ export interface ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters>
             | 'isPaused'
             | 'contentIndexingDone'
         >,
-        Pick<ESCache<unknown, unknown>, 'isCacheLimited'> {}
+        Pick<ESCache<unknown, unknown>, 'isCacheLimited' | 'isCacheReady'> {}
