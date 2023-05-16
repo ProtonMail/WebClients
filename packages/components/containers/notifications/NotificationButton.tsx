@@ -31,6 +31,7 @@ const NotificationButtonBase = <E extends ElementType = typeof defaultElement>(
             color={positive ? 'weak' : 'danger'}
             size="small"
             className={classnames(['notification__button text-bold', close && 'notification__close-button', className])}
+            data-testid="notification:undo-button"
         />
     );
 };
