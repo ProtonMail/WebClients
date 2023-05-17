@@ -1,5 +1,6 @@
+import getRandomString from '@proton/utils/getRandomString';
+
 export type ExtensionMessage<T = {}> = { type: string } & T;
-export type ExtensionMessageType<M extends ExtensionMessage = ExtensionMessage> = `${M['type']}`;
 
 /* extension communicating with account should
  * conform to this message response type */
@@ -10,9 +11,9 @@ export type ExtensionMessageResponse<P extends {}> =
 /* message fallback should contain the initial message's
  * type as a property in order to ensure we're dealing
  * with the appropriate response message */
-export type ExtensionMessageFallbackResponse<T extends ExtensionMessage, P extends {}> = {
-    [K in T['type']]: string;
-} & ExtensionMessageResponse<P>;
+export type ExtensionMessageFallbackResponse<P extends {}> = ExtensionMessageResponse<P> & {
+    token: string;
+};
 
 export const sendMessageSupported = () =>
     'chrome' in window && (window as any).chrome?.runtime?.sendMessage !== undefined;
@@ -26,21 +27,27 @@ export const sendExtensionMessage = async <T extends ExtensionMessage, R extends
     options: {
         extensionId: string;
         maxTimeout?: number;
-        onFallbackMessage?: (
-            event: MessageEvent<ExtensionMessageFallbackResponse<T, any>>
-        ) => ExtensionMessageResponse<R> | undefined;
+        onFallbackMessage?: (event: MessageEvent<any>) => ExtensionMessageResponse<R> | undefined;
     }
 ): Promise<ExtensionMessageResponse<R>> => {
     let timeout: NodeJS.Timeout;
+    const token = getRandomString(16);
 
     return new Promise<ExtensionMessageResponse<R>>((resolve) => {
         /* in order to support legacy message formats : allow
          * intercepting event via `options.onFallbackMessage` */
-        const onFallbackMessage = (event: MessageEvent<ExtensionMessageFallbackResponse<T, R>>) => {
-            if (event.source === window && message.type in event.data) {
-                clearTimeout(timeout);
-                window.removeEventListener('message', onFallbackMessage);
-                resolve(options?.onFallbackMessage?.(event) ?? event.data);
+        const onFallbackMessage = (event: MessageEvent<ExtensionMessageFallbackResponse<R>>) => {
+            const externalMessage = (event.data as any).extension === undefined;
+
+            if (event.source === window && externalMessage) {
+                const intercepted = options?.onFallbackMessage?.(event);
+                const valid = intercepted !== undefined || event.data?.token === token;
+
+                if (valid) {
+                    clearTimeout(timeout);
+                    window.removeEventListener('message', onFallbackMessage);
+                    resolve(intercepted ?? event.data);
+                }
             }
         };
 
@@ -65,7 +72,7 @@ export const sendExtensionMessage = async <T extends ExtensionMessage, R extends
             });
         }
 
+        window.postMessage({ extension: options.extensionId, token, ...message }, '/');
         window.addEventListener('message', onFallbackMessage);
-        window.postMessage({ extension: options.extensionId, ...message }, '/');
     });
 };
