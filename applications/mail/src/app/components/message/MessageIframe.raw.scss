@@ -340,7 +340,7 @@ blockquote.protonmail_quote
 	font-size: 14px;
 	line-height: 1.5;
 	color: var(--text-norm);
-	background-color: var(--background-norm);
+	background-color: white;
 	text-rendering: geometricprecision;
 	-webkit-font-smoothing: antialiased;
 	padding-block-end: 1em;
@@ -349,13 +349,15 @@ blockquote.protonmail_quote
 	.message-print-subject {
 		font-size: 20px;
 		border-block-end: 1px solid var(--border-norm);
-		margin-block-end: 0.5em;
 		padding-block-end: 0.5em;
+		margin: 0;
+		background-color: var(--background-norm);
 	}
 
 	.message-print-header {
 		border-block-end: 1px solid var(--border-weak);
 		padding-block-end: 1em;
+		background-color: var(--background-norm);
 	}
 
 	.message-recipient-item-expanded {
@@ -417,6 +419,7 @@ blockquote.protonmail_quote
 		margin-block-start: 1em;
 		border-block-start: 1px solid var(--border-weak);
 		padding-block-start: 1em;
+		background-color: var(--background-norm);
 
 		&-sizes {
 			margin-block-end: 1em;
