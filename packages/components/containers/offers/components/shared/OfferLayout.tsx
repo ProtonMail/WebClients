@@ -54,7 +54,7 @@ const OfferLayout = ({ children, offer }: Props) => {
                         </picture>
                     </div>
                 ) : null}
-                <div className={clsx('offer-main-content pt-6 md:pt-0', !hasMultipleDeals && 'pt-6')}>{children}</div>
+                <div className={clsx('offer-main-content', hasMultipleDeals ? 'pt-6 md:pt-0' : 'pt-6')}>{children}</div>
             </div>
         </div>
     );
