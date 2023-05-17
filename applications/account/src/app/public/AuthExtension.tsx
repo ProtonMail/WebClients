@@ -1,20 +1,27 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { getExtension } from '@proton/shared/lib/apps/helper';
 import { Extension } from '@proton/shared/lib/authentication/ForkInterface';
-import { ExtensionForkResult, ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
+import {
+    ExtensionAuthenticatedMessage,
+    ExtensionForkResult,
+    ExtensionForkResultPayload,
+} from '@proton/shared/lib/authentication/sessionForking';
+import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import successImg from '@proton/styles/assets/img/onboarding/proton-welcome.svg';
+import noop from '@proton/utils/noop';
 
 import Content from './Content';
 import Layout from './Layout';
 import Main from './Main';
 import Text from './Text';
 
-export type AuthExtensionState = { extension: Extension | undefined } & ExtensionForkResult;
+export type AuthExtensionState = ExtensionForkResult & { extension: Extension | undefined };
 
 const assets = require.context(`@proton/styles/assets/img/extension`, true, /.svg$/);
 
@@ -58,23 +65,37 @@ const AuthExtension = () => {
     const location = useLocation<AuthExtensionState | undefined>();
     const defaults = getDefaults();
     const { type, payload, extension } = location.state ?? getDefaultState(defaults);
+    const errorDetail = location.state?.type === 'error' && location.state.error;
     const logo = getExtensionAssets(extension)?.[type];
+
+    useEffect(() => {
+        /* notify the extension that we have reached the `/auth-ext`
+         * page - it may want to intercept this and redirect to an
+         * extension specific page */
+        if (extension !== undefined) {
+            sendExtensionMessage<ExtensionAuthenticatedMessage>(
+                { type: 'auth-ext' },
+                { extensionId: extension.ID }
+            ).catch(noop);
+        }
+    }, [extension]);
 
     return (
         <Layout hasDecoration={false}>
             <Main>
-                <div className="p2 on-mobile-p1 text-center">
-                    <Content>
-                        {logo && (
-                            <div className="text-center my-8">
-                                <img className="m-auto w150p" src={logo} alt="" />
-                            </div>
-                        )}
+                <Content className="text-center">
+                    {logo && (
+                        <div className="text-center my-8">
+                            <img className="m-auto w150p" src={logo} alt="" />
+                        </div>
+                    )}
 
-                        <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaults[type].title}</h1>
-                        <Text className="mt-4">{payload?.message ?? defaults[type].message}</Text>
-                    </Content>
-                </div>
+                    <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaults[type].title}</h1>
+                    <Text className="mt-4">
+                        {payload?.message ?? defaults[type].message}
+                        {errorDetail && ` (${errorDetail})`}
+                    </Text>
+                </Content>
             </Main>
         </Layout>
     );
