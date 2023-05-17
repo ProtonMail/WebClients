@@ -382,6 +382,7 @@ $container-to-width: 4em !default;
 	// Remove padding if in print modal
 	&-print {
 		padding-block-start: 0;
+		border-radius: 0;
 	}
 
 	&-loading-placeholder {
