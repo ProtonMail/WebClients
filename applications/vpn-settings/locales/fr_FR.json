@@ -1443,7 +1443,7 @@
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
       "Missing feature(s)": [
-        "Fonctionnalité manquante"
+        "Fonctionnalités manquantes"
       ],
       "My reason isn't listed, please comment": [
         "Raison non proposée ici, pouvez-vous préciser"
@@ -1678,6 +1678,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Gestionnaire de mots de passe"
+      ],
       "Premium Drive": [
         "Drive version premium"
       ],
@@ -1819,6 +1822,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Créez des identifiants de connexion sécurisés pour vos comptes en ligne, sur tous vos appareils."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
@@ -2143,7 +2149,7 @@
         "Montant inférieur au minimum de (${ amount })."
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Toute méthode ${ twoFa } sur vote compte sera désactivée."
+        "Toute méthode d'${ twoFa } sur vote compte sera désactivée."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Voulez-vous vraiment désactiver l'authentification à deux facteurs ?"
@@ -2307,6 +2313,9 @@
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Obtenir mon adresse ${ BRAND_NAME }"
       ],
@@ -2425,7 +2434,7 @@
         "ancien mot de passe"
       ],
       "Once you reset your password:": [
-        "Une fois votre mot de passe réinitialisé :"
+        "Une fois votre mot de passe réinitialisé :"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Un seul compte. Tous les services ${ BRAND_NAME }."
@@ -2599,6 +2608,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Cela vous déconnectera de toutes les sessions actives et désactivera l'authentification à deux facteurs."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Cet assistant permet d'activer l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Cela renforce la sécurité de votre compte ${ BRAND_NAME_TWO }, c'est pourquoi nous vous recommandons de l'activer."
+      ],
       "To ${ planName }": [
         "À : ${ planName }"
       ],
@@ -2744,13 +2756,16 @@
         "Nous passons votre abonnement actuel à un abonnement plus avantageux pour le même prix. Pendant la mise à jour de nos systèmes, vous ne pourrez pas le modifier. Nous vous enverrons un message dès que ce sera fait."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+        "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, nous utiliserons tous vos crédits disponibles avant de débiter vos moyens de paiement ci-dessus."
       ],
       "Why?": [
         "Pourquoi ?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME_TWO }."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -3431,6 +3446,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Obtenir gratuitement ${ BRAND_NAME }"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Obtenir ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Obtenir ${ planName }"
       ],
@@ -3835,6 +3853,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si vous changez d'abonnement, vous perdrez tous les avantages de l'abonnement ${ visionary } et ne serez plus en mesure de revenir à l'abonnement ${ visionary }."
       ],
+      "Most popular": [
+        "Le plus populaire"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
       ],
@@ -4041,6 +4062,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Une connexion VPN permet à un seul appareil de se connecter à ${ BRAND_NAME } VPN. Pour connecter en même temps un téléphone et un ordinateur portable à ${ BRAND_NAME_TWO } VPN par exemple, vous avez besoin de deux connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
