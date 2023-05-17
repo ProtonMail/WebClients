@@ -37,8 +37,8 @@ const extractFullNote = (details: OnePassItemDetails): string => {
             if (field.value.url !== undefined) {
                 fieldValue = field.value.url;
             }
-            if (field.value.text !== undefined) {
-                fieldValue = field.value.text;
+            if (field.value.string !== undefined) {
+                fieldValue = field.value.string;
             }
             if (fieldValue !== undefined) {
                 if (!added) {

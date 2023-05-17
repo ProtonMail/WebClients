@@ -42,7 +42,7 @@ export type ItemSection = {
         id: string;
         value: {
             url: Maybe<string>;
-            text: Maybe<string>;
+            string: Maybe<string>;
             totp: Maybe<string>;
         };
     }[];
