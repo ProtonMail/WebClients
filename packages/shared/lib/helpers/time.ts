@@ -40,6 +40,10 @@ export type OptionsWithIntl = {
      */
     localeCode?: string | string[];
     /**
+     * If true time will be shown in 12h format with AM/PM
+     */
+    hour12?: boolean;
+    /**
      * Intl format options.
      */
     intlOptions?: Intl.DateTimeFormatOptions;
@@ -59,7 +63,10 @@ export type OptionsWithIntl = {
  * @param {Object} [options.sameDayIntlOptions={month: 'short', day: 'numeric', year: 'numeric'}]
  */
 export const readableTimeIntl = (unixTime: number, options: OptionsWithIntl = {}) => {
-    let { sameDayIntlOptions, localeCode = 'en-US', intlOptions } = options;
+    let { sameDayIntlOptions, localeCode = 'en-US', hour12, intlOptions } = options;
+    // h12: 12:59 AM | h23: 00:59 (h24 would have produced: 24:59)
+    // We still want to let default Intl behavior if no hour12 params is pass, so we want to have undefined
+    const hourCycle = (hour12 === true && 'h12') || (hour12 === false && 'h23') || undefined;
 
     const defaultIntlOptions: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
     intlOptions = intlOptions ?? defaultIntlOptions;
@@ -70,9 +77,9 @@ export const readableTimeIntl = (unixTime: number, options: OptionsWithIntl = {}
     const date = new Date(unixTime * 1000);
 
     if (sameDayIntlOptions && isSameDay(date, Date.now())) {
-        return Intl.DateTimeFormat(localeCode, sameDayIntlOptions).format(date);
+        return Intl.DateTimeFormat(localeCode, { hourCycle, ...sameDayIntlOptions }).format(date);
     }
-    return Intl.DateTimeFormat(localeCode, intlOptions).format(date);
+    return Intl.DateTimeFormat(localeCode, { hourCycle, ...intlOptions }).format(date);
 };
 
 export const getCurrentUnixTimestamp = () => {

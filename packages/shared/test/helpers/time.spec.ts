@@ -109,7 +109,7 @@ describe('readableTimeIntl()', () => {
     });
 
     it('should apply custom time format for the same day', () => {
-        setMockedTime(unixTime * 1000);
+        setMockedTime(unixTime);
 
         expect(
             readableTimeIntl(unixTime, {
@@ -120,6 +120,7 @@ describe('readableTimeIntl()', () => {
     });
 
     it('should apply custom time format if it is different day', () => {
+        setMockedTime(unixTime * 1000);
         expect(
             readableTimeIntl(unixTime, {
                 intlOptions: {
@@ -139,5 +140,17 @@ describe('readableTimeIntl()', () => {
         });
 
         expect(result).toEqual('Oct 22, 2022');
+    });
+
+    it('should work with force 24h format', () => {
+        expect(
+            readableTimeIntl(unixTime, {
+                intlOptions: {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                },
+                hour12: false,
+            })
+        ).not.toMatch(/AM|PM/);
     });
 });
