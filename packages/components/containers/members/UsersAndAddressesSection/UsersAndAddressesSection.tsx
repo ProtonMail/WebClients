@@ -325,7 +325,10 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                                     ? member?.Addresses?.[0]?.Email || member.Name
                                                     : member.Name}
                                             </span>
-                                            <span data-testid="users-and-addresses-table:memberIsPrivate">
+                                            <span
+                                                data-testid="users-and-addresses-table:memberIsPrivate"
+                                                className="mr-1"
+                                            >
                                                 {Boolean(member.Private) && !hasFamily(subscription) && (
                                                     <Badge type="origin" className="rounded-sm">{c('Private Member')
                                                         .t`private`}</Badge>
