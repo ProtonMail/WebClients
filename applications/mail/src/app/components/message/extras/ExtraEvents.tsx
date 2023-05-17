@@ -29,8 +29,8 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { getIsVcalendarWithErrors } from '@proton/shared/lib/calendar/vcalHelper';
-import { VcalCalendarComponentWithErrors, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
+import { VcalErrorComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -179,9 +179,10 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (!parsedVcalendar) {
                                         return;
                                     }
-                                    if (getIsVcalendarWithErrors(parsedVcalendar)) {
+                                    if (!getVcalendarHasNoErrorComponents(parsedVcalendar)) {
                                         const externalError = (parsedVcalendar.components || []).find(
-                                            (component) => !!(component as VcalCalendarComponentWithErrors).error
+                                            (component): component is VcalErrorComponent =>
+                                                getIsVcalErrorComponent(component)
                                         )!.error;
                                         return new EventInvitationError(
                                             EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID,
