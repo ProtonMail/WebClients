@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import * as H from 'history';
@@ -125,16 +125,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
-    const messageListenerRef = useRef<undefined | ((event: MessageEvent<any>) => void)>();
-
-    useEffect(() => {
-        return () => {
-            if (messageListenerRef.current) {
-                window.removeEventListener('message', messageListenerRef.current);
-                messageListenerRef.current = undefined;
-            }
-        };
-    }, []);
 
     const { product: maybeQueryAppIntent, productParam } = useMemo(() => {
         return getSearchParams(location.search);
@@ -175,7 +165,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     )
                 );
                 const result = await produceExtensionFork({
-                    messageListenerRef,
                     extension,
                     payload: {
                         selector,
@@ -185,8 +174,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         state: data.payload.state,
                     },
                 });
-                const type = result?.type === 'success' ? 'success' : 'error';
-                const state: AuthExtensionState = { type, extension, payload: result?.payload };
+
+                const state: AuthExtensionState = { ...result, extension };
                 history.replace('/auth-ext', state);
                 return;
             }
