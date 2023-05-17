@@ -35,7 +35,13 @@ const SubscriptionSubmitButton = ({
 
     if (step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
         return (
-            <PrimaryButton className={className} disabled={disabled} loading={loading} type="submit">
+            <PrimaryButton
+                className={className}
+                disabled={disabled}
+                loading={loading}
+                type="submit"
+                data-testid="confirm"
+            >
                 {c('Action').t`Continue`}
             </PrimaryButton>
         );
@@ -43,7 +49,13 @@ const SubscriptionSubmitButton = ({
 
     if (amountDue === 0) {
         return (
-            <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit">
+            <PrimaryButton
+                className={className}
+                loading={loading}
+                disabled={disabled}
+                type="submit"
+                data-testid="confirm"
+            >
                 {c('Action').t`Confirm`}
             </PrimaryButton>
         );
@@ -68,7 +80,7 @@ const SubscriptionSubmitButton = ({
     );
 
     return (
-        <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit">
+        <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit" data-testid="confirm">
             {amountDue > 0 ? c('Action').jt`Pay ${price} now` : c('Action').t`Confirm`}
         </PrimaryButton>
     );
