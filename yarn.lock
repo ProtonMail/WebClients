@@ -27547,6 +27547,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"scripts@workspace:utilities/scripts":
+  version: 0.0.0-use.local
+  resolution: "scripts@workspace:utilities/scripts"
+  dependencies:
+    "@types/node": ^18.16.13
+    ts-node: ^10.9.1
+  languageName: unknown
+  linkType: soft
+
 "secure-json-parse@npm:^2.5.0":
   version: 2.6.0
   resolution: "secure-json-parse@npm:2.6.0"
