@@ -101,6 +101,9 @@
       "Add PayPal": [
         "PayPal toevoegen"
       ],
+      "Add public holidays": [
+        "Feestdagen toevoegen"
+      ],
       "Add sieve filter": [
         "Voeg Sieve filter toe"
       ],
@@ -3723,6 +3726,11 @@
         "Kies ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "De voordelen van uw account"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Opslagruimte wordt gedeeld tussen familieleden op ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
@@ -3747,7 +3755,7 @@
       "Keep current plan": [
         "Huidig abonnement behouden"
       ],
-      "Setup family group": [
+      "Set up family group": [
         "Gezinsgroep configureren"
       ],
       "Switch plans": [
@@ -3764,6 +3772,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Wachtwoordbeheer"
+      ],
       "Premium Drive": [
         "Premium Drive"
       ],
@@ -3809,6 +3820,9 @@
       ],
       "Leave family plan": [
         "Gezinsabonnement verlaten"
+      ],
+      "Leave visionary plan": [
+        "Visionary-abonnement verlaten"
       ],
       "Manage addresses.": [
         "Beheer adressen."
@@ -3921,8 +3935,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "U kunt een bestaande ${ BRAND_NAME }-gebruiker uitnodigen of een nieuwe gebruiker aanmaken"
+      "To create a new user, a configured custom domain is required.": [
+        "Voor het maken van een nieuwe gebruiker is een geconfigureerd aangepast domein vereist."
       ],
       "You can increase or reduce the storage for this user.": [
         "U kunt de opslagruimte voor deze gebruiker uitbreiden of beperken."
@@ -3956,6 +3970,11 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Gezin"
       ]
     },
     "familyOffer_2023:Success": {
@@ -4005,6 +4024,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Maak veilige inloggegevens voor uw online accounts, op al uw apparaten."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
       ],
@@ -5586,7 +5608,7 @@
         "is het noodzakelijk"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Ik gebruik @ProtonMail en dacht dat u dit misschien ook leuk vindt. Het is een veilige e-maildienst die uw privacy beschermd. Meld u aan met mijn doorverwijslink om gratis 1 maand premium functies te krijgen: ${ referrerLink }"
+        "Ik gebruik @ProtonMail en dacht dat u dit misschien ook leuk vindt. Het is een veilige e-maildienst die uw privacy beschermd. Meld u aan met mijn doorverwijslink om gratis 1 maand premiumfuncties te krijgen: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
@@ -6371,6 +6393,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Week en maand weergaven zijn alleen van toepassing op bureaublad."
+      ],
+      "Welcome": [
+        "Welkom"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
@@ -8838,6 +8863,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Als u overstapt op een ander abonnement, raakt u alle voordelen van het ${ visionary }-abonnement kwijt en kunt u niet meer terug naar ${ visionary }."
       ],
+      "Most popular": [
+        "Populairste keuze"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
       ],
@@ -8980,6 +9008,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden."
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Deel uw agenda's eenvoudig met collega's, familieleden en vrienden via een koppeling"
       ],
@@ -9012,6 +9043,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME } VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME_TWO } VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
@@ -11320,12 +11354,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
-      ],
-      "Organization": [
-        "Bedrijf"
-      ],
-      "Organization and keys": [
-        "Organisatie en sleutels"
       ],
       "Organization name": [
         "Organisatienaam"

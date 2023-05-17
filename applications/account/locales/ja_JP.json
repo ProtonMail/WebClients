@@ -87,6 +87,9 @@
       "Add PayPal": [
         "PayPal を追加"
       ],
+      "Add public holidays": [
+        "祝日を追加"
+      ],
       "Add sieve filter": [
         "Sieve フィルターを追加"
       ],
@@ -3199,6 +3202,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "間違った検証コードです。 検証コードが正しくコピーされているか確認し、もう一度試してください。 変更が有効になるまでに最大24時間を要する場合があります。"
       ],
+      "You already added this holidays calendar": [
+        "この祝日カレンダーはすでに追加されています"
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "組織用の鍵にアクセスできなくなりました。 修復しない限り、新規ユーザーの作成、既存ユーザーへのアドレスの追加並びに、ユーザーアカウントへのアクセスはできません。"
       ],
@@ -3585,9 +3591,6 @@
       ],
       "Keep current plan": [
         "現在のプランを維持"
-      ],
-      "Setup family group": [
-        "家族グループを設定"
       ],
       "Switch plans": [
         "プランを変更"
@@ -7638,8 +7641,14 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "祝日を追加"
+      ],
       "Edit calendar": [
         "カレンダーの編集"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "国の公式な祝日カレンダーを取得。"
       ],
       "How to import calendars from another service": [
         "その他のサービスからカレンダーをインポートする方法"
@@ -8460,6 +8469,11 @@
         "OpenVPN / IKEv2 認証情報を更新しました"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "カレンダーを追加しました"
+      ]
+    },
     "Notification in share calendar modal": {
       "Invitation deleted": [
         "招待が削除されました"
@@ -8878,6 +8892,9 @@
       "Please insert link first": [
         "最初にリンクを挿入してください"
       ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
       "Printer": [
         "プリンター"
       ],
@@ -9110,6 +9127,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "スペルを確認するか、一覧から国を選択してください。"
+      ],
       "No results found": [
         "該当する結果が見つかりませんでした"
       ]
@@ -9499,6 +9519,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "カレンダーのURL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「その他のカレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10477,12 +10500,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN 設定ファイル"
-      ],
-      "Organization": [
-        "組織"
-      ],
-      "Organization and keys": [
-        "組織と鍵"
       ],
       "Organization name": [
         "組織名"
