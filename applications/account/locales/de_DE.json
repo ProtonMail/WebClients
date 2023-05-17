@@ -3750,6 +3750,11 @@
         "${ planName } holen"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Die Vorteile deines Kontos"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Der Speicherplatz wird von Family-Mitgliedern in ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -3774,8 +3779,8 @@
       "Keep current plan": [
         "Aktuellen Tarif behalten"
       ],
-      "Setup family group": [
-        "Family-Gruppe einrichten"
+      "Set up family group": [
+        "Familiengruppe einrichten"
       ],
       "Switch plans": [
         "Tarife wechseln"
@@ -3791,6 +3796,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Passwort-Manager"
+      ],
       "Premium Drive": [
         "Premium-Drive"
       ],
@@ -3836,6 +3844,9 @@
       ],
       "Leave family plan": [
         "Family-Tarif verlassen"
+      ],
+      "Leave visionary plan": [
+        "Visionary-Abonnement verlassen"
       ],
       "Manage addresses.": [
         "Adressen verwalten."
@@ -3948,8 +3959,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf einen ${ BRAND_NAME } Unlimited-Tarif umgestellt."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Du kannst entweder einen bestehenden ${ BRAND_NAME }-Benutzer einladen oder einen neuen Benutzer erstellen"
+      "To create a new user, a configured custom domain is required.": [
+        "Zur Erstellung eines neuen Benutzers ist eine konfigurierte eigene Domain erforderlich."
       ],
       "You can increase or reduce the storage for this user.": [
         "Du kannst den Speicherplatz für diesen Benutzer erhöhen oder verringern."
@@ -4037,6 +4048,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Erstelle sichere Anmeldedaten für deine Online-Konten auf all deinen Geräten."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
@@ -11547,12 +11561,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN Konfigurationsdateien"
-      ],
-      "Organization": [
-        "Organisation"
-      ],
-      "Organization and keys": [
-        "Organisation und Schlüssel"
       ],
       "Organization name": [
         "Name der Organisation"

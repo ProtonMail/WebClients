@@ -1461,6 +1461,9 @@
       "Tab closed": [
         "Separador fechado"
       ],
+      "The email addresses do not match": [
+        "Os endereços de correio electrónico não coincidem."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O montante mínimo de crédito que pode ser adicionado é ${ price }"
       ],
@@ -2959,8 +2962,29 @@
       "Close": [
         "Fechar"
       ],
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
       "Special offer": [
         "Oferta especial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {

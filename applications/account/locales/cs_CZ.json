@@ -3803,7 +3803,7 @@
       "Keep current plan": [
         "Zůstat na aktuálním tarifu"
       ],
-      "Setup family group": [
+      "Set up family group": [
         "Nastavit rodinnou skupinu"
       ],
       "Switch plans": [
@@ -3820,6 +3820,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Správce hesel"
+      ],
       "Premium Drive": [
         "Prémiový Drive"
       ],
@@ -3977,8 +3980,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Můžete pozvat stávajícího uživatele ${ BRAND_NAME } nebo vytvořit uživatele nového"
+      "To create a new user, a configured custom domain is required.": [
+        "K vytvoření nového uživatele je nutná nastavená vlastní doména."
       ],
       "You can increase or reduce the storage for this user.": [
         "Můžete zvětšit nebo zmenšit úložiště tohoto uživatele."
@@ -5830,6 +5833,9 @@
       "Loading...": [
         "Načítání..."
       ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME_TWO }."
+      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
       ],
@@ -6375,6 +6381,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
@@ -9209,6 +9218,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Pokud přejdete na jiný tarif, ztratíte všechny výhody tarifu ${ visionary } a nebudete moci přejít zpět na tarif ${ visionary }."
       ],
+      "Most popular": [
+        "Nejoblíbenější"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Náš tarif ${ visionary } již není k dispozici novým předplatitelům, protože se jedná o speciální plán pro původní uživatele ${ BRAND_NAME } se speciálními funkcemi a výhodami."
       ],
@@ -11818,12 +11830,6 @@
       ],
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
-      ],
-      "Organization": [
-        "Organizace"
-      ],
-      "Organization and keys": [
-        "Organizace a klíče"
       ],
       "Organization name": [
         "Název organizace"
