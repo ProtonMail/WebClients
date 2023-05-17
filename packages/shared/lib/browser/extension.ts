@@ -31,17 +31,20 @@ export const sendExtensionMessage = async <T extends ExtensionMessage, R extends
         ) => ExtensionMessageResponse<R> | undefined;
     }
 ): Promise<ExtensionMessageResponse<R>> => {
+    let timeout: NodeJS.Timeout;
+
     return new Promise<ExtensionMessageResponse<R>>((resolve) => {
         /* in order to support legacy message formats : allow
          * intercepting event via `options.onFallbackMessage` */
         const onFallbackMessage = (event: MessageEvent<ExtensionMessageFallbackResponse<T, R>>) => {
             if (event.source === window && message.type in event.data) {
+                clearTimeout(timeout);
                 window.removeEventListener('message', onFallbackMessage);
                 resolve(options?.onFallbackMessage?.(event) ?? event.data);
             }
         };
 
-        setTimeout(() => {
+        timeout = setTimeout(() => {
             window.removeEventListener('message', onFallbackMessage);
             resolve({ type: 'error', error: 'Extension timed out' });
         }, options.maxTimeout ?? 15_000);
@@ -50,14 +53,15 @@ export const sendExtensionMessage = async <T extends ExtensionMessage, R extends
             const browser = (window as any).chrome;
 
             return browser.runtime.sendMessage(options.extensionId, message, (result: any) => {
-                if (browser.runtime.lastError) {
-                    resolve({
-                        type: 'error',
-                        error: browser.runtime.lastError.message,
-                    });
-                }
-
-                resolve(result);
+                clearTimeout(timeout);
+                resolve(
+                    browser.runtime.lastError
+                        ? {
+                              type: 'error',
+                              error: browser.runtime.lastError.message,
+                          }
+                        : result
+                );
             });
         }
 
