@@ -14,7 +14,7 @@ import Layout from './Layout';
 import Main from './Main';
 import Text from './Text';
 
-export type AuthExtensionState = { extension: Extension | undefined } & ExtensionForkResult;
+export type AuthExtensionState = ExtensionForkResult & { extension: Extension | undefined };
 
 const assets = require.context(`@proton/styles/assets/img/extension`, true, /.svg$/);
 
@@ -58,23 +58,25 @@ const AuthExtension = () => {
     const location = useLocation<AuthExtensionState | undefined>();
     const defaults = getDefaults();
     const { type, payload, extension } = location.state ?? getDefaultState(defaults);
+    const errorDetail = location.state?.type === 'error' && location.state.error;
     const logo = getExtensionAssets(extension)?.[type];
 
     return (
         <Layout hasDecoration={false}>
             <Main>
-                <div className="p2 on-mobile-p1 text-center">
-                    <Content>
-                        {logo && (
-                            <div className="text-center my-8">
-                                <img className="m-auto w150p" src={logo} alt="" />
-                            </div>
-                        )}
+                <Content className="text-center">
+                    {logo && (
+                        <div className="text-center my-8">
+                            <img className="m-auto w150p" src={logo} alt="" />
+                        </div>
+                    )}
 
-                        <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaults[type].title}</h1>
-                        <Text className="mt-4">{payload?.message ?? defaults[type].message}</Text>
-                    </Content>
-                </div>
+                    <h1 className="h3 text-bold mb-0 mt-2 md:mt-0">{payload?.title ?? defaults[type].title}</h1>
+                    <Text className="mt-4">
+                        {payload?.message ?? defaults[type].message}
+                        {errorDetail && ` (${errorDetail})`}
+                    </Text>
+                </Content>
             </Main>
         </Layout>
     );
