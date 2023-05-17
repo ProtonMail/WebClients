@@ -44,7 +44,7 @@ describe('Import 1password 1pux', () => {
         expect(noteItem.metadata.itemUuid).not.toBeUndefined();
         expect(noteItem.metadata.name).toEqual('🎉 Welcome to 1Password!');
         expect(noteItem.metadata.note).toEqual(
-            'Follow these steps to get started.\n1️⃣ Get the apps\nhttps://1password.com/downloads\n2️⃣ Get 1Password in your browser\nhttps://1password.com/downloads/#browsers\n4️⃣ Fill passwords and more\nhttps://support.1password.com/explore/extension/\n📚 Learn 1Password\nWatch videos\nhttps://youtube.com/1PasswordVideos\nGet support\nhttps://support.1password.com/\nRead the blog\nhttps://blog.1password.com/\nContact us\nhttps://support.1password.com/contact-us/'
+            'Follow these steps to get started.\n1️⃣ Get the apps\nhttps://1password.com/downloads\nInstall 1Password everywhere you need your passwords.\n2️⃣ Get 1Password in your browser\nhttps://1password.com/downloads/#browsers\nInstall 1Password in your browser to save and fill passwords.\n3️⃣ Save your first password\n1. Sign in to your favorite website.\n2. 1Password will ask to save your username and password.\n3. Click Save Login.\n4️⃣ Fill passwords and more\nhttps://support.1password.com/explore/extension/\nSave and fill passwords, credit cards, and addresses.\n📚 Learn 1Password\nCheck out our videos and articles:\nWatch videos\nhttps://youtube.com/1PasswordVideos\nGet support\nhttps://support.1password.com/\nRead the blog\nhttps://blog.1password.com/\nContact us\nhttps://support.1password.com/contact-us/'
         );
         expect(noteItem.content).toEqual({});
         expect(noteItem.trashed).toEqual(false);
@@ -109,7 +109,7 @@ describe('Import 1password 1pux', () => {
         expect(specialCharItem.modifyTime).toEqual(1671040547);
         expect(specialCharItem.metadata.itemUuid).not.toBeUndefined();
         expect(specialCharItem.metadata.name).toEqual('Credential with " in the name');
-        expect(specialCharItem.metadata.note).toEqual('Item notes');
+        expect(specialCharItem.metadata.note).toEqual('Item notes\n\ntext section\nvalue of the text section');
         expect(specialCharItem.trashed).toEqual(false);
         expect(specialCharItem.extraFields).toEqual([]);
         expect(specialCharItem.content).toEqual({
@@ -126,7 +126,7 @@ describe('Import 1password 1pux', () => {
         expect(brokenUrlItem.modifyTime).toEqual(1671040547);
         expect(brokenUrlItem.metadata.itemUuid).not.toBeUndefined();
         expect(brokenUrlItem.metadata.name).toEqual('Broken url');
-        expect(brokenUrlItem.metadata.note).toEqual('Item notes');
+        expect(brokenUrlItem.metadata.note).toEqual('Item notes\n\ntext section\nvalue of the text section');
         expect(brokenUrlItem.trashed).toEqual(false);
         expect(brokenUrlItem.extraFields).toEqual([]);
         expect(brokenUrlItem.content.urls).toEqual([]);
