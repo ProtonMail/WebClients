@@ -1,5 +1,3 @@
-import type { MutableRefObject } from 'react';
-
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
@@ -7,6 +5,7 @@ import { pullForkSession, pushForkSession, revoke, setCookies } from '../api/aut
 import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getUser } from '../api/user';
 import { getAppHref, getClientID } from '../apps/helper';
+import { ExtensionMessageResponse, sendExtensionMessage } from '../browser/extension';
 import { APPS, APP_NAMES, SSO_PATHS } from '../constants';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { replaceUrl } from '../helpers/browser';
@@ -38,82 +37,30 @@ export type ExtensionForkResultPayload = {
     message: string;
 };
 
-export type ExtensionForkResult = {
-    type: 'error' | 'success';
-    payload?: ExtensionForkResultPayload;
-};
+export type ExtensionForkResult = ExtensionMessageResponse<ExtensionForkResultPayload>;
+export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
+export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
 
-export const produceExtensionFork = ({
-    messageListenerRef,
+export const produceExtensionFork = async ({
     extension,
     payload,
 }: {
-    messageListenerRef: MutableRefObject<any>;
     extension: Extension;
     payload: ExtensionForkPayload;
-}): Promise<ExtensionForkResult> => {
-    return new Promise((resolve) => {
-        window.setTimeout(() => {
-            resolve({ type: 'error', payload: { message: 'Extension timed out' } });
-        }, 15000);
-
-        // Fallback for firefox browsers since it doesn't implement externally connectable
-        const handleFallback = () => {
-            window.removeEventListener('message', messageListenerRef.current);
-
-            messageListenerRef.current = (event: MessageEvent<any>) => {
-                if (event.source !== window) {
-                    return;
-                }
-                if (event.data?.fork === 'success') {
-                    window.removeEventListener('message', messageListenerRef.current);
-                    messageListenerRef.current = undefined;
-
-                    resolve({
-                        type: 'success',
-                        payload: event.data.payload,
-                    });
-                }
-            };
-
-            window.addEventListener('message', messageListenerRef.current);
-            window.postMessage(
-                {
-                    extension: extension.ID,
-                    type: 'fork',
-                    payload,
-                },
-                '/'
-            );
-        };
-
-        try {
-            const browser = 'chrome' in window ? (window as any).chrome : undefined;
-            if (!browser?.runtime?.sendMessage) {
-                return handleFallback();
-            }
-            browser.runtime.sendMessage(
-                extension.ID,
-                {
-                    type: 'fork',
-                    payload,
-                },
-                (result: any) => {
-                    if (browser.runtime.lastError) {
-                        resolve({
-                            type: 'error',
-                            payload: browser.runtime.lastError.message,
-                        });
-                        return;
-                    }
-                    resolve(result);
-                }
-            );
-        } catch (e) {
-            handleFallback();
+}): Promise<ExtensionForkResult> =>
+    sendExtensionMessage<ExtensionForkMessage, ExtensionForkResultPayload>(
+        { type: 'fork', payload },
+        {
+            extensionId: extension.ID,
+            onFallbackMessage: (evt) =>
+                evt.data.fork === 'success' /* support legacy VPN fallback message */
+                    ? {
+                          type: 'success',
+                          payload: evt.data.payload,
+                      }
+                    : undefined,
         }
-    });
-};
+    );
 
 interface ForkState {
     url: string;
