@@ -1824,8 +1824,20 @@
       "Invalid verification code": [
         "Código de verificação não válido"
       ],
+      "Label name cannot be empty.": [
+        "O nome da etiqueta não pode estar vazio."
+      ],
       "Missing signature": [
         "Assinatura em falta"
+      ],
+      "No calendars found to import": [
+        "Não foi encontrado nenhum calendário para importação."
+      ],
+      "No contacts found to import": [
+        "Não foi encontrado nenhum contacto para importação."
+      ],
+      "No valid address found": [
+        "Nenhum endereço válido encontrado"
       ],
       "Not a valid number": [
         "Número não válido"
@@ -1838,6 +1850,9 @@
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "A palavra-passe é obrigatória."
+      ],
       "Passwords do not match": [
         "As palavras-passe não coincidem."
       ],
@@ -1847,6 +1862,12 @@
       "Please fix the highlighted conflict to proceed.": [
         "Por favor corrija o conflito selecionado para proceder.",
         "Por favor corrija os conflitos selecionados para proceder."
+      ],
+      "Primary address key is not decrypted": [
+        "A chave de endereço principal não está desencriptada."
+      ],
+      "Primary address key is not decrypted.": [
+        "A chave de endereço principal não está desencriptada."
       ],
       "Request timed out": [
         "O pedido expirou"
@@ -1869,8 +1890,17 @@
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas pastas excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dos nomes das suas etiqueta estão indisponíveis. Personalize a importação para editar esses nomes."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Alguns dos nomes dos seus marcadores excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
+      ],
+      "The email addresses do not match": [
+        "Os endereços de correio electrónico não coincidem."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
@@ -1880,6 +1910,9 @@
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "O nome da etiqueta é muito longo. Escolha um nome diferente."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
@@ -1896,6 +1929,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
       ],
+      "This label name is not available. Please choose a different name.": [
+        "Este nome de etiqueta não está disponível. Escolha um nome diferente."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
       ],
@@ -1904,6 +1940,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Não pode enviar um correio electrónico para mais de 100 destinatários."
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Não pode enviar ficheiros vCard de mais de 10 contactos."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -2324,6 +2363,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } não suporta ${ forNow }:"
+      ],
       "for now": [
         "por agora"
       ]
@@ -3871,8 +3913,29 @@
       "Close": [
         "Fechar"
       ],
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
       "Special offer": [
         "Oferta especial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {

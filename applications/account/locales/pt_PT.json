@@ -2507,6 +2507,9 @@
       "Invalid verification code": [
         "Código de verificação não válido"
       ],
+      "Label name cannot be empty.": [
+        "O nome da etiqueta não pode estar vazio."
+      ],
       "Missing signature": [
         "Assinatura em falta"
       ],
@@ -2519,6 +2522,15 @@
       "No active sessions": [
         "Sem sessões ativas"
       ],
+      "No calendars found to import": [
+        "Não foi encontrado nenhum calendário para importação."
+      ],
+      "No contacts found to import": [
+        "Não foi encontrado nenhum contacto para importação."
+      ],
+      "No valid address found": [
+        "Nenhum endereço válido encontrado"
+      ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
       ],
@@ -2527,6 +2539,9 @@
       ],
       "Organization key is not decrypted.": [
         "A chave da organização não está desencriptada."
+      ],
+      "Password is required": [
+        "A palavra-passe é obrigatória."
       ],
       "Passwords do not match": [
         "As palavras-passe não coincidem."
@@ -2565,6 +2580,12 @@
       "Please set a recovery/notification email first": [
         "Defina um correio electrónico de recuperação/notificação"
       ],
+      "Primary address key is not decrypted": [
+        "A chave de endereço principal não está desencriptada."
+      ],
+      "Primary address key is not decrypted.": [
+        "A chave de endereço principal não está desencriptada."
+      ],
       "Primary key is not valid for sending": [
         "A chave primária não é válida para o envio"
       ],
@@ -2599,6 +2620,12 @@
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas pastas excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dos nomes das suas etiqueta estão indisponíveis. Personalize a importação para editar esses nomes."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Alguns dos nomes dos seus marcadores excedem o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
       ],
@@ -2608,6 +2635,9 @@
       "The address might be misspelled": [
         "O endereço pode estar errado"
       ],
+      "The email addresses do not match": [
+        "Os endereços de correio electrónico não coincidem."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
       ],
@@ -2616,6 +2646,9 @@
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "O nome da etiqueta é muito longo. Escolha um nome diferente."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O montante mínimo de crédito que pode ser adicionado é ${ price }"
@@ -2646,6 +2679,9 @@
       ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Este nome de etiqueta não está disponível. Escolha um nome diferente."
       ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
@@ -3299,6 +3335,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } não suporta ${ forNow }:"
+      ],
       "for now": [
         "por agora"
       ]
@@ -7002,8 +7041,29 @@
       "Close": [
         "Fechar"
       ],
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
       "Special offer": [
         "Oferta especial"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -7857,12 +7917,6 @@
       ],
       "OpenVPN configuration files": [
         "Ficheiros de configuração OpenVPN"
-      ],
-      "Organization": [
-        "Organização"
-      ],
-      "Organization and keys": [
-        "Organização e chaves"
       ],
       "Password": [
         "Palavra-passe"
