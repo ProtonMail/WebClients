@@ -7,19 +7,21 @@ import {
     VcalAttendeePropertyWithRole,
     VcalAttendeePropertyWithToken,
     VcalCalendarComponent,
-    VcalCalendarComponentWithErrors,
+    VcalCalendarComponentWithMaybeErrors,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalDateProperty,
     VcalDateTimeValue,
+    VcalErrorComponent,
     VcalStringProperty,
     VcalVcalendar,
-    VcalVcalendarWithErrors,
+    VcalVcalendarWithMaybeErrors,
     VcalVeventComponent,
-    VcalVfreebusyComponent,
-    VcalVjournalComponent,
+    VcalVeventComponentWithMaybeErrors,
+    VcalVfreebusyComponentWithMaybeErrors,
+    VcalVjournalComponentWithMaybeErrors,
     VcalVtimezoneComponent,
-    VcalVtodoComponent,
+    VcalVtodoComponentWithMaybeErrors,
     VcalXOrIanaComponent,
 } from '../interfaces/calendar';
 import {
@@ -79,27 +81,40 @@ export const getIsCalendar = (vcalComponent: VcalCalendarComponent): vcalCompone
     return (vcalComponent as VcalVcalendar)?.component?.toLowerCase() === 'vcalendar';
 };
 
-export const getIsVcalendarWithErrors = (
-    vcalendar: VcalVcalendar | VcalVcalendarWithErrors
-): vcalendar is VcalVcalendarWithErrors => {
-    return (vcalendar.components || []).some((component) => !!(component as VcalCalendarComponentWithErrors).error);
+export const getIsVcalErrorComponent = (
+    component: VcalErrorComponent | VcalCalendarComponentWithMaybeErrors
+): component is VcalErrorComponent => {
+    return 'error' in component;
 };
 
-export const getIsEventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {
+export const getVcalendarHasNoErrorComponents = (
+    vcalendar: VcalVcalendarWithMaybeErrors
+): vcalendar is VcalVcalendar => {
+    return (vcalendar.components || []).every((component) => !getIsVcalErrorComponent(component));
+};
+
+export function getIsEventComponent(vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent;
+export function getIsEventComponent(
+    vcalComponent: VcalCalendarComponentWithMaybeErrors
+): vcalComponent is VcalVeventComponentWithMaybeErrors {
     return vcalComponent?.component?.toLowerCase() === 'vevent';
-};
+}
 
-export const getIsTodoComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVtodoComponent => {
+export const getIsTodoComponent = (
+    vcalComponent: VcalCalendarComponentWithMaybeErrors
+): vcalComponent is VcalVtodoComponentWithMaybeErrors => {
     return vcalComponent?.component?.toLowerCase() === 'vtodo';
 };
 
-export const getIsJournalComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVjournalComponent => {
+export const getIsJournalComponent = (
+    vcalComponent: VcalCalendarComponentWithMaybeErrors
+): vcalComponent is VcalVjournalComponentWithMaybeErrors => {
     return vcalComponent?.component?.toLowerCase() === 'vjournal';
 };
 
 export const getIsFreebusyComponent = (
-    vcalComponent: VcalCalendarComponent
-): vcalComponent is VcalVfreebusyComponent => {
+    vcalComponent: VcalCalendarComponentWithMaybeErrors
+): vcalComponent is VcalVfreebusyComponentWithMaybeErrors => {
     return vcalComponent?.component?.toLowerCase() === 'vfreebusy';
 };
 
