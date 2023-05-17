@@ -19,3 +19,8 @@ export interface UserSettings {
     Layout: LayoutSetting;
     RevisionRetentionDays: RevisionRetentionDaysSetting;
 }
+
+export interface UserSettingsResponse {
+    UserSettings: { [K in keyof UserSettings]: UserSettings[K] | null };
+    Defaults: { RevisionRetentionDays: UserSettings['RevisionRetentionDays'] };
+}
