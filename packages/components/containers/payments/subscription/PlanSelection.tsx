@@ -236,6 +236,7 @@ const PlanSelection = ({
                 <div
                     className="plan-selection plan-selection--b2c mt-4"
                     style={{ '--plan-selection-number': B2CPlans.length }}
+                    data-testid="b2c-plan"
                 >
                     {B2CPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
                 </div>
@@ -262,6 +263,7 @@ const PlanSelection = ({
                 <div
                     className="plan-selection plan-selection--b2b mt-4"
                     style={{ '--plan-selection-number': B2BPlans.length }}
+                    data-testid="b2b-plan"
                 >
                     {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))}
                 </div>
