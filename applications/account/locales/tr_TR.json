@@ -2693,7 +2693,7 @@
     },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin. Tarifenizi yükselterek bunun gibi başka özelliklerden yararlanın."
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin. Tarifenizi yükselterek bunun gibi başka ek faydalardan yararlanın."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
@@ -3756,6 +3756,11 @@
         "${ planName } alın"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Hesabınızın ek faydaları"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Depolama alanı aile üyeleri arasında ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } tarafından paylaşılır."
@@ -3780,8 +3785,8 @@
       "Keep current plan": [
         "Geçerli tarifede kal"
       ],
-      "Setup family group": [
-        "Aile grubu oluştur"
+      "Set up family group": [
+        "Aile grubunu ayarla"
       ],
       "Switch plans": [
         "Tarifeleri değiştir"
@@ -3797,6 +3802,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Parola yöneticisi"
+      ],
       "Premium Drive": [
         "Ücretli Drive"
       ],
@@ -3842,6 +3850,9 @@
       ],
       "Leave family plan": [
         "Aile tarifesinden ayrıl"
+      ],
+      "Leave visionary plan": [
+        "Visionary tarifesinden ayrıl"
       ],
       "Manage addresses.": [
         "Adres yönetimi."
@@ -3954,8 +3965,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Kullanıcının hesabı, 30 günlük ücretsiz deneme* için ${ BRAND_NAME } Unlimited tarifesine geçirilecek."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Var olan bir ${ BRAND_NAME } kullanıcısını davet edebilir ya da yeni bir kullanıcı oluşturabilirsiniz"
+      "To create a new user, a configured custom domain is required.": [
+        "Yeni bir kullanıcı oluşturmak için yapılandırılmış bir özel etki alanı gereklidir."
       ],
       "You can increase or reduce the storage for this user.": [
         "Bu kullanıcının depolama alanını artırabilir ya da azaltabilirsiniz."
@@ -4043,6 +4054,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Tüm aygıtlarınızda çevrimiçi hesaplarınız için güvenli oturum açma bilgileri oluşturun."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
@@ -5232,10 +5246,10 @@
         "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
+        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Tarifenizi düşürdüğünüzde aşağıdaki avantajları kaybedeceksiniz. İlerlemek istediğinize emin misiniz?"
+        "Tarifenizi düşürdüğünüzde aşağıdaki ek faydaları kaybedeceksiniz. İlerlemek istediğinize emin misiniz?"
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
@@ -5503,6 +5517,9 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için bir ${ BRAND_NAME } adresi edinin."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresimi al"
       ],
@@ -5726,6 +5743,9 @@
       ],
       "Loading...": [
         "Yükleniyor..."
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Günlük kayıtlarında, ${ BRAND_NAME_TWO } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetlerinin kimlik doğrulama girişimleri bulunur."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
@@ -6227,7 +6247,7 @@
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı avantajlarını kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
+        "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı ek faydalarını kaybedeceksiniz. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Bu işlem, kuruluşunuz için bir şifreleme anahtarı oluşturur. 4096 bit anahtarlar yalnızca yüksek başarımlı bilgisayarlarda çalışır. Çoğu kullanıcı için 2048 bit anahtarları kullanmanızı öneririz."
@@ -6258,6 +6278,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızın kapatılmasını ve 2 aşamalı kimlik doğrulamasının devre dışı bırakılmasını sağlar."
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) açar. ${ BRAND_NAME_TWO } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı açmanızı öneririz."
       ],
       "To ${ planName }": [
         "${ planName } tarifesine"
@@ -6501,6 +6524,9 @@
       ],
       "Why?": [
         "Neden?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilirsiniz"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
@@ -8584,6 +8610,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Ücretsiz ${ BRAND_NAME } edinin"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "${ mostPopularShortPlan.title } tarifesini edinin"
+      ],
       "Get ${ planName }": [
         "${ planName } alın"
       ],
@@ -9009,16 +9038,19 @@
         "Gelecek nesil parola yönetimi ve kimlik koruması için."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Hesabınızı silerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
+        "Hesabınızı silerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Hesap tarifenizi düşürürseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeniden abone olamazsınız."
+        "Hesap tarifenizi düşürürseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra yeniden abone olamazsınız."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
+        "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
+      ],
+      "Most popular": [
+        "En beğenilen"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve avantajlar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+        "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
       ],
       "Popular": [
         "Beğenilen"
@@ -9209,6 +9241,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME_TWO } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -11553,12 +11588,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
-      ],
-      "Organization": [
-        "Kuruluş"
-      ],
-      "Organization and keys": [
-        "Kuruluş ve anahtarlar"
       ],
       "Organization name": [
         "Kuruluş adı"

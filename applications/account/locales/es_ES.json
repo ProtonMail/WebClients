@@ -1023,11 +1023,17 @@
       "Disable encryption": [
         "Deshabilitar el cifrado"
       ],
+      "Disable expect signed": [
+        "Desactivar la espera de firma"
+      ],
       "Enable": [
         "Habilitar"
       ],
       "Enable encryption": [
         "Habilitar el cifrado"
+      ],
+      "Enable expect signed": [
+        "Activar la espera de firma"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -1056,7 +1062,7 @@
         "Claves faltantes"
       ],
       "No E2EE": [
-        "Sin E2EE"
+        "Sin cifrado de extremo a extremo"
       ],
       "No signing": [
         "Sin firma"
@@ -3750,6 +3756,11 @@
         "Obtén ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Los beneficios de tu cuenta"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "El espacio de almacenamiento se reparte entre los miembros de la familia en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
@@ -3774,8 +3785,8 @@
       "Keep current plan": [
         "Mantener el plan actual"
       ],
-      "Setup family group": [
-        "Configuración de grupo familiar"
+      "Set up family group": [
+        "Configurar el grupo familiar"
       ],
       "Switch plans": [
         "Cambiar de plan"
@@ -3791,6 +3802,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Gestor de contraseñas"
+      ],
       "Premium Drive": [
         "Drive prémium"
       ],
@@ -3836,6 +3850,9 @@
       ],
       "Leave family plan": [
         "Abandonar plan familiar"
+      ],
+      "Leave visionary plan": [
+        "Abandonar el plan Visionary"
       ],
       "Manage addresses.": [
         "Gestiona las direcciones."
@@ -3948,8 +3965,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Se moverá la cuenta del usuario a un plan Unlimited de ${ BRAND_NAME } que podrá disfrutar a modo de prueba gratuita durante 30 días*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Puedes invitar a un usuario de ${ BRAND_NAME } ya existente o crear un nuevo usuario"
+      "To create a new user, a configured custom domain is required.": [
+        "Se necesita un dominio personalizado configurado para crear un usuario nuevo."
       ],
       "You can increase or reduce the storage for this user.": [
         "Puedes aumentar o reducir el espacio de almacenamiento de este usuario."
@@ -4037,6 +4054,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Crea detalles de inicio de sesión seguros para tus cuentas en línea en todos tus dispositivos."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Incluye 2700 servidores en más de 65 países. Conecta hasta 10 dispositivos, accede a servicios de streaming de todo el mundo, dispón de la protección de bloqueadores de malware y anuncios, etc."
       ],
@@ -5497,6 +5517,9 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Consigue una dirección ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Obtener mi dirección ${ BRAND_NAME }"
       ],
@@ -5720,6 +5743,9 @@
       ],
       "Loading...": [
         "Cargando..."
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Los registros incluyen los intentos de autenticación para todos los servicios de ${ BRAND_NAME } que usan tus credenciales de ${ BRAND_NAME_TWO }."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
@@ -6253,6 +6279,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Esto cerrará cualquier sesión activa y deshabilitará la autenticación de dos factores."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Este asistente habilitará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos habilitarla."
+      ],
       "To ${ planName }": [
         "Para ${ planName }"
       ],
@@ -6495,6 +6524,9 @@
       ],
       "Why?": [
         "¿Por qué?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME_TWO }."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrás crear nuevos usuarios, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
@@ -8578,6 +8610,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Obtén ${ BRAND_NAME } gratis"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Obtener ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Obtén ${ planName }"
       ],
@@ -9011,6 +9046,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si te cambias de plan, perderás todas las ventajas del plan ${ visionary } y no podrás volver al plan ${ visionary }."
       ],
+      "Most popular": [
+        "Más popular"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
@@ -9203,6 +9241,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Los días laborables recibirás la ayuda del equipo de atención al cliente de ${ BRAND_NAME } en un plazo máximo de 24 horas desde la solicitud."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Cada conexión VPN permite que un solo dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento. Por ejemplo, para conectar un teléfono y un portátil a ${ BRAND_NAME_TWO } VPN a la vez, necesitas dos conexiones VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
@@ -11547,12 +11588,6 @@
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
-      ],
-      "Organization": [
-        "Organización"
-      ],
-      "Organization and keys": [
-        "Organización y claves"
       ],
       "Organization name": [
         "Nombre de la organización"

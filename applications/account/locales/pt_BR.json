@@ -1056,7 +1056,7 @@
         "Chaves ausentes"
       ],
       "No E2EE": [
-        "Sem E2EE"
+        "Sem criptografia de ponta a ponta"
       ],
       "Orphan": [
         "Órfão"
@@ -3747,6 +3747,11 @@
         "Obter ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Benefícios para suas conta"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "O espaço de armazenamento é compartilhado entre familiares no ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
@@ -3771,7 +3776,7 @@
       "Keep current plan": [
         "Manter o plano atual"
       ],
-      "Setup family group": [
+      "Set up family group": [
         "Configurar grupo familiar"
       ],
       "Switch plans": [
@@ -3788,6 +3793,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Gerenciador de senhas"
+      ],
       "Premium Drive": [
         "Drive premium"
       ],
@@ -3833,6 +3841,9 @@
       ],
       "Leave family plan": [
         "Sair do plano familiar"
+      ],
+      "Leave visionary plan": [
+        "Sair do plano visionário"
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -3945,8 +3956,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "A conta do usuário será transferida para um plano ${ BRAND_NAME } Unlimited por um período de avaliação gratuita de 30 dias*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Você convidar um usuário existente ${ BRAND_NAME } ou criar um novo usuário"
+      "To create a new user, a configured custom domain is required.": [
+        "Para criar um novo usuário, é necessário um domínio personalizado configurado."
       ],
       "You can increase or reduce the storage for this user.": [
         "Você pode aumentar ou reduzir o armazenamento para este usuário."
@@ -4034,6 +4045,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Crie detalhes de login seguros para suas contas on-line, em todos os seus dispositivos."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui 2.700 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
@@ -5800,7 +5814,7 @@
         "de"
       ],
       "old password": [
-        "senha antig"
+        "senha antiga"
       ],
       "Once you reset your password:": [
         "Depois de redefinir sua senha:"
@@ -6492,6 +6506,9 @@
       ],
       "Why?": [
         "Por quê?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Com um endereço ${ BRAND_NAME } criptografado, você pode usar todos os serviços ${ BRAND_NAME_TWO }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar as contas de usuário que não são privadas."
@@ -8926,10 +8943,10 @@
         "Gerenciamento de sessões de usuário"
       ],
       "Vault and Item sharing": [
-        "Cofre e compartilhamento de Itens"
+        "Cofre e compartilhamento de itens"
       ],
       "Vault and Item sharing (coming soon)": [
-        "Cofre e compartilhamento de Itens (em breve)"
+        "Cofre e compartilhamento de itens (em breve)"
       ]
     },
     "new_plans: feature info": {
@@ -9007,6 +9024,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se mudar para um plano diferente, você perderá todos os benefícios do plano ${ visionary } e não poderá voltar para o ${ visionary }."
+      ],
+      "Most popular": [
+        "Mais popular"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois é um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
@@ -11547,12 +11567,6 @@
       ],
       "OpenVPN configuration files": [
         "Arquivos de configuração OpenVPN"
-      ],
-      "Organization": [
-        "Organização"
-      ],
-      "Organization and keys": [
-        "Organização e chaves"
       ],
       "Organization name": [
         "Nome da organização"
