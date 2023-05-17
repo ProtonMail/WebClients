@@ -1020,8 +1020,20 @@
       "Disable": [
         "Désactiver"
       ],
+      "Disable encryption": [
+        "Désactiver le chiffrement"
+      ],
+      "Disable expect signed": [
+        "Désactiver l'attente de la signature"
+      ],
       "Enable": [
         "Activer"
+      ],
+      "Enable encryption": [
+        "Activer le chiffrement"
+      ],
+      "Enable expect signed": [
+        "Activer l'attente de la signature"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -1048,6 +1060,12 @@
       ],
       "Missing keys": [
         "Clés manquantes"
+      ],
+      "No E2EE": [
+        "Pas de chiffrement de bout en bout"
+      ],
+      "No signing": [
+        "Pas de signature"
       ],
       "Orphan": [
         "Orpheline"
@@ -2687,7 +2705,7 @@
         "Recevez jusqu'à ${ credits } de crédits en invitant vos amis à rejoindre ${ BRAND_NAME }."
       ],
       "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Si vous ne voulez plus promouvoir notre mission, vous pouvez changer d'abonnement et accéder à plus de fonctionnalités premium."
+        "Pour supprimer le pied de page Proton Mail ou le remplacer par un pied de page personnalisé, passez à l'abonnement supérieur qui offre de nombreuses fonctionnalités supplémentaires."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
@@ -2776,7 +2794,7 @@
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
       "Missing feature(s)": [
-        "Fonctionnalité manquante"
+        "Fonctionnalités manquantes"
       ],
       "My reason isn't listed, please comment": [
         "Raison non proposée ici, pouvez-vous préciser"
@@ -3017,7 +3035,7 @@
         "Expiré"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Impossible d'obtenir les sessions actives. Nous vous invitons à ${ refresh } ou à réessayer plus tard."
+        "Les sessions actives n'ont pas pu être obtenues. Nous vous invitons à ${ refresh } ou à réessayer plus tard."
       ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
@@ -3607,7 +3625,7 @@
         "connecter"
       ],
       "There was a problem unsubscribing you.": [
-        "Un problème est survenu lors de votre désinscription."
+        "Un problème est survenu pendant votre désinscription."
       ]
     },
     "Error notification": {
@@ -3738,6 +3756,11 @@
         "Obtenir ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Les avantages de votre compte"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "L'espace de stockage est partagé entre les membres de la famille et entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -3757,12 +3780,12 @@
         "Inviter un utilisateur ${ BRAND_NAME } déjà existant"
       ],
       "Invite member to your family": [
-        "Invitez des membres dans votre famille"
+        "Inviter un membre de votre famille"
       ],
       "Keep current plan": [
         "Garder l'abonnement actuel"
       ],
-      "Setup family group": [
+      "Set up family group": [
         "Configurer le groupe familial"
       ],
       "Switch plans": [
@@ -3779,6 +3802,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Gestionnaire de mots de passe"
+      ],
       "Premium Drive": [
         "Drive version premium"
       ],
@@ -3824,6 +3850,9 @@
       ],
       "Leave family plan": [
         "Quitter l'abonnement familial"
+      ],
+      "Leave visionary plan": [
+        "Quitter l'abonnement Visionary"
       ],
       "Manage addresses.": [
         "Gérer les adresses"
@@ -3936,8 +3965,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Le compte de l'utilisateur sera transféré vers l'abonnement ${ BRAND_NAME } Unlimited pour un essai gratuit de 30 jours*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Vous pouvez inviter un utilisateur ${ BRAND_NAME } existant ou créer un nouvel utilisateur."
+      "To create a new user, a configured custom domain is required.": [
+        "Pour créer un nouvel utilisateur, vous devez configurer un domaine personnalisé."
       ],
       "You can increase or reduce the storage for this user.": [
         "Vous pouvez augmenter ou réduire l'espace de stockage de cet utilisateur."
@@ -4025,6 +4054,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Créez des identifiants de connexion sécurisés pour vos comptes en ligne, sur tous vos appareils."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
@@ -4377,7 +4409,7 @@
         "État"
       ],
       "Subscribed": [
-        "Abonnement"
+        "Abonné"
       ],
       "Time": [
         "Date et heure"
@@ -4473,8 +4505,8 @@
         "${ totalImported }/${ totalToImport } événements ont été chiffrés et ajoutés à votre calendrier."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
+        "Une erreur s'est produite pendant le chiffrement et l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
+        "Une erreur s'est produite pendant le chiffrement et l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé."
@@ -5088,7 +5120,7 @@
         "et"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Toute méthode ${ twoFa } sur vote compte sera désactivée."
+        "Toute méthode d'${ twoFa } sur vote compte sera désactivée."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Toute personne ayant ce lien peut voir toutes les informations des événements de ce calendrier, comme le titre, le lieu ou les participants."
@@ -5112,7 +5144,7 @@
         "Voulez-vous vraiment supprimer ce calendrier ? Tous les événements qu'il contient seront également supprimés."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Voulez-vous vraiment supprimer ce calendrier des jours fériés ? Vous pourrez l'ajouter à nouveau plus tard."
+        "Voulez-vous vraiment supprimer ce calendrier de jours fériés ? Vous pourrez l'ajouter à nouveau plus tard."
       ],
       "Are you sure you want to delete this domain?": [
         "Voulez-vous vraiment supprimer ce domaine ?"
@@ -5485,6 +5517,9 @@
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Obtenir mon adresse ${ BRAND_NAME }"
       ],
@@ -5709,6 +5744,9 @@
       "Loading...": [
         "Chargement en cours"
       ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Les journaux incluent les tentatives d’authentification à tous les services ${ BRAND_NAME } qui utilisent vos identifiants ${ BRAND_NAME_TWO }."
+      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
@@ -5794,7 +5832,7 @@
         "ancien mot de passe"
       ],
       "Once you reset your password:": [
-        "Une fois votre mot de passe réinitialisé :"
+        "Une fois votre mot de passe réinitialisé :"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Un seul compte. Tous les services ${ BRAND_NAME }."
@@ -6241,6 +6279,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Cela vous déconnectera de toutes les sessions actives et désactivera l'authentification à deux facteurs."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Cet assistant permet d'activer l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Cela renforce la sécurité de votre compte ${ BRAND_NAME_TWO }, c'est pourquoi nous vous recommandons de l'activer."
+      ],
       "To ${ planName }": [
         "À : ${ planName }"
       ],
@@ -6323,7 +6364,7 @@
         "Avec l'option deux mots de passe, vous utilisez un mot de passe pour vous connecter à votre compte et un autre mot de passe pour déchiffrer votre messagerie. Cela représente une petite sécurité supplémentaire dans certains cas, mais nous recommandons d'utiliser un seul mot de passe, cela convient pour la majorité des utilisateurs. Pour utiliser deux mots de passe, définissez d'abord un mot de passe de connexion à votre compte, puis choisissez un mot de passe pour votre messagerie."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Impossible de vérifier la signature du fichier de récupération. Nous vous invitons à contacter le support."
+        "La signature du fichier de récupération ne peut pas être vérifiée. Nous vous invitons à contacter le support."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -6476,13 +6517,16 @@
         "Quand les personnes que vous avez parrainées souscrivent à un abonnement, vous gagnez des crédits à utiliser pour votre abonnement."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+        "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, nous utiliserons tous vos crédits disponibles avant de débiter vos moyens de paiement ci-dessus."
       ],
       "Why?": [
         "Pourquoi ?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME_TWO }."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
@@ -8566,6 +8610,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Obtenir gratuitement ${ BRAND_NAME }"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Obtenir ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Obtenir ${ planName }"
       ],
@@ -8999,6 +9046,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si vous changez d'abonnement, vous perdrez tous les avantages de l'abonnement ${ visionary } et ne serez plus en mesure de revenir à l'abonnement ${ visionary }."
       ],
+      "Most popular": [
+        "Le plus populaire"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
       ],
@@ -9191,6 +9241,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Une connexion VPN permet à un seul appareil de se connecter à ${ BRAND_NAME } VPN. Pour connecter en même temps un téléphone et un ordinateur portable à ${ BRAND_NAME_TWO } VPN par exemple, vous avez besoin de deux connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
@@ -10861,6 +10914,9 @@
       "Filter removed": [
         "Le filtre a été supprimé."
       ],
+      "Preference updated": [
+        "La préférence a été mise à jour."
+      ],
       "Status updated": [
         "Le statut a été mis à jour."
       ]
@@ -11192,7 +11248,7 @@
         "Continuer l'importation partielle ?"
       ],
       "Couldn’t create accounts": [
-        "Impossible de créer des comptes"
+        "Les comptes n'ont pas pu être créés."
       ],
       "Create ${ selectedUserIds.length } user": [
         "Créer ${ selectedUserIds.length } utilisateur",
@@ -11532,12 +11588,6 @@
       ],
       "OpenVPN configuration files": [
         "Fichiers de configuration OpenVPN"
-      ],
-      "Organization": [
-        "Organisation"
-      ],
-      "Organization and keys": [
-        "Organisation et clés"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -11963,7 +12013,7 @@
         "Personnalisez l'importation pour réduire le nombre de labels."
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Supprimez vos messages dans les dossiers Corbeille et Indésirables/spam après 30 jours. L'activation de cette fonction permet de supprimer automatiquement les messages se trouvant déjà dans les dossiers Corbeille et Indésirables/spam en fonction de la date à laquelle ils y ont été déplacés."
+        "Supprimez les messages dans vos dossiers Corbeille et Indésirables/spam après 30 jours. Activer la suppression automatique détermine une date de suppression pour les messages qui sont déjà dans ces deux dossiers, en fonction de la date à laquelle ils y ont été placés."
       ],
       "Each imported email will have this label": [
         "Chaque message importé aura ce label."
