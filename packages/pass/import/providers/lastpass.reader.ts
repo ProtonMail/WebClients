@@ -64,7 +64,7 @@ const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
 
 export const readLastPassData = async (data: string): Promise<ImportPayload> => {
     try {
-        const lastPassItems = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS);
+        const lastPassItems = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS, true);
 
         const groupedByVault = groupWith<LastPassItem>(
             (a, b) => a.grouping === b.grouping,
