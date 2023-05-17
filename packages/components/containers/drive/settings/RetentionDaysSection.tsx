@@ -25,16 +25,12 @@ const RetentionDaysSection = () => {
         label: string;
         disabled?: boolean;
     }[] = [
-        {
-            value: 0,
-            label: c('Label').t`Don't keep versions`,
-            disabled: !hasPaidDrive,
-        },
+        { value: 0, label: c('Label').t`Don't keep versions` },
         { value: 7, label: getRetentionLabel(7) },
-        { value: 30, label: getRetentionLabel(30), disabled: !hasPaidDrive },
-        { value: 180, label: getRetentionLabel(180), disabled: !hasPaidDrive },
-        { value: 365, label: getRetentionLabel(365), disabled: !hasPaidDrive },
-        { value: 3650, label: getRetentionLabel(3650), disabled: !hasPaidDrive },
+        { value: 30, label: getRetentionLabel(30) },
+        { value: 180, label: getRetentionLabel(180) },
+        { value: 365, label: getRetentionLabel(365) },
+        { value: 3650, label: getRetentionLabel(3650) },
     ];
 
     return (
@@ -50,7 +46,9 @@ const RetentionDaysSection = () => {
                         onChange: () => handleChange(option.value),
                         id: `retention${id}`,
                         name: 'retention',
-                        disabled: isLoading || isSubmitLoading || option.disabled,
+                        // If free user revisionRetentionDays will be the default and only available value
+                        disabled:
+                            isLoading || isSubmitLoading || (option.value !== revisionRetentionDays && !hasPaidDrive),
                         checked: !isLoading && revisionRetentionDays === option.value,
                         className: clsx(
                             'w100 flex flex-nowrap border rounded p-3',
@@ -58,7 +56,7 @@ const RetentionDaysSection = () => {
                         ),
                     };
 
-                    if (option.value !== 7 && !hasPaidDrive) {
+                    if (option.value !== revisionRetentionDays && !hasPaidDrive) {
                         return (
                             <Tooltip key={id} title={c('Info').t`Upgrade to unlock`} originalPlacement="right">
                                 <div className="w100">
