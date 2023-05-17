@@ -29,9 +29,7 @@ export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFol
             isActive={path === url}
             onDoubleClick={() => toggleExpand(linkId)}
         >
-            <span className="text-ellipsis" title={c('Title').t`My files`}>
-                {c('Title').t`My files`}
-            </span>
+            <span className="text-ellipsis">{c('Title').t`My files`}</span>
             {isLoading ? (
                 <Loader className="drive-sidebar--icon inline-flex" />
             ) : (
