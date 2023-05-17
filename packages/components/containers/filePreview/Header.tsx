@@ -3,9 +3,8 @@ import { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { useLoading } from '../../';
+import { TimeIntl, useLoading } from '../../';
 import { FileIcon, FileNameDisplay, Icon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
@@ -28,7 +27,7 @@ interface Props {
     onDetail?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
-    date?: number | Date;
+    date?: Date | string | number;
     children?: ReactNode;
 }
 
@@ -76,15 +75,18 @@ const Header = ({
                 {signatureStatus}
             </div>
             {date && (
-                <time className="flex-item-fluid text-ellipsis ml-5">
-                    {new Intl.DateTimeFormat(dateLocale.code, {
+                <TimeIntl
+                    className="flex-item-fluid text-ellipsis ml-5"
+                    options={{
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric',
                         hour: 'numeric',
                         minute: 'numeric',
-                    }).format(date)}
-                </time>
+                    }}
+                >
+                    {date}
+                </TimeIntl>
             )}
             {children}
             <div className="flex flex-align-items-center mt-2 ml-auto sm:m-0">
