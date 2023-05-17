@@ -57,6 +57,9 @@
       "Add phone number": [
         "電話番号を追加"
       ],
+      "Add public holidays": [
+        "祝日を追加"
+      ],
       "Add to group": [
         "グループに追加"
       ],
@@ -2408,6 +2411,9 @@
       "Validation error": [
         "検証エラー"
       ],
+      "You already added this holidays calendar": [
+        "この祝日カレンダーはすでに追加されています"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
       ],
@@ -4465,11 +4471,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "祝日を追加"
+      ],
       "Cannot add more calendars": [
         "カレンダーをこれ以上追加できません"
       ],
       "Edit calendar": [
         "カレンダーの編集"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "国の公式な祝日カレンダーを取得。"
       ],
       "How to import calendars from another service": [
         "その他のサービスからカレンダーをインポートする方法"
@@ -4663,6 +4675,11 @@
       ],
       "Contact group updated": [
         "連絡先グループが更新されました"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "カレンダーを追加しました"
       ]
     },
     "Notification in share calendar modal": {
@@ -4969,6 +4986,9 @@
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
       ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
       "Search for group name": [
         "グループ名で検索"
       ],
@@ -5060,6 +5080,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "スペルを確認するか、一覧から国を選択してください。"
+      ],
       "No results found": [
         "該当する結果が見つかりませんでした"
       ]
@@ -5358,11 +5381,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "あなたの国の祝日をカレンダーに追加します。"
+      ],
       "Get up to ${ credits } in credits.": [
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
+      ],
+      "Public holidays are here!": [
+        "祝日はこちらです！"
       ]
     },
     "Storage": {
@@ -5379,6 +5408,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "カレンダーのURL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「その他のカレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

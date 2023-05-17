@@ -3782,6 +3782,11 @@
         "Wybierz plan ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Twoje bonusy konta"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Przestrzeń dyskowa jest dzielona pośród użytkowników rodzinnych pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
@@ -3806,7 +3811,7 @@
       "Keep current plan": [
         "Zachowaj obecny plan"
       ],
-      "Setup family group": [
+      "Set up family group": [
         "Skonfiguruj grupę rodzinną"
       ],
       "Switch plans": [
@@ -3823,6 +3828,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Menadżer haseł"
+      ],
       "Premium Drive": [
         "Usługa Drive w wersji premium"
       ],
@@ -3868,6 +3876,9 @@
       ],
       "Leave family plan": [
         "Opuść plan rodzinny"
+      ],
+      "Leave visionary plan": [
+        "Opuść plan Visionary"
       ],
       "Manage addresses.": [
         "Zarządzaj adresami."
@@ -3980,8 +3991,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Możesz zaprosić istniejącego użytkownika ${ BRAND_NAME } lub utworzyć nowego"
+      "To create a new user, a configured custom domain is required.": [
+        "Aby utworzyć użytkownika, skonfiguruj niestandardową domenę."
       ],
       "You can increase or reduce the storage for this user.": [
         "Możesz zwiększyć lub zmniejszyć przestrzeń dyskową tego użytkownika."
@@ -4069,6 +4080,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Twórz bezpieczne dane logowania dla kont online, na wszystkich urządzeniach."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
@@ -8756,6 +8770,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Uzyskaj ${ BRAND_NAME } za darmo"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Wybierz plan ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Wybierz plan ${ planName }"
       ],
@@ -9226,6 +9243,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Jeśli zmienisz plan, stracisz wszystkie zalety planu ${ visionary }, a ponowny powrót do tego planu nie będzie możliwy."
+      ],
+      "Most popular": [
+        "Najpopularniejszy"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i zalety."
@@ -11851,12 +11871,6 @@
       ],
       "OpenVPN configuration files": [
         "Pliki konfiguracyjne OpenVPN"
-      ],
-      "Organization": [
-        "Organizacja"
-      ],
-      "Organization and keys": [
-        "Organizacja i klucze"
       ],
       "Organization name": [
         "Nazwa organizacji"

@@ -170,6 +170,9 @@
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
       ],
+      "Choose my own password": [
+        "Scegliere la mia password"
+      ],
       "Claim it": [
         "Richiedilo"
       ],
@@ -268,6 +271,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete and confirm": [
+        "Conferma ed elimina"
       ],
       "Delete link": [
         "Elimina collegamento"
@@ -424,6 +430,12 @@
       ],
       "Get more filters": [
         "Approfitta di più filtri"
+      ],
+      "Get more folders": [
+        "Approfitta di più cartelle"
+      ],
+      "Get more labels": [
+        "Approfitta di più etichette"
       ],
       "Get the deal": [
         "Approfitta dell'offerta"
@@ -1005,8 +1017,14 @@
       "Disable": [
         "Disabilita"
       ],
+      "Disable encryption": [
+        "Disattiva la crittografia"
+      ],
       "Enable": [
         "Abilita"
+      ],
+      "Enable encryption": [
+        "Attiva la crittografia"
       ],
       "Generate missing keys": [
         "Genera chiavi mancanti"
@@ -2648,6 +2666,9 @@
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Tutti gli eventi in questo calendario verranno eliminati."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Non avrai più accesso a questo calendario."
       ]
     },
     "Delinquent modal title": {
@@ -3544,6 +3565,9 @@
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Troppe sessioni per bambini, sei pregato di cancellare i tuoi cookie e accedere nuovamente."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
       ]
     },
     "Error message, recovery": {
@@ -3702,6 +3726,11 @@
         "Scegli ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "I vantaggi del tuo account"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio di archiviazione è condiviso tra i membri della famiglia su ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
@@ -3726,7 +3755,7 @@
       "Keep current plan": [
         "Mantieni il piano attuale"
       ],
-      "Setup family group": [
+      "Set up family group": [
         "Configura il gruppo familiare"
       ],
       "Switch plans": [
@@ -3743,6 +3772,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Password manager"
+      ],
       "Premium Drive": [
         "Drive premium"
       ],
@@ -3788,6 +3820,9 @@
       ],
       "Leave family plan": [
         "Abbandona il piano famiglia"
+      ],
+      "Leave visionary plan": [
+        "Lascia il piano Visionary"
       ],
       "Manage addresses.": [
         "Gestisci gli indirizzi."
@@ -3900,8 +3935,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "L'account dell'utente verrà trasferito su un piano ${ BRAND_NAME } Unlimited per una prova gratuita di 30 giorni.*"
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Puoi invitare un utente ${ BRAND_NAME } esistente o creare un nuovo utente"
+      "To create a new user, a configured custom domain is required.": [
+        "Per creare un nuovo utente, è necessario un dominio personalizzato."
       ],
       "You can increase or reduce the storage for this user.": [
         "Puoi aumentare o ridurre lo spazio di archiviazione di questo utente."
@@ -3989,6 +4024,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Crea dei dettagli di login sicuri per i tuoi account online, su tutti i tuoi dispositivi."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
       ],
@@ -4295,6 +4333,9 @@
       "Best deal": [
         "Miglior offerta"
       ],
+      "Enter your email address": [
+        "Inserisci il tuo indirizzo email"
+      ],
       "Event": [
         "Evento"
       ],
@@ -4327,6 +4368,9 @@
       ],
       "Select your preferred method of payment": [
         "Seleziona il metodo di pagamento che preferisci."
+      ],
+      "Select your pricing plan": [
+        "Seleziona il tuo piano tariffario."
       ],
       "Status": [
         "Stato"
@@ -5138,6 +5182,9 @@
       "Billed every 30 months": [
         "Fatturazione ogni 30 mesi"
       ],
+      "Billed every month": [
+        "Fatturazione ogni mese"
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
@@ -5179,6 +5226,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuando, il tuo Account ${ BRAND_NAME } verrà connesso a ${ name }."
+      ],
+      "Copy the suggested password to clipboard": [
+        "Copia la password suggerita negli appunti"
       ],
       "Copy your referral link": [
         "Copia il tuo referral link"
@@ -5915,6 +5965,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Salva la password in un posto sicuro. Fai clic sull'icona per confermare di aver digitato correttamente la password."
+      ],
+      "Saving your password": [
+        "Salva la tua password"
       ],
       "Scan QR code instead": [
         "Oppure scansiona il codice QR"
@@ -7103,6 +7156,9 @@
       "Auto show remote images": [
         "Mostra automaticamente le immagini remote"
       ],
+      "Auto-delete unwanted messages": [
+        "Elimina automaticamente i messaggi non desiderati"
+      ],
       "Auto-detect primary time zone": [
         "Rilevamento automatico del fuso orario primario"
       ],
@@ -7306,6 +7362,9 @@
       ],
       "Don't ask again": [
         "Non chiederlo più"
+      ],
+      "Don't keep versions": [
+        "Non conservare le versioni"
       ],
       "Duration": [
         "Durata"
@@ -8559,6 +8618,9 @@
       "Auto-reply": [
         "Risposta automatica"
       ],
+      "Available on all platforms": [
+        "Disponibile su tutte le piattaforme"
+      ],
       "Calendar sharing": [
         "Condivisione del calendario"
       ],
@@ -8615,6 +8677,9 @@
       ],
       "Hide My Email aliases": [
         "Alias Hide My Email"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "VPN Svizzera ad alta velocità che protegge la tua privacy."
       ],
       "High-speed VPN on ${ n } device": [
         "VPN ad alta velocità su ${ n } dispositivo",
@@ -8679,6 +8744,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
+      ],
+      "Strong E2E encryption": [
+        "Crittografia E2E forte"
       ],
       "Team management": [
         "Gestione del team"
@@ -9952,6 +10020,9 @@
       ]
     },
     "Signup label": {
+      "Confirm email address": [
+        "Conferma l'indirizzo e-mail"
+      ],
       "Display name": [
         "Nome visualizzato"
       ],
@@ -10634,6 +10705,9 @@
       "Filter removed": [
         "Filtro rimosso"
       ],
+      "Preference updated": [
+        "Preferenza aggiornata"
+      ],
       "Status updated": [
         "Stato aggiornato"
       ]
@@ -11303,12 +11377,6 @@
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
       ],
-      "Organization": [
-        "Organizzazione"
-      ],
-      "Organization and keys": [
-        "Organizzazione e chiavi"
-      ],
       "Organization name": [
         "Nome dell'organizzazione"
       ],
@@ -11405,6 +11473,9 @@
       "Save contact details": [
         "Salva dettagli contatto"
       ],
+      "Save time with email filters": [
+        "Risparmia tempo con i filtri per email."
+      ],
       "Secure email based in Switzerland": [
         "Email sicura con sede in Svizzera"
       ],
@@ -11455,6 +11526,9 @@
       ],
       "Set up two-factor authentication": [
         "Abilita l'autenticazione in due fattori"
+      ],
+      "Set your password": [
+        "Scegli la tua password"
       ],
       "Settings": [
         "Impostazioni"

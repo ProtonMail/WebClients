@@ -3788,6 +3788,11 @@
         "Перейти на тариф ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Бонусы вашего аккаунта"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } доступно всем членам семьи."
@@ -3812,8 +3817,8 @@
       "Keep current plan": [
         "Остаться на текущем тарифе"
       ],
-      "Setup family group": [
-        "Создайте семейную группу"
+      "Set up family group": [
+        "Настроить семейную группу"
       ],
       "Switch plans": [
         "Сменить тариф"
@@ -3829,6 +3834,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Password manager": [
+        "Менеджер паролей"
+      ],
       "Premium Drive": [
         "Платная версия Drive"
       ],
@@ -3874,6 +3882,9 @@
       ],
       "Leave family plan": [
         "Отключиться от семейного тарифа"
+      ],
+      "Leave visionary plan": [
+        "Покинуть тариф Visionary"
       ],
       "Manage addresses.": [
         "Управляйте адресами."
@@ -3986,8 +3997,8 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
       ],
-      "You can either invite an existing ${ BRAND_NAME } user or create a new user": [
-        "Вы можете пригласить уже существующего пользователя ${ BRAND_NAME } или создать новый аккаунт"
+      "To create a new user, a configured custom domain is required.": [
+        "Чтобы создать нового пользователя, необходим настроенный пользовательский домен."
       ],
       "You can increase or reduce the storage for this user.": [
         "Вы можете увеличить или уменьшить объем хранилища, доступный этому пользователю."
@@ -4075,6 +4086,9 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
+      "Create secure login details for your online accounts, on all your devices.": [
+        "Создайте безопасные данные для входа в свои онлайн-аккаунты на всех ваших устройствах."
+      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
       ],
@@ -11833,12 +11847,6 @@
       ],
       "OpenVPN configuration files": [
         "Файлы конфигурации OpenVPN"
-      ],
-      "Organization": [
-        "Организация"
-      ],
-      "Organization and keys": [
-        "Организация и ключи"
       ],
       "Organization name": [
         "Название организации"
