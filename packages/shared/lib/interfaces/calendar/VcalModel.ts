@@ -311,14 +311,21 @@ export type VcalCalendarComponent =
     | VcalXOrIanaComponent
     | VcalVcalendar;
 
-export interface VcalCalendarComponentWithErrors {
+export interface VcalErrorComponent {
     error: Error;
     icalComponent: any;
 }
 
 export interface VcalVcalendar {
     component: string;
-    components?: VcalCalendarComponent[];
+    components?: (
+        | VcalVeventComponent
+        | VcalVtodoComponent
+        | VcalVjournalComponent
+        | VcalVfreebusyComponent
+        | VcalVtimezoneComponent
+        | VcalXOrIanaComponent
+    )[];
     prodid: VcalStringProperty;
     version: VcalStringProperty;
     calscale?: VcalStringProperty;
@@ -338,6 +345,30 @@ export interface VcalVcalendar {
     conference?: VcalURIProperty;
 }
 
-export interface VcalVcalendarWithErrors extends Omit<VcalVcalendar, 'components'> {
-    components?: VcalCalendarComponentWithErrors[];
+export interface VcalVeventComponentWithMaybeErrors extends Omit<VcalVeventComponent, 'components'> {
+    components?: (VcalErrorComponent | VcalValarmComponent)[];
+}
+
+export interface VcalVtodoComponentWithMaybeErrors extends Omit<VcalVtodoComponent, 'components'> {
+    components?: (VcalErrorComponent | VcalValarmComponent)[];
+}
+
+export interface VcalVjournalComponentWithMaybeErrors extends Omit<VcalVjournalComponent, 'components'> {
+    components?: (VcalErrorComponent | VcalValarmComponent)[];
+}
+
+export interface VcalVfreebusyComponentWithMaybeErrors extends Omit<VcalVfreebusyComponent, 'components'> {
+    components?: (VcalErrorComponent | VcalValarmComponent)[];
+}
+
+export type VcalCalendarComponentWithMaybeErrors =
+    | VcalVeventComponentWithMaybeErrors
+    | VcalVtodoComponentWithMaybeErrors
+    | VcalVjournalComponentWithMaybeErrors
+    | VcalVfreebusyComponentWithMaybeErrors
+    | VcalVtimezoneComponent
+    | VcalXOrIanaComponent;
+
+export interface VcalVcalendarWithMaybeErrors extends Omit<VcalVcalendar, 'components'> {
+    components?: (VcalCalendarComponentWithMaybeErrors | VcalErrorComponent)[];
 }

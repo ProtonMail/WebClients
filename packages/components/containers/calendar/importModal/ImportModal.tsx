@@ -152,6 +152,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                             primaryTimezone,
                         })
                     );
+
                     const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
 
                     const totalToImport = parsed.length + hiddenErrors.length;
