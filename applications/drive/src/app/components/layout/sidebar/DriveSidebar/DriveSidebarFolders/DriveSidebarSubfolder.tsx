@@ -42,7 +42,6 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
                 to={`/${shareId}/folder/${folder.link.linkId}`}
                 onClick={handleFolderClick}
                 onDoubleClick={toggleExpand}
-                title={folder.link.name}
             >
                 <SidebarListItemContent>
                     <div
