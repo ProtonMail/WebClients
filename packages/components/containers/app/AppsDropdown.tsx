@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useConfig, useFeature, useUser } from '@proton/components/hooks';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import ProductLink, { apps } from './ProductLink';
@@ -29,38 +30,55 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
                 <Icon name="app-switch" size={24} className="apps-dropdown-button-icon flex-item-noshrink no-print" />
             }
             className="apps-dropdown-button flex-item-noshrink"
-            dropdownClassName="apps-dropdown"
+            dropdownClassName="apps-dropdown rounded-lg"
             originalPlacement="bottom-start"
             title={c('Apps dropdown').t`${BRAND_NAME} applications`}
             onClick={onDropdownClick}
             disableDefaultArrowNavigation
+            contentProps={{
+                className: 'rounded-lg',
+            }}
             {...rest}
             ref={ref}
             as="button"
         >
-            <ul className="unstyled my-0">
-                {apps({ isPassSettingsEnabled }).map((appToLinkTo, i, array) => {
-                    const appToLinkToName = getAppName(appToLinkTo);
+            <ul className="unstyled my-0 p-4">
+                {apps({ isPassSettingsEnabled }).map((appToLinkTo) => {
+                    const appToLinkToName = getAppShortName(appToLinkTo);
+                    const current = app && appToLinkTo === app;
 
                     return (
                         <Fragment key={appToLinkTo}>
-                            <li className="dropdown-item">
+                            <li className="dropdown-item apps-dropdown-item">
                                 <ProductLink
                                     ownerApp={APP_NAME}
                                     app={app}
                                     appToLinkTo={appToLinkTo}
                                     user={user}
-                                    className="dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-5 pl1 pr1-5 color-norm text-no-decoration"
+                                    className="text-center text-no-decoration outline-none--at-all apps-dropdown-link"
                                 >
-                                    <Logo
-                                        appName={appToLinkTo}
-                                        variant="glyph-only"
-                                        className="flex-item-noshrink mr-2"
-                                    />
-                                    {appToLinkToName}
+                                    <div
+                                        className="apps-dropdown-logo-wrapper flex flex-align-items-center flex-justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                                        style={{ '--width-custom': '52px', '--height-custom': '52px' }}
+                                    >
+                                        <Logo
+                                            appName={appToLinkTo}
+                                            variant="glyph-only"
+                                            className="flex-item-noshrink"
+                                            size={36}
+                                        />
+                                    </div>
+                                    <span
+                                        className={clsx(
+                                            'block text-center text-sm mt-1 apps-dropdown-app-name',
+                                            current ? 'color-norm text-semibold' : 'color-weak'
+                                        )}
+                                        aria-hidden
+                                    >
+                                        {appToLinkToName}
+                                    </span>
                                 </ProductLink>
                             </li>
-                            {i !== array.length - 1 && <li className="dropdown-item-hr" aria-hidden="true" />}
                         </Fragment>
                     );
                 })}
