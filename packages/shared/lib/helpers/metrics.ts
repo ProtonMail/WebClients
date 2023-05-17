@@ -1,3 +1,5 @@
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+
 import { metrics } from '../api/metrics';
 import { TelemetryEvents, TelemetryMeasurementGroups, sendTelemetryData } from '../api/telemetry';
 import { METRICS_LOG, SECOND } from '../constants';
@@ -36,24 +38,31 @@ export const sendMetricsReport = async (api: Api, Log: METRICS_LOG, Title?: stri
  * Send a telemetry report (/data/v1/stats endpoint)
  */
 export const sendTelemetryReport = async (
-    api: Api,
+    normalApi: Api,
     measurementGroup: TelemetryMeasurementGroups,
     event: TelemetryEvents,
     values?: SimpleMap<number>,
-    dimensions?: SimpleMap<string>
+    dimensions?: SimpleMap<string>,
+    silence = true
 ) => {
+    const api = silence ? getSilentApi(normalApi) : normalApi;
+
     if (!metricsEnabled) {
         return;
     }
 
-    void api(
-        sendTelemetryData({
-            MeasurementGroup: measurementGroup,
-            Event: event,
-            Values: values || {},
-            Dimensions: dimensions,
-        })
-    );
+    try {
+        void api(
+            sendTelemetryData({
+                MeasurementGroup: measurementGroup,
+                Event: event,
+                Values: values || {},
+                Dimensions: dimensions,
+            })
+        );
+    } catch {
+        // fail silently
+    }
 };
 
 export const setMetricsEnabled = (enabled: boolean) => {
