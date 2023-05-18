@@ -4,13 +4,13 @@ import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-export const getPasswordsAndNotesText = () => {
-    return c('new_plans: feature').t`Unlimited passwords and notes`;
+export const getLoginsAndNotesText = () => {
+    return c('new_plans: feature').t`Unlimited logins and notes`;
 };
 
-export const getPasswordsAndNotes = (): PlanCardFeatureDefinition => {
+export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
-        text: getPasswordsAndNotesText(),
+        text: getLoginsAndNotesText(),
         included: true,
         icon: 'note',
     };
@@ -45,13 +45,6 @@ export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureD
     };
 };
 
-export const getE2Encryption = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('new_plans: feature').t`Strong E2E encryption`,
-        included: true,
-    };
-};
-
 export const get2FAAuthenticatorText = () => {
     return c('new_plans: feature').t`Integrated 2FA authenticator`;
 };
@@ -64,12 +57,9 @@ export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureD
     };
 };
 
-export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
+export const getVaults = (n: number): PlanCardFeatureDefinition => {
     return {
-        text:
-            n === 'unlimited'
-                ? c('new_plans: feature').t`Unlimited vaults`
-                : c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
+        text: c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
         tooltip: c('new_plans: tooltip')
             .t`Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.`,
         included: true,
@@ -77,19 +67,11 @@ export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition =>
     };
 };
 
-export const getCustomDomainForEmailAliases = (included: boolean = false): PlanCardFeatureDefinition => {
-    return {
-        text: c('new_plans: feature').t`Custom domain for email aliases`,
-        included,
-        icon: 'earth',
-    };
-};
-
-export const getForwardingMailboxes = (n: number | 'multiple'): PlanCardFeatureDefinition => {
+export const getForwardingMailboxes = (n: number | 'up to 5'): PlanCardFeatureDefinition => {
     return {
         text:
-            n === 'multiple'
-                ? c('new_plans: feature').t`Multiple forwarding mailboxes`
+            n === 'up to 5'
+                ? c('new_plans: feature').t`Up to 5 forwarding mailboxes`
                 : c('new_plans: feature').ngettext(msgid`${n} forwarding mailbox`, `${n} forwarding mailboxes`, n),
         included: true,
         icon: 'envelope-arrow-up-and-right',
@@ -122,20 +104,22 @@ export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 1;
 export const FREE_FORWARDING_MAILBOXES = 1;
 
+export const PASS_PLUS_VAULTS = 20;
+
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
         {
             name: 'passwords-and-notes',
             plans: {
-                [PLANS.FREE]: getPasswordsAndNotes(),
-                [PLANS.BUNDLE]: getPasswordsAndNotes(),
-                [PLANS.MAIL]: getPasswordsAndNotes(),
-                [PLANS.VPN]: getPasswordsAndNotes(),
-                [PLANS.DRIVE]: getPasswordsAndNotes(),
-                [PLANS.PASS_PLUS]: getPasswordsAndNotes(),
-                [PLANS.FAMILY]: getPasswordsAndNotes(),
-                [PLANS.MAIL_PRO]: getPasswordsAndNotes(),
-                [PLANS.BUNDLE_PRO]: getPasswordsAndNotes(),
+                [PLANS.FREE]: getLoginsAndNotes(),
+                [PLANS.BUNDLE]: getLoginsAndNotes(),
+                [PLANS.MAIL]: getLoginsAndNotes(),
+                [PLANS.VPN]: getLoginsAndNotes(),
+                [PLANS.DRIVE]: getLoginsAndNotes(),
+                [PLANS.PASS_PLUS]: getLoginsAndNotes(),
+                [PLANS.FAMILY]: getLoginsAndNotes(),
+                [PLANS.MAIL_PRO]: getLoginsAndNotes(),
+                [PLANS.BUNDLE_PRO]: getLoginsAndNotes(),
             },
         },
         {
@@ -150,6 +134,20 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDevices(),
                 [PLANS.MAIL_PRO]: getDevices(),
                 [PLANS.BUNDLE_PRO]: getDevices(),
+            },
+        },
+        {
+            name: 'vaults',
+            plans: {
+                [PLANS.FREE]: getVaults(FREE_VAULTS),
+                [PLANS.BUNDLE]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.MAIL]: getVaults(FREE_VAULTS),
+                [PLANS.VPN]: getVaults(FREE_VAULTS),
+                [PLANS.DRIVE]: getVaults(FREE_VAULTS),
+                [PLANS.PASS_PLUS]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.FAMILY]: getVaults(FREE_VAULTS),
+                [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
+                [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
             },
         },
         {
@@ -181,45 +179,17 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             },
         },
         {
-            name: 'vaults',
-            plans: {
-                [PLANS.FREE]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE]: getVaults('unlimited'),
-                [PLANS.MAIL]: getVaults(FREE_VAULTS),
-                [PLANS.VPN]: getVaults(FREE_VAULTS),
-                [PLANS.DRIVE]: getVaults(FREE_VAULTS),
-                [PLANS.PASS_PLUS]: getVaults('unlimited'),
-                [PLANS.FAMILY]: getVaults(FREE_VAULTS),
-                [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE_PRO]: getVaults('unlimited'),
-            },
-        },
-        {
-            name: 'custom-domain-email-aliases',
-            plans: {
-                [PLANS.FREE]: getCustomDomainForEmailAliases(),
-                [PLANS.BUNDLE]: getCustomDomainForEmailAliases(true),
-                [PLANS.MAIL]: getCustomDomainForEmailAliases(),
-                [PLANS.VPN]: getCustomDomainForEmailAliases(),
-                [PLANS.DRIVE]: getCustomDomainForEmailAliases(),
-                [PLANS.PASS_PLUS]: getCustomDomainForEmailAliases(true),
-                [PLANS.FAMILY]: getCustomDomainForEmailAliases(),
-                [PLANS.MAIL_PRO]: getCustomDomainForEmailAliases(),
-                [PLANS.BUNDLE_PRO]: getCustomDomainForEmailAliases(true),
-            },
-        },
-        {
             name: 'forwarding-mailboxes',
             plans: {
                 [PLANS.FREE]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.BUNDLE]: getForwardingMailboxes('multiple'),
+                [PLANS.BUNDLE]: getForwardingMailboxes('up to 5'),
                 [PLANS.MAIL]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
                 [PLANS.VPN]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
                 [PLANS.DRIVE]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.PASS_PLUS]: getForwardingMailboxes('multiple'),
+                [PLANS.PASS_PLUS]: getForwardingMailboxes('up to 5'),
                 [PLANS.FAMILY]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
                 [PLANS.MAIL_PRO]: getForwardingMailboxes(FREE_FORWARDING_MAILBOXES),
-                [PLANS.BUNDLE_PRO]: getForwardingMailboxes('multiple'),
+                [PLANS.BUNDLE_PRO]: getForwardingMailboxes('up to 5'),
             },
         },
         {

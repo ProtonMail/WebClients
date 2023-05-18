@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import {
     get2FAAuthenticatorText,
     getDevicesText,
-    getPasswordsAndNotesText,
+    getLoginsAndNotesText,
     getUnlimitedHideMyEmailAliasesText,
 } from '@proton/components/containers/payments/features/pass';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -200,7 +200,7 @@ export const getWhatsIncluded = ({
         return [
             {
                 type: 'text',
-                text: getPasswordsAndNotesText(),
+                text: getLoginsAndNotesText(),
             },
             {
                 type: 'text',

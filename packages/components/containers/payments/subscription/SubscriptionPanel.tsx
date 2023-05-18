@@ -24,11 +24,13 @@ import percentage from '@proton/utils/percentage';
 import { Icon, Meter, Price, SettingsLink, StripedItem, StripedList } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
 import {
-    getCustomDomainForEmailAliases,
+    FREE_PASS_ALIASES,
+    FREE_VAULTS,
+    PASS_PLUS_VAULTS,
     getDevices,
     getForwardingMailboxes,
     getHideMyEmailAliases,
-    getPasswordsAndNotes,
+    getLoginsAndNotes,
     getVaults,
 } from '../features/pass';
 import {
@@ -224,8 +226,10 @@ const SubscriptionPanel = ({
             //     icon: 'eye-slash',
             //     text: getNumberOfEmailAliases(usedAliases, maxAliases),
             // },
-            getPasswordsAndNotes(),
+            getLoginsAndNotes(),
             getDevices(),
+            getVaults(FREE_VAULTS),
+            getHideMyEmailAliases(FREE_PASS_ALIASES),
         ];
 
         return (
@@ -239,17 +243,9 @@ const SubscriptionPanel = ({
     const getPassAppPassPlus = () => {
         const items: Item[] = [
             getHideMyEmailAliases('unlimited'),
-            {
-                ...getVaults('unlimited'),
-                text: c('new_plans: feature').t`Unlimited vaults`,
-            },
-            {
-                ...getCustomDomainForEmailAliases(true),
-                text: c('new_plans: feature').t`Custom domains for email aliases`,
-            },
-
-            getForwardingMailboxes('multiple'),
-            getPasswordsAndNotes(),
+            getVaults(PASS_PLUS_VAULTS),
+            getForwardingMailboxes('up to 5'),
+            getLoginsAndNotes(),
             getDevices(),
         ];
 
