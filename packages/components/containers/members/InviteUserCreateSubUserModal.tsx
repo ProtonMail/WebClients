@@ -20,6 +20,7 @@ interface Props extends ModalStateProps {
     verifiedDomains: Domain[];
     organizationKey?: CachedOrganizationKey;
     onInviteUser: () => void;
+    familyPlanEnabled: boolean;
 }
 
 interface AddUserButtonProps {
@@ -50,6 +51,7 @@ const InviteUserCreateSubUserModal = ({
     verifiedDomains,
     organizationKey,
     onInviteUser,
+    familyPlanEnabled,
     ...modalState
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -77,8 +79,12 @@ const InviteUserCreateSubUserModal = ({
             <Prompt
                 title={c('familyOffer_2023:Title').t`Add a user to your ${PLAN_NAMES.visionary2022} account`}
                 buttons={[
-                    <Button onClick={handleInviteUser} color="norm">{c('familyOffer_2023:Action')
-                        .t`Invite an existing ${BRAND_NAME} user`}</Button>,
+                    familyPlanEnabled ? (
+                        <Button onClick={handleInviteUser} color="norm">{c('familyOffer_2023:Action')
+                            .t`Invite an existing ${BRAND_NAME} user`}</Button>
+                    ) : (
+                        <></>
+                    ),
                     <AddUserButton handleAddUser={handleAddUser} />,
                     <Button onClick={modalState.onClose} shape="ghost">{c('Action').t`Cancel`}</Button>,
                 ]}
