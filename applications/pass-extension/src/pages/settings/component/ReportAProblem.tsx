@@ -8,7 +8,7 @@ import { Button, Card } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
 import AttachScreenshot, { type Screenshot } from '@proton/components/containers/support/AttachScreenshot';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
-import { reportProblemIntent, selectUser } from '@proton/pass/store';
+import { reportProblemIntent, selectRequestInFlight, selectUser } from '@proton/pass/store';
 import { reportProblem } from '@proton/pass/store/actions/requests';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
@@ -16,15 +16,10 @@ import { type BugPayload } from '@proton/shared/lib/api/reports';
 import { APP_NAME, APP_VERSION, CLIENT_TYPE } from '../../../app/config';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 
-type FormValues = {
-    description: string;
-};
+type FormValues = { description: string };
 
+const INITIAL_VALUES: FormValues = { description: '' };
 const REPORT_TITLE = 'Pass extension bug report';
-
-const INITIAL_VALUES: FormValues = {
-    description: '',
-};
 
 const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     const errors: FormikErrors<FormValues> = {};
@@ -41,7 +36,7 @@ export const ReportAProblem: VFC = () => {
     const user = useSelector(selectUser);
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
-    const [requestInFlight, setRequestInFlight] = useState(false);
+    const requestInFlight = useSelector(selectRequestInFlight(reportProblem));
 
     const form = useFormik<FormValues>({
         initialValues: INITIAL_VALUES,
@@ -71,25 +66,21 @@ export const ReportAProblem: VFC = () => {
         },
     });
 
-    useRequestStatusEffect(reportProblem(), {
-        onStart: () => setRequestInFlight(true),
+    useRequestStatusEffect(reportProblem, {
         onSuccess: () => {
-            setRequestInFlight(false);
             form.resetForm();
             setScreenshots([]);
         },
-        onFailure: () => setRequestInFlight(false),
     });
-
-    const submitDisabled = !form.isValid || uploadingScreenshots || requestInFlight;
 
     return (
         <Card rounded className="mb-4 p-3">
-            <span className="text-bold block">{c('Label').t`Report a problem`}</span>
+            <strong className="color-norm block mb-1">{c('Label').t`Report a problem`}</strong>
+            <em className="block text-sm color-weak mb-2">
+                {c('Warning').t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}{' '}
+            </em>
 
-            <hr className="my-2 border-weak" />
-
-            <p>{c('Warning').t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}</p>
+            <hr className="mt-2 mb-4 border-weak" />
 
             <FormikProvider value={form}>
                 <Form>
@@ -98,25 +89,30 @@ export const ReportAProblem: VFC = () => {
                         id="description"
                         onChange={form.handleChange}
                         placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
-                        rows={5}
+                        autoGrow
+                        minRows={5}
                         value={form.values.description}
+                        disabled={requestInFlight}
                     />
+
                     <AttachScreenshot
-                        className="mb-4"
                         id="attachments"
                         screenshots={screenshots}
                         setScreenshots={setScreenshots}
                         uploading={uploadingScreenshots}
                         setUploading={setUploadingScreenshots}
+                        disabled={uploadingScreenshots || requestInFlight}
                     />
+
                     <Button
-                        className="w100"
+                        className="mt-4 w100"
                         color="norm"
-                        disabled={submitDisabled}
+                        disabled={!form.isValid || uploadingScreenshots}
                         loading={requestInFlight}
                         type="submit"
                     >
-                        {c('Action').t`Submit`}
+                        {requestInFlight && c('Action').t`Submitting report...`}
+                        {!requestInFlight && c('Action').t`Submit`}
                     </Button>
                 </Form>
             </FormikProvider>
