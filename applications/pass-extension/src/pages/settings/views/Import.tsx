@@ -63,6 +63,8 @@ export const Import: VFC = () => {
         },
     });
 
+    const showResultDetails = (result?.ignored.length ?? 0) > 0 || (result?.warnings?.length ?? 0) > 0;
+
     return (
         <>
             <Card rounded className="mb-4 p-3 relative">
@@ -143,18 +145,25 @@ export const Import: VFC = () => {
                             </span>
                         </div>
 
-                        {result.ignored.length > 0 && (
+                        {showResultDetails && (
                             <div className="bg-norm rounded-sm p-3 mt-2">
-                                <span className="mb-2 block">
-                                    {c('Info').ngettext(
-                                        msgid`The following item could not be imported :`,
-                                        `The following ${result.ignored.length} items could not be imported`,
-                                        result.ignored.length
-                                    )}
-                                </span>
+                                {result.ignored.length > 0 && (
+                                    <span className="mb-2 block">
+                                        {c('Info').ngettext(
+                                            msgid`The following item could not be imported :`,
+                                            `The following ${result.ignored.length} items could not be imported`,
+                                            result.ignored.length
+                                        )}
+                                    </span>
+                                )}
                                 <div className="color-weak scroll-if-needed" style={{ maxHeight: 150 }}>
-                                    {result.ignored.map((description, i) => (
-                                        <span className="block" key={i}>
+                                    {result.warnings?.map((warning, idx) => (
+                                        <span className="block" key={`warning-${idx}`}>
+                                            {warning}
+                                        </span>
+                                    ))}
+                                    {result.ignored.map((description, idx) => (
+                                        <span className="block" key={`ignored-${idx}`}>
                                             {description}
                                         </span>
                                     ))}

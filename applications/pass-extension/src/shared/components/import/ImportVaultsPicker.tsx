@@ -21,7 +21,6 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
     ref
 ) => {
     const vaults = useSelector(selectAllVaults);
-
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
             onSubmit({
@@ -29,6 +28,7 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                     .filter((vault) => vault.selected)
                     .map((vault) => omit(vault, ['selected']) as ImportVault),
                 ignored: payload.ignored,
+                warnings: payload.warnings,
             }),
         [onSubmit]
     );

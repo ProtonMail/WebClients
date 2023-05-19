@@ -64,11 +64,12 @@ const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
 
 export const readLastPassData = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
+    const warnings: string[] = [];
 
     try {
         const result = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS, {
             onErrors: (errors) =>
-                ignored.push(
+                warnings.push(
                     `[Warning] ${c('Error')
                         .t`LastPass will export corrupted CSV files if any of your item fields contain unexpected commas, quotes or multiple lines`}`,
                     `[Error] ${c('Error').ngettext(
@@ -110,7 +111,7 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
                 };
             });
 
-        return { vaults, ignored };
+        return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::LastPass]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';

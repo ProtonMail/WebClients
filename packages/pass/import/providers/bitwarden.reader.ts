@@ -106,7 +106,7 @@ export const readBitwardenData = (data: string): ImportPayload => {
             },
         ];
 
-        return { vaults, ignored };
+        return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::Bitwarden]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';
