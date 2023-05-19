@@ -274,7 +274,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                             <Info
                                 className="color-danger"
                                 title={c('familyOffer_2023:Family plan')
-                                    .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`}
+                                    .t`You have reached the limit of 10 accepted invitations in 6 months.`}
                             />
                         ) : (
                             <Info
