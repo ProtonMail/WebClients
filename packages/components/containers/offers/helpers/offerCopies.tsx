@@ -135,11 +135,6 @@ export const getFamilyFeatures = () => [
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
     },
-    {
-        name: c('familyOffer_2023:Deal details').t`Password manager`,
-        tooltip: c('familyOffer_2023:Tooltip')
-            .t`Create secure login details for your online accounts, on all your devices.`,
-    },
 ];
 
 export const getVPNPlusFeatures = () => [
