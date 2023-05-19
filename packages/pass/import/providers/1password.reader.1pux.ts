@@ -1,7 +1,7 @@
 import jszip from 'jszip';
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe, Unpack } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -28,32 +28,33 @@ const OnePasswordTypeMap: Record<string, string> = {
     '005': 'Password',
 };
 
-const extractFullNote = (details: OnePassItemDetails): string => {
-    let note = details.notesPlain || '';
-    details.sections.forEach((section) => {
-        let added = false;
-        section.fields.forEach((field) => {
-            let fieldValue = undefined;
-            if (field.value.url !== undefined) {
-                fieldValue = field.value.url;
-            }
-            if (field.value.string !== undefined) {
-                fieldValue = field.value.string;
-            }
-            if (fieldValue !== undefined) {
-                if (!added) {
-                    note += `\n${section.title}`;
-                    added = true;
-                }
-                if (field.title) {
-                    note += `\n${field.title}`;
-                }
-                note += `\n${fieldValue}`;
-            }
-        });
-    });
+const isNoteSectionField = (field: Unpack<Unpack<OnePassItemDetails['sections']>['fields']>) =>
+    'string' in field.value || 'url' in field.value;
 
-    return note;
+const extractFullNote = (details: OnePassItemDetails): string => {
+    const base = details.notesPlain;
+    return (details.sections ?? [])
+        .reduce<string>(
+            (fullNote, section) => {
+                const hasNoteFields = section.fields?.some(isNoteSectionField);
+                if (!hasNoteFields) return fullNote;
+
+                if (section.title) fullNote += `${section.title}\n`;
+
+                (section.fields ?? []).forEach((field, idx, fields) => {
+                    if (!isNoteSectionField(field)) return;
+
+                    const subTitle = field.title;
+                    const value = field.value.string ?? field.value.url ?? '';
+                    if (subTitle) fullNote += `${subTitle}\n`;
+                    if (value) fullNote += `${value}\n${idx === fields.length - 1 ? '\n' : ''}`;
+                });
+
+                return fullNote;
+            },
+            base ? `${base}\n\n` : ''
+        )
+        .trim();
 };
 
 const extractURLs = (item: OnePassItem): string[] => [
