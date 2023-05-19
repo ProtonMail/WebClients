@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
 import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
 import { readBitwardenData } from './providers/bitwarden.reader';
@@ -9,32 +11,59 @@ import { readLastPassData } from './providers/lastpass.reader';
 import { readProtonPassData } from './providers/protonpass.reader';
 import { type ImportPayload, ImportProvider, type ImportReaderPayload } from './types';
 
+export const extractFileExtension = (fileName: string): string => {
+    const parts = fileName.split('.');
+    return parts[parts.length - 1];
+};
+
 export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPayload> => {
+    const fileExtension = extractFileExtension(payload.file.name);
+
     switch (payload.provider) {
-        case ImportProvider.BITWARDEN:
+        case ImportProvider.BITWARDEN: {
             return readBitwardenData(await payload.file.text());
+        }
+
         case ImportProvider.BRAVE:
         case ImportProvider.CHROME:
-        case ImportProvider.EDGE:
+        case ImportProvider.EDGE: {
             return readChromiumData(await payload.file.text());
-        case ImportProvider.KEEPASS:
+        }
+
+        case ImportProvider.KEEPASS: {
             return readKeePassData(await payload.file.text());
-        case ImportProvider.LASTPASS:
+        }
+
+        case ImportProvider.LASTPASS: {
             return readLastPassData(await payload.file.text());
-        case ImportProvider.ONEPASSWORD:
-            if (payload.file.name.endsWith('.1pif')) {
-                return read1Password1PifData(await payload.file.text());
-            } else {
-                return read1Password1PuxData(await payload.file.arrayBuffer());
+        }
+
+        case ImportProvider.ONEPASSWORD: {
+            switch (fileExtension) {
+                case '1pif':
+                    return read1Password1PifData(await payload.file.text());
+                case '1pux':
+                    return read1Password1PuxData(await payload.file.arrayBuffer());
+                default:
+                    throw new Error(c('Error').t`Unsupported 1Password file format`);
             }
-        case ImportProvider.PROTONPASS:
-            return readProtonPassData({ data: await payload.file.arrayBuffer(), encrypted: false });
-        case ImportProvider.PROTONPASS_PGP:
-            return readProtonPassData({
-                data: await payload.file.text(),
-                encrypted: true,
-                passphrase: payload.passphrase,
-            });
+        }
+
+        case ImportProvider.PROTONPASS: {
+            switch (fileExtension) {
+                case 'zip':
+                    return readProtonPassData({ data: await payload.file.arrayBuffer(), encrypted: false });
+                case 'pgp':
+                    return readProtonPassData({
+                        data: await payload.file.text(),
+                        encrypted: true,
+                        passphrase: payload.passphrase ?? '',
+                    });
+                default:
+                    throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
+            }
+        }
+
         default:
             throw new Error(c('Error').t`Invalid provider`);
     }

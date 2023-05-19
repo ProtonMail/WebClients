@@ -9,20 +9,16 @@ export enum ImportProvider {
     LASTPASS = 'lastpass',
     ONEPASSWORD = '1password',
     PROTONPASS = 'protonpass',
-    PROTONPASS_PGP = 'protonpass-pgp',
 }
 
 export type ImportReaderPayload = {
     file: File;
-} & (
-    | { provider: Exclude<ImportProvider, ImportProvider.PROTONPASS_PGP> }
-    | { provider: ImportProvider.PROTONPASS_PGP; passphrase: string }
-);
+    provider: ImportProvider;
+    passphrase?: string;
+};
 
-/**
- * type: 'existing' => import items to existing vault
- * type: 'new'      => import items to new vault
- */
+/* type: 'existing' => import items to existing vault
+ * type: 'new'      => import items to new vault */
 export type ImportVault = (
     | {
           type: 'existing';
