@@ -1,5 +1,7 @@
 import Papa from 'papaparse';
 
+import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
+import { getContactId, getSupportedContactProperties, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 
@@ -233,10 +235,24 @@ const sanitizeEmailProperties = (contacts: VCardContact[]): VCardContact[] => {
 /**
  * Transform pre-vCards contacts into vCard contacts
  */
-export const toVCardContacts = (preVcardsContacts: PreVcardsContact[]): VCardContact[] => {
-    return sanitizeEmailProperties(
-        preVcardsContacts.map((preVcardsContact) => {
-            return fromVCardProperties(preVcardsContact.map(toVCard).filter(isTruthy));
-        })
-    );
+export const toVCardContacts = (
+    preVcardsContacts: PreVcardsContact[]
+): { errors: ImportContactError[]; rest: VCardContact[] } => {
+    const vcards = preVcardsContacts.map((preVcardsContact) => {
+        const contact = fromVCardProperties(preVcardsContact.map(toVCard).filter(isTruthy));
+
+        const contactId = getContactId(contact);
+
+        try {
+            return getSupportedContactProperties(contact);
+        } catch (error: any) {
+            return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
+        }
+    });
+
+    const { errors, rest: parsedVcardContacts } = splitErrors(vcards);
+
+    const contacts = sanitizeEmailProperties(parsedVcardContacts);
+
+    return { errors, rest: contacts };
 };

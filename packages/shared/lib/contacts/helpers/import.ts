@@ -44,7 +44,7 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
     // translator: When having an error importing a contact for which we can't find a name, we display an error message `Contact ${contactId}: error description` with contactId = 'unknown'
     const unknownString = c('Import contact. Contact identifier').t`unknown`;
     if (typeof vcardOrVCardContact !== 'string') {
-        const fn = vcardOrVCardContact.fn[0]?.value;
+        const fn = vcardOrVCardContact.fn?.[0]?.value;
         if (fn) {
             return fn;
         }
@@ -76,6 +76,28 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
     return truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY);
 };
 
+export const getSupportedContactProperties = (contact: VCardContact) => {
+    if (!getContactHasName(contact)) {
+        const contactId = getContactId(contact);
+
+        const supportedContactName = getSupportedContactName(contact);
+
+        if (!supportedContactName) {
+            throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.MISSING_FN, contactId);
+        }
+
+        const supportedFnProperty: VCardProperty<string> = {
+            field: 'fn',
+            uid: createContactPropertyUid(),
+            value: supportedContactName,
+        };
+
+        contact.fn = [supportedFnProperty];
+    }
+
+    return contact;
+};
+
 export const getSupportedContact = (vcard: string) => {
     try {
         const contactId = getContactId(vcard);
@@ -84,25 +106,7 @@ export const getSupportedContact = (vcard: string) => {
             throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
         }
 
-        const contact = parseToVCard(vcard);
-
-        if (!getContactHasName(contact)) {
-            const supportedContactName = getSupportedContactName(contact);
-
-            if (!supportedContactName) {
-                throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.MISSING_FN, contactId);
-            }
-
-            const supportedFnProperty: VCardProperty<string> = {
-                field: 'fn',
-                uid: createContactPropertyUid(),
-                value: supportedContactName,
-            };
-
-            contact.fn = [supportedFnProperty];
-        }
-
-        return contact;
+        return getSupportedContactProperties(parseToVCard(vcard));
     } catch (error: any) {
         if (error instanceof ImportContactError) {
             throw error;
