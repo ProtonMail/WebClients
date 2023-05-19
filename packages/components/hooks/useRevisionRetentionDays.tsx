@@ -29,12 +29,13 @@ const useRevisionRetentionDays = (
     const hasValueChanged = originalRevisionRetentionDays !== revisionRetentionDays;
 
     useEffect(() => {
-        if (!hasPaidDrive) {
-            return;
-        }
         void withLoading(
             api<UserSettingsResponse>(queryUserSettings()).then(({ UserSettings, Defaults }) => {
-                if (UserSettings.RevisionRetentionDays !== null && UserSettings.RevisionRetentionDays !== undefined) {
+                if (
+                    UserSettings.RevisionRetentionDays !== null &&
+                    UserSettings.RevisionRetentionDays !== undefined &&
+                    hasPaidDrive
+                ) {
                     setOriginalRevisionRetentionDays(UserSettings.RevisionRetentionDays);
                     setRevisionRetentionDay(UserSettings.RevisionRetentionDays);
                 } else {
