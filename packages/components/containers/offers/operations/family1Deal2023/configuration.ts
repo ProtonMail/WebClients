@@ -6,8 +6,8 @@ import { CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getFamilyFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
-import sideImage from './family-plan-vertical.jpg';
-import sideImage2x from './family-plan-vertical@2x.jpg';
+import sideImage from './family-plan-vertical.png';
+import sideImage2x from './family-plan-vertical@2x.png';
 
 const planName = PLAN_NAMES[PLANS.FAMILY];
 const config: OfferConfig = {
