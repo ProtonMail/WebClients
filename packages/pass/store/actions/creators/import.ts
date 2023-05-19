@@ -8,15 +8,13 @@ import { pipe } from '@proton/pass/utils/fp';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
-import withReceiver from '../with-receiver';
 import withRequest from '../with-request';
 
 export const importItemsIntent = createAction(
     'import items intent',
-    (payload: { data: ImportPayload; provider: ImportProvider }, endpoint?: ExtensionEndpoint) =>
+    (payload: { data: ImportPayload; provider: ImportProvider }) =>
         pipe(
             withCacheBlock,
-            withReceiver({ receiver: endpoint }),
             withRequest({
                 id: requests.importItems(),
                 type: 'start',
@@ -26,7 +24,7 @@ export const importItemsIntent = createAction(
 
 export const importItemsSuccess = createAction(
     'import items success',
-    (payload: { total: number; ignored: string[]; provider: ImportProvider }, target?: ExtensionEndpoint) =>
+    (payload: { total: number; ignored: string[]; provider: ImportProvider }, receiver?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({
@@ -35,7 +33,7 @@ export const importItemsSuccess = createAction(
             }),
             withNotification({
                 type: 'info',
-                target,
+                receiver,
                 text: c('Info').ngettext(
                     msgid`Imported ${payload.total} item`,
                     `Imported ${payload.total} items`,
@@ -45,7 +43,7 @@ export const importItemsSuccess = createAction(
         )({ payload })
 );
 
-export const importItemsFailure = createAction('import items failure', (error: unknown, target?: ExtensionEndpoint) =>
+export const importItemsFailure = createAction('import items failure', (error: unknown, receiver?: ExtensionEndpoint) =>
     pipe(
         withCacheBlock,
         withRequest({
@@ -54,7 +52,7 @@ export const importItemsFailure = createAction('import items failure', (error: u
         }),
         withNotification({
             type: 'error',
-            target,
+            receiver,
             expiration: -1,
             text: c('Error').t`Importing items failed`,
             error,

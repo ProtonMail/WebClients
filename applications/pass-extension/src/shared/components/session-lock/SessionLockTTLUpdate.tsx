@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
 import { sessionLockEnableIntent } from '@proton/pass/store';
 
-import { ExtensionContext } from '../../extension';
 import { useSessionLockConfirmContext } from './SessionLockConfirmContextProvider';
 
 type Props = {
@@ -25,13 +24,12 @@ const getSessionLockTTLOptions = () => [
 ];
 
 export const SessionLockTTLUpdate: VFC<Props> = ({ ttl, disabled }) => {
-    const { endpoint } = ExtensionContext.get();
     const dispatch = useDispatch();
     const { confirmPin } = useSessionLockConfirmContext();
 
     const handleOnChange = async (ttl: number) =>
         confirmPin({
-            onSubmit: (pin) => dispatch(sessionLockEnableIntent({ pin, ttl }, endpoint)),
+            onSubmit: (pin) => dispatch(sessionLockEnableIntent({ pin, ttl })),
             title: c('Title').t`Auto-lock update`,
             assistiveText: c('Info').t`Please confirm your PIN code to edit this setting.`,
         });

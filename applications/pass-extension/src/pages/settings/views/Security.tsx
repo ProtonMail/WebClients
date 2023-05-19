@@ -12,11 +12,9 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { useSessionLockConfirmContext } from '../../../shared/components/session-lock/SessionLockConfirmContextProvider';
 import { SessionLockCreate } from '../../../shared/components/session-lock/SessionLockCreate';
 import { SessionLockTTLUpdate } from '../../../shared/components/session-lock/SessionLockTTLUpdate';
-import { ExtensionContext } from '../../../shared/extension';
 
 export const Security: VFC = () => {
     const dispatch = useDispatch();
-    const { endpoint } = ExtensionContext.get();
 
     const [lockCreationModalOpened, setLockCreationModalOpened] = useState(false);
     const { confirmPin } = useSessionLockConfirmContext();
@@ -29,7 +27,7 @@ export const Security: VFC = () => {
     const handleSessionLockToggle = async () =>
         hasLock
             ? confirmPin({
-                  onSubmit: (pin) => dispatch(sessionLockDisableIntent({ pin }, endpoint)),
+                  onSubmit: (pin) => dispatch(sessionLockDisableIntent({ pin })),
                   assistiveText: c('Info').t`Please confirm your PIN code in order to unregister your current lock.
                         ${PASS_APP_NAME} will then never lock.`,
               })

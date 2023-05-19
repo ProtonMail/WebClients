@@ -34,7 +34,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         });
 
         /* hydrate the background store from cache - see `reducers/index.ts` */
-        yield put(stateSync(state, { receiver: 'background' }));
+        yield put(stateSync(state, { endpoint: 'background' }));
 
         /* trigger a partial synchronization */
         const sync = (yield synchronize(state, SyncType.PARTIAL, options)) as SynchronizationResult;

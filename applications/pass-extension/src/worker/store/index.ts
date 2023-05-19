@@ -109,8 +109,8 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
      * target is specified then notification is for popup
      */
     onNotification: (notification) => {
-        const { target } = notification;
-        const reg = new RegExp(`^${target ?? 'popup'}`);
+        const { receiver } = notification;
+        const reg = new RegExp(`^${receiver ?? 'popup'}`);
         const ports = WorkerMessageBroker.ports.query((key) => reg.test(key));
         const canConsume = ports.length > 0;
 

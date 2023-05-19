@@ -8,32 +8,27 @@ import type { ProxiedSettings } from '../../reducers/settings';
 import { settingsEdit } from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
-import withReceiver from '../with-receiver';
 import withRequest from '../with-request';
 
-export const settingEditIntent = createAction(
-    'setting update intent',
-    (payload: RecursivePartial<ProxiedSettings>, endpoint: ExtensionEndpoint) =>
-        pipe(
-            withReceiver({ receiver: endpoint }),
-            withRequest({ type: 'start', id: settingsEdit('general') }),
-            withCacheBlock
-        )({ payload })
+export const settingEditIntent = createAction('setting update intent', (payload: RecursivePartial<ProxiedSettings>) =>
+    pipe(withRequest({ type: 'start', id: settingsEdit('general') }), withCacheBlock)({ payload })
 );
 
-export const settingEditFailure = createAction('settings edit failure', (error: unknown, target?: ExtensionEndpoint) =>
-    pipe(
-        withRequest({ type: 'failure', id: settingsEdit('general') }),
-        withNotification({ type: 'error', text: c('Error').t`Settings update failed`, target, error }),
-        withCacheBlock
-    )({ payload: {} })
+export const settingEditFailure = createAction(
+    'settings edit failure',
+    (error: unknown, receiver?: ExtensionEndpoint) =>
+        pipe(
+            withRequest({ type: 'failure', id: settingsEdit('general') }),
+            withNotification({ type: 'error', text: c('Error').t`Settings update failed`, receiver, error }),
+            withCacheBlock
+        )({ payload: {} })
 );
 
 export const settingEditSuccess = createAction(
     'settings edit success',
-    (payload: RecursivePartial<ProxiedSettings>, target?: ExtensionEndpoint) =>
+    (payload: RecursivePartial<ProxiedSettings>, receiver?: ExtensionEndpoint) =>
         pipe(
-            withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, target }),
+            withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, receiver }),
             withRequest({ type: 'success', id: settingsEdit('general') })
         )({ payload })
 );
