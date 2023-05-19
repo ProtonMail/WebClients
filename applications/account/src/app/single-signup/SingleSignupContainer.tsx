@@ -13,6 +13,7 @@ import {
     useVPNServersCount,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
+import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { update as updateRoute } from '@proton/shared/lib/api/core/update';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -28,7 +29,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Api, Audience, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
+import { Api, Audience, Plan } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';

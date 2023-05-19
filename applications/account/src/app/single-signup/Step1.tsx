@@ -23,15 +23,8 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
-import {
-    AmountAndCurrency,
-    CardPayment,
-    PaypalPayment,
-    TokenPayment,
-    TokenPaymentMethod,
-} from '@proton/components/containers/payments/interface';
-import { createPaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import {
     useActiveBreakpoint,
     useApi,
@@ -39,23 +32,22 @@ import {
     useErrorHandler,
     useFeature,
     useLoading,
-    useModals,
     useNotifications,
 } from '@proton/components/hooks';
+import {
+    AmountAndCurrency,
+    CardPayment,
+    PAYMENT_METHOD_TYPES,
+    PaypalPayment,
+    TokenPayment,
+    TokenPaymentMethod,
+} from '@proton/components/payments/core';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import {
-    APPS,
-    CLIENT_TYPES,
-    CYCLE,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    VPN_CONNECTIONS,
-    VPN_SHORT_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, CYCLE, PLANS, VPN_CONNECTIONS, VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { confirmEmailValidator, emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -180,6 +172,7 @@ const Step1 = ({
     const silentApi = getSilentApi(normalApi);
     const [optimisticCycle, setOptimisticCycle] = useState<CYCLE | undefined>();
     const [optimisticCurrency, setOptimisticCurrency] = useState<Currency | undefined>();
+    const createPaymentToken = usePaymentToken();
 
     const createFlow = useFlowRef();
 
@@ -286,7 +279,7 @@ const Step1 = ({
 
             const extractPaymentToken = () => {
                 if (payment.Type === PAYMENT_METHOD_TYPES.TOKEN) {
-                    return payment.Details.Token;
+                    return (payment as TokenPayment).Details.Token;
                 }
             };
             const paymentToken = extractPaymentToken() || '';
@@ -437,7 +430,6 @@ const Step1 = ({
             return withLoadingPayment(onPay(Payment));
         },
     });
-    const { createModal } = useModals();
 
     const price = (
         <Price key="price" currency={currency}>
@@ -646,14 +638,10 @@ const Step1 = ({
                                                 Currency: currency,
                                                 Amount: subscriptionData.checkResult.AmountDue,
                                             };
-                                            const data = await createPaymentToken(
-                                                {
-                                                    params: paymentParameters,
-                                                    api: normalApi,
-                                                    createModal,
-                                                },
-                                                amountAndCurrency
-                                            );
+
+                                            const data = await createPaymentToken(paymentParameters, {
+                                                amountAndCurrency,
+                                            });
 
                                             return onPay(data.Payment);
                                         };
