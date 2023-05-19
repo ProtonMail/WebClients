@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi, useGetUser } from '@proton/components';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import { LayoutSetting, UserSettings, UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -9,12 +9,23 @@ import { UserSortParams, getSetting, parseSetting } from './sorting';
 
 const useUserSettingsProvider = () => {
     const api = useApi();
+    const getUser = useGetUser();
 
     const [userSettings, setUserSettings] = useState<UserSettings>(DEFAULT_USER_SETTINGS);
 
     const loadUserSettings = async () => {
-        const { UserSettings, Defaults } = await api<UserSettingsResponse>(queryUserSettings());
+        const [{ UserSettings, Defaults }, { hasPaidDrive }] = await Promise.all([
+            api<UserSettingsResponse>(queryUserSettings()),
+            getUser(),
+        ]);
         const userSettingsWithDefaults = Object.entries(UserSettings).reduce((settings, [key, value]) => {
+            // In case of user downgrade from paid to free, we want to set the default free user value
+            if (key === 'RevisionRetentionDays' && !hasPaidDrive) {
+                return {
+                    ...settings,
+                    RevisionRetentionDays: Defaults.RevisionRetentionDays,
+                };
+            }
             return {
                 ...settings,
                 [key]:
