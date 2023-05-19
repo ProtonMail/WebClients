@@ -75,21 +75,20 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
 
     const familyPlanFeature = useFeature(FeatureCode.FamilyPlan);
 
-    const cleanTmpState = () => {
-        setTmpMember(null);
+    const cleanOption = {
+        onClose: () => setTmpMember(null),
     };
 
     const [addAddressModalProps, setAddAddressModalOpen, renderAddAddressModal] = useModalState();
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
-    const [subUserEditModalProps, setSubUserEditModalOpen, renderSubUserEditModal] = useModalState();
-    const [loginMemberModalProps, setLoginMemberModalOpen, renderLoginMemberModal] = useModalState();
-    const [subUserDeleteModalProps, setSubUserDeleteModalOpen, renderSubUserDeleteModal] = useModalState();
-    const [userRemoveModalProps, setUserRemoveModalOpen, renderUserRemoveModal] = useModalState();
+    const [subUserEditModalProps, setSubUserEditModalOpen, renderSubUserEditModal] = useModalState(cleanOption);
+    const [loginMemberModalProps, setLoginMemberModalOpen, renderLoginMemberModal] = useModalState(cleanOption);
+    const [subUserDeleteModalProps, setSubUserDeleteModalOpen, renderSubUserDeleteModal] = useModalState(cleanOption);
+    const [userRemoveModalProps, setUserRemoveModalOpen, renderUserRemoveModal] = useModalState(cleanOption);
     const [inviteOrCreateUserModalProps, setInviteOrCreateUserModalOpen, renderInviteOrCreateUserModal] =
-        useModalState();
-    const [userInviteOrEditModalProps, setUserInviteOrEditModalOpen, renderUserInviteOrEditModal] = useModalState({
-        onClose: cleanTmpState,
-    });
+        useModalState(cleanOption);
+    const [userInviteOrEditModalProps, setUserInviteOrEditModalOpen, renderUserInviteOrEditModal] =
+        useModalState(cleanOption);
 
     const verifiedDomains = useMemo(
         () => (domains || []).filter(({ State }) => State === DOMAIN_STATE_ACTIVE),
@@ -275,7 +274,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                             <Info
                                 className="color-danger"
                                 title={c('familyOffer_2023:Family plan')
-                                    .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`}
+                                    .t`You have reached the limit of 10 accepted invitations in 6 months.`}
                             />
                         ) : (
                             <Info
