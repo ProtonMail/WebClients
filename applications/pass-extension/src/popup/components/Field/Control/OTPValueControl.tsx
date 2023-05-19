@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Donut } from '@proton/atoms/Donut';
 import { ThemeColor } from '@proton/colors/types';
-import { selectLimits } from '@proton/pass/store';
+import { selectCanGenerateTOTP } from '@proton/pass/store';
 import clsx from '@proton/utils/clsx';
 
 import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
@@ -28,15 +28,12 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * to avoid cluttering the render cycle of a component in
  * need of the OTP code generation as it involves alot of
  * re-rendering. eg: we do not want to re-render `Login.view`
- * everytime the OTP countdown updates */
+ * everytime the OTP countdown updates
+ * FIXME: if user has downgraded we should avoid communicating
+ * with the worker in the `usePeriodicOtpCode` hook */
 export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId, totpUri }) => {
+    const canGenerateTOTP = useSelector(selectCanGenerateTOTP(shareId, itemId));
     const [otp, percent] = usePeriodicOtpCode({ shareId, itemId, totpUri });
-    const { isOverLimits, totpInLimitItemIds } = useSelector(selectLimits);
-
-    const displayValue =
-        isOverLimits && !totpInLimitItemIds.includes(itemId)
-            ? c('Info').t`Not available in the free plan`
-            : renderOtpCodeDisplayValue(otp?.token ?? '');
 
     return (
         <ClickToCopyValueControl value={otp?.token ?? ''}>
@@ -58,7 +55,9 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId,
                     </div>
                 }
             >
-                {displayValue}
+                {canGenerateTOTP
+                    ? renderOtpCodeDisplayValue(otp?.token ?? '')
+                    : c('Info').t`Not available in the free plan`}
             </ValueControl>
         </ClickToCopyValueControl>
     );

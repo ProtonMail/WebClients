@@ -5,8 +5,8 @@ import {
     itemUsed,
     selectAutofillCandidates,
     selectItemByShareIdAndId,
-    selectLimits,
     selectPrimaryVault,
+    selectVaultLimits,
 } from '@proton/pass/store';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -52,13 +52,17 @@ export const createAutoFillService = () => {
                     const { domain: realm, subdomain } = parseUrl(url ?? '');
                     if (tabId && realm) {
                         const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
-                        const { isOverLimits } = selectLimits(store.getState());
+                        const { vaultCountExcess } = selectVaultLimits(store.getState());
 
+                        /* if user has exceeded his vault count limit - this likely means
+                         * has downgraded to a free plan : only allow him to autofill from
+                         * his primary vault */
                         const items = getAutofillCandidates({
                             realm,
                             subdomain,
-                            shareId: isOverLimits ? primaryVaultId : undefined,
+                            ...(vaultCountExcess ? { shareId: primaryVaultId } : {}),
                         });
+
                         const count = items.length;
 
                         if (active) {

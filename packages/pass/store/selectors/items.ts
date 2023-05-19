@@ -103,6 +103,10 @@ export const selectItemsByType = <T extends ItemType>(type: T) =>
         (items, type) => items.filter((item) => item.data.type === type) as ItemRevision<T>[]
     );
 
+export const selectTotpItems = createSelector([selectItemsByType('login')], (items) =>
+    items.filter((item) => Boolean(item.data.content.totpUri))
+);
+
 export type SelectMatchItemsOptions = {
     matchItem: (item: Item) => (searchTerm: string) => boolean;
     needle?: string;

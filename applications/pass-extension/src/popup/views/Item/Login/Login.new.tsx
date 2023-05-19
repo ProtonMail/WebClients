@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
-import { selectLimits } from '@proton/pass/store';
+import { selectTOTPLimits } from '@proton/pass/store';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -44,7 +44,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
     const defaultName = isValidURL ? url! : '';
-    const { totpLimitFilled } = useSelector(selectLimits);
+    const { totpAllowCreate } = useSelector(selectTOTPLimits);
 
     const initialValues: LoginItemFormValues = {
         name: defaultName,
@@ -229,11 +229,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={PasswordField}
                                 />
 
-                                {totpLimitFilled ? (
-                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
-                                        <UpgradeButton inline />
-                                    </ValueControl>
-                                ) : (
+                                {totpAllowCreate ? (
                                     <Field
                                         name="totpUri"
                                         label={c('Label').t`2FA secret (TOTP)`}
@@ -242,6 +238,10 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                         actions={[]}
                                         icon="lock"
                                     />
+                                ) : (
+                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                        <UpgradeButton inline />
+                                    </ValueControl>
                                 )}
                             </FieldsetCluster>
 

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
-import { selectLimits } from '@proton/pass/store';
+import { selectAliasLimits } from '@proton/pass/store';
 
 import { SidebarModal } from '../../../../shared/components/sidebarmodal/SidebarModal';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
@@ -36,7 +36,7 @@ export const AliasModal = <T extends AliasFormValues>({
     ...modalProps
 }: AliasModalProps<T>) => {
     const [ready, setReady] = useState(false);
-    const { aliasLimitFilled } = useSelector(selectLimits);
+    const { aliasAllowCreate } = useSelector(selectAliasLimits);
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({ shareId });
 
@@ -75,9 +75,7 @@ export const AliasModal = <T extends AliasFormValues>({
                             >
                                 <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
                             </Button>,
-                            aliasLimitFilled ? (
-                                <UpgradeButton key="upgrade-button" />
-                            ) : (
+                            aliasAllowCreate ? (
                                 <Button
                                     className="text-sm"
                                     key="modal-submit-button"
@@ -88,12 +86,14 @@ export const AliasModal = <T extends AliasFormValues>({
                                 >
                                     {c('Action').t`Confirm`}
                                 </Button>
+                            ) : (
+                                <UpgradeButton key="upgrade-button" />
                             ),
                         ]}
                     />
                 }
             >
-                {aliasLimitFilled && (
+                {!aliasAllowCreate && (
                     <ItemCard>
                         {c('Info')
                             .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
