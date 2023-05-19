@@ -33,8 +33,6 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
     const count = selectedItems.length;
 
-    const downloadLinksProgresses = getDownloadsLinksProgresses();
-
     const handleDownload = () => {
         // To keep always only one download around.
         clearDownloads();
@@ -48,11 +46,20 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
 
     const isDownloading = downloads.some((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
 
-    useEffect(() => {
-        // If there is not selectedItems it means "Download all" and we want to exclude rootItem
+    const updateProgress = () => {
+        const downloadLinksProgresses = getDownloadsLinksProgresses();
+
+        // In case of "Download all" (which has no selected item) from folder
+        // share, the top folder is included in progresses as well which needs
+        // to be excluded to not count progress twice. But in case of file
+        // share the root item must be included otherwise no progress would
+        // be tracked.
         const progressInfo = Object.entries(downloadLinksProgresses).reduce(
             (previousValue, [linkId, { progress, total }]) => {
-                if (linkId !== rootItem.linkId && total !== undefined) {
+                if (
+                    (linkId !== rootItem.linkId || Object.keys(downloadLinksProgresses).length === 1) &&
+                    total !== undefined
+                ) {
                     return {
                         progress: previousValue.progress + progress,
                         total: previousValue.total + total!,
@@ -68,7 +75,28 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
         );
         setDownloadedSize(progressInfo.progress);
         setTotalSize(progressInfo.total);
-    }, [downloadLinksProgresses]);
+    };
+
+    // Enrich link date with download progress. Downloads changes only when
+    // status changes, not the progress, so if download is active, it needs
+    // to run in interval until download is finished.
+    useEffect(() => {
+        updateProgress();
+
+        if (!downloads.some(isTransferActive)) {
+            // Progresses are not handled by state and might be updated
+            // without notifying a bit after downloads state is changed.
+            const id = setTimeout(updateProgress, 500);
+            return () => {
+                clearTimeout(id);
+            };
+        }
+
+        const id = setInterval(updateProgress, 500);
+        return () => {
+            clearInterval(id);
+        };
+    }, [downloads]);
 
     useEffect(() => {
         if (isDownloading === false && Boolean(totalSize)) {
