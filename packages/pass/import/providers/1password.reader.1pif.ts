@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ItemImportIntent } from '@proton/pass/types';
+import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -11,59 +11,48 @@ import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload, ImportVault } from '../types';
-import {
-    OnePassLegacyItem,
-    OnePassLegacyItemType,
-    OnePassLegacySectionFieldKey,
-    OnePassLegacyURL,
-} from './1password.1pif.types';
+import type { OnePassLegacyItem, OnePassLegacySectionField, OnePassLegacyURL } from './1password.1pif.types';
+import { OnePassLegacyItemType, OnePassLegacySectionFieldKey } from './1password.1pif.types';
 import { OnePassLoginDesignation } from './1password.1pux.types';
 
-const extractFullNote = (item: OnePassLegacyItem): string => {
-    let note = item.secureContents?.notesPlain || '';
-    if (item.secureContents?.sections !== undefined) {
-        item.secureContents.sections.forEach((section) => {
-            let isSectionTitleAdded = false;
-            if (section.fields !== undefined) {
-                section.fields.forEach((field) => {
-                    let fieldValue = undefined;
-                    if (
-                        (field.k === OnePassLegacySectionFieldKey.STRING ||
-                            field.k === OnePassLegacySectionFieldKey.URL) &&
-                        field.v !== undefined
-                    ) {
-                        fieldValue = field.v;
-                    }
-                    if (fieldValue !== undefined) {
-                        if (!isSectionTitleAdded) {
-                            note += `\n`; // separate sections with an empty line
-                            if (section.title) {
-                                note += `\n${section.title}`;
-                            }
-                            isSectionTitleAdded = true;
-                        }
-                        if (field.t) {
-                            note += `\n${field.t}`;
-                        }
-                        note += `\n${fieldValue}`;
-                    }
-                });
-            }
-        });
-    }
+const ENTRY_SEPARATOR_1PIF = '***';
 
-    return note;
+const isNoteSectionField = ({ k: key }: OnePassLegacySectionField) =>
+    key === OnePassLegacySectionFieldKey.STRING || key === OnePassLegacySectionFieldKey.URL;
+
+const extractFullNote = (item: OnePassLegacyItem): string => {
+    const base = item.secureContents?.notesPlain;
+
+    return (item.secureContents.sections ?? [])
+        .reduce<string>(
+            (fullNote, section) => {
+                const hasNoteFields = section.fields?.some(isNoteSectionField);
+                if (!hasNoteFields) return fullNote;
+
+                if (section.title) fullNote += `${section.title}\n`;
+
+                (section.fields ?? []).forEach((field, idx, fields) => {
+                    const { t: subTitle, v: value } = field;
+                    if (!isNoteSectionField(field)) return;
+
+                    if (subTitle) fullNote += `${subTitle}\n`;
+                    if (value) fullNote += `${value}\n${idx === fields.length - 1 ? '\n' : ''}`;
+                });
+
+                return fullNote;
+            },
+            base ? `${base}\n\n` : ''
+        )
+        .trim();
 };
 
 const extractURLs = (item: OnePassLegacyItem): string[] => {
-    if (item.secureContents?.URLs !== undefined) {
-        return item.secureContents.URLs.map((u: OnePassLegacyURL) => {
-            const { valid, url } = isValidURL(u.url);
-            return valid ? new URL(url).origin : undefined;
-        }).filter(Boolean) as string[];
-    } else {
-        return [];
-    }
+    if (item.secureContents?.URLs === undefined) return [];
+
+    return item.secureContents.URLs.map((u: OnePassLegacyURL) => {
+        const { valid, url } = isValidURL(u.url);
+        return valid ? new URL(url).origin : undefined;
+    }).filter(truthy);
 };
 
 const extractTOTPs = (item: OnePassLegacyItem): string[] =>
@@ -73,33 +62,13 @@ const extractTOTPs = (item: OnePassLegacyItem): string[] =>
             .map((totp) => parseOTPValue(totp, { label: item.title }))
     );
 
-const processLoginItem = (
-    // item: Extract<OnePassLegacyItem, { typeName: OnePassLegacyItemType.LOGIN }>
-    item: OnePassLegacyItem
-): ItemImportIntent<'login'> => {
-    let username = '';
-    let password = '';
+const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
+    const fields = item.secureContents.fields;
+    const username = fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value;
+    const password = fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value;
     const note = extractFullNote(item);
     const urls = extractURLs(item);
     const [totp, ...totps] = extractTOTPs(item);
-    if (item.secureContents !== undefined) {
-        if (item.secureContents.fields !== undefined) {
-            item.secureContents.fields.forEach((onePassLegacyField) => {
-                if (onePassLegacyField.designation) {
-                    switch (onePassLegacyField.designation) {
-                        case OnePassLoginDesignation.USERNAME:
-                            username = onePassLegacyField.value;
-                            break;
-                        case OnePassLoginDesignation.PASSWORD:
-                            password = onePassLegacyField.value;
-                            break;
-                        default:
-                        // fields that are not username or password are ignored
-                    }
-                }
-            });
-        }
-    }
 
     return {
         type: 'login',
@@ -109,8 +78,8 @@ const processLoginItem = (
             itemUuid: uniqueId(),
         },
         content: {
-            username: username,
-            password: password,
+            username: username ?? '',
+            password: password ?? '',
             urls: urls,
             totpUri: totp ?? '',
         },
@@ -167,7 +136,7 @@ const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'>
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
     data
         .split('\n')
-        .filter((line) => !line.startsWith('***') && Boolean(line))
+        .filter((line) => !line.startsWith(ENTRY_SEPARATOR_1PIF) && Boolean(line))
         .map((rawItem) => JSON.parse(rawItem));
 
 export const read1Password1PifData = async (data: string): Promise<ImportPayload> => {
