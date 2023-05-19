@@ -19,6 +19,7 @@ export const NewVisionaryWarningModal = ({
     const plan = 'visionary';
     return (
         <Prompt
+            data-testid="confirm-loss-visionary"
             title={(() => {
                 if (type === 'switch') {
                     return c('new_plans: title').t`Switch plans?`;
@@ -47,6 +48,7 @@ export const NewVisionaryWarningModal = ({
                     })()}
                 </Button>,
                 <Button
+                    data-testid="confirm-loss-btn"
                     onClick={() => {
                         onConfirm();
                         rest.onClose?.();
