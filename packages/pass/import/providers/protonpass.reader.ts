@@ -72,6 +72,7 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
                 ),
             })),
             ignored: [],
+            warnings: [],
         };
     } catch (e) {
         logger.warn('[Importer::Proton]', e);

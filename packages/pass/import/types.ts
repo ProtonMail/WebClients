@@ -31,4 +31,4 @@ export type ImportVault = (
     id: string;
 };
 
-export type ImportPayload = { vaults: ImportVault[]; ignored: string[] };
+export type ImportPayload = { vaults: ImportVault[]; ignored: string[]; warnings: string[] };

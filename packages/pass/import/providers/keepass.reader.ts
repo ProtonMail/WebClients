@@ -94,6 +94,7 @@ export const readKeePassData = (data: string): ImportPayload => {
         return {
             vaults,
             ignored: [],
+            warnings: [],
         };
     } catch (e) {
         logger.warn('[Importer::KeePass]', e);
