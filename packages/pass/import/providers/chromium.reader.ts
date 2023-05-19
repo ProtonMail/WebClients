@@ -16,11 +16,12 @@ const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'usernam
 
 export const readChromiumData = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
+    const warnings: string[] = [];
 
     try {
         const result = await readCSV<ChromiumItem>(data, CHROME_EXPECTED_HEADERS, {
             onErrors: (errors) =>
-                ignored.push(
+                warnings.push(
                     `[Error] ${c('Error').ngettext(
                         msgid`Detected ${errors.length} corrupted csv row`,
                         `Detected ${errors.length} corrupted csv rows`,
@@ -60,6 +61,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                 },
             ],
             ignored,
+            warnings,
         };
     } catch (e) {
         logger.warn('[Importer::Chrome]', e);

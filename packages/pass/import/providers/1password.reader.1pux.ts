@@ -210,7 +210,7 @@ export const read1Password1PuxData = async (data: ArrayBuffer): Promise<ImportPa
             )
         );
 
-        return { vaults, ignored };
+        return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::1Password]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';

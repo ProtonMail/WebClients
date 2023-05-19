@@ -166,7 +166,7 @@ export const read1Password1PifData = async (data: string): Promise<ImportPayload
             },
         ];
 
-        return { vaults, ignored };
+        return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::1Password]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';
