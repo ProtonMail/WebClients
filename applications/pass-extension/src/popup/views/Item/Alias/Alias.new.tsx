@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { selectLimits } from '@proton/pass/store';
+import { selectAliasLimits } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -32,7 +32,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
     const { realm, subdomain } = usePopupContext();
     const [ready, setReady] = useState(false);
 
-    const { aliasLimitFilled } = useSelector(selectLimits);
+    const { aliasAllowCreate } = useSelector(selectAliasLimits);
 
     const isValidURL = realm !== undefined;
     const url = subdomain !== undefined ? subdomain : realm;
@@ -109,11 +109,11 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             handleCancelClick={onCancel}
             valid={ready && form.isValid}
             discardable={!form.dirty}
-            renderSubmitButton={aliasLimitFilled ? <UpgradeButton key="upgrade-button" /> : undefined}
+            {...(!aliasAllowCreate ? { renderSubmitButton: <UpgradeButton key="upgrade-button" /> } : {})}
         >
             {({ canFocus }) => (
                 <>
-                    {aliasLimitFilled && (
+                    {!aliasAllowCreate && (
                         <ItemCard className="mb-2">
                             {c('Info')
                                 .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
@@ -128,7 +128,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={canFocus && !aliasLimitFilled}
+                                    autoFocus={canFocus && aliasAllowCreate}
                                     key={`alias-name-${canFocus}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, type ModalProps } from '@proton/components/components';
-import { selectLimits } from '@proton/pass/store';
+import { selectVaultLimits } from '@proton/pass/store';
 import type { VaultShare } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import noop from '@proton/utils/noop';
@@ -30,7 +30,7 @@ export type Props = {
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {
     const [loading, setLoading] = useState(false);
     const [canSubmit, setCanSubmit] = useState(payload.type === 'edit');
-    const { vaultLimitFilled } = useSelector(selectLimits);
+    const { vaultAllowCreate } = useSelector(selectVaultLimits);
 
     const vaultViewProps = useMemo<VaultFormConsumerProps>(
         () => ({
@@ -44,6 +44,8 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
         }),
         []
     );
+
+    const canProcessSubmit = vaultAllowCreate || payload.type === 'edit';
 
     return (
         <SidebarModal {...props} onClose={onClose}>
@@ -63,9 +65,7 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
 
-                            vaultLimitFilled && payload.type === 'new' ? (
-                                <UpgradeButton key="upgrade-button" />
-                            ) : (
+                            canProcessSubmit ? (
                                 <Button
                                     key="modal-submit-button"
                                     type="submit"
@@ -86,6 +86,8 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
                                         }
                                     })()}
                                 </Button>
+                            ) : (
+                                <UpgradeButton key="upgrade-button" />
                             ),
                         ]}
                     />

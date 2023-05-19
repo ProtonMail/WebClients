@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Option } from '@proton/components';
-import { selectAllVaults, selectLimits, selectPrimaryVault } from '@proton/pass/store';
+import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 
 import { VaultIcon } from '../Vault/VaultIcon';
 import { SelectField, type SelectFieldProps } from './SelectField';
@@ -14,13 +14,11 @@ type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'>;
 export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
     const vaults = useSelector(selectAllVaults);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const { isOverLimits } = useSelector(selectLimits);
+    const { vaultCountExcess } = useSelector(selectVaultLimits);
 
     useEffect(() => {
-        if (isOverLimits) {
-            props.form.setFieldValue(props.field.name, primaryVaultId);
-        }
-    }, [isOverLimits]);
+        if (vaultCountExcess) props.form.setFieldValue(props.field.name, primaryVaultId);
+    }, [vaultCountExcess]);
 
     const selectedVault = useMemo(
         () => vaults.find(({ shareId }) => shareId === props.field.value),
@@ -51,7 +49,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
                     key={shareId}
                     value={shareId}
                     title={content.name}
-                    disabled={isOverLimits && shareId !== primaryVaultId}
+                    disabled={vaultCountExcess && shareId !== primaryVaultId}
                 >
                     <div className="flex gap-x-3 flex-align-items-center">
                         <VaultIcon icon={content.display.icon} color={content.display.color} size="medium" />

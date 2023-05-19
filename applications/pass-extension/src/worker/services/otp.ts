@@ -1,6 +1,6 @@
 import { TOTP, URI } from 'otpauth';
 
-import { selectItemByShareIdAndId } from '@proton/pass/store';
+import { selectCanGenerateTOTP, selectItemByShareIdAndId } from '@proton/pass/store';
 import { type OtpCode, type SelectedItem, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -18,7 +18,7 @@ export const createOTPService = () => {
      * - a valid secret from which we can create a valid TOTP URI with our defaults
      * - an invalid string
      * Each of the following OTP-related operations may throw. */
-    const generateOTPCode = (totpUri: string): OtpCode => {
+    const generateTOTPCode = (totpUri: string): OtpCode => {
         const otp = URI.parse(totpUri) as TOTP;
         const token = otp.generate();
         const timestamp = getEpoch();
@@ -27,16 +27,19 @@ export const createOTPService = () => {
         return { token, period: otp.period, expiry };
     };
 
-    const handleOTPRequest = ({ shareId, itemId }: SelectedItem) => {
+    const handleTOTPRequest = ({ shareId, itemId }: SelectedItem) => {
         try {
+            const canGenerateTOTP = selectCanGenerateTOTP(shareId, itemId);
+            if (!canGenerateTOTP) throw new Error('User plan does not allow generating this OTP code');
+
             const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
 
-            if (!item || item.data.type !== 'login' || !item.data.content.totpUri) {
-                throw new Error('Cannot generate an OTP code from such item');
+            if (item && item.data.type === 'login' && item.data.content.totpUri) {
+                const uri = parseOTPValue(item.data.content.totpUri);
+                return generateTOTPCode(uri);
             }
 
-            const uri = parseOTPValue(item.data.content.totpUri);
-            return generateOTPCode(uri);
+            throw new Error('Cannot generate an OTP code from such item');
         } catch (err) {
             logger.error(
                 `[Worker::OTP] Unable to generate OTP code for item ${logId(itemId)} on share ${logId(shareId)}`,
@@ -47,7 +50,7 @@ export const createOTPService = () => {
         }
     };
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, withPayload(handleOTPRequest));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, withPayload(handleTOTPRequest));
 
     return {};
 };

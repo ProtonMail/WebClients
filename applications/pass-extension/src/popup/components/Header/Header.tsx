@@ -13,7 +13,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { selectLimits } from '@proton/pass/store';
+import { selectAliasLimits } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
@@ -51,7 +51,7 @@ export const Header: VFC<{}> = () => {
     const { generatePassword } = usePasswordGeneratorContext();
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
     const copyToClipboard = useCopyToClipboard();
-    const { aliasUsed, aliasLimit, aliasLimitFilled } = useSelector(selectLimits);
+    const { aliasLimit, aliasLimited, aliasAllowCreate, aliasTotalCount } = useSelector(selectAliasLimits);
 
     const handleNewItemClick = (type: ItemType) => {
         // Trick to be able to return to the initial route using history.goBack() if user switches
@@ -121,10 +121,10 @@ export const Header: VFC<{}> = () => {
 
                                     {label}
 
-                                    {type === 'alias' && !!aliasLimit && (
+                                    {type === 'alias' && aliasLimited && (
                                         <span
-                                            className={clsx('ml-1', aliasLimitFilled ? 'color-danger' : 'color-weak')}
-                                        >{`(${aliasUsed}/${aliasLimit})`}</span>
+                                            className={clsx('ml-1', aliasAllowCreate ? 'color-weak' : 'color-danger')}
+                                        >{`(${aliasTotalCount}/${aliasLimit})`}</span>
                                     )}
                                 </DropdownMenuButton>
                             </span>
