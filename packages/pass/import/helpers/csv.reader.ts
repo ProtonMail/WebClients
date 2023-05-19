@@ -5,13 +5,15 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { ImportReaderError } from './reader.error';
 
+type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignored: Partial<T>[] };
+
 export const readCSV = async <T extends Record<string, any>>(
     data: string,
     expectedHeaders: (keyof T)[],
-    ignoreCsvParsingErrors: boolean = false
-): Promise<T[]> => {
+    options?: { onErrors: (errors: Papa.ParseError[]) => void }
+): Promise<CSVReaderResult<T>> => {
     try {
-        return await new Promise<T[]>((resolve, reject) => {
+        return await new Promise<CSVReaderResult<T>>((resolve, reject) => {
             Papa.parse<T>(data, {
                 header: true,
                 transformHeader: (h) => h.trim().toLocaleLowerCase(),
@@ -20,24 +22,35 @@ export const readCSV = async <T extends Record<string, any>>(
                 complete: ({ data, errors }) => {
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
-                        if (ignoreCsvParsingErrors) {
-                            logger.warn('[Importer::LastPass]', errorDetails);
-                        } else {
-                            return reject(errorDetails);
-                        }
+                        logger.debug('[Importer::LastPass]', errorDetails);
+                        options?.onErrors(errors);
                     }
 
                     if (data.length === 0) return reject(c('Error').t`Empty CSV file`);
 
-                    const headers = Object.keys(data[0]);
-                    const missed = (expectedHeaders as string[]).filter((header) => !headers.includes(header));
+                    const { items, ignored, missed } = data.reduce<{
+                        items: T[];
+                        ignored: Partial<T>[];
+                        missed: Set<string>;
+                    }>(
+                        (acc, entry) => {
+                            const missedHeaders = (expectedHeaders as string[]).filter(
+                                (header) => !Object.keys(entry).includes(header)
+                            );
+                            missedHeaders.forEach((header) => acc.missed.add(header));
+                            acc[missedHeaders.length > 0 ? 'ignored' : 'items'].push(entry);
 
-                    if (missed.length > 0) {
-                        const missingHeaders = missed.join(', ');
+                            return acc;
+                        },
+                        { items: [], ignored: [], missed: new Set() }
+                    );
+
+                    if (items.length === 0 && missed.size > 0) {
+                        const missingHeaders = Array.from(missed.values()).join(', ');
                         return reject(c('Error').t`CSV file is missing expected headers: ${missingHeaders}`);
                     }
 
-                    return resolve(data);
+                    return resolve({ items, ignored });
                 },
                 error: (err: Error) => reject(err.message),
             });
