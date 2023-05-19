@@ -12,7 +12,7 @@ import withRequest from '../with-request';
 export const reportProblemIntent = createAction('report problem intent', (payload: BugPayload) =>
     withRequest({
         type: 'start',
-        id: reportProblem(),
+        id: reportProblem,
     })({ payload })
 );
 
@@ -20,7 +20,7 @@ export const reportProblemSuccess = createAction('report problem success', (rece
     pipe(
         withRequest({
             type: 'success',
-            id: reportProblem(),
+            id: reportProblem,
         }),
         withNotification({
             type: 'success',
@@ -34,7 +34,7 @@ export const reportProblemError = createAction('report problem error', (error: u
     pipe(
         withRequest({
             type: 'failure',
-            id: reportProblem(),
+            id: reportProblem,
         }),
         withNotification({
             type: 'error',
