@@ -6,8 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { selectLimits } from '@proton/pass/store';
-import { selectAllVaultWithItemsCount, selectPrimaryVault } from '@proton/pass/store/selectors';
+import { selectAllVaultWithItemsCount, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store/selectors';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { RadioButtonGroup, RadioLabelledButton } from '../../components/Field/RadioButtonGroupField';
@@ -23,7 +22,7 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
 export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) => {
     const vaultsWithItemCount = useSelector(selectAllVaultWithItemsCount);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const { isOverLimits } = useSelector(selectLimits);
+    const { vaultCountExcess } = useSelector(selectVaultLimits);
 
     return (
         <SidebarModal {...props}>
@@ -50,7 +49,7 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                         <RadioLabelledButton
                             value={vault.shareId}
                             key={vault.shareId}
-                            disabled={isOverLimits && vault.shareId !== primaryVaultId}
+                            disabled={vaultCountExcess && vault.shareId !== primaryVaultId}
                         >
                             <VaultIcon
                                 size="large"

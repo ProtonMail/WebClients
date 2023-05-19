@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { itemCreationIntent, selectLimits } from '@proton/pass/store';
+import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
@@ -42,7 +42,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     } = item;
 
     const dispatch = useDispatch();
-    const { totpLimitFilled } = useSelector(selectLimits);
+    const { totpAllowCreate } = useSelector(selectTOTPLimits);
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -219,11 +219,8 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     icon="key"
                                 />
 
-                                {isEmptyString(form.values.totpUri) && totpLimitFilled ? (
-                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
-                                        <UpgradeButton inline />
-                                    </ValueControl>
-                                ) : (
+                                {/* is user has downgraded - allow editing the value if any */}
+                                {totpAllowCreate || !isEmptyString(form.values.totpUri) ? (
                                     <Field
                                         name="totpUri"
                                         label={c('Label').t`2FA secret (TOTP)`}
@@ -232,6 +229,10 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                         actions={[]}
                                         icon="lock"
                                     />
+                                ) : (
+                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                        <UpgradeButton inline />
+                                    </ValueControl>
                                 )}
                             </FieldsetCluster>
 
