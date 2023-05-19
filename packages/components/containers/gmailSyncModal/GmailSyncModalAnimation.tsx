@@ -20,6 +20,7 @@ const GmailSyncModalAnimation = () => {
                     <img src={gmailLogo} alt="" width={40} height={30} />
                 </div>
                 <div className="gsma-username">
+                    {/* translator: keep this translation as small as possible since the space is reduced.  */}
                     <span className="gsma-username-content">{c('Animation').jt`${nameToDisplay}'s inbox`}</span>
                 </div>
             </div>
