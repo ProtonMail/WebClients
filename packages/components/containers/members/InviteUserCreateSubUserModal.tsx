@@ -23,11 +23,11 @@ interface Props extends ModalStateProps {
     familyPlanEnabled: boolean;
 }
 
-interface AddUserButtonProps {
-    handleAddUser: () => void;
+interface ButtonProps {
+    onClick: () => void;
 }
 
-const AddUserButton = ({ handleAddUser }: AddUserButtonProps) => {
+const AddUserButton = ({ onClick }: ButtonProps) => {
     const [domains = []] = useDomains();
 
     if (domains.length === 0) {
@@ -43,7 +43,37 @@ const AddUserButton = ({ handleAddUser }: AddUserButtonProps) => {
         );
     }
 
-    return <Button onClick={handleAddUser} fullWidth>{c('familyOffer_2023:Action').t`Create a new user`}</Button>;
+    return <Button onClick={onClick} fullWidth>{c('familyOffer_2023:Action').t`Create a new user`}</Button>;
+};
+
+interface InviteButtonProps {
+    familyPlanEnabled: boolean;
+    organization: Organization;
+}
+
+const InviteProtonUserButton = ({ onClick, familyPlanEnabled, organization }: ButtonProps & InviteButtonProps) => {
+    if (!familyPlanEnabled) {
+        return null;
+    }
+
+    if (organization && organization.InvitationsRemaining === 0) {
+        return (
+            <Tooltip
+                title={c('familyOffer_2023:Family plan')
+                    .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`}
+            >
+                <div className="w100">
+                    <Button disabled fullWidth>{c('familyOffer_2023:Action')
+                        .t`Invite an existing ${BRAND_NAME} user`}</Button>
+                </div>
+            </Tooltip>
+        );
+    }
+
+    return (
+        <Button onClick={onClick} color="norm">{c('familyOffer_2023:Action')
+            .t`Invite an existing ${BRAND_NAME} user`}</Button>
+    );
 };
 
 const InviteUserCreateSubUserModal = ({
@@ -79,13 +109,12 @@ const InviteUserCreateSubUserModal = ({
             <Prompt
                 title={c('familyOffer_2023:Title').t`Add a user to your ${PLAN_NAMES.visionary2022} account`}
                 buttons={[
-                    familyPlanEnabled ? (
-                        <Button onClick={handleInviteUser} color="norm">{c('familyOffer_2023:Action')
-                            .t`Invite an existing ${BRAND_NAME} user`}</Button>
-                    ) : (
-                        <></>
-                    ),
-                    <AddUserButton handleAddUser={handleAddUser} />,
+                    <InviteProtonUserButton
+                        onClick={handleInviteUser}
+                        organization={organization}
+                        familyPlanEnabled={familyPlanEnabled}
+                    />,
+                    <AddUserButton onClick={handleAddUser} />,
                     <Button onClick={modalState.onClose} shape="ghost">{c('Action').t`Cancel`}</Button>,
                 ]}
                 {...modalState}
