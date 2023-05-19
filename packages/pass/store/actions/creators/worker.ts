@@ -11,7 +11,7 @@ import type { SynchronizationResult } from '../../sagas/workers/sync';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
-import withReceiver, { type WithReceiverOptions } from '../with-receiver';
+import { type EndpointOptions, withReceiver } from '../with-receiver';
 import withRequest from '../with-request';
 
 /**
@@ -20,9 +20,9 @@ import withRequest from '../with-request';
  * Do not cache block `stateSync` if it is
  * for the background store
  */
-export const stateSync = createAction('state sync', (state: any, options?: WithReceiverOptions) =>
+export const stateSync = createAction('state sync', (state: any, options?: EndpointOptions) =>
     pipe(
-        options?.receiver !== 'background' ? withCacheBlock : identity,
+        options?.endpoint !== 'background' ? withCacheBlock : identity,
         withReceiver(options ?? {})
     )({ payload: { state } })
 );
@@ -35,7 +35,7 @@ export const wakeup = createAction(
     (payload: { status: WorkerStatus }, endpoint: ExtensionEndpoint, tabId: TabId) =>
         pipe(
             withCacheBlock,
-            withReceiver({ receiver: endpoint, tabId }),
+            withReceiver({ endpoint, tabId }),
             withRequest({ id: requests.wakeup(endpoint, tabId), type: 'start' })
         )({ payload })
 );
@@ -43,7 +43,7 @@ export const wakeup = createAction(
 export const wakeupSuccess = createAction('wakeup success', (endpoint: ExtensionEndpoint, tabId: TabId) =>
     pipe(
         withCacheBlock,
-        withReceiver({ receiver: endpoint, tabId }),
+        withReceiver({ endpoint, tabId }),
         withRequest({ id: requests.wakeup(endpoint, tabId), type: 'success' })
     )({ payload: {} })
 );

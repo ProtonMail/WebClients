@@ -178,7 +178,7 @@ export const vaultSetPrimaryIntent = createOptimisticAction(
 
 export const vaultSetPrimaryFailure = createOptimisticAction(
     'vault set primary failure',
-    (payload: { id: string; name: string }, error: unknown, target?: ExtensionEndpoint) =>
+    (payload: { id: string; name: string }, error: unknown, receiver?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({
@@ -188,7 +188,7 @@ export const vaultSetPrimaryFailure = createOptimisticAction(
             withNotification({
                 type: 'error',
                 text: c('Error').t`Setting "${payload.name}" as primary vault failed`,
-                target,
+                receiver,
                 error,
             })
         )({ payload, error }),
@@ -197,7 +197,7 @@ export const vaultSetPrimaryFailure = createOptimisticAction(
 
 export const vaultSetPrimarySuccess = createOptimisticAction(
     'vault set primary success',
-    (payload: { id: string; name: string }, target?: ExtensionEndpoint) =>
+    (payload: { id: string; name: string }, receiver?: ExtensionEndpoint) =>
         pipe(
             withRequest({
                 type: 'success',
@@ -206,7 +206,7 @@ export const vaultSetPrimarySuccess = createOptimisticAction(
             withNotification({
                 type: 'info',
                 text: c('Info').t`"${payload.name}" set as primary vault`,
-                target,
+                receiver,
             })
         )({ payload }),
     ({ payload }) => payload.id

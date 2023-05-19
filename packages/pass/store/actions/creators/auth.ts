@@ -8,7 +8,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { settingsEdit, unlockSession } from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
-import withReceiver from '../with-receiver';
 import withRequest from '../with-request';
 
 export const signout = createAction('signout', (payload: { soft: boolean }) => withCacheBlock({ payload }));
@@ -19,28 +18,25 @@ export const signoutSuccess = createAction('signout success', (payload: { soft: 
 export const sessionLockImmediate = createAction('immediate session lock', () => withCacheBlock({ payload: {} }));
 export const offlineLock = createAction('offline lock');
 
-export const sessionLockEnableIntent = createAction(
-    'enable session lock',
-    (payload: { pin: string; ttl: number }, endpoint?: ExtensionEndpoint) =>
-        pipe(
-            withCacheBlock,
-            withReceiver({ receiver: endpoint }),
-            withRequest({
-                id: settingsEdit('session-lock'),
-                type: 'start',
-            })
-        )({ payload })
+export const sessionLockEnableIntent = createAction('enable session lock', (payload: { pin: string; ttl: number }) =>
+    pipe(
+        withCacheBlock,
+        withRequest({
+            id: settingsEdit('session-lock'),
+            type: 'start',
+        })
+    )({ payload })
 );
 
 export const sessionLockEnableFailure = createAction(
     'enable session lock failure',
-    (error: unknown, target?: ExtensionEndpoint) =>
+    (error: unknown, receiver?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({ id: settingsEdit('session-lock'), type: 'failure' }),
             withNotification({
                 type: 'error',
-                target,
+                receiver,
                 text: c('Error').t`Auto-lock could not be activated`,
                 error,
             })
@@ -49,12 +45,12 @@ export const sessionLockEnableFailure = createAction(
 
 export const sessionLockEnableSuccess = createAction(
     'enable session lock success',
-    (payload: { storageToken: string; ttl: number }, target?: ExtensionEndpoint) =>
+    (payload: { storageToken: string; ttl: number }, receiver?: ExtensionEndpoint) =>
         pipe(
             withRequest({ id: settingsEdit('session-lock'), type: 'success' }),
             withNotification({
                 type: 'info',
-                target,
+                receiver,
                 text: c('Info').t`PIN code successfully registered. Use it to unlock ${PASS_APP_NAME}`,
             })
         )({ payload })
@@ -64,40 +60,37 @@ export const sessionLockSync = createAction('session lock sync', (payload: { sto
     payload,
 }));
 
-export const sessionLockDisableIntent = createAction(
-    'disable session lock',
-    (payload: { pin: string }, endpoint?: ExtensionEndpoint) =>
-        pipe(
-            withCacheBlock,
-            withReceiver({ receiver: endpoint }),
-            withRequest({
-                id: settingsEdit('session-lock'),
-                type: 'start',
-            })
-        )({ payload })
+export const sessionLockDisableIntent = createAction('disable session lock', (payload: { pin: string }) =>
+    pipe(
+        withCacheBlock,
+        withRequest({
+            id: settingsEdit('session-lock'),
+            type: 'start',
+        })
+    )({ payload })
 );
 
 export const sessionLockDisableFailure = createAction(
     'disable session lock failure',
-    (error: unknown, target?: ExtensionEndpoint) =>
+    (error: unknown, receiver?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({ id: settingsEdit('session-lock'), type: 'failure' }),
             withNotification({
                 type: 'error',
-                target,
+                receiver,
                 text: c('Error').t`Auto-lock could not be disabled`,
                 error,
             })
         )({ payload: {}, error })
 );
 
-export const sessionLockDisableSuccess = createAction('disable session lock success', (target?: ExtensionEndpoint) =>
+export const sessionLockDisableSuccess = createAction('disable session lock success', (receiver?: ExtensionEndpoint) =>
     pipe(
         withRequest({ id: settingsEdit('session-lock'), type: 'success' }),
         withNotification({
             type: 'info',
-            target,
+            receiver,
             text: c('Info').t`Auto-lock successfully disabled`,
         })
     )({ payload: {} })

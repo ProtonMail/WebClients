@@ -16,35 +16,31 @@ export const reportProblemIntent = createAction('report problem intent', (payloa
     })({ payload })
 );
 
-export const reportProblemSuccess = createAction(
-    'report problem success',
-    (payload: BugPayload, target?: ExtensionEndpoint) =>
-        pipe(
-            withRequest({
-                type: 'success',
-                id: reportProblem(),
-            }),
-            withNotification({
-                type: 'success',
-                text: c('Info').t`Thank you, the problem has been reported`,
-                target,
-            })
-        )({ payload })
+export const reportProblemSuccess = createAction('report problem success', (receiver?: ExtensionEndpoint) =>
+    pipe(
+        withRequest({
+            type: 'success',
+            id: reportProblem(),
+        }),
+        withNotification({
+            type: 'success',
+            text: c('Info').t`Thank you, the problem has been reported`,
+            receiver,
+        })
+    )({ payload: {} })
 );
 
-export const reportProblemError = createAction(
-    'report problem error',
-    (payload: BugPayload, error: unknown, target?: ExtensionEndpoint) =>
-        pipe(
-            withRequest({
-                type: 'failure',
-                id: reportProblem(),
-            }),
-            withNotification({
-                type: 'error',
-                text: c('Error').t`Error reporting problem`,
-                error,
-                target,
-            })
-        )({ payload })
+export const reportProblemError = createAction('report problem error', (error: unknown, receiver?: ExtensionEndpoint) =>
+    pipe(
+        withRequest({
+            type: 'failure',
+            id: reportProblem(),
+        }),
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Error reporting problem`,
+            error,
+            receiver,
+        })
+    )({ payload: {} })
 );

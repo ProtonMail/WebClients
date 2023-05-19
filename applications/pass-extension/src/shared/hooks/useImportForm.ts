@@ -22,7 +22,6 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
 
-import { ExtensionContext } from '../extension';
 import { useRequestStatusEffect } from './useRequestStatusEffect';
 
 type DropzoneProps = ComponentProps<typeof Dropzone>;
@@ -94,7 +93,6 @@ export const useImportForm = ({
     onImported = noop,
 }: UseImportFormOptions): ImportFormContext => {
     const dispatch = useDispatch();
-    const { endpoint } = ExtensionContext.get();
 
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
@@ -122,7 +120,7 @@ export const useImportForm = ({
                     return setBusy(false);
                 }
                 onSubmit?.(result.payload);
-                dispatch(importItemsIntent({ data: result.payload, provider: values.provider }, endpoint));
+                dispatch(importItemsIntent({ data: result.payload, provider: values.provider }));
             } catch (e) {
                 setBusy(false);
                 if (e instanceof Error) {

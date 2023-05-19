@@ -97,7 +97,7 @@ export const SettingsPanel: VFC = () => {
 
     return (
         <>
-            {getSettings(settings, (update) => dispatch(settingEditIntent(update, 'page'))).map((section, i) => (
+            {getSettings(settings, (update) => dispatch(settingEditIntent(update))).map((section, i) => (
                 <Card key={`settings-section-${i}`} rounded className="mb-4 p-3">
                     <strong className="color-norm block">{section.label}</strong>
 

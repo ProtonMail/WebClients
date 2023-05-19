@@ -5,10 +5,11 @@ import { WorkerStatus } from '@proton/pass/types';
 
 import * as action from '../actions';
 import { boot, stateSync, wakeupSuccess } from '../actions';
+import { WithReceiverAction } from '../actions/with-receiver';
 import { State } from '../types';
 
-function* wakeupWorker({ payload: { status }, meta }: ReturnType<typeof action.wakeup>) {
-    const { tabId, receiver } = meta;
+function* wakeupWorker({ payload: { status }, meta }: WithReceiverAction<ReturnType<typeof action.wakeup>>) {
+    const { tabId, endpoint } = meta.receiver;
     const loggedIn = authentication?.hasSession();
 
     switch (status) {
@@ -31,8 +32,8 @@ function* wakeupWorker({ payload: { status }, meta }: ReturnType<typeof action.w
     }
 
     /* synchronise the consumer app */
-    yield put(stateSync((yield select()) as State, { receiver, tabId }));
-    yield put(wakeupSuccess(receiver!, tabId!));
+    yield put(stateSync((yield select()) as State, { endpoint, tabId }));
+    yield put(wakeupSuccess(endpoint!, tabId!));
 }
 
 export default function* wakeup(): Generator {
