@@ -5,6 +5,7 @@ import { type ImportPayload, ImportProvider } from '@proton/pass/import';
 import type { ExtensionEndpoint, ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
+import type { ImportEntry } from '../../reducers';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
@@ -24,7 +25,7 @@ export const importItemsIntent = createAction(
 
 export const importItemsSuccess = createAction(
     'import items success',
-    (payload: { total: number; ignored: string[]; provider: ImportProvider }, receiver?: ExtensionEndpoint) =>
+    (payload: ImportEntry, receiver?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({

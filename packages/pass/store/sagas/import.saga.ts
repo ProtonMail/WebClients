@@ -6,6 +6,7 @@ import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
+import { getEpoch } from '@proton/pass/utils/time';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
@@ -124,7 +125,18 @@ function* importWorker(
             )
         );
 
-        yield put(importItemsSuccess({ total: totalItems, ignored, provider }, meta.sender?.endpoint));
+        yield put(
+            importItemsSuccess(
+                {
+                    provider,
+                    ignored,
+                    total: totalItems,
+                    importedAt: getEpoch(),
+                    warnings: data.warnings,
+                },
+                meta.sender?.endpoint
+            )
+        );
         onItemsChange?.();
     } catch (error: any) {
         yield put(importItemsFailure(error, meta.sender?.endpoint));
