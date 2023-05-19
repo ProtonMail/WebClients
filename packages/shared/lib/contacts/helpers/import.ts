@@ -57,11 +57,9 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
     // try to get the name of the contact from FN, which is a required field in a vcard
     const contentLineSeparator = vcardOrVCardContact.includes('\r\n') ? '\r\n' : '\n';
     const contentLineSeparatorLength = contentLineSeparator.length;
-    const indexOfFNValue = vcardOrVCardContact.indexOf(
-        ':',
-        vcardOrVCardContact.toLowerCase().indexOf(`${contentLineSeparator}fn`)
-    );
-    if (indexOfFNValue === -1) {
+    const indexOfFNProperty = vcardOrVCardContact.toLowerCase().indexOf(`${contentLineSeparator}fn`);
+    const indexOfFNValue = vcardOrVCardContact.indexOf(':', indexOfFNProperty);
+    if (indexOfFNValue === -1 || indexOfFNProperty === -1) {
         return unknownString;
     }
     let indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, indexOfFNValue);
