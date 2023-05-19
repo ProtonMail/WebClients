@@ -6,7 +6,7 @@ import { withSupportedSequence } from '@proton/shared/lib/calendar/icsSurgery/ve
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
-import { queryEvents } from '../../api/calendars';
+import { getEvent, queryEventIDs } from '../../api/calendars';
 import { SECOND } from '../../constants';
 import formatUTC from '../../date-fns-utc/format';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
@@ -27,7 +27,7 @@ import {
     VcalVeventComponent,
     VisualCalendar,
 } from '../../interfaces/calendar';
-import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
+import { CalendarEventIDsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { getIsAutoAddedInvite } from '../apiModels';
@@ -199,7 +199,7 @@ export const processInBatches = async ({
     weekStartsOn,
     defaultTzid,
 }: ProcessData): Promise<[VcalVeventComponent[], ExportError[], number]> => {
-    const PAGE_SIZE = 10;
+    const PAGE_SIZE = 100;
     const DELAY = 100;
     const batchesLength = Math.ceil(totalToProcess / PAGE_SIZE);
     const processed: VcalVeventComponent[] = [];
@@ -214,15 +214,21 @@ export const processInBatches = async ({
             return [[], [], totalToProcess];
         }
 
-        const params: CalendarExportEventsQuery = {
-            PageSize: PAGE_SIZE,
-            BeginID: lastId,
+        const params: CalendarEventIDsQuery = {
+            Limit: PAGE_SIZE,
+            AfterID: lastId,
         };
 
-        const [{ Events }] = await Promise.all([
-            api<{ Events: CalendarEvent[] }>(queryEvents(calendar.ID, params)),
-            wait(DELAY),
-        ]);
+        const [{ IDs }] = await Promise.all([api<{ IDs: string[] }>(queryEventIDs(calendar.ID, params)), wait(DELAY)]);
+
+        const EventsResponses: { Event: CalendarEvent }[] = await Promise.all(
+            IDs.map(
+                (eventID: string): Promise<{ Event: CalendarEvent }> =>
+                    api<{ Event: CalendarEvent }>({ ...getEvent(calendar.ID, eventID), silence: true })
+            )
+        );
+
+        const Events = EventsResponses.map((eventResponse) => eventResponse.Event);
 
         const exportableEvents = getIsOwnedCalendar(calendar)
             ? Events
