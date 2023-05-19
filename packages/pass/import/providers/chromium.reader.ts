@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -15,8 +15,19 @@ import type { ChromiumItem } from './chromium.types';
 const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'username', 'password'];
 
 export const readChromiumData = async (data: string): Promise<ImportPayload> => {
+    const ignored: string[] = [];
+
     try {
-        const items = await readCSV<ChromiumItem>(data, CHROME_EXPECTED_HEADERS);
+        const result = await readCSV<ChromiumItem>(data, CHROME_EXPECTED_HEADERS, {
+            onErrors: (errors) =>
+                ignored.push(
+                    `[Error] ${c('Error').ngettext(
+                        msgid`Detected ${errors.length} corrupted csv row`,
+                        `Detected ${errors.length} corrupted csv rows`,
+                        errors.length
+                    )}`
+                ),
+        });
 
         return {
             vaults: [
@@ -24,7 +35,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                     type: 'new',
                     vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
                     id: uniqueId(),
-                    items: items.map((item): ItemImportIntent<'login'> => {
+                    items: result.items.map((item): ItemImportIntent<'login'> => {
                         const urlResult = isValidURL(item.url ?? '');
                         const url = urlResult.valid ? new URL(urlResult.url) : undefined;
                         const name = item.name || url?.hostname || 'Unnamed item';
@@ -48,7 +59,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                     }),
                 },
             ],
-            ignored: [],
+            ignored,
         };
     } catch (e) {
         logger.warn('[Importer::Chrome]', e);

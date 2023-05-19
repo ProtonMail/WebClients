@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
@@ -63,18 +63,30 @@ const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
 });
 
 export const readLastPassData = async (data: string): Promise<ImportPayload> => {
+    const ignored: string[] = [];
+
     try {
-        const lastPassItems = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS, true);
+        const result = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS, {
+            onErrors: (errors) =>
+                ignored.push(
+                    `[Warning] ${c('Error')
+                        .t`LastPass will export corrupted CSV files if any of your item fields contain unexpected commas, quotes or multiple lines`}`,
+                    `[Error] ${c('Error').ngettext(
+                        msgid`Detected ${errors.length} corrupted csv row`,
+                        `Detected ${errors.length} corrupted csv rows`,
+                        errors.length
+                    )}`
+                ),
+        });
 
         const groupedByVault = groupWith<LastPassItem>(
             (a, b) => a.grouping === b.grouping,
-            lastPassItems.map((item) => ({
+            result.items.map((item) => ({
                 ...item,
                 grouping: item.grouping ? lastItem(item.grouping?.split('\\')) : undefined,
             }))
         );
 
-        const ignored: string[] = [];
         const vaults: ImportVault[] = groupedByVault
             .filter(({ length }) => length > 0)
             .map((items) => {
