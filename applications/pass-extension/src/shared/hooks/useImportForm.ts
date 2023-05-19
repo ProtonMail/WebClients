@@ -6,7 +6,13 @@ import { c } from 'ttag';
 
 import { Dropzone, FileInput, onlyDragFiles } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { ImportPayload, ImportProvider, ImportReaderPayload, fileReader } from '@proton/pass/import';
+import {
+    ImportPayload,
+    ImportProvider,
+    ImportReaderPayload,
+    extractFileExtension,
+    fileReader,
+} from '@proton/pass/import';
 import { ImportState, importItemsIntent, selectLatestImport } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
 import { Maybe } from '@proton/pass/types';
@@ -72,8 +78,11 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
         errors.file = '';
     }
 
-    if (provider === ImportProvider.PROTONPASS_PGP && !Boolean(passphrase)) {
-        errors.passphrase = c('Warning').t`PGP encrypted export file requires passphrase`;
+    if (file && provider === ImportProvider.PROTONPASS) {
+        const fileExtension = extractFileExtension(file.name);
+        if (fileExtension === 'pgp' && !Boolean(passphrase)) {
+            errors.passphrase = c('Warning').t`PGP encrypted export file requires passphrase`;
+        }
     }
 
     return errors;
@@ -101,17 +110,11 @@ export const useImportForm = ({
         onSubmit: async (values) => {
             try {
                 setBusy(true);
-                const payload: ImportReaderPayload =
-                    values.provider === ImportProvider.PROTONPASS_PGP
-                        ? {
-                              file: values.file!,
-                              provider: values.provider,
-                              passphrase: values.passphrase ?? '',
-                          }
-                        : {
-                              file: values.file!,
-                              provider: values.provider,
-                          };
+                const payload: ImportReaderPayload = {
+                    file: values.file!,
+                    provider: values.provider,
+                    passphrase: values.passphrase,
+                };
 
                 const result = await beforeSubmit(await fileReader(payload));
 
