@@ -134,7 +134,7 @@ const SettingsApp: FC = () => {
     const { createNotification } = useNotifications();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
-        if (message.type === WorkerMessageType.NOTIFICATION && message.payload.notification.target === 'page') {
+        if (message.type === WorkerMessageType.NOTIFICATION && message.payload.notification.receiver === 'page') {
             createNotification(message.payload.notification);
         }
     }, []);

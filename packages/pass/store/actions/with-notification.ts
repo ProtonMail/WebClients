@@ -5,7 +5,7 @@ import type { ExtensionEndpoint } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-export type Notification = CreateNotificationOptions & { target?: ExtensionEndpoint };
+export type Notification = CreateNotificationOptions & { receiver?: ExtensionEndpoint };
 export type WithNotification<T = AnyAction> = T & { meta: { notification: Notification } };
 export type NotificationOptions = Notification &
     ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });

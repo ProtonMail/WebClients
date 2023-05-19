@@ -1,7 +1,7 @@
-import { Middleware } from 'redux';
+import { AnyAction, Middleware } from 'redux';
 
 import { resolveMessageFactory, sendMessage } from '@proton/pass/extension/message';
-import { acceptActionWithReceiver } from '@proton/pass/store/actions/with-receiver';
+import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/with-receiver';
 import { isClientSynchronousAction } from '@proton/pass/store/actions/with-synchronous-client-action';
 import { ExtensionEndpoint, TabId, WorkerMessageType, WorkerMessageWithSender } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -31,18 +31,20 @@ export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewa
                 const unprocessedAction = !isClientSynchronousAction(message.payload.action);
                 const acceptAction = acceptActionWithReceiver(message.payload.action, endpoint, tabId);
 
-                if (unprocessedAction && acceptAction) {
-                    next(message.payload.action);
-                }
+                if (unprocessedAction && acceptAction) next(message.payload.action);
             }
         });
 
-        return (action) => {
-            if (isClientSynchronousAction(action)) {
-                next(action);
-            }
+        return (action: AnyAction) => {
+            /* if action should be processed immediately on the client
+             * reducers, forward it before broadcasting to the worker */
+            if (isClientSynchronousAction(action)) next(action);
 
-            sendMessage(messageFactory({ type: WorkerMessageType.STORE_ACTION, payload: { action } })).catch(noop);
+            /* hydrate the action with the current client's sender data */
+            const message = messageFactory({ type: WorkerMessageType.STORE_ACTION, payload: { action } });
+            message.payload.action = withSender({ endpoint: message.sender, tabId })(message.payload.action);
+
+            sendMessage(message).catch(noop);
         };
     };
 };

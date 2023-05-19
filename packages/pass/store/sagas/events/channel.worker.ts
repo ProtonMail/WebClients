@@ -44,7 +44,7 @@ export function* channelEventsWorker<T extends ChannelType>(
 export function* channelWakeupWorker<T extends ChannelType>({ manager, interval }: EventChannel<T>): Generator {
     yield manager.call().catch(noop);
     yield takeLeading(
-        (action: AnyAction) => wakeupSuccess.match(action) && action.meta.receiver === 'popup',
+        (action: AnyAction) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
         function* () {
             yield manager.call().catch(noop);
             /* wait the channel's interval to process

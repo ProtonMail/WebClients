@@ -3,8 +3,9 @@ import { AnyAction } from 'redux';
 import { ExtensionEndpoint, TabId } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 
-export type WithReceiverOptions = { receiver?: ExtensionEndpoint; tabId?: TabId };
-export type WithReceiverAction<T = AnyAction> = T & { meta: WithReceiverOptions };
+export type EndpointOptions = { endpoint?: ExtensionEndpoint; tabId?: TabId };
+export type WithReceiverAction<T = AnyAction> = T & { meta: { receiver: EndpointOptions } };
+export type WithSenderAction<T = AnyAction> = T & { meta: { sender?: EndpointOptions } };
 
 /* type guard utility */
 export const isActionWithReceiver = <T extends AnyAction>(action?: T): action is WithReceiverAction<T> => {
@@ -12,21 +13,24 @@ export const isActionWithReceiver = <T extends AnyAction>(action?: T): action is
     return meta?.receiver !== undefined || meta?.tabId !== undefined;
 };
 
-export const acceptActionWithReceiver = (action: AnyAction, receiver: ExtensionEndpoint, tabId?: TabId) => {
+export const acceptActionWithReceiver = (action: AnyAction, endpoint: ExtensionEndpoint, tabId?: TabId) => {
     if (isActionWithReceiver(action)) {
         const { meta } = action;
         return (
-            (meta.receiver === undefined || meta.receiver === receiver) &&
-            (meta.tabId === undefined || meta.tabId === tabId)
+            (meta.receiver === undefined || meta.receiver.endpoint === endpoint) &&
+            (meta.receiver.tabId === undefined || meta.receiver.tabId === tabId)
         );
     }
 
     return true;
 };
 
-const withReceiver =
-    (options: WithReceiverOptions) =>
+export const withReceiver =
+    (options: EndpointOptions) =>
     <T extends object>(action: T): WithReceiverAction<T> =>
-        merge(action, { meta: options });
+        merge(action, { meta: { receiver: options } });
 
-export default withReceiver;
+export const withSender =
+    (options: EndpointOptions) =>
+    <T extends object>(action: T): WithSenderAction<T> =>
+        merge(action, { meta: { sender: options } });

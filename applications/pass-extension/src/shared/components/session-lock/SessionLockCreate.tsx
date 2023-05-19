@@ -7,7 +7,6 @@ import { useNotifications } from '@proton/components/index';
 import { sessionLockEnableIntent } from '@proton/pass/store';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { ExtensionContext } from '../../extension';
 import { useSessionLockConfirmContext } from './SessionLockConfirmContextProvider';
 import { SessionLockPinModal } from './SessionLockPinModal';
 
@@ -38,12 +37,7 @@ export const SessionLockCreate: VFC<Props> = ({ opened, onClose }) => {
                         throw new Error('invalid');
                     }
 
-                    dispatch(
-                        sessionLockEnableIntent(
-                            { pin: pinConfirmation, ttl: 900 /* default to 15 minutes */ },
-                            ExtensionContext.get().endpoint
-                        )
-                    );
+                    dispatch(sessionLockEnableIntent({ pin: pinConfirmation, ttl: 900 /* default to 15 minutes */ }));
                 },
             };
 

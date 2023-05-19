@@ -20,6 +20,7 @@ import {
     vaultCreationIntent,
     vaultCreationSuccess,
 } from '../actions';
+import { WithSenderAction } from '../actions/with-receiver';
 import type { WorkerRootSagaOptions } from '../types';
 import { importItemsBatch, parseItemRevision } from './workers/items';
 
@@ -54,7 +55,7 @@ function* createVaultForImport(vaultName: string) {
 
 function* importWorker(
     { onItemsChange, onImportProgress, telemetry }: WorkerRootSagaOptions,
-    { payload: { data, provider }, meta }: ReturnType<typeof importItemsIntent>
+    { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItemsIntent>>
 ) {
     let totalItems: number = 0;
     const ignored: string[] = data.ignored;
@@ -86,7 +87,7 @@ function* importWorker(
 
                         totalItems += revisions.length;
 
-                        onImportProgress?.(totalItems, meta.receiver);
+                        onImportProgress?.(totalItems, meta.sender?.endpoint);
                         yield put(itemsBatchImported({ shareId, items }));
                     } catch (e) {
                         const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
@@ -94,7 +95,7 @@ function* importWorker(
 
                         yield put(
                             notification({
-                                target: meta.receiver,
+                                receiver: meta.sender?.endpoint,
                                 key: meta.request.id,
                                 type: 'error',
                                 text: c('Error').t`Import failed for vault "${vaultData.vaultName}" : ${description}`,
@@ -107,7 +108,7 @@ function* importWorker(
                 yield put(
                     notification({
                         key: meta.request.id,
-                        target: meta.receiver,
+                        receiver: meta.sender?.endpoint,
                         type: 'error',
                         text: c('Error').t`Vault "${vaultData.vaultName}" could not be created`,
                     })
@@ -123,10 +124,10 @@ function* importWorker(
             )
         );
 
-        yield put(importItemsSuccess({ total: totalItems, ignored, provider }, meta.receiver));
+        yield put(importItemsSuccess({ total: totalItems, ignored, provider }, meta.sender?.endpoint));
         onItemsChange?.();
     } catch (error: any) {
-        yield put(importItemsFailure(error, meta.receiver));
+        yield put(importItemsFailure(error, meta.sender?.endpoint));
     } finally {
         yield put(acknowledgeRequest(meta.request.id));
     }
