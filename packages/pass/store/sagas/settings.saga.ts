@@ -3,21 +3,22 @@ import { put, select, takeLeading } from 'redux-saga/effects';
 import { partialMerge } from '@proton/pass/utils/object';
 
 import { settingEditFailure, settingEditIntent, settingEditSuccess } from '../actions/creators/settings';
+import { WithSenderAction } from '../actions/with-receiver';
 import type { ProxiedSettings } from '../reducers/settings';
 import { selectProxiedSettings } from '../selectors/settings';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* disableSessionLockWorker(
     { onSettingUpdate }: WorkerRootSagaOptions,
-    { meta, payload }: ReturnType<typeof settingEditIntent>
+    { meta, payload }: WithSenderAction<ReturnType<typeof settingEditIntent>>
 ) {
     try {
         const settings: ProxiedSettings = yield select(selectProxiedSettings);
         yield onSettingUpdate?.(partialMerge(settings, payload));
 
-        yield put(settingEditSuccess(payload, meta.receiver));
+        yield put(settingEditSuccess(payload, meta.sender?.endpoint));
     } catch (e) {
-        yield put(settingEditFailure(e, meta.receiver));
+        yield put(settingEditFailure(e, meta.sender?.endpoint));
     }
 }
 
