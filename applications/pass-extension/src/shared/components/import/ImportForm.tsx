@@ -26,7 +26,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
     const needsPassphrase = useMemo(
         () =>
             form.values.file &&
-            extractFileExtension(form.values.file.name) &&
+            extractFileExtension(form.values.file.name) === 'pgp' &&
             form.values.provider === ImportProvider.PROTONPASS,
         [form.values]
     );
@@ -87,12 +87,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                 </Dropzone>
             </Bordered>
 
-            <Field
-                name="passphrase"
-                label={c('Label').t`Passphrase`}
-                component={PasswordField}
-                disabled={!needsPassphrase}
-            />
+            {needsPassphrase && <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />}
         </>
     );
 };
