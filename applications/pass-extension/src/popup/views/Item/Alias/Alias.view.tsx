@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { InlineLinkButton, useNotifications } from '@proton/components';
 import {
     aliasDetailsRequested,
+    selectLoginItemByUsername,
     selectMailboxesForAlias,
     selectRequestInFlight,
     selectRequestStatus,
@@ -30,6 +31,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
     const aliasDetailsLoading = useSelector(selectRequestInFlight(requests.aliasDetails(aliasEmail!)));
     const aliasDetailsRequestStatus = useSelector(selectRequestStatus(requests.aliasDetails(aliasEmail!)));
+    const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail ?? ''));
 
     const ready = !aliasDetailsLoading && mailboxesForAlias !== undefined;
     const requestFailure = aliasDetailsRequestStatus === 'failure' && mailboxesForAlias === undefined;
@@ -53,7 +55,24 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
         <ItemViewPanel type="alias" name={name} vault={vault} {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
                 <ClickToCopyValueControl value={aliasEmail ?? ''}>
-                    <ValueControl interactive icon="alias" label={c('Label').t`Alias address`}>
+                    <ValueControl
+                        interactive
+                        icon="alias"
+                        label={c('Label').t`Alias address`}
+                        {...(!relatedLogin
+                            ? {
+                                  extra: (
+                                      <InlineLinkButton
+                                          className="text-underline"
+                                          onClick={(e) => {
+                                              e.stopPropagation();
+                                              e.preventDefault();
+                                          }}
+                                      >{c('Action').t`Create login`}</InlineLinkButton>
+                                  ),
+                              }
+                            : {})}
+                    >
                         {aliasEmail}
                     </ValueControl>
                 </ClickToCopyValueControl>
