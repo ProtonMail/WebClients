@@ -20,6 +20,7 @@ type Props = {
     name: string;
     vault: VaultShare;
     actions?: ReactElement[];
+    quickActions?: ReactElement[];
 } & Omit<ItemTypeViewProps, 'revision' | 'vault'>;
 
 export const ItemViewPanel: FC<Props> = ({
@@ -30,6 +31,7 @@ export const ItemViewPanel: FC<Props> = ({
     failed,
     trashed,
     actions = [],
+    quickActions = [],
 
     handleEditClick,
     handleRetryClick,
@@ -126,6 +128,8 @@ export const ItemViewPanel: FC<Props> = ({
                                         {c('Action').t`Move to another vault`}
                                     </DropdownMenuButton>
                                 )}
+
+                                {quickActions}
 
                                 <DropdownMenuButton
                                     className="flex flex-align-items-center text-left"
