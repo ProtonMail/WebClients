@@ -1,4 +1,4 @@
-import { type VFC, useEffect, useState } from 'react';
+import { type VFC, useCallback, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -6,12 +6,12 @@ import { c } from 'ttag';
 
 import { selectAliasLimits } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
-import { uniqueId } from '@proton/pass/utils/string';
+import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { type ItemNewProps } from '../../../../shared/items';
-import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
+import { deriveAliasPrefix, deriveAliasPrefixFromURL } from '../../../../shared/items/alias';
 import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
@@ -30,26 +30,35 @@ const FORM_ID = 'new-alias';
 
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
     const { realm, subdomain } = usePopupContext();
-    const [ready, setReady] = useState(false);
-
     const { aliasAllowCreate } = useSelector(selectAliasLimits);
 
-    const isValidURL = realm !== undefined;
-    const url = subdomain !== undefined ? subdomain : realm;
-    const defaultName = isValidURL ? url! : '';
+    const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
+        const url = subdomain !== undefined ? subdomain : realm;
+        const validURL = url !== undefined;
 
-    const initialValues: NewAliasFormValues = {
-        name: defaultName,
-        note: isValidURL ? c('Placeholder').t`Used on ${url}` : '',
-        shareId,
-        aliasPrefix: '',
-        aliasSuffix: undefined,
-        mailboxes: [],
-    };
+        return {
+            name: validURL ? url : '',
+            note: validURL ? c('Placeholder').t`Used on ${url}` : '',
+            aliasPrefix: validURL ? deriveAliasPrefixFromURL(url) : '',
+        };
+    }, []);
+
+    /* set initial `aliasPrefix` to an empty string to avoid a
+     * form error state if `aliasOptions` have not loaded yet */
+    const initialValues: NewAliasFormValues = useMemo(
+        () => ({
+            shareId,
+            aliasPrefix: '',
+            aliasSuffix: undefined,
+            mailboxes: [],
+            ...defaults,
+        }),
+        []
+    );
 
     const form = useFormik<NewAliasFormValues>({
-        initialErrors: validateNewAliasForm(initialValues),
         initialValues,
+        initialErrors: validateNewAliasForm(initialValues),
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
                 const optimisticId = uniqueId();
@@ -81,25 +90,44 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({
         shareId,
-        onAliasOptionsLoaded: ({ suffixes, mailboxes }) => {
-            const firstSuffix = suffixes?.[0];
-            const firstMailBox = mailboxes?.[0];
+        onAliasOptionsLoaded: useCallback(
+            async ({ suffixes, mailboxes }) =>
+                /* if alias options have already been loaded, the following block
+                 * will be executed on initial mount of the component: initial
+                 * validation will be underway and the `form.reset` call will be
+                 * invalidated by the initial async validation. For safety, wrap
+                 * the `onAliasOptionsLoaded` in a `requestAnimationFrame` so it
+                 * triggers on the next repaint */
+                requestAnimationFrame(() => {
+                    const firstSuffix = suffixes?.[0];
+                    const firstMailBox = mailboxes?.[0];
+                    const prefixFromURL = !isEmptyString(defaultAliasPrefix);
+                    const aliasPrefix = prefixFromURL ? defaultAliasPrefix : deriveAliasPrefix(form.values.name);
 
-            const values = merge(form.values, {
-                ...(firstSuffix && { aliasSuffix: firstSuffix }),
-                ...(firstMailBox && { mailboxes: [firstMailBox] }),
-            });
+                    const values = merge(form.values, {
+                        aliasPrefix,
+                        ...(firstSuffix && { aliasSuffix: firstSuffix }),
+                        ...(firstMailBox && { mailboxes: [firstMailBox] }),
+                    });
 
-            form.resetForm({ errors: validateNewAliasForm(values), values });
-            setReady(true);
-        },
+                    form.resetForm({ values, errors: validateNewAliasForm(values) });
+                }),
+            []
+        ),
     });
 
     const { values, touched, setFieldValue } = form;
     const { name, aliasPrefix, aliasSuffix } = values;
 
     useEffect(() => {
-        void (!touched.aliasPrefix && setFieldValue('aliasPrefix', deriveAliasPrefixFromName(name), true));
+        /* update the aliasPrefix with the item's name only :
+        - if it hasn't been touched by the user yet
+        - a default alias prefix was not resolved  */
+        void (
+            !defaultAliasPrefix &&
+            !touched.aliasPrefix &&
+            setFieldValue('aliasPrefix', deriveAliasPrefix(name), true)
+        );
     }, [name, touched.aliasPrefix]);
 
     return (
@@ -107,7 +135,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             type="alias"
             formId={FORM_ID}
             handleCancelClick={onCancel}
-            valid={ready && form.isValid}
+            valid={form.isValid}
             discardable={!form.dirty}
             {...(!aliasAllowCreate ? { renderSubmitButton: <UpgradeButton key="upgrade-button" /> } : {})}
         >
