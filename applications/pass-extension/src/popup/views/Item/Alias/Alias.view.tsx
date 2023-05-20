@@ -1,13 +1,12 @@
-import { type VFC, useEffect } from 'react';
+import { type MouseEvent, type VFC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { InlineLinkButton, useNotifications } from '@proton/components';
+import { DropdownMenuButton, Icon, InlineLinkButton, useNotifications } from '@proton/components';
 import {
     aliasDetailsRequested,
-    selectLoginItemByUsername,
     selectMailboxesForAlias,
     selectRequestInFlight,
     selectRequestStatus,
@@ -25,7 +24,7 @@ import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item, itemId, aliasEmail, createTime, modifyTime, revision: revisionNumber } = revision;
     const { name, note } = item.metadata;
-    const { optimistic } = itemViewProps;
+    const { optimistic, trashed } = itemViewProps;
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -34,10 +33,15 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
     const aliasDetailsLoading = useSelector(selectRequestInFlight(requests.aliasDetails(aliasEmail!)));
     const aliasDetailsRequestStatus = useSelector(selectRequestStatus(requests.aliasDetails(aliasEmail!)));
-    const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail ?? ''));
 
     const ready = !aliasDetailsLoading && mailboxesForAlias !== undefined;
     const requestFailure = aliasDetailsRequestStatus === 'failure' && mailboxesForAlias === undefined;
+
+    const createLoginFromAlias = (evt: MouseEvent) => {
+        evt.stopPropagation();
+        evt.preventDefault();
+        history.push(`/item/new/login?username=${aliasEmail}`);
+    };
 
     useEffect(() => {
         if (!optimistic && mailboxesForAlias === undefined) {
@@ -55,24 +59,38 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     }, [requestFailure]);
 
     return (
-        <ItemViewPanel type="alias" name={name} vault={vault} {...itemViewProps}>
+        <ItemViewPanel
+            type="alias"
+            name={name}
+            vault={vault}
+            {...itemViewProps}
+            {...(!trashed
+                ? {
+                      quickActions: [
+                          <DropdownMenuButton
+                              key="create-login"
+                              className="flex flex-align-items-center text-left"
+                              onClick={createLoginFromAlias}
+                          >
+                              <Icon name="user" className="mr-3 color-weak" />
+                              {c('Action').t`Create login`}
+                          </DropdownMenuButton>,
+                      ],
+                  }
+                : {})}
+        >
             <FieldsetCluster mode="read" as="div">
                 <ClickToCopyValueControl value={aliasEmail ?? ''}>
                     <ValueControl
                         interactive
                         icon="alias"
                         label={c('Label').t`Alias address`}
-                        {...(!relatedLogin
+                        {...(!trashed
                             ? {
                                   extra: (
-                                      <InlineLinkButton
-                                          className="text-underline"
-                                          onClick={(e) => {
-                                              e.stopPropagation();
-                                              e.preventDefault();
-                                              history.push(`/item/new/login?username=${aliasEmail}`);
-                                          }}
-                                      >{c('Action').t`Create login`}</InlineLinkButton>
+                                      <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>{c(
+                                          'Action'
+                                      ).t`Create login`}</InlineLinkButton>
                                   ),
                               }
                             : {})}
