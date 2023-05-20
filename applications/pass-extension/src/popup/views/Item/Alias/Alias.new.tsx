@@ -33,8 +33,8 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
     const { aliasAllowCreate } = useSelector(selectAliasLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
-        const url = subdomain !== undefined ? subdomain : realm;
-        const validURL = url !== undefined;
+        const url = subdomain ?? realm;
+        const validURL = url !== null;
 
         return {
             name: validURL ? url : '',
