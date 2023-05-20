@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 export const MAX_ITEM_NAME_LENGTH = 200;
-export const MAX_ITEM_NOTE_LENGTH = 5000;
+export const MAX_ITEM_NOTE_LENGTH = 25_000;
 
 type BaseItemValues = { name: string; note: string };
 
