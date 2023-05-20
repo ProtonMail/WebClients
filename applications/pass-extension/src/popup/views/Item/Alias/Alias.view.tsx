@@ -1,5 +1,6 @@
 import { type VFC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
@@ -27,6 +28,8 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     const { optimistic } = itemViewProps;
 
     const dispatch = useDispatch();
+    const history = useHistory();
+
     const { createNotification } = useNotifications();
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
     const aliasDetailsLoading = useSelector(selectRequestInFlight(requests.aliasDetails(aliasEmail!)));
@@ -67,6 +70,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                                           onClick={(e) => {
                                               e.stopPropagation();
                                               e.preventDefault();
+                                              history.push(`/item/new/login?username=${aliasEmail}`);
                                           }}
                                       >{c('Action').t`Create login`}</InlineLinkButton>
                                   ),
