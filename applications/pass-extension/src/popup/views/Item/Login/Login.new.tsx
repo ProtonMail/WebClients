@@ -1,5 +1,6 @@
-import { type ReactElement, type VFC } from 'react';
+import { type ReactElement, type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -46,20 +47,26 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const defaultName = isValidURL ? url! : '';
     const { totpAllowCreate } = useSelector(selectTOTPLimits);
 
-    const initialValues: LoginItemFormValues = {
-        name: defaultName,
-        shareId,
-        username: '',
-        password: '',
-        note: '',
-        totpUri: '',
-        url: isValidURL ? createNewUrl(url!).url : '',
-        urls: [],
-        withAlias: false,
-        aliasPrefix: '',
-        aliasSuffix: undefined,
-        mailboxes: [],
-    };
+    const { search } = useLocation();
+
+    const initialValues: LoginItemFormValues = useMemo(() => {
+        const params = new URLSearchParams(search);
+
+        return {
+            name: defaultName,
+            shareId,
+            username: params.get('username') ?? '',
+            password: '',
+            note: '',
+            totpUri: '',
+            url: isValidURL ? createNewUrl(url!).url : '',
+            urls: [],
+            withAlias: false,
+            aliasPrefix: '',
+            aliasSuffix: undefined,
+            mailboxes: [],
+        };
+    }, []);
 
     const form = useFormik<NewLoginItemFormValues>({
         initialValues,
