@@ -168,9 +168,10 @@ export const itemTrashSuccess = createOptimisticAction(
     (payload: SelectedItem) =>
         withNotification({
             type: 'success',
+            key: getItemActionId(payload),
             text: c('Info').t`Item moved to trash`,
         })({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemDeleteIntent = createOptimisticAction(
