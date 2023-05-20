@@ -147,7 +147,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                 handleCancelClick={onCancel}
                 discardable={!form.dirty}
             >
-                {({ canFocus }) => (
+                {({ didMount }) => (
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
@@ -157,8 +157,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Placeholder').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={canFocus}
-                                    key={`login-name-${canFocus}`}
+                                    autoFocus={didMount}
+                                    key={`login-name-${didMount}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
                             </FieldsetCluster>
