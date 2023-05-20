@@ -11,7 +11,7 @@ export const isNoteItem = (item: Item): item is Item<'note'> => item.type === 'n
 
 export const getItemKey = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
 
-export const getOptimisticItemActionId = (
+export const getItemActionId = (
     payload:
         | { optimisticId: string; itemId?: string; shareId: string }
         | { optimisticId?: string; itemId: string; shareId: string }
