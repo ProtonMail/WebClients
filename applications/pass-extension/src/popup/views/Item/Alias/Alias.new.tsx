@@ -111,7 +111,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             discardable={!form.dirty}
             {...(!aliasAllowCreate ? { renderSubmitButton: <UpgradeButton key="upgrade-button" /> } : {})}
         >
-            {({ canFocus }) => (
+            {({ didMount }) => (
                 <>
                     {!aliasAllowCreate && (
                         <ItemCard className="mb-2">
@@ -128,8 +128,9 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={canFocus && aliasAllowCreate}
-                                    key={`alias-name-${canFocus}`}
+                                    autoFocus={didMount && aliasAllowCreate}
+                                    /* trick for autofocus after initial mount */
+                                    key={`alias-name-${didMount}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
                             </FieldsetCluster>

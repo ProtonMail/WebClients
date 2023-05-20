@@ -50,7 +50,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >
-            {({ canFocus }) => (
+            {({ didMount }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <FieldsetCluster className="mb-4">
@@ -65,8 +65,8 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                             label={c('Label').t`Name`}
                             labelContainerClassName="sr-only"
                             placeholder={c('Placeholder').t`Untitled`}
-                            autoFocus={canFocus}
-                            key={`note-name-${canFocus}`}
+                            autoFocus={didMount}
+                            key={`note-name-${didMount}`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                         />
                         <Field
