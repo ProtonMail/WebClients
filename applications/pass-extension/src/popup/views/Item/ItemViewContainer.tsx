@@ -6,7 +6,7 @@ import { selectByShareId, selectItemWithOptimistic, selectShareOrThrow } from '@
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import type { SelectedItem, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
-import { getOptimisticItemActionId } from '@proton/pass/utils/pass/items';
+import { getItemActionId } from '@proton/pass/utils/pass/items';
 
 import { Panel } from '../../components/Panel/Panel';
 import { ItemView } from './Item/Item.view';
@@ -18,7 +18,7 @@ export const ItemViewContainer: VFC = () => {
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const item = useSelector(itemSelector);
 
-    const optimisticItemId = getOptimisticItemActionId({ itemId, shareId });
+    const optimisticItemId = getItemActionId({ itemId, shareId });
     const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
     const failure = useSelector(failedItemActionSelector);
 
