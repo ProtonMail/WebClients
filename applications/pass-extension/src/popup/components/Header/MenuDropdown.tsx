@@ -1,4 +1,4 @@
-import { type VFC, memo, useCallback, useState } from 'react';
+import { type VFC, memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -67,8 +67,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         }
     };
 
-    const handleLock = useCallback(() => (canLock ? lock() : openSettings('security')), [canLock]);
-
     const handleRestoreTrash = () => dispatch(restoreTrashIntent({ trashedItems }));
     const handleDeleteAllItemsInTrash = () => dispatch(emptyTrashIntent({ trashedItems }));
 
@@ -127,7 +125,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                 {c('Label').t`Settings`}
                             </span>
 
-                            <Icon name="arrow-out-square" className="ml0-5 color-weak" />
+                            <Icon name="arrow-out-square" className="ml-3 color-weak" />
                         </DropdownMenuButton>
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
@@ -142,7 +140,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                     {c('Action').t`Rate Pass`}
                                 </span>
 
-                                <Icon name="arrow-out-square" className="ml0-5 color-weak" />
+                                <Icon name="arrow-out-square" className="ml-3 color-weak" />
                             </DropdownMenuButton>
                         )}
 
@@ -163,14 +161,16 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             {c('Action').t`Sync`}
                         </DropdownMenuButton>
 
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
-                            onClick={handleLock}
-                            disabled={!ready}
-                        >
-                            <Icon name="lock" className="mr-3 color-weak" />
-                            {c('Action').t`Lock ${PASS_APP_NAME}`}
-                        </DropdownMenuButton>
+                        {canLock && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={withClose(lock)}
+                                disabled={!ready}
+                            >
+                                <Icon name="lock" className="mr-3 color-weak" />
+                                {c('Action').t`Lock ${PASS_APP_NAME}`}
+                            </DropdownMenuButton>
+                        )}
 
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"
