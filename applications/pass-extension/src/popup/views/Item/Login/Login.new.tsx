@@ -48,8 +48,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
-        const url = subdomain !== undefined ? subdomain : realm;
-        const validURL = url !== undefined;
+        const url = subdomain ?? realm;
+        const validURL = url !== null;
 
         return {
             shareId,
