@@ -10,8 +10,7 @@ import { popupMessage } from '@proton/pass/extension/message';
 import { selectWorkerSyncing } from '@proton/pass/store';
 import * as requests from '@proton/pass/store/actions/requests';
 import {
-    Maybe,
-    Realm,
+    MaybeNull,
     RequiredProps,
     WorkerMessageType,
     type WorkerMessageWithSender,
@@ -32,15 +31,17 @@ import { enhanceNotification } from '../../../shared/notification';
 
 export interface PopupContextValue extends Omit<ExtensionAppContextValue, 'context'> {
     state: RequiredProps<ExtensionContextState, 'popup'>;
-    realm: Maybe<Realm>;
-    subdomain: Maybe<string>;
+    realm: MaybeNull<string>;
+    subdomain: MaybeNull<string>;
+    domainName: MaybeNull<string>;
     sync: () => void;
 }
 
 export const PopupContext = createContext<PopupContextValue>({
     state: { ...INITIAL_WORKER_STATE, popup: INITIAL_POPUP_STATE },
-    realm: undefined,
-    subdomain: undefined,
+    realm: null,
+    subdomain: null,
+    domainName: null,
     ready: false,
     logout: noop,
     lock: noop,
@@ -60,7 +61,7 @@ const ExtendedExtensionContext: FC = ({ children }) => {
 
     const syncing = useSelector(selectWorkerSyncing) || extensionContext.state.status === WorkerStatus.BOOTING;
 
-    const { realm, subdomain } = ExtensionContext.get();
+    const { realm, subdomain, domainName } = ExtensionContext.get();
 
     useRequestStatusEffect(requests.syncing(), {
         onStart: () =>
@@ -82,8 +83,9 @@ const ExtendedExtensionContext: FC = ({ children }) => {
             ...extensionContext,
             state: { ...state, popup: state.popup ?? INITIAL_POPUP_STATE },
             ready: ready && !syncing,
-            realm: realm ?? undefined,
-            subdomain: subdomain ?? undefined,
+            realm,
+            subdomain,
+            domainName,
         };
     }, [extensionContext, syncing]);
 

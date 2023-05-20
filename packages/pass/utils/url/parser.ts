@@ -9,17 +9,20 @@ export const parseUrl = (url?: string) => {
     if (!check.valid) {
         return {
             domain: null,
+            domainName: null,
             subdomain: null,
             isTopLevelDomain: false,
         };
     }
 
-    const { domain, subdomain, hostname } = parse(url ?? '');
+    const { domain, subdomain, domainWithoutSuffix, hostname } = parse(url ?? '');
 
     return {
         domain: domain ?? hostname /* fallback on hostname for localhost support */,
-        subdomain: subdomain !== null && subdomain !== '' && subdomain !== 'www' ? hostname : null,
-        isTopLevelDomain: subdomain === null || subdomain === '' || subdomain === 'www',
+        domainName: domainWithoutSuffix,
+        subdomain: subdomain && subdomain !== 'www' ? hostname : null,
+
+        isTopLevelDomain: !subdomain || subdomain === 'www',
     };
 };
 
