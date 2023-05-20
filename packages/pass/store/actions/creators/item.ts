@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
-import { getOptimisticItemActionId } from '@proton/pass/utils/pass/items';
+import { getItemActionId } from '@proton/pass/utils/pass/items';
 
 import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
 import * as requests from '../requests';
@@ -19,7 +19,7 @@ export const itemCreationIntent = createOptimisticAction(
         payload: ItemCreateIntent,
         callback?: ActionCallback<ReturnType<typeof itemCreationSuccess> | ReturnType<typeof itemCreationFailure>>
     ) => pipe(withSynchronousClientAction, withCacheBlock, withCallback(callback))({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemCreationFailure = createOptimisticAction(
@@ -33,7 +33,7 @@ export const itemCreationFailure = createOptimisticAction(
                 error,
             })
         )({ payload, error }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemCreationDismiss = createOptimisticAction(
@@ -46,7 +46,7 @@ export const itemCreationDismiss = createOptimisticAction(
                 text: c('Info').t`"${payload.item.data.metadata.name}" item was dismissed`,
             })
         )({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemCreationSuccess = createOptimisticAction(
@@ -56,7 +56,7 @@ export const itemCreationSuccess = createOptimisticAction(
             type: 'success',
             text: c('Info').t`Item "${payload.item.data.metadata.name}" created`,
         })({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemEditIntent = createOptimisticAction(
@@ -65,7 +65,7 @@ export const itemEditIntent = createOptimisticAction(
         payload: ItemEditIntent,
         callback?: ActionCallback<ReturnType<typeof itemEditSuccess> | ReturnType<typeof itemEditFailure>>
     ) => pipe(withSynchronousClientAction, withCacheBlock, withCallback(callback))({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemEditFailure = createOptimisticAction(
@@ -79,7 +79,7 @@ export const itemEditFailure = createOptimisticAction(
                 error,
             })
         )({ payload, error }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemEditDismiss = createOptimisticAction(
@@ -92,7 +92,7 @@ export const itemEditDismiss = createOptimisticAction(
                 text: c('Info').t`"${payload.item.data.metadata.name}" update was dismissed`,
             })
         )({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemEditSuccess = createOptimisticAction(
@@ -102,7 +102,7 @@ export const itemEditSuccess = createOptimisticAction(
             type: 'success',
             text: c('Info').t`Item "${payload.item.data.metadata.name}" updated`,
         })({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemEditSync = createAction('item edit sync', (payload: { item: ItemRevision } & SelectedItem) => ({
@@ -113,7 +113,7 @@ export const itemMoveIntent = createOptimisticAction(
     'item move intent',
     (payload: { item: ItemRevision; shareId: string; optimisticId: string }) =>
         pipe(withSynchronousClientAction, withCacheBlock)({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemMoveFailure = createOptimisticAction(
@@ -127,7 +127,7 @@ export const itemMoveFailure = createOptimisticAction(
                 error,
             })
         )({ payload, error }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemMoveSuccess = createOptimisticAction(
@@ -137,7 +137,7 @@ export const itemMoveSuccess = createOptimisticAction(
             type: 'success',
             text: c('Info').t`Item successfully moved`,
         })({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemTrashIntent = createOptimisticAction(
@@ -146,7 +146,7 @@ export const itemTrashIntent = createOptimisticAction(
         payload: { item: ItemRevision } & SelectedItem,
         callback?: ActionCallback<ReturnType<typeof itemTrashSuccess> | ReturnType<typeof itemTrashFailure>>
     ) => pipe(withCacheBlock, withCallback(callback))({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemTrashFailure = createOptimisticAction(
@@ -160,7 +160,7 @@ export const itemTrashFailure = createOptimisticAction(
                 error,
             })
         )({ payload, error }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemTrashSuccess = createOptimisticAction(
@@ -179,7 +179,7 @@ export const itemDeleteIntent = createOptimisticAction(
         payload: { item: ItemRevision } & SelectedItem,
         callback?: ActionCallback<ReturnType<typeof itemDeleteSuccess> | ReturnType<typeof itemDeleteFailure>>
     ) => pipe(withCacheBlock, withCallback(callback))({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemDeleteFailure = createOptimisticAction(
@@ -193,7 +193,7 @@ export const itemDeleteFailure = createOptimisticAction(
                 error,
             })
         )({ payload, error }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemDeleteSuccess = createOptimisticAction(
@@ -203,7 +203,7 @@ export const itemDeleteSuccess = createOptimisticAction(
             type: 'success',
             text: c('Info').t`Item permanently deleted`,
         })({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemDeleteSync = createAction('item delete sync', (payload: SelectedItem) => ({
@@ -216,7 +216,7 @@ export const itemRestoreIntent = createOptimisticAction(
         payload: { item: ItemRevision } & SelectedItem,
         callback?: ActionCallback<ReturnType<typeof itemRestoreSuccess> | ReturnType<typeof itemRestoreFailure>>
     ) => pipe(withCacheBlock, withCallback(callback))({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemRestoreFailure = createOptimisticAction(
@@ -230,7 +230,7 @@ export const itemRestoreFailure = createOptimisticAction(
                 error,
             })
         )({ payload, error }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemRestoreSuccess = createOptimisticAction(
@@ -240,7 +240,7 @@ export const itemRestoreSuccess = createOptimisticAction(
             type: 'success',
             text: c('Info').t`Item restored`,
         })({ payload }),
-    ({ payload }) => getOptimisticItemActionId(payload)
+    ({ payload }) => getItemActionId(payload)
 );
 
 export const itemUsed = createAction('item used', (payload: SelectedItem) => ({ payload }));
