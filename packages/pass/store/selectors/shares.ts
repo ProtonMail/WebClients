@@ -15,7 +15,11 @@ export const selectAllShares = createSelector(
     (shares) => Object.values(unwrapOptimisticState(shares))
 );
 
-export const selectAllVaults = createSelector([selectAllShares], (shares) => shares.filter(isVaultShare));
+/* vaults returned from this selector are always
+ * sorted alphabetically by ascending vault name  */
+export const selectAllVaults = createSelector([selectAllShares], (shares) =>
+    shares.filter(isVaultShare).sort((a, b) => a.content.name.localeCompare(b.content.name))
+);
 
 export const selectAllVaultWithItemsCount = createSelector([selectAllVaults, selectItems], (shares, itemsByShareId) =>
     shares.map((share) => ({
