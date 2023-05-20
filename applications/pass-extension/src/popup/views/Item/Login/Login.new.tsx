@@ -15,7 +15,7 @@ import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { ItemNewProps } from '../../../../shared/items';
-import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
+import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -42,24 +42,23 @@ const FORM_ID = 'new-login';
 
 export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCancel }) => {
     const { realm, subdomain } = usePopupContext();
-    const isValidURL = realm !== undefined;
-    const url = subdomain !== undefined ? subdomain : realm;
-    const defaultName = isValidURL ? url! : '';
-    const { totpAllowCreate } = useSelector(selectTOTPLimits);
-
     const { search } = useLocation();
+
+    const { totpAllowCreate } = useSelector(selectTOTPLimits);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
+        const url = subdomain !== undefined ? subdomain : realm;
+        const validURL = url !== undefined;
 
         return {
-            name: defaultName,
             shareId,
+            name: validURL ? url : '',
             username: params.get('username') ?? '',
             password: '',
             note: '',
             totpUri: '',
-            url: isValidURL ? createNewUrl(url!).url : '',
+            url: validURL ? createNewUrl(url).url : '',
             urls: [],
             withAlias: false,
             aliasPrefix: '',
@@ -213,7 +212,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                                             .setValues((values) =>
                                                                 merge(values, {
                                                                     withAlias: true,
-                                                                    aliasPrefix: deriveAliasPrefixFromName(values.name),
+                                                                    aliasPrefix: deriveAliasPrefix(values.name),
                                                                     aliasSuffix: undefined,
                                                                     mailboxes: [],
                                                                 })
