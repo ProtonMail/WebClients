@@ -17,6 +17,7 @@ type Props = Omit<FieldBoxProps, 'icon'> & {
     interactive?: boolean;
     invalid?: boolean;
     loading?: boolean;
+    extra?: ReactNode;
 };
 
 export const ValueControl: VFC<Props> = ({
@@ -28,6 +29,7 @@ export const ValueControl: VFC<Props> = ({
     interactive = false,
     invalid = false,
     loading = false,
+    extra,
 }) => {
     const ValueContainer = as;
 
@@ -41,6 +43,7 @@ export const ValueControl: VFC<Props> = ({
                 <ValueContainer className="pass-value-control--value m-0 p-0 text-ellipsis">
                     {loading ? <div className="pass-skeleton pass-skeleton--value" /> : children}
                 </ValueContainer>
+                {extra}
             </FieldBox>
         </div>
     );
