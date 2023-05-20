@@ -12,7 +12,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
-import { deriveAliasPrefixFromName } from '../../../../../shared/items/alias';
+import { deriveAliasPrefixFromURL } from '../../../../../shared/items/alias';
 import { DropdownItem } from '../components/DropdownItem';
 
 const isValidAliasOptions = (
@@ -32,7 +32,7 @@ export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: strin
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
 
-    const prefix = useMemo(() => deriveAliasPrefixFromName(realm), [realm]);
+    const prefix = useMemo(() => deriveAliasPrefixFromURL(realm), [realm]);
 
     const requestAliasOptions = useCallback(async () => {
         try {

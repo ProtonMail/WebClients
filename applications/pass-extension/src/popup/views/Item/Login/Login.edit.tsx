@@ -13,7 +13,7 @@ import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ItemEditProps } from '../../../../shared/items';
-import { deriveAliasPrefixFromName } from '../../../../shared/items/alias';
+import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
@@ -195,7 +195,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                                             .setValues((values) =>
                                                                 merge(values, {
                                                                     withAlias: true,
-                                                                    aliasPrefix: deriveAliasPrefixFromName(values.name),
+                                                                    aliasPrefix: deriveAliasPrefix(values.name),
                                                                     aliasSuffix: undefined,
                                                                     mailboxes: [],
                                                                 })
