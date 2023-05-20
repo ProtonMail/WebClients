@@ -3,7 +3,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/extension/message';
 import { getCurrentTab } from '@proton/pass/extension/tabs';
 import browser from '@proton/pass/globals/browser';
-import { type ExtensionEndpoint, type Realm, type TabId, WorkerMessageType } from '@proton/pass/types';
+import { type ExtensionEndpoint, MaybeNull, type Realm, type TabId, WorkerMessageType } from '@proton/pass/types';
 import { createSharedContext } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -14,8 +14,9 @@ export type ExtensionContextType = {
     endpoint: ExtensionEndpoint;
     tabId: TabId;
     port: Runtime.Port;
-    realm: Realm | null;
-    subdomain: string | null;
+    realm: MaybeNull<Realm>;
+    subdomain: MaybeNull<string>;
+    domainName: MaybeNull<string>;
     destroy: () => void;
 };
 
@@ -32,7 +33,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
     try {
         const tab = await getCurrentTab();
         if (tab !== undefined && tab.id !== undefined) {
-            const { domain, subdomain } = parseUrl(tab.url ?? '');
+            const { domain, subdomain, domainName } = parseUrl(tab.url ?? '');
             const name = `${endpoint}-${tab.id}-${uniqueId()}`;
             const port = browser.runtime.connect(browser.runtime.id, { name });
 
@@ -40,7 +41,8 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
                 endpoint,
                 port,
                 tabId: tab.id,
-                realm: domain!,
+                realm: domain ?? '',
+                domainName,
                 subdomain,
                 destroy: () => {
                     safeCall(() => port.disconnect())();
