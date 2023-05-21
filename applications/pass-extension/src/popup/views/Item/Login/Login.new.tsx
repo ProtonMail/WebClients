@@ -44,7 +44,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const { realm, subdomain } = usePopupContext();
     const { search } = useLocation();
 
-    const { totpAllowCreate } = useSelector(selectTOTPLimits);
+    const { needsUpgrade } = useSelector(selectTOTPLimits);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
@@ -235,20 +235,24 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     component={PasswordField}
                                 />
 
-                                {totpAllowCreate ? (
-                                    <Field
-                                        name="totpUri"
-                                        label={c('Label').t`2FA secret (TOTP)`}
-                                        placeholder={c('Placeholder').t`Add 2FA secret`}
-                                        component={PasswordField}
-                                        actions={[]}
-                                        icon="lock"
-                                    />
-                                ) : (
-                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
-                                        <UpgradeButton inline />
-                                    </ValueControl>
-                                )}
+                                {
+                                    /* only allow adding a new TOTP code if user
+                                     * has not reached his plan's totp limit */
+                                    needsUpgrade ? (
+                                        <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                            <UpgradeButton inline />
+                                        </ValueControl>
+                                    ) : (
+                                        <Field
+                                            name="totpUri"
+                                            label={c('Label').t`2FA secret (TOTP)`}
+                                            placeholder={c('Placeholder').t`Add 2FA secret`}
+                                            component={PasswordField}
+                                            actions={[]}
+                                            icon="lock"
+                                        />
+                                    )
+                                }
                             </FieldsetCluster>
 
                             <FieldsetCluster>

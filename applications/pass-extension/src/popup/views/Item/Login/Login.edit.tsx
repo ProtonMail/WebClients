@@ -42,7 +42,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     } = item;
 
     const dispatch = useDispatch();
-    const { totpAllowCreate } = useSelector(selectTOTPLimits);
+    const { needsUpgrade } = useSelector(selectTOTPLimits);
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -219,21 +219,27 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     icon="key"
                                 />
 
-                                {/* is user has downgraded - allow editing the value if any */}
-                                {totpAllowCreate || !isEmptyString(form.values.totpUri) ? (
-                                    <Field
-                                        name="totpUri"
-                                        label={c('Label').t`2FA secret (TOTP)`}
-                                        placeholder={c('Placeholder').t`Add 2FA secret`}
-                                        component={PasswordField}
-                                        actions={[]}
-                                        icon="lock"
-                                    />
-                                ) : (
-                                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
-                                        <UpgradeButton inline />
-                                    </ValueControl>
-                                )}
+                                {
+                                    /* only allow adding a new TOTP code if user
+                                     * has not reached his plan's totp limit. If
+                                     * the user has downgraded and this item had
+                                     * a TOTP item, allow edit so user can retrieve
+                                     * the secret or remove it */
+                                    needsUpgrade && isEmptyString(form.values.totpUri) ? (
+                                        <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                            <UpgradeButton inline />
+                                        </ValueControl>
+                                    ) : (
+                                        <Field
+                                            name="totpUri"
+                                            label={c('Label').t`2FA secret (TOTP)`}
+                                            placeholder={c('Placeholder').t`Add 2FA secret`}
+                                            component={PasswordField}
+                                            actions={[]}
+                                            icon="lock"
+                                        />
+                                    )
+                                }
                             </FieldsetCluster>
 
                             <FieldsetCluster>
