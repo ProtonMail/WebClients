@@ -12,7 +12,7 @@ export enum DropdownAction {
 export type DropdownSetActionPayload =
     | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[] }
     | { action: DropdownAction.AUTOSUGGEST_PASSWORD }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; realm: Realm };
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; realm: Realm; prefix: string };
 
 export type OpenDropdownOptions = {
     field: FieldHandle;
