@@ -9,9 +9,9 @@ import { Icon, type ModalProps } from '@proton/components/components';
 import { selectAliasLimits } from '@proton/pass/store';
 
 import { SidebarModal } from '../../../../shared/components/sidebarmodal/SidebarModal';
+import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { AliasPreview } from '../../../components/Alias/Alias.preview';
-import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { ItemCard } from '../../../components/Item/ItemCard';
 import { PanelHeader } from '../../../components/Panel/Header';
 import { Panel } from '../../../components/Panel/Panel';
