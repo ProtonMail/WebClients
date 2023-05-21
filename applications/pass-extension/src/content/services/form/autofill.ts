@@ -6,14 +6,18 @@ import { withContext } from '../../context/context';
 import { FormType } from '../../types';
 
 export const createCSAutofillService = () => {
-    const queryItems: () => Promise<SafeLoginItem[]> = withContext(async ({ mainFrame }) =>
-        sendMessage.map(
-            contentScriptMessage({
-                type: WorkerMessageType.AUTOFILL_QUERY,
-                payload: { mainFrame },
-            }),
-            (response) => (response.type === 'success' ? response.items ?? [] : [])
-        )
+    const queryItems: () => Promise<{ items: SafeLoginItem[]; needsUpgrade: boolean }> = withContext(
+        async ({ mainFrame }) =>
+            sendMessage.map(
+                contentScriptMessage({
+                    type: WorkerMessageType.AUTOFILL_QUERY,
+                    payload: { mainFrame },
+                }),
+                (response) =>
+                    response.type === 'success'
+                        ? { items: response.items, needsUpgrade: response.needsUpgrade }
+                        : { items: [], needsUpgrade: false }
+            )
     );
 
     const setLoginItemsCount: (count: number) => void = withContext(({ service: { formManager } }, count): void => {
@@ -35,7 +39,7 @@ export const createCSAutofillService = () => {
     return {
         queryItems: pipe(
             queryItems,
-            tap(({ length }) => setLoginItemsCount(length))
+            tap(({ items }) => setLoginItemsCount(items.length))
         ),
         setLoginItemsCount,
     };
