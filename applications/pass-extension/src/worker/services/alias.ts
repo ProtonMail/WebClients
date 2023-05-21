@@ -6,6 +6,7 @@ import {
     aliasOptionsRequested,
     itemCreationIntent,
     itemCreationSuccess,
+    selectAliasLimits,
     selectPrimaryVault,
 } from '@proton/pass/store';
 import type { ItemCreateIntent } from '@proton/pass/types';
@@ -17,13 +18,18 @@ import WorkerMessageBroker from '../channel';
 import store from '../store';
 
 export const createAliasService = () => {
+    /* when resolving alias options for this message type, set the
+     * the `needsUpgrade` accordingly for content-scripts to display
+     * the upselling UI when alias limits have been reached */
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_OPTIONS, async () => {
-        const defaultVault = selectPrimaryVault(store.getState());
+        const { aliasAllowCreate } = selectAliasLimits(store.getState());
+        const primaryVault = selectPrimaryVault(store.getState());
 
         return {
+            needsUpgrade: !aliasAllowCreate,
             options: await new Promise<AliasState['aliasOptions']>((resolve) =>
                 store.dispatch(
-                    aliasOptionsRequested({ shareId: defaultVault.shareId }, (result) =>
+                    aliasOptionsRequested({ shareId: primaryVault.shareId }, (result) =>
                         resolve(aliasOptionsRequestSuccess.match(result) ? result.payload.options : null)
                     )
                 )
