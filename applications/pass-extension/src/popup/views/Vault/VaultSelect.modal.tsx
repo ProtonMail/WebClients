@@ -19,10 +19,13 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
     onSubmit: (shareId: string) => void;
 };
 
+/* if the user has downgraded : only allow him to select
+ * his primary vault as target. This rule applies when moving
+ * an item to a vault or when selecting an item's vault */
 export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) => {
     const vaultsWithItemCount = useSelector(selectAllVaultWithItemsCount);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const { vaultCountExcess } = useSelector(selectVaultLimits);
+    const { didDowngrade } = useSelector(selectVaultLimits);
 
     return (
         <SidebarModal {...props}>
@@ -49,7 +52,7 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                         <RadioLabelledButton
                             value={vault.shareId}
                             key={vault.shareId}
-                            disabled={vaultCountExcess && vault.shareId !== primaryVaultId}
+                            disabled={didDowngrade && vault.shareId !== primaryVaultId}
                         >
                             <VaultIcon
                                 size="large"

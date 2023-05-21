@@ -36,7 +36,7 @@ export const AliasModal = <T extends AliasFormValues>({
     ...modalProps
 }: AliasModalProps<T>) => {
     const [ready, setReady] = useState(false);
-    const { aliasAllowCreate } = useSelector(selectAliasLimits);
+    const { needsUpgrade } = useSelector(selectAliasLimits);
 
     const { aliasOptions, aliasOptionsLoading } = useAliasOptions({ shareId });
 
@@ -75,7 +75,12 @@ export const AliasModal = <T extends AliasFormValues>({
                             >
                                 <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
                             </Button>,
-                            aliasAllowCreate ? (
+
+                            /* if user has reached his alias limit prompt
+                             * him to upgrade his plan*/
+                            needsUpgrade ? (
+                                <UpgradeButton key="upgrade-button" />
+                            ) : (
                                 <Button
                                     className="text-sm"
                                     key="modal-submit-button"
@@ -86,14 +91,12 @@ export const AliasModal = <T extends AliasFormValues>({
                                 >
                                     {c('Action').t`Confirm`}
                                 </Button>
-                            ) : (
-                                <UpgradeButton key="upgrade-button" />
                             ),
                         ]}
                     />
                 }
             >
-                {!aliasAllowCreate && (
+                {needsUpgrade && (
                     <ItemCard>
                         {c('Info')
                             .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
