@@ -6,9 +6,11 @@ import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
 import type { ImportPayload, ImportVault } from '@proton/pass/import';
-import { selectAllVaults } from '@proton/pass/store';
+import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import { merge } from '@proton/pass/utils/object';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { UpgradeButton } from '../upgrade/UpgradeButton';
 import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 
 type VaultPickerValue = ImportVault & { selected: boolean };
@@ -21,6 +23,12 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
     ref
 ) => {
     const vaults = useSelector(selectAllVaults);
+    const primaryVault = useSelector(selectPrimaryVault);
+    const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
+    /* needs upgrade needs to be dynamically computed based on the number
+     * of potential vaults the import will try to create */
+    const needsUpgrade = vaultTotalCount + payload.vaults.length > vaultLimit;
+
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
             onSubmit({
@@ -33,9 +41,48 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
         [onSubmit]
     );
 
+    /* Reconciliating the vaults payload involves always ensuring we will
+     * not try to create more vaults then what the current user plan allows */
+    const reconciliateVaults = useCallback((values: VaultPickerValue[], update?: VaultPickerValue) => {
+        const remaining = vaultLimit - vaultTotalCount - (update?.type === 'new' ? 1 : 0);
+
+        return values.reduce<{
+            vaults: VaultPickerValue[];
+            remaining: number;
+        }>(
+            (acc, vault) => {
+                if (vault.id === update?.id) acc.vaults.push(update);
+                else {
+                    if (vault.type === 'new' && acc.remaining <= 0) {
+                        acc.vaults.push(
+                            merge(vault, {
+                                type: 'existing',
+                                shareId: primaryVault.shareId,
+                                vaultName: primaryVault.content.name,
+                            })
+                        );
+                    } else {
+                        acc.vaults.push(vault);
+                        acc.remaining -= 1;
+                    }
+                }
+
+                return acc;
+            },
+            { vaults: [], remaining }
+        ).vaults;
+    }, []);
+
     const form = useFormik<VaultsPickerFormValues>({
-        initialValues: { vaults: payload.vaults.map((vault) => ({ ...vault, selected: true })) },
         onSubmit: handleSubmit,
+        initialValues: {
+            vaults: reconciliateVaults(
+                payload.vaults.map((vault) => ({
+                    ...vault,
+                    selected: true,
+                }))
+            ),
+        },
     });
 
     useImperativeHandle(ref, () => ({ submit: () => handleSubmit(form.values) }), [onSubmit, form.values]);
@@ -46,6 +93,15 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                 <Card rounded className="mb-4 text-sm">
                     {c('Info')
                         .t`Select the destination vault for each vault you are trying to import. By default we will create a new vault for each imported vault.`}
+
+                    {needsUpgrade && (
+                        <>
+                            <hr className="mt-6" />
+                            {c('Warning')
+                                .t`Your current plan does not currently allow you to re-create all the vaults your are trying to import. Your items will be imported to your primary vault by default.`}{' '}
+                            <UpgradeButton inline />
+                        </>
+                    )}
                 </Card>
 
                 {payload.vaults.map((importedVault) => {
@@ -72,17 +128,17 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
                                         }))
                                     )
                                 }
-                                onChange={async (id) => {
-                                    const update: VaultPickerValue =
-                                        id === importedVault.id
-                                            ? { ...importedVault, selected: true }
-                                            : { ...importedVault, type: 'existing', shareId: id, selected: true };
-
-                                    await form.setFieldValue(
+                                onChange={async (id) =>
+                                    form.setFieldValue(
                                         'vaults',
-                                        form.values.vaults.map((vault) => (vault.id === value.id ? update : vault))
-                                    );
-                                }}
+                                        reconciliateVaults(
+                                            form.values.vaults,
+                                            id === importedVault.id
+                                                ? { ...importedVault, selected: true }
+                                                : { ...importedVault, type: 'existing', shareId: id, selected: true }
+                                        )
+                                    )
+                                }
                                 data={importedVault}
                                 vaults={vaults}
                             />
