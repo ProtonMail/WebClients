@@ -8,11 +8,20 @@ import type { AliasState } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { type MaybeNull, type RequiredNonNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { navigateToUpgrade } from '../../../../..//shared/components/upgrade/UpgradeButton';
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
 import { DropdownItem } from '../components/DropdownItem';
+
+type Props = {
+    prefix: string;
+    realm: string;
+    onSubmit: (aliasEmail: string) => void;
+    onOptions?: () => void;
+};
 
 const isValidAliasOptions = (
     options: MaybeNull<AliasState['aliasOptions']>
@@ -22,13 +31,10 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (aliasEmail: string) => void }> = ({
-    prefix,
-    realm,
-    onSubmit,
-}) => {
+export const AliasAutoSuggest: VFC<Props> = ({ prefix, realm, onOptions, onSubmit }) => {
     const ensureMounted = useEnsureMounted();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
+    const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(true);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
 
@@ -38,8 +44,13 @@ export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (a
             setError(false);
 
             await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.type === 'success') return ensureMounted(setAliasOptions)(response.options);
-                throw new Error();
+                if (response.type === 'success') {
+                    ensureMounted(setAliasOptions)(response.options);
+                    ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
+                    return onOptions?.(); /* notify parent component if we need an iframe resize */
+                }
+
+                throw new Error('alias options could not be resolved');
             });
             ensureMounted(setLoadingText)(null);
         } catch (_) {
@@ -102,11 +113,12 @@ export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (a
         if (error) setLoadingText(null);
     }, [error]);
 
-    const canCreate = isValidAliasOptions(aliasOptions);
+    const validAliasOptions = isValidAliasOptions(aliasOptions);
 
     return (
         <DropdownItem
-            title={c('Title').t`Create email alias`}
+            title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Create email alias`}
+            autogrow={needsUpgrade}
             subTitle={(() => {
                 if (loadingText) {
                     return (
@@ -115,6 +127,10 @@ export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (a
                             {loadingText}
                         </span>
                     );
+                }
+
+                if (needsUpgrade) {
+                    return <span>{c('Warning').t`Your plan does not allow you to create more aliases`}</span>;
                 }
 
                 if (error) {
@@ -126,7 +142,7 @@ export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (a
                     );
                 }
 
-                if (canCreate) {
+                if (validAliasOptions) {
                     return (
                         <AliasPreview
                             prefix={realm}
@@ -137,11 +153,12 @@ export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (a
                     );
                 }
             })()}
-            icon="alias"
+            icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
             disabled={loadingText !== null}
             onClick={(() => {
+                if (needsUpgrade) return navigateToUpgrade;
                 if (error) return requestAliasOptions;
-                if (canCreate) return () => createAlias(aliasOptions);
+                if (validAliasOptions) return () => createAlias(aliasOptions);
             })()}
         />
     );
