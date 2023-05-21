@@ -30,7 +30,7 @@ const FORM_ID = 'new-alias';
 
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
     const { realm, subdomain, domainName } = usePopupContext();
-    const { aliasAllowCreate } = useSelector(selectAliasLimits);
+    const { needsUpgrade } = useSelector(selectAliasLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const url = subdomain ?? realm;
@@ -137,11 +137,13 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
             handleCancelClick={onCancel}
             valid={form.isValid}
             discardable={!form.dirty}
-            {...(!aliasAllowCreate ? { renderSubmitButton: <UpgradeButton key="upgrade-button" /> } : {})}
+            /* if user has reached his alias limit:
+             * disable submit and prompt for upgrade */
+            renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" /> : undefined}
         >
             {({ didMount }) => (
                 <>
-                    {!aliasAllowCreate && (
+                    {needsUpgrade && (
                         <ItemCard className="mb-2">
                             {c('Info')
                                 .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
@@ -156,9 +158,8 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={didMount && aliasAllowCreate}
-                                    /* trick for autofocus after initial mount */
-                                    key={`alias-name-${didMount}`}
+                                    autoFocus={didMount && !needsUpgrade} /* no autofocus if creation blocked */
+                                    key={`alias-name-${didMount}`} /* trick for autofocus after initial mount */
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
                             </FieldsetCluster>
