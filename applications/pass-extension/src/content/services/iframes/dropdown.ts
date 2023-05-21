@@ -87,12 +87,22 @@ export const createDropdown = (): InjectedDropdown => {
             const payload = await (async (): Promise<DropdownSetActionPayload> => {
                 switch (action) {
                     case DropdownAction.AUTOFILL: {
-                        const items = loggedIn ? await autofill.queryItems() : [];
-                        return { action, items };
+                        if (!loggedIn) return { action, items: [], needsUpgrade: false };
+                        const { items, needsUpgrade } = await autofill.queryItems();
+
+                        return {
+                            action,
+                            items,
+                            needsUpgrade,
+                        };
                     }
                     case DropdownAction.AUTOSUGGEST_ALIAS: {
                         const { realm, subdomain, domainName } = getExtensionContext();
-                        return { action, realm: subdomain ?? realm!, prefix: domainName! };
+                        return {
+                            action,
+                            realm: subdomain ?? realm!,
+                            prefix: domainName!,
+                        };
                     }
                     case DropdownAction.AUTOSUGGEST_PASSWORD: {
                         return { action };

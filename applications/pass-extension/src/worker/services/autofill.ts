@@ -108,7 +108,7 @@ export const createAutoFillService = () => {
 
             void setPopupIconBadge(tabId, items.length);
 
-            return { items: tabId !== undefined && items.length > 0 ? items : [] };
+            return { items: tabId !== undefined && items.length > 0 ? items : [], needsUpgrade: vaultCountExcess };
         })
     );
 
