@@ -11,7 +11,7 @@ import { pipe, tap } from '@proton/pass/utils/fp';
 import noop from '@proton/utils/noop';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
-import { UpgradeButton } from '../../components/Button/UpgradeButton';
+import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
 import { VaultEdit, FORM_ID as VaultEditFormId } from './Vault.edit';

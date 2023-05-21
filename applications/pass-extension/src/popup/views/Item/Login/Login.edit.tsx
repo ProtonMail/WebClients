@@ -12,9 +12,9 @@ import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
+import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefix } from '../../../../shared/items/alias';
-import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';

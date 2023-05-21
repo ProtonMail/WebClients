@@ -11,9 +11,9 @@ import { SSO_URL } from '../../../app/config';
 
 const UPGRADE_PLAN_PATH = `${SSO_URL}/pass/upgrade`;
 
-type UpgradeButtonProps = {
-    inline?: boolean;
-};
+type UpgradeButtonProps = { inline?: boolean };
+
+export const navigateToUpgrade = () => browser.tabs.create({ url: UPGRADE_PLAN_PATH });
 
 export const UpgradeButton: VFC<UpgradeButtonProps> = ({ inline = false }) => {
     const ButtonComponent = inline ? InlineLinkButton : Button;
@@ -27,7 +27,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ inline = false }) => {
         <ButtonComponent
             className={clsx('flex flex-align-items-center', !inline && 'text-sm')}
             color="norm"
-            onClick={() => browser.tabs.create({ url: UPGRADE_PLAN_PATH })}
+            onClick={navigateToUpgrade}
             {...(!inline && buttonProps)}
         >
             {c('Action').t`Upgrade`}
