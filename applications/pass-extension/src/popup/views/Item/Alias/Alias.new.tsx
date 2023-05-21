@@ -11,7 +11,7 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { useAliasOptions } from '../../../../shared/hooks/useAliasOptions';
 import { type ItemNewProps } from '../../../../shared/items';
-import { deriveAliasPrefix, deriveAliasPrefixFromURL } from '../../../../shared/items/alias';
+import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
@@ -29,7 +29,7 @@ import { type NewAliasFormValues, validateNewAliasForm } from './Alias.validatio
 const FORM_ID = 'new-alias';
 
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
-    const { realm, subdomain } = usePopupContext();
+    const { realm, subdomain, domainName } = usePopupContext();
     const { aliasAllowCreate } = useSelector(selectAliasLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
@@ -39,7 +39,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         return {
             name: validURL ? url : '',
             note: validURL ? c('Placeholder').t`Used on ${url}` : '',
-            aliasPrefix: validURL ? deriveAliasPrefixFromURL(url) : '',
+            aliasPrefix: domainName ? deriveAliasPrefix(domainName) : '',
         };
     }, []);
 
