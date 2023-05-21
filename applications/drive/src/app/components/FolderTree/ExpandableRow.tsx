@@ -1,12 +1,13 @@
-import { ReactNode } from 'react';
+import React, { ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FileIcon, FileNameDisplay, Icon, TableRowBusy } from '@proton/components';
+import { FileIcon, Icon, TableRowBusy, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink } from '../../store';
+import FloatingEllipsis from './FloatingEllipsis';
 
 interface Props {
     link: DecryptedLink;
@@ -38,7 +39,9 @@ const ExpandableRow = ({
         onSelect(link);
     };
 
-    const paddingElement = { '--padding-left-custom': `${depth * 1.5}em` };
+    const paddingElement = { width: `${depth * 1.5}em` };
+
+    const floatingEllipsisVisibilityControlRef = useRef<HTMLDivElement>(null);
 
     return (
         <>
@@ -46,7 +49,18 @@ const ExpandableRow = ({
                 className={clsx(['folder-tree-list-item', !isDisabled && 'cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect}
             >
-                <td style={paddingElement} className="flex flex-align-items-center flex-nowrap m-0 pl-custom">
+                <td className="flex flex-align-items-center flex-nowrap m-0 pl-custom relative">
+                    <div
+                        className={clsx([
+                            `folder-tree-list-item-selected flex flex-item-noshrink`,
+                            !isSelected && 'folder-tree-list-item-selected-hidden',
+                        ])}
+                    >
+                        <span className="inline-flex bg-primary rounded-50 folder-tree-list-item-selected-check">
+                            <Icon name="checkmark" className="p-1" size={16} />
+                        </span>
+                    </div>
+                    <div className="flex flex-item-noshrink folder-tree-list-item-indent" style={paddingElement}></div>
                     <div className="folder-tree-list-item-expand flex-item-noshrink relative">
                         <Button
                             disabled={isDisabled}
@@ -71,15 +85,13 @@ const ExpandableRow = ({
                         className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
                     >
                         <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
-                        <FileNameDisplay text={link.name} />
-                    </div>
-                    {isSelected && (
-                        <div className="folder-tree-list-item-selected flex flex-item-noshrink">
-                            <span className="inline-flex bg-primary rounded-50 folder-tree-list-item-selected-check">
-                                <Icon name="checkmark" className="p-1" size={16} />
+                        <Tooltip title={link.name} originalPlacement="bottom">
+                            <span ref={floatingEllipsisVisibilityControlRef} className="text-nowrap pr-8">
+                                {link.name}
                             </span>
-                        </div>
-                    )}
+                        </Tooltip>
+                    </div>
+                    <FloatingEllipsis visibilityControlRef={floatingEllipsisVisibilityControlRef} />
                 </td>
             </tr>
             {isExpanded && (

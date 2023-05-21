@@ -1,7 +1,11 @@
+import React, { useRef } from 'react';
+
 import { TableRowBusy } from '@proton/components';
 
 import { DecryptedLink, TreeItem } from '../../store';
 import ExpandableRow from './ExpandableRow';
+import { FloatingEllipsisContext } from './FloatingEllipsisContext';
+import useFloatingEllipsisContext from './hooks/useFloatingEllipsisContext';
 
 interface Props {
     treeItems: TreeItem | TreeItem[];
@@ -15,12 +19,16 @@ interface Props {
 const FolderTree = ({ isLoaded, treeItems, selectedItemId, onSelect, rowIsDisabled, toggleExpand }: Props) => {
     const treeItemsArray = Array.isArray(treeItems) ? treeItems : [treeItems];
 
+    const containerRef = useRef<HTMLDivElement>(null);
+    const resizableRef = useRef<HTMLTableElement>(null);
+
+    const context = useFloatingEllipsisContext({ containerRef, resizableRef });
+
     const generateRows = (items: TreeItem[], depth = 0) => {
         const rows = items.map((item: TreeItem) => {
             const { link, children, isExpanded, isLoaded } = item;
             const isDisabled = rowIsDisabled ? rowIsDisabled(item) : false;
             const childrenRows = children.length ? generateRows(children, depth + 1) : null;
-
             return (
                 <ExpandableRow
                     key={link.linkId}
@@ -44,11 +52,13 @@ const FolderTree = ({ isLoaded, treeItems, selectedItemId, onSelect, rowIsDisabl
     const rows = generateRows(treeItemsArray);
 
     return (
-        <div className="folder-tree">
-            <table className="folder-tree-table simple-table simple-table--is-hoverable ">
-                <tbody>{isLoaded ? rows : <TableRowBusy />}</tbody>
-            </table>
-        </div>
+        <FloatingEllipsisContext.Provider value={context}>
+            <div className="folder-tree" ref={containerRef}>
+                <table ref={resizableRef} className="folder-tree-table simple-table simple-table--is-hoverable ">
+                    <tbody>{isLoaded ? rows : <TableRowBusy />}</tbody>
+                </table>
+            </div>
+        </FloatingEllipsisContext.Provider>
     );
 };
 

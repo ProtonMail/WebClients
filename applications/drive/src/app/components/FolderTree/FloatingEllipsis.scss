@@ -1,0 +1,28 @@
+@import '~@proton/styles/scss/lib';
+
+.floating-ellipsis {
+	inline-size: 32px;
+	inset-inline-start: 0;
+	overflow: visible;
+	block-size: 100%;
+	background: linear-gradient(to right, transparent 0, var(--background-norm) 8px);
+	position: absolute;
+	opacity: 1;
+	z-index: $layer-notifications;
+	pointer-events: none;
+	transition: opacity 150ms ease-in;
+
+	&::after {
+		content: '\2026';
+		position: absolute;
+		inset-inline-end: 0;
+		padding-inline-end: 8px;
+		inset-block-start: 50%;
+		transform: translate(0, -50%);
+	}
+
+	&-hidden {
+		opacity: 0;
+		transition: opacity 150ms ease-in;
+	}
+}
