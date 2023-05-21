@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useEffect, useMemo, useState } from 'react';
+import { type VFC, useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +12,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { AliasPreview } from '../../../../../shared/components/alias/Alias.preview';
 import { useEnsureMounted } from '../../../../../shared/hooks/useEnsureMounted';
-import { deriveAliasPrefixFromURL } from '../../../../../shared/items/alias';
 import { DropdownItem } from '../components/DropdownItem';
 
 const isValidAliasOptions = (
@@ -23,7 +22,8 @@ const isValidAliasOptions = (
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: string) => void }> = ({
+export const AliasAutoSuggest: VFC<{ prefix: string; realm: string; onSubmit: (aliasEmail: string) => void }> = ({
+    prefix,
     realm,
     onSubmit,
 }) => {
@@ -31,8 +31,6 @@ export const AliasAutoSuggest: VFC<{ realm: string; onSubmit: (aliasEmail: strin
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
-
-    const prefix = useMemo(() => deriveAliasPrefixFromURL(realm), [realm]);
 
     const requestAliasOptions = useCallback(async () => {
         try {
