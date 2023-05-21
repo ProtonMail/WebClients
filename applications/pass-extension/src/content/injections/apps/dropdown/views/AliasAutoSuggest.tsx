@@ -145,7 +145,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, realm, onOptions, onSubmi
                 if (validAliasOptions) {
                     return (
                         <AliasPreview
-                            prefix={realm}
+                            prefix={prefix}
                             suffix={aliasOptions.suffixes[0].suffix}
                             standalone
                             key="alias-preview"
