@@ -14,9 +14,9 @@ import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
+import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefix } from '../../../../shared/items/alias';
-import { UpgradeButton } from '../../../components/Button/UpgradeButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
