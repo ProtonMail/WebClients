@@ -11,10 +11,11 @@ import {
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
+import { workerReady } from '@proton/pass/utils/worker';
 
 import { setPopupIconBadge } from '../../shared/extension';
 import WorkerMessageBroker from '../channel';
-import { onContextReady } from '../context';
+import { onContextReady, withContext } from '../context';
 import store from '../store';
 
 export const createAutoFillService = () => {
@@ -45,42 +46,40 @@ export const createAutoFillService = () => {
         }
     };
 
-    const updateTabsBadgeCount = () => {
+    const updateTabsBadgeCount = withContext(({ status }) => {
+        if (!workerReady(status)) return;
+
         void browser.tabs.query({ active: true }).then((tabs) =>
             Promise.all(
-                tabs.map(({ id: tabId, url, active }) => {
+                tabs.map(({ id: tabId, url }) => {
                     const { domain: realm, subdomain } = parseUrl(url ?? '');
                     if (tabId && realm) {
+                        const items = getAutofillCandidates({ realm, subdomain });
                         const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
                         const { vaultCountExcess } = selectVaultLimits(store.getState());
 
-                        /* if user has exceeded his vault count limit - this likely means
-                         * has downgraded to a free plan : only allow him to autofill from
-                         * his primary vault */
-                        const items = getAutofillCandidates({
-                            realm,
-                            subdomain,
-                            ...(vaultCountExcess ? { shareId: primaryVaultId } : {}),
-                        });
-
+                        /* if the user has downgraded : we want to keep the tab badge count
+                         * with the total items matched, but sync the autofillable candidates
+                         * in the content-scripts to be only the ones from the primary vault */
                         const count = items.length;
+                        const safeCount = items.filter(
+                            (item) => !vaultCountExcess || primaryVaultId === item.shareId
+                        ).length;
 
-                        if (active) {
-                            WorkerMessageBroker.ports.broadcast(
-                                {
-                                    type: WorkerMessageType.AUTOFILL_SYNC,
-                                    payload: { count },
-                                },
-                                (name) => name.startsWith(`content-script-${tabId}`)
-                            );
-                        }
+                        WorkerMessageBroker.ports.broadcast(
+                            {
+                                type: WorkerMessageType.AUTOFILL_SYNC,
+                                payload: { count: safeCount },
+                            },
+                            (name) => name.startsWith(`content-script-${tabId}`)
+                        );
 
                         return setPopupIconBadge(tabId, count);
                     }
                 })
             )
         );
-    };
+    });
 
     /* Clears badge count for each valid tab
      * Triggered on logout detection to avoid
@@ -95,7 +94,17 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOFILL_QUERY,
         onContextReady((_, sender) => {
             const { realm, tabId, subdomain } = parseSender(sender);
-            const items = getAutofillCandidates({ realm, subdomain });
+            const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
+            const { vaultCountExcess } = selectVaultLimits(store.getState());
+
+            /* if user has exceeded his vault count limit - this likely means
+             * has downgraded to a free plan : only allow him to autofill from
+             * his primary vault */
+            const items = getAutofillCandidates({
+                realm,
+                subdomain,
+                ...(vaultCountExcess ? { shareId: primaryVaultId } : {}),
+            });
 
             void setPopupIconBadge(tabId, items.length);
 
