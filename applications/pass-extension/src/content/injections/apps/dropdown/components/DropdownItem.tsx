@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, IconName } from '@proton/components/components';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 export const DROPDOWN_ITEM_HEIGHT = 60;
 
@@ -13,10 +14,11 @@ export const DropdownItem: VFC<{
     subTitle: ReactNode;
     icon?: IconName;
     disabled?: boolean;
-}> = ({ onClick, title, subTitle, icon, disabled }) => (
+    autogrow?: boolean;
+}> = ({ onClick, title, subTitle, icon, disabled, autogrow }) => (
     <DropdownMenuButton
         className="text-left h-custom"
-        style={{ '--custom-height': `${DROPDOWN_ITEM_HEIGHT}px` }}
+        style={autogrow ? {} : { '--custom-height': `${DROPDOWN_ITEM_HEIGHT}px` }}
         onClick={onClick}
         disabled={disabled}
     >
@@ -37,7 +39,7 @@ export const DropdownItem: VFC<{
 
             <div className="flex-item-fluid">
                 <span className="block text-ellipsis">{title}</span>
-                <span className="block color-weak text-sm text-ellipsis">{subTitle}</span>
+                <span className={clsx('block color-weak text-sm', !autogrow && 'text-ellipsis')}>{subTitle}</span>
             </div>
         </div>
     </DropdownMenuButton>
