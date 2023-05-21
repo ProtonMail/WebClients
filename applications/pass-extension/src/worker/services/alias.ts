@@ -22,11 +22,11 @@ export const createAliasService = () => {
      * the `needsUpgrade` accordingly for content-scripts to display
      * the upselling UI when alias limits have been reached */
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_OPTIONS, async () => {
-        const { aliasAllowCreate } = selectAliasLimits(store.getState());
+        const { needsUpgrade } = selectAliasLimits(store.getState());
         const primaryVault = selectPrimaryVault(store.getState());
 
         return {
-            needsUpgrade: !aliasAllowCreate,
+            needsUpgrade,
             options: await new Promise<AliasState['aliasOptions']>((resolve) =>
                 store.dispatch(
                     aliasOptionsRequested({ shareId: primaryVault.shareId }, (result) =>

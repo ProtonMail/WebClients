@@ -56,14 +56,14 @@ export const createAutoFillService = () => {
                     if (tabId && realm) {
                         const items = getAutofillCandidates({ realm, subdomain });
                         const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
-                        const { vaultCountExcess } = selectVaultLimits(store.getState());
+                        const { didDowngrade } = selectVaultLimits(store.getState());
 
                         /* if the user has downgraded : we want to keep the tab badge count
                          * with the total items matched, but sync the autofillable candidates
                          * in the content-scripts to be only the ones from the primary vault */
                         const count = items.length;
                         const safeCount = items.filter(
-                            (item) => !vaultCountExcess || primaryVaultId === item.shareId
+                            (item) => !didDowngrade || primaryVaultId === item.shareId
                         ).length;
 
                         WorkerMessageBroker.ports.broadcast(
@@ -95,7 +95,7 @@ export const createAutoFillService = () => {
         onContextReady((_, sender) => {
             const { realm, tabId, subdomain } = parseSender(sender);
             const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
-            const { vaultCountExcess } = selectVaultLimits(store.getState());
+            const { didDowngrade } = selectVaultLimits(store.getState());
 
             /* if user has exceeded his vault count limit - this likely means
              * has downgraded to a free plan : only allow him to autofill from
@@ -103,12 +103,12 @@ export const createAutoFillService = () => {
             const items = getAutofillCandidates({
                 realm,
                 subdomain,
-                ...(vaultCountExcess ? { shareId: primaryVaultId } : {}),
+                ...(didDowngrade ? { shareId: primaryVaultId } : {}),
             });
 
             void setPopupIconBadge(tabId, items.length);
 
-            return { items: tabId !== undefined && items.length > 0 ? items : [], needsUpgrade: vaultCountExcess };
+            return { items: tabId !== undefined && items.length > 0 ? items : [], needsUpgrade: didDowngrade };
         })
     );
 

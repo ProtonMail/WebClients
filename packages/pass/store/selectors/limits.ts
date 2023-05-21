@@ -8,8 +8,8 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     const vaultLimit = plan?.VaultLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {
-        vaultAllowCreate: vaults.length < vaultLimit,
-        vaultCountExcess: vaults.length > vaultLimit,
+        needsUpgrade: vaults.length >= vaultLimit,
+        didDowngrade: vaults.length > vaultLimit,
     };
 });
 
@@ -20,8 +20,8 @@ export const selectAliasLimits = createSelector([selectItemsByType('alias'), sel
         aliasLimit,
         aliasLimited: typeof plan?.AliasLimit === 'number',
         aliasTotalCount: alias.length,
-        aliasAllowCreate: alias.length < aliasLimit,
-        aliasCountExcess: alias.length > aliasLimit,
+        needsUpgrade: alias.length >= aliasLimit,
+        didDowngrade: alias.length > aliasLimit,
     };
 });
 
@@ -31,16 +31,16 @@ export const selectTOTPLimits = createSelector([selectTotpItems, selectUserPlan]
     return {
         totpLimit,
         totpTotalCount: totps.length,
-        totpAllowCreate: totps.length < totpLimit,
-        totpCountExcess: totps.length > totpLimit,
+        needsUpgrade: totps.length >= totpLimit,
+        didDowngrade: totps.length > totpLimit,
     };
 });
 
 export const selectCanGenerateTOTP = (shareId: string, itemId: string) =>
     createSelector(
         [() => shareId, () => itemId, selectTOTPLimits, selectTotpItems],
-        (_shareId, _itemId, { totpCountExcess, totpLimit }, totps) => {
-            if (!totpCountExcess) return true;
+        (_shareId, _itemId, { didDowngrade, totpLimit }, totps) => {
+            if (!didDowngrade) return true;
 
             const viewableTOTPItems = sortItems(totps, 'createTimeASC').slice(0, totpLimit);
             return viewableTOTPItems.some((totp) => totp.shareId === _shareId && totp.itemId === _itemId);

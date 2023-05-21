@@ -14,11 +14,13 @@ type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'>;
 export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
     const vaults = useSelector(selectAllVaults);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const { vaultCountExcess } = useSelector(selectVaultLimits);
+    const { didDowngrade } = useSelector(selectVaultLimits);
 
     useEffect(() => {
-        if (vaultCountExcess) props.form.setFieldValue(props.field.name, primaryVaultId);
-    }, [vaultCountExcess]);
+        /* force select the primary vault shareId if user
+         * has downgraded and is over his plan's limits */
+        if (didDowngrade) props.form.setFieldValue(props.field.name, primaryVaultId);
+    }, [didDowngrade]);
 
     const selectedVault = useMemo(
         () => vaults.find(({ shareId }) => shareId === props.field.value),
@@ -49,7 +51,9 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
                     key={shareId}
                     value={shareId}
                     title={content.name}
-                    disabled={vaultCountExcess && shareId !== primaryVaultId}
+                    /* only allow selecting primary vault if
+                     * a downgrade was detected */
+                    disabled={didDowngrade && shareId !== primaryVaultId}
                 >
                     <div className="flex gap-x-3 flex-align-items-center">
                         <VaultIcon icon={content.display.icon} color={content.display.color} size="medium" />
