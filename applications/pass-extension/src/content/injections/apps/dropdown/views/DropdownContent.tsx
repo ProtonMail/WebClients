@@ -6,7 +6,6 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { type Callback, type Realm, type SafeLoginItem, WorkerStatus } from '@proton/pass/types';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { merge } from '@proton/pass/utils/object';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -18,43 +17,33 @@ import { AliasAutoSuggest } from './AliasAutoSuggest';
 import { ItemsList } from './ItemsList';
 import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 
-type DropdownState = {
-    action?: DropdownAction;
-    items: SafeLoginItem[];
-    realm: Realm;
-};
-
-const INITIAL_STATE: DropdownState = { action: undefined, items: [], realm: '' };
+type DropdownState =
+    | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[] }
+    | {
+          action: DropdownAction.AUTOSUGGEST_ALIAS;
+          realm: Realm;
+          prefix: string;
+      }
+    | { action: DropdownAction.AUTOSUGGEST_PASSWORD }
+    | null;
 
 export const DropdownContent: VFC = () => {
     const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
-    const [dropdownState, setDropdownState] = useState<DropdownState>(INITIAL_STATE);
+    const [dropdownState, setDropdownState] = useState<DropdownState>(null);
 
     const withStateReset = <F extends Callback>(fn: F): F =>
         pipe(
             fn,
-            tap(() => setDropdownState(INITIAL_STATE))
+            tap(() => setDropdownState(null))
         ) as F;
 
     const dropdownRef = useRef<HTMLDivElement>(null);
     const accountFork = useAccountFork();
 
-    const handleAction = useCallback(({ payload }: IFrameMessage<IFrameMessageType.DROPDOWN_ACTION>) => {
-        switch (payload.action) {
-            case DropdownAction.AUTOFILL:
-                return setDropdownState((state) => merge(state, payload));
-            case DropdownAction.AUTOSUGGEST_PASSWORD:
-                return setDropdownState((state) => merge(state, { items: [], action: payload.action }));
-            case DropdownAction.AUTOSUGGEST_ALIAS:
-                return setDropdownState((state) =>
-                    merge(state, {
-                        items: [],
-                        action: payload.action,
-                        realm: payload.realm,
-                    })
-                );
-        }
-    }, []);
+    const handleAction = useCallback(
+        ({ payload }: IFrameMessage<IFrameMessageType.DROPDOWN_ACTION>) => setDropdownState(payload),
+        []
+    );
 
     const handleOpen = useCallback(() => resizeIFrame(dropdownRef.current), [resizeIFrame]);
     useLayoutEffect(() => resizeIFrame(dropdownRef.current), [resizeIFrame, dropdownState, workerState]);
@@ -65,7 +54,7 @@ export const DropdownContent: VFC = () => {
     return (
         <div ref={dropdownRef} className="min-h-custom bg-norm" style={{ '--min-height-custom': pixelEncoder(60) }}>
             {(() => {
-                if (workerState === undefined) {
+                if (workerState === undefined || dropdownState === null) {
                     return <CircleLoader className="absolute absolute-center m-auto" />;
                 }
 
@@ -132,6 +121,7 @@ export const DropdownContent: VFC = () => {
                     case DropdownAction.AUTOSUGGEST_ALIAS:
                         return (
                             <AliasAutoSuggest
+                                prefix={dropdownState.prefix}
                                 realm={dropdownState.realm}
                                 onSubmit={withStateReset((aliasEmail) => {
                                     postMessage({
