@@ -8,6 +8,8 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     const vaultLimit = plan?.VaultLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {
+        vaultLimit,
+        vaultTotalCount: vaults.length,
         needsUpgrade: vaults.length >= vaultLimit,
         didDowngrade: vaults.length > vaultLimit,
     };
