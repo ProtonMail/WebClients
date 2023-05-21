@@ -16,7 +16,7 @@ export const DropdownItemsList: FC = ({ children }) => (
             style={{ '--max-height-custom': pixelEncoder(DROPDOWN_LIST_MAX_HEIGHT) }}
         >
             <Scroll
-                {...(Array.isArray(children) && children.length > DROPDOWN_MAX_VISIBLE_ITEMS
+                {...(Array.isArray(children) && children.length >= DROPDOWN_MAX_VISIBLE_ITEMS
                     ? { style: { height: DROPDOWN_LIST_MAX_HEIGHT } }
                     : {})}
             >
