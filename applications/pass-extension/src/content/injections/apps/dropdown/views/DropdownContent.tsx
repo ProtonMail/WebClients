@@ -3,33 +3,28 @@ import { type VFC, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { type Callback, type Realm, type SafeLoginItem, WorkerStatus } from '@proton/pass/types';
+import { type Callback, type MaybeNull, WorkerStatus } from '@proton/pass/types';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAccountFork } from '../../../../../shared/hooks';
-import { DropdownAction, type IFrameMessage, IFrameMessageType } from '../../../../types';
+import {
+    DropdownAction,
+    type DropdownSetActionPayload,
+    type IFrameMessage,
+    IFrameMessageType,
+} from '../../../../types';
 import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
 import { AliasAutoSuggest } from './AliasAutoSuggest';
 import { ItemsList } from './ItemsList';
 import { PasswordAutoSuggest } from './PasswordAutoSuggest';
 
-type DropdownState =
-    | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[] }
-    | {
-          action: DropdownAction.AUTOSUGGEST_ALIAS;
-          realm: Realm;
-          prefix: string;
-      }
-    | { action: DropdownAction.AUTOSUGGEST_PASSWORD }
-    | null;
-
 export const DropdownContent: VFC = () => {
     const { workerState, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
-    const [dropdownState, setDropdownState] = useState<DropdownState>(null);
+    const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownSetActionPayload>>(null);
 
     const withStateReset = <F extends Callback>(fn: F): F =>
         pipe(
@@ -45,11 +40,11 @@ export const DropdownContent: VFC = () => {
         []
     );
 
-    const handleOpen = useCallback(() => resizeIFrame(dropdownRef.current), [resizeIFrame]);
-    useLayoutEffect(() => resizeIFrame(dropdownRef.current), [resizeIFrame, dropdownState, workerState]);
+    const triggerResize = useCallback(() => resizeIFrame(dropdownRef.current), [resizeIFrame]);
+    useLayoutEffect(() => triggerResize(), [triggerResize, dropdownState, workerState]);
 
     useRegisterMessageHandler(IFrameMessageType.DROPDOWN_ACTION, handleAction);
-    useRegisterMessageHandler(IFrameMessageType.IFRAME_OPEN, handleOpen);
+    useRegisterMessageHandler(IFrameMessageType.IFRAME_OPEN, triggerResize);
 
     return (
         <div ref={dropdownRef} className="min-h-custom bg-norm" style={{ '--min-height-custom': pixelEncoder(60) }}>
@@ -90,6 +85,7 @@ export const DropdownContent: VFC = () => {
                         return dropdownState.items.length > 0 ? (
                             <ItemsList
                                 items={dropdownState.items}
+                                needsUpgrade={dropdownState.needsUpgrade}
                                 onSubmit={withStateReset((item) =>
                                     postMessage({
                                         type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
@@ -123,6 +119,7 @@ export const DropdownContent: VFC = () => {
                             <AliasAutoSuggest
                                 prefix={dropdownState.prefix}
                                 realm={dropdownState.realm}
+                                onOptions={triggerResize}
                                 onSubmit={withStateReset((aliasEmail) => {
                                     postMessage({
                                         type: IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS,
