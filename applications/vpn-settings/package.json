@@ -24,7 +24,7 @@
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
-        "@types/react": "^17.0.58",
+        "@types/react": "^17.0.59",
         "@types/react-dom": "^17.0.20",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
@@ -37,7 +37,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "eslint": "^8.39.0",
+        "eslint": "^8.41.0",
         "prettier": "^2.8.8",
         "typescript": "^5.0.4"
     }
