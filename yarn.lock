@@ -3920,8 +3920,8 @@ __metadata:
     "@types/jasmine": ^4.3.1
     eslint: ^8.41.0
     idb: ^7.1.1
-    jasmine: ^4.6.0
-    jasmine-core: ^4.6.0
+    jasmine: ^5.0.0
+    jasmine-core: ^5.0.0
     karma: ^6.4.2
     karma-chrome-launcher: ^3.2.0
     karma-jasmine: ^5.1.0
@@ -4004,8 +4004,8 @@ __metadata:
     "@types/jasmine": ^4.3.1
     "@types/pkijs": 0.0.14
     eslint: ^8.41.0
-    jasmine: 4.6.0
-    jasmine-core: 4.6.0
+    jasmine: ^5.0.0
+    jasmine-core: ^5.0.0
     karma: ^6.4.2
     karma-chrome-launcher: ^3.2.0
     karma-jasmine: ^5.1.0
@@ -4141,8 +4141,8 @@ __metadata:
     hi-base32: ^0.5.1
     ical.js: ^1.5.0
     is-valid-domain: 0.1.6
-    jasmine: ^4.6.0
-    jasmine-core: ^4.6.0
+    jasmine: ^5.0.0
+    jasmine-core: ^5.0.0
     jsbi: ^4.3.0
     karma: ^6.4.2
     karma-chrome-launcher: ^3.2.0
@@ -16507,7 +16507,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.2.5, glob@npm:^10.2.6":
+"glob@npm:^10.2.2, glob@npm:^10.2.5, glob@npm:^10.2.6":
   version: 10.2.6
   resolution: "glob@npm:10.2.6"
   dependencies:
@@ -19026,22 +19026,29 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:4.6.0, jasmine-core@npm:^4.1.0, jasmine-core@npm:^4.6.0":
+"jasmine-core@npm:^4.1.0":
   version: 4.6.0
   resolution: "jasmine-core@npm:4.6.0"
   checksum: c5c5ce16c512cf0bc8b6b4f2d4f0ac7b23cae90624e0cd9d22da3baab3266e9a4da5a9363fb7937b16e0a4cf550bb79183cd74483ce55cfff4b6678434d599b7
   languageName: node
   linkType: hard
 
-"jasmine@npm:4.6.0, jasmine@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "jasmine@npm:4.6.0"
+"jasmine-core@npm:^5.0.0, jasmine-core@npm:~5.0.0":
+  version: 5.0.0
+  resolution: "jasmine-core@npm:5.0.0"
+  checksum: e54b746d6fc54f2e36ea0bc48eb375ea3c31547ea9e7719e64184184d00c1845e6a3d82e7a5afada93e7ea16241e181c0bf68562fcd9699210cafc07ba2120cc
+  languageName: node
+  linkType: hard
+
+"jasmine@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "jasmine@npm:5.0.0"
   dependencies:
-    glob: ^7.1.6
-    jasmine-core: ^4.6.0
+    glob: ^10.2.2
+    jasmine-core: ~5.0.0
   bin:
     jasmine: bin/jasmine.js
-  checksum: 1034466aac682b212259cd47f681ca70de02e56bf05c2ed51d3a31f3b4da2a797b281e015fed7d0c218aa849e7496ae7595022c48756ca96952c512b813ae465
+  checksum: 502c98179232f7a1120325a50b04061332e10297f7e63671826e358341e9304961a1c60c73b9a563008543f752e32fcb55a92659b22b49fd25cfd7e1acf1795c
   languageName: node
   linkType: hard
 
