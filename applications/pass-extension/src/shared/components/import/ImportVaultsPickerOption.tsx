@@ -1,10 +1,13 @@
-import { FC, useMemo } from 'react';
+import { FC, useEffect, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
 import { ImportVault } from '@proton/pass/import';
+import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 import { VaultShare } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 
 import { VAULT_ICON_MAP } from '../../../popup/components/Vault/constants';
 
@@ -26,6 +29,14 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     vaults,
 }) => {
     const count = useMemo(() => items.length, [items]);
+    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
+    const { didDowngrade, needsUpgrade } = useSelector(selectVaultLimits);
+
+    useEffect(() => {
+        /* if upgrade is required, user cannot create a new vault
+         * so we auto-select the primary vault id by default */
+        if (needsUpgrade) onChange(primaryVaultId);
+    }, [didDowngrade]);
 
     return (
         <>
@@ -47,23 +58,30 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                         disabled={!selected}
                     >
                         {[
-                            <Option
-                                key={'new-vault'}
-                                title={c('Label').t`Create new vault`}
-                                value={id}
-                                className="text-sm"
-                            >
-                                <span className="flex flex-align-items-center">
-                                    <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
-                                    <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
-                                </span>
-                            </Option>,
+                            /* if user needs to upgrade, this means he cannot
+                             * create any more vaults - disable this option when
+                             * trying to import if that is the case */
+                            !needsUpgrade && (
+                                <Option
+                                    key={'new-vault'}
+                                    title={c('Label').t`Create new vault`}
+                                    value={id}
+                                    className="text-sm"
+                                >
+                                    <span className="flex flex-align-items-center">
+                                        <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
+                                        <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
+                                    </span>
+                                </Option>
+                            ),
                             ...vaults.map((vault) => (
                                 <Option
                                     key={vault.shareId}
                                     title={vault.content.name}
                                     value={vault.shareId}
                                     className="text-sm"
+                                    /* only allow selecting primary vault if a downgrade was detected */
+                                    disabled={didDowngrade && vault.shareId !== primaryVaultId}
                                 >
                                     <span className="flex flex-align-items-center">
                                         <Icon
@@ -79,7 +97,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                     </span>
                                 </Option>
                             )),
-                        ]}
+                        ].filter(truthy)}
                     </SelectTwo>
                 </div>
             </div>
