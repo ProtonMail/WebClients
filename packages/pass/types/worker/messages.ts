@@ -163,10 +163,10 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<PromptedFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
-    [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[] };
+    [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
-    [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions'] };
+    [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions']; needsUpgrade: boolean };
     [WorkerMessageType.EXPORT_REQUEST]: { data: string };
     [WorkerMessageType.EXPORT_DECRYPT]: { data: string };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message?: OnboardingMessage };
