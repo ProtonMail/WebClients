@@ -29,7 +29,7 @@ export const oneOf =
     (value: T): boolean =>
         args.includes(value);
 
-export const truthy = <T>(value: T | undefined | null): value is T => Boolean(value);
+export const truthy = <T>(value: T | undefined | null | false): value is T => Boolean(value);
 
 export const notIn =
     <T extends any>(haystack: T[]) =>
