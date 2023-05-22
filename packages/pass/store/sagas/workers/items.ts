@@ -8,6 +8,8 @@ import type {
     ItemCreateIntent,
     ItemEditIntent,
     ItemImportIntent,
+    ItemMoveIndividualToShareRequest,
+    ItemMoveMultipleToShareRequest,
     ItemRevision,
     ItemRevisionContentsResponse,
     ItemType,
@@ -142,6 +144,31 @@ export const moveItem = async (
     ).Item!;
 
     return parseItemRevision(destinationShareId, encryptedItem);
+};
+
+export const moveItems = async (
+    items: ItemRevision[],
+    shareId: string,
+    destinationShareId: string
+): Promise<ItemRevision[]> => {
+    const data: ItemMoveMultipleToShareRequest = {
+        Items: await Promise.all(
+            items.map<Promise<ItemMoveIndividualToShareRequest>>(async (item) => {
+                const content = serializeItemContent(item.data);
+
+                return {
+                    ItemID: item.itemId,
+                    Item: (await PassCrypto.moveItem({ destinationShareId, content })).Item,
+                };
+            })
+        ),
+        ShareID: destinationShareId,
+    };
+
+    const encryptedItems = (await api({ url: `pass/v1/share/${shareId}/item/share`, method: 'put', data })).Items;
+    const revisions = encryptedItems.map(async (encryptedItem) => parseItemRevision(destinationShareId, encryptedItem));
+
+    return Promise.all(revisions);
 };
 
 export const trashItem = (item: ItemRevision) =>
