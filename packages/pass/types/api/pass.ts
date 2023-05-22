@@ -15,6 +15,13 @@ export type ProtonError = {
     Details?: {};
 };
 
+export type ItemMoveMultipleToShareRequest = {
+    /* Encrypted ID of the destination share */
+    ShareID: string;
+    /* Items to move to the destination share */
+    Items: ItemMoveIndividualToShareRequest[];
+};
+
 export type ItemCreateRequest = {
     /* Encrypted ID of the VaultKey used to create this item */
     KeyRotation: number;
@@ -42,7 +49,7 @@ export type SetAliasMailboxesRequest = {
 };
 
 export type ImportItemBatchRequest = {
-    /* Items to be imported */
+    /* Items to be imported. At most 100 */
     Items: ImportItemRequest[];
 };
 
@@ -57,12 +64,12 @@ export type AliasAndItemCreateRequest = {
 };
 
 export type ItemsToTrashRequest = {
-    /* Pairs of item IDs with their latest revision */
+    /* Pairs of item IDs with their latest revision. At most 100. */
     Items: ItemIDRevision[];
 };
 
 export type ItemsToSoftDeleteRequest = {
-    /* ItemIDs with their current revision */
+    /* ItemIDs with their current revision. At most 100 items. */
     Items: ItemIDRevision2[];
     /* Skip checking that the items are in the trash. Allows to delete directly */
     SkipTrash?: boolean | null;
@@ -84,9 +91,9 @@ export type UpdateItemLastUseTimeRequest = {
     LastUseTime?: number;
 };
 
-export type ItemMoveToShareRequest = {
+export type ItemMoveSingleToShareRequest = {
     /* Encrypted ID of the destination share */
-    ShareID?: string;
+    ShareID: string;
     Item: ItemCreateRequest;
 };
 
@@ -160,6 +167,10 @@ export type VaultUpdateRequest = {
     ContentFormatVersion: number;
     /* Key rotation used to encrypt the content */
     KeyRotation: number;
+};
+
+export type ItemMoveMultipleResponse = {
+    Items: ItemRevisionContentsResponse[];
 };
 
 export type AliasOptionsResponse = {
@@ -367,6 +378,12 @@ export type GetMissingAliasResponse = {
     MissingAlias?: MissingAliasDto[];
 };
 
+export type ItemMoveIndividualToShareRequest = {
+    /* Encrypted ID of the source item to move */
+    ItemID: string;
+    Item: ItemCreateRequest;
+};
+
 export type ItemCreateRequest2 = {};
 
 export type ImportItemRequest = {
@@ -529,6 +546,10 @@ export type PassPlanResponse = {
     InternalName: string;
     /* Display name of the plan */
     DisplayName: string;
+    /* Force hide the upgrade button independently of plan */
+    HideUpgrade?: boolean;
+    /* If the user is in trial show when the trial ends. Otherwise it sill be null */
+    TrialEnd?: number | null;
     /* Vault limit, null for plans with Pass plus */
     VaultLimit?: number | null;
     /* Alias limit, null for plans with Pass plus */
@@ -588,7 +609,9 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         ? GetMissingAliasResponse & { Code?: ResponseCodeSuccess }
         : never
     : Path extends `pass/v1/user/access`
-    ? Method extends `post`
+    ? Method extends `get`
+        ? { Code?: ResponseCodeSuccess; Access?: UserAccessGetResponse }
+        : Method extends `post`
         ? { Code?: ResponseCodeSuccess; Access?: UserAccessGetResponse }
         : never
     : Path extends `pass/v1/share/${string}/user/${string}`
@@ -629,6 +652,10 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
     : Path extends `pass/v1/share/${string}/item/trash`
     ? Method extends `post`
         ? { Code?: ResponseCodeSuccess; Items?: ItemTrashResponse }
+        : never
+    : Path extends `pass/v1/share/${string}/item/share`
+    ? Method extends `put`
+        ? ItemMoveMultipleResponse & { Code?: ResponseCodeSuccess }
         : never
     : Path extends `pass/v1/share/${string}/item/import/batch`
     ? Method extends `post`
@@ -763,7 +790,9 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
         ? never
         : never
     : Path extends `pass/v1/user/access`
-    ? Method extends `post`
+    ? Method extends `get`
+        ? never
+        : Method extends `post`
         ? never
         : never
     : Path extends `pass/v1/share/${string}/user/${string}`
@@ -802,13 +831,17 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
     ? Method extends `post`
         ? { ''?: ItemsToTrashRequest }
         : never
+    : Path extends `pass/v1/share/${string}/item/share`
+    ? Method extends `put`
+        ? ItemMoveMultipleToShareRequest
+        : never
     : Path extends `pass/v1/share/${string}/item/import/batch`
     ? Method extends `post`
         ? ImportItemBatchRequest
         : never
     : Path extends `pass/v1/share/${string}/item/${string}/share`
     ? Method extends `put`
-        ? ItemMoveToShareRequest
+        ? ItemMoveSingleToShareRequest
         : never
     : Path extends `pass/v1/share/${string}/item/${string}/revision`
     ? Method extends `get`

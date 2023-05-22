@@ -1,4 +1,4 @@
-import type { ItemMoveToShareRequest, VaultKey } from '@proton/pass/types';
+import type { ItemMoveSingleToShareRequest, VaultKey } from '@proton/pass/types';
 
 import { PassCryptoItemError } from '../../utils/errors';
 import { createItem } from './create-item';
@@ -13,7 +13,7 @@ export const moveItem = async ({
     destinationShareId,
     destinationVaultKey,
     content,
-}: MoveItemProcessParams): Promise<ItemMoveToShareRequest> => {
+}: MoveItemProcessParams): Promise<ItemMoveSingleToShareRequest> => {
     if (content.length === 0) {
         throw new PassCryptoItemError('Item content cannot be empty');
     }
