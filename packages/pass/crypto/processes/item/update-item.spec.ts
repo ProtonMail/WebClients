@@ -57,7 +57,7 @@ describe('updateItem crypto process', () => {
 
         await expect(
             updateItem({
-                content: new Uint8Array(7000),
+                content: new Uint8Array(40000),
                 itemKey,
                 lastRevision: 3,
             })
