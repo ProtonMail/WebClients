@@ -1,12 +1,12 @@
-import {
+import type {
     Item,
     ItemRevision,
     ItemType,
     OpenedItem,
     ProtobufContentMap,
-    ProtobufItem,
     SafeProtobufItem,
 } from '@proton/pass/types';
+import { ProtobufItem } from '@proton/pass/types';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 const protobufToItem = <T extends ItemType>(item: SafeProtobufItem<T>): Item<T> => {

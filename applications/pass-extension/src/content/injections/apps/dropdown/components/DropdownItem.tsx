@@ -2,7 +2,8 @@ import type { ReactNode, VFC } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, IconName } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
+import { DropdownMenuButton, Icon } from '@proton/components/components';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

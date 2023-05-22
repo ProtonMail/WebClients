@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
+import type { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
+import type { TestState } from '../utils/testing.utils';
 import {
-    TestState,
     createTestAction,
     createTestDeterministicAction,
     createTestOptimisticHistoryItem,

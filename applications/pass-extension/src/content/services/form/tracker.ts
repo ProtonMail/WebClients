@@ -11,8 +11,8 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { DETECTED_FORM_ID_ATTR, EMAIL_PROVIDERS } from '../../constants';
 import { withContext } from '../../context/context';
-import type { FormHandle, FormTracker } from '../../types';
-import { DropdownAction, FieldHandle, FormField, FormType } from '../../types';
+import type { FieldHandle, FormHandle, FormTracker } from '../../types';
+import { DropdownAction, FormField, FormType } from '../../types';
 
 const { isVisible } = fathom.utils;
 

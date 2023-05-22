@@ -1,6 +1,7 @@
-import { AnyAction, Reducer } from 'redux';
+import type { AnyAction, Reducer } from 'redux';
 
-import { HistoryFlag, OptimisticState } from '../types';
+import type { OptimisticState } from '../types';
+import { HistoryFlag } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 import { removeHistoryItem } from '../utils/remove-history-item';
 

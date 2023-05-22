@@ -21,7 +21,7 @@ import {
     vaultCreationIntent,
     vaultCreationSuccess,
 } from '../actions';
-import { WithSenderAction } from '../actions/with-receiver';
+import type { WithSenderAction } from '../actions/with-receiver';
 import type { WorkerRootSagaOptions } from '../types';
 import { importItemsBatch, parseItemRevision } from './workers/items';
 

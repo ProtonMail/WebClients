@@ -3,8 +3,8 @@ import { put, takeLeading } from 'redux-saga/effects';
 import { deleteSessionLock } from '@proton/pass/auth/session-lock';
 
 import { sessionLockDisableFailure, sessionLockDisableIntent, sessionLockDisableSuccess } from '../actions';
-import { WithSenderAction } from '../actions/with-receiver';
-import { WorkerRootSagaOptions } from '../types';
+import type { WithSenderAction } from '../actions/with-receiver';
+import type { WorkerRootSagaOptions } from '../types';
 
 function* disableSessionLockWorker(
     _: WorkerRootSagaOptions,

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import type { AliasState } from '@proton/pass/store';
 import {
-    AliasState,
     aliasOptionsRequestSuccess,
     aliasOptionsRequested,
     itemCreationIntent,

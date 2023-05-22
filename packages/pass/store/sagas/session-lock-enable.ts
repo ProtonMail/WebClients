@@ -3,9 +3,9 @@ import { put, select, takeLeading } from 'redux-saga/effects';
 import { deleteSessionLock, lockSession } from '@proton/pass/auth/session-lock';
 
 import { sessionLockEnableFailure, sessionLockEnableIntent, sessionLockEnableSuccess } from '../actions';
-import { WithSenderAction } from '../actions/with-receiver';
+import type { WithSenderAction } from '../actions/with-receiver';
 import { selectCanLockSession } from '../selectors';
-import { WorkerRootSagaOptions } from '../types';
+import type { WorkerRootSagaOptions } from '../types';
 
 function* enableSessionLockWorker(
     _: WorkerRootSagaOptions,

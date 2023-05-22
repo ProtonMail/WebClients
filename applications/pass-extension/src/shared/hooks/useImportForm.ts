@@ -1,21 +1,20 @@
-import { ComponentProps, useState } from 'react';
+import type { ComponentProps } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { FormikContextType, FormikErrors, useFormik } from 'formik';
+import type { FormikContextType, FormikErrors } from 'formik';
+import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Dropzone, FileInput, onlyDragFiles } from '@proton/components/components';
+import type { Dropzone, FileInput } from '@proton/components/components';
+import { onlyDragFiles } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import {
-    ImportPayload,
-    ImportProvider,
-    ImportReaderPayload,
-    extractFileExtension,
-    fileReader,
-} from '@proton/pass/import';
-import { ImportState, importItemsIntent, selectLatestImport } from '@proton/pass/store';
+import type { ImportPayload, ImportReaderPayload } from '@proton/pass/import';
+import { ImportProvider, extractFileExtension, fileReader } from '@proton/pass/import';
+import type { ImportState } from '@proton/pass/store';
+import { importItemsIntent, selectLatestImport } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
-import { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';

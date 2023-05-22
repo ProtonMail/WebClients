@@ -1,7 +1,9 @@
 import type { VFC } from 'react';
 
-import { Icon, IconSize } from '@proton/components/components';
-import { VaultColor as VaultColorEnum, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
+import type { IconSize } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
+import type { VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
+import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
 import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from '../../components/Vault/constants';

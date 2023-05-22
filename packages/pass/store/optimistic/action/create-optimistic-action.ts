@@ -1,6 +1,7 @@
-import { AnyAction, PayloadActionCreator, PrepareAction, createAction } from '@reduxjs/toolkit';
+import type { AnyAction, PayloadActionCreator, PrepareAction } from '@reduxjs/toolkit';
+import { createAction } from '@reduxjs/toolkit';
 
-import { OptimisticMatcherResult } from '../types';
+import type { OptimisticMatcherResult } from '../types';
 
 /**
  * Wraps the @reduxjs/toolkit createAction helper utility.

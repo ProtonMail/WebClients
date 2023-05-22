@@ -1,5 +1,5 @@
-import { Item, ItemType } from '@proton/pass/types';
-import { ItemMatchFunc, ItemMatchFuncMap } from '@proton/pass/utils/search';
+import type { Item, ItemType } from '@proton/pass/types';
+import type { ItemMatchFunc, ItemMatchFuncMap } from '@proton/pass/utils/search';
 
 import matchesAliasItem from '../../popup/views/Item/Alias/Alias.match';
 import matchesLoginItem from '../../popup/views/Item/Login/Login.match';

@@ -1,5 +1,5 @@
 import { type FC, useRef } from 'react';
-import { List } from 'react-virtualized';
+import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 

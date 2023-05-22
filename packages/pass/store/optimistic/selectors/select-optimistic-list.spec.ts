@@ -1,6 +1,6 @@
-import { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
+import type { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
+import type { TestState } from '../utils/testing.utils';
 import {
-    TestState,
     createTestDeterministicAction,
     createTestOptimisticHistoryItem,
     createTestReducer,

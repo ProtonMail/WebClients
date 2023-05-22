@@ -1,4 +1,4 @@
-import { VaultColor, VaultIcon } from '../protobuf/vault-v1';
+import type { VaultColor, VaultIcon } from '../protobuf/vault-v1';
 
 export enum ShareType {
     Vault = 1,

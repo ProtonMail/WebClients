@@ -16,7 +16,7 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
-import { ItemNewProps } from '../../../../shared/items';
+import type { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';

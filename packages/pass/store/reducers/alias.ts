@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import type { Reducer } from 'redux';
 
-import { AliasMailbox, AliasSuffix } from '@proton/pass/types/data/alias';
+import type { AliasMailbox, AliasSuffix } from '@proton/pass/types/data/alias';
 import { merge } from '@proton/pass/utils/object';
 
 import {

@@ -1,12 +1,13 @@
-import { FC, useEffect, useMemo } from 'react';
+import type { FC } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
-import { ImportVault } from '@proton/pass/import';
+import type { ImportVault } from '@proton/pass/import';
 import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
-import { VaultShare } from '@proton/pass/types';
+import type { VaultShare } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 
 import { VAULT_ICON_MAP } from '../../../popup/components/Vault/constants';

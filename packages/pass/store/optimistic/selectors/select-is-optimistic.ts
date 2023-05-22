@@ -1,8 +1,8 @@
-import { Selector } from '@reduxjs/toolkit';
+import type { Selector } from '@reduxjs/toolkit';
 
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import {
+import type {
     MaybeOptimisticStateObject,
     OptimisticReducersMapObject,
     StateFromOptimisticReducersMapObject,

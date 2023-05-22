@@ -4,7 +4,7 @@ import { objectMap } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 
 import { PROCESSED_INPUT_ATTR } from '../../constants';
-import { FormFields, FormHandle, FormType } from '../../types';
+import type { FormFields, FormHandle, FormType } from '../../types';
 import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
 

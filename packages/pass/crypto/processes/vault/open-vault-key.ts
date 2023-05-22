@@ -1,7 +1,7 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import type { ShareKeyResponse, VaultKey } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { getSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoVaultError } from '../../utils/errors';

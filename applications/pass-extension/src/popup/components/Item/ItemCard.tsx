@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Card } from '@proton/atoms/Card';
 import clsx from '@proton/utils/clsx';

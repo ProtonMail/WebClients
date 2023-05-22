@@ -1,4 +1,5 @@
-import { ShareType, VaultKey } from '../types';
+import type { VaultKey } from '../types';
+import { ShareType } from '../types';
 import { createShareManager } from './share-manager';
 import { generateKey, getSymmetricKey } from './utils';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';

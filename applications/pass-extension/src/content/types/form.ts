@@ -1,6 +1,6 @@
 import type { MaybeNull } from '@proton/pass/types';
 
-import { DropdownAction } from './dropdown';
+import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 
 /* Form types based on protonpass-fathom

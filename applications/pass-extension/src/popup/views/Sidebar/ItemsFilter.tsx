@@ -2,15 +2,8 @@ import { type VFC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownProps,
-    Icon,
-    IconName,
-    usePopperAnchor,
-} from '@proton/components';
+import type { DropdownProps, IconName } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 
 import { itemTypeToIconName } from '../../../shared/items';
 import { DropdownMenuButton } from '../../components/Dropdown/DropdownMenuButton';

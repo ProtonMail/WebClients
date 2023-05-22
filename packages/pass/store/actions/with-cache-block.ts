@@ -1,4 +1,4 @@
-import { AnyAction } from 'redux';
+import type { AnyAction } from 'redux';
 
 import { invert } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';

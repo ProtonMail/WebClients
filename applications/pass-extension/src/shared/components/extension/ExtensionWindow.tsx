@@ -9,7 +9,7 @@ import {
     NotificationsProvider,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import { ExtensionEndpoint } from '@proton/pass/types';
+import type { ExtensionEndpoint } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import * as config from '../../../app/config';

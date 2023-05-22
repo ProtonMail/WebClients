@@ -1,10 +1,10 @@
-import { PersistedSession, PersistedSessionBlob } from '@proton/shared/lib/authentication/SessionInterface';
+import type { PersistedSession, PersistedSessionBlob } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 
 import { removeLastRefreshDate } from '../api/refresh';
 import { browserLocalStorage } from '../extension/storage';
-import { PersistSessionOptions } from './session';
+import type { PersistSessionOptions } from './session';
 
 /**
  * Simplified version of packages/shared/lib/authentication/persistedSessionHelper.ts :

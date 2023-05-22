@@ -1,6 +1,6 @@
 import { invert } from '@proton/pass/utils/fp';
 
-import { WithOptimisticReducer, WrappedOptimisticState } from '../types';
+import type { WithOptimisticReducer, WrappedOptimisticState } from '../types';
 import { isOptimisticHistoryItem } from './assertions';
 import { getActionFromHistoryItem } from './transformers';
 

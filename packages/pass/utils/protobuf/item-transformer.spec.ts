@@ -1,4 +1,4 @@
-import { ItemType, SafeProtobufItem } from '@proton/pass/types';
+import type { ItemType, SafeProtobufItem } from '@proton/pass/types';
 
 import { decodeItemContent, encodeItemContent } from './item-transformer';
 

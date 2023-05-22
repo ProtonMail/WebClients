@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { itemCreationIntent, selectPrimaryVault } from '@proton/pass/store';
-import { ItemCreateIntent, ItemType } from '@proton/pass/types';
+import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
-import { ItemNewProps } from '../../../shared/items/types';
+import type { ItemNewProps } from '../../../shared/items/types';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { AliasNew } from './Alias/Alias.new';

@@ -4,9 +4,9 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { itemEditIntent, selectItemByShareIdAndId, selectShareOrThrow } from '@proton/pass/store';
 import type { ItemEditIntent, ItemType, SelectedItem } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
 
-import { ItemEditProps } from '../../../shared/items';
+import type { ItemEditProps } from '../../../shared/items';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { AliasEdit } from './Alias/Alias.edit';
 import { LoginEdit } from './Login/Login.edit';

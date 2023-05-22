@@ -1,7 +1,8 @@
 import { uniqueId } from '@proton/pass/utils/string';
 
-import { OptimisticState } from '../types';
-import { TestState, createTestOptimisticHistoryItem } from '../utils/testing.utils';
+import type { OptimisticState } from '../types';
+import type { TestState } from '../utils/testing.utils';
+import { createTestOptimisticHistoryItem } from '../utils/testing.utils';
 import { failReducer } from './fail';
 
 describe('optimistic fail reducer', () => {

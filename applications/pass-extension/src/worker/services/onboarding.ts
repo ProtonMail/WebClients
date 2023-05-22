@@ -1,8 +1,8 @@
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import { selectCanLockSession } from '@proton/pass/store';
+import type { MaybeNull } from '@proton/pass/types';
 import {
     type Maybe,
-    MaybeNull,
     type OnboardingAcknowledgment,
     OnboardingMessage,
     type OnboardingState,

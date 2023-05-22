@@ -4,7 +4,8 @@ import { type FieldProps } from 'formik';
 
 import { Icon, type IconName, InputButton, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import { type ColorRGB, MaybeArray } from '@proton/pass/types';
+import type { MaybeArray } from '@proton/pass/types';
+import { type ColorRGB } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';

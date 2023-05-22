@@ -1,7 +1,7 @@
 import { type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { AliasMailbox } from '@proton/pass/types/data/alias';
+import type { AliasMailbox } from '@proton/pass/types/data/alias';
 import { validateLocalPart } from '@proton/shared/lib/helpers/email';
 
 import { validateItemErrors } from '../Item/Item.validation';

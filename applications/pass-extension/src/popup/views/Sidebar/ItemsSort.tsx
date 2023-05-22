@@ -2,7 +2,8 @@ import type { VFC } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, DropdownMenu, DropdownProps, Icon, usePopperAnchor } from '@proton/components';
+import type { DropdownProps } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import { ITEMS_SORT_OPTIONS, type ItemsSortOption } from '@proton/pass/types';
 
 import { DropdownMenuButton } from '../../components/Dropdown/DropdownMenuButton';

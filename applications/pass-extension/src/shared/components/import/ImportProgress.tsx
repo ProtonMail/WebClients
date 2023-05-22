@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 import type { Runtime } from 'webextension-polyfill';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { WorkerMessageType, WorkerMessageWithSender } from '@proton/pass/types/worker';
+import type { WorkerMessageWithSender } from '@proton/pass/types/worker';
+import { WorkerMessageType } from '@proton/pass/types/worker';
 
 /* we need to pass the runtime port object to this component
  * as it may be loaded inside a Portal outside of the extension

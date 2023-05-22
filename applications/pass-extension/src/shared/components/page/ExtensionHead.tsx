@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Helmet } from 'react-helmet';
 
 export const ExtensionHead: FC<{ title: string }> = ({ title }) => {

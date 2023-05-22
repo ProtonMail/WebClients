@@ -1,6 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { type Share, ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
+import { type Share } from '@proton/pass/types';
 
 import { acknowledgeRequest, vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '../actions';
 import { createVault } from './workers/vaults';

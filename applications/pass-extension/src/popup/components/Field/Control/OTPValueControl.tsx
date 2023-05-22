@@ -8,7 +8,8 @@ import { ThemeColor } from '@proton/colors/types';
 import { selectCanGenerateTOTP } from '@proton/pass/store';
 import clsx from '@proton/utils/clsx';
 
-import { Props as UsePeriodicOtpCodeProps, usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
+import type { Props as UsePeriodicOtpCodeProps } from '../../../hooks/usePeriodicOtpCode';
+import { usePeriodicOtpCode } from '../../../hooks/usePeriodicOtpCode';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 

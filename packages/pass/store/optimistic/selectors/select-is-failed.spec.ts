@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 
-import { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
-import { TestState, createTestAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
+import type { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
+import type { TestState } from '../utils/testing.utils';
+import { createTestAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
 import withOptimistic from '../with-optimistic';
 import selectIsFailed, { asIfNotFailed } from './select-is-failed';
 

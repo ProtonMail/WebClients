@@ -1,7 +1,7 @@
-import { ImportProvider } from '@proton/pass/import';
+import type { ImportProvider } from '@proton/pass/import';
 import type { PassPlanResponse } from '@proton/pass/types';
 
-import { ItemType } from '../protobuf';
+import type { ItemType } from '../protobuf';
 
 export type TelemetryPlatform = 'browser' | 'any';
 
