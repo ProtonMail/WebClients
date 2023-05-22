@@ -1,5 +1,5 @@
 import { type VFC, useEffect, useMemo, useRef } from 'react';
-import { List } from 'react-virtualized';
+import type { List } from 'react-virtualized';
 
 import { interpolateRecentItems, itemEq } from '@proton/pass/utils/pass/items';
 

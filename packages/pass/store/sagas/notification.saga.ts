@@ -1,9 +1,10 @@
-import { AnyAction } from 'redux';
+import type { AnyAction } from 'redux';
 import { takeEvery } from 'redux-saga/effects';
 
-import { WithNotification, isActionWithNotification } from '../actions/with-notification';
+import type { WithNotification } from '../actions/with-notification';
+import { isActionWithNotification } from '../actions/with-notification';
 import { isActionWithRequest } from '../actions/with-request';
-import { WorkerRootSagaOptions } from '../types';
+import type { WorkerRootSagaOptions } from '../types';
 
 function* notificationWorker({ onNotification }: WorkerRootSagaOptions, action: WithNotification<AnyAction>) {
     const { notification } = action.meta;

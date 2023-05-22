@@ -1,5 +1,6 @@
-import { WrappedOptimisticState } from '../types';
-import { TestState, createTestOptimisticHistoryItem } from '../utils/testing.utils';
+import type { WrappedOptimisticState } from '../types';
+import type { TestState } from '../utils/testing.utils';
+import { createTestOptimisticHistoryItem } from '../utils/testing.utils';
 import selectFailedAction from './select-failed-action';
 
 describe('select failed action', () => {

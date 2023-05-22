@@ -1,7 +1,8 @@
 import { type FC, createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { MessageWithSenderFactory, sendMessage } from '@proton/pass/extension/message';
+import type { MessageWithSenderFactory } from '@proton/pass/extension/message';
+import { sendMessage } from '@proton/pass/extension/message';
 import { selectWorkerAlive } from '@proton/pass/store';
 import { sessionLockImmediate, signout, syncIntent } from '@proton/pass/store/actions';
 import type {

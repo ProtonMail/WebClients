@@ -1,6 +1,6 @@
-import { CustomAliasCreateRequest } from '../api';
-import { ItemType } from '../protobuf';
-import { Item } from './items';
+import type { CustomAliasCreateRequest } from '../api';
+import type { ItemType } from '../protobuf';
+import type { Item } from './items';
 
 type AliasMailbox = {
     id: number;

@@ -1,5 +1,5 @@
-import { WithAutoSavePromptOptions } from './autosave';
-import { Realm, TabId } from './runtime';
+import type { WithAutoSavePromptOptions } from './autosave';
+import type { Realm, TabId } from './runtime';
 
 export type FormIdentifier = `${TabId}:${Realm}`;
 

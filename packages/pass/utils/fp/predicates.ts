@@ -1,4 +1,4 @@
-import { Unpack } from '@proton/pass/types';
+import type { Unpack } from '@proton/pass/types';
 
 type Predicate<Params extends any[] = any[]> = (...args: Params) => boolean;
 

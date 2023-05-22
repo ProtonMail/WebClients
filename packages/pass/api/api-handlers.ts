@@ -6,9 +6,9 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { ApiCallFn, ApiContext, ApiOptions } from '../types/api';
+import type { ApiCallFn, ApiContext, ApiOptions } from '../types/api';
 import { LockedSessionError } from './errors';
-import { RefreshHandler } from './refresh';
+import type { RefreshHandler } from './refresh';
 
 type ApiHandlersOptions = {
     refreshHandler: RefreshHandler;

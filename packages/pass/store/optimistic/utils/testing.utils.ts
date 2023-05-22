@@ -1,6 +1,7 @@
-import { AnyAction, Reducer } from 'redux';
+import type { AnyAction, Reducer } from 'redux';
 
-import { DeterministicHistoryItem, HistoryFlag, OptimisticHistoryItem } from '../types';
+import type { DeterministicHistoryItem, OptimisticHistoryItem } from '../types';
+import { HistoryFlag } from '../types';
 
 export const createTestAction = (type?: string, payload?: any): AnyAction => ({
     type: type ?? `action-${Math.random()}`,

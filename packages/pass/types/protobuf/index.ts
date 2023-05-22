@@ -4,11 +4,10 @@
  * this way, or better said, protobuf doesn't produce very easy-to-consume
  * types.
  */
+import type { ExtraField, PlatformSpecific } from './item-v1';
 import {
     Content,
-    ExtraField,
     Metadata,
-    PlatformSpecific,
     Item as ProtobufItem,
     ItemAlias as ProtobufItemAlias,
     ItemLogin as ProtobufItemLogin,

@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { ItemImportIntent } from '@proton/pass/types';
+import type { ItemImportIntent } from '@proton/pass/types';
 
 import { readChromiumData } from './chromium.reader';
 

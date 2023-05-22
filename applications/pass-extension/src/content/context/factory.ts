@@ -1,4 +1,4 @@
-import { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerStatus } from '@proton/pass/types';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
@@ -8,7 +8,7 @@ import { createDetectorService } from '../services/form/detector';
 import { createFormManager } from '../services/form/manager';
 import { createIFrameService } from '../services/iframes/service';
 import { CSContext } from './context';
-import { CSContextState, ContentScriptContext } from './types';
+import type { CSContextState, ContentScriptContext } from './types';
 
 export const createContentScriptContext = (scriptId: string, mainFrame: boolean): ContentScriptContext => {
     const state: CSContextState = { active: true, loggedIn: false, status: WorkerStatus.IDLE, UID: undefined };

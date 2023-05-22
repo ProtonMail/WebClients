@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { DropdownProps } from '@proton/components';
 import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
-    DropdownProps,
     DropdownSizeUnit,
     Icon,
     usePopperAnchor,

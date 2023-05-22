@@ -1,9 +1,10 @@
 import { decryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
-import { EncryptionTag, Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
+import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
+import { EncryptionTag } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
-import { State } from '../../types';
+import type { State } from '../../types';
 
 export type ExtensionCache = { state: State; snapshot: SerializedCryptoContext<PassCryptoSnapshot> };
 

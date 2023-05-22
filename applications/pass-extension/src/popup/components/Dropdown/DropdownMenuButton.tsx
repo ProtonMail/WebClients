@@ -4,10 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
-import {
-    default as DropdownMenuButtonCore,
-    Props as DropdownMenuButtonCoreProps,
-} from '@proton/components/components/dropdown/DropdownMenuButton';
+import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
+import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import clsx from '@proton/utils/clsx';
 
 const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {

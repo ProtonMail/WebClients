@@ -1,5 +1,5 @@
-import { IconName } from '@proton/components/components/icon';
-import { Item, ItemMap } from '@proton/pass/types';
+import type { IconName } from '@proton/components/components/icon';
+import type { Item, ItemMap } from '@proton/pass/types';
 
 export const itemTypeToIconName: ItemMap<IconName> = {
     login: 'user',

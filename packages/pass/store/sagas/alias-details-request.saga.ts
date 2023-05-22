@@ -1,7 +1,7 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/api';
-import { AliasDetailsResponse } from '@proton/pass/types';
+import type { AliasDetailsResponse } from '@proton/pass/types';
 
 import { aliasDetailsRequestFailure, aliasDetailsRequestSuccess, aliasDetailsRequested } from '../actions';
 

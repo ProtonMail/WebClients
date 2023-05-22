@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import type { Reducer } from 'redux';
 
-import { WithOptimisticReducer } from '../types';
+import type { WithOptimisticReducer } from '../types';
 import { combineOptimisticReducers } from './combine-optimistic-reducers';
 
 describe('combineOptimisticReducers', () => {

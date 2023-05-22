@@ -1,4 +1,5 @@
-import { VFC, useMemo, useState } from 'react';
+import type { VFC } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 

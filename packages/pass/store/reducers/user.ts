@@ -1,6 +1,7 @@
-import { Reducer } from 'redux';
+import type { Reducer } from 'redux';
 
-import { EventActions, MaybeNull, PassPlanResponse } from '@proton/pass/types';
+import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
+import { EventActions } from '@proton/pass/types';
 import { fullMerge, merge, objectDelete, partialMerge } from '@proton/pass/utils/object';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 

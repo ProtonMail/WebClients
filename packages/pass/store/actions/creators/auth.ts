@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { ExtensionEndpoint } from '@proton/pass/types';
+import type { ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

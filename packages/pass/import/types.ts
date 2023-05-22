@@ -1,4 +1,4 @@
-import { ItemImportIntent } from '../types';
+import type { ItemImportIntent } from '../types';
 
 export enum ImportProvider {
     BITWARDEN = 'bitwarden',

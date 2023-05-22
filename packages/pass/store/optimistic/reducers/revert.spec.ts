@@ -1,13 +1,9 @@
 import { uniqueId } from '@proton/pass/utils/string';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { WrappedOptimisticState } from '../types';
-import {
-    TestState,
-    createTestDeterministicAction,
-    createTestOptimisticHistoryItem,
-    testReducer,
-} from '../utils/testing.utils';
+import type { WrappedOptimisticState } from '../types';
+import type { TestState } from '../utils/testing.utils';
+import { createTestDeterministicAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
 import { revertReducer } from './revert';
 
 describe('optimistic revert reducer', () => {

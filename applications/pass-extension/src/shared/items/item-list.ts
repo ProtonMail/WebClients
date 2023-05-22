@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ItemRevision, ItemType } from '@proton/pass/types';
+import type { ItemRevision, ItemType } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 type PresentedListItem = { heading: string; subheading: string };

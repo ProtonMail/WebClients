@@ -1,6 +1,6 @@
-import { AnyAction } from 'redux';
+import type { AnyAction } from 'redux';
 
-import { ExtensionEndpoint, TabId } from '@proton/pass/types';
+import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 
 export type EndpointOptions = { endpoint?: ExtensionEndpoint; tabId?: TabId };

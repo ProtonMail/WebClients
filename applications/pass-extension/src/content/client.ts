@@ -15,11 +15,13 @@
  * way, we can ensure that only one instance of the client content-script is running
  * at a time, and that it is properly cleaned up when no longer needed */
 import browser from '@proton/pass/globals/browser';
-import { Maybe, MaybeNull, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom';
 import { uniqueId } from '@proton/pass/utils/string';
 
-import { ContentScriptClientService, createContentScriptClient } from './services';
+import type { ContentScriptClientService } from './services';
+import { createContentScriptClient } from './services';
 
 const CLIENT_ID = uniqueId();
 const MAIN_FRAME = isMainFrame();

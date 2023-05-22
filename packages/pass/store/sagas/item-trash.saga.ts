@@ -4,8 +4,8 @@ import { c } from 'ttag';
 import { getItemActionId } from '@proton/pass/utils/pass/items';
 
 import { itemTrashFailure, itemTrashIntent, itemTrashSuccess, notification } from '../actions';
-import { WithSenderAction } from '../actions/with-receiver';
-import { WorkerRootSagaOptions } from '../types';
+import type { WithSenderAction } from '../actions/with-receiver';
+import type { WorkerRootSagaOptions } from '../types';
 import { trashItem } from './workers/items';
 
 function* trashItemWorker(

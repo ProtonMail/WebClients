@@ -3,7 +3,7 @@ import type { VFC } from 'react';
 import { Field, Form, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { VaultColor as VaultColorEnum, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
+import type { VaultColor as VaultColorEnum, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
 
 import { FieldsetCluster } from '../../components/Field/Layout/FieldsetCluster';
 import { RadioButton, RadioButtonGroupField } from '../../components/Field/RadioButtonGroupField';

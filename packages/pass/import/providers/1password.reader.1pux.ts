@@ -10,15 +10,8 @@ import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload, ImportVault } from '../types';
-import {
-    OnePass1PuxData,
-    OnePassBaseItem,
-    OnePassCategory,
-    OnePassItem,
-    OnePassItemDetails,
-    OnePassLoginDesignation,
-    OnePassState,
-} from './1password.1pux.types';
+import type { OnePass1PuxData, OnePassBaseItem, OnePassItem, OnePassItemDetails } from './1password.1pux.types';
+import { OnePassCategory, OnePassLoginDesignation, OnePassState } from './1password.1pux.types';
 
 const OnePasswordTypeMap: Record<string, string> = {
     '001': 'Login',

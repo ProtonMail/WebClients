@@ -8,7 +8,8 @@ import { Icon } from '@proton/components/components';
 import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import { selectShare } from '@proton/pass/store';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { ShareType, WorkerMessageType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { isEmptyString } from '@proton/pass/utils/string';
 

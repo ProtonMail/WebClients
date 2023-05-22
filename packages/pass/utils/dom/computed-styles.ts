@@ -1,4 +1,4 @@
-import { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export type BoundComputeStyles = ReturnType<typeof createStyleCompute>;

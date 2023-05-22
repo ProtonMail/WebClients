@@ -1,4 +1,5 @@
-import { ItemRevisionContentsResponse, ItemState, VaultKey } from '@proton/pass/types';
+import type { ItemRevisionContentsResponse, VaultKey } from '@proton/pass/types';
+import { ItemState } from '@proton/pass/types';
 
 import { generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';

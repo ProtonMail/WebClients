@@ -17,9 +17,8 @@ import { withPayload } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import createAuthenticationStore, {
-    AuthenticationStore,
-} from '@proton/shared/lib/authentication/createAuthenticationStore';
+import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 

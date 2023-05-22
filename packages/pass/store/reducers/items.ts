@@ -47,7 +47,7 @@ import {
     vaultDeleteSuccess,
 } from '../actions';
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
-import { WrappedOptimisticState } from '../optimistic/types';
+import type { WrappedOptimisticState } from '../optimistic/types';
 import { combineOptimisticReducers } from '../optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '../optimistic/with-optimistic';
 

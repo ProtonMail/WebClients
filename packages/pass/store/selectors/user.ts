@@ -1,7 +1,7 @@
 import type { Maybe } from '@proton/pass/types';
 import { type Address, UserType } from '@proton/shared/lib/interfaces';
 
-import { State } from '../types';
+import type { State } from '../types';
 
 export const selectUserState = ({ user }: State) => user;
 

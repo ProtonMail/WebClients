@@ -3,7 +3,8 @@ import { all, fork, put, select } from 'redux-saga/effects';
 
 import { authentication } from '@proton/pass/auth';
 import { PassCrypto } from '@proton/pass/crypto';
-import { type Api, ChannelType, type ServerEvent, UserAccessGetResponse } from '@proton/pass/types';
+import type { UserAccessGetResponse } from '@proton/pass/types';
+import { type Api, ChannelType, type ServerEvent } from '@proton/pass/types';
 import { notIn, prop } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getLatestID } from '@proton/shared/lib/api/events';

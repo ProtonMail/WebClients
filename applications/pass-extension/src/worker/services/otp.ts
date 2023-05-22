@@ -1,4 +1,5 @@
-import { TOTP, URI } from 'otpauth';
+import type { TOTP } from 'otpauth';
+import { URI } from 'otpauth';
 
 import { selectCanGenerateTOTP, selectItemByShareIdAndId } from '@proton/pass/store';
 import { type OtpCode, type SelectedItem, WorkerMessageType } from '@proton/pass/types';

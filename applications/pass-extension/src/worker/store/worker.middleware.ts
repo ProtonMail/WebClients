@@ -1,4 +1,4 @@
-import { AnyAction, Middleware } from 'redux';
+import type { AnyAction, Middleware } from 'redux';
 
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';

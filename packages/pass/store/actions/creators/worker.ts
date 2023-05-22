@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ExtensionEndpoint, Maybe, RequiredNonNull, TabId } from '@proton/pass/types';
-import { WorkerStatus } from '@proton/pass/types';
+import type { WorkerStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import identity from '@proton/utils/identity';
 
