@@ -1,2 +1,2 @@
 export * from './modal';
-export { default as AutoDeleteUpsellModal } from './AutoDeleteUpsellModal';
+export { default as MailUpsellButton } from './MailUpsellButton';
