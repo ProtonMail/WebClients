@@ -5,13 +5,27 @@ import { c } from 'ttag';
 
 import { Option } from '@proton/components';
 import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import { Maybe } from '@proton/pass/types';
+import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import { notIn } from '@proton/pass/utils/fp';
 
-import { VaultIcon } from '../Vault/VaultIcon';
+import { VaultIcon, VaultIconName } from '../Vault/VaultIcon';
 import { SelectField, type SelectFieldProps } from './SelectField';
 
-type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'>;
+type ExtraVaultSelectOption = { value: string; title: string; icon: VaultIconName; color?: VaultColor };
+type SelectedVaultOption = { title: string; icon?: VaultIconName; color?: VaultColor };
+type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'> & {
+    extraOptions?: ExtraVaultSelectOption[];
+    excludeOptions?: string[];
+    placeholder?: string;
+};
 
-export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
+export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
+    extraOptions = [],
+    excludeOptions = [],
+    placeholder,
+    ...props
+}) => {
     const vaults = useSelector(selectAllVaults);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade } = useSelector(selectVaultLimits);
@@ -22,45 +36,56 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = (props) => {
         if (didDowngrade) props.form.setFieldValue(props.field.name, primaryVaultId);
     }, [didDowngrade]);
 
-    const selectedVault = useMemo(
-        () => vaults.find(({ shareId }) => shareId === props.field.value),
-        [props.field.value, vaults]
-    );
+    const selectedVault = useMemo<Maybe<SelectedVaultOption>>(() => {
+        const vaultMatch = vaults.find(({ shareId }) => shareId === props.field.value);
+        const extraMatch = extraOptions.find(({ value }) => value === props.field.value);
 
-    const renderSelected = () =>
-        selectedVault ? (
-            selectedVault.content.name
-        ) : (
-            <span className="color-weak">{c('Placeholder').t`Pick a vault`}</span>
-        );
+        if (vaultMatch || extraMatch) {
+            return {
+                title: vaultMatch?.content.name ?? extraMatch?.title!,
+                icon: vaultMatch?.content.display.icon ?? extraMatch?.icon!,
+                color: vaultMatch?.content.display.color ?? extraMatch?.color!,
+            };
+        }
+    }, [props.field.value, vaults]);
 
     return vaults.length > 1 ? (
         <SelectField
             {...props}
-            icon={
-                <VaultIcon
-                    icon={selectedVault?.content.display.icon}
-                    color={selectedVault?.content.display.color}
-                    size="large"
-                />
+            icon={<VaultIcon icon={selectedVault?.icon} color={selectedVault?.color} size="large" />}
+            renderSelected={() =>
+                selectedVault?.title ?? (
+                    <span className="color-weak">{placeholder ?? c('Placeholder').t`Pick a vault`}</span>
+                )
             }
-            renderSelected={renderSelected}
         >
-            {vaults.map(({ shareId, content }) => (
-                <Option
-                    key={shareId}
-                    value={shareId}
-                    title={content.name}
-                    /* only allow selecting primary vault if
-                     * a downgrade was detected */
-                    disabled={didDowngrade && shareId !== primaryVaultId}
-                >
-                    <div className="flex gap-x-3 flex-align-items-center">
-                        <VaultIcon icon={content.display.icon} color={content.display.color} size="medium" />
-                        <span className="flex-item-fluid text-ellipsis">{content.name}</span>
-                    </div>
-                </Option>
-            ))}
+            {vaults
+                .filter(({ shareId }) => notIn(excludeOptions)(shareId))
+                .map(({ shareId, content }) => (
+                    <Option
+                        key={shareId}
+                        value={shareId}
+                        title={content.name}
+                        /* only allow selecting primary vault if
+                         * a downgrade was detected */
+                        disabled={didDowngrade && shareId !== primaryVaultId}
+                    >
+                        <div className="flex gap-x-3 flex-align-items-center">
+                            <VaultIcon icon={content.display.icon} color={content.display.color} size="medium" />
+                            <span className="flex-item-fluid text-ellipsis">{content.name}</span>
+                        </div>
+                    </Option>
+                ))
+                .concat(
+                    ...extraOptions.map(({ value, title, icon, color }) => (
+                        <Option key={value} value={value} title={title}>
+                            <div className="flex gap-x-3 flex-align-items-center">
+                                <VaultIcon icon={icon} size="medium" color={color} />
+                                <span className="flex-item-fluid text-ellipsis">{title}</span>
+                            </div>
+                        </Option>
+                    ))
+                )}
         </SelectField>
     ) : null;
 };

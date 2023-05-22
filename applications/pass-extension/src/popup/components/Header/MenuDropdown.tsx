@@ -26,6 +26,7 @@ import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vault.modal';
+import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
 import { VaultSubmenu } from './VaultSubmenu';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
@@ -51,7 +52,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = <F extends (...args: any[]) => any>(cb: F) => pipe(cb, tap(close));
 
-    const handleVaultDelete = () => {
+    const handleVaultDelete = (destinationShareId: MaybeNull<string>) => {
         if (deleteVault !== null) {
             handleVaultDeletionEffects(deleteVault.shareId, {
                 shareId,
@@ -59,7 +60,13 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                 setShareId,
             });
 
-            dispatch(vaultDeleteIntent({ id: deleteVault.shareId, content: deleteVault.content }));
+            dispatch(
+                vaultDeleteIntent({
+                    id: deleteVault.shareId,
+                    content: deleteVault.content,
+                    destinationShareId,
+                })
+            );
         }
     };
 
@@ -181,26 +188,22 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
             {vaultModalProps !== null && <VaultModal {...vaultModalProps} onClose={() => setVaultModalProps(null)} />}
 
-            <ConfirmationModal
-                title={c('Title').t`Delete vault ?`}
+            <VaultDeleteModal
+                vault={deleteVault}
                 open={deleteVault !== null}
                 onClose={() => setDeleteVault(null)}
                 onSubmit={handleVaultDelete}
-                submitText={c('Action').t`Delete`}
-            >
-                {c('Warning')
-                    .t`Vault "${deleteVault?.content.name}" and all its items will be permanently deleted. You can not undo this action`}
-            </ConfirmationModal>
+            />
 
             <ConfirmationModal
                 title={c('Title').t`Permanently remove all items ?`}
                 open={deleteAllConfirm}
                 onClose={() => setDeleteAllConfirm(false)}
                 onSubmit={handleDeleteAllItemsInTrash}
+                alertText={c('Warning')
+                    .t`All your trashed items will be permanently deleted. You can not undo this action.`}
                 submitText={c('Action').t`Delete all`}
-            >
-                {c('Warning').t`All your trashed items will be permanently deleted. You can not undo this action.`}
-            </ConfirmationModal>
+            />
         </>
     );
 };
