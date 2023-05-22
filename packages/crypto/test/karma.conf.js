@@ -1,6 +1,6 @@
 const path = require('path');
 const os = require('os');
-const { firefox, chromium } = require('playwright');
+const { firefox, chromium } = require('@playwright/test');
 process.env.CHROME_BIN = chromium.executablePath();
 process.env.FIREFOX_BIN = firefox.executablePath();
 
