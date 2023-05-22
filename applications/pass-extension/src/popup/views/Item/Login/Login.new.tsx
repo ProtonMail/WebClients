@@ -13,6 +13,7 @@ import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { isValidURL } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { ItemNewProps } from '../../../../shared/items';
@@ -48,17 +49,17 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
-        const url = subdomain ?? realm;
-        const validURL = url !== null;
+        const maybeUrl = subdomain ?? realm ?? '';
+        const { valid, url } = isValidURL(maybeUrl);
 
         return {
             shareId,
-            name: validURL ? url : '',
+            name: valid ? url : '',
             username: params.get('username') ?? '',
             password: '',
             note: '',
             totpUri: '',
-            url: validURL ? createNewUrl(url).url : '',
+            url: valid ? createNewUrl(url).url : '',
             urls: [],
             withAlias: false,
             aliasPrefix: '',
