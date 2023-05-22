@@ -56,6 +56,6 @@ describe('createItem crypto process', () => {
             userKeyId: TEST_USER_KEY_ID,
         };
 
-        await expect(createItem({ content: new Uint8Array(7000), vaultKey })).rejects.toThrow(PassCryptoItemError);
+        await expect(createItem({ content: new Uint8Array(40000), vaultKey })).rejects.toThrow(PassCryptoItemError);
     });
 });
