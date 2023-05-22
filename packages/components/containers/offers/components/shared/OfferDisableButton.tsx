@@ -14,6 +14,7 @@ const OfferDisableButton = (props: OfferProps) => {
     return (
         <Button
             shape="underline"
+            size="small"
             color="norm"
             loading={loading}
             data-testid="cta:hide-offer"
