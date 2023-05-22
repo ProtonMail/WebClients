@@ -95,7 +95,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 {c('Info')
                     .t`A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.`}
                 <br />
-                <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/auto-unsubscribe')}>{c('Link').t`Learn more`}</Href>
             </>
         );
 
