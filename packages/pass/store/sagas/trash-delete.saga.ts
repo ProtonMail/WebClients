@@ -1,27 +1,18 @@
-import { all, put, takeLatest } from 'redux-saga/effects';
-
-import { api } from '@proton/pass/api';
-import groupWith from '@proton/utils/groupWith';
+import { put } from 'redux-saga/effects';
 
 import { emptyTrashFailure, emptyTrashIntent, emptyTrashSuccess } from '../actions';
-import type { WorkerRootSagaOptions } from '../types';
+import { selectAllTrashedItems } from '../selectors';
+import type { State, WorkerRootSagaOptions } from '../types';
+import { takeBefore } from './utils/take.before';
+import { deleteItems } from './workers/items';
 
-function* deleteTrash({ onItemsChange }: WorkerRootSagaOptions, { payload }: ReturnType<typeof emptyTrashIntent>) {
-    const groupedByShareId = groupWith((a, b) => a.shareId === b.shareId, payload.trashedItems);
-
+function* deleteTrash(
+    _: ReturnType<typeof emptyTrashIntent>,
+    stateBeforeAction: State,
+    { onItemsChange }: WorkerRootSagaOptions
+) {
     try {
-        yield all(
-            groupedByShareId.map((items) =>
-                api({
-                    url: `pass/v1/share/${items[0].shareId}/item`,
-                    method: 'delete',
-                    data: {
-                        Items: items.map(({ itemId, revision }) => ({ ItemID: itemId, Revision: revision })),
-                    },
-                })
-            )
-        );
-
+        yield deleteItems(selectAllTrashedItems(stateBeforeAction));
         yield put(emptyTrashSuccess());
         onItemsChange?.();
     } catch (e) {
@@ -30,5 +21,5 @@ function* deleteTrash({ onItemsChange }: WorkerRootSagaOptions, { payload }: Ret
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLatest(emptyTrashIntent, deleteTrash, options);
+    yield takeBefore(emptyTrashIntent.match, deleteTrash, options);
 }
