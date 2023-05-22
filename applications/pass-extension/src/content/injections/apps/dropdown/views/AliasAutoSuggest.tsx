@@ -34,7 +34,7 @@ const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 export const AliasAutoSuggest: VFC<Props> = ({ prefix, realm, onOptions, onSubmit }) => {
     const ensureMounted = useEnsureMounted();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
-    const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(true);
+    const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useState<boolean>(false);
 
