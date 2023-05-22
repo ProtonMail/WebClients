@@ -1,4 +1,5 @@
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../components';
 import {
@@ -71,7 +72,7 @@ const OverviewSection = ({ ids }: Props) => {
                             onReactivation,
                             keyTransparencyVerify,
                         });
-                        await keyTransparencyCommit(userKeys);
+                        await keyTransparencyCommit(userKeys).catch(noop);
                         return call();
                     }}
                     {...reactivateKeyProps}
