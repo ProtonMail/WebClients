@@ -54,7 +54,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
         return {
             shareId,
-            name: valid ? url : '',
+            name: maybeUrl,
             username: params.get('username') ?? '',
             password: '',
             note: '',
