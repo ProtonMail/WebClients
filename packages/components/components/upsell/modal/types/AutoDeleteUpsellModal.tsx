@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
-import { ModalStateProps } from '../modalTwo';
-import { UpsellModal } from './modal';
+import { ModalStateProps } from '../../../modalTwo';
+import { UpsellModal } from '../index';
 
 interface Props {
     modalProps: ModalStateProps;

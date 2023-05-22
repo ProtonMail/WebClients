@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { SettingsParagraph } from '@proton/components/containers';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
@@ -15,7 +14,7 @@ import move from '@proton/utils/move';
 
 import {
     Alert,
-    Icon,
+    MailUpsellButton,
     OrderableTable,
     OrderableTableBody,
     OrderableTableHeader,
@@ -126,17 +125,10 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
             )}
 
             {!user.hasPaidMail && (
-                <Button
-                    shape="outline"
+                <MailUpsellButton
                     onClick={() => handleUpsellModalDisplay(true)}
-                    className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
-                >
-                    <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
-                    <span className="flex-item-noshrink mr-2" aria-hidden="true">
-                        +
-                    </span>
-                    {c('Action').t`Get more addresses`}
-                </Button>
+                    text={c('Action').t`Get more addresses`}
+                />
             )}
 
             <OrderableTable
