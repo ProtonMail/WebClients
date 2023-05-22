@@ -1,7 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import { type ImportPayload, ImportProvider } from '@proton/pass/import';
+import type { ImportProvider } from '@proton/pass/import';
+import { type ImportPayload } from '@proton/pass/import';
 import type { ExtensionEndpoint, ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 

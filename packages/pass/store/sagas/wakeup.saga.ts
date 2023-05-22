@@ -5,8 +5,8 @@ import { WorkerStatus } from '@proton/pass/types';
 
 import * as action from '../actions';
 import { boot, stateSync, wakeupSuccess } from '../actions';
-import { WithReceiverAction } from '../actions/with-receiver';
-import { State } from '../types';
+import type { WithReceiverAction } from '../actions/with-receiver';
+import type { State } from '../types';
 
 function* wakeupWorker({ payload: { status }, meta }: WithReceiverAction<ReturnType<typeof action.wakeup>>) {
     const { tabId, endpoint } = meta.receiver;

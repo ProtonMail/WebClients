@@ -1,7 +1,7 @@
-import { Selector } from '@reduxjs/toolkit';
-import { AnyAction, Reducer } from 'redux';
+import type { Selector } from '@reduxjs/toolkit';
+import type { AnyAction, Reducer } from 'redux';
 
-import { DefinedPropertiesOnly, MaybeArray } from '@proton/pass/types';
+import type { DefinedPropertiesOnly, MaybeArray } from '@proton/pass/types';
 
 export type OptimisticMatcherResult = boolean | string;
 export type OptimisticMatcher = string | ((action: AnyAction) => OptimisticMatcherResult);

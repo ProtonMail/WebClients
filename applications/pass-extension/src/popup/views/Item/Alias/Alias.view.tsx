@@ -14,7 +14,7 @@ import {
 import * as requests from '@proton/pass/store/actions/requests';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
-import { ItemTypeViewProps } from '../../../../shared/items/types';
+import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
 import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';

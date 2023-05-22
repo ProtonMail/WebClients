@@ -8,7 +8,7 @@ import type { Notification } from '@proton/pass/store/actions/with-notification'
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 
-import { ShareEventPayload } from '../api';
+import type { ShareEventPayload } from '../api';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';

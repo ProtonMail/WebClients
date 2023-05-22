@@ -1,6 +1,6 @@
-import { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
-import {
+import type {
     ItemCreateRequest,
     ItemKeyResponse,
     ItemMoveToShareRequest,
@@ -11,9 +11,9 @@ import {
     VaultCreateRequest,
     VaultUpdateRequest,
 } from '../api';
-import { ShareType } from '../data/shares';
+import type { ShareType } from '../data/shares';
 import type { MaybeNull } from '../utils';
-import { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
+import type { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
 
 export type PassCryptoManagerContext = {
     user?: User;

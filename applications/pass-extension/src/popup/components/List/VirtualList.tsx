@@ -1,5 +1,6 @@
 import { type ForwardRefRenderFunction, type RefObject, forwardRef, useCallback, useEffect, useState } from 'react';
-import { AutoSizer, List, ListRowRenderer, ScrollParams } from 'react-virtualized';
+import type { ListRowRenderer, ScrollParams } from 'react-virtualized';
+import { AutoSizer, List } from 'react-virtualized';
 
 import clsx from '@proton/utils/clsx';
 

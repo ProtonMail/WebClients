@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
 import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';

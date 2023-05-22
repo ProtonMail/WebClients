@@ -1,14 +1,14 @@
-import { Reducer } from 'redux';
+import type { Reducer } from 'redux';
 
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import {
+import type {
     DeterministicHistoryItem,
-    HistoryFlag,
     OptimisticHistoryItem,
     WithOptimisticReducer,
     WrappedOptimisticState,
 } from '../types';
+import { HistoryFlag } from '../types';
 import { combineOptimisticReducers } from './combine-optimistic-reducers';
 import { getActionFromHistoryItem, sanitizeOptimisticReducerMapObject, unwrapOptimisticState } from './transformers';
 

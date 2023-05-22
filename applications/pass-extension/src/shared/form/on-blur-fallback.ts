@@ -1,6 +1,6 @@
-import { FocusEvent } from 'react';
+import type { FocusEvent } from 'react';
 
-import { FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 
 import { isEmptyString } from '@proton/pass/utils/string';
 

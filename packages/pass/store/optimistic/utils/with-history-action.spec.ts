@@ -1,4 +1,4 @@
-import { OptimisticState } from '../types';
+import type { OptimisticState } from '../types';
 import { createTestDeterministicAction, createTestOptimisticHistoryItem } from './testing.utils';
 import { withHistoryAction } from './with-history-action';
 

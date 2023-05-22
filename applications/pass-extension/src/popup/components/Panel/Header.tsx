@@ -1,6 +1,7 @@
 import type { ReactNode, VFC } from 'react';
 
-import { Icon, IconName } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import './Header.scss';

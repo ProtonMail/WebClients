@@ -1,4 +1,4 @@
-import { FormikErrors } from 'formik';
+import type { FormikErrors } from 'formik';
 
 import { validateItemErrors } from '../Item/Item.validation';
 

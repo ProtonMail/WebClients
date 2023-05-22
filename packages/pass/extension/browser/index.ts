@@ -1,4 +1,4 @@
-import { Browser } from '../../types/browser';
+import type { Browser } from '../../types/browser';
 
 /*
  * Based on https://github.com/mozilla/webextension-polyfill Chrome check

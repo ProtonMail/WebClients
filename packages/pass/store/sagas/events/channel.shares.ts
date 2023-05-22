@@ -11,7 +11,7 @@ import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { sharesSync, vaultCreationSuccess, vaultSetPrimarySync } from '../../actions';
-import { ItemsByShareId } from '../../reducers';
+import type { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
 import { requestItemsForShareId } from '../workers/items';

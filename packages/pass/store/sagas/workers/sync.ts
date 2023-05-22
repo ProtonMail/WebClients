@@ -1,7 +1,8 @@
 import { put } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
-import { Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
+import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array';
 import { invert, notIn, pipe, prop } from '@proton/pass/utils/fp';

@@ -1,4 +1,4 @@
-import { fathom } from './protonpass-fathom';
+import type { fathom } from './protonpass-fathom';
 
 export * from './protonpass-fathom';
 

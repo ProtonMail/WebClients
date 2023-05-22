@@ -1,4 +1,5 @@
-import { type Maybe, WorkerStatus } from '@proton/pass/types';
+import type { WorkerStatus } from '@proton/pass/types';
+import { type Maybe } from '@proton/pass/types';
 
 export type IconHandleState = { timer: Maybe<NodeJS.Timeout>; loading: boolean };
 

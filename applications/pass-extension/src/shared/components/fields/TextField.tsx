@@ -1,9 +1,9 @@
-import { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
-import { FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { InputFieldTwo } from '@proton/components';
-import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
 type TextFieldProps = FieldProps &
     InputFieldOwnProps & {

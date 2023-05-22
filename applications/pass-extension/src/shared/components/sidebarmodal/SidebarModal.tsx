@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { ModalProps, ModalTwo } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo } from '@proton/components';
 
 import './SidebarModal.scss';
 

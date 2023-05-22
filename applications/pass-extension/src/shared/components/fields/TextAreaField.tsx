@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { InputFieldTwo, TextAreaTwo } from '@proton/components';
-import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
 const TextAreaField: FC<FieldProps & InputFieldOwnProps> = ({ field, form, ...rest }) => {
     const { name } = field;

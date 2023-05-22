@@ -1,4 +1,4 @@
-import { ApiOptions } from '../types';
+import type { ApiOptions } from '../types';
 
 export const withResponseMapper = <
     T = ApiOptions,

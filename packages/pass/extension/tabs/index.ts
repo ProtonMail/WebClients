@@ -2,7 +2,8 @@ import type { Tabs } from 'webextension-polyfill';
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
-import { Maybe, WorkerMessageType } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 
 /**

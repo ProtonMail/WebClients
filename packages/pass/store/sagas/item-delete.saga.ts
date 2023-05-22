@@ -5,7 +5,7 @@ import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 import { itemDeleteFailure, itemDeleteIntent, itemDeleteSuccess } from '../actions';
-import { WorkerRootSagaOptions } from '../types';
+import type { WorkerRootSagaOptions } from '../types';
 
 function* deleteItem(
     { onItemsChange, telemetry }: WorkerRootSagaOptions,

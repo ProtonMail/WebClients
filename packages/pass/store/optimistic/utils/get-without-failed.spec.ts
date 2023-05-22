@@ -1,11 +1,7 @@
-import { WithOptimisticReducer, WrappedOptimisticState } from '../types';
+import type { WithOptimisticReducer, WrappedOptimisticState } from '../types';
 import getWithoutFailed from './get-without-failed';
-import {
-    TestState,
-    createTestDeterministicAction,
-    createTestOptimisticHistoryItem,
-    testReducer,
-} from './testing.utils';
+import type { TestState } from './testing.utils';
+import { createTestDeterministicAction, createTestOptimisticHistoryItem, testReducer } from './testing.utils';
 
 describe('getWithoutFailed', () => {
     test('should early return same state if optimistic history or checkpoint are empty', () => {

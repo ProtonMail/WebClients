@@ -1,6 +1,7 @@
 import { type VFC } from 'react';
 
-import { BaseTextField, BaseTextFieldProps, TextField, type TextFieldProps } from './TextField';
+import type { BaseTextFieldProps } from './TextField';
+import { BaseTextField, TextField, type TextFieldProps } from './TextField';
 
 export const BaseTitleField: VFC<BaseTextFieldProps> = (props) => (
     <BaseTextField inputClassName="text-2xl text-bold" {...props} />

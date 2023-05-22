@@ -1,6 +1,6 @@
-import { AnyAction } from 'redux';
+import type { AnyAction } from 'redux';
 
-import { HistoryItem, OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
+import type { HistoryItem, OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
 import { isCombinedOptimisticReducer } from './assertions';
 
 export const unwrapOptimisticState = <T>(state: WrappedOptimisticState<T>): T => {

@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 import { autofill } from '../../../shared/form';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle } from '../../types';
-import { FormField, FormType } from '../../types';
+import type { FormField, FormType } from '../../types';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {

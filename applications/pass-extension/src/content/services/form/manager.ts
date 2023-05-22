@@ -9,7 +9,8 @@ import debounce from '@proton/utils/debounce';
 
 import { isSubmissionCommitted } from '../../../shared/form';
 import { withContext } from '../../context/context';
-import { FormHandle, NotificationAction } from '../../types';
+import type { FormHandle } from '../../types';
+import { NotificationAction } from '../../types';
 
 const { isVisible } = fathom.utils;
 

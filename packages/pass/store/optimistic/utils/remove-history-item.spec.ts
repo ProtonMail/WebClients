@@ -1,13 +1,9 @@
 import { uniqueId } from '@proton/pass/utils/string';
 
-import { OptimisticState } from '../types';
+import type { OptimisticState } from '../types';
 import { removeHistoryItem } from './remove-history-item';
-import {
-    TestState,
-    createTestDeterministicAction,
-    createTestOptimisticHistoryItem,
-    testReducer,
-} from './testing.utils';
+import type { TestState } from './testing.utils';
+import { createTestDeterministicAction, createTestOptimisticHistoryItem, testReducer } from './testing.utils';
 
 describe('removeHistoryItem', () => {
     test('should early return if no items matched', () => {

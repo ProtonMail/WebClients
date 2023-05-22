@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { ShareEventType, WorkerMessageType, WorkerMessageWithSender } from '@proton/pass/types';
+import type { WorkerMessageWithSender } from '@proton/pass/types';
+import { ShareEventType, WorkerMessageType } from '@proton/pass/types';
 
 import { ExtensionContext } from '../extension';
 

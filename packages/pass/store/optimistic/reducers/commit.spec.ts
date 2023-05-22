@@ -1,12 +1,9 @@
 import { uniqueId } from '@proton/pass/utils/string';
 
-import { HistoryFlag, OptimisticState } from '../types';
-import {
-    TestState,
-    createTestDeterministicAction,
-    createTestOptimisticHistoryItem,
-    testReducer,
-} from '../utils/testing.utils';
+import type { OptimisticState } from '../types';
+import { HistoryFlag } from '../types';
+import type { TestState } from '../utils/testing.utils';
+import { createTestDeterministicAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
 import { commitReducer } from './commit';
 
 describe('optimistic commit reducer', () => {

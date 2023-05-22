@@ -1,17 +1,10 @@
 import { CryptoProxy } from '@proton/crypto';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
-import {
-    CONTENT_FORMAT_VERSION,
-    EncryptionTag,
-    ItemRevisionContentsResponse,
-    ItemState,
-    ShareGetResponse,
-    ShareKeyResponse,
-    ShareType,
-} from '../types';
+import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../types';
+import { CONTENT_FORMAT_VERSION, EncryptionTag, ItemState, ShareType } from '../types';
 import { PassCrypto } from './pass-crypto';
 import * as processes from './processes';
 import { decryptData } from './utils';

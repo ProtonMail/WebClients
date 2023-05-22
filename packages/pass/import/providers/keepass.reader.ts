@@ -12,8 +12,9 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
-import { type ImportPayload, ImportVault } from '../types';
-import { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
+import type { ImportVault } from '../types';
+import { type ImportPayload } from '../types';
+import type { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
 
 const getKeyPassEntryValue = (Value: KeyPassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);
 

@@ -1,6 +1,7 @@
-import { Reducer } from 'redux';
+import type { Reducer } from 'redux';
 
-import { CombinedOptimisticReducer, HistoryFlag, WithOptimisticReducer } from '../types';
+import type { CombinedOptimisticReducer, WithOptimisticReducer } from '../types';
+import { HistoryFlag } from '../types';
 import {
     isCombinedOptimisticReducer,
     isDeterministicHistoryItem,

@@ -5,7 +5,7 @@ import { Link, type LinkProps } from 'react-router-dom';
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
 import { Marks } from '@proton/components/components';
 import { selectShare } from '@proton/pass/store';
-import { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
+import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';

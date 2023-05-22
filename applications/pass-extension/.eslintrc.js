@@ -7,6 +7,7 @@ module.exports = {
     },
     rules: {
         'no-console': 'off',
+        '@typescript-eslint/consistent-type-imports': 'error',
         curly: ['error', 'multi-line'],
     },
     ignorePatterns: ['.eslintrc.js'],
