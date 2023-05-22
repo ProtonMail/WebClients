@@ -1,6 +1,7 @@
 import { call, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
+import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -73,7 +74,7 @@ function* importWorker(
                         ? vaultData.shareId
                         : yield call(createVaultForImport, vaultData.vaultName);
 
-                for (const batch of chunk(vaultData.items, 50)) {
+                for (const batch of chunk(vaultData.items, MAX_BATCH_ITEMS_PER_REQUEST)) {
                     try {
                         const revisions: ItemRevisionContentsResponse[] = yield importItemsBatch({
                             shareId,
