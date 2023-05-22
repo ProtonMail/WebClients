@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -25,8 +25,6 @@ import EmailResubscribed from '../components/EmailResubscribed';
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
 import EmailUnsubscribed from '../components/EmailUnsubscribed';
 import ExpiredError from './ExpiredError';
-
-import './EmailUnsubscribeContainer.scss';
 
 interface UserSettingsNewsResponse {
     Code: number;
@@ -54,7 +52,6 @@ const EmailUnsubscribeContainer = () => {
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading();
-    const history = useHistory();
     const location = useLocation();
     const handleError = useErrorHandler();
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
@@ -65,8 +62,6 @@ const EmailUnsubscribeContainer = () => {
     useEffect(() => {
         const init = async () => {
             const jwt = location.hash.substring(1);
-
-            history.replace(location.pathname);
 
             const { UID, AccessToken } = await silentApi<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
 
@@ -135,7 +130,7 @@ const EmailUnsubscribeContainer = () => {
     const categoriesJsx = <EmailSubscriptionCategories news={subscriptionBits} />;
 
     return (
-        <main className="main-area email-unsubscribe-container--main">
+        <main className="main-area h100">
             {(() => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {

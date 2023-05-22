@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { PAYMENT_METHOD_TYPES, process } from '@proton/components/payments/core';
 import { createToken } from '@proton/shared/lib/api/payments';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 
-import { useApi, useLoading, useModals } from '../../hooks';
+import { useLoading, useModals } from '../../hooks';
 import { AmountAndCurrency, TokenPaymentMethod } from '../../payments/core/interface';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
@@ -34,11 +34,13 @@ type PAYPAL_PAYMENT_METHOD = PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.
 export type OnPayResult = TokenPaymentMethod & AmountAndCurrency & { type: PAYPAL_PAYMENT_METHOD };
 
 interface Props {
+    api: Api;
     amount: number;
     currency: Currency;
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
     onValidate?: () => Promise<boolean>;
+    onError?: () => void;
     /**
      * This lifecycle hook is called before the payment token is fetched.
      * It can be convinient if you need to fullfill some codition before fetching the token.
@@ -51,8 +53,16 @@ interface Props {
     onBeforeTokenFetch?: () => Promise<unknown> | unknown;
 }
 
-const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate, onBeforeTokenFetch }: Props) => {
-    const api = useApi();
+const usePayPal = ({
+    api,
+    amount = 0,
+    currency: Currency,
+    type: Type,
+    onPay,
+    onValidate,
+    onError,
+    onBeforeTokenFetch,
+}: Props) => {
     const [model, setModel] = useState<Model>(DEFAULT_MODEL);
     const [loadingVerification, withLoadingVerification] = useLoading();
     const [loadingToken, withLoadingToken] = useLoading();
@@ -126,7 +136,10 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
             if (!((await onValidate?.()) ?? true)) {
                 return;
             }
-            return withLoadingVerification(onVerification(model));
+            return withLoadingVerification(onVerification(model)).catch((e) => {
+                onError?.();
+                throw e;
+            });
         },
         clear,
     };

@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
@@ -22,7 +21,6 @@ import {
 import { Icon, Loader } from '../../components';
 import {
     useApi,
-    useConfig,
     useFeature,
     useLoad,
     useLoading,
@@ -48,7 +46,7 @@ const getSearchParams = (search: string) => {
     };
 };
 
-const PlansSection = ({ isPassPlusEnabled }: { isPassPlusEnabled: boolean }) => {
+const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -56,16 +54,13 @@ const PlansSection = ({ isPassPlusEnabled }: { isPassPlusEnabled: boolean }) => 
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
-    const { APP_NAME } = useConfig();
     const api = useApi();
     const location = useLocation();
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
-    const appFromPathname = getAppFromPathnameSafe(location.pathname);
-    const settingsApp = appFromPathname || APP_NAME;
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
-        return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription), isPassPlusEnabled);
+        return getDefaultSelectedProductPlans(app, getPlanIDs(subscription));
     });
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const [open] = useSubscriptionModal();
@@ -111,10 +106,8 @@ const PlansSection = ({ isPassPlusEnabled }: { isPassPlusEnabled: boolean }) => 
             return;
         }
         setCycle(subscription.Cycle || DEFAULT_CYCLE);
-        setSelectedProductPlans(
-            getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription), isPassPlusEnabled)
-        );
-    }, [isLoading, subscription, settingsApp]);
+        setSelectedProductPlans(getDefaultSelectedProductPlans(app, getPlanIDs(subscription)));
+    }, [isLoading, subscription, app]);
 
     // @ts-ignore
     if (subscription.isManagedByMozilla) {
@@ -128,7 +121,7 @@ const PlansSection = ({ isPassPlusEnabled }: { isPassPlusEnabled: boolean }) => 
     return (
         <>
             <PlanSelection
-                isPassPlusEnabled={isPassPlusEnabled}
+                filter={app === APPS.PROTONPASS ? [Audience.B2C] : undefined}
                 mode="settings"
                 audience={audience}
                 onChangeAudience={setAudience}

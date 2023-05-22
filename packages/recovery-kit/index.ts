@@ -6,20 +6,51 @@ import interBold from './fonts/Inter-Bold.ttf';
 import interRegular from './fonts/Inter-Regular.ttf';
 import interSemiBold from './fonts/Inter-SemiBold.ttf';
 import emptyTemplate from './templates/empty_template.pdf';
-import filledTemplate from './templates/filled_template.pdf';
 
-export const getFont = async () => ({
-    interRegular: {
-        data: await fetch(interRegular).then((res) => res.arrayBuffer()),
-        fallback: true,
-    },
-    interBold: {
-        data: await fetch(interBold).then((res) => res.arrayBuffer()),
-    },
-    interSemiBold: {
-        data: await fetch(interSemiBold).then((res) => res.arrayBuffer()),
-    },
-});
+const getFonts = async () => {
+    const [interRegularData, interBoldData, interSemiBoldData] = await Promise.all(
+        [interRegular, interBold, interSemiBold].map((asset) => {
+            return fetch(asset).then((res) => res.arrayBuffer());
+        })
+    );
+    return [interRegularData, interBoldData, interSemiBoldData] as const;
+};
+
+const getPreload = (asset: string, as?: 'font') => {
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'prefetch');
+    link.setAttribute('href', asset);
+    if (as) {
+        link.setAttribute('as', 'font');
+    }
+    return link;
+};
+
+export const getPrefetch = () => {
+    return [
+        getPreload(emptyTemplate),
+        ...[interRegular, interBold, interSemiBold].map((asset) => {
+            return getPreload(asset, 'font');
+        }),
+    ];
+};
+
+export const getFont = async () => {
+    const [interRegularData, interBoldData, interSemiBoldData] = await getFonts();
+
+    return {
+        interRegular: {
+            data: interRegularData,
+            fallback: true,
+        },
+        interBold: {
+            data: interBoldData,
+        },
+        interSemiBold: {
+            data: interSemiBoldData,
+        },
+    };
+};
 
 // Copy exported template here
 const exportedTemplate = {
@@ -29,7 +60,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 60,
-                    y: 23,
+                    y: 22,
                 },
                 width: 127.33,
                 height: 6.73,
@@ -58,7 +89,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 35,
-                    y: 102,
+                    y: 77,
                 },
                 width: 139,
                 height: 6,
@@ -71,20 +102,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 35,
-                    y: 108.8,
-                },
-                width: 139,
-                height: 6,
-                lineHeight: 1,
-                characterSpacing: 0.5,
-                fontName: 'interBold',
-                fontSize: 12,
-            },
-            password: {
-                type: 'text',
-                position: {
-                    x: 35,
-                    y: 77,
+                    y: 83,
                 },
                 width: 139,
                 height: 6,
@@ -95,28 +113,18 @@ const exportedTemplate = {
             },
         },
     ],
-    columns: ['email title', 'date', 'recovery phrase line 1', 'recovery phrase line 2', 'password'],
+    columns: ['email title', 'date', 'recovery phrase line 1', 'recovery phrase line 2'],
     sampledata: [
         {
             'email title': 'eric.norbert@gmail.com',
             date: 'Created on May 30, 2023',
             'recovery phrase line 1': 'auto pottery age relief turkey face',
             'recovery phrase line 2': 'tide useful near lottery alley wolf',
-            password: 'password',
         },
     ],
 };
 
-export function getTemplate(type: 'empty' | 'filled'): Template {
-    const basePdf = (() => {
-        if (type === 'empty') {
-            return emptyTemplate;
-        }
-
-        // type === 'filled'
-        return filledTemplate;
-    })();
-
+export function getTemplate(basePdf: any): Template {
     return {
         basePdf,
         ...(exportedTemplate as Omit<Template, 'basePdf'>),
@@ -130,15 +138,13 @@ export async function generatePDFKit({
     emailAddress,
     date,
     recoveryPhrase,
-    password,
 }: {
     emailAddress: string;
     date: string;
     recoveryPhrase: string;
-    password: string;
 }) {
     const phraseArray = recoveryPhrase.split(' ').map((s) => s.trim());
-    const [phraseLine1, phraseLine2] = chunk(phraseArray, 6);
+    const [phraseLine1 = [], phraseLine2 = []] = chunk(phraseArray, 6);
 
     const inputs: Input[] = [
         {
@@ -146,11 +152,10 @@ export async function generatePDFKit({
             'recovery phrase line 2': phraseLine2.join(' '),
             date,
             'email title': emailAddress,
-            password,
         },
     ];
 
-    const pdf = await generate({ template: getTemplate('empty'), inputs, options: { font: await getFont() } });
+    const pdf = await generate({ template: getTemplate(emptyTemplate), inputs, options: { font: await getFont() } });
 
     return pdf;
 }

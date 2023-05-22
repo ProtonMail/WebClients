@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -42,7 +42,15 @@ import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
 import { getLoginMeta } from './loginPagesJson';
 
+interface RenderProps {
+    title: string;
+    subTitle?: string;
+    onBack?: () => void;
+    content: ReactNode;
+}
+
 interface Props {
+    defaultUsername?: string;
     onLogin: OnLoginCallback;
     toAppName?: string;
     toApp?: APP_NAMES;
@@ -50,10 +58,22 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     setupVPN: boolean;
-    signupOptions?: Record<string, string | undefined>;
+    signupUrl: string;
+    modal?: boolean;
+    render?: (renderProps: RenderProps) => ReactNode;
 }
 
+const defaultRender = (data: RenderProps) => {
+    return (
+        <>
+            <Header onBack={data.onBack} title={data.title} subTitle={data.subTitle} />
+            <Content>{data.content}</Content>
+        </>
+    );
+};
+
 const LoginContainer = ({
+    defaultUsername,
     onLogin,
     onBack,
     toAppName,
@@ -61,12 +81,14 @@ const LoginContainer = ({
     showContinueTo,
     setupVPN,
     hasRemember = true,
-    signupOptions = {},
+    signupUrl,
+    modal,
+    render = defaultRender,
 }: Props) => {
     const { state } = useLocation<{ username?: string } | undefined>();
     const { APP_NAME } = useConfig();
 
-    useMetaTags(getLoginMeta(toApp, APP_NAME));
+    useMetaTags(modal ? null : getLoginMeta(toApp, APP_NAME));
 
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -85,7 +107,7 @@ const LoginContainer = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
 
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
-    const previousUsernameRef = useRef(state?.username || '');
+    const previousUsernameRef = useRef(state?.username || defaultUsername || '');
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const createFlow = useFlowRef();
@@ -145,7 +167,7 @@ const LoginContainer = ({
     })();
 
     const children = (
-        <Main>
+        <>
             <AbuseModal
                 message={abuseModal?.apiErrorMessage}
                 open={!!abuseModal}
@@ -153,156 +175,169 @@ const LoginContainer = ({
             />
             {step === AuthStep.LOGIN && (
                 <>
-                    <Header
-                        onBack={handleBackStep}
-                        title={c('Title').t`Sign in`}
-                        subTitle={
-                            toAppName
-                                ? c('Info').t`to continue to ${toAppName}`
-                                : c('Info').t`Enter your ${BRAND_NAME} Account details.`
-                        }
-                    />
-                    <Content>
-                        <LoginForm
-                            toApp={toApp}
-                            signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
-                            signupOptions={signupOptions}
-                            defaultUsername={previousUsernameRef.current}
-                            hasRemember={hasRemember}
-                            trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
-                            onSubmit={async ({ username, password, payload, persistent }) => {
-                                try {
-                                    const validateFlow = createFlow();
-                                    await startUnAuthFlow();
-                                    const result = await handleLogin({
-                                        username,
-                                        password,
-                                        persistent,
-                                        api: silentApi,
-                                        hasTrustedDeviceRecovery,
-                                        appName: APP_NAME,
-                                        toApp,
-                                        ignoreUnlock: false,
-                                        payload,
-                                        setupVPN,
-                                        ktFeature: (await ktFeature.get())?.Value,
-                                    });
-                                    if (validateFlow()) {
-                                        return await handleResult(result);
+                    {render({
+                        title: c('Title').t`Sign in`,
+                        subTitle: toAppName
+                            ? c('Info').t`to continue to ${toAppName}`
+                            : c('Info').t`Enter your ${BRAND_NAME} Account details.`,
+                        onBack: handleBackStep,
+                        content: (
+                            <LoginForm
+                                toApp={toApp}
+                                signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
+                                signupUrl={signupUrl}
+                                defaultUsername={previousUsernameRef.current}
+                                hasRemember={hasRemember}
+                                trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
+                                onSubmit={async ({ username, password, payload, persistent }) => {
+                                    try {
+                                        const validateFlow = createFlow();
+                                        await startUnAuthFlow();
+                                        const result = await handleLogin({
+                                            username,
+                                            password,
+                                            persistent,
+                                            api: silentApi,
+                                            hasTrustedDeviceRecovery,
+                                            appName: APP_NAME,
+                                            toApp,
+                                            ignoreUnlock: false,
+                                            payload,
+                                            setupVPN,
+                                            ktFeature: (await ktFeature.get())?.Value,
+                                        });
+                                        if (validateFlow()) {
+                                            return await handleResult(result);
+                                        }
+                                    } catch (e) {
+                                        handleError(e);
+                                        handleCancel();
                                     }
-                                } catch (e) {
-                                    handleError(e);
-                                    handleCancel();
-                                }
-                            }}
-                        />
-                    </Content>
+                                }}
+                            />
+                        ),
+                    })}
                 </>
             )}
             {step === AuthStep.TWO_FA && cache && (
                 <>
-                    <Header title={c('Title').t`Two-factor authentication`} onBack={handleBackStep} />
-                    <Content>
-                        <TwoFactorStep
-                            fido2={cache.authResponse?.['2FA']?.FIDO2}
-                            authTypes={cache.authTypes}
-                            onSubmit={async (data) => {
-                                if (data.type === 'code') {
+                    {render({
+                        title: c('Title').t`Two-factor authentication`,
+                        onBack: handleBackStep,
+                        content: (
+                            <TwoFactorStep
+                                fido2={cache.authResponse?.['2FA']?.FIDO2}
+                                authTypes={cache.authTypes}
+                                onSubmit={async (data) => {
+                                    if (data.type === 'code') {
+                                        try {
+                                            const validateFlow = createFlow();
+                                            const result = await handleTotp({
+                                                cache,
+                                                totp: data.payload,
+                                            });
+                                            if (validateFlow()) {
+                                                return await handleResult(result);
+                                            }
+                                        } catch (e: any) {
+                                            handleError(e);
+                                            // Cancel on any error except totp retry
+                                            if (e.name !== 'TOTPError') {
+                                                handleCancel();
+                                            }
+                                        }
+                                    }
+
+                                    if (data.type === 'fido2') {
+                                        try {
+                                            const validateFlow = createFlow();
+                                            const result = await handleFido2({ cache, payload: data.payload });
+                                            if (validateFlow()) {
+                                                return await handleResult(result);
+                                            }
+                                        } catch (e: any) {
+                                            handleError(e);
+                                            handleCancel();
+                                        }
+                                    }
+
+                                    throw new Error('Unknown type');
+                                }}
+                            />
+                        ),
+                    })}
+                </>
+            )}
+            {step === AuthStep.UNLOCK && cache && (
+                <>
+                    {render({
+                        title: c('Title').t`Unlock your mailbox`,
+                        onBack: handleBackStep,
+                        content: (
+                            <UnlockForm
+                                onSubmit={async (clearKeyPassword) => {
                                     try {
                                         const validateFlow = createFlow();
-                                        const result = await handleTotp({
+                                        const result = await handleUnlock({
                                             cache,
-                                            totp: data.payload,
+                                            clearKeyPassword,
+                                            isOnePasswordMode: false,
                                         });
                                         if (validateFlow()) {
                                             return await handleResult(result);
                                         }
                                     } catch (e: any) {
                                         handleError(e);
-                                        // Cancel on any error except totp retry
-                                        if (e.name !== 'TOTPError') {
+                                        // Cancel on any error except retry
+                                        if (e.name !== 'PasswordError') {
                                             handleCancel();
                                         }
                                     }
-                                }
-
-                                if (data.type === 'fido2') {
-                                    try {
-                                        const validateFlow = createFlow();
-                                        const result = await handleFido2({ cache, payload: data.payload });
-                                        if (validateFlow()) {
-                                            return await handleResult(result);
-                                        }
-                                    } catch (e: any) {
-                                        handleError(e);
-                                        handleCancel();
-                                    }
-                                }
-
-                                throw new Error('Unknown type');
-                            }}
-                        />
-                    </Content>
-                </>
-            )}
-            {step === AuthStep.UNLOCK && cache && (
-                <>
-                    <Header title={c('Title').t`Unlock your mailbox`} onBack={handleBackStep} />
-                    <Content>
-                        <UnlockForm
-                            onSubmit={async (clearKeyPassword) => {
-                                try {
-                                    const validateFlow = createFlow();
-                                    const result = await handleUnlock({
-                                        cache,
-                                        clearKeyPassword,
-                                        isOnePasswordMode: false,
-                                    });
-                                    if (validateFlow()) {
-                                        return await handleResult(result);
-                                    }
-                                } catch (e: any) {
-                                    handleError(e);
-                                    // Cancel on any error except retry
-                                    if (e.name !== 'PasswordError') {
-                                        handleCancel();
-                                    }
-                                }
-                            }}
-                        />
-                    </Content>
+                                }}
+                            />
+                        ),
+                    })}
                 </>
             )}
             {step === AuthStep.NEW_PASSWORD && cache && (
                 <>
-                    <Header title={c('Title').t`Set new password`} onBack={handleBackStep} />
-                    <Content>
-                        <Text>
-                            {c('Info')
-                                .t`This will replace your temporary password. You will use it to access your ${BRAND_NAME} Account in the future.`}
-                        </Text>
-                        <SetPasswordForm
-                            onSubmit={async (newPassword) => {
-                                try {
-                                    const validateFlow = createFlow();
-                                    const result = await handleSetupPassword({
-                                        cache,
-                                        newPassword,
-                                    });
-                                    if (validateFlow()) {
-                                        return await handleResult(result);
-                                    }
-                                } catch (e: any) {
-                                    handleError(e);
-                                    handleCancel();
-                                }
-                            }}
-                        />
-                    </Content>
+                    {render({
+                        title: c('Title').t`Set new password`,
+                        onBack: handleBackStep,
+                        content: (
+                            <>
+                                <Text>
+                                    {c('Info')
+                                        .t`This will replace your temporary password. You will use it to access your ${BRAND_NAME} Account in the future.`}
+                                </Text>
+                                <SetPasswordForm
+                                    onSubmit={async (newPassword) => {
+                                        try {
+                                            const validateFlow = createFlow();
+                                            const result = await handleSetupPassword({
+                                                cache,
+                                                newPassword,
+                                            });
+                                            if (validateFlow()) {
+                                                return await handleResult(result);
+                                            }
+                                        } catch (e: any) {
+                                            handleError(e);
+                                            handleCancel();
+                                        }
+                                    }}
+                                />
+                            </>
+                        ),
+                    })}
                 </>
             )}
-        </Main>
+        </>
     );
+
+    if (modal) {
+        return children;
+    }
 
     return (
         <Layout
@@ -311,7 +346,7 @@ const LoginContainer = ({
             hasDecoration={step === AuthStep.LOGIN}
             bottomRight={<LoginSupportDropdown />}
         >
-            {children}
+            <Main>{children}</Main>
         </Layout>
     );
 };

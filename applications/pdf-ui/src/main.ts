@@ -1,7 +1,8 @@
 import { Designer } from '@pdfme/ui';
 import Toastify from 'toastify-js';
 
-import { getFont, getTemplate } from '@proton/recovery-kit';
+import { getFont } from '@proton/recovery-kit';
+import { getFilledTemplate } from '@proton/recovery-kit/filledTemplate';
 
 import textToClipboard from './textToClipboard';
 
@@ -16,7 +17,7 @@ async function main() {
 
     const designer = new Designer({
         domContainer,
-        template: getTemplate('filled'),
+        template: getFilledTemplate(),
         options: { font: await getFont() },
     });
 

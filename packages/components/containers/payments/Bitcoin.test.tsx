@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
-import { addApiMock, applyHOCs, flushPromises, withApi, withConfig } from '@proton/testing';
+import { addApiMock, apiMock, applyHOCs, flushPromises, withApi, withConfig } from '@proton/testing';
 
 import Bitcoin from './Bitcoin';
 
@@ -35,6 +35,7 @@ beforeEach(() => {
 it('should render', async () => {
     const { container } = render(
         <BitcoinContext
+            api={apiMock}
             amount={1000}
             currency="USD"
             type="signup"
@@ -53,6 +54,7 @@ it('should render', async () => {
 it('should show loading during the initial fetching', async () => {
     const { queryByTestId } = render(
         <BitcoinContext
+            api={apiMock}
             amount={1000}
             currency="USD"
             type="signup"
@@ -71,6 +73,7 @@ it('should check the token every 10 seconds', async () => {
 
     render(
         <BitcoinContext
+            api={apiMock}
             amount={1000}
             currency="USD"
             type="signup"

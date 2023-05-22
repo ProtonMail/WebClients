@@ -15,7 +15,6 @@ import {
     usePayment,
 } from '@proton/components/containers';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
-import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import {
     getCountries,
@@ -69,6 +68,7 @@ import { getSubscriptionPrices } from '../signup/helper';
 import { SignupActionResponse, SignupCacheResult, SignupModel, SignupType } from '../signup/interfaces';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { useFlowRef } from '../useFlowRef';
+import AlreadyUsedNotification from './AlreadyUsedNotification';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
 import Guarantee from './Guarantee';
@@ -78,30 +78,6 @@ import UpsellModal from './UpsellModal';
 import swissFlag from './flag.svg';
 import { getUpsellShortPlan } from './helper';
 import { OnUpdate } from './interface';
-
-const AlreadyUsedNotification = ({
-    onUpdate,
-    to,
-    onClose,
-}: {
-    onUpdate: OnUpdate;
-    to: Parameters<Link>[0]['to'];
-    onClose?: () => void;
-}) => {
-    return (
-        <>
-            {c('Info').t`Email address already used`}
-            <NotificationButton
-                as={Link}
-                to={to}
-                onClick={() => {
-                    onUpdate({ create: 'login-notification' });
-                    onClose?.();
-                }}
-            >{c('Action').t`Sign in`}</NotificationButton>
-        </>
-    );
-};
 
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
@@ -331,13 +307,6 @@ const Step1 = ({
                 throw new Error('Missing cache');
             }
 
-            const extractPaymentToken = () => {
-                if (payment.Type === PAYMENT_METHOD_TYPES.TOKEN) {
-                    return (payment as TokenPayment).Details.Token;
-                }
-            };
-            const paymentToken = extractPaymentToken() || '';
-
             const subscriptionData = {
                 ...model.subscriptionData,
                 payment,
@@ -359,6 +328,7 @@ const Step1 = ({
             };
 
             const cache: SignupCacheResult = {
+                type: 'signup',
                 appName: APP_NAME,
                 appIntent: undefined,
                 productParam,
@@ -378,7 +348,7 @@ const Step1 = ({
                 return;
             }
 
-            const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro', paymentToken });
+            const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro' });
             void sendTelemetryReport({
                 api: normalApi,
                 measurementGroup: TelemetryMeasurementGroups.accountSignupBasic,
@@ -411,7 +381,7 @@ const Step1 = ({
 
     const mergeInputState = (key: keyof typeof inputState, diff: Partial<InputState>) => {
         setInputState((old) => {
-            return { ...old, [key]: { ...inputState[key], ...diff } };
+            return { ...old, [key]: { ...old[key], ...diff } };
         });
     };
 
@@ -483,6 +453,7 @@ const Step1 = ({
         paypal,
         paypalCredit,
     } = usePayment({
+        api: normalApi,
         defaultMethod: paymentMethods[0],
         amount: subscriptionData.checkResult.AmountDue,
         currency,
@@ -531,7 +502,7 @@ const Step1 = ({
             text: c('new_plans: feature').t`No-logs policy`,
         },
         {
-            left: <img width="24" alt={c('VPN signup').t`Swiss flag`} src={swissFlag} />,
+            left: <img width="24" alt="" src={swissFlag} />,
             text: isDesktop ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
         },
         isDesktop && {
@@ -718,6 +689,7 @@ const Step1 = ({
                                 >
                                     {subscriptionData.checkResult?.AmountDue ? (
                                         <PaymentComponent
+                                            api={normalApi}
                                             type="signup"
                                             paypal={paypal}
                                             paypalCredit={paypalCredit}
@@ -784,6 +756,7 @@ const Step1 = ({
                                             odd={false}
                                             margin={false}
                                             features={upsellShortPlan.features}
+                                            itemClassName="py-2"
                                             icon={false}
                                             highlight={false}
                                         />
