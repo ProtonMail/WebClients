@@ -1,9 +1,8 @@
-/**
- * TODO: add all server events
+/* TODO: add all server events
  * in this type definition - it only
  * specifies the keys we're consuming
- * in the extension sagas for now
- */
+ * in the extension sagas for now */
+import type { Invoice } from '@proton/components/containers/invoices/interface';
 import type { Address, Subscription, User } from '@proton/shared/lib/interfaces';
 
 import type { PassEventListResponse, SharesGetResponse } from './pass';
@@ -32,6 +31,7 @@ export type UserEvent = {
     User?: User;
     Addresses?: AddressEvent[];
     Subscription?: Subscription;
+    Invoices?: Invoice;
 };
 
 export type AddressEvent = {
