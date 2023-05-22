@@ -1,15 +1,16 @@
-import { type VFC, useEffect, useMemo } from 'react';
+import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Option } from '@proton/components';
 import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
-import { Maybe } from '@proton/pass/types';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import type { Maybe } from '@proton/pass/types';
+import type { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { notIn } from '@proton/pass/utils/fp';
 
-import { VaultIcon, VaultIconName } from '../Vault/VaultIcon';
+import type { VaultIconName } from '../Vault/VaultIcon';
+import { VaultIcon } from '../Vault/VaultIcon';
 import { SelectField, type SelectFieldProps } from './SelectField';
 
 type ExtraVaultSelectOption = { value: string; title: string; icon: VaultIconName; color?: VaultColor };
@@ -29,12 +30,6 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
     const vaults = useSelector(selectAllVaults);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade } = useSelector(selectVaultLimits);
-
-    useEffect(() => {
-        /* force select the primary vault shareId if user
-         * has downgraded and is over his plan's limits */
-        if (didDowngrade) props.form.setFieldValue(props.field.name, primaryVaultId);
-    }, [didDowngrade]);
 
     const selectedVault = useMemo<Maybe<SelectedVaultOption>>(() => {
         const vaultMatch = vaults.find(({ shareId }) => shareId === props.field.value);
