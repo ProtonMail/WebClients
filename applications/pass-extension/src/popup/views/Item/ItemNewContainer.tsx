@@ -2,7 +2,7 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
-import { itemCreationIntent, selectPrimaryVault } from '@proton/pass/store';
+import { itemCreationIntent, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
 import type { ItemNewProps } from '../../../shared/items/types';
@@ -25,9 +25,11 @@ export const ItemNewContainer: VFC = () => {
     const { itemType } = useParams<{ shareId: string; itemType: ItemType }>();
     const { selectItem } = useNavigationContext();
     const { shareId: selectedShareId, setShareId } = useItemsFilteringContext();
+    const { didDowngrade } = useSelector(selectVaultLimits);
 
-    const defaultVault = useSelector(selectPrimaryVault);
-    const shareId = selectedShareId ?? defaultVault.shareId;
+    /* if user downgraded - always auto-select primary vault id */
+    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
+    const shareId = didDowngrade ? primaryVaultId : selectedShareId ?? primaryVaultId;
 
     const ItemNewComponent = itemNewMap[itemType];
 
