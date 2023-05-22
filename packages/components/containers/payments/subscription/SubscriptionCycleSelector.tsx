@@ -234,7 +234,7 @@ const SubscriptionCycleSelector = ({
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
                 return (
-                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4">
+                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4" data-testid={`cycle-${cycle}`}>
                         <button
                             className={clsx([
                                 'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
