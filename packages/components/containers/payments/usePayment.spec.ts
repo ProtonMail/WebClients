@@ -1,6 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { CardModel, WrappedCardPayment } from '../../payments/core/interface';
 import usePayment from './usePayment';
@@ -12,10 +14,13 @@ jest.mock('./usePayPal', () =>
     })
 );
 
+const api = noop() as unknown as Api;
+
 describe('usePayment', () => {
     it('should render', () => {
         const { result } = renderHook(() =>
             usePayment({
+                api,
                 amount: 1000,
                 currency: 'EUR',
                 onPaypalPay: () => {},
@@ -28,6 +33,7 @@ describe('usePayment', () => {
     it('should be able to pay if amount is 0', () => {
         const { result } = renderHook(() =>
             usePayment({
+                api,
                 amount: 0,
                 currency: 'EUR',
                 onPaypalPay: () => {},
@@ -40,6 +46,7 @@ describe('usePayment', () => {
     it('should not able to pay if method is not defined', () => {
         const { result } = renderHook(() =>
             usePayment({
+                api,
                 amount: 1000,
                 currency: 'EUR',
                 onPaypalPay: () => {},
@@ -54,6 +61,7 @@ describe('usePayment', () => {
         (defaultMethod) => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     defaultMethod,
                     currency: 'EUR',
@@ -68,6 +76,7 @@ describe('usePayment', () => {
     it('should not be able to pay of method is paypal and there is no payment token', () => {
         const { result } = renderHook(() =>
             usePayment({
+                api,
                 amount: 1000,
                 defaultMethod: PAYMENT_METHOD_TYPES.PAYPAL,
                 currency: 'EUR',
@@ -82,6 +91,7 @@ describe('usePayment', () => {
         it('should return null if there is no method', () => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     currency: 'EUR',
                     onPaypalPay: () => {},
@@ -94,6 +104,7 @@ describe('usePayment', () => {
         it('should return PaymentMethodID if user selected an existing method', () => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     currency: 'EUR',
                     onPaypalPay: () => {},
@@ -110,6 +121,7 @@ describe('usePayment', () => {
         it('should return CardPayment if method is card', () => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     currency: 'EUR',
                     onPaypalPay: () => {},
@@ -140,6 +152,7 @@ describe('usePayment', () => {
             (defaultMethod) => {
                 const { result } = renderHook(() =>
                     usePayment({
+                        api,
                         amount: 1000,
                         currency: 'EUR',
                         onPaypalPay: () => {},
@@ -156,6 +169,7 @@ describe('usePayment', () => {
         it('should return true if amount is 0', () => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 0,
                     currency: 'EUR',
                     onPaypalPay: () => {},
@@ -168,6 +182,7 @@ describe('usePayment', () => {
         it('should return false if method is card and the details are not valid', () => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     currency: 'EUR',
                     onPaypalPay: () => {},
@@ -185,6 +200,7 @@ describe('usePayment', () => {
         )('should return true if payment method is not card: %s', (defaultMethod) => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     currency: 'EUR',
                     onPaypalPay: () => {},
@@ -198,6 +214,7 @@ describe('usePayment', () => {
         it('should return true if card is valid', () => {
             const { result } = renderHook(() =>
                 usePayment({
+                    api,
                     amount: 1000,
                     currency: 'EUR',
                     onPaypalPay: () => {},

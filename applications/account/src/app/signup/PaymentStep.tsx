@@ -28,7 +28,7 @@ import metrics from '@proton/metrics';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -39,6 +39,7 @@ import { getSignupApplication } from './helper';
 import { PlanIDs, SubscriptionData } from './interfaces';
 
 export interface Props {
+    api: Api;
     subscriptionData: SubscriptionData;
     plans: Plan[];
     onBack?: () => void;
@@ -52,6 +53,7 @@ export interface Props {
 }
 
 const PaymentStep = ({
+    api,
     onBack,
     onPay,
     onChangeCycle,
@@ -84,6 +86,7 @@ const PaymentStep = ({
         paypal,
         paypalCredit,
     } = usePayment({
+        api,
         defaultMethod: paymentMethods[0],
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
@@ -200,6 +203,7 @@ const PaymentStep = ({
                     >
                         {subscriptionData.checkResult?.AmountDue ? (
                             <PaymentComponent
+                                api={api}
                                 type="signup"
                                 paypal={paypal}
                                 paypalCredit={paypalCredit}

@@ -24,10 +24,24 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     color?: Color;
     shape?: Shape;
     size?: Size;
+    separators?: boolean;
+    removeBackgroundColorOnGroup?: Boolean;
 }
 
 const ButtonGroup = forwardRef<HTMLDivElement, Props>(
-    ({ children, color = 'weak', shape = 'outline', size = 'medium', className = '', ...rest }, ref) => {
+    (
+        {
+            children,
+            separators = true,
+            color = 'weak',
+            shape = 'outline',
+            size = 'medium',
+            removeBackgroundColorOnGroup = false,
+            className = '',
+            ...rest
+        },
+        ref
+    ) => {
         const childrenWithSeparators = Children.toArray(children)
             .filter((x): x is ReactElement => x !== null && isValidElement(x))
             .map((child, index, array) => {
@@ -39,13 +53,19 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
                     // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={clonedChild.key || index}>
                         {clonedChild}
-                        <Vr aria-hidden="true" />
+                        {separators && <Vr aria-hidden="true" />}
                     </Fragment>
                 );
             });
         return (
             <div
-                className={clsx(['button-group', `button-group-${shape}-${color}`, `button-group-${size}`, className])}
+                className={clsx(
+                    'button-group',
+                    `button-group-${shape}-${color}`,
+                    `button-group-${size}`,
+                    removeBackgroundColorOnGroup && 'button-group--no-bg-color',
+                    className
+                )}
                 ref={ref}
                 {...rest}
             >

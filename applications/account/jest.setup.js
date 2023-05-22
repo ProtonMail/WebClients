@@ -1,4 +1,13 @@
 import '@testing-library/jest-dom';
+import { TextDecoder, TextEncoder } from 'util';
+
+// Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
+// console.error = () => {};
+// console.warn = () => {};
+
+// Getting ReferenceError: TextDecoder is not defined without
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
 
 import '@proton/testing/lib/mockMatchMedia';
 

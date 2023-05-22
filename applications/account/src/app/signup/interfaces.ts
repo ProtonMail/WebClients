@@ -4,7 +4,7 @@ import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
-import { PaymentMethodStatus } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PaymentMethod, PaymentMethodStatus } from '@proton/components/payments/core';
 import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
@@ -15,7 +15,9 @@ import {
     Currency,
     Cycle,
     HumanVerificationMethodType,
+    Organization,
     Plan,
+    Subscription,
     SubscriptionCheckResponse,
     User,
 } from '@proton/shared/lib/interfaces';
@@ -47,11 +49,29 @@ export interface PlanIDs {
     [planID: string]: number;
 }
 
+export interface SessionData {
+    UID: string;
+    localID: number;
+    user: User;
+    keyPassword?: string;
+    persistent: boolean;
+    trusted: boolean;
+    paymentMethods: PaymentMethod[] | undefined;
+    defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
+    subscription: Subscription | undefined;
+    organization: Organization | undefined;
+    state: {
+        payable: boolean;
+        admin: boolean;
+        subscribed: boolean;
+    };
+}
+
 export interface SubscriptionData {
     currency: Currency;
     cycle: Cycle;
     minimumCycle?: Cycle;
-    skipUpsell: boolean;
+    skipUpsell?: boolean;
     planIDs: PlanIDs;
     checkResult: SubscriptionCheckResponse;
     payment?: CardPayment | TokenPayment | PaypalPayment;
@@ -124,19 +144,35 @@ export interface HumanVerificationData {
     trigger: HumanVerificationTrigger;
 }
 
-interface SetupData {
+export interface MnemonicData {
+    mnemonic: string;
+    blob: Blob;
+}
+
+export interface SetupData {
     user: User;
     addresses: Address[];
     keyPassword: string | undefined;
     authResponse: AuthResponse;
     api: Api;
+    mnemonicData?: MnemonicData;
 }
 
 export interface UserData {
     User: User;
 }
 
+export interface UserCacheResult {
+    type: 'user';
+    setupData?: {
+        mnemonicData?: MnemonicData;
+    };
+    subscriptionData: SubscriptionData;
+    session: SessionData;
+}
+
 export interface SignupCacheResult {
+    type: 'signup';
     appIntent?: AppIntent;
     productParam: ProductParam;
     userData?: UserData;
@@ -160,12 +196,15 @@ export interface SignupCacheResult {
     };
 }
 
-export type SignupActionResponse =
-    | {
-          to: SignupSteps.Done;
-          session: AuthSession;
-      }
-    | {
-          cache: SignupCacheResult;
-          to: Exclude<SignupSteps, SignupSteps.Done>;
-      };
+export interface SignupActionContinueResponse {
+    cache: SignupCacheResult;
+    to: Exclude<SignupSteps, SignupSteps.Done>;
+}
+
+export interface SignupActionDoneResponse {
+    cache: SignupCacheResult;
+    to: SignupSteps.Done;
+    session: AuthSession;
+}
+
+export type SignupActionResponse = SignupActionDoneResponse | SignupActionContinueResponse;

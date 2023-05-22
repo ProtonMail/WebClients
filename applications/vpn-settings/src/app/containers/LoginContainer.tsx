@@ -16,6 +16,7 @@ const LoginContainer = ({ onLogin }: Props) => {
 
     return (
         <AccountLoginContainer
+            signupUrl="/signup"
             toApp={APPS.PROTONVPN_SETTINGS}
             setupVPN={false}
             hasRemember={false}

@@ -18,6 +18,7 @@
     },
     "resolutions": {
         "@noble/ed25519@1.7.3": "patch:@noble/ed25519@npm%3A1.7.3#./.yarn/patches/@noble-ed25519-npm-1.7.3-033c70acb7.patch",
+        "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
         "@types/jest": "^29.5.2",
         "@types/react": "^17.0.62",

@@ -1,9 +1,9 @@
-import { ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import { ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
 
 export interface Organization {
     Name: string;
     DisplayName: string; // DEPRECATED
-    PlanName: string;
+    PlanName: PLANS;
     VPNPlanName: string;
     TwoFactorRequired: ORGANIZATION_TWOFA_SETTING; // If 0, 2FA not required, if 1, 2FA required for admins only, if 2, 2FA required for all
     TwoFactorGracePeriod: number; // If non-null, number of seconds until 2FA setup enforced

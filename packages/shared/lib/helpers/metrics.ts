@@ -59,7 +59,7 @@ export const sendTelemetryReport = async ({
     }
 
     try {
-        void possiblySilentApi(
+        await possiblySilentApi(
             sendTelemetryData({
                 MeasurementGroup: measurementGroup,
                 Event: event,
