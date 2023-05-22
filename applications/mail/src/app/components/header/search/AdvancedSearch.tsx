@@ -164,7 +164,7 @@ const AdvancedSearch = ({
 
     return (
         <form name="advanced-search" onSubmit={handleSubmit} onReset={handleReset}>
-            <div className="flex border-bottom px-4 pt-1 pb-2">
+            <div className="flex border-bottom px-1 pt-1 pb-2">
                 <SearchField
                     unstyled
                     value={model.keyword}
@@ -302,7 +302,7 @@ const AdvancedSearch = ({
                     </>
                 )}
             </div>
-            <div className="my-4 mx-6 flex flex-align-items-center flex-justify-space-between">
+            <div className="my-4 mx-5 flex flex-align-items-center flex-justify-space-between">
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"
