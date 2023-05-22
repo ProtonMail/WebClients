@@ -10,8 +10,7 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { setUserPlan } from '../../actions';
-import { syncIntent } from '../../actions';
+import { setUserPlan, syncIntent } from '../../actions';
 import { selectAllAddresses, selectLatestEventId } from '../../selectors/user';
 import type { WorkerRootSagaOptions } from '../../types';
 import { eventChannelFactory } from './channel.factory';
@@ -25,7 +24,7 @@ function* onUserEvent(event: ServerEvent<ChannelType.USER>, { api }: EventChanne
     const { User: user } = event;
 
     /* if the subscription changes, refetch the user Plan */
-    if (event.Subscription) {
+    if (event.Subscription || event.Invoices) {
         yield fork(function* () {
             const accessResponse = (yield api({ url: `pass/v1/user/access`, method: 'post' })) as {
                 Access?: UserAccessGetResponse | undefined;
