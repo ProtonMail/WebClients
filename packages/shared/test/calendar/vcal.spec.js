@@ -236,7 +236,7 @@ DESCRIPTION:REMINDER
 TRIGGER;RELATED=START:P
 ACTION:DISPLAY
 END:VALARM
-END:VEVENT        
+END:VEVENT
 `;
 
 describe('calendar', () => {
@@ -1067,5 +1067,21 @@ END:VEVENT`;
             sequence: { value: 0 },
             location: { value: '', parameters: { language: 'en-US' } },
         });
+    });
+});
+
+describe('parseWithRecoveryAndMaybeErrors', () => {
+    it('should catch errors from badly formatted all-day dates (with recovery for those off)', () => {
+        const ics = `BEGIN:VCALENDAR
+BEGIN:VEVENT
+UID:test-uid
+DTSTAMP:20200405T143241Z
+DTSTART:20200309
+END:VEVENT
+END:VCALENDAR`;
+        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false });
+
+        expect(result.component).toEqual('vcalendar');
+        expect(result.components[0].error).toMatch('invalid date-time value');
     });
 });
