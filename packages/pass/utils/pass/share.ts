@@ -1,4 +1,5 @@
-import { Share, ShareType, VaultShare, VaultShareContent } from '@proton/pass/types';
+import type { Share, VaultShare, VaultShareContent } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 
 export const getShareName = (share: Share): string => {
     switch (share.targetType) {

@@ -1,6 +1,6 @@
-import { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 
-import { OptimisticFailedHistoryItem, WrappedOptimisticState } from '../types';
+import type { OptimisticFailedHistoryItem, WrappedOptimisticState } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 
 const selectFailedAction: (

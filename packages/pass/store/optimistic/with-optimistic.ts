@@ -1,7 +1,7 @@
-import { Selector } from '@reduxjs/toolkit';
-import { AnyAction, Reducer } from 'redux';
+import type { Selector } from '@reduxjs/toolkit';
+import type { AnyAction, Reducer } from 'redux';
 
-import { MaybeArray } from '@proton/pass/types';
+import type { MaybeArray } from '@proton/pass/types';
 
 import { commitReducer } from './reducers/commit';
 import { failReducer } from './reducers/fail';
@@ -9,14 +9,14 @@ import { initiateReducer } from './reducers/initiate';
 import { revertReducer } from './reducers/revert';
 import { asIfNotFailedSubSelector } from './selectors/select-is-failed';
 import { asIfNotOptimisticSubSelector } from './selectors/select-is-optimistic';
-import {
-    HistoryFlag,
+import type {
     OptimisticMatcher,
     OptimisticMatchers,
     OptimisticState,
     WithOptimisticReducer,
     WrappedOptimisticState,
 } from './types';
+import { HistoryFlag } from './types';
 import { getActionFromHistoryItem, unwrapOptimisticState } from './utils/transformers';
 import { withHistoryAction } from './utils/with-history-action';
 

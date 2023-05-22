@@ -1,12 +1,12 @@
 import { eventChannel } from 'redux-saga';
 
 import type { ServerEvent } from '@proton/pass/types';
-import { ChannelType } from '@proton/pass/types';
+import type { ChannelType } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import createEventManager, { type EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import identity from '@proton/utils/identity';
 
-import { WorkerRootSagaOptions } from '../../types';
+import type { WorkerRootSagaOptions } from '../../types';
 import type { EventChannel, EventChannelOnError, EventChannelOptions } from './types';
 
 const channelErrorHandler = <T extends ChannelType, O>(onError?: EventChannelOnError<T, O>) => {

@@ -1,6 +1,6 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import { ImportProvider } from '@proton/pass/import';
+import type { ImportProvider } from '@proton/pass/import';
 import type { MaybeNull } from '@proton/pass/types';
 
 import { importItemsSuccess } from '../actions';

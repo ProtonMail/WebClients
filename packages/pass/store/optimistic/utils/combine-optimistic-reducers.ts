@@ -1,6 +1,7 @@
-import { CombinedState, ReducersMapObject, StateFromReducersMapObject, combineReducers } from 'redux';
+import type { CombinedState, ReducersMapObject, StateFromReducersMapObject } from 'redux';
+import { combineReducers } from 'redux';
 
-import { CombinedOptimisticReducer, OptimisticReducersMapObject, OptimisticReducersMapValues } from '../types';
+import type { CombinedOptimisticReducer, OptimisticReducersMapObject, OptimisticReducersMapValues } from '../types';
 import { isCombinedOptimisticReducer, isOptimisticReducer } from './assertions';
 
 export const getReducerMapEntries = (

@@ -1,4 +1,4 @@
-import { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 
 export enum OnePassState {
     ACTIVE = 'active',

@@ -14,7 +14,7 @@ import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { localeCode } from '@proton/shared/lib/i18n';
 import identity from '@proton/utils/identity';
 
-import {
+import type {
     Api,
     ApiAuthOptions,
     ApiCallFn,

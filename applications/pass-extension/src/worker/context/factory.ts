@@ -1,5 +1,6 @@
 import { backgroundMessage } from '@proton/pass/extension/message';
-import { type Api, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import type { WorkerStatus } from '@proton/pass/types';
+import { type Api, WorkerMessageType } from '@proton/pass/types';
 import { waitUntil } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { workerLoggedOut, workerReady, workerStatusResolved } from '@proton/pass/utils/worker';

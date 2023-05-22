@@ -1,5 +1,5 @@
+import type { BoundComputeStyles } from '@proton/pass/utils/dom';
 import {
-    BoundComputeStyles,
     createElement,
     createStyleCompute,
     getComputedHeight,

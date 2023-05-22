@@ -1,8 +1,9 @@
-import { VFC, useMemo } from 'react';
+import type { VFC } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { SafeLoginItem } from '@proton/pass/types';
+import type { SafeLoginItem } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

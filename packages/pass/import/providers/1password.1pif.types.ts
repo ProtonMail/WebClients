@@ -1,4 +1,4 @@
-import { OnePassFieldType, OnePassLoginDesignation } from './1password.1pux.types';
+import type { OnePassFieldType, OnePassLoginDesignation } from './1password.1pux.types';
 
 export enum OnePassLegacyItemType {
     LOGIN = 'webforms.WebForm',

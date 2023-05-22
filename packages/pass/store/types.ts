@@ -1,9 +1,9 @@
-import { ExtensionEndpoint } from '../types';
+import type { ExtensionEndpoint } from '../types';
 import type { TelemetryEvent } from '../types/data/telemetry';
-import * as actions from './actions';
+import type * as actions from './actions';
 import type { Notification } from './actions/with-notification';
-import { rootReducer } from './reducers';
-import { ProxiedSettings } from './reducers/settings';
+import type { rootReducer } from './reducers';
+import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
 export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;

@@ -4,7 +4,7 @@ import { api } from '@proton/pass/api';
 import { reportBug } from '@proton/shared/lib/api/reports';
 
 import { reportProblemError, reportProblemIntent, reportProblemSuccess } from '../actions';
-import { WithSenderAction } from '../actions/with-receiver';
+import type { WithSenderAction } from '../actions/with-receiver';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* reportProblem(

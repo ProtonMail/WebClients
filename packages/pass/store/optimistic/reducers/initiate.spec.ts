@@ -1,8 +1,10 @@
 import { uniqueId } from '@proton/pass/utils/string';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { HistoryFlag, WrappedOptimisticState } from '../types';
-import { TestState, createTestAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
+import type { WrappedOptimisticState } from '../types';
+import { HistoryFlag } from '../types';
+import type { TestState } from '../utils/testing.utils';
+import { createTestAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
 import { initiateReducer } from './initiate';
 
 describe('optimistic initiate reducer', () => {

@@ -7,7 +7,7 @@ import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../crypto/utils/
 import { CONTENT_FORMAT_VERSION, ItemState } from '../types';
 import { getEpoch } from '../utils/time';
 import { createExportZip, encryptZip } from './export';
-import { ExportPayload } from './types';
+import type { ExportPayload } from './types';
 
 const EXPORT_TEST_VAULT_ID = 'vault-share-id';
 

@@ -4,18 +4,14 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { portForwardingMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
-import { Maybe, MaybeNull, WorkerMessage, WorkerMessageType, WorkerState } from '@proton/pass/types';
+import type { Maybe, MaybeNull, WorkerMessage, WorkerState } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import {
-    IFrameEndpoint,
-    IFrameMessage,
-    IFrameMessageType,
-    IFrameMessageWithSender,
-    IFramePortMessageHandler,
-} from '../../../types';
+import type { IFrameEndpoint, IFrameMessage, IFrameMessageWithSender, IFramePortMessageHandler } from '../../../types';
+import { IFrameMessageType } from '../../../types';
 
 type IFrameContextValue = {
     endpoint: string;

@@ -5,14 +5,14 @@ import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHand
 import { getUser } from '@proton/shared/lib/api/user';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
+import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { User as UserType } from '@proton/shared/lib/interfaces';
+import type { User as UserType } from '@proton/shared/lib/interfaces';
 
-import { Api } from '../types';
+import type { Api } from '../types';
+import type { ExtensionPersistedSession } from './persisted-session';
 import {
-    ExtensionPersistedSession,
     getDecryptedPersistedSessionBlob,
     getPersistedSession,
     removePersistedSession,

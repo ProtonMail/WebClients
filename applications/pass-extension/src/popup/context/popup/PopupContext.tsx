@@ -9,20 +9,12 @@ import { useNotifications } from '@proton/components/hooks';
 import { popupMessage } from '@proton/pass/extension/message';
 import { selectWorkerSyncing } from '@proton/pass/store';
 import * as requests from '@proton/pass/store/actions/requests';
-import {
-    MaybeNull,
-    RequiredProps,
-    WorkerMessageType,
-    type WorkerMessageWithSender,
-    WorkerStatus,
-} from '@proton/pass/types';
+import type { MaybeNull, RequiredProps } from '@proton/pass/types';
+import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import {
-    ExtensionAppContextValue,
-    ExtensionContextProvider,
-    ExtensionContextState,
-} from '../../../shared/components/extension';
+import type { ExtensionAppContextValue, ExtensionContextState } from '../../../shared/components/extension';
+import { ExtensionContextProvider } from '../../../shared/components/extension';
 import { INITIAL_POPUP_STATE, INITIAL_WORKER_STATE } from '../../../shared/constants';
 import { ExtensionContext } from '../../../shared/extension';
 import { useExtensionContext } from '../../../shared/hooks';

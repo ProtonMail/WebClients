@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import type { VFC } from 'react';
 
 import { type FieldProps } from 'formik';
 
-import { Input } from '@proton/atoms/Input';
+import type { Input } from '@proton/atoms/Input';
 import { InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';

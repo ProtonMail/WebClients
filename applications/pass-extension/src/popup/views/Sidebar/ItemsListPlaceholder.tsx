@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, IconName } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 
 import { itemTypeToIconName } from '../../../shared/items/icons';
 import { usePasswordGeneratorContext } from '../../components/PasswordGenerator/PasswordGeneratorContext';

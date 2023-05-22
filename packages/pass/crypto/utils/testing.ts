@@ -1,4 +1,5 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, ShareType } from '@proton/pass/types';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';

@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react';
 
-import { FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -12,7 +12,7 @@ import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { SelectField } from '../../../components/Field/SelectField';
 import { TextField } from '../../../components/Field/TextField';
-import { AliasFormValues } from './Alias.validation';
+import type { AliasFormValues } from './Alias.validation';
 
 type AliasFormProps<V extends AliasFormValues> = {
     form: FormikContextType<V>;

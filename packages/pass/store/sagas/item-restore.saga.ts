@@ -3,7 +3,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import { api } from '@proton/pass/api';
 
 import { itemRestoreFailure, itemRestoreIntent, itemRestoreSuccess } from '../actions';
-import { WorkerRootSagaOptions } from '../types';
+import type { WorkerRootSagaOptions } from '../types';
 
 function* restoreItem(
     { onItemsChange }: WorkerRootSagaOptions,

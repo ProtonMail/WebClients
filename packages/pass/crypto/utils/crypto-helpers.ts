@@ -1,5 +1,5 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import { EncryptionTag } from '@proton/pass/types';
+import type { EncryptionTag } from '@proton/pass/types';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 export const KEY_LENGTH = 32;

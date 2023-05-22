@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import { selectAllTrashedItems, selectAllVaultWithItemsCount, selectShare } from '@proton/pass/store';
 import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
-import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
+import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { VaultIcon, type VaultIconName } from '../Vault/VaultIcon';

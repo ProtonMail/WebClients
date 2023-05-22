@@ -1,9 +1,8 @@
-import { Reducer } from 'redux';
+import type { Reducer } from 'redux';
 
-import {
+import type {
     CombinedOptimisticReducer,
     DeterministicHistoryItem,
-    HistoryFlag,
     HistoryItem,
     OptimisticEffectHistoryItem,
     OptimisticFailedHistoryItem,
@@ -12,6 +11,7 @@ import {
     WithOptimisticReducer,
     WrappedOptimisticState,
 } from '../types';
+import { HistoryFlag } from '../types';
 
 export const isOptimisticHistoryItem = (item: HistoryItem): item is OptimisticHistoryItem =>
     item.type === HistoryFlag.OPTIMISTIC;

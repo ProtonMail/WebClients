@@ -1,13 +1,14 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { AliasMailbox } from '@proton/pass/types';
+import type { AliasMailbox } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
-import { AliasState } from '../../reducers';
+import type { AliasState } from '../../reducers';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
-import withCallback, { ActionCallback } from '../with-callback';
+import type { ActionCallback } from '../with-callback';
+import withCallback from '../with-callback';
 import withNotification from '../with-notification';
 import withRequest from '../with-request';
 

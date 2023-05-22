@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { aliasOptionsRequested, selectAliasOptions, selectRequest } from '@proton/pass/store';
 import * as requests from '@proton/pass/store/actions/requests';
 import { ALIAS_OPTIONS_VALIDITY_WINDOW } from '@proton/pass/store/sagas/alias-options-request.saga';
-import { AliasMailbox } from '@proton/pass/types/data/alias';
+import type { AliasMailbox } from '@proton/pass/types/data/alias';
 import { getEpoch } from '@proton/pass/utils/time';
 
 type SanitizedAliasOptions = {

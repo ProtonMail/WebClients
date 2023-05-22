@@ -18,7 +18,7 @@ import { isCacheTriggeringAction } from '../actions/with-cache-block';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '../reducers';
 import { selectSessionLockToken } from '../selectors';
-import { State } from '../types';
+import type { State } from '../types';
 
 function* cacheWorker(action: AnyAction) {
     yield wait(500);

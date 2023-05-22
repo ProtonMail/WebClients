@@ -1,4 +1,5 @@
-import { MaybeNull, type WorkerState, WorkerStatus } from '@proton/pass/types';
+import type { MaybeNull, WorkerStatus } from '@proton/pass/types';
+import { type WorkerState } from '@proton/pass/types';
 
 import { type ActivationService } from '../services/activation';
 import { type AliasService } from '../services/alias';

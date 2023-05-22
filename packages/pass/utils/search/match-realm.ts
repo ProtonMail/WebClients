@@ -1,7 +1,8 @@
 import { parse } from 'tldts';
 
-import { Item } from '@proton/pass/types';
-import { ItemMatchFunc, matchAny } from '@proton/pass/utils/search';
+import type { Item } from '@proton/pass/types';
+import type { ItemMatchFunc } from '@proton/pass/utils/search';
+import { matchAny } from '@proton/pass/utils/search';
 
 import { isLoginItem } from '../pass/items';
 

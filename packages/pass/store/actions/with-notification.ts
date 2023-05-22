@@ -1,6 +1,6 @@
 import type { AnyAction } from 'redux';
 
-import { CreateNotificationOptions, NotificationType } from '@proton/components/index';
+import type { CreateNotificationOptions, NotificationType } from '@proton/components/index';
 import type { ExtensionEndpoint } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

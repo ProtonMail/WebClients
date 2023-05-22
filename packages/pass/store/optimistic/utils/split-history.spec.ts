@@ -1,4 +1,4 @@
-import { WithOptimisticHistory } from '../types';
+import type { WithOptimisticHistory } from '../types';
 import { isOptimisticHistoryItem } from './assertions';
 import { splitHistoryOnFirstOptimisticItem } from './split-history';
 import { createTestDeterministicAction, createTestOptimisticHistoryItem } from './testing.utils';

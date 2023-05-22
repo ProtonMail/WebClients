@@ -3,7 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { api } from '@proton/pass/api';
 
 import { vaultSetPrimaryFailure, vaultSetPrimaryIntent, vaultSetPrimarySuccess } from '../actions';
-import { WithSenderAction } from '../actions/with-receiver';
+import type { WithSenderAction } from '../actions/with-receiver';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* setPrimaryVault(

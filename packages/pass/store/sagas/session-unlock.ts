@@ -4,7 +4,7 @@ import { unlockSession } from '@proton/pass/auth/session-lock';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { acknowledgeRequest, sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '../actions';
-import { WorkerRootSagaOptions } from '../types';
+import type { WorkerRootSagaOptions } from '../types';
 
 function* unlockSessionWorker(
     { onSessionUnlocked }: WorkerRootSagaOptions,

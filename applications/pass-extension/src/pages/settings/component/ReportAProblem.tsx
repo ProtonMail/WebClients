@@ -1,7 +1,8 @@
 import { type VFC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Form, FormikErrors, FormikProvider, useFormik } from 'formik';
+import type { FormikErrors } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';

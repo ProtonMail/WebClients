@@ -4,13 +4,8 @@ import { c } from 'ttag';
 
 import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
-import {
-    type Callback,
-    Maybe,
-    OnboardingMessage,
-    WorkerMessageType,
-    WorkerMessageWithSender,
-} from '@proton/pass/types';
+import type { Maybe, WorkerMessageWithSender } from '@proton/pass/types';
+import { type Callback, OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';

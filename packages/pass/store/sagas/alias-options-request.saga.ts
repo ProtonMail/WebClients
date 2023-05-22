@@ -1,10 +1,10 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/api';
-import { AliasOptionsResponse } from '@proton/pass/types';
+import type { AliasOptionsResponse } from '@proton/pass/types';
 
 import { aliasOptionsRequestFailure, aliasOptionsRequestSuccess, aliasOptionsRequested } from '../actions';
-import { AliasState } from '../reducers';
+import type { AliasState } from '../reducers';
 
 export const ALIAS_OPTIONS_VALIDITY_WINDOW = 10 * 60;
 

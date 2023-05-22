@@ -1,6 +1,6 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
-import { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 
 import { itemsRequestFailure, itemsRequestSuccess, itemsRequested } from '../actions';
 import { requestItemsForShareId } from './workers/items';

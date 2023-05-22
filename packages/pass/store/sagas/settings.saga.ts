@@ -3,7 +3,7 @@ import { put, select, takeLeading } from 'redux-saga/effects';
 import { partialMerge } from '@proton/pass/utils/object';
 
 import { settingEditFailure, settingEditIntent, settingEditSuccess } from '../actions/creators/settings';
-import { WithSenderAction } from '../actions/with-receiver';
+import type { WithSenderAction } from '../actions/with-receiver';
 import type { ProxiedSettings } from '../reducers/settings';
 import { selectProxiedSettings } from '../selectors/settings';
 import type { WorkerRootSagaOptions } from '../types';
