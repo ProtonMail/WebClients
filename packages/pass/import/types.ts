@@ -9,6 +9,7 @@ export enum ImportProvider {
     LASTPASS = 'lastpass',
     ONEPASSWORD = '1password',
     PROTONPASS = 'protonpass',
+    DASHLANE = 'dashlane',
 }
 
 export type ImportReaderPayload = {

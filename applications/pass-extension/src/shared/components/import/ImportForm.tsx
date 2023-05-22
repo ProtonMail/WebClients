@@ -19,6 +19,7 @@ export const PROVIDER_TITLE_MAP = {
     [ImportProvider.KEEPASS]: 'KeePass (xml)',
     [ImportProvider.LASTPASS]: 'LastPass (csv)',
     [ImportProvider.ONEPASSWORD]: '1Password (1pux, 1pif)',
+    [ImportProvider.DASHLANE]: 'Dashlane (csv)',
     [ImportProvider.PROTONPASS]: `${PASS_APP_NAME} (zip, pgp)`,
 };
 

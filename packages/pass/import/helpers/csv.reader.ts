@@ -5,7 +5,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { ImportReaderError } from './reader.error';
 
-type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignored: Partial<T>[] };
+export type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignored: Partial<T>[] };
 
 export const readCSV = async <T extends Record<string, any>>(
     data: string,
