@@ -6,7 +6,7 @@ import { getItemActionId } from '@proton/pass/utils/pass/items';
 import { itemTrashFailure, itemTrashIntent, itemTrashSuccess, notification } from '../actions';
 import type { WithSenderAction } from '../actions/with-receiver';
 import type { WorkerRootSagaOptions } from '../types';
-import { trashItem } from './workers/items';
+import { trashItems } from './workers/items';
 
 function* trashItemWorker(
     { onItemsChange }: WorkerRootSagaOptions,
@@ -16,7 +16,7 @@ function* trashItemWorker(
     const { callback: onItemTrashProcessed } = meta;
 
     try {
-        yield trashItem(payload.item);
+        yield trashItems([item]);
         const itemTrashSuccessAction = itemTrashSuccess({ itemId: item.itemId, shareId });
         yield put(itemTrashSuccessAction);
 
