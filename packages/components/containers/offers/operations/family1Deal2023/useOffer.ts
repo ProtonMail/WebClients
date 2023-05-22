@@ -18,7 +18,7 @@ const useOffer = (): Operation => {
     const isLoading = flagsLoading || loadingExperiment || userLoading || loading || !!loadingFeature;
     const isUserEligible = isEligible({ user, subscription, protonConfig });
     const isValid =
-        isUserEligible && isActive && feature?.Value === OfferUserFeatureCodeValue.Hide && experimentValue === 'A';
+        isUserEligible && isActive && feature?.Value !== OfferUserFeatureCodeValue.Hide && experimentValue === 'A';
 
     return { isValid, config, isLoading };
 };
