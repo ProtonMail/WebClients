@@ -6,6 +6,7 @@ import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
 import { readBitwardenData } from './providers/bitwarden.reader';
 import { readChromiumData } from './providers/chromium.reader';
+import { readDashlaneData } from './providers/dashlane.reader';
 import { readKeePassData } from './providers/keepass.reader';
 import { readLastPassData } from './providers/lastpass.reader';
 import { readProtonPassData } from './providers/protonpass.reader';
@@ -62,6 +63,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
                 default:
                     throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
             }
+        }
+
+        case ImportProvider.DASHLANE: {
+            return readDashlaneData(await payload.file.arrayBuffer());
         }
 
         default:
