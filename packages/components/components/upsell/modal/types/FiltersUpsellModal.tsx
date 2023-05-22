@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { c } from 'ttag';
 
 import { ModalStateProps, UpsellModal } from '@proton/components/components';
