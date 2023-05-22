@@ -35,6 +35,9 @@ export const isIos11 = () => {
     return name.toLowerCase() === 'ios' && parseInt(version, 10) === 11;
 };
 
+/**
+ * Currently it's relevant for Android DuckDuckGo browser
+ */
 export const isDuckDuckGo = () => navigator.userAgent.includes('DuckDuckGo');
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
