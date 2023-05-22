@@ -336,7 +336,7 @@ export const parse = (vcal = ''): VcalCalendarComponent => {
  */
 export const parseWithRecoveryAndMaybeErrors = (
     vcal: string,
-    retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true }
+    retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true, retryOrganizer: true }
 ): VcalVcalendarWithMaybeErrors => {
     try {
         return parseWithRecovery(vcal, retry) as VcalVcalendar;
