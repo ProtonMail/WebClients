@@ -47,10 +47,9 @@ export const DiscardableModalPanel: FC<DiscardableModalProps> = ({ discardable, 
                     open={confirm.opened}
                     onClose={() => setConfirm({ opened: false })}
                     onSubmit={confirm.effect ?? onDiscard}
+                    alertText={c('Warning').t`You have unsaved changes, are you sure you want to discard them?`}
                     submitText={c('Action').t`Discard`}
-                >
-                    {c('Warning').t`You have unsaved changes, are you sure you want to discard them?`}
-                </ConfirmationModal>
+                />
             </SidebarModal>
         </div>
     );
