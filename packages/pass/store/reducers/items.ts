@@ -44,6 +44,7 @@ import {
     shareDeleteSync,
     sharesSync,
     syncSuccess,
+    vaultDeleteIntent,
     vaultDeleteSuccess,
 } from '../actions';
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
@@ -305,8 +306,17 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: { [itemId]: { lastUseTime: getEpoch() } } });
         }
 
-        if (vaultDeleteSuccess.match(action)) {
+        if (vaultDeleteIntent.match(action)) {
             return objectDelete(state, action.payload.id);
+        }
+
+        if (vaultDeleteSuccess.match(action)) {
+            const movedItems = action.payload.movedItems;
+            const nextState = objectDelete(state, action.payload.id);
+
+            return movedItems.length > 0
+                ? fullMerge(nextState, { [movedItems[0].shareId]: toMap(movedItems, 'itemId') })
+                : nextState;
         }
 
         if (shareDeleteSync.match(action)) {

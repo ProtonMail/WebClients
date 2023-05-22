@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ExtensionEndpoint, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { ExtensionEndpoint, ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
 import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
@@ -118,7 +118,7 @@ export const vaultEditSuccess = createOptimisticAction(
 
 export const vaultDeleteIntent = createOptimisticAction(
     'vault delete intent',
-    (payload: { id: string; content: ShareContent<ShareType.Vault> }) =>
+    (payload: { id: string; content: ShareContent<ShareType.Vault>; destinationShareId: MaybeNull<string> }) =>
         pipe(
             withCacheBlock,
             withRequest({
@@ -149,7 +149,7 @@ export const vaultDeleteFailure = createOptimisticAction(
 
 export const vaultDeleteSuccess = createOptimisticAction(
     'vault delete success',
-    (payload: { id: string; content: ShareContent<ShareType.Vault> }) =>
+    (payload: { id: string; content: ShareContent<ShareType.Vault>; movedItems: ItemRevision[] }) =>
         pipe(
             withRequest({
                 type: 'success',
