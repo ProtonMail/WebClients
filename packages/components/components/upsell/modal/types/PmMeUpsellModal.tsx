@@ -6,32 +6,24 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 interface Props {
     modalProps: ModalStateProps;
-    feature: MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS | MAIL_UPSELL_PATHS.UNLIMITED_LABELS;
-    /**
-     * Needed in a "Dropdown" scenario because we want to close the dropdown after closing the upsell modal
-     */
-    onCloseCustomAction?: () => void;
-    isSettings?: boolean;
 }
-const LabelsUpsellModal = ({ modalProps, onCloseCustomAction, feature, isSettings = false }: Props) => {
+const FiltersUpsellModal = ({ modalProps }: Props) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
-        feature,
-        isSettings,
+        feature: MAIL_UPSELL_PATHS.SHORT_ADDRESS,
+        isSettings: true,
     });
 
     return (
         <UpsellModal
-            title={c('Title').t`Keep your inbox organized`}
-            description={c('Description')
-                .t`Unlock unlimited folders, labels and more premium features when you upgrade.`}
+            title={c('Title').t`Activate @pm.me`}
+            description={c('Description').t`Unlock shorter email addresses and other premium features by upgrading.`}
             modalProps={modalProps}
             upsellRef={upsellRef}
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
-            onClose={onCloseCustomAction}
         />
     );
 };
 
-export default LabelsUpsellModal;
+export default FiltersUpsellModal;
