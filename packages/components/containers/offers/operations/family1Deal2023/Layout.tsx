@@ -18,7 +18,7 @@ const Layout = (props: OfferLayoutProps) =>
             <Deals {...props} />
 
             <OfferFooter {...props}>
-                <FamilyPlanFooter onClose={props.onCloseModal} />
+                <FamilyPlanFooter {...props} />
             </OfferFooter>
         </OfferLayout>
     ) : (
