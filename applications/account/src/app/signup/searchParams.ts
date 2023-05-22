@@ -1,5 +1,5 @@
 import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { APP_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -47,8 +47,10 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
     return { product, productParam };
 };
 
-export const getSignupSearchParams = (search: string) => {
-    const searchParams = new URLSearchParams(search);
+export const getSignupSearchParams = (
+    searchParams: URLSearchParams,
+    defaults?: { cycle?: CYCLE; preSelectedPlan?: PLANS }
+) => {
     const maybeCurrency = searchParams.get('currency')?.toUpperCase() as Currency | undefined;
     const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
 
@@ -79,9 +81,9 @@ export const getSignupSearchParams = (search: string) => {
     return {
         coupon,
         currency,
-        cycle: cycle || DEFAULT_CYCLE,
+        cycle: cycle || defaults?.cycle || DEFAULT_CYCLE,
         minimumCycle,
-        preSelectedPlan,
+        preSelectedPlan: preSelectedPlan || defaults?.preSelectedPlan,
         product,
         users,
         domains,

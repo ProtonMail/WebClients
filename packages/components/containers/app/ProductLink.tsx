@@ -8,14 +8,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, SettingsLink } from '../../components';
 
-export const apps = ({ isPassSettingsEnabled }: { isPassSettingsEnabled: boolean }) => {
-    return [
-        APPS.PROTONMAIL,
-        APPS.PROTONCALENDAR,
-        APPS.PROTONDRIVE,
-        APPS.PROTONVPN_SETTINGS,
-        isPassSettingsEnabled ? APPS.PROTONPASS : undefined,
-    ].filter(isTruthy);
+export const apps = () => {
+    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].filter(
+        isTruthy
+    );
 };
 
 interface ProductLinkProps {

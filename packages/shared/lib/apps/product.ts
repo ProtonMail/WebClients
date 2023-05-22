@@ -6,7 +6,7 @@ export const otherProductParamValues = ['generic', 'business'] as const;
 export type OtherProductParam = (typeof otherProductParamValues)[number];
 export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
 
-const normalizeProduct = (product: ProductParam) => {
+export const normalizeProduct = (product: ProductParam) => {
     if (!product) {
         return;
     }

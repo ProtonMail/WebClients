@@ -75,6 +75,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
     const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
         usePayment({
+            api,
             amount: AmountDue as number,
             currency: Currency as Currency,
             onPaypalPay: handleSubmit,
@@ -137,6 +138,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                     </Row>
                     {AmountDue && AmountDue > 0 && (
                         <Payment
+                            api={api}
                             type="invoice"
                             paypal={paypal}
                             paypalCredit={paypalCredit}

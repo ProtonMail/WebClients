@@ -8,14 +8,22 @@ const formatYear = (year: any) => {
 const clear = (v: any) => String(v).trim();
 
 const toDetails = ({ number, month: ExpMonth, year, cvc: CVC, fullname, zip: ZIP, country: Country }: CardModel) => {
-    return {
-        Name: clear(fullname),
+    const resultWithoutName = {
         Number: String(number).replace(/\s+/g, ''),
         ExpMonth,
         ExpYear: formatYear(year),
         CVC, // Don't clean ZIP, space is allowed
         ZIP,
         Country,
+    };
+
+    if (fullname === undefined || fullname === null) {
+        return resultWithoutName;
+    }
+
+    return {
+        ...resultWithoutName,
+        Name: clear(fullname),
     };
 };
 

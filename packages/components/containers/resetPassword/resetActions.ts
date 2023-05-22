@@ -373,7 +373,7 @@ export const handleRequestRecoveryMethods = async ({
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
             getRecoveryMethods(username)
         );
-        if (Type === 'external' && Methods.includes('login')) {
+        if (Type === 'external' && Methods.length === 1 && Methods.includes('login')) {
             await api(requestLoginResetToken({ Username: username, Email: username }));
             return {
                 cache: {
@@ -384,6 +384,7 @@ export const handleRequestRecoveryMethods = async ({
                     value: username,
                     method: 'email',
                     Methods,
+                    type: Type,
                     hasTrustedDeviceRecovery,
                     ktFeature,
                 },
@@ -405,6 +406,7 @@ export const handleRequestRecoveryMethods = async ({
                 username,
                 persistent,
                 Methods,
+                type: Type,
                 hasTrustedDeviceRecovery,
                 ktFeature,
             },

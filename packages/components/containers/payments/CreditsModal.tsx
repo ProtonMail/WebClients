@@ -63,6 +63,7 @@ const CreditsModal = (props: ModalProps) => {
 
     const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
         usePayment({
+            api,
             amount: debouncedAmount,
             currency,
             onPaypalPay: handleSubmit,
@@ -119,6 +120,7 @@ const CreditsModal = (props: ModalProps) => {
                     onChangeCurrency={setCurrency}
                 />
                 <Payment
+                    api={api}
                     type="credit"
                     method={method}
                     amount={debouncedAmount}

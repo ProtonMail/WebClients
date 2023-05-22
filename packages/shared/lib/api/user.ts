@@ -156,3 +156,8 @@ export const rejectInvitation = (invitationID: string) => ({
     url: `core/v4/users/invitations/${invitationID}/reject`,
     method: 'post',
 });
+
+export const disableUser = (data: { JWT: string }) => ({
+    url: `core/v4/users/disable/${data.JWT}`,
+    method: 'get',
+});

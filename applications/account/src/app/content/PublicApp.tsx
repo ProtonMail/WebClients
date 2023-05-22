@@ -43,7 +43,6 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -54,16 +53,18 @@ import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
-import RemoveRecoveryEmailContainer from '../public/RemoveRecoveryEmailContainer';
+import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
-import VerifyRecoveryEmailContainer from '../public/VerifyRecoveryEmailContainer';
+import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getProductParams } from '../signup/searchParams';
+import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
+import { getSignupUrl } from './helper';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
@@ -121,6 +122,7 @@ const UNAUTHENTICATED_ROUTES = {
     UNSUBSCRIBE: '/unsubscribe',
     VERIFY_EMAIL: '/verify-email',
     REMOVE_EMAIL: '/remove-email',
+    DISABLE_ACCOUNT: '/disable-account',
 };
 
 setMetricsEnabled(true);
@@ -321,9 +323,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         setActiveSessions(sessions);
 
         if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
-            history.replace(
-                `${SSO_PATHS.SIGNUP}${stringifySearchParams({ plan: newForkState.payload.plan || undefined }, '?')}`
-            );
+            history.replace(getSignupUrl(newForkState));
             return;
         }
 
@@ -377,10 +377,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         history.push('/login');
     };
 
-    const [toOAuthName, plan] =
+    const toOAuthName =
         forkState?.type === SSOType.OAuth
-            ? [forkState.payload.clientInfo.Name, undefined]
-            : [confirmForkData?.payload.clientInfo.Name, forkState?.payload?.plan];
+            ? forkState.payload.clientInfo.Name
+            : confirmForkData?.payload.clientInfo.Name;
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
@@ -401,7 +401,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>
                     <UnAuthenticated>
-                        <VerifyRecoveryEmailContainer
+                        <VerifyEmailContainer
                             onSubscribe={(jwt) => {
                                 history.replace({ pathname: `${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}`, hash: jwt });
                             }}
@@ -410,7 +410,12 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.REMOVE_EMAIL}>
                     <UnAuthenticated>
-                        <RemoveRecoveryEmailContainer />
+                        <RemoveEmailContainer />
+                    </UnAuthenticated>
+                </Route>
+                <Route path={UNAUTHENTICATED_ROUTES.DISABLE_ACCOUNT}>
+                    <UnAuthenticated>
+                        <RemoveEmailContainer type="account-email" />
                     </UnAuthenticated>
                 </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
@@ -485,7 +490,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,
                                                         SSO_PATHS.VPN_SIGNUP,
-                                                        SSO_PATHS.PASS_SIGNUP,
                                                     ]}
                                                 >
                                                     <SignupContainer
@@ -494,6 +498,21 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
                                                         onLogin={handleLogin}
+                                                        onBack={
+                                                            hasBackToSwitch ? () => history.push('/login') : undefined
+                                                        }
+                                                    />
+                                                </Route>
+                                                <Route path={SSO_PATHS.PASS_SIGNUP}>
+                                                    <SingleSignupContainerV2
+                                                        activeSessions={activeSessions}
+                                                        loader={loader}
+                                                        productParam={APPS.PROTONPASS}
+                                                        clientType={CLIENT_TYPES.PASS}
+                                                        toApp={maybePreAppIntent}
+                                                        toAppName={toAppName}
+                                                        onLogin={handleLogin}
+                                                        fork={!!forkState}
                                                         onBack={
                                                             hasBackToSwitch ? () => history.push('/login') : undefined
                                                         }
@@ -555,7 +574,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                             hasBackToSwitch ? () => history.push('/switch') : undefined
                                                         }
                                                         setupVPN={setupVPN}
-                                                        signupOptions={{ plan }}
+                                                        signupUrl={getSignupUrl(forkState)}
                                                     />
                                                 </Route>
                                                 <Redirect

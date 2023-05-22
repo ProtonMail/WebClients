@@ -7,6 +7,11 @@
 
 	border-radius: var(--border-radius-md);
 	background-color: var(--background-norm);
+
+	&--no-bg-color {
+		background-color: transparent;
+	}
+
 	vertical-align: middle;
 
 	&-item {

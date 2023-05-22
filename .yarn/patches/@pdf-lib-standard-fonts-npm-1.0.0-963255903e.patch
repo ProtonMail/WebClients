@@ -1,0 +1,16 @@
+diff --git a/package.json b/package.json
+index b6567371ab8b94220f7238d66a74f18aa7f7bc13..be937f814262e542c87b8d895e907a9791c1395c 100644
+--- a/package.json
++++ b/package.json
+@@ -2,9 +2,9 @@
+   "name": "@pdf-lib/standard-fonts",
+   "version": "1.0.0",
+   "description": "Metrics for the Standard 14 PDF fonts and their encodings",
+-  "main": "lib/index.js",
+   "unpkg": "dist/standard-fonts.min.js",
+-  "module": "es/index.js",
++  "main": "dist/standard-fonts.min.js",
++  "module": "dist/standard-fonts.min.js",
+   "types": "lib/index.d.ts",
+   "scripts": {
+     "make": "node Makefile.js",

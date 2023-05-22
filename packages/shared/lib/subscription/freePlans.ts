@@ -4,7 +4,7 @@ import { Currency, Cycle, Plan, SubscriptionCheckResponse } from '../interfaces'
 export const FREE_PLAN = {
     ID: 'free',
     Name: 'free' as PLANS,
-    Title: 'Free',
+    Title: `Proton Free`,
     Type: PLAN_TYPES.PLAN,
     Currency: DEFAULT_CURRENCY,
     Cycle: DEFAULT_CYCLE,

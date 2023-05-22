@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink } from '@proton/components/components';
-import { FeatureCode, SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
-import { useFeature, usePlans, useUser } from '@proton/components/hooks';
+import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import { usePlans, useUser } from '@proton/components/hooks';
 import { PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { clients } from '@proton/shared/lib/pass/constants';
 import clsx from '@proton/utils/clsx';
 
 const UpgradeBanner = ({ className }: { className?: string }) => {
@@ -12,12 +13,9 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
     const [plans, loadingPlans] = usePlans();
     const passPlan = plans?.find(({ Name }) => Name === PLANS.PASS_PLUS);
 
-    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
-    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
-
     const shouldUpgrade = user.isFree;
 
-    if (loadingPlans || !shouldUpgrade || !passPlan || !isPassPlusEnabled) {
+    if (loadingPlans || !shouldUpgrade || !passPlan) {
         return null;
     }
 
@@ -48,31 +46,16 @@ const PassDownloadsSettingsPage = () => {
                     .t`Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${PASS_APP_NAME} apps and extensions.`}
             </SettingsParagraph>
             <div className="flex gap-4 on-mobile-flex-column">
-                <DownloadClientCard
-                    title={c('VPNClient').t`Android`}
-                    icon="brand-android"
-                    link="https://play.google.com/store/apps/details?id=proton.android.pass"
-                />
-                <DownloadClientCard
-                    title={c('VPNClient').t`iOS`}
-                    icon="brand-apple"
-                    link="https://apps.apple.com/us/app/id6443490629"
-                />
-                <DownloadClientCard
-                    title={c('VPNClient').t`Chrome`}
-                    icon="brand-chrome"
-                    link="https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde"
-                />
-                <DownloadClientCard
-                    title={c('VPNClient').t`Brave`}
-                    icon="brand-brave"
-                    link="https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde"
-                />
-                <DownloadClientCard
-                    title={c('VPNClient').t`Firefox`}
-                    icon="brand-firefox"
-                    link="https://addons.mozilla.org/en-US/firefox/addon/proton-pass/"
-                />
+                {Object.values(clients).map((client) => {
+                    return (
+                        <DownloadClientCard
+                            key={client.title}
+                            title={client.title}
+                            icon={client.icon}
+                            link={client.link}
+                        />
+                    );
+                })}
             </div>
         </SettingsSectionWide>
     );
