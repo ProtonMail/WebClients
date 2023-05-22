@@ -1,16 +1,13 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
 import withCacheBlock from '../with-cache-block';
 import withCallback, { type ActionCallback } from '../with-callback';
 import withNotification from '../with-notification';
 
-export const emptyTrashIntent = createAction('trash delete intent', (payload: { trashedItems: ItemRevision[] }) =>
-    withCacheBlock({ payload })
-);
+export const emptyTrashIntent = createAction('trash delete intent', () => withCacheBlock({ payload: {} }));
 
 export const emptyTrashFailure = createAction('item trash failure', (error: unknown) =>
     pipe(
@@ -32,10 +29,8 @@ export const emptyTrashSuccess = createAction('trash delete success', () =>
 
 export const restoreTrashIntent = createAction(
     'restore trash intent',
-    (
-        payload: { trashedItems: ItemRevision[] },
-        callback?: ActionCallback<ReturnType<typeof restoreTrashSuccess> | ReturnType<typeof restoreTrashFailure>>
-    ) => pipe(withCacheBlock, withCallback(callback))({ payload })
+    (callback?: ActionCallback<ReturnType<typeof restoreTrashSuccess> | ReturnType<typeof restoreTrashFailure>>) =>
+        pipe(withCacheBlock, withCallback(callback))({ payload: {} })
 );
 
 export const restoreTrashFailure = createAction('restore trash failure', (error: unknown) =>

@@ -1,7 +1,8 @@
-import { Action, AnyAction } from 'redux';
-import { ActionPattern, call, fork, select, take } from 'redux-saga/effects';
+import type { Action, AnyAction } from 'redux';
+import type { ActionPattern } from 'redux-saga/effects';
+import { call, fork, select, take } from 'redux-saga/effects';
 
-import { State } from '../../types';
+import type { State } from '../../types';
 
 type BeforeOptimisticsWorker<A extends Action, R extends any[]> = (action: A, state: State, ...args: R) => any;
 

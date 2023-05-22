@@ -21,7 +21,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
 import { handleVaultDeletionEffects } from '../../context/items/ItemEffects';
-import { useItems } from '../../hooks/useItems';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
@@ -39,9 +38,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const { sync, lock, logout, ready } = usePopupContext();
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
-    const { trash } = useItems();
-
-    const trashedItems = trash.result;
 
     const openSettings = useOpenSettingsTab();
     const webStoreURL = getWebStoreUrl(detectBrowser());
@@ -67,8 +63,8 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         }
     };
 
-    const handleRestoreTrash = () => dispatch(restoreTrashIntent({ trashedItems }));
-    const handleDeleteAllItemsInTrash = () => dispatch(emptyTrashIntent({ trashedItems }));
+    const handleRestoreTrash = () => dispatch(restoreTrashIntent());
+    const handleDeleteAllItemsInTrash = () => dispatch(emptyTrashIntent());
 
     return (
         <>

@@ -1,27 +1,19 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/api';
-
 import { itemRestoreFailure, itemRestoreIntent, itemRestoreSuccess } from '../actions';
 import type { WorkerRootSagaOptions } from '../types';
+import { restoreItems } from './workers/items';
 
 function* restoreItem(
     { onItemsChange }: WorkerRootSagaOptions,
     { payload, meta }: ReturnType<typeof itemRestoreIntent>
 ) {
     const { item, shareId } = payload;
-    const { itemId, revision } = item;
+    const { itemId } = item;
     const { callback: onItemRestoreProcessed } = meta;
 
     try {
-        yield api({
-            url: `pass/v1/share/${shareId}/item/untrash`,
-            method: 'post',
-            data: {
-                Items: [{ ItemID: itemId, Revision: revision }],
-            },
-        });
-
+        yield restoreItems([item]);
         const itemRestoreSuccessAction = itemRestoreSuccess({ itemId, shareId });
         yield put(itemRestoreSuccessAction);
 
