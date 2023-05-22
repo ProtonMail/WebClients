@@ -37,11 +37,9 @@
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
         "date-fns": "^2.30.0",
-        "declassify": "^2.1.0",
         "dompurify": "^3.0.3",
         "idb": "^7.1.1",
         "jszip": "^3.10.1",
-        "juice": "^9.0.0",
         "markdown-it": "^13.0.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -77,9 +75,7 @@
         "jest-junit": "^16.0.0",
         "loud-rejection": "^2.2.0",
         "prettier": "^2.8.8",
-        "redux-logger": "^3.0.6",
         "typescript": "^5.0.4",
-        "weak-napi": "^2.0.2",
         "workbox-webpack-plugin": "^6.5.4"
     }
 }
