@@ -14,6 +14,7 @@ import {
     setAddressKeyFlags,
     setPrimaryAddressKey,
 } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import { Loader, useModalState } from '../../components';
 import {
@@ -361,7 +362,7 @@ const AddressKeysSection = () => {
                             onReactivation,
                             keyTransparencyVerify,
                         });
-                        await keyTransparencyCommit(userKeys);
+                        await keyTransparencyCommit(userKeys).catch(noop);
                         return call();
                     }}
                     {...reactivateKeyProps}
