@@ -1,0 +1,71 @@
+@import '~@proton/styles/scss/lib';
+
+:root {
+	--border-radius-4xl: calc(4 * var(--border-radius) * var(--1px));
+	--color-norm-weak: rgba(109 74 255 / 0.1);
+}
+
+.bg-transparent {
+	background-color: transparent;
+}
+
+.bg-norm-weak {
+	background-color: var(--color-norm-weak);
+}
+
+.rounded-4xl {
+	border-radius: var(--border-radius-4xl);
+}
+
+.signup-v2 {
+	&-bg {
+		@include media('>xsmall') {
+			background: radial-gradient(38.47% 29.48% at 50% -3.24%, var(--background-norm) 0%, transparent 100%),
+				linear-gradient(180deg, #f7f5ff 0%, transparent 100%), var(--background-norm);
+		}
+	}
+
+	&-offer-banner {
+		background: linear-gradient(81.4deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%),
+			var(--background-norm);
+	}
+
+	&-header {
+		&#{&} {
+			// alignment on content of the page
+			@include media('>=#{em(984, 16)}') {
+				inline-size: rem(984);
+				margin-inline: auto;
+			}
+
+			// alignment with same values as Proton.me, to make it more "linked/uniform"
+			@include media('>=#{em(1100, 16)}') {
+				inline-size: rem(1100);
+				padding-inline: rem(48);
+			}
+
+			@include media('>=#{em(1500, 16)}') {
+				inline-size: rem(1500);
+				padding-inline: rem(96);
+			}
+
+			@include media('>=#{em(2040, 16)}') {
+				inline-size: rem(2040);
+				padding-inline: rem(102);
+			}
+		}
+	}
+}
+
+.single-signup-header-v2 {
+	max-inline-size: rem(766);
+
+	.large-font {
+		font-size: rem(40);
+		color: var(--optional-promotion-text-color);
+
+		@include media('<=small') {
+			font-size: rem(24);
+		}
+	}
+}

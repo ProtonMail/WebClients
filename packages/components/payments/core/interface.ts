@@ -5,7 +5,7 @@ import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 export interface CardPayment {
     Type: PAYMENT_METHOD_TYPES.CARD;
     Details: {
-        Name: string;
+        Name?: string;
         Number: string;
         ExpMonth: string;
         ExpYear: string;
@@ -70,7 +70,7 @@ export interface AmountAndCurrency {
 }
 
 export interface CardModel {
-    fullname: string;
+    fullname?: string;
     number: string;
     month: string;
     year: string;

@@ -1,34 +1,43 @@
+import { format } from 'date-fns';
+
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { createGetKTActivation } from '@proton/components/containers/keyTransparency/useGetKTActivation';
 import { AppIntent } from '@proton/components/containers/login/interface';
+import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
+import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
     getUser,
     queryCheckEmailAvailability,
     queryCheckUsernameAvailability,
     unlockPasswordChanges,
 } from '@proton/shared/lib/api/user';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession, persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { CLIENT_TYPES, COUPON_CODES } from '@proton/shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
+import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
     HumanVerificationTrigger,
+    MnemonicData,
+    ReferralData,
+    SignupActionDoneResponse,
     SignupActionResponse,
     SignupCacheResult,
     SignupSteps,
@@ -44,7 +53,7 @@ export const handleDone = ({
 }: {
     cache: SignupCacheResult;
     appIntent?: AppIntent;
-}): SignupActionResponse => {
+}): SignupActionDoneResponse => {
     const {
         persistent,
         trusted,
@@ -57,6 +66,7 @@ export const handleDone = ({
     const { authResponse, user, keyPassword } = setupData;
 
     return {
+        cache,
         session: {
             ...authResponse,
             persistent,
@@ -223,14 +233,108 @@ export const handleSetPassword = async ({
     };
 };
 
+export const handleSetupRecoveryPhrase = async ({
+    cache,
+}: {
+    cache: SignupCacheResult;
+    api: Api;
+}): Promise<SignupActionResponse> => {
+    return {
+        cache,
+        to: SignupSteps.Congratulations,
+    };
+};
+
+export const handleSubscribeUser = async (
+    api: Api,
+    subscriptionData: SubscriptionData,
+    referralData: ReferralData | undefined,
+    productParam: ProductParam
+) => {
+    if (!hasPlanIDs(subscriptionData.planIDs)) {
+        return;
+    }
+    await api(
+        subscribe(
+            {
+                Plans: subscriptionData.planIDs,
+                Currency: subscriptionData.currency,
+                Cycle: subscriptionData.cycle,
+                ...(referralData
+                    ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
+                    : {
+                          Payment: subscriptionData.payment,
+                          Amount: subscriptionData.checkResult.AmountDue,
+                          ...(subscriptionData.checkResult.Coupon?.Code
+                              ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                              : undefined),
+                      }),
+            },
+            productParam
+        )
+    );
+};
+
+interface SetupMnemonic {
+    enabled: boolean;
+    generate?: typeof generatePDFKit;
+}
+
+export const handleSetupMnemonic = async ({
+    user,
+    keyPassword,
+    api,
+    emailAddress,
+    setupMnemonic,
+}: {
+    api: Api;
+    setupMnemonic?: SetupMnemonic;
+    emailAddress: string;
+    user: User;
+    keyPassword?: string;
+}): Promise<MnemonicData | undefined> => {
+    if (!setupMnemonic?.enabled || !setupMnemonic.generate || !user.Keys.length) {
+        return;
+    }
+
+    const { randomBytes, salt, mnemonic } = await generateMnemonicWithSalt();
+
+    const userKeys = await getDecryptedUserKeysHelper(user, keyPassword || '');
+
+    const payload = await generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: user.Name });
+
+    try {
+        await api({ ...reactivateMnemonicPhrase(payload), ignoreHandler: [HTTP_ERROR_CODES.UNLOCK] });
+    } catch (e) {
+        // TODO: Improve this error handling. Just ignore any failures for now so that it doesn't get stuck
+        return;
+    }
+
+    const pdf = await setupMnemonic.generate({
+        // Not translated because the PDF isn't translated
+        date: `Created on ${format(new Date(), 'PPP')}`,
+        emailAddress,
+        recoveryPhrase: mnemonic,
+    });
+
+    const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
+
+    return {
+        mnemonic,
+        blob,
+    };
+};
+
 export const handleSetupUser = async ({
     cache,
     api,
     ignoreVPN,
+    setupMnemonic,
 }: {
     cache: SignupCacheResult;
     api: Api;
     ignoreVPN?: boolean;
+    setupMnemonic?: SetupMnemonic;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -262,27 +366,7 @@ export const handleSetupUser = async ({
     }).then((response): Promise<AuthResponse> => response.json());
 
     // Perform the subscription first to prevent "locked user" while setting up keys.
-    if (hasPlanIDs(subscriptionData.planIDs)) {
-        await api(
-            subscribe(
-                {
-                    Plans: subscriptionData.planIDs,
-                    Currency: subscriptionData.currency,
-                    Cycle: subscriptionData.cycle,
-                    ...(referralData
-                        ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                        : {
-                              Payment: subscriptionData.payment,
-                              Amount: subscriptionData.checkResult.AmountDue,
-                              ...(subscriptionData.checkResult.Coupon?.Code
-                                  ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                                  : undefined),
-                          }),
-                },
-                cache.productParam
-            )
-        );
-    }
+    await handleSubscribeUser(api, subscriptionData, referralData, cache.productParam);
 
     const [{ keyPassword, user, addresses }] = await Promise.all([
         (async () => {
@@ -313,6 +397,14 @@ export const handleSetupUser = async ({
     const trusted = false;
     await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
 
+    const mnemonicData = await handleSetupMnemonic({
+        emailAddress: userEmail,
+        user,
+        keyPassword,
+        api,
+        setupMnemonic,
+    });
+
     const newCache: SignupCacheResult = {
         ...cache,
         trusted,
@@ -321,6 +413,7 @@ export const handleSetupUser = async ({
             keyPassword,
             addresses,
             authResponse,
+            mnemonicData,
             api,
         },
     };

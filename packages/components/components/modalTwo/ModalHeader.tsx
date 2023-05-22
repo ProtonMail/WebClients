@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef, ReactElement, cloneElement, useContext } from 'react';
+import React, { ComponentPropsWithRef, ReactElement, ReactNode, cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,7 +16,7 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
     /**
      * The title to render in the Modal header.
      */
-    title?: string | JSX.Element;
+    title?: ReactNode;
     /**
      * A subline to render below the Title.
      * Will not render unless "title" is passed as well.

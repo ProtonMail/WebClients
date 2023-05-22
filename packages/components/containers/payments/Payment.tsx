@@ -2,9 +2,14 @@ import { ReactNode, Ref, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethodStatus, PaymentMethodType } from '@proton/components/payments/core';
+import {
+    PAYMENT_METHOD_TYPES,
+    PaymentMethod,
+    PaymentMethodStatus,
+    PaymentMethodType,
+} from '@proton/components/payments/core';
 import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
@@ -25,6 +30,7 @@ import PayPalView from './PayPalView';
 import { CardFieldStatus } from './useCard';
 
 interface Props {
+    api: Api;
     children?: ReactNode;
     type: PaymentMethodFlows;
     amount?: number;
@@ -39,14 +45,17 @@ interface Props {
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
     paymentMethodStatus?: PaymentMethodStatus;
+    paymentMethods?: PaymentMethod[];
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
     cardFieldStatus?: CardFieldStatus;
     paypalPrefetchToken?: boolean;
     onBitcoinTokenValidated?: (data: ValidatedBitcoinToken) => Promise<void>;
+    isAuthenticated?: boolean;
 }
 
 const Payment = ({
+    api,
     children,
     type,
     amount = 0,
@@ -54,7 +63,8 @@ const Payment = ({
     coupon = '',
     paypal,
     paypalCredit,
-    paymentMethodStatus,
+    paymentMethodStatus: maybePaymentMethodStatus,
+    paymentMethods: maybePaymentMethods,
     method,
     onMethod,
     card,
@@ -66,14 +76,23 @@ const Payment = ({
     disabled,
     paypalPrefetchToken,
     onBitcoinTokenValidated,
+    isAuthenticated: maybeIsAuthenticated,
 }: Props) => {
-    const { paymentMethods, options, loading } = useMethods({ amount, paymentMethodStatus, coupon, flow: type });
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID || !!maybeIsAuthenticated;
+
+    const { paymentMethods, options, loading } = useMethods({
+        api,
+        amount,
+        paymentMethodStatus: maybePaymentMethodStatus,
+        paymentMethods: maybePaymentMethods,
+        coupon,
+        flow: type,
+        isAuthenticated,
+    });
     const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
 
     const allMethods = [...options.usedMethods, ...options.methods];
-
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID;
 
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -81,8 +100,9 @@ const Payment = ({
         if (loading) {
             return onMethod(undefined);
         }
+        const selectedMethod = allMethods.find((otherMethod) => otherMethod.value === method);
         const result = allMethods.find(({ disabled }) => !disabled);
-        if (result) {
+        if ((!selectedMethod || selectedMethod.disabled) && result) {
             onMethod(result.value);
         }
     }, [loading, allMethods.length]);
@@ -134,8 +154,11 @@ const Payment = ({
         <>
             <div className={clsx(['payment-container center', noMaxWidth === false && 'max-w37e on-mobile-max-w100 '])}>
                 <div>
-                    <h2 className="text-rg text-bold mb-1" data-testid="payment-label">{c('Label')
-                        .t`Payment method`}</h2>
+                    {!isSignupPass && (
+                        <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
+                            {c('Label').t`Payment method`}
+                        </h2>
+                    )}
                     <PaymentMethodSelector
                         options={allMethods}
                         method={method}
@@ -176,6 +199,7 @@ const Payment = ({
                                 <>
                                     <BitcoinInfoMessage />
                                     <Bitcoin
+                                        api={api}
                                         amount={amount}
                                         currency={currency}
                                         type={type}

@@ -2,7 +2,12 @@ import { isTokenPayment } from '@proton/components/payments/core';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getCroHeaders, mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import {
+    getCroHeaders,
+    getOwnershipVerificationHeaders,
+    mergeHeaders,
+    withVerificationHeaders,
+} from '@proton/shared/lib/fetch/headers';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
@@ -24,10 +29,8 @@ const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) =
     }
 };
 
-export const getTokenPayment = (subscriptionData: SignupCacheResult['subscriptionData']) => {
-    return isTokenPayment(subscriptionData.payment)
-        ? { TokenPayment: subscriptionData.payment.Details.Token }
-        : undefined;
+export const getTokenPayment = (tokenPayment: string | undefined) => {
+    return tokenPayment ? { TokenPayment: tokenPayment } : undefined;
 };
 
 const getSignupTypeQuery = (accountData: SignupCacheResult['accountData']) => {
@@ -40,12 +43,10 @@ export const handleCreateUser = async ({
     cache,
     api,
     mode,
-    paymentToken,
 }: {
     cache: SignupCacheResult;
     api: Api;
     mode?: 'cro';
-    paymentToken?: string;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { signupType, username, email, password, payload },
@@ -57,6 +58,8 @@ export const handleCreateUser = async ({
         clientType,
         productParam,
     } = cache;
+
+    const paymentToken = isTokenPayment(subscriptionData.payment) ? subscriptionData.payment.Details.Token : undefined;
 
     if (signupType === SignupType.Username) {
         const humanVerificationParameters = (() => {
@@ -85,7 +88,7 @@ export const handleCreateUser = async ({
                             Type: clientType,
                             Username: username,
                             Payload: payload,
-                            ...getTokenPayment(subscriptionData),
+                            ...getTokenPayment(paymentToken),
                             ...getSignupTypeQuery(accountData),
                             ...getReferralDataQuery(referralData),
                         },
@@ -116,7 +119,6 @@ export const handleCreateUser = async ({
                     },
                     api,
                     mode,
-                    paymentToken,
                 });
             }
             const humanVerificationData = hvHandler(error, HumanVerificationTrigger.UserCreation);
@@ -143,17 +145,22 @@ export const handleCreateUser = async ({
                             Type: clientType,
                             Email: email,
                             Payload: payload,
-                            ...(mode === 'cro'
+                            ...(mode === 'cro' && paymentToken
                                 ? {
                                       Token: paymentToken,
                                       TokenType: 'payment',
                                   }
-                                : getTokenPayment(subscriptionData)),
+                                : getTokenPayment(paymentToken)),
                         },
                         productParam
                     )
                 ),
-                mode === 'cro' ? getCroHeaders(paymentToken) : {}
+                (() => {
+                    if (mode === 'cro') {
+                        return paymentToken ? getCroHeaders(paymentToken) : getOwnershipVerificationHeaders('lax');
+                    }
+                    return {};
+                })()
             ),
         });
         return {

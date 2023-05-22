@@ -92,7 +92,7 @@ const CycleItemView = ({
                                 <div className="mr-3">
                                     <Radio
                                         id={`${cycle}`}
-                                        aria-labelledby={`${cycle}-text ${cycle}-save ${cycle}-price ${cycle}-billed ${cycle}-garantee `}
+                                        aria-labelledby={`${cycle}-text ${cycle}-save ${cycle}-price ${cycle}-billed ${cycle}-guarantee `}
                                         name="billing"
                                         checked={selected}
                                         readOnly
@@ -133,7 +133,7 @@ const CycleItemView = ({
                             </div>
                             {cta && <div className="mt-4">{cta}</div>}
                             {guarantee && (
-                                <div className="text-sm mt-4 text-center" id={`${cycle}-garantee`}>
+                                <div className="text-sm mt-4 text-center" id={`${cycle}-guarantee`}>
                                     <Guarantee />
                                 </div>
                             )}

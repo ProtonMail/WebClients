@@ -38,7 +38,6 @@ interface Props {
     vpnServers: VPNServersCountData;
     mostPopularPlanName?: PLANS;
     upsellPlanName: PLANS;
-    isPassPlusEnabled: boolean;
 }
 
 const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
@@ -78,7 +77,6 @@ const UpsellStep = ({
     mostPopularPlanName: mostPopularPlanNameProp,
     upsellPlanName,
     onBack,
-    isPassPlusEnabled,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
@@ -117,20 +115,14 @@ const UpsellStep = ({
             return getFreeDrivePlan();
         }
 
-        if (isPassPlusEnabled && upsellPlanName === PLANS.PASS_PLUS) {
+        if (upsellPlanName === PLANS.PASS_PLUS) {
             return getFreePassPlan();
         }
 
         return getFreePlan();
     })();
 
-    const upsellShortPlan = getShortPlan(
-        upsellPlanName,
-        plansMap,
-        vpnServers,
-        { boldStorageSize: true },
-        isPassPlusEnabled
-    );
+    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnServers, { boldStorageSize: true });
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
@@ -145,15 +137,9 @@ const UpsellStep = ({
             return null;
         }
 
-        const mostPopularShortPlan = getShortPlan(
-            mostPopularPlanName,
-            plansMap,
-            vpnServers,
-            {
-                boldStorageSize: true,
-            },
-            isPassPlusEnabled
-        );
+        const mostPopularShortPlan = getShortPlan(mostPopularPlanName, plansMap, vpnServers, {
+            boldStorageSize: true,
+        });
 
         if (!mostPopularShortPlan) {
             return null;

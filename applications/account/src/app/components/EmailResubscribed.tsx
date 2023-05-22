@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
+import PublicFooter from './PublicFooter';
 import PublicLayout from './PublicLayout';
 
 interface EmailResubscribedProps {
@@ -21,17 +22,24 @@ const EmailResubscribed = ({
 }: EmailResubscribedProps) => {
     return (
         <PublicLayout
-            main={c('Email Unsubscribe').jt`You resubscribed to ${categoriesJsx} emails.`}
+            className="h100"
+            header={c('Email Unsubscribe').t`Email subscriptions`}
+            main={
+                <div className="text-center">
+                    {c('Email Unsubscribe').jt`You resubscribed to ${categoriesJsx} emails.`}
+                </div>
+            }
             footer={
-                <Button onClick={onUnsubscribeClick} loading={loading}>
-                    {c('Action').t`Unsubscribe`}
-                </Button>
+                <>
+                    <Button className="mb-1" fullWidth onClick={onUnsubscribeClick} loading={loading}>
+                        {c('Action').t`Unsubscribe`}
+                    </Button>
+                    <Button fullWidth onClick={onManageClick} shape="ghost" color="norm">
+                        {c('Action').t`Change other email subscriptions`}
+                    </Button>
+                </>
             }
-            below={
-                <Button onClick={onManageClick} shape="underline" color="norm">
-                    {c('Action').t`Change other email subscriptions`}
-                </Button>
-            }
+            below={<PublicFooter />}
         />
     );
 };

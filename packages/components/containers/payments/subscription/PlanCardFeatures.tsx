@@ -6,7 +6,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, PassLogo, VpnLogo } from '../../../components';
+import { CalendarLogo, DriveLogo, Icon, IconSize, Info, MailLogo, PassLogo, VpnLogo } from '../../../components';
 import { AllFeatures, getFeatureDefinitions } from '../features';
 import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
@@ -16,6 +16,11 @@ interface FeatureListProps {
     highlight?: boolean;
     margin?: boolean;
     odd?: boolean;
+    tooltip?: boolean;
+    iconSize?: IconSize;
+    className?: string;
+    itemClassName?: string;
+    gapClassName?: string;
 }
 
 export const PlanCardFeatureList = ({
@@ -24,28 +29,39 @@ export const PlanCardFeatureList = ({
     icon,
     highlight = false,
     margin = true,
+    tooltip = true,
+    iconSize = 20,
+    className,
+    itemClassName,
 }: FeatureListProps) => {
     return (
-        <ul className={clsx('unstyled', odd && 'bg-weak-odd', margin ? 'mt-4 mb-0 md:mb-6' : 'm-0')}>
+        <ul
+            className={clsx(
+                'unstyled flex flex-column',
+                className,
+                odd && 'bg-weak-odd',
+                margin ? 'mt-4 mb-0 md:mb-6' : 'm-0'
+            )}
+        >
             {features.map((feature) => {
                 const iconToDisplay = (() => {
                     if (feature.highlight && highlight) {
-                        return <Icon size={20} name="fire" className="color-warning" />;
+                        return <Icon size={iconSize} name="fire" className="color-warning" />;
                     }
 
                     if (feature.included) {
                         return (
                             <span className="color-success">
                                 {icon && feature.icon ? (
-                                    <Icon size={20} name={feature.icon} />
+                                    <Icon size={iconSize} name={feature.icon} />
                                 ) : (
-                                    <Icon size={20} name="checkmark" />
+                                    <Icon size={iconSize} name="checkmark" />
                                 )}
                             </span>
                         );
                     }
 
-                    return <Icon size={20} name="cross" className="mt-0.5" />;
+                    return <Icon size={iconSize} name="cross" className="mt-0.5" />;
                 })();
 
                 const key =
@@ -53,7 +69,7 @@ export const PlanCardFeatureList = ({
                         ? feature.text
                         : `${feature.tooltip}-${feature.highlight}-${feature.icon}`;
                 return (
-                    <li key={key} className={clsx(odd && 'px-3', 'py-2 flex rounded')}>
+                    <li key={key} className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}>
                         <div
                             className={clsx(
                                 'flex-no-min-children flex-nowrap',
@@ -61,10 +77,12 @@ export const PlanCardFeatureList = ({
                                 feature.included && feature.status === 'coming-soon' && 'color-weak'
                             )}
                         >
-                            <span className="flex flex-item-noshrink mr-3">{iconToDisplay}</span>
+                            <span className={clsx('flex flex-item-noshrink', iconSize < 20 ? 'mr-1' : 'mr-3')}>
+                                {iconToDisplay}
+                            </span>
                             <span className="flex-item-fluid text-left">
                                 <span className="mr-2 align-middle">{feature.text}</span>
-                                {feature.tooltip ? (
+                                {tooltip && feature.tooltip ? (
                                     <Info
                                         className="align-middle"
                                         title={feature.tooltip}
@@ -83,11 +101,10 @@ export const PlanCardFeatureList = ({
 interface Props {
     planName: PLANS;
     features: AllFeatures;
-    isPassPlusEnabled: boolean;
     audience: Audience;
 }
 
-const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: Props) => {
+const PlanCardFeatures = ({ planName, features, audience }: Props) => {
     const highlightFeatures = (
         <div data-testid={planName}>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
@@ -152,7 +169,7 @@ const PlanCardFeatures = ({ planName, features, audience, isPassPlusEnabled }: P
             {calendarFeatures}
             {driveFeatures}
             {vpnFeatures}
-            {isPassPlusEnabled ? passFeatures : null}
+            {passFeatures}
             {teamFeatures}
             {supportFeatures}
         </>

@@ -84,7 +84,6 @@ interface Props {
     vpnServers: VPNServersCountData;
     addresses?: Address[];
     openSubscriptionModal: OpenSubscriptionModalCallback;
-    isPassPlusEnabled: boolean;
 }
 
 const SubscriptionPanel = ({
@@ -96,7 +95,6 @@ const SubscriptionPanel = ({
     user,
     addresses,
     openSubscriptionModal,
-    isPassPlusEnabled,
 }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
@@ -212,8 +210,8 @@ const SubscriptionPanel = ({
          */
         // const getNumberOfEmailAliases = (usedAliases: number, totalAliases: number) => {
         //     return c('new_plans: feature').ngettext(
-        //         msgid`${usedAliases} of ${totalAliases} Hide My Email alias`,
-        //         `${usedAliases} of ${totalAliases} Hide My Email aliases`,
+        //         msgid`${usedAliases} of ${totalAliases} hide-my-email alias`,
+        //         `${usedAliases} of ${totalAliases} hide-my-email aliases`,
         //         totalAliases
         //     );
         // };
@@ -354,10 +352,10 @@ const SubscriptionPanel = ({
                 if (hasVPN(subscription)) {
                     return getVpnPlus();
                 }
-                if (isPassPlusEnabled && user.isFree && app === APPS.PROTONPASS) {
+                if (user.isFree && app === APPS.PROTONPASS) {
                     return getPassAppFree();
                 }
-                if (isPassPlusEnabled && hasPassPlus(subscription)) {
+                if (hasPassPlus(subscription)) {
                     return getPassAppPassPlus();
                 }
                 return getDefault();

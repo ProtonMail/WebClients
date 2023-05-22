@@ -7,6 +7,7 @@ import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { addApiMock, applyHOCs, withApi, withAuthentication, withConfig, withDeprecatedModals } from '@proton/testing';
 import lastItem from '@proton/utils/lastItem';
+import noop from '@proton/utils/noop';
 
 import PaymentStep, { Props } from './PaymentStep';
 
@@ -83,6 +84,7 @@ beforeEach(() => {
     ];
 
     props = {
+        api: noop as any,
         subscriptionData: {
             currency: 'USD',
             cycle: CYCLE.MONTHLY,

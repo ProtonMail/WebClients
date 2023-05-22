@@ -15,8 +15,7 @@ import { Audience, Currency, Cycle, Nullable, PlanIDs } from '@proton/shared/lib
 import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../../components';
-import { useFeature, useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
-import { FeatureCode } from '../../features';
+import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
 import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionModal from './SubscriptionModal';
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
@@ -57,9 +56,6 @@ interface Props {
 }
 
 const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
-    const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
-    const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
-
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [user] = useUser();
@@ -95,7 +91,6 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         } else {
             subscriptionModal = (
                 <SubscriptionModal
-                    isPassPlusEnabled={isPassPlusEnabled}
                     app={app}
                     {...subscriptionProps.current}
                     {...modalState}
@@ -168,8 +163,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             coupon: coupon || subscription.CouponCode || undefined,
                             defaultAudience: audience,
                             defaultSelectedProductPlans:
-                                defaultSelectedProductPlans ||
-                                getDefaultSelectedProductPlans(app, planIDs, isPassPlusEnabled),
+                                defaultSelectedProductPlans || getDefaultSelectedProductPlans(app, planIDs),
                             disablePlanSelection,
                             disableCycleSelector,
                             disableThanksStep,
