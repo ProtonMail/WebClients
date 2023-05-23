@@ -32,7 +32,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ inline = false }) => {
             {...(!inline && buttonProps)}
         >
             {c('Action').t`Upgrade`}
-            <Icon name="arrow-out-square" className="ml-3" />
+            <Icon name="arrow-out-square" className="ml-2" />
         </ButtonComponent>
     );
 };
