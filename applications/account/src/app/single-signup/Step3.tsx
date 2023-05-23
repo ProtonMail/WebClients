@@ -30,6 +30,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Layout from './Layout';
+import { OnUpdate } from './interface';
 
 const CopyPasswordModal = ({
     password,
@@ -72,7 +73,7 @@ const Step3 = ({
     password: string;
     email: string;
     onComplete: (newPassword: string | undefined) => Promise<void>;
-    onUpdate: (params: any) => void;
+    onUpdate: OnUpdate;
 }) => {
     const { createNotification } = useNotifications();
     const [setOwnPasswordMode, setSetOwnPasswordMode] = useState(false);
