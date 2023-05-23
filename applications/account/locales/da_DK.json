@@ -92,6 +92,9 @@
       "Add PayPal": [
         "Tilføj PayPal"
       ],
+      "Add public holidays": [
+        "Tilføj nationale helligdage"
+      ],
       "Add sieve filter": [
         "Tilføj Sieve-filter"
       ],
@@ -2494,6 +2497,11 @@
         "Ålandsøerne"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Baseret på din tidszone"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -3238,6 +3246,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Forkert bekræftelseskode. Sørg for, at du har kopieret bekræftelseskoden korrekt og forsøg igen. Det kan tage op til 24 timer, før ændringerne effektueres."
       ],
+      "You already added this holidays calendar": [
+        "Du har allerede tilføjet denne helligdagskalender"
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du har mistet adgangen til dine organisationsnøgler. Uden gendannelse kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
@@ -3455,6 +3466,9 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
+      "Please refresh the page or try again later.": [
+        "Opdater venligst siden eller prøv igen senere."
+      ],
       "Something went wrong": [
         "Noget gik galt"
       ],
@@ -3616,9 +3630,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Vis ikke dette tilbud igen"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -3650,6 +3661,9 @@
       ]
     },
     "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } grupper"
+      ],
       "customer support": [
         "kundeservice"
       ],
@@ -4049,6 +4063,11 @@
         "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
       ]
     },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Baseret på din tidszone"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -4094,6 +4113,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } understøtter i øjeblikket ikke visse begivenhedstyper, detaljer og formater."
+      ],
+      "vCard versions < 3.0": [
+        "vCard versioner < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -6914,6 +6936,9 @@
       "Label messages as": [
         "Giv beskeder etiketten"
       ],
+      "Language": [
+        "Sprog"
+      ],
       "Last 12 months only": [
         "Kun seneste 12 måneder"
       ],
@@ -7627,6 +7652,15 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Tilføj nationale helligdage"
+      ],
+      "Edit calendar": [
+        "Rediger kalender"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Få et lands nationale helligdagskalender."
+      ],
       "How to import calendars from another service": [
         "Sådan importerer du kalendere fra en anden tjeneste"
       ],
@@ -7986,6 +8020,9 @@
       ],
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Fjern automatisk spam og slettede beskeder"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -8451,6 +8488,11 @@
         "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalender tilføjet"
+      ]
+    },
     "Notification in share calendar modal": {
       "Invitation deleted": [
         "Invitation slettet"
@@ -8872,6 +8914,9 @@
       "Please insert link first": [
         "Indsæt link først"
       ],
+      "Please select a country": [
+        "Vælg venligst et land"
+      ],
       "Printer": [
         "Printer"
       ],
@@ -9111,6 +9156,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Tjek din stavning eller vælg et land fra listen."
+      ],
       "No results found": [
         "Ingen resultater fundet"
       ]
@@ -9414,6 +9462,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Kalender-URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Hvis du vil abonnere på en ekstern eller offentlig kalender og dens opdateringer, skal du indtaste URL-adressen. En skrivebeskyttet version af kalenderen vil blive tilføjet til dine andre kalendere\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10912,6 +10963,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Delt end-to-end krypteret"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Delt end-to-end krypteret med verificeret kontakt"
       ]
     },
     "Tor out of date": {

@@ -3779,6 +3779,11 @@
         "Získat ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Výhody vašeho účtu"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Úložný prostor je sdílen mezi členy rodiny v ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
@@ -3787,9 +3792,6 @@
     "familyOffer_2023:Action": {
       "Create a new user": [
         "Vytvořit nového uživatele"
-      ],
-      "Don't show this offer again": [
-        "Tuto nabídku již nezobrazovat"
       ],
       "Got it": [
         "Rozumím"
@@ -3820,9 +3822,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Správce hesel"
-      ],
       "Premium Drive": [
         "Prémiový Drive"
       ],
@@ -3868,6 +3867,9 @@
       ],
       "Leave family plan": [
         "Odejít z rodinného tarifu"
+      ],
+      "Leave visionary plan": [
+        "Opustit tarif Visionary"
       ],
       "Manage addresses.": [
         "Spravovat adresy."
@@ -5605,6 +5607,9 @@
       "Get ${ upsellPlanName }": [
         "Získat ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Získejte adresu ${ BRAND_NAME } a používejte všechny služby ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Získat ${ BRAND_NAME } adresu"
       ],
@@ -6625,6 +6630,9 @@
       "Why?": [
         "Proč?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME_TWO }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
@@ -6659,7 +6667,7 @@
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Můžete zapnout zaznamenávání přihlášení, aby jste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
+        "Můžete zapnout zaznamenávání přihlášení, abyste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -8747,6 +8755,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Získat ${ BRAND_NAME } zdarma"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Získat ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Získejte ${ planName }"
       ],
@@ -8928,12 +8939,6 @@
       "Contact groups management": [
         "Správa skupin kontaktů"
       ],
-      "Custom domain for email aliases": [
-        "Vlastní doména pro e-mailové aliasy"
-      ],
-      "Custom domains for email aliases": [
-        "Vlastní domény pro e-mailové aliasy"
-      ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
       ],
@@ -9015,9 +9020,6 @@
       "Multiple admin roles": [
         "Více rolí správce"
       ],
-      "Multiple forwarding mailboxes": [
-        "Vícenásobné přesměrování poštovních schránek"
-      ],
       "No-logs policy": [
         "Politika žádných logů"
       ],
@@ -9072,9 +9074,6 @@
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
       ],
-      "Strong E2E encryption": [
-        "Silné E2E šifrování"
-      ],
       "Team management": [
         "Řízení týmu"
       ],
@@ -9102,14 +9101,11 @@
       "Unlimited labels": [
         "Neomezeně štítků"
       ],
+      "Unlimited logins and notes": [
+        "Neomezený počet přihlášení a poznámek"
+      ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
-      ],
-      "Unlimited passwords and notes": [
-        "Neomezený počet hesel a poznámek"
-      ],
-      "Unlimited vaults": [
-        "Neomezené trezory"
       ],
       "Unlimited volume/bandwidth": [
         "Neomezená šířka pásma"
@@ -9417,6 +9413,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Jedno VPN připojení umožňuje v jednom okamžiku použít ${ BRAND_NAME } VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k ${ BRAND_NAME_TWO } VPN v jeden okamžik budete potřebovat dvě VPN připojení."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
@@ -10634,8 +10633,17 @@
       ]
     },
     "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday slevy"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week slevy"
+      ],
       "End of year offer": [
         "Nabídka na závěr roku"
+      ],
+      "End of Year Sale": [
+        "Slevy s koncem roku"
       ],
       "Get our premium bundle and save more": [
         "Získejte náš prémiový balíček a ušetřete více"
@@ -12257,6 +12265,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Přizpůsobit import pro snížení počtu štítků"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Po 30 dnech smaže zprávy v koši a spamu. Zapnutím automatického mazání se zprávám, které jsou již v koši/spamu, nastaví datum automatického smazání podle data, kdy tam byly přesunuty."
       ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"

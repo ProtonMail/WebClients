@@ -1023,11 +1023,17 @@
       "Disable encryption": [
         "Desativar criptografia"
       ],
+      "Disable expect signed": [
+        "Desativar a espera de assinatura"
+      ],
       "Enable": [
         "Ativar"
       ],
       "Enable encryption": [
         "Ativar criptografia"
+      ],
+      "Enable expect signed": [
+        "Ativar a espera de assinatura"
       ],
       "Generate missing keys": [
         "Gerar chaves ausentes"
@@ -1056,7 +1062,10 @@
         "Chaves ausentes"
       ],
       "No E2EE": [
-        "Sem criptografia de ponta a ponta"
+        "Sem E2EE"
+      ],
+      "No signing": [
+        "Sem assinatura"
       ],
       "Orphan": [
         "Órfão"
@@ -3347,7 +3356,7 @@
         "Código de verificação incorreto. Por favor, certifique-se de copiar corretamente o código de verificação e tentar novamente. Pode levar até 24 horas para que as mudanças entrem em vigor."
       ],
       "You already added this holidays calendar": [
-        "Você já adicionou feriados públicos"
+        "Você já adicionou feriados"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Você perdeu o acesso às chaves da sua organização. Sem a restauração, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar contas de usuários que não são privadas."
@@ -3749,7 +3758,7 @@
     },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
-        "Benefícios para suas conta"
+        "Os benefícios da sua conta"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -3760,9 +3769,6 @@
     "familyOffer_2023:Action": {
       "Create a new user": [
         "Criar um novo usuário"
-      ],
-      "Don't show this offer again": [
-        "Não mostrar mais esta oferta"
       ],
       "Got it": [
         "Entendi"
@@ -3793,9 +3799,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Gerenciador de senhas"
-      ],
       "Premium Drive": [
         "Drive premium"
       ],
@@ -3843,7 +3846,7 @@
         "Sair do plano familiar"
       ],
       "Leave visionary plan": [
-        "Sair do plano visionário"
+        "Cancelar o plano Visionary"
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -4045,9 +4048,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Crie detalhes de login seguros para suas contas on-line, em todos os seus dispositivos."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui 2.700 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
@@ -5508,6 +5508,9 @@
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Obtenha um endereço da ${ BRAND_NAME } para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Obter meu endereço de ${ BRAND_NAME }"
       ],
@@ -5731,6 +5734,9 @@
       ],
       "Loading...": [
         "Carregando..."
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Os registros incluem tentativas de autenticação para todos os serviços da ${ BRAND_NAME } que usam suas credenciais da ${ BRAND_NAME_TWO }."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
@@ -6264,6 +6270,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Este assistente ativará a autenticação de dois fatores (2FA) em sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará sua conta da ${ BRAND_NAME_TWO } mais segura, portanto, recomendamos ativá-la."
+      ],
       "To ${ planName }": [
         "Para ${ planName }"
       ],
@@ -6286,7 +6295,7 @@
         "Para garantir acesso permanente à sua conta, defina um método de recuperação de conta"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you\nand your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Para assegurar que você não perca dados importantes, ${ DRIVE_APP_NAME } salve versões antigas dos seus arquivos assim que você e seus colaboradores façam mudanças. Selecione por quanto tempo ${ BRAND_NAME } as versões antigas devem ser mantidas."
+        "Para assegurar que você não perca dados importantes, ${ DRIVE_APP_NAME } salva as versões antigas dos seus arquivos assim que você e seus colaboradores façam mudanças. Selecione por quanto tempo o ${ BRAND_NAME } deve guardar as versões anteriores."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -6508,7 +6517,7 @@
         "Por quê?"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Com um endereço ${ BRAND_NAME } criptografado, você pode usar todos os serviços ${ BRAND_NAME_TWO }"
+        "Com um endereço da ${ BRAND_NAME } criptografado, você pode usar todos os serviços da ${ BRAND_NAME_TWO }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar as contas de usuário que não são privadas."
@@ -8592,6 +8601,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Obter ${ BRAND_NAME } gratuitamente"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Obtenha o ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Obter o ${ planName }"
       ],
@@ -8739,12 +8751,6 @@
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
       ],
-      "Custom domain for email aliases": [
-        "Domínio customizado para apelidos de emails"
-      ],
-      "Custom domains for email aliases": [
-        "Domínios personalizados para encaminhamento de mensagens"
-      ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
       ],
@@ -8824,9 +8830,6 @@
       "Multiple admin roles": [
         "Múltiplas funções de administração"
       ],
-      "Multiple forwarding mailboxes": [
-        "Múltiplos redirecionadores de emails"
-      ],
       "No-logs policy": [
         "Política de nenhum registro"
       ],
@@ -8879,9 +8882,6 @@
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
       ],
-      "Strong E2E encryption": [
-        "Criptografia E2E forte"
-      ],
       "Team management": [
         "Gerenciamento de equipes"
       ],
@@ -8909,14 +8909,11 @@
       "Unlimited labels": [
         "Marcadores ilimitados"
       ],
+      "Unlimited logins and notes": [
+        "Notas e logins ilimitados"
+      ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
-      ],
-      "Unlimited passwords and notes": [
-        "Notas e senhas ilimitadas"
-      ],
-      "Unlimited vaults": [
-        "Cofres ilimitados"
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
@@ -9220,6 +9217,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Em dias úteis, receba o suporte da equipe de Suporte ao Cliente da ${ BRAND_NAME } com respostas em até 24 horas"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Uma conexão VPN permite que um dispositivo se conecte ao ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
@@ -11324,7 +11324,7 @@
         "Excluir usuário"
       ],
       "Delete version history?": [
-        "Excluir histórico das versões?"
+        "Excluir histórico de versões?"
       ],
       "Disable ${ email }": [
         "Desativar ${ email }"
