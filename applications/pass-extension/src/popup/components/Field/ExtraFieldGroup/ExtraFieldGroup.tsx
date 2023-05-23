@@ -1,14 +1,17 @@
-import type { FormikProps } from 'formik';
+import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
-import type { ExtraFieldType, ItemExtraField } from '@proton/pass/types';
+import type { ExtraFieldType } from '@proton/pass/types';
 
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { AddExtraFieldDropdown } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
-export type ExtraFieldGroupValues = { extraFields: ItemExtraField[] };
+/* here we flatten the ItemExtraField type for
+ * simplicity when using it with form fields */
+export type ExtraFieldFormValue = { fieldName: string; type: ExtraFieldType; value: string };
+export type ExtraFieldGroupValues = { extraFields: ExtraFieldFormValue[] };
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
 export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: ExtraFieldGroupProps<T>) => {
@@ -16,14 +19,15 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
         <FieldArray
             name="extraFields"
             render={(helpers) => {
-                const addCustomField = (type: ExtraFieldType) =>
-                    helpers.push({
+                const addCustomField = (type: ExtraFieldType) => {
+                    const newField: ExtraFieldFormValue = {
                         type,
                         fieldName: '',
-                        content: {
-                            content: '',
-                        },
-                    });
+                        value: '',
+                    };
+
+                    return helpers.push(newField);
+                };
 
                 return (
                     <>
@@ -31,11 +35,12 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                             <FieldsetCluster>
                                 {form.values.extraFields.map(({ type }, index) => (
                                     <Field
-                                        component={ExtraFieldComponent}
                                         key={index}
+                                        component={ExtraFieldComponent}
                                         onDelete={() => helpers.remove(index)}
                                         name={`extraFields[${index}]`}
                                         type={type}
+                                        error={form.errors.extraFields?.[index] as FormikErrors<ExtraFieldFormValue>}
                                     />
                                 ))}
                             </FieldsetCluster>
