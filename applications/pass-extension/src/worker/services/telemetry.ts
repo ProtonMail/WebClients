@@ -8,6 +8,8 @@ import { withPayloadLens } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
 import { UNIX_HOUR, UNIX_MINUTE, getEpoch } from '@proton/pass/utils/time';
+import { getSettings } from '@proton/shared/lib/api/settings';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import chunk from '@proton/utils/chunk';
 import debounce from '@proton/utils/debounce';
 
@@ -30,6 +32,7 @@ const MIN_DT = ENV === 'production' ? 6 * UNIX_HOUR : UNIX_MINUTE;
 const MAX_DT = ENV === 'production' ? 12 * UNIX_HOUR : 5 * UNIX_MINUTE;
 const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 const TELEMETRY_BATCH_SIZE = 100;
+const TELEMETRY_MAX_RETRY = 2;
 
 const withUserTier = (event: TelemetryEvent): TelemetryEvent =>
     merge(event, { Dimensions: { user_tier: selectUserTier(store.getState()) } });
@@ -54,10 +57,21 @@ const resolveBundle = async (): Promise<TelemetryEventBundle> => {
     }
 };
 
+const isTelemetryEnabled = async (): Promise<boolean> => {
+    const { UserSettings } = await api<{ UserSettings: UserSettings }>(getSettings());
+    return UserSettings.Telemetry === 1;
+};
+
 /* sends all events in current bundle to the telemetry endpoint
  * and returns a boolean indicating success or failure */
-const sendBundle = async (bundle: TelemetryEventBundle): Promise<boolean> => {
+const sendBundle = async (bundle: TelemetryEventBundle): Promise<{ ok: true } | { ok: false; retry: boolean }> => {
     try {
+        /* skip bundle if we have reached the max retry count or */
+        /* if the user settings do not allow telemetry */
+        if (bundle.retryCount >= TELEMETRY_MAX_RETRY || !(await isTelemetryEnabled())) {
+            return { ok: false, retry: false };
+        }
+
         logger.info(`[Worker::Telemetry] dispatching current bundle [${bundle.events.length} event(s)]`);
 
         await Promise.all(
@@ -70,10 +84,10 @@ const sendBundle = async (bundle: TelemetryEventBundle): Promise<boolean> => {
             )
         );
 
-        return true;
+        return { ok: true };
     } catch (e) {
         logger.warn(`[Worker::Telemetry] failed to send telemetry bundle`);
-        return false;
+        return { ok: false, retry: true };
     }
 };
 
@@ -108,36 +122,21 @@ export const createTelemetryService = () => {
             /* if bundle should be sent - ping the telemetry service ASAP
              * and clear the cached bundle only on success */
             if (bundle.events.length > 0 && shouldSendBundle(bundle)) {
-                if ((await sendBundle(bundle)) || bundle.retryCount >= 1) {
+                const result = await sendBundle(bundle);
+
+                if (result.ok || !result.retry) {
                     await browserLocalStorage.removeItem('telemetry');
                     return resolve(undefined);
-                } else {
-                    bundle.retryCount += 1;
-                }
+                } else bundle.retryCount += 1;
             }
 
             /* if the bundle has not reached its sendTime or if the api
              * call failed : update bundle & set the alarm */
             await browserLocalStorage.setItem('telemetry', JSON.stringify(bundle));
             await setAlarm(bundle);
-
             return resolve(bundle);
         });
     }, 500);
-
-    const start = () => {
-        ctx.active = true;
-
-        void browser.alarms.get(TELEMETRY_ALARM_NAME).then((alarm) => {
-            logger.info(`[Worker::Telemetry] starting service`);
-            if (alarm) {
-                const when = Math.max(alarm.scheduledTime / 1000 - getEpoch(), 0);
-                logger.info(`[Worker::Telemetry] found telemetry alarm in ${when}s`);
-            } else {
-                return consumeBuffer();
-            }
-        });
-    };
 
     /* resets the service's context and both clears any registered
      * alarms and any locally stored event bundle  */
@@ -150,6 +149,25 @@ export const createTelemetryService = () => {
         ctx.buffer.length = 0;
         ctx.job = null;
         ctx.active = false;
+    };
+
+    const start = async () => {
+        try {
+            ctx.active = await isTelemetryEnabled();
+            logger.info(`[Worker::Telemetry] starting service - [enabled: ${ctx.active}]`);
+
+            void browser.alarms.get(TELEMETRY_ALARM_NAME).then((alarm) => {
+                if (alarm) {
+                    const when = Math.max(alarm.scheduledTime / 1000 - getEpoch(), 0);
+                    logger.info(`[Worker::Telemetry] found telemetry alarm in ${when}s`);
+                    if (!ctx.active) reset(); /* clear any alarms if telemetry disabled */
+                } else {
+                    return consumeBuffer();
+                }
+            });
+        } catch (_) {
+            ctx.active = false;
+        }
     };
 
     const pushEvent = async (event: TelemetryEvent): Promise<boolean> => {
