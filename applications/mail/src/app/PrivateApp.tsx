@@ -1,4 +1,4 @@
-import { LoaderPage, StandardPrivateApp } from '@proton/components/containers';
+import { FeatureCode, LoaderPage, StandardPrivateApp } from '@proton/components/containers';
 import { useApi, useDrawer } from '@proton/components/hooks';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
