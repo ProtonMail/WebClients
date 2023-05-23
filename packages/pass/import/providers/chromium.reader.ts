@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
@@ -51,7 +52,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
                             content: {
                                 username: item.username || '',
                                 password: item.password || '',
-                                urls: [url?.origin].filter(Boolean) as string[],
+                                urls: [url?.origin].filter(truthy),
                                 totpUri: '',
                             },
                             extraFields: [],
