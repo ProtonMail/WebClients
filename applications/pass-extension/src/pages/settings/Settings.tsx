@@ -93,26 +93,34 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
         return (
             <>
                 <div className="mb-8">
-                    <div className="flex w100 flex-justify-space-between flex-align-items-center">
+                    <div className="flex w100 flex-justify-space-between flex-align-items-start">
                         <div className="flex flex-align-items-start">
-                            <Avatar className="mr-2">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
+                            <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
                             <span>
-                                <span className="block text-ellipsis">{user?.DisplayName}</span>
-                                <span className="block color-weak text-sm text-ellipsis">{user?.Email}</span>
+                                <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
+                                <span className="block text-sm text-ellipsis">{user?.Email}</span>
+                                <span className="block color-weak text-sm text-italic">{plan?.DisplayName}</span>
                             </span>
                         </div>
                         <div className="flex flex-align-items-end flex-column">
-                            <span className="block text-semibold text-sm">{plan?.DisplayName}</span>
-                            <span className="block text-sm">
-                                {c('Label').t`${PASS_SHORT_APP_NAME} ${passPlan}`}{' '}
-                                {trialDaysLeft &&
-                                    `(${c('Info').ngettext(
-                                        msgid`${trialDaysLeft} day left`,
-                                        `${trialDaysLeft} days left`,
-                                        trialDaysLeft
-                                    )})`}
-                            </span>
-                            {passPlan !== UserPassPlan.PLUS && <UpgradeButton inline />}
+                            {passPlan !== UserPassPlan.PLUS && (
+                                <>
+                                    <span className="block mb-1">
+                                        {passPlan === UserPassPlan.TRIAL && c('Label').t`Trial`}
+                                        {passPlan === UserPassPlan.FREE && c('Label').t`${PASS_SHORT_APP_NAME} Free`}
+                                        <span className="color-weak text-italic text-sm">
+                                            {' '}
+                                            {trialDaysLeft &&
+                                                `(${c('Info').ngettext(
+                                                    msgid`${trialDaysLeft} day left`,
+                                                    `${trialDaysLeft} days left`,
+                                                    trialDaysLeft
+                                                )})`}
+                                        </span>
+                                    </span>
+                                    <UpgradeButton inline />
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
