@@ -10,7 +10,6 @@ import {
     useFeature,
     useGetMessageCounts,
     useGetUserKeys,
-    useNotifications,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
@@ -18,7 +17,6 @@ import {
 import {
     checkVersionedESDB,
     contentIndexingProgress,
-    esSentryReport,
     getIndexKey,
     useEncryptedSearch,
     wrappedGetOldestInfo,
@@ -30,13 +28,7 @@ import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage
 import { isFree } from '@proton/shared/lib/user/helpers';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
-import {
-    convertEventType,
-    getESFreeBlobKey,
-    getESHelpers,
-    migrate,
-    parseSearchParams,
-} from '../helpers/encryptedSearch';
+import { convertEventType, getESFreeBlobKey, getESHelpers, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import {
     ESBaseMessage,
@@ -64,7 +56,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const [welcomeFlags] = useWelcomeFlags();
     const { feature: featureES, update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
     const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
-    const { createNotification } = useNotifications();
     const { isSearch, page } = parseSearchParams(history.location);
 
     const [addresses] = useAddresses();
@@ -156,41 +147,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     return;
                 }
             }
-        }
-
-        setESMailStatus((esMailStatus) => ({
-            ...esMailStatus,
-            isMigrating: true,
-        }));
-
-        // Migrate old IDBs
-        const { success, isIndexEmpty } = await migrate(user.ID, api, getUserKeys, getMessageKeys, () =>
-            esHelpers.queryItemsMetadata(new AbortController().signal)
-        ).catch((error) => {
-            esSentryReport(`migration: ${error.message}`, error);
-            return { success: false, isIndexEmpty: false };
-        });
-
-        setESMailStatus((esMailStatus) => ({
-            ...esMailStatus,
-            isMigrating: false,
-        }));
-
-        if (!success) {
-            if (!isIndexEmpty) {
-                createNotification({
-                    text: c('Error')
-                        .t`There was a problem updating your local messages, they will be downloaded again to re-enable content search`,
-                    type: 'error',
-                });
-            }
-
-            return esLibraryFunctions
-                .esDelete()
-                .then(() => esLibraryFunctions.enableEncryptedSearch({ isRefreshed: true }))
-                .then((success) =>
-                    success ? esLibraryFunctions.enableContentSearch({ isRefreshed: true }) : undefined
-                );
         }
 
         // Enable encrypted search for all new users. For paid users only,
