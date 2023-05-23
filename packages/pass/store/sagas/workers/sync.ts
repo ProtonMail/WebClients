@@ -5,7 +5,7 @@ import type { Maybe } from '@proton/pass/types';
 import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array';
-import { invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
+import { and, invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -33,6 +33,8 @@ export enum SyncType {
 
 const isActiveVault = ({ targetType, shareId }: Share) =>
     targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
+
+const isPrimaryVault = ({ targetType, primary }: Share) => targetType === ShareType.Vault && primary;
 
 export function* synchronize(
     state: State,
@@ -91,12 +93,12 @@ export function* synchronize(
      * check the active remote shares and the local cached shares */
     const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
     const incomingShareIds = incomingShares.map(prop('shareId'));
-    const hasActiveVault = incomingShares.concat(cachedShares).some(isActiveVault);
+    const hasActivePrimaryVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isPrimaryVault));
 
     /* On first login or if the user's primary vault has been disabled
      * we need to (re-)create the primary vault share */
-    if (!hasActiveVault) {
-        logger.info(`[Saga::Sync] No vault found, creating primary vault..`);
+    if (!hasActivePrimaryVault) {
+        logger.info(`[Saga::Sync] No primary vault found, creating primary vault..`);
         incomingShares.push(
             (yield createVault({
                 content: { name: 'Personal', description: 'Personal vault', display: {} },
