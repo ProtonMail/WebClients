@@ -6,6 +6,7 @@ export * from './lib/hocs';
 export * from './lib/mockApiWithServer';
 export * from './lib/mockModals';
 export * from './lib/mockNotifications';
+export * from './lib/event-manager';
 export * from './lib/mockRandomValues';
 export * from './lib/providers';
 export * from './lib/server';
