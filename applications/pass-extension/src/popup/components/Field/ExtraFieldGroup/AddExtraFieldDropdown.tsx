@@ -3,7 +3,7 @@ import { type VFC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { DropdownProps} from '@proton/components';
+import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import type { ExtraFieldType } from '@proton/pass/types';
 
@@ -12,12 +12,9 @@ import { EXTRA_FIELD_OPTIONS } from './ExtraField';
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
-type CustomFieldsDropdownProps = {
-    onAdd: (type: ExtraFieldType) => void;
-};
+type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void };
 
-export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = (props) => {
-    const { onAdd } = props;
+export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     return (

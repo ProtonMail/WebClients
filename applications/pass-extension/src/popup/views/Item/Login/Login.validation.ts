@@ -9,7 +9,8 @@ import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
-import type { ExtraFieldGroupValues } from '../../../components/Field/ExtraFieldGroup';
+import { validateExtraFields } from '../../../components/Field/ExtraFieldGroup/ExtraField.validation';
+import type { ExtraFieldGroupValues } from '../../../components/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { type UrlGroupValues, validateUrl, validateUrls } from '../../../components/Field/UrlGroupField';
 import { type AliasFormValues, validateAliasForm } from '../Alias/Alias.validation';
 import { validateItemErrors } from '../Item/Item.validation';
@@ -58,10 +59,12 @@ const validateLoginFormBase = (values: LoginItemFormValues): FormikErrors<LoginI
 export const validateNewLoginForm = (values: NewLoginItemFormValues): FormikErrors<NewLoginItemFormValues> => {
     const errors = validateLoginFormBase(values);
     const aliasErrors = values.withAlias && validateAliasForm(values);
+    const extraFieldsErrors = validateExtraFields(values);
 
     return {
         ...errors,
         ...aliasErrors,
+        ...extraFieldsErrors,
     };
 };
 
