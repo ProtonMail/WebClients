@@ -19,6 +19,7 @@ export interface Conversation {
     NumAttachments?: number;
     ContextNumAttachments?: number;
     ExpirationTime?: number;
+    ContextExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
 }
 
@@ -27,6 +28,7 @@ export interface ConversationLabel {
     ContextNumMessages?: number;
     ContextNumUnread?: number;
     ContextTime?: number;
+    ContextExpirationTime?: number;
     ContextSize?: number;
     ContextNumAttachments?: number;
 }
