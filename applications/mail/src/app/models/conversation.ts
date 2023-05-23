@@ -19,6 +19,7 @@ export interface Conversation {
     NumAttachments?: number;
     ContextNumAttachments?: number;
     ExpirationTime?: number;
+    /** Only present in metadata call. Mot present in conversations/ID call */
     ContextExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
 }
