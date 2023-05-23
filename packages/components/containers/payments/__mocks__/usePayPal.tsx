@@ -1,4 +1,4 @@
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { OnPayResult } from '../usePayPal';
 
