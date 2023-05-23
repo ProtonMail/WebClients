@@ -18,7 +18,7 @@ export const getHolidaysCalendarsFromTimeZone = (calendars: HolidaysDirectoryCal
 
 /**
  * Get all holidays calendars with the same country code and sort them by language.
- * We might get several holiday calendars in the same country, but with different languages.
+ * We might get several holidays calendars in the same country, but with different languages.
  */
 export const getHolidaysCalendarsFromCountryCode = (
     holidayCalendars: HolidaysDirectoryCalendar[],

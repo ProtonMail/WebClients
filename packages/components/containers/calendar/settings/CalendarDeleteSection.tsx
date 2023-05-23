@@ -44,6 +44,7 @@ const getTexts = ({
     if (isHolidaysCalendar) {
         return {
             modalTitle: c('Remove calendar section title').t`Delete calendar?`,
+            // translator: A holidays calendar includes bank holidays and observances
             modalText: c('Info')
                 .t`Are you sure you want to delete this calendar? You can add the holidays calendar back later.`,
             description: c('Delete calendar section description').t`You will no longer have access to this calendar.`,

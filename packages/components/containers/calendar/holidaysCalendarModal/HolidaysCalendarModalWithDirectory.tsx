@@ -63,7 +63,7 @@ const getInitialCalendar = (
     defaultCalendar: HolidaysDirectoryCalendar | undefined,
     canPreselect: boolean
 ) => {
-    // If we have an input holiday calendar set, we want to edit it.
+    // If we have an input holidays calendar set, we want to edit it.
     // The initial selected option needs to be this one so that we can fill all modal inputs
     if (inputCalendar) {
         return inputCalendar;
@@ -94,6 +94,24 @@ const getHasAlreadyJoinedCalendar = (
     const holidaysCalendar = holidaysCalendars.find(({ ID }) => ID === CalendarID);
 
     return !!holidaysCalendar && holidaysCalendar.ID !== inputCalendar?.ID;
+};
+
+const getModalTitle = (isEdit: boolean) => {
+    if (isEdit) {
+        return c('Modal title').t`Edit calendar`;
+    }
+
+    // translator: A holidays calendar includes bank holidays and observances
+    return c('Modal title').t`Add public holidays`;
+};
+
+const getModalSubline = (isEdit: boolean) => {
+    if (isEdit) {
+        return;
+    }
+
+    // translator: A holidays calendar includes bank holidays and observances
+    return c('Modal title').t`Get a country's official public holidays calendar.`;
 };
 
 interface Props extends ModalProps {
@@ -166,7 +184,7 @@ const HolidaysCalendarModalWithDirectory = ({
     const [color, setColor] = useState(inputHolidaysCalendar?.Color || getRandomAccentColor());
     const [notifications, setNotifications] = useState<NotificationModel[]>(
         getInitialCalendarNotifications(calendarBootstrap)
-    ); // Note that we don't need to fill this state on holiday calendar edition since this field will not be displayed
+    ); // Note that we don't need to fill this state on holidays calendar edition since this field will not be displayed
 
     const canShowHint =
         suggestedCalendar && suggestedCalendar === selectedCalendar && !hasAlreadyJoinedSuggestedCalendar;
@@ -294,18 +312,19 @@ const HolidaysCalendarModalWithDirectory = ({
             return '';
         }
         if (hasAlreadyJoinedSelectedCalendar) {
+            // translator: A holidays calendar includes bank holidays and observances
             return c('Error').t`You already added this holidays calendar`;
         }
 
         return '';
     };
 
+    // translator: Hint text about the pre-selected country option in the holidays calendar modal
+    const hintText = c('Info').t`Based on your time zone`;
+
     return (
         <Modal as={Form} fullscreenOnMobile onSubmit={() => withLoading(handleSubmit())} size="large" {...rest}>
-            <ModalHeader
-                title={isEdit ? c('Modal title').t`Edit calendar` : c('Modal title').t`Add public holidays`}
-                subline={isEdit ? undefined : c('Modal title').t`Get a country's official public holidays calendar.`}
-            />
+            <ModalHeader title={getModalTitle(isEdit)} subline={getModalSubline(isEdit)} />
             <ModalContent className="holidays-calendar-modal-content">
                 <CountrySelect
                     options={filteredCalendars.map((calendar) => ({
@@ -328,10 +347,10 @@ const HolidaysCalendarModalWithDirectory = ({
                               }
                             : undefined
                     }
-                    preSelectedOptionDivider={c('holiday calendar').t`Based on your time zone`}
+                    preSelectedOptionDivider={hintText}
                     onSelectCountry={handleSelectCountry}
                     error={validator([getErrorText()])}
-                    hint={canShowHint ? c('holiday calendar').t`Based on your time zone` : undefined}
+                    hint={canShowHint ? hintText : undefined}
                 />
 
                 {selectedCalendar && languageOptions.length > 1 && (
