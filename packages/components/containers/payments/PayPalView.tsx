@@ -50,7 +50,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => 
     );
 
     return (
-        <div className="p1 border rounded bg-weak mb-4">
+        <div className="p1 border rounded bg-weak mb-4" data-testid="paypal-view">
             {paypal.loadingVerification ? <Loader /> : null}
             {!paypal.loadingVerification && type && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
                 <>
