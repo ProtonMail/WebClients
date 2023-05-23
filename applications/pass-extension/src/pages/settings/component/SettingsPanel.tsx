@@ -88,6 +88,18 @@ const getSettings = (
             },
         ],
     },
+    {
+        label: c('Label').t`Display`,
+        settings: [
+            {
+                label: c('Label').t`Load domain images`,
+                description: c('Info')
+                    .t`If disabled, ${PASS_APP_NAME} will not fetch login item favicons via our anonymized image proxy.`,
+                checked: settings.loadDomainImages,
+                onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
+            },
+        ],
+    },
 ];
 
 export const SettingsPanel: VFC = () => {
