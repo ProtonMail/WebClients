@@ -38,3 +38,7 @@ export const getAppFromPathnameSafe = (pathname: string) => {
 export const ALLOWED_SLUGS = ALLOWED_APPS.map((app) => APPS_CONFIGURATION[app].settingsSlug);
 
 export type AppSlug = (typeof ALLOWED_SLUGS)[number];
+
+export const stripSlugFromPathname = (pathname: string) => {
+    return pathname.replace(new RegExp(`/(${ALLOWED_SLUGS.join('|')})`), '');
+};
