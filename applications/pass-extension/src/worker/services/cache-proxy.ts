@@ -1,9 +1,11 @@
 import { api } from '@proton/pass/api';
 import browser from '@proton/pass/globals/browser';
+import { selectCanLoadDomainImages } from '@proton/pass/store';
 import { logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { API_URL } from '../../app/config';
+import store from '../store';
 
 const API_PROXY_KEY = 'api-proxy';
 const API_PROXY_PATH = browser.runtime.getURL(`${API_PROXY_KEY}/`);
@@ -12,6 +14,8 @@ const API_PROXY_ENDPOINTS = [API_PROXY_IMAGE_ENDPOINT];
 const API_IMAGE_FALLBACK_MAX_AGE = 86400;
 
 export const createCacheProxyService = () => {
+    const canLoadDomainImages = () => selectCanLoadDomainImages(store.getState());
+
     if (BUILD_TARGET === 'chrome') {
         /**
          * stale-while-revalidate approach :
@@ -111,9 +115,10 @@ export const createCacheProxyService = () => {
             if (evt.request.url.startsWith(API_PROXY_PATH)) {
                 const remotePath = evt.request.url.replace(API_PROXY_PATH, '');
                 if (API_PROXY_ENDPOINTS.find((allowedEndpoint) => remotePath.startsWith(allowedEndpoint))) {
-                    evt.respondWith(handleApiProxy(remotePath));
-                    return;
+                    if (remotePath.startsWith(API_PROXY_IMAGE_ENDPOINT) && !canLoadDomainImages()) return;
+                    return evt.respondWith(handleApiProxy(remotePath));
                 }
+
                 logger.debug(`[CacheProxy]: Refusing to serve non-allowed API endpoint for remote path: `, remotePath);
             }
         };
@@ -128,7 +133,11 @@ export const createCacheProxyService = () => {
             (details) => {
                 const auth = api.getAuth();
 
-                if (details.url.startsWith(`${API_URL}/${API_PROXY_IMAGE_ENDPOINT}`) && auth !== undefined) {
+                if (
+                    auth !== undefined &&
+                    canLoadDomainImages() &&
+                    details.url.startsWith(`${API_URL}/${API_PROXY_IMAGE_ENDPOINT}`)
+                ) {
                     details.requestHeaders?.push({ name: 'x-pm-uid', value: auth.UID });
                     details.requestHeaders?.push({ name: 'Authorization', value: `Bearer ${auth.AccessToken}` });
                 }
