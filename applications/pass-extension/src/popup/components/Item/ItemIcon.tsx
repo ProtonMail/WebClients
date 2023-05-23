@@ -1,7 +1,9 @@
 import { type VFC, useCallback, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components';
+import { selectCanLoadDomainImages } from '@proton/pass/store';
 import type { ItemRevisionWithOptimistic } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -16,6 +18,7 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
     className,
 }) => {
     const { data, optimistic, failed } = item;
+    const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
     const imageSize = Math.round(size * 0.6);
@@ -49,13 +52,20 @@ export const ItemIcon: VFC<{ item: ItemRevisionWithOptimistic; size: number; cla
             style={{ '--width-custom': `${size}px`, '--height-custom': `${size}px` }}
         >
             <span className="sr-only">{data.type}</span>
-            <ProxiedDomainImage
-                className={clsx('w-custom h-custom absolute-center', optimistic && 'opacity-30', failed && 'hidden')}
-                style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
-                onStatusChange={handleStatusChange}
-                status={imageStatus}
-                url={domainURL ?? ''}
-            />
+
+            {loadDomainImages && (
+                <ProxiedDomainImage
+                    className={clsx(
+                        'w-custom h-custom absolute-center',
+                        optimistic && 'opacity-30',
+                        failed && 'hidden'
+                    )}
+                    style={{ '--width-custom': `${imageSize}px`, '--height-custom': `${imageSize}px` }}
+                    onStatusChange={handleStatusChange}
+                    status={imageStatus}
+                    url={domainURL ?? ''}
+                />
+            )}
 
             {imageStatus !== ImageStatus.READY && (
                 <Icon
