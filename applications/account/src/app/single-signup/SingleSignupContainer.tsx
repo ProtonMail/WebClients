@@ -259,6 +259,7 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
             <UnAuthenticated>
                 {step === Steps.One && (
                     <Step1
+                        plan={plan}
                         vpnServersCountData={vpnServersCountData}
                         upsellShortPlan={upsellShortPlan}
                         clientType={CLIENT_TYPE}

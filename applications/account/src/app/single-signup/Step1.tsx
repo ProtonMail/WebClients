@@ -1,4 +1,5 @@
 import { Fragment, ReactElement, ReactNode, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -14,6 +15,7 @@ import {
     usePayment,
 } from '@proton/components/containers';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import {
     getCountries,
@@ -59,15 +61,15 @@ import { getCroHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { confirmEmailValidator, emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPricingFromPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { getTermsURL } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { Currency, Cycle, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
+import { getSubscriptionPrices } from '../signup/helper';
 import { SignupActionResponse, SignupCacheResult, SignupModel, SignupType } from '../signup/interfaces';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { useFlowRef } from '../useFlowRef';
@@ -79,6 +81,31 @@ import StepLabel from './StepLabel';
 import UpsellModal from './UpsellModal';
 import swissFlag from './flag.svg';
 import { getUpsellShortPlan } from './helper';
+import { OnUpdate } from './interface';
+
+const AlreadyUsedNotification = ({
+    onUpdate,
+    to,
+    onClose,
+}: {
+    onUpdate: OnUpdate;
+    to: Parameters<Link>[0]['to'];
+    onClose?: () => void;
+}) => {
+    return (
+        <>
+            {c('Info').t`Email address already used`}
+            <NotificationButton
+                as={Link}
+                to={to}
+                onClick={() => {
+                    onUpdate({ create: 'login-notification' });
+                    onClose?.();
+                }}
+            >{c('Action').t`Sign in`}</NotificationButton>
+        </>
+    );
+};
 
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
@@ -113,6 +140,7 @@ interface InputState {
 }
 
 const Step1 = ({
+    plan,
     clientType,
     onComplete,
     onUpdate,
@@ -124,11 +152,12 @@ const Step1 = ({
     hideFreePlan,
     upsellImg,
 }: {
+    plan: Plan | undefined;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
     vpnServersCountData: VPNServersCountData;
     clientType: CLIENT_TYPES;
     onComplete: (promise: SignupActionResponse) => void;
-    onUpdate: (params: any) => void;
+    onUpdate: OnUpdate;
     model: SignupModel;
     setModel: (model: Partial<SignupModel>) => void;
     productParam: ProductParam;
@@ -160,6 +189,28 @@ const Step1 = ({
 
     const currency = optimisticCurrency || model.subscriptionData.currency;
     const cycle = optimisticCycle || model.subscriptionData.cycle;
+
+    const { subscriptionData, plans, paymentMethodStatus } = model;
+    const planName = plan?.Title;
+
+    const signInTo = `/dashboard${stringifySearchParams(
+        {
+            plan: plan?.Name,
+            cycle: `${subscriptionData.cycle}`,
+            currency: subscriptionData.currency,
+        },
+        '?'
+    )}`;
+    const signIn = (
+        <Link
+            key="signin"
+            className="link link-focus text-nowrap"
+            to={signInTo}
+            onClick={() => onUpdate({ create: 'login' })}
+        >
+            {c('Link').t`Sign in`}
+        </Link>
+    );
 
     const scrollIntoEmail = (target?: 'confirm') => {
         const el = target === 'confirm' ? emailConfirmRef.current : emailRef.current;
@@ -284,7 +335,12 @@ const Step1 = ({
                         ].includes(code)
                     ) {
                         setEmailAsyncError({ email, message });
-                        createNotification({ type: 'error', text: message });
+                        createNotification({
+                            type: 'error',
+                            text: <AlreadyUsedNotification onUpdate={onUpdate} to={signInTo} />,
+                            key: 'already-used',
+                            expiration: 7000,
+                        });
                         scrollIntoEmail();
                         return;
                     }
@@ -298,10 +354,6 @@ const Step1 = ({
             handleError(error);
         }
     };
-
-    const { subscriptionData, plans, paymentMethodStatus } = model;
-    const plan = getPlanFromPlanIDs(plans, subscriptionData.planIDs);
-    const planName = plan?.Title;
 
     const paymentMethods = [
         paymentMethodStatus?.Card && PAYMENT_METHOD_TYPES.CARD,
@@ -539,8 +591,10 @@ const Step1 = ({
                             </div>
                         </div>
                         <span className="color-weak text-sm">
-                            {c('Info')
-                                .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                            {
+                                // translator: Full sentence "Already have an account? Sign in"
+                                c('Go to sign in').jt`Already have an account? ${signIn}`
+                            }
                         </span>
                     </BoxContent>
                 </Box>
