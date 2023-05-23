@@ -122,7 +122,7 @@ const CountrySelect = ({
                 } else {
                     return (
                         <Option key={generateUID('divider')} value={option.text} title={option.text} disabled>
-                            <span>{option.text}</span>
+                            <span className="text-sm">{option.text}</span>
                         </Option>
                     );
                 }
