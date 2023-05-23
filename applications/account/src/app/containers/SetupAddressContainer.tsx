@@ -23,7 +23,7 @@ import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
@@ -49,9 +49,17 @@ import SupportDropdown from '../public/SupportDropdown';
 interface From {
     type: 'settings' | 'app' | 'switch';
     app: APP_NAMES;
+    path: string;
 }
 
-const defaultSwitchResult = { type: 'switch', app: APPS.PROTONACCOUNT } as const;
+interface To {
+    type: 'settings' | 'app';
+    app: APP_NAMES;
+    path: string;
+}
+
+const defaultToResult = { type: 'app', app: APPS.PROTONMAIL, path: '/' } as const;
+const defaultFromResult = { type: 'switch', app: APPS.PROTONACCOUNT, path: '/dashboard' } as const;
 
 const getApp = (app: string) => {
     if (app === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONPASS) {
@@ -60,19 +68,39 @@ const getApp = (app: string) => {
     return getValidatedApp(app);
 };
 
-const getValidatedFrom = ({ from, type, user }: { type: string; from: string; user: User }): From => {
+const getValidatedTo = ({ to, type, path }: { type: string; to: APP_NAMES; path: string }): To => {
+    if (!to) {
+        return defaultToResult;
+    }
+    const validatedType = type === 'settings' ? 'settings' : 'app';
+    const validatedPath = path.startsWith('/') ? path : defaultToResult.path;
+    return { app: to, type: validatedType, path: validatedPath };
+};
+
+const getValidatedFrom = ({
+    from,
+    type,
+    user,
+    path,
+}: {
+    type: string;
+    from: string;
+    user: User;
+    path: string;
+}): From => {
     if (!from || from === 'switch') {
-        return defaultSwitchResult;
+        return defaultFromResult;
     }
     const validatedApp = getApp(from);
     if (!validatedApp) {
-        return defaultSwitchResult;
+        return defaultFromResult;
     }
     if (getRequiresAddressSetup(validatedApp, user)) {
-        return defaultSwitchResult;
+        return defaultFromResult;
     }
     const validatedType = type === 'settings' ? 'settings' : 'app';
-    return { app: validatedApp, type: validatedType };
+    const validatedPath = path.startsWith('/') ? path : defaultFromResult.path;
+    return { app: validatedApp, type: validatedType, path: validatedPath };
 };
 
 const SetupSupportDropdown = () => {
@@ -104,8 +132,8 @@ const SetupAddressContainer = () => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
-    const toAppRef = useRef<APP_NAMES | null>(null);
-    const fromAppRef = useRef<From>(defaultSwitchResult);
+    const toRef = useRef<To>(defaultToResult);
+    const fromRef = useRef<From>(defaultFromResult);
     const authentication = useAuthentication();
     const getUser = useGetUser();
     const [, setTheme] = useTheme();
@@ -114,7 +142,7 @@ const SetupAddressContainer = () => {
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
     const handleBack = () => {
-        const from = fromAppRef.current;
+        const from = fromRef.current;
         if (from.type === 'switch') {
             document.location.assign(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT));
             return;
@@ -122,15 +150,24 @@ const SetupAddressContainer = () => {
         let url = '';
         const localID = authentication.getLocalID();
         if (from.app === APPS.PROTONVPN_SETTINGS || from.app === APPS.PROTONPASS || from.type === 'settings') {
-            url = getAppHref(`/${getSlugFromApp(from.app)}/dashboard`, APPS.PROTONACCOUNT, localID);
+            url = getAppHref(
+                `/${getSlugFromApp(from.app)}${stripSlugFromPathname(from.path)}`,
+                APPS.PROTONACCOUNT,
+                localID
+            );
         } else {
             url = getAppHref('/', from.app, localID);
         }
         document.location.assign(url);
     };
 
-    const handleToApp = (toApp: APP_NAMES) => {
-        document.location.assign(getAppHref('/', toApp, authentication.getLocalID()));
+    const handleToApp = () => {
+        const { app, path, type } = toRef.current;
+        if (type === 'app') {
+            document.location.assign(getAppHref('/', app, authentication.getLocalID()));
+        } else {
+            document.location.assign(getAppHref(path, APPS.PROTONACCOUNT, authentication.getLocalID()));
+        }
     };
 
     useEffect(() => {
@@ -145,9 +182,11 @@ const SetupAddressContainer = () => {
 
             const searchParams = new URLSearchParams(location.search);
             const validatedToApp = getApp(searchParams.get('to') || searchParams.get('app') || '');
-            fromAppRef.current = getValidatedFrom({
+
+            fromRef.current = getValidatedFrom({
                 from: searchParams.get('from') || '',
-                type: searchParams.get('type') || '',
+                type: searchParams.get('from-type') || '',
+                path: searchParams.get('from-path') || '',
                 user,
             });
 
@@ -156,8 +195,14 @@ const SetupAddressContainer = () => {
                 return new Promise(noop);
             }
 
+            toRef.current = getValidatedTo({
+                to: validatedToApp,
+                type: searchParams.get('to-type') || '',
+                path: searchParams.get('to-path') || '',
+            });
+
             if (!getRequiresAddressSetup(validatedToApp, user)) {
-                handleToApp(validatedToApp);
+                handleToApp();
                 return new Promise(noop);
             }
 
@@ -171,7 +216,6 @@ const SetupAddressContainer = () => {
 
             // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
             stop();
-            toAppRef.current = validatedToApp;
             generateAddressRef.current = await getAddressGenerationSetup({
                 user,
                 api: silentApi,
@@ -201,8 +245,8 @@ const SetupAddressContainer = () => {
         return <AccountLoaderPage />;
     }
 
-    const toApp = toAppRef.current!;
-    const toAppName = getToAppName(toApp);
+    const to = toRef.current!;
+    const toAppName = getToAppName(to.app);
 
     const generateAddress = generateAddressRef.current;
 
@@ -250,7 +294,7 @@ const SetupAddressContainer = () => {
 
                             await preAuthKTCommit(user.ID);
 
-                            handleToApp(toApp);
+                            handleToApp();
                         } catch (e: any) {
                             errorHandler(e);
                             handleBack();
