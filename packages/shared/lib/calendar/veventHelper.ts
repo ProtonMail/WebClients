@@ -27,7 +27,8 @@ import {
     USER_ENCRYPTED_FIELDS,
     USER_SIGNED_FIELDS,
 } from './constants';
-import { generateProtonCalendarUID, hasMoreThan, wrap } from './helper';
+import { generateProtonCalendarUID, getDisplayTitle, hasMoreThan, wrap } from './helper';
+import { withMandatoryPublishFields as withVAlarmMandatoryPublishFields } from './valarmHelper';
 import { parse, serialize, toTriggerString } from './vcal';
 import { prodId } from './vcalConfig';
 import { dateTimeToProperty } from './vcalConverter';
@@ -62,16 +63,6 @@ export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventCompo
     };
 };
 
-export const withSummary = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
-    if (properties.summary) {
-        return properties;
-    }
-    return {
-        ...properties,
-        summary: { value: '' },
-    };
-};
-
 export const withDtstamp = <T>(
     properties: RequireOnly<VcalVeventComponent, 'uid' | 'component' | 'dtstart'> & T,
     timestamp?: number
@@ -84,6 +75,40 @@ export const withDtstamp = <T>(
         ...properties,
         dtstamp: dateTimeToProperty(fromUTCDate(new Date(timestampToUse)), true),
     };
+};
+
+export const withSummary = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
+    if (properties.summary) {
+        return properties;
+    }
+    return {
+        ...properties,
+        summary: { value: '' },
+    };
+};
+
+/**
+ * Helper that takes a vEvent as it could be persisted in our database and returns one that is RFC-compatible for PUBLISH method
+ *
+ * According to RFC-5546, summary field is mandatory on vEvent for PUBLISH method (https://datatracker.ietf.org/doc/html/rfc5546#section-3.2.1)
+ * We also want to add RFC-5545 mandatory fields for vAlarms that we would not have already set persisted in our database
+ *
+ * @param properties properties of the vEvent
+ * @param email email associated with the calendar containing the vevent
+ * @returns an RFC-compatible vEvent for PUBLISH method
+ */
+export const withMandatoryPublishFields = <T>(
+    properties: VcalVeventComponent & T,
+    email: string
+): VcalVeventComponent & T => {
+    const eventTitle = getDisplayTitle(properties.summary?.value);
+
+    return withSummary({
+        ...properties,
+        components: properties.components?.map((component) =>
+            withVAlarmMandatoryPublishFields(component, eventTitle, email)
+        ),
+    });
 };
 
 export const withRequiredProperties = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {

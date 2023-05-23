@@ -27,6 +27,7 @@ const getAlarmMessageText = ({ title, isAllDay, startFakeUTCDate, nowFakeUTCDate
             }
             return c('Alarm notification').t`${title} started at ${formattedHour}`;
         }
+
         if (isNextDay(startFakeUTCDate, nowFakeUTCDate)) {
             if (isAllDay) {
                 return c('Alarm notification').t`${title} started yesterday`;

@@ -3,7 +3,7 @@ import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { modelToValarmComponents } from './modelToProperties';
 
-describe('model to valarm', () => {
+describe('modelToValarmComponent', () => {
     describe('part day', () => {
         it('should transform to valarm components', () => {
             const model = {
