@@ -10,7 +10,7 @@ import type { Dropzone, FileInput } from '@proton/components/components';
 import { onlyDragFiles } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { ImportPayload, ImportReaderPayload } from '@proton/pass/import';
-import { ImportProvider, extractFileExtension, fileReader } from '@proton/pass/import';
+import { ImportProvider, ImportProviderValues, extractFileExtension, fileReader } from '@proton/pass/import';
 import type { ImportState } from '@proton/pass/store';
 import { importItemsIntent, selectLatestImport } from '@proton/pass/store';
 import { importItems } from '@proton/pass/store/actions/requests';
@@ -61,7 +61,7 @@ const createFileValidator = (allow: string[]) =>
 
 const getInitialFormValues = (): ImportFormValues => ({
     file: undefined,
-    provider: ImportProvider.BITWARDEN,
+    provider: ImportProviderValues[0],
     passphrase: '',
 });
 

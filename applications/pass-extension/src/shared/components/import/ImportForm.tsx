@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { c } from 'ttag';
 
 import { AttachedFile, Bordered, Dropzone, FileInput, Option, SelectTwo } from '@proton/components/components';
-import { ImportProvider, extractFileExtension } from '@proton/pass/import';
+import { ImportProvider, ImportProviderValues, extractFileExtension } from '@proton/pass/import';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -43,7 +43,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                 className="mb-4"
                 disabled={busy}
             >
-                {Object.values(ImportProvider).map((provider) => (
+                {ImportProviderValues.map((provider) => (
                     <Option key={provider} value={provider} title={PROVIDER_TITLE_MAP[provider]}>
                         {PROVIDER_TITLE_MAP[provider]}
                     </Option>
