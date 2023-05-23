@@ -2438,6 +2438,9 @@
       "Validation error": [
         "Validatiefout"
       ],
+      "You already added this holidays calendar": [
+        "Je hebt deze feestdagenkalender al toegevoegd"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
@@ -2759,9 +2762,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Deze aanbieding niet opnieuw weergeven"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -2779,9 +2779,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Wachtwoordbeheer"
-      ],
       "Premium Drive": [
         "Premium Drive"
       ],
@@ -2892,9 +2889,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Maak veilige inloggegevens voor uw online accounts, op al uw apparaten."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
       ],
@@ -4551,11 +4545,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Wettelijke feestdagen toevoegen"
+      ],
       "Cannot add more calendars": [
         "Kan niet meer agenda's toevoegen"
       ],
       "Edit calendar": [
         "Agenda bewerken"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Ontvang de officiële feestdagenkalender van een land."
       ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
@@ -5496,11 +5496,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Voeg de wettelijke feestdagen van uw land toe aan uw kalender."
+      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Wettelijke feestdagen zijn hier!"
       ]
     },
     "Storage": {

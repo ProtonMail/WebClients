@@ -496,6 +496,12 @@
       "Restore from trash": [
         "ごみ箱から復元"
       ],
+      "Restore this version": [
+        "このバージョンを復元"
+      ],
+      "Restore version": [
+        "バージョンの復元"
+      ],
       "Resume all": [
         "すべて再開"
       ],
@@ -2440,9 +2446,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "今後このオファーを表示しない"
-      ],
       "Got it": [
         "了解"
       ],
@@ -2983,6 +2986,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } の連絡先が見つかりました"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (復元済み)"
+      ],
       "${ doneCount } finished": [
         "完了 ${ doneCount } 件"
       ],
@@ -3499,6 +3505,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "ファイルを共有する必要がありますか？\nそれなら、ファイルを共有/保管/同期する最も安全な ${ DRIVE_APP_NAME } を使いましょう。"
+      ],
       "Network issue": [
         "ネットワークの問題"
       ],
@@ -3646,6 +3655,9 @@
       "Restore": [
         "復元"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "復元が進行中です。これは数秒かかることがあります。"
+      ],
       "Restored files ${ formattedDate }": [
         "復元されたファイル ${ formattedDate }"
       ],
@@ -3721,6 +3733,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "データのセキュリティを保証する暗号化と署名のオーバーヘッドの分、暗号化済みデータはサイズが大きくなります。"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされた可能性があります。信頼できる場合のみ開いてください。"
       ],
@@ -3738,6 +3753,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "このファイルは削除/移動/アクセス不可にされた可能性があります。ファイルのオーナーに確認してください。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
@@ -3765,6 +3783,15 @@
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "この操作により、同期デバイス ${ deviceName } が ${ DRIVE_APP_NAME } から削除されます。デバイス上のローカルファイルは影響を受けません。"
+      ],
+      "This will replace the existing file with the folder": [
+        "既存のファイルをフォルダーで置き換えます"
+      ],
+      "This will replace the existing folder with the file": [
+        "既存のフォルダーをファイルで置き換えます"
+      ],
+      "This will upload a new version of the file": [
+        "ファイルの新しいバージョンをアップロードします"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
@@ -3844,6 +3871,9 @@
       "Version is deleted": [
         "バージョンが削除されました"
       ],
+      "Version is restored": [
+        "バージョンが復元されました"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "無料ストレージが 2 倍になりました！"
       ],
@@ -3870,6 +3900,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "は${ formattedRevisionDate }のバージョンに復元されます。他のバージョンもすべて保存されたままになります。"
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "${ DRIVE_APP_NAME } ではデータはエンドツーエンド暗号化で保護されます。これを復号できるのはあなただけです。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
@@ -4155,6 +4191,9 @@
       "Download anyway": [
         "無視してダウンロード"
       ],
+      "Downloading ${ percentageValue }%": [
+        "ダウンロード中 ${ percentageValue }%"
+      ],
       "Duplicate found": [
         "重複が見つかりました"
       ],
@@ -4382,6 +4421,9 @@
       ],
       "Set recovery method": [
         "回復手段を設定"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "暗号化済みデータ検索のインデックス作成状況を表示"
       ],
       "Sign emails": [
         "メールに署名"
@@ -4865,6 +4907,9 @@
       ],
       "Set up your organization": [
         "組織のための設定"
+      ],
+      "Set up your organization testing": [
+        "組織の設定"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
@@ -5660,6 +5705,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Hm, we couldn't find that one": [
+        "その要素が見つかりませんでした"
       ],
       "Human verification": [
         "人間であることの検証"
