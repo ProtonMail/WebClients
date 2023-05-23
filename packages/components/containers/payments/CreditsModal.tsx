@@ -62,6 +62,7 @@ const CreditsModal = (props: ModalProps) => {
             },
             amountAndCurrency
         );
+
         await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
         await call();
         props.onClose?.();
@@ -78,10 +79,11 @@ const CreditsModal = (props: ModalProps) => {
     const submit =
         debouncedAmount >= MIN_CREDIT_AMOUNT ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <StyledPayPalButton paypal={paypal} amount={debouncedAmount} />
+                <StyledPayPalButton paypal={paypal} amount={debouncedAmount} data-testid="paypal-button" />
             ) : (
-                <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action')
-                    .t`Top up`}</PrimaryButton>
+                <PrimaryButton loading={loading} disabled={!canPay} type="submit" data-testid="top-up-button">{c(
+                    'Action'
+                ).t`Top up`}</PrimaryButton>
             )
         ) : null;
 
