@@ -7,6 +7,7 @@ import {
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
+    useFeature,
     useFolders,
     useLabels,
     useMailSettings,
@@ -48,7 +49,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
-    const { dropdownOpened } = getESDBStatus();
+    const { dropdownOpened, contentIndexingDone } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
     const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
 
@@ -102,7 +103,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
 
     return (
         <>
-            <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>
+            <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen && contentIndexingDone}>
                 {breakpoints.isNarrow ? (
                     <TopNavbarListItemSearchButton onClick={handleOpen} />
                 ) : (
