@@ -253,6 +253,7 @@ describe('calendar encryption', () => {
             calendarEvent: data,
             privateKeys: calendarKey,
         });
+
         const { veventComponent: decryptedVeventComponent, verificationStatus } = await readCalendarEvent(
             transformToExternal(
                 data,
