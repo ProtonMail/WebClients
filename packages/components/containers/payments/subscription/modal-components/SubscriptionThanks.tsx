@@ -62,7 +62,8 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                     </Href>
                 </div>
                 <div className="text-center pb2">
-                    <PrimaryButton fullWidth onClick={onClose}>{c('Action').t`Close`}</PrimaryButton>
+                    <PrimaryButton fullWidth onClick={onClose} data-testid="modal:close">{c('Action')
+                        .t`Close`}</PrimaryButton>
                 </div>
             </div>
         </div>
