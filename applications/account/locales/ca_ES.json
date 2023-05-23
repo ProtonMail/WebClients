@@ -1071,6 +1071,11 @@
         "Si surts ara alguns esdeveniments no podràn ser importats"
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Això desconnectarà tots els routers i clients que utilitzin aquest certificat."
+      ]
+    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "Bustia d'entrada ${ nameToDisplay }"
@@ -1252,6 +1257,9 @@
       ]
     },
     "Button": {
+      "Add link to your email footer": [
+        "Afegeix un enllaç al peu del correu electrònic"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -1276,6 +1284,11 @@
     "Calendar edit button tooltip": {
       "Edit calendar": [
         "Edita el calendari"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Baixeu un fitxer ICS amb tots els esdeveniments del calendari seleccionat."
       ]
     },
     "Calendar import section description": {
@@ -1327,6 +1340,11 @@
         "Creeu un enllaç al vostre calendari i compartiu-lo amb qualsevol persona fora de ${ BRAND_NAME }. Sou l'únic/a que podeu afegir o esborrar esdeveniments."
       ]
     },
+    "Calendar settings private share description": {
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Compartiu el calendari amb altres usuaris de ${ BRAND_NAME }. Habiliteu la col·laboració permetent-los afegir i editar esdeveniments al calendari. Podeu modificar els permisos d'un usuari en qualsevol moment."
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "Compartir calendari"
@@ -1347,6 +1365,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit event details": [
+        "Edita els detalls de l'esdeveniment"
+      ],
       "See all event details": [
         "Veure tots els detalls de l'esdeveniment"
       ]
@@ -1362,6 +1383,11 @@
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
         "No s'ha pogut recuperar la informació de contacte per ${ address }."
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "S'han canviat els permisos per a ${ email }"
       ]
     },
     "Calendar status": {
@@ -2637,6 +2663,9 @@
       ]
     },
     "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "S'eliminaran tots els esdeveniments d'aquest calendari."
+      ],
       "You will no longer have access to this calendar.": [
         "Ja no tindreu accés a aquest calendari."
       ]
@@ -2649,6 +2678,9 @@
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Esborra automàticament els missatges de més de 30 dies de la paperera i el correu brossa. Gaudeix d'aquest i d'altres avantatges quan actualitzis."
+      ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Felicitats! Heu guanyat el màxim de ${ rewardsLimit } mesos lliures de ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
@@ -2681,6 +2713,12 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquegeu carpetes i etiquetes il·limitades i més característiques prèmium quan milloreu el vostre pla."
       ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Icona de venda addicional que conté el logotip de ${ BRAND_NAME } seguit d'un signe més"
+      ],
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        "Podeu continuar convidant amics, però no podreu guanyar més crèdits"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ]
@@ -2709,6 +2747,24 @@
       ],
       "${ name } deletion failed": [
         "No s'ha pogut eliminar ${ name }."
+      ],
+      "${ name } failed to move to spam list": [
+        "No s'ha pogut moure ${ name } a la llista de correu brossa"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "No s'ha pogut moure ${ name } a la llista de no brossa"
+      ],
+      "${ name } failed to move to your block list": [
+        "No s'ha pogut moure ${ name } a la vostra llista de bloquejats"
+      ],
+      "${ name } moved to not spam list": [
+        "S'ha mogut ${ name } a la llista de correu brossa"
+      ],
+      "${ name } moved to spam list": [
+        "S'ha mogut ${ name } a la llista de correu brossa"
+      ],
+      "${ name } moved to your block list": [
+        "S'ha mogut ${ name } a la vostra llista de bloquejats"
       ],
       "${ name } successfully deleted": [
         "${ name }\" eliminat"
@@ -2808,6 +2864,24 @@
       ],
       "${ name } deletion failed": [
         "No s'ha pogut eliminar ${ name }."
+      ],
+      "${ name } failed to move to spam list": [
+        "No s'ha pogut moure ${ name } a la llista de correu brossa"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "No s'ha pogut moure ${ name } a la llista de no brossa"
+      ],
+      "${ name } failed to move to your block list": [
+        "No s'ha pogut moure ${ name } a la vostra llista de bloquejats"
+      ],
+      "${ name } moved to not spam list": [
+        "S'ha mogut ${ name } a la llista de no brossa"
+      ],
+      "${ name } moved to spam list": [
+        "S'ha mogut ${ name } a la llista de correu brossa"
+      ],
+      "${ name } moved to your block list": [
+        "S'ha mogut ${ name } a la vostra llista de bloquejats"
       ],
       "${ name } successfully deleted": [
         "${ name } eliminat"
@@ -3524,6 +3598,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "No s'ha trobat el certificat ${ name } o ja s'ha revocat"
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "El nom i els cognoms no es poden desmarcar a la vegada"
       ]
@@ -3657,9 +3734,6 @@
       "Create a new user": [
         "Crea un usuari nou"
       ],
-      "Don't show this offer again": [
-        "No tornis a mostrar aquesta oferta"
-      ],
       "Got it": [
         "Entesos"
       ],
@@ -3671,6 +3745,9 @@
       ],
       "Keep current plan": [
         "Manté el pla actual"
+      ],
+      "Set up family group": [
+        "Configura el grup familiar"
       ],
       "Switch plans": [
         "Canvia de pla"
@@ -3686,9 +3763,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Gestor de contrasenyes"
-      ],
       "Premium Drive": [
         "Versió prèmium de Drive"
       ],
@@ -3734,6 +3808,9 @@
       ],
       "Leave family plan": [
         "Deixa el pla familiar"
+      ],
+      "Leave visionary plan": [
+        "Deixa el Pla Visionary"
       ],
       "Manage addresses.": [
         "Gestionar adreces."
@@ -3786,11 +3863,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Heu estat convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Ha arribat al límit de 10 invitacions acceptades en 6 mesos."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Heu arribat al límit de 10 invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
       ],
       "You have successfully joined the Family plan": [
         "Us heu unit correctament al pla familiar"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Cal configurar un domini personalitzat abans d'afegir diversos usuaris."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un nou usuari."
@@ -4004,6 +4087,9 @@
       "Disable 2FA via security key?": [
         "Desactivar 2FA amb clau de seguretat?"
       ],
+      "Name your security key": [
+        "Anomeneu la vostra clau de seguretat"
+      ],
       "Register your security key": [
         "Registreu la vostra clau de seguretat"
       ],
@@ -4115,6 +4201,12 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Els correus electrònics de les adreces que vós o ${ BRAND_NAME } hàgiu marcat com a correu brossa aniran a la vostra carpeta de correu brossa. Si voleu permetre correus electrònics d'una d'aquestes adreces, marqueu-la com a \"no brossa\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "No es lliuraran els correus electrònics de les adreces bloquejades."
+      ],
       "Search list": [
         "Llista de cerca"
       ]
@@ -4138,6 +4230,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correus electrònics al mes)"
+      ],
+      "(during your first month)": [
+        "(durant el vostre primer mes)"
       ]
     },
     "Gmail forwarding": {
@@ -7082,6 +7177,9 @@
       "Auto show remote images": [
         "Mostrar les imatges remotes automàticament"
       ],
+      "Auto-delete unwanted messages": [
+        "Elimina automàticament els missatges no desitjats"
+      ],
       "Auto-detect primary time zone": [
         "Detectar automàticament el fus horari primari"
       ],
@@ -7090,6 +7188,9 @@
       ],
       "Auto-unsubscribe": [
         "Anul·lar la subscripció automàticament"
+      ],
+      "Awarded": [
+        "Premiat"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -7136,6 +7237,9 @@
       "Category": [
         "Categoria"
       ],
+      "Choose a name for the generated certificate file": [
+        "Trieu un nom per al fitxer de certificat generat"
+      ],
       "Code": [
         "Codi"
       ],
@@ -7165,6 +7269,9 @@
       ],
       "Conditions": [
         "Condicions"
+      ],
+      "Config to connect to ${ serverName }": [
+        "Configura per connectar a ${ serverName }"
       ],
       "Confirm link URLs": [
         "Confirma els enllaços URL"
@@ -7256,6 +7363,9 @@
       "Description": [
         "Descripció"
       ],
+      "Device/certificate name": [
+        "Nom del dispositiu/certificat"
+      ],
       "Digits": [
         "Dígits"
       ],
@@ -7273,6 +7383,9 @@
       ],
       "Don't ask again": [
         "No tornis a preguntar"
+      ],
+      "Don't keep versions": [
+        "No mantinguis les versions"
       ],
       "Duration": [
         "Durada"
@@ -7388,6 +7501,9 @@
       "Invite via email": [
         "Convidar per correu"
       ],
+      "Keep me signed in": [
+        "Manté la sessió iniciada"
+      ],
       "Keep messages in Sent/Drafts": [
         "Mantenir els missatges a Enviats/Esborranys"
       ],
@@ -7420,6 +7536,9 @@
       ],
       "Last month only": [
         "Només el darrer mes"
+      ],
+      "Level for NetShield blocker filtering": [
+        "Nivell de filtratge del bloquejador NetShield"
       ],
       "Link label": [
         "Etiqueta d'enllaç"
@@ -7794,6 +7913,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ],
+      "Trusted device recovery": [
+        "Recuperació amb un dispositiu de confiança"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7941,6 +8063,9 @@
       "Add a gift code": [
         "Afegir un codi regal"
       ],
+      "Apps and extensions": [
+        "Aplicacions i extensions"
+      ],
       "Calendars": [
         "Calendaris"
       ],
@@ -7967,6 +8092,9 @@
       ],
       "General": [
         "General"
+      ],
+      "How to unlock data": [
+        "Com desbloquejar les dades"
       ],
       "Import/export": [
         "Importa/exporta"
@@ -8021,6 +8149,9 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "Why set recovery methods?": [
+        "Per què establir mètodes de recuperació?"
       ]
     },
     "Loading info": {
@@ -8103,6 +8234,12 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "Totes les accions de filtre s'aplicaran a tots els missatges del vostre compte ${ MAIL_APP_NAME }. No s'enviaran correus electrònics de resposta automàtica."
+      ],
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per configurar adreces de correu electrònic personalitzades (p. ex., you@yourcompany.com). El nostre assistent us guiarà a través del procés."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
       ]
@@ -8374,6 +8511,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Obté ${ BRAND_NAME } gratuïtament"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Obteniu ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Obtenir ${ planName }"
       ],
@@ -8470,20 +8610,32 @@
         "${ n } connexió VPN per usuari",
         "${ n } connexions VPN per usuari"
       ],
+      "${ size } attachment size": [
+        "${ size } en arxius adjunts"
+      ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
       "${ size } storage per user": [
         "${ size } emmagatzematge per usuari"
       ],
+      "1 free VPN connection in total": [
+        "1 connexió VPN gratuïta en total"
+      ],
       "1 user": [
         "1 usuari"
+      ],
+      "99.95% SLA": [
+        "SLA del 99,5%"
       ],
       "Ad-blocker & malware protection": [
         "Bloquejador d'anuncis i publicitat, i protecció contra programari maliciós"
       ],
       "Admin console": [
         "Consola d'administració"
+      ],
+      "Advanced sharing security": [
+        "Seguretat avançada de compartició"
       ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -8494,8 +8646,14 @@
       "Available on all platforms": [
         "Disponible a totes les plataformes"
       ],
+      "Calendar sharing": [
+        "Compartició de calendari"
+      ],
       "Catch-all": [
         "Capturar-ho tot"
+      ],
+      "Centralized billing": [
+        "Facturació centralitzada"
       ],
       "Contact groups": [
         "Grups de contactes"
@@ -8503,20 +8661,32 @@
       "Contact groups management": [
         "Gestió de grups de contactes"
       ],
-      "Custom domain for email aliases": [
-        "Domini personalitzat per a àlies de correu electrònic"
-      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
+      "Data breach monitoring": [
+        "Monitoratge de vulneració de dades"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitoratge de vulneració de dades (pròximament)"
+      ],
       "DNS leak prevention": [
         "Protecció contra fuites de DNS"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Editors de documents (documents, fulls de càlcul i presentacions)"
       ],
       "Double hop": [
         "Double hop"
       ],
       "Easy Switch import assistant": [
         "Assistent d'importació Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "Compliment de la llei HIPAA"
       ],
       "Encrypted contact details": [
         "Detalls de contacte xifrats"
@@ -8548,6 +8718,9 @@
       "High-speed streaming": [
         "Transmissió d'alta velocitat"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "VPN suïssa d'alta velocitat que protegeix la vostra privacitat"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN d'alta velocitat a ${ n } dispositiu",
         "VPN d'alta velocitat a ${ n } dispositius"
@@ -8555,20 +8728,26 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrat"
+      ],
       "Kill switch/always-on VPN": [
         "Kill switch /VPN sempre activa"
       ],
       "Limited support": [
         "Suport limitat"
       ],
-      "Multiple forwarding mailboxes": [
-        "Diverses bústies de reenviament"
+      "Multiple admin roles": [
+        "Diferents rols d'administració"
       ],
       "No-logs policy": [
         "Política de no registres"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
+      ],
+      "Phone support (6+ users)": [
+        "Assistència telefònica (compte de 6 o més usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -8604,6 +8783,9 @@
       "Share files and folders via link": [
         "Compartir fitxers i carpetes mitjançant un enllaç"
       ],
+      "Sign in as user": [
+        "Inicia la sessió com un usuari"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android i Windows)"
       ],
@@ -8637,11 +8819,11 @@
       "Unlimited labels": [
         "Etiquetes il·limitades"
       ],
+      "Unlimited logins and notes": [
+        "Nombre il·limitat d'inicis de sessió i de notes"
+      ],
       "Unlimited messages per day": [
         "Missatges il·limitats diaris"
-      ],
-      "Unlimited passwords and notes": [
-        "Nombre il·limitat de contrasenyes i de notes"
       ],
       "Unlimited volume/bandwidth": [
         "Sense límit d'amplada de banda/volum"
@@ -8658,8 +8840,23 @@
       "Up to 15 email addresses": [
         "Fins a 15 adreces de correu electrònic"
       ],
+      "Up to 5 forwarding mailboxes": [
+        "Fins a 5 bústies de reenviament"
+      ],
       "Up to 500 GB of storage": [
         "Fins a 500 GB d'emmagatzematge"
+      ],
+      "User credential management": [
+        "Gestió de credencials d'usuari"
+      ],
+      "User session management": [
+        "Gestió de sessions d'usuari"
+      ],
+      "Vault and Item sharing": [
+        "Ús compartit de caixes fortes i elements"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Ús compartit de caixes fortes i elements (pròximament)"
       ]
     },
     "new_plans: feature info": {
@@ -8679,6 +8876,21 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Feu de la privacitat la vostra opció per defecte per a còpia de seguretat, emmagatzematge, compartició i recuperació de fitxers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el vostre compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Milloreu al paquet empresarial amb accés a tots els serveis prèmium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Milloreu al paquet de privacitat definitiu i accediu a tots els serveis prèmium ${ BRAND_NAME }."
+      ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
@@ -8739,6 +8951,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Milloreu a ${ planName }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: title": {
@@ -8756,6 +8971,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
+      ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Creeu ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
         "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
@@ -8791,15 +9009,33 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } d'emmagatzematge total"
+      ],
       "10 email addresses/aliases": [
         "10 adreces de correu/àlies"
       ],
       "Access advanced VPN features": [
         "Accedir a funcionalitats de VPN avançades"
       ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Afegiu més personalització amb 15 adreces de correu electrònic i suport per a 3 dominis de correu personalitzats"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "Augmenteu l'espai d'emmagatzematge a ${ businessStorage } per usuari"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
+      ],
       "Create up to ${ MAX_CALENDARS_PAID } calendar": [
         "Crea fins a ${ MAX_CALENDARS_PAID } calendari",
         "Crea fins a ${ MAX_CALENDARS_PAID } calendaris"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Tot en${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Aconseguiu 5 adreces de correu electrònic addicionals per usuari"
@@ -8860,6 +9096,11 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Us heu unit a ${ calendarName } (${ senderEmail })"
+      ]
+    },
+    "Notification success": {
+      "Event defaults updated": [
+        "S'han actualitzat els valors predeterminats dels esdeveniments"
       ]
     },
     "Notification time input": {
@@ -9131,6 +9372,14 @@
         "Combinar amb el calendari"
       ]
     },
+    "Option protection mode": {
+      "Load content via proxy (recommended)": [
+        "Carrega el contingut a través del servidor intermediari (recomanat)"
+      ],
+      "Load content via proxy and store as attachments": [
+        "Carrega el contingut a través del servidor intermediari i emmagatzema com a adjunts"
+      ]
+    },
     "Organization capacity error": {
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "El vostre pla inclou un màxim de ${ availableAddresses } adreça més.",
@@ -9170,6 +9419,11 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ]
+    },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Creeu un calendari per estar al dia de la planificació mentre manteniu les dades segures."
       ]
     },
     "PGP key warning": {
@@ -9352,11 +9606,20 @@
       "Email address has been verified.": [
         "L'adreça de correu electrònic s'ha verificat."
       ],
+      "Email address not yet verified.": [
+        "L'adreça de correu electrònic encara no s'ha verificat."
+      ],
       "sign in": [
         "iniciar la sessió"
       ],
+      "Verification email sent to ${ email.Value }": [
+        "Correu electrònic de verificació enviat a ${ email.Value }"
+      ],
       "Verify now": [
         "Verificar ara"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Verifiqueu ara aquesta adreça de correu electrònic: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Verificar l'adreça electrònica de recuperació?"
@@ -9364,8 +9627,14 @@
       "Verify with email": [
         "Verifica amb correu electrònic"
       ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verificar la vostra adreça de correu electrònic augmenta la seguretat del vostre compte i permet opcions addicionals per a la recuperació."
+      ],
       "You can safely close this tab.": [
         "Podeu tancar aquesta pestanya amb seguretat."
+      ],
+      "Your recovery email has been successfully removed.": [
+        "El vostre correu electrònic de recuperació s'ha suprimit correctament."
       ],
       "Your recovery email has been successfully verified.": [
         "El vostre correu electrònic de recuperació s'ha verificat."
@@ -9389,6 +9658,9 @@
       "Phone number has been verified.": [
         "El número de telèfon s'ha verificat."
       ],
+      "Phone number not yet verified.": [
+        "El número de telèfon encara no s'ha verificat."
+      ],
       "Verify by SMS": [
         "Verifiqueu per SMS"
       ],
@@ -9397,6 +9669,12 @@
       ],
       "Verify recovery phone?": [
         "Verificar el telèfon de recuperació?"
+      ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifiqueu ara aquest número de telèfon de recuperació: ${ phone.Value }"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificar el vostre número de telèfon augmenta la seguretat del vostre compte i permet opcions addicionals per a la recuperació."
       ]
     },
     "Remark about a key type option": {
@@ -9407,7 +9685,18 @@
         "Estat de l'art"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "En anul·lar la subscripció, ja no tindràs accés a aquest calendari. Tots els esdeveniments d'aquest calendari s'eliminaran del vostre compte, però romandran a l'enllaç públic original."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Ja no tindreu accés a aquest calendari."
+      ]
+    },
     "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Si abandoneu aquest calendari, haureu de demanar permís al propietari per tornar a unir-vos-hi."
+      ],
       "This calendar will be removed from your account.": [
         "Aquest calendari s'eliminarà del vostre compte."
       ]
@@ -9562,6 +9851,9 @@
       ]
     },
     "Signup label": {
+      "Confirm email address": [
+        "Confirma l'adreça de correu electrònic"
+      ],
       "Display name": [
         "Nom a mostrar"
       ],
@@ -9888,6 +10180,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Afegiu calendaris públics, externs, o compartits utilitzant una URL."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Afegiu calendaris públics, externs o compartits."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9965,8 +10260,20 @@
       "Got it": [
         "D'acord"
       ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Inicieu la sessió al vostre compte de Play Store i després premeu ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestioneu la vostra subscripció en ${ subscriptionManager }"
+      ],
       "Subscriptions": [
         "Subscripcions"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "El vostre pla es va comprar mitjançant una aplicació d'Android. Per tal de fer canvis al pla o actualitzar els detalls del pagament, haureu d'anar a la Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "El vostre pla es va comprar mitjançant una aplicació iOS. Per a fer canvis al pla o actualitzar els detalls del pagament, haureu d'anar a l'Apple App Store."
       ]
     },
     "Subscription price": {
@@ -10202,6 +10509,18 @@
       "Address enabled": [
         "Adreça habilitada"
       ],
+      "Certificate ${ name } revoked": [
+        "S'ha revocat el certificat ${ name }"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "S'ha ampliat el certificat fins a ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "S'ha creat la configuració \"${ name }\". Tingueu en compte que la clau privada no s'emmagatzema i no es tornarà a mostrar. Hauríeu de copiar o descarregar aquesta configuració."
+      ],
+      "Creating config file for ${ serverName }": [
+        "S'està creant el fitxer de configuració per a ${ serverName }"
+      ],
       "Filter removed": [
         "Filtre suprimit"
       ],
@@ -10371,6 +10690,9 @@
       "Action": [
         "Acció"
       ],
+      "Activate account and generate keys": [
+        "Activa el compte i genera les claus"
+      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
@@ -10529,6 +10851,9 @@
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
+      ],
+      "Couldn’t create accounts": [
+        "No s'han pogut crear els comptes"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crea ${ selectedUserIds.length } usuari",
@@ -10753,6 +11078,9 @@
       ],
       "How does it work?": [
         "Com funciona?"
+      ],
+      "How to refer a friend and get credits": [
+        "Com fer referència a un amic i obtenir crèdits"
       ],
       "Human verification": [
         "Verificació humana"
@@ -11013,6 +11341,9 @@
       "Set organization password": [
         "Estableix la contrasenya de l'organització"
       ],
+      "Set up forwarding": [
+        "Configura el reenviament"
+      ],
       "Set up two-factor authentication": [
         "Configura l'autenticació de dos factors"
       ],
@@ -11039,6 +11370,9 @@
       ],
       "Signed in successfully!": [
         "Heu iniciat la sessió correctament!"
+      ],
+      "Signed in to member account": [
+        "S'ha iniciat la sessió al compte de membre"
       ],
       "SMTP tokens": [
         "Tokens SMTP"
@@ -11168,6 +11502,9 @@
       "Your recovery status": [
         "El seu estat de recuperació"
       ],
+      "Your SMTP token": [
+        "El vostre token SMTP"
+      ],
       "Your subscriptions": [
         "Les vostres subscripcions"
       ],
@@ -11280,6 +11617,9 @@
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
       ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Elimina els missatges de paperera i correu brossa després de 30 dies. Activant l'eliminació automàtica es dona als missatges que ja estan a la paperera/correu brossa una data d'eliminació basada en la data en què s'hi han mogut."
+      ],
       "Each imported email will have this label": [
         "Tots els correus electrònics importats tindran aquesta etiqueta"
       ],
@@ -11316,6 +11656,12 @@
       "Set the default layout for your Inbox.": [
         "Establiu el disseny per defecte de la vostra safata d'entrada."
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        "Estableix el peu de pàgina següent als correus que envieu: ${ signature } L'enllaç apunta al vostre enllaç de referència. El peu de pàgina apareixerà sota la vostra signatura. Podeu personalitzar la vostra signatura en qualsevol moment a les preferències."
+      ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Mostra la imatge de cada remitent a la llista de missatges. Les inicials del remitent es mostraran si no hi ha disponible una fotografia."
+      ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Les signatures produïdes per aquesta clau es consideren invàlides i aquesta clau no es pot utilitzar per al xifratge"
       ],
@@ -11324,6 +11670,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "El nou cicle de subscripció comença el ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Aquesta adreça s'ha desactivat"
@@ -11340,6 +11689,9 @@
       "This key is encrypted with an old password": [
         "Aquesta clau està xifrada amb una contrasenya antiga"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Aquesta clau l'utilitza ${ MAIL_APP_NAME } per xifrar les dades dels vostres contactes"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
       ],
@@ -11351,6 +11703,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Quan cliqueu a un enllaç, aquesta funció anti-phishing us demanarà confirmar l'URL de la pàgina web."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Quan moveu un correu electrònic a correu brossa, automàticament se us cancel·larà la subscripció a les llistes de correu del remitent."
       ],
       "You have locally decrypted this key": [
         "Has desxifrat aquesta clau localment"
@@ -11416,6 +11771,11 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositiu a la vegada a la VPN",
         "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositius a la vegada a la VPN"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Milloreu a un pla de pagament de ${ MAIL_SHORT_APP_NAME } per compartir el vostre calendari."
       ]
     },
     "User referee invited via email": {
@@ -11490,6 +11850,9 @@
       "Are you sure you want to delete the phone number?": [
         "Confirmes que vols eliminar el número de telèfon?"
       ],
+      "Are you sure you want to delete this address?": [
+        "Segur que voleu eliminar aquesta adreça?"
+      ],
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la seva importació?"
       ],
@@ -11529,8 +11892,14 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "El dispositiu o servei que utilitza aquest token ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Això suprimirà tots els missatges, carpetes i etiquetes creades durant la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
@@ -11547,8 +11916,17 @@
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."
       ],
+      "You will not see this import record in the list any more.": [
+        "Ja no veureu aquest registre d'importació a la llista."
+      ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "El vostre fitxer de recuperació està obsolet. No pot recuperar dades noves si torneu a restablir el compte."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "La vostra frase de recuperació està obsoleta. No pot recuperar dades noves si torneu a restablir el compte."
       ]
     },
     "Warning for domain modal": {

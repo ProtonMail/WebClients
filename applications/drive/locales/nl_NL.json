@@ -2456,9 +2456,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Deze aanbieding niet opnieuw weergeven"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -2476,9 +2473,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Wachtwoordbeheer"
-      ],
       "Premium Drive": [
         "Premium Drive"
       ],
@@ -2589,9 +2583,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Maak veilige inloggegevens voor uw online accounts, op al uw apparaten."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
       ],
@@ -3164,6 +3155,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Weet u zeker dat u definitief wilt verwijderen"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Weet u zeker dat u \"${ itemName }\" permanent wilt verwijderen uit prullenbak?"
       ],
@@ -3415,6 +3409,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
+      ],
+      "from the version history?": [
+        "van de versie geschiedenis?"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Maak kennis met ${ DRIVE_APP_NAME } en verdien uw 500 MB opslagbonus! Onderneem vandaag nog actie."
@@ -3849,6 +3846,12 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
       ],
+      "This will replace the existing file with the folder": [
+        "Dit zal het bestaande bestand vervangen door de map"
+      ],
+      "This will replace the existing folder with the file": [
+        "Dit zal de bestaande map vervangen door het bestand"
+      ],
       "This will upload a new version of the file": [
         "Dit zal een nieuwe versie van het bestand uploaden."
       ],
@@ -3959,6 +3962,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
         "Met ${ DRIVE_APP_NAME }, is uw data beschermd met eind-tot-eind versleuteling. Enkel u kan het ontsleutelen."
@@ -4480,6 +4486,9 @@
       ],
       "Set recovery method": [
         "Herstelmethode instellen"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Toon indexeringsvoortgang van Versleuteld Zoeken"
       ],
       "Sign emails": [
         "E-mails ondertekenen"

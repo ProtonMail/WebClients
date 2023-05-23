@@ -167,6 +167,9 @@
       "Fit to window": [
         "Adatta alla finestra"
       ],
+      "Get ${ discountPercentage } off with 24 months": [
+        "Ottieni uno sconto del ${ discountPercentage } con 24 mesi"
+      ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
       ],
@@ -1652,9 +1655,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Non mostrare più quest'offerta"
-      ],
       "Got it": [
         "OK"
       ],
@@ -1675,9 +1675,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Password manager"
-      ],
       "Premium Drive": [
         "Drive premium"
       ],
@@ -1819,9 +1816,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Crea dei dettagli di login sicuri per i tuoi account online, su tutti i tuoi dispositivi."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
       ],
@@ -2145,6 +2139,9 @@
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
       ],
+      "Any ${ twoFa } method on your account will be disabled.": [
+        "Qualsiasi metodo di ${ twoFa } sul tuo account verrà disattivato."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
       ],
@@ -2159,6 +2156,9 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Abbonamento Base, Plus o Visionary richiesto"
+      ],
+      "Be sure to copy your password and store it somewhere safe.": [
+        "Assicurati di copiare la tua password e di conservarla in un luogo sicuro."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -2289,6 +2289,9 @@
       "expires ${ expirationDate }": [
         "scade il ${ expirationDate }"
       ],
+      "For choosing ${ product }": [
+        "Per aver scelto ${ product }"
+      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Per Visa, MasterCard e Discover, le 3 cifre sul retro della carta. Per American Express, le 4 cifre sulla parte anteriore della carta."
       ],
@@ -2301,11 +2304,17 @@
       "Get ${ upsellPlanName }": [
         "Scegli ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Ottieni un indirizzo ${ BRAND_NAME } per utilizzare tutti i servizi ${ BRAND_NAME_TWO } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Ottieni un indirizzo ${ BRAND_NAME }"
       ],
       "here": [
         "qui"
+      ],
+      "If it’s not right for you, we’ll refund you.": [
+        "Se non fa per te, ti rimborseremo."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
@@ -2414,6 +2423,9 @@
       ],
       "old password": [
         "vecchia password"
+      ],
+      "Once you reset your password:": [
+        "Una volta che reimposti la tua password:"
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Un account per tutti i servizi ${ BRAND_NAME }."
@@ -2548,6 +2560,9 @@
       "Thank you": [
         "Grazie"
       ],
+      "The ${ planName } plan includes:": [
+        "Il piano ${ planName } include:"
+      ],
       "The securest way to browse, stream, and be online.": [
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
       ],
@@ -2584,6 +2599,12 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Questa procedura guidata abiliterà l'autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a due fattori renderà il tuo account ${ BRAND_NAME_TWO } molto più sicuro e per questo ti raccomandiamo di attivarla."
+      ],
+      "To ${ planName }": [
+        "Su ${ planName }"
+      ],
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
       ],
@@ -2616,6 +2637,9 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
+      ],
+      "Try ${ upsellPlanName } risk free": [
+        "Prova ${ upsellPlanName } senza rischi"
       ],
       "two-factor authentication (2FA)": [
         "autenticazione a due fattori (2FA)"
@@ -2731,6 +2755,9 @@
       "Why?": [
         "Perché?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi ${ BRAND_NAME_TWO }."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
       ],
@@ -2813,6 +2840,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
       ],
+      "Your ${ BRAND_NAME } password": [
+        "La tua password di ${ BRAND_NAME }"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
       ],
@@ -2830,6 +2860,15 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
+        "I tuoi messaggi, calendari o contatti esistenti saranno bloccati. Per recuperare questi dati, avrai bisogno della tua ${ oldPassword }."
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "I tuoi messaggi, calendari o contatti esistenti saranno bloccati. Per recuperare questi dati, avrai bisogno della tua frase di recupero o la tua ${ oldPassword }."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Le tue informazioni sono al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -3398,6 +3437,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Ottieni ${ BRAND_NAME } gratis"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Ottieni ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Ottieni ${ planName }"
       ],
@@ -3486,6 +3528,10 @@
         "${ n } cartella ed etichetta",
         "${ n } cartelle ed etichette"
       ],
+      "${ n } forwarding mailbox": [
+        "${ n } casella email d'inoltro",
+        "${ n } caselle email d'inoltro"
+      ],
       "${ n } Hide My Email alias": [
         "${ n } alias Hide My Email",
         "${ n } alias Hide My Email"
@@ -3528,6 +3574,9 @@
       "99.95% SLA": [
         "SLA del 99,95%"
       ],
+      "Ad-blocker & malware protection": [
+        "Ad-blocker e protezione da malware"
+      ],
       "Admin console": [
         "Console di amministratore"
       ],
@@ -3557,6 +3606,12 @@
       ],
       "Custom email domains": [
         "Domini email personalizzati"
+      ],
+      "Data breach monitoring": [
+        "Monitoraggio di violazioni di dati"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitoraggio di violazioni di dati (in arrivo)"
       ],
       "DNS leak prevention": [
         "Prevenzione perdite DNS"
@@ -3588,11 +3643,20 @@
       "Fast P2P/BitTorrent downloads": [
         "Scaricamenti P2P/BitTorrent veloci"
       ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Funzioni gratuite da ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Free VPN on a single device": [
         "VPN gratuita su un solo dispositivo"
       ],
+      "Fully refundable for 30 days": [
+        "Completamente rimborsabile per 30 giorni"
+      ],
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
+      ],
+      "High-speed streaming": [
+        "Streaming ad alta velocità"
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "VPN Svizzera ad alta velocità che protegge la tua privacy."
@@ -3631,6 +3695,13 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
+      "Priority support & live chat": [
+        "Supporto prioritario e chat dal vivo"
+      ],
+      "Protect ${ n } device at a time": [
+        "Proteggi ${ n } dispositivo alla volta",
+        "Proteggi ${ n } dispositivi alla volta"
+      ],
       "Router support": [
         "Assistenza router"
       ],
@@ -3654,9 +3725,6 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
-      ],
-      "Strong E2E encryption": [
-        "Crittografia E2E forte"
       ],
       "Team management": [
         "Gestione del team"
@@ -3685,6 +3753,9 @@
       "Unlimited labels": [
         "Etichette illimitate"
       ],
+      "Unlimited logins and notes": [
+        "Login e note illimitati"
+      ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
       ],
@@ -3700,11 +3771,20 @@
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
       ],
+      "Up to 5 forwarding mailboxes": [
+        "Fino a 5 caselle email d'inoltro"
+      ],
       "User credential management": [
         "Gestione delle credenziali utente"
       ],
       "User session management": [
         "Gestione della sessione utente"
+      ],
+      "Vault and Item sharing": [
+        "Condivisione di casseforti ed elementi"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "Condivisione di casseforti ed elementi (in arrivo)"
       ]
     },
     "new_plans: heading": {
@@ -3740,6 +3820,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
+      "For next-level password management and identity protection.": [
+        "Per una gestione password e protezione dell'identità di livello superiore."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Se elimini il tuo account, perdi tutti i vantaggi del piano ${ visionary } e non sarà più disponibile se crei un nuovo account."
       ],
@@ -3749,6 +3832,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se passi a un piano diverso, perdi tutti i vantaggi del piano ${ visionary } e non potrai più tornare a ${ visionary }."
       ],
+      "Most popular": [
+        "Più popolare"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Il nostro piano ${ visionary } non è più disponibile per i nuovi abbonati perché è un piano speciale per utenti originali ${ BRAND_NAME } con funzioni e vantaggi speciali."
       ],
@@ -3757,6 +3843,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "Suite di privacy e sicurezza per le aziende, con tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Proteggi la privacy della tua famiglia con tutti i servizi ${ BRAND_NAME } combinati."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Archiviazione cloud sicura che ti consente di archiviare, sincronizzare e condividere file in modo semplice e sicuro."
@@ -3905,6 +3994,9 @@
         "Crea fino a ${ n } calendario o aggiungi calendari di amici, familiari, colleghi e organizzazioni",
         "Crea fino a ${ n } calendari o aggiungi calendari di amici, familiari, colleghi e organizzazioni"
       ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Crea fino a ${ n } indirizzi email/alias per tutta la famiglia. Usali per le tue identità online, per esempio AbbonamentiFamiglia@${ domain } per gli abbonamenti online."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
@@ -3932,17 +4024,26 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Il supporto IMAP è limitato all'uso di applicazioni desktop (ad esempio, Outlook, Apple Mail, Thunderbird) tramite ${ MAIL_APP_NAME } Bridge. Le integrazioni IMAP basate sul cloud non sono attualmente supportate."
       ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantieni privati i tuoi piani e quelli della tu famiglia con un calendario cifrato"
+      ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Ti mantiene protetto bloccando tutte le connessioni di rete quando sei inaspettatamente disconnesso dal nostro server VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi. La condivisione delle casseforti con amici e familiari è in fase di realizzazione."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gestisci il tuo abbonamento, compresa la personalizzazione del tuo piano. I metodi di pagamento accettati sono carta di credito, PayPal, criptovaluta e bonifico bancario."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nei giorni lavorativi, ricevi assistenza dal team di assistenza clienti ${ BRAND_NAME } entro 24 ore dalle richieste"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Una connessione VPN permette a un dispositivo di connettersi a ${ BRAND_NAME } VPN in qualsiasi momento. Ad esempio, per collegare un telefono e un computer portatile a ${ BRAND_NAME_TWO } VPN allo stesso tempo, sono necessarie due connessioni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
@@ -3967,6 +4068,9 @@
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Proteggi ogni dispositivo connesso alla tua rete WiFi. È anche utile se hai dispositivi che non supportano direttamente le impostazioni VPN."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Proteggi la tua famiglia da siti web dannosi e accedi alla nostra VPN ad alta velocità per guardare i tuoi contenuti preferiti"
       ],
       "Quickly set up out-of-office messages": [
         "Imposta rapidamente i messaggi \"non sono in ufficio\""
@@ -4015,6 +4119,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Indirizzi email unici che proteggono la tua identità online al volo e ti permettono di controllare cosa raggiunge la tua posta in arrivo. Da SimpleLogin da ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
@@ -4615,8 +4722,20 @@
       "Got it": [
         "Ho capito"
       ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Accedi al tuo account Apple nell'App Store e premi ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Accedi al tuo account Play Store e premi ${ subscriptions }."
+      ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestisci il tuo abbonamento su ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "L'abbonamento è gestito da ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "L'abbonamento dell'ID utente ${ userId } è stato effettuato attraverso un acquisto in-app. Per gestire l'abbonamento l'utente deve navigare nella sezione abbonamenti del loro account ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Abbonamenti"
@@ -5246,6 +5365,11 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
+      ]
+    },
+    "VPN signup": {
+      "Swiss flag": [
+        "Bandiera svizzera"
       ]
     },
     "Warning": {

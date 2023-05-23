@@ -1663,9 +1663,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Больше не показывать"
-      ],
       "Got it": [
         "ОК"
       ],
@@ -1686,9 +1683,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Менеджер паролей"
-      ],
       "Premium Drive": [
         "Платная версия Drive"
       ],
@@ -1830,9 +1824,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Создайте безопасные данные для входа в свои онлайн-аккаунты на всех ваших устройствах."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
       ],
@@ -2339,6 +2330,9 @@
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Получите адрес ${ BRAND_NAME }, чтобы пользоваться всеми услугами ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Получить свой адрес ${ BRAND_NAME }"
       ],
@@ -2573,6 +2567,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
+      "Step ${ step }": [
+        "Шаг ${ step }",
+        "Шага ${ step }",
+        "Шагов ${ step }",
+        "Шагов ${ step }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
@@ -2626,6 +2626,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Этот мастер включит двухфакторную аутентификацию (2FA) для вашей учетной записи ${ BRAND_NAME }. Двухфакторная аутентификация сделает ваш аккаунт ${ BRAND_NAME_TWO } более безопасным, поэтому мы рекомендуем включить ее."
       ],
       "To ${ planName }": [
         "На ${ planName }"
@@ -2779,6 +2782,9 @@
       ],
       "Why?": [
         "Почему?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "С зашифрованным адресом ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME_TWO }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -3469,6 +3475,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Получить ${ BRAND_NAME } бесплатно"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Перейти на тариф ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Получить ${ planName }"
       ],
@@ -3667,12 +3676,6 @@
       "Contact groups management": [
         "Управление группами контактов"
       ],
-      "Custom domain for email aliases": [
-        "Пользовательский домен для псевдонимов электронной почты"
-      ],
-      "Custom domains for email aliases": [
-        "Пользовательские домены для псевдонимов электронной почты"
-      ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
@@ -3751,9 +3754,6 @@
       "Multiple admin roles": [
         "Несколько должностей администраторов"
       ],
-      "Multiple forwarding mailboxes": [
-        "Несколько почтовых ящиков для пересылки"
-      ],
       "No-logs policy": [
         "Политика отсутствия журналов активности"
       ],
@@ -3802,9 +3802,6 @@
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
-      "Strong E2E encryption": [
-        "Надежное сквозное шифрование"
-      ],
       "Team management": [
         "Управление командой"
       ],
@@ -3834,12 +3831,6 @@
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
-      ],
-      "Unlimited passwords and notes": [
-        "Неограниченное число паролей и заметок"
-      ],
-      "Unlimited vaults": [
-        "Неограниченное число хранилищ"
       ],
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
@@ -3910,6 +3901,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Если вы перейдете на другой тариф, то потеряете все преимущества тарифа ${ visionary } и больше не сможете вернуться к ${ visionary }."
+      ],
+      "Most popular": [
+        "Самые популярные"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тариф ${ visionary } больше не доступен для новых подписчиков, поскольку это специальный тариф для первоначальных пользователей ${ BRAND_NAME } с особыми возможностями и преимуществами."
@@ -4121,6 +4115,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "В рабочие дни получайте помощь от Службы Поддержки Клиентов ${ BRAND_NAME } в течение 24 часов после поступления запроса"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Одно подключение к VPN позволяет одному устройству подключаться к ${ BRAND_NAME } VPN за раз. Например, чтобы одновременно подключить к ${ BRAND_NAME_TWO } VPN телефон и ноутбук, необходимо два подключения к VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
@@ -5484,6 +5481,12 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } стране",
+        "${ numberOfServers } в более чем ${ numberOfCountries } странах",
+        "${ numberOfServers } в более чем ${ numberOfCountries } странах",
+        "${ numberOfServers } в более чем ${ numberOfCountries } странах"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } стране",

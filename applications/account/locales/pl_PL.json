@@ -3796,9 +3796,6 @@
       "Create a new user": [
         "Utwórz nowego użytkownika"
       ],
-      "Don't show this offer again": [
-        "Nie pokazuj tej oferty ponownie"
-      ],
       "Got it": [
         "Ok"
       ],
@@ -3828,9 +3825,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Menadżer haseł"
-      ],
       "Premium Drive": [
         "Usługa Drive w wersji premium"
       ],
@@ -3931,11 +3925,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Dołącz do organizacji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Osiągnięto limit 10 zaakceptowanych zaproszeń w ciągu 6 miesięcy."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Osiągnięto limit 10 zaakceptowanych zaproszeń w ciągu 6 miesięcy. Ten przycisk będziesz mógł ponownie kliknąć, kiedy pojawi się możliwość zaproszenia dodatkowych użytkowników."
       ],
       "You have successfully joined the Family plan": [
         "Dołączono do planu rodzinnego"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Musisz skonfigurować niestandardową domenę przed dodaniem użytkowników."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Musisz skonfigurować niestandardową domenę przed utworzeniem nowego użytkownika."
@@ -4080,9 +4080,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Twórz bezpieczne dane logowania dla kont online, na wszystkich urządzeniach."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
@@ -5851,7 +5848,7 @@
         "Ładowanie..."
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Dzienniki obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME_TWO }."
+        "Logi obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME_TWO }."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
@@ -7411,7 +7408,7 @@
         "Automatycznie pokazuj zdalne obrazy"
       ],
       "Auto-delete unwanted messages": [
-        "Automatycznie usuwaj niechciane wiadomości"
+        "Automatyczne usuwanie niechcianych wiadomości"
       ],
       "Auto-detect primary time zone": [
         "Automatyczne wykrywanie głównej strefy czasowej"
@@ -8954,12 +8951,6 @@
       "Contact groups management": [
         "Zarządzanie grupami kontaktów"
       ],
-      "Custom domain for email aliases": [
-        "Niestandardowa domena dla aliasów"
-      ],
-      "Custom domains for email aliases": [
-        "Niestandardowe domeny dla aliasów"
-      ],
       "Custom email domains": [
         "Niestandardowe domeny"
       ],
@@ -9041,9 +9032,6 @@
       "Multiple admin roles": [
         "Wiele ról administratora"
       ],
-      "Multiple forwarding mailboxes": [
-        "Wiele przekierowujących skrzynek pocztowych"
-      ],
       "No-logs policy": [
         "Polityka braku przechowywania logów"
       ],
@@ -9098,9 +9086,6 @@
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
       ],
-      "Strong E2E encryption": [
-        "Silne szyfrowanie E2E"
-      ],
       "Team management": [
         "Zarządzanie zespołem"
       ],
@@ -9128,14 +9113,11 @@
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
       ],
+      "Unlimited logins and notes": [
+        "Nieograniczona liczba danych logowania i notatek"
+      ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
-      ],
-      "Unlimited passwords and notes": [
-        "Nieograniczona liczba haseł i notatek"
-      ],
-      "Unlimited vaults": [
-        "Nieograniczona liczba sejfów"
       ],
       "Unlimited volume/bandwidth": [
         "Nielimitowana przepustowość"
@@ -9151,6 +9133,9 @@
       ],
       "Up to 15 email addresses": [
         "Do 15 adresów e-mail"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "Do 5 przekierowujących skrzynek pocztowych"
       ],
       "Up to 500 GB of storage": [
         "Do 500 GB przestrzeni dyskowej"
