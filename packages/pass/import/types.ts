@@ -12,6 +12,8 @@ export enum ImportProvider {
     DASHLANE = 'dashlane',
 }
 
+export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) => a.localeCompare(b));
+
 export type ImportReaderPayload = {
     file: File;
     provider: ImportProvider;
