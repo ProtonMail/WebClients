@@ -38,7 +38,7 @@ import { readCalendarEvent, readSessionKeys } from '../deserialize';
 import { getTimezonedFrequencyString } from '../recurrence/getFrequencyString';
 import { fromRruleString } from '../vcal';
 import { getDateProperty } from '../vcalConverter';
-import { withSummary } from '../veventHelper';
+import { withMandatoryPublishFields } from '../veventHelper';
 
 export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {
     const allEventSignatures = [...event.SharedEvents, ...event.CalendarEvents, ...event.AttendeesEvents].flatMap(
@@ -108,6 +108,7 @@ const getDecryptionErrorType = async (event: CalendarEvent, keys: Key[]) => {
 
 const decryptEvent = async ({
     event,
+    calendarEmail,
     calendarSettings,
     defaultTzid,
     weekStartsOn,
@@ -116,6 +117,7 @@ const decryptEvent = async ({
     getCalendarKeys,
 }: {
     event: CalendarEvent;
+    calendarEmail: string;
     calendarSettings: CalendarSettings;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
@@ -138,6 +140,7 @@ const decryptEvent = async ({
 
         const { SharedEvents, CalendarEvents, AttendeesEvents, Attendees, PersonalEvents, Notifications, FullDay } =
             event;
+
         const { veventComponent } = await readCalendarEvent({
             event: {
                 SharedEvents: withNormalizedAuthors(SharedEvents),
@@ -155,8 +158,7 @@ const decryptEvent = async ({
             encryptingAddressID: getIsAutoAddedInvite(event) ? event.AddressID : undefined,
         });
 
-        // SUMMARY is mandatory in a PUBLISH ics
-        return withSupportedSequence(withSummary(veventComponent));
+        return withSupportedSequence(withMandatoryPublishFields(veventComponent, calendarEmail));
     } catch (error: any) {
         const inactiveKeys = addresses.flatMap(({ Keys }) => Keys.filter(({ Active }) => !Active));
         return getError({
@@ -241,6 +243,7 @@ export const processInBatches = async ({
             exportableEvents.map((event) =>
                 decryptEvent({
                     event,
+                    calendarEmail: calendar.Email,
                     calendarSettings,
                     defaultTzid,
                     weekStartsOn,

@@ -111,7 +111,9 @@ const modelToAttendeeProperties = ({ attendees }: EventModel) => {
 };
 
 export const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }: EventModel) =>
-    dedupeNotifications(isAllDay ? fullDayNotifications : partDayNotifications).map(modelToValarmComponent);
+    dedupeNotifications(isAllDay ? fullDayNotifications : partDayNotifications).map((notification) =>
+        modelToValarmComponent(notification)
+    );
 
 export const modelToVeventComponent = (model: EventModel) => {
     const dateProperties = modelToDateProperties(model);

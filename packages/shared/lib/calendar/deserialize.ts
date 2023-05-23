@@ -246,10 +246,10 @@ export const readCalendarEvent = async ({
         FullDay,
     },
     publicKeysMap = {},
+    addresses = [],
     sharedSessionKey,
     calendarSessionKey,
     calendarSettings,
-    addresses,
     encryptingAddressID,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
@@ -280,6 +280,7 @@ export const readCalendarEvent = async ({
         { PersonalEvents, Notifications, FullDay },
         calendarSettings
     );
+
     const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
         if (!event) {
             return acc;
