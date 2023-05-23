@@ -19,6 +19,7 @@ import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
+import { ExtraFieldGroup } from '../../../components/Field/ExtraFieldGroup';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { PasswordField } from '../../../components/Field/PasswordField';
@@ -60,6 +61,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
         aliasPrefix: '',
         aliasSuffix: undefined,
         mailboxes: [],
+        extraFields: [],
     };
 
     const form = useFormik<EditLoginItemFormValues>({
@@ -280,12 +282,14 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                 <Field
                                     name="note"
                                     label={c('Label').t`Note`}
-                                    placeholder={c('Placeholder').t`Enter a note...`}
+                                    placeholder={c('Placeholder').t`Add note`}
                                     component={TextAreaField}
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                 />
                             </FieldsetCluster>
+
+                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

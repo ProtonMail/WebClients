@@ -1,0 +1,54 @@
+import { type VFC } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
+import type { DropdownProps} from '@proton/components';
+import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import type { ExtraFieldType } from '@proton/pass/types';
+
+import { DropdownMenuButton } from '../../Dropdown/DropdownMenuButton';
+import { EXTRA_FIELD_OPTIONS } from './ExtraField';
+
+const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
+
+type CustomFieldsDropdownProps = {
+    onAdd: (type: ExtraFieldType) => void;
+};
+
+export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = (props) => {
+    const { onAdd } = props;
+    const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+
+    return (
+        <>
+            <Button
+                pill
+                className="flex flex-align-items-center mb-2"
+                color="norm"
+                onClick={toggle}
+                ref={anchorRef}
+                shape="ghost"
+            >
+                <Icon className="mr-2" name="plus" />
+                <span className="line-height-1">{c('Action').t`Add more`}</span>
+            </Button>
+            <Dropdown
+                anchorRef={anchorRef}
+                isOpen={isOpen}
+                onClose={close}
+                originalPlacement="top-start"
+                size={DROPDOWN_SIZE}
+            >
+                <DropdownMenu>
+                    {Object.entries(EXTRA_FIELD_OPTIONS).map(([type, { icon, label }]) => (
+                        <DropdownMenuButton key={type} onClick={() => onAdd(type as ExtraFieldType)} size="small">
+                            <Icon className="mr-2 color-weak" name={icon} />
+                            {label}
+                        </DropdownMenuButton>
+                    ))}
+                </DropdownMenu>
+            </Dropdown>
+        </>
+    );
+};
