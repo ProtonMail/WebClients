@@ -53,7 +53,7 @@ const HolidaysCalendarModal = ({ calendar, holidaysCalendars, showNotification =
             }
         };
 
-        run();
+        void run();
     }, []);
 
     if (error) {
