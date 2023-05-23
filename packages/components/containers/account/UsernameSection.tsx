@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { ButtonLike, Card, CircleLoader, Href } from '@proton/atoms';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
     APPS,
     APP_NAMES,
@@ -15,6 +17,7 @@ import {
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserType } from '@proton/shared/lib/interfaces';
 
@@ -33,6 +36,7 @@ interface Props {
 const UsernameSection = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
+    const location = useLocation();
     const [addresses, loadingAddresses] = useAddresses();
     const [tmpAddress, setTmpAddress] = useState<Address>();
     const [modalProps, setModalOpen, renderModal] = useModalState();
@@ -40,6 +44,8 @@ const UsernameSection = ({ app }: Props) => {
     const primaryAddress = addresses?.find(getIsAddressEnabled);
 
     const BRAND_NAME_TWO = BRAND_NAME;
+
+    const fromPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
 
     return (
         <>
@@ -55,7 +61,7 @@ const UsernameSection = ({ app }: Props) => {
                         <ButtonLike
                             as={AppLink}
                             toApp={APPS.PROTONACCOUNT}
-                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&type=settings`}
+                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
                             color="norm"
                         >
                             {c('Info').t`Get my ${BRAND_NAME} address`}

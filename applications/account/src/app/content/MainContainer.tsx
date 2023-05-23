@@ -30,7 +30,9 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
@@ -208,7 +210,8 @@ const MainContainer = () => {
     })();
 
     if (getRequiresAddressSetup(app, user)) {
-        return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}`} />;
+        const toPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
+        return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
     }
 
     return (
