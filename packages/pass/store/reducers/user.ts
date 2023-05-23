@@ -1,34 +1,35 @@
 import type { Reducer } from 'redux';
 
+import type { Feature } from '@proton/components/containers';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
+import type { PassFeature } from '@proton/pass/types/api/features';
 import { fullMerge, merge, objectDelete, partialMerge } from '@proton/pass/utils/object';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
-import { bootSuccess, serverEvent, setUserPlan } from '../actions';
+import { bootSuccess, serverEvent, setUserFeatures, setUserPlan } from '../actions';
 
 export type AddressState = { [addressId: string]: Address };
+export type UserFeatureState = Partial<Record<PassFeature, Feature>> & { requestedAt: number };
 
 export type UserState = {
     eventId: MaybeNull<string>;
     user: MaybeNull<User>;
     addresses: AddressState;
     plan: MaybeNull<PassPlanResponse>;
+    features: MaybeNull<UserFeatureState>;
 };
 
-const reducer: Reducer<UserState> = (state = { user: null, addresses: {}, eventId: null, plan: null }, action) => {
-    if (setUserPlan.match(action)) {
-        return partialMerge(state, {
-            plan: action.payload,
-        });
-    }
+const initialState: UserState = { user: null, addresses: {}, eventId: null, plan: null, features: null };
 
+const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (bootSuccess.match(action)) {
         return fullMerge(state, {
             user: action.payload.user,
             addresses: action.payload.addresses,
             eventId: action.payload.eventId,
             plan: action.payload.plan,
+            features: action.payload.features,
         });
     }
 
@@ -45,6 +46,9 @@ const reducer: Reducer<UserState> = (state = { user: null, addresses: {}, eventI
             ),
         };
     }
+
+    if (setUserPlan.match(action)) return partialMerge(state, { plan: action.payload });
+    if (setUserFeatures.match(action)) return partialMerge(state, { features: action.payload });
 
     return state;
 };

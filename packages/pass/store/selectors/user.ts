@@ -1,5 +1,6 @@
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PlanType } from '@proton/pass/types';
+import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
 import { type Address, UserType } from '@proton/shared/lib/interfaces';
@@ -41,3 +42,8 @@ export const selectAddress =
         addresses[addressId];
 
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
+
+export const selectUserFeature =
+    <T extends any>(feature: PassFeature) =>
+    ({ user: { features } }: State): MaybeNull<T> =>
+        (features?.[feature]?.Value as T) ?? null;
