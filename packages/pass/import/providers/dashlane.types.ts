@@ -9,3 +9,8 @@ export type DashlaneLoginItem = {
     category: Maybe<string>;
     otpSecret: Maybe<string>;
 };
+
+export type DashlaneNoteItem = {
+    title: Maybe<string>;
+    note: Maybe<string>;
+};
