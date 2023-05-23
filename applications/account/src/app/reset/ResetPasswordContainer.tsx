@@ -13,7 +13,7 @@ import {
     useErrorHandler,
     useFeature,
     useLocalState,
-    useMyLocation,
+    useMyCountry,
     useNotifications,
     useSearchParamsEffect,
 } from '@proton/components';
@@ -84,8 +84,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
 
-    const [myLocation] = useMyLocation();
-    const defaultCountry = myLocation?.Country?.toUpperCase();
+    const [defaultCountry] = useMyCountry();
 
     const createFlow = useFlowRef();
 

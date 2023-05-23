@@ -16,7 +16,7 @@ import {
     useFeature,
     useLoading,
     useLocalState,
-    useMyLocation,
+    useMyCountry,
     useVPNServersCount,
 } from '@proton/components/hooks';
 import metrics from '@proton/metrics';
@@ -161,7 +161,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             ...config,
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
-    const [myLocation] = useMyLocation();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
     const multipleUpsellExperiment = useExperiment(ExperimentCode.MultipleUpsell);
@@ -344,7 +343,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         throw new Error('Missing dependencies');
     }
 
-    const defaultCountry = myLocation?.Country?.toUpperCase();
+    const [defaultCountry] = useMyCountry();
 
     const handleChangeCurrency = async (currency: Currency) => {
         const checkResult = await getSubscriptionPrices(
