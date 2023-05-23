@@ -14,6 +14,11 @@ const getMyLocationResponse = (api: Api) => {
     return api<MyLocationResponse>(getLocation()).catch(noop);
 };
 
+/**
+ * @deprecated Don't use VPN location API outside VPN context.
+ *             To get country, use useMyCountry() instead.
+ *             For other purpose, get dedicated API route from your BE team.
+ */
 const useMyLocation = (): [MyLocationResponse | undefined, boolean, Error] => {
     const api = useApi();
     const cache = useCache();
