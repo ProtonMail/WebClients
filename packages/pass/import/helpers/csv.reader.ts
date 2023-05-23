@@ -10,8 +10,10 @@ export type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignor
 export const readCSV = async <T extends Record<string, any>>(
     data: string,
     expectedHeaders: (keyof T)[],
-    options?: { onErrors: (errors: Papa.ParseError[]) => void }
+    options?: { onErrors?: (errors: Papa.ParseError[]) => void; throwOnEmpty?: boolean }
 ): Promise<CSVReaderResult<T>> => {
+    const throwOnEmpty = options?.throwOnEmpty ?? true;
+
     try {
         return await new Promise<CSVReaderResult<T>>((resolve, reject) => {
             Papa.parse<T>(data, {
@@ -23,10 +25,10 @@ export const readCSV = async <T extends Record<string, any>>(
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
                         logger.debug('[Importer::ReadCSV]', errorDetails);
-                        options?.onErrors(errors);
+                        options?.onErrors?.(errors);
                     }
 
-                    if (data.length === 0) return reject(c('Error').t`Empty CSV file`);
+                    if (throwOnEmpty && data.length === 0) return reject(c('Error').t`Empty CSV file`);
 
                     const { items, ignored, missed } = data.reduce<{
                         items: T[];
