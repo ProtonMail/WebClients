@@ -122,6 +122,12 @@ export interface MessageImages {
     images: MessageImage[];
 }
 
+export interface MessageUTMTracker {
+    originalURL: string;
+    cleanedURL: string;
+    removed: { key: string; value: string }[];
+}
+
 export interface MessageDecryption {
     /**
      * Decrypted message body content
@@ -283,6 +289,11 @@ export interface MessageState {
      * All data relative to remote and embedded images present in the message
      */
     messageImages?: MessageImages;
+
+    /**
+     * All data relative to links containing UTM trackers in the message
+     */
+    messageUTMTrackers?: MessageUTMTracker[];
 
     /**
      * Drafts specifics flags
