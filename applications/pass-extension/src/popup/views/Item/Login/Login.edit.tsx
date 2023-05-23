@@ -19,7 +19,7 @@ import { deriveAliasPrefix } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
-import { ExtraFieldGroup } from '../../../components/Field/ExtraFieldGroup';
+import { ExtraFieldGroup } from '../../../components/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { PasswordField } from '../../../components/Field/PasswordField';
