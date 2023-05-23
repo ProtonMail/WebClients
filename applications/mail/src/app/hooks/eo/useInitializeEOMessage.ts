@@ -8,6 +8,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
+import noop from '@proton/utils/noop';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
@@ -113,13 +114,10 @@ export const useInitializeEOMessage = () => {
                       base64Cache,
                       eoDefaultMailSettings,
                       handleEOLoadEmbeddedImages,
-                      (imagesToLoad) => {
-                          console.log(imagesToLoad);
-                      },
-                      (imagesToLoad) => {
-                          console.log(imagesToLoad);
-                      },
-                      handleEOLoadRemoteImages
+                      noop,
+                      noop,
+                      handleEOLoadRemoteImages,
+                      noop
                   );
 
             if (!isPlainText({ MIMEType })) {

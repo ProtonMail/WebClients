@@ -8,6 +8,7 @@ import {
     MessageImage,
     MessageRemoteImage,
     MessageState,
+    MessageUTMTracker,
 } from '../../logic/messages/messagesTypes';
 import { transformBase } from './transformBase';
 import { transformEmbedded } from './transformEmbedded';
@@ -36,13 +37,14 @@ export const prepareHtml = async (
     onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>,
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
-    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
+    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
 
     transformBase(document);
 
-    transformLinks(document);
+    transformLinks(document, onCleanUTMTrackers);
 
     const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
         { ...message, messageDocument: { document } },

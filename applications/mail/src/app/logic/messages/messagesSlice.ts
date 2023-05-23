@@ -37,6 +37,7 @@ const messagesSlice = createSlice({
         builder.addCase(msgReadAction.removeDarkStyle, msgReadReducer.removeDarkStyle);
         builder.addCase(msgReadAction.documentInitializePending, msgReadReducer.documentInitializePending);
         builder.addCase(msgReadAction.documentInitializeFulfilled, msgReadReducer.documentInitializeFulfilled);
+        builder.addCase(msgReadAction.cleanUTMTrackers, msgReadReducer.cleanUTMTrackers);
 
         builder.addCase(msgImageAction.loadEmbedded.fulfilled, msgImageReducer.loadEmbeddedFulfilled);
         builder.addCase(msgImageAction.loadRemoteProxy.pending, msgImageReducer.loadRemotePending);
