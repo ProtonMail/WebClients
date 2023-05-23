@@ -16,13 +16,13 @@ export const readCSV = async <T extends Record<string, any>>(
         return await new Promise<CSVReaderResult<T>>((resolve, reject) => {
             Papa.parse<T>(data, {
                 header: true,
-                transformHeader: (h) => h.trim().toLocaleLowerCase(),
+                transformHeader: (h) => h.trim(),
                 skipEmptyLines: true,
                 delimiter: ',',
                 complete: ({ data, errors }) => {
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
-                        logger.debug('[Importer::LastPass]', errorDetails);
+                        logger.debug('[Importer::ReadCSV]', errorDetails);
                         options?.onErrors(errors);
                     }
 
