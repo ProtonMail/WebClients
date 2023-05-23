@@ -2,12 +2,12 @@ import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
 import { parse } from '../../lib/calendar/vcal';
-import { getVeventParts } from '../../lib/calendar/veventHelper';
+import { getVeventParts, withMandatoryPublishFields } from '../../lib/calendar/veventHelper';
 import { toCRLF } from '../../lib/helpers/string';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
-describe('veventHelper', () => {
+describe('getVeventParts()', () => {
     it('should split shared parts', () => {
         const y = parse(`BEGIN:VEVENT
 UID:abc
@@ -126,5 +126,179 @@ END:VCALENDAR`),
             attendeesPart: { [CLEAR_TEXT]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
             notificationsPart: [{ Type: 1, Trigger: '-PT15H' }],
         });
+    });
+});
+
+describe('withMandatoryPublishFields()', () => {
+    it('should add description for display alarms, and description, summary and attendee for email ones', () => {
+        const vevent = parse(`BEGIN:VEVENT
+UID:abc
+DTSTART;TZID=Europe/Zurich:20200311T100000
+DTSTAMP:20200308T134254Z
+STATUS:TENTATIVE
+COMMENT:my comment
+DESCRIPTION:bca
+TRANSP:TRANSPARENT
+SUMMARY:dcf
+LOCATION:asd
+SEQUENCE:1
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:PT15H
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1W2D
+ACTION:EMAIL
+END:VALARM
+END:VEVENT
+`) as VcalVeventComponent;
+        const expected: VcalVeventComponent = {
+            component: 'vevent',
+            uid: { value: 'abc' },
+            dtstart: {
+                value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtstamp: {
+                value: { year: 2020, month: 3, day: 8, hours: 13, minutes: 42, seconds: 54, isUTC: true },
+            },
+            status: { value: 'TENTATIVE' },
+            comment: [{ value: 'my comment' }],
+            description: { value: 'bca' },
+            transp: { value: 'TRANSPARENT' },
+            summary: { value: 'dcf' },
+            location: { value: 'asd' },
+            sequence: { value: 1 },
+            components: [
+                {
+                    component: 'valarm',
+                    action: {
+                        value: 'DISPLAY',
+                    },
+                    trigger: {
+                        value: {
+                            days: 0,
+                            hours: 0,
+                            isNegative: true,
+                            minutes: 15,
+                            seconds: 0,
+                            weeks: 0,
+                        },
+                    },
+                    description: { value: 'dcf' },
+                },
+                {
+                    component: 'valarm',
+                    action: {
+                        value: 'DISPLAY',
+                    },
+                    trigger: {
+                        value: {
+                            days: 0,
+                            hours: 15,
+                            isNegative: false,
+                            minutes: 0,
+                            seconds: 0,
+                            weeks: 0,
+                        },
+                    },
+                    description: { value: 'dcf' },
+                },
+                {
+                    component: 'valarm',
+                    action: {
+                        value: 'EMAIL',
+                    },
+                    trigger: {
+                        value: {
+                            days: 2,
+                            hours: 0,
+                            isNegative: true,
+                            minutes: 0,
+                            seconds: 0,
+                            weeks: 1,
+                        },
+                    },
+                    summary: { value: 'dcf' },
+                    description: { value: 'dcf' },
+                    attendee: [{ value: 'mailto:protonlovestesting@proton.me' }],
+                },
+            ],
+        };
+
+        expect(withMandatoryPublishFields(vevent, 'protonlovestesting@proton.me')).toEqual(expected);
+    });
+
+    it('should add a null summary if the event has no title', () => {
+        const vevent = parse(`BEGIN:VEVENT
+UID:abc
+DTSTART;TZID=Europe/Zurich:20200311T100000
+DTSTAMP:20200308T134254Z
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1W2D
+ACTION:EMAIL
+END:VALARM
+END:VEVENT
+`) as VcalVeventComponent;
+        const expected: VcalVeventComponent = {
+            component: 'vevent',
+            uid: { value: 'abc' },
+            dtstart: {
+                value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtstamp: {
+                value: { year: 2020, month: 3, day: 8, hours: 13, minutes: 42, seconds: 54, isUTC: true },
+            },
+            summary: { value: '' },
+            components: [
+                {
+                    component: 'valarm',
+                    action: {
+                        value: 'DISPLAY',
+                    },
+                    trigger: {
+                        value: {
+                            days: 0,
+                            hours: 0,
+                            isNegative: true,
+                            minutes: 15,
+                            seconds: 0,
+                            weeks: 0,
+                        },
+                    },
+                    description: { value: '(no title)' },
+                },
+                {
+                    component: 'valarm',
+                    action: {
+                        value: 'EMAIL',
+                    },
+                    trigger: {
+                        value: {
+                            days: 2,
+                            hours: 0,
+                            isNegative: true,
+                            minutes: 0,
+                            seconds: 0,
+                            weeks: 1,
+                        },
+                    },
+                    summary: { value: '(no title)' },
+                    description: { value: '(no title)' },
+                    attendee: [{ value: 'mailto:protonlovestesting@proton.me' }],
+                },
+            ],
+        };
+
+        expect(withMandatoryPublishFields(vevent, 'protonlovestesting@proton.me')).toEqual(expected);
     });
 });
