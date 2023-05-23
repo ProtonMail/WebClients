@@ -24,7 +24,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         logger.info(`[Saga::Boot] ${cache !== undefined ? 'Booting from cache' : 'Cache not found during boot'}`);
 
-        const { user, plan, addresses, eventId }: RequiredNonNull<UserState> = yield getUserData(state);
+        const { user, plan, addresses, eventId, features }: RequiredNonNull<UserState> = yield getUserData(state);
 
         yield call(PassCrypto.hydrate, {
             user,
@@ -38,7 +38,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         /* trigger a partial synchronization */
         const sync = (yield synchronize(state, SyncType.PARTIAL, options)) as SynchronizationResult;
-        yield put(bootSuccess({ user, plan, addresses, eventId, sync }));
+        yield put(bootSuccess({ user, plan, addresses, eventId, sync, features }));
 
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
