@@ -2762,9 +2762,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Bu teklifi bir daha gösterme"
-      ],
       "Got it": [
         "Anladım"
       ],
@@ -2782,9 +2779,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Parola yöneticisi"
-      ],
       "Premium Drive": [
         "Ücretli Drive"
       ],
@@ -2895,9 +2889,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Tüm aygıtlarınızda çevrimiçi hesaplarınız için güvenli oturum açma bilgileri oluşturun."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
       ],
@@ -3142,10 +3133,10 @@
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
+        "Dış hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
+        "Dış e-posta hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
       ],
       "IMAP access is enabled in your external account.": [
         "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
@@ -3396,7 +3387,7 @@
         "Eklenen ve çıkarılan katılımcılara bildirilecek."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Bu adres için güvenilir anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
+        "Bu adres için güvenilen anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
@@ -3667,7 +3658,7 @@
         "Düzenleyici tarafından daha önce güncellenen etkinlikler tutulacak."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
+        "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
@@ -3830,7 +3821,7 @@
         "Hafta"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
@@ -4047,7 +4038,7 @@
         "Geçersiz kılınmış"
       ],
       "Trusted": [
-        "Güvenilmiş"
+        "Güvenilen"
       ]
     },
     "Knowledge base link label": {

@@ -3772,6 +3772,11 @@
         "Luați ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Beneficiile contului"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Spațiul de stocare este partajat între membri de familie între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
@@ -3780,9 +3785,6 @@
     "familyOffer_2023:Action": {
       "Create a new user": [
         "Creare utilizator"
-      ],
-      "Don't show this offer again": [
-        "Nu mai arăta această ofertă"
       ],
       "Got it": [
         "Am înțeles"
@@ -3795,6 +3797,9 @@
       ],
       "Keep current plan": [
         "Păstrare plan actual"
+      ],
+      "Set up family group": [
+        "Setare grup de familie"
       ],
       "Switch plans": [
         "Schimbare plan"
@@ -3855,6 +3860,9 @@
       ],
       "Leave family plan": [
         "Părăsire plan de familie"
+      ],
+      "Leave visionary plan": [
+        "Părăsire plan Visionary"
       ],
       "Manage addresses.": [
         "Gestionare adrese."
@@ -3966,6 +3974,9 @@
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "Pentru a crea un utilizator este necesar un domeniu personal configurat."
       ],
       "You can increase or reduce the storage for this user.": [
         "Puteți crește sau reduce spațiul de stocare pentru acest utilizator."
@@ -5551,6 +5562,9 @@
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Obțineți o adresă ${ BRAND_NAME } pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Vreau adresa mea ${ BRAND_NAME }"
       ],
@@ -5776,6 +5790,9 @@
       ],
       "Loading...": [
         "Se încarcă…"
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Jurnalele conțin încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care folosesc informațiile dvs. de autentificare ${ BRAND_NAME_TWO }."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
@@ -6316,6 +6333,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Aceasta vă va deconecta de la orice sesiune activă și va dezactiva autentificarea cu doi factori."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ${ BRAND_NAME }. A2F va face contul ${ BRAND_NAME_TWO } mai sigur astfel încât vă recomandăm s-o activați."
+      ],
       "To ${ planName }": [
         "la ${ planName }"
       ],
@@ -6558,6 +6578,9 @@
       ],
       "Why?": [
         "De ce?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME_TWO }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
@@ -8661,6 +8684,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Luați ${ BRAND_NAME } gratuit"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Luați ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "Luați ${ planName }"
       ],
@@ -8825,12 +8851,6 @@
       "Contact groups management": [
         "Gestionare grupuri de contacte"
       ],
-      "Custom domain for email aliases": [
-        "Domenii personale pentru aliasuri de e-mail"
-      ],
-      "Custom domains for email aliases": [
-        "Domenii personale pentru aliasuri de e-mail"
-      ],
       "Custom email domains": [
         "Domenii personale de e-mail"
       ],
@@ -8911,9 +8931,6 @@
       "Multiple admin roles": [
         "Mai multe roluri de administrare"
       ],
-      "Multiple forwarding mailboxes": [
-        "Adrese multiple pentru redirecționare"
-      ],
       "No-logs policy": [
         "Politică fără jurnale"
       ],
@@ -8967,9 +8984,6 @@
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
       ],
-      "Strong E2E encryption": [
-        "Criptare puternică la ambele capete"
-      ],
       "Team management": [
         "Gestionare echipă"
       ],
@@ -8999,12 +9013,6 @@
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
-      ],
-      "Unlimited passwords and notes": [
-        "Parole și note nelimitate"
-      ],
-      "Unlimited vaults": [
-        "Seifuri nelimitate"
       ],
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
@@ -9112,6 +9120,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Dacă treceți la un alt plan, veți pierde toate beneficiile planului ${ visionary } și nu veți mai putea reveni la el."
+      ],
+      "Most popular": [
+        "Cel mai popular"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Planul nostru ${ visionary } nu mai este disponibil noilor abonați deoarece un plan special pentru utilizatorii originali ai ${ BRAND_NAME } cu funcții și beneficii speciale."
@@ -9307,6 +9318,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "În zilele lucrătoare, primiți asistență de la echipa de Asistență pentru clienți ${ BRAND_NAME } în termen de 24 de ore de la solicitări."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "O conexiune VPN permite conectarea unui dispozitiv la ${ BRAND_NAME } VPN la un moment dat. De exemplu, pentru a conecta un telefon și un laptop la ${ BRAND_NAME_TWO } VPN în același timp, aveți nevoie de două conexiuni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."

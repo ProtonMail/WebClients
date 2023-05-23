@@ -57,6 +57,9 @@
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
+      "Add public holidays": [
+        "Tilføj nationale helligdage"
+      ],
       "Add to group": [
         "Føj til gruppe"
       ],
@@ -1882,6 +1885,11 @@
         "Ålandsøerne"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Baseret på din tidszone"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Efter gentagelse…"
@@ -2427,6 +2435,9 @@
       "Validation error": [
         "Bekræftelsesfejl"
       ],
+      "You already added this holidays calendar": [
+        "Du har allerede tilføjet denne helligdagskalender"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
@@ -2614,6 +2625,9 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
+      "Please refresh the page or try again later.": [
+        "Opdater venligst siden eller prøv igen senere."
+      ],
       "Something went wrong": [
         "Noget gik galt"
       ],
@@ -2731,9 +2745,6 @@
       ]
     },
     "familyOffer_2023:Action": {
-      "Don't show this offer again": [
-        "Vis ikke dette tilbud igen"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -2765,6 +2776,9 @@
       ]
     },
     "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME } grupper"
+      ],
       "customer support": [
         "kundeservice"
       ],
@@ -2876,6 +2890,11 @@
         "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
       ]
     },
+    "holiday calendar": {
+      "Based on your time zone": [
+        "Baseret på din tidszone"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2921,6 +2940,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } understøtter i øjeblikket ikke visse begivenhedstyper, detaljer og formater."
+      ],
+      "vCard versions < 3.0": [
+        "vCard versioner < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4095,6 +4117,9 @@
       "Label messages as": [
         "Giv beskeder etiketten"
       ],
+      "Language": [
+        "Sprog"
+      ],
       "Last 12 months only": [
         "Kun seneste 12 måneder"
       ],
@@ -4407,8 +4432,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Tilføj nationale helligdage"
+      ],
       "Cannot add more calendars": [
         "Kan ikke tilføje flere kalendere"
+      ],
+      "Edit calendar": [
+        "Rediger kalender"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Få et lands nationale helligdagskalender."
       ],
       "How to import calendars from another service": [
         "Sådan importerer du kalendere fra en anden tjeneste"
@@ -4605,6 +4639,11 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe opdateret"
+      ]
+    },
+    "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Kalender tilføjet"
       ]
     },
     "Notification in share calendar modal": {
@@ -4934,6 +4973,9 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
+      "Please select a country": [
+        "Vælg venligst et land"
+      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
@@ -5028,6 +5070,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Tjek din stavning eller vælg et land fra listen."
+      ],
       "No results found": [
         "Ingen resultater fundet"
       ]
@@ -5237,11 +5282,17 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "Tilføj dit lands nationale helligdage til din kalender."
+      ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "Nationale helligdage er her!"
       ]
     },
     "Storage": {
@@ -5258,6 +5309,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Kalender-URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Hvis du vil abonnere på en ekstern eller offentlig kalender og dens opdateringer, skal du indtaste URL-adressen. En skrivebeskyttet version af kalenderen vil blive tilføjet til dine andre kalendere\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5968,6 +6022,14 @@
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Delt end-to-end krypteret"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Delt end-to-end krypteret med verificeret kontakt"
       ]
     },
     "Validation": {
