@@ -30,8 +30,8 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         api: options.api,
         onAuthorized: withContext((ctx) => {
             ctx.service.activation.boot();
-            ctx.service.telemetry?.start();
             ctx.service.autofill.updateTabsBadgeCount();
+            void ctx.service.telemetry?.start();
             setSentryUID(auth.authStore.getUID());
         }),
         onUnauthorized: withContext((ctx) => {
