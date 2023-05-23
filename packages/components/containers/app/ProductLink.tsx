@@ -36,7 +36,7 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
         params.set('to', appToLinkTo);
         params.set('from', app);
         if (ownerApp === APPS.PROTONACCOUNT) {
-            params.set('type', 'settings');
+            params.set('from-type', 'settings');
         }
         return (
             <AppLink

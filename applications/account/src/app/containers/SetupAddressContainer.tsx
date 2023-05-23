@@ -185,7 +185,7 @@ const SetupAddressContainer = () => {
 
             fromRef.current = getValidatedFrom({
                 from: searchParams.get('from') || '',
-                type: searchParams.get('from-type') || '',
+                type: searchParams.get('from-type') || searchParams.get('type') || '',
                 path: searchParams.get('from-path') || '',
                 user,
             });
