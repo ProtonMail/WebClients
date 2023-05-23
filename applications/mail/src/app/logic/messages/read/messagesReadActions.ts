@@ -13,6 +13,7 @@ import {
     LoadParams,
     MessageErrors,
     MessageState,
+    MessageUTMTracker,
     VerificationParams,
 } from '../messagesTypes';
 
@@ -60,3 +61,7 @@ export const resetVerification = createAction<string[]>('messages/verification/r
 export const applyDarkStyle = createAction<{ ID: string; hasDarkStyle: boolean }>('messages/applyDarkStyle');
 
 export const removeDarkStyle = createAction<{ ID: string; noDarkStyle: boolean }>('messages/removeDarkStyle');
+
+export const cleanUTMTrackers = createAction<{ ID: string; utmTrackers: MessageUTMTracker[] }>(
+    'messages/cleanUTMTrackers'
+);

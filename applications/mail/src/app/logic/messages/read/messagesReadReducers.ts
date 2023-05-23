@@ -14,6 +14,7 @@ import {
     LoadParams,
     MessageErrors,
     MessageState,
+    MessageUTMTracker,
     MessagesState,
     VerificationParams,
 } from '../messagesTypes';
@@ -233,5 +234,16 @@ export const removeDarkStyle = (
 
     if (messageState && messageState.messageDocument) {
         messageState.messageDocument.noDarkStyle = noDarkStyle;
+    }
+};
+
+export const cleanUTMTrackers = (
+    state: Draft<MessagesState>,
+    { payload: { ID, utmTrackers } }: PayloadAction<{ ID: string; utmTrackers: MessageUTMTracker[] }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        messageState.messageUTMTrackers = utmTrackers;
     }
 };

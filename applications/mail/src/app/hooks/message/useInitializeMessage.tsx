@@ -25,13 +25,16 @@ import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions'
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
+    LoadRemoteResults,
     MessageErrors,
     MessageImages,
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
+    MessageUTMTracker,
 } from '../../logic/messages/messagesTypes';
 import {
+    cleanUTMTrackers,
     documentInitializeFulfilled,
     documentInitializePending,
     load,
@@ -162,6 +165,11 @@ export const useInitializeMessage = () => {
                 return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
             };
 
+            const handleCleanUTMTrackers = (utmTrackers: MessageUTMTracker[]) => {
+                const dispatchResult = dispatch(cleanUTMTrackers({ ID: localID, utmTrackers }));
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            };
+
             preparation = isPlainText({ MIMEType })
                 ? await preparePlainText(decryption.decryptedBody, isDraft(message.data))
                 : await prepareHtml(
@@ -175,7 +183,8 @@ export const useInitializeMessage = () => {
                       handleLoadEmbeddedImages,
                       handleLoadRemoteImagesProxy,
                       handleLoadFakeImagesProxy,
-                      handleLoadRemoteImagesDirect
+                      handleLoadRemoteImagesDirect,
+                      handleCleanUTMTrackers
                   );
 
             if (!isPlainText({ MIMEType })) {
