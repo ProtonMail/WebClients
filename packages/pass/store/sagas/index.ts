@@ -6,6 +6,7 @@ import aliasOptionsRequest from './alias-options-request.saga';
 import boot from './boot.saga';
 import cache from './cache.saga';
 import events from './events.saga';
+import featureFlags from './feature-flags.saga';
 import itemsImport from './import.saga';
 import itemCreation from './item-creation.saga';
 import itemDelete from './item-delete.saga';
@@ -40,6 +41,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             boot,
             cache,
             events,
+            featureFlags,
             itemsRequest,
             itemCreation,
             itemEdit,
