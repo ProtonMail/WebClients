@@ -9,6 +9,7 @@ import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
+import type { ExtraFieldGroupValues } from '../../../components/Field/ExtraFieldGroup';
 import { type UrlGroupValues, validateUrl, validateUrls } from '../../../components/Field/UrlGroupField';
 import { type AliasFormValues, validateAliasForm } from '../Alias/Alias.validation';
 import { validateItemErrors } from '../Item/Item.validation';
@@ -22,7 +23,8 @@ export type LoginItemFormValues = {
     totpUri: string;
     withAlias: boolean;
 } & AliasFormValues &
-    UrlGroupValues;
+    UrlGroupValues &
+    ExtraFieldGroupValues;
 
 export type EditLoginItemFormValues = LoginItemFormValues;
 export type NewLoginItemFormValues = LoginItemFormValues;

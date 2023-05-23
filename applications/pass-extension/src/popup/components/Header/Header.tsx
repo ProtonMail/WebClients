@@ -109,7 +109,7 @@ export const Header: VFC<{}> = () => {
                                     onClick={withClose(() => handleNewItemClick(type))}
                                 >
                                     <span
-                                        className="mr-3 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
+                                        className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
                                         style={{ '--width-custom': `2em`, '--height-custom': `2em` }}
                                     >
                                         <Icon
@@ -139,7 +139,7 @@ export const Header: VFC<{}> = () => {
                             onClick={withClose(handleNewPasswordClick)}
                         >
                             <span
-                                className="mr-3 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
+                                className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
                                 style={{ '--width-custom': `2em`, '--height-custom': `2em` }}
                             >
                                 <Icon name="key" className="absolute-center" color="var(--interaction-norm)" />
