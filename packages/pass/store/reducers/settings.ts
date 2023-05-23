@@ -18,6 +18,7 @@ export type SettingsState = {
     autofill: AutoFillSettings;
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
+    loadDomainImages: boolean;
 };
 
 /* proxied settings will also be copied on local
@@ -29,6 +30,7 @@ const INITIAL_STATE: SettingsState = {
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true, browserDefault: true },
     autosuggest: { password: true, email: true },
+    loadDomainImages: true,
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {

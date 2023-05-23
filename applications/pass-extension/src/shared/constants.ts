@@ -23,4 +23,5 @@ export const INITIAL_SETTINGS: ProxiedSettings = {
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true, browserDefault: true },
     autosuggest: { password: true, email: true },
+    loadDomainImages: true,
 };
