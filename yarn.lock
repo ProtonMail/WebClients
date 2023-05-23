@@ -4426,7 +4426,7 @@ __metadata:
     "@babel/preset-typescript": ^7.21.5
     "@babel/runtime": ^7.22.3
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
-    "@sentry/webpack-plugin": ^2.0.0
+    "@sentry/webpack-plugin": ^2.2.0
     autoprefixer: ^10.4.14
     babel-loader: ^9.1.2
     babel-plugin-transform-react-remove-prop-types: ^0.4.24
@@ -4927,7 +4927,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/webpack-plugin@npm:^2.0.0":
+"@sentry/webpack-plugin@npm:^2.2.0":
   version: 2.2.1
   resolution: "@sentry/webpack-plugin@npm:2.2.1"
   dependencies:
