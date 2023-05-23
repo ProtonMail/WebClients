@@ -18,7 +18,7 @@ describe('Import Dashlane ZIP', () => {
         await expect(readDashlaneData(new ArrayBuffer(1))).rejects.toThrow();
     });
 
-    it('should correctly parse items', () => {
+    test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
         expect(vaultData.items.length).toEqual(11);
 
@@ -165,5 +165,13 @@ describe('Import Dashlane ZIP', () => {
         expect(noteItem3.metadata.note).toEqual('line 1 line 2 line 3');
         expect(noteItem3.trashed).toEqual(false);
         expect(noteItem3.extraFields).toEqual([]);
+    });
+
+    test('should correctly hydrate ignored and warnings arrays', () => {
+        expect(payload.ignored.length).toEqual(2);
+        expect(payload.ignored[0]).toEqual('[Personal Info] Unnamed');
+        expect(payload.ignored[1]).toEqual('[Payment] JOHN DOE');
+
+        expect(payload.warnings.length).toEqual(0);
     });
 });
