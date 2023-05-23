@@ -26,7 +26,6 @@ import {
     NotificationModel,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
@@ -250,6 +249,7 @@ const HolidaysCalendarModalWithDirectory = ({
                     } else {
                         // 2 - Leave old holidays calendar and join a new one
                         await api(removeMember(inputHolidaysCalendar.ID, inputHolidaysCalendar.Members[0].ID));
+
                         await setupHolidaysCalendarHelper({
                             holidaysCalendar: selectedCalendar,
                             addresses,
@@ -257,6 +257,12 @@ const HolidaysCalendarModalWithDirectory = ({
                             color,
                             notifications: formattedNotifications,
                             api,
+                        }).catch(() => {
+                            createNotification({
+                                type: 'error',
+                                // translator: A holidays calendar includes bank holidays and observances
+                                text: c('Notification in holidays calendar modal').t`Adding holidays calendar failed`,
+                            });
                         });
                         await call();
                     }
@@ -282,7 +288,7 @@ const HolidaysCalendarModalWithDirectory = ({
             }
         } catch (error) {
             console.error(error);
-            noop();
+            rest.onClose?.();
         }
     };
 
