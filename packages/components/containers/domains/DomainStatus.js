@@ -60,7 +60,7 @@ const DomainStatus = ({ domain, domainAddresses }) => {
     return (
         <>
             {badges.map(({ text, type }, index) => (
-                <Badge key={index.toString()} type={type}>
+                <Badge key={index.toString()} type={type} className="mb-1 mr-1">
                     {text}
                 </Badge>
             ))}
