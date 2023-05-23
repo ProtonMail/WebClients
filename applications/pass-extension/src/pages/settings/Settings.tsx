@@ -2,20 +2,22 @@ import { type ComponentProps, type FC, useCallback, useEffect, useState } from '
 import { Provider as ReduxProvider, useSelector } from 'react-redux';
 import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { pageMessage } from '@proton/pass/extension/message';
-import { selectUser } from '@proton/pass/store';
+import { selectPassPlan, selectTrialDaysLeft, selectUser, selectUserPlan } from '@proton/pass/store';
 import { type Unpack, WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { APP_VERSION } from '../../app/config';
 import { ExtensionContextProvider, ExtensionWindow } from '../../shared/components/extension';
 import { ExtensionHead } from '../../shared/components/page/ExtensionHead';
 import { SessionLockConfirmContextProvider } from '../../shared/components/session-lock/SessionLockConfirmContextProvider';
+import { UpgradeButton } from '../../shared/components/upgrade/UpgradeButton';
 import { ExtensionContext } from '../../shared/extension';
 import { useExtensionContext } from '../../shared/hooks';
 import createClientStore from '../../shared/store/client-store';
@@ -69,6 +71,9 @@ if (ENV === 'development') {
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionContext();
     const user = useSelector(selectUser);
+    const plan = useSelector(selectUserPlan);
+    const passPlan = useSelector(selectPassPlan);
+    const trialDaysLeft = useSelector(selectTrialDaysLeft);
 
     const pathnameToIndex = (pathname: string) => {
         const idx = SETTINGS_TABS.findIndex((tab) => tab.pathname === pathname);
@@ -88,12 +93,27 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
         return (
             <>
                 <div className="mb-8">
-                    <div className="flex flex-align-items-center">
-                        <Avatar className="mr-2">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
-                        <span>
-                            <span className="block text-ellipsis">{user?.DisplayName}</span>
-                            <span className="block color-weak text-sm text-ellipsis">{user?.Email}</span>
-                        </span>
+                    <div className="flex w100 flex-justify-space-between flex-align-items-center">
+                        <div className="flex flex-align-items-start">
+                            <Avatar className="mr-2">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
+                            <span>
+                                <span className="block text-ellipsis">{user?.DisplayName}</span>
+                                <span className="block color-weak text-sm text-ellipsis">{user?.Email}</span>
+                            </span>
+                        </div>
+                        <div className="flex flex-align-items-end flex-column">
+                            <span className="block text-semibold text-sm">{plan?.DisplayName}</span>
+                            <span className="block text-sm">
+                                {c('Label').t`${PASS_SHORT_APP_NAME} ${passPlan}`}{' '}
+                                {trialDaysLeft &&
+                                    `(${c('Info').ngettext(
+                                        msgid`${trialDaysLeft} day left`,
+                                        `${trialDaysLeft} days left`,
+                                        trialDaysLeft
+                                    )})`}
+                            </span>
+                            {passPlan !== UserPassPlan.PLUS && <UpgradeButton inline />}
+                        </div>
                     </div>
                 </div>
 
