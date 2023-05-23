@@ -1018,8 +1018,20 @@
       "Disable": [
         "停用"
       ],
+      "Disable encryption": [
+        "停用加密"
+      ],
+      "Disable expect signed": [
+        "停用期望簽章"
+      ],
       "Enable": [
         "啟用"
+      ],
+      "Enable encryption": [
+        "啟用加密"
+      ],
+      "Enable expect signed": [
+        "啟用期望簽章"
       ],
       "Generate missing keys": [
         "產生遺漏的金鑰"
@@ -1046,6 +1058,12 @@
       ],
       "Missing keys": [
         "遺失金鑰"
+      ],
+      "No E2EE": [
+        "無端到端加密"
+      ],
+      "No signing": [
+        "無簽章"
       ],
       "Orphan": [
         "已孤立"
@@ -2687,6 +2705,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail 標誌與加號"
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "使用多個電子郵件地址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
@@ -3719,6 +3740,11 @@
         "取得 ${ planName }"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "您帳號的好處"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的家庭成員共享。"
@@ -3727,9 +3753,6 @@
     "familyOffer_2023:Action": {
       "Create a new user": [
         "建立新使用者"
-      ],
-      "Don't show this offer again": [
-        "不再顯示此優惠"
       ],
       "Got it": [
         "我知道了"
@@ -3742,6 +3765,9 @@
       ],
       "Keep current plan": [
         "維持目前方案"
+      ],
+      "Set up family group": [
+        "設定家庭群組"
       ],
       "Switch plans": [
         "切換方案"
@@ -3757,9 +3783,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "密碼管理員"
-      ],
       "Premium Drive": [
         "進階版雲端硬碟"
       ],
@@ -3805,6 +3828,9 @@
       ],
       "Leave family plan": [
         "離開家庭方案"
+      ],
+      "Leave visionary plan": [
+        "離開永續未來計畫"
       ],
       "Manage addresses.": [
         "管理電子郵件地址。"
@@ -3917,6 +3943,9 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "此使用者的帳號將轉為 30 天免費試用* ${ BRAND_NAME } Unlimited 方案。"
       ],
+      "To create a new user, a configured custom domain is required.": [
+        "要建立新使用者，必須設定自訂網域。"
+      ],
       "You can increase or reduce the storage for this user.": [
         "您可增加或減少供給此使用者的儲存空間。"
       ],
@@ -4003,9 +4032,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "在您的所有裝置上為您的線上帳號建立安全的詳細登入資訊。"
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
       ],
@@ -4217,6 +4243,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "新增自訂篩選規則以自動執行特定動作，例如加上標籤或封存郵件。"
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "傳送自您已標記或 ${ BRAND_NAME } 判定為垃圾郵件位址的郵件，這些電郵會進入垃圾郵件匣。倘若您想要允許部分郵件從中排除，則可在郵件上標記為「非垃圾郵件」。"
       ],
@@ -4248,7 +4277,7 @@
         "(每月 1-2 封電郵)"
       ],
       "(during your first month)": [
-        "（在您的第一個月）"
+        "(您初來首個月內)"
       ]
     },
     "Gmail forwarding": {
@@ -4304,6 +4333,9 @@
       ],
       "Best deal": [
         "至划算"
+      ],
+      "Enter your email address": [
+        "輸入您的電子郵件地址"
       ],
       "Event": [
         "行程"
@@ -4918,6 +4950,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "跨裝置無縫存取您的密碼並保護您的線上身份。下載並安裝相關的 ${ PASS_APP_NAME } 應用程式與擴充套件。"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
@@ -5419,6 +5454,9 @@
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "取得一個 ${ BRAND_NAME } 位址並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
+      ],
       "Get my ${ BRAND_NAME } address": [
         "獲取我的 ${ BRAND_NAME } 電郵位址"
       ],
@@ -5640,6 +5678,9 @@
       ],
       "Loading...": [
         "載入中‧‧‧"
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "紀錄檔包含所有使用 ${ BRAND_NAME_TWO } 憑證的 ${ BRAND_NAME } 服務的驗證嘗試。"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
@@ -6166,6 +6207,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "這將會使您登出所有裝置並停用雙重驗證。"
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
+      ],
       "To ${ planName }": [
         "使用 ${ planName }"
       ],
@@ -6298,6 +6342,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "使用由 ${ BRAND_NAME } 提供的不同類型的電子郵件地址與別名"
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
       ],
@@ -6405,6 +6452,9 @@
       ],
       "Why?": [
         "為什麼？"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "透過已加密的 ${ BRAND_NAME } 位置，您可以使用全部的 ${ BRAND_NAME_TWO } 服務"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
@@ -6600,6 +6650,9 @@
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "您的資訊在我們這邊很安全。我們僅會在需要提供我們的服務時聯絡您。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -8008,7 +8061,7 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "要新增行事曆，請移除劑有的。"
+        "若要新增行事曆，請先移除現有的其一。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案到 ${ MAIL_SHORT_APP_NAME } 付費方案。"
@@ -8465,6 +8518,9 @@
       "Get ${ BRAND_NAME } for free": [
         "取得免費的 ${ BRAND_NAME }"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "取得 ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "取得 ${ planName }"
       ],
@@ -8535,6 +8591,9 @@
       "${ n } messages per day": [
         "${ n } 封郵件 / 每天"
       ],
+      "${ n } vaults": [
+        "${ n } 個保險櫃"
+      ],
       "${ n } VPN connections": [
         "${ n } 個 VPN 連線"
       ],
@@ -8558,6 +8617,9 @@
       ],
       "99.95% SLA": [
         "99.95% 服務層級協議"
+      ],
+      "Ad-blocker & malware protection": [
+        "廣告攔截與惡意程式保護"
       ],
       "Admin console": [
         "管理員主控台"
@@ -8589,12 +8651,6 @@
       "Contact groups management": [
         "聯絡人群組管理"
       ],
-      "Custom domain for email aliases": [
-        "電子郵件別名的自訂網域"
-      ],
-      "Custom domains for email aliases": [
-        "電子郵件別名的自訂網域"
-      ],
       "Custom email domains": [
         "自訂電郵網域"
       ],
@@ -8609,6 +8665,9 @@
       ],
       "Document editors (docs, sheets, slides)": [
         "文件編輯程式 (圖文檔、工作表、簡報)"
+      ],
+      "Double hop": [
+        "Double hop"
       ],
       "Easy Switch import assistant": [
         "Easy Switch 匯入小幫手"
@@ -8649,6 +8708,9 @@
       "High-speed streaming": [
         "高速串流"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "高速的瑞士 VPN 可保護您的隱私"
+      ],
       "High-speed VPN on ${ n } devices": [
         "極速 VPN 裝載多達 ${ n } 臺裝置"
       ],
@@ -8666,9 +8728,6 @@
       ],
       "Multiple admin roles": [
         "多重管理員角色"
-      ],
-      "Multiple forwarding mailboxes": [
-        "多個轉寄郵箱"
       ],
       "No-logs policy": [
         "零日誌政策"
@@ -8721,9 +8780,6 @@
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
       ],
-      "Strong E2E encryption": [
-        "強大的 E2E 加密"
-      ],
       "Team management": [
         "團隊管理"
       ],
@@ -8754,9 +8810,6 @@
       "Unlimited messages per day": [
         "每日郵件無上限"
       ],
-      "Unlimited passwords and notes": [
-        "密碼與備註無上限"
-      ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
       ],
@@ -8780,6 +8833,12 @@
       ],
       "User session management": [
         "使用者作業階段管理"
+      ],
+      "Vault and Item sharing": [
+        "保險櫃與項目分享"
+      ],
+      "Vault and Item sharing (coming soon)": [
+        "保險櫃與項目分享（即將到來）"
       ]
     },
     "new_plans: feature info": {
@@ -8846,6 +8905,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
       ],
+      "For next-level password management and identity protection.": [
+        "用於下一個層級的密碼管理與身份保護。"
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新建立帳號，也不能再次選擇該方案。"
       ],
@@ -8854,6 +8916,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "如果你切換到不同的計畫，你將失去所有 ${ visionary } 計畫的福利，且無法切換回 ${ visionary } 。"
+      ],
+      "Most popular": [
+        "最受歡迎"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 計畫不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
@@ -9004,6 +9069,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅。"
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "輕鬆與您的同事、家庭和好友以連結分享您的行事曆"
       ],
@@ -9034,11 +9102,17 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "如同資料夾，保險櫃是整理您項目的便捷方法。與朋友及家人分享保險櫃正在開發中。"
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "管理您的訂閱，包括自訂化您的方案。接受的付款方法包括信用卡、PayPal、加密貨幣及電匯。"
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "凡工作天，於提出請求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "單個 VPN 連線允許您在同一時間將單個裝置連線到 ${ BRAND_NAME } VPN。舉個例子，為了將手機與筆電同時連線至 ${ BRAND_NAME_TWO } VPN，您需要兩個 VPN 連線。"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
@@ -9114,6 +9188,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "獨特的即時電子郵件地址可保護您的線上身份並讓您控制收件匣中的內容。來自 ${ BRAND_NAME } 的 SimpleLogin。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "使用您擁有的自訂電子郵件網域地址，例如 you@yourname.com"
@@ -10676,6 +10753,9 @@
       "Filter removed": [
         "篩選器已移除"
       ],
+      "Preference updated": [
+        "偏好設定已更新"
+      ],
       "Status updated": [
         "狀態已更新"
       ]
@@ -11264,6 +11344,9 @@
       "Import-Export app": [
         "Import-Export 應用程式"
       ],
+      "Increase your privacy with more addresses": [
+        "使用更多地址增加您的隱私"
+      ],
       "Invalid verification code": [
         "驗證碼無效"
       ],
@@ -11362,6 +11445,9 @@
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
+      ],
+      "Personalise your e-mail footer": [
+        "個人化您的電子郵件簽名"
       ],
       "Phone": [
         "電話"

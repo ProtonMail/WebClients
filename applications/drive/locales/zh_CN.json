@@ -467,6 +467,9 @@
       "Restart upload": [
         "重新开始上传"
       ],
+      "Restore": [
+        "还原"
+      ],
       "Restore from trash": [
         "从回收站恢复"
       ],
@@ -529,6 +532,9 @@
       ],
       "Show preview": [
         "显示预览"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "Sign in": [
         "登录"
@@ -2744,6 +2750,12 @@
       "${ errorCount } failed": [
         "${ errorCount } 项传输失败"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }：完整图片"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }：小图预览"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 个群组"
       ],
@@ -2788,6 +2800,9 @@
       ],
       "A number will be added to the folder name": [
         "将在文件夹名称中添加一个编号"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "账户因欠费已被限制使用，请联系机构管理员。"
@@ -3086,6 +3101,12 @@
       "Import mailbox": [
         "导入收件箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
@@ -3287,6 +3308,9 @@
       "Preview failed to be loaded": [
         "预览加载失败"
       ],
+      "Preview for this file type is not supported": [
+        "此文件类型暂不支持预览"
+      ],
       "Primary": [
         "主要"
       ],
@@ -3311,6 +3335,9 @@
       "Report has been sent": [
         "报告已发送"
       ],
+      "Restore": [
+        "还原"
+      ],
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
       ],
@@ -3325,6 +3352,9 @@
       ],
       "Select what you want to import.": [
         "选择需要导入的内容。"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -3434,6 +3464,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "恢复数据需要重新激活数据创建时使用的通讯录密钥，这意味着您必须持有生成该密钥时的账户密码。"
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
@@ -3469,6 +3502,9 @@
       ],
       "Updating drive search...": [
         "正在更新网盘搜索..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
       "Uploaded": [
         "已上传"
@@ -4669,6 +4705,9 @@
       "Bug reported": [
         "问题已反馈"
       ],
+      "Canceling import": [
+        "正在取消导入"
+      ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
@@ -5078,6 +5117,9 @@
       ],
       "Phone numbers": [
         "电话号码"
+      ],
+      "Preview": [
+        "预览"
       ],
       "Privacy settings": [
         "隐私设置"

@@ -1023,11 +1023,17 @@
       "Disable encryption": [
         "Verschlüsselung deaktivieren"
       ],
+      "Disable expect signed": [
+        "„Signatur erwartet“ deaktiviert"
+      ],
       "Enable": [
         "Aktivieren"
       ],
       "Enable encryption": [
         "Verschlüsselung aktivieren"
+      ],
+      "Enable expect signed": [
+        "„Signatur erwartet“ aktivieren"
       ],
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
@@ -1059,7 +1065,7 @@
         "Keine Ende-zu-Ende-Verschlüsselung (E2EE)"
       ],
       "No signing": [
-        "Keine Signierung"
+        "Keine Signatur"
       ],
       "Orphan": [
         "Verwaist"
@@ -3365,7 +3371,7 @@
         "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte wechsle dein Abonnement, um weitere Benutzer hinzuzufügen."
+        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du musst deine Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
@@ -3764,9 +3770,6 @@
       "Create a new user": [
         "Neuen Benutzer erstellen"
       ],
-      "Don't show this offer again": [
-        "Angebot nicht erneut anzeigen"
-      ],
       "Got it": [
         "Verstanden"
       ],
@@ -3796,9 +3799,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Password manager": [
-        "Passwort-Manager"
-      ],
       "Premium Drive": [
         "Premium-Drive"
       ],
@@ -4048,9 +4048,6 @@
       ]
     },
     "familyOffer_2023:Tooltip": {
-      "Create secure login details for your online accounts, on all your devices.": [
-        "Erstelle sichere Anmeldedaten für deine Online-Konten auf all deinen Geräten."
-      ],
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Greife auf blockierte Inhalte zu und surfe privat. Umfasst 2700 Server in über 65 Ländern, die Verbindung von bis zu 10 Geräten, weltweite Streaming-Dienste, Malware- und Werbeblocker und mehr."
       ],
@@ -5177,7 +5174,7 @@
         "Das automatische Antworten ist zwischen der ausgewählten Start- und Endzeit aktiv."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Das automatische Antworten ist solange aktiv, bis du es deaktivierst."
+        "Das automatische Antworten ist so lange aktiv, bis du es deaktivierst."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Das automatische Antworten ist immer an den ausgewählten Wochentagen zwischen den ausgewählten Stunden aktiv."
@@ -5511,6 +5508,9 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } holen"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Hol dir eine ${ BRAND_NAME }-Adresse, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Meine ${ BRAND_NAME }-Adresse erhalten"
       ],
@@ -5734,6 +5734,9 @@
       ],
       "Loading...": [
         "Wird geladen..."
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Protokolle enthalten Authentifizierungsversuche aller ${ BRAND_NAME }-Dienste die deine ${ BRAND_NAME_TWO }-Anmeldedaten verwenden."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
@@ -6205,7 +6208,7 @@
         "Dies kann bis zu 15 Minuten dauern. Bitte diese Seite nicht schließen oder die Verbindung zum Internet unterbrechen."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        "Es handelt sich dabei um einen Satz mit 12 Wörtern, den du eingeben sollst."
+        "Es handelt sich dabei um einen Satz mit 12 Wörtern, den du vergeben musstest."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Dies ist möglicherweise eine zuvor gespeicherte Wiederherstellungsdatei oder ein Verschlüsselungsschlüssel."
@@ -6266,6 +6269,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dadurch wirst du von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "Dieser Wizard wird die Zwei-Faktor-Authentifizierung (2FA) auf deinem ${ BRAND_NAME }-Konto aktivieren. Zwei-Faktor-Authentifizierung macht dein ${ BRAND_NAME_TWO }-Konto sicherer, wir empfehlen deshalb, sie zu aktivieren."
       ],
       "To ${ planName }": [
         "bei ${ planName }"
@@ -6418,7 +6424,7 @@
         "Die Verifizierung kann einige Minuten dauern."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Die Überprüfung öffnet einen neuen Tab — bitte deaktiviere daher alle Popup-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
+        "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bestätige deine Identität mit einem zeitbasierten Einmal-Passwort über eine Authenticator App."
@@ -6509,6 +6515,9 @@
       ],
       "Why?": [
         "Warum?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
+        "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME_TWO }-Dienste nutzen."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
@@ -6639,7 +6648,7 @@
         "Du musst dennoch auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
       ],
       "You will be redirected to the VPN download page": [
-        "Du wirst anschließend zur VPN-Download-Seite weitergeleitet"
+        "Du wirst zur VPN-Download-Seite weitergeleitet"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
@@ -8592,6 +8601,9 @@
       "Get ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } kostenlos holen"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "Hol dir ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "${ planName } holen"
       ],
@@ -8739,12 +8751,6 @@
       "Contact groups management": [
         "Kontaktgruppenverwaltung"
       ],
-      "Custom domain for email aliases": [
-        "Eigene Domain für E-Mail-Aliasse"
-      ],
-      "Custom domains for email aliases": [
-        "Eigene Domains für E-Mail-Aliasse"
-      ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"
       ],
@@ -8785,7 +8791,7 @@
         "Schnelle P2P/BitTorrent-Downloads"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
-        "Kostenlose Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, und ${ DRIVE_SHORT_APP_NAME }"
+        "Kostenlose Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
         "Kostenloses VPN auf einem Gerät"
@@ -8824,9 +8830,6 @@
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
-      "Multiple forwarding mailboxes": [
-        "Mehrere Weiterleitungs-Postfächer"
-      ],
       "No-logs policy": [
         "No-Logs-Richtlinie"
       ],
@@ -8843,7 +8846,7 @@
         "Vorrangiger Support"
       ],
       "Priority support & live chat": [
-        "Priorisierter Support & Live Chat"
+        "Priorisierter Support & Live-Chat"
       ],
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
@@ -8879,9 +8882,6 @@
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
       ],
-      "Strong E2E encryption": [
-        "Starke Ende-zu-Ende-Verschlüsselung"
-      ],
       "Team management": [
         "Teamverwaltung"
       ],
@@ -8911,12 +8911,6 @@
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
-      ],
-      "Unlimited passwords and notes": [
-        "Unbegrenzte Passwörter und Notizen"
-      ],
-      "Unlimited vaults": [
-        "Unbegrenzte Tresore"
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
@@ -9024,6 +9018,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Wenn du zu einem anderen Abonnement wechselst, verlierst du alle Vorteile des ${ visionary }-Abonnements und kannst du anschließend nicht zu ${ visionary } zurückwechseln."
+      ],
+      "Most popular": [
+        "Am beliebtesten"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."
@@ -9217,6 +9214,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "An Werktagen erhältst du innerhalb von 24 Stunden Unterstützung durch den Kundensupport von ${ BRAND_NAME }."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Eine VPN-Verbindung erlaubt es einem Gerät, sich jederzeit mit ${ BRAND_NAME }-VPN zu verbinden. Um beispielsweise ein Handy und einen Laptop gleichzeitig mit ${ BRAND_NAME_TWO }-VPN zu verbinden, brauchst du zwei VPN-Verbindungen."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
@@ -12061,10 +12061,10 @@
         "Dieser Schlüssel wird von ${ MAIL_APP_NAME } verwendet, um die Daten deiner Kontakte zu verschlüsseln."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signierung abgeschaltet."
+        "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Wir haben die DKIM-Signierung aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
+        "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Wenn du einer Nachricht in einem Thema eine Kategorie hinzufügst, wird diese automatisch auf alle zukünftigen Nachrichten angewendet, die du im Rahmen dieses Themas sendest oder empfängst."
@@ -12244,7 +12244,7 @@
         "Möchtest du deinen Import wirklich verwerfen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Wenn du diese Adresse löschen, wirst du keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
+        "Wenn du diese Adresse löschst, wirst du keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
         "Wenn du diese Adresse löschst, wirst du weder dein Konto wiederherstellen können noch tägliche E-Mail-Benachrichtigungen erhalten."
@@ -12268,7 +12268,7 @@
         "Bitte füge mindestens einen Empfänger hinzu."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachte, dass durch die Wahl dieser Zahlungsmethode dein ProtonMail-Konto nicht sofort erweitert werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
+        "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
@@ -12295,7 +12295,7 @@
         "Wir konnten den Mailserver nicht verifizieren. Wenn du ihm vertraust, kann diese Überprüfung übersprungen werden."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signierung abgeschaltet."
+        "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Du musst Organisationsschlüssel ${ activateLink }, bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse zuordnen kannst."
