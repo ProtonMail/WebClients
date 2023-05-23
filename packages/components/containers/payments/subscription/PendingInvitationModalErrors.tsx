@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { useModalState, useSettingsLink } from '@proton/components/components';
+import { SettingsLink, useModalState } from '@proton/components/components';
 import { BugModal, useUser } from '@proton/components/index';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -15,18 +15,12 @@ interface Props {
 
 const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     const [user] = useUser();
-    const goToSettings = useSettingsLink();
     const [bugReportModal, setBugReportOpen, render] = useModalState();
 
     const inviteSpace = humanSize(invite.MaxSpace, undefined, false, 0);
     const usedSpace = humanSize(user.UsedSpace, undefined, false, 0);
 
     let errorDescription: string | string[] = '';
-
-    const handleAddressesClick = () => {
-        goToSettings('/identity-addresses', APPS.PROTONMAIL);
-        onClose();
-    };
 
     // translator: full sentence is: You can only accept 3 invitations in a 6-month period. Please contact <customer support> if you require an exception.
     const supportLink = (
@@ -36,9 +30,9 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     );
 
     const addressSettingsLink = (
-        <Button className="p-0 align-baseline" shape="underline" color="norm" onClick={handleAddressesClick}>{c(
-            'familyOffer_2023:Family plan'
-        ).t`Manage addresses.`}</Button>
+        <SettingsLink app={APPS.PROTONMAIL} path="/identity-addresses" onClick={onClose} target="_self">
+            {c('familyOffer_2023:Family plan').t`Manage addresses.`}
+        </SettingsLink>
     );
 
     if (errors.IsLifetimeAccount) {
