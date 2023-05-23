@@ -71,7 +71,7 @@ const InviteProtonUserButton = ({ onClick, familyPlanEnabled, organization }: Bu
     }
 
     return (
-        <Button onClick={onClick} color="norm">{c('familyOffer_2023:Action')
+        <Button fullWidth onClick={onClick} color="norm">{c('familyOffer_2023:Action')
             .t`Invite an existing ${BRAND_NAME} user`}</Button>
     );
 };
@@ -115,7 +115,7 @@ const InviteUserCreateSubUserModal = ({
                         familyPlanEnabled={familyPlanEnabled}
                     />,
                     <AddUserButton onClick={handleAddUser} />,
-                    <Button onClick={modalState.onClose} shape="ghost">{c('Action').t`Cancel`}</Button>,
+                    <Button fullWidth onClick={modalState.onClose} shape="ghost">{c('Action').t`Cancel`}</Button>,
                 ]}
                 {...modalState}
             >
