@@ -10,10 +10,10 @@ import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { readCSV } from '../helpers/csv.reader';
-import { CSVReaderResult } from '../helpers/csv.reader';
+import type { CSVReaderResult } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
 import type { ImportPayload, ImportVault } from '../types';
-import { DashlaneLoginItem } from './dashlane.types';
+import type { DashlaneLoginItem, DashlaneNoteItem } from './dashlane.types';
 
 const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
     'username',
@@ -23,6 +23,8 @@ const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
     'url',
     'category',
 ];
+
+const DASHLANE_NOTES_EXPECTED_HEADERS: (keyof DashlaneNoteItem)[] = ['title', 'note'];
 
 const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> => {
     return {
@@ -36,7 +38,6 @@ const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
             username: item.username ?? '',
             password: item.password ?? '',
             urls: [item.url].filter(truthy),
-            // TODO totp needs more testing
             totpUri: item.otpSecret ? parseOTPValue(item.otpSecret, { label: item.title }) : '',
         },
         extraFields: [],
@@ -44,19 +45,41 @@ const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
     };
 };
 
+const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> => {
+    return {
+        type: 'note',
+        metadata: {
+            name: item.title || 'Unnamed note',
+            note: item.note ?? '',
+            itemUuid: uniqueId(),
+        },
+        content: {},
+        extraFields: [],
+        trashed: false,
+    };
+};
+
 const parseCsvData = async (
-    zipFile: jszip,
-    fileName: 'credentials.csv' | 'securenotes.csv',
+    stringCsv: string | undefined,
+    EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] | (keyof DashlaneNoteItem)[],
     warnings: string[]
 ): Promise<CSVReaderResult<DashlaneLoginItem>> => {
-    const itemsZip = zipFile.file(fileName);
-    const itemsCsv = await itemsZip?.async('string');
-
-    if (itemsCsv === undefined) {
-        throw new Error(`${fileName} in your zip file could not be read`);
+    if (stringCsv === undefined) {
+        switch (EXPECTED_HEADERS) {
+            case DASHLANE_LOGINS_EXPECTED_HEADERS:
+                throw new ImportReaderError(
+                    c('Error').t`The file credentials.csv is missing from the Dashlane ZIP file`
+                );
+            case DASHLANE_NOTES_EXPECTED_HEADERS:
+                throw new ImportReaderError(
+                    c('Error').t`The file securenotes.csv is missing from the Dashlane ZIP file`
+                );
+            default:
+                throw new ImportReaderError(c('Error').t`The CSV in the Dashlane ZIP file could not be read`);
+        }
     }
 
-    return readCSV<DashlaneLoginItem>(itemsCsv, DASHLANE_LOGINS_EXPECTED_HEADERS, {
+    return readCSV<DashlaneLoginItem>(stringCsv, EXPECTED_HEADERS, {
         onErrors: (errors) =>
             warnings.push(
                 `[Error] ${c('Error').ngettext(
@@ -75,12 +98,17 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
     try {
         const zipFile = await jszip.loadAsync(data);
 
-        const loginsParsedData = await parseCsvData(zipFile, 'credentials.csv', warnings);
+        const loginsZip = zipFile.file('credentials.csv');
+        const loginsCsv = await loginsZip?.async('string');
+        const loginsParsedData = await parseCsvData(loginsCsv, DASHLANE_LOGINS_EXPECTED_HEADERS, warnings);
         const loginItems = loginsParsedData.items.map((loginItem) => processLoginItem(loginItem));
 
-        // TODO noteItems
+        const notesZip = zipFile.file('securenotes.csv');
+        const notesCsv = await notesZip?.async('string');
+        const notesParsedData = await parseCsvData(notesCsv, DASHLANE_NOTES_EXPECTED_HEADERS, warnings);
+        const noteItems = notesParsedData.items.map((noteItem) => processNoteItem(noteItem));
 
-        items = loginItems;
+        items = [...loginItems, ...noteItems];
 
         const vaults: ImportVault[] = [
             {
@@ -91,7 +119,7 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
             },
         ];
 
-        return { vaults, ignored, warnings: [] };
+        return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::Dashlane]', e);
         const errorDetail = e instanceof ImportReaderError ? e.message : '';
