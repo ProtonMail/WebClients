@@ -191,11 +191,14 @@ const CalendarSidebar = ({
                                 type="new"
                                 content={
                                     <>
-                                        <div className="text-lg text-bold mb0-25">{c('Spotlight')
-                                            .t`Public holidays are here!`}</div>
-                                        <p className="m0">
-                                            {c('Spotlight').t`Add your country's public holidays to your calendar.`}
-                                        </p>
+                                        <div className="text-lg text-bold mb0-25">{
+                                            // translator: A holidays calendar includes bank holidays and observances
+                                            c('Spotlight').t`Public holidays are here!`
+                                        }</div>
+                                        <p className="m0">{
+                                            // translator: A holidays calendar includes bank holidays and observances
+                                            c('Spotlight').t`Add your country's public holidays to your calendar.`
+                                        }</p>
                                     </>
                                 }
                                 anchorRef={dropdownRef}
