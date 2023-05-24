@@ -3,7 +3,7 @@ import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
@@ -66,7 +66,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                 <UpsellModal
                     title={c('Title').t`Personalise your e-mail footer`}
                     description={c('Description')
-                        .t`If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.`}
+                        .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
                     modalProps={upsellModalProps}
                     upsellRef={upsellRef}
                     features={[
