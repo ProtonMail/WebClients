@@ -39,7 +39,7 @@ interface Props {
     currency: Currency;
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
-    onValidate?: () => boolean;
+    onValidate?: () => Promise<boolean>;
 }
 
 const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValidate }: Props) => {
@@ -106,7 +106,7 @@ const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay, onValida
             return withLoadingToken(onToken());
         },
         onVerification: async () => {
-            if (onValidate?.()) {
+            if (!((await onValidate?.()) ?? true)) {
                 return;
             }
             return withLoadingVerification(onVerification());

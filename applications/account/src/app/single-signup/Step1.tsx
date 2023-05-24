@@ -57,7 +57,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getCroHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
+import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { confirmEmailValidator, emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPricingFromPlanIDs } from '@proton/shared/lib/helpers/subscription';
@@ -327,34 +327,12 @@ const Step1 = ({
                 ktFeature: (await ktFeature.get())?.Value,
             };
 
-            if (validateFlow()) {
-                try {
-                    await silentApi(mergeHeaders(queryCheckEmailAvailability(email), getCroHeaders(paymentToken)));
-                } catch (e) {
-                    const { code, message } = getApiError(e);
-                    if (
-                        [
-                            API_CUSTOM_ERROR_CODES.ALREADY_USED,
-                            API_CUSTOM_ERROR_CODES.EMAIL_FORMAT,
-                            API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
-                        ].includes(code)
-                    ) {
-                        setEmailAsyncError({ email, message });
-                        createNotification({
-                            type: 'error',
-                            text: <AlreadyUsedNotification onUpdate={onUpdate} to={signInTo} />,
-                            key: 'already-used',
-                            expiration: 7000,
-                        });
-                        scrollIntoEmail();
-                        return;
-                    }
-                    throw e;
-                }
-                const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro', paymentToken });
-
-                onComplete(newCache);
+            if (!validateFlow()) {
+                return;
             }
+
+            const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro', paymentToken });
+            onComplete(newCache);
         } catch (error) {
             handleError(error);
         }
@@ -389,9 +367,9 @@ const Step1 = ({
 
     const validatePayment = () => {
         if (loadingPayment || loadingPaymentDetails) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     };
 
     const validateEmail = () => {
@@ -399,9 +377,39 @@ const Step1 = ({
             mergeInputState('email', { interactive: true, focus: true });
             mergeInputState('emailConfirm', { interactive: true, focus: true });
             scrollIntoEmail(emailConfirmError && !emailError ? 'confirm' : undefined);
-            return true;
+            return false;
         }
-        return false;
+        return true;
+    };
+
+    const validateAsyncEmail = async () => {
+        const validateFlow = createFlow();
+        try {
+            await silentApi(mergeHeaders(queryCheckEmailAvailability(email), getOwnershipVerificationHeaders('lax')));
+            return true;
+        } catch (e) {
+            if (!validateFlow()) {
+                return false;
+            }
+            const { code, message } = getApiError(e);
+            if (
+                [
+                    API_CUSTOM_ERROR_CODES.ALREADY_USED,
+                    API_CUSTOM_ERROR_CODES.EMAIL_FORMAT,
+                    API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
+                ].includes(code)
+            ) {
+                setEmailAsyncError({ email, message });
+                createNotification({
+                    type: 'error',
+                    text: <AlreadyUsedNotification onUpdate={onUpdate} to={signInTo} />,
+                    key: 'already-used',
+                    expiration: 7000,
+                });
+                scrollIntoEmail();
+            }
+            return false;
+        }
     };
 
     const {
@@ -418,10 +426,12 @@ const Step1 = ({
         defaultMethod: paymentMethods[0],
         amount: subscriptionData.checkResult.AmountDue,
         currency,
-        onValidatePaypal: () => {
+        onValidatePaypal: async () => {
             onUpdate({ pay: 'paypal' });
-
-            return validatePayment() || validateEmail();
+            if (!validatePayment() || !validateEmail() || !(await validateAsyncEmail())) {
+                return false;
+            }
+            return true;
         },
         onPaypalPay({ Payment }: TokenPaymentMethod) {
             return onPay(Payment);
@@ -621,11 +631,14 @@ const Step1 = ({
 
                                         onUpdate({ pay: 'card' });
 
-                                        if (validatePayment() || validateEmail()) {
-                                            return;
-                                        }
                                         const handle = async () => {
-                                            if (!handleCardSubmit() || !paymentParameters) {
+                                            if (
+                                                !paymentParameters ||
+                                                !handleCardSubmit() ||
+                                                !validatePayment() ||
+                                                !validateEmail() ||
+                                                !(await validateAsyncEmail())
+                                            ) {
                                                 return;
                                             }
 
