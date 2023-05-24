@@ -29,8 +29,7 @@ export const getSubscriptionPrices = async (
 };
 
 export const getPlanFromPlanIDs = (plans: Plan[], planIDs?: PlanIDs) => {
-    const planIDsList = Object.keys(planIDs || {});
-    return plans.find(({ Name, Type }) => Type === PLAN_TYPES.PLAN && planIDsList.includes(Name));
+    return plans.find(({ Name, Type }) => Type === PLAN_TYPES.PLAN && planIDs?.[Name]);
 };
 
 export const isMailTrialSignup = (location: Location) => {
