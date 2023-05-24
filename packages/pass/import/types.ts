@@ -5,6 +5,7 @@ export enum ImportProvider {
     BRAVE = 'brave',
     CHROME = 'chrome',
     EDGE = 'edge',
+    FIREFOX = 'firefox',
     KEEPASS = 'keepass',
     LASTPASS = 'lastpass',
     ONEPASSWORD = '1password',
