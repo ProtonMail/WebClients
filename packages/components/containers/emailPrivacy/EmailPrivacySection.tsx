@@ -19,12 +19,8 @@ const EmailPrivacySection = () => {
     const [{ HideRemoteImages = SHOW_IMAGES.HIDE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
     const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [, setImageProxy] = useState(ImageProxy);
-    const { getFeature } = useFeatures([
-        FeatureCode.SpyTrackerProtection,
-        FeatureCode.SpyTrackerProtectionIncorporator,
-    ]);
+    const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtectionIncorporator]);
 
-    const { feature: featureSpyTracker } = getFeature(FeatureCode.SpyTrackerProtection);
     const { feature: featureSpyTrackerIncorporator } = getFeature(FeatureCode.SpyTrackerProtectionIncorporator);
 
     // Handle updates from the Event Manager.
@@ -34,7 +30,6 @@ const EmailPrivacySection = () => {
 
     const handleChangeShowImage = (newValue: number) => setHideRemoteImages(newValue);
 
-    const showSpyTracker = featureSpyTracker?.Value;
     const showProtectionMode = ImageProxy !== IMAGE_PROXY_FLAGS.NONE && featureSpyTrackerIncorporator?.Value;
 
     return (
@@ -59,49 +54,47 @@ const EmailPrivacySection = () => {
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {showSpyTracker && (
-                <>
+            <>
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="preventTrackingToggle" className="text-semibold">
+                            <span className="mr-2">{c('Label').t`Block email tracking`}</span>
+                            <Info
+                                url={getKnowledgeBaseUrl('/email-tracker-protection')}
+                                title={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
+                            />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt-2">
+                        <PreventTrackingToggle
+                            id="preventTrackingToggle"
+                            preventTracking={ImageProxy}
+                            data-testid="privacy:prevent-tracking-toggle"
+                        />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+                {showProtectionMode && (
                     <SettingsLayout>
                         <SettingsLayoutLeft>
-                            <label htmlFor="preventTrackingToggle" className="text-semibold">
-                                <span className="mr-2">{c('Label').t`Block email tracking`}</span>
+                            <label htmlFor="protectiontModeToggle" className="text-semibold">
+                                <span className="mr-2">{c('Label').t`Protection mode`}</span>
                                 <Info
                                     url={getKnowledgeBaseUrl('/email-tracker-protection')}
-                                    title={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
+                                    title={c('Info')
+                                        .t`Hides identifying information by loading remote content through a proxy. Option to store content as attachments.`}
                                 />
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="pt-2">
-                            <PreventTrackingToggle
-                                id="preventTrackingToggle"
-                                preventTracking={ImageProxy}
-                                data-testid="privacy:prevent-tracking-toggle"
+                            <ProtectionModeSelect
+                                id="protectiontModeToggle"
+                                defaultProtectionMode={ImageProxy}
+                                data-testid="privacy:protect-mode-select"
                             />
                         </SettingsLayoutRight>
                     </SettingsLayout>
-                    {showProtectionMode && (
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label htmlFor="protectiontModeToggle" className="text-semibold">
-                                    <span className="mr-2">{c('Label').t`Protection mode`}</span>
-                                    <Info
-                                        url={getKnowledgeBaseUrl('/email-tracker-protection')}
-                                        title={c('Info')
-                                            .t`Hides identifying information by loading remote content through a proxy. Option to store content as attachments.`}
-                                    />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="pt-2">
-                                <ProtectionModeSelect
-                                    id="protectiontModeToggle"
-                                    defaultProtectionMode={ImageProxy}
-                                    data-testid="privacy:protect-mode-select"
-                                />
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                    )}
-                </>
-            )}
+                )}
+            </>
         </>
     );
 };

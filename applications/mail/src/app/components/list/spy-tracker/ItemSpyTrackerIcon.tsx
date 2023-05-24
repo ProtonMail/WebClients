@@ -1,39 +1,34 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+
+import { c } from 'ttag';
 
 import { FeatureCode, Tooltip, useSpotlightOnFeature } from '@proton/components';
 import useUser from '@proton/components/hooks/useUser';
 import { MONTH } from '@proton/shared/lib/constants';
-import { isSent } from '@proton/shared/lib/mail/messages';
-import clsx from '@proton/utils/clsx';
+import { isPlainText, isSent } from '@proton/shared/lib/mail/messages';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import LoadContentSpotlight from '../../message/LoadContentSpotlight';
-import SpyTrackerIcon from './SpyTrackerIcon';
+import PrivacyDropdown from './PrivacyDropdown';
 
 interface Props {
     message: MessageState;
-    className?: string;
-    onClickIcon?: () => void;
 }
 
-const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
-    // TODO On the first part of the SL integration we will not have the change on the icon. We already started the implementation so we will hide it for now
-    // const { feature: simpleLoginIntegration, loading: loadingSimpleLoginIntegration } = useFeature(
-    //     FeatureCode.SLIntegration
-    // );
-
+const ItemSpyTrackerIcon = ({ message }: Props) => {
     const [user] = useUser();
-
     const anchorRef = useRef(null);
 
     const sent = isSent(message.data);
 
-    const isSimpleLoginIntegration = false; //TODO replace with when we will need simpleLoginIntegration?.Value;
-
-    const { hasProtection, hasShowRemoteImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
-        message,
-    });
+    const {
+        numberOfImageTrackers,
+        numberOfUTMTrackers,
+        needsMoreProtection,
+        imageTrackersLoaded,
+        canCleanUTMTrackers,
+    } = useMessageTrackers(message);
 
     // Load content spotlight needs to be displayed if account is older than one month
     const userCreateTime = user.CreateTime || 0;
@@ -44,51 +39,48 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
         isAccountOlderThanOneMonth
     );
 
+    const trackerText = needsMoreProtection ? (
+        c('Info').t`Email tracker protection is disabled`
+    ) : (
+        <>
+            <div className="flex flex-justify-space-between">
+                <span>{c('Info').t`Trackers blocked:`}</span>
+                <span className="pl-4 text-tabular-nums">{numberOfImageTrackers}</span>
+            </div>
+            {canCleanUTMTrackers && (
+                <div className="flex flex-justify-space-between">
+                    <span>{c('Info').t`Links cleaned:`}</span>
+                    <span className="pl-4 text-tabular-nums">{numberOfUTMTrackers}</span>
+                </div>
+            )}
+        </>
+    );
+
     /*
-     * Don't display the tracker icon on sent mails or when :
-     * Loading remote images is automatic and email protection is OFF : We consider that the user don't want any protection at all.
-     * But the user might have set recently the protection to OFF, so if we find trackers in previous emails, we still display the icon.
+     * Don't display the tracker icon on sent mail messages
+     * OR when trackers are not loaded (but we need to display it when user is not using proxy and in plaintext messages)
      */
-    if (sent || (!hasProtection && hasShowRemoteImage && numberOfTrackers === 0)) {
-        // TODO check also loadingSimpleLoginIntegrationFeature
+    if (sent || (!imageTrackersLoaded && !needsMoreProtection && !isPlainText(message.data))) {
         return null;
     }
 
-    const spyTrackerIcon = (
-        <div className={clsx(['flex', className])} ref={anchorRef}>
-            <SpyTrackerIcon
-                numberOfTrackers={numberOfTrackers}
-                needsMoreProtection={needsMoreProtection}
-                title={title}
-                openSpyTrackerModal={onClickIcon}
-            />
-        </div>
-    );
-
     return (
-        <LoadContentSpotlight
-            show={showLoadContentSpotlight}
-            onDisplayed={onLoadContentSpotlightDisplayed}
-            anchorRef={anchorRef}
-        >
-            {isSimpleLoginIntegration ? (
-                <div className="flex flex-nowrap flex-align-items-center">
-                    <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
-                        {spyTrackerIcon}
-                    </span>
-                    <span className="pl-1 flex-item-fluid" title={title}>
-                        {title}
-                    </span>
-                </div>
-            ) : (
+        <span className="absolute message-header-security-icons flex flex-row flex-nowrap">
+            <LoadContentSpotlight
+                show={showLoadContentSpotlight}
+                onDisplayed={onLoadContentSpotlightDisplayed}
+                anchorRef={anchorRef}
+            >
                 <div>
                     {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
-                    <Tooltip title={title} data-testid="privacy:icon-tooltip">
-                        {spyTrackerIcon}
+                    <Tooltip title={trackerText} data-testid="privacy:icon-tooltip">
+                        <div className="flex" ref={anchorRef}>
+                            <PrivacyDropdown message={message} />
+                        </div>
                     </Tooltip>
                 </div>
-            )}
-        </LoadContentSpotlight>
+            </LoadContentSpotlight>
+        </span>
     );
 };
 

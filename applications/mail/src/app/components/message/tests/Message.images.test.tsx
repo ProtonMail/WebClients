@@ -76,6 +76,7 @@ describe('Message images', () => {
                 hasRemoteImages: true,
                 showRemoteImages: false,
                 showEmbeddedImages: true,
+                trackersStatus: 'not-loaded',
                 images: [],
             },
         };
@@ -139,6 +140,7 @@ describe('Message images', () => {
                 hasRemoteImages: true,
                 showRemoteImages: false,
                 showEmbeddedImages: true,
+                trackersStatus: 'not-loaded',
                 images: [],
             },
         };
@@ -205,6 +207,7 @@ describe('Message images', () => {
                 hasRemoteImages: true,
                 showRemoteImages: false,
                 showEmbeddedImages: true,
+                trackersStatus: 'not-loaded',
                 images: [],
             },
         };

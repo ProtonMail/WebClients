@@ -126,7 +126,7 @@ class EditorCustomPastePlugin implements EditorPlugin {
                 .replace(/\r/g, '')
                 .replace(/ {2}/g, ' ' + NBSP_HTML);
             const span = document.createElement('span');
-            span.innerHTML = transformLinkify(line);
+            span.innerHTML = transformLinkify({ content: line });
 
             /**
              * There are three possible scenarios:

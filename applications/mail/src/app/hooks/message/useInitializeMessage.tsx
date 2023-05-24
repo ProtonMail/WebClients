@@ -2,11 +2,13 @@ import { useCallback } from 'react';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { FeatureCode, useApi, useAuthentication, useFeature, useMailSettings } from '@proton/components';
+import { FeatureCode, useApi, useAuthentication, useFeatures, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { getPureAttachments } from '../../helpers/attachment/attachment';
@@ -31,7 +33,6 @@ import {
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
-    MessageUTMTracker,
 } from '../../logic/messages/messagesTypes';
 import {
     cleanUTMTrackers,
@@ -59,7 +60,10 @@ export const useInitializeMessage = () => {
     const { verifyKeys } = useKeyVerification();
     const authentication = useAuthentication();
 
-    const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+    const { getFeature } = useFeatures([FeatureCode.NumAttachmentsWithoutEmbedded, FeatureCode.CleanUTMTrackers]);
+
+    const isNumAttachmentsWithoutEmbedded = getFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+    const canCleanUTMTrackers = getFeature(FeatureCode.CleanUTMTrackers).feature?.Value;
 
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -166,12 +170,19 @@ export const useInitializeMessage = () => {
             };
 
             const handleCleanUTMTrackers = (utmTrackers: MessageUTMTracker[]) => {
-                const dispatchResult = dispatch(cleanUTMTrackers({ ID: localID, utmTrackers }));
+                const uniqueTrackers = uniqueBy(utmTrackers, (tracker) => tracker.originalURL);
+                const dispatchResult = dispatch(cleanUTMTrackers({ ID: localID, utmTrackers: uniqueTrackers }));
                 return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 
             preparation = isPlainText({ MIMEType })
-                ? await preparePlainText(decryption.decryptedBody, isDraft(message.data))
+                ? await preparePlainText(
+                      decryption.decryptedBody,
+                      isDraft(message.data),
+                      mailSettings,
+                      canCleanUTMTrackers,
+                      handleCleanUTMTrackers
+                  )
                 : await prepareHtml(
                       {
                           ...message,
@@ -184,7 +195,8 @@ export const useInitializeMessage = () => {
                       handleLoadRemoteImagesProxy,
                       handleLoadFakeImagesProxy,
                       handleLoadRemoteImagesDirect,
-                      handleCleanUTMTrackers
+                      handleCleanUTMTrackers,
+                      canCleanUTMTrackers
                   );
 
             if (!isPlainText({ MIMEType })) {
@@ -193,6 +205,7 @@ export const useInitializeMessage = () => {
                     showRemoteImages: preparation.showRemoteImages as boolean,
                     hasEmbeddedImages: preparation.hasEmbeddedImages as boolean,
                     showEmbeddedImages: preparation.showEmbeddedImages as boolean,
+                    trackersStatus: 'not-loaded',
                     images: [...(preparation.remoteImages || []), ...(preparation.embeddedImages || [])],
                 };
             }

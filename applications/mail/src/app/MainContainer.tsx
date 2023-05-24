@@ -34,7 +34,6 @@ const MainContainer = () => {
         FeatureCode.BundlePromoShown,
         FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
-        FeatureCode.SpyTrackerProtection,
         FeatureCode.LegacyMessageMigrationEnabled,
         FeatureCode.ESUserInterface,
     ]);
