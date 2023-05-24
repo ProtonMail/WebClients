@@ -25,7 +25,7 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
            * before reading the .zip file contents
            */
           await (async () =>
-              sendMessage.map(
+              sendMessage.on(
                   pageMessage({
                       type: WorkerMessageType.EXPORT_DECRYPT,
                       payload: { data: payload.data, passphrase: payload.passphrase },

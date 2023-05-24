@@ -61,7 +61,7 @@ export const createFormManager = () => {
 
             await autofill.queryItems();
 
-            const submission = await sendMessage.map(
+            const submission = await sendMessage.on(
                 contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
                 (response) => (response.type === 'success' ? response.submission : undefined)
             );

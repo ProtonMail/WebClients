@@ -60,7 +60,7 @@ const setup = async (options: {
     setLocales(locales);
     await loadLocale(DEFAULT_LOCALE, locales);
 
-    return sendMessage.map(
+    return sendMessage.on(
         options.messageFactory({
             type: WorkerMessageType.WORKER_WAKEUP,
             payload: { tabId: options.tabId },
