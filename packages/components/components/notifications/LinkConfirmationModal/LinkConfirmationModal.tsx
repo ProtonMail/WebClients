@@ -33,14 +33,14 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
     const isPunnyCodeLink = /:\/\/xn--/.test(link);
 
     const handleConfirm = async () => {
+        modalProps.onClose();
+
         openNewTab(link);
 
         if (dontAskAgain && !isOutside) {
             await api(updateConfirmLink(0));
             await call();
         }
-
-        modalProps.onClose();
     };
 
     return (
