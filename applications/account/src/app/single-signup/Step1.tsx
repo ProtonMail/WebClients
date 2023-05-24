@@ -193,14 +193,19 @@ const Step1 = ({
     const { subscriptionData, plans, paymentMethodStatus } = model;
     const planName = plan?.Title;
 
-    const signInTo = `/dashboard${stringifySearchParams(
-        {
-            plan: plan?.Name,
-            cycle: `${subscriptionData.cycle}`,
-            currency: subscriptionData.currency,
+    const signInTo = {
+        pathname: `/dashboard${stringifySearchParams(
+            {
+                plan: plan?.Name,
+                cycle: `${subscriptionData.cycle}`,
+                currency: subscriptionData.currency,
+            },
+            '?'
+        )}`,
+        state: {
+            username: trimmedEmail,
         },
-        '?'
-    )}`;
+    } as const;
     const signIn = (
         <Link
             key="signin"

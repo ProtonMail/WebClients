@@ -545,7 +545,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         signupOptions={{ plan }}
                                                     />
                                                 </Route>
-                                                <Redirect to={SSO_PATHS.LOGIN} />
+                                                <Redirect
+                                                    to={{
+                                                        pathname: SSO_PATHS.LOGIN,
+                                                        state: {
+                                                            ...(typeof location.state === 'object'
+                                                                ? location.state
+                                                                : {}),
+                                                            from: location,
+                                                        },
+                                                    }}
+                                                />
                                             </Switch>
                                         </ForceRefreshContext.Provider>
                                     </UnAuthenticated>
