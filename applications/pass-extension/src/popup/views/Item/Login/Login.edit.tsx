@@ -61,13 +61,13 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
         aliasPrefix: '',
         aliasSuffix: undefined,
         mailboxes: [],
-        extraFields: [],
+        extraFields,
     };
 
     const form = useFormik<EditLoginItemFormValues>({
         initialValues,
         initialErrors: validateEditLoginForm(initialValues),
-        onSubmit: ({ name, username, password, totpUri, url, urls, note, ...values }) => {
+        onSubmit: ({ name, username, password, totpUri, url, urls, note, extraFields, ...values }) => {
             const mutationTime = getEpoch();
             const withAlias =
                 'withAlias' in values &&
@@ -119,7 +119,17 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: normalizedOtpUri,
                 },
-                extraFields,
+                extraFields: extraFields.map((field) => {
+                    if (field.type === 'totp')
+                        {return {
+                            ...field,
+                            value: parseOTPValue(field.value, {
+                                label: username || undefined,
+                                issuer: name || undefined,
+                            }),
+                        };}
+                    return field;
+                }),
             });
         },
         validate: validateEditLoginForm,
