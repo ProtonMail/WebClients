@@ -10,9 +10,10 @@ import { useApi, useEventManager, useLoading, useNotifications, useToggle } from
 interface Props {
     id: string;
     preventTracking: number;
+    onEnable?: () => void;
 }
 
-const PreventTrackingToggle = ({ id, preventTracking, ...rest }: Props) => {
+const PreventTrackingToggle = ({ id, preventTracking, onEnable, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -25,6 +26,9 @@ const PreventTrackingToggle = ({ id, preventTracking, ...rest }: Props) => {
         }
 
         await api(updateImageProxy(IMAGE_PROXY_FLAGS.PROXY, checked ? 'add' : 'remove'));
+        if (checked) {
+            onEnable?.();
+        }
         await call();
         toggle();
 

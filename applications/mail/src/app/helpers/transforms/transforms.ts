@@ -1,6 +1,7 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import {
@@ -8,7 +9,6 @@ import {
     MessageImage,
     MessageRemoteImage,
     MessageState,
-    MessageUTMTracker,
 } from '../../logic/messages/messagesTypes';
 import { transformBase } from './transformBase';
 import { transformEmbedded } from './transformEmbedded';
@@ -38,13 +38,16 @@ export const prepareHtml = async (
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
-    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void
+    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void,
+    canCleanUTMTrackersFeature: boolean
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
 
+    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings?.ImageProxy || false);
+
     transformBase(document);
 
-    transformLinks(document, onCleanUTMTrackers);
+    transformLinks(document, onCleanUTMTrackers, canCleanUTMTrackers);
 
     const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
         { ...message, messageDocument: { document } },
@@ -79,8 +82,16 @@ export const prepareHtml = async (
     };
 };
 
-export const preparePlainText = async (body: string, isDraft: boolean): Promise<Preparation> => {
-    const plainText = isDraft ? body : transformLinkify(body);
+export const preparePlainText = async (
+    body: string,
+    isDraft: boolean,
+    mailSettings?: MailSettings,
+    canCleanUTMTrackersFeature?: boolean,
+    onCleanUTMTrackers?: (utmTrackers: MessageUTMTracker[]) => void
+): Promise<Preparation> => {
+    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings?.ImageProxy || false);
+
+    const plainText = isDraft ? body : transformLinkify({ content: body, canCleanUTMTrackers, onCleanUTMTrackers });
 
     return { plainText };
 };

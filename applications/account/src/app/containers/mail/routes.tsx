@@ -23,13 +23,11 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
-    isSpyTrackerEnabled,
     isSmtpTokenEnabled,
 }: {
     user: UserModel;
     addresses: Address[];
     organization: Organization;
-    isSpyTrackerEnabled: boolean;
     isSmtpTokenEnabled: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
@@ -75,7 +73,6 @@ export const getMailAppRoutes = ({
                 text: c('Title').t`Email privacy`,
                 to: '/email-privacy',
                 icon: 'shield',
-                available: isSpyTrackerEnabled,
                 subsections: [{ id: 'email-privacy' }],
             },
             identity: {

@@ -80,8 +80,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             locales={locales}
             preloadModels={PRELOAD_MODELS}
+            preloadFeatures={[FeatureCode.CleanUTMTrackers, FeatureCode.ESAutomaticBackgroundIndexing]}
             eventModels={EVENTS_MODELS}
-            preloadFeatures={[FeatureCode.ESAutomaticBackgroundIndexing]}
             eventQuery={(eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 })}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation

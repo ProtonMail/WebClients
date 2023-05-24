@@ -283,6 +283,8 @@ export type IconName =
     | 'rocket'
     | 'servers'
     | 'shield'
+    | 'shield-2'
+    | 'shield-2-check-filled'
     | 'shield-filled'
     | 'shield-half-filled'
     | 'speech-bubble'

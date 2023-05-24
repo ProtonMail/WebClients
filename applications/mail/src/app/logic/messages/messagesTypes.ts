@@ -3,6 +3,7 @@ import { Api, KT_VERIFICATION_STATUS, RequireSome, SimpleMap } from '@proton/sha
 import { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
@@ -119,13 +120,8 @@ export interface MessageImages {
     hasEmbeddedImages: boolean;
     showRemoteImages: boolean;
     showEmbeddedImages: boolean;
+    trackersStatus: 'not-loaded' | 'loading' | 'loaded';
     images: MessageImage[];
-}
-
-export interface MessageUTMTracker {
-    originalURL: string;
-    cleanedURL: string;
-    removed: { key: string; value: string }[];
 }
 
 export interface MessageDecryption {
@@ -373,10 +369,6 @@ export interface LoadRemoteParams {
     ID: string;
     imageToLoad: MessageRemoteImage;
     api: Api;
-    /**
-     * Used when fake loading images for the first time
-     */
-    firstLoad?: boolean;
 }
 
 export interface LoadRemoteFromURLParams {
@@ -390,4 +382,14 @@ export interface LoadRemoteResults {
     blob?: Blob;
     tracker?: string;
     error?: unknown;
+}
+
+export interface LoadFakeRemoteParams {
+    ID: string;
+    imagesToLoad: MessageRemoteImage[];
+    api: Api;
+    /**
+     * Used when fake loading images for the first time
+     */
+    firstLoad?: boolean;
 }
