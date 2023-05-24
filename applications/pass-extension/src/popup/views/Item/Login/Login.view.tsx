@@ -44,7 +44,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
 
                 <PasswordValueControl password={password} />
 
-                {totpUri && <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} />}
+                {totpUri && <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} type="item" />}
             </FieldsetCluster>
 
             {urls.length > 0 && (

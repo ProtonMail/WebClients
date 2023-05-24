@@ -33,6 +33,8 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                             label={fieldName}
                             shareId={shareId}
                             totpUri={value}
+                            type="extraField"
+                            index={index}
                         />
                     );
                 case 'hidden':
