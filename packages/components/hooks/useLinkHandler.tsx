@@ -61,7 +61,7 @@ export const useLinkHandler: UseLinkHandler = (
 ) => {
     const { createNotification } = useNotifications();
     const [link, setLink] = useState<string>();
-    const [linkConfirmationModalProps, setLinkConfirmationModalOpen] = useModalState();
+    const [linkConfirmationModalProps, setLinkConfirmationModalOpen, renderLinkConfirmationModal] = useModalState();
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     const handleClick = useHandler(async (event: Event) => {
@@ -157,14 +157,14 @@ export const useLinkHandler: UseLinkHandler = (
         };
     }, [startListening, wrapperRef.current]);
 
-    const modal = (
+    const modal = renderLinkConfirmationModal ? (
         <LinkConfirmationModal
             link={link}
             isOutside={isOutside}
             isPhishingAttempt={isPhishingAttempt}
             modalProps={linkConfirmationModalProps}
         />
-    );
+    ) : null;
 
     return { modal };
 };
