@@ -2,7 +2,7 @@ const karmaJasmine = require('karma-jasmine');
 const karmaWebpack = require('karma-webpack');
 const karmaSpecReporter = require('karma-spec-reporter');
 const karmaChromeLauncher = require('karma-chrome-launcher');
-const { chromium } = require('@playwright/test');
+const { chromium } = require('playwright');
 process.env.CHROME_BIN = chromium.executablePath();
 
 module.exports = (config) => {
