@@ -8,7 +8,7 @@ import { FormType } from '../../types';
 export const createCSAutofillService = () => {
     const queryItems: () => Promise<{ items: SafeLoginItem[]; needsUpgrade: boolean }> = withContext(
         async ({ mainFrame }) =>
-            sendMessage.map(
+            sendMessage.on(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOFILL_QUERY,
                     payload: { mainFrame },

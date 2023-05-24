@@ -10,7 +10,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 export type Props = OtpRequest & { totpUri: string };
 
 const requestOtpCodeGeneration = async (payload: OtpRequest): Promise<MaybeNull<OtpCode>> =>
-    sendMessage.map(
+    sendMessage.on(
         popupMessage({
             type: WorkerMessageType.OTP_CODE_GENERATE,
             payload,
