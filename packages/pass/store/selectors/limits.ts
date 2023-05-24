@@ -38,6 +38,7 @@ export const selectTOTPLimits = createSelector([selectTotpItems, selectUserPlan]
     };
 });
 
+/* FIXME : SHOULD ACCOUNT FOR EXTRAFIELDS -> disable extra fields by default */
 export const selectCanGenerateTOTP = (shareId: string, itemId: string) =>
     createSelector(
         [() => shareId, () => itemId, selectTOTPLimits, selectTotpItems],
