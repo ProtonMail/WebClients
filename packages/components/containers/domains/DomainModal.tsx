@@ -26,6 +26,7 @@ import {
 import { clearExternalFlags, getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import {
     ButtonGroup,
@@ -174,7 +175,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             await keyTransparencyCommit(userKeys);
             await call();
         };
-        run();
+        void run();
     }, [domainModel?.DomainName, domainModel?.ID, domainModel?.VerifyState]);
 
     const handleClose = async () => {
@@ -309,7 +310,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                     if (!onFormSubmit(event.currentTarget)) {
                         return;
                     }
-                    withLoading(handleSubmit());
+                    void withLoading(handleSubmit().catch(noop));
                 },
             };
         }
