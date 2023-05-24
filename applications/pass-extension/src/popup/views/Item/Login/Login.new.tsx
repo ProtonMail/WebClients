@@ -74,7 +74,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const form = useFormik<NewLoginItemFormValues>({
         initialValues,
         initialErrors: validateNewLoginForm(initialValues),
-        onSubmit: ({ name, note, username, password, shareId, totpUri, url, urls, ...values }) => {
+        onSubmit: ({ name, note, username, password, shareId, totpUri, url, urls, extraFields, ...values }) => {
             const createTime = getEpoch();
             const optimisticId = uniqueId();
 
@@ -130,7 +130,17 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: normalizedOtpUri,
                 },
-                extraFields: [],
+                extraFields: extraFields.map((field) => {
+                    if (field.type === 'totp')
+                        {return {
+                            ...field,
+                            value: parseOTPValue(field.value, {
+                                label: username || undefined,
+                                issuer: name || undefined,
+                            }),
+                        };}
+                    return field;
+                }),
                 extraData,
             });
         },

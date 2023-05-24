@@ -11,6 +11,7 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
 import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
+import { ExtraFieldsControl } from '../../../components/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '../../../components/Field/Control/OTPValueControl';
 import { PasswordValueControl } from '../../../components/Field/Control/PasswordValueControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -19,7 +20,7 @@ import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
-    const { metadata, content } = item;
+    const { metadata, content, extraFields } = item;
     const { name, note } = metadata;
     const { username, password, totpUri, urls } = content;
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
@@ -66,6 +67,10 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
                         </ValueControl>
                     </ClickToCopyValueControl>
                 </FieldsetCluster>
+            )}
+
+            {Boolean(extraFields.length) && (
+                <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
             )}
 
             <MoreInfoDropdown
