@@ -14,6 +14,10 @@ export type UpsellFeatureName =
     | 'custom-email-domains'
     | 'email-aliases';
 
+const domain = 'proton.me';
+// Dirty fix because we cannot add twice the same variable in a string with ttag
+const domain2 = 'proton.me';
+
 /**
  * Default upsell features
  */
@@ -44,10 +48,15 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     'more-email-addresses': {
         icon: 'envelopes',
         getText: () => c('new_plans: feature').t`Up to 15 email addresses`,
+        getTooltip: () =>
+            c('new_plans: feature info')
+                .t`Create multiple email addresses for your online identities e.g. JohnShopper@${domain} for shopping accounts, JohnNews@${domain2} for news subscription`,
     },
     'custom-email-domains': {
         icon: 'globe',
         getText: () => c('new_plans: feature').t`Custom email domains`,
+        getTooltip: () =>
+            c('new_plans: feature info').t`Use your own custom email domain address, e.g., you@yourname.com`,
     },
     'email-aliases': {
         icon: 'eye-slash',
