@@ -13,4 +13,58 @@
 			color: var(--text-norm);
 		}
 	}
+
+	.dropdown-content ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-6);
+		justify-items: center;
+	}
+
+	.apps-dropdown-app-name,
+	.apps-dropdown-logo-wrapper {
+		transition: 0.25s ease;
+	}
+
+	.apps-dropdown-link {
+		&:hover {
+			.apps-dropdown-app-name {
+				color: var(--text-norm);
+			}
+
+			.apps-dropdown-logo-wrapper {
+				background-color: var(--interaction-default-hover);
+			}
+		}
+
+		@supports not selector(:focus-visible:has(a, b)) {
+			&:focus,
+			&:focus-within {
+				.apps-dropdown-logo-wrapper {
+					border-color: var(--focus-outline);
+					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+					color: var(--text-norm);
+
+					&:hover {
+						background-color: var(--interaction-default-hover);
+					}
+				}
+			}
+		}
+
+		@supports selector(:focus-visible:has(a, b)) {
+			&:focus-visible,
+			&:has(*:focus-visible) {
+				.apps-dropdown-logo-wrapper {
+					border-color: var(--focus-outline);
+					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+					color: var(--text-norm);
+
+					&:hover {
+						background-color: var(--interaction-default-hover);
+					}
+				}
+			}
+		}
+	}
 }
