@@ -34,6 +34,7 @@ const LogsSection = () => {
     const [settings] = useUserSettings();
     const { createModal } = useModals();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
+    const protonSentinel = settings.HighSecurity.Value;
     const api = useApi();
     const [state, setState] = useState<{ logs: AuthLog[]; total: number }>(INITIAL_STATE);
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
@@ -128,7 +129,7 @@ const LogsSection = () => {
 
     useEffect(() => {
         withLoading(fetchAndSetState());
-    }, [page]);
+    }, [page, protonSentinel]);
 
     const BRAND_NAME_TWO = BRAND_NAME;
 
@@ -212,7 +213,13 @@ const LogsSection = () => {
                 </div>
             </div>
 
-            <LogsTable logs={state.logs} logAuth={logAuth} loading={loading} error={error} />
+            <LogsTable
+                logs={state.logs}
+                logAuth={logAuth}
+                protonSentinel={protonSentinel}
+                loading={loading}
+                error={error}
+            />
         </SettingsSectionWide>
     );
 };
