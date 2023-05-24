@@ -152,7 +152,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                 open={confirmTrash}
                 title={c('Warning').t`Trash alias ?`}
                 alertText={c('Warning')
-                    .t`Alias "${name}" is currently used in login item "${relatedLoginName}". Emails will not be forwarded to your mailbox anymore.`}
+                    .t`Alias "${name}" is currently used in login item "${relatedLoginName}". You will also stop receiving emails sent to "${aliasEmail}"`}
                 submitText={c('Action').t`Move to trash`}
                 onClose={() => setConfirmTrash(false)}
                 onSubmit={pipe(() => setConfirmTrash(false), itemViewProps.handleMoveToTrashClick)}
