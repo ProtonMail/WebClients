@@ -62,7 +62,7 @@ export const createInjectionService = () => {
     );
 
     if (ENV === 'development') {
-        createDevReloader(() => setTimeout(() => browser.runtime.reload(), 500), '[DEV] Reloading runtime');
+        createDevReloader(() => browser.runtime.reload(), '[DEV] Reloading runtime');
     }
 
     return { updateInjections };
