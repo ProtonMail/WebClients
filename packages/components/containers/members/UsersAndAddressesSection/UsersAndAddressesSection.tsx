@@ -130,8 +130,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const handleDeleteUser = (member: Member) => {
         setTmpMember(member);
 
-        //We remove members if we have a family plan or if the user is a Proton member (excluding logged user)
-        if (hasFamily(subscription) || (member.Type === MEMBER_TYPE.PROTON && !member.Self)) {
+        // We can remove members if the user is a Proton member (excluding logged user and subscriber)
+        if (member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
             setUserRemoveModalOpen(true);
         } else {
             setSubUserDeleteModalOpen(true);
