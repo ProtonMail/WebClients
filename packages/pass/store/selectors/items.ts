@@ -103,7 +103,7 @@ export const selectItemsByType = <T extends ItemType>(type: T) =>
         (items, type) => items.filter((item) => item.data.type === type) as ItemRevision<T>[]
     );
 
-export const selectLoginItemByUsername = (username: string) =>
+export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
     createSelector([selectItemsByType('login'), () => username], (loginItems, _username) =>
         loginItems.find((item) => item.data.content.username === _username)
     );
