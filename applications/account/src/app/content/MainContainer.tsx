@@ -128,6 +128,7 @@ const MainContainer = () => {
         isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
         isOrgSpamBlockListEnabled,
+        isProtonSentinelEligible: !!userSettings.HighSecurity.Eligible,
     });
 
     useEffect(() => {
