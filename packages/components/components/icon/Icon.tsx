@@ -1,8 +1,7 @@
 import { forwardRef } from 'react';
 
 import { isFirefoxLessThan55 } from '@proton/shared/lib/helpers/browser';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 export type IconSize =
     | 6
@@ -17,6 +16,8 @@ export type IconSize =
     | 22
     | 24
     | 28
+    | 32
+    | 36
     | 40
     | 42
     | 48
@@ -326,7 +327,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
                 <svg
                     style={style}
                     viewBox={viewBox}
-                    className={classnames([`icon-${size}p`, className])}
+                    className={clsx([`icon-${size}p`, className])}
                     role="img"
                     focusable="false"
                     ref={ref}
