@@ -79,9 +79,11 @@ const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
 }): Promise<T[]> => {
     return options.data
         ? (
-              await readCSV<T>(options.data, options.headers, {
+              await readCSV<T>({
+                  data: options.data,
+                  headers: options.headers,
                   throwOnEmpty: false,
-                  onErrors: (errorsMessage) => options.warnings?.push(errorsMessage),
+                  onError: (error) => options.warnings?.push(error),
               })
           ).items
         : [];

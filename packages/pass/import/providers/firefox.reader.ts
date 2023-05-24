@@ -26,8 +26,10 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
     const warnings: string[] = [];
 
     try {
-        const result = await readCSV<FirefoxItem>(data, FIREFOX_EXPECTED_HEADERS, {
-            onErrors: (errorsMessage) => warnings.push(errorsMessage),
+        const result = await readCSV<FirefoxItem>({
+            data,
+            headers: FIREFOX_EXPECTED_HEADERS,
+            onError: (error) => warnings.push(error),
         });
 
         return {
