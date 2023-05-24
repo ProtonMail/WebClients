@@ -489,7 +489,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             return { upsellPlanName: PLANS.DRIVE };
         }
 
-        if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
+        if (isPassPlusEnabled && (toApp === APPS.PROTONPASS || toApp === APPS.PROTONPASSBROWSEREXTENSION)) {
             return { upsellPlanName: PLANS.PASS_PLUS };
         }
 
