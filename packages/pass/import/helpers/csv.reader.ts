@@ -7,16 +7,17 @@ import { ImportReaderError } from './reader.error';
 
 export type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignored: Partial<T>[] };
 
-export const readCSV = async <T extends Record<string, any>>(
-    data: string,
-    expectedHeaders: (keyof T)[],
-    options?: { onErrors?: (errorsMessage: string) => void; throwOnEmpty?: boolean }
-): Promise<CSVReaderResult<T>> => {
+export const readCSV = async <T extends Record<string, any>>(options: {
+    data: string;
+    headers: (keyof T)[];
+    onError?: (error: string) => void;
+    throwOnEmpty?: boolean;
+}): Promise<CSVReaderResult<T>> => {
     const throwOnEmpty = options?.throwOnEmpty ?? true;
 
     try {
         return await new Promise<CSVReaderResult<T>>((resolve, reject) => {
-            Papa.parse<T>(data, {
+            Papa.parse<T>(options.data, {
                 header: true,
                 transformHeader: (h) => h.trim(),
                 skipEmptyLines: true,
@@ -25,7 +26,7 @@ export const readCSV = async <T extends Record<string, any>>(
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
                         logger.debug('[Importer::ReadCSV]', errorDetails);
-                        options?.onErrors?.(
+                        options?.onError?.(
                             `[Error] ${c('Error').ngettext(
                                 msgid`Detected ${errors.length} corrupted csv row`,
                                 `Detected ${errors.length} corrupted csv rows`,
@@ -42,7 +43,7 @@ export const readCSV = async <T extends Record<string, any>>(
                         missed: Set<string>;
                     }>(
                         (acc, entry) => {
-                            const missedHeaders = (expectedHeaders as string[]).filter(
+                            const missedHeaders = (options.headers as string[]).filter(
                                 (header) => !Object.keys(entry).includes(header)
                             );
                             missedHeaders.forEach((header) => acc.missed.add(header));

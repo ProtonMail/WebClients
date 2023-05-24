@@ -67,12 +67,15 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
     const warnings: string[] = [];
 
     try {
-        const result = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS, {
-            onErrors: (errorsMessage) =>
+        const result = await readCSV<LastPassItem>({
+            data,
+            headers: LASTPASS_EXPECTED_HEADERS,
+            throwOnEmpty: true,
+            onError: (error) =>
                 warnings.push(
                     `[Warning] ${c('Error')
                         .t`LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines`}`,
-                    errorsMessage
+                    error
                 ),
         });
 
