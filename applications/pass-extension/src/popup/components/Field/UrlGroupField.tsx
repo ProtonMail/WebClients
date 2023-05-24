@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { type KeyboardEvent, useRef } from 'react';
 
 import { FieldArray, type FormikContextType, type FormikErrors } from 'formik';
@@ -13,7 +14,14 @@ import { FieldBox } from './Layout/FieldBox';
 
 export type UrlItem = { url: string; id: string };
 export type UrlGroupValues = { url: string; urls: UrlItem[] };
-export type UrlGroupProps<V extends UrlGroupValues = UrlGroupValues> = { form: FormikContextType<V> };
+export type UrlGroupProps<V extends UrlGroupValues = UrlGroupValues> = {
+    form: FormikContextType<V>;
+    renderExtraActions?: (helpers: {
+        handleRemove: (idx: number) => () => void;
+        handleAdd: (url: string) => void;
+        handleReplace: (idx: number) => (url: string) => void;
+    }) => ReactNode;
+};
 
 export const createNewUrl = (url: string) => ({ id: uniqueId(), url: isValidURL(url).valid ? url : '' });
 
@@ -48,7 +56,7 @@ export const validateUrls = <V extends UrlGroupValues>({ urls }: V) => {
     return (urlsErrors.some(({ url }) => url !== undefined) ? { urls: urlsErrors } : {}) as FormikErrors<V>;
 };
 
-export const UrlGroupField = <T extends UrlGroupValues>({ form }: UrlGroupProps<T>) => {
+export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActions }: UrlGroupProps<T>) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const { values, errors, handleChange } = form;
 
@@ -131,13 +139,17 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form }: UrlGroupProps<
                                 ref={inputRef}
                             />
 
+                            <hr className="mt-2 mb-1" />
+
+                            {renderExtraActions?.({ handleAdd, handleRemove, handleReplace })}
+
                             <Button
                                 icon
                                 color="norm"
                                 shape="ghost"
                                 size="small"
                                 title={c('Action').t`Add`}
-                                className="flex flex-align-items-center gap-1 mt-1"
+                                className="flex flex-align-items-center gap-1"
                                 onClick={() => {
                                     handleAdd(values.url);
                                     inputRef.current?.focus();
