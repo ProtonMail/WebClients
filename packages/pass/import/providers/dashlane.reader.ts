@@ -1,5 +1,5 @@
 import jszip from 'jszip';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
@@ -81,14 +81,7 @@ const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
         ? (
               await readCSV<T>(options.data, options.headers, {
                   throwOnEmpty: false,
-                  onErrors: (errors) =>
-                      options.warnings?.push(
-                          `[Error] ${c('Error').ngettext(
-                              msgid`Detected ${errors.length} corrupted csv row`,
-                              `Detected ${errors.length} corrupted csv rows`,
-                              errors.length
-                          )}`
-                      ),
+                  onErrors: (errorsMessage) => options.warnings?.push(errorsMessage),
               })
           ).items
         : [];
