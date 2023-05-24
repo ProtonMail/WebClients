@@ -7,6 +7,7 @@ import {
     MultiUserCreationSection,
     OrganizationPasswordSection,
     OrganizationSection,
+    OrganizationSpamFiltersSection,
     PrivateMainSettingsArea,
     UsersAndAddressesSection,
     useOrganization,
@@ -21,17 +22,19 @@ const OrganizationSettingsRouter = ({
     redirect,
     path,
     organizationAppRoutes,
+    isOrgSpamBlockListEnabled,
 }: {
     app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
+    isOrgSpamBlockListEnabled: boolean;
 }) => {
     const onceRef = useRef(false);
     const [organization] = useOrganization();
 
     const {
-        routes: { setup, domains, orgKeys, users },
+        routes: { setup, domains, orgKeys, users, filter },
     } = organizationAppRoutes;
 
     return (
@@ -77,6 +80,13 @@ const OrganizationSettingsRouter = ({
                     <PrivateMainSettingsArea config={users}>
                         <UsersAndAddressesSection app={app} />
                         <MultiUserCreationSection app={app} />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(filter) && isOrgSpamBlockListEnabled && (
+                <Route path={getSectionPath(path, filter)}>
+                    <PrivateMainSettingsArea config={filter}>
+                        <OrganizationSpamFiltersSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
