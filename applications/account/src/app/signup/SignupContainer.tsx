@@ -206,10 +206,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     });
 
     useEffect(() => {
-        startUnAuthFlow().catch(noop);
-    }, []);
-
-    useEffect(() => {
         if (signupType.method === 'auto' && signupType.type !== defaultSignupType) {
             setSignupType({ method: 'auto', type: defaultSignupType });
         }
@@ -266,6 +262,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
         const fetchDependencies = async () => {
             const { referrer, invite } = signupParameters;
+
+            await startUnAuthFlow().catch(noop);
 
             const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
