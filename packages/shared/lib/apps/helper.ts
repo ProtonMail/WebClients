@@ -71,6 +71,10 @@ export const getAppName = (appName: APP_NAMES) => {
     return APPS_CONFIGURATION[appName].name;
 };
 
+export const getAppShortName = (appName: APP_NAMES) => {
+    return APPS_CONFIGURATION[appName].bareName;
+};
+
 export const getInvoicesPathname = (app: APP_NAMES) => {
     return app === APPS.PROTONVPN_SETTINGS ? '/payments#invoices' : '/dashboard#invoices';
 };
