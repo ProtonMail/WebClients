@@ -18,6 +18,7 @@ const ENV = parseEnvVar('NODE_ENV', 'development', String);
 const BUILD_TARGET = parseEnvVar('BUILD_TARGET', SUPPORTED_TARGETS[0], String);
 const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, Boolean);
 const RESUME_FALLBACK = parseEnvVar('RESUME_FALLBACK', false, Boolean);
+const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, Boolean);
 
 if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
     throw new Error(`Build target "${BUILD_TARGET}" is not supported`);
@@ -29,6 +30,7 @@ console.log(`ENV = ${ENV}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
 console.log(`RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
 console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
+console.log(`HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
 console.log(config);
 
 const production = ENV === 'production';
