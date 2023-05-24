@@ -58,6 +58,7 @@ export * from './referral';
 export * from './rightToLeft';
 export * from './search';
 export * from './security';
+export * from './sentinel';
 export * from './sessions';
 export * from './smtp';
 export * from './support';

@@ -73,6 +73,18 @@ export const updateLogAuth = (LogAuth: SETTINGS_LOG_AUTH_STATE) => ({
     data: { LogAuth },
 });
 
+export const enableHighSecurity = () => ({
+    url: 'core/v4/settings/highsecurity',
+    method: 'post',
+    data: {},
+});
+
+export const disableHighSecurity = () => ({
+    url: 'core/v4/settings/highsecurity',
+    method: 'delete',
+    data: {},
+});
+
 export const updateDensity = (Density: DENSITY) => ({
     url: 'core/v4/settings/density',
     method: 'put',
