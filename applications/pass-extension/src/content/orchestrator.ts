@@ -8,6 +8,7 @@
  * impact on the user's experience */
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
+import { isMainFrame } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -73,7 +74,12 @@ void (async () => {
     try {
         DOMCleanUp();
         await unloadClient();
-
+        if (!isMainFrame()) {
+            /* FIXME: apply iframe specific heuristics here :
+             * we want to avoid injecting into frames that have
+             * an src element starting with "about:" or "javascript:"
+             * + only one "iframe depth" should be supported */
+        }
         listeners.addListener(document, 'visibilitychange', handleFrameVisibilityChange);
         await (document.visibilityState === 'visible' && registerClient());
     } catch (err) {

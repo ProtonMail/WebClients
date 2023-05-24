@@ -21,7 +21,7 @@
                 "https://*.proton.local/*"
             ],
             "js": ["authFallback.js"],
-            "all_frames": true,
+            "all_frames": false,
             "run_at": "document_end"
         }
     ],
