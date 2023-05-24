@@ -32,7 +32,12 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * everytime the OTP countdown updates
  * FIXME: if user has downgraded we should avoid communicating
  * with the worker in the `usePeriodicOtpCode` hook */
-export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId, totpUri }) => {
+export const OTPValueControl: VFC<UsePeriodicOtpCodeProps & { label?: string }> = ({
+    shareId,
+    itemId,
+    totpUri,
+    label,
+}) => {
     const canGenerateTOTP = useSelector(selectCanGenerateTOTP(shareId, itemId));
     const [otp, percent] = usePeriodicOtpCode({ shareId, itemId, totpUri });
 
@@ -41,7 +46,7 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps> = ({ shareId, itemId,
             <ValueControl
                 interactive
                 icon="lock"
-                label={c('Label').t`2FA token (TOTP)`}
+                label={label ?? c('Label').t`2FA token (TOTP)`}
                 actions={
                     <div
                         className={clsx('pass-otp--donut no-pointer-events')}

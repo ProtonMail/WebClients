@@ -149,6 +149,10 @@ a {
 	}
 }
 
+.placeholder-danger::placeholder {
+	color: var(--signal-danger);
+}
+
 /*
 * FIXME
 * handle line-height within core spacing-two?

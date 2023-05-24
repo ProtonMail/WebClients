@@ -8,7 +8,7 @@ import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/component
 import type { ExtraFieldType } from '@proton/pass/types';
 
 import { DropdownMenuButton } from '../../Dropdown/DropdownMenuButton';
-import { EXTRA_FIELD_OPTIONS } from './ExtraField';
+import { getExtraFieldOptions } from './ExtraField';
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
@@ -38,7 +38,7 @@ export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd })
                 size={DROPDOWN_SIZE}
             >
                 <DropdownMenu>
-                    {Object.entries(EXTRA_FIELD_OPTIONS).map(([type, { icon, label }]) => (
+                    {Object.entries(getExtraFieldOptions()).map(([type, { icon, label }]) => (
                         <DropdownMenuButton key={type} onClick={() => onAdd(type as ExtraFieldType)} size="small">
                             <Icon className="mr-2 color-weak" name={icon} />
                             {label}
