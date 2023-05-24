@@ -264,6 +264,10 @@ export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
 
+export const getSupportContactURL = (params: string) => {
+    return getStaticURL(`/support/contact?${params}`);
+};
+
 export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
     if (app === APPS.PROTONVPN_SETTINGS) {
         return 'https://protonvpn.com/privacy-policy';

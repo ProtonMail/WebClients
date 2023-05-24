@@ -2,7 +2,13 @@ import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors';
 import { SectionConfig } from '@proton/components';
-import { BRAND_NAME, DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    DEFAULT_CURRENCY,
+    PRODUCT_NAMES,
+    PROTON_SENTINEL_NAME,
+    REFERRAL_PROGRAM_MAX_AMOUNT,
+} from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -16,6 +22,7 @@ export const getAccountAppRoutes = ({
     recoveryNotification,
     isGmailSyncEnabled,
     organization,
+    isProtonSentinelEligible,
 }: {
     user: UserModel;
     isDataRecoveryAvailable: boolean;
@@ -23,8 +30,10 @@ export const getAccountAppRoutes = ({
     isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: Organization;
+    isProtonSentinelEligible: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type, isAdmin } = user;
+
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     const isExternal = Type === UserType.EXTERNAL;
 
@@ -180,6 +189,11 @@ export const getAccountAppRoutes = ({
                 to: '/security',
                 icon: 'shield',
                 subsections: [
+                    {
+                        text: PROTON_SENTINEL_NAME,
+                        id: 'sentinel',
+                        available: isProtonSentinelEligible,
+                    },
                     {
                         text: c('Title').t`Session management`,
                         id: 'sessions',

@@ -18,6 +18,11 @@ export enum SETTINGS_LOG_AUTH_STATE {
     ADVANCED = 2,
 }
 
+export enum SETTINGS_PROTON_SENTINEL_STATE {
+    DISABLED = 0,
+    ENABLED = 1,
+}
+
 export enum SETTINGS_WEEK_START {
     LOCALE_DEFAULT = 0,
     MONDAY = 1,
@@ -97,6 +102,16 @@ export interface UserSettings {
     Password: {
         Mode: SETTINGS_PASSWORD_MODE;
         ExpirationTime: number; // If set, after this time force password change
+    };
+    HighSecurity: {
+        /**
+         * 1 => user can enable High Security, 0 => can't enable
+         */
+        Eligible: 1 | 0;
+        /**
+         * 1 => user has High Security enabled, 0 => disabled
+         */
+        Value: SETTINGS_PROTON_SENTINEL_STATE;
     };
     Referral?: {
         /**
