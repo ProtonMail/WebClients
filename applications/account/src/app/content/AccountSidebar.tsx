@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
-import { AppsDropdown, Sidebar, SidebarBackButton, SidebarList, SidebarNav } from '@proton/components';
+import { AppVersion, AppsDropdown, Sidebar, SidebarBackButton, SidebarList, SidebarNav } from '@proton/components';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
-import AccountSidebarVersion from './AccountSidebarVersion';
 import { Routes } from './routes';
 
 interface AccountSidebarProps {
@@ -55,7 +54,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            version={<AccountSidebarVersion />}
+            version={<AppVersion />}
             data-testid="account:sidebar"
         >
             <SidebarNav>
