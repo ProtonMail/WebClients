@@ -15,8 +15,9 @@ const parseEnvVar = require('./env-var.parser');
 const config = require('../webpack.config');
 
 const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 1337, Number);
-const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, Boolean);
 const REDUX_DEVTOOLS_PORT = parseEnvVar('REDUX_DEVTOOLS_PORT', 8000, Number);
+const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, Boolean);
+const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, Boolean);
 
 const EXCLUDED_WEBPACK_ENTRIES = ['authFallback', 'background', 'client', 'dropdown', 'notification', 'orchestrator'];
 
@@ -84,30 +85,32 @@ const main = async () => {
     if (RUNTIME_RELOAD) {
         const { reload } = createReloadRuntimeServer({ cert, key });
         compiler.hooks.afterEmit.tap('ProtonPassExtensionReloader', reload);
+
+        if (HOT_MANIFEST_UPDATE) {
+            compiler.hooks.compilation.tap('ProtonPassUpdateManifest', (compilation) => {
+                console.info(`[ProtonPassUpdateManifest] - Updating manifest version..`);
+                compilation.hooks.processAssets.tap(
+                    {
+                        name: 'ProtonPassUpdateManifest',
+                        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
+                    },
+                    () => {
+                        devVersion += 1;
+                        const buffer = compilation.assets[`manifest.json`].source();
+                        const source = buffer.toString('utf8');
+                        const manifest = JSON.parse(source);
+                        const version = `${manifest.version}.${devVersion}`;
+                        manifest.version = version;
+
+                        const newBuffer = Buffer.from(JSON.stringify(manifest), 'utf8');
+                        compilation.updateAsset(`manifest.json`, new webpack.sources.RawSource(newBuffer));
+
+                        console.info(`[ProtonPassUpdateManifest] - Updated manifest version to ${version}`);
+                    }
+                );
+            });
+        }
     }
-
-    compiler.hooks.compilation.tap('ProtonPassUpdateManifest', (compilation) => {
-        console.info(`[ProtonPassUpdateManifest] - Updating manifest version..`);
-        compilation.hooks.processAssets.tap(
-            {
-                name: 'ProtonPassUpdateManifest',
-                stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
-            },
-            () => {
-                devVersion += 1;
-                const buffer = compilation.assets[`manifest.json`].source();
-                const source = buffer.toString('utf8');
-                const manifest = JSON.parse(source);
-                const version = `${manifest.version}.${devVersion}`;
-                manifest.version = version;
-
-                const newBuffer = Buffer.from(JSON.stringify(manifest), 'utf8');
-                compilation.updateAsset(`manifest.json`, new webpack.sources.RawSource(newBuffer));
-
-                console.info(`[ProtonPassUpdateManifest] - Updated manifest version to ${version}`);
-            }
-        );
-    });
 };
 
 main().catch((err) => {
