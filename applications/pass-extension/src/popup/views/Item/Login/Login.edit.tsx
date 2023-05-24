@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
+import { prop } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
@@ -26,6 +27,7 @@ import { TextAreaField } from '../../../components/Field/TextareaField';
 import { TitleField } from '../../../components/Field/TitleField';
 import { UrlGroupField, createNewUrl } from '../../../components/Field/UrlGroupField';
 import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
+import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
 import { type EditLoginItemFormValues, useLoginItemAliasModal, validateEditLoginForm } from './Login.validation';
@@ -33,6 +35,7 @@ import { type EditLoginItemFormValues, useLoginItemAliasModal, validateEditLogin
 const FORM_ID = 'edit-login';
 
 export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubmit, onCancel }) => {
+    const { realm, subdomain } = usePopupContext();
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const {
@@ -120,6 +123,13 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
         validate: validateEditLoginForm,
         validateOnChange: true,
     });
+
+    const showQuickAddUrl =
+        (subdomain || realm) &&
+        !form.values.urls
+            .map(prop('url'))
+            .concat(form.values.url)
+            .some((url) => url.includes(subdomain ?? realm!));
 
     const { relatedAlias, usernameIsAlias, willCreateAlias, canCreateAlias, aliasModalOpen, setAliasModalOpen } =
         useLoginItemAliasModal(form);
@@ -243,7 +253,27 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <UrlGroupField form={form} />
+                                <UrlGroupField
+                                    form={form}
+                                    renderExtraActions={
+                                        showQuickAddUrl
+                                            ? ({ handleAdd }) => (
+                                                  <Button
+                                                      icon
+                                                      color="norm"
+                                                      shape="ghost"
+                                                      size="small"
+                                                      key="add-current-url"
+                                                      title={c('Action').t`Add current url`}
+                                                      className="flex flex-align-items-center gap-1"
+                                                      onClick={() => handleAdd(subdomain ?? realm!)}
+                                                  >
+                                                      <Icon name="plus" /> {c('Action').t`Add current url`}
+                                                  </Button>
+                                              )
+                                            : undefined
+                                    }
+                                />
                             </FieldsetCluster>
 
                             <FieldsetCluster>
