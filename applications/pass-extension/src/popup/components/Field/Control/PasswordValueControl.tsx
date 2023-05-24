@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { isEmptyString } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
@@ -13,10 +14,12 @@ import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { ValueControl } from './ValueControl';
 
 type Props = {
+    icon?: IconName;
+    label?: string;
     password: string;
 };
 
-export const PasswordValueControl: VFC<Props> = ({ password }) => {
+export const PasswordValueControl: VFC<Props> = ({ icon, label, password }) => {
     const [masked, setMasked] = useState(true);
     const isEmpty = isEmptyString(password);
 
@@ -53,8 +56,8 @@ export const PasswordValueControl: VFC<Props> = ({ password }) => {
                           ]
                         : []
                 }
-                icon="key"
-                label={c('Label').t`Password`}
+                icon={icon ?? 'key'}
+                label={label ?? c('Label').t`Password`}
             >
                 {passwordDisplay}
             </ValueControl>

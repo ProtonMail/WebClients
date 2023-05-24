@@ -1,4 +1,5 @@
 import type {
+    ExtraFieldContentMap,
     ExtraFieldType,
     Item,
     ItemContentMap,
@@ -7,28 +8,33 @@ import type {
     ItemType,
     OpenedItem,
     SafeProtobufExtraField,
-    SafeProtobufItem} from '@proton/pass/types';
-import {
-    ProtobufItem
+    SafeProtobufItem,
 } from '@proton/pass/types';
+import { ProtobufItem } from '@proton/pass/types';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-const protobufToExtraField = <T extends ExtraFieldType>(field: SafeProtobufExtraField<T>): ItemExtraField<T> => {
-    const fieldContent = field.content;
-    const extraType = fieldContent.oneofKind;
-    const extraContent = fieldContent[extraType];
+const getExtraFieldContentKey = <T extends ExtraFieldType>(type: T) => {
+    return {
+        totp: 'totpUri',
+        text: 'content',
+        hidden: 'content',
+    }[type] as keyof ExtraFieldContentMap[T];
+};
+
+const protobufToExtraField = <T extends ExtraFieldType>(field: SafeProtobufExtraField<T>): ItemExtraField => {
+    const type = field.content.oneofKind;
+    const content = field.content[type] as ExtraFieldContentMap[ExtraFieldType];
 
     return {
         fieldName: field.fieldName,
-        type: extraType,
-        content: extraContent,
-    } as ItemExtraField<T>;
+        type: type,
+        value: content[getExtraFieldContentKey(type as ExtraFieldType)],
+    } as ItemExtraField;
 };
 
 const protobufToItem = <T extends ItemType>(item: SafeProtobufItem<T>): Item<T> => {
     const { platformSpecific, metadata, content: itemContent } = item;
     const { content: data } = itemContent;
-
     const type = data.oneofKind;
     const content = data[type] as ItemContentMap[ItemType];
     const extraFields = item.extraFields.map(protobufToExtraField);
@@ -42,8 +48,25 @@ const protobufToItem = <T extends ItemType>(item: SafeProtobufItem<T>): Item<T> 
     } as Item<T>;
 };
 
+const extraFieldToProtobuf = <T extends ExtraFieldType>({
+    fieldName,
+    type,
+    value,
+}: ItemExtraField): SafeProtobufExtraField<T> => {
+    return {
+        fieldName,
+        content: {
+            oneofKind: type,
+            [type]: {
+                [getExtraFieldContentKey(type)]: value,
+            },
+        },
+    } as SafeProtobufExtraField<T>;
+};
+
 const itemToProtobuf = <T extends ItemType>(item: Item<T>): SafeProtobufItem<T> => {
-    const { type, content, extraFields, platformSpecific, metadata } = item;
+    const { type, content, platformSpecific, metadata } = item;
+    const extraFields = item.extraFields.map(extraFieldToProtobuf);
 
     return {
         content: {
@@ -53,11 +76,7 @@ const itemToProtobuf = <T extends ItemType>(item: Item<T>): SafeProtobufItem<T> 
             },
         },
         metadata,
-        extraFields: extraFields.map(() => {
-            return {
-                content: {},
-            };
-        }),
+        extraFields,
         platformSpecific,
     } as SafeProtobufItem<T>;
 };
