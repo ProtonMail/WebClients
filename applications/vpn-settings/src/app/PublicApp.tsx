@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
 import AccountResetPasswordContainer from 'proton-account/src/app/reset/ResetPasswordContainer';
@@ -18,7 +18,6 @@ import {
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { setLiteRedirect } from '@proton/shared/lib/subscription/redirect';
 
 import AccountLoaderPage from './AccountLoaderPage';
 import LoginContainer from './containers/LoginContainer';
@@ -30,6 +29,7 @@ interface Props {
 
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
+    const location = useLocation();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
 
@@ -94,17 +94,13 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     <Route path="/login">
                                         <LoginContainer onLogin={onLogin} />
                                     </Route>
-                                    <Route
-                                        render={({ location }) => {
-                                            setLiteRedirect(new URLSearchParams(location.search));
-                                            return (
-                                                <Redirect
-                                                    to={{
-                                                        pathname: '/login',
-                                                        state: { from: location },
-                                                    }}
-                                                />
-                                            );
+                                    <Redirect
+                                        to={{
+                                            pathname: '/login',
+                                            state: {
+                                                ...(typeof location.state === 'object' ? location.state : {}),
+                                                from: location,
+                                            },
                                         }}
                                     />
                                 </Switch>
