@@ -31,28 +31,10 @@ export const sendMessage = async <T extends WorkerMessageWithSender>(
  * awaiting the sendMessage response and handling
  * it imperatively
  */
-sendMessage.map = async <R, T extends WorkerMessageWithSender>(
+sendMessage.on = async <R, T extends WorkerMessageWithSender>(
     message: T,
     onResponse: (res: WorkerResponse<typeof message> | MessageFailure) => R
-): Promise<R> =>
-    onResponse((await browser.runtime.sendMessage(browser.runtime.id, message)) as WorkerResponse<typeof message>);
-
-/**
- * Allows triggering an effect with
- * the worker response
- */
-sendMessage.on = async <T extends WorkerMessageWithSender>(
-    message: T,
-    onResponse: (res: WorkerResponse<typeof message> | MessageFailure) => void
-): Promise<void> => {
-    try {
-        return onResponse(
-            (await browser.runtime.sendMessage(browser.runtime.id, message)) as WorkerResponse<typeof message>
-        );
-    } catch (error: any) {
-        return onResponse({ type: 'error', error });
-    }
-};
+): Promise<R> => onResponse(await sendMessage(message));
 
 /**
  * Allows triggering an effect only if the
