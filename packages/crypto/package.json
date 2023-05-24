@@ -16,7 +16,7 @@
         "pmcrypto": "npm:@protontech/pmcrypto@^7.9.0"
     },
     "devDependencies": {
-        "@playwright/test": "^1.34.0",
+        "@playwright/test": "^1.34.2",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/chai": "^4.3.5",
         "@types/chai-as-promised": "^7.1.5",

@@ -3641,19 +3641,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.34.0":
-  version: 1.34.0
-  resolution: "@playwright/test@npm:1.34.0"
+"@playwright/test@npm:^1.34.2":
+  version: 1.34.2
+  resolution: "@playwright/test@npm:1.34.2"
   dependencies:
     "@types/node": "*"
     fsevents: 2.3.2
-    playwright-core: 1.34.0
+    playwright-core: 1.34.2
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 269074a9b58370633575b99d95135edcd8b5351c19f82b88392f9fc6b0f2dc3687e631d59864aa0cffa382534dd83163069569e67972b4fc63d1bef3fb7372d8
+  checksum: 51e581386bebdd97a40c9d5304a04eb7e9ecf731206686a526e8990f2362174311ee681fa7cf4e58b103235e60232c326bfd6c764029ca9cbd69da55244cd2f9
   languageName: node
   linkType: hard
 
@@ -3923,7 +3923,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/crypto@workspace:packages/crypto"
   dependencies:
-    "@playwright/test": ^1.34.0
+    "@playwright/test": ^1.34.2
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@types/chai": ^4.3.5
     "@types/chai-as-promised": ^7.1.5
@@ -3953,7 +3953,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/encrypted-search@workspace:packages/encrypted-search"
   dependencies:
-    "@playwright/test": ^1.34.0
+    "@playwright/test": ^1.34.2
     "@proton/components": "workspace:packages/components"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
@@ -4038,7 +4038,7 @@ __metadata:
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
     "@noble/ed25519": 1.7.3
-    "@playwright/test": ^1.34.0
+    "@playwright/test": ^1.34.2
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
@@ -4158,7 +4158,7 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-runtime": ^7.21.4
     "@mattiasbuelens/web-streams-adapter": 0.1.0
-    "@playwright/test": ^1.34.0
+    "@playwright/test": ^1.34.2
     "@proton/colors": "workspace:^"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
@@ -23856,10 +23856,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.34.0":
-  version: 1.34.0
-  resolution: "playwright-core@npm:1.34.0"
-  checksum: 1821ab254b3c756e52c144c26cae7250dd5a1c779277cdd583bd289501d45cceaea40a8185ebf7eaa56b8291e4a042e3eef65f511da2306349c275794c9a582d
+"playwright-core@npm:1.34.2":
+  version: 1.34.2
+  resolution: "playwright-core@npm:1.34.2"
+  bin:
+    playwright: cli.js
+  checksum: 7902f973d47c3d6affb794f0120d9f318e9fb098606dc7152e18f254ed1ceb2bbeafc40620b12d48a14b628b31c1d7bd05cdfe920af085dadb21a51128684a4b
   languageName: node
   linkType: hard
 
@@ -24953,7 +24955,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "proton-e2e@workspace:tests"
   dependencies:
-    "@playwright/test": ^1.34.0
+    "@playwright/test": ^1.34.2
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@types/chance": ^1.1.3
     chance: ^1.1.11
