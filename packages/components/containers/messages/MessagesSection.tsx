@@ -8,12 +8,10 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SpamAction } from '@proton/shared/lib/interfaces';
 
 import { Info } from '../../components';
-import { useApi, useEventManager, useFeature, useLoading, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { RemoteToggle } from '../emailPrivacy';
-import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
@@ -29,15 +27,12 @@ const MessagesSection = () => {
             ViewMode = 0,
             StickyLabels = 0,
             HideEmbeddedImages = SHOW_IMAGES.SHOW,
-            HideRemoteImages = SHOW_IMAGES.HIDE,
             ConfirmLink = 1,
             SpamAction = null,
             AutoDeleteSpamAndTrashDays = 0,
         } = {},
     ] = useMailSettings();
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
-    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
-    const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -47,7 +42,6 @@ const MessagesSection = () => {
     const [loadingSpamAction, withLoadingSpamAction] = useLoading();
 
     const handleChangeHideEmbedded = (newValue: number) => setHideEmbeddedImages(newValue);
-    const handleChangeHideRemote = (newValue: number) => setHideRemoteImages(newValue);
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -74,27 +68,6 @@ const MessagesSection = () => {
 
     return (
         <>
-            {!spyTrackerFeature?.Value && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="remoteToggle" className="text-semibold">
-                            <span className="mr-2">{c('Label').t`Auto show remote images`}</span>
-                            <Info
-                                url={getKnowledgeBaseUrl('/images-by-default')}
-                                title={c('Info')
-                                    .t`Loaded content is being protected by our proxy when tracker protection is activated.`}
-                            />
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt-2">
-                        <RemoteToggle
-                            id="remoteToggle"
-                            hideRemoteImages={hideRemoteImages}
-                            onChange={handleChangeHideRemote}
-                        />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="embeddedToggle" className="text-semibold">

@@ -8,7 +8,7 @@ import {
 } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageEmbeddedImage, MessageImage } from '../../logic/messages/messagesTypes';
+import { MessageEmbeddedImage, MessageImage, MessageImages } from '../../logic/messages/messagesTypes';
 import { arrayToBase64, base64ToArray } from '../base64';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import { GeneratedKey, encryptSessionKey, generateSessionKey } from './crypto';
@@ -135,10 +135,12 @@ export const createEmbeddedImage = (attachment: Attachment) =>
         status: 'loaded',
     } as MessageEmbeddedImage);
 
-export const createMessageImages = (images: MessageImage[] = []) => ({
-    showEmbeddedImages: true,
-    showRemoteImages: true,
-    hasEmbeddedImages: true,
-    hasRemoteImages: true,
-    images,
-});
+export const createMessageImages = (images: MessageImage[] = []) =>
+    ({
+        showEmbeddedImages: true,
+        showRemoteImages: true,
+        hasEmbeddedImages: true,
+        hasRemoteImages: true,
+        trackersStatus: 'not-loaded',
+        images,
+    } as MessageImages);
