@@ -16,7 +16,6 @@
         "pmcrypto": "npm:@protontech/pmcrypto@^7.9.0"
     },
     "devDependencies": {
-        "@playwright/test": "^1.34.0",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/chai": "^4.3.5",
         "@types/chai-as-promised": "^7.1.5",
@@ -32,6 +31,7 @@
         "karma-mocha-reporter": "^2.2.5",
         "karma-webpack": "^5.0.0",
         "mocha": "^10.2.0",
+        "playwright": "^1.34.2",
         "prettier": "^2.8.8",
         "ts-loader": "^9.4.2",
         "typescript": "^5.0.4",
