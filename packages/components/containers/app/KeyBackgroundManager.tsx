@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
 import {
@@ -158,7 +159,9 @@ const KeyBackgroundManager = ({
                     ? runMigration().catch((e) => {
                           const error = getSentryError(e);
                           if (error) {
-                              captureMessage('Key migration error', { extra: { error } });
+                              captureMessage('Key migration error', {
+                                  extra: { error, serverTime: serverTime(), isServerTime: wasServerTimeEverUpdated() },
+                              });
                           }
                       })
                     : undefined
