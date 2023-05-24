@@ -5,7 +5,7 @@ import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch, msToEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -66,10 +66,8 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
                                 extraFields: [],
                                 trashed: false,
                                 // Firefox uses unix time in milliseconds instead of seconds
-                                createTime: item.timeCreated ? Math.floor(item.timeCreated / 1000) : undefined,
-                                modifyTime: item.timePasswordChanged
-                                    ? Math.floor(item.timePasswordChanged / 1000)
-                                    : undefined,
+                                createTime: item.timeCreated ? msToEpoch(item.timeCreated) : undefined,
+                                modifyTime: item.timePasswordChanged ? msToEpoch(item.timePasswordChanged) : undefined,
                             };
                         }),
                 },
