@@ -1,12 +1,15 @@
 import { type VFC, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import type { MaybeNull, VaultShare } from '@proton/pass/types';
+import { selectShare } from '@proton/pass/store';
+import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { truthy } from '@proton/pass/utils/fp';
+import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal, type ConfirmationModalProps } from '../../../shared/components/confirmation';
 import { Field } from '../Field/Field';
@@ -46,6 +49,7 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit })
     }, [open]);
 
     const deleteItems = form.values.destination === 'delete';
+    const destinationVaultName = useSelector(selectShare<ShareType.Vault>(form.values.destination))?.content.name;
 
     return (
         <ConfirmationModal
@@ -56,12 +60,6 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit })
             title={c('Title').t`Delete vault "${vaultName}" ?`}
             disabled={!form.isValid}
             submitText={c('Action').t`Delete`}
-            alertText={
-                deleteItems
-                    ? c('Warning')
-                          .t`Vault "${vault?.content.name}" and all its items will be permanently deleted. You can not undo this action`
-                    : undefined
-            }
         >
             <FormikProvider value={form}>
                 <Form id={FORM_ID}>
@@ -75,14 +73,10 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit })
                         />
                     </FieldsetCluster>
 
-                    {!deleteItems && (
-                        <span className="block text-weak text-sm text-italic mt-2 mb-3">{c('Info')
-                            .t`You can move all items in the vault to another vault.`}</span>
-                    )}
                     <FieldsetCluster>
                         <Field
                             name="destination"
-                            label={c('Label').t`Items destination`}
+                            label={c('Label').t`Move items to`}
                             component={VaultSelectField}
                             placeholder={c('Placeholder').t`Move items to another vault (optional)`}
                             excludeOptions={[vault?.shareId].filter(truthy)}
@@ -96,6 +90,14 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit })
                             ]}
                         />
                     </FieldsetCluster>
+
+                    <span className={clsx(deleteItems ? 'color-danger' : 'color-weak', 'block mt-3 px-5')}>
+                        {deleteItems
+                            ? c('Warning')
+                                  .t`Vault "${vaultName}" and all its items will be permanently deleted. You can not undo this action`
+                            : c('Warning')
+                                  .t`Vault "${vaultName}" will be permanently deleted and all its items moved to "${destinationVaultName}"`}
+                    </span>
                 </Form>
             </FormikProvider>
         </ConfirmationModal>
