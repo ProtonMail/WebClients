@@ -479,7 +479,7 @@ const Step1 = ({
     };
 
     return (
-        <Layout hasDecoration languageSelect={false}>
+        <Layout hasDecoration>
             <div className="flex flex-align-items-center flex-column">
                 <div className="mt-8 mb-4 text-center">
                     <h1 className="h2 m-0 text-bold">
