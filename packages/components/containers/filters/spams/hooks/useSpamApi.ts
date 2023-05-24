@@ -5,6 +5,12 @@ import {
     getIncomingDefaults,
     updateIncomingDefault,
 } from '@proton/shared/lib/api/incomingDefaults';
+import {
+    addOrgIncomingDefault,
+    deleteOrgIncomingDefaults,
+    getOrgIncomingDefaults,
+    updateOrgIncomingDefault,
+} from '@proton/shared/lib/api/orgIncomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import { IncomingDefault } from '@proton/shared/lib/interfaces';
 
@@ -46,17 +52,20 @@ export type FetchSpams = (
     abortController: AbortController
 ) => Promise<{ list: SpamItem[]; total: number; globalTotal: number }>;
 
-const useSpamApi = () => {
+const useSpamApi = (isOrganization: boolean = false) => {
     const api = useApi();
 
     const fetchSpams: FetchSpams = async (location, search, page, limit, abortController) => {
+        const incomingDefaultParams = {
+            Page: page,
+            Keyword: search,
+            PageSize: limit,
+            Location: location === 'ALL' ? undefined : LOCATION_BY_TYPE[location],
+        };
         const result = await api<IncomingDefaultsApiResults>({
-            ...getIncomingDefaults({
-                Page: page,
-                Keyword: search,
-                PageSize: limit,
-                Location: location === 'ALL' ? undefined : LOCATION_BY_TYPE[location],
-            }),
+            ...(isOrganization
+                ? getOrgIncomingDefaults(incomingDefaultParams)
+                : getIncomingDefaults(incomingDefaultParams)),
             signal: abortController ? abortController.signal : undefined,
         });
 
@@ -82,19 +91,27 @@ const useSpamApi = () => {
         return { list: nextList, total: result.Total, globalTotal: result.GlobalTotal };
     };
 
-    const insertSpam = (location: SpamLocation, type: 'email' | 'domain', name: string) =>
-        api<{ Email: string; Location: number; Domain: string }>(
-            addIncomingDefault({
-                Location: LOCATION_BY_TYPE[location],
-                Domain: type === 'domain' ? name : undefined,
-                Email: type === 'email' ? name : undefined,
-            })
+    const insertSpam = async (location: SpamLocation, type: 'email' | 'domain', name: string) => {
+        const params = {
+            Location: LOCATION_BY_TYPE[location],
+            Domain: type === 'domain' ? name : undefined,
+            Email: type === 'email' ? name : undefined,
+        };
+        void api<{ Email: string; Location: number; Domain: string }>(
+            isOrganization ? addOrgIncomingDefault(params) : addIncomingDefault(params)
         );
+    };
 
-    const updateSpam = (id: string, nextLocation: SpamLocation) =>
-        api<IncomingDefaultsApiResults>(updateIncomingDefault(id, { Location: LOCATION_BY_TYPE[nextLocation] }));
+    const updateSpam = async (id: string, nextLocation: SpamLocation) => {
+        const params = { Location: LOCATION_BY_TYPE[nextLocation] };
+        void api<IncomingDefaultsApiResults>(
+            isOrganization ? updateOrgIncomingDefault(id, params) : updateIncomingDefault(id, params)
+        );
+    };
 
-    const deleteSpam = (id: string) => api(deleteIncomingDefaults([id]));
+    const deleteSpam = async (id: string) => {
+        void api(isOrganization ? deleteOrgIncomingDefaults([id]) : deleteIncomingDefaults([id]));
+    };
 
     return { fetchSpams, insertSpam, updateSpam, deleteSpam };
 };
