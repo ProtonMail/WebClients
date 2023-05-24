@@ -152,6 +152,9 @@ export const getAuditData = async (
     return bootstrapInitialEpoch(newSKLs, email, api, inputSKL, addressVerificationKeys);
 };
 
+const millisecondsToSeconds = (milliseconds: number) => Math.floor(milliseconds / 1000);
+const secondsToMilliseconds = (seconds: number) => seconds * 1000;
+
 /**
  * Audit both the user's own SKLs and any SKL the user has used
  * to send messages to
@@ -273,7 +276,11 @@ export const auditAddresses = async (
 
             if (SignedKeyList.MaxEpochID > initialEpoch.EpochID) {
                 await uploadVerifiedEpoch(
-                    { EpochID: SignedKeyList.MaxEpochID, Revision, SKLCreationTime: initialEpoch.SKLCreationTime },
+                    {
+                        EpochID: SignedKeyList.MaxEpochID,
+                        Revision,
+                        SKLCreationTime: initialEpoch.SKLCreationTime,
+                    },
                     addressID,
                     userPrivateKeys[0],
                     api
@@ -296,7 +303,7 @@ export const auditAddresses = async (
                   lastSKLTimestamp: Date | undefined;
               }
             | undefined;
-        let previousSKLCreationTime = initialEpoch.SKLCreationTime;
+        let previousSKLCreationTime = secondsToMilliseconds(initialEpoch.SKLCreationTime);
         for (let index = 0; index < newSKLs.length; index++) {
             const skl = newSKLs[index];
 
@@ -318,7 +325,6 @@ export const auditAddresses = async (
                     errorFlag = true;
                     break;
                 }
-
                 if (+timestamp < previousSKLCreationTime) {
                     ktSentryReport('SKL creation time is decreasing', {
                         context: 'auditAddresses',
@@ -453,7 +459,11 @@ export const auditAddresses = async (
             }
 
             await uploadVerifiedEpoch(
-                { EpochID: lastMaxEpochID, Revision: lastRevision, SKLCreationTime: +lastSKLTimestamp },
+                {
+                    EpochID: lastMaxEpochID,
+                    Revision: lastRevision,
+                    SKLCreationTime: millisecondsToSeconds(+lastSKLTimestamp),
+                },
                 addressID,
                 userPrivateKeys[0],
                 api
