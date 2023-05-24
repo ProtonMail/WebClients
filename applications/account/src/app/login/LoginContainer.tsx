@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -62,6 +63,7 @@ const LoginContainer = ({
     hasRemember = true,
     signupOptions = {},
 }: Props) => {
+    const { state } = useLocation<{ username?: string } | undefined>();
     const { APP_NAME } = useConfig();
 
     useMetaTags(getLoginMeta(toApp, APP_NAME));
@@ -83,7 +85,7 @@ const LoginContainer = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
 
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
-    const previousUsernameRef = useRef('');
+    const previousUsernameRef = useRef(state?.username || '');
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const createFlow = useFlowRef();
