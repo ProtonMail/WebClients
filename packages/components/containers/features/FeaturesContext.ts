@@ -92,6 +92,7 @@ export enum FeatureCode {
     FamilyPlan = 'FamilyPlan',
     PassSettings = 'PassSettings',
     PassPlusPlan = 'PassPlusPlan',
+    OrgSpamBlockList = 'OrgSpamBlockList',
 }
 
 export interface FeaturesContextValue {
