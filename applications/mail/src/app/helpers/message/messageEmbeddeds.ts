@@ -16,7 +16,7 @@ export const embeddableTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/b
 /**
  * Removes enclosing quotes ("", '', &lt;&gt;) from a string
  */
-const trimQuotes = (input: string) => {
+export const trimQuotes = (input: string) => {
     const value = `${input || ''}`.trim(); // input can be a number
 
     if (['"', "'", '<'].indexOf(value.charAt(0)) > -1 && ['"', "'", '>'].indexOf(value.charAt(value.length - 1)) > -1) {
