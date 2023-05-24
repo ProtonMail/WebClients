@@ -4,21 +4,22 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { popupMessage, sendMessage } from '@proton/pass/extension/message';
-import type { MaybeNull, OtpCode, SelectedItem } from '@proton/pass/types';
+import type { MaybeNull, OtpCode, OtpRequest } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 
-export type Props = SelectedItem & { totpUri: string };
+export type Props = OtpRequest & { totpUri: string };
 
-const requestOtpCodeGeneration = async ({ shareId, itemId }: SelectedItem): Promise<MaybeNull<OtpCode>> =>
+const requestOtpCodeGeneration = async (payload: OtpRequest): Promise<MaybeNull<OtpCode>> =>
     sendMessage.map(
         popupMessage({
             type: WorkerMessageType.OTP_CODE_GENERATE,
-            payload: { shareId, itemId },
+            payload,
         }),
         (response) => (response.type === 'success' ? response : null)
     );
 
-export const usePeriodicOtpCode = ({ shareId, itemId, totpUri }: Props): [MaybeNull<OtpCode>, number] => {
+export const usePeriodicOtpCode = ({ totpUri, ...request }: Props): [MaybeNull<OtpCode>, number] => {
+    const { shareId, itemId, type } = request;
     const [otp, setOtp] = useState<MaybeNull<OtpCode>>(null);
     const [percentage, setPercentage] = useState<number>(-1);
     const requestAnimationRef = useRef<number>(-1);
@@ -28,7 +29,7 @@ export const usePeriodicOtpCode = ({ shareId, itemId, totpUri }: Props): [MaybeN
     /* Only trigger the countdown if we have a valid
      * OTP code with a valid period - else do nothing */
     const doRequestOtpCodeGeneration = useCallback(async () => {
-        const otpCode = await requestOtpCodeGeneration({ shareId, itemId });
+        const otpCode = await requestOtpCodeGeneration(request);
         setOtp(otpCode);
 
         if (otpCode === null) {
@@ -49,7 +50,7 @@ export const usePeriodicOtpCode = ({ shareId, itemId, totpUri }: Props): [MaybeN
 
             applyCountdown();
         }
-    }, [shareId, itemId]);
+    }, [shareId, itemId, type]);
 
     /* if countdown has reached the 0 limit, trigger
      * a new OTP Code generation sequence */
@@ -68,7 +69,7 @@ export const usePeriodicOtpCode = ({ shareId, itemId, totpUri }: Props): [MaybeN
             setOtp(null);
             setPercentage(-1);
         },
-        [itemId, shareId, totpUri]
+        [shareId, itemId, type, totpUri]
     );
 
     return [otp, percentage];

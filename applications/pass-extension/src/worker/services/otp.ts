@@ -2,7 +2,8 @@ import type { TOTP } from 'otpauth';
 import { URI } from 'otpauth';
 
 import { selectCanGenerateTOTP, selectItemByShareIdAndId } from '@proton/pass/store';
-import { type OtpCode, type SelectedItem, WorkerMessageType } from '@proton/pass/types';
+import type { OtpRequest } from '@proton/pass/types';
+import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -28,16 +29,20 @@ export const createOTPService = () => {
         return { token, period: otp.period, expiry };
     };
 
-    const handleTOTPRequest = ({ shareId, itemId }: SelectedItem) => {
+    const handleTOTPRequest = ({ shareId, itemId, ...request }: OtpRequest) => {
         try {
             const canGenerateTOTP = selectCanGenerateTOTP(shareId, itemId);
             if (!canGenerateTOTP) throw new Error('User plan does not allow generating this OTP code');
 
             const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
 
-            if (item && item.data.type === 'login' && item.data.content.totpUri) {
-                const uri = parseOTPValue(item.data.content.totpUri);
-                return generateTOTPCode(uri);
+            if (item?.data.type === 'login') {
+                const totpUri =
+                    request.type === 'item'
+                        ? item?.data.content.totpUri
+                        : item?.data.extraFields?.[request.index].value;
+
+                if (totpUri) return generateTOTPCode(parseOTPValue(totpUri));
             }
 
             throw new Error('Cannot generate an OTP code from such item');
