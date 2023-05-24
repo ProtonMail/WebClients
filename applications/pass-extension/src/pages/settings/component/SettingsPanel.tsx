@@ -10,7 +10,7 @@ import { settingEditIntent } from '@proton/pass/store/actions';
 import { settingsEdit } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings, SettingsState } from '@proton/pass/store/reducers/settings';
 import type { RecursivePartial } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 type SettingDefinition = {
@@ -92,9 +92,9 @@ const getSettings = (
         label: c('Label').t`Display`,
         settings: [
             {
-                label: c('Label').t`Load domain images`,
+                label: c('Label').t`Show website thumbnails`,
                 description: c('Info')
-                    .t`If disabled, ${PASS_APP_NAME} will not fetch login item favicons via our anonymized image proxy.`,
+                    .t`If disabled, ${PASS_APP_NAME} will not display the item favicon via ${BRAND_NAME} anonymised image proxy.`,
                 checked: settings.loadDomainImages,
                 onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
             },
