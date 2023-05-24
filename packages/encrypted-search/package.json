@@ -18,7 +18,6 @@
         "idb": "^7.1.1"
     },
     "devDependencies": {
-        "@playwright/test": "^1.34.0",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/jasmine": "^4.3.1",
         "eslint": "^8.41.0",
@@ -29,6 +28,7 @@
         "karma-jasmine": "^5.1.0",
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.0",
+        "playwright": "^1.34.2",
         "ts-loader": "^9.4.2",
         "typescript": "^5.0.4",
         "webpack": "^5.83.1"
