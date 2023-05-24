@@ -131,7 +131,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         setTmpMember(member);
 
         // We can remove members if the user is a Proton member (excluding logged user and subscriber)
-        if (member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
+        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
             setUserRemoveModalOpen(true);
         } else {
             setSubUserDeleteModalOpen(true);
@@ -156,7 +156,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         setTmpMember(member);
 
         // We can open the invite modal if the user is a Proton member (excluding logged user and subscriber)
-        if (member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
+        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
             setUserInviteOrEditModalOpen(true);
         } else {
             setSubUserEditModalOpen(true);
