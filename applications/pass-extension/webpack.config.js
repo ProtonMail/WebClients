@@ -52,7 +52,7 @@ module.exports = {
         orchestrator: './src/content/orchestrator.ts',
         popup: nonAccessibleWebResource('./src/popup/index.tsx'),
         settings: './src/pages/settings/index.tsx',
-        ...(BUILD_TARGET === 'firefox' ? { authFallback: './src/content/firefox/auth-fallback.ts' } : {}),
+        ...(BUILD_TARGET === 'firefox' ? { authFallback: './src/content/firefox/index.ts' } : {}),
     },
     module: {
         strictExportPresence: true,
