@@ -16,6 +16,7 @@ export const PROVIDER_TITLE_MAP = {
     [ImportProvider.BRAVE]: 'Brave (csv)',
     [ImportProvider.CHROME]: 'Chrome (csv)',
     [ImportProvider.EDGE]: 'Edge (csv)',
+    [ImportProvider.FIREFOX]: 'Firefox (csv)',
     [ImportProvider.KEEPASS]: 'KeePass (xml)',
     [ImportProvider.LASTPASS]: 'LastPass (csv)',
     [ImportProvider.ONEPASSWORD]: '1Password (1pux, 1pif)',
