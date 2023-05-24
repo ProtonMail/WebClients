@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
@@ -21,14 +21,7 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
 
     try {
         const result = await readCSV<ChromiumItem>(data, CHROME_EXPECTED_HEADERS, {
-            onErrors: (errors) =>
-                warnings.push(
-                    `[Error] ${c('Error').ngettext(
-                        msgid`Detected ${errors.length} corrupted csv row`,
-                        `Detected ${errors.length} corrupted csv rows`,
-                        errors.length
-                    )}`
-                ),
+            onErrors: (errorsMessage) => warnings.push(errorsMessage),
         });
 
         return {
