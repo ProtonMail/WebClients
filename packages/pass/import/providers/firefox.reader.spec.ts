@@ -2,13 +2,15 @@ import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 
+import type { ImportPayload } from '../types';
 import { readFirefoxData } from './firefox.reader';
 
 describe('Import Firefox CSV', () => {
-    let firefoxExport: string;
+    let payload: ImportPayload;
 
     beforeAll(async () => {
-        firefoxExport = await fs.promises.readFile(__dirname + '/mocks/firefox.csv', 'utf8');
+        const sourceData = await fs.promises.readFile(__dirname + '/mocks/firefox.csv', 'utf8');
+        payload = await readFirefoxData(sourceData);
     });
 
     it('should handle corrupted files', async () => {
@@ -16,7 +18,6 @@ describe('Import Firefox CSV', () => {
     });
 
     it('should correctly parse items', async () => {
-        const payload = await readFirefoxData(firefoxExport);
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
@@ -126,5 +127,9 @@ describe('Import Firefox CSV', () => {
         });
         expect(loginItemCommaQuote.trashed).toEqual(false);
         expect(loginItemCommaQuote.extraFields).toEqual([]);
+
+        /* ignored & warnings  */
+        expect(payload.ignored.length).toEqual(0);
+        expect(payload.warnings.length).toEqual(0);
     });
 });
