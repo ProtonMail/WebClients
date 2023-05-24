@@ -66,7 +66,7 @@ export default function useShareUrl() {
     const events = useDriveEventManager();
     const { createShare, deleteShare } = useShareActions();
     const { getShare, getShareSessionKey } = useShare();
-    const { getLink } = useLink();
+    const { getLink, loadFreshLink } = useLink();
     const volumeState = useVolumesState();
 
     const fetchShareUrl = async (abortSignal: AbortSignal, shareId: string): Promise<ShareURL | undefined> => {
@@ -238,7 +238,7 @@ export default function useShareUrl() {
     }> => {
         const [share, link] = await Promise.all([
             getShare(abortSignal, shareId),
-            getLink(abortSignal, shareId, linkId),
+            loadFreshLink(abortSignal, shareId, linkId),
         ]);
 
         if (!link.parentLinkId) {
@@ -268,7 +268,7 @@ export default function useShareUrl() {
         shareId: string,
         linkId: string
     ): Promise<ShareURL | undefined> => {
-        const link = await getLink(abortSignal, shareId, linkId);
+        const link = await loadFreshLink(abortSignal, shareId, linkId);
         if (!link.shareId || !link.shareUrl) {
             return;
         }
