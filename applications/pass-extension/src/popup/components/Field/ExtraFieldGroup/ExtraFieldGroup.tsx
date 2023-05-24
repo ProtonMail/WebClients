@@ -8,10 +8,6 @@ import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { AddExtraFieldDropdown } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
 
-// /* here we flatten the ItemExtraField type for
-//  * simplicity when using it with form fields */
-// export type ExtraFieldFormValue = { fieldName: string; type: ExtraFieldType; value: string };
-
 export type ExtraFieldGroupValues = { extraFields: ItemExtraField[] };
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
