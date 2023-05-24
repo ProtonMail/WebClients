@@ -6,7 +6,7 @@ type CSVItem = { id: string; name: string };
 describe('readCSV', () => {
     it('should read CSV data with expected headers', async () => {
         const csvContent = 'id,name\n1,John Doe\n2,Jane Doe\n3,Bob Smith\n';
-        const result = await readCSV<CSVItem>(csvContent, ['id', 'name']);
+        const result = await readCSV<CSVItem>({ data: csvContent, headers: ['id', 'name'] });
 
         expect(result.items).toEqual([
             { id: '1', name: 'John Doe' },
@@ -19,7 +19,7 @@ describe('readCSV', () => {
 
     it('should read CSV data with extra headers not in expected headers', async () => {
         const csvContent = 'id,name,age\n1,John Doe,20\n2,Jane Doe,21\n3,Bob Smith,22\n';
-        const result = await readCSV<CSVItem>(csvContent, ['id', 'name']);
+        const result = await readCSV<CSVItem>({ data: csvContent, headers: ['id', 'name'] });
 
         expect(result.items).toEqual([
             { id: '1', name: 'John Doe', age: '20' },
@@ -30,20 +30,24 @@ describe('readCSV', () => {
     });
 
     it('should throw error if CSV is empty', async () => {
-        await expect(readCSV<CSVItem>('', [])).rejects.toThrow(new ImportReaderError('Empty CSV file'));
-        await expect(readCSV<CSVItem>('id,name', [])).rejects.toThrow(new ImportReaderError('Empty CSV file'));
+        await expect(readCSV<CSVItem>({ data: '', headers: [] })).rejects.toThrow(
+            new ImportReaderError('Empty CSV file')
+        );
+        await expect(readCSV<CSVItem>({ data: 'id,name', headers: [] })).rejects.toThrow(
+            new ImportReaderError('Empty CSV file')
+        );
     });
 
     it('should throw error if CSV file has missing headers', async () => {
         const csvContent = 'id\n1\n2\n3\n';
-        await expect(readCSV<CSVItem>(csvContent, ['id', 'name'])).rejects.toThrow(
+        await expect(readCSV<CSVItem>({ data: csvContent, headers: ['id', 'name'] })).rejects.toThrow(
             new ImportReaderError('CSV file is missing expected headers: name')
         );
     });
 
     it('should hydrate ignored array if some entries are invalid', async () => {
         const csvContent = 'id,name\n1,John Doe\n2\n3,Bob Smith\n';
-        const result = await readCSV<CSVItem>(csvContent, ['id', 'name']);
+        const result = await readCSV<CSVItem>({ data: csvContent, headers: ['id', 'name'] });
 
         expect(result.items).toEqual([
             { id: '1', name: 'John Doe' },
