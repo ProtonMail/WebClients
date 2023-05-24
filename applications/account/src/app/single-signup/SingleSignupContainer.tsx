@@ -9,7 +9,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useForceRefresh,
     useLoading,
     useVPNServersCount,
 } from '@proton/components';
@@ -29,9 +28,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { locales } from '@proton/shared/lib/i18n/locales';
 import { Api, Audience, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
@@ -109,7 +105,6 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
     const { CLIENT_TYPE } = useConfig();
     const cacheRef = useRef<SignupCacheResult>();
     const createFlow = useFlowRef();
-    const forceRefresh = useForceRefresh();
     const handleError = useErrorHandler();
 
     const update = (params: any) => {
@@ -118,17 +113,6 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
 
     useEffect(() => {
         startUnAuthFlow().catch(noop);
-    }, []);
-
-    useEffect(() => {
-        // Force english until more languages are translated
-        const newLocale = 'en';
-        const localeCode = getClosestLocaleCode(newLocale, locales);
-        const run = async () => {
-            await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
-            forceRefresh();
-        };
-        run();
     }, []);
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
