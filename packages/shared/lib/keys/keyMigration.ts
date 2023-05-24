@@ -3,7 +3,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { queryScopes } from '../api/auth';
-import { getApiError } from '../api/helpers/apiErrorHelper';
+import { getApiError, getIsConnectionIssue } from '../api/helpers/apiErrorHelper';
 import { migrateAddressKeysRoute } from '../api/keys';
 import { migrateMembersAddressKeysRoute } from '../api/memberKeys';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
@@ -30,13 +30,23 @@ import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecrypted
 import { getPrimaryKey } from './getPrimaryKey';
 import { createSignedKeyListForMigration } from './signedKeyList';
 
-export const getSentryError = (e: any): any => {
+export const getSentryError = (error: any): any => {
     // Only interested in api errors where the API gave a valid error response, or run time errors.
-    if (e instanceof ApiError) {
-        const { message, code } = getApiError(e);
+    if (error instanceof ApiError) {
+        const { message, code } = getApiError(error);
         return message && code >= 400 && code < 500 ? message : null;
     }
-    return e;
+    if (
+        error.ignore ||
+        getIsConnectionIssue(error) ||
+        error.message === 'Failed to fetch' ||
+        error.message === 'Load failed' ||
+        error.message === 'Operation aborted' ||
+        error.name === 'AbortError'
+    ) {
+        return;
+    }
+    return error;
 };
 
 export const getHasMigratedAddressKey = ({ Token, Signature }: { Token?: string; Signature?: string }): boolean => {
@@ -238,7 +248,9 @@ export async function migrateAddressKeys({
         keyPassword
     ).catch(noop);
     if (!decryptedOrganizationKeyResult) {
-        throw new Error('Failed to decrypt organization key');
+        const error = new Error('Failed to decrypt organization key');
+        (error as any).ignore = true;
+        throw error;
     }
     return getAddressKeysMigrationPayload(
         addressesKeys,

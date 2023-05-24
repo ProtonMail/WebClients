@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
+import { serverTime } from '@proton/crypto';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -246,7 +247,7 @@ const handleKeyUpgrade = async ({
     }).catch((e) => {
         const error = getSentryError(e);
         if (error) {
-            captureMessage('Key migration error', { extra: { error } });
+            captureMessage('Key migration error', { extra: { error, serverTime: serverTime() } });
         }
         return false;
     });
