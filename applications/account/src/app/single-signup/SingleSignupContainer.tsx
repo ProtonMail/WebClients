@@ -111,10 +111,6 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
         silentApi(updateRoute(params)).catch(noop);
     };
 
-    useEffect(() => {
-        startUnAuthFlow().catch(noop);
-    }, []);
-
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
 
     const [signupParameters] = useState(() => {
@@ -183,6 +179,8 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
         };
 
         const fetchDependencies = async () => {
+            await startUnAuthFlow().catch(noop);
+
             const [{ Domains: domains }, paymentMethodStatus, Plans] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
