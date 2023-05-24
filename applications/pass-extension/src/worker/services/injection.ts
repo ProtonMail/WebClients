@@ -2,6 +2,7 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { backgroundMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
+import type { Maybe } from '@proton/pass/types';
 import { type TabId, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -10,21 +11,33 @@ import { createDevReloader } from '../../shared/extension/dev-reload';
 import WorkerMessageBroker from '../channel';
 
 const withTabEffect =
-    (fn: (tabId: TabId) => Promise<void>) =>
-    async (_: any, { tab }: Runtime.MessageSender) => {
+    (fn: (tabId: TabId, frameId: Maybe<number>) => Promise<void>) =>
+    async (_: any, { tab, frameId }: Runtime.MessageSender) => {
         if (!tab?.id) return false;
-        await fn(tab.id);
+        await fn(tab.id, frameId);
         return true;
     };
 
 export const createInjectionService = () => {
-    const inject = async (options: { tabId: TabId; js: string[]; css?: string[] }) => {
+    const inject = async (options: {
+        tabId: TabId;
+        allFrames?: boolean;
+        frameId?: Maybe<number>;
+        js: string[];
+        css?: string[];
+    }) => {
         const { tabId } = options;
+        const frameIds = options.frameId ? [options.frameId] : undefined;
+
         Promise.all([
-            options.css && browser.scripting.insertCSS({ target: { tabId, allFrames: false }, files: options.css }),
+            options.css &&
+                browser.scripting.insertCSS({
+                    target: { tabId, allFrames: options.allFrames ?? false, frameIds },
+                    files: options.css,
+                }),
             options.js &&
                 browser.scripting.executeScript({
-                    target: { tabId, allFrames: false },
+                    target: { tabId, allFrames: options.allFrames ?? false, frameIds },
                     files: options.js,
                 }),
         ]).catch((e) => logger.info(`[InjectionService::inject] Injection error on tab ${tabId}`, e));
@@ -36,7 +49,8 @@ export const createInjectionService = () => {
             tabs.map((tab) => {
                 logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
                 if (tab.id !== undefined) {
-                    inject({ tabId: tab.id, js: ['orchestrator.js'] }).catch(noop);
+                    /* FIXME: re-inject in all frames when supporting iframes */
+                    inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] }).catch(noop);
                 }
             })
         );
@@ -44,20 +58,24 @@ export const createInjectionService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.LOAD_CONTENT_SCRIPT,
-        withTabEffect((tabId) => inject({ tabId, js: ['client.js'], css: ['styles/client.css'] }))
+        withTabEffect((tabId, frameId) => inject({ tabId, frameId, js: ['client.js'], css: ['styles/client.css'] }))
     );
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.UNLOAD_CONTENT_SCRIPT,
-        withTabEffect((tabId) =>
-            browser.tabs.sendMessage(tabId, backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }))
+        withTabEffect((tabId, frameId) =>
+            browser.tabs.sendMessage(tabId, backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }), {
+                frameId,
+            })
         )
     );
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.START_CONTENT_SCRIPT,
-        withTabEffect((tabId) =>
-            browser.tabs.sendMessage(tabId, backgroundMessage({ type: WorkerMessageType.START_CONTENT_SCRIPT }))
+        withTabEffect((tabId, frameId) =>
+            browser.tabs.sendMessage(tabId, backgroundMessage({ type: WorkerMessageType.START_CONTENT_SCRIPT }), {
+                frameId,
+            })
         )
     );
 
