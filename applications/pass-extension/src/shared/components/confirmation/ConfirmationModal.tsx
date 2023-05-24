@@ -18,7 +18,7 @@ export type ConfirmationModalProps = {
     onSubmit?: () => any | Promise<any>;
     title?: string;
     children?: ReactNode;
-    alertText: ReactNode;
+    alertText?: ReactNode;
     cancelText?: ReactNode;
     submitText?: ReactNode;
     open?: boolean;
@@ -52,6 +52,7 @@ export const ConfirmationModal = ({
                         {alertText}
                     </Alert>
                 )}
+
                 {children}
             </ModalTwoContent>
             <ModalTwoFooter>
