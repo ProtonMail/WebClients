@@ -4,3 +4,5 @@
  * (midnight UTC/GMT)
  */
 export const getEpoch = (): number => Math.round(new Date().getTime() / 1000);
+
+export const msToEpoch = (ms: number) => Math.floor(ms / 1000);
