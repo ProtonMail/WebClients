@@ -1,65 +1,52 @@
-import * as React from 'react';
-
-import { c, msgid } from 'ttag';
+import { Ref, forwardRef } from 'react';
 
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-
-import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props {
     numberOfTrackers: number;
     needsMoreProtection: boolean;
     title: string;
     className?: string;
-    openSpyTrackerModal?: () => void;
+    onClick?: () => void;
     isStandaloneIcon?: boolean;
 }
 
-const SpyTrackerIcon = ({
-    numberOfTrackers,
-    needsMoreProtection,
-    title,
-    className,
-    openSpyTrackerModal,
-    isStandaloneIcon = false,
-}: Props) => {
-    return (
-        <div
-            className={clsx([
+const SpyTrackerIcon = (
+    { numberOfTrackers, needsMoreProtection, title, className, onClick, isStandaloneIcon = false }: Props,
+    ref: Ref<HTMLButtonElement>
+) => {
+    const trackersText = (
+        <span data-testid="privacy:icon-number-of-trackers">{numberOfTrackers > 99 ? '99+' : numberOfTrackers}</span>
+    );
+
+    const icon = (
+        <Icon
+            name={needsMoreProtection ? 'shield-2' : 'shield-2-check-filled'}
+            size={16}
+            alt={title}
+            data-testid="privacy:tracker-icon"
+            className={clsx(
+                needsMoreProtection ? 'color-weak' : 'color-primary',
                 'relative inline-flex item-spy-tracker-link flex-align-items-center',
                 isStandaloneIcon && 'mr-0.5',
-                className,
-            ])}
-        >
-            <Icon
-                name="shield"
-                size={16}
-                alt={title}
-                data-testid="privacy:tracker-icon"
-                className={clsx([
-                    needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary',
-                    'relative inline-flex item-spy-tracker-link flex-align-items-center',
-                    !isStandaloneIcon && 'cursor-pointer',
-                    isStandaloneIcon && 'mr-0.5',
-                    className,
-                ])}
-                onClick={openSpyTrackerModal}
-            />
-            {numberOfTrackers > 0 && (
-                <NumberOfElementsBubble
-                    numberOfElements={numberOfTrackers}
-                    className="absolute"
-                    data-testid="privacy:icon-number-of-trackers"
-                    aria-label={c('Info').ngettext(
-                        msgid`${numberOfTrackers} email tracker blocked`,
-                        `${numberOfTrackers} email trackers blocked`,
-                        numberOfTrackers
-                    )}
-                />
+                className
+            )}
+        />
+    );
+
+    return (
+        <div className={clsx(['relative inline-flex item-spy-tracker-link flex-align-items-center', className])}>
+            {onClick ? (
+                <button ref={ref} onClick={onClick} className="flex flex-align-items-center">
+                    {icon}
+                    {numberOfTrackers > 0 ? trackersText : undefined}
+                </button>
+            ) : (
+                icon
             )}
         </div>
     );
 };
 
-export default SpyTrackerIcon;
+export default forwardRef<HTMLButtonElement, Props>(SpyTrackerIcon);

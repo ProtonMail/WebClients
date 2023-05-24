@@ -1,6 +1,6 @@
-import { TidyURL } from 'tidy-url';
+import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
+import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { MessageUTMTracker } from '../../logic/messages/messagesTypes';
 import { matches } from '../dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
@@ -62,18 +62,11 @@ const removeTrackingTokens = (link: HTMLLinkElement) => {
         const href = link.getAttribute('href');
 
         if (href) {
-            const { url, info } = TidyURL.clean(href);
+            const { url, utmTracker } = getUTMTrackersFromURL(href);
+
             link.setAttribute('href', url);
 
-            if (info.removed.length > 0) {
-                const utmTracker: MessageUTMTracker = {
-                    originalURL: info.original,
-                    cleanedURL: url,
-                    removed: info.removed,
-                };
-
-                return utmTracker;
-            }
+            return utmTracker;
         }
     }
 };
@@ -88,7 +81,11 @@ const disableAnchors = (link: HTMLLinkElement) => {
     }
 };
 
-export const transformLinks = (document: Element, onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void) => {
+export const transformLinks = (
+    document: Element,
+    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void,
+    canCleanUTMTrackers: boolean
+) => {
     const links = [...document.querySelectorAll('[href]')] as HTMLLinkElement[];
 
     const utmTrackers: MessageUTMTracker[] = [];
@@ -96,11 +93,13 @@ export const transformLinks = (document: Element, onCleanUTMTrackers: (utmTracke
     links.forEach((link) => {
         httpInNewTab(link);
         noReferrerInfo(link);
-        //TODO: check setting
-        const tracker = removeTrackingTokens(link);
 
-        if (tracker) {
-            utmTrackers.push(tracker);
+        if (canCleanUTMTrackers) {
+            const tracker = removeTrackingTokens(link);
+
+            if (tracker) {
+                utmTrackers.push(tracker);
+            }
         }
 
         sanitizeRelativeHttpLinks(link);

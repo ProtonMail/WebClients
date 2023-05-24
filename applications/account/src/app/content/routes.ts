@@ -16,7 +16,6 @@ interface Arguments {
     addresses: Address[];
     subscription: Subscription;
     organization: Organization;
-    isSpyTrackerEnabled: boolean;
     isReferralProgramEnabled: boolean;
     isSmtpTokenEnabled: boolean;
     isDataRecoveryAvailable: boolean;
@@ -36,7 +35,6 @@ export const getRoutes = ({
     addresses,
     subscription,
     isDataRecoveryAvailable,
-    isSpyTrackerEnabled,
     isReferralProgramEnabled,
     isSmtpTokenEnabled,
     isGmailSyncEnabled,
@@ -65,7 +63,6 @@ export const getRoutes = ({
             user,
             addresses,
             organization,
-            isSpyTrackerEnabled,
             isSmtpTokenEnabled,
         }),
         calendar: getCalendarAppRoutes(),

@@ -11,6 +11,7 @@ import { getMessage } from '../helpers/messagesReducer';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
+    LoadFakeRemoteParams,
     LoadRemoteFromURLParams,
     LoadRemoteParams,
     LoadRemoteResults,
@@ -171,21 +172,29 @@ export const loadFakeProxyPending = (
     state: Draft<MessagesState>,
     {
         meta: {
-            arg: { ID, imageToLoad, firstLoad },
+            arg: { ID, imagesToLoad, firstLoad },
         },
-    }: PayloadAction<undefined, string, { arg: LoadRemoteParams }>
+    }: PayloadAction<undefined, string, { arg: LoadFakeRemoteParams }>
 ) => {
     const messageState = getMessage(state, ID);
 
-    // If we want to get the number of trackers but images are not already loaded (Auto show is OFF but use Proton proxy is ON)
-    // Then we want to display the correct number of trackers in the shield icon. But for that, we need to fill images with their original URLs
-    // Otherwise, we will not be able to display the correct number (they will all have a originalUrl = "", which will be considered as one tracker)
-    if (messageState && firstLoad) {
-        getRemoteImages(messageState).forEach((image) => {
-            if (imageToLoad.id === image.id) {
-                image.originalURL = image.url;
-            }
-        });
+    if (messageState) {
+        if (messageState.messageImages) {
+            messageState.messageImages.trackersStatus = 'loading';
+        }
+
+        // If we want to get the number of trackers but images are not already loaded (Auto show is OFF but use Proton proxy is ON)
+        // Then we want to display the correct number of trackers in the shield icon. But for that, we need to fill images with their original URLs
+        // Otherwise, we will not be able to display the correct number (they will all have a originalUrl = "", which will be considered as one tracker)
+        if (firstLoad) {
+            getRemoteImages(messageState).forEach((image) => {
+                imagesToLoad.forEach((imageToLoad) => {
+                    if (imageToLoad.id === image.id) {
+                        image.originalURL = image.url;
+                    }
+                });
+            });
+        }
     }
 };
 
@@ -196,16 +205,24 @@ export const loadFakeProxyFulFilled = (
         meta: {
             arg: { ID },
         },
-    }: PayloadAction<LoadRemoteResults | undefined, string, { arg: LoadRemoteParams }>
+    }: PayloadAction<(LoadRemoteResults | undefined)[] | undefined, string, { arg: LoadFakeRemoteParams }>
 ) => {
     const messageState = getMessage(state, ID);
 
     if (messageState && payload) {
-        const { image, tracker, error } = getStateImage(payload, messageState);
+        payload.forEach((imageToLoad) => {
+            if (imageToLoad) {
+                const { image, tracker, error } = getStateImage(imageToLoad, messageState);
 
-        if (image) {
-            image.error = error;
-            image.tracker = tracker;
+                if (image) {
+                    image.error = error;
+                    image.tracker = tracker;
+                }
+            }
+        });
+
+        if (messageState.messageImages) {
+            messageState.messageImages.trackersStatus = 'loaded';
         }
     }
 };
@@ -286,5 +303,15 @@ export const failedRemoteDirectLoading = (
 
         // We set an error just to see a placeholder in the message view
         image.error = 'Could not load the image without using proxy';
+    }
+};
+
+export const loadFakeTrackers = (state: Draft<MessagesState>, action: PayloadAction<{ ID: string }>) => {
+    const { ID } = action.payload;
+
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.messageImages) {
+        messageState.messageImages.trackersStatus = 'loaded';
     }
 };

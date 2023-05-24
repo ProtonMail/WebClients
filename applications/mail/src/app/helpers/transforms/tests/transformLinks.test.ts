@@ -22,7 +22,7 @@ describe('transformLinks service', () => {
         const doc = document.createElement('DIV');
         doc.innerHTML = content;
 
-        transformLinks(doc, jest.fn());
+        transformLinks(doc, jest.fn(), true);
 
         const querySelector = (selectors: string) => doc.querySelector(selectors);
         const querySelectorAll = (selectors: string) => [...doc.querySelectorAll(selectors)];

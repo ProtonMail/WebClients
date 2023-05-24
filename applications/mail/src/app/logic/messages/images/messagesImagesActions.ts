@@ -9,6 +9,7 @@ import { createBlob } from '../../../helpers/message/messageEmbeddeds';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
+    LoadFakeRemoteParams,
     LoadRemoteFromURLParams,
     LoadRemoteParams,
     LoadRemoteResults,
@@ -89,32 +90,36 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemotePar
 
 export const loadRemoteProxyFromURL = createAction<LoadRemoteFromURLParams>('messages/remote/load/proxy/url');
 
-export const loadFakeProxy = createAsyncThunk<LoadRemoteResults | undefined, LoadRemoteParams>(
+export const loadFakeProxy = createAsyncThunk<(LoadRemoteResults | undefined)[] | undefined, LoadFakeRemoteParams>(
     'messages/remote/fake/proxy',
-    async ({ imageToLoad, api }) => {
-        if (imageToLoad.tracker !== undefined || !api) {
-            return;
-        }
+    async ({ imagesToLoad, api }) => {
+        return Promise.all(
+            imagesToLoad.map(async (imageToLoad) => {
+                if (imageToLoad.tracker !== undefined || !api) {
+                    return;
+                }
 
-        if (!imageToLoad.url) {
-            return { image: imageToLoad, error: 'No URL' };
-        }
+                if (!imageToLoad.url) {
+                    return { image: imageToLoad, error: 'No URL' };
+                }
 
-        try {
-            const encodedImageUrl = encodeImageUri(imageToLoad.url);
-            const response: Response = await api({
-                ...getImage(encodedImageUrl, 1),
-                output: 'raw',
-                silence: true,
-            });
+                try {
+                    const encodedImageUrl = encodeImageUri(imageToLoad.url);
+                    const response: Response = await api({
+                        ...getImage(encodedImageUrl, 1),
+                        output: 'raw',
+                        silence: true,
+                    });
 
-            return {
-                image: imageToLoad,
-                tracker: response.headers.get('x-pm-tracker-provider') || '',
-            };
-        } catch (error) {
-            return { image: imageToLoad, error };
-        }
+                    return {
+                        image: imageToLoad,
+                        tracker: response.headers.get('x-pm-tracker-provider') || '',
+                    };
+                } catch (error) {
+                    return { image: imageToLoad, error };
+                }
+            })
+        );
     }
 );
 
@@ -123,3 +128,5 @@ export const loadRemoteDirectFromURL = createAction<LoadRemoteFromURLParams>('me
 export const failedRemoteDirectLoading = createAction<{ ID: string; image: MessageRemoteImage }>(
     'messages/remote/failed/load/direct/url'
 );
+
+export const loadFakeTrackers = createAction<{ ID: string }>('message/trackers/fake/load');

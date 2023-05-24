@@ -104,7 +104,6 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
 
     const { featuresFlags, getFeature } = useFeatures([
-        FeatureCode.SpyTrackerProtection,
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
         FeatureCode.MailForwarding,
@@ -119,7 +118,6 @@ const MainContainer = () => {
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
 
-    const isSpyTrackerEnabled = getFeature(FeatureCode.SpyTrackerProtection).feature?.Value === true;
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
@@ -140,7 +138,6 @@ const MainContainer = () => {
         addresses,
         organization,
         subscription,
-        isSpyTrackerEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
         isDataRecoveryAvailable,

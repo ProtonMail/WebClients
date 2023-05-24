@@ -117,7 +117,8 @@ export const useInitializeEOMessage = () => {
                       noop,
                       noop,
                       handleEOLoadRemoteImages,
-                      noop
+                      noop,
+                      false
                   );
 
             if (!isPlainText({ MIMEType })) {
@@ -126,6 +127,7 @@ export const useInitializeEOMessage = () => {
                     showRemoteImages: preparation.showRemoteImages as boolean,
                     hasEmbeddedImages: preparation.hasEmbeddedImages as boolean,
                     showEmbeddedImages: preparation.showEmbeddedImages as boolean,
+                    trackersStatus: 'not-loaded',
                     images: [...(preparation.remoteImages || []), ...(preparation.embeddedImages || [])],
                 };
             }
