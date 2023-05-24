@@ -14,8 +14,6 @@ import { FieldBox } from '../Layout/FieldBox';
 import type { BaseTextFieldProps } from '../TextField';
 import { BaseTextField } from '../TextField';
 
-// import type { ExtraFieldFormValue } from './ExtraFieldGroup';
-
 type ExtraFieldOption = {
     icon: IconName;
     label: string;
