@@ -17,6 +17,11 @@ type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void };
 export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
+    const handleAddClick = (type: ExtraFieldType) => {
+        onAdd(type);
+        setTimeout(() => anchorRef?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
+    };
+
     return (
         <>
             <Button
@@ -39,7 +44,11 @@ export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd })
             >
                 <DropdownMenu>
                     {Object.entries(getExtraFieldOptions()).map(([type, { icon, label }]) => (
-                        <DropdownMenuButton key={type} onClick={() => onAdd(type as ExtraFieldType)} size="small">
+                        <DropdownMenuButton
+                            key={type}
+                            onClick={() => handleAddClick(type as ExtraFieldType)}
+                            size="small"
+                        >
                             <Icon className="mr-2 color-weak" name={icon} />
                             {label}
                         </DropdownMenuButton>
