@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
@@ -68,15 +68,11 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
 
     try {
         const result = await readCSV<LastPassItem>(data, LASTPASS_EXPECTED_HEADERS, {
-            onErrors: (errors) =>
+            onErrors: (errorsMessage) =>
                 warnings.push(
                     `[Warning] ${c('Error')
-                        .t`LastPass will export corrupted CSV files if any of your item fields contain unexpected commas, quotes or multiple lines`}`,
-                    `[Error] ${c('Error').ngettext(
-                        msgid`Detected ${errors.length} corrupted csv row`,
-                        `Detected ${errors.length} corrupted csv rows`,
-                        errors.length
-                    )}`
+                        .t`LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines`}`,
+                    errorsMessage
                 ),
         });
 

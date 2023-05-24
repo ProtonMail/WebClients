@@ -1,5 +1,5 @@
 import Papa from 'papaparse';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { logger } from '@proton/pass/utils/logger';
 
@@ -10,7 +10,7 @@ export type CSVReaderResult<T extends Record<string, any>> = { items: T[]; ignor
 export const readCSV = async <T extends Record<string, any>>(
     data: string,
     expectedHeaders: (keyof T)[],
-    options?: { onErrors?: (errors: Papa.ParseError[]) => void; throwOnEmpty?: boolean }
+    options?: { onErrors?: (errorsMessage: string) => void; throwOnEmpty?: boolean }
 ): Promise<CSVReaderResult<T>> => {
     const throwOnEmpty = options?.throwOnEmpty ?? true;
 
@@ -25,7 +25,13 @@ export const readCSV = async <T extends Record<string, any>>(
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
                         logger.debug('[Importer::ReadCSV]', errorDetails);
-                        options?.onErrors?.(errors);
+                        options?.onErrors?.(
+                            `[Error] ${c('Error').ngettext(
+                                msgid`Detected ${errors.length} corrupted csv row`,
+                                `Detected ${errors.length} corrupted csv rows`,
+                                errors.length
+                            )}`
+                        );
                     }
 
                     if (throwOnEmpty && data.length === 0) return reject(c('Error').t`Empty CSV file`);
