@@ -106,7 +106,7 @@ const ContactsWidgetToolbar = ({
                             icon
                             className="inline-flex py-2"
                             onClick={onForward}
-                            disabled={noEmailInSelected}
+                            disabled={noSelection}
                             title={c('Action').t`Forward as attachment`}
                             data-testid="contacts:forward-attachment"
                         >
