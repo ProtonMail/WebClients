@@ -19,7 +19,7 @@ import {
     MessageState,
     PartialMessageState,
 } from '../../logic/messages/messagesTypes';
-import { getDocumentContent, setDocumentContent } from './messageContent';
+import { getDocumentContent } from './messageContent';
 import { setEmbeddedAttr } from './messageEmbeddeds';
 import { ATTRIBUTES_TO_LOAD } from './messageRemotes';
 
@@ -136,7 +136,10 @@ export const restoreAllPrefixedAttributes = (content: string) => {
  * Remove all "normal" HTML attributes that we filled with our values (e.g. images src with proxyfied urls)
  */
 export const removeProxyURLAttributes = (content: string) => {
-    const document = setDocumentContent(window.document.createElement('div'), content);
+    // Using create element will create a DOM element that will not be added to the window's document, but images will be loaded
+    // Use a DOMParser instead so that images are not loaded.
+    const parser = new DOMParser();
+    const document = parser.parseFromString(content, 'text/html');
 
     const foundElements = document.querySelectorAll(getRemoteSelector());
 
@@ -168,7 +171,7 @@ export const removeProxyURLAttributes = (content: string) => {
         });
     });
 
-    return document.innerHTML;
+    return document.body.innerHTML;
 };
 
 /**
