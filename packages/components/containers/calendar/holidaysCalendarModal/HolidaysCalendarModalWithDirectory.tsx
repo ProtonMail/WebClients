@@ -151,8 +151,12 @@ const HolidaysCalendarModalWithDirectory = ({
         // Directory calendar that we want to edit (when we get an input calendar)
         const inputCalendar = directory.find(({ CalendarID }) => CalendarID === inputHolidaysCalendar?.ID);
         // Default holidays calendar found based on the user time zone and language
-        const languageTags = [languageCode, ...getBrowserLanguageTags()];
-        const suggestedCalendar = getSuggestedHolidaysCalendar(directory, PrimaryTimezone, languageTags);
+        const suggestedCalendar = getSuggestedHolidaysCalendar(
+            directory,
+            PrimaryTimezone,
+            languageCode,
+            getBrowserLanguageTags()
+        );
 
         return { inputCalendar, suggestedCalendar };
     }, [inputHolidaysCalendar, directory, PrimaryTimezone, languageCode]);
@@ -292,13 +296,8 @@ const HolidaysCalendarModalWithDirectory = ({
         }
     };
 
-    const handleSelectCountry = (value: string) => {
-        /*
-         * Get the default calendar selected
-         * If only one calendar in the country is found, return that one
-         * Else try to get the default one based on the user language
-         */
-        const newSelected = findHolidaysCalendarByCountryCodeAndLanguageTag(directory, value, [
+    const handleSelectCountry = (countryCode: string) => {
+        const newSelected = findHolidaysCalendarByCountryCodeAndLanguageTag(directory, countryCode, [
             languageCode,
             ...getBrowserLanguageTags(),
         ]);

@@ -69,8 +69,13 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
                     // we create a public holidays calendar. If we fail, we do it silently
                     try {
                         const directory = await getHolidaysDirectory();
-                        const languageTags = [languageCode, ...getBrowserLanguageTags()];
-                        const holidaysCalendar = getSuggestedHolidaysCalendar(directory, getTimezone(), languageTags);
+                        const languageTags = getBrowserLanguageTags();
+                        const holidaysCalendar = getSuggestedHolidaysCalendar(
+                            directory,
+                            getTimezone(),
+                            languageCode,
+                            languageTags
+                        );
                         if (!holidaysCalendar) {
                             throw new Error('Skip creating holidays calendar');
                         }
