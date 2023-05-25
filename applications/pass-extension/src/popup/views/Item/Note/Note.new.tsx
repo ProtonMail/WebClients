@@ -1,8 +1,10 @@
 import type { VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { selectVaultLimits } from '@proton/pass/store';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
@@ -21,6 +23,7 @@ const FORM_ID = 'new-note';
 
 export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
     const initialValues: NoteFormValues = { name: '', note: '', shareId };
+    const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const form = useFormik<NoteFormValues>({
         initialValues,
@@ -53,9 +56,11 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
             {({ didMount }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
-                        <FieldsetCluster className="mb-4">
-                            <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
-                        </FieldsetCluster>
+                        {vaultTotalCount > 1 && (
+                            <FieldsetCluster className="mb-4">
+                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                            </FieldsetCluster>
+                        )}
 
                         <Field
                             dense
