@@ -1,5 +1,8 @@
 import browser from '@proton/pass/globals/browser';
 
+import type { FormTrackerFieldConfig } from './types';
+import { DropdownAction, FieldInjectionRule, FormField, FormType } from './types';
+
 export const EXTENSION_PREFIX = 'protonpass';
 export const CONTENT_SCRIPT_INJECTED_MESSAGE = `${EXTENSION_PREFIX}-cs-injected`;
 export const INPUT_STYLES_ATTR = `data-${EXTENSION_PREFIX}-styles-reset`;
@@ -39,3 +42,47 @@ export const EMAIL_PROVIDERS = [
     'proton.pink',
     'proton.local',
 ];
+
+export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
+    [FormType.LOGIN]: [
+        {
+            type: FormField.USERNAME,
+            injection: FieldInjectionRule.IF_FIRST,
+            action: DropdownAction.AUTOFILL,
+        },
+        {
+            type: FormField.USERNAME_HIDDEN,
+            injection: FieldInjectionRule.NEVER,
+        },
+        {
+            type: FormField.EMAIL,
+            injection: FieldInjectionRule.IF_FIRST,
+            action: DropdownAction.AUTOFILL,
+        },
+        {
+            type: FormField.PASSWORD_CURRENT,
+            injection: FieldInjectionRule.IF_FIRST,
+            action: DropdownAction.AUTOFILL,
+        },
+    ],
+    [FormType.REGISTER]: [
+        {
+            type: FormField.USERNAME,
+            injection: FieldInjectionRule.NEVER,
+        },
+        {
+            type: FormField.USERNAME_HIDDEN,
+            injection: FieldInjectionRule.NEVER,
+        },
+        {
+            type: FormField.EMAIL,
+            injection: FieldInjectionRule.ALWAYS,
+            action: DropdownAction.AUTOSUGGEST_ALIAS,
+        },
+        {
+            type: FormField.PASSWORD_NEW,
+            injection: FieldInjectionRule.ALWAYS,
+            action: DropdownAction.AUTOSUGGEST_PASSWORD,
+        },
+    ],
+};
