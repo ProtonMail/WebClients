@@ -11,6 +11,7 @@ import { readFirefoxData } from './providers/firefox.reader';
 import { readKeePassData } from './providers/keepass.reader';
 import { readLastPassData } from './providers/lastpass.reader';
 import { readProtonPassData } from './providers/protonpass.reader';
+import { readSafariData } from './providers/safari.reader';
 import { type ImportPayload, ImportProvider, type ImportReaderPayload } from './types';
 
 export const extractFileExtension = (fileName: string): string => {
@@ -72,6 +73,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
 
         case ImportProvider.DASHLANE: {
             return readDashlaneData(await payload.file.arrayBuffer());
+        }
+
+        case ImportProvider.SAFARI: {
+            return readSafariData(await payload.file.text());
         }
 
         default:

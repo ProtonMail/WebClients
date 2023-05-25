@@ -22,6 +22,7 @@ export const PROVIDER_TITLE_MAP = {
     [ImportProvider.ONEPASSWORD]: '1Password (1pux, 1pif)',
     [ImportProvider.DASHLANE]: 'Dashlane (zip)',
     [ImportProvider.PROTONPASS]: `${PASS_APP_NAME} (zip, pgp)`,
+    [ImportProvider.SAFARI]: 'Safari (csv)',
 };
 
 export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
