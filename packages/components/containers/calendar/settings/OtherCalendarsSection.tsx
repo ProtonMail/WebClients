@@ -206,10 +206,10 @@ const OtherCalendarsSection = ({
                 />
             )}
             <CalendarsSection
-                calendars={[...subscribedCalendars, ...unknownCalendars]}
+                calendars={subscribedCalendars}
                 addresses={addresses}
                 user={user}
-                nameHeader={c('Header').t`Subscribed`}
+                nameHeader={c('Header; Table with list of calendars arranged by type').t`Subscribed`}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
                 data-testid="subscribed-calendars-section"
@@ -225,7 +225,7 @@ const OtherCalendarsSection = ({
                 {isCalendarsLimitReached ? isCalendarsLimitReachedNode : addCalendarButtons}
             </CalendarsSection>
             <CalendarsSection
-                nameHeader={c('Header').t`Holidays`}
+                nameHeader={c('Header; Table with list of calendars arranged by type').t`Holidays`}
                 calendars={holidaysCalendars}
                 addresses={addresses}
                 user={user}
@@ -237,6 +237,15 @@ const OtherCalendarsSection = ({
                 calendars={sharedCalendars}
                 calendarInvitations={calendarInvitations}
                 canAddCalendars={canAdd && !isCalendarsLimitReached}
+            />
+            <CalendarsSection
+                calendars={unknownCalendars}
+                addresses={addresses}
+                user={user}
+                nameHeader={c('Header; Table with list of calendars arranged by type').t`Other`}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                data-testid="unknown-calendars-section"
             />
         </>
     );

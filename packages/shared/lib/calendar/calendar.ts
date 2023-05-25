@@ -86,6 +86,16 @@ export const getIsHolidaysCalendar = (calendar: VisualCalendar) => {
     return calendar.Type === CALENDAR_TYPE.HOLIDAYS;
 };
 
+export const getIsUnknownCalendar = (calendar: VisualCalendar) => {
+    const knownTypes = [CALENDAR_TYPE.PERSONAL, CALENDAR_TYPE.SUBSCRIPTION, CALENDAR_TYPE.HOLIDAYS];
+
+    return !knownTypes.includes(calendar.Type);
+};
+
+export const getShowDuration = (calendar: VisualCalendar) => {
+    return getIsCalendarWritable(calendar) && getIsPersonalCalendar(calendar) && getIsOwnedCalendar(calendar);
+};
+
 export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
     return calendars.reduce<{
         ownedPersonalCalendars: VisualCalendar[];
