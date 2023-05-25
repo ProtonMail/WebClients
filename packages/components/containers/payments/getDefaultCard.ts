@@ -1,5 +1,5 @@
 import { getFirstTop } from '../../helpers/countries';
-import { CardModel } from './interface';
+import { CardModel } from '../../payments/core/interface';
 
 const getDefault = (): CardModel => {
     const { value: country } = getFirstTop();

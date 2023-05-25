@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { PaymentMethod, PaymentMethodStatus } from '@proton/components/payments/core';
 import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { Api, PaymentMethod, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
+import { Api } from '@proton/shared/lib/interfaces';
 
 import { useApi, useAuthentication, useLoading } from '../../hooks';
 import { getPaymentMethodOptions } from './getPaymentMethodOptions';

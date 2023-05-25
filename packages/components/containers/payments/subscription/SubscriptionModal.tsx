@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { FeatureCode } from '@proton/components/containers';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import {
     AmountAndCurrency,
     ExistingPayment,
     TokenPaymentMethod,
     WrappedCardPayment,
-} from '@proton/components/containers/payments/interface';
+} from '@proton/components/payments/core/interface';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
@@ -63,7 +64,6 @@ import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import Payment from '../Payment';
 import PaymentGiftCode from '../PaymentGiftCode';
-import { createPaymentToken } from '../paymentTokenHelper';
 import usePayment from '../usePayment';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
@@ -179,6 +179,7 @@ const SubscriptionModal = ({
     const [organization] = useOrganization();
     const getCalendars = useGetCalendars();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
+    const createPaymentToken = usePaymentToken();
 
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
@@ -400,14 +401,7 @@ const SubscriptionModal = ({
 
             let params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment = parameters;
             if (amountAndCurrency.Amount !== 0) {
-                params = await createPaymentToken(
-                    {
-                        params: parameters,
-                        createModal,
-                        api,
-                    },
-                    amountAndCurrency
-                );
+                params = await createPaymentToken(parameters, { amountAndCurrency });
             }
 
             return await handleSubscribe({ ...params, ...amountAndCurrency });

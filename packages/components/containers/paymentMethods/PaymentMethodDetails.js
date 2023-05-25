@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { Bordered } from '../../components';
 import useSvgGraphicsBbox from '../../hooks/useSvgGraphicsBbox';

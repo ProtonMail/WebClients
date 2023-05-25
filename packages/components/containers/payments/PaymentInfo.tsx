@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES, PaymentMethodType, methodMatches } from '@proton/components/payments/core';
 
 interface Props {
-    method?: PAYMENT_METHOD_TYPE;
+    method?: PaymentMethodType;
 }
 const PaymentInfo = ({ method }: Props) => {
-    if (method && [PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH].includes(method as any)) {
+    if (methodMatches(method, [PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH])) {
         return null;
     }
 

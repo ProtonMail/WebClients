@@ -1,4 +1,4 @@
-import { isTokenPayment } from '@proton/components/containers/payments/interface';
+import { isTokenPayment } from '@proton/components/payments/core';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

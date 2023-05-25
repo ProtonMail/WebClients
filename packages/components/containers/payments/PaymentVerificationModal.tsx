@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
 import { DoNotWindowOpenAlertError, FormModal, Loader, PrimaryButton } from '../../components';
 import { useNotifications } from '../../hooks';
+import { CardPayment, TokenPaymentMethod } from '../../payments/core/interface';
+import { toTokenPaymentMethod } from '../../payments/core/utils';
 import PaymentVerificationImage from './PaymentVerificationImage';
-import { toParams } from './paymentTokenToParams';
 
 const STEPS = {
     DO_NOT_WINDOW_OPEN: 'do_not_window_open',
@@ -21,21 +21,36 @@ const STEPS = {
     FAIL: 'fail',
 };
 
-const PROCESSING_DELAY = 5000;
+const DEFAULT_PROCESSING_DELAY = 5000;
 
-/** @type any */
+export interface PromiseWithController {
+    promise: Promise<void>;
+    abort: AbortController;
+}
+
+export interface Props {
+    onSubmit: (paymentMethod: TokenPaymentMethod) => void;
+    onClose: () => void;
+    token: string;
+    payment?: CardPayment | {};
+    isAddCard?: boolean;
+    type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
+    onProcess: () => PromiseWithController;
+    initialProcess?: PromiseWithController;
+    processingDelay?: number;
+}
+
 const PaymentVerificationModal = ({
-    params,
     token,
     onSubmit,
     payment = {},
-    mode,
+    isAddCard,
     type = PAYMENT_METHOD_TYPES.CARD,
     onProcess,
     initialProcess,
+    processingDelay = DEFAULT_PROCESSING_DELAY,
     ...rest
-}) => {
-    const isAddCard = mode === ADD_CARD_MODE;
+}: Props) => {
     const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
 
     let failTitle;
@@ -56,27 +71,27 @@ const PaymentVerificationModal = ({
     };
 
     const [step, setStep] = useState(() => (doNotWindowOpen() ? STEPS.DO_NOT_WINDOW_OPEN : STEPS.REDIRECT));
-    const [error, setError] = useState({});
+    const [error, setError] = useState<{ tryAgain?: boolean }>({});
     const { createNotification } = useNotifications();
-    const abortRef = useRef();
-    const timeoutRef = useRef();
+    const abortRef = useRef<AbortController>();
+    const timeoutRef = useRef<number>();
 
     const handleCancel = () => {
         abortRef.current?.abort();
         rest.onClose();
     };
 
-    const handleSubmit = async ({ abort, promise }) => {
+    const handleSubmit = async ({ abort, promise }: PromiseWithController) => {
         try {
             setStep(STEPS.REDIRECTING);
             timeoutRef.current = window.setTimeout(() => {
                 setStep(STEPS.REDIRECTED);
-            }, PROCESSING_DELAY);
+            }, processingDelay);
             abortRef.current = abort;
             await promise;
-            onSubmit(toParams(params, token, type));
+            onSubmit(toTokenPaymentMethod(token));
             rest.onClose();
-        } catch (error) {
+        } catch (error: any) {
             window.clearTimeout(timeoutRef.current);
             setStep(STEPS.FAIL);
             setError(error);
@@ -93,11 +108,14 @@ const PaymentVerificationModal = ({
         }
     }, []);
 
+    useEffect(() => {
+        return () => window.clearTimeout(timeoutRef.current);
+    }, []);
+
     return (
         <FormModal
             title={TITLES[step]}
             onSubmit={() => handleSubmit(onProcess())}
-            onClose={handleCancel}
             small
             noTitleEllipsis
             hasClose={false}
@@ -122,7 +140,7 @@ const PaymentVerificationModal = ({
                         <p className="text-center">
                             <PaymentVerificationImage payment={payment} type={type} />
                         </p>
-                        <div className="mb-4">
+                        <div className="mb-4" data-testid="redirect-message">
                             {isAddCard
                                 ? c('Info')
                                       .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
@@ -139,7 +157,7 @@ const PaymentVerificationModal = ({
                                 : c('Info').t`You may be redirected to your bank’s website.`}
                         </p>
                         <Loader />
-                        <div className="mb-4">{c('Info')
+                        <div className="mb-4" data-testid="redirecting-message">{c('Info')
                             .t`Don’t see anything? Remember to turn off pop-up blockers.`}</div>
                     </>
                 ),
@@ -154,7 +172,8 @@ const PaymentVerificationModal = ({
                         <p className="text-center">
                             <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                         </p>
-                        <div className="mb-4">{c('Info').t`Verification may take a few minutes.`}</div>
+                        <div className="mb-4" data-testid="redirected-message">{c('Info')
+                            .t`Verification may take a few minutes.`}</div>
                     </>
                 ),
                 [STEPS.DO_NOT_WINDOW_OPEN]: () => (
@@ -164,7 +183,7 @@ const PaymentVerificationModal = ({
                     </>
                 ),
                 [STEPS.FAIL]: () => (
-                    <div className="text-center">
+                    <div className="text-center" data-testid="fail-message">
                         <p>{!isAddCard && c('Info').t`We couldn’t process your payment.`}</p>
                         <img src={errorSvg} alt={c('Title').t`Error`} />
                         <p>
@@ -190,18 +209,6 @@ const PaymentVerificationModal = ({
             }[step]()}
         </FormModal>
     );
-};
-
-PaymentVerificationModal.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    onClose: PropTypes.func.isRequired,
-    token: PropTypes.string.isRequired,
-    params: PropTypes.object,
-    payment: PropTypes.object,
-    mode: PropTypes.string,
-    type: PropTypes.string,
-    onProcess: PropTypes.func.isRequired,
-    initialProcess: PropTypes.object,
 };
 
 export default PaymentVerificationModal;

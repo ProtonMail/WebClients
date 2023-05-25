@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { CardModel } from '../../payments/core/interface';
 import { getErrors } from './cardValidator';
 import getDefaultCard from './getDefaultCard';
-import { CardModel } from './interface';
 
 const useCard = (initialCard: CardModel = getDefaultCard()) => {
     const [card, update] = useState<CardModel>(initialCard);
