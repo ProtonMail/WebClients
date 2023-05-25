@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
+import { CardPayment, PaypalPayment } from '../../payments/core/interface';
 import PaymentVerificationImage from './PaymentVerificationImage';
-import { CardPayment, PaypalPayment } from './interface';
 
 describe('PaymentVerificationImage', () => {
     it.each([PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT])(

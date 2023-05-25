@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
-import { CardModel, WrappedCardPayment } from './interface';
+import { CardModel, WrappedCardPayment } from '../../payments/core/interface';
 import usePayment from './usePayment';
 
 jest.mock('./usePayPal', () =>

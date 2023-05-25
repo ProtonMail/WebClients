@@ -3,14 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { buyCredit } from '@proton/shared/lib/api/payments';
-import {
-    APPS,
-    DEFAULT_CREDITS_AMOUNT,
-    DEFAULT_CURRENCY,
-    MIN_CREDIT_AMOUNT,
-    PAYMENT_METHOD_TYPES,
-} from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CREDITS_AMOUNT, DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -24,13 +20,17 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useApi, useConfig, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useConfig, useEventManager, useLoading, useNotifications } from '../../hooks';
+import {
+    AmountAndCurrency,
+    ExistingPayment,
+    TokenPaymentMethod,
+    WrappedCardPayment,
+} from '../../payments/core/interface';
 import AmountRow from './AmountRow';
 import Payment from './Payment';
 import PaymentInfo from './PaymentInfo';
 import StyledPayPalButton from './StyledPayPalButton';
-import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from './interface';
-import { createPaymentToken } from './paymentTokenHelper';
 import usePayment from './usePayment';
 
 const getCurrenciesI18N = () => ({
@@ -43,7 +43,7 @@ const CreditsModal = (props: ModalProps) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
-    const { createModal } = useModals();
+    const createPaymentToken = usePaymentToken();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [currency, setCurrency] = useState<Currency>(DEFAULT_CURRENCY);
@@ -54,15 +54,7 @@ const CreditsModal = (props: ModalProps) => {
 
     const handleSubmit = async (params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment) => {
         const amountAndCurrency: AmountAndCurrency = { Amount: debouncedAmount, Currency: currency };
-        const tokenPaymentMethod = await createPaymentToken(
-            {
-                params,
-                api,
-                createModal,
-            },
-            amountAndCurrency
-        );
-
+        const tokenPaymentMethod = await createPaymentToken(params, { amountAndCurrency });
         await api(buyCredit({ ...tokenPaymentMethod, ...amountAndCurrency }));
         await call();
         props.onClose?.();

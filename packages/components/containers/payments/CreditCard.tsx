@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Info, InputFieldTwo, Select } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
+import { CardModel } from '../../payments/core/interface';
 import CardNumberInput from './CardNumberInput';
 import ExpInput from './ExpInput';
-import { CardModel } from './interface';
 
 interface Props {
     onChange: (key: keyof CardModel, value: string) => void;

@@ -1,6 +1,6 @@
 import creditCardType from 'credit-card-type';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import treeDSecureSvg from '@proton/styles/assets/img/bank-icons/3d-secure.svg';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy.svg';
@@ -8,7 +8,7 @@ import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/master
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure.svg';
 
-import { CardPayment, PaypalPayment, isCardPayment, isPaypalPayment } from './interface';
+import { CardPayment, PaypalPayment, isCardPayment, isPaypalPayment } from '../../payments/core/interface';
 
 const getImage = (type: string): string => {
     const images: Record<string, string> = {
