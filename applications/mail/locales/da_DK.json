@@ -1338,6 +1338,9 @@
       "Other": [
         "Andet"
       ],
+      "Pass problem": [
+        "Pass-problem"
+      ],
       "Payments problem": [
         "Betalingsproblem"
       ],
@@ -2833,6 +2836,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i indstillinger."
       ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Ryd automatisk op i beskeder, der er ældre end 30 dage, fra papirkurven og spam. Nyd dette og andre fordele når du opgraderer."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
       ],
@@ -2870,6 +2876,12 @@
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Få adgang til brugerdefineret planlægning af beskeder og andre fordele, når du opgraderer dit abonnement."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Lås op for ubegrænsede filter der sorterer din indbakke for dig og flere premium-funktioner når du opgraderer."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Lås op for ubegrænsede mapper, etiketter og flere premium-funktioner når du opgraderer."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -3030,6 +3042,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } for <${ email }>. Du kan tilføje en anden nøgle eller deaktivere kryptering for denne kontakt for at løse problemet."
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -3343,6 +3358,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Der var et problem med indholdssøgning. Standardsøgning er blevet brugt i stedet."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Der var et problem med at opdatere dine lokale beskeder, de vil blive downloadet igen for at genaktivere indholdssøgning"
+      ],
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
@@ -3441,6 +3459,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Forkert filformat."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3479,6 +3500,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Forkert filformat."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3615,6 +3639,9 @@
       "Something went wrong": [
         "Noget gik galt"
       ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ikke nogen kontakt endnu. Start med at oprette en ny kontakt"
       ]
@@ -3693,6 +3720,11 @@
         "3 TB samlet lagerplads"
       ]
     },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
@@ -3733,6 +3765,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Konti med brugerdefinerede domæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+      ],
       "customer support": [
         "kundeservice"
       ],
@@ -3741,6 +3776,41 @@
       ],
       "Manage addresses.": [
         "Administrer adresser."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Beklager, du kan i øjeblikket ikke ændre abonnement."
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Online privatliv, for hele din familie"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Konfigurer din familie-konto og inviter brugere "
+      ],
+      "Set up your family account": [
+        "Konfigurer din familie-konto"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Introducerer ${ planName }"
       ]
     },
     "Feedback Modal Title": {
@@ -4613,6 +4683,9 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Slet automatisk beskeder, der har været i papirkurven og spam i mere end 30 dage."
+      ],
       "Background color": [
         "Baggrundsfarve"
       ],
@@ -5016,6 +5089,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Besked vil blive sendt i morgen kl. ${ formattedTime }"
       ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "Beskeder der har været i papirkurven og spam i mere end 30 dage vil blive slettet automatisk."
+      ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
@@ -5200,6 +5276,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Tager søgningen for lang tid? ${ dropdownButton } eller ${ toggleOffButton } fra denne søgesession."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Beskyt dine filer med krypteret cloud-lagring helt gratis i dag."
+      ],
       "Seems like you are all caught up for now": [
         "Det ser ud til, at du er nået i bund"
       ],
@@ -5247,6 +5326,9 @@
       ],
       "Show original message": [
         "Vis oprindelig besked"
+      ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin er en ${ BRAND_NAME }-service, og din ${ BRAND_NAME_TWO }-konto inkluderer Hide My Email-aliasser. For at begynde at skjule din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
@@ -5323,6 +5405,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Denne handling vil downloade de seneste beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -5428,6 +5513,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "For at gendanne dine data skal du genaktivere den konto-nøgle, der blev brugt på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "For at afmelde dig fra denne mailingliste, vil en e-mail blive sendt fra ${ boldFrom } med følgende detaljer som defineret af afsenderen af nyhedsbrevet:"
       ],
@@ -5458,11 +5546,17 @@
       "Updating message content search...": [
         "Opdaterer beskedindholdssøgning..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Opdaterer dine lokale beskeder, beskedindhold vil ikke blive gennemsøgt under denne opdatering"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "Upgrade to add more addresses to your account.": [
         "Opgrader for at tilføje flere adresser til din konto."
+      ],
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Opgradér for automatisk at slette beskeder, der har været i papirkurven og spam i mere end 30 dage."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Opgrader for at oprette flere foldere, filtre og adresser."
@@ -5472,6 +5566,9 @@
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Opgrader for at sende e-mail fra @pm.me-adresser."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Opgradér for at sende e-mails fra dit brugerdefinerede e-maildomæne."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Opgrader for nemt at sende e-mails til kontaktgrupper."
@@ -5484,6 +5581,9 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Opgrader for at støtte privatlivets fred og for at få flere funktioner."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Opgradér for at låse op for premium-funktioner."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Opgrader for at bruge ${ MAIL_APP_NAME } med Apple Mail, Outlook eller Thunderbird."
@@ -7603,6 +7703,14 @@
         "Støt privatliv online"
       ]
     },
+    "specialoffer: Label": {
+      "Most popular": [
+        "Mest populære"
+      ],
+      "Offer ends soon": [
+        "Tilbuddet slutter snart"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå til abonnementer"
@@ -7642,11 +7750,35 @@
       ],
       "Get the deal": [
         "Få tilbuddet"
+      ],
+      "Save ${ discount }%": [
+        "Spar ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standard pris ${ amount } for 1 måned"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standard pris ${ amount } for 12 måneder"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standard pris ${ amount } for 15 måneder"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standard pris ${ amount } for 24 måneder"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standard pris ${ amount } for 30 måneder"
       ]
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
         "Black Friday-tilbud"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-udsalg"
+      ],
+      "Get our premium bundle and save more": [
+        "Få vores premium-pakke og spar mere"
       ]
     },
     "specialoffer: Tooltip": {
@@ -8137,6 +8269,9 @@
       "Change my answer": [
         "Skift mit svar"
       ],
+      "Clear out the junk": [
+        "Ryd ud i affaldet"
+      ],
       "Clearing data": [
         "Rydder data"
       ],
@@ -8484,6 +8619,9 @@
       ],
       "Request new code": [
         "Anmod om ny kode"
+      ],
+      "Save time with email filters": [
+        "Spar tid med e-mailfiltre"
       ],
       "Schedule send": [
         "Planlæg afsendelse"
