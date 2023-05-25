@@ -60,7 +60,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
         onUpgrade,
         onSelectEmails,
         onLimitReached,
-    } = useContactModals({ onMailTo });
+    } = useContactModals({ onMailTo, onCompose });
 
     const handleDetails = (contactID: string) => {
         void onDetails(contactID);

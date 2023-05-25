@@ -8,9 +8,10 @@ interface Props {
     contactGroups: ContactGroup[];
     isStacked?: boolean;
     className?: string;
-    onDetails: (contactGroupID: string) => void;
+    onDetails: (contactGroupID: string, onCloseContactDetailsModal?: () => void) => void;
     maxNumber?: number;
     leftToRight?: boolean;
+    onCloseModal?: () => void;
 }
 
 const ContactGroupLabels = ({
@@ -20,6 +21,7 @@ const ContactGroupLabels = ({
     onDetails,
     leftToRight,
     maxNumber,
+    onCloseModal,
 }: Props) => {
     const labels = contactGroups.reduce((acc: LabelDescription[], contactGroup: ContactGroup) => {
         return contactGroup
@@ -30,7 +32,7 @@ const ContactGroupLabels = ({
                       color: contactGroup.Color,
                       title: contactGroup.Name,
                       onClick: (event: MouseEvent) => {
-                          onDetails(contactGroup.ID);
+                          onDetails(contactGroup.ID, onCloseModal);
                           event.stopPropagation();
                       },
                   },
