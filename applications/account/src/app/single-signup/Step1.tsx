@@ -667,6 +667,7 @@ const Step1 = ({
                                             }}
                                             onCard={(card, value) => setCard(card, value)}
                                             cardErrors={cardErrors}
+                                            disabled={loadingPayment}
                                         />
                                     ) : (
                                         <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
