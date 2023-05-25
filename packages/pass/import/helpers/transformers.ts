@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
+import type { ItemExtraField, ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { prop, truthy } from '@proton/pass/utils/fp';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -49,9 +49,10 @@ export const importLoginItem = (options: {
             urls: urls.map(prop('origin')),
             totpUri: totp || '',
         },
-        extraFields: extraTotps.map((totpUri) => ({
+        extraFields: extraTotps.map<ItemExtraField<'totp'>>((totpUri) => ({
             fieldName: 'totp',
-            content: { oneofKind: 'totp', totp: { totpUri } },
+            type: 'totp',
+            data: { totpUri },
         })),
         trashed: options.trashed ?? false,
         createTime: options.createTime,
