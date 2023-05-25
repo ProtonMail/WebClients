@@ -166,65 +166,82 @@ describe('Holidays calendars helpers', () => {
     describe('getSuggestedHolidaysCalendar', () => {
         it('should not return a calendar if no time zone matches', () => {
             const tzid = 'does not exist';
-            const languageTags = ['en'];
+            const protonLanguage = 'en_US';
+            const languageTags: string[] = [];
 
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toBeUndefined();
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toBeUndefined();
         });
 
         it('should return the only holidays calendar found', () => {
             const tzid = 'Australia/Adelaide';
-            const languageTags = ['en_US'];
+            const protonLanguage = 'en_US';
+            const languageTags = ['en-au'];
 
             const expected = auCalendar;
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toEqual(expected);
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
         });
 
         it('should return the holidays calendar with the same language (one country match)', () => {
             const tzid = 'Europe/Zurich';
-            const languageTags = ['en'];
+            const protonLanguage = 'en_US';
+            const languageTags = ['fr-ch'];
 
             const expected = chEnCalendar;
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toEqual(expected);
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
         });
 
         it('should return the holidays calendar with the first language (one country match)', () => {
             const tzid = 'Europe/Zurich';
             // No calendar with the same language code is available in the options, so we return the first calendar sorted by languages
-            const languageTags = ['not in options'];
+            const protonLanguage = 'nl_NL';
+            const languageTags = ['nl-be'];
 
             const expected = chDeCalendar;
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toEqual(expected);
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
         });
 
         it('should return undefined when there is a multiple country match and no language match', () => {
             const tzid = 'Europe/Brussels';
+            const protonLanguage = 'en_US';
             const languageTags = ['en-US'];
 
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toBeUndefined();
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toBeUndefined();
         });
 
-        it('should return the holidays calendar with the country selected (multiple country match)', () => {
+        it('should return the holidays calendar with the country preferred by language (multiple country match)', () => {
             const tzid = 'Europe/Brussels';
-            const languageTags = ['en-US', 'nl_NL'];
+            const protonLanguage = 'en_US';
+            const languageTags = ['en-US', 'nl-nl'];
 
             const expected = nlCalendar;
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toEqual(expected);
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
         });
 
-        it('should return the holidays calendar with the preferred language (multiple country match)', () => {
+        it('should return the holidays calendar with the preferred Proton language (multiple country match)', () => {
             const tzid = 'Europe/Brussels';
-            const languageTags = ['en-US', 'fr_BE'];
+            const protonLanguage = 'fr_FR';
+            const languageTags = ['en-US', 'fr-be'];
 
             const expected = beFrCalendar;
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toEqual(expected);
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
         });
 
-        it('should return the holidays calendar with the first language (multiple country match)', () => {
+        it('should return the holidays calendar with the preferred browser language if the Proton language is not in the list (multiple country match)', () => {
             const tzid = 'Europe/Brussels';
+            const protonLanguage = 'es_ES';
+            const languageTags = ['en-US', 'fr-be'];
+
+            const expected = beFrCalendar;
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
+        });
+
+        it(`should return the holidays calendar with the first language if we couldn't match a language (multiple country match)`, () => {
+            const tzid = 'Europe/Brussels';
+            const protonLanguage = 'es_ES';
             const languageTags = ['en-US', 'en-be'];
 
             const expected = beNlCalendar;
-            expect(getSuggestedHolidaysCalendar(directory, tzid, languageTags)).toEqual(expected);
+            expect(getSuggestedHolidaysCalendar(directory, tzid, protonLanguage, languageTags)).toEqual(expected);
         });
     });
 });
