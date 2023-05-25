@@ -1,13 +1,16 @@
-import { CSSProperties, ChangeEvent, DragEvent, useState } from 'react';
+import { CSSProperties, ChangeEvent, DragEvent, MouseEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
+import { Icon, Tooltip } from '@proton/components/components';
 import { addPlus } from '@proton/shared/lib/helpers/string';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import clsx from '@proton/utils/clsx';
 
 import { Copy } from '../../../components/button';
-import { classnames } from '../../../helpers';
 import { useNotifications } from '../../../hooks';
 import { ItemCheckbox } from '../../items';
 import ContactGroupLabels from '../group/ContactGroupLabels';
@@ -28,6 +31,7 @@ interface Props {
     onFocus: (index: number) => void;
     onGroupDetails: (contactGroupID: string) => void;
     isDrawer?: boolean;
+    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
 const ContactRow = ({
@@ -46,6 +50,7 @@ const ContactRow = ({
     onFocus,
     onGroupDetails,
     isDrawer = false,
+    onCompose,
 }: Props) => {
     const { createNotification } = useNotifications();
     const { ID, Name, LabelIDs = [], emails = [] } = contact;
@@ -71,6 +76,14 @@ const ContactRow = ({
         }
     };
 
+    const handleCompose = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        if (onCompose && emails[0]) {
+            const recipient: Recipient = { Name: contact.Name, Address: emails[0] };
+            onCompose([recipient], []);
+        }
+    };
+
     return (
         <div
             style={style}
@@ -79,12 +92,12 @@ const ContactRow = ({
             draggable={draggable}
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
-            className={classnames([
+            className={clsx(
                 'item-container item-contact flex cursor-pointer bg-global-white opacity-on-hover-container',
                 isDrawer && 'item-in-drawer',
                 dragged && 'item-dragging',
-                hasFocus && 'item-is-focused',
-            ])}
+                hasFocus && 'item-is-focused'
+            )}
             onFocus={handleFocus}
             onBlur={handleBlur}
             tabIndex={-1}
@@ -96,7 +109,7 @@ const ContactRow = ({
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
                 <div className="flex-item-fluid ml-2 conversation-titlesender">
                     <div className="flex flex-nowrap flex-align-items-center item-firstline max-w100">
-                        <div className={classnames(['flex flex-item-fluid w0', !!LabelIDs.length && 'pr1'])}>
+                        <div className={clsx('flex flex-item-fluid w0', !!LabelIDs.length && 'pr-4')}>
                             <span
                                 role="heading"
                                 aria-level={2}
@@ -125,15 +138,26 @@ const ContactRow = ({
                     )}
                 </div>
                 {emails[0] && (
-                    <div className="item-hover-action-buttons">
-                        <Copy
-                            value={emails[0]}
-                            className={classnames([isDrawer && 'mr-1'])}
-                            onCopy={handleCopyEmail}
-                            tooltipText={c('Action').t`Copy email to clipboard`}
-                            size="small"
-                        />
-                    </div>
+                    <span className="flex gap-4">
+                        {onCompose && (
+                            <div className="item-hover-action-buttons">
+                                <Tooltip title={c('Action').t`Compose`}>
+                                    <Button color="weak" shape="ghost" icon onClick={handleCompose}>
+                                        <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                                    </Button>
+                                </Tooltip>
+                            </div>
+                        )}
+                        <div className="item-hover-action-buttons">
+                            <Copy
+                                value={emails[0]}
+                                className={clsx(isDrawer && 'mr-1')}
+                                onCopy={handleCopyEmail}
+                                tooltipText={c('Action').t`Copy email to clipboard`}
+                                shape="ghost"
+                            />
+                        </div>
+                    </span>
                 )}
             </div>
         </div>
