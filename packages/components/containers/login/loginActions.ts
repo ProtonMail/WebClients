@@ -43,6 +43,7 @@ import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
 import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '../keyTransparency';
+import { createGetKTActivation } from '../keyTransparency/useGetKTActivation';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
@@ -446,6 +447,8 @@ export const handleLogin = async ({
         persistent,
     });
 
+    const getKTActivation = createGetKTActivation(Promise.resolve(ktFeature), appName);
+
     const cache: AuthCacheResult = {
         authResponse,
         authVersion,
@@ -460,14 +463,8 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasTrustedDeviceRecovery,
         setupVPN,
-        preAuthKTVerifier: createPreAuthKTVerifier(appName, ktFeature, api),
-        keyMigrationKTVerifier: createKeyMigrationKTVerifier(
-            async () => {
-                return ktFeature;
-            },
-            api,
-            appName
-        ),
+        preAuthKTVerifier: createPreAuthKTVerifier(getKTActivation, api),
+        keyMigrationKTVerifier: createKeyMigrationKTVerifier(getKTActivation, api),
     };
 
     return next({ cache, from: AuthStep.LOGIN });
