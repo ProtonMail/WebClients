@@ -3922,11 +3922,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
       ],
       "You have successfully joined the Family plan": [
         "Úspěšně jste se připojili k Rodinnému tarifu"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Před přidáním více uživatelů je třeba nakonfigurovat vlastní doménu."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Před vytvořením nového uživatele je třeba nakonfigurovat vlastní doménu."
@@ -4306,6 +4312,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Přidejte si vlastní filtr, který automaticky provede určité akce, jako je označení nebo archivace zpráv."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "E-maily z adres, které jste vy nebo ${ BRAND_NAME } označili jako spam, budou chodit do složky spam členů vaší organizace. Pokud chcete e-maily z některé z těchto adres povolit, označte ji jako \"není spam\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "E-maily z adres, které jste vy nebo společnost ${ BRAND_NAME } označili jako spam, budou odeslány do složky Spam. Pokud chcete e-maily z některé z těchto adres povolit, označte je jako \"není spam\"."
       ],
@@ -4394,6 +4403,9 @@
       "Best deal": [
         "Nejlepší nabídka"
       ],
+      "Device": [
+        "Zařízení"
+      ],
       "Enter your email address": [
         "Zadejte vaši e-mailovou adresu"
       ],
@@ -4426,6 +4438,9 @@
       ],
       "Permissions": [
         "Oprávnění"
+      ],
+      "Protection": [
+        "Ochrana"
       ],
       "Select your preferred method of payment": [
         "Vyberte preferovaný způsob platby"
@@ -5924,6 +5939,9 @@
       ],
       "old password": [
         "staré heslo"
+      ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Jakmile povolíte ${ PROTON_SENTINEL_NAME }:"
       ],
       "Once you reset your password:": [
         "Po resetu vašeho hesla:"
@@ -8310,6 +8328,9 @@
       ],
       "General": [
         "Obecné"
+      ],
+      "here": [
+        "zde"
       ],
       "How to unlock data": [
         "Jak odemknout údaje"
