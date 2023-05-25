@@ -1,8 +1,10 @@
-import { CSSProperties, ChangeEvent, useState } from 'react';
+import { CSSProperties, ChangeEvent, MouseEvent, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Checkbox } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button';
+import { Checkbox, Icon, Tooltip } from '@proton/components/components';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
@@ -17,6 +19,7 @@ interface Props {
     index: number;
     onFocus: (index: number) => void;
     isDrawer?: boolean;
+    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
 const ContactGroupRow = ({
@@ -29,11 +32,13 @@ const ContactGroupRow = ({
     index,
     onFocus,
     isDrawer = false,
+    onCompose,
 }: Props) => {
     const { ID, Name, Color } = group;
     const [hasFocus, setHasFocus] = useState(false);
 
     const addressCount = groupsEmailsMap[ID]?.length || 0;
+    console.log({ groupsEmailsMap: groupsEmailsMap[ID] });
 
     const handleFocus = () => {
         setHasFocus(true);
@@ -42,6 +47,13 @@ const ContactGroupRow = ({
 
     const handleBlur = () => {
         setHasFocus(false);
+    };
+
+    const handleCompose = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        const recipients: Recipient[] =
+            groupsEmailsMap[ID]?.map((contact) => ({ Name: contact.Name, Address: contact.Email })) || [];
+        onCompose?.([...recipients], []);
     };
 
     return (
@@ -90,6 +102,15 @@ const ContactGroupRow = ({
                               )}
                     </span>
                 </div>
+                {onCompose && addressCount > 0 && (
+                    <div className="item-hover-action-buttons">
+                        <Tooltip title={c('Action').t`Compose`}>
+                            <Button color="weak" shape="ghost" icon onClick={handleCompose}>
+                                <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                            </Button>
+                        </Tooltip>
+                    </div>
+                )}
             </div>
         </div>
     );
