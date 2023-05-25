@@ -1,10 +1,10 @@
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState, useUser } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
@@ -15,7 +15,6 @@ interface Props {
 }
 
 const EncryptedSearchField = ({ esState }: Props) => {
-    const [user] = useUser();
     const {
         enableEncryptedSearch,
         enableContentSearch,
@@ -61,15 +60,10 @@ const EncryptedSearchField = ({ esState }: Props) => {
     let esToggleTooltip = c('Info').t`Activation in progress`;
     if (contentIndexingDone && !isEnablingContentSearch) {
         esToggleTooltip = esEnabled
-            ? c('Info').t`Turn off content search. Activation progress won't be lost.`
+            ? c('Info')
+                  .t`Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.`
             : c('Info').t`Turn on to search the content of your messages`;
     }
-
-    const esExplanation = isPaid(user)
-        ? c('Info')
-              .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`
-        : c('Info')
-              .t`This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.`;
 
     const esActivationTooltip = isMigrating
         ? c('Info').t`Updating your local messages, message content won't be searched during this update`
@@ -81,7 +75,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
             loading={esActivationLoading}
             data-testid="encrypted-search:activate"
         >
-            {c('Action').t`Activate`}
+            {esActivationLoading ? c('Action').t`Downloading` : c('Action').t`Enable`}
         </Button>
     );
 
@@ -104,7 +98,12 @@ const EncryptedSearchField = ({ esState }: Props) => {
     ) : (
         esActivationButton
     );
-    const info = <Info questionMark title={esExplanation} />;
+    const info = (
+        <Info
+            questionMark
+            title={c('Info').t`Search option that lets you securely search for keywords in the body of email messages.`}
+        />
+    );
     const esHeader = showToggle ? (
         <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center w100">
             {esTitle}
@@ -123,14 +122,18 @@ const EncryptedSearchField = ({ esState }: Props) => {
     isEstimating ||= currentProgress === 0;
     let progressStatus: string = '';
     if (isPaused) {
-        progressStatus = c('Info').t`Indexing paused`;
+        progressStatus = c('Info').t`Downloading paused`;
     } else if (isEstimating) {
         progressStatus = c('Info').t`Estimating time remaining...`;
     } else if (isRefreshing) {
         progressStatus = c('Info').t`Updating message content search...`;
     } else {
         // translator: esProgress is a number representing the current message being fetched, totalIndexingItems is the total number of message in the mailbox
-        progressStatus = c('Info').jt`Downloading message ${currentProgress} out of ${totalProgress}` as string;
+        progressStatus = c('Info').ngettext(
+            msgid`Message downloaded: ${currentProgress} out of ${totalProgress}`,
+            `Messages downloaded: ${currentProgress} out of ${totalProgress}`,
+            currentProgress
+        ) as string;
     }
 
     const etaMessage =
@@ -188,7 +191,10 @@ const EncryptedSearchField = ({ esState }: Props) => {
                         ]}
                         {...enableESModalProps}
                     >
-                        {esExplanation}
+                        {c('Action')
+                            .t`To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.`}
+                        <br />
+                        <Href href={getKnowledgeBaseUrl('/search-message-content')}>{c('Info').t`Learn more`}</Href>
                     </Prompt>
                 </div>
             </div>
