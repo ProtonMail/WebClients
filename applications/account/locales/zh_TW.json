@@ -3883,11 +3883,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "你已達到每六個月十個邀請函限制。"
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "您已到達 6 個月內 10 個已接受邀請的上限。待您可再邀請額外使用者時，自可按下此按鈕。"
       ],
       "You have successfully joined the Family plan": [
         "您已成功加入家庭方案"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "您需要先設定自訂網，才能添加多位使用者。。"
       ],
       "You need to configure a custom domain before creating a new user.": [
         "您需要先設置自訂網域，才可建立新使用者。"
@@ -8824,6 +8830,9 @@
       ],
       "Up to 15 email addresses": [
         "多達 15 個電子郵件地址"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "最多五個轉寄信箱"
       ],
       "Up to 500 GB of storage": [
         "多達 500 GB 的儲存空間"

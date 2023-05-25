@@ -748,6 +748,9 @@
       "Other": [
         "Andet"
       ],
+      "Pass problem": [
+        "Pass-problem"
+      ],
       "Payments problem": [
         "Betalingsproblem"
       ],
@@ -2460,6 +2463,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Forkert filformat."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2498,6 +2504,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Forkert filformat."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2631,6 +2640,9 @@
       "Something went wrong": [
         "Noget gik galt"
       ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
       "You need an active personal calendar to import events": [
         "Du skal have en aktiv personlig kalender for at importere begivenheder"
       ]
@@ -2739,6 +2751,11 @@
         "3 TB samlet lagerplads"
       ]
     },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lagerplads er delt mellem familiemedlemmer på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
@@ -2779,6 +2796,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Konti med brugerdefinerede domæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+      ],
       "customer support": [
         "kundeservice"
       ],
@@ -2787,6 +2807,41 @@
       ],
       "Manage addresses.": [
         "Administrer adresser."
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Beklager, du kan i øjeblikket ikke ændre abonnement."
+      ],
+      "Visionary and family plans do not currently support lifetime accounts.": [
+        "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "Online privatliv, for hele din familie"
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Konfigurer din familie-konto og inviter brugere "
+      ],
+      "Set up your family account": [
+        "Konfigurer din familie-konto"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Introducerer ${ planName }"
       ]
     },
     "Feedback Modal Title": {
@@ -3688,6 +3743,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "For at gendanne dine data skal du genaktivere den konto-nøgle, der blev brugt på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "For at bruge Adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
@@ -5224,6 +5282,14 @@
         "Støt privatliv online"
       ]
     },
+    "specialoffer: Label": {
+      "Most popular": [
+        "Mest populære"
+      ],
+      "Offer ends soon": [
+        "Tilbuddet slutter snart"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå til abonnementer"
@@ -5263,11 +5329,35 @@
       ],
       "Get the deal": [
         "Få tilbuddet"
+      ],
+      "Save ${ discount }%": [
+        "Spar ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standard pris ${ amount } for 1 måned"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standard pris ${ amount } for 12 måneder"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standard pris ${ amount } for 15 måneder"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standard pris ${ amount } for 24 måneder"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standard pris ${ amount } for 30 måneder"
       ]
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
         "Black Friday-tilbud"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-udsalg"
+      ],
+      "Get our premium bundle and save more": [
+        "Få vores premium-pakke og spar mere"
       ]
     },
     "specialoffer: Tooltip": {
