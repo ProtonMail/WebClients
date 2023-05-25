@@ -8,4 +8,11 @@
 	@include media('<=small') {
 		flex-direction: column;
 	}
+
+	&--stack-earlier {
+		// value is made to address shared calendar notification issue (will be more widely addressed soon, this is a test case)
+		@include media('<=#{em(1020, 16)}') {
+			flex-direction: column;
+		}
+	}
 }
