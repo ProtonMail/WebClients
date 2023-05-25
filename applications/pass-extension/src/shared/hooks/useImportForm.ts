@@ -86,6 +86,9 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
     return errors;
 };
 
+const isNonEmptyImportPayload = (payload: ImportPayload) =>
+    payload.vaults.length > 0 && payload.vaults.every(({ items }) => items.length > 0);
+
 export const useImportForm = ({
     beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
     onSubmit,
@@ -113,11 +116,18 @@ export const useImportForm = ({
                     passphrase: values.passphrase,
                 };
 
-                const result = await beforeSubmit(await fileReader(payload));
-
-                if (!result.ok) {
+                const importPayload = await fileReader(payload);
+                if (!isNonEmptyImportPayload(importPayload)) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`The file you are trying to import is empty`,
+                    });
                     return setBusy(false);
                 }
+
+                const result = await beforeSubmit(importPayload);
+                if (!result.ok) return setBusy(false);
+
                 onSubmit?.(result.payload);
                 dispatch(importItemsIntent({ data: result.payload, provider: values.provider }));
             } catch (e) {
