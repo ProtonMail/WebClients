@@ -8,9 +8,9 @@ import type { WorkerRootSagaOptions } from '../types';
 
 function* signoutIntentWorker({ onSignout }: WorkerRootSagaOptions, action: ReturnType<typeof signout>) {
     if (!action.payload.soft) yield removeSession(api);
+    onSignout?.();
 
     yield put(signoutSuccess(action.payload));
-    onSignout?.();
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
