@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import Payment from './Payment';
 import getDefault from './getDefaultCard';
@@ -21,9 +21,6 @@ jest.mock('../../hooks/useApi', () => {
 describe('Payment', () => {
     beforeEach(() => {
         apiMock.mockReset();
-
-        // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918
-        (window as any).SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
     });
 
     it('should render', () => {

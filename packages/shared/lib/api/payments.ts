@@ -1,10 +1,18 @@
 import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 
-import { AmountAndCurrency, TokenPaymentMethod } from '@proton/components/containers/payments/interface';
+import { Autopay } from '@proton/components/payments/core';
+import {
+    AmountAndCurrency,
+    ExistingPayment,
+    TokenPayment,
+    TokenPaymentMethod,
+    WrappedCardPayment,
+    WrappedPaypalPayment,
+} from '@proton/components/payments/core/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
-import { getProductHeaders } from '../apps/product';
-import { Autopay, Currency, Cycle } from '../interfaces';
+import { ProductParam, getProductHeaders } from '../apps/product';
+import { Currency, Cycle } from '../interfaces';
 
 export const getSubscription = () => ({
     url: 'payments/v4/subscription',
@@ -24,7 +32,7 @@ export const deleteSubscription = (data: FeedbackDowngradeData) => ({
     data,
 });
 
-export type CheckSubscriptionParams = {
+export type CheckSubscriptionData = {
     Plans: PlanIDs;
     Currency: Currency;
     Cycle: Cycle;
@@ -32,13 +40,21 @@ export type CheckSubscriptionParams = {
     Codes?: string[];
 };
 
-export const checkSubscription = (data: CheckSubscriptionParams) => ({
+export const checkSubscription = (data: CheckSubscriptionData) => ({
     url: 'payments/v4/subscription/check',
     method: 'post',
     data,
 });
 
-export const subscribe = (data: any, product: any) => ({
+export type SubscribeData = {
+    Plans: PlanIDs;
+    Currency: Currency;
+    Cycle: Cycle;
+    Codes?: string[];
+} & (TokenPaymentMethod | WrappedCardPayment | ExistingPayment | {}) &
+    AmountAndCurrency;
+
+export const subscribe = (data: SubscribeData, product: ProductParam) => ({
     url: 'payments/v4/subscription',
     method: 'post',
     data,
@@ -48,7 +64,7 @@ export const subscribe = (data: any, product: any) => ({
     }),
 });
 
-export interface QueryInvoicesPayload {
+export interface QueryInvoicesParams {
     /**
      * Starts with 0
      */
@@ -62,13 +78,17 @@ export interface QueryInvoicesPayload {
 /**
  * Query list of invoices for the current user. The response is {@link InvoiceResponse}
  */
-export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesPayload) => ({
+export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesParams) => ({
     url: 'payments/v4/invoices',
     method: 'get',
     params: { Page, PageSize, Owner, State, Type },
 });
 
-export const queryPlans = (params: any) => ({
+export interface QueryPlansParams {
+    Currency?: Currency;
+}
+
+export const queryPlans = (params?: QueryPlansParams) => ({
     url: 'payments/v4/plans',
     method: 'get',
     params,
@@ -91,17 +111,19 @@ export const queryPaymentMethods = () => ({
     method: 'get',
 });
 
-export const setPaymentMethod = (data: any) => ({
+export type SetPaymentMethodData = TokenPayment & { Autopay?: Autopay };
+
+export const setPaymentMethod = (data: SetPaymentMethodData) => ({
     url: 'payments/v4/methods',
     method: 'post',
     data,
 });
 
-export interface UpdatePaymentMethodsParams {
+export interface UpdatePaymentMethodsData {
     Autopay: Autopay;
 }
 
-export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsParams) => ({
+export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsData) => ({
     url: `payments/v4/methods/${methodId}`,
     method: 'put',
     data,
@@ -157,18 +179,17 @@ export const buyCredit = (data: (TokenPaymentMethod & AmountAndCurrency) | GiftC
     data,
 });
 
-export const validateCredit = (data: any) => ({
+export interface ValidateCreditData {
+    GiftCode: string;
+}
+
+export const validateCredit = (data: ValidateCreditData) => ({
     url: 'payments/v4/credit/check',
     method: 'post',
     data,
 });
 
-export interface CreateTokenData {
-    Payment?: any;
-    Amount?: number;
-    Currency?: Currency;
-    PaymentMethodID?: string;
-}
+export type CreateTokenData = (AmountAndCurrency | {}) & (WrappedPaypalPayment | WrappedCardPayment | ExistingPayment);
 
 export const createToken = (data: CreateTokenData) => ({
     url: 'payments/v4/tokens',

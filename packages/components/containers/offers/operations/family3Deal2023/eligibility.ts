@@ -5,7 +5,7 @@ import {
     hasFamily,
     hasNewVisionary,
     hasVisionary,
-    isExternal,
+    isManagedExternally,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -51,7 +51,7 @@ const isEligible = ({ user, subscription, protonConfig }: Props) => {
     if (isTrial(subscription)) {
         return false;
     }
-    if (isExternal(subscription)) {
+    if (isManagedExternally(subscription)) {
         return false;
     }
     return true;

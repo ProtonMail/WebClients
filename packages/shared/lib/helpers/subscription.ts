@@ -24,8 +24,6 @@ const {
     FAMILY,
 } = PLANS;
 
-const { Android, iOS } = External;
-
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
     return (subscription?.Plans || []).find(
         ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
@@ -61,7 +59,7 @@ export const isManagedExternally = (
         return false;
     }
 
-    return subscription.External === Android || subscription.External === iOS;
+    return subscription.External === External.Android || subscription.External === External.iOS;
 };
 
 export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, VISIONARY);
@@ -171,10 +169,6 @@ export const isTrialExpired = (subscription: Subscription | undefined) => {
 export const willTrialExpire = (subscription: Subscription | undefined) => {
     const now = new Date();
     return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
-};
-
-export const isExternal = (subscription: Subscription | undefined) => {
-    return !!subscription?.External;
 };
 
 export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {

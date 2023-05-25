@@ -853,25 +853,6 @@ export enum SERVER_FEATURES {
     IPV6 = 16,
 }
 
-export enum PAYMENT_TOKEN_STATUS {
-    STATUS_PENDING = 0,
-    STATUS_CHARGEABLE = 1,
-    STATUS_FAILED = 2,
-    STATUS_CONSUMED = 3,
-    STATUS_NOT_SUPPORTED = 4,
-}
-
-export enum PAYMENT_METHOD_TYPES {
-    CARD = 'card',
-    PAYPAL = 'paypal',
-    PAYPAL_CREDIT = 'paypal-credit',
-    BITCOIN = 'bitcoin',
-    CASH = 'cash',
-    TOKEN = 'token',
-}
-
-export type PAYMENT_METHOD_TYPE = PAYMENT_METHOD_TYPES | string;
-
 export enum CLIENT_TYPES {
     MAIL = 1,
     VPN = 2,
@@ -918,7 +899,6 @@ export enum AutoReplyDuration {
     PERMANENT = 4,
 }
 
-export const ADD_CARD_MODE = 'add-card';
 export const DKIM_RSA_1024 = 0;
 export const DKIM_RSA_2048 = 1;
 

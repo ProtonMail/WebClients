@@ -1,5 +1,6 @@
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
+
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 
 export interface CardPayment {
     Type: PAYMENT_METHOD_TYPES.CARD;
@@ -31,6 +32,10 @@ export function isTokenPayment(payment: any): payment is TokenPayment {
 
 export interface PaypalPayment {
     Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+}
+
+export interface WrappedPaypalPayment {
+    Payment: PaypalPayment;
 }
 
 export function isPaypalPayment(payment: any): payment is PaypalPayment {
@@ -80,3 +85,5 @@ export interface PaymentTokenResult {
     ApprovalURL?: string;
     ReturnHost?: string;
 }
+
+export type PlainPaymentMethodType = `${PAYMENT_METHOD_TYPES}`;

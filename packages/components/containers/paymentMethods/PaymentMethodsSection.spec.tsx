@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 
 import {
     Loader,
