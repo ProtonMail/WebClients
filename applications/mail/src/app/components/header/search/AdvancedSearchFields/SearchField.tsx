@@ -31,7 +31,7 @@ const SearchField = (
                 )
             }
             dense
-            placeholder={c('Placeholder').t`Search messages`}
+            placeholder={c('Placeholder').t`Search date, name, email address, or subject line`}
             value={value}
             autoFocus
             onChange={onChange}
