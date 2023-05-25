@@ -76,7 +76,7 @@ const ContactsWidgetGroupsToolbar = ({
                             disabled={noContactInSelected}
                             data-testid="contacts:compose-contact-group"
                         >
-                            <Icon name="envelope" alt={c('Action').t`Compose`} />
+                            <Icon name="pen-square" alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                 ) : null}
