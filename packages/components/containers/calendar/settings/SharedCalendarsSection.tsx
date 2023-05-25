@@ -101,7 +101,11 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
                         size="small"
                         icon
                     >
-                        <Icon name="cog-wheel" className="flex-item-noshrink" />
+                        <Icon
+                            name="cog-wheel"
+                            className="flex-item-noshrink"
+                            alt={c('Calendar table settings button tooltip').t`Open settings`}
+                        />
                     </ButtonLike>
                 </Tooltip>
             </TableCell>
@@ -165,7 +169,7 @@ const InvitationRow = ({
                 <div key="status">{isInvitedAddressDisabled && <CalendarBadge {...getDisabledCalendarBadge()} />}</div>
             </TableCell>
             <TableCell>
-                <div className="flex flex-nowrap on-tablet-flex-justify-start flex-justify-end flex-align-items-center flex-gap-0-5">
+                <div className="flex flex-nowrap on-tablet-flex-justify-start flex-justify-end flex-align-items-center gap-2">
                     {isAcceptButtonDisabled && (
                         <Info
                             title={

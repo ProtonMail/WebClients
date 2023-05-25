@@ -60,7 +60,7 @@ const AddressStatus = ({
         .filter(isTruthy)
         .map(({ text, type }) => {
             return (
-                <Badge key={text} type={type}>
+                <Badge key={text} type={type} className="mr-1 mb-1">
                     {text}
                 </Badge>
             );
