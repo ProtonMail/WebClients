@@ -93,7 +93,7 @@ const PaymentStep = ({
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
         onPaypalPay({ Payment }: TokenPaymentMethod) {
-            return onPay(Payment);
+            return withLoading(onPay(Payment));
         },
     });
 
@@ -239,6 +239,7 @@ const PaymentStep = ({
                                 paypal={paypal}
                                 flow="signup"
                                 amount={subscriptionData.checkResult.AmountDue}
+                                loading={loading}
                             />
                         ) : (
                             <>

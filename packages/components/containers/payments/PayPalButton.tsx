@@ -16,7 +16,7 @@ export interface PayPalButtonProps extends ButtonProps {
     flow?: PaymentMethodFlows;
 }
 
-const PayPalButton = ({ amount, flow, children, paypal, ...rest }: PayPalButtonProps) => {
+const PayPalButton = ({ amount, flow, children, paypal, loading, ...rest }: PayPalButtonProps) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
@@ -37,7 +37,7 @@ const PayPalButton = ({ amount, flow, children, paypal, ...rest }: PayPalButtonP
             paypal.onToken();
             setRetry(false);
         };
-        return <Button onClick={handleRetry} {...rest}>{c('Action').t`Retry`}</Button>;
+        return <Button onClick={handleRetry} loading={loading} {...rest}>{c('Action').t`Retry`}</Button>;
     }
 
     if (paypal.loadingVerification) {
@@ -57,7 +57,7 @@ const PayPalButton = ({ amount, flow, children, paypal, ...rest }: PayPalButtonP
     };
 
     return (
-        <Button disabled={!paypal.isReady} onClick={handleClick} loading={paypal.loadingToken} {...rest}>
+        <Button disabled={!paypal.isReady} onClick={handleClick} loading={paypal.loadingToken || loading} {...rest}>
             {children}
         </Button>
     );
