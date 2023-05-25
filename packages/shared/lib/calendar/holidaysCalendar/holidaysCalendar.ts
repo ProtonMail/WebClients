@@ -56,7 +56,7 @@ export const findPreferredCalendarByLanguageTag = (calendars: HolidaysDirectoryC
     }
     for (const tag of languageTags) {
         const code = getLanguageCode(tag);
-        const preferredCalendar = calendars.find(({ LanguageCode }) => code === LanguageCode);
+        const preferredCalendar = calendars.find(({ LanguageCode }) => code === LanguageCode.toLowerCase());
         if (preferredCalendar) {
             return preferredCalendar;
         }
@@ -78,7 +78,8 @@ export const findHolidaysCalendarByCountryCodeAndLanguageTag = (
 };
 
 /**
- * Given the user time zone preference, and a list of language tags (RFC-5646) ordered by user preference,
+ * Given the user time zone preference, user language preference for the Proton web-apps,
+ * and a list of language tags (RFC-5646) expressing the user language preference,
  * we try to find a calendar that matches those in a directory of holidays calendars.
  * The logic for matching is as follows:
  *
@@ -87,18 +88,22 @@ export const findHolidaysCalendarByCountryCodeAndLanguageTag = (
  * * Then try to match a country:
  * * * If the filtering above returned the empty array, return undefined.
  * * * If the filtered calendars all belong to one country, pick that country.
- * * * If there are several countries in the filtered calendars, use the language tags to find a match.
+ * * * If there are several countries in the filtered calendars, use the language tags to find a match. Return first match if any
+ * * * [We don't user the Proton language preference here because we assume there's more granularity in
+ * * *  the language tags passed. E.g. at the moment a user can't choose nl_BE as Proton language]
  * * * If there's no match, return undefined.
  *
  * * If we got a country match, some calendars (calendar <-> language) will be associated to it:
  * * * If the country has just one associated calendar (<-> language), pick that one.
  * * * If the country has multiple associated calendars (<-> languages):
- * * * * If any of the language tags matches one of the languages (we try in the order of preference given), pick that one.
+ * * * * If the Proton language matches one of the languages, pick that one.
+ * * * * If no match, if any of the language tags matches one of the languages (we try in the order of preference given), pick that one.
  * * * * If no match, pick the first language in the list.
  */
 export const getSuggestedHolidaysCalendar = (
     calendars: HolidaysDirectoryCalendar[],
     tzid: string,
+    protonLanguage: string,
     languageTags: string[]
 ) => {
     // Get all calendars in the same time zone as the user
@@ -115,7 +120,10 @@ export const getSuggestedHolidaysCalendar = (
         return;
     }
 
-    return findHolidaysCalendarByCountryCodeAndLanguageTag(calendarsFromTimeZone, countryCode, languageTags);
+    return findHolidaysCalendarByCountryCodeAndLanguageTag(calendarsFromTimeZone, countryCode, [
+        protonLanguage,
+        ...languageTags,
+    ]);
 };
 
 export const getJoinHolidaysCalendarData = async ({
