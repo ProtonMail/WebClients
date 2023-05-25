@@ -33,7 +33,7 @@ export const createFormHandles = <T extends FormType = FormType>(options: Create
                 })
             )
         ) as FormHandle['fields'],
-        getFieldsFor: (type) => formHandle.fields[type] ?? [],
+        getFieldsFor: (type, predicate = () => true) => (formHandle.fields[type] ?? []).filter(predicate),
         listFields: (predicate = () => true) => Object.values(formHandle.fields).flat().filter(predicate),
         shouldRemove: () => !document.body.contains(form),
         shouldUpdate: () =>

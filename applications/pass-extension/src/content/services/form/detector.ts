@@ -1,4 +1,4 @@
-import { type FNode, rulesetMaker, utils } from '@proton/pass/fathom';
+import { type FNode, fathom, rulesetMaker } from '@proton/pass/fathom';
 import { isHTMLElement } from '@proton/pass/utils/dom';
 import { invert, truthy } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -8,10 +8,7 @@ import { createFormHandles } from '../../services/handles/form';
 import type { FormFields, FormHandle } from '../../types';
 import { FormField, FormType } from '../../types';
 
-const { matchClosestSiblingForms } = utils;
-
-const { isVisible } = utils;
-
+const { isVisible } = fathom.utils;
 const ruleset = rulesetMaker();
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
@@ -85,11 +82,11 @@ const groupFields = (
         const parent: HTMLElement =
             formPredictions.find(({ fnode: formFNode }) => {
                 const form = formFNode.element;
-                return form.contains(field) || matchClosestSiblingForms([formFNode])(fieldFNode) !== undefined;
+                return form.contains(field);
             })?.fnode.element ?? document.body;
 
         const entry = grouping?.get(parent) ?? {};
-        entry[type] = (entry[type] ?? []).concat(field) as HTMLElement[];
+        entry[type] = (entry[type] ?? []).concat(field) as HTMLInputElement[];
 
         return grouping.set(parent, entry);
     });
