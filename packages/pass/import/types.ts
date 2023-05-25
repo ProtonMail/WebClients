@@ -11,6 +11,7 @@ export enum ImportProvider {
     ONEPASSWORD = '1password',
     PROTONPASS = 'protonpass',
     DASHLANE = 'dashlane',
+    SAFARI = 'safari',
 }
 
 export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) => a.localeCompare(b));

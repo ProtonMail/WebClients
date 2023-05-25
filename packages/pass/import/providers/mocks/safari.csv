@@ -1,0 +1,8 @@
+Title,URL,Username,Password,Notes,OTPAuth
+"ex:ample.com (brokenurl@example.com)","https://ex:ample.com/",brokenurl@example.com,pass,,
+2fa.example.com (2fa-scanned),https://2fa.example.com/,2fa-scanned,pass,,otpauth://totp/db@example.com?secret=OTDED5QZA64L6YRUWJLD65QQ3Z6PZ3A3&issuer=Proton&algorithm=SHA1&digits=6&period=30
+"account.example.com (username with comma, quotes "")",https://account.example.com/,"username with comma, quotes ""","password with comma, quotes ""","notes with commas, quotes """,
+localhost (login-with-multiple-lines),http://localhost:7777/,login-with-multiple-lines,pass,"notes with
+multiple
+lines",
+account.proton.me (2fa-manually-entered-string@example.com),https://account.proton.me/,2fa-manually-entered-string@example.com,proton123,,otpauth://totp/account.proton.me:2fa-manually-entered-string@example.com?secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&issuer=account.proton.me&algorithm=SHA1&digits=6&period=30
