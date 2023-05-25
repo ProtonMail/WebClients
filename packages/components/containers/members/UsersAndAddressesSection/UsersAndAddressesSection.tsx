@@ -368,7 +368,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 </TableCell>
                                 <TableCell>
                                     <div className="lg:py-4">
-                                        <MemberFeatures member={member} />
+                                        <MemberFeatures member={member} organization={organization} />
                                     </div>
                                 </TableCell>
                                 <TableCell>
