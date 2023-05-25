@@ -2,17 +2,13 @@ import { ReactNode, Ref, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    DEFAULT_CURRENCY,
-    MIN_CREDIT_AMOUNT,
-    MIN_DONATION_AMOUNT,
-    PAYMENT_METHOD_TYPE,
-    PAYMENT_METHOD_TYPES,
-} from '@proton/shared/lib/constants';
-import { Currency, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
+import { PAYMENT_METHOD_TYPES, PaymentMethodStatus, PaymentMethodType } from '@proton/components/payments/core';
+import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Loader, Price } from '../../components';
 import { classnames } from '../../helpers';
+import { CardModel } from '../../payments/core/interface';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
@@ -22,7 +18,6 @@ import Bitcoin from './Bitcoin';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import PayPalView from './PayPalView';
-import { CardModel } from './interface';
 
 interface Props {
     children?: ReactNode;
@@ -30,8 +25,8 @@ interface Props {
     amount?: number;
     currency?: Currency;
     coupon?: string;
-    method?: PAYMENT_METHOD_TYPE;
-    onMethod: (value: PAYMENT_METHOD_TYPE | undefined) => void;
+    method?: PaymentMethodType;
+    onMethod: (value: PaymentMethodType | undefined) => void;
     paypal: any;
     paypalCredit: any;
     card: CardModel;

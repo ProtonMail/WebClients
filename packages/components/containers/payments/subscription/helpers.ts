@@ -1,17 +1,10 @@
 import { getUnixTime } from 'date-fns';
 
+import { LatestSubscription } from '@proton/components/payments/core';
 import { APPS, APP_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
-    Cycle,
-    LatestSubscription,
-    Plan,
-    PlanIDs,
-    Subscription,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import { Audience, Cycle, Plan, PlanIDs, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 const OCTOBER_01 = getUnixTime(new Date(Date.UTC(2021, 9, 1)));
 

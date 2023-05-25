@@ -1,4 +1,4 @@
-import { CardModel } from './interface';
+import { CardModel } from '../../payments/core/interface';
 
 const formatYear = (year: any) => {
     const pre = String(year).length === 2 ? '20' : '';

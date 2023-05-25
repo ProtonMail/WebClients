@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { CreateTokenData, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
-import { PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import PaymentVerificationModal from './PaymentVerificationModal';
+import { PAYMENT_TOKEN_STATUS } from './constants';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -17,7 +16,7 @@ import {
     isExistingPayment,
     isTokenPaymentMethod,
 } from './interface';
-import { toParams } from './paymentTokenToParams';
+import { toTokenPaymentMethod } from './utils';
 
 const { STATUS_PENDING, STATUS_CHARGEABLE, STATUS_FAILED, STATUS_CONSUMED, STATUS_NOT_SUPPORTED } =
     PAYMENT_TOKEN_STATUS;
@@ -116,7 +115,6 @@ export const process = (
                     }
                     throw new Error(c('Error').t`Tab closed`);
                 } catch (error: any) {
-                    // eslint-disable-next-line prefer-promise-reject-errors
                     return reject({ ...error, tryAgain: true });
                 }
             }
@@ -163,27 +161,21 @@ export const process = (
  * @param amountAndCurrency
  */
 const fetchPaymentToken = async (
-    {
-        params,
-        api,
-    }: {
-        params: WrappedCardPayment | ExistingPayment;
-        api: Api;
-    },
+    params: WrappedCardPayment | ExistingPayment,
+    api: Api,
     amountAndCurrency?: AmountAndCurrency
 ): Promise<PaymentTokenResult> => {
-    let data: CreateTokenData = { ...amountAndCurrency };
-
-    if (isExistingPayment(params)) {
-        data.PaymentMethodID = params.PaymentMethodID;
-    } else {
-        data.Payment = params.Payment;
-    }
+    const data: CreateTokenData = { ...amountAndCurrency, ...params };
 
     return api<PaymentTokenResult>({
         ...createToken(data),
         notificationExpiration: 10000,
     });
+};
+
+type CreatePaymentTokenOptions = {
+    addCardMode?: boolean;
+    amountAndCurrency?: AmountAndCurrency;
 };
 
 /**
@@ -199,31 +191,23 @@ const fetchPaymentToken = async (
  * can't be used for payment purposes. But it still can be used to create a new payment method, e.g. save credit card.
  */
 export const createPaymentToken = async (
-    {
-        params,
-        api,
-        createModal,
-        mode,
-    }: {
-        createModal: (modal: JSX.Element) => void;
-        mode?: string;
-        api: Api;
-        params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment;
-    },
-    amountAndCurrency?: AmountAndCurrency
+    params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment,
+    verify: VerifyPayment,
+    api: Api,
+    { addCardMode, amountAndCurrency }: CreatePaymentTokenOptions = {}
 ): Promise<TokenPaymentMethod> => {
     if (isTokenPaymentMethod(params)) {
         return params;
     }
 
-    const { Token, Status, ApprovalURL, ReturnHost } = await fetchPaymentToken({ params, api }, amountAndCurrency);
+    const { Token, Status, ApprovalURL, ReturnHost } = await fetchPaymentToken(params, api, amountAndCurrency);
 
     if (Status === STATUS_CHARGEABLE) {
         // If the payment token is already chargeable then we're all set. Just prepare the format and return it.
-        return toParams(params, Token);
+        return toTokenPaymentMethod(Token);
     }
 
-    let Payment: CardPayment;
+    let Payment: CardPayment | undefined;
     if (!isExistingPayment(params)) {
         Payment = params.Payment;
     }
@@ -235,29 +219,21 @@ export const createPaymentToken = async (
      * the payment token status (e.g. every 5 seconds). Once {@link process} resolves then the entire return promise
      * resolves to a {@link TokenPaymentMethod} – newly created payment token.
      */
-    return new Promise<TokenPaymentMethod>((resolve, reject) => {
-        createModal(
-            <PaymentVerificationModal
-                mode={mode}
-                payment={Payment}
-                params={params}
-                token={Token}
-                onSubmit={resolve}
-                onClose={reject}
-                onProcess={() => {
-                    const abort = new AbortController();
-                    return {
-                        promise: process({
-                            Token,
-                            api,
-                            ReturnHost,
-                            ApprovalURL,
-                            signal: abort.signal,
-                        }),
-                        abort,
-                    };
-                }}
-            />
-        );
-    });
+    return verify({ addCardMode, Payment, Token, ApprovalURL, ReturnHost });
 };
+
+export type VerifyPayment = (params: {
+    addCardMode?: boolean;
+    Payment?: CardPayment;
+    Token: string;
+    ApprovalURL?: string;
+    ReturnHost?: string;
+}) => Promise<TokenPaymentMethod>;
+
+export const getCreatePaymentToken =
+    (verify: VerifyPayment, api: Api) =>
+    (
+        paymentParams: WrappedCardPayment | TokenPaymentMethod | ExistingPayment,
+        options: CreatePaymentTokenOptions
+    ): Promise<TokenPaymentMethod> =>
+        createPaymentToken(paymentParams, verify, api, options);

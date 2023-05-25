@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES, PaymentMethod } from '@proton/components/payments/core';
 import { isExpired } from '@proton/shared/lib/helpers/card';
-import { PaymentMethod } from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
 

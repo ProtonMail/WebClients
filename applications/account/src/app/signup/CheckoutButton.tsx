@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { PrimaryButton, StyledPayPalButton } from '@proton/components';
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
 import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { SignupPayPal } from './interfaces';
@@ -11,7 +11,7 @@ interface Props {
     paypal: SignupPayPal;
     canPay: boolean;
     loading: boolean;
-    method?: PAYMENT_METHOD_TYPE;
+    method?: PaymentMethodType;
     checkResult?: SubscriptionCheckResponse;
 }
 

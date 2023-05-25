@@ -1,9 +1,8 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { buyCredit, createToken } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
-import { Autopay } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     applyHOCs,
@@ -390,7 +389,6 @@ it('should create payment token for saved card and then buy credits with it', as
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
-                    PaymentMethodID: creditCardValue,
                     Payment: expect.objectContaining({
                         Type: 'token',
                         Details: expect.objectContaining({
@@ -425,7 +423,6 @@ it('should create payment token for saved paypal and then buy credits with it', 
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
-                    PaymentMethodID: paypalValue,
                     Payment: expect.objectContaining({
                         Type: 'token',
                         Details: expect.objectContaining({

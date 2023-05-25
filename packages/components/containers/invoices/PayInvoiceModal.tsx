@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
+import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
-import { useApi, useApiResult, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useApiResult, useEventManager, useLoading, useNotifications } from '../../hooks';
+import {
+    AmountAndCurrency,
+    ExistingPayment,
+    TokenPaymentMethod,
+    WrappedCardPayment,
+} from '../../payments/core/interface';
 import Payment from '../payments/Payment';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
-import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from '../payments/interface';
-import { createPaymentToken } from '../payments/paymentTokenHelper';
 import usePayment from '../payments/usePayment';
 import { Invoice } from './interface';
 
@@ -31,10 +36,10 @@ export interface Props {
 }
 
 const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
+    const createPaymentToken = usePaymentToken();
     const api = useApi();
     const { result, loading: isLoading } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
         () => checkInvoice(invoice.ID),
@@ -54,14 +59,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         };
 
         if (params) {
-            let paymentToken = await createPaymentToken(
-                {
-                    params,
-                    api,
-                    createModal,
-                },
-                amountAndCurrency
-            );
+            let paymentToken = await createPaymentToken(params, { amountAndCurrency });
 
             payInvoiceData = { ...payInvoiceData, ...paymentToken };
         }
