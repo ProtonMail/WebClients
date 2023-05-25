@@ -10,7 +10,7 @@ import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { Icon, LabelsUpsellModal, Loader, useDebounceInput, useModalState } from '../../components';
+import { LabelsUpsellModal, Loader, MailUpsellButton, useDebounceInput, useModalState } from '../../components';
 import { useApi, useEventManager, useLabels, useLoading, useNotifications, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import LabelSortableList from './LabelSortableList';
@@ -88,17 +88,10 @@ function LabelsSection() {
                                 {c('Action').t`Add label`}
                             </Button>
                         ) : (
-                            <Button
-                                shape="outline"
+                            <MailUpsellButton
                                 onClick={() => handleUpsellModalDisplay(true)}
-                                className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
-                            >
-                                <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
-                                <span className="flex-item-noshrink mr-2" aria-hidden="true">
-                                    +
-                                </span>
-                                {c('Action').t`Get more labels`}
-                            </Button>
+                                text={c('Action').t`Get more labels`}
+                            />
                         )}
                         {localLabels.length ? (
                             <Button

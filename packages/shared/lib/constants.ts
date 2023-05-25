@@ -554,6 +554,7 @@ export enum MAIL_UPSELL_PATHS {
     CATCH_ALL = 'catch-all',
     BRIDGE = 'bridge',
     PM_ME = 'pm-me',
+    SHORT_ADDRESS = 'short-address',
     AUTO_DELETE = 'auto-delete',
     SCHEDULE_SEND = 'schedule-send',
     STORAGE_FULL = 'storage-full',
