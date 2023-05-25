@@ -10,21 +10,11 @@ import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
 import Layout from './Layout';
 
-const Step2 = ({
-    onSetup,
-    hasPayment,
-    product,
-    img,
-}: {
-    hasPayment: boolean;
-    onSetup: () => Promise<void>;
-    product: string;
-    img: ReactNode;
-}) => {
+const Step2 = ({ onSetup, product, img }: { onSetup: () => Promise<void>; product: string; img: ReactNode }) => {
     const steps: string[] = [
         c('Info').t`Creating your account`,
         c('Info').t`Securing your account`,
-        hasPayment && c('Info').t`Verifying your payment`,
+        c('Info').t`Verifying your payment`,
     ].filter(isTruthy);
 
     useEffect(() => {
