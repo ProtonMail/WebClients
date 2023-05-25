@@ -1,10 +1,11 @@
-import React, { ComponentPropsWithRef, useContext } from 'react';
+import React, { ComponentPropsWithRef, ReactElement, cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonProps, Vr } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';
@@ -26,7 +27,7 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      * Slot for Element(s) to be rendered next to the close button.
      *
      */
-    actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element];
+    actions?: JSX.Element | JSX.Element[];
     /**
      * Props forwarded to the close Button component
      */
@@ -57,26 +58,26 @@ const ModalHeader = ({
 }: ModalHeaderProps) => {
     const { id, onClose, size } = useContext(ModalContext);
 
-    const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
+    const actionsArray = Array.isArray(actions) ? actions : [actions];
 
     return (
         <div className="modal-two-header">
             <div
-                className={classnames([
+                className={clsx(
                     'flex flex-nowrap flex-item-noshrink flex-align-items-start',
-                    title ? 'flex-justify-space-between' : 'flex-justify-end',
-                ])}
+                    title ? 'flex-justify-space-between' : 'flex-justify-end'
+                )}
                 {...rest}
             >
                 {title && (
                     <div className="modal-two-header-title mt-1">
                         <h1
                             id={id}
-                            className={classnames([
+                            className={clsx(
                                 'text-bold',
                                 ['large', 'full'].includes(size) ? 'text-4xl' : 'text-2xl',
-                                titleClassName,
-                            ])}
+                                titleClassName
+                            )}
                         >
                             {title}
                         </h1>
@@ -87,8 +88,9 @@ const ModalHeader = ({
                 <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
                     {actions && (
                         <>
-                            {firstAction}
-                            {secondAction}
+                            {actionsArray.map((action) =>
+                                cloneElement(action as ReactElement, { key: generateUID('modal-action') })
+                            )}
                             <Vr className="my-1" />
                         </>
                     )}

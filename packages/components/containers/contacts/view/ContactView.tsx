@@ -1,12 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { classnames } from '../../../helpers';
 import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactSummary from './ContactSummary';
@@ -27,11 +25,9 @@ interface Props {
     ownAddresses: string[];
     errors?: (CryptoProcessingError | Error)[];
     isSignatureVerified?: boolean;
-    onDelete: () => void;
     onReload: () => void;
     onEdit: (newField?: string) => void;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
-    onExport: () => void;
     onGroupDetails: (contactGroupID: string) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
@@ -48,11 +44,9 @@ const ContactView = ({
     ownAddresses,
     errors,
     isSignatureVerified = false,
-    onDelete,
     onReload,
     onEdit,
     onEmailSettings,
-    onExport,
     onGroupDetails,
     onGroupEdit,
     onUpgrade,
@@ -60,25 +54,14 @@ const ContactView = ({
     onDecryptionError,
     isPreview = false,
 }: Props) => {
-    const hasError = errors?.some(
-        (error) => error instanceof Error || error.type !== CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED
-    );
-
     const hasEmail = vCardContact.email?.length || 0 > 0;
     const hasTel = vCardContact.tel?.length || 0 > 0;
     const hasAdr = vCardContact.adr?.length || 0 > 0;
 
     return (
         <div>
-            <div className={classnames(['contact-summary-wrapper border-bottom pb1 mb-4'])}>
-                <ContactSummary
-                    vCardContact={vCardContact}
-                    onExport={onExport}
-                    onDelete={onDelete}
-                    leftBlockWidth="w100 max-w100p on-mobile-wauto"
-                    isPreview={isPreview}
-                    hasError={hasError}
-                />
+            <div className="contact-summary-wrapper border-bottom pb1 mb-4">
+                <ContactSummary vCardContact={vCardContact} leftBlockWidth="w100 max-w100p on-mobile-wauto" />
                 <ContactViewErrors
                     errors={errors}
                     onReload={onReload}
@@ -108,7 +91,7 @@ const ContactView = ({
                 <ContactViewOthers vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
             </div>
             {!isPreview ? (
-                <div className={classnames(['mt-6 '])}>
+                <div className="mt-6 ">
                     {hasEmail ? null : (
                         <div className="mb-2">
                             <Button shape="outline" color="norm" onClick={() => onEdit('email')}>
