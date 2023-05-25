@@ -23,9 +23,10 @@ interface Props {
     ownAddresses: string[];
     contactID: string;
     onEmailSettings: (props: ContactEmailSettingsProps) => void;
-    onGroupDetails: (contactGroupID: string) => void;
+    onGroupDetails: (contactGroupID: string, onCloseContactDetailsModal?: () => void) => void;
     onUpgrade: () => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onCloseModal?: () => void;
 }
 
 const ContactViewEmails = ({
@@ -40,6 +41,7 @@ const ContactViewEmails = ({
     onGroupDetails,
     onUpgrade,
     onGroupEdit,
+    onCloseModal,
 }: Props) => {
     const { createNotification } = useNotifications();
 
@@ -132,6 +134,7 @@ const ContactViewEmails = ({
                                     contactGroups={contactGroups}
                                     isStacked={false}
                                     onDetails={onGroupDetails}
+                                    onCloseModal={onCloseModal}
                                 />
                             </div>
                         )}
