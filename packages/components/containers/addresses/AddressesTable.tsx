@@ -25,7 +25,7 @@ const AddressesTable = ({
     organizationKey,
 }: AddressesTableProps) => {
     return (
-        <Table hasActions>
+        <Table responsive="cards" hasActions>
             <TableHeader
                 cells={[
                     c('Header for addresses table').t`Address`,
