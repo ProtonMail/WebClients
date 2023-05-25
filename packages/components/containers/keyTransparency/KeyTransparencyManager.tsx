@@ -15,15 +15,19 @@ import {
 } from '@proton/key-transparency';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { KeyTransparencyState, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
+import {
+    KeyTransparencyActivation,
+    KeyTransparencyState,
+    VerifyOutboundPublicKeys,
+} from '@proton/shared/lib/interfaces';
 import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import { AddressesModel } from '@proton/shared/lib/models';
 
-import { useApi, useFeature, useGetUserKeys, useUser } from '../../hooks';
-import { FeatureCode } from '../features';
+import { useApi, useGetUserKeys, useUser } from '../../hooks';
 import { KTContext } from './ktContext';
-import { KT_FF, KtFeatureEnum, isKTActive, removeKTBlobs } from './ktStatus';
+import { removeKTBlobs } from './ktStatus';
 import { useFixMultiplePrimaryKeys } from './useFixMultiplePrimaryKeys';
+import useGetKTActivation from './useGetKTActivation';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 
 /**
@@ -48,12 +52,12 @@ const useGetAddresses = (): GetAddresses => {
 };
 
 const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
+    const getKTActivation = useGetKTActivation();
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
     const [{ ID: userID }] = useUser();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { get } = useFeature<KT_FF | undefined>(FeatureCode.KeyTransparencyWEB);
     const ktLSAPI = getKTLocalStorage(APP_NAME);
     const fixMultiplePrimaryKeys = useFixMultiplePrimaryKeys();
 
@@ -72,8 +76,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
      * Key Transparency, we postpone verification to a later time
      */
     const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (keyList, email, SignedKeyList, IgnoreKT) => {
-        const feature = await get().then((result) => result?.Value);
-        if (!(await isKTActive(APP_NAME, feature))) {
+        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
             return;
         }
 
@@ -149,23 +152,20 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const feature = await get().then((result) => result?.Value);
+            const ktActivation = await getKTActivation();
             const addressesPromise = getAddresses();
 
             // Since we cannot check the feature flag at login time, the
             // createPreAuthKTVerifier helper might have created blobs
             // in local storage. If this is the case and the feature flag
             // turns out to be disabled, we remove them all
-            if (feature === KtFeatureEnum.DISABLE) {
+            if (ktActivation === KeyTransparencyActivation.DISABLED) {
                 const addresses = await addressesPromise;
                 await removeKTBlobs(
                     userID,
                     addresses.map(({ ID }) => ID),
                     ktLSAPI
                 );
-            }
-
-            if (!(await isKTActive(APP_NAME, feature))) {
                 return;
             }
 
