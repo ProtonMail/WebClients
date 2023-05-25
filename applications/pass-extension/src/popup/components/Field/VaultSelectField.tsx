@@ -44,7 +44,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
         }
     }, [props.field.value, vaults]);
 
-    return vaults.length > 1 ? (
+    return (
         <SelectField
             {...props}
             icon={<VaultIcon icon={selectedVault?.icon} color={selectedVault?.color} size="large" />}
@@ -82,5 +82,5 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                     ))
                 )}
         </SelectField>
-    ) : null;
+    );
 };

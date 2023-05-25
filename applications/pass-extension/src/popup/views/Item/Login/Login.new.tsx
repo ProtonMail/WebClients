@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
-import { selectTOTPLimits } from '@proton/pass/store';
+import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
@@ -45,6 +45,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
     const { realm, subdomain } = usePopupContext();
     const { search } = useLocation();
 
+    const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
@@ -151,7 +152,9 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                                {vaultTotalCount > 1 && (
+                                    <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                                )}
                                 <Field
                                     name="name"
                                     label={c('Label').t`Title`}
