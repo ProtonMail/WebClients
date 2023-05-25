@@ -222,6 +222,7 @@ const PaymentStep = ({
                                 onMethod={setMethod}
                                 onCard={setCard}
                                 cardErrors={cardErrors}
+                                disabled={loading}
                             />
                         ) : (
                             <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
