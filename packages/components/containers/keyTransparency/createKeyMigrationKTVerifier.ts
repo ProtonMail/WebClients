@@ -1,17 +1,9 @@
 import { ktSentryReport, verifyLatestProofOfAbsence } from '@proton/key-transparency/lib';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Api, KeyMigrationKTVerifier } from '@proton/shared/lib/interfaces';
+import { Api, GetKTActivation, KeyMigrationKTVerifier, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import { KT_FF, isKTActive } from './ktStatus';
-
-const createKeyMigrationKTVerifier = (
-    getFF: () => Promise<KT_FF>,
-    api: Api,
-    appName: APP_NAMES
-): KeyMigrationKTVerifier => {
+const createKeyMigrationKTVerifier = (getKTActivation: GetKTActivation, api: Api): KeyMigrationKTVerifier => {
     return async (email: string) => {
-        const featureFlag = await getFF();
-        if (!(await isKTActive(appName, featureFlag))) {
+        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
             return;
         }
         try {
