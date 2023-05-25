@@ -1,15 +1,12 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
-import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL } from '@proton/pass/utils/url';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
+import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { ChromiumItem } from './chromium.types';
 
@@ -30,30 +27,18 @@ export const readChromiumData = async (data: string): Promise<ImportPayload> => 
             vaults: [
                 {
                     type: 'new',
-                    vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
+                    vaultName: getImportedVaultName(),
                     id: uniqueId(),
-                    items: result.items.map((item): ItemImportIntent<'login'> => {
-                        const urlResult = isValidURL(item.url ?? '');
-                        const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-                        const name = item.name || url?.hostname || 'Unnamed item';
-
-                        return {
-                            type: 'login',
-                            metadata: {
-                                name,
-                                note: item.note ?? '',
-                                itemUuid: uniqueId(),
-                            },
-                            content: {
-                                username: item.username || '',
-                                password: item.password || '',
-                                urls: [url?.origin].filter(truthy),
-                                totpUri: '',
-                            },
-                            extraFields: [],
-                            trashed: false,
-                        };
-                    }),
+                    items: result.items.map(
+                        (item): ItemImportIntent<'login'> =>
+                            importLoginItem({
+                                name: item.name,
+                                note: item.note,
+                                username: item.username,
+                                password: item.password,
+                                urls: [item.url],
+                            })
+                    ),
                 },
             ],
             ignored,

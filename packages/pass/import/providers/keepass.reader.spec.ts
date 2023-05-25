@@ -38,7 +38,7 @@ describe('Import KeePass xml', () => {
         expect(payload.vaults[2].vaultName).toEqual('Group C');
 
         expect(payload.vaults[3].type).toEqual('new');
-        expect(payload.vaults[3].vaultName).toEqual('Import (27 Apr 2023)');
+        expect(payload.vaults[3].vaultName).toEqual('Import - 27 Apr 2023');
     });
 
     it('should extract items from `Group A`', () => {
