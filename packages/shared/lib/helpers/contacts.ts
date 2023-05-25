@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
+import { isBase64Image } from '@proton/shared/lib/helpers/validators';
+
 export const getAllFields = () => [
     // translator: this field is used to specify the full name of the contact (e.g. Jane Appleseed)
     { text: c('Contact field label').t`Name`, value: 'fn' },
@@ -176,3 +179,18 @@ export const getTypeValues: () => { [key: string]: string[] } = () => ({
     url: [],
     photo: [],
 });
+
+/**
+ * Get the source of the contact image (can be contact profile image, Logo or Photo fields)
+ * It will allow to load the image normally if a base 64 or using the Proton proxy is disabled
+ * Else we will forge the url to load it through the Proton proxy
+ */
+export const getContactImageSource = (apiUrl: string, url: string, uid: string, useProxy: boolean) => {
+    // If the image is not a base64 but a URL, then we want to load the image through the proxy
+    if (!isBase64Image(url) && useProxy) {
+        const encodedImageUrl = encodeImageUri(url);
+        return forgeImageURL(apiUrl, encodedImageUrl, uid);
+    }
+
+    return url;
+};

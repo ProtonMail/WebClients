@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -9,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, Tooltip } from '../../../components';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import LoadRemoteImageBanner from '../../banner/LoadRemoteImageBanner';
 import ContactImageSummary from './ContactImageSummary';
 
 import './ContactSummary.scss';
@@ -31,6 +34,8 @@ const ContactSummary = ({
     hasError = false,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
+    const [showLoadImageBanner, setShowLoadImageBanner] = useState(false);
+    const loadImageDirectRef = useRef<() => void>(null);
 
     const photo = formatImage(getSortedProperties(vCardContact, 'photo')[0]?.value || '');
     const name = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
@@ -38,61 +43,79 @@ const ContactSummary = ({
     const nameIsEmail = validateEmailAddress(name);
 
     return (
-        <div
-            className={clsx(['contactsummary-container my-4', !isNarrow && 'flex flex-nowrap flex-align-items-center'])}
-        >
+        <>
+            {showLoadImageBanner && (
+                <LoadRemoteImageBanner
+                    onClick={() => loadImageDirectRef.current?.()}
+                    text={c('Action').t`Image could not be loaded with tracker protection.`}
+                    tooltip={c('Action').t`Image will be loaded without a proxy`}
+                    actionText={c('Action').t`Load`}
+                />
+            )}
             <div
-                className={clsx([
-                    'text-center contactsummary-photo-container pt-2 mb-2 md:mb-0 on-mobile-center',
-                    leftBlockWidth,
-                ])}
+                className={clsx(
+                    'contactsummary-container my-4',
+                    !isNarrow && 'flex flex-nowrap flex-align-items-center'
+                )}
             >
-                <ContactImageSummary photo={photo} name={name} />
-            </div>
-            <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-no-min-children flex-item-fluid">
-                <h2
-                    className={clsx([
-                        'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines',
-                        // Several email addresses are a single word but too long, for this case, we break at any char
-                        nameIsEmail && 'text-break',
-                    ])}
-                    title={name}
+                <div
+                    className={clsx(
+                        'text-center contactsummary-photo-container pt-2 mb-2 md:mb-0 on-mobile-center',
+                        leftBlockWidth
+                    )}
                 >
-                    {name}
-                </h2>
-                {!isPreview && (
-                    <div className="contactsummary-action-buttons flex-item-noshrink on-mobile-text-center ">
-                        {!hasError && (
-                            <Tooltip title={c('Action').t`Export`}>
+                    <ContactImageSummary
+                        photo={photo}
+                        name={name}
+                        loadImageDirectRef={loadImageDirectRef}
+                        onToggleLoadDirectBanner={setShowLoadImageBanner}
+                    />
+                </div>
+                <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-no-min-children flex-item-fluid">
+                    <h2
+                        className={clsx(
+                            'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines',
+                            // Several email addresses are a single word but too long, for this case, we break at any char
+                            nameIsEmail && 'text-break'
+                        )}
+                        title={name}
+                    >
+                        {name}
+                    </h2>
+                    {!isPreview && (
+                        <div className="contactsummary-action-buttons flex-item-noshrink on-mobile-text-center ">
+                            {!hasError && (
+                                <Tooltip title={c('Action').t`Export`}>
+                                    <Button
+                                        color="weak"
+                                        shape="outline"
+                                        icon
+                                        onClick={onExport}
+                                        className="inline-flex ml-2"
+                                        data-testid="contact-summary:export"
+                                    >
+                                        <Icon name="arrow-up-from-square" alt={c('Action').t`Export`} />
+                                    </Button>
+                                </Tooltip>
+                            )}
+
+                            <Tooltip title={c('Action').t`Delete`}>
                                 <Button
                                     color="weak"
                                     shape="outline"
                                     icon
-                                    onClick={onExport}
+                                    onClick={onDelete}
                                     className="inline-flex ml-2"
-                                    data-testid="contact-summary:export"
+                                    data-testid="contact-summary:delete"
                                 >
-                                    <Icon name="arrow-up-from-square" alt={c('Action').t`Export`} />
+                                    <Icon name="trash" alt={c('Action').t`Delete`} />
                                 </Button>
                             </Tooltip>
-                        )}
-
-                        <Tooltip title={c('Action').t`Delete`}>
-                            <Button
-                                color="weak"
-                                shape="outline"
-                                icon
-                                onClick={onDelete}
-                                className="inline-flex ml-2"
-                                data-testid="contact-summary:delete"
-                            >
-                                <Icon name="trash" alt={c('Action').t`Delete`} />
-                            </Button>
-                        </Tooltip>
-                    </div>
-                )}
+                        </div>
+                    )}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
