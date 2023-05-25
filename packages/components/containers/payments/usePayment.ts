@@ -19,7 +19,7 @@ interface Props {
     amount: number;
     currency: Currency;
     onPaypalPay: (data: OnPayResult) => void;
-    onValidatePaypal?: () => boolean;
+    onValidatePaypal?: () => Promise<boolean>;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
 }
 

@@ -69,6 +69,12 @@ export const getDeviceVerificationHeaders = (challengeB64: string) => {
     };
 };
 
+export const getOwnershipVerificationHeaders = (value: 'lax') => {
+    return {
+        'X-PM-OV': value,
+    };
+};
+
 export const getCroHeaders = (paymentToken: string | undefined) => {
     if (!paymentToken) {
         return {};
