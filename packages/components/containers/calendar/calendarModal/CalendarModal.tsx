@@ -83,7 +83,7 @@ export const CalendarModal = ({
         return (option && option.text) || '';
     }, [model.addressID, model.addressOptions]);
 
-    const showDuration = initialCalendar && getShowDuration(initialCalendar);
+    const showDuration = initialCalendar ? getShowDuration(initialCalendar) : true;
     const subscribeURL =
         initialCalendar && getIsSubscribedCalendar(initialCalendar)
             ? initialCalendar.SubscriptionParameters.URL
