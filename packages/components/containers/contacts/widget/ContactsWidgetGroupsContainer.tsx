@@ -224,6 +224,7 @@ const ContactsWidgetGroupsContainer = ({
                         checkedIDs={checkedIDs}
                         onClick={handleDetails}
                         isDrawer={isDrawer}
+                        onCompose={onCompose}
                     />
                 ) : null}
             </div>
