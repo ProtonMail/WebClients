@@ -10,13 +10,14 @@ import type { Address, User } from '@proton/shared/lib/interfaces';
 import { bootSuccess, serverEvent, setUserFeatures, setUserPlan } from '../actions';
 
 export type AddressState = { [addressId: string]: Address };
-export type UserFeatureState = Partial<Record<PassFeature, Feature>> & { requestedAt: number };
+export type UserFeatureState = Partial<Record<PassFeature, Feature>> & { requestedAt?: number };
+export type UserPlanState = PassPlanResponse & { requestedAt?: number };
 
 export type UserState = {
     eventId: MaybeNull<string>;
     user: MaybeNull<User>;
     addresses: AddressState;
-    plan: MaybeNull<PassPlanResponse>;
+    plan: MaybeNull<UserPlanState>;
     features: MaybeNull<UserFeatureState>;
 };
 
