@@ -4275,6 +4275,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Ajoutez un filtre personnalisé pour effectuer automatiquement certaines actions, comme labelliser ou archiver des messages."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Les messages provenant d'adresses marquées comme indésirables/spam par vous ou par ${ BRAND_NAME } iront dans le dossier Indésirable/spam des membres de votre organisation. Pour autoriser les messages provenant de l'une de ces adresses, marquez-la comme « non indésirable/spam »."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Les messages provenant d'adresses marquées comme indésirables/spam, par vous ou ${ BRAND_NAME }, seront placés dans votre dossier Indésirables/spam. Pour autoriser les messages provenant de l'une de ces adresses, marquez-la comme « non indésirable/spam »."
       ],
@@ -4363,6 +4366,9 @@
       "Best deal": [
         "Meilleure offre"
       ],
+      "Device": [
+        "Appareil"
+      ],
       "Enter your email address": [
         "Saisissez votre adresse e-mail."
       ],
@@ -4395,6 +4401,9 @@
       ],
       "Permissions": [
         "Autorisations"
+      ],
+      "Protection": [
+        "Protection"
       ],
       "Select your preferred method of payment": [
         "Choisissez votre moyen de paiement préféré."
@@ -5828,6 +5837,9 @@
       "old password": [
         "ancien mot de passe"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Une fois que vous avez activé ${ PROTON_SENTINEL_NAME }:"
+      ],
       "Once you reset your password:": [
         "Une fois votre mot de passe réinitialisé :"
       ],
@@ -5916,7 +5928,7 @@
         "Complétez ce champ."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Nous vous invitons garder cela en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
+        "Nous vous invitons à garder cela en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Notez que si vous supprimez cette adresse, vous ne pourrez plus l'utiliser pour envoyer ou recevoir des messages."
@@ -6131,6 +6143,9 @@
       ],
       "support team": [
         "équipe support"
+      ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Les événements suspects seront mis au défi par plusieurs couches de défense qui aident à prévenir les pirates de détourner votre compte"
       ],
       "Swiss based": [
         "Basé en Suisse"
@@ -6396,6 +6411,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Passez à un compte payant pour activer ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to unlock": [
         "Changez d'abonnement pour disposer de cette fonctionnalité."
       ],
@@ -6419,6 +6437,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilisez l'adresse e-mail sélectionnée comme nom d'utilisateur SMTP pour le service externe et le jeton généré comme mot de passe SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Les utilisateurs ayant des données et des communications sensibles, comme les journalistes ou les directeurs, sont fortement encouragés à activer ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "La vérification peut prendre quelques minutes."
@@ -6661,6 +6682,12 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
+      ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Vous recevrez une assistance prioritaire de la part de spécialistes formés à la protection des comptes. Pour toute question relative à la sécurité de votre compte, veuillez nous contacter ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Vous verrez plus de détails dans les journaux de sécurité ci-dessous pour les événements importants comme les tentatives de connexions"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -8183,6 +8210,9 @@
       "General": [
         "Général"
       ],
+      "here": [
+        "ici"
+      ],
       "How to unlock data": [
         "Comment déverrouiller les données"
       ],
@@ -8269,6 +8299,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Activer ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Activer les journaux avancés (logs)"
       ],
