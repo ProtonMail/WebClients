@@ -27,6 +27,7 @@ import signout from './signout.saga';
 import sync from './sync.saga';
 import trashDelete from './trash-delete.saga';
 import trashRestore from './trash-restore.saga';
+import userPlan from './user-plan';
 import vaultCreation from './vault-creation.saga';
 import vaultDelete from './vault-delete.saga';
 import vaultEdit from './vault-edit.saga';
@@ -62,6 +63,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             settings,
             signout,
             sync,
+            userPlan,
             vaultCreation,
             vaultEdit,
             vaultDelete,

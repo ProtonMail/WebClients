@@ -1,6 +1,7 @@
 import type { Feature } from '@proton/components/containers/features';
 import { api } from '@proton/pass/api/api';
-import type { PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
+import type { RequiredNonNull } from '@proton/pass/types';
+import { PlanType } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
@@ -12,7 +13,7 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
-import type { AddressState, UserFeatureState, UserState } from '../../reducers';
+import type { AddressState, UserFeatureState, UserPlanState, UserState } from '../../reducers';
 import { selectUserState } from '../../selectors';
 import type { State } from '../../types';
 
@@ -35,15 +36,28 @@ export const getUserFeatures = async ({ features }: UserState): Promise<UserFeat
     }
 };
 
+/* `getUserPlan` will request the API only if we do not have a current plan
+ * in the store and if we do, only if we have a `TrialEnd` defined - this
+ * property update of the user plan cannot be triggered via an event loop
+ * update as it is computed BE side dynamically on each request */
+export const getUserPlan = async ({ plan }: UserState): Promise<UserPlanState> => {
+    try {
+        if (plan && plan.TrialEnd !== null && getEpoch() - (plan?.requestedAt ?? 0) < UNIX_DAY) return plan;
+
+        logger.info(`[Saga::UserPlan] syncing user access plan`);
+        const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'post' })).Access!;
+        return { ...Plan, requestedAt: getEpoch() };
+    } catch (_) {
+        return plan ?? { requestedAt: -1, Type: PlanType.free, InternalName: '', DisplayName: '' };
+    }
+};
+
 export const getUserData = async (state: State): Promise<RequiredNonNull<UserState>> => {
     const cached = selectUserState(state);
 
-    const [user, plan, addresses, eventId, features] = (await Promise.all([
+    const [user, addresses, eventId, plan, features] = (await Promise.all([
         /* user model */
         cached.user ?? api<{ User: User }>(getUser()).then(({ User }) => User),
-
-        /* user plan */
-        cached.plan ?? api({ url: 'pass/v1/user/access', method: 'post' }).then(({ Access }) => Access?.Plan),
 
         /* user addresses */
         Object.keys(cached.addresses).length > 0
@@ -53,9 +67,12 @@ export const getUserData = async (state: State): Promise<RequiredNonNull<UserSta
         /* latest eventId */
         cached.eventId ?? api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID),
 
+        /* user plan */
+        await getUserPlan(cached),
+
         /* sync feature flags */
         await getUserFeatures(cached),
-    ])) as [User, PassPlanResponse, AddressState, string, UserFeatureState];
+    ])) as [User, AddressState, string, UserPlanState, UserFeatureState];
 
     return { user, plan, addresses, eventId, features };
 };
