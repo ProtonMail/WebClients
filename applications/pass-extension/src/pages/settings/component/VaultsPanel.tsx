@@ -1,11 +1,11 @@
-import { type VFC, useMemo } from 'react';
+import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
-import { selectAllVaults, vaultSetPrimaryIntent } from '@proton/pass/store';
+import { selectAllVaults, selectPrimaryVault, vaultSetPrimaryIntent } from '@proton/pass/store';
 import type { Maybe } from '@proton/pass/types';
 
 import { Field } from '../../../popup/components/Field/Field';
@@ -18,7 +18,7 @@ type FormValues = { primaryVaultId: Maybe<string> };
 export const VaultsPanel: VFC = () => {
     const dispatch = useDispatch();
     const allVaults = useSelector(selectAllVaults);
-    const primaryVaultId = useMemo(() => allVaults.find((vault) => vault.primary)?.shareId, [allVaults]);
+    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
 
     const form = useFormik<FormValues>({
         initialValues: { primaryVaultId },

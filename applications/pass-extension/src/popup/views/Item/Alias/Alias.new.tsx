@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { selectAliasLimits } from '@proton/pass/store';
+import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store';
 import { merge } from '@proton/pass/utils/object';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -31,6 +31,7 @@ const FORM_ID = 'new-alias';
 export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCancel }) => {
     const { realm, subdomain, domainName } = usePopupContext();
     const { needsUpgrade } = useSelector(selectAliasLimits);
+    const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const url = subdomain ?? realm;
@@ -152,7 +153,9 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                                {vaultTotalCount > 1 && (
+                                    <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
+                                )}
                                 <Field
                                     name="name"
                                     label={c('Label').t`Title`}
