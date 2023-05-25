@@ -16,8 +16,8 @@ export const validateExtraFields = <T extends ExtraFieldGroupValues>(values: T) 
 
         switch (field.type) {
             case 'totp':
-                if (!isEmptyString(field.value) && !parseOTPValue(field.value)) {
-                    fieldErrors.value = c('Validation').t`OTP Secret or URI is invalid`;
+                if (!isEmptyString(field.data.totpUri) && !parseOTPValue(field.data.totpUri)) {
+                    fieldErrors.data = { totpUri: c('Validation').t`OTP Secret or URI is invalid` };
                     break;
                 }
         }
