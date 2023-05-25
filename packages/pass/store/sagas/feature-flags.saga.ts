@@ -5,6 +5,7 @@ import type { UserFeatureState } from '../reducers';
 import type { State } from '../types';
 import { getUserFeatures } from './workers/user';
 
+/* Try to sync the user feature flags on each wakeup success :
 /* `getUserFeatures` will only request pass feature flags from the api
  * if the `requestedAt` timestamp is more than a day old */
 function* syncFeatures() {
