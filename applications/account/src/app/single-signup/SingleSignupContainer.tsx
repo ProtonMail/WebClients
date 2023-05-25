@@ -263,7 +263,6 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                 )}
                 {step === Steps.Two && (
                     <Step2
-                        hasPayment={true}
                         product={VPN_APP_NAME}
                         img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                         onSetup={async () => {
