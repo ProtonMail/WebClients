@@ -1,11 +1,7 @@
 import { MouseEvent, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
@@ -16,8 +12,6 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-
-
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -32,7 +26,6 @@ import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { Element } from '../../../models/element';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
-
 
 interface Props {
     message?: MessageState;
@@ -176,7 +169,7 @@ const MailRecipientItemSingle = ({
                 onClick={handleCompose}
                 data-testid="recipient:new-message"
             >
-                <Icon name="envelope" className="mr-2" />
+                <Icon name="pen-square" className="mr-2" />
                 <span className="flex-item-fluid my-auto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             {ContactID ? (
