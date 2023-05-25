@@ -2,11 +2,11 @@ import { ChangeEvent, useMemo, useRef } from 'react';
 import { AutoSizer, List } from 'react-virtualized';
 
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../../helpers';
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
 import { useItemsDraggable } from '../../items';
@@ -24,6 +24,7 @@ interface Props {
     activateDrag?: boolean;
     onGroupDetails: (contactGroupID: string) => void;
     isDrawer?: boolean;
+    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
 const ContactsList = ({
@@ -38,6 +39,7 @@ const ContactsList = ({
     activateDrag = true,
     onGroupDetails,
     isDrawer = false,
+    onCompose,
 }: Props) => {
     const listRef = useRef<List>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
@@ -78,7 +80,7 @@ const ContactsList = ({
     const contactRowHeightComfort = 4 * rootFontSize + 8; // 4 * 16 = we want 72px by default
 
     return (
-        <div ref={elementRef} className={classnames([isDesktop ? 'items-column-list' : 'items-column-list--mobile'])}>
+        <div ref={elementRef} className={clsx(isDesktop ? 'items-column-list' : 'items-column-list--mobile')}>
             <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
                 <AutoSizer>
                     {({ height, width }) => (
@@ -103,6 +105,7 @@ const ContactsList = ({
                                     onFocus={handleFocus}
                                     onGroupDetails={onGroupDetails}
                                     isDrawer={isDrawer}
+                                    onCompose={onCompose}
                                 />
                             )}
                             rowCount={contacts.length}
