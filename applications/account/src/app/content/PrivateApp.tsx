@@ -1,4 +1,4 @@
-import { StandardPrivateApp, useApi } from '@proton/components';
+import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -45,6 +45,8 @@ const EVENT_MODELS = [
 
 const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];
 
+const PRELOAD_FEATURES = [FeatureCode.PassPlusPlan];
+
 const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer');
 
 interface Props {
@@ -66,6 +68,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             locales={locales}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
+            preloadFeatures={PRELOAD_FEATURES}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
             hasMemberKeyMigration
