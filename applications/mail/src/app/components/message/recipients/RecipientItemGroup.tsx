@@ -130,7 +130,7 @@ const RecipientItemGroup = ({
                             onClick={handleCompose}
                             data-testid="recipient:new-message-to-group"
                         >
-                            <Icon name="envelope" className="mr-2" />
+                            <Icon name="pen-square" className="mr-2" />
                             <span className="flex-item-fluid my-auto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
