@@ -1,19 +1,27 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { fathom } from '@proton/pass/fathom';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
-import { parseUrl } from '@proton/pass/utils/url';
+import { isEmptyString } from '@proton/pass/utils/string';
 
-import { DETECTED_FORM_ID_ATTR, EMAIL_PROVIDERS } from '../../constants';
+import { DETECTED_FORM_ID_ATTR, FORM_TRACKER_CONFIG } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle, FormTracker } from '../../types';
-import { DropdownAction, FormField, FormType } from '../../types';
+import { DropdownAction, FieldInjectionRule, FormField } from '../../types';
 
-const { isVisible } = fathom.utils;
+type FormTrackerState = { isSubmitting: boolean };
+
+type FieldsForFormResults = WeakMap<
+    FieldHandle,
+    {
+        action: MaybeNull<DropdownAction>;
+        field: FieldHandle;
+        attachIcon: boolean;
+    }
+>;
 
 const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): boolean => {
     switch (action) {
@@ -31,16 +39,6 @@ const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): bo
 const withAction = (action: DropdownAction, settings: ProxiedSettings): MaybeNull<DropdownAction> =>
     canProcessAction(action, settings) ? action : null;
 
-type FormTrackerState = { isSubmitting: boolean };
-type FieldsForFormResults = WeakMap<
-    FieldHandle,
-    {
-        action: MaybeNull<DropdownAction>;
-        field: FieldHandle;
-        attachIcon: boolean;
-    }
->;
-
 export const createFormTracker = (form: FormHandle): FormTracker => {
     logger.debug(`[FormTracker]: Tracking form [${form.formType}:${form.id}]`);
 
@@ -50,10 +48,20 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     form.element.setAttribute(DETECTED_FORM_ID_ATTR, form.id);
 
     /* FIXME: should account for hidden fields */
-    const getFormData = (): { username?: string; password?: string } => ({
-        username: first(form.getFieldsFor(FormField.USERNAME))?.value,
-        password: first(form.getFieldsFor(FormField.PASSWORD))?.value,
-    });
+    const getFormData = (): { username?: string; password?: string } => {
+        const nonEmptyField = (field: FieldHandle) => !isEmptyString(field.value);
+
+        const username = first(form.getFieldsFor(FormField.USERNAME, nonEmptyField));
+        const usernameHidden = first(form.getFieldsFor(FormField.USERNAME_HIDDEN, nonEmptyField));
+        const email = first(form.getFieldsFor(FormField.EMAIL, nonEmptyField));
+        const passwordNew = first(form.getFieldsFor(FormField.PASSWORD_NEW, nonEmptyField));
+        const passwordCurrent = first(form.getFieldsFor(FormField.PASSWORD_CURRENT, nonEmptyField));
+
+        return {
+            username: (username ?? email ?? usernameHidden)?.value,
+            password: (passwordNew ?? passwordCurrent)?.value,
+        };
+    };
 
     const onSubmitHandler = withContext(async ({ service: { iframe } }) => {
         iframe.dropdown?.close();
@@ -83,61 +91,25 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         }
     });
 
-    /* Icon injection depends on form type :
-     * - LOGIN : match first visible element of interest
-     *   in order to support multi-step forms for autofill
-     * - REGISTER : match first username & password fields
-     *   for auto-suggestion action */
     const getTrackableFields = (settings: ProxiedSettings): FieldsForFormResults => {
         const results: FieldsForFormResults = new WeakMap();
+        let iconInjected = false;
 
-        const username = first(form.getFieldsFor(FormField.USERNAME));
-        const password = first(form.getFieldsFor(FormField.PASSWORD));
+        FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action }) => {
+            form.getFieldsFor(type).forEach((field) => {
+                const attachIcon =
+                    injection === FieldInjectionRule.ALWAYS ||
+                    (injection === FieldInjectionRule.IF_FIRST && !iconInjected);
 
-        switch (form.formType) {
-            case FormType.LOGIN: {
-                const action = withAction(DropdownAction.AUTOFILL, settings);
+                iconInjected = iconInjected || attachIcon;
 
-                if (username) {
-                    results.set(username, {
-                        action,
-                        field: username,
-                        attachIcon: action !== null && isVisible(username.element),
-                    });
-                }
-
-                if (password) {
-                    const usernameAttached = Boolean(username && results.get(username)?.attachIcon);
-                    results.set(password, {
-                        action: withAction(DropdownAction.AUTOFILL, settings),
-                        field: password,
-                        attachIcon: action !== null && !usernameAttached && isVisible(password.element),
-                    });
-                }
-                break;
-            }
-
-            case FormType.REGISTER: {
-                const exclude = EMAIL_PROVIDERS.includes(parseUrl(window.location.hostname)?.domain ?? '');
-
-                if (!exclude && username) {
-                    results.set(username, {
-                        action: withAction(DropdownAction.AUTOSUGGEST_ALIAS, settings),
-                        field: username,
-                        attachIcon: isVisible(username.element),
-                    });
-                }
-
-                if (password) {
-                    results.set(password, {
-                        action: withAction(DropdownAction.AUTOSUGGEST_PASSWORD, settings),
-                        field: password,
-                        attachIcon: isVisible(password.element),
-                    });
-                }
-                break;
-            }
-        }
+                results.set(field, {
+                    field,
+                    action: action ? withAction(action, settings) : null,
+                    attachIcon,
+                });
+            });
+        });
 
         return results;
     };
@@ -168,9 +140,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         });
 
         /* setup listener for form submission */
-        const submitBtn = first(form.getFieldsFor(FormField.SUBMIT));
         listeners.addListener(form.element, 'submit', onSubmitHandler);
-        listeners.addListener(submitBtn?.element, 'click', onSubmitHandler);
     });
 
     /* when detaching the form tracker : remove every listener

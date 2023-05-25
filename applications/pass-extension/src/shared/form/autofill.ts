@@ -7,7 +7,7 @@
  * attach their event listeners not directly on the input
  * elements (ie: account.google.com)
  */
-export const autofill = (input: HTMLInputElement) => (data: string) => {
+export const createAutofill = (input: HTMLInputElement) => (data: string) => {
     const focused = input === document.activeElement;
     input.value = data;
 

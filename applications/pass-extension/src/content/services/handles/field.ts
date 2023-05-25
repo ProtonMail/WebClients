@@ -1,11 +1,9 @@
 import { findBoundingElement, isInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
-import noop from '@proton/utils/noop';
 
-import { autofill } from '../../../shared/form';
+import { createAutofill } from '../../../shared/form';
 import { withContext } from '../../context/context';
-import type { FieldHandle, FormHandle } from '../../types';
-import type { FormField, FormType } from '../../types';
+import type { FieldHandle, FormField, FormHandle, FormType } from '../../types';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {
@@ -61,7 +59,7 @@ export const createFieldHandles =
         fieldType,
         getFormHandle,
     }: CreateFieldHandlesOptions<T, V>) =>
-    (element: HTMLElement): FieldHandle => {
+    (element: HTMLInputElement): FieldHandle => {
         /* Since we're creating "field handles" for elements
          * that may include submit buttons as well : make sure
          * we're dealing with an HTMLInputElement for autofilling
@@ -81,7 +79,7 @@ export const createFieldHandles =
             getFormHandle,
             setValue: (value) => (field.value = value),
             setAction: (action) => (field.action = action),
-            autofill: isInput ? autofill(element) : noop,
+            autofill: createAutofill(element),
             attachIcon: () => (field.icon = field.icon ?? createFieldIconHandle({ field })),
 
             detachIcon() {

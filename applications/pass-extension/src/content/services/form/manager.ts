@@ -48,7 +48,7 @@ export const createFormManager = () => {
      * worker state with our local detection in order to take
      * the appropriate action for auto-save */
     const reconciliate: (incoming: FormHandle[]) => Promise<void> = withContext(
-        async ({ getExtensionContext, service: { autofill, iframe } }, incoming) => {
+        async ({ getExtensionContext, service: { iframe } }, incoming) => {
             ctx.trackedForms = ctx.trackedForms.concat(incoming);
 
             const needsDropdown = ctx.trackedForms.length > 0;
@@ -58,8 +58,6 @@ export const createFormManager = () => {
                 ctx.staleForms.get(form.element)?.unsubscribe();
                 form.attach();
             });
-
-            await autofill.queryItems();
 
             const submission = await sendMessage.on(
                 contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),

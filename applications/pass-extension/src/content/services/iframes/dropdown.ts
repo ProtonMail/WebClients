@@ -172,7 +172,8 @@ export const createDropdown = (): InjectedDropdown => {
                     );
 
                     first(form.getFieldsFor(FormField.USERNAME))?.autofill(username);
-                    form.getFieldsFor(FormField.PASSWORD).forEach((field) => field.autofill(password));
+                    first(form.getFieldsFor(FormField.EMAIL))?.autofill(username);
+                    form.getFieldsFor(FormField.PASSWORD_CURRENT).forEach((field) => field.autofill(password));
                 }
                 return iframe.close();
             }
@@ -188,7 +189,7 @@ export const createDropdown = (): InjectedDropdown => {
 
         if (form !== undefined && form.formType === FormType.REGISTER) {
             const { password } = message.payload;
-            form.getFieldsFor(FormField.PASSWORD).forEach((field) => field.autofill(password));
+            form.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
         }
 
         return iframe.close();
