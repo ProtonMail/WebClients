@@ -434,7 +434,7 @@ const Step1 = ({
             return true;
         },
         onPaypalPay({ Payment }: TokenPaymentMethod) {
-            return onPay(Payment);
+            return withLoadingPayment(onPay(Payment));
         },
     });
     const { createModal } = useModals();
