@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { ItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
-import { getExtraFieldOptions } from '../ExtraFieldGroup/ExtraField';
+import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
 import { OTPValueControl } from './OTPValueControl';
@@ -20,8 +20,8 @@ type ExtraFieldsControlProps = {
 
 export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
     const getControlByType = useCallback(
-        ({ fieldName, type, value }: ItemExtraField, index: number) => {
-            const { icon } = getExtraFieldOptions()[type];
+        ({ fieldName, type, data }: ItemExtraField, index: number) => {
+            const { icon } = getExtraFieldOption(type);
             const key = `${index}-${fieldName}`;
 
             switch (type) {
@@ -32,19 +32,19 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                             itemId={itemId}
                             label={fieldName}
                             shareId={shareId}
-                            totpUri={value}
+                            totpUri={data.totpUri}
                             type="extraField"
                             index={index}
                         />
                     );
                 case 'hidden':
-                    return <PasswordValueControl key={key} icon={icon} label={fieldName} password={value} />;
+                    return <PasswordValueControl key={key} icon={icon} label={fieldName} password={data.content} />;
                 case 'text':
                     return (
-                        <ClickToCopyValueControl key={key} value={value}>
+                        <ClickToCopyValueControl key={key} value={data.content}>
                             <ValueControl interactive icon={icon} label={fieldName}>
-                                {!isEmptyString(value) ? (
-                                    value
+                                {!isEmptyString(data.content) ? (
+                                    data.content
                                 ) : (
                                     <span className="color-weak text-italic">{c('Info').t`None`}</span>
                                 )}
