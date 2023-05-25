@@ -304,6 +304,7 @@ export const auditAddresses = async (
               }
             | undefined;
         let previousSKLCreationTime = secondsToMilliseconds(initialEpoch.SKLCreationTime);
+        let unverifiableSKLs = false;
         for (let index = 0; index < newSKLs.length; index++) {
             const skl = newSKLs[index];
 
@@ -311,30 +312,31 @@ export const auditAddresses = async (
             // cannot be the most recent and be obsolete, otherwise this address wouldn't
             // be under audit
             let signatureTimestamp: Date | undefined;
-            if (skl.Data && skl.Signature) {
+            const isExistent = skl.Data && skl.Signature;
+            if (isExistent) {
                 // Verify signature
                 const timestamp = await verifySKLSignature(
                     addressVerificationKeys,
-                    skl.Data,
-                    skl.Signature,
+                    skl.Data!,
+                    skl.Signature!,
                     'auditAddresses',
                     Email
                 );
 
-                if (!timestamp) {
-                    errorFlag = true;
-                    break;
+                if (timestamp) {
+                    if (+timestamp < previousSKLCreationTime) {
+                        ktSentryReport('SKL creation time is decreasing', {
+                            context: 'auditAddresses',
+                            addressID,
+                        });
+                        errorFlag = true;
+                        break;
+                    }
+                    previousSKLCreationTime = +timestamp;
+                    signatureTimestamp = timestamp;
+                } else {
+                    unverifiableSKLs = true; // show a warning when some SKLs cannot be verified
                 }
-                if (+timestamp < previousSKLCreationTime) {
-                    ktSentryReport('SKL creation time is decreasing', {
-                        context: 'auditAddresses',
-                        addressID,
-                    });
-                    errorFlag = true;
-                    break;
-                }
-                previousSKLCreationTime = +timestamp;
-                signatureTimestamp = timestamp;
             }
 
             if (skl.MaxEpochID === null) {
@@ -347,14 +349,29 @@ export const auditAddresses = async (
                     break;
                 }
 
-                if (!signatureTimestamp || isTimestampTooOld(+signatureTimestamp)) {
-                    ktSentryReport(
-                        'MaxEpochID is null in a SKL which either obsolete or older than max epoch interval',
-                        {
-                            context: 'auditAddresses',
-                            addressID,
-                        }
-                    );
+                if (!isExistent) {
+                    ktSentryReport('Last SKL is obsolete', {
+                        context: 'auditAddresses',
+                        addressID,
+                    });
+                    errorFlag = true;
+                    break;
+                }
+
+                if (!signatureTimestamp) {
+                    ktSentryReport('Most recent SKL signature failed verification', {
+                        context: 'auditAddresses',
+                        addressID,
+                    });
+                    errorFlag = true;
+                    break;
+                }
+
+                if (isTimestampTooOld(+signatureTimestamp)) {
+                    ktSentryReport('Last SKL is older than max epoch interval and not included', {
+                        context: 'auditAddresses',
+                        addressID,
+                    });
                     errorFlag = true;
                     break;
                 }
@@ -450,12 +467,13 @@ export const auditAddresses = async (
             }
 
             if (!lastSKLTimestamp) {
+                // The last included SKL is unverifiable, cannot upload verified epoch.
                 ktSentryReport('Last SKL timestamp is null', {
                     context: 'auditAddresses',
                     lastCertificateTimestamp,
                     addressID,
                 });
-                continue;
+                continue; // Will show a warning in the UI
             }
 
             await uploadVerifiedEpoch(
@@ -468,6 +486,15 @@ export const auditAddresses = async (
                 userPrivateKeys[0],
                 api
             );
+
+            if (unverifiableSKLs) {
+                ktSentryReport('Self audit encountered unverifiable SKLs', {
+                    context: 'auditAddresses',
+                    lastCertificateTimestamp,
+                    addressID,
+                });
+                continue; // Will show a warning in the UI
+            }
         }
 
         await fixMultiplePrimaryKeys(address);
