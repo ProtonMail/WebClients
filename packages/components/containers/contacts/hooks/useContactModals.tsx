@@ -1,3 +1,4 @@
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
@@ -31,7 +32,11 @@ import ContactUpgradeModal from '../modals/ContactUpgradeModal';
 import SelectEmailsModal, { SelectEmailsProps } from '../modals/SelectEmailsModal';
 import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
 
-export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string) => void }) => {
+interface Props {
+    onMailTo: (email: string) => void;
+    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+}
+export const useContactModals = ({ onMailTo = noop, onCompose }: Props) => {
     const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(
         ContactDetailsModal,
         false
@@ -176,13 +181,15 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         void handleShowContactGroupDeleteModal(props);
     };
 
-    const handleGroupDetails = (contactGroupID: string) => {
+    const handleGroupDetails = (contactGroupID: string, onCloseContactDetailsModal?: () => void) => {
         void handleShowContactGroupDetailsModal({
             contactGroupID,
             onEdit: handleGroupEdit,
             onDelete: handleGroupDelete,
             onExport: handleExport,
             onUpgrade: handleUpgrade,
+            onCompose: onCompose,
+            onCloseContactDetailsModal, // We want to close the contact details modal onCompose if we opened group details modal from contact details modal
         });
     };
 
