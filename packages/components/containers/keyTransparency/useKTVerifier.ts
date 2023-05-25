@@ -4,15 +4,13 @@ import { PartialKTBlobContent, commitOwnKeystoLS, verifyAuditAddressesResult } f
 import {
     Api,
     DecryptedKey,
+    KeyTransparencyActivation,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 
-import { FeatureCode } from '../../containers/features/FeaturesContext';
-import useConfig from '../../hooks/useConfig';
-import useFeature from '../../hooks/useFeature';
-import { KT_FF, isKTActive } from './ktStatus';
+import useGetKTActivation from './useGetKTActivation';
 import { useKeyTransparencyContext } from './useKeyTransparencyContext';
 
 interface KTBlobSelf {
@@ -26,15 +24,13 @@ interface KTBlobSelf {
  * and therefore self audit could run and the normal flow of verification can be performed
  */
 const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
-    const { get } = useFeature<KT_FF | undefined>(FeatureCode.KeyTransparencyWEB);
     const { getKTState } = useKeyTransparencyContext();
+    const getKTActivation = useGetKTActivation();
     const { selfAuditPromise, ktLSAPI } = getKTState().current;
     const ktBlobValues = useRef<KTBlobSelf[]>([]);
-    const { APP_NAME } = useConfig();
 
     const keyTransparencyVerify: KeyTransparencyVerify = async (address, signedKeyList, publicKeys) => {
-        const feature = await get().then((result) => result?.Value);
-        if (!(await isKTActive(APP_NAME, feature))) {
+        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
             return;
         }
 
@@ -57,8 +53,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
     };
 
     const keyTransparencyCommit: KeyTransparencyCommit = async (userKeys: DecryptedKey[]) => {
-        const feature = await get().then((result) => result?.Value);
-        if (!(await isKTActive(APP_NAME, feature))) {
+        if ((await getKTActivation()) === KeyTransparencyActivation.DISABLED) {
             return;
         }
 

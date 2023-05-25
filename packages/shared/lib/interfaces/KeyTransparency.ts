@@ -51,3 +51,11 @@ export type VerifyOutboundPublicKeys = (
 export type KeyMigrationKTVerifier = (email: string) => Promise<void>;
 
 export type FixMultiplePrimaryKeys = (address: Address) => Promise<void>;
+
+export enum KeyTransparencyActivation {
+    DISABLED,
+    LOG_ONLY,
+    SHOW_UI,
+}
+
+export type GetKTActivation = () => Promise<KeyTransparencyActivation>;
