@@ -130,8 +130,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const handleDeleteUser = (member: Member) => {
         setTmpMember(member);
 
-        //We remove members if we have a family plan or if the user is a Proton member (excluding logged user)
-        if (hasFamily(subscription) || (member.Type === MEMBER_TYPE.PROTON && !member.Self)) {
+        // We can remove members if the user is a Proton member (excluding logged user and subscriber)
+        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
             setUserRemoveModalOpen(true);
         } else {
             setSubUserDeleteModalOpen(true);
@@ -155,8 +155,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const handleEditUser = (member: Member) => {
         setTmpMember(member);
 
-        //We can edit member if we have a family plan or if the user is a Proton member (excluding logged user)
-        if (hasFamily(subscription) || (member.Type === MEMBER_TYPE.PROTON && !member.Self)) {
+        // We can open the invite modal if the user is a Proton member (excluding logged user and subscriber)
+        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self && !member.Subscriber) {
             setUserInviteOrEditModalOpen(true);
         } else {
             setSubUserEditModalOpen(true);
@@ -368,7 +368,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 </TableCell>
                                 <TableCell>
                                     <div className="lg:py-4">
-                                        <MemberFeatures member={member} />
+                                        <MemberFeatures member={member} organization={organization} />
                                     </div>
                                 </TableCell>
                                 <TableCell>
