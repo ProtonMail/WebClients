@@ -3899,11 +3899,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Du hast das Limit von 10 akzeptierten Einladungen in 6 Monaten erreicht."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Du hast das Limit von 10 akzeptierten Einladungen in 6 Monaten erreicht. Die Schaltfläche wird wieder anklickbar, wenn du weitere Benutzer einladen kannst."
       ],
       "You have successfully joined the Family plan": [
         "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
@@ -4269,6 +4275,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten zu automatisieren."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Nachrichten von Adressen, die von dir oder von ${ BRAND_NAME } als Spam markiert wurden, landen im Spam-Ordner deiner Organisationsmitglieder. Wenn du Nachrichten von einer dieser Adressen zulassen möchtest, markiere sie als „Kein Spam“."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Nachrichten von Adressen, die von dir oder von ${ BRAND_NAME } als Spam markiert wurden, landen in deinem Spam-Ordner. Wenn du Nachrichten von einer dieser Adressen zulassen möchtest, markiere sie als „Kein Spam“."
       ],
@@ -4357,6 +4366,9 @@
       "Best deal": [
         "Bestes Angebot"
       ],
+      "Device": [
+        "Gerät"
+      ],
       "Enter your email address": [
         "E-Mail-Adresse eingeben"
       ],
@@ -4389,6 +4401,9 @@
       ],
       "Permissions": [
         "Berechtigungen"
+      ],
+      "Protection": [
+        "Schutz"
       ],
       "Select your preferred method of payment": [
         "Bevorzugte Zahlungsmethode auswählen"
@@ -4901,6 +4916,9 @@
       "${ numGroups } contact group": [
         "${ numGroups } Kontaktgruppe",
         "${ numGroups } Kontaktgruppen"
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } wird von ausgereiften KI-Systemen und Spezialistenteams unterstützt, die rund um die Uhr daran arbeiten, bösartige Akteure und Sicherheitsbedrohungen zu entschärfen."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } Ordner gefunden",
@@ -5822,6 +5840,9 @@
       "old password": [
         "altes Passwort"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Sobald du ${ PROTON_SENTINEL_NAME } aktivierst:"
+      ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
       ],
@@ -6126,6 +6147,9 @@
       "support team": [
         "Support-Team"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Verdächtige Ereignisse werden durch mehrere Schichten abgewehrt, die Angreifer daran hindern, dein Konto zu kapern."
+      ],
       "Swiss based": [
         "Aus der Schweiz"
       ],
@@ -6390,6 +6414,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Erwirb ein kostenpflichtiges Konto ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to unlock": [
         "Upgraden zum Freischalten"
       ],
@@ -6413,6 +6440,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Verwende die gewählte E-Mail-Adresse als SMTP-Benutzername im externen Dienst und das generierte Token als SMTP-Passwort."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Personen mit schützenswerten Daten und Kommunikationen, wie Journalisten oder Führungskräften, wird ${ PROTON_SENTINEL_NAME } dringend empfohlen."
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
@@ -6655,6 +6685,12 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Du wirst NICHT in der Lage sein, mit diesem Schlüssel verschlüsselte Nachrichten, Dateien und andere Daten zu entschlüsseln."
+      ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Du erhältst bevorzugte Unterstützung von Spezialisten, die für den Schutz deines Kontos ausgebildet sind. Wenn du Fragen zur Kontosicherheit hast, kontaktiere uns bitte ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "In den Sicherheitsprotokollen unten findest du weitere Details zu wichtigen Ereignissen wie Anmeldeversuchen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -8177,6 +8213,9 @@
       "General": [
         "Allgemein"
       ],
+      "here": [
+        "hier"
+      ],
       "How to unlock data": [
         "Wie Daten entsperrt werden"
       ],
@@ -8263,6 +8302,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Aktiviere ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Erweiterte Protokolle aktivieren"
       ],
@@ -8909,6 +8951,9 @@
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
       ],
+      "Unlimited logins and notes": [
+        "Unbegrenzte Zugangsdaten und Notizen"
+      ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
       ],
@@ -8926,6 +8971,9 @@
       ],
       "Up to 15 email addresses": [
         "Bis zu 15 E-Mail-Adressen"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "Bis zu 5 Weiterleitungs-Postfächer"
       ],
       "Up to 500 GB of storage": [
         "Bis zu 500 GB Speicherplatz"
@@ -11561,6 +11609,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN Konfigurationsdateien"
+      ],
+      "Organization filters": [
+        "Organisationsfilter"
       ],
       "Organization name": [
         "Name der Organisation"
