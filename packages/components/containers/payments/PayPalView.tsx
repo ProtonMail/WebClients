@@ -15,9 +15,10 @@ interface Props {
     type?: PaymentMethodFlows;
     amount: number;
     currency: Currency;
+    disabled?: boolean;
 }
 
-const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => {
+const PayPalView = ({ type, amount, currency, paypal, paypalCredit, disabled }: Props) => {
     if (amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert className="mb-4" type="error">
@@ -44,6 +45,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }: Props) => 
             size="small"
             paypal={paypalCredit}
             amount={amount}
+            disabled={disabled}
         >
             {c('Link').t`click here`}
         </PayPalButton>
