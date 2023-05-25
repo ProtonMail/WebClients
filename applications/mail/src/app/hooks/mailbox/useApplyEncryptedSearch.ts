@@ -106,7 +106,7 @@ export const useApplyEncryptedSearch = ({
         if (isES && messagesToLoadMoreES !== 0) {
             // We navigate directly to the requested page first, because it is always guaranteed
             // to contain some messages, either because it's an already full intermediate page or
-            // beacause it's the partial last page available
+            // because it's the partial last page available
             dispatch(updatePage(parseSearchParams(history.location).page));
             void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
         }
