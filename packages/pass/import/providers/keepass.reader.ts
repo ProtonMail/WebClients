@@ -3,15 +3,11 @@ import { c } from 'ttag';
 import X2JS from 'x2js';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { uniqueId } from '@proton/pass/utils/string';
-import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL } from '@proton/pass/utils/url';
 
 import { ImportReaderError } from '../helpers/reader.error';
+import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportVault } from '../types';
 import { type ImportPayload } from '../types';
 import type { KeePassEntry, KeePassFile, KeePassGroup, KeePassItem, KeyPassEntryValue } from './keepass.types';
@@ -37,37 +33,23 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
         return acc;
     }, {} as KeePassItem);
 
-    const urlResult = isValidURL(item.url ?? '');
-    const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-    const name = item.name || url?.hostname || c('Title').t`Unnamed item`;
-
-    return {
-        type: 'login',
-        metadata: {
-            name,
-            itemUuid: uniqueId(),
-            note: item.note || '',
-        },
-        content: {
-            username: item.username || '',
-            password: item.password || '',
-            urls: [url?.origin].filter(truthy),
-            totpUri: item.totp ? parseOTPValue(item.totp, { label: name }) : '',
-        },
-        extraFields: [],
-        trashed: false,
-    };
+    return importLoginItem({
+        name: item.name,
+        note: item.note,
+        username: item.username,
+        password: item.password,
+        urls: [item.url],
+        totps: [item.totp],
+    });
 };
 
 const groupToVault = (group: KeePassGroup): MaybeNull<ImportVault> => {
     const entry = get(group, 'Entry');
     if (!entry) return null;
 
-    const vaultName = group.Name || c('Title').t`Import (${getFormattedDayFromTimestamp(getEpoch())})`;
-
     return {
         type: 'new',
-        vaultName,
+        vaultName: getImportedVaultName(group.Name),
         id: uniqueId(),
         items: Array.isArray(entry) ? entry.map(entryToItem) : [entryToItem(entry)],
     };
