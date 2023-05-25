@@ -3899,11 +3899,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "6 ayda 10 kabul edilmiş davet sınırını aştınız."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "6 ayda kabul edilebilecek 10 davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak."
       ],
       "You have successfully joined the Family plan": [
         "Aile tarifesine katıldınız"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
@@ -8909,6 +8915,9 @@
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
+      "Unlimited logins and notes": [
+        "Sınırsız sayıda oturum açma bilgisi ve not"
+      ],
       "Unlimited messages per day": [
         "Her gün sınırsız ileti"
       ],
@@ -8926,6 +8935,9 @@
       ],
       "Up to 15 email addresses": [
         "15 e-posta adresine kadar"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "5 taneye kadar iletme e-posta kutusu"
       ],
       "Up to 500 GB of storage": [
         "500 GB depolama alanına kadar"

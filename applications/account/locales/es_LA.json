@@ -729,7 +729,7 @@
         "Guardar archivo ICS"
       ],
       "Save selected": [
-        "Guardar seleccionado"
+        "Guarda su elección"
       ],
       "Search": [
         "Buscar"
@@ -3248,7 +3248,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+        "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
       "Tab closed": [
         "Pestaña cerrada"
@@ -3585,13 +3585,13 @@
         "URL inválida"
       ],
       "Oops, something went wrong": [
-        "¡Ahh! Algo salió mal"
+        "Hubo un problema"
       ],
       "Please refresh the page or try again later.": [
         "Actualice la página o intente nuevamente."
       ],
       "Something went wrong": [
-        "Algo salió mal"
+        "Hubo un problema"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Demasiadas sesiones activas, borre las cookies e inicie sesión otra vez."
@@ -3899,11 +3899,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Recibió una invitación para unirse a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Ha alcanzado el límite de 10 invitaciones aceptadas en 6 meses."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Ha alcanzado el límite de 10 invitaciones aceptadas en 6 meses. Se podrá hacer clic en el botón cuando pueda invitar a otros usuarios."
       ],
       "You have successfully joined the Family plan": [
-        "Se ha unido con éxito al plan familiar"
+        "Se ha unido al plan familiar."
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Debe configurar un dominio personalizado antes de crear múltiples usuarios."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Debe configurar un dominio personalizado antes de crear un nuevo usuario."
@@ -4085,87 +4091,87 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Añadir llave de seguridad"
+        "Añadir clave de seguridad"
       ],
       "Delete key": [
-        "Eliminar llave"
+        "Eliminar clave"
       ]
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilite 2FA con la llave de seguridad antes de desactivar TOTP"
+        "Deshabilite 2FA con la clave de seguridad antes de desactivar TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con su llave de seguridad. Intente de nuevo."
+        "Hubo un problema al autenticar con su clave de seguridad. Intente de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Algo salió mal al registrar su llave de seguridad. Intente nuevamente."
+        "Hubo un problema al registrar su clave de seguridad. Intente nuevamente."
       ]
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "2FA mediante llave de seguridad desactivada"
+        "2FA mediante clave de seguridad desactivada"
       ],
       "Add a name to identify your security key with.": [
-        "Añada un nombre para identificar su llave de seguridad."
+        "Añada un nombre para identificar su clave de seguridad."
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿En verdad desea eliminar la llave de seguridad ${ name }?"
+        "¿En verdad desea eliminar la clave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una llave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
-        "Inserte la llave de seguridad en el puerto USB."
+        "Inserte la clave de seguridad en el puerto USB."
       ],
       "Security key": [
-        "Llave de seguridad"
+        "Clave de seguridad"
       ],
       "Security key removed": [
-        "Llave de seguridad eliminada"
+        "Clave de seguridad eliminada"
       ],
       "Security key updated": [
-        "Llave de seguridad actualizada"
+        "Clave de seguridad actualizada"
       ],
       "This will delete all security keys linked to your account.": [
-        "Esto eliminará todas las llaves de seguridad vinculadas a su cuenta."
+        "Esto eliminará todas las claves de seguridad vinculadas a su cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Habilite 2FA con una llave de seguridad, para esto necesitará activar 2FA con una aplicación de autenticación"
+        "Habilite 2FA con una clave de seguridad, para esto necesitará activar 2FA con una aplicación de autenticación"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Verifique su identidad con una llave de seguridad U2F o FIDO2"
+        "Verifique su identidad con una clave de seguridad U2F o FIDO2"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Su llave para la autenticación de dos factores está lista para usarse."
+        "Su clave para la autenticación de dos factores está lista para usarse."
       ]
     },
     "fido2: Label": {
       "Key name": [
-        "Nombre de la llave"
+        "Nombre de la clave"
       ],
       "Security key": [
-        "Llave de seguridad"
+        "Clave de seguridad"
       ]
     },
     "fido2: Title": {
       "Delete security key?": [
-        "¿Eliminar la llave de seguridad?"
+        "¿Eliminar la clave de seguridad?"
       ],
       "Disable 2FA via security key?": [
-        "¿Deshabilitar 2FA mediante llave de seguridad?"
+        "¿Deshabilitar 2FA mediante clave de seguridad?"
       ],
       "Name your security key": [
-        "Nombre su llave de seguridad"
+        "Nombre su clave de seguridad"
       ],
       "Register your security key": [
-        "Registre su llave de seguridad"
+        "Registre su clave de seguridad"
       ],
       "Registered security keys": [
-        "Llaves de seguridad registradas"
+        "Claves de seguridad registradas"
       ],
       "Security key registered": [
-        "Llave de seguridad registrada"
+        "Clave de seguridad registrada"
       ]
     },
     "file size format": {
@@ -8909,6 +8915,9 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
+      "Unlimited logins and notes": [
+        "Número ilimitado de inicios de sesión y notas"
+      ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
       ],
@@ -8926,6 +8935,9 @@
       ],
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "Hasta 5 buzones de reenvío"
       ],
       "Up to 500 GB of storage": [
         "Hasta 500 GB de almacenamiento"
@@ -10835,7 +10847,7 @@
         "Código de verificación copiado al portapapeles"
       ],
       "Verification successful": [
-        "Verificación exitosa"
+        "Verificación completada"
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
@@ -11740,7 +11752,7 @@
         "Cerrar sesión"
       ],
       "Signed in successfully!": [
-        "¡Sesión iniciada!"
+        "Sesión iniciada"
       ],
       "Signed in to member account": [
         "Sesión iniciada en la cuenta del miembro"
