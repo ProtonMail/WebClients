@@ -33,7 +33,7 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * FIXME: if user has downgraded we should avoid communicating
  * with the worker in the `usePeriodicOtpCode` hook */
 export const OTPValueControl: VFC<UsePeriodicOtpCodeProps & { label?: string }> = ({ totpUri, label, ...request }) => {
-    const canGenerateTOTP = useSelector(selectCanGenerateTOTP(request.shareId, request.itemId));
+    const canGenerateTOTP = useSelector(selectCanGenerateTOTP(request));
     const [otp, percent] = usePeriodicOtpCode({ totpUri, ...request });
 
     return (

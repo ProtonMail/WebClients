@@ -29,18 +29,22 @@ export const createOTPService = () => {
         return { token, period: otp.period, expiry };
     };
 
-    const handleTOTPRequest = ({ shareId, itemId, ...request }: OtpRequest) => {
+    const handleTOTPRequest = (otpRequest: OtpRequest) => {
+        const { shareId, itemId, ...request } = otpRequest;
+
         try {
-            const canGenerateTOTP = selectCanGenerateTOTP(shareId, itemId);
+            const canGenerateTOTP = selectCanGenerateTOTP(otpRequest);
             if (!canGenerateTOTP) throw new Error('User plan does not allow generating this OTP code');
 
             const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
 
             if (item?.data.type === 'login') {
+                const extraField = request.type === 'extraField' ? item?.data.extraFields?.[request.index] : undefined;
+
                 const totpUri =
                     request.type === 'item'
                         ? item?.data.content.totpUri
-                        : item?.data.extraFields?.[request.index].value;
+                        : extraField?.type === 'totp' && extraField.data.totpUri;
 
                 if (totpUri) return generateTOTPCode(parseOTPValue(totpUri));
             }
