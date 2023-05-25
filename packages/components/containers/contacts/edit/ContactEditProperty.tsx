@@ -15,6 +15,7 @@ import { DropdownActions, Icon, OrderableHandle } from '../../../components';
 import { classnames } from '../../../helpers';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
@@ -36,6 +37,7 @@ interface Props {
     onUpgrade: () => void;
     onSelectImage: (props: ContactImageProps) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onLimitReached?: (props: ContactGroupLimitReachedProps) => void;
 }
 
 const ContactEditProperty = (
@@ -55,6 +57,7 @@ const ContactEditProperty = (
         onUpgrade,
         onSelectImage,
         onGroupEdit,
+        onLimitReached,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -154,6 +157,7 @@ const ContactEditProperty = (
                                             onDelayedSave={handleUpdateContactGroups}
                                             tooltip={c('Title').t`Contact group`}
                                             onGroupEdit={onGroupEdit}
+                                            onLimitReached={onLimitReached}
                                             onUpgrade={onUpgrade}
                                         >
                                             <Icon name="users" alt={c('Action').t`Contact group`} />

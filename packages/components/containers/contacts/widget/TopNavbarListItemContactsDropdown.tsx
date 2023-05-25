@@ -74,6 +74,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
         onGroupDelete,
         onUpgrade,
         onSelectEmails,
+        onLimitReached,
     } = useContactModals({ onMailTo });
     const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
     const { modals: mergeModals, onMerge } = useContactMergeModals();
@@ -154,6 +155,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                                     onGroupEdit={onGroupEdit}
                                     onUpgrade={onUpgrade}
                                     onSelectEmails={onSelectEmails}
+                                    onLimitReached={onLimitReached}
                                 />
                             ),
                         },

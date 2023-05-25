@@ -2,10 +2,20 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useModalTwo } from '@proton/components/components';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
+import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
+import {
+    useApi,
+    useContactEmails,
+    useContactGroups,
+    useContacts,
+    useEventManager,
+    useNotifications,
+} from '../../../hooks';
+import ContactGroupLimitReachedModal, { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 /**
@@ -44,7 +54,14 @@ const useApplyGroups = (
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
+    const [userContactEmails] = useContactEmails();
     const [contacts] = useContacts() as [Contact[], boolean, any];
+    const [groups = []] = useContactGroups();
+
+    const [contactGroupLimitReachedModal, handleShowContactGroupLimitReachedModal] = useModalTwo<
+        ContactGroupLimitReachedProps,
+        void
+    >(ContactGroupLimitReachedModal, false);
 
     const applyGroups = useCallback(
         async (contactEmails: ContactEmail[], changes: { [groupID: string]: boolean }, preventNotification = false) => {
@@ -77,14 +94,40 @@ const useApplyGroups = (
             const listForAdding = [...simpleEmails, ...selectedEmails];
 
             const groupEntries = Object.entries(changes);
+
+            const cannotAddContactInGroupIDs: string[] = [];
+
             await Promise.all(
                 groupEntries.map(([groupID, isChecked]) => {
+                    const contactGroup = groups.find((group) => group.ID === groupID);
+                    const contactGroupName = contactGroup?.Name;
+
                     if (isChecked) {
+                        const groupExistingMembers =
+                            groupID &&
+                            userContactEmails.filter(({ LabelIDs = [] }: { LabelIDs: string[] }) =>
+                                LabelIDs.includes(groupID)
+                            );
+
                         const toLabel = listForAdding
                             .filter(({ LabelIDs = [] }) => !LabelIDs.includes(groupID))
                             .map(({ ID }) => ID);
+
                         if (!toLabel.length) {
                             return Promise.resolve();
+                        }
+
+                        // Cannot add more than 100 contacts in a contact group
+                        const canAddContact = groupExistingMembers.length + toLabel.length <= CONTACT_GROUP_MAX_MEMBERS;
+
+                        if (!canAddContact) {
+                            cannotAddContactInGroupIDs.push(groupID);
+                            return Promise.resolve();
+                        }
+
+                        if (!preventNotification && contactGroupName) {
+                            const notificationText = c('Info').t`Contact assigned to group ${contactGroupName}`;
+                            createNotification({ text: notificationText });
                         }
                         return api(labelContactEmails({ LabelID: groupID, ContactEmailIDs: toLabel }));
                     }
@@ -96,20 +139,26 @@ const useApplyGroups = (
                     if (!toUnlabel.length) {
                         return Promise.resolve();
                     }
+
+                    if (!preventNotification && contactGroupName) {
+                        const notificationText = c('Info').t`Contact unassigned to group ${contactGroupName}`;
+                        createNotification({ text: notificationText });
+                    }
+
                     return api(unLabelContactEmails({ LabelID: groupID, ContactEmailIDs: toUnlabel }));
                 })
             );
 
-            await call();
-
-            if (!preventNotification) {
-                createNotification({ text: c('Info').t`Group assignment applied` });
+            if (cannotAddContactInGroupIDs.length > 0) {
+                void handleShowContactGroupLimitReachedModal({ groupIDs: cannotAddContactInGroupIDs });
             }
+
+            await call();
         },
         [contacts]
     );
 
-    return applyGroups;
+    return { applyGroups, contactGroupLimitReachedModal };
 };
 
 export default useApplyGroups;

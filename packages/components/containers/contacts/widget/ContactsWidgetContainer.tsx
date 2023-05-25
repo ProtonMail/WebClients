@@ -16,6 +16,7 @@ import useContactList from '../hooks/useContactList';
 import ContactsList from '../lists/ContactsList';
 import { ContactMergeProps } from '../merge/ContactMergeModal';
 import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 import MergeContactBanner from '../widget/MergeContactBanner';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
@@ -34,6 +35,7 @@ interface Props {
     onMerge: (props: ContactMergeProps) => void;
     onGroupDetails: (contactGroupID: string) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onLimitReached: (props: ContactGroupLimitReachedProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
     isDrawer?: boolean;
@@ -52,6 +54,7 @@ const ContactsWidgetContainer = ({
     onMerge,
     onGroupDetails,
     onGroupEdit,
+    onLimitReached,
     onUpgrade,
     onSelectEmails,
     isDrawer = false,
@@ -238,6 +241,7 @@ const ContactsWidgetContainer = ({
                     onCreate={handleCreate}
                     onDelete={handleDelete}
                     onMerge={() => handleMerge(false)}
+                    onLimitReached={onLimitReached}
                     onClose={onClose}
                     onLock={onLock}
                     onGroupEdit={onGroupEdit}
