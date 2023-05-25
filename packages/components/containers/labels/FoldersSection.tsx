@@ -5,7 +5,7 @@ import { orderFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
-import { Icon, Info, LabelsUpsellModal, Loader, useModalState } from '../../components';
+import { Info, LabelsUpsellModal, Loader, MailUpsellButton, useModalState } from '../../components';
 import {
     useApi,
     useEventManager,
@@ -92,17 +92,10 @@ function LabelsSection() {
                                 {c('Action').t`Add folder`}
                             </Button>
                         ) : (
-                            <Button
-                                shape="outline"
+                            <MailUpsellButton
                                 onClick={() => handleUpsellModalDisplay(true)}
-                                className="mb-2 md:mb-0 inline-flex flex-nowrap flex-align-items-baseline"
-                            >
-                                <Icon name="brand-proton-mail-filled" className="flex-item-noshrink my-auto" />
-                                <span className="flex-item-noshrink mr-2" aria-hidden="true">
-                                    +
-                                </span>
-                                {c('Action').t`Get more folders`}
-                            </Button>
+                                text={c('Action').t`Get more folders`}
+                            />
                         )}
                         {folders.length ? (
                             <Button
