@@ -20,6 +20,7 @@ import ContactDecryptionErrorModal, {
 } from '../modals/ContactDecryptionErrorModal';
 import ContactDeleteModal, { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
+import ContactGroupLimitReachedModal, { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import ContactImageModal, { ContactImageProps } from '../modals/ContactImageModal';
 import ContactResignExecutionModal from '../modals/ContactResignExecutionModal';
 import ContactSignatureErrorModal, {
@@ -108,6 +109,11 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         ContactEmail[]
     >(SelectEmailsModal);
 
+    const [contactGroupLimitReachedModal, handleShowContactGroupLimitReachedModal] = useModalTwo<
+        ContactGroupLimitReachedProps,
+        void
+    >(ContactGroupLimitReachedModal, false);
+
     const handleUpgrade = () => {
         void handleShowContactUpgradeModal();
     };
@@ -140,12 +146,17 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         void handleShowContactGroupEditModal(props);
     };
 
+    const handleContactLimitReached = (props: ContactGroupLimitReachedProps) => {
+        return handleShowContactGroupLimitReachedModal(props);
+    };
+
     const handleEdit = (props: ContactEditProps) => {
         void handleShowContactEditModal({
             ...props,
             onUpgrade: handleUpgrade,
             onSelectImage: handleSelectImage,
             onGroupEdit: handleGroupEdit,
+            onLimitReached: handleContactLimitReached,
         });
     };
 
@@ -212,6 +223,7 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
             {contactClearDataConfirmModal}
             {contactClearDataExecutionModal}
             {contactSelectEmailsModal}
+            {contactGroupLimitReachedModal}
         </>
     );
 
@@ -229,5 +241,6 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         onSignatureError: handleSignatureError,
         onDecryptionError: handleDecryptionError,
         onSelectEmails: handleSelectEmails,
+        onLimitReached: handleContactLimitReached,
     };
 };

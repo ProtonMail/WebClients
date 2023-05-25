@@ -14,6 +14,7 @@ describe('ContactEditModal', () => {
         onUpgrade: jest.fn(),
         onSelectImage: jest.fn(),
         onGroupEdit: jest.fn(),
+        onLimitReached: jest.fn(),
     };
 
     beforeAll(() => {

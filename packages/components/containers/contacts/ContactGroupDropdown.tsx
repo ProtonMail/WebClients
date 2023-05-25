@@ -3,6 +3,8 @@ import { ChangeEvent, FormEvent, ReactNode, useEffect, useMemo, useState } from 
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
+import { getContactGroupsDelayedSaveChanges } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -17,9 +19,10 @@ import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
 import Tooltip from '../../components/tooltip/Tooltip';
 import { generateUID } from '../../helpers';
-import { useContactGroups, useUser } from '../../hooks';
+import { useContactEmails, useContactGroups, useUser } from '../../hooks';
 import { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
+import { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';
 import { SelectEmailsProps } from './modals/SelectEmailsModal';
 
 import './ContactGroupDropdown.scss';
@@ -60,6 +63,7 @@ interface Props extends ButtonProps {
     onLock?: (lock: boolean) => void;
     onSuccess?: () => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onLimitReached?: (props: ContactGroupLimitReachedProps) => void;
     onUpgrade: () => void;
     // Required when called with more than 1 contactEmail at a time
     onSelectEmails?: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
@@ -76,6 +80,7 @@ const ContactGroupDropdown = ({
     onLock: onLockWidget,
     onSuccess,
     onGroupEdit,
+    onLimitReached,
     onUpgrade,
     onSelectEmails,
     ...rest
@@ -85,11 +90,12 @@ const ContactGroupDropdown = ({
     const [loading, setLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [contactGroups = []] = useContactGroups();
+    const [userContactEmails] = useContactEmails();
     const [initialModel, setInitialModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
     const [lock, setLock] = useState(false);
-    const applyGroups = useApplyGroups(setLock, setLoading, onSelectEmails);
+    const { applyGroups, contactGroupLimitReachedModal } = useApplyGroups(setLock, setLoading, onSelectEmails);
 
     // If contact is not created yet, creating a contact group would create a group with an empty contact in it.
     // So we hide it in that case
@@ -99,7 +105,11 @@ const ContactGroupDropdown = ({
 
     const handleClick = () => {
         if (hasPaidMail) {
-            toggle();
+            if (contactEmails.length <= CONTACT_GROUP_MAX_MEMBERS) {
+                toggle();
+            } else {
+                onLimitReached?.({});
+            }
         } else {
             onUpgrade();
         }
@@ -137,8 +147,17 @@ const ContactGroupDropdown = ({
             return acc;
         }, {});
 
+        // Use delayed save when editing a contact, in this case contact might not be created yet so we save later
         if (onDelayedSave) {
-            onDelayedSave(changes);
+            const updatedChanges = getContactGroupsDelayedSaveChanges({
+                userContactEmails,
+                changes,
+                onLimitReached,
+                model,
+                initialModel,
+            });
+
+            onDelayedSave(updatedChanges);
         } else {
             await applyGroups(contactEmails, changes);
         }
@@ -292,6 +311,7 @@ const ContactGroupDropdown = ({
                     </div>
                 </form>
             </Dropdown>
+            {contactGroupLimitReachedModal}
         </>
     );
 };
