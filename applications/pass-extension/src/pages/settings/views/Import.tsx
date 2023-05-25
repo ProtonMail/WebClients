@@ -64,6 +64,8 @@ export const Import: VFC = () => {
     });
 
     const showResultDetails = (result?.ignored.length ?? 0) > 0 || (result?.warnings?.length ?? 0) > 0;
+    const totalImportedItems = result?.total ?? 0;
+    const totalItems = totalImportedItems + (result?.ignored.length ?? 0);
 
     return (
         <>
@@ -139,9 +141,20 @@ export const Import: VFC = () => {
                         </div>
 
                         <div>
+                            <span className="color-weak">{c('Label').t`Total items : `}</span>
+                            <span>
+                                {c('Info').ngettext(msgid`${totalItems} item`, `${totalItems} items`, totalItems)}
+                            </span>
+                        </div>
+
+                        <div>
                             <span className="color-weak">{c('Label').t`Total imported items : `}</span>
                             <span>
-                                {c('Info').ngettext(msgid`${result.total} item`, `${result.total} items`, result.total)}
+                                {c('Info').ngettext(
+                                    msgid`${totalImportedItems} item`,
+                                    `${totalImportedItems} items`,
+                                    totalImportedItems
+                                )}
                             </span>
                         </div>
 
