@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { Nullable } from '@proton/shared/lib/interfaces';
@@ -83,7 +83,7 @@ export const CalendarModal = ({
         return (option && option.text) || '';
     }, [model.addressID, model.addressOptions]);
 
-    const isSubscribedCalendar = initialCalendar && getIsSubscribedCalendar(initialCalendar);
+    const showDuration = initialCalendar && getShowDuration(initialCalendar);
     const subscribeURL =
         initialCalendar && getIsSubscribedCalendar(initialCalendar)
             ? initialCalendar.SubscriptionParameters.URL
@@ -244,7 +244,7 @@ export const CalendarModal = ({
         </InputFieldTwo>
     );
 
-    const defaultEventDurationRow = !isSubscribedCalendar ? (
+    const defaultEventDurationRow = showDuration ? (
         <InputFieldTwo
             as={SelectTwo}
             label={c('Label').t`Event duration`}
