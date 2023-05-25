@@ -1,11 +1,7 @@
 import type {
-    ExtraFieldContentMap,
-    ExtraFieldType,
     Item,
-    ItemContentMap,
     ItemExtraField,
     ItemRevision,
-    ItemType,
     OpenedItem,
     SafeProtobufExtraField,
     SafeProtobufItem,
@@ -13,79 +9,69 @@ import type {
 import { ProtobufItem } from '@proton/pass/types';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-const getExtraFieldContentKey = <T extends ExtraFieldType>(type: T) => {
-    return {
-        totp: 'totpUri',
-        text: 'content',
-        hidden: 'content',
-    }[type] as keyof ExtraFieldContentMap[T];
+const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): ItemExtraField => {
+    switch (field.content.oneofKind) {
+        case 'text':
+            return { fieldName, type: field.content.oneofKind, data: { content: field.content.text.content } };
+        case 'hidden':
+            return { fieldName, type: field.content.oneofKind, data: { content: field.content.hidden.content } };
+        case 'totp':
+            return { fieldName, type: field.content.oneofKind, data: { totpUri: field.content.totp.totpUri } };
+        default:
+            throw new Error('Unsupported extra field type');
+    }
 };
 
-const protobufToExtraField = <T extends ExtraFieldType>(field: SafeProtobufExtraField<T>): ItemExtraField => {
-    const type = field.content.oneofKind;
-    const content = field.content[type] as ExtraFieldContentMap[ExtraFieldType];
-
-    return {
-        fieldName: field.fieldName,
-        type: type,
-        value: content[getExtraFieldContentKey(type as ExtraFieldType)],
-    } as ItemExtraField;
-};
-
-const protobufToItem = <T extends ItemType>(item: SafeProtobufItem<T>): Item<T> => {
+const protobufToItem = (item: SafeProtobufItem): Item => {
     const { platformSpecific, metadata, content: itemContent } = item;
+    const base = { metadata, extraFields: item.extraFields.map(protobufToExtraField), platformSpecific };
     const { content: data } = itemContent;
-    const type = data.oneofKind;
-    const content = data[type] as ItemContentMap[ItemType];
-    const extraFields = item.extraFields.map(protobufToExtraField);
 
-    return {
-        type,
-        content,
-        metadata,
-        extraFields,
-        platformSpecific,
-    } as Item<T>;
+    switch (data.oneofKind) {
+        case 'login':
+            return { ...base, type: 'login', content: data.login };
+        case 'note':
+            return { ...base, type: 'note', content: data.note };
+        case 'alias':
+            return { ...base, type: 'alias', content: data.alias };
+        default:
+            throw new Error('Unsupported item type');
+    }
 };
 
-const extraFieldToProtobuf = <T extends ExtraFieldType>({
-    fieldName,
-    type,
-    value,
-}: ItemExtraField): SafeProtobufExtraField<T> => {
-    return {
-        fieldName,
-        content: {
-            oneofKind: type,
-            [type]: {
-                [getExtraFieldContentKey(type)]: value,
-            },
-        },
-    } as SafeProtobufExtraField<T>;
+const extraFieldToProtobuf = ({ fieldName, ...extraField }: ItemExtraField): SafeProtobufExtraField => {
+    switch (extraField.type) {
+        case 'text':
+            return { fieldName, content: { oneofKind: 'text', text: extraField.data } };
+        case 'hidden':
+            return { fieldName, content: { oneofKind: 'hidden', hidden: extraField.data } };
+        case 'totp':
+            return { fieldName, content: { oneofKind: 'totp', totp: extraField.data } };
+        default:
+            throw new Error('Unsupported extra field type');
+    }
 };
 
-const itemToProtobuf = <T extends ItemType>(item: Item<T>): SafeProtobufItem<T> => {
-    const { type, content, platformSpecific, metadata } = item;
-    const extraFields = item.extraFields.map(extraFieldToProtobuf);
+const itemToProtobuf = (item: Item): SafeProtobufItem => {
+    const { platformSpecific, metadata } = item;
 
-    return {
-        content: {
-            content: {
-                oneofKind: type,
-                [type]: content,
-            },
-        },
-        metadata,
-        extraFields,
-        platformSpecific,
-    } as SafeProtobufItem<T>;
+    const base = { metadata, extraFields: item.extraFields.map(extraFieldToProtobuf), platformSpecific };
+
+    switch (item.type) {
+        case 'login':
+            return { ...base, content: { content: { oneofKind: 'login', login: item.content } } };
+        case 'note':
+            return { ...base, content: { content: { oneofKind: 'note', note: item.content } } };
+        case 'alias':
+            return { ...base, content: { content: { oneofKind: 'alias', alias: item.content } } };
+        default:
+            throw new Error('Unsupported item type');
+    }
 };
 
 export const encodeItemContent = (item: SafeProtobufItem): Uint8Array => ProtobufItem.toBinary(item);
 
-/**
- * serialization will strip extraneous data
- */
+/* serialization will strip extraneous data */
 export const serializeItemContent = (item: Item): Uint8Array => {
     const protobuf = itemToProtobuf(item);
     return encodeItemContent(protobuf);

@@ -1,8 +1,14 @@
 import type { OpenedItem } from '../crypto';
-import type { ExtraFieldType, ItemContentMap, ItemType, Metadata } from '../protobuf';
+import type { ExtraFieldContentMap, ExtraFieldType, ItemContentMap, ItemType, Metadata } from '../protobuf';
 import type { PlatformSpecific } from '../protobuf/item-v1';
 
-export type ItemExtraField = { fieldName: string; type: ExtraFieldType; value: string };
+export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
+    [Key in T]: {
+        fieldName: string;
+        type: Key;
+        data: ExtraFieldContentMap[Key];
+    };
+}[T];
 
 /**
  * Derives a generic "distributive object type" over all possible

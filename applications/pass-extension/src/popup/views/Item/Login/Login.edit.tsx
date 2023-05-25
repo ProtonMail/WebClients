@@ -120,14 +120,15 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                     totpUri: normalizedOtpUri,
                 },
                 extraFields: extraFields.map((field) => {
-                    if (field.type === 'totp')
-                        {return {
+                    if (field.type === 'totp') {
+                        return {
                             ...field,
-                            value: parseOTPValue(field.value, {
+                            value: parseOTPValue(field.data.totpUri, {
                                 label: username || undefined,
                                 issuer: name || undefined,
                             }),
-                        };}
+                        };
+                    }
                     return field;
                 }),
             });
