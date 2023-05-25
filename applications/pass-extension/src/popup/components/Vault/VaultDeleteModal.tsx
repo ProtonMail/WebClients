@@ -41,7 +41,10 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit })
         validateOnChange: true,
         validateOnMount: true,
         validate: validateVaultDelete,
-        onSubmit: ({ destination }) => onSubmit(destination === 'delete' ? null : destination),
+        onSubmit: ({ destination }) => {
+            onSubmit(destination === 'delete' ? null : destination);
+            onClose?.();
+        },
     });
 
     useEffect(() => {
