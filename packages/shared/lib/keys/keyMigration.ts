@@ -37,6 +37,7 @@ export const getSentryError = (error: any): any => {
         return message && code >= 400 && code < 500 ? message : null;
     }
     if (
+        !error ||
         error.ignore ||
         getIsConnectionIssue(error) ||
         error.message === 'Failed to fetch' ||
