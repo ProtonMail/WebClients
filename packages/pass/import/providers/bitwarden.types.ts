@@ -9,32 +9,31 @@ export enum BitwardenType {
 
 type BitwardenBaseItem = { name: string; notes: MaybeNull<string> };
 
-type BitwardenItem = BitwardenBaseItem &
-    (
-        | {
-              type: BitwardenType.NOTE;
-          }
-        | {
-              type: BitwardenType.LOGIN;
-              login: {
-                  username: MaybeNull<string>;
-                  password: MaybeNull<string>;
-                  uris: MaybeNull<{ uri: string }[]>;
-                  totp: MaybeNull<string>;
-              };
-          }
-        | {
-              type: BitwardenType.CREDIT_CARD;
-              card: {
-                  cardholderName: MaybeNull<string>;
-                  brand: MaybeNull<string>;
-                  number: MaybeNull<number>;
-                  expMonth: MaybeNull<number>;
-                  expYear: MaybeNull<number>;
-                  code: MaybeNull<number>;
-              };
-          }
-    );
+export type BitwardenLoginItem = BitwardenBaseItem & {
+    type: BitwardenType.LOGIN;
+    login: {
+        username: MaybeNull<string>;
+        password: MaybeNull<string>;
+        uris: MaybeNull<{ uri: string }[]>;
+        totp: MaybeNull<string>;
+    };
+};
+
+export type BitwardenCCItem = BitwardenBaseItem & {
+    type: BitwardenType.CREDIT_CARD;
+    card: {
+        cardholderName: MaybeNull<string>;
+        brand: MaybeNull<string>;
+        number: MaybeNull<number>;
+        expMonth: MaybeNull<number>;
+        expYear: MaybeNull<number>;
+        code: MaybeNull<number>;
+    };
+};
+
+export type BitwardenNoteItem = BitwardenBaseItem & { type: BitwardenType.NOTE };
+
+type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem;
 
 export type BitwardenData = {
     encrypted: boolean;

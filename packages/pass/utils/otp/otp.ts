@@ -1,5 +1,6 @@
 import { Secret, TOTP, URI } from 'otpauth';
 
+import type { MaybeNull } from '@proton/pass/types';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 
 import { merge } from '../object';
@@ -14,7 +15,10 @@ export const OTP_DEFAULTS = {
     period: 30,
 };
 
-export const parseOTPValue = (input: string, { label, issuer }: { label?: string; issuer?: string } = {}): string => {
+export const parseOTPValue = (
+    input: string,
+    { label, issuer }: { label?: MaybeNull<string>; issuer?: MaybeNull<string> } = {}
+): string => {
     if (isEmptyString(input)) {
         return '';
     }
