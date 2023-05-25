@@ -3,17 +3,14 @@ import { c } from 'ttag';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { uniqueId } from '@proton/pass/utils/string';
-import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL } from '@proton/pass/utils/url';
 import capitalize from '@proton/utils/capitalize';
 import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
+import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { LastPassItem } from './lastpass.types';
 
@@ -27,40 +24,21 @@ const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
     'fav',
 ];
 
-const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> => {
-    const urlResult = isValidURL(item.url ?? '');
-    const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-    const name = item.name || url?.hostname || 'Unnamed item';
+const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
+    importLoginItem({
+        name: item.name,
+        note: item.extra,
+        username: item.username,
+        password: item.password,
+        urls: [item.url],
+        totps: [item.totp],
+    });
 
-    return {
-        type: 'login',
-        metadata: {
-            name,
-            note: item.extra ?? '',
-            itemUuid: uniqueId(),
-        },
-        content: {
-            username: item.username ?? '',
-            password: item.password ?? '',
-            urls: [url?.origin].filter(Boolean) as string[],
-            totpUri: item.totp ? parseOTPValue(item.totp, { label: name }) : '',
-        },
-        extraFields: [],
-        trashed: false,
-    };
-};
-
-const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> => ({
-    type: 'note',
-    metadata: {
-        name: item.name || 'Unnamed note',
-        note: item.extra ?? '',
-        itemUuid: uniqueId(),
-    },
-    content: {},
-    extraFields: [],
-    trashed: false,
-});
+const processNoteItem = (item: LastPassItem): ItemImportIntent<'note'> =>
+    importNoteItem({
+        name: item.name,
+        note: item.extra,
+    });
 
 export const readLastPassData = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
@@ -92,8 +70,7 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
             .map((items) => {
                 return {
                     type: 'new',
-                    vaultName:
-                        items?.[0].grouping ?? `${c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`}`,
+                    vaultName: getImportedVaultName(items?.[0].grouping),
                     id: uniqueId(),
                     items: items
                         .map((item) => {

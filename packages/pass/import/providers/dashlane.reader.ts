@@ -2,17 +2,13 @@ import jszip from 'jszip';
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { uniqueId } from '@proton/pass/utils/string';
-import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL } from '@proton/pass/utils/url';
 import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportReaderError } from '../helpers/reader.error';
+import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
     DashlaneIdItem,
@@ -35,42 +31,21 @@ const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
 
 const DASHLANE_NOTES_EXPECTED_HEADERS: (keyof DashlaneNoteItem)[] = ['title', 'note'];
 
-const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> => {
-    const urlResult = isValidURL(item.url ?? '');
-    const url = urlResult.valid ? new URL(urlResult.url) : undefined;
-    const name = item.title || url?.hostname || 'Unnamed item';
+const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
+    importLoginItem({
+        name: item.title,
+        note: item.note,
+        username: item.username,
+        password: item.password,
+        urls: [item.url],
+        totps: [item.otpSecret],
+    });
 
-    return {
-        type: 'login',
-        metadata: {
-            name,
-            note: item.note ?? '',
-            itemUuid: uniqueId(),
-        },
-        content: {
-            username: item.username ?? '',
-            password: item.password ?? '',
-            urls: [url?.origin].filter(truthy),
-            totpUri: item.otpSecret ? parseOTPValue(item.otpSecret, { label: item.title }) : '',
-        },
-        extraFields: [],
-        trashed: false,
-    };
-};
-
-const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> => {
-    return {
-        type: 'note',
-        metadata: {
-            name: item.title || 'Unnamed note',
-            note: item.note ?? '',
-            itemUuid: uniqueId(),
-        },
-        content: {},
-        extraFields: [],
-        trashed: false,
-    };
-};
+const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>
+    importNoteItem({
+        name: item.title,
+        note: item.note,
+    });
 
 const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
     data: Maybe<string>;
@@ -140,7 +115,7 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
         const vaults: ImportVault[] = [
             {
                 type: 'new',
-                vaultName: c('Title').t`Import - ${getFormattedDayFromTimestamp(getEpoch())}`,
+                vaultName: getImportedVaultName(),
                 id: uniqueId(),
                 items: [...loginItems, ...noteItems],
             },
