@@ -71,6 +71,7 @@ const verifyKTBlobsContent = async (
             if (!signatureTimestamp) {
                 // Note that this shouldn't be considered an hard failure since signature verification
                 // might fail in case keys drastically changed
+                // Will show a warning in the UI
                 continue;
             }
 
