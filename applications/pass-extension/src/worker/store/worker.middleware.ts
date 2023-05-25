@@ -8,7 +8,6 @@ import WorkerMessageBroker from '../channel';
 
 /**
  * Redux middleware for service-worker action flow :
- * - updates worker status on bootSuccess|failure & signout
  * - proxies every action through the extension's message channel
  * - forwards actions to saga middleware
  */
