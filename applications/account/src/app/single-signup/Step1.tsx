@@ -583,7 +583,7 @@ const Step1 = ({
                                         value={confirmEmail}
                                         onValue={(value: string) => {
                                             setConfirmEmail(value);
-                                            mergeInputState('email', { interactive: true });
+                                            mergeInputState('emailConfirm', { interactive: true });
                                         }}
                                         onFocus={() => {
                                             onUpdate({ emType: 'confirm' });
