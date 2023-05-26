@@ -1,4 +1,4 @@
-import { type VFC, useState } from 'react';
+import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
@@ -7,7 +7,6 @@ import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
-import AttachScreenshot, { type Screenshot } from '@proton/components/containers/support/AttachScreenshot';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
 import { reportProblemIntent, selectRequestInFlight, selectUser } from '@proton/pass/store';
 import { reportProblem } from '@proton/pass/store/actions/requests';
@@ -32,11 +31,15 @@ const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     return errors;
 };
 
+{
+    /* FIXME - add screenshots and test upload to Zendesk */
+}
 export const ReportAProblem: VFC = () => {
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
-    const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
-    const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
+
+    // const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
+    // const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
     const requestInFlight = useSelector(selectRequestInFlight(reportProblem));
 
     const form = useFormik<FormValues>({
@@ -46,14 +49,13 @@ export const ReportAProblem: VFC = () => {
         validateOnMount: true,
         validate,
         onSubmit: async ({ description }) => {
-            const screenshotBlobs = screenshots.reduce((acc: { [key: string]: Blob }, { name, blob }) => {
-                acc[name] = blob;
-                return acc;
-            }, {});
+            // const screenshotBlobs = screenshots.reduce((acc: { [key: string]: Blob }, { name, blob }) => {
+            //     acc[name] = blob;
+            //     return acc;
+            // }, {});
 
             const payload: BugPayload = {
                 ...getReportInfo(),
-                ...screenshotBlobs,
                 Client: getClientName(APP_NAME),
                 ClientType: CLIENT_TYPE,
                 ClientVersion: APP_VERSION,
@@ -70,7 +72,7 @@ export const ReportAProblem: VFC = () => {
     useRequestStatusEffect(reportProblem, {
         onSuccess: () => {
             form.resetForm();
-            setScreenshots([]);
+            // setScreenshots([]);
         },
     });
 
@@ -96,19 +98,19 @@ export const ReportAProblem: VFC = () => {
                         disabled={requestInFlight}
                     />
 
-                    <AttachScreenshot
+                    {/* <AttachScreenshot
                         id="attachments"
                         screenshots={screenshots}
                         setScreenshots={setScreenshots}
                         uploading={uploadingScreenshots}
                         setUploading={setUploadingScreenshots}
                         disabled={uploadingScreenshots || requestInFlight}
-                    />
+                    /> */}
 
                     <Button
                         className="mt-4 w100"
                         color="norm"
-                        disabled={!form.isValid || uploadingScreenshots}
+                        disabled={!form.isValid}
                         loading={requestInFlight}
                         type="submit"
                     >
