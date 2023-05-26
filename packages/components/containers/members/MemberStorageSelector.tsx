@@ -126,7 +126,7 @@ const MemberStorageSelector = ({
     const precision = 1;
     const [tmpValue, setTmpValue] = useState(getDisplayedValue(actualValue, precision));
 
-    //We change the step depending on the remaining space
+    // We change the step depending on the remaining space
     const remainingSpace = totalStorage.organizationMaxSpace - totalStorage.organizationUsedSpace;
     const stepInBytes = remainingSpace > GIGA ? 0.5 * GIGA : 0.1 * GIGA;
 
@@ -234,7 +234,7 @@ const MemberStorageSelector = ({
                     )}
                 </div>
             </div>
-            <div className="mt-2">
+            <div className="mt-2 pr-2 md:pr-0">
                 <Slider
                     marks
                     disabled={disabled}
