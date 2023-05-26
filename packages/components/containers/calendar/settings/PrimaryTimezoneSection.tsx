@@ -41,6 +41,7 @@ const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: P
                     loading={loadingPrimaryTimeZone}
                     timezone={PrimaryTimezone}
                     onChange={(PrimaryTimezone) => withLoadingPrimaryTimeZone(handleChange({ PrimaryTimezone }))}
+                    telemetrySource="primary_timezone"
                 />
             </SettingsLayoutRight>
         </SettingsLayout>
