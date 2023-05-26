@@ -47,6 +47,7 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
                     disabled={!DisplaySecondaryTimezone}
                     timezone={SecondaryTimezone || timezone}
                     onChange={(SecondaryTimezone) => withLoadingSecondaryTimeZone(handleChange({ SecondaryTimezone }))}
+                    telemetrySource="secondary_timezone"
                 />
             </SettingsLayoutRight>
         </SettingsLayout>
