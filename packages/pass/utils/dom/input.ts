@@ -1,6 +1,7 @@
 import { allChildrenOverlap } from './overlap';
 
-const containsTextNode = (el: HTMLElement) => [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE);
+const containsTextNode = (el: HTMLElement) =>
+    [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue?.trim() !== '');
 
 /* heuristic value for computing the best
  * bounding element - adapt as needed */
