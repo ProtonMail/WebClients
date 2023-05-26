@@ -47,7 +47,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     form.element.setAttribute(DETECTED_FORM_ID_ATTR, form.id);
 
-    /* FIXME: should account for hidden fields */
+    /* FIXME: should account for hidden fields - should also
+     * account for different form types for more control */
     const getFormData = (): { username?: string; password?: string } => {
         const nonEmptyField = (field: FieldHandle) => !isEmptyString(field.value);
 
@@ -93,15 +94,30 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const getTrackableFields = (settings: ProxiedSettings): FieldsForFormResults => {
         const results: FieldsForFormResults = new WeakMap();
-        let iconInjected = false;
+        const status = { injections: new Map<FormField, boolean>(), injected: false };
 
         FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action }) => {
             form.getFieldsFor(type).forEach((field) => {
-                const attachIcon =
-                    injection === FieldInjectionRule.ALWAYS ||
-                    (injection === FieldInjectionRule.IF_FIRST && !iconInjected);
+                let attachIcon = false;
 
-                iconInjected = iconInjected || attachIcon;
+                switch (injection) {
+                    case FieldInjectionRule.NEVER:
+                        break;
+                    case FieldInjectionRule.ALWAYS:
+                        attachIcon = true;
+                        break;
+                    /* inject only if no previous injections */
+                    case FieldInjectionRule.FIRST_OF_FORM:
+                        attachIcon = !status.injected;
+                        break;
+                    /* inject only if no other field of type attached */
+                    case FieldInjectionRule.FIRST_OF_TYPE:
+                        attachIcon = !status.injections.get(type);
+                        break;
+                }
+
+                status.injections.set(type, status.injections.get(type) || attachIcon);
+                status.injected = status.injected || attachIcon;
 
                 results.set(field, {
                     field,
