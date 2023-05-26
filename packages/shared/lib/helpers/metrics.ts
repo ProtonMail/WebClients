@@ -37,22 +37,29 @@ export const sendMetricsReport = async (api: Api, Log: METRICS_LOG, Title?: stri
 /**
  * Send a telemetry report (/data/v1/stats endpoint)
  */
-export const sendTelemetryReport = async (
-    normalApi: Api,
-    measurementGroup: TelemetryMeasurementGroups,
-    event: TelemetryEvents,
-    values?: SimpleMap<number>,
-    dimensions?: SimpleMap<string>,
-    silence = true
-) => {
-    const api = silence ? getSilentApi(normalApi) : normalApi;
+export const sendTelemetryReport = async ({
+    api,
+    measurementGroup,
+    event,
+    values,
+    dimensions,
+    silence = true,
+}: {
+    api: Api;
+    measurementGroup: TelemetryMeasurementGroups;
+    event: TelemetryEvents;
+    values?: SimpleMap<number>;
+    dimensions?: SimpleMap<string>;
+    silence?: boolean;
+}) => {
+    const possiblySilentApi = silence ? getSilentApi(api) : api;
 
     if (!metricsEnabled) {
         return;
     }
 
     try {
-        void api(
+        void possiblySilentApi(
             sendTelemetryData({
                 MeasurementGroup: measurementGroup,
                 Event: event,

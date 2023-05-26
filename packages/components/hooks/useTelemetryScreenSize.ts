@@ -24,7 +24,12 @@ const useTelemetryScreenSize = () => {
             viewHeight: window.innerHeight,
         };
 
-        await sendTelemetryReport(api, TelemetryMeasurementGroups.screenSize, event, values);
+        await sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.screenSize,
+            event,
+            values,
+        });
     };
 
     // Send default user screen size
