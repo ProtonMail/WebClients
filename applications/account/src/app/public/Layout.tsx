@@ -73,14 +73,14 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                 </div>
             </header>
             <div className="sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between">
-                <div>
+                <main>
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
                             <LayoutLogos size={48} />
                         </div>
                     )}
-                </div>
+                </main>
             </div>
             {hasDecoration ? (
                 <>

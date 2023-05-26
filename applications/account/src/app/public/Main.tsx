@@ -8,7 +8,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 
 const Main = ({ children, className, center = true, maxWidth = 'mw30r', disableShadow, ...rest }: Props) => {
     return (
-        <main
+        <div
             className={clsx(
                 'ui-standard w100 relative sign-layout shadow-color-primary on-tiny-mobile-no-box-shadow px-6 pt-1 pb-6 sm:p-11',
                 center && 'max-w100 mx-auto',
@@ -19,7 +19,7 @@ const Main = ({ children, className, center = true, maxWidth = 'mw30r', disableS
             {...rest}
         >
             {children}
-        </main>
+        </div>
     );
 };
 
