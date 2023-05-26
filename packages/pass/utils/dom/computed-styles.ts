@@ -23,10 +23,15 @@ export const pixelTransformer = (value: string, transformer: (value: number) => 
 
 export const getComputedHeight = (
     boundCompute: ReturnType<typeof createStyleCompute>,
-    options: { mode: 'inner' | 'outer' } = { mode: 'outer' }
+    { node, mode }: { node: HTMLElement; mode: 'inner' | 'outer' }
 ): { value: number; offset: { top: number; bottom: number } } => {
-    const h = boundCompute('height', pixelParser);
     const isContentBox = boundCompute('box-sizing') === 'content-box';
+
+    /* certain target nodes will be set to height: 'auto' - fallback
+     * to the element's offsetHeight in that case*/
+    const h = boundCompute('height', (height) =>
+        height === 'auto' || !height ? node.offsetHeight : pixelParser(height)
+    );
 
     const pt = boundCompute('padding-top', pixelParser);
     const pb = boundCompute('padding-bottom', pixelParser);
@@ -35,20 +40,20 @@ export const getComputedHeight = (
     const offset = pt + bt + pb + bb;
 
     return {
-        value: isContentBox ? h + (options.mode === 'outer' ? offset : 0) : h - (options.mode === 'inner' ? offset : 0),
+        value: isContentBox ? h + (mode === 'outer' ? offset : 0) : h - (mode === 'inner' ? offset : 0),
         offset: {
-            top: options.mode === 'outer' ? 0 : pt + bt,
-            bottom: options.mode === 'outer' ? 0 : pb + bb,
+            top: mode === 'outer' ? 0 : pt + bt,
+            bottom: mode === 'outer' ? 0 : pb + bb,
         },
     };
 };
 
 export const getComputedWidth = (
     boundCompute: ReturnType<typeof createStyleCompute>,
-    options: { mode: 'inner' | 'outer' } = { mode: 'outer' }
+    { node, mode }: { node: HTMLElement; mode: 'inner' | 'outer' }
 ): { value: number; offset: { left: number; right: number } } => {
-    const w = boundCompute('width', pixelParser);
     const isContentBox = boundCompute('box-sizing') === 'content-box';
+    const w = boundCompute('width', (width) => (width === 'auto' || !width ? node.offsetWidth : pixelParser(width)));
 
     const pl = boundCompute('padding-left', pixelParser);
     const pr = boundCompute('padding-right', pixelParser);
@@ -57,10 +62,10 @@ export const getComputedWidth = (
     const offset = pl + bl + pr + br;
 
     return {
-        value: isContentBox ? w + (options.mode === 'outer' ? offset : 0) : w - (options.mode === 'inner' ? offset : 0),
+        value: isContentBox ? w + (mode === 'outer' ? offset : 0) : w - (mode === 'inner' ? offset : 0),
         offset: {
-            left: options.mode === 'outer' ? 0 : pl + bl,
-            right: options.mode === 'outer' ? 0 : pr + br,
+            left: mode === 'outer' ? 0 : pl + bl,
+            right: mode === 'outer' ? 0 : pr + br,
         },
     };
 };

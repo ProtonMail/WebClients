@@ -49,7 +49,7 @@ type InputInitialStyles = {
  * in that case make sure to account for margin left
  */
 const computeWrapperInjectionStyles = (
-    { wrapper }: InjectionElements,
+    { wrapper, input }: InjectionElements,
     { inputBox, getInputStyle }: SharedInjectionOptions
 ) => {
     const { left: boxLeft } = inputBox.getBoundingClientRect();
@@ -57,7 +57,7 @@ const computeWrapperInjectionStyles = (
     const inputDisplay = getInputStyle('display');
 
     return {
-        maxWidth: pixelEncoder(getComputedWidth(getInputStyle).value),
+        maxWidth: pixelEncoder(getComputedWidth(getInputStyle, { node: input, mode: 'outer' }).value),
         marginLeft: inputDisplay === 'inline-block' ? pixelEncoder(boxLeft - wrapperLeft) : '0px',
     };
 };
@@ -72,34 +72,33 @@ const computeIconInjectionStyles = (
 ) => {
     repaint(input);
 
-    const boxed = input !== inputBox;
     const { right: inputRight } = input.getBoundingClientRect();
     const { top: boxTop } = inputBox.getBoundingClientRect();
     const { top: wrapperTop, right: wrapperRight } = wrapper.getBoundingClientRect();
 
-    const { value: inputWidth } = getComputedWidth(getInputStyle, { mode: 'outer' });
-    const mbInput = getInputStyle('margin-bottom', pixelParser);
+    const { value: inputWidth } = getComputedWidth(getInputStyle, { node: input, mode: 'outer' });
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
      * without offsets in order to correctly position icon
      * if bounding element has some padding-top/border-top */
-    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, { mode: 'outer' });
+    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, { node: inputBox, mode: 'outer' });
 
-    /* if the input is "boxed", we may hit a case where the
+    /* FIXME: if the input is "boxed", we may hit a case where the
      * bounding box grows with any margins applied to the child
      * input. In this case subtract it from the boxHeight so as
-     * to compute the icon's top position correctly */
-    const safeHeight = boxHeight - (boxed ? mbInput : 0);
-    const size = Math.max(Math.min(safeHeight - ICON_MIN_HEIGHT, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
+     * to compute the icon's top position correctly
+     * const safeHeight = boxHeight - inputOffset.bottom; */
+    const size = Math.max(Math.min(boxHeight - ICON_MIN_HEIGHT, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
 
     const pl = getInputStyle('padding-left', pixelParser);
     const pr = getInputStyle('padding-right', pixelParser);
 
     /* `mt` represents the vertical offset needed to align the
-     * injected icon with the top-most part of the bounding box */
-    const mt = boxTop - boxOffset.top - wrapperTop;
-    const top = mt + (safeHeight - size) / 2;
+     * center of the injected icon with the top-most part of
+     * the bounding box */
+    const mt = boxTop - boxOffset.top - wrapperTop - size / 2;
+    const top = mt + boxHeight / 2;
 
     /* Compute the new input padding :
      * Take into account the input element's current
@@ -171,6 +170,7 @@ const applyWrapperInjectionStyles = (elements: InjectionElements, shared: Shared
 
 const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInjectionOptions) => {
     const { icon, input } = elements;
+    const inputWidthBefore = input.getBoundingClientRect().width;
     const styles = computeIconInjectionStyles(elements, shared);
 
     icon.style.top = styles.icon.top;
@@ -185,11 +185,9 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
         pixelTransformer(styles.icon.size, (size) => size / 2.2)
     );
 
-    /**
-     * Content-script may be destroyed and re-injected
+    /* Content-script may be destroyed and re-injected
      * on extension update or on code hot-reload. Keep
-     * track of the previous input styles for clean-up.
-     */
+     * track of the previous input styles for clean-up */
     const initialInputStyles: InputInitialStyles = {
         width: input.style.width,
         'max-width': input.style.maxWidth,
@@ -198,8 +196,9 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
 
     input.setAttribute(INPUT_STYLES_ATTR, JSON.stringify(initialInputStyles));
     input.style.setProperty('padding-right', styles.input.paddingRight, 'important');
+    const inputWidthAfter = input.getBoundingClientRect().width;
 
-    if (shared.getInputStyle('box-sizing') === 'content-box') {
+    if (shared.getInputStyle('box-sizing') === 'content-box' || inputWidthBefore !== inputWidthAfter) {
         input.style.setProperty('width', styles.input.width, 'important');
         input.style.setProperty('max-width', styles.input.width, 'important');
     }
