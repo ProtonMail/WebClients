@@ -15,7 +15,8 @@ import {
     CalendarEvent,
     ImportCalendarModel,
     ImportedEvent,
-    VcalCalendarComponentOrError,
+    VcalCalendarComponentWithMaybeErrors,
+    VcalErrorComponent,
     VcalVeventComponent,
     VcalVtimezoneComponent,
 } from '../../interfaces/calendar';
@@ -25,7 +26,7 @@ import { generateVeventHashUID, getOriginalUID } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { getSupportedCalscale } from '../icsSurgery/vcal';
 import { getLinkedDateTimeProperty, getSupportedEvent, withSupportedDtstamp } from '../icsSurgery/vevent';
-import { parseWithRecoveryAndErrors, serialize } from '../vcal';
+import { getVeventWithoutErrors, parseWithRecoveryAndMaybeErrors, serialize } from '../vcal';
 import {
     getHasDtStart,
     getHasRecurrenceId,
@@ -36,13 +37,10 @@ import {
     getIsPropertyAllDay,
     getIsTimezoneComponent,
     getIsTodoComponent,
+    getIsVcalErrorComponent,
     getPropertyTzid,
 } from '../vcalHelper';
 import { ImportFileError } from './ImportFileError';
-
-const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
-    return !!(component as { error: Error }).error;
-};
 
 export const parseIcs = async (ics: File) => {
     const filename = ics.name;
@@ -51,7 +49,7 @@ export const parseIcs = async (ics: File) => {
         if (!icsAsString) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
-        const parsedVcalendar = parseWithRecoveryAndErrors(icsAsString);
+        const parsedVcalendar = parseWithRecoveryAndMaybeErrors(icsAsString);
         if (parsedVcalendar.component?.toLowerCase() !== 'vcalendar') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
@@ -81,10 +79,10 @@ export const parseIcs = async (ics: File) => {
  * Get a string that can identify an imported component
  */
 export const getComponentIdentifier = (
-    vcalComponent: VcalCalendarComponentOrError,
+    vcalComponent: VcalCalendarComponentWithMaybeErrors | VcalErrorComponent,
     options: FormatOptions = { locale: dateLocale }
 ) => {
-    if (getParsedComponentHasError(vcalComponent)) {
+    if (getIsVcalErrorComponent(vcalComponent)) {
         return '';
     }
     if (getIsTimezoneComponent(vcalComponent)) {
@@ -110,9 +108,9 @@ export const getComponentIdentifier = (
     return '';
 };
 
-const extractGuessTzid = (components: VcalCalendarComponentOrError[]) => {
+const extractGuessTzid = (components: (VcalCalendarComponentWithMaybeErrors | VcalErrorComponent)[]) => {
     const vtimezones = components.filter((componentOrError): componentOrError is VcalVtimezoneComponent => {
-        if (getParsedComponentHasError(componentOrError)) {
+        if (getIsVcalErrorComponent(componentOrError)) {
             return false;
         }
         return getIsTimezoneComponent(componentOrError);
@@ -126,7 +124,7 @@ const extractGuessTzid = (components: VcalCalendarComponentOrError[]) => {
 
 interface ExtractSupportedEventArgs {
     method: ICAL_METHOD;
-    vcalComponent: VcalCalendarComponentOrError;
+    vcalComponent: VcalCalendarComponentWithMaybeErrors | VcalErrorComponent;
     hasXWrTimezone: boolean;
     formatOptions?: FormatOptions;
     calendarTzid?: string;
@@ -134,42 +132,51 @@ interface ExtractSupportedEventArgs {
 }
 export const extractSupportedEvent = async ({
     method,
-    vcalComponent,
+    vcalComponent: vcalComponentWithMaybeErrors,
     hasXWrTimezone,
     formatOptions,
     calendarTzid,
     guessTzid,
 }: ExtractSupportedEventArgs) => {
-    const componentId = getComponentIdentifier(vcalComponent, formatOptions);
+    const componentId = getComponentIdentifier(vcalComponentWithMaybeErrors, formatOptions);
     const isInvitation = method !== ICAL_METHOD.PUBLISH;
-    if (getParsedComponentHasError(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, '', componentId, vcalComponent.error);
+    if (getIsVcalErrorComponent(vcalComponentWithMaybeErrors)) {
+        throw new ImportEventError(
+            IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR,
+            '',
+            componentId,
+            vcalComponentWithMaybeErrors.error
+        );
     }
-    if (getIsTodoComponent(vcalComponent)) {
+    if (getIsTodoComponent(vcalComponentWithMaybeErrors)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TODO_FORMAT, 'vtodo', componentId);
     }
-    if (getIsJournalComponent(vcalComponent)) {
+    if (getIsJournalComponent(vcalComponentWithMaybeErrors)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.JOURNAL_FORMAT, 'vjournal', componentId);
     }
-    if (getIsFreebusyComponent(vcalComponent)) {
+    if (getIsFreebusyComponent(vcalComponentWithMaybeErrors)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FREEBUSY_FORMAT, 'vfreebusy', componentId);
     }
-    if (getIsTimezoneComponent(vcalComponent)) {
-        if (!getSupportedTimezone(vcalComponent.tzid.value)) {
+    if (getIsTimezoneComponent(vcalComponentWithMaybeErrors)) {
+        if (!getSupportedTimezone(vcalComponentWithMaybeErrors.tzid.value)) {
             throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT, 'vtimezone', componentId);
         }
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE, 'vtimezone', componentId);
     }
-    if (!getIsEventComponent(vcalComponent)) {
+    if (!getIsEventComponent(vcalComponentWithMaybeErrors)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.WRONG_FORMAT, 'vunknown', componentId);
     }
+    const vcalComponent = getVeventWithoutErrors(vcalComponentWithMaybeErrors);
     if (!getHasDtStart(vcalComponent)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MISSING, 'vevent', componentId);
     }
     const validVevent = withSupportedDtstamp(vcalComponent, +serverTime());
     const generateHashUid = !validVevent.uid?.value || isInvitation;
+
     if (generateHashUid) {
-        validVevent.uid = { value: await generateVeventHashUID(serialize(vcalComponent), vcalComponent?.uid?.value) };
+        validVevent.uid = {
+            value: await generateVeventHashUID(serialize(vcalComponent), vcalComponent?.uid?.value),
+        };
     }
 
     return getSupportedEvent({
@@ -192,7 +199,7 @@ export const getSupportedEvents = async ({
     xWrTimezone,
     primaryTimezone,
 }: {
-    components: VcalCalendarComponentOrError[];
+    components: (VcalCalendarComponentWithMaybeErrors | VcalErrorComponent)[];
     method: ICAL_METHOD;
     formatOptions?: FormatOptions;
     calscale?: string;
