@@ -7,7 +7,6 @@ import { type TabId, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import { createDevReloader } from '../../shared/extension/dev-reload';
 import WorkerMessageBroker from '../channel';
 
 const withTabEffect =
@@ -78,10 +77,6 @@ export const createInjectionService = () => {
             })
         )
     );
-
-    if (ENV === 'development') {
-        createDevReloader(() => browser.runtime.reload(), '[DEV] Reloading runtime');
-    }
 
     return { updateInjections };
 };
