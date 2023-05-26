@@ -8,16 +8,21 @@ import { parseWithRecovery } from '@proton/shared/lib/calendar/icsSurgery/ics';
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
 import {
     VcalCalendarComponent,
-    VcalCalendarComponentWithErrors,
+    VcalCalendarComponentWithMaybeErrors,
     VcalDateOrDateTimeValue,
     VcalDateTimeValue,
     VcalDateValue,
     VcalDurationValue,
+    VcalErrorComponent,
     VcalRrulePropertyValue,
+    VcalValarmComponent,
     VcalVcalendar,
-    VcalVcalendarWithErrors,
+    VcalVcalendarWithMaybeErrors,
+    VcalVeventComponent,
+    VcalVeventComponentWithMaybeErrors,
 } from '../interfaces/calendar';
 import { UNIQUE_PROPERTIES } from './vcalDefinition';
+import { getIsVcalErrorComponent } from './vcalHelper';
 
 const getIcalDateValue = (value: any, tzid: string | undefined, isDate: boolean) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
@@ -298,12 +303,12 @@ export const fromIcalComponent = (component: any) => {
     } as VcalCalendarComponent;
 };
 
-export const fromIcalComponentWithErrors = (
+export const fromIcalComponentWithMaybeErrors = (
     component: any
-): VcalCalendarComponent | VcalCalendarComponentWithErrors => {
+): VcalCalendarComponentWithMaybeErrors | VcalErrorComponent => {
     const components = component.getAllSubcomponents().map((subcomponent: any) => {
         try {
-            return fromIcalComponentWithErrors(subcomponent);
+            return fromIcalComponentWithMaybeErrors(subcomponent);
         } catch (error: any) {
             return { error, icalComponent: subcomponent };
         }
@@ -312,7 +317,7 @@ export const fromIcalComponentWithErrors = (
         component: component.name,
         ...(components.length && { components }),
         ...fromIcalProperties(component ? component.getAllProperties() : undefined),
-    } as VcalCalendarComponentWithErrors;
+    } as VcalCalendarComponentWithMaybeErrors;
 };
 
 /**
@@ -329,15 +334,28 @@ export const parse = (vcal = ''): VcalCalendarComponent => {
  * Same as the parseWithRecovery function, but catching errors in individual components.
  * This is useful in case we can parse some events but not all in a given ics
  */
-export const parseWithRecoveryAndErrors = (
+export const parseWithRecoveryAndMaybeErrors = (
     vcal: string,
     retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true }
-): VcalVcalendar | VcalVcalendarWithErrors => {
+): VcalVcalendarWithMaybeErrors => {
     try {
         return parseWithRecovery(vcal, retry) as VcalVcalendar;
     } catch (e) {
-        return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal))) as VcalVcalendarWithErrors;
+        return fromIcalComponentWithMaybeErrors(new ICAL.Component(ICAL.parse(vcal))) as VcalVcalendarWithMaybeErrors;
     }
+};
+
+export const getVeventWithoutErrors = (
+    veventWithMaybeErrors: VcalVeventComponentWithMaybeErrors
+): VcalVeventComponent => {
+    const filteredComponents: VcalValarmComponent[] | undefined = veventWithMaybeErrors.components?.filter(
+        (component): component is VcalValarmComponent => !getIsVcalErrorComponent(component)
+    );
+
+    return {
+        ...veventWithMaybeErrors,
+        components: filteredComponents,
+    };
 };
 
 export const fromRruleString = (rrule = '') => {
