@@ -8,8 +8,8 @@ import { isEmptyString } from '@proton/pass/utils/string';
 import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
+import { MaskedValueControl } from './MaskedValueControl';
 import { OTPValueControl } from './OTPValueControl';
-import { PasswordValueControl } from './PasswordValueControl';
 import { ValueControl } from './ValueControl';
 
 type ExtraFieldsControlProps = {
@@ -38,7 +38,7 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                         />
                     );
                 case 'hidden':
-                    return <PasswordValueControl key={key} icon={icon} label={fieldName} password={data.content} />;
+                    return <MaskedValueControl as="pre" key={key} icon={icon} label={fieldName} value={data.content} />;
                 case 'text':
                     return (
                         <ClickToCopyValueControl key={key} value={data.content}>

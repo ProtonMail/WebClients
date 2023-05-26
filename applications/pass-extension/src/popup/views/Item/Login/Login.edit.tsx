@@ -31,7 +31,7 @@ import { ItemEditPanel } from '../../../components/Panel/ItemEditPanel';
 import { usePopupContext } from '../../../hooks/usePopupContext';
 import { AliasModal } from '../Alias/Alias.modal';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../Item/Item.validation';
-import { type EditLoginItemFormValues, useLoginItemAliasModal, validateEditLoginForm } from './Login.validation';
+import { type EditLoginItemFormValues, useLoginItemAliasModal, validateLoginForm } from './Login.validation';
 
 const FORM_ID = 'edit-login';
 
@@ -66,7 +66,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
 
     const form = useFormik<EditLoginItemFormValues>({
         initialValues,
-        initialErrors: validateEditLoginForm(initialValues),
+        initialErrors: validateLoginForm(initialValues),
         onSubmit: ({ name, username, password, totpUri, url, urls, note, extraFields, ...values }) => {
             const mutationTime = getEpoch();
             const withAlias =
@@ -133,7 +133,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                 }),
             });
         },
-        validate: validateEditLoginForm,
+        validate: validateLoginForm,
         validateOnChange: true,
     });
 

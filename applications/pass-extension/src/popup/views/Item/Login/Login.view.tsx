@@ -12,8 +12,8 @@ import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
 import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
 import { ExtraFieldsControl } from '../../../components/Field/Control/ExtraFieldsControl';
+import { MaskedValueControl } from '../../../components/Field/Control/MaskedValueControl';
 import { OTPValueControl } from '../../../components/Field/Control/OTPValueControl';
-import { PasswordValueControl } from '../../../components/Field/Control/PasswordValueControl';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
@@ -42,7 +42,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
                     </ValueControl>
                 </ClickToCopyValueControl>
 
-                <PasswordValueControl password={password} />
+                <MaskedValueControl charsGroupedByColor label={c('Label').t`Password`} value={password} />
 
                 {totpUri && <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} type="item" />}
             </FieldsetCluster>
@@ -63,7 +63,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
                 <FieldsetCluster mode="read" as="div">
                     <ClickToCopyValueControl value={note}>
                         <ValueControl interactive as="pre" icon="note" label={c('Label').t`Note`}>
-                            <pre className="text-break">{note}</pre>
+                            {note}
                         </ValueControl>
                     </ClickToCopyValueControl>
                 </FieldsetCluster>
