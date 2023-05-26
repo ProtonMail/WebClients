@@ -63,7 +63,6 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         context.setSettings(settings);
         context.service.iframe.reset();
         context.service.formManager.sync();
-
         void context.service.autofill.queryItems();
     };
 
