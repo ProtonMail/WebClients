@@ -47,6 +47,7 @@ interface Props {
     onSelectCountry?: (value: string) => void;
     error?: string;
     hint?: string;
+    disabled?: boolean;
 }
 
 const CountrySelect = ({
@@ -57,6 +58,7 @@ const CountrySelect = ({
     onSelectCountry,
     error,
     hint,
+    disabled,
 }: Props) => {
     const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
         value || preSelectedOption
@@ -98,6 +100,7 @@ const CountrySelect = ({
             }
             hint={hint}
             data-testid="country-select"
+            disabled={disabled}
         >
             {dropdownOptions.map((option) => {
                 if (option.type === 'country') {
