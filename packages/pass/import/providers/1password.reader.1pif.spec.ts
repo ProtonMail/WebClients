@@ -102,11 +102,9 @@ describe('Import 1password 1pif', () => {
         expect(loginItemMultiTOTP.extraFields).toEqual([
             {
                 fieldName: 'totp',
-                content: {
-                    oneofKind: 'totp',
-                    totp: {
-                        totpUri: 'otpauth://totp/generator?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
-                    },
+                type: 'totp',
+                data: {
+                    totpUri: 'otpauth://totp/generator?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
                 },
             },
         ]);
