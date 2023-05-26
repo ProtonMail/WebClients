@@ -40,36 +40,23 @@ const validateTotpUri = (values: LoginItemFormValues) => {
     }
 };
 
-const validateLoginFormBase = (values: LoginItemFormValues): FormikErrors<LoginItemFormValues> => {
+export const validateLoginForm = (values: LoginItemFormValues): FormikErrors<LoginItemFormValues> => {
     const errors: FormikErrors<LoginItemFormValues> = validateItemErrors(values);
-
     const urlError = validateUrl(values);
     const urlsErrors = validateUrls(values);
-
     const totpUriErrors = validateTotpUri(values);
+    const aliasErrors = values.withAlias && validateAliasForm(values);
+    const extraFieldsErrors = validateExtraFields(values);
 
     return {
         ...errors,
         ...urlError,
         ...urlsErrors,
         ...totpUriErrors,
-    };
-};
-
-export const validateNewLoginForm = (values: NewLoginItemFormValues): FormikErrors<NewLoginItemFormValues> => {
-    const errors = validateLoginFormBase(values);
-    const aliasErrors = values.withAlias && validateAliasForm(values);
-    const extraFieldsErrors = validateExtraFields(values);
-
-    return {
-        ...errors,
         ...aliasErrors,
         ...extraFieldsErrors,
     };
 };
-
-export const validateEditLoginForm = (values: EditLoginItemFormValues): FormikErrors<EditLoginItemFormValues> =>
-    validateLoginFormBase(values);
 
 export const useLoginItemAliasModal = <T extends LoginItemFormValues>(form: FormikContextType<T>) => {
     const [aliasModalOpen, setAliasModalOpen] = useState(false);

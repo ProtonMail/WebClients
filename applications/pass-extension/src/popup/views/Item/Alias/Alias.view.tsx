@@ -126,7 +126,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                 <FieldsetCluster mode="read" as="div">
                     <ClickToCopyValueControl value={note}>
                         <ValueControl interactive as="pre" icon="note" label={c('Label').t`Note`}>
-                            <pre className="text-break">{note}</pre>
+                            {note}
                         </ValueControl>
                     </ClickToCopyValueControl>
                 </FieldsetCluster>
