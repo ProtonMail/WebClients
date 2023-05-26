@@ -608,6 +608,7 @@ const CalendarContainerView = ({
                             date={noonDate}
                             timezone={tzid}
                             onChange={setTzid}
+                            telemetrySource="temporary_timezone"
                         />
                     }
                 />
