@@ -48,7 +48,13 @@ export const useSimpleLoginTelemetry = () => {
             dimensions.MessagesInSpam = getBinnedMessagesInSpam(messagesInSpam);
         }
 
-        void sendTelemetryReport(api, TelemetryMeasurementGroups.mailSimpleLogin, event, values, dimensions);
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.mailSimpleLogin,
+            event,
+            values,
+            dimensions,
+        });
     };
 
     return { handleSendTelemetryData };
