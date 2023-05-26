@@ -121,7 +121,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
                 results.set(field, {
                     field,
-                    action: action ? withAction(action, settings) : null,
+                    action: action && attachIcon ? withAction(action, settings) : null,
                     attachIcon,
                 });
             });
