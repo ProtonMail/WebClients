@@ -16,7 +16,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import { Address, CachedOrganizationKey, FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
 import {
     getShouldSetupMemberKeys,
     missingKeysMemberProcess,
@@ -214,7 +214,14 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                             onChange={({ value }) => setModel({ ...model, id: value })}
                         >
                             {members.map((member) => (
-                                <Option value={member.ID} title={member.Name}>
+                                <Option
+                                    value={member.ID}
+                                    title={member.Name}
+                                    disabled={
+                                        member.State === FAMILY_PLAN_INVITE_STATE.STATUS_DISABLED ||
+                                        member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED
+                                    }
+                                >
                                     {member.Name}
                                 </Option>
                             ))}
