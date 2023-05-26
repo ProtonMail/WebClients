@@ -13,12 +13,14 @@ export enum FormType {
 /* Form field types based on protonpass-fathom
  * predicted form field */
 export enum FormField {
+    EMAIL = 'email',
     USERNAME = 'username',
-    PASSWORD = 'password',
-    SUBMIT = 'submit',
+    USERNAME_HIDDEN = 'username-hidden',
+    PASSWORD_CURRENT = 'password',
+    PASSWORD_NEW = 'new-password',
 }
 
-export type FormFields = { [Field in FormField]?: HTMLElement[] };
+export type FormFields = { [Field in FormField]?: HTMLInputElement[] };
 
 export interface FormHandle {
     id: string;
@@ -26,7 +28,7 @@ export interface FormHandle {
     element: HTMLElement;
     props: { injections: { zIndex: number } };
     fields: { [Field in FormField]?: FieldHandle[] };
-    getFieldsFor: (type: FormField) => FieldHandle[];
+    getFieldsFor: (type: FormField, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     listFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     tracker?: FormTracker;
     shouldRemove: () => boolean;
@@ -38,7 +40,7 @@ export interface FormHandle {
 export interface FieldHandle {
     formType: FormType;
     fieldType: FormField;
-    element: HTMLElement;
+    element: HTMLInputElement;
     boxElement: HTMLElement;
     icon: FieldIconHandle | null;
     action: MaybeNull<DropdownAction>;
@@ -52,6 +54,19 @@ export interface FieldHandle {
     attachListeners: (onSubmit: () => void) => void;
     detachListeners: () => void;
 }
+
+export enum FieldInjectionRule {
+    ALWAYS /* always inject */,
+    FIRST_OF_TYPE /* first field for field type */,
+    FIRST_OF_FORM /* first field in form */,
+    NEVER /* never inject */,
+}
+
+export type FormTrackerFieldConfig = {
+    type: FormField;
+    injection: FieldInjectionRule;
+    action?: DropdownAction;
+};
 
 export interface FormTracker {
     attach: () => void;

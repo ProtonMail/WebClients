@@ -47,7 +47,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
     [FormType.LOGIN]: [
         {
             type: FormField.USERNAME,
-            injection: FieldInjectionRule.IF_FIRST,
+            injection: FieldInjectionRule.FIRST_OF_FORM,
             action: DropdownAction.AUTOFILL,
         },
         {
@@ -56,12 +56,12 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
         {
             type: FormField.EMAIL,
-            injection: FieldInjectionRule.IF_FIRST,
+            injection: FieldInjectionRule.FIRST_OF_FORM,
             action: DropdownAction.AUTOFILL,
         },
         {
             type: FormField.PASSWORD_CURRENT,
-            injection: FieldInjectionRule.IF_FIRST,
+            injection: FieldInjectionRule.FIRST_OF_FORM,
             action: DropdownAction.AUTOFILL,
         },
     ],
@@ -76,12 +76,12 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
         {
             type: FormField.EMAIL,
-            injection: FieldInjectionRule.ALWAYS,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_ALIAS,
         },
         {
             type: FormField.PASSWORD_NEW,
-            injection: FieldInjectionRule.ALWAYS,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
     ],
