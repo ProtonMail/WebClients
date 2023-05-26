@@ -74,7 +74,7 @@ const CountrySelect = ({
 
         setSelectedCountryOption(selectedOption);
 
-        onSelectCountry?.(value);
+        onSelectCountry?.(getCleanCountryCode(value));
     };
 
     return (
