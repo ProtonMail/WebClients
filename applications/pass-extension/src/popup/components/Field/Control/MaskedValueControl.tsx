@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { isEmptyString, replaceAllRetainFormat } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
 
 import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
@@ -36,9 +36,8 @@ export const MaskedValueControl: VFC<MaskedValueControlProps> = ({
         if (isEmpty) {
             return <div className="color-weak">{c('Info').t`None`}</div>;
         }
-
         if (masked) {
-            return replaceAllRetainFormat(value, '•');
+            return '••••••••••••••••';
         } else {
             return charsGroupedByColor ? getCharsGroupedByColor(value) : value;
         }
@@ -47,7 +46,6 @@ export const MaskedValueControl: VFC<MaskedValueControlProps> = ({
     return (
         <ClickToCopyValueControl value={value}>
             <ValueControl
-                interactive={!isEmpty}
                 actions={
                     !isEmpty
                         ? [
@@ -67,8 +65,9 @@ export const MaskedValueControl: VFC<MaskedValueControlProps> = ({
                 }
                 as={as}
                 icon={icon ?? 'key'}
+                interactive={!isEmpty}
                 label={label}
-                valueClassName={clsx((masked || charsGroupedByColor) && 'text-monospace')}
+                valueClassName={clsx(!isEmpty && (masked || charsGroupedByColor) && 'text-monospace')}
             >
                 {maskedValue}
             </ValueControl>
