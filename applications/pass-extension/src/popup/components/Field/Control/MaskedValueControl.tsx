@@ -6,37 +6,46 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString, replaceAllRetainFormat } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
 
 import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
+import type { ValueControlProps } from './ValueControl';
 import { ValueControl } from './ValueControl';
 
-type Props = {
+export type MaskedValueControlProps = {
+    as?: ValueControlProps['as'];
+    charsGroupedByColor?: boolean;
     icon?: IconName;
-    label?: string;
-    password: string;
+    label: string;
+    value: string;
 };
 
-export const PasswordValueControl: VFC<Props> = ({ icon, label, password }) => {
+export const MaskedValueControl: VFC<MaskedValueControlProps> = ({
+    as,
+    charsGroupedByColor = false,
+    icon,
+    label,
+    value,
+}) => {
     const [masked, setMasked] = useState(true);
-    const isEmpty = isEmptyString(password);
+    const isEmpty = isEmptyString(value);
 
-    const passwordDisplay = useMemo(() => {
+    const maskedValue = useMemo(() => {
         if (isEmpty) {
             return <div className="color-weak">{c('Info').t`None`}</div>;
         }
 
-        return (
-            <div className={clsx('text-monospace', masked && 'user-select-none')}>
-                {masked ? '••••••••••••••••••' : getCharsGroupedByColor(password)}
-            </div>
-        );
-    }, [masked, password]);
+        if (masked) {
+            return replaceAllRetainFormat(value, '•');
+        } else {
+            return charsGroupedByColor ? getCharsGroupedByColor(value) : value;
+        }
+    }, [masked, value]);
 
     return (
-        <ClickToCopyValueControl value={password}>
+        <ClickToCopyValueControl value={value}>
             <ValueControl
                 interactive={!isEmpty}
                 actions={
@@ -56,10 +65,12 @@ export const PasswordValueControl: VFC<Props> = ({ icon, label, password }) => {
                           ]
                         : []
                 }
+                as={as}
                 icon={icon ?? 'key'}
-                label={label ?? c('Label').t`Password`}
+                label={label}
+                valueClassName={clsx((masked || charsGroupedByColor) && 'text-monospace')}
             >
-                {passwordDisplay}
+                {maskedValue}
             </ValueControl>
         </ClickToCopyValueControl>
     );

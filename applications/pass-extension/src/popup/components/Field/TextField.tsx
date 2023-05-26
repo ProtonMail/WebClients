@@ -1,10 +1,11 @@
-import type { VFC } from 'react';
+import { type VFC, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
 import type { Input } from '@proton/atoms/Input';
 import { InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import { pipe } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
@@ -43,6 +44,22 @@ export const BaseTextField: VFC<BaseTextFieldProps> = ({
             {...props}
             onPaste={props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
             onKeyDown={props.maxLength ? maxLengthLimiter(props.maxLength, onKeyDown) : onKeyDown}
+        />
+    );
+};
+
+export const BaseMaskedTextField: VFC<BaseTextFieldProps> = ({ form, field, ...rest }) => {
+    const [masked, setMasked] = useState<boolean>(true);
+
+    return (
+        <BaseTextField
+            inputClassName={clsx(masked && 'text-monospace')}
+            onFocus={() => setMasked(false)}
+            onBlur={pipe(field.onBlur, () => setMasked(true))}
+            form={form}
+            field={field}
+            {...rest}
+            type={masked ? 'password' : 'text'}
         />
     );
 };

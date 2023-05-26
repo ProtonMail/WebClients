@@ -1,13 +1,11 @@
-import { type VFC, useCallback, useState } from 'react';
-
-import { pipe } from '@proton/pass/utils/fp';
+import { type VFC, useCallback } from 'react';
 
 import { PasswordGeneratorButton } from '../PasswordGenerator/PasswordGeneratorButton';
-import type { TextFieldProps } from './TextField';
-import { TextField } from './TextField';
+import { FieldBox } from './Layout/FieldBox';
+import { BaseMaskedTextField, type TextFieldProps } from './TextField';
 
-export const PasswordField: VFC<TextFieldProps> = ({ form, field, ...rest }) => {
-    const [masked, setMasked] = useState<boolean>(true);
+export const PasswordField: VFC<TextFieldProps> = (props) => {
+    const { actionsContainerClassName, className, icon, field, form, ...rest } = props;
 
     const handlePasswordGeneratorDone = useCallback(
         (password: string) => form.setFieldValue(field.name, password),
@@ -20,14 +18,13 @@ export const PasswordField: VFC<TextFieldProps> = ({ form, field, ...rest }) => 
         ) : undefined;
 
     return (
-        <TextField
-            onFocus={() => setMasked(false)}
-            onBlur={pipe(field.onBlur, () => setMasked(true))}
-            form={form}
-            field={field}
+        <FieldBox
             actions={actions}
-            {...rest}
-            type={masked ? 'password' : 'text'}
-        />
+            actionsContainerClassName={actionsContainerClassName}
+            className={className}
+            icon={icon}
+        >
+            <BaseMaskedTextField field={field} form={form} {...rest} />
+        </FieldBox>
     );
 };
