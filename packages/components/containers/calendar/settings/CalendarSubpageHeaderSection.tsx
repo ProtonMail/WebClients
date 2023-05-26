@@ -71,7 +71,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
                     {...holidaysCalendarModal}
                     calendar={calendar}
                     holidaysCalendars={holidaysCalendars}
-                    showNotification={false}
+                    type={CALENDAR_MODAL_TYPE.VISUAL}
                 />
             )}
             <div className="my-6 flex flex-justify-space-between flex-nowrap">

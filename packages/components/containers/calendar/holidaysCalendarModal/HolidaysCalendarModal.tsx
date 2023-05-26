@@ -8,6 +8,7 @@ import { CalendarBootstrap, HolidaysDirectoryCalendar, VisualCalendar } from '@p
 import { Form, Loader, ModalTwo as Modal, ModalProps, ModalTwoContent, ModalTwoFooter } from '../../../components';
 import { useGetCalendarBootstrap } from '../../../hooks';
 import GenericError from '../../error/GenericError';
+import { CALENDAR_MODAL_TYPE } from '../calendarModal';
 import { useGetHolidaysDirectory } from '../hooks/useHolidaysDirectory';
 import HolidaysCalendarModalWithDirectory from './HolidaysCalendarModalWithDirectory';
 
@@ -20,10 +21,15 @@ interface Props extends ModalProps {
      * Holidays calendars the user has already joined
      */
     holidaysCalendars: VisualCalendar[];
-    showNotification?: boolean;
+    type?: CALENDAR_MODAL_TYPE;
 }
 
-const HolidaysCalendarModal = ({ calendar, holidaysCalendars, showNotification = true, ...rest }: Props) => {
+const HolidaysCalendarModal = ({
+    calendar,
+    holidaysCalendars,
+    type = CALENDAR_MODAL_TYPE.COMPLETE,
+    ...rest
+}: Props) => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getHolidaysDirectory = useGetHolidaysDirectory();
 
@@ -85,7 +91,7 @@ const HolidaysCalendarModal = ({ calendar, holidaysCalendars, showNotification =
             calendarBootstrap={bootstrap}
             holidaysCalendars={holidaysCalendars}
             directory={directory}
-            showNotification={showNotification}
+            type={type}
             {...rest}
         />
     );
