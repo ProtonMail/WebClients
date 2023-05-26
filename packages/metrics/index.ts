@@ -18,6 +18,9 @@ import { WebCoreSignupReferralStepPlanSelectionTotal } from './types/web_core_si
 import { WebCoreSignupUpsellStepPlanSelectionTotal } from './types/web_core_signup_upsellStep_planSelection_total_v1.schema.d';
 import { WebCoreSignupVerificationStepVerificationTotal } from './types/web_core_signup_verificationStep_verification_total_v1.schema.d';
 
+export { default as observeApiError } from './lib/observeApiError';
+export * from './lib/observeApiError';
+
 class Metrics extends MetricsBase {
     public core_signup_pageLoad_total: Counter<WebCoreSignupPageLoadTotal>;
 
