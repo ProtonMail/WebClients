@@ -39,7 +39,7 @@ export const createDropdown = (): InjectedDropdown => {
             const {
                 value: height,
                 offset: { top: offsetTop },
-            } = getComputedHeight(st, { mode: boxed ? 'inner' : 'outer' });
+            } = getComputedHeight(st, { node: field.boxElement, mode: boxed ? 'inner' : 'outer' });
 
             const { left, top, width } = field.boxElement.getBoundingClientRect();
 
