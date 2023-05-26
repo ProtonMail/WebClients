@@ -54,6 +54,7 @@ import {
     useReadCalendarBootstrap,
 } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
+import { CALENDAR_MODAL_TYPE } from '../calendarModal';
 import { getDefaultModel } from '../calendarModal/calendarModalState';
 import Notifications from '../notifications/Notifications';
 
@@ -124,7 +125,7 @@ interface Props extends ModalProps {
      * Holidays calendars the user has already joined
      */
     holidaysCalendars: VisualCalendar[];
-    showNotification?: boolean;
+    type: CALENDAR_MODAL_TYPE;
 }
 
 const HolidaysCalendarModalWithDirectory = ({
@@ -132,7 +133,7 @@ const HolidaysCalendarModalWithDirectory = ({
     calendarBootstrap,
     directory,
     holidaysCalendars,
-    showNotification = true,
+    type,
     ...rest
 }: Props) => {
     const [addresses] = useAddresses();
@@ -326,39 +327,42 @@ const HolidaysCalendarModalWithDirectory = ({
 
     // translator: Hint text about the pre-selected country option in the holidays calendar modal
     const hintText = c('Info').t`Based on your time zone`;
+    const isComplete = type === CALENDAR_MODAL_TYPE.COMPLETE;
 
     return (
         <Modal as={Form} fullscreenOnMobile onSubmit={() => withLoading(handleSubmit())} size="large" {...rest}>
             <ModalHeader title={getModalTitle(isEdit)} subline={getModalSubline(isEdit)} />
             <ModalContent className="holidays-calendar-modal-content">
-                <CountrySelect
-                    options={filteredCalendars.map((calendar) => ({
-                        countryName: calendar.Country,
-                        countryCode: calendar.CountryCode,
-                    }))}
-                    preSelectedOption={
-                        canPreselect
-                            ? {
-                                  countryName: suggestedCalendar.Country,
-                                  countryCode: suggestedCalendar.CountryCode,
-                              }
-                            : undefined
-                    }
-                    value={
-                        selectedCalendar
-                            ? {
-                                  countryName: selectedCalendar.Country,
-                                  countryCode: selectedCalendar.CountryCode,
-                              }
-                            : undefined
-                    }
-                    preSelectedOptionDivider={hintText}
-                    onSelectCountry={handleSelectCountry}
-                    error={validator([getErrorText()])}
-                    hint={canShowHint ? hintText : undefined}
-                />
+                {isComplete && (
+                    <CountrySelect
+                        options={filteredCalendars.map((calendar) => ({
+                            countryName: calendar.Country,
+                            countryCode: calendar.CountryCode,
+                        }))}
+                        preSelectedOption={
+                            canPreselect
+                                ? {
+                                      countryName: suggestedCalendar.Country,
+                                      countryCode: suggestedCalendar.CountryCode,
+                                  }
+                                : undefined
+                        }
+                        value={
+                            selectedCalendar
+                                ? {
+                                      countryName: selectedCalendar.Country,
+                                      countryCode: selectedCalendar.CountryCode,
+                                  }
+                                : undefined
+                        }
+                        preSelectedOptionDivider={hintText}
+                        onSelectCountry={handleSelectCountry}
+                        error={validator([getErrorText()])}
+                        hint={canShowHint ? hintText : undefined}
+                    />
+                )}
 
-                {selectedCalendar && languageOptions.length > 1 && (
+                {selectedCalendar && languageOptions.length > 1 && isComplete && (
                     <InputField
                         id="languageSelect"
                         as={Select}
@@ -383,7 +387,7 @@ const HolidaysCalendarModalWithDirectory = ({
                     data-testid="holidays-calendar-modal:color-select"
                 />
 
-                {showNotification && (
+                {isComplete && (
                     <InputField
                         id="default-full-day-notification"
                         as={Notifications}
