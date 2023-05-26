@@ -5,7 +5,7 @@ import { ImportFileError } from '../../calendar/import/ImportFileError';
 import { CalendarCreateEventBlobData } from './Api';
 import { VisualCalendar } from './Calendar';
 import { SyncMultipleApiSuccessResponses } from './Event';
-import { VcalCalendarComponent, VcalVeventComponent } from './VcalModel';
+import { VcalVeventComponent } from './VcalModel';
 
 export enum IMPORT_STEPS {
     ATTACHING,
@@ -29,8 +29,6 @@ export interface ImportCalendarModel {
     calendar: VisualCalendar;
     loading: boolean;
 }
-
-export type VcalCalendarComponentOrError = VcalCalendarComponent | { error: Error };
 
 export interface EncryptedEvent {
     component: VcalVeventComponent;
