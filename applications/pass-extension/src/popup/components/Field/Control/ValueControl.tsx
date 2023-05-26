@@ -9,7 +9,7 @@ import './ValueControl.scss';
 
 type ContainerElement = 'div' | 'pre' | 'p' | 'ul';
 
-type Props = Omit<FieldBoxProps, 'icon'> & {
+export type ValueControlProps = Omit<FieldBoxProps, 'icon'> & {
     as?: ContainerElement;
     children: ReactNode;
     icon?: IconName;
@@ -18,9 +18,19 @@ type Props = Omit<FieldBoxProps, 'icon'> & {
     invalid?: boolean;
     loading?: boolean;
     extra?: ReactNode;
+    valueClassName?: string;
 };
 
-export const ValueControl: VFC<Props> = ({
+const getClassNameByElementType = (element: ContainerElement): string => {
+    switch (element) {
+        case 'pre':
+            return 'text-break';
+        default:
+            return 'text-ellipsis';
+    }
+};
+
+export const ValueControl: VFC<ValueControlProps> = ({
     actions,
     as = 'div',
     children,
@@ -30,6 +40,7 @@ export const ValueControl: VFC<Props> = ({
     invalid = false,
     loading = false,
     extra,
+    valueClassName,
 }) => {
     const ValueContainer = as;
 
@@ -40,7 +51,13 @@ export const ValueControl: VFC<Props> = ({
                 icon={icon && <Icon name={icon} size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}
             >
                 <div className="color-weak text-sm">{label}</div>
-                <ValueContainer className="pass-value-control--value m-0 p-0 text-ellipsis">
+                <ValueContainer
+                    className={clsx(
+                        'pass-value-control--value m-0 p-0 user-select-none',
+                        getClassNameByElementType(as),
+                        valueClassName
+                    )}
+                >
                     {loading ? <div className="pass-skeleton pass-skeleton--value" /> : children}
                 </ValueContainer>
                 {extra}

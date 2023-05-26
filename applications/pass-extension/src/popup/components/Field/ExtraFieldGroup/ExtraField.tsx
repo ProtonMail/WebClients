@@ -14,17 +14,20 @@ import type { FieldBoxProps } from '../Layout/FieldBox';
 import { FieldBox } from '../Layout/FieldBox';
 import type { BaseTextFieldProps } from '../TextField';
 import { BaseTextField } from '../TextField';
+import type { BaseTextAreaFieldProps } from '../TextareaField';
+import { BaseMaskedTextAreaField, BaseTextAreaField } from '../TextareaField';
 
 type ExtraFieldOption = {
     icon: IconName;
     label: string;
+    masked?: boolean;
     placeholder: string;
 };
 
 type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<ItemExtraField<T>>;
 
 export type ExtraFieldProps = FieldBoxProps &
-    Omit<BaseTextFieldProps, 'field' | 'placeholder' | 'error'> & {
+    Omit<BaseTextFieldProps & BaseTextAreaFieldProps, 'field' | 'placeholder' | 'error'> & {
         type: ExtraFieldType;
         field: FieldInputProps<ItemExtraField>;
         error?: ExtraFieldError<ExtraFieldType>;
@@ -47,6 +50,7 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
     hidden: {
         icon: 'eye-slash',
         label: c('Label').t`Hidden`,
+        masked: true,
         placeholder: c('Placeholder').t`Add hidden text`,
     },
 });
@@ -61,7 +65,7 @@ const DeleteButton: VFC<{ onDelete: () => void }> = ({ onDelete }) => (
 
 export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
     const { className, field, onDelete, type, error, touched, autoFocus, ...rest } = props;
-    const { icon, placeholder } = getExtraFieldOption(type);
+    const { icon, masked, placeholder } = getExtraFieldOption(type);
 
     const onChangeHandler =
         (merge: (evt: ChangeEvent<HTMLInputElement>, field: ItemExtraField) => ItemExtraField) =>
@@ -88,11 +92,12 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
                 switch (field.value.type) {
                     case 'text':
                     case 'hidden': {
+                        const FieldComponent = masked ? BaseMaskedTextAreaField : BaseTextAreaField;
                         const fieldError = error as ExtraFieldError<'text' | 'hidden'>;
                         return (
-                            <BaseTextField
+                            <FieldComponent
                                 placeholder={placeholder}
-                                error={touched && fieldError?.data?.content}
+                                error={touched && (error?.fieldName || fieldError?.data?.content)}
                                 field={{
                                     ...field,
                                     value: field.value.data.content,

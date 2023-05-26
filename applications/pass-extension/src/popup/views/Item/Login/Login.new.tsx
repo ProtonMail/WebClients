@@ -37,7 +37,7 @@ import {
     type LoginItemFormValues,
     type NewLoginItemFormValues,
     useLoginItemAliasModal,
-    validateNewLoginForm,
+    validateLoginForm,
 } from './Login.validation';
 
 const FORM_ID = 'new-login';
@@ -73,7 +73,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
 
     const form = useFormik<NewLoginItemFormValues>({
         initialValues,
-        initialErrors: validateNewLoginForm(initialValues),
+        initialErrors: validateLoginForm(initialValues),
         onSubmit: ({ name, note, username, password, shareId, totpUri, url, urls, extraFields, ...values }) => {
             const createTime = getEpoch();
             const optimisticId = uniqueId();
@@ -145,8 +145,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                 extraData,
             });
         },
-        validate: validateNewLoginForm,
-        validateOnChange: true,
+        validate: validateLoginForm,
+        validateOnBlur: true,
     });
 
     const { relatedAlias, usernameIsAlias, willCreateAlias, canCreateAlias, aliasModalOpen, setAliasModalOpen } =
