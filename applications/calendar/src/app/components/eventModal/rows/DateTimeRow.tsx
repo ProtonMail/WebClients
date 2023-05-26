@@ -112,6 +112,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             onChange={handleChangeStart}
                             date={startDateTime}
                             title={c('Title').t`Select the time zone for the event start time`}
+                            telemetrySource="event_start"
                         />
                     )}
                 </div>
@@ -161,6 +162,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             onChange={handleChangeEnd}
                             date={endDateTime}
                             title={c('Title').t`Select the time zone for the event end time`}
+                            telemetrySource="event_end"
                         />
                     )}
                 </div>
