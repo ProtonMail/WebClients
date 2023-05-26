@@ -73,11 +73,16 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
             props.form.setFieldValue(field.name, merge(evt, props.field.value));
         };
 
+    const fieldValueEmpty = Object.values(field.value.data).every((value) => !value);
+
     return (
         <FieldBox actions={[<DeleteButton onDelete={onDelete} />]} className={className} icon={icon}>
             <BaseTextField
-                className="field-two-label color-weak text-sm"
-                inputClassName={clsx(touched && error?.fieldName && 'placeholder-danger')}
+                inputClassName={clsx(
+                    'text-sm',
+                    !fieldValueEmpty && 'color-weak',
+                    touched && error?.fieldName && 'placeholder-danger'
+                )}
                 placeholder={c('Label').t`Label`}
                 autoFocus={autoFocus}
                 field={{
