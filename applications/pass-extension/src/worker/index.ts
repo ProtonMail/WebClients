@@ -1,13 +1,16 @@
 import createApi, { exposeApi } from '@proton/pass/api';
 import { getPersistedSession, setPersistedSession } from '@proton/pass/auth';
 import { generateKey } from '@proton/pass/crypto/utils';
+import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import * as config from '../app/config';
+import { createDevReloader } from '../shared/extension';
 import WorkerMessageBroker from './channel';
 import { createWorkerContext } from './context';
 
@@ -23,6 +26,22 @@ if (BUILD_TARGET === 'chrome') {
  * see: `IFrameContextProvider.tsx` */
 const EXTENSION_KEY = uint8ArrayToBase64String(generateKey());
 WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
+
+if (ENV === 'development') {
+    createDevReloader(async () => {
+        const tabs = await browser.tabs.query({});
+        const csUnloads = tabs
+            .filter((tab) => tab.id !== undefined)
+            .map((tab) =>
+                browser.tabs
+                    .sendMessage(tab.id!, backgroundMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }))
+                    .catch(noop)
+            );
+
+        await Promise.all(csUnloads);
+        setTimeout(() => browser.runtime.reload(), 250);
+    }, '[DEV] Reloading runtime');
+}
 
 sentry({
     config,
