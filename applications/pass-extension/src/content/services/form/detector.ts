@@ -23,10 +23,9 @@ const isFormChild = (forms: FormHandle[]) => (el: Node) =>
  * is visible and we have new untracked input elements in the
  * DOM. An input is considered "untracked" if it is not contained
  * in a tracked form & is not flagged by the {PROCESSED_INPUT_ATTR}
- * attribute */
+ * attribute - FIXME: better heuristics for document body visibility */
 const shouldRunDetection = (forms: FormHandle[]) => {
     if (!isVisible(document.body)) return false;
-
     const untrackedSelector = `input:not([${PROCESSED_INPUT_ATTR}="1"])`;
     const untracked = Array.from(document.querySelectorAll<HTMLInputElement>(untrackedSelector)).filter(isVisible);
     untracked.forEach((el) => el.setAttribute(PROCESSED_INPUT_ATTR, '1'));
