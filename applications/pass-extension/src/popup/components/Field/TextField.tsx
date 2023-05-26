@@ -6,6 +6,7 @@ import type { Input } from '@proton/atoms/Input';
 import { InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { pipe } from '@proton/pass/utils/fp';
+import { isEmptyString } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
@@ -50,10 +51,11 @@ export const BaseTextField: VFC<BaseTextFieldProps> = ({
 
 export const BaseMaskedTextField: VFC<BaseTextFieldProps> = ({ form, field, ...rest }) => {
     const [masked, setMasked] = useState<boolean>(true);
+    const isEmpty = isEmptyString(field.value);
 
     return (
         <BaseTextField
-            inputClassName={clsx(masked && 'text-monospace')}
+            inputClassName={clsx(!isEmpty && masked && 'text-monospace')}
             onFocus={() => setMasked(false)}
             onBlur={pipe(field.onBlur, () => setMasked(true))}
             form={form}
