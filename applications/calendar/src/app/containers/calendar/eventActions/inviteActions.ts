@@ -37,6 +37,24 @@ const {
     NONE,
 } = INVITE_ACTION_TYPES;
 
+type PmVcalVeventComponent = RequireSome<VcalVeventComponent, 'x-pm-shared-event-id' | 'x-pm-session-key'>;
+
+interface EventInviteIcsAndPmVevent {
+    pmVevent: PmVcalVeventComponent;
+    eventInviteIcs: string;
+}
+
+interface CancelEventInviteIcsAndPmCancelVevent {
+    pmCancelVevent: PmVcalVeventComponent;
+    cancelEventInviteIcs: string;
+}
+
+type CreateInvitesReturn =
+    | {}
+    | EventInviteIcsAndPmVevent
+    | CancelEventInviteIcsAndPmCancelVevent
+    | (EventInviteIcsAndPmVevent & CancelEventInviteIcsAndPmCancelVevent);
+
 const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     const normalizedNewEmails = (newVevent.attendee || []).map((attendee) =>
         canonicalizeEmailByGuess(getAttendeeEmail(attendee))
@@ -237,16 +255,82 @@ const getSafeSendTo = (attendees: VcalAttendeeProperty[], map: SimpleMap<SendPre
     }, []);
 };
 
+export const createIcsInvites = async ({
+    vevent,
+    cancelVevent,
+    eventAttendees,
+    removedAttendees,
+    sharedEventID,
+    sharedSessionKey,
+    prodId,
+    getVTimezonesMap,
+}: {
+    vevent: VcalVeventComponent;
+    cancelVevent?: VcalVeventComponent;
+    eventAttendees?: VcalAttendeeProperty[];
+    removedAttendees?: VcalAttendeeProperty[];
+    sharedEventID: string;
+    sharedSessionKey: string;
+    prodId: string;
+    getVTimezonesMap: GetVTimezonesMap;
+}): Promise<CreateInvitesReturn> => {
+    const sharedFields = {
+        'x-pm-shared-event-id': { value: sharedEventID },
+        'x-pm-session-key': { value: sharedSessionKey },
+    };
+
+    const [eventInviteIcsAndPmVevent, cancelEventInviteIcsAndPmVeVent] = await Promise.all([
+        eventAttendees?.length
+            ? (() => {
+                  const pmVevent = { ...vevent, ...sharedFields };
+
+                  return generateVtimezonesComponents(vevent, getVTimezonesMap).then((vtimezones) => ({
+                      pmVevent,
+                      eventInviteIcs: createInviteIcs({
+                          method: ICAL_METHOD.REQUEST,
+                          prodId,
+                          vevent: pmVevent,
+                          vtimezones,
+                          keepDtstamp: true,
+                      }),
+                  }));
+              })()
+            : undefined,
+        removedAttendees?.length
+            ? (() => {
+                  if (!cancelVevent) {
+                      throw new Error('Cannot generate cancel event invite');
+                  }
+
+                  const pmCancelVevent = { ...cancelVevent, ...sharedFields };
+                  return generateVtimezonesComponents(cancelVevent, getVTimezonesMap).then((vtimezones) => ({
+                      pmCancelVevent,
+                      cancelEventInviteIcs: createInviteIcs({
+                          method: ICAL_METHOD.CANCEL,
+                          prodId,
+                          vevent: pmCancelVevent,
+                          vtimezones,
+                          attendeesTo: removedAttendees,
+                          keepDtstamp: true,
+                      }),
+                  }));
+              })()
+            : undefined,
+    ]);
+
+    return { ...eventInviteIcsAndPmVevent, ...cancelEventInviteIcsAndPmVeVent };
+};
+
 export const getSendIcsAction =
     ({
         vevent,
         cancelVevent,
         inviteActions,
-        sendIcs,
         sendPreferencesMap,
         contactEmailsMap,
         prodId,
         inviteLocale,
+        sendIcs,
         getVTimezonesMap,
         relocalizeText,
         onRequestError,
@@ -256,13 +340,13 @@ export const getSendIcsAction =
         vevent?: VcalVeventComponent;
         cancelVevent?: VcalVeventComponent;
         inviteActions: InviteActions;
-        sendIcs: (params: SendIcsParams) => Promise<void>;
         sendPreferencesMap: SimpleMap<SendPreferences>;
         contactEmailsMap: SimpleMap<ContactEmail>;
-        getVTimezonesMap: GetVTimezonesMap;
-        relocalizeText: RelocalizeText;
         inviteLocale?: string;
         prodId: string;
+        getVTimezonesMap: GetVTimezonesMap;
+        relocalizeText: RelocalizeText;
+        sendIcs: (params: SendIcsParams) => Promise<void>;
         onRequestError: (e: Error) => void;
         onReplyError: (e: Error) => void;
         onCancelError: (e: Error) => void;
@@ -279,309 +363,19 @@ export const getSendIcsAction =
             addedAttendees,
             removedAttendees,
         } = inviteActions;
+
         if (!selfAddress) {
             throw new Error('Cannot reply without a self address');
         }
         if (!getIsAddressActive(selfAddress)) {
             throw new Error('Cannot send from an inactive address');
         }
+
         const addressID = selfAddress.ID;
         const from = { Address: selfAddress.Email, Name: selfAddress.DisplayName || selfAddress.Email };
         const hasAddedAttendees = !!addedAttendees?.length;
         const hasRemovedAttendees = !!removedAttendees?.length;
-        // Organizer actions
-        if (type === SEND_INVITATION) {
-            try {
-                if (!vevent) {
-                    throw new Error('Cannot build invite ics without the event component');
-                }
-                if (!sharedEventID || !sharedSessionKey) {
-                    throw new Error('Missing shared event data');
-                }
-                const { attendee: attendees } = vevent;
-                const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
-                const pmVevent = {
-                    ...vevent,
-                    'x-pm-shared-event-id': { value: sharedEventID },
-                    'x-pm-session-key': { value: sharedSessionKey },
-                };
-                const inviteIcs = createInviteIcs({
-                    method: ICAL_METHOD.REQUEST,
-                    prodId,
-                    vevent: pmVevent,
-                    vtimezones,
-                    keepDtstamp: true,
-                });
-                if (!hasAddedAttendees && !hasRemovedAttendees && attendees?.length) {
-                    // it's a new invitation
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
-                    await sendIcs({
-                        method: ICAL_METHOD.REQUEST,
-                        ics: inviteIcs,
-                        addressID,
-                        from,
-                        to: getSafeSendTo(attendees, sendPreferencesMap),
-                        subject: await relocalizeText({
-                            getLocalizedText: () => generateEmailSubject(params),
-                            newLocaleCode: inviteLocale,
-                            relocalizeDateFormat: true,
-                        }),
-                        plainTextBody: await relocalizeText({
-                            getLocalizedText: () => generateEmailBody(params),
-                            newLocaleCode: inviteLocale,
-                            relocalizeDateFormat: true,
-                        }),
-                        sendPreferencesMap,
-                        contactEmailsMap,
-                    });
-                } else {
-                    // it's an existing event, but we're just adding or removing participants
-                    const promises = [];
-                    if (addedAttendees?.length) {
-                        const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
-                        promises.push(
-                            sendIcs({
-                                method: ICAL_METHOD.REQUEST,
-                                ics: inviteIcs,
-                                addressID,
-                                from,
-                                to: getSafeSendTo(addedAttendees, sendPreferencesMap),
-                                subject: await relocalizeText({
-                                    getLocalizedText: () => generateEmailSubject(params),
-                                    newLocaleCode: inviteLocale,
-                                    relocalizeDateFormat: true,
-                                }),
-                                plainTextBody: await relocalizeText({
-                                    getLocalizedText: () => generateEmailBody(params),
-                                    newLocaleCode: inviteLocale,
-                                    relocalizeDateFormat: true,
-                                }),
-                                sendPreferencesMap,
-                                contactEmailsMap,
-                            })
-                        );
-                    }
-                    if (removedAttendees?.length) {
-                        if (!cancelVevent) {
-                            throw new Error('Cannot cancel invite ics without the old event component');
-                        }
-                        const pmCancelVevent = {
-                            ...cancelVevent,
-                            'x-pm-shared-event-id': { value: sharedEventID },
-                            'x-pm-session-key': { value: sharedSessionKey },
-                        };
-                        const cancelIcs = createInviteIcs({
-                            method: ICAL_METHOD.CANCEL,
-                            prodId,
-                            vevent: pmCancelVevent,
-                            attendeesTo: removedAttendees,
-                            vtimezones,
-                            keepDtstamp: true,
-                        });
-                        const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
-                        promises.push(
-                            sendIcs({
-                                method: ICAL_METHOD.CANCEL,
-                                ics: cancelIcs,
-                                addressID,
-                                from,
-                                to: getSafeSendTo(removedAttendees, sendPreferencesMap),
-                                subject: await relocalizeText({
-                                    getLocalizedText: () => generateEmailSubject(params),
-                                    newLocaleCode: inviteLocale,
-                                    relocalizeDateFormat: true,
-                                }),
-                                plainTextBody: await relocalizeText({
-                                    getLocalizedText: () => generateEmailBody(params),
-                                    newLocaleCode: inviteLocale,
-                                    relocalizeDateFormat: true,
-                                }),
-                                sendPreferencesMap,
-                                contactEmailsMap,
-                            })
-                        );
-                    }
-                    await Promise.all(promises);
-                }
-                return;
-            } catch (e: any) {
-                onRequestError(e);
-            }
-        }
-        if (type === SEND_UPDATE) {
-            try {
-                if (!vevent) {
-                    throw new Error('Cannot build invite ics without the event component');
-                }
-                const { attendee: attendees } = vevent;
-                if (!selfAddress) {
-                    throw new Error('Cannot build request ics without organizer and attendees');
-                }
-                if (!sharedEventID || !sharedSessionKey) {
-                    throw new Error('Missing shared event data');
-                }
-                const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
-                const pmVevent = {
-                    ...vevent,
-                    'x-pm-shared-event-id': { value: sharedEventID },
-                    'x-pm-session-key': { value: sharedSessionKey },
-                };
-                const inviteIcs = createInviteIcs({
-                    method: ICAL_METHOD.REQUEST,
-                    prodId,
-                    vevent: pmVevent,
-                    vtimezones,
-                    keepDtstamp: true,
-                });
-                const addedAttendeesEmails = (addedAttendees || []).map((attendee) => getAttendeeEmail(attendee));
-                const remainingAttendees = (attendees || []).filter(
-                    (attendee) => !addedAttendeesEmails.includes(getAttendeeEmail(attendee))
-                );
-                const promises = [];
-                if (remainingAttendees.length) {
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: false };
-                    promises.push(
-                        sendIcs({
-                            method: ICAL_METHOD.REQUEST,
-                            ics: inviteIcs,
-                            addressID,
-                            from,
-                            to: getSafeSendTo(remainingAttendees, sendPreferencesMap),
-                            subject: await relocalizeText({
-                                getLocalizedText: () => generateEmailSubject(params),
-                                newLocaleCode: inviteLocale,
-                                relocalizeDateFormat: true,
-                            }),
-                            plainTextBody: await relocalizeText({
-                                getLocalizedText: () => generateEmailBody(params),
-                                newLocaleCode: inviteLocale,
-                                relocalizeDateFormat: true,
-                            }),
-                            sendPreferencesMap,
-                            contactEmailsMap,
-                        })
-                    );
-                }
-                if (addedAttendees?.length) {
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
-                    promises.push(
-                        sendIcs({
-                            method: ICAL_METHOD.REQUEST,
-                            ics: inviteIcs,
-                            addressID,
-                            from,
-                            to: getSafeSendTo(addedAttendees, sendPreferencesMap),
-                            subject: await relocalizeText({
-                                getLocalizedText: () => generateEmailSubject(params),
-                                newLocaleCode: inviteLocale,
-                                relocalizeDateFormat: true,
-                            }),
-                            plainTextBody: await relocalizeText({
-                                getLocalizedText: () => generateEmailBody(params),
-                                newLocaleCode: inviteLocale,
-                                relocalizeDateFormat: true,
-                            }),
-                            sendPreferencesMap,
-                            contactEmailsMap,
-                        })
-                    );
-                }
-                if (removedAttendees?.length) {
-                    if (!cancelVevent) {
-                        throw new Error('Cannot cancel invite ics without the old event component');
-                    }
-                    const pmCancelVevent = {
-                        ...cancelVevent,
-                        'x-pm-shared-event-id': { value: sharedEventID },
-                        'x-pm-session-key': { value: sharedSessionKey },
-                    };
-                    const cancelIcs = createInviteIcs({
-                        method: ICAL_METHOD.CANCEL,
-                        prodId,
-                        vevent: pmCancelVevent,
-                        attendeesTo: removedAttendees,
-                        vtimezones,
-                        keepDtstamp: true,
-                    });
-                    const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
-                    promises.push(
-                        sendIcs({
-                            method: ICAL_METHOD.CANCEL,
-                            ics: cancelIcs,
-                            addressID,
-                            from,
-                            to: getSafeSendTo(removedAttendees, sendPreferencesMap),
-                            subject: await relocalizeText({
-                                getLocalizedText: () => generateEmailSubject(params),
-                                newLocaleCode: inviteLocale,
-                                relocalizeDateFormat: true,
-                            }),
-                            plainTextBody: await relocalizeText({
-                                getLocalizedText: () => generateEmailBody(params),
-                                newLocaleCode: inviteLocale,
-                                relocalizeDateFormat: true,
-                            }),
-                            sendPreferencesMap,
-                            contactEmailsMap,
-                        })
-                    );
-                }
-                await Promise.all(promises);
-                return;
-            } catch (e: any) {
-                onRequestError(e);
-            }
-        }
-        if (type === CANCEL_INVITATION) {
-            try {
-                if (!cancelVevent) {
-                    throw new Error('Cannot cancel invite ics without the old event component');
-                }
-                if (!sharedEventID) {
-                    throw new Error('Missing shared event id');
-                }
-                const { attendee: attendees } = cancelVevent;
-                if (!attendees?.length) {
-                    throw new Error('Cannot build cancel ics without attendees');
-                }
-                const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezonesMap);
-                // According to the RFC, the sequence must be incremented in this case
-                const pmCancelVevent = withIncrementedSequence({
-                    ...cancelVevent,
-                    'x-pm-shared-event-id': { value: sharedEventID },
-                });
-                const cancelIcs = createInviteIcs({
-                    method: ICAL_METHOD.CANCEL,
-                    prodId,
-                    vevent: pmCancelVevent,
-                    attendeesTo: attendees,
-                    vtimezones,
-                    keepDtstamp: true,
-                });
-                const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
-                await sendIcs({
-                    method: ICAL_METHOD.CANCEL,
-                    ics: cancelIcs,
-                    addressID,
-                    from,
-                    to: getSafeSendTo(attendees, sendPreferencesMap),
-                    subject: await relocalizeText({
-                        getLocalizedText: () => generateEmailSubject(params),
-                        newLocaleCode: inviteLocale,
-                        relocalizeDateFormat: true,
-                    }),
-                    plainTextBody: await relocalizeText({
-                        getLocalizedText: () => generateEmailBody(params),
-                        newLocaleCode: inviteLocale,
-                        relocalizeDateFormat: true,
-                    }),
-                    sendPreferencesMap,
-                    contactEmailsMap,
-                });
-            } catch (e: any) {
-                onCancelError(e);
-            }
-        }
+
         // Attendee action
         if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
             try {
@@ -642,9 +436,281 @@ export const getSendIcsAction =
                     sendPreferencesMap,
                     contactEmailsMap,
                 });
-                return;
             } catch (e: any) {
                 onReplyError(e);
+            } finally {
+                return;
             }
+        }
+
+        // Organizer cancelation
+        if (type === CANCEL_INVITATION) {
+            try {
+                if (!sharedEventID) {
+                    throw new Error('Missing shared event id');
+                }
+
+                if (!cancelVevent) {
+                    throw new Error('Cannot cancel invite ics without the old event component');
+                }
+
+                const { attendee: attendees } = cancelVevent;
+                if (!attendees?.length) {
+                    throw new Error('Cannot build cancel ics without attendees');
+                }
+                const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezonesMap);
+                // According to the RFC, the sequence must be incremented in this case
+                const pmCancelVevent = withIncrementedSequence({
+                    ...cancelVevent,
+                    'x-pm-shared-event-id': { value: sharedEventID },
+                });
+                const cancelIcs = createInviteIcs({
+                    method: ICAL_METHOD.CANCEL,
+                    prodId,
+                    vevent: pmCancelVevent,
+                    attendeesTo: attendees,
+                    vtimezones,
+                    keepDtstamp: true,
+                });
+                const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
+                await sendIcs({
+                    method: ICAL_METHOD.CANCEL,
+                    ics: cancelIcs,
+                    addressID,
+                    from,
+                    to: getSafeSendTo(attendees, sendPreferencesMap),
+                    subject: await relocalizeText({
+                        getLocalizedText: () => generateEmailSubject(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
+                    plainTextBody: await relocalizeText({
+                        getLocalizedText: () => generateEmailBody(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
+                    sendPreferencesMap,
+                    contactEmailsMap,
+                });
+            } catch (e: any) {
+                onCancelError(e);
+            } finally {
+                return;
+            }
+        }
+
+        try {
+            if (!sharedEventID) {
+                throw new Error('Missing shared event id');
+            }
+
+            if (!vevent) {
+                throw new Error('Cannot build invite ics without the event component');
+            }
+
+            if (!sharedSessionKey) {
+                throw new Error('Missing shared event data');
+            }
+
+            const { attendee: attendees } = vevent;
+
+            const eventInvites = await createIcsInvites({
+                vevent,
+                cancelVevent,
+                eventAttendees: [...(attendees ?? []), ...(addedAttendees ?? [])],
+                removedAttendees,
+                sharedEventID,
+                sharedSessionKey,
+                prodId,
+                getVTimezonesMap,
+            });
+
+            // Organizer actions
+            if (type === SEND_INVITATION) {
+                if (
+                    !hasAddedAttendees &&
+                    !hasRemovedAttendees &&
+                    attendees?.length &&
+                    'eventInviteIcs' in eventInvites // should be true if the other conditions in the if are fulfilled. Needed for TS
+                ) {
+                    const { pmVevent, eventInviteIcs } = eventInvites;
+
+                    // it's a new invitation
+                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                    await sendIcs({
+                        method: ICAL_METHOD.REQUEST,
+                        ics: eventInviteIcs,
+                        addressID,
+                        from,
+                        to: getSafeSendTo(attendees, sendPreferencesMap),
+                        subject: await relocalizeText({
+                            getLocalizedText: () => generateEmailSubject(params),
+                            newLocaleCode: inviteLocale,
+                            relocalizeDateFormat: true,
+                        }),
+                        plainTextBody: await relocalizeText({
+                            getLocalizedText: () => generateEmailBody(params),
+                            newLocaleCode: inviteLocale,
+                            relocalizeDateFormat: true,
+                        }),
+                        sendPreferencesMap,
+                        contactEmailsMap,
+                    });
+                } else {
+                    // it's an existing event, but we're just adding or removing participants
+                    const promises = [];
+                    if ('eventInviteIcs' in eventInvites) {
+                        const { pmVevent, eventInviteIcs } = eventInvites;
+
+                        const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                        promises.push(
+                            sendIcs({
+                                method: ICAL_METHOD.REQUEST,
+                                ics: eventInviteIcs,
+                                addressID,
+                                from,
+                                to: getSafeSendTo(addedAttendees as VcalAttendeeProperty[], sendPreferencesMap),
+                                subject: await relocalizeText({
+                                    getLocalizedText: () => generateEmailSubject(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
+                                plainTextBody: await relocalizeText({
+                                    getLocalizedText: () => generateEmailBody(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
+                                sendPreferencesMap,
+                                contactEmailsMap,
+                            })
+                        );
+                    }
+                    if ('cancelEventInviteIcs' in eventInvites) {
+                        const { pmCancelVevent, cancelEventInviteIcs } = eventInvites;
+
+                        const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
+                        promises.push(
+                            sendIcs({
+                                method: ICAL_METHOD.CANCEL,
+                                ics: cancelEventInviteIcs,
+                                addressID,
+                                from,
+                                to: getSafeSendTo(removedAttendees as VcalAttendeeProperty[], sendPreferencesMap),
+                                subject: await relocalizeText({
+                                    getLocalizedText: () => generateEmailSubject(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
+                                plainTextBody: await relocalizeText({
+                                    getLocalizedText: () => generateEmailBody(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
+                                sendPreferencesMap,
+                                contactEmailsMap,
+                            })
+                        );
+                    }
+                    await Promise.all(promises);
+                }
+                return;
+            }
+
+            if (type === SEND_UPDATE) {
+                const addedAttendeesEmails = (addedAttendees || []).map((attendee) => getAttendeeEmail(attendee));
+                const remainingAttendees = (attendees || []).filter(
+                    (attendee) => !addedAttendeesEmails.includes(getAttendeeEmail(attendee))
+                );
+                const promises = [];
+                if (
+                    remainingAttendees.length &&
+                    'eventInviteIcs' in eventInvites // should be true if remainingAttendees has >=1 item. Needed for TS
+                ) {
+                    const { pmVevent, eventInviteIcs } = eventInvites;
+
+                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: false };
+                    promises.push(
+                        sendIcs({
+                            method: ICAL_METHOD.REQUEST,
+                            ics: eventInviteIcs,
+                            addressID,
+                            from,
+                            to: getSafeSendTo(remainingAttendees, sendPreferencesMap),
+                            subject: await relocalizeText({
+                                getLocalizedText: () => generateEmailSubject(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            plainTextBody: await relocalizeText({
+                                getLocalizedText: () => generateEmailBody(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            sendPreferencesMap,
+                            contactEmailsMap,
+                        })
+                    );
+                }
+                if (
+                    addedAttendees?.length &&
+                    'eventInviteIcs' in eventInvites // should be true if addedAttendees has >=1 item. Needed for TS
+                ) {
+                    const { pmVevent, eventInviteIcs } = eventInvites;
+
+                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                    promises.push(
+                        sendIcs({
+                            method: ICAL_METHOD.REQUEST,
+                            ics: eventInviteIcs,
+                            addressID,
+                            from,
+                            to: getSafeSendTo(addedAttendees, sendPreferencesMap),
+                            subject: await relocalizeText({
+                                getLocalizedText: () => generateEmailSubject(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            plainTextBody: await relocalizeText({
+                                getLocalizedText: () => generateEmailBody(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            sendPreferencesMap,
+                            contactEmailsMap,
+                        })
+                    );
+                }
+                if ('cancelEventInviteIcs' in eventInvites) {
+                    const { cancelEventInviteIcs, pmCancelVevent } = eventInvites;
+
+                    const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
+                    promises.push(
+                        sendIcs({
+                            method: ICAL_METHOD.CANCEL,
+                            ics: cancelEventInviteIcs,
+                            addressID,
+                            from,
+                            // removed attendees check is made in `createIcsInvites`
+                            to: getSafeSendTo(removedAttendees as VcalAttendeeProperty[], sendPreferencesMap),
+                            subject: await relocalizeText({
+                                getLocalizedText: () => generateEmailSubject(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            plainTextBody: await relocalizeText({
+                                getLocalizedText: () => generateEmailBody(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            sendPreferencesMap,
+                            contactEmailsMap,
+                        })
+                    );
+                }
+                await Promise.all(promises);
+                return;
+            }
+        } catch (e: any) {
+            onRequestError(e);
         }
     };
