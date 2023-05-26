@@ -33,7 +33,8 @@ export const isValidURL = (maybeUrl: string, scheme?: string): { valid: boolean;
 
         return { valid: Boolean(RegexURL.test(urlObj.href)), url: urlObj.href };
     } catch (_) {
-        return scheme === undefined && !maybeUrl.startsWith('http://') && !maybeUrl.startsWith('https://')
+        const startsWithHttpProtocol = /^https?:\/\//.test(maybeUrl);
+        return scheme === undefined && !startsWithHttpProtocol
             ? isValidURL(maybeUrl, 'https://')
             : { valid: false, url: maybeUrl };
     }
