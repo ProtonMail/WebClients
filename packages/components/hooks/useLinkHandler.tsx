@@ -66,7 +66,7 @@ export const useLinkHandler: UseLinkHandler = (
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     const handleClick = useHandler(async (event: Event) => {
         const originalTarget = event.target as Element;
-        const target = originalTarget.closest('a');
+        const target = originalTarget.closest('a') || originalTarget.closest('area');
 
         if (!target) {
             return;
