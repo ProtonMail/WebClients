@@ -1,7 +1,9 @@
 import {
     CountryOption,
+    PRESELECTED_COUNTRY_OPTION_SUFFIX,
     divideSortedCountries,
     getAllDropdownOptions,
+    getCleanCountryCode,
     groupCountriesByStartingLetter,
 } from '@proton/components/components/country/helpers';
 
@@ -74,6 +76,16 @@ describe('CountrySelect helpers', () => {
             ];
 
             expect(getAllDropdownOptions(countryOptions, preSelectedOption, dividerText)).toEqual(expected);
+        });
+    });
+
+    describe('getCleanCountryCode', () => {
+        it('cleans the pre-selected suffix', () => {
+            expect(getCleanCountryCode(`fr${PRESELECTED_COUNTRY_OPTION_SUFFIX}`)).toEqual('fr');
+        });
+
+        it('returns the country code if no suffix is present', () => {
+            expect(getCleanCountryCode('ch')).toEqual('ch');
         });
     });
 });

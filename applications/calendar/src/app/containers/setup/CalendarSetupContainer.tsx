@@ -36,10 +36,10 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
     const cache = useCache();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
-    const getHolidaysDirectory = useGetHolidaysDirectory(true);
 
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
+    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
 
     const [error, setError] = useState();
 
@@ -69,8 +69,13 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
                     // we create a public holidays calendar. If we fail, we do it silently
                     try {
                         const directory = await getHolidaysDirectory();
-                        const languageTags = [languageCode, ...getBrowserLanguageTags()];
-                        const holidaysCalendar = getSuggestedHolidaysCalendar(directory, getTimezone(), languageTags);
+                        const languageTags = getBrowserLanguageTags();
+                        const holidaysCalendar = getSuggestedHolidaysCalendar(
+                            directory,
+                            getTimezone(),
+                            languageCode,
+                            languageTags
+                        );
                         if (!holidaysCalendar) {
                             throw new Error('Skip creating holidays calendar');
                         }

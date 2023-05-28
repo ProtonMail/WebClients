@@ -44,7 +44,8 @@ const MainContainer = () => {
         return view;
     });
 
-    useFeatures([FeatureCode.CalendarSharingEnabled]);
+    const { getFeature } = useFeatures([FeatureCode.CalendarSharingEnabled, FeatureCode.HolidaysCalendars]);
+    const holidaysCalendarsEnabled = getFeature(FeatureCode.HolidaysCalendars).feature?.Value === true;
 
     const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);
     const { ownedPersonalCalendars, holidaysCalendars } = useMemo(() => {
@@ -58,7 +59,7 @@ const MainContainer = () => {
         return ownedPersonalCalendars.length === 0;
     });
     const [hasHolidaysCalendarToGenerate, setHasHolidayCalendarToGenerate] = useState(() => {
-        return isWelcomeFlow && !holidaysCalendars.length;
+        return isWelcomeFlow && holidaysCalendarsEnabled && !holidaysCalendars.length && !ownedPersonalCalendars.length;
     });
 
     const [calendarsToUnlock, setCalendarsToUnlock] = useState(() => {
