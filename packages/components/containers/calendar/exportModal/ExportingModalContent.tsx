@@ -128,7 +128,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
             }
         };
 
-        process();
+        void process();
 
         return () => {
             abortController.abort();
