@@ -20,6 +20,7 @@ import {
     Tooltip,
     useApi,
     useEventManager,
+    useFeature,
     useLoading,
     useModalState,
     useSpotlightOnFeature,
@@ -75,6 +76,7 @@ const CalendarSidebar = ({
     const [{ isWelcomeFlow }] = useWelcomeFlags();
 
     const [loadingVisibility, withLoadingVisibility] = useLoading();
+    const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
     const [holidaysCalendarModal, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
@@ -219,12 +221,14 @@ const CalendarSidebar = ({
                                             >
                                                 {c('Action').t`Create calendar`}
                                             </DropdownMenuButton>
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={handleAddHolidaysCalendar}
-                                            >
-                                                {c('Action').t`Add public holidays`}
-                                            </DropdownMenuButton>
+                                            {holidaysCalendarsEnabled && (
+                                                <DropdownMenuButton
+                                                    className="text-left"
+                                                    onClick={handleAddHolidaysCalendar}
+                                                >
+                                                    {c('Action').t`Add public holidays`}
+                                                </DropdownMenuButton>
+                                            )}
                                             <DropdownMenuButton
                                                 className="text-left"
                                                 onClick={handleCreateSubscribedCalendar}
