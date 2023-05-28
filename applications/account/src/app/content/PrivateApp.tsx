@@ -1,4 +1,5 @@
 import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
+import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -56,14 +57,17 @@ interface Props {
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
+    const silentApi = getSilentApi(api);
+    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
 
     return (
         <StandardPrivateApp
             loader={<AccountLoaderPage />}
             onLogout={onLogout}
             onInit={() => {
-                // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
-                loadAllowedTimeZones(getSilentApi(api)).catch(noop);
+                // Intentionally ignoring to return promises to avoid blocking app start
+                loadAllowedTimeZones(silentApi).catch(noop);
+                getHolidaysDirectory().catch(noop);
             }}
             locales={locales}
             preloadModels={PRELOAD_MODELS}

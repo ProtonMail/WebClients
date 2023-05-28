@@ -47,6 +47,7 @@ interface Props {
     onSelectCountry?: (value: string) => void;
     error?: string;
     hint?: string;
+    disabled?: boolean;
 }
 
 const CountrySelect = ({
@@ -57,6 +58,7 @@ const CountrySelect = ({
     onSelectCountry,
     error,
     hint,
+    disabled,
 }: Props) => {
     const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
         value || preSelectedOption
@@ -74,7 +76,7 @@ const CountrySelect = ({
 
         setSelectedCountryOption(selectedOption);
 
-        onSelectCountry?.(value);
+        onSelectCountry?.(getCleanCountryCode(value));
     };
 
     return (
@@ -98,6 +100,7 @@ const CountrySelect = ({
             }
             hint={hint}
             data-testid="country-select"
+            disabled={disabled}
         >
             {dropdownOptions.map((option) => {
                 if (option.type === 'country') {
@@ -122,7 +125,7 @@ const CountrySelect = ({
                 } else {
                     return (
                         <Option key={generateUID('divider')} value={option.text} title={option.text} disabled>
-                            <span>{option.text}</span>
+                            <span className="text-sm">{option.text}</span>
                         </Option>
                     );
                 }

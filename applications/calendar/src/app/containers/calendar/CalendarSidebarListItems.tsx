@@ -64,7 +64,6 @@ import {
     CalendarUrlsResponse,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
-    HolidaysDirectoryCalendar,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -96,7 +95,6 @@ type ModalsMap = {
 export interface CalendarSidebarListItemsProps {
     calendars: VisualCalendar[] | SubscribedCalendar[];
     allCalendars: VisualCalendar[];
-    holidaysDirectory?: HolidaysDirectoryCalendar[];
     loadingVisibility?: boolean;
     loadingSubscriptionParameters?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
@@ -106,7 +104,6 @@ export interface CalendarSidebarListItemsProps {
 const CalendarSidebarListItems = ({
     calendars,
     allCalendars,
-    holidaysDirectory,
     loadingVisibility = false,
     loadingSubscriptionParameters = false,
     onChangeVisibility = noop,
@@ -133,7 +130,16 @@ const CalendarSidebarListItems = ({
     const [members, setMembers] = useState<CalendarMember[]>([]);
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
-    const [holidaysCalendarModalProps, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
+    const [
+        {
+            open: isHolidaysModalOpen,
+            onClose: onCloseHolidaysModal,
+            onExit: onExitHolidaysModal,
+            ...holidaysModalProps
+        },
+        setIsHolidaysCalendarModalOpen,
+        renderHolidaysCalendarModal,
+    ] = useModalState();
     const [
         { open: isImportModalOpen, onClose: onCloseImportModal, onExit: onExitImportModal, ...importModalProps },
         setIsImportModalOpen,
@@ -489,10 +495,15 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     type={calendarModalType}
                 />
             )}
-            {calendarModalCalendar && renderHolidaysCalendarModal && holidaysDirectory && (
+            {calendarModalCalendar && renderHolidaysCalendarModal && (
                 <HolidaysCalendarModal
-                    {...holidaysCalendarModalProps}
-                    directory={holidaysDirectory}
+                    {...holidaysModalProps}
+                    open={isHolidaysModalOpen}
+                    onClose={onCloseHolidaysModal}
+                    onExit={() => {
+                        setCalendarModalCalendar(null);
+                        onExitHolidaysModal?.();
+                    }}
                     calendar={calendarModalCalendar}
                     holidaysCalendars={holidaysCalendars}
                 />

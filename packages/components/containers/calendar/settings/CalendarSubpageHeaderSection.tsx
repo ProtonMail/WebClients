@@ -13,7 +13,7 @@ import {
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { HolidaysDirectoryCalendar, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '../calendarModal/CalendarModal';
@@ -24,19 +24,11 @@ interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     defaultCalendar?: VisualCalendar;
     holidaysCalendars: VisualCalendar[];
-    holidaysDirectory?: HolidaysDirectoryCalendar[];
     onEdit?: () => void;
     canEdit: boolean;
 }
 
-const CalendarSubpageHeaderSection = ({
-    calendar,
-    defaultCalendar,
-    holidaysCalendars,
-    holidaysDirectory,
-    onEdit,
-    canEdit,
-}: Props) => {
+const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalendars, onEdit, canEdit }: Props) => {
     const { contactEmailsMap } = useContactEmailsCache();
 
     const {
@@ -74,13 +66,12 @@ const CalendarSubpageHeaderSection = ({
                     {...calendarModal}
                 />
             )}
-            {renderHolidaysCalendarModal && holidaysDirectory && (
+            {renderHolidaysCalendarModal && (
                 <HolidaysCalendarModal
                     {...holidaysCalendarModal}
-                    directory={holidaysDirectory}
                     calendar={calendar}
                     holidaysCalendars={holidaysCalendars}
-                    showNotification={false}
+                    type={CALENDAR_MODAL_TYPE.VISUAL}
                 />
             )}
             <div className="my-6 flex flex-justify-space-between flex-nowrap">

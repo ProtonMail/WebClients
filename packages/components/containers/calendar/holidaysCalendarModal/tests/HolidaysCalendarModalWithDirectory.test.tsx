@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import { useCalendarUserSettings, useNotifications } from '@proton/components/hooks';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -9,6 +8,9 @@ import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
+
+import { CALENDAR_MODAL_TYPE } from '../../calendarModal';
+import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
 jest.mock('@proton/components/hooks/useAddresses', () => ({
     __esModule: true,
@@ -200,26 +202,26 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
     const setup = ({
         inputCalendar,
         holidaysCalendars = [],
-        showNotification,
+        type = CALENDAR_MODAL_TYPE.COMPLETE,
     }: {
         inputCalendar?: VisualCalendar;
         holidaysCalendars?: VisualCalendar[];
-        showNotification?: boolean;
+        type?: CALENDAR_MODAL_TYPE;
     }) => {
         render(
-            <HolidaysCalendarModal
-                directory={directory}
+            <HolidaysCalendarModalWithDirectory
                 calendar={inputCalendar}
+                directory={directory}
                 holidaysCalendars={holidaysCalendars}
-                showNotification={showNotification}
                 open
+                type={type}
             />
         );
     };
 
     describe('Add a holidays calendar', () => {
         describe('Pre-selected fields', () => {
-            it('should pre-select the default holidays calendar based on time zone', () => {
+            it('should pre-select the default holidays calendar based on time zone', async () => {
                 // Mock user's time zone to Paris
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Paris' }, false]);
@@ -423,7 +425,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
             setup({
                 holidaysCalendars,
                 inputCalendar: holidaysCalendars[0],
-                showNotification: false,
+                type: CALENDAR_MODAL_TYPE.COMPLETE,
             });
 
             // "Fake" wait because modal is on a loading state by default
@@ -450,10 +452,10 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
 
             // Add notification button is NOT visible in edit mode
             const notificationButton = screen.queryByTestId('add-notification');
-            expect(notificationButton).toBeNull();
+            expect(notificationButton).toBeInTheDocument();
         });
 
-        it('should display a message when user wants to change country to an already subscribed calendar', async () => {
+        it('should display a message when user wants to change country to an already added holidays calendar', async () => {
             // Mock user's time zone to Zurich
             // @ts-ignore
             useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Zurich' }, false]);
@@ -461,7 +463,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
             setup({
                 holidaysCalendars,
                 inputCalendar: holidaysCalendars[1],
-                showNotification: false,
+                type: CALENDAR_MODAL_TYPE.COMPLETE,
             });
 
             // "Fake" wait because modal is on a loading state by default
@@ -481,7 +483,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
 
             // Add notification button is NOT visible in edit mode
             const notificationButton = screen.queryByTestId('add-notification');
-            expect(notificationButton).toBeNull();
+            expect(notificationButton).toBeInTheDocument();
 
             // Open dropdown
             fireEvent.click(countryInput);
