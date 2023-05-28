@@ -30,9 +30,7 @@ import {
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
-import { useHolidaysDirectory } from '@proton/components/containers/calendar/hooks';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
-import useFeature from '@proton/components/hooks/useFeature';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -75,7 +73,6 @@ const CalendarSidebar = ({
     const api = useApi();
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [loadingVisibility, withLoadingVisibility] = useLoading();
 
@@ -83,9 +80,6 @@ const CalendarSidebar = ({
     const [holidaysCalendarModal, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
     const [limitReachedModal, setIsLimitReachedModalOpen, renderLimitReachedModal] = useModalState();
-
-    const [holidaysDirectory] = useHolidaysDirectory();
-    const canShowAddHolidaysCalendar = holidaysCalendarsEnabled && !!holidaysDirectory?.length;
 
     const headerRef = useRef(null);
     const dropdownRef = useRef(null);
@@ -197,11 +191,14 @@ const CalendarSidebar = ({
                                 type="new"
                                 content={
                                     <>
-                                        <div className="text-lg text-bold mb0-25">{c('Spotlight')
-                                            .t`Public holidays are here!`}</div>
-                                        <p className="m0">
-                                            {c('Spotlight').t`Add your country's public holidays to your calendar.`}
-                                        </p>
+                                        <div className="text-lg text-bold mb0-25">{
+                                            // translator: A holidays calendar includes bank holidays and observances
+                                            c('Spotlight').t`Public holidays are here!`
+                                        }</div>
+                                        <p className="m0">{
+                                            // translator: A holidays calendar includes bank holidays and observances
+                                            c('Spotlight').t`Add your country's public holidays to your calendar.`
+                                        }</p>
                                     </>
                                 }
                                 anchorRef={dropdownRef}
@@ -222,14 +219,12 @@ const CalendarSidebar = ({
                                             >
                                                 {c('Action').t`Create calendar`}
                                             </DropdownMenuButton>
-                                            {canShowAddHolidaysCalendar && (
-                                                <DropdownMenuButton
-                                                    className="text-left"
-                                                    onClick={handleAddHolidaysCalendar}
-                                                >
-                                                    {c('Action').t`Add public holidays`}
-                                                </DropdownMenuButton>
-                                            )}
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={handleAddHolidaysCalendar}
+                                            >
+                                                {c('Action').t`Add public holidays`}
+                                            </DropdownMenuButton>
                                             <DropdownMenuButton
                                                 className="text-left"
                                                 onClick={handleCreateSubscribedCalendar}
@@ -264,7 +259,6 @@ const CalendarSidebar = ({
                 <CalendarSidebarListItems
                     calendars={myCalendars}
                     allCalendars={calendars}
-                    holidaysDirectory={holidaysDirectory}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingVisibility(handleChangeVisibility(calendarID, value))
                     }
@@ -290,7 +284,6 @@ const CalendarSidebar = ({
                     loadingSubscriptionParameters={loadingSubscribedCalendars}
                     calendars={otherCalendars}
                     allCalendars={calendars}
-                    holidaysDirectory={holidaysDirectory}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingVisibility(handleChangeVisibility(calendarID, value))
                     }
@@ -321,12 +314,8 @@ const CalendarSidebar = ({
             {renderSubscribedCalendarModal && (
                 <SubscribedCalendarModal {...subscribedCalendarModal} onCreateCalendar={onCreateCalendar} />
             )}
-            {renderHolidaysCalendarModal && holidaysDirectory && (
-                <HolidaysCalendarModal
-                    {...holidaysCalendarModal}
-                    directory={holidaysDirectory}
-                    holidaysCalendars={holidaysCalendars}
-                />
+            {renderHolidaysCalendarModal && (
+                <HolidaysCalendarModal {...holidaysCalendarModal} holidaysCalendars={holidaysCalendars} />
             )}
             {renderLimitReachedModal && (
                 <CalendarLimitReachedModal {...limitReachedModal} isFreeUser={!user.hasPaidMail} />

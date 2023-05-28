@@ -7,6 +7,7 @@ import {
     useDrawer,
     useDrawerParent,
 } from '@proton/components';
+import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
@@ -46,6 +47,8 @@ interface Props {
 }
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
+    const silentApi = getSilentApi(api);
+    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
 
     useAppTitle('');
 
@@ -56,10 +59,14 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
         <StandardPrivateApp
             onLogout={onLogout}
             locales={locales}
-            onInit={() => loadAllowedTimeZones(getSilentApi(api)).catch(noop)}
+            onInit={() => {
+                // Intentionally ignoring to return promises to avoid blocking app start
+                loadAllowedTimeZones(silentApi).catch(noop);
+                getHolidaysDirectory().catch(noop);
+            }}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             preloadModels={PRELOAD_MODELS}
-            preloadFeatures={[FeatureCode.CalendarFetchMetadataOnly]}
+            preloadFeatures={[FeatureCode.CalendarFetchMetadataOnly, FeatureCode.HolidaysCalendars]}
             eventModels={EVENT_MODELS}
             loader={<LoaderPage />}
             hasPrivateMemberKeyGeneration
