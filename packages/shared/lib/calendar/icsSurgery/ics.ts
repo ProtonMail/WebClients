@@ -155,14 +155,24 @@ export const reformatDateTimes = (vcal = '') => {
         .join(separator);
 };
 
+export const pruneOrganizer = (vcal = '') => {
+    const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
+    const unfoldedVcal = unfoldLines(vcal, separator);
+    const unfoldedLines = unfoldedVcal.split(separator);
+
+    const withPrunedOrganizer = unfoldedLines.filter((line) => !line.startsWith('ORGANIZER')).join(separator);
+
+    return withPrunedOrganizer;
+};
+
 /**
  * Same as the parse function, but trying to recover performing ICS surgery directly on the vcal string
  */
 export const parseWithRecovery = (
     vcal: string,
-    retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true }
+    retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true, retryOrganizer: true }
 ): VcalCalendarComponent => {
-    const { retryLineBreaks, retryEnclosing, retryDateTimes } = retry;
+    const { retryLineBreaks, retryEnclosing, retryDateTimes, retryOrganizer } = retry;
     try {
         return parse(vcal);
     } catch (e: any) {
@@ -179,13 +189,21 @@ export const parseWithRecovery = (
             const reformattedVcal = reformatVcalEnclosing(vcal);
             return parseWithRecovery(reformattedVcal, { ...retry, retryEnclosing: false });
         }
-        // try to recover from
+        // try to recover from datetimes error
         const couldBeDateTimeError =
             message.includes('invalid date-time value') || message.includes('could not extract integer from');
         if (couldBeDateTimeError && retryDateTimes) {
             const reformattedVcal = reformatDateTimes(vcal);
             return parseWithRecovery(reformattedVcal, { ...retry, retryDateTimes: false });
         }
+
+        // try to recover from organizer error
+        const couldBeOrganizerError = message.includes("missing parameter value in 'organizer");
+        if (couldBeOrganizerError && retryOrganizer) {
+            const reformattedVcal = pruneOrganizer(vcal);
+            return parseWithRecovery(reformattedVcal, { ...retry, retryOrganizer: false });
+        }
+
         throw e;
     }
 };

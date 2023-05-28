@@ -457,4 +457,51 @@ END:VCALENDAR`);
             ],
         });
     });
+
+    it('should parse vevent with missing ORGANIZER value parameter', () => {
+        const result = parseWithRecovery(`
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+CLASS:PUBLIC
+DTSTART:20230304T080000Z
+DTSTAMP:20230112T203527Z
+DTEND:20230306T153000Z
+LOCATION:Sixt South Melbourne, 101-109 Thistlethwaite Street, 3205 South Melbourne, AU
+TRANSP:TRANSPARENT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Your rental car from Sixt
+UID:SIXT_XXXXXX
+END:VEVENT
+END:VCALENDAR
+        `);
+
+        // We can notice that the malformed ORGANIZER field has been omitted during the parsing
+        expect(result).toEqual({
+            component: 'vcalendar',
+            components: [
+                {
+                    component: 'vevent',
+                    class: { value: 'PUBLIC' },
+                    dtstart: {
+                        value: { year: 2023, month: 3, day: 4, hours: 8, minutes: 0, seconds: 0, isUTC: true },
+                    },
+                    dtstamp: {
+                        value: { year: 2023, month: 1, day: 12, hours: 20, minutes: 35, seconds: 27, isUTC: true },
+                    },
+                    dtend: {
+                        value: { year: 2023, month: 3, day: 6, hours: 15, minutes: 30, seconds: 0, isUTC: true },
+                    },
+                    location: {
+                        value: 'Sixt South Melbourne, 101-109 Thistlethwaite Street, 3205 South Melbourne, AU',
+                    },
+                    transp: { value: 'TRANSPARENT' },
+                    sequence: { value: 0 },
+                    status: { value: 'CONFIRMED' },
+                    summary: { value: 'Your rental car from Sixt' },
+                    uid: { value: 'SIXT_XXXXXX' },
+                },
+            ],
+        });
+    });
 });
