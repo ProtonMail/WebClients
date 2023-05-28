@@ -130,7 +130,16 @@ const CalendarSidebarListItems = ({
     const [members, setMembers] = useState<CalendarMember[]>([]);
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
-    const [holidaysCalendarModalProps, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
+    const [
+        {
+            open: isHolidaysModalOpen,
+            onClose: onCloseHolidaysModal,
+            onExit: onExitHolidaysModal,
+            ...holidaysModalProps
+        },
+        setIsHolidaysCalendarModalOpen,
+        renderHolidaysCalendarModal,
+    ] = useModalState();
     const [
         { open: isImportModalOpen, onClose: onCloseImportModal, onExit: onExitImportModal, ...importModalProps },
         setIsImportModalOpen,
@@ -488,7 +497,13 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
             )}
             {calendarModalCalendar && renderHolidaysCalendarModal && (
                 <HolidaysCalendarModal
-                    {...holidaysCalendarModalProps}
+                    {...holidaysModalProps}
+                    open={isHolidaysModalOpen}
+                    onClose={onCloseHolidaysModal}
+                    onExit={() => {
+                        setCalendarModalCalendar(null);
+                        onExitHolidaysModal?.();
+                    }}
                     calendar={calendarModalCalendar}
                     holidaysCalendars={holidaysCalendars}
                 />
