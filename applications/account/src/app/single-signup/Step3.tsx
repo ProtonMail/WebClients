@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,6 +17,7 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { useLoading, useNotifications } from '@proton/components/hooks';
+import metrics from '@proton/metrics';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
@@ -44,6 +45,10 @@ const CopyPasswordModal = ({
     onConfirm: () => void;
     children: ReactNode;
 }) => {
+    useEffect(() => {
+        metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'copy_password_modal' });
+    }, []);
+
     return (
         <ModalTwo size="small" {...rest}>
             <ModalTwoHeader title={c('Info').t`Your ${BRAND_NAME} password`} />
@@ -85,6 +90,19 @@ const Step3 = ({
     const [copied, setCopied] = useState(false);
 
     const { validator, onFormSubmit, reset } = useFormErrors();
+
+    useEffect(() => {
+        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'password_selection' });
+    }, []);
+
+    useEffect(() => {
+        if (setOwnPasswordMode) {
+            metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'own_password' });
+            return;
+        }
+
+        metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'given_password' });
+    }, [setOwnPasswordMode]);
 
     const content = (
         <div className="pl-4 py-1 mb-4 bg-weak rounded flex flex-justify-space-between flex-align-items-center">
