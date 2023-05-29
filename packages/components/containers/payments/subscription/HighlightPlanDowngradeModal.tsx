@@ -43,6 +43,8 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
     // translator: will be something like "Keep my Proton Plus account"
     const keepButtonString = c('new_plans: Action').t`Keep my ${currentPlanName} account`;
 
+    const shortPlanFeatures = shortPlan?.features?.filter((feature) => !feature.hideInDowngrade) || [];
+
     return (
         <Modal as={Form} onClose={onClose} size="large" {...rest}>
             <ModalHeader title={c('Title').t`Downgrade account`} />
@@ -59,13 +61,13 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
                     <SubscriptionCancelPlan
                         name={downgradedPlanName}
                         info={downgradedShortPlan?.description || ''}
-                        features={shortPlan?.features || []}
+                        features={shortPlanFeatures}
                         downgrade
                     />
                     <SubscriptionCancelPlan
                         name={currentPlanName}
                         info={shortPlan?.description || ''}
-                        features={shortPlan?.features || []}
+                        features={shortPlanFeatures}
                     />
                 </div>
             </ModalContent>
