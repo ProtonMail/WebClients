@@ -87,7 +87,7 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
 };
 
 const isNonEmptyImportPayload = (payload: ImportPayload) =>
-    payload.vaults.length > 0 && payload.vaults.every(({ items }) => items.length > 0);
+    payload.vaults.length > 0 && payload.vaults.some(({ items }) => items.length > 0);
 
 export const useImportForm = ({
     beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
