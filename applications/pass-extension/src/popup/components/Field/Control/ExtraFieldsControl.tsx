@@ -42,7 +42,7 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                 case 'text':
                     return (
                         <ClickToCopyValueControl key={key} value={data.content}>
-                            <ValueControl interactive icon={icon} label={fieldName}>
+                            <ValueControl interactive as="pre" icon={icon} label={fieldName}>
                                 {!isEmptyString(data.content) ? (
                                     data.content
                                 ) : (
