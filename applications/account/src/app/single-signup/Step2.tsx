@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import metrics from '@proton/metrics';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -19,6 +20,10 @@ const Step2 = ({ onSetup, product, img }: { onSetup: () => Promise<void>; produc
 
     useEffect(() => {
         onSetup().catch(noop);
+    }, []);
+
+    useEffect(() => {
+        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'account_setup' });
     }, []);
 
     return (
