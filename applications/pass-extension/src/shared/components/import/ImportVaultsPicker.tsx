@@ -92,14 +92,14 @@ const ImportVaultsPickerRef: ForwardRefRenderFunction<ImportVaultsPickerHandle, 
             <Form>
                 <Card rounded className="mb-4 text-sm">
                     {c('Info')
-                        .t`Select the destination vault for each vault you are trying to import. By default we will create a new vault for each imported vault.`}
+                        .t`Select the destination vault for each imported vault. By default a new vault will be created for each imported vault.`}
 
                     {needsUpgrade && (
                         <>
-                            <hr className="mt-6" />
+                            <hr className="mt-2 mb-2" />
                             {c('Warning')
-                                .t`Your current plan does not currently allow you to re-create all the vaults your are trying to import. Your items will be imported to your primary vault by default.`}{' '}
-                            <UpgradeButton inline />
+                                .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault by default. To import into multiple vaults upgrade your subscription.`}
+                            <UpgradeButton inline className="ml-1" />
                         </>
                     )}
                 </Card>
