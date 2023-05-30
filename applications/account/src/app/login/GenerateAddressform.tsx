@@ -7,7 +7,9 @@ import { InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
 import {
     requiredValidator,
     usernameCharacterValidator,
+    usernameEndCharacterValidator,
     usernameLengthValidator,
+    usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -44,8 +46,10 @@ const GenerateAddressform = ({ defaultUsername = '', onSubmit, availableDomains 
                 label={c('Label').t`Username`}
                 error={validator([
                     requiredValidator(trimmedUsername),
-                    usernameCharacterValidator(trimmedUsername),
                     usernameLengthValidator(trimmedUsername),
+                    usernameStartCharacterValidator(trimmedUsername),
+                    usernameEndCharacterValidator(trimmedUsername),
+                    usernameCharacterValidator(trimmedUsername),
                 ])}
                 autoFocus
                 disableChange={loading}

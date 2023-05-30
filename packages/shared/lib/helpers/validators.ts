@@ -8,6 +8,8 @@ export const REGEX_NUMBER = /^\d+$/;
 export const REGEX_BASE64_IMAGE = /^data:image\/(?:gif|png|jpeg|bmp|webp|svg\+xml|apng|tiff);base64/;
 export const REGEX_PUNYCODE = /^(http|https):\/\/xn--/;
 export const REGEX_USERNAME = /^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/;
+export const REGEX_USERNAME_START = /^[A-Za-z0-9]/;
+export const REGEX_USERNAME_END = /[A-Za-z0-9]$/;
 
 export const isEmpty = (value = '') => !value.length;
 export const maxLength = (value = '', limit = 0) => value.length <= limit;
