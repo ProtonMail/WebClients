@@ -36,7 +36,7 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
                         .t`Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.`}
                 </SettingsParagraph>
 
-                <div className="flex flex-rows flex-gap-1">
+                <div className="flex flex-rows gap-4">
                     {domains.length === 0 ? (
                         <Tooltip
                             title={c('familyOffer_2023:Family plan')

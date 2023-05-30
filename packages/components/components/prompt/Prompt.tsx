@@ -52,7 +52,7 @@ const Prompt = ({
 
         return (
             <div className="prompt-actions">
-                <div className="flex flex-column flex-gap-0-5">
+                <div className="flex flex-column gap-2">
                     {firstAction}
                     {secondAction}
                 </div>
@@ -69,7 +69,7 @@ const Prompt = ({
             <ModalTwoContent {...ModalContentProps}>{children}</ModalTwoContent>
             {actionsContent}
             <ModalTwoFooter className="prompt-footer">
-                <div className={clsx('flex flex-gap-0-5', footnote && 'pb-2')}>
+                <div className={clsx('flex gap-2', footnote && 'pb-2')}>
                     {firstButton}
                     {secondButton}
                     {thirdButton}
