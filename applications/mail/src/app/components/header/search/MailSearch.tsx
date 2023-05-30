@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Location } from 'history';
 
 import {
+    FeatureCode,
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
@@ -10,10 +11,9 @@ import {
     useLabels,
     useMailSettings,
     usePopperAnchor,
+    useProgressiveRollout,
     useToggle,
     useUser,
-    useFeature,
-    FeatureCode,
 } from '@proton/components';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
@@ -38,7 +38,7 @@ interface Props {
 
 const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
-    const { feature: esUserInterfaceFeature } = useFeature(FeatureCode.ESUserInterface);
+    const isESUserInterfaceAvailable = useProgressiveRollout(FeatureCode.ESUserInterface);
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
     const searchParams = extractSearchParameters(location);
     const [searchInputValue, setSearchInputValue] = useState(searchParams.keyword || '');
@@ -50,7 +50,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
     const { dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
-    const showEncryptedSearch = isEncryptedSearchAvailable(user, esUserInterfaceFeature);
+    const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
