@@ -1,23 +1,21 @@
+import { PropsWithChildren } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 interface Props {
-    error: string;
-    isCreationError: boolean;
     onClose?: () => void;
 }
 
-function ErrorState({ error, isCreationError, onClose }: Props) {
+function ErrorState({ children, onClose }: PropsWithChildren<Props>) {
     return (
         <>
             <ModalTwoHeader title={c('Title').t`Manage secure link`} />
             <ModalTwoContent>
                 <Alert className="mb-4" type="error">
-                    {isCreationError
-                        ? c('Info').t`Failed to generate a secure link. Try again later.`
-                        : c('Info').t`Failed to open a secure link. The reason is: ${error}`}
+                    {children}
                 </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>
