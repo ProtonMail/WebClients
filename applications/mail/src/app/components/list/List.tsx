@@ -349,7 +349,7 @@ const List = (
                             {useLoadingElement && loadingElement}
 
                             {!loading && total > 1 && (
-                                <div className="p1-5 flex flex-column flex-align-items-center">
+                                <div className="p-5 flex flex-column flex-align-items-center">
                                     <PaginationRow
                                         {...pagingHandlers}
                                         disabled={loading}

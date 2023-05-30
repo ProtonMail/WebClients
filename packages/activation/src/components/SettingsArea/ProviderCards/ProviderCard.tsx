@@ -49,7 +49,7 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
 
     return (
         <Button
-            className={clsx(['provider-card inline-flex flex-column py1-5', className])}
+            className={clsx(['provider-card inline-flex flex-column py-5', className])}
             aria-label={c('Import provider').t`Import from ${provider}`}
             {...rest}
         >

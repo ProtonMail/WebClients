@@ -12,7 +12,7 @@ const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
     /* eslint-disable-next-line deprecation/deprecation */
     <DialogModal intermediate onClose={onClose} {...rest}>
         <ModalCloseButton onClose={onClose} />
-        <InnerModal className="modal-content pb2 pt2 text-center">
+        <InnerModal className="modal-content py-7 text-center">
             <h1 className="mb-2 text-2xl text-bold">{c('Get started checklist instructions')
                 .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
             <div className="mb-8 ">{c('Get started checklist instructions').t`Available on iOS and Android.`}</div>

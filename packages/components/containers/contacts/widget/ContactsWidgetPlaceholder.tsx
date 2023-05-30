@@ -75,7 +75,7 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
     }
 
     return (
-        <div className="p2 text-center w100">
+        <div className="p-7 text-center w100">
             <IllustrationPlaceholder url={imgUrl}>
                 <div className="flex flex-align-items-center">{actions}</div>
             </IllustrationPlaceholder>

@@ -48,7 +48,7 @@ const ShareLinkSuccessModal = ({ link, onSubmit, onClose, accessLevel, isOpen }:
             <label htmlFor="your-calendar-url" className="sr-only">
                 {c('Label').t`Your calendar URL`}
             </label>
-            <div className="border p1 rounded text-break-all">{link}</div>
+            <div className="border p-4 rounded text-break-all">{link}</div>
         </BasicModal>
     );
 };
