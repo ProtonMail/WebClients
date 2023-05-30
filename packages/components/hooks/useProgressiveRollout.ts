@@ -10,10 +10,11 @@ const useProgressiveRollout = (code: FeatureCode) => {
     const [user] = useUser();
     const { feature } = useFeature(code);
     const threshold = feature?.Value >= 0 && feature?.Value <= 1 ? feature?.Value : 0;
+    const userID = user?.ID || '';
     const byte = useMemo(() => {
-        const byteCharacters = decodeBase64URL(user.ID);
+        const byteCharacters = decodeBase64URL(userID);
         return byteCharacters.charCodeAt(0);
-    }, [user.ID]);
+    }, [userID]);
 
     return byte < Math.floor(threshold * 255);
 };
