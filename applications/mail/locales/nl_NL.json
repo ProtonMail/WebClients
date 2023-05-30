@@ -1241,9 +1241,6 @@
       ]
     },
     "Animation": {
-      "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }s inbox"
-      ],
       "5 trackers removed": [
         "5 trackers verwijderd"
       ],
@@ -4125,12 +4122,6 @@
       ]
     },
     "Gmail forwarding": {
-      "Automatically forward": [
-        "Automatisch forwarden"
-      ],
-      "Gmail messages to your inbox": [
-        "Gmail berichten in uw postvak"
-      ],
       "Sign in with Google": [
         "Inloggen met Google"
       ]
@@ -4982,9 +4973,6 @@
       ],
       "From": [
         "Afzender"
-      ],
-      "Group assignment applied": [
-        "Groep toewijzing toegepast"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
@@ -7134,9 +7122,6 @@
       ],
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
-      ],
-      "Up to 500 GB of storage": [
-        "Tot wel 500 GB Opslag"
       ]
     },
     "new_plans: feature info": {
@@ -8333,10 +8318,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } lid",
-        "${ emailsCount } leden"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Sneltoetsen"
       ],
@@ -8410,9 +8391,6 @@
       ],
       "Confirm recipient address?": [
         "Adres van ontvanger bevestigen?"
-      ],
-      "Contact details": [
-        "Contactgegevens"
       ],
       "Contact Details": [
         "Contactgegevens"
@@ -8850,9 +8828,6 @@
       "Unsubscribe request sent": [
         "Verzoek tot uitschrijven gestuurd"
       ],
-      "Upgrade required": [
-        "Upgrade vereist"
-      ],
       "Verification error": [
         "Verificatiefout"
       ],
@@ -9062,9 +9037,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Deze actie is onomkeerbaar. Voer het woord ${ boldDanger } in het veld in om door te gaan."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Deze functie vereist een betaald ${ BRAND_NAME }-account"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw ${ BRAND_NAME } account. Overweeg om uw import aan te passen."

@@ -1228,9 +1228,6 @@
       ]
     },
     "Animation": {
-      "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay } 的收件箱"
-      ],
       "5 trackers removed": [
         "已移除 5 个跟踪器"
       ],
@@ -3617,6 +3614,31 @@
         "(无标题)"
       ]
     },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "与全家人共同守护网络隐私"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "${ planName } 现已推出"
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "意见反馈"
@@ -3853,14 +3875,6 @@
     "Get started checklist title": {
       "Get started": [
         "入门步骤"
-      ]
-    },
-    "Gmail forwarding": {
-      "Automatically forward": [
-        "自动转发"
-      ],
-      "Gmail messages to your inbox": [
-        "Gmail 邮件到您的邮箱"
       ]
     },
     "Group": {
@@ -4624,9 +4638,6 @@
       ],
       "From": [
         "发件人"
-      ],
-      "Group assignment applied": [
-        "已应用群组分配"
       ],
       "here": [
         "此处"
@@ -6678,9 +6689,6 @@
       ],
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
-      ],
-      "Up to 500 GB of storage": [
-        "最高 500 GB 存储空间"
       ]
     },
     "new_plans: label": {
@@ -7197,6 +7205,11 @@
         "从小到大"
       ]
     },
+    "specialoffer: Action": {
+      "Don't show this offer again": [
+        "不再显示此活动"
+      ]
+    },
     "Spotlight": {
       "Email tracking protection": [
         "邮件追踪防护"
@@ -7575,9 +7588,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } members": [
-        "${ emailsCount } 位成員"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } 快捷键"
       ],
@@ -7649,9 +7659,6 @@
       ],
       "Confirm recipient address?": [
         "确认收件人地址？"
-      ],
-      "Contact details": [
-        "联系人详情"
       ],
       "Contact Details": [
         "联系人详情"
@@ -8067,9 +8074,6 @@
       "Unsubscribe request sent": [
         "退订请求已发送"
       ],
-      "Upgrade required": [
-        "需要升级"
-      ],
       "Verification error": [
         "签名校验失败"
       ],
@@ -8274,9 +8278,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "此功能仅对 ${ BRAND_NAME } 付费账户开放"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"

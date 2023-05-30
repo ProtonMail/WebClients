@@ -2704,9 +2704,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obtén hasta ${ credits } créditos por invitar amigos a ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Si deseas dejar de correr la voz acerca de nuestra misión, considera actualizar tu plan y desbloquear más funciones premium."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
@@ -4094,61 +4091,61 @@
         "Añadir clave de seguridad"
       ],
       "Delete key": [
-        "Eliminar clave"
+        "Eliminar la llave"
       ]
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilita la opción 2FA con la clave de seguridad antes de desactivar la clave TOTP."
+        "Deshabilita la opción 2FA con la llave de seguridad antes de desactivar la clave TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Error al registrar tu clave de seguridad. Inténtalo nuevamente."
+        "Error al registrar tu llave de seguridad. Inténtalo nuevamente."
       ]
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Se ha deshabilitado 2FA con la clave de seguridad."
+        "Se ha deshabilitado 2FA con la llave de seguridad."
       ],
       "Add a name to identify your security key with.": [
-        "Añade un nombre para identificar tu clave de seguridad."
+        "Añade un nombre para identificar tu llave de seguridad."
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿Estás seguro de querer eliminar la clave de seguridad ${ name }?"
+        "¿Estás seguro de querer eliminar la llave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
-        "Inserta tu clave de seguridad en el puerto USB."
+        "Inserta tu llave de seguridad en el puerto USB."
       ],
       "Security key": [
         "Clave de seguridad"
       ],
       "Security key removed": [
-        "Clave de seguridad eliminada"
+        "Llave de seguridad eliminada"
       ],
       "Security key updated": [
-        "Clave de seguridad actualizada"
+        "Llave de seguridad actualizada"
       ],
       "This will delete all security keys linked to your account.": [
-        "Esto eliminará todas las claves de seguridad vinculadas a tu cuenta."
+        "Esto eliminará todas las llaves de seguridad vinculadas a tu cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Para activar la opción 2FA con una clave de seguridad, necesitas una aplicación de autenticación."
+        "Para activar la opción 2FA con una llave de seguridad, necesitas una aplicación de autenticación."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Verifica tu identidad con una clave física de seguridad U2F o FIDO2."
+        "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Tu clave de autenticación de dos factores está lista."
+        "Tu llave de autenticación de dos factores está lista."
       ]
     },
     "fido2: Label": {
       "Key name": [
-        "Nombre de la clave"
+        "Nombre de la llave"
       ],
       "Security key": [
         "Clave de seguridad"
@@ -4156,22 +4153,22 @@
     },
     "fido2: Title": {
       "Delete security key?": [
-        "¿Eliminar la clave de seguridad?"
+        "¿Eliminar la llave de seguridad?"
       ],
       "Disable 2FA via security key?": [
-        "¿Deshabilitar 2FA con una clave de seguridad?"
+        "¿Deshabilitar 2FA con una llave de seguridad?"
       ],
       "Name your security key": [
-        "Nombre de tu clave de seguridad"
+        "Nombre de tu llave de seguridad"
       ],
       "Register your security key": [
-        "Registra tu clave de seguridad."
+        "Registra tu llave de seguridad."
       ],
       "Registered security keys": [
-        "Claves de seguridad registradas"
+        "Llaves de seguridad registradas"
       ],
       "Security key registered": [
-        "Clave de seguridad registrada"
+        "Llave de seguridad registrada"
       ]
     },
     "file size format": {
@@ -4275,6 +4272,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Añade un filtro personalizado para realizar automáticamente ciertas acciones, como etiquetar o archivar mensajes."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Los correos desde direcciones marcadas como spam por ti o por ${ BRAND_NAME } irán a la carpeta de spam de los miembros de tu organización. Si deseas permitir correos de una de estas direcciones, márquala como \"no es spam\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Los correos desde direcciones marcadas como spam por ti o por ${ BRAND_NAME } irán a tu carpeta de spam. Si quieres permitir correos de una de estas direcciones, márcala como \"no es spam\"."
       ],
@@ -4363,6 +4363,9 @@
       "Best deal": [
         "Mejor oferta"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
       "Enter your email address": [
         "Introduce tu dirección de correo electrónico"
       ],
@@ -4374,9 +4377,6 @@
       ],
       "Get help": [
         "Obtener ayuda"
-      ],
-      "Holidays": [
-        "Días festivos"
       ],
       "Key type": [
         "Tipo de clave"
@@ -4396,6 +4396,9 @@
       "Permissions": [
         "Permisos"
       ],
+      "Protection": [
+        "Protección"
+      ],
       "Select your preferred method of payment": [
         "Selecciona tu método de pago preferido"
       ],
@@ -4404,9 +4407,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "Subscribed": [
-        "Suscrito"
       ],
       "Time": [
         "Hora"
@@ -4478,11 +4478,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Basado en tu zona horaria"
       ]
     },
     "Human verification method": {
@@ -4760,7 +4755,7 @@
     },
     "Import rollback status": {
       "Undo finished": [
-        "Deshacer finalizado"
+        "Finalización de cancelación"
       ],
       "Undo in progress": [
         "Deshacer en progreso"
@@ -4907,6 +4902,12 @@
       "${ numGroups } contact group": [
         "${ numGroups } grupo de contactos",
         "${ numGroups } grupos de contactos"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } es un programa de protección de cuentas desarrollado por ${ BRAND_NAME } para usuarios que necesitan seguridad máxima."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } está impulsado por sistemas de inteligencia artificial sofisticados y equipos de especialistas que trabajan 24 horas del día los 7 días de la semana para mitigar malos actores y las amenazas de seguridad."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta encontrada",
@@ -5406,6 +5407,9 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email address already used": [
+        "La dirección de correo electrónico ya está en uso."
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
@@ -5828,6 +5832,9 @@
       "old password": [
         "contraseña antigua"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Luego de habilitar ${ PROTON_SENTINEL_NAME }:"
+      ],
       "Once you reset your password:": [
         "Después de restablecer tu contraseña:"
       ],
@@ -6132,6 +6139,9 @@
       "support team": [
         "equipo de soporte"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Los eventos sospechosos serán desafiados por múltiples capas de defensa que ayudan a evitar que los atacantes secuestren tu cuenta."
+      ],
       "Swiss based": [
         "Con sede en Suiza"
       ],
@@ -6396,6 +6406,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Actualiza a una cuenta de pago para habilitar ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to unlock": [
         "Actualiza para desbloquear"
       ],
@@ -6419,6 +6432,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utiliza la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como contraseña SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Se recomienda a los usuarios con datos y comunicaciones sensibles, como periodistas o ejecutivos, habilitar ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -6586,9 +6602,6 @@
       "You can now close this window.": [
         "Puedes cerrar esta ventana."
       ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Ahora ya puedes recibir mensajes a tu dirección de correo electrónico @pm.me. Pasa a un plan de pago y manda tus correos electrónicos usando tu dirección @pm.me y además crear cuentas adicionales @pm.me."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
@@ -6662,6 +6675,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NO podrás descifrar los mensajes, archivos y otros datos cifrados con esta clave."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Recibirás soporte prioritario de especialistas capacitados en protección de cuentas. Para cualquier problema de seguridad de la cuenta, contáctanos ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Verás más detalles en el registro de seguridad de abajo de eventos importantes como intentos de inicio de sesión."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
@@ -6725,9 +6744,6 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -8183,6 +8199,9 @@
       "General": [
         "General"
       ],
+      "here": [
+        "aquí"
+      ],
       "How to unlock data": [
         "Cómo desbloquear datos"
       ],
@@ -8269,6 +8288,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Habilitar ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Habilitar registros avanzados"
       ],
@@ -8938,9 +8960,6 @@
       ],
       "Up to 5 forwarding mailboxes": [
         "Hasta 5 buzones de reenvío"
-      ],
-      "Up to 500 GB of storage": [
-        "Hasta 500 GB de almacenamiento"
       ],
       "User credential management": [
         "Administración de credenciales de usuario"
@@ -11573,6 +11592,9 @@
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
+      ],
+      "Organization filters": [
+        "Filtros de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"

@@ -52,6 +52,9 @@
       "Apply": [
         "Použít"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Na jednu skupinu kontaktů je povoleno maximálně 100 kontaktů"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -334,6 +337,12 @@
       "I have a question": [
         "Mám dotaz"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Obrázek nemohl být načten kvůli ochraně před sledovacími prvky."
+      ],
+      "Image will be loaded without a proxy": [
+        "Obrázek se načte bez proxy serveru"
+      ],
       "Import": [
         "Importovat"
       ],
@@ -354,6 +363,9 @@
       ],
       "Learn more": [
         "Více informací"
+      ],
+      "Load": [
+        "Načíst"
       ],
       "Load image": [
         "Načíst obrázek"
@@ -399,6 +411,9 @@
       ],
       "New": [
         "Nový"
+      ],
+      "New message": [
+        "Nová zpráva"
       ],
       "New upload": [
         "Nové nahrávání"
@@ -1807,6 +1822,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail a znaménko plus"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Šetřete čas odesláním e-mailů nebo pozvánek všem najednou, což je mimo jiné prémiová funkce. Navyšte tarif ještě dnes."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
@@ -1925,6 +1946,9 @@
       ],
       "Calendar limit reached": [
         "Dosažen limit kalendářů"
+      ],
+      "Cannot export this contact": [
+        "Nelze exportovat tento kontakt"
       ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
@@ -2480,7 +2504,7 @@
         "Rozumím"
       ],
       "Keep current plan": [
-        "Zůstat na aktuálním tarifu"
+        "Zachovat aktuální tarif"
       ],
       "Switch plans": [
         "Změnit tarif"
@@ -2517,7 +2541,7 @@
         "zákaznická podpora"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Pokud pozvánku přijmete, převedeme vás z aktuálního tarifu a na váš účet připíšeme nevyužitou částku."
+        "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
@@ -2553,7 +2577,7 @@
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Úspěšně jste se připojili k Rodinnému tarifu"
+        "Úspěšně jste se připojili k rodinnému tarifu"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
@@ -3322,6 +3346,12 @@
       "Conflict": [
         "Konflikt"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontakt byl přiřazen do skupiny ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Pokračujte v používání ${ DRIVE_APP_NAME } a odemkněte disk později"
       ],
@@ -3531,9 +3561,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
-      ],
-      "Group assignment applied": [
-        "Přiřazení skupiny bylo aplikováno"
       ],
       "here": [
         "zde"
@@ -3833,7 +3860,7 @@
         "Obnovit"
       ],
       "Restore is in progress. This can take a few seconds.": [
-        "Probíhá obnova. Může trvat několik sekund."
+        "Probíhá obnova. Toto může trvat několik sekund."
       ],
       "Restored files ${ formattedDate }": [
         "Soubory obnoveny ${ formattedDate }"
@@ -4134,6 +4161,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Ztratíte všechny neuložené změny."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Dosáhli jste maximálního počtu adres ve skupině (skupinách) kontaktů:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Dosáhli jste maximálního počtu adres ve skupině kontaktů."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -4865,9 +4898,54 @@
         "Název štítku"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Přepnout nebo přidat účet"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automaticky mazat zprávy ve spamu a koši"
+      ],
+      "Custom email domains": [
+        "Vlastní e-mailové domény"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email aliasy"
+      ],
+      "Schedule messages at any time": [
+        "Plánování zpráv v libovolném čase"
+      ],
+      "Search message content": [
+        "Hledat v obsahu zpráv"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Up to 15 email addresses": [
+        "Až 15 e-mailových adres"
+      ],
+      "Up to 3 TB of storage": [
+        "Až 3 TB úložného prostoru"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
       ]
     },
     "new_plans: label": {
@@ -5357,6 +5435,14 @@
         "Práce"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Oficiální"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Oficiální e-mail od ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Upozornění: služba bude znovu načtena, jakmile kliknete na tlačítko Uložit."
@@ -5621,7 +5707,7 @@
         "Ideální pro rodiny nebo malé týmy, každý může mít vlastní schránku a aliasy. Vyžaduje vlastní doménu."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu spustíme, a také včasný přístup k novým produktům a funkcím."
+        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu vydáme, včetně předběžného přístupu ke všem budoucím funkcím a produktům."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -5829,11 +5915,11 @@
       "# of downloads": [
         "počet stažení"
       ],
-      "${ emailsCount } member": [
-        "${ emailsCount } člen",
-        "${ emailsCount } členové",
-        "${ emailsCount } členů",
-        "${ emailsCount } členů"
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailová adresa",
+        "${ emailsCount } e-mailové adresy",
+        "${ emailsCount } e-mailových adres",
+        "${ emailsCount } e-mailových adres"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } nebyl stažen",
@@ -5889,6 +5975,9 @@
       "Browser might run out of memory": [
         "Prohlížeči možná dochází paměť"
       ],
+      "Cannot add more addresses": [
+        "Nelze přidávat další adresy"
+      ],
       "Cannot load link": [
         "Odkaz se nepodařilo načíst"
       ],
@@ -5903,9 +5992,6 @@
       ],
       "Computers": [
         "Počítače"
-      ],
-      "Contact details": [
-        "Detaily kontaktu"
       ],
       "Contact Details": [
         "Kontaktní údaje"
@@ -6273,8 +6359,8 @@
       "Type": [
         "Typ"
       ],
-      "Upgrade required": [
-        "Vyžadováno navýšení tarifu"
+      "Unlock contacts groups": [
+        "Odemknout skupiny kontaktů"
       ],
       "Uploaded": [
         "Nahráno"
@@ -6381,6 +6467,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
+      ],
+      "The image could not be loaded": [
+        "Obrázek se nepodařilo načíst"
+      ],
+      "The image could not be loaded using proxy": [
+        "Obrázek nelze načíst pomocí proxy serveru"
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
@@ -6497,9 +6589,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tato akce je nevratná. Pro pokračování prosím zadejte do políčka slovo ${ boldDanger }."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Tato funkce vyžaduje placený ${ BRAND_NAME } účet"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Tento import může překročit kapacitu úložiště, která je momentálně k dispozici ve vašem ${ BRAND_NAME } účtu. Zvažte prosím přizpůsobení importu."

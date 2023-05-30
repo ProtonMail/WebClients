@@ -53,6 +53,9 @@
       "activate": [
         "etkinleştir"
       ],
+      "Activate ${ Name }@pm.me": [
+        "${ Name }@pm.me adresini etkinleştir"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini etkinleştir"
       ],
@@ -654,7 +657,7 @@
         "Bu bildirimi kaldır"
       ],
       "Report a problem": [
-        "Bir sorun bildireceğim"
+        "Sorun bildirin"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Kodu gönder"
+      ],
+      "Send messages with @pm.me": [
+        "@pm.me adresinden ileti gönderin"
       ],
       "Send my username": [
         "Kullanıcı adımı gönder"
@@ -2704,9 +2710,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya çağırarak ${ credits } krediye kadar hediye kazanın."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Amacımızı duyurmayı bırakmak istiyorsanız, tarifenizi yükseltmeyi ve daha fazla ücretli özelliğe erişmeyi değerlendirin."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
@@ -2720,8 +2723,14 @@
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "${ MAIL_APP_NAME } alt bilgisini kaldırmak için tarifenizi yükseltin ve diğer ücretli özelliklere de erişin."
+      ],
       "Track the status and activity of your referrals.": [
         "Önerileri işlemlerinizi ve durumunu izleyin."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Tarifenizi yükselterek daha kısa e-posta adreslerine ve diğer ücretli özelliklere erişin."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Tarifenizi yükselterek gelen kutunuzu düzenleyecek sınırsız sayıda süzgeç gibi pek çok ücretli özelliğe erişin."
@@ -4275,6 +4284,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapmak için özel bir süzgeç ekleyin."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Siz ya da ${ BRAND_NAME } tarafından istenmeyen olarak işaretlenmiş adreslerden gelen e-postalar, kuruluş üyelerinizin istenmeyen kutusuna taşınır. Bu adreslerden birinden gelen e-postalara izin vermek istiyorsanız, \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Siz ya da ${ BRAND_NAME } tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen kutunuza taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
       ],
@@ -4363,6 +4375,9 @@
       "Best deal": [
         "En iyi teklif"
       ],
+      "Device": [
+        "Aygıt"
+      ],
       "Enter your email address": [
         "E-posta adresinizi yazın"
       ],
@@ -4374,9 +4389,6 @@
       ],
       "Get help": [
         "Yardım alın"
-      ],
-      "Holidays": [
-        "Tatiller"
       ],
       "Key type": [
         "Anahtar türü"
@@ -4396,6 +4408,9 @@
       "Permissions": [
         "İzinler"
       ],
+      "Protection": [
+        "Koruma"
+      ],
       "Select your preferred method of payment": [
         "Kullanmayı yeğlediğiniz ödeme yöntemini seçin"
       ],
@@ -4404,9 +4419,6 @@
       ],
       "Status": [
         "Durum"
-      ],
-      "Subscribed": [
-        "Abone olunmuş"
       ],
       "Time": [
         "Zaman"
@@ -4466,6 +4478,17 @@
         "Kod adı"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Tatiller"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Subscribed": [
+        "Abone olunmuş"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "En iyi ${ MAIL_APP_NAME } uygulamasını ücretsiz deneyin"
@@ -4478,11 +4501,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Saat diliminize göre"
       ]
     },
     "Human verification method": {
@@ -4908,6 +4926,12 @@
         "${ numGroups } kişi grubu",
         "${ numGroups } kişi grubu"
       ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME }, ${ BRAND_NAME } tarafından en yüksek düzeyde güvenlik isteyen kullanıcılar için geliştirilmiş bir hesap koruma yazılımıdır."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }, kötü niyetli kişi ve kuruluşlarla ve güvenlik tehditleriyle başa çıkmak için 7/24 çalışan gelişmiş yapay zeka sistemleri ve uzman ekipler tarafından desteklenmektedir."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } klasör bulundu",
         "${ providerFoldersNumLocalized } klasör bulundu"
@@ -5194,6 +5218,9 @@
       "Balance from your previous subscription": [
         "Önceki aboneliğinizden kalan tutar"
       ],
+      "Based on your time zone": [
+        "Saat diliminize göre"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
@@ -5405,6 +5432,9 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Email address already used": [
+        "E-posta adresi zaten kullanılmış"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
@@ -5828,6 +5858,9 @@
       "old password": [
         "eski parola"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "${ PROTON_SENTINEL_NAME } özelliğini etkinleştirdiğinizde:"
+      ],
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
       ],
@@ -6132,6 +6165,9 @@
       "support team": [
         "destek ekibi"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Şüpheli olaylara, saldırganların hesabınızı ele geçirmesini önleyecek çok sayıda savunma katmanı ile karşı koyabileceksiniz."
+      ],
       "Swiss based": [
         "İsviçre merkezli"
       ],
@@ -6396,6 +6432,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } özelliğini etkinleştirmek için ücretli bir tarifeye yükseltin."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
+      ],
       "Upgrade to unlock": [
         "Kilidi açmak için yükseltin"
       ],
@@ -6419,6 +6461,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "SMTP kullanıcı adı olarak seçilmiş dış hizmetin e-posta adresini ve SMTP parolası olarak oluşturulan kodu kullanın."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Gazeteciler veya yöneticiler gibi verileri ve iletişimleri üst düzeyde önemli olan kullanıcıların ${ PROTON_SENTINEL_NAME } özelliğini etkinleştirmeleri önemle önerilir."
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -6525,6 +6570,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilirsiniz"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Geçerli tarifeniz ile @pm.me adresiniz iletileri yalnızca alabilir. @pm.me kullanarak ileti göndermek ve başka adresler oluşturmak için tarifenizi yükseltin."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
@@ -6585,9 +6633,6 @@
       ],
       "You can now close this window.": [
         "Şimdi bu pencereyi kapatabilirsiniz."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Artık, @pm.me adresinizle iletiler alabilirsiniz. @pm.me adresinizi kullanarak e-posta göndermek ve başka @pm.me adresleri eklemek için ücretli bir tarifeye geçin."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -6662,6 +6707,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Yoksa bu anahtar ile şifrelenmiş iletilerin, dosyaların ve diğer verilerin şifresini çözemezsiniz."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Hesap koruma konusunda eğitim almış uzmanlardan öncelikli destek alabileceksiniz. Herhangi bir hesap güvenliği sorunu için lütfen bizimle ${ hereLink } görüşün."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Aşağıdaki güvenlik günlüğü kayıtlarında oturum açma girişimleri gibi önemli olaylar için daha fazla ayrıntı görebileceksiniz."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
@@ -6725,9 +6776,6 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
@@ -8183,6 +8231,9 @@
       "General": [
         "Genel"
       ],
+      "here": [
+        "buradan"
+      ],
       "How to unlock data": [
         "Verilerin kilidi nasıl açılır"
       ],
@@ -8269,6 +8320,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } özelliğini etkinleştir"
+      ],
       "Enable advanced logs": [
         "Gelişmiş günlükler tutulsun"
       ],
@@ -8936,11 +8990,11 @@
       "Up to 15 email addresses": [
         "15 e-posta adresine kadar"
       ],
+      "Up to 3 TB of storage": [
+        "3 TB depolama alanına kadar"
+      ],
       "Up to 5 forwarding mailboxes": [
         "5 taneye kadar iletme e-posta kutusu"
-      ],
-      "Up to 500 GB of storage": [
-        "500 GB depolama alanına kadar"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -8956,11 +9010,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi özel etki alanınızla e-posta adresleri oluşturun"
       ]
     },
     "new_plans: heading": {
@@ -9398,6 +9458,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Tatil takvimi eklenemedi"
+      ],
       "Calendar added": [
         "Takvim eklendi"
       ]
@@ -11070,6 +11133,9 @@
       "Action": [
         "İşlem"
       ],
+      "Activate @pm.me": [
+        "@pm.me adresini etkinleştir"
+      ],
       "Activate account and generate keys": [
         "Hesabı etkinleştir ve anahtarları üret"
       ],
@@ -11574,6 +11640,9 @@
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
       ],
+      "Organization filters": [
+        "Kuruluş süzgeçleri"
+      ],
       "Organization name": [
         "Kuruluş adı"
       ],
@@ -11650,7 +11719,7 @@
         "Kullanıcı kaldırılsın mı?"
       ],
       "Report a problem": [
-        "Bir sorun bildirin"
+        "Sorun bildirin"
       ],
       "Request new code": [
         "Yeni kod iste"

@@ -835,6 +835,9 @@
       "Reset to default": [
         "Alapbeállítások visszaállítása"
       ],
+      "Restore": [
+        "Helyreállítás"
+      ],
       "Resume": [
         "Folytatás"
       ],
@@ -1312,7 +1315,7 @@
         "Probléma saját domain névvel"
       ],
       "Drive problem": [
-        "ProtonDrive probléma"
+        "Drive probléma"
       ],
       "Feature request": [
         "Ötlet, javaslat"
@@ -1331,6 +1334,9 @@
       ],
       "Other": [
         "Egyéb"
+      ],
+      "Pass problem": [
+        "Pass probléma"
       ],
       "Payments problem": [
         "Fizetéssel kapcsolatos probléma"
@@ -2827,6 +2833,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } a beállításoknál."
       ],
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Törölje automatikusan a 30 napnál régebben a lomtárba vagy a levélszemét mappába került leveleket. Ehhez a lehetőséghez és további előnyökhöz, váltson nagyobb csomagra."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
       ],
@@ -2855,12 +2864,21 @@
       "No labels": [
         "Nincsenek címkék"
       ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail logó és egy plusz jel"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Használja az üzenet ütemezési lehetőséget és tegyen szert további előnyökre, nagyobb csomagra váltással."
+      ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "A csomagváltással korlátlan számú szűrőt használhat az üzenetek rendezésére és további prémium funkciókat érhet el."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "A csomagváltással korlátlan számú mappát, címkét és további prémium funkciókat érhet el."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
@@ -3307,6 +3325,9 @@
         "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
         "Néhány csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG."
       ],
+      "The email addresses do not match": [
+        "Az e-mail címek nem egyeznek"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Ez a mappanév érvénytelen. Adjon meg egy másik nevet."
       ],
@@ -3609,8 +3630,14 @@
       "Oops, something went wrong": [
         "Hoppá, valami hiba történt"
       ],
+      "Please refresh the page or try again later.": [
+        "Frissítse az oldalt vagy próbálja újra később."
+      ],
       "Something went wrong": [
         "Hiba történt"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Még nincs névjegy. Hozzon létre egyet"
@@ -3716,7 +3743,7 @@
         "Címek kezelése."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Meglévő csomaggal rendelkező felhasználók nem csatlakozhatnak csoportos előfizetéshez."
+        "Tagokkal rendelkező csomagok tulajdonosai nem csatlakozhatnak másik csoportos előfizetéshez."
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "A Visionary és a családi csomagok jelenleg nem támogatják az egész életre szóló fiókokat."
@@ -4584,6 +4611,9 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "A 30 napnál régebben a lomtárba vagy a levélszemét mappába helyezett üzenetek automatikus törlése."
+      ],
       "Background color": [
         "Háttérszín"
       ],
@@ -4823,9 +4853,6 @@
       "From": [
         "Forrás:"
       ],
-      "Group assignment applied": [
-        "Csoport hozzárendelés alkalmazva"
-      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Mellékletek száma: ${ numAttachments } (${ numAttachmentsSize })",
         "Mellékletek száma: ${ numAttachments } (${ numAttachmentsSize })"
@@ -4987,6 +5014,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Az üzenet holnap, ${ formattedTime }-kor lesz elküldve"
       ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "A 30 napnál régebben lomtárba vagy a levélszemét mappába került üzenetek automatikusan törlésre kerülnek."
+      ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
@@ -5141,6 +5171,9 @@
       "Request read receipt": [
         "Olvasási visszaigazolás igénylése"
       ],
+      "Restore": [
+        "Helyreállítás"
+      ],
       "Right to Left": [
         "Jobbról balra"
       ],
@@ -5218,6 +5251,9 @@
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
+      ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "A SimpleLogin egy ${ BRAND_NAME } szolgáltatás és a ${ BRAND_NAME_TWO } fiókja tartalmazza a Hide My Email címeit. E-mail címének elrejtéséhez, nyissa meg a SimpleLogin oldalt és hozza létre első alternatív e-mail címeit."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "A SimpleLogin egy egyszerű lehetőséget biztosít arra, hogy nem teljesen megbízhatónak ítélt oldalakon, a saját e-mail címének felfedése nélkül regisztráljon."
@@ -5402,6 +5438,9 @@
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
       ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Az adatok helyreállításához újra aktiválnia kell az adatok létrehozásakor használt fiók titkosítási kulcsot. Ehhez az szükséges, hogy emlékezzen az adott titkosítás kulcs létrehozásakor használt jelszavára."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "A levelezési listáról való leiratkozáshoz egy e-mail kerül elküldésre a ${ boldFrom } címről, a hírlevél feladójának beállításai szerinti alábbi adatokkal:"
       ],
@@ -5440,6 +5479,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
+      ],
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "Váltson nagyobb csomagra a 30 napja lomtárban vagy a levélszemét mappában lévő üzenetek automatikus törléséhez."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
@@ -6956,9 +6998,6 @@
       ],
       "Up to 15 email addresses": [
         "Akár 15 e-mail cím"
-      ],
-      "Up to 500 GB of storage": [
-        "500 GB tárhely"
       ]
     },
     "new_plans: feature info": {
@@ -7506,6 +7545,49 @@
         "Kisebbek előre"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Bezárás"
+      ],
+      "Don't show this offer again": [
+        "Ne jelenjen meg többet ez az ajánlat"
+      ],
+      "Special offer": [
+        "Kivételes ajánlat"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
+      ],
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } hónap INGYEN",
+        "${ n } hónap INGYEN"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Előfizetési csomagok megnyitása"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "Spotlight": {
       "Email tracking protection": [
         "E-mail követési védelem"
@@ -7917,10 +7999,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } tag",
-        "${ emailsCount } tag"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } gyorsbillentyűk"
       ],
@@ -7983,6 +8061,9 @@
       "Change my answer": [
         "Válasz megváltoztatása"
       ],
+      "Clear out the junk": [
+        "Szabaduljon meg a szeméttől"
+      ],
       "Clearing data": [
         "Adatok törlése"
       ],
@@ -7991,9 +8072,6 @@
       ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
-      ],
-      "Contact details": [
-        "Névjegy részletei"
       ],
       "Contact Details": [
         "Névjegy részletei"
@@ -8175,6 +8253,9 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
+      "Keep your inbox organized": [
+        "Tartsa rendezetten a fiókját"
+      ],
       "Label as": [
         "Címkézés"
       ],
@@ -8286,6 +8367,9 @@
       "Phone numbers": [
         "Telefonszámok"
       ],
+      "Preview": [
+        "Előnézet"
+      ],
       "Previous conversation": [
         "Előző beszélgetés"
       ],
@@ -8324,6 +8408,9 @@
       ],
       "Request new code": [
         "Új kód kérése"
+      ],
+      "Save time with email filters": [
+        "Takarítson meg időt az e-mail szűrőkkel"
       ],
       "Schedule send": [
         "Ütemezett küldés"
@@ -8421,9 +8508,6 @@
       ],
       "Unsubscribe request sent": [
         "Leiratkozási kérés elküldve"
-      ],
-      "Upgrade required": [
-        "Nagyobb csomag szükséges"
       ],
       "Verification error": [
         "Ellenőrzési hiba"
@@ -8634,9 +8718,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Ehhez a lehetőséghez előfizetéses ${ BRAND_NAME } fiók szükséges"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Az importálás helyigénye meghaladhatja a ${ BRAND_NAME } fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."

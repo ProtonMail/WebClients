@@ -53,6 +53,9 @@
       "activate": [
         "activer"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Activer ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Envoyer le code"
+      ],
+      "Send messages with @pm.me": [
+        "Envoyer des messages avec @pm.me"
       ],
       "Send my username": [
         "Envoyer mon nom d'utilisateur"
@@ -2704,9 +2710,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Recevez jusqu'à ${ credits } de crédits en invitant vos amis à rejoindre ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Pour supprimer le pied de page Proton Mail ou le remplacer par un pied de page personnalisé, passez à l'abonnement supérieur qui offre de nombreuses fonctionnalités supplémentaires."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
@@ -2720,8 +2723,14 @@
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Pour supprimer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement et débloquez encore plus de fonctionnalité premium."
+      ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Débloquez des adresses e-mail plus courtes et d'autres fonctionnalités premium en changeant d'abonnement."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boite de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
@@ -3777,7 +3786,7 @@
         "Inviter un utilisateur ${ BRAND_NAME } déjà existant"
       ],
       "Invite member to your family": [
-        "Inviter un membre de votre famille"
+        "Invitez des membres à rejoindre votre famille"
       ],
       "Keep current plan": [
         "Garder l'abonnement actuel"
@@ -4381,9 +4390,6 @@
       "Get help": [
         "Obtenir de l'aide"
       ],
-      "Holidays": [
-        "Jours fériés"
-      ],
       "Key type": [
         "Type de clé"
       ],
@@ -4413,9 +4419,6 @@
       ],
       "Status": [
         "État"
-      ],
-      "Subscribed": [
-        "Abonné"
       ],
       "Time": [
         "Date et heure"
@@ -4475,6 +4478,17 @@
         "Nom du jeton"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Jours fériés"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Subscribed": [
+        "Abonnement"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Essayez gratuitement le meilleur de ${ MAIL_APP_NAME }"
@@ -4487,11 +4501,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Selon votre fuseau horaire"
       ]
     },
     "Human verification method": {
@@ -4916,6 +4925,12 @@
       "${ numGroups } contact group": [
         "${ numGroups } groupe de contacts",
         "${ numGroups } groupes de contacts"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } est un programme de protection de compte développé par ${ BRAND_NAME } pour les utilisateurs ayant besoin d'une sécurité maximale."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } bénéficie de systèmes d'IA sophistiqués et d'équipes de spécialistes qui travaillent 24 heures sur 24 et 7 jours sur 7 pour neutraliser les acteurs malveillants et les menaces de sécurité."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
@@ -5415,6 +5430,9 @@
       "Email address": [
         "Adresse e-mail"
       ],
+      "Email address already used": [
+        "L'adresse e-mail est déjà utilisée."
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
@@ -5838,7 +5856,7 @@
         "ancien mot de passe"
       ],
       "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Une fois que vous avez activé ${ PROTON_SENTINEL_NAME }:"
+        "Une fois que vous avez activé ${ PROTON_SENTINEL_NAME } :"
       ],
       "Once you reset your password:": [
         "Une fois votre mot de passe réinitialisé :"
@@ -6145,7 +6163,7 @@
         "équipe support"
       ],
       "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Les événements suspects seront mis au défi par plusieurs couches de défense qui aident à prévenir les pirates de détourner votre compte"
+        "Les événements suspects seront soumis à plusieurs niveaux de défense pour empêcher les attaquants de pirater votre compte."
       ],
       "Swiss based": [
         "Basé en Suisse"
@@ -6414,6 +6432,9 @@
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
         "Passez à un compte payant pour activer ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager (« pm » pour « ${ MAIL_APP_NAME } me » ou « Private Message me »)."
+      ],
       "Upgrade to unlock": [
         "Changez d'abonnement pour disposer de cette fonctionnalité."
       ],
@@ -6439,7 +6460,7 @@
         "Utilisez l'adresse e-mail sélectionnée comme nom d'utilisateur SMTP pour le service externe et le jeton généré comme mot de passe SMTP."
       ],
       "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Les utilisateurs ayant des données et des communications sensibles, comme les journalistes ou les directeurs, sont fortement encouragés à activer ${ PROTON_SENTINEL_NAME }."
+        "Les utilisateurs ayant des données et des communications sensibles, comme les journalistes ou les dirigeants, devraient activer ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "La vérification peut prendre quelques minutes."
@@ -6546,6 +6567,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME_TWO }."
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Avec votre abonnement actuel, vous pouvez uniquement recevoir des messages avec votre adresse @pm.me. Changez d'abonnement pour envoyer des messages et créer des adresses supplémentaires en utilisant @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
       ],
@@ -6606,9 +6630,6 @@
       ],
       "You can now close this window.": [
         "Vous pouvez maintenant fermer cette fenêtre."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Vous pouvez désormais recevoir des messages sur votre adresse @pm.me. En passant à un abonnement payant, vous pourrez aussi envoyer des messages en utilisant votre adresse @pm.me et créer des adresses @pm.me supplémentaires."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
@@ -6684,10 +6705,10 @@
         "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
       ],
       "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
-        "Vous recevrez une assistance prioritaire de la part de spécialistes formés à la protection des comptes. Pour toute question relative à la sécurité de votre compte, veuillez nous contacter ${ hereLink }."
+        "Vous bénéficierez d'une assistance prioritaire par des spécialistes formés à la protection des comptes. Pour toute question concernant la sécurité de votre compte, contactez-nous ${ hereLink }."
       ],
       "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Vous verrez plus de détails dans les journaux de sécurité ci-dessous pour les événements importants comme les tentatives de connexions"
+        "Vous verrez plus de détails dans les journaux de sécurité ci-dessous pour les événements importants comme les tentatives de connexions."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -6752,9 +6773,6 @@
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
@@ -8969,11 +8987,11 @@
       "Up to 15 email addresses": [
         "Jusqu'à 15 adresses e-mail"
       ],
+      "Up to 3 TB of storage": [
+        "Jusqu'à 3 To d'espace de stockage"
+      ],
       "Up to 5 forwarding mailboxes": [
         "Jusqu'à 5 messageries de transfert"
-      ],
-      "Up to 500 GB of storage": [
-        "Jusqu'à 500 Go d'espace de stockage"
       ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
@@ -8989,11 +9007,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
       ]
     },
     "new_plans: heading": {
@@ -9945,9 +9969,6 @@
     "Property type": {
       "Address": [
         "Adresse"
-      ],
-      "Email": [
-        "E-mail"
       ],
       "Fax": [
         "Fax"
@@ -11103,6 +11124,9 @@
       "Action": [
         "Action"
       ],
+      "Activate @pm.me": [
+        "Activer @pm.me"
+      ],
       "Activate account and generate keys": [
         "Activer le compte et générer les clés"
       ],
@@ -11606,6 +11630,9 @@
       ],
       "OpenVPN configuration files": [
         "Fichiers de configuration OpenVPN"
+      ],
+      "Organization filters": [
+        "Filtres de l'organisation"
       ],
       "Organization name": [
         "Nom de l'organisation"

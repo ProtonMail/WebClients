@@ -53,6 +53,9 @@
       "activate": [
         "activare"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Activare ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Trimitere cod"
+      ],
+      "Send messages with @pm.me": [
+        "Trimitere mesaje cu @pm.me"
       ],
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
@@ -2712,9 +2718,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obțineți până la ${ credits } credite invitând persoane la ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Dacă doriți să nu mai răspândiți vestea despre misiunea noastră, luați în considerare modernizarea și deblocarea mai multor funcții premium."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
@@ -2729,8 +2732,14 @@
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Pentru a elimina subsolul mesajelor din ${ MAIL_APP_NAME }, modernizați contul și deblocați și mai multe funcții premium."
+      ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Deblocați adrese de e-mail mai scurte și alte funcții premium prin modernizarea contului."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Deblocați filtre nelimitate care vă sortează mesajele și alte funcții premium dacă modernizați contul."
@@ -3915,11 +3924,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Ați atins limita de 10 invitații acceptate în 6 luni."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Ați atins limita a 10 invitații acceptate în 6 luni. Butonul va deveni activ atunci când puteți invita utilizatori suplimentari."
       ],
       "You have successfully joined the Family plan": [
         "V-ați alăturat cu succes planului de familie."
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Trebuie să configurați un domeniu personal înainte de a adăuga utilizatori multipli."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Trebuie să configurați un domeniu personal înainte de a crea un utilizator."
@@ -4292,6 +4307,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Adăugați un filtru personal pentru a efectua în mod automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către ${ BRAND_NAME } vor ajunge în folderul «Nedorite» al membrilor organizației. Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „acceptată”."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către ${ BRAND_NAME } vor ajunge în folderul «Nedorite». Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „acceptată”."
       ],
@@ -4380,6 +4398,9 @@
       "Best deal": [
         "Cea mai rentabilă"
       ],
+      "Device": [
+        "Dispozitiv"
+      ],
       "Enter your email address": [
         "Introduceți adresa de e-mail"
       ],
@@ -4391,9 +4412,6 @@
       ],
       "Get help": [
         "Obțineți ajutor"
-      ],
-      "Holidays": [
-        "Sărbători"
       ],
       "Key type": [
         "Tip cheie"
@@ -4413,6 +4431,9 @@
       "Permissions": [
         "Permisiuni"
       ],
+      "Protection": [
+        "Protecție"
+      ],
       "Select your preferred method of payment": [
         "Selectați metoda de plată preferată"
       ],
@@ -4421,9 +4442,6 @@
       ],
       "Status": [
         "Stare"
-      ],
-      "Subscribed": [
-        "Abonate"
       ],
       "Time": [
         "Timp"
@@ -4483,6 +4501,17 @@
         "Nume cod de acces"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Sărbători"
+      ],
+      "Other": [
+        "Alta"
+      ],
+      "Subscribed": [
+        "Abonat"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Încercați gratuit renumitul ${ MAIL_APP_NAME }"
@@ -4496,11 +4525,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Pe baza fusului orar"
       ]
     },
     "Human verification method": {
@@ -4941,6 +4965,12 @@
         "${ numGroups } grupuri de contacte",
         "${ numGroups } de grupuri de contacte"
       ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } este un program de protejare a conturilor dezvoltat de ${ BRAND_NAME } pentru utilizatorii care au nevoie de securitate maximă."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } este susținut de un sistem sofisticat de inteligență artificială și de o echipă care lucrează 24/7 pentru a diminua amenințările de securitate."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
         "S-au găsit ${ providerFoldersNumLocalized } foldere",
@@ -5240,6 +5270,9 @@
       "Balance from your previous subscription": [
         "Balanța de la abonamentul anterior"
       ],
+      "Based on your time zone": [
+        "Pe baza fusului orar"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
       ],
@@ -5453,6 +5486,9 @@
       ],
       "Email address": [
         "Adresă e-mail"
+      ],
+      "Email address already used": [
+        "Adresă de e-mail deja utilizată."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Gazduirea de e-mail pentru 10 nume de domeniu de e-mail personale este inclusă gratuit. Domenii suplimentare pot fi adăugate pentru ${ price }."
@@ -5878,6 +5914,9 @@
       "old password": [
         "parola veche"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "După ce veți activa ${ PROTON_SENTINEL_NAME }:"
+      ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
       ],
@@ -6186,6 +6225,9 @@
       "support team": [
         "echipa de asistență"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Evenimentele suspecte vor fi verificate de mai multe straturi de apărare care ajută la prevenirea atacatorilor să vă deturneze contul."
+      ],
       "Swiss based": [
         "Situat în Elveția"
       ],
@@ -6453,6 +6495,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Treceți la un cont cu plată pentru a activa ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
+      ],
       "Upgrade to unlock": [
         "Modernizați contul pentru deblocare."
       ],
@@ -6476,6 +6524,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "În serviciul extern folosiți adresa de e-mail selectată ca nume de utilizator SMTP și codul de acces generat ca parolă SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Utilizatorii cu date și comunicații confidențiale, cum ar fi jurnaliștii sau directorii, sunt încurajați să-și activeze ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
@@ -6582,6 +6633,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME_TWO }"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Cu planul actual, puteți primi doar mesaje cu adresa @pm.me. Modernizați contul pentru a putea și trimite mesaje și a crea adrese suplimentare folosind @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
       ],
@@ -6646,9 +6700,6 @@
       ],
       "You can now close this window.": [
         "Acum puteți închide această fereastră."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite și e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -6724,6 +6775,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NU veți putea decripta niciun mesaj, fișier sau alte date criptate cu această cheie."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Veți primi sprijin prioritar de la specialiști instruiți în protecția conturilor. Pentru orice probleme legate de securitatea contului, vă rugăm să ne contactați ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Veți vedea mai multe detalii în jurnalele de securitate de mai jos pentru evenimente importante, cum ar fi încercările de conectare."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
@@ -6788,9 +6845,6 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -8250,6 +8304,9 @@
       "General": [
         "Generale"
       ],
+      "here": [
+        "aici"
+      ],
       "How to unlock data": [
         "Cum se deblochează datele"
       ],
@@ -8337,6 +8394,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Activare ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Activare jurnale detaliate"
       ],
@@ -9011,6 +9071,9 @@
       "Unlimited labels": [
         "Etichete nelimitate"
       ],
+      "Unlimited logins and notes": [
+        "Autentificări și note nelimitate"
+      ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
       ],
@@ -9029,8 +9092,11 @@
       "Up to 15 email addresses": [
         "Până la 15 adrese de e-mail"
       ],
-      "Up to 500 GB of storage": [
-        "Până la 500 GB spațiu de stocare"
+      "Up to 3 TB of storage": [
+        "Până la 3 TB spațiu de stocare"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "Până la 5 adrese pentru redirecționare"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
@@ -9046,11 +9112,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilizați propriile adresa personală de domeniu pentru e-mail, de ex., nume@adresapersonala.com."
       ]
     },
     "new_plans: heading": {
@@ -9491,6 +9563,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Adăugarea calendarului de sărbători a eșuat"
+      ],
       "Calendar added": [
         "Calendar adăugat"
       ]
@@ -11198,6 +11273,9 @@
       "Action": [
         "Acțiune"
       ],
+      "Activate @pm.me": [
+        "Activare @pm.me"
+      ],
       "Activate account and generate keys": [
         "Activare cont și generare chei"
       ],
@@ -11704,6 +11782,9 @@
       ],
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
+      ],
+      "Organization filters": [
+        "Filtre organizație"
       ],
       "Organization name": [
         "Nume organizație"
