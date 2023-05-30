@@ -67,13 +67,16 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
         }
     };
 
+    const hasURL = Boolean(values.url) || values.urls.some(({ url }) => !isEmptyString(url));
+
     return (
         <FieldBox icon={<Icon name="earth" size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}>
             <label
                 htmlFor="next-url-field"
-                className="field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end gap-2 color-norm text-normal"
+                className="field-two-label text-sm"
+                style={{ color: hasURL ? 'var(--text-weak)' : 'inherit' }}
             >
-                <span className="field-two-label color-weak text-sm">{c('Label').t`Websites`}</span>
+                {c('Label').t`Websites`}
             </label>
 
             <FieldArray
@@ -91,42 +94,39 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
 
                     return (
                         <>
-                            <ul className="unstyled m-0">
+                            <ul className="unstyled m-0 mb-1">
                                 {values.urls.map(({ url, id }, index) => (
-                                    <li key={id}>
-                                        <div className="flex flex-align-items-center flex-nowrap">
-                                            <InputFieldTwo
-                                                error={(errors.urls?.[index] as FormikErrors<UrlItem>)?.url}
-                                                onValue={handleReplace(index)}
-                                                onBlur={() => handleReplace(index)(isValidURL(url).url)}
-                                                value={url}
-                                                unstyled
-                                                assistContainerClassName="hidden-empty"
-                                                inputClassName="color-norm p-0 rounded-none"
-                                                placeholder="https://"
-                                                onKeyDown={onKeyEnter}
-                                            />
-                                            <Button
-                                                icon
-                                                pill
-                                                className="flex-item-noshrink flex-align-self-start ml-2"
-                                                color="weak"
-                                                shape="ghost"
-                                                size="small"
-                                                title={c('Action').t`Delete`}
-                                                onClick={handleRemove(index)}
-                                                style={{ padding: 0 }}
-                                            >
-                                                <Icon name="cross" />
-                                            </Button>
-                                        </div>
+                                    <li key={id} className="flex flex-align-items-center flex-nowrap">
+                                        <InputFieldTwo
+                                            error={(errors.urls?.[index] as FormikErrors<UrlItem>)?.url}
+                                            onValue={handleReplace(index)}
+                                            onBlur={() => handleReplace(index)(isValidURL(url).url)}
+                                            value={url}
+                                            unstyled
+                                            assistContainerClassName="hidden-empty"
+                                            inputClassName="color-norm p-0 rounded-none"
+                                            placeholder="https://"
+                                            onKeyDown={onKeyEnter}
+                                        />
+                                        <Button
+                                            icon
+                                            pill
+                                            className="flex-item-noshrink ml-2"
+                                            color="weak"
+                                            onClick={handleRemove(index)}
+                                            shape="ghost"
+                                            size="small"
+                                            title={c('Action').t`Delete`}
+                                        >
+                                            <Icon name="cross" size={20} className="color-weak" />
+                                        </Button>
                                     </li>
                                 ))}
                             </ul>
 
                             <InputFieldTwo
-                                id="next-url-field"
                                 unstyled
+                                id="next-url-field"
                                 assistContainerClassName="hidden-empty"
                                 inputClassName="color-norm p-0 rounded-none"
                                 placeholder="https://"
@@ -139,7 +139,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 ref={inputRef}
                             />
 
-                            <hr className="mt-2 mb-1" />
+                            <hr className="mt-3 mb-1" />
 
                             {renderExtraActions?.({ handleAdd, handleRemove, handleReplace })}
 
