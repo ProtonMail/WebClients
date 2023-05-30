@@ -8,4 +8,5 @@ export interface FieldIconHandle {
     setStatus: (status: WorkerStatus) => void;
     setCount: (count: number) => void;
     detach: () => void;
+    reposition: () => void;
 }
