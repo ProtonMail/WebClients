@@ -2704,9 +2704,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Krijg tot wel ${ credits } aan tegoed door vrienden uit te nodigen voor ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Als u wilt stoppen met het verspreiden van het nieuws over onze missie, overweeg dan om te upgraden en meer premiumfuncties te ontgrendelen."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
@@ -3356,7 +3353,7 @@
         "Verkeerde verificatiecode. Controleer of u de verificatiecode correct gekopieerd hebt en probeer het opnieuw. Het kan maximaal 24 uur duren voordat wijzigingen doorgevoerd zijn."
       ],
       "You already added this holidays calendar": [
-        "Je hebt deze feestdagenkalender al toegevoegd"
+        "U hebt deze feestdagenkalender al toegevoegd"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "U heeft uw toegang tot de organisatie sleutels verloren. Zonder herstel kan u geen nieuwe gebruikers creëren, nieuwe adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-private gebruikers accounts."
@@ -3899,11 +3896,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "U hebt de limiet bereikt van 10 geaccepteerde uitnodigingen in 6 maand."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "U hebt de limiet van 10 geaccepteerde uitnodigingen in 6 maanden bereikt. U kunt weer op de knop klikken wanneer u extra gebruikers kunt uitnodigen."
       ],
       "You have successfully joined the Family plan": [
         "U hebt zich aangesloten bij het Family-abonnement"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "U moet een eigen domein configureren voordat u meerdere gebruikers toevoegt."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
@@ -4369,9 +4372,6 @@
       "Get help": [
         "Krijg hulp"
       ],
-      "Holidays": [
-        "Feestdagen"
-      ],
       "Key type": [
         "Sleuteltype"
       ],
@@ -4398,9 +4398,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Subscribed": [
-        "Geabonneerd"
       ],
       "Time": [
         "Tijd"
@@ -4472,11 +4469,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Gebaseerd op uw tijdzone"
       ]
     },
     "Human verification method": {
@@ -5187,6 +5179,9 @@
       ],
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
+      ],
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
@@ -6580,9 +6575,6 @@
       "You can now close this window.": [
         "U mag dit venster nu sluiten."
       ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen via uw @pm.me-adres en meerdere @pm.me-adressen te maken."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -6719,9 +6711,6 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
@@ -8341,7 +8330,7 @@
         "Agenda bewerken"
       ],
       "Get a country's official public holidays calendar.": [
-        "Ontvang de officiële feestdagenkalender van een land."
+        "Ontvang de officiële feestdagenagenda van een land."
       ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
@@ -8926,9 +8915,6 @@
       ],
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
-      ],
-      "Up to 500 GB of storage": [
-        "Tot wel 500 GB Opslag"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"

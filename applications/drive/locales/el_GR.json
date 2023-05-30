@@ -328,6 +328,9 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Load": [
+        "Φόρτωση"
+      ],
       "Load image": [
         "Φόρτωση εικόνας"
       ],
@@ -372,6 +375,9 @@
       ],
       "New": [
         "Νέο"
+      ],
+      "New message": [
+        "Νέο μήνυμα"
       ],
       "New upload": [
         "Νέο ανέβασμα"
@@ -3183,9 +3189,6 @@
       "Go to \"My files\" and upload some files first.": [
         "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
       ],
-      "Group assignment applied": [
-        "Εφαρμογή ομαδικής εκχώρησης"
-      ],
       "here": [
         "εδώ"
       ],
@@ -4369,9 +4372,28 @@
         "Όνομα ετικέτας"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς"
+      ],
+      "Schedule messages at any time": [
+        "Προγραμματισμός μηνυμάτων ανά πάσα στιγμή"
+      ],
+      "Search message content": [
+        "Αναζήτηση εντός περιεχομένου μηνυμάτων"
+      ],
+      "Up to 15 email addresses": [
+        "Έως 15 ηλ. διευθύνσεις"
       ]
     },
     "new_plans: label": {
@@ -4781,6 +4803,11 @@
         "Εργασία"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Επίσημο"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Σημείωση: η υπηρεσία θα φορτωθεί ξανά αφού κάνετε κλικ στο κουμπί Εφαρμογή."
@@ -5056,10 +5083,6 @@
       "# of downloads": [
         "# λήψεων"
       ],
-      "${ emailsCount } member": [
-        "${ emailsCount } μέλος",
-        "${ emailsCount } μέλη"
-      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } αποτυχημένη λήψη",
         "${ numberOfFailedTransfer.total } αποτυχημένες λήψεις"
@@ -5113,9 +5136,6 @@
       ],
       "Computers": [
         "Υπολογιστές"
-      ],
-      "Contact details": [
-        "Στοιχεία επαφής"
       ],
       "Contact Details": [
         "Στοιχεία Επαφής"
@@ -5466,9 +5486,6 @@
       "Type": [
         "Τύπος"
       ],
-      "Upgrade required": [
-        "Απαιτείται Αναβάθμιση"
-      ],
       "Uploaded": [
         "Ανέβηκε"
       ],
@@ -5665,9 +5682,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό ${ BRAND_NAME } επί πληρωμή"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας ${ BRAND_NAME }. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."

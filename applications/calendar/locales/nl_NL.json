@@ -290,6 +290,9 @@
       "Keep current time zone": [
         "Behoudt huidige tijdzone"
       ],
+      "Load": [
+        "Laden"
+      ],
       "Load image": [
         "Afbeelding laden"
       ],
@@ -331,6 +334,9 @@
       ],
       "New event": [
         "Nieuwe afspraak"
+      ],
+      "New message": [
+        "Nieuw bericht"
       ],
       "Next": [
         "Volgende"
@@ -1979,6 +1985,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-logo en een plus-teken"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
@@ -2439,7 +2448,7 @@
         "Validatiefout"
       ],
       "You already added this holidays calendar": [
-        "Je hebt deze feestdagenkalender al toegevoegd"
+        "U hebt deze feestdagenkalender al toegevoegd"
       ],
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
@@ -3000,11 +3009,6 @@
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Gebaseerd op uw tijdzone"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "E-mailadres"
@@ -3415,6 +3419,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
@@ -3526,9 +3533,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Aanpassingen m.b.t. frequentie zullen verloren gaan."
-      ],
-      "Group assignment applied": [
-        "Groep toewijzing toegepast"
       ],
       "here": [
         "hier"
@@ -4555,7 +4559,7 @@
         "Agenda bewerken"
       ],
       "Get a country's official public holidays calendar.": [
-        "Ontvang de officiële feestdagenkalender van een land."
+        "Ontvang de officiële feestdagenagenda van een land."
       ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
@@ -4731,9 +4735,45 @@
         "Labelnaam"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Account toevoegen of wisselen"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automatisch spam en verwijderde berichten verwijderen"
+      ],
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email-aliassen"
+      ],
+      "Schedule messages at any time": [
+        "Plan berichten in op ieder moment"
+      ],
+      "Search message content": [
+        "Doorzoek berichtinhoud"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Up to 15 email addresses": [
+        "Tot wel 15 e-mailadressen"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -5172,6 +5212,14 @@
         "Werk"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Officieel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
@@ -5497,7 +5545,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Voeg de wettelijke feestdagen van uw land toe aan uw kalender."
+        "Voeg de wettelijke feestdagen van uw land toe aan uw agenda."
       ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
@@ -5788,10 +5836,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } lid",
-        "${ emailsCount } leden"
-      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -5846,9 +5890,6 @@
       ],
       "Clearing data": [
         "Data aan het wissen"
-      ],
-      "Contact details": [
-        "Contactgegevens"
       ],
       "Contact Details": [
         "Contactgegevens"
@@ -6123,9 +6164,6 @@
       "Update recurring event": [
         "Terugkerende afspraak updaten"
       ],
-      "Upgrade required": [
-        "Upgrade vereist"
-      ],
       "View contacts": [
         "Contacten weergeven"
       ],
@@ -6325,9 +6363,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Deze actie is onomkeerbaar. Voer het woord ${ boldDanger } in het veld in om door te gaan."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Deze functie vereist een betaald ${ BRAND_NAME }-account"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw ${ BRAND_NAME } account. Overweeg om uw import aan te passen."

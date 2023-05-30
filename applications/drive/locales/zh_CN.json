@@ -326,6 +326,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "Load": [
+        "加载"
+      ],
       "Load image": [
         "加载图片"
       ],
@@ -370,6 +373,9 @@
       ],
       "New": [
         "新建"
+      ],
+      "New message": [
+        "撰写邮件"
       ],
       "New upload": [
         "上传文件"
@@ -2350,6 +2356,31 @@
         "(无标题)"
       ]
     },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "与全家人共同守护网络隐私"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "${ planName } 现已推出"
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "意见反馈"
@@ -3067,9 +3098,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "请先转到“我的文件”并上传一些文件。"
-      ],
-      "Group assignment applied": [
-        "已应用群组分配"
       ],
       "here": [
         "此处"
@@ -4232,9 +4260,31 @@
         "标签名称"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "切换或添加账户"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "自有域名"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email 邮箱别名"
+      ],
+      "Search message content": [
+        "搜索邮件全文"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Up to 15 email addresses": [
+        "最多 15 个邮箱地址"
       ]
     },
     "new_plans: label": {
@@ -4644,6 +4694,14 @@
         "工作"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "官方"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 官方邮件"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "请注意：点击「应用」按钮后网页将重新加载。"
@@ -4668,6 +4726,11 @@
       ],
       "Sign": [
         "数字签名"
+      ]
+    },
+    "specialoffer: Action": {
+      "Don't show this offer again": [
+        "不再显示此活动"
       ]
     },
     "Spotlight": {
@@ -4836,9 +4899,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } members": [
-        "${ emailsCount } 位成員"
-      ],
       "${ numberOfFailedTransfer.total } failed downloads": [
         "${ numberOfFailedTransfer.total } 个失败的下载"
       ],
@@ -4892,9 +4952,6 @@
       ],
       "Computers": [
         "电脑"
-      ],
-      "Contact details": [
-        "联系人详情"
       ],
       "Contact Details": [
         "联系人详情"
@@ -5244,9 +5301,6 @@
       "Type": [
         "类型"
       ],
-      "Upgrade required": [
-        "需要升级"
-      ],
       "Uploaded": [
         "上传时间"
       ],
@@ -5447,9 +5501,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "此功能仅对 ${ BRAND_NAME } 付费账户开放"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"

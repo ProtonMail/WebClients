@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Comme prévu"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "100 contacts maximum sont autorisés par groupe de contacts."
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -476,6 +479,12 @@
       ],
       "I have a question": [
         "J’ai une question"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
+      ],
+      "Image will be loaded without a proxy": [
+        "L'image sera chargée sans proxy."
       ],
       "Images will be loaded without a proxy": [
         "Les images seront chargées sans proxy."
@@ -1241,9 +1250,6 @@
       ]
     },
     "Animation": {
-      "${ nameToDisplay }'s inbox": [
-        "Boite de réception appartenant à ${ nameToDisplay }"
-      ],
       "5 trackers removed": [
         "5 traqueurs supprimés"
       ],
@@ -2873,6 +2879,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo Proton Mail et un signe plus"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
@@ -3068,6 +3077,9 @@
       ],
       "Calendar limit reached": [
         "La limite du nombre de calendriers est atteinte."
+      ],
+      "Cannot export this contact": [
+        "Ce contact ne peut pas être exporté."
       ],
       "Choose a date in the future.": [
         "Choisissez une date à venir."
@@ -4125,12 +4137,6 @@
       ]
     },
     "Gmail forwarding": {
-      "Automatically forward": [
-        "Transférez automatiquement"
-      ],
-      "Gmail messages to your inbox": [
-        "les messages Gmail vers votre boite de réception"
-      ],
       "Sign in with Google": [
         "Se connecter avec Google"
       ]
@@ -4789,6 +4795,12 @@
       "Confirm phishing report": [
         "Confirmer le signalement de phishing/hameçonnage"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Le contact a été ajouté au groupe ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Le contact a été retiré du groupe ${ contactGroupName }."
+      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
@@ -4982,9 +4994,6 @@
       ],
       "From": [
         "De"
-      ],
-      "Group assignment applied": [
-        "L'affectation de groupe a été appliquée."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize }).",
@@ -5806,6 +5815,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Vous avez écrit « ${ attachmentsFoundKeyword } », mais il n'y aucune pièce jointe. Voulez-vous quand même envoyer votre message ?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Vous avez atteint le nombre maximum d'adresses dans le groupe de contacts."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Votre compte ${ BRAND_NAME } inclut SimpleLogin. Installez l'extension de navigateur en un clic pour commencer."
@@ -7135,16 +7150,22 @@
       "Up to 15 email addresses": [
         "Jusqu'à 15 adresses e-mail"
       ],
-      "Up to 500 GB of storage": [
-        "Jusqu'à 500 Go d'espace de stockage"
+      "Up to 3 TB of storage": [
+        "Jusqu'à 3 To d'espace de stockage"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
       ]
     },
     "new_plans: label": {
@@ -7432,9 +7453,6 @@
     "Property type": {
       "Address": [
         "Adresse"
-      ],
-      "Email": [
-        "E-mail"
       ],
       "Fax": [
         "Fax"
@@ -8333,9 +8351,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } membre",
-        "${ emailsCount } membres"
+      "${ emailsCount } email address": [
+        "${ emailsCount } adresse e-mail",
+        "${ emailsCount } adresses e-mail"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Raccourcis clavier ${ MAIL_APP_NAME }"
@@ -8390,6 +8408,9 @@
       "Block sender": [
         "Bloquer l'expéditeur"
       ],
+      "Cannot add more addresses": [
+        "Il n'est pas possible d'ajouter d'autres adresses."
+      ],
       "Carbon Copy": [
         "Copie carbone"
       ],
@@ -8410,9 +8431,6 @@
       ],
       "Confirm recipient address?": [
         "Confirmer l'adresse du destinataire ?"
-      ],
-      "Contact details": [
-        "Informations du contact"
       ],
       "Contact Details": [
         "Informations du contact"
@@ -8844,14 +8862,14 @@
       "Trust public key?": [
         "Approuver la clé publique ?"
       ],
+      "Unlock contacts groups": [
+        "Débloquer les groupes des contacts"
+      ],
       "Unsubscribe": [
         "Se désabonner"
       ],
       "Unsubscribe request sent": [
         "La demande de désabonnement a été envoyée."
-      ],
-      "Upgrade required": [
-        "Un abonnement supérieur est nécessaire."
       ],
       "Verification error": [
         "Erreur de vérification"
@@ -8951,6 +8969,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
+      ],
+      "The image could not be loaded": [
+        "L'image n'a pas pu être chargée."
+      ],
+      "The image could not be loaded using proxy": [
+        "L'image n'a pas pu être chargée en utilisant le proxy."
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
@@ -9062,9 +9086,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Cette action est irréversible. Saisissez le mot ${ boldDanger } dans le champ pour continuer."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Cette fonctionnalité nécessite un compte ${ BRAND_NAME } payant."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Cette importation peut dépasser la capacité de stockage actuellement disponible sur votre compte ${ BRAND_NAME }. Nous vous invitons à personnaliser votre importation."

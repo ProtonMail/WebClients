@@ -66,6 +66,9 @@
       "Apply": [
         "Применить"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Допускается до 100 контактов на группу"
+      ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
@@ -267,6 +270,12 @@
       "I have a question": [
         "У меня есть вопрос"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Некоторые изображения не могут быть загружены при включённой защите от отслеживания."
+      ],
+      "Image will be loaded without a proxy": [
+        "Изображения будут загружаться без использования прокси"
+      ],
       "Import": [
         "Импортировать"
       ],
@@ -293,6 +302,9 @@
       ],
       "Keep current time zone": [
         "Оставить текущий часовой пояс"
+      ],
+      "Load": [
+        "Загрузить"
       ],
       "Load image": [
         "Загрузить изображение"
@@ -335,6 +347,9 @@
       ],
       "New event": [
         "Новое событие"
+      ],
+      "New message": [
+        "Новое сообщение"
       ],
       "Next": [
         "Далее"
@@ -1999,6 +2014,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail и знак «плюс»"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -2196,6 +2217,9 @@
       ],
       "Cancellation failed to be sent": [
         "Не удалось отправить сообщение об отмене события"
+      ],
+      "Cannot export this contact": [
+        "Не удается экспортировать этот контакт"
       ],
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
@@ -3060,11 +3084,6 @@
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "На основе вашего часового пояса"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "Эл. почта"
@@ -3529,6 +3548,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Based on your time zone": [
+        "На основе вашего часового пояса"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
@@ -3549,6 +3571,12 @@
       ],
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Контакт назначен группе ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Контакт откреплен от группы ${ contactGroupName }"
       ],
       "Country code": [
         "Код страны"
@@ -3642,9 +3670,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Изменения повторов событий будут утеряны."
-      ],
-      "Group assignment applied": [
-        "Группа применена"
       ],
       "here": [
         "здесь"
@@ -4032,6 +4057,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Вы обновите все события в этой серии. Удаленные участники будут уведомлены."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Вы достигли лимита количества адресов в группе(-ах) контактов:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Вы достигли лимита количества адресов в группе контактов."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
@@ -4871,9 +4902,54 @@
         "Название ярлыка"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Изменить или добавить аккаунт"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Автоудаление спама и удаленных сообщений"
+      ],
+      "Custom email domains": [
+        "Пользовательские домены электронной почты"
+      ],
+      "Hide My Email aliases": [
+        "Псевдонимы Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Планируйте сообщения в любое время"
+      ],
+      "Search message content": [
+        "Поиск содержимого сообщения"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Up to 15 email addresses": [
+        "До 15 адресов электронной почты"
+      ],
+      "Up to 3 TB of storage": [
+        "До 3 ТБ хранилища"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Получите неограниченное количество псевдонимов с SimpleLogin от ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Используйте собственный адрес домена электронной почты, например, you@yourname.com."
       ]
     },
     "new_plans: label": {
@@ -4895,6 +4971,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Не удалось добавить календарь праздничных дней"
+      ],
       "Calendar added": [
         "Календарь добавлен"
       ]
@@ -5366,6 +5445,14 @@
       ],
       "Work": [
         "Рабочий"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Официальный"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Официальное письмо от ${ BRAND_NAME }"
       ]
     },
     "Refresh on apply warning": {
@@ -6016,11 +6103,11 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } участник",
-        "${ emailsCount } участника",
-        "${ emailsCount } участников",
-        "${ emailsCount } участника"
+      "${ emailsCount } email address": [
+        "${ emailsCount } адрес электронной почты",
+        "${ emailsCount } адреса электронной почты",
+        "${ emailsCount } адресов электронной почты",
+        "${ emailsCount } адреса электронной почты"
       ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
@@ -6067,6 +6154,9 @@
       "Calendar alarm": [
         "Оповещение календаря"
       ],
+      "Cannot add more addresses": [
+        "Невозможно добавить больше адресов"
+      ],
       "Change my answer": [
         "Изменить мой ответ"
       ],
@@ -6078,9 +6168,6 @@
       ],
       "Clearing data": [
         "Очистка данных"
-      ],
-      "Contact details": [
-        "Информация контакта"
       ],
       "Contact Details": [
         "Контактные данные"
@@ -6355,14 +6442,14 @@
       "Start import process": [
         "Начать процесс импорта"
       ],
+      "Unlock contacts groups": [
+        "Разблокировать группы контактов"
+      ],
       "Update event": [
         "Обновить событие"
       ],
       "Update recurring event": [
         "Обновить повторяющееся событие"
-      ],
-      "Upgrade required": [
-        "Требуется переход на платную версию"
       ],
       "View contacts": [
         "Просмотр контактов"
@@ -6465,6 +6552,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Не удалось загрузить изображение"
+      ],
+      "The image could not be loaded using proxy": [
+        "Изображение не может быть загружено при использовании прокси"
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
@@ -6571,9 +6664,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Это действие необратимо. Пожалуйста, введите слово «${ boldDanger }» в поле для продолжения."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Эта функция требует платного аккаунта ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Объём импортируемого материала может вызвать переполнение хранилища, доступного в настоящее время для Вашего аккаунта ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
