@@ -66,7 +66,7 @@ const HeaderCollapsed = ({
     return (
         <div
             className={clsx([
-                'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center',
+                'message-header message-header-collapsed px-5 flex flex-nowrap flex-align-items-center',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
@@ -94,7 +94,7 @@ const HeaderCollapsed = ({
                 )}
                 {messageLoaded && isExpiringMessage && (
                     <ItemExpiration
-                        className="badge-label-weak ml-2 py-0-5 flex-item-no-shrink"
+                        className="badge-label-weak ml-2 py-0-5 TOCHECK flex-item-no-shrink"
                         expirationTime={message.data?.ExpirationTime}
                         element={message.data as Message}
                         labelID={labelID}

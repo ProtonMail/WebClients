@@ -78,7 +78,7 @@ const ItemRowLayout = ({
             <div className="my-auto flex w2e" data-testid={unread}>
                 <ItemStar element={element} />
             </div>
-            <div className={clsx(['item-senders flex flex-nowrap m-auto pr1', unread && 'text-bold'])}>
+            <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
                 <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
                 <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
                 <span

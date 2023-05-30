@@ -98,7 +98,7 @@ export const Sandbox = () => {
 
     return (
         <>
-            <div className="flex flex-item-fluid flex-align-items-center flex-justify-center border p2">
+            <div className="flex flex-item-fluid flex-align-items-center flex-justify-center border p-7">
                 <InputFieldTwo
                     label={label}
                     hint={hint}
@@ -114,7 +114,7 @@ export const Sandbox = () => {
                     }, {})}
                 />
             </div>
-            <div className="flex flex-nowrap flex-gap-2 py2">
+            <div className="flex flex-nowrap gap-7 py-7">
                 <div className="w25">
                     <InputFieldTwo label="Label" value={label} onValue={setLabel} />
                     <InputFieldTwo label="Hint" value={hint} onValue={setHint} />

@@ -13,7 +13,7 @@ interface Props {
 
 const InfoLine = ({ label, children, plain = false }: Props) => (
     <tr className="mb-4 w100 align-top">
-        <td className="pr1">{label}</td>
+        <td className="pr-4">{label}</td>
         <td className={classnames(['w100', !plain && 'text-bold'])}>{children}</td>
     </tr>
 );

@@ -46,7 +46,7 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
     }, []);
 
     return (
-        <div className="p1 text-center">
+        <div className="p-4 text-center">
             <img className="my-6" src={gift} width={48} alt="" />
             <p className="h3 mb-0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
             <p className="color-weak mt-2 mb-6">
@@ -113,7 +113,7 @@ const GetStartedChecklist = ({ onDismiss, onItemSelection }: GetStartedChecklist
 
     if (loading) {
         return (
-            <div className="p1 m-auto">
+            <div className="p-4 m-auto">
                 <Loader />
             </div>
         );
@@ -126,7 +126,7 @@ const GetStartedChecklist = ({ onDismiss, onItemSelection }: GetStartedChecklist
     const { length: totalNumberOfItems } = checklistItems;
 
     return (
-        <div className="p1">
+        <div className="p-4">
             <GetStartedChecklistHeader
                 numberOfCompletedItems={numberOfCompletedItems}
                 totalNumberOfItems={totalNumberOfItems}

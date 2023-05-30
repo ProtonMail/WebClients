@@ -7,13 +7,13 @@ import InviteActions from './inviteActions/InviteActions';
 import './InviteSection.scss';
 
 const BorderedBox = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <div className={classnames([className, 'border rounded p1-25'])}>{children}</div>
+    <div className={classnames([className, 'border rounded p-5'])}>{children}</div>
 );
 
 const InviteSection = () => {
     return (
         <SettingsSectionWide>
-            <div className="flex flex-justify-space-between flex-gap-1 mb-8 invite-section">
+            <div className="flex flex-justify-space-between gap-4 mb-8 invite-section">
                 <BorderedBox className="flex-item-fluid">
                     <InviteShareLink />
                 </BorderedBox>

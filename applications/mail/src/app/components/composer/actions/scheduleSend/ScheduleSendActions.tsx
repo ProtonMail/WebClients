@@ -124,7 +124,7 @@ const ScheduleSendActions = ({
                 {actions.map((action) => (
                     <DropdownMenuButton
                         key={action.testId}
-                        className="flex flex-align-items-center flex-justify-space-between flex-nowrap flex-gap-1"
+                        className="flex flex-align-items-center flex-justify-space-between flex-nowrap gap-4"
                         data-testid={action.testId}
                         onClick={action.onSubmit}
                     >

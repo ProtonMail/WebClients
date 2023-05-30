@@ -59,7 +59,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     }
 
     return (
-        <div className="p1-5" ref={eventDetailsRef}>
+        <div className="p-5" ref={eventDetailsRef}>
             {!!frequencyString && (
                 <IconRow title={c('Label').t`Frequency`} icon="arrows-rotate" labelClassName="inline-flex pt-1">
                     {frequencyString}

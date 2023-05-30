@@ -13,7 +13,7 @@ export default {
 };
 
 export const IncreaseClickSurface = () => (
-    <div className="relative p2 bg-weak">
+    <div className="relative p-7 bg-weak">
         <Checkbox className="increase-click-surface" />
         parent element (grey background)
     </div>

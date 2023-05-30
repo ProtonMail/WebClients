@@ -127,7 +127,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     }
                 }}
             >
-                <form name="search" className="p1">
+                <form name="search" className="p-4">
                     <Input
                         id="search-keyword"
                         value={search}
@@ -143,7 +143,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     style={{ '--height-custom': '20em', '--min-width-custom': '18em' }}
                 >
                     {!filteredOptions.length ? (
-                        <div className="pl1" role="alert">{c('Info').t`No results found`}</div>
+                        <div className="pl-4" role="alert">{c('Info').t`No results found`}</div>
                     ) : (
                         <AutoSizer>
                             {({ height, width }) => (
