@@ -22,12 +22,14 @@ interface Props extends ModalProps {
      */
     holidaysCalendars: VisualCalendar[];
     type?: CALENDAR_MODAL_TYPE;
+    onEditCalendar?: () => void;
 }
 
 const HolidaysCalendarModal = ({
     calendar,
     holidaysCalendars,
     type = CALENDAR_MODAL_TYPE.COMPLETE,
+    onEditCalendar,
     ...rest
 }: Props) => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -92,6 +94,7 @@ const HolidaysCalendarModal = ({
             holidaysCalendars={holidaysCalendars}
             directory={directory}
             type={type}
+            onEditCalendar={onEditCalendar}
             {...rest}
         />
     );
