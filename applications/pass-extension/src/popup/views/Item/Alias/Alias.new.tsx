@@ -61,6 +61,8 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         initialValues,
         initialErrors: validateNewAliasForm(initialValues),
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
+            if (needsUpgrade) return;
+
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
                 const optimisticId = uniqueId();
 

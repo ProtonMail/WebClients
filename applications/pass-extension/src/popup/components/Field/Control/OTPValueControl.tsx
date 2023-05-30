@@ -1,11 +1,9 @@
 import { type VFC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Donut } from '@proton/atoms/Donut';
 import { ThemeColor } from '@proton/colors/types';
-import { selectCanGenerateTOTP } from '@proton/pass/store';
 import clsx from '@proton/utils/clsx';
 
 import type { Props as UsePeriodicOtpCodeProps } from '../../../hooks/usePeriodicOtpCode';
@@ -30,10 +28,8 @@ const renderOtpCodeDisplayValue = (code: string): string => {
  * need of the OTP code generation as it involves alot of
  * re-rendering. eg: we do not want to re-render `Login.view`
  * everytime the OTP countdown updates
- * FIXME: if user has downgraded we should avoid communicating
- * with the worker in the `usePeriodicOtpCode` hook */
+ */
 export const OTPValueControl: VFC<UsePeriodicOtpCodeProps & { label?: string }> = ({ totpUri, label, ...request }) => {
-    const canGenerateTOTP = useSelector(selectCanGenerateTOTP(request));
     const [otp, percent] = usePeriodicOtpCode({ totpUri, ...request });
 
     return (
@@ -56,9 +52,7 @@ export const OTPValueControl: VFC<UsePeriodicOtpCodeProps & { label?: string }> 
                     </div>
                 }
             >
-                {canGenerateTOTP
-                    ? renderOtpCodeDisplayValue(otp?.token ?? '')
-                    : c('Info').t`Not available in the free plan`}
+                {renderOtpCodeDisplayValue(otp?.token ?? '')}
             </ValueControl>
         </ClickToCopyValueControl>
     );

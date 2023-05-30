@@ -1,10 +1,13 @@
 import { type VFC, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { selectExtraFieldLimits } from '@proton/pass/store';
 import type { ItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
+import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { ClickToCopyValueControl } from './ClickToCopyValueControl';
@@ -19,10 +22,20 @@ type ExtraFieldsControlProps = {
 };
 
 export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
+    const { needsUpgrade } = useSelector(selectExtraFieldLimits);
+
     const getControlByType = useCallback(
         ({ fieldName, type, data }: ItemExtraField, index: number) => {
             const { icon } = getExtraFieldOption(type);
             const key = `${index}-${fieldName}`;
+
+            if (needsUpgrade) {
+                return (
+                    <ValueControl icon={icon} key={key} label={fieldName}>
+                        <UpgradeButton inline />
+                    </ValueControl>
+                );
+            }
 
             switch (type) {
                 case 'totp':

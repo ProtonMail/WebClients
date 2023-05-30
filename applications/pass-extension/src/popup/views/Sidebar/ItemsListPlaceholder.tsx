@@ -1,4 +1,5 @@
 import { type MouseEvent, type VFC, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -6,8 +7,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
+import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 
+import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
 import { itemTypeToIconName } from '../../../shared/items/icons';
+import { ItemCard } from '../../components/Item/ItemCard';
 import { usePasswordGeneratorContext } from '../../components/PasswordGenerator/PasswordGeneratorContext';
 import { useItems } from '../../hooks/useItems';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
@@ -22,6 +26,10 @@ export const ItemsListPlaceholder: VFC = () => {
 
     const { filtering, items } = useItems();
     const { search } = filtering;
+
+    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
+    const inNonPrimaryVault = Boolean(filtering.shareId) && filtering.shareId !== primaryVaultId;
+    const { didDowngrade } = useSelector(selectVaultLimits);
 
     const getQuickActions = useMemo<
         { type: string; icon: IconName; label: string; onClick: (e: MouseEvent<HTMLElement>) => void }[]
@@ -54,6 +62,19 @@ export const ItemsListPlaceholder: VFC = () => {
         ],
         [generatePassword]
     );
+
+    if (inNonPrimaryVault && items.totalCount === 0 && didDowngrade) {
+        return (
+            <div className="flex flex-column gap-3 text-center">
+                <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
+                <ItemCard>
+                    {c('Info')
+                        .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.`}
+                </ItemCard>
+                <UpgradeButton />
+            </div>
+        );
+    }
 
     if (items.totalCount === 0) {
         return (
