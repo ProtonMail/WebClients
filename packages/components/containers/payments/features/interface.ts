@@ -6,6 +6,7 @@ import { IconName } from '../../../components';
 export interface PlanCardFeatureDefinition {
     text: string | string[];
     included: boolean;
+    hideInDowngrade?: boolean;
     status?: 'available' | 'coming-soon';
     tooltip?: string;
     highlight?: boolean;
