@@ -2238,6 +2238,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
       ],
+      "Email address already used": [
+        "Endereço de e-mail já utilizado"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
@@ -2866,9 +2869,6 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Suas mensagens, calendários ou contatos existentes serão bloqueados. Para recuperar esses dados, você precisará de sua frase de recuperação ou sua ${ oldPassword }"
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Sua informação está segura conosco. Nós só lhe contactamos quando nossos serviços são requeridos."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
@@ -3534,7 +3534,7 @@
       ],
       "${ n } Hide My Email alias": [
         "${ n } alias de Hide My Email",
-        "${ n } alias de Hide My Email"
+        "${ n } Oculte minhas Aliases de e-mail"
       ],
       "${ n } label": [
         "${ n } marcador",
@@ -5167,7 +5167,7 @@
         "Planos"
       ],
       "Preview": [
-        "Pré-visualização"
+        "Prévia"
       ],
       "Previous": [
         "Anterior"

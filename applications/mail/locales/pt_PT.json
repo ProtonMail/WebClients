@@ -4172,6 +4172,9 @@
       "Confirm phishing report": [
         "Confirmar o relatório de phishing"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contacto atribuído ao grupo ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Copiado para a área de transferencia"
       ],
@@ -4365,9 +4368,6 @@
       ],
       "From": [
         "De"
-      ],
-      "Group assignment applied": [
-        "Atribuição de grupo aplicada"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tem ${ numAttachments } anexo (${ numAttachmentsSize })",
@@ -6420,9 +6420,6 @@
       ],
       "Up to 15 email addresses": [
         "Até 15 endereços de email"
-      ],
-      "Up to 500 GB of storage": [
-        "Até 500 GB de armazenamento"
       ]
     },
     "new_plans: label": {
@@ -7315,10 +7312,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } membro",
-        "${ emailsCount } membros"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Atalhos de teclado"
       ],
@@ -7392,9 +7385,6 @@
       ],
       "Confirm recipient address?": [
         "Confirmar endereço do destinatário?"
-      ],
-      "Contact details": [
-        "Detalhes do contacto"
       ],
       "Contact Details": [
         "Detalhes do contacto"
@@ -7831,9 +7821,6 @@
       ],
       "Unsubscribe request sent": [
         "O pedido de cancelamento de subscrição foi enviado"
-      ],
-      "Upgrade required": [
-        "Atualização requerida"
       ],
       "Verification error": [
         "Erro de verificação"

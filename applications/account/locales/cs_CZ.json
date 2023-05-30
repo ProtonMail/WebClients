@@ -53,6 +53,9 @@
       "activate": [
         "aktivovat"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktivovat ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
       ],
@@ -420,7 +423,7 @@
         "Vygenerovat token"
       ],
       "Get ${ discountPercentage } off with 24 months": [
-        "Získejte ${ discountPercentage } slevu v případě 24 měsíců"
+        "Získejte ${ discountPercentage } slevu s 24 měsíci"
       ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
@@ -764,6 +767,9 @@
       "Send code": [
         "Odeslat kód"
       ],
+      "Send messages with @pm.me": [
+        "Odesílat zprávy s @pm.me"
+      ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
       ],
@@ -1025,7 +1031,7 @@
         "Vypnout"
       ],
       "Disable encryption": [
-        "Vypnout šifrování"
+        "Zakázat šifrování"
       ],
       "Enable": [
         "Zapnout"
@@ -2711,9 +2717,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Pozváním přátel do ${ BRAND_NAME } získáte až ${ credits } kreditů."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Pokud chcete přestat šířit informace o naší misi, zvažte navýšení tarifu a odemknutí dalších prémiových funkcí."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -3803,7 +3806,7 @@
         "Pozvat člena do vaší rodiny"
       ],
       "Keep current plan": [
-        "Zůstat na aktuálním tarifu"
+        "Zachovat aktuální tarif"
       ],
       "Set up family group": [
         "Nastavit rodinnou skupinu"
@@ -3857,7 +3860,7 @@
         "zákaznická podpora"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Pokud pozvánku přijmete, převedeme vás z aktuálního tarifu a na váš účet připíšeme nevyužitou částku."
+        "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Pozvánka od ${ invitation.OrganizationName }"
@@ -3866,7 +3869,7 @@
         "Pozvánka od: ${ inviteEmail }"
       ],
       "Leave family plan": [
-        "Odejít z rodinného tarifu"
+        "Opustit rodinný tarif"
       ],
       "Leave visionary plan": [
         "Opustit tarif Visionary"
@@ -3929,7 +3932,7 @@
         "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
       ],
       "You have successfully joined the Family plan": [
-        "Úspěšně jste se připojili k Rodinnému tarifu"
+        "Úspěšně jste se připojili k rodinnému tarifu"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Před přidáním více uživatelů je třeba nakonfigurovat vlastní doménu."
@@ -4019,7 +4022,7 @@
     },
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Toto trvale smaže všechny podřízené uživatele, účty a data spojená s vaší organizací."
+        "Toto trvale smaže všechny svěřené uživatele, účty a data spojená s vaší organizací."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Toto odebere všechny prémiové funkce ${ BRAND_NAME } všem členům rodiny."
@@ -4046,7 +4049,7 @@
         "Přidat uživatele do vašeho účtu ${ PLAN_NAMES.visionary2022 }"
       ],
       "Change family name": [
-        "Změna rodinného jména"
+        "Změna jména rodiny"
       ],
       "Delete family group?": [
         "Smazat rodinnou skupinu?"
@@ -4418,9 +4421,6 @@
       "Get help": [
         "Získejte pomoc"
       ],
-      "Holidays": [
-        "Svátky"
-      ],
       "Key type": [
         "Typ klíče"
       ],
@@ -4446,13 +4446,10 @@
         "Vyberte preferovaný způsob platby"
       ],
       "Select your pricing plan": [
-        "Vyberte si cenový tarif"
+        "Vyberte si tarif"
       ],
       "Status": [
         "Stav"
-      ],
-      "Subscribed": [
-        "Odběry"
       ],
       "Time": [
         "Čas"
@@ -4512,6 +4509,17 @@
         "Název tokenu"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Svátky"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Subscribed": [
+        "Odebíráno"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Vyzkoušejte to nejlepší z ${ MAIL_APP_NAME } zdarma"
@@ -4526,11 +4534,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Na základě vašeho časového pásma"
       ]
     },
     "Human verification method": {
@@ -5514,6 +5517,9 @@
       "Email address": [
         "E-mailová adresa"
       ],
+      "Email address already used": [
+        "E-mailová adresa byla již použita"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailový hosting pro 10 vlastních e-mailových domén je zahrnut zdarma. Další domény lze přidat za ${ price }."
       ],
@@ -6256,7 +6262,7 @@
         "tým podpory"
       ],
       "Swiss based": [
-        "se sídlem ve Švýcarsku"
+        "Vytvořeno ve Švýcarsku"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -6651,6 +6657,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME_TWO }"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "V rámci stávajícího tarifu můžete přijímat pouze zprávy s adresou @pm.me. Navyšte tarif pro odesílání zpráv a vytváření dalších adres s @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
@@ -6719,9 +6728,6 @@
       ],
       "You can now close this window.": [
         "Nyní můžete toto okno zavřít."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Nyní můžete přijímat zprávy na svou adresu @pm.me. Přejděte na placený tarif, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -6863,9 +6869,6 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -8420,6 +8423,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Povolit ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Povolit pokročilé protokoly"
       ],
@@ -9143,8 +9149,8 @@
       "Up to 15 email addresses": [
         "Až 15 e-mailových adres"
       ],
-      "Up to 500 GB of storage": [
-        "Až 500 GB úložiště"
+      "Up to 3 TB of storage": [
+        "Až 3 TB úložného prostoru"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -9160,11 +9166,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
       ]
     },
     "new_plans: heading": {
@@ -10323,7 +10335,7 @@
     },
     "Select search results": {
       "Check your spelling or select a country from the list.": [
-        "Zkontrolujte chyby v textu nebo vyberte zemi ze seznamu."
+        "Zkontrolujte překlepy nebo vyberte zemi ze seznamu."
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -10702,7 +10714,7 @@
         "Ideální pro rodiny nebo malé týmy, každý může mít vlastní schránku a aliasy. Vyžaduje vlastní doménu."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu spustíme, a také včasný přístup k novým produktům a funkcím."
+        "Získejte zdarma placené verze všech nových služeb ochrany soukromí, které v budoucnu vydáme, včetně předběžného přístupu ke všem budoucím funkcím a produktům."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -11350,6 +11362,9 @@
       "Action": [
         "Akce"
       ],
+      "Activate @pm.me": [
+        "Aktivovat @pm.me"
+      ],
       "Activate account and generate keys": [
         "Aktivace účtu a generování klíčů"
       ],
@@ -11859,6 +11874,9 @@
       ],
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
+      ],
+      "Organization filters": [
+        "Filtry organizace"
       ],
       "Organization name": [
         "Název organizace"

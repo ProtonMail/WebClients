@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Com programat"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "El nombre màxim de contactes per grup de contactes és de 100."
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -476,6 +479,12 @@
       ],
       "I have a question": [
         "Tinc una pregunta"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
+      ],
+      "Image will be loaded without a proxy": [
+        "La imatge es carregarà sense proxy."
       ],
       "Images will be loaded without a proxy": [
         "Les imatges es carregaran sense proxy"
@@ -1242,7 +1251,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Bustia d'entrada ${ nameToDisplay }"
+        "safata entrada a ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "S'han eliminat 5 rastrejadors"
@@ -2873,6 +2882,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo de Proton Mail i un signe de més"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora, una característica prèmium entre moltes altres. Milloreu avui."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
@@ -3068,6 +3080,9 @@
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
+      ],
+      "Cannot export this contact": [
+        "No es pot exportar aquest contacte."
       ],
       "Choose a date in the future.": [
         "Escolliu una data futura."
@@ -4126,10 +4141,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Reenviament automàtic"
+        "Reenvia automàticament"
       ],
       "Gmail messages to your inbox": [
-        "Missatges de Gmail a la seva bustia d'entrada"
+        "Missatges de Gmail a la vostra safata d'entrada"
       ],
       "Sign in with Google": [
         "Inicia la sessió amb Google"
@@ -4789,6 +4804,12 @@
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contacte assignat al grup ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contacte sense assignar al grup ${ contactGroupName }."
+      ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
       ],
@@ -4982,9 +5003,6 @@
       ],
       "From": [
         "De"
-      ],
-      "Group assignment applied": [
-        "Assignació de grup aplicada"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Té ${ numAttachments } fitxer adjunt (${ numAttachmentsSize })",
@@ -5806,6 +5824,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Heu assolit el nombre màxim d'adreces en els grups de contactes:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Heu assolit el nombre màxim d'adreces en els grups de contactes."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "El vostre compte ${ BRAND_NAME } inclou SimpleLogin. Instal·leu l'extensió del navegador amb un clic per a començar."
@@ -7135,16 +7159,22 @@
       "Up to 15 email addresses": [
         "Fins a 15 adreces de correu electrònic"
       ],
-      "Up to 500 GB of storage": [
-        "Fins a 500 GB d'emmagatzematge"
+      "Up to 3 TB of storage": [
+        "Fins a 3 TB d'emmagatzematge"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JohnShopper@${ domain } per a comptes de compres, JohnNews@${ domain2 } per a la subscripció a notícies"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gaudiu d'àlies il·limitats amb SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilitzeu la vostra pròpia adreça de domini de correu electrònic personalitzat, per exemple, you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -8333,9 +8363,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } membre",
-        "${ emailsCount } membres"
+      "${ emailsCount } email address": [
+        "${ emailsCount } adreça de correu electrònic",
+        "${ emailsCount } adreces de correu electrònic"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ MAIL_APP_NAME }"
@@ -8390,6 +8420,9 @@
       "Block sender": [
         "Bloqueja l'emissor"
       ],
+      "Cannot add more addresses": [
+        "No es poden afegir més adreces."
+      ],
       "Carbon Copy": [
         "Copia Carbó"
       ],
@@ -8410,9 +8443,6 @@
       ],
       "Confirm recipient address?": [
         "Confirma adreça de destinatari?"
-      ],
-      "Contact details": [
-        "Detalls del contacte"
       ],
       "Contact Details": [
         "Detalls del contacte"
@@ -8844,14 +8874,14 @@
       "Trust public key?": [
         "Confiar en les claus públiques?"
       ],
+      "Unlock contacts groups": [
+        "Desbloqueja grups de contactes"
+      ],
       "Unsubscribe": [
         "Cancel·lar la subscripció"
       ],
       "Unsubscribe request sent": [
         "Sol·licitud per a cancel·lar la subscripció enviada"
-      ],
-      "Upgrade required": [
-        "Actualització necessària"
       ],
       "Verification error": [
         "Error de verificació"
@@ -8951,6 +8981,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "La imatge no s'ha pogut carregar."
+      ],
+      "The image could not be loaded using proxy": [
+        "No s'ha pogut carregar la imatge a través del proxy."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
@@ -9062,9 +9098,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Aquesta acció és irreversible. Introduïu la paraula ${ boldDanger } al camp per continuar."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Aquesta característica requereix un compte de pagament de ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."

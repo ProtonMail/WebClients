@@ -1852,61 +1852,61 @@
         "Añadir clave de seguridad"
       ],
       "Delete key": [
-        "Eliminar clave"
+        "Eliminar la llave"
       ]
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilita la opción 2FA con la clave de seguridad antes de desactivar la clave TOTP."
+        "Deshabilita la opción 2FA con la llave de seguridad antes de desactivar la clave TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Error al registrar tu clave de seguridad. Inténtalo nuevamente."
+        "Error al registrar tu llave de seguridad. Inténtalo nuevamente."
       ]
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Se ha deshabilitado 2FA con la clave de seguridad."
+        "Se ha deshabilitado 2FA con la llave de seguridad."
       ],
       "Add a name to identify your security key with.": [
-        "Añade un nombre para identificar tu clave de seguridad."
+        "Añade un nombre para identificar tu llave de seguridad."
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿Estás seguro de querer eliminar la clave de seguridad ${ name }?"
+        "¿Estás seguro de querer eliminar la llave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
-        "Inserta tu clave de seguridad en el puerto USB."
+        "Inserta tu llave de seguridad en el puerto USB."
       ],
       "Security key": [
         "Clave de seguridad"
       ],
       "Security key removed": [
-        "Clave de seguridad eliminada"
+        "Llave de seguridad eliminada"
       ],
       "Security key updated": [
-        "Clave de seguridad actualizada"
+        "Llave de seguridad actualizada"
       ],
       "This will delete all security keys linked to your account.": [
-        "Esto eliminará todas las claves de seguridad vinculadas a tu cuenta."
+        "Esto eliminará todas las llaves de seguridad vinculadas a tu cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Para activar la opción 2FA con una clave de seguridad, necesitas una aplicación de autenticación."
+        "Para activar la opción 2FA con una llave de seguridad, necesitas una aplicación de autenticación."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Verifica tu identidad con una clave física de seguridad U2F o FIDO2."
+        "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Tu clave de autenticación de dos factores está lista."
+        "Tu llave de autenticación de dos factores está lista."
       ]
     },
     "fido2: Label": {
       "Key name": [
-        "Nombre de la clave"
+        "Nombre de la llave"
       ],
       "Security key": [
         "Clave de seguridad"
@@ -1914,22 +1914,22 @@
     },
     "fido2: Title": {
       "Delete security key?": [
-        "¿Eliminar la clave de seguridad?"
+        "¿Eliminar la llave de seguridad?"
       ],
       "Disable 2FA via security key?": [
-        "¿Deshabilitar 2FA con una clave de seguridad?"
+        "¿Deshabilitar 2FA con una llave de seguridad?"
       ],
       "Name your security key": [
-        "Nombre de tu clave de seguridad"
+        "Nombre de tu llave de seguridad"
       ],
       "Register your security key": [
-        "Registra tu clave de seguridad."
+        "Registra tu llave de seguridad."
       ],
       "Registered security keys": [
-        "Claves de seguridad registradas"
+        "Llaves de seguridad registradas"
       ],
       "Security key registered": [
-        "Clave de seguridad registrada"
+        "Llave de seguridad registrada"
       ]
     },
     "file size format": {
@@ -2237,6 +2237,9 @@
       ],
       "Each code can only be used once": [
         "Cada código puede usarse solo una vez."
+      ],
+      "Email address already used": [
+        "La dirección de correo electrónico ya está en uso."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
@@ -2866,9 +2869,6 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu frase de recuperación o tu ${ oldPassword }."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Los detalles de pago están protegidos con cifrado TLS y por las leyes de privacidad suizas."
