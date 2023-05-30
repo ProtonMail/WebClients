@@ -83,7 +83,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
                 originalPlacement="left"
                 anchorRef={spotlightRef}
             >
-                <span ref={spotlightRef} className="flex flex-column flex-align-items-center flex-gap-2 mt-2">
+                <span ref={spotlightRef} className="flex flex-column flex-align-items-center gap-7 mt-2">
                     {clonedButtons}
                 </span>
             </Spotlight>

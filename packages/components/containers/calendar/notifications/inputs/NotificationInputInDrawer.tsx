@@ -80,10 +80,10 @@ const NotificationInputInDrawer = ({
     return (
         <div
             key={notification.id}
-            className={clsx('flex flex-column flex-align-items-stretch flex-item-fluid flex-gap-0-5 mb-4', className)}
+            className={clsx('flex flex-column flex-align-items-stretch flex-item-fluid gap-2 mb-4', className)}
         >
             {hasType && (
-                <span className="flex flex-nowrap flex-gap-0-5">
+                <span className="flex flex-nowrap gap-2">
                     <SelectTwo
                         id={id}
                         value={type}
@@ -120,9 +120,9 @@ const NotificationInputInDrawer = ({
                     </span>
                 </span>
             )}
-            <span className={clsx('flex flex-gap-0-5', fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column')}>
+            <span className={clsx('flex gap-2', fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column')}>
                 <span
-                    className="flex flex-nowrap flex-gap-0-5 flex-item-grow-custom flex-item-fluid"
+                    className="flex flex-nowrap gap-2 flex-item-grow-custom flex-item-fluid"
                     style={{ '--grow-custom': '1.5' }}
                 >
                     {hasValueInput && (

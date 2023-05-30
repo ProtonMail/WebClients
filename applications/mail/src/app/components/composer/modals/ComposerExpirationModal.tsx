@@ -189,7 +189,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     <Href href={getKnowledgeBaseUrl('/expiration/')}>{c('Link').t`Learn more`}</Href>
                 </div>
 
-                <div className="flex flex-gap-0-5 flex-row">
+                <div className="flex gap-2 flex-row">
                     <div className="flex-item-fluid">
                         <InputFieldTwo
                             as={DateInputTwo}

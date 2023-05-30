@@ -32,8 +32,8 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
     const ariaDescribedBy = concatStringProp([InputButtonProps?.['aria-describedby'], scaleFromToId]);
 
     return (
-        <div className={classnames([className, 'inline-flex flex-column flex-gap-1'])} {...rest}>
-            <div className="flex flex-justify-start flex-align-items-center flex-gap-1">
+        <div className={classnames([className, 'inline-flex flex-column gap-4'])} {...rest}>
+            <div className="flex flex-justify-start flex-align-items-center gap-4">
                 {scale.map((n) => (
                     <InputButton
                         key={n}
