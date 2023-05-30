@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -57,21 +57,6 @@ import { useCalendarModelEventManager } from '../../eventManager';
 import { CALENDAR_MODAL_TYPE } from '../calendarModal';
 import { getDefaultModel } from '../calendarModal/calendarModalState';
 import Notifications from '../notifications/Notifications';
-
-const getInitialCalendar = (
-    inputCalendar: HolidaysDirectoryCalendar | undefined,
-    defaultCalendar: HolidaysDirectoryCalendar | undefined,
-    canPreselect: boolean
-) => {
-    // If we have an input holidays calendar set, we want to edit it.
-    // The initial selected option needs to be this one so that we can fill all modal inputs
-    if (inputCalendar) {
-        return inputCalendar;
-    }
-
-    // Else we return the default calendar (calendar found based on the user timezone) if one is found and hasn't been already subscribed by the user
-    return canPreselect ? defaultCalendar : undefined;
-};
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
     if (!bootstrap) {
@@ -171,19 +156,30 @@ const HolidaysCalendarModalWithDirectory = ({
         suggestedCalendar,
         inputHolidaysCalendar
     );
-    const canPreselect = !!suggestedCalendar && !hasAlreadyJoinedSuggestedCalendar;
+
+    /**
+     * We won't have preselection if we are in one of the following cases
+     *  - user is editing an existing holidays calendar
+     *  - user doesn't have a suggested calendar
+     *  - user has already added the suggested calendar
+     */
+    const canPreselect = !inputCalendar && !!suggestedCalendar && !hasAlreadyJoinedSuggestedCalendar;
+
     const isEdit = !!inputHolidaysCalendar;
 
     // Currently selected option in the modal
-    const [selectedCalendar, setSelectedCalendar] = useState<HolidaysDirectoryCalendar | undefined>(
-        getInitialCalendar(inputCalendar, suggestedCalendar, canPreselect)
-    );
+    const [selectedCalendar, setSelectedCalendar] = useState<HolidaysDirectoryCalendar | undefined>(inputCalendar);
+
+    // Calendar that is either the selected one or the default one if preselect possible
+    // Because in some case, we do have a default calendar (suggested one) to use, but we want to act CountrySelect as if we don't (focus on suggested option)
+    // we need to separate calendar that has been explicitly selected by user from the one that is being used (selected OR suggested)
+    const computedCalendar = selectedCalendar || (canPreselect ? suggestedCalendar : undefined);
 
     // Check if currently selected holidays calendar has already been joined by the user
     // If already joined, we don't want the user to be able to "save" again, or he will get an error
     const hasAlreadyJoinedSelectedCalendar = getHasAlreadyJoinedCalendar(
         holidaysCalendars,
-        selectedCalendar,
+        computedCalendar,
         inputHolidaysCalendar
     );
 
@@ -192,8 +188,10 @@ const HolidaysCalendarModalWithDirectory = ({
         getInitialCalendarNotifications(calendarBootstrap)
     ); // Note that we don't need to fill this state on holidays calendar edition since this field will not be displayed
 
-    const canShowHint =
-        suggestedCalendar && suggestedCalendar === selectedCalendar && !hasAlreadyJoinedSuggestedCalendar;
+    // Preselection hint is needed only if
+    // - user can have a preselected calendar
+    // - suggested calendar matches computed one
+    const canShowHint = canPreselect && suggestedCalendar === computedCalendar;
 
     // We want to display one option per country, so we need to filter them
     const filteredCalendars: HolidaysDirectoryCalendar[] = useMemo(() => {
@@ -202,8 +200,8 @@ const HolidaysCalendarModalWithDirectory = ({
 
     // We might have several calendars for a specific country, with different languages
     const languageOptions: HolidaysDirectoryCalendar[] = useMemo(() => {
-        return getHolidaysCalendarsFromCountryCode(directory, selectedCalendar?.CountryCode || '');
-    }, [selectedCalendar]);
+        return getHolidaysCalendarsFromCountryCode(directory, computedCalendar?.CountryCode || '');
+    }, [computedCalendar]);
 
     const handleSubmit = async () => {
         try {
@@ -211,7 +209,7 @@ const HolidaysCalendarModalWithDirectory = ({
                 return;
             }
 
-            if (selectedCalendar) {
+            if (computedCalendar) {
                 const formattedNotifications = modelToNotifications(
                     sortNotificationsByAscendingTrigger(dedupeNotifications(notifications))
                 );
@@ -226,7 +224,7 @@ const HolidaysCalendarModalWithDirectory = ({
                  */
                 if (inputHolidaysCalendar && inputCalendar) {
                     // 1 - Classic update
-                    if (selectedCalendar === inputCalendar) {
+                    if (computedCalendar === inputCalendar) {
                         const calendarPayload: CalendarCreateData = {
                             Name: inputHolidaysCalendar.Name,
                             Description: inputHolidaysCalendar.Description,
@@ -259,7 +257,7 @@ const HolidaysCalendarModalWithDirectory = ({
                         await api(removeMember(inputHolidaysCalendar.ID, inputHolidaysCalendar.Members[0].ID));
 
                         await setupHolidaysCalendarHelper({
-                            holidaysCalendar: selectedCalendar,
+                            holidaysCalendar: computedCalendar,
                             addresses,
                             getAddressKeys,
                             color,
@@ -281,7 +279,7 @@ const HolidaysCalendarModalWithDirectory = ({
                 } else {
                     // 3 - Joining a holidays calendar
                     await setupHolidaysCalendarHelper({
-                        holidaysCalendar: selectedCalendar,
+                        holidaysCalendar: computedCalendar,
                         addresses,
                         getAddressKeys,
                         color,
@@ -304,15 +302,19 @@ const HolidaysCalendarModalWithDirectory = ({
         }
     };
 
-    const handleSelectCountry = (countryCode: string) => {
-        const newSelected = findHolidaysCalendarByCountryCodeAndLanguageTag(directory, countryCode, [
-            languageCode,
-            ...getBrowserLanguageTags(),
-        ]);
-        if (newSelected) {
-            setSelectedCalendar(newSelected);
-        }
-    };
+    const handleSelectCountry = useCallback(
+        (countryCode: string) => {
+            const newSelected = findHolidaysCalendarByCountryCodeAndLanguageTag(directory, countryCode, [
+                languageCode,
+                ...getBrowserLanguageTags(),
+            ]);
+
+            if (newSelected) {
+                setSelectedCalendar(newSelected);
+            }
+        },
+        [directory, setSelectedCalendar]
+    );
 
     const handleSelectLanguage = ({ value }: { value: any }) => {
         const calendarsFromCountry = languageOptions.find((calendar) => calendar.Language === value);
@@ -336,16 +338,22 @@ const HolidaysCalendarModalWithDirectory = ({
     const hintText = c('Info').t`Based on your time zone`;
     const isComplete = type === CALENDAR_MODAL_TYPE.COMPLETE;
 
+    const calendarOptions = useMemo(
+        () =>
+            filteredCalendars.map((calendar) => ({
+                countryName: calendar.Country,
+                countryCode: calendar.CountryCode,
+            })),
+        [filteredCalendars]
+    );
+
     return (
         <Modal as={Form} fullscreenOnMobile onSubmit={() => withLoading(handleSubmit())} size="large" {...rest}>
             <ModalHeader title={getModalTitle(isEdit)} subline={getModalSubline(isEdit)} />
             <ModalContent className="holidays-calendar-modal-content">
                 {isComplete && (
                     <CountrySelect
-                        options={filteredCalendars.map((calendar) => ({
-                            countryName: calendar.Country,
-                            countryCode: calendar.CountryCode,
-                        }))}
+                        options={calendarOptions}
                         preSelectedOption={
                             canPreselect
                                 ? {
@@ -368,13 +376,12 @@ const HolidaysCalendarModalWithDirectory = ({
                         hint={canShowHint ? hintText : undefined}
                     />
                 )}
-
-                {selectedCalendar && languageOptions.length > 1 && isComplete && (
+                {computedCalendar && languageOptions.length > 1 && isComplete && (
                     <InputField
                         id="languageSelect"
                         as={Select}
                         label={c('Label').t`Language`}
-                        value={selectedCalendar.Language}
+                        value={computedCalendar.Language}
                         onChange={handleSelectLanguage}
                         aria-describedby="label-languageSelect"
                         data-testid="holidays-calendar-modal:language-select"
@@ -414,7 +421,7 @@ const HolidaysCalendarModalWithDirectory = ({
                     <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                     <Button
                         loading={loading}
-                        disabled={!selectedCalendar}
+                        disabled={!computedCalendar}
                         type="submit"
                         color="norm"
                         data-testid="holidays-calendar-modal:submit"
