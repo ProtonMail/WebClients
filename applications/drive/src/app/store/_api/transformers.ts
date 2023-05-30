@@ -4,18 +4,19 @@ import { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
-import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { Device } from '../_devices';
 import { DriveEvents } from '../_events/interface';
 import { EncryptedLink } from '../_links/interface';
-import { Share, ShareWithKey } from '../_shares/interface';
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
+import type { Share, ShareURL, ShareWithKey } from '../_shares/interface';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
 type LinkMetaWithShareURL = LinkMeta & {
     ShareUrls: (SharedUrlInfo & {
-        ShareURL?: ShareURL;
+        ShareURL?: ShareURLPayload;
     })[];
 };
 
@@ -129,5 +130,28 @@ export const deviceInfoToDevices = (info: DevicePayload): Device => {
         name: info.Share.Name,
         modificationTime: info.Device.ModifyTime,
         linkId: info.Share.LinkID,
+    };
+};
+
+export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL => {
+    return {
+        shareId: shareUrl.ShareID,
+        shareUrlId: shareUrl.ShareURLID,
+        expirationTime: shareUrl.ExpirationTime,
+        creatorEmail: shareUrl.CreatorEmail,
+        password: shareUrl.Password,
+        flags: shareUrl.Flags,
+        token: shareUrl.Token,
+        publicUrl: shareUrl.PublicUrl,
+        sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
+        sharePasswordSalt: shareUrl.SharePasswordSalt,
+        hasCustomPassword: hasCustomPassword({ flags: shareUrl.Flags }),
+        hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
+        numAccesses: shareUrl.NumAccesses,
+        urlPasswordSalt: shareUrl.UrlPasswordSalt,
+        srpVerifier: shareUrl.SRPVerifier,
+        srpModulusID: shareUrl.SRPModulusID,
+        maxAccesses: shareUrl.MaxAccesses,
+        permissions: shareUrl.Permissions,
     };
 };

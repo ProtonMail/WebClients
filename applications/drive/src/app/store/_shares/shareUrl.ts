@@ -2,15 +2,15 @@ import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/consta
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 
-export const hasCustomPassword = (sharedURL?: { Flags?: number }): boolean => {
-    return !!sharedURL && hasBit(sharedURL.Flags, SharedURLFlags.CustomPassword);
+export const hasCustomPassword = (sharedURL?: { flags?: number }): boolean => {
+    return !!sharedURL && hasBit(sharedURL.flags, SharedURLFlags.CustomPassword);
 };
 
-export const hasGeneratedPasswordIncluded = (sharedURL?: { Flags?: number }): boolean => {
-    return !!sharedURL && hasBit(sharedURL.Flags, SharedURLFlags.GeneratedPasswordIncluded);
+export const hasGeneratedPasswordIncluded = (sharedURL?: { flags?: number }): boolean => {
+    return !!sharedURL && hasBit(sharedURL.flags, SharedURLFlags.GeneratedPasswordIncluded);
 };
 
-export const splitGeneratedAndCustomPassword = (password: string, sharedURL?: { Flags?: number }): [string, string] => {
+export const splitGeneratedAndCustomPassword = (password: string, sharedURL?: { flags?: number }): [string, string] => {
     if (hasCustomPassword(sharedURL)) {
         if (hasGeneratedPasswordIncluded(sharedURL)) {
             return [
@@ -25,17 +25,17 @@ export const splitGeneratedAndCustomPassword = (password: string, sharedURL?: { 
 };
 
 export const getSharedLink = (sharedURL?: {
-    Token: string;
-    PublicUrl: string;
-    Password: string;
-    Flags?: number;
+    token: string;
+    publicUrl: string;
+    password: string;
+    flags?: number;
 }): string | undefined => {
     if (!sharedURL) {
         return undefined;
     }
 
-    const [generatedPassword] = splitGeneratedAndCustomPassword(sharedURL.Password, sharedURL);
+    const [generatedPassword] = splitGeneratedAndCustomPassword(sharedURL.password, sharedURL);
 
-    const url = sharedURL.PublicUrl ? sharedURL.PublicUrl : `${window.location.origin}/urls/${sharedURL.Token}`;
+    const url = sharedURL.publicUrl ? sharedURL.publicUrl : `${window.location.origin}/urls/${sharedURL.token}`;
     return `${url}${generatedPassword !== '' ? `#${generatedPassword}` : ''}`;
 };

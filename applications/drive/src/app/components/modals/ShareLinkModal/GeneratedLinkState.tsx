@@ -29,7 +29,7 @@ const MAX_CUSTOM_PASSWORD_LENGTH = 50;
 
 interface Props {
     itemName: string;
-    isFile: boolean;
+    sharedInfoMessage: string;
     initialExpiration: number | null;
     url: string;
     passwordToggledOn: boolean;
@@ -40,28 +40,19 @@ interface Props {
     deleting?: boolean;
     saving?: boolean;
     onClose?: () => void;
-    onSaveLinkClick: (password?: string, duration?: number | null) => Promise<any>;
+    onSaveLinkClick: (
+        password?: string,
+        duration?: number | null
+    ) => Promise<void | (unknown & { expirationTime: number | null })>;
     onDeleteLinkClick: () => void;
     onIncludePasswordToggle: () => void;
     onIncludeExpirationTimeToogle: () => void;
     onFormStateChange: (state: { isFormDirty: boolean }) => void;
 }
 
-const getSharingInfoMessage = (isFile: boolean) => {
-    return isFile
-        ? c('Info').t`Anyone with this link can access your file.`
-        : c('Info').t`Anyone with this link can access your folder.`;
-};
-
-const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
-    return isFile
-        ? c('Info').t`Only the people with the link and the password can access this file.`
-        : c('Info').t`Only the people with the link and the password can access this folder.`;
-};
-
 function GeneratedLinkState({
     itemName,
-    isFile,
+    sharedInfoMessage,
     initialExpiration,
     url,
     customPassword,
@@ -143,8 +134,8 @@ function GeneratedLinkState({
         const result = await onSaveLinkClick(newCustomPassword, newDuration);
 
         // Because we are dealing with duration, ExpirationTime on server is expiration + request time.
-        if (result && result?.ExpirationTime) {
-            setExpiration(result.ExpirationTime);
+        if (result && result?.expirationTime) {
+            setExpiration(result.expirationTime);
         }
     };
 
@@ -178,14 +169,7 @@ function GeneratedLinkState({
                             ).t`Copy link`}</PrimaryButton>
                         </div>
                     </Row>
-                    <Alert className="mb-4">
-                        {
-                            // Show message "protected by password" only when password is saved.
-                            customPassword
-                                ? getPasswordProtectedSharingInfoMessage(isFile)
-                                : getSharingInfoMessage(isFile)
-                        }
-                    </Alert>
+                    <Alert className="mb-4">{sharedInfoMessage}</Alert>
                     <Details
                         open={additionalSettingsExpanded}
                         onToggle={() => {
