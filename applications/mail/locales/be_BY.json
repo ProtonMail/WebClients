@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Як запланавана"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "У групу кантактаў можа ўваходзіць не больш за 100 кантактаў"
+      ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
@@ -480,6 +483,12 @@
       ],
       "I have a question": [
         "У мяне ёсць пытанне"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Немагчыма загрузіць відарыс з уключанай абаронай ад праграм сачэння."
+      ],
+      "Image will be loaded without a proxy": [
+        "Відарыс будзе загружаны без проксі-сервера"
       ],
       "Images will be loaded without a proxy": [
         "Відарысы будуць загружаны без проксі-сервера"
@@ -2893,6 +2902,9 @@
       "ProtonMail logo and a plus sign": [
         "Лагатып Proton Mail і знак плюс"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Ашчаджайце час адпраўляючы лісты або запрашэнні ўсім адрасатам адначасова. Адна з прэміяльных функцый сярод многіх іншых. Палепшыце свой тарыфны план, каб скарыстацца ёй."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
@@ -3092,6 +3104,9 @@
       ],
       "Calendar limit reached": [
         "Дасягнута абмежаванне па календары"
+      ],
+      "Cannot export this contact": [
+        "Немагчыма экспартаваць гэты кантакт"
       ],
       "Choose a date in the future.": [
         "Выберыце дату ў будучыні."
@@ -4188,7 +4203,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Перасылаць аўтаматычна"
+        "Аўтаматычна перасылаць"
       ],
       "Gmail messages to your inbox": [
         "паведамленні Gmail у вашу паштовую скрыню"
@@ -4947,6 +4962,12 @@
       "Confirm phishing report": [
         "Пацвердзіць скаргу на фішынг"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Кантакт прызначаны групе ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Кантакт не прызначаны групе ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
@@ -5156,9 +5177,6 @@
       ],
       "From": [
         "Ад"
-      ],
-      "Group assignment applied": [
-        "Прызначэнне групы ўжыта"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Мае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
@@ -6008,6 +6026,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы напісалі “${ attachmentsFoundKeyword }\", але не дадалі далучэнне. Вы сапраўды хочаце ўсё роўна адправіць паведамленне?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Ваш уліковы запіс уключае ${ BRAND_NAME }. Каб пачаць працу, усталюйце пашырэнне для браўзера адным націсканнем."
@@ -7359,16 +7383,22 @@
       "Up to 15 email addresses": [
         "Да 15 адрасоў электроннай пошты"
       ],
-      "Up to 500 GB of storage": [
-        "Да 500 ГБ сховішча"
+      "Up to 3 TB of storage": [
+        "Да 3 ТБ сховішча"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Выкарыстоўвайце свой уласны карыстальніцкі дамен адраса электроннай пошты. Напрыклад, you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -8649,11 +8679,11 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } удзельнік",
-        "${ emailsCount } удзельнікі",
-        "${ emailsCount } удзельнікаў",
-        "${ emailsCount } удзельнікі"
+      "${ emailsCount } email address": [
+        "${ emailsCount } адрас электроннай пошты",
+        "${ emailsCount } адрасы электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Спалучэнні клавіш ${ MAIL_APP_NAME }"
@@ -8712,6 +8742,9 @@
       "Block sender": [
         "Заблакіраваць адпраўніка"
       ],
+      "Cannot add more addresses": [
+        "Немагчыма дадаць больш адрасоў"
+      ],
       "Carbon Copy": [
         "Копія"
       ],
@@ -8732,9 +8765,6 @@
       ],
       "Confirm recipient address?": [
         "Пацвердзіць адрас атрымальніка?"
-      ],
-      "Contact details": [
-        "Кантактныя звесткі"
       ],
       "Contact Details": [
         "Кантактныя звесткі"
@@ -9180,14 +9210,14 @@
       "Trust public key?": [
         "Давяраць публічнаму ключу?"
       ],
+      "Unlock contacts groups": [
+        "Разблакіраваць групы кантактаў"
+      ],
       "Unsubscribe": [
         "Адпісацца"
       ],
       "Unsubscribe request sent": [
         "Запыт на адпіску адпраўлены"
-      ],
-      "Upgrade required": [
-        "Патрабуецца паляпшэнне"
       ],
       "Verification error": [
         "Памылка праверкі"
@@ -9287,6 +9317,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Немагчыма загрузіць відарыс"
+      ],
+      "The image could not be loaded using proxy": [
+        "Немагчыма загрузіць відарыс з выкарыстаннем проксі-сервера"
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -9408,9 +9444,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Гэта незваротнае дзеянне. Увядзіце слова ${ boldDanger } у поле, каб працягнуць."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Для гэтай функцыі патрабуецца платны ўліковы запіс ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Гэта імпартаванне можа перавысіць ёмістасць сховішча, якое цяпер даступна для вашага ўліковага запісу ${ BRAND_NAME }. Змяніце налады імпартавання."

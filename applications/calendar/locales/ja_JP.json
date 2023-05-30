@@ -66,6 +66,9 @@
       "Apply": [
         "適用"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "一つの連絡先グループに追加できる連絡先は最大 100 件です"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -288,6 +291,9 @@
       "Keep current time zone": [
         "現在のタイムゾーンを維持"
       ],
+      "Load": [
+        "読み込む"
+      ],
       "Load image": [
         "画像を読み込む"
       ],
@@ -329,6 +335,9 @@
       ],
       "New event": [
         "新しい予定"
+      ],
+      "New message": [
+        "新規メッセージ"
       ],
       "Next": [
         "次へ"
@@ -956,10 +965,10 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "作成"
+        "閉じる"
       ],
       "Expand": [
-        "展開"
+        "開く"
       ]
     },
     "colon": {
@@ -1883,6 +1892,11 @@
         "オーランド諸島"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "あなたのタイムゾーンに基づく"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "指定の回数"
@@ -1963,6 +1977,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail ロゴとプラスマーク"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
@@ -2134,6 +2151,9 @@
       ],
       "Cancellation failed to be sent": [
         "予定中止の通知を送信できませんでした"
+      ],
+      "Cannot export this contact": [
+        "この連絡先はエクスポートできません"
       ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
@@ -3459,9 +3479,6 @@
       "Frequency modifications will be lost.": [
         "間隔の設定は失われます"
       ],
-      "Group assignment applied": [
-        "グループの割り当てが適用されました"
-      ],
       "here": [
         "こちら"
       ],
@@ -4651,9 +4668,48 @@
         "ラベル名"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "アカウントを追加・切り替え"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "迷惑メールとごみ箱のメッセージを自動削除"
+      ],
+      "Custom email domains": [
+        "独自メールドメイン"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email エイリアス"
+      ],
+      "Schedule messages at any time": [
+        "いつでもメッセージを送信予約できます"
+      ],
+      "Search message content": [
+        "メッセージ内容の検索"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Up to 15 email addresses": [
+        "15 件のメールアドレス"
+      ],
+      "Up to 3 TB of storage": [
+        "3 TB のストレージ"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "new_plans: label": {
@@ -5062,6 +5118,14 @@
       ],
       "Work": [
         "勤務先"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "公式"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "${ BRAND_NAME } からの公式メール"
       ]
     },
     "Refresh on apply warning": {
@@ -5661,8 +5725,8 @@
       ]
     },
     "Title": {
-      "${ emailsCount } members": [
-        "${ emailsCount } メンバー"
+      "${ emailsCount } email addresses": [
+        "${ emailsCount } 件のメールアドレス"
       ],
       "Account suspended": [
         "アカウントが停止されました"
@@ -5717,9 +5781,6 @@
       ],
       "Clearing data": [
         "データのクリア中"
-      ],
-      "Contact details": [
-        "連絡先の詳細"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -5991,9 +6052,6 @@
       "Update recurring event": [
         "定期的な予定の更新"
       ],
-      "Upgrade required": [
-        "アップグレードが必要です"
-      ],
       "View contacts": [
         "連絡先を表示"
       ],
@@ -6189,9 +6247,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "この機能は有料の ${ BRAND_NAME } アカウントが必要です"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"

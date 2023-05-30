@@ -240,6 +240,9 @@
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
       ],
+      "Load": [
+        "Učitaj"
+      ],
       "Load image": [
         "Učitaj sliku"
       ],
@@ -275,6 +278,9 @@
       ],
       "New event": [
         "Novi događaj"
+      ],
+      "New message": [
+        "Nova poruka"
       ],
       "Next": [
         "Sljedeće"
@@ -2303,9 +2309,6 @@
       "Frequency modifications will be lost.": [
         "Izmjene frekvencije bit će izgubljene."
       ],
-      "Group assignment applied": [
-        "Primijenjena grupna dodjela"
-      ],
       "here": [
         "ovdje"
       ],
@@ -3079,6 +3082,11 @@
         "Naziv oznake"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: placeholder": {
       "Feedback": [
         "Povratne informacije"
@@ -3662,11 +3670,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } član",
-        "${ emailsCount } člana",
-        "${ emailsCount } članova"
-      ],
       "Account suspended": [
         "Račun je suspendiran"
       ],
@@ -3722,9 +3725,6 @@
       ],
       "Clearing data": [
         "Brisanje podataka"
-      ],
-      "Contact details": [
-        "Detalji o kontaktu"
       ],
       "Contact Details": [
         "Detalji o kontaktu"
@@ -3955,9 +3955,6 @@
       "Update recurring event": [
         "Ažuriraj ponavljajući događaj"
       ],
-      "Upgrade required": [
-        "Potrebno je ažuriranje"
-      ],
       "View contacts": [
         "Pregled kontakta"
       ],
@@ -4078,9 +4075,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Ova značajka zahtijeva plaćeni ${ BRAND_NAME } račun"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem ${ BRAND_NAME } računu. Razmislite o prilagodbi uvoza."

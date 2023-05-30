@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Zamanlandığı gibi"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Bir kişi grubunda en fazla 100 kişi bulunabilir"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -477,6 +480,12 @@
       "I have a question": [
         "Bir sorum var"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Görsel izleyici koruması nedeniyle yüklenemedi."
+      ],
+      "Image will be loaded without a proxy": [
+        "Görsel bir vekil sunucu kullanılmadan yüklenecek"
+      ],
       "Images will be loaded without a proxy": [
         "Görseller vekil sunucu kullanmadan yüklenecek"
       ],
@@ -812,7 +821,7 @@
         "Güvenli yanıtla"
       ],
       "Report a problem": [
-        "Bir sorun bildireceğim"
+        "Sorun bildirin"
       ],
       "Report phishing": [
         "Kimlik avı girişimi bildir"
@@ -1242,7 +1251,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay } kullanıcısının gelen kutusu"
+        "${ nameToDisplay } gelen kutusu"
       ],
       "5 trackers removed": [
         "5 izleyici kaldırıldı"
@@ -2873,6 +2882,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail logosu ve bir artı işareti"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -3068,6 +3080,9 @@
       ],
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
+      ],
+      "Cannot export this contact": [
+        "Bu kişi dışa aktarılamadı"
       ],
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
@@ -4126,10 +4141,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Otomatik olarak ilet"
+        "Otomatik olarak"
       ],
       "Gmail messages to your inbox": [
-        "Gmail iletilerini gelen kutunuzda görün"
+        "Gmail iletilerini gelen kutunuza iletin"
       ],
       "Sign in with Google": [
         "Google ile oturum aç"
@@ -4742,7 +4757,7 @@
         "İlgilenmeniz gerekiyor"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletileri otomatik olarak silin."
+        "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletileri otomatik olarak silebilirsiniz."
       ],
       "Background color": [
         "Arka plan rengi"
@@ -4788,6 +4803,12 @@
       ],
       "Confirm phishing report": [
         "Kimlik avı girişimi bildirimini onayla"
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kişi ${ contactGroupName } grubuna eklendi"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kişi ${ contactGroupName } grubundan çıkarıldı"
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
@@ -4982,9 +5003,6 @@
       ],
       "From": [
         "Kimden"
-      ],
-      "Group assignment applied": [
-        "Grup ataması uygulandı"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } ek dosya var (${ numAttachmentsSize })",
@@ -5806,6 +5824,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Kişi grubunda bulunabilecek en fazla adres sayısına ulaştınız:"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "${ BRAND_NAME } hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla tarayıcı eklentisini kurabilirsiniz."
@@ -7135,16 +7159,22 @@
       "Up to 15 email addresses": [
         "15 e-posta adresine kadar"
       ],
-      "Up to 500 GB of storage": [
-        "500 GB depolama alanına kadar"
+      "Up to 3 TB of storage": [
+        "3 TB depolama alanına kadar"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi özel etki alanınızla e-posta adresleri oluşturun"
       ]
     },
     "new_plans: label": {
@@ -8333,9 +8363,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } üye",
-        "${ emailsCount } üye"
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-posta adresi",
+        "${ emailsCount } e-posta adresi"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klavye kısayolları"
@@ -8390,6 +8420,9 @@
       "Block sender": [
         "Göndericiyi engelle"
       ],
+      "Cannot add more addresses": [
+        "Daha fazla adres eklenemez"
+      ],
       "Carbon Copy": [
         "Kopya"
       ],
@@ -8410,9 +8443,6 @@
       ],
       "Confirm recipient address?": [
         "Alıcı adresi onaylansın mı?"
-      ],
-      "Contact details": [
-        "Kişi bilgileri"
       ],
       "Contact Details": [
         "Kişi bilgileri"
@@ -8745,7 +8775,7 @@
         "Tümünü yanıtla"
       ],
       "Report a problem": [
-        "Bir sorun bildirin"
+        "Sorun bildirin"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -8844,14 +8874,14 @@
       "Trust public key?": [
         "Herkese açık anahtara güvenilsin mi?"
       ],
+      "Unlock contacts groups": [
+        "Kişi gruplarının kilidini açın"
+      ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
       ],
       "Unsubscribe request sent": [
         "Abonelikten ayrılma isteği gönder"
-      ],
-      "Upgrade required": [
-        "Yükseltme gerekli"
       ],
       "Verification error": [
         "Doğrulama sorunu"
@@ -8951,6 +8981,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
+      ],
+      "The image could not be loaded": [
+        "Görsel yüklenemedi"
+      ],
+      "The image could not be loaded using proxy": [
+        "Görsel vekil sunucu kullanılarak yüklenemedi"
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
@@ -9062,9 +9098,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Bu işlem geri alınamaz. İlerlemek için lütfen kutuya ${ boldDanger } sözcüğünü yazın."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Bu özellik ücretli bir ${ BRAND_NAME } hesabında kullanılabilir"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
