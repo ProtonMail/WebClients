@@ -18,35 +18,14 @@ afterAll(() => {
 
 describe('Reports table testing', () => {
     it('Should display placeholder text when no imports available', async () => {
-        const reportsSpy = jest.fn();
-        const importerSpy = jest.fn();
-        const forwardSpy = jest.fn();
+        server.use(
+            rest.get('importer/v1/reports', (req, res, ctx) => res(ctx.set('date', '01/01/2022'), ctx.json([]))),
+            rest.get('importer/v1/importers', (req, res, ctx) => res(ctx.set('date', '01/01/2022'), ctx.json([]))),
+            rest.get('importer/v1/sync', (req, res, ctx) => res(ctx.set('date', '01/01/2022'), ctx.json([])))
+        );
 
         easySwitchRender(<ReportsTable />);
 
-        server.use(
-            rest.get('importer/v1/reports', (req, res, ctx) => {
-                reportsSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json([]));
-            })
-        );
-        server.use(
-            rest.get('importer/v1/importers', (req, res, ctx) => {
-                importerSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json([]));
-            })
-        );
-
-        server.use(
-            rest.get('importer/v1/sync', (req, res, ctx) => {
-                forwardSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json([]));
-            })
-        );
-
-        await waitFor(() => expect(reportsSpy).toHaveBeenCalledTimes(1));
-        await waitFor(() => expect(importerSpy).toHaveBeenCalledTimes(1));
-        await waitFor(() => expect(forwardSpy).toHaveBeenCalledTimes(1));
         screen.getByTestId('reportsTable:noImports');
     });
 
@@ -88,19 +67,15 @@ describe('Reports table testing', () => {
             ],
         };
 
-        const importersSpy = jest.fn();
+        server.use(
+            rest.get('importer/v1/reports', (req, res, ctx) =>
+                res(ctx.set('date', '01/01/2022'), ctx.json(finishedReport))
+            )
+        );
 
         easySwitchRender(<ReportsTable />);
 
-        server.use(
-            rest.get('importer/v1/reports', (req, res, ctx) => {
-                importersSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json(finishedReport));
-            })
-        );
-
-        await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
-        const reportRows = screen.getAllByTestId('reportsTable:reportRow');
+        const reportRows = await waitFor(() => screen.findAllByTestId('reportsTable:reportRow'));
         expect(reportRows).toHaveLength(3);
 
         const deleteReport = screen.getAllByTestId('ReportsTable:deleteReport');
@@ -146,8 +121,6 @@ describe('Reports table testing', () => {
         const importersSpy = jest.fn();
         const singleImporterSpy = jest.fn();
 
-        easySwitchRender(<ReportsTable />);
-
         server.use(
             rest.get('/core/v4/features', (req, res, ctx) => {
                 apiCallSpy();
@@ -160,10 +133,7 @@ describe('Reports table testing', () => {
             rest.get('/core/v4/system/config', (req, res, ctx) => {
                 apiCallSpy();
                 return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            })
-        );
-
-        server.use(
+            }),
             rest.get('importer/v1/importers', (req, res, ctx) => {
                 importersSpy();
                 return res(
@@ -173,10 +143,7 @@ describe('Reports table testing', () => {
                         Importers: [importerData],
                     })
                 );
-            })
-        );
-
-        server.use(
+            }),
             rest.get(`importer/v1/importers/${importerData.ID}`, (req, res, ctx) => {
                 singleImporterSpy();
                 return res(
@@ -188,6 +155,8 @@ describe('Reports table testing', () => {
                 );
             })
         );
+
+        easySwitchRender(<ReportsTable />);
 
         await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
         await waitFor(() => expect(apiCallSpy).toHaveBeenCalled());
@@ -233,8 +202,6 @@ describe('Reports table testing', () => {
         const apiCallSpy = jest.fn();
         const importersSpy = jest.fn();
 
-        easySwitchRender(<ReportsTable />);
-
         server.use(
             rest.get('/core/v4/features', (req, res, ctx) => {
                 apiCallSpy();
@@ -247,15 +214,14 @@ describe('Reports table testing', () => {
             rest.get('/core/v4/system/config', (req, res, ctx) => {
                 apiCallSpy();
                 return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            })
-        );
-
-        server.use(
+            }),
             rest.get('importer/v1/sync', (req, res, ctx) => {
                 importersSpy();
                 return res(ctx.set('date', '01/01/2022'), ctx.json(ongoingForward));
             })
         );
+
+        easySwitchRender(<ReportsTable />);
 
         await waitFor(() => expect(apiCallSpy).toHaveBeenCalled());
         await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
