@@ -310,6 +310,9 @@
       "Learn more": [
         "Issin ugar"
       ],
+      "Load": [
+        "Sali"
+      ],
       "Load image": [
         "Sali-d tugniwin"
       ],
@@ -351,6 +354,9 @@
       ],
       "Move to trash": [
         "Awi ar iḍumman"
+      ],
+      "New message": [
+        "Izen amaynut"
       ],
       "New upload": [
         "Asali amaynut"
@@ -2732,9 +2738,6 @@
       "Go to \"My files\" and upload some files first.": [
         "Ddu ɣer \"Ifuyla-inu\" sakin sili kra n yifuyla."
       ],
-      "Group assignment applied": [
-        "Afares n ugraw yettusnes"
-      ],
       "here": [
         "da"
       ],
@@ -3583,9 +3586,22 @@
         "ISem n tebzimt"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Beddel neɣ rnu umiḍan"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Tiɣula n yimayl tudmawanin"
+      ],
+      "Search message content": [
+        "Agbur n yizen n unadi"
       ]
     },
     "new_plans: label": {
@@ -3928,6 +3944,11 @@
         "Amahil"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Unṣib"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
@@ -4090,10 +4111,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } n uεeggal",
-        "${ emailsCount } n yiεeggalen"
-      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } yecceḍ usader",
         "${ numberOfFailedTransfer.total } ccḍen isadaren"
@@ -4142,9 +4159,6 @@
       ],
       "Completed": [
         "Immed"
-      ],
-      "Contact details": [
-        "Talqayt unermis"
       ],
       "Contact Details": [
         "Talqayt unermis"
@@ -4437,9 +4451,6 @@
       "Type": [
         "Anaw"
       ],
-      "Upgrade required": [
-        "Ilaq uleqqem"
-      ],
       "Uploaded": [
         "Yuli"
       ],
@@ -4601,9 +4612,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tigawt-agi ur tettwassefsax ara. Ttxil-k•m sekcem awal ${ boldDanger } deg wurti akken ad tkemmeleḍ."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Tamahilt-a tesra amiḍan n ${ BRAND_NAME } yettuxellṣen"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Akter-a izmer ad iεeddi tallunt n usekles i yellan akka tura deg umiḍan-inek·inem ${ BRAND_NAME }. ttxil fren ayen ara tketreḍ."

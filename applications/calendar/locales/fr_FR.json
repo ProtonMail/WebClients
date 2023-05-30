@@ -66,6 +66,9 @@
       "Apply": [
         "Appliquer"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "100 contacts maximum sont autorisés par groupe de contacts."
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -263,6 +266,12 @@
       "I have a question": [
         "J’ai une question"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
+      ],
+      "Image will be loaded without a proxy": [
+        "L'image sera chargée sans proxy."
+      ],
       "Import": [
         "Importer"
       ],
@@ -289,6 +298,9 @@
       ],
       "Keep current time zone": [
         "Garder le fuseau horaire actuel"
+      ],
+      "Load": [
+        "Charger"
       ],
       "Load image": [
         "Charger l'image"
@@ -331,6 +343,9 @@
       ],
       "New event": [
         "Nouvel événement"
+      ],
+      "New message": [
+        "Nouveau message"
       ],
       "Next": [
         "Suivant"
@@ -1979,6 +1994,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail et un signe plus"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
@@ -2166,6 +2187,9 @@
       ],
       "Cancellation failed to be sent": [
         "L'annulation n'a pas pu être envoyée."
+      ],
+      "Cannot export this contact": [
+        "Ce contact ne peut pas être exporté."
       ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
@@ -3000,11 +3024,6 @@
         "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Selon votre fuseau horaire"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -3436,6 +3455,12 @@
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Le contact a été ajouté au groupe ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Le contact a été retiré du groupe ${ contactGroupName }."
+      ],
       "Country code": [
         "Indicatif du pays"
       ],
@@ -3526,9 +3551,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Les modifications de fréquence seront perdues."
-      ],
-      "Group assignment applied": [
-        "L'affectation de groupe a été appliquée."
       ],
       "here": [
         "ici"
@@ -3912,6 +3934,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Vous allez mettre à jour tous les événements de cette série. Les participants supprimés seront informés."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Vous avez atteint le nombre maximum d'adresses dans le groupe de contacts."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
@@ -4731,9 +4759,54 @@
         "Nom du label"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Basculez vers ou ajoutez un compte"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Planifiez l'envoi de messages quand vous le voulez"
+      ],
+      "Search message content": [
+        "Rechercher dans le contenu des messages"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Dossiers, labels et filtres illimités"
+      ],
+      "Up to 15 email addresses": [
+        "Jusqu'à 15 adresses e-mail"
+      ],
+      "Up to 3 TB of storage": [
+        "Jusqu'à 3 To d'espace de stockage"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
       ]
     },
     "new_plans: label": {
@@ -5144,9 +5217,6 @@
       "Address": [
         "Adresse"
       ],
-      "Email": [
-        "E-mail"
-      ],
       "Fax": [
         "Fax"
       ],
@@ -5170,6 +5240,14 @@
       ],
       "Work": [
         "Bureau"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Officiel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Message officiel de ${ BRAND_NAME }"
       ]
     },
     "Refresh on apply warning": {
@@ -5788,9 +5866,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } membre",
-        "${ emailsCount } membres"
+      "${ emailsCount } email address": [
+        "${ emailsCount } adresse e-mail",
+        "${ emailsCount } adresses e-mail"
       ],
       "Account suspended": [
         "Compte suspendu"
@@ -5835,6 +5913,9 @@
       "Calendar alarm": [
         "Alarme de calendrier"
       ],
+      "Cannot add more addresses": [
+        "Il n'est pas possible d'ajouter d'autres adresses."
+      ],
       "Change my answer": [
         "Changer ma réponse"
       ],
@@ -5846,9 +5927,6 @@
       ],
       "Clearing data": [
         "Effacement des données"
-      ],
-      "Contact details": [
-        "Informations du contact"
       ],
       "Contact Details": [
         "Informations du contact"
@@ -6117,14 +6195,14 @@
       "Start import process": [
         "Démarrer l'importation"
       ],
+      "Unlock contacts groups": [
+        "Débloquer les groupes des contacts"
+      ],
       "Update event": [
         "Mettre à jour l'événement"
       ],
       "Update recurring event": [
         "Mettre à jour l'événement récurrent"
-      ],
-      "Upgrade required": [
-        "Un abonnement supérieur est nécessaire."
       ],
       "View contacts": [
         "Afficher les contacts"
@@ -6228,6 +6306,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
       ],
+      "The image could not be loaded": [
+        "L'image n'a pas pu être chargée."
+      ],
+      "The image could not be loaded using proxy": [
+        "L'image n'a pas pu être chargée en utilisant le proxy."
+      ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
       ],
@@ -6325,9 +6409,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Cette action est irréversible. Saisissez le mot ${ boldDanger } dans le champ pour continuer."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Cette fonctionnalité nécessite un compte ${ BRAND_NAME } payant."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Cette importation peut dépasser la capacité de stockage actuellement disponible sur votre compte ${ BRAND_NAME }. Nous vous invitons à personnaliser votre importation."

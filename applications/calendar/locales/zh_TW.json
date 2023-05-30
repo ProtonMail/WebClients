@@ -66,6 +66,9 @@
       "Apply": [
         "套用"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "每個聯絡人群組至多允許 100 個聯絡人"
+      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -261,6 +264,12 @@
       "I have a question": [
         "我要發問"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "無法在啟用追蹤保護中載入影像。"
+      ],
+      "Image will be loaded without a proxy": [
+        "圖像不會透過代理伺服器載入"
+      ],
       "Import": [
         "匯入"
       ],
@@ -287,6 +296,9 @@
       ],
       "Keep current time zone": [
         "維持目前時區"
+      ],
+      "Load": [
+        "載入"
       ],
       "Load image": [
         "載入圖像"
@@ -329,6 +341,9 @@
       ],
       "New event": [
         "加入事件"
+      ],
+      "New message": [
+        "撰寫"
       ],
       "Next": [
         "下一個"
@@ -1969,6 +1984,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail 標誌與加號"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
@@ -2139,6 +2160,9 @@
       ],
       "Cancellation failed to be sent": [
         "取消傳送失敗"
+      ],
+      "Cannot export this contact": [
+        "無法匯出通訊內容"
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -2970,11 +2994,6 @@
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "依據您的時區"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "電郵"
@@ -3379,6 +3398,12 @@
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "聯絡人已指派給群組 ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "聯絡人已取消指派給群組 ${ contactGroupName }"
+      ],
       "Country code": [
         "國家代碼"
       ],
@@ -3468,9 +3493,6 @@
       ],
       "Frequency modifications will be lost.": [
         "頻率修改將會消失。"
-      ],
-      "Group assignment applied": [
-        "已套用群組分配"
       ],
       "here": [
         "這裡"
@@ -3852,6 +3874,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "您即將更新此一系列中全部事件。已移除的參與者將獲通知。"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "您已達到聯絡人群組郵件地址最高上限："
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "您以達到通訊群組郵件地址最高上限"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
@@ -4661,9 +4689,54 @@
         "標籤名稱"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "切換或是加入帳號"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "自動刪除垃圾郵件與垃圾桶中的訊息"
+      ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email 別名"
+      ],
+      "Schedule messages at any time": [
+        "在任意時間排程訊息"
+      ],
+      "Search message content": [
+        "搜尋郵件內容"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤和篩選器無上限"
+      ],
+      "Up to 15 email addresses": [
+        "多達 15 個電子郵件地址"
+      ],
+      "Up to 3 TB of storage": [
+        "多達 3 TB的儲存空間"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "創建多重電子郵件地址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "使用您擁有的自訂電子郵件網域地址，例如 you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -5072,6 +5145,14 @@
       ],
       "Work": [
         "工作"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "官方"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "來自 ${ BRAND_NAME } 的官方電子郵件"
       ]
     },
     "Refresh on apply warning": {
@@ -5671,8 +5752,8 @@
       ]
     },
     "Title": {
-      "${ emailsCount } members": [
-        "${ emailsCount } 位成員"
+      "${ emailsCount } email addresses": [
+        "${ emailsCount }電子郵件位址"
       ],
       "Account suspended": [
         "帳號已被停用"
@@ -5716,6 +5797,9 @@
       "Calendar alarm": [
         "行事曆鬧鐘"
       ],
+      "Cannot add more addresses": [
+        "無法添加更多地址"
+      ],
       "Change my answer": [
         "更改我的回答"
       ],
@@ -5727,9 +5811,6 @@
       ],
       "Clearing data": [
         "清除資料中"
-      ],
-      "Contact details": [
-        "聯絡人詳細資料"
       ],
       "Contact Details": [
         "聯絡人詳細資料"
@@ -5995,14 +6076,14 @@
       "Start import process": [
         "開始匯入流程"
       ],
+      "Unlock contacts groups": [
+        "解鎖通訊群組"
+      ],
       "Update event": [
         "更新事件"
       ],
       "Update recurring event": [
         "更新週期性事件"
-      ],
-      "Upgrade required": [
-        "需要升級"
       ],
       "View contacts": [
         "檢視聯絡人"
@@ -6106,6 +6187,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
       ],
+      "The image could not be loaded": [
+        "無法載入圖片"
+      ],
+      "The image could not be loaded using proxy": [
+        "無法透過代理伺服器載入圖片"
+      ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
       ],
@@ -6199,9 +6286,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "此功能僅限付費 ${ BRAND_NAME } 帳號使用"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此匯入可能超出您的 ${ BRAND_NAME } 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"

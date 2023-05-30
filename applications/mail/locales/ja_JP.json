@@ -100,6 +100,9 @@
       "As Scheduled": [
         "予定通り"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "一つの連絡先グループに追加できる連絡先は最大 100 件です"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -1236,9 +1239,6 @@
       ]
     },
     "Animation": {
-      "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay } の受信トレイ"
-      ],
       "5 trackers removed": [
         "5 件のトラッカーを削除"
       ],
@@ -1645,10 +1645,10 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "作成"
+        "閉じる"
       ],
       "Expand": [
-        "展開"
+        "開く"
       ]
     },
     "color": {
@@ -3057,6 +3057,9 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
+      "Cannot export this contact": [
+        "この連絡先はエクスポートできません"
+      ],
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
       ],
@@ -4094,12 +4097,6 @@
       ]
     },
     "Gmail forwarding": {
-      "Automatically forward": [
-        "自動転送"
-      ],
-      "Gmail messages to your inbox": [
-        "Gmail メッセージをあなたの受信トレイに"
-      ],
       "Sign in with Google": [
         "Google でサインイン"
       ]
@@ -4896,9 +4893,6 @@
       "From": [
         "差出人"
       ],
-      "Group assignment applied": [
-        "グループの割り当てが適用されました"
-      ],
       "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
         "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
       ],
@@ -5278,7 +5272,7 @@
         "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> セキュアなメールで送信されます。"
+        "安全なメール <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> で送信されました。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -7023,8 +7017,8 @@
       "Up to 15 email addresses": [
         "15 件のメールアドレス"
       ],
-      "Up to 500 GB of storage": [
-        "500 GB のストレージ"
+      "Up to 3 TB of storage": [
+        "3 TB のストレージ"
       ]
     },
     "new_plans: feature info": {
@@ -8172,8 +8166,8 @@
       ]
     },
     "Title": {
-      "${ emailsCount } members": [
-        "${ emailsCount } メンバー"
+      "${ emailsCount } email addresses": [
+        "${ emailsCount } 件のメールアドレス"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } のキーボードショートカット"
@@ -8246,9 +8240,6 @@
       ],
       "Confirm recipient address?": [
         "宛先のアドレスを確認しますか?"
-      ],
-      "Contact details": [
-        "連絡先の詳細"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -8679,9 +8670,6 @@
       "Unsubscribe request sent": [
         "登録解除リクエストを送信"
       ],
-      "Upgrade required": [
-        "アップグレードが必要です"
-      ],
       "Verification error": [
         "検証エラーが発生しました"
       ],
@@ -8886,9 +8874,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "この機能は有料の ${ BRAND_NAME } アカウントが必要です"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"

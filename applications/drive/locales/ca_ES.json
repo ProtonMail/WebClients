@@ -52,6 +52,9 @@
       "Apply": [
         "Aplica"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "El nombre màxim de contactes per grup de contactes és de 100."
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -330,6 +333,12 @@
       "I have a question": [
         "Tinc una pregunta"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
+      ],
+      "Image will be loaded without a proxy": [
+        "La imatge es carregarà sense proxy."
+      ],
       "Import": [
         "Importar"
       ],
@@ -350,6 +359,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Load": [
+        "Carrega"
       ],
       "Load image": [
         "Carrega la imatge"
@@ -395,6 +407,9 @@
       ],
       "New": [
         "Nou"
+      ],
+      "New message": [
+        "Nou missatge"
       ],
       "New upload": [
         "Puja fitxers"
@@ -1803,6 +1818,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail i un signe de més"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora, una característica prèmium entre moltes altres. Milloreu avui."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
@@ -1919,6 +1940,9 @@
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
+      ],
+      "Cannot export this contact": [
+        "No es pot exportar aquest contacte."
       ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
@@ -3218,6 +3242,12 @@
       "Conflict": [
         "Conflicte"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contacte assignat al grup ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contacte sense assignar al grup ${ contactGroupName }."
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continua utilitzant ${ DRIVE_APP_NAME } i desbloqueja la unitat més tard"
       ],
@@ -3421,9 +3451,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Aneu a \"Els meus fitxers\" i pengeu alguns fitxers primer."
-      ],
-      "Group assignment applied": [
-        "Assignació de grup aplicada"
       ],
       "here": [
         "aquí"
@@ -4016,6 +4043,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Perdreu tots els canvis sense desar."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Heu assolit el nombre màxim d'adreces en els grups de contactes:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Heu assolit el nombre màxim d'adreces en els grups de contactes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
@@ -4731,9 +4764,54 @@
         "Nom de etiqueta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Canvia o afegeix un compte"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
+      ],
+      "Custom email domains": [
+        "Dominis de correu personalitzats"
+      ],
+      "Hide My Email aliases": [
+        "Àlies Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Programeu missatges en qualsevol moment."
+      ],
+      "Search message content": [
+        "Cerca al contingut del missatge"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetes, etiquetes i filtres sense límit"
+      ],
+      "Up to 15 email addresses": [
+        "Fins a 15 adreces de correu electrònic"
+      ],
+      "Up to 3 TB of storage": [
+        "Fins a 3 TB d'emmagatzematge"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JohnShopper@${ domain } per a comptes de compres, JohnNews@${ domain2 } per a la subscripció a notícies"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Gaudiu d'àlies il·limitats amb SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilitzeu la vostra pròpia adreça de domini de correu electrònic personalitzat, per exemple, you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -5179,6 +5257,14 @@
         "Feina"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Oficial"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Missatge oficial de ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
@@ -5621,9 +5707,9 @@
       "# of downloads": [
         "Nombre de baixades"
       ],
-      "${ emailsCount } member": [
-        "${ emailsCount } membre",
-        "${ emailsCount } membres"
+      "${ emailsCount } email address": [
+        "${ emailsCount } adreça de correu electrònic",
+        "${ emailsCount } adreces de correu electrònic"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } baixada fallida",
@@ -5671,6 +5757,9 @@
       "Browser might run out of memory": [
         "És possible que el navegador arribi al límit de memòria"
       ],
+      "Cannot add more addresses": [
+        "No es poden afegir més adreces."
+      ],
       "Cannot load link": [
         "L'enllaç no s'ha pogut carregar."
       ],
@@ -5685,9 +5774,6 @@
       ],
       "Computers": [
         "Ordinadors"
-      ],
-      "Contact details": [
-        "Detalls del contacte"
       ],
       "Contact Details": [
         "Detalls del contacte"
@@ -6047,8 +6133,8 @@
       "Type": [
         "Tipus"
       ],
-      "Upgrade required": [
-        "Actualització necessària"
+      "Unlock contacts groups": [
+        "Desbloqueja grups de contactes"
       ],
       "Uploaded": [
         "Carregat"
@@ -6156,6 +6242,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
       ],
+      "The image could not be loaded": [
+        "La imatge no s'ha pogut carregar."
+      ],
+      "The image could not be loaded using proxy": [
+        "No s'ha pogut carregar la imatge a través del proxy."
+      ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
       ],
@@ -6261,9 +6353,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Aquesta acció és irreversible. Introduïu la paraula ${ boldDanger } al camp per continuar."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Aquesta característica requereix un compte de pagament de ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."

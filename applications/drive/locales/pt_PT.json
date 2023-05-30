@@ -283,6 +283,9 @@
       "Learn more": [
         "Saber mais"
       ],
+      "Load": [
+        "Carregar"
+      ],
       "Load image": [
         "Carregar imagem"
       ],
@@ -324,6 +327,9 @@
       ],
       "New": [
         "Novo"
+      ],
+      "New message": [
+        "Nova mensagem"
       ],
       "New upload": [
         "Novo envio"
@@ -2625,6 +2631,9 @@
       "Conflict": [
         "Conflito"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contacto atribuído ao grupo ${ contactGroupName }"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Vá a \"Os meus ficheiros\" e envie alguns primeiro."
-      ],
-      "Group assignment applied": [
-        "Atribuição de grupo aplicada"
       ],
       "here": [
         "aqui"
@@ -3634,9 +3640,28 @@
         "Nome da etiqueta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Atualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Trocar ou adicionar conta"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domínios de correio electrónico personalizados"
+      ],
+      "Search message content": [
+        "Pesquisar conteúdo da mensagem"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Up to 15 email addresses": [
+        "Até 15 endereços de email"
       ]
     },
     "new_plans: label": {
@@ -3878,6 +3903,11 @@
       ],
       "Work": [
         "Trabalho"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Oficial"
       ]
     },
     "Refresh on apply warning": {
@@ -4125,10 +4155,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } membro",
-        "${ emailsCount } membros"
-      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -4162,9 +4188,6 @@
       ],
       "Clearing data": [
         "A limpar os dados"
-      ],
-      "Contact details": [
-        "Detalhes do contacto"
       ],
       "Contact Details": [
         "Detalhes do contacto"
@@ -4453,9 +4476,6 @@
       ],
       "Type": [
         "Tipo"
-      ],
-      "Upgrade required": [
-        "Atualização requerida"
       ],
       "Uploaded": [
         "Enviado"
