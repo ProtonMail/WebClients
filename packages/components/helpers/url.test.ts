@@ -129,6 +129,12 @@ describe('punycodeUrl', () => {
         expect(encodedUrl).toEqual(url);
     });
 
+    it('should keep the trailing slash', () => {
+        const url = 'https://www.äöü.com/EDEQWE/';
+        const encodedUrl = punycodeUrl(url);
+        expect(encodedUrl).toEqual('https://www.xn--4ca0bs.com/EDEQWE/');
+    });
+
     it('should keep the port', () => {
         const url = 'https://www.äöü.com:8080';
         const encodedUrl = punycodeUrl(url);
