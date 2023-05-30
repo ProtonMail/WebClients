@@ -108,14 +108,6 @@ export const selectLoginItemByUsername = (username?: MaybeNull<string>) =>
         loginItems.find((item) => item.data.content.username === _username)
     );
 
-export const selectTotpItems = createSelector([selectItemsByType('login')], (items) =>
-    items.filter(
-        (item) =>
-            Boolean(item.data.content.totpUri) ||
-            Boolean(item.data.extraFields.some((field) => field.type === 'totp' && Boolean(field.data.totpUri)))
-    )
-);
-
 export type SelectMatchItemsOptions = {
     matchItem: (item: Item) => (searchTerm: string) => boolean;
     needle?: string;

@@ -1,7 +1,7 @@
 import type { TOTP } from 'otpauth';
 import { URI } from 'otpauth';
 
-import { selectCanGenerateTOTP, selectItemByShareIdAndId } from '@proton/pass/store';
+import { selectItemByShareIdAndId } from '@proton/pass/store';
 import type { OtpRequest } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
@@ -33,9 +33,6 @@ export const createOTPService = () => {
         const { shareId, itemId, ...request } = otpRequest;
 
         try {
-            const canGenerateTOTP = selectCanGenerateTOTP(otpRequest);
-            if (!canGenerateTOTP) throw new Error('User plan does not allow generating this OTP code');
-
             const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
 
             if (item?.data.type === 'login') {

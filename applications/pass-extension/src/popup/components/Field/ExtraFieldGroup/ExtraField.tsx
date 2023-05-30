@@ -37,15 +37,15 @@ export type ExtraFieldProps = FieldBoxProps &
     };
 
 export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption> => ({
-    totp: {
-        icon: 'lock',
-        label: c('Label').t`2FA secret (TOTP)`,
-        placeholder: c('Placeholder').t`Add 2FA secret`,
-    },
     text: {
         icon: 'text-align-left',
         label: c('Label').t`Text`,
         placeholder: c('Placeholder').t`Add text`,
+    },
+    totp: {
+        icon: 'lock',
+        label: c('Label').t`2FA secret (TOTP)`,
+        placeholder: c('Placeholder').t`Add 2FA secret`,
     },
     hidden: {
         icon: 'eye-slash',

@@ -4,10 +4,11 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { selectAliasByAliasEmail } from '@proton/pass/store';
+import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
+import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
 import { ClickToCopyValueControl } from '../../../components/Field/Control/ClickToCopyValueControl';
@@ -24,6 +25,7 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
     const { name, note } = metadata;
     const { username, password, totpUri, urls } = content;
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
+    const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
 
     return (
         <ItemViewPanel type="login" name={name} vault={vault} {...itemViewProps}>
@@ -44,14 +46,22 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
 
                 <MaskedValueControl charsGroupedByColor label={c('Label').t`Password`} value={password} />
 
-                {totpUri && <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} type="item" />}
+                {totpUri && totpAllowed && (
+                    <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} type="item" />
+                )}
+
+                {totpUri && !totpAllowed && (
+                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                        <UpgradeButton inline />
+                    </ValueControl>
+                )}
             </FieldsetCluster>
 
             {urls.length > 0 && (
                 <FieldsetCluster mode="read" as="div">
                     <ValueControl interactive icon="earth" label={c('Label').t`Websites`}>
                         {urls.map((url) => (
-                            <Href className="block mb-1 text-ellipsis" href={url} key={url}>
+                            <Href className="block text-ellipsis" href={url} key={url}>
                                 {url}
                             </Href>
                         ))}
