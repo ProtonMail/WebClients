@@ -351,6 +351,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Load": [
+        "Laden"
+      ],
       "Load image": [
         "Afbeelding laden"
       ],
@@ -395,6 +398,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "New message": [
+        "Nieuw bericht"
       ],
       "New upload": [
         "Nieuwe upload"
@@ -1802,6 +1808,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-logo en een plus-teken"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -3422,9 +3431,6 @@
       "Go to \"My files\" and upload some files first.": [
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
       ],
-      "Group assignment applied": [
-        "Groep toewijzing toegepast"
-      ],
       "here": [
         "hier"
       ],
@@ -4731,9 +4737,45 @@
         "Labelnaam"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Account toevoegen of wisselen"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automatisch spam en verwijderde berichten verwijderen"
+      ],
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email-aliassen"
+      ],
+      "Schedule messages at any time": [
+        "Plan berichten in op ieder moment"
+      ],
+      "Search message content": [
+        "Doorzoek berichtinhoud"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Up to 15 email addresses": [
+        "Tot wel 15 e-mailadressen"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -5179,6 +5221,14 @@
         "Werk"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Officieel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
@@ -5621,10 +5671,6 @@
       "# of downloads": [
         "# downloads"
       ],
-      "${ emailsCount } member": [
-        "${ emailsCount } lid",
-        "${ emailsCount } leden"
-      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } download mislukt",
         "${ numberOfFailedTransfer.total } downloads mislukt"
@@ -5685,9 +5731,6 @@
       ],
       "Computers": [
         "Computers"
-      ],
-      "Contact details": [
-        "Contactgegevens"
       ],
       "Contact Details": [
         "Contactgegevens"
@@ -6047,9 +6090,6 @@
       "Type": [
         "Soort"
       ],
-      "Upgrade required": [
-        "Upgrade vereist"
-      ],
       "Uploaded": [
         "Geüpload"
       ],
@@ -6261,9 +6301,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Deze actie is onomkeerbaar. Voer het woord ${ boldDanger } in het veld in om door te gaan."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Deze functie vereist een betaald ${ BRAND_NAME }-account"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw ${ BRAND_NAME } account. Overweeg om uw import aan te passen."

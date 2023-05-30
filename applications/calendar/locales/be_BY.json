@@ -66,6 +66,9 @@
       "Apply": [
         "Ужыць"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "У групу кантактаў можа ўваходзіць не больш за 100 кантактаў"
+      ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
@@ -267,6 +270,12 @@
       "I have a question": [
         "У мяне ёсць пытанне"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Немагчыма загрузіць відарыс з уключанай абаронай ад праграм сачэння."
+      ],
+      "Image will be loaded without a proxy": [
+        "Відарыс будзе загружаны без проксі-сервера"
+      ],
       "Import": [
         "Імпартаваць"
       ],
@@ -293,6 +302,9 @@
       ],
       "Keep current time zone": [
         "Пакінуць бягучы часавы пояс"
+      ],
+      "Load": [
+        "Загрузіць"
       ],
       "Load image": [
         "Загрузіць відарыс"
@@ -335,6 +347,9 @@
       ],
       "New event": [
         "Новая падзея"
+      ],
+      "New message": [
+        "Новае паведамленне"
       ],
       "Next": [
         "Далей"
@@ -1999,6 +2014,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Лагатып Proton Mail і знак плюс"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Ашчаджайце час адпраўляючы лісты або запрашэнні ўсім адрасатам адначасова. Адна з прэміяльных функцый сярод многіх іншых. Палепшыце свой тарыфны план, каб скарыстацца ёй."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
@@ -2196,6 +2217,9 @@
       ],
       "Cancellation failed to be sent": [
         "Не ўдалося адправіць скасаванне"
+      ],
+      "Cannot export this contact": [
+        "Немагчыма экспартаваць гэты кантакт"
       ],
       "Contact could not be saved": [
         "Не атрымалася захаваць кантакт"
@@ -3060,11 +3084,6 @@
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "На падставе вашага часавага пояса"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "Электронная пошта"
@@ -3550,6 +3569,12 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Кантакт прызначаны групе ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Кантакт не прызначаны групе ${ contactGroupName }"
+      ],
       "Country code": [
         "Код краіны"
       ],
@@ -3642,9 +3667,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Змяненні перыядычнасці будуць страчаны."
-      ],
-      "Group assignment applied": [
-        "Прызначэнне групы ўжыта"
       ],
       "here": [
         "тут"
@@ -4032,6 +4054,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Вы абновіце ўсе падзеі ў гэтай серыі. Выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень, лісты больш не будуць трапляць у паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -4871,9 +4899,54 @@
         "Назва меткі"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
+      ],
+      "Custom email domains": [
+        "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Hide My Email aliases": [
+        "Псеўданімы Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйце адпраўку паведамленняў у любы час"
+      ],
+      "Search message content": [
+        "Пошук змесціва паведамлення"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Up to 15 email addresses": [
+        "Да 15 адрасоў электроннай пошты"
+      ],
+      "Up to 3 TB of storage": [
+        "Да 3 ТБ сховішча"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Выкарыстоўвайце свой уласны карыстальніцкі дамен адраса электроннай пошты. Напрыклад, you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -5366,6 +5439,14 @@
       ],
       "Work": [
         "Працоўны"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Афіцыйны"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Афіцыйныя лісты ад ${ BRAND_NAME }"
       ]
     },
     "Refresh on apply warning": {
@@ -6016,11 +6097,11 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } удзельнік",
-        "${ emailsCount } удзельнікі",
-        "${ emailsCount } удзельнікаў",
-        "${ emailsCount } удзельнікі"
+      "${ emailsCount } email address": [
+        "${ emailsCount } адрас электроннай пошты",
+        "${ emailsCount } адрасы электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты"
       ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
@@ -6067,6 +6148,9 @@
       "Calendar alarm": [
         "Апавяшчэнне календара"
       ],
+      "Cannot add more addresses": [
+        "Немагчыма дадаць больш адрасоў"
+      ],
       "Change my answer": [
         "Змяніць мой адказ"
       ],
@@ -6078,9 +6162,6 @@
       ],
       "Clearing data": [
         "Ачыстка даных"
-      ],
-      "Contact details": [
-        "Кантактныя звесткі"
       ],
       "Contact Details": [
         "Кантактныя звесткі"
@@ -6355,14 +6436,14 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Unlock contacts groups": [
+        "Разблакіраваць групы кантактаў"
+      ],
       "Update event": [
         "Абнавіць падзею"
       ],
       "Update recurring event": [
         "Абнавіць перыядычную падзею"
-      ],
-      "Upgrade required": [
-        "Патрабуецца паляпшэнне"
       ],
       "View contacts": [
         "Прагледзець кантакты"
@@ -6465,6 +6546,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Немагчыма загрузіць відарыс"
+      ],
+      "The image could not be loaded using proxy": [
+        "Немагчыма загрузіць відарыс з выкарыстаннем проксі-сервера"
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -6571,9 +6658,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Гэта незваротнае дзеянне. Увядзіце слова ${ boldDanger } у поле, каб працягнуць."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Для гэтай функцыі патрабуецца платны ўліковы запіс ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Гэта імпартаванне можа перавысіць ёмістасць сховішча, якое цяпер даступна для вашага ўліковага запісу ${ BRAND_NAME }. Змяніце налады імпартавання."

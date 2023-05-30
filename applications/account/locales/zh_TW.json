@@ -53,6 +53,9 @@
       "activate": [
         "啟用"
       ],
+      "Activate ${ Name }@pm.me": [
+        "啟用 ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "啟用 ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "傳送代碼"
+      ],
+      "Send messages with @pm.me": [
+        "透過@pm.me寄送訊息"
       ],
       "Send my username": [
         "發送我的使用者名稱"
@@ -2696,9 +2702,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "邀請好友至 ${ BRAND_NAME }，賺取高達 ${ credits } 儲值。"
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "若您不欲為我們的使命宣揚口碑，請考慮升級並解鎖更多尊享功能。"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
@@ -2711,8 +2714,14 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "移除${ MAIL_APP_NAME }頁尾，升級以解鎖付費版功能"
+      ],
       "Track the status and activity of your referrals.": [
         "追蹤您推介的狀態和活動。"
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "透過升級付費版解鎖短電子郵件地址功能和其他服務"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "升級時解鎖用來排序您收件匣的無限過濾條件與更多進階功能。"
@@ -4252,6 +4261,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "新增自訂篩選規則以自動執行特定動作，例如加上標籤或封存郵件。"
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "傳送自您已標記或 ${ BRAND_NAME } 判定為垃圾郵件位址的郵件，這些電郵會進入垃圾郵件匣。倘若您想要允許部分郵件從中排除，則可在郵件上標記為「非垃圾郵件」。"
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "傳送自您已標記或 ${ BRAND_NAME } 判定為垃圾郵件位址的郵件，這些電郵會進入垃圾郵件匣。倘若您想要允許部分郵件從中排除，則可在郵件上標記為「非垃圾郵件」。"
       ],
@@ -4340,6 +4352,9 @@
       "Best deal": [
         "至划算"
       ],
+      "Device": [
+        "裝置"
+      ],
       "Enter your email address": [
         "輸入您的電子郵件地址"
       ],
@@ -4351,9 +4366,6 @@
       ],
       "Get help": [
         "取得協助"
-      ],
-      "Holidays": [
-        "假期"
       ],
       "Key type": [
         "金鑰類型"
@@ -4373,6 +4385,9 @@
       "Permissions": [
         "權限"
       ],
+      "Protection": [
+        "安全"
+      ],
       "Select your preferred method of payment": [
         "選擇您喜好的付款方法"
       ],
@@ -4381,9 +4396,6 @@
       ],
       "Status": [
         "狀態"
-      ],
-      "Subscribed": [
-        "已訂閱"
       ],
       "Time": [
         "時間"
@@ -4443,6 +4455,17 @@
         "權杖名稱"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "假日"
+      ],
+      "Other": [
+        "其它"
+      ],
+      "Subscribed": [
+        "已訂閱"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "免費試用最佳的 ${ MAIL_APP_NAME }"
@@ -4454,11 +4477,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "依據您的時區"
       ]
     },
     "Human verification method": {
@@ -4868,6 +4886,12 @@
       ],
       "${ numGroups } contact groups": [
         "${ numGroups } 個聯絡人群組"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME }是由${ BRAND_NAME }開發，提供給需要最高安全性的使用者"
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME }使用了複雜的人工智慧系統及24/7防禦團隊以確保安全"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -5352,6 +5376,9 @@
       "Email address": [
         "電郵位址"
       ],
+      "Email address already used": [
+        "電子郵件已被使用"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
@@ -5772,6 +5799,9 @@
       "old password": [
         "舊密碼"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "當您啟用${ PROTON_SENTINEL_NAME }"
+      ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
       ],
@@ -6072,6 +6102,9 @@
       "support team": [
         "支援團隊"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "可疑的活動會被多層的防禦確認以避免帳戶劫持。"
+      ],
       "Swiss based": [
         "總部設於瑞士"
       ],
@@ -6333,6 +6366,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "升級付費版帳號以使用${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "升級以新增較短且易於分享的 @pm.me 地址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
+      ],
       "Upgrade to unlock": [
         "升級以解鎖"
       ],
@@ -6356,6 +6395,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "將選取的電子郵件地址用作外部服務的 SMTP 使用者名稱、產生的權仗用作 SMTP 密碼。"
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "持有機密資料及通訊者，如記者及行政人員，建議開啟 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -6462,6 +6504,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "透過已加密的 ${ BRAND_NAME } 位置，您可以使用全部的 ${ BRAND_NAME_TWO } 服務"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "使用目前的方案，你只能透過@pm.me郵件地地址接收訊息，升級以透過@pm.me傳送訊息，及創建更多的@pm.me地址"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
       ],
@@ -6518,9 +6563,6 @@
       ],
       "You can now close this window.": [
         "您現在就能關閉這個視窗。"
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "您的 @pm.me 電郵位址現在可以接收郵件了。升級至付費方案，不但可使用您的 @pm.me 電郵位址傳送郵件外，還可創建更多的 @pm.me 電郵位址。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
@@ -6594,6 +6636,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "您無法使用此金鑰解密任何郵件、檔案以及其它加密的資料。"
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "您將獲得受過帳號保護訓練的專家的優先支援。若任何帳號安全問題，請聯絡我們 ${ hereLink }。"
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "您能在下方看到更細節的安全紀錄，如登入紀錄。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
@@ -6656,9 +6704,6 @@
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "您的資訊在我們這邊很安全。我們僅會在需要提供我們的服務時聯絡您。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -8110,6 +8155,9 @@
       "General": [
         "一般"
       ],
+      "here": [
+        "這裡"
+      ],
       "How to unlock data": [
         "如何解鎖資料"
       ],
@@ -8195,6 +8243,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "啟用${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "啟用進階記錄"
       ],
@@ -8813,6 +8864,9 @@
       "Unlimited labels": [
         "無限制標籤"
       ],
+      "Unlimited logins and notes": [
+        "登入與附註無上限"
+      ],
       "Unlimited messages per day": [
         "每日郵件無上限"
       ],
@@ -8831,11 +8885,11 @@
       "Up to 15 email addresses": [
         "多達 15 個電子郵件地址"
       ],
+      "Up to 3 TB of storage": [
+        "多達 3 TB的儲存空間"
+      ],
       "Up to 5 forwarding mailboxes": [
         "最多五個轉寄信箱"
-      ],
-      "Up to 500 GB of storage": [
-        "多達 500 GB 的儲存空間"
       ],
       "User credential management": [
         "使用者憑證管理"
@@ -8851,11 +8905,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "創建多重電子郵件地址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "使用您擁有的自訂電子郵件網域地址，例如 you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -10927,6 +10987,9 @@
       "Action": [
         "動作"
       ],
+      "Activate @pm.me": [
+        "啟用 @pm.me"
+      ],
       "Activate account and generate keys": [
         "啟用帳戶並生成金鑰"
       ],
@@ -11427,6 +11490,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN 組態設定檔"
+      ],
+      "Organization filters": [
+        "機構過濾系統"
       ],
       "Organization name": [
         "組織名稱"

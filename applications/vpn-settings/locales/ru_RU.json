@@ -2264,6 +2264,9 @@
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
       ],
+      "Email address already used": [
+        "Адрес электронной почты уже используется"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
@@ -2902,9 +2905,6 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Ваши сообщения, календари или контакты будут заблокированы. Чтобы восстановить эти данные, вам понадобится фраза восстановления или ваш ${ oldPassword }."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Ваша информация в безопасности с нами. Мы будем связываться с вами только когда это требуется для предоставления наших сервисов."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
@@ -3829,6 +3829,9 @@
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
       ],
+      "Unlimited logins and notes": [
+        "Неограниченное количество имен пользователей и заметок"
+      ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
       ],
@@ -3843,6 +3846,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "До 5 почтовых ящиков для пересылки"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"

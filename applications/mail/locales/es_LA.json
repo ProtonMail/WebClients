@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Como lo programado"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Se permiten como máximo 100 contactos por grupo de contactos"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
       ],
@@ -476,6 +479,12 @@
       ],
       "I have a question": [
         "Tengo una pregunta"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "No se pudo cargar la imagen con la protección de rastreo."
+      ],
+      "Image will be loaded without a proxy": [
+        "La imagen se cargará sin proxy"
       ],
       "Images will be loaded without a proxy": [
         "Las imágenes se cargarán sin proxy"
@@ -2873,6 +2882,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo de Proton Mail y un signo más"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Ahorre tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualice hoy mismo."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
@@ -3068,6 +3080,9 @@
       ],
       "Calendar limit reached": [
         "Límite del calendario alcanzado"
+      ],
+      "Cannot export this contact": [
+        "No se puede exportar este contacto"
       ],
       "Choose a date in the future.": [
         "Elija un día en el futuro."
@@ -4129,7 +4144,7 @@
         "Reenvíe automáticamente"
       ],
       "Gmail messages to your inbox": [
-        "mensajes de Gmail a su buzón"
+        "los mensajes de Gmail a su buzón"
       ],
       "Sign in with Google": [
         "Iniciar sesión con Google"
@@ -4789,6 +4804,12 @@
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contacto asignado al grupo ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contacto no asignado al grupo ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
@@ -4982,9 +5003,6 @@
       ],
       "From": [
         "De"
-      ],
-      "Group assignment applied": [
-        "Asignación de grupo aplicada"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tiene ${ numAttachments } adjunto (${ numAttachmentsSize })",
@@ -5806,6 +5824,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escribió \"${ attachmentsFoundKeyword }\", pero no se añadió ningún adjunto. ¿Desea enviar el mensaje de todos modos?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Ha alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Ha alcanzado el número máximo de direcciones en el grupo de contactos."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Su cuenta de ${ BRAND_NAME } incluye SimpleLogin. Instale la extensión de navegador con un clic para comenzar."
@@ -7135,16 +7159,22 @@
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo"
       ],
-      "Up to 500 GB of storage": [
-        "Hasta 500 GB de almacenamiento"
+      "Up to 3 TB of storage": [
+        "Hasta 3 TB de almacenamiento"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenga aliases ilimitados con SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Use su propia dirección de correo personalizada, por ejemplo, usted@sunombre.com"
       ]
     },
     "new_plans: label": {
@@ -8336,9 +8366,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } miembro",
-        "${ emailsCount } miembro"
+      "${ emailsCount } email address": [
+        "${ emailsCount } dirección de correo",
+        "${ emailsCount } direcciones de correo"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
@@ -8393,6 +8423,9 @@
       "Block sender": [
         "Bloquear remitente"
       ],
+      "Cannot add more addresses": [
+        "No se pueden añadir más direcciones"
+      ],
       "Carbon Copy": [
         "Con copia"
       ],
@@ -8413,9 +8446,6 @@
       ],
       "Confirm recipient address?": [
         "¿Confirmar dirección del destinatario?"
-      ],
-      "Contact details": [
-        "Datos de contacto"
       ],
       "Contact Details": [
         "Datos del contacto"
@@ -8847,14 +8877,14 @@
       "Trust public key?": [
         "¿Confiar clave pública?"
       ],
+      "Unlock contacts groups": [
+        "Desbloquear grupos de contactos"
+      ],
       "Unsubscribe": [
         "Cancelar suscripción"
       ],
       "Unsubscribe request sent": [
         "Solicitud de cancelación de suscripción enviada"
-      ],
-      "Upgrade required": [
-        "Mejora necesaria"
       ],
       "Verification error": [
         "Error de verificación"
@@ -8954,6 +8984,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "No se ha podido cargar la imagen"
+      ],
+      "The image could not be loaded using proxy": [
+        "No se ha podido cargar la imagen utilizando el proxy"
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
@@ -9065,9 +9101,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Esta función requiere de una cuenta de pago de ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importación podría exceder la capacidad de almacenamiento actual disponible en su cuenta de ${ BRAND_NAME }. Considere personalizar su importación."

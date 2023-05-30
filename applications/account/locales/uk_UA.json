@@ -2720,6 +2720,12 @@
       "Track the status and activity of your referrals.": [
         "Відстежуйте стан і активність ваших запрошень."
       ],
+      "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
+        "Отримайте доступ до безмежної кількості фільтрів, що сортують ваші вхідні для вас, оновивши до версії з передплатою."
+      ],
+      "Unlock unlimited folders, labels and more premium features when you upgrade.": [
+        "Отримайте доступ до безмежної кількості тек, ярликів та інших преміум функцій, оновивши до версії з передплатою."
+      ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "Піктограма Upsell, що містить логотип $${ BRAND_NAME } та знак плюс"
       ],
@@ -3598,6 +3604,9 @@
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Занадто багато дочірніх сеансів. Будь ласка, очистьте куки й увійдіть знову."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Нам не вдалось завантажити цю сторінку. Будь ласка, перезавантажте сторінку або перевірте інтернет з'єднання."
       ]
     },
     "Error message, recovery": {
@@ -3824,11 +3833,17 @@
       "Invitation from ${ invitation.OrganizationName }": [
         "Запрошення від ${ invitation.OrganizationName }"
       ],
+      "Invited by: ${ inviteEmail }": [
+        "Запрошення від: ${ inviteEmail }"
+      ],
       "Manage addresses.": [
         "Керувати адресами."
       ],
       "Manage user accounts": [
         "Керувати обліковими записами користувачів"
+      ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Власники групових тарифних планів з учасниками не можуть приєднатися до інших групових тарифних планів."
       ],
       "Pending": [
         "У черзі"
@@ -3839,11 +3854,20 @@
       "Pending invitations": [
         "Черга запрошень"
       ],
+      "Sorry, you can't switch plans at this time.": [
+        "Перепрошую, наразі неможливо змінити план."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Виділене вам сховище: ${ assignedStorage }"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
       ],
       "You are part of ${ organization.Name }.": [
         "Ви долучені до ${ organization.Name }"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Вас запросили приєднатися до Організації \"${ bannerOrganization }\". ${ viewInviteButton }."
       ]
     },
     "familyOffer_2023:Footer": {
@@ -3912,6 +3936,9 @@
       ],
       "Family plan": [
         "Родинний тариф"
+      ],
+      "Introducing ${ planName }": [
+        "Представляємо ${ planName }"
       ],
       "Invite a user": [
         "Запросити користувача"
@@ -4236,6 +4263,9 @@
       "Best deal": [
         "Найкраща пропозиція"
       ],
+      "Device": [
+        "Пристрій"
+      ],
       "Enter your email address": [
         "Введіть адресу своєї е-пошти"
       ],
@@ -4247,9 +4277,6 @@
       ],
       "Get help": [
         "Отримати допомогу"
-      ],
-      "Holidays": [
-        "Свята"
       ],
       "Key type": [
         "Тип ключа"
@@ -4269,14 +4296,17 @@
       "Permissions": [
         "Дозволи"
       ],
+      "Protection": [
+        "Захист"
+      ],
+      "Select your preferred method of payment": [
+        "Виберіть бажаний вами метод оплати."
+      ],
       "Select your pricing plan": [
         "Виберіть свій тариф"
       ],
       "Status": [
         "Стан"
-      ],
-      "Subscribed": [
-        "Підписка"
       ],
       "Time": [
         "Час"
@@ -4350,11 +4380,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "На основі вашого часового поясу"
       ]
     },
     "Human verification method": {
@@ -6487,9 +6512,6 @@
       "You can now close this window.": [
         "Тепер ви можете закрити це вікно."
       ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Тепер ви можете отримувати повідомлення на свою адресу @pm.me. Перейдіть на платний тарифний план, щоб мати можливість надсилати пошту з адреси @pm.me, а також створювати додаткові адреси @pm.me."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
       ],
@@ -8084,6 +8106,9 @@
       "General": [
         "Загальні"
       ],
+      "here": [
+        "тут"
+      ],
       "How to unlock data": [
         "Як розблокувати дані"
       ],
@@ -8796,6 +8821,9 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
+      "Priority support & live chat": [
+        "Пріоритетна підтримка та миттєвий чат"
+      ],
       "Router support": [
         "Підтримка маршрутизатора"
       ],
@@ -8871,8 +8899,8 @@
       "Up to 15 email addresses": [
         "До 15 адрес електронної пошти"
       ],
-      "Up to 500 GB of storage": [
-        "До 500 ГБ сховища"
+      "Up to 3 TB of storage": [
+        "До 3 ТБ сховища"
       ],
       "User credential management": [
         "Керування обліковими даними користувача"
@@ -8887,6 +8915,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Використовуйте власні доменні адреси електронної пошти, наприклад, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -10174,6 +10205,40 @@
         "Спеціальна пропозиція"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунд",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } місяць БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО"
+      ]
+    },
     "specialoffer: Deal details": {
       "${ storageSize } total storage": [
         "Усього ${ storageSize } сховища"
@@ -10269,6 +10334,12 @@
       "2 years": [
         "2 роки"
       ],
+      "for ${ n } month": [
+        "на ${ n } місяць",
+        "на ${ n } місяці",
+        "на ${ n } місяців",
+        "на ${ n } місяців"
+      ],
       "Get the deal": [
         "Скористатися пропозицією"
       ],
@@ -10288,6 +10359,9 @@
       ],
       "End of Year Sale": [
         "Передноворічний розпродаж"
+      ],
+      "Get our premium bundle and save more": [
+        "Заощаджуй більше, придбавши наш Premium Bundle"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10756,6 +10830,9 @@
       ],
       "Filter removed": [
         "Фільтр вилучено"
+      ],
+      "Preference updated": [
+        "Налаштування оновлено"
       ],
       "Status updated": [
         "Стан оновлено"
