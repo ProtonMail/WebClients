@@ -11,8 +11,9 @@ export const getLoginsAndNotesText = () => {
 export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
         text: getLoginsAndNotesText(),
-        included: true,
         icon: 'note',
+        included: true,
+        hideInDowngrade: true,
     };
 };
 
@@ -23,8 +24,9 @@ export const getDevicesText = () => {
 export const getDevices = (): PlanCardFeatureDefinition => {
     return {
         text: getDevicesText(),
-        included: true,
         icon: 'mobile',
+        included: true,
+        hideInDowngrade: true,
     };
 };
 
