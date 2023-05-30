@@ -77,7 +77,7 @@ export const Exporter: React.FC = () => {
                     <span className="ml-3">
                         {c('Label').t`Encrypt your ${PASS_APP_NAME} data export file`}
                         <span className="block color-weak text-sm">{c('Info')
-                            .t`Export will use PGP encryption and require a strong passphrase.`}</span>
+                            .t`Export is encrypted using PGP and requires a strong passphrase.`}</span>
                     </span>
                 </Checkbox>
 
