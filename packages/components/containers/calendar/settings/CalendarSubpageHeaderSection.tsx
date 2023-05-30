@@ -72,6 +72,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
                     calendar={calendar}
                     holidaysCalendars={holidaysCalendars}
                     type={CALENDAR_MODAL_TYPE.VISUAL}
+                    onEditCalendar={onEdit}
                 />
             )}
             <div className="my-6 flex flex-justify-space-between flex-nowrap">
