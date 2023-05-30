@@ -254,11 +254,11 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                         </ValueControl>
                                     ) : (
                                         <Field
+                                            masked
                                             name="totpUri"
                                             label={c('Label').t`2FA secret (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret`}
-                                            component={PasswordField}
-                                            actions={[]}
+                                            component={TextField}
                                             icon="lock"
                                         />
                                     )
