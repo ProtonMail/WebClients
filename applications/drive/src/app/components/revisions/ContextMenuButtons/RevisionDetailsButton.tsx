@@ -17,7 +17,7 @@ const RevisionDetailsButton = ({ revision, openRevisionDetails, close }: Props) 
         <ContextMenuButton
             name={c('Action').t`Details`}
             icon="info-circle"
-            testId="context-menu-revision-details"
+            testId="context-menu-details"
             action={() => openRevisionDetails(revision)}
             close={close}
         />

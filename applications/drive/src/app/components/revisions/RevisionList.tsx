@@ -15,7 +15,7 @@ const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
     const currentRevisionFormat = isToday(fromUnixTime(currentRevision.CreateTime)) ? 'time' : 'date';
     return (
         <ul className="unstyled">
-            <li>
+            <li data-testid="current-revision">
                 <span className="text-lg text-semibold revisions-modal-list-title--current">{c('Info')
                     .t`Current version`}</span>
 
@@ -30,7 +30,7 @@ const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
                     </li>
                     {[...categorizedRevisions.entries()].map(([key, revisionCategory]) => {
                         return (
-                            <li key={key}>
+                            <li data-testid="previous-revisions" key={key}>
                                 <span className="text-lg text-semibold color-weak">{revisionCategory.title}</span>
                                 <ul className="unstyled my-3 ml-4">
                                     {revisionCategory.list.map((revision) => (

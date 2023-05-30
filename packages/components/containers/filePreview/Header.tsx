@@ -77,6 +77,7 @@ const Header = ({
             {date && (
                 <TimeIntl
                     className="flex-item-fluid text-ellipsis ml-5"
+                    data-testid="file-preview:date"
                     options={{
                         year: 'numeric',
                         month: 'short',
