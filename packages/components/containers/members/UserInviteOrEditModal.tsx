@@ -103,21 +103,26 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
     };
 
     const editInvitation = async () => {
-        //Editing a pending invitation uses a different endpoint than updating a user that accepted the invite
+        // Editing a pending invitation uses a different endpoint than updating a user that accepted the invite
         if (isInvitationPending) {
             await api(editMemberInvitation(member!.ID, model.storage));
         } else {
-            await Promise.all([
-                initialModel.storage !== model.storage && api(updateQuota(member!.ID, model.storage)),
-                canUpdateVPNConnection &&
-                    initialModel.vpn !== model.vpn &&
-                    api(updateVPN(member!.ID, model.vpn ? VPN_CONNECTIONS : 0)),
-                canMakeAdmin &&
-                    model.admin &&
-                    initialModel.admin !== model.admin &&
-                    api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_ADMIN)),
-                canRevokeAdmin && !model.admin && initialModel.admin !== model.admin && revokeAdmin(),
-            ]);
+            // Make consecutive API calls to update the member (API restriction)
+            if (initialModel.storage !== model.storage) {
+                await api(updateQuota(member!.ID, model.storage));
+            }
+
+            if (canUpdateVPNConnection && initialModel.vpn !== model.vpn) {
+                await api(updateVPN(member!.ID, model.vpn ? VPN_CONNECTIONS : 0));
+            }
+
+            if (canMakeAdmin && model.admin && initialModel.admin !== model.admin) {
+                await api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+            }
+
+            if (canRevokeAdmin && !model.admin && initialModel.admin !== model.admin) {
+                await revokeAdmin();
+            }
         }
 
         createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });
