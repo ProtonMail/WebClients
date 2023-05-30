@@ -1,3 +1,18 @@
+## Release 5.0.23.0 — June 14, 2023
+
+### Improvements
+
+-   Make composing messages to contacts and contact groups easier
+-   Improve sidebar spacing and app switcher design
+-   Contact images are now loaded through our anonymised proxy
+
+### Fixes
+
+-   Fix additional character when importing a .vcf file in contacts
+-   Prevent from adding contacts without names in contact groups
+-   Message content search fixes and optimisations
+-   Other contact fixes
+
 ## Release 5.0.22.0 — May 17, 2023
 
 ### Improvements
