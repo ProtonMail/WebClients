@@ -50,8 +50,11 @@ export const BaseTextField: VFC<BaseTextFieldProps> = ({
 };
 
 export const BaseMaskedTextField: VFC<BaseTextFieldProps> = ({ form, field, ...rest }) => {
+    const { value } = field;
     const [masked, setMasked] = useState<boolean>(true);
-    const isEmpty = isEmptyString(field.value);
+    const isEmpty = isEmptyString(value);
+
+    const maskedValue = !masked || isEmpty ? value : '••••••••••••••••';
 
     return (
         <BaseTextField
@@ -60,8 +63,8 @@ export const BaseMaskedTextField: VFC<BaseTextFieldProps> = ({ form, field, ...r
             onBlur={pipe(field.onBlur, () => setMasked(true))}
             form={form}
             field={field}
+            value={maskedValue}
             {...rest}
-            type={masked ? 'password' : 'text'}
         />
     );
 };

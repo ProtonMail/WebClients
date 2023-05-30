@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
+import { selectExtraFieldLimits } from '@proton/pass/store';
 import type { ExtraFieldType, ItemExtraField } from '@proton/pass/types';
 
 import { Field } from '../Field';
@@ -27,6 +29,7 @@ const getNewField = <T extends ExtraFieldType>(type: T): ItemExtraField => {
 
 export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: ExtraFieldGroupProps<T>) => {
     const [autofocusIndex, setAutofocusIndex] = useState<number>();
+    const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     return (
         <FieldArray
@@ -57,7 +60,7 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                             </FieldsetCluster>
                         )}
 
-                        <AddExtraFieldDropdown onAdd={addCustomField} />
+                        {!needsUpgrade && <AddExtraFieldDropdown onAdd={addCustomField} />}
                     </>
                 );
             }}
