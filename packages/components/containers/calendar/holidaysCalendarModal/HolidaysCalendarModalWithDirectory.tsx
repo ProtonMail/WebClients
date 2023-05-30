@@ -126,6 +126,7 @@ interface Props extends ModalProps {
      */
     holidaysCalendars: VisualCalendar[];
     type: CALENDAR_MODAL_TYPE;
+    onEditCalendar?: () => void;
 }
 
 const HolidaysCalendarModalWithDirectory = ({
@@ -134,6 +135,7 @@ const HolidaysCalendarModalWithDirectory = ({
     directory,
     holidaysCalendars,
     type,
+    onEditCalendar,
     ...rest
 }: Props) => {
     const [addresses] = useAddresses();
@@ -251,6 +253,7 @@ const HolidaysCalendarModalWithDirectory = ({
                         );
                         await call();
                         await calendarCall([inputCalendar.CalendarID]);
+                        onEditCalendar?.();
                     } else {
                         // 2 - Leave old holidays calendar and join a new one
                         await api(removeMember(inputHolidaysCalendar.ID, inputHolidaysCalendar.Members[0].ID));
