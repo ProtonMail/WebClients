@@ -1,6 +1,5 @@
 import { History, Location } from 'history';
 
-import { Feature } from '@proton/components/containers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { LabelCount, UserModel } from '@proton/shared/lib/interfaces';
@@ -74,7 +73,7 @@ export const resetSort = (history: History) => {
     history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
 };
 
-export const isEncryptedSearchAvailable = (user: UserModel, feature?: Feature) => {
+export const isEncryptedSearchAvailable = (user: UserModel, isESUserInterfaceAvailable: boolean) => {
     if (isMobile()) {
         return false;
     }
@@ -83,7 +82,7 @@ export const isEncryptedSearchAvailable = (user: UserModel, feature?: Feature) =
         return true;
     }
 
-    return feature?.Value === true;
+    return isESUserInterfaceAvailable;
 };
 
 export const getESFreeBlobKey = (userID: string) => `ES:${userID}:InitialIndexing`;
