@@ -9,7 +9,9 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { selectAllVaultWithItemsCount, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store/selectors';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
+import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
 import { RadioButtonGroup, RadioLabelledButton } from '../../components/Field/RadioButtonGroupField';
+import { ItemCard } from '../../components/Item/ItemCard';
 import { PanelHeader } from '../../components/Panel/Header';
 import { Panel } from '../../components/Panel/Panel';
 import { VaultIcon } from '../../components/Vault/VaultIcon';
@@ -43,10 +45,18 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                             >
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
+                            ...(didDowngrade ? [<UpgradeButton key="upgrade-button" />] : []),
                         ]}
                     />
                 }
             >
+                {didDowngrade && (
+                    <ItemCard>
+                        {c('Info')
+                            .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.`}
+                    </ItemCard>
+                )}
+
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
                     {vaultsWithItemCount.map((vault) => (
                         <RadioLabelledButton
