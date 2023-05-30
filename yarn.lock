@@ -3737,7 +3737,6 @@ __metadata:
     babel-jest: ^29.5.0
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
-    cross-fetch: ^3.1.6
     date-fns: ^2.30.0
     eslint: ^8.41.0
     jest: ^29.5.0
@@ -3750,6 +3749,7 @@ __metadata:
     react-redux: ^8.0.5
     ttag: ^1.7.24
     typescript: ^5.0.4
+    whatwg-fetch: ^3.6.2
   peerDependencies:
     "@types/react-router-dom": ^5.3.3
     react-router-dom: ^5.3.4
@@ -31254,6 +31254,13 @@ fsevents@^1.2.7:
   dependencies:
     iconv-lite: 0.6.3
   checksum: 7087810c410aa9b689cbd6af8773341a53cdc1f3aae2a882c163bd5522ec8ca4cdfc269aef417a5792f411807d5d77d50df4c24e3abb00bb60192858a40cc675
+  languageName: node
+  linkType: hard
+
+"whatwg-fetch@npm:^3.6.2":
+  version: 3.6.2
+  resolution: "whatwg-fetch@npm:3.6.2"
+  checksum: ee976b7249e7791edb0d0a62cd806b29006ad7ec3a3d89145921ad8c00a3a67e4be8f3fb3ec6bc7b58498724fd568d11aeeeea1f7827e7e1e5eae6c8a275afed
   languageName: node
   linkType: hard
 
