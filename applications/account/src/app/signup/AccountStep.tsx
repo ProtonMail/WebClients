@@ -39,7 +39,9 @@ import {
     passwordLengthValidator,
     requiredValidator,
     usernameCharacterValidator,
+    usernameEndCharacterValidator,
     usernameLengthValidator,
+    usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -174,8 +176,10 @@ const AccountStep = ({
                 signupType === SignupType.Username
                     ? [
                           requiredValidator(trimmedUsername),
-                          usernameCharacterValidator(trimmedUsername),
                           usernameLengthValidator(trimmedUsername),
+                          usernameStartCharacterValidator(trimmedUsername),
+                          usernameEndCharacterValidator(trimmedUsername),
+                          usernameCharacterValidator(trimmedUsername),
                       ]
                     : [requiredValidator(trimmedEmail), emailValidator(trimmedEmail)]
             )}
