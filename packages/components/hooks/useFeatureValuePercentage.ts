@@ -9,7 +9,7 @@ import useUser from './useUser';
 const useProgressiveRollout = (code: FeatureCode) => {
     const [user] = useUser();
     const { feature } = useFeature(code);
-    const threshold = Number.isInteger(feature?.Value) ? feature?.Value : 0;
+    const threshold = feature?.Value >= 0 && feature?.Value <= 1 ? feature?.Value : 0;
     const byte = useMemo(() => {
         const byteCharacters = decodeBase64URL(user.ID);
         return byteCharacters.charCodeAt(0);
