@@ -20,7 +20,7 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: 
             <span className="no-tablet flex no-mobile">
                 <Vr />
             </span>
-            <span className="flex no-mobile flex-item-noshrink flex-gap-0-5">{viewSelector}</span>
+            <span className="flex no-mobile flex-item-noshrink gap-2">{viewSelector}</span>
         </Toolbar>
     );
 };

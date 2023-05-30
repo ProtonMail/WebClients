@@ -83,7 +83,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
             <ModalTwoHeader title={c('Title').t`Self-destruct message`} />
             <ModalTwoContent>
                 <div className="mb-4">{c('Info').t`When do you want your message to self-destruct?`}</div>
-                <div className="flex flex-gap-0-5 flex-row flex-nowrap">
+                <div className="flex gap-2 flex-row flex-nowrap">
                     <InputFieldTwo
                         as={DateInput}
                         id="expiration-date"

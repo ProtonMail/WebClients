@@ -44,7 +44,7 @@ const ExtraExpirationSelfDestruction = ({ message }: Props) => {
     return (
         <div
             className={clsx(
-                'bg-norm rounded border flex flex-align-items-center py-2 px-2 mb-2 flex-gap-1',
+                'bg-norm rounded border flex flex-align-items-center py-2 px-2 mb-2 gap-4',
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
             data-testid="expiration-banner"

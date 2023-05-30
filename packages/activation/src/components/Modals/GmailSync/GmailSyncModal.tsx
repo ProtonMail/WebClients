@@ -68,8 +68,8 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
     return (
         <ModalTwo size="xlarge" fullscreenOnMobile {...rest} onClose={handleClose}>
             <ModalHeader />
-            <ModalContent className="m-8 mt-0 flex flex-row flex-align-items-center flex-nowrap flex-gap-2">
-                <div className="flex flex-column flex-item-fluid flex-gap-2">
+            <ModalContent className="m-8 mt-0 flex flex-row flex-align-items-center flex-nowrap gap-7">
+                <div className="flex flex-column flex-item-fluid gap-7">
                     <h1>
                         <strong>{c('Gmail forwarding').t`Automatically forward`}</strong>
                         &nbsp;
@@ -79,7 +79,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
                     <div className="no-desktop flex-item-grow-2">
                         <GmailSyncModalAnimation />
                     </div>
-                    <div className="flex flex-column flex-align-items-center flex-gap-1">
+                    <div className="flex flex-column flex-align-items-center gap-4">
                         <SignInWithGoogle onClick={handleGoogleSync} loading={loading} />
                         {!noSkip && (
                             <Button shape="ghost" color="norm" fullWidth onClick={handleSyncSkip}>{c('Action')
