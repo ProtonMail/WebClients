@@ -66,6 +66,9 @@
       "Apply": [
         "Застосувати"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "В групу контактів може ввійти до 100 контактів"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -267,6 +270,12 @@
       "I have a question": [
         "У мене є питання"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
+      ],
+      "Image will be loaded without a proxy": [
+        "Зображення завантажиться без проксі."
+      ],
       "Import": [
         "Імпорт"
       ],
@@ -293,6 +302,9 @@
       ],
       "Keep current time zone": [
         "Лишити поточний часовий пояс"
+      ],
+      "Load": [
+        "Завантажити"
       ],
       "Load image": [
         "Завантажити зображення"
@@ -335,6 +347,9 @@
       ],
       "New event": [
         "Нова подія"
+      ],
+      "New message": [
+        "Нове повідомлення"
       ],
       "Next": [
         "Далі"
@@ -1999,6 +2014,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail та знак плюс"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Заощаджуй час розсилаючи листи або запрошення одразу всім відправникам - одна з численних преміум функцій. Оновлюй до версії з передплатою."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -2196,6 +2217,9 @@
       ],
       "Cancellation failed to be sent": [
         "Не вдалося надіслати скасування"
+      ],
+      "Cannot export this contact": [
+        "Експортування цього контакту неможливе"
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
@@ -2686,6 +2710,9 @@
       "Something went wrong": [
         "Виникла проблема"
       ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Нам не вдалось завантажити цю сторінку. Будь ласка, перезавантажте сторінку або перевірте інтернет з'єднання."
+      ],
       "You need an active personal calendar to import events": [
         "Вам необхідний активний особистий календар для імпортування подій"
       ]
@@ -2844,11 +2871,26 @@
       "customer support": [
         "клієнтська підтримка"
       ],
+      "Invited by: ${ inviteEmail }": [
+        "Запрошення від: ${ inviteEmail }"
+      ],
       "Manage addresses.": [
         "Керувати адресами."
       ],
+      "Owners of a plan with members cannot join another group plan.": [
+        "Власники групових тарифних планів з учасниками не можуть приєднатися до інших групових тарифних планів."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "Перепрошую, наразі неможливо змінити план."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Виділене вам сховище: ${ assignedStorage }"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "Вас запросили приєднатися до Організації \"${ bannerOrganization }\". ${ viewInviteButton }."
       ]
     },
     "familyOffer_2023:Footer": {
@@ -2864,6 +2906,11 @@
     "familyOffer_2023:Onboarding Proton": {
       "Set up your family account": [
         "Налаштувати родинний обліковий запис"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "Представляємо ${ planName }"
       ]
     },
     "Feedback Modal Title": {
@@ -2977,11 +3024,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "На основі вашого часового поясу"
       ]
     },
     "Human verification method": {
@@ -3561,9 +3603,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Зміни частоти повторювань будуть втрачені."
-      ],
-      "Group assignment applied": [
-        "Призначення групи застосовано"
       ],
       "here": [
         "тут"
@@ -4790,9 +4829,51 @@
         "Назва мітки"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Перемкнути або додати обліковий запис"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Автоматичне видалення спаму та повідомлень зі смітника"
+      ],
+      "Custom email domains": [
+        "Власні домени електронної пошти"
+      ],
+      "Hide My Email aliases": [
+        "Псевдоніми Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйте надсилання повідомлень в будь-який час"
+      ],
+      "Search message content": [
+        "Пошук вмісту повідомлень"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Up to 15 email addresses": [
+        "До 15 адрес електронної пошти"
+      ],
+      "Up to 3 TB of storage": [
+        "До 3 ТБ сховища"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Використовуйте власні доменні адреси електронної пошти, наприклад, you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -5287,6 +5368,14 @@
         "Робоча"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Офіційний"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Офіційний лист від ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
@@ -5537,6 +5626,9 @@
       ],
       "End of Year Sale": [
         "Передноворічний розпродаж"
+      ],
+      "Get our premium bundle and save more": [
+        "Заощаджуй більше, придбавши наш Premium Bundle"
       ]
     },
     "specialoffer: Tooltip": {
@@ -5861,11 +5953,11 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } учасник",
-        "${ emailsCount } учасники",
-        "${ emailsCount } учасників",
-        "${ emailsCount } учасників"
+      "${ emailsCount } email address": [
+        "${ emailsCount } адреса електронної пошти",
+        "${ emailsCount } адрес е-пошти",
+        "${ emailsCount } адреси е-пошти",
+        "${ emailsCount } адрес е-пошти"
       ],
       "Account suspended": [
         "Обліковий запис призупинено"
@@ -5923,9 +6015,6 @@
       ],
       "Clearing data": [
         "Стирання даних"
-      ],
-      "Contact details": [
-        "Подробиці контакту"
       ],
       "Contact Details": [
         "Подробиці контакту"
@@ -6206,9 +6295,6 @@
       "Update recurring event": [
         "Оновити повторювану подію"
       ],
-      "Upgrade required": [
-        "Необхідний платний тарифний план"
-      ],
       "View contacts": [
         "Переглянути контакти"
       ],
@@ -6416,9 +6502,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Це незворотна дія. Будь ласка, для продовження введіть слово ${ boldDanger }."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Ця функція вимагає платного тарифного плану ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису ${ BRAND_NAME }. Розгляньте можливість налаштування вашого імпортування."

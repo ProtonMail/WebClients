@@ -351,6 +351,9 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "Load": [
+        "Indlæs"
+      ],
       "Load image": [
         "Indlæs billede"
       ],
@@ -395,6 +398,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "New message": [
+        "Ny besked"
       ],
       "New upload": [
         "Nyt upload"
@@ -1803,6 +1809,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail-logo og et plustegn"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
@@ -1919,6 +1928,9 @@
       ],
       "Calendar limit reached": [
         "Kalendergrænse nået"
+      ],
+      "Cannot export this contact": [
+        "Kan ikke eksportere denne kontakt"
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -3367,9 +3379,6 @@
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"Mine filer\" og upload nogle filer først."
       ],
-      "Group assignment applied": [
-        "Gruppetildeling anvendt"
-      ],
       "here": [
         "hér"
       ],
@@ -4673,9 +4682,48 @@
         "Etiketnavn"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Fjern automatisk spam og slettede beskeder"
+      ],
+      "Custom email domains": [
+        "Brugerdefinerede e-maildomæner"
+      ],
+      "Hide My Email aliases": [
+        "Skjul mine e-mail-aliasser"
+      ],
+      "Schedule messages at any time": [
+        "Planlæg beskeder til ethvert tidspunkt"
+      ],
+      "Search message content": [
+        "Søg i beskedindhold"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Up to 15 email addresses": [
+        "Op til 15 e-mailadresser"
+      ],
+      "Up to 3 TB of storage": [
+        "Op til 3 TB lagerplads"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -5116,6 +5164,14 @@
         "Arbejde"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Officiel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Officiel e-mail fra ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
@@ -5494,9 +5550,9 @@
       "# of downloads": [
         "# af downloads"
       ],
-      "${ emailsCount } member": [
-        "${ emailsCount } medlem",
-        "${ emailsCount } medlemmer"
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadresse",
+        "${ emailsCount } e-mailadresser"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } fejlende overførsel",
@@ -5544,6 +5600,9 @@
       "Browser might run out of memory": [
         "Browseren løber måske tør for hukommelse"
       ],
+      "Cannot add more addresses": [
+        "Kan ikke tilføje flere adresser"
+      ],
       "Cannot load link": [
         "Link kunne ikke indlæses"
       ],
@@ -5558,9 +5617,6 @@
       ],
       "Computers": [
         "Computere"
-      ],
-      "Contact details": [
-        "Kontaktdetaljer"
       ],
       "Contact Details": [
         "Kundeoplysninger"
@@ -5920,9 +5976,6 @@
       "Type": [
         "Type"
       ],
-      "Upgrade required": [
-        "Opgradering påkrævet"
-      ],
       "Uploaded": [
         "Uploadet"
       ],
@@ -6134,9 +6187,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Denne funktion kræver en betalt ${ BRAND_NAME }-konto"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."

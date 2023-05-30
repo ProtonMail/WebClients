@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Sebagaimana Terjadwal"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Masing-masing grup kontak hanya dapat menampung hingga 100 kontak"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -474,6 +477,12 @@
       ],
       "I have a question": [
         "Saya memiliki pertanyaan"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
+      ],
+      "Image will be loaded without a proxy": [
+        "Gambar akan dimuat tanpa proxy"
       ],
       "Images will be loaded without a proxy": [
         "Gambar akan dimuat tanpa proksi"
@@ -2863,6 +2872,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo Proton Mail dan tanda plus"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Hemat waktu Anda dengan fitur pengiriman email atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
@@ -3056,6 +3068,9 @@
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
+      ],
+      "Cannot export this contact": [
+        "Kontak tidak dapat diekspor"
       ],
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
@@ -3989,7 +4004,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has file": [
-        "Memiliki berkas"
+        "Mengandung berkas"
       ]
     },
     "Filter preview": {
@@ -4710,6 +4725,12 @@
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontak ditetapkan ke grup ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontak tidak lagi ditetapkan ke grup ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Disalin ke clipboard"
       ],
@@ -4895,9 +4916,6 @@
       ],
       "From": [
         "Dari"
-      ],
-      "Group assignment applied": [
-        "Penugasan grup diterapkan"
       ],
       "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
         "Memiliki ${ numAttachments } lampiran (${ numAttachmentsSize })"
@@ -5705,6 +5723,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Akun ${ BRAND_NAME } Anda meliputi perlindungan SimpleLogin. Instal ekstensi browser SimpleLogin dengan sekali klik untuk memulai."
@@ -7023,16 +7047,22 @@
       "Up to 15 email addresses": [
         "Hingga 15 alamat email"
       ],
-      "Up to 500 GB of storage": [
-        "Kuota penyimpanan hingga 500 GB"
+      "Up to 3 TB of storage": [
+        "Kuota penyimpanan hingga 3 TB"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gunakan domain email khusus milik Anda sendiri, mis. anda@namaanda.com"
       ]
     },
     "new_plans: label": {
@@ -8172,8 +8202,8 @@
       ]
     },
     "Title": {
-      "${ emailsCount } members": [
-        "${ emailsCount } anggota"
+      "${ emailsCount } email addresses": [
+        "${ emailsCount } alamat email"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Pintasan Keyboard ${ MAIL_APP_NAME }"
@@ -8226,6 +8256,9 @@
       "Block sender": [
         "Blokir pengirim"
       ],
+      "Cannot add more addresses": [
+        "Tidak dapat menambahkan lebih banyak alamat"
+      ],
       "Carbon Copy": [
         "Tembusan"
       ],
@@ -8246,9 +8279,6 @@
       ],
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
-      ],
-      "Contact details": [
-        "Rincian kontak"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -8673,14 +8703,14 @@
       "Trust public key?": [
         "Percaya kunci publik?"
       ],
+      "Unlock contacts groups": [
+        "Buka kunci grup kontak"
+      ],
       "Unsubscribe": [
         "Berhenti berlangganan"
       ],
       "Unsubscribe request sent": [
         "Permintaan berhenti berlangganan dikirim"
-      ],
-      "Upgrade required": [
-        "Butuh peningkatan akun"
       ],
       "Verification error": [
         "Kesalahan verifikasi"
@@ -8780,6 +8810,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Gambar tidak dapat dimuat"
+      ],
+      "The image could not be loaded using proxy": [
+        "Gambar tidak dapat dimuat menggunakan proxy"
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
@@ -8886,9 +8922,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di kolom tersebut untuk melanjutkan."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Fitur ini memerlukan akun ${ BRAND_NAME } berbayar"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."

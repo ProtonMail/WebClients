@@ -3066,6 +3066,9 @@
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
+      "Cannot export this contact": [
+        "Kan ikke eksportere denne kontakt"
+      ],
       "Choose a date in the future.": [
         "Vælg en dato i fremtiden."
       ],
@@ -4067,12 +4070,6 @@
       ]
     },
     "Gmail forwarding": {
-      "Automatically forward": [
-        "Videresend automatisk"
-      ],
-      "Gmail messages to your inbox": [
-        "Gmail-beskeder til din indbakke"
-      ],
       "Sign in with Google": [
         "Log ind med Google"
       ]
@@ -4924,9 +4921,6 @@
       ],
       "From": [
         "Fra"
-      ],
-      "Group assignment applied": [
-        "Gruppetildeling anvendt"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Har ${ numAttachments } vedhæftet fil (${ numAttachmentsSize })",
@@ -7074,8 +7068,8 @@
       "Up to 15 email addresses": [
         "Op til 15 e-mailadresser"
       ],
-      "Up to 500 GB of storage": [
-        "Op til 500 GB lagerplads"
+      "Up to 3 TB of storage": [
+        "Op til 3 TB lagerplads"
       ]
     },
     "new_plans: feature info": {
@@ -8203,9 +8197,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } medlem",
-        "${ emailsCount } medlemmer"
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadresse",
+        "${ emailsCount } e-mailadresser"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Tastaturgenveje"
@@ -8260,6 +8254,9 @@
       "Block sender": [
         "Blokér afsender"
       ],
+      "Cannot add more addresses": [
+        "Kan ikke tilføje flere adresser"
+      ],
       "Carbon Copy": [
         "Karbonkopi"
       ],
@@ -8280,9 +8277,6 @@
       ],
       "Confirm recipient address?": [
         "Bekræft modtageradresse?"
-      ],
-      "Contact details": [
-        "Kontaktdetaljer"
       ],
       "Contact Details": [
         "Kundeoplysninger"
@@ -8720,9 +8714,6 @@
       "Unsubscribe request sent": [
         "Anmodning om afmelding afsendt"
       ],
-      "Upgrade required": [
-        "Opgradering påkrævet"
-      ],
       "Verification error": [
         "Bekræftelsesfejl"
       ],
@@ -8932,9 +8923,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Denne funktion kræver en betalt ${ BRAND_NAME }-konto"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."

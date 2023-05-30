@@ -860,6 +860,9 @@
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
+      "The email addresses do not match": [
+        "Az e-mail címek nem egyeznek"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
       ],
@@ -880,8 +883,14 @@
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
+      "Please refresh the page or try again later.": [
+        "Frissítse az oldalt vagy próbálja újra később."
+      ],
       "Something went wrong": [
         "Hiba történt"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
       ]
     },
     "fido2: Error": {

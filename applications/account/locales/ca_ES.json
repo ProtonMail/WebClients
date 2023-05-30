@@ -38,6 +38,9 @@
       ],
       "Remove forward": [
         "Suprimeix el reenviament"
+      ],
+      "You will stop the mail forwarding.": [
+        "Aturareu el reenviament del correu."
       ]
     },
     "Action": {
@@ -49,6 +52,9 @@
       ],
       "activate": [
         "activar"
+      ],
+      "Activate ${ Name }@pm.me": [
+        "Activa ${ Name }@pm.me"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -761,6 +767,9 @@
       "Send code": [
         "Enviar codi"
       ],
+      "Send messages with @pm.me": [
+        "Envia missatges amb @pm.me"
+      ],
       "Send my username": [
         "Enviar el meu nom d'usuari"
       ],
@@ -970,6 +979,11 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ]
+    },
+    "action": {
+      "Resuming forward": [
+        "Reprèn el reenviament"
       ]
     },
     "Action for user session": {
@@ -2594,6 +2608,9 @@
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
         "Sembla que el teu fitxer no conté la capçalera '${ options.fieldName }'."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Hem detectat errors en múltiples files durant la importació. Reviseu el vostre fitxer CSV."
       ]
     },
     "Cycle": {
@@ -2693,9 +2710,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Rebeu fins a ${ credits } en crèdits convidant els vostres amics a unir-se a ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Si voleu deixar de difondre la nostra missió, penseu a millorar el vostre pla i desbloquejar més característiques prèmium."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
@@ -2709,8 +2723,14 @@
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Per eliminar el peu de pàgina ${ MAIL_APP_NAME }, milloreu i desbloquegeu encara més característiques prèmium."
+      ],
       "Track the status and activity of your referrals.": [
         "Feu un seguiment de les vostres referències."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Desbloquegeu adreces de correu electrònic més curtes i altres característiques prèmium mitjançant la millora del vostre pla."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Desbloquegeu filtres il·limitats que ordenen la vostra safata d'entrada i més característiques prèmium quan milloreu el vostre pla."
@@ -3559,6 +3579,9 @@
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
       ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Carregeu un fitxer CSV amb ${ MAX_NUMBER_OF_USER_ROWS } comptes d'usuari o menys."
+      ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "El vostre fitxer \"${ formattedFilename }\" està buit."
       ]
@@ -3740,6 +3763,11 @@
     "familyOffer_2023: Get Proton Family": {
       "Get ${ planName }": [
         "Obtenir ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Els avantatges del vostre compte"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -3946,11 +3974,22 @@
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "El compte de l'usuari es traslladarà a un pla de ${ BRAND_NAME } Il·limitat per a una prova gratuïta de 30 dies*."
       ],
+      "To create a new user, a configured custom domain is required.": [
+        "Per a crear un usuari, es requereix un domini personalitzat configurat."
+      ],
       "You can increase or reduce the storage for this user.": [
         "Podeu augmentar o reduir l'emmagatzematge d'aquest usuari."
       ],
       "You left this plan": [
         "Heu abandonat aquest pla."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Afegiu, elimineu i realitzeu canvis als comptes d'usuari del grup familiar."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Afegiu, elimineu i realitzeu canvis als comptes d'usuari de la vostra organització."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4068,6 +4107,9 @@
       ]
     },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Desactiveu el 2FA amb la clau de seguretat abans de desactivar TOTP."
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
       ],
@@ -4076,11 +4118,20 @@
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "Autenticació de dos factors amb clau de seguretat desactivada"
+      ],
+      "Add a name to identify your security key with.": [
+        "Afegiu un nom per identificar la vostra clau de seguretat."
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Esteu segur que voleu suprimir la clau de seguretat ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inseriu una clau de seguretat associada al vostre compte ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Inseriu la vostra clau de seguretat al port USB del vostre dispositiu."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -4091,8 +4142,17 @@
       "Security key updated": [
         "Clau de seguretat actualitzada"
       ],
+      "This will delete all security keys linked to your account.": [
+        "Això eliminarà totes les claus de seguretat vinculades al vostre compte."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Per activar el 2FA amb una clau de seguretat, haureu d'activar primer el 2FA mitjançant l'aplicació d'autenticació."
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "La vostra clau d'autenticació de dos factors està llesta."
       ]
     },
     "fido2: Label": {
@@ -4330,9 +4390,6 @@
       "Get help": [
         "Obteniu ajuda"
       ],
-      "Holidays": [
-        "Dies festius"
-      ],
       "Key type": [
         "Tipus de clau"
       ],
@@ -4362,9 +4419,6 @@
       ],
       "Status": [
         "Estat"
-      ],
-      "Subscribed": [
-        "Subscrit"
       ],
       "Time": [
         "Temps"
@@ -4424,6 +4478,22 @@
         "Nom del token"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Festius"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Subscribed": [
+        "Subscrit"
+      ]
+    },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Proveu el millor de ${ MAIL_APP_NAME } de manera gratuïta."
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
@@ -4431,11 +4501,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "En funció de la teva zona horària"
       ]
     },
     "Human verification method": {
@@ -4698,6 +4763,11 @@
         "Seleccioneu ${ boldExport } per exportar el calendari com a fitxer ICS."
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Segur que voleu importar una clau privada? Importar una clau privada generada de forma insegura o filtrada pot perjudicar la seguretat dels vostres correus electrònics.\n\nTingueu en compte que la clau pública corresponent a aquesta clau privada estarà disponible públicament des del nostre servidor de claus. Si la clau conté detalls personals (com el vostre nom complet) que no voleu publicar, editeu-la abans d'importar-la."
+      ]
+    },
     "Import provider": {
       "Import from ${ provider }": [
         "Importar des de ${ provider }"
@@ -4707,6 +4777,9 @@
       ]
     },
     "Import rollback status": {
+      "Undo finished": [
+        "Cancel·lació finalitzada"
+      ],
       "Undo in progress": [
         "Desfer en curs"
       ]
@@ -5145,6 +5218,9 @@
       "Balance from your previous subscription": [
         "Saldo de la vostra subscripció anterior"
       ],
+      "Based on your time zone": [
+        "En funció de la vostra zona horària"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
       ],
@@ -5356,6 +5432,9 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
+      ],
+      "Email address already used": [
+        "L'adreça de correu electrònic ja està en ús."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "S'inclou gratuïtament l'allotjament de correu electrònic per a 10 noms de domini de correu electrònic personalitzats. Es poden afegir dominis addicionals per ${ price }."
@@ -6356,6 +6435,9 @@
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
         "Milloreu a un compte de pagament per habilitar ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
+      ],
       "Upgrade to unlock": [
         "Milloreu el vostre pla per desbloquejar"
       ],
@@ -6488,6 +6570,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Amb una adreça de correu xifrada ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME_TWO }."
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals utilitzant @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
       ],
@@ -6548,9 +6633,6 @@
       ],
       "You can now close this window.": [
         "Ara podeu tancar aquesta finestra."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
@@ -6694,9 +6776,6 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -6843,6 +6922,9 @@
       ]
     },
     "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Ja existeix una clau amb el mateix algorisme de xifratge. Generar una altra clau causarà un carregament més lent del compte. Esteu segur que voleu continuar?"
+      ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Una clau amb la mateix algoritme de xifratge ja és activa per a aquesta adreça. Generar una altra clau provocarà una càrrega més lenta i l'eliminació d'aquesta clau pot causar problemes.\nSi està generant una nova clau perquè l'antiga clau està compromesa, marqueu aquesta clau com a compromesa.\nEsteu segur que voleu continuar?"
       ],
@@ -8238,6 +8320,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Habilita ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Activa els registres avançats"
       ],
@@ -8532,6 +8617,9 @@
     "new_plans": {
       "Highest VPN speed": [
         "La velocitat VPN més alta"
+      ],
+      "Keep your inbox organized with folders": [
+        "Mantingueu la vostra safata d'entrada organitzada amb carpetes."
       ],
       "Medium VPN speed": [
         "Velocitat VPN mitjana"
@@ -8902,11 +8990,11 @@
       "Up to 15 email addresses": [
         "Fins a 15 adreces de correu electrònic"
       ],
+      "Up to 3 TB of storage": [
+        "Fins a 3 TB d'emmagatzematge"
+      ],
       "Up to 5 forwarding mailboxes": [
         "Fins a 5 bústies de reenviament"
-      ],
-      "Up to 500 GB of storage": [
-        "Fins a 500 GB d'emmagatzematge"
       ],
       "User credential management": [
         "Gestió de credencials d'usuari"
@@ -8922,11 +9010,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JohnShopper@${ domain } per a comptes de compres, JohnNews@${ domain2 } per a la subscripció a notícies"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gaudiu d'àlies il·limitats amb SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilitzeu la vostra pròpia adreça de domini de correu electrònic personalitzat, per exemple, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -8958,6 +9052,12 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } acabant en ${ last4 }."
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } us permet crear adreces de correu electrònic i gestionar comptes per als subusuaris. Ideal per a les vostres famílies i organitzacions."
+      ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Amb una subscripció d'1 mes. Altres opcions de subscripció disponibles a la compra."
       ],
@@ -8973,11 +9073,23 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Amb una subscripció de 30 mesos. Altres opcions de subscripció disponibles a la compra."
       ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
       "For next-level password management and identity protection.": [
         "Per a una gestió de contrasenyes i identitat del més alt nivell."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Si elimineu el vostre compte, perdeu tots els avantatges del pla ${ visionary } i no estarà disponible si creeu un compte nou."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Si baixeu de categoria el vostre compte, perdeu tots els avantatges del pla ${ visionary } i no estarà disponible si intenteu subscriure-us de nou."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Si canvieu a un pla diferent, perdreu tots els avantatges del pla ${ visionary } i no podreu tornar al pla ${ visionary }."
       ],
       "Most popular": [
         "Més popular"
@@ -8988,11 +9100,17 @@
       "Popular": [
         "Popular"
       ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Suite de privacitat i seguretat per a empreses, amb tots els serveis prèmium de ${ BRAND_NAME }."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protegiu la privadesa de la vostra família amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Emmagatzematge al núvol segur que us permet emmagatzemar, sincronitzar i compartir fitxers de manera fàcil i segura."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "Correu electrònic i calendari segurs per a professionals i empreses."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
@@ -9000,8 +9118,17 @@
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Estableix respostes automàtiques per informar els contactes que sou fora de l'oficina o que no podeu respondre."
       ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
+      ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Esteu gaudint d'un preu promocional al vostre pla actual. Si elimineu el vostre compte, perdreu el preu promocional i no estarà disponible si creeu un compte nou."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
     "new_plans: Label": {
@@ -9087,9 +9214,33 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Les adreces tenen capacitat completa d'enviament i recepció. Un usuari pot tenir múltiples adreces assignades; tanmateix, una sola adreça no pot ser assignada a múltiples usuaris."
+      ],
+      "Advanced security VPN with global network": [
+        "VPN de seguretat avançada amb xarxa global"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Permet accedir a més d'una xarxa alhora, p. ex., veure una pel·lícula des d'un altre país mentre s'obtenen resultats de cerca locals"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Permet configurar respostes automàtiques per als missatges entrants"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "L'enviament massiu de correus electrònics promocionals o programàtics no està suportat actualment. Recomanem utilitzar un proveïdor de serveis de correu electrònic dedicat per a aquesta finalitat."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "Controleu l'accés als vostres fitxers compartits afegint protecció per contrasenya i dates d'expiració d'enllaços."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JohnShopper@${ domain } per a comptes de compres, JohnNews@${ domain } per a la subscripció a notícies"
+      ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Creeu ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
         "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
+      ],
+      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
+        "Creeu fins a ${ n } adreces de correu electrònic/àlies per a tota la família. Utilitzeu-les per a les vostres identitats en línia, p. ex., MyFamilySubs@${ domain } per a les subscripcions en línia."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -9097,11 +9248,86 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors."
       ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        "Compartiu fàcilment els vostres calendaris amb els vostres col·legues de treball, família i amics mitjançant un enllaç."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Compartiu fàcilment els vostres calendaris amb la vostra família, amics o col·legues."
+      ],
       "End-to-end encrypted calendar": [
         "Calendari xifrat d'extrem a extrem"
       ],
       "End-to-end encrypted file storage": [
         "Emmagatzematge d'arxius xifrat d'extrem a extrem"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Força la sortida de les sessions d'usuari quan es cregui que les credencials d'usuari han estat compromeses"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "El suport IMAP es limita a l'ús d'aplicacions d'escriptori (p. ex., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Actualment no s'admeten les integracions IMAP basades en el núvol."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantingueu els vostres plans en privat per a vosaltres i la vostra família amb un calendari xifrat."
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Us manté protegit bloquejant totes les connexions de xarxa quan esteu inesperadament desconnectat del nostre servidor VPN."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "Com una carpeta, una caixa forta és una manera pràctica d'organitzar els vostres elements. La compartició de caixes fortes amb amics i familiars està en desenvolupament."
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Gestioneu la vostra subscripció, inclosa la personalització del pla. Els mètodes de pagament acceptats són la targeta de crèdit, PayPal, criptomoneda i transferència bancària."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "En dies laborables, rebeu suport del servei d'atenció al client de ${ BRAND_NAME } en les 24 hores següents a la sol·licitud"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Una connexió VPN permet que un dispositiu es connecti a ${ BRAND_NAME } VPN en qualsevol moment. Per exemple, per connectar un telèfon i un portàtil alhora a ${ BRAND_NAME_TWO } VPN, necessiteu dues connexions VPN."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Opció per veure les bústies d'usuari no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Eina de gestió d'organitzacions que permet als administradors afegir i suprimir usuaris, assignar emmagatzematge, configurar dominis i realitzar altres tasques"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Els discos durs dels nostres servidors estan totalment xifrats amb múltiples capes de contrasenya, de manera que les vostres dades estan protegides fins i tot si el nostre maquinari es veiés compromès."
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personalitzeu la vostra signatura de correu electrònic amb logotips, imatges, icones de xarxes socials, enllaços als detalls de contacte i més"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "El suport telefònic està disponible per part de l'equip d'èxit al client de ${ BRAND_NAME } durant les hores de negoci a Europa per a clients amb 6 o més usuaris"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Protegiu cada dispositiu connectat a la vostra xarxa WiFi. Això també és útil si hi ha dispositius que no admeten la configuració VPN directament."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Protegiu la vostra família de llocs web nocius i accediu als nostres servidors VPN d'alta velocitat per veure el vostre contingut preferit"
+      ],
+      "Quickly set up out-of-office messages": [
+        "Configura ràpidament els missatges «fora de l'oficina»"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Transferiu ràpidament els vostres correus electrònics, calendari o contactes des de qualsevol proveïdor."
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "Requereix un codi enviat a un telèfon mòbil per iniciar la sessió. Això assegura que, fins i tot si una contrasenya està compromesa, el compte roman segur."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Restableix les contrasenyes dels usuaris i l'autenticació de dos factors dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Dirigiu el vostre trànsit d'internet a través de la xarxa Tor amb un sol clic."
@@ -9109,14 +9335,56 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Emmagatzemeu amb seguretat els detalls dels vostres contactes, com el número de telèfon, l'adreça, l'aniversari i les notes personals. El xifratge d'accés zero assegura que fins i tot ${ BRAND_NAME } no hi pugui accedir."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Envieu correus electrònics a grups grans de manera ràpida i fàcil creant tants grups de contactes com necessiteu (fins a 100 contactes per grup)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Configura els filtres per respondre automàticament, ordenar i/o etiquetar els vostres correus electrònics"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Compartiu fitxers o carpetes amb qualsevol persona utilitzant enllaços segurs i compartibles."
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "NetShield, dissenyat especialment, protegeix el vostre dispositiu i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós"
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Comenceu amb ${ freeStorageSize } i desbloquegeu més emmagatzematge sobre la marxa. L'espai d'emmagatzematge es comparteix amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "L'espai d'emmagatzematge es comparteix amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre usuaris i entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
+      ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Adreces de correu electrònic úniques i generades sobre la marxa que protegeixen la vostra identitat en línia i us permet controlar què arriba a la vostra safata d'entrada. De SimpleLogin per a ${ BRAND_NAME }."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Utilitzeu les vostres pròpies adreces de domini de correu electrònic personalitzat , p. ex., you@yourname.com"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "No mantenim registres d'ús de la sessió del que feu en línia i no registrem metadades que puguin comprometre la vostra privacitat"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "Ens hem compromès a ajudar els clients subjectes als reglaments HIPAA/HITECH a salvaguardar la informació sanitària protegida (PHI). Les BAA signades estan disponibles per a tots els clients de ${ BRAND_NAME } for Business."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Quan esteu connectat a la nostra VPN, el vostre DNS fa les consultes a través del túnel VPN xifrat, augmentant la vostra privacitat i seguretat en línia"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Quan s'envia a altres usuaris de ${ MAIL_APP_NAME }, el xifratge és automàtic. L'enviament a usuaris que no siguin de ${ MAIL_APP_NAME_TWO } requereix establir abans una contrasenya."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador primari té control sobre la facturació."
       ]
     },
     "new_plans: upgrade": {
@@ -9190,6 +9458,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Ha fallat l'addició del calendari de festius"
+      ],
       "Calendar added": [
         "S'ha afegit el calendari"
       ]
@@ -9500,6 +9771,18 @@
       ]
     },
     "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } el vostre pla per afegir més usuaris o suprimiu alguns comptes d'usuari per alliberar espai."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } per obtenir més comptes o suprimíeu l'accés VPN per alguns usuaris."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } el vostre pla per obtenir més adreces o suprimiu-ne algunes per alliberar espai."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } el vostre pla per obtenir més emmagatzematge o suprimiu una part de l'emmagatzematge per alliberar espai."
+      ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "El vostre pla inclou un màxim de ${ availableAddresses } adreça més.",
         "El vostre pla inclou un màxim de ${ availableAddresses } adreces més."
@@ -9511,6 +9794,9 @@
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
         "El vostre pla inclou un màxim de ${ availableVPNAccess } adreça més.",
         "El vostre pla inclou un màxim de ${ availableVPNAccess } adreces més."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge disponible."
       ]
     },
     "OS compatibility": {
@@ -9659,6 +9945,9 @@
     "plan customizer, users": {
       "contact": [
         "contacte"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Seleccioneu el nombre d'usuaris per incloure en el vostre pla. Cada usuari addicional té un cost de ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Si necessiteu més de ${ maxUsers } compte d'usuari, si us plau, ${ contact } amb el nostre equip de vendes.",
@@ -9876,6 +10165,12 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Completeu la transició a la privacitat amb les nostres eines segures d'importació i reenviament."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Completeu la transició a la privacitat amb les nostres eines segures d'importació."
+      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organitza la teva safata d'entrada amb carpetes i etiquetes. ${ learnMoreLink }"
       ]
@@ -10427,6 +10722,12 @@
       ],
       "Keep auto-pay": [
         "Mantenir el pagament automàtic"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, encara haureu de fer-ho abans del final del període de facturació. No podem baixar-vos de categoria automàticament perquè si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra propera factura de subscripció abans de la data de venciment per evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -10754,6 +11055,11 @@
         "Camp vCard"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "No s'han trobat tokens SMTP."
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -10826,6 +11132,9 @@
       ],
       "Action": [
         "Acció"
+      ],
+      "Activate @pm.me": [
+        "Activa @pm.me"
       ],
       "Activate account and generate keys": [
         "Activa el compte i genera les claus"
@@ -11908,6 +12217,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited Hide My Email aliases": [
+        "Millora a ${ passPlusPlanName } per obtenir àlies il·limitats del Hide My Email."
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositiu a la vegada a la VPN",
         "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositius a la vegada a la VPN"
