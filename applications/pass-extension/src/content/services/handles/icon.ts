@@ -1,6 +1,7 @@
 import { WorkerStatus } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
+import debounce from '@proton/utils/debounce';
 
 import { EXTENSION_PREFIX, ICON_CLASSNAME } from '../../constants';
 import { withContext } from '../../context/context';
@@ -12,9 +13,9 @@ type CreateIconOptions = { field: FieldHandle };
 
 export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHandle => {
     const listeners = createListenerStore();
+    let repositionRequest: number = -1; /* track repositioning requests */
 
     const input = field.element as HTMLInputElement;
-    const inputBox = field.boxElement;
     const { icon, wrapper } = createIcon(field);
     const lock = createLockIcon();
 
@@ -40,9 +41,22 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         icon.style.setProperty(`--${EXTENSION_PREFIX}-items-count`, `"${safeCount}"`);
     };
 
-    const onResize = () => {
-        cleanupInjectionStyles({ input, wrapper });
-        applyInjectionStyles({ input, wrapper, inputBox, icon });
+    const reposition = debounce(
+        () =>
+            (repositionRequest = requestAnimationFrame(() => {
+                cleanupInjectionStyles({ input, wrapper });
+                applyInjectionStyles({ input, wrapper, inputBox: field.getBoxElement(), icon });
+            })),
+        250,
+        { leading: true }
+    );
+
+    /* `reposition` is debounced and wrapped in a `requestAnimationFrame`
+     * for performance reasons. If form is detached, we must cancel the
+     * ongoing repositioning */
+    const cancelReposition = () => {
+        cancelAnimationFrame(repositionRequest);
+        reposition.cancel();
     };
 
     const onClick: (evt: MouseEvent) => void = withContext(({ service: { iframe } }, evt) => {
@@ -57,17 +71,18 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         }
     });
 
-    const detach = () => {
+    const detach = safeCall(() => {
         listeners.removeAll();
+        cancelReposition();
         cleanupInjectionStyles({ input, wrapper });
-        safeCall(() => {
-            icon.parentElement!.removeChild(icon);
-            wrapper.parentElement!.removeChild(wrapper);
-        })();
-    };
+        icon.parentElement!.removeChild(icon);
+        wrapper.parentElement!.removeChild(wrapper);
+    });
 
-    listeners.addListener(window, 'resize', onResize);
     listeners.addListener(icon, 'mousedown', onClick);
+    listeners.addListener(window, 'resize', reposition);
+    listeners.addResizeObserver(field.element, reposition);
+    listeners.addListener(field.element, 'transitionend', reposition);
 
-    return { element: icon, setStatus, setCount, detach };
+    return { element: icon, setStatus, setCount, detach, reposition };
 };
