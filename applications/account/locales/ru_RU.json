@@ -53,6 +53,9 @@
       "activate": [
         "включить"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Активируйте ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Отправить код"
+      ],
+      "Send messages with @pm.me": [
+        "Отправляйте сообщения на @pm.me"
       ],
       "Send my username": [
         "Отправить мое имя пользователя"
@@ -2720,9 +2726,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Получите до ${ credits } кредитов, приглашая друзей в ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Если вы хотите прекратить распространять слухи о нашей миссии, подумайте о подписке на тариф, позволяющий разблокировать дополнительные функции."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
@@ -2738,8 +2741,14 @@
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Для удаления нижнего колонтитула ${ MAIL_APP_NAME } обновите тариф и разблокируйте ещё больше премиум-функций."
+      ],
       "Track the status and activity of your referrals.": [
         "Отлеживайте состояние и активность ваших рефералов."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Обновите тариф, чтобы разблокировать более короткие адреса электронной почты и другие премиум-функции."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Разблокируют неограниченные фильтры, которые сортируют Вашу почту за Вас и другие премиум функции при обновлении."
@@ -3931,11 +3940,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Вы достигли предела в 10 принятых приглашений за 6 месяцев."
+      ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Вы достигли лимита в 10 принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной."
       ],
       "You have successfully joined the Family plan": [
         "Вы успешно присоединились к тарифу Family"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
@@ -4315,6 +4330,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Добавьте собственный фильтр для автоматического выполнения определенных действий, таких как пометка или архивирование сообщений."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Письма с адресов, помеченных Вами или ${ BRAND_NAME } как спам, будут попадать в папку \"Спам\". Если Вы хотите разрешить письма с одного из этих адресов, отметьте его как \"не спам\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Письма с адресов, помеченных вами или ${ BRAND_NAME } как спам, будут попадать в папку \"Спам\". Если вы хотите разрешить письма с одного из этих адресов, отметьте его как \"не спам\"."
       ],
@@ -4403,6 +4421,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Device": [
+        "Устройство"
+      ],
       "Enter your email address": [
         "Введите адрес вашей электронной почты"
       ],
@@ -4414,9 +4435,6 @@
       ],
       "Get help": [
         "Получить помощь"
-      ],
-      "Holidays": [
-        "Праздники"
       ],
       "Key type": [
         "Тип ключа"
@@ -4436,6 +4454,9 @@
       "Permissions": [
         "Разрешения"
       ],
+      "Protection": [
+        "Защита"
+      ],
       "Select your preferred method of payment": [
         "Выберите предпочтительный способ оплаты"
       ],
@@ -4444,9 +4465,6 @@
       ],
       "Status": [
         "Состояние"
-      ],
-      "Subscribed": [
-        "Подписан"
       ],
       "Time": [
         "Время"
@@ -4506,6 +4524,17 @@
         "Имя токена"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Праздники"
+      ],
+      "Other": [
+        "Другой"
+      ],
+      "Subscribed": [
+        "Подписаны"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
@@ -4520,11 +4549,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "На основе вашего часового пояса"
       ]
     },
     "Human verification method": {
@@ -4980,6 +5004,12 @@
         "${ numGroups } групп контактов",
         "${ numGroups } групп контактов"
       ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } - это программа защиты учетных записей, разработанная в ${ BRAND_NAME } для пользователей, которым нужна максимальная безопасность."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "В ${ PROTON_SENTINEL_NAME } работают сложные системы искусственного интеллекта и команды специалистов, которые трудятся 24 часа в сутки 7 дней в неделю для борьбы с плохими игроками и угрозами безопасности."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
         "Найдены ${ providerFoldersNumLocalized } папки",
@@ -5292,6 +5322,9 @@
       "Balance from your previous subscription": [
         "Баланс с прошлой подписки"
       ],
+      "Based on your time zone": [
+        "На основе вашего часового пояса"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
       ],
@@ -5507,6 +5540,9 @@
       ],
       "Email address": [
         "Адрес электронной почты"
+      ],
+      "Email address already used": [
+        "Адрес электронной почты уже используется"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
@@ -5934,6 +5970,9 @@
       "old password": [
         "старый пароль"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Как только вы включите ${ PROTON_SENTINEL_NAME }:"
+      ],
       "Once you reset your password:": [
         "После изменения пароля:"
       ],
@@ -6246,6 +6285,9 @@
       "support team": [
         "служба поддержки"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "На подозрительные события будут реагировать многочисленные уровни защиты, которые помогут предотвратить захват вашей учетной записи злоумышленниками."
+      ],
       "Swiss based": [
         "Расположен в Швейцарии"
       ],
@@ -6516,6 +6558,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Перейдите на платный аккаунт, чтобы включить ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Обновите тариф, чтобы добавить к своей учетной записи более короткий адрес @pm.me, которым проще поделиться. Он означает «Напишите мне в ${ MAIL_APP_NAME }» или «Отправьте мне личное сообщение»."
+      ],
       "Upgrade to unlock": [
         "Улучшите, чтобы разблокировать"
       ],
@@ -6539,6 +6587,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Используйте выбранный адрес электронной почты в качестве имени пользователя SMTP во внешней службе и сгенерированный токен в качестве пароля SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Пользователям с конфиденциальными данными и коммуникациями, таким как журналисты или руководители, настоятельно рекомендуется включить ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -6645,6 +6696,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "С зашифрованным адресом ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME_TWO }"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "В рамках текущего тарифного плана Вы можете только получать сообщения со своим адресом @pm.me. Перейдите на новый тарифный план, чтобы отправлять сообщения и создавать дополнительные адреса с помощью @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активации вы не сможете создавать новых пользователей, добавлять адреса существующим пользователям или получать доступ к неконфиденциальным учётным записям."
       ],
@@ -6713,9 +6767,6 @@
       ],
       "You can now close this window.": [
         "Теперь это окно можно закрыть."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Теперь вы можете получать сообщения на свой адрес @pm.me. Перейдите на платный тариф, чтобы еще отправлять письма, используя свой адрес @pm.me, и создавать дополнительные адреса @pm.me."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
@@ -6792,6 +6843,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Вы НЕ сможете расшифровать сообщения, файлы и другие данные, зашифрованные с помощью этого ключа."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Вы получите приоритетную поддержку от специалистов, прошедших обучение по защите счетов. По всем вопросам, связанным с безопасностью аккаунта, обращайтесь к нам ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "В журналах безопасности ниже вы увидите более подробную информацию о важных событиях, таких как попытки входа в систему."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
@@ -6857,9 +6914,6 @@
       ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Ваша информация в безопасности с нами. Мы будем связываться с вами только когда это требуется для предоставления наших сервисов."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -8323,6 +8377,9 @@
       "General": [
         "Основные"
       ],
+      "here": [
+        "здесь"
+      ],
       "How to unlock data": [
         "Как разблокировать данные"
       ],
@@ -8411,6 +8468,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Включите ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Включить расширенное журналирование"
       ],
@@ -9113,6 +9173,9 @@
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
       ],
+      "Unlimited logins and notes": [
+        "Неограниченное количество имен пользователей и заметок"
+      ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
       ],
@@ -9131,8 +9194,11 @@
       "Up to 15 email addresses": [
         "До 15 адресов электронной почты"
       ],
-      "Up to 500 GB of storage": [
-        "До 500 ГБ хранилища"
+      "Up to 3 TB of storage": [
+        "До 3 ТБ хранилища"
+      ],
+      "Up to 5 forwarding mailboxes": [
+        "До 5 почтовых ящиков для пересылки"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -9148,11 +9214,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Получите неограниченное количество псевдонимов с SimpleLogin от ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Используйте собственный адрес домена электронной почты, например, you@yourname.com."
       ]
     },
     "new_plans: heading": {
@@ -9596,6 +9668,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Не удалось добавить календарь праздничных дней"
+      ],
       "Calendar added": [
         "Календарь добавлен"
       ]
@@ -11338,6 +11413,9 @@
       "Action": [
         "Действие"
       ],
+      "Activate @pm.me": [
+        "Активируйте @pm.me"
+      ],
       "Activate account and generate keys": [
         "Активируйте аккаунт и сгенерируйте ключи"
       ],
@@ -11847,6 +11925,9 @@
       ],
       "OpenVPN configuration files": [
         "Файлы конфигурации OpenVPN"
+      ],
+      "Organization filters": [
+        "Название организации"
       ],
       "Organization name": [
         "Название организации"

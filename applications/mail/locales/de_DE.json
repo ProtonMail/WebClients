@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Wie geplant"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Pro Kontaktgruppe sind maximal 100 Kontakte erlaubt."
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -476,6 +479,12 @@
       ],
       "I have a question": [
         "Ich habe eine Frage"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Das Bild konnte aufgrund des Tracker-Schutzes nicht geladen werden."
+      ],
+      "Image will be loaded without a proxy": [
+        "Das Bild wird ohne Proxy geladen."
       ],
       "Images will be loaded without a proxy": [
         "Bilder werden ohne Proxy geladen"
@@ -1241,9 +1250,6 @@
       ]
     },
     "Animation": {
-      "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }'s Posteingang"
-      ],
       "5 trackers removed": [
         "5 Tracker entfernt"
       ],
@@ -2873,6 +2879,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail-Logo und ein Pluszeichen"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Spare Zeit, indem du E-Mails oder Einladungen an alle gleichzeitig sendest - eine Premiumfunktion neben vielen anderen. Upgrade noch heute."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
@@ -3068,6 +3077,9 @@
       ],
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
+      ],
+      "Cannot export this contact": [
+        "Dieser Kontakt kann nicht exportiert werden."
       ],
       "Choose a date in the future.": [
         "Wähle ein Datum, das in der Zukunft liegt."
@@ -4126,10 +4138,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Automatisch weiterleiten"
+        "Automatische Weiterleitung"
       ],
       "Gmail messages to your inbox": [
-        "Gmail Nachrichten in deinen Posteingang"
+        "von Gmail-Nachrichten zu deinem Posteingang"
       ],
       "Sign in with Google": [
         "Mit Google anmelden"
@@ -4789,6 +4801,12 @@
       "Confirm phishing report": [
         "Phishing-Bericht bestätigen"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Zuweisung des Kontaktes für Gruppe ${ contactGroupName } entfernt."
+      ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
@@ -4982,9 +5000,6 @@
       ],
       "From": [
         "Von"
-      ],
-      "Group assignment applied": [
-        "Gruppenzuordnung übernommen"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Hat ${ numAttachments } Anhang (${ numAttachmentsSize })",
@@ -5806,6 +5821,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Du hast die maximale Anzahl von Adressen in der Kontaktgruppe erreicht."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Dein ${ BRAND_NAME }-Konto beinhaltet SimpleLogin. Installiere die Browsererweiterung mit einem Klick, um anzufangen."
@@ -7135,16 +7153,22 @@
       "Up to 15 email addresses": [
         "Bis zu 15 E-Mail-Adressen"
       ],
-      "Up to 500 GB of storage": [
-        "Bis zu 500 GB Speicherplatz"
+      "Up to 3 TB of storage": [
+        "Bis zu 3 TB Speicherplatz"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
       ]
     },
     "new_plans: label": {
@@ -8333,9 +8357,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } Mitglied",
-        "${ emailsCount } Mitglieder"
+      "${ emailsCount } email address": [
+        "${ emailsCount } E-Mail-Adresse",
+        "${ emailsCount } E-Mail-Adressen"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }-Tastaturkürzel"
@@ -8390,6 +8414,9 @@
       "Block sender": [
         "Absender sperren"
       ],
+      "Cannot add more addresses": [
+        "Es können keine weiteren Adressen hinzugefügt werden."
+      ],
       "Carbon Copy": [
         "Kopie"
       ],
@@ -8410,9 +8437,6 @@
       ],
       "Confirm recipient address?": [
         "Empfängeradresse bestätigen?"
-      ],
-      "Contact details": [
-        "Kontaktinformationen"
       ],
       "Contact Details": [
         "Kontaktinformationen"
@@ -8844,14 +8868,14 @@
       "Trust public key?": [
         "Öffentlichem Schlüssel vertrauen?"
       ],
+      "Unlock contacts groups": [
+        "Kontaktgruppen freischalten"
+      ],
       "Unsubscribe": [
         "Abbestellen"
       ],
       "Unsubscribe request sent": [
         "Abmeldeanfrage gesendet"
-      ],
-      "Upgrade required": [
-        "Upgrade erforderlich"
       ],
       "Verification error": [
         "Verifizierungsfehler"
@@ -8951,6 +8975,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
+      ],
+      "The image could not be loaded": [
+        "Das Bild konnte nicht geladen werden"
+      ],
+      "The image could not be loaded using proxy": [
+        "Das Bild konnte nicht mit Proxy geladen werden."
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
@@ -9062,9 +9092,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Diese Aktion kann NICHT widerrufen werden. Bitte gib das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Diese Funktion erfordert ein kostenpflichtiges ${ BRAND_NAME }-Konto."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Dieser Import kann die derzeit verfügbare Speicherkapazität deines ${ BRAND_NAME }-Kontos überschreiten. Bitte ziehe in Erwägung, den Import anzupassen."

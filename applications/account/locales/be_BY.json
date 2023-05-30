@@ -53,6 +53,9 @@
       "activate": [
         "актываваць"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Актываваць ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
       ],
@@ -764,6 +767,9 @@
       "Send code": [
         "Адправіць код"
       ],
+      "Send messages with @pm.me": [
+        "Адправіць паведамленне з @pm.me"
+      ],
       "Send my username": [
         "Адправіць маё імя карыстальніка"
       ],
@@ -1027,11 +1033,17 @@
       "Disable encryption": [
         "Адключыць шыфраванне"
       ],
+      "Disable expect signed": [
+        "Адключыць чаканне подпісу"
+      ],
       "Enable": [
         "Уключыць"
       ],
       "Enable encryption": [
         "Уключыць шыфраванне"
+      ],
+      "Enable expect signed": [
+        "Уключыць чаканне подпісу"
       ],
       "Generate missing keys": [
         "Згенерыраваць ключы, якія адсутнічаюць"
@@ -2714,9 +2726,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Атрымайце да ${ credits } у крэдытах запрасіўшы сябра ў ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Калі вы хочаце спыніць распаўсюджанне інфармацыі пра нашу місію, падумайце пра паляпшэнне тарыфнага плана, які дазволіць разблакіраваць больш прэміяльных функцый."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
@@ -2732,8 +2741,14 @@
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантактаў. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Палепшыце бягучы тарыфны план і разблакіруйце магчымасць выдалення ніжняга калонтытула ${ MAIL_APP_NAME }, а таксама іншыя прэміяльныя функцыі."
+      ],
       "Track the status and activity of your referrals.": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Палепшыце бягучы тарыфны план і атрымайце кароткі адрас электроннай пошты разам з іншымі прэміяльнымі функцыямі."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Разблакіруйце неабмежаваную колькасць фільтраў, якія дапамогуць сартаваць вашу паштовую скрыню і іншыя прэміяльныя функцыі пасля паляпшэння."
@@ -4315,6 +4330,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Дадайце ўласны фільтр для выканання такіх аўтаматычных дзеянняў, як пазначэнне меткай або архіваванне паведамленняў."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Лісты ад адрасоў, якія пазначаны як спам вамі або ${ BRAND_NAME } будуць трапляць у папку са спамам удзельнікаў вашай арганізацыі. Калі вы хочаце дазволіць лісты ад аднаго з гэтых адрасоў, то вам неабходна пазначаць іх як \"не спам\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Лісты ад адрасоў, якія пазначаны як спам вамі або ${ BRAND_NAME } будуць трапляць у папку са спамам. Калі вы хочаце дазволіць лісты ад аднаго з гэтых адрасоў, то вам неабходна пазначаць яго як \"не спам\"."
       ],
@@ -4403,6 +4421,9 @@
       "Best deal": [
         "Лепшая прапанова"
       ],
+      "Device": [
+        "Прылада"
+      ],
       "Enter your email address": [
         "Увядзіце адрас сваёй электроннай пошты"
       ],
@@ -4414,9 +4435,6 @@
       ],
       "Get help": [
         "Атрымаць даведку"
-      ],
-      "Holidays": [
-        "Святы"
       ],
       "Key type": [
         "Тып ключа"
@@ -4436,6 +4454,9 @@
       "Permissions": [
         "Дазволы"
       ],
+      "Protection": [
+        "Абарона"
+      ],
       "Select your preferred method of payment": [
         "Выберыце пажаданы метад аплаты"
       ],
@@ -4444,9 +4465,6 @@
       ],
       "Status": [
         "Статус"
-      ],
-      "Subscribed": [
-        "Ёсць падпіска"
       ],
       "Time": [
         "Час"
@@ -4506,6 +4524,17 @@
         "Назва токена"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Святы"
+      ],
+      "Other": [
+        "Іншае"
+      ],
+      "Subscribed": [
+        "Ёсць падпіска"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Паспрабуйце лепшы з ${ MAIL_APP_NAME } бясплатна"
@@ -4520,11 +4549,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "На падставе вашага часавага пояса"
       ]
     },
     "Human verification method": {
@@ -4979,6 +5003,12 @@
         "${ numGroups } групы кантактаў",
         "${ numGroups } груп кантактаў",
         "${ numGroups } групы кантактаў"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } - гэта абаронены ўліковы запіс праграмы, якая распрацавана ${ BRAND_NAME } для карыстальнікаў, якім неабходна максімальная абарона."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "У ${ PROTON_SENTINEL_NAME } выкарыстоўваюцца складаныя сістэмы штучнага інтэлекту, а групы спецыялістаў працуюць кругласутачна і без выхадных над нейтралізацыяй зламыснікаў і пагроз бяспекі."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -5508,6 +5538,9 @@
       "Email address": [
         "Адрас электроннай пошты"
       ],
+      "Email address already used": [
+        "Адрас электроннай пошты ўжо выкарыстоўваецца"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
       ],
@@ -5934,6 +5967,9 @@
       "old password": [
         "стары пароль"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Пасля ўключэння ${ PROTON_SENTINEL_NAME }"
+      ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
       ],
@@ -6246,6 +6282,9 @@
       "support team": [
         "каманда падтрымкі"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Падазроныя падзеі будуць правераны пры дапамозе некалькіх слаёў абароны, якія дапамогуць прадухіліць узлом вашага ўліковага запісу зламыснікамі."
+      ],
       "Swiss based": [
         "Знаходзіцца ў Швейцарыі"
       ],
@@ -6399,6 +6438,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
       ],
+      "To ${ planName }": [
+        "у тарыфным плане ${ planName }"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
       ],
@@ -6513,6 +6555,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Перайдзіце на платны ўліковы запіс, каб уключыць ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
+      ],
       "Upgrade to unlock": [
         "Палепшыць, каб разблакіраваць"
       ],
@@ -6536,6 +6584,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Выкарыстоўвайце выбраны адрас электроннай пошты ў якасці імя карыстальніка SMTP у знешнім сэрвісе і згенерыраваны токен у якасці пароля SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Карыстальнікі з канфідэнцыяльнымі данымі і камунікацыямі такія як, журналісты або кіраўнікі, вельмі вітаюць уключэнне ${ PROTON_SENTINEL_NAME }"
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -6642,6 +6693,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME_TWO }"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы для існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
@@ -6710,9 +6764,6 @@
       ],
       "You can now close this window.": [
         "Цяпер вы можаце закрыць гэта акно."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Цяпер вы можаце атрымліваць паведамленні на свой адрас @pm.me. Перайдзіце на платны тарыфны план, каб мець магчымасць адпраўляць лісты выкарыстоўваючы адрас @pm.me, а таксама ствараць дадатковыя адрасы @pm.me."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
@@ -6789,6 +6840,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Вы НЕ зможаце расшыфраваць паведамленні, файлы і іншыя даныя, якія зашыфраваны гэтым ключом."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Вы атрымаеце прыярытэтную падтрымку ад спецыялістаў, якія маюць досвед у абароне ўліковых запісаў. У выпадку пытанняў звязаных з іх парушэннямі бяспекі, вы можаце звязацца з намі ${ hereLink }"
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Вы ўбачыце ніжэй больш падрабязнасцей у журнале бяспекі пра такія важныя падзеі, як спробы ўваходу."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
       ],
@@ -6854,9 +6911,6 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы ўліковыя даныя не будуць захаваны."
@@ -8320,6 +8374,9 @@
       "General": [
         "Агульныя"
       ],
+      "here": [
+        "тут"
+      ],
       "How to unlock data": [
         "Як разблакіраваць даныя"
       ],
@@ -8408,6 +8465,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Уключыць дадатковыя журналы"
       ],
@@ -9131,11 +9191,11 @@
       "Up to 15 email addresses": [
         "Да 15 адрасоў электроннай пошты"
       ],
+      "Up to 3 TB of storage": [
+        "Да 3 ТБ сховішча"
+      ],
       "Up to 5 forwarding mailboxes": [
         "Да 5 паштовых скрынь для пераадрасацыі"
-      ],
-      "Up to 500 GB of storage": [
-        "Да 500 ГБ сховішча"
       ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
@@ -9151,11 +9211,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Выкарыстоўвайце свой уласны карыстальніцкі дамен адраса электроннай пошты. Напрыклад, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -11341,6 +11407,9 @@
       "Action": [
         "Дзеянне"
       ],
+      "Activate @pm.me": [
+        "Актываваць @pm.me"
+      ],
       "Activate account and generate keys": [
         "Актываваць уліковы запіс і згенерыраваць ключы"
       ],
@@ -11850,6 +11919,9 @@
       ],
       "OpenVPN configuration files": [
         "Канфігурацыйныя файлы OpenVPN"
+      ],
+      "Organization filters": [
+        "Фільтры арганізацыі"
       ],
       "Organization name": [
         "Назва арганізацыі"

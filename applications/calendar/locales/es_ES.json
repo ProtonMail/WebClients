@@ -263,6 +263,12 @@
       "I have a question": [
         "Tengo una pregunta."
       ],
+      "Image could not be loaded with tracker protection.": [
+        "No se ha podido carga la imagen con la protección contra el rastreo."
+      ],
+      "Image will be loaded without a proxy": [
+        "La imagen se cargará sin proxy."
+      ],
       "Import": [
         "Importar"
       ],
@@ -289,6 +295,9 @@
       ],
       "Keep current time zone": [
         "Mantener la zona horaria actual"
+      ],
+      "Load": [
+        "Cargar"
       ],
       "Load image": [
         "Cargar imagen"
@@ -331,6 +340,9 @@
       ],
       "New event": [
         "Nuevo evento"
+      ],
+      "New message": [
+        "Nuevo mensaje"
       ],
       "Next": [
         "Siguiente"
@@ -1979,6 +1991,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo de Proton Mail y un signo más"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
@@ -3000,11 +3015,6 @@
         "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Basado en tu zona horaria"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "Correo electrónico"
@@ -3526,9 +3536,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
-      ],
-      "Group assignment applied": [
-        "Asignación de grupo aplicada"
       ],
       "here": [
         "aquí"
@@ -4731,9 +4738,45 @@
         "Nombre de la etiqueta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Actualizar"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Cambiar o añadir cuenta"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
+      "Custom email domains": [
+        "Dominios de correo personalizados"
+      ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Programa mensajes en cualquier momento"
+      ],
+      "Search message content": [
+        "Buscar contenido del mensaje"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Up to 15 email addresses": [
+        "Hasta 15 direcciones de correo electrónico"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: label": {
@@ -5170,6 +5213,14 @@
       ],
       "Work": [
         "Trabajo"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Oficial"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Correo oficial de ${ BRAND_NAME }"
       ]
     },
     "Refresh on apply warning": {
@@ -5788,10 +5839,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } miembro",
-        "${ emailsCount } miembros"
-      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -5846,9 +5893,6 @@
       ],
       "Clearing data": [
         "Limpiando datos"
-      ],
-      "Contact details": [
-        "Datos del contacto"
       ],
       "Contact Details": [
         "Datos del contacto"
@@ -6123,9 +6167,6 @@
       "Update recurring event": [
         "Actualizar evento recurrente"
       ],
-      "Upgrade required": [
-        "Actualización necesaria"
-      ],
       "View contacts": [
         "Ver contactos"
       ],
@@ -6228,6 +6269,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
       ],
+      "The image could not be loaded": [
+        "No se ha podido cargar la imagen."
+      ],
+      "The image could not be loaded using proxy": [
+        "No se ha podido cargar la imagen con un proxy."
+      ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
       ],
@@ -6325,9 +6372,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Introduce la palabra ${ boldDanger } en el campo para continuar."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Esta función requiere una cuenta de pago de ${ BRAND_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."

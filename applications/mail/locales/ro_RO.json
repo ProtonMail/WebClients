@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Ca programare"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Sunt permise maxim 100 de contacte întru-un grup."
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -478,6 +481,12 @@
       ],
       "I have a question": [
         "Am o întrebare"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
+      ],
+      "Image will be loaded without a proxy": [
+        "Imaginea va fi încărcată fără proxy."
       ],
       "Images will be loaded without a proxy": [
         "Imaginile vor fi încărcate fără proxy."
@@ -1247,7 +1256,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Contul lui ${ nameToDisplay }"
+        "Mesajele lui ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 urmăritori eliminați"
@@ -2883,6 +2892,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo ProtonMail și semnul plus"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -3080,6 +3092,9 @@
       ],
       "Calendar limit reached": [
         "Limita de calendare a fost atinsă."
+      ],
+      "Cannot export this contact": [
+        "Acest contact nu se poate exporta."
       ],
       "Choose a date in the future.": [
         "Alegeți o dată în viitor."
@@ -4157,10 +4172,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Redirecționare automată"
+        "Redirecționați automat"
       ],
       "Gmail messages to your inbox": [
-        "Mesaje Gmail în mesaje primite"
+        "mesajele Gmail către căsuța dumneavoastră de primire"
       ],
       "Sign in with Google": [
         "Conectare cu Google"
@@ -4868,6 +4883,12 @@
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contactul a fost adăugat la grupul ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contactul a fost eliminat din grupul ${ contactGroupName }."
+      ],
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
@@ -5069,9 +5090,6 @@
       ],
       "From": [
         "De la"
-      ],
-      "Group assignment applied": [
-        "Atribuire grup aplicată"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Are un atașament (${ numAttachmentsSize })",
@@ -5907,6 +5925,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Ați atins numărul maxim de adrese din grupul de contacte."
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Acest cont ${ BRAND_NAME } include SimpleLogin. Instalați extensia de navigator cu un clic și începeți să o folosiți."
@@ -7247,16 +7271,22 @@
       "Up to 15 email addresses": [
         "Până la 15 adrese de e-mail"
       ],
-      "Up to 500 GB of storage": [
-        "Până la 500 GB spațiu de stocare"
+      "Up to 3 TB of storage": [
+        "Până la 3 TB spațiu de stocare"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilizați propriile adresa personală de domeniu pentru e-mail, de ex., nume@adresapersonala.com."
       ]
     },
     "new_plans: label": {
@@ -8491,10 +8521,10 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "Un membru",
-        "${ emailsCount } membri",
-        "${ emailsCount } de membri"
+      "${ emailsCount } email address": [
+        "${ emailsCount } adresă de e-mail",
+        "${ emailsCount } adrese de e-mail",
+        "${ emailsCount } de adrese de e-mail"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Combinații de taste ${ MAIL_APP_NAME }"
@@ -8551,6 +8581,9 @@
       "Block sender": [
         "Blocare expeditor"
       ],
+      "Cannot add more addresses": [
+        "Nu se mai pot adăuga adrese"
+      ],
       "Carbon Copy": [
         "Copie"
       ],
@@ -8571,9 +8604,6 @@
       ],
       "Confirm recipient address?": [
         "Confirmați adresa destinatarului?"
-      ],
-      "Contact details": [
-        "Detalii contact"
       ],
       "Contact Details": [
         "Detalii contact"
@@ -9012,14 +9042,14 @@
       "Trust public key?": [
         "Cheie publică de încredere?"
       ],
+      "Unlock contacts groups": [
+        "Deblocare grupuri de contacte"
+      ],
       "Unsubscribe": [
         "Dezabonare"
       ],
       "Unsubscribe request sent": [
         "Solicitare de dezabonare trimisă"
-      ],
-      "Upgrade required": [
-        "Modernizare necesară"
       ],
       "Verification error": [
         "Eroare verificare"
@@ -9119,6 +9149,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
+      ],
+      "The image could not be loaded": [
+        "Imaginea nu s-a putut încărca."
+      ],
+      "The image could not be loaded using proxy": [
+        "Imaginea nu s-a putut încărca folosind proxy."
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
@@ -9235,9 +9271,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Această acțiune este ireversibilă. Introduceți cuvântul ${ boldDanger } pentru a continua."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Această funcționalitate necesită un cont ${ BRAND_NAME } cu plată"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."

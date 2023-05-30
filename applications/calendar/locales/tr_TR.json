@@ -66,6 +66,9 @@
       "Apply": [
         "Uygula"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Bir kişi grubunda en fazla 100 kişi bulunabilir"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -263,6 +266,12 @@
       "I have a question": [
         "Bir sorum var"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Görsel izleyici koruması nedeniyle yüklenemedi."
+      ],
+      "Image will be loaded without a proxy": [
+        "Görsel bir vekil sunucu kullanılmadan yüklenecek"
+      ],
       "Import": [
         "İçe aktar"
       ],
@@ -289,6 +298,9 @@
       ],
       "Keep current time zone": [
         "Geçerli saat dilimi korunsun"
+      ],
+      "Load": [
+        "Yükle"
       ],
       "Load image": [
         "Görsel yükle"
@@ -331,6 +343,9 @@
       ],
       "New event": [
         "Yeni etkinlik"
+      ],
+      "New message": [
+        "Yeni ileti"
       ],
       "Next": [
         "İleri"
@@ -411,7 +426,7 @@
         "Bu katılımcıyı kaldır"
       ],
       "Report a problem": [
-        "Bir sorun bildireceğim"
+        "Sorun bildirin"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -1979,6 +1994,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logosu ve bir artı işareti"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -2166,6 +2187,9 @@
       ],
       "Cancellation failed to be sent": [
         "İptal bilgilendirmesi gönderilemedi"
+      ],
+      "Cannot export this contact": [
+        "Bu kişi dışa aktarılamadı"
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -3000,11 +3024,6 @@
         "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Saat diliminize göre"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "E-posta"
@@ -3415,6 +3434,9 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Based on your time zone": [
+        "Saat diliminize göre"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
@@ -3435,6 +3457,12 @@
       ],
       "Close this screen to exit.": [
         "Çıkmak için bu ekranı kapatın."
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kişi ${ contactGroupName } grubuna eklendi"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kişi ${ contactGroupName } grubundan çıkarıldı"
       ],
       "Country code": [
         "Ülke kodu"
@@ -3526,9 +3554,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Yinelenme değişiklikleri kaybolacak."
-      ],
-      "Group assignment applied": [
-        "Grup ataması uygulandı"
       ],
       "here": [
         "buraya"
@@ -3912,6 +3937,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler çıkarılmış katılımcılara bildirilecek."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Kişi grubunda bulunabilecek en fazla adres sayısına ulaştınız:"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -4731,9 +4762,54 @@
         "Etiket adı"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Hesap değiştirin ya da ekleyin"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Hide My Email aliases": [
+        "E-posta takma adlarım gizlensin"
+      ],
+      "Schedule messages at any time": [
+        "İletileri istediğiniz zamanda gönderin"
+      ],
+      "Search message content": [
+        "İleti içeriğinde arama"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Up to 15 email addresses": [
+        "15 e-posta adresine kadar"
+      ],
+      "Up to 3 TB of storage": [
+        "3 TB depolama alanına kadar"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi özel etki alanınızla e-posta adresleri oluşturun"
       ]
     },
     "new_plans: label": {
@@ -4755,6 +4831,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Tatil takvimi eklenemedi"
+      ],
       "Calendar added": [
         "Takvim eklendi"
       ]
@@ -5170,6 +5249,14 @@
       ],
       "Work": [
         "İş"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Resmi"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "${ BRAND_NAME } tarafından gelen resmi e-posta"
       ]
     },
     "Refresh on apply warning": {
@@ -5788,9 +5875,9 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } üye",
-        "${ emailsCount } üye"
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-posta adresi",
+        "${ emailsCount } e-posta adresi"
       ],
       "Account suspended": [
         "Hesap askıya alınmış"
@@ -5835,6 +5922,9 @@
       "Calendar alarm": [
         "Takvim alarmı"
       ],
+      "Cannot add more addresses": [
+        "Daha fazla adres eklenemez"
+      ],
       "Change my answer": [
         "Yanıtımı değiştir"
       ],
@@ -5846,9 +5936,6 @@
       ],
       "Clearing data": [
         "Veriler temizleniyor"
-      ],
-      "Contact details": [
-        "Kişi bilgileri"
       ],
       "Contact Details": [
         "Kişi bilgileri"
@@ -6025,7 +6112,7 @@
         "Katılımcıları kaldır"
       ],
       "Report a problem": [
-        "Bir sorun bildirin"
+        "Sorun bildirin"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -6117,14 +6204,14 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
+      "Unlock contacts groups": [
+        "Kişi gruplarının kilidini açın"
+      ],
       "Update event": [
         "Etkinliği güncelle"
       ],
       "Update recurring event": [
         "Yinelenen etkinliği güncelle"
-      ],
-      "Upgrade required": [
-        "Yükseltme gerekli"
       ],
       "View contacts": [
         "Kişileri görüntüle"
@@ -6228,6 +6315,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
       ],
+      "The image could not be loaded": [
+        "Görsel yüklenemedi"
+      ],
+      "The image could not be loaded using proxy": [
+        "Görsel vekil sunucu kullanılarak yüklenemedi"
+      ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
@@ -6325,9 +6418,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Bu işlem geri alınamaz. İlerlemek için lütfen kutuya ${ boldDanger } sözcüğünü yazın."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Bu özellik ücretli bir ${ BRAND_NAME } hesabında kullanılabilir"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."

@@ -52,6 +52,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Pro Kontaktgruppe sind maximal 100 Kontakte erlaubt."
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -330,6 +333,12 @@
       "I have a question": [
         "Ich habe eine Frage"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Das Bild konnte aufgrund des Tracker-Schutzes nicht geladen werden."
+      ],
+      "Image will be loaded without a proxy": [
+        "Das Bild wird ohne Proxy geladen."
+      ],
       "Import": [
         "Importieren"
       ],
@@ -350,6 +359,9 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Load": [
+        "Laden"
       ],
       "Load image": [
         "Bild laden"
@@ -395,6 +407,9 @@
       ],
       "New": [
         "Neu"
+      ],
+      "New message": [
+        "Neue Nachricht"
       ],
       "New upload": [
         "Neuer Upload"
@@ -1803,6 +1818,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-Logo und ein Pluszeichen"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Spare Zeit, indem du E-Mails oder Einladungen an alle gleichzeitig sendest - eine Premiumfunktion neben vielen anderen. Upgrade noch heute."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
@@ -1919,6 +1940,9 @@
       ],
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
+      ],
+      "Cannot export this contact": [
+        "Dieser Kontakt kann nicht exportiert werden."
       ],
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
@@ -3218,6 +3242,12 @@
       "Conflict": [
         "Konflikt"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Zuweisung des Kontaktes für Gruppe ${ contactGroupName } entfernt."
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } weiter verwenden und Laufwerk später entsperren"
       ],
@@ -3421,9 +3451,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Wechsle zu „Meine Dateien“ und lade zunächst einige Dateien hoch."
-      ],
-      "Group assignment applied": [
-        "Gruppenzuordnung übernommen"
       ],
       "here": [
         "hier"
@@ -4016,6 +4043,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Du hast die maximale Anzahl von Adressen in der Kontaktgruppe erreicht."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -4731,9 +4761,54 @@
         "Name der Kategorie"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
+      ],
+      "Custom email domains": [
+        "Eigene E-Mail-Domains"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email-Aliasse"
+      ],
+      "Schedule messages at any time": [
+        "Nachrichten zu jeder Zeit planen"
+      ],
+      "Search message content": [
+        "Nachrichteninhalt durchsuchen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
+      ],
+      "Up to 15 email addresses": [
+        "Bis zu 15 E-Mail-Adressen"
+      ],
+      "Up to 3 TB of storage": [
+        "Bis zu 3 TB Speicherplatz"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
       ]
     },
     "new_plans: label": {
@@ -5179,6 +5254,14 @@
         "Arbeit"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Offiziell"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Hinweis: Der Dienst wird neu geladen, wenn du auf die Schaltfläche „Übernehmen“ klickst."
@@ -5621,9 +5704,9 @@
       "# of downloads": [
         "# Anzahl Downloads"
       ],
-      "${ emailsCount } member": [
-        "${ emailsCount } Mitglied",
-        "${ emailsCount } Mitglieder"
+      "${ emailsCount } email address": [
+        "${ emailsCount } E-Mail-Adresse",
+        "${ emailsCount } E-Mail-Adressen"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } fehlgeschlagener Download",
@@ -5671,6 +5754,9 @@
       "Browser might run out of memory": [
         "Dem Browser geht möglicherweise der Speicher aus"
       ],
+      "Cannot add more addresses": [
+        "Es können keine weiteren Adressen hinzugefügt werden."
+      ],
       "Cannot load link": [
         "Link kann nicht geladen werden"
       ],
@@ -5685,9 +5771,6 @@
       ],
       "Computers": [
         "Computer"
-      ],
-      "Contact details": [
-        "Kontaktinformationen"
       ],
       "Contact Details": [
         "Kontaktinformationen"
@@ -6047,8 +6130,8 @@
       "Type": [
         "Typ"
       ],
-      "Upgrade required": [
-        "Upgrade erforderlich"
+      "Unlock contacts groups": [
+        "Kontaktgruppen freischalten"
       ],
       "Uploaded": [
         "Hochgeladen"
@@ -6156,6 +6239,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
       ],
+      "The image could not be loaded": [
+        "Das Bild konnte nicht geladen werden"
+      ],
+      "The image could not be loaded using proxy": [
+        "Das Bild konnte nicht mit Proxy geladen werden."
+      ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
       ],
@@ -6261,9 +6350,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Diese Aktion kann NICHT widerrufen werden. Bitte gib das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Diese Funktion erfordert ein kostenpflichtiges ${ BRAND_NAME }-Konto."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Dieser Import kann die derzeit verfügbare Speicherkapazität deines ${ BRAND_NAME }-Kontos überschreiten. Bitte ziehe in Erwägung, den Import anzupassen."

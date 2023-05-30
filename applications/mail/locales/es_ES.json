@@ -477,6 +477,12 @@
       "I have a question": [
         "Tengo una pregunta."
       ],
+      "Image could not be loaded with tracker protection.": [
+        "No se ha podido carga la imagen con la protección contra el rastreo."
+      ],
+      "Image will be loaded without a proxy": [
+        "La imagen se cargará sin proxy."
+      ],
       "Images will be loaded without a proxy": [
         "Las imágenes se cargarán sin proxy."
       ],
@@ -1241,9 +1247,6 @@
       ]
     },
     "Animation": {
-      "${ nameToDisplay }'s inbox": [
-        "Bandeja de entrada de ${ nameToDisplay }"
-      ],
       "5 trackers removed": [
         "5 rastreadores eliminados"
       ],
@@ -4125,12 +4128,6 @@
       ]
     },
     "Gmail forwarding": {
-      "Automatically forward": [
-        "Reenvía automáticamente"
-      ],
-      "Gmail messages to your inbox": [
-        "mensajes de Gmail a tu bandeja de entrada"
-      ],
       "Sign in with Google": [
         "Iniciar sesión con Google"
       ]
@@ -4982,9 +4979,6 @@
       ],
       "From": [
         "De"
-      ],
-      "Group assignment applied": [
-        "Asignación de grupo aplicada"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tiene ${ numAttachments } archivo adjunto (${ numAttachmentsSize }).",
@@ -7134,9 +7128,6 @@
       ],
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo electrónico"
-      ],
-      "Up to 500 GB of storage": [
-        "Hasta 500 GB de almacenamiento"
       ]
     },
     "new_plans: feature info": {
@@ -8333,10 +8324,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } miembro",
-        "${ emailsCount } miembros"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
@@ -8410,9 +8397,6 @@
       ],
       "Confirm recipient address?": [
         "¿Confirmar dirección del destinatario?"
-      ],
-      "Contact details": [
-        "Datos del contacto"
       ],
       "Contact Details": [
         "Datos del contacto"
@@ -8850,9 +8834,6 @@
       "Unsubscribe request sent": [
         "Solicitud de cancelación de suscripción enviada"
       ],
-      "Upgrade required": [
-        "Actualización necesaria"
-      ],
       "Verification error": [
         "Error de verificación"
       ],
@@ -8951,6 +8932,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
+      ],
+      "The image could not be loaded": [
+        "No se ha podido cargar la imagen."
+      ],
+      "The image could not be loaded using proxy": [
+        "No se ha podido cargar la imagen con un proxy."
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
@@ -9062,9 +9049,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Introduce la palabra ${ boldDanger } en el campo para continuar."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Esta función requiere una cuenta de pago de ${ BRAND_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."

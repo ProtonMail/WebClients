@@ -384,6 +384,9 @@
       "Get a new encrypted email address": [
         "获取新的加密邮箱地址"
       ],
+      "Get more addresses": [
+        "获取更多邮箱地址"
+      ],
       "Get verification code": [
         "获取验证码"
       ],
@@ -946,7 +949,7 @@
         "默认"
       ],
       "Disabled": [
-        "已禁用"
+        "未启用"
       ],
       "External": [
         "第三方"
@@ -3521,6 +3524,31 @@
         "您可以保存成功导出事件的 ICS 文件。"
       ]
     },
+    "familyOffer_2023: Get Proton Family": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
+      ]
+    },
+    "familyOffer_2023:Get Proton Family": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Info": {
+      "Online privacy, for your whole family": [
+        "与全家人共同守护网络隐私"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Introducing ${ planName }": [
+        "${ planName } 现已推出"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connections": [
         "${ MaxVPN } 个 VPN 连接"
@@ -3713,6 +3741,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "定制筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "邮件被 ${ BRAND_NAME } 识别或被您手动标记为垃圾邮件后，来自其发件人的后续邮件都将被归为垃圾邮件。如需正常接收其邮件，请将对应发件人地址标为非垃圾邮件。"
       ],
@@ -5553,6 +5584,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "使用 ${ BRAND_NAME } 提供的各类邮箱地址与别名。"
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "若不安装官方客户端，例如在 macOS 上使用 Tunnelblick 或在 GNU/Linux 上使用 OpenVPN 时，需要使用下列账号连接 ${ VPN_APP_NAME }。"
       ],
@@ -5693,9 +5727,6 @@
       ],
       "You can now close this window.": [
         "您现在可以关闭此窗口了。"
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -6200,6 +6231,9 @@
       "Export private key": [
         "导出私钥"
       ],
+      "Export public key": [
+        "导出公钥"
+      ],
       "Make primary": [
         "设为主密钥"
       ],
@@ -6332,6 +6366,9 @@
       ],
       "Auto show remote images": [
         "自动显示外链图像"
+      ],
+      "Auto-delete unwanted messages": [
+        "自动删除无用邮件"
       ],
       "Auto-detect primary time zone": [
         "自动检测主要时区"
@@ -7823,9 +7860,6 @@
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
       ],
-      "Up to 500 GB of storage": [
-        "最高 500 GB 存储空间"
-      ],
       "User credential management": [
         "用户身份验证管理"
       ],
@@ -8895,6 +8929,9 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "使用我们的安全导入与转发工具即可迈出捍卫隐私的第一步。"
+      ],
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "善用文件夹与标签，让您的邮箱井井有条。${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -8992,6 +9029,11 @@
       ],
       "Verification": [
         "验证"
+      ]
+    },
+    "specialoffer: Action": {
+      "Don't show this offer again": [
+        "不再显示此活动"
       ]
     },
     "Spotlight": {
@@ -9372,6 +9414,9 @@
       "For businesses": [
         "面向企业"
       ],
+      "For families": [
+        "面向家庭"
+      ],
       "For individuals": [
         "面向个人"
       ]
@@ -9482,6 +9527,9 @@
       ],
       "Account and password": [
         "账户和密钥"
+      ],
+      "Account keys": [
+        "账户密钥"
       ],
       "Account recovery": [
         "账户恢复"
@@ -10257,6 +10305,9 @@
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
       ],
+      "Your Plan": [
+        "您的账户等级"
+      ],
       "Your recovery status": [
         "您的恢复状态"
       ],
@@ -10374,6 +10425,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "自定义导入以减少标签数量"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "垃圾邮件与废件箱中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
       ],
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"

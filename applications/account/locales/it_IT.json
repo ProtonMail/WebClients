@@ -53,6 +53,9 @@
       "activate": [
         "attiva"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Attiva ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Invia codice"
+      ],
+      "Send messages with @pm.me": [
+        "Invia messaggi con @pm.me"
       ],
       "Send my username": [
         "Invia il mio nome utente"
@@ -2704,9 +2710,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ottieni fino a ${ credits } in crediti invitando amici su ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Se vuoi smettere di diffondere la parola riguardo la nostra missione, considera di effettuare l'upgrade e sbloccare più funzioni premium."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
@@ -4275,6 +4278,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Aggiungi un filtro personalizzato per eseguire automaticamente alcune azioni, come etichettare o archiviare messaggi."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Le email provenienti da indirizzi segnati come spam da te o da ${ BRAND_NAME } andranno nella cartella spam dei membri della tua organizzazione. Se desideri consentire la ricezione di email da uno di questi indirizzi, segnalo come \"non spam\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Le email provenienti da indirizzi contrassegnati come spam da te o da ${ BRAND_NAME } andranno nella tua cartella spam. Se desideri consentire email da uno di questi indirizzi, contrassegnalo come \"non spam\"."
       ],
@@ -4363,6 +4369,9 @@
       "Best deal": [
         "Miglior offerta"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
       "Enter your email address": [
         "Inserisci il tuo indirizzo email"
       ],
@@ -4374,9 +4383,6 @@
       ],
       "Get help": [
         "Ottieni supporto"
-      ],
-      "Holidays": [
-        "Festività"
       ],
       "Key type": [
         "Tipo di chiave"
@@ -4396,6 +4402,9 @@
       "Permissions": [
         "Permessi"
       ],
+      "Protection": [
+        "Protezione"
+      ],
       "Select your preferred method of payment": [
         "Seleziona il metodo di pagamento che preferisci."
       ],
@@ -4404,9 +4413,6 @@
       ],
       "Status": [
         "Stato"
-      ],
-      "Subscribed": [
-        "Iscritto"
       ],
       "Time": [
         "Orario"
@@ -4466,6 +4472,17 @@
         "Nome token"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Festività"
+      ],
+      "Other": [
+        "Altro"
+      ],
+      "Subscribed": [
+        "Iscritto"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Prova il meglio di ${ MAIL_APP_NAME } gratuitamente"
@@ -4478,11 +4495,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Usa i tasti Su e Giù per accedere e sfogliare i suggerimenti dopo l'input. Premi Invio per confermare la tua scelta o Esc per chiudere la casella dei suggerimenti."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "In base al fuso orario"
       ]
     },
     "Human verification method": {
@@ -4907,6 +4919,12 @@
       "${ numGroups } contact group": [
         "${ numGroups } gruppo di contatti",
         "${ numGroups } gruppi di contatti"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } è un programma di protezione account sviluppato da ${ BRAND_NAME } per utenti che hanno bisogno della massima sicurezza."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } è alimentato da sistemi IA sofisticati e team di specialisti che lavorano 24/7 per mitigare attori cattivi e pericoli di sicurezza."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } cartella trovata",
@@ -5406,6 +5424,9 @@
       "Email address": [
         "Indirizzo email"
       ],
+      "Email address already used": [
+        "Indirizzo email già in uso"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
       ],
@@ -5828,6 +5849,9 @@
       "old password": [
         "vecchia password"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Una volta attivato ${ PROTON_SENTINEL_NAME }:"
+      ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
       ],
@@ -6132,6 +6156,9 @@
       "support team": [
         "team di supporto"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Eventi sospetti saranno sottoposti a molteplici strati di difesa che aiutano a impedire agli attaccanti di dirottare il tuo account."
+      ],
       "Swiss based": [
         "Con sede in Svizzera"
       ],
@@ -6396,6 +6423,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Effettua un upgrade a un account a pagamento per attivare ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to unlock": [
         "Effettua l'upgrade per sbloccare"
       ],
@@ -6419,6 +6449,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilizza l'indirizzo email selezionato come nome utente SMTP nel servizio esterno e il token generato come password SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Gli utenti con dati e comunicazioni sensibili, come giornalisti o dirigenti, sono fortemente incoraggiati ad attivate ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "La verifica può richiedere alcuni minuti."
@@ -6586,9 +6619,6 @@
       "You can now close this window.": [
         "Ora puoi chiudere la finestra."
       ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Ora puoi ricevere messaggi al tuo indirizzo @pm.me. Passa ad un piano a pagamento per inviare email utilizzando anche il tuo indirizzo @pm.me e creare ulteriori indirizzi @pm.me."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -6662,6 +6692,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NON sarai in grado di decrittografare messaggi, file e altri dati crittografati con questa chiave."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Riceverai supporto prioritario da specialisti addestrati in protezione di account. Per qualsiasi problema di sicurezza dell'account, contattaci a ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Vedrai più dettagli nei log di sicurezza in basso per eventi importanti come tentativi di accesso."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
@@ -6725,9 +6761,6 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Le tue informazioni sono al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
@@ -8183,6 +8216,9 @@
       "General": [
         "Generale"
       ],
+      "here": [
+        "qui"
+      ],
       "How to unlock data": [
         "Come sbloccare i dati"
       ],
@@ -8269,6 +8305,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Attiva ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Abilita log avanzati"
       ],
@@ -8938,9 +8977,6 @@
       ],
       "Up to 5 forwarding mailboxes": [
         "Fino a 5 caselle email d'inoltro"
-      ],
-      "Up to 500 GB of storage": [
-        "Fino a 500 GB di spazio di archiviazione"
       ],
       "User credential management": [
         "Gestione delle credenziali utente"
@@ -11070,6 +11106,9 @@
       "Action": [
         "Azione"
       ],
+      "Activate @pm.me": [
+        "Attiva @pm.me"
+      ],
       "Activate account and generate keys": [
         "Attiva account e genera chiavi"
       ],
@@ -11573,6 +11612,9 @@
       ],
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
+      ],
+      "Organization filters": [
+        "Filtri organizzazione"
       ],
       "Organization name": [
         "Nome dell'organizzazione"

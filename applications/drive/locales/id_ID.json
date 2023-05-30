@@ -52,6 +52,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Masing-masing grup kontak hanya dapat menampung hingga 100 kontak"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -328,6 +331,12 @@
       "I have a question": [
         "Saya memiliki pertanyaan"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
+      ],
+      "Image will be loaded without a proxy": [
+        "Gambar akan dimuat tanpa proxy"
+      ],
       "Import": [
         "Impor"
       ],
@@ -348,6 +357,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Load": [
+        "Muat"
       ],
       "Load image": [
         "Muat gambar"
@@ -393,6 +405,9 @@
       ],
       "New": [
         "Baru"
+      ],
+      "New message": [
+        "Pesan baru"
       ],
       "New upload": [
         "Unggahan baru"
@@ -1801,6 +1816,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail dan tanda plus"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Hemat waktu Anda dengan fitur pengiriman email atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
@@ -1916,6 +1937,9 @@
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
+      ],
+      "Cannot export this contact": [
+        "Kontak tidak dapat diekspor"
       ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
@@ -3166,6 +3190,12 @@
       "Conflict": [
         "Konflik"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Kontak ditetapkan ke grup ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontak tidak lagi ditetapkan ke grup ${ contactGroupName }"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
       ],
@@ -3366,9 +3396,6 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Masuk ke \"Berkas saya\" dan unggah beberapa berkas terlebih dahulu."
-      ],
-      "Group assignment applied": [
-        "Penugasan grup diterapkan"
       ],
       "here": [
         "di sini"
@@ -3957,6 +3984,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -4664,9 +4697,54 @@
         "Nama label"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Pindah atau tambahkan akun"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Hapus pesan spam dan sampah secara otomatis"
+      ],
+      "Custom email domains": [
+        "Domain email khusus"
+      ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Jadwalkan pesan sesuai keinginan Anda"
+      ],
+      "Search message content": [
+        "Cari konten pesan"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Up to 15 email addresses": [
+        "Hingga 15 alamat email"
+      ],
+      "Up to 3 TB of storage": [
+        "Kuota penyimpanan hingga 3 TB"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gunakan domain email khusus milik Anda sendiri, mis. anda@namaanda.com"
       ]
     },
     "new_plans: label": {
@@ -5088,6 +5166,14 @@
       ],
       "Work": [
         "Kantor"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Resmi"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Email resmi dari ${ BRAND_NAME }"
       ]
     },
     "Refresh on apply warning": {
@@ -5514,8 +5600,8 @@
       "# of downloads": [
         "# unduhan"
       ],
-      "${ emailsCount } members": [
-        "${ emailsCount } anggota"
+      "${ emailsCount } email addresses": [
+        "${ emailsCount } alamat email"
       ],
       "${ numberOfFailedTransfer.total } failed downloads": [
         "${ numberOfFailedTransfer.total } unduhan yang gagal"
@@ -5559,6 +5645,9 @@
       "Browser might run out of memory": [
         "Memori browser Anda mungkin tidak mencukupi"
       ],
+      "Cannot add more addresses": [
+        "Tidak dapat menambahkan lebih banyak alamat"
+      ],
       "Cannot load link": [
         "Tautan tidak dapat dimuat"
       ],
@@ -5573,9 +5662,6 @@
       ],
       "Computers": [
         "Komputer"
-      ],
-      "Contact details": [
-        "Rincian kontak"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -5931,8 +6017,8 @@
       "Type": [
         "Tipe"
       ],
-      "Upgrade required": [
-        "Butuh peningkatan akun"
+      "Unlock contacts groups": [
+        "Buka kunci grup kontak"
       ],
       "Uploaded": [
         "Diunggah"
@@ -6040,6 +6126,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
+      "The image could not be loaded": [
+        "Gambar tidak dapat dimuat"
+      ],
+      "The image could not be loaded using proxy": [
+        "Gambar tidak dapat dimuat menggunakan proxy"
+      ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
       ],
@@ -6140,9 +6232,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di kolom tersebut untuk melanjutkan."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Fitur ini memerlukan akun ${ BRAND_NAME } berbayar"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."

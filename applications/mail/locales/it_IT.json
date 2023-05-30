@@ -1242,7 +1242,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "Posta in arrivo di ${ nameToDisplay }"
+        "${ nameToDisplay } Posta in arrivo"
       ],
       "5 trackers removed": [
         "5 tracciatori rimossi"
@@ -4126,10 +4126,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Inoltra automaticamente"
+        "Inoltro automatico"
       ],
       "Gmail messages to your inbox": [
-        "Messaggi da Gmail nella tua posta in arrivo"
+        "dei messaggi Gmail alla propria cartella posta in arrivo"
       ],
       "Sign in with Google": [
         "Accedi con Google"
@@ -4982,9 +4982,6 @@
       ],
       "From": [
         "Da"
-      ],
-      "Group assignment applied": [
-        "Assegnazione di gruppo applicata"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Ha ${ numAttachments } allegato (${ numAttachmentsSize })",
@@ -7134,9 +7131,6 @@
       ],
       "Up to 15 email addresses": [
         "Fino a 15 indirizzi email"
-      ],
-      "Up to 500 GB of storage": [
-        "Fino a 500 GB di spazio di archiviazione"
       ]
     },
     "new_plans: feature info": {
@@ -8333,10 +8327,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "${ emailsCount } membro",
-        "${ emailsCount } membri"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Scorciatoie da tastiera"
       ],
@@ -8410,9 +8400,6 @@
       ],
       "Confirm recipient address?": [
         "Confermare l'indirizzo del destinatario?"
-      ],
-      "Contact details": [
-        "Dettagli contatto"
       ],
       "Contact Details": [
         "Dettagli contatto"
@@ -8850,9 +8837,6 @@
       "Unsubscribe request sent": [
         "Richiesta di cancellazione inviata"
       ],
-      "Upgrade required": [
-        "Aggiornamento richiesto"
-      ],
       "Verification error": [
         "Errore di verifica"
       ],
@@ -8951,6 +8935,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Impossibile caricare l’immagine."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
@@ -9062,9 +9049,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Questa azione è irreversibile. Inserisci la parola ${ boldDanger } nel campo per procedere."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Questa funzione richiede un account ${ BRAND_NAME } a pagamento"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Questa importazione potrebbe superare la capacità di archiviazione attualmente disponibile nel tuo account ${ BRAND_NAME }. Considera la possibilità di personalizzare l'importazione."

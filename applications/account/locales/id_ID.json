@@ -53,6 +53,9 @@
       "activate": [
         "aktifkan"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktifkan ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Kirim kode"
+      ],
+      "Send messages with @pm.me": [
+        "Kirim pesan dengan @pm.me"
       ],
       "Send my username": [
         "Kirim nama pengguna saya"
@@ -2696,9 +2702,6 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Dapatkan saldo hingga ${ credits } dengan mengundang teman ke ${ BRAND_NAME }."
       ],
-      "If you want to stop spreading the word about our mission, consider upgrading and unlocking more premium features.": [
-        "Jika Anda tidak ingin memberi tahu tentang misi kami, pertimbangkan untuk meningkatkan dan membuka lebih banyak fitur premium."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -2711,8 +2714,14 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Untuk mengirim pesan tanpa footer ${ MAIL_APP_NAME }, tingkatkan akun Anda dan nikmati berbagai fitur premium lainnya."
+      ],
       "Track the status and activity of your referrals.": [
         "Lacak status dan aktivitas rujukan Anda."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Gunakan alamat email yang lebih pendek dan nikmati berbagai fitur premium lainnya dengan meningkatkan akun."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Dapatkan saringan tidak terbatas yang mengurutkan kotak masuk untuk Anda dan lebih banyak fitur premium ketika Anda tingkatkan."
@@ -4252,6 +4261,9 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Tambahkan saringan kustom untuk melakukan tindakan khusus secara otomatis, seperti memberi label atau mengarsip pesan."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Email yang berasal dari alamat yang Anda atau ${ BRAND_NAME } tandai sebagai spam akan masuk ke folder spam milik anggota organisasi Anda. Apabila Anda ingin menerima email dari alamat yang telah ditandai spam, tandai alamat tersebut sebagai \"bukan spam\"."
+      ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Email yang berasal dari alamat yang Anda atau ${ BRAND_NAME } tandai sebagai spam akan masuk ke folder spam Anda. Apabila Anda ingin menerima email dari satu atau lebih alamat yang telah ditandai spam, tandai alamat yang bersangkutan sebagai \"bukan spam\"."
       ],
@@ -4340,6 +4352,9 @@
       "Best deal": [
         "Penawaran terbaik"
       ],
+      "Device": [
+        "Perangkat"
+      ],
       "Enter your email address": [
         "Masukkan alamat email Anda"
       ],
@@ -4351,9 +4366,6 @@
       ],
       "Get help": [
         "Dapatkan bantuan"
-      ],
-      "Holidays": [
-        "Hari libur"
       ],
       "Key type": [
         "Tipe kunci"
@@ -4373,6 +4385,9 @@
       "Permissions": [
         "Izin"
       ],
+      "Protection": [
+        "Perlindungan"
+      ],
       "Select your preferred method of payment": [
         "Pilih metode pembayaran yang Anda inginkan"
       ],
@@ -4381,9 +4396,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Subscribed": [
-        "Berlangganan"
       ],
       "Time": [
         "Waktu"
@@ -4443,6 +4455,17 @@
         "Nama token"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Hari libur"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Subscribed": [
+        "Dilanggan"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Cobalah berbagai fitur unggulan ${ MAIL_APP_NAME } secara cuma-cuma"
@@ -4454,11 +4477,6 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
-      ]
-    },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Berdasarkan zona waktu Anda"
       ]
     },
     "Human verification method": {
@@ -4869,6 +4887,12 @@
       "${ numGroups } contact groups": [
         "${ numGroups } grup kontak"
       ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } merupakan program perlidungan akun yang dikembangkan pada ${ BRAND_NAME } bagi pengguna yang membutuhkan keamanan maksimum."
+      ],
+      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } didukung oleh teknologi AI mutakhir dan tim spesialis yang bekerja sepanjang waktu untuk mencegah tindak kejahatan dan ancaman keamanan."
+      ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
@@ -5142,6 +5166,9 @@
       "Balance from your previous subscription": [
         "Saldo dari langganan terakhir Anda"
       ],
+      "Based on your time zone": [
+        "Berdasarkan zona waktu Anda"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar akan tetap tersedia terlepas dari apakah pintasan keyboard diaktifkan atau tidak di pengaturan."
       ],
@@ -5351,6 +5378,9 @@
       ],
       "Email address": [
         "Alamat email"
+      ],
+      "Email address already used": [
+        "Alamat email telah digunakan"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
@@ -5772,6 +5802,9 @@
       "old password": [
         "kata sandi lama Anda"
       ],
+      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
+        "Setelah Anda mengaktifkan ${ PROTON_SENTINEL_NAME }:"
+      ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
       ],
@@ -6072,6 +6105,9 @@
       "support team": [
         "tim dukungan"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Kejadian yang mencurigakan akan dihadapkan pada sistem pertahanan yang berlapis untuk membantu mencegah para penyerang mengambil alih akun Anda."
+      ],
       "Swiss based": [
         "Berbasis di Swiss"
       ],
@@ -6333,6 +6369,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Tingkatkan ke akun berbayar untuk mengaktifkan ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
+      ],
       "Upgrade to unlock": [
         "Tingkatkan untuk membuka"
       ],
@@ -6356,6 +6398,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Gunakan alamat email yang dipilih sebagai nama pengguna SMTP dan token yang dihasilkan sebagai kata sandi SMTP pada layanan eksternal."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } sangat disarankan bagi pengguna yang memiliki data dan komunikasi yang bersifat sensitif, seperti jurnalis atau eksekutif bisnis."
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
@@ -6462,6 +6507,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME_TWO }"
       ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Dengan paket Anda saat ini, Anda hanya dapat menggunakan alamat @pm.me milkik Anda untuk menerima pesan. Tingkatkan paket Anda untuk dapat mengirim pesan dan membuat alamat tambahan dengan @pm.me."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
@@ -6518,9 +6566,6 @@
       ],
       "You can now close this window.": [
         "Anda dapat menutup jendela ini sekarang."
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Kini Anda dapat menerima pesan melalui alamat @pm.me. Aktifkan paket berbayar supaya bisa mengirim email dari alamat @pm.me dan membuat alamat @pm.me tambahan."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
@@ -6594,6 +6639,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apa pun yang terenkripsi dengan kunci ini."
       ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Anda akan menerima dukungan prioritas dari tim spesialis yang terlatih dalam hal perlindungan akun. Untuk segala pertanyaan seputar keamanan akun, silakan hubungi kami ${ hereLink },"
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Anda akan dapat melihat rincian lebih lanjut seputar berbagai kejadian penting, seperti upaya masuk ke akun Anda, pada log keamanan di bawah."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
@@ -6656,9 +6707,6 @@
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "Impor Anda dari ${ accounts } ditunda sementara."
-      ],
-      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Informasi Anda aman dengan kami. Kami hanya akan menghubungi Anda saat dibutuhkan untuk menyediakan layanan kami."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -8110,6 +8158,9 @@
       "General": [
         "Umum"
       ],
+      "here": [
+        "di sini"
+      ],
       "How to unlock data": [
         "Bagaimana cara membuka kunci data"
       ],
@@ -8195,6 +8246,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Aktifkan ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Aktifkan log lanjutan"
       ],
@@ -8834,11 +8888,11 @@
       "Up to 15 email addresses": [
         "Hingga 15 alamat email"
       ],
+      "Up to 3 TB of storage": [
+        "Kuota penyimpanan hingga 3 TB"
+      ],
       "Up to 5 forwarding mailboxes": [
         "Hingga 5 kotak surat penerusan"
-      ],
-      "Up to 500 GB of storage": [
-        "Kuota penyimpanan hingga 500 GB"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -8854,11 +8908,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gunakan domain email khusus milik Anda sendiri, mis. anda@namaanda.com"
       ]
     },
     "new_plans: heading": {
@@ -9293,6 +9353,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Menambahkan kalender liburan gagal"
+      ],
       "Calendar added": [
         "Kalender ditambahkan"
       ]
@@ -10930,6 +10993,9 @@
       "Action": [
         "Tindakan"
       ],
+      "Activate @pm.me": [
+        "Aktifkan @pm.me"
+      ],
       "Activate account and generate keys": [
         "Aktifkan akun dan hasilkan kunci"
       ],
@@ -11430,6 +11496,9 @@
       ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
+      ],
+      "Organization filters": [
+        "Filter organisasi"
       ],
       "Organization name": [
         "Nama organisasi"

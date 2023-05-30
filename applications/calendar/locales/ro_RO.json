@@ -66,6 +66,9 @@
       "Apply": [
         "Aplicare"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Sunt permise maxim 100 de contacte întru-un grup."
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -265,6 +268,12 @@
       "I have a question": [
         "Am o întrebare"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
+      ],
+      "Image will be loaded without a proxy": [
+        "Imaginea va fi încărcată fără proxy."
+      ],
       "Import": [
         "Importare"
       ],
@@ -291,6 +300,9 @@
       ],
       "Keep current time zone": [
         "Păstrare fus orar actual"
+      ],
+      "Load": [
+        "Încărcare"
       ],
       "Load image": [
         "Încărcare imagine"
@@ -333,6 +345,9 @@
       ],
       "New event": [
         "Eveniment nou"
+      ],
+      "New message": [
+        "Mesaj nou"
       ],
       "Next": [
         "Înainte"
@@ -1989,6 +2004,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail și semnul plus"
+      ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -2181,6 +2202,9 @@
       ],
       "Cancellation failed to be sent": [
         "Anularea nu a putut fi trimisă."
+      ],
+      "Cannot export this contact": [
+        "Acest contact nu se poate exporta."
       ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
@@ -3030,11 +3054,6 @@
         "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ]
     },
-    "holiday calendar": {
-      "Based on your time zone": [
-        "Pe baza fusului orar"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -3472,6 +3491,9 @@
       "Attention required": [
         "Necesită atenție"
       ],
+      "Based on your time zone": [
+        "Pe baza fusului orar"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
@@ -3492,6 +3514,12 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contactul a fost adăugat la grupul ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Contactul a fost eliminat din grupul ${ contactGroupName }."
       ],
       "Country code": [
         "Cod țară"
@@ -3584,9 +3612,6 @@
       ],
       "Frequency modifications will be lost.": [
         "Modificările de frecvență vor fi pierdute."
-      ],
-      "Group assignment applied": [
-        "Atribuire grup aplicată"
       ],
       "here": [
         "aici"
@@ -3972,6 +3997,12 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Veţi actualiza toate evenimentele din această serie. Participanţii eliminaţi vor fi notificaţi."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Ați atins numărul maxim de adrese din grupul de contacte."
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
@@ -4801,9 +4832,54 @@
         "Nume etichetă"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Modernizare"
+      ]
+    },
     "new_plans: action": {
       "Switch or add account": [
         "Schimbare sau adăugare cont"
+      ]
+    },
+    "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "Ștergere automată mesaje nedorite și din gunoi"
+      ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Hide My Email aliases": [
+        "Ascundere aliasuri e-mail"
+      ],
+      "Schedule messages at any time": [
+        "Programați mesajele oricând"
+      ],
+      "Search message content": [
+        "Căutare în conținut mesaj"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Up to 15 email addresses": [
+        "Până la 15 adrese de e-mail"
+      ],
+      "Up to 3 TB of storage": [
+        "Până la 3 TB spațiu de stocare"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilizați propriile adresa personală de domeniu pentru e-mail, de ex., nume@adresapersonala.com."
       ]
     },
     "new_plans: label": {
@@ -4825,6 +4901,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Adăugarea calendarului de sărbători a eșuat"
+      ],
       "Calendar added": [
         "Calendar adăugat"
       ]
@@ -5268,6 +5347,14 @@
       ],
       "Work": [
         "Serviciu"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Oficial"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Mesaj oficial de la ${ BRAND_NAME }"
       ]
     },
     "Refresh on apply warning": {
@@ -5902,10 +5989,10 @@
       ]
     },
     "Title": {
-      "${ emailsCount } member": [
-        "Un membru",
-        "${ emailsCount } membri",
-        "${ emailsCount } de membri"
+      "${ emailsCount } email address": [
+        "${ emailsCount } adresă de e-mail",
+        "${ emailsCount } adrese de e-mail",
+        "${ emailsCount } de adrese de e-mail"
       ],
       "Account suspended": [
         "Cont suspendat"
@@ -5951,6 +6038,9 @@
       "Calendar alarm": [
         "Alarmă calendar"
       ],
+      "Cannot add more addresses": [
+        "Nu se mai pot adăuga adrese"
+      ],
       "Change my answer": [
         "Schimbare răspuns"
       ],
@@ -5962,9 +6052,6 @@
       ],
       "Clearing data": [
         "Ştergere date"
-      ],
-      "Contact details": [
-        "Detalii contact"
       ],
       "Contact Details": [
         "Detalii contact"
@@ -6236,14 +6323,14 @@
       "Start import process": [
         "Începere proces de importare"
       ],
+      "Unlock contacts groups": [
+        "Deblocare grupuri de contacte"
+      ],
       "Update event": [
         "Actualizare eveniment"
       ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
-      ],
-      "Upgrade required": [
-        "Modernizare necesară"
       ],
       "View contacts": [
         "Afișare contacte"
@@ -6347,6 +6434,12 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
       ],
+      "The image could not be loaded": [
+        "Imaginea nu s-a putut încărca."
+      ],
+      "The image could not be loaded using proxy": [
+        "Imaginea nu s-a putut încărca folosind proxy."
+      ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
       ],
@@ -6448,9 +6541,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Această acțiune este ireversibilă. Introduceți cuvântul ${ boldDanger } pentru a continua."
-      ],
-      "This feature requires a paid ${ BRAND_NAME } account": [
-        "Această funcționalitate necesită un cont ${ BRAND_NAME } cu plată"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
