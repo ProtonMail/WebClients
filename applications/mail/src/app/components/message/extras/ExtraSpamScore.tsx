@@ -54,7 +54,7 @@ const ExtraSpamScore = ({ message }: Props) => {
 
         return (
             <div
-                className="bg-danger border border-danger rounded  pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
+                className="bg-danger border border-danger rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
                 data-testid="spam-banner:phishing-banner"
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1" />

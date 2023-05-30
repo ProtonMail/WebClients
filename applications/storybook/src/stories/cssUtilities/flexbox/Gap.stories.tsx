@@ -13,9 +13,9 @@ export default {
 export const Gap05 = () => {
     return (
         <div className="flex flex-gap-0-5 rounded overflow-hidden border">
-            <div className="bg-primary p1">div</div>
-            <span className="bg-primary p1">span</span>
-            <em className="bg-primary p1">em</em>
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
         </div>
     );
 };
@@ -23,9 +23,9 @@ export const Gap05 = () => {
 export const Gap1 = () => {
     return (
         <div className="flex flex-gap-1 rounded overflow-hidden border">
-            <div className="bg-primary p1">div</div>
-            <span className="bg-primary p1">span</span>
-            <em className="bg-primary p1">em</em>
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
         </div>
     );
 };
@@ -33,9 +33,9 @@ export const Gap1 = () => {
 export const Gap2 = () => {
     return (
         <div className="flex flex-gap-2 rounded overflow-hidden border">
-            <div className="bg-primary p1">div</div>
-            <span className="bg-primary p1">span</span>
-            <em className="bg-primary p1">em</em>
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
         </div>
     );
 };
@@ -43,9 +43,9 @@ export const Gap2 = () => {
 export const Gap05Column = () => {
     return (
         <div className="flex flex-column flex-gap-0-5 rounded overflow-hidden border">
-            <div className="bg-primary p1">div</div>
-            <span className="bg-primary p1">span</span>
-            <em className="bg-primary p1">em</em>
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
         </div>
     );
 };
@@ -53,9 +53,9 @@ export const Gap05Column = () => {
 export const Gap1Column = () => {
     return (
         <div className="flex flex-column flex-gap-1 rounded overflow-hidden border">
-            <div className="bg-primary p1">div</div>
-            <span className="bg-primary p1">span</span>
-            <em className="bg-primary p1">em</em>
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
         </div>
     );
 };
@@ -63,9 +63,9 @@ export const Gap1Column = () => {
 export const Gap2Column = () => {
     return (
         <div className="flex flex-column flex-gap-2 rounded overflow-hidden border">
-            <div className="bg-primary p1">div</div>
-            <span className="bg-primary p1">span</span>
-            <em className="bg-primary p1">em</em>
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
         </div>
     );
 };

@@ -23,7 +23,7 @@ const CustomizeCalendarImportRow = ({
     const { checked, source } = calendar;
 
     return (
-        <Label htmlFor={calendar.id} className="w100 label flex flex-flex-align-items-center pt2 pb2 border-bottom">
+        <Label htmlFor={calendar.id} className="w100 label flex flex-flex-align-items-center py-7 border-bottom">
             <div className={clsx(['flex flex-item-fluid', checked && 'mr-4'])}>
                 <Checkbox
                     id={calendar.id}

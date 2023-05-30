@@ -137,11 +137,11 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
 
     return (
         <div className="relative ui-standard color-norm" ref={wrapperRef}>
-            <Header className="pl1">
+            <Header className="pl-4">
                 <div className="drawer-app-header-actions flex flex-justify-space-between flex-align-items-center w100">
                     <span className="text-bold text-lg">{title}</span>
 
-                    <div className="flex flex-align-items-center flex-nowrap flex-gap-0-5">
+                    <div className="flex flex-align-items-center flex-nowrap gap-2">
                         <Tooltip title={c('Action').t`Close`}>
                             <Button
                                 data-testid="drawer-app-header:close"

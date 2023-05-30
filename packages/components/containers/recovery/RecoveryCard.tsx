@@ -179,7 +179,7 @@ const RecoveryCard = ({ ids }: Props) => {
     })();
 
     return (
-        <Card rounded background={false} className="max-w46e p2">
+        <Card rounded background={false} className="max-w46e p-7">
             <SettingsSectionTitle className="h3">{c('Title')
                 .t`Take precautions to avoid data loss!`}</SettingsSectionTitle>
             <p>

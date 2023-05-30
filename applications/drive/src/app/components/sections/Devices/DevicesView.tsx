@@ -16,7 +16,7 @@ function DevicesView() {
         <FileBrowserStateProvider itemIds={driveView.items.map(({ id }) => id)}>
             <DevicesToolbar items={driveView.items} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p1 text-strong border-bottom section--header">{sectionTitle}</div>
+                <div className="p-4 text-strong border-bottom section--header">{sectionTitle}</div>
                 <Devices view={driveView} />
             </PrivateMainArea>
         </FileBrowserStateProvider>

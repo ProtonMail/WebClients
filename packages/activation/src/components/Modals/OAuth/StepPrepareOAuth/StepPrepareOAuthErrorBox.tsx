@@ -11,7 +11,7 @@ const StepPrepareErrorBox = ({ errors }: Props) => {
 
     return (
         <div
-            className="rounded-lg p1 mt-4 bg-danger color-white text-semibold border-none"
+            className="rounded-lg p-4 mt-4 bg-danger color-white text-semibold border-none"
             data-testid="StepPrepareErrorBox:container"
         >
             {c('Error').ngettext(

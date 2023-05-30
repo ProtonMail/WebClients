@@ -212,7 +212,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                     <ContactSelectorEmptyContacts onClose={rest.onClose} onEdit={onEdit} />
                 ) : (
                     <>
-                        <div className={clsx(['mb-2 flex flex-nowrap flex-gap-1', isNarrow && 'flex-column'])}>
+                        <div className={clsx(['mb-2 flex flex-nowrap gap-4', isNarrow && 'flex-column'])}>
                             <div className="flex-item-grow-2">
                                 <SearchInput
                                     ref={searchInputRef}
@@ -238,7 +238,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                         {filteredContactEmails.length ? (
                             <>
                                 {!isNarrow && (
-                                    <div className="flex flex-nowrap flex-item-fluid contact-list-row p1">
+                                    <div className="flex flex-nowrap flex-item-fluid contact-list-row p-4">
                                         <div>
                                             <Checkbox
                                                 className="w100 h100"
@@ -247,7 +247,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                             />
                                         </div>
                                         <div className="flex flex-item-fluid flex-align-self-center">
-                                            <div className="w45 pl1">
+                                            <div className="w45 pl-4">
                                                 <strong className="text-uppercase">{c('Label').t`Name`}</strong>
                                             </div>
                                             <div className="flex-item-fluid">

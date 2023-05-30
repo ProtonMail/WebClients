@@ -26,7 +26,7 @@ type ColorPaletteProps = {
 const ColorItem = ({ className }: ColorItemProps) => (
     <div
         className={clsx(
-            'w8e text-sm flex flex-align-items-center flex-justify-center p1 rounded shadow-norm border user-select',
+            'w8e text-sm flex flex-align-items-center flex-justify-center p-4 rounded shadow-norm border user-select',
             className
         )}
         style={{ 'aspect-ratio': '1' }}
@@ -38,7 +38,7 @@ const ColorItem = ({ className }: ColorItemProps) => (
 const TextItem = ({ className }: ColorItemProps) => (
     <div
         className={clsx(
-            'flex flex-align-items-center flex-justify-center p1 rounded shadow-norm border user-select',
+            'flex flex-align-items-center flex-justify-center p-4 rounded shadow-norm border user-select',
             className,
             className === 'color-invert' ? 'bg-primary' : ''
         )}
@@ -50,9 +50,9 @@ const TextItem = ({ className }: ColorItemProps) => (
 const ColorPalette = ({ children }: ColorPaletteProps) => (
     <>
         <strong className="block mb-2">on UI Standard</strong>
-        <div className={clsx('ui-standard border rounded-lg p1 mb-8 flex flex-wrap flex-gap-1')}>{children}</div>
+        <div className={clsx('ui-standard border rounded-lg p-4 mb-8 flex flex-wrap gap-4')}>{children}</div>
         <strong className="block mb-2">on UI prominent</strong>
-        <div className={clsx('ui-prominent border rounded-lg p1 mb-8 flex flex-wrap flex-gap-1')}>{children}</div>
+        <div className={clsx('ui-prominent border rounded-lg p-4 mb-8 flex flex-wrap gap-4')}>{children}</div>
     </>
 );
 

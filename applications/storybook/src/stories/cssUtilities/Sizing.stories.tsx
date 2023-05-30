@@ -12,7 +12,7 @@ export default {
 
 const demoItemClasses =
     'user-select flex flex-align-items-center py-2 flex-justify-center bg-primary rounded-sm text-center';
-const demoContainerClasses = 'border p1 rounded w100 relative flex flex-column flex-gap-0-5 scroll-if-needed text-2xs';
+const demoContainerClasses = 'border p-4 rounded w100 relative flex flex-column gap-2 scroll-if-needed text-2xs';
 
 export const WidthPercents = () => {
     const sizes = [0, 1, 2, 3, 5, 10, 15, 18, 20, 25, 30, 33, 35, 40, 45, 49, 50, 60, 66, 70, 75, 80, 90, 95, 100];

@@ -29,7 +29,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
                     <div className="mb-4">
                         {c('Import error').t`${BRAND_NAME} can't connect to your Yahoo account. Please make sure that:`}
                     </div>
-                    <ul className="m-0 pb1">
+                    <ul className="m-0 pb-4">
                         <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
                         <li>{
                             // // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
@@ -48,7 +48,7 @@ const StepFormErrorYahoo = ({ isReconnect, errorCode }: Props) => {
                         {c('Import error')
                             .t`${BRAND_NAME} can't connect to your external account. Please make sure that:`}
                     </div>
-                    <ul className="m-0 pb1">
+                    <ul className="m-0 pb-4">
                         <li>{c('Import error')
                             .jt`Your email address and app password are correct. Do ${boldNot} use your regular password.`}</li>
                         <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>

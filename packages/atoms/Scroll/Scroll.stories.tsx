@@ -10,7 +10,7 @@ export default {
 export const Basic = () => {
     return (
         <Scroll className="border" style={{ height: 160 }}>
-            <div className="px1 text-justify">
+            <div className="px-4 text-justify">
                 <p style={{ maxWidth: 400 }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
@@ -39,18 +39,18 @@ export const Basic = () => {
 export const Horizontal = () => {
     return (
         <Scroll horizontal className="border">
-            <div className="px1 py1 flex flex-nowrap">
-                <p className="pr2" style={{ minWidth: 400 }}>
+            <div className="p-4 flex flex-nowrap">
+                <p className="pr-7" style={{ minWidth: 400 }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
                     blanditiis quos?
                 </p>
-                <p className="pr2" style={{ minWidth: 400 }}>
+                <p className="pr-7" style={{ minWidth: 400 }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
                     blanditiis quos?
                 </p>
-                <p className="pr2" style={{ minWidth: 400 }}>
+                <p className="pr-7" style={{ minWidth: 400 }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
                     blanditiis quos?

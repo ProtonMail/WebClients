@@ -81,7 +81,7 @@ const ContactGroupRow = ({
                     onClick={(e) => e.stopPropagation()}
                 />
                 <div className="flex flex-column flex-item-fluid flex-justify-space-between mt-6">
-                    <span className="w100 flex pl-4 pr-4">
+                    <span className="w100 flex px-4">
                         <span
                             role="heading"
                             aria-level={2}

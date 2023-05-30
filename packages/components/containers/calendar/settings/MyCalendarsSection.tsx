@@ -172,7 +172,7 @@ const MyCalendarsSection = ({
     const isCalendarsLimitReachedNode = isFreeUser ? (
         <Card rounded className="mb-4">
             <div className="flex flex-nowrap flex-align-items-center">
-                <p className="flex-item-fluid my-0 pr2">{calendarsLimitReachedText}</p>
+                <p className="flex-item-fluid my-0 pr-7">{calendarsLimitReachedText}</p>
                 <ButtonLike
                     as={SettingsLink}
                     path={addUpsellPath('/upgrade', upsellRef)}

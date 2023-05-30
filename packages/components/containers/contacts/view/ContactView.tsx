@@ -60,7 +60,7 @@ const ContactView = ({
 
     return (
         <div>
-            <div className="contact-summary-wrapper border-bottom pb1 mb-4">
+            <div className="contact-summary-wrapper border-bottom pb-4 mb-4">
                 <ContactSummary vCardContact={vCardContact} leftBlockWidth="w100 max-w100p on-mobile-wauto" />
                 <ContactViewErrors
                     errors={errors}
@@ -91,7 +91,7 @@ const ContactView = ({
                 <ContactViewOthers vCardContact={vCardContact} isSignatureVerified={isSignatureVerified} />
             </div>
             {!isPreview ? (
-                <div className="mt-6 ">
+                <div className="mt-6">
                     {hasEmail ? null : (
                         <div className="mb-2">
                             <Button shape="outline" color="norm" onClick={() => onEdit('email')}>

@@ -34,7 +34,7 @@ export const Icons = () => {
 
     return (
         <>
-            <div className="flex flex-nowrap flex-gap-1">
+            <div className="flex flex-nowrap gap-4">
                 <Input
                     prefix={<Icon name="magnifier" />}
                     placeholder={`Search ${primaryIconNames.length} icons by name…`}
@@ -56,7 +56,7 @@ export const Icons = () => {
             </div>
             <div className="icon-grid mt-8">
                 {iconResults.map((iconName) => (
-                    <div className="border rounded text-center p1" key={iconName}>
+                    <div className="border rounded text-center p-4" key={iconName}>
                         <Icon name={iconName} size={selectedSize} />
                         <div className="mt-4 text-monospace lh120 user-select">
                             <Mark value={search}>{iconName}</Mark>

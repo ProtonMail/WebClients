@@ -55,7 +55,7 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="flex flex-align-items-stretch py2">
+        <div className="flex flex-align-items-stretch py-7">
             <div>{tabsExample}</div>
             <div className="mr-8">
                 <strong className="block mt-4">Options</strong>

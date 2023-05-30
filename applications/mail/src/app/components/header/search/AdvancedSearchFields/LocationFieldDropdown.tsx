@@ -61,7 +61,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                     className: 'flex flex-column flex-nowrap',
                 }}
             >
-                <div className="p1 flex-item-noshrink">
+                <div className="p-4 flex-item-noshrink">
                     <SearchInput
                         value={search}
                         onChange={setSearch}
@@ -80,7 +80,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                         {options.map((group) =>
                             group.items.length ? (
                                 <div key={group.id}>
-                                    <span className="button text-bold pl1">{group.title}</span>
+                                    <span className="button text-bold pl-4">{group.title}</span>
                                     {group.items.map((item) => (
                                         <DropdownMenuButton
                                             className="text-left text-ellipsis"

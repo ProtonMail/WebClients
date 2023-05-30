@@ -80,7 +80,7 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
             <Modal as="form" size="small" open={open} onClose={onClose} onExit={onExit} onSubmit={handleSubmit}>
                 <ModalHeader />
                 <ModalContent>
-                    <div className="pb1 text-center m-auto w66 on-mobile-w100">
+                    <div className="pb-4 text-center m-auto w66 on-mobile-w100">
                         <img src={userPromptSvg} alt="" />
                     </div>
                     <h1 className="mb-2 text-2xl text-bold text-center">{c('Info').t`Set a recovery phrase`}</h1>
