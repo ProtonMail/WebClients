@@ -64,7 +64,7 @@ const PaidUserGetStartedChecklist = ({ onDismiss, onItemSelection }: Props) => {
 
     if (loading) {
         return (
-            <div className="p1 m-auto">
+            <div className="p-4 m-auto">
                 <Loader />
             </div>
         );
@@ -73,7 +73,7 @@ const PaidUserGetStartedChecklist = ({ onDismiss, onItemSelection }: Props) => {
     const { length: totalNumberOfItems } = checklistItems;
 
     return (
-        <div className="p1">
+        <div className="p-4">
             <GetStartedChecklistHeader
                 totalNumberOfItems={totalNumberOfItems}
                 numberOfCompletedItems={numberOfCompletedItems}

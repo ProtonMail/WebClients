@@ -18,7 +18,7 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
         <div style={style} className="flex">
             <div
                 className={clsx([
-                    'flex flex-nowrap flex-item-fluid h100 my-auto contact-list-row pl1 pr1',
+                    'flex flex-nowrap flex-item-fluid h100 my-auto contact-list-row px-4',
                     checked && 'contact-list-row--selected',
                 ])}
             >
@@ -33,11 +33,11 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
                     <div
                         className={clsx(['flex-item-fluid flex-align-items-center max-w100 h100', !isNarrow && 'flex'])}
                     >
-                        <div className={clsx(['pl1 flex', !isNarrow && 'w45'])}>
-                            <span className="inline-block text-ellipsis max-w100 pr1">{contact.Name}</span>
+                        <div className={clsx(['pl-4 flex', !isNarrow && 'w45'])}>
+                            <span className="inline-block text-ellipsis max-w100 pr-4">{contact.Name}</span>
                         </div>
-                        <div className="flex-item-fluid flex on-mobile-pl1">
-                            <span className="inline-block text-ellipsis max-w100 pr1">{contact.Email}</span>
+                        <div className="flex-item-fluid flex pl-4 md:pl-0">
+                            <span className="inline-block text-ellipsis max-w100 pr-4">{contact.Email}</span>
                         </div>
                     </div>
                 </Checkbox>

@@ -344,7 +344,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             )}
                         </div>
                         {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
-                            <div className="border p2 text-center">
+                            <div className="border p-7 text-center">
                                 <h3 className="color-primary mt-0 mb-4">{
                                     // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
                                     c('Title').t`Get ${vpnPlus} to access all servers`

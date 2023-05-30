@@ -11,7 +11,7 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
         /* eslint-disable-next-line deprecation/deprecation */
         <DialogModal intermediate onClose {...rest}>
             <ModalCloseButton onClose={onClose} />
-            <InnerModal className="modal-content pb2 pt2 text-center">
+            <InnerModal className="modal-content py-7 text-center">
                 <div className="mx-auto">
                     <img
                         src={onboardingImportAssistant}

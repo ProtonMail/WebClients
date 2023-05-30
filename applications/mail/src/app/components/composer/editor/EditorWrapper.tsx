@@ -282,7 +282,7 @@ const EditorWrapper = ({
     return canRenderEditor ? (
         <Editor
             editorToolbarClassname="mb-4 mx-6"
-            editorClassname="pl1-75 pr1-75"
+            editorClassname="px-6"
             placeholder={c('Placeholder').t`Write your message`}
             metadata={editorMetadata}
             disabled={disabled}
