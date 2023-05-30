@@ -28,7 +28,7 @@ const LocationField = ({ value, onChange }: Props) => {
     return (
         <>
             <span className="block text-semibold mb-2">{c('Label').t`Search in`}</span>
-            <div className="flex flex-wrap flex-align-items-start mb-2 flex-gap-0-5">
+            <div className="flex flex-wrap flex-align-items-start mb-2 gap-2">
                 {firstOptions.map((option) => (
                     <Button
                         key={option.value}
