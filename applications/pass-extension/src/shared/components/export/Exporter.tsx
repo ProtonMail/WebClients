@@ -18,7 +18,7 @@ import { createExportFile } from './createExportFile';
 
 type ExportFormValues = { passphrase: string; encrypted: boolean };
 
-const initialValues: ExportFormValues = { passphrase: '', encrypted: true };
+const initialValues: ExportFormValues = { passphrase: '', encrypted: false };
 const validateFormValues = ({ encrypted, passphrase }: ExportFormValues): FormikErrors<ExportFormValues> =>
     encrypted && isEmptyString(passphrase) ? { passphrase: c('Warning').t`Passphrase is required` } : {};
 
@@ -77,16 +77,18 @@ export const Exporter: React.FC = () => {
                     <span className="ml-3">
                         {c('Label').t`Encrypt your ${PASS_APP_NAME} data export file`}
                         <span className="block color-weak text-sm">{c('Info')
-                            .t`Disable this option at your own risk : the output will be unprotected.`}</span>
+                            .t`Export will use PGP encryption and require a strong passphrase.`}</span>
                     </span>
                 </Checkbox>
 
-                <Field
-                    name="passphrase"
-                    label={c('Label').t`Passphrase`}
-                    component={PasswordField}
-                    disabled={!form.values.encrypted}
-                />
+                {form.values.encrypted ? (
+                    <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />
+                ) : (
+                    <em className="block text-sm color-weak mt-2">
+                        {c('Info')
+                            .t`This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.`}
+                    </em>
+                )}
 
                 <Button
                     type="submit"
