@@ -66,10 +66,14 @@ export const BaseMaskedTextField: VFC<BaseTextFieldProps> = ({ form, field, ...r
     );
 };
 
-export type TextFieldProps = FieldBoxProps & BaseTextFieldProps;
+export type TextFieldProps = FieldBoxProps &
+    BaseTextFieldProps & {
+        masked?: boolean;
+    };
 
 export const TextField: VFC<TextFieldProps> = (props) => {
-    const { actions, actionsContainerClassName, className, icon, ...rest } = props;
+    const { actions, actionsContainerClassName, className, icon, masked = false, ...rest } = props;
+    const TextFieldComponent = masked ? BaseMaskedTextField : BaseTextField;
 
     return (
         <FieldBox
@@ -78,7 +82,7 @@ export const TextField: VFC<TextFieldProps> = (props) => {
             className={className}
             icon={icon}
         >
-            <BaseTextField {...rest} />
+            <TextFieldComponent {...rest} />
         </FieldBox>
     );
 };
