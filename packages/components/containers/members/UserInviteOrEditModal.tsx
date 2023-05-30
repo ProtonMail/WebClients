@@ -77,55 +77,58 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
     };
 
     const revokeAdmin = async () => {
-        try {
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <ConfirmModal
-                        onClose={reject}
-                        onConfirm={() => resolve(undefined)}
-                        title={c('Title').t`Change role`}
-                    >
-                        <Alert className="mb-4">
-                            {member!.Subscriber === MEMBER_SUBSCRIBER.PAYER
-                                ? c('Info')
-                                      .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
-                                : c('Info')
-                                      .t`Are you sure you want to remove administrative privileges from this user?`}
-                        </Alert>
-                    </ConfirmModal>
-                );
-            });
+        await new Promise((resolve, reject) => {
+            createModal(
+                <ConfirmModal onClose={reject} onConfirm={() => resolve(undefined)} title={c('Title').t`Change role`}>
+                    <Alert className="mb-4">
+                        {member!.Subscriber === MEMBER_SUBSCRIBER.PAYER
+                            ? c('Info')
+                                  .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
+                            : c('Info').t`Are you sure you want to remove administrative privileges from this user?`}
+                    </Alert>
+                </ConfirmModal>
+            );
+        });
 
-            await api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-        } catch (e) {
-            /* do nothing, user declined confirm-modal to revoke admin rights from member */
-        }
+        await api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
     };
 
     const editInvitation = async () => {
+        let updated = false;
         // Editing a pending invitation uses a different endpoint than updating a user that accepted the invite
         if (isInvitationPending) {
             await api(editMemberInvitation(member!.ID, model.storage));
+            updated = true;
         } else {
             // Make consecutive API calls to update the member (API restriction)
             if (initialModel.storage !== model.storage) {
                 await api(updateQuota(member!.ID, model.storage));
+                updated = true;
             }
 
             if (canUpdateVPNConnection && initialModel.vpn !== model.vpn) {
                 await api(updateVPN(member!.ID, model.vpn ? VPN_CONNECTIONS : 0));
+                updated = true;
             }
 
             if (canMakeAdmin && model.admin && initialModel.admin !== model.admin) {
                 await api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+                updated = true;
             }
 
             if (canRevokeAdmin && !model.admin && initialModel.admin !== model.admin) {
-                await revokeAdmin();
+                try {
+                    await revokeAdmin();
+                    updated = true;
+                } catch (error) {
+                    /* do nothing, user declined confirm-modal to revoke admin rights from member */
+                }
             }
         }
 
-        createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });
+        if (updated) {
+            createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });
+        }
     };
 
     const handleSubmit = async () => {
