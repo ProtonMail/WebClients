@@ -3,7 +3,7 @@ export { default as useFolderView } from './useFolderView';
 export { default as useLinkDetailsView } from './useLinkDetailsView';
 export { default as useLinksDetailsView } from './useLinksDetailsView';
 export { default as useLinkPath } from './useLinkPath';
-export { default as useLinkView } from './useLinkView';
+export { default as useShareURLView } from './useShareURLView';
 export { default as usePublicFolderView } from './usePublicFolderView';
 export { default as useRevisionsView } from './useRevisionsView';
 export { default as useSearchControl } from './useSearchControl';

@@ -39,8 +39,8 @@ function usePublicSessionProvider() {
         return api<SRPHandshakeInfo>(queryInitSRPHandshake(token)).then((handshakeInfo) => {
             return {
                 handshakeInfo,
-                hasCustomPassword: hasCustomPassword(handshakeInfo),
-                hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded(handshakeInfo),
+                hasCustomPassword: hasCustomPassword({ flags: handshakeInfo.Flags }),
+                hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: handshakeInfo.Flags }),
             };
         });
     };
