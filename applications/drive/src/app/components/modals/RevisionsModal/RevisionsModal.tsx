@@ -43,7 +43,6 @@ const RevisionsSettingsBanner = ({
                 toApp={APPS.PROTONACCOUNT}
                 shape="solid"
                 size="small"
-                href=""
             >{c('Action').t`Change`}</ButtonLike>
         </div>
     );

@@ -16,7 +16,7 @@ const RevisionPreviewButton = ({ revision, openRevisionPreview, close }: Props) 
         <ContextMenuButton
             name={c('Action').t`Preview`}
             icon="eye"
-            testId="context-menu-revision-preview"
+            testId="context-menu-preview"
             action={() => openRevisionPreview(revision)}
             close={close}
         />

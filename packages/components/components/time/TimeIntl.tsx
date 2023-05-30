@@ -40,9 +40,11 @@ const is12HourDateFnsFormat = (formatString: string) => {
 };
 
 const TimeIntl = ({ children, sameDayOptions, options, ...rest }: Props) => {
+    const time = getValue(children);
+    const ISOTime = new Date(time * 1000).toISOString();
     return (
-        <time {...rest}>
-            {readableTimeIntl(getValue(children), {
+        <time dateTime={ISOTime} {...rest}>
+            {readableTimeIntl(time, {
                 localeCode: dateLocale.code,
                 hour12: is12HourDateFnsFormat(dateLocale.formatLong?.time()),
                 sameDayIntlOptions: sameDayOptions,
