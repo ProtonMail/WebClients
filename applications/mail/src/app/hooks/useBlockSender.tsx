@@ -55,7 +55,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
                 ? c('Notification').t`Sender ${firstSenderAddress} blocked`
                 : c('Notification').t`Senders blocked`;
 
-        return dispatch(addBlockAddresses({ api, addresses: senders.map((sender) => sender.Address), overwrite: true }))
+        return dispatch(addBlockAddresses({ addresses: senders.map((sender) => sender.Address), overwrite: true }))
             .unwrap()
             .then(() => {
                 createNotification({ text: successNotificationMessage });

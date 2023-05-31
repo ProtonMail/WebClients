@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, useApi, useNotifications } from '@proton/components';
+import { Icon, useNotifications } from '@proton/components';
 import { getBlockedIncomingDefaultByAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { getSender } from '@proton/shared/lib/mail/messages';
 
@@ -18,7 +18,6 @@ interface Props {
 }
 
 const ExtraBlockedSender = ({ message }: Props) => {
-    const api = useApi();
     const dispatch = useAppDispatch();
     const { createNotification } = useNotifications();
 
@@ -36,7 +35,7 @@ const ExtraBlockedSender = ({ message }: Props) => {
             return;
         }
 
-        await dispatch(remove({ api, ID: blockedIncomingDefault.ID }));
+        await dispatch(remove({ ID: blockedIncomingDefault.ID }));
 
         createNotification({
             text: c('Notification').t`Block removed`,
