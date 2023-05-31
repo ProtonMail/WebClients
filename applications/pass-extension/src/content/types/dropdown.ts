@@ -1,4 +1,4 @@
-import type { Maybe, SafeLoginItem } from '@proton/pass/types';
+import type { MaybeNull, SafeLoginItem } from '@proton/pass/types';
 
 import type { FieldHandle } from './form';
 import type { IFrameAppService } from './iframe';
@@ -21,5 +21,5 @@ export type OpenDropdownOptions = {
 };
 
 export interface InjectedDropdown extends IFrameAppService<OpenDropdownOptions> {
-    getCurrentField: () => Maybe<FieldHandle>;
+    getCurrentField: () => MaybeNull<FieldHandle>;
 }

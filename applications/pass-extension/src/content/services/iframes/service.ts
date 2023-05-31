@@ -1,5 +1,6 @@
+import type { Runtime } from 'webextension-polyfill';
+
 import type { MaybeNull } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 
 import { withContext } from '../../context/context';
@@ -7,68 +8,84 @@ import type { IFrameAppService, InjectedDropdown, InjectedNotification } from '.
 import { createDropdown } from './dropdown';
 import { createNotification } from './notification';
 
-type IFrameServiceApps = {
-    dropdown: MaybeNull<InjectedDropdown>;
-    notification: MaybeNull<InjectedNotification>;
+type IFrameServiceContext = {
+    apps: {
+        dropdown: MaybeNull<InjectedDropdown>;
+        notification: MaybeNull<InjectedNotification>;
+    };
+    port: MaybeNull<Runtime.Port>;
 };
 
-const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext(
-    ({ getExtensionContext, getState }, app) => {
-        app.init(getExtensionContext().port);
-        app.reset(getState());
-    }
-);
-
 export const createIFrameService = () => {
-    const apps: IFrameServiceApps = { dropdown: null, notification: null };
+    const ctx: IFrameServiceContext = {
+        port: null,
+        apps: { dropdown: null, notification: null },
+    };
+
+    /* only re-init the iframe sub-apps if the extension
+     * context port has changed */
+    const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext(
+        ({ getExtensionContext, getState }, app) => {
+            const port = getExtensionContext().port;
+            if (port !== ctx.port) {
+                ctx.port = port;
+                app.init(port);
+            }
+            app.reset(getState());
+        }
+    );
 
     const attachDropdown = withContext(({ scriptId }) => {
-        if (apps.dropdown === null) {
+        if (ctx.apps.dropdown === null) {
             logger.info(`[ContentScript::${scriptId}] attaching dropdown iframe`);
-            apps.dropdown = createDropdown();
+            ctx.apps.dropdown = createDropdown();
         }
 
-        onAttached(apps.dropdown);
+        onAttached(ctx.apps.dropdown);
     });
 
     const detachDropdown = withContext(({ scriptId }) => {
-        if (apps.dropdown) {
+        if (ctx.apps.dropdown) {
             logger.info(`[ContentScript::${scriptId}] detaching dropdown iframe`);
-            apps.dropdown.destroy();
-            apps.dropdown = null;
+            ctx.apps.dropdown.destroy();
+            ctx.apps.dropdown = null;
         }
     });
 
     const attachNotification = withContext(({ scriptId }) => {
-        if (apps.notification === null) {
+        if (ctx.apps.notification === null) {
             logger.info(`[ContentScript::${scriptId}] attaching notification iframe`);
-            apps.notification = apps.notification ?? createNotification();
+            ctx.apps.notification = ctx.apps.notification ?? createNotification();
         }
 
-        onAttached(apps.notification);
+        onAttached(ctx.apps.notification);
     });
 
     const detachNotification = withContext(({ scriptId }) => {
-        if (apps.notification) {
+        if (ctx.apps.notification) {
             logger.info(`[ContentScript::${scriptId}] detaching notification iframe`);
-            apps.notification.destroy();
-            apps.notification = null;
+            ctx.apps.notification.destroy();
+            ctx.apps.notification = null;
         }
     });
 
     const reset = () => {
-        if (apps.dropdown) onAttached(apps.dropdown);
-        if (apps.notification) onAttached(apps.notification);
+        if (ctx.apps.dropdown) onAttached(ctx.apps.dropdown);
+        if (ctx.apps.notification) onAttached(ctx.apps.notification);
     };
 
-    const destroy = pipe(detachDropdown, detachNotification);
+    const destroy = () => {
+        detachDropdown();
+        detachNotification();
+        ctx.port = null;
+    };
 
     return {
         get dropdown() {
-            return apps.dropdown;
+            return ctx.apps.dropdown;
         },
         get notification() {
-            return apps.notification;
+            return ctx.apps.notification;
         },
         attachDropdown,
         attachNotification,

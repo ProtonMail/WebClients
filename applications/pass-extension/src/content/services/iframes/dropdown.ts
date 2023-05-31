@@ -1,6 +1,7 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import { type Maybe, WorkerMessageType } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { FormField, FormType, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
@@ -13,13 +14,13 @@ import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from '../../
 import { withContext } from '../../context/context';
 import { createIFrameApp } from '../../injections/iframe/create-iframe-app';
 import type { DropdownSetActionPayload, FieldHandle, InjectedDropdown, OpenDropdownOptions } from '../../types';
-import { DropdownAction, FormField, FormType } from '../../types';
+import { DropdownAction } from '../../types';
 import { IFrameMessageType } from '../../types/iframe';
 
-type DropdownFieldRef = { current: Maybe<FieldHandle> };
+type DropdownFieldRef = { current: MaybeNull<FieldHandle> };
 
 export const createDropdown = (): InjectedDropdown => {
-    const fieldRef: DropdownFieldRef = { current: undefined };
+    const fieldRef: DropdownFieldRef = { current: null };
     const listeners = createListenerStore();
 
     const iframe = createIFrameApp({
@@ -157,7 +158,7 @@ export const createDropdown = (): InjectedDropdown => {
             }),
             ({ username, password }) => {
                 const form = fieldRef.current?.getFormHandle();
-                if (form !== undefined && form.formType === FormType.LOGIN) {
+                if (form && form.formType === FormType.LOGIN) {
                     void sendMessage(
                         contentScriptMessage({
                             type: WorkerMessageType.TELEMETRY_EVENT,
@@ -175,7 +176,9 @@ export const createDropdown = (): InjectedDropdown => {
                     first(form.getFieldsFor(FormField.EMAIL))?.autofill(username);
                     form.getFieldsFor(FormField.PASSWORD_CURRENT).forEach((field) => field.autofill(password));
                 }
-                return iframe.close();
+
+                iframe.close();
+                fieldRef.current?.focus({ preventDefault: true });
             }
         );
     });
@@ -192,7 +195,8 @@ export const createDropdown = (): InjectedDropdown => {
             form.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
         }
 
-        return iframe.close();
+        iframe.close();
+        fieldRef.current?.focus({ preventDefault: true });
     });
 
     /* When suggesting an alias on a register form, the alias will
@@ -204,11 +208,14 @@ export const createDropdown = (): InjectedDropdown => {
 
         if (form !== undefined && form.formType === FormType.REGISTER) {
             fieldRef.current?.autofill(aliasEmail);
-            iframe.close();
         }
+
+        iframe.close();
+        fieldRef.current?.focus({ preventDefault: true });
     });
 
     const destroy = () => {
+        fieldRef.current = null;
         listeners.removeAll();
         iframe.destroy();
     };
