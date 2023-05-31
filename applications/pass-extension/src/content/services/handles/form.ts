@@ -19,13 +19,15 @@ export type FormHandlesProps = { zIndex: number };
 
 export const createFormHandles = (options: CreateFormHandlesOptions): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
+    const zIndex = getMaxZIndex(form) + 1;
+
     setElementProcessed(form);
 
     const formHandle: FormHandle = {
         id: uniqueId(),
         element: form,
         formType: formType,
-        props: { injections: { zIndex: getMaxZIndex(form) + 1 } },
+        props: { injections: { zIndex } },
         fields: new Map(
             detectedFields.map(({ fieldType, field }) => [
                 field,
@@ -33,6 +35,7 @@ export const createFormHandles = (options: CreateFormHandlesOptions): FormHandle
                     element: field,
                     formType,
                     fieldType,
+                    zIndex,
                     getFormHandle: () => formHandle,
                 }),
             ])
@@ -75,6 +78,7 @@ export const createFormHandles = (options: CreateFormHandlesOptions): FormHandle
                             element: field,
                             formType,
                             fieldType,
+                            zIndex,
                             getFormHandle: () => formHandle,
                         })
                     );
