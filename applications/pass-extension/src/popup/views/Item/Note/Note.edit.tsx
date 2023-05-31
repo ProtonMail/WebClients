@@ -60,6 +60,7 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
                         <Field
                             component={BaseTextAreaField}
                             label={c('Label').t`Note`}
+                            labelContainerClassName="sr-only"
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
                             maxLength={MAX_ITEM_NOTE_LENGTH}
