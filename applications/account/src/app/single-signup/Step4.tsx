@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import metrics from '@proton/metrics';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
@@ -22,6 +23,10 @@ const Step4 = ({
 }) => {
     useEffect(() => {
         onSetup().catch(noop);
+    }, []);
+
+    useEffect(() => {
+        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'saving_password' });
     }, []);
 
     return (
