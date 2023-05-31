@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
-import { useApi, useCache, useConversationCounts, useEventManager, useMessageCounts } from '@proton/components';
+import { useCache, useConversationCounts, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
@@ -66,8 +66,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const store = useStore<RootState>();
     const dispatch = useAppDispatch();
 
-    const api = useApi();
-    const { call } = useEventManager();
     const abortControllerRef = useRef<AbortController>();
 
     const [conversationCounts = [], loadingConversationCounts] = useConversationCounts() as [
@@ -124,9 +122,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
         if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
-            void dispatch(
-                loadAction({ api, call, abortController: abortControllerRef.current, conversationMode, page, params })
-            );
+            void dispatch(loadAction({ abortController: abortControllerRef.current, conversationMode, page, params }));
         }
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));

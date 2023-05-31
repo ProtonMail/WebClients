@@ -1,16 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    FeatureCode,
-    Icon,
-    Tooltip,
-    useApi,
-    useEventManager,
-    useFeature,
-    useNotifications,
-    useUser,
-} from '@proton/components';
+import { FeatureCode, Icon, Tooltip, useFeature, useNotifications, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { canSetExpiration } from '../../../helpers/expiration';
@@ -26,9 +17,7 @@ interface Props {
 const ExtraExpirationTime = ({ message }: Props) => {
     const { expirationMessage, expiresInLessThan24Hours, expirationDate } = useExpiration(message);
 
-    const api = useApi();
     const [user] = useUser();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { feature } = useFeature(FeatureCode.SetExpiration);
 
@@ -52,8 +41,6 @@ const ExtraExpirationTime = ({ message }: Props) => {
                 IDs: [messageID],
                 conversationID,
                 expirationTime: null,
-                api,
-                call,
             })
         );
         createNotification({ text: c('Success').t`Message expiration cancelled` });

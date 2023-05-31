@@ -3,17 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit, useModalState } from '@proton/components';
-import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getExpirationTime } from '../../helpers/expiration';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
-import { expireMessages } from '../../logic/messages/expire/messagesExpireActions';
-import { useAppDispatch } from '../../logic/store';
-import CustomExpirationModal from '../message/modals/CustomExpirationModal';
 
 interface Props {
     checkedIDs: string[];
@@ -47,11 +42,6 @@ const ItemContextMenu = ({
     conversationMode,
     ...rest
 }: Props) => {
-    const dispatch = useAppDispatch();
-    const { createNotification } = useNotifications();
-    const { call } = useEventManager();
-    const api = useApi();
-    const [modalProps, handleSetOpen, render] = useModalState();
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
     const buttonMarkAsRead = useMemo(() => {
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
@@ -73,13 +63,6 @@ const ItemContextMenu = ({
     const handleMarkAs = (status: MARK_AS_STATUS) => {
         onMarkAs(status);
         rest.close();
-    };
-
-    const handleCustomExpiration = (expirationDate: Date) => {
-        const expirationTime = getExpirationTime(expirationDate);
-        void dispatch(expireMessages({ IDs: checkedIDs, expirationTime, api, call }));
-        handleSetOpen(false);
-        createNotification({ text: c('Success').t`Self-destruction set` });
     };
 
     const inbox = (
@@ -142,32 +125,6 @@ const ItemContextMenu = ({
         />
     );
 
-    // let moveButtons: ReactNode[] = [];
-
-    // if (labelID === MAILBOX_LABEL_IDS.INBOX) {
-    //     moveButtons = [trashButton, archiveButton, spamButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.DRAFTS || labelID === MAILBOX_LABEL_IDS.ALL_DRAFTS) {
-    //     moveButtons = [trashButton, archiveButton, deleteButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.SENT || labelID === MAILBOX_LABEL_IDS.ALL_SENT) {
-    //     moveButtons = [trashButton, archiveButton, deleteButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.SCHEDULED) {
-    //     moveButtons = [trashButton, archiveButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.STARRED) {
-    //     moveButtons = [trashButton, archiveButton, spamButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.ARCHIVE) {
-    //     moveButtons = [trashButton, inboxButton, spamButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.SPAM) {
-    //     moveButtons = [trashButton, nospamButton, deleteButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.TRASH) {
-    //     moveButtons = [inboxButton, archiveButton, deleteButton];
-    // } else if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL) {
-    //     moveButtons = [trashButton, archiveButton, spamButton];
-    // } else if (isCustomFolder(labelID, folders)) {
-    //     moveButtons = [trashButton, archiveButton, spamButton];
-    // } else if (isCustomLabel(labelID, labels)) {
-    //     moveButtons = [trashButton, archiveButton, spamButton];
-    // }
-
     const allMoveButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
     const moveButtons = actions.map((action) => allMoveButtons[action]);
 
@@ -203,7 +160,6 @@ const ItemContextMenu = ({
                     />
                 )}
             </ContextMenu>
-            {render && <CustomExpirationModal onSubmit={handleCustomExpiration} {...modalProps} />}
         </>
     );
 };

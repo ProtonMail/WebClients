@@ -1,6 +1,6 @@
 import { useSelector, useStore } from 'react-redux';
 
-import { useApi, useSubscribeEventManager } from '@proton/components';
+import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -17,7 +17,6 @@ import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../mode
 import { SearchParameters } from '../../models/tools';
 
 export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {
-    const api = useApi();
     const { getESDBStatus } = useEncryptedSearchContext();
     const esDBStatus = getESDBStatus();
 
@@ -93,6 +92,6 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
             { toUpdate: [], toLoad: [] }
         );
 
-        void dispatch(eventUpdates({ api, conversationMode, toCreate, toUpdate, toLoad, toDelete }));
+        void dispatch(eventUpdates({ conversationMode, toCreate, toUpdate, toLoad, toDelete }));
     });
 };
