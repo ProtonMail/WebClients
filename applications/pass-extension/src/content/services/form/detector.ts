@@ -1,50 +1,73 @@
-import { type FNode, fathom, rulesetMaker } from '@proton/pass/fathom';
-import { isHTMLElement } from '@proton/pass/utils/dom';
-import { invert, truthy } from '@proton/pass/utils/fp/predicates';
+import { type FNode, editableFieldSelector, isFormOfInterest, rulesetMaker } from '@proton/pass/fathom';
+import { FormField, FormType } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
+import { logger } from '@proton/pass/utils/logger';
 
-import { PROCESSED_INPUT_ATTR } from '../../constants';
-import { createFormHandles } from '../../services/handles/form';
-import type { FormFields, FormHandle } from '../../types';
-import { FormField, FormType } from '../../types';
+import { PROCESSED_ATTR } from '../../constants';
+import type { CreateFormHandlesOptions } from '../../services/handles/form';
+import type { DetectedField } from '../../types';
+import { elementProcessable, elementProcessed, elementTrackable, setElementProcessed } from '../../utils/flags';
 
-const { isVisible } = fathom.utils;
 const ruleset = rulesetMaker();
+const noopForm = document.createElement('form');
+const DETECTABLE_FORMS = [FormType.LOGIN, FormType.REGISTER, FormType.RECOVERY, FormType.PASSWORD_CHANGE, FormType.MFA];
+
+const formSelector = `form:not([role="search"]), [${PROCESSED_ATTR}]:not(input)`;
+const danglingFieldSelector = `:not([${PROCESSED_ATTR}]):not([${PROCESSED_ATTR}] input)`;
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T };
 type PredictionScoreResult<T extends string> = { type: T; score: number };
 type PredictionBestSelector<T extends string> = (scores: PredictionScoreResult<T>[]) => PredictionScoreResult<T>;
 
-const isFormChild = (forms: FormHandle[]) => (el: Node) =>
-    isHTMLElement(el) && forms.some((form) => form.element === el || form.element.contains(el));
+/* We should run the detection when :
+ * - a stale form is now considered of interest
+ * - a tracked form has new visible input fields
+ * - new dangling inputs can be clustered
+ *
+ * To keep track of these we leverage the `PROCESSED_INPUT_ATTR`
+ * attribute which is added to processed fields. Run in async
+ * `requestAnimationFrame` to avoid blocking the UI on costly
+ * visibility checks
+ *
+ * When considering dangling fields, only look
+ * for fields not in a processed form and that is actually visible
+ * to avoid flagging input fields as processed and missing out
+ * on detection */
+const shouldRunDetection = (): Promise<boolean> =>
+    new Promise((resolve) => {
+        requestAnimationFrame(() => {
+            const forms = Array.from(document.querySelectorAll<HTMLElement>(formSelector));
+            const fields = Array.from(document.querySelectorAll<HTMLInputElement>(editableFieldSelector));
 
-/* Run the detection only if the current's frame document body
- * is visible and we have new untracked input elements in the
- * DOM. An input is considered "untracked" if it is not contained
- * in a tracked form & is not flagged by the {PROCESSED_INPUT_ATTR}
- * attribute - FIXME: better heuristics for document body visibility */
-const shouldRunDetection = (forms: FormHandle[]) => {
-    if (!isVisible(document.body)) return false;
-    const untrackedSelector = `input:not([${PROCESSED_INPUT_ATTR}="1"])`;
-    const untracked = Array.from(document.querySelectorAll<HTMLInputElement>(untrackedSelector)).filter(isVisible);
-    untracked.forEach((el) => el.setAttribute(PROCESSED_INPUT_ATTR, '1'));
+            const runForForms = forms.reduce<boolean>((runDetection, form) => {
+                if (elementProcessed(form)) {
+                    const fields = Array.from(form.querySelectorAll<HTMLInputElement>(editableFieldSelector));
+                    const unprocessedFields = fields.some(elementProcessable);
 
-    return untracked.filter(invert(isFormChild(forms))).length > 0;
-};
+                    if (unprocessedFields) logger.debug('[Detector::assess] new untracked fields detected');
+                    return runDetection || unprocessedFields;
+                }
 
-const assess = (forms: FormHandle[]) => {
-    const runDetection = shouldRunDetection(forms);
-    const removeForms = forms.filter((form) => form.shouldRemove());
-    const updateForms = forms.filter((form) => !removeForms.includes(form) && form.shouldUpdate());
+                if (isFormOfInterest(form)) {
+                    logger.debug('[Detector::assess] new form of interest');
+                    return true;
+                }
 
-    return {
-        runDetection,
-        removeForms,
-        updateForms,
-    };
-};
+                return runDetection;
+            }, false);
 
+            if (runForForms) return resolve(true);
+
+            const danglingFields = fields.filter((el) => el.matches(danglingFieldSelector) && elementTrackable(el));
+            const runForFields = danglingFields.length > 0;
+            danglingFields.forEach(setElementProcessed);
+            return resolve(runForFields);
+        });
+    });
+
+/* for a given detection type, returns the score for a given FNode */
 const getScores = <T extends string>(fnode: FNode, types: T[]): PredictionScoreResult<T>[] =>
     types.map((type) => ({ type, score: fnode.scoreFor(type) }));
 
@@ -73,19 +96,19 @@ const groupFields = (
     formPredictions: PredictionResult<FormType>[],
     fieldPredictions: PredictionResult<FormField>[]
 ) => {
-    const grouping = new WeakMap<HTMLElement, FormFields>();
+    const grouping = new WeakMap<HTMLElement, DetectedField[]>();
 
-    fieldPredictions.forEach(({ fnode: fieldFNode, type }) => {
-        const field = fieldFNode.element;
+    fieldPredictions.forEach(({ fnode: fieldFNode, type: fieldType }) => {
+        const field = fieldFNode.element as HTMLInputElement;
 
         const parent: HTMLElement =
             formPredictions.find(({ fnode: formFNode }) => {
                 const form = formFNode.element;
                 return form.contains(field);
-            })?.fnode.element ?? document.body;
+            })?.fnode.element ?? noopForm;
 
-        const entry = grouping?.get(parent) ?? {};
-        entry[type] = (entry[type] ?? []).concat(field) as HTMLInputElement[];
+        const entry = grouping?.get(parent) ?? [];
+        entry.push({ fieldType, field });
 
         return grouping.set(parent, entry);
     });
@@ -93,34 +116,39 @@ const groupFields = (
     return grouping;
 };
 
-/* In the case of a tie between a login & a register form
- * always prefer the login form. FIXME: when integrating the
- * new detectors, this should be irrelevant */
+/* Always prefer login - in case of misprediction it's less
+ * deceptive to the user */
 const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) => {
     const loginResult = scores.find(({ type }) => type === FormType.LOGIN)!;
-    const registerResult = scores.find(({ type }) => type === FormType.REGISTER)!;
-    const delta = registerResult.score - loginResult.score;
-
-    return loginResult.score > 0.5 && delta > 0 && delta <= 0.1 ? loginResult : scores[0];
+    return loginResult.score > 0.5 ? loginResult : scores[0];
 };
 
 /* Runs the fathom detection and returns a form handle for each
  * detected form. FIXME: handle "dangling" fields. */
-const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) => (): FormHandle[] => {
-    const boundRuleset = ruleset.against(doc.body);
-    const formPredictions = getPredictionsFor(boundRuleset, Object.values(FormType), selectBestForm);
-    const fieldPredictions = getPredictionsFor(boundRuleset, Object.values(FormField));
-    const fieldMap = groupFields(formPredictions, fieldPredictions);
+const createDetectionRunner =
+    (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
+    (): { forms: CreateFormHandlesOptions[]; fields: DetectedField[] } => {
+        const boundRuleset = ruleset.against(doc.body);
 
-    const detected = formPredictions.map(({ fnode: formFNode, type: formType }) => {
-        const form = formFNode.element;
-        return createFormHandles({ form, formType, fields: fieldMap.get(form) ?? {} });
-    });
+        const formPredictions = getPredictionsFor(boundRuleset, DETECTABLE_FORMS, selectBestForm);
+        const fieldPredictions = getPredictionsFor(boundRuleset, Object.values(FormField));
+        const fieldMap = groupFields(formPredictions, fieldPredictions);
 
-    return detected;
-};
+        return {
+            forms: formPredictions.map(({ fnode: formFNode, type: formType }) => ({
+                form: formFNode.element,
+                formType,
+                fields: fieldMap.get(formFNode.element) ?? [],
+            })),
+            fields: (fieldMap.get(noopForm) ?? []).filter(({ fieldType }) => fieldType === FormField.EMAIL),
+        };
+    };
 
 export const createDetectorService = () => {
-    return { assess, runDetection: createDetectionRunner(ruleset, document) };
+    return {
+        shouldRunDetection,
+        runDetection: createDetectionRunner(ruleset, document),
+    };
 };
+
 export type DetectorService = ReturnType<typeof createDetectorService>;

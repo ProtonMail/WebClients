@@ -18,7 +18,16 @@ export const createContentScriptContext = (scriptId: string, mainFrame: boolean)
         mainFrame,
         scriptId,
         service: {
-            formManager: createFormManager(),
+            formManager: createFormManager({
+                /* attach or detach dropdown based on the
+                 * detection results. If forms have been detected
+                 * sync the autofillable items count */
+                onDetection: (forms) => {
+                    const didDetect = forms.length > 0;
+                    context.service.iframe[didDetect ? 'attachDropdown' : 'detachDropdown']();
+                    void (didDetect && context.service.autofill.queryItems());
+                },
+            }),
             autofill: createCSAutofillService(),
             iframe: createIFrameService(),
             detector: createDetectorService(),
