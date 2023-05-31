@@ -52,6 +52,8 @@ export enum FeatureCode {
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     DarkStylesInBody = 'DarkStylesInBody',
     EasySwitch = 'EasySwitch',
+    ESAutomaticBackgroundIndexing = 'ESAutomaticBackgroundIndexing',
+    ESUserInterface = 'ESUserInterface',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     ReferralProgram = 'ReferralProgram',
     ReferralProgramSpotlight = 'ReferralProgramSpotlight',

@@ -144,7 +144,7 @@ const getOldestCachedItem = <ESItemMetadata, ESItemContent>(
  * the cache is in reverse chronological order
  */
 export const getOldestCachedTimepoint = <ESItemMetadata>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, any>>,
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
     getItemInfo: GetItemInfo<ESItemMetadata>
 ) => {
     const oldestItem = getOldestCachedItem(esCacheRef);
