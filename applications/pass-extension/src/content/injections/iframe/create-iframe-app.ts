@@ -167,6 +167,9 @@ export const createIFrameApp = ({
         }
     };
 
+    const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) =>
+        message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message);
+
     const init = (port: Runtime.Port) => {
         void sendSecurePostMessage({
             type: IFrameMessageType.IFRAME_INJECT_PORT,
@@ -174,10 +177,7 @@ export const createIFrameApp = ({
         });
 
         state.port = port;
-        state.port.onMessage.addListener(
-            (message: Maybe<IFrameMessageWithSender>) =>
-                message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message)
-        );
+        state.port.onMessage.addListener(onMessageHandler);
     };
 
     const reset = (workerState: WorkerState) => {
@@ -187,8 +187,9 @@ export const createIFrameApp = ({
     const destroy = () => {
         close({ userInitiated: false });
         listeners.removeAll();
+        state.port?.onMessage.removeListener(onMessageHandler);
         safeCall(() => iframeRoot.removeChild(iframe))();
-        safeCall(state?.port?.disconnect)();
+        safeCall(() => state?.port?.disconnect())();
         state.port = null;
     };
 
