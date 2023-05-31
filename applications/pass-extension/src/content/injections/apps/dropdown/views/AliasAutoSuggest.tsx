@@ -44,7 +44,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onSubm
             setError(false);
 
             await sendMessage.on(pageMessage({ type: WorkerMessageType.ALIAS_OPTIONS }), (response) => {
-                if (response.type === 'success') {
+                if (response.type === 'success' && response.options !== null) {
                     ensureMounted(setAliasOptions)(response.options);
                     ensureMounted(setNeedsUpgrade)(response.needsUpgrade);
                     return onOptions?.(); /* notify parent component if we need an iframe resize */
