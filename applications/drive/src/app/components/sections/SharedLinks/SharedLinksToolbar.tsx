@@ -4,6 +4,7 @@ import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
+import { useDriveSharingFeatureFlag } from '../../../store/_shares/useCollaborativeSharingFeatureFlag';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -14,6 +15,7 @@ import {
     ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
+import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
 import { getSelectedItems } from '../helpers';
 import { StopSharingButton } from './ToolbarButtons';
 
@@ -24,6 +26,7 @@ interface Props {
 
 const SharedLinksToolbar = ({ shareId, items }: Props) => {
     const selectionControls = useSelection()!;
+    const driveSharing = useDriveSharingFeatureFlag();
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -47,7 +50,12 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 <RenameButton selectedLinks={selectedItems} />
                 <DetailsButton selectedLinks={selectedItems} />
                 <Vr />
-                <ShareLinkButton selectedLinks={selectedItems} />
+                {driveSharing ? (
+                    <ShareLinkButton selectedLinks={selectedItems} />
+                ) : (
+                    <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
+                )}
+
                 <StopSharingButton selectedLinks={selectedItems} />
             </>
         );

@@ -36,6 +36,7 @@ enum CalendarFeatureFlag {
 enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
+    DriveSharingDevelopment = 'DriveSharingDevelopment',
 }
 
 enum MailFeatureFlag {
