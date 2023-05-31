@@ -9,18 +9,25 @@ body {
 	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
 }
 
-pre {
-	// override default monospaced font applied to pre tag
-	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
-	margin: 0;
-}
-
 a {
 	text-decoration: none;
 
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+pre {
+	// override default monospaced font applied to pre tag
+	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+	margin: 0;
+}
+
+textarea {
+	margin: 0;
+	outline: none;
+	padding: 0;
+	resize: none;
 }
 
 .button {
