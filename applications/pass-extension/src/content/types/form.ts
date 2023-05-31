@@ -31,7 +31,8 @@ export interface FieldHandle {
     action: MaybeNull<DropdownAction>;
     value: string;
     tracked: boolean;
-    getFormHandle: () => FormHandle;
+    zIndex: number;
+    getFormHandle: () => MaybeNull<FormHandle>;
     getBoxElement: () => HTMLElement;
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;

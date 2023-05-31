@@ -12,7 +12,9 @@ type CreateFieldHandlesOptions = {
     element: HTMLInputElement;
     formType: FormType;
     fieldType: FormField;
-    getFormHandle: () => FormHandle;
+    zIndex: number;
+    /* dangling fields do not have a tracked form */
+    getFormHandle?: () => FormHandle;
 };
 
 /* on input focus : close the dropdown only if the current target
@@ -64,6 +66,7 @@ export const createFieldHandles = ({
     element,
     formType,
     fieldType,
+    zIndex,
     getFormHandle,
 }: CreateFieldHandlesOptions): FieldHandle => {
     const listeners = createListenerStore();
@@ -78,7 +81,8 @@ export const createFieldHandles = ({
         action: null,
         value: element.value,
         tracked: false,
-        getFormHandle,
+        zIndex,
+        getFormHandle: () => getFormHandle?.() ?? null,
         getBoxElement: () => field.boxElement,
         setValue: (value) => (field.value = value),
         setAction: (action) => (field.action = action),
@@ -88,7 +92,7 @@ export const createFieldHandles = ({
          * initial dropdown autofocus. There is no way to attach
          * extra data to a focus event so we rely on adding custom
          * properties on the field element itself */
-        focus: (focusData) => {
+        focus(focusData) {
             (field.element as any).focusData = focusData;
 
             if (document.activeElement === field.element) {

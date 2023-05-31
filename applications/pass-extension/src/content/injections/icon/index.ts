@@ -229,7 +229,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
         classNames: [ICON_ROOT_CLASSNAME, ICON_CLASSNAME],
     });
 
-    icon.style.zIndex = field.getFormHandle().props.injections.zIndex.toString();
+    icon.style.zIndex = field.zIndex.toString();
     icon.setAttribute('type', 'button');
 
     const elements = { icon, wrapper, input, inputBox };
