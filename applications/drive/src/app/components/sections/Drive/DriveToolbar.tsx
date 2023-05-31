@@ -5,6 +5,7 @@ import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { DecryptedLink } from '../../../store';
+import { useDriveSharingFeatureFlag } from '../../../store/_shares/useCollaborativeSharingFeatureFlag';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -15,6 +16,7 @@ import {
     ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
+import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
 import { getSelectedItems } from '../helpers';
 import useIsEditEnabled from '../useIsEditEnabled';
 import {
@@ -40,6 +42,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
+    const driveSharing = useDriveSharingFeatureFlag();
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -79,7 +82,11 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                     <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} />
                 ) : (
                     <>
-                        <ShareLinkButton selectedLinks={selectedItems} />
+                        {driveSharing ? (
+                            <ShareLinkButton selectedLinks={selectedItems} />
+                        ) : (
+                            <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
+                        )}
                         <Vr />
                         {!isLinkReadOnly ? (
                             <>
