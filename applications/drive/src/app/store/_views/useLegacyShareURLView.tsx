@@ -9,7 +9,8 @@ import { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLink } from '../_links';
-import { ShareURL, getSharedLink, splitGeneratedAndCustomPassword, useShareUrl } from '../_shares';
+import { ShareURLLEGACY, getSharedLink, splitGeneratedAndCustomPassword } from '../_shares';
+import useLegacyShareUrl from '../_shares/useLegacyShareUrl';
 
 const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile: boolean) => {
     if (isLinkLoading) {
@@ -54,13 +55,13 @@ const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
 /**
  * useLinkView loads link if not cached yet.
  */
-export default function useShareURLView(shareId: string, linkId: string) {
+export default function useLegacyShareURLView(shareId: string, linkId: string) {
     const { getLink } = useLink();
     const [shareUrlInfo, setShareUrlInfo] = useState<{
-        shareUrl: ShareURL;
+        shareUrl: ShareURLLEGACY;
         keyInfo: SharedURLSessionKeyPayload;
     }>();
-    const { loadShareUrl, updateShareUrl, deleteShareUrl, createShareUrl, getShareIdWithSessionkey } = useShareUrl();
+    const { loadOrCreateShareUrl, updateShareUrl, deleteShareUrl } = useLegacyShareUrl();
 
     const [sharedLink, setSharedLink] = useState('');
     const [password, setPassword] = useState('');
@@ -72,7 +73,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
     const [isShareUrlLoading, withShareUrlLoading] = useLoading(true);
     const [isSaving, withSaving] = useLoading();
     const [isDeleting, withDeleting] = useLoading();
-    const [isCreating, withCreating] = useLoading();
     const { createNotification } = useNotifications();
 
     const shareUrl = shareUrlInfo?.shareUrl;
@@ -103,17 +103,14 @@ export default function useShareURLView(shareId: string, linkId: string) {
             if (ShareID) {
                 return Promise.resolve();
             }
-
-            return loadShareUrl(abortController.signal, shareId, linkId)
+            return loadOrCreateShareUrl(abortController.signal, shareId, linkId)
                 .then((shareUrlInfo) => {
-                    if (shareUrlInfo) {
-                        setShareUrlInfo(shareUrlInfo);
-                        setPassword(shareUrlInfo.shareUrl.password);
-                        setInitialExpiration(shareUrlInfo.shareUrl.expirationTime);
-                        const sharedLink = getSharedLink(shareUrlInfo.shareUrl);
-                        if (sharedLink) {
-                            setSharedLink(sharedLink);
-                        }
+                    setShareUrlInfo(shareUrlInfo);
+                    setPassword(shareUrlInfo.shareUrl.password);
+                    setInitialExpiration(shareUrlInfo.shareUrl.expirationTime);
+                    const sharedLink = getSharedLink(shareUrlInfo.shareUrl);
+                    if (sharedLink) {
+                        setSharedLink(sharedLink);
                     }
                 })
                 .catch((err) => {
@@ -125,33 +122,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
             abortController.abort();
         };
     }, [shareId, linkId, ShareID]);
-
-    const createSharedLink = () => {
-        void withCreating(async () => {
-            const abortController = new AbortController();
-            const { shareId: linkShareId, sessionKey } = await getShareIdWithSessionkey(
-                abortController.signal,
-                shareId,
-                linkId
-            );
-
-            return createShareUrl(abortController.signal, shareId, linkShareId, sessionKey)
-                .then((shareUrlInfo) => {
-                    if (shareUrlInfo) {
-                        setShareUrlInfo(shareUrlInfo);
-                        setPassword(shareUrlInfo.shareUrl.password);
-                        setInitialExpiration(shareUrlInfo.shareUrl.expirationTime);
-                        const sharedLink = getSharedLink(shareUrlInfo.shareUrl);
-                        if (sharedLink) {
-                            setSharedLink(sharedLink);
-                        }
-                    }
-                })
-                .catch((err) => {
-                    setError(err);
-                });
-        });
-    };
 
     const saveSharedLink = async (newCustomPassword?: string, newDuration?: number | null) => {
         if (!shareUrl) {
@@ -215,10 +185,6 @@ export default function useShareURLView(shareId: string, linkId: string) {
         return withDeleting(
             deleteShareUrl(shareUrl.shareId, shareUrl.shareUrlId)
                 .then(() => {
-                    setShareUrlInfo(undefined);
-                    setSharedLink('');
-                    setPassword('');
-                    setInitialExpiration(null);
                     createNotification({
                         text: c('Notification').t`The link to your item was deleted`,
                     });
@@ -237,7 +203,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
             ? getLoadingMessage(isLinkLoading, !!link?.shareUrl, !!link?.isFile)
             : undefined;
     const confirmationMessage = getConfirmationMessage(!!link?.isFile);
-    const haveError = error || (!isLinkLoading && !link);
+    const haveError = error || (!isLinkLoading && !link) || (!isShareUrlLoading && !shareUrlInfo);
     const errorMessage = haveError ? getErrorMessage(!link?.shareUrl, error) : undefined;
     // Show message "protected by password" only when password is saved.
     const sharedInfoMessage = customPassword
@@ -251,16 +217,14 @@ export default function useShareURLView(shareId: string, linkId: string) {
         initialExpiration,
         customPassword,
         sharedLink,
-        hasSharedLink: !!link?.shareUrl,
-        isShareUrlLoading,
         loadingMessage,
         confirmationMessage,
         errorMessage,
         sharedInfoMessage,
+        hasCustomPassword: !!shareUrl?.hasCustomPassword,
         hasGeneratedPasswordIncluded: !!shareUrl?.hasGeneratedPasswordIncluded,
-        createSharedLink,
+        hasExpirationTime: !!shareUrl?.expirationTime,
         saveSharedLink,
         deleteLink,
-        isCreating,
     };
 }

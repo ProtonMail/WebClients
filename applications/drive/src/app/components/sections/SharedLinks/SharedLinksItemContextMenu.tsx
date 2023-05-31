@@ -1,6 +1,7 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink, useActions } from '../../../store';
+import { useDriveSharingFeatureFlag } from '../../../store/_shares/useCollaborativeSharingFeatureFlag';
 import { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
@@ -8,6 +9,7 @@ import { useRenameModal } from '../../modals/RenameModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
+import ShareLinkButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareLinkButtonLEGACY';
 import { StopSharingButton } from './ContextMenuButtons';
 
 export function SharedLinksItemContextMenu({
@@ -34,7 +36,9 @@ export function SharedLinksItemContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const driveSharing = useDriveSharingFeatureFlag();
 
+    const ShareLinkButtonComponent = driveSharing ? ShareLinkButton : ShareLinkButtonLEGACY;
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -50,7 +54,7 @@ export function SharedLinksItemContextMenu({
                     close={close}
                 />
                 {isOnlyOneItem && (
-                    <ShareLinkButton
+                    <ShareLinkButtonComponent
                         shareId={selectedLink.rootShareId}
                         showLinkSharingModal={showLinkSharingModal}
                         link={selectedLink}
