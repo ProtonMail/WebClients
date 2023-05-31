@@ -85,4 +85,5 @@ export const isEncryptedSearchAvailable = (user: UserModel, isESUserInterfaceAva
     return isESUserInterfaceAvailable;
 };
 
-export const getESFreeBlobKey = (userID: string) => `ES:${userID}:InitialIndexing`;
+// Do not prefix with ES: to not be cleared by removeESFlags function
+export const getESFreeBlobKey = (userID: string) => `${userID}:InitialIndexing`;
