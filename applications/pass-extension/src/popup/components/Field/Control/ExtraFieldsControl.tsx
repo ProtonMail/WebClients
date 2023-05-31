@@ -39,7 +39,11 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
 
             switch (type) {
                 case 'totp':
-                    return (
+                    return isEmptyString(data.totpUri) ? (
+                        <ValueControl icon={icon} label={fieldName}>
+                            <span className="color-weak text-italic">{c('Info').t`None`}</span>
+                        </ValueControl>
+                    ) : (
                         <OTPValueControl
                             key={key}
                             itemId={itemId}
