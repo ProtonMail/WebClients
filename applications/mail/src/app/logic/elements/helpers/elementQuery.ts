@@ -75,12 +75,7 @@ export const queryElement = async (api: Api, conversationMode: boolean, elementI
 
 export const refreshTaskRunningTimeout = (
     newLabelIDs: string[],
-    {
-        getState,
-        api,
-        dispatch,
-        call,
-    }: { getState: () => unknown; api: Api; dispatch: (action: any) => void; call: () => Promise<void> }
+    { getState, dispatch }: { getState: () => unknown; dispatch: (action: any) => void }
 ): NodeJS.Timeout | undefined => {
     let timeoutID: NodeJS.Timeout | undefined = (getState() as RootState).elements.taskRunning.timeoutID;
 
@@ -91,7 +86,7 @@ export const refreshTaskRunningTimeout = (
 
     if (newLabelIDs.length > 0) {
         timeoutID = setTimeout(() => {
-            void dispatch(pollTaskRunning({ api, call }));
+            void dispatch(pollTaskRunning());
         }, TASK_RUNNING_POLLING_INTERVAL);
     }
 

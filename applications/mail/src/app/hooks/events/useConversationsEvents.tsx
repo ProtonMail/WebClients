@@ -1,4 +1,4 @@
-import { useApi, useSubscribeEventManager } from '@proton/components';
+import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -15,7 +15,6 @@ import { Event, LabelIDsChanges } from '../../models/event';
 import { useGetConversation } from '../conversation/useConversation';
 
 export const useConversationsEvent = () => {
-    const api = useApi();
     const dispatch = useAppDispatch();
     const getConversation = useGetConversation();
 
@@ -69,7 +68,7 @@ export const useConversationsEvent = () => {
                     dispatch(eventConversationUpdate({ ID, updatedConversation }));
                 } catch (error: any) {
                     console.warn('Something went wrong on updating a conversation from an event.', error);
-                    void dispatch(loadAction({ api, conversationID: ID, messageID: undefined }));
+                    void dispatch(loadAction({ conversationID: ID, messageID: undefined }));
                 }
             }
         }

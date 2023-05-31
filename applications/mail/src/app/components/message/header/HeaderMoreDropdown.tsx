@@ -173,8 +173,6 @@ const HeaderMoreDropdown = ({
                 IDs: [messageID],
                 conversationID: message.data?.ConversationID,
                 expirationTime,
-                api,
-                call,
             })
         );
 
@@ -190,8 +188,6 @@ const HeaderMoreDropdown = ({
                 IDs: [messageID],
                 conversationID: message.data?.ConversationID,
                 expirationTime,
-                api,
-                call,
             })
         );
         openCustomExpirationModal(false);
@@ -468,8 +464,7 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditionnal(0)}
                                         >
                                             <Icon name="folder-arrow-in" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action')
-                                                .t`Move to...`}</span>
+                                            <span className="flex-item-fluid my-auto">{c('Action').t`Move to...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isNarrow && (
@@ -478,7 +473,8 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditionnal(1)}
                                         >
                                             <Icon name="tag" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action').t`Label as...`}</span>
+                                            <span className="flex-item-fluid my-auto">{c('Action')
+                                                .t`Label as...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isNarrow && (
