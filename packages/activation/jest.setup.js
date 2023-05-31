@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import fetch from 'cross-fetch';
+import 'whatwg-fetch';
 
 import ResizeObserver from './src/tests/mock/ResizeObserver';
 
@@ -7,18 +7,8 @@ import ResizeObserver from './src/tests/mock/ResizeObserver';
 console.error = () => {};
 console.warn = () => {};
 
-/**
- * JSDOM does not support fetch API
- * so we need to fake it
- */
-let prevFetch;
 beforeAll(() => {
-    prevFetch = fetch;
-    global.fetch = fetch;
     window.ResizeObserver = ResizeObserver;
-});
-afterAll(() => {
-    global.fetch = prevFetch;
 });
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
