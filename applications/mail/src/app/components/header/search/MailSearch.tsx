@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Location } from 'history';
 
 import {
+    FeatureCode,
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
@@ -10,14 +11,14 @@ import {
     useLabels,
     useMailSettings,
     usePopperAnchor,
+    useProgressiveRollout,
     useToggle,
     useUser,
 } from '@proton/components';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import { isEncryptedSearchAvailable } from '../../../helpers/encryptedSearch/esUtils';
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import { Breakpoints } from '../../../models/utils';
@@ -37,6 +38,7 @@ interface Props {
 
 const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
+    const isESUserInterfaceAvailable = useProgressiveRollout(FeatureCode.ESUserInterface);
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
     const searchParams = extractSearchParameters(location);
     const [searchInputValue, setSearchInputValue] = useState(searchParams.keyword || '');
@@ -48,8 +50,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
     const { dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
-
-    const showEncryptedSearch = !isMobile() && !!isPaid(user);
+    const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
