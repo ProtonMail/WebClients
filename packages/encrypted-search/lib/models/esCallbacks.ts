@@ -12,12 +12,17 @@ interface RequiredESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> {
      * has arrived is supposed to be built-in (but can optionally take a boolean indicating whether
      * to store progress in IDB or only in memory. It defaults to true, i.e. store in IDB too.)
      * @param signal an abort signal to abort potential API calls in case of sudden aborts
+     * @param isBackgroundIndexing whether the current indexing was triggered in the background, i.e.
+     * without explicit user prompt. This is optional but might be useful, e.g., in case throttling is needed
      * @returns An array of metadata items, i.e. the next batch of items that need to be indexed,
      * as well as a callback to set the recovery point in IndexedDB for the next call to queryItemsMetadata
      * to start from. This ensures that the recovery point is stored only when and if all associated items
      * are actually indexed. Note that this is optional and if not returned, no recovery point is set
      */
-    queryItemsMetadata: (signal: AbortSignal) => Promise<{
+    queryItemsMetadata: (
+        signal: AbortSignal,
+        isBackgroundIndexing?: boolean
+    ) => Promise<{
         resultMetadata?: ESItemMetadata[];
         setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
     }>;

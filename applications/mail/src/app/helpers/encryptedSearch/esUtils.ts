@@ -1,7 +1,8 @@
 import { History, Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { LabelCount } from '@proton/shared/lib/interfaces';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { LabelCount, UserModel } from '@proton/shared/lib/interfaces';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { isSearch as checkIsSearch } from '../elements';
@@ -71,3 +72,18 @@ export const parseSearchParams = (location: Location) => {
 export const resetSort = (history: History) => {
     history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
 };
+
+export const isEncryptedSearchAvailable = (user: UserModel, isESUserInterfaceAvailable: boolean) => {
+    if (isMobile()) {
+        return false;
+    }
+
+    if (user.isPaid) {
+        return true;
+    }
+
+    return isESUserInterfaceAvailable;
+};
+
+// Do not prefix with ES: to not be cleared by removeESFlags function
+export const getESFreeBlobKey = (userID: string) => `${userID}:InitialIndexing`;

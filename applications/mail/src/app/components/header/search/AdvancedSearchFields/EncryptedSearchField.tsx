@@ -39,7 +39,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     const [enableESModalProps, setEnableESModalOpen] = useModalState();
 
     // Switches
-    const showProgress = isPaid(user) && (isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing));
+    const showProgress = isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing);
     const showSubTitleSection = contentIndexingDone && !isRefreshing && isDBLimited && !isEnablingEncryptedSearch;
     let isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
     const showToggle = isEnablingContentSearch || isPaused || contentIndexingDone;

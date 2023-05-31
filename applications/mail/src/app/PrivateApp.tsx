@@ -1,4 +1,4 @@
-import { LoaderPage, StandardPrivateApp } from '@proton/components/containers';
+import { FeatureCode, LoaderPage, StandardPrivateApp } from '@proton/components/containers';
 import { useApi, useDrawer } from '@proton/components/hooks';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -81,6 +81,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             locales={locales}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENTS_MODELS}
+            preloadFeatures={[FeatureCode.ESAutomaticBackgroundIndexing]}
             eventQuery={(eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 })}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation

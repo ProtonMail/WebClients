@@ -36,6 +36,7 @@ const MainContainer = () => {
         FeatureCode.UsedMailMobileApp,
         FeatureCode.SpyTrackerProtection,
         FeatureCode.LegacyMessageMigrationEnabled,
+        FeatureCode.ESUserInterface,
     ]);
 
     const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
