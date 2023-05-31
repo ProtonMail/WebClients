@@ -86,4 +86,25 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
     ],
+    [FormType.RECOVERY]: [
+        {
+            type: FormField.EMAIL,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOFILL,
+        },
+    ],
+    [FormType.PASSWORD_CHANGE]: [
+        {
+            type: FormField.PASSWORD_CURRENT,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOFILL,
+        },
+        {
+            type: FormField.PASSWORD_NEW,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOSUGGEST_PASSWORD,
+        },
+    ],
+    [FormType.MFA]: [] /* TODO */,
+    [FormType.NOOP]: [{ type: FormField.EMAIL, injection: FieldInjectionRule.ALWAYS }],
 };

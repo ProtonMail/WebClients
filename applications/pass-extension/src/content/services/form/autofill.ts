@@ -1,9 +1,8 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
+import { FormType, type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 
 import { withContext } from '../../context/context';
-import { FormType } from '../../types';
 
 export const createCSAutofillService = () => {
     const queryItems: () => Promise<{ items: SafeLoginItem[]; needsUpgrade: boolean }> = withContext(
@@ -21,17 +20,11 @@ export const createCSAutofillService = () => {
     );
 
     const setLoginItemsCount: (count: number) => void = withContext(({ service: { formManager } }, count): void => {
-        const loginForms = formManager.getForms().filter((form) => form.formType === FormType.LOGIN);
+        const loginForms = formManager.getTrackedForms().filter((form) => form.formType === FormType.LOGIN);
 
         if (loginForms.length > 0) {
             loginForms.forEach((form) => {
-                Object.values(form.fields)
-                    .flat()
-                    .forEach((field) => {
-                        if (field.icon !== null) {
-                            field.icon.setCount(count);
-                        }
-                    });
+                form.getFields().forEach((field) => field.icon?.setCount(count));
             });
         }
     });

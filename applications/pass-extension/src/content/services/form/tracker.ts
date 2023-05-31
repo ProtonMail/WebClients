@@ -1,6 +1,6 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { FormField, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -10,7 +10,7 @@ import { isEmptyString } from '@proton/pass/utils/string';
 import { DETECTED_FORM_ID_ATTR, FORM_TRACKER_CONFIG } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle, FormTracker } from '../../types';
-import { DropdownAction, FieldInjectionRule, FormField } from '../../types';
+import { DropdownAction, FieldInjectionRule } from '../../types';
 
 type FormTrackerState = { isSubmitting: boolean };
 
@@ -46,6 +46,20 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     const state: FormTrackerState = { isSubmitting: false };
 
     form.element.setAttribute(DETECTED_FORM_ID_ATTR, form.id);
+
+    /* when the type attribute of a field changes : detach it from
+     * the tracked form and re-trigger the detection */
+    const onFieldAttributeChange = withContext<MutationCallback>(
+        ({ service: { formManager } }, mutations: MutationRecord[]) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && (mutation.target as HTMLElement).tagName === 'INPUT') {
+                    form.detachField(mutation.target as HTMLInputElement);
+                }
+            });
+
+            void formManager.detect('FieldTypeChange');
+        }
+    );
 
     /* FIXME: should account for hidden fields - should also
      * account for different form types for more control */
@@ -121,7 +135,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
                 results.set(field, {
                     field,
-                    action: action && attachIcon ? withAction(action, settings) : null,
+                    action: action ? withAction(action, settings) : null,
                     attachIcon,
                 });
             });
@@ -130,56 +144,47 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         return results;
     };
 
-    const attach = withContext(({ getSettings, getState }) => {
+    /* reconciliating the form trackers involves syncing
+     * the form's trackable fields.*/
+    const reconciliate = withContext(({ getSettings, getState }) => {
         const { loggedIn, status } = getState();
         const settings = getSettings();
         const fieldsToTrack = getTrackableFields(settings);
 
-        form.listFields().forEach((field) => {
+        form.getFields().forEach((field) => {
             const match = fieldsToTrack.get(field);
-
-            if (match === undefined) {
-                field.detachListeners();
-                field.detachIcon();
-                return;
-            }
+            if (match === undefined) return field.detach();
 
             field.setAction(match.action);
 
-            if (match.attachIcon) {
-                const icon = field.attachIcon();
-                icon.setStatus(status);
-                if (!loggedIn) icon.setCount(0);
-            } else field.detachIcon();
+            /* if the field is not currently tracked, attach listeners */
+            if (!field.tracked) field.attach(onSubmitHandler);
+            if (!match.attachIcon) return field.detachIcon();
 
-            match.field.attachListeners(onSubmitHandler);
+            const icon = field.attachIcon();
+            icon.setStatus(status);
+            if (!loggedIn) icon.setCount(0);
         });
 
-        /* setup listener for form submission */
-        listeners.addListener(form.element, 'submit', onSubmitHandler);
+        form.getFields()
+            .find((field) => field.element === document.activeElement)
+            ?.focus();
     });
 
     /* when detaching the form tracker : remove every listener
      * for both the current tracker and all fields*/
     const detach = () => {
         listeners.removeAll();
-
-        form.listFields().forEach((field) => {
-            field.detachIcon();
-            field.detachListeners();
-        });
+        form.getFields().forEach((field) => field.detach());
     };
 
-    const autofocus = () => {
-        form.listFields().forEach((field) => {
-            /* if the field is already focused by the browser we need
-             * to re-dispatch the event on the input element */
-            if (field.element === document.activeElement) {
-                const focusEvent = new FocusEvent('focus', { bubbles: true, cancelable: true, relatedTarget: null });
-                field.element.dispatchEvent(focusEvent);
-            }
-        });
-    };
+    listeners.addObserver(form.element, onFieldAttributeChange, {
+        attributeFilter: ['type'],
+        childList: true,
+        subtree: true,
+    });
 
-    return { attach, detach, autofocus };
+    listeners.addListener(form.element, 'submit', onSubmitHandler);
+
+    return { detach, reconciliate };
 };

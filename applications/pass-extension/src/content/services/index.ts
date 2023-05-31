@@ -96,16 +96,13 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings!);
 
-            const { runDetection } = context.service.detector.assess([]);
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
-            if (!mainFrame && !runDetection) return destroy({ reason: 'subframe discarded', recycle: false });
-
-            /* if no detection was ran on start : reconciliate for auto-save */
-            if (!runDetection) void context.service.formManager.reconciliate([]);
-            if (runDetection) context.service.formManager.detect('VisibilityChange');
+            if (!mainFrame) return destroy({ reason: 'subframe discarded', recycle: false });
 
             context.service.formManager.observe();
+            await context.service.formManager.detect('VisibilityChange');
+
             port.onMessage.addListener(onPortMessage);
         }
     };
