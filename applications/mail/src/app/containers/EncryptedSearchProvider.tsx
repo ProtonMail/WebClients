@@ -27,7 +27,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
+import { isFree } from '@proton/shared/lib/user/helpers';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import {
@@ -199,7 +199,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // Prevent showing the spotlight for ES to them
             await updateSpotlightES(false);
             return esLibraryFunctions.enableEncryptedSearch().then((success) => {
-                if (success && isPaid(user)) {
+                if (success) {
                     return esLibraryFunctions.enableContentSearch({ notify: false });
                 }
             });
