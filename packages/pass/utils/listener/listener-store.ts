@@ -31,6 +31,10 @@ export type Listener<T extends EventSource = any, E extends keyof EventMap<T> = 
     | {
           kind: 'observer';
           observer: MutationObserver;
+      }
+    | {
+          kind: 'resizeObserver';
+          observer: ResizeObserver;
       };
 
 export type ListenerStore = ReturnType<typeof createListenerStore>;
@@ -51,7 +55,7 @@ export const createListenerStore = () => {
         }
     };
 
-    const addObserver = (mutationCb: MutationCallback, target: Node, options?: MutationObserverInit) => {
+    const addObserver = (target: Node, mutationCb: MutationCallback, options?: MutationObserverInit) => {
         const observer = new MutationObserver(mutationCb);
 
         const disconnect = observer.disconnect;
@@ -65,15 +69,29 @@ export const createListenerStore = () => {
         observer.observe(target, options);
     };
 
+    const addResizeObserver = (target: Element, resizeCb: ResizeObserverCallback) => {
+        const observer = new ResizeObserver(resizeCb);
+        const disconnect = observer.disconnect;
+
+        observer.disconnect = () => {
+            cancelDebounce(resizeCb);
+            disconnect.bind(observer)();
+        };
+
+        listeners.push({ kind: 'resizeObserver', observer });
+        observer.observe(target);
+    };
+
     const removeAll = () => {
         listeners.forEach((listener) => {
-            if (listener.kind === 'observer') {
-                listener.observer.disconnect();
-            }
-
-            if (listener.kind === 'listener') {
-                cancelDebounce(listener.fn);
-                listener.element.removeEventListener(listener.type, listener.fn);
+            switch (listener.kind) {
+                case 'observer':
+                case 'resizeObserver':
+                    return listener.observer.disconnect();
+                case 'listener': {
+                    cancelDebounce(listener.fn);
+                    return listener.element.removeEventListener(listener.type, listener.fn);
+                }
             }
         });
 
@@ -83,6 +101,7 @@ export const createListenerStore = () => {
     return {
         addListener,
         addObserver,
+        addResizeObserver,
         removeAll,
     };
 };
