@@ -41,12 +41,10 @@ export function mimeTypeFromBuffer(input: Uint8Array | ArrayBuffer | Buffer) {
 export async function mimeTypeFromFile(input: File, extensionFallback = true) {
     const defaultType = input.type || 'application/octet-stream';
 
-    const extension = input.name.split('.').pop();
+    const extension = input.name.match(/.*\.(.*?)$/)?.[1];
 
-    if (extension) {
-        if (extension.toLowerCase() === 'svg') {
-            return SupportedMimeTypes.svg;
-        }
+    if (extension?.toLowerCase() === 'svg') {
+        return SupportedMimeTypes.svg;
     }
 
     const reader = new ChunkFileReader(input, minimumBytesToCheck);
