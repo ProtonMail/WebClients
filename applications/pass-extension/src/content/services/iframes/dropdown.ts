@@ -47,7 +47,7 @@ export const createDropdown = (): InjectedDropdown => {
             return {
                 top: top - bodyTop + offsetTop + height,
                 left: left + width - DROPDOWN_WIDTH,
-                zIndex: field.getFormHandle().props.injections.zIndex,
+                zIndex: field.zIndex,
             };
         },
         dimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
@@ -190,7 +190,7 @@ export const createDropdown = (): InjectedDropdown => {
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_PASSWORD, (message) => {
         const form = fieldRef.current?.getFormHandle();
 
-        if (form !== undefined && form.formType === FormType.REGISTER) {
+        if (form && form.formType === FormType.REGISTER) {
             const { password } = message.payload;
             form.getFieldsFor(FormField.PASSWORD_NEW).forEach((field) => field.autofill(password));
         }
@@ -206,7 +206,7 @@ export const createDropdown = (): InjectedDropdown => {
         const form = fieldRef.current?.getFormHandle();
         const { aliasEmail } = payload;
 
-        if (form !== undefined && form.formType === FormType.REGISTER) {
+        if (form && form.formType === FormType.REGISTER) {
             fieldRef.current?.autofill(aliasEmail);
         }
 
