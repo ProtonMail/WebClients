@@ -110,6 +110,15 @@ async function* errorIterator(source = 'src', options = { isVerbose: false }) {
         if (errorsBackticks.match) {
             yield* errorsBackticks.errors(file);
         }
+
+        const errorsNewLines = testRule(/[\s|\)]\.jt\x60.+\w\s{2,}\w+/, content, 'newlines');
+        if (errorsNewLines.match) {
+            yield* errorsNewLines.errors(file);
+        }
+        const errorsNewLinesT = testRule(/[\s|\)]\.t\x60.+\w\s{2,}\w+/, content, 'newlines');
+        if (errorsNewLinesT.match) {
+            yield* errorsNewLinesT.errors(file);
+        }
     }
 }
 
@@ -148,6 +157,14 @@ function formatErrors(error) {
     match: ${error.match}
      line: ${error.line}
       fix: Plural form is  - ngettext(msgid\`<string single>\`, \`<string plural>\`, value)
+`;
+    }
+
+    if (error.type === 'newlines') {
+        return `🚨 [Error] ${error.file}:${error.index}
+    match: ${error.match}
+     line: ${error.line}
+      fix: Unexpected newline inside the string.
 `;
     }
 }
