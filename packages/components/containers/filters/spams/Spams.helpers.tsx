@@ -15,21 +15,13 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
     const translationsMap: Record<SpamListActionName, Record<ApiCallState, string>> = {
         block: {
             fail: isDomain
-                ? c('Domain spam notification').t`${name} failed to move to your block list`
-                : c('Email spam notification').t`${name} failed to move to your block list`,
+                ? c('Domain spam notification').t`${name} failed to move to block list`
+                : c('Email spam notification').t`${name} failed to move to block list`,
             success: isDomain
-                ? c('Domain spam notification').t`${name} moved to your block list`
-                : c('Email spam notification').t`${name} moved to your block list`,
+                ? c('Domain spam notification').t`${name} moved to block list`
+                : c('Email spam notification').t`${name} moved to block list`,
         },
         delete: {
-            fail: isDomain
-                ? c('Domain spam notification').t`${name} deletion failed`
-                : c('Email spam notification').t`${name} deletion failed`,
-            success: isDomain
-                ? c('Domain spam notification').t`${name} successfully deleted`
-                : c('Email spam notification').t`${name} successfully deleted`,
-        },
-        unblock: {
             fail: isDomain
                 ? c('Domain spam notification').t`${name} deletion failed`
                 : c('Email spam notification').t`${name} deletion failed`,
@@ -47,11 +39,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
         },
         unspam: {
             fail: isDomain
-                ? c('Domain spam notification').t`${name} failed to move to the not-spam list`
-                : c('Email spam notification').t`${name} failed to move to the not-spam list`,
+                ? c('Domain spam notification').t`${name} failed to move to allow list`
+                : c('Email spam notification').t`${name} failed to move to allow list`,
             success: isDomain
-                ? c('Domain spam notification').t`${name} moved to not spam list`
-                : c('Email spam notification').t`${name} moved to not spam list`,
+                ? c('Domain spam notification').t`${name} moved to allow list`
+                : c('Email spam notification').t`${name} moved to allow list`,
         },
     };
 
@@ -62,17 +54,16 @@ export type HandleSpamListActionClick = (type: SpamListActionName, item: SpamIte
 export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActionClick): SpamListAction[] => {
     const actions: Record<SpamListActionName, SpamListAction> = {
         block: { name: c('Action').t`Block`, onClick: () => onClick('block', item) },
-        unblock: { name: c('Action').t`Remove Block`, onClick: () => onClick('delete', item) },
         delete: { name: c('Action').t`Delete`, onClick: () => onClick('delete', item) },
-        spam: { name: c('Action').t`Mark as spam`, onClick: () => onClick('spam', item) },
-        unspam: { name: c('Action').t`Mark as not spam`, onClick: () => onClick('unspam', item) },
+        spam: { name: c('Action').t`Spam`, onClick: () => onClick('spam', item) },
+        unspam: { name: c('Action').t`Allow`, onClick: () => onClick('unspam', item) },
     };
 
     switch (item.location) {
         case 'BLOCKED':
-            return [actions.unblock, actions.spam];
+            return [actions.spam, actions.unspam, actions.delete];
         case 'SPAM':
-            return [actions.unspam, actions.block, actions.delete];
+            return [actions.block, actions.unspam, actions.delete];
         case 'NON_SPAM':
             return [actions.spam, actions.block, actions.delete];
         default:
@@ -83,9 +74,9 @@ export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActi
 export const getLabelByLocation = (location: SpamLocation): { name: string; color: string } => {
     switch (location) {
         case 'BLOCKED':
-            return { name: c('Label').t`Blocked`, color: ACCENT_COLORS_MAP.purple.color };
+            return { name: c('Label').t`Block`, color: ACCENT_COLORS_MAP.purple.color };
         case 'NON_SPAM':
-            return { name: c('Label').t`Not spam`, color: ACCENT_COLORS_MAP.reef.color };
+            return { name: c('Label').t`Allow`, color: ACCENT_COLORS_MAP.reef.color };
         case 'SPAM':
             return { name: c('Label').t`Spam`, color: ACCENT_COLORS_MAP.carrot.color };
         default:

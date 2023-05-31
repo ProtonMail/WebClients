@@ -102,7 +102,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isO
                 available: (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
                 subsections: [
                     {
-                        text: c('Title').t`Spam and block list`,
+                        text: c('Title').t`Spam, block, and allow lists`,
                         id: 'spam',
                     },
                 ],

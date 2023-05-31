@@ -1,18 +1,32 @@
 import { c } from 'ttag';
 
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import Spams from '../filters/spams/Spams';
 
 const OrganizationSpamFiltersSection = () => (
     <SettingsSectionWide>
-        <SettingsParagraph>
-            {c('FilterSettings').t`Emails from blocked addresses won't be delivered.`}
-        </SettingsParagraph>
-        <SettingsParagraph>
+        <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/spam-filtering')}>
             {c('FilterSettings')
-                .t`Emails from addresses marked as spam by you or ${BRAND_NAME} will go to the spam folder of your organization members. If you want to allow emails from one of these addresses, mark it as "not spam".`}
+                .t`Take control over what lands in your organization members' inboxes by creating the following lists:`}
+            <ul className="mt-2">
+                <li>
+                    <strong>{c('FilterSettings').t`Spam:`}</strong>{' '}
+                    {c('FilterSettings').t`To prevent junk mail from clogging up inboxes`}
+                </li>
+                <li>
+                    <strong>{c('FilterSettings').t`Block:`}</strong>{' '}
+                    {c('FilterSettings')
+                        .t`To stop phishing or suspicious emails from entering your organization's email system`}
+                </li>
+                <li>
+                    <strong>{c('FilterSettings').t`Allow:`}</strong>{' '}
+                    {c('FilterSettings').t`To ensure critical messages don't end up in spam and getting missed`}
+                </li>
+            </ul>
+            {c('FilterSettings')
+                .t`These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.`}
         </SettingsParagraph>
         <Spams isOrganization />
     </SettingsSectionWide>

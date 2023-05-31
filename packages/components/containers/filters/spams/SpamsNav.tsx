@@ -13,8 +13,8 @@ const getNav = (): [type: SpamNavItem, getName: () => string][] => {
     return [
         ['ALL', () => c('Navigation').t`All`],
         ['SPAM', () => c('Navigation').t`Spam`],
-        ['NON_SPAM', () => c('Navigation').t`Not spam`],
-        ['BLOCKED', () => c('Navigation').t`Blocked`],
+        ['BLOCKED', () => c('Navigation').t`Block`],
+        ['NON_SPAM', () => c('Navigation').t`Allow`],
     ];
 };
 
