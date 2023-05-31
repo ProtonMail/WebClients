@@ -7,15 +7,27 @@ import { sync } from 'glob';
 import path from 'path';
 
 /**
+ * @typedef {string} FilePath
+ * @typedef {'format' | 'usage' | 'backticks' | 'plurals'} BrokenRuleType
+ * @typedef {{ file:FilePath, line:string, match:string, index:int, type: BrokenRuleType}} BrokenRule
+ * @typedef { Generator<FilePath, Any, BrokenRule>} BrokenRulesIterator
+ * @typedef { AsyncGenerator<FilePath, Any, BrokenRule>} AsyncBrokenRulesIterator
+ */
+
+/**
  * Test a rule inside the code and see if we find lines matching it
- * @param RegExp rule rule to test inside the whole content
- * @param String content text file content
- * @param String type type of rule you filter
- * @return Object { errors: <Iterator { file:String, line:String, match:String, index:Number, type:String}>, match: Boolean }
+ * @param {RegExp} rule rule to test inside the whole content
+ * @param {string} content text file content
+ * @param {BrokenRuleType} type type of rule you filter
+ * @return {{ errors: BrokenRulesIterator, match: bool}}
  */
 function testRule(rule, content, type) {
     const matches = content.match(rule);
 
+    /**
+     * @param {FilePath}file to lint
+     * @yields {BrokenRule}
+     */
     function* errors(file) {
         if (!matches?.length) {
             return;
@@ -50,10 +62,11 @@ function testRule(rule, content, type) {
 
 /**
  * Iterate over all your source files and see if we can find broken translations
- * @param String source source to iterate over (directory or a single file)
- * @Return Iterator from @testRule.errors
+ * @param {string} source source to iterate over (directory or a single file)
+ * @param {{isVerbose: bool}}
+ * @returns {AsyncBrokenRulesIterator}
  */
-async function* errorIterator(source = 'src', options = {}) {
+async function* errorIterator(source = 'src', options = { isVerbose: false }) {
     const { ext } = path.parse(source);
     const files = ext
         ? [source]
@@ -100,8 +113,12 @@ async function* errorIterator(source = 'src', options = {}) {
     }
 }
 
-function formatErrors({ type, ...error }) {
-    if (type === 'format') {
+/**
+ * @param {BrokenRule} error
+ * @returns {string} formatted error
+ */
+function formatErrors(error) {
+    if (error.type === 'format') {
         return `🚨 [Error] ${error.file}:${error.index}
     match: ${error.match}
      line: ${error.line}
@@ -109,7 +126,7 @@ function formatErrors({ type, ...error }) {
            but c(<context>).t\`<string>\`
 `;
     }
-    if (type === 'usage') {
+    if (error.type === 'usage') {
         return `🚨 [Error] ${error.file}:${error.index}
     match: ${error.match}
      line: ${error.line}
@@ -117,7 +134,7 @@ function formatErrors({ type, ...error }) {
            but c(<context>).t\`<string>\`
 `;
     }
-    if (type === 'backticks') {
+    if (error.type === 'backticks') {
         return `🚨 [Error] ${error.file}:${error.index}
     match: ${error.match}
      line: ${error.line}
@@ -126,7 +143,7 @@ function formatErrors({ type, ...error }) {
 `;
     }
 
-    if (type === 'plurals') {
+    if (error.type === 'plurals') {
         return `🚨 [Error] ${error.file}:${error.index}
     match: ${error.match}
      line: ${error.line}
