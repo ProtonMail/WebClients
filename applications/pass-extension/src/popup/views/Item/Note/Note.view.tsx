@@ -12,6 +12,7 @@ import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 export const NoteView: VFC<ItemTypeViewProps<'note'>> = ({ vault, revision, ...itemViewProps }) => {
     const { note, name } = revision.data.metadata;
     const copyToClipboard = useCopyToClipboard();
+    const noteRows = (note.match(/\n/g) || '').length + 1;
 
     return (
         <ItemViewPanel
@@ -39,7 +40,7 @@ export const NoteView: VFC<ItemTypeViewProps<'note'>> = ({ vault, revision, ...i
             }
             {...itemViewProps}
         >
-            <pre className="text-break">{note}</pre>
+            <textarea readOnly className="text-break w100" rows={noteRows} value={note} />
         </ItemViewPanel>
     );
 };
