@@ -211,8 +211,6 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                 setError(error);
             })
         );
-
-        return () => {};
     }, []);
 
     const handleResult = async (result: SignupActionResponse, step: Steps) => {
