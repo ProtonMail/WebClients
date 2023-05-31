@@ -6,6 +6,7 @@ import {
     ESHelpers,
     ESItemInfo,
     ESTimepoint,
+    ES_BACKGROUND_METADATA_BATCH,
     ES_MAX_METADATA_BATCH,
     ES_MAX_PARALLEL_ITEMS,
     EncryptedItemWithInfo,
@@ -84,13 +85,15 @@ export const getESHelpers = ({
     // index content
     let metadataRecoveryPoint: MetadataRecoveryPoint | undefined;
     const queryItemsMetadata = async (
-        signal: AbortSignal
+        signal: AbortSignal,
+        isBackgroundIndexing?: boolean
     ): Promise<{
         resultMetadata?: ESBaseMessage[];
         setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
     }> => {
         const messagesPromises: Promise<ESBaseMessage[] | undefined>[] = [];
         const Messages: ESBaseMessage[] = [];
+        const numPagesFetched = isBackgroundIndexing ? ES_BACKGROUND_METADATA_BATCH : ES_MAX_METADATA_BATCH;
 
         let recoveryPoint: MetadataRecoveryPoint | undefined = metadataRecoveryPoint;
         // Note that indexing, and therefore an instance of this function,
@@ -105,7 +108,8 @@ export const getESHelpers = ({
         const numPages = Math.ceil(total / ES_MAX_PARALLEL_ITEMS);
 
         let Page = 0;
-        while (Page < ES_MAX_METADATA_BATCH && Page < numPages) {
+
+        while (Page < numPagesFetched && Page < numPages) {
             messagesPromises[Page] = apiHelper<{ Messages: Message[] }>(
                 api,
                 signal,

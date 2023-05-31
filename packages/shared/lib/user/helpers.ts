@@ -1,5 +1,6 @@
 import { PRODUCT_BIT, UNPAID_STATE, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
+import { decodeBase64URL } from '../helpers/encoding';
 import { User } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
@@ -32,4 +33,10 @@ export const getInfo = (User: User) => {
         hasPaidDrive: hasPaidDrive(User),
         canPay: canPay(User),
     };
+};
+
+export const getUserByte = (user: User) => {
+    const userID = user?.ID || '';
+    const byteCharacters = decodeBase64URL(userID);
+    return byteCharacters.charCodeAt(0);
 };
