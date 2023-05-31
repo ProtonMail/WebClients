@@ -1,4 +1,4 @@
-import { DETECTED_FORM_ID_ATTR, INPUT_STYLES_ATTR, PROCESSED_INPUT_ATTR } from '../constants';
+import { DETECTED_FORM_ID_ATTR, EXTENSION_PREFIX, INPUT_STYLES_ATTR, PROCESSED_ATTR } from '../constants';
 import { cleanupInputInjectedStyles } from './icon';
 import { getIFrameRoot } from './iframe/create-iframe-root';
 
@@ -9,7 +9,7 @@ export const DOMCleanUp = () =>
         root?.parentElement?.removeChild(root);
 
         /* remove all injected DOM nodes */
-        const injectedNodes = document.querySelectorAll(`[class^='protonpass-']`);
+        const injectedNodes = document.querySelectorAll(`[class^='${EXTENSION_PREFIX}-']`);
         injectedNodes.forEach((node) => node.remove());
 
         /* reset input field styles */
@@ -17,7 +17,7 @@ export const DOMCleanUp = () =>
         inputs.forEach((input) => cleanupInputInjectedStyles(input));
 
         /* remove extension attributes */
-        [DETECTED_FORM_ID_ATTR, PROCESSED_INPUT_ATTR, PROCESSED_INPUT_ATTR].forEach((attr) => {
+        [DETECTED_FORM_ID_ATTR, PROCESSED_ATTR].forEach((attr) => {
             document.querySelectorAll(`[${attr}]`).forEach((node) => node.removeAttribute(attr));
         });
     });
