@@ -95,7 +95,7 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
             name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',
-            action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinkIds[0] }),
+            action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinks[0].linkId }),
         },
     ];
 

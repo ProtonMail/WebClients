@@ -38,12 +38,12 @@ import unique from '@proton/utils/unique';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { shareUrlPayloadToShareUrl, useDebouncedRequest } from '../_api';
+import { shareUrlPayloadToShareUrl, shareUrlPayloadToShareUrlLEGACY, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';
-import { ShareURL, UpdateSharedURL } from './interface';
+import { ShareURLLEGACY, UpdateSharedURL } from './interface';
 import { getSharedLink } from './shareUrl';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
@@ -59,7 +59,7 @@ import useShareActions from './useShareActions';
  * reporting and generating user messages. Third, lets remove notifications
  * and other business logic from the ShareLinkModal. Fourth, cover with tests!
  */
-export default function useShareUrl() {
+export default function useLegacyShareUrl() {
     const api = useApi();
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
@@ -67,15 +67,15 @@ export default function useShareUrl() {
     const events = useDriveEventManager();
     const { createShare, deleteShare } = useShareActions();
     const { getShare, getShareSessionKey } = useShare();
-    const { getLink, getLinkPrivateKey } = useLink();
+    const { getLink, loadFreshLink, getLinkPrivateKey } = useLink();
     const volumeState = useVolumesState();
 
-    const fetchShareUrl = async (abortSignal: AbortSignal, shareId: string): Promise<ShareURL | undefined> => {
+    const fetchShareUrl = async (abortSignal: AbortSignal, shareId: string): Promise<ShareURLLEGACY | undefined> => {
         const { ShareURLs = [] } = await debouncedRequest<{
             ShareURLs: ShareURLPayload[];
         }>(querySharedLinks(shareId, { Page: 0, Recursive: 0, PageSize: 10 }), abortSignal);
 
-        return ShareURLs.length ? shareUrlPayloadToShareUrl(ShareURLs[0]) : undefined;
+        return ShareURLs.length ? shareUrlPayloadToShareUrlLEGACY(ShareURLs[0]) : undefined;
     };
 
     const decryptShareSessionKey = async (keyPacket: string | Uint8Array, password: string) => {
@@ -89,7 +89,7 @@ export default function useShareUrl() {
         sharePassphraseKeyPacket,
         sharePasswordSalt,
         ...rest
-    }: ShareURL) => {
+    }: ShareURLLEGACY) => {
         const privateKeys = await driveCrypto.getPrivateAddressKeys(creatorEmail);
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: password,
@@ -183,7 +183,7 @@ export default function useShareUrl() {
         linkShareId: string,
         linkShareSessionKey: SessionKey
     ): Promise<{
-        shareUrl: ShareURL;
+        shareUrl: ShareURLLEGACY;
         keyInfo: {
             shareSessionKey: SessionKey;
             sharePasswordSalt: string;
@@ -252,16 +252,7 @@ export default function useShareUrl() {
                     Password,
                 })
             )
-        )
-            .then(({ ShareURL }) => shareUrlPayloadToShareUrl(ShareURL))
-            .catch((err) => {
-                // If share URL creation was aborted, remove its share as well
-                // as at this moment we support only sharing via link.
-                if (abortSignal.aborted) {
-                    void deleteShare(linkShareId);
-                }
-                throw err;
-            });
+        ).then(({ ShareURL }) => shareUrlPayloadToShareUrlLEGACY(ShareURL));
 
         const volumeId = volumeState.findVolumeId(shareId);
         if (volumeId) {
@@ -280,38 +271,56 @@ export default function useShareUrl() {
         };
     };
 
-    const getShareIdWithSessionkey = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+    const loadOrCreateShareUrl = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkId: string
+    ): Promise<{
+        shareUrl: ShareURLLEGACY;
+        keyInfo: {
+            shareSessionKey: SessionKey;
+            sharePasswordSalt: string;
+        };
+    }> => {
         const [share, link] = await Promise.all([
             getShare(abortSignal, shareId),
-            getLink(abortSignal, shareId, linkId),
+            loadFreshLink(abortSignal, shareId, linkId),
         ]);
 
-        return link.shareId
-            ? (async () => {
+        if (!link.parentLinkId) {
+            throw Error('Root folder cannot be shared');
+        }
+
+        const { shareId: linkShareId, sessionKey: linkShareSessionKey } = link.shareId
+            ? await (async () => {
                   const linkPrivateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
                   return {
                       shareId: link.shareId!,
                       sessionKey: await getShareSessionKey(abortSignal, link.shareId!, linkPrivateKey),
                   };
               })()
-            : createShare(abortSignal, shareId, share.volumeId, linkId);
+            : await createShare(abortSignal, shareId, share.volumeId, linkId);
+
+        const shareUrl = await fetchShareUrl(abortSignal, linkShareId);
+        if (shareUrl) {
+            return decryptShareUrl(shareUrl);
+        }
+        return createShareUrl(abortSignal, shareId, linkShareId, linkShareSessionKey).catch((err) => {
+            // If share URL creation was aborted, remove its share as well
+            // as at this moment we support only sharing via link.
+            if (abortSignal.aborted) {
+                void deleteShare(linkShareId);
+            }
+            throw err;
+        });
     };
 
     const loadShareUrl = async (
         abortSignal: AbortSignal,
         shareId: string,
         linkId: string
-    ): Promise<
-        | {
-              shareUrl: ShareURL;
-              keyInfo: {
-                  shareSessionKey: SessionKey;
-                  sharePasswordSalt: string;
-              };
-          }
-        | undefined
-    > => {
-        const link = await getLink(abortSignal, shareId, linkId);
+    ): Promise<ShareURLLEGACY | undefined> => {
+        const link = await loadFreshLink(abortSignal, shareId, linkId);
         if (!link.shareId || !link.shareUrl) {
             return;
         }
@@ -321,7 +330,8 @@ export default function useShareUrl() {
             return;
         }
 
-        return decryptShareUrl(shareUrl);
+        const { shareUrl: decryptedShareUrl } = await decryptShareUrl(shareUrl);
+        return decryptedShareUrl;
     };
 
     const loadShareUrlLink = async (
@@ -329,8 +339,8 @@ export default function useShareUrl() {
         shareId: string,
         linkId: string
     ): Promise<string | undefined> => {
-        const shareUrlInfo = await loadShareUrl(abortSignal, shareId, linkId);
-        return getSharedLink(shareUrlInfo?.shareUrl);
+        const shareUrl = await loadShareUrl(abortSignal, shareId, linkId);
+        return getSharedLink(shareUrl);
     };
 
     const loadShareUrlNumberOfAccesses = async (
@@ -338,8 +348,8 @@ export default function useShareUrl() {
         shareId: string,
         linkId: string
     ): Promise<number | undefined> => {
-        const shareUrlInfo = await loadShareUrl(abortSignal, shareId, linkId);
-        return shareUrlInfo?.shareUrl.numAccesses;
+        const shareUrl = await loadShareUrl(abortSignal, shareId, linkId);
+        return shareUrl?.numAccesses;
     };
 
     /*
@@ -575,24 +585,13 @@ export default function useShareUrl() {
         // This is a bit of hack to nicely report all errors. It might collect
         // a bit more errors than we need and it might not result in proper
         // error message to user. See comment to useShareUrl on the top.
-        loadShareUrl: (abortSignal: AbortSignal, shareId: string, linkId: string) =>
-            loadShareUrl(abortSignal, shareId, linkId).catch((error) => {
-                sendErrorReport(error);
-                throw error;
-            }),
-        createShareUrl: (
-            abortSignal: AbortSignal,
-            shareId: string,
-            linkShareId: string,
-            linkShareSessionKey: SessionKey
-        ) =>
-            createShareUrl(abortSignal, shareId, linkShareId, linkShareSessionKey).catch((error) => {
+        loadOrCreateShareUrl: (abortSignal: AbortSignal, shareId: string, linkId: string) =>
+            loadOrCreateShareUrl(abortSignal, shareId, linkId).catch((error) => {
                 sendErrorReport(error);
                 throw error;
             }),
         loadShareUrlLink,
         loadShareUrlNumberOfAccesses,
-        getShareIdWithSessionkey,
         updateShareUrl: (
             shareUrlInfo: {
                 creatorEmail: string;

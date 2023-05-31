@@ -6,14 +6,14 @@ import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/fi
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
-import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ShareMemberPayload, ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
+import { ShareMember, ShareURLLEGACY, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type { Share, ShareURL, ShareWithKey } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
 
@@ -171,6 +171,28 @@ export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL =
         publicUrl: shareUrl.PublicUrl,
         sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
         sharePasswordSalt: shareUrl.SharePasswordSalt,
+        hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
+        numAccesses: shareUrl.NumAccesses,
+        urlPasswordSalt: shareUrl.UrlPasswordSalt,
+        srpVerifier: shareUrl.SRPVerifier,
+        srpModulusID: shareUrl.SRPModulusID,
+        maxAccesses: shareUrl.MaxAccesses,
+        permissions: shareUrl.Permissions,
+    };
+};
+
+export const shareUrlPayloadToShareUrlLEGACY = (shareUrl: ShareURLPayload): ShareURLLEGACY => {
+    return {
+        shareId: shareUrl.ShareID,
+        shareUrlId: shareUrl.ShareURLID,
+        expirationTime: shareUrl.ExpirationTime,
+        creatorEmail: shareUrl.CreatorEmail,
+        password: shareUrl.Password,
+        flags: shareUrl.Flags,
+        token: shareUrl.Token,
+        publicUrl: shareUrl.PublicUrl,
+        sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
+        sharePasswordSalt: shareUrl.SharePasswordSalt,
         hasCustomPassword: hasCustomPassword({ flags: shareUrl.Flags }),
         hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
         numAccesses: shareUrl.NumAccesses,
@@ -204,5 +226,23 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
         blocs: revision.Blocks,
         thumbnails: revision.Thumbnails,
         xAttr: revision.XAttr,
+    };
+};
+
+export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload): ShareMember => {
+    return {
+        shareId: shareMember.ShareID,
+        unlockable: shareMember.Unlockable,
+        addressId: shareMember.AddressID,
+        memberId: shareMember.MemberID,
+        addressKeyId: shareMember.AddressKeyID,
+        createTime: shareMember.CreateTime,
+        inviter: shareMember.Inviter,
+        keyPacket: shareMember.KeyPacket,
+        keyPacketSignature: shareMember.KeyPacketSignature,
+        modifyTime: shareMember.ModifyTime,
+        permissions: shareMember.Permissions,
+        sessionKeySignature: shareMember.SessionKeySignature,
+        state: shareMember.State,
     };
 };
