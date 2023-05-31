@@ -21,7 +21,7 @@
         "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.21.4",
+        "@babel/plugin-transform-runtime": "^7.22.4",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
         "@proton/crypto": "workspace:packages/crypto",
@@ -32,7 +32,7 @@
         "@proton/testing": "workspace:packages/testing",
         "@protontech/mimemessage": "~v1.1.4",
         "@reduxjs/toolkit": "^1.9.5",
-        "@types/react": "^17.0.59",
+        "@types/react": "^17.0.60",
         "@types/react-dom": "^17.0.20",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
@@ -43,14 +43,14 @@
         "markdown-it": "^13.0.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-redux": "^8.0.5",
+        "react-redux": "^8.0.7",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.7.24",
         "turndown": "^7.1.2",
-        "workbox-cacheable-response": "^6.5.4",
-        "workbox-expiration": "^6.5.4",
-        "workbox-routing": "^6.5.4",
-        "workbox-strategies": "^6.5.4"
+        "workbox-cacheable-response": "^6.6.1",
+        "workbox-expiration": "^6.6.1",
+        "workbox-routing": "^6.6.1",
+        "workbox-strategies": "^6.6.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -76,6 +76,6 @@
         "loud-rejection": "^2.2.0",
         "prettier": "^2.8.8",
         "typescript": "^5.0.4",
-        "workbox-webpack-plugin": "^6.5.4"
+        "workbox-webpack-plugin": "^6.6.1"
     }
 }
