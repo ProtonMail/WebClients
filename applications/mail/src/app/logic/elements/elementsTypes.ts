@@ -1,5 +1,3 @@
-import { Api } from '@proton/shared/lib/interfaces';
-
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { Element } from '../../models/element';
 import { LabelIDsChanges } from '../../models/event';
@@ -93,8 +91,6 @@ export interface ElementsState {
 }
 
 export interface QueryParams {
-    api: Api;
-    call: () => Promise<void>;
     abortController: AbortController | undefined;
     conversationMode: boolean;
     page: number;
@@ -124,7 +120,6 @@ export interface NewStateParams {
 }
 
 export interface EventUpdates {
-    api: Api;
     conversationMode: boolean;
     toCreate: (Element & LabelIDsChanges)[];
     toUpdate: (Element & LabelIDsChanges)[];

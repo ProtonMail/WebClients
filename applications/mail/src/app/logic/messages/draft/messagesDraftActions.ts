@@ -1,9 +1,9 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { cancelSend as cancelSendApiCall } from '@proton/shared/lib/api/messages';
-import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { AppThunkExtra } from '../../store';
 import { MessageDraftFlags, MessageEmbeddedImage, MessageState } from '../messagesTypes';
 
 export const createDraft = createAction<MessageState>('message/draft/create');
@@ -48,10 +48,10 @@ export const endSending = createAction<string>('messages/send/end');
  */
 export const deleteDraft = createAction<string>('messages/deleteDraft');
 
-export const cancelSendMessage = createAsyncThunk<Message, { messageID: string; api: Api }>(
+export const cancelSendMessage = createAsyncThunk<Message, { messageID: string }, AppThunkExtra>(
     'message/send/cancel',
-    async ({ api, messageID }) => {
-        const results = await api<{ Code: number; Message: Message }>(cancelSendApiCall(messageID));
+    async ({ messageID }, { extra }) => {
+        const results = await extra.api<{ Code: number; Message: Message }>(cancelSendApiCall(messageID));
 
         return results.Message;
     }

@@ -2,12 +2,11 @@ import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { Api } from '@proton/shared/lib/interfaces';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
 import { Element } from '../../models/element';
-import { RootState } from '../store';
+import { AppThunkExtra, RootState } from '../store';
 import {
     ESResults,
     EventUpdates,
@@ -33,16 +32,20 @@ export const updatePage = createAction<number>('elements/updatePage');
 
 export const retry = createAction<{ queryParameters: any; error: Error | undefined }>('elements/retry');
 
-export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRunningInfo }, QueryParams>(
+export const load = createAsyncThunk<
+    { result: QueryResults; taskRunning: TaskRunningInfo },
+    QueryParams,
+    AppThunkExtra
+>(
     'elements/load',
     async (
-        { api, call, page, params, abortController, conversationMode, count = 1 }: QueryParams,
-        { dispatch, getState }
+        { page, params, abortController, conversationMode, count = 1 }: QueryParams,
+        { dispatch, getState, extra }
     ) => {
         const queryParameters = getQueryElementsParameters({ page, params });
         let result;
         try {
-            result = await queryElements(api, abortController, conversationMode, queryParameters);
+            result = await queryElements(extra.api, abortController, conversationMode, queryParameters);
         } catch (error: any | undefined) {
             // Wait a couple of seconds before retrying
             setTimeout(() => {
@@ -55,9 +58,7 @@ export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRu
             // Wait few seconds before retrying
             setTimeout(() => {
                 if (isDeepEqual((getState() as RootState).elements.params, params)) {
-                    void dispatch(
-                        load({ api, call, page, params, abortController, conversationMode, count: count + 1 })
-                    );
+                    void dispatch(load({ page, params, abortController, conversationMode, count: count + 1 }));
                 }
             }, ms);
         }
@@ -65,7 +66,10 @@ export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRu
         const taskRunning = { ...(getState() as RootState).elements.taskRunning };
         if (taskLabels.length) {
             taskRunning.labelIDs = unique([...taskRunning.labelIDs, ...taskLabels]);
-            taskRunning.timeoutID = refreshTaskRunningTimeout(taskRunning.labelIDs, { getState, api, dispatch, call });
+            taskRunning.timeoutID = refreshTaskRunningTimeout(taskRunning.labelIDs, {
+                getState,
+                dispatch,
+            });
         }
         return { result, taskRunning };
     }
@@ -75,11 +79,13 @@ export const removeExpired = createAction<Element>('elements/removeExpired');
 
 export const invalidate = createAction<void>('elements/invalidate');
 
-export const eventUpdates = createAsyncThunk<(Element | undefined)[], EventUpdates>(
+export const eventUpdates = createAsyncThunk<(Element | undefined)[], EventUpdates, AppThunkExtra>(
     'elements/eventUpdates',
-    async ({ api, conversationMode, toLoad }) => {
+    async ({ conversationMode, toLoad }, thunkApi) => {
         return Promise.all(
-            toLoad.map(async (element) => queryElement(api, conversationMode, element.ID).catch(() => element))
+            toLoad.map(async (element) =>
+                queryElement(thunkApi.extra.api, conversationMode, element.ID).catch(() => element)
+            )
         );
     }
 );
@@ -106,16 +112,16 @@ export const backendActionStarted = createAction<void>('elements/action/started'
 
 export const backendActionFinished = createAction<void>('elements/action/finished');
 
-export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, { api: Api; call: () => Promise<void> }>(
+export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, AppThunkExtra>(
     'elements/pollTaskRunning',
-    async ({ api, call }, { dispatch, getState }) => {
-        await call();
+    async (_, { dispatch, getState, extra }) => {
+        await extra.eventManager.call();
 
         const currentLabels = (getState() as RootState).elements.taskRunning.labelIDs;
         const finishedLabels = [];
 
         for (let label of currentLabels) {
-            const result = await api<QueryResults>(queryMessageMetadata({ LabelID: label }));
+            const result = await extra.api<QueryResults>(queryMessageMetadata({ LabelID: label }));
             const isLabelStillRunning =
                 result?.TasksRunning && !Array.isArray(result.TasksRunning) && result.TasksRunning[label];
 
@@ -126,7 +132,10 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, { api: Api; cal
 
         const labelIDs = diff(currentLabels, finishedLabels);
 
-        const timeoutID = refreshTaskRunningTimeout(labelIDs, { getState, api, dispatch, call });
+        const timeoutID = refreshTaskRunningTimeout(labelIDs, {
+            getState,
+            dispatch,
+        });
 
         return { labelIDs, timeoutID };
     }
@@ -134,11 +143,15 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, { api: Api; cal
 
 export const moveAll = createAsyncThunk<
     { LabelID: string; timeoutID: NodeJS.Timeout },
-    { api: Api; call: () => Promise<void>; SourceLabelID: string; DestinationLabelID: string }
->('elements/moveAll', async ({ api, call, SourceLabelID, DestinationLabelID }, { dispatch, getState }) => {
-    await api(moveAllRequest({ SourceLabelID, DestinationLabelID }));
+    { SourceLabelID: string; DestinationLabelID: string },
+    AppThunkExtra
+>('elements/moveAll', async ({ SourceLabelID, DestinationLabelID }, { dispatch, getState, extra }) => {
+    await extra.api(moveAllRequest({ SourceLabelID, DestinationLabelID }));
 
-    const timeoutID = refreshTaskRunningTimeout([SourceLabelID], { getState, api, dispatch, call });
+    const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
+        getState,
+        dispatch,
+    });
 
     return { LabelID: SourceLabelID, timeoutID: timeoutID as NodeJS.Timeout };
 });
