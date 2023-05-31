@@ -820,6 +820,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                     recordProgressLocal,
                     fetchESItemContent,
                     recoveryPoint,
+                    true,
                     isBackgroundIndexing
                 );
             } catch (error: any) {
