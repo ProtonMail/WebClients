@@ -77,6 +77,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                         <Field
                             component={BaseTextAreaField}
                             label={c('Label').t`Note`}
+                            labelContainerClassName="sr-only"
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
                             maxLength={MAX_ITEM_NOTE_LENGTH}
