@@ -1,4 +1,4 @@
-import { Fragment, ReactElement, ReactNode, useRef, useState } from 'react';
+import { Fragment, ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -42,6 +42,8 @@ import {
     TokenPayment,
     TokenPaymentMethod,
 } from '@proton/components/payments/core';
+import metrics, { observeApiError } from '@proton/metrics';
+import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
@@ -131,6 +133,11 @@ interface InputState {
     focus: boolean;
 }
 
+type StepId = WebCoreVpnSingleSignupStep1InteractionTotal['Labels']['step'];
+type HasBeenCountedState = {
+    [key in StepId]: boolean;
+};
+
 const Step1 = ({
     plan,
     clientType,
@@ -186,6 +193,28 @@ const Step1 = ({
     const { subscriptionData, plans, paymentMethodStatus } = model;
     const planName = plan?.Title;
 
+    const hasBeenCountedRef = useRef<HasBeenCountedState>({
+        plan: false,
+        email: false,
+        payment: false,
+    });
+
+    useEffect(() => {
+        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'plan_username_payment' });
+    }, []);
+
+    const handleUpdate = (step: StepId, params: any) => {
+        if (!hasBeenCountedRef.current[step]) {
+            metrics.core_vpn_single_signup_step1_interaction_total.increment({ step });
+
+            hasBeenCountedRef.current = {
+                ...hasBeenCountedRef.current,
+                [step]: true,
+            };
+        }
+        onUpdate(params);
+    };
+
     const signInTo = {
         pathname: `/dashboard${stringifySearchParams(
             {
@@ -221,14 +250,23 @@ const Step1 = ({
     const handleChangeCurrency = async (currency: Currency) => {
         const validateFlow = createFlow();
         setOptimisticCurrency(currency);
-        onUpdate({ currency: currency });
+        handleUpdate('plan', { currency: currency });
         const checkResult = await getSubscriptionPrices(
             silentApi,
             model.subscriptionData.planIDs,
             currency,
             cycle,
             model.subscriptionData.checkResult.Coupon?.Code
-        ).catch(noop);
+        )
+            .then((result) => {
+                metrics.core_vpn_single_signup_step1_currencyChange_total.increment({ status: 'success' });
+                return result;
+            })
+            .catch((error) => {
+                observeApiError(error, (status) =>
+                    metrics.core_vpn_single_signup_step1_currencyChange_total.increment({ status })
+                );
+            });
         if (!validateFlow()) {
             return;
         }
@@ -254,7 +292,16 @@ const Step1 = ({
             currency,
             cycle,
             model.subscriptionData.checkResult.Coupon?.Code
-        ).catch(noop);
+        )
+            .then((result) => {
+                metrics.core_vpn_single_signup_step1_cycleChange_total.increment({ status: 'success' });
+                return result;
+            })
+            .catch((error) => {
+                observeApiError(error, (status) =>
+                    metrics.core_vpn_single_signup_step1_cycleChange_total.increment({ status })
+                );
+            });
         if (!validateFlow()) {
             return;
         }
@@ -326,8 +373,12 @@ const Step1 = ({
 
             const newCache = await handleCreateUser({ cache, api: silentApi, mode: 'cro', paymentToken });
             onComplete(newCache);
+            metrics.core_vpn_single_signup_step1_payment_total.increment({ status: 'success' });
         } catch (error) {
             handleError(error);
+            observeApiError(error, (status) =>
+                metrics.core_vpn_single_signup_step1_payment_total.increment({ status })
+            );
         }
     };
 
@@ -476,7 +527,7 @@ const Step1 = ({
     const freeName = `${VPN_SHORT_APP_NAME} Free`;
     // do modal
     const handleCloseUpsellModal = () => {
-        onUpdate({ plan: upsellShortPlan?.plan });
+        handleUpdate('plan', { plan: upsellShortPlan?.plan });
         upsellModalProps.onClose();
     };
 
@@ -517,7 +568,7 @@ const Step1 = ({
                             <CycleSelector
                                 pricing={pricing}
                                 onGetTheDeal={(cycle) => {
-                                    onUpdate({ cycle: `${cycle}m` });
+                                    handleUpdate('plan', { cycle: `${cycle}m` });
                                     scrollIntoEmail();
                                 }}
                                 cycle={cycle}
@@ -525,9 +576,9 @@ const Step1 = ({
                                 cycles={cycles}
                                 onChangeCycle={(cycle, upsellFrom) => {
                                     if (upsellFrom !== undefined) {
-                                        onUpdate({ cycle: `${cycle}m-${upsellFrom}m-upsell` });
+                                        handleUpdate('plan', { cycle: `${cycle}m-${upsellFrom}m-upsell` });
                                     } else {
-                                        onUpdate({ cycle: `${cycle}m` });
+                                        handleUpdate('plan', { cycle: `${cycle}m` });
                                     }
                                     return withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
                                 }}
@@ -538,7 +589,7 @@ const Step1 = ({
                                 <InlineLinkButton
                                     className="color-weak"
                                     onClick={() => {
-                                        onUpdate({ plan: 'free' });
+                                        handleUpdate('plan', { plan: 'free' });
                                         setUpsellModal(true);
                                     }}
                                 >
@@ -566,7 +617,7 @@ const Step1 = ({
                                         mergeInputState('email', { interactive: true });
                                     }}
                                     onFocus={() => {
-                                        onUpdate({ emType: 'set' });
+                                        handleUpdate('email', { emType: 'set' });
                                     }}
                                     onBlur={() => {
                                         mergeInputState('email', { focus: true });
@@ -588,7 +639,7 @@ const Step1 = ({
                                             mergeInputState('emailConfirm', { interactive: true });
                                         }}
                                         onFocus={() => {
-                                            onUpdate({ emType: 'confirm' });
+                                            handleUpdate('email', { emType: 'confirm' });
                                         }}
                                         onBlur={() => {
                                             mergeInputState('emailConfirm', { focus: true });
@@ -614,14 +665,14 @@ const Step1 = ({
                                     onFocus={(e) => {
                                         const autocomplete = e.target.getAttribute('autocomplete');
                                         if (autocomplete) {
-                                            onUpdate({ cc: autocomplete });
+                                            handleUpdate('payment', { cc: autocomplete });
                                         }
                                     }}
                                     name="payment-form"
                                     onSubmit={async (event) => {
                                         event.preventDefault();
 
-                                        onUpdate({ pay: 'card' });
+                                        handleUpdate('payment', { pay: 'card' });
 
                                         const handle = async () => {
                                             if (
@@ -661,7 +712,7 @@ const Step1 = ({
                                             card={card}
                                             onMethod={(newMethod) => {
                                                 if (method && newMethod && method !== newMethod) {
-                                                    onUpdate({ method: newMethod });
+                                                    handleUpdate('payment', { method: newMethod });
                                                 }
                                                 setMethod(newMethod);
                                             }}
