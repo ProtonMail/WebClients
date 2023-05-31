@@ -1,38 +1,23 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { FormField, FormType, MaybeNull } from '@proton/pass/types';
 
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 
-/* Form types based on protonpass-fathom
- * predicted form types */
-export enum FormType {
-    LOGIN = 'login',
-    REGISTER = 'register',
-}
-
-/* Form field types based on protonpass-fathom
- * predicted form field */
-export enum FormField {
-    EMAIL = 'email',
-    USERNAME = 'username',
-    USERNAME_HIDDEN = 'username-hidden',
-    PASSWORD_CURRENT = 'password',
-    PASSWORD_NEW = 'new-password',
-}
-
-export type FormFields = { [Field in FormField]?: HTMLInputElement[] };
+export type DetectedField = { fieldType: FormField; field: HTMLInputElement };
+export type FormFields = DetectedField[];
 
 export interface FormHandle {
     id: string;
     formType: FormType;
     element: HTMLElement;
     props: { injections: { zIndex: number } };
-    fields: { [Field in FormField]?: FieldHandle[] };
-    getFieldsFor: (type: FormField, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
-    listFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    fields: Map<HTMLInputElement, FieldHandle>;
     tracker?: FormTracker;
+    detachField: (field: HTMLInputElement) => void;
+    getFieldsFor: (type: FormField, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    reconciliate: (fields: DetectedField[]) => void;
     shouldRemove: () => boolean;
-    shouldUpdate: () => boolean;
     attach: () => void;
     detach: () => void;
 }
@@ -45,14 +30,17 @@ export interface FieldHandle {
     icon: FieldIconHandle | null;
     action: MaybeNull<DropdownAction>;
     value: string;
+    tracked: boolean;
     getFormHandle: () => FormHandle;
+    getBoxElement: () => HTMLElement;
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;
-    autofill: (value: string) => void;
+    autofill: (value: string) => HTMLInputElement;
+    focus: (options?: { preventDefault?: boolean }) => void;
     attachIcon: () => FieldIconHandle;
     detachIcon: () => void;
-    attachListeners: (onSubmit: () => void) => void;
-    detachListeners: () => void;
+    attach: (onSubmit: () => void) => void;
+    detach: () => void;
 }
 
 export enum FieldInjectionRule {
@@ -69,7 +57,6 @@ export type FormTrackerFieldConfig = {
 };
 
 export interface FormTracker {
-    attach: () => void;
     detach: () => void;
-    autofocus: () => void;
+    reconciliate: () => void;
 }

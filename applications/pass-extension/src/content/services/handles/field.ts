@@ -1,14 +1,17 @@
-import { findBoundingElement, isInputElement } from '@proton/pass/utils/dom';
+import type { FormField, FormType } from '@proton/pass/types';
+import { findBoundingInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
 import { createAutofill } from '../../../shared/form';
+import { PROCESSED_ATTR } from '../../constants';
 import { withContext } from '../../context/context';
-import type { FieldHandle, FormField, FormHandle, FormType } from '../../types';
+import type { FieldHandle, FormHandle } from '../../types';
 import { createFieldIconHandle } from './icon';
 
-type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {
-    formType: T;
-    fieldType: V;
+type CreateFieldHandlesOptions = {
+    element: HTMLInputElement;
+    formType: FormType;
+    fieldType: FormField;
     getFormHandle: () => FormHandle;
 };
 
@@ -17,6 +20,10 @@ type CreateFieldHandlesOptions<T extends FormType, V extends FormField> = {
  * when changing focus with the dropdown open */
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext(({ service: { iframe }, getSettings, getState }, evt) => {
+        const el = field.element as any;
+        const preventDefault = el?.focusData ?? false;
+        if (preventDefault) return delete el.focusData;
+
         requestAnimationFrame(() => {
             const target = evt?.target;
 
@@ -53,49 +60,75 @@ const onKeyDownField =
     ({ key }: KeyboardEvent) =>
         key === 'Enter' && onSubmit();
 
-export const createFieldHandles =
-    <T extends FormType, V extends FormField>({
+export const createFieldHandles = ({
+    element,
+    formType,
+    fieldType,
+    getFormHandle,
+}: CreateFieldHandlesOptions): FieldHandle => {
+    const listeners = createListenerStore();
+    const boxElement = findBoundingInputElement(element);
+
+    const field: FieldHandle = {
         formType,
         fieldType,
+        element,
+        boxElement,
+        icon: null,
+        action: null,
+        value: element.value,
+        tracked: false,
         getFormHandle,
-    }: CreateFieldHandlesOptions<T, V>) =>
-    (element: HTMLInputElement): FieldHandle => {
-        /* Since we're creating "field handles" for elements
-         * that may include submit buttons as well : make sure
-         * we're dealing with an HTMLInputElement for autofilling
-         * and icon injection*/
-        const isInput = isInputElement(element);
-        const listeners = createListenerStore();
-        const boxElement = findBoundingElement(element);
+        getBoxElement: () => field.boxElement,
+        setValue: (value) => (field.value = value),
+        setAction: (action) => (field.action = action),
 
-        const field: FieldHandle = {
-            formType,
-            fieldType,
-            element,
-            boxElement,
-            icon: null,
-            action: null,
-            value: isInput ? element.value ?? '' : '',
-            getFormHandle,
-            setValue: (value) => (field.value = value),
-            setAction: (action) => (field.action = action),
-            autofill: createAutofill(element),
-            attachIcon: () => (field.icon = field.icon ?? createFieldIconHandle({ field })),
+        /* if the field is already focused by the browser we need
+         * to re-dispatch the event on the input element to trigger
+         * initial dropdown autofocus. There is no way to attach
+         * extra data to a focus event so we rely on adding custom
+         * properties on the field element itself */
+        focus: (focusData) => {
+            (field.element as any).focusData = focusData;
 
-            detachIcon() {
-                field.icon?.detach();
-                field.icon = null;
-            },
+            if (document.activeElement === field.element) {
+                const focusEvent = new FocusEvent('focus', {
+                    bubbles: true,
+                    cancelable: true,
+                    relatedTarget: null,
+                });
 
-            attachListeners(onSubmit) {
-                field.detachListeners();
-                listeners.addListener(field.element, 'focus', onFocusField(field));
-                listeners.addListener(field.element, 'input', onInputField(field));
-                listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
-            },
+                return field.element.dispatchEvent(focusEvent);
+            }
 
-            detachListeners: () => listeners.removeAll(),
-        };
+            field.element.focus();
+        },
 
-        return field;
+        autofill: createAutofill(element),
+
+        /* if an icon is already attached recycle it */
+        attachIcon: () => (field.icon = field.icon ?? createFieldIconHandle({ field })),
+
+        detachIcon() {
+            field.icon?.detach();
+            field.icon = null;
+        },
+
+        attach(onSubmit) {
+            field.tracked = true;
+            listeners.removeAll();
+            listeners.addListener(field.element, 'focus', onFocusField(field));
+            listeners.addListener(field.element, 'input', onInputField(field));
+            listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
+        },
+
+        detach: () => {
+            field.tracked = false;
+            field.detachIcon();
+            listeners.removeAll();
+            element.removeAttribute(PROCESSED_ATTR);
+        },
     };
+
+    return field;
+};
