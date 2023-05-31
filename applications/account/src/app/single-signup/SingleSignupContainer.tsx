@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
+import metrics, { observeApiError } from '@proton/metrics';
 import { update as updateRoute } from '@proton/shared/lib/api/core/update';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -207,12 +208,17 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
         };
 
         void withLoadingDependencies(
-            fetchDependencies().catch((error) => {
-                setError(error);
-            })
+            fetchDependencies()
+                .then(() => {
+                    metrics.core_vpn_single_signup_fetchDependencies_total.increment({ status: 'success' });
+                })
+                .catch((error) => {
+                    observeApiError(error, (status) =>
+                        metrics.core_vpn_single_signup_fetchDependencies_total.increment({ status })
+                    );
+                    setError(error);
+                })
         );
-
-        return () => {};
     }, []);
 
     const handleResult = async (result: SignupActionResponse, step: Steps) => {
@@ -263,7 +269,6 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                 )}
                 {step === Steps.Two && (
                     <Step2
-                        hasPayment={true}
                         product={VPN_APP_NAME}
                         img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                         onSetup={async () => {
@@ -280,7 +285,13 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                                     wait(3500),
                                 ]);
                                 await handleResult(result, Steps.Three);
+
+                                metrics.core_vpn_single_signup_step2_setup_total.increment({ status: 'success' });
                             } catch (error) {
+                                observeApiError(error, (status) =>
+                                    metrics.core_vpn_single_signup_step2_setup_total.increment({ status })
+                                );
+
                                 handleError(error);
                                 setStep(Steps.One);
                             }
@@ -303,7 +314,14 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                                         newPassword,
                                     });
                                     await handleResult(result, Steps.Four);
+                                    metrics.core_vpn_single_signup_step3_complete_total.increment({
+                                        status: 'success',
+                                    });
                                 } catch (error) {
+                                    observeApiError(error, (status) =>
+                                        metrics.core_vpn_single_signup_step3_complete_total.increment({ status })
+                                    );
+
                                     handleError(error);
                                 }
                             } else {
@@ -319,8 +337,17 @@ const SingleSignupContainer = ({ loader, onLogin, productParam }: Props) => {
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
-                            const [result] = await Promise.all([await handleDone({ cache }), wait(3500)]);
-                            return handleResult(result, Steps.Four);
+
+                            try {
+                                const [result] = await Promise.all([await handleDone({ cache }), wait(3500)]);
+                                await handleResult(result, Steps.Four);
+
+                                metrics.core_vpn_single_signup_step4_setup_total.increment({ status: 'success' });
+                            } catch (error) {
+                                observeApiError(error, (status) =>
+                                    metrics.core_vpn_single_signup_step4_setup_total.increment({ status })
+                                );
+                            }
                         }}
                         planName={`${BRAND_NAME} ${upsellPlanName}`}
                         img={<img src={onboardingVPNWelcome2} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
