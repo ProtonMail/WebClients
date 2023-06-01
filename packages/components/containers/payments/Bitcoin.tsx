@@ -2,37 +2,137 @@ import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { createBitcoinDonation, createBitcoinPayment } from '@proton/shared/lib/api/payments';
-import { APPS, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Button } from '@proton/atoms';
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '@proton/components/payments/core';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import {
+    CreateBitcoinTokenData,
+    createBitcoinPayment,
+    createToken,
+    getTokenStatus,
+} from '@proton/shared/lib/api/payments';
+import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Bordered, Loader, Price } from '../../components';
-import { useApi, useConfig, useLoading } from '../../hooks';
+import { useApi, useLoading } from '../../hooks';
+import { PaymentMethodFlows } from '../paymentMethods/interface';
 import BitcoinDetails from './BitcoinDetails';
-import BitcoinQRCode from './BitcoinQRCode';
+import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
+
+function pause() {
+    return wait(10000);
+}
+
+const useCheckStatus = (token: string | null, onTokenValidated: (token: string) => void, enabled: boolean) => {
+    const [paymentValidated, setPaymentValidated] = useState(false);
+
+    const api = useApi();
+    const silentApi = getSilentApi(api);
+
+    const validate = async (token: string): Promise<boolean> => {
+        try {
+            const { Status } = await silentApi<any>(getTokenStatus(token));
+            if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+                return true;
+            }
+        } catch {}
+
+        return false;
+    };
+
+    useEffect(() => {
+        let active = enabled;
+
+        async function run() {
+            if (!token) {
+                return;
+            }
+
+            await pause();
+            while (active) {
+                const resolved = await validate(token);
+                if (resolved && active) {
+                    setPaymentValidated(true);
+                    onTokenValidated?.(token);
+                    active = false;
+                    break;
+                }
+                await pause();
+            }
+        }
+
+        run();
+
+        return () => {
+            active = false;
+        };
+    }, [token]);
+
+    return {
+        paymentValidated,
+    };
+};
+
+export interface ValidatedBitcoinToken extends TokenPaymentMethod {
+    cryptoAmount: number;
+    cryptoAddress: string;
+}
 
 interface Props {
     amount: number;
     currency: Currency;
-    type: string;
+    type: PaymentMethodFlows;
+    onTokenValidated?: (data: ValidatedBitcoinToken) => void;
+    awaitingPayment: boolean;
+    enableValidation?: boolean;
 }
 
-const Bitcoin = ({ amount, currency, type }: Props) => {
+const Bitcoin = ({ amount, currency, type, onTokenValidated, awaitingPayment, enableValidation = false }: Props) => {
     const api = useApi();
-    const { APP_NAME } = useConfig();
+    const silentApi = getSilentApi(api);
     const [loading, withLoading] = useLoading();
     const [error, setError] = useState(false);
-    const [model, setModel] = useState({ amountBitcoin: 0, address: '' });
+    const [model, setModel] = useState({ amountBitcoin: 0, address: '', token: null });
+
+    const { paymentValidated } = useCheckStatus(
+        model.token,
+        (token) =>
+            onTokenValidated?.({
+                Payment: {
+                    Type: PAYMENT_METHOD_TYPES.TOKEN,
+                    Details: {
+                        Token: token,
+                    },
+                },
+                cryptoAmount: model.amountBitcoin,
+                cryptoAddress: model.address,
+            }),
+        enableValidation
+    );
 
     const request = async () => {
         setError(false);
         try {
-            const { AmountBitcoin, Address } = await api(
-                type === 'donation' ? createBitcoinDonation(amount, currency) : createBitcoinPayment(amount, currency)
-            );
-            setModel({ amountBitcoin: AmountBitcoin, address: Address });
+            const data: CreateBitcoinTokenData = {
+                Amount: amount,
+                Currency: currency,
+                Payment: {
+                    Type: 'cryptocurrency',
+                    Details: {
+                        Coin: 'bitcoin',
+                    },
+                },
+            };
+
+            try {
+                const { Token, Data } = await silentApi<any>(createToken(data));
+                setModel({ amountBitcoin: Data.CoinAmount, address: Data.CoinAddress, token: Token });
+            } catch (error) {
+                const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
+                setModel({ amountBitcoin: AmountBitcoin, address: Address, token: null });
+            }
         } catch (error) {
             setError(true);
             throw error;
@@ -40,7 +140,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
     };
 
     useEffect(() => {
-        if (amount >= MIN_BITCOIN_AMOUNT) {
+        if (amount >= MIN_BITCOIN_AMOUNT && amount <= MAX_BITCOIN_AMOUNT) {
             withLoading(request());
         }
     }, [amount, currency]);
@@ -52,6 +152,18 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
                 {i18n(
                     <Price key="price" currency={currency}>
                         {MIN_BITCOIN_AMOUNT}
+                    </Price>
+                )}
+            </Alert>
+        );
+    }
+    if (amount > MAX_BITCOIN_AMOUNT) {
+        const i18n = (amount: ReactNode) => c('Info').jt`Amount above maximum (${amount}).`;
+        return (
+            <Alert className="mb-4" type="warning">
+                {i18n(
+                    <Price key="price" currency={currency}>
+                        {MAX_BITCOIN_AMOUNT}
                     </Price>
                 )}
             </Alert>
@@ -71,34 +183,34 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
         );
     }
 
+    const qrCodeStatus: BitcoinQRCodeProps['status'] = awaitingPayment
+        ? 'pending'
+        : paymentValidated
+        ? 'confirmed'
+        : 'initial';
+
+    const btcAmountBold = <span className="text-bold">{model.amountBitcoin} BTC</span>;
+
     return (
-        <Bordered className="bg-weak rounded">
-            <div className="p-4 border-bottom">
-                <BitcoinQRCode
-                    className="flex flex-align-items-center flex-column"
-                    amount={model.amountBitcoin}
-                    address={model.address}
-                />
+        <Bordered className="p-6 rounded" data-testid="bitcoin-payment-data">
+            <div>
+                <span>
+                    {c('Info').jt`To complete your payment, please send ${btcAmountBold} to the address below.`}
+                </span>
+                <div className="my-6 flex flex-justify-center">
+                    <BitcoinQRCode
+                        className="flex flex-align-items-center flex-column"
+                        amount={model.amountBitcoin}
+                        address={model.address}
+                        status={qrCodeStatus}
+                    />
+                </div>
             </div>
             <BitcoinDetails amount={model.amountBitcoin} address={model.address} />
             <div className="pt-4 px-4">
-                {type === 'invoice' ? (
+                {type === 'invoice' && (
                     <div className="mb-4">{c('Info')
                         .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</div>
-                ) : (
-                    <div className="mb-4">
-                        {c('Info')
-                            .t`After making your Bitcoin payment, please follow the instructions below to upgrade.`}
-                        <div>
-                            <Href
-                                href={
-                                    APP_NAME === APPS.PROTONVPN_SETTINGS
-                                        ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'
-                                        : getKnowledgeBaseUrl('/pay-with-bitcoin')
-                                }
-                            >{c('Link').t`Learn more`}</Href>
-                        </div>
-                    </div>
                 )}
             </div>
         </Bordered>

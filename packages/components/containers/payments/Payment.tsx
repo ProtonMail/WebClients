@@ -8,13 +8,15 @@ import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
+import { useAuthentication, useLoading } from '../../hooks';
 import { CardModel } from '../../payments/core/interface';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import Alert3DS from './Alert3ds';
-import Bitcoin from './Bitcoin';
+import Bitcoin, { ValidatedBitcoinToken } from './Bitcoin';
+import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import CreditCardNewDesign from './CreditCardNewDesign';
@@ -40,6 +42,7 @@ interface Props {
     disabled?: boolean;
     cardFieldStatus?: CardFieldStatus;
     paypalPrefetchToken?: boolean;
+    onBitcoinTokenValidated?: (data: ValidatedBitcoinToken) => Promise<void>;
 }
 
 const Payment = ({
@@ -61,11 +64,17 @@ const Payment = ({
     creditCardTopRef,
     disabled,
     paypalPrefetchToken,
+    onBitcoinTokenValidated,
 }: Props) => {
     const { paymentMethods, options, loading } = useMethods({ amount, paymentMethodStatus, coupon, flow: type });
     const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
 
     const allMethods = [...options.usedMethods, ...options.methods];
+
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID;
+
+    const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
     useEffect(() => {
         if (loading) {
@@ -154,7 +163,29 @@ const Payment = ({
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
                     {method === PAYMENT_METHOD_TYPES.BITCOIN && (
-                        <Bitcoin amount={amount} currency={currency} type={type} />
+                        <>
+                            {!isAuthenticated && (
+                                <p>
+                                    {c('Info')
+                                        .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}
+                                </p>
+                            )}
+                            {isAuthenticated && (
+                                <>
+                                    <BitcoinInfoMessage />
+                                    <Bitcoin
+                                        amount={amount}
+                                        currency={currency}
+                                        type={type}
+                                        awaitingPayment={handlingBitcoinPayment}
+                                        onTokenValidated={(data) =>
+                                            withHandlingBitcoinPayment(async () => onBitcoinTokenValidated?.(data))
+                                        }
+                                        enableValidation={!!onBitcoinTokenValidated}
+                                    />
+                                </>
+                            )}
+                        </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.PAYPAL && (
                         <PayPalView
