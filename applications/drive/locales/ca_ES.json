@@ -2187,6 +2187,12 @@
       "Unknown error": [
         "Error desconegut"
       ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit"
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
       ],
@@ -3386,8 +3392,11 @@
       "Failed": [
         "Error"
       ],
-      "Failed to generate a secure link. Try again later.": [
-        "No s'ha pogut generar un enllaç segur. Torna-ho a provar més tard."
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "No s'ha pogut generar un enllaç segur. El motiu és: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "No s'ha pogut generar un enllaç segur. Torna-ho a provar més tard"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error obrint un enllaç segur. La raó és: ${ error }"

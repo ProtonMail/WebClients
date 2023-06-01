@@ -334,7 +334,7 @@
         "Ich habe eine Frage"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Das Bild konnte aufgrund des Tracker-Schutzes nicht geladen werden."
+        "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
       "Image will be loaded without a proxy": [
         "Das Bild wird ohne Proxy geladen."
@@ -2187,6 +2187,12 @@
       "Unknown error": [
         "Unbekannter Fehler"
       ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
       ],
@@ -3386,8 +3392,11 @@
       "Failed": [
         "Fehlgeschlagen"
       ],
-      "Failed to generate a secure link. Try again later.": [
-        "Generieren eines sicheren Links fehlgeschlagen. Versuche es später erneut."
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Sicherer Link konnte nicht generiert werden. Grund: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Sicherer Link konnte nicht generiert werden. Versuche es später erneut."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Sicherer Link konnte nicht geöffnet werden. Fehler: ${ error }"
@@ -4043,6 +4052,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du hast die maximale Anzahl von Adressen in der Kontaktgruppe erreicht."

@@ -478,6 +478,12 @@
       "I have a question": [
         "サポートに質問"
       ],
+      "Image could not be loaded with tracker protection.": [
+        "トラッキング防止が画像の読み込みをブロックしました。"
+      ],
+      "Image will be loaded without a proxy": [
+        "画像はプロキシーを経由せずに読み込まれます"
+      ],
       "Images will be loaded without a proxy": [
         "画像はプロキシーを経由しないで読み込まれました"
       ],
@@ -3384,6 +3390,12 @@
       "Unknown error.": [
         "不明なエラーが発生しました。"
       ],
+      "Username must begin with a letter or digit": [
+        "ユーザー名は英字か数字で始めなければいけません"
+      ],
+      "Username must end with a letter or digit": [
+        "ユーザー名の最後は英字か数字でなければいけません"
+      ],
       "Wrong mailbox password": [
         "メールボックスのパスワードが間違っています"
       ],
@@ -4707,6 +4719,12 @@
       "Confirm phishing report": [
         "フィッシング報告の確認"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "グループ ${ contactGroupName } に連絡先を追加しました"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "グループ ${ contactGroupName } から連絡先を削除しました"
+      ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
@@ -5699,6 +5717,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "連絡先グループのアドレス数の上限に達しました。"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "連絡先グループのアドレス数の上限に達しました。"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "あなたの ${ BRAND_NAME } アカウントには SimpleLogin が含まれています。ワンクリックでブラウザ拡張機能をインストールし始めることができます。"

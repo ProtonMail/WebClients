@@ -477,7 +477,7 @@
         "Importer des contacts"
       ],
       "Import emails": [
-        "Importer des e-mails"
+        "Importer des messages"
       ],
       "Import from ICS": [
         "Importer depuis un fichier ICS"
@@ -3023,7 +3023,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Empty condition": [
         "La condition est vide."
@@ -3348,6 +3348,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Les fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et réessayer."
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "Validation error": [
         "Une erreur de validation s'est produite."
@@ -4847,7 +4853,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
+        "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
@@ -5141,7 +5147,7 @@
         "et"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Toute méthode d'${ twoFa } sur vote compte sera désactivée."
+        "Toute méthode d'${ twoFa } sur votre compte sera désactivée."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Toute personne ayant ce lien peut voir toutes les informations des événements de ce calendrier, comme le titre, le lieu ou les participants."
@@ -5217,6 +5223,9 @@
       ],
       "Balance from your previous subscription": [
         "Crédit de votre précédent abonnement"
+      ],
+      "Based on your time zone": [
+        "Selon votre fuseau horaire"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigation et les actions de base restent disponibles, que les raccourcis clavier soient activés ou non dans les paramètres."
@@ -7034,7 +7043,7 @@
         "Aller au dernier"
       ],
       "Label as...": [
-        "Labelliser…"
+        "Labelliser"
       ],
       "Load embedded images": [
         "Charger les images intégrées"
@@ -7073,7 +7082,7 @@
         "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer…"
+        "Déplacer"
       ],
       "Move up": [
         "Déplacer vers le haut"
@@ -7535,10 +7544,10 @@
         "E-mail ou nom d'utilisateur"
       ],
       "Emails": [
-        "E-mails"
+        "Messages"
       ],
       "Emails (all messages)": [
-        "E-mails (tous les messages)"
+        "Messages (tous les messages)"
       ],
       "Emails (last 12 months)": [
         "Messages (12 derniers mois)"
@@ -9455,6 +9464,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Le calendrier des jours fériés n'a pas pu être ajouté."
+      ],
       "Calendar added": [
         "Le calendrier a été ajouté."
       ]
@@ -9745,7 +9757,7 @@
         "Dossiers par défaut"
       ],
       "Move to...": [
-        "Déplacer…"
+        "Déplacer"
       ]
     },
     "Option group label": {
@@ -9969,6 +9981,9 @@
     "Property type": {
       "Address": [
         "Adresse"
+      ],
+      "Email": [
+        "Adresse e-mail"
       ],
       "Fax": [
         "Fax"

@@ -2835,6 +2835,12 @@
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "至少取消选择 ${ calendarsToFixCount } 个日历"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "至少取消选择 ${ calendarsToFixCount } 个日历或"
+      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -2921,6 +2927,9 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 个日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -3075,6 +3084,9 @@
       "The address might be misspelled": [
         "地址可能拼写不正确"
       ],
+      "The email addresses do not match": [
+        "电子邮件地址不匹配"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
       ],
@@ -3153,6 +3165,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
       ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
+      ],
       "Validation error": [
         "验证失败"
       ],
@@ -3173,6 +3191,9 @@
       ],
       "You have no invoices.": [
         "您目前没有账单。"
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "您已达到日历的最大数量。 某些日历无法导入。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您的地址数已达上限，升级账户后方可再添加地址。"
@@ -3203,6 +3224,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -3234,9 +3258,15 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失败"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "不支持vCard 3.0以下的版本"
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -3660,6 +3690,15 @@
     "file size format": {
       "bytes": [
         "B"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "file size format, long": {
@@ -4309,6 +4348,12 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "上传的 ${ numberOfNonPrivateKeys } 个文件不是有效的私钥，请验证并重试。"
       ],
+      "${ numContact } contacts": [
+        "${ numContact } 个联系人"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } 个联系人群组"
+      ],
       "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
@@ -4609,6 +4654,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "创建 ${ calendarsToBeCreatedCount } 个新日历"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
       ],
@@ -4902,6 +4950,9 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "自动回复内容不能包含图片，故图片已移除"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "导入 ${ calendarCount } / ${ totalCalendarsCount } 个日历"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -7224,6 +7275,17 @@
         "设置已保存"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要添加新日历，请删除现有日历。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "若要添加新日历，请删除另一个日历或将您的 ${ BRAND_NAME } 计划升级到 ${ MAIL_SHORT_APP_NAME } 付费计划。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已达到计划中可用日历的最大数量。"
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "使用礼品码"
@@ -7320,6 +7382,9 @@
       "Almost there": [
         "即将准备就绪"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "正在连接到您的邮件提供商"
       ],
@@ -7342,6 +7407,20 @@
       ],
       "Enable authentication logs": [
         "开启登录日志"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "从 ${ itemsToImportCount } 文件夹中导入所有邮件并将它们标记为"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "从 ${ itemsToImportCount } 标签中导入所有消息并将它们标记为"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "从 ${ selectedItemsToImportCount } 文件夹导入所有来自 ${ itemsToImportCount } 的所有邮件并将它们标记为"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "从 ${ selectedItemsToImportCount } 标签中导入所有来自 ${ itemsToImportCount } 标签的消息并将它们标记为"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7725,6 +7804,9 @@
       "Advanced sharing security": [
         "保障文件分享安全"
       ],
+      "Auto-delete spam and trashed messages": [
+        "自动删除垃圾邮件和垃圾信息"
+      ],
       "Auto-reply": [
         "自动回复"
       ],
@@ -7806,6 +7888,9 @@
       "Router support": [
         "支持路由器部署"
       ],
+      "Schedule messages at any time": [
+        "随时安排邮件"
+      ],
       "Search message content": [
         "搜索邮件全文"
       ],
@@ -7860,11 +7945,25 @@
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
       ],
+      "Up to 3 TB of storage": [
+        "高达 3 TB 的存储空间"
+      ],
       "User credential management": [
         "用户身份验证管理"
       ],
       "User session management": [
         "用户登录管理"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "为您的在线身份创建多个电子邮件地址，例如JohnShopper@${ domain } 账户用于购物，JohnNews@${ domain2 } 账户用于订阅新闻"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "储存空间由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "使用您自己的自定义电子邮件域地址，例如 you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -9036,6 +9135,30 @@
         "不再显示此活动"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 天"
+      ],
+      "${ hours } hours": [
+        "${ hours } 小时"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分钟"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "免费 ${ n } 个月"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } months": [
+        "${ n } 个月"
+      ]
+    },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
         "最高可获 ${ credits } 余额奖励。"
@@ -10181,6 +10304,9 @@
       ],
       "Sign in and grant access": [
         "登录并授予权限"
+      ],
+      "Sign in with 2FA": [
+        "使用 2FA 登录"
       ],
       "Sign out": [
         "退出"
