@@ -119,7 +119,7 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
                         return (
                             <BaseTextField
                                 placeholder={placeholder}
-                                error={touched && fieldError?.data?.totpUri}
+                                error={touched && (error?.fieldName || fieldError?.data?.totpUri)}
                                 field={{
                                     ...field,
                                     value: field.value.data.totpUri,
