@@ -2,15 +2,30 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-
-
 import { Button, CircleLoader, Scroll } from '@proton/atoms';
-import { Alert, ConfirmSignOutModal, Icon, InlineLinkButton, Loader, OnLoginCallbackArguments, useApi, useConfig, useErrorHandler, useLoading, useModals, useNotifications } from '@proton/components';
+import {
+    Alert,
+    ConfirmSignOutModal,
+    Icon,
+    InlineLinkButton,
+    Loader,
+    OnLoginCallbackArguments,
+    useApi,
+    useConfig,
+    useErrorHandler,
+    useLoading,
+    useModals,
+    useNotifications,
+} from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { LocalSessionPersisted, getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    LocalSessionPersisted,
+    getActiveSessions,
+    resumeSession,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -19,8 +34,6 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
-
-
 
 import { getLoginMeta } from '../login/loginPagesJson';
 import { useMetaTags } from '../useMetaTags';
