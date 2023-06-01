@@ -2196,6 +2196,12 @@
       "Unknown error": [
         "Eroare necunoscută"
       ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
@@ -3440,9 +3446,6 @@
       ],
       "Failed": [
         "Eșuat"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Generarea legăturii securizate a eșuat. Reîncercați mai târziu."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "A eșuat deschiderea unei legături securizate. Motivul este: ${ error }"

@@ -44,7 +44,7 @@
         "Ajouter un contact"
       ],
       "Add email": [
-        "Ajouter un e-mail"
+        "Ajouter une adresse e-mail"
       ],
       "Add group": [
         "Ajouter un groupe"
@@ -95,7 +95,7 @@
         "Appliquer"
       ],
       "Archive": [
-        "Archiver"
+        "Déplacer dans le dossier Archives"
       ],
       "As Scheduled": [
         "Comme prévu"
@@ -361,7 +361,7 @@
         "Modifier les informations de connexion"
       ],
       "Email settings": [
-        "Paramètres d'e-mail"
+        "Paramètres du message"
       ],
       "Emoji": [
         "Emoji"
@@ -502,7 +502,7 @@
         "Importer des contacts"
       ],
       "Import emails": [
-        "Importer des e-mails"
+        "Importer des messages"
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
@@ -542,7 +542,7 @@
         "Labelliser"
       ],
       "Label as...": [
-        "Labelliser…"
+        "Labelliser"
       ],
       "label emails as": [
         "labelliser les messages comme"
@@ -674,7 +674,7 @@
         "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer…"
+        "Déplacer"
       ],
       "Need help?": [
         "Besoin d'aide ?"
@@ -1250,6 +1250,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Envoyé à ${ nameToDisplay }"
+      ],
       "5 trackers removed": [
         "5 traqueurs supprimés"
       ],
@@ -3137,7 +3140,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Empty condition": [
         "La condition est vide."
@@ -3414,6 +3417,12 @@
       ],
       "Unknown error.": [
         "Erreur inconnue"
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "Wrong mailbox password": [
         "Le mot de passe de la messagerie n'est pas correct."
@@ -4137,6 +4146,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Transférez automatiquement"
+      ],
+      "Gmail messages to your inbox": [
+        "les messages Gmail vers votre boîte de réception"
+      ],
       "Sign in with Google": [
         "Se connecter avec Google"
       ]
@@ -4494,7 +4509,7 @@
         "${ addressCount } adresses e-mail"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
+        "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
@@ -4772,7 +4787,7 @@
         "Centrer"
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Vérification des contacts : ${ progress } de ${ max }…"
+        "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
       "Clear data": [
         "Effacer les données"
@@ -5335,7 +5350,7 @@
         "Enregistré hier"
       ],
       "Saving draft…": [
-        "Enregistrement du brouillon…"
+        "Enregistrement du brouillon en cours"
       ],
       "Scheduled send of this message will be canceled.": [
         "L'envoi programmé de ce message sera annulé."
@@ -5988,7 +6003,7 @@
         "Aller au dernier"
       ],
       "Label as...": [
-        "Labelliser…"
+        "Labelliser"
       ],
       "Load embedded images": [
         "Charger les images intégrées"
@@ -6027,7 +6042,7 @@
         "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer…"
+        "Déplacer"
       ],
       "Move up": [
         "Déplacer vers le haut"
@@ -6266,10 +6281,10 @@
         "E-mail ou nom d'utilisateur"
       ],
       "Emails": [
-        "E-mails"
+        "Messages"
       ],
       "Emails (all messages)": [
-        "E-mails (tous les messages)"
+        "Messages (tous les messages)"
       ],
       "Emails (last 12 months)": [
         "Messages (12 derniers mois)"
@@ -7280,7 +7295,7 @@
         "Dossiers par défaut"
       ],
       "Move to...": [
-        "Déplacer…"
+        "Déplacer"
       ]
     },
     "Option group label": {
@@ -7392,13 +7407,13 @@
         "Rechercher un nom de groupe"
       ],
       "Search for name or email": [
-        "Rechercher par nom ou par e-mail"
+        "Rechercher par nom ou adresse e-mail"
       ],
       "Search messages": [
         "Rechercher des messages"
       ],
       "Search name, email or group": [
-        "Rechercher un nom, un e-mail ou un groupe"
+        "Rechercher un nom, une adresse e-mail ou un groupe"
       ],
       "Select": [
         "Sélectionner"
@@ -7453,6 +7468,9 @@
     "Property type": {
       "Address": [
         "Adresse"
+      ],
+      "Email": [
+        "Adresse e-mail"
       ],
       "Fax": [
         "Fax"
@@ -8534,7 +8552,7 @@
         "Modifier le groupe de contacts"
       ],
       "Edit email settings": [
-        "Modifier les paramètres d'e-mail"
+        "Modifier les paramètres du message"
       ],
       "Edit filter": [
         "Modifier le filtre"
@@ -8552,7 +8570,7 @@
         "Contenu du message"
       ],
       "Email settings": [
-        "Paramètres d'e-mail"
+        "Paramètres du message"
       ],
       "Enable message content search": [
         "Activer la recherche dans le contenu dans les messages"
@@ -8983,7 +9001,7 @@
         "Cette fonctionnalité est exclusivement disponible pour les utilisateurs ayant un abonnement payant."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Chargez une clé publique pour activer l'envoi d'e-mails chiffrés de bout en bout à destination de cet e-mail."
+        "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter."

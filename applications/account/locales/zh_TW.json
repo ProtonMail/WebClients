@@ -3335,6 +3335,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
+      ],
       "Validation error": [
         "驗證錯誤"
       ],
@@ -5165,6 +5171,9 @@
       ],
       "Balance from your previous subscription": [
         "您先前訂閱的餘額"
+      ],
+      "Based on your time zone": [
+        "根據您的時區"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
@@ -9350,6 +9359,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "新增節日行事曆失敗"
+      ],
       "Calendar added": [
         "行事曆已新增"
       ]

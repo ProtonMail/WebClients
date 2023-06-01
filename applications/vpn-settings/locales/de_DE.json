@@ -1602,6 +1602,12 @@
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
       ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+      ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
       ],
@@ -2020,7 +2026,7 @@
         "Bevorzugte Zahlungsmethode auswählen"
       ],
       "Select your pricing plan": [
-        "Abonnement auswählen"
+        "Wähle dein Abonnement"
       ]
     },
     "Heading in trial plan": {

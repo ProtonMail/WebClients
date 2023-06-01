@@ -1483,7 +1483,7 @@
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
       "Email is not valid": [
-        "L'e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -1601,6 +1601,12 @@
       ],
       "Unknown payment token status": [
         "Le statut du jeton de paiement est inconnu."
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
@@ -2041,7 +2047,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
+        "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
@@ -2140,7 +2146,7 @@
         "Montant inférieur au minimum de (${ amount })."
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Toute méthode d'${ twoFa } sur vote compte sera désactivée."
+        "Toute méthode d'${ twoFa } sur votre compte sera désactivée."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Voulez-vous vraiment désactiver l'authentification à deux facteurs ?"
