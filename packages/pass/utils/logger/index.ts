@@ -2,7 +2,7 @@ import log from 'loglevel';
 
 import type { Callback } from '@proton/pass/types';
 
-log.setLevel('info');
+log.setLevel('debug');
 
 export const logId = (id: string) =>
     id.length > 10 ? `[${id.slice(0, 5)}…${id.slice(id.length - 5, id.length)}]` : `[${id}]`;
