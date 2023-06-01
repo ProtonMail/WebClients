@@ -206,6 +206,10 @@ module.exports = {
             node: {
                 extensions: ['.js', '.ts', '.tsx'],
             },
+            alias: {
+                map: [['proton-mail', './src/app/']],
+                extensions: ['.ts', '.tsx'],
+            },
         },
         react: {
             version: 'detect',
