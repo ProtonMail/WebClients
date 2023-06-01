@@ -1,3 +1,17 @@
+## Release 5.0.11.0 — June 14, 2023
+
+### Improvements
+
+-   Optimize events loading at app startup
+-   Improve sidebar spacing and app switcher design
+-   Support invitations with an empty organiser field in the ICS
+-   Allow importing events with alarm components with invalid duration
+
+### Fixes
+
+-   Refactor logic for updating favicon, which stopped working for Chromium-based browsers
+-   Add RFC-mandatory fields for alarms when exporting calendar
+
 ## Release: 5.0.10 — April 12, 2023
 
 ### New features
@@ -135,7 +149,7 @@ Proton - Privacy by default.
 
 -   Drag and drop an ICS file into calendar view to import it
 -   Select language in which event invites and RSVPs are sent
--   Allow organizer to add participants replying to forwarded invitations directly from Mail
+-   Allow organiser to add participants replying to forwarded invitations directly from Mail
 
 ### Improvements
 
