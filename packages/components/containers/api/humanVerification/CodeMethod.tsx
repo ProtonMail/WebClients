@@ -147,7 +147,7 @@ const CodeMethod = ({
                         <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
                         <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
                     </Text>
-                    <Card bordered={false} rounded={true} className="mb-6 flex flex-gap-0-5">
+                    <Card bordered={false} rounded={true} className="mb-6 flex gap-2">
                         <div className="flex-item-noshrink">
                             <Icon name="info-circle" className="color-primary" />
                         </div>

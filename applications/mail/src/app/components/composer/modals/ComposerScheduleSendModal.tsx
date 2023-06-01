@@ -168,7 +168,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
                 <Href className="underline inline-block" href={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
                     .t`Learn more`}</Href>
             </div>
-            <div className="flex flex-gap-0-5 flex-row flex-nowrap">
+            <div className="flex gap-2 flex-row flex-nowrap">
                 <InputFieldTwo
                     as={DateInputTwo}
                     id={`composer-schedule-date-${uid}`}

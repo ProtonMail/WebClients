@@ -255,7 +255,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 )}
 
-                <div className="flex flex-align-items-center mb-2 lg:mb-0 flex-gap-1">
+                <div className="flex flex-align-items-center mb-2 lg:mb-0 gap-4">
                     {hasSetupOrganization && (
                         <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                             {c('Action').t`Invite user`}

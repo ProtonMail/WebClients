@@ -338,7 +338,7 @@ export const Sandbox = () => {
                         <Label
                             htmlFor={id}
                             key={id}
-                            className="flex flex-nowrap flex-align-items-center flex-gap-1 mb-4"
+                            className="flex flex-nowrap flex-align-items-center gap-4 mb-4"
                         >
                             <Checkbox
                                 id={id}

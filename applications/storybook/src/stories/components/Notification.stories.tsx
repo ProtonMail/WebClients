@@ -87,7 +87,7 @@ export const Basic = () => {
         return (
             <div className="block">
                 <form>
-                    <div className="flex flex-column flex-gap-1 mb-4">
+                    <div className="flex flex-column gap-4 mb-4">
                         <InputFieldTwo
                             name="content"
                             id="content"
