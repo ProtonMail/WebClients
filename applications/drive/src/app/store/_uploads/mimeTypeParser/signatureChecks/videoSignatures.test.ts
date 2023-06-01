@@ -17,24 +17,8 @@ const videoSupported = [
         fixtures: ['fixture.ogv'],
         mimeType: SupportedMimeTypes.ogv,
     },
-    // {
-    //     name: 'mp1s',
-    //     fixtures: ['fixture.mp1s'],
-    //     mimeType: SupportedMimeTypes.mp1s,
-    // },
-    // {
-    //     name: 'mp2p',
-    //     fixtures: ['fixture.mp2p'],
-    //     mimeType: SupportedMimeTypes.mp2p,
-    // },
-    // {
-    //     name: 'qt',
-    //     fixtures: ['fixture.qt'],
-    //     mimeType: SupportedMimeTypes.qt,
-    // },
     {
         name: 'm4v | m4vh | m4vp',
-        // fixtures: ['fixture.m4v', 'fixture2.m4v', 'fixture2.m4vh', 'fixture.m4vp'],
         fixtures: ['fixture.m4v'],
         mimeType: SupportedMimeTypes.m4v,
     },
