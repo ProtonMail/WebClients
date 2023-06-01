@@ -35,9 +35,7 @@ export const getMailAppRoutes = ({
     const hasOrganization = !!organization?.HasKeys;
     const isB2BOrganization = (organization?.MaxMembers || 0) > 6;
     const hasSmtpOrganization = hasSMTPSubmission(organization);
-
     const learnMoreLink = <Href href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>;
-
     return {
         header: MAIL_APP_NAME,
         routes: {
