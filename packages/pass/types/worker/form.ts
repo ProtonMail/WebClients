@@ -22,6 +22,7 @@ export enum FormField {
     USERNAME_HIDDEN = 'username-hidden',
     PASSWORD_CURRENT = 'password',
     PASSWORD_NEW = 'new-password',
+    NOOP = 'noop',
 }
 
 export enum FormEntryStatus {
