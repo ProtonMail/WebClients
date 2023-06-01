@@ -843,7 +843,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "L'e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -877,6 +877,12 @@
       ],
       "Unknown error": [
         "Erreur inconnue"
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ]
     },
     "Error message": {

@@ -3377,6 +3377,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
       ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
       "Validation error": [
         "Памылка праверкі"
       ],
@@ -5321,6 +5327,9 @@
       ],
       "Balance from your previous subscription": [
         "Баланс з вашай папярэдняй падпіскі"
+      ],
+      "Based on your time zone": [
+        "На падставе вашага часавага пояса"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Асноўныя функцыі навігацыі і дзеянні застаюцца даступнымі незалежна ад таго, актыўныя спалучэнні клавіш у наладах або не."
@@ -9665,6 +9674,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Не ўдалося дадаць каляндар свят"
+      ],
       "Calendar added": [
         "Каляндар дададзены"
       ]

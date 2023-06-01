@@ -860,6 +860,9 @@
       "Request timed out": [
         "请求超时"
       ],
+      "The email addresses do not match": [
+        "电子邮件地址不匹配"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
@@ -874,6 +877,12 @@
       ],
       "Unknown error": [
         "未知错误"
+      ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
       ]
     },
     "Error message": {
@@ -1049,6 +1058,9 @@
       ],
       "Request new code": [
         "请求新验证码"
+      ],
+      "Sign in with 2FA": [
+        "使用 2FA 登录"
       ]
     },
     "Validation": {
