@@ -2205,6 +2205,12 @@
       "Unknown error": [
         "Neznámá chyba"
       ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
       ],
@@ -3496,8 +3502,11 @@
       "Failed": [
         "Selhalo"
       ],
-      "Failed to generate a secure link. Try again later.": [
-        "Nepovedlo se vygenerovat bezpečný odkaz. Zkuste to později."
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Nepovedlo se vygenerovat zabezpečený odkaz. Důvod: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Nepovedlo se vygenerovat zabezpečený odkaz. Zkuste to později"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Nepodařilo se otevřít zabezpečený odkaz. Důvod: ${ error }"

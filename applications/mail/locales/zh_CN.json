@@ -92,6 +92,9 @@
       "As Scheduled": [
         "按原定时间"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "每个联系人组最多允许有100个联系人"
+      ],
       "Attach screenshot(s)": [
         "添加截图"
       ],
@@ -466,6 +469,12 @@
       ],
       "I have a question": [
         "我有疑问"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "图片无法在跟踪防护模式下加载"
+      ],
+      "Image will be loaded without a proxy": [
+        "图像载入时不会借助代理服务器"
       ],
       "Images will be loaded without a proxy": [
         "图像载入时不会借助代理服务器"
@@ -3005,8 +3014,14 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } 对于<${ email }>. 您可以为此联系人添加另一个密钥或禁用加密来解决此问题。"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
+      ],
+      "A problem occurred, please try again.": [
+        "出现了问题，请重试。"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -3023,8 +3038,14 @@
       "Calendar limit reached": [
         "日历数量达到上限"
       ],
+      "Cannot export this contact": [
+        "无法导出此联系人"
+      ],
       "Choose a date in the future.": [
         "选择未来的日期。"
+      ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
+        "选择接下来 ${ EXPIRATION_TIME_MAX_DAYS } 天内的日期。"
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
         "请在接下来的 ${ SCHEDULED_MAX_DATE_DAYS } 天内选择一个日期。"
@@ -3052,6 +3073,12 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "至少取消选择 ${ calendarsToFixCount } 个日历"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "至少取消选择 ${ calendarsToFixCount } 个日历或"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -3131,6 +3158,9 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
       ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 个日历合并"
+      ],
       "Message needs to be sent first": [
         "需要先发送邮件"
       ],
@@ -3172,6 +3202,9 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
+      ],
+      "Please activate your search again": [
+        "请再次激活您的搜索"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -3260,6 +3293,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "对不起，${ BRAND_NAME } 无法解密您的邮件。请确认您的密钥是否已全部启用。"
       ],
+      "The email addresses do not match": [
+        "电子邮件地址不匹配"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
       ],
@@ -3286,6 +3322,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "全文搜索出现问题，已改为使用普通搜索。"
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "更新您的本地消息时出现问题，将再次下载它们以重新启用内容搜索"
       ],
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
@@ -3326,17 +3365,29 @@
       "Unknown error.": [
         "未知错误。"
       ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
+      ],
       "Wrong mailbox password": [
         "邮箱密码错误"
       ],
       "You can't send a mail to more than 100 recipients": [
         "收件人不能超过 100 个"
       ],
+      "You can't send vCard files of more than 10 contacts": [
+        "您不能发送超过 10 个联系人的 vCard 文件"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口"
       ],
       "You did not provide a file.": [
         "您尚未选择文件。"
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "您已达到日历的最大数量。 某些日历无法导入。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -3377,6 +3428,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -3408,9 +3462,15 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失败"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "不支持vCard 3.0以下的版本"
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -3665,6 +3725,15 @@
     "file size format": {
       "bytes": [
         "B"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "file size format, long": {
@@ -4261,6 +4330,12 @@
       "${ numberOfTrackers } email trackers blocked": [
         "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
       ],
+      "${ numContact } contacts": [
+        "${ numContact } 个联系人"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } 个联系人群组"
+      ],
       "${ NumMessages } messages in conversation": [
         "会话包含 ${ NumMessages } 封邮件"
       ],
@@ -4423,6 +4498,9 @@
       "Attention required": [
         "需要关注"
       ],
+      "Automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "自动删除已在垃圾箱和垃圾邮件中超过 30 天的邮件。"
+      ],
       "Background color": [
         "背景颜色"
       ],
@@ -4468,8 +4546,17 @@
       "Confirm phishing report": [
         "确认钓鱼报告"
       ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "已分配给群组 ${ contactGroupName } 的联系人"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "未分配给群组 ${ contactGroupName } 的联系人"
+      ],
       "Copied to clipboard": [
         "已复制到剪贴板"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "创建 ${ calendarsToBeCreatedCount } 个新日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -4615,6 +4702,15 @@
       "Expiration time": [
         "邮件有效期"
       ],
+      "Expires in ${ formattedDate }": [
+        "在 ${ formattedDate } 后过期"
+      ],
+      "Expires in ${ minutesDiff } minutes": [
+        "在 ${ minutesDiff } 分钟后过期"
+      ],
+      "Expires in less than ${ hoursDiff } hours": [
+        "不到 ${ hoursDiff } 小时后过期"
+      ],
       "files attached": [
         "个附件"
       ],
@@ -4638,6 +4734,9 @@
       ],
       "From": [
         "发件人"
+      ],
+      "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
+        "有 ${ numAttachments } 个附件，大小为 (${ numAttachmentsSize })"
       ],
       "here": [
         "此处"
@@ -4671,6 +4770,9 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "自动回复内容不能包含图片，故图片已移除"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "导入 ${ calendarCount } / ${ totalCalendarsCount } 个日历"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -4791,6 +4893,9 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "邮件将于明天 ${ formattedTime } 发送"
+      ],
+      "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
+        "在垃圾箱和垃圾邮件中超过 30 天的邮件将被自动删除。"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
@@ -4978,6 +5083,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗时太长？试试${ dropdownButton }或${ toggleOffButton }。"
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "立即使用免费的加密云存储来保护您的文件。"
+      ],
       "Seems like you are all caught up for now": [
         "看来没有要处理的事务了"
       ],
@@ -5110,6 +5218,9 @@
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此操作将下载最新消息，以便可以在本地搜索它们。 清除浏览器数据将禁用此选项。"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
       ],
@@ -5239,17 +5350,29 @@
       "Updating message content search...": [
         "正在更新邮件内容..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "正在更新您的本地消息，本次更新将不再搜索消息内容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
       "Upgrade to add more addresses to your account.": [
         "升级后可向您的账户添加更多地址。"
       ],
+      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
+        "升级以自动删除已在垃圾箱和垃圾邮件中超过 30 天的邮件。"
+      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升级账户即可创建更多文件夹、筛选规则和邮箱地址。"
       ],
+      "Upgrade to level up your privacy.": [
+        "升级以提升您的隐私。"
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "开通付费账户即可通过 @pm.me 地址发送电子邮件。"
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "升级以从您的自定义电子邮件域发送电子邮件。"
       ],
       "Upgrade to send emails to contact groups easily.": [
         "升级后可轻松向联系人群组发送电子邮件。"
@@ -5262,6 +5385,9 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "升级账户不仅可以支持我们的隐私保护事业，还能解锁更多功能。"
+      ],
+      "Upgrade to unlock premium features.": [
+        "升级以解锁高级功能。"
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "升级账户即可通过 Apple Mail、Outlook 或 Thunderbird 使用 ${ MAIL_APP_NAME }。"
@@ -5359,6 +5485,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "无需等待，您即可免费使用 ${ VPN_APP_NAME } 。"
+      ],
       "You cannot reply from the invited address.": [
         "您无法通过受邀地址进行回复。"
       ],
@@ -5412,6 +5541,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "您已达到联系人组中地址的最大数量："
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "您已经达到了联系人组中地址的最大数量。"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "您的 ${ BRAND_NAME } 账户自带 SimpleLogin 服务，一键安装浏览器扩展程序即可开始使用。"
@@ -5729,6 +5864,9 @@
       ],
       "ALL": [
         "且"
+      ],
+      "All contacts": [
+        "所有联系人"
       ],
       "Also archive": [
         "同时存档"
@@ -6250,6 +6388,17 @@
         "行"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要添加新日历，请删除现有日历。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "若要添加新日历，请删除另一个日历或将您的 ${ BRAND_NAME } 计划升级到 ${ MAIL_SHORT_APP_NAME } 付费计划。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已达到计划中可用日历的最大数量。"
+      ]
+    },
     "Link": {
       "All mail": [
         "所有邮件"
@@ -6413,6 +6562,9 @@
       "Almost there": [
         "即将准备就绪"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "正在连接到您的邮件提供商"
       ],
@@ -6427,6 +6579,20 @@
       ],
       "Your import is starting": [
         "正在启动导入"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "从 ${ itemsToImportCount } 文件夹中导入所有邮件并将它们标记为"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "从 ${ itemsToImportCount } 标签中导入所有消息并将它们标记为"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "从 ${ selectedItemsToImportCount } 文件夹导入所有来自 ${ itemsToImportCount } 的所有邮件并将它们标记为"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "从 ${ selectedItemsToImportCount } 标签中导入所有来自 ${ itemsToImportCount } 标签的消息并将它们标记为"
       ]
     },
     "Mailbox": {
@@ -6675,11 +6841,17 @@
       ]
     },
     "new_plans: feature": {
+      "Auto-delete spam and trashed messages": [
+        "自动删除垃圾邮件和垃圾信息"
+      ],
       "Custom email domains": [
         "自有域名"
       ],
       "Hide My Email aliases": [
         "Hide My Email 邮箱别名"
+      ],
+      "Schedule messages at any time": [
+        "随时安排邮件"
       ],
       "Search message content": [
         "搜索邮件全文"
@@ -6689,6 +6861,20 @@
       ],
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
+      ],
+      "Up to 3 TB of storage": [
+        "高达 3 TB 的存储空间"
+      ]
+    },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "为您的在线身份创建多个电子邮件地址，例如JohnShopper@${ domain } 账户用于购物，JohnNews@${ domain2 } 账户用于订阅新闻"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "储存空间由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "使用您自己的自定义电子邮件域地址，例如 you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -7042,6 +7228,11 @@
         "请注意：点击「应用」按钮后网页将重新加载。"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } 天"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "回复已发送"
@@ -7208,6 +7399,30 @@
     "specialoffer: Action": {
       "Don't show this offer again": [
         "不再显示此活动"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 天"
+      ],
+      "${ hours } hours": [
+        "${ hours } 小时"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分钟"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "免费 ${ n } 个月"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } months": [
+        "${ n } 个月"
       ]
     },
     "Spotlight": {
@@ -7588,6 +7803,9 @@
       ]
     },
     "Title": {
+      "${ emailsCount } email addresses": [
+        "${ emailsCount } 个邮箱地址"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } 快捷键"
       ],
@@ -7639,6 +7857,9 @@
       "Block sender": [
         "屏蔽发件人"
       ],
+      "Cannot add more addresses": [
+        "无法添加更多地址"
+      ],
       "Carbon Copy": [
         "副本"
       ],
@@ -7681,8 +7902,14 @@
       "Create folder": [
         "创建文件夹"
       ],
+      "Create folder \"${ search }\"": [
+        "创建文件夹 \"${ search }\""
+      ],
       "Create label": [
         "创建标签"
+      ],
+      "Create label \"${ search }\"": [
+        "创建标签 \"${ search }\""
       ],
       "Create new group": [
         "创建群组"
@@ -7999,6 +8226,9 @@
       "Select contact group": [
         "选择联系人群组"
       ],
+      "Self-destruct message": [
+        "自动销毁邮件"
+      ],
       "Send email": [
         "发送邮件"
       ],
@@ -8026,11 +8256,17 @@
       "Sending original message": [
         "正在发送原始邮件"
       ],
+      "Set your own schedule": [
+        "设定您自己的时间表"
+      ],
       "Settings": [
         "设置"
       ],
       "Sign in and grant access": [
         "登录并授予权限"
+      ],
+      "Sign in with 2FA": [
+        "使用 2FA 登录"
       ],
       "Sign out": [
         "退出"
@@ -8067,6 +8303,9 @@
       ],
       "Trust public key?": [
         "信任公钥?"
+      ],
+      "Unlock contacts groups": [
+        "解锁联系人组"
       ],
       "Unsubscribe": [
         "退订"
@@ -8172,6 +8411,12 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
+      ],
+      "The image could not be loaded": [
+        "无法加载图像"
+      ],
+      "The image could not be loaded using proxy": [
+        "无法使用代理加载图像"
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"

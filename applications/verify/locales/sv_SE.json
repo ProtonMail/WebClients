@@ -877,6 +877,12 @@
       ],
       "Unknown error": [
         "Okänt fel"
+      ],
+      "Username must begin with a letter or digit": [
+        "Användarnamn måste börja med en bokstav eller siffra"
+      ],
+      "Username must end with a letter or digit": [
+        "Användarnamn måste sluta med en bokstav eller siffra"
       ]
     },
     "Error message": {
@@ -990,10 +996,10 @@
         "Vill du få en ny verifieringskod?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ditt ${ BRAND_NAME }-konto är för närvarande pausat. Om 28 dagar så kommer e-post inte längre levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer kunna inte ladda upp nya filer. Betala dina obetalda fakturor för att kunna fortsätta använda tjänsten normalt."
+        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Ditt ${ BRAND_NAME }-konto är för närvarande pausat. E-post levereras inte längre till din inkorg. Dina delade länkar från Drive är inte längre aktiva och du kan inte ladda upp nya filer. Betala dina obetalda fakturor för att kunna fortsätta använda ditt konto."
+        "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."

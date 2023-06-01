@@ -2178,6 +2178,12 @@
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
+      "Username must begin with a letter or digit": [
+        "Nama pengguna harus dimulai dengan huruf atau angka"
+      ],
+      "Username must end with a letter or digit": [
+        "Nama pengguna harus diakhiri dengan huruf atau angka"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
@@ -3330,9 +3336,6 @@
       ],
       "Failed": [
         "Gagal"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Gagal membuat tautan aman. Coba lagi nanti."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
