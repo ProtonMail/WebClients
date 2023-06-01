@@ -141,7 +141,7 @@ export const Variants = () => {
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
                             <TableCell key={color}>
-                                <div className="flex flex-gap-0-5 flex-justify-center">
+                                <div className="flex gap-2 flex-justify-center">
                                     <Button shape={shape} color={color}>
                                         Lorem
                                     </Button>

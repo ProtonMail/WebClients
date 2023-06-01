@@ -13,7 +13,7 @@ export default {
 
 export const Lists = () => (
     <div className="w49 flex-align-self-center">
-        <div className="flex flex-gap-2">
+        <div className="flex gap-7">
             <div>
                 <ul className="m-0">
                     <li>Normal</li>
