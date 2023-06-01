@@ -106,5 +106,11 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
     ],
     [FormType.MFA]: [] /* TODO */,
-    [FormType.NOOP]: [{ type: FormField.EMAIL, injection: FieldInjectionRule.ALWAYS }],
+    [FormType.NOOP]: [
+        {
+            type: FormField.EMAIL,
+            action: DropdownAction.AUTOSUGGEST_ALIAS,
+            injection: FieldInjectionRule.ALWAYS,
+        },
+    ],
 };
