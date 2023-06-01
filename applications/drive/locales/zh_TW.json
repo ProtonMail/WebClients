@@ -2178,6 +2178,12 @@
       "Unknown error": [
         "未知錯誤"
       ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
       ],
@@ -3331,7 +3337,10 @@
       "Failed": [
         "失敗"
       ],
-      "Failed to generate a secure link. Try again later.": [
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "產生安全連結失敗。原因：${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
         "無法產生安全連結，請稍後再試。"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [

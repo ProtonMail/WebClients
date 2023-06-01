@@ -2732,8 +2732,14 @@
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "K odstranění zápatí ${ MAIL_APP_NAME } navyšte tarif a odemkněte ještě více prémiových funkcí."
+      ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Navýšením tarifu odemknete kratší e-mailové adresy a další prémiové funkce."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Navýšením tarifu odemknete neomezený počet filtrů, které za vás třídí doručenou poštu a další prémiové funkce."
@@ -3361,6 +3367,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Nahrané soubory nejsou platnými soukromými klíči. Prosím ověřte a zkuste to znovu."
+      ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
       "Validation error": [
         "Chyba ověření"
@@ -4989,6 +5001,9 @@
         "${ numGroups } skupin kontaktů",
         "${ numGroups } skupin kontaktů"
       ],
+      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
+        "${ PROTON_SENTINEL_NAME } je program na ochranu účtu vyvinutý v ${ BRAND_NAME } pro uživatele, kteří vyžadují maximální zabezpečení."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
         "${ providerFoldersNumLocalized } složky nalezeny",
@@ -5300,6 +5315,9 @@
       ],
       "Balance from your previous subscription": [
         "Zůstatek z vašeho předchozího předplatného"
+      ],
+      "Based on your time zone": [
+        "Na základě vašeho časového pásma"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
@@ -6261,6 +6279,9 @@
       "support team": [
         "tým podpory"
       ],
+      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
+        "Podezřelým událostem bude čelit několik vrstev ochrany, které pomohou zabránit útočníkům ve zneužití vašeho účtu."
+      ],
       "Swiss based": [
         "Vytvořeno ve Švýcarsku"
       ],
@@ -6528,6 +6549,12 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
+      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Přejděte na placený účet a povolte ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. To znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
+      ],
       "Upgrade to unlock": [
         "Navyšte pro odemknutí"
       ],
@@ -6551,6 +6578,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Vybranou e-mailovou adresu použijte jako uživatelské jméno SMTP v externí službě a vygenerovaný token jako heslo SMTP."
+      ],
+      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Uživatelům s citlivými daty a komunikací, jako jsou novináři nebo vedoucí pracovníci, doporučujeme povolit ${ PROTON_SENTINEL_NAME }."
       ],
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
@@ -6803,6 +6833,12 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NEBUDETE moci dešifrovat zprávy, soubory a další data zašifrovaná tímto klíčem."
+      ],
+      "You will receive priority support from specialists trained in account protection. For any account security concerns, please contact us ${ hereLink }.": [
+        "Přednostní podporu vám poskytnou specialisté vyškolení v oblasti ochrany účtů. V případě jakýchkoli obav o zabezpečení účtu nás prosím kontaktujte zde ${ hereLink }."
+      ],
+      "You will see more details in the Security logs below for important events such as sign in attempts.": [
+        "Podrobnější informace o důležitých událostech, např. o pokusech o přihlášení, najdete v níže uvedených záznamech zabezpečení."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -9152,6 +9188,9 @@
       "Up to 3 TB of storage": [
         "Až 3 TB úložného prostoru"
       ],
+      "Up to 5 forwarding mailboxes": [
+        "Až 5 přeposílání e-mailových schránek"
+      ],
       "User credential management": [
         "Správa uživatelů"
       ],
@@ -9620,6 +9659,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Přidání kalendáře svátků se nezdařilo"
+      ],
       "Calendar added": [
         "Kalendář přidán"
       ]

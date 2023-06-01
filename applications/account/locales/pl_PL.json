@@ -3371,6 +3371,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Przesłane pliki nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
       ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
       "Validation error": [
         "Błąd weryfikacji"
       ],
@@ -5315,6 +5321,9 @@
       ],
       "Balance from your previous subscription": [
         "Środki z poprzedniej subskrypcji"
+      ],
+      "Based on your time zone": [
+        "Na podstawie strefy czasowej"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Skróty klawiszowe podstawowej nawigacji i akcji są zawsze włączone."
@@ -9659,6 +9668,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Dodawanie kalendarza świąt nie powiodło się"
+      ],
       "Calendar added": [
         "Kalendarz został dodany"
       ]

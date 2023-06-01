@@ -275,7 +275,7 @@
         "Λάβετε σύνδεσμο"
       ],
       "Get started": [
-        "Εκκίνηση"
+        "Ας ξεκινήσουμε"
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
@@ -306,6 +306,12 @@
       ],
       "I have a question": [
         "Έχω μια ερώτηση"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
+      ],
+      "Image will be loaded without a proxy": [
+        "Η εικόνα θα φορτωθεί χωρίς διαμεσολαβητή"
       ],
       "Import": [
         "Εισαγωγή"
@@ -512,7 +518,7 @@
         "Τοπική αναζήτηση"
       ],
       "See plan features": [
-        "Προβολή χαρακτηριστικών προγράμματος"
+        "Προβολή δυνατοτήτων προγράμματος"
       ],
       "Select all": [
         "Επιλογή όλων"
@@ -548,7 +554,7 @@
         "Εμφάνιση προεπισκόπησης"
       ],
       "Show side panel": [
-        "Εμφάνιση πλαϊνού πλαισίου\n*.*, add translation *.*"
+        "Εμφάνιση πλαϊνού πλαισίου"
       ],
       "Sign in": [
         "Είσοδος"
@@ -572,7 +578,7 @@
         "Έναρξη ανάκτησης"
       ],
       "Start setup": [
-        "Ρύθμιση εκκίνησης"
+        "Εκκίνησης ρύθμισης"
       ],
       "Stay": [
         "Παραμονή"
@@ -593,7 +599,7 @@
         "Θέμα"
       ],
       "Toggle Calendar app": [
-        "Εναλλαγή εφαρμογής Ημερολόγιο\n*.*, add translation *.*"
+        "Εναλλαγή εφαρμογής Ημερολόγιο"
       ],
       "Toggle Contact app": [
         "Εναλλαγή στο πρόγραμμα Επαφών"
@@ -2091,6 +2097,12 @@
       "Unknown error": [
         "Άγνωστο σφάλμα"
       ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
@@ -2562,7 +2574,7 @@
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
-        "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+        "${ totalImported }/${ totalToImport } γεγονότα κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
@@ -2603,8 +2615,8 @@
         "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλά συμβάντα χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για το συμβάν και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλ. ταχυδρομείου."
       ],
       "This file contains an event invitation:": [
-        "Αυτό το αρχείο περιέχει μια πρόσκληση σε εκδήλωση:",
-        "Αυτό το αρχείο περιέχει προσκλήσεις σε εκδηλώσεις:"
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε γεγονός:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε γεγονότα:"
       ],
       "This file contains an invitation response:": [
         "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
@@ -2777,8 +2789,8 @@
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } από ${ totalEvents } διοργάνωση δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
-        "${ totalEventsDiscarded } από ${ totalEvents } διοργανώσεις δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονός δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
@@ -3137,9 +3149,6 @@
       ],
       "Failed": [
         "Απέτυχε"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Αποτυχία παραγωγής ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
@@ -4894,6 +4903,15 @@
       "2 years": [
         "2 χρόνια"
       ],
+      "Billed at ${ amount } for 15 months": [
+        "Χρεωμένο στα ${ amount } για 15 μήνες"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Χρεωμένο στα ${ amount } για 24 μήνες"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Χρεωμένο στα ${ amount } για 30 μήνες"
+      ],
       "for ${ n } month": [
         "για ${ n } μήνα",
         "για ${ n } μήνες"
@@ -4903,6 +4921,11 @@
       ],
       "Save ${ discount }%": [
         "Εξοικονομήστε ${ discount }%"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Προσφορά Black Friday"
       ]
     },
     "Spotlight": {
@@ -5082,6 +5105,10 @@
     "Title": {
       "# of downloads": [
         "# λήψεων"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } διεύθυνση email",
+        "${ emailsCount } διευθύνσεις email"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } αποτυχημένη λήψη",
@@ -5437,6 +5464,9 @@
       ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
+      "Sign in with 2FA": [
+        "Συνδεθείτε με 2FA"
       ],
       "Sign out": [
         "Αποσύνδεση"
