@@ -1,4 +1,5 @@
 import { browserLocalStorage } from '@proton/pass/extension/storage';
+import browser from '@proton/pass/globals/browser';
 import { selectCanLockSession } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
 import {
@@ -13,6 +14,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
 import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
 import identity from '@proton/utils/identity';
+import noop from '@proton/utils/noop';
 
 import { INITIAL_ONBOARDING_STATE } from '../../shared/constants';
 import WorkerMessageBroker from '../channel';
@@ -112,7 +114,7 @@ export const createOnboardingService = () => {
     /* Define extra rules in the `ONBOARDING_RULES` constant :
      * we will resolve the first message that matches the rule's
      * `when` condition */
-    const getMessage = () =>
+    const getOnboardingMessage = () =>
         ONBOARDING_RULES.find(({ message, when }) =>
             when?.(
                 ctx.state.acknowledged.find((ack) => message === ack.message),
@@ -123,8 +125,27 @@ export const createOnboardingService = () => {
     /* hydrate the onboarding state value from the storage
      * on service creation. This will noop on first install */
     void browserLocalStorage.getItem('onboarding').then((data) => data && setState(JSON.parse(data)));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, () => ({ message: getMessage() }));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, () => ({
+        message: getOnboardingMessage(),
+    }));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_ACK, withPayloadLens('message', acknowledge));
+
+    /* when reaching `account.proton.me/auth-ext` we want to
+     * redirect the user to the welcome page iif user has logged in.
+     * we check the `authStore` because the `ctx.state.loggedIn` will
+     * not be `true` until the worker is actually `READY` (booting
+     * sequence finished) */
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTH_EXT,
+        withContext((ctx, _, { tab }) => {
+            if (ctx.service.auth.authStore.hasSession() && tab?.id) {
+                const welcomePage = browser.runtime.getURL('/onboarding.html#/welcome');
+                browser.tabs.update(tab.id, { url: welcomePage }).catch(noop);
+            }
+
+            return true;
+        })
+    );
 
     return { reset, onInstall, onUpdate };
 };
