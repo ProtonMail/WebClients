@@ -14,6 +14,11 @@ export const selectAllForms = () => {
     return Array.from(candidates);
 };
 
+export const hasUnprocessedForms = () => {
+    const selector = `${formOfInterestSelector}:not([${PROCESSED_FORM_ATTR}])`;
+    return document.querySelectorAll<HTMLFormElement>(selector).length > 0;
+};
+
 /* dangling fields are fields that match our `fieldOfInterestSelector`
  * but have either not been processed or do not belong to a currently
  * tracked form */
