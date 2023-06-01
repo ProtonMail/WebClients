@@ -5,7 +5,6 @@ import { createListenerStore } from '@proton/pass/utils/listener';
 import { createAutofill } from '../../../shared/form';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle } from '../../types';
-import { setFieldProcessable } from '../../utils/nodes';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions = {
@@ -93,8 +92,10 @@ export const createFieldHandles = ({
          * properties on the field element itself */
         focus(focusData) {
             (field.element as any).focusData = focusData;
+            const isFocusedField = document.activeElement === field.element;
+            field.element.focus();
 
-            if (document.activeElement === field.element) {
+            if (isFocusedField) {
                 const focusEvent = new FocusEvent('focus', {
                     bubbles: true,
                     cancelable: true,
@@ -103,8 +104,6 @@ export const createFieldHandles = ({
 
                 return field.element.dispatchEvent(focusEvent);
             }
-
-            field.element.focus();
         },
 
         autofill: createAutofill(element),
@@ -129,7 +128,6 @@ export const createFieldHandles = ({
             field.tracked = false;
             field.detachIcon();
             listeners.removeAll();
-            setFieldProcessable(element);
         },
     };
 
