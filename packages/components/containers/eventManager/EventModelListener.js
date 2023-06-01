@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { ContactEmailsModel, ContactsModel, DomainsModel, UserModel } from '@proton/shared/lib/models';
+import {
+    ContactEmailsModel,
+    ContactsModel,
+    DomainsModel,
+    HolidaysCalendarsModel,
+    UserModel,
+    UserSettingsModel,
+} from '@proton/shared/lib/models';
 import { AddressesModel } from '@proton/shared/lib/models/addressesModel';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { MembersModel } from '@proton/shared/lib/models/membersModel';
@@ -29,6 +36,21 @@ const EventModelListener = ({ models }) => {
         }, {});
 
         return subscribe((data) => {
+            /**
+             * Before updating model values
+             */
+            if (data[UserSettingsModel.key]) {
+                const oldUserSettingsRecord = cache.get(UserSettingsModel.key);
+                if (oldUserSettingsRecord?.value.Locale !== data[UserSettingsModel.key].Locale) {
+                    // The directory of holidays calendars is fetched translated from back-end, so when the app language
+                    // is changed we need to clear the cache so that next time they're requested we fetch them in the new language
+                    cache.delete(HolidaysCalendarsModel.key);
+                }
+            }
+
+            /**
+             * Update model values
+             */
             for (const key of Object.keys(data)) {
                 const model = modelsMap[key];
                 if (!model) {
@@ -45,6 +67,9 @@ const EventModelListener = ({ models }) => {
                 }
             }
 
+            /**
+             * After updating model values
+             */
             if (hasBit(data.Refresh, EVENT_ERRORS.CONTACTS)) {
                 cache.delete(ContactsModel.key);
                 cache.delete(ContactEmailsModel.key);
@@ -71,7 +96,7 @@ const EventModelListener = ({ models }) => {
                 cache.delete(ADDRESSES_KEYS_CACHE);
             }
 
-            // The API some times does not send the user model when used space changes...
+            // The API sometimes does not send the user model when used space changes...
             if (data.UsedSpace !== undefined) {
                 const oldUserRecord = cache.get(UserModel.key);
                 cache.set(UserModel.key, {
