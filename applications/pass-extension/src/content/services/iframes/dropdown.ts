@@ -203,13 +203,8 @@ export const createDropdown = (): InjectedDropdown => {
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOSUGGEST_ALIAS, ({ payload }) => {
-        const form = fieldRef.current?.getFormHandle();
         const { aliasEmail } = payload;
-
-        if (form && form.formType === FormType.REGISTER) {
-            fieldRef.current?.autofill(aliasEmail);
-        }
-
+        fieldRef.current?.autofill(aliasEmail);
         iframe.close();
         fieldRef.current?.focus({ preventDefault: true });
     });

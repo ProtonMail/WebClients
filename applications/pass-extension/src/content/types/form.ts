@@ -3,14 +3,12 @@ import type { FormField, FormType, MaybeNull } from '@proton/pass/types';
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 
+export type DetectedForm = { formType: FormType; form: HTMLElement; fields: DetectedField[] };
 export type DetectedField = { fieldType: FormField; field: HTMLInputElement };
-export type FormFields = DetectedField[];
-
 export interface FormHandle {
     id: string;
     formType: FormType;
     element: HTMLElement;
-    props: { injections: { zIndex: number } };
     fields: Map<HTMLInputElement, FieldHandle>;
     tracker?: FormTracker;
     detachField: (field: HTMLInputElement) => void;
@@ -32,11 +30,11 @@ export interface FieldHandle {
     value: string;
     tracked: boolean;
     zIndex: number;
-    getFormHandle: () => MaybeNull<FormHandle>;
+    getFormHandle: () => FormHandle;
     getBoxElement: () => HTMLElement;
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;
-    autofill: (value: string) => HTMLInputElement;
+    autofill: (value: string) => void;
     focus: (options?: { preventDefault?: boolean }) => void;
     attachIcon: () => FieldIconHandle;
     detachIcon: () => void;
