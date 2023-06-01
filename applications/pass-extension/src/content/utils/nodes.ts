@@ -1,4 +1,4 @@
-import { fathom, fieldOfInterestSelector, formOfInterestSelector } from '@proton/pass/fathom';
+import { fieldOfInterestSelector, formOfInterestSelector, isUserEditableField } from '@proton/pass/fathom';
 import type { FormField, FormType } from '@proton/pass/types';
 
 import { PROCESSED_FIELD_ATTR, PROCESSED_FORM_ATTR } from '../constants';
@@ -14,6 +14,9 @@ export const selectAllForms = () => {
     return Array.from(candidates);
 };
 
+/* dangling fields are fields that match our `fieldOfInterestSelector`
+ * but have either not been processed or do not belong to a currently
+ * tracked form */
 export const selectDanglingFields = () => {
     const selector = `:not([${PROCESSED_FIELD_ATTR}]):not([${PROCESSED_FORM_ATTR}] input)`;
     const candidates = document.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector);
@@ -32,5 +35,5 @@ export const setFieldProcessable = (el: HTMLElement): void => el.removeAttribute
 export const fieldProcessed = (el: HTMLElement): boolean => el.getAttribute(PROCESSED_FIELD_ATTR) !== null;
 export const formProcessed = (el: HTMLElement): boolean => el.getAttribute(PROCESSED_FORM_ATTR) !== null;
 
-export const fieldTrackable = (el: HTMLInputElement) => !el.disabled && fathom.utils.isVisible(el);
+export const fieldTrackable = isUserEditableField;
 export const fieldProcessable = (el: HTMLInputElement): boolean => !fieldProcessed(el) && fieldTrackable(el);

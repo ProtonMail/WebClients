@@ -1,6 +1,6 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { FormField, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { FormField, FormType, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -41,7 +41,7 @@ const withAction = (action: DropdownAction, settings: ProxiedSettings): MaybeNul
     canProcessAction(action, settings) ? action : null;
 
 export const createFormTracker = (form: FormHandle): FormTracker => {
-    logger.debug(`[FormTracker]: Tracking form [${form.formType}:${form.id}]`);
+    logger.debug(`[FormTracker] Tracking form [${form.formType}:${form.id}]`);
 
     const listeners = createListenerStore();
     const state: FormTrackerState = { isSubmitting: false };
@@ -188,8 +188,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         subtree: true,
     });
 
-    listeners.addListener(form.element, 'submit', onSubmitHandler);
     listeners.addResizeObserver(form.element, debounce(onFormResize, 50, { leading: true }));
+
+    if (form.formType !== FormType.NOOP) listeners.addListener(form.element, 'submit', onSubmitHandler);
 
     return { detach, reconciliate };
 };
