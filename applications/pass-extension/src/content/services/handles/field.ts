@@ -3,9 +3,9 @@ import { findBoundingInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
 import { createAutofill } from '../../../shared/form';
-import { PROCESSED_ATTR } from '../../constants';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle } from '../../types';
+import { setFieldProcessable } from '../../utils/nodes';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions = {
@@ -13,8 +13,7 @@ type CreateFieldHandlesOptions = {
     formType: FormType;
     fieldType: FormField;
     zIndex: number;
-    /* dangling fields do not have a tracked form */
-    getFormHandle?: () => FormHandle;
+    getFormHandle: () => FormHandle;
 };
 
 /* on input focus : close the dropdown only if the current target
@@ -82,7 +81,7 @@ export const createFieldHandles = ({
         value: element.value,
         tracked: false,
         zIndex,
-        getFormHandle: () => getFormHandle?.() ?? null,
+        getFormHandle,
         getBoxElement: () => field.boxElement,
         setValue: (value) => (field.value = value),
         setAction: (action) => (field.action = action),
@@ -130,7 +129,7 @@ export const createFieldHandles = ({
             field.tracked = false;
             field.detachIcon();
             listeners.removeAll();
-            element.removeAttribute(PROCESSED_ATTR);
+            setFieldProcessable(element);
         },
     };
 

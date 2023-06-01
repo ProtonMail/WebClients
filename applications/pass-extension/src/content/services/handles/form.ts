@@ -1,44 +1,36 @@
-import { editableFieldSelector } from '@proton/pass/fathom';
-import type { FormType } from '@proton/pass/types';
+import { FormField } from '@proton/pass/types';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string';
 
-import type { DetectedField, FormHandle } from '../../types';
-import { elementProcessable, setElementProcessable, setElementProcessed } from '../../utils/flags';
+import type { DetectedField, DetectedForm, FormHandle } from '../../types';
+import { setFieldProcessable } from '../../utils/nodes';
 import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
 
-export type CreateFormHandlesOptions = {
-    formType: FormType;
-    form: HTMLFormElement;
-    fields: DetectedField[];
-};
-
 export type FormHandlesProps = { zIndex: number };
 
-export const createFormHandles = (options: CreateFormHandlesOptions): FormHandle => {
+export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const zIndex = getMaxZIndex(form) + 1;
-
-    setElementProcessed(form);
 
     const formHandle: FormHandle = {
         id: uniqueId(),
         element: form,
         formType: formType,
-        props: { injections: { zIndex } },
         fields: new Map(
-            detectedFields.map(({ fieldType, field }) => [
-                field,
-                createFieldHandles({
-                    element: field,
-                    formType,
-                    fieldType,
-                    zIndex,
-                    getFormHandle: () => formHandle,
-                }),
-            ])
+            detectedFields
+                .filter(({ fieldType }) => fieldType !== FormField.NOOP)
+                .map(({ fieldType, field }) => [
+                    field,
+                    createFieldHandles({
+                        element: field,
+                        formType,
+                        fieldType,
+                        zIndex,
+                        getFormHandle: () => formHandle,
+                    }),
+                ])
         ),
         getFieldsFor: (type, predicate) => {
             const fields = Array.from(formHandle.fields.values());
@@ -58,12 +50,6 @@ export const createFormHandles = (options: CreateFormHandlesOptions): FormHandle
         shouldRemove: () => !document.body.contains(form),
 
         reconciliate: (fields: DetectedField[]) => {
-            /* flag each visible & editable fields as processed to
-             * avoid re-triggering the detection unnecessarily */
-            Array.from(form.querySelectorAll<HTMLInputElement>(editableFieldSelector))
-                .filter(elementProcessable)
-                .forEach(setElementProcessed);
-
             /* detach removed fields */
             formHandle.getFields().forEach((field) => {
                 if (!form.contains(field.element)) formHandle.detachField(field.element);
@@ -97,8 +83,8 @@ export const createFormHandles = (options: CreateFormHandlesOptions): FormHandle
 
         detach() {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
-            setElementProcessable(form);
-            Array.from(form.querySelectorAll('input')).forEach(setElementProcessable);
+            setFieldProcessable(form);
+            Array.from(form.querySelectorAll('input')).forEach(setFieldProcessable);
             formHandle.tracker?.detach();
         },
     };

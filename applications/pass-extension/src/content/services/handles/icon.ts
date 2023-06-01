@@ -42,11 +42,13 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     };
 
     const reposition = debounce(
-        () =>
-            (repositionRequest = requestAnimationFrame(() => {
+        () => {
+            cancelAnimationFrame(repositionRequest);
+            repositionRequest = requestAnimationFrame(() => {
                 cleanupInjectionStyles({ input, wrapper });
                 applyInjectionStyles({ input, wrapper, inputBox: field.getBoxElement(), icon });
-            })),
+            });
+        },
         250,
         { leading: true }
     );
@@ -80,9 +82,13 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     });
 
     listeners.addListener(icon, 'mousedown', onClick);
+
+    /* repositioning the icon can happen either :
+     * - on window resize
+     * - on form resize (handled in `FormTracker`)
+     * - on new elements added to the field box (ie: icons) */
     listeners.addListener(window, 'resize', reposition);
-    listeners.addResizeObserver(field.element, reposition);
-    listeners.addListener(field.element, 'transitionend', reposition);
+    listeners.addObserver(field.boxElement, reposition, { childList: true });
 
     return { element: icon, setStatus, setCount, detach, reposition };
 };

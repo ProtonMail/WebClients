@@ -7,8 +7,9 @@ import debounce from '@proton/utils/debounce';
 
 import { isSubmissionCommitted } from '../../../shared/form';
 import { withContext } from '../../context/context';
-import type { FieldHandle, FormHandle } from '../../types';
+import type { FormHandle } from '../../types';
 import { NotificationAction } from '../../types';
+import { setFormProcessed } from '../../utils/nodes';
 import { createFormHandles } from '../handles/form';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
@@ -22,8 +23,6 @@ export type FormManagerContext = {
     detectionRequest: number;
     /* tracked forms have been detected */
     trackedForms: Map<HTMLElement, FormHandle>;
-    /* tracked dangling fields */
-    trackedFields: Map<HTMLInputElement, FieldHandle>;
 };
 
 export const createFormManager = (options: FormManagerOptions) => {
@@ -32,7 +31,6 @@ export const createFormManager = (options: FormManagerOptions) => {
         busy: false,
         detectionRequest: -1,
         trackedForms: new Map(),
-        trackedFields: new Map(),
     };
 
     const listeners = createListenerStore();
@@ -120,35 +118,68 @@ export const createFormManager = (options: FormManagerOptions) => {
      * - if a stale form has been detected: unsubscribe
      * - on each detected form: recycle/create form handle and reconciliate
      *   its fields */
-    const detect = withContext<(reason: string) => Promise<any>>(async ({ service: { detector } }, reason: string) => {
-        if (ctx.busy || !ctx.active) return;
-        ctx.busy = true;
-        garbagecollect();
+    const detect = debounce(
+        withContext<(reason: string) => Promise<any>>(async ({ service: { detector } }, reason: string) => {
+            if (ctx.busy || !ctx.active) return;
+            ctx.busy = true;
+            garbagecollect();
 
-        if (await detector.shouldRunDetection()) {
-            return (ctx.detectionRequest = requestAnimationFrame(() => {
-                if (ctx.active) {
-                    logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
-                    const { forms } = detector.runDetection();
+            if (await detector.shouldRunDetection()) {
+                cancelAnimationFrame(ctx.detectionRequest);
+                return (ctx.detectionRequest = requestAnimationFrame(() => {
+                    if (ctx.active) {
+                        logger.info(`[FormTracker::Detector]: Running detection for "${reason}"`);
+                        const forms = detector.runDetection();
 
-                    forms.forEach((options) => {
-                        const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
-                        ctx.trackedForms.set(options.form, formHandle);
-                        formHandle.reconciliate(options.fields);
-                        formHandle.attach();
-                    });
+                        forms.forEach((options) => {
+                            setFormProcessed(options.form, options.formType);
+                            const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
+                            ctx.trackedForms.set(options.form, formHandle);
+                            formHandle.reconciliate(options.fields);
+                            formHandle.attach();
+                        });
 
-                    options.onDetection(getTrackedForms());
-                    void reconciliate();
-                    ctx.busy = false;
-                }
-            }));
+                        options.onDetection(getTrackedForms());
+                        void reconciliate();
+                        ctx.busy = false;
+                    }
+                }));
+            }
+
+            return (ctx.busy = false);
+        }),
+        250,
+        { leading: true }
+    );
+
+    /* As we're listening for mutations on the whole DOM tree : only process
+     * the mutations of interests : new or deleted input fields or mutation
+     * changes in target elements containing input fields. This heuristic should
+     * be fine-tuned to avoid missing-out on mutations of interest  */
+    const onMutation = (mutations: MutationRecord[]) => {
+        const triggerFormChange = mutations.some((mutation) => {
+            const newNodes = Array.from(mutation.addedNodes);
+            const deletedNodes = Array.from(mutation.removedNodes);
+            const target = mutation.target as HTMLElement;
+
+            return (
+                newNodes.some((node) => node instanceof HTMLInputElement) ||
+                deletedNodes.some((node) => node instanceof HTMLInputElement) ||
+                target.querySelector('input') !== null
+            );
+        });
+
+        if (triggerFormChange) void detect('DomMutation');
+    };
+
+    /* When watching transitions on the `document.body` we are only interested
+     * in untracked form elements being transitioned. If a form is tracked, we
+     * rely on its internal form tracker to watch for changes */
+    const onTransition = (event: Event) => {
+        if (event.target instanceof HTMLFormElement && !ctx.trackedForms.has(event.target)) {
+            requestAnimationFrame(() => setTimeout(() => detect('FormTransition'), 1000));
         }
-
-        return (ctx.busy = false);
-    });
-
-    const onFormsChange = debounce(() => detect('DOMChange'), 250, { leading: true });
+    };
 
     /* the mutation observer in this call will only watch for changes
      * on the body subtree - this will not catch attribute changes on
@@ -158,9 +189,9 @@ export const createFormManager = (options: FormManagerOptions) => {
     const observe = () => {
         if (!ctx.active) {
             ctx.active = true;
-            listeners.addObserver(document.body, onFormsChange, { childList: true, subtree: true });
-            listeners.addListener(document, 'animationend', onFormsChange);
-            listeners.addListener(document, 'transitionend', onFormsChange);
+            listeners.addObserver(document.body, onMutation, { childList: true, subtree: true });
+            listeners.addListener(document, 'animationend', onTransition);
+            listeners.addListener(document, 'transitionend', onTransition);
         }
     };
 
@@ -169,17 +200,23 @@ export const createFormManager = (options: FormManagerOptions) => {
         ctx.busy = false;
 
         cancelAnimationFrame(ctx.detectionRequest);
-        onFormsChange.cancel();
+        detect.cancel();
         listeners.removeAll();
 
         ctx.trackedForms.forEach((form) => detachTrackedForm(form.element));
-        ctx.trackedForms = new Map();
-        ctx.trackedFields = new Map();
+        ctx.trackedForms.clear();
     };
 
     const sync = () => ctx.trackedForms.forEach((form) => form.tracker?.reconciliate());
 
-    return { getTrackedForms, observe, detect, sync, destroy, reconciliate };
+    return {
+        getTrackedForms,
+        observe,
+        detect,
+        sync,
+        destroy,
+        reconciliate,
+    };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;

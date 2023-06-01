@@ -1,20 +1,23 @@
-import { type FNode, editableFieldSelector, isFormOfInterest, rulesetMaker } from '@proton/pass/fathom';
+import { type FNode, fieldOfInterestSelector, isFormOfInterest, rulesetMaker } from '@proton/pass/fathom';
 import { FormField, FormType } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 
-import { PROCESSED_ATTR } from '../../constants';
-import type { CreateFormHandlesOptions } from '../../services/handles/form';
-import type { DetectedField } from '../../types';
-import { elementProcessable, elementProcessed, elementTrackable, setElementProcessed } from '../../utils/flags';
+import type { DetectedField, DetectedForm } from '../../types';
+import {
+    fieldProcessable,
+    fieldTrackable,
+    formProcessed,
+    selectAllForms,
+    selectDanglingFields,
+    setFieldProcessed,
+    setFormProcessed,
+} from '../../utils/nodes';
 
 const ruleset = rulesetMaker();
-const noopForm = document.createElement('form');
-const DETECTABLE_FORMS = [FormType.LOGIN, FormType.REGISTER, FormType.RECOVERY, FormType.PASSWORD_CHANGE, FormType.MFA];
-
-const formSelector = `form:not([role="search"]), [${PROCESSED_ATTR}]:not(input)`;
-const danglingFieldSelector = `:not([${PROCESSED_ATTR}]):not([${PROCESSED_ATTR}] input)`;
+const NOOP_EL = document.createElement('form');
+const DETECTABLE_FORMS = Object.values(FormType).filter((type) => type !== FormType.NOOP);
+const DETECTABLE_FIELDS = Object.values(FormField).filter((type) => type !== FormField.NOOP);
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T };
@@ -38,15 +41,12 @@ type PredictionBestSelector<T extends string> = (scores: PredictionScoreResult<T
 const shouldRunDetection = (): Promise<boolean> =>
     new Promise((resolve) => {
         requestAnimationFrame(() => {
-            const forms = Array.from(document.querySelectorAll<HTMLElement>(formSelector));
-            const fields = Array.from(document.querySelectorAll<HTMLInputElement>(editableFieldSelector));
+            const runForForms = selectAllForms().reduce<boolean>((runDetection, form) => {
+                if (formProcessed(form)) {
+                    const fields = Array.from(form.querySelectorAll<HTMLInputElement>(fieldOfInterestSelector));
+                    const unprocessedFields = fields.some(fieldProcessable);
 
-            const runForForms = forms.reduce<boolean>((runDetection, form) => {
-                if (elementProcessed(form)) {
-                    const fields = Array.from(form.querySelectorAll<HTMLInputElement>(editableFieldSelector));
-                    const unprocessedFields = fields.some(elementProcessable);
-
-                    if (unprocessedFields) logger.debug('[Detector::assess] new untracked fields detected');
+                    if (unprocessedFields) logger.debug('[Detector::assess] new tracked form fields detected');
                     return runDetection || unprocessedFields;
                 }
 
@@ -60,9 +60,10 @@ const shouldRunDetection = (): Promise<boolean> =>
 
             if (runForForms) return resolve(true);
 
-            const danglingFields = fields.filter((el) => el.matches(danglingFieldSelector) && elementTrackable(el));
+            const danglingFields = selectDanglingFields().filter(fieldTrackable);
             const runForFields = danglingFields.length > 0;
-            danglingFields.forEach(setElementProcessed);
+            if (runForFields) logger.debug('[Detector::assess] new unprocessed fields');
+
             return resolve(runForFields);
         });
     });
@@ -73,20 +74,22 @@ const getScores = <T extends string>(fnode: FNode, types: T[]): PredictionScoreR
 
 const getPredictionsFor = <T extends string>(
     boundRuleset: BoundRuleset,
-    types: T[],
-    selectBest: PredictionBestSelector<T> = (scores) => scores[0]
+    options: {
+        type: 'form' | 'field';
+        subTypes: T[];
+        fallbackType: T;
+        selectBest?: PredictionBestSelector<T>;
+    }
 ): PredictionResult<T>[] => {
-    const predictions: FNode[] = types.map((type) => boundRuleset.get(type));
-    const candidates = Array.from(new Set(predictions.flat()));
+    const fnodes: FNode[] = boundRuleset.get(options.type);
+    const predictions = fnodes.map((fnode) => {
+        const scores = getScores(fnode, options.subTypes).sort(sortOn('score', 'DESC'));
+        const best = options.selectBest?.(scores) ?? scores[0];
 
-    return candidates
-        .map((fnode) => {
-            const scores = getScores(fnode, types).sort(sortOn('score', 'DESC'));
-            const best = selectBest(scores);
+        return { fnode, type: best.score > 0.5 ? best.type : options.fallbackType };
+    });
 
-            if (best.score > 0.5) return { fnode, type: best.type };
-        })
-        .filter(truthy);
+    return predictions;
 };
 
 /* cluster each predicted field by its parent predicted
@@ -100,12 +103,11 @@ const groupFields = (
 
     fieldPredictions.forEach(({ fnode: fieldFNode, type: fieldType }) => {
         const field = fieldFNode.element as HTMLInputElement;
-
         const parent: HTMLElement =
             formPredictions.find(({ fnode: formFNode }) => {
                 const form = formFNode.element;
                 return form.contains(field);
-            })?.fnode.element ?? noopForm;
+            })?.fnode.element ?? NOOP_EL;
 
         const entry = grouping?.get(parent) ?? [];
         entry.push({ fieldType, field });
@@ -125,24 +127,35 @@ const selectBestForm = <T extends string>(scores: PredictionScoreResult<T>[]) =>
 
 /* Runs the fathom detection and returns a form handle for each
  * detected form. FIXME: handle "dangling" fields. */
-const createDetectionRunner =
-    (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
-    (): { forms: CreateFormHandlesOptions[]; fields: DetectedField[] } => {
-        const boundRuleset = ruleset.against(doc.body);
+const createDetectionRunner = (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) => (): DetectedForm[] => {
+    const boundRuleset = ruleset.against(doc.body);
 
-        const formPredictions = getPredictionsFor(boundRuleset, DETECTABLE_FORMS, selectBestForm);
-        const fieldPredictions = getPredictionsFor(boundRuleset, Object.values(FormField));
-        const fieldMap = groupFields(formPredictions, fieldPredictions);
+    const formPredictions = getPredictionsFor<FormType>(boundRuleset, {
+        type: 'form',
+        subTypes: DETECTABLE_FORMS,
+        fallbackType: FormType.NOOP,
+        selectBest: selectBestForm,
+    });
 
-        return {
-            forms: formPredictions.map(({ fnode: formFNode, type: formType }) => ({
-                form: formFNode.element,
-                formType,
-                fields: fieldMap.get(formFNode.element) ?? [],
-            })),
-            fields: (fieldMap.get(noopForm) ?? []).filter(({ fieldType }) => fieldType === FormField.EMAIL),
-        };
-    };
+    const fieldPredictions = getPredictionsFor(boundRuleset, {
+        type: 'field',
+        subTypes: DETECTABLE_FIELDS,
+        fallbackType: FormField.NOOP,
+    });
+
+    const fieldMap = groupFields(formPredictions, fieldPredictions);
+
+    const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => ({
+        form: formFNode.element as HTMLElement,
+        formType,
+        fields: fieldMap.get(formFNode.element) ?? [],
+    }));
+
+    formPredictions.forEach(({ fnode: { element }, type }) => setFormProcessed(element, type));
+    forms.forEach(({ fields }) => fields.forEach(({ field, fieldType }) => setFieldProcessed(field, fieldType)));
+
+    return forms;
+};
 
 export const createDetectorService = () => {
     return {
