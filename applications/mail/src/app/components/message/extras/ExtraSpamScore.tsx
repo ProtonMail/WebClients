@@ -5,7 +5,12 @@ import { Icon, Prompt, useApi, useEventManager, useLoading, useModalState, useNo
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { isAutoFlaggedPhishing, isDMARCValidationFailure, isManualFlaggedHam } from '@proton/shared/lib/mail/messages';
+import {
+    isAutoFlaggedPhishing,
+    isDMARCValidationFailure,
+    isManualFlaggedHam,
+    isSuspicious,
+} from '@proton/shared/lib/mail/messages';
 
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
@@ -19,8 +24,8 @@ const ExtraSpamScore = ({ message }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
-
     const [spamScoreModalProps, setSpamScoreModalOpen] = useModalState();
+    const isSuspiciousFlagged = isSuspicious(message.data);
 
     if (isDMARCValidationFailure(message.data)) {
         return (
@@ -43,7 +48,7 @@ const ExtraSpamScore = ({ message }: Props) => {
     }
 
     if (
-        isAutoFlaggedPhishing(message.data) &&
+        (isAutoFlaggedPhishing(message.data) || isSuspiciousFlagged) &&
         (!isManualFlaggedHam(message.data) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
     ) {
         const markAsLegitimate = async () => {
@@ -59,11 +64,20 @@ const ExtraSpamScore = ({ message }: Props) => {
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1" />
                 <span className="px-2 mt-0.5 flex-item-fluid">
-                    {c('Info')
-                        .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                    <Href className="px-2" href={getBlogURL('/prevent-phishing-attacks')}>
-                        {c('Info').t`Learn more`}
-                    </Href>
+                    {isSuspiciousFlagged ? (
+                        <>
+                            {c('Info')
+                                .t`Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.`}
+                        </>
+                    ) : (
+                        <>
+                            {c('Info')
+                                .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
+                            <Href className="px-2" href={getBlogURL('/prevent-phishing-attacks')}>
+                                {c('Info').t`Learn more`}
+                            </Href>
+                        </>
+                    )}
                 </span>
                 <span className="flex-item-noshrink flex-align-items-start flex">
                     <Button

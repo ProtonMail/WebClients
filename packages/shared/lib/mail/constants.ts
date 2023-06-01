@@ -23,6 +23,7 @@ export const MESSAGE_FLAGS = {
     FLAG_HAM_MANUAL: Math.pow(2, 27), // The message is in spam and the user moves it to a new location that is not spam or trash (e.g. inbox or archive).
     FLAG_PHISHING_AUTO: Math.pow(2, 30), // Incoming mail is marked as phishing by anti-spam filters.
     FLAG_FROZEN_EXPIRATION: JSBI.BigInt(Math.pow(2, 32)), // Messages where the expiration time cannot be changed
+    FLAG_SUSPICIOUS: JSBI.BigInt(Math.pow(2, 33)), // System flagged this message as a suspicious email
 };
 
 export enum VERIFICATION_STATUS {
