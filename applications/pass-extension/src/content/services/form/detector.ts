@@ -81,11 +81,12 @@ const getPredictionsFor = <T extends string>(
         selectBest?: PredictionBestSelector<T>;
     }
 ): PredictionResult<T>[] => {
-    const fnodes: FNode[] = boundRuleset.get(options.type);
-    const predictions = fnodes.map((fnode) => {
-        const scores = getScores(fnode, options.subTypes).sort(sortOn('score', 'DESC'));
-        const best = options.selectBest?.(scores) ?? scores[0];
+    const candidates: FNode[] = boundRuleset.get(options.type);
 
+    const predictions = candidates.map((fnode) => {
+        const fieldTypes = options.subTypes.filter((subType) => fnode.hasType(subType));
+        const scores = getScores(fnode, fieldTypes).sort(sortOn('score', 'DESC'));
+        const best = options.selectBest?.(scores) ?? scores?.[0] ?? 0;
         return { fnode, type: best.score > 0.5 ? best.type : options.fallbackType };
     });
 
