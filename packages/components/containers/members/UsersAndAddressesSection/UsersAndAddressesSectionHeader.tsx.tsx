@@ -15,7 +15,7 @@ const UsersAndAddressesSectionHeader = () => {
         {
             key: 'role',
             node: (
-                <div className="flex flex-gap-0-5 flex-flex-children">
+                <div className="flex gap-2 flex-flex-children">
                     <span>{c('Title header for members table').t`Role`}</span>
                     <span className="no-mobile">
                         <Info url={getKnowledgeBaseUrl('/user-roles')} />
