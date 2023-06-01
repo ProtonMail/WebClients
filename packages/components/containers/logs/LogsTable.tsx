@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { AUTH_LOG_EVENTS, AuthLog } from '@proton/shared/lib/authlog';
+import { AuthLog, AuthLogStatus } from '@proton/shared/lib/authlog';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
 import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
@@ -8,18 +8,13 @@ import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time }
 const { ADVANCED, DISABLE } = SETTINGS_LOG_AUTH_STATE;
 const { ENABLED } = SETTINGS_PROTON_SENTINEL_STATE;
 
-const getIcon = (event: AUTH_LOG_EVENTS) => {
-    if (
-        [
-            AUTH_LOG_EVENTS.LOGIN_FAILURE_PASSWORD,
-            AUTH_LOG_EVENTS.LOGIN_FAILURE_2FA,
-            AUTH_LOG_EVENTS.REAUTH_FAILURE_2FA,
-            AUTH_LOG_EVENTS.REAUTH_FAILURE_PASSWORD,
-        ].includes(event)
-    ) {
-        return <Icon className="align-text-bottom color-danger" name="cross-circle-filled" />;
+const getIcon = (status: AuthLogStatus) => {
+    switch (status) {
+        case AuthLogStatus.Attempt:
+            return <Icon className="align-text-bottom color-warning" name="exclamation-circle-filled" />;
+        case AuthLogStatus.Failure:
+            return <Icon className="align-text-bottom color-danger" name="cross-circle-filled" />;
     }
-
     return <Icon className="align-text-bottom color-success" name="checkmark-circle-filled" />;
 };
 
@@ -66,14 +61,14 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                 </tr>
             </TableHeader>
             <TableBody loading={loading} colSpan={3}>
-                {logs.map(({ Time: time, AppVersion, Event, Description, IP, Device, ProtectionDesc }, index) => {
+                {logs.map(({ Time: time, AppVersion, Description, IP, Device, ProtectionDesc, Status }, index) => {
                     const key = index.toString();
 
                     return (
                         <TableRow key={key}>
                             <TableCell label={c('Header').t`Event`}>
                                 <div className="inline-flex">
-                                    <span className="flex-item-noshrink mr-2">{getIcon(Event)}</span>
+                                    <span className="flex-item-noshrink mr-2">{getIcon(Status)}</span>
                                     <span className="flex-item-fluid">{Description}</span>
                                 </div>
                             </TableCell>
