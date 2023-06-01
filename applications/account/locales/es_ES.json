@@ -53,6 +53,9 @@
       "activate": [
         "activar"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Activar ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
       ],
@@ -763,6 +766,9 @@
       ],
       "Send code": [
         "Enviar código"
+      ],
+      "Send messages with @pm.me": [
+        "Enviar mensajes con @pm.me"
       ],
       "Send my username": [
         "Enviar mi nombre de usuario"
@@ -2717,8 +2723,14 @@
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Para eliminar el pie de página de ${ MAIL_APP_NAME }, actualiza y desbloquea aún más funciones premium."
+      ],
       "Track the status and activity of your referrals.": [
         "Sigue el estado y la actividad de tus referidos."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Desbloquea direcciones de correo cortas y otras funciones premium al actualizar."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Disfruta de un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium cuando actualizas tu plan."
@@ -3336,6 +3348,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Los archivo cargados no son claves privadas válidas. Verifícalo e inténtalo de nuevo."
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un dígito."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un dígito."
       ],
       "Validation error": [
         "Error de validación"
@@ -4466,6 +4484,17 @@
         "Nombre de token"
       ]
     },
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Días festivos"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Subscribed": [
+        "Suscrito"
+      ]
+    },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Prueba lo mejor de ${ MAIL_APP_NAME } gratuitamente"
@@ -5194,6 +5223,9 @@
       ],
       "Balance from your previous subscription": [
         "Saldo de tu suscripción anterior"
+      ],
+      "Based on your time zone": [
+        "Basado en tu zona horaria"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en la configuración."
@@ -6409,6 +6441,9 @@
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
         "Actualiza a una cuenta de pago para habilitar ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Actualiza tu cuenta para añadir una dirección corta @pm.me que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “Private Message me”."
+      ],
       "Upgrade to unlock": [
         "Actualiza para desbloquear"
       ],
@@ -6540,6 +6575,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME_TWO }."
+      ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Con tu plan actual, solo puedes recibir mensajes con tu dirección @pm.me. Actualiza tu cuneta para enviar mensajes y crear direcciones adicionales con @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrás crear nuevos usuarios, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
@@ -8958,6 +8996,9 @@
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo electrónico"
       ],
+      "Up to 3 TB of storage": [
+        "Hasta 3 TB de almacenamiento"
+      ],
       "Up to 5 forwarding mailboxes": [
         "Hasta 5 buzones de reenvío"
       ],
@@ -8975,11 +9016,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Crea múltiples direcciones de correo para tus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utiliza tu propia dirección de correo personalizada, por ejemplo, tú@tunombre.com"
       ]
     },
     "new_plans: heading": {
@@ -9417,6 +9464,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Error al añadir el calendario de días festivos"
+      ],
       "Calendar added": [
         "El calendario ha sido añadido."
       ]
@@ -11088,6 +11138,9 @@
       ],
       "Action": [
         "Acción"
+      ],
+      "Activate @pm.me": [
+        "Activar @pm.me"
       ],
       "Activate account and generate keys": [
         "Activar cuenta y generar claves"

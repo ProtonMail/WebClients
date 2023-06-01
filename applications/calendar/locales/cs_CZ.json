@@ -2503,6 +2503,12 @@
       "Unknown error": [
         "Neznámá chyba"
       ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
       "Validation error": [
         "Chyba ověření"
       ],
@@ -3547,6 +3553,9 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
+      ],
+      "Based on your time zone": [
+        "Na základě vašeho časového pásma"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
@@ -4968,6 +4977,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Přidání kalendáře svátků se nezdařilo"
+      ],
       "Calendar added": [
         "Kalendář přidán"
       ]

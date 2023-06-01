@@ -2205,6 +2205,12 @@
       "Unknown error": [
         "Неизвестная ошибка"
       ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Нельзя отправить письмо более чем 100 получателям"
       ],
@@ -3495,9 +3501,6 @@
       ],
       "Failed": [
         "Завершено с ошибкой"
-      ],
-      "Failed to generate a secure link. Try again later.": [
-        "Не удалось сгенерировать защищённую ссылку. Повторите попытку позже."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не удалось открыть защищенную ссылку. Причина: ${ error }"

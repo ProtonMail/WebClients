@@ -481,7 +481,7 @@
         "Ich habe eine Frage"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Das Bild konnte aufgrund des Tracker-Schutzes nicht geladen werden."
+        "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
       "Image will be loaded without a proxy": [
         "Das Bild wird ohne Proxy geladen."
@@ -989,7 +989,7 @@
         "Überprüfung überspringen"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "Einige Bilder konnten aufgrund des Tracker-Schutzes nicht geladen werden."
+        "Einige Bilder konnten aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
       "Star": [
         "Markieren"
@@ -1250,6 +1250,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay }'s Posteingang"
+      ],
       "5 trackers removed": [
         "5 Tracker entfernt"
       ],
@@ -3414,6 +3417,12 @@
       ],
       "Unknown error.": [
         "Unbekannter Fehler."
+      ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
       ],
       "Wrong mailbox password": [
         "Ungültiges Postfach-Passwort"
@@ -5821,6 +5830,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du hast die maximale Anzahl von Adressen in der Kontaktgruppe erreicht."

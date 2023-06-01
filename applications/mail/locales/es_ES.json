@@ -100,6 +100,9 @@
       "As Scheduled": [
         "Como programado"
       ],
+      "At most 100 contacts are allowed per contact group": [
+        "Se permiten como máximo 100 contactos por grupo de contactos."
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
@@ -1247,6 +1250,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "Buzón de ${ nameToDisplay }"
+      ],
       "5 trackers removed": [
         "5 rastreadores eliminados"
       ],
@@ -2876,6 +2882,9 @@
       "ProtonMail logo and a plus sign": [
         "Logo de Proton Mail y un signo más"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "Ahorra tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualiza hoy mismo."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
@@ -3071,6 +3080,9 @@
       ],
       "Calendar limit reached": [
         "Se ha alcanzado el límite de calendarios."
+      ],
+      "Cannot export this contact": [
+        "No se puede exportar este contacto."
       ],
       "Choose a date in the future.": [
         "Elige una fecha en el futuro."
@@ -3405,6 +3417,12 @@
       ],
       "Unknown error.": [
         "Error desconocido."
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un dígito."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un dígito."
       ],
       "Wrong mailbox password": [
         "Contraseña del buzón incorrecta"
@@ -4128,6 +4146,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "Reenvía automáticamente"
+      ],
+      "Gmail messages to your inbox": [
+        "los mensajes de Gmail a tu buzón"
+      ],
       "Sign in with Google": [
         "Iniciar sesión con Google"
       ]
@@ -4785,6 +4809,12 @@
       ],
       "Confirm phishing report": [
         "Confirmar denuncia de suplantación de identidad"
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "El contacto ha sido asignado al grupo ${ contactGroupName }."
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "El contacto no ha sido asignado al grupo ${ contactGroupName }."
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -5800,6 +5830,12 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Has escrito \"${ attachmentsFoundKeyword }\" pero no se ha añadido ningún archivo adjunto. ¿Quieres enviar tu mensaje de todos modos?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Has alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Has alcanzado el número máximo de direcciones en el grupo de contactos."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Tu cuenta ${ BRAND_NAME } incluye SimpleLogin. Instala la extensión en tu navegador con un clic para comenzar."
@@ -7128,14 +7164,23 @@
       ],
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo electrónico"
+      ],
+      "Up to 3 TB of storage": [
+        "Hasta 3 TB de almacenamiento"
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Crea múltiples direcciones de correo para tus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utiliza tu propia dirección de correo personalizada, por ejemplo, tú@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -8324,6 +8369,10 @@
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } dirección de correo electrónico",
+        "${ emailsCount } direcciones de correo electrónico"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
@@ -8376,6 +8425,9 @@
       ],
       "Block sender": [
         "Bloquear remitente"
+      ],
+      "Cannot add more addresses": [
+        "No se pueden añadir más direcciones."
       ],
       "Carbon Copy": [
         "Con copia"
@@ -8827,6 +8879,9 @@
       ],
       "Trust public key?": [
         "¿Confiar en la clave pública?"
+      ],
+      "Unlock contacts groups": [
+        "Desbloquear los grupos de contactos"
       ],
       "Unsubscribe": [
         "Cancelar suscripción"

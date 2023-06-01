@@ -404,7 +404,7 @@
         "Αποκτήστε την επέκταση SimpleLogin"
       ],
       "Get started": [
-        "Εκκίνηση"
+        "Ας ξεκινήσουμε"
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
@@ -462,6 +462,12 @@
       ],
       "I have a question": [
         "Έχω μια ερώτηση"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
+      ],
+      "Image will be loaded without a proxy": [
+        "Η εικόνα θα φορτωθεί χωρίς διαμεσολαβητή"
       ],
       "Images will be loaded without a proxy": [
         "Οι εικόνες θα φορτωθούν χωρίς διαμεσολαβητή"
@@ -639,13 +645,13 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to inbox (not spam)": [
-        "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
+        "Μετακίνηση στα εισερχόμενα (μη ανεπιθύμητο)"
       ],
       "Move to spam": [
-        "Μετακίνηση στα ενοχλητικά"
+        "Μετακίνηση στα ανεπιθύμητα"
       ],
       "Move to spam and unsubscribe": [
-        "Μετακινήστε το στα ενοχλητικά και κάντε απεγγραφή"
+        "Μετακινήστε το στα ανεπιθύμητα και κάντε απεγγραφή"
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
@@ -852,7 +858,7 @@
         "Δείτε επιχειρηματικά Προγράμματα\n*.*, add translation *.*"
       ],
       "See plan features": [
-        "Προβολή χαρακτηριστικών προγράμματος"
+        "Προβολή δυνατοτήτων προγράμματος"
       ],
       "Select all": [
         "Επιλογή όλων"
@@ -862,6 +868,9 @@
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
+      ],
+      "Self-destruct message": [
+        "Αυτοκαταστρεφόμενο μήνυμα"
       ],
       "Send": [
         "Αποστολή"
@@ -933,7 +942,7 @@
         "Εμφάνιση προεπισκόπησης"
       ],
       "Show side panel": [
-        "Εμφάνιση πλαϊνού πλαισίου\n*.*, add translation *.*"
+        "Εμφάνιση πλαϊνού πλαισίου"
       ],
       "Sign in": [
         "Είσοδος"
@@ -963,7 +972,7 @@
         "Έναρξη εισαγωγής"
       ],
       "Start setup": [
-        "Ρύθμιση εκκίνησης"
+        "Εκκίνησης ρύθμισης"
       ],
       "Stay": [
         "Παραμονή"
@@ -981,7 +990,7 @@
         "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
       ],
       "Toggle Calendar app": [
-        "Εναλλαγή εφαρμογής Ημερολόγιο\n*.*, add translation *.*"
+        "Εναλλαγή εφαρμογής Ημερολόγιο"
       ],
       "Toggle Contact app": [
         "Εναλλαγή στο πρόγραμμα Επαφών"
@@ -1036,7 +1045,7 @@
         "Απεγγραφή"
       ],
       "Unsubscribing": [
-        "Διαγραφή"
+        "Γίνετε απεγγραφή"
       ],
       "Untrust": [
         "Μη αξιόπιστο"
@@ -1090,7 +1099,7 @@
         "Προβολή στοιχείων επαφής"
       ],
       "View headers": [
-        "Προβολή Headers"
+        "Προβολή Κεφαλίδων"
       ],
       "View HTML": [
         "Προβολή HTML"
@@ -1313,6 +1322,11 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Έχει ημερολογιακό γεγονός"
       ]
     },
     "Calendar invite buttons label": {
@@ -2842,6 +2856,9 @@
       ]
     },
     "empty messages: success": {
+      "Folder cleared": [
+        "Ο φάκελος διαγράφηκε"
+      ],
       "Label cleared": [
         "Η ετικέτα εκκαθαρίστηκε"
       ]
@@ -3173,6 +3190,12 @@
       ],
       "Unknown error.": [
         "Άγνωστο σφάλμα."
+      ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
       "Wrong mailbox password": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας"
@@ -3709,6 +3732,11 @@
         "Μη διαβασμένα"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has file": [
+        "Έχει αρχείο"
+      ]
+    },
     "Filter preview": {
       "read": [
         "ανάγνωση"
@@ -3885,7 +3913,7 @@
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
-        "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+        "${ totalImported }/${ totalToImport } γεγονότα κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
@@ -3926,8 +3954,8 @@
         "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλά συμβάντα χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για το συμβάν και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλ. ταχυδρομείου."
       ],
       "This file contains an event invitation:": [
-        "Αυτό το αρχείο περιέχει μια πρόσκληση σε εκδήλωση:",
-        "Αυτό το αρχείο περιέχει προσκλήσεις σε εκδηλώσεις:"
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε γεγονός:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε γεγονότα:"
       ],
       "This file contains an invitation response:": [
         "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
@@ -4108,8 +4136,8 @@
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } από ${ totalEvents } διοργάνωση δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
-        "${ totalEventsDiscarded } από ${ totalEvents } διοργανώσεις δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονός δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
@@ -5457,7 +5485,7 @@
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Θέλετε να εμπιστευθείτε το κύριο δημόσιο κλειδί με το ακόλουθο αποτύπωμα;",
-        "Θέλετε να εμπιστευθείτε τα κύρια δημόσια κλειδιά με τα ακόλουθα δακτυλικά αποτυπώματα;"
+        "Θέλετε να εμπιστευθείτε τα κύρια δημόσια κλειδιά με τα ακόλουθα αποτυπώματα;"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά για αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου,\nαλλά δεν έχει εμπιστευτεί κανένα ενεργό κλειδί κρυπτογράφησης.\nΠρέπει να εμπιστευτείτε ένα έγκυρο κλειδί για την αποστολή για να στείλετε ένα μήνυμα σε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου.",
@@ -6107,6 +6135,16 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Ημερομηνία"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Ώρα"
       ]
     },
     "Label for contact group color": {
@@ -6950,6 +6988,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } μ",
         "${ remainingDays } μ"
+      ],
+      "<1 d": [
+        "<1 η"
       ]
     },
     "Reply to calendar invitation": {
@@ -7064,8 +7105,8 @@
         "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένο παραλήπτη",
-        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένους παραλήπτες"
+        "Στάλθηκε από εσάς με κρυπτογράφηση από άκρο σε άκρο προς επαληθευμένο παραλήπτη",
+        "Στάλθηκε από εσάς με κρυπτογράφηση από άκρο σε άκρο προς επαληθευμένους παραλήπτες"
       ],
       "Stored with zero-access encryption": [
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
@@ -7181,6 +7222,15 @@
       "2 years": [
         "2 χρόνια"
       ],
+      "Billed at ${ amount } for 15 months": [
+        "Χρεωμένο στα ${ amount } για 15 μήνες"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Χρεωμένο στα ${ amount } για 24 μήνες"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Χρεωμένο στα ${ amount } για 30 μήνες"
+      ],
       "for ${ n } month": [
         "για ${ n } μήνα",
         "για ${ n } μήνες"
@@ -7190,6 +7240,11 @@
       ],
       "Save ${ discount }%": [
         "Εξοικονομήστε ${ discount }%"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Προσφορά Black Friday"
       ]
     },
     "Spotlight": {
@@ -7215,6 +7270,9 @@
     "Status": {
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από λίστα αλληλογραφίας."
+      ],
+      "Unsubscribed": [
+        "Έγινε κατάργηση εγγραφής"
       ]
     },
     "Step in filter modal": {
@@ -7567,6 +7625,10 @@
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } διεύθυνση email",
+        "${ emailsCount } διευθύνσεις email"
+      ],
       "${ unreads } unread message": [
         "${ unreads } μη διαβασμένο μήνυμα",
         "${ unreads } μη διαβασμένα μηνύματα"
@@ -7968,6 +8030,9 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
+      "Self-destruct message": [
+        "Αυτοκαταστρεφόμενο μήνυμα"
+      ],
       "Send email": [
         "Αποστολή μηνύματος"
       ],
@@ -8003,6 +8068,9 @@
       ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
+      "Sign in with 2FA": [
+        "Συνδεθείτε με 2FA"
       ],
       "Sign out": [
         "Αποσύνδεση"

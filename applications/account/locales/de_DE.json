@@ -75,7 +75,7 @@
         "Adresse hinzufügen"
       ],
       "Add calendar from URL": [
-        "Kalender von URL hinzufügen"
+        "Kalender mittels URL hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
@@ -3349,6 +3349,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Die hochgeladenen Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
       ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden"
+      ],
       "Validation error": [
         "Überprüfungsfehler"
       ],
@@ -3356,7 +3362,7 @@
         "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Wir haben die DKIM-Signierung aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
+        "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
@@ -4415,7 +4421,7 @@
         "Bevorzugte Zahlungsmethode auswählen"
       ],
       "Select your pricing plan": [
-        "Abonnement auswählen"
+        "Wähle dein Abonnement"
       ],
       "Status": [
         "Status"
@@ -4927,7 +4933,7 @@
         "${ numGroups } Kontaktgruppen"
       ],
       "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } ist ein Kontoschutzprogramm, entwickelt von ${ BRAND_NAME } für Benutzer, die maximale Sicherheit benötigen."
+        "${ PROTON_SENTINEL_NAME } ist ein von ${ BRAND_NAME } entwickeltes Kontoschutzprogramm für Benutzer, die maximale Sicherheit benötigen."
       ],
       "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } wird von ausgereiften KI-Systemen und Spezialistenteams unterstützt, die rund um die Uhr daran arbeiten, bösartige Akteure und Sicherheitsbedrohungen zu entschärfen."
@@ -6433,7 +6439,7 @@
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Erwirb ein kostenpflichtiges Konto ${ PROTON_SENTINEL_NAME }."
+        "Erwirb ein kostenpflichtiges Konto, um ${ PROTON_SENTINEL_NAME } zu aktivieren."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."

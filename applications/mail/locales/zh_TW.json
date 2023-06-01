@@ -1245,6 +1245,9 @@
       ]
     },
     "Animation": {
+      "${ nameToDisplay }'s inbox": [
+        "${ nameToDisplay } 的收件匣"
+      ],
       "5 trackers removed": [
         "已移除 5 個追蹤程式"
       ],
@@ -3393,6 +3396,12 @@
       "Unknown error.": [
         "未知的錯誤。"
       ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
+      ],
       "Wrong mailbox password": [
         "密碼錯誤"
       ],
@@ -4106,6 +4115,12 @@
       ]
     },
     "Gmail forwarding": {
+      "Automatically forward": [
+        "自動轉寄"
+      ],
+      "Gmail messages to your inbox": [
+        "Gmail 訊息到您的收件匣"
+      ],
       "Sign in with Google": [
         "使用 Google 帳號登入"
       ]

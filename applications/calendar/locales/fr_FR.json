@@ -40,7 +40,7 @@
         "Ajouter un contact"
       ],
       "Add email": [
-        "Ajouter un e-mail"
+        "Ajouter une adresse e-mail"
       ],
       "Add group": [
         "Ajouter un groupe"
@@ -213,7 +213,7 @@
         "Modifier les informations de connexion"
       ],
       "Email settings": [
-        "Paramètres d'e-mail"
+        "Paramètres du message"
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
@@ -285,7 +285,7 @@
         "Importer des contacts"
       ],
       "Import emails": [
-        "Importer des e-mails"
+        "Importer des messages"
       ],
       "Import events": [
         "Importer des événements"
@@ -2224,7 +2224,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Ends on date cannot be empty": [
         "La date de fin ne peut pas être vide."
@@ -2458,6 +2458,12 @@
       ],
       "Unknown error": [
         "Erreur inconnue"
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "Validation error": [
         "Une erreur de validation s'est produite."
@@ -3311,7 +3317,7 @@
         "${ addressCount } adresses e-mail"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
+        "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
@@ -3434,6 +3440,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Based on your time zone": [
+        "Selon votre fuseau horaire"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
@@ -3447,7 +3456,7 @@
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Vérification des contacts : ${ progress } de ${ max }…"
+        "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -4178,10 +4187,10 @@
         "E-mail ou nom d'utilisateur"
       ],
       "Emails": [
-        "E-mails"
+        "Messages"
       ],
       "Emails (all messages)": [
-        "E-mails (tous les messages)"
+        "Messages (tous les messages)"
       ],
       "Emails (last 12 months)": [
         "Messages (12 derniers mois)"
@@ -4828,6 +4837,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Le calendrier des jours fériés n'a pas pu être ajouté."
+      ],
       "Calendar added": [
         "Le calendrier a été ajouté."
       ]
@@ -5171,7 +5183,7 @@
         "Rechercher un nom de groupe"
       ],
       "Search for name or email": [
-        "Rechercher par nom ou par e-mail"
+        "Rechercher par nom ou adresse e-mail"
       ],
       "Select": [
         "Sélectionner"
@@ -5216,6 +5228,9 @@
     "Property type": {
       "Address": [
         "Adresse"
+      ],
+      "Email": [
+        "Adresse e-mail"
       ],
       "Fax": [
         "Fax"
@@ -5991,7 +6006,7 @@
         "Modifier le groupe de contacts"
       ],
       "Edit email settings": [
-        "Modifier les paramètres d'e-mail"
+        "Modifier les paramètres du message"
       ],
       "Edit image": [
         "Modifier l'image"
@@ -6000,7 +6015,7 @@
         "Adresses e-mail"
       ],
       "Email settings": [
-        "Paramètres d'e-mail"
+        "Paramètres du message"
       ],
       "Encrypted event": [
         "Événement chiffré"
@@ -6316,7 +6331,7 @@
         "L'importation commencera par les messages les plus récents."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Chargez une clé publique pour activer l'envoi d'e-mails chiffrés de bout en bout à destination de cet e-mail."
+        "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter."
