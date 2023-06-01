@@ -3363,6 +3363,12 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Fișierele încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
       "Validation error": [
         "Eroare validare."
       ],
@@ -9564,7 +9570,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "Adăugarea calendarului de sărbători a eșuat"
+        "Adăugarea calendarului de sărbători a eșuat."
       ],
       "Calendar added": [
         "Calendar adăugat"

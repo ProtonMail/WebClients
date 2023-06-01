@@ -32,7 +32,7 @@
         "Ajouter un contact"
       ],
       "Add email": [
-        "Ajouter un e-mail"
+        "Ajouter une adresse e-mail"
       ],
       "Add group": [
         "Ajouter un groupe"
@@ -259,7 +259,7 @@
         "Modifier les informations de connexion"
       ],
       "Email settings": [
-        "Paramètres d'e-mail"
+        "Paramètres du message"
       ],
       "Empty trash": [
         "Vider le dossier Corbeille"
@@ -352,7 +352,7 @@
         "Importer des contacts"
       ],
       "Import emails": [
-        "Importer des e-mails"
+        "Importer des messages"
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
@@ -1974,7 +1974,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -2186,6 +2186,12 @@
       ],
       "Unknown error": [
         "Erreur inconnue"
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
@@ -3014,7 +3020,7 @@
         "${ addressCount } adresses e-mail"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
+        "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
@@ -3216,7 +3222,7 @@
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Vérification des contacts : ${ progress } de ${ max }…"
+        "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
       "Checking signatures": [
         "Vérification des signatures"
@@ -3386,11 +3392,14 @@
       "Failed": [
         "Échec"
       ],
-      "Failed to generate a secure link. Try again later.": [
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Le lien sécurisé n'a pas pu être généré : ${ error }."
+      ],
+      "Failed to generate a secure link. Try again later": [
         "Le lien sécurisé n'a pas pu être généré. Nous vous invitons à réessayer plus tard."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Le lien sécurisé n'a pas pu être ouvert pour cette raison : ${ error }"
+        "Le lien sécurisé n'a pas pu être ouvert : ${ error }."
       ],
       "File \"${ name }\" was deleted during download": [
         "Le fichier « ${ name } » a été supprimé pendant le téléchargement."
@@ -4308,10 +4317,10 @@
         "E-mail ou nom d'utilisateur"
       ],
       "Emails": [
-        "E-mails"
+        "Messages"
       ],
       "Emails (all messages)": [
-        "E-mails (tous les messages)"
+        "Messages (tous les messages)"
       ],
       "Emails (last 12 months)": [
         "Messages (12 derniers mois)"
@@ -5188,7 +5197,7 @@
         "Rechercher un nom de groupe"
       ],
       "Search for name or email": [
-        "Rechercher par nom ou par e-mail"
+        "Rechercher par nom ou adresse e-mail"
       ],
       "Select": [
         "Sélectionner"
@@ -5228,6 +5237,9 @@
     "Property type": {
       "Address": [
         "Adresse"
+      ],
+      "Email": [
+        "Adresse e-mail"
       ],
       "Fax": [
         "Fax"
@@ -5856,7 +5868,7 @@
         "Modifier le groupe de contacts"
       ],
       "Edit email settings": [
-        "Modifier les paramètres d'e-mail"
+        "Modifier les paramètres du message"
       ],
       "Edit image": [
         "Modifier l'image"
@@ -5865,7 +5877,7 @@
         "Adresses e-mail"
       ],
       "Email settings": [
-        "Paramètres d'e-mail"
+        "Paramètres du message"
       ],
       "Empty trash": [
         "Vider le dossier Corbeille"
@@ -6249,7 +6261,7 @@
         "L'importation commencera par les messages les plus récents."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Chargez une clé publique pour activer l'envoi d'e-mails chiffrés de bout en bout à destination de cet e-mail."
+        "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter."

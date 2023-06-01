@@ -1251,7 +1251,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "safata entrada a ${ nameToDisplay }"
+        "Safata d'entrada ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "S'han eliminat 5 rastrejadors"
@@ -3418,6 +3418,12 @@
       "Unknown error.": [
         "Error desconegut."
       ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit"
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit"
+      ],
       "Wrong mailbox password": [
         "Contrasenya de la bústia de correu incorrecta"
       ],
@@ -4141,10 +4147,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Reenvia automàticament"
+        "Reenvieu automàticament"
       ],
       "Gmail messages to your inbox": [
-        "Missatges de Gmail a la vostra safata d'entrada"
+        "els missatges de Gmail a la vostra safata d'entrada"
       ],
       "Sign in with Google": [
         "Inicia la sessió amb Google"
@@ -5505,7 +5511,7 @@
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
-        "Aquests missatges seran marcats com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?"
+        "Aquestes converses seran marcades com a correu brossa. Us agradaria també anul·lar la subscripció per a futurs correus?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Aquest correu no ha superat els requisits d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament."

@@ -3440,6 +3440,12 @@
       "Unknown error.": [
         "Eroare necunoscută."
       ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
       "Wrong mailbox password": [
         "Parolă mesaje greșită."
       ],
@@ -4175,7 +4181,7 @@
         "Redirecționați automat"
       ],
       "Gmail messages to your inbox": [
-        "mesajele Gmail către căsuța dumneavoastră de primire"
+        "mesajele Gmail către adresa de primire"
       ],
       "Sign in with Google": [
         "Conectare cu Google"

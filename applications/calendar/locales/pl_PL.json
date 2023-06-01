@@ -2503,6 +2503,12 @@
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
       "Validation error": [
         "Błąd weryfikacji"
       ],
@@ -3547,6 +3553,9 @@
       ],
       "Attention required": [
         "Wymagana uwaga"
+      ],
+      "Based on your time zone": [
+        "Na podstawie strefy czasowej"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
@@ -4968,6 +4977,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Dodawanie kalendarza świąt nie powiodło się"
+      ],
       "Calendar added": [
         "Kalendarz został dodany"
       ]
