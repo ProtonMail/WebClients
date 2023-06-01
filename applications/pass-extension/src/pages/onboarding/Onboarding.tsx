@@ -22,8 +22,7 @@ export const Onboarding: VFC = () => (
                         <Route path="/success">
                             <InstallationSuccess />
                         </Route>
-                        {/* TODO remove this once the onboarding page is integrated in the flow */}
-                        <Route path="/todo_temporary_page">
+                        <Route path="/welcome">
                             <LoginSuccess />
                         </Route>
                     </Switch>
