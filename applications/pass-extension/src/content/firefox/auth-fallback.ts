@@ -8,23 +8,35 @@ export const authFallback = () => {
         try {
             if (
                 message.data &&
-                message.data?.type === 'fork' &&
+                message.data?.type !== undefined &&
                 message.data?.extension === EXTENSIONS[APPS.PROTONPASSBROWSEREXTENSION].ID
             ) {
-                const { keyPassword, selector, state, persistent, trusted } = message.data.payload;
-                await sendMessage.on(
-                    contentScriptMessage({
-                        type: WorkerMessageType.FORK,
-                        payload: {
-                            selector,
-                            state,
-                            keyPassword,
-                            persistent,
-                            trusted,
-                        },
-                    }),
-                    (response) => window.postMessage({ token: message.data?.token, ...response })
-                );
+                switch (message.data.type) {
+                    case WorkerMessageType.FORK: {
+                        const { keyPassword, selector, state, persistent, trusted } = message.data.payload;
+                        return await sendMessage.on(
+                            contentScriptMessage({
+                                type: WorkerMessageType.FORK,
+                                payload: {
+                                    selector,
+                                    state,
+                                    keyPassword,
+                                    persistent,
+                                    trusted,
+                                },
+                            }),
+                            (response) => window.postMessage({ token: message.data?.token, ...response })
+                        );
+                    }
+
+                    case WorkerMessageType.AUTH_EXT: {
+                        return await sendMessage(
+                            contentScriptMessage({
+                                type: WorkerMessageType.AUTH_EXT,
+                            })
+                        );
+                    }
+                }
             }
         } catch (e) {
             logger.warn('[ContentScript::Fork]', e);
